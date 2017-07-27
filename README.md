@@ -1,7 +1,6 @@
 # dlite-web
-<!--- To Be Updated --->
-<!--- [![Build Status](https://travis-ci.org/CDTDigital/node-substrate.svg?branch=master)](https://travis-ci.org/CDTDigital/node-substrate) [![Code Climate](https://codeclimate.com/github/CDTDigital/node-substrate/badges/gpa.svg)](https://codeclimate.com/github/CDTDigital/node-substrate) [![Test Coverage](https://codeclimate.com/github/CDTDigital/node-substrate/badges/coverage.svg)](https://codeclimate.com/github/CDTDigital/node-substrate/coverage) ---->
 
+[![Build Status](https://travis-ci.org/stateofca/dlite-web.svg?branch=master)](https://travis-ci.org/stateofca/dlite-web) [![Code Climate](https://codeclimate.com/github/stateofca/dlite-web/badges/gpa.svg)](https://codeclimate.com/github/stateofca/dlite-web) [![Test Coverage](https://codeclimate.com/github/stateofca/dlite-web/badges/coverage.svg)](https://codeclimate.com/github/stateofca/dlite-web/coverage)
 
 ## Setup
 
@@ -32,5 +31,4 @@ module is too low level. Feel free to add in some `chai` and `sinon`.
 These tests can be run via an npm script:
 
     `npm run test:server`
-
 
