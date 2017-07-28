@@ -4,6 +4,9 @@
 
 ## Setup
 
+Deployed at [https://dlite-web.herokuapp.com/](https://dlite-web.herokuapp.com/).
+Deploys happen automatically via github integrations. When CI passes, the deploy goes to heroku.
+
 For development and test, the application uses `.env` files to populate
 the environmental variables. And we use envars to ensure 12 factor
 portability for our apps!
@@ -16,6 +19,7 @@ To setup your local environment copy the `.env.sample` file to `.env`:
 
 It is just an express app, and runs via a nmp script:
 
+    npm install
     npm start
 
 ## Development
