@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "webpack-watch": "webpack -w",
-    "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm start\"",
+    "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
     "test": "npm run test:server",
     "test:server": "node_modules/.bin/mocha --recursive test/server",
     "test:coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive test/server",
