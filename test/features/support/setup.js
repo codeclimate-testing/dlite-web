@@ -4,14 +4,26 @@ const Browser = require('zombie');
 const port    = 3033;
 
 const app  = require('../../../server');
-Browser.localhost('dmv.ca.gov', port);
 
 module.exports = function setup(callback) {
   let browser = new Browser();
+
+  function url(path) {
+    let base = `http://localhost:${port}`;
+    let fullUrl = base;
+    if (path && path[0] !== '/') {
+      fullUrl = `${fullUrl}/${path}`;
+    } else if (path) {
+      fullUrl = `${fullUrl}${path}`;
+    }
+    return fullUrl;
+  }
+
   let server = app.listen(port, () => {
     callback({
       server: server,
-      browser: browser
+      browser: browser,
+      url: url
     });
   });
 };
