@@ -1,5 +1,7 @@
 'use strict';
 
+process.env.APP_ENV = 'test';
+
 const Browser = require('zombie');
 const port    = 3033;
 
