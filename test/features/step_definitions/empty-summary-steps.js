@@ -10,7 +10,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit \'/summary\'', function(done) {
-    browser.visit(world.url('/summary'), done);
+    browser.clickLink('summary', done);
   });
 
   world.then('I should see a message \'No information has been entered yet\'', function(done) {
