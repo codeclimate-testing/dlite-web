@@ -7,8 +7,9 @@
     "start": "node index.js",
     "webpack-watch": "webpack -w",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
-    "test": "npm run test:server",
+    "test": "npm run test:server && npm run test:acceptance",
     "test:server": "node_modules/.bin/mocha --recursive test/server",
+    "test:acceptance": "node_modules/.bin/cucaroo",
     "test:coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive test/server",
     "test:security": "node_modules/.bin/nsp check",
     "lint": "node_modules/.bin/jshint test/ server/ server.js index.js"
