@@ -1,15 +1,17 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Link }  from 'react-router-dom';
+import { BrowserRouter }  from 'react-router-dom';
 
-import Router from './router.jsx';
+import AppContents from './app-contents.jsx';
 
-class App extends React.Component {
+class Router extends React.Component {
   render() {
-    return <div>
-      <Router />
-    </div>;
+    return (
+      <BrowserRouter>
+        <AppContents />
+      </BrowserRouter>
+    );
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<Router/>, document.getElementById('app'));

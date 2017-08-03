@@ -1,10 +1,16 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Summary extends React.Component {
   render () {
-    return <p>No information has been entered yet</p>;
+    return (
+      <div className='summary-page'>
+        <Link to='/' >Back to application</Link>
+        <p>No information has been entered yet</p>
+      </div>
+    );
   }
 }
 
