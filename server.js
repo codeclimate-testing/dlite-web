@@ -9,7 +9,7 @@ const bodyParser  = require('body-parser');
 const passport    = require('passport');
 const helmet      = require('helmet');
 const jwtStrategy = require('./server/config/jwt-strategy').strategy;
-const logging = require('./server/config/logging');
+const logging     = require('./server/config/logging');
 
 const layout      = fs.readFileSync(path.resolve(__dirname, 'server/templates/layout.html')).toString();
 let   server      = express();
@@ -24,6 +24,7 @@ server.port = env.port;
 server.environment  = env.env;
 
 server.use(express.static('public'));
+
 server.get('/', (req, res) => {
   res.send(layout);
 });
