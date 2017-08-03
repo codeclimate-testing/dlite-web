@@ -1,18 +1,17 @@
-import React from 'react';
+import React    from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter }  from 'react-router-dom';
+
+import Routes from './routes.jsx';
 
 class App extends React.Component {
   render() {
-    
+    return (
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    );
   }
 }
 
-class AuthenticateLinks extends React.Component {
-  render() {
-    return <p>
-      <a href='/sign-in'>Sign in</a> - or - <a href='/create-account'>create an account</a>
-    </p>;
-  }
-}
-
-ReactDOM.render(<AuthenticateLinks/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
