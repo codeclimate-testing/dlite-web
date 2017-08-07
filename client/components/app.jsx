@@ -1,7 +1,10 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter }  from 'react-router-dom';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
+import reducers from "../reducers";
 import Routes from './routes.jsx';
 
 class App extends React.Component {
@@ -14,4 +17,12 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={createStore(
+    reducers, /* preloadedState, */
+   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);

@@ -1,20 +1,20 @@
+'use strict';
+
 import React, {PropTypes} from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { submitNames } from "../actions/index";
 
 class Names extends React.Component {
-    constructor(props, context) {
+    constructor(props, context) {        
         super(props, context);
-
-        this.state = {
-            names: {
-                first: "",
-                middle: "",
-                last: ""
-            }
-        };
+        
+        props.names ? this.state = { names: props.names } : this.state = { names : { first: "", middle: "", last: "" } };
 
         this.onChangeNames = this.onChangeNames.bind(this);
-        this.onClickSaveNames = this.onClickSaveNames.bind(this);
+        this.onSubmitNames = this.onSubmitNames.bind(this);
     }
 
     onChangeNames(event) {
@@ -36,25 +36,35 @@ class Names extends React.Component {
         this.setState( { names: names } );
     }
 
-    onClickSaveNames() {
-        //TODO:
-        console.log("Saving Names");
+    onSubmitNames(event) {
+        event.preventDefault();
+        this.props.submitNames(this.state.names);
     }
 
-    render() {
+    render() {        
         return (
             <div>
                 <Link to='/' >Back to application</Link>
-                <div className="input-container">
-                    <input type="text" name="firstName" placeholder="First Name" onChange={this.onChangeNames} value={this.state.names.first} />
+                <form onSubmit={this.onSubmitNames} className="input-container">
+                    <input type="text" name="firstName" placeholder="First Name" onChange={this.onChangeNames} value={this.state.names.first} />                    
                     <input type="text" name="middleName" placeholder="Middle Name" onChange={this.onChangeNames} value={this.state.names.middle} />
                     <input type="text" name="lastName" placeholder="Last Name" onChange={this.onChangeNames} value={this.state.names.last} />
-                    <button name="saveNamesButton" onClick={this.onClickSaveNames} > Save </button>
-                </div>
+                    <button type="submit" name="submitNamesButton"> Submit </button>
+                </form>
             </div>
         )
     }
 
 }
 
-export default Names;
+function mapStateToProps(state) {  
+  return {
+    names: state.names
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitNames: submitNames }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Names);

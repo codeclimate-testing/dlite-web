@@ -24,8 +24,8 @@ module.exports = function(world) {
   });
 
   world.and('I will see a button to submit my name', function(done){
-    let saveNamesButton = browser.button('saveNamesButton');
-    assert.ok(saveNamesButton);
+    let submitNamesButton = browser.button('submitNamesButton');
+    assert.ok(submitNamesButton);
     done();
   });
 
@@ -45,7 +45,7 @@ module.exports = function(world) {
   });
 
   world.and('I click to submit my name', function(done){
-    browser.pressButton('saveNamesButton', done);
+    browser.pressButton('submitNamesButton', done);
   });
 
   // world.and('I click to return application', function(done) {
@@ -57,7 +57,7 @@ module.exports = function(world) {
   });
   
   world.then('I will see my name on that summary', function(done){
-    let text = browser.text('names');
+    let text = browser.text('p');
     assert(text.includes('FirstName1'));
     assert(text.includes('MiddleName1'));
     assert(text.includes('LastName1'));
@@ -70,16 +70,16 @@ module.exports = function(world) {
     browser.fill('firstName', 'FirstName1')
         .fill('middleName', 'MiddleName1')
         .fill('lastName', 'LastName1')
-        .pressButton('saveNamesButton');    
+        .pressButton('submitNamesButton');    
     browser.clickLink('Back to application', done);
   });
 
   world.then('I will see the name I entered', function(done){
-    let firstName = browser.select('firstName').value();
-    let middleName = browser.select('middleName').value();
-    let lastName = browser.select('lastName').value();
+    let firstName = browser.field('firstName').value;
+    let middleName = browser.field('middleName').value;
+    let lastName = browser.field('lastName').value;
     assert.equal(firstName, "FirstName1");
-    assert.equal(middleName, 'Middlename1');
+    assert.equal(middleName, 'MiddleName1');
     assert.equal(lastName, 'LastName1');
     done();   
   });
@@ -90,7 +90,7 @@ module.exports = function(world) {
   });
 
   world.then('I will see my updated name', function(done){
-    let text = browser.text('names');
+    let text = browser.text('p');
     assert(text.includes('FirstName2'));    
     done();
   });
