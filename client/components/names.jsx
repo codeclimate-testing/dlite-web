@@ -46,10 +46,10 @@ class Names extends React.Component {
             <div>
                 <Link to='/' >Back to application</Link>
                 <div className="input-container">
-                    <input name="firstName" placeholder="First Name" onChange={this.onChangeNames} value={this.state.names.first} />
-                    <input name="middleName" placeholder="Middle Name" onChange={this.onChangeNames} value={this.state.names.middle} />
-                    <input name="lastName" placeholder="Last Name" onChange={this.onChangeNames} value={this.state.names.last} />
-                    <input type="button" name="saveNamesButton" value="Save" onClick={this.onClickSaveNames} />                
+                    <input type="text" name="firstName" placeholder="First Name" onChange={this.onChangeNames} value={this.state.names.first} />
+                    <input type="text" name="middleName" placeholder="Middle Name" onChange={this.onChangeNames} value={this.state.names.middle} />
+                    <input type="text" name="lastName" placeholder="Last Name" onChange={this.onChangeNames} value={this.state.names.last} />
+                    <button name="saveNamesButton" onClick={this.onClickSaveNames} > Save </button>
                 </div>
             </div>
         )
