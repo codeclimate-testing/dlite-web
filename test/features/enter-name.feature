@@ -16,6 +16,7 @@ Feature:  I want to enter my name
     And I enter my middle name
     And I enter my last name
     And I click to submit my name
+    And I click to return application
     And I go to the page with my summary
     Then I will see my name on that summary
 
@@ -28,5 +29,7 @@ Feature:  I want to enter my name
     Given I have already entered my name into the form
     When I visit about-me-names
     And I change my first name
+    And I click to submit my name
+    And I click to return application
     And I go to the page with my summary
     Then I will see my updated name
