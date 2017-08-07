@@ -28,6 +28,7 @@ let config = {
       }
     ]
   },
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.json']
   },
