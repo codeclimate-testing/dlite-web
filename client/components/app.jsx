@@ -1,3 +1,5 @@
+'use strict'
+
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter }  from 'react-router-dom';
@@ -18,10 +20,9 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <Provider store={createStore(
-    reducers, /* preloadedState, */
-   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )}>
+  // Wrap App component instance within Provider
+  // Provider makes the Redux store available to the connect() calls in the component hierarchy   
+  <Provider store={createStore( reducers )}>
     <App />
   </Provider>,
   document.getElementById('app')

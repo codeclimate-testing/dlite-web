@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 
 import Home    from './home.jsx';
 import Summary from './summary.jsx';
-import Names from './names.jsx';
+import Names from '../containers/names.jsx';
 
 class Router extends React.Component {
   render() {

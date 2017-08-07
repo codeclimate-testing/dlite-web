@@ -4,34 +4,28 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
-class Summary extends Component {
+const Summary = (props) => {
   
-  constructor(props, context){
-    super(props, context);    
-  }
-
-  render() {    
-    if(!this.props.names) {
-      return (
-        <div className='summary-page'>
-          <Link to='/' >Back to application</Link>
-          <p>No information has been entered yet</p>
-        </div>
-      );  
-    }
-
+  if(!props.names) {
     return (
-      <div>
+      <div className='summary-page'>
         <Link to='/' >Back to application</Link>
-        <p> First Name: { this.props.names.first} </p>
-        <p> Middle Name: { this.props.names.middle} </p>
-        <p> Last Name: { this.props.names.last} </p>
+        <p>No information has been entered yet</p>
       </div>
-    )
+    );  
   }
+
+  return (
+    <div className='summary-page'>
+      <Link to='/' >Back to application</Link>
+      <p> First Name: { props.names.first} </p>
+      <p> Middle Name: { props.names.middle} </p>
+      <p> Last Name: { props.names.last} </p>
+    </div>
+  )
 }
 
-
+//Whatever is retured will show up as props in Summary
 function mapStateToProps(state) {
   return {
     names: state.names
