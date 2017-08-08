@@ -122,7 +122,7 @@ elements-of-type(html5-block) {
 
 body {
   color: #000;
-  font-family: "Open Sans", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
+  font-family: "Source Sans Pro", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
   font-size: 20px;
   text-rendering: optimizeLegibility;
   line-height: 1.6; }
@@ -135,10 +135,10 @@ p {
   padding-bottom: 15px; }
 
 h1, h2, h3 {
-  font-family: "Open Sans", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; }
+  font-family: "Source Sans Pro", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; }
 
 h4, h5, h6 {
-  font-family: "Open Sans", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; }
+  font-family: "Source Sans Pro", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; }
 
 h1 {
   font-size: 34px;
@@ -415,7 +415,7 @@ textarea {
 
 @-moz-document url-prefix() {
   textarea {
-    font-family: "Open Sans", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; } }
+    font-family: "Source Sans Pro", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif; } }
 
 form .error-message {
   display: none; }
@@ -458,7 +458,7 @@ label.button {
   border: none;
   display: block;
   font-size: 20px;
-  font-family: "Open Sans", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
+  font-family: "Source Sans Pro", "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
   font-weight: bold;
   background-color: #FCB81E;
   color: #000;
