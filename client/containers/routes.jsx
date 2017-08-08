@@ -4,7 +4,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Home    from '../presentations/home.jsx';
-import Summary from '../presentations/summary.jsx';
+import Summary from './summary-handler.jsx';
 import LegalName from './legal-name.jsx';
 
 class Router extends React.Component {
