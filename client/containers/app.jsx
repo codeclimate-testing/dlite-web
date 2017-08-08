@@ -12,18 +12,13 @@ import Routes from './routes.jsx';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <Provider store={createStore( reducers )}>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
 
-ReactDOM.render(
-  // Wrap App component instance within Provider
-  // Provider makes the Redux store available to the connect() calls in the component hierarchy   
-  <Provider store={createStore( reducers )}>
-    <App />
-  </Provider>,
-  document.getElementById('app')
-);
+ReactDOM.render(<App />, document.getElementById('app'));

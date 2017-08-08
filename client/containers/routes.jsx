@@ -3,9 +3,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Home    from './home.jsx';
-import Summary from './summary.jsx';
-import Names from '../containers/names.jsx';
+import Home    from '../presentations/home.jsx';
+import Summary from '../presentations/summary.jsx';
+import Names from './names.jsx';
 
 class Router extends React.Component {
   render() {
