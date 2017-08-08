@@ -12,4 +12,4 @@ export function updateLegalName(nameType, value) {
     type: 'UPDATE_LEGAL_NAME',
     payload: {nameType, value}
   }
-};
+}

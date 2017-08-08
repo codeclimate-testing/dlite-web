@@ -17,4 +17,4 @@ export default function(state = defaultState(), action) {
   }
 
   return Object.assign({}, state, nameData);
-};
+}
