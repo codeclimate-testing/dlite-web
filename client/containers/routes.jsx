@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 
 import Home    from '../presentations/home.jsx';
 import Summary from '../presentations/summary.jsx';
-import Names from './names.jsx';
+import LegalName from './legal-name.jsx';
 
 class Router extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Router extends React.Component {
       <div className='routes'>
         <Route path="/summary" component={Summary} />
         <Route path="/" exact component={Home} />
-        <Route path="/about-me/names" component={Names} />
+        <Route path="/about-me/names" component={LegalName} />
       </div>
     );
   }
