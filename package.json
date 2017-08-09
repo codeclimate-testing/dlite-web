@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "webpack -p",
     "start": "node index.js",
     "webpack-watch": "webpack -w",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
@@ -52,6 +53,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "webpack": "^2.6.0"
   }
 }

@@ -2,3 +2,5 @@ node_modules
 coverage
 .env
 log
+public/app.js
+public/app.css
