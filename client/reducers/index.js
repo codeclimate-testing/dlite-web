@@ -1,10 +1,10 @@
 'use strict';
 
 import { combineReducers } from "redux";
-import Names from "./reducer_names";
+import UpdateLegalNames from "./update-legal-name";
 
 const rootReducer = combineReducers({
-  names: Names  
+  legalName: UpdateLegalNames
 });
 
 export default rootReducer;

@@ -1,2 +1,2 @@
-import App from './client/components/app.jsx';
+import App from './client/containers/app.jsx';
 import CSS from './client/stylesheets/ca-style-all.scss';
