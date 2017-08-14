@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateLegalName }  from "../actions/index";
 import LegalNameForm        from "../presentations/name-form.jsx";
-import connectForm          from './connect-form';
+import connectForm          from '../helpers/connect-form';
 
 const LegalName = (props) => {
   return (
