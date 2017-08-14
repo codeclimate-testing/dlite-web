@@ -3,9 +3,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Home    from '../presentations/home.jsx';
-import Summary from './summary-handler.jsx';
-import LegalName from './legal-name.jsx';
+import Home       from '../presentations/home.jsx';
+import Summary    from './summary-handler.jsx';
+import LegalName  from './legal-name-form-container.jsx';
 import Addresses  from '../presentations/addresses-form.jsx';
 
 import alicePath from '../helpers/alice-path';
