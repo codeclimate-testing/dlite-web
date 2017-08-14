@@ -2,9 +2,10 @@
 
 function defaultState() {
   return {
-    firstName: '',
-    middleName: '',
-    lastName: ''
+    street: '',
+    city: '',
+    state: '',
+    zip: ''
   };
 }
 
@@ -13,7 +14,9 @@ export default function(state = defaultState(), action) {
   let payload = action.payload;
 
   if (payload) {
-    data[payload.name] = payload.value;
+    let name = payload.name;
+    let value = payload.value;
+    data[name] = value;
   }
 
   return Object.assign({}, state, data);

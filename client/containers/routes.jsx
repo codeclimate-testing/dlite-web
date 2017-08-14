@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import Home       from '../presentations/home.jsx';
 import Summary    from './summary-handler.jsx';
 import LegalName  from './legal-name-form-container.jsx';
-import Addresses  from '../presentations/addresses-form.jsx';
+import Addresses  from './residence-address-form-container.jsx';
 
 import alicePath from '../helpers/alice-path';
 

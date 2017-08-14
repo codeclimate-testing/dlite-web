@@ -38,22 +38,42 @@ module.exports = function(world) {
   });
 
   world.then('I will see my residence address on that summary', function(done) {
-    done(world.pending());
-  });
-
-  world.then('I will see the residence address I entered', function(done) {
-    done(world.pending());
+    let pageContent = browser.text('html');
+    assert(pageContent.includes('123 Main Street'), 'street address missing from summary');
+    assert(pageContent.includes('Crazidino'), 'city missing from summary');
+    assert(pageContent.includes('CA'), 'state missing from summary');
+    assert(pageContent.includes('94666'), 'zip missing from summary');
+    done();
   });
 
   world.given('I have already entered my residence address into the form', function(done) {
-    done(world.pending());
+    browser.clickLink('addresses', function() {
+      browser.fill('street', '123 Main Street');
+      browser.fill('city', 'Crazidino');
+      browser.select('state', 'CA');
+      browser.fill('zip', '94666');
+      browser.pressButton('Submit');
+      browser.clickLink('Back to application', done);
+    });
+  });
+
+  world.then('I will see the residence address I entered', function(done) {
+    let pageContent = browser.html();
+    assert(pageContent.includes('123 Main Street'), 'street address missing from summary');
+    assert(pageContent.includes('Crazidino'), 'city missing from summary');
+    assert(pageContent.includes('CA'), 'state missing from summary');
+    assert(pageContent.includes('94666'), 'zip missing from summary');
+    done();
   });
 
   world.and('I change my residence zip', function(done) {
-    done(world.pending());
+    browser.fill('zip', '91001');
+    done();
   });
 
   world.then('I will see my updated residence zip', function(done) {
-    done(world.pending());
+    let pageContent = browser.text('html');
+    assert(pageContent.includes('91001'), 'updated zip missing from summary');
+    done();
   });
 };

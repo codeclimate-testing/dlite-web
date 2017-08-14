@@ -1,15 +1,15 @@
 'use strict';
 
-export function submitLegalName() {
+export function updateLegalName(name, value) {
   return {
-    type: "SUBMIT_LEGAL_NAME",
-    payload: {}
+    type: 'UPDATE_LEGAL_NAME',
+    payload: { name, value }
   };
 }
 
-export function updateLegalName(nameType, value) {
+export function updateResidenceAddress(name, value, type) {
   return {
-    type: 'UPDATE_LEGAL_NAME',
-    payload: {nameType, value}
+    type: 'UPDATE_RESIDENCE_ADDRESS',
+    payload: { name, value }
   }
 }

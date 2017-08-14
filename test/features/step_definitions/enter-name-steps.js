@@ -44,10 +44,6 @@ module.exports = function(world) {
     browser.pressButton('submitNamesButton', done);
   });
 
-  world.and('I go to the page with my summary', function(done){
-    browser.clickLink('summary', done);
-  });
-  
   world.then('I will see my name on that summary', function(done){
     let text = browser.text('p');
     assert(text.includes('FirstName1'));
@@ -62,7 +58,7 @@ module.exports = function(world) {
     browser.fill('firstName', 'FirstName1')
         .fill('middleName', 'MiddleName1')
         .fill('lastName', 'LastName1')
-        .pressButton('submitNamesButton');    
+        .pressButton('submitNamesButton');
     browser.clickLink('Back to application', done);
   });
 
@@ -73,7 +69,7 @@ module.exports = function(world) {
     assert.equal(firstName, "FirstName1");
     assert.equal(middleName, 'MiddleName1');
     assert.equal(lastName, 'LastName1');
-    done();   
+    done();
   });
 
   world.and('I change my first name', function(done){
@@ -83,8 +79,7 @@ module.exports = function(world) {
 
   world.then('I will see my updated name', function(done){
     let text = browser.text('p');
-    assert(text.includes('FirstName2'));    
+    assert(text.includes('FirstName2'));
     done();
   });
-
 };

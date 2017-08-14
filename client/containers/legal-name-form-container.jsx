@@ -11,7 +11,8 @@ const LegalName = (props) => {
     <LegalNameForm
       onSubmit={props.onSubmit}
       onChange={props.onChange}
-      legalName={props.legalName} />
+      legalName={props.legalName}
+    />
   );
 };
 
