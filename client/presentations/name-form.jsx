@@ -3,10 +3,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import alicePath from '../helpers/alice-path';
+
 const LegalNameForm = (props) => {
   return (
     <div className='legal-name-form'>
-      <Link to='/'>Back to application</Link>
+      <Link to={ alicePath('/') }>Back to application</Link>
       <form onSubmit={props.onSubmit}>
         <label htmlFor="firstName">First Name</label>
         <div className="input-container">

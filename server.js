@@ -26,6 +26,10 @@ server.environment  = env.env;
 server.use(express.static('public'));
 
 server.get('/', (req, res) => {
+  res.redirect('/services');
+});
+
+server.get('/services*', (req, res) => {
   res.send(layout);
 });
 

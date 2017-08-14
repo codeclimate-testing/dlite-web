@@ -3,12 +3,14 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
 
+import alicePath from '../helpers/alice-path';
+
 const Home = () => {
   return (
     <div className='home-page'>
-    <Link to='/summary'>summary</Link>
-    {' | '}
-    <Link to="/about-me/names">about-me-names</Link>
+      <Link to={ alicePath('/summary') }>summary</Link>
+      {' | '}
+      <Link to={ alicePath('/about-me/names') }>about-me-names</Link>
     </div>
   );
 };
