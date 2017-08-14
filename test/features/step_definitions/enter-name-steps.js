@@ -5,10 +5,6 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  // world.given('I go to the new online DL application page', function(done) {
-  //   browser.visit(world.url('/'), done);
-  // });
-
   world.when('I visit about-me-names', function(done){
     browser.clickLink('about-me-names', done);
   });
@@ -47,10 +43,6 @@ module.exports = function(world) {
   world.and('I click to submit my name', function(done){
     browser.pressButton('submitNamesButton', done);
   });
-
-  // world.and('I click to return application', function(done) {
-  //   browser.clickLink('Back to application', done);
-  // });
 
   world.and('I go to the page with my summary', function(done){
     browser.clickLink('summary', done);
