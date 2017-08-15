@@ -71,7 +71,7 @@ module.exports = function (world) {
 
   world.then('I will see the original selection as not highlighted', function (done) {
     let text = browser.querySelector('.selected-button').value;
-    assert(!text.includes('Red'));
+    assert.notEqual(text.includes('Red'));
     done();
   });
 

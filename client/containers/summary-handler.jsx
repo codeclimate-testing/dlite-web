@@ -7,7 +7,8 @@ import HomeLink from '../presentations/home-link.jsx';
 import {
   SummaryEmpty,
   SummaryNames,
-  SummaryResidenceAddress
+  SummaryResidenceAddress,
+  SummaryHairColor
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -17,6 +18,10 @@ const hasNamesEntered = (props) => {
 const hasResidenceAddressEntered = (props) => {
   return props.street || props.city || props.zip;
 };
+
+const hasHairColorEntered = (props) => {
+  return props.hairColor;
+}
 
 const SummaryHandler = (props) => {
   let contents = [];
@@ -29,9 +34,11 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
   }
 
-if (hasHairColor(props.hairColor)) {
+  if (hasHairColorEntered(props.hairColor)) {
     contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
-  }  if (!contents.length) {
+  }
+
+  if (!contents.length) {
     contents.push(<SummaryEmpty key='summary'/>);
   }
 
@@ -46,7 +53,8 @@ if (hasHairColor(props.hairColor)) {
 function mapStateToProps(state) {
   return {
     legalName: state.legalName,
-    residenceAddress: state.residenceAddress
+    residenceAddress: state.residenceAddress,
+    hairColor: state.hairColor
   };
 }
 
