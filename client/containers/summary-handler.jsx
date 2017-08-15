@@ -7,7 +7,8 @@ import HomeLink from '../presentations/home-link.jsx';
 import {
   SummaryEmpty,
   SummaryNames,
-  SummaryResidenceAddress
+  SummaryResidenceAddress,
+  SummaryContactDetails
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -16,6 +17,10 @@ const hasNamesEntered = (props) => {
 
 const hasResidenceAddressEntered = (props) => {
   return props.street || props.city || props.zip;
+};
+
+const hasContactDetailsEntered = (props) => {
+  return props.emailAddress || props.phoneNumber;
 };
 
 const SummaryHandler = (props) => {
@@ -27,6 +32,10 @@ const SummaryHandler = (props) => {
 
   if (hasResidenceAddressEntered(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
+  }
+
+  if (hasContactDetailsEntered(props.contactDetails)) {
+    contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
   }
 
   if (!contents.length) {
@@ -44,7 +53,8 @@ const SummaryHandler = (props) => {
 function mapStateToProps(state) {
   return {
     legalName: state.legalName,
-    residenceAddress: state.residenceAddress
+    residenceAddress: state.residenceAddress,
+    contactDetails: state.contactDetails
   };
 }
 

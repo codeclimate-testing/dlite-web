@@ -13,3 +13,10 @@ export function updateResidenceAddress(name, value, type) {
     payload: { name, value }
   }
 }
+
+export function updateContactDetails(type, value) {
+  return{
+    type:'UPDATE_CONTACT_DETAILS',
+    payload: { type, value }
+  }
+}
