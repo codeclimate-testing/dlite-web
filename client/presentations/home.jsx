@@ -7,11 +7,17 @@ import alicePath from '../helpers/alice-path';
 
 const Home = () => {
   return (
-    <div className='home-page'>
-      <Link to={ alicePath('/summary') }>summary</Link>
-      {' | '}
-      <Link to={ alicePath('/about-me/names') }>about-me-names</Link>
-    </div>
+    <ul className='home-page'>
+      <li>
+        <Link to={ alicePath('/summary') }>summary</Link>
+      </li>
+      <li>
+        <Link to={ alicePath('/about-me/names') }>about-me-names</Link>
+      </li>
+      <li>
+        <Link to={ alicePath('/about-me/addresses') }>addresses</Link>
+      </li>
+    </ul>
   );
 };
 

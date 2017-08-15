@@ -2,26 +2,50 @@
 
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import {SummaryEmpty, SummaryNames} from '../presentations/summary-view.jsx';
+import HomeLink from '../presentations/home-link.jsx';
+import {
+  SummaryEmpty,
+  SummaryNames,
+  SummaryResidenceAddress
+} from '../presentations/summary-view.jsx';
 
-const SummaryHandler  = (props) => {
+const hasNamesEntered = (props) => {
+  return props.firstName || props.middleName || props.lastName;
+};
 
-  // If no names is available, show an empty summary
-  // Later this will be handled as part of html form validations
-  if(props.legalName.firstName !== '' ||
-      props.legalName.middleName !== '' ||
-      props.legalName.lastName !== '') {
-    return (<SummaryNames legalName={props.legalName} />);
+const hasResidenceAddressEntered = (props) => {
+  return props.street || props.city || props.zip;
+};
+
+const SummaryHandler = (props) => {
+  let contents = [];
+
+  if (hasNamesEntered(props.legalName)) {
+    contents.push(<SummaryNames legalName={props.legalName} key='names'/>);
   }
-  else{
-    return (<SummaryEmpty />);
+
+  if (hasResidenceAddressEntered(props.residenceAddress)) {
+    contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
   }
+
+  if (!contents.length) {
+    contents.push(<SummaryEmpty key='summary'/>);
+  }
+
+  return (
+    <div className='summary'>
+      <HomeLink />
+      { contents }
+    </div>
+  );
 }
 
 function mapStateToProps(state) {
-  return {legalName: state.legalName};
+  return {
+    legalName: state.legalName,
+    residenceAddress: state.residenceAddress
+  };
 }
 
 export default connect(mapStateToProps)(SummaryHandler);

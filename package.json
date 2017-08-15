@@ -27,7 +27,7 @@
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.4",
     "cssurf": "https://github.com/CDTDigital/cssurf.git",
-    "cucaroo": "^0.3.2",
+    "cucaroo": "^0.4.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.4",
