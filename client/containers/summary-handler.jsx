@@ -29,7 +29,9 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
   }
 
-  if (!contents.length) {
+if (hasHairColor(props.hairColor)) {
+    contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
+  }  if (!contents.length) {
     contents.push(<SummaryEmpty key='summary'/>);
   }
 

@@ -30,3 +30,11 @@ export const SummaryResidenceAddress = (props) => {
     </div>
   );
 };
+
+export const SummaryHairColor = (props) => {
+  return (
+    <div className='summary-page'>
+      <p> Hair Color: {props.hairColor.hairColor} </p>
+    </div>
+  )
+}

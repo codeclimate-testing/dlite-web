@@ -13,3 +13,10 @@ export function updateResidenceAddress(name, value, type) {
     payload: { name, value }
   }
 }
+
+export function updateHairColor(value) {
+  return {
+    type: 'UPDATE_HAIR_COLOR',
+    payload: {value}
+  }
+}
