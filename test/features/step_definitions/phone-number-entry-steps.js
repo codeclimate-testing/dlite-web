@@ -11,7 +11,7 @@ module.exports = function(world) {
 	});
 
 	world.and('I will see a button to submit my phone number', function(done){
-		assert(browser.button('submitContact'));
+		assert(browser.button('submitContactDetails'));
 		done();
 	});
 
@@ -21,7 +21,7 @@ module.exports = function(world) {
 	});
 
 	world.and('I click to submit my phone', function(done){
-		browser.pressButton('submitContact');
+		browser.pressButton('submitContactDetails');
 		done();
 	});
 
@@ -42,7 +42,7 @@ module.exports = function(world) {
 
 	world.and('I change my phone number', function(done){
 		browser.fill('phoneNumber', '(999) 000-1111');
-		browser.pressButton('submitContact');
+		browser.pressButton('submitContactDetails');
 		done();
 	});
 

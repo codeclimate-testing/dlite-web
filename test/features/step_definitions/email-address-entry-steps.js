@@ -6,7 +6,7 @@ module.exports = function(world) {
   let browser = world.browser;
 
   world.when('I visit /about-me/contact', function(done){
-    browser.clickLink('about-me-contact', done);
+    browser.clickLink('contacts', done);
 	});
 
 	world.then('I will see a field for email', function(done){
@@ -15,7 +15,7 @@ module.exports = function(world) {
 	});
 
 	world.and('I will see a button to submit my email', function(done){
-		assert(browser.button('submitContact'));
+		assert(browser.button('submitContactDetails'));
 		done();
 	});
 
@@ -25,7 +25,7 @@ module.exports = function(world) {
 	});
 
 	world.and('I click to submit my email', function(done){
-		browser.pressButton('submitContact');
+		browser.pressButton('submitContactDetails');
 		done();
 	});
 
