@@ -8,7 +8,7 @@ import connectForm        from '../helpers/connect-form';
 
 const HairColor = (props) => {
   return (
-    <HairColorForm onSubmit={props.onSubmit} onClick={props.onClick} hairColor={props.hairColor} />
+    <HairColorForm onSubmit={props.onSubmit} onChange={props.onChange} hairColor={props.hairColor} />
   );
 };
 

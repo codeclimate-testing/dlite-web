@@ -13,7 +13,7 @@ const HairColorForm = (props) => {
       <Link to={alicePath('/')} >Back to application</Link>
       <form name="hair-color-form" onSubmit={props.onSubmit} className='hair-color-form'>
 
-        <HairColorSelector hairColor={props.hairColor} onClick={props.onClick} />
+        <HairColorSelector hairColor={props.hairColor} onChange={props.onChange} />
 
         <div className="input-container">
           <input type="submit" name="submit-hair-color" value="Submit" />

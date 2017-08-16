@@ -9,7 +9,7 @@ const HairColorSelector = (props) => {
   let hairColorOptions = hairColors.map((color) => {
     return (
       <div key={color} className="input-container hair-color">
-        <button name='hairColor' value={color} onClick={props.onClick} className={props.hairColor.hairColor === color ? 'selected-button' : 'unselected-button'}> {color} </button>
+        <button name='hairColor' value={color} onClick={props.onChange} className={props.hairColor.hairColor === color ? 'selected-button' : 'unselected-button'}> {color} </button>
       </div>
     );
   });
