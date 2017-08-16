@@ -7,4 +7,4 @@ export default function onClickGenerator(action, dispatch) {
     let value = target.value;
     dispatch(action(name, value));
   };
-};
+}
