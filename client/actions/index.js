@@ -15,8 +15,15 @@ export function updateResidenceAddress(name, value, type) {
 }
 
 export function updateContactDetails(type, value) {
-  return{
+  return {
     type:'UPDATE_CONTACT_DETAILS',
     payload: { type, value }
+  }
+}
+
+export function updateEyeColor(name, value) {
+  return {
+    type: 'UPDATE_EYE_COLOR',
+    payload: { name, value }
   }
 }

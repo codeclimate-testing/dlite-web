@@ -39,3 +39,11 @@ export const SummaryContactDetails = (props) => {
     </div>
   );
 };
+
+export const SummaryEyeColor = (props) => {
+  return (
+    <div className='summary-section'>
+      <p> Eye Color: {props.eyeColor.eyeColor} </p>
+    </div>
+  )
+}

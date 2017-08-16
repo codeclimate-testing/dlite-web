@@ -1,5 +1,7 @@
 'use strict';
 
+const assert = require('assert');
+
 module.exports = function (world) {
   let browser = world.browser;
 

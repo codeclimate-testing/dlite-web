@@ -8,6 +8,7 @@ import Summary    from './summary-handler.jsx';
 import LegalName  from './legal-name-form-container.jsx';
 import Addresses  from './residence-address-form-container.jsx';
 import Contact    from './contact-details-form-container.jsx';
+import EyeColor   from './eye-color-form-container.jsx';
 
 import alicePath from '../helpers/alice-path';
 
@@ -20,6 +21,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/names') } component={LegalName} />
         <Route path={ alicePath('/about-me/addresses') } component={Addresses} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
+        <Route path={ alicePath('/about-me/appearance/eye') } component={EyeColor} />
       </div>
     );
   }
