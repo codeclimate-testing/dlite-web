@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import {updateHairColor}  from "../actions/index";
+import { updateHairColor }  from "../actions/index";
 import HairColorForm      from "../presentations/hair-color-form.jsx";
 import connectForm        from '../helpers/connect-form';
 

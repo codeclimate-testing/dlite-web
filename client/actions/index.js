@@ -14,9 +14,9 @@ export function updateResidenceAddress(name, value, type) {
   }
 }
 
-export function updateHairColor(value) {
+export function updateHairColor(name, value) {
   return {
     type: 'UPDATE_HAIR_COLOR',
-    payload: {value}
+    payload: { name, value }
   }
 }
