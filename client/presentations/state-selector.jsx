@@ -63,7 +63,7 @@ const stateList = [
 
 const StateSelector = (props) => {
   let id = `${props.type}State`;
-  let value = props.value || 'CA';
+  let value = props.value;
 
   let options = stateList.map((stateCode) => {
     return <Option key={stateCode} identifier={stateCode} value={props.value}/>;

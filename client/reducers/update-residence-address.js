@@ -4,7 +4,7 @@ function defaultState() {
   return {
     street: '',
     city: '',
-    state: '',
+    state: 'CA',
     zip: ''
   };
 }
