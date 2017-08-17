@@ -4,22 +4,39 @@ import React from 'react';
 
 const eyeColors = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
 
-const EyeColorSSelector = (props) => {
+const selectedCSS = (propValue, selectedValue) => {
+  return propValue === selectedValue ? 'selected-button' : 'unselected-button';
+}
 
+const ColorSelector = function(props) {
+  let name = `${props.type}Color`;
+  let containerClassName = `input-container ${ props.type }-color`;
+
+  return (
+    <div key={props.color} className={containerClassName}>
+      <button
+          name={name}
+          value={props.color}
+          onClick={props.onClick}
+          className={ selectedCSS(props.eyeColor, props.color) }>
+        {props.color}
+      </button>
+    </div>
+  );
+}
+
+const EyeColorSelectors = (props) => {
   let eyeColorOptions = eyeColors.map((color) => {
     return (
-      <div key={color} className="input-container eye-color">
-        <button name='eyeColor' value={color} onClick={props.onChange} className={props.eyeColor.eyeColor === color ? 'selected-button' : 'unselected-button'}> {color} </button>
-      </div>
+      <ColorSelector key={color} type='eye' color={color} eyeColor={props.eyeColor.eyeColor} onClick={props.onChange} />
     );
   });
 
   return (
     <div className='select-eye-color-block'>
-      {eyeColorOptions}
+      { eyeColorOptions }
     </div>
   );
-
 }
 
-export default EyeColorSSelector;
+export default EyeColorSelectors;
