@@ -8,8 +8,9 @@ import {
   SummaryEmpty,
   SummaryNames,
   SummaryResidenceAddress,
-  SummaryHairColor,
-  SummaryContactDetails
+  SummaryContactDetails,
+  SummaryEyeColor,
+  SummaryHairColor
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -27,6 +28,10 @@ const hasHairColorEntered = (props) => {
 const hasContactDetailsEntered = (props) => {
   return props.emailAddress || props.phoneNumber;
 };
+
+const hasEyeColorEntered = (props) => {
+  return props.eyeColor;
+}
 
 const SummaryHandler = (props) => {
   let contents = [];
@@ -47,6 +52,10 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
   }
 
+  if (hasEyeColorEntered(props.eyeColor)) {
+    contents.push(<SummaryEyeColor eyeColor={props.eyeColor} key='eyeColor'/>);
+  }
+
   if (!contents.length) {
     contents.push(<SummaryEmpty key='summary'/>);
   }
@@ -63,8 +72,9 @@ function mapStateToProps(state) {
   return {
     legalName: state.legalName,
     residenceAddress: state.residenceAddress,
+    contactDetails: state.contactDetails,
+    eyeColor: state.eyeColor,
     hairColor: state.hairColor,
-    contactDetails: state.contactDetails
   };
 }
 
