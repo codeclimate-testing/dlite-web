@@ -24,18 +24,8 @@ module.exports = function (world) {
     done();
   });
 
-  world.when('I select eye color', function(done){
-    browser.pressButton('Green', done);
-  });
-
-  world.and('I click to submit that description of my eye color', function(done){
+  world.and('I submit that description of my eye color', function(done){
     browser.pressButton('submitEyeColor', done);
-  });
-
-  world.then('I will see my eye color is on that summary', function(done){
-    let pageContent = browser.text('html');
-    assert(pageContent.includes('Green'), 'Eye color missing from summary');
-    done();
   });
 
   world.given('I have already entered my eye color into the form', function(done){
@@ -46,9 +36,9 @@ module.exports = function (world) {
     });
   });
 
-  world.then('I will see the eye color I selected', function(done){
-    let text = browser.querySelector('.selected-button').value;
-    assert(text.includes('Hazel'));
+  world.then('I will see the eye color I selected', function(done) {
+    let pageContent = browser.text('html');
+    assert(pageContent.includes('Blue'), 'Eye color not saved in summary');
     done();
   });
 
@@ -56,23 +46,23 @@ module.exports = function (world) {
     browser.pressButton('Blue', done);
   });
 
-  world.and('I see that color selected', function(done){
+  world.and('I see that eye color selected', function(done){
     let text = browser.querySelector('.selected-button').value;
     assert(text.includes('Blue'));
     done();
   });
 
-  world.and('I realize I made the wrong selection and change it', function(done){
+  world.and('I realize I made the wrong eye color selection and change it', function(done){
     browser.pressButton('Brown', done);
   });
 
-  world.then('I will see the original selection as not highlighted', function(done){
+  world.then('I will see the original eye color selection as not highlighted', function(done){
     let text = browser.querySelector('.selected-button').value;
     assert.notEqual(text.includes('Blue'));
     done();
   });
 
-  world.and('I will see the new selection has been highlighted', function(done){
+  world.and('I will see the new eye color selection has been highlighted', function(done){
     let text = browser.querySelector('.selected-button').value;
     assert(text.includes('Brown'));
     done();
@@ -87,5 +77,4 @@ module.exports = function (world) {
     assert(pageContent.includes('Gray'), 'Eye color no updated in summary');
     done();
   });
-
 };
