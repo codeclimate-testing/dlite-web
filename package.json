@@ -11,7 +11,9 @@
     "test": "npm run test:server && npm run test:acceptance",
     "test:server": "node_modules/.bin/mocha --recursive test/server",
     "test:acceptance": "node_modules/.bin/cucaroo",
-    "test:coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive test/server",
+    "test:coverage": "npm run test:unit:coverage && npm run test:bdd:coverage && node test/support/coverage.js",
+    "test:unit:coverage": "node_modules/.bin/istanbul cover -dir=coverage/unit node_modules/.bin/_mocha -- --recursive test/server",
+    "test:bdd:coverage": "node_modules/.bin/istanbul cover -dir=coverage/bdd node_modules/.bin/cucaroo",
     "test:security": "node_modules/.bin/nsp check",
     "lint": "node_modules/.bin/jshint test/ server/ server.js index.js"
   },
