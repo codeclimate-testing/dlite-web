@@ -2,10 +2,7 @@
 
 function defaultState() {
   return {
-    street: '',
-    city: '',
-    state: 'CA',
-    zip: ''
+    hairColor: ''
   };
 }
 
@@ -14,10 +11,9 @@ export default function(state = defaultState(), action) {
   let payload = action.payload;
 
   if (payload) {
-    let name = payload.name;
-    let value = payload.value;
-    data[name] = value;
+    data[payload.name] = payload.value;
   }
 
   return Object.assign({}, state, data);
+
 }

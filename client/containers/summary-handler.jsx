@@ -10,6 +10,7 @@ import {
   SummaryResidenceAddress,
   SummaryContactDetails,
   SummaryEyeColor
+  SummaryHairColor,
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -18,6 +19,10 @@ const hasNamesEntered = (props) => {
 
 const hasResidenceAddressEntered = (props) => {
   return props.street || props.city || props.zip;
+};
+
+const hasHairColorEntered = (props) => {
+  return props.hairColor;
 };
 
 const hasContactDetailsEntered = (props) => {
@@ -37,6 +42,10 @@ const SummaryHandler = (props) => {
 
   if (hasResidenceAddressEntered(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
+  }
+
+  if (hasHairColorEntered(props.hairColor)) {
+    contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
   }
 
   if (hasContactDetailsEntered(props.contactDetails)) {
@@ -64,7 +73,8 @@ function mapStateToProps(state) {
     legalName: state.legalName,
     residenceAddress: state.residenceAddress,
     contactDetails: state.contactDetails,
-    eyeColor: state.eyeColor
+    eyeColor: state.eyeColor,
+    hairColor: state.hairColor,
   };
 }
 
