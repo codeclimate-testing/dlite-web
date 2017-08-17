@@ -20,3 +20,10 @@ export function updateHairColor(name, value) {
     payload: { name, value }
   }
 }
+
+export function updateContactDetails(type, value) {
+  return{
+    type:'UPDATE_CONTACT_DETAILS',
+    payload: { type, value }
+  }
+}
