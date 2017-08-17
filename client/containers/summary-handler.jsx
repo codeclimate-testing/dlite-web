@@ -9,8 +9,8 @@ import {
   SummaryNames,
   SummaryResidenceAddress,
   SummaryContactDetails,
-  SummaryEyeColor
-  SummaryHairColor,
+  SummaryEyeColor,
+  SummaryHairColor
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
