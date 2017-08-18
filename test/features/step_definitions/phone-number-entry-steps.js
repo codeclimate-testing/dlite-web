@@ -29,11 +29,11 @@ module.exports = function (world) {
     let text = browser.text('p');
     assert(text.includes('(111) 000-8888'));
     done();
-  })
+  });
 
   world.given('I have already entered my phone into the form', function (done) {
     done();
-  })
+  });
 
   world.then('I will see the phone I entered', function (done) {
     assert.equal(browser.field('phoneNumber').value, '(111) 000-8888');
