@@ -1,36 +1,24 @@
 'use strict';
 
-export function updateLegalName(name, value) {
-  return {
-    type: 'UPDATE_LEGAL_NAME',
-    payload: { name, value }
+function generateAction(type) {
+  return function action(name, value) {
+    return {
+      type: type,
+      payload: { name, value }
+    };
   };
 }
 
-export function updateResidenceAddress(name, value, type) {
-  return {
-    type: 'UPDATE_RESIDENCE_ADDRESS',
-    payload: { name, value }
-  }
-}
+export const updateLegalName        = generateAction('UPDATE_LEGAL_NAME');
+export const updateResidenceAddress = generateAction('UPDATE_RESIDENCE_ADDRESS');
+export const updateHairColor        = generateAction('UPDATE_HAIR_COLOR');
+export const updateEyeColor         = generateAction('UPDATE_EYE_COLOR');
+//export const updateContactDetails   = generateAction('UPDATE_CONTACT_DETAILS');
 
-export function updateHairColor(name, value) {
-  return {
-    type: 'UPDATE_HAIR_COLOR',
-    payload: { name, value }
-  }
-}
-
+// Not sure why this isn't working ^^^, but something about this is different ??
 export function updateContactDetails(type, value) {
   return {
     type:'UPDATE_CONTACT_DETAILS',
     payload: { type, value }
   }
-}
-
-export function updateEyeColor(name, value) {
-  return {
-    type: 'UPDATE_EYE_COLOR',
-    payload: { name, value }
-  }
-}
+};
