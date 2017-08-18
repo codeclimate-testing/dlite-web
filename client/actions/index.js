@@ -21,4 +21,4 @@ export function updateContactDetails(type, value) {
     type:'UPDATE_CONTACT_DETAILS',
     payload: { type, value }
   }
-};
+}
