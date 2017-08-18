@@ -2,9 +2,10 @@
 
 import React from 'react';
 
-import HomeLink from './home-link.jsx';
-import alicePath from '../helpers/alice-path';
-import EyeColorSelector from './eye-color-selector.jsx';
+import ColorSelectorCollection from './color-selectors-collection.jsx';
+import HomeLink                from './home-link.jsx';
+
+const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
 
 const EyeColorForm = (props) => {
   return (
@@ -12,7 +13,12 @@ const EyeColorForm = (props) => {
       <HomeLink />
 
       <form name="eye-color-form" onSubmit={props.onSubmit} className='eye-color-form'>
-        <EyeColorSelector eyeColor={props.eyeColor} onChange={props.onChange} />
+        <ColorSelectorCollection
+          colors={COLORS}
+          type='eye'
+          onChange={props.onChange}
+          state={props.eyeColor}
+        />
 
         <div className="input-container">
           <input type="submit" name="submitEyeColor" value="Submit" />

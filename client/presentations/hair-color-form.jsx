@@ -1,19 +1,24 @@
 'use strict';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import alicePath from '../helpers/alice-path';
-import HairColorSelector from './hair-color-selector.jsx';
+import ColorSelectorCollection from './color-selectors-collection.jsx';
+import HomeLink                from './home-link.jsx';
+
+const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
 
 const HairColorForm = (props) => {
-
   return (
     <div>
-      <Link to={alicePath('/')} >Back to application</Link>
-      <form name="hair-color-form" onSubmit={props.onSubmit} className='hair-color-form'>
+      <HomeLink />
 
-        <HairColorSelector hairColor={props.hairColor} onChange={props.onChange} />
+      <form name="hair-color-form" onSubmit={props.onSubmit} className='hair-color-form'>
+        <ColorSelectorCollection
+          colors={COLORS}
+          type='hair'
+          onChange={props.onChange}
+          state={props.hairColor}
+        />
 
         <div className="input-container">
           <input type="submit" name="submit-hair-color" value="Submit" />

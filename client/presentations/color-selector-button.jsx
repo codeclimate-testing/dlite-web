@@ -2,8 +2,6 @@
 
 import React from 'react';
 
-const hairColors = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
-
 const selectedCSS = (propValue, selectedValue) => {
   return propValue === selectedValue ? 'selected-button' : 'unselected-button';
 };
@@ -25,19 +23,4 @@ const ColorSelector = function(props) {
   );
 };
 
-const HairColorSelector = (props) => {
-
-  let hairColorOptions = hairColors.map((color) => {
-    return (
-      <ColorSelector key={color} type='hair' color={color} currentColor={props.hairColor.hairColor} onClick={props.onChange} />
-    );
-  });
-
-  return (
-    <div className='select-hair-color-block'>
-      { hairColorOptions }
-    </div>
-  );
-}
-
-export default HairColorSelector;
+export default ColorSelector;
