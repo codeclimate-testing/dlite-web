@@ -2,14 +2,20 @@
 
 import React from 'react';
 
-import { updateEyeColor }  from "../actions/index";
-import EyeColorForm      from "../presentations/eye-color-form.jsx";
-import connectForm        from '../helpers/connect-form';
+import colorFormBuilder     from '../presentations/color-form-builder';
+import { updateEyeColor }   from "../actions/index";
+import connectForm          from '../helpers/connect-form';
+
+const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
+const EyeColorForm = colorFormBuilder(COLORS, 'eye');
 
 const EyeColor = (props) => {
-
   return (
-    <EyeColorForm onSubmit={props.onSubmit} onChange={props.onChange} eyeColor={props.eyeColor} />
+    <EyeColorForm
+      onSubmit={props.onSubmit}
+      onChange={props.onChange}
+      eyeColor={props.eyeColor}
+    />
   );
 };
 

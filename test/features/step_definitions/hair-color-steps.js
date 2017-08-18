@@ -23,7 +23,7 @@ module.exports = function (world) {
   });
 
   world.and('I will see a button to submit my information about my hair color', function (done) {
-    assert.ok(browser.button('submit-hair-color'));
+    assert.ok(browser.button('Submit'));
     done();
   });
 
@@ -32,7 +32,7 @@ module.exports = function (world) {
   });
 
   world.and('I click to submit that description', function (done) {
-    browser.pressButton('submit-hair-color', done);
+    browser.pressButton('Submit', done);
   });
 
   world.then('I will see my hair color is on that summary', function (done) {
@@ -45,7 +45,7 @@ module.exports = function (world) {
     browser.clickLink('Back to application');
     browser.clickLink('hair-color');
     browser.pressButton('Black');
-    browser.pressButton('submit-hair-color');
+    browser.pressButton('Submit');
     browser.clickLink('Back to application', done);
   });
 
