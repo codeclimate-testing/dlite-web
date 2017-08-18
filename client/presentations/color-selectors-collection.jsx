@@ -5,7 +5,6 @@ import ColorSelectorButton from './color-selector-button.jsx';
 
 const HairColorSelector = (props) => {
   let typeName = `${props.type}Color`;
-  let collectionClassName = `${props.type}-selector-collection`;
   let currentColor = props.state[typeName];
 
   let colorButtons = props.colors.map((color) => {
@@ -21,7 +20,7 @@ const HairColorSelector = (props) => {
   });
 
   return (
-    <div className={collectionClassName}>
+    <div className='row selector-collection'>
       { colorButtons }
     </div>
   );

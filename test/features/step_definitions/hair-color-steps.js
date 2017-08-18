@@ -50,7 +50,7 @@ module.exports = function (world) {
   });
 
   world.then('I will see the hair color I selected', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Black'));
     done();
   });
@@ -60,7 +60,7 @@ module.exports = function (world) {
   });
 
   world.and('I see that color selected', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Red'));
     done();
   });
@@ -70,13 +70,13 @@ module.exports = function (world) {
   });
 
   world.then('I will see the original selection as not highlighted', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert.notEqual(text.includes('Red'));
     done();
   });
 
   world.and('I will see the new selection has been highlighted', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Other'));
     done();
   });

@@ -5,6 +5,10 @@ import React from 'react';
 import ColorSelectorCollection from './color-selectors-collection.jsx';
 import HomeLink                from './home-link.jsx';
 
+const formGenerator = (colors, type) => {
+  
+};
+
 const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
 
 
@@ -34,3 +38,4 @@ const EyeColorForm = (props) => {
 };
 
 export default EyeColorForm;
+

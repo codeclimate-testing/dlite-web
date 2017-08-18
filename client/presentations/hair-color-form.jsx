@@ -20,9 +20,7 @@ const HairColorForm = (props) => {
           state={props.hairColor}
         />
 
-        <div className="input-container">
-          <input type="submit" name="submit-hair-color" value="Submit" />
-        </div>
+        <input type="submit" name="submit-hair-color" value="Submit" />
       </form>
     </div>
   )
