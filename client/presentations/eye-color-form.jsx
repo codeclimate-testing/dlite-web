@@ -2,35 +2,9 @@
 
 import React from 'react';
 
-import ColorSelectorCollection from './color-selectors-collection.jsx';
-import HomeLink                from './home-link.jsx';
+import colorFormBuilder        from './color-form-builder';
 
 const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
-
-
-const EyeColorForm = (props) => {
-  let type = 'eye';
-  let formClassName = `${type}-color-form inner-top inner-bottom`;
-  let buttonName = `submit${type[0].toUpperCase()}${type.slice(1)}Color`;
-
-  return (
-    <div>
-      <HomeLink />
-
-      <form name="eye-color-form" onSubmit={props.onSubmit} className={formClassName}>
-        <div className='inner-bottom'>
-          <ColorSelectorCollection
-            colors={COLORS}
-            type={type}
-            onChange={props.onChange}
-            state={props.eyeColor}
-          />
-        </div>
-
-        <input type="submit" name={buttonName} value="Submit" />
-      </form>
-    </div>
-  );
-};
+const EyeColorForm = colorFormBuilder(COLORS, 'eye');
 
 export default EyeColorForm;

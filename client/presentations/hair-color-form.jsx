@@ -2,28 +2,9 @@
 
 import React from 'react';
 
-import ColorSelectorCollection from './color-selectors-collection.jsx';
-import HomeLink                from './home-link.jsx';
+import colorFormBuilder from './color-form-builder';
 
 const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
-
-const HairColorForm = (props) => {
-  return (
-    <div>
-      <HomeLink />
-
-      <form name="hair-color-form" onSubmit={props.onSubmit} className='hair-color-form'>
-        <ColorSelectorCollection
-          colors={COLORS}
-          type='hair'
-          onChange={props.onChange}
-          state={props.hairColor}
-        />
-
-        <input type="submit" name="submit-hair-color" value="Submit" />
-      </form>
-    </div>
-  )
-};
+const HairColorForm = colorFormBuilder(COLORS, 'hair');
 
 export default HairColorForm;
