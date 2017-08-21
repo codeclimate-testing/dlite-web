@@ -38,6 +38,7 @@ label.button {
 
   &:focus {
     text-decoration: underline;
+    background-color: $accent-light;
     @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
   }
 
@@ -73,7 +74,8 @@ label.button {
   &.neutral {
     background-color: $neutral-30;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $neutral-20;
     }
 
