@@ -12,7 +12,7 @@ Feature: CRUD operations on the mailing address
   Scenario: Choosing to use my residence as my mailing address
     Given I have already entered my residence address into the form
     When I click the checkbox to use my residence as my mailing address
-    Then the form showing my mailing address will disappear
+    Then The form showing my mailing address will disappear
 
   Scenario: Entering my mailing address and saving
     Given I have already entered my residence address into the form
@@ -24,13 +24,13 @@ Feature: CRUD operations on the mailing address
   Scenario: Seeing a form with existing data
     Given I have already entered my residence address into the form
     And I have entered my mailing address
-    When I visit '/about-me/addresses'
+    When I visit the addresses page
     Then I will see the mailing address I entered
 
   Scenario: Updating mailing address data
     Given I have already entered my residence address into the form
     And I have entered my mailing address
-    When I visit '/about-me/addresses'
+    When I visit the addresses page
     And I change my mailing city
     And I go to the page with my summary
     Then I will see my updated mailing city
