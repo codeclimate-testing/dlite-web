@@ -66,7 +66,7 @@ module.exports = function(world) {
     let firstName = browser.field('firstName').value;
     let middleName = browser.field('middleName').value;
     let lastName = browser.field('lastName').value;
-    assert.equal(firstName, "FirstName1");
+    assert.equal(firstName, 'FirstName1');
     assert.equal(middleName, 'MiddleName1');
     assert.equal(lastName, 'LastName1');
     done();

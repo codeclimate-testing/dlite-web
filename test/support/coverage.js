@@ -1,8 +1,8 @@
 const istanbul = require('istanbul'),
   fs = require('fs'),
   path = require('path'),
-  collector = new istanbul.Collector()
-reporter = new istanbul.Reporter();
+  collector = new istanbul.Collector(),
+  reporter = new istanbul.Reporter();
 
 const workingDir = `${__dirname}/../../coverage`;
 

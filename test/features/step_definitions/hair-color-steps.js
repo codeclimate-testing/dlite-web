@@ -23,7 +23,7 @@ module.exports = function (world) {
   });
 
   world.and('I will see a button to submit my information about my hair color', function (done) {
-    assert.ok(browser.button('submit-hair-color'));
+    assert.ok(browser.button('Submit'));
     done();
   });
 
@@ -32,7 +32,7 @@ module.exports = function (world) {
   });
 
   world.and('I click to submit that description', function (done) {
-    browser.pressButton('submit-hair-color', done);
+    browser.pressButton('Submit', done);
   });
 
   world.then('I will see my hair color is on that summary', function (done) {
@@ -45,12 +45,12 @@ module.exports = function (world) {
     browser.clickLink('Back to application');
     browser.clickLink('hair-color');
     browser.pressButton('Black');
-    browser.pressButton('submit-hair-color');
+    browser.pressButton('Submit');
     browser.clickLink('Back to application', done);
   });
 
   world.then('I will see the hair color I selected', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Black'));
     done();
   });
@@ -60,7 +60,7 @@ module.exports = function (world) {
   });
 
   world.and('I see that color selected', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Red'));
     done();
   });
@@ -70,13 +70,13 @@ module.exports = function (world) {
   });
 
   world.then('I will see the original selection as not highlighted', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert.notEqual(text.includes('Red'));
     done();
   });
 
   world.and('I will see the new selection has been highlighted', function (done) {
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Other'));
     done();
   });

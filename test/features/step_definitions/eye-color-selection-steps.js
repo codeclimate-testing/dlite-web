@@ -47,7 +47,7 @@ module.exports = function (world) {
   });
 
   world.and('I see that eye color selected', function(done){
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Blue'));
     done();
   });
@@ -57,13 +57,13 @@ module.exports = function (world) {
   });
 
   world.then('I will see the original eye color selection as not highlighted', function(done){
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert.notEqual(text.includes('Blue'));
     done();
   });
 
   world.and('I will see the new eye color selection has been highlighted', function(done){
-    let text = browser.querySelector('.selected-button').value;
+    let text = browser.querySelector('button.selected').value;
     assert(text.includes('Brown'));
     done();
   });

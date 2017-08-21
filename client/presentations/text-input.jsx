@@ -3,7 +3,7 @@
 import React from 'react';
 
 const TextInput = (props) => {
-  let id = `${props.type}${props.identifier.toUpperCase()}`;
+  let id = `${props.type || ''}${props.identifier[0].toUpperCase()}${props.identifier.slice(1)}`;
 
   return (
     <div className='text-input-block'>

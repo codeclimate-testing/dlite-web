@@ -9,10 +9,10 @@ function defaultState() {
 
 export default function(state = defaultState(), action) {
   let data = {};
-  let payload = action.payload;
 
+  let payload = action.payload;
   if (payload) {
-    data[payload.type] = payload.value;
+    data[payload.name] = payload.value;
   }
 
   return Object.assign({}, state, data);
