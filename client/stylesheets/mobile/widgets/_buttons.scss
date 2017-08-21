@@ -33,23 +33,29 @@ label.button {
 
   &:hover {
     text-decoration: none;
-    background-color: $primary-light;
+    background-color: $accent-light;
+  }
+
+  &:focus {
+    text-decoration: underline;
+    background-color: $accent-light;
+    @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
   }
 
   &:active {
-    background-color: $primary-dark;
+    background-color: $accent-dark;
     @include depressed-shadow;
   }
 
   &.accent {
-    background-color: $accent;
+    background-color: $primary;
 
     &:hover {
-      background-color: $accent-light;
+      background-color: $primary-light;
     }
 
     &:active {
-      background-color: $accent-dark;
+      background-color: $primary-dark;
     }
   }
 
@@ -66,14 +72,15 @@ label.button {
   }
 
   &.neutral {
-    background-color: $neutral-50;
+    background-color: $neutral-30;
 
-    &:hover {
-      background-color: $neutral-40;
+    &:hover,
+    &:focus {
+      background-color: $neutral-20;
     }
 
     &:active {
-      background-color: $neutral-60;
+      background-color: $neutral-40;
     }
   }
 

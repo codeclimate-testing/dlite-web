@@ -20,8 +20,10 @@ const HairColorSelector = (props) => {
   });
 
   return (
-    <div className='row selector-collection'>
-      { colorButtons }
+    <div className='row selector-collection'
+      role='radiogroup'
+      aria-labelledby={typeName}>
+        { colorButtons }
     </div>
   );
 }

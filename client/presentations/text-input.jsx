@@ -12,7 +12,6 @@ const TextInput = (props) => {
         <input  type="text"
                 id={ id }
                 name={ props.identifier }
-                placeholder={ props.description }
                 onChange={ props.onChange }
                 value={ props.value }/>
       </div>
