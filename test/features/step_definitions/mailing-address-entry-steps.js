@@ -9,7 +9,7 @@ module.exports = function(world) {
     let field = browser.field('copyFromResidentialAddress');
     assert.ok(field);
 
-    let isChecked = browser.querySelector(field).value;
+    let isChecked = browser.querySelector('#copyFromResidentialAddress').checked;
     assert(!isChecked, 'Checkbox is checked');
 
     done();
@@ -45,10 +45,10 @@ module.exports = function(world) {
   })
 
   world.then('The form showing my mailing address will disappear', function(done){
-    let form = browser.querySelector('mailingAddressForm');
+    let form = browser.querySelector('#mailingAddressForm');
     assert.ok(!form);
 
-    done();
+    done(world.pending());
   })
 
   world.when('I enter my mailing address data', function(done){
@@ -84,7 +84,7 @@ module.exports = function(world) {
   });
 
   world.then('I will see the mailing address I entered', function(done){
-    let pageContent = browser.text('html');
+    let pageContent = browser.html();
     assert(pageContent.includes('456 Main Street'), 'mailing street address missing from summary');
     assert(pageContent.includes('Dinocrazi'), 'mailing city missing from summary');
     assert(pageContent.includes('MA'), 'mailing state missing from summary');

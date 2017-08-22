@@ -8,6 +8,7 @@ import {
   SummaryEmpty,
   SummaryNames,
   SummaryResidenceAddress,
+  SummaryMailingAddress,
   SummaryContactDetails,
   SummaryEyeColor,
   SummaryHairColor
@@ -19,6 +20,10 @@ const hasNamesEntered = (props) => {
 
 const hasResidenceAddressEntered = (props) => {
   return props.street || props.city || props.zip;
+};
+
+const hasMailingAddressEntered = (props) => {
+  return props.mailingStreet || props.mailingCity || props.mailingZip;
 };
 
 const hasHairColorEntered = (props) => {
@@ -42,6 +47,10 @@ const SummaryHandler = (props) => {
 
   if (hasResidenceAddressEntered(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
+  }
+
+  if (hasMailingAddressEntered(props.mailingAddress)) {
+    contents.push(<SummaryMailingAddress mailingAddress={props.mailingAddress} key='mailingAddress'/>);
   }
 
   if (hasHairColorEntered(props.hairColor)) {
@@ -72,6 +81,7 @@ function mapStateToProps(state) {
   return {
     legalName: state.legalName,
     residenceAddress: state.residenceAddress,
+    mailingAddress: state.mailingAddress,
     contactDetails: state.contactDetails,
     eyeColor: state.eyeColor,
     hairColor: state.hairColor,

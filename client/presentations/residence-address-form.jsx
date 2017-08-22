@@ -1,16 +1,13 @@
 'use strict';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import StateSelector from './state-selector.jsx';
 import TextInput from './text-input.jsx';
-import alicePath from '../helpers/alice-path';
 
 const ResidenceAddressForm = (props) => {
   return (
     <div className='addresses-section'>
-      <Link to={ alicePath('/') }>Back to application</Link>
 
       <div className='residential-address-form'>
         <form onSubmit={props.onSubmit}>
@@ -32,6 +29,7 @@ const ResidenceAddressForm = (props) => {
 
           <StateSelector
             type='residential'
+            identifier='state'
             value={props.residenceAddress.state}
             onChange={props.onChange}
           />

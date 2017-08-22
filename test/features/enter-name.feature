@@ -1,4 +1,4 @@
-Feature:  I want to enter my name 
+Feature:  I want to enter my name
   As a DMV customer
   I want to save my name in my new online DL application
   So that my id is issued with the correct name

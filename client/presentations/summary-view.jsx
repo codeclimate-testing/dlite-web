@@ -23,10 +23,23 @@ export const SummaryNames = (props) => {
 export const SummaryResidenceAddress = (props) => {
   return (
     <div className='summary-section'>
+      <p>Residential address: </p>
       <p>Street: {props.residenceAddress.street}</p>
       <p>City: {props.residenceAddress.city}</p>
       <p>State: {props.residenceAddress.state}</p>
       <p>Zipcode: {props.residenceAddress.zip}</p>
+    </div>
+  );
+};
+
+export const SummaryMailingAddress = (props) => {
+  return (
+    <div className='summary-section'>
+      <p>Mailing address: </p>
+      <p>Street: {props.mailingAddress.mailingStreet}</p>
+      <p>City: {props.mailingAddress.mailingCity}</p>
+      <p>State: {props.mailingAddress.mailingState}</p>
+      <p>Zipcode: {props.mailingAddress.mailingZip}</p>
     </div>
   );
 };
