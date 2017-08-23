@@ -10,6 +10,9 @@ const ResidenceAddressForm = (props) => {
     <div className='addresses-section'>
 
       <div className='residential-address-form'>
+
+        <h3> Residential Address: </h3>
+
         <form onSubmit={props.onSubmit}>
           <TextInput
             type='residential'

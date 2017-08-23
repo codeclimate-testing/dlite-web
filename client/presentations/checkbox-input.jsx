@@ -10,6 +10,7 @@ const CheckBoxInput = (props) => {
           id={props.identifier }
           name={ props.identifier }
           onChange={ props.onChange }
+          checked={ props.checked }
         />
         <label htmlFor={ props.identifier }>
           { props.description }
