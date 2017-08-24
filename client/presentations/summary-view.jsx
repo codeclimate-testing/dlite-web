@@ -20,14 +20,22 @@ export const SummaryNames = (props) => {
   );
 }
 
+const SummaryAddressBlob = (props) => {
+  return (
+    <div>
+      <p>Street: {props.payload[`${props.type}Street`]}</p>
+      <p>City: {props.payload[`${props.type}City`]}</p>
+      <p>State: {props.payload[`${props.type}State`]}</p>
+      <p>Zipcode: {props.payload[`${props.type}Zip`]}</p>
+    </div>
+  );
+}
+
 export const SummaryResidenceAddress = (props) => {
   return (
     <div className='summary-section'>
       <p>Residential address: </p>
-      <p>Street: {props.residenceAddress.residentialStreet}</p>
-      <p>City: {props.residenceAddress.residentialCity}</p>
-      <p>State: {props.residenceAddress.residentialState}</p>
-      <p>Zipcode: {props.residenceAddress.residentialZip}</p>
+        <SummaryAddressBlob type='residential' payload={ props.residenceAddress }/>
     </div>
   );
 };
@@ -36,10 +44,7 @@ export const SummaryMailingAddress = (props) => {
   return (
     <div className='summary-section'>
       <p>Mailing address: </p>
-      <p>Street: {props.mailingAddress.mailingStreet}</p>
-      <p>City: {props.mailingAddress.mailingCity}</p>
-      <p>State: {props.mailingAddress.mailingState}</p>
-      <p>Zipcode: {props.mailingAddress.mailingZip}</p>
+      <SummaryAddressBlob type='mailing' payload={ props.mailingAddress }/>
     </div>
   );
 };
