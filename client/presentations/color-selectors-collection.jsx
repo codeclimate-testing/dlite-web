@@ -8,22 +8,27 @@ const HairColorSelector = (props) => {
   let currentColor = props.state[typeName];
 
   let colorButtons = props.colors.map((color) => {
+    let tabIndex = '-1';
+    let selected = (currentColor === color);
+    if (selected || (!currentColor && color === props.colors[0]) ) {
+      tabIndex = '0';
+    }
+
     return (
       <ColorSelectorButton
         key={color}
         type={props.type}
         color={color}
-        currentColor={currentColor}
-        onClick={props.onChange}
+        selected={selected}
+        onChange={props.onChange}
+        tabIndex={tabIndex}
       />
     );
   });
 
   return (
-    <div className='row selector-collection'
-      role='radiogroup'
-      aria-labelledby={typeName}>
-        { colorButtons }
+    <div className='row selector-collection'>
+      { colorButtons }
     </div>
   );
 }
