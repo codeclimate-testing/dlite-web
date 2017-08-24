@@ -10,26 +10,26 @@ module.exports = function(world) {
   });
 
   world.then('I will see a form for entering my residential address', function(done) {
-    let field = browser.field('street');
+    let field = browser.field('residentialStreet');
     assert.ok(field);
 
-    field = browser.field('city');
+    field = browser.field('residentialCity');
     assert.ok(field);
 
     field = browser.html('#residentialState');
     assert.ok(field);
 
-    field = browser.field('zip');
+    field = browser.field('residentialZip');
     assert.ok(field);
 
     done();
   });
 
   world.when('I enter my residence address', function(done) {
-    browser.fill('street', '123 Main Street');
-    browser.fill('city', 'Crazidino');
-    browser.select('state', 'CA');
-    browser.fill('zip', '94666');
+    browser.fill('residentialStreet', '123 Main Street');
+    browser.fill('residentialCity', 'Crazidino');
+    browser.select('residentialState', 'CA');
+    browser.fill('residentialZip', '94666');
     done();
   });
 
@@ -48,10 +48,10 @@ module.exports = function(world) {
 
   world.given('I have already entered my residence address into the form', function(done) {
     browser.clickLink('addresses', function() {
-      browser.fill('street', '123 Main Street');
-      browser.fill('city', 'Crazidino');
-      browser.select('state', 'CA');
-      browser.fill('zip', '94666');
+      browser.fill('residentialStreet', '123 Main Street');
+      browser.fill('residentialCity', 'Crazidino');
+      browser.select('residentialState', 'CA');
+      browser.fill('residentialZip', '94666');
       browser.pressButton('Submit');
       browser.clickLink('Back to application', done);
     });
@@ -67,7 +67,7 @@ module.exports = function(world) {
   });
 
   world.and('I change my residence zip', function(done) {
-    browser.fill('zip', '91001');
+    browser.fill('residentialZip', '91001');
     done();
   });
 

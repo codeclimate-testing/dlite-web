@@ -5,6 +5,7 @@ import React from 'react';
 import StateSelector from './state-selector.jsx';
 import TextInput from './text-input.jsx';
 import CheckBoxInput from './checkbox-input.jsx';
+import AddressTemplate from './address-template-form.jsx';
 
 const MailingAddressForm = (props) => {
   return (
@@ -19,43 +20,14 @@ const MailingAddressForm = (props) => {
       />
 
       { !props.mailingAddress.isSameAsResidential &&
-        <div className='mailing-address-form'>
-          <form name='mailingAddressForm' onSubmit={props.onSubmit}>
 
-            <TextInput
-              type='mailing'
-              identifier='mailingStreet'
-              description='Street address'
-              value={props.mailingAddress.mailingStreet}
-              onChange={props.onChange}
-            />
+        <AddressTemplate
+          type='mailing'
+          payload={ props.mailingAddress }
+          onChange={ props.onChange }
+          onSubmit={ props.onSubmit }
+        />
 
-            <TextInput
-              type='mailing'
-              identifier='mailingCity'
-              description='City'
-              value={props.mailingAddress.mailingCity}
-              onChange={props.onChange}
-            />
-
-            <StateSelector
-              type='mailing'
-              identifier='mailingState'
-              value={props.mailingAddress.mailingState}
-              onChange={props.onChange}
-            />
-
-            <TextInput
-              type='mailing'
-              identifier='mailingZip'
-              description='Zipcode'
-              value={props.mailingAddress.mailingZip}
-              onChange={props.onChange}
-            />
-
-            <input type="submit" name="submitMailingAddress" value="Submit" />
-          </form>
-        </div>
       }
     </div>
   )

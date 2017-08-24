@@ -19,7 +19,7 @@ const hasNamesEntered = (props) => {
 };
 
 const hasResidenceAddressEntered = (props) => {
-  return props.street || props.city || props.zip;
+  return props.residentialStreet || props.residentialCity || props.residentialZip;
 };
 
 const hasMailingAddressEntered = (props) => {

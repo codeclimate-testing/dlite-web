@@ -2,11 +2,11 @@
 
 function defaultState() {
   return {
-    isSameAsResidential: false,
     mailingStreet: '',
     mailingCity: '',
     mailingState: 'CA',
-    mailingZip: ''
+    mailingZip: '',
+    isSameAsResidential: false
   };
 }
 

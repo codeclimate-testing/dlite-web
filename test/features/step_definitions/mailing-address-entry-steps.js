@@ -32,7 +32,7 @@ module.exports = function(world) {
   });
 
   world.and('I will see a button to submit my mailing address', function(done){
-    let field = browser.field('submitMailingAddress');
+    let field = browser.field('submitAddress');
     assert.ok(field);
 
     done();
@@ -61,7 +61,7 @@ module.exports = function(world) {
   });
 
   world.and('I click to submit my mailing address', function(done){
-    browser.pressButton('submitMailingAddress', done);
+    browser.pressButton('Submit', done);
   });
 
   world.then('I will see my mailing address on that summary', function(done){
@@ -79,7 +79,7 @@ module.exports = function(world) {
       browser.fill('mailingCity', 'Dinocrazi');
       browser.select('mailingState', 'MA');
       browser.fill('mailingZip', '91234');
-      browser.pressButton('submitMailingAddress');
+      browser.pressButton('Submit');
       browser.clickLink('Back to application', done);
     });
   });

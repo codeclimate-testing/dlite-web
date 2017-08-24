@@ -2,10 +2,10 @@
 
 function defaultState() {
   return {
-    street: '',
-    city: '',
-    state: 'CA',
-    zip: ''
+    residentialStreet: '',
+    residentialCity: '',
+    residentialState: 'CA',
+    residentialZip: ''
   };
 }
 
