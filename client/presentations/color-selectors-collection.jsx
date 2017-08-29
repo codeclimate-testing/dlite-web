@@ -15,14 +15,16 @@ const HairColorSelector = (props) => {
     }
 
     return (
-      <ColorSelectorButton
-        key={color}
-        type={props.type}
-        color={color}
-        selected={selected}
-        onChange={props.onChange}
-        tabIndex={tabIndex}
-      />
+      <div key={color}>
+        <ColorSelectorButton
+          type={props.type}
+          color={color}
+          selected={selected}
+          onChange={props.onChange}
+          tabIndex={tabIndex}
+        />
+        <div className='unit spacer'></div>
+      </div>
     );
   });
 

@@ -5,16 +5,23 @@ import React from 'react';
 const ColorSelector = function(props) {
   let name      = `${props.type}Color`;
   let className = props.selected ? 'selected button' : 'neutral button';
-  let radio;
+  let labelElement;
 
-  let onLabelFocus = (event) => {
-    console.log('label focused!', radio);
-    radio.focus();
+  let onFocus = (event) => {
+    labelElement.className += ' focused';
   };
 
+  let onBlur = (event) => {
+    labelElement.className = labelElement.className.replace(' focused', '');
+  }
+
   return (
-    <div className='color-selector unit relative'>
-      <div className='radio-control off-screen'>
+    <label
+      className='radio-selector unit relative'
+      htmlFor={props.color}
+      ref={ (element) => { return labelElement = element; } }
+    >
+      <div className='off-screen'>
         <input
           type='radio'
           name={name}
@@ -22,21 +29,17 @@ const ColorSelector = function(props) {
           value={props.color}
           checked={props.selected}
           onChange={props.onChange}
-          ref={(input) => { radio = input; }}
+          tabIndex={props.tabIndex}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
       </div>
       <div className='unit shadow-container'>
-        <label
-          className={className}
-          htmlFor={props.color}
-          tabIndex={props.tabIndex}
-          onFocus={onLabelFocus}
-        >
+        <div className={className}>
           {props.color}
-        </label>
+        </div>
       </div>
-      <div className='unit spacer'></div>
-    </div>
+    </label>
   );
 };
 

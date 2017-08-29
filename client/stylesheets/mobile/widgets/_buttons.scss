@@ -37,9 +37,8 @@ label.button {
   }
 
   &:focus {
-    text-decoration: underline;
     background-color: $accent-light;
-    @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
+    @include button-focused;
   }
 
   &:active {
@@ -137,5 +136,14 @@ label.button {
 
   &.disabled {
     @include opacity(0.3);
+  }
+}
+
+label.focused {
+  button,
+  input[type=submit],
+  a.button,
+  div.button {
+    @include button-focused;
   }
 }
