@@ -3,16 +3,17 @@
 import React from 'react';
 
 const ColorSelector = function(props) {
-  let name      = `${props.type}Color`;
+  const name = `${props.type}Color`;
+  const focusedClass = ' focused';
   let className = props.selected ? 'selected button' : 'neutral button';
   let labelElement;
 
   let onFocus = (event) => {
-    labelElement.className += ' focused';
+    labelElement.className += focusedClass;
   };
 
   let onBlur = (event) => {
-    labelElement.className = labelElement.className.replace(' focused', '');
+    labelElement.className = labelElement.className.replace(focusedClass, '');
   }
 
   return (
