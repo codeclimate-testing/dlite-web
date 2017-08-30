@@ -5,24 +5,26 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.when('I visit the addresses page', function(done) {
-    browser.clickLink('addresses', done);
-  });
+  let element = function (selector) {
+    return function() {
+      return document.querySelector(selector);
+    }
+  };
 
   world.then('I will see a form for entering my residential address', function(done) {
-    let field = browser.field('residentialStreet');
-    assert.ok(field);
-
-    field = browser.field('residentialCity');
-    assert.ok(field);
-
-    field = browser.html('#residentialState');
-    assert.ok(field);
-
-    field = browser.field('residentialZip');
-    assert.ok(field);
-
-    done();
+    browser
+      .evaluate(element('#residentialStreet'))
+      .then((input) => { assert.ok(input); })
+      .evaluate(element('#residentialCity'))
+      .then((input) => { assert.ok(input); })
+      .evaluate(element('#residentialZip'))
+      .then((input) => { assert.ok(input); })
+      .evaluate(element('#residentialState'))
+      .then((select) => {
+        assert.ok(select);
+        assert.equal(select.value, 'CA', 'Default CA value not selected');
+      })
+      .then(done);
   });
 
   world.when('I enter my residence address', function(done) {

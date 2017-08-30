@@ -5,10 +5,6 @@ const assert = require('assert');
 module.exports = function (world) {
   let browser = world.browser;
 
-  world.when('I visit /about-me/appearance/hair', function (done) {
-    browser.clickLink('hair-color', done);
-  });
-
   world.then('I will see buttons for Auburn, Bald, Black, Blonde, Brown, Gray, Red, White and Other', function (done) {
     assert.ok(browser.button('Auburn'));
     assert.ok(browser.button('Bald'));

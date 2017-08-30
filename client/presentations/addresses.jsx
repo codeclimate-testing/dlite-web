@@ -9,7 +9,7 @@ import alicePath from '../helpers/alice-path';
 
 const Addresses = (props) => {
   return (
-    <div>
+    <div className='both-addresses'>
       <Link to={ alicePath('/') }>Back to application</Link>
       <div className='row'>
         <div className='inner border'>

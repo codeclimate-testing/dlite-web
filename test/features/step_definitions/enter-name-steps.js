@@ -5,10 +5,6 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.when('I visit about-me-names', function(done){
-    browser.clickLink('about-me-names', done);
-  });
-
   world.then('I will see a field for first, middle and last name', function(done){
     let firstName = browser.field('firstName');
     let middleName = browser.field('middleName');
