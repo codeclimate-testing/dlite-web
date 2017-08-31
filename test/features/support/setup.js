@@ -2,7 +2,7 @@
 
 process.env.APP_ENV = 'test';
 
-const Browser = require('nightmare');
+const Browser = require('node-horseman');
 const port    = 3033;
 
 const app  = require('../../../server');
