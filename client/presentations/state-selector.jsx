@@ -62,7 +62,6 @@ const stateList = [
 ];
 
 const StateSelector = (props) => {
-  console.log(props);
   let id = `${props.type}State`;
   let value = props.value;
 

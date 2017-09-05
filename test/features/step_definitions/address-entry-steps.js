@@ -24,11 +24,9 @@ module.exports = function(world) {
         assert.ok(exists, 'State input not found');
       })
       .html('#residentialState option[selected]')
-      .then((option) => {
-        // This isn't working, and in fact in the browser, I can't see the option selected
-        // assert.equal(option.value, 'CA', 'Default CA value not selected');
-      })
-      .then(done)
+      .value('#residentialState')
+      .then((value) => { assert.equal(value, 'CA'); })
+      .then(() => { done(); })
       .catch(done);
   });
 
@@ -50,7 +48,16 @@ module.exports = function(world) {
   });
 
   world.then('I will see my residence address on that summary', function(done) {
-    world.run('I will see the residence address I entered', done);
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('123 Main Street'), 'street address missing');
+        assert(text.includes('Crazidino'), 'city missing');
+        assert(text.includes('CA'), 'state missing');
+        assert(text.includes('94666'), 'zip missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.given('I have already entered my residence address into the form', function(done) {
@@ -70,13 +77,14 @@ module.exports = function(world) {
 
   world.then('I will see the residence address I entered', function(done) {
     browser
-      .text()
-      .then((text) => {
-        assert(text.includes('123 Main Street'), 'street address missing from summary');
-        assert(text.includes('Crazidino'), 'city missing from summary');
-        assert(text.includes('CA'), 'state missing from summary');
-        assert(text.includes('94666'), 'zip missing from summary');
-      })
+      .value('#residentialStreet')
+      .then((value) => { assert.equal(value, '123 Main Street'); })
+      .value('#residentialCity')
+      .then((value) => { assert.equal(value, 'Crazidino'); })
+      .value('#residentialZip')
+      .then((value) => { assert.equal(value, '94666'); })
+      .value('#residentialState')
+      .then((value) => { assert.equal(value, 'CA'); })
       .then(() => { done(); })
       .catch(done);
   });
