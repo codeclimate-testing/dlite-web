@@ -15,12 +15,6 @@ module.exports = function(world) {
     done();
   });
 
-  world.and('I will see a button to submit my name', function(done){
-    let submitNamesButton = browser.button('submitNamesButton');
-    assert.ok(submitNamesButton);
-    done();
-  });
-
   world.and('I enter my first name', function(done){
     browser.fill('firstName', 'FirstName1');
     done();
@@ -34,10 +28,6 @@ module.exports = function(world) {
   world.and('I enter my last name', function(done){
     browser.fill('lastName', 'LastName1');
     done();
-  });
-
-  world.and('I click to submit my name', function(done){
-    browser.pressButton('submitNamesButton', done);
   });
 
   world.then('I will see my name on that summary', function(done){

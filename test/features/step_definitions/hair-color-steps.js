@@ -18,17 +18,8 @@ module.exports = function (world) {
     done();
   });
 
-  world.and('I will see a button to submit my information about my hair color', function (done) {
-    assert.ok(browser.button('Submit'));
-    done();
-  });
-
   world.and('I select a hair color', function (done) {
     browser.pressButton('Auburn', done);
-  });
-
-  world.and('I click to submit that description', function (done) {
-    browser.pressButton('Submit', done);
   });
 
   world.then('I will see my hair color is on that summary', function (done) {

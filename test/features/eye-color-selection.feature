@@ -7,13 +7,13 @@ Feature: I want to select my eye color
     Given I go to the new online DL application
     And I visit /about-me/appearance/eye
     Then I will see buttons for Blue, Gray, Green, Hazel and Brown
-    And I will see a button to submit my information about my eye color
+    And I will see a button to submit
 
   Scenario: Entering my eye color and saving
     Given I go to the new online DL application
     And I visit /about-me/appearance/eye
     When I select an eye color
-    And I submit that description of my eye color
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see the eye color I selected

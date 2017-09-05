@@ -7,7 +7,7 @@ Feature:  I want to enter my name
     Given I go to the new online DL application page
     When I visit about-me-names
     Then I will see a field for first, middle and last name
-    And I will see a button to submit my name
+    And I will see a button to submit
 
   Scenario: Entering my name and saving
     Given I go to the new online DL application page
@@ -15,7 +15,7 @@ Feature:  I want to enter my name
     And I enter my first name
     And I enter my middle name
     And I enter my last name
-    And I click to submit my name
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see my name on that summary
@@ -29,7 +29,7 @@ Feature:  I want to enter my name
     Given I have already entered my name into the form
     When I visit about-me-names
     And I change my first name
-    And I click to submit my name
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see my updated name

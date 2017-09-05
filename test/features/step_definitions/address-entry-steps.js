@@ -40,13 +40,6 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I submit my residence address', function(done) {
-    browser
-      .click('input[type="submit"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.then('I will see my residence address on that summary', function(done) {
     browser
       .text()

@@ -14,15 +14,6 @@ module.exports = function (world) {
     done();
   });
 
-  world.and('I will see a button to submit my information about my eye color', function(done){
-    assert.ok(browser.button('submitEyeColor'));
-    done();
-  });
-
-  world.and('I submit that description of my eye color', function(done){
-    browser.pressButton('submitEyeColor', done);
-  });
-
   world.given('I have already entered my eye color into the form', function(done){
     browser.clickLink('eye-color', function(){
       browser.pressButton('Hazel');

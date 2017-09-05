@@ -10,18 +10,8 @@ module.exports = function (world) {
     done();
   });
 
-  world.and('I will see a button to submit my phone number', function (done) {
-    assert(browser.button('submitContactDetails'));
-    done();
-  });
-
   world.and('I enter my phone number', function (done) {
     browser.fill('phoneNumber', '(111) 000-8888');
-    done();
-  });
-
-  world.and('I click to submit my phone', function (done) {
-    browser.pressButton('submitContactDetails');
     done();
   });
 

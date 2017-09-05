@@ -9,7 +9,7 @@ Feature: CRUD operations on the mailing address
     When I visit the addresses page
     Then I will see a checkbox to use my residence as my mailing address that is unchecked
     And I will see a field for mailing street, city, state, and zip
-    And I will see a button to submit my mailing address
+    And I will see a button to submit
 
   Scenario: Choosing to use my residence as my mailing address
     Given I go to the new online DL application page
@@ -23,7 +23,7 @@ Feature: CRUD operations on the mailing address
     Given I have already entered my residence address into the form
     When I visit the addresses page
     When I enter my mailing address data
-    And I click to submit my mailing address
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see my mailing address on that summary
