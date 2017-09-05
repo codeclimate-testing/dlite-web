@@ -48,14 +48,14 @@ module.exports = function(world) {
 
   world.and('I visit /about-me/appearance/eye', function(done){
     browser
-      .click('appearance-eye')
+      .click('a.appearance-eye')
       .waitForSelector('.eye-color-form')
       .then(done);
   });
 
   world.when('I visit /about-me/appearance/hair', function (done) {
     browser
-      .click('appearance-hair')
+      .click('a.appearance-hair')
       .waitForSelector('.hair-color-form')
       .then(done);
   });
