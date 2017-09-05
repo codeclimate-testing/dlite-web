@@ -24,7 +24,7 @@ Feature: I want to select my hair color
     Then I will see the hair color I selected
 
   Scenario: Changing selection before saving and seeing feedback about current selection
-    And I return to the home page
+    Given I go to the new online DL application page
     When I visit /about-me/appearance/hair
     And I select another hair color
     And I see that color selected
@@ -33,7 +33,8 @@ Feature: I want to select my hair color
     And I will see the new selection has been highlighted
 
   Scenario: Updating hair color
-    Given I have already entered my hair color into the form
+    Given I go to the new online DL application page
+    And I have already entered my hair color into the form
     When I visit /about-me/appearance/hair
     And I change my hair color selection
     And I return to the home page
