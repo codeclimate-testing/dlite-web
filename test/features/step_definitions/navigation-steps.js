@@ -5,7 +5,6 @@ module.exports = function(world) {
 
   world.given('I go to the new online DL application', function(done) {
     browser
-      .injectJs(__dirname + '/../support/phantom-shim.js')
       .open(world.url('/'))
       .waitForSelector('.home-page')
       .then(done)

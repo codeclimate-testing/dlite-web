@@ -6,38 +6,47 @@ import StateSelector from './state-selector.jsx';
 import TextInput from './text-input.jsx';
 
 const AddressTemplate = (props) => {
+  const type = props.type;
+
+  const valueFor = (key) => {
+    key = key.replace(/^[a-z]/, (char) => {
+      return char.toUpperCase();
+    });
+    return props.payload[`${type}${key}`]
+  };
+
   return (
     <div className='addresses-section'>
       <form onSubmit={props.onSubmit}>
 
         <TextInput
-          type={ props.type }
-          identifier={`${props.type}Street`}
+          type={ type }
+          identifier='street'
           description='Street address'
-          value={ props.payload[`${props.type}Street`]}
+          value={ valueFor('street') }
           onChange={props.onChange}
         />
 
         <TextInput
-          type={ props.type }
-          identifier={`${props.type}City`}
+          type={ type }
+          identifier='city'
           description='City'
-          value={ props.payload[`${props.type}City`]}
+          value={ valueFor('city') }
           onChange={props.onChange}
         />
 
         <StateSelector
-          type={ props.type }
-          identifier={`${props.type}State`}
-          value={ props.payload[`${props.type}State`]}
+          type={ type }
+          identifier='state'
+          value={ valueFor('state') }
           onChange={props.onChange}
         />
 
         <TextInput
-          type={ props.type }
-          identifier={`${props.type}Zip`}
+          type={ type }
+          identifier='zip'
           description='Zipcode'
-          value={ props.payload[`${props.type}Zip`]}
+          value={ valueFor('zip') }
           onChange={props.onChange}
         />
 
