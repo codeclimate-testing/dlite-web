@@ -8,13 +8,6 @@ import TextInput from './text-input.jsx';
 const AddressTemplate = (props) => {
   const type = props.type;
 
-  const valueFor = (key) => {
-    key = key.replace(/^[a-z]/, (char) => {
-      return char.toUpperCase();
-    });
-    return props.payload[`${type}${key}`]
-  };
-
   return (
     <div className='addresses-section'>
       <form onSubmit={props.onSubmit}>
@@ -23,7 +16,7 @@ const AddressTemplate = (props) => {
           type={ type }
           identifier='street'
           description='Street address'
-          value={ valueFor('street') }
+          value={ props.address['street'] }
           onChange={props.onChange}
         />
 
@@ -31,14 +24,14 @@ const AddressTemplate = (props) => {
           type={ type }
           identifier='city'
           description='City'
-          value={ valueFor('city') }
+          value={ props.address['city'] }
           onChange={props.onChange}
         />
 
         <StateSelector
           type={ type }
           identifier='state'
-          value={ valueFor('state') }
+          value={ props.address['state'] }
           onChange={props.onChange}
         />
 
@@ -46,7 +39,7 @@ const AddressTemplate = (props) => {
           type={ type }
           identifier='zip'
           description='Zipcode'
-          value={ valueFor('zip') }
+          value={ props.address['zip'] }
           onChange={props.onChange}
         />
 

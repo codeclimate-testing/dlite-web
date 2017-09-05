@@ -2,10 +2,10 @@
 
 function defaultState() {
   return {
-    mailingStreet: '',
-    mailingCity: '',
-    mailingState: 'CA',
-    mailingZip: '',
+    street: '',
+    city: '',
+    state: 'CA',
+    zip: '',
     isSameAsResidential: false
   };
 }

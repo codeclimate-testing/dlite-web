@@ -23,11 +23,10 @@ const MailingAddressForm = (props) => {
 
         <AddressTemplate
           type='mailing'
-          payload={ props.mailingAddress }
+          address={ props.mailingAddress }
           onChange={ props.onChange }
           onSubmit={ props.onSubmit }
         />
-
       }
     </div>
   )
