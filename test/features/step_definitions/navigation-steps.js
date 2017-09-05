@@ -39,10 +39,10 @@ module.exports = function(world) {
       .then(done);
   });
 
-  world.when('I visit about-me-names', function(done){
+  world.when('I visit about-me-names', function(done) {
     browser
       .click('a.names')
-      .waitForSelector('legal-name-form')
+      .waitForSelector('.legal-name-form')
       .then(done);
   });
 
