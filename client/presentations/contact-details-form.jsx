@@ -4,17 +4,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import TextInput from './text-input.jsx';
-import alicePath from '../helpers/alice-path';
+import HomeLink from './home-link.jsx';
 
 const ContactDetailsForm = (props) => {
   return (
     <div className='contact-details-section'>
-      <Link to={ alicePath('/') }>Back to application</Link>
+      <HomeLink />
 
       <div className='contact-details-form'>
         <form onSubmit={props.onSubmit}>
           <TextInput
-            type='contactDetails'
             identifier='emailAddress'
             description='Email address'
             value={props.contactDetails.emailAddress}
@@ -22,7 +21,6 @@ const ContactDetailsForm = (props) => {
 					/>
 
           <TextInput
-            type='contactDetails'
             identifier='phoneNumber'
             description='Phone number'
             value={props.contactDetails.phoneNumber}

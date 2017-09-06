@@ -66,7 +66,12 @@ const StateSelector = (props) => {
   let value = props.value;
 
   let options = stateList.map((stateCode) => {
-    return <Option key={stateCode} identifier={stateCode} value={props.value}/>;
+    let selected = (value === stateCode);
+    return <Option
+              key={stateCode}
+              identifier={stateCode}
+              value={props.value}
+            />;
   });
 
   return (

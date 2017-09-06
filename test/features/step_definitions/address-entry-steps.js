@@ -5,75 +5,97 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.when('I visit the addresses page', function(done) {
-    browser.clickLink('addresses', done);
-  });
-
   world.then('I will see a form for entering my residential address', function(done) {
-    let field = browser.field('residentialStreet');
-    assert.ok(field);
-
-    field = browser.field('residentialCity');
-    assert.ok(field);
-
-    field = browser.html('#residentialState');
-    assert.ok(field);
-
-    field = browser.field('residentialZip');
-    assert.ok(field);
-
-    done();
+    browser
+      .exists('#residentialStreet')
+      .then((exists) => {
+        assert.ok(exists, 'Street address input not found');
+      })
+      .exists('#residentialCity')
+      .then((exists) => {
+        assert.ok(exists, 'City input not found');
+      })
+      .exists('#residentialZip')
+      .then((exists) => {
+        assert.ok(exists, 'Zip input not found');
+      })
+      .exists('#residentialState')
+      .then((exists) => {
+        assert.ok(exists, 'State input not found');
+      })
+      .html('#residentialState option[selected]')
+      .value('#residentialState')
+      .then((value) => { assert.equal(value, 'CA'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.when('I enter my residence address', function(done) {
-    browser.fill('residentialStreet', '123 Main Street');
-    browser.fill('residentialCity', 'Crazidino');
-    browser.select('residentialState', 'CA');
-    browser.fill('residentialZip', '94666');
-    done();
-  });
-
-  world.and('I submit my residence address', function(done) {
-    browser.pressButton('Submit', done);
+    browser
+      .type('#residentialStreet', '123 Main Street')
+      .type('#residentialCity', 'Crazidino')
+      .select('#residentialState', 'CA')
+      .type('#residentialZip', '94666')
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.then('I will see my residence address on that summary', function(done) {
-    let pageContent = browser.text('html');
-    assert(pageContent.includes('123 Main Street'), 'street address missing from summary');
-    assert(pageContent.includes('Crazidino'), 'city missing from summary');
-    assert(pageContent.includes('CA'), 'state missing from summary');
-    assert(pageContent.includes('94666'), 'zip missing from summary');
-    done();
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('123 Main Street'), 'street address missing');
+        assert(text.includes('Crazidino'), 'city missing');
+        assert(text.includes('CA'), 'state missing');
+        assert(text.includes('94666'), 'zip missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.given('I have already entered my residence address into the form', function(done) {
-    browser.clickLink('addresses', function() {
-      browser.fill('residentialStreet', '123 Main Street');
-      browser.fill('residentialCity', 'Crazidino');
-      browser.select('residentialState', 'CA');
-      browser.fill('residentialZip', '94666');
-      browser.pressButton('Submit');
-      browser.clickLink('Back to application', done);
-    });
+    browser
+      .click('a.addresses')
+      .waitForSelector('.both-addresses')
+      .type('#residentialStreet', '123 Main Street')
+      .type('#residentialCity', 'Crazidino')
+      .select('#residentialState', 'CA')
+      .type('#residentialZip', '94666')
+      .click('input[type="submit"]')
+      .click('a.home')
+      .waitForSelector('.home-page')
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.then('I will see the residence address I entered', function(done) {
-    let pageContent = browser.html();
-    assert(pageContent.includes('123 Main Street'), 'street address missing from summary');
-    assert(pageContent.includes('Crazidino'), 'city missing from summary');
-    assert(pageContent.includes('CA'), 'state missing from summary');
-    assert(pageContent.includes('94666'), 'zip missing from summary');
-    done();
+    browser
+      .value('#residentialStreet')
+      .then((value) => { assert.equal(value, '123 Main Street'); })
+      .value('#residentialCity')
+      .then((value) => { assert.equal(value, 'Crazidino'); })
+      .value('#residentialZip')
+      .then((value) => { assert.equal(value, '94666'); })
+      .value('#residentialState')
+      .then((value) => { assert.equal(value, 'CA'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I change my residence zip', function(done) {
-    browser.fill('residentialZip', '91001');
-    done();
+    browser
+      .type('#residentialZip', '91001')
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.then('I will see my updated residence zip', function(done) {
-    let pageContent = browser.text('html');
-    assert(pageContent.includes('91001'), 'updated zip missing from summary');
-    done();
+    browser
+      .text()
+      .then((pageContent) => {
+        assert(pageContent.includes('91001'), 'updated zip missing from summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
   });
 };

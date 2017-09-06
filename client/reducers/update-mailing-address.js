@@ -2,15 +2,17 @@
 
 function defaultState() {
   return {
-    mailingStreet: '',
-    mailingCity: '',
-    mailingState: 'CA',
-    mailingZip: '',
+    street: '',
+    city: '',
+    state: 'CA',
+    zip: '',
     isSameAsResidential: false
   };
 }
 
 export default function(state = defaultState(), action) {
+  if (action.type !== 'UPDATE_MAILING_ADDRESS') { return state; }
+
   let data = {};
   let payload = action.payload;
 

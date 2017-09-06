@@ -9,22 +9,22 @@ const Home = () => {
   return (
     <ul className='home-page'>
       <li>
-        <Link to={ alicePath('/summary') }>summary</Link>
+        <Link className='summary' to={ alicePath('/summary') }>summary</Link>
       </li>
       <li>
-        <Link to={ alicePath('/about-me/names') }>about-me-names</Link>
+        <Link className='names' to={ alicePath('/about-me/names') }>about-me-names</Link>
       </li>
       <li>
-        <Link to={ alicePath('/about-me/addresses') }>addresses</Link>
+        <Link className='addresses' to={ alicePath('/about-me/addresses') }>addresses</Link>
       </li>
       <li>
-        <Link to={ alicePath('/about-me/contact') }>contacts</Link>
+        <Link className='contact-info' to={ alicePath('/about-me/contact') }>contacts</Link>
       </li>
       <li>
-        <Link to={ alicePath('/about-me/appearance/eye' )}>eye-color</Link>
+        <Link className='appearance-eye' to={ alicePath('/about-me/appearance/eye' )}>eye-color</Link>
       </li>
       <li>
-        <Link to={ alicePath('/about-me/appearance/hair') }>hair-color</Link>
+        <Link className='appearance-hair' to={ alicePath('/about-me/appearance/hair') }>hair-color</Link>
       </li>
     </ul>
   );

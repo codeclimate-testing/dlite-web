@@ -8,5 +8,5 @@ module.exports = {
   stepDefinitions:    featuresDirectory + '/step_definitions',
   suiteSetup:         featuresDirectory + '/support/setup',
   suiteTeardown:      featuresDirectory + '/support/teardown',
-  timeout:            3000
+  timeout:            9000
 };

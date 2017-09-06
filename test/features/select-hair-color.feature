@@ -7,24 +7,25 @@ Feature: I want to select my hair color
     Given I go to the new online DL application page
     When I visit /about-me/appearance/hair
     Then I will see buttons for Auburn, Bald, Black, Blonde, Brown, Gray, Red, White and Other
-    And I will see a button to submit my information about my hair color
+    And I will see a button to submit
 
   Scenario: Entering my hair color and saving
     Given I go to the new online DL application page
     When I visit /about-me/appearance/hair
     And I select a hair color
-    And I click to submit that description
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see my hair color is on that summary
 
   Scenario: Seeing a form with existing data
-    Given I have already entered my hair color into the form
+    Given I go to the new online DL application page
+    And I have already entered my hair color into the form
     When I visit /about-me/appearance/hair
     Then I will see the hair color I selected
 
   Scenario: Changing selection before saving and seeing feedback about current selection
-    And I return to the home page
+    Given I go to the new online DL application page
     When I visit /about-me/appearance/hair
     And I select another hair color
     And I see that color selected
@@ -33,7 +34,8 @@ Feature: I want to select my hair color
     And I will see the new selection has been highlighted
 
   Scenario: Updating hair color
-    Given I have already entered my hair color into the form
+    Given I go to the new online DL application page
+    And I have already entered my hair color into the form
     When I visit /about-me/appearance/hair
     And I change my hair color selection
     And I return to the home page

@@ -10,17 +10,14 @@ const ResidenceAddressForm = (props) => {
 
   return (
     <div className='addresses-section'>
-
       <div className='residential-address-form'>
-
-        <h3> Residential Address: </h3>
+        <h3>Residential Address:</h3>
         <AddressTemplate
           type='residential'
-          payload={ props.residenceAddress }
+          address={ props.residenceAddress }
           onChange={ props.onChange }
           onSubmit={ props.onSubmit }
-          />
-
+         />
       </div>
     </div>
   )

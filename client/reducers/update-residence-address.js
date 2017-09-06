@@ -2,14 +2,16 @@
 
 function defaultState() {
   return {
-    residentialStreet: '',
-    residentialCity: '',
-    residentialState: 'CA',
-    residentialZip: ''
+    street: '',
+    city: '',
+    state: 'CA',
+    zip: '',
   };
 }
 
 export default function(state = defaultState(), action) {
+  if (action.type !== 'UPDATE_RESIDENCE_ADDRESS') { return state; }
+
   let data = {};
   let payload = action.payload;
 

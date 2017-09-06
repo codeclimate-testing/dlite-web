@@ -18,12 +18,8 @@ const hasNamesEntered = (props) => {
   return props.firstName || props.middleName || props.lastName;
 };
 
-const hasResidenceAddressEntered = (props) => {
-  return props.residentialStreet || props.residentialCity || props.residentialZip;
-};
-
-const hasMailingAddressEntered = (props) => {
-  return props.mailingStreet || props.mailingCity || props.mailingZip;
+const hasAddressEntered = (props) => {
+  return props.street || props.city || props.zip;
 };
 
 const hasHairColorEntered = (props) => {
@@ -45,11 +41,11 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryNames legalName={props.legalName} key='names'/>);
   }
 
-  if (hasResidenceAddressEntered(props.residenceAddress)) {
+  if (hasAddressEntered(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
   }
 
-  if (hasMailingAddressEntered(props.mailingAddress)) {
+  if (hasAddressEntered(props.mailingAddress)) {
     contents.push(<SummaryMailingAddress mailingAddress={props.mailingAddress} key='mailingAddress'/>);
   }
 

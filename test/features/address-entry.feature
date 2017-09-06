@@ -12,7 +12,7 @@ Feature: CRUD operations on the residential address
     Given I go to the new online DL application page
     And I visit the addresses page
     When I enter my residence address
-    And I submit my residence address
+    And I click to submit
     And I return to the home page
     And I go to the page with my summary
     Then I will see my residence address on that summary
