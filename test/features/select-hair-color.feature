@@ -19,7 +19,8 @@ Feature: I want to select my hair color
     Then I will see my hair color is on that summary
 
   Scenario: Seeing a form with existing data
-    Given I have already entered my hair color into the form
+    Given I go to the new online DL application page
+    And I have already entered my hair color into the form
     When I visit /about-me/appearance/hair
     Then I will see the hair color I selected
 

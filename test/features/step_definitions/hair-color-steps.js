@@ -6,7 +6,6 @@ module.exports = function (world) {
   let browser = world.browser;
 
   world.then('I will see buttons for Auburn, Bald, Black, Blonde, Brown, Gray, Red, White and Other', function (done) {
-    done();
     browser
       .html('button[value="Auburn"]')
       .then((button) => { assert.ok(button, 'Selector for Auburn hair color missing')})
@@ -49,9 +48,9 @@ module.exports = function (world) {
 
   world.given('I have already entered my hair color into the form', function (done) {
     browser
-      .click('a.appearance-eye')
-      .waitForSelector('.eye-color-form')
-      .click('button[value="Black"]')
+      .click('a.appearance-hair')
+      .waitForSelector('.hair-color-form')
+      .click('button[value="Auburn"]')
       .click('input[type="submit"]')
       .click('a.home')
       .waitForSelector('.home-page')

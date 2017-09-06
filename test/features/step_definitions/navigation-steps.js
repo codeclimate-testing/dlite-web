@@ -14,7 +14,7 @@ module.exports = function(world) {
   world.and('I go to the page with my summary', function(done){
     browser
       .click('a.summary')
-      .waitForSelector('.summary-section')
+      .waitForSelector('.summary')
       .then(done);
   });
 
