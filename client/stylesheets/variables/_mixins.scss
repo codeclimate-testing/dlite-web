@@ -34,6 +34,11 @@
   @include transition-duration(500ms);
 }
 
+@mixin button-focused {
+  text-decoration: underline;
+  @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
+}
+
 /* form input fixes */
 @mixin focus-input-padding-fix {
   padding: $input-top-padding - $input-border-width $input-side-padding - $input-border-width;
