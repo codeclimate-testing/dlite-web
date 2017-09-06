@@ -7,23 +7,23 @@ module.exports = function (world) {
 
   world.then('I will see buttons for Auburn, Bald, Black, Blonde, Brown, Gray, Red, White and Other', function (done) {
     browser
-      .html('button[value="Auburn"]')
+      .html('label[for="Auburn"]')
       .then((button) => { assert.ok(button, 'Selector for Auburn hair color missing')})
-      .html('button[value="Bald"]')
+      .html('label[for="Bald"]')
       .then((button) => { assert.ok(button, 'Selector for Bald hair color missing')})
-      .html('button[value="Black"]')
+      .html('label[for="Black"]')
       .then((button) => { assert.ok(button, 'Selector for Black hair color missing')})
-      .html('button[value="Blonde"]')
+      .html('label[for="Blonde"]')
       .then((button) => { assert.ok(button, 'Selector for Blonde hair color missing')})
-      .html('button[value="Brown"]')
+      .html('label[for="Brown"]')
       .then((button) => { assert.ok(button, 'Selector for Brown hair color missing')})
-      .html('button[value="Gray"]')
+      .html('label[for="Gray"]')
       .then((button) => { assert.ok(button, 'Selector for Gray hair color missing')})
-      .html('button[value="Red"]')
+      .html('label[for="Red"]')
       .then((button) => { assert.ok(button, 'Selector for Red hair color missing')})
-      .html('button[value="White"]')
+      .html('label[for="White"]')
       .then((button) => { assert.ok(button, 'Selector for White hair color missing')})
-      .html('button[value="Other"]')
+      .html('label[for="Other"]')
       .then((button) => { assert.ok(button, 'Selector for Other hair color missing')})
       .then(() => { done(); })
       .catch(done);
@@ -31,7 +31,7 @@ module.exports = function (world) {
 
   world.and('I select a hair color', function (done) {
     browser
-      .click('button[value="Auburn"]')
+      .click('label[for="Auburn"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -50,7 +50,7 @@ module.exports = function (world) {
     browser
       .click('a.appearance-hair')
       .waitForSelector('.hair-color-form')
-      .click('button[value="Auburn"]')
+      .click('label[for="Auburn"]')
       .click('input[type="submit"]')
       .click('a.home')
       .waitForSelector('.home-page')
@@ -59,46 +59,54 @@ module.exports = function (world) {
   });
 
   world.then('I will see the hair color I selected', function (done) {
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'Auburn'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I select another hair color', function (done) {
     browser
-      .click('button[value="Red"]')
+      .click('label[for="Red"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I see that color selected', function (done) {
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'Red'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I realize I made the wrong selection and change it', function (done) {
     browser
-      .click('button[value="Other"]')
+      .click('label[for="Other"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.then('I will see the original selection as not highlighted', function (done) {
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.ok(color !== 'Red', 'Original color selected'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I will see the new selection has been highlighted', function (done) {
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'Other'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I change my hair color selection', function (done) {
     browser
-      .click('button[value="Bald"]')
+      .click('label[for="Bald"]')
       .then(() => { done(); })
       .catch(done);
   });
