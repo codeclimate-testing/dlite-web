@@ -7,15 +7,15 @@ module.exports = function (world) {
 
   world.then('I will see buttons for Blue, Gray, Green, Hazel and Brown', function(done) {
     browser
-      .html('button[value="Blue"]')
+      .html('label[for="Blue"]')
       .then((button) => { assert.ok(button, 'Selector for Blue eye color missing')})
-      .html('button[value="Gray"]')
+      .html('label[for="Gray"]')
       .then((button) => { assert.ok(button, 'Selector for Gray eye color missing')})
-      .html('button[value="Green"]')
+      .html('label[for="Green"]')
       .then((button) => { assert.ok(button, 'Selector for Green eye color missing')})
-      .html('button[value="Hazel"]')
+      .html('label[for="Hazel"]')
       .then((button) => { assert.ok(button, 'Selector for Hazel eye color missing')})
-      .html('button[value="Brown"]')
+      .html('label[for="Brown"]')
       .then((button) => { assert.ok(button, 'Selector for Brown eye color missing')})
       .then(() => { done(); })
       .catch(done);
@@ -24,7 +24,7 @@ module.exports = function (world) {
   world.given('I have already entered my eye color into the form', function(done){
     browser
       .click('a.appearance-eye')
-      .click('button[value="Hazel"]')
+      .click('label[for="Hazel"]')
       .click('input[type="submit"]')
       .click('a.home')
       .waitForSelector('.home-page')
@@ -44,39 +44,45 @@ module.exports = function (world) {
 
   world.when('I select an eye color', function(done){
     browser
-      .click('button[value="Blue"]')
+      .click('label[for="Blue"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I see that eye color selected', function(done){
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'Blue'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I realize I made the wrong eye color selection and change it', function(done){
     browser
-      .click('button[value="Brown"]')
+      .click('label[for="Brown"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.then('I will see the original eye color selection as not highlighted', function(done){
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.ok(color !== 'Blue', 'Original color still selected'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I will see the new eye color selection has been highlighted', function(done){
-    // currently a no-op, since this set of commits was spawned by a huge
-    // overhaul of this section
-    done();
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'Brown'); })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I change my eye color selection', function(done){
     browser
-      .click('button[value="Gray"]')
+      .click('label[for="Gray"]')
       .then(() => { done(); })
       .catch(done);
   });
