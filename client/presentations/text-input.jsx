@@ -13,11 +13,12 @@ const TextInput = (props) => {
     <div className='text-input-block'>
       <label htmlFor={ id }>{ props.description }</label>
       <div className="input-container">
-        <input  type="text"
-                id={ id }
-                name={ props.identifier }
-                onChange={ props.onChange }
-                value={ props.value }/>
+        <input
+          type="text"
+          id={ id }
+          name={ props.identifier }
+          onChange={ props.onChange }
+          value={ props.value }/>
       </div>
     </div>
   );

@@ -11,7 +11,8 @@ import {
   SummaryMailingAddress,
   SummaryContactDetails,
   SummaryEyeColor,
-  SummaryHairColor
+  SummaryHairColor,
+  SummaryDateOfBirth
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -32,7 +33,11 @@ const hasContactDetailsEntered = (props) => {
 
 const hasEyeColorEntered = (props) => {
   return props.eyeColor;
-}
+};
+
+const hasDateOfBirth = (props) => {
+  return props.month && props.day && props.year;
+};
 
 const SummaryHandler = (props) => {
   let contents = [];
@@ -61,6 +66,10 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryEyeColor eyeColor={props.eyeColor} key='eyeColor'/>);
   }
 
+  if (hasDateOfBirth(props.dateOfBirth)) {
+    contents.push(<SummaryDateOfBirth dateOfBirth={props.dateOfBirth} key='dateOfBirth'/>);
+  }
+
   if (!contents.length) {
     contents.push(<SummaryEmpty key='summary'/>);
   }
@@ -81,6 +90,7 @@ function mapStateToProps(state) {
     contactDetails: state.contactDetails,
     eyeColor: state.eyeColor,
     hairColor: state.hairColor,
+    dateOfBirth: state.dateOfBirth
   };
 }
 

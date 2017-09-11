@@ -134,8 +134,9 @@ label.button {
     }
   }
 
-  &.disabled {
-    @include opacity(0.3);
+  &.disabled,
+  &[disabled] {
+    @include opacity(0.5);
   }
 }
 
