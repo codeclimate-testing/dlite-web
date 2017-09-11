@@ -19,24 +19,26 @@ const LegalNameForm = (props) => {
   return (
     <div className='legal-name-form'>
       <HomeLink />
+
+      <h4>What’s your full, legal name?</h4>
       <form onSubmit={onSubmit}>
         <TextInput
           identifier='firstName'
-          description='First name'
+          description='First Name'
           value={props.legalName.firstName}
           onChange={props.onChange}
         />
 
         <TextInput
           identifier='middleName'
-          description='Middle name'
+          description='Middle Name(s)'
           value={props.legalName.middleName}
           onChange={props.onChange}
         />
 
         <TextInput
           identifier='lastName'
-          description='Last name'
+          description='Last Name'
           value={props.legalName.lastName}
           onChange={props.onChange}
         />
