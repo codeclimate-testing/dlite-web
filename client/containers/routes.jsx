@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import Home         from '../presentations/home.jsx';
 import Summary      from './summary-handler.jsx';
 import LegalName    from './legal-name-form-container.jsx';
-import DateOfBirth  from '../presentations/date-of-birth-form.jsx';
+import DateOfBirth  from './date-of-birth-form-container.jsx';
 import Addresses    from '../presentations/addresses.jsx';
 import HairColor    from './hair-color-form-container.jsx';
 import Contact      from './contact-details-form-container.jsx';

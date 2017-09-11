@@ -6,9 +6,9 @@ import HomeLink  from './home-link.jsx';
 import TextInput from './text-input.jsx';
 import alicePath from '../helpers/alice-path';
 
-const LegalNameForm = (props) => {
+const Form = (props) => {
   let dateOfBirth = props.dateOfBirth;
-  let continueDisabled = dateOfBirth.month && dateOfBirth.month && dateOfBirth.year;
+  let continueDisabled = !(dateOfBirth.month && dateOfBirth.month && dateOfBirth.year);
 
   let onSubmit = (event) => {
     props.onSubmit(event);
@@ -24,27 +24,54 @@ const LegalNameForm = (props) => {
       <h4>What's your date of birth?</h4>
       <h5>Example: 03 21 1967</h5>
 
-      <form onSubmit={onSubmit}>
-        <TextInput
-          identifier='month'
-          description='Month'
-          value={props.dateOfBirth.month}
-          onChange={props.onChange}
-        />
+      <form onSubmit={ onSubmit }>
+        <div className='row inner-bottom'>
+          <div className='unit'>
+            <label htmlFor='month'>Month</label>
+            <div className='input-container month-input'>
+              <input
+                className='unit size-1-1'
+                type='number'
+                id='month'
+                name='month'
+                onChange={ props.onChange }
+                value={ props.dateOfBirth.month }
+              />
+            </div>
+          </div>
 
-        <TextInput
-          identifier='day'
-          description='Day'
-          value={props.dateOfBirth.day}
-          onChange={props.onChange}
-        />
+          <div className='unit spacer' />
 
-        <TextInput
-          identifier='year'
-          description='Year'
-          value={props.dateOfBirth.year}
-          onChange={props.onChange}
-        />
+          <div className='unit'>
+            <label htmlFor='day'>Day</label>
+            <div className='input-container day-input'>
+              <input
+                type='number'
+                className='unit size-1-1'
+                id='day'
+                name='day'
+                onChange={ props.onChange }
+                value={ props.dateOfBirth.day }
+              />
+            </div>
+          </div>
+
+          <div className='unit spacer' />
+
+          <div className='unit'>
+            <label htmlFor='year'>Year</label>
+            <div className='input-container year-input'>
+              <input
+                type='number'
+                className='unit size-1-1'
+                id='year'
+                name='year'
+                onChange={ props.onChange }
+                value={ props.dateOfBirth.year }
+              />
+            </div>
+          </div>
+        </div>
 
         <div className='shadow-container'>
           <input
@@ -58,5 +85,5 @@ const LegalNameForm = (props) => {
   )
 };
 
-export default LegalNameForm;
+export default Form;
 

@@ -72,4 +72,16 @@ export const SummaryEyeColor = (props) => {
       <p> Eye Color: {props.eyeColor.eyeColor} </p>
     </div>
   )
-}
+};
+
+export const SummaryDateOfBirth = (props) => {
+  let dateOfBirth = props.dateOfBirth.month + '/' +
+    props.dateOfBirth.day + '/' +
+    props.dateOfBirth.year;
+
+  return (
+    <div className='summary-section'>
+      <p>Date of birth: {dateOfBirth}</p>
+    </div>
+  );
+};

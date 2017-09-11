@@ -15,3 +15,4 @@ export const updateMailingAddress   = generateAction('UPDATE_MAILING_ADDRESS');
 export const updateHairColor        = generateAction('UPDATE_HAIR_COLOR');
 export const updateEyeColor         = generateAction('UPDATE_EYE_COLOR');
 export const updateContactDetails   = generateAction('UPDATE_CONTACT_DETAILS');
+export const updateDateOfBirth      = generateAction('UPDATE_DATE_OF_BIRTH');
