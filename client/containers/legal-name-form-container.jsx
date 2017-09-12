@@ -18,7 +18,7 @@ const LegalName = (props) => {
 
 function mapStateToProps(state) {
   return {
-    legalName: state.legalName
+    legalName: state.application.legalName
   };
 }
 

@@ -18,7 +18,7 @@ const MailingAddressContainer = (props) => {
 
 function mapStateToProps(state) {
   return {
-    mailingAddress: state.mailingAddress
+    mailingAddress: state.application.mailingAddress
   };
 }
 

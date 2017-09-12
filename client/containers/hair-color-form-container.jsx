@@ -20,7 +20,7 @@ const HairColor = (props) => {
 };
 
 function mapStateToProps(state) {
-  return {hairColor: state.hairColor};
+  return {hairColor: state.application.hairColor};
 }
 
 export default connectForm(mapStateToProps, updateHairColor, HairColor);
