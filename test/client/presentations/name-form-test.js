@@ -5,7 +5,7 @@ import assert from 'assert';
 import 'jsdom-global/register';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { shallow, mount } from 'enzyme';
+import { render, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import NameForm from '../../../client/presentations/name-form.jsx';
@@ -25,10 +25,15 @@ describe('NameForm', function() {
   });
 
   it('submit is disabled without a last name', function () {
-    component = shallow(
-      <NameForm
-        legalName={legalName}
-      />
+    component = render(
+      <MemoryRouter>
+        <NameForm
+          onSubmit={ onSubmit }
+          onChange={ onChange }
+          legalName={legalName}
+          history={history}
+        />
+      </MemoryRouter>
     );
 
     assert(
@@ -39,10 +44,15 @@ describe('NameForm', function() {
 
   it('submit is not disabled if it has a last name', function () {
     legalName.lastName = 'W';
-    component = shallow(
-      <NameForm
-        legalName={legalName}
-      />
+    component = render(
+      <MemoryRouter>
+        <NameForm
+          onSubmit={ onSubmit }
+          onChange={ onChange }
+          legalName={legalName}
+          history={history}
+        />
+      </MemoryRouter>
     );
 
     assert(

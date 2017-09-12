@@ -2,19 +2,14 @@
 
 import React from 'react';
 
-import HomeLink  from './home-link.jsx';
-import TextInput from './text-input.jsx';
-import alicePath from '../helpers/alice-path';
+import HomeLink         from './home-link.jsx';
+import TextInput        from './text-input.jsx';
+import ContinueButton   from './continue-button.jsx';
+import navigateOnSubmit from '../helpers/navigate-on-submit';
 
 const LegalNameForm = (props) => {
   let continueDisabled = props.legalName.lastName.length === 0;
-
-  let onSubmit = (event) => {
-    props.onSubmit(event);
-    props.history.push(
-      alicePath('/about-me/date-of-birth')
-    );
-  };
+  let onSubmit = navigateOnSubmit('/about-me/date-of-birth', props);
 
   return (
     <div className='legal-name-form'>
@@ -43,16 +38,10 @@ const LegalNameForm = (props) => {
           onChange={props.onChange}
         />
 
-        <div className='shadow-container'>
-          <input
-            type="submit"
-            value="Continue"
-            disabled={continueDisabled}
-          />
-        </div>
+        <ContinueButton disabled={continueDisabled} />
       </form>
     </div>
-  )
+  );
 };
 
 export default LegalNameForm;

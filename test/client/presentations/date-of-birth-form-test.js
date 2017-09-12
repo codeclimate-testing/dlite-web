@@ -5,7 +5,7 @@ import assert from 'assert';
 import 'jsdom-global/register';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { shallow, mount } from 'enzyme';
+import { render, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import DateOfBirthForm from '../../../client/presentations/date-of-birth-form.jsx';
@@ -28,13 +28,18 @@ describe('DateOfBirthForm', function() {
 
   describe('when submit enabled/disabled', function() {
     it('submit is disabled without a month', function () {
-      dateOfBirth.day = 7;
-      dateOfBirth.year = 1967;
+      dateOfBirth.day = '7';
+      dateOfBirth.year = '1967';
 
-      component = shallow(
-        <DateOfBirthForm
-          dateOfBirth={dateOfBirth}
-        />
+      component = render(
+        <MemoryRouter>
+          <DateOfBirthForm
+            onSubmit={ onSubmit }
+            onChange={ onChange }
+            dateOfBirth={dateOfBirth}
+            history={history}
+          />
+        </MemoryRouter>
       );
 
       assert(
@@ -44,13 +49,18 @@ describe('DateOfBirthForm', function() {
     });
 
     it('submit is disabled without a day', function () {
-      dateOfBirth.month = 9;
-      dateOfBirth.year = 1967;
+      dateOfBirth.month = '9';
+      dateOfBirth.year = '1967';
 
-      component = shallow(
-        <DateOfBirthForm
-          dateOfBirth={dateOfBirth}
-        />
+      component = render(
+        <MemoryRouter>
+          <DateOfBirthForm
+            onSubmit={ onSubmit }
+            onChange={ onChange }
+            dateOfBirth={dateOfBirth}
+            history={history}
+          />
+        </MemoryRouter>
       );
 
       assert(
@@ -63,10 +73,15 @@ describe('DateOfBirthForm', function() {
       dateOfBirth.day = 7;
       dateOfBirth.month = 9;
 
-      component = shallow(
-        <DateOfBirthForm
-          dateOfBirth={dateOfBirth}
-        />
+      component = render(
+        <MemoryRouter>
+          <DateOfBirthForm
+            onSubmit={ onSubmit }
+            onChange={ onChange }
+            dateOfBirth={dateOfBirth}
+            history={history}
+          />
+        </MemoryRouter>
       );
 
       assert(
@@ -80,10 +95,15 @@ describe('DateOfBirthForm', function() {
       dateOfBirth.month = 9;
       dateOfBirth.year = 1967;
 
-      component = shallow(
-        <DateOfBirthForm
-          dateOfBirth={dateOfBirth}
-        />
+      component = render(
+        <MemoryRouter>
+          <DateOfBirthForm
+            onSubmit={ onSubmit }
+            onChange={ onChange }
+            dateOfBirth={dateOfBirth}
+            history={history}
+          />
+        </MemoryRouter>
       );
 
       assert(
