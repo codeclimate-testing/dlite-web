@@ -2,20 +2,16 @@
 
 import React from 'react';
 
-import HomeLink  from './home-link.jsx';
-import TextInput from './text-input.jsx';
-import alicePath from '../helpers/alice-path';
+import HomeLink         from './home-link.jsx';
+import TextInput        from './text-input.jsx';
+import NumberInput      from './number-input.jsx';
+import ContinueButton   from './continue-button.jsx';
+import navigateOnSubmit from '../helpers/navigate-on-submit';
 
 const Form = (props) => {
   let dateOfBirth = props.dateOfBirth;
-  let continueDisabled = !(dateOfBirth.month && dateOfBirth.month && dateOfBirth.year);
-
-  let onSubmit = (event) => {
-    props.onSubmit(event);
-    props.history.push(
-      alicePath('/about-me/addresses')
-    );
-  };
+  let continueDisabled = !(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year);
+  let onSubmit = navigateOnSubmit('/about-me/addresses', props);
 
   return (
     <div className='date-of-birth-form'>
@@ -26,60 +22,33 @@ const Form = (props) => {
 
       <form onSubmit={ onSubmit }>
         <div className='row inner-bottom'>
-          <div className='unit'>
-            <label htmlFor='month'>Month</label>
-            <div className='input-container month-input'>
-              <input
-                className='unit size-1-1'
-                type='number'
-                id='month'
-                name='month'
-                onChange={ props.onChange }
-                value={ props.dateOfBirth.month }
-              />
-            </div>
-          </div>
+          <NumberInput
+            onChange={props.onChange}
+            identifier='month'
+            description='Month'
+            value={props.dateOfBirth.month}
+          />
 
           <div className='unit spacer' />
 
-          <div className='unit'>
-            <label htmlFor='day'>Day</label>
-            <div className='input-container day-input'>
-              <input
-                type='number'
-                className='unit size-1-1'
-                id='day'
-                name='day'
-                onChange={ props.onChange }
-                value={ props.dateOfBirth.day }
-              />
-            </div>
-          </div>
+          <NumberInput
+            onChange={props.onChange}
+            identifier='day'
+            description='Day'
+            value={props.dateOfBirth.day}
+          />
 
           <div className='unit spacer' />
 
-          <div className='unit'>
-            <label htmlFor='year'>Year</label>
-            <div className='input-container year-input'>
-              <input
-                type='number'
-                className='unit size-1-1'
-                id='year'
-                name='year'
-                onChange={ props.onChange }
-                value={ props.dateOfBirth.year }
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='shadow-container'>
-          <input
-            type="submit"
-            value="Continue"
-            disabled={continueDisabled}
+          <NumberInput
+            onChange={props.onChange}
+            identifier='year'
+            description='Year'
+            value={props.dateOfBirth.year}
           />
         </div>
+
+        <ContinueButton disabled={continueDisabled} />
       </form>
     </div>
   )
