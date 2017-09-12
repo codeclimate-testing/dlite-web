@@ -1,0 +1,13 @@
+{
+  "development": {
+    "host": "localhost",
+    "user": "root",
+    "database": "dlite_web_development"
+  },
+
+  "test": {
+    "host": "localhost",
+    "user": "root",
+    "database": "dlite_web_test"
+  }
+}

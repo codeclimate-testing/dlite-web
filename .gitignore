@@ -6,4 +6,5 @@ public/app.js
 public/app.css
 
 **/*.DS_Store
-test/features/support/debug.html
+
+server/config/database.json
