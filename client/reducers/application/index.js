@@ -16,7 +16,6 @@ const rootReducer = combineReducers({
   contactDetails: updateContactDetails,
   eyeColor: updateEyeColor,
   hairColor: updateHairColor,
-  contactDetails: updateContactDetails,
   dateOfBirth: updateDateOfBirth
 });
 
