@@ -84,13 +84,13 @@ const SummaryHandler = (props) => {
 
 function mapStateToProps(state) {
   return {
-    legalName: state.legalName,
-    residenceAddress: state.residenceAddress,
-    mailingAddress: state.mailingAddress,
-    contactDetails: state.contactDetails,
-    eyeColor: state.eyeColor,
-    hairColor: state.hairColor,
-    dateOfBirth: state.dateOfBirth
+    legalName: state.application.legalName,
+    residenceAddress: state.application.residenceAddress,
+    mailingAddress: state.application.mailingAddress,
+    contactDetails: state.application.contactDetails,
+    eyeColor: state.application.eyeColor,
+    hairColor: state.application.hairColor,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

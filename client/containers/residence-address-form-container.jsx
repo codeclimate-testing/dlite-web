@@ -18,7 +18,7 @@ const ResidenceAddressContainer = (props) => {
 
 function mapStateToProps(state) {
   return {
-    residenceAddress: state.residenceAddress
+    residenceAddress: state.application.residenceAddress
   };
 }
 

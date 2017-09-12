@@ -18,7 +18,7 @@ const ContactDetailsContainer = (props) => {
 
 function mapStateToProps(state) {
   return {
-    contactDetails: state.contactDetails
+    contactDetails: state.application.contactDetails
   };
 }
 

@@ -20,7 +20,7 @@ const EyeColor = (props) => {
 };
 
 function mapStateToProps(state) {
-  return {eyeColor: state.eyeColor};
+  return {eyeColor: state.application.eyeColor};
 }
 
 export default connectForm(mapStateToProps, updateEyeColor, EyeColor);
