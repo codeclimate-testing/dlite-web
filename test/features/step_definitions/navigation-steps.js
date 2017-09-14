@@ -77,6 +77,25 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I visit the sex identification page', function(done) {
+     browser
+      .click('a.sex')
+      .waitForSelector('.sex-form')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will be on the page for entering my eye color', function(done) {
+    browser
+      .waitForSelector('.eye-color-form')
+      .url()
+      .then((url) => {
+        assert.ok(url.match(/about-me\/appearance\/eye/), 'Not of the eye color');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will be on the page for entering my date of birth', function(done) {
     browser
       .waitForSelector('.date-of-birth-form')

@@ -85,3 +85,11 @@ export const SummaryDateOfBirth = (props) => {
     </div>
   );
 };
+
+export const SummarySex = (props) => {
+  return (
+    <div className='summary-section'>
+      <p> Sex: {props.sex} </p>
+    </div>
+  )
+};
