@@ -24,6 +24,9 @@ const Home = () => {
         <Link className='contact-info' to={ alicePath('/about-me/contact') }>contacts</Link>
       </li>
       <li>
+        <Link className='sex' to={ alicePath('/about-me/sex' )}>sex identification</Link>
+      </li>
+      <li>
         <Link className='appearance-eye' to={ alicePath('/about-me/appearance/eye' )}>eye-color</Link>
       </li>
       <li>
