@@ -39,4 +39,42 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I have already selected my sex', function(done) {
+    browser
+      .click('a.sex')
+      .waitForSelector('.sex-form')
+      .click('label[for="Female"]')
+      .click('input[type="submit"]')
+      .click('a.home')
+      .waitForSelector('.home-page')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see the sex I chose is selected', function(done) {
+    browser
+      .text('.button.selected')
+      .then((value) => { assert.equal(value, 'Female'); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I change my sex', function(done) {
+    browser
+      .click('label[for="Male"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see my updated sex listed in the summary', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('Male'), 'Sex not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
+
