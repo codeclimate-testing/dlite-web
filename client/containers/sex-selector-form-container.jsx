@@ -8,6 +8,7 @@ import connectForm            from '../helpers/connect-form';
 import navigateOnSubmit       from '../helpers/navigate-on-submit';
 
 const ConnectedForm = (props) => {
+  const continueDisabled = !props.sex;
   const onSubmit = navigateOnSubmit('/about-me/appearance/eye', props);
 
   return (
@@ -15,6 +16,7 @@ const ConnectedForm = (props) => {
       onSubmit={onSubmit}
       onChange={props.onChange}
       selectedValue={props.sex}
+      continueDisabled={continueDisabled}
     />
   );
 };

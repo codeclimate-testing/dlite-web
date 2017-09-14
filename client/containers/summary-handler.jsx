@@ -12,7 +12,8 @@ import {
   SummaryContactDetails,
   SummaryEyeColor,
   SummaryHairColor,
-  SummaryDateOfBirth
+  SummaryDateOfBirth,
+  SummarySex
 } from '../presentations/summary-view.jsx';
 
 const hasNamesEntered = (props) => {
@@ -39,6 +40,10 @@ const hasDateOfBirth = (props) => {
   return props.month && props.day && props.year;
 };
 
+const hasSex = (props) => {
+  return !!props.sex;
+}
+
 const SummaryHandler = (props) => {
   let contents = [];
 
@@ -54,20 +59,24 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryMailingAddress mailingAddress={props.mailingAddress} key='mailingAddress'/>);
   }
 
-  if (hasHairColorEntered(props.hairColor)) {
-    contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
-  }
-
-  if (hasContactDetailsEntered(props.contactDetails)) {
-    contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
+  if (hasSex(props)) {
+    contents.push(<SummarySex key='sex' sex={props.sex}/>);
   }
 
   if (hasEyeColorEntered(props.eyeColor)) {
     contents.push(<SummaryEyeColor eyeColor={props.eyeColor} key='eyeColor'/>);
   }
 
+  if (hasHairColorEntered(props.hairColor)) {
+    contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
+  }
+
   if (hasDateOfBirth(props.dateOfBirth)) {
     contents.push(<SummaryDateOfBirth dateOfBirth={props.dateOfBirth} key='dateOfBirth'/>);
+  }
+
+  if (hasContactDetailsEntered(props.contactDetails)) {
+    contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
   }
 
   if (!contents.length) {
@@ -83,15 +92,7 @@ const SummaryHandler = (props) => {
 }
 
 function mapStateToProps(state) {
-  return {
-    legalName: state.application.legalName,
-    residenceAddress: state.application.residenceAddress,
-    mailingAddress: state.application.mailingAddress,
-    contactDetails: state.application.contactDetails,
-    eyeColor: state.application.eyeColor,
-    hairColor: state.application.hairColor,
-    dateOfBirth: state.application.dateOfBirth
-  };
+  return state.application;
 }
 
 export default connect(mapStateToProps)(SummaryHandler);
