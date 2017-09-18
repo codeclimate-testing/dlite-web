@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack -p && node_modules/knex/bin/cli.js migrate:latest",
+    "postinstall": "webpack -p",
     "start": "node index.js",
     "webpack-watch": "webpack -w",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
