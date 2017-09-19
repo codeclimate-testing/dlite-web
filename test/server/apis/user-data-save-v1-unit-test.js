@@ -3,7 +3,7 @@
 // Set APP_ENV to 'test' to connect with test db
 process.env.APP_ENV = 'test';
 
-const expect = require('chai').expect;
+const assert = require('assert');
 const httpMocks = require('node-mocks-http');
 const uuidv1 = require('uuid/v1');
 
@@ -110,32 +110,32 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
     });
 
     it('responds with http status 200', (done) => {
-      expect(_response.statusCode).to.equal(200);
+      assert.equal(_response.statusCode, 200);
       done();
     });
 
     it('should post application data', (done) => {
       const _data = _response._getData()[0];
 
-      expect(_data.id).to.equal(uuid);
-      expect(_data.type).to.equal(type);
-      expect(_data.source).to.equal(source);
-      expect(_data.number).to.equal(number);
-      expect(_data.first_name).to.equal(first_name);
-      expect(_data.middle_name).to.equal(middle_name);
-      expect(_data.last_name).to.equal(last_name);
-      expect(_data.name_suffix).to.equal(name_suffix);
-      expect(_data.language).to.equal(language);
-      expect(_data.hair_color).to.equal(hair_color);
-      expect(_data.eye_color).to.equal(eye_color);
-      expect(_data.addressType).to.equal(addressType);
-      expect(_data.street_address_1).to.equal(street_address_1);
-      expect(_data.street_address_2).to.equal(street_address_2);
-      expect(_data.city).to.equal(city);
-      expect(_data.state).to.equal(state);
-      expect(_data.zip).to.equal(zip);
-      expect(_data.email_address).to.equal(email_address);
-      expect(_data.phone_number).to.equal(phone_number);
+      assert(_data.id, uuid);
+      assert(_data.type, type);
+      assert(_data.source, source);
+      assert(_data.number, number);
+      assert(_data.first_name, first_name);
+      assert(_data.middle_name, middle_name);
+      assert(_data.last_name, last_name);
+      assert(_data.name_suffix, name_suffix);
+      assert(_data.language, language);
+      assert(_data.hair_color, hair_color);
+      assert(_data.eye_color, eye_color);
+      assert(_data.addressType, addressType);
+      assert(_data.street_address_1, street_address_1);
+      assert(_data.street_address_2, street_address_2);
+      assert(_data.city, city);
+      assert(_data.state, state);
+      assert(_data.zip, zip);
+      assert(_data.email_address, email_address);
+      assert(_data.phone_number, phone_number);
 
       done();
     });
@@ -161,7 +161,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
     });
 
     it('responds with http status 200', (done) => {
-      expect(_response.statusCode).to.equal(200)
+      assert(_response.statusCode, 200)
 
       done();
     });
@@ -169,25 +169,25 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
     it('should get user data', (done) => {
       const _data = _response._getData()[0];
 
-      expect(_data.id).to.equal(uuid);
-      expect(_data.type).to.equal(type);
-      expect(_data.source).to.equal(source);
-      expect(_data.number).to.equal(number);
-      expect(_data.first_name).to.equal(first_name);
-      expect(_data.middle_name).to.equal(middle_name);
-      expect(_data.last_name).to.equal(last_name);
-      expect(_data.name_suffix).to.equal(name_suffix);
-      expect(_data.language).to.equal(language);
-      expect(_data.hair_color).to.equal(hair_color);
-      expect(_data.eye_color).to.equal(eye_color);
-      expect(_data.addressType).to.equal(addressType);
-      expect(_data.street_address_1).to.equal(street_address_1);
-      expect(_data.street_address_2).to.equal(street_address_2);
-      expect(_data.city).to.equal(city);
-      expect(_data.state).to.equal(state);
-      expect(_data.zip).to.equal(zip);
-      expect(_data.email_address).to.equal(email_address);
-      expect(_data.phone_number).to.equal(phone_number);
+      assert(_data.id, uuid);
+      assert(_data.type, type);
+      assert(_data.source, source);
+      assert(_data.number, number);
+      assert(_data.first_name, first_name);
+      assert(_data.middle_name, middle_name);
+      assert(_data.last_name, last_name);
+      assert(_data.name_suffix, name_suffix);
+      assert(_data.language, language);
+      assert(_data.hair_color, hair_color);
+      assert(_data.eye_color, eye_color);
+      assert(_data.addressType, addressType);
+      assert(_data.street_address_1, street_address_1);
+      assert(_data.street_address_2, street_address_2);
+      assert(_data.city, city);
+      assert(_data.state, state);
+      assert(_data.zip, zip);
+      assert(_data.email_address, email_address);
+      assert(_data.phone_number, phone_number);
 
       done();
     });
