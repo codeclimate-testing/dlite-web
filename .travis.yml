@@ -5,7 +5,7 @@ cache:
   directories:
     - "node_modules"
 env:
-  - JWT_SECRET=s3kret
+  - JWT_SECRET=jot-it-down JWT_USERS='["SOS"]' DATABASE_URL=postgresql://ci_tester:pa33word@localhost/travis_ci_test
 script:
   - node_modules/knex/bin/cli.js migrate:latest
   - npm run test:coverage
