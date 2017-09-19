@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const knex = require('../../db/connect')();
+const knex = require('../db/connect')();
 
 router.get('/user-data/:uuid', getUserDataHandler);
 router.post('/user-data', postUserDataHandler);

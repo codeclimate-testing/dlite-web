@@ -8,7 +8,7 @@ const httpMocks = require('node-mocks-http');
 const uuidv1 = require('uuid/v1');
 
 const knex = require('../../../server/db/connect')();
-const userDataController = require('../../../server/api/v1')
+const userDataController = require('../../../server/api')
 
 describe('Unit Tests: APIs for CRUD operations on user data', () => {
 
@@ -75,7 +75,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
       //Create request and response objects
       _request = httpMocks.createRequest({
         method: 'POST',
-        url: '/api/v1/user-data',
+        url: '/api/user-data',
         body: {
           uuid,
           type,
@@ -145,7 +145,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
     before((done) => {
       _request = httpMocks.createRequest({
         method: 'GET',
-        url: '/api/v1/user-data',
+        url: '/api/user-data',
         params: {
           uuid: uuid
         }

@@ -10,7 +10,7 @@ const passport    = require('passport');
 const helmet      = require('helmet');
 const jwtStrategy = require('./server/config/jwt-strategy').strategy;
 const logging     = require('./server/config/logging');
-const api_v1      = require('./server/api/v1');
+const api         = require('./server/api');
 
 const layout      = fs.readFileSync(path.resolve(__dirname, 'server/templates/layout.html')).toString();
 let   server      = express();
@@ -40,6 +40,6 @@ server.get('/protected', authenticate, function(req, res){
   res.json({hello: 'protected world'});
 });
 
-server.use('/api/v1', api_v1);
+server.use('/api', api);
 
 module.exports = server;
