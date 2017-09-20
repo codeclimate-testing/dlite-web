@@ -5,7 +5,7 @@ cache:
   directories:
     - "node_modules"
 env:
-  - JWT_SECRET=s3kret
+  - JWT_SECRET=s3kret JWT_USERS=jwt_user
 script:
   - npm run test:coverage
 after_success:
