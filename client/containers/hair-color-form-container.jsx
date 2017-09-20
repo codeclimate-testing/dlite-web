@@ -2,25 +2,30 @@
 
 import React from 'react';
 
-import colorFormBuilder     from '../presentations/color-form-builder';
-import { updateHairColor }  from "../actions/index";
-import connectForm          from '../helpers/connect-form';
+import { updateHairColor }   from "../actions/index";
+import Form                   from '../presentations/hair-color-form.jsx';
+import connectForm            from '../helpers/connect-form';
+import navigateOnSubmit       from '../helpers/navigate-on-submit';
 
-const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
-const HairColorForm = colorFormBuilder(COLORS, 'hair');
+const ConnectedForm = (props) => {
+  const continueDisabled = !props.hairColor;
+  const onSubmit = navigateOnSubmit('/about-me/height', props);
 
-const HairColor = (props) => {
   return (
-    <HairColorForm
-      onSubmit={props.onSubmit}
+    <Form
+      onSubmit={onSubmit}
       onChange={props.onChange}
-      hairColor={props.hairColor}
+      selectedValue={props.hairColor}
+      continueDisabled={continueDisabled}
     />
   );
 };
 
 function mapStateToProps(state) {
-  return {hairColor: state.application.hairColor};
+  return {
+    hairColor: state.application.hairColor.hairColor
+  };
 }
 
-export default connectForm(mapStateToProps, updateHairColor, HairColor);
+export default connectForm(mapStateToProps, updateHairColor, ConnectedForm);
+
