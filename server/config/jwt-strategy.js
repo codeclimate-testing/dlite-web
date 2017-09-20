@@ -14,7 +14,7 @@ const jwtOptions = {
 // Either switch to a dynamic feature driven auth system, or something else???
 let authorizedUsers;
 try {
-  authorizedUsers = JSON.parse(process.env.JWT_USERS);
+  authorizedUsers = process.env.JWT_USERS.split(/,\s*/);
 } catch(e) {
   console.log('Please set JTW_USERS as an environmental variable! Or change the strategy for setting acceptable jwt users.');
   throw(e);

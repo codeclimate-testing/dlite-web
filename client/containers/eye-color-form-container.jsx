@@ -2,25 +2,29 @@
 
 import React from 'react';
 
-import colorFormBuilder     from '../presentations/color-form-builder';
 import { updateEyeColor }   from "../actions/index";
-import connectForm          from '../helpers/connect-form';
+import Form                   from '../presentations/eye-color-form.jsx';
+import connectForm            from '../helpers/connect-form';
+import navigateOnSubmit       from '../helpers/navigate-on-submit';
 
-const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
-const EyeColorForm = colorFormBuilder(COLORS, 'eye');
+const ConnectedForm = (props) => {
+  const continueDisabled = !props.eyeColor;
+  const onSubmit = navigateOnSubmit('/about-me/appearance/hair', props);
 
-const EyeColor = (props) => {
   return (
-    <EyeColorForm
-      onSubmit={props.onSubmit}
+    <Form
+      onSubmit={onSubmit}
       onChange={props.onChange}
-      eyeColor={props.eyeColor}
+      selectedValue={props.eyeColor}
+      continueDisabled={continueDisabled}
     />
   );
 };
 
 function mapStateToProps(state) {
-  return {eyeColor: state.application.eyeColor};
+  return {
+    eyeColor: state.application.eyeColor.eyeColor
+  };
 }
 
-export default connectForm(mapStateToProps, updateEyeColor, EyeColor);
+export default connectForm(mapStateToProps, updateEyeColor, ConnectedForm);
