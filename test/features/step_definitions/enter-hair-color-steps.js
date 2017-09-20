@@ -5,7 +5,7 @@ const assert = require('assert');
 module.exports = function (world) {
   let browser = world.browser;
 
-  world.then('I will see buttons for Auburn, Bald, Black, Blonde, Brown, Gray, Red, White and Other', function (done) {
+  world.then('I will see select buttons for all the hair colors', function (done) {
     browser
       .html('label[for="Auburn"]')
       .then((button) => { assert.ok(button, 'Selector for Auburn hair color missing')})
@@ -36,7 +36,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see my hair color is on that summary', function (done) {
+  world.then('I will see my hair color in the summary', function (done) {
     browser
       .text()
       .then((text) => {
@@ -46,7 +46,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.given('I have already entered my hair color into the form', function (done) {
+  world.given('I have already entered my hair color', function (done) {
     browser
       .click('a.appearance-hair')
       .waitForSelector('.hair-color-form')
@@ -58,7 +58,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see the hair color I selected', function (done) {
+  world.then('I will see the hair color I chose is selected', function (done) {
     browser
       .text('.button.selected')
       .then((color) => { assert.equal(color, 'Auburn'); })
@@ -66,47 +66,9 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.and('I select another hair color', function (done) {
+  world.and('I change my hair color', function (done) {
     browser
       .click('label[for="Red"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I see that color selected', function (done) {
-    browser
-      .text('.button.selected')
-      .then((color) => { assert.equal(color, 'Red'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I realize I made the wrong selection and change it', function (done) {
-    browser
-      .click('label[for="Other"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see the original selection as not highlighted', function (done) {
-    browser
-      .text('.button.selected')
-      .then((color) => { assert.ok(color !== 'Red', 'Original color selected'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I will see the new selection has been highlighted', function (done) {
-    browser
-      .text('.button.selected')
-      .then((color) => { assert.equal(color, 'Other'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I change my hair color selection', function (done) {
-    browser
-      .click('label[for="Bald"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -115,7 +77,7 @@ module.exports = function (world) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('Bald'), 'Hair color not saved in summary');
+        assert.ok(text.includes('Red'), 'Hair color not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

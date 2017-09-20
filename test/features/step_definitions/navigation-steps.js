@@ -56,7 +56,7 @@ module.exports = function(world) {
     clickAndWaitForPage('a.appearance-eye', '.eye-color-form', done);
   });
 
-  world.when('I visit /about-me/appearance/hair', function (done) {
+  world.when('I visit hair color page', function (done) {
     clickAndWaitForPage('a.appearance-hair', '.hair-color-form', done);
   });
 
@@ -82,5 +82,9 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering my hair color', function(done) {
     assertOnPage('.hair-color-form', /about-me\/appearance\/hair/, done);
+  });
+
+  world.then('I will be on the page for entering my height', function(done) {
+    assertOnPage('.height-form', /about-me\/heigh/, done);
   });
 };
