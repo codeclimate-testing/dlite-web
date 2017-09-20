@@ -33,7 +33,29 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
   const state = 'CA';
   const zip = '98787';
   const email_address = 'some_email@example.com';
-  const phone_number = '(916) 555-111';
+  const phone_number = '(916) 555-1111';
+
+  const validateResponse = function(response){
+    assert(response.id, uuid);
+    assert(response.type, type);
+    assert(response.source, source);
+    assert(response.number, number);
+    assert(response.first_name, first_name);
+    assert(response.middle_name, middle_name);
+    assert(response.last_name, last_name);
+    assert(response.name_suffix, name_suffix);
+    assert(response.language, language);
+    assert(response.hair_color, hair_color);
+    assert(response.eye_color, eye_color);
+    assert(response.addressType, addressType);
+    assert(response.street_address_1, street_address_1);
+    assert(response.street_address_2, street_address_2);
+    assert(response.city, city);
+    assert(response.state, state);
+    assert(response.zip, zip);
+    assert(response.email_address, email_address);
+    assert(response.phone_number, phone_number);
+  }
 
   before((done) => {
     //Clean up test db
@@ -77,26 +99,37 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
         method: 'POST',
         url: '/api/user-data',
         body: {
-          uuid,
-          type,
-          source,
-          number,
-          first_name,
-          middle_name,
-          last_name,
-          name_suffix,
-          date_of_birth,
-          language,
-          hair_color,
-          eye_color,
-          addressType,
-          street_address_1,
-          street_address_2,
-          city,
-          state,
-          zip,
-          email_address,
-          phone_number
+          application: {
+            uuid,
+            type,
+            source,
+            number,
+            first_name,
+            middle_name,
+            last_name,
+            name_suffix,
+            date_of_birth,
+            language,
+            hair_color,
+            eye_color
+          },
+          address: {
+            uuid,
+            addressType,
+            street_address_1,
+            street_address_2,
+            city,
+            state,
+            zip
+          },
+          email: {
+            uuid,
+            email_address
+          },
+          phoneNumber: {
+            uuid,
+            phone_number
+          }
         }
       });
       _response = httpMocks.createResponse({eventEmitter: require('events').EventEmitter});
@@ -116,27 +149,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
 
     it('should post application data', (done) => {
       const _data = _response._getData()[0];
-
-      assert(_data.id, uuid);
-      assert(_data.type, type);
-      assert(_data.source, source);
-      assert(_data.number, number);
-      assert(_data.first_name, first_name);
-      assert(_data.middle_name, middle_name);
-      assert(_data.last_name, last_name);
-      assert(_data.name_suffix, name_suffix);
-      assert(_data.language, language);
-      assert(_data.hair_color, hair_color);
-      assert(_data.eye_color, eye_color);
-      assert(_data.addressType, addressType);
-      assert(_data.street_address_1, street_address_1);
-      assert(_data.street_address_2, street_address_2);
-      assert(_data.city, city);
-      assert(_data.state, state);
-      assert(_data.zip, zip);
-      assert(_data.email_address, email_address);
-      assert(_data.phone_number, phone_number);
-
+      validateResponse(_data);
       done();
     });
   });
@@ -168,27 +181,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
 
     it('should get user data', (done) => {
       const _data = _response._getData()[0];
-
-      assert(_data.id, uuid);
-      assert(_data.type, type);
-      assert(_data.source, source);
-      assert(_data.number, number);
-      assert(_data.first_name, first_name);
-      assert(_data.middle_name, middle_name);
-      assert(_data.last_name, last_name);
-      assert(_data.name_suffix, name_suffix);
-      assert(_data.language, language);
-      assert(_data.hair_color, hair_color);
-      assert(_data.eye_color, eye_color);
-      assert(_data.addressType, addressType);
-      assert(_data.street_address_1, street_address_1);
-      assert(_data.street_address_2, street_address_2);
-      assert(_data.city, city);
-      assert(_data.state, state);
-      assert(_data.zip, zip);
-      assert(_data.email_address, email_address);
-      assert(_data.phone_number, phone_number);
-
+      validateResponse(_data);
       done();
     });
   });
