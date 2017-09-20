@@ -59,22 +59,6 @@ module.exports.insertPhoneNumber = function(phoneNumber) {
     });
 }
 
-module.exports.selectFromApplication = function(residentID) {
-  return knex('applications').where('id', residentID);
-}
-
-module.exports.selectFromAddress = function(residentID) {
-  return knex('addresses').where('resident_id', residentID);
-}
-
-module.exports.selectFromEmail = function(residentID) {
-  return knex('emails').where('resident_id', residentID);
-}
-
-module.exports.selectFromPhoneNumber = function(residentID) {
-  return knex('phone_numbers').where('resident_id', residentID);
-}
-
 module.exports.selectFromAllTables = function(residentID) {
 
   return knex('applications')
