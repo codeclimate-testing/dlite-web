@@ -1,7 +1,7 @@
 'use strict';
 
 import { TYPES } from '../../actions';
-import formReducer from './form-reducer';
+import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
@@ -12,4 +12,4 @@ function defaultState() {
   };
 }
 
-export default formReducer(defaultState, TYPES.UPDATE_RESIDENCE_ADDRESS);
+export default formObjectReducer(defaultState, TYPES.UPDATE_RESIDENCE_ADDRESS);

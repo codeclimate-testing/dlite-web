@@ -72,6 +72,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.height', '.height-form', done);
   });
 
+  world.when('I visit the weight page', function(done) {
+    clickAndWaitForPage('a.weight', '.weight-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -94,5 +98,9 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering my weight', function(done) {
     assertOnPage('.weight-form', /about-me\/weight/, done);
+  });
+
+  world.then('I will be on the page for entering my social security', function(done) {
+    assertOnPage('.social-security-form', /about-me\/social-security/, done);
   });
 };

@@ -14,7 +14,8 @@ import {
   SummaryHairColor,
   SummaryDateOfBirth,
   SummarySex,
-  SummaryHeight
+  SummaryHeight,
+  SummaryWeight
 } from '../presentations/summary-view.jsx';
 
 import * as dataPresent from '../helpers/data-present';
@@ -62,6 +63,10 @@ const SummaryHandler = (props) => {
 
   if (dataPresent.height(props.height)) {
     contents.push(<SummaryHeight height={props.height} key='height'/>);
+  }
+
+  if (dataPresent.value(props.weight)) {
+    contents.push(<SummaryWeight weight={props.weight} key='weight'/>);
   }
 
   if (!contents.length) {
