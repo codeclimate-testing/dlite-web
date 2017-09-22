@@ -6,9 +6,10 @@ import { updateHeight }  from "../actions/index";
 import FormPresentation  from "../presentations/height-form.jsx";
 import connectForm       from '../helpers/connect-form';
 import navigateOnSubmit  from '../helpers/navigate-on-submit';
+import * as dataPresent  from '../helpers/data-present';
 
 const Form = (props) => {
-  const continueDisabled = !props.height.feet;
+  const continueDisabled = !dataPresent.height(props.height);
   const onSubmit = navigateOnSubmit('/about-me/weight', props);
 
   return (

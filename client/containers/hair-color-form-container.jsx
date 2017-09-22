@@ -6,9 +6,10 @@ import { updateHairColor }   from "../actions/index";
 import Form                   from '../presentations/hair-color-form.jsx';
 import connectForm            from '../helpers/connect-form';
 import navigateOnSubmit       from '../helpers/navigate-on-submit';
+import * as dataPresent       from '../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  const continueDisabled = !props.hairColor;
+  const continueDisabled = !dataPresent.value(props.hairColor);
   const onSubmit = navigateOnSubmit('/about-me/height', props);
 
   return (

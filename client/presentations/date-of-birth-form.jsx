@@ -9,10 +9,6 @@ import ContinueButton   from './continue-button.jsx';
 import navigateOnSubmit from '../helpers/navigate-on-submit';
 
 const Form = (props) => {
-  let dateOfBirth = props.dateOfBirth;
-  let continueDisabled = !(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year);
-  let onSubmit = navigateOnSubmit('/about-me/addresses', props);
-
   return (
     <div className='date-of-birth-form'>
       <HomeLink />
@@ -20,7 +16,7 @@ const Form = (props) => {
       <h4>What's your date of birth?</h4>
       <h5>Example: 03 21 1967</h5>
 
-      <form onSubmit={ onSubmit }>
+      <form onSubmit={ props.onSubmit }>
         <div className='row inner-bottom'>
           <NumberInput
             onChange={props.onChange}
@@ -48,7 +44,7 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={continueDisabled} />
+        <ContinueButton disabled={props.continueDisabled} />
       </form>
     </div>
   )
