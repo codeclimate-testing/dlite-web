@@ -34,9 +34,26 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see correct home address lables', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('Where do you live?'), 'Address label missing');
+      assert(text.includes('For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017'), 'Address example label missing');
+      assert(text.includes('Street Address'), 'Street address label missing');
+      assert(text.includes('Apartment or Unit Number (optional)'), 'Apartment or Unit Number label missing');
+      assert(text.includes('City'), 'City label missing');
+      assert(text.includes('Zip Code'), 'Zip Code label missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+
   world.when('I enter my residence address', function(done) {
     browser
       .type('#residentialStreet_1', '123 Main Street')
+      .type('#residentialStreet_2', 'Unit no. 45')
       .type('#residentialCity', 'Crazidino')
       .select('#residentialState', 'CA')
       .type('#residentialZip', '94666')
@@ -49,6 +66,7 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert(text.includes('123 Main Street'), 'street address missing');
+        assert(text.includes('Unit no. 45'), 'unit number missing');
         assert(text.includes('Crazidino'), 'city missing');
         assert(text.includes('CA'), 'state missing');
         assert(text.includes('94666'), 'zip missing');
@@ -62,6 +80,7 @@ module.exports = function(world) {
       .click('a.home-address')
       .waitForSelector('.residential-address-form')
       .type('#residentialStreet_1', '123 Main Street')
+      .type('#residentialStreet_2', 'Unit no. 45')
       .type('#residentialCity', 'Crazidino')
       .select('#residentialState', 'CA')
       .type('#residentialZip', '94666')
@@ -76,12 +95,20 @@ module.exports = function(world) {
     browser
       .value('#residentialStreet_1')
       .then((value) => { assert.equal(value, '123 Main Street'); })
+      .value('#residentialStreet_2')
+      .then((value) => { assert.equal(value, 'Unit no. 45'); })
       .value('#residentialCity')
       .then((value) => { assert.equal(value, 'Crazidino'); })
       .value('#residentialZip')
       .then((value) => { assert.equal(value, '94666'); })
       .value('#residentialState')
       .then((value) => { assert.equal(value, 'CA'); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will be asked if my residence and mailing addresses are the same', function(done){
+    browser.waitForSelector('.yes-no-selector')
       .then(() => { done(); })
       .catch(done);
   });

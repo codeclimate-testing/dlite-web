@@ -10,7 +10,8 @@ import * as dataPresent             from '../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit = navigateOnSubmit('/about-me/is-mailing-same/', props);
-  let continueDisabled = !(dataPresent.address(props.residenceAddress));
+  //Keep Continue button enabled by default
+  let continueDisabled = false //!(dataPresent.address(props.residenceAddress));
 
   return (
     <Form

@@ -13,7 +13,7 @@ const AddressTemplate = (props) => {
       <TextInput
         type={ type }
         identifier='street_1'
-        description='Street address'
+        description='Street Address'
         value={ props.address['street_1'] }
         onChange={props.onChange}
       />
@@ -44,7 +44,7 @@ const AddressTemplate = (props) => {
       <TextInput
         type={ type }
         identifier='zip'
-        description='Zipcode'
+        description='Zip Code'
         value={ props.address['zip'] }
         onChange={props.onChange}
       />
