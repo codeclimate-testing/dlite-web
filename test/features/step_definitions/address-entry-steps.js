@@ -7,9 +7,13 @@ module.exports = function(world) {
 
   world.then('I will see a form for entering my residential address', function(done) {
     browser
-      .exists('#residentialStreet')
+      .exists('#residentialStreet_1')
       .then((exists) => {
         assert.ok(exists, 'Street address input not found');
+      })
+      .exists('#residentialStreet_2')
+      .then((exists) => {
+        assert.ok(exists, 'Unit or Apartment number input not found');
       })
       .exists('#residentialCity')
       .then((exists) => {
@@ -32,7 +36,7 @@ module.exports = function(world) {
 
   world.when('I enter my residence address', function(done) {
     browser
-      .type('#residentialStreet', '123 Main Street')
+      .type('#residentialStreet_1', '123 Main Street')
       .type('#residentialCity', 'Crazidino')
       .select('#residentialState', 'CA')
       .type('#residentialZip', '94666')
@@ -55,9 +59,9 @@ module.exports = function(world) {
 
   world.given('I have already entered my residence address into the form', function(done) {
     browser
-      .click('a.addresses')
-      .waitForSelector('.both-addresses')
-      .type('#residentialStreet', '123 Main Street')
+      .click('a.home-address')
+      .waitForSelector('.residential-address-form')
+      .type('#residentialStreet_1', '123 Main Street')
       .type('#residentialCity', 'Crazidino')
       .select('#residentialState', 'CA')
       .type('#residentialZip', '94666')
@@ -70,7 +74,7 @@ module.exports = function(world) {
 
   world.then('I will see the residence address I entered', function(done) {
     browser
-      .value('#residentialStreet')
+      .value('#residentialStreet_1')
       .then((value) => { assert.equal(value, '123 Main Street'); })
       .value('#residentialCity')
       .then((value) => { assert.equal(value, 'Crazidino'); })

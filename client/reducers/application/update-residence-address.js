@@ -5,7 +5,8 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    street: '',
+    street_1: '',
+    street_2: '',
     city: '',
     state: 'CA',
     zip: '',

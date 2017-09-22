@@ -41,7 +41,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the addresses page', function(done) {
-    clickAndWaitForPage('a.addresses', '.both-addresses', done);
+    clickAndWaitForPage('a.home-address', '.residential-address-form', done);
   });
 
   world.when('I visit /about-me/contact', function (done) {
@@ -85,7 +85,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for entering my home address', function(done) {
-    assertOnPage('.both-addresses', /services\/about-me\/addresses/, done);
+    assertOnPage('.residential-address-form', /services\/about-me\/home-address/, done);
   });
 
   world.then('I will be on the page for entering my hair color', function(done) {

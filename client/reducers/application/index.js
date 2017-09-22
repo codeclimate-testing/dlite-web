@@ -1,7 +1,6 @@
 'use strict';
 
 import { combineReducers }    from 'redux';
-import updateMailingAddress   from './update-mailing-address';
 
 import updateLegalNames       from './update-legal-name';
 import updateResidenceAddress from './update-residence-address';
@@ -16,7 +15,6 @@ import updateWeight           from './update-weight.js';
 const rootReducer = combineReducers({
   legalName: updateLegalNames,
   residenceAddress: updateResidenceAddress,
-  mailingAddress: updateMailingAddress,
   contactDetails: updateContactDetails,
   eyeColor: updateEyeColor,
   hairColor: updateHairColor,

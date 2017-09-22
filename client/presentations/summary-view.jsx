@@ -23,7 +23,8 @@ export const SummaryNames = (props) => {
 const SummaryAddressBlob = (props) => {
   return (
     <div>
-      <p>Street: {props.address.street}</p>
+      <p>Street Address: {props.address.street_1}</p>
+      <p>Apartment or Unit Number (optional): {props.address.street_2}</p>
       <p>City: {props.address.city}</p>
       <p>State: {props.address.state}</p>
       <p>Zipcode: {props.address.zip}</p>

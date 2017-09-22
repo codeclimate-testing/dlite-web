@@ -8,7 +8,6 @@ import {
   SummaryEmpty,
   SummaryNames,
   SummaryResidenceAddress,
-  SummaryMailingAddress,
   SummaryContactDetails,
   SummaryEyeColor,
   SummaryHairColor,
@@ -35,10 +34,6 @@ const SummaryHandler = (props) => {
 
   if (dataPresent.address(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
-  }
-
-  if (dataPresent.address(props.mailingAddress)) {
-    contents.push(<SummaryMailingAddress mailingAddress={props.mailingAddress} key='mailingAddress'/>);
   }
 
   if (dataPresent.value(props.sex)) {

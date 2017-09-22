@@ -2,16 +2,22 @@
 
 import React from 'react';
 
-import { updateResidenceAddress }  from "../actions/index";
-import ResidenceAddress from "../presentations/residence-address-form.jsx";
-import connectForm      from '../helpers/connect-form';
+import { updateResidenceAddress }   from "../actions/index";
+import Form                         from "../presentations/residence-address-form.jsx";
+import connectForm                  from '../helpers/connect-form';
+import navigateOnSubmit             from '../helpers/navigate-on-submit';
+import * as dataPresent             from '../helpers/data-present';
 
-const ResidenceAddressContainer = (props) => {
+const ConnectedForm = (props) => {
+  let onSubmit = navigateOnSubmit('/about-me/is-mailing-same/', props);
+  let continueDisabled = !(dataPresent.address(props.residenceAddress));
+
   return (
-    <ResidenceAddress
-      onSubmit={props.onSubmit}
+    <Form
+      onSubmit={onSubmit}
       onChange={props.onChange}
       residenceAddress={props.residenceAddress}
+      continueDisabled={continueDisabled}
     />
   );
 };
@@ -22,4 +28,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connectForm(mapStateToProps, updateResidenceAddress, ResidenceAddressContainer);
+export default connectForm(mapStateToProps, updateResidenceAddress, ConnectedForm);

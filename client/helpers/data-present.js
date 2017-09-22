@@ -16,7 +16,7 @@ const date = (date) => {
 
 const address = (address) => {
   return (
-    value(address.street) || value(address.city) || value(address.zip)
+    value(address.street_1) || value(address.street_2) || value(address.city) || value(address.zip)
   );
 };
 
