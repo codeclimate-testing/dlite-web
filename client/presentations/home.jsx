@@ -32,6 +32,9 @@ const Home = () => {
       <li>
         <Link className='appearance-hair' to={ alicePath('/about-me/appearance/hair') }>hair-color</Link>
       </li>
+      <li>
+        <Link className='height' to={ alicePath('/about-me/height') }>height</Link>
+      </li>
     </ul>
   );
 };

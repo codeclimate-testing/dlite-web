@@ -13,70 +13,55 @@ import {
   SummaryEyeColor,
   SummaryHairColor,
   SummaryDateOfBirth,
-  SummarySex
+  SummarySex,
+  SummaryHeight
 } from '../presentations/summary-view.jsx';
 
-const hasNamesEntered = (props) => {
-  return props.firstName || props.middleName || props.lastName;
-};
+import * as dataPresent from '../helpers/data-present';
 
-const hasAddressEntered = (props) => {
-  return props.street || props.city || props.zip;
-};
-
-const hasHairColorEntered = (props) => {
-  return props.hairColor;
-};
-
+// Not sure what is going to happen with this, since it seems to
+// be moving to the SOS only area ... holding on refactoring until then.
 const hasContactDetailsEntered = (props) => {
   return props.emailAddress || props.phoneNumber;
 };
 
-const hasEyeColorEntered = (props) => {
-  return props.eyeColor;
-};
-
-const hasDateOfBirth = (props) => {
-  return props.month && props.day && props.year;
-};
-
-const hasSex = (props) => {
-  return !!props.sex;
-}
-
 const SummaryHandler = (props) => {
   let contents = [];
 
-  if (hasNamesEntered(props.legalName)) {
+  if (dataPresent.legalName(props.legalName)) {
     contents.push(<SummaryNames legalName={props.legalName} key='names'/>);
   }
 
-  if (hasAddressEntered(props.residenceAddress)) {
+  if (dataPresent.address(props.residenceAddress)) {
     contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
   }
 
-  if (hasAddressEntered(props.mailingAddress)) {
+  if (dataPresent.address(props.mailingAddress)) {
     contents.push(<SummaryMailingAddress mailingAddress={props.mailingAddress} key='mailingAddress'/>);
   }
 
-  if (hasSex(props)) {
+  if (dataPresent.value(props.sex)) {
     contents.push(<SummarySex key='sex' sex={props.sex}/>);
   }
 
-  if (hasEyeColorEntered(props.eyeColor)) {
+  if (dataPresent.value(props.eyeColor.eyeColor)) {
     contents.push(<SummaryEyeColor eyeColor={props.eyeColor} key='eyeColor'/>);
   }
 
-  if (hasHairColorEntered(props.hairColor)) {
+  if (dataPresent.value(props.hairColor.hairColor)) {
     contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
   }
 
-  if (hasDateOfBirth(props.dateOfBirth)) {
+  if (dataPresent.date(props.dateOfBirth)) {
     contents.push(<SummaryDateOfBirth dateOfBirth={props.dateOfBirth} key='dateOfBirth'/>);
   }
 
   if (hasContactDetailsEntered(props.contactDetails)) {
     contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
+  }
+
+  if (dataPresent.height(props.height)) {
+    contents.push(<SummaryHeight height={props.height} key='height'/>);
   }
 
   if (!contents.length) {
