@@ -13,7 +13,8 @@ import Sex          from './sex-selector-form-container.jsx';
 import HairColor    from './hair-color-form-container.jsx';
 import EyeColor     from './eye-color-form-container.jsx';
 import Height       from './height-form-container.jsx';
-import Weight       from '../presentations/weight-form.jsx';
+import Weight       from './weight-form-container.jsx';
+import SocialSecurity from '../presentations/social-security-form.jsx';
 
 import Contact      from './contact-details-form-container.jsx';
 
@@ -33,6 +34,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/appearance/hair' ) } component={HairColor} />
         <Route path={ alicePath('/about-me/height' ) } component={Height} />
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
+        <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>
     );

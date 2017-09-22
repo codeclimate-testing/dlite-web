@@ -104,3 +104,13 @@ export const SummaryHeight = (props) => {
     </div>
   );
 };
+
+export const SummaryWeight = (props) => {
+  return (
+    <div className='summary-section'>
+      <p>
+        Weight: {props.weight} pounds
+      </p>
+    </div>
+  );
+};

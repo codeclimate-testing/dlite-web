@@ -7,5 +7,4 @@ function defaultState() {
   return '';
 }
 
-export default formValueRecurer(defaultState, TYPES.UPDATE_SEX);
-
+export default formValueRecurer(defaultState, TYPES.UPDATE_WEIGHT);

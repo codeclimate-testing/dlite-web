@@ -11,6 +11,7 @@ import updateEyeColor         from './update-eye-color.js';
 import updateDateOfBirth      from './update-date-of-birth.js';
 import updateSex              from './update-sex.js';
 import updateHeight           from './update-height.js';
+import updateWeight           from './update-weight.js';
 
 const rootReducer = combineReducers({
   legalName: updateLegalNames,
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
   hairColor: updateHairColor,
   dateOfBirth: updateDateOfBirth,
   sex: updateSex,
-  height: updateHeight
+  height: updateHeight,
+  weight: updateWeight
 });
 
 export default rootReducer;
