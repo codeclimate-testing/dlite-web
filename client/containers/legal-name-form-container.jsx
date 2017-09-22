@@ -3,15 +3,21 @@
 import React from 'react';
 
 import { updateLegalName }  from "../actions/index";
-import LegalNameForm        from "../presentations/name-form.jsx";
+import FormPresentation     from "../presentations/name-form.jsx";
 import connectForm          from '../helpers/connect-form';
+import navigateOnSubmit     from '../helpers/navigate-on-submit';
+import * as dataPresent     from '../helpers/data-present';
 
-const LegalName = (props) => {
+const Form = (props) => {
+  const continueDisabled = !dataPresent.legalName(props.legalName);
+  const onSubmit = navigateOnSubmit('/about-me/date-of-birth', props);
+
   return (
-    <LegalNameForm
-      onSubmit={props.onSubmit}
+    <FormPresentation
+      onSubmit={onSubmit}
       onChange={props.onChange}
       legalName={props.legalName}
+      continueDisabled={continueDisabled}
     />
   );
 };
@@ -22,4 +28,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connectForm(mapStateToProps, updateLegalName, LegalNameForm);
+export default connectForm(mapStateToProps, updateLegalName, Form);

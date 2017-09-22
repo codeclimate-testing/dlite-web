@@ -5,13 +5,16 @@ import { Route } from 'react-router-dom';
 
 import Home         from '../presentations/home.jsx';
 import Summary      from './summary-handler.jsx';
+
 import LegalName    from './legal-name-form-container.jsx';
 import DateOfBirth  from './date-of-birth-form-container.jsx';
 import Addresses    from '../presentations/addresses.jsx';
 import Sex          from './sex-selector-form-container.jsx';
 import HairColor    from './hair-color-form-container.jsx';
 import EyeColor     from './eye-color-form-container.jsx';
-import Height       from '../presentations/height-form.jsx';
+import Height       from './height-form-container.jsx';
+import Weight       from '../presentations/weight-form.jsx';
+
 import Contact      from './contact-details-form-container.jsx';
 
 import alicePath from '../helpers/alice-path';
@@ -29,6 +32,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/appearance/eye') } component={EyeColor} />
         <Route path={ alicePath('/about-me/appearance/hair' ) } component={HairColor} />
         <Route path={ alicePath('/about-me/height' ) } component={Height} />
+        <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>
     );

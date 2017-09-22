@@ -8,15 +8,12 @@ import ContinueButton   from './continue-button.jsx';
 import navigateOnSubmit from '../helpers/navigate-on-submit';
 
 const LegalNameForm = (props) => {
-  let continueDisabled = props.legalName.lastName.length === 0;
-  let onSubmit = navigateOnSubmit('/about-me/date-of-birth', props);
-
   return (
     <div className='legal-name-form'>
       <HomeLink />
 
       <h4>What’s your full, legal name?</h4>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={props.onSubmit}>
         <TextInput
           identifier='firstName'
           description='First Name'
@@ -35,10 +32,10 @@ const LegalNameForm = (props) => {
           identifier='lastName'
           description='Last Name'
           value={props.legalName.lastName}
-          onChange={props.onChange}
+            onChange={props.onChange}
         />
 
-        <ContinueButton disabled={continueDisabled} />
+        <ContinueButton disabled={props.continueDisabled} />
       </form>
     </div>
   );

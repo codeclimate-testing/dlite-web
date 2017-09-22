@@ -93,3 +93,14 @@ export const SummarySex = (props) => {
     </div>
   )
 };
+
+export const SummaryHeight = (props) => {
+  let inches = props.height.inches || 0;
+  return (
+    <div className='summary-section'>
+      <p>
+        Height: {props.height.feet} feet {inches} inches
+      </p>
+    </div>
+  );
+};

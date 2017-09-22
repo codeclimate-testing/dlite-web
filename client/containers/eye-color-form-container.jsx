@@ -2,13 +2,14 @@
 
 import React from 'react';
 
-import { updateEyeColor }   from "../actions/index";
-import Form                   from '../presentations/eye-color-form.jsx';
-import connectForm            from '../helpers/connect-form';
-import navigateOnSubmit       from '../helpers/navigate-on-submit';
+import { updateEyeColor }         from "../actions/index";
+import Form                       from '../presentations/eye-color-form.jsx';
+import connectForm                from '../helpers/connect-form';
+import navigateOnSubmit           from '../helpers/navigate-on-submit';
+import * as dataPresent       from '../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  const continueDisabled = !props.eyeColor;
+  const continueDisabled = !dataPresent.value(props.eyeColor);
   const onSubmit = navigateOnSubmit('/about-me/appearance/hair', props);
 
   return (
