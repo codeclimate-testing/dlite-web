@@ -11,7 +11,7 @@ const Form = (props) => {
     <div className='weight-form'>
       <HomeLink />
 
-      <h4>How tall are you?</h4>
+      <h4>And how much do you weigh?</h4>
       <h5>Example: 190 pounds</h5>
 
       <form onSubmit={ props.onSubmit }>
