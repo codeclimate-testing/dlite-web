@@ -5,30 +5,30 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see a form for entering my residential address', function(done) {
+  world.then('I will see a form for entering my home address', function(done) {
     browser
-      .exists('#residentialStreet_1')
+      .exists('#homeStreet_1')
       .then((exists) => {
         assert.ok(exists, 'Street address input not found');
       })
-      .exists('#residentialStreet_2')
+      .exists('#homeStreet_2')
       .then((exists) => {
         assert.ok(exists, 'Unit or Apartment number input not found');
       })
-      .exists('#residentialCity')
+      .exists('#homeCity')
       .then((exists) => {
         assert.ok(exists, 'City input not found');
       })
-      .exists('#residentialZip')
+      .exists('#homeZip')
       .then((exists) => {
         assert.ok(exists, 'Zip input not found');
       })
-      .exists('#residentialState')
+      .exists('#homeState')
       .then((exists) => {
         assert.ok(exists, 'State input not found');
       })
-      .html('#residentialState option[selected]')
-      .value('#residentialState')
+      .html('#homeState option[selected]')
+      .value('#homeState')
       .then((value) => { assert.equal(value, 'CA'); })
       .then(() => { done(); })
       .catch(done);
@@ -50,18 +50,18 @@ module.exports = function(world) {
   });
 
 
-  world.when('I enter my residence address', function(done) {
+  world.when('I enter my home address', function(done) {
     browser
-      .type('#residentialStreet_1', '123 Main Street')
-      .type('#residentialStreet_2', 'Unit no. 45')
-      .type('#residentialCity', 'Crazidino')
-      .select('#residentialState', 'CA')
-      .type('#residentialZip', '94666')
+      .type('#homeStreet_1', '123 Main Street')
+      .type('#homeStreet_2', 'Unit no. 45')
+      .type('#homeCity', 'Crazidino')
+      .select('#homeState', 'CA')
+      .type('#homeZip', '94666')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see my residence address on that summary', function(done) {
+  world.then('I will see my home address on that summary', function(done) {
     browser
       .text()
       .then((text) => {
@@ -75,15 +75,15 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.given('I have already entered my residence address into the form', function(done) {
+  world.given('I have already entered my home address into the form', function(done) {
     browser
       .click('a.home-address')
-      .waitForSelector('.residential-address-form')
-      .type('#residentialStreet_1', '123 Main Street')
-      .type('#residentialStreet_2', 'Unit no. 45')
-      .type('#residentialCity', 'Crazidino')
-      .select('#residentialState', 'CA')
-      .type('#residentialZip', '94666')
+      .waitForSelector('.home-address-form')
+      .type('#homeStreet_1', '123 Main Street')
+      .type('#homeStreet_2', 'Unit no. 45')
+      .type('#homeCity', 'Crazidino')
+      .select('#homeState', 'CA')
+      .type('#homeZip', '94666')
       .click('input[type="submit"]')
       .click('a.home')
       .waitForSelector('.home-page')
@@ -91,36 +91,36 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see the residence address I entered', function(done) {
+  world.then('I will see the home address I entered', function(done) {
     browser
-      .value('#residentialStreet_1')
+      .value('#homeStreet_1')
       .then((value) => { assert.equal(value, '123 Main Street'); })
-      .value('#residentialStreet_2')
+      .value('#homeStreet_2')
       .then((value) => { assert.equal(value, 'Unit no. 45'); })
-      .value('#residentialCity')
+      .value('#homeCity')
       .then((value) => { assert.equal(value, 'Crazidino'); })
-      .value('#residentialZip')
+      .value('#homeZip')
       .then((value) => { assert.equal(value, '94666'); })
-      .value('#residentialState')
+      .value('#homeState')
       .then((value) => { assert.equal(value, 'CA'); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will be asked if my residence and mailing addresses are the same', function(done){
+  world.then('I will be asked if my home and mailing addresses are the same', function(done){
     browser.waitForSelector('.yes-no-selector')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I change my residence zip', function(done) {
+  world.and('I change my home zip', function(done) {
     browser
-      .type('#residentialZip', '91001')
+      .type('#homeZip', '91001')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see my updated residence zip', function(done) {
+  world.then('I will see my updated home zip', function(done) {
     browser
       .text()
       .then((pageContent) => {

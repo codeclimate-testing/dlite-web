@@ -7,7 +7,7 @@ import HomeLink from '../presentations/home-link.jsx';
 import {
   SummaryEmpty,
   SummaryNames,
-  SummaryResidenceAddress,
+  SummaryHomeAddress,
   SummaryContactDetails,
   SummaryEyeColor,
   SummaryHairColor,
@@ -32,8 +32,8 @@ const SummaryHandler = (props) => {
     contents.push(<SummaryNames legalName={props.legalName} key='names'/>);
   }
 
-  if (dataPresent.address(props.residenceAddress)) {
-    contents.push(<SummaryResidenceAddress residenceAddress={props.residenceAddress} key='residenceAddress'/>);
+  if (dataPresent.address(props.homeAddress)) {
+    contents.push(<SummaryHomeAddress homeAddress={props.homeAddress} key='homeAddress'/>);
   }
 
   if (dataPresent.value(props.sex)) {

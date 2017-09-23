@@ -8,7 +8,7 @@ import Summary        from './summary-handler.jsx';
 
 import LegalName      from './legal-name-form-container.jsx';
 import DateOfBirth    from './date-of-birth-form-container.jsx';
-import HomeAddress    from './residence-address-form-container.jsx';
+import HomeAddress    from './home-address-form-container.jsx';
 import Sex            from './sex-selector-form-container.jsx';
 import HairColor      from './hair-color-form-container.jsx';
 import EyeColor       from './eye-color-form-container.jsx';

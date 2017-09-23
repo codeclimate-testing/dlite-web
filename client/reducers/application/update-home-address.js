@@ -9,8 +9,8 @@ function defaultState() {
     street_2: '',
     city: '',
     state: 'CA',
-    zip: '',
+    zip: ''
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_RESIDENCE_ADDRESS);
+export default formObjectReducer(defaultState, TYPES.UPDATE_HOME_ADDRESS);

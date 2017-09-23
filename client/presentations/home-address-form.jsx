@@ -10,7 +10,7 @@ import AddressTemplate  from './address-template.jsx';
 
 const Form = (props) => {
   return (
-    <div className='residential-address-form'>
+    <div className='home-address-form'>
       <HomeLink />
 
       <h4>Where do you live?</h4>
@@ -19,8 +19,8 @@ const Form = (props) => {
         <form onSubmit={props.onSubmit}>
 
           <AddressTemplate
-            type='residential'
-            address={ props.residenceAddress }
+            type='home'
+            address={ props.homeAddress }
             onChange={ props.onChange }
           />
 

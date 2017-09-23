@@ -32,20 +32,11 @@ const SummaryAddressBlob = (props) => {
   );
 }
 
-export const SummaryResidenceAddress = (props) => {
+export const SummaryHomeAddress = (props) => {
   return (
     <div className='summary-section'>
-      <p>Residential address: </p>
-        <SummaryAddressBlob address={ props.residenceAddress }/>
-    </div>
-  );
-};
-
-export const SummaryMailingAddress = (props) => {
-  return (
-    <div className='summary-section'>
-      <p>Mailing address: </p>
-      <SummaryAddressBlob address={ props.mailingAddress }/>
+      <p>Home address: </p>
+        <SummaryAddressBlob address={ props.homeAddress }/>
     </div>
   );
 };
