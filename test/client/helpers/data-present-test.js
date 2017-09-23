@@ -31,7 +31,7 @@ describe('dataPresent', function() {
 
   describe('#address', function() {
     it('is true with any field but state', function() {
-      assert(dataPresent.address({street: '123 Main'}), 'address not present with street');
+      assert(dataPresent.address({street_1: '123 Main'}), 'address not present with street');
       assert(dataPresent.address({city: 'San Fukiama'}), 'address not present with city');
       assert(dataPresent.address({zip: '94000'}), 'address not present with zip');
     });

@@ -18,7 +18,7 @@ const Home = () => {
         <Link className='date-of-birth' to={ alicePath('/about-me/date-of-birth') }>date of birth</Link>
       </li>
       <li>
-        <Link className='addresses' to={ alicePath('/about-me/addresses') }>addresses</Link>
+        <Link className='home-address' to={ alicePath('/about-me/home-address') }>home address</Link>
       </li>
       <li>
         <Link className='contact-info' to={ alicePath('/about-me/contact') }>contacts</Link>

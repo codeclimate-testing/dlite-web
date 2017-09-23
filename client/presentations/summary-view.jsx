@@ -23,7 +23,8 @@ export const SummaryNames = (props) => {
 const SummaryAddressBlob = (props) => {
   return (
     <div>
-      <p>Street: {props.address.street}</p>
+      <p>Street Address: {props.address.street_1}</p>
+      <p>Apartment or Unit Number (optional): {props.address.street_2}</p>
       <p>City: {props.address.city}</p>
       <p>State: {props.address.state}</p>
       <p>Zipcode: {props.address.zip}</p>
@@ -31,20 +32,11 @@ const SummaryAddressBlob = (props) => {
   );
 }
 
-export const SummaryResidenceAddress = (props) => {
+export const SummaryHomeAddress = (props) => {
   return (
     <div className='summary-section'>
-      <p>Residential address: </p>
-        <SummaryAddressBlob address={ props.residenceAddress }/>
-    </div>
-  );
-};
-
-export const SummaryMailingAddress = (props) => {
-  return (
-    <div className='summary-section'>
-      <p>Mailing address: </p>
-      <SummaryAddressBlob address={ props.mailingAddress }/>
+      <p>Home address: </p>
+        <SummaryAddressBlob address={ props.homeAddress }/>
     </div>
   );
 };
