@@ -18,7 +18,8 @@ export const TYPES = {
   UPDATE_DATE_OF_BIRTH:     'UPDATE_DATE_OF_BIRTH',
   UPDATE_SEX:               'UPDATE_SEX',
   UPDATE_HEIGHT:            'UPDATE_HEIGHT',
-  UPDATE_WEIGHT:            'UPDATE_WEIGHT'
+  UPDATE_WEIGHT:            'UPDATE_WEIGHT',
+  UPDATE_SOCIAL_SECURITY:   'UPDATE_SOCIAL_SECURITY'
 };
 
 export const updateLegalName        = generateAction(TYPES.UPDATE_LEGAL_NAME);
@@ -30,3 +31,4 @@ export const updateDateOfBirth      = generateAction(TYPES.UPDATE_DATE_OF_BIRTH)
 export const updateSex              = generateAction(TYPES.UPDATE_SEX);
 export const updateHeight           = generateAction(TYPES.UPDATE_HEIGHT);
 export const updateWeight           = generateAction(TYPES.UPDATE_WEIGHT);
+export const updateSocialSecurity   = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
