@@ -1,14 +1,21 @@
-.feet-input {
+.feet-input,
+.part2-input {
   width: $em * 1.555;
 }
 
 .month-input,
 .day-input,
 .inches-input,
-.weight-input {
+.weight-input,
+.part1-input,
+.part3-input {
   width: $em * 2;
 }
 
 .year-input {
   width: $em * 4;
+}
+
+.social-security-dash {
+  padding: $spacing / 1.5;
 }

@@ -5,17 +5,21 @@ import { connect } from 'react-redux';
 
 import HomeLink from '../presentations/home-link.jsx';
 import {
-  SummaryEmpty,
-  SummaryNames,
   SummaryHomeAddress,
   SummaryContactDetails,
-  SummaryEyeColor,
-  SummaryHairColor,
-  SummaryDateOfBirth,
-  SummarySex,
-  SummaryHeight,
-  SummaryWeight
 } from '../presentations/summary-view.jsx';
+
+import {
+  LegalName,
+  DateOfBirth,
+  Sex,
+  EyeColor,
+  HairColor,
+  Height,
+  Weight,
+  SocialSecurity,
+  Empty
+} from '../presentations/summary/index.js';
 
 import * as dataPresent from '../helpers/data-present';
 
@@ -26,47 +30,30 @@ const hasContactDetailsEntered = (props) => {
 };
 
 const SummaryHandler = (props) => {
-  let contents = [];
-
-  if (dataPresent.legalName(props.legalName)) {
-    contents.push(<SummaryNames legalName={props.legalName} key='names'/>);
-  }
+  let contents = [
+    <LegalName legalName={props.legalName} key='legal-name' />,
+    <DateOfBirth dateOfBirth={props.dateOfBirth} key='date-of-birth' />,
+    <Sex sex={props.sex} key='sex' />,
+    <EyeColor eyeColor={props.eyeColor.eyeColor} key='eye-color' />,
+    <HairColor hairColor={props.hairColor.hairColor} key='hair-color' />,
+    <Height height={props.height} key='height' />,
+    <Weight weight={props.weight} key='weight' />,
+    <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
+    <Empty {...props} key='empty' />
+  ];
 
   if (dataPresent.address(props.homeAddress)) {
     contents.push(<SummaryHomeAddress homeAddress={props.homeAddress} key='homeAddress'/>);
-  }
-
-  if (dataPresent.value(props.sex)) {
-    contents.push(<SummarySex key='sex' sex={props.sex}/>);
-  }
-
-  if (dataPresent.value(props.eyeColor.eyeColor)) {
-    contents.push(<SummaryEyeColor eyeColor={props.eyeColor} key='eyeColor'/>);
-  }
-
-  if (dataPresent.value(props.hairColor.hairColor)) {
-    contents.push(<SummaryHairColor hairColor={props.hairColor} key='hairColor'/>);
-  }
-
-  if (dataPresent.date(props.dateOfBirth)) {
-    contents.push(<SummaryDateOfBirth dateOfBirth={props.dateOfBirth} key='dateOfBirth'/>);
   }
 
   if (hasContactDetailsEntered(props.contactDetails)) {
     contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
   }
 
-  if (dataPresent.height(props.height)) {
-    contents.push(<SummaryHeight height={props.height} key='height'/>);
-  }
-
-  if (dataPresent.value(props.weight)) {
-    contents.push(<SummaryWeight weight={props.weight} key='weight'/>);
-  }
-
-  if (!contents.length) {
-    contents.push(<SummaryEmpty key='summary'/>);
-  }
+  contents = contents.reduce((summaries, item) => {
+    if (item.type) { summaries.push(item); }
+    return summaries;
+  }, []);
 
   return (
     <div className='summary'>
