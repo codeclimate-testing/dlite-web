@@ -4,25 +4,20 @@ const db = require('../../db/connect')();
 
 module.exports = function createApplication(data) {
   let returnedData = {};
+
+  function aggregateAndInsertNext(previousKey, newKey) {
+    return function handler(record) {
+      returnedData[previousKey] = record;
+      return db(newKey)
+        .insert(data[newKey])
+        .returning('*');
+    };
+  }
+
   return db('applications').insert(data.applications).returning('*')
-    .then((application) => {
-      returnedData.application = application;
-      return db('addresses')
-        .insert(data.addresses)
-        .returning('*');
-    })
-    .then((addresses) => {
-      returnedData.addresses = addresses;
-      return db('emails')
-        .insert(data.emails)
-        .returning('*');
-    })
-    .then((emails) => {
-      returnedData.emails = emails;
-      return db('phone_numbers')
-        .insert(data.phone_numbers)
-        .returning('*');
-    })
+    .then(aggregateAndInsertNext('application', 'addresses'))
+    .then(aggregateAndInsertNext('addresses', 'emails'))
+    .then(aggregateAndInsertNext('emails', 'phone_numbers'))
     .then((phoneNumbers) => {
       returnedData.phone_numbers = phoneNumbers;
       return returnedData;
