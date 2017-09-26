@@ -146,7 +146,7 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with social security');
     });
 
-    it('is not yet true with other data', function() {
+    it('is true when there is a home address', function() {
       let data = {
         homeAddress: {
           street1: '123 Main street',
@@ -156,7 +156,20 @@ describe('dataPresent', function() {
         }
       };
 
-      assert(!dataPresent.application(data), 'Data present with an address');
+      assert(dataPresent.application(data), 'Data not present with an home address');
+    });
+
+    it('is true when there is a mailing address', function() {
+      let data = {
+        mailingAddress: {
+          street1: '123 Main street',
+          city: 'Miami',
+          state: 'CA',
+          zip: '94111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with a mailing address');
     });
   });
 });
