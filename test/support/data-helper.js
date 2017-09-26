@@ -1,6 +1,7 @@
 'use strict';
 
 const uuid = require('uuid/v1');
+const parse = require('../../server/models/client-data-parser');
 
 function fakeClientData() {
   return {
@@ -32,7 +33,13 @@ function fakeClientData() {
   };
 }
 
+function fakeRecords() {
+  let clientData = fakeClientData();
+  return parse(clientData);
+}
+
 module.exports = {
-  fakeClientData: fakeClientData
+  fakeClientData: fakeClientData,
+  fakeRecords: fakeRecords
 };
 
