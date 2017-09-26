@@ -13,17 +13,18 @@ const LinkListItem = (props) => {
 };
 
 const linkData = [
-  {description: 'summary',          path: '/summary'},
-  {description: 'legal name',       path: '/about-me/legal-name'},
-  {description: 'date of birth',    path: '/about-me/date-of-birth'},
-  {description: 'home address',     path: '/about-me/home-address'},
-  {description: 'sex',              path: '/about-me/sex'},
-  {description: 'eye color',        path: '/about-me/appearance/eye'},
-  {description: 'hair color',       path: '/about-me/appearance/hair'},
-  {description: 'height',           path: '/about-me/height'},
-  {description: 'weight',           path: '/about-me/weight'},
-  {description: 'social security',  path: '/about-me/social-security'},
-  {description: 'contact info',     path: '/about-me/contact'},
+  {description: 'summary',             path: '/summary'},
+  {description: 'legal name',          path: '/about-me/legal-name'},
+  {description: 'date of birth',       path: '/about-me/date-of-birth'},
+  {description: 'home address',        path: '/about-me/home-address'},
+  {description: 'mailing address',     path: '/about-me/mailing-address'},
+  {description: 'sex',                 path: '/about-me/sex'},
+  {description: 'eye color',           path: '/about-me/appearance/eye'},
+  {description: 'hair color',          path: '/about-me/appearance/hair'},
+  {description: 'height',              path: '/about-me/height'},
+  {description: 'weight',              path: '/about-me/weight'},
+  {description: 'social security',     path: '/about-me/social-security'},
+  {description: 'contact info',        path: '/about-me/contact'},
 ];
 
 const Home = () => {

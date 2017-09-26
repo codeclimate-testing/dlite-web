@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 
 import HomeLink from '../presentations/home-link.jsx';
 import {
-  SummaryHomeAddress,
   SummaryContactDetails,
 } from '../presentations/summary-view.jsx';
 
 import {
   LegalName,
   DateOfBirth,
+  HomeAddress,
+  MailingAddress,
   Sex,
   EyeColor,
   HairColor,
@@ -33,6 +34,8 @@ const SummaryHandler = (props) => {
   let contents = [
     <LegalName legalName={props.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={props.dateOfBirth} key='date-of-birth' />,
+    <HomeAddress homeAddress={props.homeAddress} key='home-address' />,
+    <MailingAddress mailingAddress={props.mailingAddress} key='mailing-address' />,
     <Sex sex={props.sex} key='sex' />,
     <EyeColor eyeColor={props.eyeColor.eyeColor} key='eye-color' />,
     <HairColor hairColor={props.hairColor.hairColor} key='hair-color' />,
@@ -41,10 +44,6 @@ const SummaryHandler = (props) => {
     <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
     <Empty {...props} key='empty' />
   ];
-
-  if (dataPresent.address(props.homeAddress)) {
-    contents.push(<SummaryHomeAddress homeAddress={props.homeAddress} key='homeAddress'/>);
-  }
 
   if (hasContactDetailsEntered(props.contactDetails)) {
     contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
