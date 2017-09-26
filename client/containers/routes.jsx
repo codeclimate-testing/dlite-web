@@ -29,7 +29,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
 
-        <Route path={ alicePath('/about-me/names') } component={LegalName} />
+        <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
         <Route path={ alicePath('/about-me/is-mailing-same/') } component={YesNoSelector} />
