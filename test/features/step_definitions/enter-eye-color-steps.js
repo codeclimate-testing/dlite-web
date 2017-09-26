@@ -23,7 +23,7 @@ module.exports = function (world) {
 
   world.given('I have already entered my eye color', function(done){
     browser
-      .click('a.appearance-eye')
+      .click('a.eye-color')
       .click('label[for="Blue"]')
       .click('input[type="submit"]')
       .click('a.home')

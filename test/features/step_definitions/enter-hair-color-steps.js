@@ -48,7 +48,7 @@ module.exports = function (world) {
 
   world.given('I have already entered my hair color', function (done) {
     browser
-      .click('a.appearance-hair')
+      .click('a.hair-color')
       .waitForSelector('.hair-color-form')
       .click('label[for="Auburn"]')
       .click('input[type="submit"]')

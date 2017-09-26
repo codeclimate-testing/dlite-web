@@ -10,7 +10,10 @@ module.exports = function(world) {
       .click(linkSelector)
       .waitForSelector(pageSelector)
       .then(() => { done(); })
-      .catch(done);
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
   }
 
   function assertOnPage(pageSelector, pageRegex, done) {
@@ -49,15 +52,15 @@ module.exports = function(world) {
   });
 
   world.when('I visit the legal name page', function(done) {
-    clickAndWaitForPage('a.names', '.legal-name-form', done);
+    clickAndWaitForPage('a.legal-name', '.legal-name-form', done);
   });
 
   world.and('I visit eye color page', function(done) {
-    clickAndWaitForPage('a.appearance-eye', '.eye-color-form', done);
+    clickAndWaitForPage('a.eye-color', '.eye-color-form', done);
   });
 
   world.when('I visit hair color page', function (done) {
-    clickAndWaitForPage('a.appearance-hair', '.hair-color-form', done);
+    clickAndWaitForPage('a.hair-color', '.hair-color-form', done);
   });
 
   world.when('I visit the date of birth page', function(done) {
