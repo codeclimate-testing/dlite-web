@@ -43,8 +43,12 @@ module.exports = function(world) {
     clickAndWaitForPage('a.home', '.home-page', done);
   });
 
-  world.when('I visit the addresses page', function(done) {
+  world.when('I visit the home addresses page', function(done) {
     clickAndWaitForPage('a.home-address', '.home-address-form', done);
+  });
+
+  world.when('I visit the mailing addresses page', function(done) {
+    clickAndWaitForPage('a.mailing-address', '.mailing-address-form', done);
   });
 
   world.when('I visit /about-me/contact', function (done) {
@@ -93,6 +97,14 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering my home address', function(done) {
     assertOnPage('.home-address-form', /services\/about-me\/home-address/, done);
+  });
+
+  world.then('I will be on the page for entering my mailing address', function(done) {
+    assertOnPage('.mailing-address-form', /services\/about-me\/mailing-address/, done);
+  });
+
+  world.then('I will be on the page for entering my sex identification', function(done) {
+    assertOnPage('.sex-form', /about-me\/sex/, done);
   });
 
   world.then('I will be on the page for entering my hair color', function(done) {

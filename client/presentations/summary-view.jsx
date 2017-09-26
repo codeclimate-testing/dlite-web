@@ -23,6 +23,15 @@ export const SummaryHomeAddress = (props) => {
   );
 };
 
+export const SummaryMailingAddress = (props) => {
+  return (
+    <div className='summary-section'>
+      <p>Mailing address: </p>
+        <SummaryAddressBlob address={ props.mailingAddress }/>
+    </div>
+  );
+};
+
 export const SummaryContactDetails = (props) => {
   return (
     <div className='summary-section'>
