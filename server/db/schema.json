@@ -1,0 +1,459 @@
+{
+  "counts": {
+    "sequences": 4,
+    "constraints": 5,
+    "tables": 6,
+    "columns": 31
+  },
+  "tables": {
+    "addresses": {
+      "table_schema": "public",
+      "table_name": "addresses",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "id",
+          "column_default": "nextval('addresses_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "type": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "street_address_1": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "street_address_1",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "street_address_2": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "street_address_2",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "city": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "city",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "state": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "state",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "zip": {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "zip",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "applications": {
+      "table_schema": "public",
+      "table_name": "applications",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "id",
+          "column_default": null,
+          "is_nullable": false,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "first_name": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "first_name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "middle_name": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "middle_name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "last_name": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "last_name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "date_of_birth": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "date_of_birth",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "date",
+          "col_description": null
+        },
+        "language": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "language",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "hair_color": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "hair_color",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "eye_color": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "eye_color",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "created_at": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "created_at",
+          "column_default": "now()",
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
+          "col_description": null
+        },
+        "updated_at": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "updated_at",
+          "column_default": "now()",
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
+          "col_description": null
+        }
+      }
+    },
+    "emails": {
+      "table_schema": "public",
+      "table_name": "emails",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "emails",
+          "column_name": "id",
+          "column_default": "nextval('emails_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "emails",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "address": {
+          "table_schema": "public",
+          "table_name": "emails",
+          "column_name": "address",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "deleted_at": {
+          "table_schema": "public",
+          "table_name": "emails",
+          "column_name": "deleted_at",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
+          "col_description": null
+        }
+      }
+    },
+    "knex_migrations": {
+      "table_schema": "public",
+      "table_name": "knex_migrations",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "knex_migrations",
+          "column_name": "id",
+          "column_default": "nextval('knex_migrations_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "name": {
+          "table_schema": "public",
+          "table_name": "knex_migrations",
+          "column_name": "name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "batch": {
+          "table_schema": "public",
+          "table_name": "knex_migrations",
+          "column_name": "batch",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "migration_time": {
+          "table_schema": "public",
+          "table_name": "knex_migrations",
+          "column_name": "migration_time",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
+          "col_description": null
+        }
+      }
+    },
+    "knex_migrations_lock": {
+      "table_schema": "public",
+      "table_name": "knex_migrations_lock",
+      "obj_description": null,
+      "columns": {
+        "is_locked": {
+          "table_schema": "public",
+          "table_name": "knex_migrations_lock",
+          "column_name": "is_locked",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        }
+      }
+    },
+    "phone_numbers": {
+      "table_schema": "public",
+      "table_name": "phone_numbers",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "phone_numbers",
+          "column_name": "id",
+          "column_default": "nextval('phone_numbers_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "phone_numbers",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "number": {
+          "table_schema": "public",
+          "table_name": "phone_numbers",
+          "column_name": "number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "deleted_at": {
+          "table_schema": "public",
+          "table_name": "phone_numbers",
+          "column_name": "deleted_at",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
+          "col_description": null
+        }
+      }
+    }
+  },
+  "constraints": {
+    "addresses": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "addresses",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "addresses_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "addresses",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "applications": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "applications_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "applications",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "emails": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "emails",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "emails_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "emails",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "knex_migrations": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "knex_migrations",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "knex_migrations_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "knex_migrations",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "phone_numbers": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "phone_numbers",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "phone_numbers_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "phone_numbers",
+          "referenced_column": "id"
+        }
+      ]
+    }
+  },
+  "sequences": {
+    "addresses": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "phone_numbers",
+        "column_name": "id",
+        "sequence_name": "phone_numbers_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "emails": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "phone_numbers",
+        "column_name": "id",
+        "sequence_name": "phone_numbers_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "knex_migrations": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "phone_numbers",
+        "column_name": "id",
+        "sequence_name": "phone_numbers_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "phone_numbers": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "phone_numbers",
+        "column_name": "id",
+        "sequence_name": "phone_numbers_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    }
+  }
+}
