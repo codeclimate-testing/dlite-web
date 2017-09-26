@@ -33,6 +33,8 @@ const socialSecurity = (props) => {
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
+    address(props.homeAddress) ||
+    address(props.mailingAddress) ||
     value(props.sex) ||
     (props.eyeColor && value(props.eyeColor.eyeColor)) ||
     (props.hairColor && value(props.hairColor.hairColor)) ||
