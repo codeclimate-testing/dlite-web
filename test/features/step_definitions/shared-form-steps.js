@@ -38,4 +38,29 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I see two buttons labelled Yes and No', function(done) {
+    browser
+    .html('label[for="Yes"]')
+    .then((button) => { assert.ok(button, 'Selector for Yes missing')})
+    .html('label[for="No"]')
+    .then((button) => { assert.ok(button, 'Selector for No missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select Yes', function(done){
+    browser
+    .click('label[for="Yes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select No', function(done){
+    browser
+    .click('label[for="No"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
 };
