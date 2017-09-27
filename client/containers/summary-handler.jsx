@@ -19,6 +19,7 @@ import {
   Height,
   Weight,
   SocialSecurity,
+  CitizenStatus,
   Empty
 } from '../presentations/summary/index.js';
 
@@ -42,6 +43,7 @@ const SummaryHandler = (props) => {
     <Height height={props.height} key='height' />,
     <Weight weight={props.weight} key='weight' />,
     <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
+    <CitizenStatus citizenStatus={props.citizenStatus} key='citizen-status' />,
     <Empty {...props} key='empty' />
   ];
 

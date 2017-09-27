@@ -12,7 +12,7 @@ const SocialSecurity = (props) => {
 
   return (
     <div className='summary-section'>
-      <p>Date of birth: {socialSecurity}</p>
+      <p>Social Security: {socialSecurity}</p>
     </div>
   );
 };
