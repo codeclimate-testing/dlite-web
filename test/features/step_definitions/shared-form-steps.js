@@ -49,6 +49,19 @@ module.exports = function (world) {
     .catch(done);
   });
 
+  world.then('I see three buttons for Yes and No and Skip Section', function(done) {
+    browser
+    .html('label[for="Yes"]')
+    .then((button) => { assert.ok(button, 'Selector for Yes missing')})
+    .html('label[for="No"]')
+    .then((button) => { assert.ok(button, 'Selector for No missing')})
+    .html('label[for="Skip Section"]')
+    .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+
   world.when('I select Yes', function(done){
     browser
     .click('label[for="Yes"]')
@@ -59,6 +72,13 @@ module.exports = function (world) {
   world.when('I select No', function(done){
     browser
     .click('label[for="No"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select Skip Section', function(done){
+    browser
+    .click('label[for="Skip Section"]')
     .then(() => { done(); })
     .catch(done);
   });

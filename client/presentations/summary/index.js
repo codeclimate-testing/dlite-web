@@ -11,6 +11,7 @@ import HairColor         from './hair-color.jsx';
 import Height            from './height.jsx';
 import Weight            from './weight.jsx';
 import SocialSecurity    from './social-security.jsx';
+import CitizenStatus     from './voter-citizen-status.jsx';
 
 export {
   Empty,
@@ -23,5 +24,6 @@ export {
   HairColor,
   Height,
   Weight,
-  SocialSecurity
+  SocialSecurity,
+  CitizenStatus
 };

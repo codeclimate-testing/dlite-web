@@ -40,7 +40,8 @@ const application = (props) => {
     (props.hairColor && value(props.hairColor.hairColor)) ||
     height(props.height) ||
     value(props.weight) ||
-    socialSecurity(props.socialSecurity);
+    socialSecurity(props.socialSecurity) ||
+    value(props.citizenStatus);
 };
 
 export {

@@ -87,6 +87,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.social-security', '.social-security-form', done);
   });
 
+  world.when('I visit voter citizen status page', function(done) {
+    clickAndWaitForPage('a.citizen-status', '.citizen-status-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -124,6 +128,11 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for voter citizen status entry', function(done) {
-    assertOnPage('.citizen-form', /about-me\/voter\/am-citizen/, done);
+    assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
+
+  world.then('I will be taken to voter eligibility requirements page', function(done){
+    assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
+  });
+
 };

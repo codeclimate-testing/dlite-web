@@ -13,19 +13,21 @@ import updateSex                 from './update-sex';
 import updateHeight              from './update-height';
 import updateWeight              from './update-weight';
 import updateSocialSecurity      from './update-social-security';
+import updateVoterCitizenStatus  from './update-voter-citizen-status';
 
 const rootReducer = combineReducers({
-  legalName: updateLegalNames,
-  homeAddress: updateHomeAddress,
-  mailingAddress: updateMailingAddress,
-  contactDetails: updateContactDetails,
-  eyeColor: updateEyeColor,
-  hairColor: updateHairColor,
-  dateOfBirth: updateDateOfBirth,
-  sex: updateSex,
-  height: updateHeight,
-  weight: updateWeight,
-  socialSecurity: updateSocialSecurity
+  legalName             : updateLegalNames,
+  homeAddress           : updateHomeAddress,
+  mailingAddress        : updateMailingAddress,
+  contactDetails        : updateContactDetails,
+  eyeColor              : updateEyeColor,
+  hairColor             : updateHairColor,
+  dateOfBirth           : updateDateOfBirth,
+  sex                   : updateSex,
+  height                : updateHeight,
+  weight                : updateWeight,
+  socialSecurity        : updateSocialSecurity,
+  citizenStatus         : updateVoterCitizenStatus
 });
 
 export default rootReducer;
