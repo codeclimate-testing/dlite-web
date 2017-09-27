@@ -27,6 +27,7 @@ const hasContactDetailsEntered = (props) => {
 };
 
 const SummaryHandler = (props) => {
+
   let contents = [];
 
   if (dataPresent.legalName(props.legalName)) {

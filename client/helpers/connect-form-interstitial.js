@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 function connectForm(mapStateToProps, action, form) {
   function mapDispatchToProps(dispatch) {
+
     const onCopy = (payload) => {
       //Trigger dispatch for each name value pair
       for (var key in payload) {
@@ -14,12 +15,25 @@ function connectForm(mapStateToProps, action, form) {
         }
       }
     }
+
+    const onReset = (payload) => {
+      //Trigger dispatch for each field with blank value
+      for (var key in payload) {
+        if (payload.hasOwnProperty(key)) {
+            let name = key;
+            let value = '';
+            dispatch(action(name, value));
+        }
+      }
+    }
+
     return {
-      onCopy
+      onCopy,
+      onReset
     };
   }
 
   return connect(mapStateToProps, mapDispatchToProps)(form);
-};
+}
 
 export default connectForm;

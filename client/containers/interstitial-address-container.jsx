@@ -21,6 +21,9 @@ const ConnectedForm = (props) => {
       address = '/about-me/sex/';
     }
     else{
+      //Reset mailing address
+      props.onReset(props.homeAddress);
+
       address = '/about-me/mailing-address/';
     }
 
