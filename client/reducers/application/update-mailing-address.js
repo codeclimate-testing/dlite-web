@@ -13,4 +13,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.COPY_HOME_ADDRESS);
+export default formObjectReducer(defaultState, TYPES.UPDATE_MAILING_ADDRESS);

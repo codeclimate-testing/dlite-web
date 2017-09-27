@@ -54,7 +54,7 @@ module.exports = function(world) {
     browser
       .open(world.url('/'))
       .waitForSelector('.home-page')
-      .click('a.names')
+      .click('a.legal-name')
       .waitForSelector('.legal-name-form')
       .type('#firstName', 'FirstName1')
       .type('#middleName', 'MiddleName1')

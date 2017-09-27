@@ -10,7 +10,10 @@ module.exports = function(world) {
       .click(linkSelector)
       .waitForSelector(pageSelector)
       .then(() => { done(); })
-      .catch(done);
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
   }
 
   function assertOnPage(pageSelector, pageRegex, done) {
@@ -40,8 +43,12 @@ module.exports = function(world) {
     clickAndWaitForPage('a.home', '.home-page', done);
   });
 
-  world.when('I visit the addresses page', function(done) {
+  world.when('I visit the home addresses page', function(done) {
     clickAndWaitForPage('a.home-address', '.home-address-form', done);
+  });
+
+  world.when('I visit the mailing addresses page', function(done) {
+    clickAndWaitForPage('a.mailing-address', '.mailing-address-form', done);
   });
 
   world.when('I visit /about-me/contact', function (done) {
@@ -49,15 +56,15 @@ module.exports = function(world) {
   });
 
   world.when('I visit the legal name page', function(done) {
-    clickAndWaitForPage('a.names', '.legal-name-form', done);
+    clickAndWaitForPage('a.legal-name', '.legal-name-form', done);
   });
 
   world.and('I visit eye color page', function(done) {
-    clickAndWaitForPage('a.appearance-eye', '.eye-color-form', done);
+    clickAndWaitForPage('a.eye-color', '.eye-color-form', done);
   });
 
   world.when('I visit hair color page', function (done) {
-    clickAndWaitForPage('a.appearance-hair', '.hair-color-form', done);
+    clickAndWaitForPage('a.hair-color', '.hair-color-form', done);
   });
 
   world.when('I visit the date of birth page', function(done) {
@@ -76,6 +83,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.weight', '.weight-form', done);
   });
 
+  world.when('I visit the social security page', function(done) {
+    clickAndWaitForPage('a.social-security', '.social-security-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -88,12 +99,12 @@ module.exports = function(world) {
     assertOnPage('.home-address-form', /services\/about-me\/home-address/, done);
   });
 
-  world.then('I will be on the page for entering my sex identification', function(done) {
-    assertOnPage('.sex-form', /services\/about-me\/sex/, done);
-  });
-
   world.then('I will be on the page for entering my mailing address', function(done) {
     assertOnPage('.mailing-address-form', /services\/about-me\/mailing-address/, done);
+  });
+
+  world.then('I will be on the page for entering my sex identification', function(done) {
+    assertOnPage('.sex-form', /about-me\/sex/, done);
   });
 
   world.then('I will be on the page for entering my hair color', function(done) {
@@ -112,5 +123,7 @@ module.exports = function(world) {
     assertOnPage('.social-security-form', /about-me\/social-security/, done);
   });
 
-
+  world.then('I will be on the page for voter citizen status entry', function(done) {
+    assertOnPage('.citizen-form', /about-me\/voter\/am-citizen/, done);
+  });
 };

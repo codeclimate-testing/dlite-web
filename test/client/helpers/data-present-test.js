@@ -67,4 +67,109 @@ describe('dataPresent', function() {
       assert(!dataPresent.height({}), 'height data present when blank');
     });
   });
+
+  describe('#socialSecurity', function() {
+    it('is true when there is a value in each element', function() {
+      let data = {
+        part1: '5',
+        part2: '5',
+        part3: '5'
+      };
+      assert(dataPresent.socialSecurity(data), 'ssn data not considered present with all three parts');
+    });
+
+    it('is false without the feet', function() {
+      assert(!dataPresent.socialSecurity({part1: '5', part2: '5'}), 'ssn data present with only partial fields');
+    });
+  });
+
+  describe('#application', function() {
+    it('is true when there is a legalName', function() {
+      let data = {
+        legalName: {
+          lastName: 'Baccigalupi'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with legalName');
+    });
+
+    it('is true when there is a sex selection', function() {
+      let data = {
+        sex: 'male'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with sex');
+    });
+
+    it('is true when there is an eye color', function() {
+      let data = {
+        eyeColor: { eyeColor: 'red' }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with eyeColor');
+    });
+
+    it('is true when there is hair color', function() {
+      let data = {
+        hairColor: { hairColor: 'red' }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with hairColor');
+    });
+
+    it('is true when there is a height', function() {
+      let data = {
+        height: { feet: '12' }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with height');
+    });
+
+    it('is true when there is a weight', function() {
+      let data = {
+        weight: '12'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with weight');
+    });
+
+    it('is true when there is a social security number', function() {
+      let data = {
+        socialSecurity: {
+          part1: '123',
+          part2: '12',
+          part3: '1234'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with social security');
+    });
+
+    it('is true when there is a home address', function() {
+      let data = {
+        homeAddress: {
+          street1: '123 Main street',
+          city: 'Miami',
+          state: 'CA',
+          zip: '94111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with an home address');
+    });
+
+    it('is true when there is a mailing address', function() {
+      let data = {
+        mailingAddress: {
+          street1: '123 Main street',
+          city: 'Miami',
+          state: 'CA',
+          zip: '94111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with a mailing address');
+    });
+  });
 });

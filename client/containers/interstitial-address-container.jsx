@@ -4,7 +4,7 @@ import React                        from 'react';
 
 
 import alicePath                    from '../helpers/alice-path';
-import { copyHomeAddress }          from "../actions/index";
+import { updateMailingAddress }          from "../actions/index";
 import Form                         from "../presentations/interstitial-address-form.jsx";
 import connectForm                  from '../helpers/connect-form-interstitial';
 import navigateOnSubmit             from '../helpers/navigate-on-submit';
@@ -45,4 +45,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connectForm(mapStateToProps, copyHomeAddress, ConnectedForm);
+export default connectForm(mapStateToProps, updateMailingAddress, ConnectedForm);
