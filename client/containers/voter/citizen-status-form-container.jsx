@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { updateVoterCitizenStatus }   from '../../actions/index';
+import { updateCitizenStatus }   from '../../actions/index';
 import Form                           from '../../presentations/voter/citizen-status-form.jsx';
 import connectForm                    from '../../helpers/connect-form';
 import navigateOnSubmit               from '../../helpers/navigate-on-submit';
@@ -27,4 +27,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connectForm(mapStateToProps, updateVoterCitizenStatus, ConnectedForm);
+export default connectForm(mapStateToProps, updateCitizenStatus, ConnectedForm);

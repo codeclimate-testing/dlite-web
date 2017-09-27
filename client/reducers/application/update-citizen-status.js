@@ -7,5 +7,5 @@ function defaultState() {
   return '';
 }
 
-export default formValueRecurer(defaultState, TYPES.UPDATE_VOTER_CITIZEN_STATUS);
+export default formValueRecurer(defaultState, TYPES.UPDATE_CITIZEN_STATUS);
 
