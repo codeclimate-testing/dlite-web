@@ -88,6 +88,14 @@ module.exports = function(world) {
     assertOnPage('.home-address-form', /services\/about-me\/home-address/, done);
   });
 
+  world.then('I will be on the page for entering my sex identification', function(done) {
+    assertOnPage('.sex-form', /services\/about-me\/sex/, done);
+  });
+
+  world.then('I will be on the page for entering my mailing address', function(done) {
+    assertOnPage('.mailing-address-form', /services\/about-me\/mailing-address/, done);
+  });
+
   world.then('I will be on the page for entering my hair color', function(done) {
     assertOnPage('.hair-color-form', /about-me\/appearance\/hair/, done);
   });
@@ -103,4 +111,6 @@ module.exports = function(world) {
   world.then('I will be on the page for entering my social security', function(done) {
     assertOnPage('.social-security-form', /about-me\/social-security/, done);
   });
+
+
 };

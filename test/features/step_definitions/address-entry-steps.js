@@ -108,7 +108,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be asked if my home and mailing addresses are the same', function(done){
-    browser.waitForSelector('.yes-no-selector')
+    browser.waitForSelector('.interstitial-address-form')
       .then(() => { done(); })
       .catch(done);
   });

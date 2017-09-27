@@ -41,6 +41,15 @@ export const SummaryHomeAddress = (props) => {
   );
 };
 
+export const SummaryMailingAddress = (props) => {
+  return (
+    <div className='summary-section'>
+      <p>Mailing address: </p>
+        <SummaryAddressBlob address={ props.mailingAddress }/>
+    </div>
+  );
+};
+
 export const SummaryHairColor = (props) => {
   return (
     <div className='summary-page'>
