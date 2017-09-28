@@ -18,7 +18,10 @@ import Weight                       from './weight-form-container.jsx';
 import SocialSecurity               from './social-security-form-container.jsx';
 import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
+import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
 import EligibilityRequirements      from '../presentations/voter/eligibility-requirements-form.jsx'
+import BallotLanguage               from '../presentations/voter/ballot-language-form.jsx'
+import ContactChoice                from '../presentations/voter/contact-choice-form.jsx'
 import Contact                      from './contact-details-form-container.jsx';
 
 import alicePath                    from '../helpers/alice-path';
@@ -42,7 +45,10 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
+        <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
+        <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
+        <Route path={ alicePath('/about-me/voter/contact-choice') } component={ContactChoice} />
 
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>

@@ -12,6 +12,7 @@ import Height            from './height.jsx';
 import Weight            from './weight.jsx';
 import SocialSecurity    from './social-security.jsx';
 import CitizenStatus     from './citizen-status.jsx';
+import BallotByMail      from './ballot-by-mail.jsx';
 
 export {
   Empty,
@@ -25,5 +26,6 @@ export {
   Height,
   Weight,
   SocialSecurity,
-  CitizenStatus
+  CitizenStatus,
+  BallotByMail
 };

@@ -25,7 +25,8 @@ const linkData = [
   {description: 'weight',              path: '/about-me/weight'},
   {description: 'social security',     path: '/about-me/social-security'},
   {description: 'contact info',        path: '/about-me/contact'},
-  {description: 'citizen status',      path: '/about-me/voter/am-citizen'}
+  {description: 'citizen status',      path: '/about-me/voter/am-citizen'},
+  {description: 'ballot by mail',      path: '/about-me/voter/ballot-by-mail'}
 ];
 
 const Home = () => {
