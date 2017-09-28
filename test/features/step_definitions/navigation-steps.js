@@ -91,6 +91,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.citizen-status', '.citizen-status-form', done);
   });
 
+  world.when('I visit ballot by mail option page', function(done) {
+    clickAndWaitForPage('a.ballot-by-mail', '.ballot-by-mail-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -133,6 +137,14 @@ module.exports = function(world) {
 
   world.then('I will be taken to voter eligibility requirements page', function(done){
     assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
+  });
+
+  world.then('I will be taken to contact choice page', function(done){
+    assertOnPage('.contact-choice-form', /about-me\/voter\/contact-choice/, done);
+  });
+
+  world.then('I will be taken to ballot language page', function(done){
+    assertOnPage('.ballot-language-form', /about-me\/voter\/ballot-language/, done);
   });
 
 };
