@@ -20,6 +20,8 @@ import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
 import OptOut                       from '../presentations/voter/opt-out-form.jsx';
+import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
+import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
 import Contact                      from './contact-details-form-container.jsx';
 
 import alicePath                    from '../helpers/alice-path';
@@ -44,8 +46,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
+        <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
+        <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
-
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>
     );
