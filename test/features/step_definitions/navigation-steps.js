@@ -92,7 +92,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit voter preferences intro page', function(done){
-    clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro-form', done);
+    clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {

@@ -20,7 +20,7 @@ import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements      from '../presentations/voter/eligibility-requirements-form.jsx';
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
-import VoterPreferencesIntro        from './voter/voter-preferences-intro-form-container.jsx';
+import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
 import Contact                      from './contact-details-form-container.jsx';
 
 import alicePath                    from '../helpers/alice-path';
