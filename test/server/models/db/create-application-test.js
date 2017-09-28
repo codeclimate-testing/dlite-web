@@ -19,13 +19,16 @@ describe('createApplication', function() {
     let data = dataHelper.fakeRecords();
     createApplication(data)
       .then((records) => {
-        assert.equal(records.application.id, data.id);
-        assert.equal(records.application.first_name, data.first_name);
-        assert.equal(records.application.middle_name, data.middle_name);
-        assert.equal(records.application.last_name, data.last_name);
-        assert.equal(records.application.date_of_birth, data.date_of_birth);
-        assert.equal(records.application.hair_color, data.hair_color);
-        assert.equal(records.application.eye_color, data.eye_color);
+        assert.equal(records.applications[0].id, data.applications.id);
+        assert.equal(records.applications[0].first_name, data.applications.first_name);
+        assert.equal(records.applications[0].middle_name, data.applications.middle_name);
+        assert.equal(records.applications[0].last_name, data.applications.last_name);
+        assert.equal(
+          records.applications[0].date_of_birth.toString(),
+          data.applications.date_of_birth.toString()
+        );
+        assert.equal(records.applications[0].hair_color, data.applications.hair_color);
+        assert.equal(records.applications[0].eye_color, data.applications.eye_color);
       })
       .then(done)
       .catch(done);

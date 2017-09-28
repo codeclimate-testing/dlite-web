@@ -15,7 +15,7 @@ module.exports = function createApplication(data) {
   }
 
   return db('applications').insert(data.applications).returning('*')
-    .then(aggregateAndInsertNext('application', 'addresses'))
+    .then(aggregateAndInsertNext('applications', 'addresses'))
     .then(aggregateAndInsertNext('addresses', 'emails'))
     .then(aggregateAndInsertNext('emails', 'phone_numbers'))
     .then((phoneNumbers) => {

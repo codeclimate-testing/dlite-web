@@ -16,12 +16,7 @@ function clearAll() {
     });
 }
 
-function insertClientData() {
-  
-}
-
 module.exports = {
   db: db,
-  clearAll: clearAll,
-  insertClientData: insertClientData,
+  clearAll: clearAll
 };
