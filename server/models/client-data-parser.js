@@ -3,7 +3,7 @@
 function parse(data) {
   return Object.assign(
     {},
-    { applications: extractApplication(data) },
+    { application: extractApplication(data) },
     { addresses: extractAddresses(data) },
     { emails: extractEmail(data) },
     { phone_numbers: extractPhoneNumber(data) }
@@ -48,17 +48,17 @@ function extractAddresses(data) {
 }
 
 function extractEmail(data) {
-  return {
+  return [{
     application_id: data.id,
     address: data.email
-  };
+  }];
 }
 
 function extractPhoneNumber(data) {
-  return {
+  return [{
     application_id: data.id,
     number: data.phoneNumber
-  };
+  }];
 }
 
 module.exports = parse;

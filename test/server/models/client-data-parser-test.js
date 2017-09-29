@@ -4,9 +4,9 @@ const assert             = require('assert');
 
 const env                = require('../../support/env');
 const dataHelper         = require('../../support/data-helper');
-const parse              = require('../../../server/models/application-parser');
+const parse              = require('../../../server/models/client-data-parser');
 
-describe('applicationParser', function() {
+describe('clientDataParser', function() {
   let data, parsedData;
 
   beforeEach(function() {
@@ -48,13 +48,13 @@ describe('applicationParser', function() {
   });
 
   it('correctly extracts the email', function() {
-    let email = parsedData.emails;
+    let email = parsedData.emails[0];
     assert.equal(email.application_id, data.id);
     assert.equal(email.address, data.email);
   });
 
   it('correctly extracts the phone number', function() {
-    let phoneNumber = parsedData.phone_numbers;
+    let phoneNumber = parsedData.phone_numbers[0];
     assert.equal(phoneNumber.application_id, data.id);
     assert.equal(phoneNumber.number, data.phoneNumber);
   });

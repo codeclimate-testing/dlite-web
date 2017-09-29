@@ -17,18 +17,19 @@ describe('createApplication', function() {
 
   it('inserts the application into the database', function(done) {
     let data = dataHelper.fakeRecords();
+
     createApplication(data)
       .then((records) => {
-        assert.equal(records.applications[0].id, data.applications.id);
-        assert.equal(records.applications[0].first_name, data.applications.first_name);
-        assert.equal(records.applications[0].middle_name, data.applications.middle_name);
-        assert.equal(records.applications[0].last_name, data.applications.last_name);
+        assert.equal(records.application.id, data.application.id);
+        assert.equal(records.application.first_name, data.application.first_name);
+        assert.equal(records.application.middle_name, data.application.middle_name);
+        assert.equal(records.application.last_name, data.application.last_name);
         assert.equal(
-          records.applications[0].date_of_birth.toString(),
-          data.applications.date_of_birth.toString()
+          records.application.date_of_birth.toString(),
+          data.application.date_of_birth.toString()
         );
-        assert.equal(records.applications[0].hair_color, data.applications.hair_color);
-        assert.equal(records.applications[0].eye_color, data.applications.eye_color);
+        assert.equal(records.application.hair_color, data.application.hair_color);
+        assert.equal(records.application.eye_color, data.application.eye_color);
       })
       .then(done)
       .catch(done);
@@ -41,7 +42,7 @@ describe('createApplication', function() {
         let recordAddresses = records.addresses;
 
         assert(recordAddresses[0].id);
-        assert.equal(recordAddresses[0].application_id, data.applications.id);
+        assert.equal(recordAddresses[0].application_id, data.application.id);
         assert.equal(recordAddresses[0].type, data.addresses[0].type);
         assert.equal(recordAddresses[0].street_address_1, data.addresses[0].street_address_1);
         assert.equal(recordAddresses[0].street_address_2, data.addresses[0].street_address_2);
@@ -50,7 +51,7 @@ describe('createApplication', function() {
         assert.equal(recordAddresses[0].zip, data.addresses[0].zip);
 
         assert(recordAddresses[1].id);
-        assert.equal(recordAddresses[1].application_id, data.applications.id);
+        assert.equal(recordAddresses[1].application_id, data.application.id);
         assert.equal(recordAddresses[1].type, data.addresses[1].type);
         assert.equal(recordAddresses[1].street_address_1, data.addresses[1].street_address_1);
         assert.equal(recordAddresses[1].street_address_2, data.addresses[1].street_address_2);
@@ -67,8 +68,8 @@ describe('createApplication', function() {
     createApplication(data)
       .then((records) => {
         assert(records.emails[0].id);
-        assert.equal(records.emails[0].application_id, data.applications.id);
-        assert.equal(records.emails[0].address, data.emails.address);
+        assert.equal(records.emails[0].application_id, data.application.id);
+        assert.equal(records.emails[0].address, data.emails[0].address);
       })
       .then(done)
       .catch(done);
@@ -79,8 +80,8 @@ describe('createApplication', function() {
     createApplication(data)
       .then((records) => {
         assert(records.phone_numbers[0].id);
-        assert.equal(records.phone_numbers[0].application_id, data.applications.id);
-        assert.equal(records.phone_numbers[0].number, data.phone_numbers.numbers);
+        assert.equal(records.phone_numbers[0].application_id, data.application.id);
+        assert.equal(records.phone_numbers[0].number, data.phone_numbers[0].numbers);
       })
       .then(done)
       .catch(done);
