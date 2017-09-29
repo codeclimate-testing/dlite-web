@@ -21,6 +21,7 @@ import {
   SocialSecurity,
   CitizenStatus,
   EligibilityRequirements,
+  PoliticalPartyChoose,
   Empty
 } from '../presentations/summary/index.js';
 
@@ -46,6 +47,7 @@ const SummaryHandler = (props) => {
     <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
     <CitizenStatus citizenStatus={props.citizenStatus} key='citizen-status' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
+    <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
     <Empty {...props} key='empty' />
   ];
 

@@ -42,7 +42,8 @@ const application = (props) => {
     value(props.weight) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
-    value(props.eligibilityRequirements);
+    value(props.eligibilityRequirements) ||
+    value(props.politicalPartyChoose);
 };
 
 export {
