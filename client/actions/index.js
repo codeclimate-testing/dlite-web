@@ -22,7 +22,8 @@ export const TYPES = {
   UPDATE_WEIGHT:                          'UPDATE_WEIGHT',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
-  UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS'
+  UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS',
+  UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE'
 };
 
 export const updateLegalName                      = generateAction(TYPES.UPDATE_LEGAL_NAME);
@@ -38,3 +39,4 @@ export const updateWeight                         = generateAction(TYPES.UPDATE_
 export const updateSocialSecurity                 = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus                  = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateEligibilityRequirements        = generateAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
+export const updatePoliticalPartyChoose      = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);

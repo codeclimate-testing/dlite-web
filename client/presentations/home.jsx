@@ -28,6 +28,7 @@ const linkData = [
   {description: 'citizen status',             path: '/about-me/voter/am-citizen'},
   {description: 'eligibility requirements',   path: '/about-me/voter/eligibility-requirements'},
   {description: 'voter preferences intro',    path: '/about-me/voter/voter-preferences-intro'},
+  {description: 'political party choose',     path: '/about-me/voter/political-party-choose'},
   {description: 'political party',            path: '/about-me/voter/political-party'}
 ];
 

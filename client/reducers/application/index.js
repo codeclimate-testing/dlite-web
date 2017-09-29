@@ -15,6 +15,7 @@ import updateWeight                        from './update-weight';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateEligibilityRequirements       from './update-eligibility-requirements';
+import updatePoliticalPartyChoose          from './update-political-party-choose';
 
 const rootReducer = combineReducers({
   legalName               : updateLegalNames,
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
   weight                  : updateWeight,
   socialSecurity          : updateSocialSecurity,
   citizenStatus           : updateCitizenStatus,
-  eligibilityRequirements : updateEligibilityRequirements
+  eligibilityRequirements : updateEligibilityRequirements,
+  politicalPartyChoose    : updatePoliticalPartyChoose
 });
 
 export default rootReducer;
