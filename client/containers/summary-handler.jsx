@@ -20,6 +20,7 @@ import {
   Weight,
   SocialSecurity,
   CitizenStatus,
+  BallotByMail,
   EligibilityRequirements,
   PoliticalPartyChoose,
   Empty
@@ -46,6 +47,7 @@ const SummaryHandler = (props) => {
     <Weight weight={props.weight} key='weight' />,
     <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
     <CitizenStatus citizenStatus={props.citizenStatus} key='citizen-status' />,
+    <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
     <Empty {...props} key='empty' />

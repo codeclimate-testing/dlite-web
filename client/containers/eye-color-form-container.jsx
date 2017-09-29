@@ -6,7 +6,7 @@ import { updateEyeColor }         from "../actions/index";
 import Form                       from '../presentations/eye-color-form.jsx';
 import connectForm                from '../helpers/connect-form';
 import navigateOnSubmit           from '../helpers/navigate-on-submit';
-import * as dataPresent       from '../helpers/data-present';
+import * as dataPresent           from '../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.value(props.eyeColor);
