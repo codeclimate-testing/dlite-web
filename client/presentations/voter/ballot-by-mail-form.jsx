@@ -7,7 +7,11 @@ import HomeLink               from '../home-link.jsx';
 import ContinueButton         from '../continue-button.jsx';
 import FAQDrawer              from '../faq-drawer.jsx';
 
-const VALUES = ['Yes', 'No'];
+const VALUES              = ['Yes', 'No'];
+const FAQ_CLASSNAME_YES   = 'faq-ballot-by-mail-yes';
+const MESSAGE_YES         = 'Ok, your ballot will now come by mail. You can still vote in-person at your polling place.';
+const FAQ_CLASSNAME_NO    = 'faq-ballot-by-mail-no';
+const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
 
 const BallotByMailForm = (props) => {
   return (
@@ -27,10 +31,21 @@ const BallotByMailForm = (props) => {
         </div>
 
         <div className='inner-bottom'>
+
+        { props.selectedValue === 'Yes' &&
           <FAQDrawer
-            faqDrawerClass = {props.faqDrawerClass}
-            faqDrawerText  = {props.faqDrawerText}
+            faqDrawerClass = {FAQ_CLASSNAME_YES}
+            faqDrawerText  = {MESSAGE_YES}
           />
+        }
+
+        { props.selectedValue === 'No' &&
+          <FAQDrawer
+          faqDrawerClass = {FAQ_CLASSNAME_NO}
+          faqDrawerText  = {MESSAGE_NO}
+          />
+        }
+
         </div>
 
         <ContinueButton
