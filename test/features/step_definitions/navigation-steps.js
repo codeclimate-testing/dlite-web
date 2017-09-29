@@ -95,6 +95,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit the political party choose page', function(done){
+    clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -133,6 +137,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page for voter citizen status entry', function(done) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
+  });
+
+  world.then('I will be on the page for ballot by mail', function(done) {
+    assertOnPage('.ballot-by-mail', /about-me\/voter\/ballot-by-mail/, done);
   });
 
   world.then('I will be taken to voter eligibility requirements page', function(done){
