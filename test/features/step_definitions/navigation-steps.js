@@ -91,6 +91,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.citizen-status', '.citizen-status-form', done);
   });
 
+  world.when('I visit the voter eligibility requirements page', function(done) {
+    clickAndWaitForPage('a.eligibility-requirements', '.eligibility-requirements-form', done);
+  });
+
   world.when('I visit voter preferences intro page', function(done){
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
@@ -139,8 +143,15 @@ module.exports = function(world) {
     assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
   });
 
+  world.when('I will be on the page for entering voter opt-out', function(done) {
+    clickAndWaitForPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
+  });
+
+  world.when('I will be on the page with my summary', function(done) {
+    clickAndWaitForPage('.summary', /services\/summary/, done);
+  });
+
   world.then('I will be taken to political party page', function(done){
     assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
   });
-
 };
