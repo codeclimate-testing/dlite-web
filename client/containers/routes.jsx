@@ -18,7 +18,8 @@ import Weight                       from './weight-form-container.jsx';
 import SocialSecurity               from './social-security-form-container.jsx';
 import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
-import EligibilityRequirements      from '../presentations/voter/eligibility-requirements-form.jsx';
+import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
+import OptOut                       from '../presentations/voter/opt-out-form.jsx';
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import BallotByMail                 from '../presentations/voter/ballot-by-mail-form.jsx';
 import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
@@ -51,6 +52,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
+        <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>
     );
