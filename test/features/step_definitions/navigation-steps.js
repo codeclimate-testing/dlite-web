@@ -162,4 +162,8 @@ module.exports = function(world) {
   world.then('I will be taken to political party page', function(done){
     assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
   });
+
+  world.then('I will be taken to the political party choose page', function(done){
+    assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
+  });
 };
