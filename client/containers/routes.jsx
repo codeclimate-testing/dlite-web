@@ -5,6 +5,7 @@ import { Route }                    from 'react-router-dom';
 
 import Home                         from '../presentations/home.jsx';
 import Summary                      from './summary-handler.jsx';
+import alicePath                    from '../helpers/alice-path';
 
 import LegalName                    from './legal-name-form-container.jsx';
 import DateOfBirth                  from './date-of-birth-form-container.jsx';
@@ -19,12 +20,14 @@ import SocialSecurity               from './social-security-form-container.jsx';
 import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
-import EligibilityRequirements      from '../presentations/voter/eligibility-requirements-form.jsx'
-import BallotLanguage               from '../presentations/voter/ballot-language-form.jsx'
-import ContactChoice                from '../presentations/voter/contact-choice-form.jsx'
+import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
+import BallotLanguage               from '../presentations/voter/ballot-language-form.jsx';
+import ContactChoice                from '../presentations/voter/contact-choice-form.jsx';
+import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
+import OptOut                       from '../presentations/voter/opt-out-form.jsx';
+import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
+import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
 import Contact                      from './contact-details-form-container.jsx';
-
-import alicePath                    from '../helpers/alice-path';
 
 class Router extends React.Component {
   render() {
@@ -49,7 +52,10 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
         <Route path={ alicePath('/about-me/voter/contact-choice') } component={ContactChoice} />
-
+        <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
+        <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
+        <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
+        <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
       </div>
     );
