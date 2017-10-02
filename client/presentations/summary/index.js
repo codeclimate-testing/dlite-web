@@ -13,6 +13,7 @@ import Weight                      from './weight.jsx';
 import SocialSecurity              from './social-security.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
+import BallotByMail                from './ballot-by-mail.jsx';
 import PoliticalPartyChoose        from './political-party-choose.jsx';
 
 export {
@@ -29,5 +30,6 @@ export {
   SocialSecurity,
   CitizenStatus,
   EligibilityRequirements,
+  BallotByMail,
   PoliticalPartyChoose
 };
