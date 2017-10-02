@@ -1,10 +1,10 @@
 'use strict';
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React          from 'react';
+import { Link }       from 'react-router-dom';
 
-import TextInput from './text-input.jsx';
-import HomeLink from './home-link.jsx';
+import TextInput      from '../text-input.jsx';
+import HomeLink       from '../home-link.jsx';
 
 const ContactDetailsForm = (props) => {
   return (

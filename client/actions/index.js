@@ -39,4 +39,4 @@ export const updateWeight                         = generateAction(TYPES.UPDATE_
 export const updateSocialSecurity                 = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus                  = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateEligibilityRequirements        = generateAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
-export const updatePoliticalPartyChoose      = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
+export const updatePoliticalPartyChoose           = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
