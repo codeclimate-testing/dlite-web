@@ -23,6 +23,7 @@ import {
   BallotByMail,
   EligibilityRequirements,
   PoliticalPartyChoose,
+  BallotLanguage,
   Empty
 } from '../presentations/summary/index.js';
 
@@ -50,6 +51,7 @@ const SummaryHandler = (props) => {
     <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
+    <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
     <Empty {...props} key='empty' />
   ];
 

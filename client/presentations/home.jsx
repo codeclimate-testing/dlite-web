@@ -30,7 +30,8 @@ const linkData = [
   {description: 'eligibility requirements',   path: '/about-me/voter/eligibility-requirements'},
   {description: 'voter preferences intro',    path: '/about-me/voter/voter-preferences-intro'},
   {description: 'political party choose',     path: '/about-me/voter/political-party-choose'},
-  {description: 'political party',            path: '/about-me/voter/political-party'}
+  {description: 'political party',            path: '/about-me/voter/political-party'},
+  {description: 'ballot language',            path: '/about-me/voter/ballot-language'}
 ];
 
 const Home = () => {

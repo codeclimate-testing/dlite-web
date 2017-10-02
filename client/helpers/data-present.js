@@ -44,7 +44,8 @@ const application = (props) => {
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
-    value(props.politicalPartyChoose);
+    value(props.politicalPartyChoose) ||
+    value(props.ballotLanguage);
 
 };
 

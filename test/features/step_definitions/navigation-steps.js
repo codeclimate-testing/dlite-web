@@ -103,6 +103,11 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit ballot language page', function(done) {
+    clickAndWaitForPage('a.ballot-language', '.ballot-language-form', done);
+  });
+
+
   world.when('I visit the political party choose page', function(done){
     clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
   });
@@ -165,6 +170,10 @@ module.exports = function(world) {
 
   world.when('I will be on the page for entering voter opt-out', function(done) {
     clickAndWaitForPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
+  });
+
+  world.when('I will be on the page for choosing my contact preference', function(done) {
+    clickAndWaitForPage('.contact-choice', /about-me\/voter\/contact-choice/, done);
   });
 
   world.when('I will be on the page with my summary', function(done) {
