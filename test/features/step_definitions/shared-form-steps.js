@@ -82,5 +82,37 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+  
+   world.and('I see three buttons labelled Add or Update, Remove and Skip Question', function(done) {
+    browser
+    .html('label[for="Add or Update"]')
+    .then((button) => { assert.ok(button, 'Selector for Add or Update missing')})
+    .html('label[for="Remove"]')
+    .then((button) => { assert.ok(button, 'Selector for Remove missing')})
+    .html('label[for="Skip Question"]')
+    .then((button) => { assert.ok(button, 'Selector for Skip Question missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
 
+  world.when('I select Add or Update', function(done) {
+     browser
+    .click('label[for="Add or Update"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select Remove', function(done) {
+     browser
+    .click('label[for="Remove"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select Skip Question', function(done) {
+     browser
+    .click('label[for="Skip Question"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
 };

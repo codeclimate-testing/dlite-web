@@ -22,6 +22,9 @@ import EligibilityRequirements      from '../presentations/voter/eligibility-req
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
 import Contact                      from './contact-details-form-container.jsx';
+import ContactMethods               from './voter/contact-methods-form-container.jsx';
+import EmailPhone                   from '../presentations/voter/email-phone-form.jsx';
+import EmailPhoneRemove             from '../presentations/voter/email-phone-remove-form.jsx';
 
 import alicePath                    from '../helpers/alice-path';
 
@@ -48,6 +51,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
+        <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactMethods} />
+        <Route path={ alicePath('/about-me/voter/email-phone/') } component={EmailPhone} />
+        <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
       </div>
     );
   }

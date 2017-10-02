@@ -95,6 +95,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit contact choice page', function(done) {
+    clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -135,6 +139,14 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
 
+  world.then('I will be taken to email phone page', function(done) {
+    assertOnPage('.email-phone-form', /about-me\/voter\/email-phone/, done);
+  });
+
+    world.then('I will be taken to remove email phone page', function(done) {
+    assertOnPage('.email-phone-remove-form', /about-me\/voter\/remove-email-phone/, done);
+  });
+
   world.then('I will be taken to voter eligibility requirements page', function(done){
     assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
   });
@@ -143,4 +155,7 @@ module.exports = function(world) {
     assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
   });
 
+    world.then('I will be taken to summary page', function(done) {
+     clickAndWaitForPage('.summary', /services\/summary/, done);
+  });
 };

@@ -21,7 +21,8 @@ export const TYPES = {
   UPDATE_HEIGHT:                'UPDATE_HEIGHT',
   UPDATE_WEIGHT:                'UPDATE_WEIGHT',
   UPDATE_SOCIAL_SECURITY:       'UPDATE_SOCIAL_SECURITY',
-  UPDATE_CITIZEN_STATUS:        'UPDATE_CITIZEN_STATUS'
+  UPDATE_CITIZEN_STATUS:        'UPDATE_CITIZEN_STATUS',
+  UPDATE_CONTACT_METHODS:       'UPDATE_CONTACT_METHODS'
 };
 
 export const updateLegalName            = generateAction(TYPES.UPDATE_LEGAL_NAME);
@@ -36,3 +37,4 @@ export const updateHeight               = generateAction(TYPES.UPDATE_HEIGHT);
 export const updateWeight               = generateAction(TYPES.UPDATE_WEIGHT);
 export const updateSocialSecurity       = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus        = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
+export const updateContactMethods       = generateAction(TYPES.UPDATE_CONTACT_METHODS);

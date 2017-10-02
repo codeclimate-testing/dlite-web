@@ -14,6 +14,7 @@ import updateHeight              from './update-height';
 import updateWeight              from './update-weight';
 import updateSocialSecurity      from './update-social-security';
 import updateCitizenStatus       from './update-citizen-status';
+import updateContactMethods       from './update-contact-methods';
 
 const rootReducer = combineReducers({
   legalName             : updateLegalNames,
@@ -27,7 +28,8 @@ const rootReducer = combineReducers({
   height                : updateHeight,
   weight                : updateWeight,
   socialSecurity        : updateSocialSecurity,
-  citizenStatus         : updateCitizenStatus
+  citizenStatus         : updateCitizenStatus,
+  contactMethods        : updateContactMethods
 });
 
 export default rootReducer;
