@@ -15,6 +15,7 @@ import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
 import PoliticalPartyChoose        from './political-party-choose.jsx';
+import ContactDetails              from './contact-details.jsx';
 
 export {
   Empty,
@@ -31,5 +32,6 @@ export {
   CitizenStatus,
   EligibilityRequirements,
   BallotByMail,
-  PoliticalPartyChoose
+  PoliticalPartyChoose,
+  ContactDetails
 };

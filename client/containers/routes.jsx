@@ -27,7 +27,7 @@ import VoterPreferencesIntro        from '../presentations/voter/voter-preferenc
 import OptOut                       from '../presentations/voter/opt-out-form.jsx';
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
-import Contact                      from './contact-details-form-container.jsx';
+import ContactDetails               from './voter/contact-details-form-container.jsx';
 
 class Router extends React.Component {
   render() {
@@ -56,7 +56,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
-        <Route path={ alicePath('/about-me/contact') } component={Contact} />
+        <Route path={ alicePath('/about-me/voter/email-phone') } component={ContactDetails} />
       </div>
     );
   }

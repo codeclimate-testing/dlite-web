@@ -24,7 +24,7 @@ const linkData = [
   {description: 'height',                     path: '/about-me/height'},
   {description: 'weight',                     path: '/about-me/weight'},
   {description: 'social security',            path: '/about-me/social-security'},
-  {description: 'contact info',               path: '/about-me/contact'},
+  {description: 'contact details',            path: '/about-me/voter/email-phone'},
   {description: 'citizen status',             path: '/about-me/voter/am-citizen'},
   {description: 'ballot by mail',             path: '/about-me/voter/ballot-by-mail'},
   {description: 'eligibility requirements',   path: '/about-me/voter/eligibility-requirements'},

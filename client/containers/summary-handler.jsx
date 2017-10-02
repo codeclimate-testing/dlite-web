@@ -4,9 +4,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import HomeLink from '../presentations/home-link.jsx';
-import {
-  SummaryContactDetails,
-} from '../presentations/summary-view.jsx';
 
 import {
   LegalName,
@@ -23,6 +20,7 @@ import {
   BallotByMail,
   EligibilityRequirements,
   PoliticalPartyChoose,
+  ContactDetails,
   Empty
 } from '../presentations/summary/index.js';
 
@@ -50,12 +48,9 @@ const SummaryHandler = (props) => {
     <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
+    <ContactDetails contactDetails={props.contactDetails} key ='contact-details' />,
     <Empty {...props} key='empty' />
   ];
-
-  if (hasContactDetailsEntered(props.contactDetails)) {
-    contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
-  }
 
   contents = contents.reduce((summaries, item) => {
     if (item.type) { summaries.push(item); }

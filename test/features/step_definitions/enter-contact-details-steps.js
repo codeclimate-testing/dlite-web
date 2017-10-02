@@ -91,7 +91,7 @@ module.exports = function (world) {
 
   world.given('I have already entered my phone number into the form', function (done) {
     browser
-      .click('a.contact-info')
+      .click('a.contact-details')
       .type('#phoneNumber', '(111) 000-8888')
       .then(() => { done(); })
       .catch(done);
@@ -108,7 +108,6 @@ module.exports = function (world) {
   world.and('I change my phone number', function (done) {
     browser
       .type('#phoneNumber', '(999) 000-1111')
-      .click('input[type="submit"]')
       .then(() => { done(); })
       .catch(done);
   });

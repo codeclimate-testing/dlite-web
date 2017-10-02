@@ -52,7 +52,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit voter contact details page', function (done) {
-    clickAndWaitForPage('a.contact-info', '.contact-details-section', done);
+    clickAndWaitForPage('a.contact-details', '.contact-details-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
