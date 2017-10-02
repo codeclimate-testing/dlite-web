@@ -8,10 +8,6 @@ Feature: Select Preferred Contact Methods
     When I visit contact choice page
     Then I will see that the Continue button is no longer disabled
     And I see three buttons labelled Add or Update, Remove and Skip Question
-
-  Scenario: I want to add or update as contact method - navigation and summary
-    Given I go to the new online DL application page
-    When I visit contact choice page
     When I select Add or Update
     When I click to submit
     Then I will be taken to email phone page

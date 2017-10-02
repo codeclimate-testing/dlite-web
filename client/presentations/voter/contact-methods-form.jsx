@@ -25,6 +25,10 @@ const ContactMethodsForm = (props) => {
             />
           </div>
 
+          <div className='inner-bottom'>
+            <h4>Why am I being asked this?</h4>
+          </div>
+
           <ContinueButton disabled={props.continueDisabled} />
         </form>
       </div>

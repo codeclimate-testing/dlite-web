@@ -12,7 +12,7 @@ const ConnectedForm = (props) => {
 
     const ADD_OR_UPDATE = '/about-me/voter/email-phone';
     const REMOVE = '/about-me/voter/remove-email-phone';
-    const SKIP_QUESTIONS = '/';
+    const SKIP_QUESTIONS = '/summary';
 
     let address;
     let continueDisabled = false;
