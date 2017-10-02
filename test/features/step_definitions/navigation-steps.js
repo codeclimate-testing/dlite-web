@@ -187,4 +187,18 @@ module.exports = function(world) {
   world.then('I will be taken to the political party choose page', function(done){
     assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
   });
+
+   world.and('I visit success visit page', function(done) {
+    clickAndWaitForPage('a.success-visit', '.success-visit-form', done);
+  });
+
+    world.then('I will be taken to the existing DMV scheduling tool', function(done){
+     browser
+      .exists('a.external-link')
+      .then((a) => {
+        assert.ok(a, 'External link issue');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
