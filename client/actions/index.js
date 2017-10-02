@@ -24,7 +24,8 @@ export const TYPES = {
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
   UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS',
-  UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE'
+  UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE',
+  UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE'
 };
 
 export const updateLegalName                = generateAction(TYPES.UPDATE_LEGAL_NAME);
@@ -42,3 +43,4 @@ export const updateCitizenStatus            = generateAction(TYPES.UPDATE_CITIZE
 export const updateBallotByMail             = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);
 export const updateEligibilityRequirements  = generateAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
 export const updatePoliticalPartyChoose     = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
+export const updateBallotLanguage           = generateAction(TYPES.UPDATE_BALLOT_LANGUAGE);

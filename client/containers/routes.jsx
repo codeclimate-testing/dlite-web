@@ -21,7 +21,7 @@ import InterstitialAddress          from './interstitial-address-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
 import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
-import BallotLanguage               from '../presentations/voter/ballot-language-form.jsx';
+import BallotLanguage               from './voter/ballot-language-form-container.jsx';
 import ContactChoice                from '../presentations/voter/contact-choice-form.jsx';
 import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
 import OptOut                       from '../presentations/voter/opt-out-form.jsx';
