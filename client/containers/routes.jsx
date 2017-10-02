@@ -28,7 +28,7 @@ import OptOut                       from '../presentations/voter/opt-out-form.js
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
 import Contact                      from './contact-details-form-container.jsx';
-import SuccessVisit                 from '../presentations/success-visit-form.jsx';
+import SuccessVisit                 from '../presentations/success-visit-info.jsx';
 
 class Router extends React.Component {
   render() {

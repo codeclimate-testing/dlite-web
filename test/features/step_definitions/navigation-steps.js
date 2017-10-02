@@ -189,7 +189,7 @@ module.exports = function(world) {
   });
 
    world.and('I visit success visit page', function(done) {
-    clickAndWaitForPage('a.success-visit', '.success-visit-form', done);
+    clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
   });
 
     world.then('I will be taken to the existing DMV scheduling tool', function(done){
