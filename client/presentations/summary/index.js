@@ -17,6 +17,7 @@ import BallotByMail                from './ballot-by-mail.jsx';
 import PoliticalPartyChoose        from './political-party-choose.jsx';
 import BallotLanguage              from './ballot-language.jsx';
 import ContactMethods              from './contact-methods.jsx';
+import ContinueButton              from '../continue-button.jsx';
 
 export {
   Empty,
@@ -35,5 +36,6 @@ export {
   BallotByMail,
   PoliticalPartyChoose,
   BallotLanguage,
-  ContactMethods
+  ContactMethods,
+  ContinueButton
 };
