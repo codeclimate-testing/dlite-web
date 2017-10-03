@@ -28,6 +28,7 @@ import OptOut                       from '../presentations/voter/opt-out-form.js
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
 import Contact                      from './contact-details-form-container.jsx';
+import SuccessVisit                 from '../presentations/success-visit-info.jsx';
 
 class Router extends React.Component {
   render() {
@@ -57,6 +58,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
+        <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
       </div>
     );
   }

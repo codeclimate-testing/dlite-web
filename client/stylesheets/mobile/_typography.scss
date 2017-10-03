@@ -46,5 +46,8 @@ ul.bullet-list {
 
   li { padding: $spacing/2 $spacing; }
 }
+ol.decimal-list {
+    list-style-type: decimal; padding: $spacing; margin: $spacing;
+}
 
 // TODO: same for numberend list

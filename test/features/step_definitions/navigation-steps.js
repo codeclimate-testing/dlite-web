@@ -187,4 +187,8 @@ module.exports = function(world) {
   world.then('I will be taken to the political party choose page', function(done){
     assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
   });
+
+   world.and('I visit success visit page', function(done) {
+    clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
+  });
 };
