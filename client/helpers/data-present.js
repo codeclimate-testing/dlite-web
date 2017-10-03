@@ -30,6 +30,12 @@ const socialSecurity = (props) => {
   );
 }
 
+const contactDetails = (props) => {
+  return props && (
+    value(props.emailAddress) || value(props.phoneNumber)
+  );
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -46,8 +52,8 @@ const application = (props) => {
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
+    contactDetails(props.contactDetails) ||
     value(props.ballotLanguage);
-
 };
 
 export {
@@ -57,5 +63,6 @@ export {
   date,
   height,
   socialSecurity,
+  contactDetails,
   application
 };

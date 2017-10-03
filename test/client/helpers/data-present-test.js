@@ -83,6 +83,20 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#contactDetails', function() {
+    it('is true with only email address', function() {
+      assert(dataPresent.contactDetails({emailAddress: 'smith@wrangler.com'}), 'contactDetails not present with email address');
+    });
+
+    it('is true with phone enumber only', function() {
+      assert(dataPresent.contactDetails({phoneNumber: '(916)000-1111'}), 'contactDetails not present with phon enumber');
+    });
+
+    it('is false without email or phone number', function() {
+      assert(!dataPresent.contactDetails({emailAddress: '', phoneNumber: ''}), 'contactDetails present without email or phone umber');
+    });
+  });
+
   describe('#application', function() {
     it('is true when there is a legalName', function() {
       let data = {
