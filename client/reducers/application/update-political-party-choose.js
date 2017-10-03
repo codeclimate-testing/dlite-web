@@ -7,5 +7,5 @@ function defaultState() {
   return '';
 }
 
-export default formValueReducer(defaultState, TYPES.UPDATE_CITIZEN_STATUS);
 
+export default formValueReducer(defaultState, TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);

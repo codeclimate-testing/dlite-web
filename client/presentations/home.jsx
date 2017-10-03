@@ -26,9 +26,14 @@ const linkData = [
   {description: 'social security',            path: '/about-me/social-security'},
   {description: 'contact info',               path: '/about-me/contact'},
   {description: 'citizen status',             path: '/about-me/voter/am-citizen'},
+  {description: 'ballot by mail',             path: '/about-me/voter/ballot-by-mail'},
+  {description: 'eligibility requirements',   path: '/about-me/voter/eligibility-requirements'},
   {description: 'voter preferences intro',    path: '/about-me/voter/voter-preferences-intro'},
+  {description: 'contact methods',            path: '/about-me/voter/contact-choice'},
+  {description: 'political party choose',     path: '/about-me/voter/political-party-choose'},
   {description: 'political party',            path: '/about-me/voter/political-party'},
-  {description: 'contact methods',            path: '/about-me/voter/contact-choice'}
+  {description: 'ballot language',            path: '/about-me/voter/ballot-language'},
+  {description: 'success visit',              path: '/about-me/success-visit'}
 ];
 
 const Home = () => {

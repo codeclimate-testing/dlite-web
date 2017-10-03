@@ -91,12 +91,28 @@ module.exports = function(world) {
     clickAndWaitForPage('a.citizen-status', '.citizen-status-form', done);
   });
 
+  world.when('I visit ballot by mail option page', function(done) {
+    clickAndWaitForPage('a.ballot-by-mail', '.ballot-by-mail-form', done);
+  });
+
+  world.when('I visit the voter eligibility requirements page', function(done) {
+    clickAndWaitForPage('a.eligibility-requirements', '.eligibility-requirements-form', done);
+  });
+
   world.when('I visit voter preferences intro page', function(done){
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
   world.when('I visit contact choice page', function(done) {
     clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
+  });
+
+  world.when('I visit ballot language page', function(done) {
+    clickAndWaitForPage('a.ballot-language', '.ballot-language-form', done);
+  });
+
+  world.when('I visit the political party choose page', function(done){
+    clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {
@@ -143,19 +159,51 @@ module.exports = function(world) {
     assertOnPage('.email-phone-form', /about-me\/voter\/email-phone/, done);
   });
 
-    world.then('I will be taken to remove email phone page', function(done) {
+  world.then('I will be taken to remove email phone page', function(done) {
     assertOnPage('.email-phone-remove-form', /about-me\/voter\/remove-email-phone/, done);
+  });
+
+  world.then('I will be on the page for ballot by mail', function(done) {
+    assertOnPage('.ballot-by-mail-form', /about-me\/voter\/ballot-by-mail/, done);
   });
 
   world.then('I will be taken to voter eligibility requirements page', function(done){
     assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
   });
 
+  world.then('I will be taken to contact choice page', function(done){
+    assertOnPage('.contact-choice-form', /about-me\/voter\/contact-choice/, done);
+  });
+
+  world.then('I will be taken to ballot language page', function(done){
+    assertOnPage('.ballot-language-form', /about-me\/voter\/ballot-language/, done);
+  });
+
+  world.when('I will be on the page for entering voter opt-out', function(done) {
+    clickAndWaitForPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
+  });
+
+  world.when('I will be on the page for choosing my contact preference', function(done) {
+    clickAndWaitForPage('.contact-choice', /about-me\/voter\/contact-choice/, done);
+  });
+
+  world.when('I will be on the page with my summary', function(done) {
+    clickAndWaitForPage('.summary', /services\/summary/, done);
+  });
+
   world.then('I will be taken to political party page', function(done){
     assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
   });
 
-    world.then('I will be taken to summary page', function(done) {
+  world.then('I will be taken to summary page', function(done) {
      clickAndWaitForPage('.summary', /services\/summary/, done);
+  });
+
+  world.then('I will be taken to the political party choose page', function(done){
+    assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
+  });
+
+   world.and('I visit success visit page', function(done) {
+    clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
   });
 };

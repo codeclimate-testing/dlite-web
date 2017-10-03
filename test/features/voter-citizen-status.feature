@@ -3,17 +3,12 @@ Feature: Designate US citizenship status
   I want to select my US citizenship status
   so that I can apply for benefits available to citizens
 
-  Scenario: Seeing the empty form
-    Given I go to the new online DL application page
-    When I visit voter citizen status page
-    Then I see three buttons for Yes and No and Skip Section
-    Then I will see that the Continue button is no longer disabled
-
   Scenario: I am a citizen
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I select Yes
     When I click to submit
+    Then I will be taken to voter eligibility requirements page
     And I return to the home page
     And I go to the page with my summary
     Then I will see Yes in my citizenship selection
@@ -23,6 +18,7 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     When I select No
     When I click to submit
+    Then I will be taken to voter eligibility requirements page
     And I return to the home page
     And I go to the page with my summary
     Then I will see No in my citizenship selection
@@ -32,6 +28,7 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     When I select Skip Section
     When I click to submit
+    Then I will be taken to voter eligibility requirements page
     And I return to the home page
     And I go to the page with my summary
     Then I will see No Answer in my citizenship selection
@@ -42,37 +39,11 @@ Feature: Designate US citizenship status
     When I click to submit
     Then I will be taken to voter eligibility requirements page
 
-  Scenario: Continuing with yes
-    Given I go to the new online DL application page
-    When I visit voter citizen status page
-    When I select Yes
-    When I click to submit
-    Then I will be taken to voter eligibility requirements page
-
-  Scenario: Continuing with No
-    Given I go to the new online DL application page
-    When I visit voter citizen status page
-    When I select No
-    When I click to submit
-    Then I will be taken to voter eligibility requirements page
-
-  Scenario: Continuing with Skip Section
-    Given I go to the new online DL application page
-    When I visit voter citizen status page
-    When I select Skip Section
-    When I click to submit
-    Then I will be taken to voter eligibility requirements page
-
-  Scenario: Seeing a form with existing data
-    Given I go to the new online DL application page
-    Given I have already entered my US citizenship status into the form
-    When I visit voter citizen status page
-    Then I will see the US citizenship status I entered
-
   Scenario: Updating US citizen status
     Given I go to the new online DL application page
     Given I have already entered my US citizenship status into the form
     When I visit voter citizen status page
+    Then I will see the US citizenship status I entered
     And I change my US citizenship status
     When I click to submit
     And I return to the home page

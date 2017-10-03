@@ -7,5 +7,4 @@ function defaultState() {
   return '';
 }
 
-export default formValueReducer(defaultState, TYPES.UPDATE_CITIZEN_STATUS);
-
+export default formValueReducer(defaultState, TYPES.UPDATE_BALLOT_LANGUAGE);

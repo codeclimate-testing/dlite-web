@@ -8,7 +8,7 @@ import alicePath        from '../../helpers/alice-path';
 
 const VoterPreferencesIntro = (props) => {
 
-  const linkAddress = '/about-me/voter/political-party';
+  const linkAddress = '/about-me/voter/political-party-choose';
 
   return (
     <div>
