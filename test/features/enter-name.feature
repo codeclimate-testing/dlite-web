@@ -6,11 +6,12 @@ Feature:  I want to enter my name
   Scenario: Entering my name and saving
     Given I go to the new online DL application page
     When I visit the legal name page
-    Then I will see a field for first, middle and last name
+    Then I will see a field for first, middle last name and suffix
     And I will see that the Continue button is disabled
     When I enter my first name
     And I enter my middle name
     And I enter my last name
+    And I select a suffix
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my date of birth
@@ -23,7 +24,9 @@ Feature:  I want to enter my name
     And I have already entered my name into the form
     When I visit the legal name page
     Then I will see the name I entered
+    And I will see the suffix I selected
     When I change my first name
+    And I change my suffix
     And I click to submit
     And I return to the home page
     And I go to the page with my summary

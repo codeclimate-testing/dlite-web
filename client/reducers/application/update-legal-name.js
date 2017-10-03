@@ -7,7 +7,8 @@ function defaultState() {
   return {
     firstName: '',
     middleName: '',
-    lastName: ''
+    lastName: '',
+    suffix: ''
   };
 }
 

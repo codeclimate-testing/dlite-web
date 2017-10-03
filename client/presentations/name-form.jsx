@@ -4,6 +4,7 @@ import React from 'react';
 
 import HomeLink         from './home-link.jsx';
 import TextInput        from './text-input.jsx';
+import SuffixSelector   from './suffix-selector.jsx';
 import ContinueButton   from './continue-button.jsx';
 import navigateOnSubmit from '../helpers/navigate-on-submit';
 
@@ -33,6 +34,12 @@ const LegalNameForm = (props) => {
           description='Last Name'
           value={props.legalName.lastName}
             onChange={props.onChange}
+        />
+
+        <SuffixSelector
+          identifier='suffix'
+          value={ props.legalName.suffix }
+          onChange={props.onChange}
         />
 
         <ContinueButton disabled={props.continueDisabled} />

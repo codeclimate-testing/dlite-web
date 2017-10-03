@@ -11,6 +11,7 @@ const LegalName = (props) => {
       <p> First Name: {props.legalName.firstName} </p>
       <p> Middle Name: {props.legalName.middleName} </p>
       <p> Last Name: {props.legalName.lastName} </p>
+      <p> Suffix: {props.legalName.suffix} </p>
     </div>
   );
 };

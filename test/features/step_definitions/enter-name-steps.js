@@ -5,7 +5,7 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see a field for first, middle and last name', function(done) {
+  world.then('I will see a field for first, middle last name and suffix', function(done) {
     browser
       .exists('#firstName')
       .then((exists) => { assert.ok(exists, 'input for first name missing')})
@@ -13,6 +13,8 @@ module.exports = function(world) {
       .then((exists) => { assert.ok(exists, 'input for first middle missing')})
       .exists('#lastName')
       .then((exists) => { assert.ok(exists, 'input for first last missing')})
+      .exists('#suffix')
+      .then((exists) => { assert.ok(exists, 'input for suffix missing')})
       .then(() => { done(); })
       .catch(done);
   });
@@ -38,6 +40,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I select a suffix', function(done){
+    browser
+      .select('')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see my name on that summary', function(done) {
     browser
       .text()
@@ -45,6 +54,7 @@ module.exports = function(world) {
         assert(text.includes('FirstName1'), 'first name missing from summary');
         assert(text.includes('MiddleName1'), 'middle name missing from summary');
         assert(text.includes('LastName1'), 'last name missing from summary');
+        assert(text.includes(''), 'name suffix missing from summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -59,6 +69,7 @@ module.exports = function(world) {
       .type('#firstName', 'FirstName1')
       .type('#middleName', 'MiddleName1')
       .type('#lastName', 'LastName1')
+      .select('#suffix', '')
       .click('input[type="submit"]')
       .click('a.home')
       .waitForSelector('.home-page')
@@ -78,9 +89,24 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I change my first name', function(done) {
+  world.and('I will see the suffix I selected', function(done){
+    browser
+      .value('#suffix')
+      .then((value) => { assert.equal(value, ''); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I change my first name', function(done) {
     browser
       .type('#firstName', 'FirstName2')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I change my suffix', function(done) {
+    browser
+      .select('#suffix', '')
       .then(() => { done(); })
       .catch(done);
   });
@@ -88,7 +114,10 @@ module.exports = function(world) {
   world.then('I will see my updated name', function(done) {
     browser
       .text()
-      .then((text) => { assert.ok(text.includes('FirstName2'), 'Updated name not on summary'); })
+      .then((text) => {
+        assert.ok(text.includes('FirstName2'), 'Updated name not on summary');
+        assert.ok(text.includes(''), 'updated suffix not on summary');
+      })
       .then(() => { done(); })
       .catch(done);
   });
