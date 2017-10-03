@@ -103,10 +103,13 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit contact choice page', function(done) {
+    clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
+  });
+
   world.when('I visit ballot language page', function(done) {
     clickAndWaitForPage('a.ballot-language', '.ballot-language-form', done);
   });
-
 
   world.when('I visit the political party choose page', function(done){
     clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
@@ -152,6 +155,14 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
 
+  world.then('I will be taken to email phone page', function(done) {
+    assertOnPage('.email-phone-form', /about-me\/voter\/email-phone/, done);
+  });
+
+  world.then('I will be taken to remove email phone page', function(done) {
+    assertOnPage('.email-phone-remove-form', /about-me\/voter\/remove-email-phone/, done);
+  });
+
   world.then('I will be on the page for ballot by mail', function(done) {
     assertOnPage('.ballot-by-mail-form', /about-me\/voter\/ballot-by-mail/, done);
   });
@@ -182,6 +193,10 @@ module.exports = function(world) {
 
   world.then('I will be taken to political party page', function(done){
     assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
+  });
+
+  world.then('I will be taken to summary page', function(done) {
+     clickAndWaitForPage('.summary', /services\/summary/, done);
   });
 
   world.then('I will be taken to the political party choose page', function(done){

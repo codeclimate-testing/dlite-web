@@ -28,6 +28,9 @@ import OptOut                       from '../presentations/voter/opt-out-form.js
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
 import Contact                      from './contact-details-form-container.jsx';
+import ContactMethods               from './voter/contact-methods-form-container.jsx';
+import EmailPhone                   from '../presentations/voter/email-phone-form.jsx';
+import EmailPhoneRemove             from '../presentations/voter/email-phone-remove-form.jsx';
 import SuccessVisit                 from '../presentations/success-visit-info.jsx';
 
 class Router extends React.Component {
@@ -58,6 +61,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />
         <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
         <Route path={ alicePath('/about-me/contact') } component={Contact} />
+        <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactMethods} />
+        <Route path={ alicePath('/about-me/voter/email-phone/') } component={EmailPhone} />
+        <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
       </div>
     );

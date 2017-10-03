@@ -29,6 +29,7 @@ const linkData = [
   {description: 'ballot by mail',             path: '/about-me/voter/ballot-by-mail'},
   {description: 'eligibility requirements',   path: '/about-me/voter/eligibility-requirements'},
   {description: 'voter preferences intro',    path: '/about-me/voter/voter-preferences-intro'},
+  {description: 'contact methods',            path: '/about-me/voter/contact-choice'},
   {description: 'political party choose',     path: '/about-me/voter/political-party-choose'},
   {description: 'political party',            path: '/about-me/voter/political-party'},
   {description: 'ballot language',            path: '/about-me/voter/ballot-language'},
