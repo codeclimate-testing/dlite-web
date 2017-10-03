@@ -51,8 +51,8 @@ module.exports = function(world) {
     clickAndWaitForPage('a.mailing-address', '.mailing-address-form', done);
   });
 
-  world.when('I visit /about-me/contact', function (done) {
-    clickAndWaitForPage('a.contact-info', '.contact-details-section', done);
+  world.when('I visit voter contact details page', function (done) {
+    clickAndWaitForPage('a.contact-details', '.contact-details-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
@@ -187,7 +187,7 @@ module.exports = function(world) {
     clickAndWaitForPage('.contact-choice', /about-me\/voter\/contact-choice/, done);
   });
 
-  world.when('I will be on the page with my summary', function(done) {
+  world.then('I will be on the page with my summary', function(done) {
     clickAndWaitForPage('.summary', /services\/summary/, done);
   });
 

@@ -12,6 +12,7 @@ const TextInput = (props) => {
   return (
     <div className='text-input-block'>
       <label htmlFor={ id }>{ props.description }</label>
+      { props.example && <h5>Example: { props.example } </h5> }
       <div className="input-container">
         <input
           type="text"

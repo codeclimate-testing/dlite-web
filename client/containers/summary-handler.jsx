@@ -1,14 +1,10 @@
 'use strict';
 
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import React, {Component}         from 'react';
+import { connect }                from 'react-redux';
 
 import HomeLink from '../presentations/home-link.jsx';
 import alicePath  from '../helpers/alice-path';
-
-import {
-  SummaryContactDetails,
-} from '../presentations/summary-view.jsx';
 
 import {
   LegalName,
@@ -26,21 +22,13 @@ import {
   BallotByMail,
   EligibilityRequirements,
   PoliticalPartyChoose,
+  ContactDetails,
   BallotLanguage,
   ContinueButton,
   Empty
 } from '../presentations/summary/index.js';
 
-import * as dataPresent from '../helpers/data-present';
-
-// Not sure what is going to happen with this, since it seems to
-// be moving to the SOS only area ... holding on refactoring until then.
-const hasContactDetailsEntered = (props) => {
-  return props.emailAddress || props.phoneNumber;
-};
 const successVisit = '/about-me/success-visit';
-
-
 
 const SummaryHandler = (props) => {
   let contents = [
@@ -59,16 +47,13 @@ const SummaryHandler = (props) => {
     <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
+    <ContactDetails contactDetails={props.contactDetails} key ='contact-details' />,
     <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
     <Empty {...props} key='empty' />,
     <a href={alicePath(successVisit)} key="link-to-success-visit">
       <ContinueButton disabled={props.continueDisabled} key="submit"/>
     </a>
   ];
-
-  if (hasContactDetailsEntered(props.contactDetails)) {
-    contents.push(<SummaryContactDetails contactDetails={props.contactDetails} key='contactDetails'/>);
-  }
 
   contents = contents.reduce((summaries, item) => {
     if (item.type) { summaries.push(item); }
