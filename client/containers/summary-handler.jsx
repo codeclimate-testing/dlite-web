@@ -1,9 +1,10 @@
 'use strict';
 
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import React, {Component}         from 'react';
+import { connect }                from 'react-redux';
 
-import HomeLink from '../presentations/home-link.jsx';
+import HomeLink                   from '../presentations/home-link.jsx';
+import * as dataPresent           from '../helpers/data-present';
 
 import {
   LegalName,
@@ -17,20 +18,14 @@ import {
   Weight,
   SocialSecurity,
   CitizenStatus,
+  ContactMethods,
   BallotByMail,
   EligibilityRequirements,
   PoliticalPartyChoose,
   ContactDetails,
+  BallotLanguage,
   Empty
 } from '../presentations/summary/index.js';
-
-import * as dataPresent from '../helpers/data-present';
-
-// Not sure what is going to happen with this, since it seems to
-// be moving to the SOS only area ... holding on refactoring until then.
-const hasContactDetailsEntered = (props) => {
-  return props.emailAddress || props.phoneNumber;
-};
 
 const SummaryHandler = (props) => {
   let contents = [
@@ -45,10 +40,12 @@ const SummaryHandler = (props) => {
     <Weight weight={props.weight} key='weight' />,
     <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
     <CitizenStatus citizenStatus={props.citizenStatus} key='citizen-status' />,
+    <ContactMethods contactMethods={props.contactMethods} key='contact-methods' />,
     <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
     <ContactDetails contactDetails={props.contactDetails} key ='contact-details' />,
+    <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
     <Empty {...props} key='empty' />
   ];
 

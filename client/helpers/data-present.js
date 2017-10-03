@@ -48,11 +48,12 @@ const application = (props) => {
     value(props.weight) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
+    value(props.contactMethods) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
-    contactDetails(props.contactDetails);
-
+    contactDetails(props.contactDetails) ||
+    value(props.ballotLanguage);
 };
 
 export {
