@@ -1,10 +1,10 @@
 'use strict';
 
 import { TYPES } from '../../actions';
-import formValueRecurer from './form-value-reducer';
+import formValueReducer from './form-value-reducer';
 
 function defaultState() {
   return '';
 }
 
-export default formValueRecurer(defaultState, TYPES.UPDATE_OPT_OUT);
+export default formValueReducer(defaultState, TYPES.UPDATE_OPT_OUT);

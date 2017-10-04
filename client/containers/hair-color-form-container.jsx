@@ -24,7 +24,7 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    hairColor: state.application.hairColor.hairColor
+    hairColor: state.application.hairColor
   };
 }
 

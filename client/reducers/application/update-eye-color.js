@@ -1,12 +1,10 @@
 'use strict';
 
 import { TYPES } from '../../actions';
-import formObjectReducer from './form-object-reducer';
+import formValueReducer from './form-value-reducer';
 
 function defaultState() {
-  return {
-    eyeColor: ''
-  };
+  return '';
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_EYE_COLOR);
+export default formValueReducer(defaultState, TYPES.UPDATE_EYE_COLOR);

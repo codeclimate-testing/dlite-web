@@ -22,7 +22,6 @@ import VoterCitizenStatus           from './voter/citizen-status-form-container.
 import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
 import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
 import BallotLanguage               from './voter/ballot-language-form-container.jsx';
-import ContactChoice                from '../presentations/voter/contact-choice-form.jsx';
 import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
 import OptOut                       from './voter/opt-out-form-container.jsx';
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
@@ -55,7 +54,6 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
-        <Route path={ alicePath('/about-me/voter/contact-choice') } component={ContactChoice} />
         <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
         <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalParty} />

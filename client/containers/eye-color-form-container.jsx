@@ -24,7 +24,7 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    eyeColor: state.application.eyeColor.eyeColor
+    eyeColor: state.application.eyeColor
   };
 }
 
