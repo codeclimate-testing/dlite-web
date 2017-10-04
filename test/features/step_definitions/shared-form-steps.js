@@ -61,7 +61,6 @@ module.exports = function (world) {
     .catch(done);
   });
 
-
   world.when('I select Yes', function(done){
     browser
     .click('label[for="Yes"]')
