@@ -2,9 +2,10 @@
 
 import React, {Component}         from 'react';
 import { connect }                from 'react-redux';
+import { Link }                   from 'react-router-dom';
 
-import HomeLink from '../presentations/home-link.jsx';
-import alicePath  from '../helpers/alice-path';
+import HomeLink                   from '../presentations/home-link.jsx';
+import alicePath                  from '../helpers/alice-path';
 
 import {
   LegalName,
@@ -52,9 +53,11 @@ const SummaryHandler = (props) => {
     <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
     <OptOut optOut={props.optOut} key='opt-out' />,
     <Empty {...props} key='empty' />,
-    <a href={alicePath(successVisit)} key="link-to-success-visit">
+
+    <Link to={ alicePath(successVisit) } key="link-to-success-visit" >
       <ContinueButton disabled={props.continueDisabled} key="submit"/>
-    </a>
+    </Link>
+
   ];
 
   contents = contents.reduce((summaries, item) => {
