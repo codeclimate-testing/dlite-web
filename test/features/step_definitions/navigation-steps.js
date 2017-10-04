@@ -203,6 +203,10 @@ module.exports = function(world) {
     assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
   });
 
+  world.then('I will be taken to the success visit page', function(done){
+    assertOnPage('.success-visit-info', /about-me\/success-visit/, done);
+  });
+
    world.and('I visit success visit page', function(done) {
     clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
   });

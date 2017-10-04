@@ -3,8 +3,8 @@
 import React, {Component}         from 'react';
 import { connect }                from 'react-redux';
 
-import HomeLink                   from '../presentations/home-link.jsx';
-import * as dataPresent           from '../helpers/data-present';
+import HomeLink from '../presentations/home-link.jsx';
+import alicePath  from '../helpers/alice-path';
 
 import {
   LegalName,
@@ -24,8 +24,11 @@ import {
   PoliticalPartyChoose,
   ContactDetails,
   BallotLanguage,
+  ContinueButton,
   Empty
 } from '../presentations/summary/index.js';
+
+const successVisit = '/about-me/success-visit';
 
 const SummaryHandler = (props) => {
   let contents = [
@@ -46,13 +49,17 @@ const SummaryHandler = (props) => {
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
     <ContactDetails contactDetails={props.contactDetails} key ='contact-details' />,
     <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
-    <Empty {...props} key='empty' />
+    <Empty {...props} key='empty' />,
+    <a href={alicePath(successVisit)} key="link-to-success-visit">
+      <ContinueButton disabled={props.continueDisabled} key="submit"/>
+    </a>
   ];
 
   contents = contents.reduce((summaries, item) => {
     if (item.type) { summaries.push(item); }
     return summaries;
   }, []);
+
 
   return (
     <div className='summary'>

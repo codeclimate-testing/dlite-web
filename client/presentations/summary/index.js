@@ -18,6 +18,7 @@ import PoliticalPartyChoose        from './political-party-choose.jsx';
 import ContactDetails              from './contact-details.jsx';
 import BallotLanguage              from './ballot-language.jsx';
 import ContactMethods              from './contact-methods.jsx';
+import ContinueButton              from '../continue-button.jsx';
 
 export {
   Empty,
@@ -37,5 +38,6 @@ export {
   PoliticalPartyChoose,
   ContactDetails,
   BallotLanguage,
-  ContactMethods
+  ContactMethods,
+  ContinueButton
 };
