@@ -151,6 +151,10 @@ module.exports = function(world) {
     assertOnPage('.weight-form', /about-me\/weight/, done);
   });
 
+  world.then('I will be on the page for organ selection', function(done) {
+    assertOnPage('.organ-form', /about-me\/organ/, done);
+  });
+
   world.then('I will be on the page for entering my social security', function(done) {
     assertOnPage('.social-security-form', /about-me\/social-security/, done);
   });

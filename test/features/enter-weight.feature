@@ -11,7 +11,7 @@ Feature:  I want to enter my weight
     When I enter my weight
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be on the page for entering my social security
+    Then I will be on the page for organ selection
     When I return to the home page
     And I go to the page with my summary
     Then I will see my weight on that summary
