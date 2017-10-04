@@ -20,6 +20,7 @@ export const TYPES = {
   UPDATE_SEX:                             'UPDATE_SEX',
   UPDATE_HEIGHT:                          'UPDATE_HEIGHT',
   UPDATE_WEIGHT:                          'UPDATE_WEIGHT',
+  UPDATE_ORGAN:                           'UPDATE_ORGAN',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
@@ -39,6 +40,7 @@ export const updateDateOfBirth              = generateAction(TYPES.UPDATE_DATE_O
 export const updateSex                      = generateAction(TYPES.UPDATE_SEX);
 export const updateHeight                   = generateAction(TYPES.UPDATE_HEIGHT);
 export const updateWeight                   = generateAction(TYPES.UPDATE_WEIGHT);
+export const updateOrgan                    = generateAction(TYPES.UPDATE_ORGAN);
 export const updateSocialSecurity           = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus            = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateBallotByMail             = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);

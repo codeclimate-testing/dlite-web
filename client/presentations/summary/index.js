@@ -10,6 +10,7 @@ import EyeColor                    from './eye-color.jsx';
 import HairColor                   from './hair-color.jsx';
 import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
+import Organ                       from './organ.jsx';
 import SocialSecurity              from './social-security.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -31,6 +32,7 @@ export {
   HairColor,
   Height,
   Weight,
+  Organ,
   SocialSecurity,
   CitizenStatus,
   EligibilityRequirements,

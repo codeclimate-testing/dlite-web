@@ -12,6 +12,7 @@ import updateDateOfBirth                   from './update-date-of-birth';
 import updateSex                           from './update-sex';
 import updateHeight                        from './update-height';
 import updateWeight                        from './update-weight';
+import updateOrgan                         from './update-organ';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   sex                     : updateSex,
   height                  : updateHeight,
   weight                  : updateWeight,
+  organ                   : updateOrgan,
   socialSecurity          : updateSocialSecurity,
   citizenStatus           : updateCitizenStatus,
   ballotByMail            : updateBallotByMail,

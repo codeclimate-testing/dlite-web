@@ -83,6 +83,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.weight', '.weight-form', done);
   });
 
+  world.when('I visit the organ page', function(done) {
+    clickAndWaitForPage('a.organ', '.organ-form', done);
+  });
+
   world.when('I visit the social security page', function(done) {
     clickAndWaitForPage('a.social-security', '.social-security-form', done);
   });
