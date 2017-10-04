@@ -1,6 +1,7 @@
 'use strict';
 
 import React            from 'react';
+import { Link }         from 'react-router-dom';
 
 import HomeLink         from '../home-link.jsx';
 import ContinueButton   from '../continue-button.jsx';
@@ -26,9 +27,10 @@ const VoterPreferencesIntro = (props) => {
         <h4>Contact Information</h4>
         <p>How would you like election campaigns to reach you — if at all?</p>
 
-        <a href={alicePath(linkAddress)} >
+        <Link to={ alicePath(linkAddress) }>
           <ContinueButton disabled={props.continueDisabled} />
-        </a>
+        </Link>
+
       </div>
     </div>
   );
