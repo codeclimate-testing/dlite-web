@@ -1,12 +1,10 @@
 'use strict';
 
 import { TYPES } from '../../actions';
-import formObjectReducer from './form-object-reducer';
+import formValueReducer from './form-value-reducer';
 
 function defaultState() {
-  return {
-    hairColor: ''
-  };
+  return '';
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_HAIR_COLOR);
+export default formValueReducer(defaultState, TYPES.UPDATE_HAIR_COLOR);

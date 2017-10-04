@@ -172,7 +172,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to contact choice page', function(done){
-    assertOnPage('.contact-choice-form', /about-me\/voter\/contact-choice/, done);
+    assertOnPage('.contact-methods-form', /about-me\/voter\/contact-choice/, done);
   });
 
   world.then('I will be taken to ballot language page', function(done){

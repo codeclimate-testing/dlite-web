@@ -42,8 +42,8 @@ const application = (props) => {
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
     value(props.sex) ||
-    (props.eyeColor && value(props.eyeColor.eyeColor)) ||
-    (props.hairColor && value(props.hairColor.hairColor)) ||
+    value(props.eyeColor) ||
+    value(props.hairColor) ||
     height(props.height) ||
     value(props.weight) ||
     socialSecurity(props.socialSecurity) ||

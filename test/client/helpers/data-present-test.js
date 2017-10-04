@@ -118,7 +118,7 @@ describe('dataPresent', function() {
 
     it('is true when there is an eye color', function() {
       let data = {
-        eyeColor: { eyeColor: 'red' }
+        eyeColor: 'red'
       };
 
       assert(dataPresent.application(data), 'Data not present with eyeColor');
@@ -126,7 +126,7 @@ describe('dataPresent', function() {
 
     it('is true when there is hair color', function() {
       let data = {
-        hairColor: { hairColor: 'red' }
+        hairColor: 'red'
       };
 
       assert(dataPresent.application(data), 'Data not present with hairColor');
