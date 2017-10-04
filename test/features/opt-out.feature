@@ -23,7 +23,6 @@ As a DMV Customer
     Then I will be taken to voter preferences info page
     And I return to the home page
     And I go to the page with my summary
-    Then I will see I am already registered to vote as voter registration in summary
     Then I will see voter registration choice as I am already registered to vote in summary
 
   Scenario: I am saving a No to Voter Registration - navigation and summary
