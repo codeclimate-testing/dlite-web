@@ -24,7 +24,7 @@ import EligibilityRequirements      from './voter/eligibility-requirements-form-
 import BallotLanguage               from './voter/ballot-language-form-container.jsx';
 import ContactChoice                from '../presentations/voter/contact-choice-form.jsx';
 import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
-import OptOut                       from '../presentations/voter/opt-out-form.jsx';
+import OptOut                       from './voter/opt-out-form-container.jsx';
 import PoliticalParty               from '../presentations/voter/political-party-form.jsx';
 import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
 import ContactDetails               from './voter/contact-details-form-container.jsx';

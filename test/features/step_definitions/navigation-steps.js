@@ -179,7 +179,7 @@ module.exports = function(world) {
     assertOnPage('.ballot-language-form', /about-me\/voter\/ballot-language/, done);
   });
 
-  world.when('I will be on the page for entering voter opt-out', function(done) {
+  world.then('I will be on the page for entering voter opt-out', function(done) {
     clickAndWaitForPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
   });
 
@@ -209,5 +209,13 @@ module.exports = function(world) {
 
    world.and('I visit success visit page', function(done) {
     clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
+  });
+
+   world.then('I will be taken to voter preferences info page', function(done) {
+    assertOnPage('.voter-preferences-intro', /about-me\/voter\/voter-preferences-intro/, done);
+  });
+
+ world.when('I visit voter opt out page', function(done) {
+    clickAndWaitForPage('a.opt-out', '.opt-out-form', done);
   });
 };

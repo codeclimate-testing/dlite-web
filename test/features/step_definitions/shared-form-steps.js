@@ -61,7 +61,6 @@ module.exports = function (world) {
     .catch(done);
   });
 
-
   world.when('I select Yes', function(done){
     browser
     .click('label[for="Yes"]')
@@ -115,4 +114,38 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+   world.then('I see three buttons labelled I want to register to vote, I am already registered to vote,  and I am eligible but to not want to be registered to vote at this time', function(done) {
+    browser
+    .html('label[for="I want to register to vote"]')
+    .then((button) => { assert.ok(button, 'Selector for I want to register to vote missing')})
+    .html('label[for="I am already registered to vote"]')
+    .then((button) => { assert.ok(button, 'Selector for I am already registered to vote missing')})
+    .html('label[for="I am eligible but to not want to be registered to vote at this time"]')
+    .then((button) => { assert.ok(button, 'Selector for I am eligible but to not want to be registered to vote at this time missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select I want to register to vote', function(done){
+    browser
+    .click('label[for="I want to register to vote"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select I am already registered to vote', function(done){
+    browser
+    .click('label[for="I am already registered to vote"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select I am eligible but to not want to be registered to vote at this time', function(done){
+    browser
+    .click('label[for="I am eligible but to not want to be registered to vote at this time"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+  
 };

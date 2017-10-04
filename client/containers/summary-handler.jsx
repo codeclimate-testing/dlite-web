@@ -25,6 +25,7 @@ import {
   ContactDetails,
   BallotLanguage,
   ContinueButton,
+  OptOut,
   Empty
 } from '../presentations/summary/index.js';
 
@@ -49,6 +50,7 @@ const SummaryHandler = (props) => {
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='political-party-choose' />,
     <ContactDetails contactDetails={props.contactDetails} key ='contact-details' />,
     <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
+    <OptOut optOut={props.optOut} key='opt-out' />,
     <Empty {...props} key='empty' />,
     <a href={alicePath(successVisit)} key="link-to-success-visit">
       <ContinueButton disabled={props.continueDisabled} key="submit"/>

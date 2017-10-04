@@ -53,7 +53,8 @@ const application = (props) => {
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
     contactDetails(props.contactDetails) ||
-    value(props.ballotLanguage);
+    value(props.ballotLanguage) ||
+    value(props.optOut);
 };
 
 export {
