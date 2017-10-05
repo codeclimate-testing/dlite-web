@@ -10,7 +10,7 @@ import * as dataPresent  from '../helpers/data-present';
 
 const Form = (props) => {
   const continueDisabled = !dataPresent.value(props.weight);
-  const onSubmit = navigateOnSubmit('/about-me/social-security', props);
+  const onSubmit = navigateOnSubmit('/about-me/organ', props);
 
   return (
     <FormPresentation

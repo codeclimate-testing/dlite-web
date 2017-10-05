@@ -23,6 +23,7 @@ const linkData = [
   {description: 'hair color',                 path: '/about-me/appearance/hair'},
   {description: 'height',                     path: '/about-me/height'},
   {description: 'weight',                     path: '/about-me/weight'},
+  {description: 'organ',                      path: '/about-me/organ'},
   {description: 'social security',            path: '/about-me/social-security'},
   {description: 'contact details',            path: '/about-me/voter/email-phone'},
   {description: 'citizen status',             path: '/about-me/voter/am-citizen'},

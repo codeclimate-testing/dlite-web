@@ -46,6 +46,7 @@ const application = (props) => {
     value(props.hairColor) ||
     height(props.height) ||
     value(props.weight) ||
+    value(props.organ) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
     value(props.contactMethods) ||

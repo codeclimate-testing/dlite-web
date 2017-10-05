@@ -83,6 +83,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.weight', '.weight-form', done);
   });
 
+  world.when('I visit the organ page', function(done) {
+    clickAndWaitForPage('a.organ', '.organ-form', done);
+  });
+
   world.when('I visit the social security page', function(done) {
     clickAndWaitForPage('a.social-security', '.social-security-form', done);
   });
@@ -145,6 +149,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering my weight', function(done) {
     assertOnPage('.weight-form', /about-me\/weight/, done);
+  });
+
+  world.then('I will be on the page for organ selection', function(done) {
+    assertOnPage('.organ-form', /about-me\/organ/, done);
   });
 
   world.then('I will be on the page for entering my social security', function(done) {
