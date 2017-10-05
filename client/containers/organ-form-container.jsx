@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
     <Form
       onSubmit={onSubmit}
       onChange={props.onChange}
-      selectedValue={props.organ}
+      organ={props.organ}
       continueDisabled={continueDisabled}
     />
   );

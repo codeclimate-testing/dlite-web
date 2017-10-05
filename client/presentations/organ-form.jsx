@@ -1,26 +1,35 @@
+
 'use strict';
 
 import React from 'react';
-
 import SelectorCollection      from './selector-collection.jsx';
 import HomeLink                from './home-link.jsx';
 import ContinueButton          from './continue-button.jsx';
 
-const values = ['Yes', '$2 voluntary contribution to support and promote organ and tissue donation']
+const donateOrgan = ['Yes', 'No']
+const voluntaryContribution = ['$2 voluntary contribution to support and promote organ and tissue donation', 'No donation']
 
 const Form = (props) => {
   return (
     <div>
       <HomeLink />
 
-      <h4>Do you want to participate in organ and tissue donation or make a voluntary contribution to support and promote organ and tissue donation?</h4>
       <form onSubmit={ props.onSubmit } className='organ-form'>
+      <h4>Do you want to participate in organ and tissue donation?</h4>
         <div className='inner-bottom'>
           <SelectorCollection
-            name='organ'
-            values={values}
+            name='donate'
+            values={donateOrgan}
             onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
+            selectedValue={ props.organ.donate }
+          />
+
+          <h4>Do you want to make a voluntary contribution to support and promote organ and tissue donation?</h4>
+          <SelectorCollection
+            name='contribute'
+            values={voluntaryContribution}
+            onChange={ props.onChange }
+            selectedValue={ props.organ.contribute }
           />
         </div>
 
