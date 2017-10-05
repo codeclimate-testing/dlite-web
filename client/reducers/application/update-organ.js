@@ -1,10 +1,13 @@
 'use strict';
 
 import { TYPES } from '../../actions';
-import formValueReducer from './form-value-reducer';
+import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
-  return '';
+  return {
+    donate: '',
+    contribute: ''
+  };
 }
 
-export default formValueReducer(defaultState, TYPES.UPDATE_ORGAN);
+export default formObjectReducer(defaultState, TYPES.UPDATE_ORGAN);
