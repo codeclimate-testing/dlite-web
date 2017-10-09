@@ -3,7 +3,7 @@
 import React                        from 'react';
 import { Route }                    from 'react-router-dom';
 
-import Home                         from '../presentations/home.jsx';
+import Home                         from './home-container.jsx';
 import Summary                      from './summary-handler.jsx';
 import alicePath                    from '../helpers/alice-path';
 
