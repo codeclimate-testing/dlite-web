@@ -35,7 +35,8 @@ const linkData = [
   {description: 'political party',            path: '/about-me/voter/political-party'},
   {description: 'ballot language',            path: '/about-me/voter/ballot-language'},
   {description: 'success visit',              path: '/about-me/success-visit'},
-  {description: 'opt out',                    path: '/about-me/voter/opt-out'}
+  {description: 'opt out',                    path: '/about-me/voter/opt-out'},
+  {description: 'home page',                  path: '/what-do-you-want-to-do-today'}
 ];
 
 const Home = () => {

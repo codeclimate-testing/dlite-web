@@ -32,6 +32,7 @@ import ContactMethods               from './voter/contact-methods-form-container
 import EmailPhone                   from '../presentations/voter/email-phone-form.jsx';
 import EmailPhoneRemove             from '../presentations/voter/email-phone-remove-form.jsx';
 import SuccessVisit                 from '../presentations/success-visit-info.jsx';
+import Intro                        from '../presentations/intro.jsx';
 
 class Router extends React.Component {
   render() {
@@ -65,6 +66,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/email-phone/') } component={EmailPhone} />
         <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
+        <Route path={ alicePath('/what-do-you-want-to-do-today') } component={Intro} />
       </div>
     );
   }
