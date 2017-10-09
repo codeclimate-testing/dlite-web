@@ -3,21 +3,22 @@
 import React                        from 'react';
 import { Route }                    from 'react-router-dom';
 
-import Home                         from './home-container.jsx';
+import Home                         from '../presentations/home.jsx';
 import Summary                      from './summary-handler.jsx';
 import alicePath                    from '../helpers/alice-path';
 
-import LegalName                    from './legal-name-form-container.jsx';
-import DateOfBirth                  from './date-of-birth-form-container.jsx';
-import HomeAddress                  from './home-address-form-container.jsx';
-import MailingAddress               from './mailing-address-form-container.jsx';
-import Sex                          from './sex-selector-form-container.jsx';
-import HairColor                    from './hair-color-form-container.jsx';
-import EyeColor                     from './eye-color-form-container.jsx';
-import Height                       from './height-form-container.jsx';
-import Weight                       from './weight-form-container.jsx';
-import SocialSecurity               from './social-security-form-container.jsx';
-import InterstitialAddress          from './interstitial-address-container.jsx';
+import LegalName                    from './motor/legal-name-form-container.jsx';
+import DateOfBirth                  from './motor/date-of-birth-form-container.jsx';
+import HomeAddress                  from './motor/home-address-form-container.jsx';
+import InterstitialAddress          from './motor/interstitial-address-container.jsx';
+import MailingAddress               from './motor/mailing-address-form-container.jsx';
+import Sex                          from './motor/sex-selector-form-container.jsx';
+import HairColor                    from './motor/hair-color-form-container.jsx';
+import EyeColor                     from './motor/eye-color-form-container.jsx';
+import Height                       from './motor/height-form-container.jsx';
+import Weight                       from './motor/weight-form-container.jsx';
+import SocialSecurity               from './motor/social-security-form-container.jsx';
+
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
 import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';

@@ -3,7 +3,7 @@ Feature: Title of html page changes when navigating to a new link
   I want to see the updated title for each page in the html document
   So that I know where I am
 
-  Scenario: Navigating from the home page to the names page
+  Scenario: Navigating from the home page to the other pages
     Given I go to the new online DL application page
     When I visit the legal name page
     Then I will see page title for legal name

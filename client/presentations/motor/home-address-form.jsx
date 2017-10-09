@@ -2,25 +2,26 @@
 
 import React from 'react';
 
-import HomeLink         from './home-link.jsx';
-import StateSelector    from './state-selector.jsx';
-import TextInput        from './text-input.jsx';
-import ContinueButton   from './continue-button.jsx';
-import AddressTemplate  from './address-template.jsx';
+import HomeLink         from '../home-link.jsx';
+import StateSelector    from '../state-selector.jsx';
+import TextInput        from '../text-input.jsx';
+import ContinueButton   from '../continue-button.jsx';
+import AddressTemplate  from '../address-template.jsx';
 
 const Form = (props) => {
+  document.title = props.pageTitle;
   return (
-    <div className='mailing-address-form'>
+    <div className='home-address-form'>
       <HomeLink />
 
-      <h4>Where do you receive mail?</h4>
+      <h4>Where do you live?</h4>
       <h5>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</h5>
       <div className='addresses-section'>
         <form onSubmit={props.onSubmit}>
 
           <AddressTemplate
-            type='mailing'
-            address={ props.mailingAddress }
+            type='home'
+            address={ props.homeAddress }
             onChange={ props.onChange }
           />
 

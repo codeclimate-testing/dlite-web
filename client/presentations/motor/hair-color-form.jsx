@@ -2,13 +2,14 @@
 
 import React from 'react';
 
-import SelectorCollection      from './selector-collection.jsx';
-import HomeLink                from './home-link.jsx';
-import ContinueButton          from './continue-button.jsx';
+import SelectorCollection      from '../selector-collection.jsx';
+import HomeLink                from '../home-link.jsx';
+import ContinueButton          from '../continue-button.jsx';
 
 const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
 
 const Form = (props) => {
+  document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />
