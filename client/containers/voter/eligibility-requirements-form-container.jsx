@@ -12,7 +12,7 @@ const ConnectedForm = (props) => {
   let value = props.eligibilityRequirements;
   let onSubmit = navigateOnSubmit('/summary', props);
 
-  if(value === 'Yes' || value === 'No') {
+  if(value === 'Yes') {
     onSubmit = navigateOnSubmit('/about-me/voter/opt-out', props);
   };
 

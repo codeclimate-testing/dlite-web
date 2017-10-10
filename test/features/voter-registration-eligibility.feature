@@ -3,7 +3,7 @@ Feature: Check Voter Registration Eligibility
   I want to check if I qualify for voter registration status
   so that I can register to vote during this DMV transaction
 
-  Scenario: I select my voter registration eligibility
+  Scenario: I select Yes for registration eligibility
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
     When I select Yes
@@ -12,6 +12,14 @@ Feature: Check Voter Registration Eligibility
     When I return to the home page
     And I go to the page with my summary
     Then I will see that I do qualify to register to vote
+
+  Scenario: I select No for registration eligibility
+    Given I go to the new online DL application page
+    When I visit the voter eligibility requirements page
+    When I select No
+    When I click to submit
+    Then I will be on the page with my summary
+    Then I will see that I do not qualify to register to vote
 
   Scenario: Choose not to answer
     Given I go to the new online DL application page
