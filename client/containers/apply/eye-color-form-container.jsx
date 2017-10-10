@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { updateEyeColor }         from "../../actions/index";
-import Form                       from '../../presentations/motor/eye-color-form.jsx';
+import Form                       from '../../presentations/apply/eye-color-form.jsx';
 import connectForm                from '../../helpers/connect-form';
 import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 import * as dataPresent           from '../../helpers/data-present';

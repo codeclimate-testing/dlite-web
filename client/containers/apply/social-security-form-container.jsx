@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { updateSocialSecurity }   from "../../actions/index";
-import Form                       from "../../presentations/motor/social-security-form.jsx";
+import Form                       from "../../presentations/apply/social-security-form.jsx";
 import connectForm                from '../../helpers/connect-form';
 import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 import * as dataPresent           from '../../helpers/data-present';

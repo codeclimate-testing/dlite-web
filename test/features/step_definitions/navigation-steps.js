@@ -155,8 +155,8 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
 
-  world.then('I will be taken to email phone page', function(done) {
-    assertOnPage('.email-phone-form', /about-me\/voter\/email-phone/, done);
+  world.then('I will be taken to contact details page', function(done) {
+    assertOnPage('.contact-details-form', /about-me\/voter\/email-phone/, done);
   });
 
   world.then('I will be taken to remove email phone page', function(done) {

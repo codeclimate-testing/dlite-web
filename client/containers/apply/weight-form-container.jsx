@@ -2,23 +2,23 @@
 
 import React from 'react';
 
-import { updateHeight }  from "../../actions/index";
-import FormPresentation  from "../../presentations/motor/height-form.jsx";
+import { updateWeight }  from "../../actions/index";
+import FormPresentation  from "../../presentations/apply/weight-form.jsx";
 import connectForm       from '../../helpers/connect-form';
 import navigateOnSubmit  from '../../helpers/navigate-on-submit';
 import * as dataPresent  from '../../helpers/data-present';
 
 const Form = (props) => {
-  let continueDisabled  = !dataPresent.height(props.height);
-  let onSubmit          = navigateOnSubmit('/about-me/weight', props);
-  let pageTitle          = 'About me: Height';
+  let continueDisabled  = !dataPresent.value(props.weight);
+  let onSubmit          = navigateOnSubmit('/about-me/social-security', props);
+  let pageTitle         = 'About me: Weight';
 
   return (
     <FormPresentation
       pageTitle           = { pageTitle }
       onSubmit            = { onSubmit }
       onChange            = { props.onChange }
-      height              = { props.height }
+      weight              = { props.weight }
       continueDisabled    = { continueDisabled }
     />
   );
@@ -26,8 +26,8 @@ const Form = (props) => {
 
 function mapStateToProps(state) {
   return {
-    height: state.application.height
+    weight: state.application.weight
   };
 }
 
-export default connectForm(mapStateToProps, updateHeight, Form);
+export default connectForm(mapStateToProps, updateWeight, Form);

@@ -10,7 +10,7 @@ Feature: Select Preferred Contact Methods
     And I see three buttons labelled Add or Update, Remove and Skip Question
     When I select Add or Update
     When I click to submit
-    Then I will be taken to email phone page
+    Then I will be taken to contact details page
     And I return to the home page
     And I go to the page with my summary
     Then I will see contact methods as Add or Update in summary

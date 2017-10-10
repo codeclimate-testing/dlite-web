@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { updateLegalName }  from "../../actions/index";
-import FormPresentation     from "../../presentations/motor/name-form.jsx";
+import FormPresentation     from "../../presentations/apply/name-form.jsx";
 import connectForm          from '../../helpers/connect-form';
 import navigateOnSubmit     from '../../helpers/navigate-on-submit';
 import * as dataPresent     from '../../helpers/data-present';

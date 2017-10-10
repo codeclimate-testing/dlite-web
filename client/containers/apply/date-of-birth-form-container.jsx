@@ -2,23 +2,23 @@
 
 import React from 'react';
 
-import { updateHairColor }    from "../../actions/index";
-import Form                   from '../../presentations/motor/hair-color-form.jsx';
+import { updateDateOfBirth }  from "../../actions/index";
+import Form                   from "../../presentations/apply/date-of-birth-form.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let continueDisabled  = !dataPresent.value(props.hairColor);
-  let onSubmit          = navigateOnSubmit('/about-me/height', props);
-  let pageTitle         = 'About me: Hair color';
+  let onSubmit          =   navigateOnSubmit('/about-me/home-address', props);
+  let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
+  let pageTitle         =   'About me: Date of birth';
 
   return (
     <Form
       pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
       onChange          = { props.onChange }
-      selectedValue     = { props.hairColor }
+      dateOfBirth       = { props.dateOfBirth }
       continueDisabled  = { continueDisabled }
     />
   );
@@ -26,9 +26,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    hairColor: state.application.hairColor
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 
-export default connectForm(mapStateToProps, updateHairColor, ConnectedForm);
-
+export default connectForm(mapStateToProps, updateDateOfBirth, ConnectedForm);
