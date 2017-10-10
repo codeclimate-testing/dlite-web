@@ -4,6 +4,7 @@ import React from "react";
 import * as dataPresent from '../../helpers/data-present';
 
 const Empty = (props) => {
+  document.title = 'Summary of my application';
   if (dataPresent.application(props)) { return null; }
 
   return (
