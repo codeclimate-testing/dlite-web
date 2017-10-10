@@ -29,7 +29,7 @@ Feature: Designate US citizenship status
     Then I will be taken to summary page
     Then I will see No Value in my citizenship selection
 
-  Scenario: Choose not to skip
+  Scenario: Continuing without a selection
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I click to submit
