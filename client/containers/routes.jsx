@@ -7,6 +7,7 @@ import alicePath                    from '../helpers/alice-path';
 import Home                         from '../presentations/home.jsx';
 import Summary                      from './summary-handler.jsx';
 
+import Intro                        from '../presentations/apply/intro.jsx';
 import LegalName                    from './apply/legal-name-form-container.jsx';
 import DateOfBirth                  from './apply/date-of-birth-form-container.jsx';
 import HomeAddress                  from './apply/home-address-form-container.jsx';
@@ -38,7 +39,7 @@ class Router extends React.Component {
       <div className='routes'>
         <Route path={ alicePath('/') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
-
+        <Route path={ alicePath('/what-do-you-want-to-do-today') } component={Intro} />
         <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
@@ -64,7 +65,6 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/email-phone') } component={ContactDetails} />
         <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
-
       </div>
     );
   }
