@@ -2,12 +2,13 @@
 
 import React from 'react';
 
-import HomeLink               from './home-link.jsx';
-import SelectorCollection     from './selector-collection.jsx';
+import HomeLink               from '../home-link.jsx';
+import SelectorCollection     from '../selector-collection.jsx';
 
 const OPTIONS = ['Yes', 'No'];
 
 const Form = (props) => {
+  document.title = props.pageTitle;
   return (
     <div className='interstitial-address-form'>
       <HomeLink />

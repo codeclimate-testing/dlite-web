@@ -2,9 +2,9 @@
 'use strict';
 
 import React from 'react';
-import SelectorCollection      from './selector-collection.jsx';
-import HomeLink                from './home-link.jsx';
-import ContinueButton          from './continue-button.jsx';
+import SelectorCollection      from '../selector-collection.jsx';
+import HomeLink                from '../home-link.jsx';
+import ContinueButton          from '../continue-button.jsx';
 
 const donateOrgan = ['Yes', 'No']
 const voluntaryContribution = ['$2 voluntary contribution to support and promote organ and tissue donation', 'No donation']

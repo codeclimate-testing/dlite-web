@@ -119,8 +119,8 @@ module.exports = function(world) {
     clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
   });
 
-    world.when('I visit home page', function(done){
-    clickAndWaitForPage('a.home-page', '.intro-info', done);
+    world.when('I visit app intro page', function(done){
+    clickAndWaitForPage('a.intro-page', '.intro-info', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {
@@ -167,8 +167,8 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
 
-  world.then('I will be taken to email phone page', function(done) {
-    assertOnPage('.email-phone-form', /about-me\/voter\/email-phone/, done);
+  world.then('I will be taken to contact details page', function(done) {
+    assertOnPage('.contact-details-form', /about-me\/voter\/email-phone/, done);
   });
 
   world.then('I will be taken to remove email phone page', function(done) {

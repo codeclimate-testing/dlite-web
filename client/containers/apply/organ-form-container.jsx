@@ -2,11 +2,11 @@
 
 import React from 'react';
 
-import { updateOrgan }            from "../actions/index";
-import Form                       from '../presentations/organ-form.jsx';
-import connectForm                from '../helpers/connect-form';
-import navigateOnSubmit           from '../helpers/navigate-on-submit';
-import * as dataPresent           from '../helpers/data-present';
+import { updateOrgan }            from "../../actions/index";
+import Form                       from '../../presentations/apply/organ-form.jsx';
+import connectForm                from '../../helpers/connect-form';
+import navigateOnSubmit           from '../../helpers/navigate-on-submit';
+import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;

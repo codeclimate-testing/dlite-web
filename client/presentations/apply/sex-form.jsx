@@ -2,13 +2,14 @@
 
 import React from 'react';
 
-import SelectorCollection      from './selector-collection.jsx';
-import HomeLink                from './home-link.jsx';
-import ContinueButton          from './continue-button.jsx';
+import SelectorCollection      from '../selector-collection.jsx';
+import HomeLink                from '../home-link.jsx';
+import ContinueButton          from '../continue-button.jsx';
 
 const VALUES = ['Female', 'Male'];
 
 const SexForm = (props) => {
+  document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />

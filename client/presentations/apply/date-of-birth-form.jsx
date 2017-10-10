@@ -2,13 +2,14 @@
 
 import React from 'react';
 
-import HomeLink         from './home-link.jsx';
-import TextInput        from './text-input.jsx';
-import NumberInput      from './number-input.jsx';
-import ContinueButton   from './continue-button.jsx';
-import navigateOnSubmit from '../helpers/navigate-on-submit';
+import HomeLink         from '../home-link.jsx';
+import TextInput        from '../text-input.jsx';
+import NumberInput      from '../number-input.jsx';
+import ContinueButton   from '../continue-button.jsx';
+import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
 const Form = (props) => {
+  document.title = props.pageTitle;
   return (
     <div className='date-of-birth-form'>
       <HomeLink />
