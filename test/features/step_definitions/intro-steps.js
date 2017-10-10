@@ -5,7 +5,7 @@ const assert = require('assert');
 module.exports = function (world) {
   let browser = world.browser;
 
-  world.then('I see text for intro render', function (done) {
+  world.then('I see text introducing the page', function (done) {
     browser
       .waitForSelector('.intro-info')
       .then(() => { done(); })
