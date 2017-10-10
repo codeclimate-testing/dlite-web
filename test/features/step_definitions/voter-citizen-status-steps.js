@@ -19,17 +19,17 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('US Citizen: No'), 'Citizen status as No not saved in summary');
+      assert.ok(text.includes('US Citizen: False'), 'Citizen status as No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.then('I will see No Answer in my citizenship selection', function(done) {
+  world.then('I will see No Value in my citizenship selection', function(done) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('US Citizen: No Answer'), 'Citizen status as No Answer not saved in summary');
+      assert.ok(!text.includes('US Citizen'), 'Citizen status as No Value not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -66,7 +66,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('US Citizen: No'), 'Citizen status as No not saved in summary');
+      assert.ok(text.includes('US Citizen: False'), 'Citizen status as No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
