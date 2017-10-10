@@ -6,8 +6,11 @@ import * as dataPresent from '../../helpers/data-present';
 const CitizenStatus = (props) => {
   let value = props.citizenStatus;
 
-  if(value === 'Skip Section') {
-    value = 'No Answer';
+  if(value ==='Skip Section') {
+    value = '';
+  }
+  else if(value ==='No') {
+    value = 'False';
   }
 
   if (!dataPresent.value(value)) { return null; }
