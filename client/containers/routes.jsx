@@ -18,7 +18,7 @@ import HairColor                    from './apply/hair-color-form-container.jsx'
 import Height                       from './apply/height-form-container.jsx';
 import Weight                       from './apply/weight-form-container.jsx';
 import SocialSecurity               from './apply/social-security-form-container.jsx';
-
+import Organ                        from './apply/organ-form-container.jsx';
 import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
 import OptOut                       from './voter/opt-out-form-container.jsx';
@@ -50,6 +50,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/height' ) } component={Height} />
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
+        <Route path={ alicePath('/about-me/organ' ) } component={Organ} />
 
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />

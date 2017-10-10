@@ -24,6 +24,12 @@ const height = (props) => {
   return props && value(props.feet);
 }
 
+const organ = (props) => {
+  return props && (
+    value(props.donate) || value(props.contribute)
+  );
+};
+
 const socialSecurity = (props) => {
   return props && (
     value(props.part1) && value(props.part2) && value(props.part3)
@@ -46,6 +52,7 @@ const application = (props) => {
     value(props.hairColor) ||
     height(props.height) ||
     value(props.weight) ||
+    organ(props.organ) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
     value(props.contactMethods) ||
@@ -63,6 +70,7 @@ export {
   address,
   date,
   height,
+  organ,
   socialSecurity,
   contactDetails,
   application

@@ -9,20 +9,18 @@ function connectForm(mapStateToProps, action, form) {
       //Trigger dispatch for each name value pair
       for (var key in payload) {
         if (payload.hasOwnProperty(key)) {
-            let name = key;
-            let value = payload[key];
-            dispatch(action(name, value));
+          let name = key;
+          let value = payload[key];
+          dispatch(action(name, value));
         }
       }
     }
 
     const onReset = (payload) => {
       //Trigger dispatch for each field with blank value
-      for (var key in payload) {
-        if (payload.hasOwnProperty(key)) {
-            let name = key;
-            let value = '';
-            dispatch(action(name, value));
+      for (var key in payload) {     
+        if (key === 'state') {
+          let value = 'CA';
         }
       }
     }

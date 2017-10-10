@@ -42,12 +42,20 @@ hr {
 }
 
 ul.bullet-list {
-  list-style: disc; padding: $spacing; margin: $spacing;
+  list-style: disc;
+  padding: $spacing;
+  margin-left: $spacing;
 
-  li { padding: $spacing/2 $spacing; }
+  li {
+    margin-left: $spacing;
+    padding: $spacing/4 $spacing;
+  }
+}
+
+ol.number-list {
+  // TODO: same for numberend list
 }
 ol.decimal-list {
     list-style-type: decimal; padding: $spacing; margin: $spacing;
 }
 
-// TODO: same for numberend list
