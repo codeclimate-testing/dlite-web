@@ -33,7 +33,7 @@ const linkData = [
   {description: 'opt out',                    path: '/about-me/voter/opt-out'},
   {description: 'voter preferences intro',    path: '/about-me/voter/voter-preferences-intro'},
   {description: 'political party choose',     path: '/about-me/voter/political-party-choose'},
-  {description: 'political party',            path: '/about-me/voter/political-party'},
+  {description: 'political party preference', path: '/about-me/voter/political-party'},
   {description: 'ballot language',            path: '/about-me/voter/ballot-language'},
   {description: 'ballot by mail',             path: '/about-me/voter/ballot-by-mail'},
   {description: 'contact methods',            path: '/about-me/voter/contact-choice'},
