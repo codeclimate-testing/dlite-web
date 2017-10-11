@@ -11,13 +11,11 @@ import * as dataPresent               from '../../helpers/data-present';
 const ConnectedForm = (props) => {
 let value = props.citizenStatus;
   const continueDisabled = false;
-  let onSubmit = navigateOnSubmit('/summary', props);
+  let onSubmit = navigateOnSubmit('/about-me/organ', props);
 
   if(value === 'Yes') {
     onSubmit = navigateOnSubmit('/about-me/voter/eligibility-requirements', props);
-  } else {
-    onSubmit;
-  };
+  }
 
   return (
     <Form
