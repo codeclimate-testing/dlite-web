@@ -19,3 +19,17 @@
 .social-security-dash {
   padding: $spacing / 1.5;
 }
+
+
+h1.inner {
+  padding: $spacing * 1.5 $spacing;
+  font-size: $logo-height;
+
+  .dmv-text-logo {
+    font-style: italic;
+  }
+
+  .dmv-application-area {
+    font-weight: normal;
+  }
+}

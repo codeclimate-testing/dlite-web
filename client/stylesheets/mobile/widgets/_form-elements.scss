@@ -18,13 +18,11 @@ textarea {
 
   @include line;
   @include input-margin-fix;
-  @include border-radius;
   @include bordered;
-  @include box-shadow(inset 0px $input-border-width-special $input-border-width-special $neutral-20);
 
-  background-color: $lightest-color;
+  background-color: white;
   font-size: $em;
-  color: $darkest-color;
+  color: black;
   padding: $input-top-padding  $input-side-padding;
 
   &:focus {
