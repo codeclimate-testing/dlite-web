@@ -28,7 +28,6 @@ import VoterPreferencesIntro                  from '../presentations/voter/voter
 import VoterPreferencesIntroPreregistered     from '../presentations/voter/voter-preferences-intro-preregistered-form.jsx';
 import PoliticalPartyChoose                   from './voter/political-party-choose-form-container.jsx';
 import PoliticalPartyPreference               from './voter/political-party-preference-form-container.jsx';
-import PoliticalParty                         from '../presentations/voter/political-party-form.jsx';
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import ContactMethods                         from './voter/contact-methods-form-container.jsx';
