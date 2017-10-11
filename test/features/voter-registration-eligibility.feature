@@ -18,22 +18,20 @@ Feature: Check Voter Registration Eligibility
     When I visit the voter eligibility requirements page
     When I select No
     When I click to submit
-    Then I will be on the page with my summary
-    Then I will see that I do not qualify to register to vote
+    Then I will be on the page for organ selection
 
   Scenario: Choose not to answer
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
     When I select Skip Section
     And I click to submit
-    Then I will be on the page with my summary
-    Then I will see No Answer for if I qualify to register to vote
+    Then I will be on the page for organ selection
 
   Scenario: Continuing without a selection - skips voter section
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
     And I click to submit
-    Then I will be on the page with my summary
+    Then I will be on the page for organ selection
 
   Scenario: Updating voter eligibility status
     Given I go to the new online DL application page

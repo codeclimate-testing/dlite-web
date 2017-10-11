@@ -23,6 +23,7 @@ const EligibilityRequirements = (props) => {
         </ul>
 
         <p>If you answer 'No' or 'Skip Section', you cannot be registered to vote.</p>
+        <br></br>
         <form onSubmit={ props.onSubmit } className='eligibility-requirements-form'>
         <div className='inner-bottom'>
           <SelectorCollection
@@ -35,6 +36,10 @@ const EligibilityRequirements = (props) => {
 
         <ContinueButton disabled={props.continueDisabled}/>
         </form>
+        <br></br>
+        <p><b>What if I don't meet the requirements?</b></p>
+        <p>If you don't meet all the requirements, you are not eligible to register to vote.</p>
+        <p>Your response to this question <b>will not</b> be shared with election officials.</p>
     </div>
   );
 };
