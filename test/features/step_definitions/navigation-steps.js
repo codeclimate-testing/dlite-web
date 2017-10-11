@@ -107,6 +107,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit voter preferences intro preregistered page', function(done){
+    clickAndWaitForPage('a.voter-preferences-intro-preregistered', '.voter-preferences-intro-preregistered', done);
+  });
+
   world.when('I visit contact choice page', function(done) {
     clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
   });
@@ -231,11 +235,15 @@ module.exports = function(world) {
     assertOnPage('.voter-preferences-intro', /about-me\/voter\/voter-preferences-intro/, done);
   });
 
- world.when('I visit voter opt out page', function(done) {
+   world.then('I will be taken to voter preferences preregistered info page', function(done) {
+    assertOnPage('.voter-preferences-intro-preregistered', /about-me\/voter\/voter-preferences-intro-preregistered/, done);
+  });
+
+  world.when('I visit voter opt out page', function(done) {
     clickAndWaitForPage('a.opt-out', '.opt-out-form', done);
   });
 
-world.then('I will be taken to the names page', function(done) {
+  world.then('I will be taken to the names page', function(done) {
     assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
   });
 };

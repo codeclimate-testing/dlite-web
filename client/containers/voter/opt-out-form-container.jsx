@@ -9,21 +9,22 @@ import navigateOnSubmit               from '../../helpers/navigate-on-submit';
 import * as dataPresent               from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-   
+
     let value = props.optOut;
     const continueDisabled = !dataPresent.value(value);
 
     const REGISTER_YES = '/about-me/voter/voter-preferences-intro';
+    const ALREADY_REGISTERED = '/about-me/voter/voter-preferences-intro-preregistered';
     const REGISTER_NO = '/summary';
     let address;
 
-    if(props.optOut == 'I want to register to vote' || props.optOut == 'I am already registered to vote'){
+    if(props.optOut == 'I want to register to vote'){
       address = REGISTER_YES;
-    }
-    
-    else {
+    } else if(props.optOut === 'I am already registered to vote') {
+      address = ALREADY_REGISTERED;
+    } else {
       address = REGISTER_NO;
-    }
+    };
 
      const onSubmit = navigateOnSubmit(address, props);
 
@@ -34,7 +35,7 @@ const ConnectedForm = (props) => {
       selectedValue={props.optOut}
       continueDisabled={continueDisabled}
     />
-    
+
   );
 };
 

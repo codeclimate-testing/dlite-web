@@ -1,37 +1,40 @@
 'use strict';
 
-import React                        from 'react';
-import { Route }                    from 'react-router-dom';
+import React                                  from 'react';
+import { Route }                              from 'react-router-dom';
 
-import alicePath                    from '../helpers/alice-path';
-import Home                         from '../presentations/home.jsx';
-import Summary                      from './summary-handler.jsx';
+import alicePath                              from '../helpers/alice-path';
+import Home                                   from '../presentations/home.jsx';
+import Summary                                from './summary-handler.jsx';
 
-import Intro                        from '../presentations/apply/intro.jsx';
-import LegalName                    from './apply/legal-name-form-container.jsx';
-import DateOfBirth                  from './apply/date-of-birth-form-container.jsx';
-import HomeAddress                  from './apply/home-address-form-container.jsx';
-import InterstitialAddress          from './apply/interstitial-address-container.jsx';
-import MailingAddress               from './apply/mailing-address-form-container.jsx';
-import Sex                          from './apply/sex-selector-form-container.jsx';
-import EyeColor                     from './apply/eye-color-form-container.jsx';
-import HairColor                    from './apply/hair-color-form-container.jsx';
-import Height                       from './apply/height-form-container.jsx';
-import Weight                       from './apply/weight-form-container.jsx';
-import SocialSecurity               from './apply/social-security-form-container.jsx';
-import Organ                        from './apply/organ-form-container.jsx';
-import VoterCitizenStatus           from './voter/citizen-status-form-container.jsx';
-import EligibilityRequirements      from './voter/eligibility-requirements-form-container.jsx';
-import OptOut                       from './voter/opt-out-form-container.jsx';
-import VoterPreferencesIntro        from '../presentations/voter/voter-preferences-intro-form.jsx';
-import PoliticalPartyChoose         from './voter/political-party-choose-form-container.jsx';
-import PoliticalPartyPreference     from './voter/political-party-preference-form-container.jsx';
-import BallotLanguage               from './voter/ballot-language-form-container.jsx';
-import BallotByMail                 from './voter/ballot-by-mail-form-container.jsx';
-import ContactMethods               from './voter/contact-methods-form-container.jsx';
-import ContactDetails               from './voter/contact-details-form-container.jsx';
-import EmailPhoneRemove             from '../presentations/voter/email-phone-remove-form.jsx';
-import SuccessVisit                 from '../presentations/success-visit-info.jsx';
+
+import Intro                                  from '../presentations/apply/intro.jsx';
+import LegalName                              from './apply/legal-name-form-container.jsx';
+import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
+import HomeAddress                            from './apply/home-address-form-container.jsx';
+import InterstitialAddress                    from './apply/interstitial-address-container.jsx';
+import MailingAddress                         from './apply/mailing-address-form-container.jsx';
+import Sex                                    from './apply/sex-selector-form-container.jsx';
+import EyeColor                               from './apply/eye-color-form-container.jsx';
+import HairColor                              from './apply/hair-color-form-container.jsx';
+import Height                                 from './apply/height-form-container.jsx';
+import Weight                                 from './apply/weight-form-container.jsx';
+import SocialSecurity                         from './apply/social-security-form-container.jsx';
+import Organ                                  from './apply/organ-form-container.jsx';
+import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
+import EligibilityRequirements                from './voter/eligibility-requirements-form-container.jsx';
+import OptOut                                 from './voter/opt-out-form-container.jsx';
+import VoterPreferencesIntro                  from '../presentations/voter/voter-preferences-intro-form.jsx';
+import VoterPreferencesIntroPreregistered     from '../presentations/voter/voter-preferences-intro-preregistered-form.jsx';
+import PoliticalPartyChoose                   from './voter/political-party-choose-form-container.jsx';
+import PoliticalPartyPreference               from './voter/political-party-preference-form-container.jsx';
+import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
+import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
+import ContactMethods                         from './voter/contact-methods-form-container.jsx';
+import ContactDetails                         from './voter/contact-details-form-container.jsx';
+import EmailPhoneRemove                       from '../presentations/voter/email-phone-remove-form.jsx';
+import SuccessVisit                           from '../presentations/success-visit-info.jsx';
+
 
 class Router extends React.Component {
   render() {
@@ -57,6 +60,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
         <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
         <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
+        <Route path={ alicePath('/about-me/voter/voter-preferences-intro-preregistered') } component={VoterPreferencesIntroPreregistered} />
         <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalPartyPreference} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
