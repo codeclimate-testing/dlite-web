@@ -5,6 +5,14 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
+  world.then('I will see citizen related faq', function(done){
+    browser
+      .exists('.faq-citizen-status')
+      .then((exists) => { assert.ok(exists, 'citizen related faq not present'); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see Yes in my citizenship selection', function(done) {
     browser
     .text()
