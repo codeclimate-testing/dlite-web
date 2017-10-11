@@ -18,30 +18,32 @@ import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
 import updateEligibilityRequirements       from './update-eligibility-requirements';
 import updatePoliticalPartyChoose          from './update-political-party-choose';
+import updatePoliticalPartyPreference      from './update-political-party-preference';
 import updateBallotLanguage                from './update-ballot-language';
 import updateContactMethods                from './update-contact-methods';
 import updateOptOut                        from './update-opt-out';
 
 const rootReducer = combineReducers({
-  legalName               : updateLegalNames,
-  homeAddress             : updateHomeAddress,
-  mailingAddress          : updateMailingAddress,
-  contactDetails          : updateContactDetails,
-  eyeColor                : updateEyeColor,
-  hairColor               : updateHairColor,
-  dateOfBirth             : updateDateOfBirth,
-  sex                     : updateSex,
-  height                  : updateHeight,
-  weight                  : updateWeight,
-  organ                   : updateOrgan,
-  socialSecurity          : updateSocialSecurity,
-  citizenStatus           : updateCitizenStatus,
-  ballotByMail            : updateBallotByMail,
-  eligibilityRequirements : updateEligibilityRequirements,
-  politicalPartyChoose    : updatePoliticalPartyChoose,
-  ballotLanguage          : updateBallotLanguage,
-  contactMethods          : updateContactMethods,
-  optOut                  : updateOptOut
+  legalName                   : updateLegalNames,
+  homeAddress                 : updateHomeAddress,
+  mailingAddress              : updateMailingAddress,
+  contactDetails              : updateContactDetails,
+  eyeColor                    : updateEyeColor,
+  hairColor                   : updateHairColor,
+  dateOfBirth                 : updateDateOfBirth,
+  sex                         : updateSex,
+  height                      : updateHeight,
+  weight                      : updateWeight,
+  organ                       : updateOrgan,
+  socialSecurity              : updateSocialSecurity,
+  citizenStatus               : updateCitizenStatus,
+  ballotByMail                : updateBallotByMail,
+  eligibilityRequirements     : updateEligibilityRequirements,
+  politicalPartyChoose        : updatePoliticalPartyChoose,
+  politicalPartyPreference    : updatePoliticalPartyPreference,
+  ballotLanguage              : updateBallotLanguage,
+  contactMethods              : updateContactMethods,
+  optOut                      : updateOptOut
 
 });
 

@@ -119,6 +119,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.political-party-choose', '.political-party-choose', done);
   });
 
+  world.when('I visit the political party preference page', function(done){
+    clickAndWaitForPage('a.political-party-preference', '.political-party-preference-form', done);
+  });
+
     world.when('I visit app intro page', function(done){
     clickAndWaitForPage('a.intro-page', '.intro-info', done);
   });
@@ -204,7 +208,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to political party page', function(done){
-    assertOnPage('.political-party-form', /about-me\/voter\/political-party/, done);
+    assertOnPage('.political-party-preference-form', /about-me\/voter\/political-party/, done);
   });
 
   world.then('I will be taken to summary page', function(done) {
