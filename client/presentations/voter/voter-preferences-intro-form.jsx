@@ -16,16 +16,19 @@ const VoterPreferencesIntro = (props) => {
       <HomeLink />
 
       <div className='voter-preferences-intro'>
-        <h4>We will now ask for your preferences on the following voter registration details:</h4>
+        <h4>Next you will choose your voter preferences.</h4>
+
         <h4>Political Party</h4>
-        <p>You can become a member of a political party or change your party membership.</p>
+        <p>Choose your political party preferences.</p>
+
         <h4>Vote by mail</h4>
-        <p>Choose if you want to get your ballot by mail.<br />
-          You can always change your mind and vote at a polling place.</p>
+        <p>You can get your ballot in the mail for all future elections, meaning you don't have to go to a polling place to vote.</p>
+
         <h4>Language</h4>
-        <p>Choose what language you would like to get your voting materials in.</p>
+        <p>Choose what language you would like to get your election guide in.</p>
+
         <h4>Contact Information</h4>
-        <p>How would you like election campaigns to reach you — if at all?</p>
+        <p>Election officials can contact you with election and voting information.</p>
 
         <Link to={ alicePath(linkAddress) }>
           <ContinueButton disabled={props.continueDisabled} />
