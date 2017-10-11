@@ -59,6 +59,7 @@ const application = (props) => {
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
+    value(props.politicalPartyPreference) ||
     contactDetails(props.contactDetails) ||
     value(props.ballotLanguage) ||
     value(props.optOut);
