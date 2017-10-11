@@ -25,7 +25,8 @@ textarea {
   color: black;
   padding: $input-top-padding  $input-side-padding;
 
-  &:focus {
+  &:focus,
+  &.focus {
     @include focus-input-padding-fix;
     border: $input-border-width-special solid $primary;
     @include box-shadow(inset 0px $input-border-width-special*1.5 $input-border-width-special*1.5 $neutral-20);

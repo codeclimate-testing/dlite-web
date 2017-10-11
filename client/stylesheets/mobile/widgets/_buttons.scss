@@ -30,17 +30,20 @@ label.button {
 
   @include line;
 
-  &:hover {
+  &:hover,
+  &.hover {
     text-decoration: none;
     background-color: lighten($dark-blue, 5%);
   }
 
-  &:focus {
+  &:focus,
+  &.focus {
     background-color: lighten($dark-blue, 10%);
     @include button-focused;
   }
 
-  &:active {
+  &:active,
+  &.active {
     background-color: darken($dark-blue, 5%);
   }
 

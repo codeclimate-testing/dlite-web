@@ -28,7 +28,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a.hover,
+a:active,
+a.active {
   text-decoration: underline;
 }
 
@@ -52,10 +55,7 @@ ul.bullet-list {
   }
 }
 
-ol.number-list {
-  // TODO: same for numberend list
-}
 ol.decimal-list {
-    list-style-type: decimal; padding: $spacing; margin: $spacing;
+  list-style-type: decimal; padding: $spacing; margin: $spacing;
 }
 
