@@ -43,7 +43,7 @@ describe('SelectorButton', function() {
     );
 
     assert(
-      component.find('.button').is('.neutral'),
+      component.find('.button').is('.tap'),
       'button is not styled correctly'
     );
   });
@@ -57,7 +57,7 @@ describe('SelectorButton', function() {
 
     let input = component.find('input');
     input.simulate('focus');
-    assert(component.find('.radio-selector').is('.focused'), 'input is not focused');
+    assert(component.find('.radio-selector').is('.focus'), 'input is not focused');
   });
 
   it('onBlur removes the "focused" class', function() {
@@ -70,7 +70,7 @@ describe('SelectorButton', function() {
     let input = component.find('input');
     input.simulate('focus');
     input.simulate('blur');
-    assert(component.find('.radio-selector').not('.focused'), 'input is still focused');
+    assert(component.find('.radio-selector').not('.focus'), 'input is still focused');
   });
 });
 
