@@ -27,9 +27,8 @@ textarea {
 
   &:focus,
   &.focus {
+    @include button-focused;
     @include focus-input-padding-fix;
-    border: $input-border-width-special solid $primary;
-    @include box-shadow(inset 0px $input-border-width-special*1.5 $input-border-width-special*1.5 $neutral-20);
   }
 }
 
