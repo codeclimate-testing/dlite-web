@@ -26,25 +26,41 @@ label.button {
   cursor: pointer;
 
   background-color: $dark-blue;
+  border: $border-width solid $dark-blue;
   color: white;
 
   @include line;
 
   &:hover,
   &.hover {
-    text-decoration: none;
-    background-color: lighten($dark-blue, 5%);
+    background-color: $med-blue;
+    border-color: $med-blue;
   }
 
   &:focus,
   &.focus {
-    background-color: lighten($dark-blue, 10%);
     @include button-focused;
   }
 
   &:active,
   &.active {
-    background-color: darken($dark-blue, 5%);
+    background-color: $med-blue;
+    border-color: $highlight;
+  }
+
+  &.disabled,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &.disabled.focus,
+  &.disabled.hover,
+  &.disabled:focus,
+  &.disabled:hover {
+    border: $border-width solid $primary;
+    padding: $spacing*1.2 - $border-width $spacing*3 - $border-width;
+    background-color: $sky-blue;
+    color: $primary;
+    text-decoration: none;
   }
 
   &.accent {
@@ -133,14 +149,6 @@ label.button {
     &:active {
       background-color: $error-dark;
     }
-  }
-
-  &.disabled,
-  &[disabled] {
-    border: $border-width solid $dark-blue;
-    padding: $spacing*1.2 - $border-width $spacing*3 - $border-width;
-    background-color: $neutral-10;
-    color: $dark-blue;
   }
 }
 

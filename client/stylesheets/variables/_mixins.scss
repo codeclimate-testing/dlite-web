@@ -36,7 +36,8 @@
 
 @mixin button-focused {
   text-decoration: underline;
-  @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
+  color: white;
+  border-color: $highlight;
 }
 
 /* form input fixes */

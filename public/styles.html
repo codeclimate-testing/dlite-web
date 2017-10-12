@@ -126,14 +126,25 @@
 
             <p>And then we move to some submit buttons</p>
 
-            <input type='submit'><br>
-            <input class='neutral' type='submit' value='Neutral style'><br>
-            <input class='disabled' type='submit' value='Disabled-ish'><br>
-            <input class='active' type='submit' value='Active'><br>
-            <input class='hover' type='submit' value='Hover'><br>
-            <input class='focus' type='submit' value='Focus'><br>
-            <input class='selected' type='submit' value='Selected'><br>
-
+            <div class='row'>
+              <div class='unit size-1-2'>
+                <h4>Submit/continue buttons</h4>
+                <input type='submit'><br>
+                <input class='hover' type='submit' value='Hover'><br>
+                <input class='active' type='submit' value='Active'><br>
+                <input class='focus' type='submit' value='Focus'><br>
+                <input class='disabled' type='submit' value='Disabled-ish'><br>
+              </div>
+              <div class='unit size-1-2'>
+                <h4>Tap buttons</h4>
+                <div class='button tap'>Normal</div><br>
+                <div class='button tap hover'>Hover</div><br>
+                <div class='button tap active'>Active</div><br>
+                <div class='button tap focus'>Focus</div><br>
+                <div class='button tap selected'>Selected</div><br>
+                <div class='button tap selected focus'>Selected focused</div>
+              </div>
+            </div>
           </form>
 
           <hr>
@@ -142,13 +153,13 @@
 
           <div class='row'>
             <div class='unit size-1-5 background-primary'>
-              <div class='inner'>Primary</div>
+              <div class='inner light-text'>Primary</div>
             </div>
             <div class='unit size-1-5 background-accent'>
               <div class='inner'>Accent</div>
             </div>
             <div class='unit size-1-5 background-accent-2'>
-              <div class='inner light-text'>Accent 2</div>
+              <div class='inner'>Accent 2</div>
             </div>
             <div class='unit size-1-5 background-info'>
               <div class='inner light-text'>Info</div>
