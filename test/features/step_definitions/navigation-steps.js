@@ -131,6 +131,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.intro-page', '.intro-info', done);
   });
 
+  world.when('I visit voter info page', function (done) {
+    clickAndWaitForPage('a.voter-intro', '.voter-intro-info', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -241,6 +245,14 @@ module.exports = function(world) {
 
   world.when('I visit voter opt out page', function(done) {
     clickAndWaitForPage('a.opt-out', '.opt-out-form', done);
+  });
+
+  world.when('voter intro page', function(done) {
+    clickAndWaitForPage('a.voter-intro', '.voter-intro-info', done);
+  });
+
+   world.then('I will be taken to voter intro page', function(done) {
+    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
   });
 
   world.then('I will be taken to the names page', function(done) {

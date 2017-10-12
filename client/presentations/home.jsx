@@ -28,6 +28,7 @@ const linkData = [
   {description: 'social security',                        path: '/about-me/social-security'},
   {description: 'organ',                                  path: '/about-me/organ'},
 
+  {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},
   {description: 'eligibility requirements',               path: '/about-me/voter/eligibility-requirements'},
   {description: 'opt out',                                path: '/about-me/voter/opt-out'},
