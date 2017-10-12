@@ -111,6 +111,10 @@ module.exports = function(world) {
     clickAndWaitForPage('a.voter-preferences-intro-preregistered', '.voter-preferences-intro-preregistered', done);
   });
 
+  world.when('I visit voter registration complete page', function(done){
+    clickAndWaitForPage('a.voter-reg-complete', '.voter-reg-complete', done);
+  });
+
   world.when('I visit contact choice page', function(done) {
     clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
   });
@@ -237,6 +241,10 @@ module.exports = function(world) {
 
    world.then('I will be taken to voter preferences preregistered info page', function(done) {
     assertOnPage('.voter-preferences-intro-preregistered', /about-me\/voter\/voter-preferences-intro-preregistered/, done);
+  });
+
+   world.then('I will be taken to voter registration complete page', function(done) {
+    assertOnPage('.voter-reg-complete', /about-me\/voter\/voter-reg-complete/, done);
   });
 
   world.when('I visit voter opt out page', function(done) {
