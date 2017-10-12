@@ -36,12 +36,13 @@
 
 @mixin button-focused {
   text-decoration: underline;
-  @include box-shadow($primary-dark $shadow-padding/2 $shadow-padding/2 $shadow-padding);
+  color: white;
+  border-color: $highlight;
 }
 
 /* form input fixes */
 @mixin focus-input-padding-fix {
-  padding: $input-top-padding - $input-border-width $input-side-padding - $input-border-width;
+  padding: $input-top-padding $input-side-padding;
 }
 
 @mixin input-margin-fix {

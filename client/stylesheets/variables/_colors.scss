@@ -1,8 +1,10 @@
-$lightest-color: #fff;
-$darkest-color: #000;
+$lightest-color: #f7f7f7;
+$darkest-color:  #323A45;
 
-$dark-blue:   #164675;
-$light-blue:  #19B3DA;
+$dark-blue:   #006A9B;
+$med-blue:    #0096db;
+$sky-blue:    #ecf9ff;
+$highlight:   #0cd3ff;
 $gold:        #FCB81E;
 $rust:        #B75D2C;
 $red:         #A30111;
@@ -20,16 +22,16 @@ $neutral-20: mix($lightest-color, $darkest-color, 80%);
 $neutral-10: mix($lightest-color, $darkest-color, 90%);
 
 // Theme based color
-$primary:        $light-blue;
+$primary:        $dark-blue;
 $primary-light:  lighten($primary, 5%);
 $primary-dark:   darken($primary, 5%);
 
-$accent:         $gold;
+$accent:         $highlight;
 $accent-light:   lighten($accent, 10%);
 $accent-dark:    darken($accent, 10%);
 
-$accent-2:         $dark-blue;
-$accent-2-light:   lighten($accent-2, 5%);
+$accent-2:         $sky-blue;
+$accent-2-light:   lighten($accent-2, 1%);
 $accent-2-dark:    darken($accent-2, 5%);
 
 // Semantic colors;

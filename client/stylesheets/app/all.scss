@@ -19,3 +19,78 @@
 .social-security-dash {
   padding: $spacing / 1.5;
 }
+
+
+h1.inner {
+  padding: $spacing * 1.5 $spacing;
+  font-size: $logo-height;
+
+  .dmv-text-logo {
+    font-style: italic;
+  }
+
+  .dmv-application-area {
+    font-weight: normal;
+  }
+}
+
+button.tap,
+input[type=submit].tap,
+a.button.tap,
+div.button.tap,
+label.button.tap {
+  padding-top: $spacing * 2;
+  padding-bottom: $spacing * 2;
+  background-color: white;
+  border-color: $primary;
+  color: $primary;
+
+  &:hover,
+  &.hover {
+    background-color: $sky-blue;
+  }
+
+  &:focus,
+  &.focus {
+    @include button-focused;
+    color: $primary;
+  }
+
+  &:active,
+  &.active {
+    background-color: $sky-blue;
+    border-color: $highlight;
+  }
+}
+
+button.tap.selected,
+input[type=submit].tap.selected,
+a.button.tap.selected,
+div.button.tap.selected,
+label.button.tap.selected {
+  background-color: $primary;
+  color: $lightest-color;
+
+  &:hover,
+  &.hover {
+    background-color: $med-blue;
+  }
+
+  &:focus,
+  &.focus {
+    @include button-focused;
+  }
+
+  &:active,
+  &.active {
+    background-color: $med-blue;
+    border-color: $highlight;
+  }
+}
+
+.hair-color-form,
+.eye-color-form {
+  .tap.button {
+    width: 100px;
+  }
+}

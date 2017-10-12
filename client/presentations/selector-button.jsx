@@ -3,9 +3,9 @@
 import React from 'react';
 
 const SelectorButton = function(props) {
-  const focusedClass = ' focused';
+  const focusedClass = ' focus';
 
-  let className = props.selected ? 'selected button' : 'neutral button';
+  let className = props.selected ? 'tap selected button' : 'tap button';
   let labelElement;
 
   let onFocus = (event) => {
