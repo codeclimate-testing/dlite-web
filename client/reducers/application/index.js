@@ -20,7 +20,7 @@ import updateEligibilityRequirements       from './update-eligibility-requiremen
 import updatePoliticalPartyChoose          from './update-political-party-choose';
 import updatePoliticalPartyPreference      from './update-political-party-preference';
 import updateBallotLanguage                from './update-ballot-language';
-import updateContactMethods                from './update-contact-methods';
+import updateContactChoice                 from './update-contact-choice';
 import updateOptOut                        from './update-opt-out';
 
 const rootReducer = combineReducers({
@@ -42,7 +42,7 @@ const rootReducer = combineReducers({
   politicalPartyChoose        : updatePoliticalPartyChoose,
   politicalPartyPreference    : updatePoliticalPartyPreference,
   ballotLanguage              : updateBallotLanguage,
-  contactMethods              : updateContactMethods,
+  contactChoice             : updateContactChoice,
   optOut                      : updateOptOut
 
 });
