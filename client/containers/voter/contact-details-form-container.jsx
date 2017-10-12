@@ -11,7 +11,7 @@ import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 const ContactDetailsForm = (props) => {
 
   let continueDisabled = !(dataPresent.contactDetails(props.contactDetails));
-  const onSubmit = navigateOnSubmit('/summary', props);
+  const onSubmit = navigateOnSubmit('/about-me/voter/voter-reg-complete', props);
 
 
   return (

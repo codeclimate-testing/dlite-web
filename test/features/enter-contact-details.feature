@@ -11,8 +11,7 @@ Feature: Enter my email address and phone
     And I enter email
     Then I will see that the Continue button is no longer disabled
     And I click to submit
-    Then I will be on the page with my summary
-    And I will see my email on that summary
+    Then I will be taken to voter registration complete page
 
   Scenario: Updating email address
     Given I have already entered my email into the form
@@ -21,7 +20,7 @@ Feature: Enter my email address and phone
     Then I will see the email I entered
     And I change my email
     And I click to submit
-    Then I will see my updated email
+    Then I will be taken to voter registration complete page
 
   Scenario: Entering my phone number and saving
     Given I go to the new online DL application page
@@ -30,8 +29,7 @@ Feature: Enter my email address and phone
     And I enter my phone number
     Then I will see that the Continue button is no longer disabled
     And I click to submit
-    Then I will be on the page with my summary
-    And I will see my phone number on that summary
+    Then I will be taken to voter registration complete page
 
   Scenario: Updating phone number
     Given I go to the new online DL application page
@@ -41,5 +39,4 @@ Feature: Enter my email address and phone
     Then I will see the phone number I entered
     And I change my phone number
     And I click to submit
-    Then I will see my updated phone number
-
+    Then I will be taken to voter registration complete page

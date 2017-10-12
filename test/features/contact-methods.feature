@@ -30,5 +30,4 @@ Feature: Select Preferred Contact Methods
     When I visit contact choice page
     When I select Skip Question
     When I click to submit
-    Then I will be taken to summary page
-    Then I will see contact methods as Skip Question in summary
+    Then I will be taken to voter registration complete page

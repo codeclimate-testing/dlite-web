@@ -39,6 +39,7 @@ const linkData = [
   {description: 'ballot by mail',                         path: '/about-me/voter/ballot-by-mail'},
   {description: 'contact methods',                        path: '/about-me/voter/contact-choice'},
   {description: 'contact details',                        path: '/about-me/voter/email-phone'},
+  {description: 'voter reg complete',                     path: '/about-me/voter/voter-reg-complete'},
   {description: 'success visit',                          path: '/about-me/success-visit'}
 ];
 

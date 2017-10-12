@@ -12,7 +12,7 @@ const ConnectedForm = (props) => {
 
     const ADD_OR_UPDATE = '/about-me/voter/email-phone';
     const REMOVE = '/about-me/voter/remove-email-phone';
-    const SKIP_QUESTIONS = '/summary';
+    const SKIP_QUESTIONS = '/about-me/voter/voter-reg-complete';
 
     let address;
     let continueDisabled = false;
@@ -48,4 +48,3 @@ function mapStateToProps(state) {
 }
 
 export default connectForm(mapStateToProps, updateContactMethods, ConnectedForm);
-
