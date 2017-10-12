@@ -87,3 +87,10 @@ label.button.tap.selected {
     border-color: $highlight;
   }
 }
+
+.hair-color-form,
+.eye-color-form {
+  .tap.button {
+    width: 100px;
+  }
+}
