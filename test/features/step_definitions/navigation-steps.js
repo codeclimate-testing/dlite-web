@@ -236,7 +236,11 @@ module.exports = function(world) {
   });
 
    world.then('I will be taken to voter preferences info page', function(done) {
-    assertOnPage('.voter-preferences-intro', /about-me\/voter\/voter-preferences-intro/, done);
+    assertOnPage('.voter-preferences-intro', /voter\/voter-preferences-intro/, done);
+  });
+
+     world.then('I will be taken to voter intro info page', function(done) {
+    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
   });
 
    world.then('I will be taken to voter preferences preregistered info page', function(done) {
@@ -249,10 +253,6 @@ module.exports = function(world) {
 
   world.when('voter intro page', function(done) {
     clickAndWaitForPage('a.voter-intro', '.voter-intro-info', done);
-  });
-
-   world.then('I will be taken to voter intro page', function(done) {
-    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
   });
 
   world.then('I will be taken to the names page', function(done) {
