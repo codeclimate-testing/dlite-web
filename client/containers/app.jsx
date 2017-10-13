@@ -19,11 +19,11 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Router history={history}>
-        <Provider store={createStore( reducers )}>
+      <Provider store={createStore( reducers )}>
+        <Router history={history}>
             <Routes />
-        </Provider>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }
