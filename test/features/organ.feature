@@ -10,7 +10,6 @@ Feature: Donate Life
     Then I will see the organ selection I chose is selected
     And I click to submit
     Then I will be on the page for entering my social security
-    When I return to the home page
     And I go to the page with my summary
     Then I will not see any contribution selection in the summary
     Then I will see my organ selection in the summary
@@ -22,7 +21,6 @@ Feature: Donate Life
     Then I will see the contribution selection I chose is selected
     And I click to submit
     Then I will be on the page for entering my social security
-    When I return to the home page
     And I go to the page with my summary
     Then I will not see any organ selection in the summary
     Then I will see my contribution selection in the summary
@@ -34,7 +32,6 @@ Feature: Donate Life
     And I select to voluntarily contribute
     And I click to submit
     Then I will be on the page for entering my social security
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my organ selection in the summary
     Then I will see my contribution selection in the summary
@@ -47,7 +44,6 @@ Feature: Donate Life
     When I change my organ selection
     And I click to submit
     Then I will be on the page for entering my social security
-    And I return to the home page
     And I go to the page with my summary
     Then I will not see any contribution selection in the summary
     Then I will see my updated organ selection in the summary
@@ -57,6 +53,5 @@ Feature: Donate Life
     When I visit the organ page
     And I click to submit
     Then I will be on the page for entering my social security
-    When I return to the home page
     And I go to the page with my summary
     Then I will not see any organ or contribution selection in the summary

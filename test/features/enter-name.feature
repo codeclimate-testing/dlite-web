@@ -15,7 +15,6 @@ Feature:  I want to enter my name
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my date of birth
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my name on that summary
 
@@ -28,6 +27,5 @@ Feature:  I want to enter my name
     When I change my first name
     And I change my suffix
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated name

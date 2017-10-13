@@ -13,7 +13,6 @@ Feature: I want to select my eye color
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my hair color
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my eye color in the summary
 
@@ -24,6 +23,5 @@ Feature: I want to select my eye color
     Then I will see the eye color I chose is selected
     When I change my eye color
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated eye color in the summary

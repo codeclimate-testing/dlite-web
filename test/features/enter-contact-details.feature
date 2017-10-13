@@ -15,7 +15,6 @@ Feature: Enter my email address and phone
 
   Scenario: Updating email address
     Given I have already entered my email into the form
-    And I return to the home page
     When I visit voter contact details page
     Then I will see the email I entered
     And I change my email
@@ -34,7 +33,6 @@ Feature: Enter my email address and phone
   Scenario: Updating phone number
     Given I go to the new online DL application page
     And I have already entered my phone number into the form
-    And I return to the home page
     When I visit voter contact details page
     Then I will see the phone number I entered
     And I change my phone number

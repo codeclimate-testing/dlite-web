@@ -10,7 +10,6 @@ Feature: Designate US citizenship status
     When I select Yes
     When I click to submit
     Then I will be taken to voter eligibility requirements page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see Yes in my citizenship selection
 
@@ -20,7 +19,6 @@ Feature: Designate US citizenship status
     When I select No
     When I click to submit
     Then I will be on the page for organ selection
-    And I return to the home page
     And I go to the page with my summary
     Then I will see No in my citizenship selection
 
@@ -30,7 +28,6 @@ Feature: Designate US citizenship status
     When I select Skip Section
     When I click to submit
     Then I will be on the page for organ selection
-    And I return to the home page
     And I go to the page with my summary
     Then I will see No Value in my citizenship selection
 
@@ -39,7 +36,6 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     When I click to submit
     Then I will be on the page for organ selection
-    And I return to the home page
     And I go to the page with my summary
     Then I will see No Value in my citizenship selection
 
@@ -50,7 +46,6 @@ Feature: Designate US citizenship status
     Then I will see the US citizenship status I entered
     And I change my US citizenship status
     When I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated US citizenship status
 

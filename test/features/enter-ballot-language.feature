@@ -11,7 +11,6 @@ Feature: Select Ballot by Mail Language
     Then I will see the language I chose is selected
     When I click to submit
     Then I will be taken to contact choice page
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my language in the summary
 
@@ -22,6 +21,5 @@ Feature: Select Ballot by Mail Language
     Then I will see the language I chose is selected
     When I change my language
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated language in the summary

@@ -11,7 +11,6 @@ Feature: Select Preferred Contact Choice
     When I select Yes
     When I click to submit
     Then I will be taken to email phone page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see contact choice as Yes in summary
 
@@ -20,7 +19,7 @@ Feature: Select Preferred Contact Choice
     When I visit contact choice page
     When I select No
     When I click to submit
-    Then I will be taken to summary page
+    Then I will be on the page with my summary
     Then I will see contact choice as No in summary
 
   Scenario: I want to skip contact choice - navigation and summary
@@ -28,4 +27,4 @@ Feature: Select Preferred Contact Choice
     When I visit contact choice page
     When I select Skip Question
     When I click to submit
-    Then I will be taken to summary page
+    Then I will be on the page with my summary

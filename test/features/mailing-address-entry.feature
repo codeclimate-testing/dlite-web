@@ -10,7 +10,6 @@ Feature: CRUD operations on the mailing address
     When I enter my mailing address
     And I click to submit
     Then I will be on the page for entering my sex identification
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my mailing address on that summary
 
@@ -20,6 +19,5 @@ Feature: CRUD operations on the mailing address
     When I visit the mailing addresses page
     Then I will see the mailing address I entered
     And I change my mailing zip
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated mailing zip

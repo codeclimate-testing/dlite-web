@@ -11,7 +11,6 @@ Feature: Choose if you want to change or add a political party or not
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be taken to political party page
-    When I return to the home page
     And I go to the page with my summary
     Then I will see Yes for my political party choice
 
@@ -23,6 +22,5 @@ Feature: Choose if you want to change or add a political party or not
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for ballot by mail
-    When I return to the home page
     And I go to the page with my summary
     Then I will see No for my political party choice

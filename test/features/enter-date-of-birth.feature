@@ -12,7 +12,6 @@ Feature:  I want to enter my name
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my home address
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my date of birth on that summary
 
@@ -23,6 +22,5 @@ Feature:  I want to enter my name
     Then I will see the date of birth that I entered
     When I change my year of birth
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated birth year

@@ -12,7 +12,6 @@ Feature: Adding information about my sex
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my eye color
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my sex listed in the summary
 
@@ -23,6 +22,5 @@ Feature: Adding information about my sex
     Then I will see the sex I chose is selected
     When I change my sex
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated sex listed in the summary

@@ -17,7 +17,6 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be taken to ballot language page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see mail by ballot as Yes in summary
 
@@ -29,6 +28,5 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be taken to contact choice page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see mail by ballot as No in summary

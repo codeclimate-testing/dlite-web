@@ -10,7 +10,6 @@ Feature: CRUD operations on the home address
     When I enter my home address
     And I click to submit
     Then I will be asked if my home and mailing addresses are the same
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my home address on that summary
 
@@ -20,6 +19,5 @@ Feature: CRUD operations on the home address
     When I visit the home addresses page
     Then I will see the home address I entered
     And I change my home zip
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated home zip

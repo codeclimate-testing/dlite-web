@@ -10,7 +10,6 @@ Feature: Address interstitial page
     And I see two buttons labelled Yes and No
     When I select Yes
     Then I will be on the page for entering my sex identification
-    Then I return to the home page
     And I go to the page with my summary
     Then I will see residence address and mailing address will have the same information
 
