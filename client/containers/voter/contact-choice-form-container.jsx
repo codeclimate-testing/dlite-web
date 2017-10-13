@@ -9,27 +9,22 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
+  let continueDisabled = false;
+  let onSubmit = navigateOnSubmit('/about-me/voter/voter-reg-complete', props);
 
-    const YES = '/about-me/voter/email-phone';
-
-    let address;
-    let continueDisabled = false;
-
-    if(props.contactChoice == 'Yes'){
-      address = YES;
-    }
-    else {
-      address = '/summary';
-    }
-
-     const onSubmit = navigateOnSubmit(address, props);
+  if(props.contactChoice == 'Yes'){
+    onSubmit = navigateOnSubmit('/about-me/voter/email-phone', props);
+  }
+  else {
+    onSubmit;
+  }
 
   return (
     <Form
-      onSubmit={onSubmit}
-      onChange={props.onChange}
-      selectedValue={props.contactChoice}
-      continueDisabled={continueDisabled}
+    onSubmit={onSubmit}
+    onChange={props.onChange}
+    selectedValue={props.contactChoice}
+    continueDisabled={continueDisabled}
     />
   );
 };

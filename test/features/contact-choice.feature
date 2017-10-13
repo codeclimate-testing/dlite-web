@@ -20,12 +20,11 @@ Feature: Select Preferred Contact Choice
     When I visit contact choice page
     When I select No
     When I click to submit
-    Then I will be taken to summary page
-    Then I will see contact choice as No in summary
+    Then I will be taken to voter registration complete page
 
   Scenario: I want to skip contact choice - navigation and summary
     Given I go to the new online DL application page
     When I visit contact choice page
     When I select Skip Question
     When I click to submit
-    Then I will be taken to summary page
+    Then I will be taken to voter registration complete page
