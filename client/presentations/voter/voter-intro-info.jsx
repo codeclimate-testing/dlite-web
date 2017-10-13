@@ -32,7 +32,7 @@ const VoterIntro = (props) => {
         <p>This section takes customers<br />
         <b>3 minutes</b></p>
 
-        <Link to={alicePath(linkAddress)}>
+        <Link to={alicePath(linkAddress)} className='link-button'>
           <ContinueButton disabled={props.continueDisabled} />
         </Link>
 

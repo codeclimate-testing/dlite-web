@@ -28,7 +28,7 @@ const VoterPreferencesIntroPreregistered = (props) => {
         <h4>Contact Information</h4>
         <p>Election officials can contact you with election and voting information.</p>
 
-        <Link to={ alicePath(linkAddress) }>
+        <Link to={ alicePath(linkAddress) } className='link-button'>
           <ContinueButton disabled={props.continueDisabled} />
         </Link>
 
