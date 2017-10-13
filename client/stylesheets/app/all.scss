@@ -37,57 +37,71 @@ h1.inner {
   }
 }
 
+
+$tap-hover-color:   #0280bb;
+$tap-normal-border: #afafaf;
+$tap-hover-border:  #c5c5c5;
+$tap-active-border: #8c8c8c;
+
 button.tap,
 input[type=submit].tap,
 a.button.tap,
 div.button.tap,
 label.button.tap {
-  padding-top: $spacing * 2;
-  padding-bottom: $spacing * 2;
+  padding-top:      $spacing * 2;
+  padding-bottom:   $spacing * 2;
   background-color: white;
-  border-color: $primary;
-  color: $primary;
+  border-color:     $tap-normal-border;
+  color:            $primary;
 
   &:hover,
   &.hover {
-    background-color: $sky-blue;
-  }
-
-  &:focus,
-  &.focus {
-    @include button-focused;
-    color: $primary;
+    border-color: $tap-hover-border;
+    color: $tap-hover-color;
   }
 
   &:active,
   &.active {
-    background-color: $sky-blue;
-    border-color: $highlight;
+    border-color: $tap-active-border;
   }
 }
+
+.focus {
+  button.tap,
+  input[type=submit].tap,
+  a.button.tap,
+  div.button.tap,
+  label.button.tap {
+    text-decoration-line: underline;
+    text-decoration-color: $highlight;
+    border-color: $highlight;
+
+    &.selected {
+      text-decoration-color: #ef8e1c;
+      border-color: $highlight;
+    }
+  }
+}
+
+$tap-selected-color: #002435;
+$tap-selected-background: #fffef8;
+$tap-selected-hover-background: #fdfbf1;
+$tap-selected-border: #ef8e1c;
 
 button.tap.selected,
 input[type=submit].tap.selected,
 a.button.tap.selected,
 div.button.tap.selected,
 label.button.tap.selected {
-  background-color: $primary;
-  color: $lightest-color;
+  background-color: $tap-selected-background;
+  color: $tap-selected-color;
+  border-color: $tap-selected-border;
 
   &:hover,
-  &.hover {
-    background-color: $med-blue;
-  }
-
-  &:focus,
-  &.focus {
-    @include button-focused;
-  }
-
+  &.hover,
   &:active,
   &.active {
-    background-color: $med-blue;
-    border-color: $highlight;
+    background-color: $tap-selected-hover-background;
   }
 }
 
