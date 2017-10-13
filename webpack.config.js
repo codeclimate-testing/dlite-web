@@ -16,9 +16,6 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
-      { test: /\.(png|jpg|svg)$/,
-        loader: 'url-loader?limit=8192'
-      },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
