@@ -27,10 +27,10 @@ server.environment  = env.env;
 server.use(express.static('public'));
 
 server.get('/', (req, res) => {
-  res.redirect('/services');
+  res.redirect('/apply/what-do-you-want-to-do-today');
 });
 
-server.get('/services*', (req, res) => {
+server.get('/apply*', (req, res) => {
   res.send(layout);
 });
 

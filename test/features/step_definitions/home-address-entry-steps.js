@@ -85,8 +85,8 @@ module.exports = function(world) {
       .select('#homeState', 'CA')
       .type('#homeZip', '94666')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

@@ -11,7 +11,7 @@ module.exports = function setup(callback) {
   let browser = new Browser();
 
   function url(path) {
-    let base = `http://localhost:${port}/services`;
+    let base = `http://localhost:${port}/apply`;
     let fullUrl = base;
     if (path && path[0] !== '/') {
       fullUrl = `${fullUrl}/${path}`;

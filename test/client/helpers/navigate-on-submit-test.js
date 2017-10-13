@@ -24,6 +24,6 @@ describe('navigateOnSubmit', function() {
 
   it('pushes an alice url to history', function() {
     navigateOnSubmit('/foo/bar', props)();
-    assert.equal(props.history[0], '/services/foo/bar');
+    assert.equal(props.history[0], '/apply/foo/bar');
   });
 });

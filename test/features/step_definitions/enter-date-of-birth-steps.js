@@ -43,8 +43,8 @@ module.exports = function(world) {
       .type('#month', '9')
       .type('#day', '7')
       .type('#year', '1967')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

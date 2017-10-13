@@ -32,14 +32,12 @@ module.exports = function(world) {
 
   world.given('I have already entered my weight into the form', function(done) {
     browser
-      .open(world.url('/'))
-      .waitForSelector('.home-page')
       .click('a.weight')
       .waitForSelector('.weight-form')
       .type('#weight', '210')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });
