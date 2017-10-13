@@ -7,4 +7,4 @@ function defaultState() {
   return '';
 }
 
-export default formValueReducer(defaultState, TYPES.UPDATE_CONTACT_METHODS);
+export default formValueReducer(defaultState, TYPES.UPDATE_CONTACT_CHOICE);

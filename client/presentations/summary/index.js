@@ -19,7 +19,7 @@ import PoliticalPartyChoose        from './political-party-choose.jsx';
 import PoliticalPartyPreference    from './political-party-preference.jsx';
 import ContactDetails              from './contact-details.jsx';
 import BallotLanguage              from './ballot-language.jsx';
-import ContactMethods              from './contact-methods.jsx';
+import ContactChoice               from './contact-choice.jsx';
 import OptOut                      from './opt-out.jsx';
 import ContinueButton              from '../continue-button.jsx';
 
@@ -43,7 +43,7 @@ export {
   PoliticalPartyPreference,
   ContactDetails,
   BallotLanguage,
-  ContactMethods,
+  ContactChoice,
   ContinueButton,
   OptOut
 };

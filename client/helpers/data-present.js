@@ -55,7 +55,7 @@ const application = (props) => {
     organ(props.organ) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
-    value(props.contactMethods) ||
+    value(props.contactChoice) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
