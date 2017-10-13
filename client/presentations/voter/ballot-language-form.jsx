@@ -13,8 +13,7 @@ const BallotLanguageForm = (props) => {
     <div>
       <HomeLink />
 
-      <h4>In what language would you like to receive your official election materials?</h4>
-      <p>Election materials include your election guide and ballot(s)</p>
+      <h4>Choose a language for your election materials.</h4>
       <form onSubmit={ props.onSubmit } className='ballot-language-form'>
         <div className='inner-bottom'>
           <SelectorCollection
