@@ -32,6 +32,9 @@ const ContactDetailsForm = (props) => {
           onChange    = {props.onChange}
         />
 
+        <h4>Who gets this information?</h4>
+        <p>Secretary of State and county election officials have access to this information</p>
+
         <ContinueButton
           disabled = {props.continueDisabled}
         />
