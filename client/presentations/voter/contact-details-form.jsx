@@ -13,7 +13,8 @@ const ContactDetailsForm = (props) => {
       <HomeLink />
 
       <h4>Please enter your contact information below.</h4>
-      <h5>You can choose to enter your email, your phone number, or both.</h5>
+      <h6>This is optional</h6>
+
       <form onSubmit={props.onSubmit} className='contact-details-form'>
         <TextInput
           identifier  = 'emailAddress'
@@ -26,10 +27,13 @@ const ContactDetailsForm = (props) => {
         <TextInput
           identifier  = 'phoneNumber'
           description = 'Phone number'
-          example     = '916-888-8888'
+          example     = '916 314 8765'
           value       = {props.contactDetails.phoneNumber}
           onChange    = {props.onChange}
         />
+
+        <h4>Who gets this information?</h4>
+        <p>Secretary of State and county election officials have access to this information</p>
 
         <ContinueButton
           disabled = {props.continueDisabled}

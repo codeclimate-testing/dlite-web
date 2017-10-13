@@ -9,7 +9,7 @@ import navigateOnSubmit               from '../../helpers/navigate-on-submit';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
-  const onSubmit = navigateOnSubmit('/about-me/voter/contact-choice', props);
+  const onSubmit = navigateOnSubmit('/about-me/voter/ballot-by-mail', props);
 
   return (
     <Form

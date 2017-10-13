@@ -10,7 +10,7 @@ Feature: Select Ballot by Mail Language
     When I select a language
     Then I will see the language I chose is selected
     When I click to submit
-    Then I will be taken to contact choice page
+    Then I will be on the page for ballot by mail
     And I go to the page with my summary
     Then I will see my language in the summary
 

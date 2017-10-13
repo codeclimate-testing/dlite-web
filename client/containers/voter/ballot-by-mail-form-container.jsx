@@ -10,21 +10,8 @@ import navigateOnSubmit             from '../../helpers/navigate-on-submit';
 
 const ConnectedForm = (props) => {
 
-  const BALLOT_LANGUAGE_ADDRESS = '/about-me/voter/ballot-language';
-  const CONTACT_CHOICE_ADDRESS  = '/about-me/voter/contact-choice';
-
-  let address;
+  const onSubmit = navigateOnSubmit('/about-me/voter/contact-choice', props);
   let continueDisabled = !(dataPresent.value(props.ballotByMail));
-
-  if(props.ballotByMail === 'Yes'){
-    address = BALLOT_LANGUAGE_ADDRESS;
-  }
-
-  if(props.ballotByMail === 'No'){
-    address = CONTACT_CHOICE_ADDRESS;
-  }
-
-  const onSubmit = navigateOnSubmit(address, props);
 
   return (
     <Form
