@@ -1,7 +1,7 @@
 .input-container {
-  margin-top: $input-top-padding + $input-border-width + ceil($shadow-padding/2);
+  margin-top: $input-top-padding + $input-border-width;
   margin-bottom: $input-top-padding;
-  margin-right: $input-side-padding + ceil($shadow-padding/2);
+  margin-right: $input-side-padding + $input-border-width;
   margin-left: $input-side-padding;
 }
 
