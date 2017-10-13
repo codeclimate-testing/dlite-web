@@ -62,8 +62,6 @@ module.exports = function(world) {
 
   world.given('I have already entered my name into the form', function(done) {
     browser
-      .open(world.url('/'))
-      .waitForSelector('.home-page')
       .click('a.legal-name')
       .waitForSelector('.legal-name-form')
       .type('#firstName', 'FirstName1')
@@ -71,8 +69,8 @@ module.exports = function(world) {
       .type('#lastName', 'LastName1')
       .select('#suffix', '')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

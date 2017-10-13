@@ -61,8 +61,8 @@ module.exports = function (world) {
       .click('a.ballot-language')
       .click('label[for="Thai"]')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

@@ -42,9 +42,10 @@ class Router extends React.Component {
   render() {
     return (
       <div className='routes'>
-        <Route path={ alicePath('/') } exact component={Home} />
-        <Route path={ alicePath('/summary') } component={Summary} />
+        <Route path={ alicePath('/') } exact component={Intro} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={Intro} />
+        <Route path={ alicePath('/links') } exact component={Home} />
+        <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />

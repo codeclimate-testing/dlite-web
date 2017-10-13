@@ -43,8 +43,8 @@ module.exports = function(world) {
       .type('#part1', '123')
       .type('#part2', '45')
       .type('#part3', '1967')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

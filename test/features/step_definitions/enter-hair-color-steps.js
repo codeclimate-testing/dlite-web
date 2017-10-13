@@ -52,8 +52,8 @@ module.exports = function (world) {
       .waitForSelector('.hair-color-form')
       .click('label[for="Auburn"]')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

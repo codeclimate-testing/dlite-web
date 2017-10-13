@@ -26,8 +26,8 @@ module.exports = function (world) {
       .click('a.eye-color')
       .click('label[for="Blue"]')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

@@ -41,15 +41,13 @@ module.exports = function(world) {
 
   world.given('I have already entered my height into the form', function(done) {
     browser
-      .open(world.url('/'))
-      .waitForSelector('.home-page')
       .click('a.height')
       .waitForSelector('.height-form')
       .type('#feet', '5')
       .type('#inches', '9')
       .click('input[type="submit"]')
-      .click('a.home')
-      .waitForSelector('.home-page')
+      .click('a.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });

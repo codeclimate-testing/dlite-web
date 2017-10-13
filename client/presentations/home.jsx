@@ -54,7 +54,7 @@ const Home = () => {
   });
 
   return (
-    <ul className='home-page'>
+    <ul className='section-links'>
       { listItems }
     </ul>
   );
