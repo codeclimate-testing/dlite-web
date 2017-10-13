@@ -5,6 +5,16 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
+  function navigateToPath(path, pageSelector, done) {
+    browser
+      .evaluate(function(path) {
+        window.__reactHistory.push((path));
+      }, path)
+      .waitForSelector(pageSelector)
+      .then((d) => { done(); })
+      .catch(done);
+  }
+
   function assertOnPage(pageSelector, pageRegex, done) {
     browser
       .waitForSelector(pageSelector)
@@ -27,283 +37,115 @@ module.exports = function(world) {
   });
 
   world.and('I go to the page with my summary', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/summary'));
-      })
-      .waitForSelector('.summary')
-      .then(() => { done(); })
-      .catch(done);
+    navigateToPath('/apply/summary', '.summary', done);
   });
 
   world.and('I return to the home page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/links'));
-      })
-      .waitForSelector('.section-links')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/links', '.section-links', done);
   });
 
   world.when('I visit the home addresses page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/home-address'));
-      })
-      .waitForSelector('.home-address-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/home-address', '.home-address-form', done);
   });
 
   world.when('I visit the mailing addresses page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/mailing-address'));
-      })
-      .waitForSelector('.mailing-address-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/mailing-address', '.mailing-address-form', done);
   });
 
   world.when('I visit voter contact details page', function (done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/email-phone'));
-      })
-      .waitForSelector('.contact-details-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/email-phone', '.contact-details-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/legal-name'));
-      })
-      .waitForSelector('.legal-name-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/legal-name', '.legal-name-form', done);
   });
 
   world.and('I visit eye color page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/appearance/eye'));
-      })
-      .waitForSelector('.eye-color-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/appearance/eye', '.eye-color-form', done);
   });
 
   world.when('I visit hair color page', function (done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/appearance/hair'));
-      })
-      .waitForSelector('.hair-color-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/appearance/hair', '.hair-color-form', done);
   });
 
   world.when('I visit the date of birth page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/date-of-birth'));
-      })
-      .waitForSelector('.date-of-birth-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/date-of-birth', '.date-of-birth-form', done);
   });
 
   world.when('I visit the sex identification page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/sex'));
-      })
-      .waitForSelector('.sex-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/sex', '.sex-form', done);
   });
 
   world.when('I visit the height page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/height'));
-      })
-      .waitForSelector('.height-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/height', '.height-form', done);
   });
 
   world.when('I visit the weight page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/weight'));
-      })
-      .waitForSelector('.weight-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/weight', '.weight-form', done);
   });
 
   world.when('I visit the organ page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/organ'));
-      })
-      .waitForSelector('.organ-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/organ', '.organ-form', done);
   });
 
   world.when('I visit the social security page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/social-security'));
-      })
-      .waitForSelector('.social-security-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/social-security', '.social-security-form', done);
   });
 
   world.when('I visit voter citizen status page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/am-citizen'));
-      })
-      .waitForSelector('.citizen-status-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/am-citizen', '.citizen-status-form', done);
   });
 
   world.when('I visit ballot by mail option page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/ballot-by-mail'));
-      })
-      .waitForSelector('.ballot-by-mail-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/ballot-by-mail', '.ballot-by-mail-form', done);
   });
 
   world.when('I visit the voter eligibility requirements page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/eligibility-requirements'));
-      })
-      .waitForSelector('.eligibility-requirements-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/eligibility-requirements', '.eligibility-requirements-form', done);
   });
 
   world.when('I visit voter preferences intro page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/voter-preferences-intro'));
-      })
-      .waitForSelector('.voter-preferences-intro')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/voter-preferences-intro', '.voter-preferences-intro', done);
   });
 
   world.when('I visit voter preferences intro preregistered page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/voter-preferences-intro-preregistered'));
-      })
-      .waitForSelector('.voter-preferences-intro-preregistered')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/voter-preferences-intro-preregistered', '.voter-preferences-intro-preregistered', done);
   });
 
   world.when('I visit voter registration complete page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/voter-reg-complete'));
-      })
-      .waitForSelector('.voter-reg-complete')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/voter-reg-complete', '.voter-reg-complete', done);
   });
 
   world.when('I visit contact choice page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/contact-choice'));
-      })
-      .waitForSelector('.contact-choice-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/contact-choice', '.contact-choice-form', done);
   });
 
   world.when('I visit ballot language page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/ballot-language'));
-      })
-      .waitForSelector('.ballot-language-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/ballot-language', '.ballot-language-form', done);
   });
 
   world.when('I visit the political party choose page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/political-party-choose'));
-      })
-      .waitForSelector('.political-party-choose')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/political-party-choose', '.political-party-choose', done);
   });
 
   world.when('I visit the political party preference page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/political-party'));
-      })
-      .waitForSelector('.political-party-preference-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/political-party', '.political-party-preference-form', done);
   });
 
-    world.when('I visit app intro page', function(done){
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/what-do-you-want-to-do-today'));
-      })
-      .waitForSelector('.intro-info')
-      .then((d) => { done(); })
-      .catch(done);
+  world.when('I visit app intro page', function(done){
+    navigateToPath('/apply/what-do-you-want-to-do-today', '.intro-info', done);
   });
 
    world.when('I visit voter intro page', function (done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/voter/voter-introduction'));
-      })
-      .waitForSelector('.voter-intro-info')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/voter/voter-introduction', '.voter-intro-info', done);
   });
 
   world.and('I visit success visit page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/success-visit'));
-      })
-      .waitForSelector('.success-visit-info')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/success-visit', '.success-visit-info', done);
   });
 
   world.when('I visit voter opt out page', function(done) {
-    browser
-      .evaluate(function() {
-        window.__reactHistory.push(('/apply/about-me/voter/opt-out'));
-      })
-      .waitForSelector('.opt-out-form')
-      .then((d) => { done(); })
-      .catch(done);
+    navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {
