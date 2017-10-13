@@ -10,7 +10,7 @@ import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
-  const onSubmit = navigateOnSubmit('/about-me/social-security', props);
+  const onSubmit = navigateOnSubmit('/summary', props);
 
   return (
     <Form
