@@ -12,13 +12,10 @@ Scenario: Select a party
   Then I will see that the Continue button is no longer disabled
   And I click to submit
   Then I will be taken to ballot language page
-  And I return to the home page
   And I go to the page with my summary
   Then I will see my political party in summary
-  And I return to the home page
   When I visit the political party preference page
   Then I will see my my political party selected
   When I change my political party
-  And I return to the home page
   And I go to the page with my summary
   Then I will see my political party updated in summary

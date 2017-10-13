@@ -8,7 +8,6 @@ Feature: View Summary Before Submitting
     When I visit eye color page
     Then I will see select buttons for Blue, Gray, Green, Hazel and Brown
     When I select an eye color
-    When I return to the home page
     And I go to the page with my summary
     And I click to submit
     Then I will be taken to the success visit page

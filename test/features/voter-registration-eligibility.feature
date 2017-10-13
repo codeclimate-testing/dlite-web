@@ -9,7 +9,6 @@ Feature: Check Voter Registration Eligibility
     When I select Yes
     When I click to submit
     Then I will be on the page for entering voter opt-out
-    When I return to the home page
     And I go to the page with my summary
     Then I will see that I do qualify to register to vote
 
@@ -40,6 +39,5 @@ Feature: Check Voter Registration Eligibility
     Then I will see the eligibility requirement status I entered
     And I change my eligibility requirement
     When I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated eligibility requirement status

@@ -11,7 +11,6 @@ As a DMV Customer
     When I select I want to register to vote
     When I click to submit
     Then I will be taken to voter preferences info page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see voter registration choice as I want to register to vote in summary
 
@@ -21,7 +20,6 @@ As a DMV Customer
     When I select I am already registered to vote
     When I click to submit
     Then I will be taken to voter preferences preregistered info page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see voter registration choice as I am already registered to vote in summary
 
@@ -30,5 +28,5 @@ As a DMV Customer
     When I visit voter opt out page
     When I select I am eligible but to not want to be registered to vote at this time
     When I click to submit
-    Then I will be taken to summary page
+    Then I will be on the page with my summary
     Then I will see voter registration choice as I am eligible but to not want to be registered to vote at this time in summary

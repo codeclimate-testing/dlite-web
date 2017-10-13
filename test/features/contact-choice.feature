@@ -11,7 +11,6 @@ Feature: Select Preferred Contact Choice
     When I select Yes
     When I click to submit
     Then I will be taken to email phone page
-    And I return to the home page
     And I go to the page with my summary
     Then I will see contact choice as Yes in summary
 

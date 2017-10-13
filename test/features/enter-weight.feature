@@ -12,7 +12,6 @@ Feature:  I want to enter my weight
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be on the page for entering my social security
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my weight on that summary
 
@@ -23,6 +22,5 @@ Feature:  I want to enter my weight
     Then I will see the weight I entered
     When I change my weight
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated weight on the summary

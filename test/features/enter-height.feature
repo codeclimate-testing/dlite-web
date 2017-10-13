@@ -13,7 +13,6 @@ Feature:  I want to enter my height
     When I enter my inches
     And I click to submit
     Then I will be on the page for entering my weight
-    When I return to the home page
     And I go to the page with my summary
     Then I will see my height on that summary
 
@@ -24,6 +23,5 @@ Feature:  I want to enter my height
     Then I will see the height I entered
     When I change my inches
     And I click to submit
-    And I return to the home page
     And I go to the page with my summary
     Then I will see my updated height on the summary
