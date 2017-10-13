@@ -1,4 +1,4 @@
-$input-top-padding: 1*$spacing;
-$input-side-padding: 1.2*$spacing;
+$input-top-padding: ceil(0.85*$spacing);
+$input-side-padding: ceil($spacing);
 $input-border-width: 1px;
 $input-border-width-special: 2px;
