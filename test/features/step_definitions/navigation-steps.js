@@ -36,7 +36,12 @@ module.exports = function(world) {
   });
 
   world.and('I go to the page with my summary', function(done){
-    clickAndWaitForPage('a.summary', '.summary', done);
+    browser
+      .evaluate(function() {
+        window.__reactHistory.push('/services/summary');
+      })
+      .then((d) => { done(); })
+      .catch(done);
   });
 
   world.and('I return to the home page', function(done) {
