@@ -33,7 +33,6 @@ import BallotLanguage                         from './voter/ballot-language-form
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import ContactChoice                          from './voter/contact-choice-form-container.jsx';
 import ContactDetails                         from './voter/contact-details-form-container.jsx';
-import EmailPhoneRemove                       from '../presentations/voter/email-phone-remove-form.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-reg-complete-info.jsx';
 import SuccessVisit                           from '../presentations/success-visit-info.jsx';
 
@@ -70,7 +69,6 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactChoice} />
         <Route path={ alicePath('/about-me/voter/email-phone') } component={ContactDetails} />
-        <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
       </div>
