@@ -52,8 +52,8 @@ world.given('I have already entered my voter eligibility requirement status into
     .click('a.eligibility-requirements')
     .click('label[for="Yes"]')
     .click('input[type="submit"]')
-    .click('a.home')
-    .waitForSelector('.home-page')
+    .click('a.sections')
+    .waitForSelector('.section-links')
     .then(() => { done(); })
     .catch(done);
 });

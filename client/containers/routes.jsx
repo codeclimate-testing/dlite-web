@@ -31,9 +31,8 @@ import PoliticalPartyChoose                   from './voter/political-party-choo
 import PoliticalPartyPreference               from './voter/political-party-preference-form-container.jsx';
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
-import ContactMethods                         from './voter/contact-methods-form-container.jsx';
+import ContactChoice                          from './voter/contact-choice-form-container.jsx';
 import ContactDetails                         from './voter/contact-details-form-container.jsx';
-import EmailPhoneRemove                       from '../presentations/voter/email-phone-remove-form.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-reg-complete-info.jsx';
 import SuccessVisit                           from '../presentations/success-visit-info.jsx';
 
@@ -42,9 +41,10 @@ class Router extends React.Component {
   render() {
     return (
       <div className='routes'>
-        <Route path={ alicePath('/') } exact component={Home} />
-        <Route path={ alicePath('/summary') } component={Summary} />
+        <Route path={ alicePath('/') } exact component={Intro} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={Intro} />
+        <Route path={ alicePath('/links') } exact component={Home} />
+        <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
@@ -68,9 +68,8 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalPartyPreference} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
-        <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactMethods} />
+        <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactChoice} />
         <Route path={ alicePath('/about-me/voter/email-phone') } component={ContactDetails} />
-        <Route path={ alicePath('/about-me/voter/remove-email-phone/') } component={EmailPhoneRemove} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
       </div>

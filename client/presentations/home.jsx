@@ -38,7 +38,7 @@ const linkData = [
   {description: 'political party preference',             path: '/about-me/voter/political-party'},
   {description: 'ballot language',                        path: '/about-me/voter/ballot-language'},
   {description: 'ballot by mail',                         path: '/about-me/voter/ballot-by-mail'},
-  {description: 'contact methods',                        path: '/about-me/voter/contact-choice'},
+  {description: 'contact choice',                         path: '/about-me/voter/contact-choice'},
   {description: 'contact details',                        path: '/about-me/voter/email-phone'},
   {description: 'voter reg complete',                     path: '/about-me/voter/voter-reg-complete'},
   {description: 'success visit',                          path: '/about-me/success-visit'}
@@ -54,7 +54,7 @@ const Home = () => {
   });
 
   return (
-    <ul className='home-page'>
+    <ul className='section-links'>
       { listItems }
     </ul>
   );

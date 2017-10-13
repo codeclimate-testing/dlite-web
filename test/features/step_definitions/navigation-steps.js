@@ -30,7 +30,9 @@ module.exports = function(world) {
   world.given('I go to the new online DL application', function(done) {
     browser
       .open(world.url('/'))
-      .waitForSelector('.home-page')
+      .waitForSelector('.intro-info')
+      .click('.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });
@@ -45,7 +47,7 @@ module.exports = function(world) {
   });
 
   world.and('I return to the home page', function(done) {
-    clickAndWaitForPage('a.home', '.home-page', done);
+    clickAndWaitForPage('a.sections', '.section-links', done);
   });
 
   world.when('I visit the home addresses page', function(done) {
@@ -121,7 +123,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit contact choice page', function(done) {
-    clickAndWaitForPage('a.contact-methods', '.contact-methods-form', done);
+    clickAndWaitForPage('a.contact-choice', '.contact-choice-form', done);
   });
 
   world.when('I visit ballot language page', function(done) {
@@ -140,7 +142,7 @@ module.exports = function(world) {
     clickAndWaitForPage('a.intro-page', '.intro-info', done);
   });
 
-  world.when('I visit voter info page', function (done) {
+   world.when('I visit voter intro page', function (done) {
     clickAndWaitForPage('a.voter-intro', '.voter-intro-info', done);
   });
 
@@ -149,15 +151,15 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {
-    assertOnPage('.date-of-birth-form', /services\/about-me\/date-of-birth/, done);
+    assertOnPage('.date-of-birth-form', /apply\/about-me\/date-of-birth/, done);
   });
 
   world.then('I will be on the page for entering my home address', function(done) {
-    assertOnPage('.home-address-form', /services\/about-me\/home-address/, done);
+    assertOnPage('.home-address-form', /apply\/about-me\/home-address/, done);
   });
 
   world.then('I will be on the page for entering my mailing address', function(done) {
-    assertOnPage('.mailing-address-form', /services\/about-me\/mailing-address/, done);
+    assertOnPage('.mailing-address-form', /apply\/about-me\/mailing-address/, done);
   });
 
   world.then('I will be on the page for entering my sex identification', function(done) {
@@ -188,14 +190,6 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
   });
 
-  world.then('I will be taken to contact details page', function(done) {
-    assertOnPage('.contact-details-form', /about-me\/voter\/email-phone/, done);
-  });
-
-  world.then('I will be taken to remove email phone page', function(done) {
-    assertOnPage('.email-phone-remove-form', /about-me\/voter\/remove-email-phone/, done);
-  });
-
   world.then('I will be on the page for ballot by mail', function(done) {
     assertOnPage('.ballot-by-mail-form', /about-me\/voter\/ballot-by-mail/, done);
   });
@@ -205,7 +199,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to contact choice page', function(done){
-    assertOnPage('.contact-methods-form', /about-me\/voter\/contact-choice/, done);
+    assertOnPage('.contact-choice-form', /about-me\/voter\/contact-choice/, done);
   });
 
   world.then('I will be taken to ballot language page', function(done){
@@ -221,7 +215,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page with my summary', function(done) {
-    clickAndWaitForPage('.summary', /services\/summary/, done);
+    clickAndWaitForPage('.summary', /apply\/summary/, done);
   });
 
   world.then('I will be taken to political party page', function(done){
@@ -229,7 +223,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to summary page', function(done) {
-     clickAndWaitForPage('.summary', /services\/summary/, done);
+     clickAndWaitForPage('.summary', /apply\/summary/, done);
   });
 
   world.then('I will be taken to the political party choose page', function(done){
@@ -239,33 +233,33 @@ module.exports = function(world) {
   world.then('I will be taken to the success visit page', function(done){
     assertOnPage('.success-visit-info', /about-me\/success-visit/, done);
   });
-
-   world.and('I visit success visit page', function(done) {
+  
+  world.and('I visit success visit page', function(done) {
     clickAndWaitForPage('a.success-visit', '.success-visit-info', done);
-  });
-
-   world.then('I will be taken to voter preferences info page', function(done) {
-    assertOnPage('.voter-preferences-intro', /voter\/voter-preferences-intro/, done);
-  });
-
-     world.then('I will be taken to voter intro info page', function(done) {
-    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
-  });
-
-   world.then('I will be taken to voter preferences preregistered info page', function(done) {
-    assertOnPage('.voter-preferences-intro-preregistered', /about-me\/voter\/voter-preferences-intro-preregistered/, done);
-  });
-
-   world.then('I will be taken to voter registration complete page', function(done) {
-    assertOnPage('.voter-reg-complete', /about-me\/voter\/voter-reg-complete/, done);
   });
 
   world.when('I visit voter opt out page', function(done) {
     clickAndWaitForPage('a.opt-out', '.opt-out-form', done);
   });
 
-  world.when('voter intro page', function(done) {
-    clickAndWaitForPage('a.voter-intro', '.voter-intro-info', done);
+  world.then('I will be taken to voter preferences info page', function(done) {
+    assertOnPage('.voter-preferences-intro', /voter\/voter-preferences-intro/, done);
+  });
+
+  world.then('I will be taken to voter intro info page', function(done) {
+    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
+  });
+
+  world.then('I will be taken to voter preferences preregistered info page', function(done) {
+    assertOnPage('.voter-preferences-intro-preregistered', /about-me\/voter\/voter-preferences-intro-preregistered/, done);
+  });
+
+  world.then('I will be taken to voter registration complete page', function(done) {
+    assertOnPage('.voter-reg-complete', /about-me\/voter\/voter-reg-complete/, done);
+  });
+
+  world.then('I will be taken to email phone page', function(done) {
+    assertOnPage('.contact-details-form', /about-me\/voter\/email-phone/, done);
   });
 
   world.then('I will be taken to the names page', function(done) {

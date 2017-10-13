@@ -1,5 +1,5 @@
 'use strict';
 
 export default (path) => {
-  return `/services${path}`
+  return `/apply${path}`
 };
