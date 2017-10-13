@@ -11,7 +11,7 @@ import * as dataPresent               from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let value = props.politicalPartyChoose;
   const continueDisabled = !dataPresent.value(value);
-  let onSubmit = navigateOnSubmit('/about-me/voter/ballot-by-mail', props);
+  let onSubmit = navigateOnSubmit('/about-me/voter/ballot-language', props);
 
   if(value === 'Yes') {
     onSubmit = navigateOnSubmit('/about-me/voter/political-party', props);
