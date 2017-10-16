@@ -12,6 +12,7 @@ import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
 import Organ                       from './organ.jsx';
 import SocialSecurity              from './social-security.jsx';
+import SuspendedLicense            from './suspended-license.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
@@ -36,6 +37,7 @@ export {
   Weight,
   Organ,
   SocialSecurity,
+  SuspendedLicense,
   CitizenStatus,
   EligibilityRequirements,
   BallotByMail,

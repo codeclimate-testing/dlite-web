@@ -148,6 +148,10 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
 
+  world.when('I visit the page to enter my suspended license info', function(done) {
+    navigateToPath('/apply/about-me/enter-revoked-suspended/', '.suspended-license-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
