@@ -7,5 +7,5 @@ Feature: Intro Screen
     Given I go to the new online DL application page
     When I visit app intro page
     Then I see text introducing the page
-    When I click to submit
+    When I click to button
     Then I will be taken to the names page
