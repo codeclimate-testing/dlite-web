@@ -34,7 +34,7 @@ const LegalNameForm = (props) => {
           identifier='lastName'
           description='Last Name'
           value={props.legalName.lastName}
-            onChange={props.onChange}
+          onChange={props.onChange}
         />
 
         <SuffixSelector
