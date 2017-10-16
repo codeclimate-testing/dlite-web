@@ -21,6 +21,7 @@ const RadiosForValues = (props) => {
           {value}
         </label>
         <div className='unit spacer'></div>
+        <br />
       </div>
     );
   });
