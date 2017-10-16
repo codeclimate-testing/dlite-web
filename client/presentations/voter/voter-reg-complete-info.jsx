@@ -25,9 +25,9 @@ const VoterRegComplete = (props) => {
         <p>You can check your voter registration status with the California Secretary
         of State at <a href="https://voterstatus.sos.ca.gov/">https://voterstatus.sos.ca.gov/</a></p>
 
-        <Link to={ alicePath(linkAddress) } className='link-button'>
-          <ContinueButton disabled={props.continueDisabled} />
-        </Link>
+        <div className='shadow-container'>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+        </div>
 
       </div>
     </div>

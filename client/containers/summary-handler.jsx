@@ -58,9 +58,9 @@ const SummaryHandler = (props) => {
     <OptOut optOut={props.optOut} key='opt-out' />,
     <Empty {...props} key='empty' />,
 
-    <Link to={ alicePath(successVisit) } key="link-to-success-visit" className='link-button' >
-      <ContinueButton disabled={props.continueDisabled} key="submit"/>
-    </Link>
+    <div className='shadow-container'>
+     <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+    </div>
 
   ];
 

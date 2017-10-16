@@ -30,11 +30,10 @@ const Intro = (props) => {
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
 
-        <Link to={alicePath(linkAddress)} className='link-button'>
-          <div className='shadow-container'>
-            <input type="submit" value="Get Started" />
-          </div>
-        </Link>
+        <div className='shadow-container'>
+          <Link to={alicePath(linkAddress)} className='link-button button' >Get Started</Link>
+        </div>
+
       </div>
     </div>
   );

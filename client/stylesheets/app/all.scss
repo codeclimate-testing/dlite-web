@@ -119,4 +119,7 @@ a.sections {
 a.link-button, 
 a.link-button:hover {
   text-decoration: none;
+  $em: 18px;
+  $spacing: 20px;
+  display: inline-block;
 }

@@ -30,9 +30,9 @@ const VoterPreferencesIntro = (props) => {
         <h4>Contact Information</h4>
         <p>Election officials can contact you with election and voting information.</p>
 
-        <Link to={ alicePath(linkAddress) } className='link-button'>
-          <ContinueButton disabled={props.continueDisabled} />
-        </Link>
+        <div className='shadow-container'>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+        </div>
 
       </div>
     </div>
