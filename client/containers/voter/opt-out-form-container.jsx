@@ -13,17 +13,17 @@ const ConnectedForm = (props) => {
     let value = props.optOut;
     const continueDisabled = !dataPresent.value(value);
 
-    const REGISTER_YES = '/about-me/voter/voter-preferences-intro';
+    const NEW_VOTER = '/about-me/voter/voter-preferences-intro';
     const ALREADY_REGISTERED = '/about-me/voter/voter-preferences-intro-preregistered';
-    const REGISTER_NO = '/summary';
+    const ELIGIBLE_YES_REGISTER_NO = '/about-me/organ';
     let address;
 
-    if(props.optOut == 'I want to register to vote'){
-      address = REGISTER_YES;
-    } else if(props.optOut === 'I am already registered to vote') {
+    if(props.optOut == "I am a new voter in California"){
+      address = NEW_VOTER;
+    } else if(props.optOut === "I am already registered to vote in California") {
       address = ALREADY_REGISTERED;
     } else {
-      address = REGISTER_NO;
+      address = ELIGIBLE_YES_REGISTER_NO;
     };
 
      const onSubmit = navigateOnSubmit(address, props);
