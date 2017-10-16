@@ -53,6 +53,7 @@ const application = (props) => {
     height(props.height) ||
     value(props.weight) ||
     organ(props.organ) ||
+    value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||
