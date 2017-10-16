@@ -42,6 +42,13 @@ const contactDetails = (props) => {
   );
 }
 
+const suspendedLicenseInfo = (props) => {
+  return props && (
+    (value(props.month) && value(props.day) && value(props.year)) ||
+    value(props.reason)
+  );
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -54,6 +61,7 @@ const application = (props) => {
     value(props.weight) ||
     organ(props.organ) ||
     socialSecurity(props.socialSecurity) ||
+    suspendedLicenseInfo(props.suspendedLicenseInfo) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||
     value(props.ballotByMail) ||
@@ -74,5 +82,6 @@ export {
   organ,
   socialSecurity,
   contactDetails,
+  suspendedLicenseInfo,
   application
 };
