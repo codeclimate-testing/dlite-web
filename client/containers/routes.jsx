@@ -22,6 +22,7 @@ import Weight                                 from './apply/weight-form-containe
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import Organ                                  from './apply/organ-form-container.jsx';
+import DonateContribution                     from './apply/donate-contribution-form-container.jsx';
 import SuspendedLicenseInfo                   from './apply/suspended-license-info-form-container.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
@@ -59,6 +60,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ' ) } component={Organ} />
+        <Route path={ alicePath('/about-me/donate-contribution' ) } component={DonateContribution} />
         <Route path={ alicePath('/about-me/enter-revoked-suspended' ) } component={SuspendedLicenseInfo} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />

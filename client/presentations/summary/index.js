@@ -11,6 +11,7 @@ import HairColor                   from './hair-color.jsx';
 import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
 import Organ                       from './organ.jsx';
+import DonateContribution          from './donate-contribution.jsx';
 import SocialSecurity              from './social-security.jsx';
 import SuspendedLicenseInfo        from './suspended-license-info.jsx';
 import CitizenStatus               from './citizen-status.jsx';
@@ -36,6 +37,7 @@ export {
   Height,
   Weight,
   Organ,
+  DonateContribution,
   SocialSecurity,
   SuspendedLicenseInfo,
   CitizenStatus,

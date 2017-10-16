@@ -88,6 +88,10 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/organ', '.organ-form', done);
   });
 
+  world.when('I visit the donate contribution page', function(done) {
+    navigateToPath('/apply/about-me/donate-contribution', '.donate-contribution-form', done);
+  });
+
   world.when('I visit the social security page', function(done) {
     navigateToPath('/apply/about-me/social-security', '.social-security-form', done);
   });
