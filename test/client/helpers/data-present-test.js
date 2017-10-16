@@ -97,24 +97,24 @@ describe('dataPresent', function() {
     });
   });
 
-  describe('#suspendedLicense', function() {
+  describe('#suspendedLicenseInfo', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.suspendedLicense({month: '10', day: '15', year: '1985'}),
+        dataPresent.suspendedLicenseInfo({month: '10', day: '15', year: '1985'}),
         'suspended license date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.suspendedLicense({month: '10', year: '1985'}),
+        !dataPresent.suspendedLicenseInfo({month: '10', year: '1985'}),
         'suspended license date present with only parts of date'
       );
     });
 
     it('is true when ony reason is present', function() {
       assert(
-        dataPresent.suspendedLicense({'reason': 'Testing for your presence'}),
+        dataPresent.suspendedLicenseInfo({'reason': 'Testing for your presence'}),
         'suspended license not present with just reason field'
       );
     });

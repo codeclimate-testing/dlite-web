@@ -22,7 +22,7 @@ const Form = (props) => {
             onChange={props.onChange}
             identifier='month'
             description='Month'
-            value={props.suspendedLicense.month}
+            value={props.suspendedLicenseInfo.month}
           />
 
           <div className='unit spacer' />
@@ -31,7 +31,7 @@ const Form = (props) => {
             onChange={props.onChange}
             identifier='day'
             description='Day'
-            value={props.suspendedLicense.day}
+            value={props.suspendedLicenseInfo.day}
           />
 
           <div className='unit spacer' />
@@ -40,7 +40,7 @@ const Form = (props) => {
             onChange={props.onChange}
             identifier='year'
             description='Year'
-            value={props.suspendedLicense.year}
+            value={props.suspendedLicenseInfo.year}
           />
         </div>
 
@@ -48,7 +48,7 @@ const Form = (props) => {
           <TextInput
             identifier='reason'
             description='What was the reason?'
-            value={props.suspendedLicense.reason}
+            value={props.suspendedLicenseInfo.reason}
             onChange={props.onChange}
           />
         </div>

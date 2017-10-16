@@ -12,4 +12,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_SUSPENDED_LICENSE);
+export default formObjectReducer(defaultState, TYPES.UPDATE_SUSPENDED_LICENSE_INFO);
