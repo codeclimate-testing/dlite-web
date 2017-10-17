@@ -7,5 +7,5 @@ Feature: Voter Preference page for already registered voters
     Given I go to the new online DL application page
     When I visit voter preferences intro preregistered page
     Then I see text for voter preference intro preregistered render
-    When I click to button
+    When I click to continue
     Then I will be taken to the political party choose page

@@ -7,5 +7,5 @@ Feature: Voter Registration Completion page
     Given I go to the new online DL application page
     When I visit voter registration complete page
     Then I see text for voter registration complete page
-    When I click to button
+    When I click to continue
     Then I will be on the page for organ selection
