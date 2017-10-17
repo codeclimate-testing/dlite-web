@@ -10,13 +10,13 @@ import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
-  const onSubmit = navigateOnSubmit('/summary', props);
+  const onSubmit = navigateOnSubmit('/about-me/donate-contribution', props);
 
   return (
     <Form
       onSubmit={onSubmit}
       onChange={props.onChange}
-      organ={props.organ}
+      selectedValue={props.organ}
       continueDisabled={continueDisabled}
     />
   );
