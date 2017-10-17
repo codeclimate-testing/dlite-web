@@ -39,7 +39,8 @@ const contactDetails = (props) => {
 const suspendedLicenseInfo = (props) => {
   return props && (
     (value(props.month) && value(props.day) && value(props.year)) ||
-    value(props.reason)
+    value(props.reason) ||
+    value(props.isSuspended)
   );
 }
 

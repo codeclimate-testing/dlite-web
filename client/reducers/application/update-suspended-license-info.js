@@ -5,10 +5,11 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    month: '',
-    day: '',
-    year: '',
-    reason: '',
+    isSuspended:  '',
+    month:        '',
+    day:          '',
+    year:         '',
+    reason:       ''
   };
 }
 

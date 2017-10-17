@@ -118,6 +118,14 @@ describe('dataPresent', function() {
         'suspended license not present with just reason field'
       );
     });
+
+    it('is true when ony isSuspended is present', function() {
+      assert(
+        dataPresent.suspendedLicenseInfo({'isSuspended': 'Yes'}),
+        'suspended license not present with just isSuspended field'
+      );
+    });
+
   });
 
   describe('#application', function() {

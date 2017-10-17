@@ -152,8 +152,11 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
 
+  world.when('I visit the page to choose if license was suspended', function(done){
+    navigateToPath('/apply/about-me/revoked-suspended', '.is-suspended-license-form', done);
+  });
   world.when('I visit the page to enter my suspended license info', function(done) {
-    navigateToPath('/apply/about-me/enter-revoked-suspended/', '.suspended-license-form', done);
+    navigateToPath('/apply/about-me/enter-revoked-suspended', '.suspended-license-form', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {
@@ -266,5 +269,9 @@ module.exports = function(world) {
 
   world.then('I will be taken to the names page', function(done) {
     assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
+  });
+
+  world.then('I will be taken to suspended license info page', function(done){
+    assertOnPage('.suspended-license-form', /apply\/about-me\/enter-revoked-suspended/, done);
   });
 };
