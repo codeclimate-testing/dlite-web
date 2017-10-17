@@ -14,7 +14,7 @@ const Form = (props) => {
       <HomeLink />
 
       <h4>When did this happen?</h4>
-      <h5>Example: 03 21 1967</h5>
+      <h5>Example: 03/21/1967</h5>
 
       <form onSubmit={ props.onSubmit }>
         <div className='row inner-bottom'>
