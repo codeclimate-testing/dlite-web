@@ -6,7 +6,6 @@ import { updateCitizenStatus }        from '../../actions/index';
 import Form                           from '../../presentations/voter/citizen-status-form.jsx';
 import connectForm                    from '../../helpers/connect-form';
 import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import * as dataPresent               from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
 let value = props.citizenStatus;

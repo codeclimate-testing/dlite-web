@@ -45,4 +45,25 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see Yes in my suspended license selection', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('Yes'), 'is license suspended value missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see No in my suspended license selection', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('No'), 'is license suspended value missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 };
