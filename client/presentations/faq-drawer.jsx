@@ -6,7 +6,7 @@ const FAQDrawer = (props) => {
 
   return (
     <div className={props.faqDrawerClass}>
-      <p> {props.faqDrawerText} </p>
+      {props.faqDrawerText}
     </div>
   );
 }

@@ -93,12 +93,23 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I will not see any organ or contribution selection in the summary', function(done) {
+  world.then('I will see text for donate - Yes', function(done){
     browser
-      .exists('a.summary')
-      .then((exists) => { assert.ok(!exists, 'Donate Organs'); })
-      .then((exists) => { assert.ok(!exists, 'Voluntary Contribution'); })
-      .then(() => { done(); })
-      .catch(done);
+    .waitForSelector('.donate-organ-yes')
+    .then(() => { done(); })
+    .catch((err) => {
+      throw err;
+      done(err);
+    });
+  });
+
+  world.then('I will see text for donate - No', function(done){
+    browser
+    .waitForSelector('.donate-organ-no')
+    .then(() => { done(); })
+    .catch((err) => {
+      throw err;
+      done(err);
+    });
   });
 };

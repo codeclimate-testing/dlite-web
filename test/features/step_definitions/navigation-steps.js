@@ -192,6 +192,10 @@ module.exports = function(world) {
     assertOnPage('.organ-form', /about-me\/organ/, done);
   });
 
+  world.then('I will be on the page for donate contribution', function(done) {
+    assertOnPage('.donate-contribution-form', /about-me\/donate-contribution/, done);
+  });
+
   world.then('I will be on the page for entering my social security', function(done) {
     assertOnPage('.social-security-form', /about-me\/social-security/, done);
   });
