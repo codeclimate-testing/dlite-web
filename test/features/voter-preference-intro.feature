@@ -12,5 +12,5 @@ Feature: Interstitial page on the steps of the voter preference section
   Scenario: Continuing voter preference steps
     Given I go to the new online DL application page
     When I visit voter preferences intro page
-    When I click to submit
+    When I click to continue
     Then I will be taken to the political party choose page

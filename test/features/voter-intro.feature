@@ -7,5 +7,5 @@ Feature: Voter Intro Screen
     Given I go to the new online DL application page
     When I visit voter intro page
     Then I see text introducing the voter page
-    When I click to submit
+    When I click to continue
     Then I will be on the page for voter citizen status entry

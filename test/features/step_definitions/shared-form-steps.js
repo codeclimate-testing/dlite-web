@@ -12,6 +12,13 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.and('I click to continue', function(done) {
+    browser
+      .click('a.link-button.button')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I will see a button to submit', function (done) {
     browser
       .exists('input[type="submit"]')
@@ -81,7 +88,7 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
-  
+
    world.and('I see three buttons labelled Yes, No and Skip Question', function(done) {
     browser
     .html('label[for="Yes"]')
