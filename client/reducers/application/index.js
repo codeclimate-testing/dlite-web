@@ -15,6 +15,7 @@ import updateWeight                        from './update-weight';
 import updateOrgan                         from './update-organ';
 import updateDonateContribution            from './update-donate-contribution';
 import updateSuspendedLicenseInfo          from './update-suspended-license-info';
+import updatePreviousNames                 from './update-previous-names';
 import updatePreviousNamesInfo             from './update-previous-names-info';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
@@ -40,6 +41,7 @@ const rootReducer = combineReducers({
   organ                       : updateOrgan,
   donateContribution          : updateDonateContribution,
   suspendedLicenseInfo        : updateSuspendedLicenseInfo,
+  previousNames               : updatePreviousNames,
   previousNamesInfo           : updatePreviousNamesInfo,
   socialSecurity              : updateSocialSecurity,
   citizenStatus               : updateCitizenStatus,

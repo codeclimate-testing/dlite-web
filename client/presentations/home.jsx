@@ -30,6 +30,7 @@ const linkData = [
   {description: 'donate contribution',                    path: '/about-me/donate-contribution'},
   {description: 'is suspended license',                   path: '/about-me/revoked-suspended/'},
   {description: 'suspended license info',                 path: '/about-me/enter-revoked-suspended/'},
+  {description: 'previous names',                         path: '/about-me/previous-names/'},
   {description: 'previous names info',                    path: '/about-me/enter-previous-names/'},
 
   {description: 'voter intro',                            path: '/voter/voter-introduction'},

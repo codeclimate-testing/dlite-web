@@ -62,6 +62,7 @@ const application = (props) => {
     value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
+    value(props.previousNames) ||
     previousNamesInfo(props.previousNamesInfo) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||

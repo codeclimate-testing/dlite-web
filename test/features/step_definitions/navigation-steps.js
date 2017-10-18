@@ -160,6 +160,10 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/enter-revoked-suspended', '.suspended-license-form', done);
   });
 
+  world.when('I visit the page to choose if I ever had previous names', function(done) {
+    navigateToPath('/apply/about-me/previous-names', '.previous-names-form', done);
+  });
+
   world.when('I visit the page to enter my previously used names', function(done) {
     navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-info-form', done);
   });
@@ -275,6 +279,11 @@ module.exports = function(world) {
   world.then('I will be taken to the names page', function(done) {
     assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
   });
+
+  world.then('I will be taken to the previous names info page', function(done) {
+    assertOnPage('.previous-names-info-form', /apply\/about-me\/enter-previous-names/, done);
+  });
+
 
   world.then('I will be taken to revoke or suspended license page', function(done){
     assertOnPage('.is-suspended-license-form', /apply\/about-me\/revoked-suspended/, done);
