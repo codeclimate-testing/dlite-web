@@ -164,6 +164,10 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/dl-id-number', '.existing-dl-id-number-form', done);
   });
 
+  world.when('I visit the page to enter my previously used names', function(done) {
+    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-form', done);
+  });
+
   world.then('I will be on the page for entering my eye color', function(done) {
     assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
@@ -274,6 +278,10 @@ module.exports = function(world) {
 
   world.then('I will be taken to the names page', function(done) {
     assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
+  });
+
+  world.then('I will be taken to revoke or suspended license page', function(done){
+    assertOnPage('.is-suspended-license-form', /apply\/about-me\/revoked-suspended/, done);
   });
 
   world.then('I will be taken to suspended license info page', function(done){

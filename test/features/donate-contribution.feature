@@ -7,6 +7,7 @@ Feature: Contribute money to Donate Life
     Given I go to the new online DL application page
     When I visit the donate contribution page
     When I select Yes
+    Then I will see text for donate contribution - Yes
     When I click to submit
     Then I will be taken to voter intro info page
     And I go to the page with my summary

@@ -26,7 +26,8 @@ import DonateContribution                     from './apply/donate-contribution-
 import SuspendedLicenseDecision               from './apply/suspended-license-decision-form-container.jsx';
 import SuspendedLicenseInfo                   from './apply/suspended-license-info-form-container.jsx';
 import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
-import PreviousNames                          from '../presentations/apply/previous-names-temp.jsx'
+import PreviousNamesTemp                      from '../presentations/apply/previous-names-temp.jsx'
+import PreviousNames                          from './apply/previous-names-form-container.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter/eligibility-requirements-form-container.jsx';
@@ -67,7 +68,8 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/revoked-suspended' ) } component={SuspendedLicenseDecision} />
         <Route path={ alicePath('/about-me/enter-revoked-suspended' ) } component={SuspendedLicenseInfo} />
         <Route path={ alicePath('/about-me/dl-id-number') } component={ExistingDLIDInfo} />
-        <Route path={ alicePath('/about-me/previous-names')} component={PreviousNames} />
+        <Route path={ alicePath('/about-me/previous-names')} component={PreviousNamesTemp} />
+        <Route path={ alicePath('/about-me/enter-previous-names' ) } component={PreviousNames} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />

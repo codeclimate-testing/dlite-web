@@ -52,6 +52,10 @@ const existingDLIDInfo = (props) => {
   );
 }
 
+const previousNames = (props) => {
+  return props && value(props.names);
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -67,6 +71,7 @@ const application = (props) => {
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
+    previousNames(props.previousNames) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||
     value(props.ballotByMail) ||
@@ -88,5 +93,6 @@ export {
   contactDetails,
   suspendedLicenseInfo,
   existingDLIDInfo,
+  previousNames,
   application
 };
