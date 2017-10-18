@@ -15,7 +15,8 @@ describe('clientDataParser', function() {
   });
 
   it('correctly extracts the application table data', function() {
-    let applicationData = parsedData.applications;
+    let applicationData = parsedData.application;
+
     assert.equal(applicationData.id, data.id);
     assert.equal(applicationData.first_name, data.legalName.firstName);
     assert.equal(applicationData.middle_name, data.legalName.middleName);

@@ -1,17 +1,17 @@
 'use strict';
 
-// Set APP_ENV to 'test' to connect with test db
-process.env.APP_ENV = 'test';
+const env = require('../../support/env');
 
 const assert = require('assert');
 const httpMocks = require('node-mocks-http');
 const uuidv1 = require('uuid/v1');
 
+const dbHelper = require('../../support/db-helper');
+
 const knex = require('../../../server/db/connect')();
 const userDataController = require('../../../server/api')
 
 describe('Unit Tests: APIs for CRUD operations on user data', () => {
-
   let _request = {};
   let _response = {};
   const uuid = uuidv1();
@@ -57,42 +57,21 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
     assert(response.phone_number, phone_number);
   }
 
-  before((done) => {
-    //Clean up test db
-    knex('applications').truncate()
-    .then(() => {
-      return knex('addresses').truncate()
-    })
-    .then(() => {
-      return knex('emails').truncate()
-    })
-    .then(() => {
-      return knex('phone_numbers').truncate()
-    })
-    .then(() => {
-      done();
-    });
+  beforeEach((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
   });
 
   after((done) => {
-     //Clean up test db
-     knex('applications').truncate()
-     .then(() => {
-       return knex('addresses').truncate()
-     })
-     .then(() => {
-       return knex('emails').truncate()
-     })
-     .then(() => {
-       return knex('phone_numbers').truncate()
-     })
-     .then(() => {
-       done();
-     });
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
   });
 
   describe('POST user data', (done) => {
-
     before((done) => {
       //Create request and response objects
       _request = httpMocks.createRequest({
@@ -113,7 +92,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
             hair_color,
             eye_color
           },
-          address: {
+          addresses: {
             uuid,
             addressType,
             street_address_1,
@@ -122,7 +101,7 @@ describe('Unit Tests: APIs for CRUD operations on user data', () => {
             state,
             zip
           },
-          email: {
+          emails: {
             uuid,
             email_address
           },
