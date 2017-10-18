@@ -13,11 +13,12 @@ const Form = (props) => {
     <div>
       <HomeLink />
 
-      <h4>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h4>
-      <form onSubmit={ props.onSubmit } className='is-suspended-license-form'>
+      <h4>Have you ever had a driver license or state-issued ID card?</h4>
+      <h5>The license or ID card must be issued by a U.S, state or another country. </h5>
+      <form onSubmit={ props.onSubmit } className='has-existing-dl-id-form'>
         <div className='inner-bottom'>
           <SelectorCollection
-            name='isSuspended'
+            name='hasExisting'
             values={VALUES}
             onChange={ props.onChange }
             selectedValue={ props.selectedValue }
