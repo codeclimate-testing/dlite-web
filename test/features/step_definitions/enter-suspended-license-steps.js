@@ -5,7 +5,7 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.and('I will see inpurt fields for date and reason for suspension', function(done){
+  world.and('I will see input fields for date and reason for suspension', function(done){
     browser
       .exists('#month[type="number"]')
       .then((exists) => { assert.ok(exists, 'number input for month missing')})
