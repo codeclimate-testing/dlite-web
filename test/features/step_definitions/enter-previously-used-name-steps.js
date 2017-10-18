@@ -24,8 +24,8 @@ module.exports = function(world) {
 
   world.given('I have already entered my previously used names', function(done) {
     browser
-      .click('a.previous-names')
-      .waitForSelector('.previous-names-form')
+      .click('a.previous-names-info')
+      .waitForSelector('.previous-names-info-form')
       .type('#names', 'previousName1')
       .click('input[type="submit"]')
       .click('a.sections')

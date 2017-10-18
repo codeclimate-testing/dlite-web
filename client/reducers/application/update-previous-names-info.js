@@ -9,4 +9,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_PREVIOUS_NAMES);
+export default formObjectReducer(defaultState, TYPES.UPDATE_PREVIOUS_NAMES_INFO);

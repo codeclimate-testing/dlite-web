@@ -161,7 +161,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to enter my previously used names', function(done) {
-    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-form', done);
+    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-info-form', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {

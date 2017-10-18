@@ -44,7 +44,7 @@ const suspendedLicenseInfo = (props) => {
   );
 }
 
-const previousNames = (props) => {
+const previousNamesInfo = (props) => {
   return props && value(props.names);
 };
 
@@ -62,7 +62,7 @@ const application = (props) => {
     value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
-    previousNames(props.previousNames) ||
+    previousNamesInfo(props.previousNamesInfo) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||
     value(props.ballotByMail) ||
@@ -83,6 +83,6 @@ export {
   socialSecurity,
   contactDetails,
   suspendedLicenseInfo,
-  previousNames,
+  previousNamesInfo,
   application
 };

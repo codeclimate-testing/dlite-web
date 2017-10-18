@@ -8,10 +8,10 @@ import SuffixSelector   from '../suffix-selector.jsx';
 import ContinueButton   from '../continue-button.jsx';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
-const PreviousNamesForm = (props) => {
+const PreviousNamesInfoForm = (props) => {
   document.title = props.pageTitle;
   return (
-    <div className='previous-names-form'>
+    <div className='previous-names-info-form'>
       <HomeLink />
 
       <h4>Please list all previous legal names.</h4>
@@ -20,7 +20,7 @@ const PreviousNamesForm = (props) => {
       <form onSubmit={props.onSubmit}>
         <TextInput
           identifier='names'
-          value={props.previousNames.names}
+          value={props.previousNamesInfo.names}
           onChange={props.onChange}
         />
 
@@ -30,4 +30,4 @@ const PreviousNamesForm = (props) => {
   );
 };
 
-export default PreviousNamesForm;
+export default PreviousNamesInfoForm;

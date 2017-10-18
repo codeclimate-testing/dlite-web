@@ -23,7 +23,7 @@ export const TYPES = {
   UPDATE_ORGAN:                           'UPDATE_ORGAN',
   UPDATE_DONATE_CONTRIBUTION:             'UPDATE_DONATE_CONTRIBUTION',
   UPDATE_SUSPENDED_LICENSE_INFO:          'UPDATE_SUSPENDED_LICENSE_INFO',
-  UPDATE_PREVIOUS_NAMES:                  'UPDATE_PREVIOUS_NAMES',
+  UPDATE_PREVIOUS_NAMES_INFO:             'UPDATE_PREVIOUS_NAMES_INFO',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
@@ -48,7 +48,7 @@ export const updateWeight                     = generateAction(TYPES.UPDATE_WEIG
 export const updateOrgan                      = generateAction(TYPES.UPDATE_ORGAN);
 export const updateDonateContribution         = generateAction(TYPES.UPDATE_DONATE_CONTRIBUTION);
 export const updateSuspendedLicenseInfo       = generateAction(TYPES.UPDATE_SUSPENDED_LICENSE_INFO);
-export const updatePreviousNames              = generateAction(TYPES.UPDATE_PREVIOUS_NAMES);
+export const updatePreviousNamesInfo          = generateAction(TYPES.UPDATE_PREVIOUS_NAMES_INFO);
 export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateBallotByMail               = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);
