@@ -44,6 +44,14 @@ const suspendedLicenseInfo = (props) => {
   );
 }
 
+const existingDLIDInfo = (props) => {
+  return props && (
+    (value(props.month) && value(props.day) && value(props.year)) ||
+    value(props.DLIDNumber) ||
+    value(props.issuedBy)
+  );
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -58,6 +66,7 @@ const application = (props) => {
     value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
+    existingDLIDInfo(props.existingDLIDInfo) ||
     value(props.citizenStatus) ||
     value(props.contactChoice) ||
     value(props.ballotByMail) ||
@@ -78,5 +87,6 @@ export {
   socialSecurity,
   contactDetails,
   suspendedLicenseInfo,
+  existingDLIDInfo,
   application
 };
