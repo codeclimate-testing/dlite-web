@@ -4,7 +4,7 @@ import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
 import ContinueButton          from '../continue-button.jsx';
-import FAQDrawer              from '../faq-drawer.jsx';
+import FAQDrawer               from '../faq-drawer.jsx';
 
 const values = ['Yes', 'No']
 const DONATE_ORGAN_YES    = 'donate-organ-yes';

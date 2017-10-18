@@ -50,4 +50,14 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.then('I will see text for donate contribution - Yes', function(done){
+    browser
+    .waitForSelector('.donate-contribution-yes')
+    .then(() => { done(); })
+    .catch((err) => {
+      throw err;
+      done(err);
+    });
+  });
 };

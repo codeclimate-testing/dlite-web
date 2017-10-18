@@ -5,8 +5,11 @@ import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
 import ContinueButton          from '../continue-button.jsx';
+import FAQDrawer               from '../faq-drawer.jsx';
 
 const values = ['Yes', 'No', 'Skip Question']
+const CONTRIBUTION_YES = 'donate-contribution-yes'
+const MESSAGE_YES = <p>Thank you for your donation! We will add $2 to your total fee.</p>
 
 const DonateContribution = (props) => {
   return (
@@ -24,6 +27,16 @@ const DonateContribution = (props) => {
             onChange={ props.onChange }
             selectedValue={ props.selectedValue }
           />
+        </div>
+
+        <div className='inner-bottom'>
+          { props.selectedValue === 'Yes' &&
+            <FAQDrawer
+            faqDrawerClass = {CONTRIBUTION_YES}
+            faqDrawerText  = {MESSAGE_YES}
+            />
+          }
+
         </div>
 
         <ContinueButton disabled={props.continueDisabled}/>
