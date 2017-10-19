@@ -13,15 +13,20 @@ const ExistingDlIDInfo = (props) => {
 
   let DLIDNumber      = props.existingDLIDInfo.DLIDNumber;
   let issuedBy        = props.existingDLIDInfo.issuedBy;
+  let hasExisting     = props.existingDLIDInfo.hasExisting;
 
   let content = []
 
+  if(dataPresent.value(props.existingDLIDInfo.hasExisting)){
+    content.push(<p key='has-existing'>Has existing DL/ID: {hasExisting} </p>);
+  }
+
   if(dataPresent.value(props.existingDLIDInfo.DLIDNumber)){
-    content.push(<p key='decision'>Existing DL/ID number: {DLIDNumber}</p>);
+    content.push(<p key='dl-id-number'>Existing DL/ID number: {DLIDNumber}</p>);
   }
 
   if(dataPresent.value(props.existingDLIDInfo.issuedBy)){
-    content.push(<p key='reason'>Existing DL/ID issued by: {issuedBy} </p>);
+    content.push(<p key='issued-by'>Existing DL/ID issued by: {issuedBy} </p>);
   }
 
   if(dataPresent.date(props.existingDLIDInfo)){

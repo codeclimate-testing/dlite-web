@@ -16,7 +16,7 @@ const SuspendedLicenseInfo = (props) => {
   let content = []
 
   if(dataPresent.value(props.suspendedLicenseInfo.isSuspended)){
-    content.push(<p key='decision'>Have suspended license: {isSuspended}</p>);
+    content.push(<p key='is-suspended'>Have suspended license: {isSuspended}</p>);
   }
 
   if(dataPresent.date(props.suspendedLicenseInfo)){

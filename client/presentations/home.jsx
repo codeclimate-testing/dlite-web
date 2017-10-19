@@ -30,12 +30,12 @@ const linkData = [
   {description: 'donate contribution',                    path: '/about-me/donate-contribution'},
   {description: 'has suspended license',                  path: '/about-me/revoked-suspended'},
   {description: 'suspended license info',                 path: '/about-me/enter-revoked-suspended'},
-  {description: 'existing DL ID info',                    path: '/about-me/dl-id-number'},
-  {description: 'is suspended license',                   path: '/about-me/revoked-suspended/'},
-  {description: 'suspended license info',                 path: '/about-me/enter-revoked-suspended/'},
+  {description: 'has existing DL/ID',                     path: '/about-me/license-history'},
+  {description: 'existing DL/ID info',                    path: '/about-me/dl-id-number'},
+  {description: 'is suspended license',                   path: '/about-me/revoked-suspended'},
   {description: 'previous names',                         path: '/about-me/previous-names/'},
   {description: 'previous names info',                    path: '/about-me/enter-previous-names/'},
-
+  
   {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},
   {description: 'eligibility requirements',               path: '/about-me/voter/eligibility-requirements'},
