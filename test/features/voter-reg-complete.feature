@@ -8,4 +8,4 @@ Feature: Voter Registration Completion page
     When I visit voter registration complete page
     Then I see text for voter registration complete page
     When I click to continue
-    Then I will be on the page for organ selection
+    Then I will be on the page with my summary
