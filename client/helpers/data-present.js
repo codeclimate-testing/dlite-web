@@ -54,7 +54,9 @@ const existingDLIDInfo = (props) => {
 }
 
 const previousNamesInfo = (props) => {
-  return props && value(props.names);
+  return props && (
+    value(props.names) || value(props.hasPreviousNames)
+  );
 }
 
 const application = (props) => {
@@ -71,7 +73,6 @@ const application = (props) => {
     value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
-    value(props.previousNames) ||
     previousNamesInfo(props.previousNamesInfo) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
     value(props.citizenStatus) ||

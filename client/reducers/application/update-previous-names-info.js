@@ -6,6 +6,7 @@ import formObjectReducer from './form-object-reducer';
 function defaultState() {
   return {
     names: '',
+    hasPreviousNames: ''
   };
 }
 

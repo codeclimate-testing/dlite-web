@@ -24,7 +24,6 @@ export const TYPES = {
   UPDATE_DONATE_CONTRIBUTION:             'UPDATE_DONATE_CONTRIBUTION',
   UPDATE_SUSPENDED_LICENSE_INFO:          'UPDATE_SUSPENDED_LICENSE_INFO',
   UPDATE_EXISTING_DL_ID_INFO:             'UPDATE_EXISTING_DL_ID_INFO',
-  UPDATE_PREVIOUS_NAMES:                  'UPDATE_PREVIOUS_NAMES',
   UPDATE_PREVIOUS_NAMES_INFO:             'UPDATE_PREVIOUS_NAMES_INFO',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
@@ -51,7 +50,6 @@ export const updateOrgan                      = generateAction(TYPES.UPDATE_ORGA
 export const updateDonateContribution         = generateAction(TYPES.UPDATE_DONATE_CONTRIBUTION);
 export const updateSuspendedLicenseInfo       = generateAction(TYPES.UPDATE_SUSPENDED_LICENSE_INFO);
 export const updateExistingDlIdInfo           = generateAction(TYPES.UPDATE_EXISTING_DL_ID_INFO);
-export const updatePreviousNames              = generateAction(TYPES.UPDATE_PREVIOUS_NAMES);
 export const updatePreviousNamesInfo          = generateAction(TYPES.UPDATE_PREVIOUS_NAMES_INFO);
 export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);

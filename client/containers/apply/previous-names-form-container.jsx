@@ -2,14 +2,14 @@
 
 import React from 'react';
 
-import { updatePreviousNames }         from "../../actions/index";
+import { updatePreviousNamesInfo }         from "../../actions/index";
 import Form                            from '../../presentations/apply/previous-names-form.jsx';
 import connectForm                     from '../../helpers/connect-form';
 import navigateOnSubmit                from '../../helpers/navigate-on-submit';
 import * as dataPresent                from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let value = props.previousNames;
+  let value = props.hasPreviousNames;
   let continueDisabled  = !dataPresent.value(value);
   let onSubmit          = navigateOnSubmit('/about-me/enter-previous-names', props);
   let pageTitle         = 'About me: Previous Names';
@@ -31,8 +31,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    previousNames: state.application.previousNames
+    hasPreviousNames: state.application.previousNamesInfo.hasPreviousNames
   };
 }
 
-export default connectForm(mapStateToProps, updatePreviousNames, ConnectedForm);
+export default connectForm(mapStateToProps, updatePreviousNamesInfo, ConnectedForm);

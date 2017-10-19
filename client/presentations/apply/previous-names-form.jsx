@@ -15,10 +15,10 @@ const Form = (props) => {
       <HomeLink />
 
       <h4>Have you ever applied for a Driver License or ID card under a different name?</h4>
-      <form onSubmit={ props.onSubmit } className='previous-names-form'>
+      <form onSubmit={ props.onSubmit } className='has-previous-names-form'>
         <div className='inner-bottom'>
           <SelectorCollection
-            name='previousNames'
+            name='hasPreviousNames'
             values={values}
             onChange={ props.onChange }
             selectedValue={ props.selectedValue }

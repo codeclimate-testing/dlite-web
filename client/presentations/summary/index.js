@@ -15,7 +15,6 @@ import DonateContribution          from './donate-contribution.jsx';
 import SocialSecurity              from './social-security.jsx';
 import SuspendedLicenseInfo        from './suspended-license-info.jsx';
 import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
-import PreviousNames               from './previous-names.jsx';
 import PreviousNamesInfo           from './previous-names-info.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -44,7 +43,6 @@ export {
   SocialSecurity,
   SuspendedLicenseInfo,
   ExistingDlIDInfo,
-  PreviousNames,
   PreviousNamesInfo,
   CitizenStatus,
   EligibilityRequirements,

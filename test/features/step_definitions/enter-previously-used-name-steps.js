@@ -11,6 +11,26 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+  
+  world.then('I will see Yes for having a previous name', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('Yes'), 'Previous name not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see No for having a previous name', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('No'), 'Previous name not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 
   world.then('I will see my previously used name on that summary', function(done) {
     browser

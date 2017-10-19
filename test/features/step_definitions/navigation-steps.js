@@ -161,7 +161,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
-    navigateToPath('/apply/about-me/previous-names', '.previous-names-form', done);
+    navigateToPath('/apply/about-me/previous-names', '.has-previous-names-form', done);
   });
 
   world.when('I visit the page to enter my existing DL/ID license info', function(done) {

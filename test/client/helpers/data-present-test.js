@@ -166,6 +166,29 @@ describe('dataPresent', function() {
 
   });
 
+  describe('#previousNamesInfo', function() {
+    it('is true when only name is present', function() {
+      assert(
+        dataPresent.previousNamesInfo({names: 'John Doe, Jane Doe'}),
+        'previous names info not present with just names'
+      );
+    });
+
+    it('is true when only hasPreviousNames is present', function() {
+      assert(
+        dataPresent.previousNamesInfo({hasPreviousNames: 'Yes'}),
+        'previous names info not present with just hasPreviousNames'
+      );
+    });
+
+    it('is false without email or phone number', function() {
+      assert(!dataPresent.previousNamesInfo({names: '', hasPreviousNames: ''}),
+      'previousNamesInfo present without names or hasPreviousNames');
+    });
+
+
+  });
+
   describe('#application', function() {
     it('is true when there is a legalName', function() {
       let data = {
