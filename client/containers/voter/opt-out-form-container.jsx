@@ -15,7 +15,7 @@ const ConnectedForm = (props) => {
 
     const NEW_VOTER = '/about-me/voter/voter-preferences-intro';
     const ALREADY_REGISTERED = '/about-me/voter/voter-preferences-intro-preregistered';
-    const ELIGIBLE_YES_REGISTER_NO = '/about-me/organ';
+    const ELIGIBLE_YES_REGISTER_NO = '/summary';
     let address;
 
     if(props.optOut == "I am a new voter in California"){
