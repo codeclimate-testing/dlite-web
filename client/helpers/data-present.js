@@ -48,7 +48,8 @@ const existingDLIDInfo = (props) => {
   return props && (
     (value(props.month) && value(props.day) && value(props.year)) ||
     value(props.DLIDNumber) ||
-    value(props.issuedBy)
+    value(props.issuedBy) ||
+    value(props.hasExisting)
   );
 }
 

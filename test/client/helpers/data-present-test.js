@@ -128,6 +128,44 @@ describe('dataPresent', function() {
 
   });
 
+  describe('#existingDLIDInfo', function() {
+    it('is true when all three parts of date are present', function() {
+      assert(
+        dataPresent.existingDLIDInfo({month: '10', day: '15', year: '1985'}),
+        'existing DL ID date not present with all fields'
+      );
+    });
+
+    it('is false when only partial date present', function() {
+      assert(
+        !dataPresent.existingDLIDInfo({month: '10', year: '1985'}),
+        'existing DL ID date present with only parts of date'
+      );
+    });
+
+    it('is true when ony DLIDNumber is present', function() {
+      assert(
+        dataPresent.existingDLIDInfo({'DLIDNumber': 'DMV00100101'}),
+        'existing DL ID not present with just DLIDNumber field'
+      );
+    });
+
+    it('is true when ony issuedBy is present', function() {
+      assert(
+        dataPresent.existingDLIDInfo({'issuedBy': 'USA'}),
+        'existing DL ID not present with just issuedBy field'
+      );
+    });
+
+    it('is true when ony hasExisting is present', function() {
+      assert(
+        dataPresent.existingDLIDInfo({'hasExisting': 'Yes'}),
+        'existing DL ID not present with just hasExisting field'
+      );
+    });
+
+  });
+
   describe('#application', function() {
     it('is true when there is a legalName', function() {
       let data = {
