@@ -17,20 +17,20 @@ Feature: Check Voter Registration Eligibility
     When I visit the voter eligibility requirements page
     When I select No
     When I click to submit
-    Then I will be on the page for organ selection
+    Then I will be on the page with my summary
 
   Scenario: Choose not to answer
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
     When I select Skip Section
     And I click to submit
-    Then I will be on the page for organ selection
+    Then I will be on the page with my summary
 
   Scenario: Continuing without a selection - skips voter section
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
     And I click to submit
-    Then I will be on the page for organ selection
+    Then I will be on the page with my summary
 
   Scenario: Updating voter eligibility status
     Given I go to the new online DL application page
