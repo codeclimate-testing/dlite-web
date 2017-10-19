@@ -21,7 +21,7 @@ Feature: Existing DL or ID number
     When I select No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be taken to previous names page
+    Then I visit the page to choose if I ever had previous names
     And I go to the page with my summary
     Then I will see No in my existing DL/ID selection
 
@@ -34,6 +34,6 @@ Feature: Existing DL or ID number
     And I enter the issuing state or country
     And I enter the date of DL/ID expiration
     When I click to submit
-    Then I will be taken to previous names page
+    Then I visit the page to choose if I ever had previous names
     And I go to the page with my summary
     Then I will see my previous DL/ID information

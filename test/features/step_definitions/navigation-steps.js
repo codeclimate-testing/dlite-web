@@ -160,12 +160,16 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/enter-revoked-suspended', '.suspended-license-form', done);
   });
 
+  world.when('I visit the page to choose if I ever had previous names', function(done) {
+    navigateToPath('/apply/about-me/previous-names', '.has-previous-names-form', done);
+  });
+
   world.when('I visit the page to enter my existing DL/ID license info', function(done) {
     navigateToPath('/apply/about-me/dl-id-number', '.existing-dl-id-number-form', done);
   });
 
   world.when('I visit the page to enter my previously used names', function(done) {
-    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-form', done);
+    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-info-form', done);
   });
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
@@ -282,6 +286,10 @@ module.exports = function(world) {
 
   world.then('I will be taken to the names page', function(done) {
     assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
+  });
+
+  world.then('I will be taken to the previous names info page', function(done) {
+    assertOnPage('.previous-names-info-form', /apply\/about-me\/enter-previous-names/, done);
   });
 
   world.then('I will be taken to revoke or suspended license page', function(done){
