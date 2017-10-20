@@ -105,10 +105,42 @@ label.button.tap.selected {
   }
 }
 
-.hair-color-form,
-.eye-color-form {
+.political-party-choose,
+.contact-choice-form,
+.organ-form,
+.citizen-status-form,
+.eligibility-requirements-form {
   .tap.button {
+    width: 120px;
+  }
+}
+
+.eye-color-form,
+.hair-color-form,
+.ballot-language-form
+{
+.tap.button {
     width: 100px;
+  }
+  .radio-selector {
+    height: 100px;
+    width: 212px;
+  }
+  .spacer {
+    width: 0px;
+  }
+}
+
+.political-party-preference-form {
+  .tap.button {
+    width: 120px;
+  }
+  .radio-selector {
+    height: 140px;
+    width: 225px;
+  }
+  .spacer {
+    width: 0px;
   }
 }
 
