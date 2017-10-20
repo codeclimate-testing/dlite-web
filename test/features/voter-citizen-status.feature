@@ -18,8 +18,7 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     When I select No
     When I click to submit
-    Then I will be on the page for organ selection
-    And I go to the page with my summary
+    Then I will be on the page with my summary
     Then I will see No in my citizenship selection
 
   Scenario: Choose not to answer - saving data
@@ -27,16 +26,14 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     When I select Skip Section
     When I click to submit
-    Then I will be on the page for organ selection
-    And I go to the page with my summary
+    Then I will be on the page with my summary
     Then I will see No Value in my citizenship selection
 
   Scenario: Continuing without a selection
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I click to submit
-    Then I will be on the page for organ selection
-    And I go to the page with my summary
+    Then I will be on the page with my summary
     Then I will see No Value in my citizenship selection
 
   Scenario: Updating US citizen status
@@ -48,4 +45,3 @@ Feature: Designate US citizenship status
     When I click to submit
     And I go to the page with my summary
     Then I will see my updated US citizenship status
-
