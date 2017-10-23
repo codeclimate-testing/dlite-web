@@ -200,6 +200,44 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with legalName');
     });
 
+    it('is true when there is a date of birth', function() {
+      let data = {
+        dateOfBirth : {
+          month: '12',
+          day: '28',
+          year: '1931'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with date of birth');
+    });
+
+    it('is true when there is a home address', function() {
+      let data = {
+        homeAddress: {
+          street1: '123 Main street',
+          city: 'Miami',
+          state: 'CA',
+          zip: '94111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with an home address');
+    });
+
+    it('is true when there is a mailing address', function() {
+      let data = {
+        mailingAddress: {
+          street1: '123 Main street',
+          city: 'Miami',
+          state: 'CA',
+          zip: '94111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with a mailing address');
+    });
+
     it('is true when there is a sex selection', function() {
       let data = {
         sex: 'male'
@@ -240,6 +278,22 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with weight');
     });
 
+    it('is true when there is a organ selection', function() {
+      let data = {
+        organ: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with organ');
+    });
+
+    it('is true when there is a donate contribution selection', function() {
+      let data = {
+        donateContribution: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with donate contribution');
+    });
+
     it('is true when there is a social security number', function() {
       let data = {
         socialSecurity: {
@@ -252,30 +306,120 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with social security');
     });
 
-    it('is true when there is a home address', function() {
+    it('is true when there is suspended license info', function(){
       let data = {
-        homeAddress: {
-          street1: '123 Main street',
-          city: 'Miami',
-          state: 'CA',
-          zip: '94111'
+        suspendedLicenseInfo: {
+          isSuspended:  'Yes',
+          month:        '10',
+          day:          '15',
+          year:         '1985',
+          reason:       'I was not being very responsible.'
         }
       };
 
-      assert(dataPresent.application(data), 'Data not present with an home address');
+      assert(dataPresent.application(data), 'Data not present with suspended license info');
     });
 
-    it('is true when there is a mailing address', function() {
+    it('is true when there is previous name info', function(){
       let data = {
-        mailingAddress: {
-          street1: '123 Main street',
-          city: 'Miami',
-          state: 'CA',
-          zip: '94111'
+        previousNamesInfo: {
+          names: 'Captain America',
+          hasPreviousNames: 'Yes'
         }
       };
 
-      assert(dataPresent.application(data), 'Data not present with a mailing address');
+      assert(dataPresent.application(data), 'Data not present with previous name info');
     });
+
+    it('is true when there is existing DL/ID info', function(){
+      let data = {
+        existingDLIDInfo: {
+          DLIDNumber:   'DMV001',
+          issuedBy:     'California',
+          month:        '10',
+          day:          '15',
+          year:         '1981',
+          hasExisting:  'Yes'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with existing DL/ID info');
+    });
+
+    it('is true when there is am-citizen status', function(){
+      let data = {
+        citizenStatus: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with am-citizen status');
+    });
+
+    it('is true when there is contact choice', function(){
+      let data = {
+        contactChoice: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with contact choice');
+    });
+
+    it('is true when there is ballot by mail', function(){
+      let data = {
+        ballotByMail: 'No'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with ballot by mail');
+    });
+
+    it('is true when there is eligibility requirements', function(){
+      let data = {
+        eligibilityRequirements: 'No'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with eligibility requirements');
+    });
+
+    it('is true when there is political party choose', function(){
+      let data = {
+        politicalPartyChoose: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with political party choose');
+    });
+
+    it('is true when there is political party preference', function(){
+      let data = {
+        politicalPartyPreference: 'Independent'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with political party preference');
+    });
+
+    it('is true when there is contact details', function(){
+      let data = {
+        contactDetails: {
+          emailAddress: 'abc@xyz.gov',
+          phoneNumber: '(111) 000-1111'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with contact details');
+    });
+
+    it('is true when there is ballot language', function(){
+      let data = {
+        ballotLanguage: 'English'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with ballot language');
+    });
+
+    it('is true when there is opt out info', function(){
+      let data = {
+        optOut: 'Yes'
+      };
+
+      assert(dataPresent.application(data), 'Data not present with opt out info');
+    });
+
   });
 });
