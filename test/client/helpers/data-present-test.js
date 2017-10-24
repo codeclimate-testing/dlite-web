@@ -83,20 +83,6 @@ describe('dataPresent', function() {
     });
   });
 
-  describe('#contactDetails', function() {
-    it('is true with only email address', function() {
-      assert(dataPresent.contactDetails({emailAddress: 'smith@wrangler.com'}), 'contactDetails not present with email address');
-    });
-
-    it('is true with phone enumber only', function() {
-      assert(dataPresent.contactDetails({phoneNumber: '(916)000-1111'}), 'contactDetails not present with phon enumber');
-    });
-
-    it('is false without email or phone number', function() {
-      assert(!dataPresent.contactDetails({emailAddress: '', phoneNumber: ''}), 'contactDetails present without email or phone umber');
-    });
-  });
-
   describe('#suspendedLicenseInfo', function() {
     it('is true when all three parts of date are present', function() {
       assert(
@@ -186,8 +172,22 @@ describe('dataPresent', function() {
       'previousNamesInfo present without names or hasPreviousNames');
     });
 
-
   });
+
+  describe('#politicalContact', function() {
+    it('is true with only email address', function() {
+      assert(dataPresent.politicalContact({emailAddress: 'smith@wrangler.com'}), 'politicalContact not present with email address');
+    });
+
+    it('is true with phone enumber only', function() {
+      assert(dataPresent.politicalContact({phoneNumber: '(916)000-1111'}), 'politicalContact not present with phon enumber');
+    });
+
+    it('is false without email or phone number', function() {
+      assert(!dataPresent.politicalContact({emailAddress: '', phoneNumber: ''}), 'politicalContact present without email or phone umber');
+    });
+  });
+
 
   describe('#application', function() {
     it('is true when there is a legalName', function() {
@@ -354,14 +354,6 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with am-citizen status');
     });
 
-    it('is true when there is contact choice', function(){
-      let data = {
-        contactChoice: 'Yes'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with contact choice');
-    });
-
     it('is true when there is ballot by mail', function(){
       let data = {
         ballotByMail: 'No'
@@ -394,15 +386,15 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with political party preference');
     });
 
-    it('is true when there is contact details', function(){
+    it('is true when there is political contact', function(){
       let data = {
-        contactDetails: {
+        politicalContact: {
           emailAddress: 'abc@xyz.gov',
           phoneNumber: '(111) 000-1111'
         }
       };
 
-      assert(dataPresent.application(data), 'Data not present with contact details');
+      assert(dataPresent.application(data), 'Data not present with political contact');
     });
 
     it('is true when there is ballot language', function(){

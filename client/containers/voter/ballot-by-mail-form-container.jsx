@@ -10,7 +10,7 @@ import navigateOnSubmit             from '../../helpers/navigate-on-submit';
 
 const ConnectedForm = (props) => {
 
-  const onSubmit = navigateOnSubmit('/about-me/voter/contact-choice', props);
+  const onSubmit = navigateOnSubmit('/about-me/voter/political-contact', props);
   let continueDisabled = !(dataPresent.value(props.ballotByMail));
 
   return (

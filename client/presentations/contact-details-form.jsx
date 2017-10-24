@@ -15,7 +15,7 @@ const ContactDetailsForm = (props) => {
       <h4>Please enter your contact information below.</h4>
       <h6>This is optional</h6>
 
-      <form onSubmit={props.onSubmit} className='contact-details-form'>
+      <form onSubmit={props.onSubmit} className='political-contact-details-form'>
         <TextInput
           identifier  = 'emailAddress'
           description = 'Email address'
