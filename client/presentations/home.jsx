@@ -35,7 +35,7 @@ const linkData = [
   {description: 'is suspended license',                   path: '/about-me/revoked-suspended'},
   {description: 'previous names',                         path: '/about-me/previous-names/'},
   {description: 'previous names info',                    path: '/about-me/enter-previous-names/'},
-  
+
   {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},
   {description: 'eligibility requirements',               path: '/about-me/voter/eligibility-requirements'},
@@ -46,8 +46,7 @@ const linkData = [
   {description: 'political party preference',             path: '/about-me/voter/political-party'},
   {description: 'ballot language',                        path: '/about-me/voter/ballot-language'},
   {description: 'ballot by mail',                         path: '/about-me/voter/ballot-by-mail'},
-  {description: 'contact choice',                         path: '/about-me/voter/contact-choice'},
-  {description: 'contact details',                        path: '/about-me/voter/email-phone'},
+  {description: 'political contact',                      path: '/about-me/voter/political-contact'},
   {description: 'voter reg complete',                     path: '/about-me/voter/voter-reg-complete'},
   {description: 'success visit',                          path: '/about-me/success-visit'}
 ];

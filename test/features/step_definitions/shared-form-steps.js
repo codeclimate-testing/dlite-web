@@ -26,6 +26,16 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.then('I will see that the Continue button is enabled', function(done) {
+    browser
+     .exists('input[type="submit"][disabled]')
+     .then((input) => {
+       assert.ok(!input, 'Button not enabled');
+     })
+     .then(() => { done(); })
+     .catch(done);
+ });
+
   world.then('I will see that the Continue button is disabled', function(done) {
     browser
       .exists('input[type="submit"][disabled]')

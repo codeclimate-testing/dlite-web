@@ -21,9 +21,8 @@ import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
 import PoliticalPartyChoose        from './political-party-choose.jsx';
 import PoliticalPartyPreference    from './political-party-preference.jsx';
-import ContactDetails              from './contact-details.jsx';
 import BallotLanguage              from './ballot-language.jsx';
-import ContactChoice               from './contact-choice.jsx';
+import PoliticalContact            from './political-contact.jsx';
 import OptOut                      from './opt-out.jsx';
 import ContinueButton              from '../continue-button.jsx';
 
@@ -49,9 +48,8 @@ export {
   BallotByMail,
   PoliticalPartyChoose,
   PoliticalPartyPreference,
-  ContactDetails,
   BallotLanguage,
-  ContactChoice,
+  PoliticalContact,
   ContinueButton,
   OptOut
 };

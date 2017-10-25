@@ -30,12 +30,6 @@ const socialSecurity = (props) => {
   );
 }
 
-const contactDetails = (props) => {
-  return props && (
-    value(props.emailAddress) || value(props.phoneNumber)
-  );
-}
-
 const suspendedLicenseInfo = (props) => {
   return props && (
     (value(props.month) && value(props.day) && value(props.year)) ||
@@ -59,6 +53,12 @@ const previousNamesInfo = (props) => {
   );
 }
 
+const politicalContact = (props) => {
+  return props && (
+    (value(props.emailAddress) || value(props.phoneNumber)) && value(props.shouldContact)
+  );
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -76,14 +76,13 @@ const application = (props) => {
     previousNamesInfo(props.previousNamesInfo) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
     value(props.citizenStatus) ||
-    value(props.contactChoice) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
     value(props.politicalPartyPreference) ||
-    contactDetails(props.contactDetails) ||
     value(props.ballotLanguage) ||
-    value(props.optOut);
+    value(props.optOut) ||
+    politicalContact(props.politicalContact);
 };
 
 export {
@@ -93,9 +92,9 @@ export {
   date,
   height,
   socialSecurity,
-  contactDetails,
   suspendedLicenseInfo,
   previousNamesInfo,
   existingDLIDInfo,
+  politicalContact,
   application
 };

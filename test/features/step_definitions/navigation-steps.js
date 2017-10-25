@@ -52,10 +52,6 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/mailing-address', '.mailing-address-form', done);
   });
 
-  world.when('I visit voter contact details page', function (done) {
-    navigateToPath('/apply/about-me/voter/email-phone', '.contact-details-form', done);
-  });
-
   world.when('I visit the legal name page', function(done) {
     navigateToPath('/apply/about-me/legal-name', '.legal-name-form', done);
   });
@@ -120,10 +116,6 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/voter/voter-reg-complete', '.voter-reg-complete', done);
   });
 
-  world.when('I visit contact choice page', function(done) {
-    navigateToPath('/apply/about-me/voter/contact-choice', '.contact-choice-form', done);
-  });
-
   world.when('I visit ballot language page', function(done) {
     navigateToPath('/apply/about-me/voter/ballot-language', '.ballot-language-form', done);
   });
@@ -174,6 +166,10 @@ module.exports = function(world) {
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
     navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
+  });
+
+  world.when('I visit political contact details page', function(done){
+    navigateToPath('/apply/about-me/voter/political-contact', '.political-contact-choice-form', done);
   });
 
   world.then('I will be on the page for entering my eye color', function(done) {
@@ -232,8 +228,8 @@ module.exports = function(world) {
     assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
   });
 
-  world.then('I will be taken to contact choice page', function(done){
-    assertOnPage('.contact-choice-form', /about-me\/voter\/contact-choice/, done);
+  world.then('I will be taken to political contact page', function(done){
+    assertOnPage('.political-contact-choice-form', /about-me\/voter\/political-contact/, done);
   });
 
   world.then('I will be taken to ballot language page', function(done){
@@ -242,10 +238,6 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering voter opt-out', function(done) {
     assertOnPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
-  });
-
-  world.when('I will be on the page for choosing my contact preference', function(done) {
-    assertOnPage('.contact-choice', /about-me\/voter\/contact-choice/, done);
   });
 
   world.then('I will be on the page with my summary', function(done) {
@@ -278,10 +270,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to voter registration complete page', function(done) {
     assertOnPage('.voter-reg-complete', /about-me\/voter\/voter-reg-complete/, done);
-  });
-
-  world.then('I will be taken to email phone page', function(done) {
-    assertOnPage('.contact-details-form', /about-me\/voter\/email-phone/, done);
   });
 
   world.then('I will be taken to the names page', function(done) {
