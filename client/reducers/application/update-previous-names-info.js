@@ -5,9 +5,9 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    emailAddress: '',
-    phoneNumber: ''
+    names: '',
+    hasPreviousNames: ''
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_CONTACT_DETAILS);
+export default formObjectReducer(defaultState, TYPES.UPDATE_PREVIOUS_NAMES_INFO);

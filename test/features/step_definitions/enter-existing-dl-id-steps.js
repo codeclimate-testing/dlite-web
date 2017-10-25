@@ -56,4 +56,24 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.then('I will see Yes in my existing DL/ID selection', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('Yes'), 'Yes for license history missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see No in my existing DL/ID selection', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('No'), 'No for license history missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 };

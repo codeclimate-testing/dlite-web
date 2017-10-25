@@ -9,7 +9,7 @@ import alicePath        from '../../helpers/alice-path';
 
 const VoterRegComplete = (props) => {
 
-  const linkAddress = '/about-me/organ';
+  const linkAddress = '/summary';
 
   return (
     <div>

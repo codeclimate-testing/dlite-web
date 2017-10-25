@@ -9,7 +9,8 @@ function defaultState() {
     issuedBy:     '',
     month:        '',
     day:          '',
-    year:         ''
+    year:         '',
+    hasExisting:  ''
   };
 }
 

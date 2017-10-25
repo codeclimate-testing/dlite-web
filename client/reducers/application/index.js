@@ -6,7 +6,6 @@ import updateLegalNames                    from './update-legal-name';
 import updateHomeAddress                   from './update-home-address';
 import updateMailingAddress                from './update-mailing-address';
 import updateHairColor                     from './update-hair-color';
-import updateContactDetails                from './update-contact-details';
 import updateEyeColor                      from './update-eye-color';
 import updateDateOfBirth                   from './update-date-of-birth';
 import updateSex                           from './update-sex';
@@ -16,7 +15,7 @@ import updateOrgan                         from './update-organ';
 import updateDonateContribution            from './update-donate-contribution';
 import updateSuspendedLicenseInfo          from './update-suspended-license-info';
 import updateExistingDLIDInfo              from './update-existing-dl-id-info';
-import updatePreviousNames                 from './update-previous-names';
+import updatePreviousNamesInfo             from './update-previous-names-info';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
@@ -24,14 +23,13 @@ import updateEligibilityRequirements       from './update-eligibility-requiremen
 import updatePoliticalPartyChoose          from './update-political-party-choose';
 import updatePoliticalPartyPreference      from './update-political-party-preference';
 import updateBallotLanguage                from './update-ballot-language';
-import updateContactChoice                 from './update-contact-choice';
 import updateOptOut                        from './update-opt-out';
+import updatePoliticalContact              from './update-political-contact';
 
 const rootReducer = combineReducers({
   legalName                   : updateLegalNames,
   homeAddress                 : updateHomeAddress,
   mailingAddress              : updateMailingAddress,
-  contactDetails              : updateContactDetails,
   eyeColor                    : updateEyeColor,
   hairColor                   : updateHairColor,
   dateOfBirth                 : updateDateOfBirth,
@@ -42,7 +40,7 @@ const rootReducer = combineReducers({
   donateContribution          : updateDonateContribution,
   existingDLIDInfo            : updateExistingDLIDInfo,
   suspendedLicenseInfo        : updateSuspendedLicenseInfo,
-  previousNames               : updatePreviousNames,
+  previousNamesInfo           : updatePreviousNamesInfo,
   socialSecurity              : updateSocialSecurity,
   citizenStatus               : updateCitizenStatus,
   ballotByMail                : updateBallotByMail,
@@ -50,9 +48,8 @@ const rootReducer = combineReducers({
   politicalPartyChoose        : updatePoliticalPartyChoose,
   politicalPartyPreference    : updatePoliticalPartyPreference,
   ballotLanguage              : updateBallotLanguage,
-  contactChoice               : updateContactChoice,
-  optOut                      : updateOptOut
-
+  optOut                      : updateOptOut,
+  politicalContact            : updatePoliticalContact
 });
 
 export default rootReducer;

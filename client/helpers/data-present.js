@@ -30,12 +30,6 @@ const socialSecurity = (props) => {
   );
 }
 
-const contactDetails = (props) => {
-  return props && (
-    value(props.emailAddress) || value(props.phoneNumber)
-  );
-}
-
 const suspendedLicenseInfo = (props) => {
   return props && (
     (value(props.month) && value(props.day) && value(props.year)) ||
@@ -48,12 +42,21 @@ const existingDLIDInfo = (props) => {
   return props && (
     (value(props.month) && value(props.day) && value(props.year)) ||
     value(props.DLIDNumber) ||
-    value(props.issuedBy)
+    value(props.issuedBy) ||
+    value(props.hasExisting)
   );
 }
 
-const previousNames = (props) => {
-  return props && value(props.names);
+const previousNamesInfo = (props) => {
+  return props && (
+    value(props.names) || value(props.hasPreviousNames)
+  );
+}
+
+const politicalContact = (props) => {
+  return props && (
+    (value(props.emailAddress) || value(props.phoneNumber)) && value(props.shouldContact)
+  );
 }
 
 const application = (props) => {
@@ -70,17 +73,16 @@ const application = (props) => {
     value(props.donateContribution) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
+    previousNamesInfo(props.previousNamesInfo) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
-    previousNames(props.previousNames) ||
     value(props.citizenStatus) ||
-    value(props.contactChoice) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
     value(props.politicalPartyChoose) ||
     value(props.politicalPartyPreference) ||
-    contactDetails(props.contactDetails) ||
     value(props.ballotLanguage) ||
-    value(props.optOut);
+    value(props.optOut) ||
+    politicalContact(props.politicalContact);
 };
 
 export {
@@ -90,9 +92,9 @@ export {
   date,
   height,
   socialSecurity,
-  contactDetails,
   suspendedLicenseInfo,
+  previousNamesInfo,
   existingDLIDInfo,
-  previousNames,
+  politicalContact,
   application
 };

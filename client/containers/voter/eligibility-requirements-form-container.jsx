@@ -10,7 +10,7 @@ import navigateOnSubmit               from '../../helpers/navigate-on-submit';
 const ConnectedForm = (props) => {
   const continueDisabled = false;
   let value = props.eligibilityRequirements;
-  let onSubmit = navigateOnSubmit('/about-me/organ', props);
+  let onSubmit = navigateOnSubmit('/summary', props);
 
   if(value === 'Yes') {
     onSubmit = navigateOnSubmit('/about-me/voter/opt-out', props);

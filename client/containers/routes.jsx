@@ -25,9 +25,10 @@ import Organ                                  from './apply/organ-form-container
 import DonateContribution                     from './apply/donate-contribution-form-container.jsx';
 import SuspendedLicenseDecision               from './apply/suspended-license-decision-form-container.jsx';
 import SuspendedLicenseInfo                   from './apply/suspended-license-info-form-container.jsx';
+import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
 import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
-import PreviousNamesTemp                      from '../presentations/apply/previous-names-temp.jsx'
 import PreviousNames                          from './apply/previous-names-form-container.jsx';
+import PreviousNamesInfo                      from './apply/previous-names-info-form-container.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter/eligibility-requirements-form-container.jsx';
@@ -38,8 +39,7 @@ import PoliticalPartyChoose                   from './voter/political-party-choo
 import PoliticalPartyPreference               from './voter/political-party-preference-form-container.jsx';
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
-import ContactChoice                          from './voter/contact-choice-form-container.jsx';
-import ContactDetails                         from './voter/contact-details-form-container.jsx';
+import PoliticalContact                       from './voter/political-contact-form-container.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-reg-complete-info.jsx';
 import SuccessVisit                           from '../presentations/success-visit-info.jsx';
 
@@ -67,9 +67,10 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/donate-contribution' ) } component={DonateContribution} />
         <Route path={ alicePath('/about-me/revoked-suspended' ) } component={SuspendedLicenseDecision} />
         <Route path={ alicePath('/about-me/enter-revoked-suspended' ) } component={SuspendedLicenseInfo} />
+        <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />
         <Route path={ alicePath('/about-me/dl-id-number') } component={ExistingDLIDInfo} />
-        <Route path={ alicePath('/about-me/previous-names')} component={PreviousNamesTemp} />
-        <Route path={ alicePath('/about-me/enter-previous-names' ) } component={PreviousNames} />
+        <Route path={ alicePath('/about-me/previous-names' ) } component={PreviousNames} />
+        <Route path={ alicePath('/about-me/enter-previous-names' ) } component={PreviousNamesInfo} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
@@ -81,8 +82,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalPartyPreference} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
-        <Route path={ alicePath('/about-me/voter/contact-choice/') } component={ContactChoice} />
-        <Route path={ alicePath('/about-me/voter/email-phone') } component={ContactDetails} />
+        <Route path={ alicePath('/about-me/voter/political-contact') } component={PoliticalContact} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
       </div>

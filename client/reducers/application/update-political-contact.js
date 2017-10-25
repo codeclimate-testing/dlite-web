@@ -5,8 +5,10 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    names: '',
+    shouldContact:  '',
+    emailAddress:   '',
+    phoneNumber:    ''
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_PREVIOUS_NAMES);
+export default formObjectReducer(defaultState, TYPES.UPDATE_POLITICAL_CONTACT);
