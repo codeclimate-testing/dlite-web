@@ -19,7 +19,25 @@ const ConnectedForm = (props) => {
 
   if(props.politicalContact.shouldContact === 'Yes') {
     showContactDetails  = true;
-    continueDisabled    = !(dataPresent.contactDetails(props.politicalContact));
+    continueDisabled    = !(dataPresent.politicalContact(props.politicalContact));
+
+    return (
+      <div>
+        <HomeLink />
+
+        <form onSubmit={onSubmit}>
+          <ContactChoice
+            onChange      = {props.onChange}
+            selectedValue = {props.politicalContact.shouldContact}
+          />
+          <ContactDetails
+            onChange       = {props.onChange}
+            contactDetails = {props.politicalContact}
+          />
+          <ContinueButton disabled={continueDisabled} />
+        </form>
+      </div>
+    );
   }
 
   return (
@@ -28,16 +46,9 @@ const ConnectedForm = (props) => {
 
       <form onSubmit={onSubmit}>
         <ContactChoice
-          onChange={props.onChange}
-          selectedValue={props.politicalContact.shouldContact}
+          onChange      = {props.onChange}
+          selectedValue = {props.politicalContact.shouldContact}
         />
-        {
-          showContactDetails &&
-          <ContactDetails
-            onChange          = {props.onChange}
-            contactDetails    = {props.politicalContact}
-          />
-        }
         <ContinueButton disabled={continueDisabled} />
       </form>
     </div>

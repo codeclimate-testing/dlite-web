@@ -17,7 +17,6 @@ const PoliticalContact = (props) => {
     );
   }
 
-  //if (!dataPresent.contactDetails(props.politicalContact)) { return null; }
     return (
       <div className='summary-section'>
         <p> Should Contact: {shouldContact} </p>

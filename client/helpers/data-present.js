@@ -55,13 +55,7 @@ const previousNamesInfo = (props) => {
 
 const politicalContact = (props) => {
   return props && (
-    value(props.emailAddress) || value(props.phoneNumber) || value(props.shouldContact)
-  );
-}
-
-const contactDetails= (props) => {
-  return props && (
-    value(props.emailAddress) || value(props.phoneNumber)
+    (value(props.emailAddress) || value(props.phoneNumber)) && value(props.shouldContact)
   );
 }
 
@@ -101,7 +95,6 @@ export {
   suspendedLicenseInfo,
   previousNamesInfo,
   existingDLIDInfo,
-  contactDetails,
   politicalContact,
   application
 };

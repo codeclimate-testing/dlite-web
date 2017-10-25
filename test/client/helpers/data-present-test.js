@@ -176,15 +176,15 @@ describe('dataPresent', function() {
 
   describe('#politicalContact', function() {
     it('is true with only email address', function() {
-      assert(dataPresent.politicalContact({emailAddress: 'smith@wrangler.com'}), 'politicalContact not present with email address');
+      assert(dataPresent.politicalContact({shouldContact: 'Yes', emailAddress: 'smith@wrangler.com'}), 'politicalContact not present with email address');
     });
 
     it('is true with phone enumber only', function() {
-      assert(dataPresent.politicalContact({phoneNumber: '(916)000-1111'}), 'politicalContact not present with phon enumber');
+      assert(dataPresent.politicalContact({shouldContact: 'Yes', phoneNumber: '(916)000-1111'}), 'politicalContact not present with phone enumber');
     });
 
     it('is false without email or phone number', function() {
-      assert(!dataPresent.politicalContact({emailAddress: '', phoneNumber: ''}), 'politicalContact present without email or phone umber');
+      assert(!dataPresent.politicalContact({shouldContact: 'Yes', emailAddress: '', phoneNumber: ''}), 'politicalContact present without email or phone umber');
     });
   });
 
@@ -203,9 +203,9 @@ describe('dataPresent', function() {
     it('is true when there is a date of birth', function() {
       let data = {
         dateOfBirth : {
-          month: '12',
-          day: '28',
-          year: '1931'
+          month:  '12',
+          day:    '28',
+          year:   '1931'
         }
       };
 
@@ -215,10 +215,10 @@ describe('dataPresent', function() {
     it('is true when there is a home address', function() {
       let data = {
         homeAddress: {
-          street1: '123 Main street',
-          city: 'Miami',
-          state: 'CA',
-          zip: '94111'
+          street1:  '123 Main street',
+          city:     'Miami',
+          state:    'CA',
+          zip:      '94111'
         }
       };
 
@@ -228,10 +228,10 @@ describe('dataPresent', function() {
     it('is true when there is a mailing address', function() {
       let data = {
         mailingAddress: {
-          street1: '123 Main street',
-          city: 'Miami',
-          state: 'CA',
-          zip: '94111'
+          street1:  '123 Main street',
+          city:     'Miami',
+          state:    'CA',
+          zip:      '94111'
         }
       };
 
@@ -389,8 +389,9 @@ describe('dataPresent', function() {
     it('is true when there is political contact', function(){
       let data = {
         politicalContact: {
-          emailAddress: 'abc@xyz.gov',
-          phoneNumber: '(111) 000-1111'
+          shouldContact:  'Yes',
+          emailAddress:   'abc@xyz.gov',
+          phoneNumber:    '(111) 000-1111'
         }
       };
 
