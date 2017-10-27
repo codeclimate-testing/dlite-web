@@ -20,8 +20,7 @@ import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
 import updateEligibilityRequirements       from './update-eligibility-requirements';
-import updatePoliticalPartyChoose          from './update-political-party-choose';
-import updatePoliticalPartyPreference      from './update-political-party-preference';
+import updatePoliticalPartyChoose          from './update-choose-party';
 import updateBallotLanguage                from './update-ballot-language';
 import updateOptOut                        from './update-opt-out';
 import updatePoliticalContact              from './update-political-contact';
@@ -46,7 +45,6 @@ const rootReducer = combineReducers({
   ballotByMail                : updateBallotByMail,
   eligibilityRequirements     : updateEligibilityRequirements,
   politicalPartyChoose        : updatePoliticalPartyChoose,
-  politicalPartyPreference    : updatePoliticalPartyPreference,
   ballotLanguage              : updateBallotLanguage,
   optOut                      : updateOptOut,
   politicalContact            : updatePoliticalContact

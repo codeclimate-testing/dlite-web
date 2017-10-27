@@ -5,7 +5,34 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see buttons for each political party', function(done){
+  world.when('I select no political party', function(done){
+    browser
+    .click('label[for="I do not wish to choose a political party"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.then('I will see Yes for my political party choice', function(done) {
+    browser
+    .text()
+    .then((text) => {
+      assert.ok(text.includes('Yes'), 'Yes not saved in summary');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.then('I will see No for my political party choice', function(done) {
+    browser
+    .text()
+    .then((text) => {
+      assert.ok(text.includes('I do not wish to choose a political party'), 'I do not wish to choose a political party not saved in summary');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+    world.then('I will see buttons for each political party', function(done){
     browser
       .html('label[for="American Independent Party"]')
       .then((button) => { assert.ok(button, 'Selector for American Independent Party missing')})
@@ -31,6 +58,14 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+  
+  world.then('I will see Yes and political party selected', function(done){
+    browser
+      .text('.button.selected')
+      .then((color) => { assert.equal(color, 'YesLibertarian Party'); })
+      .then(() => { done(); })
+      .catch(done);
+  })
 
   world.then('I will see my political party in summary', function(done){
     browser
@@ -41,14 +76,6 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
-
-  world.then('I will see my my political party selected', function(done){
-    browser
-      .text('.button.selected')
-      .then((color) => { assert.equal(color, 'Libertarian Party'); })
-      .then(() => { done(); })
-      .catch(done);
-  })
 
   world.when('I change my political party', function(done){
     browser
