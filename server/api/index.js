@@ -1,27 +1,9 @@
-const router = require('express').Router();
+'use strict';
 
-const userDataService = require('../services/user-data');
+const router      = require('express').Router();
+const ctrl  = require('../controllers');
 
-const getApplication = require('../models/db/get-application');
-const createApplication = require('../models/db/create-application');
-
-router.get('/user-data/:uuid', getUserDataHandler);
-router.post('/user-data', postUserDataHandler);
-
-function getUserDataHandler(req, res) {
-  getApplication(req.params.uuid)
-    .then(function(data) {
-      res.send(data);
-    });
-}
-
-function postUserDataHandler(req, res) {
-  createApplication(req.body.application)
-    .then(function(data) {
-      res.send(data);
-    });
-}
+router.get('/application/:id', ctrl.getApplication);
+router.post('/application', ctrl.createApplication);
 
 module.exports = router;
-module.exports.getUserDataHandler = getUserDataHandler;
-module.exports.postUserDataHandler = postUserDataHandler;

@@ -50,14 +50,14 @@ function extractAddresses(data) {
 function extractEmail(data) {
   return [{
     application_id: data.id,
-    address: data.email
+    address: data.politicalContact.emailAddress
   }];
 }
 
 function extractPhoneNumber(data) {
   return [{
     application_id: data.id,
-    number: data.phoneNumber
+    number: data.politicalContact.phoneNumber
   }];
 }
 
