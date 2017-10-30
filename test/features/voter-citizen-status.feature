@@ -7,7 +7,7 @@ Feature: Designate US citizenship status
     Given I go to the new online DL application page
     When I visit voter citizen status page
     Then I will see citizen related faq
-    When I select Yes
+    When I select citizen Yes
     When I click to submit
     Then I will be taken to voter eligibility requirements page
     And I go to the page with my summary
@@ -16,7 +16,7 @@ Feature: Designate US citizenship status
   Scenario: I am not a citizen - saving data
     Given I go to the new online DL application page
     When I visit voter citizen status page
-    When I select No
+    When I select citizen No
     When I click to submit
     Then I will be on the page with my summary
     Then I will see No in my citizenship selection
@@ -24,7 +24,7 @@ Feature: Designate US citizenship status
   Scenario: Choose not to answer - saving data
     Given I go to the new online DL application page
     When I visit voter citizen status page
-    When I select Skip Section
+    When I select citizen Skip Section
     When I click to submit
     Then I will be on the page with my summary
     Then I will see No Value in my citizenship selection

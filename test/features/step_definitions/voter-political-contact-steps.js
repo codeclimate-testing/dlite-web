@@ -16,6 +16,40 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I select political contact Yes', function(done){
+    browser
+    .click('label[for="shouldContactYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select political contact No', function(done){
+    browser
+    .click('label[for="shouldContactNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select political contact Skip Question', function(done){
+    browser
+    .click('label[for="shouldContactSkip Question"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.then('I see three political contact buttons labelled Yes, No and Skip Question', function(done) {
+    browser
+    .html('label[for="shouldContactYes"]')
+    .then((button) => { assert.ok(button, 'Selector for Yes missing')})
+    .html('label[for="shouldContactNo"]')
+    .then((button) => { assert.ok(button, 'Selector for No missing')})
+    .html('label[for="shouldContactSkip Question"]')
+    .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+
   world.and('I enter my email', function(done){
     browser
       .type('#emailAddress', 'sample@example.com')
@@ -65,7 +99,7 @@ module.exports = function(world) {
     browser
       .click('a.political-contact')
       .waitForSelector('.political-contact-choice-form')
-      .click('label[for="Yes"]')
+      .click('label[for="shouldContactYes"]')
       .type('#emailAddress', 'sample@example.com')
       .type('#phoneNumber', '(111) 000-8888')
       .click('a.sections')

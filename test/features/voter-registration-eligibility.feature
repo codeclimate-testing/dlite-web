@@ -6,7 +6,7 @@ Feature: Check Voter Registration Eligibility
   Scenario: I select Yes for registration eligibility
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
-    When I select Yes
+    When I select voter registration Yes
     When I click to submit
     Then I will be on the page for entering voter opt-out
     And I go to the page with my summary
@@ -15,14 +15,14 @@ Feature: Check Voter Registration Eligibility
   Scenario: I select No for registration eligibility
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
-    When I select No
+    When I select voter registration No
     When I click to submit
     Then I will be on the page with my summary
 
   Scenario: Choose not to answer
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
-    When I select Skip Section
+    When I select voter registration Skip Section
     And I click to submit
     Then I will be on the page with my summary
 

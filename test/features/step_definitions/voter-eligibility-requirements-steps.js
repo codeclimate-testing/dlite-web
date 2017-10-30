@@ -7,13 +7,34 @@ module.exports = function(world) {
 
   world.then('I will see buttons for Yes, No and Skip Section', function(done) {
     browser
-    .html('label[for="Yes"]')
+    .html('label[for="eligibilityRequirementsYes"]')
     .then((button) => { assert.ok(button, 'Selector for Yes missing')})
-    .html('label[for="No"]')
+    .html('label[for="eligibilityRequirementsNo"]')
     .then((button) => { assert.ok(button, 'Selector for No missing')})
-    .html('label[for="Skip Section"]')
+    .html('label[for="eligibilityRequirementsSkip Section"]')
     .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
     .then(() => { done();})
+    .catch(done);
+  });
+
+  world.when('I select voter registration Yes', function(done){
+    browser
+    .click('label[for="eligibilityRequirementsYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select voter registration No', function(done){
+    browser
+    .click('label[for="eligibilityRequirementsNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select voter registration Skip Section', function(done){
+    browser
+    .click('label[for="eligibilityRequirementsSkip Section"]')
+    .then(() => { done(); })
     .catch(done);
   });
 
@@ -31,7 +52,7 @@ module.exports = function(world) {
   browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('No'), 'No not saved in summary');
+      assert.ok(text.includes('eligibilityRequirementsNo'), 'No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -50,7 +71,7 @@ module.exports = function(world) {
 world.given('I have already entered my voter eligibility requirement status into the form', function(done){
   browser
     .click('a.eligibility-requirements')
-    .click('label[for="Yes"]')
+    .click('label[for="eligibilityRequirementsYes"]')
     .click('input[type="submit"]')
     .click('a.sections')
     .waitForSelector('.section-links')
@@ -68,7 +89,7 @@ world.and('I will see the eligibility requirement status I entered', function(do
 
 world.and('I change my eligibility requirement', function(done){
   browser
-    .click('label[for="No"]')
+    .click('label[for="eligibilityRequirementsNo"]')
     .then(() => { done(); })
     .catch(done);
 });

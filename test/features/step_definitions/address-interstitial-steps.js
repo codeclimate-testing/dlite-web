@@ -19,6 +19,30 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I see two address interstitial buttons labelled Yes and No', function(done) {
+    browser
+    .html('label[for="isSameAsHomeYes"]')
+    .then((button) => { assert.ok(button, 'Selector for Yes missing')})
+    .html('label[for="isSameAsHomeNo"]')
+    .then((button) => { assert.ok(button, 'Selector for No missing')})
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select address interstitial Yes', function(done){
+    browser
+    .click('label[for="isSameAsHomeYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select address interstitial No', function(done){
+    browser
+    .click('label[for="isSameAsHomeNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
   world.then('I see a page labelled correctly for address interstitial page', function(done){
     browser
     .text()

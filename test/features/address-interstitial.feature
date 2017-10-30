@@ -7,8 +7,8 @@ Feature: Address interstitial page
     Given I go to the new online DL application page
     And I have entered my home address and clicked submit
     Then I see a page labelled correctly for address interstitial page
-    And I see two buttons labelled Yes and No
-    When I select Yes
+    And I see two address interstitial buttons labelled Yes and No
+    When I select address interstitial Yes
     Then I will be on the page for entering my sex identification
     And I go to the page with my summary
     Then I will see residence address and mailing address will have the same information
@@ -16,5 +16,5 @@ Feature: Address interstitial page
   Scenario: My Addresses are Not the Same
     Given I go to the new online DL application page
     And I have entered my home address and clicked submit
-    When I select No
+    When I select address interstitial No
     Then I will be on the page for entering my mailing address

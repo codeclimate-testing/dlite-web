@@ -7,7 +7,7 @@ Feature: Choose if you want to change or add a political party or not
     Given I go to the new online DL application page
     When I visit the political party choose page
     And I will see that the Continue button is disabled
-    When I select Yes
+    When I select political party chose Yes
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be taken to political party page

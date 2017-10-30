@@ -7,7 +7,7 @@ Feature: Existing DL or ID number
     Given I go to the new online DL application page
     When I visit the page to choose to enter exsiting DL/ID
     And I will see that the Continue button is disabled
-    When I select Yes
+    When I select exisiting DL/ID Yes
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I will be taken to page to enter existing DL/ID info
@@ -18,7 +18,7 @@ Feature: Existing DL or ID number
     Given I go to the new online DL application page
     When I visit the page to choose to enter exsiting DL/ID
     And I will see that the Continue button is disabled
-    When I select No
+    When I select existing DL/ID No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
     Then I visit the page to choose if I ever had previous names

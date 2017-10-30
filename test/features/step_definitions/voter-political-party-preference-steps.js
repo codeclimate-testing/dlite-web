@@ -7,19 +7,19 @@ module.exports = function(world) {
 
   world.then('I will see buttons for each political party', function(done){
     browser
-      .html('label[for="American Independent Party"]')
+      .html('label[for="politicalPartyAmerican Independent Party"]')
       .then((button) => { assert.ok(button, 'Selector for American Independent Party missing')})
-      .html('label[for="Libertarian Party"]')
+      .html('label[for="politicalPartyLibertarian Party"]')
       .then((button) => { assert.ok(button, 'Selector for Libertarian Party missing')})
-      .html('label[for="Democratic Party"]')
+      .html('label[for="politicalPartyDemocratic Party"]')
       .then((button) => { assert.ok(button, 'Selector for Democratic Party missing')})
-      .html('label[for="Green Party"]')
+      .html('label[for="politicalPartyGreen Party"]')
       .then((button) => { assert.ok(button, 'Selector for Green Party missing')})
-      .html('label[for="Peace and Freedom Party"]')
+      .html('label[for="politicalPartyPeace and Freedom Party"]')
       .then((button) => { assert.ok(button, 'Selector for Peace and Freedom Party missing')})
-      .html('label[for="Republican Party"]')
+      .html('label[for="politicalPartyRepublican Party"]')
       .then((button) => { assert.ok(button, 'Selector for Republican Party missing')})
-      .html('label[for="Other"]')
+      .html('label[for="politicalPartyOther"]')
       .then((button) => { assert.ok(button, 'Selector for Other missing')})
       .then(() => { done(); })
       .catch(done);
@@ -27,7 +27,7 @@ module.exports = function(world) {
 
   world.when('I select a political party button', function(done){
     browser
-      .click('label[for="Libertarian Party"]')
+      .click('label[for="politicalPartyLibertarian Party"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -52,7 +52,7 @@ module.exports = function(world) {
 
   world.when('I change my political party', function(done){
     browser
-    .click('label[for="Peace and Freedom Party"]')
+    .click('label[for="politicalPartyPeace and Freedom Party"]')
     .then(() => { done(); })
     .catch(done);
   });

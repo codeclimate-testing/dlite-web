@@ -7,7 +7,14 @@ module.exports = function(world) {
 
   world.when('I select no political party', function(done){
     browser
-    .click('label[for="I do not wish to choose a political party"]')
+    .click('label[for="politicalPartyChooseI do not wish to choose a political party"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select political party chose Yes', function(done){
+    browser
+    .click('label[for="politicalPartyChooseYes"]')
     .then(() => { done(); })
     .catch(done);
   });
