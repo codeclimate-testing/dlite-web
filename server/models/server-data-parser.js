@@ -8,14 +8,14 @@ function parse(data) {
   let phone_numbers = data.phone_numbers;
   let home_address, mailing_address;
 
-  addresses.array.forEach(function(element) {
+  addresses.forEach(function(element) {
     if(element.type === 'home'){
       home_address = element;
     }
     else if(element.type === 'mailing') {
       mailing_address = element;
     }
-  }, this);
+  });
 
 
   return {
@@ -48,4 +48,4 @@ function parse(data) {
   };
 }
 
-module.exports = parse;
+module.exports.parse = parse;

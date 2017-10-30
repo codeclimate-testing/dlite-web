@@ -1,6 +1,7 @@
 'use strict';
 
 function parse(data) {
+
   return Object.assign(
     {},
     { application: extractApplication(data) },
@@ -61,4 +62,4 @@ function extractPhoneNumber(data) {
   }];
 }
 
-module.exports = parse;
+module.exports.parse = parse;

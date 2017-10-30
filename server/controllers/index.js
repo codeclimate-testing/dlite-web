@@ -16,6 +16,7 @@ function createApplication(req, res) {
 function getApplication(req, res) {
   getAppModel(req.params.id)
   .then(function(data) {
+    console.log(data);
     let parsedData = serverParser.parse(data);
     res.send(parsedData);
   });
