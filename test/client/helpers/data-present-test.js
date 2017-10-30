@@ -29,6 +29,16 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#organDonation', function() {
+    it('is true with donate and contribute', function() {
+      assert(dataPresent.organDonation({donate: 'Yes', contribute: 'Yes'}), 'organDonation not present with donate and contribute');
+    });
+
+    it('is false without donate and contribute', function() {
+      assert(!dataPresent.organDonation({contribute: 'Yes'}), 'organDonation not present with contribute');
+    });
+  });
+
   describe('#address', function() {
     it('is true with any field but state', function() {
       assert(dataPresent.address({street_1: '123 Main'}), 'address not present with street');
@@ -276,22 +286,6 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with weight');
-    });
-
-    it('is true when there is a organ selection', function() {
-      let data = {
-        organ: 'Yes'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with organ');
-    });
-
-    it('is true when there is a donate contribution selection', function() {
-      let data = {
-        donateContribution: 'Yes'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with donate contribution');
     });
 
     it('is true when there is a social security number', function() {

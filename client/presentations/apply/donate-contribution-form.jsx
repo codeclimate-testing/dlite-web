@@ -1,10 +1,7 @@
-
 'use strict';
 
 import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
-import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
 
 const values = ['Yes', 'No', 'Skip Question']
@@ -13,34 +10,27 @@ const MESSAGE_YES = <p>Thank you for your donation! We will add $2 to your total
 
 const DonateContribution = (props) => {
   return (
-    <div>
-      <HomeLink />
-
+    <div className='donate-contribution-form'>
       <h4>Do you want to make a voluntary contribution of $2?</h4>
       <p><i>(optional)</i></p>
       <p>Your donation helps support and promote organ and tissue donation.</p>
-      <form onSubmit={ props.onSubmit } className='donate-contribution-form'>
         <div className='inner-bottom'>
           <SelectorCollection
-            name='donateContribution'
+            name='contribute'
             values={values}
             onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
+            organDonation={ props.organDonation.contribute }
           />
         </div>
 
         <div className='inner-bottom'>
-          { props.selectedValue === 'Yes' &&
+          { props.organDonation.contribute === 'Yes' &&
             <FAQDrawer
             faqDrawerClass = {CONTRIBUTION_YES}
             faqDrawerText  = {MESSAGE_YES}
             />
           }
-
         </div>
-
-        <ContinueButton disabled={props.continueDisabled}/>
-      </form>
     </div>
   );
 };

@@ -19,8 +19,7 @@ export const TYPES = {
   UPDATE_SEX:                             'UPDATE_SEX',
   UPDATE_HEIGHT:                          'UPDATE_HEIGHT',
   UPDATE_WEIGHT:                          'UPDATE_WEIGHT',
-  UPDATE_ORGAN:                           'UPDATE_ORGAN',
-  UPDATE_DONATE_CONTRIBUTION:             'UPDATE_DONATE_CONTRIBUTION',
+  UPDATE_ORGAN_DONATION:                  'UPDATE_ORGAN_DONATION',
   UPDATE_SUSPENDED_LICENSE_INFO:          'UPDATE_SUSPENDED_LICENSE_INFO',
   UPDATE_EXISTING_DL_ID_INFO:             'UPDATE_EXISTING_DL_ID_INFO',
   UPDATE_PREVIOUS_NAMES_INFO:             'UPDATE_PREVIOUS_NAMES_INFO',
@@ -44,8 +43,7 @@ export const updateDateOfBirth                = generateAction(TYPES.UPDATE_DATE
 export const updateSex                        = generateAction(TYPES.UPDATE_SEX);
 export const updateHeight                     = generateAction(TYPES.UPDATE_HEIGHT);
 export const updateWeight                     = generateAction(TYPES.UPDATE_WEIGHT);
-export const updateOrgan                      = generateAction(TYPES.UPDATE_ORGAN);
-export const updateDonateContribution         = generateAction(TYPES.UPDATE_DONATE_CONTRIBUTION);
+export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGAN_DONATION);
 export const updateSuspendedLicenseInfo       = generateAction(TYPES.UPDATE_SUSPENDED_LICENSE_INFO);
 export const updateExistingDlIdInfo           = generateAction(TYPES.UPDATE_EXISTING_DL_ID_INFO);
 export const updatePreviousNamesInfo          = generateAction(TYPES.UPDATE_PREVIOUS_NAMES_INFO);

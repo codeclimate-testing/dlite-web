@@ -81,7 +81,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the organ page', function(done) {
-    navigateToPath('/apply/about-me/organ', '.organ-form', done);
+    navigateToPath('/apply/about-me/organ-donation', '.organ-form', done);
   });
 
   world.when('I visit the donate contribution page', function(done) {
