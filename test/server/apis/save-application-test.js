@@ -32,7 +32,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
       state:      "CA",
       zip:        "11111"
     },
-    "mailingAddress": {
+    mailingAddress: {
       street_1:   "987 Main St",
       street_2:   "654 Sand Lane",
       city:       "CrazydoniMail",
@@ -46,26 +46,25 @@ describe('Testing application APIs for basic CRUD operations', () => {
   };
 
   const validateResponse = function(response){
-    // assert(response.id, id);
-    // assert(response.type, type);
-    // assert(response.source, source);
-    // assert(response.number, number);
-    // assert(response.first_name, first_name);
-    // assert(response.middle_name, middle_name);
-    // assert(response.last_name, last_name);
-    // assert(response.name_suffix, name_suffix);
-    // assert(response.language, language);
-    // assert(response.hair_color, hair_color);
-    // assert(response.eye_color, eye_color);
-    // assert(response.addressType, addressType);
-    // assert(response.street_address_1, street_address_1);
-    // assert(response.street_address_2, street_address_2);
-    // assert(response.city, city);
-    // assert(response.state, state);
-    // assert(response.zip, zip);
-    // assert(response.email_address, email_address);
-    // assert(response.phone_number, phone_number);
-    assert(true, true);
+    assert(application.id, application.id);
+    assert(application.legalName.firstName, application.legalName.firstName);
+    assert(application.legalName.middleName, application.legalName.middleName);
+    assert(application.legalName.lastName, application.legalName.lastName);
+    assert(application.dateOfBirth, application.dateOfBirth);
+    assert(application.hairColor, application.hairColor);
+    assert(application.eyeColor, application.eyeColor);
+    assert(application.homeAddress.street_1, application.homeAddress.street_1);
+    assert(application.homeAddress.street_2, application.homeAddress.street_2);
+    assert(application.homeAddress.city, application.homeAddress.city);
+    assert(application.homeAddress.state, application.homeAddress.state);
+    assert(application.homeAddress.zip, application.homeAddress.zip);
+    assert(application.mailingAddress.street_1, application.mailingAddress.street_1);
+    assert(application.mailingAddress.street_2, application.mailingAddress.street_2);
+    assert(application.mailingAddress.city, application.mailingAddress.city);
+    assert(application.mailingAddress.state, application.mailingAddress.state);
+    assert(application.mailingAddress.zip, application.mailingAddress.zip);
+    assert(application.politicalContact.emailAddress, application.politicalContact.emailAddress);
+    assert(application.politicalContact.phoneNumber, application.politicalContact.phoneNumber);
   }
 
   before((done) => {

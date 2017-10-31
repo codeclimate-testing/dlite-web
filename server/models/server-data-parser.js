@@ -19,6 +19,7 @@ function parse(data) {
 
 
   return {
+    id:   application.id,
     legalName: {
       firstName:  application.first_name,
       middleName: application.middle_name,
