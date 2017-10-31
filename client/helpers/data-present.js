@@ -4,59 +4,57 @@ const value = (props) => {
   return !!(props && props.trim());
 };
 
+const hasAllAttributes = (props, attributes) => {
+  if (!props) { return; }
+
+  return attributes.every((attributeName) => {
+    return value(props[attributeName]);
+  });
+};
+
+const hasAnyAttributes = (props, attributes) => {
+  if (!props) { return; }
+
+  return attributes.some((attributeName) => {
+    return value(props[attributeName]);
+  });
+};
+
 const legalName = (props) => {
-  return props && value(props.lastName);
+  return hasAllAttributes(props, ['lastName']);
 };
 
 const date = (props) => {
-  return props && (
-    value(props.month) && value(props.day) && value(props.year)
-  );
+  return hasAllAttributes(props, ['month', 'day', 'year']);
 };
 
 const address = (props) => {
-  return props && (
-    value(props.street_1) || value(address.street_2) || value(props.city) || value(props.zip)
-  );
+  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip'])
 };
 
 const height = (props) => {
-  return props && value(props.feet);
+  return hasAllAttributes(props, ['feet']);
 }
 
 const socialSecurity = (props) => {
-  return props && (
-    value(props.part1) && value(props.part2) && value(props.part3)
-  );
+  return hasAllAttributes(props, ['part1', 'part2', 'part3'])
 }
 
 const suspendedLicenseInfo = (props) => {
-  return props && (
-    (value(props.month) && value(props.day) && value(props.year)) ||
-    value(props.reason) ||
-    value(props.isSuspended)
-  );
+  return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
 
 const existingDLIDInfo = (props) => {
-  return props && (
-    (value(props.month) && value(props.day) && value(props.year)) ||
-    value(props.DLIDNumber) ||
-    value(props.issuedBy) ||
-    value(props.hasExisting)
-  );
+  return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'hasExisting']);
 }
 
 const previousNamesInfo = (props) => {
-  return props && (
-    value(props.names) || value(props.hasPreviousNames)
-  );
+  return hasAnyAttributes(props, ['names', 'hasPreviousNames']);
 }
 
 const politicalContact = (props) => {
-  return props && (
-    (value(props.emailAddress) || value(props.phoneNumber)) && value(props.shouldContact)
-  );
+  return value(props.shouldContact) &&
+    hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
 }
 
 const application = (props) => {
