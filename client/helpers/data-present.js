@@ -59,6 +59,12 @@ const politicalContact = (props) => {
   );
 }
 
+const politicalPartyChoose = (props) => {
+    return props && (
+    value(props.politicalPartyChoose) && value(props.isSelected)
+  );
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -78,8 +84,7 @@ const application = (props) => {
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
-    value(props.politicalPartyChoose) ||
-    value(props.politicalPartyPreference) ||
+    politicalPartyChoose(props.politicalPartyChoose) ||
     value(props.ballotLanguage) ||
     value(props.optOut) ||
     politicalContact(props.politicalContact);
@@ -95,6 +100,7 @@ export {
   suspendedLicenseInfo,
   previousNamesInfo,
   existingDLIDInfo,
+  politicalPartyChoose,
   politicalContact,
   application
 };

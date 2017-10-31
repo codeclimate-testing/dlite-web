@@ -130,11 +130,10 @@ label.button.tap.selected {
   }
 }
 
-.political-party-preference-form {
+.political-party-preference {
   .tap.button {
     width: 120px;
     height: 35px;
-    padding-top: -20px;
   }
   .radio-selector {
     height: 130px;
@@ -145,7 +144,7 @@ label.button.tap.selected {
   }
 }
 
-.political-party-choose {
+.choose-party {
   .tap.button {
     width: 155px;
     height: 40px;

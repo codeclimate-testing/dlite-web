@@ -1,9 +1,6 @@
 'use strict';
 
 import React                  from 'react';
-
-import HomeLink               from '../home-link.jsx';
-import ContinueButton         from '../continue-button.jsx';
 import SelectorCollection     from '../selector-collection.jsx';
 
 const PARTIES = [ "American Independent Party",
@@ -15,26 +12,20 @@ const PARTIES = [ "American Independent Party",
                   "Other"
                 ];
 
-const Form = (props) => {
+const PoliticalPartyPreference = (props) => {
   return (
-    <div>
-      <HomeLink />
-
+    <div className='political-party-preference'>
       <h4>Please select a party below</h4>
-      <form onSubmit={ props.onSubmit } className='political-party-preference-form'>
-        <div className='inner-bottom'>
+       <div className='inner-bottom'>
           <SelectorCollection
-            name='politicalParty'
+            name='politicalPartyChoose'
             values={PARTIES}
-            onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
+            onChange={props.onChange}
+            selectedValue={props.selectedValue}
           />
         </div>
-
-        <ContinueButton disabled={props.continueDisabled}/>
-      </form>
     </div>
   );
 };
 
-export default Form;
+export default PoliticalPartyPreference;
