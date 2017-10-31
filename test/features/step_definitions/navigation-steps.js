@@ -121,11 +121,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the political party choose page', function(done){
-    navigateToPath('/apply/about-me/voter/political-party-choose', '.political-party-choose', done);
-  });
-
-  world.when('I visit the political party preference page', function(done){
-    navigateToPath('/apply/about-me/voter/political-party', '.political-party-preference-form', done);
+    navigateToPath('/apply/about-me/voter/choose-party', '.choose-party', done);
   });
 
   world.when('I visit app intro page', function(done){
@@ -245,11 +241,11 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to political party page', function(done){
-    assertOnPage('.political-party-preference-form', /about-me\/voter\/political-party/, done);
+    assertOnPage('.political-party-preference', /about-me\/voter\/political-party/, done);
   });
 
   world.then('I will be taken to the political party choose page', function(done){
-    assertOnPage('.political-party-choose', /about-me\/voter\/political-party-choose/, done);
+    assertOnPage('.choose-party', /about-me\/voter\/choose-party/, done);
   });
 
   world.then('I will be taken to the success visit page', function(done){

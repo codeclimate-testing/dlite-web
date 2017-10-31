@@ -34,8 +34,7 @@ import EligibilityRequirements                from './voter/eligibility-requirem
 import OptOut                                 from './voter/opt-out-form-container.jsx';
 import VoterPreferencesIntro                  from '../presentations/voter/voter-preferences-intro-form.jsx';
 import VoterPreferencesIntroPreregistered     from '../presentations/voter/voter-preferences-intro-preregistered-form.jsx';
-import PoliticalPartyChoose                   from './voter/political-party-choose-form-container.jsx';
-import PoliticalPartyPreference               from './voter/political-party-preference-form-container.jsx';
+import PoliticalPartyChoose                   from './voter/choose-party-form-container.jsx';
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import PoliticalContact                       from './voter/political-contact-form-container.jsx';
@@ -76,8 +75,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/opt-out') } component={OptOut} />
         <Route path={ alicePath('/about-me/voter/voter-preferences-intro') } component={VoterPreferencesIntro} />
         <Route path={ alicePath('/about-me/voter/voter-preferences-intro-preregistered') } component={VoterPreferencesIntroPreregistered} />
-        <Route path={ alicePath('/about-me/voter/political-party-choose') } component={PoliticalPartyChoose} />
-        <Route path={ alicePath('/about-me/voter/political-party') } component={PoliticalPartyPreference} />
+        <Route path={ alicePath('/about-me/voter/choose-party') } component={PoliticalPartyChoose} />
         <Route path={ alicePath('/about-me/voter/ballot-language') } component={BallotLanguage} />
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/political-contact') } component={PoliticalContact} />

@@ -364,20 +364,15 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with eligibility requirements');
     });
 
-    it('is true when there is political party choose', function(){
+     it('is true when there is political party choose', function(){
       let data = {
-        politicalPartyChoose: 'Yes'
+        politicalPartyChoose: {
+          politicalPartyChoose:  'Yes',
+          isSelected:   'Independent'
+        }
       };
 
       assert(dataPresent.application(data), 'Data not present with political party choose');
-    });
-
-    it('is true when there is political party preference', function(){
-      let data = {
-        politicalPartyPreference: 'Independent'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with political party preference');
     });
 
     it('is true when there is political contact', function(){
