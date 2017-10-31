@@ -37,10 +37,8 @@ const height = (props) => {
 }
 
 const organDonation = (props) => {
-  return props && (
-    value(props.donate) && value(props.contribute)
-  );
-}
+  return hasAllAttributes(props, ['donate', 'contribute'])
+};
 
 const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3'])
