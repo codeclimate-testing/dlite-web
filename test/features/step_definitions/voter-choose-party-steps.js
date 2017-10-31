@@ -7,10 +7,25 @@ module.exports = function(world) {
 
   world.when('I select no political party', function(done){
     browser
-    .click('label[for="I do not wish to choose a political party"]')
+    .click('label[for="isSelectedI do not wish to choose a political party"]')
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I select choose party Yes', function(done){
+    browser
+    .click('label[for="isSelectedYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select choose party No', function(done){
+    browser
+    .click('label[for="isSelectedNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
 
   world.then('I will see Yes for my political party choice', function(done) {
     browser
@@ -34,19 +49,19 @@ module.exports = function(world) {
 
     world.then('I will see buttons for each political party', function(done){
     browser
-      .html('label[for="American Independent Party"]')
+      .html('label[for="politicalPartyChooseAmerican Independent Party"]')
       .then((button) => { assert.ok(button, 'Selector for American Independent Party missing')})
-      .html('label[for="Libertarian Party"]')
+      .html('label[for="politicalPartyChooseLibertarian Party"]')
       .then((button) => { assert.ok(button, 'Selector for Libertarian Party missing')})
-      .html('label[for="Democratic Party"]')
+      .html('label[for="politicalPartyChooseDemocratic Party"]')
       .then((button) => { assert.ok(button, 'Selector for Democratic Party missing')})
-      .html('label[for="Green Party"]')
+      .html('label[for="politicalPartyChooseGreen Party"]')
       .then((button) => { assert.ok(button, 'Selector for Green Party missing')})
-      .html('label[for="Peace and Freedom Party"]')
+      .html('label[for="politicalPartyChoosePeace and Freedom Party"]')
       .then((button) => { assert.ok(button, 'Selector for Peace and Freedom Party missing')})
-      .html('label[for="Republican Party"]')
+      .html('label[for="politicalPartyChooseRepublican Party"]')
       .then((button) => { assert.ok(button, 'Selector for Republican Party missing')})
-      .html('label[for="Other"]')
+      .html('label[for="politicalPartyChooseOther"]')
       .then((button) => { assert.ok(button, 'Selector for Other missing')})
       .then(() => { done(); })
       .catch(done);
@@ -54,11 +69,11 @@ module.exports = function(world) {
 
   world.when('I select a political party button', function(done){
     browser
-      .click('label[for="Libertarian Party"]')
+      .click('label[for="politicalPartyChooseLibertarian Party"]')
       .then(() => { done(); })
       .catch(done);
   });
-  
+
   world.then('I will see Yes and political party selected', function(done){
     browser
       .text('.button.selected')
@@ -79,7 +94,7 @@ module.exports = function(world) {
 
   world.when('I change my political party', function(done){
     browser
-    .click('label[for="Peace and Freedom Party"]')
+    .click('label[for="politicalPartyChoosePeace and Freedom Party"]')
     .then(() => { done(); })
     .catch(done);
   });

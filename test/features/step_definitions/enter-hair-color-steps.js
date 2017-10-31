@@ -7,23 +7,23 @@ module.exports = function (world) {
 
   world.then('I will see select buttons for all the hair colors', function (done) {
     browser
-      .html('label[for="Auburn"]')
+      .html('label[for="hairColorAuburn"]')
       .then((button) => { assert.ok(button, 'Selector for Auburn hair color missing')})
-      .html('label[for="Bald"]')
+      .html('label[for="hairColorBald"]')
       .then((button) => { assert.ok(button, 'Selector for Bald hair color missing')})
-      .html('label[for="Black"]')
+      .html('label[for="hairColorBlack"]')
       .then((button) => { assert.ok(button, 'Selector for Black hair color missing')})
-      .html('label[for="Blonde"]')
+      .html('label[for="hairColorBlonde"]')
       .then((button) => { assert.ok(button, 'Selector for Blonde hair color missing')})
-      .html('label[for="Brown"]')
+      .html('label[for="hairColorBrown"]')
       .then((button) => { assert.ok(button, 'Selector for Brown hair color missing')})
-      .html('label[for="Gray"]')
+      .html('label[for="hairColorGray"]')
       .then((button) => { assert.ok(button, 'Selector for Gray hair color missing')})
-      .html('label[for="Red"]')
+      .html('label[for="hairColorRed"]')
       .then((button) => { assert.ok(button, 'Selector for Red hair color missing')})
-      .html('label[for="White"]')
+      .html('label[for="hairColorWhite"]')
       .then((button) => { assert.ok(button, 'Selector for White hair color missing')})
-      .html('label[for="Other"]')
+      .html('label[for="hairColorOther"]')
       .then((button) => { assert.ok(button, 'Selector for Other hair color missing')})
       .then(() => { done(); })
       .catch(done);
@@ -31,7 +31,7 @@ module.exports = function (world) {
 
   world.and('I select a hair color', function (done) {
     browser
-      .click('label[for="Auburn"]')
+      .click('label[for="hairColorAuburn"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -50,7 +50,7 @@ module.exports = function (world) {
     browser
       .click('a.hair-color')
       .waitForSelector('.hair-color-form')
-      .click('label[for="Auburn"]')
+      .click('label[for="hairColorAuburn"]')
       .click('input[type="submit"]')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -68,7 +68,7 @@ module.exports = function (world) {
 
   world.and('I change my hair color', function (done) {
     browser
-      .click('label[for="Red"]')
+      .click('label[for="hairColorRed"]')
       .then(() => { done(); })
       .catch(done);
   });

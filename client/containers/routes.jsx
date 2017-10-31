@@ -21,8 +21,7 @@ import Height                                 from './apply/height-form-containe
 import Weight                                 from './apply/weight-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
-import Organ                                  from './apply/organ-form-container.jsx';
-import DonateContribution                     from './apply/donate-contribution-form-container.jsx';
+import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import SuspendedLicenseDecision               from './apply/suspended-license-decision-form-container.jsx';
 import SuspendedLicenseInfo                   from './apply/suspended-license-info-form-container.jsx';
 import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
@@ -62,8 +61,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/height' ) } component={Height} />
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
-        <Route path={ alicePath('/about-me/organ' ) } component={Organ} />
-        <Route path={ alicePath('/about-me/donate-contribution' ) } component={DonateContribution} />
+        <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/revoked-suspended' ) } component={SuspendedLicenseDecision} />
         <Route path={ alicePath('/about-me/enter-revoked-suspended' ) } component={SuspendedLicenseInfo} />
         <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />

@@ -7,9 +7,9 @@ module.exports = function(world) {
 
   world.then('I will see select buttons for male and female', function(done) {
     browser
-      .html('label[for="Female"]')
+      .html('label[for="sexFemale"]')
       .then((button) => { assert.ok(button, 'Selector for Female missing')})
-      .html('label[for="Male"]')
+      .html('label[for="sexMale"]')
       .then((button) => { assert.ok(button, 'Selector for Male missing')})
       .then(() => { done(); })
       .catch(done);
@@ -17,7 +17,7 @@ module.exports = function(world) {
 
   world.when('I select my sex', function(done) {
     browser
-      .click('label[for="Female"]')
+      .click('label[for="sexFemale"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -44,7 +44,7 @@ module.exports = function(world) {
     browser
       .click('a.sex')
       .waitForSelector('.sex-form')
-      .click('label[for="Female"]')
+      .click('label[for="sexFemale"]')
       .click('input[type="submit"]')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -62,7 +62,7 @@ module.exports = function(world) {
 
   world.when('I change my sex', function(done) {
     browser
-      .click('label[for="Male"]')
+      .click('label[for="sexMale"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -77,4 +77,3 @@ module.exports = function(world) {
       .catch(done);
   });
 };
-

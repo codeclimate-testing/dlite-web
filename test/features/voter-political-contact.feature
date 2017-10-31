@@ -7,8 +7,8 @@ Feature: Contact details for political/voter flow
     Given I go to the new online DL application page
     When I visit political contact details page
     Then I will see that the Continue button is enabled
-    And I see three buttons labelled Yes, No and Skip Question
-    When I select Yes
+    And I see three political contact buttons labelled Yes, No and Skip Question
+    When I select political contact Yes
     Then I will be shown form to enter my political contact details
     And I will see that the Continue button is disabled
     And I enter my email
@@ -22,7 +22,7 @@ Feature: Contact details for political/voter flow
   Scenario: I choose not to provide my conatct details
     Given I go to the new online DL application page
     When I visit political contact details page
-    When I select No
+    When I select political contact No
     When I click to submit
     Then I will be taken to voter registration complete page
     And I go to the page with my summary
@@ -31,7 +31,7 @@ Feature: Contact details for political/voter flow
   Scenario: I choose to skip
     Given I go to the new online DL application page
     When I visit political contact details page
-    When I select Skip Question
+    When I select political contact Skip Question
     When I click to submit
     Then I will be taken to voter registration complete page
     And I go to the page with my summary

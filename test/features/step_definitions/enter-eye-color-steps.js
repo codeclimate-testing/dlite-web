@@ -7,15 +7,15 @@ module.exports = function (world) {
 
   world.then('I will see select buttons for Blue, Gray, Green, Hazel and Brown', function(done) {
     browser
-      .html('label[for="Blue"]')
+      .html('label[for="eyeColorBlue"]')
       .then((button) => { assert.ok(button, 'Selector for Blue eye color missing')})
-      .html('label[for="Gray"]')
+      .html('label[for="eyeColorGray"]')
       .then((button) => { assert.ok(button, 'Selector for Gray eye color missing')})
-      .html('label[for="Green"]')
+      .html('label[for="eyeColorGreen"]')
       .then((button) => { assert.ok(button, 'Selector for Green eye color missing')})
-      .html('label[for="Hazel"]')
+      .html('label[for="eyeColorHazel"]')
       .then((button) => { assert.ok(button, 'Selector for Hazel eye color missing')})
-      .html('label[for="Brown"]')
+      .html('label[for="eyeColorBrown"]')
       .then((button) => { assert.ok(button, 'Selector for Brown eye color missing')})
       .then(() => { done(); })
       .catch(done);
@@ -24,7 +24,7 @@ module.exports = function (world) {
   world.given('I have already entered my eye color', function(done){
     browser
       .click('a.eye-color')
-      .click('label[for="Blue"]')
+      .click('label[for="eyeColorBlue"]')
       .click('input[type="submit"]')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -34,7 +34,7 @@ module.exports = function (world) {
 
   world.when('I select an eye color', function(done){
     browser
-      .click('label[for="Blue"]')
+      .click('label[for="eyeColorBlue"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -49,7 +49,7 @@ module.exports = function (world) {
 
   world.and('I change my eye color', function(done){
     browser
-      .click('label[for="Brown"]')
+      .click('label[for="eyeColorBrown"]')
       .then(() => { done(); })
       .catch(done);
   });

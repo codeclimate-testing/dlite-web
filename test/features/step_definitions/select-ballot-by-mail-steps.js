@@ -15,6 +15,21 @@ module.exports = function(world) {
     });
   });
 
+  world.when('I select ballot by mail Yes', function(done){
+    browser
+    .click('label[for="ballotByMailYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select ballot by mail No', function(done){
+    browser
+    .click('label[for="ballotByMailNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+
   world.then('I will see text for ballot by mail - No', function(done){
     browser
     .waitForSelector('.faq-ballot-by-mail-no')

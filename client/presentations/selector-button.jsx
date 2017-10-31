@@ -19,14 +19,14 @@ const SelectorButton = function(props) {
   return (
     <label
       className='radio-selector unit relative'
-      htmlFor={props.value}
+      htmlFor={props.name + props.value}
       ref={ (element) => { return labelElement = element; } }
     >
       <div className='off-screen'>
         <input
           type='radio'
           name={props.name}
-          id={props.value}
+          id={props.name + props.value}
           value={props.value}
           checked={props.selected}
           onChange={props.onChange}
@@ -45,4 +45,3 @@ const SelectorButton = function(props) {
 };
 
 export default SelectorButton;
-

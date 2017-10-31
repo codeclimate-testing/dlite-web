@@ -21,6 +21,20 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.when('I select exisiting DL/ID Yes', function(done){
+    browser
+    .click('label[for="hasExistingYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select existing DL/ID No', function(done){
+    browser
+    .click('label[for="hasExistingNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
   world.when('I enter my existing DL/ID card number', function(done){
     browser
       .type('#DLIDNumber', 'DMV10001')

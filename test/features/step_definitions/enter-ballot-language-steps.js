@@ -7,25 +7,25 @@ module.exports = function (world) {
 
   world.then('I will see select buttons for English, Chinese, Japanese, Spanish, Thai, Korean, Tagalog, Hindi, Khmer, and Vietnamese', function(done) {
     browser
-      .html('label[for="English"]')
+      .html('label[for="ballotLanguageEnglish"]')
       .then((button) => { assert.ok(button, 'Selector for English language missing')})
-      .html('label[for="Chinese"]')
+      .html('label[for="ballotLanguageChinese"]')
       .then((button) => { assert.ok(button, 'Selector for Chinese language missing')})
-      .html('label[for="Japanese"]')
+      .html('label[for="ballotLanguageJapanese"]')
       .then((button) => { assert.ok(button, 'Selector for Japanese languager missing')})
-      .html('label[for="Spanish"]')
+      .html('label[for="ballotLanguageSpanish"]')
       .then((button) => { assert.ok(button, 'Selector for Spanish languager missing')})
-      .html('label[for="Thai"]')
+      .html('label[for="ballotLanguageThai"]')
       .then((button) => { assert.ok(button, 'Selector for Thai languager missing')})
-      .html('label[for="Korean"]')
+      .html('label[for="ballotLanguageKorean"]')
       .then((button) => { assert.ok(button, 'Selector for Korean languager missing')})
-      .html('label[for="Tagalog"]')
+      .html('label[for="ballotLanguageTagalog"]')
       .then((button) => { assert.ok(button, 'Selector for Tagalog languager missing')})
-      .html('label[for="Hindi"]')
+      .html('label[for="ballotLanguageHindi"]')
       .then((button) => { assert.ok(button, 'Selector for Hindi languager missing')})
-      .html('label[for="Khmer"]')
+      .html('label[for="ballotLanguageKhmer"]')
       .then((button) => { assert.ok(button, 'Selector for Khmer languager missing')})
-      .html('label[for="Vietnamese"]')
+      .html('label[for="ballotLanguageVietnamese"]')
       .then((button) => { assert.ok(button, 'Selector for Vietnamese languager missing')})
       .then(() => { done(); })
       .catch(done);
@@ -33,7 +33,7 @@ module.exports = function (world) {
 
   world.when('I select a language', function(done){
     browser
-      .click('label[for="Thai"]')
+      .click('label[for="ballotLanguageThai"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -59,7 +59,7 @@ module.exports = function (world) {
   world.given('I have already entered my language', function(done){
     browser
       .click('a.ballot-language')
-      .click('label[for="Thai"]')
+      .click('label[for="ballotLanguageThai"]')
       .click('input[type="submit"]')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -69,7 +69,7 @@ module.exports = function (world) {
 
   world.when('I change my language', function(done){
     browser
-      .click('label[for="Korean"]')
+      .click('label[for="ballotLanguageKorean"]')
       .then(() => { done(); })
       .catch(done);
   });

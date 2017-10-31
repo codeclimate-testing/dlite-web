@@ -11,7 +11,22 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
-  
+
+  world.when('I select previously used names Yes', function(done){
+    browser
+    .click('label[for="hasPreviousNamesYes"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.when('I select previously used names No', function(done){
+    browser
+    .click('label[for="hasPreviousNamesNo"]')
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+
   world.then('I will see Yes for having a previous name', function(done){
     browser
       .text()

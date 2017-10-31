@@ -10,8 +10,7 @@ import EyeColor                    from './eye-color.jsx';
 import HairColor                   from './hair-color.jsx';
 import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
-import Organ                       from './organ.jsx';
-import DonateContribution          from './donate-contribution.jsx';
+import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
 import SuspendedLicenseInfo        from './suspended-license-info.jsx';
 import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
@@ -36,8 +35,7 @@ export {
   HairColor,
   Height,
   Weight,
-  Organ,
-  DonateContribution,
+  OrganDonation,
   SocialSecurity,
   SuspendedLicenseInfo,
   ExistingDlIDInfo,
