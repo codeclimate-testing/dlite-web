@@ -51,12 +51,12 @@ describe('clientDataParser', function() {
   it('correctly extracts the email', function() {
     let email = parsedData.emails[0];
     assert.equal(email.application_id, data.id);
-    assert.equal(email.address, data.email);
+    assert.equal(email.address, data.politicalContact.emailAddress);
   });
 
   it('correctly extracts the phone number', function() {
     let phoneNumber = parsedData.phone_numbers[0];
     assert.equal(phoneNumber.application_id, data.id);
-    assert.equal(phoneNumber.number, data.phoneNumber);
+    assert.equal(phoneNumber.number, data.politicalContact.phoneNumber);
   });
 });

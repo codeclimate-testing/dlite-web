@@ -81,7 +81,7 @@ describe('createApplication', function() {
       .then((records) => {
         assert(records.phone_numbers[0].id);
         assert.equal(records.phone_numbers[0].application_id, data.application.id);
-        assert.equal(records.phone_numbers[0].number, data.phone_numbers[0].numbers);
+        assert.equal(records.phone_numbers[0].number, data.phone_numbers[0].number);
       })
       .then(done)
       .catch(done);

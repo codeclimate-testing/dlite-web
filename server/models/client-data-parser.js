@@ -62,4 +62,4 @@ function extractPhoneNumber(data) {
   }];
 }
 
-module.exports.parse = parse;
+module.exports = parse;

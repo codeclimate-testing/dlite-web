@@ -82,7 +82,7 @@ describe('getApplication', function() {
         .then((records) => {
           assert(records.phone_numbers[0].id);
           assert.equal(records.phone_numbers[0].application_id, data.application.id);
-          assert.equal(records.phone_numbers[0].address, data.phone_numbers[0].number);
+          assert.equal(records.phone_numbers[0].number, data.phone_numbers[0].number);
           done();
         })
         .catch(done);

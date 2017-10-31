@@ -6,18 +6,18 @@ const getAppModel     = require('../models/db/get-application');
 const createAppModel  = require('../models/db/create-application');
 
 function createApplication(req, res) {
-  let parsedData = clientParser.parse(req.body.application);
+  let parsedData = clientParser(req.body.application);
   createAppModel(parsedData)
   .then(function(data) {
-    res.send(data);
+    let _parsedData = serverParser(data);
+    res.send(_parsedData);
   });
 }
 
 function getApplication(req, res) {
   getAppModel(req.params.id)
   .then(function(data) {
-    console.log(data);
-    let parsedData = serverParser.parse(data);
+    let parsedData = serverParser(data);
     res.send(parsedData);
   });
 }

@@ -48,4 +48,4 @@ function parse(data) {
   };
 }
 
-module.exports.parse = parse;
+module.exports = parse;
