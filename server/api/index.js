@@ -1,37 +1,9 @@
-const router = require('express').Router();
-const userDataService = require('../services/user-data');
+'use strict';
 
-router.get('/user-data/:uuid', getUserDataHandler);
-router.post('/user-data', postUserDataHandler);
+const router      = require('express').Router();
+const ctrl  = require('../controllers');
 
-
-
-function getUserDataHandler(req, res) {
-  userDataService.selectFromAllTables(req.params.uuid)
-    .then(function (data) {
-      res.send(data);
-    });
-}
-
-function postUserDataHandler(req, res) {
-  userDataService.insertApplication(req.body.application)
-    .then(() => {
-      return userDataService.insertAddress(req.body.address)
-    })
-    .then(() => {
-      return userDataService.insertEmail(req.body.email)
-    })
-    .then(() => {
-      return userDataService.insertPhoneNumber(req.body.phoneNumber)
-    })
-    .then(() => {
-      return userDataService.selectFromAllTables(req.body.application.uuid)
-        .then(function (data) {
-          res.send(data);
-        });
-    });
-}
+router.get('/application/:id', ctrl.getApplication);
+router.post('/application', ctrl.createApplication);
 
 module.exports = router;
-module.exports.getUserDataHandler = getUserDataHandler;
-module.exports.postUserDataHandler = postUserDataHandler;

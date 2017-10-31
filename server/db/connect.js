@@ -6,4 +6,3 @@ const config  = require('../../knexfile');
 module.exports = function connect() {
   return knex(config);
 };
-

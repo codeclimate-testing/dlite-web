@@ -16,7 +16,8 @@
     "test:unit:coverage": "node_modules/.bin/istanbul cover -dir=coverage/unit node_modules/.bin/_mocha -- --recursive test/server",
     "test:bdd:coverage": "node_modules/.bin/istanbul cover -dir=coverage/bdd node_modules/.bin/cucaroo",
     "test:security": "node_modules/.bin/nsp check",
-    "lint": "node_modules/.bin/jshint test/ server/ server.js index.js"
+    "lint": "node_modules/.bin/jshint test/ server/ server.js index.js",
+    "schema:export": "node bin/export-db-schema.js"
   },
   "author": "Kane Baccigalupi",
   "license": "MIT",
@@ -47,6 +48,7 @@
     "nodemon": "^1.11.0",
     "nsp": "^2.6.3",
     "pg": "^7.3.0",
+    "pg-json-schema-export": "^0.13.7",
     "phantomjs": "^2.1.7",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.5",
