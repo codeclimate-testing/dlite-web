@@ -1,10 +1,11 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const PostgresSchema = require('pg-json-schema-export');
 const connectionConfig = require('../knexfile').connection;
 
-const schemaPath = __dirname + '/../server/db/schema.json';
+const schemaPath = path.join(__dirname, '/../server/db/schema.json');
 
 PostgresSchema.toJSON(connectionConfig, 'public')
   .then(function (schemas) {

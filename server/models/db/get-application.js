@@ -13,7 +13,7 @@ module.exports = function getApplication(id) {
     db('emails').where('application_id', id)
       .then((records) => { aggregate.emails = records; }),
     db('phone_numbers').where('application_id', id)
-      .then((records) => { aggregate.phone_numbers = records; }),
+      .then((records) => { aggregate.phone_numbers = records; })
   ]).then(() => {
     if (!aggregate.application) { return undefined; }
     return aggregate;

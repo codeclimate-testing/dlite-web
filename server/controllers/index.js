@@ -11,6 +11,8 @@ function createApplication(req, res) {
   .then(function(data) {
     let _parsedData = serverParser(data);
     res.send(_parsedData);
+  }).catch(function(err) {
+    res.status(err.statusCode || 500).json(err);
   });
 }
 
@@ -19,6 +21,8 @@ function getApplication(req, res) {
   .then(function(data) {
     let parsedData = serverParser(data);
     res.send(parsedData);
+  }).catch(function(err) {
+    res.status(err.statusCode || 500).json(err);
   });
 }
 

@@ -9,7 +9,7 @@ function parse(data) {
     { emails: extractEmail(data) },
     { phone_numbers: extractPhoneNumber(data) }
   );
-};
+}
 
 function extractApplication(data) {
   let legalName = data.legalName || {};
