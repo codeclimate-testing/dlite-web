@@ -12,7 +12,7 @@ import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
 import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
-import SuspendedLicenseInfo        from './suspended-license-info.jsx';
+import PrivilegeRemovedHistory     from './privilege-removed-history.jsx';
 import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
 import NamesHistory                from './names-history.jsx';
 import CitizenStatus               from './citizen-status.jsx';
@@ -37,7 +37,7 @@ export {
   Weight,
   OrganDonation,
   SocialSecurity,
-  SuspendedLicenseInfo,
+  PrivilegeRemovedHistory,
   ExistingDlIDInfo,
   NamesHistory,
   CitizenStatus,

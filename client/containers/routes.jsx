@@ -22,11 +22,11 @@ import Weight                                 from './apply/weight-form-containe
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
-import SuspendedLicenseDecision               from './apply/suspended-license-decision-form-container.jsx';
-import SuspendedLicenseInfo                   from './apply/suspended-license-info-form-container.jsx';
+import PrivilegeRemovedHistory                from './apply/privilege-removed-history-form-container.jsx';
 import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
 import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
+import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter/eligibility-requirements-form-container.jsx';
@@ -61,11 +61,11 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
-        <Route path={ alicePath('/about-me/revoked-suspended' ) } component={SuspendedLicenseDecision} />
-        <Route path={ alicePath('/about-me/enter-revoked-suspended' ) } component={SuspendedLicenseInfo} />
+        <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
         <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />
         <Route path={ alicePath('/about-me/dl-id-number') } component={ExistingDLIDInfo} />
         <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
+        <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
@@ -79,6 +79,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-contact') } component={PoliticalContact} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
+
       </div>
     );
   }
