@@ -12,13 +12,13 @@ import navigateOnSubmit                    from '../../helpers/navigate-on-submi
 import * as dataPresent                    from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-    let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
-    let showEnterRevokedSuspended         = false;
-    let onSubmit                          = navigateOnSubmit('/about-me/social-security', props);
+  let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
+  let showEnterRevokedSuspended         = false;
+  let onSubmit                          = navigateOnSubmit('/about-me/veterans-history', props);
 
 if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
-    showEnterRevokedSuspended  = false;
-    continueDisabled = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
+  showEnterRevokedSuspended  = false;
+  continueDisabled = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
 
   return (
       <div>
@@ -26,14 +26,14 @@ if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
 
    <form onSubmit={onSubmit}>
     <PrivilegeRemovedHistory
-            onChange                  ={props.onChange}
-            selectedValue             ={props.privilegeRemovedHistory.isSuspended}
+        onChange                  ={props.onChange}
+        selectedValue             ={props.privilegeRemovedHistory.isSuspended}
     />
     <EnterRevokedSuspended
-            onChange                 = {props.onChange}
-            privilegeRemovedHistory  = {props.privilegeRemovedHistory}
-          />
-          <ContinueButton disabled={continueDisabled} />
+        onChange                 = {props.onChange}
+        privilegeRemovedHistory  = {props.privilegeRemovedHistory}
+     />
+        <ContinueButton disabled={continueDisabled} />
         </form>
       </div>
     );
