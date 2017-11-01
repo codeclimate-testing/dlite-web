@@ -93,31 +93,31 @@ describe('dataPresent', function() {
     });
   });
 
-  describe('#suspendedLicenseInfo', function() {
+  describe('#privilegeRemovedHistory', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.suspendedLicenseInfo({month: '10', day: '15', year: '1985'}),
+        dataPresent.privilegeRemovedHistory({month: '10', day: '15', year: '1985'}),
         'suspended license date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.suspendedLicenseInfo({month: '10', year: '1985'}),
+        !dataPresent.privilegeRemovedHistory({month: '10', year: '1985'}),
         'suspended license date present with only parts of date'
       );
     });
 
     it('is true when ony reason is present', function() {
       assert(
-        dataPresent.suspendedLicenseInfo({'reason': 'Testing for your presence'}),
+        dataPresent.privilegeRemovedHistory({'reason': 'Testing for your presence'}),
         'suspended license not present with just reason field'
       );
     });
 
     it('is true when ony isSuspended is present', function() {
       assert(
-        dataPresent.suspendedLicenseInfo({'isSuspended': 'Yes'}),
+        dataPresent.privilegeRemovedHistory({'isSuspended': 'Yes'}),
         'suspended license not present with just isSuspended field'
       );
     });
@@ -302,7 +302,7 @@ describe('dataPresent', function() {
 
     it('is true when there is suspended license info', function(){
       let data = {
-        suspendedLicenseInfo: {
+        privilegeRemovedHistory: {
           isSuspended:  'Yes',
           month:        '10',
           day:          '15',
