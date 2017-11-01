@@ -52,8 +52,12 @@ const existingDLIDInfo = (props) => {
   return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'hasExisting']);
 }
 
-const previousNamesInfo = (props) => {
-  return hasAnyAttributes(props, ['names', 'hasPreviousNames']);
+const namesHistory = (props) => {
+  return hasAllAttributes(props, ['hasUsedPreviousNames', 'previousNames']);
+}
+
+const hasPreviousNames = (props) => {
+  return hasAllAttributes(props, ['hasUsedPreviousNames'])
 }
 
 const politicalContact = (props) => {
@@ -80,7 +84,8 @@ const application = (props) => {
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
     suspendedLicenseInfo(props.suspendedLicenseInfo) ||
-    previousNamesInfo(props.previousNamesInfo) ||
+    namesHistory(props.namesHistory) ||
+    hasPreviousNames(props.namesHistory) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
@@ -100,9 +105,10 @@ export {
   organDonation,
   socialSecurity,
   suspendedLicenseInfo,
-  previousNamesInfo,
+  namesHistory,
   existingDLIDInfo,
   politicalPartyChoose,
   politicalContact,
+  hasPreviousNames,
   application
 };

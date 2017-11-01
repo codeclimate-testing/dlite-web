@@ -14,7 +14,7 @@ import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
 import SuspendedLicenseInfo        from './suspended-license-info.jsx';
 import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
-import PreviousNamesInfo           from './previous-names-info.jsx';
+import NamesHistory                from './names-history.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
@@ -39,7 +39,7 @@ export {
   SocialSecurity,
   SuspendedLicenseInfo,
   ExistingDlIDInfo,
-  PreviousNamesInfo,
+  NamesHistory,
   CitizenStatus,
   EligibilityRequirements,
   BallotByMail,

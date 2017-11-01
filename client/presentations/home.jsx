@@ -32,8 +32,7 @@ const linkData = [
   {description: 'has existing DL/ID',                     path: '/about-me/license-history'},
   {description: 'existing DL/ID info',                    path: '/about-me/dl-id-number'},
   {description: 'is suspended license',                   path: '/about-me/revoked-suspended'},
-  {description: 'previous names',                         path: '/about-me/previous-names/'},
-  {description: 'previous names info',                    path: '/about-me/enter-previous-names/'},
+  {description: 'names history',                          path: '/about-me/names-history/'},
 
   {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},
