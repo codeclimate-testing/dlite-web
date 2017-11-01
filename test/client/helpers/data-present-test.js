@@ -327,7 +327,7 @@ describe('dataPresent', function() {
 
     it('is true when there is existing DL/ID info', function(){
       let data = {
-        existingDLIDInfo: {
+        dlidHistory: {
           DLIDNumber:   'DMV001',
           issuedBy:     'California',
           month:        '10',
