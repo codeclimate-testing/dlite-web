@@ -144,10 +144,6 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/revoked-suspended', '.is-suspended-license-form', done);
   });
 
-  world.when('I visit the page to enter my suspended license info', function(done) {
-    navigateToPath('/apply/about-me/enter-revoked-suspended', '.suspended-license-form', done);
-  });
-
   world.when('I visit the page to choose if I ever had previous names', function(done) {
     navigateToPath('/apply/about-me/previous-names', '.has-previous-names-form', done);
   });

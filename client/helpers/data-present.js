@@ -44,7 +44,7 @@ const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3'])
 }
 
-const suspendedLicenseInfo = (props) => {
+const privilegeRemovedHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
 
@@ -79,7 +79,7 @@ const application = (props) => {
     value(props.weight) ||
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
-    suspendedLicenseInfo(props.suspendedLicenseInfo) ||
+    privilegeRemovedHistory(props.privilegeRemovedHistory) ||
     previousNamesInfo(props.previousNamesInfo) ||
     existingDLIDInfo(props.existingDLIDInfo) ||
     value(props.citizenStatus) ||
@@ -99,7 +99,7 @@ export {
   height,
   organDonation,
   socialSecurity,
-  suspendedLicenseInfo,
+  privilegeRemovedHistory,
   previousNamesInfo,
   existingDLIDInfo,
   politicalPartyChoose,

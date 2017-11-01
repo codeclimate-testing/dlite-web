@@ -27,8 +27,6 @@ const linkData = [
   {description: 'weight',                                 path: '/about-me/weight'},
   {description: 'social security',                        path: '/about-me/social-security'},
   {description: 'organ donation',                         path: '/about-me/organ-donation'},
-  {description: 'has suspended license',                  path: '/about-me/revoked-suspended'},
-  {description: 'suspended license info',                 path: '/about-me/enter-revoked-suspended'},
   {description: 'has existing DL/ID',                     path: '/about-me/license-history'},
   {description: 'existing DL/ID info',                    path: '/about-me/dl-id-number'},
   {description: 'is suspended license',                   path: '/about-me/revoked-suspended'},

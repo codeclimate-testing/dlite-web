@@ -3,19 +3,14 @@
 import React from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
-import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
 
 const VALUES = ['Yes', 'No'];
 
-const Form = (props) => {
+const PrivilegeRemovedHistory = (props) => {
   return (
-    <div>
-      <HomeLink />
-
+    <div className='is-suspended-license-form'>
       <h4>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h4>
-      <form onSubmit={ props.onSubmit } className='is-suspended-license-form'>
-        <div className='inner-bottom'>
+      <div className='inner-bottom'>
           <SelectorCollection
             name='isSuspended'
             values={VALUES}
@@ -23,10 +18,8 @@ const Form = (props) => {
             selectedValue={ props.selectedValue }
           />
         </div>
-        <ContinueButton disabled={props.continueDisabled}/>
-      </form>
-    </div>
+      </div>
   );
 };
 
-export default Form;
+export default PrivilegeRemovedHistory;
