@@ -7,9 +7,6 @@ engines:
       - javascript
   eslint:
     enabled: true
-    checks:
-      no-process-exit:
-        enabled: false
   csslint:
     enabled: true
   fixme:
