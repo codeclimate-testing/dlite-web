@@ -141,11 +141,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose if license was suspended', function(done){
-    navigateToPath('/apply/about-me/revoked-suspended', '.is-suspended-license-form', done);
-  });
-
-  world.when('I visit the page to enter my suspended license info', function(done) {
-    navigateToPath('/apply/about-me/enter-revoked-suspended', '.suspended-license-form', done);
+    navigateToPath('/apply/about-me/privilege-removed-history', '.is-suspended-license-form', done);
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
@@ -277,11 +273,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to revoke or suspended license page', function(done){
-    assertOnPage('.is-suspended-license-form', /apply\/about-me\/revoked-suspended/, done);
-  });
-
-  world.then('I will be taken to suspended license info page', function(done){
-    assertOnPage('.suspended-license-form', /about-me\/enter-revoked-suspended/, done);
+    assertOnPage('.is-suspended-license-form', /apply\/about-me\/privilege-removed-history/, done);
   });
 
   world.then('I will be taken to previous names page', function(done) {
@@ -294,5 +286,9 @@ module.exports = function(world) {
 
   world.then('I will be taken to page to enter existing DL/ID info', function(done) {
     assertOnPage('.existing-dl-id-number-form', /about-me\/dl-id-number/, done)
+  });
+  
+  world.then('I will be on the page for veterans history', function(done) {
+    assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
   });
 };
