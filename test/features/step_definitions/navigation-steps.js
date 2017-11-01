@@ -148,16 +148,12 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/previous-names', '.has-previous-names-form', done);
   });
 
-  world.when('I visit the page to enter my existing DL/ID license info', function(done) {
-    navigateToPath('/apply/about-me/dl-id-number', '.existing-dl-id-number-form', done);
-  });
-
   world.when('I visit the page to enter my previously used names', function(done) {
     navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-info-form', done);
   });
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
-    navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
+    navigateToPath('/apply/about-me/dlid-history', '.has-existing-dl-id-form', done);
   });
 
   world.when('I visit political contact details page', function(done){
@@ -281,11 +277,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page to choose if I have existing license', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /about-me\/license-history/, done);
-  });
-
-  world.then('I will be taken to page to enter existing DL/ID info', function(done) {
-    assertOnPage('.existing-dl-id-number-form', /about-me\/dl-id-number/, done)
+    assertOnPage('.has-existing-dl-id-form', /about-me\/dlid-history/, done);
   });
   
   world.then('I will be on the page for veterans history', function(done) {

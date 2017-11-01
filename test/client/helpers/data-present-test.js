@@ -333,7 +333,7 @@ describe('dataPresent', function() {
           month:        '10',
           day:          '15',
           year:         '1981',
-          hasExisting:  'Yes'
+          isIssued:     'Yes'
         }
       };
 
