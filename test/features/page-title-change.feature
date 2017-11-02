@@ -21,9 +21,7 @@ Feature: Title of html page changes when navigating to a new link
     Then I will see page title for eye color
     When I visit hair color page
     Then I will see page title for hair color
-    When I visit the height page
-    Then I will see page title for height
-    When I visit the weight page
-    Then I will see page title for weight
+    When I visit the traits height and weight page
+    Then I will see page title for height and weight
     When I visit the social security page
     Then I will see page title for social security

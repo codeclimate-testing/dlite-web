@@ -9,8 +9,7 @@ import updateHairColor                     from './update-hair-color';
 import updateEyeColor                      from './update-eye-color';
 import updateDateOfBirth                   from './update-date-of-birth';
 import updateSex                           from './update-sex';
-import updateHeight                        from './update-height';
-import updateWeight                        from './update-weight';
+import updateTraitsHeightWeight            from './update-traits-height-weight';
 import updateOrganDonation                 from './update-organ-donation';
 import updatePrivilegeRemovedHistory       from './update-privilege-removed-history';
 import updateExistingDLIDInfo              from './update-existing-dl-id-info';
@@ -32,8 +31,7 @@ const rootReducer = combineReducers({
   hairColor                   : updateHairColor,
   dateOfBirth                 : updateDateOfBirth,
   sex                         : updateSex,
-  height                      : updateHeight,
-  weight                      : updateWeight,
+  traitsHeightWeight          : updateTraitsHeightWeight,
   organDonation               : updateOrganDonation,
   existingDLIDInfo            : updateExistingDLIDInfo,
   privilegeRemovedHistory     : updatePrivilegeRemovedHistory,

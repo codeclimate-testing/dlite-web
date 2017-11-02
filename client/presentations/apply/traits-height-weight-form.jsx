@@ -4,11 +4,12 @@ import React            from 'react';
 import HomeLink         from '../home-link.jsx';
 import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
+import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
 const Form = (props) => {
   document.title = props.pageTitle;
   return (
-    <div className='height-form'>
+    <div className='traits-height-weight-form'>
       <HomeLink />
 
       <h4>How tall are you?</h4>
@@ -20,7 +21,7 @@ const Form = (props) => {
             onChange={ props.onChange }
             identifier='feet'
             description='Feet'
-            value={ props.height.feet }
+            value={ props.traitsHeightWeight.feet }
           />
 
           <div className='unit spacer' />
@@ -29,7 +30,19 @@ const Form = (props) => {
             onChange={ props.onChange }
             identifier='inches'
             description='Inches'
-            value={ props.height.inches }
+            value={ props.traitsHeightWeight.inches }
+          />
+        </div>
+
+      <h4>And how much do you weigh?</h4>
+      <h5>Example: 190 pounds</h5>
+
+        <div className='row inner-bottom'>
+          <NumberInput
+            onChange={ props.onChange }
+            identifier='weight'
+            description='Pounds'
+            value={ props.traitsHeightWeight.weight }
           />
         </div>
 

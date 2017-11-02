@@ -72,12 +72,8 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/sex', '.sex-form', done);
   });
 
-  world.when('I visit the height page', function(done) {
-    navigateToPath('/apply/about-me/height', '.height-form', done);
-  });
-
-  world.when('I visit the weight page', function(done) {
-    navigateToPath('/apply/about-me/weight', '.weight-form', done);
+  world.when('I visit the traits height and weight page', function(done) {
+    navigateToPath('/apply/about-me/traits-height-weight', '.traits-height-weight-form', done);
   });
 
   world.when('I visit the organ page', function(done) {
@@ -188,12 +184,8 @@ module.exports = function(world) {
     assertOnPage('.hair-color-form', /about-me\/appearance\/hair/, done);
   });
 
-  world.then('I will be on the page for entering my height', function(done) {
-    assertOnPage('.height-form', /about-me\/height/, done);
-  });
-
-  world.then('I will be on the page for entering my weight', function(done) {
-    assertOnPage('.weight-form', /about-me\/weight/, done);
+  world.then('I will be on the page for entering my height and weight', function(done) {
+    assertOnPage('.traits-height-weight-form', /about-me\/traits-height-weight/, done);
   });
 
   world.then('I will be on the page for organ selection', function(done) {

@@ -17,8 +17,7 @@ export const TYPES = {
   UPDATE_EYE_COLOR:                       'UPDATE_EYE_COLOR',
   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
   UPDATE_SEX:                             'UPDATE_SEX',
-  UPDATE_HEIGHT:                          'UPDATE_HEIGHT',
-  UPDATE_WEIGHT:                          'UPDATE_WEIGHT',
+  UPDATE_TRAITS_HEIGHT_WEIGHT:            'UPDATE_TRAITS_HEIGHT_WEIGHT',
   UPDATE_ORGAN_DONATION:                  'UPDATE_ORGAN_DONATION',
   UPDATE_PRIVILEGE_REMOVED_HISTORY:       'UPDATE_PRIVILEGE_REMOVED_HISTORY',
   UPDATE_EXISTING_DL_ID_INFO:             'UPDATE_EXISTING_DL_ID_INFO',
@@ -40,8 +39,7 @@ export const updateHairColor                  = generateAction(TYPES.UPDATE_HAIR
 export const updateEyeColor                   = generateAction(TYPES.UPDATE_EYE_COLOR);
 export const updateDateOfBirth                = generateAction(TYPES.UPDATE_DATE_OF_BIRTH);
 export const updateSex                        = generateAction(TYPES.UPDATE_SEX);
-export const updateHeight                     = generateAction(TYPES.UPDATE_HEIGHT);
-export const updateWeight                     = generateAction(TYPES.UPDATE_WEIGHT);
+export const updateTraitsHeightWeight         = generateAction(TYPES.UPDATE_TRAITS_HEIGHT_WEIGHT);
 export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGAN_DONATION);
 export const updatePrivilegeRemovedHistory    = generateAction(TYPES.UPDATE_PRIVILEGE_REMOVED_HISTORY);
 export const updateExistingDlIdInfo           = generateAction(TYPES.UPDATE_EXISTING_DL_ID_INFO);

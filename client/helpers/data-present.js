@@ -32,8 +32,8 @@ const address = (props) => {
   return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip'])
 };
 
-const height = (props) => {
-  return hasAllAttributes(props, ['feet']);
+const traitsHeightWeight = (props) => {
+  return hasAllAttributes(props, ['weight', 'feet']);
 }
 
 const organDonation = (props) => {
@@ -75,8 +75,7 @@ const application = (props) => {
     value(props.sex) ||
     value(props.eyeColor) ||
     value(props.hairColor) ||
-    height(props.height) ||
-    value(props.weight) ||
+    traitsHeightWeight(props.traitsHeightWeight) ||
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
     privilegeRemovedHistory(props.privilegeRemovedHistory) ||
@@ -96,7 +95,7 @@ export {
   legalName,
   address,
   date,
-  height,
+  traitsHeightWeight,
   organDonation,
   socialSecurity,
   privilegeRemovedHistory,

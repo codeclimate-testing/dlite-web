@@ -17,8 +17,7 @@ import MailingAddress                         from './apply/mailing-address-form
 import Sex                                    from './apply/sex-selector-form-container.jsx';
 import EyeColor                               from './apply/eye-color-form-container.jsx';
 import HairColor                              from './apply/hair-color-form-container.jsx';
-import Height                                 from './apply/height-form-container.jsx';
-import Weight                                 from './apply/weight-form-container.jsx';
+import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
@@ -58,8 +57,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/sex') } component={Sex} />
         <Route path={ alicePath('/about-me/appearance/eye') } component={EyeColor} />
         <Route path={ alicePath('/about-me/appearance/hair' ) } component={HairColor} />
-        <Route path={ alicePath('/about-me/height' ) } component={Height} />
-        <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
+        <Route path={ alicePath('/about-me/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />

@@ -8,8 +8,7 @@ import MailingAddress              from './mailing-address.jsx';
 import Sex                         from './sex.jsx';
 import EyeColor                    from './eye-color.jsx';
 import HairColor                   from './hair-color.jsx';
-import Height                      from './height.jsx';
-import Weight                      from './weight.jsx';
+import TraitsHeightWeight          from './traits-height-weight.jsx';
 import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
 import PrivilegeRemovedHistory     from './privilege-removed-history.jsx';
@@ -33,8 +32,7 @@ export {
   Sex,
   EyeColor,
   HairColor,
-  Height,
-  Weight,
+  TraitsHeightWeight,
   OrganDonation,
   SocialSecurity,
   PrivilegeRemovedHistory,
