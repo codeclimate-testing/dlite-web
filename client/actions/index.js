@@ -13,12 +13,10 @@ export const TYPES = {
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
-  UPDATE_HAIR_COLOR:                      'UPDATE_HAIR_COLOR',
-  UPDATE_EYE_COLOR:                       'UPDATE_EYE_COLOR',
   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
-  UPDATE_SEX:                             'UPDATE_SEX',
   UPDATE_HEIGHT:                          'UPDATE_HEIGHT',
   UPDATE_WEIGHT:                          'UPDATE_WEIGHT',
+  UPDATE_PHYSICAL_TRAITS:                 'UPDATE_PHYSICAL_TRAITS',
   UPDATE_ORGAN_DONATION:                  'UPDATE_ORGAN_DONATION',
   UPDATE_PRIVILEGE_REMOVED_HISTORY:       'UPDATE_PRIVILEGE_REMOVED_HISTORY',
   UPDATE_EXISTING_DL_ID_INFO:             'UPDATE_EXISTING_DL_ID_INFO',
@@ -36,10 +34,8 @@ export const TYPES = {
 export const updateLegalName                  = generateAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateHomeAddress                = generateAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateAction(TYPES.UPDATE_MAILING_ADDRESS);
-export const updateHairColor                  = generateAction(TYPES.UPDATE_HAIR_COLOR);
-export const updateEyeColor                   = generateAction(TYPES.UPDATE_EYE_COLOR);
 export const updateDateOfBirth                = generateAction(TYPES.UPDATE_DATE_OF_BIRTH);
-export const updateSex                        = generateAction(TYPES.UPDATE_SEX);
+export const updatePhysicalTraits             = generateAction(TYPES.UPDATE_PHYSICAL_TRAITS);
 export const updateHeight                     = generateAction(TYPES.UPDATE_HEIGHT);
 export const updateWeight                     = generateAction(TYPES.UPDATE_WEIGHT);
 export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGAN_DONATION);

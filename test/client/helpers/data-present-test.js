@@ -198,6 +198,16 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#physicalTraits', function() {
+    it('is true when all physical traits are present', function() {
+      assert(dataPresent.physicalTraits({sex: 'female', eyeColor: 'blue', hairColor: 'blonde'}), 'physical traits not present with all fields' );
+    });
+
+    it('is false when a physical trait is missing', function() {
+      assert(!dataPresent.physicalTraits({sex: 'female', eyeColor: '', hairColor: 'auburn'}), 'physical traits present with only some traits');
+    });
+  });
+
 
   describe('#application', function() {
     it('is true when there is a legalName', function() {
@@ -246,30 +256,6 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with a mailing address');
-    });
-
-    it('is true when there is a sex selection', function() {
-      let data = {
-        sex: 'male'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with sex');
-    });
-
-    it('is true when there is an eye color', function() {
-      let data = {
-        eyeColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with eyeColor');
-    });
-
-    it('is true when there is hair color', function() {
-      let data = {
-        hairColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with hairColor');
     });
 
     it('is true when there is a height', function() {

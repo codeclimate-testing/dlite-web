@@ -5,9 +5,7 @@ import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
 import HomeAddress                 from './home-address.jsx';
 import MailingAddress              from './mailing-address.jsx';
-import Sex                         from './sex.jsx';
-import EyeColor                    from './eye-color.jsx';
-import HairColor                   from './hair-color.jsx';
+import PhysicalTraits              from './physical-traits.jsx';
 import Height                      from './height.jsx';
 import Weight                      from './weight.jsx';
 import OrganDonation               from './organ-donation.jsx';
@@ -30,9 +28,7 @@ export {
   DateOfBirth,
   HomeAddress,
   MailingAddress,
-  Sex,
-  EyeColor,
-  HairColor,
+  PhysicalTraits,
   Height,
   Weight,
   OrganDonation,
