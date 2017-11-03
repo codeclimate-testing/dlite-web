@@ -22,7 +22,7 @@ export const TYPES = {
   UPDATE_ORGAN_DONATION:                  'UPDATE_ORGAN_DONATION',
   UPDATE_PRIVILEGE_REMOVED_HISTORY:       'UPDATE_PRIVILEGE_REMOVED_HISTORY',
   UPDATE_EXISTING_DL_ID_INFO:             'UPDATE_EXISTING_DL_ID_INFO',
-  UPDATE_PREVIOUS_NAMES_INFO:             'UPDATE_PREVIOUS_NAMES_INFO',
+  UPDATE_NAMES_HISTORY:                   'UPDATE_NAMES_HISTORY',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
@@ -45,7 +45,7 @@ export const updateWeight                     = generateAction(TYPES.UPDATE_WEIG
 export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGAN_DONATION);
 export const updatePrivilegeRemovedHistory    = generateAction(TYPES.UPDATE_PRIVILEGE_REMOVED_HISTORY);
 export const updateExistingDlIdInfo           = generateAction(TYPES.UPDATE_EXISTING_DL_ID_INFO);
-export const updatePreviousNamesInfo          = generateAction(TYPES.UPDATE_PREVIOUS_NAMES_INFO);
+export const updateNamesHistory               = generateAction(TYPES.UPDATE_NAMES_HISTORY);
 export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateBallotByMail               = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);

@@ -8,7 +8,7 @@ import connectForm                      from '../../helpers/connect-form';
 import navigateOnSubmit                 from '../../helpers/navigate-on-submit';
 
 const ConnectedForm = (props) => {
-  let onSubmit = navigateOnSubmit('/about-me/previous-names', props);
+  let onSubmit = navigateOnSubmit('/about-me/names-history', props);
 
   return (
     <Form
