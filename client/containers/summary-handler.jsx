@@ -6,6 +6,7 @@ import { Link }                   from 'react-router-dom';
 
 import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
+import {fetchData}                from '../actions/api-actions';
 
 import {
   LegalName,
@@ -71,11 +72,15 @@ const SummaryHandler = (props) => {
     return summaries;
   }, []);
 
+  function loadData() {
+    props.dispatch(fetchData('http://localhost:3000/api/'));
+  };
 
   return (
     <div className='summary'>
       <HomeLink />
       { contents }
+      <button onClick={loadData}> FETCH </button>
     </div>
   );
 }
