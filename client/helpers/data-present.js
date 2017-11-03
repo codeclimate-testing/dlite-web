@@ -71,14 +71,16 @@ const politicalPartyChoose = (props) => {
   );
 }
 
+const physicalTraits = (props) => {
+  return hasAllAttributes(props, ['sex', 'eyeColor', 'hairColor']);
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
-    value(props.sex) ||
-    value(props.eyeColor) ||
-    value(props.hairColor) ||
+    physicalTraits(props.physicalTraits) ||
     height(props.height) ||
     value(props.weight) ||
     organDonation(props.organDonation) ||
@@ -100,6 +102,7 @@ export {
   legalName,
   address,
   date,
+  physicalTraits,
   height,
   organDonation,
   socialSecurity,

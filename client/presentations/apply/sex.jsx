@@ -8,14 +8,10 @@ import ContinueButton          from '../continue-button.jsx';
 
 const VALUES = ['Female', 'Male'];
 
-const SexForm = (props) => {
-  document.title = props.pageTitle;
+const Sex = (props) => {
   return (
-    <div>
-      <HomeLink />
-
+    <div className="sex">
       <h4>What's your sex?</h4>
-      <form onSubmit={ props.onSubmit } className='sex-form'>
         <div className='inner-bottom'>
           <SelectorCollection
             name='sex'
@@ -24,11 +20,8 @@ const SexForm = (props) => {
             selectedValue={ props.selectedValue }
           />
         </div>
-
-        <ContinueButton disabled={props.continueDisabled}/>
-      </form>
     </div>
   );
 };
 
-export default SexForm;
+export default Sex;

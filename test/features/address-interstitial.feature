@@ -9,7 +9,7 @@ Feature: Address interstitial page
     Then I see a page labelled correctly for address interstitial page
     And I see two address interstitial buttons labelled Yes and No
     When I select address interstitial Yes
-    Then I will be on the page for entering my sex identification
+    Then I will be on the page for entering my physical traits
     And I go to the page with my summary
     Then I will see residence address and mailing address will have the same information
 
