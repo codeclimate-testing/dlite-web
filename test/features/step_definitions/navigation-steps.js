@@ -56,20 +56,12 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/legal-name', '.legal-name-form', done);
   });
 
-  world.and('I visit eye color page', function(done) {
-    navigateToPath('/apply/about-me/appearance/eye', '.eye-color-form', done);
-  });
-
-  world.when('I visit hair color page', function (done) {
-    navigateToPath('/apply/about-me/appearance/hair', '.hair-color-form', done);
-  });
-
   world.when('I visit the date of birth page', function(done) {
     navigateToPath('/apply/about-me/date-of-birth', '.date-of-birth-form', done);
   });
 
-  world.when('I visit the sex identification page', function(done) {
-    navigateToPath('/apply/about-me/sex', '.sex-form', done);
+  world.when('I visit physical traits page', function(done) {
+    navigateToPath('/apply/about-me/physical-traits', '.physical-traits-form', done);
   });
 
   world.when('I visit the height page', function(done) {
@@ -145,7 +137,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
-    navigateToPath('/apply/about-me/previous-names', '.has-previous-names-form', done);
+    navigateToPath('/apply/about-me/names-history', '.previous-names', done);
   });
 
   world.when('I visit the page to enter my existing DL/ID license info', function(done) {
@@ -153,7 +145,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to enter my previously used names', function(done) {
-    navigateToPath('/apply/about-me/enter-previous-names', '.previous-names-info-form', done);
+    navigateToPath('/apply/about-me/names-history', '.previous-names', done);
   });
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
@@ -162,10 +154,6 @@ module.exports = function(world) {
 
   world.when('I visit political contact details page', function(done){
     navigateToPath('/apply/about-me/voter/political-contact', '.political-contact-choice-form', done);
-  });
-
-  world.then('I will be on the page for entering my eye color', function(done) {
-    assertOnPage('.eye-color-form', /about-me\/appearance\/eye/, done);
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {
@@ -180,12 +168,8 @@ module.exports = function(world) {
     assertOnPage('.mailing-address-form', /apply\/about-me\/mailing-address/, done);
   });
 
-  world.then('I will be on the page for entering my sex identification', function(done) {
-    assertOnPage('.sex-form', /about-me\/sex/, done);
-  });
-
-  world.then('I will be on the page for entering my hair color', function(done) {
-    assertOnPage('.hair-color-form', /about-me\/appearance\/hair/, done);
+  world.then('I will be on the page for entering my physical traits', function(done) {
+    assertOnPage('.physical-traits-form', /about-me\/physical-traits/, done);
   });
 
   world.then('I will be on the page for entering my height', function(done) {
@@ -287,7 +271,7 @@ module.exports = function(world) {
   world.then('I will be taken to page to enter existing DL/ID info', function(done) {
     assertOnPage('.existing-dl-id-number-form', /about-me\/dl-id-number/, done)
   });
-  
+
   world.then('I will be on the page for veterans history', function(done) {
     assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
   });

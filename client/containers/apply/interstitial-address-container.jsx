@@ -18,7 +18,7 @@ const ConnectedForm = (props) => {
       //Copy home address to mailing address
       props.onCopy(props.homeAddress);
 
-      address = '/about-me/sex/';
+      address = '/about-me/physical-traits/';
     }
     else{
       //Reset mailing address

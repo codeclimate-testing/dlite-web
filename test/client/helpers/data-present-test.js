@@ -162,26 +162,20 @@ describe('dataPresent', function() {
 
   });
 
-  describe('#previousNamesInfo', function() {
+  describe('#namesHistory', function() {
     it('is true when only name is present', function() {
       assert(
-        dataPresent.previousNamesInfo({names: 'John Doe, Jane Doe'}),
+        dataPresent.namesHistory({hasUsedPreviousNames: 'Yes', previousNames: 'John Doe, Jane Doe'}),
         'previous names info not present with just names'
       );
     });
 
-    it('is true when only hasPreviousNames is present', function() {
+    it('is false without a name', function() {
       assert(
-        dataPresent.previousNamesInfo({hasPreviousNames: 'Yes'}),
-        'previous names info not present with just hasPreviousNames'
+        !dataPresent.namesHistory({hasUsedPreviousNames: 'Yes', previousNames: ''}),
+        'previous names info present without just names'
       );
     });
-
-    it('is false without email or phone number', function() {
-      assert(!dataPresent.previousNamesInfo({names: '', hasPreviousNames: ''}),
-      'previousNamesInfo present without names or hasPreviousNames');
-    });
-
   });
 
   describe('#politicalContact', function() {
@@ -195,6 +189,16 @@ describe('dataPresent', function() {
 
     it('is false without email or phone number', function() {
       assert(!dataPresent.politicalContact({shouldContact: 'Yes', emailAddress: '', phoneNumber: ''}), 'politicalContact present without email or phone umber');
+    });
+  });
+
+  describe('#physicalTraits', function() {
+    it('is true when all physical traits are present', function() {
+      assert(dataPresent.physicalTraits({sex: 'female', eyeColor: 'blue', hairColor: 'blonde'}), 'physical traits not present with all fields' );
+    });
+
+    it('is false when a physical trait is missing', function() {
+      assert(!dataPresent.physicalTraits({sex: 'female', eyeColor: '', hairColor: 'auburn'}), 'physical traits present with only some traits');
     });
   });
 
@@ -248,30 +252,6 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with a mailing address');
     });
 
-    it('is true when there is a sex selection', function() {
-      let data = {
-        sex: 'male'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with sex');
-    });
-
-    it('is true when there is an eye color', function() {
-      let data = {
-        eyeColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with eyeColor');
-    });
-
-    it('is true when there is hair color', function() {
-      let data = {
-        hairColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with hairColor');
-    });
-
     it('is true when there is a height', function() {
       let data = {
         height: { feet: '12' }
@@ -316,9 +296,9 @@ describe('dataPresent', function() {
 
     it('is true when there is previous name info', function(){
       let data = {
-        previousNamesInfo: {
-          names: 'Captain America',
-          hasPreviousNames: 'Yes'
+        namesHistory: {
+          hasUsedPreviousNames: 'Yes',
+          previousNames: 'Captain America'
         }
       };
 

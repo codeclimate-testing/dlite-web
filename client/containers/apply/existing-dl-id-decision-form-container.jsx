@@ -11,7 +11,7 @@ import * as dataPresent                 from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let value = props.hasExisting;
   const continueDisabled = !(dataPresent.value(value));
-  let onSubmit = navigateOnSubmit('/about-me/previous-names', props);
+  let onSubmit = navigateOnSubmit('/about-me/names-history', props);
 
   if(value === 'Yes') {
     onSubmit = navigateOnSubmit('/about-me/dl-id-number', props);

@@ -5,9 +5,10 @@ Feature: View Summary Before Submitting
 
   Scenario: Review and submit DL information
     Given I go to the new online DL application page
-    When I visit eye color page
-    Then I will see select buttons for Blue, Gray, Green, Hazel and Brown
-    When I select an eye color
+    When I visit physical traits page
+    And I select my sex
+    And I select an eye color
+    And I select a hair color
     And I go to the page with my summary
     And I click to submit
     Then I will be taken to the success visit page

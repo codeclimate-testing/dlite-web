@@ -14,9 +14,7 @@ import DateOfBirth                            from './apply/date-of-birth-form-c
 import HomeAddress                            from './apply/home-address-form-container.jsx';
 import InterstitialAddress                    from './apply/interstitial-address-container.jsx';
 import MailingAddress                         from './apply/mailing-address-form-container.jsx';
-import Sex                                    from './apply/sex-selector-form-container.jsx';
-import EyeColor                               from './apply/eye-color-form-container.jsx';
-import HairColor                              from './apply/hair-color-form-container.jsx';
+import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
 import Height                                 from './apply/height-form-container.jsx';
 import Weight                                 from './apply/weight-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
@@ -25,8 +23,7 @@ import OrganDonation                          from './apply/organ-donation-form-
 import PrivilegeRemovedHistory                from './apply/privilege-removed-history-form-container.jsx';
 import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
 import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
-import PreviousNames                          from './apply/previous-names-form-container.jsx';
-import PreviousNamesInfo                      from './apply/previous-names-info-form-container.jsx';
+import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
@@ -55,9 +52,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
         <Route path={ alicePath('/about-me/is-mailing-same/') } component={InterstitialAddress} />
         <Route path={ alicePath('/about-me/mailing-address') } component={MailingAddress} />
-        <Route path={ alicePath('/about-me/sex') } component={Sex} />
-        <Route path={ alicePath('/about-me/appearance/eye') } component={EyeColor} />
-        <Route path={ alicePath('/about-me/appearance/hair' ) } component={HairColor} />
+        <Route path={ alicePath('/about-me/physical-traits') } component={PhysicalTraits} />
         <Route path={ alicePath('/about-me/height' ) } component={Height} />
         <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
@@ -65,10 +60,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
         <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />
         <Route path={ alicePath('/about-me/dl-id-number') } component={ExistingDLIDInfo} />
-        <Route path={ alicePath('/about-me/previous-names' ) } component={PreviousNames} />
-        <Route path={ alicePath('/about-me/enter-previous-names' ) } component={PreviousNamesInfo} />
+        <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
-        
+
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />
         <Route path={ alicePath('/about-me/voter/am-citizen') } component={VoterCitizenStatus} />
         <Route path={ alicePath('/about-me/voter/eligibility-requirements') } component={EligibilityRequirements} />
@@ -81,7 +75,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/political-contact') } component={PoliticalContact} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
         <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
-      
+
       </div>
     );
   }

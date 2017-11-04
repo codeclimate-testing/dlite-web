@@ -4,7 +4,7 @@ import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
 
-const values = ['Yes', 'No', 'Skip Question']
+const values = ['Yes', 'No']
 const CONTRIBUTION_YES = 'donate-contribution-yes'
 const MESSAGE_YES = <p>Thank you for your donation! We will add $2 to your total fee.</p>
 
