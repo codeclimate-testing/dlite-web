@@ -21,15 +21,9 @@ import SocialSecurity                         from './apply/social-security-form
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import PrivilegeRemovedHistory                from './apply/privilege-removed-history-form-container.jsx';
-<<<<<<< HEAD
+
 import DlidHistory                            from './apply/dlid-history-form-container.jsx';
-import PreviousNames                          from './apply/previous-names-form-container.jsx';
-import PreviousNamesInfo                      from './apply/previous-names-info-form-container.jsx';
-=======
-import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
-import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
->>>>>>> master
 import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
 
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
@@ -65,7 +59,6 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
         <Route path={ alicePath('/about-me/dlid-history')} component={DlidHistory} />
-        <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />
         <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 
