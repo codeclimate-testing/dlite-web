@@ -77,7 +77,7 @@ describe('dataPresent', function() {
 
     it('is false when only partial data present', function() {
       assert(
-        !dataPresent.date({inches: '5', weight: '201'}),
+        !dataPresent.traitsHeightWeight({inches: '5', weight: '201'}),
         'date present with only parts of height and weight'
       );
     });
