@@ -93,7 +93,7 @@ describe('dataPresent', function() {
       assert(dataPresent.socialSecurity(data), 'ssn data not considered present with all three parts');
     });
 
-    it('is false without the feet', function() {
+    it('is false without the social security', function() {
       assert(!dataPresent.socialSecurity({part1: '5', part2: '5'}), 'ssn data present with only partial fields');
     });
   });
@@ -267,30 +267,6 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with a mailing address');
-    });
-
-    it('is true when there is a sex selection', function() {
-      let data = {
-        sex: 'male'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with sex');
-    });
-
-    it('is true when there is an eye color', function() {
-      let data = {
-        eyeColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with eyeColor');
-    });
-
-    it('is true when there is hair color', function() {
-      let data = {
-        hairColor: 'red'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with hairColor');
     });
 
     it('is true when there is a social security number', function() {

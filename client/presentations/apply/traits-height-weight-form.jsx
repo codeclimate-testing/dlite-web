@@ -4,7 +4,6 @@ import React            from 'react';
 import HomeLink         from '../home-link.jsx';
 import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
 const Form = (props) => {
   document.title = props.pageTitle;

@@ -33,7 +33,7 @@ const address = (props) => {
 };
 
 const traitsHeightWeight = (props) => {
-  return hasAllAttributes(props, ['weight', 'feet']);
+  return hasAllAttributes(props, ['weight', 'feet', 'inches']);
 }
 
 const organDonation = (props) => {

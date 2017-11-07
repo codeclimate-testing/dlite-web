@@ -15,12 +15,6 @@ Feature: Title of html page changes when navigating to a new link
     Then I will see page title for home address
     When I visit the mailing addresses page
     Then I will see page title for mailing address
-    When I visit the sex identification page
-    Then I will see page title for sex identification
-    When I visit eye color page
-    Then I will see page title for eye color
-    When I visit hair color page
-    Then I will see page title for hair color
     When I visit the traits height and weight page
     Then I will see page title for height and weight
     When I visit the social security page
