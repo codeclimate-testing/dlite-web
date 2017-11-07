@@ -129,39 +129,39 @@ describe('dataPresent', function() {
 
   });
 
-  describe('#existingDLIDInfo', function() {
+  describe('#dlidHistory', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.existingDLIDInfo({month: '10', day: '15', year: '1985'}),
+        dataPresent.dlidHistory({month: '10', day: '15', year: '1985'}),
         'existing DL ID date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.existingDLIDInfo({month: '10', year: '1985'}),
+        !dataPresent.dlidHistory({month: '10', year: '1985'}),
         'existing DL ID date present with only parts of date'
       );
     });
 
     it('is true when ony DLIDNumber is present', function() {
       assert(
-        dataPresent.existingDLIDInfo({'DLIDNumber': 'DMV00100101'}),
+        dataPresent.dlidHistory({'DLIDNumber': 'DMV00100101'}),
         'existing DL ID not present with just DLIDNumber field'
       );
     });
 
     it('is true when ony issuedBy is present', function() {
       assert(
-        dataPresent.existingDLIDInfo({'issuedBy': 'USA'}),
+        dataPresent.dlidHistory({'issuedBy': 'USA'}),
         'existing DL ID not present with just issuedBy field'
       );
     });
 
-    it('is true when ony hasExisting is present', function() {
+    it('is true when ony isIssued is present', function() {
       assert(
-        dataPresent.existingDLIDInfo({'hasExisting': 'Yes'}),
-        'existing DL ID not present with just hasExisting field'
+        dataPresent.dlidHistory({'isIssued': 'Yes'}),
+        'existing DL ID not present with just isIssued field'
       );
     });
 
@@ -308,13 +308,13 @@ describe('dataPresent', function() {
 
     it('is true when there is existing DL/ID info', function(){
       let data = {
-        existingDLIDInfo: {
+        dlidHistory: {
           DLIDNumber:   'DMV001',
           issuedBy:     'California',
           month:        '10',
           day:          '15',
           year:         '1981',
-          hasExisting:  'Yes'
+          isIssued:     'Yes'
         }
       };
 
