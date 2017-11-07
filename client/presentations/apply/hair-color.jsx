@@ -1,21 +1,14 @@
 'use strict';
 
 import React from 'react';
-
 import SelectorCollection      from '../selector-collection.jsx';
-import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
 
 const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
 
-const Form = (props) => {
-  document.title = props.pageTitle;
+const HairColor = (props) => {
   return (
-    <div>
-      <HomeLink />
-
+    <div className='hair-color'>
       <h4>What color is your hair?</h4>
-      <form onSubmit={ props.onSubmit } className='hair-color-form'>
         <div className='inner-bottom'>
           <SelectorCollection
             name='hairColor'
@@ -24,12 +17,8 @@ const Form = (props) => {
             selectedValue={ props.selectedValue }
           />
         </div>
-
-        <ContinueButton disabled={props.continueDisabled}/>
-      </form>
     </div>
   );
 };
 
-export default Form;
-
+export default HairColor;
