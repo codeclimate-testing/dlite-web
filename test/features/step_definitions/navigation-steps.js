@@ -252,10 +252,6 @@ module.exports = function(world) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
   });
 
-  world.then('I will be on the page to choose if I have existing license', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /about-me\/dlid-history/, done);
-  });
-
   world.then('I will be on the page for veterans history', function(done) {
     assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
   });
