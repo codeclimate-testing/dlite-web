@@ -67,14 +67,19 @@ describe('dataPresent', function() {
     });
   });
 
-  describe('#height', function() {
-    it('is true when the feet are present', function() {
-      assert(dataPresent.height({feet: '5'}), 'height data not present with feet only');
+    describe('#traitsHeightWeight', function() {
+    it('is true when all three parts are present', function() {
+      assert(
+        dataPresent.traitsHeightWeight({heightFeet: '5', heightInches: '5', weight: '201'}),
+        'date not present with all fields'
+      );
     });
 
-    it('is false without the feet', function() {
-      assert(!dataPresent.height({inches: '5'}), 'height data present with inches only');
-      assert(!dataPresent.height({}), 'height data present when blank');
+    it('is false when only partial data present', function() {
+      assert(
+        !dataPresent.traitsHeightWeight({heightInches: '5', weight: '201'}),
+        'date present with only parts of height and weight'
+      );
     });
   });
 
@@ -88,7 +93,7 @@ describe('dataPresent', function() {
       assert(dataPresent.socialSecurity(data), 'ssn data not considered present with all three parts');
     });
 
-    it('is false without the feet', function() {
+    it('is false without the social security', function() {
       assert(!dataPresent.socialSecurity({part1: '5', part2: '5'}), 'ssn data present with only partial fields');
     });
   });
@@ -226,6 +231,18 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with date of birth');
     });
 
+      it('is true when there is height and weight', function() {
+      let data = {
+        traitsHeightWeight : {
+          heightFeet:  '5',
+          heightInches:    '5',
+          weight:   '201'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with height and weight');
+    });
+
     it('is true when there is a home address', function() {
       let data = {
         homeAddress: {
@@ -250,22 +267,6 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with a mailing address');
-    });
-
-    it('is true when there is a height', function() {
-      let data = {
-        height: { feet: '12' }
-      };
-
-      assert(dataPresent.application(data), 'Data not present with height');
-    });
-
-    it('is true when there is a weight', function() {
-      let data = {
-        weight: '12'
-      };
-
-      assert(dataPresent.application(data), 'Data not present with weight');
     });
 
     it('is true when there is a social security number', function() {

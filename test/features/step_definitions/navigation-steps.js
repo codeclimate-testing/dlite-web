@@ -64,12 +64,8 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/physical-traits', '.physical-traits-form', done);
   });
 
-  world.when('I visit the height page', function(done) {
-    navigateToPath('/apply/about-me/height', '.height-form', done);
-  });
-
-  world.when('I visit the weight page', function(done) {
-    navigateToPath('/apply/about-me/weight', '.weight-form', done);
+  world.when('I visit the traits height and weight page', function(done) {
+    navigateToPath('/apply/about-me/traits-height-weight', '.traits-height-weight-form', done);
   });
 
   world.when('I visit the organ page', function(done) {
@@ -145,7 +141,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
-    navigateToPath('/apply/about-me/dlid-history', '.has-existing-dl-id-form', done);
+    navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
   });
 
   world.when('I visit political contact details page', function(done){
@@ -168,12 +164,8 @@ module.exports = function(world) {
     assertOnPage('.physical-traits-form', /about-me\/physical-traits/, done);
   });
 
-  world.then('I will be on the page for entering my height', function(done) {
-    assertOnPage('.height-form', /about-me\/height/, done);
-  });
-
-  world.then('I will be on the page for entering my weight', function(done) {
-    assertOnPage('.weight-form', /about-me\/weight/, done);
+  world.then('I will be on the page for entering my height and weight', function(done) {
+    assertOnPage('.traits-height-weight-form', /about-me\/traits-height-weight/, done);
   });
 
   world.then('I will be on the page for organ selection', function(done) {
@@ -258,10 +250,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to previous names page', function(done) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
-  });
-
-  world.then('I will be on the page to choose if I have existing license', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /about-me\/dlid-history/, done);
   });
 
   world.then('I will be on the page for veterans history', function(done) {

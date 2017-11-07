@@ -6,9 +6,10 @@ import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
 
 const Form = (props) => {
+
   document.title = props.pageTitle;
   return (
-    <div className='height-form'>
+    <div className='traits-height-weight-form'>
       <HomeLink />
 
       <h4>How tall are you?</h4>
@@ -18,18 +19,30 @@ const Form = (props) => {
         <div className='row inner-bottom'>
           <NumberInput
             onChange={ props.onChange }
-            identifier='feet'
+            identifier='heightFeet'
             description='Feet'
-            value={ props.height.feet }
+            value={ props.traitsHeightWeight.heightFeet }
           />
 
           <div className='unit spacer' />
 
           <NumberInput
             onChange={ props.onChange }
-            identifier='inches'
+            identifier='heightInches'
             description='Inches'
-            value={ props.height.inches }
+            value={ props.traitsHeightWeight.heightInches }
+          />
+        </div>
+
+      <h4>And how much do you weigh?</h4>
+      <h5>Example: 190 pounds</h5>
+
+        <div className='row inner-bottom'>
+          <NumberInput
+            onChange={ props.onChange }
+            identifier='weight'
+            description='Pounds'
+            value={ props.traitsHeightWeight.weight }
           />
         </div>
 

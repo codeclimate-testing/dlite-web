@@ -10,7 +10,7 @@ import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled  = !dataPresent.value(props.hairColor);
-  let onSubmit          = navigateOnSubmit('/about-me/height', props);
+  let onSubmit          = navigateOnSubmit('/about-me/traits-height-weight', props);
   let pageTitle         = 'About me: Hair color';
 
   return (

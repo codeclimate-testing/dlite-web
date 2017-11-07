@@ -69,18 +69,10 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see page title for height', function(done){
+  world.then('I will see page title for height and weight', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Height'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see page title for weight', function(done){
-    browser
-      .html('title')
-      .then((title) => { assert.equal(title, 'About me: Weight'); })
+      .then((title) => { assert.equal(title, 'About me: Height and Weight'); })
       .then(() => { done(); })
       .catch(done);
   });

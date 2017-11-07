@@ -15,9 +15,7 @@ Feature: Title of html page changes when navigating to a new link
     Then I will see page title for home address
     When I visit the mailing addresses page
     Then I will see page title for mailing address
-    When I visit the height page
-    Then I will see page title for height
-    When I visit the weight page
-    Then I will see page title for weight
+    When I visit the traits height and weight page
+    Then I will see page title for height and weight
     When I visit the social security page
     Then I will see page title for social security

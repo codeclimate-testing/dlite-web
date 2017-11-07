@@ -14,9 +14,8 @@ import DateOfBirth                            from './apply/date-of-birth-form-c
 import HomeAddress                            from './apply/home-address-form-container.jsx';
 import InterstitialAddress                    from './apply/interstitial-address-container.jsx';
 import MailingAddress                         from './apply/mailing-address-form-container.jsx';
+import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
-import Height                                 from './apply/height-form-container.jsx';
-import Weight                                 from './apply/weight-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
@@ -52,13 +51,12 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
         <Route path={ alicePath('/about-me/is-mailing-same/') } component={InterstitialAddress} />
         <Route path={ alicePath('/about-me/mailing-address') } component={MailingAddress} />
+        <Route path={ alicePath('/about-me/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/about-me/physical-traits') } component={PhysicalTraits} />
-        <Route path={ alicePath('/about-me/height' ) } component={Height} />
-        <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
-        <Route path={ alicePath('/about-me/dlid-history')} component={DlidHistory} />
+        <Route path={ alicePath('/about-me/license-history')} component={DlidHistory} />
         <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 
