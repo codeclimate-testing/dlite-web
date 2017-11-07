@@ -52,8 +52,12 @@ const dlidHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
 }
 
-const previousNamesInfo = (props) => {
-  return hasAnyAttributes(props, ['names', 'hasPreviousNames']);
+const namesHistory = (props) => {
+  return hasAllAttributes(props, ['hasUsedPreviousNames', 'previousNames']);
+}
+
+const hasPreviousNames = (props) => {
+  return hasAllAttributes(props, ['hasUsedPreviousNames'])
 }
 
 const politicalContact = (props) => {
@@ -67,20 +71,22 @@ const politicalPartyChoose = (props) => {
   );
 }
 
+const physicalTraits = (props) => {
+  return hasAllAttributes(props, ['sex', 'eyeColor', 'hairColor']);
+}
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
-    value(props.sex) ||
-    value(props.eyeColor) ||
-    value(props.hairColor) ||
+    physicalTraits(props.physicalTraits) ||
     height(props.height) ||
     value(props.weight) ||
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
+    namesHistory(props.namesHistory) ||
     privilegeRemovedHistory(props.privilegeRemovedHistory) ||
-    previousNamesInfo(props.previousNamesInfo) ||
     dlidHistory(props.dlidHistory) ||
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
@@ -96,13 +102,15 @@ export {
   legalName,
   address,
   date,
+  physicalTraits,
   height,
   organDonation,
   socialSecurity,
+  namesHistory,
   privilegeRemovedHistory,
-  previousNamesInfo,
   dlidHistory,
   politicalPartyChoose,
   politicalContact,
+  hasPreviousNames,
   application
 };

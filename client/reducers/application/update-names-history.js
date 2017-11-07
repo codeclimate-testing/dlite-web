@@ -5,9 +5,9 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    names: '',
-    hasPreviousNames: ''
+    usedPreviousNames: '',
+    previousNames: ''
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_PREVIOUS_NAMES_INFO);
+export default formObjectReducer(defaultState, TYPES.UPDATE_NAMES_HISTORY);
