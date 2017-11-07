@@ -10,8 +10,8 @@ function defaultState() {
     month:        '',
     day:          '',
     year:         '',
-    hasExisting:  ''
+    isIssued:     ''
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_EXISTING_DL_ID_INFO);
+export default formObjectReducer(defaultState, TYPES.UPDATE_DLID_HISTORY);

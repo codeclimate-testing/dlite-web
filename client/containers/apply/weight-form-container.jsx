@@ -10,7 +10,7 @@ import * as dataPresent  from '../../helpers/data-present';
 
 const Form = (props) => {
   let continueDisabled  = !dataPresent.value(props.weight);
-  let onSubmit          = navigateOnSubmit('/about-me/license-history', props);
+  let onSubmit          = navigateOnSubmit('/about-me/dlid-history', props);
   let pageTitle         = 'About me: Weight';
 
   return (

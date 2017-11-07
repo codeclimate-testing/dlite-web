@@ -23,14 +23,14 @@ module.exports = function (world) {
 
   world.when('I select exisiting DL/ID Yes', function(done){
     browser
-    .click('label[for="hasExistingYes"]')
+    .click('label[for="isIssuedYes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select existing DL/ID No', function(done){
     browser
-    .click('label[for="hasExistingNo"]')
+    .click('label[for="isIssuedNo"]')
     .then(() => { done(); })
     .catch(done);
   });

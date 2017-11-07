@@ -11,7 +11,7 @@ import Weight                      from './weight.jsx';
 import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
 import PrivilegeRemovedHistory     from './privilege-removed-history.jsx';
-import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
+import DlidHistory                 from './dlid-history.jsx';
 import NamesHistory                from './names-history.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -34,7 +34,7 @@ export {
   OrganDonation,
   SocialSecurity,
   PrivilegeRemovedHistory,
-  ExistingDlIDInfo,
+  DlidHistory,
   NamesHistory,
   CitizenStatus,
   EligibilityRequirements,
