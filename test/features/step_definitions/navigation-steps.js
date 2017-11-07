@@ -141,7 +141,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
-    navigateToPath('/apply/about-me/dlid-history', '.has-existing-dl-id-form', done);
+    navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
   });
 
   world.when('I visit political contact details page', function(done){

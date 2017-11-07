@@ -70,14 +70,14 @@ describe('dataPresent', function() {
     describe('#traitsHeightWeight', function() {
     it('is true when all three parts are present', function() {
       assert(
-        dataPresent.traitsHeightWeight({feet: '5', inches: '5', weight: '201'}),
+        dataPresent.traitsHeightWeight({heightFeet: '5', heightInches: '5', weight: '201'}),
         'date not present with all fields'
       );
     });
 
     it('is false when only partial data present', function() {
       assert(
-        !dataPresent.traitsHeightWeight({inches: '5', weight: '201'}),
+        !dataPresent.traitsHeightWeight({heightInches: '5', weight: '201'}),
         'date present with only parts of height and weight'
       );
     });
@@ -234,8 +234,8 @@ describe('dataPresent', function() {
       it('is true when there is height and weight', function() {
       let data = {
         traitsHeightWeight : {
-          feet:  '5',
-          inches:    '5',
+          heightFeet:  '5',
+          heightInches:    '5',
           weight:   '201'
         }
       };

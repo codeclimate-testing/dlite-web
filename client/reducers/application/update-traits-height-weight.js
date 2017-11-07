@@ -5,9 +5,9 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    feet: '',
-    inches: '',
-    weight: ''
+    weight: '',
+    heightFeet: '',
+    heightInches: ''
   };
 }
 

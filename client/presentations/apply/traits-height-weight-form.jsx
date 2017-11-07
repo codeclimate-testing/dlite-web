@@ -6,6 +6,7 @@ import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
 
 const Form = (props) => {
+
   document.title = props.pageTitle;
   return (
     <div className='traits-height-weight-form'>
@@ -18,18 +19,18 @@ const Form = (props) => {
         <div className='row inner-bottom'>
           <NumberInput
             onChange={ props.onChange }
-            identifier='feet'
+            identifier='heightFeet'
             description='Feet'
-            value={ props.traitsHeightWeight.feet }
+            value={ props.traitsHeightWeight.heightFeet }
           />
 
           <div className='unit spacer' />
 
           <NumberInput
             onChange={ props.onChange }
-            identifier='inches'
+            identifier='heightInches'
             description='Inches'
-            value={ props.traitsHeightWeight.inches }
+            value={ props.traitsHeightWeight.heightInches }
           />
         </div>
 

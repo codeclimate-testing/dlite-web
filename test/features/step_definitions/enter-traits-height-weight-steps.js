@@ -5,11 +5,11 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see a field for height and weight', function(done) {
+  world.then('I will see a field for traits height and weight', function(done) {
     browser
-      .exists('#feet')
+      .exists('#heightFeet')
       .then((exists) => { assert.ok(exists, 'input for feet missing')})
-      .exists('#inches')
+      .exists('#heightInches')
       .then((exists) => { assert.ok(exists, 'input for inches missing')})
       .exists('#weight')
       .then((exists) => { assert.ok(exists, 'input for weight missing')})
@@ -19,26 +19,33 @@ module.exports = function(world) {
 
   world.and('I enter my feet', function(done) {
     browser
-      .type('#feet', '5')
+      .type('#heightFeet', '5')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I enter my inches', function(done) {
     browser
-      .type('#inches', '9')
+      .type('#heightInches', '9')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see the height and weight I entered', function(done) {
+  world.and('I enter my weight', function(done) {
     browser
-      .value('#feet')
+      .type('#weight', '210')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see traits height and weight I entered', function(done) {
+    browser
+      .value('#heightFeet')
       .then((value) => { assert.equal(value, '5'); })
-      .value('#inches')
+      .value('#heightInches')
       .then((value) => { assert.equal(value, '9'); })
       .value('#weight')
-      .then((value) => { assert.equal(value, '200'); })
+      .then((value) => { assert.equal(value, '210'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -57,9 +64,9 @@ module.exports = function(world) {
     browser
       .click('a.traits-height-and-weight')
       .waitForSelector('.traits-height-weight-form')
-      .type('#feet', '5')
-      .type('#inches', '9')
-      .type('#weight', '200')
+      .type('#heightFeet', '5')
+      .type('#heightInches', '9')
+      .type('#weight', '210')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })
@@ -68,8 +75,8 @@ module.exports = function(world) {
 
   world.and('I change my inches', function(done) {
     browser
-      .clear('#inches')
-      .type('#inches', '7')
+      .clear('#heightInches')
+      .type('#heightInches', '7')
       .then(() => { done(); })
       .catch(done);
   });
@@ -88,13 +95,6 @@ module.exports = function(world) {
     browser
       .exists('#weight')
       .then((exists) => { assert.ok(exists, 'input for feet missing')})
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I enter my weight', function(done) {
-    browser
-      .type('#weight', '210')
       .then(() => { done(); })
       .catch(done);
   });

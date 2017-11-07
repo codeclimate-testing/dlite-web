@@ -6,7 +6,7 @@ Feature:  I want to enter my height
   Scenario: Entering my weight and saving
     Given I go to the new online DL application page
     When I visit the traits height and weight page
-    Then I will see a field for height and weight
+    Then I will see a field for traits height and weight
     And I will see that the Continue button is disabled
     When I enter my feet
     When I enter my inches
@@ -21,7 +21,7 @@ Feature:  I want to enter my height
     Given I go to the new online DL application page
     And I have already entered my height and weight into the form
     When I visit the traits height and weight page
-    Then I will see the height and weight I entered
+    Then I will see traits height and weight I entered
     When I change my inches
     And I click to submit
     And I go to the page with my summary
