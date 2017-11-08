@@ -2,6 +2,7 @@
 
 import { combineReducers }                 from 'redux';
 
+import createApplicationID                 from './create-application-id';
 import updateLegalNames                    from './update-legal-name';
 import updateHomeAddress                   from './update-home-address';
 import updateMailingAddress                from './update-mailing-address';
@@ -23,6 +24,7 @@ import updateOptOut                        from './update-opt-out';
 import updatePoliticalContact              from './update-political-contact';
 
 const rootReducer = combineReducers({
+  id                          : createApplicationID,
   legalName                   : updateLegalNames,
   homeAddress                 : updateHomeAddress,
   mailingAddress              : updateMailingAddress,

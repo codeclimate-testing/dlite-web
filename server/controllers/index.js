@@ -6,7 +6,7 @@ const getAppModel     = require('../models/db/get-application');
 const createAppModel  = require('../models/db/create-application');
 
 function createApplication(req, res) {
-  let parsedData = clientParser(req.body.application);
+  let parsedData = clientParser(req.body);
   createAppModel(parsedData)
   .then(function(data) {
     let _parsedData = serverParser(data);

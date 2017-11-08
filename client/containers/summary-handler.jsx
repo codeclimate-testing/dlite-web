@@ -6,7 +6,7 @@ import { Link }                   from 'react-router-dom';
 
 import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
-import {fetchData}                from '../actions/api-actions';
+import {getData, postData}        from '../actions/api-actions';
 
 import {
   LegalName,
@@ -33,34 +33,36 @@ import {
 } from '../presentations/summary/index.js';
 
 const successVisit = '/about-me/success-visit';
+//TODO: set apiURL as an env var
+const apiURL = 'http://localhost:3000/api/application';
 
 const SummaryHandler = (props) => {
+  let application = props.application;
   let contents = [
-    <LegalName legalName={props.legalName} key='legal-name' />,
-    <DateOfBirth dateOfBirth={props.dateOfBirth} key='date-of-birth' />,
-    <HomeAddress homeAddress={props.homeAddress} key='home-address' />,
-    <MailingAddress mailingAddress={props.mailingAddress} key='mailing-address' />,
-    <PhysicalTraits physicalTraits={props.physicalTraits} key='physicalTraits' />,
-    <Height height={props.height} key='height' />,
-    <Weight weight={props.weight} key='weight' />,
-    <OrganDonation organDonation={props.organDonation} key='organ-donation' />,
-    <SocialSecurity socialSecurity={props.socialSecurity} key='social-security' />,
-    <PrivilegeRemovedHistory privilegeRemovedHistory={props.privilegeRemovedHistory} key='privilege-removed-history' />,
-    <ExistingDlIDInfo existingDLIDInfo={props.existingDLIDInfo} key='existing-dl-id-info' />,
-    <NamesHistory namesHistory={props.namesHistory} key='names-history' />,
-    <CitizenStatus citizenStatus={props.citizenStatus} key='citizen-status' />,
-    <BallotByMail ballotByMail={props.ballotByMail} key='ballot-by-mail' />,
-    <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
-    <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='choose-party' />,
-    <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
-    <PoliticalContact politicalContact={props.politicalContact} key='political-contact' />,
-    <OptOut optOut={props.optOut} key='opt-out' />,
-    <Empty {...props} key='empty' />,
+    <LegalName legalName={application.legalName} key='legal-name' />,
+    <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
+    <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
+    <MailingAddress mailingAddress={application.mailingAddress} key='mailing-address' />,
+    <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
+    <Height height={application.height} key='height' />,
+    <Weight weight={application.weight} key='weight' />,
+    <OrganDonation organDonation={application.organDonation} key='organ-donation' />,
+    <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,
+    <PrivilegeRemovedHistory privilegeRemovedHistory={application.privilegeRemovedHistory} key='privilege-removed-history' />,
+    <ExistingDlIDInfo existingDLIDInfo={application.existingDLIDInfo} key='existing-dl-id-info' />,
+    <NamesHistory namesHistory={application.namesHistory} key='names-history' />,
+    <CitizenStatus citizenStatus={application.citizenStatus} key='citizen-status' />,
+    <BallotByMail ballotByMail={application.ballotByMail} key='ballot-by-mail' />,
+    <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} key='eligibility-requirements' />,
+    <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
+    <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
+    <PoliticalContact politicalContact={application.politicalContact} key='political-contact' />,
+    <OptOut optOut={application.optOut} key='opt-out' />,
+    <Empty {...application} key='empty' />,
 
     <Link to={ alicePath(successVisit) } key="link-to-success-visit" >
       <ContinueButton disabled={props.continueDisabled} key="submit"/>
     </Link>
-
   ];
 
   contents = contents.reduce((summaries, item) => {
@@ -68,21 +70,31 @@ const SummaryHandler = (props) => {
     return summaries;
   }, []);
 
-  function loadData() {
-    props.dispatch(fetchData('http://localhost:3000/api/'));
+  const loadData  = () => {
+    props.dispatch(getData(apiURL, application.id));
   };
+
+  const saveData = () => {
+    props.dispatch(postData(apiURL, application));
+  }
 
   return (
     <div className='summary'>
       <HomeLink />
       { contents }
-      <button onClick={loadData}> FETCH </button>
+      <div className=' unit relative'>
+        <button id='reloadData' key='reload-data' onClick={loadData}> Reload </button>
+      </div>
+      <div className='unit spacer'></div>
+      <div className=' unit relative'>
+        <button id='saveData' key='save-data' onClick={saveData}> Save </button>
+      </div>
     </div>
   );
 }
 
 function mapStateToProps(state) {
-  return state.application;
+  return state;
 }
 
 export default connect(mapStateToProps)(SummaryHandler);

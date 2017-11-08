@@ -8,7 +8,7 @@ import Home                                   from '../presentations/home.jsx';
 import Summary                                from './summary-handler.jsx';
 
 
-import Intro                                  from '../presentations/apply/intro.jsx';
+import Intro                                  from './apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
 import HomeAddress                            from './apply/home-address-form-container.jsx';
