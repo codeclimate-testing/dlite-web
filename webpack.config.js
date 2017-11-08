@@ -1,7 +1,25 @@
 'use strict';
 
-const path              = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path                = require('path');
+const webpack             = require('webpack');
+const ExtractTextPlugin   = require("extract-text-webpack-plugin");
+let apiHost;
+
+const setupAPI = () => {
+  switch(process.env.APP_ENV) {
+    case 'development':
+      apiHost = "'http://localhost:3000/api'";
+      break;
+    case 'test':
+      apiHost = "'http://localhost:3033/api'";
+      break;
+    default:
+      apiHost = "'http://localhost:3000/api'"
+      break;
+  };
+}
+
+setupAPI();
 
 let config = {
   entry: './client.js',
@@ -33,7 +51,10 @@ let config = {
     extensions: ['.js', '.json']
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.css'),
+    new webpack.DefinePlugin({
+      __API__: apiHost
+    })
   ]
 };
 

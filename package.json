@@ -6,6 +6,9 @@
   "scripts": {
     "postinstall": "webpack -p",
     "start": "node index.js",
+    "build": "webpack --config ./webpack.config.js --progress --colors",
+    "build:dev": "APP_ENV=development npm run build",
+    "build:test": "APP_ENV=test npm run build",
     "webpack-watch": "webpack -w",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
     "test": "npm run test:client && npm run test:server && npm run test:acceptance",
@@ -60,6 +63,7 @@
     "axios": "^0.17.0",
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
+    "es6-promise": "^4.1.1",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
     "jsonwebtoken": "^7.4.1",

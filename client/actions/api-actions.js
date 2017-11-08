@@ -2,10 +2,14 @@
 
 import axios from 'axios';
 
-export const getData = function(url, id) {
+//Required for running tests with node horseman
+require('es6-promise').polyfill();
+
+export const getData = function(apiHost, id) {
+	let url = apiHost + '/' + 'application' + '/' + id;
 	return function(dispatch) {
 		return axios({
-			url: url + '/' + id,
+			url: url,
 			method: 'get',
 			responseType: 'json'
 		})
@@ -18,7 +22,8 @@ export const getData = function(url, id) {
 	}
 };
 
-export const postData =	function(url, body) {
+export const postData =	function(apiHost, body) {
+	let url = apiHost + '/' + 'application';
 	return function(dispatch) {
 		return axios({
 			url: url,

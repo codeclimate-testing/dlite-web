@@ -33,8 +33,7 @@ import {
 } from '../presentations/summary/index.js';
 
 const successVisit = '/about-me/success-visit';
-//TODO: set apiURL as an env var
-const apiURL = 'http://localhost:3000/api/application';
+const apiURL = __API__;
 
 const SummaryHandler = (props) => {
   let application = props.application;
