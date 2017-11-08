@@ -3,7 +3,7 @@ Feature:  I want to enter my height
   I want to enter my height
   So that my physical description will accurately reflect my body dimension to assist with identity
 
-  Scenario: Entering my weight and saving
+  Scenario: Entering my height and weight and saving
     Given I go to the new online DL application page
     When I visit the traits height and weight page
     Then I will see a field for traits height and weight
@@ -13,11 +13,11 @@ Feature:  I want to enter my height
     When I enter my weight
     Then I will see that the Continue button is no longer disabled
     And I click to submit
-    Then I will be on the page for entering my social security
+    Then I visit the page to choose to enter exsiting DL/ID
     And I go to the page with my summary
     Then I will see my height on that summary
 
-  Scenario: Updating weight data
+  Scenario: Updating height data
     Given I go to the new online DL application page
     And I have already entered my height and weight into the form
     When I visit the traits height and weight page

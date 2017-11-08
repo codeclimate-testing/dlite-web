@@ -14,7 +14,7 @@ import * as dataPresent                    from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.dlidHistory(props.dlidHistory));
   let showEnterDLidHistory              = false;
-  let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
+  let onSubmit                          = navigateOnSubmit('/about-me/names-history/', props);
 
 if(props.dlidHistory.isIssued === 'Yes') {
   showEnterDLidHistory  = false;

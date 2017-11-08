@@ -14,7 +14,7 @@ import * as dataPresent                    from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
   let showEnterRevokedSuspended         = false;
-  let onSubmit                          = navigateOnSubmit('/about-me/veterans-history', props);
+  let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
 
 if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
   showEnterRevokedSuspended  = false;
