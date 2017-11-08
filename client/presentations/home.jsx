@@ -18,6 +18,7 @@ const linkData = [
   {description: 'intro page',                             path: '/what-do-you-want-to-do-today'},
   {description: 'legal name',                             path: '/about-me/legal-name'},
   {description: 'date of birth',                          path: '/about-me/date-of-birth'},
+  {description: 'address',                                path: '/about-me/address'},
   {description: 'home address',                           path: '/about-me/home-address'},
   {description: 'mailing address',                        path: '/about-me/mailing-address'},
   {description: 'traits height and weight',               path: '/about-me/traits-height-weight'},

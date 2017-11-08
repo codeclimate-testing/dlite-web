@@ -9,7 +9,8 @@ function defaultState() {
     street_2: '',
     city: '',
     state: 'CA',
-    zip: ''
+    zip: '',
+    homeAddressSameAsMailing: ''
   };
 }
 

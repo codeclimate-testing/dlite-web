@@ -11,6 +11,7 @@ import Summary                                from './summary-handler.jsx';
 import Intro                                  from '../presentations/apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
+import Address                                from './apply/address-form-container.jsx';
 import HomeAddress                            from './apply/home-address-form-container.jsx';
 import InterstitialAddress                    from './apply/interstitial-address-container.jsx';
 import MailingAddress                         from './apply/mailing-address-form-container.jsx';
@@ -48,6 +49,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
+        <Route path={ alicePath('/about-me/address') } component={Address} />
         <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
         <Route path={ alicePath('/about-me/is-mailing-same/') } component={InterstitialAddress} />
         <Route path={ alicePath('/about-me/mailing-address') } component={MailingAddress} />

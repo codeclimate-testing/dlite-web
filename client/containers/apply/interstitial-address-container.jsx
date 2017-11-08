@@ -11,6 +11,7 @@ import navigateOnSubmit             from '../../helpers/navigate-on-submit';
 import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
+  console.log('inter', props)
 
   let onSubmit = (event) => {
     let address = '';
