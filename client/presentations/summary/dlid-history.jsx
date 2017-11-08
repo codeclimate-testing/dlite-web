@@ -19,7 +19,7 @@ const DlidHistory = (props) => {
     if(isIssued === 'No') 
     return (
     <div className='summary-section'>
-      <p> Have suspended license: {isIssued} </p>
+      <p>Has existing DL/ID: {isIssued} </p>
     </div>
   );
 }

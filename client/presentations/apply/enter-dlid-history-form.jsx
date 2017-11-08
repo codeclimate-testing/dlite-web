@@ -34,7 +34,7 @@ const EnterDlidHistory = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='month'
-            description='Month'
+            description='MM'
             value={props.dlidHistory.month}
           />
 
@@ -43,7 +43,7 @@ const EnterDlidHistory = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='day'
-            description='Day'
+            description='DD'
             value={props.dlidHistory.day}
           />
 
@@ -52,7 +52,7 @@ const EnterDlidHistory = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='year'
-            description='Year'
+            description='YYYY'
             value={props.dlidHistory.year}
           />
         </div>
