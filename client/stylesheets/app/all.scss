@@ -161,8 +161,8 @@ label.button.tap.selected {
     min-height: 45px;
 }
 
-.date-of-birth-form {
-  .spacer {
+div[class$="form"] {
+   .spacer {
     min-height:95px;
   }
 }
