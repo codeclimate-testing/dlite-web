@@ -11,10 +11,9 @@ import * as dataPresent             from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/about-me/physical-traits/', props);
   let continueDisabled  = false;
-  let pageTitle         = 'About me: Mailing address';
+
   return (
     <Form
-      pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
       onChange          = { props.onChange }
       mailingAddress    = { props.mailingAddress }

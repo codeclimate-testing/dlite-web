@@ -44,12 +44,8 @@ module.exports = function(world) {
     navigateToPath('/apply/links', '.section-links', done);
   });
 
-  world.when('I visit the home addresses page', function(done) {
-    navigateToPath('/apply/about-me/home-address', '.home-address-form', done);
-  });
-
-  world.when('I visit the mailing addresses page', function(done) {
-    navigateToPath('/apply/about-me/mailing-address', '.mailing-address-form', done);
+  world.when('I visit the addresses page', function(done) {
+    navigateToPath('/apply/about-me/address', '.home-address-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
@@ -152,12 +148,8 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/about-me\/date-of-birth/, done);
   });
 
-  world.then('I will be on the page for entering my home address', function(done) {
-    assertOnPage('.home-address-form', /apply\/about-me\/home-address/, done);
-  });
-
-  world.then('I will be on the page for entering my mailing address', function(done) {
-    assertOnPage('.mailing-address-form', /apply\/about-me\/mailing-address/, done);
+  world.then('I will be on the page for entering my address', function(done) {
+    assertOnPage('.home-address-form', /apply\/about-me\/address/, done);
   });
 
   world.then('I will be on the page for entering my physical traits', function(done) {

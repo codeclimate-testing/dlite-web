@@ -13,9 +13,8 @@ import navigateOnSubmit             from '../../helpers/navigate-on-submit';
 import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          = navigateOnSubmit('/about-me/traits/', props);
+  let onSubmit          = navigateOnSubmit('/about-me/physical-traits/', props);
   let continueDisabled  = !(dataPresent.homeAddressSameAsMailing(props.homeAddress));
-  let pageTitle         = 'About me: Mailing address';
 
   if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {
     for (var prop in props.homeAddress) {
@@ -70,4 +69,3 @@ function mapStateToProps(state) {
 }
 
 export default connectForm(mapStateToProps, updateMailingAddress, ConnectedForm);
-//export default ConnectedForm

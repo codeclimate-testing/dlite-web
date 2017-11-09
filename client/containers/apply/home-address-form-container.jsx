@@ -10,7 +10,7 @@ import * as dataPresent        from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled  = false;
-  let pageTitle   = 'About me: Home address';
+  let pageTitle   = 'About me: Address';
 
   return (
     <Form

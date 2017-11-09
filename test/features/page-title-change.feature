@@ -11,10 +11,8 @@ Feature: Title of html page changes when navigating to a new link
     Then I will see page title for summary
     When I visit the date of birth page
     Then I will see page title for date of birth
-    When I visit the home addresses page
-    Then I will see page title for home address
-    When I visit the mailing addresses page
-    Then I will see page title for mailing address
+    When I visit the addresses page
+    Then I will see page title for address
     When I visit the traits height and weight page
     Then I will see page title for height and weight
     When I visit the social security page
