@@ -13,6 +13,8 @@ const LegalNameForm = (props) => {
   return (
     <div className='legal-name-form'>
       <HomeLink />
+      <h3>1 &raquo; My Basics: Who You Are</h3>
+      <hr></hr>
 
       <h4>What’s your full, legal name?</h4>
       <form onSubmit={props.onSubmit}>

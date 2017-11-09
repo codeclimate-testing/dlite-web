@@ -9,6 +9,7 @@ import ContinueButton          from '../continue-button.jsx';
 const VALUES = ['Female', 'Male'];
 
 const Sex = (props) => {
+  document.title = props.pageTitle;
   return (
     <div className="sex">
       <h4>What's your sex?</h4>

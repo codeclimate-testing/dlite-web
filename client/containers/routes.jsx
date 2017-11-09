@@ -44,12 +44,12 @@ class Router extends React.Component {
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={Intro} />
         <Route path={ alicePath('/links') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
-        <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
-        <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
-        <Route path={ alicePath('/about-me/address') } component={Address} />
-        <Route path={ alicePath('/about-me/traits-height-weight' ) } component={TraitsHeightWeight} />
-        <Route path={ alicePath('/about-me/physical-traits') } component={PhysicalTraits} />
-        <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
+        <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
+        <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
+        <Route path={ alicePath('/my-basics/address') } component={Address} />
+        <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
+        <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />
+        <Route path={ alicePath('/my-basics/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
         <Route path={ alicePath('/about-me/license-history')} component={DlidHistory} />
