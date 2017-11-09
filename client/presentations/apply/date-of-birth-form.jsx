@@ -13,6 +13,8 @@ const Form = (props) => {
   return (
     <div className='date-of-birth-form'>
       <HomeLink />
+      <h3>1 &raquo; My Basics: Who You Are</h3>
+      <hr></hr>
 
       <h4>What's your date of birth?</h4>
       <h5>Example: 03 21 1967</h5>
@@ -52,4 +54,3 @@ const Form = (props) => {
 };
 
 export default Form;
-

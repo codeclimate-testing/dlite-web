@@ -10,8 +10,8 @@ import * as dataPresent     from '../../helpers/data-present';
 
 const Form = (props) => {
   let continueDisabled  =   !dataPresent.legalName(props.legalName);
-  let onSubmit          =   navigateOnSubmit('/about-me/date-of-birth', props);
-  let pageTitle           =   'About me: Legal name';
+  let onSubmit          =   navigateOnSubmit('/my-basics/date-of-birth', props);
+  let pageTitle         =   'DMV: License application - My basics'
 
   return (
     <FormPresentation

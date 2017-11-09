@@ -11,6 +11,9 @@ const Form = (props) => {
   document.title = props.pageTitle;
   return (
     <div className='home-address-form'>
+    <h3>1 &raquo; My Basics: Who You Are</h3>
+    <hr></hr>
+
 
       <h4>Where do you live?</h4>
       <h5>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</h5>

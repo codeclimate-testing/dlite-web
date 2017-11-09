@@ -11,7 +11,7 @@ import alicePath                from '../../helpers/alice-path';
 
 const Intro = (props) => {
 
-  const linkAddress = '/about-me/legal-name';
+  const linkAddress = '/my-basics/legal-name';
 
   const createApplicationID = () =>{
     props.dispatch({

@@ -14,14 +14,18 @@ import * as dataPresent                 from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled  = !(dataPresent.physicalTraits(props.physicalTraits))
-  let onSubmit          = navigateOnSubmit('/about-me/traits-height-weight', props);
+  let onSubmit          = navigateOnSubmit('/my-basics/traits-height-weight', props);
+  let pageTitle         = "DMV: License application - My basics";
 
   return (
     <div className="physical-traits-form">
       <HomeLink />
+      <h3>1 &raquo; My Basics</h3>
+      <hr></hr>
 
       <form onSubmit={onSubmit}>
        <Sex
+          pageTitle     = {pageTitle}
           onChange      = {props.onChange}
           selectedValue = {props.physicalTraits.sex}
         />
