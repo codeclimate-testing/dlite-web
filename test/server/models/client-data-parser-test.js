@@ -16,12 +16,12 @@ describe('clientDataParser', function() {
 
   it('correctly extracts the application table data', function() {
     let applicationData = parsedData.application;
-
+    let dob = new Date(data.dateOfBirth.month + '/' + data.dateOfBirth.day + '/' + data.dateOfBirth.year);
     assert.equal(applicationData.id, data.id);
     assert.equal(applicationData.first_name, data.legalName.firstName);
     assert.equal(applicationData.middle_name, data.legalName.middleName);
     assert.equal(applicationData.last_name, data.legalName.lastName);
-    assert.equal(applicationData.date_of_birth.toString(), new Date(data.dateOfBirth).toString());
+    assert.equal(applicationData.date_of_birth.toString(), dob.toString());
     assert.equal(applicationData.hair_color, data.hairColor);
     assert.equal(applicationData.eye_color, data.eyeColor);
   });

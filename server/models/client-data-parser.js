@@ -13,6 +13,7 @@ function parse(data) {
 function extractApplication(data) {
   let legalName = data.legalName || {};
   let dob = null;
+
   if(data.dateOfBirth.month && data.dateOfBirth.day && data.dateOfBirth.year){
     dob = new Date(data.dateOfBirth.month + '/' + data.dateOfBirth.day + '/' + data.dateOfBirth.year)
   }

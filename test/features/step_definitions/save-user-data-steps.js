@@ -15,10 +15,7 @@ module.exports = function(world) {
   world.and('I click the reload button', function(done) {
     browser
       .click("button:contains('Reload')")
-      .do(function(done){
-        //TODO:Logic to detect async API completion
-        setTimeout(done,1000);
-      })
+      .wait(5000)
       .then(() => { done(); })
       .catch(done);
   });
@@ -33,10 +30,7 @@ module.exports = function(world) {
   world.and('I click the save button', function(done) {
     browser
     .click("button:contains('Save')")
-    .do(function(done){
-      //TODO:Logic to detect async API completion
-      setTimeout(done,1000);
-    })
+    .wait(5000)
     .then(() => { done(); })
     .catch(done);
   });
