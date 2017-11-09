@@ -157,6 +157,16 @@ label.button.tap.selected {
   }
 }
 
+.social-security-dash {
+    min-height: 45px;
+}
+
+div[class$="form"] {
+   .spacer {
+    min-height:95px;
+  }
+}
+
 a.sections {
   color: transparent;
 }
@@ -168,3 +178,4 @@ a.link-button:hover {
   $spacing: 20px;
   display: inline-block;
 }
+
