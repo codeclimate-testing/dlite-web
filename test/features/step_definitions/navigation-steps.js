@@ -244,6 +244,14 @@ module.exports = function(world) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
   });
 
+  world.then('I will be taken to license history page', function(done) {
+    assertOnPage('.has-existing-dl-id-form', /about-me\/license-history/, done);
+  });
+
+  world.then('I will be taken to organ donation page', function(done) {
+    assertOnPage('.donate-contribution-form', /about-me\/organ-donation/, done);
+  });
+
   world.then('I will be on the page for veterans history', function(done) {
     assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
   });

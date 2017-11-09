@@ -10,7 +10,7 @@ import * as dataPresent  from '../../helpers/data-present';
 
 const Form = (props) => {
   let continueDisabled   = !dataPresent.traitsHeightWeight(props.traitsHeightWeight);
-  let onSubmit           = navigateOnSubmit('/about-me/license-history', props);
+  let onSubmit           = navigateOnSubmit('/about-me/social-security', props);
   let pageTitle          = 'About me: Height and Weight';
 
   return (
