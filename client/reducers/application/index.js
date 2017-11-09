@@ -8,11 +8,10 @@ import updateHomeAddress                   from './update-home-address';
 import updateMailingAddress                from './update-mailing-address';
 import updateDateOfBirth                   from './update-date-of-birth';
 import updatePhysicalTraits                from './update-physical-traits';
-import updateHeight                        from './update-height';
-import updateWeight                        from './update-weight';
+import updateTraitsHeightWeight            from './update-traits-height-weight';
 import updateOrganDonation                 from './update-organ-donation';
 import updatePrivilegeRemovedHistory       from './update-privilege-removed-history';
-import updateExistingDLIDInfo              from './update-existing-dl-id-info';
+import updateDlidHistory                   from './update-dlid-history';
 import updateNamesHistory                  from './update-names-history';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
@@ -30,10 +29,9 @@ const rootReducer = combineReducers({
   mailingAddress              : updateMailingAddress,
   dateOfBirth                 : updateDateOfBirth,
   physicalTraits              : updatePhysicalTraits,
-  height                      : updateHeight,
-  weight                      : updateWeight,
+  traitsHeightWeight          : updateTraitsHeightWeight,
   organDonation               : updateOrganDonation,
-  existingDLIDInfo            : updateExistingDLIDInfo,
+  dlidHistory                 : updateDlidHistory,
   namesHistory                : updateNamesHistory,
   privilegeRemovedHistory     : updatePrivilegeRemovedHistory,
   socialSecurity              : updateSocialSecurity,

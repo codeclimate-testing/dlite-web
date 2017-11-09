@@ -29,12 +29,17 @@ const date = (props) => {
 };
 
 const address = (props) => {
-  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip'])
+  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing'])
 };
 
-const height = (props) => {
-  return hasAllAttributes(props, ['feet']);
+const homeAddressSameAsMailing = (props) => {
+  return hasAllAttributes(props, ['homeAddressSameAsMailing'])
+};
+
+const traitsHeightWeight = (props) => {
+  return hasAllAttributes(props, ['weight', 'heightFeet']);
 }
+
 
 const organDonation = (props) => {
   return hasAllAttributes(props, ['donate', 'contribute'])
@@ -48,8 +53,8 @@ const privilegeRemovedHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
 
-const existingDLIDInfo = (props) => {
-  return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'hasExisting']);
+const dlidHistory = (props) => {
+  return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
 }
 
 const namesHistory = (props) => {
@@ -80,14 +85,13 @@ const application = (props) => {
     date(props.dateOfBirth) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
+    traitsHeightWeight(props.traitsHeightWeight) ||
     physicalTraits(props.physicalTraits) ||
-    height(props.height) ||
-    value(props.weight) ||
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
     namesHistory(props.namesHistory) ||
     privilegeRemovedHistory(props.privilegeRemovedHistory) ||
-    existingDLIDInfo(props.existingDLIDInfo) ||
+    dlidHistory(props.dlidHistory) ||
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
@@ -102,15 +106,16 @@ export {
   legalName,
   address,
   date,
+  traitsHeightWeight,
   physicalTraits,
-  height,
   organDonation,
   socialSecurity,
   namesHistory,
   privilegeRemovedHistory,
-  existingDLIDInfo,
+  dlidHistory,
   politicalPartyChoose,
   politicalContact,
   hasPreviousNames,
+  homeAddressSameAsMailing,
   application
 };

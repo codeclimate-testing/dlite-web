@@ -2,26 +2,20 @@
 
 import React from 'react';
 
-import HomeLink         from '../home-link.jsx';
 import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
-import ContinueButton   from '../continue-button.jsx';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
-const Form = (props) => {
+const EnterDlidHistory = (props) => {
   return (
     <div className='existing-dl-id-number-form'>
-      <HomeLink />
 
       <h4>Please tell us about your most recent license or ID card.</h4>
-
-      <form onSubmit={ props.onSubmit }>
 
         <div className='row inner-bottom'>
           <TextInput
             identifier='DLIDNumber'
             description='DRIVER LICENSE OR ID CARD NUMBER'
-            value={props.existingDLIDInfo.DLIDNumber}
+            value={props.dlidHistory.DLIDNumber}
             onChange={props.onChange}
           />
         </div>
@@ -30,7 +24,7 @@ const Form = (props) => {
           <TextInput
             identifier='issuedBy'
             description='STATE OR COUNTRY CARD WAS ISSUED'
-            value={props.existingDLIDInfo.issuedBy}
+            value={props.dlidHistory.issuedBy}
             onChange={props.onChange}
           />
         </div>
@@ -40,8 +34,8 @@ const Form = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='month'
-            description='Month'
-            value={props.existingDLIDInfo.month}
+            description='MM'
+            value={props.dlidHistory.month}
           />
 
           <div className='unit spacer' />
@@ -49,8 +43,8 @@ const Form = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='day'
-            description='Day'
-            value={props.existingDLIDInfo.day}
+            description='DD'
+            value={props.dlidHistory.day}
           />
 
           <div className='unit spacer' />
@@ -58,16 +52,13 @@ const Form = (props) => {
           <NumberInput
             onChange={props.onChange}
             identifier='year'
-            description='Year'
-            value={props.existingDLIDInfo.year}
+            description='YYYY'
+            value={props.dlidHistory.year}
           />
         </div>
-
-        <ContinueButton disabled={props.continueDisabled} />
-      </form>
     </div>
   )
 };
 
-export default Form;
+export default EnterDlidHistory;
 

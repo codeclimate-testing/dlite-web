@@ -1,4 +1,4 @@
-Feature:  I want to enter my name
+Feature:  I want to enter my date of birth
   As a DMV customer
   I want to save my date of birth in my new online DL application
   So that I can drink or get senior discounts
@@ -11,7 +11,7 @@ Feature:  I want to enter my name
     When I enter my full date of birth into the form
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be on the page for entering my home address
+    Then I will be on the page for entering my address
     And I go to the page with my summary
     Then I will see my date of birth on that summary
 

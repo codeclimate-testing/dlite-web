@@ -9,7 +9,7 @@ import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          = navigateOnSubmit('/voter/voter-introduction/', props);
+  let onSubmit          = navigateOnSubmit('/about-me/license-history', props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
   let pageTitle         = 'About me: Social security';
   return (

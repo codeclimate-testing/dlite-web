@@ -50,12 +50,8 @@ module.exports = function(world) {
     navigateToPath('/apply/links', '.section-links', done);
   });
 
-  world.when('I visit the home addresses page', function(done) {
-    navigateToPath('/apply/about-me/home-address', '.home-address-form', done);
-  });
-
-  world.when('I visit the mailing addresses page', function(done) {
-    navigateToPath('/apply/about-me/mailing-address', '.mailing-address-form', done);
+  world.when('I visit the addresses page', function(done) {
+    navigateToPath('/apply/about-me/address', '.home-address-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
@@ -70,12 +66,8 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/physical-traits', '.physical-traits-form', done);
   });
 
-  world.when('I visit the height page', function(done) {
-    navigateToPath('/apply/about-me/height', '.height-form', done);
-  });
-
-  world.when('I visit the weight page', function(done) {
-    navigateToPath('/apply/about-me/weight', '.weight-form', done);
+  world.when('I visit the traits height and weight page', function(done) {
+    navigateToPath('/apply/about-me/traits-height-weight', '.traits-height-weight-form', done);
   });
 
   world.when('I visit the organ page', function(done) {
@@ -146,10 +138,6 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/names-history', '.previous-names', done);
   });
 
-  world.when('I visit the page to enter my existing DL/ID license info', function(done) {
-    navigateToPath('/apply/about-me/dl-id-number', '.existing-dl-id-number-form', done);
-  });
-
   world.when('I visit the page to enter my previously used names', function(done) {
     navigateToPath('/apply/about-me/names-history', '.previous-names', done);
   });
@@ -166,24 +154,16 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/about-me\/date-of-birth/, done);
   });
 
-  world.then('I will be on the page for entering my home address', function(done) {
-    assertOnPage('.home-address-form', /apply\/about-me\/home-address/, done);
-  });
-
-  world.then('I will be on the page for entering my mailing address', function(done) {
-    assertOnPage('.mailing-address-form', /apply\/about-me\/mailing-address/, done);
+  world.then('I will be on the page for entering my address', function(done) {
+    assertOnPage('.home-address-form', /apply\/about-me\/address/, done);
   });
 
   world.then('I will be on the page for entering my physical traits', function(done) {
     assertOnPage('.physical-traits-form', /about-me\/physical-traits/, done);
   });
 
-  world.then('I will be on the page for entering my height', function(done) {
-    assertOnPage('.height-form', /about-me\/height/, done);
-  });
-
-  world.then('I will be on the page for entering my weight', function(done) {
-    assertOnPage('.weight-form', /about-me\/weight/, done);
+  world.then('I will be on the page for entering my height and weight', function(done) {
+    assertOnPage('.traits-height-weight-form', /about-me\/traits-height-weight/, done);
   });
 
   world.then('I will be on the page for organ selection', function(done) {
@@ -270,12 +250,12 @@ module.exports = function(world) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
   });
 
-  world.then('I will be on the page to choose if I have existing license', function(done) {
+  world.then('I will be taken to license history page', function(done) {
     assertOnPage('.has-existing-dl-id-form', /about-me\/license-history/, done);
   });
 
-  world.then('I will be taken to page to enter existing DL/ID info', function(done) {
-    assertOnPage('.existing-dl-id-number-form', /about-me\/dl-id-number/, done)
+  world.then('I will be taken to organ donation page', function(done) {
+    assertOnPage('.donate-contribution-form', /about-me\/organ-donation/, done);
   });
 
   world.then('I will be on the page for veterans history', function(done) {

@@ -14,6 +14,7 @@ const HomeAddress = (props) => {
       <p>City: {props.homeAddress.city}</p>
       <p>State: {props.homeAddress.state}</p>
       <p>Zipcode: {props.homeAddress.zip}</p>
+      <p>Home and Mailing Same: {props.homeAddress.homeAddressSameAsMailing}</p>
     </div>
   );
 };

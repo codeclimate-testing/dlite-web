@@ -11,18 +11,15 @@ import Summary                                from './summary-handler.jsx';
 import Intro                                  from './apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
-import HomeAddress                            from './apply/home-address-form-container.jsx';
-import InterstitialAddress                    from './apply/interstitial-address-container.jsx';
-import MailingAddress                         from './apply/mailing-address-form-container.jsx';
+import Address                                from './apply/address-form-container.jsx';
+import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
-import Height                                 from './apply/height-form-container.jsx';
-import Weight                                 from './apply/weight-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import PrivilegeRemovedHistory                from './apply/privilege-removed-history-form-container.jsx';
-import ExistingDLIDDecision                   from './apply/existing-dl-id-decision-form-container.jsx';
-import ExistingDLIDInfo                       from './apply/existing-dl-id-info-form-container.jsx';
+
+import DlidHistory                            from './apply/dlid-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
 
@@ -49,17 +46,13 @@ class Router extends React.Component {
         <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/about-me/legal-name') } component={LegalName} />
         <Route path={ alicePath('/about-me/date-of-birth') } component={DateOfBirth} />
-        <Route path={ alicePath('/about-me/home-address') } component={HomeAddress} />
-        <Route path={ alicePath('/about-me/is-mailing-same/') } component={InterstitialAddress} />
-        <Route path={ alicePath('/about-me/mailing-address') } component={MailingAddress} />
+        <Route path={ alicePath('/about-me/address') } component={Address} />
+        <Route path={ alicePath('/about-me/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/about-me/physical-traits') } component={PhysicalTraits} />
-        <Route path={ alicePath('/about-me/height' ) } component={Height} />
-        <Route path={ alicePath('/about-me/weight' ) } component={Weight} />
         <Route path={ alicePath('/about-me/social-security' ) } component={SocialSecurity} />
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
-        <Route path={ alicePath('/about-me/license-history')} component={ExistingDLIDDecision} />
-        <Route path={ alicePath('/about-me/dl-id-number') } component={ExistingDLIDInfo} />
+        <Route path={ alicePath('/about-me/license-history')} component={DlidHistory} />
         <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 

@@ -5,13 +5,12 @@ import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
 import HomeAddress                 from './home-address.jsx';
 import MailingAddress              from './mailing-address.jsx';
+import TraitsHeightWeight          from './traits-height-weight.jsx';
 import PhysicalTraits              from './physical-traits.jsx';
-import Height                      from './height.jsx';
-import Weight                      from './weight.jsx';
 import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
 import PrivilegeRemovedHistory     from './privilege-removed-history.jsx';
-import ExistingDlIDInfo            from './existing-dl-id-info.jsx';
+import DlidHistory                 from './dlid-history.jsx';
 import NamesHistory                from './names-history.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -28,13 +27,12 @@ export {
   DateOfBirth,
   HomeAddress,
   MailingAddress,
+  TraitsHeightWeight,
   PhysicalTraits,
-  Height,
-  Weight,
   OrganDonation,
   SocialSecurity,
   PrivilegeRemovedHistory,
-  ExistingDlIDInfo,
+  DlidHistory,
   NamesHistory,
   CitizenStatus,
   EligibilityRequirements,

@@ -18,7 +18,7 @@ const NamesHistory = (props) => {
   return (
     <div className='summary-section'>
       <p> Has used previous names: {hasUsedPreviousNames} </p>
-      <p> Previous Names: {props.namesHistory.names} </p>
+      <p> Previous Names: {props.namesHistory.previousNames} </p>
     </div>
   );
 };

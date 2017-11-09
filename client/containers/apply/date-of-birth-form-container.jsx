@@ -9,7 +9,7 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          =   navigateOnSubmit('/about-me/home-address', props);
+  let onSubmit          =   navigateOnSubmit('/about-me/address', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
   let pageTitle         =   'About me: Date of birth';
 

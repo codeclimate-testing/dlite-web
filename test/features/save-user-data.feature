@@ -40,7 +40,7 @@ Feature: Save user data
     When I click to submit
     And I go to the page with my summary
     And I see the save button
-    And I visit the home addresses page
+    And I visit the addresses page
     When I enter my home address
     And I go to the page with my summary
     And I click the reload button

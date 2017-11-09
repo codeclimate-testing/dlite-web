@@ -13,7 +13,7 @@ Feature: Select and enter my revoked, refused or suspended license info
     When I enter date of my license suspension
     And I enter the reason for my license suspension
     When I click to submit
-    Then I will be on the page for veterans history
+    Then I will be on the page for organ selection
     And I go to the page with my summary
     Then I will see Yes in my suspended license selection
     Then I will see the date and reason for my license suspension
@@ -25,6 +25,6 @@ Feature: Select and enter my revoked, refused or suspended license info
     When I select suspended license No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be on the page for veterans history
+    Then I will be on the page for organ selection
     And I go to the page with my summary
     Then I will see No in my suspended license selection
