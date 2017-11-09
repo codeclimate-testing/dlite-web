@@ -45,23 +45,23 @@ module.exports = function(world) {
   });
 
   world.when('I visit the addresses page', function(done) {
-    navigateToPath('/apply/about-me/address', '.home-address-form', done);
+    navigateToPath('/apply/my-basics/address', '.home-address-form', done);
   });
 
   world.when('I visit the legal name page', function(done) {
-    navigateToPath('/apply/about-me/legal-name', '.legal-name-form', done);
+    navigateToPath('/apply/my-basics/legal-name', '.legal-name-form', done);
   });
 
   world.when('I visit the date of birth page', function(done) {
-    navigateToPath('/apply/about-me/date-of-birth', '.date-of-birth-form', done);
+    navigateToPath('/apply/my-basics/date-of-birth', '.date-of-birth-form', done);
   });
 
   world.when('I visit physical traits page', function(done) {
-    navigateToPath('/apply/about-me/physical-traits', '.physical-traits-form', done);
+    navigateToPath('/apply/my-basics/physical-traits', '.physical-traits-form', done);
   });
 
   world.when('I visit the traits height and weight page', function(done) {
-    navigateToPath('/apply/about-me/traits-height-weight', '.traits-height-weight-form', done);
+    navigateToPath('/apply/my-basics/traits-height-weight', '.traits-height-weight-form', done);
   });
 
   world.when('I visit the organ page', function(done) {
@@ -73,7 +73,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the social security page', function(done) {
-    navigateToPath('/apply/about-me/social-security', '.social-security-form', done);
+    navigateToPath('/apply/my-basics/social-security', '.social-security-form', done);
   });
 
   world.when('I visit voter citizen status page', function(done) {
@@ -145,19 +145,19 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {
-    assertOnPage('.date-of-birth-form', /apply\/about-me\/date-of-birth/, done);
+    assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
   });
 
   world.then('I will be on the page for entering my address', function(done) {
-    assertOnPage('.home-address-form', /apply\/about-me\/address/, done);
+    assertOnPage('.home-address-form', /apply\/my-basics\/address/, done);
   });
 
   world.then('I will be on the page for entering my physical traits', function(done) {
-    assertOnPage('.physical-traits-form', /about-me\/physical-traits/, done);
+    assertOnPage('.physical-traits-form', /my-basics\/physical-traits/, done);
   });
 
   world.then('I will be on the page for entering my height and weight', function(done) {
-    assertOnPage('.traits-height-weight-form', /about-me\/traits-height-weight/, done);
+    assertOnPage('.traits-height-weight-form', /my-basics\/traits-height-weight/, done);
   });
 
   world.then('I will be on the page for organ selection', function(done) {
@@ -169,7 +169,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for entering my social security', function(done) {
-    assertOnPage('.social-security-form', /about-me\/social-security/, done);
+    assertOnPage('.social-security-form', /my-basics\/social-security/, done);
   });
 
   world.then('I will be on the page for voter citizen status entry', function(done) {
@@ -229,7 +229,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to the names page', function(done) {
-    assertOnPage('.legal-name-form', /about-me\/legal-name/, done);
+    assertOnPage('.legal-name-form', /my-basics\/legal-name/, done);
   });
 
   world.then('I will be taken to the previous names info page', function(done) {

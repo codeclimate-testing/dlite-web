@@ -8,7 +8,7 @@ module.exports = function (world) {
   world.then('I will see page title for legal name', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Legal name'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -24,7 +24,7 @@ module.exports = function (world) {
   world.then('I will see page title for date of birth', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Date of birth'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -32,15 +32,7 @@ module.exports = function (world) {
   world.then('I will see page title for address', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Address'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see page title for mailing address', function(done){
-    browser
-      .html('title')
-      .then((title) => { assert.equal(title, 'About me: Mailing address'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -48,23 +40,7 @@ module.exports = function (world) {
   world.then('I will see page title for sex identification', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Sex identification'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see page title for eye color', function(done){
-    browser
-      .html('title')
-      .then((title) => { assert.equal(title, 'About me: Eye color'); })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see page title for hair color', function(done){
-    browser
-      .html('title')
-      .then((title) => { assert.equal(title, 'About me: Hair color'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -72,7 +48,7 @@ module.exports = function (world) {
   world.then('I will see page title for height and weight', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Height and Weight'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -80,7 +56,7 @@ module.exports = function (world) {
   world.then('I will see page title for social security', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Social security'); })
+      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
       .then(() => { done(); })
       .catch(done);
   });

@@ -11,6 +11,9 @@ const Form = (props) => {
   return (
     <div className='traits-height-weight-form'>
       <HomeLink />
+      <h3>1 &raquo; My Basics</h3>
+      <hr></hr>
+
 
       <h4>How tall are you?</h4>
       <h5>Example: 5 feet 9 inches</h5>
@@ -53,4 +56,3 @@ const Form = (props) => {
 };
 
 export default Form;
-
