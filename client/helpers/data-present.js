@@ -29,7 +29,11 @@ const date = (props) => {
 };
 
 const address = (props) => {
-  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip'])
+  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing'])
+};
+
+const homeAddressSameAsMailing = (props) => {
+  return hasAllAttributes(props, ['homeAddressSameAsMailing'])
 };
 
 const traitsHeightWeight = (props) => {
@@ -112,5 +116,6 @@ export {
   politicalPartyChoose,
   politicalContact,
   hasPreviousNames,
+  homeAddressSameAsMailing,
   application
 };

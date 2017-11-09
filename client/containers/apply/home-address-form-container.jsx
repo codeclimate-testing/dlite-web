@@ -9,14 +9,12 @@ import navigateOnSubmit        from '../../helpers/navigate-on-submit';
 import * as dataPresent        from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit    = navigateOnSubmit('/about-me/is-mailing-same/', props);
   let continueDisabled  = false;
-  let pageTitle   = 'About me: Home address';
+  let pageTitle   = 'About me: Address';
 
   return (
     <Form
       pageTitle         = { pageTitle }
-      onSubmit          = { onSubmit }
       onChange          = { props.onChange }
       homeAddress       = { props.homeAddress }
       continueDisabled  = { continueDisabled }

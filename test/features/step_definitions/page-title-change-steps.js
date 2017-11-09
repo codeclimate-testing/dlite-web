@@ -29,10 +29,10 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see page title for home address', function(done){
+  world.then('I will see page title for address', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'About me: Home address'); })
+      .then((title) => { assert.equal(title, 'About me: Address'); })
       .then(() => { done(); })
       .catch(done);
   });
