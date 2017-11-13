@@ -11,7 +11,7 @@ const Form = (props) => {
   document.title = props.pageTitle;
   return (
     <div className='home-address-form'>
-    <h3>1 &raquo; My Basics: Who You Are</h3>
+    <h3>1 &raquo; My Basics</h3>
     <hr></hr>
 
 
