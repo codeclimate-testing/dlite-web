@@ -10,7 +10,7 @@ const Form = (props) => {
   return (
     <div className='social-security-form'>
       <HomeLink />
-      <h3>1 &raquo; My Basics: Additional Info</h3>
+      <h3>1 &raquo; My Basics</h3>
       <hr></hr>
 
       <h4>What’s your Social Security Number?</h4>
