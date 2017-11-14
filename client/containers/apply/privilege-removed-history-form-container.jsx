@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
   let showEnterRevokedSuspended         = false;
   let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
-  let onBack                            = navigateOnBack('/my-history/names-history', props);
+  let onBack                            = navigateOnBack('/my-history/names', props);
   let pageTitle                         = "DMV: License application - My history";
 
 if(props.privilegeRemovedHistory.isSuspended === 'Yes') {

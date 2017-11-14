@@ -53,7 +53,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/my-history/privilege-removed-history')} component={PrivilegeRemovedHistory} />
         <Route path={ alicePath('/my-history/license-and-id')} component={LicenseAndId} />
-        <Route path={ alicePath('/my-history/names-history' ) } component={NamesHistory} />
+        <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />

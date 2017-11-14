@@ -129,7 +129,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
-    navigateToPath('/apply/my-history/names-history', '.previous-names', done);
+    navigateToPath('/apply/my-history/names', '.previous-names', done);
   });
 
   world.when('I visit the page to enter existing license and id', function(done) {
@@ -197,7 +197,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page to choose if I ever had previous names', function(done) {
-    assertOnPage('.previous-names', /my-history\/names-history/, done);
+    assertOnPage('.previous-names', /my-history\/names/, done);
   });
 
   world.then('I will be on the page with my summary', function(done) {

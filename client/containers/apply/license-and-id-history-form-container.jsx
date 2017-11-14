@@ -15,7 +15,7 @@ import * as dataPresent                    from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let continueDisabled         = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
   let showLicenseAndIdHistory  = false;
-  let onSubmit                 = navigateOnSubmit('/my-history/names-history/', props);
+  let onSubmit                 = navigateOnSubmit('/my-history/names/', props);
   let onBack                   = navigateOnBack('/my-basics/social-security', props);
   let pageTitle                = "DMV: License application - My history";
 
