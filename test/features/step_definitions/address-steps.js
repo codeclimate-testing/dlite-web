@@ -5,7 +5,7 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see correct home address lables', function(done){
+  world.then('I will see correct home address labels', function(done){
     browser
     .text()
     .then((text) => {
@@ -137,7 +137,7 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  world.then('I will see correct mailing address lables', function(done){
+  world.then('I will see correct mailing address labels', function(done){
     browser
     .text()
     .then((text) => {

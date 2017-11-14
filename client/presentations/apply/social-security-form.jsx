@@ -16,7 +16,7 @@ const Form = (props) => {
       <h4>What’s your Social Security Number?</h4>
       <h5>Example: 123 - 45 - 6789</h5>
 
-      <form onSubmit={ props.onSubmit }>
+      <form onSubmit={ props.onSubmit } >
         <div className='row inner-bottom'>
           <NumberInput
             onChange={props.onChange}
@@ -44,7 +44,7 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={ props.continueDisabled } />
+        <ContinueButton disabled={ props.continueDisabled } /> <button type="button" onClick={props.onBack}>Back</button> 
       </form>
     </div>
   );

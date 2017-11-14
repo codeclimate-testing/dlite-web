@@ -252,7 +252,15 @@ module.exports = function(world) {
     assertOnPage('.donate-contribution-form', /about-me\/organ-donation/, done);
   });
 
+    world.then('I will be taken to date of birth page', function(done) {
+    assertOnPage('.date-of-birth-form', /my-basics\/date-of-birth/, done);
+  });
+
   world.then('I will be on the page for veterans history', function(done) {
     assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
+  });
+
+  world.when('I will be taken to get started page', function(done){
+    navigateToPath('/apply/what-do-you-want-to-do-today', '.intro-info', done);
   });
 };

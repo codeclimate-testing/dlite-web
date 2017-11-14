@@ -26,3 +26,10 @@ Feature:  I want to enter my height
     And I click to submit
     And I go to the page with my summary
     Then I will see my updated height on the summary
+  
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the traits height and weight page
+    Then I will see a field for traits height and weight
+    When I click to back
+    Then I will be on the page for entering my physical traits

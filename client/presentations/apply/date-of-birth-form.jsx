@@ -6,7 +6,6 @@ import HomeLink         from '../home-link.jsx';
 import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
 const Form = (props) => {
   document.title = props.pageTitle;
@@ -19,7 +18,7 @@ const Form = (props) => {
       <h4>What's your date of birth?</h4>
       <h5>Example: 03 21 1967</h5>
 
-      <form onSubmit={ props.onSubmit }>
+      <form onSubmit={ props.onSubmit } >
         <div className='row inner-bottom'>
           <NumberInput
             onChange={props.onChange}
@@ -47,7 +46,8 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled} />
+        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
+
       </form>
     </div>
   )
