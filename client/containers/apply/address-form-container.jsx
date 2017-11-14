@@ -10,10 +10,12 @@ import InterstitialAddress          from '../../presentations/apply/interstitial
 import MailingAddress               from "./mailing-address-form-container.jsx";
 import connectForm                  from '../../helpers/connect-form';
 import navigateOnSubmit             from '../../helpers/navigate-on-submit';
+import navigateOnBack               from '../../helpers/navigate-on-back';
 import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          = navigateOnSubmit('/my-basics/physical-traits/', props);
+  let onSubmit          = navigateOnSubmit('/my-basics/physical-traits', props);
+  let onBack            = navigateOnBack('/my-basics/date-of-birth', props);
   let continueDisabled  = !(dataPresent.homeAddressSameAsMailing(props.homeAddress));
 
   if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {
@@ -40,7 +42,7 @@ const ConnectedForm = (props) => {
             <MailingAddress
             />
 
-            <ContinueButton disabled={continueDisabled} />
+            <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
           </form>
       </div>
   );
@@ -55,7 +57,7 @@ const ConnectedForm = (props) => {
          <HomeAddress
          />
 
-         <ContinueButton disabled={continueDisabled} />
+         <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
        </form>
     </div>
   );

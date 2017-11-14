@@ -6,7 +6,6 @@ import HomeLink         from '../home-link.jsx';
 import TextInput        from '../text-input.jsx';
 import SuffixSelector   from '../suffix-selector.jsx';
 import ContinueButton   from '../continue-button.jsx';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
 
 const LegalNameForm = (props) => {
   document.title = props.pageTitle;
@@ -45,7 +44,7 @@ const LegalNameForm = (props) => {
           onChange={props.onChange}
         />
 
-        <ContinueButton disabled={props.continueDisabled} />
+        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button> 
       </form>
     </div>
   );
