@@ -9,12 +9,15 @@ import PrivilegeRemovedHistory             from "../../presentations/apply/privi
 import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
 import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
+import navigateOnBack                      from '../../helpers/navigate-on-back';
 import * as dataPresent                    from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
   let showEnterRevokedSuspended         = false;
   let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
+  let onBack                            = navigateOnBack('/my-history/names-history', props);
+  let pageTitle                         = "DMV: License application - My history";
 
 if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
   showEnterRevokedSuspended  = false;
@@ -23,17 +26,22 @@ if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
   return (
       <div>
         <HomeLink />
+        <h3>2 &raquo; My History</h3>
+        <hr></hr>
 
    <form onSubmit={onSubmit}>
     <PrivilegeRemovedHistory
-        onChange                  ={props.onChange}
-        selectedValue             ={props.privilegeRemovedHistory.isSuspended}
+        pageTitle      ={pageTitle}
+        onChange       ={props.onChange}
+        selectedValue  ={props.privilegeRemovedHistory.isSuspended}
     />
     <EnterRevokedSuspended
-        onChange                 = {props.onChange}
-        privilegeRemovedHistory  = {props.privilegeRemovedHistory}
+        onChange                 ={props.onChange}
+        privilegeRemovedHistory  ={props.privilegeRemovedHistory}
      />
         <ContinueButton disabled={continueDisabled} />
+        <br></br>
+        <button type="button" onClick={onBack}>Back</button>
         </form>
       </div>
     );
@@ -42,13 +50,18 @@ if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
 return (
     <div>
       <HomeLink />
+        <h3>2 &raquo; My History</h3>
+        <hr></hr>
 
       <form onSubmit={onSubmit}>
         <PrivilegeRemovedHistory
-          onChange      = {props.onChange}
-          selectedValue = {props.privilegeRemovedHistory.isSuspended}
+          pageTitle     ={pageTitle}
+          onChange      ={props.onChange}
+          selectedValue ={props.privilegeRemovedHistory.isSuspended}
         />
         <ContinueButton disabled={continueDisabled} />
+        <br></br>
+        <button type="button" onClick={onBack}>Back</button>
       </form>
     </div>
   );

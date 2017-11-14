@@ -10,7 +10,7 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const Form = (props) => {
   let continueDisabled  = !dataPresent.previousNamesInfo(props.previousNamesInfo);
-  let onSubmit          = navigateOnSubmit('/about-me/privilege-removed-history/', props);
+  let onSubmit          = navigateOnSubmit('/my-history/privilege-removed-history/', props);
   let pageTitle         = 'About me: Previous Names Info';
 
   return (

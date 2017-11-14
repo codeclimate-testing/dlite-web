@@ -21,5 +21,5 @@ Feature: Interaction pattern for the traits section
     Given I go to the new online DL application page
     When I visit physical traits page
     Then I will see labels for sex, eye color and hair color
-    When I click to back
+    When I click to go back
     Then I will be on the page for entering my address

@@ -34,5 +34,5 @@ Feature:  I want to enter my name
     Given I go to the new online DL application page
     When I visit the legal name page
     Then I will see a field for first, middle last name and suffix
-    When I click to back
+    When I click to go back
     Then I will be taken to get started page

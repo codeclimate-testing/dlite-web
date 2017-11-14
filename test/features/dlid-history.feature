@@ -29,3 +29,9 @@ Feature: Existing DL or ID number
     And I visit the page to choose if license was suspended
     And I go to the page with my summary
     Then I will see No in my existing DL/ID selection
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the page to choose to enter exsiting DL/ID
+    When I click to go back
+    Then I will be on the page for entering my social security
