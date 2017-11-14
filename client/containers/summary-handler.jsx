@@ -32,7 +32,6 @@ import {
 } from '../presentations/summary/index.js';
 
 const successVisit = '/about-me/success-visit';
-const apiURL = __API__;
 
 const SummaryHandler = (props) => {
   let application = props.application;
@@ -68,11 +67,12 @@ const SummaryHandler = (props) => {
   }, []);
 
   const loadData  = () => {
-    props.dispatch(getData(apiURL, application.id));
+    props.dispatch(getData(application.id));
   };
 
   const saveData = () => {
-    props.dispatch(postData(apiURL, application));
+    let data = application;
+    props.dispatch(postData(data));
   }
 
   return (

@@ -1,25 +1,14 @@
 'use strict';
 
 import React        from 'react';
-import { connect }  from 'react-redux';
 import { Link }     from 'react-router-dom';
-import uuidv1       from 'uuid/v1';
 
-import { TYPES }                from '../../actions';
 import HomeLink                 from '../../presentations/home-link.jsx';
 import alicePath                from '../../helpers/alice-path';
 
 const Intro = (props) => {
 
   const linkAddress = '/my-basics/legal-name';
-
-  const createApplicationID = () =>{
-    props.dispatch({
-      type: TYPES.CREATE_APPLICATION_ID,
-      payload: { value: uuidv1() }
-    });
-  }
-
   return (
     <div>
       <HomeLink />
@@ -41,7 +30,7 @@ const Intro = (props) => {
           <b>10 minutes</b></p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button' onClick={createApplicationID}>Get Started</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Get Started</Link>
         </div>
 
       </div>
@@ -49,8 +38,6 @@ const Intro = (props) => {
   );
 }
 
-function mapStateToProps(state) {
-  return state.application;
-}
 
-export default connect(mapStateToProps)(Intro);
+
+export default Intro;

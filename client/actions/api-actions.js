@@ -1,41 +1,60 @@
 'use strict';
 
-import axios from 'axios';
+import fetch from 'isomorphic-fetch'
 
-//Required for running tests with node horseman
-require('es6-promise').polyfill();
-
-export const getData = function (apiHost, id) {
-  let url = apiHost + '/' + 'application' + '/' + id;
+export const postData = function (body) {
   return function (dispatch) {
-    return axios({
-      url: url,
-      method: 'get',
-      responseType: 'json'
+    return fetch('/api/application',{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
     })
-      .then(function (response) {
-        dispatch({ type: 'GET_DATA_SUCCESS', data: response.data });
+      .then(function(res){
+        return res.json();
+      })
+      .then(function (data) {
+        dispatch({
+          type: 'POST_DATA_SUCCESS',
+          payload: {
+            data: data,
+            error: null }
+        });
       })
       .catch(function (err) {
-        dispatch({ type: 'GET_DATA_ERROR', error: err.message, data: {} });
+        dispatch({
+          type: 'POST_DATA_ERROR',
+          payload: {
+            data: {},
+            error: err.message }
+        });
       })
   }
 };
 
-export const postData = function (apiHost, body) {
-  let url = apiHost + '/' + 'application';
+export const getData = function (id) {
   return function (dispatch) {
-    return axios({
-      url: url,
-      data: body,
-      method: 'post',
-      responseType: 'json'
-    })
-      .then(function (response) {
-        dispatch({ type: 'POST_DATA_SUCCESS', data: response.data });
+    return fetch('/api/application/' + id)
+      .then(function(res){
+        return res.json();
+      })
+      .then(function (data) {
+        dispatch({
+          type: 'GET_DATA_SUCCESS',
+          payload: {
+            data: data,
+            error: null }
+        });
       })
       .catch(function (err) {
-        dispatch({ type: 'POST_DATA_ERROR', error: err.message, data: {} });
+        dispatch({
+          type: 'GET_DATA_ERROR',
+          payload: {
+            data: {},
+            error: err.message }
+          });
       })
   }
-}
+};

@@ -35,17 +35,6 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  world.then('I will see that the data I entered disappears from the summary', function(done) {
-    browser
-      .text()
-      .then((text) => {
-        assert(!text.includes('FirstName1'), 'first name present in summary');
-        assert(!text.includes('MiddleName1'), 'middle name present in summary');
-        assert(!text.includes('LastName1'), 'last name present in summary');
-      })
-      .then(() => { done(); })
-      .catch(done);
-  });
   world.then('I will see all my data persists in the summary', function(done) {
     browser
     .text()

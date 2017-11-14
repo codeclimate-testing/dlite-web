@@ -4,6 +4,7 @@
     "react"
   ],
   "plugins": [
-    "transform-object-assign"
+    "transform-object-assign",
+    "es6-promise"
   ]
 }
