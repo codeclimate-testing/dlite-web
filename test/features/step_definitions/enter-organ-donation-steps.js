@@ -166,4 +166,14 @@ module.exports = function(world) {
       done(err);
     });
   });
+
+  world.then('I will see organ donation question', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('Do you wish to be an organ or tissue donor?'), 'Organ donation question missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
 };
