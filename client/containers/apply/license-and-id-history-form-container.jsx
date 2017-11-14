@@ -2,26 +2,26 @@
 
 import React from 'react';
 
-import { updateDlidHistory }               from "../../actions/index";
+import { updateLicenseAndIdHistory }       from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import ContinueButton                      from '../../presentations/continue-button.jsx';
-import DlidHistory                         from "../../presentations/apply/dlid-history-form.jsx";
-import EnterDlidHistory                    from "../../presentations/apply/enter-dlid-history-form.jsx";
+import LicenseAndIdHistory                 from "../../presentations/apply/license-and-id-history-form.jsx";
+import EnterLicenseAndIdHistory            from "../../presentations/apply/enter-license-and-id-history-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
 import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
 import navigateOnBack                      from '../../helpers/navigate-on-back';
 import * as dataPresent                    from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let continueDisabled         = !(dataPresent.dlidHistory(props.dlidHistory));
-  let showEnterDLidHistory     = false;
+  let continueDisabled         = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
+  let showLicenseAndIdHistory  = false;
   let onSubmit                 = navigateOnSubmit('/my-history/names-history/', props);
   let onBack                   = navigateOnBack('/my-basics/social-security', props);
   let pageTitle                = "DMV: License application - My history";
 
-if(props.dlidHistory.isIssued === 'Yes') {
-  showEnterDLidHistory  = false;
-  continueDisabled = !(dataPresent.dlidHistory(props.dlidHistory));
+if(props.licenseAndIdHistory.isIssued === 'Yes') {
+  showLicenseAndIdHistory  = false;
+  continueDisabled = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
 
   return (
       <div>
@@ -30,14 +30,14 @@ if(props.dlidHistory.isIssued === 'Yes') {
         <hr></hr>
 
    <form onSubmit={onSubmit}>
-    <DlidHistory
+    <LicenseAndIdHistory
         pageTitle      ={pageTitle}
         onChange       ={props.onChange}
-        selectedValue  ={props.dlidHistory.isIssued}
+        selectedValue  ={props.licenseAndIdHistory.isIssued}
     />
-    <EnterDlidHistory
-        onChange       ={props.onChange}
-        dlidHistory    ={props.dlidHistory}
+    <EnterLicenseAndIdHistory
+        onChange               ={props.onChange}
+        licenseAndIdHistory    ={props.licenseAndIdHistory}
      />
         <ContinueButton disabled={continueDisabled} />
         <br></br>
@@ -54,10 +54,10 @@ return (
       <hr></hr>
 
       <form onSubmit={onSubmit}>
-        <DlidHistory
+        <LicenseAndIdHistory
           pageTitle     ={pageTitle}
           onChange      ={props.onChange}
-          selectedValue ={props.dlidHistory.isIssued}
+          selectedValue ={props.licenseAndIdHistory.isIssued}
         />
         <ContinueButton disabled={continueDisabled} />
         <br></br>
@@ -69,8 +69,8 @@ return (
 
 function mapStateToProps(state) {
   return {
-     dlidHistory: state.application.dlidHistory
+     licenseAndIdHistory: state.application.licenseAndIdHistory
     };
 }
 
-export default connectForm(mapStateToProps, updateDlidHistory, ConnectedForm);
+export default connectForm(mapStateToProps, updateLicenseAndIdHistory, ConnectedForm);

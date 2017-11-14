@@ -132,8 +132,8 @@ module.exports = function(world) {
     navigateToPath('/apply/my-history/names-history', '.previous-names', done);
   });
 
-  world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
-    navigateToPath('/apply/my-history/license-history', '.has-existing-dl-id-form', done);
+  world.when('I visit the page to enter existing license and id', function(done) {
+    navigateToPath('/apply/my-history/license-and-id', '.license-and-id-history-form', done);
   });
 
   world.when('I visit political contact details page', function(done){
@@ -192,8 +192,8 @@ module.exports = function(world) {
     assertOnPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
   });
 
-  world.then('I will be on the page to enter existing DL/ID', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /my-history\/license-history/, done);
+  world.then('I will be on the page to enter existing license and id', function(done) {
+    assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
   });
 
   world.then('I will be on the page to choose if I ever had previous names', function(done) {
@@ -248,8 +248,8 @@ module.exports = function(world) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
   });
 
-  world.then('I will be taken to license history page', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /my-history\/license-history/, done);
+  world.then('I will be taken to license and id history page', function(done) {
+    assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
   });
 
   world.then('I will be taken to organ donation page', function(done) {

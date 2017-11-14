@@ -10,7 +10,7 @@ import navigateOnBack             from '../../helpers/navigate-on-back';
 import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          = navigateOnSubmit('/my-history/license-history', props);
+  let onSubmit          = navigateOnSubmit('/my-history/license-and-id', props);
   let onBack            = navigateOnBack('/my-basics/traits-height-weight', props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
   let pageTitle         = "DMV: License application - My basics";

@@ -53,7 +53,7 @@ const privilegeRemovedHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
 
-const dlidHistory = (props) => {
+const licenseAndIdHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
 }
 
@@ -91,7 +91,7 @@ const application = (props) => {
     socialSecurity(props.socialSecurity) ||
     namesHistory(props.namesHistory) ||
     privilegeRemovedHistory(props.privilegeRemovedHistory) ||
-    dlidHistory(props.dlidHistory) ||
+    licenseAndIdHistory(props.licenseAndIdHistory) ||
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
@@ -112,7 +112,7 @@ export {
   socialSecurity,
   namesHistory,
   privilegeRemovedHistory,
-  dlidHistory,
+  licenseAndIdHistory,
   politicalPartyChoose,
   politicalContact,
   hasPreviousNames,

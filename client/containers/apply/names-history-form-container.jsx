@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled       = !(dataPresent.hasPreviousNames(props.namesHistory))
   let showEnterPreviousNames = false
   let onSubmit               = navigateOnSubmit('/my-history/privilege-removed-history', props);
-  let onBack                 = navigateOnBack('/my-history/license-history', props);
+  let onBack                 = navigateOnBack('/my-history/license-and-id', props);
   let pageTitle              = "DMV: License application - My history";
 
   if(props.namesHistory.hasUsedPreviousNames === 'Yes') {

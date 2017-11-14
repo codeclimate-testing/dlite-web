@@ -6,10 +6,10 @@ import SelectorCollection      from '../selector-collection.jsx';
 
 const VALUES = ['Yes', 'No'];
 
-const DlidHistory = (props) => {
+const LicenseAndIdHistory = (props) => {
   document.title = props.pageTitle;
   return (
-    <div className='has-existing-dl-id-form'>
+    <div className='license-and-id-history-form'>
 
       <h4>Have you ever had a driver license or state-issued ID card?</h4>
       <h5>The license or ID card must be issued by a U.S, state or another country. </h5>
@@ -26,4 +26,4 @@ const DlidHistory = (props) => {
   );
 };
 
-export default DlidHistory;
+export default LicenseAndIdHistory;

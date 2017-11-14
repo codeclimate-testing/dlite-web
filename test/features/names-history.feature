@@ -27,4 +27,4 @@ Feature: Enter my previously used Names
     Given I go to the new online DL application page
     When I visit the page to choose if I ever had previous names
     When I click to go back
-    Then I will be on the page to enter existing DL/ID
+    Then I will be on the page to enter existing license and id
