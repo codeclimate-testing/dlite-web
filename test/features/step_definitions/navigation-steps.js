@@ -120,6 +120,10 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/success-visit', '.success-visit-info', done);
   });
 
+  world.and('I visit appointment preparation page', function(done) {
+    navigateToPath('/apply/appointment-preparation', '.appointment-preparation', done);
+  });
+
   world.when('I visit voter opt out page', function(done) {
     navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
@@ -196,8 +200,16 @@ module.exports = function(world) {
     assertOnPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
   });
 
+  world.then('I will be on the required documents page', function(done) {
+    assertOnPage('.required-documents', /apply\/appointment-preparation\/documents/, done);
+  });
+
   world.then('I will be on the page with my summary', function(done) {
     assertOnPage('.summary', /apply\/summary/, done);
+  });
+
+  world.then('I will be on the page for appointment preparation', function(done) {
+    assertOnPage('.appointment-preparation', /apply\/appointment-preparation/, done);
   });
 
   world.then('I will be taken to political party page', function(done){

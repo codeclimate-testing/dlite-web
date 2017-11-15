@@ -11,4 +11,4 @@ Feature: View Summary Before Submitting
     And I select a hair color
     And I go to the page with my summary
     And I click to submit
-    Then I will be taken to the success visit page
+    Then I will be on the page for appointment preparation 
