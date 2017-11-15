@@ -72,7 +72,7 @@ function parse(data) {
       dateOfBirth: data_of_birth,
       physicalTraits: {
         hairColor:    application.hair_color,
-        eyeColor:     application.eye_color,
+        eyeColor:     application.eye_color
       },
       homeAddress: {
         street_1: home_address.street_address_1,
