@@ -23,9 +23,9 @@ const linkData = [
   {description: 'physical traits',                        path: '/my-basics/physical-traits'},
   {description: 'social security',                        path: '/my-basics/social-security'},
   {description: 'organ donation',                         path: '/organ-donation'},
-  {description: 'has existing DL/ID',                     path: '/about-me/license-history'},
-  {description: 'names history',                          path: '/about-me/names-history/'},
-  {description: 'is suspended license',                   path: '/about-me/privilege-removed-history'},
+  {description: 'license and id history',                 path: '/my-history/license-and-id'},
+  {description: 'names history',                          path: '/my-history/names/'},
+  {description: 'license issues',                         path: '/my-history/license-issues'},
 
   {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},

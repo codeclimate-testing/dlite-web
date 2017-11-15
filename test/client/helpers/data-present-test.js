@@ -98,69 +98,69 @@ describe('dataPresent', function() {
     });
   });
 
-  describe('#privilegeRemovedHistory', function() {
+  describe('#licenseIssues', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.privilegeRemovedHistory({month: '10', day: '15', year: '1985'}),
+        dataPresent.licenseIssues({month: '10', day: '15', year: '1985'}),
         'suspended license date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.privilegeRemovedHistory({month: '10', year: '1985'}),
+        !dataPresent.licenseIssues({month: '10', year: '1985'}),
         'suspended license date present with only parts of date'
       );
     });
 
     it('is true when ony reason is present', function() {
       assert(
-        dataPresent.privilegeRemovedHistory({'reason': 'Testing for your presence'}),
+        dataPresent.licenseIssues({'reason': 'Testing for your presence'}),
         'suspended license not present with just reason field'
       );
     });
 
     it('is true when ony isSuspended is present', function() {
       assert(
-        dataPresent.privilegeRemovedHistory({'isSuspended': 'Yes'}),
+        dataPresent.licenseIssues({'isSuspended': 'Yes'}),
         'suspended license not present with just isSuspended field'
       );
     });
 
   });
 
-  describe('#dlidHistory', function() {
+  describe('#licenseAndIdHistory', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.dlidHistory({month: '10', day: '15', year: '1985'}),
+        dataPresent.licenseAndIdHistory({month: '10', day: '15', year: '1985'}),
         'existing DL ID date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.dlidHistory({month: '10', year: '1985'}),
+        !dataPresent.licenseAndIdHistory({month: '10', year: '1985'}),
         'existing DL ID date present with only parts of date'
       );
     });
 
     it('is true when ony DLIDNumber is present', function() {
       assert(
-        dataPresent.dlidHistory({'DLIDNumber': 'DMV00100101'}),
+        dataPresent.licenseAndIdHistory({'DLIDNumber': 'DMV00100101'}),
         'existing DL ID not present with just DLIDNumber field'
       );
     });
 
     it('is true when ony issuedBy is present', function() {
       assert(
-        dataPresent.dlidHistory({'issuedBy': 'USA'}),
+        dataPresent.licenseAndIdHistory({'issuedBy': 'USA'}),
         'existing DL ID not present with just issuedBy field'
       );
     });
 
     it('is true when ony isIssued is present', function() {
       assert(
-        dataPresent.dlidHistory({'isIssued': 'Yes'}),
+        dataPresent.licenseAndIdHistory({'isIssued': 'Yes'}),
         'existing DL ID not present with just isIssued field'
       );
     });
@@ -283,7 +283,7 @@ describe('dataPresent', function() {
 
     it('is true when there is suspended license info', function(){
       let data = {
-        privilegeRemovedHistory: {
+        licenseIssues: {
           isSuspended:  'Yes',
           month:        '10',
           day:          '15',
@@ -308,7 +308,7 @@ describe('dataPresent', function() {
 
     it('is true when there is existing DL/ID info', function(){
       let data = {
-        dlidHistory: {
+        licenseAndIdHistory: {
           DLIDNumber:   'DMV001',
           issuedBy:     'California',
           month:        '10',

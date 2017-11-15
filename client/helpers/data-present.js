@@ -49,11 +49,11 @@ const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3'])
 }
 
-const privilegeRemovedHistory = (props) => {
+const licenseIssues = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
 
-const dlidHistory = (props) => {
+const licenseAndIdHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
 }
 
@@ -90,8 +90,8 @@ const application = (props) => {
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
     namesHistory(props.namesHistory) ||
-    privilegeRemovedHistory(props.privilegeRemovedHistory) ||
-    dlidHistory(props.dlidHistory) ||
+    licenseIssues(props.licenseIssues) ||
+    licenseAndIdHistory(props.licenseAndIdHistory) ||
     value(props.citizenStatus) ||
     value(props.ballotByMail) ||
     value(props.eligibilityRequirements) ||
@@ -111,8 +111,8 @@ export {
   organDonation,
   socialSecurity,
   namesHistory,
-  privilegeRemovedHistory,
-  dlidHistory,
+  licenseIssues,
+  licenseAndIdHistory,
   politicalPartyChoose,
   politicalContact,
   hasPreviousNames,

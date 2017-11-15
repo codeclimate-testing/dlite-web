@@ -5,9 +5,9 @@ import React from 'react';
 import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
 
-const EnterDlidHistory = (props) => {
+const EnterLicenseAndIdHistory = (props) => {
   return (
-    <div className='existing-dl-id-number-form'>
+    <div className='existing-license-id-number-form'>
 
       <h4>Please tell us about your most recent license or ID card.</h4>
 
@@ -15,7 +15,7 @@ const EnterDlidHistory = (props) => {
           <TextInput
             identifier='DLIDNumber'
             description='DRIVER LICENSE OR ID CARD NUMBER'
-            value={props.dlidHistory.DLIDNumber}
+            value={props.licenseAndIdHistory.DLIDNumber}
             onChange={props.onChange}
           />
         </div>
@@ -24,7 +24,7 @@ const EnterDlidHistory = (props) => {
           <TextInput
             identifier='issuedBy'
             description='STATE OR COUNTRY CARD WAS ISSUED'
-            value={props.dlidHistory.issuedBy}
+            value={props.licenseAndIdHistory.issuedBy}
             onChange={props.onChange}
           />
         </div>
@@ -35,7 +35,7 @@ const EnterDlidHistory = (props) => {
             onChange={props.onChange}
             identifier='month'
             description='MM'
-            value={props.dlidHistory.month}
+            value={props.licenseAndIdHistory.month}
           />
 
           <div className='unit spacer' />
@@ -44,7 +44,7 @@ const EnterDlidHistory = (props) => {
             onChange={props.onChange}
             identifier='day'
             description='DD'
-            value={props.dlidHistory.day}
+            value={props.licenseAndIdHistory.day}
           />
 
           <div className='unit spacer' />
@@ -53,12 +53,11 @@ const EnterDlidHistory = (props) => {
             onChange={props.onChange}
             identifier='year'
             description='YYYY'
-            value={props.dlidHistory.year}
+            value={props.licenseAndIdHistory.year}
           />
         </div>
     </div>
   )
 };
 
-export default EnterDlidHistory;
-
+export default EnterLicenseAndIdHistory;

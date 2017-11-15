@@ -33,5 +33,5 @@ Feature: Donate Life
     Given I go to the new online DL application page
     When I visit the organ page
     Then I will see organ donation question
-    When I click to back
-    Then I will be taken to revoke or suspended license page
+    When I click to go back
+    Then I will be taken to the license issues page

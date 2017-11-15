@@ -124,20 +124,16 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
 
-  world.when('I visit the page to choose if license was suspended', function(done){
-    navigateToPath('/apply/about-me/privilege-removed-history', '.is-suspended-license-form', done);
+  world.when('I visit the license issues page', function(done){
+    navigateToPath('/apply/my-history/license-issues', '.license-issues-form', done);
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
-    navigateToPath('/apply/about-me/names-history', '.previous-names', done);
+    navigateToPath('/apply/my-history/names', '.previous-names', done);
   });
 
-  world.when('I visit the page to enter my previously used names', function(done) {
-    navigateToPath('/apply/about-me/names-history', '.previous-names', done);
-  });
-
-  world.when('I visit the page to choose to enter exsiting DL/ID', function(done) {
-    navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
+  world.when('I visit the page to enter existing license and id', function(done) {
+    navigateToPath('/apply/my-history/license-and-id', '.license-and-id-history-form', done);
   });
 
   world.when('I visit political contact details page', function(done){
@@ -196,8 +192,20 @@ module.exports = function(world) {
     assertOnPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
   });
 
+  world.then('I will be on the page to enter existing license and id', function(done) {
+    assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
+  });
+
+  world.then('I will be on the page to choose if I ever had previous names', function(done) {
+    assertOnPage('.previous-names', /my-history\/names/, done);
+  });
+
   world.then('I will be on the page with my summary', function(done) {
     assertOnPage('.summary', /apply\/summary/, done);
+  });
+
+  world.then('I will be taken to the license issues page', function(done){
+    assertOnPage('.license-issues-form', /my-history\/license-issues/, done);
   });
 
   world.then('I will be taken to political party page', function(done){
@@ -236,16 +244,12 @@ module.exports = function(world) {
     assertOnPage('.previous-names-info-form', /apply\/about-me\/enter-previous-names/, done);
   });
 
-  world.then('I will be taken to revoke or suspended license page', function(done){
-    assertOnPage('.is-suspended-license-form', /apply\/about-me\/privilege-removed-history/, done);
-  });
-
   world.then('I will be taken to previous names page', function(done) {
     assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
   });
 
-  world.then('I will be taken to license history page', function(done) {
-    assertOnPage('.has-existing-dl-id-form', /about-me\/license-history/, done);
+  world.then('I will be taken to license and id history page', function(done) {
+    assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
   });
 
   world.then('I will be taken to organ donation page', function(done) {

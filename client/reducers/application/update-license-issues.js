@@ -13,4 +13,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_PRIVILEGE_REMOVED_HISTORY);
+export default formObjectReducer(defaultState, TYPES.UPDATE_LICENSE_ISSUES);

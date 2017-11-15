@@ -6,9 +6,10 @@ import SelectorCollection      from '../selector-collection.jsx';
 
 const VALUES = ['Yes', 'No'];
 
-const PrivilegeRemovedHistory = (props) => {
+const LicenseIssues = (props) => {
+  document.title = props.pageTitle;
   return (
-    <div className='is-suspended-license-form'>
+    <div className='license-issues-form'>
       <h4>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h4>
       <div className='inner-bottom'>
           <SelectorCollection
@@ -22,4 +23,4 @@ const PrivilegeRemovedHistory = (props) => {
   );
 };
 
-export default PrivilegeRemovedHistory;
+export default LicenseIssues;
