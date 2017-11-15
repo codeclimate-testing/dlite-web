@@ -15,7 +15,7 @@ module.exports = function(world) {
   world.and('I click the reload button', function(done) {
     browser
       .click("button:contains('Reload')")
-      .wait(5000)
+      .wait(2500)
       .then(() => { done(); })
       .catch(done);
   });
@@ -30,7 +30,6 @@ module.exports = function(world) {
   world.and('I click the save button', function(done) {
     browser
     .click("button:contains('Save')")
-    .wait(5000)
     .then(() => { done(); })
     .catch(done);
   });
