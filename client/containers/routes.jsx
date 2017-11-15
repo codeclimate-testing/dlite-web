@@ -50,7 +50,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />
         <Route path={ alicePath('/my-basics/social-security' ) } component={SocialSecurity} />
-        <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
+        <Route path={ alicePath('/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/my-history/license-issues')} component={LicenseIssues} />
         <Route path={ alicePath('/my-history/license-and-id')} component={LicenseAndId} />
         <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />

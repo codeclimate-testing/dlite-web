@@ -15,7 +15,7 @@ import * as dataPresent                    from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.licenseIssues(props.licenseIssues));
   let showLicenseIssues                 = false;
-  let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
+  let onSubmit                          = navigateOnSubmit('/organ-donation', props);
   let onBack                            = navigateOnBack('/my-history/names', props);
   let pageTitle                         = "DMV: License application - My history";
 

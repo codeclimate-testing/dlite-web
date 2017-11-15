@@ -65,7 +65,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the organ page', function(done) {
-    navigateToPath('/apply/about-me/organ-donation', '.organ-form', done);
+    navigateToPath('/apply/organ-donation', '.organ-form', done);
   });
 
   world.when('I visit the donate contribution page', function(done) {
@@ -157,7 +157,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for organ selection', function(done) {
-    assertOnPage('.organ-form', /about-me\/organ/, done);
+    assertOnPage('.organ-form', /organ-donation/, done);
   });
 
   world.then('I will be on the page for donate contribution', function(done) {
@@ -202,6 +202,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page with my summary', function(done) {
     assertOnPage('.summary', /apply\/summary/, done);
+  });
+
+  world.then('I will be taken to the license issues page', function(done){
+    assertOnPage('.license-issues-form', /my-history\/license-issues/, done);
   });
 
   world.then('I will be taken to political party page', function(done){
@@ -249,7 +253,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to organ donation page', function(done) {
-    assertOnPage('.donate-contribution-form', /about-me\/organ-donation/, done);
+    assertOnPage('.donate-contribution-form', /organ-donation/, done);
   });
 
     world.then('I will be taken to date of birth page', function(done) {
