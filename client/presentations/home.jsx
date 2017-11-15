@@ -25,7 +25,7 @@ const linkData = [
   {description: 'organ donation',                         path: '/about-me/organ-donation'},
   {description: 'license and id history',                 path: '/my-history/license-and-id'},
   {description: 'names history',                          path: '/my-history/names/'},
-  {description: 'is suspended license',                   path: '/my-history/privilege-removed-history'},
+  {description: 'license issues',                         path: '/my-history/license-issues'},
 
   {description: 'voter intro',                            path: '/voter/voter-introduction'},
   {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},

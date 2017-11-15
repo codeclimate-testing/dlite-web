@@ -15,7 +15,7 @@ const ConnectedForm = (props) => {
   let pageTitle         = 'About me: Previous Names';
 
   if(value === 'No') {
-    onSubmit = navigateOnSubmit('/my-history/privilege-removed-history', props);
+    onSubmit = navigateOnSubmit('/my-history/license-issues', props);
   }
 
   return (

@@ -124,8 +124,8 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
   });
 
-  world.when('I visit the page to choose if license was suspended', function(done){
-    navigateToPath('/apply/my-history/privilege-removed-history', '.is-suspended-license-form', done);
+  world.when('I visit the license issues page', function(done){
+    navigateToPath('/apply/my-history/license-issues', '.license-issues-form', done);
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
@@ -238,10 +238,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to the previous names info page', function(done) {
     assertOnPage('.previous-names-info-form', /apply\/about-me\/enter-previous-names/, done);
-  });
-
-  world.then('I will be taken to revoke or suspended license page', function(done){
-    assertOnPage('.is-suspended-license-form', /apply\/my-history\/privilege-removed-history/, done);
   });
 
   world.then('I will be taken to previous names page', function(done) {

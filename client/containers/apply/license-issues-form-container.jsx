@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import { updatePrivilegeRemovedHistory }   from "../../actions/index";
+import { updateLicenseIssues }             from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import ContinueButton                      from '../../presentations/continue-button.jsx';
-import PrivilegeRemovedHistory             from "../../presentations/apply/privilege-removed-history-form.jsx";
+import LicenseIssues                       from "../../presentations/apply/license-issues-form.jsx";
 import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
 import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
@@ -13,15 +13,15 @@ import navigateOnBack                      from '../../helpers/navigate-on-back'
 import * as dataPresent                    from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let continueDisabled                  = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
-  let showEnterRevokedSuspended         = false;
+  let continueDisabled                  = !(dataPresent.licenseIssues(props.licenseIssues));
+  let showLicenseIssues                 = false;
   let onSubmit                          = navigateOnSubmit('/about-me/organ-donation', props);
   let onBack                            = navigateOnBack('/my-history/names', props);
   let pageTitle                         = "DMV: License application - My history";
 
-if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
-  showEnterRevokedSuspended  = false;
-  continueDisabled = !(dataPresent.privilegeRemovedHistory(props.privilegeRemovedHistory));
+if(props.licenseIssues.isSuspended === 'Yes') {
+  showLicenseIssues  = false;
+  continueDisabled = !(dataPresent.licenseIssues(props.licenseIssues));
 
   return (
       <div>
@@ -30,14 +30,14 @@ if(props.privilegeRemovedHistory.isSuspended === 'Yes') {
         <hr></hr>
 
    <form onSubmit={onSubmit}>
-    <PrivilegeRemovedHistory
+    <LicenseIssues
         pageTitle      ={pageTitle}
         onChange       ={props.onChange}
-        selectedValue  ={props.privilegeRemovedHistory.isSuspended}
+        selectedValue  ={props.licenseIssues.isSuspended}
     />
     <EnterRevokedSuspended
-        onChange                 ={props.onChange}
-        privilegeRemovedHistory  ={props.privilegeRemovedHistory}
+        onChange       ={props.onChange}
+        licenseIssues  ={props.licenseIssues}
      />
         <ContinueButton disabled={continueDisabled} />
         <br></br>
@@ -54,10 +54,10 @@ return (
         <hr></hr>
 
       <form onSubmit={onSubmit}>
-        <PrivilegeRemovedHistory
+        <LicenseIssues
           pageTitle     ={pageTitle}
           onChange      ={props.onChange}
-          selectedValue ={props.privilegeRemovedHistory.isSuspended}
+          selectedValue ={props.licenseIssues.isSuspended}
         />
         <ContinueButton disabled={continueDisabled} />
         <br></br>
@@ -69,8 +69,8 @@ return (
 
 function mapStateToProps(state) {
   return {
-     privilegeRemovedHistory: state.application.privilegeRemovedHistory
+     licenseIssues: state.application.licenseIssues
     };
 }
 
-export default connectForm(mapStateToProps, updatePrivilegeRemovedHistory, ConnectedForm);
+export default connectForm(mapStateToProps, updateLicenseIssues, ConnectedForm);
