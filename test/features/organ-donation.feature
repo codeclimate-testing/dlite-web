@@ -28,3 +28,10 @@ Feature: Donate Life
     Then I will be taken to voter intro info page
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the organ page
+    Then I will see organ donation question
+    When I click to back
+    Then I will be taken to revoke or suspended license page

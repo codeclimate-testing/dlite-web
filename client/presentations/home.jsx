@@ -22,7 +22,7 @@ const linkData = [
   {description: 'traits height and weight',               path: '/my-basics/traits-height-weight'},
   {description: 'physical traits',                        path: '/my-basics/physical-traits'},
   {description: 'social security',                        path: '/my-basics/social-security'},
-  {description: 'organ donation',                         path: '/about-me/organ-donation'},
+  {description: 'organ donation',                         path: '/organ-donation'},
   {description: 'has existing DL/ID',                     path: '/about-me/license-history'},
   {description: 'names history',                          path: '/about-me/names-history/'},
   {description: 'is suspended license',                   path: '/about-me/privilege-removed-history'},
