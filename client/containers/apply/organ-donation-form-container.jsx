@@ -9,11 +9,14 @@ import DonateOrgan                  from '../../presentations/apply/donate-organ
 import DonateContribution           from '../../presentations/apply/donate-contribution-form.jsx';
 import connectForm                  from '../../helpers/connect-form';
 import navigateOnSubmit             from '../../helpers/navigate-on-submit';
+import navigateOnBack               from '../../helpers/navigate-on-back';
 import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.organDonation(props.organDonation);
-  const onSubmit = navigateOnSubmit('/voter/voter-introduction', props);
+  const onSubmit         = navigateOnSubmit('/voter/voter-introduction', props);
+  const onBack           = navigateOnBack('/my-history/license-issues', props);
+  const pageTitle        =   'DMV: License application - Organ donation'
 
   return (
     <div>
@@ -21,14 +24,17 @@ const ConnectedForm = (props) => {
 
       <form onSubmit={onSubmit}>
         <DonateOrgan
+          pageTitle = {pageTitle}
           onChange={props.onChange}
           organDonation={props.organDonation}
+          selectedValue = {props.organDonation.donate}
         />
         <DonateContribution
           onChange={props.onChange}
           organDonation={props.organDonation}
+          selectedValue = {props.organDonation.contribute}
         />
-        <ContinueButton disabled={continueDisabled} />
+        <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
       </form>
     </div>
   );

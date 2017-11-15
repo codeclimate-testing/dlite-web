@@ -16,6 +16,8 @@ const MESSAGE_NO          = <div><h4>Answering <em>No</em> will not remove your 
 const DonateOrgan = (props) => {
   return (
     <div className='organ-form'>
+       <h3>3 &raquo; Organ Donation</h3>
+      <hr></hr>
       <h4>Do you wish to be an organ or tissue donor?</h4>
       <p><em>(optional)</em></p>
       <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>
@@ -24,6 +26,7 @@ const DonateOrgan = (props) => {
             name='donate'
             values={values}
             onChange={ props.onChange }
+            selectedValue={ props.selectedValue }
             organDonation={ props.organDonation.donate }
           />
         </div>

@@ -19,7 +19,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.and('I click to back', function(done) {
+  world.and('I click to go back', function(done) {
     browser
       .click('button')
       .then(() => { done(); })

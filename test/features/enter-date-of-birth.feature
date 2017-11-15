@@ -29,5 +29,5 @@ Feature:  I want to enter my date of birth
     Given I go to the new online DL application page
     When I visit the date of birth page
     Then I will see a number field for month, day and year
-    When I click to back
+    When I click to go back
     Then I will be taken to the names page
