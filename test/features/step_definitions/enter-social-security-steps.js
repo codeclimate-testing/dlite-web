@@ -38,13 +38,12 @@ module.exports = function(world) {
 
   world.and('I have already entered my social security number', function(done) {
     browser
-      .click('a.social-security')
-      .waitForSelector('.social-security-form')
+      .click('label[for="hasSocialSecurityYes"]')
+      .waitForSelector('.social-security-enter-form')
       .type('#part1', '123')
       .type('#part2', '45')
       .type('#part3', '1967')
-      .click('a.sections')
-      .waitForSelector('.section-links')
+      .click('input[type="submit"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -78,4 +77,49 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('The social security text matches the comp for unexpanded page', function(done){
+    browser
+      .waitForSelector('.social-security-option-form')
+      .then(() => { done(); })
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
+  });
+
+  world.when('I select Yes for social security', function(done){
+    browser
+      .click('label[for="hasSocialSecurityYes"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I select No for social security', function(done){
+    browser
+      .click('label[for="hasSocialSecurityNo"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see text for no social security info', function(done){
+    browser
+      .waitForSelector('.social-security-no-info')
+      .then(() => { done(); })
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
+  });
+
+  world.then('I will see that I do not have a social security number', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(!text.includes('123-45-1967'), 'social security present in summary');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  })
+
 };

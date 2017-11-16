@@ -7,7 +7,8 @@ function defaultState() {
   return {
     part1: '',
     part2: '',
-    part3: ''
+    part3: '',
+    hasSocialSecurity: ''
   };
 }
 

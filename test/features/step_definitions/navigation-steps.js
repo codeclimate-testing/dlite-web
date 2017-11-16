@@ -73,7 +73,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the social security page', function(done) {
-    navigateToPath('/apply/my-basics/social-security', '.social-security-form', done);
+    navigateToPath('/apply/my-basics/social-security', '.social-security-option-form', done);
   });
 
   world.when('I visit voter citizen status page', function(done) {
@@ -169,7 +169,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for entering my social security', function(done) {
-    assertOnPage('.social-security-form', /my-basics\/social-security/, done);
+    assertOnPage('.social-security-option-form', /my-basics\/social-security/, done);
   });
 
   world.then('I will be on the page for voter citizen status entry', function(done) {
