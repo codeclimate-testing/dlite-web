@@ -50,5 +50,5 @@ Feature: Designate US citizenship status
     Given I go to the new online DL application page
     When I visit voter citizen status page
     Then I will see citizen related faq
-    When I click to back
+    When I click to go back
     Then I will be taken to voter intro info page

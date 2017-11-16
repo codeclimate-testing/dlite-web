@@ -28,5 +28,5 @@ Feature: Select Ballot by Mail Language
     Given I go to the new online DL application page
     When I visit ballot language page
     Then I will see select buttons for English, Chinese, Japanese, Spanish, Thai, Korean, Tagalog, Hindi, Khmer, and Vietnamese
-    When I click to back
+    When I click to go back
     Then I will be taken to the political party choose page

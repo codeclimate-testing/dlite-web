@@ -28,5 +28,5 @@ Feature: Determining whether to recieve ballot by mail or not
   Scenario: I want to go back to previous page
     Given I go to the new online DL application page
     When I visit ballot by mail option page
-    When I click to back
+    When I click to go back
     Then I will be taken to ballot language page

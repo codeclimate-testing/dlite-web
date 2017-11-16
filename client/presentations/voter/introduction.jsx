@@ -8,7 +8,7 @@ import alicePath from '../../helpers/alice-path';
 
 const VoterIntro = (props) => {
   const linkAddress = '/voting-registration/citizenship';
-  const linkBack = '/about-me/organ-donation';
+  const linkBack = '/organ-donation';
   let pageTitle = 'DMV: License application - Voting registration'
   document.title = pageTitle;
 

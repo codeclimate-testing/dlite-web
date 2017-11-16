@@ -45,5 +45,5 @@ Feature: Check Voter Registration Eligibility
   Scenario: I want to go back to previous page
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
-    When I click to back
+    When I click to go back
     Then I will be on the page for voter citizen status entry

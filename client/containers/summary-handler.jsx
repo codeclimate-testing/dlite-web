@@ -53,7 +53,7 @@ const SummaryHandler = (props) => {
     <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
     <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
-    <ContactMethods contactMethods={props.contactMethods} key='contact-methods' />,
+    <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
     <OptOut optOut={application.optOut} key='opt-out' />,
     <Empty {...application} key='empty' />,
 
