@@ -44,7 +44,7 @@ const LegalNameForm = (props) => {
           onChange={props.onChange}
         />
 
-        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button> 
+        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
       </form>
     </div>
   );

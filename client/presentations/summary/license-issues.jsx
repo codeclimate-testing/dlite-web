@@ -3,19 +3,19 @@
 import React from "react";
 import * as dataPresent from '../../helpers/data-present';
 
-const PrivilegeRemovedHistory = (props) => {
+const LicenseIssues = (props) => {
 
-  let isSuspended = props.privilegeRemovedHistory.isSuspended;
+  let isSuspended = props.licenseIssues.isSuspended;
   if (!dataPresent.value(isSuspended)) { return null; }
-  
-  let date        = props.privilegeRemovedHistory.month + '/' +
-                    props.privilegeRemovedHistory.day + '/' +
-                    props.privilegeRemovedHistory.year;
 
-  let reason      = props.privilegeRemovedHistory.reason;
-  
+  let date        = props.licenseIssues.month + '/' +
+                    props.licenseIssues.day + '/' +
+                    props.licenseIssues.year;
+
+  let reason      = props.licenseIssues.reason;
+
   if(isSuspended !== 'Yes') {
-    if(isSuspended === 'No') 
+    if(isSuspended === 'No')
     return (
     <div className='summary-section'>
       <p> Have suspended license: {isSuspended} </p>
@@ -32,4 +32,4 @@ return (
 
 };
 
-export default PrivilegeRemovedHistory;
+export default LicenseIssues;

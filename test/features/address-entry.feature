@@ -37,5 +37,5 @@ Feature: CRUD operations on the address
     Given I go to the new online DL application page
     When I visit the addresses page
     Then I will see correct home address labels
-    When I click to back
+    When I click to go back
     Then I will be taken to date of birth page

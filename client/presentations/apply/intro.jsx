@@ -1,15 +1,14 @@
 'use strict';
 
-import React      from 'react';
-import { Link }   from 'react-router-dom';
+import React        from 'react';
+import { Link }     from 'react-router-dom';
 
-import HomeLink   from '../home-link.jsx';
-import alicePath  from '../../helpers/alice-path';
+import HomeLink                 from '../../presentations/home-link.jsx';
+import alicePath                from '../../helpers/alice-path';
 
 const Intro = (props) => {
 
   const linkAddress = '/my-basics/legal-name';
-
   return (
     <div>
       <HomeLink />
@@ -31,12 +30,14 @@ const Intro = (props) => {
           <b>10 minutes</b></p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button' >Get Started</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Get Started</Link>
         </div>
 
       </div>
     </div>
   );
-};
+}
+
+
 
 export default Intro;

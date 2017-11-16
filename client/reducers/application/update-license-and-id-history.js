@@ -14,4 +14,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_DLID_HISTORY);
+export default formObjectReducer(defaultState, TYPES.UPDATE_LICENSE_AND_ID_HISTORY);
