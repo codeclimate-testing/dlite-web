@@ -28,6 +28,12 @@ module.exports = function(world) {
 
   world.given('I go to the new online DL application', function(done) {
     browser
+      .on('consoleMessage', function( msg ){
+        console.log(msg);
+      })
+      .on('error', function( err ){
+        console.log(err);
+      })
       .open(world.url('/'))
       .waitForSelector('.intro-info')
       .click('.sections')

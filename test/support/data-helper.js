@@ -7,11 +7,15 @@ function fakeClientData() {
   return {
     id: uuid(),
     legalName: {
-      first_name: 'John',
-      middle_name: 'Leo',
-      last_name: 'Smith'
+      firstName: 'John',
+      middleName: 'Leo',
+      lastName: 'Smith'
     },
-    dateOfBirth: '11/11/1991',
+    dateOfBirth:  {
+      day: 17,
+      month: 12,
+      year: 1991
+    },
     hairColor: 'Brown',
     eyeColor: 'Hazel',
     homeAddress: {

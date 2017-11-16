@@ -1,7 +1,6 @@
 'use strict';
 
 function parse(data) {
-
   return Object.assign(
     {},
     { application: extractApplication(data) },
@@ -13,13 +12,18 @@ function parse(data) {
 
 function extractApplication(data) {
   let legalName = data.legalName || {};
+  let dob = null;
+
+  if(data.dateOfBirth.month && data.dateOfBirth.day && data.dateOfBirth.year){
+    dob = new Date(data.dateOfBirth.month + '/' + data.dateOfBirth.day + '/' + data.dateOfBirth.year)
+  }
 
   return {
     id:             data.id,
     first_name:     legalName.firstName,
     middle_name:    legalName.middleName,
     last_name:      legalName.lastName,
-    date_of_birth:  new Date(data.dateOfBirth),
+    date_of_birth:  dob,
     hair_color:     data.hairColor,
     eye_color:      data.eyeColor
   };

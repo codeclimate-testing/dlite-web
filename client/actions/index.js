@@ -10,6 +10,7 @@ function generateAction(type) {
 }
 
 export const TYPES = {
+  CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
@@ -30,6 +31,7 @@ export const TYPES = {
   UPDATE_POLITICAL_CONTACT:               'UPDATE_POLITICAL_CONTACT'
 };
 
+export const createApplicationID              = generateAction(TYPES.CREATE_APPLICATION_ID);
 export const updateLegalName                  = generateAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateHomeAddress                = generateAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateAction(TYPES.UPDATE_MAILING_ADDRESS);

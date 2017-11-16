@@ -1,7 +1,8 @@
 'use strict';
 
-const path              = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path                = require('path');
+const webpack             = require('webpack');
+const ExtractTextPlugin   = require("extract-text-webpack-plugin");
 
 let config = {
   entry: './client.js',

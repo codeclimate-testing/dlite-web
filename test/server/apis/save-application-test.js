@@ -4,9 +4,10 @@ const assert    = require('assert');
 const httpMocks = require('node-mocks-http');
 const uuidv1    = require('uuid/v1');
 
-const dbHelper  = require('../../support/db-helper');
-const db        = require('../../../server/db/connect')();
-const ctrl      = require('../../../server/controllers');
+const dbHelper      = require('../../support/db-helper');
+const dataHelper    = require('../../support/data-helper');
+const db            = require('../../../server/db/connect')();
+const ctrl          = require('../../../server/controllers');
 
 describe('Testing application APIs for basic CRUD operations', () => {
 
@@ -15,56 +16,31 @@ describe('Testing application APIs for basic CRUD operations', () => {
   let _response = {};
 
 
-  let application = {
-    id: id,
-    legalName: {
-      firstName:  "John",
-      middleName: "Leo",
-      lastName:   "Smith"
-    },
-    dateOfBirth:  "11/11/1991",
-    hairColor:    "Brown",
-    eyeColor:     "Hazel",
-    homeAddress: {
-      street_1:   "123 Main St",
-      street_2:   "456 Sand Lane",
-      city:       "CrazydoniHome",
-      state:      "CA",
-      zip:        "11111"
-    },
-    mailingAddress: {
-      street_1:   "987 Main St",
-      street_2:   "654 Sand Lane",
-      city:       "CrazydoniMail",
-      state:      "CA",
-      zip:        "99999"
-    },
-    politicalContact: {
-      emailAddress: "rwdjnj@jkdhudf.com ",
-      phoneNumber:  "378232111"
-    }
-  };
+  let application = dataHelper.fakeClientData();
+  application.id = id;
 
   const validateResponse = function(response){
-    assert(application.id, application.id);
-    assert(application.legalName.firstName, application.legalName.firstName);
-    assert(application.legalName.middleName, application.legalName.middleName);
-    assert(application.legalName.lastName, application.legalName.lastName);
-    assert(application.dateOfBirth, application.dateOfBirth);
-    assert(application.hairColor, application.hairColor);
-    assert(application.eyeColor, application.eyeColor);
-    assert(application.homeAddress.street_1, application.homeAddress.street_1);
-    assert(application.homeAddress.street_2, application.homeAddress.street_2);
-    assert(application.homeAddress.city, application.homeAddress.city);
-    assert(application.homeAddress.state, application.homeAddress.state);
-    assert(application.homeAddress.zip, application.homeAddress.zip);
-    assert(application.mailingAddress.street_1, application.mailingAddress.street_1);
-    assert(application.mailingAddress.street_2, application.mailingAddress.street_2);
-    assert(application.mailingAddress.city, application.mailingAddress.city);
-    assert(application.mailingAddress.state, application.mailingAddress.state);
-    assert(application.mailingAddress.zip, application.mailingAddress.zip);
-    assert(application.politicalContact.emailAddress, application.politicalContact.emailAddress);
-    assert(application.politicalContact.phoneNumber, application.politicalContact.phoneNumber);
+    let _data = response.application;
+
+    assert(application.id, _data.id);
+    assert(application.legalName.firstName, _data.legalName.firstName);
+    assert(application.legalName.middleName, _data.legalName.middleName);
+    assert(application.legalName.lastName, _data.legalName.lastName);
+    assert(application.dateOfBirth, _data.dateOfBirth);
+    assert(application.hairColor, _data.hairColor);
+    assert(application.eyeColor, _data.eyeColor);
+    assert(application.homeAddress.street_1, _data.homeAddress.street_1);
+    assert(application.homeAddress.street_2, _data.homeAddress.street_2);
+    assert(application.homeAddress.city, _data.homeAddress.city);
+    assert(application.homeAddress.state, _data.homeAddress.state);
+    assert(application.homeAddress.zip, _data.homeAddress.zip);
+    assert(application.mailingAddress.street_1, _data.mailingAddress.street_1);
+    assert(application.mailingAddress.street_2, _data.mailingAddress.street_2);
+    assert(application.mailingAddress.city, _data.mailingAddress.city);
+    assert(application.mailingAddress.state, _data.mailingAddress.state);
+    assert(application.mailingAddress.zip, _data.mailingAddress.zip);
+    assert(application.politicalContact.emailAddress, _data.politicalContact.emailAddress);
+    assert(application.politicalContact.phoneNumber, _data.politicalContact.phoneNumber);
   }
 
   before((done) => {
@@ -81,15 +57,13 @@ describe('Testing application APIs for basic CRUD operations', () => {
       .catch(() => { done(); });
   });
 
-  describe('create application', (done) => {
+  describe('create new application', (done) => {
     before((done) => {
       //Create request and response objects
       _request = httpMocks.createRequest({
         method: 'POST',
         url: '/api/application',
-        body: {
-          application: application
-        }
+        body: application
       });
       _response = httpMocks.createResponse({eventEmitter: require('events').EventEmitter});
 
@@ -112,7 +86,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
     });
   });
 
-  describe('get application', (done) => {
+  describe('get existing application', (done) => {
     before((done) => {
       _request = httpMocks.createRequest({
         method: 'GET',
