@@ -10,7 +10,7 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see text for ballot by mail - Yes
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be taken to political contact page
+    Then I will be taken to contact methods page
     And I go to the page with my summary
     Then I will see mail by ballot as Yes in summary
 
@@ -21,6 +21,12 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see text for ballot by mail - No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be taken to political contact page
+    Then I will be taken to contact methods page
     And I go to the page with my summary
     Then I will see mail by ballot as No in summary
+  
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit ballot by mail option page
+    When I click to back
+    Then I will be taken to ballot language page

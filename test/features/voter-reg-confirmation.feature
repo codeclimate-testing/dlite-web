@@ -9,3 +9,12 @@ Feature: Voter Registration Completion page
     Then I see text for voter registration complete page
     When I click to continue
     Then I will be on the page with my summary
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit voter registration complete page
+    When I click on back link
+    Then I will be taken to contact methods page
+
+  
+  

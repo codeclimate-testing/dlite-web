@@ -3,17 +3,19 @@
 import React from 'react';
 
 import { updateEligibilityRequirements }   from '../../actions/index';
-import Form                           from '../../presentations/voter/eligibility-requirements-form.jsx';
-import connectForm                    from '../../helpers/connect-form';
-import navigateOnSubmit               from '../../helpers/navigate-on-submit';
+import Form                                from '../../presentations/voter/eligibility-requirements-form.jsx';
+import connectForm                         from '../../helpers/connect-form';
+import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
+import navigateOnBack                      from '../../helpers/navigate-on-back';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
-  let value = props.eligibilityRequirements;
   let onSubmit = navigateOnSubmit('/summary', props);
+  let onBack = navigateOnBack('/voting-registration/citizenship', props);
+  let pageTitle = 'DMV: License application - Voting registration'
 
-  if(value === 'Yes') {
-    onSubmit = navigateOnSubmit('/about-me/voter/opt-out', props);
+  if(props.eligibilityRequirements === 'Yes') {
+    onSubmit = navigateOnSubmit('/voting-registration/opt-out', props);
   } else {
     onSubmit;
   };
@@ -21,6 +23,7 @@ const ConnectedForm = (props) => {
   return (
     <Form
       onSubmit={onSubmit}
+      onBack={onBack}
       onChange={props.onChange}
       selectedValue={props.eligibilityRequirements}
       continueDisabled={continueDisabled}

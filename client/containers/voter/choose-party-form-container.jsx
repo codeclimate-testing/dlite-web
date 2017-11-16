@@ -9,13 +9,21 @@ import PoliticalPartyChoose             from '../../presentations/voter/voter-ch
 import PoliticalPartyPreference         from '../../presentations/voter/political-party-preference.jsx';
 import connectForm                      from '../../helpers/connect-form';
 import navigateOnSubmit                 from '../../helpers/navigate-on-submit';
+import navigateOnBack                   from '../../helpers/navigate-on-back';
 import * as dataPresent                 from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled                  = false;
   let showPoliticalPartyPreference      = true;
-  let onSubmit                          = navigateOnSubmit('/about-me/voter/ballot-language', props);
-  
+  let onSubmit                          = navigateOnSubmit('/voting-registration/language', props);
+  let onBack;
+
+  if(props.optOut == "I am already registered to vote in California"){
+     onBack = navigateOnBack('/voting-registration/updating-preferences', props);
+  } else {
+     onBack = navigateOnBack('/voting-registration/preferences', props);         
+  };
+
   if(props.politicalPartyChoose.isSelected === 'Yes') {
     showPoliticalPartyPreference  = true;
     continueDisabled = !(dataPresent.politicalPartyChoose(props.politicalPartyChoose));
@@ -33,7 +41,7 @@ const ConnectedForm = (props) => {
             onChange                  = {props.onChange}
             selectedValue             = {props.politicalPartyChoose.politicalPartyChoose}
           />
-          <ContinueButton disabled={continueDisabled} />
+          <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
         </form>
       </div>
     );
@@ -48,7 +56,7 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           selectedValue = {props.politicalPartyChoose.isSelected}
         />
-        <ContinueButton disabled={continueDisabled} />
+        <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
       </form>
     </div>
   );
@@ -57,7 +65,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    politicalPartyChoose: state.application.politicalPartyChoose
+    politicalPartyChoose: state.application.politicalPartyChoose,
+    optOut: state.application.optOut
   };
 }
 

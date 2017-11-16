@@ -3,9 +3,9 @@
 import React from 'react';
 import * as dataPresent from '../../helpers/data-present';
 
-const PoliticalContact = (props) => {
+const ContactMethods = (props) => {
 
-  let shouldContact = props.politicalContact.shouldContact;
+  let shouldContact = props.contactMethods.shouldContact;
   if (!dataPresent.value(shouldContact)) { return null; }
 
   if(shouldContact !== 'Yes') {
@@ -20,11 +20,11 @@ const PoliticalContact = (props) => {
     return (
       <div className='summary-section'>
         <p> Should Contact: {shouldContact} </p>
-        <p> Email Address: {props.politicalContact.emailAddress} </p>
-        <p> phone Number: {props.politicalContact.phoneNumber} </p>
+        <p> Email Address: {props.contactMethods.emailAddress} </p>
+        <p> phone Number: {props.contactMethods.phoneNumber} </p>
       </div>
     );
 
 };
 
-export default PoliticalContact;
+export default ContactMethods;

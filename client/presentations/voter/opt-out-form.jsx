@@ -13,9 +13,12 @@ const VALUES = [
               ];
 
 const OptOut = (props) => {
+  document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voter registration</h3>
+      <hr></hr>
       <h4>Which best describes you?</h4>
       <form onSubmit={ props.onSubmit } className='opt-out-form'>
         <div className='inner-bottom'>
@@ -27,7 +30,7 @@ const OptOut = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/>
+        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
       </form>
     </div>
   );

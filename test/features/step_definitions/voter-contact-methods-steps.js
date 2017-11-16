@@ -5,9 +5,9 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will be shown form to enter my political contact details', function(done){
+  world.then('I will be shown form to enter my contact methods details', function(done){
     browser
-      .waitForSelector('.political-contact-details-form')
+      .waitForSelector('.contact-methods-details-form')
       .exists('#emailAddress')
       .then((input) => { assert.ok(input, 'email address missing');})
       .exists('#phoneNumber')
@@ -16,28 +16,28 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.when('I select political contact Yes', function(done){
+  world.when('I select contact methods Yes', function(done){
     browser
     .click('label[for="shouldContactYes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.when('I select political contact No', function(done){
+  world.when('I select contact methods No', function(done){
     browser
     .click('label[for="shouldContactNo"]')
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.when('I select political contact Skip Question', function(done){
+  world.when('I select contact methods Skip Question', function(done){
     browser
     .click('label[for="shouldContactSkip Question"]')
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.then('I see three political contact buttons labelled Yes, No and Skip Question', function(done) {
+  world.then('I see three contact methods buttons labelled Yes, No and Skip Question', function(done) {
     browser
     .html('label[for="shouldContactYes"]')
     .then((button) => { assert.ok(button, 'Selector for Yes missing')})
@@ -97,8 +97,8 @@ module.exports = function(world) {
 
   world.and('I have already eneterd my contact details', function(done){
     browser
-      .click('a.political-contact')
-      .waitForSelector('.political-contact-choice-form')
+      .click('a.contact-methods')
+      .waitForSelector('.contact-methods-choice-form')
       .click('label[for="shouldContactYes"]')
       .type('#emailAddress', 'sample@example.com')
       .type('#phoneNumber', '(111) 000-8888')

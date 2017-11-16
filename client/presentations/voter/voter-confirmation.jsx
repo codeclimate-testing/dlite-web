@@ -10,10 +10,14 @@ import alicePath        from '../../helpers/alice-path';
 const VoterRegComplete = (props) => {
 
   const linkAddress = '/summary';
-
+  const linkBack = '/voting-registration/contact-methods';
+  let pageTitle  = 'DMV: License application - Voting registration'
+  document.title = pageTitle;
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voting Registration</h3>
+      <hr></hr>
 
       <div className='voter-reg-complete'>
         <h4>Thank you, your voter registration application will be processed when
@@ -26,7 +30,7 @@ const VoterRegComplete = (props) => {
         of State at <a href="https://voterstatus.sos.ca.gov/">https://voterstatus.sos.ca.gov/</a></p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link> 
         </div>
 
       </div>

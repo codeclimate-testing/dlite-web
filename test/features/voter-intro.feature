@@ -9,3 +9,10 @@ Feature: Voter Intro Screen
     Then I see text introducing the voter page
     When I click to continue
     Then I will be on the page for voter citizen status entry
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit voter intro page
+    Then I see text introducing the voter page
+    When I click on back link
+    Then I will be taken to organ donation page

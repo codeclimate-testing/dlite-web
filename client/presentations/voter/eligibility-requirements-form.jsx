@@ -12,6 +12,8 @@ const EligibilityRequirements = (props) => {
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voter registration</h3>
+      <hr></hr>
 
         <h4>Do you meet all of the voter registration requirements listed below?</h4>
 
@@ -34,7 +36,7 @@ const EligibilityRequirements = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/>
+        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
         </form>
         <br></br>
         <p><b>What if I don't meet the requirements?</b></p>

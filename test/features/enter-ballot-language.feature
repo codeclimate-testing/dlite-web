@@ -23,3 +23,10 @@ Feature: Select Ballot by Mail Language
     And I click to submit
     And I go to the page with my summary
     Then I will see my updated language in the summary
+  
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit ballot language page
+    Then I will see select buttons for English, Chinese, Japanese, Spanish, Thai, Korean, Tagalog, Hindi, Khmer, and Vietnamese
+    When I click to back
+    Then I will be taken to the political party choose page
