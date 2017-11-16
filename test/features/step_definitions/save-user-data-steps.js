@@ -51,11 +51,11 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('123 Main Street'), 'street address missing');
-        assert(text.includes('Unit no. 45'), 'unit number missing');
-        assert(text.includes('Crazidino'), 'city missing');
-        assert(text.includes('CA'), 'state missing');
-        assert(text.includes('94666'), 'zip missing');
+        assert(!text.includes('123 Main Street'), 'street address present in summary');
+        assert(!text.includes('Unit no. 45'), 'unit number present in summary');
+        assert(!text.includes('Crazidino'), 'city present in summary');
+        assert(!text.includes('CA'), 'state present in summary');
+        assert(!text.includes('94666'), 'zip present in summary');
       })
       .then(() => { done(); })
       .catch(done);
