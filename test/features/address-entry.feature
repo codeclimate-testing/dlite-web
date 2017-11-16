@@ -6,7 +6,7 @@ Feature: CRUD operations on the address
   Scenario: My addresses are the same
     Given I go to the new online DL application page
     And I visit the addresses page
-    Then I will see correct home address lables
+    Then I will see correct home address labels
     When I enter my home address
     And I select address interstitial Yes
     And I go to the page with my summary
@@ -17,7 +17,7 @@ Feature: CRUD operations on the address
     And I visit the addresses page
     When I enter my home address
     And I select address interstitial No
-    Then I will see correct mailing address lables
+    Then I will see correct mailing address labels
     When I enter my mailing address
     And I click to submit
     Then I will be on the page for entering my physical traits
@@ -32,3 +32,10 @@ Feature: CRUD operations on the address
     And I change my home zip
     And I go to the page with my summary
     Then I will see my updated home zip
+  
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the addresses page
+    Then I will see correct home address labels
+    When I click to go back
+    Then I will be taken to date of birth page

@@ -9,8 +9,8 @@ import TraitsHeightWeight          from './traits-height-weight.jsx';
 import PhysicalTraits              from './physical-traits.jsx';
 import OrganDonation               from './organ-donation.jsx';
 import SocialSecurity              from './social-security.jsx';
-import PrivilegeRemovedHistory     from './privilege-removed-history.jsx';
-import DlidHistory                 from './dlid-history.jsx';
+import LicenseIssues               from './license-issues.jsx';
+import LicenseAndIdHistory         from './license-and-id-history.jsx';
 import NamesHistory                from './names-history.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -31,8 +31,8 @@ export {
   PhysicalTraits,
   OrganDonation,
   SocialSecurity,
-  PrivilegeRemovedHistory,
-  DlidHistory,
+  LicenseIssues,
+  LicenseAndIdHistory,
   NamesHistory,
   CitizenStatus,
   EligibilityRequirements,

@@ -19,6 +19,7 @@ const DonateContribution = (props) => {
             name='contribute'
             values={values}
             onChange={ props.onChange }
+            selectedValue={ props.selectedValue }
             organDonation={ props.organDonation.contribute }
           />
         </div>

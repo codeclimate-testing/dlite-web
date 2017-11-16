@@ -16,7 +16,7 @@ const EnterRevokedSuspended = (props) => {
           <NumberInput
             identifier='month'
             description='Month'
-            value={props.privilegeRemovedHistory.month}
+            value={props.licenseIssues.month}
             onChange    = {props.onChange}
           />
 
@@ -25,7 +25,7 @@ const EnterRevokedSuspended = (props) => {
           <NumberInput
             identifier='day'
             description='Day'
-            value={props.privilegeRemovedHistory.day}
+            value={props.licenseIssues.day}
             onChange    = {props.onChange}
           />
 
@@ -34,7 +34,7 @@ const EnterRevokedSuspended = (props) => {
           <NumberInput
             identifier='year'
             description='Year'
-            value={props.privilegeRemovedHistory.year}
+            value={props.licenseIssues.year}
             onChange    = {props.onChange}
           />
         </div>
@@ -43,7 +43,7 @@ const EnterRevokedSuspended = (props) => {
           <TextInput
             identifier='reason'
             description='What was the reason?'
-            value={props.privilegeRemovedHistory.reason}
+            value={props.licenseIssues.reason}
             onChange={props.onChange}
           />
         </div>
@@ -52,5 +52,3 @@ const EnterRevokedSuspended = (props) => {
 };
 
 export default EnterRevokedSuspended;
-
-

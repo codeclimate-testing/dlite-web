@@ -5,7 +5,7 @@ Feature: Select and enter my revoked, refused or suspended license info
 
   Scenario: Yes I had a revoked license & entering information into the form
     Given I go to the new online DL application page
-    When I visit the page to choose if license was suspended
+    When I visit the license issues page
     And I will see that the Continue button is disabled
     When I select suspended licence Yes
     Then I will see that the Continue button is no longer disabled
@@ -20,7 +20,7 @@ Feature: Select and enter my revoked, refused or suspended license info
 
   Scenario: I do not have a revoked license
     Given I go to the new online DL application page
-    When I visit the page to choose if license was suspended
+    When I visit the license issues page
     And I will see that the Continue button is disabled
     When I select suspended license No
     Then I will see that the Continue button is no longer disabled
@@ -28,3 +28,9 @@ Feature: Select and enter my revoked, refused or suspended license info
     Then I will be on the page for organ selection
     And I go to the page with my summary
     Then I will see No in my suspended license selection
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the license issues page
+    When I click to go back
+    Then I will be on the page to choose if I ever had previous names 

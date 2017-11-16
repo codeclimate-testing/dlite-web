@@ -17,9 +17,9 @@ import PhysicalTraits                         from './apply/physical-traits-form
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
 import VoterIntro                             from '../presentations/voter/voter-intro-info.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
-import PrivilegeRemovedHistory                from './apply/privilege-removed-history-form-container.jsx';
+import LicenseIssues                          from './apply/license-issues-form-container.jsx';
 
-import DlidHistory                            from './apply/dlid-history-form-container.jsx';
+import LicenseAndId                           from './apply/license-and-id-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
 
@@ -50,10 +50,10 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />
         <Route path={ alicePath('/my-basics/social-security' ) } component={SocialSecurity} />
-        <Route path={ alicePath('/about-me/organ-donation' ) } component={OrganDonation} />
-        <Route path={ alicePath('/about-me/privilege-removed-history')} component={PrivilegeRemovedHistory} />
-        <Route path={ alicePath('/about-me/license-history')} component={DlidHistory} />
-        <Route path={ alicePath('/about-me/names-history' ) } component={NamesHistory} />
+        <Route path={ alicePath('/organ-donation' ) } component={OrganDonation} />
+        <Route path={ alicePath('/my-history/license-issues')} component={LicenseIssues} />
+        <Route path={ alicePath('/my-history/license-and-id')} component={LicenseAndId} />
+        <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
         <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
 
         <Route path={ alicePath('/voter/voter-introduction') } component={VoterIntro} />

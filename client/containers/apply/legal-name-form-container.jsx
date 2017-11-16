@@ -6,17 +6,20 @@ import { updateLegalName }  from "../../actions/index";
 import FormPresentation     from "../../presentations/apply/name-form.jsx";
 import connectForm          from '../../helpers/connect-form';
 import navigateOnSubmit     from '../../helpers/navigate-on-submit';
+import navigateOnBack      from '../../helpers/navigate-on-back';
 import * as dataPresent     from '../../helpers/data-present';
 
 const Form = (props) => {
   let continueDisabled  =   !dataPresent.legalName(props.legalName);
   let onSubmit          =   navigateOnSubmit('/my-basics/date-of-birth', props);
+  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
   let pageTitle         =   'DMV: License application - My basics'
 
   return (
     <FormPresentation
       pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
+      onBack            = { onBack }
       onChange          = { props.onChange }
       legalName         = { props.legalName }
       continueDisabled  = { continueDisabled }

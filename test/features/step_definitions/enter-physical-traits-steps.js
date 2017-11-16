@@ -55,4 +55,16 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+  
+  world.then('I will see labels for sex, eye color and hair color', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('What\'s your sex?'), 'Sex label missing');
+      assert(text.includes('What color are your eyes?'), 'Eye color label missing');
+      assert(text.includes('What color is your hair?'), 'Hair color label missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
 };

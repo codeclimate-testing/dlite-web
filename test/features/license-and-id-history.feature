@@ -5,7 +5,7 @@ Feature: Existing DL or ID number
 
   Scenario: Yes I have another license and entering my license information into the form
     Given I go to the new online DL application page
-    When I visit the page to choose to enter exsiting DL/ID
+    When I visit the page to enter existing license and id
     And I will see that the Continue button is disabled
     When I select exisiting DL/ID Yes
     Then I will see that the Continue button is no longer disabled
@@ -14,18 +14,24 @@ Feature: Existing DL or ID number
     And I enter the issuing state or country
     And I enter the date of DL/ID expiration
     When I click to submit
-    And I visit the page to choose if license was suspended
+    And I visit the license issues page
     And I go to the page with my summary
     Then I will see my previous DL/ID information
     Then I will see Yes in my existing DL/ID selection
 
   Scenario: I do not have an existing license
     Given I go to the new online DL application page
-    When I visit the page to choose to enter exsiting DL/ID
+    When I visit the page to enter existing license and id
     And I will see that the Continue button is disabled
     When I select existing DL/ID No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    And I visit the page to choose if license was suspended
+    And I visit the license issues page
     And I go to the page with my summary
     Then I will see No in my existing DL/ID selection
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the page to enter existing license and id
+    When I click to go back
+    Then I will be on the page for entering my social security

@@ -6,6 +6,7 @@ import SelectorCollection from '../selector-collection.jsx';
 const values = ['Yes', 'No'];
 
 const UsedPreviousNames = (props) => {
+  document.title = props.pageTitle;
   return (
     <div className='previous-names'>
       <h4>Have you ever applied for a Driver License or ID card under a different name?</h4>
