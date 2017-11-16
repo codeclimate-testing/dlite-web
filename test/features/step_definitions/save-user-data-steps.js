@@ -51,10 +51,6 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('FirstName1'), 'first name missing from summary');
-        assert(text.includes('MiddleName1'), 'middle name missing from summary');
-        assert(text.includes('LastName1'), 'last name missing from summary');
-        assert(text.includes(''), 'name suffix missing from summary');
         assert(text.includes('123 Main Street'), 'street address missing');
         assert(text.includes('Unit no. 45'), 'unit number missing');
         assert(text.includes('Crazidino'), 'city missing');
