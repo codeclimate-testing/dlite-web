@@ -31,7 +31,7 @@ import {
   Empty
 } from '../presentations/summary/index.js';
 
-const successVisit = '/about-me/success-visit';
+const appointmentPreparation = '/appointment-preparation';
 
 const SummaryHandler = (props) => {
   let application = props.application;
@@ -56,7 +56,7 @@ const SummaryHandler = (props) => {
     <OptOut optOut={application.optOut} key='opt-out' />,
     <Empty {...application} key='empty' />,
 
-    <Link to={ alicePath(successVisit) } key="link-to-success-visit" >
+    <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
       <ContinueButton disabled={props.continueDisabled} key="submit"/>
     </Link>
   ];

@@ -33,7 +33,8 @@ import BallotLanguage                         from './voter/ballot-language-form
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import PoliticalContact                       from './voter/political-contact-form-container.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-reg-complete-info.jsx';
-import SuccessVisit                           from '../presentations/success-visit-info.jsx';
+import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
+import RequiredDocuments                      from '../presentations/required-documents-info.jsx';
 
 
 class Router extends React.Component {
@@ -67,8 +68,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/about-me/voter/ballot-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/about-me/voter/political-contact') } component={PoliticalContact} />
         <Route path={ alicePath('/about-me/voter/voter-reg-complete/') } component={VoterRegComplete} />
-        <Route path={ alicePath('/about-me/success-visit') } component={SuccessVisit} />
 
+        <Route exact path={ alicePath('/appointment-preparation/') } component={AppointmentPreparation} />
+        <Route path={ alicePath('/appointment-preparation/documents') } component={RequiredDocuments} />
       </div>
     );
   }
