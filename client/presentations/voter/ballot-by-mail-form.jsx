@@ -14,9 +14,12 @@ const FAQ_CLASSNAME_NO    = 'faq-ballot-by-mail-no';
 const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
 
 const BallotByMailForm = (props) => {
+  document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voter registration</h3>
+      <hr></hr>
 
       <h4>Would you like to get your ballot by mail before each election?</h4>
       <p>If you answer Yes, you can still vote in-person.</p>
@@ -49,9 +52,7 @@ const BallotByMailForm = (props) => {
 
         </div>
 
-        <ContinueButton
-          disabled = {props.continueDisabled}
-        />
+        <ContinueButton disabled = {props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
 
       </form>
     </div>

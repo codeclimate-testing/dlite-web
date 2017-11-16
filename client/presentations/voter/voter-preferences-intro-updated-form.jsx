@@ -7,15 +7,20 @@ import HomeLink         from '../home-link.jsx';
 import ContinueButton   from '../continue-button.jsx';
 import alicePath        from '../../helpers/alice-path';
 
-const VoterPreferencesIntroPreregistered = (props) => {
-
-  const linkAddress = '/about-me/voter/choose-party';
+const VoterPreferencesIntroUpdated = (props) => {
+  
+  const linkAddress = '/voting-registration/choose-party';
+  const linkBack = '/voting-registration/opt-out';
+  let pageTitle = 'DMV: License application - Voting registration'
+  document.title = pageTitle;
 
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voting Registration</h3>
+      <hr></hr>
 
-      <div className='voter-preferences-intro-preregistered'>
+      <div className='updating-voter-preferences'>
         <h4>Next we'd like to make sure your voter registration is up to date.</h4>
         <p>This will replace your previous voter preferences.</p>
         <h4>Political Party</h4>
@@ -29,7 +34,7 @@ const VoterPreferencesIntroPreregistered = (props) => {
         <p>Election officials can contact you with election and voting information.</p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link>
         </div>
 
       </div>
@@ -37,4 +42,4 @@ const VoterPreferencesIntroPreregistered = (props) => {
   );
 };
 
-export default VoterPreferencesIntroPreregistered;
+export default VoterPreferencesIntroUpdated;

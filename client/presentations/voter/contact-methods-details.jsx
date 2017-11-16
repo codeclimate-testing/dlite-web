@@ -7,7 +7,7 @@ import TextInput            from '../text-input.jsx';
 
 const ContactDetails = (props) => {
   return (
-    <div className='political-contact-details-form'>
+    <div className='contact-methods-details-form'>
       <h4>Please enter your contact information below.</h4>
       <h6>This is optional</h6>
       <TextInput

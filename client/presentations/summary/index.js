@@ -17,7 +17,7 @@ import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
 import PoliticalPartyChoose        from './choose-party.jsx';
 import BallotLanguage              from './ballot-language.jsx';
-import PoliticalContact            from './political-contact.jsx';
+import ContactMethods              from './contact-methods.jsx';
 import OptOut                      from './opt-out.jsx';
 import ContinueButton              from '../continue-button.jsx';
 
@@ -39,7 +39,7 @@ export {
   BallotByMail,
   PoliticalPartyChoose,
   BallotLanguage,
-  PoliticalContact,
+  ContactMethods,
   ContinueButton,
   OptOut
 };

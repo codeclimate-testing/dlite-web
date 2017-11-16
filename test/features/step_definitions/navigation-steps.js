@@ -77,35 +77,35 @@ module.exports = function(world) {
   });
 
   world.when('I visit voter citizen status page', function(done) {
-    navigateToPath('/apply/about-me/voter/am-citizen', '.citizen-status-form', done);
+    navigateToPath('/apply/voting-registration/citizenship', '.citizen-status-form', done);
   });
 
   world.when('I visit ballot by mail option page', function(done) {
-    navigateToPath('/apply/about-me/voter/ballot-by-mail', '.ballot-by-mail-form', done);
+    navigateToPath('/apply/voting-registration/vote-by-mail', '.ballot-by-mail-form', done);
   });
 
   world.when('I visit the voter eligibility requirements page', function(done) {
-    navigateToPath('/apply/about-me/voter/eligibility-requirements', '.eligibility-requirements-form', done);
+    navigateToPath('/apply/voting-registration/eligibility', '.eligibility-requirements-form', done);
   });
 
   world.when('I visit voter preferences intro page', function(done){
-    navigateToPath('/apply/about-me/voter/voter-preferences-intro', '.voter-preferences-intro', done);
+    navigateToPath('/apply/voting-registration/preferences', '.voter-preferences-intro', done);
   });
 
-  world.when('I visit voter preferences intro preregistered page', function(done){
-    navigateToPath('/apply/about-me/voter/voter-preferences-intro-preregistered', '.voter-preferences-intro-preregistered', done);
+  world.when('I visit voter updating preferences page', function(done){
+    navigateToPath('/apply/voting-registration/updating-preferences', '.updating-voter-preferences', done);
   });
 
   world.when('I visit voter registration complete page', function(done){
-    navigateToPath('/apply/about-me/voter/voter-reg-complete', '.voter-reg-complete', done);
+    navigateToPath('/apply/voting-registration/confirmation', '.voter-reg-complete', done);
   });
 
   world.when('I visit ballot language page', function(done) {
-    navigateToPath('/apply/about-me/voter/ballot-language', '.ballot-language-form', done);
+    navigateToPath('/apply/voting-registration/language', '.ballot-language-form', done);
   });
 
   world.when('I visit the political party choose page', function(done){
-    navigateToPath('/apply/about-me/voter/choose-party', '.choose-party', done);
+    navigateToPath('/apply/voting-registration/choose-party', '.choose-party', done);
   });
 
   world.when('I visit app intro page', function(done){
@@ -113,7 +113,7 @@ module.exports = function(world) {
   });
 
    world.when('I visit voter intro page', function (done) {
-    navigateToPath('/apply/voter/voter-introduction', '.voter-intro-info', done);
+    navigateToPath('/apply/voting-registration/introduction', '.voter-intro-info', done);
   });
 
   world.and('I visit success visit page', function(done) {
@@ -121,7 +121,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit voter opt out page', function(done) {
-    navigateToPath('/apply/about-me/voter/opt-out', '.opt-out-form', done);
+    navigateToPath('/apply/voting-registration/opt-out', '.opt-out-form', done);
   });
 
   world.when('I visit the page to choose if license was suspended', function(done){
@@ -140,8 +140,8 @@ module.exports = function(world) {
     navigateToPath('/apply/about-me/license-history', '.has-existing-dl-id-form', done);
   });
 
-  world.when('I visit political contact details page', function(done){
-    navigateToPath('/apply/about-me/voter/political-contact', '.political-contact-choice-form', done);
+  world.when('I visit contact methods details page', function(done){
+    navigateToPath('/apply/voting-registration/contact-methods', '.contact-methods-choice-form', done);
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {
@@ -173,27 +173,27 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for voter citizen status entry', function(done) {
-    assertOnPage('.citizen-status-form', /about-me\/voter\/am-citizen/, done);
+    assertOnPage('.citizen-status-form', /voting-registration\/citizenship/, done);
   });
 
   world.then('I will be on the page for ballot by mail', function(done) {
-    assertOnPage('.ballot-by-mail-form', /about-me\/voter\/ballot-by-mail/, done);
+    assertOnPage('.ballot-by-mail-form', /voting-registration\/vote-by-mail/, done);
   });
 
-  world.then('I will be taken to voter eligibility requirements page', function(done){
-    assertOnPage('.eligibility-requirements-form', /about-me\/voter\/eligibility-requirements/, done);
+  world.then('I will be on the eligibility page', function(done) {
+    assertOnPage('.eligibility-requirements-form', /voting-registration\/eligibility/, done);
   });
 
-  world.then('I will be taken to political contact page', function(done){
-    assertOnPage('.political-contact-choice-form', /about-me\/voter\/political-contact/, done);
+  world.then('I will be taken to contact methods page', function(done){
+    assertOnPage('.contact-methods-choice-form', /voting-registration\/contact-methods/, done);
   });
 
   world.then('I will be taken to ballot language page', function(done){
-    assertOnPage('.ballot-language-form', /about-me\/voter\/ballot-language/, done);
+    assertOnPage('.ballot-language-form', /voting-registration\/language/, done);
   });
 
   world.then('I will be on the page for entering voter opt-out', function(done) {
-    assertOnPage('.opt-out-form', /about-me\/voter\/opt-out/, done);
+    assertOnPage('.opt-out-form', /voting-registration\/opt-out/, done);
   });
 
   world.then('I will be on the page with my summary', function(done) {
@@ -201,11 +201,11 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to political party page', function(done){
-    assertOnPage('.political-party-preference', /about-me\/voter\/political-party/, done);
+    assertOnPage('.political-party-preference', /voter\/political-party/, done);
   });
 
   world.then('I will be taken to the political party choose page', function(done){
-    assertOnPage('.choose-party', /about-me\/voter\/choose-party/, done);
+    assertOnPage('.choose-party', /voting-registration\/choose-party/, done);
   });
 
   world.then('I will be taken to the success visit page', function(done){
@@ -213,19 +213,19 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to voter preferences info page', function(done) {
-    assertOnPage('.voter-preferences-intro', /voter\/voter-preferences-intro/, done);
+    assertOnPage('.voter-preferences-intro', /voting-registration\/preferences/, done);
   });
 
   world.then('I will be taken to voter intro info page', function(done) {
-    assertOnPage('.voter-intro-info', /voter\/voter-introduction/, done);
+    assertOnPage('.voter-intro-info', /voting-registration\/introduction/, done);
   });
 
-  world.then('I will be taken to voter preferences preregistered info page', function(done) {
-    assertOnPage('.voter-preferences-intro-preregistered', /about-me\/voter\/voter-preferences-intro-preregistered/, done);
+  world.then('I will be taken to voter preferences updated page', function(done) {
+    assertOnPage('.updating-voter-preferences', /voting-registration\/updating-preferences/, done);
   });
 
   world.then('I will be taken to voter registration complete page', function(done) {
-    assertOnPage('.voter-reg-complete', /about-me\/voter\/voter-reg-complete/, done);
+    assertOnPage('.voter-reg-complete', /voting-registration\/confirmation/, done);
   });
 
   world.then('I will be taken to the names page', function(done) {

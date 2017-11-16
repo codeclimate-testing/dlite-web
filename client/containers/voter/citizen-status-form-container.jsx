@@ -6,19 +6,24 @@ import { updateCitizenStatus }        from '../../actions/index';
 import Form                           from '../../presentations/voter/citizen-status-form.jsx';
 import connectForm                    from '../../helpers/connect-form';
 import navigateOnSubmit               from '../../helpers/navigate-on-submit';
+import navigateOnBack               from '../../helpers/navigate-on-back';
 
 const ConnectedForm = (props) => {
-let value = props.citizenStatus;
+  let value = props.citizenStatus;
   const continueDisabled = false;
   let onSubmit = navigateOnSubmit('/summary', props);
+  let onBack = navigateOnBack('/voting-registration/introduction', props);
+  let pageTitle =   'DMV: License application - Voting registration'
 
   if(value === 'Yes') {
-    onSubmit = navigateOnSubmit('/about-me/voter/eligibility-requirements', props);
+    onSubmit = navigateOnSubmit('/voting-registration/eligibility', props);
   }
 
   return (
     <Form
+      pageTitle={pageTitle}
       onSubmit={onSubmit}
+      onBack={onBack}
       onChange={props.onChange}
       selectedValue={props.citizenStatus}
       continueDisabled={continueDisabled}

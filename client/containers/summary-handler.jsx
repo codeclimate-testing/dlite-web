@@ -24,7 +24,7 @@ import {
   EligibilityRequirements,
   PoliticalPartyChoose,
   BallotLanguage,
-  PoliticalContact,
+  ContactMethods,
   ContinueButton,
   OptOut,
   Empty
@@ -50,7 +50,7 @@ const SummaryHandler = (props) => {
     <EligibilityRequirements eligibilityRequirements={props.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={props.politicalPartyChoose} key='choose-party' />,
     <BallotLanguage ballotLanguage={props.ballotLanguage} key='ballot-language' />,
-    <PoliticalContact politicalContact={props.politicalContact} key='political-contact' />,
+    <ContactMethods contactMethods={props.contactMethods} key='contact-methods' />,
     <OptOut optOut={props.optOut} key='opt-out' />,
     <Empty {...props} key='empty' />,
 

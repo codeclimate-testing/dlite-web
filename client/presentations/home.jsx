@@ -27,17 +27,17 @@ const linkData = [
   {description: 'names history',                          path: '/about-me/names-history/'},
   {description: 'is suspended license',                   path: '/about-me/privilege-removed-history'},
 
-  {description: 'voter intro',                            path: '/voter/voter-introduction'},
-  {description: 'citizen status',                         path: '/about-me/voter/am-citizen'},
-  {description: 'eligibility requirements',               path: '/about-me/voter/eligibility-requirements'},
-  {description: 'opt out',                                path: '/about-me/voter/opt-out'},
-  {description: 'voter preferences intro',                path: '/about-me/voter/voter-preferences-intro'},
-  {description: 'voter preferences intro preregistered',  path: '/about-me/voter/voter-preferences-intro-preregistered'},
-  {description: 'choose party',                           path: '/about-me/voter/choose-party'},
-  {description: 'ballot language',                        path: '/about-me/voter/ballot-language'},
-  {description: 'ballot by mail',                         path: '/about-me/voter/ballot-by-mail'},
-  {description: 'political contact',                      path: '/about-me/voter/political-contact'},
-  {description: 'voter reg complete',                     path: '/about-me/voter/voter-reg-complete'},
+  {description: 'voter intro',                            path: '/voting-registration/introduction'},
+  {description: 'citizen status',                         path: '/voting-registration/citizenship'},
+  {description: 'eligibility requirements',               path: '/voting-registration/eligibility'},
+  {description: 'opt out',                                path: '/voting-registration/opt-out'},
+  {description: 'voter preferences',                      path: '/voting-registration/preferences'},
+  {description: 'voter updating preferences',             path: '/voting-registration/updating-preferences'},
+  {description: 'choose party',                           path: '/voting-registration/choose-party'},
+  {description: 'ballot language',                        path: '/voting-registration/language'},
+  {description: 'ballot by mail',                         path: '/voting-registration/vote-by-mail'},
+  {description: 'contact methods',                        path: '/voting-registration/contact-methods'},
+  {description: 'voter reg complete',                     path: '/voting-registration/confirmation'},
   {description: 'success visit',                          path: '/about-me/success-visit'}
 ];
 

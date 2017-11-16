@@ -11,4 +11,4 @@ function defaultState() {
   };
 }
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_POLITICAL_CONTACT);
+export default formObjectReducer(defaultState, TYPES.UPDATE_CONTACT_METHODS);

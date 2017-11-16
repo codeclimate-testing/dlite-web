@@ -28,7 +28,7 @@ function fakeClientData() {
       state: 'CA',
       zip: '91111'
     },
-    politicalContact: {
+    contactMethods: {
       emailAddress: 'some_email@example.com',
       phoneNumber:  '(916) 555-1111'
     }

@@ -8,12 +8,16 @@ import ContinueButton   from '../continue-button.jsx';
 import alicePath        from '../../helpers/alice-path';
 
 const VoterPreferencesIntro = (props) => {
-
-  const linkAddress = '/about-me/voter/choose-party';
+  const linkAddress = '/voting-registration/choose-party';
+  const linkBack =  '/voting-registration/opt-out';
+  let pageTitle  = 'DMV: License application - Voting registration'
+  document.title = pageTitle;
 
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voting Registration</h3>
+      <hr></hr>
 
       <div className='voter-preferences-intro'>
         <h4>Next you will choose your voter preferences.</h4>
@@ -31,7 +35,7 @@ const VoterPreferencesIntro = (props) => {
         <p>Election officials can contact you with election and voting information.</p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link>
         </div>
 
       </div>

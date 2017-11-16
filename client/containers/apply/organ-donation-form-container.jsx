@@ -13,7 +13,7 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.organDonation(props.organDonation);
-  const onSubmit = navigateOnSubmit('/voter/voter-introduction', props);
+  const onSubmit = navigateOnSubmit('/voting-registration/introduction', props);
 
   return (
     <div>

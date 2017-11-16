@@ -39,7 +39,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
       state:      "CA",
       zip:        "99999"
     },
-    politicalContact: {
+    contactMethods: {
       emailAddress: "rwdjnj@jkdhudf.com ",
       phoneNumber:  "378232111"
     }
@@ -63,8 +63,8 @@ describe('Testing application APIs for basic CRUD operations', () => {
     assert(application.mailingAddress.city, application.mailingAddress.city);
     assert(application.mailingAddress.state, application.mailingAddress.state);
     assert(application.mailingAddress.zip, application.mailingAddress.zip);
-    assert(application.politicalContact.emailAddress, application.politicalContact.emailAddress);
-    assert(application.politicalContact.phoneNumber, application.politicalContact.phoneNumber);
+    assert(application.contactMethods.emailAddress, application.contactMethods.emailAddress);
+    assert(application.contactMethods.phoneNumber, application.contactMethods.phoneNumber);
   }
 
   before((done) => {
