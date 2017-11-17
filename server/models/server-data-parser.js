@@ -62,6 +62,7 @@ function parse(data) {
   }
 
   return {
+
     application: {
       id:   application.id,
       legalName: {
@@ -88,10 +89,11 @@ function parse(data) {
         state:    mailing_address.state,
         zip:      mailing_address.zip
       },
-      politicalContact: {
-        emailAddress: emails[0].address,
-        phoneNumber:  phone_numbers[0].number
+      contactMethods: {
+      emailAddress: emails[0].address,
+      phoneNumber:  phone_numbers[0].number
       }
+
     }
   };
 }

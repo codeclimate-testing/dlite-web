@@ -65,7 +65,7 @@ const hasPreviousNames = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames'])
 }
 
-const politicalContact = (props) => {
+const contactMethods = (props) => {
   return value(props.shouldContact) &&
     hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
 }
@@ -98,7 +98,7 @@ const application = (props) => {
     politicalPartyChoose(props.politicalPartyChoose) ||
     value(props.ballotLanguage) ||
     value(props.optOut) ||
-    politicalContact(props.politicalContact);
+    contactMethods(props.contactMethods);
 };
 
 export {
@@ -114,7 +114,7 @@ export {
   licenseIssues,
   licenseAndIdHistory,
   politicalPartyChoose,
-  politicalContact,
+  contactMethods,
   hasPreviousNames,
   homeAddressSameAsMailing,
   application

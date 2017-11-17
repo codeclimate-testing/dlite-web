@@ -9,9 +9,12 @@ import ContinueButton          from '../continue-button.jsx';
 const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', 'Tagalog', 'Hindi', 'Khmer', 'Vietnamese'];
 
 const BallotLanguageForm = (props) => {
+  document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voting Registration</h3>
+      <hr></hr>
 
       <h4>Choose a language for your election materials.</h4>
       <form onSubmit={ props.onSubmit } className='ballot-language-form'>
@@ -24,7 +27,7 @@ const BallotLanguageForm = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/>
+        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
       </form>
     </div>
   );

@@ -26,6 +26,13 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.and('I click on back link', function(done) {
+    browser
+      .click('a.back.link-button.button')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I will see a button to submit', function (done) {
     browser
       .exists('input[type="submit"]')

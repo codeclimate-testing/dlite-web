@@ -8,7 +8,9 @@ const VALUES = ['Yes', 'No', 'Skip Question'];
 
 const ContactChoice = (props) => {
   return (
-    <div className='political-contact-choice-form'>
+    <div className='contact-methods-choice-form'>
+      <h3>3 &raquo; Voter registration</h3>
+      <hr></hr>
       <h4>Would you like to receive election information via email or text</h4>
       <div className='inner-bottom'>
         <SelectorCollection

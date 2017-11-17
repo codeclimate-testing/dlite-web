@@ -25,7 +25,7 @@ import {
   EligibilityRequirements,
   PoliticalPartyChoose,
   BallotLanguage,
-  PoliticalContact,
+  ContactMethods,
   ContinueButton,
   OptOut,
   Empty
@@ -36,6 +36,7 @@ const appointmentPreparation = '/appointment-preparation';
 const SummaryHandler = (props) => {
   let application = props.application;
   let contents = [
+
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
@@ -52,7 +53,7 @@ const SummaryHandler = (props) => {
     <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
     <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
-    <PoliticalContact politicalContact={application.politicalContact} key='political-contact' />,
+    <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
     <OptOut optOut={application.optOut} key='opt-out' />,
     <Empty {...application} key='empty' />,
 

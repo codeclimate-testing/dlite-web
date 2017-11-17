@@ -39,8 +39,8 @@ describe('Testing application APIs for basic CRUD operations', () => {
     assert(application.mailingAddress.city, _data.mailingAddress.city);
     assert(application.mailingAddress.state, _data.mailingAddress.state);
     assert(application.mailingAddress.zip, _data.mailingAddress.zip);
-    assert(application.politicalContact.emailAddress, _data.politicalContact.emailAddress);
-    assert(application.politicalContact.phoneNumber, _data.politicalContact.phoneNumber);
+    assert(application.contactMethods.emailAddress, _data.contactMethods.emailAddress);
+    assert(application.contactMethods.phoneNumber, _data.contactMethods.phoneNumber);
   }
 
   before((done) => {

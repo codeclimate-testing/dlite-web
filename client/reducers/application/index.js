@@ -20,7 +20,7 @@ import updateEligibilityRequirements       from './update-eligibility-requiremen
 import updatePoliticalPartyChoose          from './update-choose-party';
 import updateBallotLanguage                from './update-ballot-language';
 import updateOptOut                        from './update-opt-out';
-import updatePoliticalContact              from './update-political-contact';
+import updateContactMethods                from './update-contact-methods';
 
 const rootReducer = combineReducers({
   id                          : createApplicationID,
@@ -41,7 +41,7 @@ const rootReducer = combineReducers({
   politicalPartyChoose        : updatePoliticalPartyChoose,
   ballotLanguage              : updateBallotLanguage,
   optOut                      : updateOptOut,
-  politicalContact            : updatePoliticalContact
+  contactMethods              : updateContactMethods
 });
 
 export default rootReducer;

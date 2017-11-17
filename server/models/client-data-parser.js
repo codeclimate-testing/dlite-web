@@ -55,14 +55,14 @@ function extractAddresses(data) {
 function extractEmail(data) {
   return [{
     application_id: data.id,
-    address: data.politicalContact.emailAddress
+    address: data.contactMethods.emailAddress
   }];
 }
 
 function extractPhoneNumber(data) {
   return [{
     application_id: data.id,
-    number: data.politicalContact.phoneNumber
+    number: data.contactMethods.phoneNumber
   }];
 }
 

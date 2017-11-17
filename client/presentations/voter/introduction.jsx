@@ -4,15 +4,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import HomeLink from '../home-link.jsx';
-import ContinueButton from '../continue-button.jsx';
 import alicePath from '../../helpers/alice-path';
 
 const VoterIntro = (props) => {
-  const linkAddress = '/about-me/voter/am-citizen';
+  const linkAddress = '/voting-registration/citizenship';
+  const linkBack = '/organ-donation';
+  let pageTitle = 'DMV: License application - Voting registration'
+  document.title = pageTitle;
 
   return (
     <div>
       <HomeLink />
+      <h3>3 &raquo; Voting Registration</h3>
+      <hr></hr>
 
       <div className='voter-intro-info'>
 
@@ -33,7 +37,7 @@ const VoterIntro = (props) => {
         <b>3 minutes</b></p>
 
         <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link>
+          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link>
         </div>
 
       </div>
