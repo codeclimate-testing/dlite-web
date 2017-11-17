@@ -8,7 +8,6 @@ import ContinueButton   from './continue-button.jsx';
 import alicePath        from './../helpers/alice-path';
 
 const AppointmentPreparation = (props) => {
-
   const documentsLink = '/appointment-preparation/documents';
   const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
 

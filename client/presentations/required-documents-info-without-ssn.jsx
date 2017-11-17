@@ -8,7 +8,6 @@ import ContinueButton   from './continue-button.jsx';
 import alicePath        from './../helpers/alice-path';
 
 const RequiredDocuments = (props) => {
-
   const documentsLink = '/appointment-preparation/documents';
   const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
 
@@ -32,13 +31,13 @@ const RequiredDocuments = (props) => {
 
         <br></br>
 
-        <h4>Legal presence</h4>
+        <h4 className="legal-presence-documents">Legal presence</h4>
         <p>All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence.
         Please refer to our <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist">AB 60 checklist tool</a> and
         our <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP">date of birth and legal presence list</a>.
         </p>
 
-        <h4>California residency</h4>
+        <h4 className="california-residency-documents">California residency</h4>
         <p>You will also need to bring in a document that proves that you live in California.
         Please review our <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents">list of acceptable California residency documents</a>.
         </p>

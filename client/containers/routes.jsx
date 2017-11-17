@@ -29,7 +29,8 @@ import PoliticalPartyChoose                   from './voter/choose-party-form-co
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
-import RequiredDocuments                      from '../presentations/required-documents-info.jsx';
+//import RequiredDocuments                      from '../presentations/required-documents-info.jsx';
+import RequiredDocuments                      from './apply/required-documents-info.jsx';
 import ContactMethods                         from './voter/contact-methods-form-container.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-confirmation.jsx';
 
@@ -64,7 +65,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/voting-registration/vote-by-mail') } component={BallotByMail} />
         <Route path={ alicePath('/voting-registration/contact-methods') } component={ContactMethods} />
         <Route path={ alicePath('/voting-registration/confirmation') } component={VoterRegComplete} />
-      
+
         <Route exact path={ alicePath('/appointment-preparation/') } component={AppointmentPreparation} />
         <Route path={ alicePath('/appointment-preparation/documents') } component={RequiredDocuments} />
       </div>
