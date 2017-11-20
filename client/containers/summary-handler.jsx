@@ -76,7 +76,7 @@ const SummaryHandler = (props) => {
     props.dispatch(postData(data));
   }
 
-  if(APP_ENV === 'development') {
+  if(APP_ENV === 'development' || APP_ENV === 'test') {
     contents.push(
       <div key='save-reload-data'>
         <div className=' unit relative'>
