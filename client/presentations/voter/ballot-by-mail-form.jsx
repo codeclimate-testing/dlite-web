@@ -18,7 +18,7 @@ const BallotByMailForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voter registration</h3>
+      <h3>3 &raquo; Voting registration</h3>
       <hr></hr>
 
       <h4>Would you like to get your ballot by mail before each election?</h4>

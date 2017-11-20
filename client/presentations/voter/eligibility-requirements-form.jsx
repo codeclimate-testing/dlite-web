@@ -12,7 +12,7 @@ const EligibilityRequirements = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voter registration</h3>
+      <h3>3 &raquo; Voting registration</h3>
       <hr></hr>
 
         <h4>Do you meet all of the voter registration requirements listed below?</h4>
