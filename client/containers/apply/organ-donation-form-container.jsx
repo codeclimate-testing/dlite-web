@@ -15,7 +15,7 @@ import * as dataPresent             from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.organDonation(props.organDonation);
   const onSubmit = navigateOnSubmit('/voting-registration/introduction', props);
-  const onBack           = navigateOnBack('/my-history/license-issues', props);
+  const onBack           = navigateOnBack('/my-history/veterans-service', props);
   const pageTitle        =   'DMV: License application - Organ donation'
 
   return (

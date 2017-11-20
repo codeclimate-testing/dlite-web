@@ -14,6 +14,7 @@ import updateLicenseIssues                 from './update-license-issues';
 import updateLicenseAndIdHistory           from './update-license-and-id-history';
 import updateNamesHistory                  from './update-names-history';
 import updateSocialSecurity                from './update-social-security';
+import updateVeteranService                from './update-veterans-service';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
 import updateEligibilityRequirements       from './update-eligibility-requirements';
@@ -35,6 +36,7 @@ const rootReducer = combineReducers({
   namesHistory                : updateNamesHistory,
   licenseIssues               : updateLicenseIssues,
   socialSecurity              : updateSocialSecurity,
+  veteransService             : updateVeteranService,
   citizenStatus               : updateCitizenStatus,
   ballotByMail                : updateBallotByMail,
   eligibilityRequirements     : updateEligibilityRequirements,
