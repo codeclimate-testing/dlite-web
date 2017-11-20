@@ -17,7 +17,7 @@ const VoterPreferencesIntroUpdated = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting Registration</h3>
+      <h3>3 &raquo; Voting registration</h3>
       <hr></hr>
 
       <div className='updating-voter-preferences'>

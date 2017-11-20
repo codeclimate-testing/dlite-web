@@ -8,7 +8,7 @@ const VALUES = ['Yes', 'I do not wish to choose a political party'];
 const PoliticalPartyChoose = (props) => {
   return (
     <div className='choose-party'>
-      <h3>3 &raquo; Voting Registration</h3>
+      <h3>3 &raquo; Voting registration</h3>
       <hr></hr>
       <h4>Would you like to choose a political party preference?</h4>
       <p>In order to vote for a presidential candidate in a primary election, you
