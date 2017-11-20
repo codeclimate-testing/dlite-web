@@ -34,4 +34,4 @@ Feature: Donate Life
     When I visit the organ page
     Then I will see organ donation question
     When I click to go back
-    Then I will be taken to the license issues page
+    Then Then I will be on the page for veteran related services

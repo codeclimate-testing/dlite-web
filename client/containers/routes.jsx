@@ -19,7 +19,7 @@ import OrganDonation                          from './apply/organ-donation-form-
 import LicenseIssues                          from './apply/license-issues-form-container.jsx';
 import LicenseAndId                           from './apply/license-and-id-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
-import VeteransHistory                        from '../presentations/apply/veterans-history-info.jsx';
+import VeteransService                        from './apply/veterans-service-form-container.jsx';
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter/eligibility-requirements-form-container.jsx';
 import OptOut                                 from './voter/opt-out-form-container.jsx';
@@ -29,7 +29,6 @@ import PoliticalPartyChoose                   from './voter/choose-party-form-co
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
-//import RequiredDocuments                      from '../presentations/required-documents-info.jsx';
 import RequiredDocuments                      from './apply/required-documents-info.jsx';
 import ContactMethods                         from './voter/contact-methods-form-container.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-confirmation.jsx';
@@ -52,7 +51,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-history/license-issues')} component={LicenseIssues} />
         <Route path={ alicePath('/my-history/license-and-id')} component={LicenseAndId} />
         <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
-        <Route path={ alicePath('/about-me/veterans-history') } component={VeteransHistory} />
+        <Route path={ alicePath('/my-history/veterans-service') } component={VeteransService} />
 
         <Route path={ alicePath('/voting-registration/introduction') } component={VoterIntro} />
         <Route path={ alicePath('/voting-registration/citizenship') } component={VoterCitizenStatus} />
