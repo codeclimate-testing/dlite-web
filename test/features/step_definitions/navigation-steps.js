@@ -154,6 +154,10 @@ module.exports = function(world) {
     navigateToPath('/apply/voting-registration/contact-methods', '.contact-methods-choice-form', done);
   });
 
+  world.when('I visit the required documents page', function(done){
+    navigateToPath('/apply/appointment-preparation/documents', '.required-documents', done);
+  });
+
   world.then('I will be on the page for entering my date of birth', function(done) {
     assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
   });

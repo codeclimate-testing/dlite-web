@@ -2,43 +2,30 @@
 
 import React from 'react';
 
-import { updateSocialSecurity }      from "../../actions/index";
+import { updateSocialSecurity }      from '../../actions/index';
 import HomeLink                      from '../../presentations/home-link.jsx';
-import RequiredDocumentsWithSSN      from "../../presentations/required-documents-info-with-ssn.jsx";
-
-import RequiredDocumentsWithoutSSN   from "../../presentations/required-documents-info-without-ssn.jsx";
+import RequiredDocuments             from '../../presentations/apply/required-documents-info.jsx';
 import connectForm                   from '../../helpers/connect-form';
 
 const ConnectedForm = (props) => {
-  const documentsLink = '/appointment-preparation/documents';
-  const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
-
-  if(props.socialSecurity.hasSocialSecurity === 'Yes') {
-    return (
-      <div>
-      <HomeLink />
-
-      <RequiredDocumentsWithSSN
-      />
-
-      </div>
-    );
-  }
 
   return (
     <div>
-    <HomeLink />
+      <HomeLink />
 
-    <RequiredDocumentsWithoutSSN
-    />
-
+      <RequiredDocuments
+        socialSecurity     = { props.socialSecurity }
+        veteransService    = { props.veteransService }
+      />
     </div>
   );
+
 };
 
 function mapStateToProps(state) {
   return {
-    socialSecurity: state.application.socialSecurity
+    socialSecurity:   state.application.socialSecurity,
+    veteransService:  state.application.veteransService
   };
 }
 

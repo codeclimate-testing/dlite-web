@@ -39,7 +39,9 @@ const linkData = [
   {description: 'ballot by mail',                         path: '/voting-registration/vote-by-mail'},
   {description: 'contact methods',                        path: '/voting-registration/contact-methods'},
   {description: 'voter reg complete',                     path: '/voting-registration/confirmation'},
-  {description: 'success visit',                          path: '/about-me/success-visit'}
+  {description: 'success visit',                          path: '/about-me/success-visit'},
+  {description: 'appointment preparation',                path: '/appointment-preparation'},
+  {description: 'required documents',                     path: '/appointment-preparation/documents'}
 ];
 
 const Home = () => {
