@@ -18,6 +18,7 @@ import VoterIntro                             from '../presentations/voter/intro
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import LicenseIssues                          from './apply/license-issues-form-container.jsx';
 import LicenseAndId                           from './apply/license-and-id-history-form-container.jsx';
+import MedicalHistory                         from './apply/medical-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransService                        from './apply/veterans-service-form-container.jsx';
 import VoterCitizenStatus                     from './voter/citizen-status-form-container.jsx';
@@ -50,6 +51,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/organ-donation' ) } component={OrganDonation} />
         <Route path={ alicePath('/my-history/license-issues')} component={LicenseIssues} />
         <Route path={ alicePath('/my-history/license-and-id')} component={LicenseAndId} />
+        <Route path={ alicePath('/my-history/medical' ) } component={MedicalHistory} />
         <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
         <Route path={ alicePath('/my-history/veterans-service') } component={VeteransService} />
 

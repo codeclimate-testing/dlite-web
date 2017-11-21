@@ -13,7 +13,7 @@ Feature:  I want to enter my name
     When I enter my full social security number
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    And I will be taken to license and id history page
+    And I will be taken to medical history page
     And I go to the page with my summary
     Then I will see my social security on that summary
 
@@ -24,7 +24,7 @@ Feature:  I want to enter my name
     Then I will see text for no social security info
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    And I will be taken to license and id history page
+    And I will be taken to medical history page
     And I go to the page with my summary
     Then I will see that I do not have a social security number
 
@@ -36,7 +36,7 @@ Feature:  I want to enter my name
     Then I will see the social security number that I entered
     When I change my social security number
     And I click to submit
-    And I will be taken to license and id history page
+    And I will be taken to medical history page
     And I go to the page with my summary
     Then I will see my social security number in the summary
 
