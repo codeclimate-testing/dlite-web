@@ -39,6 +39,21 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#veteransService', function() {
+    it('is true when user is not a veteran', function() {
+      assert(dataPresent.veteransService({isVeteran: 'No'}), 'veteransService not present when user is not a veteran');
+    });
+
+    it('is true when user is a veteran', function() {
+      assert(dataPresent.veteransService({
+        isVeteran           : 'Yes',
+        receiveBenefits     : 'No',
+        veteransIdentifier  : 'Yes'
+      }), 'veteransService not present when user is a veteran')
+    });
+
+  });
+
   describe('#address', function() {
     it('is true with any field but state', function() {
       assert(dataPresent.address({street_1: '123 Main'}), 'address not present with street');
@@ -295,6 +310,17 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with social security');
+    });
+
+    it('is true when the user is a veteran', function() {
+      let data = {
+        veteransService: {
+          isVeteran           : 'Yes',
+          receiveBenefits     : 'No',
+          veteransIdentifier  : 'Yes'
+        }
+      };
+      assert(dataPresent.application(data), 'Data not present when user is a veteran');
     });
 
     it('is true when there is suspended license info', function(){

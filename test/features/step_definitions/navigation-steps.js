@@ -82,6 +82,10 @@ module.exports = function(world) {
     navigateToPath('/apply/my-basics/social-security', '.social-security-option-form', done);
   });
 
+  world.when('I visit the veteran services page', function(done){
+    navigateToPath('/apply/my-history/veterans-service', '.veterans-questionnaire-form', done);
+  });
+
   world.when('I visit voter citizen status page', function(done) {
     navigateToPath('/apply/voting-registration/citizenship', '.citizen-status-form', done);
   });
@@ -182,6 +186,10 @@ module.exports = function(world) {
     assertOnPage('.social-security-option-form', /my-basics\/social-security/, done);
   });
 
+  world.then('I will be on the page for veteran related services', function(done) {
+    assertOnPage('.veterans-questionnaire-form', /my-history\/veterans-service/, done);
+  });
+
   world.then('I will be on the page for voter citizen status entry', function(done) {
     assertOnPage('.citizen-status-form', /voting-registration\/citizenship/, done);
   });
@@ -280,10 +288,6 @@ module.exports = function(world) {
 
     world.then('I will be taken to date of birth page', function(done) {
     assertOnPage('.date-of-birth-form', /my-basics\/date-of-birth/, done);
-  });
-
-  world.then('I will be on the page for veterans history', function(done) {
-    assertOnPage('.veterans-history', /about-me\/veterans-history/, done)
   });
 
   world.when('I will be taken to get started page', function(done){

@@ -23,6 +23,7 @@ export const TYPES = {
   UPDATE_NAMES_HISTORY:                   'UPDATE_NAMES_HISTORY',
   UPDATE_MEDICAL_HISTORY:                 'UPDATE_MEDICAL_HISTORY',
   UPDATE_SOCIAL_SECURITY:                 'UPDATE_SOCIAL_SECURITY',
+  UPDATE_VETERANS_SERVICE:                'UPDATE_VETERANS_SERVICE',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
   UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS',
@@ -45,6 +46,7 @@ export const updateLicenseAndIdHistory        = generateAction(TYPES.UPDATE_LICE
 export const updateNamesHistory               = generateAction(TYPES.UPDATE_NAMES_HISTORY);
 export const updateMedicalHistory            = generateAction(TYPES.UPDATE_MEDICAL_HISTORY);
 export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
+export const updateVeteranService             = generateAction(TYPES.UPDATE_VETERANS_SERVICE);
 export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateBallotByMail               = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);
 export const updateEligibilityRequirements    = generateAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);

@@ -49,6 +49,10 @@ const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3'])
 }
 
+const veteransService = (props) => {
+  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])))
+}
+
 const licenseIssues = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
 }
@@ -97,6 +101,7 @@ const application = (props) => {
     physicalTraits(props.physicalTraits) ||
     organDonation(props.organDonation) ||
     socialSecurity(props.socialSecurity) ||
+    veteransService(props.veteransService) ||
     namesHistory(props.namesHistory) ||
     medicalHistory(props.medicalHistory) ||
     licenseIssues(props.licenseIssues) ||
@@ -119,6 +124,7 @@ export {
   physicalTraits,
   organDonation,
   socialSecurity,
+  veteransService,
   namesHistory,
   hasMedicalCondition,
   medicalHistory,

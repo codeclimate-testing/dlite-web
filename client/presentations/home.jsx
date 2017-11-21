@@ -27,6 +27,7 @@ const linkData = [
   {description: 'names history',                          path: '/my-history/names/'},
   {description: 'medical history',                        path: '/my-history/medical/'},
   {description: 'license issues',                         path: '/my-history/license-issues'},
+  {description: 'veterans service',                       path: '/my-history/veterans-service'},
 
   {description: 'voter intro',                            path: '/voting-registration/introduction'},
   {description: 'citizen status',                         path: '/voting-registration/citizenship'},

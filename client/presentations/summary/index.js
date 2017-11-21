@@ -13,6 +13,7 @@ import LicenseIssues               from './license-issues.jsx';
 import LicenseAndIdHistory         from './license-and-id-history.jsx';
 import NamesHistory                from './names-history.jsx';
 import MedicalHistory              from './medical-history.jsx';
+import VeteransService             from './veterans-service.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
 import BallotByMail                from './ballot-by-mail.jsx';
@@ -36,6 +37,7 @@ export {
   LicenseAndIdHistory,
   NamesHistory,
   MedicalHistory,
+  VeteransService,
   CitizenStatus,
   EligibilityRequirements,
   BallotByMail,
