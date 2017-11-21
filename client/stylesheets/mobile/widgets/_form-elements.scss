@@ -1,8 +1,10 @@
 .input-container {
-  margin-top: $input-top-padding + $input-border-width;
-  margin-bottom: $input-top-padding;
-  margin-right: $input-side-padding + $input-border-width;
-  margin-left: $input-side-padding;
+  margin-bottom: $spacing * 1.75;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .input,
@@ -17,18 +19,17 @@ textarea {
   -webkit-appearance: none;
 
   @include line;
-  @include input-margin-fix;
   @include bordered;
+  @include rounded;
+  padding: $spacing;
 
   background-color: white;
   font-size: $em;
   color: black;
-  padding: $input-top-padding  $input-side-padding;
 
   &:focus,
   &.focus {
     @include button-focused;
-    @include focus-input-padding-fix;
     color: black;
     text-decoration: none;
   }
@@ -70,10 +71,8 @@ form {
     input[type=email],
     textarea {
       border: $input-border-width-special solid $error;
-      @include focus-input-padding-fix;
 
       &:focus {
-        @include focus-input-padding-fix;
         border: $input-border-width-special solid $primary;
       }
     }
