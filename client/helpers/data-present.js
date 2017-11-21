@@ -69,6 +69,14 @@ const hasPreviousNames = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames'])
 }
 
+const medicalHistory = (props) => {
+  return hasAllAttributes(props, ['hasMedicalCondition', 'medicalInfo']);
+}
+
+const hasMedicalCondition = (props) => {
+  return hasAllAttributes(props, ['hasMedicalCondition'])
+}
+
 const contactMethods = (props) => {
   return value(props.shouldContact) &&
     hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
@@ -95,6 +103,7 @@ const application = (props) => {
     socialSecurity(props.socialSecurity) ||
     veteransService(props.veteransService) ||
     namesHistory(props.namesHistory) ||
+    medicalHistory(props.medicalHistory) ||
     licenseIssues(props.licenseIssues) ||
     licenseAndIdHistory(props.licenseAndIdHistory) ||
     value(props.citizenStatus) ||
@@ -117,6 +126,8 @@ export {
   socialSecurity,
   veteransService,
   namesHistory,
+  hasMedicalCondition,
+  medicalHistory,
   licenseIssues,
   licenseAndIdHistory,
   politicalPartyChoose,

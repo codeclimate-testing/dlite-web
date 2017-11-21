@@ -25,6 +25,7 @@ const linkData = [
   {description: 'organ donation',                         path: '/organ-donation'},
   {description: 'license and id history',                 path: '/my-history/license-and-id'},
   {description: 'names history',                          path: '/my-history/names/'},
+  {description: 'medical history',                        path: '/my-history/medical/'},
   {description: 'license issues',                         path: '/my-history/license-issues'},
   {description: 'veterans service',                       path: '/my-history/veterans-service'},
 

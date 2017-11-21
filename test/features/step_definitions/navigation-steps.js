@@ -158,6 +158,10 @@ module.exports = function(world) {
     navigateToPath('/apply/appointment-preparation/documents', '.required-documents', done);
   });
 
+  world.when('I visit the medical history page', function(done) {
+    navigateToPath('/apply/my-history/medical', '.medical-info', done);
+  });
+
   world.then('I will be on the page for entering my date of birth', function(done) {
     assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
   });
@@ -292,5 +296,9 @@ module.exports = function(world) {
 
   world.when('I will be taken to get started page', function(done){
     navigateToPath('/apply/what-do-you-want-to-do-today', '.intro-info', done);
+  });
+
+  world.then('I will be taken to medical history page', function(done){
+    assertOnPage('.medical-info', /my-history\/medical/, done);
   });
 };

@@ -198,6 +198,22 @@ describe('dataPresent', function() {
     });
   });
 
+    describe('#medicalHistory', function() {
+    it('is true when only medical history is present', function() {
+      assert(
+        dataPresent.medicalHistory({hasMedicalCondition: 'Yes', medicalInfo: 'epileptic seizure, tremor'}),
+        'medical history not present with just medical conditions'
+      );
+    });
+
+    it('is false without a medical condition', function() {
+      assert(
+        !dataPresent.medicalHistory({hasMedicalCondition: 'Yes', medicalInfo: ''}),
+        'medical history present without medical conditions'
+      );
+    });
+  });
+
   describe('#contactMethods', function() {
     it('is true with only email address', function() {
       assert(dataPresent.contactMethods({shouldContact: 'Yes', emailAddress: 'smith@wrangler.com'}), 'contactMethods not present with email address');
@@ -320,6 +336,18 @@ describe('dataPresent', function() {
 
       assert(dataPresent.application(data), 'Data not present with suspended license info');
     });
+
+    it('is true when there is medical history info', function(){
+      let data = {
+        medicalHistory: {
+          hasMedicalCondition: 'Yes',
+          medicalInfo: 'Tremor'
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with previous medical history info');
+    });
+
 
     it('is true when there is previous name info', function(){
       let data = {
