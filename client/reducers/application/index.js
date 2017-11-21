@@ -13,6 +13,7 @@ import updateOrganDonation                 from './update-organ-donation';
 import updateLicenseIssues                 from './update-license-issues';
 import updateLicenseAndIdHistory           from './update-license-and-id-history';
 import updateNamesHistory                  from './update-names-history';
+import updateMedicalHistory                from './update-medical-history';
 import updateSocialSecurity                from './update-social-security';
 import updateCitizenStatus                 from './update-citizen-status';
 import updateBallotByMail                  from './update-ballot-by-mail';
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   organDonation               : updateOrganDonation,
   licenseAndIdHistory         : updateLicenseAndIdHistory,
   namesHistory                : updateNamesHistory,
+  medicalHistory              : updateMedicalHistory,
   licenseIssues               : updateLicenseIssues,
   socialSecurity              : updateSocialSecurity,
   citizenStatus               : updateCitizenStatus,
