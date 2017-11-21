@@ -42,3 +42,18 @@ Feature: Required documents page
     When I click No for veteran
     When I visit the required documents page
     Then I will not see any information about proving veterans status
+
+  Scenario: I have declared a medical information
+    Given I go to the new online DL application page
+    And I visit the medical history page
+    When I select Yes to having reportable medical history
+    When I visit the required documents page
+    Then I will see an additional bullet for medical information
+    And I will see a section about medical information
+
+  Scenario: I have not declared a medical information
+    Given I go to the new online DL application page
+    And I visit the medical history page
+    When I select No to having reportable medical history
+    When I visit the required documents page
+    Then I will not see a section about medical information

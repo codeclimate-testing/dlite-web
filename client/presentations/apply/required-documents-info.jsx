@@ -22,6 +22,9 @@ const RequiredDocuments = (props) => {
   if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes') {
     bulletList.push(<li key='proof-veteran-service' >Proof of veterans service</li>);
   }
+  if(props.medicalHistory.hasMedicalCondition === 'Yes') {
+    bulletList.push(<li key='medical-information' >Medical Information</li>);
+  }
 
   documentList.push(
     <div key='legal-presence-documents'>
@@ -58,6 +61,15 @@ const RequiredDocuments = (props) => {
         <h4 className="proof-of-veterans-service">Proof of veterans service</h4>
         <p>To get “Veteran” on your card, you need to to bring a <a target="_blank" href={ veteranVerificationLink }> Veteran Status Verification Form </a> that your County Veteran Service Office can provide to you. We thank you for your service! </p>
 
+      </div>
+    );
+  }
+
+  if(props.medicalHistory.hasMedicalCondition === 'Yes'){
+    documentList.push(
+      <div key='medical-information-documents'>
+        <h4 className="medical-information-documents">Medical Information</h4>
+        <p>If you have a medical condition or a disability, DMV may require you to take a driving test. You may also have to provide a statement from your physician regarding your current health condition. </p>
       </div>
     );
   }

@@ -55,4 +55,33 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.then('I will see an additional bullet for medical information', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('Medical Information'), 'medical information bullet is missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.and('I will see a section about medical information', function(done){
+    browser
+      .waitForSelector('.medical-information-documents')
+      .then(() => { done(); })
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
+  });
+
+  world.then('I will not see a section about medical information', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(!text.includes('Medical Information'), 'medical information section is present');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
