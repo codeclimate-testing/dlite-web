@@ -24,4 +24,35 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.then('I will see an additional bullet for proving my veterans status', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('Proof of veterans service'), 'veterans service section is missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.and('I will see a section letting me know what I need to do to prove my status', function(done){
+    browser
+      .waitForSelector('.proof-of-veterans-service')
+      .then(() => { done(); })
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
+  });
+
+  world.then('I will not see any information about proving veterans status', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(!text.includes('Proof of veterans service'), 'veterans service section is present');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 };
