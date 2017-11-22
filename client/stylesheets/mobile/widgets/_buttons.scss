@@ -129,6 +129,7 @@ $arrow-width: 15px;
 
   &.hover,
   &:hover {
+    background-color: transparent;
     .triangle {
       border-right-color: darken($med-blue, 10%);
       border-left-color: darken($med-blue, 10%);
@@ -140,6 +141,7 @@ $arrow-width: 15px;
 
   &.active,
   &:active {
+    background-color: transparent;
     .triangle {
       border-right-color: darken($med-blue, 5%);
       border-left-color: darken($med-blue, 5%);
@@ -150,6 +152,7 @@ $arrow-width: 15px;
   }
 
   &.error {
+    background-color: transparent;
     .triangle {
       border-right-color: $error;
       border-left-color: $error;
@@ -161,6 +164,7 @@ $arrow-width: 15px;
 
   &.error.hover,
   &.error:hover {
+    background-color: transparent;
     .triangle {
       border-right-color: darken($error, 10%);
       border-left-color: darken($error, 10%);
@@ -172,6 +176,7 @@ $arrow-width: 15px;
 
   &.error.active,
   &.error:active {
+    background-color: transparent;
     .triangle {
       border-right-color: darken($error, 5%);
       border-left-color: darken($error, 5%);
@@ -183,6 +188,7 @@ $arrow-width: 15px;
 
   &.focus,
   &:focus {
+    background-color: transparent;
     .text span {
       @include focus-outline;
     }
