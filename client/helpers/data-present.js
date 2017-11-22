@@ -38,8 +38,7 @@ const homeAddressSameAsMailing = (props) => {
 
 const traitsHeightWeight = (props) => {
   return hasAllAttributes(props, ['weight', 'heightFeet']);
-}
-
+};
 
 const organDonation = (props) => {
   return hasAllAttributes(props, ['donate', 'contribute'])
@@ -47,23 +46,23 @@ const organDonation = (props) => {
 
 const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3'])
-}
+};
 
 const veteransService = (props) => {
   return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])))
-}
+};
 
 const licenseIssues = (props) => {
   return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
-}
+};
 
 const licenseAndIdHistory = (props) => {
   return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
-}
+};
 
 const namesHistory = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames', 'previousNames']);
-}
+};
 
 const hasPreviousNames = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames'])
@@ -90,7 +89,11 @@ const politicalPartyChoose = (props) => {
 
 const physicalTraits = (props) => {
   return hasAllAttributes(props, ['sex', 'eyeColor', 'hairColor']);
-}
+};
+
+const realID = (props) => {
+  return hasAnyAttributes(props, ['getRealID']);
+};
 
 const application = (props) => {
   return legalName(props.legalName) ||
@@ -112,7 +115,8 @@ const application = (props) => {
     politicalPartyChoose(props.politicalPartyChoose) ||
     value(props.ballotLanguage) ||
     value(props.optOut) ||
-    contactMethods(props.contactMethods);
+    contactMethods(props.contactMethods) || 
+    realID(props.realID);
 };
 
 export {
@@ -134,5 +138,6 @@ export {
   contactMethods,
   hasPreviousNames,
   homeAddressSameAsMailing,
-  application
+  application,
+  realID
 };

@@ -6,6 +6,7 @@ import HomeLink         from '../home-link.jsx';
 import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
 import ContinueButton   from '../continue-button.jsx';
+import BackButton       from '../back-button.jsx';
 
 const Form = (props) => {
   document.title = props.pageTitle;
@@ -46,7 +47,7 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
+        <ContinueButton disabled={props.continueDisabled} /> <BackButton onBack={props.onBack} key = 'back-button' />
 
       </form>
     </div>

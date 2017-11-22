@@ -12,6 +12,7 @@ function generateAction(type) {
 export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
+  UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
@@ -35,6 +36,7 @@ export const TYPES = {
 
 export const createApplicationID              = generateAction(TYPES.CREATE_APPLICATION_ID);
 export const updateLegalName                  = generateAction(TYPES.UPDATE_LEGAL_NAME);
+export const updateRealID                     = generateAction(TYPES.UPDATE_REAL_ID);
 export const updateHomeAddress                = generateAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateAction(TYPES.UPDATE_MAILING_ADDRESS);
 export const updateDateOfBirth                = generateAction(TYPES.UPDATE_DATE_OF_BIRTH);
