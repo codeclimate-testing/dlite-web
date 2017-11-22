@@ -1,7 +1,7 @@
-//$sans-serif-main: "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
-$sans-serif-main: 'Source Sans Pro', "Trebuchet MS", Trebuchet, Tahoma, Geneva, sans-serif;
+$display-headline: 'Raleway', sans-serif;
+$main-font: 'Montserrat', sans-serif;
 
-$headline-font:   $sans-serif-main;
-$headline-2-font: $sans-serif-main;
-$body-font:       $sans-serif-main;
-$button-font:     $sans-serif-main;
+$headline-font:   $display-headline;
+$headline-2-font: $main-font;
+$body-font:       $main-font;
+$button-font:     $main-font;

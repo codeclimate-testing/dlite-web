@@ -6,7 +6,7 @@
 }
 
 @mixin bordered {
-  border: $border-width solid $neutral-20;
+  border: $border-width solid $gray;
 }
 
 @mixin rounded {
@@ -34,18 +34,7 @@
   @include transition-duration(500ms);
 }
 
-@mixin button-focused {
-  text-decoration: underline;
-  color: white;
-  border-color: $highlight;
-}
-
-/* form input fixes */
-@mixin focus-input-padding-fix {
-  padding: $input-top-padding $input-side-padding;
-}
-
-@mixin input-margin-fix {
-  margin-left: -$input-side-padding;
-  margin-top: -$input-top-padding;
+@mixin focus-outline {
+  border-bottom-width: $border-width-special;
+  @include box-shadow(0 0 0 2px $focus);
 }

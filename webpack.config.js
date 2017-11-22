@@ -34,7 +34,10 @@ let config = {
     extensions: ['.js', '.json']
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.css'),
+    new webpack.DefinePlugin({
+      APP_ENV: JSON.stringify(process.env.APP_ENV)
+    }),
   ]
 };
 

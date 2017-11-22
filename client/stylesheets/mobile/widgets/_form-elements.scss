@@ -1,8 +1,18 @@
 .input-container {
-  margin-top: $input-top-padding + $input-border-width;
-  margin-bottom: $input-top-padding;
-  margin-right: $input-side-padding + $input-border-width;
-  margin-left: $input-side-padding;
+  margin-bottom: $spacing;
+}
+
+form .spacer {
+  height: $spacing * 4;
+}
+
+form .radio-collection .spacer {
+  height: $em;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .input,
@@ -17,20 +27,20 @@ textarea {
   -webkit-appearance: none;
 
   @include line;
-  @include input-margin-fix;
   @include bordered;
+  @include rounded;
+  padding: $spacing;
 
   background-color: white;
+  color: $darkest-color;
   font-size: $em;
-  color: black;
-  padding: $input-top-padding  $input-side-padding;
+
+  margin-bottom: 2px; // fixes for the focus sizing on the bottom
 
   &:focus,
   &.focus {
-    @include button-focused;
-    @include focus-input-padding-fix;
-    color: black;
-    text-decoration: none;
+    @include focus-outline;
+    margin-bottom: -1px;
   }
 }
 
@@ -55,27 +65,19 @@ form {
     display: none;
   }
 
+  .error label,
+  label.error {
+    color: $error-dark;
+  }
+
   .error {
-    .error-message {
-      display: block;
-      color: $error-dark;
-    }
-
-    .file-input {
-      border: $input-border-width solid $error;
-    }
-
     input[type=text],
     input[type=password],
     input[type=email],
     textarea {
-      border: $input-border-width-special solid $error;
-      @include focus-input-padding-fix;
-
-      &:focus {
-        @include focus-input-padding-fix;
-        border: $input-border-width-special solid $primary;
-      }
+      margin-bottom: -1px;
+      border-bottom-width: $border-width-special;
+      border-color: $error;
     }
   }
 }

@@ -6,7 +6,8 @@
   <meta name="viewport" content="initial-scale=1">
   <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
   <link rel="stylesheet" href="/app.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 <body>
   <div id="page">
@@ -93,15 +94,16 @@
           <form >
             <label>Text input label</label>
             <div class='input-container'>
-              <input type='text' placeholder='This is a text input'>
+              <input type='text' placeholder='Placeholder for text'>
             </div>
 
+            <label class='error'>Something went wrong!</label>
             <div class='input-container error'>
               <input type='text' placeholder='This is a text input' value='An error input!'>
             </div>
 
             <div class='input-container'>
-              <input type='text' class='focus' placeholder='This is focused'>
+              <input type='text' class='focus' value='This is focused'>
             </div>
 
             <p>Nothing special is happening with the select, radio or checkbox</p>
@@ -127,6 +129,105 @@
             <p>And then we move to some submit buttons</p>
 
             <div class='row'>
+              <div class='row'>
+                <h4>Arrow buttons</h4>
+                <button class='arrow-button unit backwards'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'><span>Back<span></div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+              <div class='row'>
+                <p>Hover</p>
+                <button class='arrow-button unit backwards hover'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'>Back</div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward hover'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+              <div class='row'>
+                <p>Active</p>
+                <button class='arrow-button unit backwards active'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'>Back</div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward active'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+              <div class='row'>
+                <p>Error</p>
+                <button class='arrow-button unit backwards error'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'>Back</div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward error'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+
+              <div class='row'>
+                <p>Error, hover</p>
+                <button class='arrow-button unit backwards error hover'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'>Back</div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward error hover'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+
+              <div class='row'>
+                <p>Error, active</p>
+                <button class='arrow-button unit backwards error active'>
+                  <div class='button-container unit'>
+                    <div class='triangle'></div>
+                    <div class='text'>Back</div>
+                  </div>
+                </button>
+                <div class='spacer unit'></div>
+                <button class='arrow-button unit forward error active'>
+                  <div class='button-container unit'>
+                    <div class='text'>Next</div>
+                    <div class='triangle'></div>
+                  </div>
+                </button>
+              </div>
+
               <div class='unit size-1-2'>
                 <h4>Submit/continue buttons</h4>
                 <input type='submit'><br>
