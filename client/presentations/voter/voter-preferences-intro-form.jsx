@@ -1,9 +1,9 @@
 'use strict';
 
 import React            from 'react';
-import { Link }         from 'react-router-dom';
 
 import HomeLink         from '../home-link.jsx';
+import LinkButton       from '../link-button.jsx';
 import ContinueButton   from '../continue-button.jsx';
 import alicePath        from '../../helpers/alice-path';
 
@@ -34,10 +34,18 @@ const VoterPreferencesIntro = (props) => {
         <h4>Contact Information</h4>
         <p>Election officials can contact you with election and voting information.</p>
 
-        <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link>
-        </div>
 
+        <LinkButton
+          to={linkBack}
+          className='back'
+          linkText='Back' />
+
+        <div className='unit spacer' />
+
+        <LinkButton
+          to={linkAddress}
+          className='continue'
+          linkText='Continue' />
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 'use strict';
 
 import React        from 'react';
-import { Link }     from 'react-router-dom';
 
 import HomeLink                 from '../../presentations/home-link.jsx';
+import LinkButton               from '../../presentations/link-button.jsx';
 import alicePath                from '../../helpers/alice-path';
 
 const Intro = (props) => {
@@ -29,10 +29,11 @@ const Intro = (props) => {
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
 
-        <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Get Started</Link>
-        </div>
-
+        <LinkButton
+          to={linkAddress}
+          linkText='Get started'
+          className='continue get-started'
+        />
       </div>
     </div>
   );
