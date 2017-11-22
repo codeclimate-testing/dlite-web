@@ -35,8 +35,7 @@ textarea {
 
   &:focus,
   &.focus {
-    border-bottom-width: $border-width-special;
-    @include box-shadow(0 0 0 2px $focus);
+    @include focus-outline;
     margin-bottom: -1px;
   }
 }
