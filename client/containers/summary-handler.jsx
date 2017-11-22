@@ -80,17 +80,24 @@ const SummaryHandler = (props) => {
     props.dispatch(postData(data));
   }
 
+  if(APP_ENV === 'development' || APP_ENV === 'test') {
+    contents.push(
+      <div key='save-reload-data'>
+        <div className=' unit relative'>
+          <button id='reloadData' key='reload-data' onClick={loadData}> Reload </button>
+        </div>
+        <div className='unit spacer'></div>
+        <div className=' unit relative'>
+          <button id='saveData' key='save-data' onClick={saveData}> Save </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className='summary'>
       <HomeLink />
       { contents }
-      <div className=' unit relative'>
-        <button id='reloadData' key='reload-data' onClick={loadData}> Reload </button>
-      </div>
-      <div className='unit spacer'></div>
-      <div className=' unit relative'>
-        <button id='saveData' key='save-data' onClick={saveData}> Save </button>
-      </div>
     </div>
   );
 }

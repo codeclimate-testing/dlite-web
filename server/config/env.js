@@ -3,7 +3,7 @@
 const dotenv = require('dotenv');
 const env    = process.env.APP_ENV || 'development';
 
-if (env === 'development' || env === 'test') {
+if (env === 'development' || env === 'test' || env === 'staging') {
   dotenv.config();
 }
 
