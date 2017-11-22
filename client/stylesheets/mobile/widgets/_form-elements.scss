@@ -6,6 +6,10 @@ form .spacer {
   height: $spacing * 4;
 }
 
+form .radio-collection .spacer {
+  height: $em;
+}
+
 label {
   font-size: 12px;
   font-weight: bold;
