@@ -14,7 +14,7 @@ module.exports = function (world) {
 
   world.and('I click to continue', function(done) {
     browser
-      .click('a.link-button.button')
+      .click('a.continue.button')
       .then(() => { done(); })
       .catch(done);
   });
@@ -28,7 +28,7 @@ module.exports = function (world) {
 
   world.and('I click on back link', function(done) {
     browser
-      .click('a.back.link-button.button')
+      .click('a.back.button')
       .then(() => { done(); })
       .catch(done);
   });

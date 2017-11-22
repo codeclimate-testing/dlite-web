@@ -1,10 +1,10 @@
 'use strict';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import HomeLink from '../home-link.jsx';
-import alicePath from '../../helpers/alice-path';
+import HomeLink     from '../home-link.jsx';
+import LinkButton   from '../link-button.jsx';
+import alicePath    from '../../helpers/alice-path';
 
 const VoterIntro = (props) => {
   const linkAddress = '/voting-registration/citizenship';
@@ -36,10 +36,17 @@ const VoterIntro = (props) => {
         <p>This section takes customers<br />
         <b>3 minutes</b></p>
 
-        <div className='shadow-container'>
-          <Link to={alicePath(linkAddress)} className='link-button button'>Continue</Link><br /><Link to={alicePath(linkBack)} className='back link-button button'>Back</Link>
-        </div>
+        <LinkButton
+          to={linkBack}
+          className='back'
+          linkText='Back' />
 
+        <div className='unit spacer' />
+
+        <LinkButton
+          to={linkAddress}
+          className='continue'
+          linkText='Continue' />
       </div>
     </div>
   );

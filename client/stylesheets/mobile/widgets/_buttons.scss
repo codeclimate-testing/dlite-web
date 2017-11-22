@@ -33,21 +33,21 @@ label.button {
 
   &:hover,
   &.hover {
-    //background-color: $button-hover;
-    //border-color: $button-hover;
+    background-color: darken($primary, 5%);
+    border-color: darken($primary, 5%);
   }
 
   &:focus,
   &.focus {
-    //text-decoration-line: underline;
-    //text-decoration-color: $highlight;
-    //border-color: $highlight;
+    background-color: darken($primary, 10%);
+    text-decoration-line: underline;
+    border-color: $focus;
   }
 
   &:active,
   &.active {
-    //background-color: $button-active;
-    //border-color: $button-active;
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
   }
 
   &.disabled,
@@ -58,35 +58,10 @@ label.button {
   &.disabled.hover,
   &.disabled:focus,
   &.disabled:hover {
-    //border: $border-width solid $disabled-border;
-    //padding: $spacing*1.2 - $border-width $spacing*3 - $border-width;
-    //background-color: $disabled-background;
-    //color: $disabled-color;
-    //text-decoration: none;
-  }
-
-  &.accent {
-    background-color: $primary;
-
-    &:hover {
-      background-color: $primary-light;
-    }
-
-    &:active {
-      background-color: $primary-dark;
-    }
-  }
-
-  &.accent-2 {
-    background-color: $accent-2;
-
-    &:hover {
-      background-color: $accent-2-light;
-    }
-
-    &:active {
-      background-color: $accent-2-dark;
-    }
+    background-color: white;
+    border-color: $neutral-30;
+    color: $darkest-color;
+    opacity: 0.7;
   }
 
   &.neutral {
@@ -99,45 +74,6 @@ label.button {
 
     &:active {
       background-color: $neutral-40;
-    }
-  }
-
-  &.info {
-    background-color: $info;
-    color: $neutral-10;
-
-    &:hover {
-      background-color: $info-light;
-    }
-
-    &:active {
-      background-color: $info-dark;
-    }
-  }
-
-  &.info-2 {
-    background-color: $info-2;
-    color: $neutral-10;
-
-    &:hover {
-      background-color: $info-2-light;
-    }
-
-    &:active {
-      background-color: $info-2-dark;
-    }
-  }
-
-  &.warn {
-    background-color: $warn;
-    color: $neutral-10;
-
-    &:hover {
-      background-color: $warn-light;
-    }
-
-    &:active {
-      background-color: $warn-dark;
     }
   }
 }
@@ -153,6 +89,7 @@ $arrow-width: 15px;
   position: relative;
   width: $arrow-button-text-width + $arrow-width;
   height: $arrow-button-height;
+  color: white;
 
   .text {
     position: absolute;
@@ -241,6 +178,13 @@ $arrow-width: 15px;
     }
     .text {
       background-color: darken($error, 5%);
+    }
+  }
+
+  &.focus,
+  &:focus {
+    .text span {
+      @include focus-outline;
     }
   }
 }
