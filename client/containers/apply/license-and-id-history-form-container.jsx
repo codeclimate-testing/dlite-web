@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled         = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
   let showLicenseAndIdHistory  = false;
   let onSubmit                 = navigateOnSubmit('/my-history/names/', props);
-  let onBack                   = navigateOnBack('/my-basics/social-security', props);
+  let onBack                   = navigateOnBack('/my-history/medical/', props);
   let pageTitle                = "DMV: License application - My history";
 
 if(props.licenseAndIdHistory.isIssued === 'Yes') {
