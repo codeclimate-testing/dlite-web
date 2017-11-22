@@ -40,7 +40,7 @@ class Router extends React.Component {
     return (
       <div className='routes'>
         <Route path={ alicePath('/') } exact component={Intro} />
-        <Route path={ alicePath('/getting-started') } component={Intro} />
+        <Route path={ alicePath('/get-started') } component={Intro} />
         <Route path={ alicePath('/links') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />

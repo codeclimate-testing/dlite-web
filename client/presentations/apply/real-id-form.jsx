@@ -13,7 +13,7 @@ const Form = (props) => {
   document.title = props.pageTitle;
 
   return (
-    <div className='date-of-birth-form'>
+    <div className='real-id-form'>
       <HomeLink />
       <h3>1 &raquo; My Basics</h3>
       <hr></hr>
@@ -27,7 +27,7 @@ const Form = (props) => {
                 name='getRealID'
                 values={VALUES}
                 onChange={ props.onChange }
-                selectedValue={ props.selectedValue }
+                selectedValue={ props.realID.getRealID }
             />
 
             <div className='unit spacer' />

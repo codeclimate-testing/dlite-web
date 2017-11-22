@@ -22,6 +22,7 @@ const ConnectedForm = (props) => {
       onBack            = { onBack }
       onChange          = { props.onChange }
       realID            = { props.realID }
+      selectedValue     = { props.realID }
       continueDisabled  = { continueDisabled }
     />
   );

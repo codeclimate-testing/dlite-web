@@ -27,7 +27,7 @@ server.environment  = env.env;
 server.use(express.static('public'));
 
 server.get('/', (req, res) => {
-  res.redirect('/apply/getting-started');
+  res.redirect('/apply/get-started');
 });
 
 server.get('/apply*', (req, res) => {

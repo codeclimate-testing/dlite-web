@@ -35,4 +35,4 @@ Feature:  I want to enter my name
     When I visit the legal name page
     Then I will see a field for first, middle last name and suffix
     When I click to go back
-    Then I will be taken to get started page
+    Then I will be on the get started page
