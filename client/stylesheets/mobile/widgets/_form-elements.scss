@@ -1,5 +1,9 @@
 .input-container {
-  margin-bottom: $spacing * 1.75;
+  margin-bottom: $spacing;
+}
+
+form .spacer {
+  height: $spacing * 4;
 }
 
 label {
@@ -24,14 +28,16 @@ textarea {
   padding: $spacing;
 
   background-color: white;
+  color: $darkest-color;
   font-size: $em;
-  color: black;
+
+  margin-bottom: 2px; // fixes for the focus sizing on the bottom
 
   &:focus,
   &.focus {
-    @include button-focused;
-    color: black;
-    text-decoration: none;
+    border-bottom-width: $border-width-special;
+    @include box-shadow(0 0 0 2px $focus);
+    margin-bottom: -1px;
   }
 }
 
@@ -56,25 +62,19 @@ form {
     display: none;
   }
 
+  .error label,
+  label.error {
+    color: $error-dark;
+  }
+
   .error {
-    .error-message {
-      display: block;
-      color: $error-dark;
-    }
-
-    .file-input {
-      border: $input-border-width solid $error;
-    }
-
     input[type=text],
     input[type=password],
     input[type=email],
     textarea {
-      border: $input-border-width-special solid $error;
-
-      &:focus {
-        border: $input-border-width-special solid $primary;
-      }
+      margin-bottom: -1px;
+      border-bottom-width: $border-width-special;
+      border-color: $error;
     }
   }
 }

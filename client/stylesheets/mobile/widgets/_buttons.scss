@@ -3,12 +3,6 @@ input[type=submit] {
   @include line;
 }
 
-$button-active: #016290;
-$button-hover: #004e73;
-$disabled-color: #4e4e4e;
-$disabled-background:  #e8e8e8;
-$disabled-border: #8c8c8c;
-
 button,
 input[type=submit],
 a.button,
@@ -39,8 +33,8 @@ label.button {
 
   &:hover,
   &.hover {
-    background-color: $button-hover;
-    border-color: $button-hover;
+    //background-color: $button-hover;
+    //border-color: $button-hover;
   }
 
   &:focus,
@@ -52,8 +46,8 @@ label.button {
 
   &:active,
   &.active {
-    background-color: $button-active;
-    border-color: $button-active;
+    //background-color: $button-active;
+    //border-color: $button-active;
   }
 
   &.disabled,
@@ -64,11 +58,11 @@ label.button {
   &.disabled.hover,
   &.disabled:focus,
   &.disabled:hover {
-    border: $border-width solid $disabled-border;
-    padding: $spacing*1.2 - $border-width $spacing*3 - $border-width;
-    background-color: $disabled-background;
-    color: $disabled-color;
-    text-decoration: none;
+    //border: $border-width solid $disabled-border;
+    //padding: $spacing*1.2 - $border-width $spacing*3 - $border-width;
+    //background-color: $disabled-background;
+    //color: $disabled-color;
+    //text-decoration: none;
   }
 
   &.accent {
@@ -156,6 +150,55 @@ label.button {
 
     &:active {
       background-color: $error-dark;
+    }
+  }
+}
+
+$arrow-button-text-width: 122px;
+$arrow-button-height: 54px;
+$arrow-width: 15px;
+
+.arrow-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  width: $arrow-button-text-width + $arrow-width;
+  height: $arrow-button-height;
+
+  .text {
+    position: absolute;
+    top: 0;
+    padding: $spacing * 1.25;
+    background-color: $primary;
+    height: $arrow-button-height;
+    width: $arrow-button-text-width;
+    @include rounded;
+  }
+
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    border-top: $arrow-button-height / 2 solid transparent;
+    border-bottom: $arrow-button-height / 2 solid transparent;
+  }
+
+  &.backwards {
+    .text {
+      right: 0px;
+    }
+    .triangle {
+      left: 1px;
+      border-right: $arrow-width solid $primary;
+    }
+  }
+
+  &.forward {
+    .triangle {
+      right: 1px;
+      border-left: $arrow-width solid $primary;
     }
   }
 }

@@ -6,7 +6,7 @@
 }
 
 @mixin bordered {
-  border: $border-width solid $neutral-20;
+  border: $border-width solid $gray;
 }
 
 @mixin rounded {
@@ -32,10 +32,4 @@
 @mixin opacity-transition {
   @include transition-property(opacity);
   @include transition-duration(500ms);
-}
-
-@mixin button-focused {
-  text-decoration: underline;
-  color: white;
-  border-color: $highlight;
 }
