@@ -171,7 +171,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the page for choosing real id', function(done) {
-    assetOnPage('.real-id-form', /apply\/real-id/, done);
+    assertOnPage('.real-id-form', /apply\/real-id/, done);
   });
 
   world.then('I will be on the page for entering my address', function(done) {
