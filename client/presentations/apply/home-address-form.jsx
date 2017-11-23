@@ -4,6 +4,7 @@ import React from 'react';
 
 import StateSelector    from '../state-selector.jsx';
 import TextInput        from '../text-input.jsx';
+import SectionHeader    from '../section-header.jsx';
 import AddressTemplate  from '../address-template.jsx';
 import InterstitialAddress from './interstitial-address-form.jsx'
 
@@ -12,8 +13,10 @@ const Form = (props) => {
 
   return (
     <div className='home-address-form'>
-      <h3>1 &raquo; My Basics</h3>
-      <hr />
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <h4>Where do you live?</h4>
       <h5>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</h5>

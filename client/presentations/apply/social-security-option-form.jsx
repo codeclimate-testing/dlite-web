@@ -4,6 +4,7 @@ import React from 'react';
 
 import HomeLink               from '../home-link.jsx';
 import SelectorCollection     from '../selector-collection.jsx';
+import SectionHeader          from '../section-header.jsx';
 
 const OPTIONS = ['Yes', 'No'];
 
@@ -12,8 +13,10 @@ const Form = (props) => {
   return (
     <div className='social-security-option-form'>
       <HomeLink />
-      <h3>1 &raquo; My Basics</h3>
-      <hr></hr>
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <h4>Do you have a Social Security Number?</h4>
       <h5>If you have a Social Security Number you must select Yes.</h5>

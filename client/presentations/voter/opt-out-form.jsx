@@ -5,6 +5,7 @@ import React from 'react';
 import RadioCollection         from '../radio-collection.jsx';
 import HomeLink                from '../home-link.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
+import SectionHeader           from '../section-header.jsx';
 
 const VALUES = [
   "I am a new voter in California",
@@ -17,8 +18,11 @@ const OptOut = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
+
       <h4>Which best describes you?</h4>
       <form onSubmit={ props.onSubmit } className='opt-out-form'>
         <div className='inner-bottom'>

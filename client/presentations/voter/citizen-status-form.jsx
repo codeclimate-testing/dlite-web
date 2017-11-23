@@ -6,6 +6,7 @@ import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
+import SectionHeader           from '../section-header.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
@@ -14,8 +15,10 @@ const CitizenStatusForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
       <h4>Are you a United States citizen?</h4>
       <h5>If you answer No or Skip Section, you cannot register to vote.</h5>

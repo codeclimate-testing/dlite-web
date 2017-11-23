@@ -6,14 +6,17 @@ import HomeLink         from '../home-link.jsx';
 import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import SectionHeader      from '../section-header.jsx';
 
 const Form = (props) => {
   document.title = props.pageTitle;
   return (
     <div className='date-of-birth-form'>
       <HomeLink />
-      <h3>1 &raquo; My Basics</h3>
-      <hr></hr>
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <h4>What's your date of birth?</h4>
       <h5>Example: 03 21 1967</h5>

@@ -3,14 +3,18 @@
 import React from 'react';
 
 import SelectorCollection from '../selector-collection.jsx';
+import SectionHeader      from '../section-header.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];
 
 const ContactChoice = (props) => {
   return (
     <div className='contact-methods-choice-form'>
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
+
       <h4>Would you like to receive election information via email or text</h4>
       <div className='inner-bottom'>
         <SelectorCollection

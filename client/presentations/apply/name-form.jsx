@@ -6,14 +6,17 @@ import HomeLink           from '../home-link.jsx';
 import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import SectionHeader      from '../section-header.jsx';
 
 const LegalNameForm = (props) => {
   document.title = props.pageTitle;
   return (
     <div className='legal-name-form'>
       <HomeLink />
-      <h3>1 &raquo; My Basics</h3>
-      <hr></hr>
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <h4>What’s your full, legal name?</h4>
       <form onSubmit={props.onSubmit}>

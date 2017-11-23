@@ -5,6 +5,7 @@ import React from 'react';
 import { updateLicenseIssues }             from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
+import SectionHeader                       from '../../presentations/section-header.jsx';
 import LicenseIssues                       from "../../presentations/apply/license-issues-form.jsx";
 import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
@@ -26,8 +27,10 @@ const ConnectedForm = (props) => {
     return (
       <div>
         <HomeLink />
-        <h3>2 &raquo; My History</h3>
-        <hr />
+        <SectionHeader
+          number='2'
+          name='My history'
+        />
 
         <form onSubmit={onSubmit}>
           <LicenseIssues
@@ -51,8 +54,10 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr />
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <form onSubmit={onSubmit}>
         <LicenseIssues

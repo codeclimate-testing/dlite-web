@@ -5,6 +5,7 @@ import React from 'react';
 import { updateNamesHistory }           from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
 import ContinueButton                   from '../../presentations/continue-button.jsx';
+import SectionHeader                    from '../../presentations/section-header.jsx';
 import UsedPreviousNames                from '../../presentations/apply/used-previous-names.jsx';
 import EnterPreviousNames               from '../../presentations/apply/enter-previous-names.jsx';
 import connectForm                      from '../../helpers/connect-form';
@@ -26,8 +27,10 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr></hr>
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <form onSubmit={onSubmit}>
        <UsedPreviousNames
@@ -51,8 +54,10 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr></hr>
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <form onSubmit={onSubmit}>
         <UsedPreviousNames

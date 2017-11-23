@@ -4,6 +4,7 @@ import React            from 'react';
 
 import HomeLink           from '../home-link.jsx';
 import LinkButton         from '../link-button.jsx';
+import SectionHeader      from '../section-header.jsx';
 import alicePath          from '../../helpers/alice-path';
 
 const VoterRegComplete = (props) => {
@@ -15,8 +16,10 @@ const VoterRegComplete = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
       <div className='voter-reg-complete'>
         <h4>Thank you, your voter registration application will be processed when
