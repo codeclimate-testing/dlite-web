@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import HomeLink         from '../home-link.jsx';
-import TextInput        from '../text-input.jsx';
-import SuffixSelector   from '../suffix-selector.jsx';
-import ContinueButton   from '../continue-button.jsx';
+import HomeLink           from '../home-link.jsx';
+import TextInput          from '../text-input.jsx';
+import SuffixSelector     from '../suffix-selector.jsx';
+import NavigationButtons  from '../navigation-buttons.jsx';
 
 const LegalNameForm = (props) => {
   document.title = props.pageTitle;
@@ -44,7 +44,7 @@ const LegalNameForm = (props) => {
           onChange={props.onChange}
         />
 
-        <ContinueButton disabled={props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

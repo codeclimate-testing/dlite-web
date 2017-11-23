@@ -4,13 +4,13 @@ import React from 'react';
 
 import RadioCollection         from '../radio-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = [
-                "I am a new voter in California",
-                "I am already registered to vote in California",
-                "I am eligible to vote, but do not want to register to vote"
-              ];
+  "I am a new voter in California",
+  "I am already registered to vote in California",
+  "I am eligible to vote, but do not want to register to vote"
+];
 
 const OptOut = (props) => {
   document.title = props.pageTitle;
@@ -30,7 +30,7 @@ const OptOut = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

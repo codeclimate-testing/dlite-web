@@ -4,11 +4,10 @@ import React            from 'react';
 
 import HomeLink         from '../home-link.jsx';
 import LinkButton       from '../link-button.jsx';
-import ContinueButton   from '../continue-button.jsx';
 import alicePath        from '../../helpers/alice-path';
 
 const VoterPreferencesIntroUpdated = (props) => {
-  
+
   const linkAddress = '/voting-registration/choose-party';
   const linkBack = '/voting-registration/opt-out';
   let pageTitle = 'DMV: License application - Voting registration'

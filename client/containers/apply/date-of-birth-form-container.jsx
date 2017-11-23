@@ -14,7 +14,7 @@ const ConnectedForm = (props) => {
   let onBack            =   navigateOnBack('/my-basics/legal-name', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
   let pageTitle         =   'DMV: License application - My basics'
-  
+
   return (
     <Form
       pageTitle         = { pageTitle }

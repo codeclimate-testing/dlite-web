@@ -4,7 +4,7 @@ import React from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
@@ -34,7 +34,7 @@ const CitizenStatusForm = (props) => {
           faqDrawerText  = 'If you are not a U.S. citizen, you are not eligible to register to vote. Your response to this question will not be shared with election officials.'
         />
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

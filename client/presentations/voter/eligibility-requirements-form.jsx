@@ -4,7 +4,7 @@ import React                    from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
@@ -36,7 +36,7 @@ const EligibilityRequirements = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
         </form>
         <br></br>
         <p><b>What if I don't meet the requirements?</b></p>

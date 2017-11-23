@@ -4,7 +4,6 @@ import React            from 'react';
 
 import HomeLink         from '../home-link.jsx';
 import LinkButton       from '../link-button.jsx';
-import ContinueButton   from '../continue-button.jsx';
 import alicePath        from '../../helpers/alice-path';
 
 const VoterPreferencesIntro = (props) => {

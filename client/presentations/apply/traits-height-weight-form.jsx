@@ -1,9 +1,9 @@
 'use strict';
 
-import React            from 'react';
-import HomeLink         from '../home-link.jsx';
-import NumberInput      from '../number-input.jsx';
-import ContinueButton   from '../continue-button.jsx';
+import React              from 'react';
+import HomeLink           from '../home-link.jsx';
+import NumberInput        from '../number-input.jsx';
+import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
 
@@ -49,7 +49,7 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={ props.continueDisabled } /> <button type="button" onClick={props.onBack}>Back</button> 
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

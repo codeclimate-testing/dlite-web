@@ -4,7 +4,7 @@ import React                  from 'react';
 
 import SelectorCollection     from '../selector-collection.jsx';
 import HomeLink               from '../home-link.jsx';
-import ContinueButton         from '../continue-button.jsx';
+import NavigationButtons      from '../navigation-buttons.jsx';
 import FAQDrawer              from '../faq-drawer.jsx';
 
 const VALUES              = ['Yes', 'No'];
@@ -52,7 +52,7 @@ const BallotByMailForm = (props) => {
 
         </div>
 
-        <ContinueButton disabled = {props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
 
       </form>
     </div>
