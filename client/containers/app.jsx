@@ -7,11 +7,17 @@ import { Provider }                         from "react-redux";
 import { createStore, applyMiddleware }     from "redux";
 import createBrowserHistory                 from 'history/createBrowserHistory'
 import thunk                                from 'redux-thunk';
+import { composeWithDevTools }              from 'redux-devtools-extension/developmentOnly';
 
 import reducers                             from "../reducers";
 import Routes                               from './routes.jsx';
 
-const history = createBrowserHistory()
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+const history = createBrowserHistory();
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +26,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Provider store={createStore( reducers, applyMiddleware(thunk) )}>
+      <Provider store={store}>
         <Router history={history}>
           <Routes />
         </Router>
