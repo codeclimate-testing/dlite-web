@@ -3,6 +3,7 @@
 const path                = require('path');
 const webpack             = require('webpack');
 const ExtractTextPlugin   = require("extract-text-webpack-plugin");
+const env                 = require('./server').environment;
 
 let config = {
   entry: './client.js',
@@ -36,7 +37,7 @@ let config = {
   plugins: [
     new ExtractTextPlugin('app.css'),
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify(process.env.APP_ENV)
+      APP_ENV: process.env.APP_ENV ? JSON.stringify(process.env.APP_ENV) : JSON.stringify(env)
     }),
   ]
 };

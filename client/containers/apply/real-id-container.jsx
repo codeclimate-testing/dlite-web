@@ -29,7 +29,6 @@ const ConnectedForm = (props) => {
 };
 
 function mapStateToProps(state) {
-    console.log(state)
   return {
     realID : state.application.realID
   };

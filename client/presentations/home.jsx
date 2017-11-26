@@ -15,7 +15,7 @@ const LinkListItem = (props) => {
 const linkData = [
   {description: 'summary',                                path: '/summary'},
 
-  {description: 'intro page',                             path: '/getting-started'},
+  {description: 'intro page',                             path: '/get-started'},
   {description: 'legal name',                             path: '/my-basics/legal-name'},
   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
   {description: 'real ID',                                path: '/real-id'},
