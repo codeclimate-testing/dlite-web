@@ -66,26 +66,26 @@ const namesHistory = (props) => {
 
 const hasPreviousNames = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames'])
-}
+};
 
 const medicalHistory = (props) => {
   return hasAllAttributes(props, ['hasMedicalCondition', 'medicalInfo']);
-}
+};
 
 const hasMedicalCondition = (props) => {
   return hasAllAttributes(props, ['hasMedicalCondition'])
-}
+};
 
 const contactMethods = (props) => {
   return value(props.shouldContact) &&
     hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
-}
+};
 
 const politicalPartyChoose = (props) => {
     return props && (
     value(props.politicalPartyChoose) && value(props.isSelected)
   );
-}
+};
 
 const physicalTraits = (props) => {
   return hasAllAttributes(props, ['sex', 'eyeColor', 'hairColor']);

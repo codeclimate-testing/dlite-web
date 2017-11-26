@@ -8,6 +8,3 @@ public/app.css
 **/*.DS_Store
 
 server/config/database.json
-server/config/database.json
-.env
-server/config/database.json
