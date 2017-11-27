@@ -13,11 +13,18 @@ const RequiredDocuments = (props) => {
   const caResidencyList                 = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents';
   const socialSecurityDocumentsList     = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08';
   const veteranVerificationLink         = 'https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license';
+  const realIDInformationPage           = 'https://www.dmv.ca.gov/portal/dmv/detail/realid';
+  const caLicenseRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'
 
   let bulletList = [];
   let documentList = [];
 
-  bulletList.push(<li key='legal-presence'>Legal presence</li>);
+  if(props.realID.getRealID === 'Yes') {
+    bulletList.push(<li key='legal-presence'>Real ID birth date, name and legal presence proof</li>);
+  }
+  if(props.socialSecurity.hasSocialSecurity === 'Yes') {
+    bulletList.push(<li key='medical-information' >Proof of Social Security Number</li>);
+  }
   bulletList.push(<li key='ca-residency' >California residency</li>);
   if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes') {
     bulletList.push(<li key='proof-veteran-service' >Proof of veterans service</li>);
@@ -26,15 +33,29 @@ const RequiredDocuments = (props) => {
     bulletList.push(<li key='medical-information' >Medical Information</li>);
   }
 
+  if(props.realID.getRealID === 'Yes'){
   documentList.push(
     <div key='legal-presence-documents'>
-      <h4 className="legal-presence-documents">Legal presence</h4>
-      <p>All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence.
-      Please refer to our <a target="_blank" href={ ab60Checklist }>AB 60 checklist tool</a> and
-      our <a target="_blank" href={ legalPresenceList }>date of birth and legal presence list</a>.
+      <h4 className="legal-presence-documents">Real ID birth date, name and legal presence proof</h4>
+      <p>
+      We need to verify your date of birth and what we call your “legal presence”.
+      Documents should use your true, full name that you use today or we will need
+      additional documents proving your true, full name will be required.
+      See our <a target="_blank" href={ realIDInformationPage }>Real ID information page</a> for
+      details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card.
+      </p>
+      <p>From that list we will need either:</p>
+      <ul className='bullet-list'>
+        <li>A single document that proves both your date of birth and legal presence.</li>
+        <li>Or one document for your date of birth and one document for your legal presence.</li>
+      </ul>
+      <p>
+      If you were married or divorced, adopted or have changed your name through the courts, please
+      make sure to also bring <a target="_blank" href={ caLicenseRequirements }>proof of the true, full name</a>.
       </p>
     </div>
   );
+}
 
   documentList.push(
     <div key='california-residency-documents'>

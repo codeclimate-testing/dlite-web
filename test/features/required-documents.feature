@@ -57,3 +57,18 @@ Feature: Required documents page
     When I select No to having reportable medical history
     When I visit the required documents page
     Then I will not see a section about medical information
+
+  Scenario: I plan to use RealID to fly
+    Given I go to the new online DL application
+    When I visit the real id page
+    When I click yes to getting a real id
+    When I visit the required documents page
+    Then I will see an additional bullet for RealID information
+    Then I will see a section about RealID information
+
+  Scenario: I do not plan to use RealID to fly
+    Given I go to the new online DL application
+    When I visit the real id page
+    When I click no to getting a real id
+    When I visit the required documents page
+    Then I will not see a section about RealID information
