@@ -5,6 +5,7 @@ import React from 'react';
 import { updateMailingAddress }     from "../../actions/index";
 import HomeLink                     from '../../presentations/home-link.jsx';
 import ContinueButton               from '../../presentations/continue-button.jsx';
+import BackButton                   from '../../presentations/back-button.jsx';
 import HomeAddress                  from "./home-address-form-container.jsx";
 import InterstitialAddress          from '../../presentations/apply/interstitial-address-form.jsx';
 import MailingAddress               from "./mailing-address-form-container.jsx";
@@ -15,7 +16,7 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/my-basics/physical-traits', props);
-  let onBack            = navigateOnBack('/my-basics/date-of-birth', props);
+  let onBack            = navigateOnBack('/real-id', props);
   let continueDisabled  = !(dataPresent.homeAddressSameAsMailing(props.homeAddress));
 
   if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {
@@ -42,7 +43,7 @@ const ConnectedForm = (props) => {
             <MailingAddress
             />
 
-            <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
+            <ContinueButton disabled={continueDisabled} /> <BackButton onBack={onBack} key = 'back-button' /> 
           </form>
       </div>
   );
@@ -57,7 +58,7 @@ const ConnectedForm = (props) => {
          <HomeAddress
          />
 
-         <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
+         <ContinueButton disabled={continueDisabled} /> <BackButton onBack={onBack} key = 'back-button' />
        </form>
     </div>
   );
