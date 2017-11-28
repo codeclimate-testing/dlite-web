@@ -4,7 +4,6 @@ import React from 'react';
 
 import { updateMailingAddress }     from "../../actions/index";
 import HomeLink                     from '../../presentations/home-link.jsx';
-import HomeAddress                  from "./home-address-form-container.jsx";
 import NavigationButtons            from '../../presentations/navigation-buttons.jsx';
 import InterstitialAddress          from '../../presentations/apply/interstitial-address-form.jsx';
 import HomeAddress                  from "./home-address-form-container.jsx";
