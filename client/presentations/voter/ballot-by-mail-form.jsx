@@ -4,7 +4,8 @@ import React                  from 'react';
 
 import SelectorCollection     from '../selector-collection.jsx';
 import HomeLink               from '../home-link.jsx';
-import ContinueButton         from '../continue-button.jsx';
+import NavigationButtons      from '../navigation-buttons.jsx';
+import SectionHeader          from '../section-header.jsx';
 import FAQDrawer              from '../faq-drawer.jsx';
 
 const VALUES              = ['Yes', 'No'];
@@ -18,8 +19,10 @@ const BallotByMailForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
       <h4>Would you like to get your ballot by mail before each election?</h4>
       <p>If you answer Yes, you can still vote in-person.</p>
@@ -52,7 +55,7 @@ const BallotByMailForm = (props) => {
 
         </div>
 
-        <ContinueButton disabled = {props.continueDisabled} /> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
 
       </form>
     </div>

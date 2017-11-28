@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="52px" viewBox="0 0 134 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>buttons/primary/hoverFocused</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3,1.05668205e-15 L117.630454,2.44639473e-14 L117.630454,2.5313085e-14 C118.833283,1.33405391e-14 119.919822,0.718423615 120.390855,1.82518664 L130,24.4033203 L120.402562,46.208547 L120.402562,46.208547 C119.923381,47.2972381 118.846242,48 117.656762,48 L3,48 L3,48 C1.34314575,48 1.09108455e-15,46.6568542 8.8817842e-16,45 L8.8817842e-16,3 L4.4408921e-16,3 C2.41183085e-16,1.34314575 1.34314575,-1.39730022e-16 3,-4.4408921e-16 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="buttons/primary/hoverFocused">
+            <g id="colours/primarylight" transform="translate(2.000000, 2.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#FFC900" stroke-width="2" d="M3,-1 L117.630454,-1 C119.234225,-1 120.682945,-0.0421018471 121.310989,1.43358219 L131.08964,24.409996 L121.317828,46.6113959 C120.67892,48.0629842 119.242736,49 117.656762,49 L3,49 C0.790861001,49 -1,47.209139 -1,45 L-1,3 C-1,0.790861001 0.790861001,-1 3,-1 Z"></path>
+                </g>
+                <g id="colours/primarydark" mask="url(#mask-2)" fill="#0E19A5">
+                    <rect id="Rectangle-9" x="0" y="0" width="130" height="52"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

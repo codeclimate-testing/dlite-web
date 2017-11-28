@@ -4,21 +4,25 @@ import React from 'react';
 
 import RadioCollection         from '../radio-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
+import SectionHeader           from '../section-header.jsx';
 
 const VALUES = [
-                "I am a new voter in California",
-                "I am already registered to vote in California",
-                "I am eligible to vote, but do not want to register to vote"
-              ];
+  "I am a new voter in California",
+  "I am already registered to vote in California",
+  "I am eligible to vote, but do not want to register to vote"
+];
 
 const OptOut = (props) => {
   document.title = props.pageTitle;
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
+
       <h4>Which best describes you?</h4>
       <form onSubmit={ props.onSubmit } className='opt-out-form'>
         <div className='inner-bottom'>
@@ -30,7 +34,7 @@ const OptOut = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

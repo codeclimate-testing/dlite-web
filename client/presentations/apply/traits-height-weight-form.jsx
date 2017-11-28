@@ -1,9 +1,10 @@
 'use strict';
 
-import React            from 'react';
-import HomeLink         from '../home-link.jsx';
-import NumberInput      from '../number-input.jsx';
-import ContinueButton   from '../continue-button.jsx';
+import React              from 'react';
+import HomeLink           from '../home-link.jsx';
+import NumberInput        from '../number-input.jsx';
+import NavigationButtons  from '../navigation-buttons.jsx';
+import SectionHeader      from '../section-header.jsx';
 
 const Form = (props) => {
 
@@ -11,9 +12,10 @@ const Form = (props) => {
   return (
     <div className='traits-height-weight-form'>
       <HomeLink />
-      <h3>1 &raquo; My Basics</h3>
-      <hr></hr>
-
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <h4>How tall are you?</h4>
       <h5>Example: 5 feet 9 inches</h5>
@@ -49,7 +51,7 @@ const Form = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={ props.continueDisabled } /> <button type="button" onClick={props.onBack}>Back</button> 
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

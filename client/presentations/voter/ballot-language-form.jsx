@@ -4,7 +4,8 @@ import React from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import SectionHeader           from '../section-header.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', 'Tagalog', 'Hindi', 'Khmer', 'Vietnamese'];
 
@@ -13,8 +14,10 @@ const BallotLanguageForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
       <h4>Choose a language for your election materials.</h4>
       <form onSubmit={ props.onSubmit } className='ballot-language-form'>
@@ -27,7 +30,7 @@ const BallotLanguageForm = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
       </form>
     </div>
   );

@@ -3,9 +3,8 @@
 import React            from 'react';
 import { Link }         from 'react-router-dom';
 
-import HomeLink         from '../home-link.jsx';
-import ContinueButton   from '../continue-button.jsx';
-import alicePath        from '../../helpers/alice-path';
+import HomeLink           from '../home-link.jsx';
+import alicePath          from '../../helpers/alice-path';
 
 const RequiredDocuments = (props) => {
   const ab60Checklist                   = 'https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist';

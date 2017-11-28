@@ -4,7 +4,8 @@ import React                    from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import ContinueButton          from '../continue-button.jsx';
+import SectionHeader           from '../section-header.jsx';
+import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
@@ -12,8 +13,10 @@ const EligibilityRequirements = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
         <h4>Do you meet all of the voter registration requirements listed below?</h4>
 
@@ -36,7 +39,7 @@ const EligibilityRequirements = (props) => {
           />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled}/> <button type="button" onClick={props.onBack}>Back</button>
+        <NavigationButtons {...props} />
         </form>
         <br></br>
         <p><b>What if I don't meet the requirements?</b></p>

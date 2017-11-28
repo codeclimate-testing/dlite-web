@@ -4,6 +4,7 @@ import React from 'react';
 
 import HomeLink               from '../home-link.jsx';
 import SelectorCollection     from '../selector-collection.jsx';
+import SectionHeader          from '../section-header.jsx';
 
 const OPTIONS = ['Yes', 'No'];
 
@@ -12,8 +13,10 @@ const Form = (props) => {
   return (
     <div className='veterans-questionnaire-form'>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr></hr>
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <h4>Have you ever served in the United States Military?</h4>
       <h5>As a veteran, you may be eligible for benefits like disability compensation. Your license can also display the word “Veteran”.</h5>

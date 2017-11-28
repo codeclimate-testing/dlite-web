@@ -5,13 +5,11 @@ const assert = require('assert');
 module.exports = function (world) {
   let browser = world.browser;
 
-
-
   world.then('I will see the section heading for my history', function(done){
     browser
       .text()
       .then((text) => {
-        assert(text.includes('My History'), 'missing my history section heading');
+        assert(text.includes('My history'), 'missing my history section heading');
       })
       .then(() => { done(); })
       .catch(done);

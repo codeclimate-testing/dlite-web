@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="52px" viewBox="0 0 134 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>buttons/secondary/hoverFocused</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5,2 L119.630454,2 L119.630454,2 C120.833283,2 121.919822,2.71842361 122.390855,3.82518664 L132,26.4033203 L122.402562,48.208547 L122.402562,48.208547 C121.923381,49.2972381 120.846242,50 119.656762,50 L5,50 L5,50 C3.34314575,50 2,48.6568542 2,47 L2,5 L2,5 C2,3.34314575 3.34314575,2 5,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="buttons/secondary/hoverFocused">
+            <g id="Shape" transform="translate(67.000000, 26.000000) scale(-1, 1) translate(-67.000000, -26.000000) ">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#0E19A5" stroke-width="2" d="M130.91036,26.3966447 L121.470721,4.21679109 C121.156699,3.47894908 120.43234,3 119.630454,3 L5,3 C3.8954305,3 3,3.8954305 3,5 L3,47 C3,48.1045695 3.8954305,49 5,49 L119.656762,49 C120.449749,49 121.167841,48.5314921 121.487295,47.805698 L130.91036,26.3966447 Z"></path>
+                <path stroke="#FFC900" stroke-width="2" d="M5,1 L119.630454,1 C121.234225,1 122.682945,1.95789815 123.310989,3.43358219 L133.08964,26.409996 L123.317828,48.6113959 C122.67892,50.0629842 121.242736,51 119.656762,51 L5,51 C2.790861,51 1,49.209139 1,47 L1,5 C1,2.790861 2.790861,1 5,1 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>
