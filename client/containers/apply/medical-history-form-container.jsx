@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateMedicalHistory }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import SectionHeader                    from '../../presentations/home-link.jsx';
+import SectionHeader                    from '../../presentations/section-header.jsx';
 import ContinueButton                   from '../../presentations/continue-button.jsx';
 import BackButton                       from '../../presentations/back-button.jsx';
 import MedicalCondition                 from '../../presentations/apply/medical-condition-info.jsx';
