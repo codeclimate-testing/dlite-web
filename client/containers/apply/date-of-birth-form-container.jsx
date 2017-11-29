@@ -8,12 +8,15 @@ import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
+import calculateAge           from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/real-id', props);
   let onBack            =   navigateOnBack('/my-basics/legal-name', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
   let pageTitle         =   'DMV: License application - My basics'
+
+  props.dateOfBirth.age = calculateAge(props.dateOfBirth.year, props.dateOfBirth.month, props.dateOfBirth.day)
 
   return (
     <Form
