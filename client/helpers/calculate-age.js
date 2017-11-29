@@ -1,4 +1,4 @@
-import Moment from 'moment';
+import Moment from 'moment/src/moment';
 
 export default (year, month, day) => {
   let d = moment();
