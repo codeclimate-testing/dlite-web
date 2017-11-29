@@ -1,5 +1,3 @@
-Enter-organ-donations-steps.js
-
 'use strict';
 
 const assert = require('assert');
