@@ -14,16 +14,44 @@ module.exports = function createApplication(data) {
       returnedData.application = records[0];
       return insert('addresses');
     })
-    .then((records) => {
-      returnedData.addresses = records;
+    .then((addresses) => {
+      returnedData.addresses = addresses;
       return insert('emails');
     })
-    .then((records) => {
-      returnedData.emails = records;
+    .then((emails) => {
+      returnedData.emails = emails;
       return insert('phone_numbers');
     })
     .then((phoneNumbers) => {
       returnedData.phone_numbers = phoneNumbers;
+      return insert('organ_donations');
+    })
+    .then((organDonations) => {
+      returnedData.organ_donations = organDonations;
+      return insert('card_histories');
+    })
+    .then((cardHistories) => {
+      returnedData.card_histories = cardHistories;
+      return insert('previous_names');
+    })
+    .then((previousNames) => {
+      returnedData.previous_names = previousNames;
+      return insert('medical_histories');
+    })
+    .then((medicalHistories) => {
+      returnedData.medical_histories = medicalHistories;
+      return insert('license_issues');
+    })
+    .then((licenseIssues) => {
+      returnedData.license_issues = licenseIssues;
+      return insert('veterans_info');
+    })
+    .then((veteransInfo) => {
+      returnedData.veterans_info = veteransInfo;
+      return insert('voting_registrations');
+    })
+    .then((votingRegistrations) => {
+      returnedData.voting_registrations = votingRegistrations;
       return returnedData;
-    });
+    })
 };

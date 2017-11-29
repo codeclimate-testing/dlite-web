@@ -7,7 +7,7 @@
     "postinstall": "webpack -p",
     "start": "node index.js",
     "webpack-watch": "webpack -w",
-    "dev": "concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
+    "dev": "APP_ENV=development concurrently --kill-others \"npm run webpack-watch\" \"nodemon index.js\"",
     "test": "npm run test:client && npm run test:server && npm run test:acceptance",
     "test:server": "node_modules/.bin/mocha --recursive test/server",
     "test:client": "node_modules/.bin/mocha --compilers js:babel-core/register --recursive test/client",
