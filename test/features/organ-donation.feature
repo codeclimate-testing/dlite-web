@@ -32,7 +32,7 @@ Feature: Donate Life
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary
 
-  Scenario: Selecting organ donation preferences -- Today I am 16
+  Scenario: Selecting organ donation preferences -- Today I turned 16
     Given I go to the new online DL application page
     Given I have already entered my organ selection
     Given I visit the date of birth page
