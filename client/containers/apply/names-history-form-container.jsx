@@ -5,7 +5,7 @@ import React from 'react';
 import { updateNamesHistory }           from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
 import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
-import SectionHeader                    from '../../presentations/section-header.jsx';
+import Page                             from '../../presentations/page.jsx';
 import UsedPreviousNames                from '../../presentations/apply/used-previous-names.jsx';
 import EnterPreviousNames               from '../../presentations/apply/enter-previous-names.jsx';
 import connectForm                      from '../../helpers/connect-form';
@@ -25,53 +25,53 @@ const ConnectedForm = (props) => {
     continueDisabled  = !(dataPresent.namesHistory(props.namesHistory))
 
   return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-       <UsedPreviousNames
-          pageTitle      ={pageTitle}
-          onChange      = {props.onChange}
-          selectedValue = {props.namesHistory.hasUsedPreviousNames}
-        />
-        <br></br>
-        <EnterPreviousNames
-          onChange      = {props.onChange}
-          namesHistory  = {props.namesHistory}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
+        <form onSubmit={onSubmit}>
+         <UsedPreviousNames
+            pageTitle      ={pageTitle}
+            onChange      = {props.onChange}
+            selectedValue = {props.namesHistory.hasUsedPreviousNames}
+          />
+          <br></br>
+          <EnterPreviousNames
+            onChange      = {props.onChange}
+            namesHistory  = {props.namesHistory}
+          />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
+        </form>
+      </div>
+    </Page>
   );
 }
 
   return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-        <UsedPreviousNames
-          pageTitle      ={pageTitle}
-          onChange      = {props.onChange}
-          selectedValue = {props.namesHistory.hasUsedPreviousNames}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
+        <form onSubmit={onSubmit}>
+          <UsedPreviousNames
+            pageTitle      ={pageTitle}
+            onChange      = {props.onChange}
+            selectedValue = {props.namesHistory.hasUsedPreviousNames}
+          />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
+        </form>
+      </div>
+    </Page>
   );
 };
 

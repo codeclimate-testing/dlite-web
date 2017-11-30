@@ -5,7 +5,7 @@ import React from 'react';
 import { updateLicenseIssues }             from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
-import SectionHeader                       from '../../presentations/section-header.jsx';
+import Page                                from '../../presentations/page.jsx';
 import LicenseIssues                       from "../../presentations/apply/license-issues-form.jsx";
 import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
@@ -25,22 +25,44 @@ const ConnectedForm = (props) => {
     continueDisabled = !(dataPresent.licenseIssues(props.licenseIssues));
 
     return (
-      <div>
-        <HomeLink />
-        <SectionHeader
-          number='2'
-          name='My history'
-        />
+      <Page
+        sectionNumber='2'
+        sectionName='My history'
+        {...props}
+      >
+        <div>
+          <form onSubmit={onSubmit}>
+            <LicenseIssues
+              pageTitle      ={pageTitle}
+              onChange       ={props.onChange}
+              selectedValue  ={props.licenseIssues.isSuspended}
+            />
+            <EnterRevokedSuspended
+              onChange       ={props.onChange}
+              licenseIssues  ={props.licenseIssues}
+            />
+            <NavigationButtons
+              continueDisabled={continueDisabled}
+              onBack= {onBack}
+            />
+          </form>
+        </div>
+      </Page>
+    );
+  }
 
+  return (
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
         <form onSubmit={onSubmit}>
           <LicenseIssues
-            pageTitle      ={pageTitle}
-            onChange       ={props.onChange}
-            selectedValue  ={props.licenseIssues.isSuspended}
-          />
-          <EnterRevokedSuspended
-            onChange       ={props.onChange}
-            licenseIssues  ={props.licenseIssues}
+            pageTitle     ={pageTitle}
+            onChange      ={props.onChange}
+            selectedValue ={props.licenseIssues.isSuspended}
           />
           <NavigationButtons
             continueDisabled={continueDisabled}
@@ -48,29 +70,7 @@ const ConnectedForm = (props) => {
           />
         </form>
       </div>
-    );
-  }
-
-  return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-        <LicenseIssues
-          pageTitle     ={pageTitle}
-          onChange      ={props.onChange}
-          selectedValue ={props.licenseIssues.isSuspended}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack= {onBack}
-        />
-      </form>
-    </div>
+    </Page>
   );
 };
 

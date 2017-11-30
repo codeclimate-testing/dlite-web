@@ -1,59 +1,56 @@
 'use strict';
 
 import React              from 'react';
-import HomeLink           from '../home-link.jsx';
 import NumberInput        from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import SectionHeader      from '../section-header.jsx';
+import Page               from '../page.jsx';
 
 const Form = (props) => {
-
-  document.title = props.pageTitle;
   return (
-    <div className='traits-height-weight-form'>
-      <HomeLink />
-      <SectionHeader
-        number='1'
-        name='My basics'
-      />
+    <Page
+      sectionNumber='1'
+      sectionName='My basics'
+      {...props}
+    >
+      <div className='traits-height-weight-form'>
+        <h4>How tall are you?</h4>
+        <h5>Example: 5 feet 9 inches</h5>
 
-      <h4>How tall are you?</h4>
-      <h5>Example: 5 feet 9 inches</h5>
+        <form onSubmit={ props.onSubmit } >
+          <div className='row inner-bottom'>
+            <NumberInput
+              onChange={ props.onChange }
+              identifier='heightFeet'
+              description='Feet'
+              value={ props.traitsHeightWeight.heightFeet }
+            />
 
-      <form onSubmit={ props.onSubmit } >
-        <div className='row inner-bottom'>
-          <NumberInput
-            onChange={ props.onChange }
-            identifier='heightFeet'
-            description='Feet'
-            value={ props.traitsHeightWeight.heightFeet }
-          />
+            <div className='unit spacer' />
 
-          <div className='unit spacer' />
+            <NumberInput
+              onChange={ props.onChange }
+              identifier='heightInches'
+              description='Inches'
+              value={ props.traitsHeightWeight.heightInches }
+            />
+          </div>
 
-          <NumberInput
-            onChange={ props.onChange }
-            identifier='heightInches'
-            description='Inches'
-            value={ props.traitsHeightWeight.heightInches }
-          />
-        </div>
+        <h4>And how much do you weigh?</h4>
+        <h5>Example: 190 pounds</h5>
 
-      <h4>And how much do you weigh?</h4>
-      <h5>Example: 190 pounds</h5>
+          <div className='row inner-bottom'>
+            <NumberInput
+              onChange={ props.onChange }
+              identifier='weight'
+              description='Pounds'
+              value={ props.traitsHeightWeight.weight }
+            />
+          </div>
 
-        <div className='row inner-bottom'>
-          <NumberInput
-            onChange={ props.onChange }
-            identifier='weight'
-            description='Pounds'
-            value={ props.traitsHeightWeight.weight }
-          />
-        </div>
-
-        <NavigationButtons {...props} />
-      </form>
-    </div>
+          <NavigationButtons {...props} />
+        </form>
+      </div>
+    </Page>
   );
 };
 

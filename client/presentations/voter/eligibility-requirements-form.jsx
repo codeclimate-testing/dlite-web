@@ -4,20 +4,19 @@ import React                    from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
 import HomeLink                from '../home-link.jsx';
-import SectionHeader           from '../section-header.jsx';
+import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
 const EligibilityRequirements = (props) => {
   return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='3'
-        name='Voting registration'
-      />
-
+    <Page
+      sectionNumber='3'
+      sectionName='Voting registration'
+      {...props}
+    >
+      <div>
         <h4>Do you meet all of the voter registration requirements listed below?</h4>
 
         <ul>
@@ -45,7 +44,8 @@ const EligibilityRequirements = (props) => {
         <p><b>What if I don't meet the requirements?</b></p>
         <p>If you don't meet all the requirements, you are not eligible to register to vote.</p>
         <p>Your response to this question <b>will not</b> be shared with election officials.</p>
-    </div>
+      </div>
+    </Page>
   );
 };
 

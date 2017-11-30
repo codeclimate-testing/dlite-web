@@ -3,33 +3,34 @@
 import React from 'react';
 
 import SelectorCollection from '../selector-collection.jsx';
-import SectionHeader      from '../section-header.jsx';
+import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];
 
 const ContactChoice = (props) => {
   return (
-    <div className='contact-methods-choice-form'>
-      <SectionHeader
-        number='3'
-        name='Voting registration'
-      />
+    <Page
+      sectionNumber='3'
+      sectionName='Voting registration'
+      {...props}
+    >
+      <div className='contact-methods-choice-form'>
+        <h4>Would you like to receive election information via email or text</h4>
+        <div className='inner-bottom'>
+          <SelectorCollection
+            name='shouldContact'
+            values={VALUES}
+            onChange={props.onChange}
+            selectedValue={props.selectedValue}
+          />
+        </div>
 
-      <h4>Would you like to receive election information via email or text</h4>
-      <div className='inner-bottom'>
-        <SelectorCollection
-          name='shouldContact'
-          values={VALUES}
-          onChange={props.onChange}
-          selectedValue={props.selectedValue}
-        />
+        <div className='inner-bottom'>
+          <h4>Who gets this information?</h4>
+          <p>Secretary of State and County election officials have access to this information.</p>
+        </div>
       </div>
-
-      <div className='inner-bottom'>
-        <h4>Who gets this information?</h4>
-        <p>Secretary of State and County election officials have access to this information.</p>
-      </div>
-  </div>
+    </Page>
   );
 };
 

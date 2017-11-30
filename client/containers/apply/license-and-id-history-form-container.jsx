@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateLicenseAndIdHistory }       from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
-import SectionHeader                       from '../../presentations/section-header.jsx';
+import Page                                from '../../presentations/page.jsx';
 import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
 import LicenseAndIdHistory                 from "../../presentations/apply/license-and-id-history-form.jsx";
 import EnterLicenseAndIdHistory            from "../../presentations/apply/enter-license-and-id-history-form.jsx";
@@ -25,54 +25,54 @@ const ConnectedForm = (props) => {
     continueDisabled = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
 
     return (
-      <div>
-        <HomeLink />
-        <SectionHeader
-          number='2'
-          name='My history'
-        />
+      <Page
+        sectionNumber='2'
+        sectionName='My history'
+        {...props}
+      >
+        <div>
+          <form onSubmit={onSubmit}>
+            <LicenseAndIdHistory
+              pageTitle      ={pageTitle}
+              onChange       ={props.onChange}
+              selectedValue  ={props.licenseAndIdHistory.isIssued}
+            />
 
+            <EnterLicenseAndIdHistory
+              onChange               ={props.onChange}
+              licenseAndIdHistory    ={props.licenseAndIdHistory}
+            />
+
+            <NavigationButtons
+              continueDisabled={continueDisabled}
+              onBack= {onBack}
+            />
+          </form>
+        </div>
+      </Page>
+    );
+  }
+
+  return (
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
         <form onSubmit={onSubmit}>
           <LicenseAndIdHistory
-            pageTitle      ={pageTitle}
-            onChange       ={props.onChange}
-            selectedValue  ={props.licenseAndIdHistory.isIssued}
+            pageTitle     ={pageTitle}
+            onChange      ={props.onChange}
+            selectedValue ={props.licenseAndIdHistory.isIssued}
           />
-
-          <EnterLicenseAndIdHistory
-            onChange               ={props.onChange}
-            licenseAndIdHistory    ={props.licenseAndIdHistory}
-          />
-
           <NavigationButtons
             continueDisabled={continueDisabled}
             onBack= {onBack}
           />
         </form>
       </div>
-    );
-  }
-
-  return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-        <LicenseAndIdHistory
-          pageTitle     ={pageTitle}
-          onChange      ={props.onChange}
-          selectedValue ={props.licenseAndIdHistory.isIssued}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack= {onBack}
-        />
-      </form>
-    </div>
+    </Page>
   );
 };
 

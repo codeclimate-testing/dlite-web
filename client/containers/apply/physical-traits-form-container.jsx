@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updatePhysicalTraits }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import SectionHeader                    from '../../presentations/section-header.jsx';
+import Page                             from '../../presentations/page.jsx';
 import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import EyeColor                         from '../../presentations/apply/eye-color.jsx';
 import HairColor                        from '../../presentations/apply/hair-color.jsx';
@@ -21,36 +21,36 @@ const ConnectedForm = (props) => {
   let pageTitle         = "DMV: License application - My basics";
 
   return (
-    <div className="physical-traits-form">
-      <HomeLink />
-      <SectionHeader
-        number='1'
-        name='My basics'
-      />
-
-      <form onSubmit={onSubmit}>
-       <Sex
-          pageTitle     = {pageTitle}
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.sex}
-        />
-        <br></br>
-        <EyeColor
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.eyeColor}
-        />
-        <br></br>
-        <HairColor
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.hairColor}
-          onBack        = {onBack}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Page
+      sectionNumber='1'
+      sectionName='My basics'
+      {...props}
+    >
+      <div className="physical-traits-form">
+        <form onSubmit={onSubmit}>
+         <Sex
+            pageTitle     = {pageTitle}
+            onChange      = {props.onChange}
+            selectedValue = {props.physicalTraits.sex}
+          />
+          <br></br>
+          <EyeColor
+            onChange      = {props.onChange}
+            selectedValue = {props.physicalTraits.eyeColor}
+          />
+          <br></br>
+          <HairColor
+            onChange      = {props.onChange}
+            selectedValue = {props.physicalTraits.hairColor}
+            onBack        = {onBack}
+          />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
+        </form>
+      </div>
+    </Page>
   );
 }
 

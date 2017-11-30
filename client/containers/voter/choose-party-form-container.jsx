@@ -30,8 +30,6 @@ const ConnectedForm = (props) => {
 
     return (
       <div>
-        <HomeLink />
-
         <form onSubmit={onSubmit}>
          <PoliticalPartyChoose
             onChange              = {props.onChange}

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateMedicalHistory }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import SectionHeader                    from '../../presentations/section-header.jsx';
+import Page                             from '../../presentations/page.jsx';
 import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import MedicalCondition                 from '../../presentations/apply/medical-condition-info.jsx';
 import EnterMedicalInfo                 from '../../presentations/apply/enter-medical-info.jsx';
@@ -25,53 +25,53 @@ const ConnectedForm = (props) => {
     continueDisabled  = !(dataPresent.medicalHistory(props.medicalHistory))
 
   return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-       <MedicalCondition
-          pageTitle      ={pageTitle}
-          onChange      = {props.onChange}
-          selectedValue = {props.medicalHistory.hasMedicalCondition}
-        />
-        <br></br>
-        <EnterMedicalInfo
-          onChange       = {props.onChange}
-          medicalHistory  = {props.medicalHistory}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
+        <form onSubmit={onSubmit}>
+         <MedicalCondition
+            pageTitle      ={pageTitle}
+            onChange      = {props.onChange}
+            selectedValue = {props.medicalHistory.hasMedicalCondition}
+          />
+          <br></br>
+          <EnterMedicalInfo
+            onChange       = {props.onChange}
+            medicalHistory  = {props.medicalHistory}
+          />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
+        </form>
+      </div>
+    </Page>
   );
 }
 
   return (
-    <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
-      <form onSubmit={onSubmit}>
-        <MedicalCondition
-          pageTitle      ={pageTitle}
-          onChange      = {props.onChange}
-          selectedValue = {props.medicalHistory.hasMedicalCondition}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Page
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
+      <div>
+        <form onSubmit={onSubmit}>
+          <MedicalCondition
+            pageTitle      ={pageTitle}
+            onChange      = {props.onChange}
+            selectedValue = {props.medicalHistory.hasMedicalCondition}
+          />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
+        </form>
+      </div>
+    </Page>
   );
 };
 

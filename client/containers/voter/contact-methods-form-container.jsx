@@ -18,7 +18,6 @@ const ConnectedForm = (props) => {
   let onSubmit            = navigateOnSubmit('/voting-registration/confirmation', props);
   let onBack              = navigateOnBack('/voting-registration/vote-by-mail', props);
   let pageTitle           =   'DMV: License application - Voting registration'
-  document.title = pageTitle;
 
   if(props.contactMethods.shouldContact === 'Yes') {
     showContactDetails  = true;
@@ -26,8 +25,6 @@ const ConnectedForm = (props) => {
 
     return (
       <div>
-        <HomeLink />
-
         <form onSubmit={onSubmit}>
           <ContactChoice
             onChange      = {props.onChange}
