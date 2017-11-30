@@ -4,8 +4,7 @@ import React from 'react';
 
 import HomeLink                 from '../home-link.jsx';
 import SelectorCollection       from '../selector-collection.jsx';
-import ContinueButton           from '../continue-button.jsx';
-import BackButton               from '../back-button.jsx';
+import NavigationButtons        from '../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No'];
 
@@ -33,8 +32,9 @@ const Form = (props) => {
             <div className='unit spacer' />
         </div>
 
-        <ContinueButton disabled={props.continueDisabled} /> <BackButton onBack={props.onBack} key = 'back-button' />
-
+        <NavigationButtons
+          {...props}
+        />
       </form>
     </div>
   )

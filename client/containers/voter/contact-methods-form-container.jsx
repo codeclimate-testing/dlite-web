@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { updateContactMethods }   from '../../actions/index';
+import { updateContactMethods }     from '../../actions/index';
 import HomeLink                     from '../../presentations/home-link.jsx';
-import ContinueButton               from '../../presentations/continue-button.jsx';
+import NavigationButtons            from '../../presentations/navigation-buttons.jsx';
 import ContactChoice                from '../../presentations/voter/contact-methods-choice.jsx';
 import ContactDetails               from '../../presentations/voter/contact-methods-details.jsx';
 import connectForm                  from '../../helpers/connect-form';
@@ -27,7 +27,7 @@ const ConnectedForm = (props) => {
     return (
       <div>
         <HomeLink />
-  
+
         <form onSubmit={onSubmit}>
           <ContactChoice
             onChange      = {props.onChange}
@@ -39,7 +39,10 @@ const ConnectedForm = (props) => {
             pageTitle      = { pageTitle }
             onBack         = { onBack }
           />
-          <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
         </form>
       </div>
     );
@@ -54,7 +57,10 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           selectedValue = {props.contactMethods.shouldContact}
         />
-        <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );

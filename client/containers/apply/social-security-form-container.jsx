@@ -6,8 +6,7 @@ import { updateSocialSecurity }   from "../../actions/index";
 import SocialSecurityOption       from "../../presentations/apply/social-security-option-form.jsx";
 import SocialSecurityEnter        from "../../presentations/apply/social-security-enter-form.jsx";
 import SocialSecurityNoInfo       from "../../presentations/apply/social-security-no-info.jsx";
-import ContinueButton             from "../../presentations/continue-button.jsx";
-import BackButton                 from "../../presentations/back-button.jsx";
+import NavigationButtons          from '../../presentations/navigation-buttons.jsx';
 import connectForm                from '../../helpers/connect-form';
 import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 import navigateOnBack             from '../../helpers/navigate-on-back';
@@ -44,8 +43,13 @@ const ConnectedForm = (props) => {
   }
 
 
-  content.push(<ContinueButton disabled={continueDisabled} key = 'continue-button' />);
-  content.push(<BackButton onBack={onBack} key = 'back-button' />);
+  content.push(
+    <NavigationButtons
+     continueDisabled={continueDisabled}
+     onBack={onBack}
+     key='navigation-buttons'
+    />
+  );
 
   return (
     <form onSubmit={onSubmit}>

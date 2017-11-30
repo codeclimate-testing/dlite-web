@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateNamesHistory }           from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import ContinueButton                   from '../../presentations/continue-button.jsx';
+import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import SectionHeader                    from '../../presentations/section-header.jsx';
 import UsedPreviousNames                from '../../presentations/apply/used-previous-names.jsx';
 import EnterPreviousNames               from '../../presentations/apply/enter-previous-names.jsx';
@@ -43,9 +43,10 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           namesHistory  = {props.namesHistory}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );
@@ -65,9 +66,10 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           selectedValue = {props.namesHistory.hasUsedPreviousNames}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );

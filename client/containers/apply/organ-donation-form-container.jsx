@@ -4,7 +4,7 @@ import React from 'react';
 
 import { updateOrganDonation }      from "../../actions/index";
 import HomeLink                     from '../../presentations/home-link.jsx';
-import ContinueButton               from '../../presentations/continue-button.jsx';
+import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import DonateOrgan                  from '../../presentations/apply/donate-organ-form.jsx';
 import DonateContribution           from '../../presentations/apply/donate-contribution-form.jsx';
 import connectForm                  from '../../helpers/connect-form';
@@ -34,7 +34,10 @@ const ConnectedForm = (props) => {
           organDonation={props.organDonation}
           selectedValue = {props.organDonation.contribute}
         />
-        <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );

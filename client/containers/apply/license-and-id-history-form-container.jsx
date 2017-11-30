@@ -5,7 +5,7 @@ import React from 'react';
 import { updateLicenseAndIdHistory }       from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import SectionHeader                       from '../../presentations/section-header.jsx';
-import NavgitaionButtons                   from '../../presentations/navigation-buttons.jsx';
+import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
 import LicenseAndIdHistory                 from "../../presentations/apply/license-and-id-history-form.jsx";
 import EnterLicenseAndIdHistory            from "../../presentations/apply/enter-license-and-id-history-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
@@ -44,7 +44,7 @@ const ConnectedForm = (props) => {
             licenseAndIdHistory    ={props.licenseAndIdHistory}
           />
 
-          <NavgitaionButtons
+          <NavigationButtons
             continueDisabled={continueDisabled}
             onBack= {onBack}
           />
@@ -67,7 +67,7 @@ const ConnectedForm = (props) => {
           onChange      ={props.onChange}
           selectedValue ={props.licenseAndIdHistory.isIssued}
         />
-        <NavgitaionButtons
+        <NavigationButtons
           continueDisabled={continueDisabled}
           onBack= {onBack}
         />

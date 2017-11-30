@@ -5,8 +5,7 @@ import React from 'react';
 import { updateMedicalHistory }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
 import SectionHeader                    from '../../presentations/section-header.jsx';
-import ContinueButton                   from '../../presentations/continue-button.jsx';
-import BackButton                       from '../../presentations/back-button.jsx';
+import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import MedicalCondition                 from '../../presentations/apply/medical-condition-info.jsx';
 import EnterMedicalInfo                 from '../../presentations/apply/enter-medical-info.jsx';
 import connectForm                      from '../../helpers/connect-form';
@@ -44,9 +43,10 @@ const ConnectedForm = (props) => {
           onChange       = {props.onChange}
           medicalHistory  = {props.medicalHistory}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <BackButton onBack={onBack} key = 'back-button' />
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );
@@ -66,9 +66,10 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           selectedValue = {props.medicalHistory.hasMedicalCondition}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <BackButton onBack={onBack} key = 'back-button' />
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );
