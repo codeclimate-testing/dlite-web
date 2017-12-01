@@ -120,7 +120,8 @@ function extractPreviousNames(data) {
   if( _previousNames.hasUsedPreviousNames === 'Yes') {
     let tokens = _previousNames.previousNames.split(',');
     tokens.forEach(function (token){
-      if(token.trim()){
+      token = token.trim();
+      if(token){
         _names.push(
           {
             application_id:   data.id,

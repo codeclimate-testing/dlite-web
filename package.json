@@ -65,7 +65,6 @@
     "helmet": "^3.6.1",
     "isomorphic-fetch": "^2.2.1",
     "jsonwebtoken": "^7.4.1",
-    "moment": "^2.19.3",
     "morgan": "^1.8.2",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",

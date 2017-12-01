@@ -86,6 +86,7 @@ function fakeClientData() {
       "isSelected": "Yes",
       "politicalPartyChoose": "Green Party"
     },
+    "ballotLanguage": "English",
     "optOut": "I am a new voter in California",
     "contactMethods": {
       "shouldContact": "Yes",
