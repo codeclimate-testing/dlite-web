@@ -7,7 +7,7 @@ module.exports = function(world) {
 
   world.and('I enter my previously used names', function(done) {
     browser
-    .type('#names', 'previousName1')
+    .type('#previousNames', 'previousName1')
     .then(() => { done(); })
     .catch(done);
   });

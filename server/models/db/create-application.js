@@ -10,8 +10,8 @@ module.exports = function createApplication(data) {
   }
 
   return db('applications').insert(data.application).returning('*')
-    .then((records) => {
-      returnedData.application = records[0];
+    .then((application) => {
+      returnedData.application = application[0];
       return insert('addresses');
     })
     .then((addresses) => {
@@ -27,7 +27,7 @@ module.exports = function createApplication(data) {
       return insert('organ_donations');
     })
     .then((organDonations) => {
-      returnedData.organ_donations = organDonations;
+      returnedData.organ_donations = organDonations[0];
       return insert('card_histories');
     })
     .then((cardHistories) => {
@@ -47,11 +47,11 @@ module.exports = function createApplication(data) {
       return insert('veterans_info');
     })
     .then((veteransInfo) => {
-      returnedData.veterans_info = veteransInfo;
+      returnedData.veterans_info = veteransInfo[0];
       return insert('voting_registrations');
     })
     .then((votingRegistrations) => {
-      returnedData.voting_registrations = votingRegistrations;
+      returnedData.voting_registrations = votingRegistrations[0];
       return returnedData;
     })
 };

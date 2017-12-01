@@ -7,7 +7,7 @@ function parse(data) {
     { addresses:              extractAddresses(data) },
     { emails:                 extractEmail(data) },
     { phone_numbers:          extractPhoneNumber(data) },
-    { organ_donations:        extractOrganDonation(date) },
+    { organ_donations:        extractOrganDonation(data) },
     { card_histories:         extractCardHistories(data) },
     { previous_names:         extractPreviousNames(data) },
     { medical_histories:      extractMedicalHistories(data) },
@@ -88,7 +88,7 @@ function extractPhoneNumber(data) {
   }];
 }
 
-function extractOrganDonation(date) {
+function extractOrganDonation(data) {
   return [{
     application_id:   data.id,
     donating_organs:  getBooleanValue(data.organDonation.donate),
@@ -120,8 +120,8 @@ function extractPreviousNames(data) {
   if( _previousNames.hasUsedPreviousNames === 'Yes') {
     let tokens = _previousNames.previousNames.split(',');
     tokens.forEach(function (token){
-      if(t.trim()){
-        names.push(
+      if(token.trim()){
+        _names.push(
           {
             application_id:   data.id,
             name:             token

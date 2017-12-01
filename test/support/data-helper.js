@@ -6,35 +6,91 @@ const parse = require('../../server/models/client-data-parser');
 function fakeClientData() {
   return {
     id: uuid(),
-    legalName: {
-      firstName: 'John',
-      middleName: 'Leo',
-      lastName: 'Smith'
+    "legalName": {
+      "firstName": "John",
+      "middleName": "x",
+      "lastName": "Smith",
+      "suffix": "II"
     },
-    dateOfBirth:  {
-      day: 17,
-      month: 12,
-      year: 1991
+    "dateOfBirth": {
+      "day": "13",
+      "month": "10",
+      "year": "1975"
     },
-    hairColor: 'Brown',
-    eyeColor: 'Hazel',
-    homeAddress: {
-      street_1: '123 Main St',
-      street_2: 'Apt. 32',
-      city: 'Crazydino',
-      state: 'CA',
-      zip: '92222'
+    "homeAddress": {
+      "street_1": "123",
+      "street_2": "Main St.",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95656"
     },
-    mailingAddress: {
-      street_1: '200 Sassy street',
-      street_2: 'Box 22',
-      city: 'San Waffle',
-      state: 'CA',
-      zip: '91111'
+    "mailingAddress": {
+      "street_1": "456",
+      "street_2": "Second St.",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "91212"
     },
-    contactMethods: {
-      emailAddress: 'some_email@example.com',
-      phoneNumber:  '(916) 555-1111'
+    "physicalTraits": {
+      "hairColor": "Auburn",
+      "eyeColor": "Blue",
+      "sex": "Male"
+    },
+    "traitsHeightWeight": {
+      "weight": "210",
+      "heightFeet": "6",
+      "heightInches": "2"
+    },
+    "socialSecurity": {
+      "part1": "123",
+      "part2": "34",
+      "part3": "457",
+      "hasSocialSecurity": "Yes"
+    },
+    "organDonation": {
+      "donate": "Yes",
+      "contribute": "No"
+    },
+    "licenseAndIdHistory": {
+      "DLIDNumber": "DL12345",
+      "issuedBy": "Authority Inc.",
+      "month": "12",
+      "day": "22",
+      "year": "1725",
+      "isIssued": "Yes"
+    },
+    "namesHistory": {
+      "hasUsedPreviousNames": "Yes",
+      "previousNames": "abc, xyz, and"
+    },
+    "medicalHistory": {
+      "hasMedicalCondition": "Yes",
+      "medicalInfo": "not sure at the moment"
+    },
+    "licenseIssues": {
+      "isSuspended": "Yes",
+      "month": "11",
+      "day": "22",
+      "year": "1899",
+      "reason": "no registration"
+    },
+    "veteransService": {
+      "isVeteran": "Yes",
+      "receiveBenefits": "No",
+      "veteransIdentifier": "Yes"
+    },
+    "citizenStatus": "Yes",
+    "ballotByMail": "Yes",
+    "eligibilityRequirements": "Yes",
+    "politicalPartyChoose": {
+      "isSelected": "Yes",
+      "politicalPartyChoose": "Green Party"
+    },
+    "optOut": "I am a new voter in California",
+    "contactMethods": {
+      "shouldContact": "Yes",
+      "emailAddress": "aliceball1234@gmail.com",
+      "phoneNumber": "916314 8765"
     }
   };
 }

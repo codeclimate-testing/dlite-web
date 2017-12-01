@@ -22,8 +22,9 @@ describe('clientDataParser', function() {
     assert.equal(applicationData.middle_name, data.legalName.middleName);
     assert.equal(applicationData.last_name, data.legalName.lastName);
     assert.equal(applicationData.date_of_birth.toString(), dob.toString());
-    assert.equal(applicationData.hair_color, data.hairColor);
-    assert.equal(applicationData.eye_color, data.eyeColor);
+    assert.equal(applicationData.hair_color, data.physicalTraits.hairColor);
+    assert.equal(applicationData.eye_color, data.physicalTraits.eyeColor);
+    assert.equal(applicationData.sex, data.physicalTraits.sex);
   });
 
   it('correctly extracts the addresses', function() {

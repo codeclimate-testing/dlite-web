@@ -74,9 +74,9 @@ function getDateOfBirth(application) {
 
 function getHomeAddress(addresses) {
   let home_address = {};
-  addresses.forEach(function(element) {
-    if(element.type === 'home'){
-      home_address = element;
+  addresses.forEach(function(address) {
+    if(address.type === 'home'){
+      home_address = address;
     }
   });
   return {
@@ -91,9 +91,9 @@ function getHomeAddress(addresses) {
 
 function getMailingAddress(addresses) {
   let mailing_address = {};
-  addresses.forEach(function(element) {
-    if(element.type === 'mailing'){
-      home_address = element;
+  addresses.forEach(function(address) {
+    if(address.type === 'mailing'){
+      mailing_address = address;
     }
   });
   return {
@@ -115,9 +115,9 @@ function getPhysicalTraits(application) {
 
 function getHeightAndWeight(application) {
   return {
-    weight:       application.weight,
-    heightFeet:   application.height_feet,
-    heightInches: application.height_inches
+    weight:       application.weight + '',
+    heightFeet:   application.height_feet + '',
+    heightInches: application.height_inches + ''
   };
 }
 
@@ -168,11 +168,12 @@ function getLicenseAndIdHistory(card_histories) {
 }
 
 function getNamesHistories(previous_names) {
-  if(previous_names){
-    let _names = '';
-    previous_names.forEach(function(name){
-      _names = name + ', '
-    });
+  if(previous_names && previous_names.length > 0){
+    let _names = previous_names[0].name;
+    for(var i = 1; i < previous_names.length; i++ ) {
+      _names = _names + ', ' + previous_names[i].name;
+    }
+    console.log(_names)
     return {
       hasUsedPreviousNames: 'Yes',
       previousNames:        _names
