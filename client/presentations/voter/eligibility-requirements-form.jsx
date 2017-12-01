@@ -8,10 +8,12 @@ import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const EligibilityRequirements = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

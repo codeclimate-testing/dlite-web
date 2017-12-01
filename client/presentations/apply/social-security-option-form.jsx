@@ -7,10 +7,12 @@ import SelectorCollection     from '../selector-collection.jsx';
 import Page               from '../page.jsx';
 
 const OPTIONS = ['Yes', 'No'];
+let pageTitle = "DMV: License application - My basics";
 
 const Form = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='1'
       sectionName='My basics'
       {...props}

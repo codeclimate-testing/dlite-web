@@ -12,10 +12,12 @@ const VALUES = [
   "I am already registered to vote in California",
   "I am eligible to vote, but do not want to register to vote"
 ];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const OptOut = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

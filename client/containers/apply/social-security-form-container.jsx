@@ -16,13 +16,11 @@ const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/my-history/medical', props);
   let onBack            = navigateOnBack('/my-basics/traits-height-weight', props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
-  let pageTitle         = "DMV: License application - My basics";
 
   let content = [];
 
   content.push(
     <SocialSecurityOption
-      pageTitle     = { pageTitle }
       onChange      = { props.onChange }
       selectedValue = { props.socialSecurity.hasSocialSecurity }
       key           = 'social-security-option'

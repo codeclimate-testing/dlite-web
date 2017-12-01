@@ -13,11 +13,9 @@ const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/my-basics/address', props);
   let onBack            =   navigateOnBack('/my-basics/date-of-birth', props);
   let continueDisabled  =   !(dataPresent.realID(props.realID));
-  let pageTitle         =   'DMV: License application - My basics'
-  
+
   return (
     <Form
-      pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       onChange          = { props.onChange }

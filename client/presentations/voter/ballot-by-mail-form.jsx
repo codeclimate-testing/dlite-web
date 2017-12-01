@@ -13,10 +13,12 @@ const FAQ_CLASSNAME_YES   = 'faq-ballot-by-mail-yes';
 const MESSAGE_YES         = 'Ok, your ballot will now come by mail. You can still vote in-person at your polling place.';
 const FAQ_CLASSNAME_NO    = 'faq-ballot-by-mail-no';
 const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
+let pageTitle = 'DMV: License application - Voting registration'
 
 const BallotByMailForm = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

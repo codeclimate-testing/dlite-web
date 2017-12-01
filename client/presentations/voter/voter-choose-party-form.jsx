@@ -5,12 +5,14 @@ import SelectorCollection    from '../selector-collection.jsx';
 import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'I do not wish to choose a political party'];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const PoliticalPartyChoose = (props) => {
   return (
     <Page
       sectionNumber='3'
       sectionName='Voting registration'
+      pageTitle={pageTitle}
       {...props}
     >
       <div className='choose-party'>

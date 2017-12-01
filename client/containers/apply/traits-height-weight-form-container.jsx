@@ -13,11 +13,9 @@ const Form = (props) => {
   let continueDisabled   = !dataPresent.traitsHeightWeight(props.traitsHeightWeight);
   let onSubmit           = navigateOnSubmit('/my-basics/social-security', props);
   let onBack             = navigateOnBack('/my-basics/physical-traits', props);
-  let pageTitle          = "DMV: License application - My basics";
 
   return (
     <FormPresentation
-      pageTitle           = { pageTitle }
       onSubmit            = { onSubmit }
       onBack              = { onBack }
       onChange            = { props.onChange }

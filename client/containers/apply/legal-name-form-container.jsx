@@ -13,11 +13,9 @@ const Form = (props) => {
   let continueDisabled  =   !dataPresent.legalName(props.legalName);
   let onSubmit          =   navigateOnSubmit('/my-basics/date-of-birth', props);
   let onBack            =   navigateOnBack('/get-started', props);
-  let pageTitle         =   'DMV: License application - My basics'
 
   return (
     <FormPresentation
-      pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       onChange          = { props.onChange }

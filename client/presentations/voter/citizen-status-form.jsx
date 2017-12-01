@@ -9,10 +9,12 @@ import FAQDrawer               from '../faq-drawer.jsx';
 import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const CitizenStatusForm = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

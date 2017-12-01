@@ -6,10 +6,12 @@ import SelectorCollection from '../selector-collection.jsx';
 import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const ContactChoice = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

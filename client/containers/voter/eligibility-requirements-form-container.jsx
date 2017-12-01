@@ -12,7 +12,6 @@ const ConnectedForm = (props) => {
   const continueDisabled = false;
   let onSubmit = navigateOnSubmit('/summary', props);
   let onBack = navigateOnBack('/voting-registration/citizenship', props);
-  let pageTitle = 'DMV: License application - Voting registration'
 
   if(props.eligibilityRequirements === 'Yes') {
     onSubmit = navigateOnSubmit('/voting-registration/opt-out', props);

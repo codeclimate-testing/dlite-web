@@ -7,9 +7,12 @@ import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
+let pageTitle = 'DMV: License application - My basics'
+
 const LegalNameForm = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='1'
       sectionName='My basics'
       {...props}

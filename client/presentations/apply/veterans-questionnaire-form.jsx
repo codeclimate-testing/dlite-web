@@ -8,10 +8,12 @@ import SectionHeader          from '../section-header.jsx';
 import Page                   from '../page.jsx';
 
 const OPTIONS = ['Yes', 'No'];
+let pageTitle = "DMV: License application - My History";
 
 const Form = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='2'
       sectionName='My history'
       {...props}

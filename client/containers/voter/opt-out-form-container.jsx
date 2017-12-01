@@ -13,7 +13,6 @@ const ConnectedForm = (props) => {
 
     let value = props.optOut;
     const continueDisabled = !dataPresent.value(value);
-    let pageTitle          = 'DMV: License application - Voting registration'
 
     const NEW_VOTER = '/voting-registration/preferences';
     const ALREADY_REGISTERED = '/voting-registration/updating-preferences';
@@ -33,7 +32,6 @@ const ConnectedForm = (props) => {
 
   return (
     <Form
-      pageTitle={pageTitle}
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}

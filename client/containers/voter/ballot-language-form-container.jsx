@@ -12,10 +12,9 @@ const ConnectedForm = (props) => {
   const continueDisabled = false;
   const onSubmit = navigateOnSubmit('/voting-registration/vote-by-mail', props);
   const onBack = navigateOnBack('/voting-registration/choose-party', props);
-  let pageTitle  =   'DMV: License application - Voting registration'
+
   return (
     <Form
-      pageTitle={pageTitle}
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}

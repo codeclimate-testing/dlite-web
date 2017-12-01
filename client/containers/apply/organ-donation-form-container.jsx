@@ -15,14 +15,12 @@ import * as dataPresent             from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.organDonation(props.organDonation);
   const onSubmit = navigateOnSubmit('/voting-registration/introduction', props);
-  const onBack           = navigateOnBack('/my-history/veterans-service', props);
-  const pageTitle        =   'DMV: License application - Organ donation'
+  const onBack   = navigateOnBack('/my-history/veterans-service', props);
 
   return (
     <div>
       <form onSubmit={onSubmit}>
         <DonateOrgan
-          pageTitle = {pageTitle}
           onChange={props.onChange}
           organDonation={props.organDonation}
           selectedValue = {props.organDonation.donate}

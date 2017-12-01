@@ -8,10 +8,12 @@ import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', 'Tagalog', 'Hindi', 'Khmer', 'Vietnamese'];
+let pageTitle = 'DMV: License application - Voting registration'
 
 const BallotLanguageForm = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

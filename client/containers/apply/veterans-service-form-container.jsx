@@ -16,13 +16,11 @@ const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/organ-donation', props);
   let onBack            = navigateOnBack('/my-history/license-issues', props);
   let continueDisabled  = !(dataPresent.veteransService(props.veteransService));
-  let pageTitle         = "DMV: License application - My History";
 
   let content = [];
 
   content.push(
     <VeteransQuestionnaire
-      pageTitle     = { pageTitle }
       onChange      = { props.onChange }
       selectedValue = { props.veteransService.isVeteran }
       key           = 'veterans-service-questionnaire'

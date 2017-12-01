@@ -7,14 +7,14 @@ import LinkButton         from '../link-button.jsx';
 import Page               from '../page.jsx';
 import alicePath          from '../../helpers/alice-path';
 
+const linkAddress = '/summary';
+const linkBack = '/voting-registration/contact-methods';
+let pageTitle  = 'DMV: License application - Voting registration'
+
 const VoterRegComplete = (props) => {
-
-  const linkAddress = '/summary';
-  const linkBack = '/voting-registration/contact-methods';
-  let pageTitle  = 'DMV: License application - Voting registration'
-
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Voting registration'
       {...props}

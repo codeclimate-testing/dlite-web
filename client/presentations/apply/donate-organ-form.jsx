@@ -13,10 +13,12 @@ const DONATE_ORGAN_NO     = 'donate-organ-no';
 const MESSAGE_NO          = <div><h4>Answering <em>No</em> will not remove your name from the registry.</h4>
                             <p>If you wish to remove your name from the registry, you must contact Donate
                             Life California. DMV can remove the pink dot from your DL/ID card but cannot remove you from the registry.</p></div>
+let pageTitle = 'DMV: License application - Organ donation'
 
 const DonateOrgan = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='3'
       sectionName='Organ donation'
       {...props}
