@@ -173,7 +173,6 @@ function getNamesHistories(previous_names) {
     for(var i = 1; i < previous_names.length; i++ ) {
       _names = _names + ', ' + previous_names[i].name;
     }
-    console.log(_names)
     return {
       hasUsedPreviousNames: 'Yes',
       previousNames:        _names

@@ -14,19 +14,9 @@ module.exports = function(world) {
 
   world.and('I click the save and continue button', function(done) {
     browser
-      .click("button:contains('Save and Continue')")
+      .click('input[type="submit"]')
       .wait(2500)
       .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('There are no errors saving data via API call', function (done) {
-    browser
-      .status()
-      .then( (status) => {
-        assert.equal(status, 200);
-        done();
-      })
       .catch(done);
   });
 };

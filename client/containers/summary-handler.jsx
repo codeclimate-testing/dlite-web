@@ -74,7 +74,9 @@ const SummaryHandler = (props) => {
 
   if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
     contents.push(
-      <button id='saveData' key='save-and-continue' onClick={saveData}> Save and Continue </button>
+      <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
+        <input type='submit' id='saveData' key='save-and-continue' onClick={saveData} value='Save and Continue'/>
+    </Link>
     );
   }
   else{
@@ -88,7 +90,7 @@ const SummaryHandler = (props) => {
   return (
     <div className='summary'>
       <HomeLink />
-      { contents }
+        { contents }
     </div>
   );
 }

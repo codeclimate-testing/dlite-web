@@ -94,5 +94,4 @@ Feature: Save user data
     Then I will be on the page with my summary
     And The Continue button now reads Save and Continue
     When I click the save and continue button
-    And There are no errors saving data via API call
     Then I will be on the page for appointment preparation
