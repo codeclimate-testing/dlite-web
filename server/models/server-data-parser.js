@@ -1,6 +1,7 @@
 'use strict';
 
-const defaultClientState = require('./client-default-state');
+const parserHelper = require('../helpers/data-parser');
+const defaultClientState = require('../helpers/client-default-state');
 
 function parse(data) {
 
@@ -137,21 +138,21 @@ function getSocialSecurity(application) {
 
 function getOrganDonations(organ_donations) {
   return {
-    donate: evaluateBoolean(organ_donations.donating_organs),
-    contribute: evaluateBoolean(organ_donations.donating_money)
+    donate: parserHelper.boolToStr(organ_donations.donating_organs),
+    contribute: parserHelper.boolToStr(organ_donations.donating_money)
   };
 }
 
 function getLicenseAndIdHistory(card_histories) {
   if(card_histories && card_histories.length > 0){
     card_histories = card_histories[0];
-    let _date = card_histories.date_description.split('/');
+    let _date = parserHelper.createDateJson(card_histories.date_description);
     return {
       DLIDNumber:   card_histories.number,
       issuedBy:     card_histories.issuing_entity,
-      month:        _date[0],
-      day:          _date[1],
-      year:         _date[2],
+      month:        _date.month,
+      day:          _date.day,
+      year:         _date.year,
       isIssued:     'Yes'
     };
   }
@@ -205,12 +206,12 @@ function getMedicalHistories(medical_histories) {
 function getLicenseIssues(license_issues) {
   if(license_issues && license_issues.length > 0){
     license_issues = license_issues[0];
-    let _date = license_issues.date_description.split('/');
+    let _date = parserHelper.createDateJson(license_issues.date_description);
     return {
       isSuspended:  'Yes',
-      month:        _date[0],
-      day:          _date[1],
-      year:         _date[2],
+      month:        _date.month,
+      day:          _date.day,
+      year:         _date.year,
       reason:       license_issues.description
     };
   }
@@ -233,7 +234,7 @@ function getVeteransService(veterans_info) {
     }
     return {
       isVeteran:            'Yes',
-      receiveBenefits:      evaluateBoolean(veterans_info.has_requested_information),
+      receiveBenefits:      parserHelper.boolToStr(veterans_info.has_requested_information),
       veteransIdentifier:   label
     };
   }
@@ -247,20 +248,20 @@ function getVeteransService(veterans_info) {
 }
 
 function getCitizenStatus(voting_registrations) {
-  return evaluateBoolean(voting_registrations.is_citizen);
+  return parserHelper.boolToStr(voting_registrations.is_citizen);
 }
 
 function getBallotByMail(voting_registrations) {
-  return evaluateBoolean(voting_registrations.vote_by_mail);
+  return parserHelper.boolToStr(voting_registrations.vote_by_mail);
 }
 
 function getEligibility(voting_registrations) {
-  return evaluateBoolean(voting_registrations.is_eligible);
+  return parserHelper.boolToStr(voting_registrations.is_eligible);
 }
 
 function getParty(voting_registrations) {
   return {
-    isSelected:             evaluateBoolean(voting_registrations.is_preregistering),
+    isSelected:             parserHelper.boolToStr(voting_registrations.is_preregistering),
     politicalPartyChoose:   voting_registrations.party
   };
 }
@@ -271,33 +272,22 @@ function getBallotLanguage(voting_registrations) {
 
 function getOptedOut(voting_registrations) {
   let optOut      = '';
-  let _opted_out  = evaluateBoolean(voting_registrations.opted_out);
+  let _opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
   let _type       = voting_registrations.type;
-
-  if( _opted_out === 'No' && _type === 'new' ){
-    optOut = 'I am a new voter in California'
-  }
-  if( _opted_out === 'No' && _type === 'existing' ){
-    optOut = 'I am already registered to vote in California'
-  }
-  if( _opted_out === 'Yes' && _type === 'existing' ){
-    optOut = 'I am eligible to vote, but do not want to register to vote'
-  }
-  return optOut;
+  return parserHelper.optedValuesToStr({
+    opted_out: _opted_out,
+    type: _type
+  });
 }
 
 function getContactMethods(emails, phone_numbers, voting_registrations) {
   emails          = emails[0];
   phone_numbers   = phone_numbers[0];
   return {
-    shouldContact: evaluateBoolean(voting_registrations.should_contact),
+    shouldContact: parserHelper.boolToStr(voting_registrations.should_contact),
     emailAddress: emails.address,
     phoneNumber: phone_numbers.number
   };
-}
-
-function evaluateBoolean(val) {
-  return val ? 'Yes' : 'No';
 }
 
 module.exports = parse;

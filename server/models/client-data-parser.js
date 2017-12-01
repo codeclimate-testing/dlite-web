@@ -1,5 +1,7 @@
 'use strict';
 
+const parserHelper = require('../helpers/data-parser');
+
 function parse(data) {
   return Object.assign(
     {},
@@ -26,7 +28,7 @@ function extractApplication(data) {
 
 
   if(data.dateOfBirth.month && data.dateOfBirth.day && data.dateOfBirth.year){
-    dob = new Date(data.dateOfBirth.month + '/' + data.dateOfBirth.day + '/' + data.dateOfBirth.year)
+    dob = new Date(parserHelper.createDateString(data.dateOfBirth));
   }
 
   if(data.socialSecurity && data.socialSecurity.hasSocialSecurity === 'Yes'){
@@ -91,16 +93,14 @@ function extractPhoneNumber(data) {
 function extractOrganDonation(data) {
   return [{
     application_id:   data.id,
-    donating_organs:  getBooleanValue(data.organDonation.donate),
-    donating_money:   getBooleanValue(data.organDonation.contribute)
+    donating_organs:  parserHelper.strToBool(data.organDonation.donate),
+    donating_money:   parserHelper.strToBool(data.organDonation.contribute)
   }];
 }
 
 function extractCardHistories(data) {
   if(data.licenseAndIdHistory.isIssued === 'Yes'){
-    let _date = data.licenseAndIdHistory.month + '/'
-                + data.licenseAndIdHistory.day + '/'
-                  + data.licenseAndIdHistory.year
+    let _date = parserHelper.createDateString(data.licenseAndIdHistory);
     return [{
       application_id:   data.id,
       number:           data.licenseAndIdHistory.DLIDNumber,
@@ -151,9 +151,7 @@ function extractMedicalHistories(data) {
 
 function extractLicenseIssues(data) {
   if( data.licenseIssues.isSuspended === 'Yes'){
-    let _date = data.licenseIssues.month + '/'
-                + data.licenseIssues.day + '/'
-                  + data.licenseIssues.year
+    let _date = parserHelper.createDateString(data.licenseIssues);
     return [{
       application_id:     data.id,
       description:        data.licenseIssues.reason,
@@ -173,7 +171,7 @@ function extractVeteransInfo(data) {
     }
     return [{
       application_id:               data.id,
-      has_requested_information:    getBooleanValue(data.veteransService.receiveBenefits),
+      has_requested_information:    parserHelper.strToBool(data.veteransService.receiveBenefits),
       labeling:                     label
     }];
   }
@@ -184,38 +182,18 @@ function extractVeteransInfo(data) {
 }
 
 function extractVotingRegistrations(data) {
-
-  let _opted_out, _type;
-  if( data.optOut === 'I am a new voter in California'){
-    _opted_out  = 'No';
-    _type       = 'new';
-  }
-  if( data.optOut === 'I am already registered to vote in California'){
-    _opted_out  = 'No';
-    _type       = 'existing';
-  }
-  if( data.optOut === 'I am eligible to vote, but do not want to register to vote'){
-    _opted_out  = 'Yes';
-    _type       = 'existing';
-  }
-
   return [{
     application_id:     data.id,
-    is_citizen:         getBooleanValue(data.citizenStatus),
-    is_eligible:        getBooleanValue(data.eligibilityRequirements),
-    type:               _type,
-    opted_out:          getBooleanValue(_opted_out),
-    is_preregistering:  getBooleanValue(data.politicalPartyChoose.isSelected),
+    is_citizen:         parserHelper.strToBool(data.citizenStatus),
+    is_eligible:        parserHelper.strToBool(data.eligibilityRequirements),
+    type:               parserHelper.optedStrToValues(data.optOut).type,
+    opted_out:          parserHelper.strToBool(parserHelper.optedStrToValues(data.optOut).opted_out),
+    is_preregistering:  parserHelper.strToBool(data.politicalPartyChoose.isSelected),
     party:              data.politicalPartyChoose.politicalPartyChoose,
     language:           data.ballotLanguage,
-    vote_by_mail:       getBooleanValue(data.ballotByMail),
-    should_contact:     getBooleanValue(data.contactMethods.shouldContact)
+    vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
+    should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)
   }];
-}
-
-
-function getBooleanValue(val) {
-  return val === 'Yes' ? true : false;
 }
 
 module.exports = parse;

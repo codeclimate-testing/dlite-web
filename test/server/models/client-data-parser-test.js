@@ -5,6 +5,7 @@ const assert             = require('assert');
 const env                = require('../../support/env');
 const dataHelper         = require('../../support/data-helper');
 const parse              = require('../../../server/models/client-data-parser');
+const parserHelper       = require('../../../server/helpers/data-parser');
 
 describe('clientDataParser', function() {
   let data, parsedData;
@@ -16,7 +17,7 @@ describe('clientDataParser', function() {
 
   it('correctly extracts the application table data', function() {
     let applicationData = parsedData.application;
-    let dob = new Date(data.dateOfBirth.month + '/' + data.dateOfBirth.day + '/' + data.dateOfBirth.year);
+    let dob = new Date(parserHelper.createDateString(data.dateOfBirth));
     let social = data.socialSecurity.part1+'-'+data.socialSecurity.part2+'-'+data.socialSecurity.part3
     assert.equal(applicationData.id, data.id);
     assert.equal(applicationData.first_name, data.legalName.firstName);
@@ -70,13 +71,13 @@ describe('clientDataParser', function() {
   it('correctly extracts the organ donations', function() {
     let organDonations = parsedData.organ_donations[0];
     assert.equal(organDonations.application_id, data.id);
-    assert.equal(organDonations.donating_organs, evaluateBool(data.organDonation.donate));
-    assert.equal(organDonations.donating_money, evaluateBool(data.organDonation.contribute));
+    assert.equal(organDonations.donating_organs, parserHelper.strToBool(data.organDonation.donate));
+    assert.equal(organDonations.donating_money, parserHelper.strToBool(data.organDonation.contribute));
   });
 
   it('correctly extracts the card histories', function() {
     let cardHistories = parsedData.card_histories[0];
-    let _date = data.licenseAndIdHistory.month+'/'+data.licenseAndIdHistory.day+'/'+data.licenseAndIdHistory.year;
+    let _date = parserHelper.createDateString(data.licenseAndIdHistory);
     assert.equal(cardHistories.application_id, data.id);
     assert.equal(cardHistories.number, data.licenseAndIdHistory.DLIDNumber);
     assert.equal(cardHistories.issuing_entity, data.licenseAndIdHistory.issuedBy);
@@ -102,7 +103,7 @@ describe('clientDataParser', function() {
 
   it('correctly extracts the license issues', function() {
     let licenseIssues = parsedData.license_issues[0];
-    let _date = data.licenseIssues.month+'/'+data.licenseIssues.day+'/'+data.licenseIssues.year;
+    let _date = parserHelper.createDateString(data.licenseIssues);
     assert.equal(licenseIssues.application_id, data.id);
     assert.equal(licenseIssues.description, data.licenseIssues.reason);
     assert.equal(licenseIssues.date_description, _date);
@@ -115,40 +116,21 @@ describe('clientDataParser', function() {
       _label = 'add';
     }
     assert.equal(veteransInfo.application_id, data.id);
-    assert.equal(veteransInfo.has_requested_information, evaluateBool(data.veteransService.receiveBenefits));
+    assert.equal(veteransInfo.has_requested_information, parserHelper.strToBool(data.veteransService.receiveBenefits));
     assert.equal(veteransInfo.labeling, _label);
   });
 
   it('correctly extracts the voting registrations', function() {
     let votingReg = parsedData.voting_registrations[0];
-    let _opted_out, _type;
-    if( data.optOut === 'I am a new voter in California'){
-      _opted_out  = 'No';
-      _type       = 'new';
-    }
-    if( data.optOut === 'I am already registered to vote in California'){
-      _opted_out  = 'No';
-      _type       = 'existing';
-    }
-    if( data.optOut === 'I am eligible to vote, but do not want to register to vote'){
-      _opted_out  = 'Yes';
-      _type       = 'existing';
-    }
     assert.equal(votingReg.application_id, data.id);
-    assert.equal(votingReg.is_citizen, evaluateBool(data.citizenStatus));
-    assert.equal(votingReg.is_eligible, evaluateBool(data.eligibilityRequirements));
-    assert.equal(votingReg.type, _type);
-    assert.equal(votingReg.opted_out, evaluateBool(_opted_out));
-    assert.equal(votingReg.is_preregistering, evaluateBool(data.politicalPartyChoose.isSelected));
+    assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.citizenStatus));
+    assert.equal(votingReg.is_eligible, parserHelper.strToBool(data.eligibilityRequirements));
+    assert.equal(votingReg.type, parserHelper.optedStrToValues(data.optOut).type);
+    assert.equal(votingReg.opted_out, parserHelper.strToBool(parserHelper.optedStrToValues(data.optOut).opted_out));
+    assert.equal(votingReg.is_preregistering, parserHelper.strToBool(data.politicalPartyChoose.isSelected));
     assert.equal(votingReg.party, data.politicalPartyChoose.politicalPartyChoose);
     assert.equal(votingReg.language, data.ballotLanguage);
-    assert.equal(votingReg.vote_by_mail, evaluateBool(data.ballotByMail));
-    assert.equal(votingReg.should_contact, evaluateBool(data.contactMethods.shouldContact));
-
+    assert.equal(votingReg.vote_by_mail, parserHelper.strToBool(data.ballotByMail));
+    assert.equal(votingReg.should_contact, parserHelper.strToBool(data.contactMethods.shouldContact));
   });
-
 });
-
-function evaluateBool(val) {
-  return val === 'Yes' ? true : false;
-}
