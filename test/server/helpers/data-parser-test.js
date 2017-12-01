@@ -4,7 +4,6 @@ const assert      = require('assert');
 const dataParser  = require('../../../server/helpers/data-parser');
 
 describe('dataParser', function() {
-  console.log(dataParser)
 
   describe('opted-out string to values', function() {
     it('I am a new voter in California', function() {
