@@ -4,11 +4,11 @@ import React            from 'react';
 
 import HomeLink         from '../home-link.jsx';
 import LinkButton       from '../link-button.jsx';
-import ContinueButton   from '../continue-button.jsx';
+import SectionHeader    from '../section-header.jsx';
 import alicePath        from '../../helpers/alice-path';
 
 const VoterPreferencesIntroUpdated = (props) => {
-  
+
   const linkAddress = '/voting-registration/choose-party';
   const linkBack = '/voting-registration/opt-out';
   let pageTitle = 'DMV: License application - Voting registration'
@@ -17,8 +17,10 @@ const VoterPreferencesIntroUpdated = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>3 &raquo; Voting registration</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Voting registration'
+      />
 
       <div className='updating-voter-preferences'>
         <h4>Next we'd like to make sure your voter registration is up to date.</h4>

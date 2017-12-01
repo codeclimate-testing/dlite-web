@@ -14,6 +14,9 @@ Feature: Save user data
     Then I will be on the page for entering my date of birth
     And I enter my full date of birth into the form
     When I click to submit
+    Then I will be on the page for choosing real id
+    And I click yes to getting a real id
+    And I click to submit
     Then I will be on the page for entering my address
     And I enter my home address
     And I select address interstitial No

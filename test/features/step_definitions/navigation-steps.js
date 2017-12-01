@@ -62,6 +62,10 @@ module.exports = function(world) {
     navigateToPath('/apply/my-basics/date-of-birth', '.date-of-birth-form', done);
   });
 
+  world.when('I visit the real id page', function(done) {
+    navigateToPath('/apply/real-id', '.real-id-form', done);
+  });
+
   world.when('I visit physical traits page', function(done) {
     navigateToPath('/apply/my-basics/physical-traits', '.physical-traits-form', done);
   });
@@ -119,7 +123,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit app intro page', function(done){
-    navigateToPath('/apply/what-do-you-want-to-do-today', '.intro-info', done);
+    navigateToPath('/apply/get-started', '.intro-info', done);
   });
 
    world.when('I visit voter intro page', function (done) {
@@ -164,6 +168,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page for entering my date of birth', function(done) {
     assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
+  });
+
+  world.then('I will be on the page for choosing real id', function(done) {
+    assertOnPage('.real-id-form', /apply\/real-id/, done);
   });
 
   world.then('I will be on the page for entering my address', function(done) {
@@ -282,12 +290,12 @@ module.exports = function(world) {
     assertOnPage('.donate-contribution-form', /organ-donation/, done);
   });
 
-    world.then('I will be taken to date of birth page', function(done) {
+  world.then('I will be taken to date of birth page', function(done) {
     assertOnPage('.date-of-birth-form', /my-basics\/date-of-birth/, done);
   });
 
-  world.when('I will be taken to get started page', function(done){
-    navigateToPath('/apply/what-do-you-want-to-do-today', '.intro-info', done);
+  world.then('I will be on the get started page', function(done) {
+    assertOnPage('.intro-info', /get-started/, done);
   });
 
   world.then('I will be taken to medical history page', function(done){

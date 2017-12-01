@@ -11,6 +11,7 @@ import { postData }               from '../actions/api-actions';
 import {
   LegalName,
   DateOfBirth,
+  RealID,
   HomeAddress,
   MailingAddress,
   TraitsHeightWeight,
@@ -42,6 +43,7 @@ const SummaryHandler = (props) => {
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
+    <RealID realID={application.realID} key='real-id' />,
     <MailingAddress mailingAddress={application.mailingAddress} key='mailing-address' />,
     <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
     <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,

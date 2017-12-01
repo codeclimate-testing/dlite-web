@@ -4,9 +4,9 @@ import React from 'react';
 
 import { updateMailingAddress }     from "../../actions/index";
 import HomeLink                     from '../../presentations/home-link.jsx';
-import ContinueButton               from '../../presentations/continue-button.jsx';
-import HomeAddress                  from "./home-address-form-container.jsx";
+import NavigationButtons            from '../../presentations/navigation-buttons.jsx';
 import InterstitialAddress          from '../../presentations/apply/interstitial-address-form.jsx';
+import HomeAddress                  from "./home-address-form-container.jsx";
 import MailingAddress               from "./mailing-address-form-container.jsx";
 import connectForm                  from '../../helpers/connect-form';
 import navigateOnSubmit             from '../../helpers/navigate-on-submit';
@@ -15,10 +15,12 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/my-basics/physical-traits', props);
-  let onBack            = navigateOnBack('/my-basics/date-of-birth', props);
+  let onBack            = navigateOnBack('/real-id', props);
   let continueDisabled  = !(dataPresent.homeAddressSameAsMailing(props.homeAddress));
 
   if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {
+    // TODO: there are much better ways to do this ... out of the view.
+    // This should really be a state change only
     for (var prop in props.homeAddress) {
       if (props.homeAddress.hasOwnProperty(prop)) {
         props.mailingAddress[prop] = props.homeAddress[prop];
@@ -32,32 +34,28 @@ const ConnectedForm = (props) => {
     return(
       <div>
         <HomeLink />
-
-          <form onSubmit={onSubmit}>
-            <HomeAddress
-            />
-
-            <br></br>
-
-            <MailingAddress
-            />
-
-            <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
-          </form>
+        <form onSubmit={onSubmit}>
+          <HomeAddress />
+          <MailingAddress />
+          <NavigationButtons
+            onBack={onBack}
+            continueDisabled={continueDisabled}
+          />
+        </form>
       </div>
-  );
-
-}
+    );
+  }
 
   return (
     <div>
       <HomeLink />
 
       <form onSubmit={onSubmit}>
-         <HomeAddress
+         <HomeAddress/>
+         <NavigationButtons
+            onBack={onBack}
+            continueDisabled={continueDisabled}
          />
-
-         <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
        </form>
     </div>
   );

@@ -4,6 +4,7 @@ import React from 'react';
 
 import { updateMedicalHistory }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
+import SectionHeader                    from '../../presentations/section-header.jsx';
 import ContinueButton                   from '../../presentations/continue-button.jsx';
 import BackButton                       from '../../presentations/back-button.jsx';
 import MedicalCondition                 from '../../presentations/apply/medical-condition-info.jsx';
@@ -27,8 +28,10 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr></hr>
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <form onSubmit={onSubmit}>
        <MedicalCondition
@@ -52,8 +55,10 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <HomeLink />
-      <h3>2 &raquo; My History</h3>
-      <hr></hr>
+      <SectionHeader
+        number='2'
+        name='My history'
+      />
 
       <form onSubmit={onSubmit}>
         <MedicalCondition

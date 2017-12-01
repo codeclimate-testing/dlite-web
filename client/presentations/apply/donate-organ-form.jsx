@@ -3,6 +3,7 @@
 import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
+import SectionHeader           from '../section-header.jsx';
 
 const values = ['Yes', 'No']
 const DONATE_ORGAN_YES    = 'donate-organ-yes';
@@ -16,8 +17,11 @@ const MESSAGE_NO          = <div><h4>Answering <em>No</em> will not remove your 
 const DonateOrgan = (props) => {
   return (
     <div className='organ-form'>
-       <h3>3 &raquo; Organ Donation</h3>
-      <hr></hr>
+      <SectionHeader
+        number='3'
+        name='Organ donation'
+      />
+
       <h4>Do you wish to be an organ or tissue donor?</h4>
       <p><em>(optional)</em></p>
       <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>

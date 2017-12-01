@@ -4,6 +4,7 @@ import React from 'react';
 
 import { updatePhysicalTraits }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
+import SectionHeader                    from '../../presentations/section-header.jsx';
 import ContinueButton                   from '../../presentations/continue-button.jsx';
 import EyeColor                         from '../../presentations/apply/eye-color.jsx';
 import HairColor                        from '../../presentations/apply/hair-color.jsx';
@@ -22,8 +23,10 @@ const ConnectedForm = (props) => {
   return (
     <div className="physical-traits-form">
       <HomeLink />
-      <h3>1 &raquo; My Basics</h3>
-      <hr></hr>
+      <SectionHeader
+        number='1'
+        name='My basics'
+      />
 
       <form onSubmit={onSubmit}>
        <Sex

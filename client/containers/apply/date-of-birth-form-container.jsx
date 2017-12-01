@@ -10,11 +10,11 @@ import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          =   navigateOnSubmit('/my-basics/address', props);
+  let onSubmit          =   navigateOnSubmit('/real-id', props);
   let onBack            =   navigateOnBack('/my-basics/legal-name', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
   let pageTitle         =   'DMV: License application - My basics'
-  
+
   return (
     <Form
       pageTitle         = { pageTitle }

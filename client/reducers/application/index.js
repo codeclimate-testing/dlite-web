@@ -6,6 +6,7 @@ import createApplicationID                 from './create-application-id';
 import updateLegalNames                    from './update-legal-name';
 import updateHomeAddress                   from './update-home-address';
 import updateMailingAddress                from './update-mailing-address';
+import updateRealID                        from './update-real-id';
 import updateDateOfBirth                   from './update-date-of-birth';
 import updatePhysicalTraits                from './update-physical-traits';
 import updateTraitsHeightWeight            from './update-traits-height-weight';
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   homeAddress                 : updateHomeAddress,
   mailingAddress              : updateMailingAddress,
   dateOfBirth                 : updateDateOfBirth,
+  realID                      : updateRealID,
   physicalTraits              : updatePhysicalTraits,
   traitsHeightWeight          : updateTraitsHeightWeight,
   organDonation               : updateOrganDonation,

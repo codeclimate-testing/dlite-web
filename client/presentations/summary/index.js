@@ -3,6 +3,7 @@
 import Empty                       from './empty.jsx';
 import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
+import RealID                      from './real-id.jsx';
 import HomeAddress                 from './home-address.jsx';
 import MailingAddress              from './mailing-address.jsx';
 import TraitsHeightWeight          from './traits-height-weight.jsx';
@@ -27,6 +28,7 @@ export {
   Empty,
   LegalName,
   DateOfBirth,
+  RealID,
   HomeAddress,
   MailingAddress,
   TraitsHeightWeight,
