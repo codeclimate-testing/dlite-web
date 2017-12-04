@@ -35,7 +35,6 @@ module.exports = function(world) {
         console.log(err);
       })
       .open(world.url('/'))
-      //.waitForSelector('.intro-info')
       .waitForSelector('.legal-name-form')
       .click('.sections')
       .waitForSelector('.section-links')
