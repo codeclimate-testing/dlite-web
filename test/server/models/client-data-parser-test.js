@@ -7,7 +7,7 @@ const dataHelper         = require('../../support/data-helper');
 const parse              = require('../../../server/models/client-data-parser');
 const parserHelper       = require('../../../server/helpers/data-parser');
 
-describe('clientDataParser', function() {
+describe('client data parser', function() {
   let data, parsedData;
 
   beforeEach(function() {
