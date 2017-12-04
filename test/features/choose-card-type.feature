@@ -8,8 +8,8 @@ So that I am able to identify myself to interested parties
     When I visit the ID or DL selection page
     And I click on the drivers license checkbox
     When I click to submit
-    Then I will be on the get started page
-    When I click on back link
+    Then I will be on the page for choosing real id
+    When I click to go back
     Then I will be on the ID and DL selection page
 
   Scenario: Navigating to the ID/DL selector page
@@ -18,7 +18,7 @@ So that I am able to identify myself to interested parties
     And I enter my full date of birth into the form
     When I click to submit
     Then I will be on the ID and DL selection page
-    When I click on back link
+    When I click to go back
     Then I will be taken to date of birth page
 
   Scenario: Choosing an id
