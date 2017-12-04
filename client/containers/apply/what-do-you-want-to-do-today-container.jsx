@@ -2,18 +2,18 @@
 
 import React from 'react';
 
-import { updateDateOfBirth }  from "../../actions/index";
-import Form                   from "../../presentations/apply/date-of-birth-form.jsx";
+import { updateCardType }     from "../../actions/index";
+import Form                   from "../../presentations/apply/choose-card-type.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          =   navigateOnSubmit('/what-do-you-want-to-do-today', props);
-  let onBack            =   navigateOnBack('/my-basics/legal-name', props);
-  let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
-  let pageTitle         =   'DMV: License application - My basics'
+  let onSubmit          =   navigateOnSubmit('/real-id', props);
+  let onBack            =   navigateOnBack('/my-basics/date-of-birth', props);
+  let continueDisabled  =   !(dataPresent.cardType(props.cardType));
+  let pageTitle         =   'DMV'
 
   return (
     <Form
@@ -21,7 +21,6 @@ const ConnectedForm = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       onChange          = { props.onChange }
-      dateOfBirth       = { props.dateOfBirth }
       continueDisabled  = { continueDisabled }
     />
   );
@@ -29,8 +28,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth: state.application.dateOfBirth
+    cardType: state.application.cardType
   };
 }
 
-export default connectForm(mapStateToProps, updateDateOfBirth, ConnectedForm);
+export default connectForm(mapStateToProps, updateCardType, ConnectedForm);

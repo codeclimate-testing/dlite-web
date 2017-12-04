@@ -3,11 +3,11 @@
 import React from 'react';
 
 import HomeLink                 from '../home-link.jsx';
-import SelectorCollection       from '../selector-collection.jsx';
+import CheckBoxInput            from '../checkbox-input.jsx';
 import ContinueButton           from '../continue-button.jsx';
 import BackButton               from '../back-button.jsx';
 
-const VALUES = ['Yes', 'No'];
+const VALUES = ['ID', 'Driver License'];
 
 const Form = (props) => {
   document.title = props.pageTitle;
@@ -18,19 +18,23 @@ const Form = (props) => {
       <h3>1 &raquo; My Basics</h3>
       <hr></hr>
 
-      <h4>Do you plan on using your license to fly?</h4>
-      <h5>As of October 1, 2020, you will need a federally compliant driver license or ID card to fly <b>within</b> the United States.</h5>
+      <h4>What type of card would you like?</h4>
 
       <form onSubmit={ props.onSubmit } >
         <div className='row inner-bottom'>
-            <SelectorCollection
-                name='getRealID'
-                values={VALUES}
-                onChange={ props.onChange }
-                selectedValue={ props.realID.getRealID }
-            />
+          <CheckBoxInput 
+            identifier={ VALUES[0] }
+            description={ VALUES[0] }
+            onChange={ props.onChange }
+          />
 
-            <div className='unit spacer' />
+          <CheckBoxInput 
+            identifier={ VALUES[1] }
+            description={ VALUES[1] }
+            onChange={ props.onChange }
+          />
+
+          <div className='unit spacer' />
         </div>
 
         <ContinueButton disabled={props.continueDisabled} /> <BackButton onBack={props.onBack} key = 'back-button' />

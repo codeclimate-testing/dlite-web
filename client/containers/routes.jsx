@@ -9,6 +9,7 @@ import Summary                                from './summary-handler.jsx';
 
 import Intro                                  from '../presentations/apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
+import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
 import Address                                from './apply/address-form-container.jsx';
@@ -39,13 +40,14 @@ class Router extends React.Component {
   render() {
     return (
       <div className='routes'>
-        <Route path={ alicePath('/') } exact component={Intro} />
+        <Route path={ alicePath('/') } exact component={LegalName} />
+        <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
+        <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
+        <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
+        <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/get-started') } component={Intro} />
         <Route path={ alicePath('/links') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
-        <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
-        <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
-        <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/my-basics/address') } component={Address} />
         <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />

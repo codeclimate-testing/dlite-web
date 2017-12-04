@@ -28,6 +28,10 @@ const date = (props) => {
   return hasAllAttributes(props, ['month', 'day', 'year']);
 };
 
+const cardType = (props) => {
+  return hasAnyAttributes(props, ['ID', 'Driver license']);
+};
+
 const address = (props) => {
   return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing'])
 };
@@ -98,6 +102,7 @@ const realID = (props) => {
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
+    cardType(props.cardType) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
     traitsHeightWeight(props.traitsHeightWeight) ||
@@ -122,6 +127,7 @@ const application = (props) => {
 export {
   value,
   legalName,
+  cardType,
   address,
   date,
   traitsHeightWeight,

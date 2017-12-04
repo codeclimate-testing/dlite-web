@@ -11,6 +11,7 @@ import {getData, postData}        from '../actions/api-actions';
 import {
   LegalName,
   DateOfBirth,
+  CardType,
   RealID,
   HomeAddress,
   MailingAddress,
@@ -42,6 +43,7 @@ const SummaryHandler = (props) => {
 
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
+    <CardType cardType={application.cardType} key='card-type' />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
     <RealID realID={application.realID} key='real-id' />,
     <MailingAddress mailingAddress={application.mailingAddress} key='mailing-address' />,
