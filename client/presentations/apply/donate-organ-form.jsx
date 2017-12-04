@@ -3,7 +3,7 @@
 import React from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import FAQDrawer               from '../faq-drawer.jsx';
-import SectionHeader           from '../section-header.jsx';
+import Page                    from '../page.jsx';
 
 const values = ['Yes', 'No']
 const DONATE_ORGAN_YES    = 'donate-organ-yes';
@@ -13,18 +13,20 @@ const DONATE_ORGAN_NO     = 'donate-organ-no';
 const MESSAGE_NO          = <div><h4>Answering <em>No</em> will not remove your name from the registry.</h4>
                             <p>If you wish to remove your name from the registry, you must contact Donate
                             Life California. DMV can remove the pink dot from your DL/ID card but cannot remove you from the registry.</p></div>
+let pageTitle = 'DMV: License application - Organ donation'
 
 const DonateOrgan = (props) => {
   return (
-    <div className='organ-form'>
-      <SectionHeader
-        number='3'
-        name='Organ donation'
-      />
-
-      <h4>Do you wish to be an organ or tissue donor?</h4>
-      <p><em>(optional)</em></p>
-      <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>
+    <Page
+      pageTitle={pageTitle}
+      sectionNumber='3'
+      sectionName='Organ donation'
+      {...props}
+    >
+      <div className='organ-form'>
+        <h4>Do you wish to be an organ or tissue donor?</h4>
+        <p><em>(optional)</em></p>
+        <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>
         <div className='inner-bottom'>
           <SelectorCollection
             name='donate'
@@ -50,7 +52,8 @@ const DonateOrgan = (props) => {
           />
         }
         </div>
-    </div>
+      </div>
+    </Page>
   );
 };
 

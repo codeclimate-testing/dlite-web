@@ -33,7 +33,6 @@ const ConnectedForm = (props) => {
 
     return(
       <div>
-        <HomeLink />
         <form onSubmit={onSubmit}>
           <HomeAddress />
           <MailingAddress />
