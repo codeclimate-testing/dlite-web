@@ -19,30 +19,6 @@ describe('Testing application APIs for basic CRUD operations', () => {
   let application = dataHelper.fakeClientData();
   application.id = id;
 
-  const validateResponse = function(response){
-    let _data = response.application;
-
-    assert(application.id, _data.id);
-    assert(application.legalName.firstName, _data.legalName.firstName);
-    assert(application.legalName.middleName, _data.legalName.middleName);
-    assert(application.legalName.lastName, _data.legalName.lastName);
-    assert(application.dateOfBirth, _data.dateOfBirth);
-    assert(application.hairColor, _data.hairColor);
-    assert(application.eyeColor, _data.eyeColor);
-    assert(application.homeAddress.street_1, _data.homeAddress.street_1);
-    assert(application.homeAddress.street_2, _data.homeAddress.street_2);
-    assert(application.homeAddress.city, _data.homeAddress.city);
-    assert(application.homeAddress.state, _data.homeAddress.state);
-    assert(application.homeAddress.zip, _data.homeAddress.zip);
-    assert(application.mailingAddress.street_1, _data.mailingAddress.street_1);
-    assert(application.mailingAddress.street_2, _data.mailingAddress.street_2);
-    assert(application.mailingAddress.city, _data.mailingAddress.city);
-    assert(application.mailingAddress.state, _data.mailingAddress.state);
-    assert(application.mailingAddress.zip, _data.mailingAddress.zip);
-    assert(application.contactMethods.emailAddress, _data.contactMethods.emailAddress);
-    assert(application.contactMethods.phoneNumber, _data.contactMethods.phoneNumber);
-  }
-
   before((done) => {
     dbHelper
       .clearAll()
@@ -81,7 +57,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
     it('should post application info', (done) => {
       const _data = _response._getData();
-      validateResponse(_data);
+      assert.deepEqual(application, _data.application);
       done();
     });
   });
@@ -111,7 +87,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
     it('should get application info', (done) => {
       const _data = _response._getData();
-      validateResponse(_data);
+      assert.deepEqual(application, _data.application);
       done();
     });
   });

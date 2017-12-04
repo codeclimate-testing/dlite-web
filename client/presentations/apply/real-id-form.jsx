@@ -20,7 +20,7 @@ const Form = (props) => {
       {...props}
     >
       <div className='real-id-form'>
-        <h4>Do you plan on using your {'{card type}'} to fly?</h4>
+        <h4>Do you plan on using your license to fly?</h4>
         <h5>As of October 1, 2020, you will need a federally compliant driver license or ID card to fly <b>within</b> the United States.</h5>
 
         <form onSubmit={ props.onSubmit } >

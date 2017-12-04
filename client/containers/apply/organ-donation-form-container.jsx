@@ -14,8 +14,8 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   const continueDisabled = !dataPresent.organDonation(props.organDonation);
-  const onSubmit = navigateOnSubmit('/voting-registration/introduction', props);
-  const onBack   = navigateOnBack('/my-history/veterans-service', props);
+  const onSubmit         = props.dateOfBirth.age >= 16 ? navigateOnSubmit('/voting-registration/introduction', props) : navigateOnSubmit('/summary', props);
+  const onBack           = navigateOnBack('/my-history/veterans-service', props);
 
   return (
     <div>
@@ -41,7 +41,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    organDonation: state.application.organDonation
+    organDonation: state.application.organDonation,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

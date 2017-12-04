@@ -84,4 +84,34 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see an additional bullet for RealID information', function(done){
+    browser
+    .text()
+    .then((text) => {
+      assert(text.includes('Real ID birth date, name and legal presence proof'), 'real id information bullet is missing');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
+
+  world.and('I will see a section about RealID information', function(done){
+    browser
+      .waitForSelector('.legal-presence-documents')
+      .then(() => { done(); })
+      .catch((err) => {
+        throw err;
+        done(err);
+      });
+  });
+
+  world.then('I will not see a section about RealID information', function(done){
+    browser
+      .text()
+      .then((text) => {
+        assert(!text.includes('Real ID birth date, name and legal presence proof'), 'real id information section is present');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };

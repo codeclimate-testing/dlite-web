@@ -17,6 +17,7 @@ const ConnectedForm = (props) => {
         socialSecurity     = { props.socialSecurity }
         veteransService    = { props.veteransService }
         medicalHistory     = { props.medicalHistory }
+        realID             = { props.realID }
       />
     </div>
   );
@@ -27,7 +28,8 @@ function mapStateToProps(state) {
   return {
     socialSecurity:   state.application.socialSecurity,
     veteransService:  state.application.veteransService,
-    medicalHistory:  state.application.medicalHistory
+    medicalHistory:   state.application.medicalHistory,
+    realID:           state.application.realID
   };
 }
 
