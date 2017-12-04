@@ -11,7 +11,7 @@ Feature:  I want to enter my date of birth
     When I enter my full date of birth into the form
     Then I will see that the Continue button is no longer disabled
     When I click to submit
-    Then I will be on the page for choosing real id
+    Then I will be on the ID and DL selection page
     And I go to the page with my summary
     Then I will see my date of birth on that summary
 

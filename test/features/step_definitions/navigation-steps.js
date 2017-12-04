@@ -35,9 +35,10 @@ module.exports = function(world) {
         console.log(err);
       })
       .open(world.url('/'))
-      // .waitForSelector('.intro-info')
-      // .click('.sections')
-      // .waitForSelector('.section-links')
+      //.waitForSelector('.intro-info')
+      .waitForSelector('.legal-name-form')
+      .click('.sections')
+      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });
@@ -68,6 +69,10 @@ module.exports = function(world) {
 
   world.when('I visit the real id page', function(done) {
     navigateToPath('/apply/real-id', '.real-id-form', done);
+  });
+
+  world.when('I visit the get started page', function(done) {
+    navigateToPath('/apply/get-started', '.intro-info', done);
   });
 
   world.when('I visit physical traits page', function(done) {
@@ -287,7 +292,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to the names page', function(done) {
-    assertOnPage('.legal-name-form', /my-basics\/legal-name/, done);
+    assertOnPage('.legal-name-form', /apply\/my-basics\/legal-name/, done);
   });
 
   world.then('I will be taken to the previous names info page', function(done) {

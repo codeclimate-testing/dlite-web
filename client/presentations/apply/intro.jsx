@@ -5,10 +5,13 @@ import React        from 'react';
 import HomeLink                 from '../../presentations/home-link.jsx';
 import LinkButton               from '../../presentations/link-button.jsx';
 import alicePath                from '../../helpers/alice-path';
+import BackButton               from '../back-button.jsx';
+import navigateOnBack         from '../../helpers/navigate-on-back';
 
 const Intro = (props) => {
+  const linkAddress             = '/my-basics/legal-name';
+  let onBack                    = navigateOnBack('/real-id', props);
 
-  const linkAddress = '/my-basics/legal-name';
   return (
     <div>
       <HomeLink />
@@ -29,6 +32,7 @@ const Intro = (props) => {
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
 
+        <BackButton onBack={onBack} key = 'back-button' />
         <LinkButton
           to={linkAddress}
           linkText='Get started'

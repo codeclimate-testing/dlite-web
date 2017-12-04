@@ -7,14 +7,14 @@ module.exports = function(world) {
 
   world.and('I click on the drivers license checkbox', function(done) {
     browser
-      .click('input[type="checkbox" id="driverLicense"]')
+      .click('input[type="checkbox"][id="driverLicense"]')
       .then(() => { done(); })
       .catch(done)
   });
 
   world.and('I click on the ID checkbox', function(done) {
     browser
-      .click('input[type="checkbox" id="ID"]')
+      .click('input[type="checkbox"][id="ID"]')
       .then(() => { done(); })
       .catch(done);
   });
