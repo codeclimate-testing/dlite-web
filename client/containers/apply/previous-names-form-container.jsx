@@ -12,7 +12,6 @@ const ConnectedForm = (props) => {
   let value = props.hasPreviousNames;
   let continueDisabled  = !dataPresent.value(value);
   let onSubmit          = navigateOnSubmit('/about-me/enter-previous-names', props);
-  let pageTitle         = 'About me: Previous Names';
 
   if(value === 'No') {
     onSubmit = navigateOnSubmit('/my-history/license-issues', props);
@@ -20,7 +19,6 @@ const ConnectedForm = (props) => {
 
   return (
     <Form
-      pageTitle         = { pageTitle }
       onSubmit          = { onSubmit }
       onChange          = { props.onChange }
       selectedValue     = { value }

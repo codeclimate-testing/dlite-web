@@ -3,12 +3,19 @@
 import React from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
+import Page                    from '../../presentations/page.jsx';
 
-const VALUES = ['Yes', 'No'];
+const VALUES   = ['Yes', 'No'];
+let pageTitle  = "DMV: License application - My history";
 
 const LicenseIssues = (props) => {
-  document.title = props.pageTitle;
   return (
+    <Page
+      pageTitle={pageTitle}
+      sectionNumber='2'
+      sectionName='My history'
+      {...props}
+    >
     <div className='license-issues-form'>
       <h4>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h4>
       <div className='inner-bottom'>
@@ -20,6 +27,7 @@ const LicenseIssues = (props) => {
           />
         </div>
       </div>
+    </Page>
   );
 };
 

@@ -12,6 +12,7 @@ Feature: Interaction pattern for the traits section
     And I select a hair color
     Then I will see that the Continue button is no longer disabled
     When I click to submit
+    Then I will be on the page for entering my height and weight
     And I go to the page with my summary
     Then I will see my sex in the summary
     Then I will see my eye color in the summary

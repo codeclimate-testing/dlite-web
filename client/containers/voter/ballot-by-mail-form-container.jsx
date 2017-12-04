@@ -14,11 +14,9 @@ const ConnectedForm = (props) => {
   const onSubmit = navigateOnSubmit('/voting-registration/contact-methods', props);
   const onBack = navigateOnBack('/voting-registration/language', props);
   let continueDisabled = !(dataPresent.value(props.ballotByMail));
-  let pageTitle         =   'DMV: License application - Voting registration'
 
   return (
     <Form
-      pageTitle         = {pageTitle}
       onSubmit          = {onSubmit}
       onBack            = {onBack}
       onChange          = {props.onChange}

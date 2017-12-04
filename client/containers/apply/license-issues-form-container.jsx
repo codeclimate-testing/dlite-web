@@ -5,7 +5,6 @@ import React from 'react';
 import { updateLicenseIssues }             from "../../actions/index";
 import HomeLink                            from '../../presentations/home-link.jsx';
 import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
-import SectionHeader                       from '../../presentations/section-header.jsx';
 import LicenseIssues                       from "../../presentations/apply/license-issues-form.jsx";
 import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
@@ -18,7 +17,6 @@ const ConnectedForm = (props) => {
   let showLicenseIssues                 = false;
   let onSubmit                          = navigateOnSubmit('/my-history/veterans-service', props);
   let onBack                            = navigateOnBack('/my-history/names', props);
-  let pageTitle                         = "DMV: License application - My history";
 
   if (props.licenseIssues.isSuspended === 'Yes') {
     showLicenseIssues  = false;
@@ -26,15 +24,8 @@ const ConnectedForm = (props) => {
 
     return (
       <div>
-        <HomeLink />
-        <SectionHeader
-          number='2'
-          name='My history'
-        />
-
         <form onSubmit={onSubmit}>
           <LicenseIssues
-            pageTitle      ={pageTitle}
             onChange       ={props.onChange}
             selectedValue  ={props.licenseIssues.isSuspended}
           />
@@ -53,15 +44,8 @@ const ConnectedForm = (props) => {
 
   return (
     <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
       <form onSubmit={onSubmit}>
         <LicenseIssues
-          pageTitle     ={pageTitle}
           onChange      ={props.onChange}
           selectedValue ={props.licenseIssues.isSuspended}
         />

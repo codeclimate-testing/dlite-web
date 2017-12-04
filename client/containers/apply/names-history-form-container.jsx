@@ -4,8 +4,7 @@ import React from 'react';
 
 import { updateNamesHistory }           from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import ContinueButton                   from '../../presentations/continue-button.jsx';
-import SectionHeader                    from '../../presentations/section-header.jsx';
+import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import UsedPreviousNames                from '../../presentations/apply/used-previous-names.jsx';
 import EnterPreviousNames               from '../../presentations/apply/enter-previous-names.jsx';
 import connectForm                      from '../../helpers/connect-form';
@@ -18,7 +17,6 @@ const ConnectedForm = (props) => {
   let showEnterPreviousNames = false
   let onSubmit               = navigateOnSubmit('/my-history/license-issues', props);
   let onBack                 = navigateOnBack('/my-history/license-and-id', props);
-  let pageTitle              = "DMV: License application - My history";
 
   if(props.namesHistory.hasUsedPreviousNames === 'Yes') {
     showEnterPreviousNames = true;
@@ -26,15 +24,8 @@ const ConnectedForm = (props) => {
 
   return (
     <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
       <form onSubmit={onSubmit}>
        <UsedPreviousNames
-          pageTitle      ={pageTitle}
           onChange      = {props.onChange}
           selectedValue = {props.namesHistory.hasUsedPreviousNames}
         />
@@ -43,9 +34,10 @@ const ConnectedForm = (props) => {
           onChange      = {props.onChange}
           namesHistory  = {props.namesHistory}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );
@@ -53,21 +45,15 @@ const ConnectedForm = (props) => {
 
   return (
     <div>
-      <HomeLink />
-      <SectionHeader
-        number='2'
-        name='My history'
-      />
-
       <form onSubmit={onSubmit}>
         <UsedPreviousNames
-          pageTitle      ={pageTitle}
           onChange      = {props.onChange}
           selectedValue = {props.namesHistory.hasUsedPreviousNames}
         />
-        <ContinueButton disabled={continueDisabled} />
-        <br></br>
-        <button type="button" onClick={onBack}>Back</button>
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );

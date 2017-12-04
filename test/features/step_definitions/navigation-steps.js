@@ -246,10 +246,6 @@ module.exports = function(world) {
     assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
   });
 
-  world.then('I will be on the page to choose if I ever had previous names', function(done) {
-    assertOnPage('.previous-names', /my-history\/names/, done);
-  });
-
   world.then('I will be on the page with my summary', function(done) {
     assertOnPage('.summary', /apply\/summary/, done);
   });
@@ -294,12 +290,8 @@ module.exports = function(world) {
     assertOnPage('.legal-name-form', /apply\/my-basics\/legal-name/, done);
   });
 
-  world.then('I will be taken to the previous names info page', function(done) {
-    assertOnPage('.previous-names-info-form', /apply\/about-me\/enter-previous-names/, done);
-  });
-
   world.then('I will be taken to previous names page', function(done) {
-    assertOnPage('.previous-name-form', /about-me\/previous-names/, done);
+    assertOnPage('.previous-names', /my-history\/names/, done);
   });
 
   world.then('I will be taken to license and id history page', function(done) {

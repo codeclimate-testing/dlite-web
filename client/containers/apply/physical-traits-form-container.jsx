@@ -4,8 +4,7 @@ import React from 'react';
 
 import { updatePhysicalTraits }         from '../../actions/index';
 import HomeLink                         from '../../presentations/home-link.jsx';
-import SectionHeader                    from '../../presentations/section-header.jsx';
-import ContinueButton                   from '../../presentations/continue-button.jsx';
+import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
 import EyeColor                         from '../../presentations/apply/eye-color.jsx';
 import HairColor                        from '../../presentations/apply/hair-color.jsx';
 import Sex                              from '../../presentations/apply/sex.jsx';
@@ -18,19 +17,11 @@ const ConnectedForm = (props) => {
   let continueDisabled  = !(dataPresent.physicalTraits(props.physicalTraits))
   let onSubmit          = navigateOnSubmit('/my-basics/traits-height-weight', props);
   let onBack            = navigateOnSubmit('/my-basics/address', props);
-  let pageTitle         = "DMV: License application - My basics";
 
   return (
     <div className="physical-traits-form">
-      <HomeLink />
-      <SectionHeader
-        number='1'
-        name='My basics'
-      />
-
       <form onSubmit={onSubmit}>
        <Sex
-          pageTitle     = {pageTitle}
           onChange      = {props.onChange}
           selectedValue = {props.physicalTraits.sex}
         />
@@ -45,7 +36,10 @@ const ConnectedForm = (props) => {
           selectedValue = {props.physicalTraits.hairColor}
           onBack        = {onBack}
         />
-        <ContinueButton disabled={continueDisabled} /> <button type="button" onClick={onBack}>Back</button> 
+        <NavigationButtons
+          continueDisabled={continueDisabled}
+          onBack={onBack}
+        />
       </form>
     </div>
   );

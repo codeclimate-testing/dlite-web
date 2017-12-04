@@ -21,15 +21,14 @@ So that I am able to identify myself to interested parties
     When I click to go back
     Then I will be taken to date of birth page
 
-  Scenario: Choosing an id
+  Scenario: Choosing an ID
     Given I go to the new online DL application
     And I visit the ID or DL selection page
     Then I will see that the Continue button is disabled
     When I click on the ID checkbox
     Then I will see that the Continue button is enabled
-    When I click to submit
-    Then I will be on the page for choosing real id
-    When I go to the page with my summary
+    And I click to submit
+    Then I go to the page with my summary
     Then I will see that my ID card type has been saved
 
   Scenario: Choosing a DL
@@ -38,8 +37,6 @@ So that I am able to identify myself to interested parties
     Then I will see that the Continue button is disabled
     When I click on the drivers license checkbox
     Then I will see that the Continue button is enabled
-    When I click to submit
-    Then I will be on the page for choosing real id
     When I go to the page with my summary
     Then I will see that my DL card type has been saved
 
@@ -50,7 +47,7 @@ So that I am able to identify myself to interested parties
     When I click on the drivers license checkbox
     And I click on the ID checkbox
     Then I will see that the Continue button is enabled
-    When I click to submit
+    And I click to submit
     Then I will be on the page for choosing real id
     When I go to the page with my summary
     Then I will see that my card types have been saved

@@ -11,11 +11,9 @@ import * as dataPresent        from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let continueDisabled  = false;
-  let pageTitle   = 'DMV: License application - My basics';
 
   return (
     <Form
-      pageTitle         = { pageTitle }
       onChange          = { props.onChange }
       homeAddress       = { props.homeAddress }
       continueDisabled  = { continueDisabled }

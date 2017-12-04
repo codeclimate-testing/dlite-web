@@ -6,8 +6,7 @@ import { updateVeteranService }   from '../../actions/index';
 import VeteransQuestionnaire      from '../../presentations/apply/veterans-questionnaire-form.jsx';
 import VeteransBenefits           from '../../presentations/apply/veterans-benefits-form.jsx';
 import VeteransIdentifier         from '../../presentations/apply/veterans-identifier-form.jsx';
-import ContinueButton             from '../../presentations/continue-button.jsx';
-import BackButton                 from '../../presentations/back-button.jsx';
+import NavigationButtons          from '../../presentations/navigation-buttons.jsx';
 import connectForm                from '../../helpers/connect-form';
 import navigateOnSubmit           from '../../helpers/navigate-on-submit';
 import navigateOnBack             from '../../helpers/navigate-on-back';
@@ -17,13 +16,11 @@ const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/organ-donation', props);
   let onBack            = navigateOnBack('/my-history/license-issues', props);
   let continueDisabled  = !(dataPresent.veteransService(props.veteransService));
-  let pageTitle         = "DMV: License application - My History";
 
   let content = [];
 
   content.push(
     <VeteransQuestionnaire
-      pageTitle     = { pageTitle }
       onChange      = { props.onChange }
       selectedValue = { props.veteransService.isVeteran }
       key           = 'veterans-service-questionnaire'
@@ -52,8 +49,13 @@ const ConnectedForm = (props) => {
     continueDisabled  = false;
   }
 
-  content.push(<ContinueButton disabled={continueDisabled} key = 'continue-button' />);
-  content.push(<BackButton onBack={onBack} key = 'back-button' />);
+  content.push(
+    <NavigationButtons
+     continueDisabled={continueDisabled}
+     onBack={onBack}
+     key='navigation-buttons'
+    />
+  );
 
 
   return (

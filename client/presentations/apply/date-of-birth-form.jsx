@@ -7,9 +7,12 @@ import TextInput        from '../text-input.jsx';
 import NumberInput      from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
+let pageTitle =  'DMV: License application - My basics'
+
 const Form = (props) => {
   return (
     <Page
+      pageTitle={pageTitle}
       sectionNumber='1'
       sectionName='My basics'
       {...props}

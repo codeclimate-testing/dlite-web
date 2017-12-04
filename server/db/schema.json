@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 4,
-    "constraints": 5,
-    "tables": 6,
-    "columns": 31
+    "sequences": 11,
+    "constraints": 12,
+    "tables": 13,
+    "columns": 71
   },
   "tables": {
     "addresses": {
@@ -179,6 +179,112 @@
           "is_nullable": true,
           "data_type": "timestamp with time zone",
           "col_description": null
+        },
+        "suffix_name": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "suffix_name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "height_feet": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "height_feet",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "height_inches": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "height_inches",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "weight": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "weight",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "sex": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "sex",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "social_security_number": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "social_security_number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "card_histories": {
+      "table_schema": "public",
+      "table_name": "card_histories",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "id",
+          "column_default": "nextval('card_histories_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "number": {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "issuing_entity": {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "issuing_entity",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "date_description": {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "date_description",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
         }
       }
     },
@@ -284,6 +390,126 @@
         }
       }
     },
+    "license_issues": {
+      "table_schema": "public",
+      "table_name": "license_issues",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "license_issues",
+          "column_name": "id",
+          "column_default": "nextval('license_issues_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "license_issues",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "description": {
+          "table_schema": "public",
+          "table_name": "license_issues",
+          "column_name": "description",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "text",
+          "col_description": null
+        },
+        "date_description": {
+          "table_schema": "public",
+          "table_name": "license_issues",
+          "column_name": "date_description",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "medical_histories": {
+      "table_schema": "public",
+      "table_name": "medical_histories",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "medical_histories",
+          "column_name": "id",
+          "column_default": "nextval('medical_histories_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "medical_histories",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "description": {
+          "table_schema": "public",
+          "table_name": "medical_histories",
+          "column_name": "description",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "text",
+          "col_description": null
+        }
+      }
+    },
+    "organ_donations": {
+      "table_schema": "public",
+      "table_name": "organ_donations",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "organ_donations",
+          "column_name": "id",
+          "column_default": "nextval('organ_donations_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "organ_donations",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "donating_organs": {
+          "table_schema": "public",
+          "table_name": "organ_donations",
+          "column_name": "donating_organs",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "donating_money": {
+          "table_schema": "public",
+          "table_name": "organ_donations",
+          "column_name": "donating_money",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        }
+      }
+    },
     "phone_numbers": {
       "table_schema": "public",
       "table_name": "phone_numbers",
@@ -326,6 +552,189 @@
           "col_description": null
         }
       }
+    },
+    "previous_names": {
+      "table_schema": "public",
+      "table_name": "previous_names",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "previous_names",
+          "column_name": "id",
+          "column_default": "nextval('previous_names_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "previous_names",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "name": {
+          "table_schema": "public",
+          "table_name": "previous_names",
+          "column_name": "name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "veterans_info": {
+      "table_schema": "public",
+      "table_name": "veterans_info",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "id",
+          "column_default": "nextval('veterans_info_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "has_requested_information": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "has_requested_information",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "labeling": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "labeling",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "voting_registrations": {
+      "table_schema": "public",
+      "table_name": "voting_registrations",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "id",
+          "column_default": "nextval('voting_registrations_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "is_citizen": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "is_citizen",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "is_eligible": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "is_eligible",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "type": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "opted_out": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "opted_out",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "is_preregistering": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "is_preregistering",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "party": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "party",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "language": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "language",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "vote_by_main": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "vote_by_main",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "share_contact": {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "share_contact",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        }
+      }
     }
   },
   "constraints": {
@@ -357,6 +766,22 @@
           "check_clause": null,
           "referenced_schema": "public",
           "referenced_table": "applications",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "card_histories": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "card_histories",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "card_histories_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "card_histories",
           "referenced_column": "id"
         }
       ]
@@ -393,6 +818,54 @@
         }
       ]
     },
+    "license_issues": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "license_issues",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "license_issues_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "license_issues",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "medical_histories": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "medical_histories",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "medical_histories_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "medical_histories",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "organ_donations": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "organ_donations",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "organ_donations_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "organ_donations",
+          "referenced_column": "id"
+        }
+      ]
+    },
     "phone_numbers": {
       "id": [
         {
@@ -408,15 +881,74 @@
           "referenced_column": "id"
         }
       ]
+    },
+    "previous_names": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "previous_names",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "previous_names_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "previous_names",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "veterans_info": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "veterans_info_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "veterans_info",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "voting_registrations": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "voting_registrations",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "voting_registrations_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "voting_registrations",
+          "referenced_column": "id"
+        }
+      ]
     }
   },
   "sequences": {
     "addresses": {
       "id": {
         "table_schema": "public",
-        "table_name": "phone_numbers",
+        "table_name": "voting_registrations",
         "column_name": "id",
-        "sequence_name": "phone_numbers_id_seq",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "card_histories": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"
@@ -425,9 +957,9 @@
     "emails": {
       "id": {
         "table_schema": "public",
-        "table_name": "phone_numbers",
+        "table_name": "voting_registrations",
         "column_name": "id",
-        "sequence_name": "phone_numbers_id_seq",
+        "sequence_name": "voting_registrations_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"
@@ -436,9 +968,42 @@
     "knex_migrations": {
       "id": {
         "table_schema": "public",
-        "table_name": "phone_numbers",
+        "table_name": "voting_registrations",
         "column_name": "id",
-        "sequence_name": "phone_numbers_id_seq",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "license_issues": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "medical_histories": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "organ_donations": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"
@@ -447,9 +1012,42 @@
     "phone_numbers": {
       "id": {
         "table_schema": "public",
-        "table_name": "phone_numbers",
+        "table_name": "voting_registrations",
         "column_name": "id",
-        "sequence_name": "phone_numbers_id_seq",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "previous_names": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "veterans_info": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "voting_registrations": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"

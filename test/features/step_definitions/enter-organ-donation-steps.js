@@ -176,4 +176,46 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I am under 16 years old', function(done) {
+     let d = new Date();
+     let y = d.getFullYear();
+     let diff = (y - 15);
+     let youth = diff.toString();
+    browser
+      .type('#month', '11')
+      .type('#day', '01')
+      .type('#year', youth)
+      .then(() => { done(); })
+      .catch(done);
+  });
+  
+  world.when('I am over 16 years old', function(done) {
+     let d = new Date();
+     let y = d.getFullYear();
+     let diff = (y - 21);
+     let notyouth = diff.toString();
+    browser
+      .type('#month', '10')
+      .type('#day', '21')
+      .type('#year', notyouth)
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('Today I turned 16 years old', function(done) {
+     let d = new Date();
+     let y = d.getFullYear().toString();
+     let mm = (d.getMonth() + 1).toString();
+     let dd = d.getDay().toString();
+     let diff = (y - 16);
+     let sixteen = diff.toString();
+    browser
+      .type('#month', mm)
+      .type('#day', dd)
+      .type('#year', sixteen)
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
+

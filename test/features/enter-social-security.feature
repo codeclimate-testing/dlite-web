@@ -1,4 +1,4 @@
-Feature:  I want to enter my name
+Feature:  I want to enter my social security number
   As a DMV customer
   I want to save my social security in my new online DL application
   So that my id or license can be used for employment verification
