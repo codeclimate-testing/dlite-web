@@ -7,13 +7,11 @@ import CheckBoxInput            from '../checkbox-input.jsx';
 import ContinueButton           from '../continue-button.jsx';
 import BackButton               from '../back-button.jsx';
 
-const VALUES = ['ID', 'Driver License'];
-
 const Form = (props) => {
   document.title = props.pageTitle;
 
   return (
-    <div className='real-id-form'>
+    <div className='choose-card-form'>
       <HomeLink />
       <h3>1 &raquo; My Basics</h3>
       <hr></hr>
@@ -23,15 +21,15 @@ const Form = (props) => {
       <form onSubmit={ props.onSubmit } >
         <div className='row inner-bottom'>
           <CheckBoxInput 
-            identifier={ VALUES[0] }
-            description={ VALUES[0] }
+            identifier={ 'ID' }
+            description={ 'ID' }
             onChange={ props.onChange }
             checked={ props.cardType.ID }
           />
 
           <CheckBoxInput 
             identifier='driverLicense'
-            description={ VALUES[1] }
+            description={ 'Driver License' }
             onChange={ props.onChange }
             checked={ props.cardType.driverLicense }
           />

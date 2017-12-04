@@ -13,8 +13,8 @@ Then I will be on the get started page
 
 Scenario: Navigating to and from the real id page
 Given I go to the new online DL application
-When I visit the date of birth page
-When I enter my full date of birth into the form
+And I visit the ID or DL selection page
+When I click on the ID checkbox
 And I click to submit
 Then I will be on the page for choosing real id
 When I click yes to getting a real id

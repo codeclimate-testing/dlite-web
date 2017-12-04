@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { updateCardType }     from "../../actions/index";
-import Form                   from "../../presentations/apply/choose-card-type.jsx";
+import Form                   from "../../presentations/apply/choose-card-form.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';

@@ -35,9 +35,9 @@ module.exports = function(world) {
         console.log(err);
       })
       .open(world.url('/'))
-      .waitForSelector('.intro-info')
-      .click('.sections')
-      .waitForSelector('.section-links')
+      // .waitForSelector('.intro-info')
+      // .click('.sections')
+      // .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });
@@ -60,6 +60,10 @@ module.exports = function(world) {
 
   world.when('I visit the date of birth page', function(done) {
     navigateToPath('/apply/my-basics/date-of-birth', '.date-of-birth-form', done);
+  });
+
+  world.when('I visit the ID or DL selection page', function(done) {
+    navigateToPath('/apply/what-do-you-want-to-do-today', '.choose-card-form', done);
   });
 
   world.when('I visit the real id page', function(done) {
@@ -169,6 +173,10 @@ module.exports = function(world) {
   world.then('I will be on the page for entering my date of birth', function(done) {
     assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
   });
+
+  world.then('I will be on the ID and DL selection page', function(done) {
+    assertOnPage('.choose-card-form', /what-do-you-want-to-do-today/, done);
+  })
 
   world.then('I will be on the page for choosing real id', function(done) {
     assertOnPage('.real-id-form', /apply\/real-id/, done);
