@@ -26,12 +26,14 @@ const Form = (props) => {
             identifier={ VALUES[0] }
             description={ VALUES[0] }
             onChange={ props.onChange }
+            checked={ props.cardType.ID }
           />
 
           <CheckBoxInput 
-            identifier={ VALUES[1] }
+            identifier='driverLicense'
             description={ VALUES[1] }
             onChange={ props.onChange }
+            checked={ props.cardType.driverLicense }
           />
 
           <div className='unit spacer' />

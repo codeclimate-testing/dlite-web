@@ -29,7 +29,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return hasAnyAttributes(props, ['ID', 'Driver license']);
+  return (props && (props.driverLicense === true || props.ID === true))
 };
 
 const address = (props) => {

@@ -21,6 +21,7 @@ const ConnectedForm = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       onChange          = { props.onChange }
+      cardType          = { props.cardType }
       continueDisabled  = { continueDisabled }
     />
   );
