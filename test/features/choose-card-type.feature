@@ -29,7 +29,7 @@ So that I am able to identify myself to interested parties
     Then I will see that the Continue button is enabled
     When I click to submit
     Then I will be on the page for choosing real id
-    And I go to the page with my summary
+    When I go to the page with my summary
     Then I will see that my ID card type has been saved
 
   Scenario: Choosing a DL
@@ -52,5 +52,5 @@ So that I am able to identify myself to interested parties
     Then I will see that the Continue button is enabled
     When I click to submit
     Then I will be on the page for choosing real id
-    And I go to the page with my summary
+    Then I go to the page with my summary
     Then I will see that my card types have been saved
