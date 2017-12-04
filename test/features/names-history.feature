@@ -9,7 +9,9 @@ Feature: Enter my previously used Names
     And I will see that the Continue button is disabled
     When I select previously used names Yes
     And I enter my previously used names
+    Then I will see that the Continue button is no longer disabled
     When I click to submit
+    Then I will be taken to the license issues page
     And I go to the page with my summary
     Then I will see Yes for having a previous name
 
@@ -20,6 +22,7 @@ Feature: Enter my previously used Names
     When I select previously used names No
     Then I will see that the Continue button is no longer disabled
     When I click to submit
+    Then I will be taken to the license issues page
     And I go to the page with my summary
     Then I will see No for having a previous name
 

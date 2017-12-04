@@ -33,4 +33,4 @@ Feature: Select and enter my revoked, refused or suspended license info
     Given I go to the new online DL application page
     When I visit the license issues page
     When I click to go back
-    Then I will be on the page to choose if I ever had previous names
+    Then I will be taken to previous names page

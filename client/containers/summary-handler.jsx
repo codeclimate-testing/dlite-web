@@ -6,7 +6,7 @@ import { Link }                   from 'react-router-dom';
 
 import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
-import {getData, postData}        from '../actions/api-actions';
+import { postData }               from '../actions/api-actions';
 
 import {
   LegalName,
@@ -61,11 +61,7 @@ const SummaryHandler = (props) => {
     <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
     <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
     <OptOut optOut={application.optOut} key='opt-out' />,
-    <Empty {...application} key='empty' />,
-
-    <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
-      <ContinueButton disabled={props.continueDisabled} key="submit"/>
-    </Link>
+    <Empty {...application} key='empty' />
   ];
 
   contents = contents.reduce((summaries, item) => {
@@ -73,33 +69,30 @@ const SummaryHandler = (props) => {
     return summaries;
   }, []);
 
-  const loadData  = () => {
-    props.dispatch(getData(application.id));
-  };
-
   const saveData = () => {
-    let data = application;
+    const data = application;
     props.dispatch(postData(data));
   }
 
-  if(APP_ENV === 'development' || APP_ENV === 'test') {
+  if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
     contents.push(
-      <div key='save-reload-data'>
-        <div className=' unit relative'>
-          <button id='reloadData' key='reload-data' onClick={loadData}> Reload </button>
-        </div>
-        <div className='unit spacer'></div>
-        <div className=' unit relative'>
-          <button id='saveData' key='save-data' onClick={saveData}> Save </button>
-        </div>
-      </div>
+      <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
+        <input type='submit' id='saveData' key='save-and-continue' onClick={saveData} value='Save and Continue'/>
+    </Link>
+    );
+  }
+  else{
+    contents.push(
+      <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
+        <ContinueButton disabled={props.continueDisabled} key="submit"/>
+      </Link>
     );
   }
 
   return (
     <div className='summary'>
       <HomeLink />
-      { contents }
+        { contents }
     </div>
   );
 }

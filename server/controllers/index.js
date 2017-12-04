@@ -24,8 +24,8 @@ function createApplication(req, res) {
 function getApplication(req, res) {
   getApp(req.params.id)
   .then(function(data) {
-    let parsedData = serverParser(data);
-    res.send(parsedData);
+    let _parsedData = serverParser(data);
+    res.send(_parsedData);
   }).catch(function(err) {
     res.status(err.statusCode || 500).json(err);
   });

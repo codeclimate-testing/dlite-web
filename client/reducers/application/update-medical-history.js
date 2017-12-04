@@ -5,7 +5,7 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    medicalCondition: '',
+    hasMedicalCondition: '',
     medicalInfo: ''
   };
 }
