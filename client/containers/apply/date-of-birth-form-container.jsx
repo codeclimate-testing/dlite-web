@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
 
   props.dateOfBirth.age = calculateAge(props.dateOfBirth.year, props.dateOfBirth.month, props.dateOfBirth.day)
-  console.log(props.dateOfBirth.age);
+
   return (
     <Form
       onSubmit          = { onSubmit }
