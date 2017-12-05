@@ -38,7 +38,7 @@ const RequiredDocuments = (props) => {
   }
   if(props.licenseHistory === 'No' && props.age < 18 && props.age >= 15.5) {
     bulletList.push(<li key='new-driver'>New driver requirements</li>);
-    if(props.age > 17.5) {
+    if(props.age < 17.5) {
       bulletList.push(<li key='knowledge-test'>You will need to take a knowledge test</li>);
     }
   }
@@ -122,7 +122,7 @@ const RequiredDocuments = (props) => {
         <p>In order to get a provisional driving permit we will need to see either a <a href={ newDriverRequirements } target='_blank'><b>Certificate of Completion</b> or a <b>Certificate of Enrollment</b></a> from a California Driver Education (classroom), Driver Training (road), or an Integrated Driver Education and Training program.</p> 
       </div>
     );
-    if(props.age > 17.5) {
+    if(props.age < 17.5) {
       documentList.push(
         <div key="knowledge-test">
           <h4 className="knowledge-test">You will need to take a knowledge test</h4>
