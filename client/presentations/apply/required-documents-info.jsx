@@ -19,10 +19,12 @@ const RequiredDocuments = (props) => {
   let documentList = [];
 
   if(props.realID.getRealID === 'Yes') {
-    bulletList.push(<li key='legal-presence'>Real ID birth date, name and legal presence proof</li>);
+    bulletList.push(<li key='real-id'>Real ID birth date, name and legal presence proof</li>);
+  } else {
+    bulletList.push(<li key='legal-presence'>Legal presence</li>);
   }
   if(props.socialSecurity.hasSocialSecurity === 'Yes') {
-    bulletList.push(<li key='medical-information' >Proof of Social Security Number</li>);
+    bulletList.push(<li key='social-security' >Proof of Social Security Number</li>);
   }
   bulletList.push(<li key='ca-residency' >California residency</li>);
   if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes') {
@@ -33,37 +35,38 @@ const RequiredDocuments = (props) => {
   }
 
   if(props.realID.getRealID === 'Yes'){
-  documentList.push(
-    <div key='legal-presence-documents'>
-      <h4 className="legal-presence-documents">Real ID birth date, name and legal presence proof</h4>
-      <p>
-      We need to verify your date of birth and what we call your “legal presence”.
-      Documents should use your true, full name that you use today or we will need
-      additional documents proving your true, full name will be required.
-      See our <a target="_blank" href={ realIDInformationPage }>Real ID information page</a> for
-      details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card.
-      </p>
-      <p>From that list we will need either:</p>
-      <ul className='bullet-list'>
-        <li>A single document that proves both your date of birth and legal presence.</li>
-        <li>Or one document for your date of birth and one document for your legal presence.</li>
-      </ul>
-      <p>
-      If you were married or divorced, adopted or have changed your name through the courts, please
-      make sure to also bring <a target="_blank" href={ caLicenseRequirements }>proof of the true, full name</a>.
-      </p>
-    </div>
-  );
-}
-
-  documentList.push(
-    <div key='california-residency-documents'>
-      <h4 className="california-residency-documents">California residency</h4>
-      <p>You will also need to bring in a document that proves that you live in California.
-      Please review our <a target="_blank" href={ caResidencyList }>list of acceptable California residency documents</a>.
-      </p>
-    </div>
-  );
+    documentList.push(
+      <div key='real-id-documents'>
+        <h4 className="real-id-documents">Real ID birth date, name and legal presence proof</h4>
+        <p>
+        We need to verify your date of birth and what we call your “legal presence”.
+        Documents should use your true, full name that you use today or we will need
+        additional documents proving your true, full name will be required.
+        See our <a target="_blank" href={ realIDInformationPage }>Real ID information page</a> for
+        details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card.
+        </p>
+        <p>From that list we will need either:</p>
+        <ul className='bullet-list'>
+          <li>A single document that proves both your date of birth and legal presence.</li>
+          <li>Or one document for your date of birth and one document for your legal presence.</li>
+        </ul>
+        <p>
+        If you were married or divorced, adopted or have changed your name through the courts, please
+        make sure to also bring <a target="_blank" href={ caLicenseRequirements }>proof of the true, full name</a>.
+        </p>
+      </div>
+    );
+  } else {
+    documentList.push(
+      <div key='legal-presence-documents'>
+        <h4 className="legal-presence-documents">Legal presence</h4>
+        <p>All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence.
+        Please refer to our <a target="_blank" href={ ab60Checklist }>AB 60 checklist tool</a> and
+        our <a target="_blank" href={ legalPresenceList }>date of birth and legal presence list</a>.
+        </p>
+      </div>
+    );
+  }
 
   if(props.socialSecurity.hasSocialSecurity === 'Yes'){
     documentList.push(
@@ -74,6 +77,15 @@ const RequiredDocuments = (props) => {
       </div>
     );
   }
+
+  documentList.push(
+    <div key='california-residency-documents'>
+      <h4 className="california-residency-documents">California residency</h4>
+      <p>You will also need to bring in a document that proves that you live in California.
+      Please review our <a target="_blank" href={ caResidencyList }>list of acceptable California residency documents</a>.
+      </p>
+    </div>
+  );
 
   if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes'){
     documentList.push(

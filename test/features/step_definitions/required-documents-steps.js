@@ -97,7 +97,7 @@ module.exports = function (world) {
 
   world.and('I will see a section about RealID information', function(done){
     browser
-      .waitForSelector('.legal-presence-documents')
+      .waitForSelector('.real-id-documents')
       .then(() => { done(); })
       .catch((err) => {
         throw err;
