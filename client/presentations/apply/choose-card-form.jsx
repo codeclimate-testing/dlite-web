@@ -23,14 +23,14 @@ const Form = (props) => {
           <div className='row inner-bottom'>
             <CheckBoxInput 
               identifier={ 'ID' }
-              description={ 'ID' }
+              description='ID'
               onChange={ props.onChange }
               checked={ props.cardType.ID }
             />
 
             <CheckBoxInput 
               identifier='driverLicense'
-              description={ 'Driver License' }
+              description='Driver License'
               onChange={ props.onChange }
               checked={ props.cardType.driverLicense }
             />

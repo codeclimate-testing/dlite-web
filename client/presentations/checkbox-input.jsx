@@ -6,14 +6,14 @@ const CheckBoxInput = (props) => {
   return (
     <div className='text-input-block'>
       <div className="input-container">
-        <input  type="checkbox"
-          id={props.identifier }
-          name={ props.identifier }
-          onChange={ props.onChange }
-          checked={ props.checked }
-        />
         <label htmlFor={ props.identifier }>
-          { props.description }
+          <input  type="checkbox"
+            id={props.identifier }
+            name={ props.identifier }
+            onChange={ props.onChange }
+            checked={ props.checked }
+          />
+          {props.description}
         </label>
       </div>
     </div>

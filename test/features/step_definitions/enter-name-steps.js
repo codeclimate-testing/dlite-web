@@ -113,6 +113,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
+        console.log(text)
         assert.ok(text.includes('FirstName2'), 'Updated name not on summary');
         assert.ok(text.includes(''), 'updated suffix not on summary');
       })

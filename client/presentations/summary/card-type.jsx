@@ -19,9 +19,7 @@ const CardType = (props) => {
         .replace(/([a-z])([A-Z])/, '$1 $2')
         // uppercase the first character
         .replace(/^./, function(str){ return str.toUpperCase(); })
-        // add string 'and' if multiple card types selected
-        .concat((entries.length > 1 && i < entries.length - 1) ? ' and ' : '')
-      )
+      );
     }
   }
 
@@ -29,7 +27,7 @@ const CardType = (props) => {
 
   return (
     <div className='summary-section'>
-      <p> {tag}: {values} </p>
+      <p> {tag}: {values.join(' and ')} </p>
     </div>
   );
 };

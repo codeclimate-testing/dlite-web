@@ -5,16 +5,16 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.and('I click on the drivers license checkbox', function(done) {
+  world.and('I click on the DL checkbox', function(done) {
     browser
-      .click('input[type="checkbox"][id="driverLicense"]')
+      .click('.input-container > label[for="driverLicense"]')
       .then(() => { done(); })
       .catch(done)
   });
 
-  world.and('I click on the ID checkbox', function(done) {
+  world.when('I click on the ID checkbox', function(done) {
     browser
-      .click('input[type="checkbox"][id="ID"]')
+      .click('label[for="ID"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -23,6 +23,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
+        console.log(text)
         assert(text.includes('Card Type: ID'), 'ID card type not saved in summary');
       })
       .then(() => { done(); })
@@ -33,7 +34,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => { 
-        assert(text.includes('Card Type: Drivers License'), 'DL card type not saved in summary');
+        assert(text.includes('Card Type: Driver License'), 'DL card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -43,7 +44,8 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Card Types: ID and Driver License'), 'card types not saved in summary');
+        console.log(text)
+        assert(text.includes('Card Types'), 'card types not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
