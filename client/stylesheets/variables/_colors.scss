@@ -2,7 +2,7 @@ $lightest-color: #F7F7F7;
 $darkest-color:  #233047;
 
 $dark-blue:   #010B96;
-$med-blue:    #071FD5;
+$med-blue:    #000DC9;
 $green:       #12814F;
 $red:         #DF1515;
 $gold:        #FFC900;
@@ -10,6 +10,7 @@ $gray:        #7E7D7D;
 
 $focus:       $gold;
 $highlight:   $gold;
+$button-rest: $med-blue;
 
 // Shades of gray
 $neutral-90: mix($lightest-color, $darkest-color, 10%);
