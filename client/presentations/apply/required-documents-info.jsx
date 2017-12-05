@@ -13,7 +13,10 @@ const RequiredDocuments = (props) => {
   const socialSecurityDocumentsList     = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08';
   const veteranVerificationLink         = 'https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license';
   const realIDInformationPage           = 'https://www.dmv.ca.gov/portal/dmv/detail/realid';
-  const caLicenseRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'
+  const caLicenseRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true';
+  const newDriverRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT';
+  const driverHandbook                  = 'https://www.dmv.ca.gov/portal/dmv/detail/mobile';
+  const practiceKnowledgeTest           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam';
 
   let bulletList = [];
   let documentList = [];
@@ -32,6 +35,12 @@ const RequiredDocuments = (props) => {
   }
   if(props.medicalHistory.hasMedicalCondition === 'Yes') {
     bulletList.push(<li key='medical-information' >Medical Information</li>);
+  }
+  if(props.licenseHistory === 'No' && props.age < 18 && props.age >= 15.5) {
+    bulletList.push(<li key='new-driver'>New driver requirements</li>);
+    if(props.age > 17.5) {
+      bulletList.push(<li key='knowledge-test'>You will need to take a knowledge test</li>);
+    }
   }
 
   if(props.realID.getRealID === 'Yes'){
@@ -104,6 +113,23 @@ const RequiredDocuments = (props) => {
         <p>If you have a medical condition or a disability, DMV may require you to take a driving test. You may also have to provide a statement from your physician regarding your current health condition. </p>
       </div>
     );
+  }
+
+  if(props.licenseHistory === 'No' && props.age < 18 && props.age >= 15.5) {
+    documentList.push(
+      <div key='new-driver-requirements'>
+        <h4 className="new-driver-requirements">New driver requirements</h4>
+        <p>In order to get a provisional driving permit we will need to see either a <a href={ newDriverRequirements } target='_blank'><b>Certificate of Completion</b> or a <b>Certificate of Enrollment</b></a> from a California Driver Education (classroom), Driver Training (road), or an Integrated Driver Education and Training program.</p> 
+      </div>
+    );
+    if(props.age > 17.5) {
+      documentList.push(
+        <div key="knowledge-test">
+          <h4 className="knowledge-test">You will need to take a knowledge test</h4>
+          <p>We recommend studying the <a target='_blank' href={ driverHandbook } ><b>California driver’s handbook</b></a> and <a target='_blank' href={ practiceKnowledgeTest } >trying some practice exams</a> in advance of your visit.</p>
+        </div>
+      );
+    }
   }
 
   return (
