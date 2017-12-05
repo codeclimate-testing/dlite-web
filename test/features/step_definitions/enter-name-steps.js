@@ -68,7 +68,7 @@ module.exports = function(world) {
       .type('#middleName', 'MiddleName1')
       .type('#lastName', 'LastName1')
       .select('#suffix', '')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })

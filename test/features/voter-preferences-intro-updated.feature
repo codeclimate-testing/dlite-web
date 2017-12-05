@@ -7,12 +7,12 @@ Feature: Voter Preference page for already registered voters
     Given I go to the new online DL application page
     When I visit voter updating preferences page
     Then I see text for updating voter preferences render
-    When I click to continue
+    When I click "Next" to continue
     Then I will be taken to the political party choose page
   
   Scenario: I want to go back to previous page
     Given I go to the new online DL application page
     When I visit voter updating preferences page
     Then I see text for updating voter preferences render
-    When I click on back link
+    When I click to go back
     Then I will be on the page for entering voter opt-out

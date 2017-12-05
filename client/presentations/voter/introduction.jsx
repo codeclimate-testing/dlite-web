@@ -2,10 +2,9 @@
 
 import React from 'react';
 
-import HomeLink     from '../home-link.jsx';
-import LinkButton   from '../link-button.jsx';
-import SectionHeader from '../section-header.jsx';
-import alicePath    from '../../helpers/alice-path';
+import HomeLink         from '../home-link.jsx';
+import NavigationLinks  from '../navigation-links.jsx';
+import SectionHeader    from '../section-header.jsx';
 
 const VoterIntro = (props) => {
   const linkAddress = '/voting-registration/citizenship';
@@ -37,19 +36,13 @@ const VoterIntro = (props) => {
         <hr />
 
         <p>This section takes customers<br />
-        <b>3 minutes</b></p>
+          <b>3 minutes</b>
+        </p>
 
-        <LinkButton
-          to={linkBack}
-          className='back'
-          linkText='Back' />
-
-        <div className='unit spacer' />
-
-        <LinkButton
-          to={linkAddress}
-          className='continue'
-          linkText='Continue' />
+        <NavigationLinks
+          forwardAddress={linkAddress}
+          backwardsAddress={linkBack}
+        />
       </div>
     </div>
   );

@@ -7,42 +7,28 @@ module.exports = function (world) {
 
   world.and('I click to submit', function(done) {
     browser
-      .click('input[type="submit"]')
+      .click('input[type=submit]')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I click to continue', function(done) {
+  world.and('I click "Next" to continue', function(done) {
     browser
-      .click('a.continue.button')
+      .click('.navigation-buttons .forward')
       .then(() => { done(); })
-      .catch(done);
+      .catch((err) => { done(new Error(err)); });
   });
 
   world.and('I click to go back', function(done) {
     browser
-      .click('button')
+      .click('.navigation-buttons .backwards')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I click on back link', function(done) {
+  world.then('I will see that the "Next" button is enabled', function(done) {
     browser
-      .click('a.back.button')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I will see a button to submit', function (done) {
-    browser
-      .exists('input[type="submit"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see that the Continue button is enabled', function(done) {
-    browser
-     .exists('input[type="submit"][disabled]')
+     .exists('button.forward[disabled]')
      .then((input) => {
        assert.ok(!input, 'Button not enabled');
      })
@@ -50,9 +36,9 @@ module.exports = function (world) {
      .catch(done);
  });
 
-  world.then('I will see that the Continue button is disabled', function(done) {
+  world.then('I will see that the "Next" button is disabled', function(done) {
     browser
-      .exists('input[type="submit"][disabled]')
+      .exists('button.forward[disabled]')
       .then((input) => {
         assert.ok(input, 'Button not disabled');
       })
@@ -60,9 +46,9 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see that the Continue button is no longer disabled', function(done) {
+  world.then('I will see that the "Next" button is no longer disabled', function(done) {
      browser
-      .exists('input[type="submit"][disabled]')
+      .exists('button.forward[disabled]')
       .then((input) => {
         assert.ok(!input, 'Button is still disabled');
       })

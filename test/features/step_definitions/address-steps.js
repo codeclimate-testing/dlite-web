@@ -55,7 +55,7 @@ module.exports = function(world) {
       .select('#homeState', 'CA')
       .type('#homeZip', '94666')
       .click('label[for="homeAddressSameAsMailingYes"]')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })

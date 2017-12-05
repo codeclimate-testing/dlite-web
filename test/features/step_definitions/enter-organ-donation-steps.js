@@ -60,7 +60,7 @@ module.exports = function(world) {
       .click('a.organ-donation')
       .click('label[for="donateYes"]')
       .click('label[for="contributeYes"]')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })
@@ -125,7 +125,7 @@ module.exports = function(world) {
     browser
     .click('a.donate-contribution')
     .click('label[for="Yes"]')
-    .click('input[type="submit"]')
+    .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
     .then(() => { done(); })

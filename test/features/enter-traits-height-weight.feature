@@ -7,12 +7,12 @@ Feature:  I want to enter my height
     Given I go to the new online DL application page
     When I visit the traits height and weight page
     Then I will see a field for traits height and weight
-    And I will see that the Continue button is disabled
+    And I will see that the "Next" button is disabled
     When I enter my feet
     When I enter my inches
     When I enter my weight
-    Then I will see that the Continue button is no longer disabled
-    And I click to submit
+    Then I will see that the "Next" button is no longer disabled
+    And I click "Next" to continue
     Then I will be on the page for entering my social security
     And I go to the page with my summary
     Then I will see my height on that summary
@@ -23,7 +23,7 @@ Feature:  I want to enter my height
     When I visit the traits height and weight page
     Then I will see traits height and weight I entered
     When I change my inches
-    And I click to submit
+    And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated height on the summary
 

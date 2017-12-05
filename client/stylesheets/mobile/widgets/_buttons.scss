@@ -81,7 +81,8 @@ $arrow-button-text-width: 122px;
 $arrow-button-height: 54px;
 $arrow-width: 15px;
 
-button.arrow-button {
+button.arrow-button,
+a.button.arrow-button {
   padding: 0;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -154,5 +155,9 @@ button.arrow-button {
       background-image: url("/images/arrow-buttons/forward/active-focused.svg");
     }
   }
+}
 
+a.button.arrow-button {
+  text-decoration: none;
+  padding-top: $em;
 }
