@@ -11,20 +11,17 @@ import * as dataPresent               from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
 
-    let value = props.optOut;
+  let value = props.optOut;
     const continueDisabled = !dataPresent.value(value);
 
     const NEW_VOTER = '/voting-registration/preferences';
-    const ALREADY_REGISTERED = '/voting-registration/updating-preferences';
     const ELIGIBLE_YES_REGISTER_NO = '/summary';
     let address;
 
-    if(props.optOut == "I am a new voter in California"){
-      address = NEW_VOTER;
-    } else if(props.optOut === "I am already registered to vote in California") {
-      address = ALREADY_REGISTERED;
-    } else {
+    if((props.optOut == "I am eligible to vote, but do not want to pre-register to vote") || (props.optOut === "I am eligible to vote, but do not want to register to vote")){
       address = ELIGIBLE_YES_REGISTER_NO;
+    } else {
+      address = NEW_VOTER;
     };
 
      const onSubmit = navigateOnSubmit(address, props);
@@ -36,6 +33,7 @@ const ConnectedForm = (props) => {
       onBack={onBack}
       onChange={props.onChange}
       selectedValue={props.optOut}
+      dateOfBirth={props.dateOfBirth}
       continueDisabled={continueDisabled}
     />
 
@@ -44,7 +42,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    optOut: state.application.optOut
+    optOut: state.application.optOut,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

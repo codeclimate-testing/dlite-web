@@ -11,12 +11,25 @@ const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', '
 let pageTitle = 'DMV: License application - Voting registration'
 
 const BallotLanguageForm = (props) => {
+
+  let documentHeader = [];
+
+  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div>
         <h4>Choose a language for your election materials.</h4>

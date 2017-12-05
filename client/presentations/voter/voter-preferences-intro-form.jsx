@@ -12,16 +12,47 @@ const linkBack =  '/voting-registration/opt-out';
 let pageTitle  = 'DMV: License application - Voting registration'
 
 const VoterPreferencesIntro = (props) => {
+  
+  let documentHeader = [];
+  let documentDescription = [];
+  let documentStatement = [];
+
+  if((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
+  
+  if((props.optOut === "I am already registered to vote in California")) {
+    documentDescription.push(
+      'Next we\'d like to make sure your voter registration is up to date.'
+    )
+    documentStatement.push(
+      'This will replace your previous voter preferences.'
+    );
+  }
+  else {
+    documentDescription.push(
+      'Next we\'d like to make sure your voter registration is up to date.'
+    );
+  }
+
   return (
     <Page
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      pageTitle={pageTitle}
+      sectionName= { documentHeader }
       {...props}
     >
       <div>
         <div className='voter-preferences-intro'>
-          <h4>Next you will choose your voter preferences.</h4>
+          <h4> { documentDescription } </h4>
+          <p> { documentStatement } </p>
 
           <h4>Political Party</h4>
           <p>Choose your political party preferences.</p>
@@ -35,18 +66,18 @@ const VoterPreferencesIntro = (props) => {
           <h4>Contact Information</h4>
           <p>Election officials can contact you with election and voting information.</p>
 
-
-          <LinkButton
-            to={linkBack}
-            className='back'
-            linkText='Back' />
-
-          <div className='unit spacer' />
-
           <LinkButton
             to={linkAddress}
             className='continue'
             linkText='Continue' />
+
+          <div className='unit spacer' />
+
+            <LinkButton
+            to={linkBack}
+            className='back'
+            linkText='Back' />
+
         </div>
       </div>
     </Page>

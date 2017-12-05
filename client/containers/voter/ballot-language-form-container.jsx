@@ -20,13 +20,16 @@ const ConnectedForm = (props) => {
       onChange={props.onChange}
       selectedValue={props.ballotLanguage}
       continueDisabled={continueDisabled}
+      dateOfBirth={props.dateOfBirth}
+      
     />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    ballotLanguage: state.application.ballotLanguage
+    ballotLanguage: state.application.ballotLanguage,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

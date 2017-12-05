@@ -19,7 +19,7 @@ As a DMV Customer
     When I visit voter opt out page
     When I select I am already registered to vote in California
     When I click to submit
-    Then I will be taken to voter preferences updated page
+    Then I will be taken to voter preferences info page
     And I go to the page with my summary
     Then I will see voter registration choice as I am already registered to vote in California in summary
 

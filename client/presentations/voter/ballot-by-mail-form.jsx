@@ -16,12 +16,26 @@ const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
 let pageTitle = 'DMV: License application - Voting registration'
 
 const BallotByMailForm = (props) => {
+
+  let documentHeader = [];
+
+  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
+
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div>
         <h4>Would you like to get your ballot by mail before each election?</h4>

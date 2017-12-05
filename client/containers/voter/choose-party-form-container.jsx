@@ -19,8 +19,6 @@ const ConnectedForm = (props) => {
   let onBack;
 
   if(props.optOut == "I am already registered to vote in California"){
-     onBack = navigateOnBack('/voting-registration/updating-preferences', props);
-  } else {
      onBack = navigateOnBack('/voting-registration/preferences', props);
   };
 
@@ -34,6 +32,7 @@ const ConnectedForm = (props) => {
          <PoliticalPartyChoose
             onChange              = {props.onChange}
             selectedValue         = {props.politicalPartyChoose.isSelected}
+            dateOfBirth           = {props.dateOfBirth}
           />
           <PoliticalPartyPreference
             onChange                  = {props.onChange}
@@ -50,12 +49,12 @@ const ConnectedForm = (props) => {
 
   return (
     <div>
-      <HomeLink />
 
       <form onSubmit={onSubmit}>
         <PoliticalPartyChoose
           onChange      = {props.onChange}
           selectedValue = {props.politicalPartyChoose.isSelected}
+          dateOfBirth   = {props.dateOfBirth}
         />
         <NavigationButtons
           continueDisabled={continueDisabled}
@@ -70,7 +69,8 @@ const ConnectedForm = (props) => {
 function mapStateToProps(state) {
   return {
     politicalPartyChoose: state.application.politicalPartyChoose,
-    optOut: state.application.optOut
+    optOut: state.application.optOut,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

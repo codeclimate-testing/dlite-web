@@ -9,12 +9,24 @@ const VALUES = ['Yes', 'No', 'Skip Question'];
 let pageTitle = 'DMV: License application - Voting registration'
 
 const ContactChoice = (props) => {
+  let documentHeader = [];
+
+  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div className='contact-methods-choice-form'>
         <h4>Would you like to receive election information via email or text</h4>

@@ -12,12 +12,24 @@ const linkBack = '/voting-registration/contact-methods';
 let pageTitle  = 'DMV: License application - Voting registration'
 
 const VoterRegComplete = (props) => {
+  let documentHeader = [];
+
+  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div>
         <div className='voter-reg-complete'>

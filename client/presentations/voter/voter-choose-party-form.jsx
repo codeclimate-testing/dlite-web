@@ -8,12 +8,25 @@ const VALUES = ['Yes', 'I do not wish to choose a political party'];
 let pageTitle = 'DMV: License application - Voting registration'
 
 const PoliticalPartyChoose = (props) => {
+  let documentHeader = [];
+
+  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
+
   return (
     <Page
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      pageTitle={pageTitle}
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div className='choose-party'>
         <h4>Would you like to choose a political party preference?</h4>

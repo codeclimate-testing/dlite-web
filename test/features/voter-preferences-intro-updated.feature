@@ -5,14 +5,16 @@ Feature: Voter Preference page for already registered voters
 
   Scenario: Continuing from preregistered page
     Given I go to the new online DL application page
-    When I visit voter updating preferences page
+    Given I visit voter opt out page
+    When I select I am already registered to vote in California
+    Then I visit voter preferences intro page
     Then I see text for updating voter preferences render
     When I click to continue
     Then I will be taken to the political party choose page
   
   Scenario: I want to go back to previous page
     Given I go to the new online DL application page
-    When I visit voter updating preferences page
+    When I visit voter preferences intro page
     Then I see text for updating voter preferences render
     When I click on back link
     Then I will be on the page for entering voter opt-out
