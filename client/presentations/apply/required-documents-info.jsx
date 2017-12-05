@@ -24,7 +24,7 @@ const RequiredDocuments = (props) => {
     bulletList.push(<li key='legal-presence'>Legal presence</li>);
   }
   if(props.socialSecurity.hasSocialSecurity === 'Yes') {
-    bulletList.push(<li key='medical-information' >Proof of Social Security Number</li>);
+    bulletList.push(<li key='social-security' >Proof of Social Security Number</li>);
   }
   bulletList.push(<li key='ca-residency' >California residency</li>);
   if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes') {
