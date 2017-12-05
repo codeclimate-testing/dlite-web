@@ -6,6 +6,7 @@ import { Route }                              from 'react-router-dom';
 import alicePath                              from '../helpers/alice-path';
 import Home                                   from '../presentations/home.jsx';
 import Summary                                from './summary-handler.jsx';
+import RequiredDocuments                      from './required-documents-handler.jsx';
 
 import Intro                                  from '../presentations/apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
@@ -31,7 +32,6 @@ import PoliticalPartyChoose                   from './voter/choose-party-form-co
 import BallotLanguage                         from './voter/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter/ballot-by-mail-form-container.jsx';
 import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
-import RequiredDocuments                      from './apply/required-documents-info.jsx';
 import ContactMethods                         from './voter/contact-methods-form-container.jsx';
 import VoterRegComplete                       from '../presentations/voter/voter-confirmation.jsx';
 
