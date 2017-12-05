@@ -7,24 +7,23 @@ module.exports = function(world) {
 
   world.and('I click on the DL checkbox', function(done) {
     browser
-      .click('.input-container > label[for="driverLicense"]')
+      .click('[for="driverLicense"]')
       .then(() => { done(); })
       .catch(done)
   });
 
   world.when('I click on the ID checkbox', function(done) {
     browser
-      .click('label[for="ID"]')
+      .click('[name="ID"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.then('I will see that my ID card type has been saved', function(done) {
     browser
-      .text()
+      .text('.inner')
       .then((text) => {
-        console.log(text)
-        assert(text.includes('Card Type: ID'), 'ID card type not saved in summary');
+        assert.ok(text.includes('Card Type: ID'), 'ID card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -44,7 +43,6 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        console.log(text)
         assert(text.includes('Card Types'), 'card types not saved in summary');
       })
       .then(() => { done(); })

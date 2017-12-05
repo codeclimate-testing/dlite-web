@@ -42,7 +42,7 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I go to the page with my summary', function(done){
+  world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/summary', '.summary', done);
   });
 
@@ -179,8 +179,8 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the ID and DL selection page', function(done) {
-    assertOnPage('.choose-card-form', /what-do-you-want-to-do-today/, done);
-  })
+    assertOnPage('.choose-card-form', /apply\/what-do-you-want-to-do-today/, done);
+  });
 
   world.then('I will be on the page for choosing real id', function(done) {
     assertOnPage('.real-id-form', /apply\/real-id/, done);

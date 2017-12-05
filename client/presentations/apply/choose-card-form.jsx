@@ -22,7 +22,7 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <div className='row inner-bottom'>
             <CheckBoxInput 
-              identifier={ 'ID' }
+              identifier='ID'
               description='ID'
               onChange={ props.onChange }
               checked={ props.cardType.ID }
