@@ -28,7 +28,7 @@ const VoterPreferencesIntro = (props) => {
     );
   }
   
-  if((props.optOut === "I am already registered to vote in California")) {
+  if((props.optOut === "I am already registered to vote in California") || (props.optOut === "I am already pre-registered to vote in California")) {
     documentDescription.push(
       'Next we\'d like to make sure your voter registration is up to date.'
     )
