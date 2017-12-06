@@ -16,11 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled                  = false;
   let showPoliticalPartyPreference      = true;
   let onSubmit                          = navigateOnSubmit('/voting-registration/language', props);
-  let onBack;
-
-  if(props.optOut == "I am already registered to vote in California"){
-     onBack = navigateOnBack('/voting-registration/preferences', props);
-  };
+  let onBack                            = navigateOnBack('/voting-registration/preferences', props);
 
   if(props.politicalPartyChoose.isSelected === 'Yes') {
     showPoliticalPartyPreference  = true;

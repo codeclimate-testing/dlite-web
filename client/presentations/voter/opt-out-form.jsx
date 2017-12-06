@@ -23,13 +23,12 @@ let pageTitle = 'DMV: License application - Voting registration'
 const OptOut = (props) => {
   let radioList = [];
   let documentHeader = [];
-  let documentSelection = [];
 
-  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+  if ((props.dateOfBirth.age > 15 ) && (props.dateOfBirth.age < 18)) {
     documentHeader.push(
       'Voting pre-registration'
     )
-    documentSelection.push(
+    radioList.push(
       <RadioCollection
         key='radio'
         name='optOut'
@@ -43,7 +42,7 @@ const OptOut = (props) => {
     documentHeader.push(
       'Voting registration'
     )
-    documentSelection.push(
+    radioList.push(
       <RadioCollection
         key='radio'
         name='optOut'
@@ -65,7 +64,7 @@ const OptOut = (props) => {
         <h4>Which best describes you?</h4>
         <form onSubmit={ props.onSubmit } className='opt-out-form'>
           <div className='inner-bottom'>
-            { documentSelection }
+            { radioList }
           </div>
 
           <NavigationButtons {...props} />

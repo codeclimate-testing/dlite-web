@@ -14,7 +14,7 @@ const BallotLanguageForm = (props) => {
 
   let documentHeader = [];
 
-  if ((props.dateOfBirth.age === 16) || (props.dateOfBirth.age === 17)) {
+  if ((props.dateOfBirth.age > 15 ) && (props.dateOfBirth.age < 18)) {
     documentHeader.push(
       'Voting pre-registration'
     );
