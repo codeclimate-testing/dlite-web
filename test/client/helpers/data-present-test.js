@@ -99,7 +99,7 @@ describe('dataPresent', function() {
 
     it('is false when no parts are true', function() {
       assert(
-        dataPresent.cardType({driverLicense: false, ID: false}),
+        !dataPresent.cardType({driverLicense: false, ID: false}),
         'card type not false when no fields selected'
       );
     });
