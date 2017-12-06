@@ -72,7 +72,7 @@ world.given('I have already entered my voter eligibility requirement status into
   browser
     .click('a.eligibility-requirements')
     .click('label[for="eligibilityRequirementsYes"]')
-    .click('input[type="submit"]')
+    .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
     .then(() => { done(); })

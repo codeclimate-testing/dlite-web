@@ -4,8 +4,10 @@ import React from 'react';
 
 const BackButton = (props) => {
   return (
-    <div className='shadow-container'>
-      <button onClick={props.onBack} > Back </button>
+    <div className='shadow-container unit'>
+      <button className='arrow-button backwards' onClick={props.onBack} >
+        Back
+      </button>
     </div>
   );
 };

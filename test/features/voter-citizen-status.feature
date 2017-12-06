@@ -8,7 +8,7 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     Then I will see citizen related faq
     When I select citizen Yes
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the eligibility page
     And I go to the page with my summary
     Then I will see Yes in my citizenship selection
@@ -17,7 +17,7 @@ Feature: Designate US citizenship status
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I select citizen No
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page with my summary
     Then I will see No in my citizenship selection
 
@@ -25,14 +25,14 @@ Feature: Designate US citizenship status
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I select citizen Skip Section
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page with my summary
     Then I will see No Value in my citizenship selection
 
   Scenario: Continuing without a selection
     Given I go to the new online DL application page
     When I visit voter citizen status page
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page with my summary
     Then I will see No Value in my citizenship selection
 
@@ -42,7 +42,7 @@ Feature: Designate US citizenship status
     When I visit voter citizen status page
     Then I will see the US citizenship status I entered
     And I change my US citizenship status
-    When I click to submit
+    When I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated US citizenship status
 

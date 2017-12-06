@@ -6,15 +6,15 @@ Feature: Contact details for voter flow
   Scenario: Viewing the form and entering my contact details
     Given I go to the new online DL application page
     When I visit contact methods details page
-    Then I will see that the Continue button is enabled
+    Then I will see that the "Next" button is enabled
     And I see three contact methods buttons labelled Yes, No and Skip Question
     When I select contact methods Yes
     Then I will be shown form to enter my contact methods details
-    And I will see that the Continue button is disabled
+    And I will see that the "Next" button is disabled
     And I enter my email
     And I enter my phone number
-    Then I will see that the Continue button is no longer disabled
-    When I click to submit
+    Then I will see that the "Next" button is no longer disabled
+    When I click "Next" to continue
     Then I will be taken to voter registration complete page
     And I go to the page with my summary
     Then I will see my contact details in summary
@@ -23,7 +23,7 @@ Feature: Contact details for voter flow
     Given I go to the new online DL application page
     When I visit contact methods details page
     When I select contact methods No
-    When I click to submit
+    When I click "Next" to continue
     Then I will be taken to voter registration complete page
     And I go to the page with my summary
     Then I will see that I did not choose to be contacted
@@ -32,7 +32,7 @@ Feature: Contact details for voter flow
     Given I go to the new online DL application page
     When I visit contact methods details page
     When I select contact methods Skip Question
-    When I click to submit
+    When I click "Next" to continue
     Then I will be taken to voter registration complete page
     And I go to the page with my summary
     Then I will see that I did not answer to be contacted

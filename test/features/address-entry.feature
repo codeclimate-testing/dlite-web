@@ -19,7 +19,7 @@ Feature: CRUD operations on the address
     And I select address interstitial No
     Then I will see correct mailing address labels
     When I enter my mailing address
-    And I click to submit
+    And I click "Next" to continue
     Then I will be on the page for entering my physical traits
     And I go to the page with my summary
     Then I will see my mailing address on that summary

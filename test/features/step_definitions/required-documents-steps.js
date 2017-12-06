@@ -97,7 +97,7 @@ module.exports = function (world) {
 
   world.and('I will see a section about RealID information', function(done){
     browser
-      .waitForSelector('.legal-presence-documents')
+      .waitForSelector('.real-id-documents')
       .then(() => { done(); })
       .catch((err) => {
         throw err;
@@ -110,6 +110,26 @@ module.exports = function (world) {
       .text()
       .then((text) => {
         assert(!text.includes('Real ID birth date, name and legal presence proof'), 'real id information section is present');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see section about new driver requirements', function(done) {
+    browser
+      .text('.new-driver-requirements')
+      .then( (text) => {
+        assert(text.includes('New driver requirements'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see section about knowledge test', function(done) {
+    browser
+      .text('.knowledge-test')
+      .then( (text) => {
+        assert(text.includes('You will need to take a knowledge test'));
       })
       .then(() => { done(); })
       .catch(done);

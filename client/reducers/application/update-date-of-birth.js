@@ -7,7 +7,8 @@ function defaultState() {
   return {
     month: '',
     day: '',
-    year: ''
+    year: '',
+    age: ''
   };
 }
 

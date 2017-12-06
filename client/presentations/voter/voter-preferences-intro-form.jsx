@@ -3,13 +3,12 @@
 import React            from 'react';
 
 import HomeLink         from '../home-link.jsx';
-import LinkButton       from '../link-button.jsx';
+import NavigationLinks  from '../navigation-links.jsx';
 import Page             from '../page.jsx';
-import alicePath        from '../../helpers/alice-path';
 
 const linkAddress = '/voting-registration/choose-party';
 const linkBack =  '/voting-registration/opt-out';
-let pageTitle  = 'DMV: License application - Voting registration'
+let pageTitle = 'DMV: License application - Voting registration'
 
 const VoterPreferencesIntro = (props) => {
   
@@ -44,7 +43,7 @@ const VoterPreferencesIntro = (props) => {
 
   return (
     <Page
-      pageTitle={ pageTitle }
+      pageTitle= { pageTitle }
       sectionNumber='3'
       sectionName= { documentHeader }
       {...props}
@@ -66,18 +65,10 @@ const VoterPreferencesIntro = (props) => {
           <h4>Contact Information</h4>
           <p>Election officials can contact you with election and voting information.</p>
 
-          <LinkButton
-            to={linkAddress}
-            className='continue'
-            linkText='Continue' />
-
-          <div className='unit spacer' />
-
-            <LinkButton
-            to={linkBack}
-            className='back'
-            linkText='Back' />
-
+          <NavigationLinks
+            forwardAddress={linkAddress}
+            backwardsAddress={linkBack}
+          />
         </div>
       </div>
     </Page>

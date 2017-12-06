@@ -2,10 +2,8 @@
 
 import React            from 'react';
 
-import HomeLink           from '../home-link.jsx';
-import LinkButton         from '../link-button.jsx';
+import NavigationLinks    from '../navigation-links.jsx';
 import Page               from '../page.jsx';
-import alicePath          from '../../helpers/alice-path';
 
 const linkAddress = '/summary';
 const linkBack = '/voting-registration/contact-methods';
@@ -42,17 +40,10 @@ const VoterRegComplete = (props) => {
           <p>You can check your voter registration status with the California Secretary
           of State at <a href="https://voterstatus.sos.ca.gov/">https://voterstatus.sos.ca.gov/</a></p>
 
-          <LinkButton
-            to={linkBack}
-            className='back'
-            linkText='Back' />
-
-          <div className='unit spacer' />
-
-          <LinkButton
-            to={linkAddress}
-            className='continue'
-            linkText='Continue' />
+          <NavigationLinks
+            forwardAddress={linkAddress}
+            backwardsAddress={linkBack}
+          />
         </div>
       </div>
     </Page>

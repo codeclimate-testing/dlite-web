@@ -60,7 +60,7 @@ module.exports = function (world) {
     browser
       .click('a.ballot-language')
       .click('label[for="ballotLanguageThai"]')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })
