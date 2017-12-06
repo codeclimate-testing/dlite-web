@@ -63,7 +63,7 @@ module.exports = function(world) {
       .waitForSelector('.previous-names')
       .click('label[for="hasUsedPreviousNamesYes"]')
       .type('#names', 'previousName1')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
       .then(() => { done(); })

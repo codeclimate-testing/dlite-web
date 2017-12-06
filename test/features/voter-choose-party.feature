@@ -9,8 +9,8 @@ Feature: Choose if you want to change or add a political party or not
     When I select choose party Yes
     Then I will see buttons for each political party
     When I select a political party button
-    Then I will see that the Continue button is no longer disabled
-    When I click to submit
+    Then I will see that the "Next" button is no longer disabled
+    When I click "Next" to continue
     Then I will be taken to ballot language page
     And I go to the page with my summary
     Then I will see Yes for my political party choice
@@ -25,6 +25,6 @@ Feature: Choose if you want to change or add a political party or not
     Given I go to the new online DL application page
     When I visit the political party choose page
     When I select no political party
-    Then I will see that the Continue button is no longer disabled
-    When I click to submit
+    Then I will see that the "Next" button is no longer disabled
+    When I click "Next" to continue
     Then I will be taken to ballot language page

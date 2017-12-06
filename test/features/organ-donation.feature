@@ -8,13 +8,13 @@ Feature: Donate Life
     Given I visit the date of birth page
     Given I am under 16 years old
     When I visit the organ page
-    And I will see that the Continue button is disabled
+    And I will see that the "Next" button is disabled
     And I choose to donate
     Then I will see text for donate - Yes
     And I choose to contribute
     Then I will see text for donate contribution - Yes
-    Then I will see that the Continue button is no longer disabled
-    And I click to submit
+    Then I will see that the "Next" button is no longer disabled
+    And I click "Next" to continue
     Then I will be on the page with my summary
     And I will see my organ selection in the summary
 
@@ -27,7 +27,7 @@ Feature: Donate Life
     When I change my organ selection
     Then I will see text for donate - No
     And I change my contribution selection
-    And I click to submit
+    And I click "Next" to continue
     Then I will be taken to voter intro info page
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary
@@ -41,7 +41,7 @@ Feature: Donate Life
     When I change my organ selection
     Then I will see text for donate - No
     And I change my contribution selection
-    And I click to submit
+    And I click "Next" to continue
     Then I will be taken to voter intro info page
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary

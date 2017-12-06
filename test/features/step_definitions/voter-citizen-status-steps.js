@@ -70,7 +70,7 @@ module.exports = function(world) {
     .click('a.citizen-status')
     .waitForSelector('.citizen-status-form')
     .click('label[for="citizenStatusYes"]')
-    .click('input[type="submit"]')
+    .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
     .then(() => { done(); })

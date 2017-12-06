@@ -4,12 +4,10 @@ import React from 'react';
 
 const ContinueButton = (props) => {
   return (
-    <div className='shadow-container'>
-      <input
-        type="submit"
-        value="Continue"
-        disabled={props.disabled}
-      />
+    <div className='shadow-container unit-right'>
+      <button className='arrow-button forward' disabled={props.disabled}>
+        Next
+      </button>
     </div>
   );
 };

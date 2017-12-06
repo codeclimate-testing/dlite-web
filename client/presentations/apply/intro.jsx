@@ -29,11 +29,13 @@ const Intro = (props) => {
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
 
-        <LinkButton
-          to={linkAddress}
-          linkText='Get started'
-          className='continue get-started'
-        />
+        <div className='navigation-buttons'>
+          <LinkButton
+            to={linkAddress}
+            linkText='Get started'
+            className='continue get-started forward'
+          />
+        </div>
       </div>
     </div>
   );
