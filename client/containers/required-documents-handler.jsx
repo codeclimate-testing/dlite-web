@@ -10,6 +10,7 @@ import {
   RealIdDocuments,
   SocialSecurityDocuments,
   VeteransDocuments,
+  YouthDocuments,
   BulletList
 } from '../presentations/documents/index.js';
 
@@ -19,7 +20,8 @@ const RequiredDocumentsHandler = (props) => {
     <SocialSecurityDocuments socialSecurity={props.socialSecurity} key='social-security'/>,
     <CaliforniaResidencyDocuments key='ca-residency'/>,
     <VeteransDocuments veteransService={props.veteransService} key='proof-veteran-services'/>,
-    <MedicalDocuments medicalHistory={props.medicalHistory} key='medical-information'/>
+    <MedicalDocuments medicalHistory={props.medicalHistory} key='medical-information'/>,
+    <YouthDocuments age={props.dateOfBirth.age} licenseIssued={props.licenseAndIdHistory.isIssued} key='youth-documents' />
   ];
 
   return (
@@ -38,6 +40,8 @@ const RequiredDocumentsHandler = (props) => {
           veteransService    = { props.veteransService }
           medicalHistory     = { props.medicalHistory }
           realID             = { props.realID }
+          age                = { props.dateOfBirth.age }
+          licenseIssued      = { props.licenseAndIdHistory.isIssued }
         />
 
         <br></br>
@@ -55,10 +59,12 @@ const RequiredDocumentsHandler = (props) => {
 
 function mapStateToProps(state) {
   return {
-    socialSecurity:   state.application.socialSecurity,
-    veteransService:  state.application.veteransService,
-    medicalHistory:   state.application.medicalHistory,
-    realID:           state.application.realID
+    socialSecurity:         state.application.socialSecurity,
+    veteransService:        state.application.veteransService,
+    medicalHistory:         state.application.medicalHistory,
+    realID:                 state.application.realID,
+    dateOfBirth:            state.application.dateOfBirth,
+    licenseAndIdHistory:    state.application.licenseAndIdHistory
   };
 };
 

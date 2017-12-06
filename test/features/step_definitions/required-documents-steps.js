@@ -114,4 +114,24 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see section about new driver requirements', function(done) {
+    browser
+      .text('.new-driver-requirements')
+      .then( (text) => {
+        assert(text.includes('New driver requirements'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see section about knowledge test', function(done) {
+    browser
+      .text('.knowledge-test')
+      .then( (text) => {
+        assert(text.includes('You will need to take a knowledge test'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
