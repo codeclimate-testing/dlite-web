@@ -3,6 +3,7 @@
 import React from 'react';
 
 import { updateCardType }     from "../../actions/index";
+import Page                   from "../../presentations/page.jsx";
 import Form                   from "../../presentations/apply/choose-card-form.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
@@ -16,14 +17,21 @@ const ConnectedForm = (props) => {
   let pageTitle         =   'DMV'
 
   return (
-    <Form
-      pageTitle         = { pageTitle }
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      onChange          = { props.onChange }
-      cardType          = { props.cardType }
-      continueDisabled  = { continueDisabled }
-    />
+    <Page
+      pageTitle={pageTitle}
+      sectionNumber='1'
+      sectionName='My basics'
+      {...props}
+    >
+      <Form
+        pageTitle         = { pageTitle }
+        onSubmit          = { onSubmit }
+        onBack            = { onBack }
+        onChange          = { props.onChange }
+        cardType          = { props.cardType }
+        continueDisabled  = { continueDisabled }
+      />
+    </Page>
   );
 };
 
