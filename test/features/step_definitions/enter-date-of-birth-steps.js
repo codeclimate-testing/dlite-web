@@ -78,4 +78,36 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I indicate that I am between 15.5 and 17.5', function(done) {
+    var d = new Date();
+
+    // calculate a date of 5 days shy of being 17.5
+    var month = d.getMonth() >= 5 ? d.getMonth() - 5 : 11 + (d.getMonth() - 5)
+    var day = d.getDate() + 5;
+    var year = d.getFullYear() - 17;
+
+    browser
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I indicate that I am between 17.5 and 18', function(done) {
+    var d = new Date();
+
+    // calculate a date of 3 months shy of being 18
+    var month = d.getMonth() + 2;
+    var day = d.getDate();
+    var year = d.getFullYear() - 18;
+
+    browser
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
 };

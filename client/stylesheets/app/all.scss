@@ -38,6 +38,10 @@ h1.inner {
   }
 }
 
+a.button.arrow-button.forward.get-started {
+  padding-left: 12px;
+}
+
 .tap.button {
   margin-bottom: $spacing;
   min-width: 160px;
@@ -46,6 +50,9 @@ h1.inner {
 .selector-collection .spacer {
   height: 100px;
 }
+
+// ------
+// Here down all tap-buttons which will be going away!
 
 $tap-hover-color:   $primary;
 $tap-normal-border: $neutral-50;

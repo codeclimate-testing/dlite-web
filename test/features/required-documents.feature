@@ -3,27 +3,38 @@ Feature: Required documents page
   I want to see what documents I need
   So I know what to bring
 
+  Scenario: I am greater than 15.5, but less than 17.5
+    Given I go to the new online DL application
+    When I visit the date of birth page
+    And I indicate that I am between 15.5 and 17.5
+    When I visit the page to enter existing license and id
+    When I select existing DL/ID No
+    When I visit the required documents page
+    Then I will see section about new driver requirements
+    Then I will see section about knowledge test
+  
+  Scenario: I am between 17.5 and 18
+    Given I go to the new online DL application
+    When I visit the date of birth page
+    And I indicate that I am between 17.5 and 18
+    When I visit the page to enter existing license and id
+    When I select existing DL/ID No
+    When I visit the required documents page
+    Then I will see section about new driver requirements
+
   Scenario: I have a social security number
     Given I go to the new online DL application page
     When I visit the social security page
     When I select Yes for social security
     When I enter my full social security number
-    And I go to the page with my summary
-    And I click to submit
-    Then I will be on the page for appointment preparation
-    And I click link for required documents
-    Then I will be on the required documents page
+    And I visit the required documents page
     Then I will see proof of social security section
 
   Scenario: I do not have a social security number
     Given I go to the new online DL application page
     When I visit the social security page
     When I select No for social security
-    And I go to the page with my summary
-    And I click to submit
-    Then I will be on the page for appointment preparation
-    And I click link for required documents
-    Then I will be on the required documents page
+    And I visit the required documents page
     Then I will not see the proof of social security section
 
   Scenario: I am requesting a Veteran's status

@@ -9,7 +9,7 @@ import BackButton               from '../back-button.jsx';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 
 const Intro = (props) => {
-  const linkAddress             = '/my-basics/legal-name';
+  const linkAddress             = '/my-basics/address';
   let onBack                    = navigateOnBack('/real-id', props);
 
   return (
@@ -32,12 +32,15 @@ const Intro = (props) => {
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
 
-        <BackButton onBack={onBack} key = 'back-button' />
-        <LinkButton
-          to={linkAddress}
-          linkText='Get started'
-          className='continue get-started'
-        />
+
+        <div className='navigation-buttons'>
+          <BackButton onBack={onBack} key='back-button' />
+          <LinkButton
+            to={linkAddress}
+            linkText='Get started'
+            className='continue get-started forward'
+          />
+        </div>
       </div>
     </div>
   );

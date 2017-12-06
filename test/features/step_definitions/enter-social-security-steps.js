@@ -43,7 +43,7 @@ module.exports = function(world) {
       .type('#part1', '123')
       .type('#part2', '45')
       .type('#part3', '1967')
-      .click('input[type="submit"]')
+      .click('button.forward')
       .then(() => { done(); })
       .catch(done);
   });

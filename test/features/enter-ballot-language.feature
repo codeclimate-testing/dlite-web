@@ -9,7 +9,7 @@ Feature: Select Ballot by Mail Language
     Then I will see select buttons for English, Chinese, Japanese, Spanish, Thai, Korean, Tagalog, Hindi, Khmer, and Vietnamese
     When I select a language
     Then I will see the language I chose is selected
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page for ballot by mail
     And I go to the page with my summary
     Then I will see my language in the summary
@@ -20,7 +20,7 @@ Feature: Select Ballot by Mail Language
     When I visit ballot language page
     Then I will see the language I chose is selected
     When I change my language
-    And I click to submit
+    And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated language in the summary
   

@@ -40,7 +40,6 @@ label.button {
   &:focus,
   &.focus {
     background-color: darken($primary, 10%);
-    text-decoration-line: underline;
     border-color: $focus;
   }
 
@@ -82,115 +81,83 @@ $arrow-button-text-width: 122px;
 $arrow-button-height: 54px;
 $arrow-width: 15px;
 
-.arrow-button {
+button.arrow-button,
+a.button.arrow-button {
   padding: 0;
   background-color: transparent;
+  background-repeat: no-repeat;
   border: none;
-  position: relative;
   width: $arrow-button-text-width + $arrow-width;
   height: $arrow-button-height;
-  color: white;
-
-  .text {
-    position: absolute;
-    top: 0;
-    padding: $spacing * 1.25;
-    background-color: $med-blue;
-    height: $arrow-button-height;
-    width: $arrow-button-text-width;
-    @include rounded;
-  }
-
-  .triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 0;
-    border-top: $arrow-button-height / 2 solid transparent;
-    border-bottom: $arrow-button-height / 2 solid transparent;
-  }
 
   &.backwards {
-    .text {
-      right: 0px;
-    }
-    .triangle {
-      left: 1px;
-      border-right: $arrow-width solid $med-blue;
-    }
+    color: $button-rest;
+    text-align: right;
+    padding-right: 2.25 * $em;
+    background-image: url("/images/arrow-buttons/backwards/rest.svg");
   }
 
   &.forward {
-    .triangle {
-      right: 1px;
-      border-left: $arrow-width solid $med-blue;
+    color: white;
+    text-align: left;
+    padding-left: 2.25 * $em;
+    background-image: url("/images/arrow-buttons/forward/rest.svg");
+  }
+
+  &.focus,
+  &:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/rest-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/rest-focused.svg");
     }
   }
 
   &.hover,
   &:hover {
-    background-color: transparent;
-    .triangle {
-      border-right-color: darken($med-blue, 10%);
-      border-left-color: darken($med-blue, 10%);
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover.svg");
     }
-    .text {
-      background-color: darken($med-blue, 10%);
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover.svg");
+    }
+  }
+
+  &.hover.focus,
+  &:hover:focus {
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover-focused.svg");
     }
   }
 
   &.active,
   &:active {
-    background-color: transparent;
-    .triangle {
-      border-right-color: darken($med-blue, 5%);
-      border-left-color: darken($med-blue, 5%);
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active.svg");
     }
-    .text {
-      background-color: darken($med-blue, 5%);
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active.svg");
     }
   }
 
-  &.error {
-    background-color: transparent;
-    .triangle {
-      border-right-color: $error;
-      border-left-color: $error;
+  &.active.focus,
+  &:active:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active-focused.svg");
     }
-    .text {
-      background-color: $error;
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active-focused.svg");
     }
   }
+}
 
-  &.error.hover,
-  &.error:hover {
-    background-color: transparent;
-    .triangle {
-      border-right-color: darken($error, 10%);
-      border-left-color: darken($error, 10%);
-    }
-    .text {
-      background-color: darken($error, 10%);
-    }
-  }
-
-  &.error.active,
-  &.error:active {
-    background-color: transparent;
-    .triangle {
-      border-right-color: darken($error, 5%);
-      border-left-color: darken($error, 5%);
-    }
-    .text {
-      background-color: darken($error, 5%);
-    }
-  }
-
-  &.focus,
-  &:focus {
-    background-color: transparent;
-    .text span {
-      @include focus-outline;
-    }
-  }
+a.button.arrow-button {
+  text-decoration: none;
+  padding-top: $em;
 }

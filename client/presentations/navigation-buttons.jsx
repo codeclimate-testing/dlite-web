@@ -1,13 +1,15 @@
 'use strict';
 
-import React from 'react';
+import React          from 'react';
 import ContinueButton from './continue-button.jsx';
+import BackButton     from './back-button.jsx';
 
 const NavigationButtons = (props) => {
   return (
-    <div className='navigation-buttons'>
+    <div className='navigation-buttons row'>
+      <hr />
       <ContinueButton disabled={props.continueDisabled} />
-      <button onClick={props.onBack}>Back</button>
+      <BackButton onBack={props.onBack} />
     </div>
   );
 };
