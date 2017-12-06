@@ -82,7 +82,30 @@ describe('dataPresent', function() {
     });
   });
 
-    describe('#traitsHeightWeight', function() {
+  describe('#cardType', function() {
+    it('is true when one part is true', function() {
+      assert(
+        dataPresent.cardType({driverLicense: false, ID: true}), 
+        'card type not true with one field'
+      );      
+    });
+
+    it('is true when two parts are true', function() {
+      assert(
+        dataPresent.cardType({driverLicense: true, ID: true}),
+        'card type not true with both fields'
+      );
+    });
+
+    it('is false when no parts are true', function() {
+      assert(
+        !dataPresent.cardType({driverLicense: false, ID: false}),
+        'card type not false when no fields selected'
+      );
+    });
+  });
+
+  describe('#traitsHeightWeight', function() {
     it('is true when all three parts are present', function() {
       assert(
         dataPresent.traitsHeightWeight({heightFeet: '5', heightInches: '5', weight: '201'}),

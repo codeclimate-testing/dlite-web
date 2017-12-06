@@ -15,7 +15,7 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/my-basics/physical-traits', props);
-  let onBack            = navigateOnBack('/real-id', props);
+  let onBack            = navigateOnBack('/get-started', props);
   let continueDisabled  = !(dataPresent.homeAddressSameAsMailing(props.homeAddress));
 
   if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {

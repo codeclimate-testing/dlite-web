@@ -38,4 +38,4 @@ Feature: CRUD operations on the address
     When I visit the addresses page
     Then I will see correct home address labels
     When I click to go back
-    Then I will be on the page for choosing real id
+    Then I will be on the get started page

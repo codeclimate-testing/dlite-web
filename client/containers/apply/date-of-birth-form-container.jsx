@@ -11,7 +11,7 @@ import * as dataPresent       from '../../helpers/data-present';
 import calculateAge           from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
-  let onSubmit          =   navigateOnSubmit('/real-id', props);
+  let onSubmit          =   navigateOnSubmit('/what-do-you-want-to-do-today', props);
   let onBack            =   navigateOnBack('/my-basics/legal-name', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
 

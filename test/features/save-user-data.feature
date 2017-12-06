@@ -14,10 +14,14 @@ Feature: Save user data
     Then I will be on the page for entering my date of birth
     And I enter my full date of birth into the form
     When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    And I click on the ID checkbox
+    When I click "Next" to continue
     Then I will be on the page for choosing real id
     And I click yes to getting a real id
     And I click "Next" to continue
-    Then I will be on the page for entering my address
+    Then I will be on the get started page
+    Then I visit the addresses page
     And I enter my home address
     And I select address interstitial No
     And I enter my mailing address

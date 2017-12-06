@@ -8,4 +8,4 @@ Feature: Intro Screen
     When I visit app intro page
     Then I see text introducing the page
     When I click "Next" to continue
-    Then I will be taken to the names page
+    Then I will be on the page for entering my address
