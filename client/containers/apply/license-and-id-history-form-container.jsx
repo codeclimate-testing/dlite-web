@@ -18,6 +18,10 @@ const ConnectedForm = (props) => {
   let onSubmit                 = navigateOnSubmit('/my-history/names/', props);
   let onBack                   = navigateOnBack('/my-history/medical/', props);
 
+  if(props.cardType.driverLicense === false) {
+    onBack = navigateOnBack('/my-basics/social-security', props);
+  }
+
   if(props.licenseAndIdHistory.isIssued === 'Yes') {
     showLicenseAndIdHistory  = false;
     continueDisabled = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
@@ -62,8 +66,9 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-     licenseAndIdHistory: state.application.licenseAndIdHistory
-    };
+    licenseAndIdHistory: state.application.licenseAndIdHistory,
+    cardType: state.application.cardType
+  };
 }
 
 export default connectForm(mapStateToProps, updateLicenseAndIdHistory, ConnectedForm);

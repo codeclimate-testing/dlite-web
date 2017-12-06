@@ -34,4 +34,9 @@ Feature: Existing DL or ID number
     Given I go to the new online DL application page
     When I visit the page to enter existing license and id
     When I click to go back
+    Then I will be on the page for entering my social security
+    Then I visit the ID or DL selection page
+    And I click on the DL checkbox
+    When I visit the page to enter existing license and id
+    When I click to go back
     Then I will be taken to medical history page
