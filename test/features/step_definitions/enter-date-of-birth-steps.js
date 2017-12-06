@@ -87,10 +87,6 @@ module.exports = function(world) {
     var day = d.getDate() + 5;
     var year = d.getFullYear() - 17;
 
-    console.log('day: ' + day);
-    console.log('month: ' + month);
-    console.log('year: ' + year);
-
     browser
       .type('#month', month.toString())
       .type('#day', day.toString())
