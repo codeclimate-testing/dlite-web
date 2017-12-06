@@ -5,6 +5,7 @@ import React                    from 'react';
 import SelectorCollection      from '../selector-collection.jsx';
 import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
+import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 let pageTitle = 'DMV: License application - Voting registration'
@@ -16,8 +17,9 @@ const EligibilityRequirements = (props) => {
   let documentStatement = [];
   let bulletList = [];
   let documentValues = [];
+  let ageGroup = getAgeGroup(props.dateOfBirth.age);
 
-  if ((props.dateOfBirth.age > 15 ) && (props.dateOfBirth.age < 18)) {
+  if (ageGroup === "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18") {
     documentHeader.push(
       'Voting pre-registration'
     )
