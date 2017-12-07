@@ -4,7 +4,7 @@ import React from 'react';
 
 const ContinueButton = (props) => {
   let visibility = {
-    visibility: props.visible ? 'visible' : 'hidden'
+    visibility: props.visible !== false ? 'visible' : 'hidden'
   };
 
   return (
