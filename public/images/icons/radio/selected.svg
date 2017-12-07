@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/selection/selectedRadio</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons/selection/selectedRadio">
+            <g id="radio-dark" transform="translate(5.000000, 5.000000)">
+                <circle id="Oval-Copy-5" stroke="#010B96" stroke-width="2" cx="12.5" cy="12.5" r="12.5"></circle>
+                <circle id="Oval-Copy-2" fill="#010B96" cx="12.5" cy="12.5" r="8.65384615"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

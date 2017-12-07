@@ -35,6 +35,10 @@
 }
 
 @mixin focus-outline {
-  border-bottom-width: $border-width-special;
   @include box-shadow(0 0 0 2px $focus);
 }
+
+@mixin focus-outline-input {
+  @include focus-outline;
+  border-bottom-width: $border-width-special;
+};

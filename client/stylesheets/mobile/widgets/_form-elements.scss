@@ -39,7 +39,7 @@ textarea {
 
   &:focus,
   &.focus {
-    @include focus-outline;
+    @include focus-outline-input;
     margin-bottom: -1px;
   }
 }

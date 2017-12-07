@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/selection/selectedCheck</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons/selection/selectedCheck" stroke="#010B96">
+            <g id="check_square" transform="translate(5.000000, 5.000000)">
+                <rect id="Rectangle" stroke-width="2" x="0" y="0" width="25" height="25" rx="3"></rect>
+                <polyline id="Line-2-Copy" stroke-width="3" stroke-linecap="square" points="5 14.2738901 8.67051798 18.25 20 7"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

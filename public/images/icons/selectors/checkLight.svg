@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/colours/checkLight</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3.8458278,-1.55376046e-16 L48,0 L48,48 L3.8458278,48 C2.50854969,48 2.02362033,47.8607616 1.53473144,47.5993009 C1.04584256,47.3378403 0.662159695,46.9541574 0.400699056,46.4652686 C0.139238417,45.9763797 6.01853049e-17,45.4914503 -1.03584031e-16,44.1541722 L1.03584031e-16,3.8458278 C-6.01853049e-17,2.50854969 0.139238417,2.02362033 0.400699056,1.53473144 C0.662159695,1.04584256 1.04584256,0.662159695 1.53473144,0.400699056 C2.02362033,0.139238417 2.50854969,9.02779573e-17 3.8458278,-1.55376046e-16 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons/colours/checkLight">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask"></g>
+            <polyline id="Line-2-Copy" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" mask="url(#mask-2)" points="8 19.6985201 12.894024 25 28 10"></polyline>
+        </g>
+    </g>
+</svg>
