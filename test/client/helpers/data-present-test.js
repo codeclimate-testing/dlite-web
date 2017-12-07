@@ -85,21 +85,21 @@ describe('dataPresent', function() {
   describe('#cardType', function() {
     it('is true when one part is true', function() {
       assert(
-        dataPresent.cardType({driverLicense: false, ID: true}), 
+        dataPresent.cardType({DL: false, ID: true}), 
         'card type not true with one field'
       );      
     });
 
     it('is true when two parts are true', function() {
       assert(
-        dataPresent.cardType({driverLicense: true, ID: true}),
+        dataPresent.cardType({DL: true, ID: true}),
         'card type not true with both fields'
       );
     });
 
     it('is false when no parts are true', function() {
       assert(
-        !dataPresent.cardType({driverLicense: false, ID: false}),
+        !dataPresent.cardType({DL: false, ID: false}),
         'card type not false when no fields selected'
       );
     });

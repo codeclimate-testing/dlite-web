@@ -29,7 +29,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (props.driverLicense === true || props.ID === true))
+  return (props && (props.DL === true || props.ID === true))
 };
 
 const address = (props) => {

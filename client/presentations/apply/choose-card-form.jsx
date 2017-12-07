@@ -20,10 +20,10 @@ const Form = (props) => {
           />
 
           <CheckBoxInput 
-            identifier='driverLicense'
+            identifier='DL'
             description='Driver License'
             onChange={ props.onChange }
-            checked={ props.cardType.driverLicense }
+            checked={ props.cardType.DL }
           />
 
           <div className='unit spacer' />

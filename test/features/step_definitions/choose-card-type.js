@@ -7,7 +7,7 @@ module.exports = function(world) {
 
   world.and('I click on the DL checkbox', function(done) {
     browser
-      .click('[for="driverLicense"]')
+      .click('[for="DL"]')
       .then(() => { done(); })
       .catch(done)
   });
@@ -44,6 +44,16 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert(text.includes('Card Types'), 'card types not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I will see that I am not getting a DL', function(done) {
+    browser
+      .text('.inner')
+      .then( text => {
+        assert(!text.includes('Card Type: Driver License'), 'DL is shown in summary');
       })
       .then(() => { done(); })
       .catch(done);

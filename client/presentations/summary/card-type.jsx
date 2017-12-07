@@ -8,7 +8,7 @@ const CardType = (props) => {
 
   let values = [];
 
-  if(props.cardType.driverLicense) {
+  if(props.cardType.DL) {
     values.push('Driver License');
   }
 

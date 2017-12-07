@@ -20,6 +20,7 @@ const ConnectedForm = (props) => {
       onBack            = { onBack }
       onChange          = { props.onChange }
       realID            = { props.realID }
+      cardType          = { props.cardType }
       continueDisabled  = { continueDisabled }
     />
   );
@@ -27,7 +28,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    realID : state.application.realID
+    realID :            state.application.realID,
+    cardType:           state.application.cardType
   };
 }
 

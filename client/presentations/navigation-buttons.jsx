@@ -8,7 +8,7 @@ const NavigationButtons = (props) => {
   return (
     <div className='navigation-buttons row'>
       <hr />
-      <ContinueButton disabled={props.continueDisabled} />
+      <ContinueButton disabled={props.continueDisabled} visible={props.visible}/>
       <BackButton onBack={props.onBack} />
     </div>
   );
