@@ -12,7 +12,7 @@ import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   // if under 14 and selected "driverLicense", then instead of going to real-id page, go to page with message that user is too young and can only apply for ID
-  let onSubmit          =   props.age < 14 && props.cardType.DL === true ? navigateOnSubmit('/minor-DL-message', props) : navigateOnSubmit('/real-id', props);
+  let onSubmit          =   props.age > 0 && props.age < 14 && props.cardType.DL === true ? navigateOnSubmit('/minor-DL-message', props) : navigateOnSubmit('/real-id', props);
   let onBack            =   navigateOnBack('/my-basics/date-of-birth', props);
   let continueDisabled  =   !(dataPresent.cardType(props.cardType));
   let pageTitle         =   'DMV: License application'

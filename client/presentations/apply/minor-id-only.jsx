@@ -32,7 +32,7 @@ const Form = (props) => {
   };
 
   return (
-    <div className='choose-card-form'>
+    <div className='minor-dl-message'>
       <h4>Because you’re under 14, you can’t
       apply for a driver license. Would you
       like to get a California ID instead?</h4>
