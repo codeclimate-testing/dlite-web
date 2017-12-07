@@ -1,16 +1,15 @@
 'use strict';
 
-import React        from 'react';
+import React                    from 'react';
 
 import HomeLink                 from '../../presentations/home-link.jsx';
 import LinkButton               from '../../presentations/link-button.jsx';
 import alicePath                from '../../helpers/alice-path';
 import BackButton               from '../back-button.jsx';
-import navigateOnBack         from '../../helpers/navigate-on-back';
+import navigateOnBack           from '../../helpers/navigate-on-back';
 
 const Intro = (props) => {
   const linkAddress             = '/my-basics/address';
-  let onBack                    = navigateOnBack('/real-id', props);
 
   return (
     <div>
@@ -34,7 +33,7 @@ const Intro = (props) => {
 
 
         <div className='navigation-buttons'>
-          <BackButton onBack={onBack} key='back-button' />
+          <BackButton onBack={props.onBack} key='back-button' />
           <LinkButton
             to={linkAddress}
             linkText='Get started'

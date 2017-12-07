@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import HomeLink                 from '../home-link.jsx';
 import SelectorCollection       from '../selector-collection.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../page.jsx';

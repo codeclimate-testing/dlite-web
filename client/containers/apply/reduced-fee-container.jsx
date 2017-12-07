@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { updateReducedFee }   from "../../actions/index";
-import Form                   from "../../presentations/apply/real-id-form.jsx";
+import { updateCardOptions }   from "../../actions/index";
+import Form                   from "../../presentations/apply/reduced-fee-form.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
@@ -11,15 +11,16 @@ import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/get-started', props);
-  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
-  let continueDisabled  =   !(dataPresent.realID(props.realID));
+  let onBack            =   navigateOnBack('/real-id', props);
+  let continueDisabled  =   dataPresent.cardModificationOptions(props.cardOptions.ID);
 
   return (
     <Form
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       onChange          = { props.onChange }
-      realID            = { props.realID }
+      cardOptions       = { props.cardOptions }
+      cardType          = { props.cardType }
       continueDisabled  = { continueDisabled }
     />
   );
@@ -27,8 +28,9 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    realID : state.application.realID
+    cardOptions:  state.application.cardOptions,
+    cardType:     state.application.cardType
   };
 }
 
-export default connectForm(mapStateToProps, updateRealID, ConnectedForm);
+export default connectForm(mapStateToProps, updateCardOptions, ConnectedForm);
