@@ -6,11 +6,11 @@ const RadiosForValues = (props) => {
   return props.values.map((value) => {
     return  (
       <div key={value}>
-      <label
-        className='radio-selector unit relative'
-        htmlFor={value}
-      >
-        <input
+        <label
+          className='radio-selector unit relative'
+          htmlFor={value}
+        >
+          <input
             type='radio'
             name={props.name}
             id={value}
@@ -18,7 +18,7 @@ const RadiosForValues = (props) => {
             checked={props.selectedValue === value}
             onChange={props.onChange}
           />
-          {value}
+            {value}
         </label>
         <div className='unit spacer'></div>
         <br />
