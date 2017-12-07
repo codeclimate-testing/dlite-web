@@ -1,0 +1,34 @@
+'use strict';
+
+import React from 'react';
+
+import { updateReducedFee }   from "../../actions/index";
+import Form                   from "../../presentations/apply/real-id-form.jsx";
+import connectForm            from '../../helpers/connect-form';
+import navigateOnSubmit       from '../../helpers/navigate-on-submit';
+import navigateOnBack         from '../../helpers/navigate-on-back';
+import * as dataPresent       from '../../helpers/data-present';
+
+const ConnectedForm = (props) => {
+  let onSubmit          =   navigateOnSubmit('/get-started', props);
+  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
+  let continueDisabled  =   !(dataPresent.realID(props.realID));
+
+  return (
+    <Form
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      onChange          = { props.onChange }
+      realID            = { props.realID }
+      continueDisabled  = { continueDisabled }
+    />
+  );
+};
+
+function mapStateToProps(state) {
+  return {
+    realID : state.application.realID
+  };
+}
+
+export default connectForm(mapStateToProps, updateRealID, ConnectedForm);
