@@ -28,6 +28,7 @@ const ConnectedForm = (props) => {
           <ContactChoice
             onChange      = {props.onChange}
             selectedValue = {props.contactMethods.shouldContact}
+            dateOfBirth   = {props.dateOfBirth}
           />
           <ContactDetails
             onChange       = {props.onChange}
@@ -45,12 +46,12 @@ const ConnectedForm = (props) => {
 
   return (
     <div>
-      <HomeLink />
 
       <form onSubmit={onSubmit}>
         <ContactChoice
           onChange      = {props.onChange}
           selectedValue = {props.contactMethods.shouldContact}
+          dateOfBirth   = {props.dateOfBirth}
         />
         <NavigationButtons
           continueDisabled={continueDisabled}
@@ -63,7 +64,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    contactMethods: state.application.contactMethods
+    contactMethods: state.application.contactMethods,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 
