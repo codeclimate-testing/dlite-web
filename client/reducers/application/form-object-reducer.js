@@ -6,10 +6,10 @@ export default (defaultState, actionType) => {
 
     let data = {};
     let payload = action.payload;
-
+    
     if (payload) {
       let name = payload.name;
-      let value = payload.value;
+      let value = payload.value === 'true' ? true : payload.value === 'false' ? false : payload.value;
       data[name] = value;
     }
 

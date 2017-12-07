@@ -17,6 +17,7 @@ const linkData = [
   {description: 'legal name',                             path: '/my-basics/legal-name'},
   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
   {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
+  {description: 'minor DL message' ,                      path: '/minor-dl-message'},
   {description: 'real ID',                                path: '/real-id'},
   {description: 'intro page',                             path: '/get-started'},
   {description: 'address',                                path: '/my-basics/address'},

@@ -8,11 +8,12 @@ import Home                                   from '../presentations/home.jsx';
 import Summary                                from './summary-handler.jsx';
 import RequiredDocuments                      from './required-documents-handler.jsx';
 
-import Intro                                  from '../presentations/apply/intro.jsx';
 import LegalName                              from './apply/legal-name-form-container.jsx';
-import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
+import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
+import MinorDLMessage                         from './apply/minor-dl-message.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
+import Intro                                  from '../presentations/apply/intro.jsx';
 import Address                                from './apply/address-form-container.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
@@ -44,6 +45,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
+        <Route path={ alicePath('/minor-DL-message') } component={MinorDLMessage} />
         <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/get-started') } component={Intro} />
         <Route path={ alicePath('/links') } exact component={Home} />
