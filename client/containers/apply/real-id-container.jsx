@@ -10,7 +10,7 @@ import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          =   navigateOnSubmit('/get-started', props);
+  let onSubmit          =   props.cardType.ID === true ? navigateOnSubmit('/reduced-fee', props) : navigateOnSubmit('/get-started', props);
   let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
   let continueDisabled  =   !(dataPresent.realID(props.realID));
 

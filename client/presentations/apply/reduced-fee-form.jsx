@@ -8,11 +8,17 @@ import Page                     from '../page.jsx';
 
 const VALUES = ['Yes', 'No'];
 
-let pageTitle = 'DMV: License application - My basics'
+let pageTitle = 'DMV: ID application - Reduced Fee';
 
 const Form = (props) => {
 
-  let card = props.cardType.DL === true ? 'Driver License' : 'ID';
+  let onChange = (e) => {
+    let answer = e;
+    answer.target.value = {..., props.cardOptions.ID};
+    console.log(props.cardOptions.ID)
+    console.log(answer.target.value);
+    props.onChange(answer);
+  };
 
   return (
     <Page
@@ -21,17 +27,22 @@ const Form = (props) => {
       sectionName='My basics'
       {...props}
     >
-      <div className='real-id-form'>
-        <h4>Do you plan on using your {card} to fly?</h4>
-        <h5>As of October 1, 2020, you will need a federally compliant driver license or ID card to fly <b>within</b> the United States.</h5>
+      <div className='reduced-fee-form'>
+        
+        <h4>Are you applying for a reduced fee or free ID?</h4>
+
+        {
+          props.cardType.ID === true && props.cardType.DL === true &&
+          <h5>This only applies to your ID Card. You cannot get a free or reduced fee driver license.</h5>
+        }
 
         <form onSubmit={ props.onSubmit } >
           <div className='row inner-bottom'>
               <SelectorCollection
-                  name='getRealID'
+                  name='ID'
                   values={VALUES}
-                  onChange={ props.onChange }
-                  selectedValue={ props.realID.getRealID }
+                  onChange={ onChange }
+                  selectedValue={ props.cardOptions.ID.modifications.reducedFee }
               />
 
               <div className='unit spacer' />
