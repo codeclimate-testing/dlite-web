@@ -8,8 +8,6 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
 
-  let selectedValue = {}
-
   let changeID = (e) => {
     // send back boolean depending on string value of selected radio
     let answer = e.target.value;
