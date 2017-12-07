@@ -13,6 +13,7 @@ import DateOfBirth                            from './apply/date-of-birth-form-c
 import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
 import MinorDLMessage                         from './apply/minor-dl-message.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
+import ReducedFee                             from './apply/reduced-fee-container.jsx';
 import Intro                                  from '../presentations/apply/intro.jsx';
 import Address                                from './apply/address-form-container.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
@@ -46,6 +47,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
         <Route path={ alicePath('/minor-DL-message') } component={MinorDLMessage} />
         <Route path={ alicePath('/real-id') } component={RealID} />
+        <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
         <Route path={ alicePath('/get-started') } component={Intro} />
         <Route path={ alicePath('/links') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
