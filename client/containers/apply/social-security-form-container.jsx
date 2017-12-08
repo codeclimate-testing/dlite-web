@@ -49,6 +49,10 @@ const ConnectedForm = (props) => {
     />
   );
 
+  if(props.cardType.driverLicense === false) {
+    onSubmit = navigateOnSubmit('/my-history/license-and-id', props);
+  };
+
   return (
     <form onSubmit={onSubmit}>
       { content }
@@ -58,7 +62,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    socialSecurity: state.application.socialSecurity
+    socialSecurity: state.application.socialSecurity,
+    cardType: state.application.cardType
   };
 }
 

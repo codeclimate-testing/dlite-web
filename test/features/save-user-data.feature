@@ -15,7 +15,7 @@ Feature: Save user data
     And I enter my full date of birth into the form
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    And I click on the ID checkbox
+    And I click on the DL checkbox
     When I click "Next" to continue
     Then I will be on the page for choosing real id
     And I click yes to getting a real id
