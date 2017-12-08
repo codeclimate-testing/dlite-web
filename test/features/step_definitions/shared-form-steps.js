@@ -5,13 +5,6 @@ const assert = require('assert');
 module.exports = function (world) {
   let browser = world.browser;
 
-  world.and('I click to submit', function(done) {
-    browser
-      .click('input[type=submit]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.and('I click "Next" to continue', function(done) {
     browser
       .click('.navigation-buttons .forward')
