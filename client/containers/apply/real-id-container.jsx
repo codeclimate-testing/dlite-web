@@ -3,8 +3,7 @@
 import React from 'react';
 
 import { updateRealID }       from "../../actions/index";
-import RealIdOneCardForm      from "../../presentations/apply/real-id-one-card-form.jsx";
-import RealIdTwoCardForm      from "../../presentations/apply/real-id-two-card-form.jsx";
+import RealIdForm             from "../../presentations/apply/real-id-form.jsx";
 import RealIdDesignationForm  from "../../presentations/apply/real-id-designation-form.jsx";
 import NavigationButtons      from '../../presentations/navigation-buttons.jsx';
 import connectForm            from '../../helpers/connect-form';
@@ -19,25 +18,14 @@ const ConnectedForm = (props) => {
 
   let content = [];
 
-  if(props.cardType.ID && props.cardType.DL) {
-    content.push(
-      <RealIdTwoCardForm
-        onChange = { props.onChange }
-        selectedValue = { props.realID.getRealID }
-        cardType = { props.cardType }
-        key = 'real-id-two-card-form'
-      />
-    )
-  } else {
-    content.push(
-      <RealIdOneCardForm
-        onChange = { props.onChange }
-        selectedValue = { props.realID.getRealID }
-        cardType = { props.cardType }
-        key = 'real-id-one-card-form'
-      />
-    )
-  };
+  content.push(
+    <RealIdForm
+      onChange = { props.onChange }
+      selectedValue = { props.realID.getRealID }
+      cardType = { props.cardType }
+      key = 'real-id-one-card-form'
+    />
+  )
 
   if(props.realID.getRealID === 'Yes' && props.cardType.ID && props.cardType.DL) {
     continueDisabled = !(props.realID.realIdDesignation);
