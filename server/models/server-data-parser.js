@@ -329,8 +329,13 @@ function getReducedFee(card_options) {
     form: ''
   };
   card_options.forEach(option => {
-    if(option.option_value === 'reduced-fee') {
-      reducedFee.ID = 'Yes'
+    if(option.option_value === 'reduced-fee-has-form') {
+      reducedFee.ID = 'Yes';
+      reducedFee.form = 'Yes';
+    }
+    else if(option.option_value === 'reduced-fee-no-form') {
+      reducedFee.ID = 'Yes';
+      reducedFee.form = 'No';
     }
   });
   return reducedFee;
