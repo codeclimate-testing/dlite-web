@@ -11,34 +11,25 @@ module.exports.createDateJson = function(date) {
   }
 }
 
-module.exports.optedStrToValues = function(str) {
-  if( str === 'I am a new voter in California'){
-    return {opted_out: 'No', type: 'new'};
-  }
-  else if( str === 'I am already registered to vote in California'){
-    return {opted_out: 'No', type: 'existing'};
-  }
-  else if( str === 'I am eligible to vote, but do not want to register to vote'){
-    return {opted_out: 'Yes', type: 'existing'};
-  }
-  else{
-    return {opted_out: null, type: null};
-  }
+const voterChoiceMap = {
+  "new": {opted_out: 'No', type: 'new'},
+  "existing": {opted_out: 'No', type: 'existing'},
+  "opt-out": {opted_out: 'Yes', type: 'existing'}
+};
+
+module.exports.optedStrToValues = function(radioValue) {
+  const nullChoices = {opted_out: null, type: null}
+  return voterChoiceMap[radioValue] || nullChoices;
 }
 
-module.exports.optedValuesToStr = function(opted) {
-  if( opted.opted_out === 'No' && opted.type === 'new' ){
-    return 'I am a new voter in California';
-  }
-  else if( opted.opted_out === 'No' && opted.type === 'existing' ){
-    return 'I am already registered to vote in California';
-  }
-  else if( opted.opted_out === 'Yes' && opted.type === 'existing' ){
-    return 'I am eligible to vote, but do not want to register to vote';
-  }
-  else{
-    return null;
-  }
+module.exports.optedValuesToStr = function(record) {
+  return Object.keys(voterChoiceMap).find((value) => {
+    let opts = voterChoiceMap[value];
+    return (
+      opts.opted_out === record.opted_out &&
+      opts.type === record.type
+    );
+  });
 }
 
 module.exports.strToBool = function(val) {
