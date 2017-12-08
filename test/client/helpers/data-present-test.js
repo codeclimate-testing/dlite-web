@@ -106,13 +106,13 @@ describe('dataPresent', function() {
   });
 
   describe('#reducedFee', function() {
-    it('is true when both parts have values', function() {
+    it('returns true when user is not applying for a reduced fee', function() {
       assert(
-        dataPresent.reducedFee({ID: 'Yes', form: 'Yes'}),
-        'reduced fee test should be true when both parts have values'
+        dataPresent.reducedFee({ID: 'No'}),
+        'result should be true when user selects No to reduced fee'
       )
     });
-    it('is false when there is no value', function() {
+    it('is false when no values have been selected', function() {
       assert(
         dataPresent.reducedFee({ID: '', form: ''}),
         'reduced fee test should not be true when there is no value'

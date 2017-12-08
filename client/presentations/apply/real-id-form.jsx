@@ -12,7 +12,7 @@ let pageTitle = 'DMV: License application - My basics'
 
 const Form = (props) => {
 
-  let card = props.cardType.DL === true ? 'Driver License' : 'ID';
+  let card = (props.cardType.DL === true && props.cardType.ID === false) ? 'your Driver License' : (props.cardType.DL === false && props.cardType.ID === true) ? 'your ID card' : 'one of your cards';
 
   return (
     <Page
@@ -22,7 +22,7 @@ const Form = (props) => {
       {...props}
     >
       <div className='real-id-form'>
-        <h4>Do you plan on using your {card} to fly?</h4>
+        <h4>Do you plan on using {card} to fly?</h4>
         <h5>As of October 1, 2020, you will need a federally compliant driver license or ID card to fly <b>within</b> the United States.</h5>
 
         <form onSubmit={ props.onSubmit } >

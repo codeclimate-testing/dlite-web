@@ -19,7 +19,7 @@ And I click "Next" to continue
 Then I will be on the page for choosing real id
 When I click yes to getting a real id
 And I click "Next" to continue
-Then I will be on the get started page
+Then I will be on the reduced fee page
 And I click to go back
 Then I will be on the page for choosing real id
 
