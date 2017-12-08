@@ -49,3 +49,10 @@ So that I know this is and option and can come prepared
     When I click on the DL checkbox
     When I visit the reduced fee page
     Then I will see an information note under the reduced fee question saying: "This only applies to your ID card."
+
+  Scenario:
+    Given I go to the new online DL application
+    When I visit the reduced fee page
+    And I select Yes to getting a reduced fee
+    When I visit the required documents page
+    Then I will see at the end two additional bullet points and corresponding sections: "Reduced fee eligibility", and "No fee eligibility"

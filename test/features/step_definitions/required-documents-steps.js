@@ -134,4 +134,14 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see at the end two additional bullet points and corresponding sections: "Reduced fee eligibility", and "No fee eligibility"', function(done) {
+    browser
+      .text('.required-documents')
+      .then( text => {
+        assert(text.includes('Reduced fee eligibility') && text.includes('No fee eligibility') && text.includes('DL 937') && text.includes('DL 933'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };
