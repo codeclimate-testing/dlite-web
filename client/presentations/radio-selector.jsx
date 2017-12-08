@@ -5,10 +5,11 @@ import React from 'react';
 // extracted this out because I believe it will be reusable for the checkboxes
 const SelectorContents = (props) => {
   const iconClass = 'icon-region unit ' + props.iconClass || '';
+  const text = props.text || props.value;
   return (
     <div className='unit selector-contents'>
       <div className={iconClass} />
-      <div className='text-region last-unit'>{props.value}</div>
+      <div className='text-region last-unit'>{text}</div>
     </div>
   );
 };
@@ -27,7 +28,7 @@ const RadioSelector = function(props) {
     containerElement.className = className;
   }
 
-  let id = props.name + props.value;
+  let id = props.name + '-' + props.value;
 
   return (
     <div className={className}>
@@ -54,6 +55,7 @@ const RadioSelector = function(props) {
           </div>
           <SelectorContents
             value={props.value}
+            text={props.text}
             iconClass={props.iconClass}
           />
         </label>
