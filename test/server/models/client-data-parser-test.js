@@ -70,10 +70,12 @@ describe('client data parser', function() {
     assert.equal(options[0].option_value, 'new');
     assert.equal(options[1].option_type, 'modification');
     assert.equal(options[1].option_value, 'real-id');
-    assert.equal(options[2].option_type, 'action');
-    assert.equal(options[2].option_value, 'new');
-    assert.equal(options[3].option_type, 'modification');
-    assert.equal(options[3].option_value, 'real-id');
+    assert.equal(options[2].option_type, 'modification');
+    assert.equal(options[2].option_value, 'reduced-fee');
+    assert.equal(options[3].option_type, 'action');
+    assert.equal(options[3].option_value, 'new');
+    assert.equal(options[4].option_type, 'modification');
+    assert.equal(options[4].option_value, 'real-id');
   });
 
   it('correctly extracts the email', function() {
