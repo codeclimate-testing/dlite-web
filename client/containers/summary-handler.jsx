@@ -75,7 +75,11 @@ const SummaryHandler = (props) => {
 
   if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
     contents.push(
-        <input type='submit' id='saveData' key='save-and-continue' value='Save and Continue'/>
+        <div className='navigation-buttons row' key='save-and-continue'>
+          <button type='submit' className='arrow-button forward'>
+            Save & Continue
+          </button>
+        </div>
     );
   }
   else{

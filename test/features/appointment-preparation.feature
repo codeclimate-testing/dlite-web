@@ -6,7 +6,7 @@ Feature: Appointment preparation page
   Scenario: Seeing appointment preparation page
     Given I go to the new online DL application page
     When I go to the page with my summary
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page for appointment preparation
     Then I see text for documents needed for a Class C license
 
