@@ -9,7 +9,7 @@ So that I am able to identify myself to interested parties
     Then I click on the DL checkbox
     When I click "Next" to continue
     Then I will be on the page for choosing real id
-    When I click yes to getting a real id
+    When I click no to getting a real id
     When I click "Next" to continue
     Then I will be on the get started page
     When I click to go back

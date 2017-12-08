@@ -18,7 +18,7 @@ Feature: Save user data
     And I click on the DL checkbox
     When I click "Next" to continue
     Then I will be on the page for choosing real id
-    And I click yes to getting a real id
+    And I click no to getting a real id
     And I click "Next" to continue
     Then I will be on the get started page
     Then I visit the addresses page
