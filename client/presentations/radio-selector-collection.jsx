@@ -17,13 +17,17 @@ const calculateTabIndex = (props, value, values) => {
 const childPropsAdditions = (props, value, values) => {
   const selected = props.selectedValue === value;
   let tabIndex = calculateTabIndex(props, value, values);
+  let focused = props.focused === value;
 
   return {
     name: props.name,
     key: value,
     selected: selected,
     tabIndex: tabIndex,
-    onChange: props.onChange
+    focused: focused,
+    onChange: props.onChange,
+    onBlur: props.onBlur,
+    onFocus: props.onFocus
   };
 };
 

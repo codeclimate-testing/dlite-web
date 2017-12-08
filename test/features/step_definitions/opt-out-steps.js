@@ -9,7 +9,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('I am a new voter in California'), 'voter registration choice as I am a new voter in California not saved in summary');
+      assert.ok(text.includes('new'), 'voter registration choice as I am a new voter in California not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -19,7 +19,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('I am already registered to vote in California'), 'voter registration choice as I am already registered to vote in California in summary');
+      assert.ok(text.includes('existing'), 'voter registration choice as I am already registered to vote in California in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -29,7 +29,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('I am eligible to vote, but do not want to register to vote'), 'voter registration choice as I am eligible to vote, but do not want to register to vote saved in summary');
+      assert.ok(text.includes('opt-out'), 'voter registration choice as I am eligible to vote, but do not want to register to vote saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -37,11 +37,11 @@ module.exports = function(world) {
 
   world.then('I see three options on opt out page', function(done) {
     browser
-    .html('label[for="I am a new voter in California"]')
+    .html('label[for="optOut-new"]')
     .then((button) => { assert.ok(button, 'Selector for I am a new voter in California missing')})
-    .html('label[for="I am already registered to vote in California"]')
+    .html('label[for="optOut-existing"]')
     .then((button) => { assert.ok(button, 'Selector for I am already registered to vote in California missing')})
-    .html('label[for="I am eligible to vote, but do not want to register to vote"]')
+    .html('label[for="optOut-opt-out"]')
     .then((button) => { assert.ok(button, 'Selector for I am eligible to vote, but do not want to register to vote missing')})
     .then(() => { done(); })
     .catch(done);
@@ -49,21 +49,21 @@ module.exports = function(world) {
 
   world.when('I select I am a new voter in California', function(done){
     browser
-    .click('label[for="I am a new voter in California"]')
+    .click('label[for="optOut-new"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select I am already registered to vote in California', function(done){
     browser
-    .click('label[for="I am already registered to vote in California"]')
+    .click('label[for="optOut-existing"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select I am eligible to vote, but do not want to register to vote', function(done){
     browser
-    .click('label[for="I am eligible to vote, but do not want to register to vote"]')
+    .click('label[for="optOut-opt-out"]')
     .then(() => { done(); })
     .catch(done);
   });

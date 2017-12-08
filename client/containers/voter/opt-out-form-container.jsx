@@ -1,77 +1,79 @@
 'use strict';
 
 import React from 'react';
+import { connect } from "react-redux";
 
-import { updateOptOut }        from '../../actions/index';
-import OptOutForm              from '../../presentations/voter/opt-out-form.jsx';
-import PreregOptOutForm        from '../../presentations/voter/opt-out-prereg-form.jsx';
-import connectForm             from '../../helpers/connect-form';
-import navigateOnSubmit        from '../../helpers/navigate-on-submit';
-import navigateOnBack          from '../../helpers/navigate-on-back';
-import * as dataPresent        from '../../helpers/data-present';
+import {
+  updateOptOut,
+  blurPageElement,
+  focusPageElement
+} from '../../actions/index';
+
+import onInputChange                  from '../../helpers/on-input-change';
+import onFormSubmit                   from '../../helpers/on-form-submit';
+import navigateOnSubmit               from '../../helpers/navigate-on-submit';
+import navigateOnBack                 from '../../helpers/navigate-on-back';
+import * as dataPresent               from '../../helpers/data-present';
 import { isPreregistering }    from '../../helpers/calculate-age';
 
-const ConnectedForm = (props) => {
-  let value = props.optOut;
-  let content = [];
-  let address;
+import OptOutForm              from '../../presentations/voter/opt-out-form.jsx';
+import PreregOptOutForm        from '../../presentations/voter/opt-out-prereg-form.jsx';
 
+
+const Form = (props) => {
+  let value = props.optOut;
   const continueDisabled = !dataPresent.value(value);
 
-  const NEW_VOTER = '/voting-registration/preferences';
-  const ELIGIBLE_YES_REGISTER_NO = '/summary';
-  const ALREADY_REGISTERED = '/voting-registration/preferences-updated'
-
-  if ((props.optOut == "I am eligible to vote, but do not want to pre-register to vote") || (props.optOut === "I am eligible to vote, but do not want to register to vote")) {
-    address = ELIGIBLE_YES_REGISTER_NO;
+  let address = '/voting-registration/preferences';
+  if ((props.optOut == "I am eligible to vote, but do not want to pre-register to vote") || (props.optOut === "opt-out")) {
+    address = '/summary';
+  } else if (props.optOut == "existing") {
+    address = '/voting-registration/preferences-updated';
   }
-  else if
-    (props.optOut == "I am already registered to vote in California") {
-    address = ALREADY_REGISTERED;
-  }
-  else {
-    address = NEW_VOTER;
-  };
 
   const onSubmit = navigateOnSubmit(address, props);
-  const onBack = navigateOnBack('/voting-registration/eligibility', props);
+  const onBack   = navigateOnBack('/voting-registration/eligibility', props);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    content.push(
-      <PreregOptOutForm
-        key='Pre-registration opt out'
-        onSubmit={onSubmit}
-        onBack={onBack}
-        onChange={props.onChange}
-        selectedValue={props.optOut}
-        age={props.dateOfBirth.age}
-        continueDisabled={continueDisabled}
-      />
-    );
-  } else {
-    content.push(
-      <OptOutForm
-        key='Opt out'
-        onSubmit={onSubmit}
-        onBack={onBack}
-        onChange={props.onChange}
-        selectedValue={props.optOut}
-        age={props.dateOfBirth.age}
-        continueDisabled={continueDisabled}
-      />
-    );
-  }
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreregOptOutForm : OptOutForm;
 
   return (
-    <div>{content}</div>
+    <Presentation
+      {...props}
+      onSubmit={onSubmit}
+      onBack={onBack}
+      selectedValue={props.optOut}
+      continueDisabled={continueDisabled}
+    />
   );
 };
 
 function mapStateToProps(state) {
   return {
     optOut: state.application.optOut,
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth: state.application.dateOfBirth,
+    focused: state.ui.focus
   };
 }
 
-export default connectForm(mapStateToProps, updateOptOut, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onBlur = () => {
+    dispatch(blurPageElement());
+  };
+
+  const onFocus = (event) => {
+    let value = (event.target && event.target.value) || '';
+    dispatch(focusPageElement(value));
+  };
+
+  const onChange = onInputChange(updateOptOut, dispatch);
+  const onSubmit = onFormSubmit;
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -1,10 +1,19 @@
 'use strict';
 
-function generateAction(type) {
-  return function action(name, value) {
+function generateFormAction(type) {
+  return function formAction(name, value) {
     return {
       type: type,
       payload: { name, value }
+    };
+  };
+}
+
+function generateValueAction(type) {
+  return (value) => {
+    return {
+      type: type,
+      payload: { value }
     };
   };
 }
@@ -34,31 +43,37 @@ export const TYPES = {
   UPDATE_POLITICAL_PARTY_CHOOSE_PREREG:   'UPDATE_POLITICAL_PARTY_CHOOSE_PREREG',
   UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE',
   UPDATE_OPT_OUT:                         'UPDATE_OPT_OUT',
-  UPDATE_CONTACT_METHODS:                 'UPDATE_POLITICAL_METHODS'
+  UPDATE_CONTACT_METHODS:                 'UPDATE_POLITICAL_METHODS',
+
+  FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
+  BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
 };
 
-export const createApplicationID              = generateAction(TYPES.CREATE_APPLICATION_ID);
-export const updateLegalName                  = generateAction(TYPES.UPDATE_LEGAL_NAME);
-export const updateCardType                   = generateAction(TYPES.UPDATE_CARD_TYPE);
-export const updateReducedFee                 = generateAction(TYPES.UPDATE_REDUCED_FEE);
-export const updateRealID                     = generateAction(TYPES.UPDATE_REAL_ID);
-export const updateHomeAddress                = generateAction(TYPES.UPDATE_HOME_ADDRESS);
-export const updateMailingAddress             = generateAction(TYPES.UPDATE_MAILING_ADDRESS);
-export const updateDateOfBirth                = generateAction(TYPES.UPDATE_DATE_OF_BIRTH);
-export const updateTraitsHeightWeight         = generateAction(TYPES.UPDATE_TRAITS_HEIGHT_WEIGHT);
-export const updatePhysicalTraits             = generateAction(TYPES.UPDATE_PHYSICAL_TRAITS);
-export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGAN_DONATION);
-export const updateLicenseIssues              = generateAction(TYPES.UPDATE_LICENSE_ISSUES);
-export const updateLicenseAndIdHistory        = generateAction(TYPES.UPDATE_LICENSE_AND_ID_HISTORY);
-export const updateNamesHistory               = generateAction(TYPES.UPDATE_NAMES_HISTORY);
-export const updateMedicalHistory             = generateAction(TYPES.UPDATE_MEDICAL_HISTORY);
-export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
-export const updateVeteranService             = generateAction(TYPES.UPDATE_VETERANS_SERVICE);
-export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
-export const updateBallotByMail               = generateAction(TYPES.UPDATE_BALLOT_BY_MAIL);
-export const updateEligibilityRequirements    = generateAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
-export const updatePoliticalPartyChoose       = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
-export const updatePoliticalPartyChoosePreReg = generateAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE_PREREG);
-export const updateBallotLanguage             = generateAction(TYPES.UPDATE_BALLOT_LANGUAGE);
-export const updateOptOut                     = generateAction(TYPES.UPDATE_OPT_OUT);
-export const updateContactMethods             = generateAction(TYPES.UPDATE_CONTACT_METHODS);
+export const createApplicationID              = generateFormAction(TYPES.CREATE_APPLICATION_ID);
+export const updateLegalName                  = generateFormAction(TYPES.UPDATE_LEGAL_NAME);
+export const updateCardType                   = generateFormAction(TYPES.UPDATE_CARD_TYPE);
+export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_REDUCED_FEE);
+export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);
+export const updateHomeAddress                = generateFormAction(TYPES.UPDATE_HOME_ADDRESS);
+export const updateMailingAddress             = generateFormAction(TYPES.UPDATE_MAILING_ADDRESS);
+export const updateDateOfBirth                = generateFormAction(TYPES.UPDATE_DATE_OF_BIRTH);
+export const updateTraitsHeightWeight         = generateFormAction(TYPES.UPDATE_TRAITS_HEIGHT_WEIGHT);
+export const updatePhysicalTraits             = generateFormAction(TYPES.UPDATE_PHYSICAL_TRAITS);
+export const updateOrganDonation              = generateFormAction(TYPES.UPDATE_ORGAN_DONATION);
+export const updateLicenseIssues              = generateFormAction(TYPES.UPDATE_LICENSE_ISSUES);
+export const updateLicenseAndIdHistory        = generateFormAction(TYPES.UPDATE_LICENSE_AND_ID_HISTORY);
+export const updateNamesHistory               = generateFormAction(TYPES.UPDATE_NAMES_HISTORY);
+export const updateMedicalHistory             = generateFormAction(TYPES.UPDATE_MEDICAL_HISTORY);
+export const updateSocialSecurity             = generateFormAction(TYPES.UPDATE_SOCIAL_SECURITY);
+export const updateVeteranService             = generateFormAction(TYPES.UPDATE_VETERANS_SERVICE);
+export const updateCitizenStatus              = generateFormAction(TYPES.UPDATE_CITIZEN_STATUS);
+export const updateBallotByMail               = generateFormAction(TYPES.UPDATE_BALLOT_BY_MAIL);
+export const updateEligibilityRequirements    = generateFormAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
+export const updatePoliticalPartyChoose       = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
+export const updatePoliticalPartyChoosePreReg = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE_PREREG);
+export const updateBallotLanguage             = generateFormAction(TYPES.UPDATE_BALLOT_LANGUAGE);
+export const updateOptOut                     = generateFormAction(TYPES.UPDATE_OPT_OUT);
+export const updateContactMethods             = generateFormAction(TYPES.UPDATE_CONTACT_METHODS);
+
+export const focusPageElement                 = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
+export const blurPageElement                  = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

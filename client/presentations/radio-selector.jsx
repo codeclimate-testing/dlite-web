@@ -15,29 +15,19 @@ const SelectorContents = (props) => {
 };
 
 const RadioSelector = function(props) {
-  const focusedClass = ' focus';
-
   let className = props.selected ? 'choice-selector selected' : 'choice-selector';
-  let containerElement;
-
-  let onFocus = (event) => {
-    containerElement.className = className + focusClass;
-  };
-
-  let onBlur = (event) => {
-    containerElement.className = className;
-  }
+  if (props.focused) { className += ' focus'; }
 
   let id = props.name + '-' + props.value;
 
+  // on focus and select, the page rerenders and focus is not kept
+  // need an onFocus/onBlur handlers that stores ux state
+
   return (
-    <div className={className}>
-      <div
-        className='outline-container'
-        ref={ (element) => { return containerElement = element; } }
-      >
+    <div className={ className }>
+      <div className='outline-container'>
         <label
-          className='unit relative radio-selector'
+          className='row relative radio-selector'
           htmlFor={id}
         >
           <div className='off-screen'>
@@ -49,8 +39,8 @@ const RadioSelector = function(props) {
               checked={props.selected}
               onChange={props.onChange}
               tabIndex={props.tabIndex}
-              onFocus={onFocus}
-              onBlur={onBlur}
+              onFocus={props.onFocus}
+              onBlur={props.onBlur}
             />
           </div>
           <SelectorContents
