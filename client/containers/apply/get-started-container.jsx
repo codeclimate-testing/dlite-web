@@ -8,6 +8,7 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 
 const ConnectedForm = (props) => {
+
   let onBack            =   props.cardType.ID === true ?  navigateOnBack('/reduced-fee', props) : navigateOnBack('/real-id', props);
 
   return (
@@ -23,4 +24,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connectForm(mapStateToProps, updateRealID, ConnectedForm);
+export default connectForm(mapStateToProps, null, ConnectedForm);

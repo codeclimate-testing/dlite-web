@@ -105,6 +105,21 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#reducedFee', function() {
+    it('is true when both parts have values', function() {
+      assert(
+        dataPresent.reducedFee({ID: 'Yes', form: 'Yes'}),
+        'reduced fee test should be true when both parts have values'
+      )
+    });
+    it('is false when there is no value', function() {
+      assert(
+        dataPresent.reducedFee({ID: '', form: ''}),
+        'reduced fee test should not be true when there is no value'
+      )
+    });
+  });
+
   describe('#traitsHeightWeight', function() {
     it('is true when all three parts are present', function() {
       assert(

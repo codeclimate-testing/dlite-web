@@ -13,6 +13,7 @@ export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
+  UPDATE_REDUCED_FEE:                     'UPDATE_REDUCED_FEE',
   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
@@ -32,12 +33,13 @@ export const TYPES = {
   UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE',
   UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE',
   UPDATE_OPT_OUT:                         'UPDATE_OPT_OUT',
-  UPDATE_CONTACT_METHODS:                  'UPDATE_POLITICAL_METHODS'
+  UPDATE_CONTACT_METHODS:                 'UPDATE_POLITICAL_METHODS'
 };
 
 export const createApplicationID              = generateAction(TYPES.CREATE_APPLICATION_ID);
 export const updateLegalName                  = generateAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateCardType                   = generateAction(TYPES.UPDATE_CARD_TYPE);
+export const updateReducedFee                 = generateAction(TYPES.UPDATE_REDUCED_FEE);
 export const updateRealID                     = generateAction(TYPES.UPDATE_REAL_ID);
 export const updateHomeAddress                = generateAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateAction(TYPES.UPDATE_MAILING_ADDRESS);
@@ -48,7 +50,7 @@ export const updateOrganDonation              = generateAction(TYPES.UPDATE_ORGA
 export const updateLicenseIssues              = generateAction(TYPES.UPDATE_LICENSE_ISSUES);
 export const updateLicenseAndIdHistory        = generateAction(TYPES.UPDATE_LICENSE_AND_ID_HISTORY);
 export const updateNamesHistory               = generateAction(TYPES.UPDATE_NAMES_HISTORY);
-export const updateMedicalHistory            = generateAction(TYPES.UPDATE_MEDICAL_HISTORY);
+export const updateMedicalHistory             = generateAction(TYPES.UPDATE_MEDICAL_HISTORY);
 export const updateSocialSecurity             = generateAction(TYPES.UPDATE_SOCIAL_SECURITY);
 export const updateVeteranService             = generateAction(TYPES.UPDATE_VETERANS_SERVICE);
 export const updateCitizenStatus              = generateAction(TYPES.UPDATE_CITIZEN_STATUS);
