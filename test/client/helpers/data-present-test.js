@@ -85,9 +85,9 @@ describe('dataPresent', function() {
   describe('#cardType', function() {
     it('is true when one part is true', function() {
       assert(
-        dataPresent.cardType({DL: false, ID: true}), 
+        dataPresent.cardType({DL: false, ID: true}),
         'card type not true with one field'
-      );      
+      );
     });
 
     it('is true when two parts are true', function() {

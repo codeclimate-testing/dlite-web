@@ -15,7 +15,9 @@ function parse(data) {
     { medical_histories:      extractMedicalHistories(data) },
     { license_issues:         extractLicenseIssues(data) },
     { veterans_info:          extractVeteransInfo(data) },
-    { voting_registrations:   extractVotingRegistrations(data) }
+    { voting_registrations:   extractVotingRegistrations(data) },
+    {cards:                   extractCardTypes(data) },
+    {card_options:            extractCardOptions(data) }
   );
 }
 
@@ -194,6 +196,58 @@ function extractVotingRegistrations(data) {
     vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
     should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)
   }];
+}
+
+function extractCardTypes(data) {
+  let cards = [ ];
+  if(data.cardType.ID){
+    cards.push({
+      application_id:   data.id,
+      type:             'ID'
+    })
+  }
+
+  if(data.cardType.DL){
+    cards.push({
+      application_id:   data.id,
+      type:             'DL'
+    })
+  }
+  return cards;
+}
+
+function extractCardOptions(data) {
+  let cardOptions = [ ];
+  if(data.cardType.ID){
+    cardOptions.push({
+      type:               'ID',
+      option_type:        'action',
+      option_value:       'new'
+    })
+    if(data.realID.getRealID === 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'real-id'
+      })
+    }
+  }
+
+  if(data.cardType.DL){
+    cardOptions.push({
+      type:               'DL',
+      option_type:        'action',
+      option_value:       'new'
+    })
+    if(data.realID.getRealID === 'Yes') {
+      cardOptions.push({
+        type:               'DL',
+        option_type:        'modification',
+        option_value:       'real-id'
+      })
+    }
+  }
+  return cardOptions;
 }
 
 module.exports = parse;

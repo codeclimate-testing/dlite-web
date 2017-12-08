@@ -12,10 +12,17 @@ function fakeClientData() {
       "lastName": "Smith",
       "suffix": "II"
     },
+    "cardType": {
+      "ID": true,
+      "DL": true
+    },
     "dateOfBirth": {
       "day": "13",
       "month": "10",
       "year": "1975"
+    },
+    "realID": {
+      "getRealID": "Yes"
     },
     "homeAddress": {
       "street_1": "123",

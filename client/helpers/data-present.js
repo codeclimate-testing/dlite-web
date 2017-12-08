@@ -120,7 +120,7 @@ const application = (props) => {
     politicalPartyChoose(props.politicalPartyChoose) ||
     value(props.ballotLanguage) ||
     value(props.optOut) ||
-    contactMethods(props.contactMethods) || 
+    contactMethods(props.contactMethods) ||
     realID(props.realID);
 };
 
