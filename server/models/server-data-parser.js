@@ -1,10 +1,10 @@
 'use strict';
 
-const parserHelper = require('../helpers/data-parser');
-const defaultClientState = require('../helpers/client-default-state');
+const parserHelper         = require('../helpers/data-parser');
+const voterChoiceConverter = require('./parsers/voter-choice-converter');
+const defaultClientState   = require('../helpers/client-default-state');
 
 function parse(data) {
-
   if(!data) {
     return defaultClientState;
   }
@@ -277,11 +277,11 @@ function getBallotLanguage(voting_registrations) {
 
 function getOptedOut(voting_registrations) {
   let optOut      = '';
-  let _opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
-  let _type       = voting_registrations.type;
-  return parserHelper.optedValuesToStr({
-    opted_out: _opted_out,
-    type: _type
+  let opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
+  let type       = voting_registrations.type;
+  return voterChoiceConverter.recordToUi({
+    opted_out: opted_out,
+    type: type
   });
 }
 

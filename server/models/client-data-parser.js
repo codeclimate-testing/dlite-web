@@ -1,6 +1,7 @@
 'use strict';
 
 const parserHelper = require('../helpers/data-parser');
+const voterChoiceConverter = require('./parsers/voter-choice-converter');
 
 function parse(data) {
   return Object.assign(
@@ -184,12 +185,13 @@ function extractVeteransInfo(data) {
 }
 
 function extractVotingRegistrations(data) {
+  const voterChoice = voterChoiceConverter.uiToRecord(data.optOut);
   return [{
     application_id:     data.id,
     is_citizen:         parserHelper.strToBool(data.citizenStatus),
     is_eligible:        parserHelper.strToBool(data.eligibilityRequirements),
-    type:               parserHelper.optedStrToValues(data.optOut).type,
-    opted_out:          parserHelper.strToBool(parserHelper.optedStrToValues(data.optOut).opted_out),
+    type:               voterChoice.type,
+    opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     is_preregistering:  parserHelper.strToBool(data.politicalPartyChoose.isSelected),
     party:              data.politicalPartyChoose.politicalPartyChoose,
     language:           data.ballotLanguage,

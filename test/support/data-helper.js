@@ -98,7 +98,7 @@ function fakeClientData() {
       "politicalPartyChoose": "Green Party"
     },
     "ballotLanguage": "English",
-    "optOut": "I am a new voter in California",
+    "optOut": "new",
     "contactMethods": {
       "shouldContact": "Yes",
       "emailAddress": "aliceball1234@gmail.com",
