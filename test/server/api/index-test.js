@@ -57,6 +57,8 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
     it('should post application info', (done) => {
       const _data = _response._getData();
+      console.log(application);
+      console.log(_data.application)
       assert.deepEqual(application, _data.application);
       done();
     });
