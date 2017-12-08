@@ -1,11 +1,12 @@
 'use strict';
 
-import React, {Component}         from 'react';
+import React, { Component }       from 'react';
 import { connect }                from 'react-redux';
 import { Link }                   from 'react-router-dom';
 
 import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
+import navigateOnSubmit           from '../helpers/navigate-on-submit';
 import { postData }               from '../actions/api-actions';
 
 import {
@@ -35,10 +36,11 @@ import {
   Empty
 } from '../presentations/summary/index.js';
 
-const appointmentPreparation = '/appointment-preparation';
-
 const SummaryHandler = (props) => {
-  let application = props.application;
+
+  let onSubmit = navigateOnSubmit('/appointment-preparation', props);
+
+  let application = props.state;
   let contents = [
 
     <LegalName legalName={application.legalName} key='legal-name' />,
@@ -71,36 +73,42 @@ const SummaryHandler = (props) => {
     return summaries;
   }, []);
 
-  const saveData = () => {
-    const data = application;
-    props.dispatch(postData(data));
-  }
-
   if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
     contents.push(
-      <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
-        <input type='submit' id='saveData' key='save-and-continue' onClick={saveData} value='Save and Continue'/>
-    </Link>
+        <input type='submit' id='saveData' key='save-and-continue' value='Save and Continue'/>
     );
   }
   else{
     contents.push(
-      <Link to={ alicePath(appointmentPreparation) } key="link-to-appointment-preparation" >
         <ContinueButton disabled={props.continueDisabled} key="submit"/>
-      </Link>
     );
   }
 
   return (
     <div className='summary'>
       <HomeLink />
+      <form onSubmit={ onSubmit } >
         { contents }
+      </form>
     </div>
   );
 }
 
-function mapStateToProps(state) {
+const  mapStateToProps = (state) => {
   return state;
 }
 
-export default connect(mapStateToProps)(SummaryHandler);
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const { application }   = stateProps;
+  const { dispatch }      = dispatchProps;
+
+  return Object.assign({}, ownProps, {
+    state: application,
+    onSubmit: () => {
+      dispatch(postData(application));
+    }
+  });
+
+};
+
+export default connect(mapStateToProps, null, mergeProps)(SummaryHandler);
