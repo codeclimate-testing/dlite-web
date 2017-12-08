@@ -24,6 +24,7 @@ const ConnectedForm = (props) => {
       onBack={onBack}
       onChange={props.onChange}
       selectedValue={props.citizenStatus}
+      dateOfBirth={props.dateOfBirth}
       continueDisabled={continueDisabled}
     />
   );
@@ -31,7 +32,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    citizenStatus: state.application.citizenStatus
+    citizenStatus: state.application.citizenStatus,
+    dateOfBirth: state.application.dateOfBirth
   };
 }
 

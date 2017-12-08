@@ -48,4 +48,14 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I will see that I am not getting a DL', function(done) {
+    browser
+      .text('.inner')
+      .then( text => {
+        assert(!text.includes('Card Type: Driver License'), 'DL is shown in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };

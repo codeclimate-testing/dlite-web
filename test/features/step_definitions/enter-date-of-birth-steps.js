@@ -110,4 +110,20 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I indicate that I am younger than 14', function(done) {
+    var d = new Date();
+
+    var month = d.getMonth();
+    var day = d.getDate();
+    var year = d.getFullYear() - 5;
+
+    browser 
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 };

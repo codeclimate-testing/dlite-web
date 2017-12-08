@@ -4,18 +4,32 @@ import React            from 'react';
 
 import NavigationLinks    from '../navigation-links.jsx';
 import Page               from '../page.jsx';
+import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 
 const linkAddress = '/summary';
 const linkBack = '/voting-registration/contact-methods';
 let pageTitle  = 'DMV: License application - Voting registration'
 
 const VoterRegComplete = (props) => {
+  let documentHeader = [];
+  let ageGroup = getAgeGroup(props.dateOfBirth.age);
+
+  if (ageGroup === "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18") {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div>
         <div className='voter-reg-complete'>

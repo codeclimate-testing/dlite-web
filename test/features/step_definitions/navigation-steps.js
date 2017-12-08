@@ -114,10 +114,6 @@ module.exports = function(world) {
     navigateToPath('/apply/voting-registration/preferences', '.voter-preferences-intro', done);
   });
 
-  world.when('I visit voter updating preferences page', function(done){
-    navigateToPath('/apply/voting-registration/updating-preferences', '.updating-voter-preferences', done);
-  });
-
   world.when('I visit voter registration complete page', function(done){
     navigateToPath('/apply/voting-registration/confirmation', '.voter-reg-complete', done);
   });
@@ -136,10 +132,6 @@ module.exports = function(world) {
 
    world.when('I visit voter intro page', function (done) {
     navigateToPath('/apply/voting-registration/introduction', '.voter-intro-info', done);
-  });
-
-  world.and('I visit success visit page', function(done) {
-    navigateToPath('/apply/about-me/success-visit', '.success-visit-info', done);
   });
 
   world.and('I visit appointment preparation page', function(done) {
@@ -180,6 +172,10 @@ module.exports = function(world) {
 
   world.then('I will be on the ID and DL selection page', function(done) {
     assertOnPage('.choose-card-form', /apply\/what-do-you-want-to-do-today/, done);
+  });
+
+  world.then('I will be on a page letting me know I cant yet apply', function(done) {
+    assertOnPage('.minor-dl-message', /apply\/minor-DL-message/, done);
   });
 
   world.then('I will be on the page for choosing real id', function(done) {
@@ -276,10 +272,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to voter intro info page', function(done) {
     assertOnPage('.voter-intro-info', /voting-registration\/introduction/, done);
-  });
-
-  world.then('I will be taken to voter preferences updated page', function(done) {
-    assertOnPage('.updating-voter-preferences', /voting-registration\/updating-preferences/, done);
   });
 
   world.then('I will be taken to voter registration complete page', function(done) {
