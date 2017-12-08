@@ -74,6 +74,27 @@ describe('server data parser', function() {
       .catch(done);
   });
 
+  it('correctly extracts the cards', function(done) {
+    getApplication(data.application.id)
+      .then((records) => {
+        parsedData = parse(records);
+        assert.equal(parsedData.application.cardType.ID, clientData.cardType.ID);
+        assert.equal(parsedData.application.cardType.DL, clientData.cardType.DL);
+        done();
+      })
+      .catch(done);
+  } )
+
+  it('correctly extracts the card options', function(done) {
+    getApplication(data.application.id)
+      .then((records) => {
+        parsedData = parse(records);
+        assert.equal(parsedData.application.realID.getRealID, clientData.realID.getRealID);
+        done();
+      })
+      .catch(done);
+  } )
+
   it('correctly extracts the physical traits', function(done) {
     getApplication(data.application.id)
       .then((records) => {

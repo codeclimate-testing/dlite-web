@@ -17,6 +17,7 @@ const linkData = [
   {description: 'legal name',                             path: '/my-basics/legal-name'},
   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
   {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
+  {description: 'minor DL message' ,                      path: '/minor-dl-message'},
   {description: 'real ID',                                path: '/real-id'},
   {description: 'intro page',                             path: '/get-started'},
   {description: 'address',                                path: '/my-basics/address'},
@@ -35,13 +36,11 @@ const linkData = [
   {description: 'eligibility requirements',               path: '/voting-registration/eligibility'},
   {description: 'opt out',                                path: '/voting-registration/opt-out'},
   {description: 'voter preferences',                      path: '/voting-registration/preferences'},
-  {description: 'voter updating preferences',             path: '/voting-registration/updating-preferences'},
   {description: 'choose party',                           path: '/voting-registration/choose-party'},
   {description: 'ballot language',                        path: '/voting-registration/language'},
   {description: 'ballot by mail',                         path: '/voting-registration/vote-by-mail'},
   {description: 'contact methods',                        path: '/voting-registration/contact-methods'},
   {description: 'voter reg complete',                     path: '/voting-registration/confirmation'},
-  {description: 'success visit',                          path: '/about-me/success-visit'},
   {description: 'appointment preparation',                path: '/appointment-preparation'},
   {description: 'required documents',                     path: '/appointment-preparation/documents'}
 ];

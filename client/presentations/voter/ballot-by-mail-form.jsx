@@ -7,6 +7,7 @@ import HomeLink               from '../home-link.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../page.jsx';
 import FAQDrawer              from '../faq-drawer.jsx';
+import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 
 const VALUES              = ['Yes', 'No'];
 const FAQ_CLASSNAME_YES   = 'faq-ballot-by-mail-yes';
@@ -15,13 +16,29 @@ const FAQ_CLASSNAME_NO    = 'faq-ballot-by-mail-no';
 const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
 let pageTitle = 'DMV: License application - Voting registration'
 
+
 const BallotByMailForm = (props) => {
+
+  let ageGroup = getAgeGroup(props.dateOfBirth.age);
+  let documentHeader = [];
+
+  if (ageGroup === "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18") {
+    documentHeader.push(
+      'Voting pre-registration'
+    );
+  }
+  else {
+    documentHeader.push(
+      'Voting registration'
+    );
+  }
+
   return (
     <Page
-      pageTitle={pageTitle}
+      pageTitle={ pageTitle }
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props}
+      sectionName={ documentHeader }
+      {...props} 
     >
       <div>
         <h4>Would you like to get your ballot by mail before each election?</h4>

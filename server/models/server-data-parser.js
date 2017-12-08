@@ -20,6 +20,8 @@ function parse(data) {
   let license_issues        = data.license_issues;
   let veterans_info         = data.veterans_info;
   let voting_registrations  = data.voting_registrations;
+  let cards                 = data.cards;
+  let card_options          = data.card_options;
 
   return Object.assign(
     {},
@@ -28,6 +30,8 @@ function parse(data) {
         id:                       application.id,
         legalName:                getLegalName(application),
         dateOfBirth:              getDateOfBirth(application),
+        cardType:                 getCardTypes(cards),
+        realID:                   getRealID(card_options),
         homeAddress:              getHomeAddress(addresses),
         mailingAddress:           getMailingAddress(addresses),
         physicalTraits:           getPhysicalTraits(application),
@@ -288,6 +292,34 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
     emailAddress: emails.address,
     phoneNumber: phone_numbers.number
   };
+}
+
+function getCardTypes(cards) {
+  let cardType = {
+      ID: false,
+      DL: false
+  };
+  cards.forEach( (card) => {
+    if(card.type === 'ID') {
+      cardType.ID = true;
+    }
+    if(card.type === 'DL') {
+      cardType.DL = true;
+    }
+  });
+  return cardType;
+}
+
+function getRealID(card_options) {
+  let realID = {
+      getRealID: ''
+  };
+  card_options.forEach((option) => {
+    if(option.option_value === 'real-id') {
+      realID.getRealID = 'Yes';
+    }
+  });
+  return realID;
 }
 
 module.exports = parse;
