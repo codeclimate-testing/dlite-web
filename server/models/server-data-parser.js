@@ -325,7 +325,8 @@ function getRealID(card_options) {
 
 function getReducedFee(card_options) {
   let reducedFee = {
-    ID: ''
+    ID: '',
+    form: ''
   };
   card_options.forEach(option => {
     if(option.option_value === 'reduced-fee') {
