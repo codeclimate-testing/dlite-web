@@ -114,7 +114,7 @@ describe('dataPresent', function() {
     });
     it('is false when no values have been selected', function() {
       assert(
-        dataPresent.reducedFee({ID: '', form: ''}),
+        !dataPresent.reducedFee({ID: '', form: ''}),
         'reduced fee test should not be true when there is no value'
       )
     });
