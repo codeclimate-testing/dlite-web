@@ -7,6 +7,10 @@ const state  = {
                             lastName: '',
                             suffix: ''
                           },
+                          cardType: {
+                            ID: false,
+                            DL: false
+                          },
                           homeAddress: {
                             street_1: '',
                             street_2: '',
@@ -25,6 +29,9 @@ const state  = {
                             month: '',
                             day: '',
                             year: ''
+                          },
+                          realID: {
+                            getRealID: ''
                           },
                           physicalTraits: {
                             sex: '',

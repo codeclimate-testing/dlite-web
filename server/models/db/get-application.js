@@ -27,7 +27,21 @@ module.exports = function getApplication(id) {
     db('veterans_info').where('application_id', id)
       .then((records) => { aggregate.veterans_info = records[0]; }),
     db('voting_registrations').where('application_id', id)
-      .then((records) => { aggregate.voting_registrations = records[0]; })
+      .then((records) => { aggregate.voting_registrations = records[0]; }),
+    db('cards').where('application_id', id)
+      .then((records) => {
+        aggregate.cards = records;
+        let cardsIDs = [];
+        records.forEach((card) => {
+          cardsIDs.push(card.id);
+        });
+        return cardsIDs;
+      })
+      .then((cardIDs) => {
+        return db('card_options').whereIn('card_id', cardIDs)
+          .then((records) => {
+            aggregate.card_options = records; })
+        })
   ]).then(() => {
     if (!aggregate.application) { return undefined; }
     return aggregate;

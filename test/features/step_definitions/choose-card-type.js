@@ -32,8 +32,8 @@ module.exports = function(world) {
   world.then('I will see that my DL card type has been saved', function(done) {
     browser
       .text()
-      .then((text) => { 
-        assert(text.includes('Card Type: Driver License'), 'DL card type not saved in summary');
+      .then((text) => {
+        assert(text.includes('Card Type: DL'), 'DL card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

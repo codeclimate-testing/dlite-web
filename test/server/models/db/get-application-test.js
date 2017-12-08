@@ -73,6 +73,47 @@ describe('getApplication', function() {
         .catch(done);
     });
 
+    it('returns the cards', function(done) {
+      getApplication(data.application.id)
+        .then((records) => {
+          assert(records.cards[0].id);
+          assert(records.cards[1].id);
+          assert.equal(records.cards[0].application_id, data.application.id);
+          assert.equal(records.cards[1].application_id, data.application.id);
+          assert.equal(records.cards[0].application_id, data.application.id);
+          assert.equal(records.cards[1].application_id, data.application.id);
+          assert.equal(records.cards[0].type, data.cards[0].type);
+          assert.equal(records.cards[1].type, data.cards[1].type);
+          done();
+        })
+        .catch(done);
+
+    });
+
+    it('return the card options', function(done){
+      getApplication(data.application.id)
+        .then((records) => {
+          assert(records.card_options[0].id);
+          assert(records.card_options[1].id);
+          assert(records.card_options[2].id);
+          assert(records.card_options[3].id);
+          assert.equal(records.card_options[0].card_id, data.card_options[0].card_id);
+          assert.equal(records.card_options[1].card_id, data.card_options[1].card_id);
+          assert.equal(records.card_options[2].card_id, data.card_options[2].card_id);
+          assert.equal(records.card_options[3].card_id, data.card_options[3].card_id);
+          assert.equal(records.card_options[0].option_type, data.card_options[0].option_type);
+          assert.equal(records.card_options[1].option_type, data.card_options[1].option_type);
+          assert.equal(records.card_options[2].option_type, data.card_options[2].option_type);
+          assert.equal(records.card_options[3].option_type, data.card_options[3].option_type);
+          assert.equal(records.card_options[0].option_value, data.card_options[0].option_value);
+          assert.equal(records.card_options[1].option_value, data.card_options[1].option_value);
+          assert.equal(records.card_options[2].option_value, data.card_options[2].option_value);
+          assert.equal(records.card_options[3].option_value, data.card_options[3].option_value);
+        })
+        .then(done)
+        .catch(done);
+    });
+
     it('returns the email', function(done) {
       getApplication(data.application.id)
         .then((records) => {

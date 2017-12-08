@@ -56,6 +56,26 @@ describe('client data parser', function() {
     assert.equal(address.zip,               data.homeAddress.zip);
   });
 
+  it('correctly extracts cards', function() {
+    let cards = parsedData.cards;
+    assert.equal(cards[0].application_id, data.id);
+    assert.equal(cards[1].application_id, data.id);
+    assert.equal(cards[0].type, 'ID');
+    assert.equal(cards[1].type, 'DL');
+  });
+
+  it('correctly extracts card options', function() {
+    let options = parsedData.card_options;
+    assert.equal(options[0].option_type, 'action');
+    assert.equal(options[0].option_value, 'new');
+    assert.equal(options[1].option_type, 'modification');
+    assert.equal(options[1].option_value, 'real-id');
+    assert.equal(options[2].option_type, 'action');
+    assert.equal(options[2].option_value, 'new');
+    assert.equal(options[3].option_type, 'modification');
+    assert.equal(options[3].option_value, 'real-id');
+  });
+
   it('correctly extracts the email', function() {
     let email = parsedData.emails[0];
     assert.equal(email.application_id, data.id);
