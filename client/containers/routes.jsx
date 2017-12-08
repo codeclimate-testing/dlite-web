@@ -14,7 +14,7 @@ import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-
 import MinorDLMessage                         from './apply/minor-dl-message.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
 import ReducedFee                             from './apply/reduced-fee-container.jsx';
-import Intro                                  from '../presentations/apply/intro.jsx';
+import Intro                                  from './apply/get-started-container.jsx';
 import Address                                from './apply/address-form-container.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
