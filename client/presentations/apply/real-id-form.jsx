@@ -12,8 +12,16 @@ const VALUES = ['Yes', 'No'];
 let pageTitle = 'DMV: License application - My basics'
 
 const Form = (props) => {
+  let card = props.cardType.DL ? 'Driver License' : 'ID';
+  const oneCardHeader = <h4>Do you plan on using your {card} to fly?</h4>
+  const twoCardHeader = <h4>Do you plan on using one of your cards to fly?</h4>
+  let realIdHeader = '';
 
-  let card = props.cardType.DL === true ? 'Driver License' : 'ID';
+  if(props.cardType.DL && props.cardType.ID) {
+    realIdHeader = twoCardHeader
+  } else {
+    realIdHeader = oneCardHeader
+}
 
   return (
     <Page
@@ -23,25 +31,19 @@ const Form = (props) => {
       {...props}
     >
       <div className='real-id-form'>
-        <h4>Do you plan on using your {card} to fly?</h4>
+        { realIdHeader }
         <h5>As of October 1, 2020, you will need a federally compliant driver license or ID card to fly <b>within</b> the United States.</h5>
 
-        <form onSubmit={ props.onSubmit } >
           <div className='row inner-bottom'>
               <SelectorCollection
                   name='getRealID'
                   values={VALUES}
                   onChange={ props.onChange }
-                  selectedValue={ props.realID.getRealID }
+                  selectedValue={ props.selectedValue }
               />
 
               <div className='unit spacer' />
           </div>
-
-          <NavigationButtons
-            {...props}
-          />
-        </form>
       </div>
     </Page>
   )

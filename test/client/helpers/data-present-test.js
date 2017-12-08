@@ -261,7 +261,6 @@ describe('dataPresent', function() {
     });
   });
 
-
   describe('#application', function() {
     it('is true when there is a legalName', function() {
       let data = {
@@ -460,6 +459,5 @@ describe('dataPresent', function() {
 
       assert(dataPresent.application(data), 'Data not present with opt out info');
     });
-
   });
 });
