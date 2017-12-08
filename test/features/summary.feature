@@ -10,5 +10,5 @@ Feature: View Summary Before Submitting
     And I select an eye color
     And I select a hair color
     And I go to the page with my summary
-    And I click to submit
+    And I click "Next" to continue
     Then I will be on the page for appointment preparation

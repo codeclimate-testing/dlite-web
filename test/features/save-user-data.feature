@@ -99,5 +99,5 @@ Feature: Save user data
     Then I will be taken to voter registration complete page
     And I click "Next" to continue
     Then I will be on the page with my summary
-    When I click to submit
+    When I click "Next" to continue
     Then I will be on the page for appointment preparation
