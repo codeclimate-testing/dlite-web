@@ -231,6 +231,13 @@ function extractCardOptions(data) {
         option_value:       'real-id'
       })
     }
+    if(data.reducedFee.ID === 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'reduced-fee'
+      })
+    }
   }
 
   if(data.cardType.DL){

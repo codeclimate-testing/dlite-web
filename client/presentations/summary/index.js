@@ -5,6 +5,7 @@ import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
 import CardType                    from './card-type.jsx';
 import RealID                      from './real-id.jsx';
+import ReducedFee                  from './reduced-fee.jsx';
 import HomeAddress                 from './home-address.jsx';
 import MailingAddress              from './mailing-address.jsx';
 import TraitsHeightWeight          from './traits-height-weight.jsx';
@@ -31,6 +32,7 @@ export {
   DateOfBirth,
   CardType,
   RealID,
+  ReducedFee,
   HomeAddress,
   MailingAddress,
   TraitsHeightWeight,

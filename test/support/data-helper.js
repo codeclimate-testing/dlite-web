@@ -24,6 +24,10 @@ function fakeClientData() {
     "realID": {
       "getRealID": "Yes"
     },
+    "reducedFee": {
+      "ID": "Yes",
+      "form": "Yes"
+    },
     "homeAddress": {
       "street_1": "123",
       "street_2": "Main St.",
