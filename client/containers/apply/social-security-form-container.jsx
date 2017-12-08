@@ -49,7 +49,7 @@ const ConnectedForm = (props) => {
     />
   );
 
-  if(props.cardType.driverLicense === false) {
+  if(props.cardType.DL === false) {
     onSubmit = navigateOnSubmit('/my-history/license-and-id', props);
   };
 
