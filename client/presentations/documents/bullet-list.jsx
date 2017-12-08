@@ -25,6 +25,10 @@ const BulletList = (props) => {
       bulletList.push(<li key='knowledge-test'>You will need to take a knowledge test</li>);
     }
   }
+  if(props.reducedFee.ID === 'Yes') {
+    bulletList.push(<li key='reduced-fee'>Reduced fee eligibility</li>);
+    bulletList.push(<li key='no-fee'>No fee eligibility</li>);
+  }
 
   return (
     <ul className='bullet-list'>
