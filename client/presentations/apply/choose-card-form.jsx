@@ -12,18 +12,18 @@ const Form = (props) => {
 
       <form onSubmit={ props.onSubmit } >
         <div className='row inner-bottom'>
-          <CheckBoxInput 
+          <CheckBoxInput
             identifier='ID'
             description='ID'
             onChange={ props.onChange }
             checked={ props.cardType.ID }
           />
 
-          <CheckBoxInput 
-            identifier='driverLicense'
+          <CheckBoxInput
+            identifier='DL'
             description='Driver License'
             onChange={ props.onChange }
-            checked={ props.cardType.driverLicense }
+            checked={ props.cardType.DL }
           />
 
           <div className='unit spacer' />
@@ -31,7 +31,7 @@ const Form = (props) => {
 
         <NavigationButtons
           {...props}
-        />  
+        />
       </form>
     </div>
   )

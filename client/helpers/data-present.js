@@ -29,7 +29,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (props.driverLicense === true || props.ID === true))
+  return (props && (props.DL === true || props.ID === true))
 };
 
 const address = (props) => {
@@ -120,7 +120,7 @@ const application = (props) => {
     politicalPartyChoose(props.politicalPartyChoose) ||
     value(props.ballotLanguage) ||
     value(props.optOut) ||
-    contactMethods(props.contactMethods) || 
+    contactMethods(props.contactMethods) ||
     realID(props.realID);
 };
 
