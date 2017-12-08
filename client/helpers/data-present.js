@@ -33,7 +33,7 @@ const cardType = (props) => {
 };
 
 const reducedFee = (props) => {
-  return value(props.ID);
+  return hasAllAttributes(props, ['ID']);
 };
 
 const address = (props) => {
