@@ -11,6 +11,10 @@ const state  = {
                             ID: false,
                             DL: false
                           },
+                          reducedFee: {
+                            ID: '',
+                            form: 'No'
+                          },
                           homeAddress: {
                             street_1: '',
                             street_2: '',

@@ -38,8 +38,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardType:     state.application.cardType,
-    age:          state.application.dateOfBirth.age
+    cardType:       state.application.cardType,
+    age:            state.application.dateOfBirth.age
   };
 }
 

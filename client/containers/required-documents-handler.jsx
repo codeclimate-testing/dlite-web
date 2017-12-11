@@ -11,6 +11,7 @@ import {
   SocialSecurityDocuments,
   VeteransDocuments,
   YouthDocuments,
+  ReducedFee,
   BulletList
 } from '../presentations/documents/index.js';
 
@@ -21,7 +22,8 @@ const RequiredDocumentsHandler = (props) => {
     <CaliforniaResidencyDocuments key='ca-residency'/>,
     <VeteransDocuments veteransService={props.veteransService} key='proof-veteran-services'/>,
     <MedicalDocuments medicalHistory={props.medicalHistory} key='medical-information'/>,
-    <YouthDocuments age={props.dateOfBirth.age} licenseIssued={props.licenseAndIdHistory.isIssued} key='youth-documents' />
+    <YouthDocuments age={props.dateOfBirth.age} licenseIssued={props.licenseAndIdHistory.isIssued} key='youth-documents' />,
+    <ReducedFee reducedFee={props.reducedFee} key='reduced-fee-documents'/>
   ];
 
   return (
@@ -42,6 +44,7 @@ const RequiredDocumentsHandler = (props) => {
           realID             = { props.realID }
           age                = { props.dateOfBirth.age }
           licenseIssued      = { props.licenseAndIdHistory.isIssued }
+          reducedFee         = { props.reducedFee }
         />
 
         <br></br>
@@ -64,7 +67,8 @@ function mapStateToProps(state) {
     medicalHistory:         state.application.medicalHistory,
     realID:                 state.application.realID,
     dateOfBirth:            state.application.dateOfBirth,
-    licenseAndIdHistory:    state.application.licenseAndIdHistory
+    licenseAndIdHistory:    state.application.licenseAndIdHistory,
+    reducedFee:             state.application.reducedFee
   };
 };
 

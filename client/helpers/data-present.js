@@ -32,6 +32,10 @@ const cardType = (props) => {
   return (props && (props.DL === true || props.ID === true))
 };
 
+const reducedFee = (props) => {
+  return hasAllAttributes(props, ['ID']);
+};
+
 const address = (props) => {
   return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing'])
 };
@@ -103,6 +107,7 @@ const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
     cardType(props.cardType) ||
+    reducedFee(props.reducedFee) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
     traitsHeightWeight(props.traitsHeightWeight) ||
@@ -128,6 +133,7 @@ export {
   value,
   legalName,
   cardType,
+  reducedFee,
   address,
   date,
   traitsHeightWeight,

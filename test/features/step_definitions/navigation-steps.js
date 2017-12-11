@@ -70,6 +70,10 @@ module.exports = function(world) {
     navigateToPath('/apply/real-id', '.real-id-form', done);
   });
 
+  world.when('I visit the reduced fee page', function(done) {
+    navigateToPath('/apply/reduced-fee', '.reduced-fee-form', done);
+  });
+
   world.when('I visit the get started page', function(done) {
     navigateToPath('/apply/get-started', '.intro-info', done);
   });
@@ -180,6 +184,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page for choosing real id', function(done) {
     assertOnPage('.real-id-form', /apply\/real-id/, done);
+  });
+
+  world.then('I will be on the reduced fee page', function(done) {
+    assertOnPage('.reduced-fee-form', /apply\/reduced-fee/, done);
   });
 
   world.then('I will be on the page for entering my address', function(done) {

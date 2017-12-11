@@ -32,6 +32,7 @@ function parse(data) {
         dateOfBirth:              getDateOfBirth(application),
         cardType:                 getCardTypes(cards),
         realID:                   getRealID(card_options),
+        reducedFee:               getReducedFee(card_options),
         homeAddress:              getHomeAddress(addresses),
         mailingAddress:           getMailingAddress(addresses),
         physicalTraits:           getPhysicalTraits(application),
@@ -320,6 +321,24 @@ function getRealID(card_options) {
     }
   });
   return realID;
+}
+
+function getReducedFee(card_options) {
+  let reducedFee = {
+    ID: '',
+    form: ''
+  };
+  card_options.forEach(option => {
+    if(option.option_value === 'reduced-fee-has-form') {
+      reducedFee.ID = 'Yes';
+      reducedFee.form = 'Yes';
+    }
+    else if(option.option_value === 'reduced-fee-no-form') {
+      reducedFee.ID = 'Yes';
+      reducedFee.form = 'No';
+    }
+  });
+  return reducedFee;
 }
 
 module.exports = parse;
