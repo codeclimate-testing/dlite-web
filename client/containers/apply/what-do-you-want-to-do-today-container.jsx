@@ -1,27 +1,32 @@
 'use strict';
 
 import React from 'react';
+import { connect } from "react-redux";
 
-import { updateCardType }                 from "../../actions/index";
-import { ageChecks }                      from '../../helpers/calculate-age';
-import Page                               from "../../presentations/page.jsx";
-import Form                               from "../../presentations/apply/choose-card-form.jsx";
-import connectForm                        from '../../helpers/connect-form';
-import navigateOnSubmit                   from '../../helpers/navigate-on-submit';
-import navigateOnBack                     from '../../helpers/navigate-on-back';
-import * as dataPresent                   from '../../helpers/data-present';
+import {
+  updateCardType,
+  focusPageElement,
+  blurPageElement
+} from "../../actions/index";
 
-const ConnectedForm = (props) => {
+import Page                   from "../../presentations/page.jsx";
+import Presentation           from "../../presentations/apply/choose-card-form.jsx";
+
+import navigateOnSubmit       from '../../helpers/navigate-on-submit';
+import navigateOnBack         from '../../helpers/navigate-on-back';
+import onInputChange          from '../../helpers/on-input-change';
+import onFormSubmit           from '../../helpers/on-form-submit';
+import * as dataPresent       from '../../helpers/data-present';
+
+const Form = (props) => {
   let address = '/real-id';
-
   if(ageChecks.Under15Half(props.dateOfBirth) && props.cardType.DL) {
     address             =   '/youth-license-notification';
   }
-  
   let onSubmit          =   navigateOnSubmit(address, props);
   let onBack            =   navigateOnBack('/my-basics/date-of-birth', props);
-  let continueDisabled  =   !(dataPresent.cardType(props.cardType));
-  let pageTitle         =   'DMV: License application';
+  let continueDisabled  =   !dataPresent.cardType(props.cardType);
+  let pageTitle         =   'DMV: License application'
 
   return (
     <Page
@@ -30,13 +35,11 @@ const ConnectedForm = (props) => {
       sectionName='My basics'
       {...props}
     >
-      <Form
-        pageTitle         = { pageTitle }
+      <Presentation
         onSubmit          = { onSubmit }
         onBack            = { onBack }
-        onChange          = { props.onChange }
-        cardType          = { props.cardType }
         continueDisabled  = { continueDisabled }
+        {...props}
       />
     </Page>
   );
@@ -45,8 +48,30 @@ const ConnectedForm = (props) => {
 function mapStateToProps(state) {
   return {
     cardType:     state.application.cardType,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 }
 
-export default connectForm(mapStateToProps, updateCardType, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onBlur = () => {
+    dispatch(blurPageElement());
+  };
+
+  const onFocus = (event) => {
+    let value = (event.target && event.target.value) || '';
+    dispatch(focusPageElement(value));
+  };
+
+  const onChange = onInputChange(updateCardType, dispatch);
+  const onSubmit = onFormSubmit;
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

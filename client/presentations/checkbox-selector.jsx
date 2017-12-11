@@ -3,26 +3,24 @@
 import React from 'react';
 import SelectorContents from './selector-contents.jsx';
 
-const RadioSelector = function(props) {
+const CheckboxSelector = function(props) {
   let className = props.selected ? 'choice-selector selected' : 'choice-selector';
-  if (props.focused) { className += ' focus'; }
-
-  let id = props.name + '-' + props.value;
+  if (props.focused === props.value) { className += ' focus'; }
 
   return (
     <div className={ className }>
       <div className='outline-container'>
         <label
-          className='row relative radio-selector'
-          htmlFor={id}
+          className='row relative checkbox-selector'
+          htmlFor={props.value}
         >
           <div className='off-screen'>
             <input
-              type='radio'
-              name={props.name}
-              id={id}
-              value={props.value}
+              type='checkbox'
+              name={props.value}
+              id={props.value}
               checked={props.selected}
+              value={props.value}
               onChange={props.onChange}
               tabIndex={props.tabIndex}
               onFocus={props.onFocus}
@@ -40,4 +38,4 @@ const RadioSelector = function(props) {
   );
 };
 
-export default RadioSelector;
+export default CheckboxSelector;

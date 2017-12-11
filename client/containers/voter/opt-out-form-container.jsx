@@ -9,11 +9,11 @@ import {
   focusPageElement
 } from '../../actions/index';
 
-import onInputChange                  from '../../helpers/on-input-change';
-import onFormSubmit                   from '../../helpers/on-form-submit';
-import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import navigateOnBack                 from '../../helpers/navigate-on-back';
-import * as dataPresent               from '../../helpers/data-present';
+import onInputChange           from '../../helpers/on-input-change';
+import onFormSubmit            from '../../helpers/on-form-submit';
+import navigateOnSubmit        from '../../helpers/navigate-on-submit';
+import navigateOnBack          from '../../helpers/navigate-on-back';
+import * as dataPresent        from '../../helpers/data-present';
 import { isPreregistering }    from '../../helpers/calculate-age';
 
 import OptOutForm              from '../../presentations/voter/opt-out-form.jsx';

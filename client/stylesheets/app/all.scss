@@ -169,6 +169,12 @@ $selector-rest: #2D3FCA;
     }
   }
 
+  .checkbox-selector {
+    .icon-region {
+      background-image: url("/images/icons/checkbox/unselected.svg");
+    }
+  }
+
   &:hover,
   &.hover {
     .outline-container {
@@ -187,6 +193,12 @@ $selector-rest: #2D3FCA;
     .radio-selector {
       .icon-region {
         background-image: url("/images/icons/radio/selected.svg");
+      }
+    }
+
+    .checkbox-selector {
+      .icon-region {
+        background-image: url("/images/icons/checkbox/selected.svg");
       }
     }
   }
