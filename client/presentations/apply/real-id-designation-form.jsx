@@ -7,7 +7,7 @@ import SelectorCollection       from '../selector-collection.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../page.jsx';
 
-const VALUES = ['ID', 'Driver License'];
+const VALUES = ['ID', 'DL'];
 
 const Form = (props) => {
   return (

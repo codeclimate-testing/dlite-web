@@ -35,7 +35,8 @@ const state  = {
                             year: ''
                           },
                           realID: {
-                            getRealID: ''
+                            getRealID: '',
+                            realIdDesignation: ''
                           },
                           physicalTraits: {
                             sex: '',

@@ -90,6 +90,7 @@ describe('server data parser', function() {
       .then((records) => {
         parsedData = parse(records);
         assert.equal(parsedData.application.realID.getRealID, clientData.realID.getRealID);
+        assert.equal(parsedData.application.realID.realIdDesignation, clientData.realID.realIdDesignation);
         done();
       })
       .catch(done);

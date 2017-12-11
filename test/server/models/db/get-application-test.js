@@ -96,19 +96,15 @@ describe('getApplication', function() {
           assert(records.card_options[0].id);
           assert(records.card_options[1].id);
           assert(records.card_options[2].id);
-          assert(records.card_options[3].id);
           assert.equal(records.card_options[0].card_id, data.card_options[0].card_id);
           assert.equal(records.card_options[1].card_id, data.card_options[1].card_id);
           assert.equal(records.card_options[2].card_id, data.card_options[2].card_id);
-          assert.equal(records.card_options[3].card_id, data.card_options[3].card_id);
           assert.equal(records.card_options[0].option_type, data.card_options[0].option_type);
           assert.equal(records.card_options[1].option_type, data.card_options[1].option_type);
           assert.equal(records.card_options[2].option_type, data.card_options[2].option_type);
-          assert.equal(records.card_options[3].option_type, data.card_options[3].option_type);
           assert.equal(records.card_options[0].option_value, data.card_options[0].option_value);
           assert.equal(records.card_options[1].option_value, data.card_options[1].option_value);
           assert.equal(records.card_options[2].option_value, data.card_options[2].option_value);
-          assert.equal(records.card_options[3].option_value, data.card_options[3].option_value);
         })
         .then(done)
         .catch(done);

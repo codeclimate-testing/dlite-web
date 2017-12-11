@@ -22,7 +22,8 @@ function fakeClientData() {
       "year": "1975"
     },
     "realID": {
-      "getRealID": "Yes"
+      "getRealID": "Yes",
+      "realIdDesignation": "DL"
     },
     "reducedFee": {
       "ID": "Yes",
@@ -116,4 +117,3 @@ module.exports = {
   fakeClientData: fakeClientData,
   fakeRecords: fakeRecords
 };
-

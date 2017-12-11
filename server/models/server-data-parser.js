@@ -31,7 +31,7 @@ function parse(data) {
         legalName:                getLegalName(application),
         dateOfBirth:              getDateOfBirth(application),
         cardType:                 getCardTypes(cards),
-        realID:                   getRealID(card_options),
+        realID:                   getRealID(card_options, cards),
         reducedFee:               getReducedFee(card_options),
         homeAddress:              getHomeAddress(addresses),
         mailingAddress:           getMailingAddress(addresses),
@@ -311,13 +311,19 @@ function getCardTypes(cards) {
   return cardType;
 }
 
-function getRealID(card_options) {
+function getRealID(card_options, cards) {
   let realID = {
-      getRealID: ''
+      getRealID: '',
+      realIdDesignation: ''
   };
   card_options.forEach((option) => {
     if(option.option_value === 'real-id') {
       realID.getRealID = 'Yes';
+      cards.forEach((card) => {
+        if(card.id === option.card_id) {
+          realID.realIdDesignation = card.type
+        }
+      });
     }
   });
   return realID;

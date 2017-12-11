@@ -255,15 +255,18 @@ function extractCardOptions(data) {
       option_type:        'action',
       option_value:       'new'
     })
-    if(data.realID.getRealID === 'Yes') {
-      cardOptions.push({
-        type:               'DL',
-        option_type:        'modification',
-        option_value:       'real-id'
-      })
-    }
   }
+
+  if(data.realID.getRealID === 'Yes') {
+    cardOptions.push({
+      type:               data.realID.realIdDesignation,
+      option_type:        'modification',
+      option_value:       'real-id'
+    })
+  }
+
   return cardOptions;
+
 }
 
 module.exports = parse;

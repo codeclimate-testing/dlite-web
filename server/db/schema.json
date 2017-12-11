@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 11,
-    "constraints": 12,
-    "tables": 13,
-    "columns": 71
+    "sequences": 13,
+    "constraints": 14,
+    "tables": 15,
+    "columns": 78
   },
   "tables": {
     "addresses": {
@@ -281,6 +281,83 @@
           "table_schema": "public",
           "table_name": "card_histories",
           "column_name": "date_description",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "card_options": {
+      "table_schema": "public",
+      "table_name": "card_options",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "card_options",
+          "column_name": "id",
+          "column_default": "nextval('card_options_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "card_id": {
+          "table_schema": "public",
+          "table_name": "card_options",
+          "column_name": "card_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "option_type": {
+          "table_schema": "public",
+          "table_name": "card_options",
+          "column_name": "option_type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "option_value": {
+          "table_schema": "public",
+          "table_name": "card_options",
+          "column_name": "option_value",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "cards": {
+      "table_schema": "public",
+      "table_name": "cards",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "cards",
+          "column_name": "id",
+          "column_default": "nextval('cards_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "cards",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "type": {
+          "table_schema": "public",
+          "table_name": "cards",
+          "column_name": "type",
           "column_default": null,
           "is_nullable": true,
           "data_type": "character varying",
@@ -716,19 +793,19 @@
           "data_type": "character varying",
           "col_description": null
         },
-        "vote_by_main": {
+        "vote_by_mail": {
           "table_schema": "public",
           "table_name": "voting_registrations",
-          "column_name": "vote_by_main",
+          "column_name": "vote_by_mail",
           "column_default": null,
           "is_nullable": true,
           "data_type": "boolean",
           "col_description": null
         },
-        "share_contact": {
+        "should_contact": {
           "table_schema": "public",
           "table_name": "voting_registrations",
-          "column_name": "share_contact",
+          "column_name": "should_contact",
           "column_default": null,
           "is_nullable": true,
           "data_type": "boolean",
@@ -782,6 +859,38 @@
           "check_clause": null,
           "referenced_schema": "public",
           "referenced_table": "card_histories",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "card_options": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "card_options",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "card_options_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "card_options",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "cards": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "cards",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "cards_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "cards",
           "referenced_column": "id"
         }
       ]
@@ -944,6 +1053,28 @@
       }
     },
     "card_histories": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "card_options": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "cards": {
       "id": {
         "table_schema": "public",
         "table_name": "voting_registrations",
