@@ -297,8 +297,8 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
 
 function getCardTypes(cards) {
   let cardType = {
-      ID: false,
-      DL: false
+    ID: false,
+    DL: false
   };
   cards.forEach( (card) => {
     if(card.type === 'ID') {
@@ -313,8 +313,8 @@ function getCardTypes(cards) {
 
 function getRealID(card_options, cards) {
   let realID = {
-      getRealID: '',
-      realIdDesignation: ''
+    getRealID: '',
+    realIdDesignation: ''
   };
   card_options.forEach((option) => {
     if(option.option_value === 'real-id') {

@@ -17,8 +17,8 @@ function parse(data) {
     { license_issues:         extractLicenseIssues(data) },
     { veterans_info:          extractVeteransInfo(data) },
     { voting_registrations:   extractVotingRegistrations(data) },
-    {cards:                   extractCardTypes(data) },
-    {card_options:            extractCardOptions(data) }
+    { cards:                  extractCardTypes(data) },
+    { card_options:           extractCardOptions(data) }
   );
 }
 
