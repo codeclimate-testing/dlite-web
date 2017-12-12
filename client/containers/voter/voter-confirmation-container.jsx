@@ -6,20 +6,18 @@ import { updateDateOfBirth }   from '../../actions/index';
 import VoterRegComplete        from '../../presentations/voter/voter-confirmation.jsx';
 import PreRegVoterRegComplete  from '../../presentations/voter/voter-confirmation-prereg.jsx';
 import connectForm             from '../../helpers/connect-form';
-import { getCurrentAge }       from '../../helpers/calculate-age';
+import { isPreregistering }    from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
-
   let content = [];
 
-  if ((props.dateOfBirth.age >= 16) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreRegVoterRegComplete
         key='voting pre-registration complete'
         age={props.dateOfBirth.age} />
     );
-  }
-  else {
+  } else {
     content.push(
       <VoterRegComplete
         key='voting registration complete'

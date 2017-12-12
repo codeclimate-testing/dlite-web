@@ -9,14 +9,13 @@ import connectForm             from '../../helpers/connect-form';
 import navigateOnSubmit        from '../../helpers/navigate-on-submit';
 import navigateOnBack          from '../../helpers/navigate-on-back';
 import * as dataPresent        from '../../helpers/data-present';
-import { getCurrentAge }       from '../../helpers/calculate-age';
+import { isPreregistering }    from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
-
   let value = props.optOut;
   let content = [];
   let address;
-  
+
   const continueDisabled = !dataPresent.value(value);
 
   const NEW_VOTER = '/voting-registration/preferences';
@@ -37,7 +36,7 @@ const ConnectedForm = (props) => {
   const onSubmit = navigateOnSubmit(address, props);
   const onBack = navigateOnBack('/voting-registration/eligibility', props);
 
-  if ((props.dateOfBirth.age >= 16) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreregOptOutForm
         key='Pre-registration opt out'
@@ -49,8 +48,7 @@ const ConnectedForm = (props) => {
         continueDisabled={continueDisabled}
       />
     );
-  }
-  else {
+  } else {
     content.push(
       <OptOutForm
         key='Opt out'

@@ -12,7 +12,7 @@ import connectForm                      from '../../helpers/connect-form';
 import navigateOnSubmit                 from '../../helpers/navigate-on-submit';
 import navigateOnBack                   from '../../helpers/navigate-on-back';
 import * as dataPresent                 from '../../helpers/data-present';
-import { getCurrentAge }                from '../../helpers/calculate-age';
+import { isPreregistering }             from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   let continueDisabled                  = false;
@@ -26,20 +26,19 @@ const ConnectedForm = (props) => {
     showPoliticalPartyPreference  = true;
     continueDisabled = !(dataPresent.politicalPartyChoose(props.politicalPartyChoose));
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
-    <PoliticalPartyChoosePreReg 
-      key="Political Party choose Pre-registration" 
+    <PoliticalPartyChoosePreReg
+      key="Political Party choose Pre-registration"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
       age                   = {props.dateOfBirth.age}
       />
     );
-  }
-  else {
+  } else {
     content.push(
-    <PoliticalPartyChoose 
-      key="Political Party choose" 
+    <PoliticalPartyChoose
+      key="Political Party choose"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
       age                   = {props.dateOfBirth.age}/>
@@ -63,10 +62,10 @@ const ConnectedForm = (props) => {
     );
   }
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
-    <PoliticalPartyChoosePreReg 
-      key="Political Party Choose Pre-registration" 
+    <PoliticalPartyChoosePreReg
+      key="Political Party Choose Pre-registration"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
       age                   = {props.dateOfBirth.age}/>
@@ -74,8 +73,8 @@ const ConnectedForm = (props) => {
   }
   else {
     content.push(
-    <PoliticalPartyChoose 
-      key="Political Party choose" 
+    <PoliticalPartyChoose
+      key="Political Party choose"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
       age                   = {props.dateOfBirth.age}/>

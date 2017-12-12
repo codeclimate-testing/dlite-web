@@ -12,7 +12,7 @@ import connectForm                   from '../../helpers/connect-form';
 import navigateOnSubmit              from '../../helpers/navigate-on-submit';
 import navigateOnBack                from '../../helpers/navigate-on-back';
 import * as dataPresent              from '../../helpers/data-present';
-import { getCurrentAge }             from '../../helpers/calculate-age';
+import { isPreregistering }          from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   let content = [];
@@ -24,8 +24,8 @@ const ConnectedForm = (props) => {
   if (props.contactMethods.shouldContact === 'Yes') {
     showContactDetails = true;
     continueDisabled = !(dataPresent.contactMethods(props.contactMethods));
-  
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+
+    if (isPreregistering(props.dateOfBirth)) {
       content.push(
         <PreRegContactChoice
           key='Pre-registration Contact Choice'
@@ -33,8 +33,7 @@ const ConnectedForm = (props) => {
           selectedValue={props.contactMethods.shouldContact}
           age={props.dateOfBirth.age}/>
       );
-    }
-    else {
+    } else {
       content.push(
         <ContactChoice
           key='Contact Choice'
@@ -62,24 +61,24 @@ const ConnectedForm = (props) => {
     );
   }
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
-      content.push(
-        <PreRegContactChoice
-          key='Contact Choice Pre Reg'
-          onChange={props.onChange}
-          selectedValue={props.contactMethods.shouldContact}
-          age={props.dateOfBirth.age}/>
-      );
-    }
-    else {
-      content.push(
-        <ContactChoice
-          key='Contact Choice'
-          onChange={props.onChange}
-          selectedValue={props.contactMethods.shouldContact}
-          age={props.dateOfBirth.age}/>
-      );
-    }
+  if (isPreregistering(props.dateOfBirth)) {
+    content.push(
+      <PreRegContactChoice
+        key='Contact Choice Pre Reg'
+        onChange={props.onChange}
+        selectedValue={props.contactMethods.shouldContact}
+        age={props.dateOfBirth.age}/>
+    );
+  } else {
+    content.push(
+      <ContactChoice
+        key='Contact Choice'
+        onChange={props.onChange}
+        selectedValue={props.contactMethods.shouldContact}
+        age={props.dateOfBirth.age}/>
+    );
+  }
+
   return (
     <div>
       <form onSubmit={onSubmit}>

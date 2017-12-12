@@ -6,21 +6,19 @@ import { updateDateOfBirth }         from '../../actions/index';
 import VoterPreferencesIntro         from '../../presentations/voter/voter-preferences-intro-form.jsx';
 import PreRegVoterPreferencesIntro   from '../../presentations/voter/voter-preferences-info-prereg-form.jsx';
 import connectForm                   from '../../helpers/connect-form';
-import { getCurrentAge }             from '../../helpers/calculate-age';
+import { isPreregistering }          from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
+  let content = [];
 
-    let content = [];
-  
- if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreRegVoterPreferencesIntro
       key='Voting Pre-registration Preferences info'
       age = {props.dateOfBirth.age}
       optOut={props.optOut}/>
     );
-  }
-  else {
+  } else {
     content.push(
        <VoterPreferencesIntro
        key='Voting Registration Preferences info'

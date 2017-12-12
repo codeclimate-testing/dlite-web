@@ -8,21 +8,21 @@ import PreRegEligibilityRequirements       from '../../presentations/voter/eligi
 import connectForm                         from '../../helpers/connect-form';
 import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
 import navigateOnBack                      from '../../helpers/navigate-on-back';
-import { getCurrentAge }                   from '../../helpers/calculate-age';
+import { isPreregistering }                from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
-  let onSubmit = navigateOnSubmit('/summary', props);
+  let nextAddress = '/summary';
   let onBack = navigateOnBack('/voting-registration/citizenship', props);
   let content = [];
-  
-  if(props.eligibilityRequirements === 'Yes') {
-    onSubmit = navigateOnSubmit('/voting-registration/opt-out', props)} 
-    else {
-    onSubmit;
-  };
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if(props.eligibilityRequirements === 'Yes') {
+    nextAddress = '/voting-registration/opt-out';
+  }
+
+  let onSubmit = navigateOnSubmit(nextAddress, props);
+
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreRegEligibilityRequirements
       key='Pre-registration Eligibility requirements'
@@ -34,22 +34,21 @@ const ConnectedForm = (props) => {
       continueDisabled={continueDisabled}
       />
     );
-  }
-  else {
+  } else {
     content.push(
       <EligibilityRequirements
-      key='Eligibility requirements'
-      onSubmit={onSubmit}
-      onBack={onBack}
-      onChange={props.onChange}
-      selectedValue={props.eligibilityRequirements}
-      age={props.dateOfBirth.age}
-      continueDisabled={continueDisabled}/>
+        key='Eligibility requirements'
+        onSubmit={onSubmit}
+        onBack={onBack}
+        onChange={props.onChange}
+        selectedValue={props.eligibilityRequirements}
+        age={props.dateOfBirth.age}
+        continueDisabled={continueDisabled}/>
     );
   }
 
   return (
-  <div>{content}</div>
+    <div>{content}</div>
   );
 };
 

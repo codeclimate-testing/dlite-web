@@ -8,7 +8,7 @@ import PreRegCitizenStatusForm        from '../../presentations/voter/citizen-st
 import connectForm                    from '../../helpers/connect-form';
 import navigateOnSubmit               from '../../helpers/navigate-on-submit';
 import navigateOnBack                 from '../../helpers/navigate-on-back';
-import { getCurrentAge }              from '../../helpers/calculate-age';
+import { isPreregistering}            from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   let content = [];
@@ -21,7 +21,7 @@ const ConnectedForm = (props) => {
     onSubmit = navigateOnSubmit('/voting-registration/eligibility', props);
   }
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreRegCitizenStatusForm
         key='Voting pre-registration citizen status'
@@ -32,8 +32,7 @@ const ConnectedForm = (props) => {
         age={props.dateOfBirth.age}
         continueDisabled={continueDisabled} />
     );
-  }
-  else {
+  } else {
     content.push(
       <CitizenStatusForm key='Voting registration citizen status'
         onSubmit={onSubmit}

@@ -8,7 +8,7 @@ import BallotLanguageFormPreReg  from '../../presentations/voter/ballot-language
 import connectForm               from '../../helpers/connect-form';
 import navigateOnSubmit          from '../../helpers/navigate-on-submit';
 import navigateOnBack            from '../../helpers/navigate-on-back';
-import { getCurrentAge }         from '../../helpers/calculate-age';
+import { isPreregistering }      from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   const continueDisabled = false;
@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   const onBack = navigateOnBack('/voting-registration/choose-party', props);
   let content = [];
 
-  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+  if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <BallotLanguageFormPreReg
         key='Pre-registration Ballot language'
@@ -28,8 +28,7 @@ const ConnectedForm = (props) => {
         age={props.dateOfBirth.age}
       />
     );
-  }
-  else {
+  } else {
     content.push(
       <BallotLanguageForm
         key='Ballot language'
