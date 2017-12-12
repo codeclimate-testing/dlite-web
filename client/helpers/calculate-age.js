@@ -1,3 +1,5 @@
+'use strict';
+
 export const getCurrentAge = (year, month, day) => {
   let d = new Date();
 
@@ -17,3 +19,7 @@ export const getCurrentAge = (year, month, day) => {
   return yearDiff + fraction
 };
 
+export const isPreregistering = (dateOfBirth, now = new Date()) => {
+  let age = getCurrentAge(dateOfBirth.year, dateOfBirth.month, dateOfBirth.day);
+  return age >= 16 && age < 18;
+};
