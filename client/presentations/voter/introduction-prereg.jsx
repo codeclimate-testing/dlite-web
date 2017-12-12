@@ -7,27 +7,28 @@ import NavigationLinks from '../navigation-links.jsx';
 import SectionHeader from '../section-header.jsx';
 import Page from '../page.jsx';
 
-const VoterIntro = (props) => {
+const VoterIntroPrereg = (props) => {
 
   const linkAddress = '/voting-registration/citizenship';
   const linkBack = '/organ-donation';
 
   return (
     <Page
-      key='Voting registration'
-      pageTitle='DMV: License application - Voting registration'
+      key='Voting pre-reg'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props}
     >
+      
         <div className='voter-intro-info'>
           <h5><img src='/images/stop.png' alt='Stop' /> US Citizens Only </h5>
-          <h3>Voting registration</h3>
+          <h3 key='header'>Voting pre-registration</h3>
           <h4>Since 1993, DMVs nationwide must help US citizens register to vote.</h4>
 
           <ul className='bullet-list'>
             <li> If you are eligible, the California DMV will register you to vote unless you choose to opt out.</li>
-            <li> If you’re already registered to vote, this service helps make sure your information is up to date. </li>
+            <li>You can pre-register today, so once you turn 18 you’re automatically registered to vote.</li>
           </ul>
 
           <hr />
@@ -45,4 +46,4 @@ const VoterIntro = (props) => {
 };
 
 
-export default VoterIntro;
+export default VoterIntroPrereg;

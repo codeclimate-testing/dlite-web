@@ -32,17 +32,27 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.when('Today I turned 17 years old', function (done) {
-    let d = new Date();
-    let y = d.getFullYear().toString();
-    let mm = (d.getMonth() + 1).toString();
-    let dd = d.getDay().toString();
-    let diff = (y - 17);
-    let seventeen = diff.toString();
+  world.then('I will see header for Voting registration', function (done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('Voting registration'), 'Voting registration header missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('Today I turned 19 years old', function(done) {
+     let d = new Date();
+     let y = d.getFullYear().toString();
+     let mm = (d.getMonth() + 1).toString();
+     let dd = d.getDay().toString();
+     let diff = (y - 19);
+     let nineteen = diff.toString();
     browser
       .type('#month', mm)
       .type('#day', dd)
-      .type('#year', seventeen)
+      .type('#year', nineteen)
       .then(() => { done(); })
       .catch(done);
   });

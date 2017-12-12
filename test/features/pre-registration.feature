@@ -29,12 +29,23 @@ Feature: Youth voting pre-registration
     Then I go to the page with my summary
     And I will see I would like to pre-register to vote in summary
   
-  Scenario: Turning 17 today and seeing pre-registration section
+  Scenario: Turning 16 today and seeing pre-registration section
     Given I go to the new online DL application page
     Given I visit the date of birth page
-    And Today I turned 17 years old
+    And Today I turned 16 years old
     When I visit voter citizen status page
     And I will see header for Voting pre-registration
+    And I select citizen No
+    Then I click "Next" to continue
+    Then I go to the page with my summary
+    And I will see No in my citizenship selection
+
+  Scenario: Turning 19 today and should not be seeing pre-registration section
+    Given I go to the new online DL application page
+    Given I visit the date of birth page
+    And Today I turned 19 years old
+    When I visit voter citizen status page
+    And I will see header for Voting registration
     And I select citizen No
     Then I click "Next" to continue
     Then I go to the page with my summary

@@ -14,13 +14,13 @@ const MESSAGE_YES         = 'Ok, your ballot will now come by mail. You can stil
 const FAQ_CLASSNAME_NO    = 'faq-ballot-by-mail-no';
 const MESSAGE_NO          = 'Ok, you vote in-person at your polling place.';
 
-const BallotByMailForm = (props) => {
+const BallotByMailFormPreReg = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props} 
     >
       <div>
@@ -63,4 +63,4 @@ const BallotByMailForm = (props) => {
   );
 };
 
-export default BallotByMailForm;
+export default BallotByMailFormPreReg;

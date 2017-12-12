@@ -7,13 +7,14 @@ import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];
 
-const ContactChoice = (props) => {
+const PreRegContactChoice = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      key='contact methods'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props} 
     >
       <div className='contact-methods-choice-form'>
@@ -36,4 +37,4 @@ const ContactChoice = (props) => {
   );
 };
 
-export default ContactChoice;
+export default PreRegContactChoice;

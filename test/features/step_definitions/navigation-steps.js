@@ -118,6 +118,10 @@ module.exports = function(world) {
     navigateToPath('/apply/voting-registration/preferences', '.voter-preferences-intro', done);
   });
 
+  world.when('I visit updated voter preferences intro page', function(done){
+    navigateToPath('/apply/voting-registration/updated-preferences', '.updating-voter-preferences', done);
+  });
+
   world.when('I visit voter registration complete page', function(done){
     navigateToPath('/apply/voting-registration/confirmation', '.voter-reg-complete', done);
   });
@@ -276,6 +280,10 @@ module.exports = function(world) {
 
   world.then('I will be taken to voter preferences info page', function(done) {
     assertOnPage('.voter-preferences-intro', /voting-registration\/preferences/, done);
+  });
+
+  world.then('I will be taken to updated voter preferences info page', function(done) {
+    assertOnPage('.updating-voter-preferences', /voting-registration\/preferences-updated/, done);
   });
 
   world.then('I will be taken to voter intro info page', function(done) {

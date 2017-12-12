@@ -3,30 +3,50 @@
 import React from 'react';
 
 import { updateCitizenStatus }        from '../../actions/index';
-import Form                           from '../../presentations/voter/citizen-status-form.jsx';
+import CitizenStatusForm              from '../../presentations/voter/citizen-status-form.jsx';
+import PreRegCitizenStatusForm        from '../../presentations/voter/citizen-status-prereg-form.jsx';
 import connectForm                    from '../../helpers/connect-form';
 import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import navigateOnBack               from '../../helpers/navigate-on-back';
+import navigateOnBack                 from '../../helpers/navigate-on-back';
+import { getCurrentAge }              from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
+  let content = [];
   let value = props.citizenStatus;
   const continueDisabled = false;
   let onSubmit = navigateOnSubmit('/summary', props);
   let onBack = navigateOnBack('/voting-registration/introduction', props);
 
-  if(value === 'Yes') {
+  if (value === 'Yes') {
     onSubmit = navigateOnSubmit('/voting-registration/eligibility', props);
   }
 
+  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+    content.push(
+      <PreRegCitizenStatusForm
+        key='Voting pre-registration citizen status'
+        onSubmit={onSubmit}
+        onBack={onBack}
+        onChange={props.onChange}
+        selectedValue={props.citizenStatus}
+        age={props.dateOfBirth.age}
+        continueDisabled={continueDisabled} />
+    );
+  }
+  else {
+    content.push(
+      <CitizenStatusForm key='Voting registration citizen status'
+        onSubmit={onSubmit}
+        onBack={onBack}
+        onChange={props.onChange}
+        selectedValue={props.citizenStatus}
+        age={props.dateOfBirth.age}
+        continueDisabled={continueDisabled} />
+    );
+  }
+
   return (
-    <Form
-      onSubmit={onSubmit}
-      onBack={onBack}
-      onChange={props.onChange}
-      selectedValue={props.citizenStatus}
-      dateOfBirth={props.dateOfBirth}
-      continueDisabled={continueDisabled}
-    />
+    <div>{content}</div>
   );
 };
 

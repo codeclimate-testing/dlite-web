@@ -9,13 +9,13 @@ import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 const linkAddress = '/summary';
 const linkBack = '/voting-registration/contact-methods';
 
-const VoterRegComplete = (props) => {
+const PreRegVoterRegComplete = (props) => {
   
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props} 
     >
       <div>
@@ -39,4 +39,4 @@ const VoterRegComplete = (props) => {
   );
 };
 
-export default VoterRegComplete;
+export default PreRegVoterRegComplete;

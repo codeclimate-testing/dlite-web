@@ -9,18 +9,19 @@ import Page             from '../page.jsx';
 const linkAddress = '/voting-registration/choose-party';
 const linkBack =  '/voting-registration/opt-out';
 
-const VoterPreferencesIntro = (props) => {
+const PreRegVoterPreferencesIntroUpdated = (props) => {
 
   return (
     <Page
-      pageTitle= 'DMV: License application - Voting registration'
+      pageTitle= 'DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName= 'Voting registration'
+      sectionName= 'Voting pre-registration'
       {...props}
     >
       <div>
         <div className='voter-preferences-intro'>
-          <h4>Next we'd like to make sure your voter registration is up to date.</h4>
+          <h4>Next we'd like to make sure your voter pre-registration is up to date.</h4>
+          <p>This will replace your previous voter preferences.</p>
 
           <h4>Political Party</h4>
           <p>Choose your political party preferences.</p>
@@ -44,4 +45,4 @@ const VoterPreferencesIntro = (props) => {
   );
 };
 
-export default VoterPreferencesIntro;
+export default PreRegVoterPreferencesIntroUpdated;

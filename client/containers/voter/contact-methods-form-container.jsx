@@ -2,57 +2,88 @@
 
 import React from 'react';
 
-import { updateContactMethods }     from '../../actions/index';
-import HomeLink                     from '../../presentations/home-link.jsx';
-import NavigationButtons            from '../../presentations/navigation-buttons.jsx';
-import ContactChoice                from '../../presentations/voter/contact-methods-choice.jsx';
-import ContactDetails               from '../../presentations/voter/contact-methods-details.jsx';
-import connectForm                  from '../../helpers/connect-form';
-import navigateOnSubmit             from '../../helpers/navigate-on-submit';
-import navigateOnBack               from '../../helpers/navigate-on-back';
-import * as dataPresent             from '../../helpers/data-present';
+import { updateContactMethods }      from '../../actions/index';
+import HomeLink                      from '../../presentations/home-link.jsx';
+import NavigationButtons             from '../../presentations/navigation-buttons.jsx';
+import ContactChoice                 from '../../presentations/voter/contact-methods-choice.jsx';
+import PreRegContactChoice           from '../../presentations/voter/contact-methods-prereg-choice.jsx';
+import ContactDetails                from '../../presentations/voter/contact-methods-details.jsx';
+import connectForm                   from '../../helpers/connect-form';
+import navigateOnSubmit              from '../../helpers/navigate-on-submit';
+import navigateOnBack                from '../../helpers/navigate-on-back';
+import * as dataPresent              from '../../helpers/data-present';
+import { getCurrentAge }             from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
-  let continueDisabled    = false;
-  let showContactDetails  = false;
-  let onSubmit            = navigateOnSubmit('/voting-registration/confirmation', props);
-  let onBack              = navigateOnBack('/voting-registration/vote-by-mail', props);
+  let content = [];
+  let continueDisabled = false;
+  let showContactDetails = false;
+  let onSubmit = navigateOnSubmit('/voting-registration/confirmation', props);
+  let onBack = navigateOnBack('/voting-registration/vote-by-mail', props);
 
-  if(props.contactMethods.shouldContact === 'Yes') {
-    showContactDetails  = true;
-    continueDisabled    = !(dataPresent.contactMethods(props.contactMethods));
+  if (props.contactMethods.shouldContact === 'Yes') {
+    showContactDetails = true;
+    continueDisabled = !(dataPresent.contactMethods(props.contactMethods));
+  
+  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+      content.push(
+        <PreRegContactChoice
+          key='Pre-registration Contact Choice'
+          onChange={props.onChange}
+          selectedValue={props.contactMethods.shouldContact}
+          age={props.dateOfBirth.age}/>
+      );
+    }
+    else {
+      content.push(
+        <ContactChoice
+          key='Contact Choice'
+          onChange={props.onChange}
+          selectedValue={props.contactMethods.shouldContact}
+          age={props.dateOfBirth.age}/>
+      );
+    }
 
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <ContactChoice
-            onChange      = {props.onChange}
-            selectedValue = {props.contactMethods.shouldContact}
-            dateOfBirth   = {props.dateOfBirth}
-          />
+          <div>{content}</div>
           <ContactDetails
-            onChange       = {props.onChange}
-            contactDetails = {props.contactMethods}
-            onBack         = { onBack }
+            onChange={props.onChange}
+            contactDetails={props.contactMethods}
+            onBack={onBack}
           />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
+          <NavigationButtons
+            continueDisabled={continueDisabled}
+            onBack={onBack}
+          />
         </form>
       </div>
     );
   }
 
+  if ((props.dateOfBirth.age >= 16 ) && (props.dateOfBirth.age <= 18)) {
+      content.push(
+        <PreRegContactChoice
+          key='Contact Choice Pre Reg'
+          onChange={props.onChange}
+          selectedValue={props.contactMethods.shouldContact}
+          age={props.dateOfBirth.age}/>
+      );
+    }
+    else {
+      content.push(
+        <ContactChoice
+          key='Contact Choice'
+          onChange={props.onChange}
+          selectedValue={props.contactMethods.shouldContact}
+          age={props.dateOfBirth.age}/>
+      );
+    }
   return (
     <div>
-
       <form onSubmit={onSubmit}>
-        <ContactChoice
-          onChange      = {props.onChange}
-          selectedValue = {props.contactMethods.shouldContact}
-          dateOfBirth   = {props.dateOfBirth}
-        />
+       <div>{content}</div>
         <NavigationButtons
           continueDisabled={continueDisabled}
           onBack={onBack}

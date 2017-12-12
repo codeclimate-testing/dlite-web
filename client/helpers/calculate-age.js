@@ -17,9 +17,3 @@ export const getCurrentAge = (year, month, day) => {
   return yearDiff + fraction
 };
 
-export const getAgeGroup = (age) => {
-
-  if ((age > 15 ) && (age < 18)) {
-    return "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18"
-  }
-}

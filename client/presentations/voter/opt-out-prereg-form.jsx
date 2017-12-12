@@ -7,18 +7,18 @@ import NavigationButtons from '../navigation-buttons.jsx';
 import Page from '../page.jsx';
 
 const VALUES = [
-  "I am a new voter in California",
-  "I am already registered to vote in California",
-  "I am eligible to vote, but do not want to register to vote"
+  "I would like to pre-register to vote",
+  "I am already pre-registered to vote in California",
+  "I am eligible to vote, but do not want to pre-register to vote"
 ];
 
-const OptOutForm = (props) => {
+const OptOutFormPreReg = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props}
     >
       <div>
@@ -41,4 +41,4 @@ const OptOutForm = (props) => {
   );
 };
 
-export default OptOutForm;
+export default OptOutFormPreReg;

@@ -7,13 +7,13 @@ import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 
 const VALUES = ['Yes', 'I do not wish to choose a political party'];
 
-const PoliticalPartyChoose = (props) => {
+const PoliticalPartyChoosePreReg = (props) => {
   
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props} 
     >
       <div className='choose-party'>
@@ -33,4 +33,4 @@ const PoliticalPartyChoose = (props) => {
   );
 };
 
-export default PoliticalPartyChoose;
+export default PoliticalPartyChoosePreReg;

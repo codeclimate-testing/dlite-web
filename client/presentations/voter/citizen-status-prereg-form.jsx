@@ -9,19 +9,19 @@ import FAQDrawer from '../faq-drawer.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
-const CitizenStatusForm = (props) => {
+const PreRegCitizenStatusForm = (props) => {
   let documentFaq = [];
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registrationn'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props}
     >
       <div>
         <h4>Are you a United States citizen?</h4>
-        <h5>If you answer No or Skip Section, you cannot register to vote.</h5>
+        <h5>If you answer No or Skip Section, you cannot pre-register to vote.</h5>
         <form onSubmit={props.onSubmit} className='citizen-status-form'>
           <div className='inner-bottom'>
             <SelectorCollection
@@ -44,4 +44,4 @@ const CitizenStatusForm = (props) => {
 };
 
 
-export default CitizenStatusForm;
+export default PreRegCitizenStatusForm;

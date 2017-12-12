@@ -8,15 +8,14 @@ import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 
 const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', 'Tagalog', 'Hindi', 'Khmer', 'Vietnamese'];
-let pageTitle = 'DMV: License application - Voting registration'
 
-const BallotLanguageForm = (props) => {
+const BallotLanguageFormPreReg = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle='DMV: License application - Voting pre-registration'
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName='Voting pre-registration'
       {...props} 
     >
       <div>
@@ -38,4 +37,4 @@ const BallotLanguageForm = (props) => {
   );
 };
 
-export default BallotLanguageForm;
+export default BallotLanguageFormPreReg;
