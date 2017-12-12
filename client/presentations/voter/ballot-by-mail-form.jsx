@@ -18,10 +18,10 @@ const BallotByMailForm = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle={ props.pageTitle } //'DMV: License application - Voting registration' // changes
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props} 
+      sectionName={ props.sectionName } //'Voting registration' // changes
+      {...props}
     >
       <div>
         <h4>Would you like to get your ballot by mail before each election?</h4>

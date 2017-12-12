@@ -10,42 +10,29 @@ import * as dataPresent             from '../../helpers/data-present';
 import navigateOnSubmit             from '../../helpers/navigate-on-submit';
 import navigateOnBack               from '../../helpers/navigate-on-back';
 import { isPreregistering }         from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
 
 const ConnectedForm = (props) => {
   const onSubmit = navigateOnSubmit('/voting-registration/contact-methods', props);
   const onBack = navigateOnBack('/voting-registration/language', props);
   let continueDisabled = !(dataPresent.value(props.ballotByMail));
-  let content = [];
 
-  if (isPreregistering(props.dateOfBirth)) {
-      content.push(
-      <BallotByMailFormPreReg
-        key='Pre-registration Ballot by mail'
-        onSubmit          = {onSubmit}
-        onBack            = {onBack}
-        onChange          = {props.onChange}
-        selectedValue     = {props.ballotByMail}
-        continueDisabled  = {continueDisabled}
-        age               = {props.dateOfBirth.age}
-      />
-    );
-  } else {
-      content.push(
-      <BallotByMailForm
-        key='Ballot by mail'
-        onSubmit          = {onSubmit}
-        onBack            = {onBack}
-        onChange          = {props.onChange}
-        selectedValue     = {props.ballotByMail}
-        continueDisabled  = {continueDisabled}
-        age               = {props.dateOfBirth.age}
-      />
-    );
-  }
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
 
-  return (
-    <div> {content} </div>
-  );
+  return <BallotByMailForm
+    pageTitle         = {formPageTitle}
+    sectionName       = {formSectionName}
+    onSubmit          = {onSubmit}
+    onBack            = {onBack}
+    onChange          = {props.onChange}
+    selectedValue     = {props.ballotByMail}
+    continueDisabled  = {continueDisabled}
+    age               = {props.dateOfBirth.age}
+  />
 };
 
 function mapStateToProps(state) {
