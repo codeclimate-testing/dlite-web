@@ -97,7 +97,6 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch((err) => {
       throw err;
-      done(err);
     });
   });
 
@@ -107,7 +106,6 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch((err) => {
       throw err;
-      done(err);
     });
   });
 
@@ -163,7 +161,6 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch((err) => {
       throw err;
-      done(err);
     });
   });
 
@@ -189,7 +186,7 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
-  
+
   world.when('I am over 16 years old', function(done) {
      let d = new Date();
      let y = d.getFullYear();
@@ -218,4 +215,3 @@ module.exports = function(world) {
       .catch(done);
   });
 };
-

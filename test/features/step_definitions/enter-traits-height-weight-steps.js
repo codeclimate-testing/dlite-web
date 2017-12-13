@@ -138,4 +138,3 @@ module.exports = function(world) {
       .catch(done);
   });
 };
-

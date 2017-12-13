@@ -16,7 +16,7 @@ module.exports = function(world) {
       browser
         .click('label[for="getRealIDNo"]')
         .then(() => { done(); })
-        .catch(done)
+        .catch(done);
   });
 
   world.then('I will see that I am getting a real id', function(done){
@@ -110,4 +110,4 @@ module.exports = function(world) {
       .catch(done);
   });
 
-}
+};

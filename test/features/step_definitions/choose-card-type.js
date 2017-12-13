@@ -9,7 +9,7 @@ module.exports = function(world) {
     browser
       .click('[for="DL"]')
       .then(() => { done(); })
-      .catch(done)
+      .catch(done);
   });
 
   world.when('I click on the ID checkbox', function(done) {

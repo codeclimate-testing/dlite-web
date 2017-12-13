@@ -11,7 +11,7 @@ module.exports = function(world) {
         window.__reactHistory.push((path));
       }, path)
       .waitForSelector(pageSelector)
-      .then((d) => { done(); })
+      .then(() => { done(); })
       .catch(done);
   }
 

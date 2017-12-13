@@ -29,7 +29,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (props.DL === true || props.ID === true))
+  return (props && (props.DL === true || props.ID === true));
 };
 
 const reducedFee = (props) => {
@@ -37,11 +37,11 @@ const reducedFee = (props) => {
 };
 
 const address = (props) => {
-  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing'])
+  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing']);
 };
 
 const homeAddressSameAsMailing = (props) => {
-  return hasAllAttributes(props, ['homeAddressSameAsMailing'])
+  return hasAllAttributes(props, ['homeAddressSameAsMailing']);
 };
 
 const traitsHeightWeight = (props) => {
@@ -49,15 +49,15 @@ const traitsHeightWeight = (props) => {
 };
 
 const organDonation = (props) => {
-  return hasAllAttributes(props, ['donate', 'contribute'])
+  return hasAllAttributes(props, ['donate', 'contribute']);
 };
 
 const socialSecurity = (props) => {
-  return hasAllAttributes(props, ['part1', 'part2', 'part3'])
+  return hasAllAttributes(props, ['part1', 'part2', 'part3']);
 };
 
 const veteransService = (props) => {
-  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])))
+  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])));
 };
 
 const licenseIssues = (props) => {
@@ -73,7 +73,7 @@ const namesHistory = (props) => {
 };
 
 const hasPreviousNames = (props) => {
-  return hasAllAttributes(props, ['hasUsedPreviousNames'])
+  return hasAllAttributes(props, ['hasUsedPreviousNames']);
 };
 
 const medicalHistory = (props) => {
@@ -81,7 +81,7 @@ const medicalHistory = (props) => {
 };
 
 const hasMedicalCondition = (props) => {
-  return hasAllAttributes(props, ['hasMedicalCondition'])
+  return hasAllAttributes(props, ['hasMedicalCondition']);
 };
 
 const contactMethods = (props) => {

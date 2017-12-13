@@ -16,7 +16,7 @@
     "test:unit:coverage": "node_modules/.bin/istanbul cover -dir=coverage/unit node_modules/.bin/_mocha -- --recursive test/server",
     "test:bdd:coverage": "node_modules/.bin/istanbul cover -dir=coverage/bdd node_modules/.bin/cucaroo",
     "test:security": "node_modules/.bin/nsp check",
-    "lint": "node_modules/.bin/jshint test/ server/ server.js index.js",
+    "lint": "node_modules/.bin/jshint client/ test/ server/ server.js index.js",
     "schema:export": "node bin/export-db-schema.js"
   },
   "author": "Kane Baccigalupi",

@@ -1,6 +1,6 @@
 'use strict';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 import onInputChange from './on-input-change';
 import onSubmit      from './on-form-submit';
@@ -15,6 +15,6 @@ function connectForm(mapStateToProps, action, form) {
   }
 
   return connect(mapStateToProps, mapDispatchToProps)(form);
-};
+}
 
 export default connectForm;

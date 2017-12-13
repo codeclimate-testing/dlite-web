@@ -49,7 +49,7 @@ describe('dataPresent', function() {
         isVeteran           : 'Yes',
         receiveBenefits     : 'No',
         veteransIdentifier  : 'Yes'
-      }), 'veteransService not present when user is a veteran')
+      }), 'veteransService not present when user is a veteran');
     });
 
   });
@@ -110,13 +110,13 @@ describe('dataPresent', function() {
       assert(
         dataPresent.reducedFee({ID: 'No'}),
         'result should be true when user selects No to reduced fee'
-      )
+      );
     });
     it('is false when no values have been selected', function() {
       assert(
         !dataPresent.reducedFee({ID: '', form: ''}),
         'reduced fee test should not be true when there is no value'
-      )
+      );
     });
   });
 

@@ -11,7 +11,6 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch((err) => {
       throw err;
-      done(err);
     });
   });
 
@@ -41,7 +40,6 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch((err) => {
         throw err;
-        done(err);
       });
   });
 
@@ -71,7 +69,6 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch((err) => {
         throw err;
-        done(err);
       });
   });
 
@@ -101,7 +98,6 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch((err) => {
         throw err;
-        done(err);
       });
   });
 

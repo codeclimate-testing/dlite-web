@@ -40,7 +40,7 @@ module.exports = function getApplication(id) {
       .then((cardIDs) => {
         return db('card_options').whereIn('card_id', cardIDs)
           .then((records) => {
-            aggregate.card_options = records; })
+            aggregate.card_options = records; });
         })
   ]).then(() => {
     if (!aggregate.application) { return undefined; }

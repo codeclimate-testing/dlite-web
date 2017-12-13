@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import navigateOnSubmit from '../../../client/helpers/navigate-on-submit';
 
 describe('navigateOnSubmit', function() {
-  let props, navigator, event;
+  let props, navigator;
 
   beforeEach(function() {
     props = {

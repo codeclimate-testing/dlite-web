@@ -80,7 +80,7 @@ module.exports = function(world) {
       .then((color) => { assert.equal(color, 'YesLibertarian Party'); })
       .then(() => { done(); })
       .catch(done);
-  })
+  });
 
   world.then('I will see my political party in summary', function(done){
     browser

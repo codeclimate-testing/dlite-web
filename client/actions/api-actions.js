@@ -1,6 +1,6 @@
 'use strict';
 
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
 export const postData = function (body) {
@@ -31,8 +31,8 @@ export const postData = function (body) {
             data: {},
             error: err.message }
         });
-      })
-  }
+      });
+  };
 };
 
 export const getData = function (id) {
@@ -56,6 +56,6 @@ export const getData = function (id) {
             data: {},
             error: err.message }
           });
-      })
-  }
+      });
+  };
 };

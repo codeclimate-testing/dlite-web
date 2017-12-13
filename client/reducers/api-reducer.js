@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const apiReducer = (state, action) => {
   switch (action.type) {

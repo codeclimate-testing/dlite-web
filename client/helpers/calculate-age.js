@@ -13,11 +13,11 @@ export const getCurrentAge = (dob, now = new Date() ) => {
   // if the birthday has not occurred this year, add the positive or negative day fraction to fraction total
   if(monthDiff < 0 || (monthDiff === 0 && dayDiff < 0 ) || (monthDiff === 6 && dayDiff < 0)){
     fraction +=  dayDiff / 365 ;
- 
+
   } else {
     fraction += Math.abs( dayDiff / 365 );
   }
- 
+
   return yearDiff + fraction
 };
 

@@ -12,4 +12,3 @@ function defaultState() {
 }
 
 export default formObjectReducer(defaultState, TYPES.UPDATE_CARD_TYPE);
-

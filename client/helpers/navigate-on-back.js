@@ -3,7 +3,7 @@
 import alicePath from './alice-path';
 
 const onBackGenerator = (address, props) => {
-  return (event) => {
+  return () => {
     props.history.push(
       alicePath(address)
     );

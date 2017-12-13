@@ -5,5 +5,5 @@ export default (defaultState, actionType) => {
     if (action.type !== actionType) { return state; }
     let payload = action.payload;
     return payload.value || state;
-  }
+  };
 };

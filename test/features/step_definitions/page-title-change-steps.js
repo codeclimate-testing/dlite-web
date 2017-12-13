@@ -60,5 +60,4 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
-
-}
+};

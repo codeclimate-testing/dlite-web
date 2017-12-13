@@ -86,7 +86,7 @@ module.exports = function(world) {
     var day = d.getDate();
     var year = d.getFullYear() - 5;
 
-    browser 
+    browser
       .type('#month', month.toString())
       .type('#day', day.toString())
       .type('#year', year.toString())
@@ -101,7 +101,7 @@ module.exports = function(world) {
     var day = d.getDate();
     var year = d.getFullYear() - 14;
 
-    browser 
+    browser
       .type('#month', month.toString())
       .type('#day', day.toString())
       .type('#year', year.toString())
@@ -116,7 +116,7 @@ module.exports = function(world) {
     var day = d.getDate();
     var year = d.getFullYear() - 15;
 
-    browser 
+    browser
       .type('#month', month.toString())
       .type('#day', day.toString())
       .type('#year', year.toString())
@@ -131,7 +131,7 @@ module.exports = function(world) {
     var month = d.getMonth();
     var year = d.getFullYear() - 16;
     var day = d.getDate();
- 
+
     browser
       .type('#month', month.toString())
       .type('#day', day.toString())

@@ -1,7 +1,5 @@
 'use strict';
 
-const assert = require('assert');
-
 module.exports = function (world) {
   let browser = world.browser;
 
@@ -11,7 +9,6 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch((err) => {
       throw err;
-      done(err);
     });
   });
 
