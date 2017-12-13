@@ -55,4 +55,59 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see two collapsed FAQ drawers', function(done) {
+    browser
+      .exists('.faq-fcc-info-body')
+      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC info not collapsed'); })
+      .exists('.faq-fcc-docs-requirement-body')
+      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC doc requirements not collapsed'); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('The title of each FAQ drawers will be visible', function(done) {
+    browser
+      .waitForSelector('#FCCInfo')
+      .waitForSelector('#FCCRequirements')
+      .then((d) => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click in the title FOR FCC info FAQ drawer', function(done) {
+    browser
+      .click('#FCCInfo')
+      .then(() => { done(); })
+      .catch((err) => { done(new Error(err)); });
+  });
+
+  world.then('The FCC info FAQ drawer will open to show its full content', function(done) {
+    browser
+      .waitForSelector('.faq-fcc-info-body')
+      .then((d) => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click in the title FOR FCC required documents FAQ drawer', function(done) {
+    browser
+      .click('#FCCRequirements')
+      .then(() => { done(); })
+      .catch((err) => { done(new Error(err)); });
+  });
+
+  world.then('The FCC required documents FAQ drawer will open to show its full content', function(done) {
+    browser
+      .waitForSelector('.faq-fcc-docs-requirement-body')
+      .then((d) => { done(); })
+      .catch(done);
+  });
+
+  world.then('The FCC info FAQ drawer will close', function(done) {
+    browser
+      .exists('.faq-fcc-info-body')
+      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC info not closing'); })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 }
