@@ -9,10 +9,16 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 
+
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/get-started', props);
   let onBack            =   navigateOnBack('/real-id', props);
   let continueDisabled  =   !dataPresent.reducedFee(props.reducedFee);
+
+  const DLText = (props) => {
+    if (!(props.cardType.ID && props.cardType.DL)) { return null; }
+    return (<h5>This only applies to your ID Card. You cannot get a free or reduced fee driver license.</h5>);
+  };
 
   return (
     <Form
@@ -22,7 +28,11 @@ const ConnectedForm = (props) => {
       reducedFee        = { props.reducedFee }
       cardType          = { props.cardType }
       continueDisabled  = { continueDisabled }
-    />
+    >
+      <DLText 
+        {...props}
+      />
+    </Form>
   );
 };
 

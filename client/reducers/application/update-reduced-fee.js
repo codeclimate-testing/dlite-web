@@ -6,7 +6,7 @@ import formObjectReducer from './form-object-reducer';
 function defaultState() {
   return {
     ID: '',
-    form: 'No'
+    form: ''
   };
 }
 
