@@ -15,14 +15,12 @@ const ConnectedForm = (props) => {
     content.push(
       <PreRegVoterPreferencesIntro
       key='Voting Pre-registration Preferences info'
-      age = {props.dateOfBirth.age}
       optOut={props.optOut}/>
     );
   } else {
     content.push(
        <VoterPreferencesIntro
        key='Voting Registration Preferences info'
-       age={props.dateOfBirth.age}
        optOut={props.optOut} />
     );
   }
@@ -34,8 +32,8 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth: state.application.dateOfBirth,
-    optOut: state.application.optOut
+    optOut: state.application.optOut,
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

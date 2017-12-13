@@ -3,7 +3,7 @@
 import React                 from 'react';
 import SelectorCollection    from '../selector-collection.jsx';
 import Page                   from '../page.jsx';
-import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
+import { getAgeGroup }        from '../../helpers/calculate-age';
 
 const VALUES = ['Yes', 'I do not wish to choose a political party'];
 

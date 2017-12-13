@@ -7,9 +7,8 @@ function defaultState() {
   return {
     month: '',
     day: '',
-    year: '',
-    age: ''
-  };
+    year: ''
+  }
 }
 
 export default formObjectReducer(defaultState, TYPES.UPDATE_DATE_OF_BIRTH);

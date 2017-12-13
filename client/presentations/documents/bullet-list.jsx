@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+import { ageChecks }  from '../../helpers/calculate-age';
 
 const BulletList = (props) => {
   let bulletList = [];
@@ -19,9 +20,9 @@ const BulletList = (props) => {
   if(props.medicalHistory.hasMedicalCondition === 'Yes') {
     bulletList.push(<li key='medical-information' >Medical Information</li>);
   }
-  if(props.age < 18 && props.age >= 15.5 && props.licenseIssued === 'No') {
+  if(ageChecks.Under18(props.dateOfBirth)  && ageChecks.GreaterThanEqual15Half(props.dateOfBirth) && props.licenseIssued === 'No') {
     bulletList.push(<li key='new-driver'>New driver requirements</li>);
-    if(props.age < 17.5 ) {
+    if(ageChecks.Under17Half(props.dateOfBirth) ) {
       bulletList.push(<li key='knowledge-test'>You will need to take a knowledge test</li>);
     }
   }

@@ -14,13 +14,11 @@ const ConnectedForm = (props) => {
   if (isPreregistering(props.dateOfBirth)) {
     content.push(
       <PreRegVoterPreferencesIntroUpdated key='Voting Pre-registration Preferences info'
-        age={props.dateOfBirth.age}
         optOut={props.optOut} />
     );
   } else {
     content.push(
       <VoterPreferencesIntroUpdated key='Voting Registration Preferences info'
-        age={props.dateOfBirth.age}
         optOut={props.optOut} />
     );
   }

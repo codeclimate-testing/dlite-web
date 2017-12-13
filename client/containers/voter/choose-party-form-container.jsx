@@ -20,7 +20,6 @@ const PreRegisteringForm = (props) => {
       key="Political Party choose Pre-registration"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
-      age                   = {props.dateOfBirth.age}
     />
   );
 };
@@ -43,8 +42,8 @@ const ConnectedForm = (props) => {
         key="Political Party choose Pre-registration"
         onChange              = {props.onChange}
         selectedValue         = {props.politicalPartyChoose.isSelected}
-        age                   = {props.dateOfBirth.age}
-        />
+
+      />
       );
     } else {
       content.push(
@@ -52,7 +51,7 @@ const ConnectedForm = (props) => {
         key="Political Party choose"
         onChange              = {props.onChange}
         selectedValue         = {props.politicalPartyChoose.isSelected}
-        age                   = {props.dateOfBirth.age}/>
+      />
       );
     }
 
@@ -79,7 +78,7 @@ const ConnectedForm = (props) => {
       key="Political Party Choose Pre-registration"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
-      age                   = {props.dateOfBirth.age}/>
+    />
     );
   } else {
     content.push(
@@ -87,7 +86,7 @@ const ConnectedForm = (props) => {
       key="Political Party choose"
       onChange              = {props.onChange}
       selectedValue         = {props.politicalPartyChoose.isSelected}
-      age                   = {props.dateOfBirth.age}/>
+    />
     );
   }
 
@@ -110,7 +109,7 @@ function mapStateToProps(state) {
   return {
     politicalPartyChoose: state.application.politicalPartyChoose,
     optOut: state.application.optOut,
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

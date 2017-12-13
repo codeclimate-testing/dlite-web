@@ -4,7 +4,7 @@ import React            from 'react';
 
 import NavigationLinks    from '../navigation-links.jsx';
 import Page               from '../page.jsx';
-import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
+import { getAgeGroup }    from '../../helpers/calculate-age';
 
 const linkAddress = '/summary';
 const linkBack = '/voting-registration/contact-methods';

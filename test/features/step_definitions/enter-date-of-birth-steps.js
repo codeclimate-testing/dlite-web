@@ -79,14 +79,59 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I indicate that I am younger than 14', function(done) {
+    var d = new Date();
+
+    var month = d.getMonth();
+    var day = d.getDate();
+    var year = d.getFullYear() - 5;
+
+    browser 
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I indicate that I am between 14 and 15', function(done) {
+    var d = new Date();
+    // calculate birthday for someone who has just turned 14
+    var month = d.getMonth();
+    var day = d.getDate();
+    var year = d.getFullYear() - 14;
+
+    browser 
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I indicate that I am between 15 and 15.5', function(done) {
+    var d = new Date();
+    //calculate birth date for someone who just turned 15 today
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var year = d.getFullYear() - 15;
+
+    browser 
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I indicate that I am between 15.5 and 17.5', function(done) {
     var d = new Date();
 
-    // calculate a date of 5 days shy of being 17.5
-    var month = d.getMonth() >= 5 ? d.getMonth() - 5 : 11 + (d.getMonth() - 5)
-    var day = d.getDate() + 5;
-    var year = d.getFullYear() - 17;
-
+    // calculate a birth date for someone 16 years old
+    var month = d.getMonth();
+    var year = d.getFullYear() - 16;
+    var day = d.getDate();
+ 
     browser
       .type('#month', month.toString())
       .type('#day', day.toString())
@@ -98,27 +143,12 @@ module.exports = function(world) {
   world.and('I indicate that I am between 17.5 and 18', function(done) {
     var d = new Date();
 
-    // calculate a date of 3 months shy of being 18
-    var month = d.getMonth() + 2;
-    var day = d.getDate();
+    // calculate a date of 3 days shy of being 18
+    var month = d.getMonth() + 1;
+    var day = d.getDate() + 3 ;
     var year = d.getFullYear() - 18;
 
     browser
-      .type('#month', month.toString())
-      .type('#day', day.toString())
-      .type('#year', year.toString())
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I indicate that I am younger than 14', function(done) {
-    var d = new Date();
-
-    var month = d.getMonth();
-    var day = d.getDate();
-    var year = d.getFullYear() - 5;
-
-    browser 
       .type('#month', month.toString())
       .type('#day', day.toString())
       .type('#year', year.toString())

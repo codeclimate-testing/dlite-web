@@ -15,13 +15,13 @@ const ConnectedForm = (props) => {
     content.push(
       <PreRegVoterRegComplete
         key='voting pre-registration complete'
-        age={props.dateOfBirth.age} />
+      />
     );
   } else {
     content.push(
       <VoterRegComplete
         key='voting registration complete'
-        age={props.dateOfBirth.age} />
+      />
     );
   }
 
@@ -34,7 +34,7 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

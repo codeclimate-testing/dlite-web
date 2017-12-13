@@ -182,8 +182,8 @@ module.exports = function(world) {
     assertOnPage('.choose-card-form', /apply\/what-do-you-want-to-do-today/, done);
   });
 
-  world.then('I will be on a page letting me know I cant yet apply', function(done) {
-    assertOnPage('.minor-dl-message', /apply\/minor-DL-message/, done);
+  world.then('I will be on the page "/apply/youth-license-notification"', function(done) {
+    assertOnPage('.youth-license-notification', /apply\/youth-license-notification/, done);
   });
 
   world.then('I will be on the page for choosing real id', function(done) {

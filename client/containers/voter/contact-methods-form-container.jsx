@@ -31,7 +31,7 @@ const ConnectedForm = (props) => {
           key='Pre-registration Contact Choice'
           onChange={props.onChange}
           selectedValue={props.contactMethods.shouldContact}
-          age={props.dateOfBirth.age}/>
+        />
       );
     } else {
       content.push(
@@ -39,7 +39,7 @@ const ConnectedForm = (props) => {
           key='Contact Choice'
           onChange={props.onChange}
           selectedValue={props.contactMethods.shouldContact}
-          age={props.dateOfBirth.age}/>
+        />
       );
     }
 
@@ -67,7 +67,7 @@ const ConnectedForm = (props) => {
         key='Contact Choice Pre Reg'
         onChange={props.onChange}
         selectedValue={props.contactMethods.shouldContact}
-        age={props.dateOfBirth.age}/>
+      />
     );
   } else {
     content.push(
@@ -75,7 +75,7 @@ const ConnectedForm = (props) => {
         key='Contact Choice'
         onChange={props.onChange}
         selectedValue={props.contactMethods.shouldContact}
-        age={props.dateOfBirth.age}/>
+      />
     );
   }
 
@@ -95,7 +95,7 @@ const ConnectedForm = (props) => {
 function mapStateToProps(state) {
   return {
     contactMethods: state.application.contactMethods,
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

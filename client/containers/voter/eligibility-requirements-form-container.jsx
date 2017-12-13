@@ -30,7 +30,6 @@ const ConnectedForm = (props) => {
       onBack={onBack}
       onChange={props.onChange}
       selectedValue={props.eligibilityRequirements}
-      age={props.dateOfBirth.age}
       continueDisabled={continueDisabled}
       />
     );
@@ -42,7 +41,6 @@ const ConnectedForm = (props) => {
         onBack={onBack}
         onChange={props.onChange}
         selectedValue={props.eligibilityRequirements}
-        age={props.dateOfBirth.age}
         continueDisabled={continueDisabled}/>
     );
   }
@@ -55,7 +53,7 @@ const ConnectedForm = (props) => {
 function mapStateToProps(state) {
   return {
     eligibilityRequirements: state.application.eligibilityRequirements,
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

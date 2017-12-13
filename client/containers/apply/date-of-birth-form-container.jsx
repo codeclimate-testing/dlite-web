@@ -8,14 +8,11 @@ import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
-import { getCurrentAge }       from '../../helpers/calculate-age';
 
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/what-do-you-want-to-do-today', props);
   let onBack            =   navigateOnBack('/my-basics/legal-name', props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
-
-  props.dateOfBirth.age = getCurrentAge(props.dateOfBirth.year, props.dateOfBirth.month, props.dateOfBirth.day)
 
   return (
     <Form
@@ -30,7 +27,7 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

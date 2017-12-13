@@ -24,7 +24,7 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <div className='row inner-bottom'>
             <NumberInput
-              onChange={props.onChange}
+              onChange={ props.onChange }
               identifier='month'
               description='Month'
               value={props.dateOfBirth.month}
@@ -33,7 +33,7 @@ const Form = (props) => {
             <div className='unit spacer' />
 
             <NumberInput
-              onChange={props.onChange}
+              onChange={ props.onChange }
               identifier='day'
               description='Day'
               value={props.dateOfBirth.day}
@@ -42,7 +42,7 @@ const Form = (props) => {
             <div className='unit spacer' />
 
             <NumberInput
-              onChange={props.onChange}
+              onChange={ props.onChange }
               identifier='year'
               description='Year'
               value={props.dateOfBirth.year}

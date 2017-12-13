@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import SelectorCollection from '../selector-collection.jsx';
+import SelectorCollection     from '../selector-collection.jsx';
 import Page                   from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];

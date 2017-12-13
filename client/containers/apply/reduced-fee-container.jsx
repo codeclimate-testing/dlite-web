@@ -9,7 +9,6 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 
-
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/get-started', props);
   let onBack            =   navigateOnBack('/real-id', props);

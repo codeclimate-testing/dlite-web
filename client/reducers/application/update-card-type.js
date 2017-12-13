@@ -6,7 +6,8 @@ import formObjectReducer from './form-object-reducer';
 function defaultState() {
   return {
     ID: false,
-    DL: false
+    DL: false,
+    youthIDInstead: ''
   }
 }
 

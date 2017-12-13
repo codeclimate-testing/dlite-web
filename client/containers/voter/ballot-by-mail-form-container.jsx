@@ -31,14 +31,13 @@ const ConnectedForm = (props) => {
     onChange          = {props.onChange}
     selectedValue     = {props.ballotByMail}
     continueDisabled  = {continueDisabled}
-    age               = {props.dateOfBirth.age}
   />
 };
 
 function mapStateToProps(state) {
   return {
     ballotByMail: state.application.ballotByMail,
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

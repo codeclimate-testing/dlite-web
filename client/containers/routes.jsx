@@ -11,7 +11,7 @@ import RequiredDocuments                      from './required-documents-handler
 import LegalName                              from './apply/legal-name-form-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
 import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
-import MinorDLMessage                         from './apply/minor-dl-message.jsx';
+import YouthLicenseNotification               from './apply/youth-license-notification.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
 import ReducedFee                             from './apply/reduced-fee-container.jsx';
 import Intro                                  from './apply/get-started-container.jsx';
@@ -46,7 +46,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
-        <Route path={ alicePath('/minor-DL-message') } component={MinorDLMessage} />
+        <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
         <Route path={ alicePath('/get-started') } component={Intro} />

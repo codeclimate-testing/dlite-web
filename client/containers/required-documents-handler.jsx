@@ -15,6 +15,7 @@ import {
   BulletList
 } from '../presentations/documents/index.js';
 
+
 const RequiredDocumentsHandler = (props) => {
   let documentList = [
     <RealIdDocuments realID={props.realID} key='real-id'/>,
@@ -22,8 +23,8 @@ const RequiredDocumentsHandler = (props) => {
     <CaliforniaResidencyDocuments key='ca-residency'/>,
     <VeteransDocuments veteransService={props.veteransService} key='proof-veteran-services'/>,
     <MedicalDocuments medicalHistory={props.medicalHistory} key='medical-information'/>,
-    <YouthDocuments age={props.dateOfBirth.age} licenseIssued={props.licenseAndIdHistory.isIssued} key='youth-documents' />,
-    <ReducedFee reducedFee={props.reducedFee} key='reduced-fee-documents'/>
+    <ReducedFee reducedFee={props.reducedFee} key='reduced-fee-documents'/>,
+    <YouthDocuments dateOfBirth={props.dateOfBirth} licenseIssued={props.licenseAndIdHistory.isIssued} key='youth-documents' />
   ];
 
   return (
@@ -42,7 +43,7 @@ const RequiredDocumentsHandler = (props) => {
           veteransService    = { props.veteransService }
           medicalHistory     = { props.medicalHistory }
           realID             = { props.realID }
-          age                = { props.dateOfBirth.age }
+          dateOfBirth        = { props.dateOfBirth }
           licenseIssued      = { props.licenseAndIdHistory.isIssued }
           reducedFee         = { props.reducedFee }
         />
@@ -66,6 +67,7 @@ function mapStateToProps(state) {
     veteransService:        state.application.veteransService,
     medicalHistory:         state.application.medicalHistory,
     realID:                 state.application.realID,
+    reducedFee:             state.application.reducedFee,
     dateOfBirth:            state.application.dateOfBirth,
     licenseAndIdHistory:    state.application.licenseAndIdHistory,
     reducedFee:             state.application.reducedFee

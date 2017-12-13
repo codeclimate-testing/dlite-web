@@ -8,6 +8,11 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
 
+  const handleChange = (e) => {
+    props.onChange(e); // update props.cardType.youthIDInstead
+    props.checkAnswer(e.target.value, false); // update props.cardType.DL
+  }
+
   return (
     <Page 
       pageTitle='DMV: License application'
@@ -15,27 +20,26 @@ const Form = (props) => {
       sectionName='My basics'
       {...props}
     >
-      <div className='minor-dl-message'>
-        <h4>Because you’re under 14, you can’t
-        apply for a driver license. Would you
-        like to get a California ID instead?</h4>
+      <div className='youth-license-notification'>
+        <h4>{props.title}</h4>
 
+        <h5>{props.paragraph}</h5>
+
+        <h4>{props.question}</h4>
         <form onSubmit={ props.onSubmit } >
+          <h4>{props.endMessage }</h4>
           <div className='row inner-bottom'>
             <RadioCollection
-              name='ID'
+              name='youthIDInstead'
               values={ ['Yes', 'No'] }
-              onChange={ props.toggleCardTypes }
+              onChange={ handleChange }
               selectedValue={ props.selectedValue }
             />
-
-            { props.children }
-
             <div className='unit spacer' />
           </div>
 
           <NavigationButtons
-            visible={ props.cardType.ID === true }
+            visible = { props.visibleNext }
             {...props}
           />  
         </form>

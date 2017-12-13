@@ -32,7 +32,7 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth: state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth
   };
 }
 

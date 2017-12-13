@@ -18,8 +18,9 @@ import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
 import FAQDrawer              from '../../presentations/faq-drawer-ctrl.jsx';
 
-const Form = (props) => {
-  let onSubmit          =   props.cardType.ID === true ? navigateOnSubmit('/reduced-fee', props) : navigateOnSubmit('/get-started', props);
+const ConnectedForm = (props) => {
+  let address           =   props.cardType.ID ? '/reduced-fee' : '/get-started';
+  let onSubmit          =   navigateOnSubmit(address, props);
   let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
   let continueDisabled  =   !(dataPresent.realID(props.realID));
 
@@ -118,4 +119,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);

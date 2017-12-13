@@ -1,6 +1,7 @@
 'use strict';
 
-import React from 'react';
+import React          from 'react';
+import { ageChecks }  from '../../helpers/calculate-age';
 
 const YouthDocuments = (props) => {
   
@@ -9,7 +10,7 @@ const YouthDocuments = (props) => {
   const driverHandbook                  = 'https://www.dmv.ca.gov/portal/dmv/detail/mobile';
   const practiceKnowledgeTest           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam';
 
-  if((props.age >= 18 || props.age < 15.5 ) || props.licenseIssued !== 'No') {return null;}
+  if( ageChecks.GreaterThanEqual18(props.dateOfBirth) || ageChecks.Under15Half(props.dateOfBirth) || props.licenseIssued !== 'No' ) {return null;}
 
   let divList = [];
 
@@ -20,7 +21,7 @@ const YouthDocuments = (props) => {
     </div>
   );
 
-  if(props.age < 17.5 ) {
+  if( ageChecks.Under17Half(props.dateOfBirth) ) {
     divList.push(
       <div key='knowledge-test'>
         <h4 className="knowledge-test">You will need to take a knowledge test</h4>
