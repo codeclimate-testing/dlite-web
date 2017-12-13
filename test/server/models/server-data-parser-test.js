@@ -2,13 +2,10 @@
 
 const assert             = require('assert');
 
-const env                = require('../../support/env');
 const dataHelper         = require('../../support/data-helper');
 const parse              = require('../../../server/models/server-data-parser');
-const parserHelper       = require('../../../server/helpers/data-parser');
 const createApplication  = require('../../../server/models/db/create-application');
 const getApplication     = require('../../../server/models/db/get-application');
-
 
 describe('server data parser', function() {
   let data, parsedData;
