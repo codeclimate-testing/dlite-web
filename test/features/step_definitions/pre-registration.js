@@ -7,7 +7,7 @@ module.exports = function (world) {
 
   world.when('I select I would like to pre-register to vote', function (done) {
     browser
-      .click('label[for="I would like to pre-register to vote"]')
+      .click('label[for="optOut-new"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -16,7 +16,7 @@ module.exports = function (world) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('I would like to pre-register to vote'), 'voter registration choice as I would like to pre-register to vote not saved in summary');
+        assert.ok(text.includes('opt out: new'), 'voter registration choice as I would like to pre-register to vote not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
