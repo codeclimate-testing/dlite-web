@@ -15,5 +15,6 @@ after_success:
 services:
   - postgresql
 before_script:
+  - export TZ=America/Los_Angeles
   - psql -c 'create database travis_ci_test;' -U postgres
   - psql -c "CREATE USER ci_tester WITH PASSWORD 'pa33word';" -U postgres
