@@ -4,15 +4,17 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import {
-  updateOptOut,
-  blurPageElement,
-  focusPageElement
+  updateOptOut
 } from '../../actions/index';
 
 import onInputChange           from '../../helpers/on-input-change';
 import onFormSubmit            from '../../helpers/on-form-submit';
 import navigateOnSubmit        from '../../helpers/navigate-on-submit';
 import navigateOnBack          from '../../helpers/navigate-on-back';
+import {
+  onFocusGenerator,
+  onBlurGenerator
+} from '../../helpers/on-focus-changes';
 import * as dataPresent        from '../../helpers/data-present';
 import { isPreregistering }    from '../../helpers/calculate-age';
 
@@ -56,17 +58,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const onBlur = () => {
-    dispatch(blurPageElement());
-  };
-
-  const onFocus = (event) => {
-    let value = (event.target && event.target.value) || '';
-    dispatch(focusPageElement(value));
-  };
-
   const onChange = onInputChange(updateOptOut, dispatch);
   const onSubmit = onFormSubmit;
+  const onBlur   = onBlurGenerator(dispatch);
+  const onFocus  = onFocusGenerator(dispatch);
 
   return {
     onSubmit,

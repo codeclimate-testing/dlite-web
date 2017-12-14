@@ -4,9 +4,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import {
-  updateCardType,
-  focusPageElement,
-  blurPageElement
+  updateCardType
 } from "../../actions/index";
 
 import Page                   from "../../presentations/page.jsx";
@@ -16,6 +14,10 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import onInputChange          from '../../helpers/on-input-change';
 import onFormSubmit           from '../../helpers/on-form-submit';
+import {
+  onFocusGenerator,
+  onBlurGenerator
+} from '../../helpers/on-focus-changes';
 import { ageChecks }          from '../../helpers/calculate-age';
 import * as dataPresent       from '../../helpers/data-present';
 
@@ -55,17 +57,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const onBlur = () => {
-    dispatch(blurPageElement());
-  };
-
-  const onFocus = (event) => {
-    let value = (event.target && event.target.value) || '';
-    dispatch(focusPageElement(value));
-  };
-
   const onChange = onInputChange(updateCardType, dispatch);
   const onSubmit = onFormSubmit;
+  const onBlur   = onBlurGenerator(dispatch);
+  const onFocus  = onFocusGenerator(dispatch);
 
   return {
     onSubmit,
