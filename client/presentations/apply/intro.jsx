@@ -6,7 +6,6 @@ import HomeLink                 from '../../presentations/home-link.jsx';
 import LinkButton               from '../../presentations/link-button.jsx';
 import alicePath                from '../../helpers/alice-path';
 import BackButton               from '../back-button.jsx';
-import navigateOnBack           from '../../helpers/navigate-on-back';
 
 const Intro = (props) => {
   const linkAddress             = '/my-basics/address';
@@ -30,7 +29,6 @@ const Intro = (props) => {
         <hr />
         <p>The online form takes most customers<br />
           <b>10 minutes</b></p>
-
 
         <div className='navigation-buttons'>
           <BackButton onBack={props.onBack} key='back-button' />

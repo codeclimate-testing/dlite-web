@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled                  = !(dataPresent.licenseIssues(props.licenseIssues));
   let showLicenseIssues                 = false;
   let onSubmit                          = navigateOnSubmit('/my-history/veterans-service', props);
-  let onBack                            = navigateOnBack('/my-history/names', props);
+  let onBack                            = navigateOnBack(props);
 
   if (props.licenseIssues.isSuspended === 'Yes') {
     showLicenseIssues  = false;

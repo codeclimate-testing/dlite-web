@@ -16,7 +16,7 @@ import * as dataPresent                 from '../../helpers/data-present';
 const ConnectedForm = (props) => {
   let continueDisabled  = !(dataPresent.physicalTraits(props.physicalTraits))
   let onSubmit          = navigateOnSubmit('/my-basics/traits-height-weight', props);
-  let onBack            = navigateOnSubmit('/my-basics/address', props);
+  let onBack            = navigateOnBack(props);
 
   return (
     <div className="physical-traits-form">

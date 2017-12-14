@@ -9,6 +9,8 @@ Feature: Check Voter Registration Eligibility
     When I select voter registration Yes
     When I click "Next" to continue
     Then I will be on the page for entering voter opt-out
+    When I click to go back
+    Then I will be on the eligibility page
     And I go to the page with my summary
     Then I will see that I do qualify to register to vote
 
@@ -41,9 +43,3 @@ Feature: Check Voter Registration Eligibility
     When I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated eligibility requirement status
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the voter eligibility requirements page
-    When I click to go back
-    Then I will be on the page for voter citizen status entry

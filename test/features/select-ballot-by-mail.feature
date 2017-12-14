@@ -11,6 +11,8 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be taken to contact methods page
+    When I click to go back
+    Then I will be on the page for ballot by mail
     And I go to the page with my summary
     Then I will see mail by ballot as Yes in summary
 
@@ -22,11 +24,8 @@ Feature: Determining whether to recieve ballot by mail or not
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be taken to contact methods page
+    When I click to go back
+    Then I will be on the page for ballot by mail
     And I go to the page with my summary
     Then I will see mail by ballot as No in summary
-  
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit ballot by mail option page
-    When I click to go back
-    Then I will be taken to ballot language page
+

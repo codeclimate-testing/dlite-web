@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled            = !(dataPresent.hasMedicalCondition(props.medicalHistory))
   let showEnterMedicalCondition   = false
   let onSubmit                    = navigateOnSubmit('/my-history/license-and-id', props);
-  let onBack                      = navigateOnBack('/my-basics/social-security', props);
+  let onBack                      = navigateOnBack(props);
 
   if(props.medicalHistory.hasMedicalCondition === 'Yes') {
     showEnterMedicalCondition = true;

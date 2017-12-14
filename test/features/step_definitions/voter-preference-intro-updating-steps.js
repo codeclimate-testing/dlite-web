@@ -5,7 +5,7 @@ module.exports = function (world) {
 
   world.then('I see text for updating voter preferences render', function (done) {
     browser
-      .waitForSelector('.voter-preferences-intro')
+      .waitForSelector('.updating-voter-preferences')
       .then(() => { done(); })
       .catch((err) => {
         throw err;

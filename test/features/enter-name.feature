@@ -15,6 +15,8 @@ Feature:  I want to enter my name
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be on the page for entering my date of birth
+    When I click to go back
+    Then I will be taken to the names page
     And I go to the page with my summary
     Then I will see my name on that summary
 
@@ -29,10 +31,3 @@ Feature:  I want to enter my name
     And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated name
-  
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the legal name page
-    Then I will see a field for first, middle last name and suffix
-    When I click to go back
-    Then I will be on the get started page

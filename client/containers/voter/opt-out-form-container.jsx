@@ -34,7 +34,7 @@ const Form = (props) => {
   }
 
   const onSubmit = navigateOnSubmit(address, props);
-  const onBack   = navigateOnBack('/voting-registration/eligibility', props);
+  const onBack   = navigateOnBack(props);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreregOptOutForm : OptOutForm;
 

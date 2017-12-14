@@ -16,7 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled       = !(dataPresent.hasPreviousNames(props.namesHistory))
   let showEnterPreviousNames = false
   let onSubmit               = navigateOnSubmit('/my-history/license-issues', props);
-  let onBack                 = navigateOnBack('/my-history/license-and-id', props);
+  let onBack                 = navigateOnBack(props);
 
   if(props.namesHistory.hasUsedPreviousNames === 'Yes') {
     showEnterPreviousNames = true;

@@ -9,11 +9,11 @@ import navigateOnBack         from '../../helpers/navigate-on-back';
 
 const ConnectedForm = (props) => {
 
-  let onBack            =   props.cardType.ID === true ?  navigateOnBack('/reduced-fee', props) : navigateOnBack('/real-id', props);
+  let onBack = navigateOnBack(props);
 
   return (
     <Form
-      onBack            = { onBack }
+      onBack = { onBack }
     />
   );
 };

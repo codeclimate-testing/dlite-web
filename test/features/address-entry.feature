@@ -21,6 +21,8 @@ Feature: CRUD operations on the address
     When I enter my mailing address
     And I click "Next" to continue
     Then I will be on the page for entering my physical traits
+    When I click to go back
+    Then I will be on the page for entering my address
     And I go to the page with my summary
     Then I will see my mailing address on that summary
 
@@ -32,10 +34,3 @@ Feature: CRUD operations on the address
     And I change my home zip
     And I go to the page with my summary
     Then I will see my updated home zip
-  
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the addresses page
-    Then I will see correct home address labels
-    When I click to go back
-    Then I will be on the get started page

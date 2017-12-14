@@ -29,6 +29,8 @@ Feature: Donate Life
     And I change my contribution selection
     And I click "Next" to continue
     Then I will be taken to voter intro info page
+    When I click to go back
+    Then I will be taken to organ donation page
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary
 
@@ -43,12 +45,7 @@ Feature: Donate Life
     And I change my contribution selection
     And I click "Next" to continue
     Then I will be taken to voter intro info page
+    When I click to go back
+    Then I will be taken to organ donation page
     And I go to the page with my summary
     Then I will see my updated organ selection in the summary
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the organ page
-    Then I will see organ donation question
-    When I click to go back
-    Then Then I will be on the page for veteran related services

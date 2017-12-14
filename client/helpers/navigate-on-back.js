@@ -2,11 +2,10 @@
 
 import alicePath from './alice-path';
 
-const onBackGenerator = (address, props) => {
-  return () => {
-    props.history.push(
-      alicePath(address)
-    );
+const onBackGenerator = (props) => {
+  return (event) => {
+    props.onSubmit(event);
+    props.history.goBack();
   };
 };
 

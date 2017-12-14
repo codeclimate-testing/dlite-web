@@ -13,7 +13,7 @@ import { isPreregistering }                from '../../helpers/calculate-age';
 const ConnectedForm = (props) => {
   const continueDisabled = false;
   let nextAddress = '/summary';
-  let onBack = navigateOnBack('/voting-registration/citizenship', props);
+  let onBack = navigateOnBack(props);
   let content = [];
 
   if(props.eligibilityRequirements === 'Yes') {

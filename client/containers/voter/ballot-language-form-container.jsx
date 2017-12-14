@@ -13,7 +13,7 @@ import { isPreregistering }      from '../../helpers/calculate-age';
 const ConnectedForm = (props) => {
   const continueDisabled = false;
   const onSubmit = navigateOnSubmit('/voting-registration/vote-by-mail', props);
-  const onBack = navigateOnBack('/voting-registration/choose-party', props);
+  const onBack = navigateOnBack(props);
   let content = [];
 
   if (isPreregistering(props.dateOfBirth)) {

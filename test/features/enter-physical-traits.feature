@@ -13,14 +13,9 @@ Feature: Interaction pattern for the traits section
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be on the page for entering my height and weight
+    When I click to go back
+    Then I will be on the page for entering my physical traits
     And I go to the page with my summary
     Then I will see my sex in the summary
     Then I will see my eye color in the summary
     Then I will see my hair color in the summary
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit physical traits page
-    Then I will see labels for sex, eye color and hair color
-    When I click to go back
-    Then I will be on the page for entering my address

@@ -19,7 +19,7 @@ const ConnectedForm = (props) => {
   let continueDisabled = false;
   let showContactDetails = false;
   let onSubmit = navigateOnSubmit('/voting-registration/confirmation', props);
-  let onBack = navigateOnBack('/voting-registration/vote-by-mail', props);
+  let onBack = navigateOnBack(props);
 
   if (props.contactMethods.shouldContact === 'Yes') {
     showContactDetails = true;

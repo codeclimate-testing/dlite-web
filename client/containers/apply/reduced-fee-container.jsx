@@ -11,7 +11,7 @@ import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/get-started', props);
-  let onBack            =   navigateOnBack('/real-id', props);
+  let onBack            =   navigateOnBack(props);
   let continueDisabled  =   !dataPresent.reducedFee(props.reducedFee);
 
   const DLText = (props) => {
@@ -28,7 +28,7 @@ const ConnectedForm = (props) => {
       cardType          = { props.cardType }
       continueDisabled  = { continueDisabled }
     >
-      <DLText 
+      <DLText
         {...props}
       />
     </Form>

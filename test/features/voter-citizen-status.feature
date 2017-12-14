@@ -10,6 +10,8 @@ Feature: Designate US citizenship status
     When I select citizen Yes
     When I click "Next" to continue
     Then I will be on the eligibility page
+    When I click to go back
+    Then I will be on the page for voter citizen status entry
     And I go to the page with my summary
     Then I will see Yes in my citizenship selection
 
@@ -46,9 +48,3 @@ Feature: Designate US citizenship status
     And I go to the page with my summary
     Then I will see my updated US citizenship status
 
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit voter citizen status page
-    Then I will see citizen related faq
-    When I click to go back
-    Then I will be taken to voter intro info page

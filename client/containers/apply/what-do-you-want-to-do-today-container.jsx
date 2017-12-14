@@ -26,10 +26,11 @@ const Form = (props) => {
   if(ageChecks.Under15Half(props.dateOfBirth) && props.cardType.DL) {
     address             =   '/youth-license-notification';
   }
+
   let onSubmit          =   navigateOnSubmit(address, props);
-  let onBack            =   navigateOnBack('/my-basics/date-of-birth', props);
-  let continueDisabled  =   !dataPresent.cardType(props.cardType);
-  let pageTitle         =   'DMV: License application'
+  let onBack            =   navigateOnBack(props);
+  let continueDisabled  =   !(dataPresent.cardType(props.cardType));
+  let pageTitle         =   'DMV: License application';
 
   return (
     <Page

@@ -14,7 +14,7 @@ import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/my-history/medical', props);
-  let onBack            = navigateOnBack('/my-basics/traits-height-weight', props);
+  let onBack            = navigateOnBack(props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
 
   let content = [];

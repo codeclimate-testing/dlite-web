@@ -16,11 +16,7 @@ const ConnectedForm = (props) => {
   let continueDisabled         = !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
   let showLicenseAndIdHistory  = false;
   let onSubmit                 = navigateOnSubmit('/my-history/names/', props);
-  let onBack                   = navigateOnBack('/my-history/medical/', props);
-
-  if(props.cardType.DL === false) {
-    onBack = navigateOnBack('/my-basics/social-security', props);
-  }
+  let onBack                   = navigateOnBack(props);
 
   if(props.licenseAndIdHistory.isIssued === 'Yes') {
     showLicenseAndIdHistory  = false;

@@ -20,7 +20,7 @@ import Presentation                   from '../../presentations/apply/minor-id-o
 const Form = (props) => {
   const continueDisabled = props.cardType.ID === false;
   const onSubmit = navigateOnSubmit('/real-id', props);
-  const onBack   = navigateOnBack('/what-do-you-want-to-do-today', props);
+  const onBack   = navigateOnBack(props);
 
   return (
     <Presentation

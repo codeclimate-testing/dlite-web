@@ -16,6 +16,8 @@ Feature: Contact details for voter flow
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be taken to voter registration complete page
+    When I click to go back
+    Then I will be taken to contact methods page
     And I go to the page with my summary
     Then I will see my contact details in summary
 
@@ -25,6 +27,8 @@ Feature: Contact details for voter flow
     When I select contact methods No
     When I click "Next" to continue
     Then I will be taken to voter registration complete page
+    When I click to go back
+    Then I will be taken to contact methods page
     And I go to the page with my summary
     Then I will see that I did not choose to be contacted
 
@@ -34,6 +38,8 @@ Feature: Contact details for voter flow
     When I select contact methods Skip Question
     When I click "Next" to continue
     Then I will be taken to voter registration complete page
+    When I click to go back
+    Then I will be taken to contact methods page
     And I go to the page with my summary
     Then I will see that I did not answer to be contacted
 
@@ -46,8 +52,3 @@ Feature: Contact details for voter flow
     And I go to the page with my summary
     Then I will see my updated email and phone number in summary
 
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit contact methods details page
-    When I click to go back
-    Then I will be on the page for ballot by mail

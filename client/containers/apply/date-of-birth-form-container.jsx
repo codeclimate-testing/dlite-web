@@ -11,7 +11,7 @@ import * as dataPresent       from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          =   navigateOnSubmit('/what-do-you-want-to-do-today', props);
-  let onBack            =   navigateOnBack('/my-basics/legal-name', props);
+  let onBack            =   navigateOnBack(props);
   let continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
 
   return (

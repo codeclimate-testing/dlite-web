@@ -12,7 +12,7 @@ import * as dataPresent     from '../../helpers/data-present';
 const Form = (props) => {
   let continueDisabled  =   !dataPresent.legalName(props.legalName);
   let onSubmit          =   navigateOnSubmit('/my-basics/date-of-birth', props);
-  let onBack            =   navigateOnBack('/get-started', props);
+  let onBack            =   navigateOnBack(props);
 
   return (
     <FormPresentation

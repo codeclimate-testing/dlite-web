@@ -12,6 +12,8 @@ Feature:  I want to enter my date of birth
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
+    When I click to go back
+    Then I will be taken to date of birth page
     And I go to the page with my summary
     Then I will see my date of birth on that summary
 
@@ -24,10 +26,3 @@ Feature:  I want to enter my date of birth
     And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated birth year
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the date of birth page
-    Then I will see a number field for month, day and year
-    When I click to go back
-    Then I will be taken to the names page

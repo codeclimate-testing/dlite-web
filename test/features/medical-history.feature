@@ -13,6 +13,8 @@ Feature: Disclosing a medical condition
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     And I will be taken to license and id history page
+    When I click to go back
+    Then I will be taken to medical history page
     And I go to the page with my summary
     Then I will see Yes for having reportable medical history
 
@@ -24,11 +26,7 @@ Feature: Disclosing a medical condition
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     And I will be taken to license and id history page
+    When I click to go back
+    Then I will be taken to medical history page
     And I go to the page with my summary
     Then I will see No for having reportable medical history
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the medical history page
-    When I click to go back
-    Then I will be on the page for entering my social security

@@ -28,7 +28,7 @@ const ConnectedForm = (props) => {
   let continueDisabled                  = false;
   let showPoliticalPartyPreference      = true;
   let onSubmit                          = navigateOnSubmit('/voting-registration/language', props);
-  let onBack                            = navigateOnBack('/voting-registration/preferences', props);
+  let onBack                            = navigateOnBack(props);
 
   let content = [];
 

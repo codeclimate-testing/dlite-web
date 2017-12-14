@@ -14,7 +14,7 @@ import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/organ-donation', props);
-  let onBack            = navigateOnBack('/my-history/license-issues', props);
+  let onBack            = navigateOnBack(props);
   let continueDisabled  = !(dataPresent.veteransService(props.veteransService));
 
   let content = [];

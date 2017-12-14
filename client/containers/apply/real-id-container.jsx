@@ -21,7 +21,7 @@ import FAQDrawer              from '../../presentations/faq-drawer-ctrl.jsx';
 const ConnectedForm = (props) => {
   let address           =   props.cardType.ID ? '/reduced-fee' : '/get-started';
   let onSubmit          =   navigateOnSubmit(address, props);
-  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
+  let onBack            =   navigateOnBack(props);
   let continueDisabled  =   !(dataPresent.realID(props.realID));
 
   let content = [];

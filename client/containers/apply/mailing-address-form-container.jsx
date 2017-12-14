@@ -11,7 +11,7 @@ import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
   let onSubmit          = navigateOnSubmit('/about-me/physical-traits/', props);
-  let onBack            = navigateOnBack('/my-basics/legal-name', props);
+  let onBack            = navigateOnBack(props);
   let continueDisabled  = false;
 
   return (

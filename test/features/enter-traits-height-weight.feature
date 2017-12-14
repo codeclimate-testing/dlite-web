@@ -14,6 +14,8 @@ Feature:  I want to enter my height
     Then I will see that the "Next" button is no longer disabled
     And I click "Next" to continue
     Then I will be on the page for entering my social security
+    When I click to go back
+    Then I will be on the page for entering my height and weight
     And I go to the page with my summary
     Then I will see my height on that summary
 
@@ -26,10 +28,3 @@ Feature:  I want to enter my height
     And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated height on the summary
-
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the traits height and weight page
-    Then I will see a field for traits height and weight
-    When I click to go back
-    Then I will be on the page for entering my physical traits

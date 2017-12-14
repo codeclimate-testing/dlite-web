@@ -14,6 +14,8 @@ Feature: Select and enter my revoked, refused or suspended license info
     And I enter the reason for my license suspension
     When I click "Next" to continue
     Then Then I will be on the page for veteran related services
+    When I click to go back
+    Then I will be taken to the license issues page
     And I go to the page with my summary
     Then I will see Yes in my suspended license selection
     Then I will see the date and reason for my license suspension
@@ -26,11 +28,8 @@ Feature: Select and enter my revoked, refused or suspended license info
     Then I will see that the "Next" button is no longer disabled
     When I click "Next" to continue
     Then Then I will be on the page for veteran related services
+    When I click to go back
+    Then I will be taken to the license issues page
     And I go to the page with my summary
     Then I will see No in my suspended license selection
 
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit the license issues page
-    When I click to go back
-    Then I will be taken to previous names page

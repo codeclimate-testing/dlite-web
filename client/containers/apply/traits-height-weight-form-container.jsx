@@ -12,7 +12,7 @@ import * as dataPresent              from '../../helpers/data-present';
 const Form = (props) => {
   let continueDisabled   = !dataPresent.traitsHeightWeight(props.traitsHeightWeight);
   let onSubmit           = navigateOnSubmit('/my-basics/social-security', props);
-  let onBack             = navigateOnBack('/my-basics/physical-traits', props);
+  let onBack             = navigateOnBack(props);
 
   return (
     <FormPresentation

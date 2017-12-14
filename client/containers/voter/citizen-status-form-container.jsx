@@ -14,12 +14,15 @@ const ConnectedForm = (props) => {
   let content = [];
   let value = props.citizenStatus;
   const continueDisabled = false;
-  let onSubmit = navigateOnSubmit('/summary', props);
-  let onBack = navigateOnBack('/voting-registration/introduction', props);
+  let onSubmitAddress = '/summary';
+
+  let onBack = navigateOnBack(props);
 
   if (value === 'Yes') {
-    onSubmit = navigateOnSubmit('/voting-registration/eligibility', props);
+    onSubmitAddress = '/voting-registration/eligibility';
   }
+
+  let onSubmit = navigateOnSubmit(onSubmitAddress, props);
 
   if (isPreregistering(props.dateOfBirth)) {
     content.push(

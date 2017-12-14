@@ -41,7 +41,7 @@ So that I know this is and option and can come prepared
     And I go to the page with my summary
     Then I will see that I am opting for a reduced fee and my answer about not having documents
 
-  
+
   Scenario: Special language when applying for both an ID and a DL
     Given I go to the new online DL application
     And I visit the ID or DL selection page
@@ -50,7 +50,7 @@ So that I know this is and option and can come prepared
     When I visit the reduced fee page
     Then I will see an information note under the reduced fee question saying: "This only applies to your ID card."
 
-  Scenario:
+  Scenario: Bullet points for reduced fee and no fee eligibility
     Given I go to the new online DL application
     When I visit the reduced fee page
     And I select Yes to getting a reduced fee

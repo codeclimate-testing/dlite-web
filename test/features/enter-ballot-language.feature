@@ -11,6 +11,8 @@ Feature: Select Ballot by Mail Language
     Then I will see the language I chose is selected
     When I click "Next" to continue
     Then I will be on the page for ballot by mail
+    When I click to go back
+    Then I will be taken to ballot language page
     And I go to the page with my summary
     Then I will see my language in the summary
 
@@ -23,10 +25,3 @@ Feature: Select Ballot by Mail Language
     And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated language in the summary
-  
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit ballot language page
-    Then I will see select buttons for English, Chinese, Japanese, Spanish, Thai, Korean, Tagalog, Hindi, Khmer, and Vietnamese
-    When I click to go back
-    Then I will be taken to the political party choose page

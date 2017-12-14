@@ -10,11 +10,3 @@ Feature: Voter Registration Completion page
     When I click "Next" to continue
     Then I will be on the page with my summary
 
-  Scenario: I want to go back to previous page
-    Given I go to the new online DL application page
-    When I visit voter registration complete page
-    When I click to go back
-    Then I will be taken to contact methods page
-
-  
-  

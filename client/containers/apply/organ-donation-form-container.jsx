@@ -20,9 +20,9 @@ const ConnectedForm = (props) => {
   if(ageChecks.Under16(props.dateOfBirth)) {
     address = '/summary';
   }
-  
+
   const onSubmit         = navigateOnSubmit(address, props);
-  const onBack           = navigateOnBack('/my-history/veterans-service', props);
+  const onBack           = navigateOnBack(props);
 
   return (
     <div>

@@ -17,7 +17,7 @@ import {
 
 const ConnectedForm = (props) => {
   const onSubmit = navigateOnSubmit('/voting-registration/contact-methods', props);
-  const onBack = navigateOnBack('/voting-registration/language', props);
+  const onBack = navigateOnBack(props);
   let continueDisabled = !(dataPresent.value(props.ballotByMail));
 
   const formPageTitle = pageTitle(props.dateOfBirth);
