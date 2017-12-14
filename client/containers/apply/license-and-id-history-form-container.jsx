@@ -32,6 +32,7 @@ const ConnectedForm = (props) => {
           <LicenseAndIdHistory
             onChange       ={props.onChange}
             selectedValue  ={props.licenseAndIdHistory.isIssued}
+            cardType       ={props.cardType}
           />
 
           <EnterLicenseAndIdHistory
@@ -54,6 +55,7 @@ const ConnectedForm = (props) => {
         <LicenseAndIdHistory
           onChange      ={props.onChange}
           selectedValue ={props.licenseAndIdHistory.isIssued}
+          cardType      ={props.cardType}
         />
         <NavigationButtons
           continueDisabled={continueDisabled}
