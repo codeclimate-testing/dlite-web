@@ -14,7 +14,7 @@ module.exports = function(world) {
 
   world.when('I click on the ID checkbox', function(done) {
     browser
-      .click('[name="ID"]')
+      .click('[for="ID"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -43,7 +43,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Card Types'), 'card types not saved in summary');
+        assert(text.includes('ID') && text.includes('DL'), 'card types not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

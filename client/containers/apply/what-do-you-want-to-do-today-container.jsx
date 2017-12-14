@@ -16,6 +16,7 @@ import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import onInputChange          from '../../helpers/on-input-change';
 import onFormSubmit           from '../../helpers/on-form-submit';
+import { ageChecks }          from '../../helpers/calculate-age';
 import * as dataPresent       from '../../helpers/data-present';
 
 const Form = (props) => {
@@ -30,16 +31,16 @@ const Form = (props) => {
 
   return (
     <Page
+      {...props}
       pageTitle={pageTitle}
       sectionNumber='1'
       sectionName='My basics'
-      {...props}
     >
       <Presentation
+        {...props}
         onSubmit          = { onSubmit }
         onBack            = { onBack }
         continueDisabled  = { continueDisabled }
-        {...props}
       />
     </Page>
   );

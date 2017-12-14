@@ -7,4 +7,6 @@ public/app.css
 
 **/*.DS_Store
 
+debug.png
+
 server/config/database.json
