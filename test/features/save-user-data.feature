@@ -3,6 +3,26 @@ Feature: Save user data
   I want to save my user data to my application from the summary screen
   So that my application can be used in the field office to enable my request
 
+  Scenario: Save user age 14
+    Given I go to the new online DL application page
+    Then I visit the legal name page
+    And I enter my full name
+    Then I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I indicate that I am younger than 14
+    When I visit the legal name page
+    Then I will see the name I entered
+    And I change my first name
+    When I visit the ID or DL selection page
+    And I click on the DL checkbox
+    And I click "Next" to continue
+    Then I will see a message asking if I would like an ID instead
+    When I click to get an ID instead
+    When I go to the page with my summary
+    Then I will see that my ID card type has been saved
+    Then I will see that I am not getting a DL
+    Then I will see my updated name
+
   Scenario: with one DL
     Given I go to the new online DL application page
     Then I visit the legal name page
@@ -132,7 +152,7 @@ Feature: Save user data
     Then I will be on the page for appointment preparation
     And I click link for required documents
     Then I will be on the required documents page
-    # Then I will not see a section about RealID information
+    Then I will not see a section about RealID information
     # And I will see a section about medical information
     # Then I will see an additional bullet for medical information
     # Then I will see an additional bullet for proving my veterans status
@@ -217,16 +237,10 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page for entering my social security
     When I select Yes for social security
-    When I click to go back
-    Then I will see traits height and weight I entered
-    When I change my inches
     And I click "Next" to continue
     When I enter my full social security number
     And I click "Next" to continue
     Then I will be taken to medical history page
-    And I click to go back
-    Then I will see the social security number that I entered
-    When I change my social security number
     When I select No to having reportable medical history
     And I click "Next" to continue
     Then I will be on the page to enter existing license and id
@@ -275,7 +289,7 @@ Feature: Save user data
     Then I will see that my card types have been saved
     Then I will see that I am getting a real id
     Then I will see that I am not opting for a reduced fee
-    Then I will see my updated height on the summary
+    Then I will see my height on that summary
     Then I will see No in my existing DL/ID selection
     Then I will see No in my suspended license selection
     Then I will see No for having reportable medical history
@@ -283,10 +297,19 @@ Feature: Save user data
     Then I will see that I do qualify to register to vote
     Then I will see voter registration choice as I am already registered to vote in California in summary
     Then I will see that I declined to choose a political party
-    Then I will see my updated social security number
+    Then I will see my social security on that summary
     When I visit the required documents page
     Then I will not see a section about medical information
     Then I will not see any information about proving veterans status
+    When I visit the traits height and weight page
+    Then I will see traits height and weight I entered
+    When I change my inches
+    When I visit the social security page
+    Then I will see the social security number that I entered
+    When I change my social security number
+    And I go to the page with my summary
+    Then I will see my updated height on the summary
+    Then I will see my updated social security number
 
   Scenario: Save user age 16
     Given I go to the new online DL application page
@@ -347,24 +370,5 @@ Feature: Save user data
     Then I will be on the ID and DL selection page
     And I click on the DL checkbox
     When I go to the page with my summary
-    Then I will see a notification at the top letting me know I can't yet come in to complete my DL application
-    And I will also see that I can make an appointment at any time to get my ID
-
-  Scenario: Save user age 14
-    Given I go to the new online DL application page
-    Then I enter my full name
-    And I click "Next" to continue
-    Then I will be on the page for entering my date of birth
-    And I indicate that I am younger than 14
-    When I click to go back
-    Then I will see the name I entered
-    And I change my first name
-    When I visit the ID or DL selection page
-    And I click on the DL checkbox
-    And I click "Next" to continue
-    Then I will see a message asking if I would like an ID instead
-    When I click to get an ID instead
-    When I go to the page with my summary
-    Then I will see that my ID card type has been saved
-    Then I will see that I am not getting a DL
-    Then I will see my updated name
+    # Then I will see a notification at the top letting me know I can't yet come in to complete my DL application
+    # And I will also see that I can make an appointment at any time to get my ID

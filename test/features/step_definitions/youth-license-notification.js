@@ -35,7 +35,7 @@ module.exports = function (world) {
 
   world.then("I will see a notification at the top letting me know I can't yet come in to complete my DL application", function(done) {
     browser
-      .text()
+      .text('.summary')
       .then( text => {
         assert(text.includes('If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit.'), 'message not on page')
       })

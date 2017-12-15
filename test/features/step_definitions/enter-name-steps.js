@@ -40,26 +40,26 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
-  // world.and('I enter my first name', function(done) {
-  //   browser
-  //     .type('#firstName', 'FirstName1')
-  //     .then(() => { done(); })
-  //     .catch(done);
-  // });
+  world.and('I enter my first name', function(done) {
+    browser
+      .type('#firstName', 'FirstName1')
+      .then(() => { done(); })
+      .catch(done);
+  });
 
-  // world.and('I enter my middle name', function(done) {
-  //   browser
-  //     .type('#middleName', 'MiddleName1')
-  //     .then(() => { done(); })
-  //     .catch(done);
-  // });
+  world.and('I enter my middle name', function(done) {
+    browser
+      .type('#middleName', 'MiddleName1')
+      .then(() => { done(); })
+      .catch(done);
+  });
 
-  // world.and('I enter my last name', function(done) {
-  //   browser
-  //     .type('#lastName', 'LastName1')
-  //     .then(() => { done(); })
-  //     .catch(done);
-  // });
+  world.and('I enter my last name', function(done) {
+    browser
+      .type('#lastName', 'LastName1')
+      .then(() => { done(); })
+      .catch(done);
+  });
 
   // world.and('I select a suffix', function(done){
   //   browser
