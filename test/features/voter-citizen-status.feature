@@ -19,8 +19,7 @@ Feature: Designate US citizenship status
     Given I go to the new online DL application page
     When I visit voter citizen status page
     When I select citizen No
-    When I click "Next" to continue
-    Then I will be on the page with my summary
+    When I go to the page with my summary
     Then I will see No in my citizenship selection
 
   Scenario: Choose not to answer - saving data

@@ -49,10 +49,6 @@ const ConnectedForm = (props) => {
     />
   );
 
-  if(props.cardType.DL === false) {
-    onSubmit = navigateOnSubmit('/my-history/license-and-id', props);
-  };
-
   return (
     <form onSubmit={onSubmit}>
       { content }

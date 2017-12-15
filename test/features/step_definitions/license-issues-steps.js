@@ -19,7 +19,7 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.when('I select suspended licence Yes', function(done){
+  world.when('I select suspended license Yes', function(done){
     browser
     .click('label[for="isSuspendedYes"]')
     .then(() => { done(); })

@@ -31,3 +31,13 @@ Feature:  I want to enter my name
     And I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated name
+<<<<<<< HEAD
+=======
+  
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the legal name page
+    # Then I will see a field for first, middle last name and suffix
+    When I click to go back
+    Then I will be on the get started page
+>>>>>>> combined most navigation stories into one

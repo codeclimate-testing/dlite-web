@@ -94,6 +94,45 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I am under 16 years old', function(done) {
+    let d = new Date();
+    let month = d.getMonth() + 2;
+    let day = d.getDate();
+    let year = d.getFullYear() - 16;
+
+    browser
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I am over 16 years old', function(done) {
+    let d = new Date();
+    let y = d.getFullYear() - 21;
+    browser
+      .type('#month', '10')
+      .type('#day', '21')
+      .type('#year', y.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('Today I turned 16 years old', function(done) {
+      let d = new Date();
+      let month = (d.getMonth() + 1).toString();
+      let day = d.getDate().toString();
+      let year = (d.getFullYear() - 16).toString();
+
+    browser
+      .type('#month', month)
+      .type('#day', day)
+      .type('#year', year)
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I indicate that I am between 14 and 15', function(done) {
     var d = new Date();
     // calculate birthday for someone who has just turned 14

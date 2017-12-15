@@ -79,7 +79,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see that I am not an veteran', function(done){
+  world.then('I will see that I am not a veteran', function(done){
     browser
       .text()
       .then((text) => {

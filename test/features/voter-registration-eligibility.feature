@@ -14,20 +14,21 @@ Feature: Check Voter Registration Eligibility
     And I go to the page with my summary
     Then I will see that I do qualify to register to vote
 
-  Scenario: I select No for registration eligibility
-    Given I go to the new online DL application page
-    When I visit the voter eligibility requirements page
-    When I select voter registration No
-    When I click "Next" to continue
-    Then I will be on the page with my summary
+  # Scenario: I select No for registration eligibility
+  #   Given I go to the new online DL application page
+  #   When I visit the voter eligibility requirements page
+  #   When I select voter registration No
+  #   When I click "Next" to continue
+  #   Then I will be on the page with my summary
 
-  Scenario: Choose not to answer
-    Given I go to the new online DL application page
-    When I visit the voter eligibility requirements page
-    When I select voter registration Skip Section
-    And I click "Next" to continue
-    Then I will be on the page with my summary
+  # Scenario: Choose not to answer
+  #   Given I go to the new online DL application page
+  #   When I visit the voter eligibility requirements page
+  #   When I select voter registration Skip Section
+  #   And I click "Next" to continue
+  #   Then I will be on the page with my summary
 
+<<<<<<< HEAD
   Scenario: Continuing without a selection - skips voter section
     Given I go to the new online DL application page
     When I visit the voter eligibility requirements page
@@ -43,3 +44,11 @@ Feature: Check Voter Registration Eligibility
     When I click "Next" to continue
     And I go to the page with my summary
     Then I will see my updated eligibility requirement status
+=======
+
+  Scenario: I want to go back to previous page
+    Given I go to the new online DL application page
+    When I visit the voter eligibility requirements page
+    When I click to go back
+    Then I will be on the page for voter citizen status entry
+>>>>>>> combined most navigation stories into one

@@ -55,7 +55,7 @@ module.exports = function (world) {
 
   world.then('I will see an additional bullet for medical information', function(done){
     browser
-    .text()
+    .text('.bullet-list')
     .then((text) => {
       assert(text.includes('Medical Information'), 'medical information bullet is missing');
     })
@@ -74,7 +74,7 @@ module.exports = function (world) {
 
   world.then('I will not see a section about medical information', function(done){
     browser
-      .text()
+      .text('.required-documents')
       .then((text) => {
         assert(!text.includes('Medical Information'), 'medical information section is present');
       })
@@ -84,7 +84,7 @@ module.exports = function (world) {
 
   world.then('I will see an additional bullet for RealID information', function(done){
     browser
-    .text()
+    .text('.bullet-list')
     .then((text) => {
       assert(text.includes('Real ID birth date, name and legal presence proof'), 'real id information bullet is missing');
     })
@@ -103,7 +103,7 @@ module.exports = function (world) {
 
   world.then('I will not see a section about RealID information', function(done){
     browser
-      .text()
+      .text('.required-documents')
       .then((text) => {
         assert(!text.includes('Real ID birth date, name and legal presence proof'), 'real id information section is present');
       })
@@ -113,7 +113,7 @@ module.exports = function (world) {
 
   world.then('I will see section about new driver requirements', function(done) {
     browser
-      .text('.new-driver-requirements')
+      .text('.required-documents')
       .then( (text) => {
         assert(text.includes('New driver requirements'));
       })

@@ -3,20 +3,14 @@ Feature: Donate Life
   I want the option to register and donate to organ and tissue donation
   So that I can save my relatives from making that decision
 
-  Scenario: Selecting organ donation preferences -- Under 16
-    Given I go to the new online DL application page
-    Given I visit the date of birth page
-    Given I am under 16 years old
-    When I visit the organ page
-    And I will see that the "Next" button is disabled
-    And I choose to donate
-    Then I will see text for donate - Yes
-    And I choose to contribute
-    Then I will see text for donate contribution - Yes
-    Then I will see that the "Next" button is no longer disabled
-    And I click "Next" to continue
-    Then I will be on the page with my summary
-    And I will see my organ selection in the summary
+  
+    # And I will see that the "Next" button is disabled
+    # And I choose to donate
+    # Then I will see text for donate - Yes
+    # Then I will see text for donate - No
+    # And I choose to contribute
+    # Then I will see text for donate contribution - Yes
+    # Then I will see that the "Next" button is no longer disabled
 
   Scenario: Updating organ donation preferences -- Over 16
     Given I go to the new online DL application page

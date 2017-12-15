@@ -134,10 +134,6 @@ module.exports = function(world) {
     navigateToPath('/apply/voting-registration/choose-party', '.choose-party', done);
   });
 
-  world.when('I visit app intro page', function(done){
-    navigateToPath('/apply/get-started', '.intro-info', done);
-  });
-
    world.when('I visit voter intro page', function (done) {
     navigateToPath('/apply/voting-registration/introduction', '.voter-intro-info', done);
   });
@@ -300,10 +296,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to previous names page', function(done) {
     assertOnPage('.previous-names', /my-history\/names/, done);
-  });
-
-  world.then('I will be taken to license and id history page', function(done) {
-    assertOnPage('.license-and-id-history-form', /my-history\/license-and-id/, done);
   });
 
   world.then('I will be taken to organ donation page', function(done) {

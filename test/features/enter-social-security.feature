@@ -21,27 +21,13 @@ Feature:  I want to enter my social security number
     And I go to the page with my summary
     Then I will see my social security on that summary
 
-  Scenario: No, I do not have a social security number
-    Given I go to the new online DL application page
-    When I visit the social security page
-    When I select No for social security
-    Then I will see text for no social security info
-    Then I will see that the "Next" button is no longer disabled
-    When I click "Next" to continue
-    And I will be taken to license and id history page
-    And I go to the page with my summary
-    Then I will see that I do not have a social security number
 
   Scenario: Updating social security
     Given I go to the new online DL application page
     When I visit the social security page
     And I have already entered my social security number
-    Then I visit the ID or DL selection page
-    And I click on the DL checkbox
     When I visit the social security page
     Then I will see the social security number that I entered
     When I change my social security number
-    And I click "Next" to continue
-    Then I will be taken to medical history page
     And I go to the page with my summary
     Then I will see my social security number in the summary

@@ -21,33 +21,42 @@ module.exports = function(world) {
 
   world.when('I select choose party No', function(done){
     browser
-    .click('label[for="isSelectedNo"]')
-    .then(() => { done(); })
-    .catch(done);
+      .click('label[for="isSelectedNo"]')
+      .then(() => { done(); })
+      .catch(done);
   });
-
 
   world.then('I will see Yes for my political party choice', function(done) {
     browser
-    .text()
-    .then((text) => {
-      assert.ok(text.includes('Yes'), 'Yes not saved in summary');
-    })
-    .then(() => { done(); })
-    .catch(done);
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('Yes'), 'Yes not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.then('I will see No for my political party choice', function(done) {
     browser
-    .text()
-    .then((text) => {
-      assert.ok(text.includes('I do not wish to choose a political party'), 'I do not wish to choose a political party not saved in summary');
-    })
-    .then(() => { done(); })
-    .catch(done);
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('I do not wish to choose a political party'), 'I do not wish to choose a political party not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
   });
 
-    world.then('I will see buttons for each political party', function(done){
+  world.then('I will see that I declined to choose a political party', function(done) {
+    browser
+      .text('.summary')
+      .then( text => {
+        assert(text.includes('Political Party: No Answer'), 'wrong political party answer')
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see buttons for each political party', function(done){
     browser
       .html('label[for="politicalPartyChooseAmerican Independent Party"]')
       .then((button) => { assert.ok(button, 'Selector for American Independent Party missing')})
