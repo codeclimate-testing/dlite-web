@@ -6,10 +6,7 @@ Feature: I want to request a Real ID along with my DL
 
 Scenario: Navigating to and from the real id page
   Given I go to the new online DL application
-  And I visit the real id page
-  When I click yes to getting a real id
-  And I click "Next" to continue
-  Then I will be on the reduced fee page
+  And I visit the reduced fee page
   And I click to go back
   Then I will be on the page for choosing real id
 

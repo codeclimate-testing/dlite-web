@@ -38,6 +38,15 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I enter my traits', function(done) {
+    browser
+      .type('#heightFeet', '5')
+      .type('#heightInches', '9')
+      .type('#weight', '210')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see traits height and weight I entered', function(done) {
     browser
       .value('#heightFeet')

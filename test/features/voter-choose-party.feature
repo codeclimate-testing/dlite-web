@@ -1,7 +1,3 @@
-Feature: Choose if you want to change or add a political party or not
-  As a DMV Customer
-  I want the choice to add or update a political party preference and choose a choose a political party
-  so that I choose to go into the party preference information or skip it
 
    # When I select choose party Yes
     # Then I will see buttons for each political party
@@ -9,15 +5,4 @@ Feature: Choose if you want to change or add a political party or not
     # Then I will see that the "Next" button is no longer disabled
 
 
-  Scenario: Updating party
-    Given I go to the new online DL application page
-    When I visit the political party choose page
-    When I select choose party Yes
-    When I select a political party button
-    And I go to the page with my summary
-    When I visit the political party choose page
-    Then I will see Yes and political party selected
-    When I change my political party
-    And I go to the page with my summary
-    Then I will see my political party updated in summary
 

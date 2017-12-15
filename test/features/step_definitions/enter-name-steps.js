@@ -5,47 +5,68 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  world.then('I will see a field for first, middle last name and suffix', function(done) {
-    browser
-      .exists('#firstName')
-      .then((exists) => { assert.ok(exists, 'input for first name missing')})
-      .exists('#middleName')
-      .then((exists) => { assert.ok(exists, 'input for first middle missing')})
-      .exists('#lastName')
-      .then((exists) => { assert.ok(exists, 'input for first last missing')})
-      .exists('#suffix')
-      .then((exists) => { assert.ok(exists, 'input for suffix missing')})
-      .then(() => { done(); })
-      .catch(done);
-  });
+  // world.then('I will see a field for first, middle last name and suffix', function(done) {
+  //   browser
+  //     .exists('#firstName')
+  //     .then((exists) => { assert.ok(exists, 'input for first name missing')})
+  //     .exists('#middleName')
+  //     .then((exists) => { assert.ok(exists, 'input for first middle missing')})
+  //     .exists('#lastName')
+  //     .then((exists) => { assert.ok(exists, 'input for first last missing')})
+  //     .exists('#suffix')
+  //     .then((exists) => { assert.ok(exists, 'input for suffix missing')})
+  //     .then(() => { done(); })
+  //     .catch(done);
+  // });
 
-  world.and('I enter my first name', function(done) {
+  world.then('I enter my full name', function(done) {
     browser
       .type('#firstName', 'FirstName1')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I enter my middle name', function(done) {
-    browser
       .type('#middleName', 'MiddleName1')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.and('I enter my last name', function(done) {
-    browser
       .type('#lastName', 'LastName1')
-      .then(() => { done(); })
+      .then(() => {done();})
       .catch(done);
   });
 
-  world.and('I select a suffix', function(done){
+  world.then('I will see the name I entered', function(done) {
     browser
-      .select('')
+      .value('#firstName')
+      .then((value) => { 
+        assert.equal(value, 'FirstName1'); })
+      .value('#middleName')
+      .then((value) => { assert.equal(value, 'MiddleName1'); })
+      .value('#lastName')
+      .then((value) => { assert.equal(value, 'LastName1'); })
       .then(() => { done(); })
       .catch(done);
   });
+  // world.and('I enter my first name', function(done) {
+  //   browser
+  //     .type('#firstName', 'FirstName1')
+  //     .then(() => { done(); })
+  //     .catch(done);
+  // });
+
+  // world.and('I enter my middle name', function(done) {
+  //   browser
+  //     .type('#middleName', 'MiddleName1')
+  //     .then(() => { done(); })
+  //     .catch(done);
+  // });
+
+  // world.and('I enter my last name', function(done) {
+  //   browser
+  //     .type('#lastName', 'LastName1')
+  //     .then(() => { done(); })
+  //     .catch(done);
+  // });
+
+  // world.and('I select a suffix', function(done){
+  //   browser
+  //     .select('')
+  //     .then(() => { done(); })
+  //     .catch(done);
+  // });
 
   world.then('I will see my name on that summary', function(done) {
     browser
@@ -71,18 +92,6 @@ module.exports = function(world) {
       .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see the name I entered', function(done) {
-    browser
-      .value('#firstName')
-      .then((value) => { assert.equal(value, 'FirstName1'); })
-      .value('#middleName')
-      .then((value) => { assert.equal(value, 'MiddleName1'); })
-      .value('#lastName')
-      .then((value) => { assert.equal(value, 'LastName1'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -114,7 +123,6 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert.ok(text.includes('FirstName2'), 'Updated name not on summary');
-        assert.ok(text.includes(''), 'updated suffix not on summary');
       })
       .then(() => { done(); })
       .catch(done);

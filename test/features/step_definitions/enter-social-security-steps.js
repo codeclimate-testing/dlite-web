@@ -68,7 +68,7 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see my social security number in the summary', function(done) {
+  world.then('I will see my updated social security number', function(done) {
      browser
       .text()
       .then((text) => {

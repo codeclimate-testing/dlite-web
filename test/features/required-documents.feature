@@ -1,7 +1,4 @@
-Feature: Required documents page
-  As a DMV customer
-  I want to see what documents I need
-  So I know what to bring
+#  unit test the required docs presentation
 
   # Scenario: I am under 17.5
   #   Given I go to the new online DL application

@@ -28,7 +28,7 @@ module.exports = function(world) {
 
   world.then('I will see my date of birth on that summary', function(done) {
     browser
-      .text()
+      .text('.summary')
       .then((text) => {
         assert(text.includes('9/7/1967'), 'date of birth missing');
       })
@@ -97,7 +97,7 @@ module.exports = function(world) {
   world.when('I am under 16 years old', function(done) {
     let d = new Date();
     let month = d.getMonth() + 2;
-    let day = d.getDate();
+    let day = d.getDate() + 2;
     let year = d.getFullYear() - 16;
 
     browser

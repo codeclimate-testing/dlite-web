@@ -22,19 +22,6 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.when('I click "No" to not get a license instead', function(done) {
-    browser 
-      .click('label[for="No"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.when('I click "Yes" to get a license instead', function(done) {
-    browser
-      .click('label[for="Yes"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
 
   world.then('I will see a message letting me know that I cannot complete my license application in office until I am 15.5', function(done) {
     browser

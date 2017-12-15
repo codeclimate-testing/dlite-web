@@ -34,11 +34,7 @@ Feature: Donate Life
     Given I visit the date of birth page
     Given Today I turned 16 years old
     When I visit the organ page
-    When I change my organ selection
-    Then I will see text for donate - No
-    And I change my contribution selection
-    And I click "Next" to continue
-    Then I will be taken to voter intro info page
+    # Then I will see organ donation question
     When I click to go back
     Then I will be taken to organ donation page
     And I go to the page with my summary

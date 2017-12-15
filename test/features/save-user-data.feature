@@ -6,10 +6,7 @@ Feature: Save user data
   Scenario: with one DL
     Given I go to the new online DL application page
     Then I visit the legal name page
-    And I enter my first name
-    And I enter my middle name
-    And I enter my last name
-    And I select a suffix
+    And I enter my full name
     When I click "Next" to continue
     Then I will be on the page for entering my date of birth
     And I enter my full date of birth into the form
@@ -24,7 +21,6 @@ Feature: Save user data
     Then I will be on the get started page
     When I click "Next" to continue
     Then I will be on the page for entering my address
-    Then I will see correct home address labels
     And I enter my home address
     And I select address interstitial No
     And I enter my mailing address
@@ -94,7 +90,6 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be taken to ballot language page
     And I select a language
-    Then I will see the language I chose is selected
     When I click "Next" to continue
     Then I will be on the page for ballot by mail
     And I select ballot by mail Yes
@@ -137,12 +132,13 @@ Feature: Save user data
     Then I will be on the page for appointment preparation
     And I click link for required documents
     Then I will be on the required documents page
-    Then I will not see a section about RealID information
-    And I will see a section about medical information
-    Then I will see an additional bullet for medical information
-    Then I will see an additional bullet for proving my veterans status
-    And I will see a section letting me know what I need to do to prove my status
-    Then I will see proof of social security section
+    # Then I will not see a section about RealID information
+    # And I will see a section about medical information
+    # Then I will see an additional bullet for medical information
+    # Then I will see an additional bullet for proving my veterans status
+    # And I will see a section letting me know what I need to do to prove my status
+    # Then I will see proof of social security section
+
 
   Scenario: with one ID and no social
     Given I go to the new online DL application page
@@ -188,6 +184,7 @@ Feature: Save user data
     Then I will see Yes in my existing DL/ID selection
     Then I will see No for having a previous name
     Then I will see that I am not a veteran
+    And I will see No in my citizenship selection
     Then I will see my updated organ selection in the summary
     When I visit the date of birth page
     Then I will see the date of birth that I entered
@@ -215,11 +212,21 @@ Feature: Save user data
     When I visit the addresses page
     And I enter my home address
     And I select address interstitial Yes
-    When I visit the social security page
+    When I visit the traits height and weight page
+    And I enter my traits
+    When I click "Next" to continue
+    Then I will be on the page for entering my social security
     When I select Yes for social security
+    When I click to go back
+    Then I will see traits height and weight I entered
+    When I change my inches
+    And I click "Next" to continue
     When I enter my full social security number
     And I click "Next" to continue
     Then I will be taken to medical history page
+    And I click to go back
+    Then I will see the social security number that I entered
+    When I change my social security number
     When I select No to having reportable medical history
     And I click "Next" to continue
     Then I will be on the page to enter existing license and id
@@ -268,6 +275,7 @@ Feature: Save user data
     Then I will see that my card types have been saved
     Then I will see that I am getting a real id
     Then I will see that I am not opting for a reduced fee
+    Then I will see my updated height on the summary
     Then I will see No in my existing DL/ID selection
     Then I will see No in my suspended license selection
     Then I will see No for having reportable medical history
@@ -275,24 +283,10 @@ Feature: Save user data
     Then I will see that I do qualify to register to vote
     Then I will see voter registration choice as I am already registered to vote in California in summary
     Then I will see that I declined to choose a political party
-    Then I will see my social security on that summary
+    Then I will see my updated social security number
     When I visit the required documents page
     Then I will not see a section about medical information
     Then I will not see any information about proving veterans status
-
-
-  # youth scenarios
-  Scenario: Save user under 16
-    Given I go to the new online DL application page
-    When I visit the date of birth page
-    And I am under 16 years old
-    When I visit the organ page
-    And I choose to donate
-    And I choose to contribute
-    And I click "Next" to continue
-    Then I will be on the page with my summary
-    And I will see my organ selection in the summary
-
 
   Scenario: Save user age 16
     Given I go to the new online DL application page
@@ -312,12 +306,19 @@ Feature: Save user data
     Then I will be taken to voter preferences info page
     When I visit ballot language page
     When I select a language
+    When I visit the political party choose page
+    When I select choose party Yes
+    When I select a political party button
     When I go to the page with my summary
     And I will see I would like to pre-register to vote in summary
     Then I will see my language in the summary
+    Then I will see my political party in summary
     When I visit ballot language page
     Then I will see the language I chose is selected
     And I change my language
+    When I visit the political party choose page
+    Then I will see Yes and political party selected
+    When I change my political party
     When I visit the voter eligibility requirements page
     Then I will see the eligibility requirement status I entered
     And I change my eligibility requirement
@@ -325,6 +326,45 @@ Feature: Save user data
     Then I will be on the page with my summary
     And I will see my updated eligibility requirement status
     Then I will see my updated language in the summary
+    Then I will see my political party updated in summary
     When I visit the required documents page
     Then I will see section about new driver requirements
     Then I will see section about knowledge test
+
+  Scenario: Save user age 15
+    Given I go to the new online DL application page
+    When I visit the date of birth page
+    And I indicate that I am between 15 and 15.5
+    When I visit the ID or DL selection page
+    And I click on the DL checkbox
+    And I click "Next" to continue
+    Then I will be on the youth license page
+    Then I will see a message letting me know that I cannot complete my license application in office until I am 15.5
+    And I click to get an ID instead
+    And I click "Next" to continue
+    Then I will be on the page for choosing real id
+    When I click to go back
+    Then I will be on the ID and DL selection page
+    And I click on the DL checkbox
+    When I go to the page with my summary
+    Then I will see a notification at the top letting me know I can't yet come in to complete my DL application
+    And I will also see that I can make an appointment at any time to get my ID
+
+  Scenario: Save user age 14
+    Given I go to the new online DL application page
+    Then I enter my full name
+    And I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I indicate that I am younger than 14
+    When I click to go back
+    Then I will see the name I entered
+    And I change my first name
+    When I visit the ID or DL selection page
+    And I click on the DL checkbox
+    And I click "Next" to continue
+    Then I will see a message asking if I would like an ID instead
+    When I click to get an ID instead
+    When I go to the page with my summary
+    Then I will see that my ID card type has been saved
+    Then I will see that I am not getting a DL
+    Then I will see my updated name
