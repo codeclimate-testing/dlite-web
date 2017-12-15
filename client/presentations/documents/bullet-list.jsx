@@ -4,6 +4,8 @@ import React from 'react';
 import { ageChecks }  from '../../helpers/calculate-age';
 
 const BulletList = (props) => {
+  let now = props.now ? props.now : new Date();
+  
   let bulletList = [];
   if(props.realID.getRealID === 'Yes') {
     bulletList.push(<li key='real-id'>Real ID birth date, name and legal presence proof</li>);
@@ -20,9 +22,9 @@ const BulletList = (props) => {
   if(props.medicalHistory.hasMedicalCondition === 'Yes') {
     bulletList.push(<li key='medical-information' >Medical Information</li>);
   }
-  if(ageChecks.Under18(props.dateOfBirth)  && ageChecks.GreaterThanEqual15Half(props.dateOfBirth) && props.licenseIssued === 'No') {
+  if(ageChecks.Under18(props.dateOfBirth, now)  && ageChecks.GreaterThanEqual15Half(props.dateOfBirth, now) && props.licenseIssued !== 'Yes') {
     bulletList.push(<li key='new-driver'>New driver requirements</li>);
-    if(ageChecks.Under17Half(props.dateOfBirth) ) {
+    if(ageChecks.Under17Half(props.dateOfBirth, now) ) {
       bulletList.push(<li key='knowledge-test'>You will need to take a knowledge test</li>);
     }
   }
