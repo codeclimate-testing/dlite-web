@@ -36,16 +36,6 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.then('I will see a message after my choice letting me know I should come back when I am 14 or older', function(done) {
-    browser
-      .text()
-      .then( text => {
-        assert(text.includes('Ok, please come back when you turn 14.'), 'message not on page')
-      })
-      .then( () => { done(); })
-      .catch(done);
-  });
-
   world.then('I will see a message letting me know that I cannot complete my license application in office until I am 15.5', function(done) {
     browser
       .text()
@@ -56,19 +46,11 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.and('I will see there is no "Next" button', function(done) {
-    browser 
-      .exists('div.unit-right[style="visibility: hidden"]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.then("I will see a notification at the top letting me know I can't yet come in to complete my DL application", function(done) {
     browser
       .text()
       .then( text => {
-        assert(text.includes('before you are 15.5 years old, you can only get a Junior permit.') ||
-          text.includes('You must be 15 years old to start an application for a learners permit.'), 'message not on page')
+        assert(text.includes('If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit.'), 'message not on page')
       })
       .then( () => { done(); })
       .catch(done);

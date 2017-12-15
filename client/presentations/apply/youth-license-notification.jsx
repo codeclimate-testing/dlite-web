@@ -13,6 +13,7 @@ const Form = (props) => {
     props.checkAnswer(e.target.value, false); // update props.cardType.DL
   }
 
+
   return (
     <Page 
       pageTitle='DMV: License application'
@@ -21,13 +22,11 @@ const Form = (props) => {
       {...props}
     >
       <div className='youth-license-notification'>
-        <h4>{props.title}</h4>
 
-        <h5>{props.paragraph}</h5>
+        { props.children }
 
-        <h4>{props.question}</h4>
         <form onSubmit={ props.onSubmit } >
-          <h4>{props.endMessage }</h4>
+          
           <div className='row inner-bottom'>
             <RadioCollection
               name='youthIDInstead'
@@ -39,7 +38,6 @@ const Form = (props) => {
           </div>
 
           <NavigationButtons
-            visible = { props.visibleNext }
             {...props}
           />  
         </form>

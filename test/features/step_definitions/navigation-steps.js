@@ -182,7 +182,7 @@ module.exports = function(world) {
     assertOnPage('.choose-card-form', /apply\/what-do-you-want-to-do-today/, done);
   });
 
-  world.then('I will be on the page "/apply/youth-license-notification"', function(done) {
+  world.then('I will be on the youth license notification page', function(done) {
     assertOnPage('.youth-license-notification', /apply\/youth-license-notification/, done);
   });
 

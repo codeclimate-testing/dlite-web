@@ -25,24 +25,19 @@ const Form = (props) => {
   const onSubmit          = navigateOnSubmit('/real-id', props);
   const onBack            = navigateOnBack('/what-do-you-want-to-do-today', props);
 
+  // defaults are for users between ages 15 and 15.5. users only see this page if they are under 15.5
   let title               = 'You must be 15.5 years old to get a learners permit.';
   let paragraph           = 'If you go to a DMV office sooner to complete your application, you can only apply for a Junior permit. These permits are issued only in exceptional circumstances.';
   let question            = 'Do you want to apply for an ID instead?';
   let endMessage          = '';
 
-  if(ageChecks.GreaterThanEqual14(props.dateOfBirth) && ageChecks.Under15(props.dateOfBirth)) {
+  if(ageChecks.Under15(props.dateOfBirth)) {
     title = 'You must be 15 years old to start an application for a learners permit.';
     paragraph = 'In exceptional circumstances youth between 14 and 15.5 can get a Junior permit. Visit an office or consult documentation on the DMV website if you feel you might be eligible for a Junior permit.';
     question='Do you want to apply for an ID instead?';
     endMessage = !props.cardType.ID ? 'Ok, please come back when you turn 15.' : '';
   }
-  else if(ageChecks.Under14(props.dateOfBirth)) {
-    title='Because you’re under 14, you can’t apply for a driver license.';
-    paragraph = '';
-    question='Would you like to get a California ID instead?';
-    endMessage = !props.cardType.ID ? 'Ok, please come back when you turn 14.' : '';    
-  }
-
+ 
   const checkAnswer = (isChecked, updateID) => {
     let answer = isChecked === 'Yes';
     
@@ -51,8 +46,22 @@ const Form = (props) => {
       props.update('ID', answer);
     }
 
-    props.update('DL', !answer);
-    
+    props.update('DL', !answer); 
+  };
+
+  const Text = () => {
+    return (
+      <div>
+        <h4>{title}</h4>
+        <h5>{paragraph}</h5>
+        <h4>{question}</h4>
+      </div>
+    )
+  };
+
+  const EndMessage = (props) => {
+    if(props.cardType.youthIDInstead !== 'No') { return null; }
+    return (<h4>{endMessage}</h4>);
   };
 
   return (
@@ -62,13 +71,13 @@ const Form = (props) => {
       onBack={onBack}
       selectedValue={ props.cardType.youthIDInstead }
       continueDisabled={continueDisabled}
-      title={title}
-      paragraph={paragraph}
-      question={question}
-      endMessage={endMessage}
-      visibleNext={ ageChecks.Under14(props.dateOfBirth) ? !props.cardType.DL : true }
       checkAnswer={ checkAnswer }
-    />
+    >
+      <Text />
+      <EndMessage 
+        cardType = { props.cardType }
+      />
+    </Presentation>
   )
 };
 

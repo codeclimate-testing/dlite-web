@@ -3,12 +3,8 @@
 import React from 'react';
 
 const ContinueButton = (props) => {
-  let visibility = {
-    visibility: props.visible !== false ? 'visible' : 'hidden'
-  };
-
   return (
-    <div className='shadow-container unit-right' style={visibility}>
+    <div className='shadow-container unit-right' >
       <button className='arrow-button forward' disabled={props.disabled} >
         Next
       </button>

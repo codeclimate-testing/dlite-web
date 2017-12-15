@@ -8,7 +8,7 @@ import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
 import navigateOnSubmit           from '../helpers/navigate-on-submit';
 import { postData }               from '../actions/api-actions';
-import { getCurrentAge }          from '../helpers/calculate-age';
+import { ageChecks }              from '../helpers/calculate-age';
 
 import {
   LegalName,
@@ -91,26 +91,39 @@ const SummaryHandler = (props) => {
     );
   }
 
-  let alert = [];
-  let age = getCurrentAge(application.dateOfBirth);
+  let DLAlert = () => {
+    return <h4 className='youth-license-notification'>
+      If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances.
+    </h4>
+  }
+  let IDAlert = (props) => {
+    if(!props.cardType.ID) { return null; }
+    return (
+      <h4 className='youth-license-notification'>
+        You are eligible to complete your ID application in the office today.
+      </h4>
+    )
+  }
 
-  if(application.cardType.DL &&  age < 15.5 && age >= 15) {
-    if( application.cardType.ID) {
-      alert.push(
-        <h4 className='youth-license-notification' key='youth-under-15-half-id-dl'>If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances. You are eligible to complete your ID application in the office today.</h4>
-      )
-    }
-    else {
-      alert.push(
-        <h4 className='youth-license-notification' key='youth-under-15-half-dl'>If you go to the DMV office before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances.</h4>
-      )
-    }
+  let Alerts = (props) => {
+    if(!props.cardType.DL || ageChecks.GreaterThanEqual15Half(props.dateOfBirth)){ return null; }
+    return (
+      <div>
+        <DLAlert/>
+        <IDAlert
+          cardType = {props.cardType}
+        />
+      </div>
+    );
   };
-
+  
   return (
     <div className='summary'>
       <HomeLink />
-      { alert }
+      <Alerts 
+        cardType    = {application.cardType}
+        dateOfBirth = {application.dateOfBirth}
+      />
       <form onSubmit={ onSubmit } >
         { contents }
       </form>
