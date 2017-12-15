@@ -2,7 +2,7 @@
 
 import React from 'react';
 import OptOutRadioPage from './opt-out-radio-page.jsx';
-import RadioSelector           from '../radio-selector.jsx';
+import RadioSelector from '../radio-selector.jsx';
 
 const OptOutFormPreReg = (props) => {
   return (

@@ -14,9 +14,9 @@ const PreRegCitizenStatusForm = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting pre-registration'
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting pre-registration'
+      sectionName={props.sectionName}
       {...props}
     >
       <div>

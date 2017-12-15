@@ -3,7 +3,6 @@
 import React from 'react';
 
 import SelectorCollection      from '../selector-collection.jsx';
-import HomeLink                from '../home-link.jsx';
 import Page                    from '../page.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 
@@ -14,10 +13,10 @@ const BallotLanguageForm = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props} 
+      sectionName={props.sectionName}
+      {...props}
     >
       <div>
         <h4>Choose a language for your election materials.</h4>

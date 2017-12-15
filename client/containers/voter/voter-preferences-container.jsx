@@ -2,31 +2,27 @@
 
 import React from 'react';
 
-import { updateDateOfBirth }         from '../../actions/index';
-import VoterPreferencesIntro         from '../../presentations/voter/voter-preferences-intro-form.jsx';
-import PreRegVoterPreferencesIntro   from '../../presentations/voter/voter-preferences-info-prereg-form.jsx';
-import connectForm                   from '../../helpers/connect-form';
-import { isPreregistering }          from '../../helpers/calculate-age';
+import { updateDateOfBirth } from '../../actions/index';
+import VoterPreferencesIntro from '../../presentations/voter/voter-preferences-intro-form.jsx';
+import PreRegVoterPreferencesIntro from '../../presentations/voter/voter-preferences-info-prereg-form.jsx';
+import connectForm from '../../helpers/connect-form';
+import { isPreregistering } from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
 
 const ConnectedForm = (props) => {
-  let content = [];
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    content.push(
-      <PreRegVoterPreferencesIntro
-      key='Voting Pre-registration Preferences info'
-      optOut={props.optOut}/>
-    );
-  } else {
-    content.push(
-       <VoterPreferencesIntro
-       key='Voting Registration Preferences info'
-       optOut={props.optOut} />
-    );
-  }
-
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterPreferencesIntro : VoterPreferencesIntro;
   return (
-    <div>{content}</div>
+    <Presentation
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
+      optOut={props.optOut} 
+      />
   );
 };
 

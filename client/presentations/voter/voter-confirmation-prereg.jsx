@@ -4,19 +4,18 @@ import React            from 'react';
 
 import NavigationLinks    from '../navigation-links.jsx';
 import Page               from '../page.jsx';
-import { getCurrentAge, getAgeGroup }     from '../../helpers/calculate-age';
 
 const linkAddress = '/summary';
 const linkBack = '/voting-registration/contact-methods';
 
 const PreRegVoterRegComplete = (props) => {
-  
+
   return (
     <Page
-      pageTitle='DMV: License application - Voting pre-registration'
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting pre-registration'
-      {...props} 
+      sectionName={props.sectionName}
+      {...props}
     >
       <div>
         <div className='voter-reg-complete'>

@@ -2,33 +2,27 @@
 
 import React from 'react';
 
-import { updateDateOfBirth }   from '../../actions/index';
-import VoterRegComplete        from '../../presentations/voter/voter-confirmation.jsx';
-import PreRegVoterRegComplete  from '../../presentations/voter/voter-confirmation-prereg.jsx';
-import connectForm             from '../../helpers/connect-form';
-import { isPreregistering }    from '../../helpers/calculate-age';
+import { updateDateOfBirth } from '../../actions/index';
+import VoterRegComplete from '../../presentations/voter/voter-confirmation.jsx';
+import PreRegVoterRegComplete from '../../presentations/voter/voter-confirmation-prereg.jsx';
+import connectForm from '../../helpers/connect-form';
+import { isPreregistering } from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
 
 const ConnectedForm = (props) => {
-  let content = [];
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    content.push(
-      <PreRegVoterRegComplete
-        key='voting pre-registration complete'
-      />
-    );
-  } else {
-    content.push(
-      <VoterRegComplete
-        key='voting registration complete'
-      />
-    );
-  }
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterRegComplete : VoterRegComplete;
 
   return (
-    <div>
-      {content}
-    </div>
+    <Presentation
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
+      />
   );
 };
 

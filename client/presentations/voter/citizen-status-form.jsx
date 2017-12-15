@@ -14,9 +14,9 @@ const CitizenStatusForm = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registrationn'
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting registration'
+      sectionName={props.sectionName}
       {...props}
     >
       <div>

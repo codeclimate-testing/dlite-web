@@ -2,51 +2,44 @@
 
 import React from 'react';
 
-import { updateCitizenStatus }        from '../../actions/index';
-import CitizenStatusForm              from '../../presentations/voter/citizen-status-form.jsx';
-import PreRegCitizenStatusForm        from '../../presentations/voter/citizen-status-prereg-form.jsx';
-import connectForm                    from '../../helpers/connect-form';
-import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import navigateOnBack                 from '../../helpers/navigate-on-back';
-import { isPreregistering}            from '../../helpers/calculate-age';
+import { updateCitizenStatus } from '../../actions/index';
+import CitizenStatusForm from '../../presentations/voter/citizen-status-form.jsx';
+import PreRegCitizenStatusForm from '../../presentations/voter/citizen-status-prereg-form.jsx';
+import connectForm from '../../helpers/connect-form';
+import navigateOnSubmit from '../../helpers/navigate-on-submit';
+import navigateOnBack from '../../helpers/navigate-on-back';
+import { isPreregistering } from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
 
 const ConnectedForm = (props) => {
-  let content = [];
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
   let value = props.citizenStatus;
   const continueDisabled = false;
   let onSubmitAddress = '/summary';
-
-  let onBack = navigateOnBack(props);
 
   if (value === 'Yes') {
     onSubmitAddress = '/voting-registration/eligibility';
   }
 
+  let onBack = navigateOnBack(props);
   let onSubmit = navigateOnSubmit(onSubmitAddress, props);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    content.push(
-      <PreRegCitizenStatusForm
-        key='Voting pre-registration citizen status'
-        onSubmit={onSubmit}
-        onBack={onBack}
-        onChange={props.onChange}
-        selectedValue={props.citizenStatus}
-        continueDisabled={continueDisabled} />
-    );
-  } else {
-    content.push(
-      <CitizenStatusForm key='Voting registration citizen status'
-        onSubmit={onSubmit}
-        onBack={onBack}
-        onChange={props.onChange}
-        selectedValue={props.citizenStatus}
-        continueDisabled={continueDisabled} />
-    );
-  }
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
 
   return (
-    <div>{content}</div>
+    <Presentation
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
+      onSubmit={onSubmit}
+      onBack={onBack}
+      onChange={props.onChange}
+      selectedValue={props.citizenStatus}
+      continueDisabled={continueDisabled}
+    />
   );
 };
 

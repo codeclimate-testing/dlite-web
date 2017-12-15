@@ -2,20 +2,43 @@
 
 import React from 'react';
 
-import { updateContactMethods }      from '../../actions/index';
-import HomeLink                      from '../../presentations/home-link.jsx';
-import NavigationButtons             from '../../presentations/navigation-buttons.jsx';
-import ContactChoice                 from '../../presentations/voter/contact-methods-choice.jsx';
-import PreRegContactChoice           from '../../presentations/voter/contact-methods-prereg-choice.jsx';
-import ContactDetails                from '../../presentations/voter/contact-methods-details.jsx';
-import connectForm                   from '../../helpers/connect-form';
-import navigateOnSubmit              from '../../helpers/navigate-on-submit';
-import navigateOnBack                from '../../helpers/navigate-on-back';
-import * as dataPresent              from '../../helpers/data-present';
-import { isPreregistering }          from '../../helpers/calculate-age';
+import { updateContactMethods } from '../../actions/index';
+import NavigationButtons from '../../presentations/navigation-buttons.jsx';
+import ContactChoice from '../../presentations/voter/contact-methods-choice.jsx';
+import PreRegContactChoice from '../../presentations/voter/contact-methods-prereg-choice.jsx';
+import ContactDetails from '../../presentations/voter/contact-methods-details.jsx';
+import connectForm from '../../helpers/connect-form';
+import navigateOnSubmit from '../../helpers/navigate-on-submit';
+import navigateOnBack from '../../helpers/navigate-on-back';
+import * as dataPresent from '../../helpers/data-present';
+import { isPreregistering } from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
+
+const Presentation = (props) => {
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
+
+  if (isPreregistering(props.dateOfBirth)) {
+    return <PreRegContactChoice
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
+      onChange={props.onChange}
+      selectedValue={props.contactMethods.shouldContact}
+      />
+  } else {
+    return <ContactChoice
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
+      onChange={props.onChange}
+      selectedValue={props.contactMethods.shouldContact}
+      />
+  }
+};
 
 const ConnectedForm = (props) => {
-  let content = [];
   let continueDisabled = false;
   let showContactDetails = false;
   let onSubmit = navigateOnSubmit('/voting-registration/confirmation', props);
@@ -25,28 +48,10 @@ const ConnectedForm = (props) => {
     showContactDetails = true;
     continueDisabled = !(dataPresent.contactMethods(props.contactMethods));
 
-    if (isPreregistering(props.dateOfBirth)) {
-      content.push(
-        <PreRegContactChoice
-          key='Pre-registration Contact Choice'
-          onChange={props.onChange}
-          selectedValue={props.contactMethods.shouldContact}
-        />
-      );
-    } else {
-      content.push(
-        <ContactChoice
-          key='Contact Choice'
-          onChange={props.onChange}
-          selectedValue={props.contactMethods.shouldContact}
-        />
-      );
-    }
-
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <div>{content}</div>
+          <div><Presentation {...props} /></div>
           <ContactDetails
             onChange={props.onChange}
             contactDetails={props.contactMethods}
@@ -61,28 +66,10 @@ const ConnectedForm = (props) => {
     );
   }
 
-  if (isPreregistering(props.dateOfBirth)) {
-    content.push(
-      <PreRegContactChoice
-        key='Contact Choice Pre Reg'
-        onChange={props.onChange}
-        selectedValue={props.contactMethods.shouldContact}
-      />
-    );
-  } else {
-    content.push(
-      <ContactChoice
-        key='Contact Choice'
-        onChange={props.onChange}
-        selectedValue={props.contactMethods.shouldContact}
-      />
-    );
-  }
-
   return (
     <div>
       <form onSubmit={onSubmit}>
-       <div>{content}</div>
+        <div><Presentation {...props} /></div>
         <NavigationButtons
           continueDisabled={continueDisabled}
           onBack={onBack}

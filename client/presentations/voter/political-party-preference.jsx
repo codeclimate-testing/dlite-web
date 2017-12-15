@@ -16,14 +16,14 @@ const PoliticalPartyPreference = (props) => {
   return (
     <div className='political-party-preference'>
       <h4>Please select a party below</h4>
-       <div className='inner-bottom'>
-          <SelectorCollection
-            name='politicalPartyChoose'
-            values={PARTIES}
-            onChange={props.onChange}
-            selectedValue={props.selectedValue}
-          />
-        </div>
+      <div className='inner-bottom'>
+        <SelectorCollection
+          name='politicalPartyChoose'
+          values={PARTIES}
+          onChange={props.onChange}
+          selectedValue={props.selectedValue}
+        />
+      </div>
     </div>
   );
 };

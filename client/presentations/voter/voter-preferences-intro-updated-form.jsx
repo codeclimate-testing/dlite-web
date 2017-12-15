@@ -1,10 +1,9 @@
 'use strict';
 
-import React            from 'react';
+import React from 'react';
 
-import HomeLink         from '../home-link.jsx';
-import NavigationLinks  from '../navigation-links.jsx';
-import Page             from '../page.jsx';
+import NavigationLinks from '../navigation-links.jsx';
+import Page from '../page.jsx';
 
 const linkAddress = '/voting-registration/choose-party';
 const linkBack = '/voting-registration/opt-out';
@@ -12,9 +11,9 @@ const linkBack = '/voting-registration/opt-out';
 const VoterPreferencesIntroUpdated = (props) => {
   return (
     <Page
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting registration'
-      pageTitle='DMV: License application - Voting registration'
+      sectionName={props.sectionName}
       {...props}
     >
       <div>

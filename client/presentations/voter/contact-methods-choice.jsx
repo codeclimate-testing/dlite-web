@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import SelectorCollection     from '../selector-collection.jsx';
-import Page                   from '../page.jsx';
+import SelectorCollection from '../selector-collection.jsx';
+import Page from '../page.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Question'];
 
@@ -11,10 +11,10 @@ const ContactChoice = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application - Voting registration'
+      pageTitle={props.pageTitle}
       sectionNumber='3'
-      sectionName='Voting registration'
-      {...props} 
+      sectionName={props.sectionName}
+      {...props}
     >
       <div className='contact-methods-choice-form'>
         <h4>Would you like to receive election information via email or text</h4>

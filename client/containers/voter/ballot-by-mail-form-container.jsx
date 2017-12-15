@@ -2,14 +2,14 @@
 
 import React from 'react';
 
-import { updateBallotByMail }       from '../../actions/index';
-import BallotByMailForm             from '../../presentations/voter/ballot-by-mail-form.jsx';
-import BallotByMailFormPreReg       from '../../presentations/voter/ballot-by-mail-prereg-form.jsx';
-import connectForm                  from '../../helpers/connect-form';
-import * as dataPresent             from '../../helpers/data-present';
-import navigateOnSubmit             from '../../helpers/navigate-on-submit';
-import navigateOnBack               from '../../helpers/navigate-on-back';
-import { isPreregistering }         from '../../helpers/calculate-age';
+import { updateBallotByMail } from '../../actions/index';
+import BallotByMailForm from '../../presentations/voter/ballot-by-mail-form.jsx';
+import BallotByMailFormPreReg from '../../presentations/voter/ballot-by-mail-prereg-form.jsx';
+import connectForm from '../../helpers/connect-form';
+import * as dataPresent from '../../helpers/data-present';
+import navigateOnSubmit from '../../helpers/navigate-on-submit';
+import navigateOnBack from '../../helpers/navigate-on-back';
+import { isPreregistering } from '../../helpers/calculate-age';
 import {
   pageTitle,
   sectionName
@@ -23,7 +23,10 @@ const ConnectedForm = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
 
-  return <BallotByMailForm
+  const Presentation = isPreregistering(props.dateOfBirth) ? BallotByMailFormPreReg : BallotByMailForm;
+
+  return <Presentation
+
     pageTitle         = {formPageTitle}
     sectionName       = {formSectionName}
     onSubmit          = {onSubmit}
@@ -31,6 +34,7 @@ const ConnectedForm = (props) => {
     onChange          = {props.onChange}
     selectedValue     = {props.ballotByMail}
     continueDisabled  = {continueDisabled}
+
   />
 };
 
