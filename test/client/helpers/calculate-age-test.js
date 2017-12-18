@@ -4,7 +4,8 @@ import assert from 'assert';
 import {
   getCurrentAge,
   isPreregistering,
-  ageChecks
+  ageChecks,
+  canBeSenior
 } from '../../../client/helpers/calculate-age';
 
 describe('calculate user age', function () {
@@ -191,10 +192,54 @@ describe('calculate user age', function () {
       assert(age >= 18 && age < 18.5, 'age should be greater than or equal to 18');
     });
   });
+
+  describe('age 62 boundaries', function() {
+    it('dob is day before turning 62', function() {
+      let dob = {
+        month: 1,
+        year: 1955,
+        day: 13
+      };
+      let mockNow = new Date(2017, 0, 12);
+      let age = getCurrentAge(dob, mockNow);
+      assert(age < 62 && age > 61.5, 'age should be less than 62 but greater than 61.5');
+    });
+  
+  })
 });
 
 
 describe('age helpers', function() {
+  describe('canBeSenior', function() {
+    it('should be false if dob is one day less than 62', function() {
+      let dob = {
+        month: 1,
+        year: 1955,
+        day: 13
+      };
+      let mockNow = new Date(2017, 0, 12);
+      assert.equal(canBeSenior(dob, mockNow), false);
+    });
+    it('should be false if dob is years under 62', function() {
+      let dob = {
+        month: 9,
+        year: 1967,
+        day: 7
+      };
+      let mockNow = new Date(2017, 11, 13);
+      assert.equal(canBeSenior(dob, mockNow), false);
+    });
+    it('should be true if dob is turning 62', function() {
+      let dob = {
+        month: 2,
+        year: 1955,
+        day: 24
+      };
+      let mockNow = new Date(2017, 1, 24);
+      assert.equal(canBeSenior(dob, mockNow), true);
+    });
+  });
+
   describe('isPreregistering', function() {
     it('should be false if the dob is one day less than 16', function() {
       let dob = {

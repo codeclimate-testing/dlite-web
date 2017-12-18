@@ -156,4 +156,17 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I indicate that I am turning 62 today', function(done) {
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var day = d.getDate() ;
+    var year = d.getFullYear() - 62;
+    browser
+      .type('#month', month.toString())
+      .type('#day', day.toString())
+      .type('#year', year.toString())
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 };

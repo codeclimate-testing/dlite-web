@@ -29,10 +29,7 @@ function fakeClientData() {
       'ID': 'Yes',
       'form': 'Yes'
     },
-    'reducedFee': {
-      'ID': 'Yes',
-      'form': 'Yes'
-    },
+    'seniorID': 'Yes',
     'homeAddress': {
       'street_1': '123',
       'street_2': 'Main St.',
