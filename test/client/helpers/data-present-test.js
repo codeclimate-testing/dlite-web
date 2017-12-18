@@ -475,4 +475,14 @@ describe('dataPresent', function() {
       assert(dataPresent.application(data), 'Data not present with opt out info');
     });
   });
+
+  describe('#seniorID', function() {
+    it('is true when there is a value', function() {
+      assert.equal(dataPresent.value('Yes'), true);
+    });
+
+    it('is false when there are no values', function() {
+      assert.equal(dataPresent.value(''), false);
+    });
+  });
 });

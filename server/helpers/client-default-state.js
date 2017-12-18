@@ -38,6 +38,7 @@ const state  = {
       getRealID: '',
       realIdDesignation: ''
     },
+    seniorID: '',
     physicalTraits: {
       sex: '',
       eyeColor: '',

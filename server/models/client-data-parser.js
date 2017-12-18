@@ -226,7 +226,7 @@ function extractCardOptions(data) {
       option_type:        'action',
       option_value:       'new'
     })
-    if(data.realID.getRealID === 'Yes') {
+    if(data.realID.getRealID === 'Yes' && !data.cardType.DL) {
       cardOptions.push({
         type:               'ID',
         option_type:        'modification',
@@ -239,12 +239,18 @@ function extractCardOptions(data) {
         option_type:        'modification',
         option_value:       'reduced-fee-has-form'
       })
-    }
-    else if(data.reducedFee.ID === 'Yes' && !data.reducedFee.form === 'Yes') {
+    } else if(data.reducedFee.ID === 'Yes' && !data.reducedFee.form === 'Yes') {
       cardOptions.push({
         type:               'ID',
         option_type:        'modification',
         option_value:       'reduced-fee-no-form'
+      })
+    }
+    if(data.seniorID=== 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'senior-id'
       })
     }
   }

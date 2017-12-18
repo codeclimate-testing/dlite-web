@@ -1,0 +1,727 @@
+diff --git a/client/actions/index.js b/client/actions/index.js
+index 26c1311..c71f698 100644
+--- a/client/actions/index.js
++++ b/client/actions/index.js
+@@ -24,6 +24,7 @@ export const TYPES = {
+   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
+   UPDATE_REDUCED_FEE:                     'UPDATE_REDUCED_FEE',
+   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
++  UPDATE_SENIOR_ID:                       'UPDATE_SENIOR_ID',
+   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
+   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
+   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
+@@ -55,6 +56,7 @@ export const updateLegalName                  = generateFormAction(TYPES.UPDATE_
+ export const updateCardType                   = generateFormAction(TYPES.UPDATE_CARD_TYPE);
+ export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_REDUCED_FEE);
+ export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);
++export const updateSeniorID                   = generateFormAction(TYPES.UPDATE_SENIOR_ID);
+ export const updateHomeAddress                = generateFormAction(TYPES.UPDATE_HOME_ADDRESS);
+ export const updateMailingAddress             = generateFormAction(TYPES.UPDATE_MAILING_ADDRESS);
+ export const updateDateOfBirth                = generateFormAction(TYPES.UPDATE_DATE_OF_BIRTH);
+diff --git a/client/containers/apply/get-started-container.jsx b/client/containers/apply/get-started-container.jsx
+index b52bec8..b0e95e9 100644
+--- a/client/containers/apply/get-started-container.jsx
++++ b/client/containers/apply/get-started-container.jsx
+@@ -2,10 +2,10 @@
+ 
+ import React from 'react';
+ 
+-import Form                   from "../../presentations/apply/intro.jsx";
+-import connectForm            from '../../helpers/connect-form';
+-import navigateOnSubmit       from '../../helpers/navigate-on-submit';
+-import navigateOnBack         from '../../helpers/navigate-on-back';
++import Form               from "../../presentations/apply/intro.jsx";
++import connectForm        from '../../helpers/connect-form';
++import navigateOnSubmit   from '../../helpers/navigate-on-submit';
++import navigateOnBack     from '../../helpers/navigate-on-back';
+ 
+ const ConnectedForm = (props) => {
+ 
+@@ -20,7 +20,8 @@ const ConnectedForm = (props) => {
+ 
+ function mapStateToProps(state) {
+   return {
+-    cardType: state.application.cardType
++    cardType: state.application.cardType,
++    seniorID: state.application.seniorID
+   };
+ }
+ 
+diff --git a/client/containers/apply/real-id-container.jsx b/client/containers/apply/real-id-container.jsx
+index cec98ab..4c17d58 100644
+--- a/client/containers/apply/real-id-container.jsx
++++ b/client/containers/apply/real-id-container.jsx
+@@ -19,7 +19,7 @@ import * as dataPresent       from '../../helpers/data-present';
+ import FAQDrawer              from '../../presentations/faq-drawer-ctrl.jsx';
+ 
+ const ConnectedForm = (props) => {
+-  let address           =   props.cardType.ID ? '/reduced-fee' : '/get-started';
++  let address           =   (props.cardType.ID && props.seniorID !== 'Yes') ? '/reduced-fee' : '/get-started';
+   let onSubmit          =   navigateOnSubmit(address, props);
+   let onBack            =   navigateOnBack(props);
+   let continueDisabled  =   !(dataPresent.realID(props.realID));
+@@ -100,7 +100,8 @@ function mapStateToProps(state) {
+   return {
+     realID :    state.application.realID,
+     cardType:   state.application.cardType,
+-    faqDrawers: state.ui.faqDrawers
++    faqDrawers: state.ui.faqDrawers,
++    seniorID:   state.application.seniorID
+   };
+ }
+ 
+diff --git a/client/containers/apply/senior-id-container.jsx b/client/containers/apply/senior-id-container.jsx
+new file mode 100644
+index 0000000..8954b8a
+--- /dev/null
++++ b/client/containers/apply/senior-id-container.jsx
+@@ -0,0 +1,39 @@
++'use strict';
++
++import React from 'react';
++import { connect } from "react-redux";
++
++import { updateSeniorID }     from "../../actions/index";
++import connectForm            from '../../helpers/connect-form';
++import SeniorIDForm           from "../../presentations/apply/senior-id-form.jsx";
++import onInputChange          from '../../helpers/on-input-change';
++import onFormSubmit           from '../../helpers/on-form-submit';
++import navigateOnSubmit       from '../../helpers/navigate-on-submit';
++import navigateOnBack         from '../../helpers/navigate-on-back';
++import * as dataPresent       from '../../helpers/data-present';
++
++const Form = (props) => {
++  let onSubmit          =   navigateOnSubmit('/real-id', props);
++  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
++  let continueDisabled  =   !(dataPresent.value(props.seniorID));
++
++  return (
++    <form onSubmit={onSubmit}>
++      <SeniorIDForm
++        {...props}
++        continueDisabled  = { continueDisabled }
++        onBack            = { onBack }
++        selectedValue     = { props.seniorID }
++      />
++    </form>
++  )
++};
++
++function mapStateToProps(state) {
++  return {
++    seniorID :  state.application.seniorID,
++    cardType:   state.application.cardType,
++  };
++}
++
++export default connectForm(mapStateToProps, updateSeniorID, Form);
+diff --git a/client/containers/apply/what-do-you-want-to-do-today-container.jsx b/client/containers/apply/what-do-you-want-to-do-today-container.jsx
+index 4d1486e..fc1e7d3 100644
+--- a/client/containers/apply/what-do-you-want-to-do-today-container.jsx
++++ b/client/containers/apply/what-do-you-want-to-do-today-container.jsx
+@@ -3,10 +3,12 @@
+ import React from 'react';
+ import { connect } from "react-redux";
+ 
++
+ import {
+   updateCardType
+ } from "../../actions/index";
+ 
++
+ import Page                   from "../../presentations/page.jsx";
+ import Presentation           from "../../presentations/apply/choose-card-form.jsx";
+ 
+@@ -18,13 +20,16 @@ import {
+   onFocusGenerator,
+   onBlurGenerator
+ } from '../../helpers/on-focus-changes';
+-import { ageChecks }          from '../../helpers/calculate-age';
++import { ageChecks, 
++    canBeSenior }             from '../../helpers/calculate-age';
+ import * as dataPresent       from '../../helpers/data-present';
+ 
+ const Form = (props) => {
+   let address = '/real-id';
+   if(ageChecks.Under15Half(props.dateOfBirth) && props.cardType.DL) {
+     address             =   '/youth-license-notification';
++  } else if (canBeSenior(props.dateOfBirth)) {
++    address             =   '/senior-id';
+   }
+ 
+   let onSubmit          =   navigateOnSubmit(address, props);
+diff --git a/client/containers/routes.jsx b/client/containers/routes.jsx
+index 5bc42f7..032df7e 100644
+--- a/client/containers/routes.jsx
++++ b/client/containers/routes.jsx
+@@ -11,6 +11,7 @@ import RequiredDocuments                      from './required-documents-handler
+ import LegalName                              from './apply/legal-name-form-container.jsx';
+ import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
+ import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
++import SeniorID                               from './apply/senior-id-container.jsx';
+ import YouthLicenseNotification               from './apply/youth-license-notification.jsx';
+ import RealID                                 from './apply/real-id-container.jsx';
+ import ReducedFee                             from './apply/reduced-fee-container.jsx';
+@@ -46,6 +47,7 @@ class Router extends React.Component {
+         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
+         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
+         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
++        <Route path={ alicePath('/senior-id') } component={SeniorID} />
+         <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
+         <Route path={ alicePath('/real-id') } component={RealID} />
+         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
+diff --git a/client/containers/summary-handler.jsx b/client/containers/summary-handler.jsx
+index 2ce29db..bcf07e4 100644
+--- a/client/containers/summary-handler.jsx
++++ b/client/containers/summary-handler.jsx
+@@ -14,6 +14,7 @@ import {
+   LegalName,
+   DateOfBirth,
+   CardType,
++  SeniorID,
+   RealID,
+   ReducedFee,
+   HomeAddress,
+@@ -49,6 +50,7 @@ const SummaryHandler = (props) => {
+     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
+     <CardType cardType={application.cardType} key='card-type' />,
+     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
++    <SeniorID seniorID={application.seniorID} key='senior-id' />,
+     <RealID realID={application.realID} key='real-id' />,
+     <ReducedFee reducedFee={application.reducedFee} key='reduced-fee' />,
+     <MailingAddress mailingAddress={application.mailingAddress} key='mailing-address' />,
+diff --git a/client/helpers/calculate-age.js b/client/helpers/calculate-age.js
+index be8096a..7b57f0d 100644
+--- a/client/helpers/calculate-age.js
++++ b/client/helpers/calculate-age.js
+@@ -21,6 +21,17 @@ export const getCurrentAge = (dob, now = new Date() ) => {
+   return yearDiff + fraction
+ };
+ 
++export const getAgeGroup = (age) => {
++  if ((age > 15 ) && (age < 18)) {
++    return "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18";
++  }
++};
++
++export const canBeSenior = (dob, now = new Date()) => {
++  let age = getCurrentAge(dob, now);
++  return age >= 62;
++};
++
+ export const ageChecks =  {
+   Under14                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 14; },
+   Under15                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 15; },
+diff --git a/client/helpers/data-present.js b/client/helpers/data-present.js
+index 7d72cf8..9102b78 100644
+--- a/client/helpers/data-present.js
++++ b/client/helpers/data-present.js
+@@ -126,7 +126,8 @@ const application = (props) => {
+     value(props.ballotLanguage) ||
+     value(props.optOut) ||
+     contactMethods(props.contactMethods) ||
+-    realID(props.realID);
++    realID(props.realID) || 
++    value(props.seniorID);
+ };
+ 
+ export {
+diff --git a/client/presentations/apply/senior-id-form.jsx b/client/presentations/apply/senior-id-form.jsx
+new file mode 100644
+index 0000000..f7cabe2
+--- /dev/null
++++ b/client/presentations/apply/senior-id-form.jsx
+@@ -0,0 +1,46 @@
++'use strict';
++
++import React from 'react';
++
++import SelectorCollection from '../selector-collection.jsx';
++import NavigationButtons from '../navigation-buttons.jsx';
++import Page from '../page.jsx';
++
++const VALUES = ['Yes', 'No'];
++
++let pageTitle = 'DMV: License application - My basics'
++
++const Form = (props) => {
++
++  return (
++    <Page
++      pageTitle={pageTitle}
++      sectionNumber='1'
++      sectionName='What Do You Want To Do Today'
++      {...props}
++    >
++      <div className='senior-id-form'>
++
++        <p>You qualify for a free ID card. The word “Senior Identification Card” will be printed on your card.</p>
++        <h4>Would you like this card for no fee?</h4>
++
++        <div className='row inner-bottom'>
++          <SelectorCollection
++            name='seniorID'
++            values={VALUES}
++            onChange={props.onChange}
++            selectedValue={props.selectedValue}
++          />
++
++          <div className='unit spacer' />
++        </div>
++      </div>
++
++      <NavigationButtons
++        {...props}
++      />
++    </Page>
++  )
++};
++
++export default Form;
+diff --git a/client/presentations/home.jsx b/client/presentations/home.jsx
+index 8cf7d39..5709ba7 100644
+--- a/client/presentations/home.jsx
++++ b/client/presentations/home.jsx
+@@ -18,6 +18,7 @@ const linkData = [
+   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
+   {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
+   {description: 'youth DL message',                       path: '/youth-license-notification'},
++  {description: 'senior ID',                              path: '/senior-id'},
+   {description: 'real ID',                                path: '/real-id'},
+   {description: 'reduced fee ID',                         path: '/reduced-fee'},
+   {description: 'intro page',                             path: '/get-started'},
+diff --git a/client/presentations/summary/index.js b/client/presentations/summary/index.js
+index e0a1875..11145ec 100644
+--- a/client/presentations/summary/index.js
++++ b/client/presentations/summary/index.js
+@@ -4,6 +4,7 @@ import Empty                       from './empty.jsx';
+ import LegalName                   from './legal-name.jsx';
+ import DateOfBirth                 from './date-of-birth.jsx';
+ import CardType                    from './card-type.jsx';
++import SeniorID                    from './senior-id.jsx';
+ import RealID                      from './real-id.jsx';
+ import ReducedFee                  from './reduced-fee.jsx';
+ import HomeAddress                 from './home-address.jsx';
+@@ -31,6 +32,7 @@ export {
+   LegalName,
+   DateOfBirth,
+   CardType,
++  SeniorID,
+   RealID,
+   ReducedFee,
+   HomeAddress,
+diff --git a/client/presentations/summary/senior-id.jsx b/client/presentations/summary/senior-id.jsx
+new file mode 100644
+index 0000000..fc4ddb2
+--- /dev/null
++++ b/client/presentations/summary/senior-id.jsx
+@@ -0,0 +1,17 @@
++'use strict';
++
++import React from "react";
++import * as dataPresent from '../../helpers/data-present';
++
++const SeniorID = (props) => {
++  if (!dataPresent.value(props.seniorID)) { return null; }
++
++  return (
++    <div className='senior-section'>
++      <p>Senior ID: {props.seniorID}</p>
++    </div>
++  )
++
++};
++
++export default SeniorID;
+diff --git a/client/reducers/application/index.js b/client/reducers/application/index.js
+index 9919d51..7b59e53 100644
+--- a/client/reducers/application/index.js
++++ b/client/reducers/application/index.js
+@@ -9,6 +9,7 @@ import updateReducedFee                    from './update-reduced-fee';
+ import updateHomeAddress                   from './update-home-address';
+ import updateMailingAddress                from './update-mailing-address';
+ import updateRealID                        from './update-real-id';
++import updateSeniorID                      from './update-senior-id';
+ import updateDateOfBirth                   from './update-date-of-birth';
+ import updatePhysicalTraits                from './update-physical-traits';
+ import updateTraitsHeightWeight            from './update-traits-height-weight';
+@@ -36,6 +37,7 @@ const rootReducer = combineReducers({
+   mailingAddress              : updateMailingAddress,
+   dateOfBirth                 : updateDateOfBirth,
+   realID                      : updateRealID,
++  seniorID                    : updateSeniorID,
+   physicalTraits              : updatePhysicalTraits,
+   traitsHeightWeight          : updateTraitsHeightWeight,
+   organDonation               : updateOrganDonation,
+diff --git a/client/reducers/application/update-senior-id.js b/client/reducers/application/update-senior-id.js
+new file mode 100644
+index 0000000..5b7ca8b
+--- /dev/null
++++ b/client/reducers/application/update-senior-id.js
+@@ -0,0 +1,10 @@
++'use strict';
++
++import { TYPES } from '../../actions';
++import formValueReducer from './form-value-reducer';
++
++function defaultState() {
++  return '';
++}
++
++export default formValueReducer(defaultState, TYPES.UPDATE_SENIOR_ID);
+diff --git a/server/helpers/client-default-state.js b/server/helpers/client-default-state.js
+index 2d0aa6e..5b29b18 100644
+--- a/server/helpers/client-default-state.js
++++ b/server/helpers/client-default-state.js
+@@ -38,6 +38,7 @@ const state  = {
+       getRealID: '',
+       realIdDesignation: ''
+     },
++    seniorID: '',
+     physicalTraits: {
+       sex: '',
+       eyeColor: '',
+diff --git a/server/models/client-data-parser.js b/server/models/client-data-parser.js
+index 5c1e419..318a109 100644
+--- a/server/models/client-data-parser.js
++++ b/server/models/client-data-parser.js
+@@ -226,7 +226,7 @@ function extractCardOptions(data) {
+       option_type:        'action',
+       option_value:       'new'
+     })
+-    if(data.realID.getRealID === 'Yes') {
++    if(data.realID.getRealID === 'Yes' && !data.cardType.DL) {
+       cardOptions.push({
+         type:               'ID',
+         option_type:        'modification',
+@@ -239,14 +239,20 @@ function extractCardOptions(data) {
+         option_type:        'modification',
+         option_value:       'reduced-fee-has-form'
+       })
+-    }
+-    else if(data.reducedFee.ID === 'Yes' && !data.reducedFee.form === 'Yes') {
++    } else if(data.reducedFee.ID === 'Yes' && !data.reducedFee.form === 'Yes') {
+       cardOptions.push({
+         type:               'ID',
+         option_type:        'modification',
+         option_value:       'reduced-fee-no-form'
+       })
+     }
++    if(data.seniorID=== 'Yes') {
++      cardOptions.push({
++        type:               'ID',
++        option_type:        'modification',
++        option_value:       'senior-id'
++      })
++    }
+   }
+ 
+   if(data.cardType.DL){
+diff --git a/server/models/server-data-parser.js b/server/models/server-data-parser.js
+index 49148ee..4752936 100644
+--- a/server/models/server-data-parser.js
++++ b/server/models/server-data-parser.js
+@@ -33,6 +33,7 @@ function parse(data) {
+         cardType:                 getCardTypes(cards),
+         realID:                   getRealID(card_options, cards),
+         reducedFee:               getReducedFee(card_options),
++        seniorID:                 getSeniorID(card_options),
+         homeAddress:              getHomeAddress(addresses),
+         mailingAddress:           getMailingAddress(addresses),
+         physicalTraits:           getPhysicalTraits(application),
+@@ -320,7 +321,7 @@ function getRealID(card_options, cards) {
+     if(option.option_value === 'real-id') {
+       realID.getRealID = 'Yes';
+       cards.forEach((card) => {
+-        if(card.id === option.card_id) {
++        if(card.id === parseInt(option.card_id, 10)) {
+           realID.realIdDesignation = card.type
+         }
+       });
+@@ -347,4 +348,14 @@ function getReducedFee(card_options) {
+   return reducedFee;
+ }
+ 
++function getSeniorID(card_options) {
++  let seniorID = 'No';
++  card_options.forEach(option => {
++    if(option.option_value === 'senior-id') {
++      seniorID = 'Yes';
++    }
++  });
++  return seniorID;
++}
++
+ module.exports = parse;
+diff --git a/test/client/helpers/calculate-age-test.js b/test/client/helpers/calculate-age-test.js
+index a72bb35..f7ea704 100644
+--- a/test/client/helpers/calculate-age-test.js
++++ b/test/client/helpers/calculate-age-test.js
+@@ -4,7 +4,8 @@ import assert from 'assert';
+ import {
+   getCurrentAge,
+   isPreregistering,
+-  ageChecks
++  ageChecks,
++  canBeSenior
+ } from '../../../client/helpers/calculate-age';
+ 
+ describe('calculate user age', function () {
+@@ -191,10 +192,54 @@ describe('calculate user age', function () {
+       assert(age >= 18 && age < 18.5, 'age should be greater than or equal to 18');
+     });
+   });
++
++  describe('age 62 boundaries', function() {
++    it('dob is day before turning 62', function() {
++      let dob = {
++        month: 1,
++        year: 1955,
++        day: 13
++      };
++      let mockNow = new Date(2017, 0, 12);
++      let age = getCurrentAge(dob, mockNow);
++      assert(age < 62 && age > 61.5, 'age should be less than 62 but greater than 61.5');
++    });
++  
++  })
+ });
+ 
+ 
+ describe('age helpers', function() {
++  describe('canBeSenior', function() {
++    it('should be false if dob is one day less than 62', function() {
++      let dob = {
++        month: 1,
++        year: 1955,
++        day: 13
++      };
++      let mockNow = new Date(2017, 0, 12);
++      assert.equal(canBeSenior(dob, mockNow), false);
++    });
++    it('should be false if dob is years under 62', function() {
++      let dob = {
++        month: 9,
++        year: 1967,
++        day: 7
++      };
++      let mockNow = new Date(2017, 11, 13);
++      assert.equal(canBeSenior(dob, mockNow), false);
++    });
++    it('should be true if dob is turning 62', function() {
++      let dob = {
++        month: 2,
++        year: 1955,
++        day: 24
++      };
++      let mockNow = new Date(2017, 1, 24);
++      assert.equal(canBeSenior(dob, mockNow), true);
++    });
++  });
++
+   describe('isPreregistering', function() {
+     it('should be false if the dob is one day less than 16', function() {
+       let dob = {
+diff --git a/test/client/helpers/data-present-test.js b/test/client/helpers/data-present-test.js
+index 6f0077a..72edacb 100644
+--- a/test/client/helpers/data-present-test.js
++++ b/test/client/helpers/data-present-test.js
+@@ -475,4 +475,14 @@ describe('dataPresent', function() {
+       assert(dataPresent.application(data), 'Data not present with opt out info');
+     });
+   });
++
++  describe('#seniorID', function() {
++    it('is true when there is a value', function() {
++      assert.equal(dataPresent.value('Yes'), true);
++    });
++
++    it('is false when there are no values', function() {
++      assert.equal(dataPresent.value(''), false);
++    });
++  });
+ });
+diff --git a/test/features/senior-id.feature b/test/features/senior-id.feature
+new file mode 100644
+index 0000000..047b339
+--- /dev/null
++++ b/test/features/senior-id.feature
+@@ -0,0 +1,59 @@
++Feature: Customers can get a senior ID for free
++  As a customer that is 62 years old or greater
++  I want to get a free senior ID
++  So that I can easily prove my senior status for other discounts
++
++  Scenario: Seeing the question
++    Given I go to the new online DL application
++    When I visit the date of birth page
++    And I indicate that I am turning 62 today
++    When I visit the ID or DL selection page
++    And I click on the ID checkbox
++    And I click "Next" to continue
++    Then I will be on the senior id page
++
++  Scenario: Opting for a senior ID and saving the data
++    Given I go to the new online DL application
++    When I visit the date of birth page
++    And I indicate that I am turning 62 today    
++    When I visit the ID or DL selection page
++    And I click on the ID checkbox
++    And I click "Next" to continue
++    When I select yes to get a senior id
++    When I go to the page with my summary
++    Then I will see that I have opted for my senior ID
++    # When I click to save my data
++    # Then it will be saved in the database
++
++
++  Scenario: Navigation when choosing no
++    Given I go to the new online DL application
++    When I visit the date of birth page
++    And I indicate that I am turning 62 today
++    When I visit the ID or DL selection page
++    And I click on the ID checkbox
++    And I click "Next" to continue
++    When I select no to not get a senior id
++    And I click "Next" to continue
++    Then I will be on the page for choosing real id
++    When I click yes to getting a real id
++    And I click "Next" to continue
++    Then I will be on the reduced fee page
++    When I click to go back
++    Then I will be on the page for choosing real id
++  
++  Scenario: Navigation when choosing yes
++    Given I go to the new online DL application
++    When I visit the date of birth page
++    And I indicate that I am turning 62 today
++    When I visit the ID or DL selection page
++    And I click on the ID checkbox
++    And I click "Next" to continue
++    When I select yes to get a senior id
++    And I click "Next" to continue
++    Then I will be on the page for choosing real id
++    When I click yes to getting a real id
++    And I click "Next" to continue
++    Then I will be on the get started page
++    When I click to go back
++    Then I will be on the page for choosing real id
+\ No newline at end of file
+diff --git a/test/features/step_definitions/enter-date-of-birth-steps.js b/test/features/step_definitions/enter-date-of-birth-steps.js
+index e7fe2d7..26a9e70 100644
+--- a/test/features/step_definitions/enter-date-of-birth-steps.js
++++ b/test/features/step_definitions/enter-date-of-birth-steps.js
+@@ -156,4 +156,17 @@ module.exports = function(world) {
+       .catch(done);
+   });
+ 
++  world.and('I indicate that I am turning 62 today', function(done) {
++    var d = new Date();
++    var month = d.getMonth() + 1;
++    var day = d.getDate() ;
++    var year = d.getFullYear() - 62;
++    browser
++      .type('#month', month.toString())
++      .type('#day', day.toString())
++      .type('#year', year.toString())
++      .then(() => { done(); })
++      .catch(done);
++  });
++
+ };
+diff --git a/test/features/step_definitions/navigation-steps.js b/test/features/step_definitions/navigation-steps.js
+index f448aeb..fb6d641 100644
+--- a/test/features/step_definitions/navigation-steps.js
++++ b/test/features/step_definitions/navigation-steps.js
+@@ -321,4 +321,8 @@ module.exports = function(world) {
+   world.then('I will be taken to medical history page', function(done){
+     assertOnPage('.medical-info', /my-history\/medical/, done);
+   });
++
++  world.then('I will be on the senior id page', function(done) {
++    assertOnPage('.senior-id-form', /senior-id/, done);
++  });
+ };
+diff --git a/test/features/step_definitions/senior-id-steps.js b/test/features/step_definitions/senior-id-steps.js
+new file mode 100644
+index 0000000..ebc02c7
+--- /dev/null
++++ b/test/features/step_definitions/senior-id-steps.js
+@@ -0,0 +1,31 @@
++'use strict'
++
++const assert = require('assert');
++
++module.exports = function(world) {
++  let browser = world.browser;
++
++  world.when('I select yes to get a senior id', function(done) {
++    browser
++      .click('label[for="seniorIDYes"]')
++      .then( () => { done(); })
++      .catch(done);
++  });
++
++  world.then('I will see that I have opted for my senior ID', function(done) {
++    browser
++      .text('.senior-section')
++      .then( text => {
++        assert(text.includes('Senior ID: Yes'), 'does not show Senior ID: Yes')
++      })
++      .then( () => { done(); })
++      .catch( done );
++  });
++
++  world.and('I select no to not get a senior id', function(done) {
++    browser
++      .click('label[for="seniorIDNo"]')
++      .then( () => { done(); })
++      .catch(done);
++  });
++};
+\ No newline at end of file
+diff --git a/test/server/models/client-data-parser-test.js b/test/server/models/client-data-parser-test.js
+index f3c3605..2379b23 100644
+--- a/test/server/models/client-data-parser-test.js
++++ b/test/server/models/client-data-parser-test.js
+@@ -69,9 +69,9 @@ describe('client data parser', function() {
+     assert.equal(options[0].option_type, 'action');
+     assert.equal(options[0].option_value, 'new');
+     assert.equal(options[1].option_type, 'modification');
+-    assert.equal(options[1].option_value, 'real-id');
++    assert.equal(options[1].option_value, 'reduced-fee-has-form');
+     assert.equal(options[2].option_type, 'modification');
+-    assert.equal(options[2].option_value, 'reduced-fee-has-form');
++    assert.equal(options[2].option_value, 'senior-id');
+     assert.equal(options[3].option_type, 'action');
+     assert.equal(options[3].option_value, 'new');
+     assert.equal(options[4].option_type, 'modification');
+diff --git a/test/server/models/server-data-parser-test.js b/test/server/models/server-data-parser-test.js
+index 54799bb..426bb8d 100644
+--- a/test/server/models/server-data-parser-test.js
++++ b/test/server/models/server-data-parser-test.js
+@@ -88,6 +88,8 @@ describe('server data parser', function() {
+       parsedData = parse(records);
+       assert.equal(parsedData.application.realID.getRealID, clientData.realID.getRealID);
+       assert.equal(parsedData.application.realID.realIdDesignation, clientData.realID.realIdDesignation);
++      assert.equal(parsedData.application.seniorID, clientData.seniorID);
++      assert.equal(parsedData.application.seniorID, 'Yes');
+       done();
+     })
+     .catch(done);
+diff --git a/test/support/data-helper.js b/test/support/data-helper.js
+index 7bcbbd3..2f8f43f 100644
+--- a/test/support/data-helper.js
++++ b/test/support/data-helper.js
+@@ -29,10 +29,7 @@ function fakeClientData() {
+       'ID': 'Yes',
+       'form': 'Yes'
+     },
+-    'reducedFee': {
+-      'ID': 'Yes',
+-      'form': 'Yes'
+-    },
++    'seniorID': 'Yes',
+     'homeAddress': {
+       'street_1': '123',
+       'street_2': 'Main St.',

@@ -33,6 +33,7 @@ function parse(data) {
         cardType:                 getCardTypes(cards),
         realID:                   getRealID(card_options, cards),
         reducedFee:               getReducedFee(card_options),
+        seniorID:                 getSeniorID(card_options),
         homeAddress:              getHomeAddress(addresses),
         mailingAddress:           getMailingAddress(addresses),
         physicalTraits:           getPhysicalTraits(application),
@@ -320,7 +321,7 @@ function getRealID(card_options, cards) {
     if(option.option_value === 'real-id') {
       realID.getRealID = 'Yes';
       cards.forEach((card) => {
-        if(card.id === option.card_id) {
+        if(card.id === parseInt(option.card_id, 10)) {
           realID.realIdDesignation = card.type
         }
       });
@@ -345,6 +346,16 @@ function getReducedFee(card_options) {
     }
   });
   return reducedFee;
+}
+
+function getSeniorID(card_options) {
+  let seniorID = 'No';
+  card_options.forEach(option => {
+    if(option.option_value === 'senior-id') {
+      seniorID = 'Yes';
+    }
+  });
+  return seniorID;
 }
 
 module.exports = parse;

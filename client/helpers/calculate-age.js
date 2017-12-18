@@ -21,6 +21,17 @@ export const getCurrentAge = (dob, now = new Date() ) => {
   return yearDiff + fraction
 };
 
+export const getAgeGroup = (age) => {
+  if ((age > 15 ) && (age < 18)) {
+    return "YOUTH_GREATER_THAN_15_AND_LESS_THAN_18";
+  }
+};
+
+export const canBeSenior = (dob, now = new Date()) => {
+  let age = getCurrentAge(dob, now);
+  return age >= 62;
+};
+
 export const ageChecks =  {
   Under14                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 14; },
   Under15                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 15; },

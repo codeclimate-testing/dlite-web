@@ -3,9 +3,11 @@
 import React from 'react';
 import { connect } from "react-redux";
 
+
 import {
   updateCardType
 } from "../../actions/index";
+
 
 import Page                   from "../../presentations/page.jsx";
 import Presentation           from "../../presentations/apply/choose-card-form.jsx";
@@ -18,13 +20,16 @@ import {
   onFocusGenerator,
   onBlurGenerator
 } from '../../helpers/on-focus-changes';
-import { ageChecks }          from '../../helpers/calculate-age';
+import { ageChecks, 
+    canBeSenior }             from '../../helpers/calculate-age';
 import * as dataPresent       from '../../helpers/data-present';
 
 const Form = (props) => {
   let address = '/real-id';
   if(ageChecks.Under15Half(props.dateOfBirth) && props.cardType.DL) {
     address             =   '/youth-license-notification';
+  } else if (canBeSenior(props.dateOfBirth)) {
+    address             =   '/senior-id';
   }
 
   let onSubmit          =   navigateOnSubmit(address, props);
