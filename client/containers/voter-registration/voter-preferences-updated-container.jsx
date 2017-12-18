@@ -3,8 +3,8 @@
 import React from 'react';
 
 import { updateDateOfBirth } from '../../actions/index';
-import VoterRegComplete from '../../presentations/voter/voter-confirmation.jsx';
-import PreRegVoterRegComplete from '../../presentations/voter/voter-confirmation-prereg.jsx';
+import VoterPreferencesIntroUpdated from '../../presentations/voter-registration/voter-preferences-intro-updated-form.jsx';
+import PreRegVoterPreferencesIntroUpdated from '../../presentations/voter-registration/voter-preferences-info-prereg-updated-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {
@@ -16,19 +16,19 @@ const ConnectedForm = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterRegComplete : VoterRegComplete;
-
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterPreferencesIntroUpdated : VoterPreferencesIntroUpdated;
   return (
     <Presentation
       pageTitle={formPageTitle}
       sectionName={formSectionName}
-      />
+      optOut={props.optOut} />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth: state.application.dateOfBirth,
+    optOut: state.application.optOut
   };
 }
 

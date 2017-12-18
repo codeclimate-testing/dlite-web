@@ -3,8 +3,8 @@
 import React from 'react';
 
 import { updateBallotByMail } from '../../actions/index';
-import BallotByMailForm from '../../presentations/voter/ballot-by-mail-form.jsx';
-import BallotByMailFormPreReg from '../../presentations/voter/ballot-by-mail-prereg-form.jsx';
+import BallotByMailForm from '../../presentations/voter-registration/ballot-by-mail-form.jsx';
+import BallotByMailFormPreReg from '../../presentations/voter-registration/ballot-by-mail-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import * as dataPresent from '../../helpers/data-present';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';

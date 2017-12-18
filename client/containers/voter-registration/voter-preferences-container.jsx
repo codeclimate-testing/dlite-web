@@ -3,8 +3,8 @@
 import React from 'react';
 
 import { updateDateOfBirth } from '../../actions/index';
-import VoterPreferencesIntro from '../../presentations/voter/voter-preferences-intro-form.jsx';
-import PreRegVoterPreferencesIntro from '../../presentations/voter/voter-preferences-info-prereg-form.jsx';
+import VoterPreferencesIntro from '../../presentations/voter-registration/voter-preferences-intro-form.jsx';
+import PreRegVoterPreferencesIntro from '../../presentations/voter-registration/voter-preferences-info-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {

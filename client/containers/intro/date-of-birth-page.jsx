@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { updateDateOfBirth }  from "../../actions/index";
-import Form                   from "../../presentations/apply/date-of-birth-form.jsx";
+import Form                   from "../../presentations/intro/date-of-birth-page.jsx";
 import connectForm            from '../../helpers/connect-form';
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';

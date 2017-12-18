@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { updateEligibilityRequirements } from '../../actions/index';
-import EligibilityRequirements from '../../presentations/voter/eligibility-requirements-form.jsx';
-import PreRegEligibilityRequirements from '../../presentations/voter/eligibility-requirements-prereg-form.jsx';
+import { updateCitizenStatus } from '../../actions/index';
+import CitizenStatusForm from '../../presentations/voter-registration/citizen-status-form.jsx';
+import PreRegCitizenStatusForm from '../../presentations/voter-registration/citizen-status-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';
 import navigateOnBack from '../../helpers/navigate-on-back';
@@ -17,18 +17,19 @@ import {
 const ConnectedForm = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
+  let value = props.citizenStatus;
   const continueDisabled = false;
-  let nextAddress = '/summary';
-  let onBack = navigateOnBack(props);
-  let content = [];
+  let onSubmitAddress = '/summary';
 
-  if (props.eligibilityRequirements === 'Yes') {
-    nextAddress = '/voting-registration/opt-out';
+  if (value === 'Yes') {
+    onSubmitAddress = '/voting-registration/eligibility';
   }
 
-  let onSubmit = navigateOnSubmit(nextAddress, props);
+  let onBack = navigateOnBack(props);
+  let onSubmit = navigateOnSubmit(onSubmitAddress, props);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
+
   return (
     <Presentation
       pageTitle={formPageTitle}
@@ -36,7 +37,7 @@ const ConnectedForm = (props) => {
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}
-      selectedValue={props.eligibilityRequirements}
+      selectedValue={props.citizenStatus}
       continueDisabled={continueDisabled}
     />
   );
@@ -44,9 +45,9 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    eligibilityRequirements: state.application.eligibilityRequirements,
+    citizenStatus: state.application.citizenStatus,
     dateOfBirth:  state.application.dateOfBirth
   };
 }
 
-export default connectForm(mapStateToProps, updateEligibilityRequirements, ConnectedForm);
+export default connectForm(mapStateToProps, updateCitizenStatus, ConnectedForm);

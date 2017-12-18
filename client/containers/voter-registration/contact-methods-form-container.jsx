@@ -2,11 +2,11 @@
 
 import React from 'react';
 
-import { updatePoliticalPartyChoose } from '../../actions/index';
+import { updateContactMethods } from '../../actions/index';
 import NavigationButtons from '../../presentations/navigation-buttons.jsx';
-import PoliticalPartyChoose from '../../presentations/voter/voter-choose-party-form.jsx';
-import PoliticalPartyChoosePreReg from '../../presentations/voter/voter-choose-party-prereg-form.jsx';
-import PoliticalPartyPreference from '../../presentations/voter/political-party-preference.jsx';
+import ContactChoice from '../../presentations/voter-registration/contact-methods-choice.jsx';
+import PreRegContactChoice from '../../presentations/voter-registration/contact-methods-prereg-choice.jsx';
+import ContactDetails from '../../presentations/voter-registration/contact-methods-details.jsx';
 import connectForm from '../../helpers/connect-form';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';
 import navigateOnBack from '../../helpers/navigate-on-back';
@@ -17,47 +17,45 @@ import {
   sectionName
 } from '../../helpers/registration-header-presenter';
 
-
 const Presentation = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
 
   if (isPreregistering(props.dateOfBirth)) {
-    return <PoliticalPartyChoosePreReg
+    return <PreRegContactChoice
       pageTitle={formPageTitle}
       sectionName={formSectionName}
       onChange={props.onChange}
-      selectedValue={props.politicalPartyChoose.isSelected}
-    />
+      selectedValue={props.contactMethods.shouldContact}
+      />
   } else {
-    return <PoliticalPartyChoose
+    return <ContactChoice
       pageTitle={formPageTitle}
       sectionName={formSectionName}
       onChange={props.onChange}
-      selectedValue={props.politicalPartyChoose.isSelected}
+      selectedValue={props.contactMethods.shouldContact}
       />
   }
 };
 
 const ConnectedForm = (props) => {
   let continueDisabled = false;
-  let showPoliticalPartyPreference = true;
-  let onSubmit = navigateOnSubmit('/voting-registration/language', props);
+  let showContactDetails = false;
+  let onSubmit = navigateOnSubmit('/voting-registration/confirmation', props);
   let onBack = navigateOnBack(props);
 
-  if (props.politicalPartyChoose.isSelected === 'Yes') {
-    showPoliticalPartyPreference = true;
-    continueDisabled = !(dataPresent.politicalPartyChoose(props.politicalPartyChoose));
+  if (props.contactMethods.shouldContact === 'Yes') {
+    showContactDetails = true;
+    continueDisabled = !(dataPresent.contactMethods(props.contactMethods));
 
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <div>
-            <Presentation {...props} />
-          </div>
-          <PoliticalPartyPreference
+          <div><Presentation {...props} /></div>
+          <ContactDetails
             onChange={props.onChange}
-            selectedValue={props.politicalPartyChoose.politicalPartyChoose}
+            contactDetails={props.contactMethods}
+            onBack={onBack}
           />
           <NavigationButtons
             continueDisabled={continueDisabled}
@@ -71,9 +69,7 @@ const ConnectedForm = (props) => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <div>
-          <Presentation {...props} />
-        </div>
+        <div><Presentation {...props} /></div>
         <NavigationButtons
           continueDisabled={continueDisabled}
           onBack={onBack}
@@ -83,13 +79,11 @@ const ConnectedForm = (props) => {
   );
 };
 
-
 function mapStateToProps(state) {
   return {
-    politicalPartyChoose: state.application.politicalPartyChoose,
-    optOut: state.application.optOut,
+    contactMethods: state.application.contactMethods,
     dateOfBirth:  state.application.dateOfBirth
   };
 }
 
-export default connectForm(mapStateToProps, updatePoliticalPartyChoose, ConnectedForm);
+export default connectForm(mapStateToProps, updateContactMethods, ConnectedForm);

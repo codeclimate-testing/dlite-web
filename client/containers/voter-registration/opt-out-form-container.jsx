@@ -17,8 +17,8 @@ import {
   onFocusGenerator,
   onBlurGenerator
 } from '../../helpers/on-focus-changes';
-import OptOutForm from '../../presentations/voter/opt-out-form.jsx';
-import PreregOptOutForm from '../../presentations/voter/opt-out-prereg-form.jsx';
+import OptOutForm from '../../presentations/voter-registration/opt-out-form.jsx';
+import PreregOptOutForm from '../../presentations/voter-registration/opt-out-prereg-form.jsx';
 
 
 const Form = (props) => {

@@ -5,9 +5,7 @@ import { connect } from "react-redux";
 
 import { updateSeniorID }     from "../../actions/index";
 import connectForm            from '../../helpers/connect-form';
-import SeniorIDForm           from "../../presentations/apply/senior-id-form.jsx";
-import onInputChange          from '../../helpers/on-input-change';
-import onFormSubmit           from '../../helpers/on-form-submit';
+import SeniorIDPage           from "../../presentations/intro/senior-id-page.jsx";
 import navigateOnSubmit       from '../../helpers/navigate-on-submit';
 import navigateOnBack         from '../../helpers/navigate-on-back';
 import * as dataPresent       from '../../helpers/data-present';
@@ -19,7 +17,7 @@ const Form = (props) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <SeniorIDForm
+      <SeniorIDPage
         {...props}
         continueDisabled  = { continueDisabled }
         onBack            = { onBack }

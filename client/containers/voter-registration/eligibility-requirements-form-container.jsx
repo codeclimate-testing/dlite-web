@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { updateBallotLanguage } from '../../actions/index';
-import BallotLanguageForm from '../../presentations/voter/ballot-language-form.jsx';
-import BallotLanguageFormPreReg from '../../presentations/voter/ballot-language-prereg-form.jsx';
+import { updateEligibilityRequirements } from '../../actions/index';
+import EligibilityRequirements from '../../presentations/voter-registration/eligibility-requirements-form.jsx';
+import PreRegEligibilityRequirements from '../../presentations/voter-registration/eligibility-requirements-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';
 import navigateOnBack from '../../helpers/navigate-on-back';
@@ -18,11 +18,17 @@ const ConnectedForm = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
   const continueDisabled = false;
-  const onSubmit = navigateOnSubmit('/voting-registration/vote-by-mail', props);
-  const onBack = navigateOnBack(props);
+  let nextAddress = '/summary';
+  let onBack = navigateOnBack(props);
+  let content = [];
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? BallotLanguageFormPreReg : BallotLanguageForm;
+  if (props.eligibilityRequirements === 'Yes') {
+    nextAddress = '/voting-registration/opt-out';
+  }
 
+  let onSubmit = navigateOnSubmit(nextAddress, props);
+
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
   return (
     <Presentation
       pageTitle={formPageTitle}
@@ -30,7 +36,7 @@ const ConnectedForm = (props) => {
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}
-      selectedValue={props.ballotLanguage}
+      selectedValue={props.eligibilityRequirements}
       continueDisabled={continueDisabled}
     />
   );
@@ -38,9 +44,9 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    ballotLanguage: state.application.ballotLanguage,
+    eligibilityRequirements: state.application.eligibilityRequirements,
     dateOfBirth:  state.application.dateOfBirth
   };
 }
 
-export default connectForm(mapStateToProps, updateBallotLanguage, ConnectedForm);
+export default connectForm(mapStateToProps, updateEligibilityRequirements, ConnectedForm);

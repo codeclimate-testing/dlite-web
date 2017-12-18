@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import { updateCitizenStatus } from '../../actions/index';
-import CitizenStatusForm from '../../presentations/voter/citizen-status-form.jsx';
-import PreRegCitizenStatusForm from '../../presentations/voter/citizen-status-prereg-form.jsx';
+import { updateBallotLanguage } from '../../actions/index';
+import BallotLanguageForm from '../../presentations/voter-registration/ballot-language-form.jsx';
+import BallotLanguageFormPreReg from '../../presentations/voter-registration/ballot-language-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import navigateOnSubmit from '../../helpers/navigate-on-submit';
 import navigateOnBack from '../../helpers/navigate-on-back';
@@ -17,18 +17,11 @@ import {
 const ConnectedForm = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
-  let value = props.citizenStatus;
   const continueDisabled = false;
-  let onSubmitAddress = '/summary';
+  const onSubmit = navigateOnSubmit('/voting-registration/vote-by-mail', props);
+  const onBack = navigateOnBack(props);
 
-  if (value === 'Yes') {
-    onSubmitAddress = '/voting-registration/eligibility';
-  }
-
-  let onBack = navigateOnBack(props);
-  let onSubmit = navigateOnSubmit(onSubmitAddress, props);
-
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
+  const Presentation = isPreregistering(props.dateOfBirth) ? BallotLanguageFormPreReg : BallotLanguageForm;
 
   return (
     <Presentation
@@ -37,7 +30,7 @@ const ConnectedForm = (props) => {
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}
-      selectedValue={props.citizenStatus}
+      selectedValue={props.ballotLanguage}
       continueDisabled={continueDisabled}
     />
   );
@@ -45,9 +38,9 @@ const ConnectedForm = (props) => {
 
 function mapStateToProps(state) {
   return {
-    citizenStatus: state.application.citizenStatus,
+    ballotLanguage: state.application.ballotLanguage,
     dateOfBirth:  state.application.dateOfBirth
   };
 }
 
-export default connectForm(mapStateToProps, updateCitizenStatus, ConnectedForm);
+export default connectForm(mapStateToProps, updateBallotLanguage, ConnectedForm);
