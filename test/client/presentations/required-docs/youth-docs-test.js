@@ -9,7 +9,7 @@ import { render } from 'enzyme';
 import YouthDocuments       from '../../../../client/presentations/documents/youth-documents.jsx';
 import BulletList           from '../../../../client/presentations/documents/bullet-list.jsx';
 
-describe('BulletList', function() {
+describe('Required Docs for Youth', function() {
   let component, dob;
   let mockNow = new Date(2017, 11, 14);
   let license = '';
@@ -31,10 +31,10 @@ describe('BulletList', function() {
     reducedFee: {
       ID: 'No'
     }
-  }
+  };
 
-  describe('shows new driver requirements to users between 15.5 and 18', function() {
-    it('is true when dob is day turning 17.5', function() {
+  describe('Bullet List', function() {
+    it('shows new driver reqs when dob is day turning 17.5', function() {
       dob = {
         year: 2000,
         month: 6,
@@ -51,8 +51,7 @@ describe('BulletList', function() {
  
       assert.equal(component.text().includes(newDriver), true);
     });
-
-    it('is true when dob is day turning 15.5', function() {
+    it('shows new driver reqs when dob is day turning 15.5', function() {
       dob = {
         year: 2002,
         month: 6,
@@ -68,8 +67,7 @@ describe('BulletList', function() {
       )
       assert.equal(component.text().includes(newDriver), true);
     });
-
-    it('is false when dob is day turning 18', function() {
+    it('does not show new driver reqs when dob is day turning 18', function() {
       dob = {
         year: 1999,
         month: 12,
@@ -85,11 +83,7 @@ describe('BulletList', function() {
       )
       assert.equal(component.text().includes(newDriver), false);
     });
-  });
-
-  
-  describe('shows knowledge test to users between 15.5 and 17.5', function() {
-    it('is false when dob is day turning 17.5', function() {
+    it('does not show knowledge test when dob is day turning 17.5', function() {
       dob = {
         year: 2000,
         month: 6,
@@ -105,7 +99,7 @@ describe('BulletList', function() {
       )
       assert.equal(component.text().includes(knowledgeTest), false);
     });
-    it('is true when dob is day turning 15.5', function() {
+    it('shows knowledge test when dob is day turning 15.5', function() {
       dob = {
         year: 2002,
         month: 6,
@@ -121,11 +115,7 @@ describe('BulletList', function() {
       )
       assert.equal(component.text().includes(knowledgeTest), true);
     });
-  });
-  
-
-  describe('doesnt show new driver requirements or knowledge test when user not between 15.5 and 18', function() {
-    it('is false when dob is day under 15.5', function(){
+    it('doesnt show knowledge test or new driver when dob is day under 15.5', function(){
       dob = {
         year: 2002,
         month: 6,
@@ -141,8 +131,7 @@ describe('BulletList', function() {
       )
       assert.equal(component.text().includes(newDriver) || component.text().includes(knowledgeTest), false);
     });
-  
-    it('is false when dob is day turning 18', function() {
+    it('doesnt show either when dob is day turning 18', function() {
       dob = {
         year: 1999,
         month: 12,

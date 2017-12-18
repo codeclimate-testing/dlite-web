@@ -75,7 +75,7 @@ describe('Required Docs for Social Security Number', function() {
       assert.equal(component.text().includes('Proof of Social Security Number'), true);
     });
   
-    it('is false when condition is No', function() {
+    it('is null when condition is No', function() {
       socialSecurity = {
         hasSocialSecurity: 'No'
       },
@@ -84,7 +84,20 @@ describe('Required Docs for Social Security Number', function() {
           socialSecurity = {socialSecurity}
         />
       )
-      assert.equal(component.text().includes('Proof of Social Security Number'), false);
+      assert.equal(component, false);
     });  
+
+    it('is null when condition is blank', function() {
+      socialSecurity = {
+        hasSocialSecurity: ''
+      },
+      component = render(
+        <SocialSecurityDocuments
+          socialSecurity = {socialSecurity}
+        />
+      )
+      assert.equal(component, false);
+    });
+
   });
 });
