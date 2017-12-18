@@ -4,7 +4,6 @@ import Empty                       from './empty.jsx';
 import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
 import CardType                    from './card-type.jsx';
-import SeniorID                    from './senior-id.jsx';
 import RealID                      from './real-id.jsx';
 import ReducedFee                  from './reduced-fee.jsx';
 import HomeAddress                 from './home-address.jsx';
@@ -32,7 +31,6 @@ export {
   LegalName,
   DateOfBirth,
   CardType,
-  SeniorID,
   RealID,
   ReducedFee,
   HomeAddress,

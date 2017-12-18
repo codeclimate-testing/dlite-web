@@ -126,8 +126,7 @@ const application = (props) => {
     value(props.ballotLanguage) ||
     value(props.optOut) ||
     contactMethods(props.contactMethods) ||
-    realID(props.realID) || 
-    value(props.seniorID);
+    realID(props.realID);
 };
 
 export {

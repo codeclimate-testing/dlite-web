@@ -321,8 +321,4 @@ module.exports = function(world) {
   world.then('I will be taken to medical history page', function(done){
     assertOnPage('.medical-info', /my-history\/medical/, done);
   });
-
-  world.then('I will be on the senior id page', function(done) {
-    assertOnPage('.senior-id-form', /senior-id/, done);
-  });
 };

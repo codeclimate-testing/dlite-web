@@ -11,7 +11,6 @@ import RequiredDocuments                      from './required-documents-handler
 import LegalName                              from './apply/legal-name-form-container.jsx';
 import DateOfBirth                            from './apply/date-of-birth-form-container.jsx';
 import WhatDoYouWantToDoToday                 from './apply/what-do-you-want-to-do-today-container.jsx';
-import SeniorID                               from './apply/senior-id-container.jsx';
 import YouthLicenseNotification               from './apply/youth-license-notification.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
 import ReducedFee                             from './apply/reduced-fee-container.jsx';
@@ -47,7 +46,6 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
-        <Route path={ alicePath('/senior-id') } component={SeniorID} />
         <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />

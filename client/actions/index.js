@@ -24,7 +24,6 @@ export const TYPES = {
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
   UPDATE_REDUCED_FEE:                     'UPDATE_REDUCED_FEE',
   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
-  UPDATE_SENIOR_ID:                       'UPDATE_SENIOR_ID',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
@@ -56,7 +55,6 @@ export const updateLegalName                  = generateFormAction(TYPES.UPDATE_
 export const updateCardType                   = generateFormAction(TYPES.UPDATE_CARD_TYPE);
 export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_REDUCED_FEE);
 export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);
-export const updateSeniorID                   = generateFormAction(TYPES.UPDATE_SENIOR_ID);
 export const updateHomeAddress                = generateFormAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateFormAction(TYPES.UPDATE_MAILING_ADDRESS);
 export const updateDateOfBirth                = generateFormAction(TYPES.UPDATE_DATE_OF_BIRTH);
