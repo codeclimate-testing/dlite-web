@@ -11,9 +11,9 @@ import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
 
-import NamePage                 from '../../../../client/presentations/intro/name-page.jsx';
+import SeniorIDPage             from '../../../../client/presentations/intro/senior-id-page.jsx';
 
-describe('NamePage', function() {
+describe('SeniorIDPage', function() {
   let store = {
     ui: {
 
@@ -34,59 +34,43 @@ describe('NamePage', function() {
     let props;
     
     beforeEach(function() {
-      let legalName = {
-        firstName: '',
-        middleName: '',
-        lastName: '',
-        suffix: ''
-      };
-
+      let seniorID = '';
+      let continueDisabled = !(dataPresent.value(seniorID))
       let onChange = spy();
 
       props = {
-        legalName,
+        seniorID,
+        continueDisabled,
         onChange
       }
     });
     
-    it('shows form for first name, middle name, last name, and suffix', function() {
+    it('shows the form allowing you to choose to get a senior ID', function() {
       let component = render(
         <Wrapper>
-          <NamePage {...props} />
+          <SeniorIDPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('input#firstName').length, 'first name input missing');
-      assert.ok(component.find('input#middleName').length, 'middle name input missing');
-      assert.ok(component.find('input#lastName').length, 'last name input missing');
-      assert.ok(component.find('select#suffix').length, 'suffix selection missing');
+      assert.ok(component.find('label[for="seniorIDNo"]').length, 'No button missing');
+      assert.ok(component.find('label[for="seniorIDYes"]').length, 'Yes button missing');
     });
 
     it('next button is disabled', function() {
-      let continueDisabled  =   !(dataPresent.legalName(props.legalName));
       let component = render(
         <Wrapper>
-          <NamePage {...props} 
-          continueDisabled = { continueDisabled }
-          />
+          <SeniorIDPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
     });
 
-    it('selecting ID makes next button no longer disabled', function() {
-      props.legalName = {
-        firstName: 'Mathieu',
-        middleName: 'Cloud',
-        lastName: 'Braytheus',
-        suffix: ''
-      };
-      let continueDisabled  =   !(dataPresent.cardType(props.cardType));
+    it('selecting No makes next button no longer disabled', function() {
+      props.seniorID = 'No';
+      props.continueDisabled  =   !(dataPresent.value(props.seniorID));
 
       let component = render(
         <Wrapper>
-          <NamePage {...props} 
-          continueDisabled = { continueDisabled }
-          />
+          <SeniorIDPage {...props} />
         </Wrapper>
       );
 

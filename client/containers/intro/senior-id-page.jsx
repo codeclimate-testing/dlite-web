@@ -29,8 +29,7 @@ const Form = (props) => {
 
 function mapStateToProps(state) {
   return {
-    seniorID :  state.application.seniorID,
-    cardType:   state.application.cardType,
+    seniorID :  state.application.seniorID
   };
 }
 
