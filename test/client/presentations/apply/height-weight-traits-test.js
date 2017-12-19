@@ -1,4 +1,4 @@
-// see a field for feet, for inches, for weight'use strict';
+'use strict';
 
 import assert                   from 'assert';
 
