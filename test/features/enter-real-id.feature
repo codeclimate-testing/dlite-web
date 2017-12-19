@@ -4,13 +4,6 @@ Feature: I want to request a Real ID along with my DL
   So that I don't need to get a passport just for this purpose
 
 
-Scenario: Navigating to and from the real id page
-  Given I go to the new online DL application
-  And I visit the reduced fee page
-  And I click to go back
-  Then I will be on the page for choosing real id
-
-
 Scenario: Interacting with the accordions for real ID
   Given I go to the new online DL application
   When I visit the real id page

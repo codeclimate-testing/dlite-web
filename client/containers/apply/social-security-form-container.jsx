@@ -13,7 +13,8 @@ import navigateOnBack             from '../../helpers/navigate-on-back';
 import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {
-  let onSubmit          = navigateOnSubmit('/my-history/medical', props);
+  let nextAddress       = props.cardType.DL ? '/my-history/medical' : '/my-history/license-and-id';
+  let onSubmit          = navigateOnSubmit(nextAddress, props);
   let onBack            = navigateOnBack(props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
 
