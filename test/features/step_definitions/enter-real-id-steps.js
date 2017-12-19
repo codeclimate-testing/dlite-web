@@ -56,57 +56,69 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see two collapsed FAQ drawers', function(done) {
+  world.then('I will see two closed accordions for real ID', function(done) {
     browser
-      .exists('.faq-fcc-info-body')
-      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC info not collapsed'); })
-      .exists('.faq-fcc-docs-requirement-body')
-      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC doc requirements not collapsed'); })
+      .attribute('#real-id-info-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('closed'), 'Accordion for real ID info is not collapsed');
+      })
+      .attribute('#real-id-requirements-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('closed'), 'Accordion for real ID requirements is not collapsed');
+      })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('The title of each FAQ drawers will be visible', function(done) {
+  world.and('The title of each accordion for real ID will be visible', function(done) {
     browser
-      .waitForSelector('#FCCInfo')
-      .waitForSelector('#FCCRequirements')
+      .waitForSelector('#real-id-info')
+      .waitForSelector('#real-id-requirements')
       .then((d) => { done(); })
       .catch(done);
   });
 
-  world.when('I click in the title FOR FCC info FAQ drawer', function(done) {
+  world.when('I click in the title for real ID info accordion', function(done) {
     browser
-      .click('#FCCInfo')
+      .click('#real-id-info')
       .then(() => { done(); })
       .catch((err) => { done(new Error(err)); });
   });
 
-  world.then('The FCC info FAQ drawer will open to show its full content', function(done) {
+  world.then('The real ID info accordion will open to show its full content', function(done) {
     browser
-      .waitForSelector('.faq-fcc-info-body')
+      .attribute('#real-id-info-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('open'), 'Accordion for real ID info did not open');
+      })
       .then((d) => { done(); })
       .catch(done);
   });
 
-  world.when('I click in the title FOR FCC required documents FAQ drawer', function(done) {
+  world.then('The real ID info accordion will close', function(done) {
     browser
-      .click('#FCCRequirements')
+      .attribute('#real-id-info-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('closed'), 'Accordion for real ID info did not close');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click in the title for real ID requirements accordion', function(done) {
+    browser
+      .click('#real-id-requirements')
       .then(() => { done(); })
       .catch((err) => { done(new Error(err)); });
   });
 
-  world.then('The FCC required documents FAQ drawer will open to show its full content', function(done) {
+  world.then('The real ID requirements accordion will open to show its full content', function(done) {
     browser
-      .waitForSelector('.faq-fcc-docs-requirement-body')
+      .attribute('#real-id-requirements-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('open'), 'Accordion for real ID requirements did not open');
+      })
       .then((d) => { done(); })
-      .catch(done);
-  });
-
-  world.then('The FCC info FAQ drawer will close', function(done) {
-    browser
-      .exists('.faq-fcc-info-body')
-      .then((exists) => { assert.ok(!exists, 'FAQ drawer for FCC info not closing'); })
-      .then(() => { done(); })
       .catch(done);
   });
 

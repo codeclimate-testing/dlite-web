@@ -52,7 +52,7 @@ a.button.arrow-button.forward.get-started {
 }
 
 // ------
-// Here down all tap-buttons which will be going away!
+// Tap-buttonswill be going away!
 
 $tap-hover-color:   $primary;
 $tap-normal-border: $neutral-50;
@@ -137,6 +137,10 @@ label.button.tap.selected {
   }
 }
 
+// ------
+
+
+// radio and checboxes
 $selector-rest: #2D3FCA;
 
 .choice-selector {
@@ -200,6 +204,64 @@ $selector-rest: #2D3FCA;
       .icon-region {
         background-image: url("/images/icons/checkbox/selected.svg");
       }
+    }
+  }
+}
+
+// accordians
+
+$accordion-color: #E4E4E4;
+
+.accordion {
+  margin: 2px 0;
+  @include rounded;
+  border: 1px solid $accordion-color;
+
+  .accordion-header {
+    @include border-top-radius($border-radius-size);
+    background-color: $accordion-color;
+    padding: $spacing;
+    font-weight: bold;
+    font-size: 1em;
+    color: $primary;
+  }
+
+  .icon-region {
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-image: url("/images/icons/misc/-.svg");
+  }
+
+  .accordion-body {
+    padding: $spacing;
+    background-color: white;
+  }
+
+  &.closed {
+    .accordion-body {
+      display: none;
+    }
+
+    .icon-region {
+      background-position: 6px 6px;
+      background-image: url("/images/icons/misc/+.svg");
+    }
+  }
+
+  .accordion-header.focus,
+  .accordion-header:focus {
+    outline: none;
+    padding: $spacing - 2px;
+    margin: 0;
+    border: 2px solid $focus;
+  }
+
+  &.hover,
+  &:hover {
+    .accordion-header {
+      background-color: #BDBDBD;
     }
   }
 }

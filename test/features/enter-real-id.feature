@@ -52,16 +52,14 @@ Scenario: Opting out of real id
   Then I go to the page with my summary
   Then I will see that I am not getting a real id
 
-Scenario: Interacting with the FAQ drawer
+Scenario: Interacting with the accordions for real ID
   Given I go to the new online DL application
   When I visit the real id page
-  Then I will see two collapsed FAQ drawers
-  And The title of each FAQ drawers will be visible
-  When I click in the title FOR FCC info FAQ drawer
-  Then The FCC info FAQ drawer will open to show its full content
-  When I click in the title FOR FCC info FAQ drawer
-  Then The FCC info FAQ drawer will close
-  When I click in the title FOR FCC info FAQ drawer
-  Then The FCC info FAQ drawer will open to show its full content
-  When I click in the title FOR FCC required documents FAQ drawer
-  Then The FCC required documents FAQ drawer will open to show its full content
+  Then I will see two closed accordions for real ID
+  And The title of each accordion for real ID will be visible
+  When I click in the title for real ID info accordion
+  Then The real ID info accordion will open to show its full content
+  When I click in the title for real ID info accordion
+  Then The real ID info accordion will close
+  When I click in the title for real ID requirements accordion
+  Then The real ID requirements accordion will open to show its full content

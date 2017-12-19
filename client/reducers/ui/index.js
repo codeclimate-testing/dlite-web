@@ -3,11 +3,11 @@
 import { combineReducers }  from 'redux';
 
 import focus                from './focus';
-import faqDrawers           from './faq-drawers';
+import accordions           from './accordions';
 
 const rootReducer = combineReducers({
   focus:        focus,
-  faqDrawers:   faqDrawers
+  accordions:   accordions
 });
 
 export default rootReducer;
