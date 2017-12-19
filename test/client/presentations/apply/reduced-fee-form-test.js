@@ -11,14 +11,11 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
-
 import ReducedFeePage           from '../../../../client/presentations/apply/reduced-fee-form.jsx';
 
 describe('Reduced Fee Page', function() {
   let store = {
-    ui: {
-
-    }
+    ui: {}
   };
 
   const Wrapper = (props) => {
@@ -38,10 +35,8 @@ describe('Reduced Fee Page', function() {
       let reducedFee = {
         ID: '',
         form: ''
-      }
-
+      };
       let continueDisabled  =   !(dataPresent.reducedFee(reducedFee));
-
       let onChange = spy();
 
       props = {
@@ -72,9 +67,7 @@ describe('Reduced Fee Page', function() {
     });
 
     it('selecting No makes next button no longer disabled', function() {
-      props.reducedFee = {
-        ID: 'No'
-      }
+      props.reducedFee.ID = 'No';
       props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
 
       let component = render(
@@ -88,9 +81,7 @@ describe('Reduced Fee Page', function() {
     });
 
     it('selecting Yes makes form show asking if user has the correct forms', function() {
-      props.reducedFee = {
-        ID: 'Yes'
-      };
+      props.reducedFee.ID = 'Yes';
       props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
       let component = render(
         <Wrapper>
