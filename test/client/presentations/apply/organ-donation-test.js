@@ -14,7 +14,6 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import data                     from '../../../../server/helpers/client-default-state.js';
 import OrganPage                from '../../../../client/presentations/apply/donate-organ-form.jsx';
 
 describe('OrganPage', function() {
@@ -36,7 +35,10 @@ describe('OrganPage', function() {
     let props;
     
     beforeEach(function() {
-      let organDonation = data.application.organDonation;
+      let organDonation = {
+        donate: '',
+        contribute: ''
+      };
 
       let continueDisabled = !(dataPresent.organDonation(organDonation))
       let onChange = spy();
