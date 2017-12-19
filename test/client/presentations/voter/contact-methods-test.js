@@ -1,7 +1,3 @@
-// I see three contact methods buttons labelled Yes, No, and Skip Question
-
-// Select Yes to see form for entering email and phone number
-
 'use strict';
 
 import assert                   from 'assert';
@@ -64,6 +60,9 @@ describe('ContactMethodsPage', function() {
         </Wrapper>
       );
       assert.ok(component.find('.contact-methods-choice-form').length, 'form missing');
+      assert.ok(component.find('label[for="shouldContactYes"]'), 'Yes button missing');
+      assert.ok(component.find('label[for="shouldContactNo"]'), 'No button missing');
+      assert.ok(component.find('label[for="shouldContactSkipQuestion"]'), 'Skip Question button missing');
     });
 
     // TODO add test for FAQ drawers
