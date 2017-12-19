@@ -34,13 +34,14 @@ import {
 } from '../../../client/presentations/summary/index.js';
 
 describe('Summary section', function() {
+  let props = data.application;
 
   describe('LegalName', function() {
     it('returns null when no value', function() {
 
       let component = render(
         <LegalName
-          props={ data }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
@@ -55,7 +56,7 @@ describe('Summary section', function() {
       };
       let component = render(
         <LegalName
-          props={ data }
+          { ...props }
           legalName={legalName }
         />
       )
@@ -66,7 +67,7 @@ describe('Summary section', function() {
     it('returns null when no value', function(){
       let component = render(
         <DateOfBirth 
-          props={ data }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
@@ -80,7 +81,7 @@ describe('Summary section', function() {
       };
       let component = render(
         <CardType 
-          props = {data}
+          { ...props }
           cardType = {cardType}
         />
       );
@@ -93,7 +94,7 @@ describe('Summary section', function() {
       };
       let component = render(
         <CardType 
-          props = {data}
+          { ...props }
           cardType = {cardType}
         />
       )
@@ -103,13 +104,10 @@ describe('Summary section', function() {
   });
   describe('RealID', function() {
     it('returns null when no value', function(){
-      let realID = {
-        getRealID: ''
-      };
+  
       let component = render(
         <RealID
-          props={ data }
-          realID={ realID }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
@@ -120,7 +118,7 @@ describe('Summary section', function() {
 
       let component = render(
         <ReducedFee 
-          props={ data }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
@@ -131,7 +129,7 @@ describe('Summary section', function() {
   
       let component = render(
         <HomeAddress
-          props={ data }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
@@ -143,26 +141,65 @@ describe('Summary section', function() {
   
       let component = render(
         <MailingAddress
-          props={ data }
+          { ...props }
         />
       )
       assert.equal(component.find('.summary-section'), false);
     });
   });
   describe('TraitsHeightWeight', function() {
-    
+    it('returns null when no value', function(){
+  
+      let component = render(
+        <TraitsHeightWeight
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
   });
   describe('PhysicalTraits', function() {
-
+    it('returns null when no value', function(){
+  
+      let component = render(
+        <PhysicalTraits
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
   });
   describe('OrganDonation', function() {
-
+    it('returns null when no value', function(){
+  
+      let component = render(
+        <OrganDonation
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
   });
   describe('SocialSecurity', function() {
-
+    it('returns null when no value', function(){
+    
+      let component = render(
+        <SocialSecurity
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
   });
   describe('LicenseIssues', function() {
-
+    it('returns null when no value', function(){
+      let component = render(
+        <LicenseIssues
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
   });
 });
 

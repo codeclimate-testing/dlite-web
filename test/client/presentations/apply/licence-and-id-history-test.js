@@ -8,7 +8,7 @@ import { render } from 'enzyme';
 import sinon from 'sinon';
 import {MemoryRouter} from 'react-router-dom';
 
-import LicenseAndIdHistory from '../../../client/presentations/apply/license-and-id-history-form.jsx';
+import LicenseAndIdHistory from '../../../../client/presentations/apply/license-and-id-history-form.jsx';
 
 describe('LicenseAndIdHistory', function() {
   let component, state;

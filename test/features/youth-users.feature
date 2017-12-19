@@ -30,7 +30,7 @@ Feature: Happy path for youth users
     When I visit the ID or DL selection page
     And I click on the DL checkbox
     And I click "Next" to continue
-    Then I will be on the youth license page
+    Then I will be on the youth license notification page
     Then I will see a message letting me know that I cannot complete my license application in office until I am 15.5
     And I click to get an ID instead
     And I click "Next" to continue
