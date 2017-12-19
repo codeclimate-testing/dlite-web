@@ -1,4 +1,3 @@
-// see a number field for each part of social security number after selecting Yes
 'use strict';
 
 import assert                   from 'assert';
@@ -85,6 +84,8 @@ describe('NamesHistoryPage', function() {
     // });
 
     //TODO add test to check that selecting Yes makes enter-social-security form render
+    // see a number field for each part of social security number after selecting Yes
+
 
   });
 
