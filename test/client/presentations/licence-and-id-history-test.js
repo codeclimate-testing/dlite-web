@@ -33,10 +33,10 @@ describe('LicenseAndIdHistory', function() {
   });
 
   it('renders general license and id history page when applying for both ID and DL', function() {
-    state = {
-      'cardType': {
-        'ID': true,
-        'DL': true
+    let state = {
+      cardType: {
+        ID: false,
+        DL: true
       }
     };
 

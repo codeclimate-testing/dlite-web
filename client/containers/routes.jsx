@@ -12,7 +12,7 @@ import LegalName                              from './intro/name-page.jsx';
 import DateOfBirth                            from './intro/date-of-birth-page.jsx';
 import WhatDoYouWantToDoToday                 from './intro/what-do-you-want-to-do-today-page.jsx';
 import SeniorID                               from './intro/senior-id-page.jsx';
-import YouthLicenseNotification               from './apply/youth-license-notification.jsx';
+import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
 import RealID                                 from './apply/real-id-container.jsx';
 import ReducedFee                             from './apply/reduced-fee-container.jsx';
 import Intro                                  from './apply/get-started-container.jsx';
