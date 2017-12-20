@@ -2,17 +2,18 @@
 
 import assert from 'assert';
 import 'jsdom-global/register';
+import configure from '../../../support/configure-enzyme';
+import { render } from 'enzyme';
 import React from 'react';
 import sinon from 'sinon';
 
 import { createMockStore } from 'redux-test-utils';
 import { Provider } from "react-redux";
-import { render } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom'
 
 import RealIdSelectors from '../../../../../client/presentations/intro/real-id/selectors.jsx';
 
-import wrapperGenerator from '../../support/wrapper';
+import wrapperGenerator from '../../../support/wrapper';
 
 describe('RealIdSelectors', function() {
   let props, Wrapper;

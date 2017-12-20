@@ -1,9 +1,10 @@
 'use strict';
 
-import assert               from 'assert';
 import 'jsdom-global/register';
-import React                from 'react';
-import { render }           from 'enzyme';
+import assert     from 'assert';
+import React      from 'react';
+import configure  from '../../support/configure-enzyme';
+import { render } from 'enzyme';
 
 import YouthDocuments       from '../../../../client/presentations/documents/youth-documents.jsx';
 import BulletList           from '../../../../client/presentations/documents/bullet-list.jsx';

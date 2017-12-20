@@ -4,7 +4,8 @@ import assert from 'assert';
 
 import 'jsdom-global/register';
 import React from 'react';
-import { render, mount } from 'enzyme';
+import configure  from '../support/configure-enzyme';
+import { render } from 'enzyme';
 import { spy } from 'sinon';
 
 import RadioSelectorCollection from '../../../client/presentations/radio-selector-collection.jsx';

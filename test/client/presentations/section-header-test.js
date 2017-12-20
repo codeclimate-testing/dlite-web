@@ -4,6 +4,7 @@ import assert from 'assert';
 
 import 'jsdom-global/register';
 import React from 'react';
+import configure  from '../support/configure-enzyme';
 import { render } from 'enzyme';
 
 import SectionHeader from '../../../client/presentations/section-header.jsx';
@@ -51,8 +52,6 @@ describe('SectionHeader', function() {
       1,
       'header not rendered'
     );
-
-    console.log(component.text());
 
     assert.equal(
       component.text().includes('1'),

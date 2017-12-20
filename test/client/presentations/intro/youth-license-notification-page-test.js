@@ -1,8 +1,8 @@
 'use strict';
 
 import assert from 'assert';
-
 import React from 'react';
+import configure from '../../support/configure-enzyme';
 import { render } from 'enzyme';
 import sinon from 'sinon';
 import { MemoryRouter } from 'react-router-dom';

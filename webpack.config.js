@@ -5,7 +5,7 @@ const webpack             = require('webpack');
 const ExtractTextPlugin   = require("extract-text-webpack-plugin");
 
 let config = {
-  entry: './client.js',
+  entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
     filename: 'app.js'
