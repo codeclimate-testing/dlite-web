@@ -12,8 +12,7 @@ const LinkListItem = (props) => {
   </li>);
 };
 
-const linkData = [
-  {description: 'summary',                                path: '/summary'},
+const getStartedLinkData = [
   {description: 'legal name',                             path: '/my-basics/legal-name'},
   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
   {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
@@ -21,7 +20,10 @@ const linkData = [
   {description: 'senior ID',                              path: '/senior-id'},
   {description: 'real ID',                                path: '/real-id'},
   {description: 'reduced fee ID',                         path: '/reduced-fee'},
-  {description: 'intro page',                             path: '/get-started'},
+  {description: 'get started intro page',                 path: '/get-started'}
+];
+
+const linkData = [
   {description: 'address',                                path: '/my-basics/address'},
   {description: 'traits height and weight',               path: '/my-basics/traits-height-weight'},
   {description: 'physical traits',                        path: '/my-basics/physical-traits'},
@@ -47,6 +49,16 @@ const linkData = [
   {description: 'required documents',                     path: '/appointment-preparation/documents'}
 ];
 
+const wrapItems = (listItems) => {
+  return listItems.map((listData) => {
+    return (<LinkListItem
+      description={listData.description}
+      path={listData.path}
+      key={listData.description}
+    />);
+  })
+};
+
 const Home = () => {
   let listItems = linkData.map((listData) => {
     return (<LinkListItem
@@ -58,7 +70,22 @@ const Home = () => {
 
   return (
     <ul className='section-links'>
-      { listItems }
+      <li>
+        <Link className='summary' to={ alicePath('/summary') }>summary</Link>
+      </li>
+      <li className='get-started'>
+        <hr />
+        <h4>Get started</h4>
+        <ul>
+          { wrapItems(getStartedLinkData) }
+        </ul>
+      </li>
+      <li className='other-pages'>
+        <hr />
+        <ul>
+          { wrapItems(linkData) }
+        </ul>
+      </li>
     </ul>
   );
 };

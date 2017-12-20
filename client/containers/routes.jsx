@@ -15,7 +15,7 @@ import SeniorID                               from './intro/senior-id-page.jsx';
 import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
 import RealID                                 from './intro/real-id-page.jsx';
 import ReducedFee                             from './intro/reduced-fee-page.jsx';
-import Intro                                  from './apply/get-started-container.jsx';
+import GetStarted                             from './intro/get-started-page.jsx';
 
 import Address                                from './apply/address-form-container.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
@@ -52,7 +52,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ alicePath('/real-id') } component={RealID} />
         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
-        <Route path={ alicePath('/get-started') } component={Intro} />
+        <Route path={ alicePath('/get-started') } component={GetStarted} />
         <Route path={ alicePath('/links') } exact component={Home} />
         <Route path={ alicePath('/summary') } component={Summary} />
         <Route path={ alicePath('/my-basics/address') } component={Address} />
