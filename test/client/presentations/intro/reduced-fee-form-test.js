@@ -11,7 +11,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import ReducedFeePage           from '../../../../client/presentations/apply/reduced-fee-form.jsx';
+import ReducedFeePage           from '../../../../client/presentations/intro/reduced-fee-page.jsx';
 
 describe('Reduced Fee Page', function() {
   let store = {
@@ -36,11 +36,16 @@ describe('Reduced Fee Page', function() {
         ID: '',
         form: ''
       };
+      let cardType = {
+        ID: true,
+        DL: false
+      };
       let continueDisabled  =   !(dataPresent.reducedFee(reducedFee));
       let onChange = spy();
 
       props = {
         reducedFee,
+        cardType,
         onChange,
         continueDisabled
       }
