@@ -3,7 +3,8 @@
 const assert = require('assert');
 
 import {
-  eligibleForReducedFee
+  eligibleForReducedFee,
+  choosingReducedFee
 } from '../../../../client/helpers/data/reduced-fee';
 
 describe('Data helpers for reduced fee', function() {
@@ -42,6 +43,26 @@ describe('Data helpers for reduced fee', function() {
       };
 
       assert.equal(eligibleForReducedFee(data), false);
+    });
+  });
+
+  describe('choosingReducedFee', function() {
+    it('is true with the correct data structure', function() {
+      let data = {
+        reducedFee: {
+          ID: 'Yes'
+        }
+      };
+
+      assert.equal(choosingReducedFee(data), true);
+    });
+
+    it('is false without the correct data structure', function() {
+      let data = {
+        reducedFee: {}
+      };
+
+      assert.equal(choosingReducedFee(data), false);
     });
   });
 });

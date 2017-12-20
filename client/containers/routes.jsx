@@ -14,8 +14,9 @@ import WhatDoYouWantToDoToday                 from './intro/what-do-you-want-to-
 import SeniorID                               from './intro/senior-id-page.jsx';
 import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
 import RealID                                 from './intro/real-id-page.jsx';
-import ReducedFee                             from './apply/reduced-fee-container.jsx';
+import ReducedFee                             from './intro/reduced-fee-page.jsx';
 import Intro                                  from './apply/get-started-container.jsx';
+
 import Address                                from './apply/address-form-container.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
