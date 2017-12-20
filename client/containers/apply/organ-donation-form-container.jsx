@@ -9,8 +9,8 @@ import NavigationButtons              from '../../presentations/navigation-butto
 import DonateOrgan                    from '../../presentations/apply/donate-organ-form.jsx';
 import DonateContribution             from '../../presentations/apply/donate-contribution-form.jsx';
 import connectForm                    from '../../helpers/connect-form';
-import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import navigateOnBack                 from '../../helpers/navigate-on-back';
+import navigateOnSubmit               from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack                 from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent               from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {

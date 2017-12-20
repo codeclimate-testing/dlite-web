@@ -2,8 +2,8 @@
 
 import { connect } from 'react-redux';
 
-import onInputChange from './on-input-change';
-import onSubmit      from './on-form-submit';
+import onInputChange from './handlers/on-input-change';
+import onSubmit      from './handlers/on-form-submit';
 
 function connectForm(mapStateToProps, action, form) {
   function mapDispatchToProps(dispatch) {

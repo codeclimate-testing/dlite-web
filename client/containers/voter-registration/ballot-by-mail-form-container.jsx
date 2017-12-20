@@ -7,8 +7,8 @@ import BallotByMailForm from '../../presentations/voter-registration/ballot-by-m
 import BallotByMailFormPreReg from '../../presentations/voter-registration/ballot-by-mail-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
 import * as dataPresent from '../../helpers/data-present';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
-import navigateOnBack from '../../helpers/navigate-on-back';
+import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack from '../../helpers/handlers/navigate-on-back';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {
   pageTitle,

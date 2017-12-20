@@ -1,18 +1,18 @@
 'use strict';
 
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { updateLegalName }  from "../../actions/index";
-import Presentation         from "../../presentations/intro/name-page.jsx";
-import connectForm          from '../../helpers/connect-form';
-import navigateOnSubmit     from '../../helpers/navigate-on-submit';
-import navigateOnBack       from '../../helpers/navigate-on-back';
+import handlers             from '../../helpers/handlers';
 import * as dataPresent     from '../../helpers/data-present';
+
+import Presentation         from '../../presentations/intro/name-page.jsx';
+import { updateLegalName }  from '../../actions/index';
 
 const Page = (props) => {
   let continueDisabled  =   !dataPresent.legalName(props.legalName);
-  let onSubmit          =   navigateOnSubmit('/my-basics/date-of-birth', props);
-  let onBack            =   navigateOnBack(props);
+  let onSubmit          =   handlers.navigateOnSubmit('/my-basics/date-of-birth', props);
+  let onBack            =   handlers.navigateOnBack(props);
 
   return (
     <Presentation
@@ -24,11 +24,21 @@ const Page = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     legalName: state.application.legalName,
     section: state.ui.section
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateLegalName, Page);
+const mapDispatchToProps = (dispatch) => {
+  const onChange   = handlers.onInputChange(updateLegalName, dispatch);
+  const onSubmit   = handlers.onFormSubmit;
+
+  return {
+    onChange,
+    onSubmit
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

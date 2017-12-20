@@ -4,7 +4,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Presentation       from "../../presentations/intro/get-started-page.jsx";
-import navigateOnBack     from '../../helpers/navigate-on-back';
+import navigateOnBack     from '../../helpers/handlers/navigate-on-back';
+import { changeSection }  from '../../actions';
 
 const Page = (props) => {
   let onBack = navigateOnBack(props);
@@ -14,11 +15,11 @@ const Page = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     cardType: state.application.cardType,
     seniorID: state.application.seniorID
   };
-}
+};
 
 export default connect(mapStateToProps)(Page);

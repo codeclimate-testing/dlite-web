@@ -6,7 +6,7 @@ import { Link }                   from 'react-router-dom';
 
 import HomeLink                   from '../presentations/home-link.jsx';
 import alicePath                  from '../helpers/alice-path';
-import navigateOnSubmit           from '../helpers/navigate-on-submit';
+import navigateOnSubmit           from '../helpers/handlers/navigate-on-submit';
 import { postData }               from '../actions/api-actions';
 import { ageChecks }              from '../helpers/calculate-age';
 

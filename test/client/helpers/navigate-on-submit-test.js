@@ -3,7 +3,7 @@
 import assert from 'assert';
 import sinon from 'sinon';
 
-import navigateOnSubmit from '../../../client/helpers/navigate-on-submit';
+import navigateOnSubmit from '../../../client/helpers/handlers/navigate-on-submit';
 
 describe('navigateOnSubmit', function() {
   let props, navigator;

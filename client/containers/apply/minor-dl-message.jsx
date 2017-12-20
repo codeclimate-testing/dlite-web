@@ -9,10 +9,10 @@ import {
   focusPageElement
 } from '../../actions/index';
 
-import onInputChange                  from '../../helpers/on-input-change';
-import onFormSubmit                   from '../../helpers/on-form-submit';
-import navigateOnSubmit               from '../../helpers/navigate-on-submit';
-import navigateOnBack                 from '../../helpers/navigate-on-back';
+import onInputChange                  from '../../helpers/handlers/on-input-change';
+import onFormSubmit                   from '../../helpers/handlers/on-form-submit';
+import navigateOnSubmit               from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack                 from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent               from '../../helpers/data-present';
 
 import Presentation                   from '../../presentations/apply/minor-id-only.jsx';

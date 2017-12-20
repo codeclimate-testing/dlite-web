@@ -4,33 +4,40 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { updateSeniorID }     from "../../actions/index";
-import connectForm            from '../../helpers/connect-form';
-import SeniorIDPage           from "../../presentations/intro/senior-id-page.jsx";
-import navigateOnSubmit       from '../../helpers/navigate-on-submit';
-import navigateOnBack         from '../../helpers/navigate-on-back';
-import * as dataPresent       from '../../helpers/data-present';
+import Presentation           from "../../presentations/intro/senior-id-page.jsx";
 
-const Form = (props) => {
-  let onSubmit          =   navigateOnSubmit('/real-id', props);
-  let onBack            =   navigateOnBack('/what-do-you-want-to-do-today', props);
-  let continueDisabled  =   !(dataPresent.value(props.seniorID));
+import * as dataPresent       from '../../helpers/data-present';
+import handlers               from '../../helpers/handlers';
+
+const Page = (props) => {
+  let onSubmit          =   handlers.navigateOnSubmit('/real-id', props);
+  let onBack            =   handlers.navigateOnBack('/what-do-you-want-to-do-today', props);
+  let continueDisabled  =   !dataPresent.value(props.seniorID);
 
   return (
-    <form onSubmit={onSubmit}>
-      <SeniorIDPage
-        {...props}
-        continueDisabled  = { continueDisabled }
-        onBack            = { onBack }
-        selectedValue     = { props.seniorID }
-      />
-    </form>
+    <Presentation
+      {...props}
+      continueDisabled  = { continueDisabled }
+      onBack            = { onBack }
+      onSubmit          = { onSubmit }
+    />
   )
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     seniorID :  state.application.seniorID
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateSeniorID, Form);
+const mapDispatchToProps = (dispatch) => {
+  const onChange   = handlers.onInputChange(updateSeniorID, dispatch);
+  const onSubmit   = handlers.onFormSubmit;
+
+  return {
+    onChange,
+    onSubmit
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

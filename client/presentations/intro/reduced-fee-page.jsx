@@ -4,7 +4,7 @@ import React from 'react';
 
 import SelectorCollection       from '../selector-collection.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
-import Page                     from '../page.jsx';
+import Page                     from '../../containers/page.jsx';
 
 import { hasMultipleCards }     from '../../helpers/data/cards';
 import { choosingReducedFee }   from '../../helpers/data/reduced-fee';
@@ -46,9 +46,7 @@ const Form = (props) => {
   return (
     <Page
       {...props}
-      pageTitle='DMV: ID application - Reduced Fee'
-      sectionNumber='1'
-      sectionName='My basics'
+      sectionKey='intro'
     >
       <div className='reduced-fee-form'>
         <h4>Are you applying for a reduced fee or free ID?</h4>

@@ -6,21 +6,18 @@ import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
+import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import SeniorIDPage             from '../../../../client/presentations/intro/senior-id-page.jsx';
 
 describe('SeniorIDPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let seniorID = '';
       let continueDisabled = !(dataPresent.value(seniorID))
@@ -32,7 +29,7 @@ describe('SeniorIDPage', function() {
         onChange
       }
     });
-    
+
     it('shows the form allowing you to choose to get a senior ID', function() {
       let component = render(
         <Wrapper>
@@ -65,8 +62,6 @@ describe('SeniorIDPage', function() {
       assert.equal(component.find('.arrow-button .forward disabled'), false);
       assert.ok(component.find('.arrow-button forward'));
     });
-
   });
-
 });
 

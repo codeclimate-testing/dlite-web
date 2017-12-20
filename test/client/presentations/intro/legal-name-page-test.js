@@ -6,6 +6,7 @@ import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
+import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
@@ -13,15 +14,11 @@ import * as dataPresent         from '../../../../client/helpers/data-present';
 import NamePage                 from '../../../../client/presentations/intro/name-page.jsx';
 
 describe('NamePage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let legalName = {
         firstName: '',
@@ -38,7 +35,7 @@ describe('NamePage', function() {
         onChange
       }
     });
-    
+
     it('shows form for first name, middle name, last name, and suffix', function() {
       let component = render(
         <Wrapper>
@@ -78,8 +75,6 @@ describe('NamePage', function() {
       assert.equal(component.find('.arrow-button .forward disabled'), false);
       assert.ok(component.find('.arrow-button forward'));
     });
-
   });
-
 });
 

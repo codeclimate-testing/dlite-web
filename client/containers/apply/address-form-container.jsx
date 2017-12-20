@@ -9,8 +9,8 @@ import InterstitialAddress          from '../../presentations/apply/interstitial
 import HomeAddress                  from "./home-address-form-container.jsx";
 import MailingAddress               from "./mailing-address-form-container.jsx";
 import connectForm                  from '../../helpers/connect-form';
-import navigateOnSubmit             from '../../helpers/navigate-on-submit';
-import navigateOnBack               from '../../helpers/navigate-on-back';
+import navigateOnSubmit             from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack               from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent             from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {

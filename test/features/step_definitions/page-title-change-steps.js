@@ -24,7 +24,7 @@ module.exports = function (world) {
   world.then('I will see page title for date of birth', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'DMV: License application - My basics'); })
+      .then((title) => { assert.equal(title, 'DMV: Card application - Get started'); })
       .then(() => { done(); })
       .catch(done);
   });

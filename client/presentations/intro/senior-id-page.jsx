@@ -3,21 +3,19 @@
 import React from 'react';
 
 import SelectorCollection from '../selector-collection.jsx';
-import NavigationButtons from '../navigation-buttons.jsx';
-import Page from '../page.jsx';
+import NavigationButtons  from '../navigation-buttons.jsx';
+import Page               from '../../containers/page.jsx';
 
 const Form = (props) => {
   return (
     <Page
       {...props}
-      pageTitle='DMV: License application - My basics'
-      sectionNumber='1'
-      sectionName='What Do You Want To Do Today'
+      sectionKey='intro'
     >
-      <div className='senior-id-form'>
+      <form onSubmit={props.onSubmit} className='senior-id-form'>
         <p>
           You qualify for a free ID card. The word "Senior Identification Card"
-        will be printed on your card.
+          will be printed on your card.
         </p>
         <h4>Would you like this card for no fee?</h4>
 
@@ -25,17 +23,15 @@ const Form = (props) => {
           <SelectorCollection
             name='seniorID'
             values={['Yes', 'No']}
+            selectedValue={props.seniorID}
             onChange={props.onChange}
-            selectedValue={props.selectedValue}
           />
-
-          <div className='unit spacer' />
         </div>
-      </div>
 
-      <NavigationButtons
-        {...props}
-      />
+        <NavigationButtons
+          {...props}
+        />
+      </form>
     </Page>
   )
 };

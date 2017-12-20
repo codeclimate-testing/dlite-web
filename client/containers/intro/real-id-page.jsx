@@ -1,13 +1,12 @@
 'use strict';
 
 import React                  from 'react';
+import { connect }            from 'react-redux';
 
 import { updateRealID }       from "../../actions/index";
-import Page                   from "../../presentations/intro/real-id-page.jsx";
+import Presentation           from "../../presentations/intro/real-id-page.jsx";
 
-import connectForm            from '../../helpers/connect-form';
-import navigateOnSubmit       from '../../helpers/navigate-on-submit';
-import navigateOnBack         from '../../helpers/navigate-on-back';
+import handlers               from '../../helpers/handlers';
 
 import {
   validToContinue,
@@ -17,17 +16,17 @@ import {
   eligibleForReducedFee
 } from '../../helpers/data/reduced-fee';
 
-const ConnectedForm = (props) => {
+const Page = (props) => {
   let address = '/get-started';
   if (eligibleForReducedFee(props)) {
     address = '/reduced-fee';
   };
 
-  let onSubmit          = navigateOnSubmit(address, props);
-  let onBack            = navigateOnBack(props);
+  let onSubmit          = handlers.navigateOnSubmit(address, props);
+  let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = !validToContinue(props);
 
-  return <Page
+  return <Presentation
     {...props}
     onSubmit={onSubmit}
     onBack={onBack}
@@ -35,12 +34,22 @@ const ConnectedForm = (props) => {
   />;
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     realID :    state.application.realID,
     cardType:   state.application.cardType,
     seniorID:   state.application.seniorID
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateRealID, ConnectedForm);
+const mapDispatchToProps = (dispatch) => {
+  const onChange   = handlers.onInputChange(updateRealID, dispatch);
+  const onSubmit   = handlers.onFormSubmit;
+
+  return {
+    onChange,
+    onSubmit
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

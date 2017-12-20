@@ -7,16 +7,16 @@ import {
   updateOptOut
 } from '../../actions/index';
 
-import onInputChange from '../../helpers/on-input-change';
-import onFormSubmit from '../../helpers/on-form-submit';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
-import navigateOnBack from '../../helpers/navigate-on-back';
+import onInputChange from '../../helpers/handlers/on-input-change';
+import onFormSubmit from '../../helpers/handlers/on-form-submit';
+import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent from '../../helpers/data-present';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {
   onFocusGenerator,
   onBlurGenerator
-} from '../../helpers/on-focus-changes';
+} from '../../helpers/handlers/on-focus-change';
 import OptOutForm from '../../presentations/voter-registration/opt-out-form.jsx';
 import PreregOptOutForm from '../../presentations/voter-registration/opt-out-prereg-form.jsx';
 

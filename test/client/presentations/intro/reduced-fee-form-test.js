@@ -7,19 +7,16 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
+import store                    from '../../support/page-store';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import ReducedFeePage           from '../../../../client/presentations/intro/reduced-fee-page.jsx';
 
 describe('Reduced Fee Page', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let reducedFee = {
         ID: '',
@@ -39,7 +36,7 @@ describe('Reduced Fee Page', function() {
         continueDisabled
       }
     });
-    
+
     it('shows a form asking if I am applying for a reduced fee ID', function() {
       let component = render(
         <Wrapper>
@@ -51,7 +48,6 @@ describe('Reduced Fee Page', function() {
     });
 
     it('next button is disabled', function() {
-      
       let component = render(
         <Wrapper>
           <ReducedFeePage  {...props} />
@@ -85,8 +81,6 @@ describe('Reduced Fee Page', function() {
       assert.ok(component.find('label[for="formYes"]').length, 'form Yes button missing');
       assert.ok(component.find('label[for="formNo"]').length, 'form No button missing');
     });
-
   });
-
 });
 

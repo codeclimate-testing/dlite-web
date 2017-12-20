@@ -9,8 +9,8 @@ import EyeColor                         from '../../presentations/apply/eye-colo
 import HairColor                        from '../../presentations/apply/hair-color.jsx';
 import Sex                              from '../../presentations/apply/sex.jsx';
 import connectForm                      from '../../helpers/connect-form';
-import navigateOnSubmit                 from '../../helpers/navigate-on-submit';
-import navigateOnBack                   from '../../helpers/navigate-on-back';
+import navigateOnSubmit                 from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack                   from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent                 from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {

@@ -6,8 +6,8 @@ import { updateCitizenStatus } from '../../actions/index';
 import CitizenStatusForm from '../../presentations/voter-registration/citizen-status-form.jsx';
 import PreRegCitizenStatusForm from '../../presentations/voter-registration/citizen-status-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
-import navigateOnBack from '../../helpers/navigate-on-back';
+import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack from '../../helpers/handlers/navigate-on-back';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {
   pageTitle,

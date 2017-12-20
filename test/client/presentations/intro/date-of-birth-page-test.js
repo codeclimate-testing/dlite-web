@@ -6,21 +6,18 @@ import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
+import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import DateOfBirthPage          from '../../../../client/presentations/intro/date-of-birth-page.jsx';
 
 describe('DateOfBirthPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let dateOfBirth = {
         year: '',
@@ -38,7 +35,7 @@ describe('DateOfBirthPage', function() {
         onChange
       }
     });
-    
+
     it('shows form for date of birth', function() {
       let component = render(
         <Wrapper>
@@ -76,8 +73,6 @@ describe('DateOfBirthPage', function() {
       assert.equal(component.find('.arrow-button .forward disabled'), false);
       assert.ok(component.find('.arrow-button forward'));
     });
-
   });
-
 });
 

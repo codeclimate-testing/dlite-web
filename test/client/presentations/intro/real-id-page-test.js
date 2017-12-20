@@ -9,14 +9,11 @@ import sinon from 'sinon';
 
 import RealIdPage from '../../../../client/presentations/intro/real-id-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
+import pageStore from '../../support/page-store';
 
 describe('RealIdPage', function() {
-  let store = {
-    ui: {
-      accordions: []
-    }
-  };
-
+  let store = Object.assign({}, pageStore);
+  store.ui.accordions = [];
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -33,6 +30,7 @@ describe('RealIdPage', function() {
       };
 
       let accordions = {};
+      let section = {};
 
       let onChange = sinon.spy();
 

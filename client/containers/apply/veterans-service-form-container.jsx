@@ -8,8 +8,8 @@ import VeteransBenefits           from '../../presentations/apply/veterans-benef
 import VeteransIdentifier         from '../../presentations/apply/veterans-identifier-form.jsx';
 import NavigationButtons          from '../../presentations/navigation-buttons.jsx';
 import connectForm                from '../../helpers/connect-form';
-import navigateOnSubmit           from '../../helpers/navigate-on-submit';
-import navigateOnBack             from '../../helpers/navigate-on-back';
+import navigateOnSubmit           from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack             from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent           from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {

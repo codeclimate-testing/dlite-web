@@ -5,16 +5,14 @@ import React from 'react';
 import RealIdForm             from "./real-id/selectors.jsx";
 import RealIdDesignationForm  from "./real-id/choose-card-selectors.jsx";
 import NavigationButtons      from '../navigation-buttons.jsx';
-import Page                   from '../page.jsx';
+import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
 
 const Form = (props) => {
   return (
     <Page
       {...props}
-      pageTitle='DMV: License application - My basics'
-      sectionNumber='1'
-      sectionName='My basics'
+      sectionKey='intro'
     >
       <form onSubmit={props.onSubmit}>
         <RealIdForm

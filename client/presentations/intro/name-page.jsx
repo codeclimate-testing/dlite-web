@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Page               from '../page.jsx';
+import Page               from '../../containers/page.jsx';
 import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
@@ -10,6 +10,7 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 const LegalNameForm = (props) => {
   return (
     <Page
+      sectionKey='intro'
       {...props}
     >
       <div className='legal-name-form'>

@@ -7,7 +7,6 @@ import { toggleAccordion } from '../actions';
 import Presentation from '../presentations/accordion.jsx';
 
 const Accordion = (props) => {
-
   let accordionState = 'closed';
 
   props.accordions.forEach((d) => {

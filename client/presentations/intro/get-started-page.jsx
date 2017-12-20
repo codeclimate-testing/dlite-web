@@ -2,7 +2,7 @@
 
 import React        from 'react';
 
-import Page         from '../page.jsx';
+import Page         from '../../containers/page.jsx';
 import LinkButton   from '../link-button.jsx';
 import BackButton   from '../back-button.jsx';
 

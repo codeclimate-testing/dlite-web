@@ -6,12 +6,10 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import sinon                    from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
+import store                    from '../../support/page-store';
 import YouthDLNotificationPage  from '../../../../client/presentations/intro/youth-license-notification-page.jsx';
 
 describe('YouthDLNotificationPage', function() {
-  let store = {
-    ui: {}
-  };
   const Wrapper = wrapperGenerator(store);
 
   it('should render the right intro header if the license seeker is under 15', function() {

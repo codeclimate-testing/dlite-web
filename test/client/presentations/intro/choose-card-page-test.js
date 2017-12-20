@@ -10,19 +10,14 @@ import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import ChooseCardPage           from '../../../../client/presentations/intro/choose-card-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('ChooseCardPage', function() {
-  let store = {
-    ui: {
-
-    }
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let cardType = {
         ID: '',
@@ -36,7 +31,7 @@ describe('ChooseCardPage', function() {
         onChange
       }
     });
-    
+
     it('shows a button for ID and a button for DL', function() {
       let component = render(
         <Wrapper>
@@ -51,7 +46,7 @@ describe('ChooseCardPage', function() {
       let continueDisabled  =   !(dataPresent.cardType(props.cardType));
       let component = render(
         <Wrapper>
-          <ChooseCardPage {...props} 
+          <ChooseCardPage {...props}
           continueDisabled = { continueDisabled }
           />
         </Wrapper>
@@ -65,7 +60,7 @@ describe('ChooseCardPage', function() {
 
       let component = render(
         <Wrapper>
-          <ChooseCardPage {...props} 
+          <ChooseCardPage {...props}
           continueDisabled = { continueDisabled }
           />
         </Wrapper>
@@ -74,7 +69,5 @@ describe('ChooseCardPage', function() {
       assert.equal(component.find('.arrow-button .forward disabled'), false);
       assert.ok(component.find('.arrow-button forward'));
     });
-
   });
-
 });

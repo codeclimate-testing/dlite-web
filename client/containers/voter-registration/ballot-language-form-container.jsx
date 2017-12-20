@@ -6,8 +6,8 @@ import { updateBallotLanguage } from '../../actions/index';
 import BallotLanguageForm from '../../presentations/voter-registration/ballot-language-form.jsx';
 import BallotLanguageFormPreReg from '../../presentations/voter-registration/ballot-language-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
-import navigateOnSubmit from '../../helpers/navigate-on-submit';
-import navigateOnBack from '../../helpers/navigate-on-back';
+import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack from '../../helpers/handlers/navigate-on-back';
 import { isPreregistering } from '../../helpers/calculate-age';
 import {
   pageTitle,

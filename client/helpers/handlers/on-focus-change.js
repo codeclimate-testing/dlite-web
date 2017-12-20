@@ -3,7 +3,7 @@
 import {
   blurPageElement,
   focusPageElement
-} from '../actions';
+} from '../../actions';
 
 export const onBlurGenerator = (dispatch) => {
   return () => {

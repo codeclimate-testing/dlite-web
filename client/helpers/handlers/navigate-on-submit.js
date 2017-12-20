@@ -1,6 +1,6 @@
 'use strict';
 
-import alicePath from './alice-path';
+import alicePath from '../alice-path';
 
 const onSubmitGenerator = (address, props) => {
   return (event) => {

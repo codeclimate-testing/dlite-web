@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Page               from '../page.jsx';
+import Page               from '../../containers/page.jsx';
 import RadioCollection    from '../radio-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
@@ -54,9 +54,7 @@ const Form = (props) => {
 
   return (
     <Page
-      pageTitle='DMV: License application'
-      sectionNumber='1'
-      sectionName='My basics'
+      sectionKey='intro'
       {...props}
     >
       <div className='youth-license-notification'>

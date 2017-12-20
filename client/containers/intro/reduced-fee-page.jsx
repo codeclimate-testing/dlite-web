@@ -1,18 +1,17 @@
-
 'use strict';
 
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { updateReducedFee }   from "../../actions/index";
+import handlers             from '../../helpers/handlers';
+import * as dataPresent     from '../../helpers/data-present';
+
 import Presentation           from "../../presentations/intro/reduced-fee-page.jsx";
-import connectForm            from '../../helpers/connect-form';
-import navigateOnSubmit       from '../../helpers/navigate-on-submit';
-import navigateOnBack         from '../../helpers/navigate-on-back';
-import * as dataPresent       from '../../helpers/data-present';
+import { updateReducedFee }   from "../../actions/index";
 
 const Page = (props) => {
-  let onSubmit          =   navigateOnSubmit('/get-started', props);
-  let onBack            =   navigateOnBack(props);
+  let onSubmit          =   handlers.navigateOnSubmit('/get-started', props);
+  let onBack            =   handlers.navigateOnBack(props);
   let continueDisabled  =   !dataPresent.reducedFee(props.reducedFee);
 
   return (
@@ -25,11 +24,21 @@ const Page = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     reducedFee:   state.application.reducedFee,
     cardType:     state.application.cardType
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateReducedFee, Page);
+const mapDispatchToProps = (dispatch) => {
+  const onChange   = handlers.onInputChange(updateReducedFee, dispatch);
+  const onSubmit   = handlers.onFormSubmit;
+
+  return {
+    onChange,
+    onSubmit
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

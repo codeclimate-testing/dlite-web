@@ -8,8 +8,8 @@ import NavigationButtons                   from '../../presentations/navigation-
 import LicenseAndIdHistory                 from "../../presentations/apply/license-and-id-history-form.jsx";
 import EnterLicenseAndIdHistory            from "../../presentations/apply/enter-license-and-id-history-form.jsx";
 import connectForm                         from '../../helpers/connect-form';
-import navigateOnSubmit                    from '../../helpers/navigate-on-submit';
-import navigateOnBack                      from '../../helpers/navigate-on-back';
+import navigateOnSubmit                    from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack                      from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent                    from '../../helpers/data-present';
 
 const ConnectedForm = (props) => {

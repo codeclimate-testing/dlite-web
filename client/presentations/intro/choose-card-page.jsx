@@ -2,17 +2,15 @@
 
 import React from 'react';
 
-import Page               from '../page.jsx';
+import Page               from '../../containers/page.jsx';
 import CheckboxSelector   from '../checkbox-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
   return (
     <Page
+      sectionKey='intro'
       {...props}
-      pageTitle='DMV: License application'
-      sectionNumber='1'
-      sectionName='My basics'
     >
       <div className='choose-card-form'>
         <h4>What type of card would you like?</h4>

@@ -2,18 +2,16 @@
 
 import React from 'react';
 
-import Page               from '../page.jsx';
-import TextInput        from '../text-input.jsx';
-import NumberInput      from '../number-input.jsx';
+import Page               from '../../containers/page.jsx';
+import TextInput          from '../text-input.jsx';
+import NumberInput        from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Presentation = (props) => {
   return (
     <Page
+      sectionKey='intro'
       {...props}
-      pageTitle='DMV: License application - My basics'
-      sectionNumber='1'
-      sectionName='My basics'
     >
       <div className='date-of-birth-form'>
         <h4>What's your date of birth?</h4>

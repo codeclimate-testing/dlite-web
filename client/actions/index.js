@@ -48,7 +48,8 @@ export const TYPES = {
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
-  TOGGLE_ACCORDION:                       'TOGGLE_ACCORDION'
+  TOGGLE_ACCORDION:                       'TOGGLE_ACCORDION',
+  CHANGE_SECTION:                         'CHANGE_SECTION'
 };
 
 export const createApplicationID              = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -81,3 +82,4 @@ export const updateContactMethods             = generateFormAction(TYPES.UPDATE_
 export const focusPageElement                 = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                  = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);
 export const toggleAccordion                  = generateValueAction(TYPES.TOGGLE_ACCORDION);
+export const changeSection                    = generateValueAction(TYPES.CHANGE_SECTION);

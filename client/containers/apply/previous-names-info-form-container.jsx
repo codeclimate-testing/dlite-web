@@ -5,7 +5,7 @@ import React from 'react';
 import { updatePreviousNamesInfo }  from "../../actions/index";
 import FormPresentation             from "../../presentations/apply/previous-names-info-form.jsx";
 import connectForm                  from '../../helpers/connect-form';
-import navigateOnSubmit             from '../../helpers/navigate-on-submit';
+import navigateOnSubmit             from '../../helpers/handlers/navigate-on-submit';
 import * as dataPresent             from '../../helpers/data-present';
 
 const Form = (props) => {

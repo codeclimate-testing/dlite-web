@@ -5,8 +5,8 @@ import React from 'react';
 import { updateTraitsHeightWeight }  from "../../actions/index";
 import FormPresentation              from "../../presentations/apply/traits-height-weight-form.jsx";
 import connectForm                   from '../../helpers/connect-form';
-import navigateOnSubmit              from '../../helpers/navigate-on-submit';
-import navigateOnBack                from '../../helpers/navigate-on-back';
+import navigateOnSubmit              from '../../helpers/handlers/navigate-on-submit';
+import navigateOnBack                from '../../helpers/handlers/navigate-on-back';
 import * as dataPresent              from '../../helpers/data-present';
 
 const Form = (props) => {
