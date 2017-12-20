@@ -2,13 +2,12 @@
 
 import React from 'react';
 
-import SelectorCollection from '../selector-collection.jsx';
-import { mustChooseCard } from '../../helpers/data/real-id';
-
-const VALUES = ['ID', 'DL'];
+import SelectorCollection from '../../selector-collection.jsx';
+import { mustChooseCard } from '../../../helpers/data/real-id';
 
 const Form = (props) => {
   if (!mustChooseCard(props)) { return null; }
+
   return (
     <div className='real-id-form'>
       <h4>Which card would you like to fly with?</h4>
@@ -19,7 +18,7 @@ const Form = (props) => {
       <div className='row inner-bottom'>
         <SelectorCollection
           name='realIdDesignation'
-          values={VALUES}
+          values={['ID', 'DL']}
           onChange={ props.onChange }
           selectedValue={ props.selectedValue }
         />

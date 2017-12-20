@@ -12,10 +12,10 @@ let pageTitle = 'DMV: License application - My basics'
 const LegalNameForm = (props) => {
   return (
     <Page
+      {...props}
       pageTitle={pageTitle}
       sectionNumber='1'
       sectionName='My basics'
-      {...props}
     >
       <div className='legal-name-form'>
         <h4>What’s your full, legal name?</h4>

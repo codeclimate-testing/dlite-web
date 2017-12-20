@@ -10,10 +10,10 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 const Presentation = (props) => {
   return (
     <Page
+      {...props}
       pageTitle='DMV: License application - My basics'
       sectionNumber='1'
       sectionName='My basics'
-      {...props}
     >
       <div className='date-of-birth-form'>
         <h4>What's your date of birth?</h4>

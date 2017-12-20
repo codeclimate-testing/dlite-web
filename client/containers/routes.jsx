@@ -13,7 +13,7 @@ import DateOfBirth                            from './intro/date-of-birth-page.j
 import WhatDoYouWantToDoToday                 from './intro/what-do-you-want-to-do-today-page.jsx';
 import SeniorID                               from './intro/senior-id-page.jsx';
 import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
-import RealID                                 from './apply/real-id-container.jsx';
+import RealID                                 from './intro/real-id-page.jsx';
 import ReducedFee                             from './apply/reduced-fee-container.jsx';
 import Intro                                  from './apply/get-started-container.jsx';
 import Address                                from './apply/address-form-container.jsx';

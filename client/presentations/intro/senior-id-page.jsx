@@ -9,10 +9,10 @@ import Page from '../page.jsx';
 const Form = (props) => {
   return (
     <Page
+      {...props}
       pageTitle='DMV: License application - My basics'
       sectionNumber='1'
       sectionName='What Do You Want To Do Today'
-      {...props}
     >
       <div className='senior-id-form'>
         <p>

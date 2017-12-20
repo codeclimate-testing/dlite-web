@@ -2,14 +2,11 @@
 
 import React from 'react';
 
-import RealIdForm             from "./real-id-form.jsx";
-import RealIdDesignationForm  from "./real-id-designation-form.jsx";
+import RealIdForm             from "./real-id/selectors.jsx";
+import RealIdDesignationForm  from "./real-id/choose-card-selectors.jsx";
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
-
-/*
-*/
 
 const Form = (props) => {
   return (

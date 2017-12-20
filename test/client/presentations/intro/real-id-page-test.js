@@ -1,16 +1,17 @@
 'use strict';
 
 import assert from 'assert';
-
 import 'jsdom-global/register';
 import React from 'react';
+import sinon from 'sinon';
+
 import { createMockStore } from 'redux-test-utils';
 import { Provider } from "react-redux";
 import { render } from 'enzyme';
-import sinon from 'sinon';
 import { MemoryRouter } from 'react-router-dom'
 
-import RealIdPage from '../../../client/presentations/apply/real-id-page.jsx';
+import RealIdPage from '../../../../client/presentations/intro/real-id-page.jsx';
+import wrapperGenerator from '../support/wrapper';
 
 describe('RealIdPage', function() {
   let store = {
@@ -19,15 +20,7 @@ describe('RealIdPage', function() {
     }
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
@@ -50,7 +43,7 @@ describe('RealIdPage', function() {
         cardType,
         realID,
         accordions,
-        onChange
+        onChange,
       }
     });
 

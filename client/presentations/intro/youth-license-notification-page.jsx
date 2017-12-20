@@ -5,7 +5,8 @@ import Page               from '../page.jsx';
 import RadioCollection    from '../radio-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
-import { ageChecks }   from '../../helpers/calculate-age';
+import { ageChecks }       from '../../helpers/calculate-age';
+import { validToContinue } from '../../helpers/data/youth';
 
 const FormHeader = (props) => {
   return (
@@ -36,7 +37,7 @@ const YouthFormHeader = (props) => {
 };
 
 let ErrorMessage = (props) => {
-  if(props.cardType.youthIDInstead !== 'No' || ageChecks.GreaterThanEqual15(props.dateOfBirth)) { return null; }
+  if (validToContinue(props)) { return null; }
 
   return (
     <h4>Ok, please come back when you turn 15.</h4>
