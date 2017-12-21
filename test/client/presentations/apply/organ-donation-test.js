@@ -1,18 +1,13 @@
-// radio buttons for donating organs
-// radio buttons for donating money
-
-// test the nextAddress variable based on different ages
 'use strict';
 
 import assert                   from 'assert';
 
 import 'jsdom-global/register';
 import React                    from 'react';
-import { createMockStore }      from 'redux-test-utils';
-import { Provider }             from "react-redux";
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import { MemoryRouter }         from 'react-router-dom'
+import wrapperGenerator         from '../../support/wrapper';
+import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import OrganPage                from '../../../../client/presentations/apply/donate-organ-form.jsx';
 
@@ -21,15 +16,7 @@ describe('OrganPage', function() {
     ui: {}
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;

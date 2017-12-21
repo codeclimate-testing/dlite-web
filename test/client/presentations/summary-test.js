@@ -60,7 +60,7 @@ describe('Summary section', function() {
           legalName={legalName }
         />
       )
-      assert.equal(component.find('.summary-section')[0].children.length, 4, true);
+      assert.equal(component.find('.summary-section')._root[0].children.length, 4, true);
     });
   });
   describe('DateOfBirth', function() {

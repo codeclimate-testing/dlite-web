@@ -1,20 +1,12 @@
-// I will see labels for sex, eye color and hair color
-// radio buttons for donating organs
-// radio buttons for donating money
-
-// test the nextAddress variable based on different ages
 'use strict';
 
 import assert                   from 'assert';
-
 import 'jsdom-global/register';
 import React                    from 'react';
-import { createMockStore }      from 'redux-test-utils';
-import { Provider }             from "react-redux";
+import wrapperGenerator         from '../../support/wrapper';
+import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import { MemoryRouter }         from 'react-router-dom'
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import data                     from '../../../../server/helpers/client-default-state.js';
 import PhysicalTraitsPage       from '../../../../client/containers/apply/physical-traits-form-container.jsx';
 
@@ -26,15 +18,7 @@ describe('PhysicalTraitsPage', function() {
     }
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;

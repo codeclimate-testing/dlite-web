@@ -6,9 +6,6 @@ import configure from '../../support/configure-enzyme';
 import { render } from 'enzyme';
 import React from 'react';
 import sinon from 'sinon';
-import { createMockStore } from 'redux-test-utils';
-import { Provider } from "react-redux";
-import { MemoryRouter } from 'react-router-dom'
 
 import RealIdPage from '../../../../client/presentations/intro/real-id-page.jsx';
 import wrapperGenerator from '../../support/wrapper';

@@ -1,13 +1,13 @@
 'use strict';
 
 import assert                   from 'assert';
-
-import React from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import sinon from 'sinon';
-import {MemoryRouter} from 'react-router-dom';
-
+import 'jsdom-global/register';
+import React                    from 'react';
+import configure                from '../../support/configure-enzyme';
+import { render }               from 'enzyme';
+import { spy }                  from 'sinon';
+import * as dataPresent         from '../../../../client/helpers/data-present';
+import wrapperGenerator         from '../../support/wrapper';
 import LicenseIDHistoryPage     from '../../../../client/presentations/apply/license-and-id-history-form.jsx';
 
 describe('LicenseIDHistoryPage', function() {
@@ -15,15 +15,7 @@ describe('LicenseIDHistoryPage', function() {
     ui: {}
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;

@@ -1,12 +1,12 @@
 'use strict';
 
-import assert from 'assert';
+import assert     from 'assert';
 
 import 'jsdom-global/register';
-import React from 'react';
+import React      from 'react';
 import configure  from '../support/configure-enzyme';
 import { render } from 'enzyme';
-import sinon from 'sinon';
+import sinon      from 'sinon';
 
 import AddressForm from '../../../client/presentations/address-template.jsx';
 

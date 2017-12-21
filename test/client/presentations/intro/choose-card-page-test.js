@@ -4,13 +4,11 @@ import assert                   from 'assert';
 
 import 'jsdom-global/register';
 import React                    from 'react';
-import { createMockStore }      from 'redux-test-utils';
-import { Provider }             from "react-redux";
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
-
+import wrapperGenerator         from '../../support/wrapper';
+import configure                from '../../support/configure-enzyme';
 import ChooseCardPage           from '../../../../client/presentations/intro/choose-card-page.jsx';
 
 describe('ChooseCardPage', function() {
@@ -20,15 +18,7 @@ describe('ChooseCardPage', function() {
     }
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;

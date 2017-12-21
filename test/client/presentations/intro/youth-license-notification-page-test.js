@@ -1,22 +1,18 @@
 'use strict';
 
-import assert from 'assert';
-import React from 'react';
-import configure from '../../support/configure-enzyme';
-import { render } from 'enzyme';
-import sinon from 'sinon';
-import { MemoryRouter } from 'react-router-dom';
-
-import YouthDLNotificationPage from '../../../../client/presentations/intro/youth-license-notification-page.jsx';
+import assert                   from 'assert';
+import React                    from 'react';
+import configure                from '../../support/configure-enzyme';
+import { render }               from 'enzyme';
+import sinon                    from 'sinon';
+import wrapperGenerator         from '../../support/wrapper';
+import YouthDLNotificationPage  from '../../../../client/presentations/intro/youth-license-notification-page.jsx';
 
 describe('YouthDLNotificationPage', function() {
-  let Wrapper = (props) => {
-    return (
-      <MemoryRouter>
-        {props.children}
-      </MemoryRouter>
-    );
+  let store = {
+    ui: {}
   };
+  const Wrapper = wrapperGenerator(store);
 
   it('should render the right intro header if the license seeker is under 15', function() {
     let today = new Date();

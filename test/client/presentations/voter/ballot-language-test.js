@@ -4,8 +4,8 @@ import assert                   from 'assert';
 
 import 'jsdom-global/register';
 import React                    from 'react';
-import { createMockStore }      from 'redux-test-utils';
-import { Provider }             from "react-redux";
+import wrapperGenerator         from '../../support/wrapper';
+import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
@@ -17,15 +17,7 @@ describe('BallotLanguagePage', function() {
     ui: {}
   };
 
-  const Wrapper = (props) => {
-    return(
-      <Provider store={createMockStore(store)}>
-        <MemoryRouter>
-          {props.children}
-        </MemoryRouter>
-      </Provider>
-    );
-  };
+  const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
