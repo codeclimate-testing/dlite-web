@@ -14,7 +14,7 @@ const SectionHeader = (props) => {
   return (
     <div className='section-header row'>
       <h3>
-        <NumberPrefix {...props} />
+        <NumberPrefix number={props.number} />
         {props.name}
       </h3>
       <hr />

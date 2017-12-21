@@ -7,16 +7,13 @@ import SelectorCollection     from '../selector-collection.jsx';
 import SectionHeader          from '../section-header.jsx';
 import Page                   from '../page.jsx';
 
-const OPTIONS = ['Yes', 'No'];
-let pageTitle = "DMV: License application - My History";
-
 const Form = (props) => {
   return (
     <Page
-      pageTitle={pageTitle}
+      {...props}
+      pageTitle='DMV: License application - My history'
       sectionNumber='2'
       sectionName='My history'
-      {...props}
     >
       <div className='veterans-questionnaire-form'>
         <h4>Have you ever served in the United States Military?</h4>
@@ -24,7 +21,7 @@ const Form = (props) => {
           <div className='input-container'>
             <SelectorCollection
               name='isVeteran'
-              values={OPTIONS}
+              values={['Yes', 'No']}
               onChange={ props.onChange }
               selectedValue={props.selectedValue}
             />

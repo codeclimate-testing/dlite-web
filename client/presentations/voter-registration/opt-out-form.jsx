@@ -7,9 +7,9 @@ import RadioSelector from '../radio-selector.jsx';
 const OptOutForm = (props) => {
   return (
     <OptOutRadioPage
+      {...props}
       pageTitle='DMV: License application - Voting registration'
       sectionName='Voting registration'
-      {...props}
     >
       <RadioSelector
         value='new'

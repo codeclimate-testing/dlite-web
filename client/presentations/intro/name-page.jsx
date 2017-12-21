@@ -7,18 +7,13 @@ import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
-let pageTitle = 'DMV: License application - My basics'
-
 const LegalNameForm = (props) => {
   return (
     <Page
       {...props}
-      pageTitle={pageTitle}
-      sectionNumber='1'
-      sectionName='My basics'
     >
       <div className='legal-name-form'>
-        <h4>What’s your full, legal name?</h4>
+        <h4>What's your full, legal name?</h4>
         <form onSubmit={props.onSubmit}>
           <TextInput
             identifier='firstName'

@@ -10,9 +10,7 @@ const Intro = (props) => {
   const linkAddress = '/my-basics/address';
 
   return (
-    <Page
-      {...props}
-    >
+    <Page {...props} >
       <div className='intro-info'>
         <h3>Welcome to the Online Driver License application!</h3>
 
