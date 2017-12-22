@@ -140,11 +140,9 @@ label.button.tap.selected {
 // ------
 
 
-// radio and checboxes
-$selector-rest: #2D3FCA;
-
 .choice-selector {
   @include line;
+  margin-bottom: 12px;
 
   .outline-container {
     @include line;
@@ -209,9 +207,6 @@ $selector-rest: #2D3FCA;
 }
 
 // accordians
-
-$accordion-color: #E4E4E4;
-
 .accordion {
   margin: 2px 0;
   @include rounded;
@@ -261,7 +256,7 @@ $accordion-color: #E4E4E4;
   &.hover,
   &:hover {
     .accordion-header {
-      background-color: #BDBDBD;
+      background-color: $accordion-hover;
     }
   }
 }

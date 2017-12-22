@@ -23,6 +23,10 @@ $neutral-30: mix($lightest-color, $darkest-color, 70%);
 $neutral-20: mix($lightest-color, $darkest-color, 80%);
 $neutral-10: mix($lightest-color, $darkest-color, 90%);
 
+$selector-rest: #2D3FCA;
+$accordion-color: #E4E4E4;
+$accordion-hover: #BDBDBD;
+
 // Theme based color
 $primary:        $dark-blue;
 $primary-light:  lighten($primary, 5%);
