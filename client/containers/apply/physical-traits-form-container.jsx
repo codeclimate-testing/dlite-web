@@ -1,54 +1,48 @@
 'use strict';
 
-import React from 'react';
+import React                        from 'react';
+import { connect }                  from 'react-redux';
 
-import { updatePhysicalTraits }         from '../../actions/index';
-import HomeLink                         from '../../presentations/home-link.jsx';
-import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
-import EyeColor                         from '../../presentations/apply/eye-color.jsx';
-import HairColor                        from '../../presentations/apply/hair-color.jsx';
-import Sex                              from '../../presentations/apply/sex.jsx';
-import connectForm                      from '../../helpers/connect-form';
-import navigateOnSubmit                 from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                   from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent                 from '../../helpers/data-present';
+import handlers                     from '../../helpers/handlers';
+import * as dataPresent             from '../../helpers/data-present';
 
-const ConnectedForm = (props) => {
+import { updatePhysicalTraits }     from '../../actions/index';
+import Presentation                 from '../../presentations/apply/physical-traits-page.jsx';
+
+const Page = (props) => {
   let continueDisabled  = !(dataPresent.physicalTraits(props.physicalTraits))
-  let onSubmit          = navigateOnSubmit('/my-basics/traits-height-weight', props);
-  let onBack            = navigateOnBack(props);
+  let onSubmit          = handlers.navigateOnSubmit('/my-basics/traits-height-weight', props);
+  let onBack            = handlers.navigateOnBack(props);
 
   return (
-    <div className="physical-traits-form">
-      <form onSubmit={onSubmit}>
-       <Sex
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.sex}
-        />
-        <br></br>
-        <EyeColor
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.eyeColor}
-        />
-        <br></br>
-        <HairColor
-          onChange      = {props.onChange}
-          selectedValue = {props.physicalTraits.hairColor}
-          onBack        = {onBack}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Presentation
+      {...props}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
+    />
   );
 }
 
 function mapStateToProps(state) {
   return {
-    physicalTraits: state.application.physicalTraits
+    physicalTraits: state.application.physicalTraits,
+    focused:        state.ui.focus
   };
-}
+};
 
-export default connectForm(mapStateToProps, updatePhysicalTraits, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updatePhysicalTraits, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

@@ -7,26 +7,28 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import data                     from '../../../../server/helpers/client-default-state.js';
-import PhysicalTraitsPage       from '../../../../client/containers/apply/physical-traits-form-container.jsx';
+import * as dataPresent         from '../../../../client/helpers/data-present';
+import PhysicalTraitsPage       from '../../../../client/presentations/apply/physical-traits-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('PhysicalTraitsPage', function() {
-  let store = {
-    ui: {},
-    application: {
-      physicalTraits: data.application.physicalTraits
-    }
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
     
     beforeEach(function() {
+      let physicalTraits = {
+        sex: '',
+        eyeColor: '',
+        hairColor: ''
+      };
+      let continueDisabled = !(dataPresent.physicalTraits(physicalTraits));
       let onChange = spy();
 
       props = {
+        physicalTraits,
+        continueDisabled,
         onChange
       }
     });
@@ -51,20 +53,24 @@ describe('PhysicalTraitsPage', function() {
       assert.ok(component.find('.arrow-button .forward disabled'));
     });
 
-    // it('entering physical traits makes next button no longer disabled', function() {
-    //   store.application.physicalTraits.sex = 'Female';
-    //   store.application.physicalTraits.eyeColor = 'Gray';
-    //   store.application.physicalTraits.hairColor = 'Bald';
+    it('entering physical traits makes next button no longer disabled', function() {
+      props.physicalTraits = {
+        sex: 'Female',
+        eyeColor: 'Gray',
+        hairColor: 'Bald'
+      };
 
-    //   let component = render(
-    //     <Wrapper>
-    //       <PhysicalTraitsPage {...props} />
-    //     </Wrapper>
-    //   );
+      let continueDisabled = !(dataPresent.physicalTraits(props.physicalTraits));
 
-    //   assert.equal(component.find('.arrow-button .forward disabled'), false);
-    //   assert.ok(component.find('.arrow-button forward'));
-    // });
+      let component = render(
+        <Wrapper>
+          <PhysicalTraitsPage {...props} />
+        </Wrapper>
+      );
+
+      assert.equal(component.find('.arrow-button .forward disabled'), false);
+      assert.ok(component.find('.arrow-button forward'));
+    });
 
   });
 

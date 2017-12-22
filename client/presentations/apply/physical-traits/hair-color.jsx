@@ -1,7 +1,7 @@
 'use strict';
 
-import React from 'react';
-import SelectorCollection      from '../selector-collection.jsx';
+import React                  from 'react';
+import SelectorCollection     from '../../selector-collection.jsx';
 
 const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
 
