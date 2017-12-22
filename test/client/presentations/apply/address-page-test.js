@@ -8,13 +8,10 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import AddressForm              from '../../../../client/presentations/address-template.jsx';
+import AddressPage              from '../../../../client/presentations/apply/address-page.jsx';
+import store                    from '../../support/page-store';
 
-describe('NamePage', function() {
-  let store = {
-    ui: {}
-  };
-
+describe('AddressPage', function() {
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -29,30 +26,52 @@ describe('NamePage', function() {
         state: '',
         zip: ''
       };
-      let continueDisabled = !(dataPresent.homeAddressSameAsMailing(homeAddress))
-      let onChange = spy();
+      let mailingAddress = {
+        street_1: '',
+        street_2: '',
+        city: '',
+        state: '',
+        zip: ''
+      };
+      let onMailingChange = spy();
+      let onHomeChange = spy();
 
       props = {
         homeAddress,
-        continueDisabled,
-        onChange
+        mailingAddress,
+        onMailingChange,
+        onHomeChange
       }
     });
     
-    it('shows the form asking for home address', function() {
+    it('shows the form asking for home address but not mailing address', function() {
       let component = render(
         <Wrapper>
-          <AddressForm {...props} 
-            address = {props.homeAddress}
-          />
+          <AddressPage {...props} />
         </Wrapper>
       );
 
-      assert.ok(component.find('input#street_1').length, 'Street address input not found');
-      assert.ok(component.find('input#street_2').length, 'Unit or apartment input not found');
-      assert.ok(component.find('#city').length,   'City input not found');
+      assert.ok(component.find('input#homeStreet_1').length, 'Street address input not found');
+      assert.ok(component.find('input#homeStreet_2').length, 'Unit or apartment input not found');
+      assert.ok(component.find('input#homeCity').length,   'City input not found');
       assert.ok(component.find('select[name="state"]').length,  'State select not found');
-      assert.ok(component.find('#zip').length,    'State select not found');
+      assert.ok(component.find('input#homeZip').length,    'State select not found');
+      assert.ok(!component.find('.mailing-address-form').length, 'mailing address rendered');
+    });
+
+    it('shows the form asking for mailing address when user checks that mailing address is not same as home address', function() {
+      props.homeAddress.homeAddressSameAsMailing = 'No';
+      let component = render(
+        <Wrapper>
+          <AddressPage {...props} />
+        </Wrapper>
+      );
+
+      assert.ok(component.find('input#mailingStreet_1').length, 'Street address input not found');
+      assert.ok(component.find('input#mailingStreet_2').length, 'Unit or apartment input not found');
+      assert.ok(component.find('input#mailingCity').length,   'City input not found');
+      assert.ok(component.find('select[name="state"]').length,  'State select not found');
+      assert.ok(component.find('input#mailingZip').length,    'State select not found');
     });
   });
 });

@@ -1,15 +1,15 @@
 'use strict';
 
-import assert from 'assert';
+import assert       from 'assert';
 import 'jsdom-global/register';
-import configure from '../../support/configure-enzyme';
-import { render } from 'enzyme';
-import React from 'react';
-import sinon from 'sinon';
+import configure    from '../../support/configure-enzyme';
+import { render }   from 'enzyme';
+import React        from 'react';
+import sinon        from 'sinon';
 
-import RealIdPage from '../../../../client/presentations/intro/real-id-page.jsx';
+import RealIdPage   from '../../../../client/presentations/intro/real-id-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
-import pageStore from '../../support/page-store';
+import pageStore    from '../../support/page-store';
 
 describe('RealIdPage', function() {
   let store = Object.assign({}, pageStore);

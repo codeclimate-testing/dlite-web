@@ -4,8 +4,7 @@ import React                        from 'react';
 import { connect }                  from 'react-redux';
 
 import handlers                     from '../../helpers/handlers';
-import * as dataPresent             from '../../helpers/data-present';
-import { addressToCheck }           from '../../helpers/data/address.js';
+import { canContinue }              from '../../helpers/data/address.js';
 
 import { 
   updateMailingAddress,
@@ -17,8 +16,7 @@ import Presentation                 from '../../presentations/apply/address-page
 const Page = (props) => {
   let onSubmit          = handlers.navigateOnSubmit('/my-basics/physical-traits', props);
   let onBack            = handlers.navigateOnBack(props);
-
-  let continueDisabled  = !(dataPresent.address(addressToCheck(props)));
+  let continueDisabled  = !canContinue(props);
 
   return (
     <Presentation 
