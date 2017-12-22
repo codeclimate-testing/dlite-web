@@ -17,7 +17,7 @@ import RealID                                 from './intro/real-id-page.jsx';
 import ReducedFee                             from './intro/reduced-fee-page.jsx';
 import GetStarted                             from './intro/get-started-page.jsx';
 
-import Address                                from './apply/address-form-container.jsx';
+import Address                                from './apply/address-page.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';

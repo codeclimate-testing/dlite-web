@@ -3,11 +3,11 @@
 import React from 'react';
 import { connect } from "react-redux";
 
+import handlers               from '../../helpers/handlers';
+import * as dataPresent       from '../../helpers/data-present';
+
 import { updateSeniorID }     from "../../actions/index";
 import Presentation           from "../../presentations/intro/senior-id-page.jsx";
-
-import * as dataPresent       from '../../helpers/data-present';
-import handlers               from '../../helpers/handlers';
 
 const Page = (props) => {
   let onSubmit          =   handlers.navigateOnSubmit('/real-id', props);
@@ -26,17 +26,22 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    seniorID :  state.application.seniorID
+    seniorID :  state.application.seniorID,
+    focused:    state.ui.focus
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateSeniorID, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onChange  = handlers.onInputChange(updateSeniorID, dispatch);
+  const onSubmit  = handlers.onFormSubmit;
+  const onBlur    = handlers.onBlur(dispatch);
+  const onFocus   = handlers.onFocus(dispatch);
 
   return {
     onChange,
-    onSubmit
+    onSubmit,
+    onBlur,
+    onFocus
   };
 };
 

@@ -2,10 +2,7 @@
 
 import React from 'react';
 
-import HomeLink               from '../home-link.jsx';
-import SelectorCollection     from '../selector-collection.jsx';
-
-const OPTIONS = ['Yes', 'No'];
+import SelectorCollection     from '../../selector-collection.jsx';
 
 const Form = (props) => {
   return (
@@ -14,10 +11,10 @@ const Form = (props) => {
       <h5>The DMV will print your Mailing Address on your Driver License</h5>
         <div className='input-container'>
           <SelectorCollection
-            name='homeAddressSameAsMailing'
-            values={OPTIONS}
-            onChange={ props.onChange }
-            selectedValue={props.selectedValue}
+            name          = 'homeAddressSameAsMailing'
+            values        = { ['Yes', 'No'] }
+            onChange      = { props.onChange }
+            selectedValue = { props.selectedValue }
           />
         </div>
     </div>

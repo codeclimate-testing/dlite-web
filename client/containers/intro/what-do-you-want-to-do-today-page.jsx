@@ -1,13 +1,13 @@
 'use strict';
 
-import React from 'react';
-import { connect } from 'react-redux';
+import React                from 'react';
+import { connect }          from 'react-redux';
 
 import handlers             from '../../helpers/handlers';
 import * as dataPresent     from '../../helpers/data-present';
 
-import { updateCardType }     from "../../actions/index";
-import Presentation           from "../../presentations/intro/choose-card-page.jsx";
+import { updateCardType }   from "../../actions/index";
+import Presentation         from "../../presentations/intro/choose-card-page.jsx";
 
 import {
   ageChecks,

@@ -10,8 +10,8 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 const Presentation = (props) => {
   return (
     <Page
-      sectionKey='intro'
       {...props}
+      sectionKey='intro'
     >
       <div className='date-of-birth-form'>
         <h4>What's your date of birth?</h4>

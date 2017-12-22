@@ -37,7 +37,7 @@ const reducedFee = (props) => {
 };
 
 const address = (props) => {
-  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip', 'homeAddressSameAsMailing']);
+  return hasAnyAttributes(props, ['street_1', 'street_2', 'city', 'zip']);
 };
 
 const homeAddressSameAsMailing = (props) => {
