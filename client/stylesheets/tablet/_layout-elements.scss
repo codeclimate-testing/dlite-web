@@ -1,3 +1,12 @@
+html {
+  background-color: $background-dark;
+  @include background-image(linear-gradient($background-light, $background-dark));
+  background-repeat: no-repeat;
+}
+
 #page {
+  width: 600px;
   margin: 0 auto;
+  border-left: 1px solid $background-dark;
+  border-right: 1px solid $background-dark;
 }

@@ -1,7 +1,57 @@
 #header {
-  background-color: $dark-blue;
-  color: $lightest-color;
+  background-color: $header-light;
+
+  .inner {
+    padding: 12px 20px 11px;
+  }
+
+  .primary {
+    color: $lightest-color;
+    @include background-image(linear-gradient(to right, $header-dark, $header-light));
+    font-family: $headline-2-font;
+    line-height: 27px;
+
+    .dmv-text-logo {
+      margin-top: 3px;
+      font-size: 20px;
+    }
+
+    .dmv-application-area {
+      padding-left: 15px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  }
+
+  .secondary {
+    color: $lightest-color;
+    .inner {
+      padding: 9px 20px 8px;
+    }
+
+    background-color: $header-secondary-light;
+    font-family: $headline-2-font;
+    font-size: 12px;
+
+    .section-information .name {
+      padding-left: 15px;
+    }
+
+    .account-information {
+      background-color: $header-secondary-dark;
+      @include clip-path(polygon(15% 0%, 0% 100%, 100% 100%, 100% 0%));
+
+      .log-out {
+        padding-left: 10px;
+        min-width: 60px;
+        text-align: right;
+      }
+    }
+  }
 }
+
+
+
 
 #footer {
   background-color: $dark-blue;

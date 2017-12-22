@@ -1,0 +1,84 @@
+button.arrow-button,
+a.button.arrow-button {
+  padding: 0 0 2px 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+
+  width: $arrow-button-text-width + $arrow-width;
+  height: $arrow-button-height;
+
+  font-size: 14px;
+
+  &.backwards {
+    color: $button-rest;
+    text-align: right;
+    padding-right: 45px;
+    background-image: url("/images/arrow-buttons/backwards/rest.svg");
+  }
+
+  &.forward {
+    color: white;
+    text-align: left;
+    padding-left: 45px;
+    background-image: url("/images/arrow-buttons/forward/rest.svg");
+  }
+
+  &.focus,
+  &:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/rest-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/rest-focused.svg");
+    }
+  }
+
+  &.hover,
+  &:hover {
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover.svg");
+    }
+  }
+
+  &.hover.focus,
+  &:hover:focus {
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover-focused.svg");
+    }
+  }
+
+  &.active,
+  &:active {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active.svg");
+    }
+  }
+
+  &.active.focus,
+  &:active:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active-focused.svg");
+    }
+  }
+}
+
+a.button.arrow-button {
+  text-decoration: none;
+  padding-top: $em;
+}
+

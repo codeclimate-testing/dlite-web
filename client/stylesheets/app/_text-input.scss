@@ -1,0 +1,45 @@
+.input,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea {
+  // overrides that should be in reset/normalize
+  outline-style: none;
+  resize: none;
+  -webkit-appearance: none;
+
+  @include line;
+  @include bordered;
+  @include rounded;
+  padding: 10px 9px 14px;
+
+  background-color: white;
+  color: $darkest-color;
+  font-size: 18px;
+  font-family: $form-font;
+
+  margin-bottom: 2px; // fixes for the focus sizing on the bottom
+
+  &:focus,
+  &.focus {
+    @include focus-outline-input;
+    margin-bottom: -1px;
+  }
+
+  &.error {
+    margin-bottom: -1px;
+    border-bottom-width: $border-width-special;
+    border-color: $error;
+  }
+}
+
+textarea {
+  min-height: 100px;
+}
+@-moz-document url-prefix() {
+  textarea {
+    font-family: $body-font;
+  }
+}
+

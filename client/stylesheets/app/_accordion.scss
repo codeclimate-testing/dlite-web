@@ -1,0 +1,54 @@
+.accordion {
+  margin: 2px 0;
+  @include rounded;
+  border: 1px solid $accordion-color;
+
+  .accordion-header {
+    @include border-top-radius($border-radius-size);
+    background-color: $accordion-color;
+    padding: $spacing;
+    font-weight: bold;
+    font-size: 1em;
+    color: $primary;
+  }
+
+  .icon-region {
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-image: url("/images/icons/misc/-.svg");
+  }
+
+  .accordion-body {
+    padding: $spacing;
+    background-color: $lightest-color;
+  }
+
+  &.closed {
+    .accordion-body {
+      display: none;
+    }
+
+    .icon-region {
+      background-position: 6px 6px;
+      background-image: url("/images/icons/misc/+.svg");
+    }
+  }
+
+  .accordion-header.focus,
+  .accordion-header:focus {
+    outline: none;
+    padding: $spacing - 2px;
+    margin: 0;
+    border: 2px solid $focus;
+  }
+
+  &.hover,
+  &:hover {
+    .accordion-header {
+      background-color: $accordion-hover;
+    }
+  }
+}
+

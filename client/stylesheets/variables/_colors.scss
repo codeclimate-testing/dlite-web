@@ -1,16 +1,37 @@
-$lightest-color: #F7F7F7;
-$darkest-color:  #233047;
+$lightest-color:    white;
+$darkest-color:     #233047;
 
-$dark-blue:   #010B96;
-$med-blue:    #000DC9;
-$green:       #12814F;
-$red:         #DF1515;
-$gold:        #FFC900;
-$gray:        #7E7D7D;
+$headline-blue:     #001b4d;
+$paynes-gray:       #233047;
+$darkest-blue:      #002364;
+$dark-blue:         #010B96;
+$med-blue:          #2D3FCA;
+$bright-blue:       #000DC9;
+$green:             #12814f;
+$red:               #DF1515;
+$gold:              #FFC900;
 
-$focus:       $gold;
-$highlight:   $gold;
-$button-rest: $med-blue;
+$light-light-gray:  #F7F7F7; // not used anymore?
+$light-gray:        #E4E4E4;
+$med-gray:          #BDBDBD;
+$gray:              #7E7D7D; // not used?
+$another-gray:      #696969;
+
+$background-light:  #EEF5FA;
+$background-dark:   #DBE9F4;
+
+$focus:             $gold;
+$highlight:         $gold;
+$button-rest:       $med-blue;
+
+$header-light:            $dark-blue;
+$header-dark:             $darkest-blue;
+$header-secondary-light:  $med-blue;
+$header-secondary-dark:   $bright-blue;
+
+$selector-rest:           $med-blue;
+$accordion-color:         $light-gray;
+$accordion-hover:         $med-gray;
 
 // Shades of gray
 $neutral-90: mix($lightest-color, $darkest-color, 10%);
@@ -22,10 +43,6 @@ $neutral-40: mix($lightest-color, $darkest-color, 60%);
 $neutral-30: mix($lightest-color, $darkest-color, 70%);
 $neutral-20: mix($lightest-color, $darkest-color, 80%);
 $neutral-10: mix($lightest-color, $darkest-color, 90%);
-
-$selector-rest: #2D3FCA;
-$accordion-color: #E4E4E4;
-$accordion-hover: #BDBDBD;
 
 // Theme based color
 $primary:        $dark-blue;

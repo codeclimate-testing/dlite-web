@@ -8,19 +8,32 @@
   <link rel="stylesheet" href="/app.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
   <div id="page">
     <div id='header'>
-      <h1 class='inner'>
+      <h1 class='primary inner'>
         <div class='unit dmv-text-logo'>
           DMV
         </div>
-        <div class='unit spacer'></div>
         <div class='last-unit dmv-application-area'>
           Driver License Application
         </div>
       </h1>
+      <h2 class='secondary'>
+        <div class='unit-right account-information'>
+          <div class='inner'>
+            <div class='unit-right log-out'>Log out</div>
+          </div>
+        </div>
+        <div class='last-unit section-information'>
+          <div class='inner'>
+            <div class='unit number'>1</div>
+            <div class='unit name'>My basics</div>
+          </div>
+        </div>
+      </h2>
     </div>
     <div class='inner'>
       <div class='unit m-row t-size-2-5 d-size-1-3'>
@@ -39,9 +52,14 @@
           <p>
             Change your browser window size in order to see these styles in different form factors.
           </p>
+
           <h1>H1 - This is a h1 headline</h1>
-          <h2>H2 - This is a h2 headline</h2>
-          <h3>H3 - This is a h3 headline</h3>
+
+          <h2>h2 - Headline text</h2>
+          <h2 class='question'>h2 - Question</h2>
+          <h3>h3 - Sub-heading text</h3>
+          <h3 class='question'>h3 - Sub-heading question</h3>
+
           <h4>H4 - This is a h4 headline</h4>
           <h5>H5 - This is a h5 headline</h5>
           <h6>H6 - This is a h6 headline</h6>
@@ -96,13 +114,18 @@
             <div class='input-container'>
               <input type='text' placeholder='Placeholder for text'>
             </div>
+            <div class='additional-label input-margin-bottom'>Additional information</div>
 
-            <label class='error'>Something went wrong!</label>
-            <div class='input-container error'>
-              <input type='text' placeholder='This is a text input' value='An error input!'>
-            </div>
-
+            <label class='error'>
+              <div class='unit'>Something went wrong! &nbsp;</div>
+              <div class='unit error-icon'></div>
+            </label>
             <div class='input-container'>
+              <input class='error' type='text' placeholder='This is a text input' value='An error input!'>
+            </div>
+            <div class='error additional-label input-margin-bottom'>And it was bad</div>
+
+            <div class='input-container input-margin-bottom'>
               <input type='text' class='focus' value='This is focused'>
             </div>
 
@@ -373,10 +396,10 @@
                 <h4>Closed</h4>
                 <div class='row accordion closed'>
                   <a class='row accordion-header' href='javascript:void(0);'>
-                    <div class='unit'>
+                    <div class='unit-right icon-region'></div>
+                    <div class='last-unit'>
                       What is a federally compliant card?
                     </div>
-                    <div class='unit-right icon-region'></div>
                   </a>
                   <div class='row accordion-body'>
                     <p>
@@ -397,10 +420,10 @@
                 <h4>Closed, focused</h4>
                 <div class='row accordion closed focus'>
                   <a class='row accordion-header' href='javascript:void(0);'>
-                    <div class='unit'>
+                    <div class='unit-right icon-region'></div>
+                    <div class='last-unit'>
                       What is a federally compliant card?
                     </div>
-                    <div class='unit-right icon-region'></div>
                   </a>
                   <div class='row accordion-body'>
                     <p>
@@ -423,10 +446,10 @@
                 <h4>Open</h4>
                 <div class='row accordion open'>
                   <a class='row accordion-header' href='javascript:void(0);'>
-                    <div class='unit'>
+                    <div class='unit-right icon-region'></div>
+                    <div class='last-unit'>
                       What is a federally compliant card?
                     </div>
-                    <div class='unit-right icon-region'></div>
                   </a>
                   <div class='row accordion-body'>
                     <p>
@@ -447,10 +470,10 @@
                 <h4>Open, focused</h4>
                 <div class='row accordion open focus'>
                   <a class='row accordion-header' href='javascript:void(0);'>
-                    <div class='unit'>
+                    <div class='unit-right icon-region'></div>
+                    <div class='last-unit'>
                       What is a federally compliant card?
                     </div>
-                    <div class='unit-right icon-region'></div>
                   </a>
                   <div class='row accordion-body'>
                     <p>

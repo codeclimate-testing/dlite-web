@@ -42,3 +42,10 @@
   @include focus-outline;
   border-bottom-width: $border-width-special;
 };
+
+@mixin clip-path($clip) {
+  -webkit-clip-path: $clip;
+  -moz-clip-path: $clip;
+  -ms-clip-path: $clip;
+  clip-path: $clip;
+};

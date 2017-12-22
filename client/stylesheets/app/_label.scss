@@ -1,0 +1,25 @@
+label,
+.additional-label {
+  @include line;
+  font-size: 12px;
+
+  &.error {
+    color: $error;
+  }
+}
+
+label {
+  margin-bottom: 7px;
+  font-weight: bold;
+
+  .error-icon {
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-image: url("/images/icons/misc/alert.svg");
+  }
+}
+
+.additional-label {
+  color: $another-gray;
+}

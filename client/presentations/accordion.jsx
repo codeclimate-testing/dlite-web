@@ -17,10 +17,10 @@ const Accordion = (props) => {
         id={props.id}
         href='javascript:void(0);'
       >
-        <div className='unit'>
+        <div className='unit-right icon-region'></div>
+        <div className='last-unit'>
           {props.title}
         </div>
-        <div className='unit-right icon-region'></div>
       </a>
       <div className='row accordion-body'>
         {props.children}

@@ -1,0 +1,31 @@
+.month-input,
+.day-input,
+.heightInches-input,
+.heightFeet-input,
+.part2-input {
+  width: $em * 4;
+}
+
+.part1-input,
+.part3-input,
+.weight-input {
+  width: $em * 5;
+}
+
+.year-input {
+  width: $em * 6;
+}
+
+.social-security-dash {
+  padding: $spacing / 1.5;
+  min-height: 66px;
+}
+
+a.sections {
+  color: transparent;
+}
+
+a.button.arrow-button.forward.get-started {
+  padding-left: 12px;
+}
+

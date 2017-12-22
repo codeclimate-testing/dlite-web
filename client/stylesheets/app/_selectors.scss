@@ -1,0 +1,70 @@
+.choice-selector {
+  @include line;
+  margin-bottom: 14px;
+
+  .outline-container {
+    @include line;
+    @include rounded;
+    border: 1px solid $selector-rest;
+    margin: 3px;
+  }
+
+  .icon-region {
+    width: 48px;
+    height: 48px;
+
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+  }
+
+  .text-region {
+    margin-top: 8px;
+    padding: 10px 15px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .radio-selector {
+    margin-bottom: 0px;
+    .icon-region {
+      background-image: url("/images/icons/radio/unselected.svg");
+    }
+  }
+
+  .checkbox-selector {
+    margin-bottom: 0px;
+    .icon-region {
+      background-image: url("/images/icons/checkbox/unselected.svg");
+    }
+  }
+
+  &:hover,
+  &.hover {
+    .outline-container {
+      border-width: 2px;
+      margin: 2px;
+    }
+  }
+
+  &.focus {
+    .outline-container {
+      @include focus-outline;
+    }
+  }
+
+  &.selected {
+    .radio-selector {
+      .icon-region {
+        background-image: url("/images/icons/radio/selected.svg");
+      }
+    }
+
+    .checkbox-selector {
+      .icon-region {
+        background-image: url("/images/icons/checkbox/selected.svg");
+      }
+    }
+  }
+}
+

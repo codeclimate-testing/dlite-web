@@ -15,11 +15,11 @@ label.button {
   border: none;
 
   display: block;
-  font-size: $em;
   font-family: $button-font;
   font-weight: bold;
   padding: $spacing*1.2 $spacing*3;
-  line-height: 1;
+  line-height: 1.2;
+  font-size: 14px;
   letter-spacing: 1px;
   text-align: center;
   white-space: normal;
@@ -27,7 +27,7 @@ label.button {
 
   background-color: $dark-blue;
   border: $border-width solid $dark-blue;
-  color: white;
+  color: $lightest-color;
 
   @include line;
 
@@ -75,89 +75,4 @@ label.button {
       background-color: $neutral-40;
     }
   }
-}
-
-$arrow-button-text-width: 122px;
-$arrow-button-height: 54px;
-$arrow-width: 15px;
-
-button.arrow-button,
-a.button.arrow-button {
-  padding: 0;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  width: $arrow-button-text-width + $arrow-width;
-  height: $arrow-button-height;
-
-  &.backwards {
-    color: $button-rest;
-    text-align: right;
-    padding-right: 2.25 * $em;
-    background-image: url("/images/arrow-buttons/backwards/rest.svg");
-  }
-
-  &.forward {
-    color: white;
-    text-align: left;
-    padding-left: 2.25 * $em;
-    background-image: url("/images/arrow-buttons/forward/rest.svg");
-  }
-
-  &.focus,
-  &:focus {
-    &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/rest-focused.svg");
-    }
-    &.forward {
-      background-image: url("/images/arrow-buttons/forward/rest-focused.svg");
-    }
-  }
-
-  &.hover,
-  &:hover {
-    &.backwards {
-      color: $dark-blue;
-      background-image: url("/images/arrow-buttons/backwards/hover.svg");
-    }
-    &.forward {
-      background-image: url("/images/arrow-buttons/forward/hover.svg");
-    }
-  }
-
-  &.hover.focus,
-  &:hover:focus {
-    &.backwards {
-      color: $dark-blue;
-      background-image: url("/images/arrow-buttons/backwards/hover-focused.svg");
-    }
-    &.forward {
-      background-image: url("/images/arrow-buttons/forward/hover-focused.svg");
-    }
-  }
-
-  &.active,
-  &:active {
-    &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/active.svg");
-    }
-    &.forward {
-      background-image: url("/images/arrow-buttons/forward/active.svg");
-    }
-  }
-
-  &.active.focus,
-  &:active:focus {
-    &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/active-focused.svg");
-    }
-    &.forward {
-      background-image: url("/images/arrow-buttons/forward/active-focused.svg");
-    }
-  }
-}
-
-a.button.arrow-button {
-  text-decoration: none;
-  padding-top: $em;
 }
