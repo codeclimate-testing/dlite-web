@@ -184,37 +184,75 @@ describe('dataPresent', function() {
   });
 
   describe('#licenseAndIdHistory', function() {
+    
     it('is true when all three parts of date are present', function() {
+      let data = {
+        month: '10',
+        day: '15',
+        year: '1985',
+        isIssued: 'Yes',
+        DLIDNumber: '',
+        issuedBy: ''
+      };
       assert(
-        dataPresent.licenseAndIdHistory({month: '10', day: '15', year: '1985'}),
+        dataPresent.licenseAndIdHistory(data),
         'existing DL ID date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
-      assert(
-        !dataPresent.licenseAndIdHistory({month: '10', year: '1985'}),
-        'existing DL ID date present with only parts of date'
-      );
+      let data = {
+        month: '10',
+        day: '5',
+        year: '',
+        isIssued: 'Yes',
+        DLIDNumber: '',
+        issuedBy: ''
+      };
+      assert.equal(dataPresent.licenseAndIdHistory(data), false);
     });
 
     it('is true when ony DLIDNumber is present', function() {
+      let data = {
+        month: '',
+        day: '',
+        year: '',
+        isIssued: 'Yes',
+        DLIDNumber: 'DMV0100011',
+        issuedBy: ''
+      };
       assert(
-        dataPresent.licenseAndIdHistory({'DLIDNumber': 'DMV00100101'}),
+        dataPresent.licenseAndIdHistory(data),
         'existing DL ID not present with just DLIDNumber field'
       );
     });
 
     it('is true when ony issuedBy is present', function() {
+      let data = {
+        month: '',
+        day: '',
+        year: '',
+        isIssued: '',
+        DLIDNumber: '',
+        issuedBy: 'USA'
+      };
       assert(
-        dataPresent.licenseAndIdHistory({'issuedBy': 'USA'}),
+        dataPresent.licenseAndIdHistory(data),
         'existing DL ID not present with just issuedBy field'
       );
     });
 
-    it('is true when ony isIssued is present', function() {
+    it('is true when isIssued is No', function() {
+      let data = {
+        month: '',
+        day: '',
+        year: '',
+        isIssued: 'No',
+        DLIDNumber: '',
+        issuedBy: ''
+      };
       assert(
-        dataPresent.licenseAndIdHistory({'isIssued': 'Yes'}),
+        dataPresent.licenseAndIdHistory(data),
         'existing DL ID not present with just isIssued field'
       );
     });

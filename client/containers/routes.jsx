@@ -24,7 +24,7 @@ import SocialSecurity                         from './apply/social-security-form
 import VoterIntro                             from './voter-registration/introduction-container.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import LicenseIssues                          from './apply/license-issues-form-container.jsx';
-import LicenseAndId                           from './apply/license-and-id-history-form-container.jsx';
+import LicenseAndId                           from './apply/card-history-page.jsx';
 import MedicalHistory                         from './apply/medical-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransService                        from './apply/veterans-service-form-container.jsx';

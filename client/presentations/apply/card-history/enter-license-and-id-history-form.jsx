@@ -2,10 +2,12 @@
 
 import React from 'react';
 
-import TextInput        from '../text-input.jsx';
-import NumberInput      from '../number-input.jsx';
+import TextInput        from '../../text-input.jsx';
+import NumberInput      from '../../number-input.jsx';
 
 const EnterLicenseAndIdHistory = (props) => {
+  if(props.licenseAndIdHistory.isIssued !== 'Yes') { return null; }
+
   return (
     <div className='existing-license-id-number-form'>
 

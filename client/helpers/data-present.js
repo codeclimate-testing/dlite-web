@@ -65,7 +65,7 @@ const licenseIssues = (props) => {
 };
 
 const licenseAndIdHistory = (props) => {
-  return date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy', 'isIssued']);
+  return props && (props.isIssued === 'No' || (date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy'])));
 };
 
 const namesHistory = (props) => {

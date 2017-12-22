@@ -8,12 +8,11 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
-import LicenseIDHistoryPage     from '../../../../client/presentations/apply/license-and-id-history-form.jsx';
+import LicenseIDHistoryPage     from '../../../../client/presentations/apply/card-history-page.jsx';
+import store                    from '../../support/page-store';
+
 
 describe('LicenseIDHistoryPage', function() {
-  let store = {
-    ui: {}
-  };
 
   const Wrapper = wrapperGenerator(store);
 
