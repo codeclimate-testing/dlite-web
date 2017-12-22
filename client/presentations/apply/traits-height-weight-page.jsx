@@ -3,17 +3,13 @@
 import React              from 'react';
 import NumberInput        from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import Page               from '../page.jsx';
+import Page               from '../../containers/page.jsx';
 
-let pageTitle = "DMV: License application - My basics";
-
-const Form = (props) => {
+const TraitsPage = (props) => {
   return (
     <Page
-      pageTitle={pageTitle}
-      sectionNumber='1'
-      sectionName='My basics'
       {...props}
+      sectionKey='myBasics'
     >
       <div className='traits-height-weight-form'>
         <h4>How tall are you?</h4>
@@ -57,4 +53,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default TraitsPage;

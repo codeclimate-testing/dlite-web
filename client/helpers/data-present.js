@@ -53,7 +53,7 @@ const organDonation = (props) => {
 };
 
 const socialSecurity = (props) => {
-  return hasAllAttributes(props, ['part1', 'part2', 'part3']);
+  return hasAllAttributes(props, ['part1', 'part2', 'part3']) || (props && props.hasSocialSecurity === 'No');
 };
 
 const veteransService = (props) => {

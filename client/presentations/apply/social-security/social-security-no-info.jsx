@@ -1,9 +1,9 @@
 'use strict';
 
 import React from 'react';
-import HomeLink from '../home-link.jsx';
 
 const NoInfo = (props) => {
+  if(props.socialSecurity.hasSocialSecurity !== 'No') { return null; }
   return (
     <div className='social-security-no-info'>
       <p>

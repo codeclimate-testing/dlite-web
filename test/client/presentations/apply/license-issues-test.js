@@ -7,12 +7,10 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import LicenseIssuesPage        from '../../../../client/presentations/apply/license-issues-form.jsx';
+import LicenseIssuesPage        from '../../../../client/presentations/apply/license-issues-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('LicenseIssuesPage', function() {
-  let store = {
-    ui: {}
-  };
 
   const Wrapper = wrapperGenerator(store);
 
@@ -58,19 +56,17 @@ describe('LicenseIssuesPage', function() {
       assert.equal(component.find('.suspended-license-form'), false);
     });
 
-    // it('when user selects Yes the page adds a form asking for more info about suspended license', function() {
-    //   props.licenseIssues = {
-    //     isSuspended: 'Yes'
-    //   };
+    it('when user selects Yes the page adds a form asking for more info about suspended license', function() {
+      props.licenseIssues.isSuspended = 'Yes';
   
-    //   let component = render(
-    //     <Wrapper>
-    //       <LicenseIssuesPage {...props} />
-    //     </Wrapper>
-    //   );
+      let component = render(
+        <Wrapper>
+          <LicenseIssuesPage {...props} />
+        </Wrapper>
+      );
 
-    //   assert.ok(component.find('.suspended-license-form').length, 'suspended license form not found');
-    // });
+      assert.ok(component.find('.suspended-license-form').length, 'suspended license form not found');
+    });
 
     it('next button is disabled', function() {
       let component = render(

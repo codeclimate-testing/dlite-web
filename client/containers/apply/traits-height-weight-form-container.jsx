@@ -1,25 +1,25 @@
 'use strict';
 
-import React from 'react';
+import React                from 'react';
+import { connect }          from 'react-redux';
+
+import handlers             from '../../helpers/handlers';
+import * as dataPresent     from '../../helpers/data-present';
 
 import { updateTraitsHeightWeight }  from "../../actions/index";
-import FormPresentation              from "../../presentations/apply/traits-height-weight-form.jsx";
-import connectForm                   from '../../helpers/connect-form';
-import navigateOnSubmit              from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent              from '../../helpers/data-present';
+import Presentation                  from "../../presentations/apply/traits-height-weight-page.jsx";
 
-const Form = (props) => {
+
+const Page = (props) => {
   let continueDisabled   = !dataPresent.traitsHeightWeight(props.traitsHeightWeight);
-  let onSubmit           = navigateOnSubmit('/my-basics/social-security', props);
-  let onBack             = navigateOnBack(props);
+  let onSubmit           = handlers.navigateOnSubmit('/my-basics/social-security', props);
+  let onBack             = handlers.navigateOnBack(props);
 
   return (
-    <FormPresentation
+    <Presentation
+      {...props}
       onSubmit            = { onSubmit }
       onBack              = { onBack }
-      onChange            = { props.onChange }
-      traitsHeightWeight  = { props.traitsHeightWeight }
       continueDisabled    = { continueDisabled }
     />
   );
@@ -27,8 +27,22 @@ const Form = (props) => {
 
 function mapStateToProps(state) {
   return {
-    traitsHeightWeight: state.application.traitsHeightWeight
+    traitsHeightWeight: state.application.traitsHeightWeight,
+    focused:            state.ui.focus
+  };
+};
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateTraitsHeightWeight, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
   };
 }
 
-export default connectForm(mapStateToProps, updateTraitsHeightWeight, Form);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

@@ -11,7 +11,6 @@ import wrapperGenerator         from '../../support/wrapper';
 import LicenseIDHistoryPage     from '../../../../client/presentations/apply/card-history-page.jsx';
 import store                    from '../../support/page-store';
 
-
 describe('LicenseIDHistoryPage', function() {
 
   const Wrapper = wrapperGenerator(store);

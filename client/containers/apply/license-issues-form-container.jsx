@@ -1,67 +1,48 @@
 'use strict';
 
-import React from 'react';
+import React                    from 'react';
+import { connect }              from 'react-redux';
 
-import { updateLicenseIssues }             from "../../actions/index";
-import HomeLink                            from '../../presentations/home-link.jsx';
-import NavigationButtons                   from '../../presentations/navigation-buttons.jsx';
-import LicenseIssues                       from "../../presentations/apply/license-issues-form.jsx";
-import EnterRevokedSuspended               from "../../presentations/apply/enter-revoked-suspended-form.jsx";
-import connectForm                         from '../../helpers/connect-form';
-import navigateOnSubmit                    from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                      from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent                    from '../../helpers/data-present';
+import handlers                 from '../../helpers/handlers';
+import * as dataPresent         from '../../helpers/data-present';
 
-const ConnectedForm = (props) => {
-  let continueDisabled                  = !(dataPresent.licenseIssues(props.licenseIssues));
-  let showLicenseIssues                 = false;
-  let onSubmit                          = navigateOnSubmit('/my-history/veterans-service', props);
-  let onBack                            = navigateOnBack(props);
+import { updateLicenseIssues }  from '../../actions/index';
+import Presentation             from '../../presentations/apply/license-issues-page.jsx';
 
-  if (props.licenseIssues.isSuspended === 'Yes') {
-    showLicenseIssues  = false;
-    continueDisabled = !(dataPresent.licenseIssues(props.licenseIssues));
-
-    return (
-      <div>
-        <form onSubmit={onSubmit}>
-          <LicenseIssues
-            onChange       ={props.onChange}
-            selectedValue  ={props.licenseIssues.isSuspended}
-          />
-          <EnterRevokedSuspended
-            onChange       ={props.onChange}
-            licenseIssues  ={props.licenseIssues}
-          />
-          <NavigationButtons
-            continueDisabled={continueDisabled}
-            onBack= {onBack}
-          />
-        </form>
-      </div>
-    );
-  }
+const Page = (props) => {
+  let continueDisabled    = !(dataPresent.licenseIssues(props.licenseIssues));
+  let onSubmit            = handlers.navigateOnSubmit('/my-history/veterans-service', props);
+  let onBack              = handlers.navigateOnBack(props);
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <LicenseIssues
-          onChange      ={props.onChange}
-          selectedValue ={props.licenseIssues.isSuspended}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack= {onBack}
-        />
-      </form>
-    </div>
+    <Presentation 
+      {...props}
+      onSubmit            = { onSubmit }
+      onBack              = { onBack }
+      continueDisabled    = { continueDisabled }
+    />
   );
-};
+}
 
 function mapStateToProps(state) {
   return {
-    licenseIssues: state.application.licenseIssues
+    licenseIssues:  state.application.licenseIssues,
+    focused:        state.ui.focus
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateLicenseIssues, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
   };
 }
 
-export default connectForm(mapStateToProps, updateLicenseIssues, ConnectedForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

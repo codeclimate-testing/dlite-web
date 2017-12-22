@@ -9,14 +9,10 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-
-import HeightWeightPage         from '../../../../client/presentations/apply/traits-height-weight-form.jsx';
+import HeightWeightPage         from '../../../../client/presentations/apply/traits-height-weight-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('HeightWeightPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {

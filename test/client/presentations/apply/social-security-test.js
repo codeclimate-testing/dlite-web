@@ -8,12 +8,10 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import SocialSecurityPage       from '../../../../client/presentations/apply/social-security-option-form.jsx';
+import SocialSecurityPage       from '../../../../client/presentations/apply/social-security-page.jsx';
+import store                    from '../../support/page-store';
 
-describe('NamesHistoryPage', function() {
-  let store = {
-    ui: {}
-  };
+describe('SocialSecurityPage', function() {
 
   const Wrapper = wrapperGenerator(store);
 
@@ -46,36 +44,47 @@ describe('NamesHistoryPage', function() {
       assert.ok(component.find('label[for="hasSocialSecurityNo"]').length, 'No button missing');
       assert.ok(component.find('label[for="hasSocialSecurityYes"]').length, 'Yes button missing');
       assert.ok(component.find('.social-security-option-form').length, 'form missing');
+      assert.equal(component.find('.social-security-no-form'), false);
     });
 
-    // it('next button is disabled', function() {
-    //   let component = render(
-    //     <Wrapper>
-    //       <SocialSecurityPage {...props} />
-    //     </Wrapper>
-    //   );
-    //   assert.ok(component.find('.arrow-button .forward disabled'));
-    // });
+    it('next button is disabled', function() {
+      let component = render(
+        <Wrapper>
+          <SocialSecurityPage {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.arrow-button .forward disabled'));
+    });
 
-    //TODO test for continueDisabled
+    it('selecting No makes next button no longer disabled and shows message', function() {
+      props.socialSecurity.hasSocialSecurity = 'No';
+      props.continueDisabled  =   !(dataPresent.socialSecurity(props.socialSecurity));
 
-    // it('selecting No makes next button no longer disabled', function() {
-    //   props.socialSecurity.hasSocialSecurity = 'No';
-    //   props.continueDisabled  =   !(dataPresent.SocialSecurity(props.socialSecurity));
+      let component = render(
+        <Wrapper>
+          <SocialSecurityPage {...props} />
+        </Wrapper>
+      );
 
-    //   let component = render(
-    //     <Wrapper>
-    //       <SocialSecurityPage {...props} />
-    //     </Wrapper>
-    //   );
+      assert.equal(component.find('.arrow-button .forward disabled'), false);
+      assert.ok(component.find('.arrow-button forward'));
+      assert.ok(component.find('.social-security-no-form', 'message not rendered'));
+    });
 
-    //   assert.equal(component.find('.arrow-button .forward disabled'), false);
-    //   assert.ok(component.find('.arrow-button forward'));
-    // });
+    it('selecting Yes makes form render to enter social number', function() {
+      props.socialSecurity.hasSocialSecurity = 'Yes';
 
-    //TODO add test to check that selecting Yes makes enter-social-security form render
-    // see a number field for each part of social security number after selecting Yes
+      let component = render(
+        <Wrapper>
+          <SocialSecurityPage {...props} />
+        </Wrapper>
+      );
 
+      assert.ok(component.find('.social-security-enter-form'), 'form not rendered');
+      assert.ok(component.find('input#part1'), 'social input not found');
+      assert.ok(component.find('input#part2'), 'social input not found');
+      assert.ok(component.find('input#part3'), 'social input not found');
+    });
 
   });
 

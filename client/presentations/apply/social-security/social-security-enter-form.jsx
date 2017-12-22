@@ -1,10 +1,11 @@
 'use strict';
 
 import React            from 'react';
-import HomeLink         from '../home-link.jsx';
-import NumberInput      from '../number-input.jsx';
+import NumberInput      from '../../number-input.jsx';
 
 const Form = (props) => {
+  if(props.socialSecurity.hasSocialSecurity !== 'Yes') { return null; }
+  
   return (
     <div className='social-security-enter-form'>
       <h4>What’s your Social Security Number?</h4>

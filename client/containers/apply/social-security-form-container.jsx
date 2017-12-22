@@ -1,59 +1,27 @@
 'use strict';
 
-import React from 'react';
+import React                    from 'react';
+import { connect }              from 'react-redux';
 
-import { updateSocialSecurity }   from "../../actions/index";
-import SocialSecurityOption       from "../../presentations/apply/social-security-option-form.jsx";
-import SocialSecurityEnter        from "../../presentations/apply/social-security-enter-form.jsx";
-import SocialSecurityNoInfo       from "../../presentations/apply/social-security-no-info.jsx";
-import NavigationButtons          from '../../presentations/navigation-buttons.jsx';
-import connectForm                from '../../helpers/connect-form';
-import navigateOnSubmit           from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack             from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent           from '../../helpers/data-present';
+import handlers                 from '../../helpers/handlers';
+import * as dataPresent         from '../../helpers/data-present';
 
-const ConnectedForm = (props) => {
+import { updateSocialSecurity } from "../../actions/index";
+import Presentation             from '../../presentations/apply/social-security-page.jsx';
+
+const Page = (props) => {
   let nextAddress       = props.cardType.DL ? '/my-history/medical' : '/my-history/license-and-id';
-  let onSubmit          = navigateOnSubmit(nextAddress, props);
-  let onBack            = navigateOnBack(props);
+  let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
+  let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
 
-  let content = [];
-
-  content.push(
-    <SocialSecurityOption
-      onChange      = { props.onChange }
-      selectedValue = { props.socialSecurity.hasSocialSecurity }
-      key           = 'social-security-option'
-    />
-  );
-
-  if(props.socialSecurity.hasSocialSecurity === 'Yes') {
-    content.push(<SocialSecurityEnter
-      socialSecurity  = {props.socialSecurity}
-      onChange        = { props.onChange }
-      key             = 'social-security-enter'/>
-    );
-  }
-
-  if(props.socialSecurity.hasSocialSecurity === 'No') {
-    continueDisabled = false;
-    content.push(<SocialSecurityNoInfo key = 'social-security-no-info' />);
-  }
-
-
-  content.push(
-    <NavigationButtons
-     continueDisabled={continueDisabled}
-     onBack={onBack}
-     key='navigation-buttons'
-    />
-  );
-
   return (
-    <form onSubmit={onSubmit}>
-      { content }
-    </form>
+    <Presentation 
+      {...props}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
+    />
   );
 };
 
@@ -62,6 +30,20 @@ function mapStateToProps(state) {
     socialSecurity: state.application.socialSecurity,
     cardType: state.application.cardType
   };
+};
+
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateSocialSecurity, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
 }
 
-export default connectForm(mapStateToProps, updateSocialSecurity, ConnectedForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
