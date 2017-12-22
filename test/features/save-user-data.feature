@@ -65,6 +65,7 @@ Feature: Save user data
     Then Then I will be on the page for veteran related services
     And I click Yes for veteran
     And I click Yes to receiving additional information about benefits
+    And I click Yes to veteran previously being printed on my license
     And I click Yes about having my license labeled with Veteran
     And I click "Next" to continue
     Then I will be on the page for organ selection

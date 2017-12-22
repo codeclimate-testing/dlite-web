@@ -46,9 +46,10 @@ describe('dataPresent', function() {
 
     it('is true when user is a veteran', function() {
       assert(dataPresent.veteransService({
-        isVeteran           : 'Yes',
-        receiveBenefits     : 'No',
-        veteransIdentifier  : 'Yes'
+        isVeteran             : 'Yes',
+        receiveBenefits       : 'No',
+        veteransIdentifier    : 'Yes',
+        previouslyDesignated  : 'Yes'
       }), 'veteransService not present when user is a veteran');
     });
 
@@ -352,9 +353,10 @@ describe('dataPresent', function() {
     it('is true when the user is a veteran', function() {
       let data = {
         veteransService: {
-          isVeteran           : 'Yes',
-          receiveBenefits     : 'No',
-          veteransIdentifier  : 'Yes'
+          isVeteran             : 'Yes',
+          receiveBenefits       : 'No',
+          veteransIdentifier    : 'Yes',
+          previouslyDesignated  : 'No'
         }
       };
       assert(dataPresent.application(data), 'Data not present when user is a veteran');

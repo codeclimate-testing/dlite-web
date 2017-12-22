@@ -202,6 +202,7 @@ describe('getApplication', function() {
         assert.equal(records.veterans_info.application_id, data.application.id);
         assert.equal(records.veterans_info.has_requested_information, data.veterans_info[0].has_requested_information);
         assert.equal(records.veterans_info.labeling, data.veterans_info[0].labeling);
+        assert.equal(records.veterans_info.previously_designated, data.veterans_info[0].previously_designated);
       })
       .then(done)
       .catch(done);

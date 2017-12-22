@@ -7,7 +7,8 @@ function defaultState() {
   return {
     isVeteran: '',
     receiveBenefits: '',
-    veteransIdentifier: ''
+    veteransIdentifier: '',
+    previouslyDesignated: ''
   };
 }
 

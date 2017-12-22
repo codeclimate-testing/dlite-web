@@ -168,13 +168,18 @@ function extractLicenseIssues(data) {
 
 function extractVeteransInfo(data) {
   if(data.veteransService.isVeteran === 'Yes'){
+    let designation = null;
     let label = null;
+    if(data.veteransService.previouslyDesignated === 'Yes') {
+      designation = 'Yes';
+    }
     if(data.veteransService.veteransIdentifier === 'Yes'){
       label = 'add';
     }
     return [{
       application_id:               data.id,
       has_requested_information:    parserHelper.strToBool(data.veteransService.receiveBenefits),
+      previously_designated:        designation,
       labeling:                     label
     }];
   }

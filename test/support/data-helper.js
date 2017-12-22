@@ -90,6 +90,7 @@ function fakeClientData() {
     'veteransService': {
       'isVeteran': 'Yes',
       'receiveBenefits': 'No',
+      'previouslyDesignated': 'Yes',
       'veteransIdentifier': 'Yes'
     },
     'citizenStatus': 'Yes',

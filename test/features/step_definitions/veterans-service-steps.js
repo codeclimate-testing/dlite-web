@@ -72,6 +72,13 @@ module.exports = function (world) {
       });
   });
 
+  world.and('I click Yes to veteran previously being printed on my license', function(done){
+    browser
+      .click('label[for="previouslyDesignatedYes"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I click Yes about having my license labeled with Veteran', function(done){
     browser
       .click('label[for="veteransIdentifierYes"]')

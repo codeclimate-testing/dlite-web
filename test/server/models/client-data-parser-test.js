@@ -134,11 +134,16 @@ describe('client data parser', function() {
   it('correctly extracts the veterans info', function() {
     let veteransInfo = parsedData.veterans_info[0];
     let _label = null;
+    let previously_designated = null;
     if(data.veteransService.veteransIdentifier === 'Yes'){
       _label = 'add';
     }
+    if(data.veteransService.previouslyDesignated === 'Yes'){
+      previously_designated = 'Yes';
+    }
     assert.equal(veteransInfo.application_id, data.id);
     assert.equal(veteransInfo.has_requested_information, parserHelper.strToBool(data.veteransService.receiveBenefits));
+    assert.equal(veteransInfo.previously_designated, previously_designated);
     assert.equal(veteransInfo.labeling, _label);
   });
 

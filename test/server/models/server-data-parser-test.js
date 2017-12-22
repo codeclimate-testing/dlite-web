@@ -200,6 +200,7 @@ describe('server data parser', function() {
       parsedData = parse(records);
       assert.equal(parsedData.application.veteransService.isVeteran, clientData.veteransService.isVeteran);
       assert.equal(parsedData.application.veteransService.receiveBenefits, clientData.veteransService.receiveBenefits);
+      assert.equal(parsedData.application.veteransService.previouslyDesignated, clientData.veteransService.previouslyDesignated);
       assert.equal(parsedData.application.veteransService.veteransIdentifier, clientData.veteransService.veteransIdentifier);
       done();
     })

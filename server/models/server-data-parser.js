@@ -234,13 +234,19 @@ function getLicenseIssues(license_issues) {
 
 function getVeteransService(veterans_info) {
   if(veterans_info){
+    let designation = 'No';
     let label = 'No';
+    if(veterans_info.previously_designated === 'Yes') {
+      designation = 'Yes';
+    }
     if(veterans_info.labeling === 'add'){
       label = 'Yes';
     }
+
     return {
       isVeteran:            'Yes',
       receiveBenefits:      parserHelper.boolToStr(veterans_info.has_requested_information),
+      previouslyDesignated: designation,
       veteransIdentifier:   label
     };
   }
@@ -248,7 +254,8 @@ function getVeteransService(veterans_info) {
     return {
       isVeteran:            'No',
       receiveBenefits:      '',
-      veteransIdentifier:   ''
+      veteransIdentifier:   '',
+      previouslyDesignated: ''
     };
   }
 }

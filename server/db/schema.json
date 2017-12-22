@@ -3,7 +3,7 @@
     "sequences": 13,
     "constraints": 14,
     "tables": 15,
-    "columns": 78
+    "columns": 79
   },
   "tables": {
     "addresses": {
@@ -700,6 +700,15 @@
           "table_schema": "public",
           "table_name": "veterans_info",
           "column_name": "labeling",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "previously_designated": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "previously_designated",
           "column_default": null,
           "is_nullable": true,
           "data_type": "character varying",

@@ -85,6 +85,7 @@ const state  = {
     veteransService: {
       isVeteran: '',
       receiveBenefits: '',
+      previoulyDesignated: '',
       veteransIdentifier: ''
     },
     citizenStatus: '',
