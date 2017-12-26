@@ -8,7 +8,6 @@ import ChooseCardRenew    from './choose-card/choose-card-renew.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
-
   return (
     <Page
       {...props}
@@ -18,14 +17,13 @@ const Form = (props) => {
         <h4>What type of card would you like?</h4>
 
         <form onSubmit={ props.onSubmit } >
-  
-          <ChooseCardNew 
+          <ChooseCardNew
             {...props}
           />
-          <ChooseCardRenew 
+          <ChooseCardRenew
             {...props}
           />
-          
+
           <NavigationButtons {...props} />
         </form>
       </div>

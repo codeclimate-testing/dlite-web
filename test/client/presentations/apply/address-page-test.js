@@ -16,7 +16,7 @@ describe('AddressPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let homeAddress = {
         homeAddressSameAsMailing: '',
@@ -43,7 +43,7 @@ describe('AddressPage', function() {
         onHomeChange
       }
     });
-    
+
     it('shows the form asking for home address but not mailing address', function() {
       let component = render(
         <Wrapper>

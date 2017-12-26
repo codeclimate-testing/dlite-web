@@ -1,16 +1,15 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent from '../../helpers/data-present';
+
+import { hasValue } from '../../helpers/data/validations';
 
 const BallotLanguage = (props) => {
-  let value = props.ballotLanguage;
-
-  if (!dataPresent.value(value)) { return null; }
+  if (!hasValue(props.ballotLanguage)) { return null; }
 
   return (
     <div className='summary-section'>
-      <p> Ballot language preference: {value} </p>
+      <p> Ballot language preference: {props.ballotLanguage} </p>
     </div>
   );
 };

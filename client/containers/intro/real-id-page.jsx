@@ -1,34 +1,34 @@
 'use strict';
 
-import React                  from 'react';
-import { connect }            from 'react-redux';
+import React                      from 'react';
+import { connect }                from 'react-redux';
 
-import { updateRealID }       from "../../actions/index";
-import Presentation           from "../../presentations/intro/real-id-page.jsx";
+import { updateRealID }           from "../../actions/index";
+import handlers                   from '../../helpers/handlers';
 
-import handlers               from '../../helpers/handlers';
+import { validToContinue }        from '../../helpers/data/real-id';
+import { eligibleForReducedFee }  from '../../helpers/data/reduced-fee';
+import { getDL }                  from '../../helpers/data/card-type';
 
-import {
-  validToContinue,
-} from '../../helpers/data/real-id';
+import Presentation               from "../../presentations/intro/real-id-page.jsx";
 
-import {
-  eligibleForReducedFee
-} from '../../helpers/data/reduced-fee';
-
-import {
-  getDL
-} from '../../helpers/data/card-type';
-
-const Page = (props) => {
+const addressForProps = (props) => {
   let address = '/get-started';
+
   if (getDL(props)) {
     address = '/license-type';
   } else if (eligibleForReducedFee(props)) {
     address = '/reduced-fee';
   };
 
-  let onSubmit          = handlers.navigateOnSubmit(address, props);
+  return address;
+};
+
+const Page = (props) => {
+  let onSubmit          = handlers.navigateOnSubmit(
+    addressForProps(props),
+    props
+  );
   let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = !validToContinue(props);
 
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   const onChange   = handlers.onInputChange(updateRealID, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onSubmit   = handlers.onFormSubmit(dispatch);
 
   return {
     onChange,

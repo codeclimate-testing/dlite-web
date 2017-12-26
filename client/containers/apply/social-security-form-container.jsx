@@ -36,7 +36,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const onChange = handlers.onInputChange(updateSocialSecurity, dispatch);
-  const onSubmit = handlers.onFormSubmit;
+  const onSubmit = handlers.onFormSubmit(dispatch);
   const onBlur   = handlers.onBlur(dispatch);
   const onFocus  = handlers.onFocus(dispatch);
 

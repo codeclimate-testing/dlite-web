@@ -1,7 +1,8 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent from '../../helpers/data-present';
+
+import { hasValue } from '../../helpers/data/validations';
 
 const EligibilityRequirements = (props) => {
   let value = props.eligibilityRequirements;
@@ -10,7 +11,7 @@ const EligibilityRequirements = (props) => {
     value = 'No Answer';
   }
 
-  if (!dataPresent.value(value)) { return null; }
+  if (!hasValue(value)) { return null; }
 
   return (
     <div className='summary-section'>

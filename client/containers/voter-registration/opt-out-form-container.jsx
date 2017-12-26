@@ -3,27 +3,19 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import {
-  updateOptOut
-} from '../../actions/index';
+import { updateOptOut } from '../../actions/index';
 
-import onInputChange from '../../helpers/handlers/on-input-change';
-import onFormSubmit from '../../helpers/handlers/on-form-submit';
-import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent from '../../helpers/data-present';
+import handlers from '../../helpers/handlers';
+import { hasValue } from '../../helpers/data/validations';
 import { isPreregistering } from '../../helpers/calculate-age';
-import {
-  onFocusGenerator,
-  onBlurGenerator
-} from '../../helpers/handlers/on-focus-change';
+
 import OptOutForm from '../../presentations/voter-registration/opt-out-form.jsx';
 import PreregOptOutForm from '../../presentations/voter-registration/opt-out-prereg-form.jsx';
 
 
 const Form = (props) => {
   let value = props.optOut;
-  const continueDisabled = !dataPresent.value(value);
+  const continueDisabled = !hasValue(value);
 
   let address = '/voting-registration/preferences';
   if ((props.optOut == "I am eligible to vote, but do not want to pre-register to vote") || (props.optOut === "opt-out")) {
@@ -32,8 +24,8 @@ const Form = (props) => {
     address = '/voting-registration/preferences-updated';
   }
 
-  const onSubmit = navigateOnSubmit(address, props);
-  const onBack = navigateOnBack(props);
+  const onSubmit = handlers.navigateOnSubmit(address, props);
+  const onBack = handlers.navigateOnBack(props);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreregOptOutForm : OptOutForm;
 
@@ -57,10 +49,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const onChange = onInputChange(updateOptOut, dispatch);
-  const onSubmit = onFormSubmit;
-  const onBlur   = onBlurGenerator(dispatch);
-  const onFocus  = onFocusGenerator(dispatch);
+  const onChange = handlers.onInputChange(updateOptOut, dispatch);
+  const onSubmit = handlers.onFormSubmit(dispatch);
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
 
   return {
     onSubmit,

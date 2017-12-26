@@ -1,24 +1,12 @@
 'use strict';
 
-const value = (props) => {
-  return !!(props && props.trim());
-};
+import {
+  hasValue,
+  hasAnyAttributes,
+  hasAllAttributes
+} from './data/validations';
 
-const hasAllAttributes = (props, attributes) => {
-  if (!props) { return; }
-
-  return attributes.every((attributeName) => {
-    return value(props[attributeName]);
-  });
-};
-
-const hasAnyAttributes = (props, attributes) => {
-  if (!props) { return; }
-  return attributes.some((attributeName) => {
-    return value(props[attributeName]);
-  });
-};
-
+// TODO: move to `data/validations`
 const includes = (array, name) => {
   return array.indexOf(name) > -1;
 };
@@ -28,6 +16,7 @@ const hasValues = (props) => {
 
   return props.length > 0;
 };
+// --------------------------------
 
 const legalName = (props) => {
   return hasAllAttributes(props, ['lastName']);
@@ -38,7 +27,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (value(props.renew) || props.new.length > 0));
+  return (props && (hasValue(props.renew) || props.new.length > 0));
 };
 
 const currentCardInfo = (props) => {
@@ -102,13 +91,13 @@ const hasMedicalCondition = (props) => {
 };
 
 const contactMethods = (props) => {
-  return value(props.shouldContact) &&
+  return hasValue(props.shouldContact) &&
     hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
 };
 
 const politicalPartyChoose = (props) => {
     return props && (
-    value(props.politicalPartyChoose) && value(props.isSelected)
+    hasValue(props.politicalPartyChoose) && hasValue(props.isSelected)
   );
 };
 
@@ -138,16 +127,18 @@ const application = (props) => {
     medicalHistory(props.medicalHistory) ||
     licenseIssues(props.licenseIssues) ||
     licenseAndIdHistory(props.licenseAndIdHistory) ||
-    value(props.citizenStatus) ||
-    value(props.ballotByMail) ||
-    value(props.eligibilityRequirements) ||
+    hasValue(props.citizenStatus) ||
+    hasValue(props.ballotByMail) ||
+    hasValue(props.eligibilityRequirements) ||
     politicalPartyChoose(props.politicalPartyChoose) ||
-    value(props.ballotLanguage) ||
-    value(props.optOut) ||
+    hasValue(props.ballotLanguage) ||
+    hasValue(props.optOut) ||
     contactMethods(props.contactMethods) ||
     realID(props.realID) || 
-    value(props.seniorID);
+    hasValue(props.seniorID);
 };
+
+const value = hasValue; // remove when sure everything does not use this.
 
 export {
   value,

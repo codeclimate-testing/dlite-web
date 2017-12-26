@@ -9,59 +9,32 @@ import configure                from '../../support/configure-enzyme';
 import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import SeniorIDPage             from '../../../../client/presentations/intro/senior-id-page.jsx';
 
 describe('SeniorIDPage', function() {
   const Wrapper = wrapperGenerator(store);
 
-  describe('when it renders initially', function() {
-    let props;
+  let props;
 
-    beforeEach(function() {
-      let seniorID = '';
-      let continueDisabled = !(dataPresent.value(seniorID))
-      let onChange = spy();
+  beforeEach(function() {
+    let seniorID = '';
+    let continueDisabled = true;
+    let onChange = spy();
 
-      props = {
-        seniorID,
-        continueDisabled,
-        onChange
-      }
-    });
+    props = {
+      seniorID,
+      continueDisabled,
+      onChange
+    }
+  });
 
-    it('shows the form allowing you to choose to get a senior ID', function() {
-      let component = render(
-        <Wrapper>
-          <SeniorIDPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('label[for="seniorIDNo"]').length, 'No button missing');
-      assert.ok(component.find('label[for="seniorIDYes"]').length, 'Yes button missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <SeniorIDPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.arrow-button .forward disabled'));
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.seniorID = 'No';
-      props.continueDisabled  =   !(dataPresent.value(props.seniorID));
-
-      let component = render(
-        <Wrapper>
-          <SeniorIDPage {...props} />
-        </Wrapper>
-      );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
-    });
+  it('shows the form allowing you to choose to get a senior ID', function() {
+    let component = render(
+      <Wrapper>
+        <SeniorIDPage {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.find('label[for="seniorIDNo"]').length, 'No button missing');
+    assert.ok(component.find('label[for="seniorIDYes"]').length, 'Yes button missing');
   });
 });
-

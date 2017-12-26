@@ -1,5 +1,6 @@
 'use strict';
 
+import { hasValue }           from '../data/validations';
 import * as dataPresent       from '../data-present';
 import {
   getID,
@@ -10,7 +11,7 @@ export const validToContinue = (props) => {
   let valid = dataPresent.realID(props.realID);
 
   if (mustChooseCard(props)) {
-    valid = dataPresent.value(props.realID.realIdDesignation);
+    valid = hasValue(props.realID.realIdDesignation);
   }
 
   return valid;

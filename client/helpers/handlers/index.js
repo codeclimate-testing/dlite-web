@@ -10,7 +10,15 @@ import {
 const onBlur = onBlurGenerator;
 const onFocus = onFocusGenerator;
 
-import onFormSubmit from './on-form-submit';
+import {
+  onBlurValidateGenerator,
+  onFocusClearValidationGenerator
+} from './on-validation-change';
+const onBlurValidate = onBlurValidateGenerator;
+const onFocusClearValidation = onFocusClearValidationGenerator;
+
+import onFormSubmit from './on-form-submit-generator';
+import onSubmitShowErrors from './on-submit-show-errors';
 import onInputChange from './on-input-change';
 import onPageLoad from './on-page-load';
 
@@ -21,5 +29,8 @@ export default {
   onBlur,
   onFormSubmit,
   onInputChange,
-  onPageLoad
+  onPageLoad,
+  onBlurValidate,
+  onFocusClearValidation,
+  onSubmitShowErrors
 };

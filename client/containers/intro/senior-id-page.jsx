@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
+import { hasValue }           from '../../helpers/data/validations';
 
 import { updateSeniorID }     from "../../actions/index";
 import Presentation           from "../../presentations/intro/senior-id-page.jsx";
@@ -12,7 +12,7 @@ import Presentation           from "../../presentations/intro/senior-id-page.jsx
 const Page = (props) => {
   let onSubmit          =   handlers.navigateOnSubmit('/real-id', props);
   let onBack            =   handlers.navigateOnBack('/what-do-you-want-to-do-today', props);
-  let continueDisabled  =   !dataPresent.value(props.seniorID);
+  let continueDisabled  =   !hasValue(props.seniorID);
 
   return (
     <Presentation
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   const onChange  = handlers.onInputChange(updateSeniorID, dispatch);
-  const onSubmit  = handlers.onFormSubmit;
+  const onSubmit  = handlers.onFormSubmit(dispatch);
   const onBlur    = handlers.onBlur(dispatch);
   const onFocus   = handlers.onFocus(dispatch);
 

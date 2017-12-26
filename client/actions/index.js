@@ -52,7 +52,10 @@ export const TYPES = {
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
   TOGGLE_ACCORDION:                       'TOGGLE_ACCORDION',
-  CHANGE_SECTION:                         'CHANGE_SECTION'
+  CHANGE_SECTION:                         'CHANGE_SECTION',
+  CLEAR_VALIDATIONS:                      'CLEAR_VALIDATIONS',
+  ADD_VALIDATION:                         'ADD_VALIDATION',
+  REMOVE_VALIDATION:                      'REMOVE_VALIDATION'
 };
 
 export const createApplicationID              = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -89,3 +92,6 @@ export const focusPageElement                 = generateValueAction(TYPES.FOCUS_
 export const blurPageElement                  = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);
 export const toggleAccordion                  = generateValueAction(TYPES.TOGGLE_ACCORDION);
 export const changeSection                    = generateValueAction(TYPES.CHANGE_SECTION);
+export const clearValidations                 = generateValueAction(TYPES.CLEAR_VALIDATIONS);
+export const addValidation                    = generateValueAction(TYPES.ADD_VALIDATION);
+export const removeValidation                 = generateValueAction(TYPES.REMOVE_VALIDATION);

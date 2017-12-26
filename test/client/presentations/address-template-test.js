@@ -11,28 +11,84 @@ import sinon      from 'sinon';
 import AddressForm from '../../../client/presentations/address-template.jsx';
 
 describe('AddressTemplateForm', function() {
-  it('renders form controls with the right ids', function() {
-    let state = {
-      street_1: '123 main street',
-      street_2: 'Unit No. 45',
-      city: 'Cray',
-      state: 'CA',
-      zip: 93366
-    };
+  let stateData = {
+    street_1: '123 main street',
+    street_2: 'Unit No. 45',
+    city: 'Cray',
+    state: 'CA',
+    zip: 93366
+  };
 
-    let component = render(
+  let component;
+
+  beforeEach(function() {
+    component = render(
       <AddressForm
         type='home'
-        address={ state }
+        address={ stateData }
         onChange={ sinon.spy() }
         onSubmit={ sinon.spy() }
       />
     );
+  });
 
-    assert.ok(component.find('#homeStreet_1').length, 'Street address input not found');
-    assert.ok(component.find('#homeStreet_2').length, 'Unit or apartment input not found');
-    assert.ok(component.find('#homeCity').length,   'City input not found');
-    assert.ok(component.find('#homeState').length,  'State select not found');
-    assert.ok(component.find('#homeZip').length,    'State select not found');
+  it('street address 1 input constructed correctly', function() {
+    assert.ok(
+      component.find('#homeStreet_1').length,
+      'Street address input not found'
+    );
+
+    assert.ok(
+      component.find('input[name=street_1]').length,
+      'Street address input has incorrect name'
+    );
+  });
+
+  it('street address 2 input constructed correctly', function() {
+    assert.ok(
+      component.find('#homeStreet_2').length,
+      'Unit or apartment input not found'
+    );
+
+    assert.ok(
+      component.find('input[name=street_2]').length,
+      'Unit or apartment input has incorrect name'
+    );
+  });
+
+  it('constructs the city input correctly', function () {
+    assert.ok(
+      component.find('#homeCity').length,
+      'City input not found'
+    );
+
+    assert.ok(
+      component.find('input[name=city]').length,
+      'City input has incorrect name'
+    );
+  });
+
+  it('constructs the state selector correctly', function() {
+    assert.ok(
+      component.find('#homeState').length,
+      'State select not found'
+    );
+
+    assert.ok(
+      component.find('select[name=state]').length,
+      'State input has incorrect name'
+    );
+  });
+
+  it('constructs the zip input correctly', function () {
+    assert.ok(
+      component.find('#homeZip').length,
+      'Zip input not found'
+    );
+
+    assert.ok(
+      component.find('input[name=zip]').length,
+      'Zip input has incorrect name'
+    );
   });
 });

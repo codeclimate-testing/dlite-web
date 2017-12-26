@@ -62,22 +62,28 @@ const stateList = [
 ];
 
 const StateSelector = (props) => {
-  let id = `${props.type}State`;
   let value = props.value;
 
   let options = stateList.map((stateCode) => {
     let selected = (value === stateCode);
-    return <Option
-              key={stateCode}
-              identifier={stateCode}
-              value={props.value}
-            />;
+    return (
+      <Option
+        key={stateCode}
+        identifier={stateCode}
+        value={props.value}
+      />
+    );
   });
 
   return (
     <div className='select-input-block'>
-      <label className='row' htmlFor={id}>State</label>
-      <select name={ props.identifier } id={id} value={value} onChange={props.onChange} >
+      <label className='row' htmlFor={props.id}>State</label>
+      <select
+        name='state'
+        id={props.id}
+        value={value}
+        onChange={props.onChange}
+      >
         { options }
       </select>
     </div>

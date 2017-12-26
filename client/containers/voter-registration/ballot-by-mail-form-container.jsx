@@ -6,7 +6,7 @@ import { updateBallotByMail } from '../../actions/index';
 import BallotByMailForm from '../../presentations/voter-registration/ballot-by-mail-form.jsx';
 import BallotByMailFormPreReg from '../../presentations/voter-registration/ballot-by-mail-prereg-form.jsx';
 import connectForm from '../../helpers/connect-form';
-import * as dataPresent from '../../helpers/data-present';
+import { hasValue } from '../../helpers/data/validations';
 import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
 import navigateOnBack from '../../helpers/handlers/navigate-on-back';
 import { isPreregistering } from '../../helpers/calculate-age';
@@ -18,7 +18,7 @@ import {
 const ConnectedForm = (props) => {
   const onSubmit = navigateOnSubmit('/voting-registration/contact-methods', props);
   const onBack = navigateOnBack(props);
-  let continueDisabled = !(dataPresent.value(props.ballotByMail));
+  let continueDisabled = !(hasValue(props.ballotByMail));
 
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);

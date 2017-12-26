@@ -7,7 +7,6 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out-form.jsx';
 
 describe('OptOutPage', function() {
@@ -17,45 +16,40 @@ describe('OptOutPage', function() {
 
   const Wrapper = wrapperGenerator(store);
 
-  describe('when it renders initially', function() {
-    let props;
-    
-    beforeEach(function() {
-      let dateOfBirth = {
-        month: '',
-        day: '',
-        year: ''
-      };
-      let optOut = '';
-      let continueDisabled = !(dataPresent.value(optOut));
+  let props;
 
-      let onChange = spy();
+  beforeEach(function() {
+    let dateOfBirth = {
+      month: '',
+      day: '',
+      year: ''
+    };
+    let optOut = '';
+    let continueDisabled = true;
 
-      props = {
-        dateOfBirth,
-        optOut,
-        continueDisabled,
-        onChange
-      }
-    });
-    
-    it('shows the form asking if which best describes users voting registration status', function() {
-      let component = render(
-        <Wrapper>
-          <OptOutPage  {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.opt-out-form').length, 'form missing');
-      assert.ok(component.find('label[for="optOut-new"]'), 'new voter button missing');
-      assert.ok(component.find('label[for="optOut-existing"]'), 'existing voter button missing');
-      assert.ok(component.find('label[for="optOut-opt-out"]'), 'Opt out button missing');
-    });
+    let onChange = spy();
 
-    // TODO test onSubmit navigation
-
-    // TODO test preregistration vs registration based on DOB
-
+    props = {
+      dateOfBirth,
+      optOut,
+      continueDisabled,
+      onChange
+    }
   });
 
-});
+  it('shows the form asking if which best describes users voting registration status', function() {
+    let component = render(
+      <Wrapper>
+        <OptOutPage  {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.find('.opt-out-form').length, 'form missing');
+    assert.ok(component.find('label[for="optOut-new"]'), 'new voter button missing');
+    assert.ok(component.find('label[for="optOut-existing"]'), 'existing voter button missing');
+    assert.ok(component.find('label[for="optOut-opt-out"]'), 'Opt out button missing');
+  });
 
+  // TODO test onSubmit navigation
+
+  // TODO test preregistration vs registration based on DOB
+});

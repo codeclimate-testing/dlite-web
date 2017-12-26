@@ -5,20 +5,6 @@ import assert from 'assert';
 import * as dataPresent from '../../../client/helpers/data-present';
 
 describe('dataPresent', function() {
-  describe('#value', function() {
-    it('is false with an empty string', function() {
-      assert(!dataPresent.value(''), 'empty string is present');
-    });
-
-    it('is false with a padded empty string', function() {
-      assert(!dataPresent.value('    '), 'padded empty string is present');
-    });
-
-    it('is true for strings with content', function() {
-      assert(dataPresent.value('  0  '), 'padded string with value not present');
-    });
-  });
-
   describe('#legalName', function() {
     it('is true with only last name', function() {
       assert(dataPresent.legalName({lastName: 'Smith'}), 'legalName not present with last name');
@@ -238,7 +224,6 @@ describe('dataPresent', function() {
   });
 
   describe('#licenseAndIdHistory', function() {
-    
     it('is true when all three parts of date are present', function() {
       let data = {
         month: '10',
@@ -567,16 +552,6 @@ describe('dataPresent', function() {
       };
 
       assert(dataPresent.application(data), 'Data not present with opt out info');
-    });
-  });
-
-  describe('#seniorID', function() {
-    it('is true when there is a value', function() {
-      assert.equal(dataPresent.value('Yes'), true);
-    });
-
-    it('is false when there are no values', function() {
-      assert.equal(dataPresent.value(''), false);
     });
   });
 });

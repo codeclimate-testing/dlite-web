@@ -1,16 +1,15 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent from '../../helpers/data-present';
+
+import { hasValue } from '../../helpers/data/validations';
 
 const BallotByMail = (props) => {
-  let value = props.ballotByMail;
-
-  if (!dataPresent.value(value)) { return null; }
+  if (!hasValue(props.ballotByMail)) { return null; }
 
   return (
     <div className='summary-section'>
-      <p> Ballot by mail: {value} </p>
+      <p> Ballot by mail: {props.ballotByMail} </p>
     </div>
   );
 };

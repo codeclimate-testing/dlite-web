@@ -2,15 +2,15 @@
 
 import React from 'react';
 
-import { updatePreviousNamesInfo }         from "../../actions/index";
+import { updatePreviousNamesInfo }     from "../../actions/index";
 import Form                            from '../../presentations/apply/previous-names-form.jsx';
 import connectForm                     from '../../helpers/connect-form';
 import navigateOnSubmit                from '../../helpers/handlers/navigate-on-submit';
-import * as dataPresent                from '../../helpers/data-present';
+import { hasValue }                    from '../../helpers/data/validations';
 
 const ConnectedForm = (props) => {
   let value = props.hasPreviousNames;
-  let continueDisabled  = !dataPresent.value(value);
+  let continueDisabled  = !hasValue(value);
   let onSubmit          = navigateOnSubmit('/about-me/enter-previous-names', props);
 
   if(value === 'No') {

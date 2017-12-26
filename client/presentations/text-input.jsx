@@ -2,25 +2,70 @@
 
 import React from 'react';
 
-const TextInput = (props) => {
-  let id = props.identifier;
-  if (props.type) {
-    let upcased = props.identifier[0].toUpperCase() + props.identifier.slice(1);
-    id = `${props.type}${upcased}`;
+import { hasValue } from '../helpers/data/validations';
+import errorClass   from '../helpers/validations/error-class';
+
+const ErrorIcon = (props) => {
+  if (props.errorClass !== 'error') { return null; }
+  return (
+    <div className='unit error-icon'></div>
+  );
+};
+
+const AdditionalLabel = (props) => {
+  if (
+    !hasValue(props.additionalText) &&
+    !props.errorClass
+  ) { return null; }
+
+
+  let additionalText = props.additionalText;
+  if (props.errorClass) {
+    additionalText = props.errorMessage;
   }
 
+  let className = 'additional-label input-margin-bottom ' + props.errorClass;
+
   return (
-    <div className='text-input-block'>
-      <label htmlFor={ id }>{ props.description }</label>
-      { props.example && <h5>Example: { props.example } </h5> }
+    <div className={className} >
+      { additionalText }
+    </div>
+  );
+};
+
+const TextInput = (props) => {
+  let id              = props.id   || props.identifier;
+  let name            = props.name || props.identifier;
+  let additionalText  = props.example;
+
+  let className = errorClass(props);
+
+  return (
+    <div className='text-input-block input-margin-bottom'>
+      <label
+        htmlFor={ id }
+        className={ className }
+      >
+        <ErrorIcon errorClass={ className } />
+        { props.description }
+      </label>
       <div className="input-container">
         <input
-          type="text"
+          className={ className }
+          type='text'
           id={ id }
-          name={ props.identifier }
+          name={ name }
           onChange={ props.onChange }
-          value={ props.value }/>
+          onBlur={ props.onBlur }
+          onFocus={ props.onFocus }
+          value={ props.value }
+        />
       </div>
+      <AdditionalLabel
+        errorMessage={ props.errorMessage }
+        errorClass={ className }
+        additionalText={ additionalText }
+      />
     </div>
   );
 };

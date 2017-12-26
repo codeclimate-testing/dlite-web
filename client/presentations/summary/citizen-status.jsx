@@ -1,7 +1,8 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent from '../../helpers/data-present';
+
+import { hasValue } from '../../helpers/data/validations';
 
 const CitizenStatus = (props) => {
   let value = props.citizenStatus;
@@ -13,7 +14,7 @@ const CitizenStatus = (props) => {
     value = 'False';
   }
 
-  if (!dataPresent.value(value)) { return null; }
+  if (!hasValue(value)) { return null; }
 
   return (
     <div className='summary-section'>

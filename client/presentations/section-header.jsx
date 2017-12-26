@@ -1,15 +1,16 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent     from '../helpers/data-present';
+
+import { hasValue } from '../helpers/data/validations';
 
 const NumberPrefix = (props) => {
-  if (!dataPresent.value(props.number)) { return null; }
+  if (!hasValue(props.number)) { return null; }
   return <span>{props.number} &raquo; </span>;
 };
 
 const SectionHeader = (props) => {
-  if (!dataPresent.value(props.name)) { return null; }
+  if (!hasValue(props.name)) { return null; }
 
   return (
     <div className='section-header row'>

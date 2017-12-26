@@ -4,16 +4,16 @@ import React                  from 'react';
 import { connect }            from 'react-redux';
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
+import { hasValue }           from '../../helpers/data/validations';
 
 import { updateCardAction }   from "../../actions/index";
+
 import Presentation           from "../../presentations/intro/what-do-you-want-to-do-today-page.jsx";
 
 const Page = (props) => {
-  
   let onSubmit          =   handlers.navigateOnSubmit('/select-id-dl', props);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !dataPresent.value(props.cardAction);
+  let continueDisabled  =   !hasValue(props.cardAction);
 
   return (
     <Presentation
@@ -35,7 +35,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const onChange = handlers.onInputChange(updateCardAction, dispatch);
-  const onSubmit = handlers.onFormSubmit;
+  const onSubmit = handlers.onFormSubmit(dispatch);
   const onBlur   = handlers.onBlur(dispatch);
   const onFocus  = handlers.onFocus(dispatch);
 

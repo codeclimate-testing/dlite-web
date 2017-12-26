@@ -29,10 +29,19 @@ describe('NamePage', function() {
       let continueDisabled  =   !(dataPresent.legalName(legalName));
       let onChange = spy();
 
+      let validations = {
+        firstName: spy(),
+        middleName: spy(),
+        lastName: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
+
       props = {
         legalName,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
 

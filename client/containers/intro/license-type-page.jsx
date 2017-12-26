@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   const onChange   = handlers.onInputChange(updateLicenseType, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onSubmit   = handlers.onFormSubmit(dispatch);
 
   return {
     onChange,

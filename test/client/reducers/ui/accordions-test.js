@@ -1,7 +1,7 @@
 'use strict';
 
 import assert from 'assert';
-import accordionsReducer from '../../../client/reducers/ui/accordions';
+import accordionsReducer from '../../../../client/reducers/ui/accordions';
 
 describe('accordionsReducer', function() {
   it('ignores all non accordion events', function() {

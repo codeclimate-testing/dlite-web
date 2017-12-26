@@ -19,21 +19,23 @@ import {
   canBeSenior
 } from '../../helpers/calculate-age';
 
-const Page = (props) => {
-
+const addressForProps = (props) => {
   let address = '/real-id';
   if(ageChecks.Under15Half(props.dateOfBirth) && getDL(props)) {
-    address             =   '/youth-license-notification';
+    address = '/youth-license-notification';
   } else if(dataPresent.value(props.cardType.renew) && props.cardAction === 'renew') {
-    address             =   '/current-card-information';
+    address = '/current-card-information';
   } else if(canBeSenior(props.dateOfBirth)) {
-    address             =   '/senior-id';
+    address = '/senior-id';
   }
+  return address;
+};
 
-  let onSubmit          =   handlers.navigateOnSubmit(address, props);
+const Page = (props) => {
+  let onSubmit          =   handlers.navigateOnSubmit(addressForProps(props), props);
   let onBack            =   handlers.navigateOnBack(props);
   let continueDisabled  =   !canContinue(props)
-  
+
   return (
     <Presentation
       {...props}
@@ -55,7 +57,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const onChange = handlers.onInputChange(updateCardType, dispatch);
-  const onSubmit = handlers.onFormSubmit;
+  const onSubmit = handlers.onFormSubmit(dispatch);
   const onBlur   = handlers.onBlur(dispatch);
   const onFocus  = handlers.onFocus(dispatch);
 

@@ -1,16 +1,15 @@
 'use strict';
 
 import React from 'react';
-import * as dataPresent from '../../helpers/data-present';
+
+import { hasValue } from '../../helpers/data/validations';
 
 const OptOut = (props) => {
-  let value = props.optOut;
-
-  if (!dataPresent.value(value)) { return null; }
+  if (!hasValue(props.optOut)) { return null; }
 
   return (
     <div className='summary-page'>
-      <p> Choose opt out: {value} </p>
+      <p> Choose opt out: {props.optOut} </p>
     </div>
   );
 };

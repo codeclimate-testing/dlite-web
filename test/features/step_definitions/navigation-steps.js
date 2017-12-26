@@ -29,10 +29,10 @@ module.exports = function(world) {
   world.given('I go to the new online DL application', function(done) {
     browser
       .on('consoleMessage', function( msg ){
-        console.log(msg);
+        console.log('log', msg);
       })
       .on('error', function( err ){
-        console.log(err);
+        console.log('error', err);
       })
       .open(world.url('/'))
       .waitForSelector('.legal-name-form')

@@ -95,7 +95,7 @@ describe('Data helpers for card-type', function() {
       assert.equal(getDL(data), true);
     });
   });
-  
+
   describe('getNewDL', function() {
     it('is false if user is not getting a new ID or renewing an ID', function() {
       let data = {

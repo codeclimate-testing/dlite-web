@@ -8,13 +8,16 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-card-action'>
         <h4>What would you like to do today?</h4>
-        <p>Pick one option for now. If you need to do more, you can do so at the end.</p>
+        <p>
+          Pick one option for now. If you need to do more,
+          you can do so at the end.
+        </p>
         <form onSubmit={ props.onSubmit }>
           <div className='row inner-buttom'>
             <RadioSelector

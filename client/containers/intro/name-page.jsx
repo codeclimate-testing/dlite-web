@@ -3,23 +3,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import handlers             from '../../helpers/handlers';
-import * as dataPresent     from '../../helpers/data-present';
+import handlers               from '../../helpers/handlers';
+import * as dataPresent       from '../../helpers/data-present';
+import { NamePageValidator }  from '../../helpers/validations';
 
-import Presentation         from '../../presentations/intro/name-page.jsx';
-import { updateLegalName }  from '../../actions/index';
+import { updateLegalName } from '../../actions/index';
+
+import Presentation           from '../../presentations/intro/name-page.jsx';
 
 const Page = (props) => {
-  let continueDisabled  =   !dataPresent.legalName(props.legalName);
-  let onSubmit          =   handlers.navigateOnSubmit('/my-basics/date-of-birth', props);
-  let onBack            =   handlers.navigateOnBack(props);
+  let validations = new NamePageValidator(props.legalName, props.validations);
+
+  let onBack = handlers.navigateOnBack(props);
+  let onSubmit = handlers.navigateOnSubmit('/my-basics/date-of-birth', props);
+
+  if (!validations.isValid()) {
+    onSubmit = props.onSubmitShowErrors;
+  }
 
   return (
     <Presentation
       {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      onSubmit={ onSubmit }
+      onBack={ onBack }
+      validations={ validations }
     />
   );
 };
@@ -27,17 +34,23 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     legalName: state.application.legalName,
-    section: state.ui.section
+    validations: state.ui.validations
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateLegalName, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onChange = handlers.onInputChange(updateLegalName, dispatch);
+  const onSubmit = handlers.onFormSubmit(dispatch);
+  const onBlurValidate = handlers.onBlurValidate(dispatch);
+  const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
+  const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
 
   return {
     onChange,
-    onSubmit
+    onSubmit,
+    onBlurValidate,
+    onFocusClearValidation,
+    onSubmitShowErrors
   };
 };
 
