@@ -236,6 +236,40 @@
         }
       }
     },
+    "renewal_card": {
+      "table_schema": "public",
+      "table_name": "renewal_card",
+      "obj_description": null,
+      "columns": {
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "number": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "date": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "date",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
     "card_histories": {
       "table_schema": "public",
       "table_name": "card_histories",

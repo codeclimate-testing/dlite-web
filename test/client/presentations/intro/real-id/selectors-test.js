@@ -26,8 +26,8 @@ describe('RealIdSelectors', function() {
     };
 
     let cardType = {
-      ID: true,
-      DL: false
+      new: ['ID'],
+      renew: ''
     }
 
     let realID = {
@@ -61,10 +61,7 @@ describe('RealIdSelectors', function() {
       'Header does not include ID type'
     );
 
-    props.cardType = {
-      ID: false,
-      DL: true
-    };
+    props.cardType.new = ['DL'];
 
     component = render(
       <Wrapper>
@@ -79,7 +76,7 @@ describe('RealIdSelectors', function() {
   });
 
   it('should have a header indicating you are applying for both cards is applicable', function() {
-    props.cardType.DL = true;
+    props.cardType.new = ['DL', 'ID'];
 
     let component = render(
       <Wrapper>

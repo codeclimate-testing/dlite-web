@@ -3,7 +3,7 @@
 import Empty                       from './empty.jsx';
 import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
-import CardType                    from './card-type.jsx';
+import Cards                       from './card-type.jsx';
 import SeniorID                    from './senior-id.jsx';
 import RealID                      from './real-id.jsx';
 import ReducedFee                  from './reduced-fee.jsx';
@@ -31,7 +31,7 @@ export {
   Empty,
   LegalName,
   DateOfBirth,
-  CardType,
+  Cards,
   SeniorID,
   RealID,
   ReducedFee,

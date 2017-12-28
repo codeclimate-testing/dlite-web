@@ -8,13 +8,13 @@ function parse(data) {
   if(!data) {
     return defaultClientState;
   }
-
   let application           = data.application;
   let addresses             = data.addresses;
   let emails                = data.emails;
   let phone_numbers         = data.phone_numbers;
   let organ_donations       = data.organ_donations;
   let card_histories        = data.card_histories;
+  let renewal_card          = data.renewal_card;
   let previous_names        = data.previous_names;
   let medical_histories     = data.medical_histories;
   let license_issues        = data.license_issues;
@@ -30,7 +30,8 @@ function parse(data) {
         id:                       application.id,
         legalName:                getLegalName(application),
         dateOfBirth:              getDateOfBirth(application),
-        cardType:                 getCardTypes(cards),
+        cardType:                 getCardTypes(card_options, cards),
+        currentCardInfo:          getCurrentCardInfo(renewal_card),
         realID:                   getRealID(card_options, cards),
         reducedFee:               getReducedFee(card_options),
         seniorID:                 getSeniorID(card_options),
@@ -174,6 +175,16 @@ function getLicenseAndIdHistory(card_histories) {
   }
 }
 
+function getCurrentCardInfo(renewal_card) {
+  let _date = parserHelper.createDateJson(renewal_card[0].date);
+  return {
+    number:   renewal_card[0].number,
+    month:    _date.month,
+    day:      _date.day,
+    year:     _date.year
+  }
+}
+
 function getNamesHistories(previous_names) {
   if(previous_names && previous_names.length > 0){
     let _names = previous_names[0].name;
@@ -303,19 +314,29 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
   };
 }
 
-function getCardTypes(cards) {
+function getCardTypes(cardOptions, cards) {
   let cardType = {
-    ID: false,
-    DL: false
+    new: [],
+    renew: '',
+    youthIDInstead: ''
   };
-  cards.forEach( (card) => {
-    if(card.type === 'ID') {
-      cardType.ID = true;
-    }
-    if(card.type === 'DL') {
-      cardType.DL = true;
+
+  cardOptions.forEach(option => {
+    if(option.option_value === 'new' && option.option_type === 'action'){
+      cards.forEach(card => {
+        if(card.id === option.card_id) {
+          cardType.new.push(card.type)
+        }
+      })
+    } else if(option.option_value === 'renew' && option.option_type === 'action') {
+      cards.forEach(card => {
+        if(card.id === option.card_id) {
+          cardType.renew = card.type;
+        }
+      });
     }
   });
+  
   return cardType;
 }
 
@@ -328,7 +349,7 @@ function getRealID(card_options, cards) {
     if(option.option_value === 'real-id') {
       realID.getRealID = 'Yes';
       cards.forEach((card) => {
-        if(card.id === parseInt(option.card_id, 10)) {
+        if(card.id === option.card_id) {
           realID.realIdDesignation = card.type
         }
       });

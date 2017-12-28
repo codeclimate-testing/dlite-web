@@ -21,8 +21,9 @@ describe('RealIdPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        ID: true,
-        DL: true
+        new: ['ID', 'DL'],
+        renew: '',
+        youthIDInstead: ''
       }
       let realID = {
         realIdDesignation: '',
@@ -102,7 +103,7 @@ describe('RealIdPage', function() {
 
     it('does not show the form asking which type if you only are getting one card', function() {
       props.realID.getRealID = 'Yes';
-      props.cardType.ID = false;
+      props.cardType.new = ['DL'];
 
       let component = render(
         <Wrapper>

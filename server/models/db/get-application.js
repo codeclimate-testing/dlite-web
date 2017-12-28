@@ -18,6 +18,8 @@ module.exports = function getApplication(id) {
       .then((records) => { aggregate.organ_donations = records[0]; }),
     db('card_histories').where('application_id', id)
       .then((records) => { aggregate.card_histories = records; }),
+    db('renewal_card').where('application_id', id)
+      .then((records) => { aggregate.renewal_card = records; }),
     db('previous_names').where('application_id', id)
       .then((records) => { aggregate.previous_names = records; }),
     db('medical_histories').where('application_id', id)

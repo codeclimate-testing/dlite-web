@@ -9,8 +9,8 @@ describe('cardTypeReducer', function() {
     assert.deepEqual(
       updateCardType(
         {
-          ID: false,
-          DL: false,
+          new: [],
+          renew: '',
           youthIDInstead: ''
         },
         {
@@ -22,8 +22,8 @@ describe('cardTypeReducer', function() {
         }
       ),
       {
-        ID: true,
-        DL: false,
+        new: ['ID'],
+        renew: '',
         youthIDInstead: ''
       },
     );
@@ -33,8 +33,8 @@ describe('cardTypeReducer', function() {
     assert.deepEqual(
       updateCardType(
         {
-          ID: false,
-          DL: false,
+          new: [],
+          renew: '',
           youthIDInstead: ''
         },
         {
@@ -46,8 +46,8 @@ describe('cardTypeReducer', function() {
         }
       ),
       {
-        ID: true,
-        DL: false,
+        new: ['ID'],
+        renew: '',
         youthIDInstead: ''
       },
     );
@@ -56,8 +56,8 @@ describe('cardTypeReducer', function() {
   it('it adds the switch type flag if youthIDInstead is Yes', function() {
     const newState = updateCardType(
       {
-        ID: false,
-        DL: true,
+        new: ['DL'],
+        renew: '',
         youthIDInstead: ''
       },
       {
@@ -76,8 +76,8 @@ describe('cardTypeReducer', function() {
   it('it switches the card type data if youthIDInstead is Yes', function() {
     const newState = updateCardType(
       {
-        ID: false,
-        DL: true,
+        new: ['DL'],
+        renew: '',
         youthIDInstead: ''
       },
       {
@@ -89,15 +89,14 @@ describe('cardTypeReducer', function() {
       }
     );
 
-    assert.deepEqual(newState.ID, true, 'ID still not switched to true');
-    assert.deepEqual(newState.DL, false, 'DL still not switche to false');
+    assert.deepEqual(newState.new, ['ID'], 'array not updated to have only ID card');
   });
 
   it('it adds the choice, but leaves the id/dl info as is if No is chosen', function() {
     const newState = updateCardType(
       {
-        ID: false,
-        DL: true,
+        new: ['DL'],
+        renew: '',
         youthIDInstead: ''
       },
       {
@@ -112,10 +111,30 @@ describe('cardTypeReducer', function() {
     assert.deepEqual(
       newState,
       {
-        ID: false,
-        DL: true,
+        new: ['DL'],
+        renew: '',
         youthIDInstead: 'No'
       }
+    );
+  });
+
+  it('switches the cardType renew', function() {
+    const newState = updateCardType(
+      {
+        new: [''],
+        renew: 'ID',
+        youthIDInstead: ''
+      },
+      {
+        type: 'UPDATE_CARD_TYPE',
+        payload: {
+          name: 'renew',
+          value: 'DL'
+        }
+      }
+    );
+    assert.deepEqual(
+      newState.renew, 'DL', 'renew value not changed'
     );
   });
 });

@@ -9,8 +9,10 @@ import * as dataPresent         from '../../helpers/data-present';
 import { updateSocialSecurity } from "../../actions/index";
 import Presentation             from '../../presentations/apply/social-security-page.jsx';
 
+import { getDL }                  from '../../helpers/data/card-type';
+
 const Page = (props) => {
-  let nextAddress       = props.cardType.DL ? '/my-history/medical' : '/my-history/license-and-id';
+  let nextAddress       = getDL(props) ? '/my-history/medical' : '/my-history/license-and-id';
   let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
   let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));

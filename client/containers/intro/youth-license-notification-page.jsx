@@ -8,14 +8,15 @@ import * as dataPresent     from '../../helpers/data-present';
 
 import Presentation         from '../../presentations/intro/youth-license-notification-page.jsx';
 import { updateCardType }   from '../../actions/index';
-
+import { getDL }            from '../../helpers/data/card-type';
 import { ageChecks }        from '../../helpers/calculate-age';
 
 const Page = (props) => {
   const continueDisabled  = ageChecks.Under15(props.dateOfBirth) ? props.cardType.youthIDInstead !== 'Yes' : false;
   const onSubmit          = handlers.navigateOnSubmit('/real-id', props);
   const onBack            = handlers.navigateOnBack(props);
-  const selectedValue     = props.cardType.youthIDInstead === 'Yes' && props.cardType.DL ? 'No' : props.cardType.youthIDInstead;
+
+  const selectedValue     = props.cardType.youthIDInstead === 'Yes' && getDL(props) ? 'No' : props.cardType.youthIDInstead;
 
   return (
     <Presentation

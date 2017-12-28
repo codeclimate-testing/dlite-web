@@ -1,14 +1,13 @@
 'use strict';
 
-import React from "react";
+import React            from "react";
 import * as dataPresent from '../../helpers/data-present';
+import { printDate }    from '../../helpers/print-date';
 
 const DateOfBirth = (props) => {
   if (!dataPresent.date(props.dateOfBirth)) { return null; }
 
-  let dateOfBirth = props.dateOfBirth.month + '/' +
-    props.dateOfBirth.day + '/' +
-    props.dateOfBirth.year;
+  let dateOfBirth = printDate(props.dateOfBirth);
 
   return (
     <div className='summary-section'>

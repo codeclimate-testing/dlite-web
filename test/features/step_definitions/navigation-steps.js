@@ -62,8 +62,16 @@ module.exports = function(world) {
     navigateToPath('/apply/my-basics/date-of-birth', '.date-of-birth-form', done);
   });
 
+  world.when('I visit the what do you want to do today page', function(done) {
+    navigateToPath('/apply/what-do-you-want-to-do-today', '.choose-card-action', done);
+  });
+
   world.when('I visit the ID or DL selection page', function(done) {
-    navigateToPath('/apply/what-do-you-want-to-do-today', '.choose-card-form', done);
+    navigateToPath('/apply/select-id-dl', '.choose-card-form', done);
+  });
+
+  world.when('I visit the senior id page', function(done) {
+    navigateToPath('/apply/senior-id', '.senior-id-form', done);
   });
 
   world.when('I visit the real id page', function(done) {
@@ -174,8 +182,16 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/my-basics\/date-of-birth/, done);
   });
 
+  world.then('I will be on the what do you want to do today page', function(done) {
+    assertOnPage('.choose-card-action', /apply\/what-do-you-want-to-do-today/, done);
+  });
+
+  world.then('I will be on the current card info page', function(done) {
+    assertOnPage('.current-card-form', /apply\/current-card-info/, done);
+  });
+
   world.then('I will be on the ID and DL selection page', function(done) {
-    assertOnPage('.choose-card-form', /apply\/what-do-you-want-to-do-today/, done);
+    assertOnPage('.choose-card-form', /apply\/select-id-dl/, done);
   });
 
   world.then('I will be on the youth license notification page', function(done) {

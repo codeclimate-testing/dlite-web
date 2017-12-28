@@ -23,8 +23,9 @@ describe('Reduced Fee Page', function() {
         form: ''
       };
       let cardType = {
-        ID: true,
-        DL: false
+        new: ['ID'],
+        renew: '',
+        youthIDInstead: ''
       };
       let continueDisabled  =   !(dataPresent.reducedFee(reducedFee));
       let onChange = spy();
@@ -58,7 +59,7 @@ describe('Reduced Fee Page', function() {
 
     it('selecting No makes next button no longer disabled', function() {
       props.reducedFee.ID = 'No';
-      props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
+      props.continueDisabled  =   !(dataPresent.reducedFee(props.reducedFee));
 
       let component = render(
         <Wrapper>
@@ -72,7 +73,7 @@ describe('Reduced Fee Page', function() {
 
     it('selecting Yes makes form show asking if user has the correct forms', function() {
       props.reducedFee.ID = 'Yes';
-      props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
+      props.continueDisabled  =   !(dataPresent.reducedFee(props.reducedFee));
       let component = render(
         <Wrapper>
           <ReducedFeePage  {...props} />
@@ -81,6 +82,19 @@ describe('Reduced Fee Page', function() {
       assert.ok(component.find('label[for="formYes"]').length, 'form Yes button missing');
       assert.ok(component.find('label[for="formNo"]').length, 'form No button missing');
     });
+
+    it('has special language if user is getting both new ID and new DL', function() {
+      props.cardType.new = ['ID', 'DL'];
+
+      let component = render(
+        <Wrapper>
+          <ReducedFeePage  {...props} />
+        </Wrapper>
+      );
+
+      assert.equal(component.text().includes('This only applies to your ID Card.'), true);
+    })
+
   });
 });
 

@@ -32,6 +32,10 @@ module.exports = function createApplication(data) {
     })
     .then((cardHistories) => {
       returnedData.card_histories = cardHistories;
+      return insert('renewal_card');
+    })
+    .then((renewalCard)=> {
+      returnedData.renewal_card = renewalCard;
       return insert('previous_names');
     })
     .then((previousNames) => {

@@ -1,17 +1,15 @@
 'use strict';
 
-import React from "react";
+import React            from 'react';
 import * as dataPresent from '../../helpers/data-present';
+import { printDate }    from '../../helpers/print-date';
 
 const LicenseIssues = (props) => {
 
   let isSuspended = props.licenseIssues.isSuspended;
   if (!dataPresent.value(isSuspended)) { return null; }
 
-  let date        = props.licenseIssues.month + '/' +
-                    props.licenseIssues.day + '/' +
-                    props.licenseIssues.year;
-
+  let date        = printDate(props.licenseIssues);
   let reason      = props.licenseIssues.reason;
 
   if(isSuspended !== 'Yes') {

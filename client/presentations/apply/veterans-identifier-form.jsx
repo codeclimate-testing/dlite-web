@@ -4,13 +4,14 @@ import React from 'react';
 
 import HomeLink               from '../home-link.jsx';
 import SelectorCollection     from '../selector-collection.jsx';
+import { getDL }              from '../../helpers/data/card-type';
 
 const OPTIONS = ['Yes', 'No'];
 const driversLicense = 'Drivers License';
 let cardType = 'ID';
 
 const Form = (props) => {
-  if(props.cardType.DL) {
+  if(getDL(props)) {
     cardType = driversLicense;
   } else {
     cardType;

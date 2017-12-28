@@ -29,7 +29,11 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (props.DL === true || props.ID === true));
+  return (props && (value(props.renew) || props.new.length > 0));
+};
+
+const currentCardInfo = (props) => {
+  return date(props) && hasAllAttributes(props, ['number'])
 };
 
 const reducedFee = (props) => {
@@ -107,6 +111,7 @@ const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
     cardType(props.cardType) ||
+    currentCardInfo(props.currentCardInfo) ||
     reducedFee(props.reducedFee) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
@@ -134,6 +139,7 @@ export {
   value,
   legalName,
   cardType,
+  currentCardInfo,
   reducedFee,
   address,
   date,

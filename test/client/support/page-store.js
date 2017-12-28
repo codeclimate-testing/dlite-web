@@ -6,7 +6,5 @@ export default {
     section: {}
   },
 
-  application: {
-    cardType: {}
-  }
+  application: {}
 };

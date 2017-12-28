@@ -30,8 +30,8 @@ describe('VeteransServicePage', function() {
     };
 
     let cardType = {
-      DL: true,
-      ID: true
+      new: ['ID', 'DL'],
+      renew: ''
     };
 
     let continueDisabled = !(dataPresent.veteransService(veteransService));

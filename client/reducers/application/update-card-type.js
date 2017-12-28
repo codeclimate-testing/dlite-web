@@ -5,23 +5,30 @@ import formObjectReducer from './form-object-reducer';
 
 const defaultState = () => {
   return {
-    ID: false,
-    DL: false,
+    new: [],
+    renew: '',
     youthIDInstead: ''
   }
 }
 
-const cardValueConverter = (value) => {
-  let converted = false;
+const checkboxConverter = (name, value, data) => {
+  let array = data.new;
   if (value.toString() === 'true') {
-    converted = true;
+    array.push(name);
+  } else {
+    let index = array.indexOf(name);
+    
+    if(index > -1) {
+      array.splice(index, 1);
+    }
   }
-  return converted;
+  return Object.assign({}, data, {new: array});
+
 };
 
-const updateCardData = (value, data) => {
+const youthID = (value, data) => {
   if (value !== 'Yes') { return data; }
-  return Object.assign({}, data, {DL: false, ID: true});
+  return Object.assign({}, data, {new: ['ID']});
 };
 
 const formReducer = (state = defaultState(), action) => {
@@ -35,9 +42,11 @@ const formReducer = (state = defaultState(), action) => {
 
   if (payload.name === 'youthIDInstead') {
     data[payload.name] = payload.value;
-    data = updateCardData(payload.value, data);
+    data = youthID(payload.value, data);
+  } else if(payload.name === 'renew') {
+    data[payload.name] = payload.value;
   } else {
-    data[payload.name] = cardValueConverter(payload.value);
+    data = checkboxConverter(payload.name, payload.value, data);
   }
 
   return data;

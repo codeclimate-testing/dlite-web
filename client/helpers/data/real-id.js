@@ -1,6 +1,10 @@
 'use strict';
 
 import * as dataPresent       from '../data-present';
+import {
+  getID,
+  getDL
+} from './card-type'
 
 export const validToContinue = (props) => {
   let valid = dataPresent.realID(props.realID);
@@ -14,5 +18,5 @@ export const validToContinue = (props) => {
 
 export const mustChooseCard = (props) => {
   return props.realID.getRealID === 'Yes' &&
-    (props.cardType.ID && props.cardType.DL);
+    (getID(props) && getDL(props));
 };

@@ -75,8 +75,8 @@ describe('server data parser', function() {
     getApplication(data.application.id)
     .then((records) => {
       parsedData = parse(records);
-      assert.equal(parsedData.application.cardType.ID, clientData.cardType.ID);
-      assert.equal(parsedData.application.cardType.DL, clientData.cardType.DL);
+      assert.deepEqual(parsedData.application.cardType.new, clientData.cardType.new);
+      assert.equal(parsedData.application.cardType.renew, clientData.cardType.renew);
       done();
     })
     .catch(done);
@@ -94,6 +94,19 @@ describe('server data parser', function() {
     })
     .catch(done);
   } )
+
+  it('correctly extracts the renewal card info', function(done) {
+    getApplication(data.application.id)
+    .then( records => {
+      parsedData = parse(records);
+      assert.equal(parsedData.application.currentCardInfo.number, clientData.currentCardInfo.number);
+      assert.equal(parsedData.application.currentCardInfo.day, clientData.currentCardInfo.day);
+      assert.equal(parsedData.application.currentCardInfo.month, clientData.currentCardInfo.month);
+      assert.equal(parsedData.application.currentCardInfo.year, clientData.currentCardInfo.year);
+      done();
+    })
+    .catch(done);
+  });
 
   it('correctly extracts the physical traits', function(done) {
     getApplication(data.application.id)

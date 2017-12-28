@@ -20,19 +20,33 @@ describe('ChooseCardPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        ID: '',
-        DL: ''
+        new: [],
+        renew: '',
+        youthIDInstead: ''
       };
+      let dateOfBirth = {
+        month: '',
+        day: '',
+        year: ''
+      };
+      let cardAction = '';
+
+      let accordions = {};
 
       let onChange = spy();
 
       props = {
         cardType,
+        dateOfBirth,
+        cardAction,
+        accordions,
         onChange
       }
     });
 
     it('shows a button for ID and a button for DL', function() {
+      props.cardAction = 'new';
+
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props} />
@@ -42,32 +56,28 @@ describe('ChooseCardPage', function() {
       assert.ok(component.find('label[for="DL"]').length, 'DL checkbox missing');
     });
 
-    it('next button is disabled', function() {
-      let continueDisabled  =   !(dataPresent.cardType(props.cardType));
+    it('it shows a form with radio buttons asking renewing users which card type to renew', function() {
+      props.cardAction = 'renew';
       let component = render(
         <Wrapper>
-          <ChooseCardPage {...props}
-          continueDisabled = { continueDisabled }
-          />
+          <ChooseCardPage {...props}/>
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.ok(component.find('input[type="radio"]').length, 'radio inputs not found');
+      assert.ok(component.find('.choose-card-form').length, 'form missing');
     });
 
-    it('selecting ID makes next button no longer disabled', function() {
-      props.cardType.ID = true;
-      let continueDisabled  =   !(dataPresent.cardType(props.cardType));
-
+    it('it shows a form with checkboxes asking users which kind of new card they want', function() {
+      props.cardAction = 'new';
       let component = render(
         <Wrapper>
-          <ChooseCardPage {...props}
-          continueDisabled = { continueDisabled }
-          />
+          <ChooseCardPage {...props}/>
         </Wrapper>
       );
 
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.ok(component.find('input[type="checkbox"]').length, 'checkbox inputs not found');
+      assert.ok(component.find('.choose-card-form').length, 'form missing');
     });
   });
 });
+

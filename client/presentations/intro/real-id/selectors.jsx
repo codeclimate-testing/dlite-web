@@ -2,8 +2,9 @@
 
 import React from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
+import SelectorCollection   from '../../selector-collection.jsx';
 import { hasMultipleCards } from '../../../helpers/data/cards';
+import { getDL }            from '../../../helpers/data/card-type';
 
 const DLHeader = (props) => {
   return <h4>Do you plan on using your Driver License to fly?</h4>;
@@ -19,8 +20,8 @@ const MultiCardHeader = (props) => {
 
 const Header = (props) => {
   const multiCard = hasMultipleCards(props);
-  if (multiCard)          { return <MultiCardHeader {...props} />; }
-  if (props.cardType.DL)  { return <DLHeader {...props} />; }
+  if (multiCard)     { return <MultiCardHeader {...props} />; }
+  if (getDL(props))  { return <DLHeader {...props} />; }
   return <IDHeader {...props} />;
 };
 
@@ -31,7 +32,7 @@ const FormSection = (props) => {
 
       <h5>
         As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
-        <b>within</b> the United States.
+         <b>within</b> the United States.
       </h5>
 
       <div className='row inner-bottom'>

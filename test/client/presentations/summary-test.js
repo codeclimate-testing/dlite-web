@@ -9,7 +9,7 @@ import {
   Empty,
   LegalName,
   DateOfBirth,
-  CardType,
+  Cards,
   RealID,
   ReducedFee,
   HomeAddress,
@@ -73,33 +73,54 @@ describe('Summary section', function() {
       assert.equal(component.find('.summary-section'), false);
     });
   });
-  describe('CardType', function() {
-    it('shows DL and ID when both are selected', function() {
+  describe('Cards', function() {
+    it('shows DL and ID when getting both new', function() {
       let cardType = {
-        DL: true,
-        ID: true
+        new: ['ID', 'DL'],
+        renew: ''
       };
       let component = render(
-        <CardType 
+        <Cards 
           { ...props }
           cardType = {cardType}
         />
       );
-      assert.equal(component.text().includes('Card Types: DL and ID'), true);
+      assert.equal(component.text().includes('Applying for new: ID and Driver License'), true);
     });
-    it('shows DL when both are selected', function() {
+    it('shows DL when only getting a new DL', function() {
       let cardType = {
-        DL: true,
-        ID: false
+        new: ['DL'],
+        renew: ''
       };
       let component = render(
-        <CardType 
+        <Cards
           { ...props }
           cardType = {cardType}
         />
       )
-      assert.equal(component.text().includes('Card Type: DL'), true);
+      assert.equal(component.text().includes('Applying for new: Driver License'), true);
     });
+    it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
+      let cardType = {
+        new: [],
+        renew: 'ID'
+      };
+      let currentCardInfo = {
+        number: 'a90382kf',
+        month: '11',
+        day: '13',
+        year: '2008'
+      };
+      let component = render(
+        <Cards
+          cardType = {cardType}
+          currentCardInfo = {currentCardInfo}
+        />
+      );
+      assert.equal(component.text().includes('Renewing: ID'), true);
+      assert.equal(component.text().includes('Renewal ID number: a90382kf'), true);
+      assert.equal(component.text().includes('Applying for new:'), false);
+    })
 
   });
   describe('RealID', function() {
@@ -122,6 +143,19 @@ describe('Summary section', function() {
         />
       )
       assert.equal(component.find('.summary-section'), false);
+    });
+
+    it('shows that user does not have correct forms for reduced fee application', function() {
+      let reducedFee = {
+        ID: 'Yes',
+        form: 'No'
+      }
+      let component = render(
+        <ReducedFee 
+          reducedFee = { reducedFee }
+        />
+      )
+      assert.equal(component.text().includes('Correct Forms for Reduced Fee: No'), true);
     });
   });
   describe('HomeAddress', function() {

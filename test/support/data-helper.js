@@ -13,8 +13,15 @@ function fakeClientData() {
       'suffix': 'II'
     },
     'cardType': {
-      'ID': true,
-      'DL': true
+      'new': ['DL'],
+      'renew': 'ID',
+      'youthIDInstead': ''
+    },
+    'currentCardInfo': {
+      'number': 'e203f390',
+      'day': '13',
+      'month': '10',
+      'year': '2000'
     },
     'dateOfBirth': {
       'day': '13',

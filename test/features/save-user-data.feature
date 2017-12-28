@@ -3,7 +3,7 @@ Feature: Save user data
   I want to save my user data to my application from the summary screen
   So that my application can be used in the field office to enable my request
 
-  Scenario: with one DL
+  Scenario: applying for one new DL
     Given I go to the new online DL application page
     Then I visit the legal name page
     And I enter my full name
@@ -11,8 +11,10 @@ Feature: Save user data
     Then I will be on the page for entering my date of birth
     And I enter my full date of birth into the form
     When I click "Next" to continue
+    Then I will be on the what do you want to do today page
+    And I choose to get a new card
+    When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    And I will see that the "Next" button is disabled
     And I click on the DL checkbox
     When I click "Next" to continue
     Then I will be on the page for choosing real id
@@ -143,14 +145,20 @@ Feature: Save user data
     Then I will see my updated email and phone number in summary
 
 
-  Scenario: with one ID and no social
+  Scenario: renewing one new ID and no social
     Given I go to the new online DL application page
     When I visit the date of birth page
     And I enter my full date of birth into the form
     When I click "Next" to continue
-    Then I will be on the ID and DL selection page
-    When I click on the ID checkbox
+    Then I will be on the what do you want to do today page
+    And I choose to renew a card
     When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    When I click to renew my ID
+    When I click "Next" to continue
+    Then I will be on the current card info page
+    When I enter my current card data
+    And I click "Next" to continue
     Then I will be on the page for choosing real id
     And I click yes to getting a real id
     And I click "Next" to continue
@@ -180,6 +188,7 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I will see that my ID card type has been saved
+    Then I will see the info of the card I want renewed
     Then I will see that I am getting a real id
     Then I will see that I am opting for a reduced fee and my answer about not having documents
     Then I will see that I do not have a social security number
@@ -203,10 +212,13 @@ Feature: Save user data
 
   Scenario: Save user data with both ID and DL
     Given I go to the new online DL application page
-    And I visit the ID or DL selection page
+    And I visit the what do you want to do today page
+    And I choose to get a new card
+    When I click "Next" to continue
+    Then I will be on the ID and DL selection page
     When I click on the ID checkbox
     When I click on the DL checkbox
-    And I visit the real id page
+    And I click "Next" to continue
     When I click yes to getting a real id
     When I select ID to have my real id designation
     And I click "Next" to continue

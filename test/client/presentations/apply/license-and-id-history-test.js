@@ -29,8 +29,9 @@ describe('LicenseIDHistoryPage', function() {
       };
 
       let cardType = {
-        ID: '',
-        DL: ''
+        new: [],
+        renew: '',
+        youthIDInstead: ''
       };
 
       let continueDisabled = !(dataPresent.licenseAndIdHistory(licenseAndIdHistory));
@@ -56,10 +57,7 @@ describe('LicenseIDHistoryPage', function() {
     });
 
     it('renders general license and id history page when applying for both ID and DL', function() {
-      props.cardType = {
-        ID: true,
-        DL: true
-      };
+      props.cardType.new = ['DL', 'ID'];
   
       let component = render(
         <Wrapper>
@@ -70,10 +68,7 @@ describe('LicenseIDHistoryPage', function() {
       assert.ok(component.find('.applying-for-dl').length, 'general license and id history page not found');
     });
     it('renders general license and id history page when applying for DL', function() {
-      props.cardType = {
-        ID: false,
-        DL: true
-      };
+      props.cardType.new = ['DL'];
   
       let component = render(
         <Wrapper>
@@ -85,10 +80,7 @@ describe('LicenseIDHistoryPage', function() {
     });
 
     it('is limited to CA if user is only getting an ID', function() {
-      props.cardType = {
-        DL: false,
-        ID: true
-      };
+      props.cardType.new = ['ID'];
       let component = render(
         <Wrapper>
           <LicenseIDHistoryPage {...props} />

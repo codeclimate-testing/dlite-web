@@ -84,24 +84,45 @@ describe('dataPresent', function() {
   });
 
   describe('#cardType', function() {
-    it('is true when one part is true', function() {
+    it('is true when the new array has a value but the renew string is empty', function() {
       assert(
-        dataPresent.cardType({DL: false, ID: true}),
+        dataPresent.cardType({new: ['DL'], renew: ''}),
         'card type not true with one field'
       );
     });
 
-    it('is true when two parts are true', function() {
+    it('is true when the new array has a value and the renew string has a value', function() {
       assert(
-        dataPresent.cardType({DL: true, ID: true}),
+        dataPresent.cardType({new: ['DL'], renew: 'ID'}),
         'card type not true with both fields'
       );
     });
 
-    it('is false when no parts are true', function() {
+    it('is false when no data are present', function() {
       assert(
-        !dataPresent.cardType({DL: false, ID: false}),
+        !dataPresent.cardType({new: [], renew: ''}),
         'card type not false when no fields selected'
+      );
+    });
+  });
+
+  describe('#currentCardInfo', function() {
+    it('is false when number given but no expiration date', function() {
+      assert.equal(
+        dataPresent.currentCardInfo({number: '404020', month: '', day: '', year: ''}),
+        false
+      );
+    });
+    it('is false when expiration date given but no number', function() {
+      assert.equal(
+        dataPresent.currentCardInfo({number: '',month: '09', day: '09', year: '1940'}),
+        false
+      );
+    });
+    it('is true when both number and expiration date provided', function() {
+      assert.equal(
+        dataPresent.currentCardInfo({number: '29012', month: '01', day: '11', year: '2010'}),
+        true
       );
     });
   });

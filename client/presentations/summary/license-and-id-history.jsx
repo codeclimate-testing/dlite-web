@@ -1,17 +1,15 @@
 'use strict';
 
-import React from "react";
+import React            from "react";
 import * as dataPresent from '../../helpers/data-present';
+import { printDate }    from '../../helpers/print-date';
 
 const LicenseAndIdHistory = (props) => {
 
   let isIssued        = props.licenseAndIdHistory.isIssued;
   if (!dataPresent.licenseAndIdHistory(props.licenseAndIdHistory)) { return null; }
 
-  let date           = props.licenseAndIdHistory.month + '/' +
-                       props.licenseAndIdHistory.day + '/' +
-                       props.licenseAndIdHistory.year;
-
+  let date            = printDate(props.licenseAndIdHistory);
   let DLIDNumber      = props.licenseAndIdHistory.DLIDNumber;
   let issuedBy        = props.licenseAndIdHistory.issuedBy;
 

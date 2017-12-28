@@ -1,11 +1,11 @@
 'use strict';
 
-import React from 'react';
+import React                from 'react';
 
-import SelectorCollection from '../selector-collection.jsx';
-import NavigationButtons from '../navigation-buttons.jsx';
-import Page from '../page.jsx';
-import FAQDrawer from '../faq-drawer.jsx';
+import SelectorCollection   from '../selector-collection.jsx';
+import NavigationButtons    from '../navigation-buttons.jsx';
+import Page                 from '../page.jsx';
+import FAQDrawer            from '../faq-drawer.jsx';
 
 const VALUES = ['Yes', 'No'];
 const FAQ_CLASSNAME_YES = 'faq-ballot-by-mail-yes';

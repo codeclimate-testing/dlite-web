@@ -1,5 +1,9 @@
 'use strict';
+import {
+  getID,
+  getDL
+} from './card-type';
 
 export const hasMultipleCards = (props) => {
-  return props.cardType.DL && props.cardType.ID
+  return getDL(props) && getID(props)
 };

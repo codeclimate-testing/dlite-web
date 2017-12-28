@@ -9,11 +9,15 @@ import alicePath                  from '../helpers/alice-path';
 import navigateOnSubmit           from '../helpers/handlers/navigate-on-submit';
 import { postData }               from '../actions/api-actions';
 import { ageChecks }              from '../helpers/calculate-age';
+import {
+  getID,
+  getDL
+} from '../helpers/data/card-type'; 
 
 import {
   LegalName,
   DateOfBirth,
-  CardType,
+  Cards,
   SeniorID,
   RealID,
   ReducedFee,
@@ -48,7 +52,7 @@ const SummaryHandler = (props) => {
 
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
-    <CardType cardType={application.cardType} key='card-type' />,
+    <Cards cardType={application.cardType} currentCardInfo = {application.currentCardInfo} key='card-type' />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
     <SeniorID seniorID={application.seniorID} key='senior-id' />,
     <RealID realID={application.realID} key='real-id' />,
@@ -99,7 +103,7 @@ const SummaryHandler = (props) => {
     </h4>
   }
   let IDAlert = (props) => {
-    if(!props.cardType.ID) { return null; }
+    if(!getID(props)) { return null; }
     return (
       <h4 className='youth-license-notification'>
         You are eligible to complete your ID application in the office today.
@@ -108,7 +112,7 @@ const SummaryHandler = (props) => {
   }
 
   let Alerts = (props) => {
-    if(!props.cardType.DL || ageChecks.GreaterThanEqual15Half(props.dateOfBirth)){ return null; }
+    if(!getDL(props) || ageChecks.GreaterThanEqual15Half(props.dateOfBirth)){ return null; }
     return (
       <div>
         <DLAlert/>

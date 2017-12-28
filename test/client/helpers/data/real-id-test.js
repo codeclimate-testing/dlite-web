@@ -15,8 +15,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'No'
         },
         cardType: {
-          DL: true,
-          ID: true
+          new: ['ID', 'DL'],
+          renew: ''
         }
       };
       assert.equal(mustChooseCard(data), false);
@@ -28,8 +28,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'Yes'
         },
         cardType: {
-          DL: true,
-          ID: false
+          new: ['DL'],
+          renew: ''
         }
       };
       assert.equal(mustChooseCard(data), false);
@@ -41,8 +41,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'Yes'
         },
         cardType: {
-          DL: true,
-          ID: true
+          new: ['DL', 'ID'],
+          renew: ''
         }
       };
       assert.equal(mustChooseCard(data), true);
@@ -56,8 +56,8 @@ describe('Data helpers for real-id', function() {
           getRealID: ''
         },
         cardType: {
-          DL: true,
-          ID: true
+          new: ['ID', 'DL'],
+          renew: ''
         }
       };
       assert.equal(validToContinue(data), false);
@@ -69,8 +69,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'No'
         },
         cardType: {
-          DL: true,
-          ID: true
+          new: ['DL', 'ID'],
+          renew: ''
         }
       };
       assert.equal(validToContinue(data), true);
@@ -82,8 +82,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'Yes'
         },
         cardType: {
-          DL: true,
-          ID: true
+          new: ['ID', 'DL'],
+          renew: ''
         }
       };
       assert.equal(validToContinue(data), false);
@@ -95,8 +95,8 @@ describe('Data helpers for real-id', function() {
           getRealID: 'Yes'
         },
         cardType: {
-          DL: true,
-          ID: false
+          new: ['DL'],
+          renew: ''
         }
       };
       assert.equal(validToContinue(data), true);
@@ -109,9 +109,9 @@ describe('Data helpers for real-id', function() {
           realIdDesignation: 'ID'
         },
         cardType: {
-          DL: true,
-          ID: true
-        },
+          new: ['ID', 'DL'],
+          renew: ''
+        }
       };
       assert.equal(validToContinue(data), true);
     });

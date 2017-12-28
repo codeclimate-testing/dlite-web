@@ -11,7 +11,10 @@ Feature: Happy path for youth users
     When I visit the legal name page
     Then I will see the name I entered
     And I change my first name
-    When I visit the ID or DL selection page
+    When I visit the what do you want to do today page
+    And I choose to get a new card
+    And I click "Next" to continue
+    Then I will be on the ID and DL selection page
     And I click on the DL checkbox
     And I click "Next" to continue
     Then I will see a message asking if I would like an ID instead
@@ -27,7 +30,10 @@ Feature: Happy path for youth users
     Given I go to the new online DL application page
     When I visit the date of birth page
     And I indicate that I am between 15 and 15.5
-    When I visit the ID or DL selection page
+    When I visit the what do you want to do today page
+    And I choose to get a new card
+    And I click "Next" to continue
+    Then I will be on the ID and DL selection page
     And I click on the DL checkbox
     And I click "Next" to continue
     Then I will be on the youth license notification page

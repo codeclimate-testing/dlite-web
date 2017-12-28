@@ -8,8 +8,15 @@ const state  = {
       suffix: ''
     },
     cardType: {
-      ID: false,
-      DL: false
+      new: [],
+      renew: '',
+      youthIDInstead: ''
+    },
+    currentCardInfo: {
+      number: '',
+      day: '',
+      month: '',
+      year: ''
     },
     reducedFee: {
       ID: '',

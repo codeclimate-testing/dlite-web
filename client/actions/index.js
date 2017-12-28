@@ -21,7 +21,9 @@ function generateValueAction(type) {
 export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
+  UPDATE_CARD_ACTION:                     'UPDATE_CARD_ACTION',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
+  UPDATE_CURRENT_CARD_INFO:               'UPDATE_CURRENT_CARD_INFO',
   UPDATE_REDUCED_FEE:                     'UPDATE_REDUCED_FEE',
   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
   UPDATE_SENIOR_ID:                       'UPDATE_SENIOR_ID',
@@ -54,7 +56,9 @@ export const TYPES = {
 
 export const createApplicationID              = generateFormAction(TYPES.CREATE_APPLICATION_ID);
 export const updateLegalName                  = generateFormAction(TYPES.UPDATE_LEGAL_NAME);
+export const updateCardAction                 = generateFormAction(TYPES.UPDATE_CARD_ACTION);
 export const updateCardType                   = generateFormAction(TYPES.UPDATE_CARD_TYPE);
+export const updateCurrentCardInfo            = generateFormAction(TYPES.UPDATE_CURRENT_CARD_INFO);
 export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_REDUCED_FEE);
 export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);
 export const updateSeniorID                   = generateFormAction(TYPES.UPDATE_SENIOR_ID);
