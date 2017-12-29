@@ -93,7 +93,19 @@ describe('server data parser', function() {
       done();
     })
     .catch(done);
-  } )
+  });
+
+  it('correctly extracts the license classes info', function(done) {
+    getApplication(data.application.id)
+    .then( records => {
+      parsedData = parse(records);
+      assert.deepEqual(parsedData.application.licenseType.type, clientData.licenseType.type);
+      assert.deepEqual(parsedData.application.licenseType.endorsement, clientData.licenseType.endorsement);
+      assert.deepEqual(parsedData.application.licenseType.needEndorsement, clientData.licenseType.needEndorsement);
+      done();
+    })
+    .catch(done)
+  });
 
   it('correctly extracts the renewal card info', function(done) {
     getApplication(data.application.id)

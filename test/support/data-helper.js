@@ -32,6 +32,11 @@ function fakeClientData() {
       'getRealID': 'Yes',
       'realIdDesignation': 'DL'
     },
+    'licenseType': {
+      'type': ['car', 'trailer'],
+      'endorsement': ['firefighter'],
+      'needEndorsement': 'Yes'
+    },
     'reducedFee': {
       'ID': 'Yes',
       'form': 'Yes'

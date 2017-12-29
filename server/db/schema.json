@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 13,
-    "constraints": 14,
-    "tables": 15,
-    "columns": 79
+    "sequences": 14,
+    "constraints": 15,
+    "tables": 16,
+    "columns": 82
   },
   "tables": {
     "addresses": {
@@ -391,6 +391,40 @@
         "type": {
           "table_schema": "public",
           "table_name": "cards",
+          "column_name": "type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "license_classes": {
+      "table_schema": "public",
+      "table_name": "license_classes",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "id",
+          "column_default": "nextval('license_classes_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "card_id": {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "card_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "type": {
+          "table_schema": "public",
+          "table_name": "license_classes",
           "column_name": "type",
           "column_default": null,
           "is_nullable": true,
@@ -922,6 +956,22 @@
         }
       ]
     },
+    "license_classes": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "license_classes_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "license_classes",
+          "referenced_column": "id"
+        }
+      ]
+    },
     "cards": {
       "id": [
         {
@@ -1118,6 +1168,17 @@
       }
     },
     "cards": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "license_classes": {
       "id": {
         "table_schema": "public",
         "table_name": "voting_registrations",

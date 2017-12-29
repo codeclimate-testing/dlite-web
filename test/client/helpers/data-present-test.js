@@ -142,6 +142,39 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#licenseType', function() {
+    it('returns true when user has selected a type and does not need endorsement', function() {
+      assert.equal(dataPresent.licenseType({
+        type: ['car'],
+        needEndorsement: 'No'
+      }), true);
+    });
+
+    it('returns false when user has selected a type but has not selected endorsement yes/no', function() {
+      assert.equal(dataPresent.licenseType({
+        type: ['car'],
+        needEndorsement: '',
+        endorsement: []
+      }), false);
+    });
+
+    it('returns false when no data present', function() {
+      assert.equal(dataPresent.licenseType({
+        type: [''],
+        needEndorsement: '',
+        endorsement: []
+      }), false);
+    });
+
+    it('returns true when type selected and endorsementType has value', function() {
+      assert.equal(dataPresent.licenseType({
+        type: ['trailer'],
+        needEndorsement: 'Yes',
+        endorsement: ['firefighter']
+      }), true);
+    });
+  });
+
   describe('#traitsHeightWeight', function() {
     it('is true when all three parts are present', function() {
       assert(

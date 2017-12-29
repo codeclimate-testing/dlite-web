@@ -21,6 +21,7 @@ const getStartedLinkData = [
   {description: 'youth DL message',                       path: '/youth-license-notification'},
   {description: 'senior ID',                              path: '/senior-id'},
   {description: 'real ID',                                path: '/real-id'},
+  {description: 'license type',                           path: '/license-type'},
   {description: 'reduced fee ID',                         path: '/reduced-fee'},
   {description: 'get started intro page',                 path: '/get-started'}
 ];

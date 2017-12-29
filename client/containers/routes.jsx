@@ -16,6 +16,7 @@ import CurrentCardInfo                        from './intro/current-card-page.js
 import SeniorID                               from './intro/senior-id-page.jsx';
 import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
 import RealID                                 from './intro/real-id-page.jsx';
+import LicenseType                            from './intro/license-type-page.jsx';
 import ReducedFee                             from './intro/reduced-fee-page.jsx';
 import GetStarted                             from './intro/get-started-page.jsx';
 
@@ -55,6 +56,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/senior-id') } component={SeniorID} />
         <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ alicePath('/real-id') } component={RealID} />
+        <Route path={ alicePath('/license-type') } component={LicenseType} />
         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
         <Route path={ alicePath('/get-started') } component={GetStarted} />
         <Route path={ alicePath('/links') } exact component={Home} />

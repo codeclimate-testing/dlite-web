@@ -18,6 +18,11 @@ const state  = {
       month: '',
       year: ''
     },
+    licenseType: {
+      type: [],
+      endorsement: [],
+      needEndorsement: ''
+    },
     reducedFee: {
       ID: '',
       form: 'No'

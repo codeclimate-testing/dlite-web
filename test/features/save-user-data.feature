@@ -20,6 +20,10 @@ Feature: Save user data
     Then I will be on the page for choosing real id
     And I click no to getting a real id
     And I click "Next" to continue
+    Then I will be on the license type page
+    And I click on the car checkbox
+    And I click to not need endorsements
+    When I click "Next" to continue
     Then I will be on the get started page
     When I click "Next" to continue
     Then I will be on the page for entering my address
@@ -111,6 +115,7 @@ Feature: Save user data
     Then I will see my updated home zip
     Then I will see that my DL card type has been saved
     Then I will see that I am not getting a real id
+    Then I will see what license type I need
     Then I will see my sex in the summary
     Then I will see my eye color in the summary
     Then I will see my hair color in the summary
@@ -222,6 +227,10 @@ Feature: Save user data
     When I click yes to getting a real id
     When I select ID to have my real id designation
     And I click "Next" to continue
+    Then I will be on the license type page
+    And I click on the car checkbox
+    And I click to not need endorsements
+    When I click "Next" to continue
     Then I will be on the reduced fee page
     And I select No to getting a reduced fee
     When I visit the addresses page

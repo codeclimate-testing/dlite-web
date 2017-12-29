@@ -40,10 +40,13 @@ module.exports = function getApplication(id) {
         return cardsIDs;
       })
       .then((cardIDs) => {
-        return db('card_options').whereIn('card_id', cardIDs)
-          .then((records) => {
-            aggregate.card_options = records; });
-        })
+        return Promise.all([
+          db('card_options').whereIn('card_id', cardIDs)
+            .then((records) => { aggregate.card_options = records; }),
+          db('license_classes').whereIn('card_id', cardIDs)
+            .then( records => { aggregate.license_classes = records; })
+        ])
+      })
   ]).then(() => {
     if (!aggregate.application) { return undefined; }
     return aggregate;

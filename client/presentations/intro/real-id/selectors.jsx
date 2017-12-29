@@ -32,7 +32,7 @@ const FormSection = (props) => {
 
       <h5>
         As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
-         <b>within</b> the United States.
+        <b> within</b> the United States.
       </h5>
 
       <div className='row inner-bottom'>

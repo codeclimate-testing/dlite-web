@@ -107,4 +107,29 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I click on the car checkbox', function(done) {
+    browser 
+      .click('label[for="car"]')
+      .then(() => {done(); })
+      .catch(done);
+  });
+
+  world.then('I click to not need endorsements', function(done) {
+    browser 
+      .click('label[for="No"]')
+      .then(() => {done(); })
+      .catch(done);
+  });
+
+  world.then('I will see what license type I need', function(done) {
+    browser 
+      .text()
+      .then(text => {
+        assert.ok(text.includes('Need to drive: Car'));
+        assert.ok(text.includes('Endorsements: not needed'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };

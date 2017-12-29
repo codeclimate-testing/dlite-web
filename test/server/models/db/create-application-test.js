@@ -17,7 +17,6 @@ describe('createApplication', function() {
 
   it('inserts the application into the database', function(done) {
     let data = dataHelper.fakeRecords();
-
     createApplication(data)
     .then((records) => {
       assert.equal(records.application.id, data.application.id);

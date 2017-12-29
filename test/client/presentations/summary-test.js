@@ -12,6 +12,7 @@ import {
   Cards,
   RealID,
   ReducedFee,
+  LicenseType,
   HomeAddress,
   MailingAddress,
   TraitsHeightWeight,
@@ -132,6 +133,27 @@ describe('Summary section', function() {
         />
       )
       assert.equal(component.find('.summary-section'), false);
+    });
+  });
+  describe('SummaryLicenseType', function() {
+    it('returns null when no value', function() {
+      let component = render(
+        <LicenseType
+          { ...props }
+        />
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
+
+    it('lists which types of licenses the user has selected', function() {
+      props.licenseType.type = ['car', 'unsure'];
+      props.licenseType.needEndorsement = 'No'
+      let component = render(
+        <LicenseType
+          { ...props }
+        />
+      )
+      assert.ok(component.text().includes('Need to drive: Car, and I\'m not sure'), 'license type not rendered in summary');
     });
   });
   describe('ReducedFee', function() {

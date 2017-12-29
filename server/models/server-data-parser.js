@@ -22,6 +22,7 @@ function parse(data) {
   let voting_registrations  = data.voting_registrations;
   let cards                 = data.cards;
   let card_options          = data.card_options;
+  let license_classes       = data.license_classes;
 
   return Object.assign(
     {},
@@ -33,6 +34,7 @@ function parse(data) {
         cardType:                 getCardTypes(card_options, cards),
         currentCardInfo:          getCurrentCardInfo(renewal_card),
         realID:                   getRealID(card_options, cards),
+        licenseType:              getLicenseType(license_classes),
         reducedFee:               getReducedFee(card_options),
         seniorID:                 getSeniorID(card_options),
         homeAddress:              getHomeAddress(addresses),
@@ -314,14 +316,14 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
   };
 }
 
-function getCardTypes(cardOptions, cards) {
+function getCardTypes(card_options, cards) {
   let cardType = {
     new: [],
     renew: '',
     youthIDInstead: ''
   };
 
-  cardOptions.forEach(option => {
+  card_options.forEach(option => {
     if(option.option_value === 'new' && option.option_type === 'action'){
       cards.forEach(card => {
         if(card.id === option.card_id) {
@@ -338,6 +340,26 @@ function getCardTypes(cardOptions, cards) {
   });
   
   return cardType;
+}
+
+function getLicenseType(license_classes) {
+  let licenseType = {
+    type: [],
+    endorsement: [],
+    needEndorsement: ''
+  };
+
+  license_classes.forEach(item => {
+
+    if(item.type === 'firefighter' || item.type === 'ambulance') {
+      licenseType.endorsement.push(item.type);
+      licenseType.needEndorsement = 'Yes'
+    } else {
+      licenseType.type.push(item.type);
+    }
+ 
+  });
+  return licenseType;
 }
 
 function getRealID(card_options, cards) {

@@ -3,34 +3,25 @@
 import React                  from 'react';
 import { connect }            from 'react-redux';
 
-import { updateRealID }       from "../../actions/index";
-import Presentation           from "../../presentations/intro/real-id-page.jsx";
+import { updateLicenseType }  from "../../actions/index";
+import Presentation           from "../../presentations/intro/license-type-page.jsx";
 
 import handlers               from '../../helpers/handlers';
-
-import {
-  validToContinue,
-} from '../../helpers/data/real-id';
+import * as dataPresent       from '../../helpers/data-present';
 
 import {
   eligibleForReducedFee
 } from '../../helpers/data/reduced-fee';
 
-import {
-  getDL
-} from '../../helpers/data/card-type';
-
 const Page = (props) => {
   let address = '/get-started';
-  if (getDL(props)) {
-    address = '/license-type';
-  } else if (eligibleForReducedFee(props)) {
+  if (eligibleForReducedFee(props)) {
     address = '/reduced-fee';
   };
 
   let onSubmit          = handlers.navigateOnSubmit(address, props);
   let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = !validToContinue(props);
+  let continueDisabled  = !dataPresent.licenseType(props.licenseType);
 
   return <Presentation
     {...props}
@@ -42,14 +33,14 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    realID :    state.application.realID,
-    cardType:   state.application.cardType,
-    seniorID:   state.application.seniorID
+    cardType:     state.application.cardType,
+    seniorID:     state.application.seniorID,
+    licenseType:  state.application.licenseType
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateRealID, dispatch);
+  const onChange   = handlers.onInputChange(updateLicenseType, dispatch);
   const onSubmit   = handlers.onFormSubmit;
 
   return {

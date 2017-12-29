@@ -20,7 +20,8 @@ function parse(data) {
     { veterans_info:          extractVeteransInfo(data) },
     { voting_registrations:   extractVotingRegistrations(data) },
     { cards:                  extractCardTypes(data) },
-    { card_options:           extractCardOptions(data) }
+    { card_options:           extractCardOptions(data) },
+    { license_classes:        extractLicenseClasses(data) }
   );
 }
 
@@ -305,6 +306,25 @@ function extractCardOptions(data) {
   }
 
   return cardOptions;
+}
+
+function extractLicenseClasses(data) {
+  let license_classes = [];
+  function pushToLicenseClasses(item) {
+    license_classes.push({
+      type: item
+    });
+  };
+
+  data.licenseType.endorsement.forEach(function(item) {
+    pushToLicenseClasses(item);
+  });
+
+  data.licenseType.type.forEach(function(item) {
+    pushToLicenseClasses(item);
+  });
+
+  return license_classes;
 }
 
 module.exports = parse;

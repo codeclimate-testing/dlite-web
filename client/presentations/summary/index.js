@@ -6,6 +6,7 @@ import DateOfBirth                 from './date-of-birth.jsx';
 import Cards                       from './card-type.jsx';
 import SeniorID                    from './senior-id.jsx';
 import RealID                      from './real-id.jsx';
+import LicenseType                 from './license-type.jsx';
 import ReducedFee                  from './reduced-fee.jsx';
 import HomeAddress                 from './home-address.jsx';
 import MailingAddress              from './mailing-address.jsx';
@@ -34,6 +35,7 @@ export {
   Cards,
   SeniorID,
   RealID,
+  LicenseType,
   ReducedFee,
   HomeAddress,
   MailingAddress,

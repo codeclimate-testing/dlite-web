@@ -202,6 +202,10 @@ module.exports = function(world) {
     assertOnPage('.real-id-form', /apply\/real-id/, done);
   });
 
+  world.then('I will be on the license type page', function(done) {
+    assertOnPage('.license-type-form', /apply\/license-type/, done);
+  });
+
   world.then('I will be on the reduced fee page', function(done) {
     assertOnPage('.reduced-fee-form', /apply\/reduced-fee/, done);
   });

@@ -85,6 +85,13 @@ describe('client data parser', function() {
     assert.equal(currentCard.date, _date);
   });
 
+  it('correctly extracts the license type info', function() {
+    let licenseType = parsedData.license_classes;
+    assert.equal(licenseType[0].type, data.licenseType.endorsement[0]);
+    assert.equal(licenseType[1].type, data.licenseType.type[0]);
+    assert.equal(licenseType[2].type, data.licenseType.type[1]);
+  });
+
   it('correctly extracts the email', function() {
     let email = parsedData.emails[0];
     assert.equal(email.application_id, data.id);

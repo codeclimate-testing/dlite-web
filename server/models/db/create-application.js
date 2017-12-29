@@ -4,7 +4,7 @@ const db = require('../../db/connect')();
 
 module.exports = function createApplication(data) {
   let returnedData = {};
-
+  
   function insert(key) {
     return db(key).insert(data[key]).returning('*');
   }
@@ -62,22 +62,40 @@ module.exports = function createApplication(data) {
       returnedData.cards = cards;
       let card_options = data.card_options;
       let _card_options_ = [ ];
+      let _card_id;
+
       cards.forEach( card => {
         card_options.forEach( option => {
           if(card.type === option.type) {
             _card_options_.push({
               card_id:            card.id,
               option_type:        option.option_type,
-              option_value:      option.option_value
+              option_value:       option.option_value
             });
           }
         });
+        if(card.type === 'DL') {
+          _card_id = card.id;
+        }
       });
       data.card_options = _card_options_;
+
+      let _license_classes_ = [];
+      data.license_classes.forEach( item => {
+        _license_classes_.push({
+          card_id:    _card_id,
+          type:       item.type
+        });
+      });
+      data.license_classes = _license_classes_;
       return insert('card_options');
     })
     .then((card_options) => {
       returnedData.card_options = card_options;
+      return insert('license_classes');
+    })
+    .then( (license_classes) => {
+      returnedData.license_classes = license_classes;
       return returnedData;
     })
 };

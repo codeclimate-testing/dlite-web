@@ -14,10 +14,19 @@ const hasAllAttributes = (props, attributes) => {
 
 const hasAnyAttributes = (props, attributes) => {
   if (!props) { return; }
-
   return attributes.some((attributeName) => {
     return value(props[attributeName]);
   });
+};
+
+const includes = (array, name) => {
+  return array.indexOf(name) > -1;
+};
+
+const hasValues = (props) => {
+  if (!props) { return; }
+
+  return props.length > 0;
 };
 
 const legalName = (props) => {
@@ -38,6 +47,10 @@ const currentCardInfo = (props) => {
 
 const reducedFee = (props) => {
   return hasAllAttributes(props, ['ID']);
+};
+
+const licenseType = (props) => {
+  return props && hasValues(props.type) && (props.needEndorsement === 'No' || hasValues(props.endorsement));
 };
 
 const address = (props) => {
@@ -113,6 +126,7 @@ const application = (props) => {
     cardType(props.cardType) ||
     currentCardInfo(props.currentCardInfo) ||
     reducedFee(props.reducedFee) ||
+    licenseType(props.licenseType) ||
     address(props.homeAddress) ||
     address(props.mailingAddress) ||
     traitsHeightWeight(props.traitsHeightWeight) ||
@@ -137,10 +151,13 @@ const application = (props) => {
 
 export {
   value,
+  hasValues,
+  includes,
   legalName,
   cardType,
   currentCardInfo,
   reducedFee,
+  licenseType,
   address,
   date,
   traitsHeightWeight,

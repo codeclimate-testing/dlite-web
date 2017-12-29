@@ -110,6 +110,16 @@ describe('getApplication', function() {
       .catch(done);
     });
 
+    it('returns the license classes', function(done) {
+      getApplication(data.application.id)
+      .then( records => {
+        assert.equal(records.license_classes[0].type, data.license_classes[0].type);
+        assert.equal(records.license_classes[1].type, data.license_classes[1].type)
+      })
+      .then(done)
+      .catch(done);
+    });
+
     it('returns the email', function(done) {
       getApplication(data.application.id)
       .then((records) => {
