@@ -1,22 +1,17 @@
 'use strict';
 
-import assert                       from 'assert';
+import assert                   from 'assert';
 import 'jsdom-global/register';
-import React                        from 'react';
-import configure                    from '../../support/configure-enzyme';
-import { render }                   from 'enzyme';
-import { spy }                      from 'sinon';
-import * as dataPresent             from '../../../../client/helpers/data-present';
-import wrapperGenerator             from '../../support/wrapper';
-import VeteransQuestionnaire        from '../../../../client/presentations/apply/veterans-questionnaire-form.jsx';
-import VeteransPreviousDesignation  from '../../../../client/presentations/apply/veterans-previous-designation-form.jsx';
-import VeteransIdentifier           from '../../../../client/presentations/apply/veterans-identifier-form.jsx';
+import React                    from 'react';
+import configure                from '../../support/configure-enzyme';
+import { render }               from 'enzyme';
+import { spy }                  from 'sinon';
+import * as dataPresent         from '../../../../client/helpers/data-present';
+import wrapperGenerator         from '../../support/wrapper';
+import VeteransPage             from '../../../../client/presentations/apply/veterans-service-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('VeteransServicePage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   let props;
@@ -34,12 +29,18 @@ describe('VeteransServicePage', function() {
       renew: ''
     };
 
+    let legalName = {
+      firstName: 'John',
+      lastName: 'Doe'
+    };
+
     let continueDisabled = !(dataPresent.veteransService(veteransService));
     let onChange = spy();
 
     props = {
       veteransService,
       cardType,
+      legalName,
       continueDisabled,
       onChange
     }
@@ -49,7 +50,7 @@ describe('VeteransServicePage', function() {
     it('shows the yes/no form asking if user has ever served in United States Military', function() {
       let component = render(
         <Wrapper>
-          <VeteransQuestionnaire {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('label[for="isVeteranYes"]').length, 'yes button missing');
@@ -60,7 +61,7 @@ describe('VeteransServicePage', function() {
     it('next button is disabled', function() {
       let component = render(
         <Wrapper>
-          <VeteransQuestionnaire {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
@@ -71,7 +72,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransQuestionnaire {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
 
@@ -84,7 +85,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransPreviousDesignation {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.veterans-previous-designation-form'));
@@ -95,7 +96,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransPreviousDesignation {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
@@ -117,7 +118,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.veterans-identifier-form'));
@@ -129,7 +130,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
@@ -140,7 +141,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.veterans-identifier-form'));
@@ -152,7 +153,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
@@ -174,7 +175,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.remove-veteran-identifier'));
@@ -185,7 +186,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.equal(component.find('.arrow-button .forward disabled'), false);
@@ -197,7 +198,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.ok(component.find('.veteran-identifier-fee'));
@@ -208,7 +209,7 @@ describe('VeteransServicePage', function() {
 
       let component = render(
         <Wrapper>
-          <VeteransIdentifier {...props} />
+          <VeteransPage {...props} />
         </Wrapper>
       );
       assert.equal(component.find('.arrow-button .forward disabled'), false);

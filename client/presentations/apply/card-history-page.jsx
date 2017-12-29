@@ -12,7 +12,7 @@ const CardHistoryPage = (props) => {
   return (
     <Page 
       {...props}
-      sectionKey='myBasics'
+      sectionKey='myHistory'
     >
       <form onSubmit={props.onSubmit} className='card-history-form'>
         <LicenseAndIdHistory

@@ -1,9 +1,10 @@
 'use strict';
 
 import React     from 'react';
-import TextArea  from '../text-area.jsx';
+import TextArea  from '../../text-area.jsx';
 
 const EnterPreviousNames = (props) => {
+  if(props.namesHistory.hasUsedPreviousNames !== 'Yes') { return null; }
   return (
     <div className='enter-previous-names'>
       <h4>Please list all previous legal names.</h4>
@@ -20,3 +21,4 @@ const EnterPreviousNames = (props) => {
 };
 
 export default EnterPreviousNames;
+

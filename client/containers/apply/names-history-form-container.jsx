@@ -1,68 +1,47 @@
 'use strict';
 
-import React from 'react';
-
-import { updateNamesHistory }           from '../../actions/index';
-import HomeLink                         from '../../presentations/home-link.jsx';
-import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
-import UsedPreviousNames                from '../../presentations/apply/used-previous-names.jsx';
-import EnterPreviousNames               from '../../presentations/apply/enter-previous-names.jsx';
-import connectForm                      from '../../helpers/connect-form';
-import navigateOnSubmit                 from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                   from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent                 from '../../helpers/data-present';
+import React                      from 'react';
+import { updateNamesHistory }     from '../../actions/index';
+import * as dataPresent           from '../../helpers/data-present';
+import { connect }                from 'react-redux';
+import handlers                   from '../../helpers/handlers';
+import Presentation               from '../../presentations/apply/names-history-page.jsx';
 
 const ConnectedForm = (props) => {
   let continueDisabled       = !(dataPresent.hasPreviousNames(props.namesHistory))
   let showEnterPreviousNames = false
-  let onSubmit               = navigateOnSubmit('/my-history/license-issues', props);
-  let onBack                 = navigateOnBack(props);
-
-  if(props.namesHistory.hasUsedPreviousNames === 'Yes') {
-    showEnterPreviousNames = true;
-    continueDisabled  = !(dataPresent.namesHistory(props.namesHistory))
+  let onSubmit               = handlers.navigateOnSubmit('/my-history/license-issues', props);
+  let onBack                 = handlers.navigateOnBack(props);
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-       <UsedPreviousNames
-          onChange      = {props.onChange}
-          selectedValue = {props.namesHistory.hasUsedPreviousNames}
-        />
-        <br></br>
-        <EnterPreviousNames
-          onChange      = {props.onChange}
-          namesHistory  = {props.namesHistory}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
-  );
-}
-
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <UsedPreviousNames
-          onChange      = {props.onChange}
-          selectedValue = {props.namesHistory.hasUsedPreviousNames}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Presentation
+      {...props}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
+    />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    namesHistory: state.application.namesHistory
+    namesHistory: state.application.namesHistory,
+    focused: state.ui.focus
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateNamesHistory, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateNamesHistory, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);

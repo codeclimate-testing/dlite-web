@@ -9,13 +9,10 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 
-import MedicalPage              from '../../../../client/presentations/apply/medical-condition-info.jsx';
+import MedicalPage              from '../../../../client/presentations/apply/medical-history-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('MedicalHistoryPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
 
@@ -44,7 +41,7 @@ describe('MedicalHistoryPage', function() {
       );
       assert.ok(component.find('label[for="hasMedicalConditionYes"]').length, 'yes button missing');
       assert.ok(component.find('label[for="hasMedicalConditionNo"]').length, 'no button missing');
-      assert.ok(component.find('.medical-info').length, 'form missing');
+      assert.ok(component.find('.medical-condition-form').length, 'form missing');
     });
 
     it('next button is disabled', function() {
@@ -70,16 +67,15 @@ describe('MedicalHistoryPage', function() {
       assert.ok(component.find('.arrow-button forward'));
     });
 
-    // add this test once container and presentations are refactored so test has access to this component
-    // it('selecting Yes makes form appear asking for more info', function() {
-    //   props.medicalHistory.hasMedicalCondition = 'Yes';
-    //   let component = render(
-    //     <Wrapper>
-    //       <MedicalPage {...props} />
-    //     </Wrapper>
-    //   );
-    //   assert.ok(component.find('.enter-medical-info'));
-    // });
+     it('selecting Yes makes form appear asking for more info', function() {
+       props.medicalHistory.hasMedicalCondition = 'Yes';
+       let component = render(
+         <Wrapper>
+           <MedicalPage {...props} />
+         </Wrapper>
+       );
+       assert.ok(component.find('.enter-medical-info'));
+     });
 
   });
 

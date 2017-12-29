@@ -1,68 +1,47 @@
 'use strict';
 
-import React from 'react';
-
-import { updateMedicalHistory }         from '../../actions/index';
-import HomeLink                         from '../../presentations/home-link.jsx';
-import NavigationButtons                from '../../presentations/navigation-buttons.jsx';
-import MedicalCondition                 from '../../presentations/apply/medical-condition-info.jsx';
-import EnterMedicalInfo                 from '../../presentations/apply/enter-medical-info.jsx';
-import connectForm                      from '../../helpers/connect-form';
-import navigateOnSubmit                 from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                   from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent                 from '../../helpers/data-present';
+import React                      from 'react';
+import { updateMedicalHistory }   from '../../actions/index';
+import * as dataPresent           from '../../helpers/data-present';
+import { connect }                from 'react-redux';
+import handlers                   from '../../helpers/handlers';
+import Presentation               from '../../presentations/apply/medical-history-page.jsx';
 
 const ConnectedForm = (props) => {
   let continueDisabled            = !(dataPresent.hasMedicalCondition(props.medicalHistory))
   let showEnterMedicalCondition   = false
-  let onSubmit                    = navigateOnSubmit('/my-history/license-and-id', props);
-  let onBack                      = navigateOnBack(props);
-
-  if(props.medicalHistory.hasMedicalCondition === 'Yes') {
-    showEnterMedicalCondition = true;
-    continueDisabled  = !(dataPresent.medicalHistory(props.medicalHistory))
+  let onSubmit                    = handlers.navigateOnSubmit('/my-history/license-and-id', props);
+  let onBack                      = handlers.navigateOnBack(props);
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-       <MedicalCondition
-          onChange      = {props.onChange}
-          selectedValue = {props.medicalHistory.hasMedicalCondition}
-        />
-        <br></br>
-        <EnterMedicalInfo
-          onChange       = {props.onChange}
-          medicalHistory  = {props.medicalHistory}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
-  );
-}
-
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <MedicalCondition
-          onChange      = {props.onChange}
-          selectedValue = {props.medicalHistory.hasMedicalCondition}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Presentation
+      {...props}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
+    />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    medicalHistory: state.application.medicalHistory
+    medicalHistory: state.application.medicalHistory,
+    focused: state.ui.focus
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateMedicalHistory, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateMedicalHistory, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);

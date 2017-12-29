@@ -159,7 +159,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose if I ever had previous names', function(done) {
-    navigateToPath('/apply/my-history/names', '.previous-names', done);
+    navigateToPath('/apply/my-history/names', '.previous-names-form', done);
   });
 
   world.when('I visit the page to enter existing license and id', function(done) {
@@ -175,7 +175,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the medical history page', function(done) {
-    navigateToPath('/apply/my-history/medical', '.medical-info', done);
+    navigateToPath('/apply/my-history/medical', '.medical-history-form', done);
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {
@@ -315,7 +315,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to previous names page', function(done) {
-    assertOnPage('.previous-names', /my-history\/names/, done);
+    assertOnPage('.previous-names-form', /my-history\/names/, done);
   });
 
   world.then('I will be taken to organ donation page', function(done) {
@@ -331,7 +331,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to medical history page', function(done){
-    assertOnPage('.medical-info', /my-history\/medical/, done);
+    assertOnPage('.medical-history-form', /my-history\/medical/, done);
   });
 
   world.then('I will be on the senior id page', function(done) {

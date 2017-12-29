@@ -8,13 +8,10 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import NamesHistoryPage         from '../../../../client/presentations/apply/used-previous-names.jsx';
+import NamesHistoryPage         from '../../../../client/presentations/apply/names-history-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('NamesHistoryPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -44,7 +41,7 @@ describe('NamesHistoryPage', function() {
       );
       assert.ok(component.find('label[for="hasUsedPreviousNamesNo"]').length, 'No button missing');
       assert.ok(component.find('label[for="hasUsedPreviousNamesYes"]').length, 'Yes button missing');
-      assert.ok(component.find('.previous-names').length, 'form missing');
+      assert.ok(component.find('.previous-names-form').length, 'form missing');
     });
 
     it('next button is disabled', function() {
@@ -70,9 +67,15 @@ describe('NamesHistoryPage', function() {
       assert.ok(component.find('.arrow-button forward'));
     });
 
-    //TODO add test to check that selecting Yes makes enter-previous-names form render
-
+     it('selecting Yes makes form appear asking for previous names', function() {
+       props.namesHistory.hasUsedPreviousNames = 'Yes';
+       let component = render(
+         <Wrapper>
+           <NamesHistoryPage {...props} />
+         </Wrapper>
+       );
+       assert.ok(component.find('.enter-previous-names'));
+     });
   });
-
 });
 
