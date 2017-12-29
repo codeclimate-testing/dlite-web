@@ -43,14 +43,14 @@ module.exports = function(world) {
 
   world.and('I choose to donate', function(done) {
     browser
-      .click('label[for="donateYes"]')
+      .click('label[for="donate-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I choose to contribute', function(done) {
     browser
-      .click('label[for="contributeYes"]')
+      .click('label[for="contribute-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -58,8 +58,8 @@ module.exports = function(world) {
   world.given('I have already entered my organ selection', function(done){
     browser
       .click('a.organ-donation')
-      .click('label[for="donateYes"]')
-      .click('label[for="contributeYes"]')
+      .click('label[for="donate-Yes"]')
+      .click('label[for="contribute-Yes"]')
       .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -69,14 +69,14 @@ module.exports = function(world) {
 
   world.and('I change my organ selection', function(done){
     browser
-      .click('label[for="donateNo"]')
+      .click('label[for="donate-No"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I change my contribution selection', function(done){
     browser
-      .click('label[for="contributeNo"]')
+      .click('label[for="contribute-No"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -122,7 +122,7 @@ module.exports = function(world) {
   world.given('I have already entered my donate contribution selection', function(done){
     browser
     .click('a.donate-contribution')
-    .click('label[for="Yes"]')
+    .click('label[for="donate-Yes"]')
     .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
@@ -140,7 +140,7 @@ module.exports = function(world) {
 
   world.and('I change my donate contribution selection', function(done){
     browser
-    .click('label[for="No"]')
+    .click('label[for="donate-No"]')
     .then(() => { done(); })
     .catch(done);
   });

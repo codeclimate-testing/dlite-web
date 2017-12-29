@@ -117,7 +117,7 @@ module.exports = function(world) {
 
   world.then('I click to not need endorsements', function(done) {
     browser 
-      .click('label[for="No"]')
+      .click('label[for="needEndorsement-No"]')
       .then(() => {done(); })
       .catch(done);
   });

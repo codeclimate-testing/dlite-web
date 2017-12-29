@@ -43,8 +43,8 @@ describe('OrganPage', function() {
           <OrganPage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="donateYes"]').length, 'Yes button missing');
-      assert.ok(component.find('label[for="donateNo"]').length, 'No button missing');
+      assert.ok(component.find('label[for="donate-Yes"]').length, 'Yes button missing');
+      assert.ok(component.find('label[for="donate-No"]').length, 'No button missing');
       assert.ok(component.find('.organ-form').length, 'form missing');
     });
 

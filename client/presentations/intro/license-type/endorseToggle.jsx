@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import RadioCollection  from '../../radio-collection.jsx';
+import RadioSelector    from '../../radio-selector.jsx';
 
 const Form = (props) => {
 
@@ -10,11 +10,19 @@ const Form = (props) => {
       <h4>Do you need any professional endorsements?</h4>
       <h5>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</h5>
       <div className='row inner-bottom'>
-        <RadioCollection
+        <RadioSelector
           name =          'needEndorsement'
-          values =        {['Yes', 'No']}
+          value =         'Yes'
+          text=           'Yes'
           onChange =      { props.onChange }
-          selectedValue = { props.licenseType.needEndorsement }
+          selected =      { props.licenseType.needEndorsement === 'Yes' }
+        />
+        <RadioSelector
+          name =          'needEndorsement'
+          value =         'No'
+          text=           'No'
+          onChange =      { props.onChange }
+          selected =      { props.licenseType.needEndorsement === 'No' }
         />
       </div>
     </div>

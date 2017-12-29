@@ -1,11 +1,10 @@
 'use strict';
 
-import React from 'react';
-import SelectorCollection      from '../selector-collection.jsx';
-import FAQDrawer               from '../faq-drawer.jsx';
-import Page                    from '../page.jsx';
+import React              from 'react';
+import RadioSelector      from '../radio-selector.jsx';
+import FAQDrawer          from '../faq-drawer.jsx';
+import Page               from '../page.jsx';
 
-const values = ['Yes', 'No']
 const DONATE_ORGAN_YES    = 'donate-organ-yes';
 const MESSAGE_YES         = <p>Answering <em>Yes</em> adds your name to the Donate Life California Organ and
                             Tissue Donor Registry, and a pink "donor" dot will appear on your DL/ID card.</p>
@@ -28,12 +27,19 @@ const DonateOrgan = (props) => {
         <p><em>(optional)</em></p>
         <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioSelector  
+            {...props}
             name='donate'
-            values={values}
-            onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
-            organDonation={ props.organDonation.donate }
+            value='Yes'
+            text='Yes'
+            selected={ props.organDonation.donate === 'Yes' }
+          />
+          <RadioSelector  
+            {...props}
+            name='donate'
+            value='No'
+            text='No'
+            selected={ props.organDonation.donate === 'No' }
           />
         </div>
 

@@ -1,10 +1,9 @@
 'use strict';
 
-import React from 'react';
-import SelectorCollection      from '../selector-collection.jsx';
-import FAQDrawer               from '../faq-drawer.jsx';
+import React              from 'react';
+import RadioSelector      from '../radio-selector.jsx';
+import FAQDrawer          from '../faq-drawer.jsx';
 
-const values = ['Yes', 'No']
 const CONTRIBUTION_YES = 'donate-contribution-yes'
 const MESSAGE_YES = <p>Thank you for your donation! We will add $2 to your total fee.</p>
 
@@ -15,11 +14,20 @@ const DonateContribution = (props) => {
       <p><i>(optional)</i></p>
       <p>Your donation helps support and promote organ and tissue donation.</p>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioSelector  
+            {...props}
             name='contribute'
-            values={values}
-            onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
+            value='Yes'
+            text='Yes'
+            selected={ props.organDonation.contribute === 'Yes' }
+            organDonation={ props.organDonation.contribute }
+          />
+          <RadioSelector  
+            {...props}
+            name='contribute'
+            value='No'
+            text='No'
+            selected={ props.organDonation.contribute === 'No' }
             organDonation={ props.organDonation.contribute }
           />
         </div>
