@@ -27,7 +27,7 @@ const VeteransIdentifier = (props) => {
     keepOrAddVeteranOnCard = newDesignationQuestion;
   }
 
-  if(props.veteransService.previouslyDesignated) {
+  if(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes')) {
     return (
       <div className='veterans-identifier-form'>
        { keepOrAddVeteranOnCard }

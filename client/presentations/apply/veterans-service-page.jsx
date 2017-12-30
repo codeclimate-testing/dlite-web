@@ -18,7 +18,6 @@ const VeteransServicePage = (props) => {
         <VeteransQuestionnaire {...props}
           selectedValue = {props.veteransService.isVeteran}
         />
-        <br></br>
         <VeteransBenefits {...props}
           selectedValue = {props.veteransService.receiveBenefits}
         />

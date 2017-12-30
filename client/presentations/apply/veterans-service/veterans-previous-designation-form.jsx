@@ -16,7 +16,7 @@ const VeteransPreviousDesignation = (props) => {
     cardType;
   }
 
-  if(props.veteransService.isVeteran !== 'Yes') { return null; }
+  if(props.veteransService.isVeteran !== 'Yes' || props.cardAction !== 'renew') { return null; }
   return (
     <div className='veterans-previous-designation-form'>
       <h4>Is "Veteran" printed on your {cardType}?</h4>

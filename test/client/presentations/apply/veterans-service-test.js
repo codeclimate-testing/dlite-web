@@ -29,6 +29,8 @@ describe('VeteransServicePage', function() {
       renew: ''
     };
 
+    let cardAction = 'new';
+
     let legalName = {
       firstName: 'John',
       lastName: 'Doe'
@@ -40,6 +42,7 @@ describe('VeteransServicePage', function() {
     props = {
       veteransService,
       cardType,
+      cardAction,
       legalName,
       continueDisabled,
       onChange
@@ -79,8 +82,10 @@ describe('VeteransServicePage', function() {
       assert.equal(component.find('.arrow-button .forward disabled'), false);
       assert.ok(component.find('.arrow-button forward'));
     });
+  });
 
-    it('selecting Yes shows next set of questions', function() {
+  describe('when veteran is getting a new card', function() {
+    it('selecting Yes renders benefits and identifier forms', function() {
       props.veteransService.isVeteran = 'Yes';
 
       let component = render(
@@ -88,7 +93,9 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.veterans-previous-designation-form'));
+      assert.ok(component.find('.veterans-benefits-form').length, 'veterans benefits form did not render');
+      assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+      assert.ok(component.find('.new-designation').length, 'new designation form did not render');
     });
 
     it('selecting Yes will keep continue button disabled', function() {
@@ -101,119 +108,154 @@ describe('VeteransServicePage', function() {
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
     });
-  });
+    
+    describe('answering veterans identifier question', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran = 'Yes';
+      });
 
-  describe('when selecting veterans designation', function() {
-    beforeEach(function() {
-      let veteransService = {
-        isVeteran: 'Yes',
-        receiveBenfits: 'Yes',
-        previouslyDesignated: '',
-        veteransIdentifier: ''
-      };
-    });
+      it('selecting No enables the continue button', function() {
+        props.veteransService.veteransIdentifier = 'No';
 
-    it('selecting No shows veterans identifier section for new designation', function() {
-      props.veteransService.previouslyDesignated = 'No';
-
-      let component = render(
-        <Wrapper>
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.veterans-identifier-form'));
-      assert.ok(component.find('.new-designation'));
-    });
+          </Wrapper>
+        );
+        assert.equal(component.find('.arrow-button .forward disabled'), false);
+        assert.ok(component.find('.arrow-button forward'));
+      });
 
-    it('selecting No keeps continue button disabled', function() {
-      props.veteransService.previouslyDesignated = 'No';
+      it('shows fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
 
-      let component = render(
-        <Wrapper>
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.arrow-button .forward disabled'));
-    });
+          </Wrapper>
+        );
+        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+      });
 
-    it('selecting Yes shows veterans identifier section for previous designation', function() {
-      props.veteransService.previouslyDesignated = 'Yes';
+      it('selecting Yes enables the continue button', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
 
-      let component = render(
-        <Wrapper>
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.veterans-identifier-form'));
-      assert.ok(component.find('.previous-designation'));
-    });
-
-    it('selecting Yes keeps continue button disabled', function() {
-      props.veteransService.previouslyDesignated = 'Yes';
-
-      let component = render(
-        <Wrapper>
-          <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+          </Wrapper>
+        );
+        assert.equal(component.find('.arrow-button .forward disabled'), false);
+        assert.ok(component.find('.arrow-button forward'));
+      });
     });
   });
 
-  describe('when selecting veterans identifier', function() {
+  describe('when veteran is renewing a card', function() {
     beforeEach(function() {
-      let veteransService = {
-        isVeteran: 'Yes',
-        receiveBenfits: 'Yes',
-        previouslyDesignated: 'Yes',
-        veteransIdentifier: ''
-      };
+      props.cardAction = 'renew';
     });
 
-    it('shows removal notification when selecting No and veteran was previously designated', function() {
-      props.veteransService.veteransIdentifier = 'No';
+    it('selecting Yes renders benefits and designation forms', function() {
+      props.veteransService.isVeteran = 'Yes';
+      console.log(props);
 
       let component = render(
         <Wrapper>
           <VeteransPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.remove-veteran-identifier'));
+      assert.ok(component.find('.veterans-benefits-form').length, 'veterans benefits form did not render');
+      assert.ok(component.find('.veterans-previous-designation-form').length, 'veterans previous designation form did not render');
+      assert.ok(!component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
     });
 
-    it('selecting No enables the continue button', function() {
-      props.veteransService.veteransIdentifier = 'No';
+    describe('when selecting veterans designation', function() {
+      beforeEach(function() {
+        let veteransService = {
+          isVeteran: 'Yes',
+          receiveBenfits: 'Yes',
+          previouslyDesignated: '',
+          veteransIdentifier: ''
+        };
+      });
 
-      let component = render(
-        <Wrapper>
+      it('selecting No shows veterans identifier section for new designation', function() {
+        props.veteransService.previouslyDesignated = 'No';
+
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.new-designation').length, 'new designation form did not render');
+      });
+
+      it('selecting No keeps continue button disabled', function() {
+        props.veteransService.previouslyDesignated = 'No';
+
+        let component = render(
+          <Wrapper>
+          <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.arrow-button .forward disabled'));
+      });
+
+      it('selecting Yes shows veterans identifier section for previous designation', function() {
+        props.veteransService.previouslyDesignated = 'Yes';
+
+        let component = render(
+          <Wrapper>
+          <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
+      });
+
+      it('selecting Yes keeps continue button disabled', function() {
+        props.veteransService.previouslyDesignated = 'Yes';
+
+        let component = render(
+          <Wrapper>
+          <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.arrow-button .forward disabled'));
+      });
     });
 
-    it('shows fee notification when selecting Yes', function() {
-      props.veteransService.veteransIdentifier = 'Yes';
+    describe('when selecting veterans identifier', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran = 'Yes';
+        props.veteransService.receiveBenefits = 'Yes';
+        props.veteransService.previouslyDesignated = 'Yes';
+      });
 
-      let component = render(
-        <Wrapper>
+      it('shows removal notification when selecting No and veteran was previously designated', function() {
+        console.log(props);
+        props.veteransService.veteransIdentifier = 'No';
+
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.veteran-identifier-fee'));
-    });
+          </Wrapper>
+        );
+        assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
+      });
 
-    it('selecting Yes enables the continue button', function() {
-      props.veteransService.veteransIdentifier = 'Yes';
+      it('shows fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
 
-      let component = render(
-        <Wrapper>
+        let component = render(
+          <Wrapper>
           <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+          </Wrapper>
+        );
+        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+      });
     });
   });
 });

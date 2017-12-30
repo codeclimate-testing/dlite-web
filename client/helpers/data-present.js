@@ -63,7 +63,7 @@ const socialSecurity = (props) => {
 };
 
 const veteransService = (props) => {
-  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'previouslyDesignated', 'veteransIdentifier'])));
+  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])));
 };
 
 const licenseIssues = (props) => {

@@ -28,6 +28,7 @@ function mapStateToProps(state) {
     veteransService: state.application.veteransService,
     legalName: state.application.legalName,
     cardType: state.application.cardType,
+    cardAction: state.application.cardAction,
     focused: state.ui.focus
   };
 };
