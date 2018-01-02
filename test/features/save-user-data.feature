@@ -73,7 +73,7 @@ Feature: Save user data
     And I click Yes to receiving additional information about benefits
     And I click Yes about having my license labeled with Veteran
     And I click "Next" to continue
-    Then I will be on the page for organ selection
+    Then I will be on the page for organ donation
     And I choose to donate
     And I choose to contribute
     And I click "Next" to continue
@@ -185,7 +185,7 @@ Feature: Save user data
     And I visit the veteran services page
     When I click No for veteran
     And I click "Next" to continue
-    Then I will be on the page for organ selection
+    Then I will be on the page for organ donation
     And I change my organ selection
     When I visit voter citizen status page
     And I select citizen No
@@ -264,7 +264,7 @@ Feature: Save user data
     And I select citizen Yes
     When I visit the voter eligibility requirements page
     And I click "Next" to continue
-    Then I will be on the page with my summary 
+    Then I will be on the page with my summary
     When I visit the voter eligibility requirements page
     And I select voter registration Yes
     When I click "Next" to continue

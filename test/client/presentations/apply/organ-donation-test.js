@@ -9,22 +9,20 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import OrganPage                from '../../../../client/presentations/apply/donate-organ-form.jsx';
+import OrganDonationPage        from '../../../../client/presentations/apply/organ-donation-page.jsx';
+import store                    from '../../support/page-store';
 
-describe('OrganPage', function() {
-  let store = {
-    ui: {}
-  };
+describe('OrganDonationPage', function() {
 
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let organDonation = {
-        donate: '',
-        contribute: ''
+        donateOrgan: '',
+        donateMoney: ''
       };
 
       let continueDisabled = !(dataPresent.organDonation(organDonation))
@@ -36,41 +34,56 @@ describe('OrganPage', function() {
         onChange
       }
     });
-    
-    it('shows the form asking if user would like to donate', function() {
+
+    it('shows the form asking if user would like to be a organ donor', function() {
       let component = render(
         <Wrapper>
-          <OrganPage  {...props} />
+          <OrganDonationPage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="donate-Yes"]').length, 'Yes button missing');
-      assert.ok(component.find('label[for="donate-No"]').length, 'No button missing');
-      assert.ok(component.find('.organ-form').length, 'form missing');
+      assert.ok(component.find('label[for="donateOrgan-Yes"]').length, 'Donate Organ - Yes button missing');
+      assert.ok(component.find('label[for="donateOrgan-No"]').length, 'Donate Organ - No button missing');
+      assert.ok(component.find('.donate-organ-form').length, 'Donate Organ - form missing');
     });
 
-    // it('next button is disabled', function() {
-    //   let component = render(
-    //     <Wrapper>
-    //       <OrganPage  {...props} />
-    //     </Wrapper>
-    //   );
-    //   assert.ok(component.find('.arrow-button .forward disabled'));
-    // });
+    it('shows the form asking if user would like to contribute 2 dollars', function() {
+      let component = render(
+        <Wrapper>
+          <OrganDonationPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('label[for="donateMoney-Yes"]').length, 'Donate Money - Yes button missing');
+      assert.ok(component.find('label[for="donateMoney-No"]').length, 'Donate Money - No button missing');
+      assert.ok(component.find('.donate-money-form').length, 'Donate Money - form missing');
+    });
 
-    // it('entering Yes to both forms makes next button no longer disabled', function() {
-    //   props.organDonation.donate = 'Yes';
-    //   props.organDonation.contribute = 'Yes';
-    //   props.continueDisabled  =   !(dataPresent.organDonation(props.organDonation));
+    it('next button is disabled', function() {
+      props.organDonation.donateOrgan = '';
+      props.organDonation.donateMoney = '';
+      props.continueDisabled = !(dataPresent.organDonation(props.organDonation));
 
-    //   let component = render(
-    //     <Wrapper>
-    //       <OrganPage {...props} />
-    //     </Wrapper>
-    //   );
+      let component = render(
+        <Wrapper>
+          <OrganDonationPage  {...props} />
+        </Wrapper>
+      );
 
-    //   assert.equal(component.find('.arrow-button .forward disabled'), false);
-    //   assert.ok(component.find('.arrow-button forward'));
-    // });
+      assert(component.find('.arrow-button').prop('disabled'));
+    });
+
+    it('entering Yes to both forms makes next button no longer disabled', function() {
+      props.organDonation.donateOrgan = 'Yes';
+      props.organDonation.donateMoney = 'Yes';
+      props.continueDisabled = !(dataPresent.organDonation(props.organDonation));
+
+      let component = render(
+        <Wrapper>
+          <OrganDonationPage {...props} />
+        </Wrapper>
+      );
+
+      assert(!(component.find('.arrow-button').prop('disabled')));
+    });
 
   });
 

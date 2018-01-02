@@ -5,8 +5,8 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    donate: '',
-    contribute: ''
+    donateOrgan: '',
+    donateMoney: ''
   };
 }
 

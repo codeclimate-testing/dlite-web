@@ -43,14 +43,14 @@ module.exports = function(world) {
 
   world.and('I choose to donate', function(done) {
     browser
-      .click('label[for="donate-Yes"]')
+      .click('label[for="donateOrgan-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I choose to contribute', function(done) {
     browser
-      .click('label[for="contribute-Yes"]')
+      .click('label[for="donateMoney-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -58,8 +58,8 @@ module.exports = function(world) {
   world.given('I have already entered my organ selection', function(done){
     browser
       .click('a.organ-donation')
-      .click('label[for="donate-Yes"]')
-      .click('label[for="contribute-Yes"]')
+      .click('label[for="donateOrgan-Yes"]')
+      .click('label[for="donateMoney-Yes"]')
       .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -69,14 +69,14 @@ module.exports = function(world) {
 
   world.and('I change my organ selection', function(done){
     browser
-      .click('label[for="donate-No"]')
+      .click('label[for="donateOrgan-No"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I change my contribution selection', function(done){
     browser
-      .click('label[for="contribute-No"]')
+      .click('label[for="donateMoney-No"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -93,7 +93,7 @@ module.exports = function(world) {
 
   world.then('I will see text for donate - Yes', function(done){
     browser
-    .waitForSelector('.donate-organ-yes')
+    .waitForSelector('.donate-organ-yes-info')
     .then(() => { done(); })
     .catch((err) => {
       throw err;
@@ -102,7 +102,7 @@ module.exports = function(world) {
 
   world.then('I will see text for donate - No', function(done){
     browser
-    .waitForSelector('.donate-organ-no')
+    .waitForSelector('.donate-organ-no-info')
     .then(() => { done(); })
     .catch((err) => {
       throw err;
@@ -122,7 +122,7 @@ module.exports = function(world) {
   world.given('I have already entered my donate contribution selection', function(done){
     browser
     .click('a.donate-contribution')
-    .click('label[for="donate-Yes"]')
+    .click('label[for="donateOrgan-Yes"]')
     .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
@@ -140,7 +140,7 @@ module.exports = function(world) {
 
   world.and('I change my donate contribution selection', function(done){
     browser
-    .click('label[for="donate-No"]')
+    .click('label[for="donateOrgan-No"]')
     .then(() => { done(); })
     .catch(done);
   });
@@ -157,7 +157,7 @@ module.exports = function(world) {
 
   world.then('I will see text for donate contribution - Yes', function(done){
     browser
-    .waitForSelector('.donate-contribution-yes')
+    .waitForSelector('.donate-money-yes-info')
     .then(() => { done(); })
     .catch((err) => {
       throw err;
@@ -174,5 +174,5 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  
+
 };

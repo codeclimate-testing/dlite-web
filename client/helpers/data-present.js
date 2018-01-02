@@ -55,7 +55,7 @@ const traitsHeightWeight = (props) => {
 };
 
 const organDonation = (props) => {
-  return hasAllAttributes(props, ['donate', 'contribute']);
+  return hasAllAttributes(props, ['donateMoney', 'donateOrgan']);
 };
 
 const socialSecurity = (props) => {
@@ -134,7 +134,7 @@ const application = (props) => {
     hasValue(props.ballotLanguage) ||
     hasValue(props.optOut) ||
     contactMethods(props.contactMethods) ||
-    realID(props.realID) || 
+    realID(props.realID) ||
     hasValue(props.seniorID);
 };
 

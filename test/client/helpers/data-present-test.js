@@ -17,11 +17,11 @@ describe('dataPresent', function() {
 
   describe('#organDonation', function() {
     it('is true with donate and contribute', function() {
-      assert(dataPresent.organDonation({donate: 'Yes', contribute: 'Yes'}), 'organDonation not present with donate and contribute');
+      assert(dataPresent.organDonation({donateOrgan: 'Yes', donateMoney: 'Yes'}), 'organDonation not present with donate and contribute');
     });
 
     it('is false without donate and contribute', function() {
-      assert(!dataPresent.organDonation({contribute: 'Yes'}), 'organDonation not present with contribute');
+      assert(!dataPresent.organDonation({donateMoney: 'Yes'}), 'organDonation not present with contribute');
     });
   });
 

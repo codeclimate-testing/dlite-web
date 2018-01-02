@@ -94,8 +94,8 @@ module.exports = function(world) {
     navigateToPath('/apply/my-basics/traits-height-weight', '.traits-height-weight-form', done);
   });
 
-  world.when('I visit the organ page', function(done) {
-    navigateToPath('/apply/organ-donation', '.organ-form', done);
+  world.when('I visit the organ donation page', function(done) {
+    navigateToPath('/apply/organ-donation', '.donate-organ-form', done);
   });
 
   world.when('I visit the donate contribution page', function(done) {
@@ -222,8 +222,8 @@ module.exports = function(world) {
     assertOnPage('.traits-height-weight-form', /my-basics\/traits-height-weight/, done);
   });
 
-  world.then('I will be on the page for organ selection', function(done) {
-    assertOnPage('.organ-form', /organ-donation/, done);
+  world.then('I will be on the page for organ donation', function(done) {
+    assertOnPage('.donate-organ-form', /organ-donation/, done);
   });
 
   world.then('I will be on the page for donate contribution', function(done) {
@@ -316,10 +316,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to previous names page', function(done) {
     assertOnPage('.previous-names-form', /my-history\/names/, done);
-  });
-
-  world.then('I will be taken to organ donation page', function(done) {
-    assertOnPage('.donate-contribution-form', /organ-donation/, done);
   });
 
   world.then('I will be taken to date of birth page', function(done) {

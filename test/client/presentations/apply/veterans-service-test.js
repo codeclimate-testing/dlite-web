@@ -108,7 +108,7 @@ describe('VeteransServicePage', function() {
       );
       assert.ok(component.find('.arrow-button .forward disabled'));
     });
-    
+
     describe('answering veterans identifier question', function() {
       beforeEach(function() {
         props.veteransService.isVeteran = 'Yes';
@@ -158,7 +158,6 @@ describe('VeteransServicePage', function() {
 
     it('selecting Yes renders benefits and designation forms', function() {
       props.veteransService.isVeteran = 'Yes';
-      console.log(props);
 
       let component = render(
         <Wrapper>
@@ -235,7 +234,6 @@ describe('VeteransServicePage', function() {
       });
 
       it('shows removal notification when selecting No and veteran was previously designated', function() {
-        console.log(props);
         props.veteransService.veteransIdentifier = 'No';
 
         let component = render(

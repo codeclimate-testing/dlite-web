@@ -1,56 +1,55 @@
 'use strict';
 
-import React from 'react';
+import React                          from 'react';
+import { connect }                    from 'react-redux';
 
-import { updateOrganDonation }        from "../../actions/index";
-import { ageChecks }                  from '../../helpers/calculate-age';
-import HomeLink                       from '../../presentations/home-link.jsx';
-import NavigationButtons              from '../../presentations/navigation-buttons.jsx';
-import DonateOrgan                    from '../../presentations/apply/donate-organ-form.jsx';
-import DonateContribution             from '../../presentations/apply/donate-contribution-form.jsx';
-import connectForm                    from '../../helpers/connect-form';
-import navigateOnSubmit               from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack                 from '../../helpers/handlers/navigate-on-back';
+import handlers                       from '../../helpers/handlers';
 import * as dataPresent               from '../../helpers/data-present';
 
-const ConnectedForm = (props) => {
-  const continueDisabled = !dataPresent.organDonation(props.organDonation);
-  let address            = '/voting-registration/introduction';
+import { updateOrganDonation }        from '../../actions/index';
+import { ageChecks }                  from '../../helpers/calculate-age';
+import Presentation                   from '../../presentations/apply/organ-donation-page.jsx';
 
+const Page = (props) => {
+
+  let submitAddress = '/voting-registration/introduction';
   if(ageChecks.Under16(props.dateOfBirth)) {
-    address = '/summary';
+    submitAddress = '/summary';
   }
+  let onSubmit            = handlers.navigateOnSubmit(submitAddress, props);
+  let onBack              = handlers.navigateOnBack(props);
 
-  const onSubmit         = navigateOnSubmit(address, props);
-  const onBack           = navigateOnBack(props);
-
+  const continueDisabled = !dataPresent.organDonation(props.organDonation);
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <DonateOrgan
-          onChange={props.onChange}
-          organDonation={props.organDonation}
-          selectedValue = {props.organDonation.donate}
-        />
-        <DonateContribution
-          onChange={props.onChange}
-          organDonation={props.organDonation}
-          selectedValue = {props.organDonation.contribute}
-        />
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
+    <Presentation
+      {...props}
+      onSubmit            = { onSubmit }
+      onBack              = { onBack }
+      continueDisabled    = { continueDisabled }
+    />
   );
-};
+}
 
 function mapStateToProps(state) {
   return {
-    organDonation: state.application.organDonation,
-    dateOfBirth:  state.application.dateOfBirth
+    organDonation:  state.application.organDonation,
+    dateOfBirth:    state.application.dateOfBirth,
+    focused:        state.ui.focus
   };
 }
 
-export default connectForm(mapStateToProps, updateOrganDonation, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateOrganDonation, dispatch);
+  const onSubmit = handlers.onFormSubmit(dispatch);
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
