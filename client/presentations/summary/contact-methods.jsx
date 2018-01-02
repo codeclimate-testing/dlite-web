@@ -21,7 +21,7 @@ const ContactMethods = (props) => {
     <div className='summary-section'>
       <p> Should Contact: {shouldContact} </p>
       <p> Email Address: {props.contactMethods.emailAddress} </p>
-      <p> phone Number: {props.contactMethods.phoneNumber} </p>
+      <p> Phone Number: {props.contactMethods.phoneNumber} </p>
     </div>
   );
 };

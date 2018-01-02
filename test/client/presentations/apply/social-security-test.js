@@ -80,10 +80,10 @@ describe('SocialSecurityPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('.social-security-enter-form'), 'form not rendered');
-      assert.ok(component.find('input#part1'), 'social input not found');
-      assert.ok(component.find('input#part2'), 'social input not found');
-      assert.ok(component.find('input#part3'), 'social input not found');
+      assert.ok(component.find('.social-security-enter-form').length, 'form not rendered');
+      assert.ok(component.find('input#part1').length, 'social input not found');
+      assert.ok(component.find('input#part2').length, 'social input not found');
+      assert.ok(component.find('input#part3').length, 'social input not found');
     });
 
   });

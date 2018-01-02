@@ -74,7 +74,7 @@ describe('MedicalHistoryPage', function() {
            <MedicalPage {...props} />
          </Wrapper>
        );
-       assert.ok(component.find('.enter-medical-info'));
+       assert.ok(component.find('.enter-medical-info').length, 'Medical info form does not appear');
      });
 
   });

@@ -40,9 +40,9 @@ describe('LicenseType Page', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('.license-type-form'), 'form not rendered');
-      assert.ok(component.find('label.checkbox-selector[for="car"]'), 'car checkbox not rendered');
-      assert.ok(component.text().includes('Do you need any professional endorsements?'), 'endorsements form not rendered');
+      assert.ok(component.find('.license-type-form').length, 'form not rendered');
+      assert.ok(component.find('label.checkbox-selector[for="car"]').length, 'car checkbox not rendered');
+      assert.ok(component.find('.endorsement-toggle').length, 'endorsements form not rendered');
     });
 
     it('does not show the form asking which endorsements if no selection is made', function() {
@@ -63,7 +63,7 @@ describe('LicenseType Page', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('.endorsement-form'), 'endorsement form not rendered');
+      assert.ok(component.find('.endorsement-form').length, 'endorsement form not rendered');
     });
 
     it('next button is disabled', function(){

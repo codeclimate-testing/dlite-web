@@ -50,9 +50,9 @@ describe('ContactMethodsPage', function() {
         </Wrapper>
       );
       assert.ok(component.find('.contact-methods-choice-form').length, 'form missing');
-      assert.ok(component.find('label[for="shouldContactYes"]'), 'Yes button missing');
-      assert.ok(component.find('label[for="shouldContactNo"]'), 'No button missing');
-      assert.ok(component.find('label[for="shouldContactSkipQuestion"]'), 'Skip Question button missing');
+      assert.ok(component.find('label[for="shouldContactYes"]').length, 'Yes button missing');
+      assert.ok(component.find('label[for="shouldContactNo"]').length, 'No button missing');
+      assert.ok(component.find('label[for="shouldContactSkip Question"]').length, 'Skip Question button missing');
     });
 
     // TODO add test for FAQ drawers

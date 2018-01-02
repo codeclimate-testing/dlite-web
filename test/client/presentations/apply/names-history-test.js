@@ -74,7 +74,7 @@ describe('NamesHistoryPage', function() {
            <NamesHistoryPage {...props} />
          </Wrapper>
        );
-       assert.ok(component.find('.enter-previous-names'));
+       assert.ok(component.find('.enter-previous-names').length, 'Previous names form does not appear');
      });
   });
 });

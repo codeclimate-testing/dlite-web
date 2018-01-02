@@ -67,6 +67,7 @@ describe('LicenseIDHistoryPage', function() {
   
       assert.ok(component.find('.applying-for-dl').length, 'general license and id history page not found');
     });
+
     it('renders general license and id history page when applying for DL', function() {
       props.cardType.new = ['DL'];
   
@@ -119,10 +120,8 @@ describe('LicenseIDHistoryPage', function() {
           <LicenseIDHistoryPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.existing-license-id-number-form'));
+      assert.ok(component.find('.existing-license-id-number-form').length, 'Lice details form does not appear');
     });
-
   });
-
 });
 
