@@ -50,11 +50,11 @@ describe('NamesHistoryPage', function() {
           <NamesHistoryPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled', function() {
-      props.namesHistory.hasPreviousNames = 'No';
+      props.namesHistory.hasUsedPreviousNames = 'No';
       props.continueDisabled  =   !(dataPresent.hasPreviousNames(props.namesHistory));
 
       let component = render(
@@ -62,9 +62,7 @@ describe('NamesHistoryPage', function() {
           <NamesHistoryPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
 
      it('selecting Yes makes form appear asking for previous names', function() {

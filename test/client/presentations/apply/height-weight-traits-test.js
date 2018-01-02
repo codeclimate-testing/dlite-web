@@ -52,7 +52,7 @@ describe('HeightWeightPage', function() {
           <HeightWeightPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('entering traits makes next button no longer disabled', function() {
@@ -68,9 +68,7 @@ describe('HeightWeightPage', function() {
           <HeightWeightPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
 
   });

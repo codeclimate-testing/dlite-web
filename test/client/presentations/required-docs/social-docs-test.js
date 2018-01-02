@@ -33,7 +33,6 @@ describe('Required Docs for Social Security Number', function() {
   };
 
   describe('BulletList', function() {
-  
     it('is true when condition is Yes', function() {
       socialSecurity = {
         hasSocialSecurity: 'Yes'
@@ -59,7 +58,6 @@ describe('Required Docs for Social Security Number', function() {
       )
       assert.equal(component.text().includes('Proof of Social Security Number'), false);
     });
-
   });
 
   describe('Required docs for Social Security', function() {
@@ -98,6 +96,6 @@ describe('Required Docs for Social Security Number', function() {
       )
       assert.equal(component, false);
     });
-
   });
 });
+

@@ -74,7 +74,7 @@ describe('LicenseIssuesPage', function() {
           <LicenseIssuesPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled', function() {
@@ -86,12 +86,8 @@ describe('LicenseIssuesPage', function() {
           <LicenseIssuesPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
-
   });
-
 });
 

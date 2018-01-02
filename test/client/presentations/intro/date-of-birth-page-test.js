@@ -53,7 +53,7 @@ describe('DateOfBirthPage', function() {
           <DateOfBirthPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('entering dob makes next button no longer disabled', function() {
@@ -62,16 +62,14 @@ describe('DateOfBirthPage', function() {
         day: '19',
         year: '1984'
       };
-      props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
+      props.continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
 
       let component = render(
         <Wrapper>
           <DateOfBirthPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
   });
 });

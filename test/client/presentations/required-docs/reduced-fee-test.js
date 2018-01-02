@@ -33,7 +33,6 @@ describe('Required Docs for Reduced Fee', function() {
   };
 
   describe('BulletList', function() {
-  
     it('is true when condition is Yes', function() {
       reducedFee =  {
         ID: 'Yes'
@@ -72,7 +71,6 @@ describe('Required Docs for Reduced Fee', function() {
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
     });
-
   });
 
   describe('Docs component', function() {
@@ -114,6 +112,6 @@ describe('Required Docs for Reduced Fee', function() {
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
     }); 
-
   });
 });
+

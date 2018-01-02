@@ -53,7 +53,7 @@ describe('SocialSecurityPage', function() {
           <SocialSecurityPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled and shows message', function() {
@@ -66,8 +66,7 @@ describe('SocialSecurityPage', function() {
         </Wrapper>
       );
 
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
       assert.ok(component.find('.social-security-no-form', 'message not rendered'));
     });
 
@@ -85,8 +84,6 @@ describe('SocialSecurityPage', function() {
       assert.ok(component.find('input#part2').length, 'social input not found');
       assert.ok(component.find('input#part3').length, 'social input not found');
     });
-
   });
-
 });
 

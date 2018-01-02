@@ -63,7 +63,7 @@ describe('NamePage', function() {
           <NamePage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting ID makes next button no longer disabled', function() {
@@ -73,16 +73,14 @@ describe('NamePage', function() {
         lastName: 'Braytheus',
         suffix: ''
       };
-      props.continueDisabled  =   !(dataPresent.cardType(props.cardType));
+      props.continueDisabled  =   !(dataPresent.legalName(props.legalName));
 
       let component = render(
         <Wrapper>
           <NamePage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
   });
 });

@@ -50,21 +50,19 @@ describe('MedicalHistoryPage', function() {
           <MedicalPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled', function() {
       props.medicalHistory.hasMedicalCondition = 'No';
-      props.continueDisabled  =   !(dataPresent.medicalHistory(props.medicalHistory));
+      props.continueDisabled  =   !(dataPresent.hasMedicalCondition(props.medicalHistory));
 
       let component = render(
         <Wrapper>
           <MedicalPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
 
      it('selecting Yes makes form appear asking for more info', function() {
@@ -76,8 +74,6 @@ describe('MedicalHistoryPage', function() {
        );
        assert.ok(component.find('.enter-medical-info').length, 'Medical info form does not appear');
      });
-
   });
-
 });
 

@@ -72,8 +72,7 @@ describe('LicenseType Page', function() {
           <LicenseType {...props}/>
         </Wrapper>
       );
-
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting class of vehicles and answering endorsements make next button enabled', function() {
@@ -85,8 +84,7 @@ describe('LicenseType Page', function() {
           <LicenseType {...props}/>
         </Wrapper>
       );
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     })
   });
 });

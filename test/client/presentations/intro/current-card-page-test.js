@@ -79,7 +79,6 @@ describe('CurrentCardPage', function() {
       assert.equal(component.text().includes('please enter your California ID number.'), false);
       assert.equal(component.text().includes('please enter your California Driver License number.'), true);
     });
-
   });
 });
 

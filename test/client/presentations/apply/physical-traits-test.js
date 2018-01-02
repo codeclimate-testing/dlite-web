@@ -50,7 +50,7 @@ describe('PhysicalTraitsPage', function() {
           <PhysicalTraitsPage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('entering physical traits makes next button no longer disabled', function() {
@@ -59,20 +59,15 @@ describe('PhysicalTraitsPage', function() {
         eyeColor: 'Gray',
         hairColor: 'Bald'
       };
-
-      let continueDisabled = !(dataPresent.physicalTraits(props.physicalTraits));
+      props.continueDisabled = !(dataPresent.physicalTraits(props.physicalTraits));
 
       let component = render(
         <Wrapper>
           <PhysicalTraitsPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
-
   });
-
 });
 

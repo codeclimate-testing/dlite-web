@@ -33,7 +33,6 @@ describe('Required Docs for Real ID', function() {
   };
 
   describe('BulletList', function() {
-  
     it('is true when condition is Yes', function() {
       realID = {
         getRealID: 'Yes'
@@ -72,7 +71,6 @@ describe('Required Docs for Real ID', function() {
       )
       assert.equal(component.text().includes('Real ID birth date'), false);
     });
-
   });
 
   describe('Docs component', function() {
@@ -120,6 +118,6 @@ describe('Required Docs for Real ID', function() {
         !component.text().includes('All applicants need to prove their date of birth.'), 
         false);
     });
-
   });
 });
+

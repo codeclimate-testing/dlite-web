@@ -67,20 +67,19 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled', function() {
       props.veteransService.isVeteran = 'No';
+      props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
 
       let component = render(
         <Wrapper>
           <VeteransPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
   });
 
@@ -106,24 +105,25 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     describe('answering veterans identifier question', function() {
       beforeEach(function() {
         props.veteransService.isVeteran = 'Yes';
+        props.veteransService.receiveBenefits = 'Yes';
       });
 
       it('selecting No enables the continue button', function() {
         props.veteransService.veteransIdentifier = 'No';
+        props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
 
         let component = render(
           <Wrapper>
           <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.find('.arrow-button .forward disabled'), false);
-        assert.ok(component.find('.arrow-button forward'));
+        assert.equal(props.continueDisabled, false);
       });
 
       it('shows fee notification when selecting Yes', function() {
@@ -139,14 +139,14 @@ describe('VeteransServicePage', function() {
 
       it('selecting Yes enables the continue button', function() {
         props.veteransService.veteransIdentifier = 'Yes';
+        props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
 
         let component = render(
           <Wrapper>
           <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.find('.arrow-button .forward disabled'), false);
-        assert.ok(component.find('.arrow-button forward'));
+        assert.equal(props.continueDisabled, false);
       });
     });
   });
@@ -199,7 +199,7 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.ok(component.find('.arrow-button .forward disabled'));
+        assert.equal(props.continueDisabled, true);
       });
 
       it('selecting Yes shows veterans identifier section for previous designation', function() {
@@ -222,7 +222,7 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.ok(component.find('.arrow-button .forward disabled'));
+        assert.equal(props.continueDisabled, true);
       });
     });
 

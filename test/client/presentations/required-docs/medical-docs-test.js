@@ -114,6 +114,6 @@ describe('Required Docs for Medical Condition', function() {
       )
       assert.equal(component.text().includes('Medical Information'), false);
     });
-
   });
 });
+

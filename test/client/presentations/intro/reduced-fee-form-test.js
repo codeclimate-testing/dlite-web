@@ -54,7 +54,7 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.arrow-button .forward disabled'));
+      assert.equal(props.continueDisabled, true);
     });
 
     it('selecting No makes next button no longer disabled', function() {
@@ -66,9 +66,7 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-
-      assert.equal(component.find('.arrow-button .forward disabled'), false);
-      assert.ok(component.find('.arrow-button forward'));
+      assert.equal(props.continueDisabled, false);
     });
 
     it('selecting Yes makes form show asking if user has the correct forms', function() {
@@ -91,10 +89,8 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-
       assert.equal(component.text().includes('This only applies to your ID Card.'), true);
     })
-
   });
 });
 
