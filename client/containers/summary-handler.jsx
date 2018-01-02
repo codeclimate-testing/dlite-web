@@ -6,7 +6,7 @@ import { Link }             from 'react-router-dom';
 import Presentation         from '../presentations/summary/summary-page.jsx';
 import navigateOnSubmit     from '../helpers/handlers/navigate-on-submit';
 import { postData }         from '../actions/api-actions';
-import { updateNextAddress} from '../actions';
+import { updateEditMode }   from '../actions';
 
 class Page extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       dispatch(postData(application));
     },
     editMode: () => {
-      dispatch(updateNextAddress('true'))
+      dispatch(updateEditMode('true'))
     }
   });
 };
