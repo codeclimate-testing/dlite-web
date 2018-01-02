@@ -155,6 +155,10 @@ Feature: Save user data
     When I update my email and phone number
     And I go to the page with my summary
     Then I will see my updated email and phone number in summary
+    When I click to edit my name
+    Then I will be taken to the names page 
+    When I click "Next" to continue
+    Then I will be on the page with my summary
 
 
   Scenario: renewing one new ID and no social

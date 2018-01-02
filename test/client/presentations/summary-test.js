@@ -1,10 +1,13 @@
 'use strict';
 
-import assert         from 'assert';
-import React          from 'react';
-import configure      from '../support/configure-enzyme';
-import { render }     from 'enzyme';
-import data           from '../../../server/helpers/client-default-state.js';
+import assert           from 'assert';
+import React            from 'react';
+import configure        from '../support/configure-enzyme';
+import { render }       from 'enzyme';
+import { spy }          from 'sinon';
+import store            from '../support/page-store';
+import wrapperGenerator from '../support/wrapper';
+import data             from '../../../server/helpers/client-default-state.js';
 import {
   Empty,
   LegalName,
@@ -37,31 +40,156 @@ import {
 } from '../../../client/presentations/summary/index.js';
 
 describe('Summary section', function() {
+  const Wrapper = wrapperGenerator(store);
   let props = data.application;
+
+  beforeEach(function() {
+    let onChange = spy();
+    let props = {
+      onChange,
+      'legalName': {
+        'firstName': '',
+        'middleName': '',
+        'lastName': '',
+        'suffix': ''
+      },
+      'cardType': {
+        'new': [],
+        'renew': '',
+        'youthIDInstead': ''
+      },
+      'currentCardInfo': {
+        'number': '',
+        'day': '',
+        'month': '',
+        'year': ''
+      },
+      'dateOfBirth': {
+        'day': '',
+        'month': '',
+        'year': ''
+      },
+      'realID': {
+        'getRealID': '',
+        'realIdDesignation': ''
+      },
+      'licenseType': {
+        'type': [],
+        'endorsement': [],
+        'needEndorsement': ''
+      },
+      'reducedFee': {
+        'ID': '',
+        'form': ''
+      },
+      'seniorID': '',
+      'homeAddress': {
+        'street_1': '',
+        'street_2': '',
+        'city': '',
+        'state': '',
+        'zip': ''
+      },
+      'mailingAddress': {
+        'street_1': '',
+        'street_2': '',
+        'city': '',
+        'state': '',
+        'zip': ''
+      },
+      'physicalTraits': {
+        'hairColor': '',
+        'eyeColor': '',
+        'sex': ''
+      },
+      'traitsHeightWeight': {
+        'weight': '',
+        'heightFeet': '',
+        'heightInches': ''
+      },
+      'socialSecurity': {
+        'part1': '',
+        'part2': '',
+        'part3': '',
+        'hasSocialSecurity': ''
+      },
+      'organDonation': {
+        'donate': '',
+        'contribute': ''
+      },
+      'licenseAndIdHistory': {
+        'DLIDNumber': '',
+        'issuedBy': '',
+        'month': '',
+        'day': '',
+        'year': '',
+        'isIssued': ''
+      },
+      'namesHistory': {
+        'hasUsedPreviousNames': '',
+        'previousNames': ''
+      },
+      'medicalHistory': {
+        'hasMedicalCondition': '',
+        'medicalInfo': ''
+      },
+      'licenseIssues': {
+        'isSuspended': '',
+        'month': '',
+        'day': '',
+        'year': '',
+        'reason': ''
+      },
+      'veteransService': {
+        'isVeteran': '',
+        'receiveBenefits': '',
+        'previouslyDesignated': '',
+        'veteransIdentifier': ''
+      },
+      'citizenStatus': '',
+      'ballotByMail': '',
+      'eligibilityRequirements': '',
+      'politicalPartyChoose': {
+        'isSelected': '',
+        'politicalPartyChoose': ''
+      },
+      'ballotLanguage': '',
+      'optOut': '',
+      'contactMethods': {
+        'shouldContact': '',
+        'emailAddress': '',
+        'phoneNumber': ''
+      }
+    };
+  });
+
   describe('Empty', function() {
-    it('shows no information entered', function() {
+    it('returns null when no value', function() {
+
       let component = render(
-        <Empty
-          {...props}
-        />
+        <Wrapper>
+          <LegalName { ...props } />
+        </Wrapper>
       )
       assert.equal(component.text().includes('No information has been entered yet'), true);
     });
   });
 
   describe('LegalName', function() {
-    it('shows legal name fields', function() {
-      let legalName = {
+
+    it('shows name when name entered', function() {
+      props.legalName = {
         firstName: 'this',
         middleName: 'is',
         lastName: 'my',
         suffix: 'III'
       };
       let component = render(
-        <LegalName
-          { ...props }
-          legalName={legalName }
-        />
+        <Wrapper>
+          <LegalName
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('First Name: this'), true);
       assert.equal(component.text().includes('Middle Name: is'), true);
@@ -72,16 +200,17 @@ describe('Summary section', function() {
 
   describe('DateOfBirth', function() {
     it('shows date of birth fields', function(){
-      let dateOfBirth = {
+      props.dateOfBirth = {
         month: '11',
         day: '11',
         year: '1999'
       };
       let component = render(
-        <DateOfBirth
-          { ...props }
-          dateOfBirth={dateOfBirth}
-        />
+        <Wrapper>
+          <DateOfBirth 
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Date of birth: 11/11/1999'), true);
     });
@@ -95,9 +224,11 @@ describe('Summary section', function() {
       };
       props.cardAction = 'new';
       let component = render(
-        <Cards
-          { ...props }
-        />
+        <Wrapper>
+          <Cards 
+            { ...props }
+          />
+        </Wrapper>
       );
       assert.equal(component.text().includes('Applying for new: ID and Driver License'), true);
     });
@@ -109,9 +240,11 @@ describe('Summary section', function() {
       };
       props.cardAction = 'new';
       let component = render(
-        <Cards
-          { ...props }
-        />
+        <Wrapper>
+          <Cards
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Applying for new: Driver License'), true);
     });
@@ -130,7 +263,11 @@ describe('Summary section', function() {
       };
       props.cardAction = 'renew';
       let component = render(
-        <Cards {...props} />
+        <Wrapper>
+          <Cards
+            {...props}
+          />
+        </Wrapper>
       );
       assert.equal(component.text().includes('Renewing: ID'), true);
       assert.equal(component.text().includes('Renewal ID number: a90382kf'), true);
@@ -167,13 +304,14 @@ describe('Summary section', function() {
 
   describe('SeniorID', function() {
     it('shows SeniorID selection', function(){
-      let seniorID = 'Yes';
-
+      props.seniorID = 'Yes';
+  
       let component = render(
-        <SeniorID
-          { ...props }
-          seniorID={seniorID}
-        />
+        <Wrapper>
+          <RealID
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Senior ID: Yes'), true);
     });
@@ -187,9 +325,11 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <RealID
-          { ...props }
-        />
+        <Wrapper>
+          <RealID
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID: Yes'), true);
       assert.equal(component.text().includes('Real ID Designation: ID'), true);
@@ -201,32 +341,46 @@ describe('Summary section', function() {
       props.licenseType.type = ['car', 'unsure'];
       props.licenseType.needEndorsement = 'No';
       let component = render(
-        <LicenseType
-          { ...props }
-        />
+        <Wrapper>
+          <LicenseType
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.ok(component.text().includes('Need to drive: Car, and I\'m not sure'), 'license type not rendered in summary');
     });
   });
+  describe('ReducedFee', function() {
+    it('returns null when no value', function(){
+
+      let component = render(
+        <Wrapper>
+          <ReducedFee 
+            { ...props }
+          />
+        </Wrapper>
+      )
+      assert.equal(component.find('.summary-section'), false);
+    });
 
   describe('ReducedFee', function() {
     it('shows that user does not have correct forms for reduced fee application', function() {
-      let reducedFee = {
+      props.reducedFee = {
         ID: 'Yes',
         form: 'No'
       }
       let component = render(
-        <ReducedFee
-          reducedFee = { reducedFee }
-        />
+        <Wrapper>
+          <ReducedFee {...props} />
+        </Wrapper>
       )
-      assert.equal(component.text().includes('Correct Forms for Reduced Fee: No'), true);
+      assert.ok(component.text().includes('Correct Forms for Reduced Fee: No'), 'reduced fee form line not rendered');
     });
   });
 
   describe('HomeAddress', function() {
     it('shows home address fields', function(){
-      let homeAddress = {
+      props.homeAddress = {
         street_1: '111 Main Street',
         street_2: '',
         city: 'Sacramento',
@@ -235,10 +389,11 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <HomeAddress
-          { ...props }
-          homeAddress={homeAddress}
-        />
+        <Wrapper>
+          <HomeAddress
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Home address:'), true);
       assert.equal(component.text().includes('Street Address: 111 Main Street'), true);
@@ -250,7 +405,7 @@ describe('Summary section', function() {
 
   describe('MailingAddress', function() {
     it('shows mailing address fields', function(){
-      let mailingAddress = {
+      props.mailingAddress = {
         street_1: '111 Main Street',
         street_2: '',
         city: 'Sacramento',
@@ -259,10 +414,11 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <MailingAddress
-          { ...props }
-          mailingAddress={mailingAddress}
-        />
+        <Wrapper>
+          <MailingAddress
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Mailing address:'), true);
       assert.equal(component.text().includes('Street Address: 111 Main Street'), true);
@@ -274,17 +430,18 @@ describe('Summary section', function() {
 
   describe('TraitsHeightWeight', function() {
     it('shows height and weight traits', function(){
-      let traitsHeightWeight = {
+      props.traitsHeightWeight = {
         weight: '200',
         heightFeet: '6',
         heightInches: '3'
       };
 
       let component = render(
-        <TraitsHeightWeight
-          { ...props }
-          traitsHeightWeight={traitsHeightWeight}
-        />
+        <Wrapper>
+          <TraitsHeightWeight
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Height: 6 feet 3 inches'), true);
       assert.equal(component.text().includes('Weight: 200 pounds'), true);
@@ -293,17 +450,18 @@ describe('Summary section', function() {
 
   describe('PhysicalTraits', function() {
     it('shows physical traits', function(){
-      let physicalTraits = {
+      props.physicalTraits = {
         sex: 'Female',
         eyeColor: 'Green',
         hairColor: 'Black'
       };
 
       let component = render(
-        <PhysicalTraits
-          { ...props }
-          physicalTraits={physicalTraits}
-        />
+        <Wrapper>
+          <PhysicalTraits
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Sex: Female'), true);
       assert.equal(component.text().includes('Eye Color: Green'), true);
@@ -313,16 +471,15 @@ describe('Summary section', function() {
 
   describe('OrganDonation', function() {
     it('shows organ donation selections', function(){
-      let organDonation = {
+      props.organDonation = {
         donateMoney: 'Yes',
         donateOrgan: 'Yes'
       };
 
       let component = render(
-        <OrganDonation
-          { ...props }
-          organDonation={organDonation}
-        />
+        <Wrapper>
+          <OrganDonation { ...props }/>
+        </Wrapper>
       )
       assert.equal(component.text().includes('Donate Organs: Yes'), true);
       assert.equal(component.text().includes('Voluntary Contribution: Yes'), true);
@@ -339,10 +496,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <SocialSecurity
-          { ...props }
-          socialSecurity={socialSecurity}
-        />
+        <Wrapper>
+          <SocialSecurity
+            { ...props }
+            socialSecurity={socialSecurity}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Has Social Security: Yes'), true);
       assert.equal(component.text().includes('Social Security: 111-11-1111'), true);
@@ -361,10 +520,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <LicenseAndIdHistory
-          { ...props }
-          licenseAndIdHistory={licenseAndIdHistory}
-        />
+        <Wrapper>
+          <LicenseAndIdHistory
+            { ...props }
+            licenseAndIdHistory={licenseAndIdHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Has existing DL/ID: Yes'), true);
       assert.equal(component.text().includes('Existing DL/ID number: 111'), true);
@@ -381,9 +542,11 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <NamesHistory
-          { ...props }
-        />
+        <Wrapper>
+          <NamesHistory
+            { ...props }
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Has used previous names: Yes'), true);
       assert.equal(component.text().includes('Previous Names: John Doe'), true);
@@ -398,10 +561,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <MedicalHistory
-          { ...props }
-          medicalHistory={medicalHistory}
-        />
+        <Wrapper>
+          <MedicalHistory
+            { ...props }
+            medicalHistory={medicalHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Medical history: Yes'), true);
       assert.equal(component.text().includes('Medical conditions: Blind'), true);
@@ -419,10 +584,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <LicenseIssues
-          { ...props }
-          licenseIssues={licenseIssues}
-        />
+        <Wrapper>
+          <LicenseIssues
+            { ...props }
+            licenseIssues={licenseIssues}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Have suspended license: Yes'), true);
       assert.equal(component.text().includes('Suspended license date: 11/11/2015'), true);
@@ -440,10 +607,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <VeteransService
-          { ...props }
-          veteransService={veteransService}
-        />
+        <Wrapper>
+          <VeteransService
+            { ...props }
+            veteransService={veteransService}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Is veteran: Yes'), true);
       assert.equal(component.text().includes('Receive veterans benefits: Yes'), true);
@@ -456,10 +625,12 @@ describe('Summary section', function() {
       let citizenStatus = 'Yes';
 
       let component = render(
-        <CitizenStatus
-          { ...props }
-          citizenStatus={citizenStatus}
-        />
+        <Wrapper>
+          <CitizenStatus
+            { ...props }
+            citizenStatus={citizenStatus}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('US Citizen: Yes'), true);
     });
@@ -470,10 +641,12 @@ describe('Summary section', function() {
       let eligibilityRequirements = 'Yes';
 
       let component = render(
-        <EligibilityRequirements
-          { ...props }
-          eligibilityRequirements={eligibilityRequirements}
-        />
+        <Wrapper>
+          <EligibilityRequirements
+            { ...props }
+            eligibilityRequirements={eligibilityRequirements}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Voter registration eligibility met: Yes'), true);
     });
@@ -484,10 +657,12 @@ describe('Summary section', function() {
       let optOut = 'new';
 
       let component = render(
-        <OptOut
-          { ...props }
-          optOut={optOut}
-        />
+        <Wrapper>
+          <OptOut
+            { ...props }
+            optOut={optOut}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Choose opt out: new'), true);
     });
@@ -501,10 +676,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <PoliticalPartyChoose
-          { ...props }
-          politicalPartyChoose={politicalPartyChoose}
-        />
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Political Party: Green Party'), true);
       assert.equal(component.text().includes('Political Party Preference: Yes'), true);
@@ -516,10 +693,12 @@ describe('Summary section', function() {
       let ballotLanguage = 'Korean';
 
       let component = render(
-        <BallotLanguage
-          { ...props }
-          ballotLanguage={ballotLanguage}
-        />
+        <Wrapper>
+          <BallotLanguage
+            { ...props }
+            ballotLanguage={ballotLanguage}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Ballot language preference: Korean'), true);
     });
@@ -530,10 +709,12 @@ describe('Summary section', function() {
       let ballotByMail = 'Yes';
 
       let component = render(
-        <BallotByMail
-          { ...props }
-          ballotByMail={ballotByMail}
-        />
+        <Wrapper>
+          <BallotByMail
+            { ...props }
+            ballotByMail={ballotByMail}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Ballot by mail: Yes'), true);
     });
@@ -548,10 +729,12 @@ describe('Summary section', function() {
       };
 
       let component = render(
-        <ContactMethods
-          { ...props }
-          contactMethods={contactMethods}
-        />
+        <Wrapper>
+          <ContactMethods
+            { ...props }
+            contactMethods={contactMethods}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Should Contact: Yes'), true);
       assert.equal(component.text().includes('Email Address: email@email.com'), true);

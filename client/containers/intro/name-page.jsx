@@ -28,7 +28,8 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     legalName: state.application.legalName,
-    validations: state.ui.validations
+    validations: state.ui.validations,
+    editMode:   state.ui.edit
   };
 };
 

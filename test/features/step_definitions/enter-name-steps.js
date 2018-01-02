@@ -5,20 +5,6 @@ const assert = require('assert');
 module.exports = function(world) {
   let browser = world.browser;
 
-  // world.then('I will see a field for first, middle last name and suffix', function(done) {
-  //   browser
-  //     .exists('#firstName')
-  //     .then((exists) => { assert.ok(exists, 'input for first name missing')})
-  //     .exists('#middleName')
-  //     .then((exists) => { assert.ok(exists, 'input for first middle missing')})
-  //     .exists('#lastName')
-  //     .then((exists) => { assert.ok(exists, 'input for first last missing')})
-  //     .exists('#suffix')
-  //     .then((exists) => { assert.ok(exists, 'input for suffix missing')})
-  //     .then(() => { done(); })
-  //     .catch(done);
-  // });
-
   world.then('I enter my full name', function(done) {
     browser
       .type('#firstName', 'FirstName1')
@@ -125,6 +111,13 @@ module.exports = function(world) {
         assert.ok(text.includes('FirstName2'), 'Updated name not on summary');
       })
       .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click to edit my name', function(done) {
+    browser 
+      .click('.legalName.button.summary')
+      .then(done)
       .catch(done);
   });
 };

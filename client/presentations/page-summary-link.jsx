@@ -4,6 +4,7 @@ import React        from 'react';
 import LinkButton   from './link-button.jsx';
 
 const PageSummaryLink = (props) => {
+  let className = `${props.name} summary`
   return (
     <div className='summary-section'>
       <div className='flex'>
@@ -11,9 +12,9 @@ const PageSummaryLink = (props) => {
           {props.children}
         </div>
         <LinkButton 
-          to={props.to}
-          linkText='Edit'
-          className='summary'
+          to        ={ props.to }
+          linkText  ='Edit'
+          className ={ className }
         />
       </div>
       <hr/>

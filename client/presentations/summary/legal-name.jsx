@@ -13,6 +13,7 @@ const LegalName = (props) => {
   return (
     <PageSummaryLink 
       to='/my-basics/legal-name'
+      name='legalName'
     >
       <SummaryItem
         title='Name'
