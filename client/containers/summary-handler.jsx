@@ -6,16 +6,26 @@ import { Link }             from 'react-router-dom';
 import Presentation         from '../presentations/summary/summary-page.jsx';
 import navigateOnSubmit     from '../helpers/handlers/navigate-on-submit';
 import { postData }         from '../actions/api-actions';
+import { updateNextAddress} from '../actions';
 
-const Page = (props) => {
-  let onSubmit            = navigateOnSubmit('/appointment-preparation', props);
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <Presentation 
-      {...props}
-      onSubmit            = { onSubmit }
-    />
-  );
+  componentWillMount(props){
+    this.props.editMode();
+  }
+
+  render(props) {
+    let onSubmit            = navigateOnSubmit('/appointment-preparation', this.props);
+    return (
+      <Presentation 
+        {...this.props}
+        onSubmit            = { onSubmit }
+      />
+    );
+  }
 };
 
 function mapStateToProps(state) {
@@ -30,6 +40,9 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     state: application,
     onSubmit: () => {
       dispatch(postData(application));
+    },
+    editMode: () => {
+      dispatch(updateNextAddress('true'))
     }
   });
 };

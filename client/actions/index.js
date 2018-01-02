@@ -59,7 +59,8 @@ export const TYPES = {
   CHANGE_SECTION:                         'CHANGE_SECTION',
   CLEAR_VALIDATIONS:                      'CLEAR_VALIDATIONS',
   ADD_VALIDATION:                         'ADD_VALIDATION',
-  REMOVE_VALIDATION:                      'REMOVE_VALIDATION'
+  REMOVE_VALIDATION:                      'REMOVE_VALIDATION',
+  UPDATE_NEXT_ADDRESS:                    'UPDATE_NEXT_ADDRESS'
 };
 
 export const createApplicationID              = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -103,3 +104,4 @@ export const changeSection                    = generateValueAction(TYPES.CHANGE
 export const clearValidations                 = generateValueAction(TYPES.CLEAR_VALIDATIONS);
 export const addValidation                    = generateValueAction(TYPES.ADD_VALIDATION);
 export const removeValidation                 = generateValueAction(TYPES.REMOVE_VALIDATION);
+export const updateNextAddress                = generateValueAction(TYPES.UPDATE_NEXT_ADDRESS);

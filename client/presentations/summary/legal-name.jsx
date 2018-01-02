@@ -1,21 +1,24 @@
 'use strict';
 
-import React from 'react';
+import React            from 'react';
 import * as dataPresent from '../../helpers/data-present';
-import PageSummary  from '../page-summary.jsx';
+import PageSummaryLink  from '../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 
 const LegalName = (props) => {
   if (!dataPresent.legalName(props.legalName)) { return null; }
 
+  let printedName = `${props.legalName.firstName} ${props.legalName.middleName} ${props.legalName.lastName} ${props.legalName.suffix}`;
+  
   return (
-    <PageSummary 
+    <PageSummaryLink 
       to='/my-basics/legal-name'
     >
-      <p> First Name: {props.legalName.firstName} </p>
-      <p> Middle Name: {props.legalName.middleName} </p>
-      <p> Last Name: {props.legalName.lastName} </p>
-      <p> Suffix: {props.legalName.suffix} </p>
-    </PageSummary>
+      <SummaryItem
+        title='Name'
+        text={printedName}
+      />
+    </PageSummaryLink>
   );
 };
 
