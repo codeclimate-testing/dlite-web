@@ -2,6 +2,7 @@
 
 import React              from 'react';
 import RadioSelector      from '../radio-selector.jsx';
+import RadioCollection    from '../radio-selector-collection.jsx';
 import FAQDrawer          from '../faq-drawer.jsx';
 
 const CONTRIBUTION_YES = 'donate-contribution-yes'
@@ -14,22 +15,19 @@ const DonateContribution = (props) => {
       <p><i>(optional)</i></p>
       <p>Your donation helps support and promote organ and tissue donation.</p>
         <div className='inner-bottom'>
-          <RadioSelector  
+          <RadioCollection 
             {...props}
             name='contribute'
-            value='Yes'
-            text='Yes'
-            selected={ props.organDonation.contribute === 'Yes' }
-            organDonation={ props.organDonation.contribute }
-          />
-          <RadioSelector  
-            {...props}
-            name='contribute'
-            value='No'
-            text='No'
-            selected={ props.organDonation.contribute === 'No' }
-            organDonation={ props.organDonation.contribute }
-          />
+          >
+            <RadioSelector  
+              value='Yes'
+              text='Yes'
+            />
+            <RadioSelector  
+              value='No'
+              text='No'
+            />
+          </RadioCollection>
         </div>
 
         <div className='inner-bottom'>

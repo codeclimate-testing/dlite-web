@@ -3,6 +3,7 @@
 import React              from 'react';
 
 import Page               from '../../containers/page.jsx';
+import RadioCollection    from '../radio-selector-collection.jsx';
 import RadioSelector      from '../radio-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
@@ -20,20 +21,19 @@ const Form = (props) => {
         </p>
         <form onSubmit={ props.onSubmit }>
           <div className='row inner-buttom'>
-            <RadioSelector
+            <RadioCollection
               {...props}
               name='cardAction'
-              value='new'
-              text='Get a new card'
-              selected={props.cardAction === 'new'}
-            />
-            <RadioSelector
-              {...props}
-              name='cardAction'
-              value='renew'
-              text='Renew a card'
-              selected={props.cardAction === 'renew'}
-            />
+            >
+              <RadioSelector
+                value='new'
+                text='Get a new card'
+              />
+              <RadioSelector
+                value='renew'
+                text='Renew a card'
+              />
+            </RadioCollection>
             <div className='unit spacer' />
           </div>
           <NavigationButtons {...props} />

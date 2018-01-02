@@ -16,19 +16,18 @@ const PhysicalPage = (props) => {
     >
       <form onSubmit    = {props.onSubmit} className='physical-traits-form'>
         <Sex
-          onChange      = {props.onChange}
+          {...props}
           selectedValue = {props.physicalTraits.sex}
         />
         <br></br>
         <EyeColor
-          onChange      = {props.onChange}
+          {...props}
           selectedValue = {props.physicalTraits.eyeColor}
         />
         <br></br>
         <HairColor
-          onChange      = {props.onChange}
+          {...props}
           selectedValue = {props.physicalTraits.hairColor}
-          onBack        = {props.onBack}
         />
 
         <NavigationButtons {...props}/>

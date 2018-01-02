@@ -7,21 +7,21 @@ module.exports = function (world) {
 
   world.when('I select my sex', function(done) {
     browser
-      .click('label[for="sexFemale"]')
+      .click('label[for="sex-Female"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.when('I select an eye color', function(done){
     browser
-      .click('label[for="eyeColorBlue"]')
+      .click('label[for="eyeColor-Blue"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I select a hair color', function (done) {
     browser
-      .click('label[for="hairColorAuburn"]')
+      .click('label[for="hairColor-Auburn"]')
       .then(() => { done(); })
       .catch(done);
   });

@@ -3,26 +3,27 @@
 import React                from 'react';
 
 import RadioSelector        from '../../radio-selector.jsx';
+import RadioCollection      from '../../radio-selector-collection.jsx';
 
 const Form = (props) => {
   if(props.cardAction === 'new') { return null; }
 
   return (
     <div className='row inner-bottom chooseRenewCard'>
-      <RadioSelector 
+      <RadioCollection  
         {...props}
-        value='ID'
         name='renew'
-        text='ID'
-        selected={ props.cardType.renew === 'ID' }
-      />
-      <RadioSelector
-        {...props}
-        value='DL'
-        name='renew'
-        text='Driver License'
-        selected={ props.cardType.renew === 'DL' }
-      />
+        selectedValue={props.cardType.renew}
+      >
+        <RadioSelector 
+          value='ID'
+          text='ID'
+        />
+        <RadioSelector
+          value='DL'
+          text='Driver License'
+        />
+      </RadioCollection>
       <div className='unit spacer' />
     </div>
   )

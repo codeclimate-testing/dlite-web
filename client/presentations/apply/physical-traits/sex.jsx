@@ -1,19 +1,27 @@
 'use strict';
 
-import React from 'react';
-import SelectorCollection      from '../../selector-collection.jsx';
+import React              from 'react';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
 
 const Sex = (props) => {
   return (
     <div className="sex">
       <h4>What's your sex?</h4>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioCollection
+            {...props}
             name='sex'
-            values={['Female', 'Male']}
-            onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
-          />
+          >
+            <RadioSelector
+              text='Female'
+              value='Female'
+            />
+            <RadioSelector
+              text='Male'
+              value='Male'
+            />
+          </RadioCollection>
         </div>
     </div>
   );

@@ -18,7 +18,10 @@ const Form = (props) => {
 
         <LicenseTypeForm {...props} />
 
-        <EndorsementToggle {...props} />
+        <EndorsementToggle 
+          {...props} 
+          selectedValue = {props.licenseType.needEndorsement}
+        />
 
         <EndorsementForm {...props} />
      

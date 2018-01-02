@@ -1,7 +1,8 @@
 'use strict';
 
-import React                  from 'react';
-import SelectorCollection     from '../../selector-collection.jsx';
+import React              from 'react';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
 
 const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
 
@@ -10,12 +11,48 @@ const HairColor = (props) => {
     <div className='hair-color'>
       <h4>What color is your hair?</h4>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioCollection
+            {...props}
             name='hairColor'
-            values={COLORS}
-            onChange={ props.onChange }
-            selectedValue={ props.selectedValue }
-          />
+            custom={true}
+          >
+            <RadioSelector
+              text='Auburn'
+              value='Auburn'
+            />
+            <RadioSelector
+              text='Bald'
+              value='Bald'
+            />
+            <RadioSelector
+              text='Black'
+              value='Black'
+            />
+            <RadioSelector
+              text='Blonde'
+              value='Blonde'
+            />
+            <RadioSelector
+              text='Brown'
+              value='Brown'
+            />
+            <RadioSelector
+              text='Gray'
+              value='Gray'
+            />
+            <RadioSelector
+              text='Red'
+              value='Red'
+            />
+            <RadioSelector
+              text='White'
+              value='White'
+            />
+            <RadioSelector
+              text='Other'
+              value='Other'
+            />
+          </RadioCollection>
         </div>
     </div>
   );

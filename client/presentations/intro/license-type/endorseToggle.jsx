@@ -2,6 +2,7 @@
 
 import React            from 'react';
 import RadioSelector    from '../../radio-selector.jsx';
+import RadioCollection  from '../../radio-selector-collection.jsx';
 
 const Form = (props) => {
 
@@ -10,20 +11,19 @@ const Form = (props) => {
       <h4>Do you need any professional endorsements?</h4>
       <h5>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</h5>
       <div className='row inner-bottom'>
-        <RadioSelector
-          name =          'needEndorsement'
-          value =         'Yes'
-          text=           'Yes'
-          onChange =      { props.onChange }
-          selected =      { props.licenseType.needEndorsement === 'Yes' }
-        />
-        <RadioSelector
-          name =          'needEndorsement'
-          value =         'No'
-          text=           'No'
-          onChange =      { props.onChange }
-          selected =      { props.licenseType.needEndorsement === 'No' }
-        />
+        <RadioCollection 
+          {...props}
+          name='needEndorsement'
+        >
+          <RadioSelector
+            value =         'Yes'
+            text=           'Yes'
+          />
+          <RadioSelector
+            value =         'No'
+            text=           'No'
+          />
+        </RadioCollection>
       </div>
     </div>
   )

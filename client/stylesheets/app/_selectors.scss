@@ -66,5 +66,142 @@
       }
     }
   }
-}
 
+  &.eyeColor{
+    .radio-selector .icon-region{
+      background-image: url("/images/icons/selectors/eyeLight.svg");
+    }
+
+    &.selected{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/radioLight.svg");
+      }
+    }
+
+    &.Blue{
+      .radio-selector .icon-region{
+        background-color: #2309C1;
+      }
+    }
+  
+    &.Hazel{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/eyeLight.svg"), linear-gradient(#282D1E, #927622);
+        background-position: center;
+      }
+      &.selected{
+        .radio-selector .icon-region{
+          background-image: url("/images/icons/selectors/radioDark.svg");
+        }
+      }
+    }
+  
+    &.Green{
+      .radio-selector .icon-region{
+        background-color: #208304;
+      }
+    }
+  
+    &.Gray{
+      .radio-selector .icon-region{
+        background-color: #898989;
+      }
+    }
+  
+    &.Brown{
+      .radio-selector .icon-region{
+        background-color: #663F05;
+      }
+    }
+  
+    &.Black{
+      .radio-selector .icon-region{
+        background-color: #000;
+      }
+    }
+  }
+
+  &.hairColor{
+    .radio-selector .icon-region{
+      background-image: url("/images/icons/selectors/hairLight.svg");
+    }
+
+    &.selected{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/radioLight.svg");
+      }
+    }
+
+    &.Auburn{
+      .radio-selector .icon-region{
+        background-color: #822800;
+      }
+    }
+
+    &.Bald{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/blank.svg");
+        background-color: transparent;
+      }
+      &.selected{
+        .radio-selector .icon-region{
+          background-image: url("/images/icons/selectors/radioDark.svg");
+        }
+      }
+    }
+
+    &.Black{
+      .radio-selector .icon-region{
+        background-color: #000;
+      }
+    }
+
+    &.Blonde{
+      .radio-selector .icon-region{
+        background-color: #FFCF35;
+      }
+    }
+
+    &.Brown{
+      .radio-selector .icon-region{
+        background-color: #663F05;
+      }
+    }
+
+    &.Gray{
+      .radio-selector .icon-region{
+        background-color: #898989;
+      }
+    }
+
+    &.Red{
+      .radio-selector .icon-region{
+        background-color: #CF2C03;
+      }
+    }
+
+    &.White{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/hairDark.svg");
+        background-color: #F6F6F6;
+      }
+      &.selected{
+        .radio-selector .icon-region{
+          background-image: url("/images/icons/selectors/radioDark.svg");
+        }
+      }
+    }
+
+    &.Other{
+      .radio-selector .icon-region{
+        background-image: url("/images/icons/selectors/hairLight.svg"), linear-gradient(#03B9D9, #6F06D5); 
+        background-position: center;
+      }
+      &.selected{
+        .radio-selector .icon-region{
+          background-image: url("/images/icons/selectors/radioDark.svg");
+        }
+      }
+    }
+  }  
+}
