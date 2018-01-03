@@ -9,7 +9,6 @@ import NavigationButtons from '../../navigation-buttons.jsx';
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
 const CitizenStatusForm = (props) => {
-  let documentFaq = [];
 
   return (
     <Page
