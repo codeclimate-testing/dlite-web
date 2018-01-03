@@ -10,7 +10,12 @@ const LinkButton = (props) => {
   return (
     <div className='shadow-container unit'>
       <Link
-        to={alicePath(props.to)}
+        to={{
+          pathname: alicePath(props.to),
+          state: {
+            nextAddress: props.nextAddress
+          }
+        }}
         className={className}
       >
         {props.linkText}

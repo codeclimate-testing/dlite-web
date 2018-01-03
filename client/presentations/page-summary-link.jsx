@@ -15,6 +15,7 @@ const PageSummaryLink = (props) => {
           to        ={ props.to }
           linkText  ='Edit'
           className ={ className }
+          nextAddress='/summary'
         />
       </div>
       <hr/>
