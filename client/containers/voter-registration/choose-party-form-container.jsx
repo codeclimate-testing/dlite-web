@@ -1,95 +1,69 @@
 'use strict';
 
-import React from 'react';
+import React                           from 'react';
+import { connect }                     from 'react-redux';
 
-import { updatePoliticalPartyChoose } from '../../actions/index';
-import NavigationButtons from '../../presentations/navigation-buttons.jsx';
-import PoliticalPartyChoose from '../../presentations/voter-registration/voter-choose-party-form.jsx';
-import PoliticalPartyChoosePreReg from '../../presentations/voter-registration/voter-choose-party-prereg-form.jsx';
-import PoliticalPartyPreference from '../../presentations/voter-registration/political-party-preference.jsx';
-import connectForm from '../../helpers/connect-form';
-import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack from '../../helpers/handlers/navigate-on-back';
-import * as dataPresent from '../../helpers/data-present';
-import { isPreregistering } from '../../helpers/calculate-age';
+import handlers                        from '../../helpers/handlers';
+import * as dataPresent                from '../../helpers/data-present';
+import { updatePoliticalPartyChoose }  from '../../actions/index';
+import PoliticalPartyChoosePage        from '../../presentations/voter-registration/voter-choose-party/voter-choose-party-page.jsx';
+import PreRegPoliticalPartyChoosePage  from '../../presentations/voter-registration/voter-choose-party/voter-choose-party-prereg-page.jsx';
+import { isPreregistering }            from '../../helpers/calculate-age';
 import {
   pageTitle,
   sectionName
 } from '../../helpers/registration-header-presenter';
 
 
-const Presentation = (props) => {
-  const formPageTitle = pageTitle(props.dateOfBirth);
-  const formSectionName = sectionName(props.dateOfBirth);
+const Page = (props) => {
+  const formPageTitle     = pageTitle(props.dateOfBirth);
+  const formSectionName   = sectionName(props.dateOfBirth);
+  let continueDisabled    = false;
+  let onSubmit            = handlers.navigateOnSubmit('/voting-registration/language', props);
+  let onBack              = handlers.navigateOnBack(props);
 
   if (isPreregistering(props.dateOfBirth)) {
-    return <PoliticalPartyChoosePreReg
+    return <PreRegPoliticalPartyChoosePage
+      {...props}
       pageTitle={formPageTitle}
       sectionName={formSectionName}
-      onChange={props.onChange}
-      selectedValue={props.politicalPartyChoose.isSelected}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
     />
   } else {
-    return <PoliticalPartyChoose
+    return <PoliticalPartyChoosePage
+      {...props}
       pageTitle={formPageTitle}
       sectionName={formSectionName}
-      onChange={props.onChange}
-      selectedValue={props.politicalPartyChoose.isSelected}
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      continueDisabled  = { continueDisabled }
       />
   }
 };
-
-const ConnectedForm = (props) => {
-  let continueDisabled = false;
-  let showPoliticalPartyPreference = true;
-  let onSubmit = navigateOnSubmit('/voting-registration/language', props);
-  let onBack = navigateOnBack(props);
-
-  if (props.politicalPartyChoose.isSelected === 'Yes') {
-    showPoliticalPartyPreference = true;
-    continueDisabled = !(dataPresent.politicalPartyChoose(props.politicalPartyChoose));
-
-    return (
-      <div>
-        <form onSubmit={onSubmit}>
-          <div>
-            <Presentation {...props} />
-          </div>
-          <PoliticalPartyPreference
-            onChange={props.onChange}
-            selectedValue={props.politicalPartyChoose.politicalPartyChoose}
-          />
-          <NavigationButtons
-            continueDisabled={continueDisabled}
-            onBack={onBack}
-          />
-        </form>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <div>
-          <Presentation {...props} />
-        </div>
-        <NavigationButtons
-          continueDisabled={continueDisabled}
-          onBack={onBack}
-        />
-      </form>
-    </div>
-  );
-};
-
 
 function mapStateToProps(state) {
   return {
     politicalPartyChoose: state.application.politicalPartyChoose,
     optOut: state.application.optOut,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:  state.ui.focus
   };
 }
 
-export default connectForm(mapStateToProps, updatePoliticalPartyChoose, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updatePoliticalPartyChoose, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

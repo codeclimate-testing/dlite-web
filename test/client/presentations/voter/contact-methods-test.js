@@ -8,7 +8,7 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import ContactMethodsPage       from '../../../../client/presentations/voter-registration/contact-methods-choice.jsx';
+import ContactMethodsPage       from '../../../../client/presentations/voter-registration/contact-methods/contact-methods-choice.jsx';
 
 describe('ContactMethodsPage', function() {
   let store = {

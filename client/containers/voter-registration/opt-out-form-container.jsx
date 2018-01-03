@@ -3,37 +3,52 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { updateOptOut } from '../../actions/index';
+import {
+  updateOptOut
+} from '../../actions/index';
+import onInputChange           from '../../helpers/handlers/on-input-change';
+import OptOutForm              from '../../presentations/voter-registration/opt-out/opt-out-form.jsx';
+import PreregOptOutForm        from '../../presentations/voter-registration/opt-out/opt-out-prereg-form.jsx';
+import * as dataPresent        from '../../helpers/data-present';
+import handlers                from '../../helpers/handlers';
+import { hasValue }            from '../../helpers/data/validations';
+import {
+  eligibleForOptOut, eligibleForOptOutExist
+} from '../../helpers/data/voting';
+import { isPreregistering 
+} from '../../helpers/calculate-age';
+import {
+  pageTitle,
+  sectionName
+} from '../../helpers/registration-header-presenter';
 
-import handlers from '../../helpers/handlers';
-import { hasValue } from '../../helpers/data/validations';
-import { isPreregistering } from '../../helpers/calculate-age';
 
-import OptOutForm from '../../presentations/voter-registration/opt-out-form.jsx';
-import PreregOptOutForm from '../../presentations/voter-registration/opt-out-prereg-form.jsx';
+const Page = (props) => {
+  const formPageTitle = pageTitle(props.dateOfBirth);
+  const formSectionName = sectionName(props.dateOfBirth);
 
-
-const Form = (props) => {
-  let value = props.optOut;
-  const continueDisabled = !hasValue(value);
-
-  let address = '/voting-registration/preferences';
-  if ((props.optOut == "I am eligible to vote, but do not want to pre-register to vote") || (props.optOut === "opt-out")) {
-    address = '/summary';
-  } else if (props.optOut == "existing") {
+  let address = '/summary';
+  if (eligibleForOptOut(props)) {
+    address = '/voting-registration/preferences';
+  };
+  if (eligibleForOptOutExist(props)) {
     address = '/voting-registration/preferences-updated';
-  }
-
-  const onSubmit = handlers.navigateOnSubmit(address, props);
-  const onBack = handlers.navigateOnBack(props);
+  };
+  
+  let onSubmit           = handlers.navigateOnSubmit(address, props);
+  let onBack             = handlers.navigateOnBack(props);
+  const continueDisabled = !dataPresent.value(props.optOut);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreregOptOutForm : OptOutForm;
 
   return (
     <Presentation
       {...props}
+      pageTitle={formPageTitle}
+      sectionName={formSectionName}
       onSubmit={onSubmit}
       onBack={onBack}
+      onChange={props.onChange}
       selectedValue={props.optOut}
       continueDisabled={continueDisabled}
     />
@@ -55,11 +70,9 @@ function mapDispatchToProps(dispatch) {
   const onFocus  = handlers.onFocus(dispatch);
 
   return {
-    onSubmit,
     onChange,
-    onBlur,
-    onFocus
+    onSubmit
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

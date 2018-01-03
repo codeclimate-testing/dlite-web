@@ -10,7 +10,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language-form.jsx';
+import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language/ballot-language-form.jsx';
 
 describe('BallotLanguagePage', function() {
   let store = {

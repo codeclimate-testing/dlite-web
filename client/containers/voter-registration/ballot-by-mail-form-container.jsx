@@ -1,32 +1,32 @@
 'use strict';
 
-import React from 'react';
 
-import { updateBallotByMail } from '../../actions/index';
-import BallotByMailForm from '../../presentations/voter-registration/ballot-by-mail-form.jsx';
-import BallotByMailFormPreReg from '../../presentations/voter-registration/ballot-by-mail-prereg-form.jsx';
-import connectForm from '../../helpers/connect-form';
+import React                   from 'react';
+import { connect }             from 'react-redux';
+
+import { updateBallotByMail }  from '../../actions/index';
+import BallotByMailForm        from '../../presentations/voter-registration/ballot-by-mail/ballot-by-mail-form.jsx';
+import BallotByMailFormPreReg  from '../../presentations/voter-registration/ballot-by-mail/ballot-by-mail-prereg-form.jsx';
+import handlers                from '../../helpers/handlers';
 import { hasValue } from '../../helpers/data/validations';
-import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack from '../../helpers/handlers/navigate-on-back';
-import { isPreregistering } from '../../helpers/calculate-age';
+import * as dataPresent        from '../../helpers/data-present';
+import { isPreregistering }    from '../../helpers/calculate-age';
+
 import {
   pageTitle,
   sectionName
 } from '../../helpers/registration-header-presenter';
 
-const ConnectedForm = (props) => {
-  const onSubmit = navigateOnSubmit('/voting-registration/contact-methods', props);
-  const onBack = navigateOnBack(props);
-  let continueDisabled = !(hasValue(props.ballotByMail));
-
-  const formPageTitle = pageTitle(props.dateOfBirth);
+const Page = (props) => {
+  let onSubmit          = handlers.navigateOnSubmit('/voting-registration/contact-methods', props);
+  let onBack            = handlers.navigateOnBack(props);
+  let continueDisabled  = !(dataPresent.value(props.ballotByMail));
+  const formPageTitle   = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? BallotByMailFormPreReg : BallotByMailForm;
 
   return <Presentation
-
     pageTitle         = {formPageTitle}
     sectionName       = {formSectionName}
     onSubmit          = {onSubmit}
@@ -41,8 +41,23 @@ const ConnectedForm = (props) => {
 function mapStateToProps(state) {
   return {
     ballotByMail: state.application.ballotByMail,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 }
 
-export default connectForm(mapStateToProps, updateBallotByMail, ConnectedForm);
+function mapDispatchToProps(dispatch) {
+  const onChange = handlers.onInputChange(updateBallotByMail, dispatch);
+  const onSubmit = handlers.onFormSubmit;
+  const onBlur   = handlers.onBlur(dispatch);
+  const onFocus  = handlers.onFocus(dispatch);
+
+  return {
+    onSubmit,
+    onChange,
+    onBlur,
+    onFocus
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

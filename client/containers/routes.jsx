@@ -24,7 +24,7 @@ import Address                                from './apply/address-page.jsx';
 import TraitsHeightWeight                     from './apply/traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './apply/physical-traits-form-container.jsx';
 import SocialSecurity                         from './apply/social-security-form-container.jsx';
-import VoterIntro                             from './voter-registration/introduction-container.jsx';
+import VoterIntro                             from './voter-registration/introduction-form-container.jsx';
 import OrganDonation                          from './apply/organ-donation-form-container.jsx';
 import LicenseIssues                          from './apply/license-issues-form-container.jsx';
 import LicenseAndId                           from './apply/card-history-page.jsx';
@@ -34,14 +34,14 @@ import VeteransService                        from './apply/veterans-service-for
 import VoterCitizenStatus                     from './voter-registration/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter-registration/eligibility-requirements-form-container.jsx';
 import OptOut                                 from './voter-registration/opt-out-form-container.jsx';
-import VoterPreferencesIntro                  from './voter-registration/voter-preferences-container.jsx';
-import VoterPreferencesIntroUpdated           from './voter-registration/voter-preferences-updated-container.jsx';
+import VoterPreferencesIntro                  from './voter-registration/voter-preferences-form-container.jsx';
+import VoterPreferencesIntroUpdated           from './voter-registration/voter-preferences-updated-form-container.jsx';
 import PoliticalPartyChoose                   from './voter-registration/choose-party-form-container.jsx';
 import BallotLanguage                         from './voter-registration/ballot-language-form-container.jsx';
 import BallotByMail                           from './voter-registration/ballot-by-mail-form-container.jsx';
 import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
 import ContactMethods                         from './voter-registration/contact-methods-form-container.jsx';
-import VoterRegComplete                       from './voter-registration/voter-confirmation-container.jsx';
+import VoterRegComplete                       from './voter-registration/voter-confirmation-form-container.jsx';
 
 class Router extends React.Component {
   render() {

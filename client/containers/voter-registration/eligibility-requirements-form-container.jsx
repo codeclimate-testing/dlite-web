@@ -1,32 +1,35 @@
 'use strict';
 
-import React from 'react';
+import React                             from 'react';
+import { connect }                       from 'react-redux';
 
 import { updateEligibilityRequirements } from '../../actions/index';
-import EligibilityRequirements from '../../presentations/voter-registration/eligibility-requirements-form.jsx';
-import PreRegEligibilityRequirements from '../../presentations/voter-registration/eligibility-requirements-prereg-form.jsx';
-import connectForm from '../../helpers/connect-form';
-import navigateOnSubmit from '../../helpers/handlers/navigate-on-submit';
-import navigateOnBack from '../../helpers/handlers/navigate-on-back';
-import { isPreregistering } from '../../helpers/calculate-age';
+import EligibilityRequirements           from '../../presentations/voter-registration/eligibility-requirements/eligibility-requirements-form.jsx';
+import PreRegEligibilityRequirements     from '../../presentations/voter-registration/eligibility-requirements/eligibility-requirements-prereg-form.jsx';
+import handlers                          from '../../helpers/handlers';
+import {
+   eligibileForRequirements
+  } from '../../helpers/data/voting';
+import { isPreregistering 
+} from '../../helpers/calculate-age';
 import {
   pageTitle,
   sectionName
 } from '../../helpers/registration-header-presenter';
 
-const ConnectedForm = (props) => {
+
+const Page = (props) => {
   const formPageTitle = pageTitle(props.dateOfBirth);
   const formSectionName = sectionName(props.dateOfBirth);
-  const continueDisabled = false;
-  let nextAddress = '/summary';
-  let onBack = navigateOnBack(props);
-  let content = [];
 
-  if (props.eligibilityRequirements === 'Yes') {
-    nextAddress = '/voting-registration/opt-out';
-  }
+  let address = '/summary';
+  if (eligibileForRequirements(props)) {
+    address = '/voting-registration/opt-out';
+  };
 
-  let onSubmit = navigateOnSubmit(nextAddress, props);
+  let onSubmit          = handlers.navigateOnSubmit(address, props);
+  let onBack            = handlers.navigateOnBack(props);
+  let continueDisabled  = false;
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
   return (
@@ -42,11 +45,21 @@ const ConnectedForm = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     eligibilityRequirements: state.application.eligibilityRequirements,
     dateOfBirth:  state.application.dateOfBirth
   };
-}
+};
 
-export default connectForm(mapStateToProps, updateEligibilityRequirements, ConnectedForm);
+const mapDispatchToProps = (dispatch) => {
+  const onChange   = handlers.onInputChange(updateEligibilityRequirements, dispatch);
+  const onSubmit   = handlers.onFormSubmit;
+
+  return {
+    onChange,
+    onSubmit
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

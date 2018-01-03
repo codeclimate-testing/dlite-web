@@ -8,7 +8,9 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import BallotByMailPage         from '../../../../client/presentations/voter-registration/ballot-by-mail-form.jsx';
+
+import * as dataPresent         from '../../../../client/helpers/data-present';
+import BallotByMailPage         from '../../../../client/presentations/voter-registration/ballot-by-mail/ballot-by-mail-form.jsx';
 
 describe('BallotByMailPage', function() {
   let store = {

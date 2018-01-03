@@ -138,8 +138,8 @@ module.exports = function(world) {
     navigateToPath('/apply/voting-registration/language', '.ballot-language-form', done);
   });
 
-  world.when('I visit the political party choose page', function(done){
-    navigateToPath('/apply/voting-registration/choose-party', '.choose-party', done);
+  world.when('I visit the political party choose page', function(done) {
+    navigateToPath('/apply/voting-registration/choose-party', '.choose-party-form', done);
   });
 
    world.when('I visit voter intro page', function (done) {
@@ -287,7 +287,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be taken to the political party choose page', function(done){
-    assertOnPage('.choose-party', /voting-registration\/choose-party/, done);
+    assertOnPage('.choose-political-party', /voting-registration\/choose-party/, done);
   });
 
   world.then('I will be taken to the success visit page', function(done){
