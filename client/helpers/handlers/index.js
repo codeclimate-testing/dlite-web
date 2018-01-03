@@ -18,6 +18,7 @@ const onBlurValidate = onBlurValidateGenerator;
 const onFocusClearValidation = onFocusClearValidationGenerator;
 
 import onFormSubmit from './on-form-submit-generator';
+import navigateOrShowErrors from './navigate-or-show-errors';
 import onSubmitShowErrors from './on-submit-show-errors';
 import onInputChange from './on-input-change';
 import onPageLoad from './on-page-load';
@@ -32,5 +33,6 @@ export default {
   onPageLoad,
   onBlurValidate,
   onFocusClearValidation,
-  onSubmitShowErrors
+  onSubmitShowErrors,
+  navigateOrShowErrors
 };

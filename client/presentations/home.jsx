@@ -3,93 +3,64 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
 
-import alicePath from '../helpers/alice-path';
+import linkData from '../helpers/data/pages';
 
 const LinkListItem = (props) => {
   let className = props.description.replace(/\s+/g, '-');
-  return (<li>
-    <Link className={className} to={ alicePath(props.path) }>{props.description}</Link>
-  </li>);
+  return (
+    <li>
+      <Link className={className} to={ props.path }>{props.description}</Link>
+    </li>
+  );
 };
 
-const getStartedLinkData = [
-  {description: 'legal name',                             path: '/my-basics/legal-name'},
-  {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
-  {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
-  {description: 'choose card type',                       path: '/select-id-dl'},
-  {description: 'current card info',                      path: '/current-card-information'},
-  {description: 'youth DL message',                       path: '/youth-license-notification'},
-  {description: 'senior ID',                              path: '/senior-id'},
-  {description: 'real ID',                                path: '/real-id'},
-  {description: 'license type',                           path: '/license-type'},
-  {description: 'reduced fee ID',                         path: '/reduced-fee'},
-  {description: 'get started intro page',                 path: '/get-started'}
-];
-
-const linkData = [
-  {description: 'address',                                path: '/my-basics/address'},
-  {description: 'traits height and weight',               path: '/my-basics/traits-height-weight'},
-  {description: 'physical traits',                        path: '/my-basics/physical-traits'},
-  {description: 'social security',                        path: '/my-basics/social-security'},
-  {description: 'organ donation',                         path: '/organ-donation'},
-  {description: 'license and id history',                 path: '/my-history/license-and-id'},
-  {description: 'names history',                          path: '/my-history/names/'},
-  {description: 'medical history',                        path: '/my-history/medical/'},
-  {description: 'license issues',                         path: '/my-history/license-issues'},
-  {description: 'veterans service',                       path: '/my-history/veterans-service'},
-
-  {description: 'voter intro',                            path: '/voting-registration/introduction'},
-  {description: 'citizen status',                         path: '/voting-registration/citizenship'},
-  {description: 'eligibility requirements',               path: '/voting-registration/eligibility'},
-  {description: 'opt out',                                path: '/voting-registration/opt-out'},
-  {description: 'voter preferences',                      path: '/voting-registration/preferences'},
-  {description: 'choose party',                           path: '/voting-registration/choose-party'},
-  {description: 'ballot language',                        path: '/voting-registration/language'},
-  {description: 'ballot by mail',                         path: '/voting-registration/vote-by-mail'},
-  {description: 'contact methods',                        path: '/voting-registration/contact-methods'},
-  {description: 'voter reg complete',                     path: '/voting-registration/confirmation'},
-  {description: 'appointment preparation',                path: '/appointment-preparation'},
-  {description: 'required documents',                     path: '/appointment-preparation/documents'}
-];
-
-const wrapItems = (listItems) => {
+const wrapGroup = (listItems) => {
   return listItems.map((listData) => {
     return (<LinkListItem
       description={listData.description}
       path={listData.path}
       key={listData.description}
     />);
-  })
+  });
 };
 
-const Home = () => {
-  let listItems = linkData.map((listData) => {
-    return (<LinkListItem
-      description={listData.description}
-      path={listData.path}
-      key={listData.description}
-    />);
-  });
-
+const LinkSection = (props) => {
   return (
-    <ul className='section-links'>
-      <li>
-        <Link className='summary' to={ alicePath('/summary') }>summary</Link>
-      </li>
-      <li className='get-started'>
-        <hr />
-        <h4>Get started</h4>
-        <ul>
-          { wrapItems(getStartedLinkData) }
-        </ul>
-      </li>
-      <li className='other-pages'>
-        <hr />
-        <ul>
-          { wrapItems(linkData) }
-        </ul>
-      </li>
-    </ul>
+    <li>
+      <hr />
+      <h4>{props.name}</h4>
+      <ul>
+        { props.children }
+      </ul>
+    </li>
+  );
+}
+
+const Home = () => {
+  return (
+    <div>
+      <h2 className='question'>Pages</h2>
+      <ul className='section-links'>
+        <LinkSection name='Get started'>
+          { wrapGroup(linkData.getStarted) }
+        </LinkSection>
+        <LinkSection name='My basics'>
+          { wrapGroup(linkData.myBasics) }
+        </LinkSection>
+        <LinkSection name='My history'>
+          { wrapGroup(linkData.myHistory) }
+        </LinkSection>
+        <LinkSection name='Organ donation'>
+          { wrapGroup(linkData.organDonation) }
+        </LinkSection>
+        <LinkSection name='Voting registration'>
+          { wrapGroup(linkData.voterRegistration) }
+        </LinkSection>
+        <LinkSection name='Conclusion'>
+          { wrapGroup(linkData.conclusion) }
+        </LinkSection>
+      </ul>
+    </div>
   );
 };
 
