@@ -7,6 +7,8 @@ const defaultState = () => {
   return {
     new: [],
     renew: '',
+    change: '',
+    correctOrUpdate: '',
     youthIDInstead: ''
   }
 };
@@ -27,12 +29,12 @@ const formReducer = (state = defaultState(), action) => {
   if (name === 'youthIDInstead') {
     data[name] = value;
     data = youthID(value, data);
-  } else if(name === 'renew') {
-    data[name] = value;
-  } else {
+  } else if (name === 'new') {
     data = formCheckArrayReducer(name, value, data, 'new');
+  } else {
+    data[name] = value;
   }
-
+  
   return data;
 };
 

@@ -11,6 +11,11 @@ import {
 const Form = (props) => {
   if(props.cardAction !== 'new') { return null; }
 
+  let text = {
+    ID: 'ID',
+    DL: 'Driver License'
+  };
+
   return (
     <div className='row inner-bottom choose-new-cards'>
       <p>Select all that apply.</p>
@@ -19,7 +24,7 @@ const Form = (props) => {
         selected={ getNewID(props) }
         name='new'
         value='ID'
-        text='ID'
+        text={text.ID}
       />
 
       <CheckboxSelector
@@ -27,7 +32,7 @@ const Form = (props) => {
         selected={ getNewDL(props) }
         name='new'
         value='DL'
-        text='Driver License'
+        text={text.DL}
       />
       <div className='unit spacer' />
     </div>

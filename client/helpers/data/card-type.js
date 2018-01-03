@@ -20,7 +20,7 @@ export const getDL = (props) => {
 
 export const canContinue = (props) => {
   return (props.cardAction === 'new' && (getNewID(props) || getNewDL(props))) ||
-    (props.cardAction === 'renew' && hasValue(props.cardType.renew))
+     hasValue(props.cardType[props.cardAction]);
 };
 
 export const prettyDL = (props) => {

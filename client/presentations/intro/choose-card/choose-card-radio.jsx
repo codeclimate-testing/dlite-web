@@ -12,13 +12,14 @@ const Form = (props) => {
     DL: 'Driver License'
   };
 
+  let selectedValue = props.cardType[props.cardAction];
+ 
   return (
-    <div className='row inner-bottom chooseRenewCard'>
+    <div className='row inner-bottom chooseRadioCard'>
       <RadioCollection  
         {...props}
-        name='renew'
-        selectedValue={props.cardType.renew}
-        text={values}
+        name={props.cardAction}
+        selectedValue={selectedValue}
       >
         <RadioSelector 
           value='ID'

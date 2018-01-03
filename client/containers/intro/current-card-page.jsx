@@ -11,7 +11,8 @@ import Presentation               from '../../presentations/intro/current-card-p
 
 const Page = (props) => {
   let continueDisabled  = !(dataPresent.currentCardInfo(props.currentCardInfo));
-  let onSubmit          = handlers.navigateOnSubmit('/real-id', props);
+  let nextAddress       = props.cardAction === 'change' ? '/correct-or-update' : '/real-id';
+  let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
   let onBack            = handlers.navigateOnBack(props);
 
   return (
@@ -27,6 +28,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     currentCardInfo:  state.application.currentCardInfo,
+    cardAction:       state.application.cardAction,
     cardType:         state.application.cardType
   };
 };

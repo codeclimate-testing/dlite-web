@@ -10,7 +10,8 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 const Form = (props) => {
   let values = {
     new: 'Get a new card',
-    renew: 'Renew a card'
+    renew: 'Renew a card',
+    change: 'Correct or update a card'
   };
 
   return (
@@ -36,6 +37,9 @@ const Form = (props) => {
               />
               <RadioSelector
                 value='renew'
+              />
+              <RadioSelector 
+                value='change'
               />
             </RadioCollection>
             <div className='unit spacer' />

@@ -3,24 +3,30 @@
 import React from 'react';
 
 import Page               from '../../containers/page.jsx';
-import ChooseCardNew      from './choose-card/choose-card-new.jsx';
-import ChooseCardRenew    from './choose-card/choose-card-renew.jsx';
+import ChooseCardCheckbox from './choose-card/choose-card-checkbox.jsx';
+import ChooseCardRadio    from './choose-card/choose-card-radio.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
+  let question = {
+    new: 'What type of card would you like?',
+    renew: 'What type of card are you renewing?',
+    change: 'What type of card are you correcting or updating?'
+  };
+ 
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-card-form'>
-        <h4>What type of card would you like?</h4>
+        <h4>{question[props.cardAction]}</h4>
 
         <form onSubmit={ props.onSubmit } >
-          <ChooseCardNew
+          <ChooseCardCheckbox
             {...props}
           />
-          <ChooseCardRenew
+          <ChooseCardRadio
             {...props}
           />
 
