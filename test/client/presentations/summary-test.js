@@ -43,132 +43,11 @@ describe('Summary section', function() {
   const Wrapper = wrapperGenerator(store);
   let props = data.application;
 
-  beforeEach(function() {
-    let onChange = spy();
-    let props = {
-      onChange,
-      'legalName': {
-        'firstName': '',
-        'middleName': '',
-        'lastName': '',
-        'suffix': ''
-      },
-      'cardType': {
-        'new': [],
-        'renew': '',
-        'youthIDInstead': ''
-      },
-      'currentCardInfo': {
-        'number': '',
-        'day': '',
-        'month': '',
-        'year': ''
-      },
-      'dateOfBirth': {
-        'day': '',
-        'month': '',
-        'year': ''
-      },
-      'realID': {
-        'getRealID': '',
-        'realIdDesignation': ''
-      },
-      'licenseType': {
-        'type': [],
-        'endorsement': [],
-        'needEndorsement': ''
-      },
-      'reducedFee': {
-        'ID': '',
-        'form': ''
-      },
-      'seniorID': '',
-      'homeAddress': {
-        'street_1': '',
-        'street_2': '',
-        'city': '',
-        'state': '',
-        'zip': ''
-      },
-      'mailingAddress': {
-        'street_1': '',
-        'street_2': '',
-        'city': '',
-        'state': '',
-        'zip': ''
-      },
-      'physicalTraits': {
-        'hairColor': '',
-        'eyeColor': '',
-        'sex': ''
-      },
-      'traitsHeightWeight': {
-        'weight': '',
-        'heightFeet': '',
-        'heightInches': ''
-      },
-      'socialSecurity': {
-        'part1': '',
-        'part2': '',
-        'part3': '',
-        'hasSocialSecurity': ''
-      },
-      'organDonation': {
-        'donate': '',
-        'contribute': ''
-      },
-      'licenseAndIdHistory': {
-        'DLIDNumber': '',
-        'issuedBy': '',
-        'month': '',
-        'day': '',
-        'year': '',
-        'isIssued': ''
-      },
-      'namesHistory': {
-        'hasUsedPreviousNames': '',
-        'previousNames': ''
-      },
-      'medicalHistory': {
-        'hasMedicalCondition': '',
-        'medicalInfo': ''
-      },
-      'licenseIssues': {
-        'isSuspended': '',
-        'month': '',
-        'day': '',
-        'year': '',
-        'reason': ''
-      },
-      'veteransService': {
-        'isVeteran': '',
-        'receiveBenefits': '',
-        'previouslyDesignated': '',
-        'veteransIdentifier': ''
-      },
-      'citizenStatus': '',
-      'ballotByMail': '',
-      'eligibilityRequirements': '',
-      'politicalPartyChoose': {
-        'isSelected': '',
-        'politicalPartyChoose': ''
-      },
-      'ballotLanguage': '',
-      'optOut': '',
-      'contactMethods': {
-        'shouldContact': '',
-        'emailAddress': '',
-        'phoneNumber': ''
-      }
-    };
-  });
-
   describe('Empty', function() {
     it('returns null when no value', function() {
-
       let component = render(
         <Wrapper>
-          <LegalName { ...props } />
+          <Empty { ...props } />
         </Wrapper>
       )
       assert.equal(component.text().includes('No information has been entered yet'), true);
@@ -191,10 +70,8 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('First Name: this'), true);
-      assert.equal(component.text().includes('Middle Name: is'), true);
-      assert.equal(component.text().includes('Last Name: my'), true);
-      assert.equal(component.text().includes('Suffix: III'), true);
+      assert.equal(component.text().includes('Name'), true);
+      assert.equal(component.text().includes('this is my III'), true);
     });
   });
 
@@ -308,7 +185,7 @@ describe('Summary section', function() {
   
       let component = render(
         <Wrapper>
-          <RealID
+          <SeniorID
             { ...props }
           />
         </Wrapper>
@@ -326,9 +203,7 @@ describe('Summary section', function() {
 
       let component = render(
         <Wrapper>
-          <RealID
-            { ...props }
-          />
+          <RealID { ...props } />
         </Wrapper>
       )
       assert.equal(component.text().includes('Real ID: Yes'), true);
@@ -350,9 +225,9 @@ describe('Summary section', function() {
       assert.ok(component.text().includes('Need to drive: Car, and I\'m not sure'), 'license type not rendered in summary');
     });
   });
+  
   describe('ReducedFee', function() {
     it('returns null when no value', function(){
-
       let component = render(
         <Wrapper>
           <ReducedFee 
@@ -362,6 +237,7 @@ describe('Summary section', function() {
       )
       assert.equal(component.find('.summary-section'), false);
     });
+  });
 
   describe('ReducedFee', function() {
     it('shows that user does not have correct forms for reduced fee application', function() {
@@ -475,12 +351,15 @@ describe('Summary section', function() {
         donateMoney: 'Yes',
         donateOrgan: 'Yes'
       };
+<<<<<<< HEAD
 
+=======
+>>>>>>> resolved conflicts in summary-test
       let component = render(
         <Wrapper>
           <OrganDonation { ...props }/>
         </Wrapper>
-      )
+      );
       assert.equal(component.text().includes('Donate Organs: Yes'), true);
       assert.equal(component.text().includes('Voluntary Contribution: Yes'), true);
     });

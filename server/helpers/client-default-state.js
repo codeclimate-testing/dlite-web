@@ -72,8 +72,8 @@ const state  = {
       heightInches: ''
     },
     organDonation: {
-      donate: '',
-      contribute: ''
+      donateOrgan: '',
+      donateMoney: ''
     },
     licenseAndIdHistory: {
       DLIDNumber: '',
