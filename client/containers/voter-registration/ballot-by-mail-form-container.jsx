@@ -8,7 +8,7 @@ import { updateBallotByMail }  from '../../actions/index';
 import BallotByMailForm        from '../../presentations/voter-registration/ballot-by-mail/ballot-by-mail-form.jsx';
 import BallotByMailFormPreReg  from '../../presentations/voter-registration/ballot-by-mail/ballot-by-mail-prereg-form.jsx';
 import handlers                from '../../helpers/handlers';
-import { hasValue } from '../../helpers/data/validations';
+import { hasValue }            from '../../helpers/data/validations';
 import * as dataPresent        from '../../helpers/data-present';
 import { isPreregistering }    from '../../helpers/calculate-age';
 
