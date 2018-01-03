@@ -15,14 +15,22 @@ const Accordion = (props) => {
         className='row accordion-header'
         onClick={props.onClick}
         id={props.id}
+        accordion = {props.id}
         href='javascript:void(0);'
       >
-        <div className='unit-right icon-region'></div>
-        <div className='last-unit'>
+        <div 
+          className='unit-right icon-region'
+          accordion = {props.id}
+        />
+        <div 
+          className='last-unit'
+          accordion = {props.id}
+        >
           {props.title}
         </div>
       </a>
-      <div className='row accordion-body'>
+      <div 
+        className='row accordion-body'>
         {props.children}
       </div>
     </div>
