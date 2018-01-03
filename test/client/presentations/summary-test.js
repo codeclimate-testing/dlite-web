@@ -289,8 +289,8 @@ describe('Summary section', function() {
   describe('OrganDonation', function() {
     it('shows organ donation selections', function(){
       let organDonation = {
-        donate: 'Yes',
-        contribute: 'Yes'
+        donateMoney: 'Yes',
+        donateOrgan: 'Yes'
       };
   
       let component = render(
