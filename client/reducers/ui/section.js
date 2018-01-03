@@ -33,6 +33,12 @@ const voterRegistration = {
   name: 'Voter registration'
 };
 
+const voterPreRegistration = {
+  key: 'voterPreRegistration',
+  number: '4',
+  name: 'Voter pre-registration'
+};
+
 const summary = {
   key: 'summary',
   number: '',
@@ -46,6 +52,7 @@ const sections = {
   myHistory,
   organDonation,
   voterRegistration,
+  voterPreRegistration,
   summary
 };
 
