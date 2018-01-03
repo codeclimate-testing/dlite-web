@@ -367,6 +367,7 @@ function getRealID(card_options, cards) {
     getRealID: '',
     realIdDesignation: ''
   };
+
   card_options.forEach((option) => {
     if(option.option_value === 'real-id') {
       realID.getRealID = 'Yes';
@@ -377,6 +378,7 @@ function getRealID(card_options, cards) {
       });
     }
   });
+
   return realID;
 }
 
