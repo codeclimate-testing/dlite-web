@@ -31,7 +31,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   const onClick = (event) => {
-    dispatch(toggleAccordion(event.target.id));
+    let accordionID = event.target.id ? event.target.id : event.target.parentNode.id;
+    dispatch(toggleAccordion(accordionID));
   };
 
   return {
