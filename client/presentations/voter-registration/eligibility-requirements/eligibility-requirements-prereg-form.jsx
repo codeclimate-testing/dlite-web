@@ -3,7 +3,7 @@
 import React from 'react';
 
 import SelectorCollection from '../../selector-collection.jsx';
-import Page               from '../../page.jsx';
+import Page               from '../../../containers/page.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
@@ -11,11 +11,9 @@ const VALUES = ['Yes', 'No', 'Skip Section'];
 const PreRegEligibilityRequirements = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterPreRegistration'
     >
 
       <div>
