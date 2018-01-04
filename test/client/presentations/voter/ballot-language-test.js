@@ -11,12 +11,9 @@ import { spy }                  from 'sinon';
 import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language/ballot-language-form.jsx';
+import store                    from '../../support/page-store';
 
 describe('BallotLanguagePage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -24,13 +21,13 @@ describe('BallotLanguagePage', function() {
     
     beforeEach(function() {
       let ballotLanguage = '';
+      let continueDisabled = true;
+      let onChange = spy();
       let dateOfBirth = {
         month: '',
         day: '',
         year: ''
       };
-
-      let onChange = spy();
 
       props = {
         ballotLanguage,

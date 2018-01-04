@@ -3,24 +3,20 @@
 import React from 'react';
 
 import SelectorCollection from '../../selector-collection.jsx';
-import Page               from '../../page.jsx';
+import Page               from '../../../containers/page.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
 const EligibilityRequirements = (props) => {
-
+  
   return (
     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterRegistration'
     >
-
       <div>
         <h4>Do you meet all of the voter registration requirements listed below?</h4>
-
         <ul className='bullet-list'>
           <li>I am a United States citizen</li>
           <li>I am a resident of California</li>
@@ -30,7 +26,7 @@ const EligibilityRequirements = (props) => {
 
         <p>If you answer 'No' or 'Skip Section', you cannot register to vote.</p>
         <br></br>
-        <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
+          <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div className='inner-bottom'>
             <SelectorCollection
               name='eligibilityRequirements'
@@ -41,14 +37,16 @@ const EligibilityRequirements = (props) => {
           </div>
 
           <NavigationButtons {...props} />
-        </form>
-        <br></br>
+          </form>
+        <br /><br />
         <p><b>What if I don't meet the requirements?</b></p>
         <p>If you don't meet all the requirements, you are not eligible to register to vote.</p>
         <p>Your response to this question <b>will not</b> be shared with election officials.</p>
+
       </div>
     </Page>
   );
 };
+
 
 export default EligibilityRequirements;

@@ -9,24 +9,16 @@ import PreRegVoterPreferencesIntro  from '../../presentations/voter-registration
 import handlers                     from '../../helpers/handlers';
 import { isPreregistering 
 } from '../../helpers/calculate-age';
-import {
-  pageTitle,
-  sectionName
-} from '../../helpers/registration-header-presenter';
 
 
 const Page = (props) => {
   let onSubmit          = handlers.navigateOnSubmit('/voting-registration/choose-party', props);
   let onBack            = handlers.navigateOnBack(props);
-  const formPageTitle = pageTitle(props.dateOfBirth);
-  const formSectionName = sectionName(props.dateOfBirth);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterPreferencesIntro : VoterPreferencesIntro;
   return (
     <Presentation
       {...props}
-      pageTitle={formPageTitle}
-      sectionName={formSectionName}
       optOut={props.optOut}
       onSubmit={onSubmit}
       onBack={onBack}
@@ -37,12 +29,13 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     optOut: state.application.optOut,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const onSubmit = handlers.onFormSubmit;
+  const onSubmit = handlers.onFormSubmit(dispatch);
 
   return {
     onSubmit

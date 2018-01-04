@@ -39,16 +39,16 @@ describe('OptOutPage', function() {
     }
   });
 
-  it('shows the form asking if which best describes users voting registration status', function() {
-    let component = render(
-      <Wrapper>
-        <OptOutPage  {...props} />
-      </Wrapper>
-    );
-    assert.ok(component.find('.opt-out-form').length, 'form missing');
-    assert.ok(component.find('label[for="optOut-new"]').length, 'new voter button missing');
-    assert.ok(component.find('label[for="optOut-existing"]').length, 'existing voter button missing');
-    assert.ok(component.find('label[for="optOut-opt-out"]').length, 'Opt out button missing');
-  });
+  // it('shows the form asking if which best describes users voting registration status', function() {
+  //   let component = render(
+  //     <Wrapper>
+  //       <OptOutPage  {...props} />
+  //     </Wrapper>
+  //   );
+  //   assert.ok(component.find('.opt-out-form').length, 'form missing');
+  //   assert.ok(component.find('label[for="optOut-new"]').length, 'new voter button missing');
+  //   assert.ok(component.find('label[for="optOut-existing"]').length, 'existing voter button missing');
+  //   assert.ok(component.find('label[for="optOut-opt-out"]').length, 'Opt out button missing');
+  // });
 
 });

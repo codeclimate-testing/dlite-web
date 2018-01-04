@@ -9,26 +9,23 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import CitizenStatusPage        from '../../../../client/presentations/voter-registration/citizen-status/citizen-status-form.jsx';
+import store                    from '../../support/page-store';
 
 describe('CitizenStatusPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
     let props;
     
     beforeEach(function() {
+      let continueDisabled = true;
+      let onChange = spy();
       let dateOfBirth = {
         month: '',
         day: '',
         year: ''
       };
       let citizenStatus = '';
-
-      let onChange = spy();
 
       props = {
         dateOfBirth,

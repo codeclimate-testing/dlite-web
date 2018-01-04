@@ -9,12 +9,9 @@ import ContactDetails           from '../../../presentations/voter-registration/
 const PreRegContactMethodsPage = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
-    >
+      sectionKey='voterRegistration'>
 
     <form onSubmit={props.onSubmit}>
         <PreRegContactChoice

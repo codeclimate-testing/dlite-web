@@ -4,16 +4,14 @@ import React                  from 'react';
 
 import SelectorCollection     from '../../selector-collection.jsx';
 import NavigationButtons      from '../../navigation-buttons.jsx';
-import Page                   from '../../page.jsx';
+import Page                   from '../../../containers/page.jsx';
 
 const BallotByMailFormPreReg = (props) => {
 
   return (
     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterPreRegistration'
     >
       <div>
         <h4>Would you like to get your ballot by mail before each election?</h4>

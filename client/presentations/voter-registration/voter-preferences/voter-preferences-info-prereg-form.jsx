@@ -8,11 +8,9 @@ import Page                   from '../../../containers/page.jsx';
 const PreRegVoterPreferencesIntro = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterPreRegistration'
     >
       <form onSubmit={props.onSubmit}>
         <div className='voter-preferences-intro'>
@@ -29,10 +27,8 @@ const PreRegVoterPreferencesIntro = (props) => {
 
           <h4>Contact Information</h4>
           <p>Election officials can contact you with election and voting information.</p>
-
-        <NavigationButtons
-          onBack            = { props.onBack }
-        />
+          
+        <NavigationButtons {...props} />
         </div>
       </form>
     </Page>

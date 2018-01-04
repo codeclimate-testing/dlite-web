@@ -3,8 +3,8 @@
 import React from 'react';
 
 import SelectorCollection from '../../selector-collection.jsx';
-import Page from '../../page.jsx';
-import NavigationButtons from '../../navigation-buttons.jsx';
+import Page               from '../../../containers/page.jsx';
+import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const VALUES = ['Yes', 'No', 'Skip Section'];
 
@@ -12,10 +12,8 @@ const CitizenStatusForm = (props) => {
 
   return (
     <Page
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
       {...props}
+      sectionKey='voterRegistration'
     >
       <div>
         <h4>Are you a United States citizen?</h4>

@@ -7,15 +7,15 @@ import RadioSelectorCollection from '../../radio-selector-collection.jsx';
 import NavigationButtons       from '../../navigation-buttons.jsx';
 
 
-const OptOutRadioFormContainer = (props) => {
+const PreRegOptOutRadioFormContainer = (props) => {
   return (
      <Page
       {...props}
-      sectionKey='voterRegistration'
+      sectionKey='voterPreRegistration'
     >
-    <form onSubmit={props.onSubmit}>
-      <div className='opt-out-form'>
+      <div>
         <h4>Which best describes you?</h4>
+        <form onSubmit={props.onSubmit} className='opt-out-form'>
           <RadioSelectorCollection
             name='optOut'
             onChange={props.onChange}
@@ -28,12 +28,12 @@ const OptOutRadioFormContainer = (props) => {
           </RadioSelectorCollection>
 
           <NavigationButtons {...props} />
+        </form>
       </div>
-      </form>
     </Page>
-  )
+  );
 };
 
-export default OptOutRadioFormContainer;
+export default PreRegOptOutRadioFormContainer;
 
 

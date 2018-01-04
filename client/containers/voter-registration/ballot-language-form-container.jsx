@@ -9,14 +9,8 @@ import BallotLanguageFormPreReg from '../../presentations/voter-registration/bal
 import handlers                 from '../../helpers/handlers';
 
 import { isPreregistering } from '../../helpers/calculate-age';
-import {
-  pageTitle,
-  sectionName
-} from '../../helpers/registration-header-presenter';
 
 const Page = (props) => {
-  const formPageTitle   = pageTitle(props.dateOfBirth);
-  const formSectionName = sectionName(props.dateOfBirth);
   let onSubmit          = handlers.navigateOnSubmit('/voting-registration/vote-by-mail', props);
   let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = false;
@@ -25,8 +19,7 @@ const Page = (props) => {
 
   return (
     <Presentation
-      pageTitle        ={ formPageTitle }
-      sectionName      ={ formSectionName }
+      {...props}
       onSubmit         ={ onSubmit }
       onBack           ={ onBack }
       onChange         ={ props.onChange }
@@ -36,16 +29,17 @@ const Page = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     ballotLanguage: state.application.ballotLanguage,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   const onChange   = handlers.onInputChange(updateBallotLanguage, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onSubmit   = handlers.onFormSubmit(dispatch);
 
   return {
     onChange,

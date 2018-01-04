@@ -10,11 +10,9 @@ import PoliticalPartyPreference    from '../../../presentations/voter-registrati
 const PreRegPoliticalPartyChoosePage = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterPreRegistration'
     >
 
     <form onSubmit={props.onSubmit} className='choose-party-form'>

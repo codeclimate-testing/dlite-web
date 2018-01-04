@@ -4,22 +4,21 @@ import React                from 'react';
 
 import SelectorCollection from '../../selector-collection.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
-import Page               from '../../page.jsx';
+import Page               from '../../../containers/page.jsx';
 
 const BallotByMailForm = (props) => {
 
   return (
     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterRegistration'
     >
-      <div>
+     
+     <form onSubmit={props.onSubmit}>
+      <div className='ballot-by-mail-form'>
         <h4>Would you like to get your ballot by mail before each election?</h4>
         <p>If you answer Yes, you can still vote in-person.</p>
-        <form onSubmit={props.onSubmit} className='ballot-by-mail-form'>
-
+        
           <div className='inner-bottom'>
             <SelectorCollection
               name='ballotByMail'
@@ -43,8 +42,8 @@ const BallotByMailForm = (props) => {
 
           <NavigationButtons {...props} />
 
-        </form>
       </div>
+      </form>
     </Page>
   );
 };

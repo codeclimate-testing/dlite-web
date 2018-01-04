@@ -12,15 +12,8 @@ import {
 } from '../../helpers/data/voting';
 import { isPreregistering 
 } from '../../helpers/calculate-age';
-import {
-  pageTitle,
-  sectionName
-} from '../../helpers/registration-header-presenter';
-
 
 const Page = (props) => {
-  const formPageTitle = pageTitle(props.dateOfBirth);
-  const formSectionName = sectionName(props.dateOfBirth);
   
   let address = '/summary';
   if (eligibleForCitizen(props)) {
@@ -35,13 +28,12 @@ const Page = (props) => {
 
   return (
     <Presentation
-      pageTitle={formPageTitle}
-      sectionName={formSectionName}
-      onSubmit={onSubmit}
-      onBack={onBack}
-      onChange={props.onChange}
-      selectedValue={props.citizenStatus}
-      continueDisabled={continueDisabled}
+      {...props}
+      onSubmit = {onSubmit}
+      onBack = {onBack}
+      onChange = {props.onChange}
+      selectedValue = {props.citizenStatus}
+      continueDisabled = {continueDisabled}
     />
   );
 };
@@ -49,13 +41,14 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     citizenStatus: state.application.citizenStatus,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   const onChange   = handlers.onInputChange(updateCitizenStatus, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onSubmit   = handlers.onFormSubmit(dispatch);
 
   return {
     onChange,

@@ -8,12 +8,9 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import EligibilityPage          from '../../../../client/presentations/voter-registration/eligibility-requirements/eligibility-requirements-form.jsx';
+import store                    from '../../support/page-store';
 
 describe('EligibilityPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -21,12 +18,13 @@ describe('EligibilityPage', function() {
     
     beforeEach(function() {
       let eligibilityRequirements = '';
+      let continueDisabled = true;
+      let onChange = spy();
       let dateOfBirth = {
         month: '',
         day: '',
         year: ''
       };
-      let onChange = spy();
 
       props = {
         eligibilityRequirements,

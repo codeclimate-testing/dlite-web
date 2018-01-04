@@ -2,7 +2,7 @@
 
 import React                    from 'react';
 import NavigationButtons        from '../../navigation-buttons.jsx';
-import Page                     from '../../page.jsx';
+import Page                     from '../../../containers/page.jsx';
 
 import PoliticalPartyChoose     from '../../../presentations/voter-registration/voter-choose-party/voter-choose-party-form.jsx';
 import PoliticalPartyPreference from '../../../presentations/voter-registration/voter-choose-party/political-party-preference.jsx';
@@ -10,11 +10,9 @@ import PoliticalPartyPreference from '../../../presentations/voter-registration/
 const PoliticalPartyChoosePage = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterRegistration'
     >
 
     <form onSubmit={props.onSubmit} className='choose-party-form'>

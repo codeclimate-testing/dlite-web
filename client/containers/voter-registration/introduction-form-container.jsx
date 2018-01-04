@@ -18,13 +18,15 @@ const Page = (props) => {
     <Presentation
       {...props}
       onSubmit = { onSubmit }
+      onBack = { onBack }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 };
 

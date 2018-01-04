@@ -12,16 +12,9 @@ import {
   } from '../../helpers/data/voting';
 import { isPreregistering 
 } from '../../helpers/calculate-age';
-import {
-  pageTitle,
-  sectionName
-} from '../../helpers/registration-header-presenter';
-
 
 const Page = (props) => {
-  const formPageTitle = pageTitle(props.dateOfBirth);
-  const formSectionName = sectionName(props.dateOfBirth);
-
+  
   let address = '/summary';
   if (eligibileForRequirements(props)) {
     address = '/voting-registration/opt-out';
@@ -32,10 +25,10 @@ const Page = (props) => {
   let continueDisabled  = false;
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
+  
   return (
     <Presentation
-      pageTitle={formPageTitle}
-      sectionName={formSectionName}
+      {...props}
       onSubmit={onSubmit}
       onBack={onBack}
       onChange={props.onChange}
@@ -48,13 +41,14 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     eligibilityRequirements: state.application.eligibilityRequirements,
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    focused:      state.ui.focus
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   const onChange   = handlers.onInputChange(updateEligibilityRequirements, dispatch);
-  const onSubmit   = handlers.onFormSubmit;
+  const onSubmit   = handlers.onFormSubmit(dispatch);
 
   return {
     onChange,

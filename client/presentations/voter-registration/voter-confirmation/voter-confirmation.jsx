@@ -8,12 +8,11 @@ import Page                   from '../../../containers/page.jsx';
 const VoterRegComplete = (props) => {
 
   return (
-    <Page
+     <Page
       {...props}
-      pageTitle={props.pageTitle}
-      sectionNumber='3'
-      sectionName={props.sectionName}
+      sectionKey='voterRegistration'
     >
+
       <form onSubmit={props.onSubmit}>
         <div className='voter-reg-complete'>
           <h4>Thank you, your voter registration application will be processed when
@@ -25,9 +24,7 @@ const VoterRegComplete = (props) => {
           <p>You can check your voter registration status with the California Secretary
           of State at <a href="https://voterstatus.sos.ca.gov/">https://voterstatus.sos.ca.gov/</a></p>
 
-          <NavigationButtons
-          onBack            = { props.onBack }
-        />
+          <NavigationButtons { ...props } />
 
         </div>
       </form>

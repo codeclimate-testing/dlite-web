@@ -1,12 +1,12 @@
 'use strict';
 
 import React from 'react';
-import OptOutRadioPage from './opt-out-radio-page.jsx';
+import PreRegOptOutRadioPage from './opt-out-prereg-radio-page.jsx';
 import RadioSelector from '../../radio-selector.jsx';
 
-const OptOutFormPreReg = (props) => {
+const PreRegOptOutFormPreReg = (props) => {
   return (
-    <OptOutRadioPage
+    <PreRegOptOutRadioPage
       {...props}
     >
       <RadioSelector
@@ -21,8 +21,8 @@ const OptOutFormPreReg = (props) => {
         value='opt-out'
         text='I am eligible to vote, but do not want to pre-register to vote'
       />
-    </OptOutRadioPage>
+    </PreRegOptOutRadioPage>
   );
 };
 
-export default OptOutFormPreReg;
+export default PreRegOptOutFormPreReg;

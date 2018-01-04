@@ -30,13 +30,13 @@ const organDonation = {
 const voterRegistration = {
   key: 'voterRegistration',
   number: '4',
-  name: 'Voter registration'
+  name: 'Voting registration'
 };
 
 const voterPreRegistration = {
   key: 'voterPreRegistration',
   number: '4',
-  name: 'Voter pre-registration'
+  name: 'Voting pre-registration'
 };
 
 const summary = {

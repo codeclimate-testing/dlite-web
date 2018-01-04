@@ -11,26 +11,23 @@ import { spy }                  from 'sinon';
 
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import BallotByMailPage         from '../../../../client/presentations/voter-registration/ballot-by-mail/ballot-by-mail-form.jsx';
+import store                    from '../../support/page-store';
 
 describe('BallotByMailPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
+  describe('when it renders initially', function() {
   let props;
 
   beforeEach(function() {
     let ballotByMail = '';
+    let continueDisabled = true;
+    let onChange = spy();
     let dateOfBirth = {
       month: '',
       day: '',
-      year: ''
+      year: '',
     };
-
-    let continueDisabled = true;
-    let onChange = spy();
 
     props = {
       ballotByMail,
@@ -46,10 +43,12 @@ describe('BallotByMailPage', function() {
         <BallotByMailPage  {...props} />
       </Wrapper>
     );
+    assert.equal(props.continueDisabled, true);
     assert.ok(component.find('label[for="ballotByMailYes"]').length, 'Yes button missing');
     assert.ok(component.find('label[for="ballotByMailNo"]').length, 'No button missing');
     assert.ok(component.find('.ballot-by-mail-form').length, 'form missing');
   });
 
   // TODO add FAQ drawer tests
+});
 });
