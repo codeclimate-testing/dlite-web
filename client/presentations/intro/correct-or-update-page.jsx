@@ -17,7 +17,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <h4>What would you like to do?</h4>
+        <h2 className='question'>What would you like to do?</h2>
         <p>
           {tag}
         </p>

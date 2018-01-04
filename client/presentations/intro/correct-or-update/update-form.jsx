@@ -2,6 +2,7 @@
 
 import React                from 'react';
 import CheckboxSelector     from '../../checkbox-selector.jsx';
+import { includes }         from '../../../helpers/data/validations';
 
 const Form = (props) => {
 
@@ -18,6 +19,8 @@ const Form = (props) => {
     other:        'Something else'
   };
 
+  let array = props.cardUpdates.sections;
+
   return (
     <div className='row inner-bottom update-form'>
       <h4>What would you like to update?</h4>
@@ -28,7 +31,7 @@ const Form = (props) => {
         name='sections'
         value='name'
         text={text.name}
-        selected={props.cardUpdates.sections.indexOf('name')> -1}
+        selected={includes(array, 'name')}
       />
 
       <CheckboxSelector
@@ -36,6 +39,7 @@ const Form = (props) => {
         name='sections'
         value='dateOfBirth'
         text={text.dateOfBirth}
+        selected={includes(array, 'dateOfBirth')}
       />
 
       <CheckboxSelector
@@ -43,6 +47,7 @@ const Form = (props) => {
         name='sections'
         value='sex'
         text={text.sex}
+        selected={includes(array, 'sex')}
       />
 
       <CheckboxSelector
@@ -50,6 +55,7 @@ const Form = (props) => {
         name='sections'
         value='address'
         text={text.address}
+        selected={includes(array, 'address')}
       />
 
       <CheckboxSelector
@@ -57,6 +63,7 @@ const Form = (props) => {
         name='sections'
         value='licenseType'
         text={text.licenseType}
+        selected={includes(array, 'licenseType')}
       />
 
       <CheckboxSelector
@@ -64,6 +71,7 @@ const Form = (props) => {
         name='sections'
         value='endorsements'
         text={text.endorsements}
+        selected={includes(array, 'endorsements')}
       />
 
       <CheckboxSelector
@@ -71,6 +79,7 @@ const Form = (props) => {
         name='sections'
         value='restrictions'
         text={text.restrictions}
+        selected={includes(array, 'restrictions')}
       />
 
       <CheckboxSelector
@@ -78,6 +87,7 @@ const Form = (props) => {
         name='sections'
         value='other'
         text={text.other}
+        selected={includes(array, 'other')}
       />
       <div className='unit spacer' />
     </div>

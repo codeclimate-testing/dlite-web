@@ -25,3 +25,7 @@ export const hasAnyAttributes = (props, attributes) => {
 export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
+
+export const includes = (array, name) => {
+  return array.indexOf(name) > -1;
+};

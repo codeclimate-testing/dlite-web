@@ -3,13 +3,12 @@
 import {
   hasValue,
   hasAnyAttributes,
-  hasAllAttributes
+  hasAllAttributes,
+  includes
 } from './data/validations';
 
 // TODO: move to `data/validations`
-const includes = (array, name) => {
-  return array.indexOf(name) > -1;
-};
+
 
 const hasValues = (props) => {
   if (!props) { return; }
