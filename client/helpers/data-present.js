@@ -4,18 +4,17 @@ import {
   hasValue,
   hasAnyAttributes,
   hasAllAttributes,
-  arrayIncludes
 } from './data/validations';
 
 // TODO: move to `data/validations`
 
 
-const hasValues = (props) => {
-  if (!props) { return; }
+// const hasValues = (props) => {
+//   if (!props) { return; }
 
-  return props.length > 0;
-};
-// --------------------------------
+//   return props.length > 0;
+// };
+// // --------------------------------
 
 const legalName = (props) => {
   return hasAllAttributes(props, ['lastName']);
@@ -26,7 +25,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (hasValue(props.renew) || props.new.length > 0));
+  return (props && (hasValue(props.renew) || hasValue(props.new)));
 };
 
 const currentCardInfo = (props) => {
@@ -38,7 +37,7 @@ const reducedFee = (props) => {
 };
 
 const licenseType = (props) => {
-  return props && hasValues(props.type) && (props.needEndorsement === 'No' || hasValues(props.endorsement));
+  return props && hasValue(props.type) && (props.needEndorsement === 'No' || hasValue(props.endorsement));
 };
 
 const address = (props) => {
@@ -163,12 +162,9 @@ const application = (props) => {
 };
 
 const value = hasValue; // remove when sure everything does not use this.
-const includes = arrayIncludes; // remove later
 
 export {
   value,
-  hasValues,
-  includes,
   legalName,
   cardType,
   currentCardInfo,

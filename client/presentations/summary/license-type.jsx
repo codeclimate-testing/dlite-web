@@ -1,10 +1,11 @@
 'use strict';
 
 import React            from 'react';
+import { hasValue }     from '../../helpers/data/validations';
 import * as dataPresent from '../../helpers/data-present';
 
 const Type = (props) => {
-  if (!dataPresent.hasValues(props.types)) { return null; }
+  if (!hasValue(props.types)) { return null; }
 
   let types = [];
   props.types.forEach(function(type) {

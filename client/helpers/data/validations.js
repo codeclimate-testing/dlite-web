@@ -26,6 +26,3 @@ export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
 
-export const arrayIncludes = (array, name) => {
-  return array.indexOf(name) > -1;
-};

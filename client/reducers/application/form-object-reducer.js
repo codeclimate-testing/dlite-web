@@ -11,12 +11,10 @@ export default (defaultState, actionType, array) => {
     let name = payload.name;
     let value = payload.value === 'true' ? true : payload.value === 'false' ? false : payload.value;
 
-    if(array.includes(name)) {
-      data = formCheckArrayReducer(name, value, data);
-    } else {
-      data[name] = value;
+    if(array && array.includes(name)) {
+      return data = formCheckArrayReducer(name, value, data);
     }
-
+    data[name] = value;
     return data;
   };
 };
