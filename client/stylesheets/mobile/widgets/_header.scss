@@ -33,8 +33,11 @@
     font-family: $headline-2-font;
     font-size: 12px;
 
-    .section-information .name {
-      padding-left: 15px;
+    .section-information {
+      min-height: 32px;
+      .number {
+        padding-right: 15px;
+      }
     }
 
     .account-information {
