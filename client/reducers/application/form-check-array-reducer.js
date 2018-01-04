@@ -1,7 +1,6 @@
 const formCheckArrayReducer  = (name, value, data) => {
   let array = data[name];
-  console.log(name);
-  console.log(array)
+
   let splitValue = value.split('-');
   let item = splitValue[0];
   let checked = splitValue[1];
