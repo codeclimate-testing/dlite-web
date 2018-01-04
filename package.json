@@ -44,6 +44,7 @@
     "jshint": "^2.9.4",
     "knex": "^0.13.0",
     "mocha": "^3.4.2",
+    "mock-require": "^2.0.2",
     "node-horseman": "^3.3.0",
     "node-mocks-http": "^1.6.4",
     "node-sass": "^4.5.3",

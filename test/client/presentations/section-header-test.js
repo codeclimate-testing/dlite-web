@@ -18,7 +18,7 @@ describe('SectionHeader', function() {
     );
 
     assert.equal(
-      component.find('h3').length,
+      component.find('inner').length,
       0,
       'component rendered'
     );
@@ -30,15 +30,14 @@ describe('SectionHeader', function() {
     );
 
     assert.equal(
-      component.find('h3').length,
+      component.find('.name').length,
       1,
       'header not rendered'
     );
 
     assert.equal(
       component.text(),
-      'Get started',
-      'rendering arrow character'
+      'Get started'
     );
   });
 
@@ -48,9 +47,9 @@ describe('SectionHeader', function() {
     );
 
     assert.equal(
-      component.find('h3').length,
+      component.find('.name').length,
       1,
-      'header not rendered'
+      'name container not rendered'
     );
 
     assert.equal(

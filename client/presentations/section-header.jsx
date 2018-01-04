@@ -21,8 +21,4 @@ const SectionHeader = (props) => {
   );
 };
 
-const Header = (props) => {
-  return ReactDOM.createPortal(<SectionHeader {...props}/>, document.getElementById('section-header'));
-}
-
-export default Header;
+export default SectionHeader;

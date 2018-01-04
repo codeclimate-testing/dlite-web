@@ -28,4 +28,5 @@ const mapDispatchToProps = (dispatch) => {
     onPageLoad
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Page);

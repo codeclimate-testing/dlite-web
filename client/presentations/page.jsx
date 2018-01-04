@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import HomeLink          from './home-link.jsx';
 import SectionHeader     from './section-header.jsx';
@@ -24,6 +25,13 @@ const setTitle = (literal, section) => {
   }
 }
 
+const Header = (props) => {
+  return ReactDOM.createPortal(
+    <SectionHeader {...props}/>,
+    document.getElementById('section-header')
+  );
+}
+
 const Page = (props) => {
   setTitle(props.pageTitle, props.section);
 
@@ -33,7 +41,7 @@ const Page = (props) => {
   return (
     <div className='application-page row'>
       <HomeLink />
-      <SectionHeader
+      <Header
         number={number}
         name={name}
       />

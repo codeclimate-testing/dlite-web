@@ -1,21 +1,17 @@
 'use strict';
 
 import assert                   from 'assert';
-import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out/opt-out-radio-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('OptOutPage', function() {
   const Wrapper = wrapperGenerator(store);
-  
-  describe('when it renders initially', function() {
   let props;
 
   beforeEach(function() {
@@ -27,7 +23,7 @@ describe('OptOutPage', function() {
       day: '',
       year: ''
     };
- 
+
     props = {
       dateOfBirth,
       optOut,
@@ -47,5 +43,4 @@ describe('OptOutPage', function() {
     assert.ok(component.find('label[for="optOut-existing"]').length, 'existing voter button missing');
     assert.ok(component.find('label[for="optOut-optOut"]').length, 'Opt out button missing');
   });
-});
 });

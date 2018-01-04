@@ -8,7 +8,7 @@ import { MemoryRouter } from 'react-router-dom'
 export default (store) => {
   return (props) => {
     return(
-      <Provider store={createMockStore(store)}>
+      <Provider store={ createMockStore(store) }>
         <MemoryRouter>
           {props.children}
         </MemoryRouter>
