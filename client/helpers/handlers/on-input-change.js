@@ -12,7 +12,7 @@ export default function onChangeGenerator(action, dispatch) {
         break;
 
       case 'checkbox':
-        value = target.checked;
+        value = target.value + '-' + target.checked;
         break;
 
       default:

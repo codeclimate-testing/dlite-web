@@ -1,12 +1,11 @@
 'use strict';
 
 import React                from 'react';
-
-import CheckboxSelector   from '../../checkbox-selector.jsx';
+import CheckboxSelector     from '../../checkbox-selector.jsx';
 
 const Form = (props) => {
 
-  if(props.cardType.chooseOrUpdate !== 'update'){ return null; }
+  if(props.cardUpdates.correctOrUpdate !== 'update'){ return null; }
   
   let text = {
     name:         'Name',
@@ -26,56 +25,57 @@ const Form = (props) => {
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='name'
         text={text.name}
+        selected={props.cardUpdates.sections.indexOf('name')> -1}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='dateOfBirth'
         text={text.dateOfBirth}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='sex'
         text={text.sex}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='address'
         text={text.address}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='licenseType'
         text={text.licenseType}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='endorsements'
         text={text.endorsements}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='restrictions'
         text={text.restrictions}
       />
 
       <CheckboxSelector
         {...props}
-        name='update'
+        name='sections'
         value='other'
         text={text.other}
       />

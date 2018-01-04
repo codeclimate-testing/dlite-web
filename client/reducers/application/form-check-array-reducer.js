@@ -1,16 +1,22 @@
-const formCheckArrayReducer  = (name, value, data, key) => {
-  let array = data[key];
+const formCheckArrayReducer  = (name, value, data) => {
+  let array = data[name];
+  console.log(name);
+  console.log(array)
+  let splitValue = value.split('-');
+  let item = splitValue[0];
+  let checked = splitValue[1];
 
-  if (value.toString() === 'true') {
-    array.push(name);
+  if (checked.toString() === 'true') {
+    array.push(item);
   } else {
-    let index = array.indexOf(name);
+    let index = array.indexOf(item);
     
     if(index > -1) {
       array.splice(index, 1);
     }
   }
-  return Object.assign({}, data, {[key]: array});
+
+  return Object.assign({}, data, {[name]: array});
 };
 
 export default formCheckArrayReducer;

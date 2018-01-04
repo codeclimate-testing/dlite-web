@@ -16,7 +16,7 @@ const CheckboxSelector = function(props) {
           <div className='off-screen'>
             <input
               type='checkbox'
-              name={props.value}
+              name={props.name}
               id={props.value}
               checked={props.selected}
               value={props.value}

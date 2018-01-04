@@ -6,6 +6,7 @@ import createApplicationID                 from './create-application-id';
 import updateLegalNames                    from './update-legal-name';
 import updateCardAction                    from './update-card-action';
 import updateCardType                      from './update-card-type';
+import updateCardUpdates                   from './update-card-updates';
 import updateCurrentCardInfo               from './update-current-card-info';
 import updateReducedFee                    from './update-reduced-fee';
 import updateHomeAddress                   from './update-home-address';
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
   legalName                   : updateLegalNames,
   cardAction                  : updateCardAction,
   cardType                    : updateCardType,
+  cardUpdates                 : updateCardUpdates,
   currentCardInfo             : updateCurrentCardInfo,
   reducedFee                  : updateReducedFee,
   homeAddress                 : updateHomeAddress,
