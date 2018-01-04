@@ -14,21 +14,16 @@ const Page = (props) => {
   let onSubmit            = handlers.navigateOnSubmit('/voting-registration/language', props);
   let onBack              = handlers.navigateOnBack(props);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    return <PreRegPoliticalPartyChoosePage
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegPoliticalPartyChoosePage : PoliticalPartyChoosePage;
+
+    return (
+    <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       continueDisabled  = { continueDisabled }
     />
-  } else {
-    return <PoliticalPartyChoosePage
-      {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
-      />
-  }
+  );
 };
 
 const mapStateToProps = (state) => {

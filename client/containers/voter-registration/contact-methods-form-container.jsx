@@ -21,21 +21,15 @@ const Page = (props) => {
   let onSubmit            = handlers.navigateOnSubmit('/voting-registration/confirmation', props);
   let onBack              = handlers.navigateOnBack(props);
 
-  if (isPreregistering(props.dateOfBirth)) {
-    return <PreRegContactMethodsPage
+  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegContactMethodsPage : ContactMethodsPage;
+    return (
+    <Presentation
       {...props}
       onBack            = { onBack }
       onSubmit          = { onSubmit }
       continueDisabled  = { continueDisabled }
       />
-  } else {
-    return <ContactMethodsPage
-      {...props}
-      onBack            = { onBack }
-      onSubmit          = { onSubmit }
-      continueDisabled  = { continueDisabled }
-      />
-  }
+  );
 };
 
 const mapStateToProps = (state) => {
