@@ -11,7 +11,7 @@ export default (defaultState, actionType, array) => {
     let name = payload.name;
     let value = payload.value === 'true' ? true : payload.value === 'false' ? false : payload.value;
 
-    if(name === array) {
+    if(array.includes(name)) {
       data = formCheckArrayReducer(name, value, data);
     } else {
       data[name] = value;

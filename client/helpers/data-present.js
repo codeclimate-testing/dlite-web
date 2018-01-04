@@ -4,7 +4,7 @@ import {
   hasValue,
   hasAnyAttributes,
   hasAllAttributes,
-  includes
+  arrayIncludes
 } from './data/validations';
 
 // TODO: move to `data/validations`
@@ -163,6 +163,7 @@ const application = (props) => {
 };
 
 const value = hasValue; // remove when sure everything does not use this.
+const includes = arrayIncludes; // remove later
 
 export {
   value,

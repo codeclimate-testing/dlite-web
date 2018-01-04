@@ -15,8 +15,8 @@ describe('licenseTypeReducer', function() {
         {
           type: 'UPDATE_LICENSE_TYPE',
           payload: {
-            name: 'car',
-            value: 'true'
+            name: 'type',
+            value: 'car-true'
           }
         }
       ),
@@ -39,8 +39,8 @@ describe('licenseTypeReducer', function() {
         {
           type: 'UPDATE_LICENSE_TYPE',
           payload: {
-            name: 'firefighter',
-            value: 'true'
+            name: 'endorsement',
+            value: 'firefighter-true'
           }
         }
       ),

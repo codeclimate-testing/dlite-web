@@ -4,7 +4,7 @@ export const hasValue = (props) => {
   if(typeof props === 'boolean') {
     return props;
   }
-  return !!(props && props.trim());
+  return !!(props &&  (typeof(props) === 'string' ? props.trim() : props.length > 0));
 };
 
 export const hasAllAttributes = (props, attributes) => {
@@ -26,6 +26,6 @@ export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
 
-export const includes = (array, name) => {
+export const arrayIncludes = (array, name) => {
   return array.indexOf(name) > -1;
 };

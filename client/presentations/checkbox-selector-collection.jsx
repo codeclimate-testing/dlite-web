@@ -1,10 +1,10 @@
 'use strict'
 
-import React            from 'react'
-import { includes }     from '../helpers/data/validations';
+import React              from 'react'
+import { arrayIncludes }  from '../helpers/data/validations';
 
 const childPropsAdditions = (props, value, values) => {
-  const selected = includes(props.array, value);
+  let selected = props.array[props.name].includes(value);
   let focused = props.focused === value;
   let custom = props.custom ? props.custom : false;
 

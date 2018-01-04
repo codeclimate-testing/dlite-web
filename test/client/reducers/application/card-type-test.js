@@ -16,8 +16,8 @@ describe('cardTypeReducer', function() {
         {
           type: 'UPDATE_CARD_TYPE',
           payload: {
-            name: 'ID',
-            value: 'true'
+            name: 'new',
+            value: 'ID-true'
           }
         }
       ),
@@ -40,8 +40,8 @@ describe('cardTypeReducer', function() {
         {
           type: 'UPDATE_CARD_TYPE',
           payload: {
-            name: 'ID',
-            value: true
+            name: 'new',
+            value: 'ID-'+true
           }
         }
       ),

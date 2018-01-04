@@ -3,7 +3,6 @@
 import React                from 'react';
 import CheckboxCollection   from '../../checkbox-selector-collection.jsx';
 import CheckboxSelector     from '../../checkbox-selector.jsx';
-import { includes }         from '../../../helpers/data/validations';
 
 const Form = (props) => {
 
@@ -28,7 +27,7 @@ const Form = (props) => {
       <CheckboxCollection 
         {...props}
         name  = 'sections'
-        array = { props.cardUpdates.sections }
+        array = { props.cardUpdates }
         text  = { text }
       >
         <CheckboxSelector
