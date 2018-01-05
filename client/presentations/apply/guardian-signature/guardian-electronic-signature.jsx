@@ -14,6 +14,7 @@ const ElectronicSignature = (props) => {
     <div className='electronic-signature'>
       <CheckboxSelector
         {...props}
+        name='acceptLiabilities'
         selected={props.guardianSignature.guardianInfo[guardianID].acceptLiabilities}
         value={`acceptLiabilities_${guardianID}`}
         text='I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.'
