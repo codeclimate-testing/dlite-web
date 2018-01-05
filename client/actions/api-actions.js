@@ -7,13 +7,14 @@ export const postData = function (body) {
   return function (dispatch) {
     return fetch('/api/application',{
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
     })
-      .then(function(res){
+      .then(function(res){ 
         return res.json();
       })
       .then(function (data) {

@@ -3,6 +3,7 @@
 const db = require('../../db/connect')();
 
 module.exports = function createApplication(data) {
+
   let returnedData = {};
   
   function insert(key) {
@@ -68,9 +69,9 @@ module.exports = function createApplication(data) {
         card_options.forEach( option => {
           if(card.type === option.type) {
             _card_options_.push({
-              card_id:            card.id,
-              option_type:        option.option_type,
-              option_value:       option.option_value
+              card_id:           card.id,
+              option_type:       option.option_type,
+              option_value:      option.option_value
             });
           }
         });

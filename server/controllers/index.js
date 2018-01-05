@@ -8,10 +8,12 @@ const createApp       = require('../models/db/create-application');
 
 function createApplication(req, res) {
   var data = req.body;
+
   if(!data.id) { //new application
     data.id = uuidv1();
   }
   let parsedData = clientParser(data);
+
   createApp(parsedData)
   .then(function(data) {
     let _parsedData = serverParser(data);
