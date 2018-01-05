@@ -29,7 +29,7 @@ const IdentityForm = (props) => {
         <NumberInput
           {...props}
           identifier='IDExpirationDateMonth'
-          description='Month'
+          description='MM'
           value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateMonth}
         />
 
@@ -38,7 +38,7 @@ const IdentityForm = (props) => {
         <NumberInput
           {...props}
           identifier='IDExpirationDateDay'
-          description='Day'
+          description='DD'
           value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateDay}
         />
 
@@ -47,7 +47,7 @@ const IdentityForm = (props) => {
         <NumberInput
           {...props}
           identifier='IDExpirationDateYear'
-          description='Year'
+          description='YYYY'
           value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateYear}
         />
       </div>

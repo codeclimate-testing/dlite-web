@@ -32,7 +32,7 @@ const ElectronicSignature = (props) => {
         <NumberInput
           {...props}
           identifier='signatureDateMonth'
-          description='Month'
+          description='MM'
           value={props.guardianSignature.guardianInfo[guardianID].signatureDateMonth}
         />
 
@@ -41,7 +41,7 @@ const ElectronicSignature = (props) => {
         <NumberInput
           {...props}
           identifier='signatureDateDay'
-          description='Day'
+          description='DD'
           value={props.guardianSignature.guardianInfo[guardianID].signatureDateDay}
         />
 
@@ -50,7 +50,7 @@ const ElectronicSignature = (props) => {
         <NumberInput
           {...props}
           identifier='signatureDateYear'
-          description='Year'
+          description='YYYY'
           value={props.guardianSignature.guardianInfo[guardianID].signatureDateYear}
         />
       </div>

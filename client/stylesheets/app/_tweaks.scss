@@ -1,5 +1,9 @@
 .month-input,
 .day-input,
+.signatureDateMonth-input,
+.signatureDateDay-input,
+.IDExpirationDateMonth-input,
+.IDExpirationDateDay-input,
 .heightInches-input,
 .heightFeet-input,
 .part2-input {
@@ -12,7 +16,9 @@
   width: $em * 5;
 }
 
-.year-input {
+.year-input,
+.signatureDateYear-input,
+.IDExpirationDateYear-input {
   width: $em * 6;
 }
 
