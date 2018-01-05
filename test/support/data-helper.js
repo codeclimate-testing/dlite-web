@@ -15,7 +15,13 @@ function fakeClientData() {
     'cardType': {
       'new': ['DL'],
       'renew': 'ID',
+      'change': 'ID',
       'youthIDInstead': ''
+    },
+    'cardChanges': {
+      'correctOrUpdate': 'correct',
+      'sections': ['name', 'other'],
+      'other': 'I dislike my photograph'
     },
     'currentCardInfo': {
       'number': 'e203f390',

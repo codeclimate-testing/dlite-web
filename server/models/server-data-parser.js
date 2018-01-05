@@ -32,6 +32,7 @@ function parse(data) {
         legalName:                getLegalName(application),
         dateOfBirth:              getDateOfBirth(application),
         cardType:                 getCardTypes(card_options, cards),
+        cardChanges:              getCardChanges(card_options),
         currentCardInfo:          getCurrentCardInfo(renewal_card),
         realID:                   getRealID(card_options, cards),
         licenseType:              getLicenseType(license_classes),
@@ -333,22 +334,25 @@ function getCardTypes(card_options, cards) {
   let cardType = {
     new: [],
     renew: '',
+    change: '',
     youthIDInstead: ''
   };
 
   card_options.forEach(option => {
-    if(option.option_value === 'new' && option.option_type === 'action'){
-      cards.forEach(card => {
-        if(card.id === option.card_id) {
-          cardType.new.push(card.type)
-        }
-      })
-    } else if(option.option_value === 'renew' && option.option_type === 'action') {
-      cards.forEach(card => {
-        if(card.id === option.card_id) {
-          cardType.renew = card.type;
-        }
-      });
+    if(option.option_type === 'action'){
+      if(option.option_value === 'new'){
+        cards.forEach(card => {
+          if(card.id === option.card_id) {
+            cardType.new.push(card.type)
+          }
+        })
+      } else {
+        cards.forEach(card => {
+          if(card.id === option.card_id) {
+            cardType[option.option_value] = card.type;
+          }
+        });
+      } 
     }
   });
   
@@ -422,6 +426,27 @@ function getSeniorID(card_options) {
     }
   });
   return seniorID;
-}
+};
+
+function getCardChanges(card_options) {
+  let cardChanges = {
+    correctOrUpdate: '',
+    sections: [],
+    other: ''
+  };
+  card_options.forEach(option => {
+    if(option.option_type === 'modification') {
+      const value = option.option_value.split('-');
+      if(value[0] === 'change'){
+        cardChanges = {
+          correctOrUpdate: value[1],
+          sections: value[2].split('_'),
+          other: value[3]
+        }
+      }
+    }
+  });
+  return cardChanges;
+};
 
 module.exports = parse;

@@ -269,7 +269,24 @@ function extractCardOptions(data) {
       option_type:           'action',
       option_value:          'renew'
     });
-  }
+  };
+
+  if(data.cardType.change.length > 0) {
+    cardOptions.push({
+      type:               data.cardType.change,
+      option_type:        'action',
+      option_value:       'change'
+    });
+
+    const correctOrUpdate = data.cardChanges.correctOrUpdate;
+    const changes = data.cardChanges.sections.join('_');
+
+    cardOptions.push({
+      type:               data.cardType.change,
+      option_type:        'modification',
+      option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
+    });
+  };
   
   if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
     cardOptions.push({
