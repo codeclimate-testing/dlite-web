@@ -4,7 +4,7 @@ import React                  from 'react';
 import { connect }            from 'react-redux';
 
 import handlers               from '../../helpers/handlers';
-import { hasValue }           from '../../helpers/data/validations';
+import * as dataPresent       from '../../helpers/data-present';
 
 import { updateCardChanges }  from "../../actions/index";
 
@@ -14,7 +14,7 @@ const Page = (props) => {
   let address           =   '/current-card-information';
   let onSubmit          =   handlers.navigateOnSubmit(address, props);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !hasValue(props.cardChanges.correctOrUpdate);
+  let continueDisabled  =   !dataPresent.cardChanges(props.cardChanges);
 
   return (
     <Presentation

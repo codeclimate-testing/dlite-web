@@ -92,6 +92,27 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#cardChanges', function() {
+    it('is true when both pieces of data present', function() {
+      assert.equal(dataPresent.cardChanges({
+        correctOrUpdate: 'correct',
+        sections: ['name']
+      }), true);
+    });
+    it('is false when neither piece is present', function() {
+      assert.equal(dataPresent.cardChanges({
+        correctOrUpdate: '',
+        sections: []
+      }), false);
+    });
+    it('is false when only one piece is present', function() {
+      assert.equal(dataPresent.cardChanges({
+        correctOrUpdate: 'correct',
+        sections: []
+      }), false);
+    });
+  });
+
   describe('#currentCardInfo', function() {
     it('is false when number given but no expiration date', function() {
       assert.equal(

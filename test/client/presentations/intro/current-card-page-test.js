@@ -30,6 +30,8 @@ describe('CurrentCardPage', function() {
         year: ''
       };
 
+      let cardAction = 'renew';
+
       let accordions = {};
 
       let onChange = sinon.spy();
@@ -37,6 +39,7 @@ describe('CurrentCardPage', function() {
       props = {
         cardType,
         currentCardInfo,
+        cardAction,
         accordions,
         onChange
       }
@@ -57,6 +60,7 @@ describe('CurrentCardPage', function() {
 
     it('it asks for the ID number when the user has chosen to renew an ID', function() {
       props.cardType.renew = 'ID';
+
       let component = render(
         <Wrapper>
           <CurrentCardPage {...props}/>
@@ -69,6 +73,7 @@ describe('CurrentCardPage', function() {
 
     it('it asks for the DL number when the user has chosen to renew a DL', function() {
       props.cardType.renew = 'DL';
+
       let component = render(
         <Wrapper>
           <CurrentCardPage {...props}/>
@@ -77,6 +82,18 @@ describe('CurrentCardPage', function() {
 
       assert.equal(component.text().includes('please enter your California ID number.'), false);
       assert.equal(component.text().includes('please enter your California Driver License number.'), true);
+    });
+
+    it('asks for the ID number when the user has chosen to renew or change an ID', function() {
+      props.cardType.renew = 'ID';
+      let component = render(
+        <Wrapper>
+          <CurrentCardPage {...props} />
+        </Wrapper>
+      );
+
+      assert.equal(component.text().includes('please enter your California ID number.'), true);
+      assert.equal(component.text().includes('please enter your California Driver License number.'), false);
     });
   });
 });

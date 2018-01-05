@@ -89,54 +89,68 @@ describe('Summary section', function() {
 
   describe('Cards', function() {
     it('shows DL and ID when getting both new', function() {
-      let cardType = {
+      props.cardType = {
         new: ['ID', 'DL'],
         renew: ''
       };
+      props.cardAction = 'new';
       let component = render(
         <Cards
           { ...props }
-          cardType={cardType}
         />
       );
       assert.equal(component.text().includes('Applying for new: ID and Driver License'), true);
     });
 
     it('shows DL when only getting a new DL', function() {
-      let cardType = {
+      props.cardType = {
         new: ['DL'],
         renew: ''
       };
+      props.cardAction = 'new';
       let component = render(
         <Cards
           { ...props }
-          cardType = {cardType}
         />
       )
       assert.equal(component.text().includes('Applying for new: Driver License'), true);
     });
 
     it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
-      let cardType = {
+      props.cardType = {
         new: [],
-        renew: 'ID'
+        renew: 'ID',
+        change: ''
       };
-      let currentCardInfo = {
+      props.currentCardInfo = {
         number: 'a90382kf',
         month: '11',
         day: '13',
         year: '2008'
       };
+      props.cardAction = 'renew';
       let component = render(
-        <Cards
-          cardType = {cardType}
-          currentCardInfo = {currentCardInfo}
-        />
+        <Cards {...props} />
       );
       assert.equal(component.text().includes('Renewing: ID'), true);
       assert.equal(component.text().includes('Renewal ID number: a90382kf'), true);
+      assert.equal(component.text().includes('Expiration date of ID to renew: 11/13/2008'), true)
       assert.equal(component.text().includes('Applying for new:'), false);
-    })
+    });
+
+    it('shows which sections are being updated', function() {
+      props.cardType.change = 'DL'
+      props.cardAction = 'change'
+      props.cardChanges.correctOrUpdate = 'update'
+      props.cardChanges.sections = ['name', 'other'];
+      let component = render(
+        <Cards
+          {...props}
+        />
+      );
+      assert.equal(component.text().includes('Updating: Driver License'), true);
+      assert.equal(component.text().includes('Updating sections: Name and Something else'), true);
+    });
   });
 
   describe('SeniorID', function() {

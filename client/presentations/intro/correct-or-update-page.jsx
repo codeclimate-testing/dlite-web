@@ -3,6 +3,7 @@
 import React              from 'react';
 import RadioForm          from './correct-or-update/radio-form.jsx';
 import UpdateForm         from './correct-or-update/update-form.jsx';
+import OtherText          from './correct-or-update/text-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
@@ -27,6 +28,7 @@ const Form = (props) => {
             {...props} 
             selected={props.cardType.update}
           />
+          <OtherText {...props} />
           <NavigationButtons {...props} />
         </form>
       </div>

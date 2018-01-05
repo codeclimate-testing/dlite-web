@@ -10,7 +10,13 @@ const state  = {
     cardType: {
       new: [],
       renew: '',
+      change: '',
       youthIDInstead: ''
+    },
+    cardChanges: {
+      correctOrUpdate: '',
+      sections: [],
+      other: ''
     },
     currentCardInfo: {
       number: '',

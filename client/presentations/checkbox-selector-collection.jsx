@@ -5,14 +5,13 @@ import { arrayIncludes }  from '../helpers/data/validations';
 
 const childPropsAdditions = (props, value, values) => {
   let selected = props.array[props.name].includes(value);
-  let focused = props.focused === value;
   let custom = props.custom ? props.custom : false;
 
   return {
     name    : props.name,
     key     : value,
     selected: selected,
-    focused : focused,
+    focused : props.focused,
     custom  : custom,
     onChange: props.onChange,
     onBlur  : props.onBlur,

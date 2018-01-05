@@ -228,11 +228,7 @@ describe('Data helpers for card-type', function() {
 
   describe('prettyDL', function() {
     it('returns "Driver License" when user is renewing a DL', function() {
-      let data = {
-        cardType: {
-          renew: 'DL'
-        }
-      };
+      let data = 'DL';
       assert.equal(prettyDL(data), 'Driver License');
     });
   });

@@ -30,42 +30,42 @@ const CardDetails = (props) => {
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
   
   let date  = printDate(props.currentCardInfo);
-  let IDorDL = props.cardType[props.action];
+  let IDorDL = props.cardType[props.cardAction];
 
   const numberText = {
     renew: {
-      ID: 'Renewal ID number: ',
-      DL: 'Renewal Driver License number: '
+      ID: 'Renewal ID number',
+      DL: 'Renewal Driver License number'
     },
     update: {
-      ID: 'Updating ID number: ',
-      DL: 'Updating Driver License number: '
+      ID: 'Updating ID number',
+      DL: 'Updating Driver License number'
     },
     correct: {
-      ID: 'Changing ID number: ',
-      DL: 'Changing Driver License number: '
+      ID: 'Changing ID number',
+      DL: 'Changing Driver License number'
     }
   };
 
   const expirationText = {
     renew: {
-      ID: 'Renewal ID expiration date: ',
-      DL: 'Renewal Driver License expiration date: '
+      ID: 'Expiration date of ID to renew',
+      DL: 'Expiration date of Driver License to renew'
     }, 
     update: {
-      ID: 'Expiration date of ID to update: ',
-      DL: 'Expiration date of Driver License to update: '
+      ID: 'Expiration date of ID to update',
+      DL: 'Expiration date of Driver License to update'
     },
     correct: {
-      ID: 'Expiration date of ID to correct: ',
+      ID: 'Expiration date of ID to correct',
       DL: 'Expiration date of Driver License to correct'
     }
   };
 
   return (
     <div>
-      <p>{numberText[props.action][IDorDL]} {props.currentCardInfo.number}</p>
-      <p>{expirationText[props.action][IDorDL]} {date}</p>
+      <p>{numberText[props.action][IDorDL]}: {props.currentCardInfo.number}</p>
+      <p>{expirationText[props.action][IDorDL]}: {date}</p>
     </div>
   )
 };
@@ -118,23 +118,26 @@ const Change = (props) => {
 const UpdatingItems = (props) => {
   if(!dataPresent.value(props.cardChanges.sections)){ return null; }
   
-  const label = 'Updating sections: ';
+  const updateLabel   = 'Updating sections';
+  const correctLabel  = 'Correcting sections';
+  const label         = props.cardChanges.correctOrUpdate === 'update' ? updateLabel : correctLabel;
+  
   const text = {
-    name:         'Name',
-    dateOfBirth:  'Date of birth',
-    sex:          'Sex',
-    address:      'Address',
-    licenseType:  'What you can drive',
-    endorsements: 'Endorsements on your license',
-    restrictions: 'Add or remove a restriction',
-    other:        'Something else'
+    name              : 'Name',
+    dateOfBirth       : 'Date of birth',
+    sex               : 'Sex',
+    address           : 'Address',
+    licenseType       : 'What you can drive',
+    endorsements      : 'Endorsements on your license',
+    restrictions      : 'Add or remove a restriction',
+    other             : props.cardChanges.other
   };
 
   let sections = props.cardChanges.sections.map( section => {
     return text[section];
   });
 
-  return (<p>{label} {sections.join('and')}</p>)
+  return (<p>{label}: {sections.join(' and ')}</p>)
 };
 
 const CardType = (props) => {
