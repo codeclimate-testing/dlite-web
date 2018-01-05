@@ -6,7 +6,7 @@ import CheckboxSelector     from '../../checkbox-selector.jsx';
 
 const Form = (props) => {
 
-  if(props.cardUpdates.correctOrUpdate !== 'update'){ return null; }
+  if(props.cardChanges.correctOrUpdate !== 'update'){ return null; }
   
   let text = {
     name:         'Name',
@@ -27,7 +27,7 @@ const Form = (props) => {
       <CheckboxCollection 
         {...props}
         name  = 'sections'
-        array = { props.cardUpdates }
+        array = { props.cardChanges }
         text  = { text }
       >
         <CheckboxSelector

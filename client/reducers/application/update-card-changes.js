@@ -10,4 +10,4 @@ function defaultState() {
   }
 };
 
-export default formObjectReducer(defaultState, TYPES.UPDATE_CARD_UPDATES, ['sections']);
+export default formObjectReducer(defaultState, TYPES.UPDATE_CARD_CHANGES, ['sections']);

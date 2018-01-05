@@ -19,6 +19,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I choose to change a card', function(done) {
+    browser
+      .click('label[for="cardAction-change"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.and('I click on the DL checkbox', function(done) {
     browser
       .click('[for="DL"]')
@@ -44,6 +51,38 @@ module.exports = function(world) {
     browser 
       .click('label[for="renew-DL"]')
       .then(() => {done(); })
+      .catch(done);
+  });
+
+  world.then('I choose to change my DL', function(done) {
+    browser
+      .click('label[for="change-DL"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.and('I choose to update my card', function(done) {
+    browser
+      .click('label[for="correctOrUpdate-update"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.and('I check the box to update my name', function(done) {
+    browser
+      .click('label[for="name"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am updating the name on my DL', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('Updating sections: Name'), 'update sections not shown in summary');
+        assert(text.includes('Updating: Driver License'), 'update DL not on summary')
+      })
+      .then(done)
       .catch(done);
   });
 

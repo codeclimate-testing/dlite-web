@@ -54,7 +54,13 @@ const SummaryHandler = (props) => {
 
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
-    <Cards cardType={application.cardType} currentCardInfo = {application.currentCardInfo} key='card-type' />,
+    <Cards 
+      cardType        = { application.cardType } 
+      currentCardInfo = { application.currentCardInfo } 
+      cardAction      = { application.cardAction }
+      cardChanges     = { application.cardChanges }
+      key='card-type' 
+    />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
     <SeniorID seniorID={application.seniorID} key='senior-id' />,
     <RealID realID={application.realID} key='real-id' />,

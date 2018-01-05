@@ -194,6 +194,10 @@ module.exports = function(world) {
     assertOnPage('.choose-card-form', /apply\/select-id-dl/, done);
   });
 
+  world.then('I will be on the page for choosing to update or correct my card', function(done) {
+    assertOnPage('.choose-card-change', /apply\/updates-and-corrections/, done);
+  });
+
   world.then('I will be on the youth license notification page', function(done) {
     assertOnPage('.youth-license-notification', /apply\/youth-license-notification/, done);
   });

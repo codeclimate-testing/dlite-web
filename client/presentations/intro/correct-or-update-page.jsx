@@ -16,7 +16,7 @@ const Form = (props) => {
       {...props}
       sectionKey='intro'
     >
-      <div className='choose-card-action'>
+      <div className='choose-card-change'>
         <h2 className='question'>What would you like to do?</h2>
         <p>
           {tag}

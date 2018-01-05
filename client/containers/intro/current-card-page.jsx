@@ -9,9 +9,11 @@ import * as dataPresent           from '../../helpers/data-present';
 import { updateCurrentCardInfo }  from '../../actions/index';
 import Presentation               from '../../presentations/intro/current-card-page.jsx';
 
+import { canBeSenior }            from '../../helpers/calculate-age';
+
 const Page = (props) => {
   let continueDisabled  = !(dataPresent.currentCardInfo(props.currentCardInfo));
-  let nextAddress       = props.cardAction === 'change' ? '/updates-and-corrections' : '/real-id';
+  let nextAddress       = canBeSenior(props.dateOfBirth) ? '/senior-id': '/real-id';
   let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
   let onBack            = handlers.navigateOnBack(props);
 
@@ -29,7 +31,8 @@ function mapStateToProps(state) {
   return {
     currentCardInfo:  state.application.currentCardInfo,
     cardAction:       state.application.cardAction,
-    cardType:         state.application.cardType
+    cardType:         state.application.cardType,
+    dateOfBirth:      state.application.dateOfBirth
   };
 };
 

@@ -23,7 +23,7 @@ export const TYPES = {
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
   UPDATE_CARD_ACTION:                     'UPDATE_CARD_ACTION',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
-  UPDATE_CARD_UPDATES:                    'UPDATE_CARD_UPDATES',
+  UPDATE_CARD_CHANGES:                    'UPDATE_CARD_CHANGES',
   UPDATE_CURRENT_CARD_INFO:               'UPDATE_CURRENT_CARD_INFO',
   UPDATE_REDUCED_FEE:                     'UPDATE_REDUCED_FEE',
   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
@@ -65,7 +65,7 @@ export const createApplicationID              = generateFormAction(TYPES.CREATE_
 export const updateLegalName                  = generateFormAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateCardAction                 = generateFormAction(TYPES.UPDATE_CARD_ACTION);
 export const updateCardType                   = generateFormAction(TYPES.UPDATE_CARD_TYPE);
-export const updateCardUpdates                = generateFormAction(TYPES.UPDATE_CARD_UPDATES);
+export const updateCardChanges                = generateFormAction(TYPES.UPDATE_CARD_CHANGES);
 export const updateCurrentCardInfo            = generateFormAction(TYPES.UPDATE_CURRENT_CARD_INFO);
 export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_REDUCED_FEE);
 export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);

@@ -25,7 +25,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return (props && (hasValue(props.renew) || hasValue(props.new)));
+  return hasAnyAttributes(props, ['renew', 'change', 'new']);
 };
 
 const currentCardInfo = (props) => {
