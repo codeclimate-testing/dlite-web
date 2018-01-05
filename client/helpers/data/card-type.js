@@ -11,11 +11,11 @@ export const getNewDL = (props) => {
 };
 
 export const getID = (props) => {
-  return getNewID(props) || props.cardType.renew === 'ID';
+  return getNewID(props) || props.cardType.renew === 'ID' || props.cardType.change === 'ID';
 };
 
 export const getDL = (props) => {
-  return getNewDL(props) || props.cardType.renew === 'DL';
+  return getNewDL(props) || props.cardType.renew === 'DL' || props.cardType.change === 'DL';
 };
 
 export const canContinue = (props) => {
@@ -24,5 +24,5 @@ export const canContinue = (props) => {
 };
 
 export const prettyDL = (props) => {
-  return props.cardType.renew === 'DL' ? 'Driver License' : 'ID';
+  return props === 'DL' ? 'Driver License' : 'ID';
 }

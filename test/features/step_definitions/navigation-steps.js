@@ -187,7 +187,7 @@ module.exports = function(world) {
   });
 
   world.then('I will be on the current card info page', function(done) {
-    assertOnPage('.current-card-form', /apply\/current-card-info/, done);
+    assertOnPage('.current-card-form', /apply\/current-card-information/, done);
   });
 
   world.then('I will be on the ID and DL selection page', function(done) {

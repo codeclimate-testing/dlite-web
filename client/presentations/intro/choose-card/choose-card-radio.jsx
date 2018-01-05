@@ -5,6 +5,11 @@ import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 
+let text = {
+  ID: 'ID',
+  DL: 'Driver License'
+};
+
 const Form = (props) => {
   if(props.cardAction === 'new') { return null; }
   let values = {
@@ -20,6 +25,7 @@ const Form = (props) => {
         {...props}
         name={props.cardAction}
         selectedValue={selectedValue}
+        text={text}
       >
         <RadioSelector 
           value='ID'

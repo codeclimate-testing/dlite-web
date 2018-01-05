@@ -11,7 +11,7 @@ import Presentation               from '../../presentations/intro/current-card-p
 
 const Page = (props) => {
   let continueDisabled  = !(dataPresent.currentCardInfo(props.currentCardInfo));
-  let nextAddress       = props.cardAction === 'change' ? '/correct-or-update' : '/real-id';
+  let nextAddress       = props.cardAction === 'change' ? '/updates-and-corrections' : '/real-id';
   let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
   let onBack            = handlers.navigateOnBack(props);
 

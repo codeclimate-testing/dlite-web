@@ -43,7 +43,7 @@ describe('ChooseCardPage', function() {
       }
     });
 
-    it('shows a button for ID and a button for DL', function() {
+    it('if the user is getting a new card the form shows a button for ID and a button for DL', function() {
       props.cardAction = 'new';
 
       let component = render(
@@ -53,6 +53,9 @@ describe('ChooseCardPage', function() {
       );
       assert.ok(component.find('label[for="ID"]').length, 'ID checkbox missing');
       assert.ok(component.find('label[for="DL"]').length, 'DL checkbox missing');
+      assert.ok(component.find('input[type="checkbox"]').length, 'checkbox inputs not found');
+      assert.ok(component.find('.choose-card-form').length, 'form missing');
+      assert.equal(component.text().includes('What type of card would you like?'), true);
     });
 
     it('it shows a form with radio buttons asking renewing users which card type to renew', function() {
@@ -64,18 +67,18 @@ describe('ChooseCardPage', function() {
       );
       assert.ok(component.find('input[type="radio"]').length, 'radio inputs not found');
       assert.ok(component.find('.choose-card-form').length, 'form missing');
+      assert.equal(component.text().includes('What type of card are you renewing'), true);
     });
 
-    it('it shows a form with checkboxes asking users which kind of new card they want', function() {
-      props.cardAction = 'new';
+    it('if the user is changing a card it shows radio buttons and asks about correcting or updating', function() {
+      props.cardAction = 'change';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>
         </Wrapper>
       );
-
-      assert.ok(component.find('input[type="checkbox"]').length, 'checkbox inputs not found');
-      assert.ok(component.find('.choose-card-form').length, 'form missing');
+      assert.ok(component.find('input[type="radio"]').length, 'radio input not found');
+      assert.equal(component.text().includes('What type of card are you correcting or updating?'), true);
     });
   });
 });

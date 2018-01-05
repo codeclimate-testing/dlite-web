@@ -5,18 +5,36 @@ import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
 import NumberInput        from '../number-input.jsx';
-import { prettyDL }       from '../../helpers/data/card-type';
+
+const question = {
+  ID: (<p>If you know it, <b>please enter your California ID number</b>.</p>),
+  DL: (<p>If you know it, <b>please enter your California Driver License number</b>.</p>)
+};
+
+const instruction = {
+  ID: (<p>Your number can be found at the top of your ID, starting with a letter.</p>),
+  DL: (<p>Your number can be found at the top of your Driver License, starting with a letter.</p>)
+};
+
+const card = {
+  ID: 'ID',
+  DL: 'Driver License'
+}
 
 const Form = (props) => {
-  let card = prettyDL(props);
+  const IDorDL          = props.cardType[props.cardAction];
+  const cardText        = card[IDorDL] 
+  const questionText    = question[IDorDL];
+  const instructionText = instruction[IDorDL];
+  
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='current-card-form'>
-        <p>If you know it, <b>please enter your California {card} number</b>.</p>
-        <p>Your number can be found at the top of your {card}, starting with a letter.</p>
+        {questionText}
+        {instructionText}
         
         <form onSubmit={ props.onSubmit }>
 
@@ -24,7 +42,7 @@ const Form = (props) => {
             <TextInput
               {...props}
               identifier='number'
-              description={ `${card.toUpperCase()} CARD NUMBER` }
+              description={ `${cardText.toUpperCase()} CARD NUMBER` }
               value={ props.currentCardInfo.number }
             />
           </div>
