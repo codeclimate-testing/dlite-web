@@ -1,7 +1,7 @@
 label,
 .additional-label {
   @include line;
-  font-size: 12px;
+  font-size: $font-size-label;
 
   &.error {
     color: $error;

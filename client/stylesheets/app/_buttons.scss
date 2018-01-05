@@ -8,7 +8,7 @@ a.button.arrow-button {
   width: $arrow-button-text-width + $arrow-width;
   height: $arrow-button-height;
 
-  font-size: 14px;
+  font-size: $font-size-main;
 
   &.backwards {
     color: $button-rest;
