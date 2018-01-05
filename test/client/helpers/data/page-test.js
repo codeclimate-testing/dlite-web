@@ -38,9 +38,9 @@ describe('Data helpers for page', function() {
     );
   });
 
-  it('return /apply/summary if editMode is turned on', function() {
+  it('return /apply/summary if state has been passed from link', function() {
     assert.equal(
-      nextPath('trueName', {editMode: true}),
+      nextPath('trueName', {location: {state: {nextAddress: '/summary'}}}),
       '/apply/summary'
     );
   });

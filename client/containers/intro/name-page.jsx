@@ -5,6 +5,7 @@ import { connect }            from 'react-redux';
 
 import handlers               from '../../helpers/handlers';
 import { NamePageValidator }  from '../../helpers/validations';
+import * as dataPresent       from '../../helpers/data-present';
 
 import { updateLegalName }    from '../../actions/index';
 
@@ -14,6 +15,7 @@ const Page = (props) => {
   let validations = new NamePageValidator(props.legalName, props.validations);
   let onBack = handlers.navigateOnBack(props);
   let onSubmit = handlers.navigateOrShowErrors('trueName', props, validations);
+  let continueDisabled = !dataPresent.legalName(props.legalName);
 
   return (
     <Presentation
@@ -21,6 +23,7 @@ const Page = (props) => {
       onSubmit={ onSubmit }
       onBack={ onBack }
       validations={ validations }
+      continueDisabled = { continueDisabled }
     />
   );
 };
