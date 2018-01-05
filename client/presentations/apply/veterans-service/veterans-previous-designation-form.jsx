@@ -6,17 +6,15 @@ import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 import { getDL }            from '../../../helpers/data/card-type';
 
-const driversLicense = 'Drivers License';
-let cardType = 'ID';
+const header = {
+  DL: 'Is "Veteran" printed on your Driver License?',
+  ID: 'Is "Veteran" printed on your ID?'
+};
 
 const VeteransPreviousDesignation = (props) => {
   if(props.veteransService.isVeteran !== 'Yes' || props.cardAction !== 'renew') { return null; }
 
-  if(getDL(props)) {
-    cardType = driversLicense;
-  } else {
-    cardType;
-  }
+  const headerText = getDL(props) ? header.DL : header.ID;
 
   let values = {
     Yes: 'Yes',
@@ -25,7 +23,7 @@ const VeteransPreviousDesignation = (props) => {
 
   return (
     <div className='veterans-previous-designation-form'>
-      <h4>Is "Veteran" printed on your {cardType}?</h4>
+      <h4>{headerText}</h4>
       <div className='input-container'>
         <RadioCollection 
           {...props}

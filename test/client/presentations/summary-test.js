@@ -142,14 +142,26 @@ describe('Summary section', function() {
       props.cardType.change = 'DL'
       props.cardAction = 'change'
       props.cardChanges.correctOrUpdate = 'update'
-      props.cardChanges.sections = ['name', 'other'];
+      props.cardChanges.sections = ['name', 'restrictions'];
       let component = render(
         <Cards
           {...props}
         />
       );
       assert.equal(component.text().includes('Updating: Driver License'), true);
-      assert.equal(component.text().includes('Updating sections: Name and Something else'), true);
+      assert.equal(component.text().includes('Updating sections: Name and Add or remove a restriction'), true);
+    });
+
+    it('shows the text the user entered in the case of a "Something else" change', function() {
+      props.cardType.change = 'DL'
+      props.cardAction = 'change'
+      props.cardChanges.correctOrUpdate = 'update'
+      props.cardChanges.sections = ['other'];
+      props.cardChanges.other = 'my picture sucks!'
+      let component = render(
+        <Cards {...props} />
+      );
+      assert.equal(component.text().includes('Updating sections: my picture sucks!'), true);
     });
   });
 

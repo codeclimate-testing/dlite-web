@@ -141,7 +141,7 @@ module.exports = function(world) {
       .text()
       .then(text => {
         assert(text.includes('number: a111'));
-        assert(text.includes('expiration date: 11/11/2011'))
+        assert(text.includes('11/11/2011'))
       })
       .then(() => { done(); })
       .catch(done);

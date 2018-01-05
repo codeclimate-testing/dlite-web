@@ -36,39 +36,13 @@ const VeteransIdentifier = (props) => {
 
   const removeIdentifierNotification = (props.veteransService.previouslyDesignated === 'Yes' && props.veteransService.veteransIdentifier === 'No');
 
-  if(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes')) {
-    return (
-      <div className='veterans-identifier-form'>
-       <Question {...props} />
-       <h5>Many organizations give discounts with a valid military ID.</h5>
-       <div className='input-container'>
-         <SelectorCollection
-           name='veteransIdentifier'
-           values={['Yes', 'No']}
-           onChange={ props.onChange }
-           selectedValue={props.selectedValue}
-         />
-       </div>
-       { props.veteransService.veteransIdentifier === 'Yes' &&
-         <div className='veteran-identifier-fee'>
-           <h5>OK, we will add the $5 to your total fee.</h5>
-         </div>
-       }
-       { removeIdentifierNotification &&
-         <div className='remove-veteran-identifier'>
-           <h5>OK, we will remove it.</h5>
-         </div>
-       }
-  
-     </div>
-   );
-  } else {
-  return null;
+  const values = {
+    Yes: 'Yes',
+    No: 'No'
   };
-
   return (
     <div className='veterans-identifier-form'>
-      { keepOrAddVeteranOnCard }
+      <Question {...props} />
       <h5>Many organizations give discounts with a valid military ID.</h5>
       <div className='input-container'>
       <RadioCollection 

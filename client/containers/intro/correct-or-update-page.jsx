@@ -14,7 +14,7 @@ const Page = (props) => {
   let address           =   '/current-card-information';
   let onSubmit          =   handlers.navigateOnSubmit(address, props);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !dataPresent.cardChanges(props.cardChanges);
+  let continueDisabled  =   props.cardChanges.sections.includes('other') ? !dataPresent.value(props.cardChanges.other) : !dataPresent.cardChanges(props.cardChanges);
 
   return (
     <Presentation

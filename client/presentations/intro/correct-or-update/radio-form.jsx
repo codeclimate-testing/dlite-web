@@ -16,14 +16,13 @@ const Form = (props) => {
       <RadioCollection
         {...props}
         name='correctOrUpdate'
+        text={text}
       >
         <RadioSelector
           value='correct'
-          text={text.correct}
         />
         <RadioSelector
           value='update'
-          text={text.update}
         />
       </RadioCollection>
       <div className='unit spacer' />
