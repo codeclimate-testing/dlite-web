@@ -3,7 +3,10 @@
 import { getDL } from './card-type';
 import { tooYoungForDL } from './youth';
 import { eligibleForSeniorID } from './senior';
-import { hasExistingCard } from './card-actions';
+import { 
+  hasExistingCard,
+  isChangingCard
+ } from './card-actions';
 import { eligibleForReducedFee } from './reduced-fee';
 
 export const chooseCardType = (props) => {
@@ -13,6 +16,8 @@ export const chooseCardType = (props) => {
     key = 'youthDlMessage';
   } else if (hasExistingCard(props)) {
     key = 'currentCardInfo';
+  } else if (isChangingCard(props)) {
+    key = 'chooseCardChanges'
   } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
   }

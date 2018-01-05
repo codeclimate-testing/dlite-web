@@ -34,6 +34,12 @@ const getStarted = [
     next: chooseCardType
   },
   {
+    key: 'chooseCardChanges',
+    description: 'updates and corrections',
+    path: '/updates-and-corrections',
+    next: 'currentCardInfo'
+  },
+  {
     key: 'currentCardInfo',
     description: 'Current card info',
     path: '/current-card-information',
