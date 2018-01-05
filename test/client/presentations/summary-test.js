@@ -351,10 +351,6 @@ describe('Summary section', function() {
         donateMoney: 'Yes',
         donateOrgan: 'Yes'
       };
-<<<<<<< HEAD
-
-=======
->>>>>>> resolved conflicts in summary-test
       let component = render(
         <Wrapper>
           <OrganDonation { ...props }/>

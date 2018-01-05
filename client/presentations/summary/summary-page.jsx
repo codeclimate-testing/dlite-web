@@ -33,6 +33,7 @@ import {
   BallotLanguage,
   ContactMethods,
   ContinueButton,
+  GuardianSignature,
   OptOut,
   Empty
 } from './index.js';
@@ -109,6 +110,7 @@ const SummaryPage = (props) => {
     <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} key='eligibility-requirements' />,
     <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
     <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
+    <GuardianSignature guardianSignature={application.guardianSignature} key='guardian-signature' />,
     <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
     <OptOut optOut={application.optOut} key='opt-out' />,
     <Empty {...application} key='empty' />
