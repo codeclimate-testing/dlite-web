@@ -9,7 +9,7 @@ const ContactMethods = (props) => {
   if (!hasValue(shouldContact)) { return null; }
 
   if(shouldContact !== 'Yes') {
-    if(shouldContact === 'Skip Question') { shouldContact = 'No Answer'; }
+    if(shouldContact === 'Skip') { shouldContact = 'No Answer'; }
     return (
       <div className='summary-section'>
         <p> Should Contact: {shouldContact} </p>

@@ -155,7 +155,7 @@ describe('Summary section', function() {
 
   describe('RealID', function() {
     it('shows RealID fields', function(){
-      let realID = {
+      props.realID = {
         getRealID : 'Yes',
         realIdDesignation: 'ID'
       };
@@ -163,7 +163,6 @@ describe('Summary section', function() {
       let component = render(
         <RealID
           { ...props }
-          realID={realID}
         />
       )
       assert.equal(component.text().includes('Real ID: Yes'), true);
@@ -174,7 +173,7 @@ describe('Summary section', function() {
   describe('LicenseType', function() {
     it('lists which types of licenses the user has selected', function() {
       props.licenseType.type = ['car', 'unsure'];
-      props.licenseType.needEndorsement = 'No'
+      props.licenseType.needEndorsement = 'No';
       let component = render(
         <LicenseType
           { ...props }
@@ -350,7 +349,7 @@ describe('Summary section', function() {
 
   describe('NamesHistory', function() {
     it('shows names history', function(){
-      let namesHistory = {
+      props.namesHistory = {
         hasUsedPreviousNames: 'Yes',
         previousNames: 'John Doe'
       };
@@ -358,7 +357,6 @@ describe('Summary section', function() {
       let component = render(
         <NamesHistory
           { ...props }
-          namesHistory={namesHistory}
         />
       )
       assert.equal(component.text().includes('Has used previous names: Yes'), true);

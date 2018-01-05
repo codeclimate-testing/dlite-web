@@ -17,14 +17,14 @@ module.exports = function (world) {
 
   world.when('I click No for veteran', function(done){
     browser
-      .click('label[for="isVeteranNo"]')
+      .click('label[for="isVeteran-No"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.when('I click Yes for veteran', function(done){
     browser
-      .click('label[for="isVeteranYes"]')
+      .click('label[for="isVeteran-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -58,7 +58,7 @@ module.exports = function (world) {
 
   world.when('I click Yes to receiving additional information about benefits', function(done){
     browser
-      .click('label[for="receiveBenefitsYes"]')
+      .click('label[for="receiveBenefits-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -74,14 +74,14 @@ module.exports = function (world) {
 
   world.and('I click Yes to veteran previously being printed on my license', function(done){
     browser
-      .click('label[for="previouslyDesignatedYes"]')
+      .click('label[for="previouslyDesignated-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I click Yes about having my license labeled with Veteran', function(done){
     browser
-      .click('label[for="veteransIdentifierYes"]')
+      .click('label[for="veteransIdentifier-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });

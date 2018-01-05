@@ -8,7 +8,7 @@ const EnterPreviousNames = (props) => {
   return (
     <div className='enter-previous-names'>
       <h4>Please list all previous legal names.</h4>
-      <p>For example, inclue your maiden name.</p>
+      <p>For example, include your maiden name.</p>
       <p>Separate by commas.</p>
         <TextArea
           identifier='previousNames'

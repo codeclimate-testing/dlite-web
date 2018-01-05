@@ -1,12 +1,12 @@
 'use strict';
 
-import React                   from 'react';
-import { connect }             from 'react-redux';
+import React                    from 'react';
+import connectForm              from '../../helpers/connect-form';
 
-import { updateCitizenStatus } from '../../actions/index';
-import CitizenStatusForm       from '../../presentations/voter-registration/citizen-status/citizen-status-form.jsx';
-import PreRegCitizenStatusForm from '../../presentations/voter-registration/citizen-status/citizen-status-prereg-form.jsx';
-import handlers                from '../../helpers/handlers';
+import { updateCitizenStatus }  from '../../actions/index';
+import CitizenStatusForm        from '../../presentations/voter-registration/citizen-status/citizen-status-form.jsx';
+import PreRegCitizenStatusForm  from '../../presentations/voter-registration/citizen-status/citizen-status-prereg-form.jsx';
+import handlers                 from '../../helpers/handlers';
 import {
   eligibleForCitizen
 } from '../../helpers/data/voting';
@@ -24,36 +24,26 @@ const Page = (props) => {
   let onBack            = handlers.navigateOnBack(props);
   let continueDisabled  = false;
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
+  const Presentation    = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
 
   return (
     <Presentation
       {...props}
-      onSubmit = {onSubmit}
-      onBack = {onBack}
-      onChange = {props.onChange}
-      selectedValue = {props.citizenStatus}
-      continueDisabled = {continueDisabled}
+      onSubmit          = {onSubmit}
+      onBack            = {onBack}
+      onChange          = {props.onChange}
+      selectedValue     = {props.citizenStatus}
+      continueDisabled  = {continueDisabled}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    citizenStatus: state.application.citizenStatus,
-    dateOfBirth:  state.application.dateOfBirth,
-    focused:      state.ui.focus
+    citizenStatus       : state.application.citizenStatus,
+    dateOfBirth         : state.application.dateOfBirth,
+    focused             : state.ui.focus
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateCitizenStatus, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
-
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateCitizenStatus, Page);

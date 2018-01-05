@@ -63,11 +63,11 @@ const socialSecurity = (props) => {
 };
 
 const veteransService = (props) => {
-  return (props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier'])));
+  return props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier']));
 };
 
 const licenseIssues = (props) => {
-  return date(props) || hasAnyAttributes(props, ['reason', 'isSuspended']);
+  return props && (props.isSuspended === 'No' || date(props) || hasValue(props.reason));
 };
 
 const licenseAndIdHistory = (props) => {

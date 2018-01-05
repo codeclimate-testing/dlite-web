@@ -13,14 +13,14 @@ const Form = (props) => {
       <h5>Select all that apply</h5>
       <div className='row inner-bottom'>
         <CheckboxSelector 
+          {...props}
           value =     'firefighter'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.endorsement, 'firefighter') }
           text =      'Firefighter'
         />
         <CheckboxSelector 
+          {...props}
           value =     'ambulance'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.endorsement, 'ambulance') }
           text =      'Ambulance'
         />

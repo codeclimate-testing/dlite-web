@@ -22,7 +22,7 @@ describe('Required Docs for Social Security Number', function() {
       hasMedicalCondition: 'No'
     },
     reducedFee: {
-      ID: 'No'
+      ID: false
     },
     licenseIssued: '',
     dateOfBirth: {

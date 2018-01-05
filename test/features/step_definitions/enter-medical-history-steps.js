@@ -14,14 +14,14 @@ module.exports = function(world) {
 
   world.when('I select Yes to having reportable medical history', function(done){
     browser
-    .click('label[for="hasMedicalConditionYes"]')
+    .click('label[for="hasMedicalCondition-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select No to having reportable medical history', function(done){
     browser
-    .click('label[for="hasMedicalConditionNo"]')
+    .click('label[for="hasMedicalCondition-No"]')
     .then(() => { done(); })
     .catch(done);
   });

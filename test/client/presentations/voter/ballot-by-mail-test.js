@@ -44,8 +44,8 @@ describe('BallotByMailPage', function() {
       </Wrapper>
     );
     assert.equal(props.continueDisabled, true);
-    assert.ok(component.find('label[for="ballotByMailYes"]').length, 'Yes button missing');
-    assert.ok(component.find('label[for="ballotByMailNo"]').length, 'No button missing');
+    assert.ok(component.find('label[for="ballotByMail-Yes"]').length, 'Yes button missing');
+    assert.ok(component.find('label[for="ballotByMail-No"]').length, 'No button missing');
     assert.ok(component.find('.ballot-by-mail-form').length, 'form missing');
   });
 

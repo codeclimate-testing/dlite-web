@@ -18,32 +18,32 @@ module.exports = function(world) {
 
   world.when('I select contact methods Yes', function(done){
     browser
-    .click('label[for="shouldContactYes"]')
+    .click('label[for="shouldContact-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select contact methods No', function(done){
     browser
-    .click('label[for="shouldContactNo"]')
+    .click('label[for="shouldContact-No"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select contact methods Skip Question', function(done){
     browser
-    .click('label[for="shouldContactSkip Question"]')
+    .click('label[for="shouldContact-Skip"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.then('I see three contact methods buttons labelled Yes, No and Skip Question', function(done) {
     browser
-    .html('label[for="shouldContactYes"]')
+    .html('label[for="shouldContact-Yes"]')
     .then((button) => { assert.ok(button, 'Selector for Yes missing')})
-    .html('label[for="shouldContactNo"]')
+    .html('label[for="shouldContact-No"]')
     .then((button) => { assert.ok(button, 'Selector for No missing')})
-    .html('label[for="shouldContactSkip Question"]')
+    .html('label[for="shouldContact-Skip"]')
     .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
     .then(() => { done(); })
     .catch(done);
@@ -99,7 +99,7 @@ module.exports = function(world) {
     browser
       .click('a.contact-methods')
       .waitForSelector('.contact-methods-choice-form')
-      .click('label[for="shouldContactYes"]')
+      .click('label[for="shouldContact-Yes"]')
       .type('#emailAddress', 'sample@example.com')
       .type('#phoneNumber', '(111) 000-8888')
       .click('a.sections')

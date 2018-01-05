@@ -3,22 +3,20 @@
 import React from 'react';
 import * as dataPresent from '../../helpers/data-present';
 
-const NamesHistory = (props) => {
-  let hasUsedPreviousNames = props.namesHistory.hasUsedPreviousNames;
-  if (!(dataPresent.hasPreviousNames(props.namesHistory))) { return null; }
+const PreviousNames = (props) => {
+  if(props.namesHistory.hasUsedPreviousNames === 'No'){ return null; }
+  return <p> Previous Names: { props.namesHistory.previousNames } </p>
+}
 
-  if(hasUsedPreviousNames === 'No') {
-    return (
-      <div className='summary-section'>
-        <p> Has used previous names: {hasUsedPreviousNames} </p>
-      </div>
-    );
-  }
+const NamesHistory = (props) => {
+  if (!(dataPresent.hasPreviousNames(props.namesHistory))) { return null; }
 
   return (
     <div className='summary-section'>
-      <p> Has used previous names: {hasUsedPreviousNames} </p>
-      <p> Previous Names: {props.namesHistory.previousNames} </p>
+      <p> Has used previous names: { props.namesHistory.hasUsedPreviousNames } </p>
+      <PreviousNames 
+        namesHistory = { props.namesHistory }
+      />
     </div>
   );
 };

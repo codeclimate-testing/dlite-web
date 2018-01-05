@@ -2,14 +2,17 @@
 
 import React from 'react';
 
-import HomeLink               from '../../home-link.jsx';
-import SelectorCollection     from '../../selector-collection.jsx';
-import { getDL }              from '../../../helpers/data/card-type';
+import RadioSelector        from '../../radio-selector.jsx';
+import RadioCollection      from '../../radio-selector-collection.jsx';
+import { getDL }            from '../../../helpers/data/card-type';
 
 const driversLicense = 'Drivers License';
 let cardType = 'ID';
 
 const VeteransIdentifier = (props) => {
+
+  if(!(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))){ return null; }
+
   if(getDL(props)) {
     cardType = driversLicense;
   } else {
@@ -27,35 +30,43 @@ const VeteransIdentifier = (props) => {
     keepOrAddVeteranOnCard = newDesignationQuestion;
   }
 
-  if(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes')) {
-    return (
-      <div className='veterans-identifier-form'>
-       { keepOrAddVeteranOnCard }
-       <h5>Many organizations give discounts with a valid military ID.</h5>
-       <div className='input-container'>
-         <SelectorCollection
-           name='veteransIdentifier'
-           values={['Yes', 'No']}
-           onChange={ props.onChange }
-           selectedValue={props.selectedValue}
-         />
-       </div>
-       { props.veteransService.veteransIdentifier === 'Yes' &&
-         <div className='veteran-identifier-fee'>
-           <h5>OK, we will add the $5 to your total fee.</h5>
-         </div>
-       }
-       { removeIdentifierNotification &&
-         <div className='remove-veteran-identifier'>
-           <h5>OK, we will remove it.</h5>
-         </div>
-       }
-  
-     </div>
-   );
-  } else {
-  return null;
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
   };
+
+  return (
+    <div className='veterans-identifier-form'>
+      { keepOrAddVeteranOnCard }
+      <h5>Many organizations give discounts with a valid military ID.</h5>
+      <div className='input-container'>
+      <RadioCollection 
+        {...props}
+        name='veteransIdentifier'
+        text={values}
+      >
+        <RadioSelector 
+          value='Yes'
+        />
+        <RadioSelector 
+          value='No'
+        />
+      </RadioCollection>
+      </div>
+      { props.veteransService.veteransIdentifier === 'Yes' &&
+        <div className='veteran-identifier-fee'>
+          <h5>OK, we will add the $5 to your total fee.</h5>
+        </div>
+      }
+      { removeIdentifierNotification &&
+        <div className='remove-veteran-identifier'>
+          <h5>OK, we will remove it.</h5>
+        </div>
+      }
+
+    </div>
+  );
+
 };
 
 export default VeteransIdentifier;

@@ -61,7 +61,9 @@ describe('Data helpers for reduced fee', function() {
 
     it('is false without the correct data structure', function() {
       let data = {
-        reducedFee: {}
+        reducedFee: {
+          ID: ''
+        }
       };
 
       assert.equal(choosingReducedFee(data), false);

@@ -39,7 +39,7 @@ describe('RealIdPage', function() {
         cardType,
         realID,
         accordions,
-        onChange,
+        onChange
       }
     });
 
@@ -60,8 +60,8 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('#getRealIDYes').length, 'Yes button missing');
-      assert.ok(component.find('#getRealIDNo').length, 'No button missing');
+      assert.ok(component.find('#getRealID-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#getRealID-No').length, 'No button missing');
     });
 
     it('does not show the form asking which card if no selection is made', function() {

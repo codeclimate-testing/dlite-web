@@ -41,8 +41,8 @@ describe('LicenseIssuesPage', function() {
           <LicenseIssuesPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="isSuspendedYes"]').length, 'yes button missing');
-      assert.ok(component.find('label[for="isSuspendedNo"]').length, 'no button missing');
+      assert.ok(component.find('label[for="isSuspended-Yes"]').length, 'yes button missing');
+      assert.ok(component.find('label[for="isSuspended-No"]').length, 'no button missing');
       assert.ok(component.find('.license-issues-form').length, 'form missing');
     });
 

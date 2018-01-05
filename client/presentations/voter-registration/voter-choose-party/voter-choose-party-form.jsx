@@ -1,7 +1,14 @@
 'use strict';
 
-import React from 'react';
-import SelectorCollection from '../../selector-collection.jsx';
+import React            from 'react';
+import RadioSelector    from '../../radio-selector.jsx';
+import RadioCollection  from '../../radio-selector-collection.jsx';
+
+const values = {
+  Yes : 'Yes',
+  No  : 'No',
+  Skip: 'I do not wish to choose a political party'
+};
 
 const PoliticalPartyChoose = (props) => {
 
@@ -13,12 +20,21 @@ const PoliticalPartyChoose = (props) => {
         <p>In order to vote for a presidential candidate in a primary election, you
         may need to be registered with that political party.</p>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioCollection  
+            {...props}
             name='isSelected'
-            values={['Yes', 'I do not wish to choose a political party']}
-            onChange={props.onChange}
-            selectedValue={props.selectedValue}
-          />
+            text={values}
+          >
+            <RadioSelector 
+              value='Yes'
+            />
+            <RadioSelector 
+              value='No'
+            />
+            <RadioSelector 
+              value='Skip'
+            />
+          </RadioCollection>
         </div>
     </div>
   </div>

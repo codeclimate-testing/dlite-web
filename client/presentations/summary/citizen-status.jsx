@@ -7,7 +7,7 @@ import { hasValue } from '../../helpers/data/validations';
 const CitizenStatus = (props) => {
   let value = props.citizenStatus;
 
-  if(value ==='Skip Section') {
+  if(value ==='Skip') {
     value = '';
   }
   else if(value ==='No') {

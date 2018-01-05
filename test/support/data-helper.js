@@ -47,7 +47,8 @@ function fakeClientData() {
       'street_2': 'Main St.',
       'city': 'Sacramento',
       'state': 'CA',
-      'zip': '95656'
+      'zip': '95656',
+      'homeAddressSameAsMailing': 'No'
     },
     'mailingAddress': {
       'street_1': '456',

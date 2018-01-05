@@ -1,27 +1,32 @@
 'use strict';
 
-import React from 'react';
-import PreRegOptOutRadioPage from './opt-out-prereg-radio-page.jsx';
-import RadioSelector from '../../radio-selector.jsx';
+import React            from 'react';
+import RadioSelector    from '../../radio-selector.jsx';
+import RadioCollection  from '../../radio-selector-collection.jsx';
+
+const values = {
+  new       : 'I would like to pre-register to vote',
+  existing  : 'I am already pre-registered to vote in California',
+  optOut    : 'I am eligible to vote, but do not want to pre-register to vote'
+};
 
 const PreRegOptOutFormPreReg = (props) => {
   return (
-    <PreRegOptOutRadioPage
+    <RadioCollection
       {...props}
+      name='optOut'
+      text={values}
     >
       <RadioSelector
         value='new'
-        text='I would like to pre-register to vote'
       />
       <RadioSelector
         value='existing'
-        text='I am already pre-registered to vote in California'
       />
       <RadioSelector
-        value='opt-out'
-        text='I am eligible to vote, but do not want to pre-register to vote'
+        value='optOut'
       />
-    </PreRegOptOutRadioPage>
+    </RadioCollection>
   );
 };
 

@@ -149,10 +149,10 @@ describe('client data parser', function() {
     let veteransInfo = parsedData.veterans_info[0];
     let _label = null;
     let previously_designated = null;
-    if(data.veteransService.veteransIdentifier === 'Yes'){
+    if(data.veteransService.veteransIdentifier){
       _label = 'add';
     }
-    if(data.veteransService.previouslyDesignated === 'Yes'){
+    if(data.veteransService.previouslyDesignated){
       previously_designated = 'Yes';
     }
     assert.equal(veteransInfo.application_id, data.id);

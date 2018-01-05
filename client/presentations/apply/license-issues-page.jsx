@@ -15,7 +15,7 @@ const LicenseIssuesPage = (props) => {
     >
       <form onSubmit    = { props.onSubmit }>
         <LicenseIssues
-          onChange      = { props.onChange }
+          {...props}
           selectedValue = { props.licenseIssues.isSuspended }
         />
 

@@ -2,7 +2,7 @@
 
 
 import React                   from 'react';
-import { connect }             from 'react-redux';
+import connectForm             from '../../helpers/connect-form';
 
 import { updateBallotByMail }  from '../../actions/index';
 
@@ -23,12 +23,12 @@ const Page = (props) => {
 
 return (
     <Presentation
-    {...props}
-    onSubmit          = {onSubmit}
-    onBack            = {onBack}
-    onChange          = {props.onChange}
-    selectedValue     = {props.ballotByMail}
-    continueDisabled  = {continueDisabled} />
+      {...props}
+      onSubmit          = {onSubmit}
+      onBack            = {onBack}
+      selectedValue     = {props.ballotByMail}
+      continueDisabled  = {continueDisabled} 
+    />
   );
 };
 
@@ -40,18 +40,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange = handlers.onInputChange(updateBallotByMail, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
-
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateBallotByMail, Page);

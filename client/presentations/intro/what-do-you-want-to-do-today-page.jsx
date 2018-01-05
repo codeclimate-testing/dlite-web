@@ -8,6 +8,11 @@ import RadioSelector      from '../radio-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
+  let values = {
+    new: 'Get a new card',
+    renew: 'Renew a card'
+  };
+
   return (
     <Page
       {...props}
@@ -24,14 +29,13 @@ const Form = (props) => {
             <RadioCollection
               {...props}
               name='cardAction'
+              text={values}
             >
               <RadioSelector
                 value='new'
-                text='Get a new card'
               />
               <RadioSelector
                 value='renew'
-                text='Renew a card'
               />
             </RadioCollection>
             <div className='unit spacer' />

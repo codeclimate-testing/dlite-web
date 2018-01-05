@@ -8,11 +8,11 @@ const PoliticalPartyChoose = (props) => {
   let isSelected = props.politicalPartyChoose.isSelected;
   if (!hasValue(isSelected)) { return null; }
 
-  if (isSelected !== 'Yes') {
-    if(isSelected === 'I do not wish to choose a political party') { isSelected = 'No Answer'; }
+  if (isSelected === 'Skip') {
+    let answer = 'No Answer'
     return (
       <div className='summary-section'>
-        <p> Political Party: {isSelected} </p>
+        <p> Political Party: {answer} </p>
       </div>
     );
   }

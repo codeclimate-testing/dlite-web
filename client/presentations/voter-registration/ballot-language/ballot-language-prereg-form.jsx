@@ -1,12 +1,24 @@
 'use strict';
 
-import React from 'react';
+import React                from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
 import Page               from '../../../containers/page.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
 
-const VALUES = ['English', 'Chinese', 'Japanese', 'Spanish', 'Thai', 'Korean', 'Tagalog', 'Hindi', 'Khmer', 'Vietnamese'];
+const values = {
+  English   : 'English',
+  Chinese   : 'Chinese',
+  Japanese  : 'Japanese',
+  Spanish   : 'Spanish',
+  Thai      : 'Thai',
+  Korean    : 'Korean',
+  Tagalog   : 'Tagalog',
+  Hindi     : 'Hindi',
+  Khmer     : 'Khmer',
+  Vietnamese: 'Vietnamese'
+};
 
 const BallotLanguageFormPreReg = (props) => {
 
@@ -19,12 +31,42 @@ const BallotLanguageFormPreReg = (props) => {
         <h4>Choose a language for your election materials.</h4>
         <form onSubmit={props.onSubmit} className='ballot-language-form'>
           <div className='inner-bottom'>
-            <SelectorCollection
+            <RadioCollection  
+              {...props}
               name='ballotLanguage'
-              values={VALUES}
-              onChange={props.onChange}
-              selectedValue={props.selectedValue}
-            />
+              text={values}
+            >
+              <RadioSelector
+                value='English'
+              />
+              <RadioSelector
+                value='Chinese'
+              />
+              <RadioSelector
+                value='Japanese'
+              />
+              <RadioSelector
+                value='Spanish'
+              />
+              <RadioSelector
+                value='Thai'
+              />
+              <RadioSelector
+                value='Korean'
+              />
+              <RadioSelector
+                value='Tagalog'
+              />
+              <RadioSelector
+                value='Hindi'
+              />
+              <RadioSelector
+                value='Khmer'
+              />
+              <RadioSelector
+                value='Vietnamese'
+              />
+          </RadioCollection>
           </div>
 
           <NavigationButtons {...props} />

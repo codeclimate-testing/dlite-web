@@ -51,8 +51,8 @@ describe('LicenseIDHistoryPage', function() {
           <LicenseIDHistoryPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="isIssuedYes"]').length, 'yes button missing');
-      assert.ok(component.find('label[for="isIssuedNo"]').length, 'no button missing');
+      assert.ok(component.find('label[for="isIssued-Yes"]').length, 'yes button missing');
+      assert.ok(component.find('label[for="isIssued-No"]').length, 'no button missing');
       assert.ok(component.find('.license-and-id-history-form').length, 'form missing');
     });
 

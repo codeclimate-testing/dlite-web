@@ -1,7 +1,7 @@
 'use strict';
 
 import React                             from 'react';
-import { connect }                       from 'react-redux';
+import connectForm                       from '../../helpers/connect-form';
 
 import { updateEligibilityRequirements } from '../../actions/index';
 import EligibilityRequirements           from '../../presentations/voter-registration/eligibility-requirements/eligibility-requirements-form.jsx';
@@ -31,7 +31,6 @@ const Page = (props) => {
       {...props}
       onSubmit={onSubmit}
       onBack={onBack}
-      onChange={props.onChange}
       selectedValue={props.eligibilityRequirements}
       continueDisabled={continueDisabled}
     />
@@ -46,14 +45,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateEligibilityRequirements, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
-
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateEligibilityRequirements, Page);

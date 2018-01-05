@@ -38,7 +38,7 @@ module.exports = function(world) {
 
   world.and('I have already entered my social security number', function(done) {
     browser
-      .click('label[for="hasSocialSecurityYes"]')
+      .click('label[for="hasSocialSecurity-Yes"]')
       .waitForSelector('.social-security-enter-form')
       .type('#part1', '123')
       .type('#part2', '45')
@@ -89,14 +89,14 @@ module.exports = function(world) {
 
   world.when('I select Yes for social security', function(done){
     browser
-      .click('label[for="hasSocialSecurityYes"]')
+      .click('label[for="hasSocialSecurity-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.when('I select No for social security', function(done){
     browser
-      .click('label[for="hasSocialSecurityNo"]')
+      .click('label[for="hasSocialSecurity-No"]')
       .then(() => { done(); })
       .catch(done);
   });

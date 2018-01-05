@@ -2,11 +2,17 @@
 
 import React from 'react';
 
-import SelectorCollection from '../selector-collection.jsx';
+import RadioCollection    from '../radio-selector-collection.jsx';
+import RadioSelector      from '../radio-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
 
 const Form = (props) => {
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
+
   return (
     <Page
       {...props}
@@ -20,12 +26,19 @@ const Form = (props) => {
         <h4>Would you like this card for no fee?</h4>
 
         <div className='row inner-bottom'>
-          <SelectorCollection
+          <RadioCollection 
+            {...props}
             name='seniorID'
-            values={['Yes', 'No']}
-            selectedValue={props.seniorID}
-            onChange={props.onChange}
-          />
+            text={values}
+          >
+            <RadioSelector
+              value='Yes'
+            />
+            <RadioSelector
+              value='No'
+            />
+          </RadioCollection>
+ 
         </div>
 
         <NavigationButtons

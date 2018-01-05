@@ -1,20 +1,15 @@
 'use strict';
 
 import { hasValue }           from '../data/validations';
-import * as dataPresent       from '../data-present';
 import {
   getID,
   getDL
 } from './card-type'
 
 export const validToContinue = (props) => {
-  let valid = dataPresent.realID(props.realID);
+  let toCheck = mustChooseCard(props) ? props.realID.realIdDesignation : props.realID.getRealID;
 
-  if (mustChooseCard(props)) {
-    valid = hasValue(props.realID.realIdDesignation);
-  }
-
-  return valid;
+  return hasValue(toCheck)
 };
 
 export const mustChooseCard = (props) => {

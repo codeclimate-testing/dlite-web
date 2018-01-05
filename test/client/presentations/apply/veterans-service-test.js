@@ -19,7 +19,7 @@ describe('VeteransServicePage', function() {
   beforeEach(function() {
     let veteransService = {
       isVeteran: '',
-      receiveBenfits: '',
+      receiveBenefits: '',
       previouslyDesignated: '',
       veteransIdentifier: ''
     };
@@ -56,8 +56,8 @@ describe('VeteransServicePage', function() {
           <VeteransPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="isVeteranYes"]').length, 'yes button missing');
-      assert.ok(component.find('label[for="isVeteranNo"]').length, 'no button missing');
+      assert.ok(component.find('label[for="isVeteran-Yes"]').length, 'yes button missing');
+      assert.ok(component.find('label[for="isVeteran-No"]').length, 'no button missing');
       assert.ok(component.find('.veterans-questionnaire-form').length, 'form missing');
     });
 
@@ -207,7 +207,7 @@ describe('VeteransServicePage', function() {
 
         let component = render(
           <Wrapper>
-          <VeteransPage {...props} />
+            <VeteransPage {...props} />
           </Wrapper>
         );
         assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
@@ -219,7 +219,7 @@ describe('VeteransServicePage', function() {
 
         let component = render(
           <Wrapper>
-          <VeteransPage {...props} />
+            <VeteransPage {...props} />
           </Wrapper>
         );
         assert.equal(props.continueDisabled, true);
@@ -238,7 +238,7 @@ describe('VeteransServicePage', function() {
 
         let component = render(
           <Wrapper>
-          <VeteransPage {...props} />
+            <VeteransPage {...props} />
           </Wrapper>
         );
         assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
@@ -249,7 +249,7 @@ describe('VeteransServicePage', function() {
 
         let component = render(
           <Wrapper>
-          <VeteransPage {...props} />
+            <VeteransPage {...props} />
           </Wrapper>
         );
         assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');

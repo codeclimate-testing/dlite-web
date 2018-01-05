@@ -54,7 +54,7 @@ module.exports = function(world) {
       .type('#homeCity', 'Crazidino')
       .select('#homeState', 'CA')
       .type('#homeZip', '94666')
-      .click('label[for="homeAddressSameAsMailingYes"]')
+      .click('label[for="homeAddressSameAsMailing-true"]')
       .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -111,14 +111,14 @@ module.exports = function(world) {
 
   world.when('I select address interstitial Yes', function(done){
     browser
-    .click('label[for="homeAddressSameAsMailingYes"]')
+    .click('label[for="homeAddressSameAsMailing-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select address interstitial No', function(done){
     browser
-    .click('label[for="homeAddressSameAsMailingNo"]')
+    .click('label[for="homeAddressSameAsMailing-No"]')
     .then(() => { done(); })
     .catch(done);
   });

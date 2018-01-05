@@ -79,7 +79,8 @@ describe('Data helpers for real-id', function() {
     it('should be false if the person is choosing a real id and has not yet chosen which card', function() {
       let data = {
         realID: {
-          getRealID: 'Yes'
+          getRealID: 'Yes',
+          realIdDesignation: ''
         },
         cardType: {
           new: ['ID', 'DL'],
@@ -89,7 +90,7 @@ describe('Data helpers for real-id', function() {
       assert.equal(validToContinue(data), false);
     });
 
-    it('should be false if the person is choosing a real id and does not need to choose a card', function() {
+    it('should be true if the person is choosing a real id and does not need to choose a card', function() {
       let data = {
         realID: {
           getRealID: 'Yes'

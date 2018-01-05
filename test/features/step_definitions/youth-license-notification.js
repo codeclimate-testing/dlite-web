@@ -17,7 +17,7 @@ module.exports = function (world) {
 
   world.when('I click to get an ID instead', function(done) {
     browser
-      .click('label[for="Yes"]')
+      .click('label[for="youthIDInstead-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });

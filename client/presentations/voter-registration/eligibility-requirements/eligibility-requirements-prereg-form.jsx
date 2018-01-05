@@ -1,12 +1,17 @@
 'use strict';
 
-import React from 'react';
+import React            from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
 import Page               from '../../../containers/page.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
 
-const VALUES = ['Yes', 'No', 'Skip Section'];
+const values = {
+  Yes: 'Yes',
+  No: 'No',
+  Skip: 'Skip Section'
+};
 
 const PreRegEligibilityRequirements = (props) => {
 
@@ -31,12 +36,21 @@ const PreRegEligibilityRequirements = (props) => {
         <br></br>
         <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div className='inner-bottom'>
-            <SelectorCollection
+            <RadioCollection  
+              {...props}
               name='eligibilityRequirements'
-              values={VALUES}
-              onChange={props.onChange}
-              selectedValue={props.selectedValue}
-            />
+              text={values}
+            >
+              <RadioSelector 
+                value='Yes'
+              />
+              <RadioSelector 
+                value='No'
+              />
+              <RadioSelector 
+                value='Skip'
+              />
+            </RadioCollection>
           </div>
 
           <NavigationButtons {...props} />

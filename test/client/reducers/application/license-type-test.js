@@ -34,7 +34,7 @@ describe('licenseTypeReducer', function() {
         {
           type: [],
           endorsement: [],
-          needEndorsement: 'Yes'
+          needEndorsement: true
         },
         {
           type: 'UPDATE_LICENSE_TYPE',
@@ -47,7 +47,7 @@ describe('licenseTypeReducer', function() {
       {
         type: [],
         endorsement: ['firefighter'],
-        needEndorsement: 'Yes'
+        needEndorsement: true
       }
     );
   });
@@ -64,14 +64,14 @@ describe('licenseTypeReducer', function() {
           type: 'UPDATE_LICENSE_TYPE',
           payload: {
             name: 'needEndorsement',
-            value: 'Yes'
+            value: true
           }
         }
       ),
       {
         type: [],
         endorsement: [],
-        needEndorsement: 'Yes'
+        needEndorsement: true
       }
     );
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 import React                  from 'react';
-import { connect }            from 'react-redux';
+import connectForm            from '../../helpers/connect-form';
 
 import { updateLicenseType }  from "../../actions/index";
 import Presentation           from "../../presentations/intro/license-type-page.jsx";
@@ -35,18 +35,10 @@ const mapStateToProps = (state) => {
   return {
     cardType:     state.application.cardType,
     seniorID:     state.application.seniorID,
-    licenseType:  state.application.licenseType
+    licenseType:  state.application.licenseType,
+    focused:      state.ui.focus
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateLicenseType, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
+export default connectForm(mapStateToProps, updateLicenseType, Page);
 
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);

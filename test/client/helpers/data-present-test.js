@@ -182,41 +182,42 @@ describe('dataPresent', function() {
       let data = {
         part1: '5',
         part2: '5',
-        part3: '5'
+        part3: '5',
+        hasSocialSecurity: 'Yes'
       };
       assert(dataPresent.socialSecurity(data), 'ssn data not considered present with all three parts');
     });
 
     it('is false without the social security', function() {
-      assert(!dataPresent.socialSecurity({part1: '5', part2: '5'}), 'ssn data present with only partial fields');
+      assert(!dataPresent.socialSecurity({part1: '5', part2: '5', hasSocialSecurity: 'Yes'}), 'ssn data present with only partial fields');
     });
   });
 
   describe('#licenseIssues', function() {
     it('is true when all three parts of date are present', function() {
       assert(
-        dataPresent.licenseIssues({month: '10', day: '15', year: '1985'}),
+        dataPresent.licenseIssues({month: '10', day: '15', year: '1985', reason: 'something', isSuspended: 'Yes'}),
         'suspended license date not present with all fields'
       );
     });
 
     it('is false when only partial date present', function() {
       assert(
-        !dataPresent.licenseIssues({month: '10', year: '1985'}),
+        !dataPresent.licenseIssues({month: '10', year: '1985', day: '', isSuspended: 'Yes'}),
         'suspended license date present with only parts of date'
       );
     });
 
-    it('is true when ony reason is present', function() {
+    it('is true when only reason is present', function() {
       assert(
-        dataPresent.licenseIssues({'reason': 'Testing for your presence'}),
+        dataPresent.licenseIssues({'reason': 'Testing for your presence', isSuspended: 'Yes'}),
         'suspended license not present with just reason field'
       );
     });
 
     it('is true when ony isSuspended is present', function() {
       assert(
-        dataPresent.licenseIssues({'isSuspended': 'Yes'}),
+        dataPresent.licenseIssues({'isSuspended': 'No'}),
         'suspended license not present with just isSuspended field'
       );
     });

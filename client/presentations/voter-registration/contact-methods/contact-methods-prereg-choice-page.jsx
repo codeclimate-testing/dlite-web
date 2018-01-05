@@ -3,8 +3,8 @@
 import React                    from 'react';
 import NavigationButtons        from '../../navigation-buttons.jsx';
 import Page                     from '../../../containers/page.jsx';
-import PreRegContactChoice      from '../../../presentations/voter-registration/contact-methods/contact-methods-prereg-choice.jsx';
-import ContactDetails           from '../../../presentations/voter-registration/contact-methods/contact-methods-details.jsx';
+import PreRegContactChoice      from './contact-methods-prereg-choice.jsx';
+import ContactDetails           from './contact-methods-details.jsx';
 
 const PreRegContactMethodsPage = (props) => {
 
@@ -21,9 +21,9 @@ const PreRegContactMethodsPage = (props) => {
         />
 
         <ContactDetails
-        {...props} 
-        onChange={props.onChange}
-        contactDetails={props.contactMethods}
+          {...props} 
+          onChange={props.onChange}
+          contactDetails={props.contactMethods}
         />
         
         <NavigationButtons {...props} />

@@ -9,7 +9,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out/opt-out-form.jsx';
+import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out/opt-out-radio-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('OptOutPage', function() {
@@ -45,7 +45,7 @@ describe('OptOutPage', function() {
     assert.ok(component.find('.opt-out-form').length, 'form missing');
     assert.ok(component.find('label[for="optOut-new"]').length, 'new voter button missing');
     assert.ok(component.find('label[for="optOut-existing"]').length, 'existing voter button missing');
-    assert.ok(component.find('label[for="optOut-opt-out"]').length, 'Opt out button missing');
+    assert.ok(component.find('label[for="optOut-optOut"]').length, 'Opt out button missing');
   });
 });
 });

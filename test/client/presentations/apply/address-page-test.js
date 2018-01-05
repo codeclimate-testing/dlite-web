@@ -35,12 +35,14 @@ describe('AddressPage', function() {
       };
       let onMailingChange = spy();
       let onHomeChange = spy();
+      let focused = '';
 
       props = {
         homeAddress,
         mailingAddress,
         onMailingChange,
-        onHomeChange
+        onHomeChange,
+        focused
       }
     });
 

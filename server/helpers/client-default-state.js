@@ -25,7 +25,7 @@ const state  = {
     },
     reducedFee: {
       ID: '',
-      form: 'No'
+      form: ''
     },
     homeAddress: {
       street_1: '',

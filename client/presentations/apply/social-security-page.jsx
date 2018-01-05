@@ -15,7 +15,7 @@ const SocialPage = (props) => {
     >
       <form onSubmit={ props.onSubmit } className='social-security-form'>
         <SocialSecurityOption
-          onChange      = { props.onChange }
+          {...props}
           selectedValue = { props.socialSecurity.hasSocialSecurity }
         />
 

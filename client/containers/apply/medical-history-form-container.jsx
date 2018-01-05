@@ -3,11 +3,11 @@
 import React                      from 'react';
 import { updateMedicalHistory }   from '../../actions/index';
 import * as dataPresent           from '../../helpers/data-present';
-import { connect }                from 'react-redux';
+import connectForm                from '../../helpers/connect-form';
 import handlers                   from '../../helpers/handlers';
 import Presentation               from '../../presentations/apply/medical-history-page.jsx';
 
-const ConnectedForm = (props) => {
+const Page = (props) => {
   let continueDisabled            = !(dataPresent.hasMedicalCondition(props.medicalHistory))
   let showEnterMedicalCondition   = false
   let onSubmit                    = handlers.navigateOnSubmit('/my-history/license-and-id', props);
@@ -30,18 +30,5 @@ function mapStateToProps(state) {
   };
 };
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateMedicalHistory, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
+export default connectForm(mapStateToProps, updateMedicalHistory, Page);
 
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);

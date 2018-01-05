@@ -1,7 +1,7 @@
 'use strict';
 
 import React                    from 'react';
-import { connect }              from 'react-redux';
+import connectForm              from '../../helpers/connect-form';
 
 import { updateBallotLanguage } from '../../actions/index';
 import BallotLanguageForm       from '../../presentations/voter-registration/ballot-language/ballot-language-form.jsx';
@@ -37,14 +37,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateBallotLanguage, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
+export default connectForm(mapStateToProps, updateBallotLanguage, Page);
 
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);

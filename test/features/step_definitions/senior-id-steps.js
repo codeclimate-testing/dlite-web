@@ -7,7 +7,7 @@ module.exports = function(world) {
 
   world.when('I select yes to get a senior id', function(done) {
     browser
-      .click('label[for="seniorIDYes"]')
+      .click('label[for="seniorID-Yes"]')
       .then( () => { done(); })
       .catch(done);
   });
@@ -24,7 +24,7 @@ module.exports = function(world) {
 
   world.and('I select no to not get a senior id', function(done) {
     browser
-      .click('label[for="seniorIDNo"]')
+      .click('label[for="seniorID-No"]')
       .then( () => { done(); })
       .catch(done);
   });

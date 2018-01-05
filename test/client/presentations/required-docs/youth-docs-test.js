@@ -28,7 +28,7 @@ describe('Required Docs for Youth', function() {
       hasMedicalCondition: 'No'
     },
     reducedFee: {
-      ID: 'No'
+      ID: false
     }
   };
 

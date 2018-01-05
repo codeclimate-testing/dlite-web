@@ -2,31 +2,43 @@
 
 import React from 'react';
 
-import SelectorCollection     from '../../selector-collection.jsx';
-import { getDL }              from '../../../helpers/data/card-type';
+import RadioSelector        from '../../radio-selector.jsx';
+import RadioCollection      from '../../radio-selector-collection.jsx';
+import { getDL }            from '../../../helpers/data/card-type';
 
-const OPTIONS = ['Yes', 'No'];
 const driversLicense = 'Drivers License';
 let cardType = 'ID';
 
 const VeteransPreviousDesignation = (props) => {
+  if(props.veteransService.isVeteran !== 'Yes' || props.cardAction !== 'renew') { return null; }
+
   if(getDL(props)) {
     cardType = driversLicense;
   } else {
     cardType;
   }
 
-  if(props.veteransService.isVeteran !== 'Yes' || props.cardAction !== 'renew') { return null; }
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
+
   return (
     <div className='veterans-previous-designation-form'>
       <h4>Is "Veteran" printed on your {cardType}?</h4>
       <div className='input-container'>
-        <SelectorCollection
+        <RadioCollection 
+          {...props}
           name='previouslyDesignated'
-          values={['Yes', 'No']}
-          onChange={ props.onChange }
-          selectedValue={props.selectedValue}
-        />
+          text={values}
+        >
+          <RadioSelector 
+            value='Yes'
+          />
+          <RadioSelector 
+            value='No'
+          />
+        </RadioCollection>
       </div>
     </div>
   );

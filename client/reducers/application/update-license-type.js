@@ -17,8 +17,7 @@ const formReducer = (state = defaultState(), action) => {
 
   let data = Object.assign({}, state);
   let name = action.payload.name;
-  let value = action.payload.value;
-
+  let value = action.payload.value === 'true' ? true : action.payload.value === 'false' ? false : action.payload.value;
   if (name === 'needEndorsement') {
     data[name] = value;
   } else {

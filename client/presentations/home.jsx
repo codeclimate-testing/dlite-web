@@ -17,7 +17,7 @@ const getStartedLinkData = [
   {description: 'date of birth',                          path: '/my-basics/date-of-birth'},
   {description: 'what do you want to do today',           path: '/what-do-you-want-to-do-today'},
   {description: 'choose card type',                       path: '/select-id-dl'},
-  {description: 'current card info',                      path: '/current-card-info'},
+  {description: 'current card info',                      path: '/current-card-information'},
   {description: 'youth DL message',                       path: '/youth-license-notification'},
   {description: 'senior ID',                              path: '/senior-id'},
   {description: 'real ID',                                path: '/real-id'},

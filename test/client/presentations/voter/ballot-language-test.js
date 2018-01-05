@@ -42,16 +42,16 @@ describe('BallotLanguagePage', function() {
           <BallotLanguagePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="ballotLanguageJapanese"]').length, 'Japanese option missing');
-      assert.ok(component.find('label[for="ballotLanguageEnglish"]').length, 'English option missing');
-      assert.ok(component.find('label[for="ballotLanguageChinese"]').length, 'Chinese option missing');
-      assert.ok(component.find('label[for="ballotLanguageSpanish"]').length, 'Spanish option missing');
-      assert.ok(component.find('label[for="ballotLanguageThai"]').length, 'Thai option missing');
-      assert.ok(component.find('label[for="ballotLanguageKorean"]').length, 'Korean option missing');
-      assert.ok(component.find('label[for="ballotLanguageTagalog"]').length, 'Tagalog option missing');
-      assert.ok(component.find('label[for="ballotLanguageHindi"]').length, 'Hindi option missing');
-      assert.ok(component.find('label[for="ballotLanguageKhmer"]').length, 'Khmer option missing');
-      assert.ok(component.find('label[for="ballotLanguageVietnamese"]').length, 'Vietnamese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Japanese"]').length, 'Japanese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-English"]').length, 'English option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Chinese"]').length, 'Chinese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Spanish"]').length, 'Spanish option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Thai"]').length, 'Thai option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Korean"]').length, 'Korean option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Tagalog"]').length, 'Tagalog option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Hindi"]').length, 'Hindi option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Khmer"]').length, 'Khmer option missing');
+      assert.ok(component.find('label[for="ballotLanguage-Vietnamese"]').length, 'Vietnamese option missing');
       assert.ok(component.find('.ballot-language-form').length, 'form missing');
     });
 

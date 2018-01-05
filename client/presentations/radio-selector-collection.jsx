@@ -3,33 +3,38 @@
 import React from 'react';
 
 const calculateTabIndex = (props, value, values) => {
-  let tabIndex = '-1';
-  let selected = (props.selectedValue === value);
+  let tabIndex  = '-1';
+  let selected  = (props.selectedValue === value);
   let firstValue = values[0];
 
   if (selected || (!props.selectedValue && value === firstValue)) {
-    tabIndex = '0';
+    tabIndex    = '0';
   }
 
   return tabIndex;
 };
 
 const childPropsAdditions = (props, value, values) => {
-  const selected = props.selectedValue === value;
-  let tabIndex = calculateTabIndex(props, value, values);
-  let focused = props.focused === value;
-  let custom = props.custom ? props.custom : false;
+  const selected  = props.selectedValue === value;
+  let tabIndex    = calculateTabIndex(props, value, values);
+  let focus       = props.focused ? props.focused.split('-') : '';
+  let focusedName = focus[0];
+  let focusedValue = focus[1];
+  let focused     = focusedValue === value && focusedName === props.name;
+  let custom      = props.custom ? props.custom : false;
+  let text        = props.text ? props.text[value] : ''
 
   return {
-    name: props.name,
-    key: value,
+    name    : props.name,
+    key     : value,
     selected: selected,
     tabIndex: tabIndex,
-    focused: focused,
-    custom: custom,
+    focused : focused,
+    custom  : custom,
     onChange: props.onChange,
-    onBlur: props.onBlur,
-    onFocus: props.onFocus
+    onBlur  : props.onBlur,
+    onFocus : props.onFocus,
+    text    : text
   };
 };
 

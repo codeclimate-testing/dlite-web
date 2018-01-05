@@ -39,8 +39,8 @@ describe('NamesHistoryPage', function() {
           <NamesHistoryPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="hasUsedPreviousNamesNo"]').length, 'No button missing');
-      assert.ok(component.find('label[for="hasUsedPreviousNamesYes"]').length, 'Yes button missing');
+      assert.ok(component.find('label[for="hasUsedPreviousNames-No"]').length, 'No button missing');
+      assert.ok(component.find('label[for="hasUsedPreviousNames-Yes"]').length, 'Yes button missing');
       assert.ok(component.find('.previous-names-form').length, 'form missing');
     });
 

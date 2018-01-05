@@ -1,7 +1,7 @@
 'use strict';
 
 import React                    from 'react';
-import { connect }              from 'react-redux';
+import connectForm              from '../../helpers/connect-form';
 
 import handlers                 from '../../helpers/handlers';
 import * as dataPresent         from '../../helpers/data-present';
@@ -9,7 +9,7 @@ import * as dataPresent         from '../../helpers/data-present';
 import { updateSocialSecurity } from "../../actions/index";
 import Presentation             from '../../presentations/apply/social-security-page.jsx';
 
-import { getDL }                  from '../../helpers/data/card-type';
+import { getDL }                from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let nextAddress       = getDL(props) ? '/my-history/medical' : '/my-history/license-and-id';
@@ -30,22 +30,9 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     socialSecurity: state.application.socialSecurity,
-    cardType: state.application.cardType
+    cardType:       state.application.cardType,
+    focused:        state.ui.focus
   };
 };
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateSocialSecurity, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
-
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateSocialSecurity, Page);

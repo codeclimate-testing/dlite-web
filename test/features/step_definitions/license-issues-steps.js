@@ -21,14 +21,14 @@ module.exports = function(world) {
 
   world.when('I select suspended license Yes', function(done){
     browser
-    .click('label[for="isSuspendedYes"]')
+    .click('label[for="isSuspended-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select suspended license No', function(done){
     browser
-    .click('label[for="isSuspendedNo"]')
+    .click('label[for="isSuspended-No"]')
     .then(() => { done(); })
     .catch(done);
   });

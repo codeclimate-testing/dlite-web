@@ -44,8 +44,8 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="IDYes"]').length, 'reduced Yes button missing');
-      assert.ok(component.find('label[for="IDNo"]').length, 'reduced No button missing');
+      assert.ok(component.find('label[for="ID-Yes"]').length, 'reduced Yes button missing');
+      assert.ok(component.find('label[for="ID-No"]').length, 'reduced No button missing');
     });
 
     it('next button is disabled', function() {
@@ -77,8 +77,8 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="formYes"]').length, 'form Yes button missing');
-      assert.ok(component.find('label[for="formNo"]').length, 'form No button missing');
+      assert.ok(component.find('label[for="form-Yes"]').length, 'form Yes button missing');
+      assert.ok(component.find('label[for="form-No"]').length, 'form No button missing');
     });
 
     it('has special language if user is getting both new ID and new DL', function() {

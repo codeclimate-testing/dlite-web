@@ -7,6 +7,10 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 
 const Form = (props) => {
   if(props.cardAction === 'new') { return null; }
+  let values = {
+    ID: 'ID',
+    DL: 'Driver License'
+  };
 
   return (
     <div className='row inner-bottom chooseRenewCard'>
@@ -14,14 +18,13 @@ const Form = (props) => {
         {...props}
         name='renew'
         selectedValue={props.cardType.renew}
+        text={values}
       >
         <RadioSelector 
           value='ID'
-          text='ID'
         />
         <RadioSelector
           value='DL'
-          text='Driver License'
         />
       </RadioCollection>
       <div className='unit spacer' />

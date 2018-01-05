@@ -34,7 +34,7 @@ describe('SeniorIDPage', function() {
         <SeniorIDPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.find('label[for="seniorIDNo"]').length, 'No button missing');
-    assert.ok(component.find('label[for="seniorIDYes"]').length, 'Yes button missing');
+    assert.ok(component.find('label[for="seniorID-No"]').length, 'No button missing');
+    assert.ok(component.find('label[for="seniorID-Yes"]').length, 'Yes button missing');
   });
 });

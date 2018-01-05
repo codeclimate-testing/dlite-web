@@ -84,9 +84,12 @@ function getDateOfBirth(application) {
 
 function getHomeAddress(addresses) {
   let home_address = {};
+  let sameAddresses = 'Yes';
   addresses.forEach(function(address) {
     if(address.type === 'home'){
       home_address = address;
+    } else if(address.type === 'mailing') {
+      sameAddresses = 'No';
     }
   });
   return {
@@ -94,7 +97,8 @@ function getHomeAddress(addresses) {
     street_2: home_address.street_address_2,
     city:     home_address.city,
     state:    home_address.state,
-    zip:      home_address.zip
+    zip:      home_address.zip,
+    homeAddressSameAsMailing: sameAddresses
   };
 
 }

@@ -5,6 +5,10 @@ import RadioSelector      from '../../radio-selector.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 
 const DonateOrgan = (props) => {
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
   return (
     <div className='donate-organ-form'>
       <h4>Do you wish to be an organ or tissue donor?</h4>
@@ -14,14 +18,13 @@ const DonateOrgan = (props) => {
         <RadioCollection
           {...props}
           name='donateOrgan'
+          text={values}
         >
           <RadioSelector
             value='Yes'
-            text='Yes'
           />
           <RadioSelector
             value='No'
-            text='No'
           />
         </RadioCollection>
       </div>

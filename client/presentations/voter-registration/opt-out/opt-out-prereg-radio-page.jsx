@@ -3,9 +3,8 @@
 import React                   from 'react';
 
 import Page                    from '../../../containers/page.jsx';
-import RadioSelectorCollection from '../../radio-selector-collection.jsx';
+import OptOutForm              from './opt-out-prereg-form.jsx';
 import NavigationButtons       from '../../navigation-buttons.jsx';
-
 
 const PreRegOptOutRadioFormContainer = (props) => {
   return (
@@ -16,17 +15,7 @@ const PreRegOptOutRadioFormContainer = (props) => {
       <div>
         <h4>Which best describes you?</h4>
         <form onSubmit={props.onSubmit} className='opt-out-form'>
-          <RadioSelectorCollection
-            name='optOut'
-            onChange={props.onChange}
-            onBlur={props.onBlur}
-            onFocus={props.onFocus}
-            selectedValue={props.selectedValue}
-            focused={props.focused}
-          >
-            {props.children}
-          </RadioSelectorCollection>
-
+          <OptOutForm {...props} />
           <NavigationButtons {...props} />
         </form>
       </div>
@@ -35,5 +24,3 @@ const PreRegOptOutRadioFormContainer = (props) => {
 };
 
 export default PreRegOptOutRadioFormContainer;
-
-

@@ -7,14 +7,14 @@ module.exports = function(world) {
 
   world.and('I click yes to getting a real id', function(done) {
       browser
-        .click('label[for="getRealIDYes"]')
+        .click('label[for="getRealID-Yes"]')
         .then(() => { done(); })
         .catch(done);
   });
 
   world.and('I click no to getting a real id', function(done) {
       browser
-        .click('label[for="getRealIDNo"]')
+        .click('label[for="getRealID-No"]')
         .then(() => { done(); })
         .catch(done);
   });

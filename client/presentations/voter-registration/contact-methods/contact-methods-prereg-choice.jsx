@@ -1,10 +1,15 @@
 'use strict';
 
-import React from 'react';
+import React              from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
 
-const VALUES = ['Yes', 'No', 'Skip Question'];
+const values = {
+  Yes: 'Yes',
+  No: 'No',
+  Skip: 'Skip Section'
+};
 
 const PreRegContactChoice = (props) => {
 
@@ -13,12 +18,21 @@ const PreRegContactChoice = (props) => {
       <div className='contact-methods-choice-form'>
         <h4>Would you like to receive election information via email or text</h4>
         <div className='inner-bottom'>
-          <SelectorCollection
+          <RadioCollection  
+            {...props}
             name='shouldContact'
-            values={VALUES}
-            onChange={props.onChange}
-            selectedValue={props.selectedValue}
-          />
+            text={values}
+          >
+            <RadioSelector 
+              value='Yes'
+            />
+            <RadioSelector 
+              value='No'
+            />
+            <RadioSelector 
+              value='Skip'
+            />
+          </RadioCollection>
         </div>
 
         <div className='inner-bottom'>

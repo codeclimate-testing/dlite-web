@@ -16,7 +16,7 @@ const BulletList = (props) => {
     bulletList.push(<li key='social-security' >Proof of Social Security Number</li>);
   }
   bulletList.push(<li key='ca-residency' >California residency</li>);
-  if(props.veteransService.isVeteran === 'Yes' && props.veteransService.veteransIdentifier === 'Yes') {
+  if(props.veteransService.isVeteran === 'Yes'  && props.veteransService.veteransIdentifier === 'Yes') {
     bulletList.push(<li key='proof-veteran-service' >Proof of veterans service</li>);
   }
   if(props.medicalHistory.hasMedicalCondition === 'Yes') {

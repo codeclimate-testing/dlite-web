@@ -6,6 +6,10 @@ import RadioCollection    from '../../radio-selector-collection.jsx';
 import FAQDrawer          from '../../faq-drawer.jsx';
 
 const DonateContribution = (props) => {
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
   return (
     <div className='donate-money-form'>
       <h4>Do you want to make a voluntary contribution of $2?</h4>
@@ -15,14 +19,13 @@ const DonateContribution = (props) => {
           <RadioCollection
             {...props}
             name='donateMoney'
+            text={values}
           >
             <RadioSelector
               value='Yes'
-              text='Yes'
             />
             <RadioSelector
               value='No'
-              text='No'
             />
           </RadioCollection>
         </div>

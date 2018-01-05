@@ -1,13 +1,13 @@
 'use strict';
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect }            from 'react-redux';
 
 import handlers               from '../../helpers/handlers';
 import * as dataPresent       from '../../helpers/data-present';
 import { NamePageValidator }  from '../../helpers/validations';
 
-import { updateLegalName } from '../../actions/index';
+import { updateLegalName }    from '../../actions/index';
 
 import Presentation           from '../../presentations/intro/name-page.jsx';
 

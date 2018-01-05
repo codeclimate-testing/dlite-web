@@ -16,14 +16,14 @@ module.exports = function(world) {
 
   world.when('I select ballot by mail Yes', function(done){
     browser
-    .click('label[for="ballotByMailYes"]')
+    .click('label[for="ballotByMail-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select ballot by mail No', function(done){
     browser
-    .click('label[for="ballotByMailNo"]')
+    .click('label[for="ballotByMail-No"]')
     .then(() => { done(); })
     .catch(done);
   });

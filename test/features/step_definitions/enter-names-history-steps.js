@@ -14,14 +14,14 @@ module.exports = function(world) {
 
   world.when('I select previously used names Yes', function(done){
     browser
-    .click('label[for="hasUsedPreviousNamesYes"]')
+    .click('label[for="hasUsedPreviousNames-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select previously used names No', function(done){
     browser
-    .click('label[for="hasUsedPreviousNamesNo"]')
+    .click('label[for="hasUsedPreviousNames-No"]')
     .then(() => { done(); })
     .catch(done);
   });
@@ -61,7 +61,7 @@ module.exports = function(world) {
     browser
       .click('a.names-history')
       .waitForSelector('.previous-names')
-      .click('label[for="hasUsedPreviousNamesYes"]')
+      .click('label[for="hasUsedPreviousNames-Yes"]')
       .type('#names', 'previousName1')
       .click('button.forward')
       .click('a.sections')

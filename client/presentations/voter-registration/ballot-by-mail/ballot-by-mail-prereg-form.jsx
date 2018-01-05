@@ -2,12 +2,16 @@
 
 import React                  from 'react';
 
-import SelectorCollection     from '../../selector-collection.jsx';
+import RadioSelector          from '../../radio-selector.jsx';
+import RadioCollection        from '../../radio-selector-collection.jsx';
 import NavigationButtons      from '../../navigation-buttons.jsx';
 import Page                   from '../../../containers/page.jsx';
 
 const BallotByMailFormPreReg = (props) => {
-
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
   return (
     <Page
       {...props}
@@ -19,12 +23,18 @@ const BallotByMailFormPreReg = (props) => {
         <form onSubmit={props.onSubmit} className='ballot-by-mail-form'>
 
           <div className='inner-bottom'>
-            <SelectorCollection
-              name          = 'ballotByMail'
-              values        = {['Yes', 'No']}
-              onChange      = {props.onChange}
-              selectedValue = {props.selectedValue}
-            />
+            <RadioCollection 
+              {...props}
+              name='ballotByMail'
+              text={values}
+            >
+              <RadioSelector 
+                value='Yes'
+              />
+              <RadioSelector 
+                value='No'
+              />
+            </RadioCollection>
           </div>
 
           <div className='inner-bottom'>

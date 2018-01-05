@@ -4,8 +4,8 @@ import React                    from 'react';
 import NavigationButtons        from '../../navigation-buttons.jsx';
 import Page                     from '../../../containers/page.jsx';
 
-import PoliticalPartyChoose     from '../../../presentations/voter-registration/voter-choose-party/voter-choose-party-form.jsx';
-import PoliticalPartyPreference from '../../../presentations/voter-registration/voter-choose-party/political-party-preference.jsx';
+import PoliticalPartyChoose     from './voter-choose-party-form.jsx';
+import PoliticalPartyPreference from './political-party-preference.jsx';
 
 const PoliticalPartyChoosePage = (props) => {
 

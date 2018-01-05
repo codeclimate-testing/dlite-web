@@ -7,21 +7,21 @@ module.exports = function (world) {
 
   world.and('I select No to getting a reduced fee', function(done) {
     browser
-      .click('label[for="IDNo"]')
+      .click('label[for="ID-No"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I select Yes to getting a reduced fee', function(done) {
     browser
-      .click('label[for="IDYes"]')
+      .click('label[for="ID-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.when('I select No to having the correct forms', function(done) {
     browser
-      .click('label[for="formNo"]')
+      .click('label[for="form-No"]')
       .then(() => { done(); })
       .catch(done);
   });

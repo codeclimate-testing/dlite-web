@@ -1,7 +1,7 @@
 'use strict';
 
-import React from 'react';
-import { connect } from "react-redux";
+import React                  from 'react';
+import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 import * as dataPresent       from '../../helpers/data-present';
@@ -53,20 +53,7 @@ function mapStateToProps(state) {
     dateOfBirth:  state.application.dateOfBirth,
     focused:      state.ui.focus
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateCardType, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
+export default connectForm(mapStateToProps, updateCardType, Page);
 
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);

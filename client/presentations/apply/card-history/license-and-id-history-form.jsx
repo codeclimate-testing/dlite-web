@@ -1,7 +1,9 @@
 'use strict';
 
 import React                  from 'react';
-import SelectorCollection     from '../../selector-collection.jsx';
+import RadioSelector        from '../../radio-selector.jsx';
+import RadioCollection      from '../../radio-selector-collection.jsx';
+
 import { 
   getID,
   getDL
@@ -19,17 +21,28 @@ const LicenseAndIdHistory = (props) => {
     licenseAndIdHeader = IDAndDL;
   }
 
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
+
   return (
     <div className='license-and-id-history-form'>
     { licenseAndIdHeader }
 
       <div className='inner-bottom'>
-        <SelectorCollection
+        <RadioCollection
+          {...props}
           name='isIssued'
-          values={['Yes', 'No']}
-          onChange={ props.onChange }
-          selectedValue={ props.selectedValue }
-        />
+          text={values}
+        >
+          <RadioSelector 
+            value='Yes'
+          />
+          <RadioSelector 
+            value='No'
+          />
+        </RadioCollection>
       </div>
     </div>
   );

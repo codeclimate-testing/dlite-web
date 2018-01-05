@@ -1,7 +1,7 @@
 'use strict';
 
 import React                           from 'react';
-import { connect }                     from 'react-redux';
+import connectForm            from '../../helpers/connect-form';
 
 import handlers                        from '../../helpers/handlers';
 import { updatePoliticalPartyChoose }  from '../../actions/index';
@@ -35,18 +35,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange = handlers.onInputChange(updatePoliticalPartyChoose, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
+export default connectForm(mapStateToProps, updatePoliticalPartyChoose, Page);
 
-  return {
-    onChange,
-    onSubmit,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);

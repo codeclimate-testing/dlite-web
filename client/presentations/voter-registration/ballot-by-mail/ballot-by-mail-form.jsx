@@ -1,13 +1,17 @@
 'use strict';
 
-import React                from 'react';
+import React                  from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
-import NavigationButtons  from '../../navigation-buttons.jsx';
-import Page               from '../../../containers/page.jsx';
+import RadioSelector          from '../../radio-selector.jsx';
+import RadioCollection        from '../../radio-selector-collection.jsx';
+import NavigationButtons      from '../../navigation-buttons.jsx';
+import Page                   from '../../../containers/page.jsx';
 
 const BallotByMailForm = (props) => {
-
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
   return (
     <Page
       {...props}
@@ -20,12 +24,18 @@ const BallotByMailForm = (props) => {
         <p>If you answer Yes, you can still vote in-person.</p>
         
           <div className='inner-bottom'>
-            <SelectorCollection
+            <RadioCollection 
+              {...props}
               name='ballotByMail'
-              values={['Yes', 'No']}
-              onChange={props.onChange}
-              selectedValue={props.selectedValue}
-            />
+              text={values}
+            >
+              <RadioSelector 
+                value='Yes'
+              />
+              <RadioSelector 
+                value='No'
+              />
+            </RadioCollection>
           </div>
 
           <div className='inner-bottom'>

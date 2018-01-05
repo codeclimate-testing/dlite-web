@@ -10,7 +10,6 @@ const RadioSelector = function(props) {
   
   let id = props.name + '-' + props.value;
   
-
   return (
     <div className={ className }>
       <div className='outline-container'>

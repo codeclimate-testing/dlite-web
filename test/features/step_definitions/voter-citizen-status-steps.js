@@ -15,21 +15,21 @@ module.exports = function(world) {
 
   world.when('I select citizen Yes', function(done){
     browser
-    .click('label[for="citizenStatusYes"]')
+    .click('label[for="citizenStatus-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select citizen No', function(done){
     browser
-    .click('label[for="citizenStatusNo"]')
+    .click('label[for="citizenStatus-No"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select citizen Skip Section', function(done){
     browser
-    .click('label[for="citizenStatusSkip Section"]')
+    .click('label[for="citizenStatus-Skip"]')
     .then(() => { done(); })
     .catch(done);
   });
@@ -69,7 +69,7 @@ module.exports = function(world) {
     browser
     .click('a.citizen-status')
     .waitForSelector('.citizen-status-form')
-    .click('label[for="citizenStatusYes"]')
+    .click('label[for="citizenStatus-Yes"]')
     .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
@@ -87,7 +87,7 @@ module.exports = function(world) {
 
   world.and('I change my US citizenship status', function(done){
     browser
-    .click('label[for="citizenStatusNo"]')
+    .click('label[for="citizenStatus-No"]')
     .then(() => { done(); })
     .catch(done);
   });

@@ -1,18 +1,17 @@
 'use strict';
 
 import React                  from 'react';
-import { connect }            from 'react-redux';
+import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
-
+import { canContinue }        from '../../helpers/data/reduced-fee';
 import Presentation           from "../../presentations/intro/reduced-fee-page.jsx";
 import { updateReducedFee }   from "../../actions/index";
 
 const Page = (props) => {
   let onSubmit          =   handlers.navigateOnSubmit('/get-started', props);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !dataPresent.reducedFee(props.reducedFee);
+  let continueDisabled  =   !canContinue(props);
 
   return (
     <Presentation
@@ -32,18 +31,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange  = handlers.onInputChange(updateReducedFee, dispatch);
-  const onSubmit  = handlers.onFormSubmit(dispatch);
-  const onBlur    = handlers.onBlur(dispatch);
-  const onFocus   = handlers.onFocus(dispatch);
+export default connectForm(mapStateToProps, updateReducedFee, Page);
 
-  return {
-    onChange,
-    onSubmit,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);

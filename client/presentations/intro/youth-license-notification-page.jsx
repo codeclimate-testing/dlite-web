@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Page               from '../../containers/page.jsx';
-import RadioCollection    from '../radio-collection.jsx';
+import RadioSelector      from '../radio-selector.jsx';
+import RadioCollection    from '../radio-selector-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 import { ageChecks }       from '../../helpers/calculate-age';
@@ -50,6 +51,11 @@ const Form = (props) => {
     props.checkAnswer(e.target.value, false); // update props.cardType.new
   }
 
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
+
   const Header = ageChecks.Under15(props.dateOfBirth) ? Under15FormHeader : YouthFormHeader;
 
   return (
@@ -62,12 +68,19 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
 
           <div className='row inner-bottom'>
-            <RadioCollection
+            <RadioCollection  
+              {...props}
               name='youthIDInstead'
-              values={ ['Yes', 'No'] }
-              onChange={ props.onChange }
-              selectedValue={ props.selectedValue }
-            />
+              text={values}
+            >
+              <RadioSelector 
+                value='Yes'
+              />
+              <RadioSelector 
+                value='No'
+              />
+            </RadioCollection>
+ 
             <div className='unit spacer' />
           </div>
 

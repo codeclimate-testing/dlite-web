@@ -12,32 +12,32 @@ const Form = (props) => {
       <h5>Select all that apply</h5>
       <div className='row inner-bottom'>
         <CheckboxSelector 
+          {...props}
           value =     'car'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.type, 'car') }
           text =      'Car'
         />
         <CheckboxSelector 
+          {...props}
           value =     'cycle'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.type, 'cycle') }
           text =      'Motorcycle or scooter'
         />
         <CheckboxSelector 
+          {...props}
           value =     'trailer'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.type, 'trailer') }
           text =      '5th wheel or livestock trailer'
         />
         <CheckboxSelector 
+          {...props}
           value =     'long'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.type, 'long') }
           text =      'Housecar over 45 feet or trailer over 25 feet'
         />
         <CheckboxSelector 
+          {...props}
           value =     'unsure'
-          onChange =  { props.onChange }
           selected =  { dataPresent.includes(props.licenseType.type, 'unsure') }
           text =      'I’m not sure'
         />

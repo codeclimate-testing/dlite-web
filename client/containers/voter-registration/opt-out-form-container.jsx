@@ -1,16 +1,16 @@
 'use strict';
 
-import React from 'react';
-import { connect } from "react-redux";
+import React                  from 'react';
+import connectForm            from '../../helpers/connect-form';
 
 import { updateOptOut }       from '../../actions/index';
 
-import OptOutForm              from '../../presentations/voter-registration/opt-out/opt-out-form.jsx';
-import PreregOptOutForm        from '../../presentations/voter-registration/opt-out/opt-out-prereg-form.jsx';
+import OptOutForm             from '../../presentations/voter-registration/opt-out/opt-out-radio-page.jsx';
+import PreregOptOutForm       from '../../presentations/voter-registration/opt-out/opt-out-prereg-radio-page.jsx';
 
-import handlers                from '../../helpers/handlers';
-import * as dataPresent        from '../../helpers/data-present';
-import { hasValue }            from '../../helpers/data/validations';
+import handlers               from '../../helpers/handlers';
+import * as dataPresent       from '../../helpers/data-present';
+import { hasValue }           from '../../helpers/data/validations';
 import { eligibleForOptOut, eligibleForOptOutExist
 } from '../../helpers/data/voting';
 import { isPreregistering 
@@ -52,14 +52,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange = handlers.onInputChange(updateOptOut, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateOptOut, Page);

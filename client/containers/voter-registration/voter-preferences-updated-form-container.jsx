@@ -1,9 +1,8 @@
 'use strict';
 
 import React                                from 'react';
-import { connect }                          from 'react-redux';
+import connectForm                          from '../../helpers/connect-form';
 
-import { updateDateOfBirth }                from '../../actions/index';
 import VoterPreferencesIntroUpdated         from '../../presentations/voter-registration/voter-preferences-updated/voter-preferences-intro-updated-form.jsx';
 import PreRegVoterPreferencesIntroUpdated   from '../../presentations/voter-registration/voter-preferences-updated/voter-preferences-info-prereg-updated-form.jsx';
 import handlers                             from '../../helpers/handlers';
@@ -33,12 +32,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onSubmit = handlers.onFormSubmit(dispatch);
-
-  return {
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, null, Page);

@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { connect } from "react-redux";
+import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 import { hasValue }           from '../../helpers/data/validations';
@@ -20,6 +20,7 @@ const Page = (props) => {
       continueDisabled  = { continueDisabled }
       onBack            = { onBack }
       onSubmit          = { onSubmit }
+      selectedValue     = { props.seniorID }
     />
   )
 };
@@ -31,18 +32,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange  = handlers.onInputChange(updateSeniorID, dispatch);
-  const onSubmit  = handlers.onFormSubmit(dispatch);
-  const onBlur    = handlers.onBlur(dispatch);
-  const onFocus   = handlers.onFocus(dispatch);
-
-  return {
-    onChange,
-    onSubmit,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateSeniorID, Page);

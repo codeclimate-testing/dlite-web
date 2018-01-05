@@ -1,7 +1,7 @@
 'use strict';
 
 import React                      from 'react';
-import { connect }                from 'react-redux';
+import connectForm                from '../../helpers/connect-form';
 
 import { updateRealID }           from "../../actions/index";
 import handlers                   from '../../helpers/handlers';
@@ -44,18 +44,9 @@ const mapStateToProps = (state) => {
   return {
     realID :    state.application.realID,
     cardType:   state.application.cardType,
-    seniorID:   state.application.seniorID
+    seniorID:   state.application.seniorID,
+    focused:    state.ui.focus
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateRealID, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
-
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateRealID, Page);

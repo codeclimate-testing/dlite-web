@@ -41,8 +41,8 @@ describe('SocialSecurityPage', function() {
           <SocialSecurityPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="hasSocialSecurityNo"]').length, 'No button missing');
-      assert.ok(component.find('label[for="hasSocialSecurityYes"]').length, 'Yes button missing');
+      assert.ok(component.find('label[for="hasSocialSecurity-No"]').length, 'No button missing');
+      assert.ok(component.find('label[for="hasSocialSecurity-Yes"]').length, 'Yes button missing');
       assert.ok(component.find('.social-security-option-form').length, 'form missing');
       assert.equal(component.find('.social-security-no-form'), false);
     });

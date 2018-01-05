@@ -7,11 +7,11 @@ module.exports = function(world) {
 
   world.then('I will see buttons for Yes, No and Skip Section', function(done) {
     browser
-    .html('label[for="eligibilityRequirementsYes"]')
+    .html('label[for="eligibilityRequirements-Yes"]')
     .then((button) => { assert.ok(button, 'Selector for Yes missing')})
-    .html('label[for="eligibilityRequirementsNo"]')
+    .html('label[for="eligibilityRequirements-No"]')
     .then((button) => { assert.ok(button, 'Selector for No missing')})
-    .html('label[for="eligibilityRequirementsSkip Section"]')
+    .html('label[for="eligibilityRequirements-Skip"]')
     .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
     .then(() => { done();})
     .catch(done);
@@ -19,21 +19,21 @@ module.exports = function(world) {
 
   world.when('I select voter registration Yes', function(done){
     browser
-    .click('label[for="eligibilityRequirementsYes"]')
+    .click('label[for="eligibilityRequirements-Yes"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select voter registration No', function(done){
     browser
-    .click('label[for="eligibilityRequirementsNo"]')
+    .click('label[for="eligibilityRequirements-No"]')
     .then(() => { done(); })
     .catch(done);
   });
 
   world.when('I select voter registration Skip Section', function(done){
     browser
-    .click('label[for="eligibilityRequirementsSkip Section"]')
+    .click('label[for="eligibilityRequirements-Skip"]')
     .then(() => { done(); })
     .catch(done);
   });
@@ -52,7 +52,7 @@ module.exports = function(world) {
   browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('eligibilityRequirementsNo'), 'No not saved in summary');
+      assert.ok(text.includes('eligibilityRequirements-No'), 'No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -71,7 +71,7 @@ module.exports = function(world) {
 world.given('I have already entered my voter eligibility requirement status into the form', function(done){
   browser
     .click('a.eligibility-requirements')
-    .click('label[for="eligibilityRequirementsYes"]')
+    .click('label[for="eligibilityRequirements-Yes"]')
     .click('button.forward')
     .click('a.sections')
     .waitForSelector('.section-links')
@@ -81,7 +81,7 @@ world.given('I have already entered my voter eligibility requirement status into
 
 world.and('I will see the eligibility requirement status I entered', function(done){
   browser
-    .text('.button.selected')
+    .text('.selected')
     .then((eligibility) => { assert.equal(eligibility, 'Yes'); })
     .then(() => { done(); })
     .catch(done);
@@ -89,7 +89,7 @@ world.and('I will see the eligibility requirement status I entered', function(do
 
 world.and('I change my eligibility requirement', function(done){
   browser
-    .click('label[for="eligibilityRequirementsNo"]')
+    .click('label[for="eligibilityRequirements-No"]')
     .then(() => { done(); })
     .catch(done);
 });

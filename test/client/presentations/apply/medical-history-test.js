@@ -39,8 +39,8 @@ describe('MedicalHistoryPage', function() {
           <MedicalPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="hasMedicalConditionYes"]').length, 'yes button missing');
-      assert.ok(component.find('label[for="hasMedicalConditionNo"]').length, 'no button missing');
+      assert.ok(component.find('label[for="hasMedicalCondition-Yes"]').length, 'yes button missing');
+      assert.ok(component.find('label[for="hasMedicalCondition-No"]').length, 'no button missing');
       assert.ok(component.find('.medical-condition-form').length, 'form missing');
     });
 

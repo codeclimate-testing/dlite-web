@@ -2,11 +2,15 @@
 
 import React from 'react';
 
-import HomeLink               from '../../home-link.jsx';
-import SelectorCollection     from '../../selector-collection.jsx';
+import RadioSelector        from '../../radio-selector.jsx';
+import RadioCollection      from '../../radio-selector-collection.jsx';
 
 const VeteransBenefits = (props) => {
   if(props.veteransService.isVeteran !== 'Yes') { return null; }
+  let values = {
+    Yes: 'Yes',
+    No: 'No'
+  };
   return (
     <div className='veterans-benefits-form'>
       <div className='veteran-thank-you-message'>
@@ -14,12 +18,18 @@ const VeteransBenefits = (props) => {
       </div>
       <h4>Would you like to receive benefits information for which you may be eligible?</h4>
       <div className='input-container'>
-        <SelectorCollection
+        <RadioCollection 
+          {...props}
           name='receiveBenefits'
-          values={['Yes', 'No']}
-          onChange={ props.onChange }
-          selectedValue={props.selectedValue}
-        />
+          text={values}
+        >
+          <RadioSelector 
+            value='Yes'
+          />
+          <RadioSelector 
+            value='No'
+          />
+        </RadioCollection>
       </div>
     </div>
   );

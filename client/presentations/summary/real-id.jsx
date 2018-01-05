@@ -1,28 +1,22 @@
 'use strict';
 
-import React from "react";
-import * as dataPresent from '../../helpers/data-present';
+import React              from "react";
+import { hasValue }       from '../../helpers/data/validations';
+
+const Designation = (props) => {
+  if(!hasValue(props.realID.realIdDesignation)){ return null; }
+  return <p>Real ID Designation: {props.realID.realIdDesignation}</p>
+}
 
 const RealID = (props) => {
-  if (!dataPresent.realID(props.realID)) { return null; }
+  if (!hasValue(props.realID.getRealID)) { return null; }
 
-  let realID = props.realID.getRealID;
-  let designation = props.realID.realIdDesignation
-
-  if(realID === 'Yes' && designation) {
-    return (
-      <div className='summary-section'>
-        <p>Real ID: {realID}</p>
-        <p>Real ID Designation: {designation}</p>
-      </div>
-    );
-  } else {
-    return (
-      <div className='summary-section'>
-        <p>Real ID: {realID}</p>
-      </div>
-    );
-  };
+  return (
+    <div className='summary-section'>
+      <p>Real ID: {props.realID.getRealID}</p>
+      <Designation realID={props.realID}/>
+    </div>
+  );
 };
 
 export default RealID;

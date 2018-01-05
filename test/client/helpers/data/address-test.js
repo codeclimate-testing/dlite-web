@@ -29,7 +29,7 @@ describe('Data helpers for addresses', function() {
     });
 
     it('returns false when homeAddress given but mailing address is different and no mailing address provided', function() {
-      data.homeAddress.homeAddressSameAsMailing = 'No';
+      data.homeAddress.homeAddressSameAsMailing = false;
 
       assert.equal(canContinue(data), false);
     });

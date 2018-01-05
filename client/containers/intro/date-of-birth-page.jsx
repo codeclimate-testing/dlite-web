@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { connect } from 'react-redux';
+import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 import * as dataPresent       from '../../helpers/data-present';
@@ -30,14 +30,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  const onChange   = handlers.onInputChange(updateDateOfBirth, dispatch);
-  const onSubmit   = handlers.onFormSubmit(dispatch);
-
-  return {
-    onChange,
-    onSubmit
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateDateOfBirth, Page);

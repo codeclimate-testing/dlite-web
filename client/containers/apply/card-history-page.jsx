@@ -1,7 +1,7 @@
 'use strict';
 
 import React                          from 'react';
-import { connect }                    from 'react-redux';
+import connectForm                    from '../../helpers/connect-form';
 
 import handlers                       from '../../helpers/handlers';
 import * as dataPresent               from '../../helpers/data-present';
@@ -32,18 +32,4 @@ function mapStateToProps(state) {
   };
 };
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateLicenseAndIdHistory, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
-
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateLicenseAndIdHistory, Page);
