@@ -10,7 +10,7 @@ const passport      = require('passport');
 const helmet        = require('helmet');
 const jwtStrategy   = require('./server/config/jwt-strategy').strategy;
 const logging       = require('./server/config/logging');
-const csrfCookie    = require('./server/config/csrf'); 
+const csrf          = require('./server/config/csrf'); 
 const api           = require('./server/api');
 
 const layout        = fs.readFileSync(path.resolve(__dirname, 'server/templates/layout.html')).toString();
@@ -19,9 +19,9 @@ let   server        = express();
 passport.use(jwtStrategy);
 server.use(passport.initialize());
 server.use(bodyParser.json());
+csrf(server);
 
 server.use(logging());
-//server.use(csrfCookie);
 server.use(helmet());
 
 server.port = env.port;

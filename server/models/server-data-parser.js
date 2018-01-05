@@ -182,14 +182,23 @@ function getLicenseAndIdHistory(card_histories) {
 }
 
 function getCurrentCardInfo(renewal_card) {
-  let _date = parserHelper.createDateJson(renewal_card[0].date);
-  return {
-    number:   renewal_card[0].number,
-    month:    _date.month,
-    day:      _date.day,
-    year:     _date.year
+  let currentCardInfo = {
+    number: '',
+    month: '',
+    day: '',
+    year: ''
+  };
+  if(renewal_card[0]){
+    let _date = parserHelper.createDateJson(renewal_card[0].date);
+    return {
+      number:   renewal_card[0].number,
+      month:    _date.month,
+      day:      _date.day,
+      year:     _date.year
+    }
   }
-}
+  return currentCardInfo
+};
 
 function getNamesHistories(previous_names) {
   if(previous_names && previous_names.length > 0){
@@ -352,17 +361,18 @@ function getLicenseType(license_classes) {
     endorsement: [],
     needEndorsement: ''
   };
+  if(license_classes.length > 0){
+    license_classes.forEach(item => {
 
-  license_classes.forEach(item => {
-
-    if(item.type === 'firefighter' || item.type === 'ambulance') {
-      licenseType.endorsement.push(item.type);
-      licenseType.needEndorsement = 'Yes'
-    } else {
-      licenseType.type.push(item.type);
-    }
- 
-  });
+      if(item.type === 'firefighter' || item.type === 'ambulance') {
+        licenseType.endorsement.push(item.type);
+        licenseType.needEndorsement = 'Yes'
+      } else {
+        licenseType.type.push(item.type);
+      }
+   
+    });
+  }
   return licenseType;
 }
 
