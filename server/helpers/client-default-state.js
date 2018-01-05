@@ -113,6 +113,47 @@ const state  = {
       shouldContact: '',
       emailAddress: '',
       phoneNumber: ''
+    },
+    guardianSignature: {
+      isSigned:  '',
+      guardianInfo: [{
+        id: 'first',
+        acceptLiabilities: '',
+        signature: '',
+        signatureDateMonth: '',
+        signatureDateDay: '',
+        signatureDateYear: '',
+        phoneNumber: '',
+        street_1: '',
+        street_2: '',
+        city: '',
+        state: 'CA',
+        zip: '',
+        IDNumber: '',
+        IDIssuedBy: '',
+        IDExpirationDateMonth: '',
+        IDExpirationDateDay: '',
+        IDExpirationDateYear: ''
+      },
+      {
+        id: 'second',
+        acceptLiabilities: '',
+        signature: '',
+        signatureDateMonth: '',
+        signatureDateDay: '',
+        signatureDateYear: '',
+        phoneNumber: '',
+        street_1: '',
+        street_2: '',
+        city: '',
+        state: 'CA',
+        zip: '',
+        IDNumber: '',
+        IDIssuedBy: '',
+        IDExpirationDateMonth: '',
+        IDExpirationDateDay: '',
+        IDExpirationDateYear: ''
+      }]
     }
   }
 };

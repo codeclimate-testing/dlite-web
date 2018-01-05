@@ -74,6 +74,12 @@ const getStarted = [
     description: 'Get started intro page',
     path: '/get-started',
     next: 'addresses',
+  },
+  {
+    key: 'guardianSignature',
+    description: 'Parent/Guardian Signature',
+    path: '/guardian-signature',
+    next: 'summary',
   }
 ];
 

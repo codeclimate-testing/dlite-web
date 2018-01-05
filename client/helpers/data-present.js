@@ -91,7 +91,7 @@ const hasMedicalCondition = (props) => {
 };
 
 const contactMethods = (props) => {
-  return hasValue(props.shouldContact) &&
+  return hasValue(props && props.shouldContact) &&
     hasAnyAttributes(props, ['emailAddress', 'phoneNumber']);
 };
 
@@ -108,6 +108,30 @@ const physicalTraits = (props) => {
 const realID = (props) => {
   return hasAnyAttributes(props, ['getRealID']);
 };
+
+
+const guardianSignature = (props) => {
+  let guardianInfoFirst = props.guardianInfo[0];
+  return props && (props.isSigned === 'No' ||
+    hasAllAttributes(guardianInfoFirst, [
+      'acceptLiabilities',
+      'signature',
+      'signatureDateMonth',
+      'signatureDateDay',
+      'signatureDateYear',
+      'phoneNumber',
+      'street_1',
+      'street_2',
+      'city',
+      'state',
+      'zip',
+      'IDNumber',
+      'IDIssuedBy',
+      'IDExpirationDateMonth',
+      'IDExpirationDateDay',
+      'IDExpirationDateYear'
+  ]));
+}
 
 const application = (props) => {
   return legalName(props.legalName) ||
@@ -135,6 +159,7 @@ const application = (props) => {
     hasValue(props.optOut) ||
     contactMethods(props.contactMethods) ||
     realID(props.realID) ||
+    guardianSignature(props.guardianSignature) ||
     hasValue(props.seniorID);
 };
 
@@ -166,5 +191,6 @@ export {
   hasPreviousNames,
   homeAddressSameAsMailing,
   application,
-  realID
+  realID,
+  guardianSignature
 };

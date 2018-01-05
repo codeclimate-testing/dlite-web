@@ -10,12 +10,15 @@ import handlers                 from '../../helpers/handlers';
 import {
   eligibleForCitizen
 } from '../../helpers/data/voting';
-import { isPreregistering 
+import { isPreregistering
 } from '../../helpers/calculate-age';
 
 const Page = (props) => {
-  
+
   let address = '/summary';
+  if(isPreregistering(props.dateOfBirth)){
+    address = '/guardian-signature';
+  }
   if (eligibleForCitizen(props)) {
     address = '/voting-registration/eligibility';
   };

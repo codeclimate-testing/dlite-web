@@ -26,6 +26,7 @@ import PoliticalPartyChoose        from './choose-party.jsx';
 import BallotLanguage              from './ballot-language.jsx';
 import ContactMethods              from './contact-methods.jsx';
 import OptOut                      from './opt-out.jsx';
+import GuardianSignature           from './guardian-signature.jsx';
 import ContinueButton              from '../continue-button.jsx';
 
 export {
@@ -54,6 +55,7 @@ export {
   PoliticalPartyChoose,
   BallotLanguage,
   ContactMethods,
+  GuardianSignature,
   ContinueButton,
   OptOut
 };

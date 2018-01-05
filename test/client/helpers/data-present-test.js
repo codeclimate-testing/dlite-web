@@ -554,5 +554,35 @@ describe('dataPresent', function() {
 
       assert(dataPresent.application(data), 'Data not present with opt out info');
     });
+
+    it('is true when parent/guardian signs the application', function(){
+      let data = {
+        guardianSignature: {
+          isSigned:  'Yes',
+          guardianInfo: [{
+            id: 'first',
+            acceptLiabilities: true,
+            signature: 'GuardianSignature',
+            signatureDateMonth: '10',
+            signatureDateDay: '4',
+            signatureDateYear: '2018',
+            phoneNumber: '(616)-923-1221',
+            street_1: '865 Main Street',
+            street_2: 'Unit no. 05',
+            city: 'Crazidino Here',
+            state: 'CA',
+            zip: '94000',
+            IDNumber: 'XYZ12344321',
+            IDIssuedBy: 'U.S.A.',
+            IDExpirationDateMonth: '10',
+            IDExpirationDateDay: '14',
+            IDExpirationDateYear: '2020'
+          }]
+        }
+      };
+
+      assert(dataPresent.application(data), 'Data not present with parent/guardian signature');
+
+    });
   });
 });

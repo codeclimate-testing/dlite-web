@@ -33,6 +33,7 @@ import LicenseAndId                           from './apply/card-history-page.js
 import MedicalHistory                         from './apply/medical-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransService                        from './apply/veterans-service-form-container.jsx';
+import GuardianSignature                      from './apply/guardian-signature-page.jsx';
 import VoterCitizenStatus                     from './voter-registration/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter-registration/eligibility-requirements-form-container.jsx';
 import OptOut                                 from './voter-registration/opt-out-form-container.jsx';
@@ -73,6 +74,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/my-history/medical' ) } component={MedicalHistory} />
         <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
         <Route path={ alicePath('/my-history/veterans-service') } component={VeteransService} />
+        <Route path={ alicePath('/guardian-signature') } component={GuardianSignature} />
 
         <Route path={ alicePath('/voting-registration/introduction') } component={VoterIntro} />
         <Route path={ alicePath('/voting-registration/citizenship') } component={VoterCitizenStatus} />

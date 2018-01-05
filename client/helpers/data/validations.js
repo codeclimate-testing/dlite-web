@@ -1,12 +1,14 @@
 'use strict';
 
 export const hasValue = (props) => {
+  if(typeof props === 'boolean') {
+    return props;
+  }
   return !!(props && props.trim());
 };
 
 export const hasAllAttributes = (props, attributes) => {
   if (!props) { return; }
-
   return attributes.every((attributeName) => {
     return hasValue(props[attributeName]);
   });

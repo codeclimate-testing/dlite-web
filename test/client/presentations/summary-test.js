@@ -32,12 +32,12 @@ import {
   BallotLanguage,
   ContactMethods,
   ContinueButton,
-  OptOut
+  OptOut,
+  GuardianSignature
 } from '../../../client/presentations/summary/index.js';
 
 describe('Summary section', function() {
   let props = data.application;
-
   describe('Empty', function() {
     it('shows no information entered', function() {
       let component = render(
@@ -78,7 +78,7 @@ describe('Summary section', function() {
         year: '1999'
       };
       let component = render(
-        <DateOfBirth 
+        <DateOfBirth
           { ...props }
           dateOfBirth={dateOfBirth}
         />
@@ -94,7 +94,7 @@ describe('Summary section', function() {
         renew: ''
       };
       let component = render(
-        <Cards 
+        <Cards
           { ...props }
           cardType={cardType}
         />
@@ -142,7 +142,7 @@ describe('Summary section', function() {
   describe('SeniorID', function() {
     it('shows SeniorID selection', function(){
       let seniorID = 'Yes';
-  
+
       let component = render(
         <SeniorID
           { ...props }
@@ -159,7 +159,7 @@ describe('Summary section', function() {
         getRealID : 'Yes',
         realIdDesignation: 'ID'
       };
-  
+
       let component = render(
         <RealID
           { ...props }
@@ -190,7 +190,7 @@ describe('Summary section', function() {
         form: 'No'
       }
       let component = render(
-        <ReducedFee 
+        <ReducedFee
           reducedFee = { reducedFee }
         />
       )
@@ -207,7 +207,7 @@ describe('Summary section', function() {
         state: 'CA',
         zip: '95814'
       };
-  
+
       let component = render(
         <HomeAddress
           { ...props }
@@ -231,7 +231,7 @@ describe('Summary section', function() {
         state: 'CA',
         zip: '95814'
       };
-  
+
       let component = render(
         <MailingAddress
           { ...props }
@@ -253,7 +253,7 @@ describe('Summary section', function() {
         heightFeet: '6',
         heightInches: '3'
       };
-  
+
       let component = render(
         <TraitsHeightWeight
           { ...props }
@@ -272,7 +272,7 @@ describe('Summary section', function() {
         eyeColor: 'Green',
         hairColor: 'Black'
       };
-  
+
       let component = render(
         <PhysicalTraits
           { ...props }
@@ -291,7 +291,7 @@ describe('Summary section', function() {
         donateMoney: 'Yes',
         donateOrgan: 'Yes'
       };
-  
+
       let component = render(
         <OrganDonation
           { ...props }
@@ -311,7 +311,7 @@ describe('Summary section', function() {
         part3: '1111',
         hasSocialSecurity: 'Yes'
       };
-    
+
       let component = render(
         <SocialSecurity
           { ...props }
@@ -333,7 +333,7 @@ describe('Summary section', function() {
         year: '2018',
         isIssued: 'Yes'
       };
-    
+
       let component = render(
         <LicenseAndIdHistory
           { ...props }
@@ -353,7 +353,7 @@ describe('Summary section', function() {
         hasUsedPreviousNames: 'Yes',
         previousNames: 'John Doe'
       };
-    
+
       let component = render(
         <NamesHistory
           { ...props }
@@ -370,7 +370,7 @@ describe('Summary section', function() {
         hasMedicalCondition: 'Yes',
         medicalInfo: 'Blind'
       };
-    
+
       let component = render(
         <MedicalHistory
           { ...props }
@@ -530,6 +530,77 @@ describe('Summary section', function() {
       assert.equal(component.text().includes('Should Contact: Yes'), true);
       assert.equal(component.text().includes('Email Address: email@email.com'), true);
       assert.equal(component.text().includes('Phone Number: 111-111-1111'), true);
+    });
+  });
+
+  describe('GuardianSignature', function() {
+    it('shows parent/guardian signature details', function(){
+      let guardianSignature = {
+        isSigned:  'Yes',
+        guardianInfo: [{
+          id: 'first',
+          acceptLiabilities: true,
+          signature: 'GuardianSignature',
+          signatureDateMonth: '10',
+          signatureDateDay: '4',
+          signatureDateYear: '2018',
+          phoneNumber: '(616)-923-1221',
+          street_1: '865 Main Street',
+          street_2: 'Unit no. 05',
+          city: 'Crazidino Here',
+          state: 'CA',
+          zip: '94000',
+          IDNumber: 'XYZ12344321',
+          IDIssuedBy: 'U.S.A.',
+          IDExpirationDateMonth: '10',
+          IDExpirationDateDay: '14',
+          IDExpirationDateYear: '2020'
+        },
+        {
+          id: '',
+          acceptLiabilities: null,
+          signature: '',
+          signatureDateMonth: '',
+          signatureDateDay: '',
+          signatureDateYear: '',
+          phoneNumber: '',
+          street_1: '',
+          street_2: '',
+          city: '',
+          state: '',
+          zip: '',
+          IDNumber: '',
+          IDIssuedBy: '',
+          IDExpirationDateMonth: '',
+          IDExpirationDateDay: '',
+          IDExpirationDateYear: ''
+        }]
+      };
+
+      let component = render(
+        <GuardianSignature
+          {...props}
+          guardianSignature={guardianSignature}
+        />
+      )
+
+      assert.equal(component.text().includes('Parent/guardian available: Yes'), true);
+      assert.equal(component.text().includes('Accept Liabilities: Yes'), true);
+      assert.equal(component.text().includes('GuardianSignature'), true);
+      assert.equal(component.text().includes('10'), true);
+      assert.equal(component.text().includes('4'), true);
+      assert.equal(component.text().includes('2018'), true);
+      assert.equal(component.text().includes('(616)-923-1221'), true);
+      assert.equal(component.text().includes('865 Main Street'), true);
+      assert.equal(component.text().includes('Unit no. 05'), true);
+      assert.equal(component.text().includes('Crazidino Here'), true);
+      assert.equal(component.text().includes('CA'), true);
+      assert.equal(component.text().includes('94000'), true);
+      assert.equal(component.text().includes('XYZ12344321'), true);
+      assert.equal(component.text().includes('U.S.A.'), true);
+      assert.equal(component.text().includes('10'), true);
+      assert.equal(component.text().includes('14'), true);
+      assert.equal(component.text().includes('2020'), true);
     });
   });
 });

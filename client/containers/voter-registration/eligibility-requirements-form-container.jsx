@@ -10,12 +10,15 @@ import handlers                          from '../../helpers/handlers';
 import {
    eligibileForRequirements
   } from '../../helpers/data/voting';
-import { isPreregistering 
+import { isPreregistering
 } from '../../helpers/calculate-age';
 
 const Page = (props) => {
-  
+
   let address = '/summary';
+  if(isPreregistering(props.dateOfBirth)){
+    address = '/guardian-signature';
+  }
   if (eligibileForRequirements(props)) {
     address = '/voting-registration/opt-out';
   };
@@ -25,7 +28,7 @@ const Page = (props) => {
   let continueDisabled  = false;
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
-  
+
   return (
     <Presentation
       {...props}

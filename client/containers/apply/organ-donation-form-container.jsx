@@ -14,7 +14,7 @@ const Page = (props) => {
 
   let submitAddress = '/voting-registration/introduction';
   if(ageChecks.Under16(props.dateOfBirth)) {
-    submitAddress = '/summary';
+    submitAddress = '/guardian-signature';
   }
   let onSubmit            = handlers.navigateOnSubmit(submitAddress, props);
   let onBack              = handlers.navigateOnBack(props);

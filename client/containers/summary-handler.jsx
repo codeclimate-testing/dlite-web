@@ -12,7 +12,7 @@ import { ageChecks }              from '../helpers/calculate-age';
 import {
   getID,
   getDL
-} from '../helpers/data/card-type'; 
+} from '../helpers/data/card-type';
 
 import {
   LegalName,
@@ -39,6 +39,7 @@ import {
   PoliticalPartyChoose,
   BallotLanguage,
   ContactMethods,
+  GuardianSignature,
   ContinueButton,
   OptOut,
   Empty
@@ -75,6 +76,7 @@ const SummaryHandler = (props) => {
     <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
     <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
     <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
+    <GuardianSignature guardianSignature={application.guardianSignature} key='guardian-signature' />,
     <OptOut optOut={application.optOut} key='opt-out' />,
     <Empty {...application} key='empty' />
   ];
@@ -124,11 +126,11 @@ const SummaryHandler = (props) => {
       </div>
     );
   };
-  
+
   return (
     <div className='summary'>
       <HomeLink />
-      <Alerts 
+      <Alerts
         cardType    = {application.cardType}
         dateOfBirth = {application.dateOfBirth}
       />

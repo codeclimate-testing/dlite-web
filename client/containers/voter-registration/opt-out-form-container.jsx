@@ -13,19 +13,22 @@ import * as dataPresent       from '../../helpers/data-present';
 import { hasValue }           from '../../helpers/data/validations';
 import { eligibleForOptOut, eligibleForOptOutExist
 } from '../../helpers/data/voting';
-import { isPreregistering 
+import { isPreregistering
 } from '../../helpers/calculate-age';
 
 const Page = (props) => {
 
   let address = '/summary';
+  if(isPreregistering(props.dateOfBirth)){
+    address = '/guardian-signature';
+  }
   if (eligibleForOptOut(props)) {
     address = '/voting-registration/preferences';
   };
   if (eligibleForOptOutExist(props)) {
     address = '/voting-registration/preferences-updated';
   };
-  
+
   let onSubmit           = handlers.navigateOnSubmit(address, props);
   let onBack             = handlers.navigateOnBack(props);
   let continueDisabled   = !(dataPresent.value(props.optOut));

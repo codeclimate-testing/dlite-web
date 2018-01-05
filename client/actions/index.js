@@ -48,6 +48,8 @@ export const TYPES = {
   UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE',
   UPDATE_OPT_OUT:                         'UPDATE_OPT_OUT',
   UPDATE_CONTACT_METHODS:                 'UPDATE_POLITICAL_METHODS',
+  UPDATE_GUARDIAN_SIGNATURE_FIRST:        'UPDATE_GUARDIAN_SIGNATURE_FIRST',
+  UPDATE_GUARDIAN_SIGNATURE_SECOND:       'UPDATE_GUARDIAN_SIGNATURE_SECOND',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -87,6 +89,8 @@ export const updatePoliticalPartyChoosePreReg = generateFormAction(TYPES.UPDATE_
 export const updateBallotLanguage             = generateFormAction(TYPES.UPDATE_BALLOT_LANGUAGE);
 export const updateOptOut                     = generateFormAction(TYPES.UPDATE_OPT_OUT);
 export const updateContactMethods             = generateFormAction(TYPES.UPDATE_CONTACT_METHODS);
+export const updateGuardianSignatureFirst     = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE_FIRST);
+export const updateGuardianSignatureSecond    = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE_SECOND);
 
 export const focusPageElement                 = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                  = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

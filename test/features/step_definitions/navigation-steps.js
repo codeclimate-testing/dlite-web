@@ -333,4 +333,8 @@ module.exports = function(world) {
   world.then('I will be on the senior id page', function(done) {
     assertOnPage('.senior-id-form', /senior-id/, done);
   });
+
+  world.then('I will be on the page for guardian signature', function(done){
+    assertOnPage('.guardian-signature-form', /guardian-signature/, done);
+  });
 };
