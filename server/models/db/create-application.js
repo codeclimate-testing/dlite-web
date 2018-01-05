@@ -1,6 +1,7 @@
 'use strict';
 
 const db = require('../../db/connect')();
+const cardOptionsParser = require('.././parsers/card-options-parser');
 
 module.exports = function createApplication(data) {
 
@@ -62,33 +63,8 @@ module.exports = function createApplication(data) {
     .then((cards) => {
       returnedData.cards = cards;
       let card_options = data.card_options;
-      let _card_options_ = [ ];
-      let _card_id;
 
-      cards.forEach( card => {
-        card_options.forEach( option => {
-          if(card.type === option.type) {
-            _card_options_.push({
-              card_id:           card.id,
-              option_type:       option.option_type,
-              option_value:      option.option_value
-            });
-          }
-        });
-        if(card.type === 'DL') {
-          _card_id = card.id;
-        }
-      });
-      data.card_options = _card_options_;
-
-      let _license_classes_ = [];
-      data.license_classes.forEach( item => {
-        _license_classes_.push({
-          card_id:    _card_id,
-          type:       item.type
-        });
-      });
-      data.license_classes = _license_classes_;
+      cardOptionsParser.cardOptions(cards, card_options, data);
       return insert('card_options');
     })
     .then((card_options) => {
