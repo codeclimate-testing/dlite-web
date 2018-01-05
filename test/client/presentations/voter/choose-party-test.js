@@ -2,7 +2,6 @@
 
 import assert                   from 'assert';
 
-import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';

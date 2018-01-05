@@ -2,13 +2,11 @@
 
 import assert                   from 'assert';
 
-import 'jsdom-global/register';
 import React                    from 'react';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import { MemoryRouter }         from 'react-router-dom'
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language/ballot-language-form.jsx';
 import store                    from '../../support/page-store';

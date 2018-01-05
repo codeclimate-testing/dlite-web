@@ -1,10 +1,9 @@
 'use strict';
 
 import assert                   from 'assert';
-import 'jsdom-global/register';
 import React                    from 'react';
-import { render }               from 'enzyme';
 import configure                from '../../support/configure-enzyme';
+import { render }               from 'enzyme';
 import ReducedFee               from '../../../../client/presentations/documents/reduced-fee.jsx';
 import BulletList               from '../../../../client/presentations/documents/bullet-list.jsx';
 

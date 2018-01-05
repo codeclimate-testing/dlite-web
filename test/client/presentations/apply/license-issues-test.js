@@ -1,7 +1,7 @@
 'use strict';
 
 import assert                   from 'assert';
-import 'jsdom-global/register';
+import configure                from '../../support/configure-enzyme';
 import React                    from 'react';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';

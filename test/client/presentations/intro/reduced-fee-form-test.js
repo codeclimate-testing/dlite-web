@@ -1,12 +1,11 @@
 'use strict';
 
 import assert                   from 'assert';
-import 'jsdom-global/register';
 import React                    from 'react';
+import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
-import configure                from '../../support/configure-enzyme';
 import store                    from '../../support/page-store';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import ReducedFeePage           from '../../../../client/presentations/intro/reduced-fee-page.jsx';
