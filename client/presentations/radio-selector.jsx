@@ -4,12 +4,13 @@ import React from 'react';
 import SelectorContents from './selector-contents.jsx';
 
 const RadioSelector = function(props) {
-  let className = props.selected ? 'choice-selector selected' : 'choice-selector';
-  if (props.focused) { className += ' focus'; }
-  if (props.custom) { className += ` ${props.name} ${props.value}`; }
-  
+  let className = 'choice-selector unit';
+  if (props.selected) { className += ' selected'; };
+  if (props.focused)  { className += ' focus'; }
+  if (props.custom)   { className += ` ${props.name} ${props.value}`; }
+
   let id = props.name + '-' + props.value;
-  
+
   return (
     <div className={ className }>
       <div className='outline-container'>

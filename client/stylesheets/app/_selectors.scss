@@ -1,6 +1,8 @@
 .choice-selector {
   @include line;
   margin-bottom: 14px;
+  margin-right: 0;
+  width: 100%;
 
   .outline-container {
     @include line;
@@ -56,6 +58,10 @@
   }
 
   &.selected {
+    .outline-container {
+      border-width: 2px;
+      margin: 2px;
+    }
     .radio-selector {
       .icon-region {
         background-image: url("/images/icons/radio/selected.svg");
