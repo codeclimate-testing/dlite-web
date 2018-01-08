@@ -51,31 +51,6 @@ describe('DateOfBirthPage', function() {
       assert.ok(component.find('input#day').length, 'day input missing');
       assert.ok(component.find('input#year').length, 'year input missing');
     });
-
-    // it('next button is disabled', function() {
-    //   let component = render(
-    //     <Wrapper>
-    //       <DateOfBirthPage {...props} />
-    //     </Wrapper>
-    //   );
-    //   assert.equal(props.continueDisabled, true);
-    // });
-
-    // it('entering dob makes next button no longer disabled', function() {
-    //   props.dateOfBirth = {
-    //     month: '9',
-    //     day: '19',
-    //     year: '1984'
-    //   };
-    //   props.continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
-
-    //   let component = render(
-    //     <Wrapper>
-    //       <DateOfBirthPage {...props} />
-    //     </Wrapper>
-    //   );
-    //   assert.equal(props.continueDisabled, false);
-    // });
   });
 });
 

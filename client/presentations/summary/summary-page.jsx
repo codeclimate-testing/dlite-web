@@ -94,6 +94,7 @@ const SummaryPage = (props) => {
       cardAction      = { application.cardAction }
       cardChanges     = { application.cardChanges }
       currentCardInfo = {application.currentCardInfo} 
+      cardReplacement = { application.cardReplacement }
       key             = 'card-type' 
     />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,
