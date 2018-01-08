@@ -24,14 +24,20 @@ describe('DateOfBirthPage', function() {
         day: ''
       };
 
-      let continueDisabled = !(dataPresent.date(dateOfBirth));
-
       let onChange = spy();
+
+      let validations = {
+        month: spy(),
+        day: spy(),
+        year: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
 
       props = {
         dateOfBirth,
-        continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
 
@@ -46,30 +52,30 @@ describe('DateOfBirthPage', function() {
       assert.ok(component.find('input#year').length, 'year input missing');
     });
 
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <DateOfBirthPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
+    // it('next button is disabled', function() {
+    //   let component = render(
+    //     <Wrapper>
+    //       <DateOfBirthPage {...props} />
+    //     </Wrapper>
+    //   );
+    //   assert.equal(props.continueDisabled, true);
+    // });
 
-    it('entering dob makes next button no longer disabled', function() {
-      props.dateOfBirth = {
-        month: '9',
-        day: '19',
-        year: '1984'
-      };
-      props.continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
+    // it('entering dob makes next button no longer disabled', function() {
+    //   props.dateOfBirth = {
+    //     month: '9',
+    //     day: '19',
+    //     year: '1984'
+    //   };
+    //   props.continueDisabled  =   !(dataPresent.date(props.dateOfBirth));
 
-      let component = render(
-        <Wrapper>
-          <DateOfBirthPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
-    });
+    //   let component = render(
+    //     <Wrapper>
+    //       <DateOfBirthPage {...props} />
+    //     </Wrapper>
+    //   );
+    //   assert.equal(props.continueDisabled, false);
+    // });
   });
 });
 

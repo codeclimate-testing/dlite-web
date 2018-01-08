@@ -26,3 +26,6 @@ export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
 
+export const hasOnlyNumbers = (text) => {
+  return /^[0-9]*$/.test(text);
+};

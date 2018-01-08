@@ -73,7 +73,7 @@ module.exports = function(world) {
      browser
       .text()
       .then((text) => {
-        assert(text.includes('9/7/1969'), 'date of birth missing');
+        assert(text.includes('1969'), 'date of birth missing');
       })
       .then(() => { done(); })
       .catch(done);

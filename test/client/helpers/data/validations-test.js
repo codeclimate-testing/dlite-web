@@ -5,7 +5,8 @@ import {
   hasValue,
   hasAllAttributes,
   hasAnyAttributes,
-  hasOnlyEnglishChars
+  hasOnlyEnglishChars,
+  hasOnlyNumbers
 } from '../../../../client/helpers/data/validations';
 
 describe('validations', function() {
@@ -103,6 +104,20 @@ describe('validations', function() {
         !hasOnlyEnglishChars('123 áë¡ ,.?!'),
         'returned true with extended latin characters'
       );
+    });
+  });
+
+  describe('#hasOnlyNumbers', function() {
+    it('returns false for letters', function() {
+      assert.equal( hasOnlyNumbers('11d9'), false)
+    });
+
+    it('returns false for basic chars', function() {
+      assert.equal( hasOnlyNumbers(',.2'), false)
+    });
+
+    it('returns true when only numbers', function() {
+      assert.equal(hasOnlyNumbers('3290812'), true)
     });
   });
 });

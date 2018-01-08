@@ -4,14 +4,14 @@ import React from 'react';
 import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
+import { DOBValidator }       from '../../helpers/validations';
 
 import Presentation           from "../../presentations/intro/date-of-birth-page.jsx";
 import { updateDateOfBirth }  from "../../actions/index";
 
 const Page = (props) => {
-  let continueDisabled  =   !dataPresent.date(props.dateOfBirth);
-  let onSubmit          =   handlers.navigateOnSubmit('/what-do-you-want-to-do-today', props);
+  let validations       =   new DOBValidator(props.dateOfBirth, props.validations, 'dateOfBirthMissing');
+  let onSubmit          =   handlers.navigateOrShowErrors('dateOfBirth', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
 
   return (
@@ -19,14 +19,15 @@ const Page = (props) => {
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth:  state.application.dateOfBirth
+    dateOfBirth:  state.application.dateOfBirth,
+    validations:  state.ui.validations
   };
 };
 

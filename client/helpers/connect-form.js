@@ -9,11 +9,18 @@ function connectForm(mapStateToProps, action, form) {
     const onSubmit = handlers.onFormSubmit(dispatch);
     const onBlur   = handlers.onBlur(dispatch);
     const onFocus  = handlers.onFocus(dispatch);
+    const onBlurValidate = handlers.onBlurValidate(dispatch);
+    const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
+    const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
+
     return {
       onSubmit,
       onChange,
       onBlur,
-      onFocus
+      onFocus,
+      onBlurValidate,
+      onFocusClearValidation,
+      onSubmitShowErrors
     };
   }
 

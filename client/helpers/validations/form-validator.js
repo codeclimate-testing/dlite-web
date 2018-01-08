@@ -3,9 +3,10 @@
 import errorMessages from '../../presentations/error-messages';
 
 class Validator {
-  constructor(props, requestedValidations) {
+  constructor(props, requestedValidations, allMessage) {
     this.props = props;
     this.requestedValidations = requestedValidations || [];
+    this.allMessage = allMessage;
   }
 
   isValid() {
@@ -39,7 +40,7 @@ class Validator {
     let errorMessage = '';
 
     if (allErrors.length > 1) {
-      errorMessage = errorMessages.errorPreventContinuing;
+      errorMessage = this.allMessage ? errorMessages[this.allMessage] : errorMessages.errorPreventContinuing;
     } else if (allErrors.length === 1) {
       errorMessage = allErrors[0];
     }
