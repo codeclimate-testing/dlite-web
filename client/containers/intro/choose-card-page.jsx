@@ -23,7 +23,7 @@ const addressForProps = (props) => {
   let address = '/real-id';
   if(ageChecks.Under15Half(props.dateOfBirth) && getDL(props)) {
     address = '/youth-license-notification';
-  } else if(props.cardAction === 'renew') {
+  } else if(props.cardAction !== 'new') {
     address = '/current-card-information';
   } else if(props.cardAction === 'change') {
     address = '/updates-and-corrections'

@@ -36,6 +36,14 @@ export const currentCardInfo = (props) => {
   return key;
 };
 
+export const chooseCardChanges = (props) => {
+  let key = 'current-card-information';
+  if (eligibleForSeniorID(props)) {
+    key ='seniorID';
+  }
+  return key;
+};
+
 export const realID = (props) => {
   let key = 'getStarted';
 

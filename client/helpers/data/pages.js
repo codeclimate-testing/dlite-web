@@ -4,6 +4,7 @@ import alicePath from '../alice-path';
 import {
   chooseCardType,
   currentCardInfo,
+  chooseCardChanges,
   realID,
   chooseLicenseClass
 } from './next-path';
@@ -50,6 +51,12 @@ const getStarted = [
     description: 'Current card info',
     path: '/current-card-information',
     next: currentCardInfo
+  },
+  {
+    key: 'chooseCardChanges',
+    description: 'updates and corrections',
+    path: '/updates-and-corrections',
+    next: chooseCardChanges
   },
   {
     key: 'youthDlMessage',
