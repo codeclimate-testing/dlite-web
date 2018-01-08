@@ -80,7 +80,7 @@ describe('GuardianSignaturePage', function() {
       );
       assert.ok(component.find('label[for="isSigned-Yes"]').length, 'Guardian signature - Yes button missing');
       assert.ok(component.find('label[for="isSigned-No"]').length, 'Guardian signature - No button missing');
-      assert.ok(component.find('.guardian-signature-form').length, 'Guardian signature - form missing');
+      assert.ok(component.find('.signature-choice-form').length, 'Guardian signature - form missing');
     });
 
     it('shows the form asking guardian details after guardian selected Yes to sign', function() {
