@@ -11,12 +11,16 @@ const state  = {
       new: [],
       renew: '',
       change: '',
+      replace: '',
       youthIDInstead: ''
     },
     cardChanges: {
       correctOrUpdate: '',
       sections: [],
       other: ''
+    },
+    cardReplacement: {
+      reason: ''
     },
     currentCardInfo: {
       number: '',

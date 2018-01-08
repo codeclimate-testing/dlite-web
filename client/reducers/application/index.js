@@ -7,6 +7,7 @@ import updateLegalNames                    from './update-legal-name';
 import updateCardAction                    from './update-card-action';
 import updateCardType                      from './update-card-type';
 import updateCardChanges                   from './update-card-changes';
+import updateCardReplacement               from './update-card-replacement';
 import updateCurrentCardInfo               from './update-current-card-info';
 import updateReducedFee                    from './update-reduced-fee';
 import updateHomeAddress                   from './update-home-address';
@@ -39,6 +40,7 @@ const rootReducer = combineReducers({
   cardAction                  : updateCardAction,
   cardType                    : updateCardType,
   cardChanges                 : updateCardChanges,
+  cardReplacement             : updateCardReplacement,
   currentCardInfo             : updateCurrentCardInfo,
   reducedFee                  : updateReducedFee,
   homeAddress                 : updateHomeAddress,

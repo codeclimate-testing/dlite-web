@@ -27,6 +27,8 @@ const addressForProps = (props) => {
     address = '/current-card-information';
   } else if(props.cardAction === 'change') {
     address = '/updates-and-corrections'
+  } else if(props.cardAction === 'replace') {
+    address = '/replacement-details'
   } else if(canBeSenior(props.dateOfBirth)) {
     address = '/senior-id';
   }

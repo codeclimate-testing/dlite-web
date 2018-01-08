@@ -11,7 +11,8 @@ const Form = (props) => {
   let question = {
     new: 'What type of card would you like?',
     renew: 'What type of card are you renewing?',
-    change: 'What type of card are you correcting or updating?'
+    change: 'What type of card are you correcting or updating?',
+    replace: 'What type of card are you replacing?'
   };
  
   return (

@@ -352,3 +352,18 @@ Feature: Save user data
     Then I will be on the current card info page
     When I go to the page with my summary
     Then I will see that I am updating the name on my DL
+
+  Scenario: Replacing a DL
+    Given I go to the new online DL application page
+    And I visit the what do you want to do today page
+    And I choose to replace a card
+    When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    Then I choose to replace my DL
+    When I click "Next" to continue
+    Then I will be on the page for choosing reason for replacement
+    And I select it was damaged
+    When I click "Next" to continue
+    Then I will be on the page for choosing real id
+    When I go to the page with my summary
+    Then I will see that I am replacing my DL

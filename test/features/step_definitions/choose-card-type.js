@@ -26,6 +26,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I choose to replace a card', function(done) {
+    browser
+      .click('label[for="cardAction-replace"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.and('I click on the DL checkbox', function(done) {
     browser
       .click('[for="DL"]')
@@ -61,6 +68,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I choose to replace my DL', function(done) {
+    browser
+      .click('label[for="replace-DL"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.and('I choose to update my card', function(done) {
     browser
       .click('label[for="correctOrUpdate-update"]')
@@ -75,12 +89,30 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I select it was damaged', function(done) {
+    browser
+      .click('label[for="reason-damaged"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am updating the name on my DL', function(done) {
     browser
       .text()
       .then( text => {
         assert(text.includes('Updating sections: Name'), 'update sections not shown in summary');
         assert(text.includes('Updating: Driver License'), 'update DL not on summary')
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am replacing my DL', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('Replacing: Driver License'), 'replacing not shown in summary');
+        assert(text.includes('Replacement Reason: damaged'), 'replace DL not on summary')
       })
       .then(done)
       .catch(done);

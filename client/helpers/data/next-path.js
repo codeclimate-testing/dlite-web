@@ -5,7 +5,8 @@ import { tooYoungForDL } from './youth';
 import { eligibleForSeniorID } from './senior';
 import { 
   hasExistingCard,
-  isChangingCard
+  isChangingCard,
+  isReplacingCard
  } from './card-actions';
 import { eligibleForReducedFee } from './reduced-fee';
 
@@ -18,6 +19,8 @@ export const chooseCardType = (props) => {
     key = 'currentCardInfo';
   } else if (isChangingCard(props)) {
     key = 'chooseCardChanges'
+  } else if (isReplacingCard(props)) {
+    key = 'chooseCardReplacement'
   } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
   }

@@ -7,3 +7,7 @@ export const hasExistingCard = (props) => {
 export const isChangingCard = (props) => {
   return props.cardAction === 'change'
 };
+
+export const isReplacingCard = (props) => {
+  return props.cardAction === 'replace'
+};

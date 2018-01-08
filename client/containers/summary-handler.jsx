@@ -59,6 +59,7 @@ const SummaryHandler = (props) => {
       currentCardInfo = { application.currentCardInfo } 
       cardAction      = { application.cardAction }
       cardChanges     = { application.cardChanges }
+      cardReplacement = { application.cardReplacement }
       key='card-type' 
     />,
     <HomeAddress homeAddress={application.homeAddress} key='home-address' />,

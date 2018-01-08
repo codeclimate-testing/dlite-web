@@ -113,6 +113,14 @@ describe('dataPresent', function() {
     });
   });
 
+  describe('#cardReplacement', function() {
+    it('is true when a reason is present', function() {
+      assert.equal(dataPresent.cardReplacement({
+        reason: 'damaged',
+      }), true);
+    });
+  });
+
   describe('#currentCardInfo', function() {
     it('is false when number given but no expiration date', function() {
       assert.equal(

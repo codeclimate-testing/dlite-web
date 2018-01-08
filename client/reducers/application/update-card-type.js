@@ -8,6 +8,7 @@ const defaultState = () => {
     new: [],
     renew: '',
     change: '',
+    replace: '',
     youthIDInstead: ''
   }
 };

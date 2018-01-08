@@ -16,6 +16,7 @@ import WhatDoYouWantToDoToday                 from './intro/what-do-you-want-to-
 import ChooseCard                             from './intro/choose-card-page.jsx';
 import CurrentCardInfo                        from './intro/current-card-page.jsx';
 import UpdatesCorrects                        from './intro/correct-or-update-page.jsx';
+import ReplacementDetails                     from './intro/replacement-details-page.jsx';
 import SeniorID                               from './intro/senior-id-page.jsx';
 import YouthLicenseNotification               from './intro/youth-license-notification-page.jsx';
 import RealID                                 from './intro/real-id-page.jsx';
@@ -58,6 +59,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/select-id-dl') } component={ChooseCard} />
         <Route path={ alicePath('/current-card-information') } component={CurrentCardInfo} />
         <Route path={ alicePath('/updates-and-corrections') } component={UpdatesCorrects} />
+        <Route path={ alicePath('/replacement-details') } component={ReplacementDetails} />
         <Route path={ alicePath('/senior-id') } component={SeniorID} />
         <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ alicePath('/real-id') } component={RealID} />

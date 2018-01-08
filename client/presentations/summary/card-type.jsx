@@ -44,6 +44,10 @@ const CardDetails = (props) => {
     correct: {
       ID: 'Changing ID number',
       DL: 'Changing Driver License number'
+    },
+    replace: {
+      ID: 'Replacing ID number',
+      DL: 'Replacing Driver License number'
     }
   };
 
@@ -59,6 +63,10 @@ const CardDetails = (props) => {
     correct: {
       ID: 'Expiration date of ID to correct',
       DL: 'Expiration date of Driver License to correct'
+    },
+    replace: {
+      ID: 'Expiration date of ID to replace',
+      DL: 'Expiration date of Driver License to replace'
     }
   };
 
@@ -140,6 +148,34 @@ const UpdatingItems = (props) => {
   return (<p>{label}: {sections.join(' and ')}</p>)
 };
 
+const Replace = (props) => {
+  if(!dataPresent.value(props.cardType.replace)) { return null; }
+
+  let text = {
+    ID: 'Replacing: ID',
+    DL: 'Replacing: Driver License'
+  };
+
+  return (
+    <div>
+      <p>{ text[props.cardType.replace]}</p>
+      <ReplacementReason {...props} />
+      <CardDetails
+        {...props}
+        action={props.cardReplacement}
+      />
+    </div>
+  )
+};
+
+const ReplacementReason = (props) => {
+  if(!dataPresent.value(props.cardReplacement.reason)) { return null; }
+  return (
+    <p>Replacement Reason: {props.cardReplacement.reason}</p>
+  );
+};
+
+
 const CardType = (props) => {
   if (!dataPresent.cardType(props.cardType)) { return null; }
 
@@ -148,6 +184,7 @@ const CardType = (props) => {
       <NewCard {...props} />
       <Renew {...props} />
       <Change {...props} />
+      <Replace {...props} />
     </div>
   );
 };

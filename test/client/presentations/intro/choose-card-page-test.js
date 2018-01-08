@@ -80,6 +80,17 @@ describe('ChooseCardPage', function() {
       assert.ok(component.find('input[type="radio"]').length, 'radio input not found');
       assert.equal(component.text().includes('What type of card are you correcting or updating?'), true);
     });
+
+    it('if the user is replacing a card it shows radio buttons and asks for the reason', function() {
+      props.cardAction = 'replace';
+      let component = render(
+        <Wrapper>
+          <ChooseCardPage {...props}/>
+        </Wrapper>
+      );
+      assert.ok(component.find('input[type="radio"]').length, 'radio input not found');
+      assert.equal(component.text().includes('What type of card are you replacing?'), true);
+    });
   });
 });
 

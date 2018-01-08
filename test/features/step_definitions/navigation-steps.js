@@ -198,6 +198,10 @@ module.exports = function(world) {
     assertOnPage('.choose-card-change', /apply\/updates-and-corrections/, done);
   });
 
+  world.then('I will be on the page for choosing reason for replacement', function(done) {
+    assertOnPage('.choose-replacement-detail', /apply\/replacement-details/, done);
+  });
+
   world.then('I will be on the youth license notification page', function(done) {
     assertOnPage('.youth-license-notification', /apply\/youth-license-notification/, done);
   });

@@ -73,12 +73,16 @@ describe('client data parser', function() {
     assert.equal(options[2].option_type, 'action');
     assert.equal(options[2].option_value, 'change');
     assert.equal(options[3].option_value, 'change-correct-name_other-I dislike my photograph')
-    assert.equal(options[4].option_type, 'modification');
-    assert.equal(options[4].option_value, 'reduced-fee-has-form');
+    assert.equal(options[4].option_type, 'action');
+    assert.equal(options[4].option_value, 'replace');
     assert.equal(options[5].option_type, 'modification');
-    assert.equal(options[5].option_value, 'real-id');
+    assert.equal(options[5].option_value, 'replace-damaged');
     assert.equal(options[6].option_type, 'modification');
-    assert.equal(options[6].option_value, 'senior-id');
+    assert.equal(options[6].option_value, 'reduced-fee-has-form');
+    assert.equal(options[7].option_type, 'modification');
+    assert.equal(options[7].option_value, 'real-id');
+    assert.equal(options[8].option_type, 'modification');
+    assert.equal(options[8].option_value, 'senior-id');
   });
 
   it('correctly extracts the current card info', function() {

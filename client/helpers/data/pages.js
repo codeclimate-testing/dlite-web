@@ -35,9 +35,15 @@ const getStarted = [
   },
   {
     key: 'chooseCardChanges',
-    description: 'updates and corrections',
+    description: 'Updates and Corrections',
     path: '/updates-and-corrections',
     next: 'currentCardInfo'
+  },
+  {
+    key: 'chooseCardReplacement',
+    description: 'Replacement Details',
+    path: '/replacement-details',
+    next: 'realID'
   },
   {
     key: 'currentCardInfo',

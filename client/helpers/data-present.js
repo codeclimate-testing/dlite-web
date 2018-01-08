@@ -25,11 +25,15 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return hasAnyAttributes(props, ['renew', 'change', 'new']);
+  return hasAnyAttributes(props, ['renew', 'change', 'new', 'replace']);
 };
 
 const cardChanges = (props) => {
   return hasAllAttributes(props, ['correctOrUpdate', 'sections']);
+};
+
+const cardReplacement = (props) => {
+  return hasAllAttributes(props, ['reason']);
 };
 
 const currentCardInfo = (props) => {
@@ -140,6 +144,7 @@ const application = (props) => {
     date(props.dateOfBirth) ||
     cardType(props.cardType) ||
     cardChanges(props.cardChanges) ||
+    cardReplacement(props.cardReplacement) ||
     currentCardInfo(props.currentCardInfo) ||
     reducedFee(props.reducedFee) ||
     licenseType(props.licenseType) ||
@@ -173,6 +178,7 @@ export {
   legalName,
   cardType,
   cardChanges,
+  cardReplacement,
   currentCardInfo,
   reducedFee,
   licenseType,

@@ -11,11 +11,11 @@ export const getNewDL = (props) => {
 };
 
 export const getID = (props) => {
-  return getNewID(props) || props.cardType.renew === 'ID' || props.cardType.change === 'ID';
+  return getNewID(props) || props.cardType.renew === 'ID' || props.cardType.change === 'ID' || props.cardType.replace === 'ID';
 };
 
 export const getDL = (props) => {
-  return getNewDL(props) || props.cardType.renew === 'DL' || props.cardType.change === 'DL';
+  return getNewDL(props) || props.cardType.renew === 'DL' || props.cardType.change === 'DL' || props.cardType.replace === 'DL';
 };
 
 export const canContinue = (props) => {

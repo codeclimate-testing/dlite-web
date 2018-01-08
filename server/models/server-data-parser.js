@@ -33,6 +33,7 @@ function parse(data) {
         dateOfBirth:              getDateOfBirth(application),
         cardType:                 getCardTypes(card_options, cards),
         cardChanges:              getCardChanges(card_options),
+        cardReplacement:          getCardReplacement(card_options),
         currentCardInfo:          getCurrentCardInfo(renewal_card),
         realID:                   getRealID(card_options, cards),
         licenseType:              getLicenseType(license_classes),
@@ -335,6 +336,7 @@ function getCardTypes(card_options, cards) {
     new: [],
     renew: '',
     change: '',
+    replace: '',
     youthIDInstead: ''
   };
 
@@ -447,6 +449,21 @@ function getCardChanges(card_options) {
     }
   });
   return cardChanges;
+};
+
+function getCardReplacement(card_options) {
+  let cardReplacement = {
+    reason: ''
+  };
+  card_options.forEach(option => {
+    const value = option.option_value.split('-');
+    if(value[0] === 'replace') {
+      cardReplacement = {
+        reason: value[1]
+      }
+    }
+  });
+  return cardReplacement
 };
 
 module.exports = parse;

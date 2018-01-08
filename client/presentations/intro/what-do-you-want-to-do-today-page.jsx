@@ -11,7 +11,8 @@ const Form = (props) => {
   let values = {
     new: 'Get a new card',
     renew: 'Renew a card',
-    change: 'Correct or update a card'
+    change: 'Correct or update a card',
+    replace: 'Replace a card'
   };
 
   return (
@@ -40,6 +41,9 @@ const Form = (props) => {
               />
               <RadioSelector 
                 value='change'
+              />
+              <RadioSelector
+                value='replace'
               />
             </RadioCollection>
             <div className='unit spacer' />

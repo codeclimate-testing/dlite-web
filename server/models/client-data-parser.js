@@ -287,6 +287,20 @@ function extractCardOptions(data) {
       option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
     });
   };
+
+  if(data.cardType.replace) {
+    cardOptions.push({
+      type:          data.cardType.replace,
+      option_type:   'action',
+      option_value:  'replace',
+    });
+
+    cardOptions.push({
+      type:               data.cardType.replace,
+      option_type:        'modification',
+      option_value:       'replace-' + data.cardReplacement.reason
+    });
+  };
   
   if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
     cardOptions.push({

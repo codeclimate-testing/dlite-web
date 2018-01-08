@@ -16,12 +16,16 @@ function fakeClientData() {
       'new': ['DL'],
       'renew': 'ID',
       'change': 'ID',
+      'replace': 'ID',
       'youthIDInstead': ''
     },
     'cardChanges': {
       'correctOrUpdate': 'correct',
       'sections': ['name', 'other'],
       'other': 'I dislike my photograph'
+    },
+    'cardReplacement': {
+      'reason': 'damaged'
     },
     'currentCardInfo': {
       'number': 'e203f390',
