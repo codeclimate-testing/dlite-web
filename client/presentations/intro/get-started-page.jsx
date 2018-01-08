@@ -24,17 +24,27 @@ const Intro = (props) => {
 
         <p>The DMV cares about your privacy. We will protect your data.</p>
 
-        <hr />
-        <p>The online form takes most customers<br />
-          <b>10 minutes</b></p>
+        <div className='navigation-buttons row'>
+          <hr />
 
-        <div className='navigation-buttons'>
-          <BackButton onBack={props.onBack} key='back-button' />
-          <LinkButton
-            to={linkAddress}
-            linkText='Get started'
-            className='continue get-started forward'
-          />
+          <p>The online form takes most customers<br />
+            <b>10 minutes</b>
+          </p>
+
+          <div className='shadow-container unit'>
+            <BackButton
+              onBack={props.onBack}
+              key='back-button'
+            />
+          </div>
+
+          <div className='shadow-container unit-right'>
+            <LinkButton
+              to={linkAddress}
+              linkText='Get started'
+              className='continue get-started forward'
+            />
+          </div>
         </div>
       </div>
     </Page>

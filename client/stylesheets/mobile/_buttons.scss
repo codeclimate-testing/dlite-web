@@ -1,0 +1,193 @@
+button,
+input[type=submit] {
+  @include line;
+}
+
+button,
+input[type=submit],
+a.button,
+div.button,
+label.button {
+  // overrides that should be in reset/normalize
+  outline-style: none;
+  resize: none;
+  -webkit-appearance: none;
+  border: none;
+
+  display: block;
+
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: $font-size-main;
+
+  letter-spacing: 1px;
+  padding: $spacing*1.2 $spacing*3;
+  text-align: center;
+  white-space: normal;
+
+  cursor: pointer;
+
+  background-color: $dark-blue;
+  border: $border-width solid $dark-blue;
+  color: $lightest-color;
+
+  @include line;
+
+  &:hover,
+  &.hover {
+    background-color: darken($primary, 5%);
+    border-color: darken($primary, 5%);
+  }
+
+  &:focus,
+  &.focus {
+    background-color: darken($primary, 10%);
+    border-color: $focus;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
+  }
+
+  &.disabled,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus,
+  &.disabled.focus,
+  &.disabled.hover,
+  &.disabled:focus,
+  &.disabled:hover {
+    background-color: white;
+    border-color: $neutral-30;
+    color: $darkest-color;
+    opacity: 0.7;
+  }
+
+  &.neutral {
+    background-color: $neutral-30;
+
+    &:hover,
+    &:focus {
+      background-color: $neutral-20;
+    }
+
+    &:active {
+      background-color: $neutral-40;
+    }
+  }
+}
+
+a.button.edit {
+  margin: $border-width-special;
+  background-color: transparent;
+  color: $med-blue;
+  font-size: $font-size-label;
+
+  border: $border-width-special solid $med-blue;
+  @include rounded;
+  padding: $spacing / 4 $spacing / 2;
+
+  &.hover,
+  &:hover {
+    color: $dark-blue;
+    border-color: $dark-blue;
+  }
+
+  &:focus,
+  &.focus {
+    @include focus-outline;
+  }
+
+  .edit-icon {
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("/images/icons/misc/+.svg"); // TODO: fix this to the edit icon
+    background-repeat: no-repeat;
+  }
+}
+
+button.arrow-button,
+a.button.arrow-button {
+  padding: 0 0 $border-width-special 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+
+  width: $arrow-button-text-width + $arrow-width;
+  height: $arrow-button-height;
+
+  &.backwards {
+    color: $button-rest;
+    text-align: right;
+    padding-right: $arrow-button-padding;
+    background-image: url("/images/arrow-buttons/backwards/rest.svg");
+  }
+
+  &.forward {
+    color: $lightest-color;
+    text-align: left;
+    padding-left: $arrow-button-padding;
+    background-image: url("/images/arrow-buttons/forward/rest.svg");
+  }
+
+  &.focus,
+  &:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/rest-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/rest-focused.svg");
+    }
+  }
+
+  &.hover,
+  &:hover {
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover.svg");
+    }
+  }
+
+  &.hover.focus,
+  &:hover:focus {
+    &.backwards {
+      color: $dark-blue;
+      background-image: url("/images/arrow-buttons/backwards/hover-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/hover-focused.svg");
+    }
+  }
+
+  &.active,
+  &:active {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active.svg");
+    }
+  }
+
+  &.active.focus,
+  &:active:focus {
+    &.backwards {
+      background-image: url("/images/arrow-buttons/backwards/active-focused.svg");
+    }
+    &.forward {
+      background-image: url("/images/arrow-buttons/forward/active-focused.svg");
+    }
+  }
+}
+
+a.button.arrow-button {
+  text-decoration: none;
+  padding-top: $spacing;
+}

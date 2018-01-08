@@ -10,7 +10,7 @@ const Form = (props) => {
     correct:  'Correct',
     update:   'Update'
   };
-  
+
   return (
     <div className='row inner-buttom'>
       <RadioCollection
@@ -25,7 +25,6 @@ const Form = (props) => {
           value='update'
         />
       </RadioCollection>
-      <div className='unit spacer' />
     </div>
   )
 };

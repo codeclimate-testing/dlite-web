@@ -15,16 +15,15 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit}>
-
         <LicenseTypeForm {...props} />
 
-        <EndorsementToggle 
-          {...props} 
+        <EndorsementToggle
+          {...props}
           selectedValue={ props.licenseType.needEndorsement }
         />
 
         <EndorsementForm {...props} />
-     
+
         <NavigationButtons
           continueDisabled  = { props.continueDisabled }
           onBack            = { props.onBack }

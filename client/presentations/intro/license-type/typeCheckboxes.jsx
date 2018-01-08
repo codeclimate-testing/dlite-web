@@ -4,9 +4,7 @@ import React              from 'react';
 import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 
-
 const Form = (props) => {
-
   const text = {
     car       : 'Car',
     cycle     : 'Motorcycle or scooter',
@@ -15,35 +13,33 @@ const Form = (props) => {
     unsure    : "I'm not sure"
   };
 
-
   return (
     <div className='license-type-form'>
-      <h4>What do you need to drive?</h4>
-      <h5>Select all that apply</h5>
+      <h2 className='question'>What do you need to drive?</h2>
+      <p>Select all that apply</p>
       <div className='row inner-bottom'>
-        <CheckboxCollection 
+        <CheckboxCollection
           {...props}
           text  = {text}
           name  = 'type'
           array = {props.licenseType}
         >
-          <CheckboxSelector 
+          <CheckboxSelector
             value = 'car'
           />
-          <CheckboxSelector 
+          <CheckboxSelector
             value = 'cycle'
           />
-          <CheckboxSelector 
+          <CheckboxSelector
             value = 'trailer'
           />
-          <CheckboxSelector 
+          <CheckboxSelector
             value = 'long'
           />
-          <CheckboxSelector 
+          <CheckboxSelector
             value = 'unsure'
           />
         </CheckboxCollection>
-        <div className='unit spacer' />
       </div>
     </div>
   )

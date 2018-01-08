@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>California Stylesheet Demo</title>
+  <title>DMV styles demo</title>
   <meta name="viewport" content="initial-scale=1">
   <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
   <link rel="stylesheet" href="/app.css">
@@ -103,7 +103,7 @@
             <li>One</li>
             <li>Two</li>
             <li>Two plus</li>
-          </ul>
+          </ol>
 
           <hr>
 
@@ -147,6 +147,21 @@
                 <option>2</option>
                 <option>3</option>
               </select>
+            </div>
+
+            <div class='row'>
+              <div class='shadow-container unit'>
+                <a href='#' class='summary edit button focus'>
+                  <div class='unit edit-icon'></div>
+                  <div class='unit text-area'>Edit</div>
+                </a>
+              </div>
+              <div class='shadow-container unit-right'>
+                <a href='#' class='summary edit button'>
+                  <div class='unit edit-icon'></div>
+                  <div class='unit text-area'>Edit</div>
+                </a>
+              </div>
             </div>
 
             <p>And then we move to some submit buttons</p>
@@ -492,25 +507,6 @@
                 </div>
               </div>
               <div class='row spacer'></div>
-
-              <div class='unit size-1-2'>
-                <h4>Submit/continue buttons</h4>
-                <input type='submit'><br>
-                <input class='hover' type='submit' value='Hover'><br>
-                <input class='active' type='submit' value='Active'><br>
-                <input class='focus' type='submit' value='Focus'><br>
-                <input class='disabled' type='submit' value='Disabled-ish'><br>
-              </div>
-              <div class='unit size-1-2'>
-                <h4>Tap buttons</h4>
-                <div class='button tap'>Normal</div><br>
-                <div class='button tap hover'>Hover</div><br>
-                <div class='button tap active'>Active</div><br>
-                <span class='focus'><div class='button tap'>Focus</div></span><br>
-                <div class='button tap selected'>Selected</div><br>
-                <div class='button tap selected hover'>Selected hover</div><br>
-                <span class='focus'><div class='button tap selected'>Selected focused</div></span>
-              </div>
             </div>
           </form>
 
@@ -519,25 +515,25 @@
           <h1 id='colors'>Colors</h1>
 
           <div class='row'>
-            <div class='unit size-1-5 background-primary'>
+            <div class='unit size-1-2 background-primary'>
               <div class='inner light-text'>Primary</div>
             </div>
-            <div class='unit size-1-5 background-accent'>
-              <div class='inner'>Accent</div>
+            <div class='unit size-1-2 background-accent'>
+              <div class='inner light-text'>Accent</div>
             </div>
-            <div class='unit size-1-5 background-accent-2'>
-              <div class='inner'>Accent 2</div>
+            <div class='unit size-1-2 background-accent-2'>
+              <div class='inner light-text'>Accent 2</div>
             </div>
-            <div class='unit size-1-5 background-info'>
+            <div class='unit size-1-2 background-info'>
               <div class='inner light-text'>Info</div>
             </div>
-            <div class='unit size-1-5 background-info-2'>
+            <div class='unit size-1-2 background-info-2'>
               <div class='inner light-text'>Info 2</div>
             </div>
-            <div class='unit size-1-5 background-warn'>
-              <div class='inner light-text'>Warn</div>
+            <div class='unit size-1-2 background-warn'>
+              <div class='inner'>Warn</div>
             </div>
-            <div class='unit size-1-5 background-error'>
+            <div class='unit size-1-2 background-error'>
               <div class='inner light-text'>Error</div>
             </div>
           </div>

@@ -66,7 +66,6 @@ const Form = (props) => {
           value='other'
         />
       </CheckboxCollection>
-      <div className='unit spacer' />
     </div>
   )
 };

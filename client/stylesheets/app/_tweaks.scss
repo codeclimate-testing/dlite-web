@@ -28,21 +28,15 @@
 }
 
 a.sections {
-  color: transparent;
+  //color: transparent;
 }
 
 a.button.arrow-button.forward.get-started {
   padding-left: 12px;
 }
 
-.summary-section .flex{
-  display: flex;
-  justify-content: space-between;
-  .button.summary{
-    border: 1px solid #2D3FCA;
-    color: #2D3FCA;
-  }
-  h4{
-    color: #12814f;
+.summary-section {
+  h4 {
+    color: $green;
   }
 }

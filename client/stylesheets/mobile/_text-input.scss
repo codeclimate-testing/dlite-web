@@ -12,6 +12,7 @@ textarea {
   @include line;
   @include bordered;
   @include rounded;
+  width: 100%;
   padding: 10px 9px 14px;
 
   background-color: white;
@@ -39,7 +40,7 @@ textarea {
 }
 @-moz-document url-prefix() {
   textarea {
-    font-family: $body-font;
+    font-family: $form-font;
   }
 }
 

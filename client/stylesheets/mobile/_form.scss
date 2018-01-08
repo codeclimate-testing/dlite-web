@@ -1,0 +1,39 @@
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+}
+
+input[type=radio] {
+  -webkit-appearance: radio;
+}
+
+form {
+  margin-left: $border-width-special;
+
+  .error {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    textarea {
+      margin-bottom: -1 * $border-width;
+      border-bottom-width: $border-width-special;
+      border-color: $error;
+    }
+  }
+
+  .spacer {
+    height: $spacing * 4;
+  }
+
+  .radio-collection .spacer {
+    height: $spacing;
+  }
+}
+
+.input-container {
+  margin-bottom: ($border-width-special + $border-width) * 2;
+  padding-right: $border-width-special;
+}
+
+.input-margin-bottom {
+  margin-bottom: $spacing;
+}

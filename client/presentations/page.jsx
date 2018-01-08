@@ -51,13 +51,12 @@ const Page = (props) => {
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />
-      <HomeLink />
       <Header
         number={number}
         name={name}
       />
-
       {props.children}
+      <HomeLink />
     </div>
   );
 };

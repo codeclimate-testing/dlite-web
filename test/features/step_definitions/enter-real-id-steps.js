@@ -6,17 +6,17 @@ module.exports = function(world) {
   let browser = world.browser;
 
   world.and('I click yes to getting a real id', function(done) {
-      browser
-        .click('label[for="getRealID-Yes"]')
-        .then(() => { done(); })
-        .catch(done);
+    browser
+      .click('label[for="getRealID-Yes"]')
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.and('I click no to getting a real id', function(done) {
-      browser
-        .click('label[for="getRealID-No"]')
-        .then(() => { done(); })
-        .catch(done);
+    browser
+      .click('label[for="getRealID-No"]')
+      .then(() => { done(); })
+      .catch(done);
   });
 
   world.then('I will see that I am getting a real id', function(done){
@@ -41,7 +41,7 @@ module.exports = function(world) {
 
   world.and('I select ID to have my real id designation', function(done) {
       browser
-        .click('label[for="realIdDesignationID"]')
+        .click('label[for="realIdDesignation-ID"]')
         .then(() => { done(); })
         .catch(done);
   });

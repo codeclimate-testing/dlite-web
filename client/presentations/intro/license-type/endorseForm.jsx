@@ -14,26 +14,25 @@ const Form = (props) => {
 
   return (
     <div className='endorsement-form'>
-      <h4>Which?</h4>
-      <h5>Select all that apply</h5>
+      <h3 className='question'>Which?</h3>
+      <p>Select all that apply</p>
       <div className='row inner-bottom'>
-        <CheckboxCollection 
+        <CheckboxCollection
           {...props}
           name  = 'endorsement'
           array = {props.licenseType}
           text  = {text}
         >
-          <CheckboxSelector 
+          <CheckboxSelector
             value     = 'firefighter'
           />
-          <CheckboxSelector 
+          <CheckboxSelector
             value     = 'ambulance'
           />
         </CheckboxCollection>
-        <div className='unit spacer' />
       </div>
     </div>
-  )
+  );
 };
 
 export default Form;

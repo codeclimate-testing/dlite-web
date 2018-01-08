@@ -9,7 +9,7 @@ label,
 }
 
 label {
-  margin-bottom: 7px;
+  margin-bottom: ceil($spacing / 3);
   font-weight: bold;
 }
 

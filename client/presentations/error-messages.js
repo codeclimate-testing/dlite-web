@@ -53,5 +53,6 @@ export default {
   identityDocumentationMissing: 'Please enter your identity document information.',
   dataIncludesNonEnglishCharacters: 'Sorry, your card can only include English characters.',
   errorPreventContinuing: 'You cannot continue until you fix the errors on this page.',
-  selectionMissing: 'Please make a selection'
+  selectionMissing: 'Please make a selection',
+  pleaseEnterValidData: 'Please enter valid information'
 };

@@ -1,0 +1,10 @@
+input,
+textarea {
+  max-width: $max-tablet-input-width;
+}
+
+.choice-selector {
+  width: $max-tablet-input-width;
+  margin-right: 14px;
+}
+

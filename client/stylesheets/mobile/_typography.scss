@@ -1,15 +1,21 @@
 body, p {
   color: $darkest-color;
-  font-family: $body-font;
+  font-family: $main-font;
   font-size: $font-size-main;
   line-height: $line-height;
   text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4 {
-  font-family: $headline-font;
+  font-family: $display-headline;
   font-weight: bold;
+  $line-height: 1;
   color: $headline-blue;
+  margin-bottom: $spacing / 2;
+}
+
+p {
+  margin-bottom: $spacing / 2;
 }
 
 h1 {
@@ -43,6 +49,7 @@ a:active,
 a.active {
   text-decoration: underline;
 }
+
 a:focus {
   outline: none;
   @include focus-outline;
@@ -56,6 +63,7 @@ hr {
   border: 0;
   background-color: $dark-blue;
   height: 2px;
+  margin-bottom: $spacing;
 }
 
 ul.bullet-list {
@@ -64,12 +72,19 @@ ul.bullet-list {
   margin-left: $spacing;
 
   li {
-    margin-left: $spacing;
+    margin-left: $spacing/2;
     padding: $spacing/4 $spacing;
   }
 }
 
 ol.decimal-list {
-  list-style-type: decimal; padding: $spacing; margin: $spacing;
+  list-style-type: decimal;
+  padding: $spacing;
+  margin: $spacing;
+
+  li {
+    margin-left: $spacing/2;
+    padding: $spacing/4 $spacing;
+  }
 }
 

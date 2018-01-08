@@ -11,8 +11,9 @@ const Form = (props) => {
   };
   return (
     <div className='endorsement-toggle'>
-      <h4>Do you need any professional endorsements?</h4>
-      <h5>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</h5>
+      <hr />
+      <h2 className='question'>Do you need any professional endorsements?</h2>
+      <p>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
       <div className='row inner-bottom'>
         <RadioCollection
           {...props}

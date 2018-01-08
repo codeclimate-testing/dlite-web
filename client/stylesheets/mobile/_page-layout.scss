@@ -1,15 +1,33 @@
+html {
+  height: 100%;
+  background-color: $dark-blue;
+  color: $paynes-gray;
+}
+
+body {}
+
+#page {
+  @include line;
+  background-color: $lightest-color;
+}
+
+.content {
+  min-height: 500px;
+}
+
 #header {
   background-color: $header-light;
 
   .inner {
-    padding: 12px 20px 11px;
+    padding: 12px $spacing 11px;
   }
 
   .primary {
     color: $lightest-color;
     @include background-image(linear-gradient(to right, $header-dark, $header-light));
-    font-family: $headline-2-font;
-    line-height: 27px;
+    font-family: $main-font;
+
+    margin-bottom: 0;
 
     .dmv-text-logo {
       margin-top: 3px;
@@ -17,20 +35,26 @@
     }
 
     .dmv-application-area {
-      padding-left: 15px;
-      margin-top: 5px;
-      font-size: 14px;
+      padding-left: $spacing * 0.75;
+      margin-top: $spacing / 4;
+      font-size: $font-size-main;
+    }
+
+    .application-header {
+      margin-top: 4px;
     }
   }
 
   .secondary {
     color: $lightest-color;
+    margin-bottom: 0;
+
     .inner {
       padding: 9px 20px 8px;
     }
 
     background-color: $header-secondary-light;
-    font-family: $headline-2-font;
+    font-family: $main-font;
     font-size: 12px;
 
     .section-information {
@@ -53,10 +77,8 @@
   }
 }
 
-
-
-
 #footer {
   background-color: $dark-blue;
   color: $lightest-color;
 }
+

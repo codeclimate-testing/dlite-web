@@ -21,8 +21,8 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <h2 className='question pad-bottom-10'>What would you like to do today?</h2>
-        <p className='pad-bottom-20'>
+        <h2 className='question'>What would you like to do today?</h2>
+        <p>
           Pick one option for now. If you need to do more,
           you can do so at the end.
         </p>
@@ -42,18 +42,17 @@ const Form = (props) => {
               <RadioSelector
                 value = 'renew'
               />
-              <RadioSelector 
+              <RadioSelector
                 value = 'change'
               />
               <RadioSelector
                 value='replace'
               />
             </RadioCollection>
-            <div className= 'unit spacer' />
           </div>
-          <NavigationButtons 
+          <NavigationButtons
             errorMessage = { props.validations.cardAction() }
-            {...props} 
+            {...props}
           />
         </form>
       </div>

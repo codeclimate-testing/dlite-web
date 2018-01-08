@@ -70,8 +70,7 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert(!component.find('#realIdDesignationID').length, 'form asking to choose between ID and DL showing');
-      assert(!component.find('#realIdDesignationDL').length, 'form asking to choose between ID and DL showing');
+      assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL showing');
     });
 
     it('shows the form asking which card if you select yes to real id', function() {
@@ -83,8 +82,7 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert(component.find('#realIdDesignationID').length, 'form asking to choose between ID and DL not showing');
-      assert(component.find('#realIdDesignationDL').length, 'form asking to choose between ID and DL not showing');
+      assert(component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
 
     it('does not shows the form asking which card if you select yes to real id', function() {
@@ -96,8 +94,7 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert(!component.find('#realIdDesignationID').length, 'form asking to choose between ID and DL not showing');
-      assert(!component.find('#realIdDesignationDL').length, 'form asking to choose between ID and DL not showing');
+      assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
 
     it('does not show the form asking which type if you only are getting one card', function() {
@@ -110,8 +107,7 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert(!component.find('#realIdDesignationID').length, 'form asking to choose between ID and DL not showing');
-      assert(!component.find('#realIdDesignationDL').length, 'form asking to choose between ID and DL not showing');
+      assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
   });
 });

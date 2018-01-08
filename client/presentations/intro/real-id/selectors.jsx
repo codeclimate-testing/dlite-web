@@ -7,43 +7,35 @@ import RadioSelector        from '../../radio-selector.jsx';
 import { hasMultipleCards } from '../../../helpers/data/cards';
 import { getDL }            from '../../../helpers/data/card-type';
 
-const DLHeader = (props) => {
-  return <h4>Do you plan on using your Driver License to fly?</h4>;
-}
-
-const IDHeader = (props) => {
-  return <h4>Do you plan on using your ID to fly?</h4>;
-}
-
-const MultiCardHeader = (props) => {
-  return <h4>Do you plan on using one of your cards to fly?</h4>;
+const headerTexts = {
+  DL: 'Do you plan on using your Driver License to fly?',
+  ID: 'Do you plan on using your ID to fly?',
+  both: 'Do you plan on using one of your cards to fly?'
 };
 
-const Header = (props) => {
+const headerText = (props) => {
   const multiCard = hasMultipleCards(props);
-  if (multiCard)     { return <MultiCardHeader {...props} />; }
-  if (getDL(props))  { return <DLHeader {...props} />; }
-  return <IDHeader {...props} />;
+  if (multiCard)     { return headerTexts.both; }
+  if (getDL(props))  { return headerTexts.DL; }
+  return headerTexts.ID;
+};
+
+const values = {
+  Yes: 'Yes',
+  No: 'No'
 };
 
 const FormSection = (props) => {
-
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
-
   return (
     <div className='real-id-form'>
-      <Header {...props} />
-
-      <h5>
+      <h2 className='question'>{ headerText(props) }</h2>
+      <p>
         As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
         <b> within</b> the United States.
-      </h5>
+      </p>
 
       <div className='row inner-bottom'>
-        <RadioCollection 
+        <RadioCollection
           {...props}
           name='getRealID'
           text={values}

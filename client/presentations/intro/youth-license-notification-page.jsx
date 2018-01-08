@@ -12,9 +12,9 @@ import { validToContinue } from '../../helpers/data/youth';
 const FormHeader = (props) => {
   return (
     <div>
-      <h4>{props.title}</h4>
-      <h5>{props.helpText}</h5>
-      <h4>Do you want to apply for an ID instead?</h4>
+      <h2 className='question'>{props.title}</h2>
+      <p>{props.helpText}</p>
+      <h3 className='question'>Do you want to apply for an ID instead?</h3>
     </div>
   );
 };
@@ -64,24 +64,21 @@ const Form = (props) => {
       {...props}
     >
       <div className='youth-license-notification'>
-        <Header />
         <form onSubmit={ props.onSubmit } >
-
+          <Header />
           <div className='row inner-bottom'>
-            <RadioCollection  
+            <RadioCollection
               {...props}
               name='youthIDInstead'
               text={values}
             >
-              <RadioSelector 
+              <RadioSelector
                 value='Yes'
               />
-              <RadioSelector 
+              <RadioSelector
                 value='No'
               />
             </RadioCollection>
- 
-            <div className='unit spacer' />
           </div>
 
           <ErrorMessage {...props} />

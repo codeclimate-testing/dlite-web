@@ -2,28 +2,37 @@
 
 import React from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
-import { mustChooseCard } from '../../../helpers/data/real-id';
+import RadioCollection        from '../../radio-selector-collection.jsx';
+import RadioSelector          from '../../radio-selector.jsx';
+
+import { mustChooseCard }     from '../../../helpers/data/real-id';
+
+let collectionTexts = {
+  ID: 'ID',
+  DL: 'DL'
+};
 
 const Form = (props) => {
   if (!mustChooseCard(props)) { return null; }
 
   return (
     <div className='real-id-form'>
-      <h4>Which card would you like to fly with?</h4>
-      <h5>
+      <hr />
+      <h2 className='question'>Which card would you like to fly with?</h2>
+      <p>
         Either your license or your ID card can be made federally
         compliant to fly within the United States, but not both
-      </h5>
-      <div className='row inner-bottom'>
-        <SelectorCollection
-          name='realIdDesignation'
-          values={['ID', 'DL']}
-          onChange={ props.onChange }
-          selectedValue={ props.selectedValue }
-        />
-        <div className='unit spacer' />
-      </div>
+      </p>
+
+      <RadioCollection
+        {...props}
+        name='realIdDesignation'
+        text={ collectionTexts }
+      >
+        <RadioSelector value='ID' />
+        <RadioSelector value='DL' />
+      </RadioCollection>
+
     </div>
   );
 };

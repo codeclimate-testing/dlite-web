@@ -1,7 +1,7 @@
 .accordion {
-  margin: 2px 0;
+  margin: $border-width-special 0;
   @include rounded;
-  border: 1px solid $accordion-color;
+  border: $border-width solid $accordion-color;
 
   .accordion-header {
     @include border-top-radius($border-radius-size);
@@ -39,9 +39,9 @@
   .accordion-header.focus,
   .accordion-header:focus {
     outline: none;
-    padding: $spacing - 2px;
+    padding: $spacing - $border-width-special;
     margin: 0;
-    border: 2px solid $focus;
+    border: $border-width-special solid $focus;
   }
 
   &.hover,

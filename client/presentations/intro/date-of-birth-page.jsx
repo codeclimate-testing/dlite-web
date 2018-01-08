@@ -15,8 +15,8 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={ props.onSubmit } className='date-of-birth-form'>
-        <h2 className='question pad-bottom-10'>What's your date of birth?</h2>
-        <p className='pad-bottom-20'>Example: 03 21 1967</p>
+        <h2 className='question'>What's your date of birth?</h2>
+        <p>Example: 03 21 1967</p>
 
         <div className='row inner-bottom'>
           <DateInput

@@ -5,7 +5,6 @@ import { connect }            from 'react-redux';
 
 import handlers               from '../../helpers/handlers';
 import { NamePageValidator }  from '../../helpers/validations';
-
 import { updateLegalName }    from '../../actions/index';
 import Presentation           from '../../presentations/intro/name-page.jsx';
 

@@ -2,10 +2,9 @@
 
 import React from 'react';
 
-import SelectorCollection from '../../selector-collection.jsx';
-
 import RadioSelector      from '../../radio-selector.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
+
 const SignatureChoice = (props) => {
   let values = {
     Yes: 'Yes',

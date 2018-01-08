@@ -14,7 +14,7 @@ const LegalNameForm = (props) => {
       {...props}
     >
       <form onSubmit={ props.onSubmit } className='legal-name-form'>
-        <h2 className='pad-top-20'>Welcome!</h2>
+        <h2>Welcome!</h2>
         <h2 className='question pad-bottom-10'>What's your true full name?</h2>
         <p className='pad-bottom-20'>
           This is the name that appears on official identity documents

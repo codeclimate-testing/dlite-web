@@ -19,15 +19,16 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        <h2 className='question pad-bottom-10'>Senior identification card</h2>
-        <p className='pad-bottom-20'>
+        <h2 className='question'>Senior identification card</h2>
+        <p>
           You qualify for a free ID card. The word "Senior Identification Card"
           will be printed on your card.
         </p>
-        
 
-        <div className='row inner-bottom'>
-          <RadioCollection 
+        <h3 className='question'>Would you like this card for no fee?</h3>
+
+        <div className='row'>
+          <RadioCollection
             {...props}
             name    = 'seniorID'
             text    = { values }
@@ -41,7 +42,6 @@ const Form = (props) => {
               value='No'
             />
           </RadioCollection>
- 
         </div>
 
         <NavigationButtons

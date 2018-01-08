@@ -7,10 +7,12 @@
 
 @import "mobile/oo-styles"; // for brevity, pick and choose your styles
 
-// below this line is optional
-@import "mobile/widgets/form-elements";
-@import "mobile/widgets/buttons";
-@import "mobile/widgets/page-layout";
-@import "mobile/widgets/header";
+@import "mobile/accordion";
+@import "mobile/buttons";
+@import "mobile/form";
+@import "mobile/label";
+@import "mobile/page-layout";
+@import "mobile/selectors";
+@import "mobile/text-input";
 
 @import "app/all";

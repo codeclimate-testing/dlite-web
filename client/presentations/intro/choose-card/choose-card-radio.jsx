@@ -38,7 +38,6 @@ const Form = (props) => {
           value='DL'
         />
       </RadioCollection>
-      <div className='unit spacer' />
     </div>
   )
 };

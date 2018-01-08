@@ -4,10 +4,6 @@ import React from 'react';
 
 import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
-import {
-  getNewID,
-  getNewDL
-} from '../../../helpers/data/card-type.js'
 
 const Form = (props) => {
   if(props.cardAction !== 'new') { return null; }
