@@ -5,7 +5,7 @@ function hasNewID(cardType) {
 }
 
 function hasID(cardType) {
-  return (hasNewID(cardType)|| cardType.renew === 'ID');
+  return (hasNewID(cardType) || cardType.renew === 'ID' || cardType.change === 'ID');
 }
 
 function hasNewDL(cardType) {
@@ -13,7 +13,7 @@ function hasNewDL(cardType) {
 }
 
 function hasDL(cardType) {
-  return (hasNewDL(cardType) || cardType.renew === 'DL');
+  return (hasNewDL(cardType) || cardType.renew === 'DL' || cardType.change === 'DL');
 }
 
 module.exports = {
@@ -22,3 +22,4 @@ module.exports = {
   hasNewDL,
   hasDL
 };
+
