@@ -11,7 +11,7 @@ const Form = (props) => {
   return(
     <Page
       {...props}
-      sectionKey='intro'
+      sectionKey=''
     >
       <form onSubmit={props.onSubmit} className='guardian-signature-form'>
 

@@ -7,7 +7,7 @@ function defaultState() {
   return {
     isSigned:  '',
     guardianInfo: [{
-      id: 'first',
+      id: '0',
       acceptLiabilities: '',
       signature: '',
       signatureDateMonth: '',
@@ -26,7 +26,7 @@ function defaultState() {
       IDExpirationDateYear: ''
     },
     {
-      id: 'second',
+      id: '1',
       acceptLiabilities: '',
       signature: '',
       signatureDateMonth: '',
@@ -57,22 +57,25 @@ export default function(state = defaultState(), action) {
   let payload = action.payload;
 
   if (payload) {
+    let guardianID = '';
     let name    = payload.name;
     let value   = payload.value === 'true' ? true : payload.value === 'false' ? false : payload.value;
     if( name === 'isSigned') {
       data[name]  = value;
     }
     else{
-      if(name.split('_')[0] === 'acceptLiabilities'){
-        name = 'acceptLiabilities';
-      }
       data = Object.assign({}, state);
       if (action.type === TYPES.UPDATE_GUARDIAN_SIGNATURE_FIRST) {
-        data['guardianInfo'][0][name] = value;
+        guardianID = '0';
+
       }
       else if (action.type === TYPES.UPDATE_GUARDIAN_SIGNATURE_SECOND) {
-        data['guardianInfo'][1][name] = value;
+        guardianID = '1';
       }
+      if(name === 'acceptLiabilities'){
+        value = value === `${name}_${guardianID}-true` ? true : false;
+      }
+      data['guardianInfo'][guardianID][name] = value;
     }
   }
 

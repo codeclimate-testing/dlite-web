@@ -9,7 +9,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import GuardianSignaturePage    from '../../../../client/presentations/apply/guardian-signature-page.jsx';
+import GuardianSignaturePage    from '../../../../client/presentations/conclusion/guardian-signature-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('GuardianSignaturePage', function() {
@@ -78,8 +78,8 @@ describe('GuardianSignaturePage', function() {
           <GuardianSignaturePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="isSignedYes"]').length, 'Guardian signature - Yes button missing');
-      assert.ok(component.find('label[for="isSignedNo"]').length, 'Guardian signature - No button missing');
+      assert.ok(component.find('label[for="isSigned-Yes"]').length, 'Guardian signature - Yes button missing');
+      assert.ok(component.find('label[for="isSigned-No"]').length, 'Guardian signature - No button missing');
       assert.ok(component.find('.guardian-signature-form').length, 'Guardian signature - form missing');
     });
 

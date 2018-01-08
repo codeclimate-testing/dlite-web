@@ -7,7 +7,7 @@ module.exports = function(world) {
 
   world.and('My guardian enters his/her details', function(done){
     browser
-    .click('label[for="isSignedYes"]')
+    .click('label[for="isSigned-Yes"]')
     .click('label[for="acceptLiabilities_0"]')
     .type('#signature', 'GuardianSignature')
     .type('#signatureDateMonth', '10')

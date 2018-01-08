@@ -2,6 +2,7 @@
 
 import React        from 'react';
 
+import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 import CheckboxSelector   from '../../checkbox-selector.jsx';
 import TextInput          from '../../text-input.jsx';
 import NumberInput        from '../../number-input.jsx';
@@ -15,8 +16,8 @@ const ElectronicSignature = (props) => {
       <CheckboxSelector
         {...props}
         name='acceptLiabilities'
-        selected={props.guardianSignature.guardianInfo[guardianID].acceptLiabilities}
         value={`acceptLiabilities_${guardianID}`}
+        selected={props.guardianSignature.guardianInfo[guardianID].acceptLiabilities}
         text='I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.'
       />
 

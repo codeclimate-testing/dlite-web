@@ -53,8 +53,8 @@ describe('updateGuardianSignature', function() {
         {
           type: 'UPDATE_GUARDIAN_SIGNATURE_FIRST',
           payload: {
-            name: 'acceptLiabilities_0',
-            value: 'true'
+            name: 'acceptLiabilities',
+            value: 'acceptLiabilities_0-true'
           }
         }
       ),
@@ -149,8 +149,8 @@ describe('updateGuardianSignature', function() {
         {
           type: 'UPDATE_GUARDIAN_SIGNATURE_SECOND',
           payload: {
-            name: 'acceptLiabilities_0',
-            value: 'true'
+            name: 'acceptLiabilities',
+            value: 'acceptLiabilities_1-true'
           }
         }
       ),

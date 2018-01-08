@@ -80,12 +80,6 @@ const getStarted = [
     description: 'Get started intro page',
     path: '/get-started',
     next: 'addresses',
-  },
-  {
-    key: 'guardianSignature',
-    description: 'Parent/Guardian Signature',
-    path: '/guardian-signature',
-    next: 'summary',
   }
 ];
 
@@ -216,6 +210,11 @@ const conclusion = [
     key: 'requiredDocuments',
     description: 'Required documents',
     path: '/appointment-preparation/documents'
+  },
+  {
+    key: 'guardianSignature',
+    description: 'Parent/Guardian Signature',
+    path: '/guardian-signature'
   }
 ];
 

@@ -34,7 +34,6 @@ import LicenseAndId                           from './apply/card-history-page.js
 import MedicalHistory                         from './apply/medical-history-form-container.jsx';
 import NamesHistory                           from './apply/names-history-form-container.jsx';
 import VeteransService                        from './apply/veterans-service-form-container.jsx';
-import GuardianSignature                      from './apply/guardian-signature-page.jsx';
 import VoterCitizenStatus                     from './voter-registration/citizen-status-form-container.jsx';
 import EligibilityRequirements                from './voter-registration/eligibility-requirements-form-container.jsx';
 import OptOut                                 from './voter-registration/opt-out-form-container.jsx';
@@ -46,6 +45,7 @@ import BallotByMail                           from './voter-registration/ballot-
 import AppointmentPreparation                 from '../presentations/appointment-preparation-info.jsx';
 import ContactMethods                         from './voter-registration/contact-methods-form-container.jsx';
 import VoterRegComplete                       from './voter-registration/voter-confirmation-form-container.jsx';
+import GuardianSignature                      from './conclusion/guardian-signature-page.jsx';
 
 class Router extends React.Component {
   render() {

@@ -10,7 +10,7 @@ import {
   updateGuardianSignatureSecond
  }     from '../../actions/index';
 
-import Presentation                 from '../../presentations/apply/guardian-signature-page.jsx';
+import Presentation                 from '../../presentations/conclusion/guardian-signature-page.jsx';
 
 const Page = (props) => {
   let onSubmit          = handlers.navigateOnSubmit('/summary', props);
