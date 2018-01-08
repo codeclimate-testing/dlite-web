@@ -3,8 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HomeLink          from './home-link.jsx';
-import SectionHeader     from './section-header.jsx';
+import HomeLink           from './home-link.jsx';
+import SectionHeader      from './section-header.jsx';
 
 const setTitleLiteral = (title, section) => {
   if (!title) { return; }
@@ -13,7 +13,7 @@ const setTitleLiteral = (title, section) => {
 
 const setTitleFromState = (section) => {
   let name = section.name;
-  let title = `DMV: ${section.applicationType} - ${section.name}`;
+  let title = `DMV ${section.applicationType} - ${section.name}`;
   document.title = title;
 };
 
@@ -32,6 +32,14 @@ const Header = (props) => {
   );
 }
 
+const ApplicationHeader = (props) => {
+  return ReactDOM.createPortal(
+    <div className='application-header'>
+      {`DMV ${props.applicationType}`}
+    </div>, document.getElementById('application-header')
+  );
+}
+
 const Page = (props) => {
   setTitle(props.pageTitle, props.section);
 
@@ -40,6 +48,9 @@ const Page = (props) => {
 
   return (
     <div className='application-page row'>
+      <ApplicationHeader
+        applicationType = {props.section.applicationType}
+      />
       <HomeLink />
       <Header
         number={number}

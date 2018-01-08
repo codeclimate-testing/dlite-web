@@ -15,7 +15,11 @@ Feature: Save user data
     And I choose to get a new card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
+    Then I will see the application title says "DMV card application"
+    And I will see the application header says "DMV card application"
     And I click on the DL checkbox
+    Then I will see the application title says "DMV drivers license application"
+    And I will see the application header says "DMV drivers license application"
     When I click "Next" to continue
     Then I will be on the page for choosing real id
     And I click no to getting a real id
@@ -27,6 +31,7 @@ Feature: Save user data
     Then I will be on the get started page
     When I click "Next" to continue
     Then I will be on the page for entering my address
+    Then I will see the page title has postfix " - My basics"
     And I enter my home address
     And I select address interstitial No
     And I enter my mailing address
@@ -50,6 +55,7 @@ Feature: Save user data
     And I enter my full social security number
     When I click "Next" to continue
     Then I will be taken to medical history page
+    Then I will see the page title has postfix " - My history"
     And I select Yes to having reportable medical history
     And I enter my medical conditions into the textarea
     When I click "Next" to continue
@@ -74,10 +80,12 @@ Feature: Save user data
     And I click Yes about having my license labeled with Veteran
     And I click "Next" to continue
     Then I will be on the page for organ donation
+    Then I will see the page title has postfix " - Organ donation"
     And I choose to donate
     And I choose to contribute
     And I click "Next" to continue
     Then I will be taken to voter intro info page
+    Then I will see the page title has postfix " - Voting registration"
     When I click "Next" to continue
     Then I will be on the page for voter citizen status entry
     And I select citizen Yes
@@ -159,6 +167,8 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
     When I click to renew my ID
+    Then I will see the application title says "DMV identification card application"
+    And I will see the application header says "DMV identification card application"
     When I click "Next" to continue
     Then I will be on the current card info page
     When I enter my current card data
@@ -170,9 +180,11 @@ Feature: Save user data
     And I select Yes to getting a reduced fee
     When I select No to having the correct forms
     When I visit the social security page
+    Then I will see the page title has postfix " - My basics"
     When I select No for social security
     And I click "Next" to continue
     Then I will be on the page to enter existing license and id
+    Then I will see the page title has postfix " - My history"
     When I select exisiting DL/ID Yes
     When I enter my existing DL/ID card number
     And I enter the issuing state or country
@@ -186,6 +198,7 @@ Feature: Save user data
     When I click No for veteran
     And I click "Next" to continue
     Then I will be on the page for organ donation
+    Then I will see the page title has postfix " - Organ donation"
     And I change my organ selection
     When I visit voter citizen status page
     And I select citizen No
@@ -222,6 +235,8 @@ Feature: Save user data
     Then I will be on the ID and DL selection page
     When I click on the ID checkbox
     When I click on the DL checkbox
+    Then I will see the application title says "DMV drivers license and ID application"
+    And I will see the application header says "DMV drivers license and ID application"
     And I click "Next" to continue
     When I click yes to getting a real id
     When I select ID to have my real id designation
@@ -233,6 +248,7 @@ Feature: Save user data
     Then I will be on the reduced fee page
     And I select No to getting a reduced fee
     When I visit the addresses page
+    Then I will see the page title has postfix " - My basics"
     And I enter my home address
     And I select address interstitial Yes
     When I visit the traits height and weight page
@@ -244,6 +260,7 @@ Feature: Save user data
     When I enter my full social security number
     And I click "Next" to continue
     Then I will be taken to medical history page
+    Then I will see the page title has postfix " - My history"
     When I select No to having reportable medical history
     And I click "Next" to continue
     Then I will be on the page to enter existing license and id
@@ -261,6 +278,7 @@ Feature: Save user data
     Then I will be on the page for veteran related services
     When I click No for veteran
     When I visit voter citizen status page
+    Then I will see the page title has postfix " - Voting registration"
     And I select citizen Yes
     When I visit the voter eligibility requirements page
     And I click "Next" to continue
@@ -328,9 +346,9 @@ Feature: Save user data
     Then I choose to change my DL
     When I click "Next" to continue
     Then I will be on the page for choosing to update or correct my card
-    And I choose to update my card 
+    And I choose to update my card
     And I check the box to update my name
-    When I click "Next" to continue 
+    When I click "Next" to continue
     Then I will be on the current card info page
-    When I go to the page with my summary 
+    When I go to the page with my summary
     Then I will see that I am updating the name on my DL

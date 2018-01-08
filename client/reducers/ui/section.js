@@ -64,17 +64,65 @@ const sectionData = (key) => {
   };
 };
 
+const cardType = (card, state) => {
+  let applicationType = 'card application';
+
+  if(card === 'ID') {
+    applicationType = 'identification card application';
+  }
+  else if(card === 'DL') {
+    applicationType = 'drivers license application'
+  }
+
+  else if(card === 'ID-true') {
+    if(state.applicationType === 'drivers license application') {
+      applicationType = 'drivers license and ID application'
+    }
+    else{
+      applicationType = 'identification card application'
+    }
+  }
+  else if(card === 'ID-false') {
+    if(state.applicationType === 'drivers license and ID application') {
+      applicationType = 'drivers license application'
+    }
+  }
+
+  else if(card === 'DL-true') {
+    if(state.applicationType === 'identification card application') {
+      applicationType = 'drivers license and ID application'
+    }
+    else{
+      applicationType = 'drivers license application'
+    }
+  }
+  else if(card === 'DL-false') {
+    if(state.applicationType === 'drivers license and ID application') {
+      applicationType = 'identification card application'
+    }
+  }
+
+  return {applicationType: applicationType};
+};
+
 const defaultState = () => {
   return {
-    applicationType: 'Card application',
+    applicationType: 'card application',
     name: '',
     number: ''
   };
 };
 
 export default (state = defaultState(), action) => {
-  if (action.type !== TYPES.CHANGE_SECTION) { return state; }
+  if(action.type === TYPES.UPDATE_CARD_TYPE) {
+    let newCardType = cardType(action.payload.value, state);
+    return Object.assign({}, state, newCardType);
+  }
 
-  let newSection = sectionData(action.payload.value);
-  return Object.assign({}, state, newSection);
+  if (action.type === TYPES.CHANGE_SECTION ) {
+    let newSection = sectionData(action.payload.value);
+    return Object.assign({}, state, newSection);
+  }
+
+  return state;
 };
