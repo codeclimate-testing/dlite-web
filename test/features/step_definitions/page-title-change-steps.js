@@ -8,7 +8,7 @@ module.exports = function (world) {
   world.then('I will see page title for legal name', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'DMV card application - Get started'); })
+      .then((title) => { assert.equal(title, 'DMV Card application - Get started'); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -24,72 +24,72 @@ module.exports = function (world) {
   world.then('I will see page title for date of birth', function(done){
     browser
       .html('title')
-      .then((title) => { assert.equal(title, 'DMV card application - Get started'); })
+      .then((title) => { assert.equal(title, 'DMV Card application - Get started'); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see the application title says "DMV card application"', function(done){
+  world.then('I will see the application title says "DMV Card application"', function(done){
     browser
       .html('title')
-      .then((title) => {assert(title.includes('DMV card application')); })
+      .then((title) => {assert(title.includes('DMV Card application')); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I will see the application header says "DMV card application"', function(done){
+  world.and('I will see the application header says "Card application"', function(done){
     browser
       .text('.application-header')
-      .then((header) => { assert.equal(header, 'DMV card application'); })
+      .then((header) => { assert.equal(header, 'Card application'); })
       .then(() => { done(); })
       .catch(done);
   });
 
 
-  world.then('I will see the application title says "DMV identification card application"', function(done){
+  world.then('I will see the application title says "DMV Identification card application"', function(done){
     browser
       .html('title')
-      .then((title) => {assert(title.includes('DMV identification card application')); })
+      .then((title) => {assert(title.includes('DMV Identification card application')); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I will see the application header says "DMV identification card application"', function(done){
+  world.and('I will see the application header says "Identification card application"', function(done){
     browser
       .text('.application-header')
-      .then((header) => { assert.equal(header, 'DMV identification card application'); })
+      .then((header) => { assert.equal(header, 'Identification card application'); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see the application title says "DMV drivers license application"', function(done){
+  world.then('I will see the application title says "DMV Drivers license application"', function(done){
     browser
       .html('title')
-      .then((title) => {assert(title.includes('DMV drivers license application')); })
+      .then((title) => {assert(title.includes('DMV Drivers license application')); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I will see the application header says "DMV drivers license application"', function(done){
+  world.and('I will see the application header says "Drivers license application"', function(done){
     browser
       .text('.application-header')
-      .then((header) => { assert.equal(header, 'DMV drivers license application'); })
+      .then((header) => { assert.equal(header, 'Drivers license application'); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see the application title says "DMV drivers license and ID application"', function(done){
+  world.then('I will see the application title says "DMV Drivers license and ID application"', function(done){
     browser
       .html('title')
-      .then((title) => {assert(title.includes('DMV drivers license and ID application')); })
+      .then((title) => {assert(title.includes('DMV Drivers license and ID application')); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I will see the application header says "DMV drivers license and ID application"', function(done){
+  world.and('I will see the application header says "Drivers license and ID application"', function(done){
     browser
       .text('.application-header')
-      .then((header) => { assert.equal(header, 'DMV drivers license and ID application'); })
+      .then((header) => { assert.equal(header, 'Drivers license and ID application'); })
       .then(() => { done(); })
       .catch(done);
   });

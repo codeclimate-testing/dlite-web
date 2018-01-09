@@ -15,11 +15,11 @@ Feature: Save user data
     And I choose to get a new card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    Then I will see the application title says "DMV card application"
-    And I will see the application header says "DMV card application"
+    Then I will see the application title says "DMV Card application"
+    And I will see the application header says "Card application"
     And I click on the DL checkbox
-    Then I will see the application title says "DMV drivers license application"
-    And I will see the application header says "DMV drivers license application"
+    Then I will see the application title says "DMV Drivers license application"
+    And I will see the application header says "Drivers license application"
     When I click "Next" to continue
     Then I will be on the page for choosing real id
     And I click no to getting a real id
@@ -156,7 +156,7 @@ Feature: Save user data
     And I go to the page with my summary
     Then I will see my updated email and phone number in summary
     When I click to edit my name
-    Then I will be taken to the names page 
+    Then I will be taken to the names page
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my date of birth
@@ -193,8 +193,8 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
     When I click to renew my ID
-    Then I will see the application title says "DMV identification card application"
-    And I will see the application header says "DMV identification card application"
+    Then I will see the application title says "DMV Identification card application"
+    And I will see the application header says "Identification card application"
     When I click "Next" to continue
     Then I will be on the current card info page
     When I enter my current card data
@@ -261,8 +261,8 @@ Feature: Save user data
     Then I will be on the ID and DL selection page
     When I click on the ID checkbox
     When I click on the DL checkbox
-    Then I will see the application title says "DMV drivers license and ID application"
-    And I will see the application header says "DMV drivers license and ID application"
+    Then I will see the application title says "DMV Drivers license and ID application"
+    And I will see the application header says "Drivers license and ID application"
     And I click "Next" to continue
     When I click yes to getting a real id
     When I select ID to have my real id designation

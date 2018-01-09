@@ -65,40 +65,40 @@ const sectionData = (key) => {
 };
 
 const cardType = (card, state) => {
-  let applicationType = 'card application';
+  let applicationType = 'Card application';
 
   if(card === 'ID') {
-    applicationType = 'identification card application';
+    applicationType = 'Identification card application';
   }
   else if(card === 'DL') {
-    applicationType = 'drivers license application'
+    applicationType = 'Drivers license application'
   }
 
   else if(card === 'ID-true') {
-    if(state.applicationType === 'drivers license application') {
-      applicationType = 'drivers license and ID application'
+    if(state.applicationType === 'Drivers license application') {
+      applicationType = 'Drivers license and ID application'
     }
     else{
-      applicationType = 'identification card application'
+      applicationType = 'Identification card application'
     }
   }
   else if(card === 'ID-false') {
-    if(state.applicationType === 'drivers license and ID application') {
-      applicationType = 'drivers license application'
+    if(state.applicationType === 'Drivers license and ID application') {
+      applicationType = 'Drivers license application'
     }
   }
 
   else if(card === 'DL-true') {
-    if(state.applicationType === 'identification card application') {
-      applicationType = 'drivers license and ID application'
+    if(state.applicationType === 'Identification card application') {
+      applicationType = 'Drivers license and ID application'
     }
     else{
-      applicationType = 'drivers license application'
+      applicationType = 'Drivers license application'
     }
   }
   else if(card === 'DL-false') {
-    if(state.applicationType === 'drivers license and ID application') {
-      applicationType = 'identification card application'
+    if(state.applicationType === 'Drivers license and ID application') {
+      applicationType = 'Identification card application'
     }
   }
 
@@ -107,7 +107,7 @@ const cardType = (card, state) => {
 
 const defaultState = () => {
   return {
-    applicationType: 'card application',
+    applicationType: 'Card application',
     name: '',
     number: ''
   };

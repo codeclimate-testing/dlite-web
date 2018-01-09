@@ -35,7 +35,7 @@ const Header = (props) => {
 const ApplicationHeader = (props) => {
   return ReactDOM.createPortal(
     <div className='application-header'>
-      {`DMV ${props.applicationType}`}
+      {props.applicationType}
     </div>, document.getElementById('application-header')
   );
 }
