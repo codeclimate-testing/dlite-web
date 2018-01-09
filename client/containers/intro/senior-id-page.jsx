@@ -4,23 +4,29 @@ import React from 'react';
 import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import { hasValue }           from '../../helpers/data/validations';
+import { SeniorIDValidator }  from '../../helpers/validations';
 
 import { updateSeniorID }     from "../../actions/index";
 import Presentation           from "../../presentations/intro/senior-id-page.jsx";
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOnSubmit('/real-id', props);
+  let validations       =   new SeniorIDValidator(props.seniorID, props.validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('seniorID', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !hasValue(props.seniorID);
+
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation
       {...props}
-      continueDisabled  = { continueDisabled }
       onBack            = { onBack }
       onSubmit          = { onSubmit }
       selectedValue     = { props.seniorID }
+      validations       = { validations }
+      onFocus           = { focus }
     />
   )
 };
@@ -28,7 +34,8 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     seniorID :  state.application.seniorID,
-    focused:    state.ui.focus
+    focused:    state.ui.focus,
+    validations:state.ui.validations
   };
 };
 

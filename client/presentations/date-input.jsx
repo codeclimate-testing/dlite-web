@@ -5,34 +5,10 @@ import React from 'react';
 import errorClass   from '../helpers/validations/error-class';
 import { hasValue } from '../helpers/data/validations';
 import NumberInput  from './number-input.jsx';
-
-const ErrorIcon = (props) => {
-  if (props.errorClass !== 'error') { return null; }
-  return (
-    <div className='unit error-icon'></div>
-  );
-};
-
-const AdditionalLabel = props => {
-  if (
-    !hasValue(props.additionalText) &&
-    !props.errorClass
-  ) { return null; }
-
-
-  let additionalText = props.additionalText;
-  if (props.errorClass) {
-    additionalText = props.errorMessage;
-  }
-
-  let className = 'additional-label input-margin-bottom ' + props.errorClass;
-
-  return (
-    <div className={className} >
-      { additionalText }
-    </div>
-  );
-};
+import {
+  ErrorIcon,
+  AdditionalLabel
+} from './validations.jsx';
 
 const DateInput = (props) => {
   let errors = {
@@ -52,7 +28,7 @@ const DateInput = (props) => {
   }, '');
 
   return (
-    <div >
+    <div className='date-input'>
       <label 
         htmlFor       = { props.identifier}
         className     = { errorName }
@@ -67,6 +43,7 @@ const DateInput = (props) => {
         identifier    = 'month'
         description   = 'MM'
         value         = { props.values.month}
+        labelClass    = 'normal'
       />
   
       <div className  = 'unit spacer'/>
@@ -77,6 +54,7 @@ const DateInput = (props) => {
         identifier    = 'day'
         description   = 'DD'
         value         = { props.values.day }
+        labelClass    = 'normal'
       />
 
       <div className  = 'unit spacer'/>
@@ -87,6 +65,7 @@ const DateInput = (props) => {
         identifier    = 'year'
         description   = 'YYYY'
         value         = { props.values.year }
+        labelClass    = 'normal'
       />
 
       <AdditionalLabel 

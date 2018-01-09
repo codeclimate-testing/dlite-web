@@ -13,6 +13,14 @@ label {
   font-weight: bold;
 }
 
+label.normal{
+  font-weight: normal;
+}
+
 .additional-label {
   color: $another-gray;
+}
+
+.date-input .additional-label {
+  width: 100%;
 }

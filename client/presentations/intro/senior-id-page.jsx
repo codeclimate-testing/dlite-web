@@ -19,17 +19,19 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        <p>
+        <p className='pad-bottom-10'>
           You qualify for a free ID card. The word "Senior Identification Card"
           will be printed on your card.
         </p>
-        <h4>Would you like this card for no fee?</h4>
+        <h2 className='question pad-bottom-20'>Would you like this card for no fee?</h2>
 
         <div className='row inner-bottom'>
           <RadioCollection 
             {...props}
-            name='seniorID'
-            text={values}
+            name    = 'seniorID'
+            text    = { values }
+            onBlur  = { props.onBlurValidate }
+            errorMessage = {props.validations.seniorID() }
           >
             <RadioSelector
               value='Yes'
@@ -42,6 +44,7 @@ const Form = (props) => {
         </div>
 
         <NavigationButtons
+          errorMessage = {props.validations.seniorID() }
           {...props}
         />
       </form>

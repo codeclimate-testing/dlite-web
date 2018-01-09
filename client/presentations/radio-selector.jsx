@@ -2,11 +2,7 @@
 
 import React from 'react';
 import SelectorContents from './selector-contents.jsx';
-import errorClass   from '../helpers/validations/error-class';
-import {
-  ErrorIcon,
-  AdditionalLabel
-} from './validations.jsx';
+
 
 const RadioSelector = function(props) {
   let className = 'choice-selector unit';
@@ -16,19 +12,8 @@ const RadioSelector = function(props) {
 
   let id = props.name + '-' + props.value;
 
-  let errorName = errorClass(props);
-  let additionalText  = props.example;
-
   return (
     <div className={ className }>
-      <div>
-        <ErrorIcon errorClass={ errorName } />
-        <AdditionalLabel
-          errorMessage={ props.errorMessage }
-          errorClass={ errorName }
-          additionalText={ additionalText }
-        />
-      </div>
       <div className='outline-container'>
         <label
           className='row relative radio-selector'

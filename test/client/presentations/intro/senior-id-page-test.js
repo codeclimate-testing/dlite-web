@@ -17,13 +17,16 @@ describe('SeniorIDPage', function() {
 
   beforeEach(function() {
     let seniorID = '';
-    let continueDisabled = true;
     let onChange = spy();
+
+    let validations = {
+      seniorID: spy()
+    };
 
     props = {
       seniorID,
-      continueDisabled,
-      onChange
+      onChange,
+      validations
     }
   });
 

@@ -13,7 +13,6 @@ export const onBlurGenerator = (dispatch) => {
 
 export const onFocusGenerator = (dispatch) => {
   return (event) => {
-    //let value = (event.target && event.target.value) || '';
     let id = (event.target && event.target.id) || '';
     dispatch(focusPageElement(id));
   };

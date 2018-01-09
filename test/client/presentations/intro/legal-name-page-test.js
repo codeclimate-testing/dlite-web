@@ -25,7 +25,6 @@ describe('NamePage', function() {
         lastName: '',
         suffix: ''
       };
-      let continueDisabled  =   !(dataPresent.legalName(legalName));
       let onChange = spy();
 
       let validations = {
@@ -38,7 +37,6 @@ describe('NamePage', function() {
 
       props = {
         legalName,
-        continueDisabled,
         onChange,
         validations
       }
@@ -54,32 +52,6 @@ describe('NamePage', function() {
       assert.ok(component.find('input#middleName').length, 'middle name input missing');
       assert.ok(component.find('input#lastName').length, 'last name input missing');
       assert.ok(component.find('select#suffix').length, 'suffix selection missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <NamePage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting ID makes next button no longer disabled', function() {
-      props.legalName = {
-        firstName: 'Mathieu',
-        middleName: 'Cloud',
-        lastName: 'Braytheus',
-        suffix: ''
-      };
-      props.continueDisabled  =   !(dataPresent.legalName(props.legalName));
-
-      let component = render(
-        <Wrapper>
-          <NamePage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
   });
 });

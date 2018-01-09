@@ -11,20 +11,21 @@ const NumberInput = (props) => {
   return (
     <div className  = 'unit'>
       <label 
-        htmlFor     = {props.identifier}
+        htmlFor     = { props.identifier }
+        className   = { props.labelClass }
       >
         {props.description}
       </label>
       
-      <div className={className}>
+      <div className= { className }>
         <input
           className = { inputName }
           type      = 'number'
-          id        = {props.identifier}
-          name      = {props.identifier}
+          id        = { props.identifier }
+          name      = { props.identifier }
           onChange  = { props.onChange }
-          onBlur    = {props.onBlur }
-          onFocus   = {props.onFocus }
+          onBlur    = { props.onBlur }
+          onFocus   = { props.onFocus }
           value     = { props.value }
         />
       </div>

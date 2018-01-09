@@ -34,22 +34,19 @@ const Form = (props) => {
               text    = { values }
               onBlur  = { props.onBlurValidate }
               onFocus = { props.focus }
+              errorMessage = { props.validations.cardAction()}
             >
               <RadioSelector
                 value = 'new'
-                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector
                 value = 'renew'
-                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector 
                 value = 'change'
-                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector
                 value='replace'
-                errorMessage = { props.validations.cardAction()}
               />
             </RadioCollection>
             <div className= 'unit spacer' />
