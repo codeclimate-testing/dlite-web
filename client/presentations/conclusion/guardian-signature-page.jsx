@@ -8,21 +8,24 @@ import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 
 const Form = (props) => {
-  document.title = 'Summary of my application';
   return(
+    <Page
+      {...props}
+      pageTitle='Summary of my application'
+    >
+      <form onSubmit={props.onSubmit} className='guardian-signature-form'>
 
-    <form onSubmit={props.onSubmit} className='guardian-signature-form'>
+        <SignatureChoice
+          {...props}
+          selectedValue={props.guardianSignature.isSigned}
+        />
 
-      <SignatureChoice
-        {...props}
-        selectedValue={props.guardianSignature.isSigned}
-      />
+        <GuardianDetails {...props} />
 
-      <GuardianDetails {...props} />
+        <NavigationButtons {...props} />
 
-      <NavigationButtons {...props} />
-
-    </form>
+      </form>
+    </Page>
   );
 }
 
