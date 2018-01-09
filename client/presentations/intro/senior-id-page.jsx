@@ -19,11 +19,12 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        <p className='pad-bottom-10'>
+        <h2 className='question pad-bottom-10'>Senior identification card</h2>
+        <p className='pad-bottom-20'>
           You qualify for a free ID card. The word "Senior Identification Card"
           will be printed on your card.
         </p>
-        <h2 className='question pad-bottom-20'>Would you like this card for no fee?</h2>
+        
 
         <div className='row inner-bottom'>
           <RadioCollection 
