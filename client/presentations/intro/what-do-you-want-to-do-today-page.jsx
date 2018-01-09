@@ -1,11 +1,11 @@
 'use strict';
 
-import React              from 'react';
+import React                from 'react';
 
-import Page               from '../../containers/page.jsx';
-import RadioCollection    from '../radio-selector-collection.jsx';
-import RadioSelector      from '../radio-selector.jsx';
-import NavigationButtons  from '../navigation-buttons.jsx';
+import Page                 from '../../containers/page.jsx';
+import RadioCollection      from '../radio-selector-collection.jsx';
+import RadioSelector        from '../radio-selector.jsx';
+import NavigationButtons    from '../navigation-buttons.jsx';
 
 const Form = (props) => {
   let values = {
@@ -21,34 +21,43 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <h4>What would you like to do today?</h4>
-        <p>
+        <h2 className='question pad-bottom-10'>What would you like to do today?</h2>
+        <p className='pad-bottom-20'>
           Pick one option for now. If you need to do more,
           you can do so at the end.
         </p>
-        <form onSubmit={ props.onSubmit }>
+        <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <RadioCollection
               {...props}
-              name='cardAction'
-              text={values}
+              name    = 'cardAction'
+              text    = { values }
+              onBlur  = { props.onBlurValidate }
+              onFocus = { props.focus }
             >
               <RadioSelector
-                value='new'
+                value = 'new'
+                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector
-                value='renew'
+                value = 'renew'
+                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector 
-                value='change'
+                value = 'change'
+                errorMessage = { props.validations.cardAction()}
               />
               <RadioSelector
                 value='replace'
+                errorMessage = { props.validations.cardAction()}
               />
             </RadioCollection>
-            <div className='unit spacer' />
+            <div className= 'unit spacer' />
           </div>
-          <NavigationButtons {...props} />
+          <NavigationButtons 
+            errorMessage = { props.validations.cardAction() }
+            {...props} 
+          />
         </form>
       </div>
     </Page>

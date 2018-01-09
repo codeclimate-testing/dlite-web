@@ -4,16 +4,21 @@ import React                  from 'react';
 import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import { hasValue }           from '../../helpers/data/validations';
+import { WDYWTDTValidator }   from '../../helpers/validations';
 
 import { updateCardAction }   from "../../actions/index";
 
 import Presentation           from "../../presentations/intro/what-do-you-want-to-do-today-page.jsx";
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOnSubmit('/select-id-dl', props);
+  let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('wdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !hasValue(props.cardAction);
+  
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation
@@ -21,7 +26,8 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.cardAction }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
+      focus             = { focus }
     />
   )
 };
@@ -29,7 +35,8 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     cardAction:   state.application.cardAction,
-    focused:      state.ui.focus
+    focused:      state.ui.focus,
+    validations:  state.ui.validations
   };
 };
 
