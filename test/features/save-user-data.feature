@@ -159,6 +159,28 @@ Feature: Save user data
     Then I will be taken to the names page 
     When I click "Next" to continue
     Then I will be on the page with my summary
+    When I click to edit my date of birth
+    Then I will be on the page for entering my date of birth
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my address
+    Then I will be on the page for entering my address
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my height and weight
+    Then I will be on the page for entering my height and weight
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my physical traits
+    Then I will be on the page for entering my physical traits
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my social security
+    Then I will be on the page for entering my social security
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+
+
 
 
   Scenario: renewing one new ID and no social

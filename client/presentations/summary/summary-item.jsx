@@ -6,7 +6,7 @@ const SummaryItem = (props) => {
   return (
     <div className='summary-item'>
       <h4>{props.title}</h4>
-      <p>{props.text}</p>
+      <div>{props.text}</div>
     </div>
   )
 };

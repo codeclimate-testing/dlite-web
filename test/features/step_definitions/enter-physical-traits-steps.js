@@ -67,4 +67,11 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I click to edit my physical traits', function(done) {
+    browser
+      .click('.physicalTraits.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

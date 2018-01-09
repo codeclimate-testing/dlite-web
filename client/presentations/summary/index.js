@@ -8,8 +8,7 @@ import SeniorID                    from './senior-id.jsx';
 import RealID                      from './real-id.jsx';
 import LicenseType                 from './license-type.jsx';
 import ReducedFee                  from './reduced-fee.jsx';
-import HomeAddress                 from './home-address.jsx';
-import MailingAddress              from './mailing-address.jsx';
+import Address                     from './address.jsx';
 import TraitsHeightWeight          from './traits-height-weight.jsx';
 import PhysicalTraits              from './physical-traits.jsx';
 import OrganDonation               from './organ-donation.jsx';
@@ -38,8 +37,7 @@ export {
   RealID,
   LicenseType,
   ReducedFee,
-  HomeAddress,
-  MailingAddress,
+  Address,
   TraitsHeightWeight,
   PhysicalTraits,
   OrganDonation,

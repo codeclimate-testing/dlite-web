@@ -208,4 +208,10 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I click to edit my date of birth', function(done) {
+    browser
+      .click('.dateOfBirth.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

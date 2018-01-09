@@ -17,8 +17,7 @@ import {
   RealID,
   ReducedFee,
   LicenseType,
-  HomeAddress,
-  MailingAddress,
+  Address,
   TraitsHeightWeight,
   PhysicalTraits,
   OrganDonation,
@@ -89,7 +88,8 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Date of birth: 11/11/1999'), true);
+      assert.equal(component.text().includes('Date Of Birth'), true);
+      assert.equal(component.text().includes('11/11/1999'), true);
     });
   });
 
@@ -254,8 +254,8 @@ describe('Summary section', function() {
     });
   });
 
-  describe('HomeAddress', function() {
-    it('shows home address fields', function(){
+  describe('Address', function() {
+    it('shows address fields', function(){
       props.homeAddress = {
         street_1: '111 Main Street',
         street_2: '',
@@ -264,43 +264,27 @@ describe('Summary section', function() {
         zip: '95814'
       };
 
-      let component = render(
-        <Wrapper>
-          <HomeAddress
-            { ...props }
-          />
-        </Wrapper>
-      )
-      assert.equal(component.text().includes('Home address:'), true);
-      assert.equal(component.text().includes('Street Address: 111 Main Street'), true);
-      assert.equal(component.text().includes('City: Sacramento'), true);
-      assert.equal(component.text().includes('State: CA'), true);
-      assert.equal(component.text().includes('Zipcode: 95814'), true);
-    });
-  });
-
-  describe('MailingAddress', function() {
-    it('shows mailing address fields', function(){
       props.mailingAddress = {
-        street_1: '111 Main Street',
+        street_1: '222 High Street',
         street_2: '',
-        city: 'Sacramento',
+        city: 'Beverly Hills',
         state: 'CA',
-        zip: '95814'
+        zip: '90210'
       };
 
       let component = render(
         <Wrapper>
-          <MailingAddress
+          <Address
             { ...props }
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Mailing address:'), true);
-      assert.equal(component.text().includes('Street Address: 111 Main Street'), true);
-      assert.equal(component.text().includes('City: Sacramento'), true);
-      assert.equal(component.text().includes('State: CA'), true);
-      assert.equal(component.text().includes('Zipcode: 95814'), true);
+      assert.equal(component.text().includes('Home Address'), true);
+      assert.equal(component.text().includes('111 Main Street'), true);
+      assert.equal(component.text().includes('Sacramento, CA 95814'), true);
+      assert.equal(component.text().includes('Mailing Address'), true);
+      assert.equal(component.text().includes('222 High Street'), true);
+      assert.equal(component.text().includes('Beverly Hills, CA 90210'), true);
     });
   });
 
@@ -319,8 +303,10 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Height: 6 feet 3 inches'), true);
-      assert.equal(component.text().includes('Weight: 200 pounds'), true);
+      assert.equal(component.text().includes('Height'), true);
+      assert.equal(component.text().includes('6 feet 3 inches'), true);
+      assert.equal(component.text().includes('Weight'), true);
+      assert.equal(component.text().includes('200 pounds'), true);
     });
   });
 
@@ -339,9 +325,12 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Sex: Female'), true);
-      assert.equal(component.text().includes('Eye Color: Green'), true);
-      assert.equal(component.text().includes('Hair Color: Black'), true);
+      assert.equal(component.text().includes('Sex'), true);
+      assert.equal(component.text().includes('Female'), true);
+      assert.equal(component.text().includes('Eye Color'), true);
+      assert.equal(component.text().includes('Green'), true);
+      assert.equal(component.text().includes('Hair Color'), true);
+      assert.equal(component.text().includes('Black'), true);
     });
   });
 
@@ -378,8 +367,8 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Has Social Security: Yes'), true);
-      assert.equal(component.text().includes('Social Security: 111-11-1111'), true);
+      assert.equal(component.text().includes('Social Security Number'), true);
+      assert.equal(component.text().includes('xxx-xx-1111'), true);
     });
   });
 

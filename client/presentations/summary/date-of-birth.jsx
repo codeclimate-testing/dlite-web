@@ -3,6 +3,8 @@
 import React            from "react";
 import * as dataPresent from '../../helpers/data-present';
 import { printDate }    from '../../helpers/print-date';
+import PageSummaryLink  from '../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 
 const DateOfBirth = (props) => {
   if (!dataPresent.date(props.dateOfBirth)) { return null; }
@@ -10,9 +12,15 @@ const DateOfBirth = (props) => {
   let dateOfBirth = printDate(props.dateOfBirth);
 
   return (
-    <div className='summary-section'>
-      <p>Date of birth: {dateOfBirth}</p>
-    </div>
+    <PageSummaryLink
+      to='/my-basics/date-of-birth'
+      name='dateOfBirth'
+    >
+      <SummaryItem
+        title='Date Of Birth'
+        text={dateOfBirth}
+      />
+  </PageSummaryLink>
   );
 };
 

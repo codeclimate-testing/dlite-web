@@ -119,4 +119,11 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I click to edit my social security', function(done) {
+    browser
+      .click('.socialSecurity.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

@@ -177,4 +177,11 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click to edit my address', function(done) {
+    browser
+      .click('.address.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

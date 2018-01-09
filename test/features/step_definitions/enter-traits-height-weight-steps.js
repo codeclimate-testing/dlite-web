@@ -146,4 +146,11 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click to edit my height and weight', function(done) {
+    browser
+      .click('.traitsHeightWeight.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };
