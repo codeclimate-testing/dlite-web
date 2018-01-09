@@ -4,7 +4,7 @@ import React                  from 'react';
 import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
+import { CardTypeValidator }  from '../../helpers/validations';
 
 import { updateCardType }     from "../../actions/index";
 import Presentation           from "../../presentations/intro/choose-card-page.jsx";
@@ -34,28 +34,29 @@ const addressForProps = (props) => {
 };
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOnSubmit(addressForProps(props), props);
+  let validations       =   new CardTypeValidator(props.cardType, props.validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('chooseCardType', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !canContinue(props)
 
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
+      focus             = { focus }
     />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    cardAction:   state.application.cardAction,
     cardType:     state.application.cardType,
+    cardAction:   state.application.cardAction,
     dateOfBirth:  state.application.dateOfBirth,
-    focused:      state.ui.focus
+    focused:      state.ui.focus,
+    validations:  state.ui.validations
   };
 };
 
 export default connectForm(mapStateToProps, updateCardType, Page);
-

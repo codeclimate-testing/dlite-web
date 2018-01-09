@@ -14,7 +14,7 @@ const Form = (props) => {
     change: 'What type of card are you correcting or updating?',
     replace: 'What type of card are you replacing?'
   };
- 
+
   return (
     <Page
       {...props}
@@ -31,7 +31,9 @@ const Form = (props) => {
             {...props}
           />
 
-          <NavigationButtons {...props} />
+          <NavigationButtons errorMessage = { props.validations.cardType() }
+            {...props}
+          />
         </form>
       </div>
     </Page>

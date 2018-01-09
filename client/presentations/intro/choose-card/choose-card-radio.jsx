@@ -18,16 +18,20 @@ const Form = (props) => {
   };
 
   let selectedValue = props.cardType[props.cardAction];
- 
+
   return (
     <div className='row inner-bottom chooseRadioCard'>
-      <RadioCollection  
+
+      <RadioCollection
         {...props}
         name={props.cardAction}
         selectedValue={selectedValue}
         text={text}
+        onBlur  = { props.onBlurValidate }
+        onFocus = { props.focus }
+        errorMessage = { props.validations.cardAction()}
       >
-        <RadioSelector 
+        <RadioSelector
           value='ID'
         />
         <RadioSelector
