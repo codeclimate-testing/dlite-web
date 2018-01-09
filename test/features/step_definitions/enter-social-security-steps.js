@@ -30,7 +30,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('123-45-1967'), 'social security missing from summary');
+        assert(text.includes('xxx-xx-1967'), 'social security missing from summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -72,7 +72,7 @@ module.exports = function(world) {
      browser
       .text()
       .then((text) => {
-        assert(text.includes('123-45-1969'), 'social security missing from summary');
+        assert(text.includes('xxx-xx-1969'), 'social security missing from summary');
       })
       .then(() => { done(); })
       .catch(done);
