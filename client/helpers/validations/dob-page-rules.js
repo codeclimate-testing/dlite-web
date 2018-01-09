@@ -46,7 +46,6 @@ const month = (props) => {
 
 const day = (props) => {
   let value = props.day;
-
   let errors = dateValidator(value);
   let maxDate = hash[props.month.replace(/\b0+/g, '')];
   if(value < 1 || value > maxDate) {
