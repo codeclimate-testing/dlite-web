@@ -55,7 +55,7 @@ module.exports = function(world) {
   });
 
   world.when('I click to renew my DL', function(done) {
-    browser 
+    browser
       .click('label[for="renew-DL"]')
       .then(() => {done(); })
       .catch(done);
@@ -64,7 +64,7 @@ module.exports = function(world) {
   world.then('I choose to change my DL', function(done) {
     browser
       .click('label[for="change-DL"]')
-      .then(done)
+      .then(() => {done(); })
       .catch(done);
   });
 
@@ -180,21 +180,21 @@ module.exports = function(world) {
   });
 
   world.then('I click on the car checkbox', function(done) {
-    browser 
+    browser
       .click('label[for="car"]')
       .then(() => {done(); })
       .catch(done);
   });
 
   world.then('I click to not need endorsements', function(done) {
-    browser 
+    browser
       .click('label[for="needEndorsement-No"]')
       .then(() => {done(); })
       .catch(done);
   });
 
   world.then('I will see what license type I need', function(done) {
-    browser 
+    browser
       .text()
       .then(text => {
         assert.ok(text.includes('Need to drive: Car'));

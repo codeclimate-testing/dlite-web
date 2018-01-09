@@ -34,12 +34,19 @@ describe('ChooseCardPage', function() {
 
       let onChange = spy();
 
+      let validations = {
+        cardType: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
+
       props = {
         cardType,
         dateOfBirth,
         cardAction,
         accordions,
-        onChange
+        onChange,
+        validations
       }
     });
 

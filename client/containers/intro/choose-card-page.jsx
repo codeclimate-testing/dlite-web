@@ -34,7 +34,24 @@ const addressForProps = (props) => {
 };
 
 const Page = (props) => {
-  let validations       =   new CardTypeValidator(props.cardType, props.validations);
+  let validateProps;
+  switch (props.cardAction) {
+    case 'new':
+      validateProps = props.cardType.new;
+      break;
+    case 'renew':
+      validateProps = props.cardType.renew;
+      break;
+    case 'change':
+      validateProps = props.cardType.change;
+      break;
+    case 'replace':
+      validateProps = props.cardType.replace;
+      break;
+    default:
+      validateProps = props.cardType;
+  };
+  let validations       =   new CardTypeValidator(validateProps, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('chooseCardType', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
 

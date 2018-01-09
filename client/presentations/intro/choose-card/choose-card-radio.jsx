@@ -24,12 +24,12 @@ const Form = (props) => {
 
       <RadioCollection
         {...props}
-        name={props.cardAction}
-        selectedValue={selectedValue}
-        text={text}
-        onBlur  = { props.onBlurValidate }
-        onFocus = { props.focus }
-        errorMessage = { props.validations.cardAction()}
+        name            = {props.cardAction}
+        selectedValue   = {selectedValue}
+        text            = {text}
+        onBlur          = { props.onBlurValidate }
+        onFocus         = { props.focus }
+        errorMessage    = { props.validations.cardType()}
       >
         <RadioSelector
           value='ID'

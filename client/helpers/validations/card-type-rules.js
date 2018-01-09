@@ -4,15 +4,11 @@ import errorMessages  from '../../presentations/error-messages';
 import { hasValue }   from '../data/validations';
 
 const cardType = (props) => {
-  if (hasValue(props) ||
-      hasValue(props.renew) ||
-      hasValue(props.change) ||
-      hasValue(props.replace) ||
-      hasValue(props.youthIDInstead)
-  ) {
-    return [];
+
+  if (!hasValue(props)) {
+    return [errorMessages.cardTypeMissing];
   }
-  return [errorMessages.cardTypeMissing];
+  return [];
 };
 
 export default {
