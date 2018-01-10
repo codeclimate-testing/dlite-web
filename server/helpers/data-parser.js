@@ -14,9 +14,10 @@ module.exports.createDateJson = function createDateJson(date) {
 };
 
 module.exports.strToBool = function strToBool(val) {
-  return val === 'Yes' ? true : false;
+  // add ability to store a non-answer
+  return val === 'Yes' ? true : val === 'null' ? null : false;
 };
 
 module.exports.boolToStr = function boolToStr(val) {
-  return val ? 'Yes' : 'No';
+  return val === null ? 'null' : val ? 'Yes' : 'No';
 };

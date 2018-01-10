@@ -9,9 +9,9 @@ import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const values = {
   Yes: 'Yes',
-  No: 'No',
-  Skip: 'Skip Section'
+  null: 'Decline to answer'
 };
+
 const PreRegCitizenStatusForm = (props) => {
 
   return (
@@ -33,10 +33,7 @@ const PreRegCitizenStatusForm = (props) => {
                 value='Yes'
               />
               <RadioSelector 
-                value='No'
-              />
-              <RadioSelector 
-                value='Skip'
+                value='null'
               />
             </RadioCollection>
           </div>

@@ -7,12 +7,12 @@ import RadioCollection    from '../../radio-selector-collection.jsx';
 import Page               from '../../../containers/page.jsx';
 import NavigationButtons  from '../../navigation-buttons.jsx';
 
+const values = {
+  Yes: 'Yes',
+  null: 'Decline to answer'
+};
+
 const CitizenStatusForm = (props) => {
-  const values = {
-    Yes: 'Yes',
-    No: 'No',
-    Skip: 'Skip Section'
-  };
 
   return (
     <Page
@@ -33,10 +33,7 @@ const CitizenStatusForm = (props) => {
                 value='Yes'
               />
               <RadioSelector
-                value='No'
-              />
-              <RadioSelector
-                value='Skip'
+                value='null'
               />
             </RadioCollection>
           </div>
