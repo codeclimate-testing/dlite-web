@@ -9,7 +9,7 @@ const PageSummaryLink = (props) => {
 
   let linkTo = {
     pathname: alicePath(props.to),
-    state: { nextAddress: props.nextAddress }
+    state: { nextAddress: '/summary' }
   };
 
   return (
