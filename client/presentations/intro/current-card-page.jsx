@@ -33,6 +33,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='current-card-form'>
+        <h2 className='question pad-bottom-10'>Card details</h2>
         {questionText}
         {instructionText}
         
