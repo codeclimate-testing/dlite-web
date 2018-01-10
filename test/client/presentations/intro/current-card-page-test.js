@@ -4,7 +4,7 @@ import assert           from 'assert';
 import configure        from '../../support/configure-enzyme';
 import { render }       from 'enzyme';
 import React            from 'react';
-import sinon            from 'sinon';
+import {spy}            from 'sinon';
 import CurrentCardPage  from '../../../../client/presentations/intro/current-card-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
 import store                    from '../../support/page-store';
@@ -34,14 +34,24 @@ describe('CurrentCardPage', function() {
 
       let accordions = {};
 
-      let onChange = sinon.spy();
+      let onChange = spy();
+
+      let currentCardValidation = {
+        number: spy(),
+        month: spy(),
+        day: spy(),
+        year: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
 
       props = {
         cardType,
         currentCardInfo,
         cardAction,
         accordions,
-        onChange
+        onChange,
+        currentCardValidation
       }
     });
 

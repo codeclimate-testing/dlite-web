@@ -4,7 +4,7 @@ import React              from 'react';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
-import NumberInput        from '../number-input.jsx';
+import DateInput          from '../date-input.jsx';
 
 const question = {
   ID: (<p>If you know it, <b>please enter your California ID number</b>.</p>),
@@ -44,38 +44,29 @@ const Form = (props) => {
               identifier='number'
               description={ `${cardText.toUpperCase()} CARD NUMBER` }
               value={ props.currentCardInfo.number }
+              errorMessage={ props.currentCardValidation.number() }
+              onChange={props.onChange}
+              onBlur={props.onBlurValidate}
+              onFocus={props.onFocusClearValidation}
             />
           </div>
 
           <label htmlFor='expirationDate'> EXPIRATION DATE </label>
           <div id='expirationDate' className='row inner-bottom'>
-            <NumberInput
-              {...props}
-              identifier='month'
-              description='MM'
-              value={props.currentCardInfo.month}
-            />
-
-            <div className='unit spacer' />
-
-            <NumberInput
-              {...props}
-              identifier='day'
-              description='DD'
-              value={props.currentCardInfo.day}
-            />
-
-            <div className='unit spacer' />
-
-            <NumberInput
-              {...props}
-              identifier='year'
-              description='YYYY'
-              value={props.currentCardInfo.year}
-            />
+          <DateInput
+            {...props}
+            description = 'Expiration Date'
+            onBlur      = { props.onBlurValidate }
+            onFocus     = { props.onFocusClearValidation }
+            values      = { props.currentCardInfo }
+            validations = { props.currentCardValidation }
+          />
           </div>
 
-          <NavigationButtons {...props} />
+          <NavigationButtons
+            {...props}
+            errorMessage={ props.currentCardValidation.all() }
+          />
         </form>
       </div>
     </Page>
