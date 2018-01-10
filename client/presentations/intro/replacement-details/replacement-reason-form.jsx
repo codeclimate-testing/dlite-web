@@ -17,6 +17,8 @@ const Form = (props) => {
         {...props}
         name='reason'
         text={text}
+        onBlur  = { props.onBlurValidate }
+        errorMessage = {props.validations.reason() }
       >
         <RadioSelector
           value='lostOrStolen'

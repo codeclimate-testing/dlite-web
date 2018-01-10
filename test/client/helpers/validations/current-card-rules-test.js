@@ -8,7 +8,6 @@ import messages from '../../../../client/presentations/error-messages';
 describe('current card page validation rules', function() {
   describe('current card number', function() {
     it('has no errors when entering english characters', function() {
-      console.log(props);
       let props = {
         number: '123123hasfh231'
       };

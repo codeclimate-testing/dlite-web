@@ -33,13 +33,19 @@ describe('ReplacementDetails', function() {
         reason: ''
       };
 
+      let validations = {
+        reason: spy(),
+        isValid: () => { return true;}
+      };
+
       let onChange = spy();
 
       props = {
         cardType,
         cardAction,
         cardReplacement,
-        onChange
+        onChange,
+        validations
       }
     });
 

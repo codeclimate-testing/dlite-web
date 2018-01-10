@@ -1,20 +1,22 @@
 'use strict';
 
 import React                  from 'react';
-import { connect }            from 'react-redux';
+import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
-
+import { ReplaceValidator }   from '../../helpers/validations';
 import { updateCardReplacement }  from "../../actions/index";
-
 import Presentation           from "../../presentations/intro/replacement-details-page.jsx";
 
 const Page = (props) => {
-  let address           =   '/real-id';
-  let onSubmit          =   handlers.navigateOnSubmit(address, props);
+  let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('chooseCardReplacement', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !dataPresent.cardReplacement(props.cardReplacement);
+  
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation
@@ -22,7 +24,8 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.cardReplacement.reason }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
+      onFocus           = { focus }
     />
   )
 };
@@ -32,22 +35,9 @@ function mapStateToProps(state) {
     cardReplacement     : state.application.cardReplacement,
     cardType            : state.application.cardType,
     cardAction          : state.application.cardAction,
-    focused             : state.ui.focus
+    focused             : state.ui.focus,
+    validations         : state.ui.validations
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateCardReplacement, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
-
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateCardReplacement, Page);
