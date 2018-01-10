@@ -9,8 +9,7 @@ import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const values = {
   Yes: 'Yes',
-  No: 'No',
-  Skip: 'Skip Section'
+  null: 'Decline to answer'
 };
 
 const EligibilityRequirements = (props) => {
@@ -29,7 +28,7 @@ const EligibilityRequirements = (props) => {
           <li>I am not currently found mentally incompetent to vote by a court</li>
         </ul>
 
-        <p>If you answer 'No' or 'Skip Section', you cannot register to vote.</p>
+        <p>If you decline to answer, you cannot register to vote.</p>
         <br></br>
           <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div className='inner-bottom'>
@@ -42,10 +41,7 @@ const EligibilityRequirements = (props) => {
                 value='Yes'
               />
               <RadioSelector 
-                value='No'
-              />
-              <RadioSelector 
-                value='Skip'
+                value='null'
               />
             </RadioCollection>
           </div>

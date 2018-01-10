@@ -40,8 +40,7 @@ describe('EligibilityPage', function() {
       );
       assert.ok(component.find('.eligibility-requirements-form').length, 'form missing');
       assert.ok(component.find('label[for="eligibilityRequirements-Yes"]').length, 'Yes button missing');
-      assert.ok(component.find('label[for="eligibilityRequirements-No"]').length, 'No button missing');
-      assert.ok(component.find('label[for="eligibilityRequirements-Skip"]').length, 'Skip Question button missing');
+      assert.ok(component.find('label[for="eligibilityRequirements-null"]').length, 'Decline to answer button missing');
     });
 
     // TODO check that navigate on submit answer changes correctly given different answers

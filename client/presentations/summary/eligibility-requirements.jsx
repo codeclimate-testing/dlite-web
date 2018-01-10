@@ -7,8 +7,8 @@ import { hasValue } from '../../helpers/data/validations';
 const EligibilityRequirements = (props) => {
   let value = props.eligibilityRequirements;
 
-  if(value === 'Skip') {
-    value = 'No Answer';
+  if(props.eligibilityRequirements === 'null') {
+    value = 'Decline to answer';
   }
 
   if (!hasValue(value)) { return null; }

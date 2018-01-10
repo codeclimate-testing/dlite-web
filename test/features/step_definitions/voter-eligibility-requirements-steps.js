@@ -24,16 +24,9 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  world.when('I select voter registration No', function(done){
+  world.when('I select voter registration decline to answer', function(done){
     browser
-    .click('label[for="eligibilityRequirements-No"]')
-    .then(() => { done(); })
-    .catch(done);
-  });
-
-  world.when('I select voter registration Skip Section', function(done){
-    browser
-    .click('label[for="eligibilityRequirements-Skip"]')
+    .click('label[for="eligibilityRequirements-null"]')
     .then(() => { done(); })
     .catch(done);
   });
@@ -89,7 +82,7 @@ world.and('I will see the eligibility requirement status I entered', function(do
 
 world.and('I change my eligibility requirement', function(done){
   browser
-    .click('label[for="eligibilityRequirements-No"]')
+    .click('label[for="eligibilityRequirements-null"]')
     .then(() => { done(); })
     .catch(done);
 });
@@ -98,7 +91,7 @@ world.then('I will see my updated eligibility requirement status', function(done
   browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('No'), 'No not saved in summary');
+      assert.ok(text.includes('Voter registration eligibility met: Decline to answer'), 'No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
