@@ -181,4 +181,12 @@ describe('client data parser', function() {
     assert.equal(votingReg.vote_by_mail, parserHelper.strToBool(data.ballotByMail));
     assert.equal(votingReg.should_contact, parserHelper.strToBool(data.contactMethods.shouldContact));
   });
+
+  it('saves citizenship decline to answer as null instead of false', function() {
+    data.citizenStatus = 'null';
+    parsedData = parse(data);
+    let votingReg = parsedData.voting_registrations[0];
+    assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.citizenStatus));
+    assert.equal(parserHelper.strToBool(data.citizenStatus), null);
+  });
 });

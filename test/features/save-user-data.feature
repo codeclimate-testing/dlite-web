@@ -227,7 +227,7 @@ Feature: Save user data
     Then I will see the page title has postfix " - Organ donation"
     And I change my organ selection
     When I visit voter citizen status page
-    And I select citizen No
+    And I decline to answer
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I will see that my ID card type has been saved
@@ -239,7 +239,7 @@ Feature: Save user data
     Then I will see Yes in my existing DL/ID selection
     Then I will see No for having a previous name
     Then I will see that I am not a veteran
-    And I will see No in my citizenship selection
+    And I will see that I declined to answer citizenship
     Then I will see my updated organ selection in the summary
     When I visit the date of birth page
     Then I will see the date of birth that I entered

@@ -21,7 +21,7 @@ const PreRegCitizenStatusForm = (props) => {
     >
       <div>
         <h4>Are you a United States citizen?</h4>
-        <h5>If you answer No or Skip Section, you cannot pre-register to vote.</h5>
+        <h5>If you decline to answer, you cannot pre-register to vote.</h5>
         <form onSubmit={props.onSubmit} className='citizen-status-form'>
           <div className='inner-bottom'>
             <RadioCollection  
