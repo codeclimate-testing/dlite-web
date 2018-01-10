@@ -16,6 +16,7 @@ import mock from 'mock-require';
 // anywhere that there isn't this kind of library bug.
 
 let ReactDom = require('react-dom');
+global.APP_ENV = 'test';
 const ReDom = ReactDom;
 ReDom.createPortal = function (el, location) {
   return null;

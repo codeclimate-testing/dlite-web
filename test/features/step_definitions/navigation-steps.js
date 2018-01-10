@@ -36,8 +36,6 @@ module.exports = function(world) {
       })
       .open(world.url('/'))
       .waitForSelector('.legal-name-form')
-      .click('.sections')
-      .waitForSelector('.section-links')
       .then(() => { done(); })
       .catch(done);
   });
