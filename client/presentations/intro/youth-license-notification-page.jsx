@@ -1,10 +1,11 @@
 'use strict';
 
 import React from 'react';
-import Page               from '../../containers/page.jsx';
+
 import RadioSelector      from '../radio-selector.jsx';
 import RadioCollection    from '../radio-selector-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import Page               from '../../containers/page.jsx';
 
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
@@ -12,9 +13,9 @@ import { validToContinue } from '../../helpers/data/youth';
 const FormHeader = (props) => {
   return (
     <div>
-      <h2 className='question'>{props.title}</h2>
-      <p>{props.helpText}</p>
-      <h3 className='question'>Do you want to apply for an ID instead?</h3>
+      <h4>{props.title}</h4>
+      <h5>{props.helpText}</h5>
+      <h2 className='question pad-bottom-10'>Do you want to apply for an ID instead?</h2>
     </div>
   );
 };
@@ -47,7 +48,7 @@ let ErrorMessage = (props) => {
 
 const Form = (props) => {
   const handleChange = (e) => {
-    props.onChange(e); // update props.cardType.youthIDInstead
+props.onChange(e); // update props.cardType.youthIDInstead
     props.checkAnswer(e.target.value, false); // update props.cardType.new
   }
 
@@ -67,23 +68,29 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <Header />
           <div className='row inner-bottom'>
-            <RadioCollection
+            <RadioCollection  
               {...props}
-              name='youthIDInstead'
-              text={values}
+              name = 'youthIDInstead'
+              text = { values }
+              onBlur  = { props.onBlurValidate }
+              errorMessage = { props.validations.youthIDInstead() }
             >
-              <RadioSelector
+              <RadioSelector 
                 value='Yes'
               />
-              <RadioSelector
+              <RadioSelector 
                 value='No'
               />
             </RadioCollection>
+ 
+            <div className='unit spacer' />
           </div>
 
           <ErrorMessage {...props} />
 
-          <NavigationButtons {...props} />
+          <NavigationButtons {...props}
+          errorMessage = {props.validations.youthIDInstead() }
+          />
         </form>
       </div>
     </Page>

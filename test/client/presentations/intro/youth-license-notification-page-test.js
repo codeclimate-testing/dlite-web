@@ -12,13 +12,29 @@ import YouthDLNotificationPage  from '../../../../client/presentations/intro/you
 describe('YouthDLNotificationPage', function() {
   const Wrapper = wrapperGenerator(store);
 
+  let props;
+
+  beforeEach(function() { 
+    let cardType = { youthIDInstead: "" };
+    let onChange = sinon.spy();
+    let validations = {
+      youthIDInstead: sinon.spy()
+    };
+    props = {
+      cardType,
+      onChange,
+      validations
+    }
+  });
+
   it('should render the right intro header if the license seeker is under 15', function() {
     let today = new Date();
 
     let props = {
       cardType: {
         ID: false,
-        DL: true
+        DL: true,
+        youthIDInstead: 'yes'
       },
       dateOfBirth: {
         year: (today.getFullYear() - 10).toString(),
@@ -43,7 +59,8 @@ describe('YouthDLNotificationPage', function() {
     let props = {
       cardType: {
         ID: false,
-        DL: true
+        DL: true,
+        youthIDInstead: 'yes'
       },
       dateOfBirth: {
         year: (today.getFullYear() - 15).toString(),
@@ -69,7 +86,7 @@ describe('YouthDLNotificationPage', function() {
       cardType: {
         ID: false,
         DL: true,
-        youthIDInstead: 'No'
+        youthIDInstead: 'Yes'
       },
       dateOfBirth: {
         year: (today.getFullYear() - 10).toString(),
@@ -118,6 +135,32 @@ describe('YouthDLNotificationPage', function() {
       !component.text().includes('Ok, please come back when you turn 15'),
       'Error message rendered'
     );
+  });
+
+it('shows the form allowing you to choose to get a youth ID', function() {
+    let today = new Date();
+
+    let props = {
+      cardType: {
+        ID: false,
+        DL: true,
+        youthIDInstead: 'yes'
+      },
+      dateOfBirth: {
+        year: (today.getFullYear() - 10).toString(),
+        month: (today.getMonth() + 1).toString(),
+        day: today.getDate().toString()
+      },
+      onChange: sinon.spy()
+    };
+
+    let component = render(
+      <Wrapper>
+        <YouthDLNotificationPage {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.find('label[for="youthIDInstead-No"]').length, 'No button missing');
+    assert.ok(component.find('label[for="youthIDInstead-Yes"]').length, 'Yes button missing');
   });
 });
 
