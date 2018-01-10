@@ -88,6 +88,10 @@ const SummaryPage = (props) => {
 
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
+    <Address homeAddress={application.homeAddress} mailingAddress={application.mailingAddress} key='address' />,
+    <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
+    <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
+    <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,
     <Cards 
       cardType        = { application.cardType } 
       cardAction      = { application.cardAction }
@@ -96,15 +100,11 @@ const SummaryPage = (props) => {
       cardReplacement = { application.cardReplacement }
       key             = 'card-type' 
     />,
-    <Address homeAddress={application.homeAddress} mailingAddress={application.mailingAddress} key='address' />,
     <SeniorID seniorID={application.seniorID} key='senior-id' />,
     <RealID realID={application.realID} key='real-id' />,
     <LicenseType licenseType={application.licenseType} key='license-type' />,
     <ReducedFee reducedFee={application.reducedFee} key='reduced-fee' />,
-    <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
-    <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
     <OrganDonation organDonation={application.organDonation} key='organ-donation' />,
-    <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,
     <LicenseIssues licenseIssues={application.licenseIssues} key='license-issues' />,
     <LicenseAndIdHistory licenseAndIdHistory={application.licenseAndIdHistory} key='license-and-id-history' />,
     <NamesHistory namesHistory={application.namesHistory} key='names-history' />,
