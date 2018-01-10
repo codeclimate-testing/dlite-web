@@ -43,6 +43,37 @@ describe('PhysicalTraitsPage', function() {
       assert.ok(component.find('.hair-color').length, 'form asking for hair color missing');
     });
 
+    it('shows six eye color options', function() {
+      let component = render(
+        <Wrapper>
+          <PhysicalTraitsPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('label[for="eyeColor-Black"]').length, 'black eye color selection missing');
+      assert.ok(component.find('label[for="eyeColor-Blue"]').length, 'blue eye color selection missing');
+      assert.ok(component.find('label[for="eyeColor-Brown"]').length, 'brown eye color selection missing');
+      assert.ok(component.find('label[for="eyeColor-Gray"]').length, 'gray eye color selection missing');
+      assert.ok(component.find('label[for="eyeColor-Green"]').length, 'green eye color selection missing');
+      assert.ok(component.find('label[for="eyeColor-Hazel"]').length, 'hazel eye color selection missing');
+    });
+
+    it('shows nine hair color options', function() {
+      let component = render(
+        <Wrapper>
+          <PhysicalTraitsPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('label[for="hairColor-Auburn"]').length, 'auburn hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Bald"]').length, 'bald hair oolor selection missing');
+      assert.ok(component.find('label[for="hairColor-Black"]').length, 'black hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Blonde"]').length, 'blonde hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Brown"]').length, 'brown hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Gray"]').length, 'gray hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Red"]').length, 'red hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-White"]').length, 'white hair color selection missing');
+      assert.ok(component.find('label[for="hairColor-Other"]').length, 'other hair color selection missing');
+    });
+
     it('next button is disabled', function() {
       let component = render(
         <Wrapper>

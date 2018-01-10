@@ -4,7 +4,7 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 
-const COLORS = ['Blue', 'Gray', 'Green', 'Hazel', 'Brown'];
+const COLORS = ['Black', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'];
 
 const EyeColor = (props) => {
   return (
@@ -17,8 +17,16 @@ const EyeColor = (props) => {
             custom={true}
           >
             <RadioSelector
+              text='Black'
+              value='Black'
+            />
+            <RadioSelector
               text='Blue'
               value='Blue'
+            />
+            <RadioSelector
+              text='Brown'
+              value='Brown'
             />
             <RadioSelector
               text='Gray'
@@ -31,10 +39,6 @@ const EyeColor = (props) => {
             <RadioSelector
               text='Hazel'
               value='Hazel'
-            />
-            <RadioSelector
-              text='Brown'
-              value='Brown'
             />
           </RadioCollection>
         </div>
