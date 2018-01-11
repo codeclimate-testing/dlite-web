@@ -5,9 +5,9 @@ const dataParser        = require('../../../server/helpers/data-parser');
 
 describe('dataParser', function() {
   describe('stringToBool', function() {
-    it('returns null when data equals "null"', function() {
-      let val = 'null';
-      assert.equal(dataParser.strToBool(val), null);
+    it('returns null when data equals "decline"', function() {
+      let val = 'decline';
+      assert.equal(dataParser.strToBool(val), 'decline');
     });
   
     it('returns false when data equals "No"', function(){
@@ -22,9 +22,9 @@ describe('dataParser', function() {
   });
 
   describe('boolToStr', function() {
-    it('returns "null" when data equals null', function() {
-      let val = null;
-      assert.equal(dataParser.boolToStr(val), 'null');
+    it('returns "decline" when data equals "decline"', function() {
+      let val = "decline";
+      assert.equal(dataParser.boolToStr(val), 'decline');
     });
 
     it('returns "No" when data is false', function() {

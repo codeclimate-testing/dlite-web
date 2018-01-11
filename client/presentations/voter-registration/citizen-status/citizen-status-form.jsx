@@ -9,7 +9,7 @@ import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const values = {
   Yes: 'Yes',
-  null: 'Decline to answer'
+  decline: 'Decline to answer'
 };
 
 const CitizenStatusForm = (props) => {
@@ -33,7 +33,7 @@ const CitizenStatusForm = (props) => {
                 value='Yes'
               />
               <RadioSelector
-                value='null'
+                value='decline'
               />
             </RadioCollection>
           </div>

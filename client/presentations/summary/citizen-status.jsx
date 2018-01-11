@@ -7,11 +7,11 @@ import { hasValue } from '../../helpers/data/validations';
 const CitizenStatus = (props) => {
   let value = props.citizenStatus;
 
-  if(props.citizenStatus === 'null') {
+  if (!hasValue(value)) { return null; }
+
+  if(props.citizenStatus === 'decline') {
     value = 'Decline to answer';
   }
-
-  if (!hasValue(value)) { return null; }
 
   return (
     <div className='summary-section'>

@@ -82,7 +82,7 @@ world.and('I will see the eligibility requirement status I entered', function(do
 
 world.and('I change my eligibility requirement', function(done){
   browser
-    .click('label[for="eligibilityRequirements-null"]')
+    .click('label[for="eligibilityRequirements-decline"]')
     .then(() => { done(); })
     .catch(done);
 });

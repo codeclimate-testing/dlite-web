@@ -7,11 +7,11 @@ import { hasValue } from '../../helpers/data/validations';
 const EligibilityRequirements = (props) => {
   let value = props.eligibilityRequirements;
 
-  if(props.eligibilityRequirements === 'null') {
+  if (!hasValue(value)) { return null; }
+
+  if(props.eligibilityRequirements === 'decline') {
     value = 'Decline to answer';
   }
-
-  if (!hasValue(value)) { return null; }
 
   return (
     <div className='summary-section'>

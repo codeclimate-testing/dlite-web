@@ -182,13 +182,13 @@ describe('client data parser', function() {
     assert.equal(votingReg.should_contact, parserHelper.strToBool(data.contactMethods.shouldContact));
   });
 
-  it('saves citizenship and eligibility decline to answer as null instead of false', function() {
-    data.citizenStatus = 'null';
-    data.eligibilityRequirements = 'null';
+  it('saves citizenship and eligibility decline to answer as decline instead of false', function() {
+    data.citizenStatus = 'decline';
+    data.eligibilityRequirements = 'decline';
     parsedData = parse(data);
     let votingReg = parsedData.voting_registrations[0];
     assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.citizenStatus));
-    assert.equal(votingReg.is_citizen, null);
-    assert.equal(votingReg.is_eligible, null);
+    assert.equal(votingReg.is_citizen, 'decline');
+    assert.equal(votingReg.is_eligible, 'decline');
   });
 });

@@ -23,7 +23,7 @@ module.exports = function(world) {
 
   world.when('I decline to answer', function(done){
     browser
-    .click('label[for="citizenStatus-null"]')
+    .click('label[for="citizenStatus-decline"]')
     .then(() => { done(); })
     .catch(done);
   });

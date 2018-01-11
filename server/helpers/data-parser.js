@@ -15,9 +15,9 @@ module.exports.createDateJson = function createDateJson(date) {
 
 module.exports.strToBool = function strToBool(val) {
   // add ability to store a non-answer
-  return val === 'Yes' ? true : val === 'null' ? null : false;
+  return val === 'Yes' ? true : val === 'No' ? false : val;
 };
 
 module.exports.boolToStr = function boolToStr(val) {
-  return val === null ? 'null' : val ? 'Yes' : 'No';
+  return val.toString() === 'true' ? 'Yes' : val.toString() === 'false' ? 'No' : val;
 };

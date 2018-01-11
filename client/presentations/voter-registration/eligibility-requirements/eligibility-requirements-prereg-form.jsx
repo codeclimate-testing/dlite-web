@@ -9,7 +9,7 @@ import NavigationButtons  from '../../navigation-buttons.jsx';
 
 const values = {
   Yes: 'Yes',
-  null: 'Decline to answer'
+  decline: 'Decline to answer'
 };
 
 const PreRegEligibilityRequirements = (props) => {
@@ -44,7 +44,7 @@ const PreRegEligibilityRequirements = (props) => {
                 value='Yes'
               />
               <RadioSelector 
-                value='null'
+                value='decline'
               />
             </RadioCollection>
           </div>
