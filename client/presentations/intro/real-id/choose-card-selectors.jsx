@@ -26,8 +26,9 @@ const Form = (props) => {
 
       <RadioCollection
         {...props}
-        name='realIdDesignation'
-        text={ collectionTexts }
+        name          = 'realIdDesignation'
+        text          = { collectionTexts }
+        errorMessage  = { props.validations.designation() }
       >
         <RadioSelector value='ID' />
         <RadioSelector value='DL' />

@@ -5,38 +5,25 @@ import connectForm                from '../../helpers/connect-form';
 
 import { updateRealID }           from "../../actions/index";
 import handlers                   from '../../helpers/handlers';
-
-import { validToContinue }        from '../../helpers/data/real-id';
-import { eligibleForReducedFee }  from '../../helpers/data/reduced-fee';
-import { getDL }                  from '../../helpers/data/card-type';
-
 import Presentation               from "../../presentations/intro/real-id-page.jsx";
-
-const addressForProps = (props) => {
-  let address = '/get-started';
-
-  if (getDL(props)) {
-    address = '/license-type';
-  } else if (eligibleForReducedFee(props)) {
-    address = '/reduced-fee';
-  };
-
-  return address;
-};
+import { RealIDValidator }        from '../../helpers/validations';
 
 const Page = (props) => {
-  let onSubmit          = handlers.navigateOnSubmit(
-    addressForProps(props),
-    props
-  );
+  let validations       = new RealIDValidator(props, props.validations, 'realIdSelectionMissing');
+  let onSubmit          = handlers.navigateOrShowErrors('realID', props, validations)
   let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = !validToContinue(props);
+
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return <Presentation
     {...props}
-    onSubmit={onSubmit}
-    onBack={onBack}
-    continueDisabled={continueDisabled}
+    onSubmit            = { onSubmit }
+    onBack              = { onBack }
+    validations         = { validations }
+    onFocus             = { focus }
   />;
 };
 
@@ -45,7 +32,8 @@ const mapStateToProps = (state) => {
     realID :    state.application.realID,
     cardType:   state.application.cardType,
     seniorID:   state.application.seniorID,
-    focused:    state.ui.focus
+    focused:    state.ui.focus,
+    validations:state.ui.validations
   };
 };
 

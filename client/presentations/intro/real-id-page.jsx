@@ -10,6 +10,7 @@ import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
 
 import { hasMultipleCards }   from '../../helpers/data/cards';
+import { mustChooseCard }     from '../../helpers/data/real-id';
 import { getDL }              from '../../helpers/data/card-type';
 
 const headerTexts = {
@@ -43,8 +44,9 @@ const ChooseRealID = (props) => {
       <div className='row inner-bottom'>
         <RadioCollection
           {...props}
-          name='getRealID'
-          text={values}
+          name          = 'getRealID'
+          text          = { values}
+          errorMessage  = { props.validations.realID() }
         >
           <RadioSelector
             value='Yes'
@@ -66,10 +68,9 @@ const Form = (props) => {
       {...props}
       sectionKey='intro'
     >
-      <form onSubmit={props.onSubmit}>
+      <form onSubmit  = { props.onSubmit } >
         <ChooseRealID
           {...props}
-          onChange = { props.onChange }
           selectedValue = { props.realID.getRealID }
         />
 
@@ -117,6 +118,7 @@ const Form = (props) => {
         <NavigationButtons
           continueDisabled  = { props.continueDisabled }
           onBack            = { props.onBack }
+          errorMessage      = { props.validations.all() }
         />
       </form>
     </Page>

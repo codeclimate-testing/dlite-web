@@ -4,7 +4,7 @@ import assert       from 'assert';
 import configure    from '../../support/configure-enzyme';
 import { render }   from 'enzyme';
 import React        from 'react';
-import sinon        from 'sinon';
+import { spy }      from 'sinon';
 
 import RealIdPage   from '../../../../client/presentations/intro/real-id-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
@@ -28,15 +28,20 @@ describe('RealIdPage', function() {
         realIdDesignation: '',
         getRealID: ''
       };
+      let validations = {
+        designation: spy(),
+        realID: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
 
       let accordions = {};
-      let section = {};
-
-      let onChange = sinon.spy();
+      let onChange = spy();
 
       props = {
         cardType,
         realID,
+        validations,
         accordions,
         onChange
       }
@@ -108,6 +113,48 @@ describe('RealIdPage', function() {
       );
 
       assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
+    });
+
+    it('should have a header indicating your particular card type', function() {
+      props.cardType.new = ['ID']
+      let component = render(
+        <Wrapper>
+          <RealIdPage  {...props}/>
+        </Wrapper>
+      );
+  
+      assert.ok(
+        component.text().includes('Do you plan on using your ID to fly?'),
+        'Header does not include ID type'
+      );
+  
+      props.cardType.new = ['DL'];
+  
+      component = render(
+        <Wrapper>
+          <RealIdPage  {...props}/>
+        </Wrapper>
+      );
+  
+      assert.ok(
+        component.text().includes('Do you plan on using your Driver License to fly?'),
+        'Header does not include DL type'
+      );
+    });
+
+    it('should have a header indicating you are applying for both cards is applicable', function() {
+      props.cardType.new = ['DL', 'ID'];
+  
+      let component = render(
+        <Wrapper>
+          <RealIdPage  {...props}/>
+        </Wrapper>
+      );
+  
+      assert.ok(
+        component.text().includes('Do you plan on using one of your cards to fly?'),
+        'Header does not for multicard'
+      );
     });
   });
 });
