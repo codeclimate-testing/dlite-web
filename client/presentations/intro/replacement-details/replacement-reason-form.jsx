@@ -4,12 +4,13 @@ import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 
+const text = {
+  lostOrStolen: 'It was lost or stolen.',
+  damaged:      'It was damaged.',
+  other:        'Other'
+};
+
 const Form = (props) => {
-  let text = {
-    lostOrStolen: 'It was lost or stolen.',
-    damaged:      'It was damaged.',
-    other:        'Other'
-  };
   
   return (
     <div className='row inner-buttom'>
@@ -30,7 +31,6 @@ const Form = (props) => {
           value='other'
         />
       </RadioCollection>
-      <div className='unit spacer' />
     </div>
   )
 };
