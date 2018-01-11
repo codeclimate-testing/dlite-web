@@ -6,7 +6,7 @@ import { Route }                              from 'react-router-dom';
 import { pathForPage }                        from '../helpers/data/page';
 import alicePath                              from '../helpers/alice-path';
 
-import Welcome                                from '../presentations/welcome.jsx';
+import Welcome                                from '../presentations/intro/welcome-page.jsx';
 import Home                                   from '../presentations/home.jsx';
 import Summary                                from './summary-handler.jsx';
 import RequiredDocuments                      from './required-documents-handler.jsx';
