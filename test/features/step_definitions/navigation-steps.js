@@ -35,7 +35,7 @@ module.exports = function(world) {
         console.log('error', err);
       })
       .open(world.url('/'))
-      .waitForSelector('.legal-name-form')
+      .waitForSelector('.welcome-page')
       .then(() => { done(); })
       .catch(done);
   });
@@ -174,6 +174,10 @@ module.exports = function(world) {
 
   world.when('I visit the medical history page', function(done) {
     navigateToPath('/apply/my-history/medical', '.medical-history-form', done);
+  });
+
+  world.then('I will be on the page for entering my legal name', function(done) {
+    assertOnPage('.legal-name-form', /apply\/my-basics\/legal-name/, done);
   });
 
   world.then('I will be on the page for entering my date of birth', function(done) {

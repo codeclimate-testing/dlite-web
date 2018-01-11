@@ -19,7 +19,7 @@ export const pathForPage = (name) => {
 };
 
 export const nextPath = (name, props) => {
-  if (props.location && props.location.state) { return pageFor('summary').path; }
+  if (props.location && props.location.state && props.location.state.nextAddress === '/summary') { return pageFor('summary').path; }
 
   let page = pageFor(name);
   let nextKey = page.next;

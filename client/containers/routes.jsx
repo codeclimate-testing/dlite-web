@@ -6,6 +6,7 @@ import { Route }                              from 'react-router-dom';
 import { pathForPage }                        from '../helpers/data/page';
 import alicePath                              from '../helpers/alice-path';
 
+import Welcome                                from '../presentations/welcome.jsx';
 import Home                                   from '../presentations/home.jsx';
 import Summary                                from './summary-handler.jsx';
 import RequiredDocuments                      from './required-documents-handler.jsx';
@@ -52,8 +53,9 @@ class Router extends React.Component {
   render() {
     return (
       <div className='routes'>
-        <Route path={ alicePath('/') } exact component={LegalName} />
-        <Route path={ pathForPage('trueName') } component={LegalName} />
+        <Route path={ alicePath('/') } exact component={Welcome} />
+        <Route path={ pathForPage('welcome') } component={Welcome} />
+        <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
         <Route path={ alicePath('/select-id-dl') } component={ChooseCard} />

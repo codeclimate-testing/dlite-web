@@ -11,6 +11,12 @@ import {
 
 const getStarted = [
   {
+    key: 'welcome',
+    description: 'Welcome',
+    path: '/welcome',
+    next: 'trueName',
+  },
+  {
     key: 'trueName',
     description: 'True name',
     path: '/my-basics/legal-name',
