@@ -13,9 +13,9 @@ import { validToContinue } from '../../helpers/data/youth';
 const FormHeader = (props) => {
   return (
     <div>
-      <h4>{props.title}</h4>
-      <h5>{props.helpText}</h5>
-      <h2 className='question pad-bottom-10'>Do you want to apply for an ID instead?</h2>
+      <h2 className='question'>{props.title}</h2>
+      <p>{props.helpText}</p>
+      <h3 className='question'>Do you want to apply for an ID instead?</h3>
     </div>
   );
 };
