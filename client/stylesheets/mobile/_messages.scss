@@ -1,0 +1,38 @@
+.hang-left {
+  position: relative;
+
+  .flag-hanger {
+    position: absolute;
+    left: -1 * $page-padding;
+    width: 45px;
+    height: 24px;
+    background-color: $med-blue;
+    @include clip-path(polygon(0% 0%, 0% 100%, 85% 100%, 100% 0%));
+  }
+
+  .inner {
+    padding: 0;
+    padding-left: $spacing;
+    padding-top: ceil($spacing / 3);
+  }
+
+  .message {
+    font-style: italic;
+  }
+
+  .icon {
+    margin-left: 17px;
+    margin-top: 7px;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+  }
+
+  .icon.info {
+    background-image: url("/images/icons/misc/info.svg");
+  }
+
+  .icon.thanks {
+    background-image: url("/images/icons/misc/thanks.svg");
+  }
+}

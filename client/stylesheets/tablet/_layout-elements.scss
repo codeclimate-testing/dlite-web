@@ -14,3 +14,10 @@ html {
 #app.inner {
   padding: $page-padding;
 }
+
+.hang-left {
+  .flag-hanger {
+    left: -1 * $page-padding;
+    //width: $page-padding;
+  }
+}
