@@ -3,7 +3,18 @@
 import React              from 'react';
 import RadioSelector      from '../../radio-selector.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
-import FAQDrawer          from '../../faq-drawer.jsx';
+import MessageBox         from '../../message-box.jsx';
+
+const Message = (props) => {
+  if (props.organDonation.donateMoney !== 'Yes') { return null; }
+  return (
+    <MessageBox className='thanks'>
+      <div className = 'donate-money-yes-info'>
+        <p>Thank you for your donation! We will add $2 to your total fee.</p>
+      </div>
+    </MessageBox>
+  );
+};
 
 const DonateContribution = (props) => {
   let values = {
@@ -12,32 +23,23 @@ const DonateContribution = (props) => {
   };
   return (
     <div className='donate-money-form'>
-      <hr/>
       <h2 className='question'>Do you want to make a voluntary contribution of $2?</h2>
-      <p><em>(optional)</em></p>
       <p>Your donation helps support and promote organ and tissue donation.</p>
-        <div className='inner-bottom'>
-          <RadioCollection
-            {...props}
-            name='donateMoney'
-            text={values}
-          >
-            <RadioSelector
-              value='Yes'
-            />
-            <RadioSelector
-              value='No'
-            />
-          </RadioCollection>
-        </div>
 
-        <div className='inner-bottom'>
-          { props.organDonation.donateMoney === 'Yes' &&
-            <div className = 'donate-money-yes-info'>
-              <p>Thank you for your donation! We will add $2 to your total fee.</p>
-            </div>
-          }
-        </div>
+      <RadioCollection
+        {...props}
+        name='donateMoney'
+        text={values}
+      >
+        <RadioSelector
+          value='Yes'
+        />
+        <RadioSelector
+          value='No'
+        />
+      </RadioCollection>
+
+      <Message {...props} />
     </div>
   );
 };

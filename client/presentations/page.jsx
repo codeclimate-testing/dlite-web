@@ -47,7 +47,7 @@ const Page = (props) => {
   let number = props.sectionNumber || (props.section && props.section.number);
 
   return (
-    <div className='application-page row'>
+    <div className='application-page'>
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />

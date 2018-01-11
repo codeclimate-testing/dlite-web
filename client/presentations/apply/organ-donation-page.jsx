@@ -20,6 +20,8 @@ const OrganDonationPage = (props) => {
           selectedValue = { props.organDonation.donateOrgan }
         />
 
+        <hr />
+
         <DonateMoney
           {...props}
           onChange      = { props.onChange }
