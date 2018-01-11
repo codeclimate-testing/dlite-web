@@ -28,7 +28,7 @@ const BallotLanguageFormPreReg = (props) => {
       sectionKey='voterPreRegistration'
     >
       <div>
-        <h4>Choose a language for your election materials.</h4>
+        <h2 className='question'>Choose a language for your election materials.</h2>
         <form onSubmit={props.onSubmit} className='ballot-language-form'>
           <div className='inner-bottom'>
             <RadioCollection  

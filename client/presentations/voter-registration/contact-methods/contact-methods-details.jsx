@@ -10,8 +10,9 @@ const ContactDetails = (props) => {
   
   return (
     <div className='contact-methods-details-form'>
-      <h4>Please enter your contact information below.</h4>
-      <h6>This is optional</h6>
+      <hr/>
+      <h2 className='question'>Please enter your contact information below.</h2>
+      <p>This is optional</p>
       <TextInput
         identifier='emailAddress'
         description='Email address'
@@ -26,7 +27,7 @@ const ContactDetails = (props) => {
         value={props.contactDetails.phoneNumber}
         onChange={props.onChange}
       />
-      <h4>Who gets this information?</h4>
+      <p>Who gets this information?</p>
       <p>Secretary of State and county election officials have access to this information</p>
     </div>
   )

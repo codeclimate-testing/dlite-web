@@ -13,7 +13,7 @@ const VoterPreferencesIntroUpdated = (props) => {
     >
       <form onSubmit={props.onSubmit}>
         <div className='updating-voter-preferences'>
-          <h4>Next we'd like to make sure your voter registration is up to date.</h4>
+          <h2 className='question'>Next we'd like to make sure your voter registration is up to date.</h2>
           <p>This will replace your previous voter preferences.</p>
           <h4>Political Party</h4>
           <p>Choose your political party preference.</p>

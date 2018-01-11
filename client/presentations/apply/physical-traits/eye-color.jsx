@@ -9,7 +9,8 @@ const COLORS = ['Black', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'];
 const EyeColor = (props) => {
   return (
     <div className='eye-color'>
-      <h4>What color are your eyes?</h4>
+      <hr/>
+      <h2 className='question'>What color are your eyes?</h2>
         <div className='inner-bottom'>
           <RadioCollection
             {...props}

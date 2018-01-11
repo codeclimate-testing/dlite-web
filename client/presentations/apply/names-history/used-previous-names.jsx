@@ -11,7 +11,7 @@ const UsedPreviousNames = (props) => {
   };
   return (
     <div className='previous-names-form'>
-        <h4>Have you ever applied for a Driver License or ID card under a different name?</h4>
+        <h2 className='question'>Have you ever applied for a Driver License or ID card under a different name?</h2>
       <div className='inner-bottom'>
         <RadioCollection 
           {...props}

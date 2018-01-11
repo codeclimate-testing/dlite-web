@@ -21,7 +21,7 @@ const PreRegEligibilityRequirements = (props) => {
     >
 
       <div>
-        <h4>Do you meet all of the voter pre-registration requirements listed below?</h4>
+        <h2 className='question'>Do you meet all of the voter pre-registration requirements listed below?</h2>
 
         <ul className='bullet-list'>
           <li>I am a United States citizen</li>

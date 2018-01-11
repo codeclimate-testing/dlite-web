@@ -8,9 +8,9 @@ const EnterRevokedSuspended = (props) => {
   if(props.licenseIssues.isSuspended !== 'Yes') { return null; }
   return (
     <div className='suspended-license-form'>
-
-      <h4>When did this happen?</h4>
-      <h5>Example: 03/21/1967</h5>
+      <hr/>
+      <h2 className='question'>When did this happen?</h2>
+      <p>Example: 03/21/1967</p>
 
         <div className='row inner-bottom'>
           <NumberInput

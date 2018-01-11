@@ -15,10 +15,10 @@ const AppointmentPreparation = (props) => {
       <HomeLink />
 
       <div className='appointment-preparation'>
-        <h3>Your form has been submitted!</h3>
-        <h4>You will need to go to your local DMV office to complete your application.</h4>
-        <h5>Your application will expire in <b>1 year</b>.</h5>
-        <hr></hr>
+        <h2 className='question'>Your form has been submitted!</h2>
+        <p>You will need to go to your local DMV office to complete your application.</p>
+        <p>Your application will expire in <b>1 year</b>.</p>
+        <hr/>
 
         <h4>Next:</h4>
         <ul className='bullet-list'>

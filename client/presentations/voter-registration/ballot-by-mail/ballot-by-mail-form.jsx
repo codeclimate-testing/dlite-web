@@ -20,7 +20,7 @@ const BallotByMailForm = (props) => {
      
      <form onSubmit={props.onSubmit}>
       <div className='ballot-by-mail-form'>
-        <h4>Would you like to get your ballot by mail before each election?</h4>
+        <h2 className='question'>Would you like to get your ballot by mail before each election?</h2>
         <p>If you answer Yes, you can still vote in-person.</p>
         
           <div className='inner-bottom'>

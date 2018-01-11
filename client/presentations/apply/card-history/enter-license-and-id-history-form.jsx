@@ -10,9 +10,8 @@ const EnterLicenseAndIdHistory = (props) => {
 
   return (
     <div className='existing-license-id-number-form'>
-
-      <h4>Please tell us about your most recent license or ID card.</h4>
-
+      <hr/>
+      <h2 className='question'>Please tell us about your most recent license or ID card.</h2>
         <div className='row inner-bottom'>
           <TextInput
             identifier='DLIDNumber'

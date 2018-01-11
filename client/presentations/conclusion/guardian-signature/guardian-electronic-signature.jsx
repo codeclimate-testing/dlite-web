@@ -21,7 +21,7 @@ const ElectronicSignature = (props) => {
         text='I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.'
       />
 
-      <h4>Please type your name and today’s date to electronically sign.</h4>
+      <p>Please type your name and today’s date to electronically sign.</p>
 
       <TextInput
         {...props}

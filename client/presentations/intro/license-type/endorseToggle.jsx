@@ -11,7 +11,7 @@ const Form = (props) => {
   };
   return (
     <div className='endorsement-toggle'>
-      <hr />
+      <hr/>
       <h2 className='question'>Do you need any professional endorsements?</h2>
       <p>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
       <div className='row inner-bottom'>

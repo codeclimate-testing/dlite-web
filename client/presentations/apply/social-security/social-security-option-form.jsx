@@ -12,8 +12,8 @@ const Form = (props) => {
 
   return (
     <div className='social-security-option-form'>
-      <h4>Do you have a Social Security Number?</h4>
-      <h5>If you have a Social Security Number you must select Yes.</h5>
+      <h2 className='question'>Do you have a Social Security Number?</h2>
+      <p>If you have a Social Security Number you must select Yes.</p>
         <div className='input-container'>
         <RadioCollection 
             {...props}

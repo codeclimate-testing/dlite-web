@@ -12,7 +12,7 @@ const Sex = (props) => {
 
   return (
     <div className="sex">
-      <h4>What's your sex?</h4>
+      <h2 className='question'>What's your sex?</h2>
         <div className='inner-bottom'>
           <RadioCollection 
             {...props}

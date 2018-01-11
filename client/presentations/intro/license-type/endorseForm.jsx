@@ -14,7 +14,8 @@ const Form = (props) => {
 
   return (
     <div className='endorsement-form'>
-      <h3 className='question'>Which?</h3>
+      <hr/>
+      <h2 className='question'>Which?</h2>
       <p>Select all that apply</p>
       <div className='row inner-bottom'>
         <CheckboxCollection

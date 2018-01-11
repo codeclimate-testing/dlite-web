@@ -9,9 +9,9 @@ const Form = (props) => {
 
   return (
     <div className='mailing-address-form'>
-
-      <h4>Where do you receive mail?</h4>
-      <h5>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</h5>
+      <hr/>
+      <h2 className='question'>Where do you receive mail?</h2>
+      <p>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</p>
       <div className='addresses-section'>
           <AddressTemplate
             type      = 'mailing'

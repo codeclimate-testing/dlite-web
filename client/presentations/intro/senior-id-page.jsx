@@ -25,7 +25,7 @@ const Form = (props) => {
           will be printed on your card.
         </p>
 
-        <h3 className='question'>Would you like this card for no fee?</h3>
+        <h2 className='question'>Would you like this card for no fee?</h2>
 
         <div className='row'>
           <RadioCollection

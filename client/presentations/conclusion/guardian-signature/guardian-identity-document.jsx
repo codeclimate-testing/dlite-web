@@ -9,7 +9,7 @@ const IdentityForm = (props) => {
   let guardianID = props.guardianID;
   return (
     <div className='guardian-identity'>
-      <h4>Finally, please provide information from a document that can prove your identity.</h4>
+      <h2 className='question'>Finally, please provide information from a document that can prove your identity.</h2>
       <p>Documents include: a California driver license or ID card, a passport, a consultant card, a birth certificate.</p>
 
       <TextInput

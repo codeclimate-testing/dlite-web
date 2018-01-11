@@ -9,7 +9,8 @@ const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'Wh
 const HairColor = (props) => {
   return (
     <div className='hair-color'>
-      <h4>What color is your hair?</h4>
+      <hr/>
+      <h2 className='question'>What color is your hair?</h2>
         <div className='inner-bottom'>
           <RadioCollection
             {...props}

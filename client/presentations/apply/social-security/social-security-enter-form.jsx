@@ -8,8 +8,9 @@ const Form = (props) => {
   
   return (
     <div className='social-security-enter-form'>
-      <h4>What’s your Social Security Number?</h4>
-      <h5>Example: 123 - 45 - 6789</h5>
+      <hr/>
+      <h2 className='question'>What’s your Social Security Number?</h2>
+      <p>Example: 123 - 45 - 6789</p>
 
       <div className='row inner-bottom'>
         <NumberInput

@@ -13,10 +13,11 @@ const VeteransBenefits = (props) => {
   };
   return (
     <div className='veterans-benefits-form'>
+      <hr/>
       <div className='veteran-thank-you-message'>
-        <h5>Thank you for your service, {props.legalName.firstName}.</h5>
+        <p className='question'>Thank you for your service, {props.legalName.firstName}.</p>
       </div>
-      <h4>Would you like to receive benefits information for which you may be eligible?</h4>
+      <h2 className='question'>Would you like to receive benefits information for which you may be eligible?</h2>
       <div className='input-container'>
         <RadioCollection 
           {...props}

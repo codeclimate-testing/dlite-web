@@ -20,7 +20,7 @@ const EligibilityRequirements = (props) => {
       sectionKey='voterRegistration'
     >
       <div>
-        <h4>Do you meet all of the voter registration requirements listed below?</h4>
+        <h2 className='question'>Do you meet all of the voter registration requirements listed below?</h2>
         <ul className='bullet-list'>
           <li>I am a United States citizen</li>
           <li>I am a resident of California</li>

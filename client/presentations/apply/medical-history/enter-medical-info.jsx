@@ -7,7 +7,8 @@ const EnterMedicalInfo = (props) => {
   if(props.medicalHistory.hasMedicalCondition !== 'Yes') { return null; }
   return (
     <div className='enter-medical-info'>
-      <h4>Please explain below.</h4>
+      <hr/>
+      <h2 className='question'>Please explain below.</h2>
         <TextArea
           identifier='medicalInfo'
           value={props.medicalHistory.medicalInfo}

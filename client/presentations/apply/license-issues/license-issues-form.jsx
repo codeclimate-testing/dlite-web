@@ -12,7 +12,7 @@ const LicenseIssues = (props) => {
 
   return (
     <div className='license-issues-form'>
-      <h4>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h4>
+      <h2 className='question'>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h2>
       <div className='inner-bottom'>
         <RadioCollection 
           {...props}

@@ -12,8 +12,9 @@ const DonateContribution = (props) => {
   };
   return (
     <div className='donate-money-form'>
-      <h4>Do you want to make a voluntary contribution of $2?</h4>
-      <p><i>(optional)</i></p>
+      <hr/>
+      <h2 className='question'>Do you want to make a voluntary contribution of $2?</h2>
+      <p><em>(optional)</em></p>
       <p>Your donation helps support and promote organ and tissue donation.</p>
         <div className='inner-bottom'>
           <RadioCollection

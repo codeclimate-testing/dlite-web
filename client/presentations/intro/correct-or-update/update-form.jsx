@@ -25,7 +25,8 @@ const Form = (props) => {
 
   return (
     <div className='row inner-bottom change-sections-form'>
-      <h4>{headerText}</h4>
+      <hr/>
+      <h2 className='question'>{headerText}</h2>
       <p>Select all that apply.</p>
 
       <CheckboxCollection 

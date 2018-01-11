@@ -12,7 +12,7 @@ const Welcome = (props) => {
       sectionKey='intro'
     >
       <div className='welcome-page'>
-        <h2>Welcome!</h2>
+        <h2 className='question'>Welcome!</h2>
         <p>On this website, you can:</p>
         <ul className='bullet-list'>
           <li>Apply for a driver license or ID card.</li>

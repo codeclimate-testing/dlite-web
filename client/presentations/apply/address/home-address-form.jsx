@@ -9,8 +9,8 @@ import AddressTemplate  from '../../address-template.jsx';
 const Form = (props) => {
   return (
     <div className='home-address-form'>
-      <h4>Where do you live?</h4>
-      <h5>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</h5>
+      <h2 className='question'>Where do you live?</h2>
+      <p>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</p>
       <div className='addresses-section'>
         <AddressTemplate
           type      = 'home'

@@ -14,8 +14,8 @@ const VoterIntroPrereg = (props) => {
       <form onSubmit={props.onSubmit}>
         <div className='voter-intro-info'>
           <h5><img src='/images/stop.png' alt='Stop' /> US Citizens Only </h5>
-          <h3 key='header'>Voting pre-registration</h3>
-          <h4>Since 1993, DMVs nationwide must help US citizens register to vote.</h4>
+          <h2 className='question' key='header'>Voting pre-registration</h2>
+          <p>Since 1993, DMVs nationwide must help US citizens register to vote.</p>
 
           <ul className='bullet-list'>
             <li> If you are eligible, the California DMV will register you to vote unless you choose to opt out.</li>

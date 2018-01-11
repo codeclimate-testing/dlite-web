@@ -12,8 +12,8 @@ const TraitsPage = (props) => {
       sectionKey='myBasics'
     >
       <div className='traits-height-weight-form'>
-        <h4>How tall are you?</h4>
-        <h5>Example: 5 feet 9 inches</h5>
+        <h2 className='question'>How tall are you?</h2>
+        <p>Example: 5 feet 9 inches</p>
 
         <form onSubmit={ props.onSubmit } >
           <div className='row inner-bottom'>
@@ -34,8 +34,9 @@ const TraitsPage = (props) => {
             />
           </div>
 
-        <h4>And how much do you weigh?</h4>
-        <h5>Example: 190 pounds</h5>
+        <hr/>
+        <h2 className='question'>And how much do you weigh?</h2>
+        <p>Example: 190 pounds</p>
 
           <div className='row inner-bottom'>
             <NumberInput

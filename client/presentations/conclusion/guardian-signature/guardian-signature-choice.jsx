@@ -12,9 +12,9 @@ const SignatureChoice = (props) => {
   };
   return (
     <div className='signature-choice-form'>
-      <h4>Because you are under 18, you will need a parent or guardian signature.</h4>
+      <h2 className='question'>Because you are under 18, you will need a parent or guardian signature.</h2>
       <p>If you have more than one parent or guardian with custody, both must sign.</p>
-      <h4>Is your parent/guardian available to sign your application?</h4>
+      <p>Is your parent/guardian available to sign your application?</p>
       <div className='inner-bottom'>
         <RadioCollection
           {...props}

@@ -15,7 +15,7 @@ const FormHeader = (props) => {
     <div>
       <h2 className='question'>{props.title}</h2>
       <p>{props.helpText}</p>
-      <h3 className='question'>Do you want to apply for an ID instead?</h3>
+      <h2 className='question'>Do you want to apply for an ID instead?</h2>
     </div>
   );
 };
@@ -42,7 +42,7 @@ let ErrorMessage = (props) => {
   if (validToContinue(props)) { return null; }
 
   return (
-    <h4>Ok, please come back when you turn 15.</h4>
+    <p>Ok, please come back when you turn 15.</p>
   );
 };
 

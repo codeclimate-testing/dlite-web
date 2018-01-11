@@ -15,7 +15,7 @@ const OptOutRadioFormContainer = (props) => {
     >
       <form onSubmit={props.onSubmit}>
         <div className='opt-out-form'>
-          <h4>Which best describes you?</h4>
+          <h2 className='question'>Which best describes you?</h2>
             <OptOutForm {...props} />
             <NavigationButtons {...props} />
         </div>

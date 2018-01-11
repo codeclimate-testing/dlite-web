@@ -23,7 +23,7 @@ const VeteransPreviousDesignation = (props) => {
 
   return (
     <div className='veterans-previous-designation-form'>
-      <h4>{headerText}</h4>
+      <h2 className='question'>{headerText}</h2>
       <div className='input-container'>
         <RadioCollection 
           {...props}

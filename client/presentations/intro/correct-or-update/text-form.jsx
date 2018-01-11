@@ -11,7 +11,8 @@ const EnterMedicalInfo = (props) => {
   const headerText    = props.cardChanges.correctOrUpdate === 'correct' ? correctHeader : updateHeader;
   return (
     <div className='enter-other-section'>
-      <h4>{headerText}</h4>
+      <hr/>
+      <h2 className='question'>{headerText}</h2>
         <TextArea
           identifier='other'
           value={props.cardChanges.other}

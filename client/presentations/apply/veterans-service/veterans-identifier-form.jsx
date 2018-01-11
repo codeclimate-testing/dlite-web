@@ -25,7 +25,8 @@ const Question = (props) => {
 
   return (
     <div className={className}>
-      <h4>{text}</h4>
+      <hr/>
+      <h2 className='question'>{text}</h2>
     </div>
   )
 };
@@ -43,7 +44,7 @@ const VeteransIdentifier = (props) => {
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      <h5>Many organizations give discounts with a valid military ID.</h5>
+      <p>Many organizations give discounts with a valid military ID.</p>
       <div className='input-container'>
       <RadioCollection 
         {...props}
@@ -60,15 +61,14 @@ const VeteransIdentifier = (props) => {
       </div>
       { props.veteransService.veteransIdentifier === 'Yes' &&
         <div className='veteran-identifier-fee'>
-          <h5>OK, we will add the $5 to your total fee.</h5>
+          <p>OK, we will add the $5 to your total fee.</p>
         </div>
       }
       { removeIdentifierNotification &&
         <div className='remove-veteran-identifier'>
-          <h5>OK, we will remove it.</h5>
+          <p>OK, we will remove it.</p>
         </div>
       }
-
     </div>
   );
 

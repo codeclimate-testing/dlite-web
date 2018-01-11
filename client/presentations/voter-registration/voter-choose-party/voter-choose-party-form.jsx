@@ -16,7 +16,7 @@ const PoliticalPartyChoose = (props) => {
 
     <div>
       <div className='choose-political-party'>
-        <h4>Would you like to choose a political party preference?</h4>
+        <h2 className='question'>Would you like to choose a political party preference?</h2>
         <p>In order to vote for a presidential candidate in a primary election, you
         may need to be registered with that political party.</p>
         <div className='inner-bottom'>

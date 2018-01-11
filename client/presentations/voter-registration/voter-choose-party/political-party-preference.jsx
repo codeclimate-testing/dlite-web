@@ -18,7 +18,8 @@ const PoliticalPartyPreference = (props) => {
 
   return (
     <div className='political-party-preference'>
-      <h4>Please select a party below</h4>
+      <hr/>
+      <h2 className='question'>Please select a party below</h2>
       <div className='inner-bottom'>
         <RadioCollection 
           {...props}

@@ -22,7 +22,8 @@ const SignatureDetails = (props) => {
     return (
       <div className='guardian-details-form'>
         <div>
-          <h4>For the parent/guardian to complete:</h4>
+          <hr/>
+          <h2 className='question'>For the parent/guardian to complete:</h2>
           <ElectronicSignature
             {...props}
             guardianID = {0}
@@ -44,7 +45,8 @@ const SignatureDetails = (props) => {
             title='Add another parent/guardian signature'
           >
           <div>
-            <h4>For the parent/guardian to complete:</h4>
+            <hr/>
+            <h2 className='question'>For the parent/guardian to complete:</h2>
             <ElectronicSignature
               {...props}
               guardianID = {1}

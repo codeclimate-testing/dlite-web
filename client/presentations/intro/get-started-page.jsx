@@ -12,9 +12,9 @@ const Intro = (props) => {
   return (
     <Page {...props} >
       <div className='intro-info'>
-        <h3>Welcome to the Online Driver License application!</h3>
+        <h2 className='question'>Welcome to the Online Driver License application!</h2>
 
-        <h4>This form is broken in 4 sections:</h4>
+        <p>This form is broken in 4 sections:</p>
         <ol className='decimal-list'>
           <li>My basics</li>
           <li>My history</li>
@@ -25,9 +25,9 @@ const Intro = (props) => {
         <p>The DMV cares about your privacy. We will protect your data.</p>
 
         <div className='navigation-buttons row'>
-          <hr />
+          <hr/>
 
-          <p>The online form takes most customers<br />
+          <p>The online form takes most customers<br/>
             <b>10 minutes</b>
           </p>
 

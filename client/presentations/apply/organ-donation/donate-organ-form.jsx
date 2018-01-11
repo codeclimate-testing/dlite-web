@@ -11,7 +11,7 @@ const DonateOrgan = (props) => {
   };
   return (
     <div className='donate-organ-form'>
-      <h4>Do you wish to be an organ or tissue donor?</h4>
+      <h2 className='question'>Do you wish to be an organ or tissue donor?</h2>
       <p><em>(optional)</em></p>
       <p>You must mark <em>Yes</em> to maintain the donor dot on your drivers licence.</p>
       <div className='inner-bottom'>

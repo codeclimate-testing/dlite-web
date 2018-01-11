@@ -12,7 +12,7 @@ const MedicalCondition = (props) => {
 
   return (
     <div className='medical-condition-form'>
-        <h4>Have you had any medical conditions in the last three years that affected your ability to drive?</h4>
+        <h2 className='question'>Have you had any medical conditions in the last three years that affected your ability to drive?</h2>
       <div className='inner-bottom'>
         <RadioCollection    
           {...props}

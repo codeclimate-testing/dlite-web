@@ -13,8 +13,9 @@ const Form = (props) => {
 
   return (
     <div className='interstitial-address-form'>
-      <h4>Do you receive mail at this address too?</h4>
-      <h5>The DMV will print your Mailing Address on your Driver License</h5>
+      <hr/>
+      <h2 className='question'>Do you receive mail at this address too?</h2>
+      <p>The DMV will print your Mailing Address on your Driver License</p>
         <div className='input-container'>
           <RadioCollection 
             {...props}

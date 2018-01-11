@@ -18,7 +18,7 @@ const BallotByMailFormPreReg = (props) => {
       sectionKey='voterPreRegistration'
     >
       <div>
-        <h4>Would you like to get your ballot by mail before each election?</h4>
+        <h2 className='question'>Would you like to get your ballot by mail before each election?</h2>
         <p>If you answer Yes, you can still vote in-person.</p>
         <form onSubmit={props.onSubmit} className='ballot-by-mail-form'>
 

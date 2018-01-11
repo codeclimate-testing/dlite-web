@@ -13,7 +13,7 @@ const PreRegOptOutRadioFormContainer = (props) => {
       sectionKey='voterPreRegistration'
     >
       <div>
-        <h4>Which best describes you?</h4>
+        <h2 className='question'>Which best describes you?</h2>
         <form onSubmit={props.onSubmit} className='opt-out-form'>
           <OptOutForm {...props} />
           <NavigationButtons {...props} />
