@@ -48,7 +48,7 @@ let ErrorMessage = (props) => {
 
 const Form = (props) => {
   const handleChange = (e) => {
-props.onChange(e); // update props.cardType.youthIDInstead
+    props.onChange(e); // update props.cardType.youthIDInstead
     props.checkAnswer(e.target.value, false); // update props.cardType.new
   }
 

@@ -44,7 +44,7 @@ describe('Data helpers for determining next path from current page and props', f
         cardAction: 'new'
       };
 
-      assert.equal(chooseCardType(data), 'youthDlMessage');
+      assert.equal(chooseCardType(data), 'youthIDInstead');
     });
 
     it('if applying for an ID and a senior', function() {

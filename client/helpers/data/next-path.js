@@ -14,7 +14,7 @@ export const chooseCardType = (props) => {
   let key = 'realID';
 
   if (tooYoungForDL(props)) {
-    key = 'youthDlMessage';
+    key = 'youthIDInstead';
   } else if (hasExistingCard(props)) {
     key = 'currentCardInfo';
   } else if (isChangingCard(props)) {

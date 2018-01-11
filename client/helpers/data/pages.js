@@ -65,7 +65,7 @@ const getStarted = [
     next: chooseCardChanges
   },
   {
-    key: 'youthDlMessage',
+    key: 'youthIDInstead',
     description: 'Youth DL message',
     path: '/youth-license-notification',
     next: 'realID',
