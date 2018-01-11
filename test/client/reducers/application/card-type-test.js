@@ -11,6 +11,8 @@ describe('cardTypeReducer', function() {
         {
           new: [],
           renew: '',
+          change: '',
+          replace: '',
           youthIDInstead: ''
         },
         {
@@ -24,6 +26,8 @@ describe('cardTypeReducer', function() {
       {
         new: ['ID'],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
     );
@@ -35,6 +39,8 @@ describe('cardTypeReducer', function() {
         {
           new: [],
           renew: '',
+          change: '',
+          replace: '',
           youthIDInstead: ''
         },
         {
@@ -48,6 +54,8 @@ describe('cardTypeReducer', function() {
       {
         new: ['ID'],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
     );
@@ -58,6 +66,8 @@ describe('cardTypeReducer', function() {
       {
         new: ['DL'],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
       {
@@ -78,6 +88,8 @@ describe('cardTypeReducer', function() {
       {
         new: ['DL'],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
       {
@@ -92,11 +104,13 @@ describe('cardTypeReducer', function() {
     assert.deepEqual(newState.new, ['ID'], 'array not updated to have only ID card');
   });
 
-  it('it adds the choice, but leaves the id/dl info as is if No is chosen', function() {
+  it('it adds the choice, and clears the id/dl info if No is chosen', function() {
     const newState = updateCardType(
       {
         new: ['DL'],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
       {
@@ -111,8 +125,10 @@ describe('cardTypeReducer', function() {
     assert.deepEqual(
       newState,
       {
-        new: ['DL'],
+        new: [],
         renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: 'No'
       }
     );
@@ -122,7 +138,9 @@ describe('cardTypeReducer', function() {
     const newState = updateCardType(
       {
         new: [''],
-        renew: 'ID',
+        renew: '',
+        change: '',
+        replace: '',
         youthIDInstead: ''
       },
       {

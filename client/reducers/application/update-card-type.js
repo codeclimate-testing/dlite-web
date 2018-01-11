@@ -22,20 +22,20 @@ const formReducer = (state = defaultState(), action) => {
   if (action.type !== TYPES.UPDATE_CARD_TYPE) { return state; }
   if (!action.payload) { return state; }
 
-  let data = Object.assign({}, state);
+  let data = defaultState();
   let name = action.payload.name;
   let value = action.payload.value;
 
-  if (name === 'youthIDInstead') {
+  if (name === 'new') {
+    data = Object.assign({}, data, {new: state.new});
+    data = formCheckArrayReducer(name, value, data);
+  } else if (name === 'youthIDInstead') {
     data[name] = value;
     data = youthID(value, data);
-  } else if (name === 'new') {
-    data = formCheckArrayReducer(name, value, data);
   } else {
     data[name] = value;
   }
-  
-  return data;
+  return Object.assign({}, state, data);
 };
 
 export default formReducer;
