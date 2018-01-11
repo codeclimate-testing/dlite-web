@@ -26,7 +26,7 @@ describe('RealID page validation rules:', function() {
       realID
     }
   });
-  it('will give error when nothing has been selected', function() {
+  it('when nothing has been selected it will give realIdSelectionMissing error', function() {
     assert.deepEqual(rules.realID(props), [messages.realIdSelectionMissing]);
   });
 
@@ -39,14 +39,14 @@ describe('RealID page validation rules:', function() {
     assert.deepEqual(rules.realID(props), []);
   });
 
-  it('when no realIdDesignation is selected it will give an error', function() {
+  it('when no realIdDesignation is selected it will give realIdCardSelectionMissing', function() {
     props.cardType.new = ['ID', 'DL'];
     props.realID = {
       getRealID: 'Yes',
       realIdDesignation: ''
     };
 
-    assert.deepEqual(rules.designation(props), [messages.realIdSelectionMissing]);
+    assert.deepEqual(rules.designation(props), [messages.realIdCardSelectionMissing]);
   });
 });
 

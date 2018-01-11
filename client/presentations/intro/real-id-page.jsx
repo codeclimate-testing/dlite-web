@@ -116,7 +116,6 @@ const Form = (props) => {
         </Accordion>
 
         <NavigationButtons
-          continueDisabled  = { props.continueDisabled }
           onBack            = { props.onBack }
           errorMessage      = { props.validations.all() }
         />

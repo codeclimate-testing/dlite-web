@@ -5,10 +5,10 @@ import { hasValue }         from '../data/validations';
 import { mustChooseCard }   from '../data/real-id';
 
 
-const selection = (name) => {
+const selection = (name, error) => {
   return props => {
     if (!hasValue(props.realID[name])) {
-      return [errorMessages.realIdSelectionMissing];
+      return [errorMessages[error]];
     }
     return [];
   };
@@ -18,10 +18,10 @@ let designation = (props) => {
   if (!mustChooseCard(props)) {
     return [];
   }
-  return selection('realIdDesignation')(props);
+  return selection('realIdDesignation', 'realIdCardSelectionMissing')(props);
 };
 
 export default {
-  realID: selection('getRealID'),
+  realID: selection('getRealID', 'realIdSelectionMissing'),
   designation: designation
 };
