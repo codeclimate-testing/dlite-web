@@ -5,6 +5,15 @@ textarea {
 
 .choice-selector {
   width: $max-tablet-input-width;
-  margin-right: 14px;
+}
+
+.physical-traits-form {
+  .choice-selector {
+    width: 255px;
+  }
+
+  .choice-selector:nth-child(even) {
+    margin-right: 14px;
+  }
 }
 

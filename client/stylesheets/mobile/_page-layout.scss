@@ -11,6 +11,10 @@ body {}
   background-color: $lightest-color;
 }
 
+#app.inner {
+  padding: $spacing $page-padding;
+}
+
 .content {
   min-height: 500px;
 }

@@ -10,3 +10,7 @@ html {
   border-left: 1px solid $background-dark;
   border-right: 1px solid $background-dark;
 }
+
+#app.inner {
+  padding: $page-padding;
+}
