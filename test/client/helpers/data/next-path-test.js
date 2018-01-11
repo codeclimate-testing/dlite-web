@@ -5,13 +5,14 @@ const assert = require('assert');
 import {
   chooseCardType,
   currentCardInfo,
+  chooseCardChanges,
   realID,
   chooseLicenseClass
 } from '../../../../client/helpers/data/next-path';
 
 describe('Data helpers for determining next path from current page and props', function() {
   describe('#chooseCardType', function() {
-    it('if customer has existing card it will navigate to the existing card page', function() {
+    it('if senior customer has existing card it will navigate to the existing card page', function() {
       let today = new Date();
 
       let data = {
@@ -21,7 +22,10 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          renew: 'ID'
+          renew: 'ID', 
+          new: [],
+          replace: '',
+          change: ''
         },
         cardAction: 'renew'
       };
@@ -47,7 +51,7 @@ describe('Data helpers for determining next path from current page and props', f
       assert.equal(chooseCardType(data), 'youthIDInstead');
     });
 
-    it('if applying for an ID and a senior', function() {
+    it('if applying for a new ID and a senior', function() {
       let today = new Date();
 
       let data = {
@@ -194,5 +198,29 @@ describe('Data helpers for determining next path from current page and props', f
       assert.equal(chooseLicenseClass(data), 'getStarted');
     });
   });
+
+  describe('#chooseCardChanges', function() {
+    it('goes to seniorID page if user is senior updating an ID', function() {
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 65).toString(),
+          month: (today.getMonth()).toString(),
+          day: today.getDate().toString()
+        },
+        cardAction: 'change',
+        cardType: {
+          change: "ID",
+          new: []
+        },
+        cardChanges: {
+          correctOrUpdate: 'update',
+          sections: ['name']
+        }
+      };
+      assert.equal(chooseCardChanges(data), 'seniorID');
+    });
+  })
 });
 

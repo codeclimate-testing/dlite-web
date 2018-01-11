@@ -35,11 +35,19 @@ describe('CorrectOrUpdate', function() {
 
       let onChange = spy();
 
+      let validations = {
+        correctOrUpdate: spy(),
+        sections: spy(),
+        other: spy(),
+        all: spy()
+      };
+
       props = {
         cardType,
         cardAction,
         cardChanges,
-        onChange
+        onChange,
+        validations
       }
     });
 
@@ -66,6 +74,24 @@ describe('CorrectOrUpdate', function() {
       );
       assert.ok(component.find('.change-sections-form').length, 'section form not found');
       assert.equal(component.text().includes('What would you like to correct?'), true);
+    });
+
+    it('the section form shows 8 checkboxes', function() {
+      props.cardType.change = 'DL'
+      props.cardChanges.correctOrUpdate = 'correct';
+      let component = render(
+        <Wrapper>
+          <CorrectOrUpdate {...props}/>
+        </Wrapper>
+      );
+      assert.ok(component.find('label[for="name"]').length, 'name selection missing');
+      assert.ok(component.find('label[for="dateOfBirth"]').length, 'dob selection missing');
+      assert.ok(component.find('label[for="sex"]').length, 'sex section selection missing');
+      assert.ok(component.find('label[for="address"]').length, 'address selection missing');
+      assert.ok(component.find('label[for="licenseType"]').length, 'licenseType selection missing');
+      assert.ok(component.find('label[for="endorsements"]').length, 'endorsement selection missing');
+      assert.ok(component.find('label[for="restrictions"]').length, 'restrictions selection missing');
+      assert.ok(component.find('label[for="other"]').length, 'other selection missing');
     });
   });
 });

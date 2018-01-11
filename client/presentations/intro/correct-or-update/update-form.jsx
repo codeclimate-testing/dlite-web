@@ -26,14 +26,15 @@ const Form = (props) => {
   return (
     <div className='row inner-bottom change-sections-form'>
       <hr/>
-      <h2 className='question'>{headerText}</h2>
+      <h3 className='question'>{headerText}</h3>
       <p>Select all that apply.</p>
 
       <CheckboxCollection 
         {...props}
-        name  = 'sections'
-        array = { props.cardChanges }
-        text  = { text }
+        name          = 'sections'
+        array         = { props.cardChanges }
+        text          = { text }
+        errorMessage  = { props.validations.sections() }
       >
         <CheckboxSelector
           value='name'

@@ -162,7 +162,7 @@ const Replace = (props) => {
       <ReplacementReason {...props} />
       <CardDetails
         {...props}
-        action={props.cardReplacement}
+        action='replace'
       />
     </div>
   )

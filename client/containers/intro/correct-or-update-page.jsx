@@ -1,30 +1,30 @@
 'use strict';
 
 import React                  from 'react';
-import { connect }            from 'react-redux';
-
+import connectForm            from '../../helpers/connect-form';
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
-
-import { updateCardChanges }  from "../../actions/index";
-import { eligibleForSeniorID }from '../../helpers/data/senior';
-
-
-import Presentation           from "../../presentations/intro/correct-or-update-page.jsx";
+import { updateCardChanges }  from '../../actions/index';
+import Presentation           from '../../presentations/intro/correct-or-update-page.jsx';
+import { ChangeValidator }    from '../../helpers/validations';
 
 const Page = (props) => {
-  let address           =   eligibleForSeniorID(props)? '/senior-id' : '/current-card-information';
-  let onSubmit          =   handlers.navigateOnSubmit(address, props);
-  let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   props.cardChanges.sections.includes('other') ? !dataPresent.value(props.cardChanges.other) : !dataPresent.cardChanges(props.cardChanges);
+  let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing'); 
+  let onSubmit          = handlers.navigateOrShowErrors('chooseCardChanges', props, validations);
+  let onBack            = handlers.navigateOnBack(props);
 
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
+  
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.cardChanges.correctOrUpdate }
-      continueDisabled  = { continueDisabled }
+      onFocus           = { focus }
+      validations       = { validations }
     />
   )
 };
@@ -35,22 +35,9 @@ function mapStateToProps(state) {
     cardType            : state.application.cardType,
     cardAction          : state.application.cardAction,
     dateOfBirth         : state.application.dateOfBirth,
-    focused             : state.ui.focus
+    focused             : state.ui.focus,
+    validations         : state.ui.validations
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
-  const onChange = handlers.onInputChange(updateCardChanges, dispatch);
-  const onSubmit = handlers.onFormSubmit(dispatch);
-  const onBlur   = handlers.onBlur(dispatch);
-  const onFocus  = handlers.onFocus(dispatch);
-
-  return {
-    onSubmit,
-    onChange,
-    onBlur,
-    onFocus
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateCardChanges, Page);

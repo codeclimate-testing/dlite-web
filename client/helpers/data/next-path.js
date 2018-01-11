@@ -15,12 +15,8 @@ export const chooseCardType = (props) => {
 
   if (tooYoungForDL(props)) {
     key = 'youthIDInstead';
-  } else if (hasExistingCard(props)) {
+  } else if (hasExistingCard(props) || isChangingCard(props) || isReplacingCard(props)) {
     key = 'currentCardInfo';
-  } else if (isChangingCard(props)) {
-    key = 'chooseCardChanges'
-  } else if (isReplacingCard(props)) {
-    key = 'chooseCardReplacement'
   } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
   }
@@ -29,17 +25,20 @@ export const chooseCardType = (props) => {
 
 export const currentCardInfo = (props) => {
   let key = 'realID';
-
-  if (eligibleForSeniorID(props)) {
+  if (isChangingCard(props)) {
+    key = 'chooseCardChanges'
+  } else if (isReplacingCard(props)) {
+    key = 'chooseCardReplacement'
+  } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
-  }
+  } 
   return key;
 };
 
 export const chooseCardChanges = (props) => {
-  let key = 'current-card-information';
+  let key = 'realID';
   if (eligibleForSeniorID(props)) {
-    key ='seniorID';
+    key = 'seniorID';
   }
   return key;
 };

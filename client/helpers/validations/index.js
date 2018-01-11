@@ -11,6 +11,7 @@ import cardTypeRules            from './card-type-rules';
 import currentCardRules         from './current-card-rules';
 import replaceRules             from './replace-rules';
 import realIDRules              from './realID-rules';
+import changeRules              from './change-rules';
 
 export const NamePageValidator    = formValidationGenerator(namePageRules);
 export const DOBValidator         = formValidationGenerator(dobPageRules);
@@ -21,3 +22,4 @@ export const CardTypeValidator    = formValidationGenerator(cardTypeRules);
 export const CurrentCardValidator = formValidationGenerator(currentCardRules);
 export const ReplaceValidator     = formValidationGenerator(replaceRules);
 export const RealIDValidator      = formValidationGenerator(realIDRules);
+export const ChangeValidator      = formValidationGenerator(changeRules);

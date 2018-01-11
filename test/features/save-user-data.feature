@@ -361,25 +361,7 @@ Feature: Save user data
     Then I will be on the page for appointment preparation
     And I click link for required documents
     Then I will be on the required documents page
-
-
-  Scenario: Updating a DL
-    Given I go to the new online DL application page
-    And I visit the what do you want to do today page
-    And I choose to change a card
-    When I click "Next" to continue
-    Then I will be on the ID and DL selection page
-    Then I choose to change my DL
-    When I click "Next" to continue
-    Then I will be on the page for choosing to update or correct my card
-    And I choose to update my card
-    And I check the box to update my name
-    When I click "Next" to continue
-    Then I will be on the current card info page
-    And I enter my current card data
-    When I click "Next" to continue
-    When I go to the page with my summary
-    Then I will see that I am updating the name on my DL
+    
 
   Scenario: Replacing a DL
     Given I go to the new online DL application page
@@ -388,6 +370,9 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
     Then I choose to replace my DL
+    When I click "Next" to continue
+    Then I will be on the current card info page
+    And I enter my current card data
     When I click "Next" to continue
     Then I will be on the page for choosing reason for replacement
     And I select it was damaged

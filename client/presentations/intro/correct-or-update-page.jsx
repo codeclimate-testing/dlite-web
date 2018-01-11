@@ -29,7 +29,10 @@ const Form = (props) => {
             selected={props.cardType.update}
           />
           <OtherText {...props} />
-          <NavigationButtons {...props} />
+          <NavigationButtons 
+            {...props} 
+            errorMessage = { props.validations.all() }
+          />
         </form>
       </div>
     </Page>

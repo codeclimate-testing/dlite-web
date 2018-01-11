@@ -1,7 +1,7 @@
 'use strict';
 
-import React     from 'react';
-import TextArea  from '../../text-area.jsx';
+import React                from 'react';
+import TextInput            from '../../text-input.jsx';
 
 const EnterMedicalInfo = (props) => {
   if(props.cardChanges.sections.indexOf('other') === -1) { return null; }
@@ -9,15 +9,19 @@ const EnterMedicalInfo = (props) => {
   const correctHeader = 'Enter your correction below';
   const updateHeader  = 'Enter your update below';
   const headerText    = props.cardChanges.correctOrUpdate === 'correct' ? correctHeader : updateHeader;
+  
   return (
-    <div className='enter-other-section'>
+    <div className    = 'enter-other-section'>
       <hr/>
-      <h2 className='question'>{headerText}</h2>
-        <TextArea
-          identifier='other'
-          value={props.cardChanges.other}
-          onChange={props.onChange}
-        />
+      <h3 className   = 'question'>
+        {headerText}
+      </h3>
+      <TextInput
+        identifier    = 'other'
+        value         = { props.cardChanges.other }
+        onChange      = { props.onChange }
+        errorMessage  = { props.validations.other() }
+      />
     </div>
   );
 };

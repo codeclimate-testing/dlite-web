@@ -40,3 +40,30 @@ Feature: Customers can get a senior ID for free
     When I click to go back
     Then I will be on the page for choosing real id
   
+  Scenario: senior user updating ID 
+    Given I go to the new online DL application
+    When I visit the date of birth page
+    And I indicate that I am turning 62 today
+    When I visit the what do you want to do today page
+    And I choose to change a card
+    When I click "Next" to continue
+    When I visit the ID or DL selection page
+    And I choose to change my ID
+    When I click "Next" to continue
+    Then I will be on the current card info page
+    And I enter my current card data
+    When I click "Next" to continue
+    Then I will be on the page for choosing to update or correct my card
+    When I click "Next" to continue
+    Then I will see an error message telling me I need to make a selection
+    And I choose to update my card
+    And I check the box to update my name
+    When I click "Next" to continue
+    Then I will be on the senior id page
+    When I select yes to get a senior id
+    And I click "Next" to continue
+    And I click yes to getting a real id
+    And I click "Next" to continue
+    Then I will be on the get started page
+    When I go to the page with my summary
+    Then I will see that I am updating the name on my ID

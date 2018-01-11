@@ -68,6 +68,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I choose to change my ID', function(done) {
+    browser
+      .click('label[for="change-ID"]')
+      .then(() => {done(); })
+      .catch(done);
+  });
+
   world.then('I choose to replace my DL', function(done) {
     browser
       .click('label[for="replace-DL"]')
@@ -96,12 +103,12 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see that I am updating the name on my DL', function(done) {
+  world.then('I will see that I am updating the name on my ID', function(done) {
     browser
       .text()
       .then( text => {
         assert(text.includes('Updating sections: Name'), 'update sections not shown in summary');
-        assert(text.includes('Updating: Driver License'), 'update DL not on summary')
+        assert(text.includes('Updating: ID'), 'update ID not on summary')
       })
       .then(done)
       .catch(done);

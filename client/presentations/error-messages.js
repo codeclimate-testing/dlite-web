@@ -54,5 +54,6 @@ export default {
   dataIncludesNonEnglishCharacters: 'Sorry, your card can only include English characters.',
   errorPreventContinuing: 'You cannot continue until you fix the errors on this page.',
   selectionMissing: 'Please make a selection',
-  pleaseEnterValidData: 'Please enter valid information'
+  pleaseEnterValidData: 'Please enter valid information',
+  inputIncludesNonEnglishCharacters: 'Please enter only English characters.'
 };
