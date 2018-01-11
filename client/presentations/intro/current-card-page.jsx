@@ -56,7 +56,6 @@ const Form = (props) => {
             />
           </div>
 
-          <label htmlFor='expirationDate'>Expriration date</label>
           <div id='expirationDate' className='row inner-bottom'>
           <DateInput
             {...props}
