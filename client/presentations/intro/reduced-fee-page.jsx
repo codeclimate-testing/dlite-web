@@ -7,16 +7,16 @@ import RadioSelector            from '../radio-selector.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../../containers/page.jsx';
 import Accordion                from '../../containers/accordion.jsx';
-
 import { hasMultipleCards }     from '../../helpers/data/cards';
 import { choosingReducedFee }   from '../../helpers/data/reduced-fee';
 
+let values = {
+  Yes: 'Yes',
+  No: 'No'
+};
+
 const FormQuestion = (props) => {
   if (!choosingReducedFee(props)) { return null; }
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
 
   return (
     <div>
@@ -31,6 +31,7 @@ const FormQuestion = (props) => {
         name='form'
         selectedValue= { props.reducedFee.form }
         text={values}
+        errorMessage  = { props.validations.form() }
       >
         <RadioSelector
           value='Yes'
@@ -81,15 +82,15 @@ const Form = (props) => {
             <RadioCollection 
               {...props}
               name='ID'
+              text={values}
               selectedValue= { props.reducedFee.ID }
+              errorMessage  = { props.validations.reducedFee() }
             >
               <RadioSelector
                 value='Yes'
-                text='Yes'
               />
               <RadioSelector
                 value='No'
-                text='No'
               />
             </RadioCollection>
  
@@ -97,7 +98,9 @@ const Form = (props) => {
 
           <FormQuestion {...props} />
 
-          <NavigationButtons {...props} />
+          <NavigationButtons {...props}
+            errorMessage      = { props.validations.all() }
+          />
         </form>
       </div>
     </Page>

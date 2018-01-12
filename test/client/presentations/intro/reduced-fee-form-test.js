@@ -26,14 +26,20 @@ describe('Reduced Fee Page', function() {
         renew: '',
         youthIDInstead: ''
       };
-      let continueDisabled  =   !(dataPresent.reducedFee(reducedFee));
       let onChange = spy();
+
+      let validations = {
+        form: spy(),
+        reducedFee: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
 
       props = {
         reducedFee,
         cardType,
         onChange,
-        continueDisabled
+        validations
       }
     });
 
@@ -45,27 +51,6 @@ describe('Reduced Fee Page', function() {
       );
       assert.ok(component.find('label[for="ID-Yes"]').length, 'reduced Yes button missing');
       assert.ok(component.find('label[for="ID-No"]').length, 'reduced No button missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <ReducedFeePage  {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.reducedFee.ID = 'No';
-      props.continueDisabled  =   !(dataPresent.reducedFee(props.reducedFee));
-
-      let component = render(
-        <Wrapper>
-          <ReducedFeePage  {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
 
     it('selecting Yes makes form show asking if user has the correct forms', function() {

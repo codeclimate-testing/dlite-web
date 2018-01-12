@@ -2,32 +2,38 @@
 
 import React                  from 'react';
 import connectForm            from '../../helpers/connect-form';
-
 import handlers               from '../../helpers/handlers';
-import { canContinue }        from '../../helpers/data/reduced-fee';
 import Presentation           from "../../presentations/intro/reduced-fee-page.jsx";
 import { updateReducedFee }   from "../../actions/index";
+import { ReducedFeeValidator }from '../../helpers/validations';
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOnSubmit('/get-started', props);
-  let onBack            =   handlers.navigateOnBack(props);
-  let continueDisabled  =   !canContinue(props);
+  let validations       = new ReducedFeeValidator(props, props.validations, 'errorPreventContinuing');
+  let onSubmit          = handlers.navigateOrShowErrors('reducedFeeID', props, validations)
+  let onBack            = handlers.navigateOnBack(props);
+
+  let focus = function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation
       {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      onSubmit    = { onSubmit }
+      onBack      = { onBack }
+      validations = { validations }
+      onFocus     = { focus }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    reducedFee:   state.application.reducedFee,
-    cardType:     state.application.cardType,
-    focused:      state.ui.focus
+    reducedFee:  state.application.reducedFee,
+    cardType:    state.application.cardType,
+    focused:     state.ui.focus,
+    validations: state.ui.validations
   };
 };
 
