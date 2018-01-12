@@ -42,7 +42,7 @@ const voterPreRegistration = {
 const summary = {
   key: 'summary',
   number: '',
-  name: 'Please take a minute to review your answers'
+  name: ''
 };
 // --------------
 

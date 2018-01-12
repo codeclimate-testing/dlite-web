@@ -6,7 +6,7 @@ import { ageChecks }        from '../../helpers/calculate-age';
 import {
   getID,
   getDL
-} from '../../helpers/data/card-type'; 
+} from '../../helpers/data/card-type';
 import {
   LegalName,
   DateOfBirth,
@@ -37,6 +37,9 @@ import {
   Empty
 } from './index.js';
 
+const header = {
+  question: 'Please take a minute to review your answers'
+}
 const DLAlert = () => {
   return <h4 className='youth-license-notification'>
     If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances.
@@ -73,8 +76,8 @@ const ButtonComponent = (props) => {
           </button>
         </div>
     );
-  } 
-  
+  }
+
   return (
       <ContinueButton disabled={props.continueDisabled} key="submit"/>
   );
@@ -92,13 +95,13 @@ const SummaryPage = (props) => {
     <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
     <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
     <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,
-    <Cards 
-      cardType        = { application.cardType } 
+    <Cards
+      cardType        = { application.cardType }
       cardAction      = { application.cardAction }
       cardChanges     = { application.cardChanges }
-      currentCardInfo = {application.currentCardInfo} 
+      currentCardInfo = {application.currentCardInfo}
       cardReplacement = { application.cardReplacement }
-      key             = 'card-type' 
+      key             = 'card-type'
     />,
     <SeniorID seniorID={application.seniorID} key='senior-id' />,
     <RealID realID={application.realID} key='real-id' />,
@@ -127,13 +130,14 @@ const SummaryPage = (props) => {
   }, []);
 
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='summary'
     >
       <form onSubmit  = { props.onSubmit }>
+        <h2 className='question'>{header.question}</h2>
         <div className= 'summary'>
-          <Alerts 
+          <Alerts
             cardType    = {application.cardType}
             dateOfBirth = {application.dateOfBirth}
           />
