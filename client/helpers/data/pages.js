@@ -6,7 +6,8 @@ import {
   currentCardInfo,
   chooseCardChanges,
   realID,
-  chooseLicenseClass
+  chooseLicenseClass,
+  chooseCardReplacement
 } from './next-path';
 
 const getStarted = [
@@ -50,7 +51,7 @@ const getStarted = [
     key: 'chooseCardReplacement',
     description: 'Replacement Details',
     path: '/replacement-details',
-    next: 'realID'
+    next: chooseCardReplacement
   },
   {
     key: 'currentCardInfo',

@@ -82,6 +82,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I choose to replace my ID', function(done) {
+    browser
+      .click('label[for="replace-ID"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.and('I choose to update my card', function(done) {
     browser
       .click('label[for="correctOrUpdate-update"]')

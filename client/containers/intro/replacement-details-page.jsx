@@ -35,6 +35,7 @@ function mapStateToProps(state) {
     cardReplacement     : state.application.cardReplacement,
     cardType            : state.application.cardType,
     cardAction          : state.application.cardAction,
+    dateOfBirth         : state.application.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations
   };

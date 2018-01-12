@@ -6,6 +6,7 @@ import {
   chooseCardType,
   currentCardInfo,
   chooseCardChanges,
+  chooseCardReplacement,
   realID,
   chooseLicenseClass
 } from '../../../../client/helpers/data/next-path';
@@ -121,6 +122,65 @@ describe('Data helpers for determining next path from current page and props', f
         cardAction: 'renew'
       };
       assert.equal(currentCardInfo(data), 'realID');
+    });
+  });
+
+  describe('#chooseCardReplacement', function() {
+    it('takes seniors replacing a DL to the realID page', function() {
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 65).toString(),
+          month: (today.getMonth()).toString(),
+          day: today.getDate().toString()
+        },
+        cardType: {
+          new: [],
+          renew: '',
+          replace: 'DL'
+        },
+        cardAction: 'replace'
+      };
+      assert.equal(chooseCardReplacement(data), 'realID');
+    });
+
+    it('takes seniors replacing an ID to the seniorID page', function(){
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 65).toString(),
+          month: (today.getMonth()).toString(),
+          day: today.getDate().toString()
+        },
+        cardType: {
+          new: [],
+          renew: '',
+          replace: 'ID'
+        },
+        cardAction: 'replace'
+      };
+      assert.equal(chooseCardReplacement(data), 'seniorID');
+    });
+
+    it('takes not-yet-seniors to the realID page', function() {
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 30).toString(),
+          month: (today.getMonth()).toString(),
+          day: today.getDate().toString()
+        },
+        cardType: {
+          new: [],
+          renew: '',
+          replace: 'DL'
+        },
+        cardAction: 'replace'
+      };
+      assert.equal(chooseCardReplacement(data), 'realID');
     });
   });
 
