@@ -23,7 +23,7 @@ const ErrorMessageBox = (props) => {
 };
 
 const NavigationButtons = (props) => {
-  const disabled = hasValue(errorClass(props)) ? true : props.continueDisabled;
+  const disabled = props.continueDisabled;
   return (
     <div className='navigation-buttons row'>
       <hr />
