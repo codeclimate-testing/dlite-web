@@ -8,7 +8,7 @@ import { updateReducedFee }   from "../../actions/index";
 import { ReducedFeeValidator }from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations       = new ReducedFeeValidator(props, props.validations, 'errorPreventContinuing');
+  let validations       = new ReducedFeeValidator(props, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('reducedFeeID', props, validations)
   let onBack            = handlers.navigateOnBack(props);
 

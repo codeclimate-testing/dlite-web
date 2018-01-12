@@ -17,10 +17,10 @@ let form = (props) => {
   if (!choosingReducedFee(props)) {
     return [];
   }
-  return selection('form', 'errorPreventContinuing')(props);
+  return selection('form', 'selectionMissing')(props);
 };
 
 export default {
-  reducedFee: selection('ID', 'errorPreventContinuing'),
+  reducedFee: selection('ID', 'selectionMissing'),
   form: form
 };
