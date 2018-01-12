@@ -18,19 +18,25 @@ const PhysicalPage = (props) => {
         <Sex
           {...props}
           selectedValue = {props.physicalTraits.sex}
+          errorMessage={ props.validations.sex() }
         />
         <br></br>
         <EyeColor
           {...props}
           selectedValue = {props.physicalTraits.eyeColor}
+          errorMessage={ props.validations.eyeColor() }
         />
         <br></br>
         <HairColor
           {...props}
           selectedValue = {props.physicalTraits.hairColor}
+          errorMessage={ props.validations.hairColor() }
         />
 
-        <NavigationButtons {...props}/>
+      <NavigationButtons
+        {...props}
+        errorMessage={props.validations.all()}
+      />
       </form>
     </Page>
   )

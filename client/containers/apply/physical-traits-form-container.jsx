@@ -2,24 +2,23 @@
 
 import React                        from 'react';
 import connectForm                  from '../../helpers/connect-form';
-
-import handlers                     from '../../helpers/handlers';
 import * as dataPresent             from '../../helpers/data-present';
-
-import { updatePhysicalTraits }     from '../../actions/index';
+import handlers                     from '../../helpers/handlers';
 import Presentation                 from '../../presentations/apply/physical-traits-page.jsx';
+import { updatePhysicalTraits }     from '../../actions/index';
+import { PhysicalTraitsValidator }  from '../../helpers/validations';
 
 const Page = (props) => {
-  let continueDisabled  = !(dataPresent.physicalTraits(props.physicalTraits))
-  let onSubmit          = handlers.navigateOnSubmit('/my-basics/traits-height-weight', props);
-  let onBack            = handlers.navigateOnBack(props);
+  let validations = new PhysicalTraitsValidator(props.physicalTraits, props.validations);
+  let onSubmit    = handlers.navigateOrShowErrors('sexEyeHair', props, validations);
+  let onBack      = handlers.navigateOnBack(props);
 
   return (
     <Presentation
       {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      onSubmit    = { onSubmit }
+      onBack      = { onBack }
+      validations = { validations }
     />
   );
 }
@@ -27,7 +26,8 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     physicalTraits: state.application.physicalTraits,
-    focused:        state.ui.focus
+    focused:        state.ui.focus,
+    validations:    state.ui.validations
   };
 };
 

@@ -110,14 +110,15 @@ const myBasics = [
     path: '/my-basics/address'
   },
   {
-    key: 'heightWeight',
-    description: 'Height and weight',
-    path: '/my-basics/traits-height-weight'
-  },
-  {
     key: 'sexEyeHair',
     description: 'Physical traits',
-    path: '/my-basics/physical-traits'
+    path: '/my-basics/physical-traits',
+    next: 'heightWeight'
+  },
+  {
+    key: 'heightWeight',
+    description: 'Height and weight',
+    path: '/my-basics/traits-height-weight',
   },
   {
     key: 'socialSecurity',

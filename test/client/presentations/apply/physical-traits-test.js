@@ -25,10 +25,19 @@ describe('PhysicalTraitsPage', function() {
       let continueDisabled = !(dataPresent.physicalTraits(physicalTraits));
       let onChange = spy();
 
+      let validations = {
+        sex: spy(),
+        eyeColor: spy(),
+        hairColor: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
+
       props = {
         physicalTraits,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
     
@@ -72,31 +81,6 @@ describe('PhysicalTraitsPage', function() {
       assert.ok(component.find('label[for="hairColor-Red"]').length, 'red hair color selection missing');
       assert.ok(component.find('label[for="hairColor-White"]').length, 'white hair color selection missing');
       assert.ok(component.find('label[for="hairColor-Other"]').length, 'other hair color selection missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <PhysicalTraitsPage  {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('entering physical traits makes next button no longer disabled', function() {
-      props.physicalTraits = {
-        sex: 'Female',
-        eyeColor: 'Gray',
-        hairColor: 'Bald'
-      };
-      props.continueDisabled = !(dataPresent.physicalTraits(props.physicalTraits));
-
-      let component = render(
-        <Wrapper>
-          <PhysicalTraitsPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
   });
 });
