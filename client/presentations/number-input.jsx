@@ -2,24 +2,29 @@
 
 import React        from 'react';
 import errorClass   from '../helpers/validations/error-class';
+import {
+  ErrorIcon,
+  AdditionalLabel
+} from './validations.jsx';
 
 const NumberInput = (props) => {
   let className = `input-container ${props.identifier}-input`;
   let errorName = errorClass(props);
-  let inputName = `unit size-1-1 ${errorName}`;
+  let additionalText  = props.example;
 
   return (
     <div className  = 'unit'>
       <label 
         htmlFor     = { props.identifier }
-        className   = { props.labelClass }
+        className   = { errorName }
       >
+        <ErrorIcon errorClass={ errorName } />
         {props.description}
       </label>
       
       <div className= { className }>
         <input
-          className = { inputName }
+          className = { className }
           type      = 'number'
           id        = { props.identifier }
           name      = { props.identifier }
@@ -29,6 +34,11 @@ const NumberInput = (props) => {
           value     = { props.value }
         />
       </div>
+      <AdditionalLabel
+        errorMessage={ props.errorMessage }
+        errorClass={ errorName }
+        additionalText={ additionalText }
+      />
     </div>
   );
 };

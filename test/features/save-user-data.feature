@@ -348,15 +348,7 @@ Feature: Save user data
     When I visit the required documents page
     Then I will not see a section about medical information
     Then I will not see any information about proving veterans status
-    When I visit the traits height and weight page
-    Then I will see traits height and weight I entered
-    When I change my inches
-    When I visit the social security page
-    Then I will see the social security number that I entered
-    When I change my social security number
     And I go to the page with my summary
-    Then I will see my updated height on the summary
-    Then I will see my updated social security number
     When I click "Next" to continue
     Then I will be on the page for appointment preparation
     And I click link for required documents

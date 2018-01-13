@@ -27,10 +27,19 @@ describe('HeightWeightPage', function() {
       let continueDisabled = !(dataPresent.traitsHeightWeight(traitsHeightWeight))
       let onChange = spy();
 
+      let validations = {
+        heightFeet: spy(),
+        heightInches: spy(),
+        weight: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
+
       props = {
         traitsHeightWeight,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
     
@@ -44,33 +53,6 @@ describe('HeightWeightPage', function() {
       assert.ok(component.find('input#heightInches').length, 'inches input missing');
       assert.ok(component.find('input#weight').length, 'weight input missing');
     });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <HeightWeightPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('entering traits makes next button no longer disabled', function() {
-      props.traitsHeightWeight = {
-        heightFeet: '6',
-        heightInches: '4',
-        weight: '210'
-      };
-      props.continueDisabled  =   !(dataPresent.traitsHeightWeight(props.traitsHeightWeight));
-
-      let component = render(
-        <Wrapper>
-          <HeightWeightPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
-    });
-
   });
-
 });
 

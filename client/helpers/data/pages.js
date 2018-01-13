@@ -119,6 +119,7 @@ const myBasics = [
     key: 'heightWeight',
     description: 'Height and weight',
     path: '/my-basics/traits-height-weight',
+    next: 'socialSecurity'
   },
   {
     key: 'socialSecurity',

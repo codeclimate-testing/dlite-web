@@ -14,6 +14,7 @@ import realIDRules              from './realID-rules';
 import changeRules              from './change-rules';
 import reducedFeeRules          from './reduced-fee-rules';
 import physicalTraitsRules      from './physical-traits-rules';
+import heightWeightRules        from './height-weight-rules';
 
 export const NamePageValidator       = formValidationGenerator(namePageRules);
 export const DOBValidator            = formValidationGenerator(dobPageRules);
@@ -27,3 +28,4 @@ export const RealIDValidator         = formValidationGenerator(realIDRules);
 export const ChangeValidator         = formValidationGenerator(changeRules);
 export const ReducedFeeValidator     = formValidationGenerator(reducedFeeRules);
 export const PhysicalTraitsValidator = formValidationGenerator(physicalTraitsRules);
+export const HeightWeightValidator   = formValidationGenerator(heightWeightRules);

@@ -22,6 +22,9 @@ const TraitsPage = (props) => {
               identifier='heightFeet'
               description='Feet'
               value={ props.traitsHeightWeight.heightFeet }
+              errorMessage={ props.validations.heightFeet() }
+              onBlur={props.onBlurValidate}
+              onFocus={props.onFocusClearValidation}
             />
 
             <div className='unit spacer' />
@@ -31,6 +34,9 @@ const TraitsPage = (props) => {
               identifier='heightInches'
               description='Inches'
               value={ props.traitsHeightWeight.heightInches }
+              errorMessage={ props.validations.heightInches() }
+              onBlur={props.onBlurValidate}
+              onFocus={props.onFocusClearValidation}
             />
           </div>
 
@@ -44,10 +50,16 @@ const TraitsPage = (props) => {
               identifier='weight'
               description='Pounds'
               value={ props.traitsHeightWeight.weight }
+              errorMessage={ props.validations.weight() }
+              onBlur={props.onBlurValidate}
+              onFocus={props.onFocusClearValidation}
             />
           </div>
 
-          <NavigationButtons {...props} />
+          <NavigationButtons
+            {...props}
+            errorMessage={props.validations.all()}
+          />
         </form>
       </div>
     </Page>
