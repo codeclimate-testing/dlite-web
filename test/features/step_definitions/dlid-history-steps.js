@@ -53,7 +53,7 @@ module.exports = function (world) {
     browser
       .type('#month', '10')
       .type('#day', '15')
-      .type('#year', '2985')
+      .type('#year', '1985')
       .then(() => { done(); })
       .catch(done);
   });
@@ -64,7 +64,7 @@ module.exports = function (world) {
       .then((text) => {
         assert(text.includes('DMV10001'), 'DL/ID number missing');
         assert(text.includes('California'), 'Issuing entity missing');
-        assert(text.includes('10/15/2985'), 'expiration date missing');
+        assert(text.includes('10/15/1985'), 'expiration date missing');
       })
       .then(() => { done(); })
       .catch(done);

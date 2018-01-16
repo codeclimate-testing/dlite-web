@@ -16,10 +16,12 @@ const MedicalHistoryPage = (props) => {
         <MedicalCondition {...props}
           selectedValue = {props.medicalHistory.hasMedicalCondition}
         />
-        <br></br>
         <EnterMedicalInfo {...props}
         />
-        <NavigationButtons {...props}/>
+        <NavigationButtons 
+          {...props}
+          errorMessage  = { props.validations.all() }
+        />
       </form>
     </Page>
   )

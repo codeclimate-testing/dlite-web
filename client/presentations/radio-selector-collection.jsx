@@ -61,7 +61,6 @@ const makeMeSomeChildren = (props) => {
 const RadioSelectorCollection = (props) => {
   let errorName = errorClass(props);
   let additionalText  = props.example;
-
   return (
     <div className='row radio-selector-collection'>
       <div>

@@ -8,7 +8,7 @@ import {
 } from './validations.jsx';
 
 const NumberInput = (props) => {
-  let className = `input-container ${props.identifier}-input`;
+  let className = `input-container ${props.identifier}-input ${props.error}`;
   let errorName = errorClass(props);
   let additionalText  = props.example;
 

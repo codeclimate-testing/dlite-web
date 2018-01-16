@@ -6,7 +6,6 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import NamesHistoryPage         from '../../../../client/presentations/apply/names-history-page.jsx';
 import store                    from '../../support/page-store';
 
@@ -20,14 +19,19 @@ describe('NamesHistoryPage', function() {
       let namesHistory = {
         hasUsedPreviousNames: '',
         previousNames: ''
-      }
+      };
 
-      let continueDisabled = !(dataPresent.hasPreviousNames(namesHistory))
+      let validations = {
+        hasUsedPreviousNames: spy(),
+        previousNames: spy(),
+        all: spy()
+      };
+
       let onChange = spy();
 
       props = {
         namesHistory,
-        continueDisabled,
+        validations,
         onChange
       }
     });
@@ -41,27 +45,6 @@ describe('NamesHistoryPage', function() {
       assert.ok(component.find('label[for="hasUsedPreviousNames-No"]').length, 'No button missing');
       assert.ok(component.find('label[for="hasUsedPreviousNames-Yes"]').length, 'Yes button missing');
       assert.ok(component.find('.previous-names-form').length, 'form missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <NamesHistoryPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.namesHistory.hasUsedPreviousNames = 'No';
-      props.continueDisabled  =   !(dataPresent.hasPreviousNames(props.namesHistory));
-
-      let component = render(
-        <Wrapper>
-          <NamesHistoryPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
 
      it('selecting Yes makes form appear asking for previous names', function() {

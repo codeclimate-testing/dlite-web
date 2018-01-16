@@ -10,9 +10,10 @@ const EnterMedicalInfo = (props) => {
       <hr/>
       <h2 className='question'>Please explain below.</h2>
         <TextArea
-          identifier='medicalInfo'
-          value={props.medicalHistory.medicalInfo}
-          onChange={props.onChange}
+          {...props}
+          identifier    = 'medicalInfo'
+          value         = { props.medicalHistory.medicalInfo}
+          errorMessage  = { props.validations.medicalInfo() }
         />
     </div>
   );

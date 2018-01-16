@@ -6,27 +6,33 @@ import * as dataPresent           from '../../helpers/data-present';
 import connectForm                from '../../helpers/connect-form';
 import handlers                   from '../../helpers/handlers';
 import Presentation               from '../../presentations/apply/medical-history-page.jsx';
+import { MedicalValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
-  let continueDisabled            = !(dataPresent.hasMedicalCondition(props.medicalHistory))
-  let showEnterMedicalCondition   = false
-  let onSubmit                    = handlers.navigateOnSubmit('/my-history/license-and-id', props);
-  let onBack                      = handlers.navigateOnBack(props);
+  let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
+  let onSubmit          = handlers.navigateOrShowErrors('medicalHistory', props, validations);
+  let onBack            = handlers.navigateOnBack(props);
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
+      onFocus           = { focus }
     />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    medicalHistory: state.application.medicalHistory,
-    focused: state.ui.focus
+    medicalHistory    : state.application.medicalHistory,
+    focused           : state.ui.focus,
+    validations       : state.ui.validations 
   };
 };
 

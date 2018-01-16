@@ -17,12 +17,18 @@ const CardHistoryPage = (props) => {
       <form onSubmit={props.onSubmit} className='card-history-form'>
         <LicenseAndIdHistory
           {...props}
-          selectedValue  ={props.licenseAndIdHistory.isIssued}
+          selectedValue   = { props.licenseAndIdHistory.isIssued }
         />
 
-        <EnterLicenseAndIdHistory {...props} />
+        <EnterLicenseAndIdHistory 
+          {...props} 
+          onBlur          = { props.onBlurValidate }
+        />
 
-        <NavigationButtons {...props} />
+        <NavigationButtons 
+          {...props} 
+          errorMessage    = { props.validations.all() }
+        />
       </form>
     </Page>
   );

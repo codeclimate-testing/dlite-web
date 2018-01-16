@@ -39,33 +39,30 @@ const DateInput = (props) => {
 
       <NumberInput
         {...props}
-        errorMessage  = { errors.month }
         identifier    = 'month'
         description   = 'MM'
         value         = { props.values.month}
-        labelClass    = 'normal'
+        error         = { errorName }
       />
   
       <div className  = 'unit spacer'/>
  
       <NumberInput
         {...props}
-        errorMessage  = { errors.day }
         identifier    = 'day'
         description   = 'DD'
         value         = { props.values.day }
-        labelClass    = 'normal'
+        error         = { errorName }
       />
 
       <div className  = 'unit spacer'/>
 
       <NumberInput
         {...props}
-        errorMessage  = { errors.year }
         identifier    = 'year'
         description   = 'YYYY'
         value         = { props.values.year }
-        labelClass    = 'normal'
+        error         = { errorName }
       />
 
       <AdditionalLabel 

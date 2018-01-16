@@ -14,12 +14,17 @@ const NamesHistoryPage = (props) => {
     >
       <form onSubmit    = {props.onSubmit} className='names-history-form'>
         <UsedPreviousNames {...props}
-          selectedValue = {props.namesHistory.hasUsedPreviousNames}
+          selectedValue = { props.namesHistory.hasUsedPreviousNames }
+          errorMessage  = { props.validations.hasUsedPreviousNames() }
         />
-        <br></br>
-        <EnterPreviousNames {...props}
+        <EnterPreviousNames 
+          {...props}
+          errorMessage = { props.validations.previousNames() }
         />
-        <NavigationButtons {...props}/>
+        <NavigationButtons 
+          {...props}
+          errorMessage = { props.validations.all() }
+        />
       </form>
     </Page>
   )

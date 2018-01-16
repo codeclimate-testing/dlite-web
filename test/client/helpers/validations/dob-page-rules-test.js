@@ -22,7 +22,7 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: new Date().getFullYear() + 2
+      year: (new Date().getFullYear() + 2).toString()
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -34,7 +34,7 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: new Date().getFullYear() - 135
+      year: (new Date().getFullYear() - 135).toString()
     };
 
     assert.deepEqual(rules.month(props), []);

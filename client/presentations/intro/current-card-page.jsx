@@ -50,9 +50,6 @@ const Form = (props) => {
               description={ descriptionText }
               value={ props.currentCardInfo.number }
               errorMessage={ props.currentCardValidation.number() }
-              onChange={props.onChange}
-              onBlur={props.onBlurValidate}
-              onFocus={props.onFocusClearValidation}
             />
           </div>
 
@@ -60,8 +57,6 @@ const Form = (props) => {
           <DateInput
             {...props}
             description = 'Expiration Date'
-            onBlur      = { props.onBlurValidate }
-            onFocus     = { props.onFocusClearValidation }
             values      = { props.currentCardInfo }
             validations = { props.currentCardValidation }
           />

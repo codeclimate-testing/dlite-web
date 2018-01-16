@@ -19,9 +19,15 @@ const LicenseIssuesPage = (props) => {
           selectedValue = { props.licenseIssues.isSuspended }
         />
 
-        <EnterIssues {...props} />
+        <EnterIssues 
+          {...props} 
+          onBlur        = { props.onBlurValidate }
+        />
 
-        <NavigationButtons {...props} />
+        <NavigationButtons 
+          {...props}
+          errorMessage = { props.validations.all() }
+        />
       </form>
     </Page>
   )

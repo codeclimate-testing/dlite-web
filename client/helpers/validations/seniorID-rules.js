@@ -1,15 +1,7 @@
 'use strict';
 
-import errorMessages from '../../presentations/error-messages';
-import { hasValue } from '../data/validations';
-
-const seniorID = (props) => {
-  if (!hasValue(props)) {
-    return [errorMessages.selectionMissing];
-  }
-  return [];
-};
+import selectionValidator from './selection-validator';
 
 export default {
-  seniorID: seniorID
+  seniorID: selectionValidator('selectionMissing')
 };

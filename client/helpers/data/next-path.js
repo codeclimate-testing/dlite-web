@@ -73,3 +73,11 @@ export const chooseLicenseClass = (props) => {
   return key;
 };
 
+export const socialSecurity = (props) => {
+  let key = 'licenseHistory';
+
+  if (getDL(props)) {
+    key = 'medicalHistory';
+  }
+  return key;
+};

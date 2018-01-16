@@ -33,13 +33,22 @@ describe('LicenseIDHistoryPage', function() {
         youthIDInstead: ''
       };
 
-      let continueDisabled = !(dataPresent.licenseAndIdHistory(licenseAndIdHistory));
+      let validations = {
+        isIssued: spy(),
+        DLIDNumber: spy(),
+        issuedBy: spy(),
+        month: spy(),
+        day: spy(),
+        year: spy(),
+        all: spy()
+      };
+
       let onChange = spy();
 
       props = {
         licenseAndIdHistory,
         cardType,
-        continueDisabled,
+        validations,
         onChange
       }
     });
@@ -88,28 +97,7 @@ describe('LicenseIDHistoryPage', function() {
       );
       assert.ok(component.find('.applying-for-only-id').length, 'CA specific form not found');
     });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <LicenseIDHistoryPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.licenseAndIdHistory.isIssued = 'No';
-      props.continueDisabled  =   !(dataPresent.licenseAndIdHistory(props.licenseAndIdHistory));
-
-      let component = render(
-        <Wrapper>
-          <LicenseIDHistoryPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
-    });
-
+    
     it('selecting Yes makes form appear asking for most recent license details', function() {
       props.licenseAndIdHistory.isIssued = 'Yes';
       let component = render(

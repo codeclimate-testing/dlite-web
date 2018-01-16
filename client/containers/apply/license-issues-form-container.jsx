@@ -2,32 +2,37 @@
 
 import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
-
 import handlers                 from '../../helpers/handlers';
-import * as dataPresent         from '../../helpers/data-present';
-
+import { LicenseIssuesValidator } from '../../helpers/validations';
 import { updateLicenseIssues }  from '../../actions/index';
 import Presentation             from '../../presentations/apply/license-issues-page.jsx';
 
 const Page = (props) => {
-  let continueDisabled    = !(dataPresent.licenseIssues(props.licenseIssues));
-  let onSubmit            = handlers.navigateOnSubmit('/my-history/veterans-service', props);
-  let onBack              = handlers.navigateOnBack(props);
+  let validations       = new LicenseIssuesValidator(props.licenseIssues, props.validations);
+  let onSubmit          = handlers.navigateOrShowErrors('licenseIssues', props, validations);
+  let onBack            = handlers.navigateOnBack(props);
+  
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return (
     <Presentation 
       {...props}
-      onSubmit            = { onSubmit }
-      onBack              = { onBack }
-      continueDisabled    = { continueDisabled }
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      validations       = { validations }
+      onFocus           = { focus }
     />
   );
 }
 
 function mapStateToProps(state) {
   return {
-    licenseIssues:  state.application.licenseIssues,
-    focused:        state.ui.focus
+    licenseIssues   : state.application.licenseIssues,
+    focused         : state.ui.focus,
+    validations     : state.ui.validations
   };
 };
 

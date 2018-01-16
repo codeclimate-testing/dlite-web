@@ -21,14 +21,22 @@ describe('MedicalHistoryPage', function() {
     beforeEach(function() {
       let medicalHistory = {
         hasMedicalCondition: '',
+        medicalInfo: ''
       }
       let continueDisabled = !(dataPresent.medicalHistory(medicalHistory));
       let onChange = spy();
 
+      let validations = {
+        hasMedicalCondition: spy(),
+        medicalInfo: spy(),
+        all: spy()
+      };
+
       props = {
         medicalHistory,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
     

@@ -7,7 +7,8 @@ import {
   chooseCardChanges,
   realID,
   chooseLicenseClass,
-  chooseCardReplacement
+  chooseCardReplacement,
+  socialSecurity
 } from './next-path';
 
 const getStarted = [
@@ -124,30 +125,35 @@ const myBasics = [
   {
     key: 'socialSecurity',
     description: 'Social security',
-    path: '/my-basics/social-security'
+    path: '/my-basics/social-security',
+    next: socialSecurity
   }
 ];
 
 const myHistory = [
   {
+    key: 'medicalHistory',
+    description: 'Medical history',
+    path: '/my-history/medical/',
+    next: 'licenseHistory'
+  },
+  {
     key: 'licenseHistory',
     description: 'License and id history',
-    path: '/my-history/license-and-id'
+    path: '/my-history/license-and-id',
+    next: 'nameHistory'
   },
   {
     key: 'nameHistory',
     description: 'Names history',
-    path: '/my-history/names/'
-  },
-  {
-    key: 'medicalHistory',
-    description: 'Medical history',
-    path: '/my-history/medical/'
+    path: '/my-history/names/',
+    next: 'licenseIssues'
   },
   {
     key: 'licenseIssues',
     description: 'License issues',
-    path: '/my-history/license-issues'
+    path: '/my-history/license-issues',
+    next: 'veterans'
   },
   {
     key: 'veterans',

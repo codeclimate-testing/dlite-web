@@ -4,26 +4,28 @@ import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 
-const LicenseIssues = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
+const values = {
+  Yes: 'Yes',
+  No: 'No'
+};
 
+const LicenseIssues = (props) => {
+  
   return (
     <div className='license-issues-form'>
       <h2 className='question'>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h2>
       <div className='inner-bottom'>
         <RadioCollection 
           {...props}
-          name='isSuspended'
-          text={values}
+          name          = 'isSuspended'
+          text          = { values }
+          errorMessage  = { props.validations.isSuspended() }
         >
           <RadioSelector
             value='Yes'
           />
           <RadioSelector
-            value={'No'}
+            value='No'
           />
         </RadioCollection>
       </div>

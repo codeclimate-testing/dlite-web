@@ -5,28 +5,17 @@ import {
   hasValue,
   hasOnlyEnglishChars 
 }             from '../data/validations';
-
-const selectionGenerator = (name, error) => {
-  return (props) => {
-    let value = props[name];
-    let errors = [];
-
-    if (!hasValue(value)) {
-      errors.push(errorMessages[error]);
-    }
-    return errors;
-  };
-};
+import selectionValidator       from './selection-validator';
 
 const sections = (props) => {
   if (!props.correctOrUpdate){ return [] };
-  return selectionGenerator('sections', 'applicationActionMissing')(props);
+  return selectionValidator('applicationActionMissing', 'sections')(props);
 };
 
 const other = (props) => {
   if (props.sections.indexOf('other') === -1) { return [] };
 
-  let errors = selectionGenerator('other', 'pleaseEnterValidData')(props);
+  let errors = selectionValidator('pleaseEnterValidData', 'other')(props);
   if (!hasOnlyEnglishChars(props.other)) {
     errors.push(errorMessages.inputIncludesNonEnglishCharacters)
   }
@@ -34,7 +23,7 @@ const other = (props) => {
 };
 
 export default {
-  correctOrUpdate : selectionGenerator('correctOrUpdate', 'applicationActionMissing'),
+  correctOrUpdate : selectionValidator('applicationActionMissing', 'correctOrUpdate'),
   sections        : sections,
   other           : other
 };

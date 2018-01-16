@@ -6,7 +6,6 @@ import React                    from 'react';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import LicenseIssuesPage        from '../../../../client/presentations/apply/license-issues-page.jsx';
 import store                    from '../../support/page-store';
 
@@ -25,12 +24,20 @@ describe('LicenseIssuesPage', function() {
         year: '',
         reason: ''
       };
-      let continueDisabled = !(dataPresent.licenseIssues(licenseIssues));
+      let validations = {
+        isSuspended: spy(),
+        month: spy(),
+        day: spy(),
+        year: spy(),
+        reason: spy(),
+        all: spy()
+      };
+
       let onChange = spy();
 
       props = {
         licenseIssues,
-        continueDisabled,
+        validations,
         onChange
       }
     });
@@ -66,27 +73,6 @@ describe('LicenseIssuesPage', function() {
       );
 
       assert.ok(component.find('.suspended-license-form').length, 'suspended license form not found');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <LicenseIssuesPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.licenseIssues.isSuspended = 'No';
-      props.continueDisabled  =   !(dataPresent.licenseIssues(props.licenseIssues));
-
-      let component = render(
-        <Wrapper>
-          <LicenseIssuesPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
   });
 });

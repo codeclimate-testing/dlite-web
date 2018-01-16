@@ -12,10 +12,10 @@ const EnterPreviousNames = (props) => {
       <p>For example, include your maiden name.</p>
       <p>Separate by commas.</p>
         <TextArea
+          {...props}
           identifier='previousNames'
           description='Previous Names:'
           value={props.namesHistory.previousNames}
-          onChange={props.onChange}
         />
     </div>
   );
