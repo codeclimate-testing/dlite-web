@@ -43,12 +43,6 @@ const getStarted = [
     next: chooseCardType
   },
   {
-    key: 'chooseCardChanges',
-    description: 'Updates and Corrections',
-    path: '/updates-and-corrections',
-    next: chooseCardChanges
-  },
-  {
     key: 'chooseCardReplacement',
     description: 'Replacement Details',
     path: '/replacement-details',
@@ -62,7 +56,7 @@ const getStarted = [
   },
   {
     key: 'chooseCardChanges',
-    description: 'updates and corrections',
+    description: 'Updates and Corrections',
     path: '/updates-and-corrections',
     next: chooseCardChanges
   },
