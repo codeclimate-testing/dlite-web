@@ -1,33 +1,35 @@
 'use strict';
 
-import React                  from 'react';
-import connectForm            from '../../helpers/connect-form';
+import React                    from 'react';
+import connectForm              from '../../helpers/connect-form';
 
-import { updateLicenseType }  from "../../actions/index";
-import Presentation           from "../../presentations/intro/license-type-page.jsx";
+import { updateLicenseType }    from "../../actions/index";
+import Presentation             from "../../presentations/intro/license-type-page.jsx";
 
-import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
+import handlers                 from '../../helpers/handlers';
+import * as dataPresent         from '../../helpers/data-present';
+import { LicenseTypeValidator } from '../../helpers/validations';
 
 import {
   eligibleForReducedFee
 } from '../../helpers/data/reduced-fee';
 
 const Page = (props) => {
-  let address = '/get-started';
-  if (eligibleForReducedFee(props)) {
-    address = '/reduced-fee';
-  };
 
-  let onSubmit          = handlers.navigateOnSubmit(address, props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = !dataPresent.licenseType(props.licenseType);
+  let validations = new LicenseTypeValidator(props, props.validations);
+  let onSubmit    = handlers.navigateOrShowErrors('chooseLicenseClass', props, validations);
+  let onBack      = handlers.navigateOnBack(props);
+  let focus       = function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
   return <Presentation
     {...props}
-    onSubmit={onSubmit}
-    onBack={onBack}
-    continueDisabled={continueDisabled}
+    onSubmit    = { onSubmit }
+    onBack      = { onBack }
+    validations = { validations }
+    focus       = { focus }
   />;
 };
 
@@ -36,7 +38,8 @@ const mapStateToProps = (state) => {
     cardType:     state.application.cardType,
     seniorID:     state.application.seniorID,
     licenseType:  state.application.licenseType,
-    focused:      state.ui.focus
+    focused:      state.ui.focus,
+    validations:  state.ui.validations
   };
 };
 

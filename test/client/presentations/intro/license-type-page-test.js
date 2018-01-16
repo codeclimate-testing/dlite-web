@@ -5,7 +5,6 @@ import configure    from '../../support/configure-enzyme';
 import { render }   from 'enzyme';
 import React        from 'react';
 import { spy }      from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
 import LicenseType   from '../../../../client/presentations/intro/license-type-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
 import store        from '../../support/page-store';
@@ -23,12 +22,19 @@ describe('LicenseType Page', function() {
         needEndorsement: ''
       };
       let onChange = spy();
-      let continueDisabled = !dataPresent.licenseType(licenseType);
 
+      let validations = {
+        licenseType: spy(),
+        endorsement: spy(),
+        needEndorsement: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
+    
       props = {
         licenseType,
         onChange,
-        continueDisabled
+        validations
       }
     });
 
@@ -64,27 +70,6 @@ describe('LicenseType Page', function() {
 
       assert.ok(component.find('.endorsement-form').length, 'endorsement form not rendered');
     });
-
-    it('next button is disabled', function(){
-      let component = render(
-        <Wrapper>
-          <LicenseType {...props}/>
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting class of vehicles and answering endorsements make next button enabled', function() {
-      props.licenseType.needEndorsement = 'No';
-      props.licenseType.type = ['car']
-      props.continueDisabled = !dataPresent.licenseType(props.licenseType);
-      let component = render(
-        <Wrapper>
-          <LicenseType {...props}/>
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
-    })
   });
 });
 

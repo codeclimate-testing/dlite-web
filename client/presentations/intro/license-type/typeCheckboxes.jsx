@@ -23,6 +23,9 @@ const Form = (props) => {
           text  = {text}
           name  = 'type'
           array = {props.licenseType}
+          onBlur = { props.onBlurValidate }
+          onFocus = { props.focus }
+          errorMessage={ props.validations.licenseType() }
         >
           <CheckboxSelector
             value = 'car'

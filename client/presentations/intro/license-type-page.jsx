@@ -15,18 +15,22 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit}>
-        <LicenseTypeForm {...props} />
+        <LicenseTypeForm
+        {...props}
+        />
 
         <EndorsementToggle
           {...props}
           selectedValue={ props.licenseType.needEndorsement }
         />
 
-        <EndorsementForm {...props} />
+        <EndorsementForm
+        {...props}
+        />
 
         <NavigationButtons
-          continueDisabled  = { props.continueDisabled }
-          onBack            = { props.onBack }
+          {...props}
+          errorMessage={props.validations.all()}
         />
       </form>
     </Page>

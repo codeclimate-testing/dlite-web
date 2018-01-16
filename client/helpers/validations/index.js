@@ -15,6 +15,7 @@ import changeRules              from './change-rules';
 import reducedFeeRules          from './reduced-fee-rules';
 import physicalTraitsRules      from './physical-traits-rules';
 import heightWeightRules        from './height-weight-rules';
+import licenseTypeRules         from './license-type-rules';
 
 export const NamePageValidator       = formValidationGenerator(namePageRules);
 export const DOBValidator            = formValidationGenerator(dobPageRules);
@@ -29,3 +30,4 @@ export const ChangeValidator         = formValidationGenerator(changeRules);
 export const ReducedFeeValidator     = formValidationGenerator(reducedFeeRules);
 export const PhysicalTraitsValidator = formValidationGenerator(physicalTraitsRules);
 export const HeightWeightValidator   = formValidationGenerator(heightWeightRules);
+export const LicenseTypeValidator    = formValidationGenerator(licenseTypeRules);
