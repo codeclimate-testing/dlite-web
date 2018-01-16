@@ -20,7 +20,6 @@ const Form = (props) => {
           name='needEndorsement'
           text={values}
           onBlur = { props.onBlurValidate }
-          onFocus = { props.focus }
           errorMessage={ props.validations.needEndorsement() }
         >
           <RadioSelector

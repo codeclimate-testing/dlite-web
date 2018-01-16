@@ -33,7 +33,6 @@ const Form = (props) => {
               name    = 'cardAction'
               text    = { values }
               onBlur  = { props.onBlurValidate }
-              onFocus = { props.focus }
               errorMessage = { props.validations.cardAction()}
             >
               <RadioSelector

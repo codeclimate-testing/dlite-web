@@ -10,7 +10,7 @@ import { ReducedFeeValidator }from '../../helpers/validations';
 const Page = (props) => {
   let validations       = new ReducedFeeValidator(props, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('reducedFeeID', props, validations)
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
   let focus = function(e) {
     props.onFocusClearValidation(e);

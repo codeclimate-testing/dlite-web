@@ -12,7 +12,7 @@ import Presentation           from "../../presentations/intro/senior-id-page.jsx
 const Page = (props) => {
   let validations       =   new SeniorIDValidator(props.seniorID, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('seniorID', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
 
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

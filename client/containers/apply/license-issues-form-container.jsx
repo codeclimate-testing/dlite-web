@@ -10,7 +10,7 @@ import Presentation             from '../../presentations/apply/license-issues-p
 const Page = (props) => {
   let validations       = new LicenseIssuesValidator(props.licenseIssues, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('licenseIssues', props, validations);
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
   
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

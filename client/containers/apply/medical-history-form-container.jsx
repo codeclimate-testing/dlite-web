@@ -11,7 +11,7 @@ import { MedicalValidator }       from '../../helpers/validations';
 const Page = (props) => {
   let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('medicalHistory', props, validations);
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
   let focus             =   function(e) {
     props.onFocusClearValidation(e);
     return props.onFocus(e);

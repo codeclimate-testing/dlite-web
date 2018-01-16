@@ -11,7 +11,7 @@ import { RealIDValidator }        from '../../helpers/validations';
 const Page = (props) => {
   let validations       = new RealIDValidator(props, props.validations, 'realIdSelectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('realID', props, validations)
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

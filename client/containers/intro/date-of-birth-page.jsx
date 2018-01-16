@@ -12,7 +12,7 @@ import { updateDateOfBirth }  from "../../actions/index";
 const Page = (props) => {
   let validations       =   new DOBValidator(props.dateOfBirth, props.validations, 'dateOfBirthMissing');
   let onSubmit          =   handlers.navigateOrShowErrors('dateOfBirth', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
     <Presentation

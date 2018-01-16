@@ -11,7 +11,7 @@ import Presentation           from "../../presentations/intro/replacement-detail
 const Page = (props) => {
   let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('chooseCardReplacement', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
   
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

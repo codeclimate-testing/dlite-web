@@ -11,7 +11,7 @@ import { PhysicalTraitsValidator }  from '../../helpers/validations';
 const Page = (props) => {
   let validations = new PhysicalTraitsValidator(props.physicalTraits, props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('sexEyeHair', props, validations);
-  let onBack      = handlers.navigateOnBack(props);
+  let onBack      = handlers.navigateOnBack(props, validations);
 
   return (
     <Presentation

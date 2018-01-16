@@ -11,7 +11,7 @@ import Presentation                   from '../../presentations/apply/card-histo
 const Page = (props) => {
   let validations       = new LicenseHistoryValidator(props.licenseAndIdHistory, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('licenseHistory', props, validations);
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
   
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

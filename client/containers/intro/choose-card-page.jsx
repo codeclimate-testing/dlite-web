@@ -34,7 +34,7 @@ const Page = (props) => {
   };
   let validations       =   new CardTypeValidator(validateProps, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('chooseCardType', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
   let focus             =   function(e) {
     props.onFocusClearValidation(e);
     return props.onFocus(e);

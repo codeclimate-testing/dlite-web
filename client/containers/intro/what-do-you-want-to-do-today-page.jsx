@@ -13,7 +13,7 @@ import Presentation           from "../../presentations/intro/what-do-you-want-t
 const Page = (props) => {
   let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('wdywtdt', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
   
   let focus             =   function(e) {
     props.onFocusClearValidation(e);
@@ -27,7 +27,7 @@ const Page = (props) => {
       onBack            = { onBack }
       selectedValue     = { props.cardAction }
       validations       = { validations }
-      focus             = { focus }
+      onFocus           = { focus }
     />
   )
 };

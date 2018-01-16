@@ -11,7 +11,7 @@ import Presentation               from '../../presentations/intro/current-card-p
 const Page = (props) => {
   let currentCardValidation = new CurrentCardValidator(props.currentCardInfo, props.validations);
   let onSubmit = handlers.navigateOrShowErrors('currentCardInfo', props, currentCardValidation);
-  let onBack   = handlers.navigateOnBack(props);
+  let onBack   = handlers.navigateOnBack(props, currentCardValidation);
 
   return (
     <Presentation

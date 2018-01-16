@@ -10,7 +10,7 @@ import Presentation               from '../../presentations/apply/names-history-
 const Page = (props) => {
   let validations       = new NamesValidator(props.namesHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('nameHistory', props, validations);
-  let onBack            = handlers.navigateOnBack(props);
+  let onBack            = handlers.navigateOnBack(props, validations);
   
   let focus             =   function(e) {
     props.onFocusClearValidation(e);

@@ -24,7 +24,6 @@ const Form = (props) => {
           array = {props.licenseType}
           text  = {text}
           onBlur = { props.onBlurValidate }
-          onFocus = { props.focus }
           errorMessage={ props.validations.endorsement() }
         >
           <CheckboxSelector

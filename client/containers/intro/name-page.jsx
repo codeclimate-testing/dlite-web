@@ -10,7 +10,7 @@ import Presentation           from '../../presentations/intro/name-page.jsx';
 
 const Page = (props) => {
   let validations = new NamePageValidator(props.legalName, props.validations);
-  let onBack = handlers.navigateOnBack(props);
+  let onBack = handlers.navigateOnBack(props, validations);
   let onSubmit = handlers.navigateOrShowErrors('trueName', props, validations);
 
   return (
