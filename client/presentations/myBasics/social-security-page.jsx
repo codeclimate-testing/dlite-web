@@ -19,13 +19,20 @@ const SocialPage = (props) => {
           selectedValue = { props.socialSecurity.hasSocialSecurity }
         />
 
-        <SocialSecurityEnter {...props} />
+        <SocialSecurityEnter
+        {...props}
+        onBlur = { props.onBlurValidate }
+        onFocus = { props.onFocusClearValidation }
+        />
 
         <SocialSecurityNoInfo 
           socialSecurity = { props.socialSecurity }
         />
 
-        <NavigationButtons {...props} />
+        <NavigationButtons
+        {...props}
+        errorMessage={props.validations.all()}
+        />
 
       </form>
     </Page>

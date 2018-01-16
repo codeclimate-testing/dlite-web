@@ -4,7 +4,7 @@ import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
 
 import handlers                 from '../../helpers/handlers';
-import * as dataPresent         from '../../helpers/data-present';
+import { SSNValidator }         from '../../helpers/validations';
 
 import { updateSocialSecurity } from "../../actions/index";
 import Presentation             from '../../presentations/myBasics/social-security-page.jsx';
@@ -12,17 +12,16 @@ import Presentation             from '../../presentations/myBasics/social-securi
 import { getDL }                from '../../helpers/data/card-type';
 
 const Page = (props) => {
-  let nextAddress       = getDL(props) ? '/my-history/medical' : '/my-history/license-and-id';
-  let onSubmit          = handlers.navigateOnSubmit(nextAddress, props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = !(dataPresent.socialSecurity(props.socialSecurity));
+  let validations       = new SSNValidator(props.socialSecurity, props.validations, 'socialSecurityAvailabilityMissing');
+  let onSubmit          =   handlers.navigateOrShowErrors('socialSecurity', props, validations);
+  let onBack            =   handlers.navigateOnBack(props);
 
   return (
     <Presentation 
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
     />
   );
 };
@@ -31,7 +30,8 @@ function mapStateToProps(state) {
   return {
     socialSecurity: state.application.socialSecurity,
     cardType:       state.application.cardType,
-    focused:        state.ui.focus
+    focused:        state.ui.focus,
+    validations:    state.ui.validations
   };
 };
 

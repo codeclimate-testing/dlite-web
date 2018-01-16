@@ -18,6 +18,7 @@ const Form = (props) => {
           identifier='part1'
           description=''
           value={props.socialSecurity.part1}
+          errorMessage={ props.validations.ssnFirstSegment() }
         />
 
         <div className='unit social-security-dash'>-</div>
@@ -27,6 +28,7 @@ const Form = (props) => {
           identifier='part2'
           description=''
           value={props.socialSecurity.part2}
+          errorMessage={ props.validations.ssnSecondSegment() }
         />
 
         <div className='unit social-security-dash'>-</div>
@@ -36,6 +38,7 @@ const Form = (props) => {
           identifier='part3'
           description=''
           value={props.socialSecurity.part3}
+          errorMessage={ props.validations.ssnThirdSegment() }
         />
 
       </div>
