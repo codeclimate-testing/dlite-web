@@ -50,7 +50,7 @@ a.active {
   text-decoration: underline;
 }
 
-a:focus {
+a:not(.button):focus {
   outline: none;
   @include focus-outline;
   margin: 1px;
