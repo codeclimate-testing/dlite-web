@@ -13,7 +13,7 @@ const logging       = require('./server/config/logging');
 const csrf          = require('./server/config/csrf'); 
 const api           = require('./server/api');
 
-const layout        = fs.readFileSync(path.resolve(__dirname, 'server/templates/layout.html')).toString();
+const layout        = fs.readFileSync(path.resolve(__dirname, 'public/index.html')).toString();
 let   server        = express();
 
 passport.use(jwtStrategy);

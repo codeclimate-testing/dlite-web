@@ -3,12 +3,17 @@
 const path                = require('path');
 const webpack             = require('webpack');
 const ExtractTextPlugin   = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin   = require('html-webpack-plugin');
+
+const childProcess = require('child_process'),
+GITHASH = childProcess.execSync('git rev-parse HEAD').toString();
 
 let config = {
   entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
-    filename: 'app.js'
+    filename: 'app.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -38,6 +43,10 @@ let config = {
     new webpack.DefinePlugin({
       APP_ENV: JSON.stringify(process.env.APP_ENV)
     }),
+    new HtmlWebpackPlugin({
+      template: './server/templates/layout.html',
+      gitHash: GITHASH
+    })
   ]
 };
 

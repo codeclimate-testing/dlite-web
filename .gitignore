@@ -10,3 +10,4 @@ public/app.css
 debug.png
 
 server/config/database.json
+public/index.html
