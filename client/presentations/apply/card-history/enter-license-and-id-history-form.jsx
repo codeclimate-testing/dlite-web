@@ -4,6 +4,12 @@ import React          from 'react';
 import TextInput      from '../../text-input.jsx';
 import DateInput      from '../../date-input.jsx';
 
+const text = {
+  DLIDNumber: 'Driver license or ID card number',
+  issuedBy: 'State or country card was issued',
+  expiration: 'Expiration date'
+};
+
 const EnterLicenseAndIdHistory = (props) => {
   if(props.licenseAndIdHistory.isIssued !== 'Yes') { return null; }
 
@@ -15,7 +21,7 @@ const EnterLicenseAndIdHistory = (props) => {
         <TextInput
           {...props}
           identifier  = 'DLIDNumber'
-          description = 'DRIVER LICENSE OR ID CARD NUMBER'
+          description = { text.DLIDNumber }
           value       = { props.licenseAndIdHistory.DLIDNumber }
           errorMessage = { props.validations.DLIDNumber() }
         />
@@ -25,7 +31,7 @@ const EnterLicenseAndIdHistory = (props) => {
         <TextInput
           {...props}
           identifier  = 'issuedBy'
-          description = 'STATE OR COUNTRY CARD WAS ISSUED'
+          description = { text.issuedBy }
           value       = { props.licenseAndIdHistory.issuedBy }
           errorMessage  = { props.validations.issuedBy() }
         />
@@ -33,7 +39,7 @@ const EnterLicenseAndIdHistory = (props) => {
       <div id='expirationDate' className='row'>
         <DateInput
           {...props}
-          description   = 'EXPIRATION DATE'
+          description   = { text.expiration }
           values        = { props.licenseAndIdHistory }
         />
       </div>
