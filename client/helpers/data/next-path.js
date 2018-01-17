@@ -75,6 +75,18 @@ export const realID = (props) => {
   return key;
 };
 
+export const ssn = (props) => {
+  let key = 'myBasics';
+
+  if (getDL(props)) {
+    key = 'medicalHistory';
+  } else {
+    key = 'licenseHistory';
+  };
+
+  return key;
+};
+
 export const chooseLicenseClass = (props) => {
   let key = 'getStarted';
 

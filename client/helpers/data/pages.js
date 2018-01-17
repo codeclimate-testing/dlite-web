@@ -7,12 +7,13 @@ import {
   updateAndCorrect,
   realID,
   chooseLicenseClass,
-  replacementDetails,
-  socialSecurity,
+  chooseCardReplacement,
+  ssn,
   organDonationPath,
   citizenship,
   votingEligibility,
   optOut
+
 } from './next-path';
 
 const getStarted = [
@@ -125,7 +126,7 @@ const myBasics = [
     key: 'socialSecurity',
     description: 'Social security',
     path: '/my-basics/social-security',
-    next: socialSecurity
+    next: ssn
   }
 ];
 

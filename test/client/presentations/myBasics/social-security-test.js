@@ -24,12 +24,21 @@ describe('SocialSecurityPage', function() {
         part2: '',
         part3: ''
       }
-      let continueDisabled = !(dataPresent.socialSecurity(socialSecurity))
+      
       let onChange = spy();
+
+      let validations = {
+        ssn: spy(),
+        ssnFirstSegment: spy(),
+        ssnSecondSegment: spy(),
+        ssnThirdSegment: spy(),
+        all: spy(),
+        isValid: () => { return true; }
+      };
 
       props = {
         socialSecurity,
-        continueDisabled,
+        validations,
         onChange
       }
     });
@@ -46,26 +55,15 @@ describe('SocialSecurityPage', function() {
       assert.equal(component.find('.social-security-no-form'), false);
     });
 
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <SocialSecurityPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
 
     it('selecting No makes next button no longer disabled and shows info message', function() {
       props.socialSecurity.hasSocialSecurity = 'No';
-      props.continueDisabled  =   !(dataPresent.socialSecurity(props.socialSecurity));
 
       let component = render(
         <Wrapper>
           <SocialSecurityPage {...props} />
         </Wrapper>
       );
-
-      assert.equal(props.continueDisabled, false);
       assert.ok(component.find('.social-security-no-form', 'message not rendered'));
       assert.ok(component.find('.message-box .info').length, 'info message box not found');
     });
@@ -78,7 +76,6 @@ describe('SocialSecurityPage', function() {
           <SocialSecurityPage {...props} />
         </Wrapper>
       );
-
       assert.ok(component.find('.social-security-enter-form').length, 'form not rendered');
       assert.ok(component.find('input#part1').length, 'social input not found');
       assert.ok(component.find('input#part2').length, 'social input not found');

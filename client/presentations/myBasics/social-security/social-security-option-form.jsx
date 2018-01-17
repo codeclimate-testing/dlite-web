@@ -19,6 +19,7 @@ const Form = (props) => {
             {...props}
             name='hasSocialSecurity'
             text={values}
+            errorMessage={ props.validations.ssn() }
           >
             <RadioSelector
               value='Yes'

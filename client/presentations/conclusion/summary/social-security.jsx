@@ -6,11 +6,7 @@ import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 
 const SocialSecurity = (props) => {
-  if(!dataPresent.socialSecurity(props.socialSecurity)) { return null; }
-
-  //let socialSecurity =  props.socialSecurity.part1 + '-' +
-  //props.socialSecurity.part2 + '-' +
-  //                     props.socialSecurity.part3;
+  if(!dataPresent.socialSecurity(props.socialSecurity) || props.socialSecurity.hasSocialSecurity === 'No') { return null; }
 
   let socialSecurity =  'xxx' + '-' + 'xx' + '-' + props.socialSecurity.part3;
 

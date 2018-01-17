@@ -12,4 +12,5 @@ function defaultState() {
   };
 }
 
+
 export default formObjectReducer(defaultState, TYPES.UPDATE_SOCIAL_SECURITY);

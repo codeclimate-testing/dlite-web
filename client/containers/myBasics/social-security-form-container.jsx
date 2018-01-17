@@ -12,7 +12,7 @@ import Presentation             from '../../presentations/myBasics/social-securi
 import { getDL }                from '../../helpers/data/card-type';
 
 const Page = (props) => {
-  let validations       = new SSNValidator(props.socialSecurity, props.validations, 'socialSecurityAvailabilityMissing');
+  let validations       =   new SSNValidator(props.socialSecurity, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('socialSecurity', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
 
