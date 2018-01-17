@@ -6,7 +6,6 @@ import RadioCollection  from '../../radio-selector-collection.jsx';
 
 const values = {
   Yes : 'Yes',
-  No  : 'No',
   Skip: 'I do not wish to choose a political party'
 };
 
@@ -27,9 +26,6 @@ const PoliticalPartyChoose = (props) => {
           >
             <RadioSelector 
               value='Yes'
-            />
-            <RadioSelector 
-              value='No'
             />
             <RadioSelector 
               value='Skip'
