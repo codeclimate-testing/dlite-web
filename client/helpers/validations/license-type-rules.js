@@ -16,7 +16,7 @@ const needEndorsement = (props) => {
   let value = props.licenseType.needEndorsement;
   let errors = [];
   if (!hasValue(value)) {
-    errors = [errorMessages.needEndorsement]
+    errors = [errorMessages.licenseClassMissing]
   }
   return errors;
 };
@@ -25,7 +25,7 @@ const endorsement = (props) => {
   let value = props.licenseType.endorsement;
   let errors = [];
   if (props.licenseType.needEndorsement === 'Yes' && !hasValue(value)){
-    errors = [errorMessages.endorsement]
+    errors = [errorMessages.licenseClassMissing]
   }
   return errors;
 };

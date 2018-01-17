@@ -57,7 +57,4 @@ export default {
   pleaseEnterValidData: 'Please enter valid information',
   inputIncludesNonEnglishCharacters: 'Please enter only English characters.',
   licenseClassMissing: 'Please select a license class',
-  needEndorsement: 'Please select if you need a professional endorsement',
-  endorsement: 'Please select an endorsement'
-
 };
