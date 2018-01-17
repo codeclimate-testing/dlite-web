@@ -6,6 +6,8 @@ import RadioSelector          from '../../radio-selector.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import NavigationButtons      from '../../navigation-buttons.jsx';
 import Page                   from '../../../containers/page.jsx';
+import MessageBox             from '../../message-box.jsx';
+
 
 const BallotByMailForm = (props) => {
   let values = {
@@ -41,11 +43,15 @@ const BallotByMailForm = (props) => {
           <div>
 
             {props.selectedValue === 'Yes' &&
-             <p>Ok, your ballot will now come by mail. You can still vote in-person at your polling place.</p>
+            <MessageBox className='info'>
+              <p>Ok, your ballot will now come by mail. You can still vote in-person at your polling place.</p>
+            </MessageBox>
             }
 
             {props.selectedValue === 'No' &&
-            <p>Ok, you vote in-person at your polling place.</p>
+            <MessageBox className='info'>
+              <p>Ok, you vote in-person at your polling place.</p>
+            </MessageBox>
             }
 
           </div>

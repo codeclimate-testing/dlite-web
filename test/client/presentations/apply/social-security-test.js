@@ -55,7 +55,7 @@ describe('SocialSecurityPage', function() {
       assert.equal(props.continueDisabled, true);
     });
 
-    it('selecting No makes next button no longer disabled and shows message', function() {
+    it('selecting No makes next button no longer disabled and shows info message', function() {
       props.socialSecurity.hasSocialSecurity = 'No';
       props.continueDisabled  =   !(dataPresent.socialSecurity(props.socialSecurity));
 
@@ -67,6 +67,7 @@ describe('SocialSecurityPage', function() {
 
       assert.equal(props.continueDisabled, false);
       assert.ok(component.find('.social-security-no-form', 'message not rendered'));
+      assert.ok(component.find('.message-box .info').length, 'info message box not found');
     });
 
     it('selecting Yes makes form render to enter social number', function() {

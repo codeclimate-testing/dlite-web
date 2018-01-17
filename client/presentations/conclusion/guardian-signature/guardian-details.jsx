@@ -6,15 +6,18 @@ import ElectronicSignature    from './guardian-electronic-signature.jsx';
 import GuardianContact        from './guardian-contact.jsx';
 import IdentityDocument       from './guardian-identity-document.jsx';
 import Accordion              from '../../../containers/accordion.jsx';
+import MessageBox             from '../../message-box.jsx';
 
 const SignatureDetails = (props) => {
 
 
   if(props.guardianSignature.isSigned === 'No') {
     return (
-      <div>
-        <p>Your application will not be complete until your parent/guardian signs.</p>
-      </div>
+      <MessageBox className='info'>
+        <div>
+          <p>Your application will not be complete until your parent/guardian signs.</p>
+        </div>
+      </MessageBox>
     )
   }
 

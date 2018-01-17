@@ -4,6 +4,7 @@ import React from 'react';
 
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
+import MessageBox           from '../../message-box.jsx';
 import { getDL }            from '../../../helpers/data/card-type';
 
 const questionText = {
@@ -46,28 +47,32 @@ const VeteransIdentifier = (props) => {
       <Question {...props} />
       <p>Many organizations give discounts with a valid military ID.</p>
       <div className='input-container'>
-      <RadioCollection 
-        {...props}
-        name='veteransIdentifier'
-        text={values}
-      >
-        <RadioSelector 
-          value='Yes'
-        />
-        <RadioSelector 
-          value='No'
-        />
-      </RadioCollection>
+        <RadioCollection 
+          {...props}
+          name='veteransIdentifier'
+          text={values}
+        >
+          <RadioSelector 
+            value='Yes'
+          />
+          <RadioSelector 
+            value='No'
+          />
+        </RadioCollection>
       </div>
       { props.veteransService.veteransIdentifier === 'Yes' &&
-        <div className='veteran-identifier-fee'>
-          <p>OK, we will add the $5 to your total fee.</p>
-        </div>
+        <MessageBox className = 'info'>
+          <div className='veteran-identifier-fee'>
+            <p>OK, we will add the $5 to your total fee.</p>
+          </div>
+        </MessageBox>
       }
       { removeIdentifierNotification &&
-        <div className='remove-veteran-identifier'>
-          <p>OK, we will remove it.</p>
-        </div>
+        <MessageBox className='info'>
+          <div className='remove-veteran-identifier'>
+            <p>OK, we will remove it.</p>
+          </div>
+        </MessageBox>
       }
     </div>
   );

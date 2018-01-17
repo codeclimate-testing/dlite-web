@@ -5,11 +5,12 @@ import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 
+const values = {
+  Yes: 'Yes',
+  No: 'No'
+};
+
 const VeteransQuestionnaire = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
 
   return (
     <div className='veterans-questionnaire-form'>

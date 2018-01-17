@@ -80,6 +80,16 @@ describe('VeteransServicePage', function() {
       );
       assert.equal(props.continueDisabled, false);
     });
+
+    it('selecting Yes makes messageBox className "thanks" appear', function() {
+      props.veteransService.isVeteran = 'Yes';
+      let component = render(
+        <Wrapper>
+          <VeteransPage {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.message-box .thanks').length, 'thanks message box not found');
+    });
   });
 
   describe('when veteran is getting a new card', function() {
@@ -119,20 +129,36 @@ describe('VeteransServicePage', function() {
 
         let component = render(
           <Wrapper>
-          <VeteransPage {...props} />
+            <VeteransPage {...props} />
           </Wrapper>
         );
         assert.equal(props.continueDisabled, false);
       });
 
+      it('selecting No makes messageBox "info" appear', function() {
+        props.veteransService.veteransIdentifier = 'No';
+        props.veteransService.previouslyDesignated = 'Yes';
+        props.selectedValue = props.veteransService.veteransIdentifier;
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.message-box .info').length, 'info message box not found');
+        assert.ok(component.text().includes('OK, we will remove it'), 'message box text not found');
+      });
+
       it('shows fee notification when selecting Yes', function() {
         props.veteransService.veteransIdentifier = 'Yes';
+        props.selectedValue = props.veteransService.veteransIdentifier;
 
         let component = render(
           <Wrapper>
           <VeteransPage {...props} />
           </Wrapper>
         );
+        assert.ok(component.find('.message-box .info').length, 'info message box not found');
         assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
       });
 

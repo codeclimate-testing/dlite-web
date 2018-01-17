@@ -151,6 +151,16 @@ describe('GuardianSignaturePage', function() {
       assert(!(component.find('.arrow-button').prop('disabled')));
     });
 
+    it('entering No makes the info message appear', function() {
+      props.guardianSignature.isSigned = 'No';
+      let component = render(
+        <Wrapper>
+          <GuardianSignaturePage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.message-box .info').length, 'info message box not found');
+    });
+
   });
 
 });

@@ -18,36 +18,62 @@ describe('BallotByMailPage', function() {
   describe('when it renders initially', function() {
   let props;
 
-  beforeEach(function() {
-    let ballotByMail = '';
-    let continueDisabled = true;
-    let onChange = spy();
-    let dateOfBirth = {
-      month: '',
-      day: '',
-      year: '',
-    };
+    beforeEach(function() {
+      let ballotByMail = '';
+      let continueDisabled = true;
+      let onChange = spy();
+      let dateOfBirth = {
+        month: '',
+        day: '',
+        year: '',
+      };
 
-    props = {
-      ballotByMail,
-      dateOfBirth,
-      continueDisabled,
-      onChange
-    }
+      props = {
+        ballotByMail,
+        dateOfBirth,
+        continueDisabled,
+        onChange
+      };
+    });
+
+    it('shows the form asking if user would like to get ballot in mail', function() {
+      let component = render(
+        <Wrapper>
+          <BallotByMailPage  {...props} />
+        </Wrapper>
+      );
+      assert.equal(props.continueDisabled, true);
+      assert.ok(component.find('label[for="ballotByMail-Yes"]').length, 'Yes button missing');
+      assert.ok(component.find('label[for="ballotByMail-No"]').length, 'No button missing');
+      assert.ok(component.find('.ballot-by-mail-form').length, 'form missing');
+    });
+
+    it('answering No shows info message', function() {
+      props.ballotByMail = 'No';
+      props.selectedValue = props.ballotByMail;
+
+      let component = render(
+        <Wrapper>
+          <BallotByMailPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('you vote in-person at your polling place.'), 'text not found');
+      assert.ok(component.find('.message-box .info'), 'message box not found');
+    });
+
+    it('answering Yes shows info message', function() {
+      props.ballotByMail = 'Yes';
+      props.selectedValue = props.ballotByMail;
+
+      let component = render(
+        <Wrapper>
+          <BallotByMailPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('your ballot will now come by mail.'), 'text not found');
+      assert.ok(component.find('.message-box .info'), 'message box not found');
+    });
+
+    // TODO add FAQ drawer tests
   });
-
-  it('shows the form asking if user would like to get ballot in mail', function() {
-    let component = render(
-      <Wrapper>
-        <BallotByMailPage  {...props} />
-      </Wrapper>
-    );
-    assert.equal(props.continueDisabled, true);
-    assert.ok(component.find('label[for="ballotByMail-Yes"]').length, 'Yes button missing');
-    assert.ok(component.find('label[for="ballotByMail-No"]').length, 'No button missing');
-    assert.ok(component.find('.ballot-by-mail-form').length, 'form missing');
-  });
-
-  // TODO add FAQ drawer tests
-});
 });
