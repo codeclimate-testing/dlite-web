@@ -23,6 +23,7 @@ import licenseIssuesRules       from './license-issues-rules';
 import organDonationRules       from './organ-donation-rules';
 import addressRules             from './address-rules';
 import veteransRules            from './veterans-rules';
+import ballotByMailRules        from './ballot-by-mail-rules';
 
 export const NamePageValidator        = formValidationGenerator(namePageRules);
 export const DOBValidator             = formValidationGenerator(dobPageRules);
@@ -45,3 +46,5 @@ export const LicenseHistoryValidator  = formValidationGenerator(licenseHistoryRu
 export const OrganDonationValidator   = formValidationGenerator(organDonationRules);
 export const AddressValidator         = formValidationGenerator(addressRules);
 export const VeteransValidator        = formValidationGenerator(veteransRules);
+export const BallotByMailValidator    = formValidationGenerator(ballotByMailRules);
+

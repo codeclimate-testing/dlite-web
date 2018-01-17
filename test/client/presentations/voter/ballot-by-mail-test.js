@@ -9,7 +9,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import BallotByMailPage         from '../../../../client/presentations/voter-registration/ballot-by-mail/ballot-by-mail-form.jsx';
+import BallotByMailPage         from '../../../../client/presentations/voter-registration/ballot-by-mail-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('BallotByMailPage', function() {
@@ -27,12 +27,17 @@ describe('BallotByMailPage', function() {
         day: '',
         year: '',
       };
+      let validations = {
+        ballotByMail: spy(),
+        all: spy()
+      };
 
       props = {
         ballotByMail,
         dateOfBirth,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       };
     });
 
@@ -73,7 +78,5 @@ describe('BallotByMailPage', function() {
       assert.ok(component.text().includes('your ballot will now come by mail.'), 'text not found');
       assert.ok(component.find('.message-box .info'), 'message box not found');
     });
-
-    // TODO add FAQ drawer tests
   });
 });
