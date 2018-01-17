@@ -24,7 +24,7 @@ const Form = (props) => {
   const headerText      = props.cardChanges.correctOrUpdate === 'correct' ? correctHeader : updateHeader;
 
   return (
-    <div className='row inner-bottom change-sections-form'>
+    <div className='row change-sections-form'>
       <hr/>
       <h3 className='question'>{headerText}</h3>
       <p>Select all that apply.</p>

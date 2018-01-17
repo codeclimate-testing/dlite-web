@@ -13,14 +13,14 @@ const EnterRevokedSuspended = (props) => {
       <h2 className='question'>When did this happen?</h2>
       <p>Example: 03/21/1967</p>
 
-        <div className='row inner-bottom'>
+        <div className='row'>
           <DateInput
             {...props }
             values      = { props.licenseIssues }
           />
         </div>
 
-        <div className='row inner-bottom'>
+        <div className='row'>
           <TextArea
             identifier  = 'reason'
             description = 'What was the reason?'

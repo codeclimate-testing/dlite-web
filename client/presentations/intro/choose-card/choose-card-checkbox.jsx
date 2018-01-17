@@ -14,9 +14,9 @@ const Form = (props) => {
   };
 
   return (
-    <div className='row inner-bottom choose-new-cards'>
+    <div className='row choose-new-cards'>
       <p>Select all that apply.</p>
-      <div className='row inner-bottom'>
+      <div className='row'>
         <CheckboxCollection
           {...props}
           name          = 'new'

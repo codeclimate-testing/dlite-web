@@ -16,7 +16,7 @@ const TraitsPage = (props) => {
         <p>Example: 5 feet 9 inches</p>
 
         <form onSubmit={ props.onSubmit } >
-          <div className='row inner-bottom'>
+          <div className='row'>
             <NumberInput
               onChange={ props.onChange }
               identifier='heightFeet'
@@ -44,7 +44,7 @@ const TraitsPage = (props) => {
         <h2 className='question'>And how much do you weigh?</h2>
         <p>Example: 190 pounds</p>
 
-          <div className='row inner-bottom'>
+          <div className='row'>
             <NumberInput
               onChange={ props.onChange }
               identifier='weight'

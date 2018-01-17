@@ -23,7 +23,7 @@ const BallotByMailForm = (props) => {
         <h2 className='question'>Would you like to get your ballot by mail before each election?</h2>
         <p>If you answer Yes, you can still vote in-person.</p>
         
-          <div className='inner-bottom'>
+          <div>
             <RadioCollection 
               {...props}
               name='ballotByMail'
@@ -38,7 +38,7 @@ const BallotByMailForm = (props) => {
             </RadioCollection>
           </div>
 
-          <div className='inner-bottom'>
+          <div>
 
             {props.selectedValue === 'Yes' &&
              <p>Ok, your ballot will now come by mail. You can still vote in-person at your polling place.</p>

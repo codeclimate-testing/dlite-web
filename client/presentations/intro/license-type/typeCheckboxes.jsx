@@ -17,7 +17,7 @@ const Form = (props) => {
     <div className='license-type-form'>
       <h2 className='question'>What do you need to drive?</h2>
       <p>Select all that apply</p>
-      <div className='row inner-bottom'>
+      <div className='row'>
         <CheckboxCollection
           {...props}
           text  = {text}

@@ -11,7 +11,7 @@ const EyeColor = (props) => {
     <div className='eye-color'>
       <hr/>
       <h2 className='question'>What color are your eyes?</h2>
-        <div className='inner-bottom'>
+        <div>
           <RadioCollection
             {...props}
             name='eyeColor'

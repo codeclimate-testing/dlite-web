@@ -17,7 +17,7 @@ const ContactChoice = (props) => {
     <div>
       <div className='contact-methods-choice-form'>
         <h2 className='question'>Would you like to receive election information via email or text</h2>
-        <div className='inner-bottom'>
+        <div>
           <RadioCollection  
             {...props}
             name='shouldContact'
@@ -36,7 +36,7 @@ const ContactChoice = (props) => {
    
         </div>
 
-        <div className='inner-bottom'>
+        <div>
           <p>Who gets this information?</p>
           <p>Secretary of State and County election officials have access to this information.</p>
         </div>

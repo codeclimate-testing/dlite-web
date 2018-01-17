@@ -14,7 +14,7 @@ const Form = (props) => {
       <hr/>
       <h2 className='question'>Do you need any professional endorsements?</h2>
       <p>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
-      <div className='row inner-bottom'>
+      <div className='row'>
         <RadioCollection
           {...props}
           name='needEndorsement'

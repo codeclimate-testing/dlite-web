@@ -30,7 +30,7 @@ const LicenseAndIdHistory = (props) => {
     <div className='license-and-id-history-form'>
     { licenseAndIdHeader }
 
-      <div className='inner-bottom'>
+      <div>
         <RadioCollection
           {...props}
           name='isIssued'

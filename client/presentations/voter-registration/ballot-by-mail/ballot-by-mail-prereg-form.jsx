@@ -22,7 +22,7 @@ const BallotByMailFormPreReg = (props) => {
         <p>If you answer Yes, you can still vote in-person.</p>
         <form onSubmit={props.onSubmit} className='ballot-by-mail-form'>
 
-          <div className='inner-bottom'>
+          <div>
             <RadioCollection 
               {...props}
               name='ballotByMail'
@@ -37,7 +37,7 @@ const BallotByMailFormPreReg = (props) => {
             </RadioCollection>
           </div>
 
-          <div className='inner-bottom'>
+          <div>
 
             {props.selectedValue === 'Yes' &&
              <p>Ok, your ballot will now come by mail. You can still vote in-person at your polling place.</p>

@@ -23,7 +23,7 @@ const CitizenStatusForm = (props) => {
         <h2 className='question'>Are you a United States citizen?</h2>
         <p>If you decline to answer, you cannot register to vote.</p>
         <form onSubmit={props.onSubmit} className='citizen-status-form'>
-          <div className='inner-bottom'>
+          <div>
             <RadioCollection  
               {...props}
               name='citizenStatus'

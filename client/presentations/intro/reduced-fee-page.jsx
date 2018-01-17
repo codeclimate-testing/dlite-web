@@ -78,7 +78,7 @@ const Form = (props) => {
 
           <DLText {...props} />
 
-          <div className='row inner-bottom'>
+          <div className='row'>
             <RadioCollection 
               {...props}
               name='ID'

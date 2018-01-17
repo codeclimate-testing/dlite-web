@@ -17,7 +17,7 @@ const Form = (props) => {
       <hr/>
       <h2 className='question'>Which?</h2>
       <p>Select all that apply</p>
-      <div className='row inner-bottom'>
+      <div className='row'>
         <CheckboxCollection
           {...props}
           name  = 'endorsement'

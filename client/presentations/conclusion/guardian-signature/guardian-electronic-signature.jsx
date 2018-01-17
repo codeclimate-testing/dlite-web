@@ -30,7 +30,7 @@ const ElectronicSignature = (props) => {
         value={props.guardianSignature.guardianInfo[guardianID].signature}
       />
 
-      <div className='row inner-bottom'>
+      <div className='row'>
         <NumberInput
           {...props}
           identifier='signatureDateMonth'

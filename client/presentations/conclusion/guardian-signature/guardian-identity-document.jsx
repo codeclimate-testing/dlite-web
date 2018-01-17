@@ -25,7 +25,7 @@ const IdentityForm = (props) => {
         value={props.guardianSignature.guardianInfo[guardianID].IDIssuedBy}
       />
 
-      <div className='row inner-bottom'>
+      <div className='row'>
         <NumberInput
           {...props}
           identifier='IDExpirationDateMonth'

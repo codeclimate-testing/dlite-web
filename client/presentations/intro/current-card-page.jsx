@@ -43,7 +43,7 @@ const Form = (props) => {
           <h2 className='question'>Card details</h2>
           <p dangerouslySetInnerHTML={{__html: questionText}} />
           <p dangerouslySetInnerHTML={{__html: instructionText}} />
-          <div className='row inner-bottom'>
+          <div className='row'>
             <TextInput
               {...props}
               identifier='number'
@@ -53,7 +53,7 @@ const Form = (props) => {
             />
           </div>
 
-          <div id='expirationDate' className='row inner-bottom'>
+          <div id='expirationDate' className='row'>
           <DateInput
             {...props}
             description = 'Expiration Date'

@@ -18,7 +18,7 @@ const Presentation = (props) => {
         <h2 className='question'>What's your date of birth?</h2>
         <p>Example: 03 21 1967</p>
 
-        <div className='row inner-bottom'>
+        <div className='row'>
           <DateInput
             {...props}
             onBlur      = { props.onBlurValidate }

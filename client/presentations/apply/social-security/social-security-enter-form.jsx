@@ -12,7 +12,7 @@ const Form = (props) => {
       <h2 className='question'>What’s your Social Security Number?</h2>
       <p>Example: 123 - 45 - 6789</p>
 
-      <div className='row inner-bottom'>
+      <div className='row'>
         <NumberInput
           onChange={props.onChange}
           identifier='part1'

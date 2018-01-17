@@ -30,7 +30,7 @@ const BallotLanguageFormPreReg = (props) => {
       <div>
         <h2 className='question'>Choose a language for your election materials.</h2>
         <form onSubmit={props.onSubmit} className='ballot-language-form'>
-          <div className='inner-bottom'>
+          <div>
             <RadioCollection  
               {...props}
               name='ballotLanguage'

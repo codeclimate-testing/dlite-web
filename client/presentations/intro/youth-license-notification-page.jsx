@@ -67,7 +67,7 @@ const Form = (props) => {
       <div className='youth-license-notification'>
         <form onSubmit={ props.onSubmit } >
           <Header />
-          <div className='row inner-bottom'>
+          <div className='row'>
             <RadioCollection  
               {...props}
               name = 'youthIDInstead'

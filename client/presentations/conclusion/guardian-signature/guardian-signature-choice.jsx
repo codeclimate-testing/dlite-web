@@ -15,7 +15,7 @@ const SignatureChoice = (props) => {
       <h2 className='question'>Because you are under 18, you will need a parent or guardian signature.</h2>
       <p>If you have more than one parent or guardian with custody, both must sign.</p>
       <p>Is your parent/guardian available to sign your application?</p>
-      <div className='inner-bottom'>
+      <div>
         <RadioCollection
           {...props}
           name='isSigned'

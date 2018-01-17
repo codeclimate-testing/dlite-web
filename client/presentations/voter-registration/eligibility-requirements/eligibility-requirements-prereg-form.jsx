@@ -34,7 +34,7 @@ const PreRegEligibilityRequirements = (props) => {
         <p>If you decline to answer, you cannot pre-register to vote.</p>
         <br></br>
         <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
-          <div className='inner-bottom'>
+          <div>
             <RadioCollection  
               {...props}
               name='eligibilityRequirements'

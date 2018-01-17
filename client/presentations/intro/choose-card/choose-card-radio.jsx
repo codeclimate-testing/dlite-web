@@ -20,7 +20,7 @@ const Form = (props) => {
   let selectedValue = props.cardType[props.cardAction];
 
   return (
-    <div className='row inner-bottom chooseRadioCard'>
+    <div className='row chooseRadioCard'>
 
       <RadioCollection
         {...props}

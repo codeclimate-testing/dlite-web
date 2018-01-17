@@ -41,7 +41,7 @@ const ChooseRealID = (props) => {
         <b> within</b> the United States.
       </p>
 
-      <div className='row inner-bottom'>
+      <div className='row'>
         <RadioCollection
           {...props}
           name          = 'getRealID'

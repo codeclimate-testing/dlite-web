@@ -11,7 +11,7 @@ const EnterLicenseAndIdHistory = (props) => {
     <div className='existing-license-id-number-form'>
       <hr/>
       <h2 className     = 'question'>Please tell us about your most recent license or ID card.</h2>
-      <div className  = 'row inner-bottom'>
+      <div className='row'>
         <TextInput
           {...props}
           identifier  = 'DLIDNumber'
@@ -21,7 +21,7 @@ const EnterLicenseAndIdHistory = (props) => {
         />
       </div>
 
-      <div className  = 'row inner-bottom'>
+      <div className='row'>
         <TextInput
           {...props}
           identifier  = 'issuedBy'
@@ -30,7 +30,7 @@ const EnterLicenseAndIdHistory = (props) => {
           errorMessage  = { props.validations.issuedBy() }
         />
       </div>
-      <div id='expirationDate' className='row inner-bottom'>
+      <div id='expirationDate' className='row'>
         <DateInput
           {...props}
           description   = 'EXPIRATION DATE'
