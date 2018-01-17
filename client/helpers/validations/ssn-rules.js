@@ -2,7 +2,6 @@
 
 import errorMessages        from '../../presentations/error-messages';
 import { hasValue }         from '../data/validations';
-import { hasOnlyNumbers }   from '../data/validations';
 
 const ssn = (props) => {
   let value = props.hasSocialSecurity;
