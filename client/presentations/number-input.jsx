@@ -4,27 +4,29 @@ import React        from 'react';
 import errorClass   from '../helpers/validations/error-class';
 import {
   ErrorIcon,
-  AdditionalLabel
+  ErrorLabel
 } from './validations.jsx';
+import ExampleLabel from './example-label.jsx';
+
 
 const NumberInput = (props) => {
-  let className = `input-container ${props.identifier}-input`;
-  let errorName = errorClass(props);
-  let additionalText  = props.example;
-
-  // if this numberInput is part of a dateInput, then the description should not turn red on error and so the errorName does not get passed to the class
-  let labelClass = props.hasOwnProperty('labelClass') ? `${props.labelClass}` : errorName;
-  let inputClass = props.hasOwnProperty('error') ? `${props.error}` : errorName ;
+  let className   = `input-container ${props.identifier}-input`;
+  let errorName   = errorClass(props);
+  let inputClass  = props.hasOwnProperty('error') ? `${props.error}` : errorName ;
 
   return (
     <div className  = 'unit'>
       <label 
         htmlFor     = { props.identifier }
-        className   = { labelClass }
+        className   = { errorName }
       >
         <ErrorIcon errorClass={ errorName } />
         {props.description}
       </label>
+
+      <ExampleLabel
+        example     = { props.example }
+      />
       
       <div className= { className }>
         <input
@@ -38,10 +40,9 @@ const NumberInput = (props) => {
           value     = { props.value }
         />
       </div>
-      <AdditionalLabel
+      <ErrorLabel
         errorMessage={ props.errorMessage }
         errorClass={ errorName }
-        additionalText={ additionalText }
       />
     </div>
   );

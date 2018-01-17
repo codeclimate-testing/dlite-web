@@ -39,9 +39,9 @@ describe('DateInput', function() {
   });
 
   it('has normal-weight secondary labels for MM, DD, and YYYY', function() {
-    assert.ok(component.find('label.normal').text().includes('MM'), 'normal MM label not found');
-    assert.ok(component.find('label.normal').text().includes('DD'), 'normal DD label not found');
-    assert.ok(component.find('label.normal').text().includes('YYYY'), 'normal YYYY label not found');
+    assert.ok(component.find('.example').text().includes('MM'), 'normal MM label not found');
+    assert.ok(component.find('.example').text().includes('DD'), 'normal DD label not found');
+    assert.ok(component.find('.example').text().includes('YYYY'), 'normal YYYY label not found');
   });
 
   describe('when there is an error with only one of the date inputs', function() {
@@ -91,8 +91,8 @@ describe('DateInput', function() {
       );
     });
 
-    it('does not pass the error class to the labelClass variable on the secondary label', function(){
-      assert(component.find('label[for="year"].normal:not(".error")').length, 'secondary YYYY label has error class');
+    it('does not pass the error class to the example label on the secondary label', function(){
+      assert(component.find('.example:not(".error")').length, 'secondary YYYY label has error class');
     });
   });
 });

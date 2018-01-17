@@ -4,7 +4,7 @@ import React from 'react';
 import errorClass   from '../helpers/validations/error-class';
 import {
   ErrorIcon,
-  AdditionalLabel
+  ErrorLabel
 } from './validations.jsx';
 
 const TextArea = (props) => {
@@ -32,10 +32,9 @@ const TextArea = (props) => {
           value     = { props.value }
         />
       </div>
-      <AdditionalLabel
+      <ErrorLabel
         errorMessage={ props.errorMessage }
         errorClass={ className }
-        additionalText={ additionalText }
       /> 
     </div>
   );

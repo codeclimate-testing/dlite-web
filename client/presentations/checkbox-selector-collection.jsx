@@ -6,7 +6,7 @@ import errorClass   from '../helpers/validations/error-class';
 
 import {
   ErrorIcon,
-  AdditionalLabel
+  ErrorLabel
 } from './validations.jsx';
 
 const childPropsAdditions = (props, value, values) => {
@@ -42,16 +42,14 @@ const makeMeSomeChildren = (props) => {
 
 const CheckboxCollection = (props) => {
   let errorName = errorClass(props);
-  let additionalText  = props.example;
 
   return (
     <div className='row checkbox-collection'>
       <div>
         <ErrorIcon errorClass={ errorName } />
-        <AdditionalLabel
+        <ErrorLabel
           errorMessage={ props.errorMessage }
           errorClass={ errorName }
-          additionalText={ additionalText }
         />
       </div>
       { makeMeSomeChildren(props) }

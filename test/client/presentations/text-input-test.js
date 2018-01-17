@@ -10,6 +10,7 @@ import sinon      from 'sinon';
 import TextInput  from '../../../client/presentations/text-input.jsx';
 
 describe('TextInput', function() {
+  
   it('uses an identifier for the name and id if nothing specific is provided', function() {
     let component = render(
       <TextInput identifier='zardoz'/>
@@ -58,97 +59,68 @@ describe('TextInput', function() {
     );
   });
 
-  it('does not include an additional label if no example is provided', function() {
+  it('does not include an additional example label if no example is provided', function() {
     let component = render(
-      <TextInput identifier='zardoz' example=''/>
+      <TextInput identifier='zardoz' />
     );
 
     assert.ok(
-      !component.find('.additional-label').length,
-      'has an additional label without content'
+      !component.find('.example').length,
+      'has an example label without content'
     );
   });
 
-  it('includes an additional label if no example is provided', function() {
+  it('includes an additional label if an example is provided', function() {
     let component = render(
       <TextInput identifier='zardoz' example='Get on your alien duds!'/>
     );
 
     assert.ok(
-      component.find('.additional-label').length,
+      component.find('.example').length,
       'missing additional label'
     );
   });
 
-  describe('error states', function() {
-    it('will have a label, text input and additional labeling with an error when error messages are passed in', function() {
-      let component = render(
+  describe('when it has an error', function() {
+    let component; 
+    beforeEach(function() {
+      component = render(
         <TextInput
           identifier='zardoz'
           errorMessage='Jumpsuit is all wrong!'
         />
       );
+    }); 
+    it('will have an error label with the error message', function() {
+      assert(
+        component.find('.additional-label.error').length,
+        'error label missing'
+      );
+    });
 
+    it('will add an error class to the text input', function() {
+      assert(
+        component.find('input.error').length,
+        'input does not have an error class'
+      );
+    });
+
+    it('will add error class to label', function() {
+      assert(
+        component.find('label.error').length,
+        'label does not have an error class'
+      );
+    });
+
+    it('will have 3 elements with an error class', function() {
       assert.equal(
         component.find('.error').length,
         3,
         'error classes missing'
       );
-
-      assert(
-        component.find('label.error').length,
-        'label does not have an error class'
-      );
-
-      assert(
-        component.find('input.error').length,
-        'input does not have an error class'
-      );
-
-      assert(
-        component.find('.additional-label.error').length,
-        'additional label does not have an error class'
-      );
     });
 
     it('will include the error message in the additional label', function() {
-      let component = render(
-        <TextInput
-          identifier='zardoz'
-          errorMessage='Jumpsuit is all wrong!'
-        />
-      );
-
-      assert.equal(
-        component.find('.additional-label').text(),
-        'Jumpsuit is all wrong!',
-        'error message missing'
-      );
-    });
-
-    it('swaps the example text with the error message when there is an error', function() {
-      let component = render(
-        <TextInput
-          identifier='zardoz'
-          errorMessage=''
-          example='Enter your clothing option here'
-        />
-      );
-
-      assert.equal(
-        component.find('.additional-label').text(),
-        'Enter your clothing option here',
-        'additional label does not have correct content'
-      );
-
-      component = render(
-        <TextInput
-          identifier='zardoz'
-          errorMessage='Jumpsuit is all wrong!'
-          example='Enter your clothing option here'
-        />
-      );
-
       assert.equal(
         component.find('.additional-label').text(),
         'Jumpsuit is all wrong!',

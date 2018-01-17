@@ -5,7 +5,7 @@ import errorClass   from '../helpers/validations/error-class';
 
 import {
   ErrorIcon,
-  AdditionalLabel
+  ErrorLabel
 } from './validations.jsx';
 
 const calculateTabIndex = (props, value, values) => {
@@ -60,15 +60,13 @@ const makeMeSomeChildren = (props) => {
 
 const RadioSelectorCollection = (props) => {
   let errorName = errorClass(props);
-  let additionalText  = props.example;
   return (
     <div className='row radio-selector-collection'>
       <div>
         <ErrorIcon errorClass={ errorName } />
-        <AdditionalLabel
+        <ErrorLabel
           errorMessage={ props.errorMessage }
           errorClass={ errorName }
-          additionalText={ additionalText }
         />
       </div>
       { makeMeSomeChildren(props) }

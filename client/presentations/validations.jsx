@@ -4,14 +4,11 @@ import React        from 'react';
 
 import { hasValue } from '../helpers/data/validations';
 
-export const AdditionalLabel = (props) => {
-  if (
-    !hasValue(props.additionalText) &&
-    !props.errorClass
-  ) { return null; }
+export const ErrorLabel= (props) => {
+  if (!props.errorClass) { return null; }
 
 
-  let additionalText = props.additionalText;
+  let additionalText = '';
   if (props.errorClass) {
     additionalText = props.errorMessage;
   }

@@ -7,7 +7,7 @@ import { hasValue } from '../helpers/data/validations';
 import NumberInput  from './number-input.jsx';
 import {
   ErrorIcon,
-  AdditionalLabel
+  ErrorLabel
 } from './validations.jsx';
 
 const DateInput = (props) => {
@@ -16,7 +16,6 @@ const DateInput = (props) => {
     day   : props.validations.day(),
     year  : props.validations.year()
   }; 
-  let additionalText  = props.example;
   let errorMessage = '';
 
   let generateErrorClass = (string) => {
@@ -46,40 +45,42 @@ const DateInput = (props) => {
       </label>
 
       <NumberInput
-        {...props}
         identifier    = 'month'
-        description   = 'MM'
+        example       = 'MM'
         value         = { props.values.month}
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.month) }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
   
       <div className  = 'unit spacer'/>
  
       <NumberInput
-        {...props}
         identifier    = 'day'
-        description   = 'DD'
+        example       = 'DD'
         value         = { props.values.day }
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.day) }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
 
       <div className  = 'unit spacer'/>
 
       <NumberInput
-        {...props}
         identifier    = 'year'
-        description   = 'YYYY'
+        example       = 'YYYY'
         value         = { props.values.year }
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.year)  }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
 
-      <AdditionalLabel 
+      <ErrorLabel 
         errorMessage  = { errorMessage }
         errorClass    = { errorName }
-        additionalText  = { additionalText }
       />
     </div>
   );
