@@ -19,6 +19,12 @@ const DateInput = (props) => {
   let additionalText  = props.example;
   let errorMessage = '';
 
+  let generateErrorClass = (string) => {
+    return errorClass({
+      errorMessage: string
+    });
+  };
+
   let errorName = Object.values(errors).reduce((total, error) => {
     if (errorClass({errorMessage: error})) {
       errorMessage = error;
@@ -26,6 +32,8 @@ const DateInput = (props) => {
     }
     return total;
   }, '');
+
+  let labelClass = `normal`
 
   return (
     <div className='date-input'>
@@ -42,7 +50,8 @@ const DateInput = (props) => {
         identifier    = 'month'
         description   = 'MM'
         value         = { props.values.month}
-        error         = { errorName }
+        labelClass    = { labelClass }
+        error         = { generateErrorClass(errors.month) }
       />
   
       <div className  = 'unit spacer'/>
@@ -52,7 +61,8 @@ const DateInput = (props) => {
         identifier    = 'day'
         description   = 'DD'
         value         = { props.values.day }
-        error         = { errorName }
+        labelClass    = { labelClass }
+        error         = { generateErrorClass(errors.day) }
       />
 
       <div className  = 'unit spacer'/>
@@ -62,7 +72,8 @@ const DateInput = (props) => {
         identifier    = 'year'
         description   = 'YYYY'
         value         = { props.values.year }
-        error         = { errorName }
+        labelClass    = { labelClass }
+        error         = { generateErrorClass(errors.year)  }
       />
 
       <AdditionalLabel 

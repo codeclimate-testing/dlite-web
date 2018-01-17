@@ -8,15 +8,19 @@ import {
 } from './validations.jsx';
 
 const NumberInput = (props) => {
-  let className = `input-container ${props.identifier}-input ${props.error}`;
+  let className = `input-container ${props.identifier}-input`;
   let errorName = errorClass(props);
   let additionalText  = props.example;
+
+  // if this numberInput is part of a dateInput, then the description should not turn red on error and so the errorName does not get passed to the class
+  let labelClass = props.hasOwnProperty('labelClass') ? `${props.labelClass}` : errorName;
+  let inputClass = props.hasOwnProperty('error') ? `${props.error}` : errorName ;
 
   return (
     <div className  = 'unit'>
       <label 
         htmlFor     = { props.identifier }
-        className   = { errorName }
+        className   = { labelClass }
       >
         <ErrorIcon errorClass={ errorName } />
         {props.description}
@@ -24,7 +28,7 @@ const NumberInput = (props) => {
       
       <div className= { className }>
         <input
-          className = { className }
+          className = { inputClass }
           type      = 'number'
           id        = { props.identifier }
           name      = { props.identifier }
