@@ -14,6 +14,6 @@ let checkNames = (props) => {
 };
 
 export default {
-  hasUsedPreviousNames: selectionValidator('selectionMissing', 'hasUsedPreviousNames'),
+  hasUsedPreviousNames: selectionValidator('nameHistorySelectionMissing', 'hasUsedPreviousNames'),
   previousNames: checkNames
 };

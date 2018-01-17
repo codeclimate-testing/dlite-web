@@ -16,12 +16,12 @@ describe('Names history page validation rules:', function() {
     assert.deepEqual(rules.previousNames(props), []);
   });
 
-  it('when no selection has been made, selectionMissing error appears', function() {
+  it('when no selection has been made, nameHistorySelectionMissing error appears', function() {
     let props = {
       hasUsedPreviousNames: ''
     };
 
-    assert.deepEqual(rules.hasUsedPreviousNames(props), [messages.selectionMissing]);
+    assert.deepEqual(rules.hasUsedPreviousNames(props), [messages.nameHistorySelectionMissing]);
   });
 
   it('when no previous name has been entered, the nameHistorySelectionMissing error shows', function() {

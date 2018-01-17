@@ -22,12 +22,15 @@ const TextArea = (props) => {
       </label>
       <div className="input-container">
         <textarea
-          className={ className }
-          type="text"
-          id={ props.identifier }
-          name={ props.identifier }
-          onChange={ props.onChange }
-          value={ props.value }/>
+          className = { className }
+          type      = "text"
+          id        = { props.identifier }
+          name      = { props.identifier }
+          onChange  = { props.onChange }
+          onBlur    = { props.onBlur }
+          onFocus   = { props.onFocus }
+          value     = { props.value }
+        />
       </div>
       <AdditionalLabel
         errorMessage={ props.errorMessage }
