@@ -76,12 +76,10 @@ export const realID = (props) => {
 };
 
 export const ssn = (props) => {
-  let key = 'myBasics';
+  let key = 'licenseHistory';
 
   if (getDL(props)) {
     key = 'medicalHistory';
-  } else {
-    key = 'licenseHistory';
   };
 
   return key;
