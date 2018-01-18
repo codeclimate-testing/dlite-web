@@ -18,6 +18,7 @@ const OrganDonationPage = (props) => {
           {...props}
           onChange      = { props.onChange }
           selectedValue = { props.organDonation.donateOrgan }
+          errorMessage  = { props.validations.donateOrgan() }
         />
 
         <hr />
@@ -26,9 +27,13 @@ const OrganDonationPage = (props) => {
           {...props}
           onChange      = { props.onChange }
           selectedValue = { props.organDonation.donateMoney }
+          errorMessage  = { props.validations.donateMoney() }
         />
 
-        <NavigationButtons {...props} />
+          <NavigationButtons
+            {...props}
+            errorMessage={ props.validations.all() }
+          />
       </form>
     </Page>
   )

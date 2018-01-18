@@ -113,4 +113,38 @@ describe('Data helpers for youth', function() {
       assert.equal(tooYoungForDL(data), false);
     });
   });
+
+  describe('#under16GuardianSingnature', function() {
+    it('is true if they are under 16', function() {
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 15).toString(),
+          month: (today.getMonth() + 1).toString(),
+          day: today.getDate().toString()
+        },
+        cardType: {
+          new: ['ID', 'DL']
+        }
+      };
+      assert.equal(tooYoungForDL(data), true);
+    });
+
+    it('should be false if they over 16', function() {
+      let today = new Date();
+
+      let data = {
+        dateOfBirth: {
+          year: (today.getFullYear() - 10).toString(),
+          month: (today.getMonth() + 1).toString(),
+          day: today.getDate().toString()
+        },
+        cardType: {
+          new: ['ID']
+        }
+      };
+      assert.equal(tooYoungForDL(data), false);
+    });
+  });
 });

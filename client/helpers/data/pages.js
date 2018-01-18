@@ -8,7 +8,8 @@ import {
   realID,
   chooseLicenseClass,
   chooseCardReplacement,
-  socialSecurity
+  socialSecurity,
+  organDonationPath
 } from './next-path';
 
 const getStarted = [
@@ -160,7 +161,8 @@ const organDonation = [
   {
     key: 'organDonation',
     description: 'Organ donation',
-    path: '/organ-donation'
+    path: '/organ-donation',
+    next: organDonationPath
   }
 ];
 

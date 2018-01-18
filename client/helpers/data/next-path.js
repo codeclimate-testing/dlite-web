@@ -1,8 +1,11 @@
 'use strict';
 
 import { getDL } from './card-type';
-import { tooYoungForDL } from './youth';
 import { eligibleForSeniorID } from './senior';
+import {
+  tooYoungForDL,
+  under16GuardianSignature
+} from './youth';
 import { 
   hasExistingCard,
   isChangingCard,
@@ -78,6 +81,15 @@ export const socialSecurity = (props) => {
 
   if (getDL(props)) {
     key = 'medicalHistory';
+  }
+  return key;
+};
+
+export const organDonationPath = (props) => {
+  let key = 'voterIntro';
+
+  if (under16GuardianSignature(props)) {
+    key = 'guardianSignature';
   }
   return key;
 };

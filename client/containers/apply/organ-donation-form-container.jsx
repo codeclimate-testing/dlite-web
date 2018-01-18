@@ -9,23 +9,21 @@ import * as dataPresent               from '../../helpers/data-present';
 import { updateOrganDonation }        from '../../actions/index';
 import { ageChecks }                  from '../../helpers/calculate-age';
 import Presentation                   from '../../presentations/apply/organ-donation-page.jsx';
+import { OrganDonationValidator }     from '../../helpers/validations';
 
 const Page = (props) => {
+  let validations = new OrganDonationValidator(props.organDonation, props.validations);
+  let onSubmit = handlers.navigateOrShowErrors('organDonation', props, validations);
+  let onBack   = handlers.navigateOnBack(props);
 
-  let submitAddress = '/voting-registration/introduction';
-  if(ageChecks.Under16(props.dateOfBirth)) {
-    submitAddress = '/guardian-signature';
-  }
-  let onSubmit            = handlers.navigateOnSubmit(submitAddress, props);
-  let onBack              = handlers.navigateOnBack(props);
-
-  const continueDisabled = !dataPresent.organDonation(props.organDonation);
   return (
     <Presentation
       {...props}
-      onSubmit            = { onSubmit }
-      onBack              = { onBack }
-      continueDisabled    = { continueDisabled }
+      onSubmit     = { onSubmit }
+      onBack       = { onBack }
+      validations  = { validations }
+      onBlur       = { props.onBlurValidate }
+      onFocus      = { props.onFocusClearValidation }
     />
   );
 }
@@ -34,7 +32,8 @@ function mapStateToProps(state) {
   return {
     organDonation:  state.application.organDonation,
     dateOfBirth:    state.application.dateOfBirth,
-    focused:        state.ui.focus
+    focused:        state.ui.focus,
+    validations:    state.ui.validations
   };
 };
 

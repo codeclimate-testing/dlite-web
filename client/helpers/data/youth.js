@@ -12,3 +12,7 @@ export const tooYoungForDL = (props) => {
   return ageChecks.Under15Half(props.dateOfBirth) &&
     getDL(props);
 };
+
+export const under16GuardianSignature = (props) => {
+  return ageChecks.Under16(props.dateOfBirth);
+};
