@@ -1,41 +1,26 @@
 'use strict';
 
-import React                             from 'react';
-import connectForm                       from '../../helpers/connect-form';
-
-import { updateEligibilityRequirements } from '../../actions/index';
-import EligibilityRequirements           from '../../presentations/voter-registration/eligibility-requirements/eligibility-requirements-form.jsx';
-import PreRegEligibilityRequirements     from '../../presentations/voter-registration/eligibility-requirements/eligibility-requirements-prereg-form.jsx';
-import handlers                          from '../../helpers/handlers';
-import {
-   eligibileForRequirements
-  } from '../../helpers/data/voting';
-import { isPreregistering
-} from '../../helpers/calculate-age';
+import React                              from 'react';
+import connectForm                        from '../../helpers/connect-form';
+import { updateEligibilityRequirements }  from '../../actions/index';
+import handlers                           from '../../helpers/handlers';
+import { checkPreReg }                    from '../../helpers/data/youth';
+import Presentation                       from '../../presentations/voter-registration/eligibility-requirements-page.jsx';
 
 const Page = (props) => {
+  let validations       = [];
+  let onSubmit          = handlers.navigateOrShowErrors('votingEligibility', props, validations);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
-  let address = '/summary';
-  if(isPreregistering(props.dateOfBirth)){
-    address = '/guardian-signature';
-  }
-  if (eligibileForRequirements(props)) {
-    address = '/voting-registration/opt-out';
-  };
-
-  let onSubmit          = handlers.navigateOnSubmit(address, props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = false;
-
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegEligibilityRequirements : EligibilityRequirements;
+  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
     <Presentation
       {...props}
-      onSubmit={onSubmit}
-      onBack={onBack}
+      onSubmit  = {onSubmit}
+      onBack    = {onBack}
       selectedValue={props.eligibilityRequirements}
-      continueDisabled={continueDisabled}
+      prereg    = {prereg}
     />
   );
 };

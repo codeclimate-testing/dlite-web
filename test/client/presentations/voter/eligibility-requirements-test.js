@@ -6,7 +6,7 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import EligibilityPage          from '../../../../client/presentations/voter-registration/eligibility-requirements/eligibility-requirements-form.jsx';
+import EligibilityPage          from '../../../../client/presentations/voter-registration/eligibility-requirements-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('EligibilityPage', function() {

@@ -7,7 +7,7 @@ import configure                from '../../support/configure-enzyme'
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import CitizenStatusPage        from '../../../../client/presentations/voter-registration/citizen-status/citizen-status-form.jsx';
+import CitizenStatusPage        from '../../../../client/presentations/voter-registration/citizen-status-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('CitizenStatusPage', function() {

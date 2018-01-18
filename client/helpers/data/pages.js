@@ -10,6 +10,8 @@ import {
   chooseCardReplacement,
   socialSecurity,
   organDonationPath
+  citizenship,
+  votingEligibility
 } from './next-path';
 
 const getStarted = [
@@ -177,12 +179,14 @@ const voterRegistration = [
   {
     key: 'citizenship',
     description: 'Citizenship',
-    path: '/voting-registration/citizenship'
+    path: '/voting-registration/citizenship',
+    next: citizenship
   },
   {
     key: 'votingEligibility',
     description: 'Eligibility ',
-    path: '/voting-registration/eligibility'
+    path: '/voting-registration/eligibility',
+    next: votingEligibility
   },
   {
     key: 'votingOptOut',
@@ -207,7 +211,8 @@ const voterRegistration = [
   {
     key: 'ballotByMail',
     description: 'Ballot by mail',
-    path: '/voting-registration/vote-by-mail'
+    path: '/voting-registration/vote-by-mail',
+    next: 'contactMethods'
   },
   {
     key: 'contactMethods',

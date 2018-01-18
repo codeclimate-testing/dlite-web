@@ -7,11 +7,11 @@ import { updateBallotByMail }   from '../../actions/index';
 import Presentation             from '../../presentations/voter-registration/ballot-by-mail-page.jsx';
 import handlers                 from '../../helpers/handlers';
 import { BallotByMailValidator }from '../../helpers/validations';
-import { isPreregistering }     from '../../helpers/calculate-age';
+import { checkPreReg }          from '../../helpers/data/youth';
 
 const Page = (props) => {
   let validations       = new BallotByMailValidator(props.ballotByMail, props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors('/voting-registration/contact-methods', props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors('ballotByMail', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   let focus             =   function(e) {
@@ -19,7 +19,7 @@ const Page = (props) => {
     return props.onFocus(e);
   };
 
-  let prereg = isPreregistering(props.dateOfBirth);
+  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
       <Presentation

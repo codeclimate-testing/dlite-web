@@ -2,32 +2,17 @@
 
 import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
-
 import { updateCitizenStatus }  from '../../actions/index';
-import CitizenStatusForm        from '../../presentations/voter-registration/citizen-status/citizen-status-form.jsx';
-import PreRegCitizenStatusForm  from '../../presentations/voter-registration/citizen-status/citizen-status-prereg-form.jsx';
+import Presentation             from '../../presentations/voter-registration/citizen-status-page.jsx';
 import handlers                 from '../../helpers/handlers';
-import {
-  eligibleForCitizen
-} from '../../helpers/data/voting';
-import { isPreregistering
-} from '../../helpers/calculate-age';
+import { checkPreReg }          from '../../helpers/data/youth';
 
 const Page = (props) => {
+  let validations       = [];
+  let onSubmit          = handlers.navigateOrShowErrors('citizenship', props, validations);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
-  let address = '/summary';
-  if(isPreregistering(props.dateOfBirth)){
-    address = '/guardian-signature';
-  }
-  if (eligibleForCitizen(props)) {
-    address = '/voting-registration/eligibility';
-  };
-
-  let onSubmit          = handlers.navigateOnSubmit(address, props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = false;
-
-  const Presentation    = isPreregistering(props.dateOfBirth) ? PreRegCitizenStatusForm : CitizenStatusForm;
+  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
     <Presentation
@@ -36,7 +21,7 @@ const Page = (props) => {
       onBack            = {onBack}
       onChange          = {props.onChange}
       selectedValue     = {props.citizenStatus}
-      continueDisabled  = {continueDisabled}
+      prereg            = {prereg}
     />
   );
 };

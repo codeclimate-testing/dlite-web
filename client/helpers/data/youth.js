@@ -1,6 +1,9 @@
 'use strict';
 
-import { ageChecks } from '../calculate-age';
+import { 
+  ageChecks, 
+  isPreregistering
+} from '../calculate-age';
 import { getDL } from './card-type';
 
 export const validToContinue = (props) => {
@@ -15,4 +18,7 @@ export const tooYoungForDL = (props) => {
 
 export const under16GuardianSignature = (props) => {
   return ageChecks.Under16(props.dateOfBirth);
+};
+export const checkPreReg = (dateOfBirth) => {
+  return isPreregistering(dateOfBirth) ? 'voterPreRegistration' : 'voterRegistration';
 };

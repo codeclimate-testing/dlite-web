@@ -27,11 +27,11 @@ const values = {
 };
 
 const BallotByMailPage = (props) => {
-  let sectionKey = props.prereg ? 'voterPreRegistration' : 'voterRegistration';
+
   return (
     <Page
       {...props}
-      sectionKey={sectionKey}
+      sectionKey={props.prereg}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
         <h2 className='question'>Would you like to get your ballot by mail before each election?</h2>

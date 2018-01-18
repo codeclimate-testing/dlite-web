@@ -12,6 +12,10 @@ import {
   isReplacingCard
  } from './card-actions';
 import { eligibleForReducedFee } from './reduced-fee';
+import {
+  eligibleForCitizen,
+  eligibleForRequirements
+} from '../../helpers/data/voting';
 
 export const chooseCardType = (props) => {
   let key = 'realID';
@@ -91,5 +95,24 @@ export const organDonationPath = (props) => {
   if (under16GuardianSignature(props)) {
     key = 'guardianSignature';
   }
+  return key;
+};
+export const citizenship = (props) => {
+  let key = 'summary';
+  if(isPreregistering(props.dateOfBirth)){
+    key = '/guardian-signature';
+  } else if (eligibleForCitizen(props)) {
+    key = '/voting-registration/eligibility';
+  };
+  return key;
+};
+
+export const votingEligibility = (props) => {
+  let key = '/summary';
+  if(isPreregistering(props.dateOfBirth)){
+    key = '/guardian-signature';
+  } else if (eligibileForRequirements(props)) {
+    key = '/voting-registration/opt-out';
+  };
   return key;
 };

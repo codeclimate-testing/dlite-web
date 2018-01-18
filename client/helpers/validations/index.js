@@ -25,6 +25,7 @@ import addressRules             from './address-rules';
 import veteransRules            from './veterans-rules';
 import ballotByMailRules        from './ballot-by-mail-rules';
 
+
 export const NamePageValidator        = formValidationGenerator(namePageRules);
 export const DOBValidator             = formValidationGenerator(dobPageRules);
 export const WDYWTDTValidator         = formValidationGenerator(wdywtdtRules);
