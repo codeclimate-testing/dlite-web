@@ -1,4 +1,4 @@
-.choice-selector {
+  .choice-selector {
   @include line;
   margin-bottom: 14px;
   margin-right: 0;
@@ -71,6 +71,52 @@
     .checkbox-selector {
       .icon-region {
         background-image: url("/images/icons/checkbox/selected.svg");
+      }
+    }
+  }
+
+  &.choice-selector{
+    &.car{
+      .checkbox-selector .icon-region{
+        background-image: url("/images/icons/license/car.svg");
+      }
+    }
+    &.cycle{
+       .checkbox-selector .icon-region{
+        background-image: url("/images/icons/license/motorcycle.svg");
+      }
+    }
+    &.trailer{
+       .checkbox-selector .icon-region{
+        background-image: url("/images/icons/license/5thwheel.svg");
+      }
+    }
+    &.long{
+       .checkbox-selector .icon-region{
+        background-image: url("/images/icons/license/trailer.svg");
+      }
+    }
+     &.unsure{
+       .checkbox-selector .icon-region{
+        background-image: url("/images/icons/license/_.svg");
+      }
+    }
+  }
+  
+  &.choice-selector{
+    &.car, &.cycle, &.trailer, &.long, &.unsure{
+      .checkbox-selector .icon-region{
+        background-color: #2309C1;
+      }
+    }  
+  }
+
+  &.choice-selector{
+    &.selected{
+      &.car, &.cycle, &.trailer, &.long, &.unsure{
+        .checkbox-selector .icon-region{
+          background-image: url("/images/icons/checkbox/check.svg");
+        }
       }
     }
   }
@@ -213,3 +259,4 @@
     }
   }  
 }
+
