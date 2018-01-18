@@ -64,20 +64,20 @@ function extractAddresses(data) {
     {
       application_id:     data.id,
       type:               'mailing',
-      street_address_1:   data.mailingAddress.street_1,
-      street_address_2:   data.mailingAddress.street_2,
-      city:               data.mailingAddress.city,
-      state:              data.mailingAddress.state,
-      zip:                data.mailingAddress.zip
+      street_address_1:   data.address.mailing.street_1,
+      street_address_2:   data.address.mailing.street_2,
+      city:               data.address.mailing.city,
+      state:              data.address.mailing.state,
+      zip:                data.address.mailing.zip
     },
     {
       application_id:     data.id,
       type:               'home',
-      street_address_1:   data.homeAddress.street_1,
-      street_address_2:   data.homeAddress.street_2,
-      city:               data.homeAddress.city,
-      state:              data.homeAddress.state,
-      zip:                data.homeAddress.zip
+      street_address_1:   data.address.home.street_1,
+      street_address_2:   data.address.home.street_2,
+      city:               data.address.home.city,
+      state:              data.address.home.state,
+      zip:                data.address.home.zip
     }
   ];
 }
@@ -301,7 +301,7 @@ function extractCardOptions(data) {
       option_value:       'replace-' + data.cardReplacement.reason
     });
   };
-  
+
   if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
     cardOptions.push({
       type:               'ID',
@@ -320,7 +320,7 @@ function extractCardOptions(data) {
     var hasID = cardTypeParser.hasID(data.cardType);
     var hasDL = cardTypeParser.hasDL(data.cardType);
     var designation = hasID && hasDL ? data.realID.realIdDesignation : hasID ? 'ID' : hasDL ? 'DL' : ''
- 
+
     cardOptions.push({
       type:               designation,
       option_type:        'modification',

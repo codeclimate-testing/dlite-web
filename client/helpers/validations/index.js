@@ -21,6 +21,7 @@ import licenseHistoryRules      from './license-history-rules';
 import namesHistoryRules        from './names-history-rules';
 import licenseIssuesRules       from './license-issues-rules';
 import organDonationRules       from './organ-donation-rules';
+import addressRules             from './address-rules';
 
 export const NamePageValidator        = formValidationGenerator(namePageRules);
 export const DOBValidator             = formValidationGenerator(dobPageRules);
@@ -41,4 +42,4 @@ export const LicenseIssuesValidator   = formValidationGenerator(licenseIssuesRul
 export const NamesValidator           = formValidationGenerator(namesHistoryRules);
 export const LicenseHistoryValidator  = formValidationGenerator(licenseHistoryRules);
 export const OrganDonationValidator   = formValidationGenerator(organDonationRules);
-
+export const AddressValidator         = formValidationGenerator(addressRules);

@@ -40,20 +40,20 @@ describe('client data parser', function() {
     let address = addresses[0];
     assert.equal(address.application_id, data.id);
     assert.equal(address.type, 'mailing');
-    assert.equal(address.street_address_1,  data.mailingAddress.street_1);
-    assert.equal(address.street_address_2,  data.mailingAddress.street_2);
-    assert.equal(address.city,              data.mailingAddress.city);
-    assert.equal(address.state,             data.mailingAddress.state);
-    assert.equal(address.zip,               data.mailingAddress.zip);
+    assert.equal(address.street_address_1,  data.address.mailing.street_1);
+    assert.equal(address.street_address_2,  data.address.mailing.street_2);
+    assert.equal(address.city,              data.address.mailing.city);
+    assert.equal(address.state,             data.address.mailing.state);
+    assert.equal(address.zip,               data.address.mailing.zip);
 
     address = addresses[1];
     assert.equal(address.application_id, data.id);
     assert.equal(address.type, 'home');
-    assert.equal(address.street_address_1,  data.homeAddress.street_1);
-    assert.equal(address.street_address_2,  data.homeAddress.street_2);
-    assert.equal(address.city,              data.homeAddress.city);
-    assert.equal(address.state,             data.homeAddress.state);
-    assert.equal(address.zip,               data.homeAddress.zip);
+    assert.equal(address.street_address_1,  data.address.home.street_1);
+    assert.equal(address.street_address_2,  data.address.home.street_2);
+    assert.equal(address.city,              data.address.home.city);
+    assert.equal(address.state,             data.address.home.state);
+    assert.equal(address.zip,               data.address.home.zip);
   });
 
   it('correctly extracts cards', function() {

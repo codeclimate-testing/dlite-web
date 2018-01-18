@@ -103,7 +103,8 @@ const myBasics = [
   {
     key: 'addresses',
     description: 'Addresses',
-    path: '/my-basics/address'
+    path: '/my-basics/address',
+    next: 'sexEyeHair'
   },
   {
     key: 'sexEyeHair',

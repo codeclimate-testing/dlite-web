@@ -47,11 +47,11 @@ describe('server data parser', function() {
     getApplication(data.application.id)
     .then((records) => {
       parsedData = parse(records);
-      assert.equal(parsedData.application.homeAddress.street_1, clientData.homeAddress.street_1);
-      assert.equal(parsedData.application.homeAddress.street_2, clientData.homeAddress.street_2);
-      assert.equal(parsedData.application.homeAddress.city, clientData.homeAddress.city);
-      assert.equal(parsedData.application.homeAddress.state, clientData.homeAddress.state);
-      assert.equal(parsedData.application.homeAddress.zip, clientData.homeAddress.zip);
+      assert.equal(parsedData.application.address.home.street_1, clientData.address.home.street_1);
+      assert.equal(parsedData.application.address.home.street_2, clientData.address.home.street_2);
+      assert.equal(parsedData.application.address.home.city, clientData.address.home.city);
+      assert.equal(parsedData.application.address.home.state, clientData.address.home.state);
+      assert.equal(parsedData.application.address.home.zip, clientData.address.home.zip);
       done();
     })
     .catch(done);
@@ -61,11 +61,11 @@ describe('server data parser', function() {
     getApplication(data.application.id)
     .then((records) => {
       parsedData = parse(records);
-      assert.equal(parsedData.application.mailingAddress.street_1, clientData.mailingAddress.street_1);
-      assert.equal(parsedData.application.mailingAddress.street_2, clientData.mailingAddress.street_2);
-      assert.equal(parsedData.application.mailingAddress.city, clientData.mailingAddress.city);
-      assert.equal(parsedData.application.mailingAddress.state, clientData.mailingAddress.state);
-      assert.equal(parsedData.application.mailingAddress.zip, clientData.mailingAddress.zip);
+      assert.equal(parsedData.application.address.mailing.street_1, clientData.address.mailing.street_1);
+      assert.equal(parsedData.application.address.mailing.street_2, clientData.address.mailing.street_2);
+      assert.equal(parsedData.application.address.mailing.city, clientData.address.mailing.city);
+      assert.equal(parsedData.application.address.mailing.state, clientData.address.mailing.state);
+      assert.equal(parsedData.application.address.mailing.zip, clientData.address.mailing.zip);
       done();
     })
     .catch(done);

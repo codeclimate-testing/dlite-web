@@ -17,15 +17,18 @@ const Form = (props) => {
       <h2 className='question'>Do you receive mail at this address too?</h2>
       <p>The DMV will print your Mailing Address on your Driver License</p>
         <div className='input-container'>
-          <RadioCollection 
+          <RadioCollection
             {...props}
-            name='homeAddressSameAsMailing'
-            text={values}
+            name          = 'homeAddressSameAsMailing'
+            text          = { values }
+            onBlur        = { props.onBlurValidate }
+            onFocus       = { props.focus }
+            errorMessage  = { props.validations.homeAddressSameAsMailing()}
           >
-            <RadioSelector 
+            <RadioSelector
               value='Yes'
             />
-            <RadioSelector 
+            <RadioSelector
               value='No'
             />
           </RadioCollection>

@@ -30,6 +30,7 @@ export const TYPES = {
   UPDATE_REAL_ID:                         'UPDATE_REAL_ID',
   UPDATE_SENIOR_ID:                       'UPDATE_SENIOR_ID',
   UPDATE_LICENSE_TYPE:                    'UPDATE_LICENSE_TYPE',
+  UPDATE_ADDRESS:                         'UPDATE_ADDRESS',
   UPDATE_HOME_ADDRESS:                    'UPDATE_HOME_ADDRESS',
   UPDATE_MAILING_ADDRESS:                 'UPDATE_MAILING_ADDRESS',
   UPDATE_DATE_OF_BIRTH:                   'UPDATE_DATE_OF_BIRTH',
@@ -73,6 +74,7 @@ export const updateReducedFee                 = generateFormAction(TYPES.UPDATE_
 export const updateRealID                     = generateFormAction(TYPES.UPDATE_REAL_ID);
 export const updateSeniorID                   = generateFormAction(TYPES.UPDATE_SENIOR_ID);
 export const updateLicenseType                = generateFormAction(TYPES.UPDATE_LICENSE_TYPE);
+export const updateAddress                    = generateFormAction(TYPES.UPDATE_ADDRESS);
 export const updateHomeAddress                = generateFormAction(TYPES.UPDATE_HOME_ADDRESS);
 export const updateMailingAddress             = generateFormAction(TYPES.UPDATE_MAILING_ADDRESS);
 export const updateDateOfBirth                = generateFormAction(TYPES.UPDATE_DATE_OF_BIRTH);

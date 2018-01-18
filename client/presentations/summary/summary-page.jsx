@@ -91,7 +91,7 @@ const SummaryPage = (props) => {
 
     <LegalName legalName={application.legalName} key='legal-name' />,
     <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
-    <Address homeAddress={application.homeAddress} mailingAddress={application.mailingAddress} key='address' />,
+    <Address address={application.address} key='address' />,
     <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
     <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
     <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,

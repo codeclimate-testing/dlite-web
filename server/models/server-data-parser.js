@@ -39,8 +39,7 @@ function parse(data) {
         licenseType:              getLicenseType(license_classes),
         reducedFee:               getReducedFee(card_options),
         seniorID:                 getSeniorID(card_options),
-        homeAddress:              getHomeAddress(addresses),
-        mailingAddress:           getMailingAddress(addresses),
+        address:                  getAddress(addresses),
         physicalTraits:           getPhysicalTraits(application),
         traitsHeightWeight:       getHeightAndWeight(application),
         socialSecurity:           getSocialSecurity(application),
@@ -84,41 +83,40 @@ function getDateOfBirth(application) {
 
 }
 
-function getHomeAddress(addresses) {
+function getAddress(addresses) {
+
   let home_address = {};
+  let mailing_address = {};
   let sameAddresses = 'Yes';
+
   addresses.forEach(function(address) {
     if(address.type === 'home'){
       home_address = address;
-    } else if(address.type === 'mailing') {
+    }
+    if(address.type === 'mailing') {
+      mailing_address = address;
       sameAddresses = 'No';
     }
   });
+
   return {
-    street_1: home_address.street_address_1,
-    street_2: home_address.street_address_2,
-    city:     home_address.city,
-    state:    home_address.state,
-    zip:      home_address.zip,
-    homeAddressSameAsMailing: sameAddresses
-  };
-
-}
-
-function getMailingAddress(addresses) {
-  let mailing_address = {};
-  addresses.forEach(function(address) {
-    if(address.type === 'mailing'){
-      mailing_address = address;
+    homeAddressSameAsMailing: sameAddresses,
+    home: {
+      street_1: home_address.street_address_1,
+      street_2: home_address.street_address_2,
+      city:     home_address.city,
+      state:    home_address.state,
+      zip:      home_address.zip,
+    },
+    mailing: {
+      street_1: mailing_address.street_address_1,
+      street_2: mailing_address.street_address_2,
+      city:     mailing_address.city,
+      state:    mailing_address.state,
+      zip:      mailing_address.zip,
     }
-  });
-  return {
-    street_1: mailing_address.street_address_1,
-    street_2: mailing_address.street_address_2,
-    city:     mailing_address.city,
-    state:    mailing_address.state,
-    zip:      mailing_address.zip
   };
+
 }
 
 function getPhysicalTraits(application) {
@@ -354,10 +352,10 @@ function getCardTypes(card_options, cards) {
             cardType[option.option_value] = card.type;
           }
         });
-      } 
+      }
     }
   });
-  
+
   return cardType;
 }
 
@@ -376,7 +374,7 @@ function getLicenseType(license_classes) {
       } else {
         licenseType.type.push(item.type);
       }
-   
+
     });
   }
   return licenseType;

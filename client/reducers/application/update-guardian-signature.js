@@ -14,11 +14,11 @@ function defaultState() {
       signatureDateDay: '',
       signatureDateYear: '',
       phoneNumber: '',
-      street_1: '',
-      street_2: '',
-      city: '',
-      state: 'CA',
-      zip: '',
+      guardianStreet_1: '',
+      guardianStreet_2: '',
+      guardianCity: '',
+      guardianState: 'CA',
+      guardianZip: '',
       IDNumber: '',
       IDIssuedBy: '',
       IDExpirationDateMonth: '',
@@ -33,11 +33,11 @@ function defaultState() {
       signatureDateDay: '',
       signatureDateYear: '',
       phoneNumber: '',
-      street_1: '',
-      street_2: '',
-      city: '',
-      state: 'CA',
-      zip: '',
+      guardianStreet_1: '',
+      guardianStreet_2: '',
+      guardianCity: '',
+      guardianState: 'CA',
+      guardianZip: '',
       IDNumber: '',
       IDIssuedBy: '',
       IDExpirationDateMonth: '',
@@ -55,7 +55,6 @@ export default function(state = defaultState(), action) {
 
   let data = {};
   let payload = action.payload;
-
   if (payload) {
     let guardianID = '';
     let name    = payload.name;
@@ -75,6 +74,7 @@ export default function(state = defaultState(), action) {
       if(name === 'acceptLiabilities'){
         value = value === `${name}_${guardianID}-true` ? true : false;
       }
+
       data['guardianInfo'][guardianID][name] = value;
     }
   }

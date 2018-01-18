@@ -83,7 +83,7 @@ describe('Summary section', function() {
       };
       let component = render(
         <Wrapper>
-          <DateOfBirth 
+          <DateOfBirth
             { ...props }
           />
         </Wrapper>
@@ -102,7 +102,7 @@ describe('Summary section', function() {
       props.cardAction = 'new';
       let component = render(
         <Wrapper>
-          <Cards 
+          <Cards
             { ...props }
           />
         </Wrapper>
@@ -182,7 +182,7 @@ describe('Summary section', function() {
   describe('SeniorID', function() {
     it('shows SeniorID selection', function(){
       props.seniorID = 'Yes';
-  
+
       let component = render(
         <Wrapper>
           <SeniorID
@@ -225,12 +225,12 @@ describe('Summary section', function() {
       assert.ok(component.text().includes('Need to drive: Car, and I\'m not sure'), 'license type not rendered in summary');
     });
   });
-  
+
   describe('ReducedFee', function() {
     it('returns null when no value', function(){
       let component = render(
         <Wrapper>
-          <ReducedFee 
+          <ReducedFee
             { ...props }
           />
         </Wrapper>
@@ -256,7 +256,8 @@ describe('Summary section', function() {
 
   describe('Address', function() {
     it('shows address fields', function(){
-      props.homeAddress = {
+      props.homeAddressSameAsMailing = 'No';
+      props.address.home = {
         street_1: '111 Main Street',
         street_2: '',
         city: 'Sacramento',
@@ -264,7 +265,7 @@ describe('Summary section', function() {
         zip: '95814'
       };
 
-      props.mailingAddress = {
+      props.address.mailing = {
         street_1: '222 High Street',
         street_2: '',
         city: 'Beverly Hills',
@@ -618,11 +619,11 @@ describe('Summary section', function() {
           signatureDateDay: '4',
           signatureDateYear: '2018',
           phoneNumber: '(616)-923-1221',
-          street_1: '865 Main Street',
-          street_2: 'Unit no. 05',
-          city: 'Crazidino Here',
-          state: 'CA',
-          zip: '94000',
+          guardianStreet_1: '865 Main Street',
+          guardianStreet_2: 'Unit no. 05',
+          guardianCity: 'Crazidino Here',
+          guardianState: 'CA',
+          guardianZip: '94000',
           IDNumber: 'XYZ12344321',
           IDIssuedBy: 'U.S.A.',
           IDExpirationDateMonth: '10',
@@ -637,11 +638,11 @@ describe('Summary section', function() {
           signatureDateDay: '',
           signatureDateYear: '',
           phoneNumber: '',
-          street_1: '',
-          street_2: '',
-          city: '',
-          state: '',
-          zip: '',
+          guardianStreet_1: '',
+          guardianStreet_2: '',
+          guardianCity: '',
+          guardianState: '',
+          guardianZip: '',
           IDNumber: '',
           IDIssuedBy: '',
           IDExpirationDateMonth: '',

@@ -13,9 +13,8 @@ const Form = (props) => {
       <p>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</p>
       <div className='addresses-section'>
         <AddressTemplate
-          type      = 'home'
-          address   = { props.homeAddress }
-          onChange  = { props.onChange }
+          {...props}
+          type= 'home'
         />
       </div>
     </div>

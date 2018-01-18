@@ -10,8 +10,7 @@ import updateCardChanges                   from './update-card-changes';
 import updateCardReplacement               from './update-card-replacement';
 import updateCurrentCardInfo               from './update-current-card-info';
 import updateReducedFee                    from './update-reduced-fee';
-import updateHomeAddress                   from './update-home-address';
-import updateMailingAddress                from './update-mailing-address';
+import updateAddress                       from './update-address';
 import updateRealID                        from './update-real-id';
 import updateSeniorID                      from './update-senior-id';
 import updateLicenseType                   from './update-license-type';
@@ -43,8 +42,7 @@ const rootReducer = combineReducers({
   cardReplacement             : updateCardReplacement,
   currentCardInfo             : updateCurrentCardInfo,
   reducedFee                  : updateReducedFee,
-  homeAddress                 : updateHomeAddress,
-  mailingAddress              : updateMailingAddress,
+  address                     : updateAddress,
   dateOfBirth                 : updateDateOfBirth,
   realID                      : updateRealID,
   seniorID                    : updateSeniorID,

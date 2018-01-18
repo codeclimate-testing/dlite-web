@@ -7,15 +7,17 @@ import PageSummaryLink  from '../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 
 const Address = (props) => {
-  if (!dataPresent.address(props.homeAddress)) { return null; }
+  if (!dataPresent.address(props.address.home)) { return null; }
+  let homeAddress     = props.address.home;
+  let mailingAddress  = props.address.mailing;
 
-  let homeAddress = <div><p>{props.homeAddress.street_1}</p>
-                    <p>{props.homeAddress.street_2}</p>
-                    <p>{props.homeAddress.city}, {props.homeAddress.state} {props.homeAddress.zip}</p></div>
+  homeAddress = <div><p>{homeAddress.street_1}</p>
+                    <p>{homeAddress.street_2}</p>
+                    <p>{homeAddress.city}, {homeAddress.state} {homeAddress.zip}</p></div>
 
-  let mailingAddress = <div><p>{props.mailingAddress.street_1}</p>
-                       <p>{props.mailingAddress.street_2}</p>
-                       <p>{props.mailingAddress.city}, {props.mailingAddress.state} {props.mailingAddress.zip}</p></div>
+  mailingAddress = <div><p>{mailingAddress.street_1}</p>
+                       <p>{mailingAddress.street_2}</p>
+                       <p>{mailingAddress.city}, {mailingAddress.state} {mailingAddress.zip}</p></div>
 
   return (
     <PageSummaryLink

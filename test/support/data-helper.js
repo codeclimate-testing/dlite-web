@@ -52,20 +52,22 @@ function fakeClientData() {
       'form': 'Yes'
     },
     'seniorID': 'Yes',
-    'homeAddress': {
-      'street_1': '123',
-      'street_2': 'Main St.',
-      'city': 'Sacramento',
-      'state': 'CA',
-      'zip': '95656',
-      'homeAddressSameAsMailing': 'No'
-    },
-    'mailingAddress': {
-      'street_1': '456',
-      'street_2': 'Second St.',
-      'city': 'San Jose',
-      'state': 'CA',
-      'zip': '91212'
+    'address': {
+      'homeAddressSameAsMailing': 'No',
+      'home': {
+        'street_1': '123',
+        'street_2': 'Main St.',
+        'city': 'Sacramento',
+        'state': 'CA',
+        'zip': '95656'
+      },
+      'mailing': {
+        'street_1': '456',
+        'street_2': 'Second St.',
+        'city': 'San Jose',
+        'state': 'CA',
+        'zip': '91212'
+      }
     },
     'physicalTraits': {
       'hairColor': 'Auburn',

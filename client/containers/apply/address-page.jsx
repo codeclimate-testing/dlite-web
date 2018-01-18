@@ -4,9 +4,10 @@ import React                        from 'react';
 import { connect }                  from 'react-redux';
 
 import handlers                     from '../../helpers/handlers';
-import { canContinue }              from '../../helpers/data/address.js';
+import { AddressValidator }         from '../../helpers/validations';
 
-import { 
+import {
+  updateAddress,
   updateMailingAddress,
   updateHomeAddress
  }     from '../../actions/index';
@@ -14,41 +15,47 @@ import {
 import Presentation                 from '../../presentations/apply/address-page.jsx';
 
 const Page = (props) => {
-  let onSubmit          = handlers.navigateOnSubmit('/my-basics/physical-traits', props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = !canContinue(props);
+  let validations             = new AddressValidator(props.address, props.validations);
+  let onBack                  = handlers.navigateOnBack(props, validations);
+  let onSubmit                = handlers.navigateOrShowErrors('addresses', props, validations);
+
 
   return (
-    <Presentation 
+    <Presentation
       {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      onSubmit              = { onSubmit }
+      onBack                = { onBack }
+      validations           = { validations }
     />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    mailingAddress: state.application.mailingAddress,
-    homeAddress:    state.application.homeAddress,
-    focused:        state.ui.focus
+    address:        state.application.address,
+    focused:        state.ui.focus,
+    validations:    state.ui.validations
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  const onHomeChange    = handlers.onInputChange(updateHomeAddress, dispatch);
-  const onMailingChange = handlers.onInputChange(updateMailingAddress, dispatch);
-  const onSubmit        = handlers.onFormSubmit(dispatch);
-  const onBlur          = handlers.onBlur(dispatch);
-  const onFocus         = handlers.onFocus(dispatch);
+  const onAddressChange         = handlers.onInputChange(updateAddress, dispatch);
+  const onHomeChange            = handlers.onInputChange(updateHomeAddress, dispatch);
+  const onMailingChange         = handlers.onInputChange(updateMailingAddress, dispatch);
+  const onSubmit                = handlers.onFormSubmit(dispatch);
+  const onBlurValidate          = handlers.onBlurValidate(dispatch);
+  const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
+  const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
+
 
   return {
     onSubmit,
+    onAddressChange,
     onHomeChange,
     onMailingChange,
-    onBlur,
-    onFocus
+    onBlurValidate,
+    onFocusClearValidation,
+    onSubmitShowErrors
   };
 }
 

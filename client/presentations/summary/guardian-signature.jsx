@@ -31,11 +31,11 @@ const GuardianSignature = (props) => {
       <p> Signature day: {guardianInfoFirst.signatureDateDay} </p>
       <p> Signature year: {guardianInfoFirst.signatureDateYear} </p>
       <p> Phone number: {guardianInfoFirst.phoneNumber} </p>
-      <p>Street Address: {guardianInfoFirst.street_1}</p>
-      <p>Apartment or Unit Number: {guardianInfoFirst.street_2}</p>
-      <p>City: {guardianInfoFirst.city}</p>
-      <p>State: {guardianInfoFirst.state}</p>
-      <p>Zip: {guardianInfoFirst.zip}</p>
+      <p>Street Address: {guardianInfoFirst.guardianStreet_1}</p>
+      <p>Apartment or Unit Number: {guardianInfoFirst.guardianStreet_2}</p>
+      <p>City: {guardianInfoFirst.guardianCity}</p>
+      <p>State: {guardianInfoFirst.guardianState}</p>
+      <p>Zip: {guardianInfoFirst.guardianZip}</p>
       <p> ID number: {guardianInfoFirst.IDNumber} </p>
       <p> ID issued by: {guardianInfoFirst.IDIssuedBy} </p>
       <p> ID expiration month: {guardianInfoFirst.IDExpirationDateMonth} </p>
@@ -55,11 +55,11 @@ const GuardianSignature = (props) => {
         <p> Signature day: {guardianInfoSecond.signatureDateDay} </p>
         <p> Signature year: {guardianInfoSecond.signatureDateYear} </p>
         <p> Phone number: {guardianInfoSecond.phoneNumber} </p>
-        <p>Street Address: {guardianInfoSecond.street_1}</p>
-        <p>Apartment or Unit Number: {guardianInfoSecond.street_2}</p>
-        <p>City: {guardianInfoSecond.city}</p>
-        <p>State: {guardianInfoSecond.state}</p>
-        <p>Zip: {guardianInfoSecond.zip}</p>
+        <p>Street Address: {guardianInfoSecond.guardianStreet_1}</p>
+        <p>Apartment or Unit Number: {guardianInfoSecond.guardianStreet_2}</p>
+        <p>City: {guardianInfoSecond.guardianCity}</p>
+        <p>State: {guardianInfoSecond.guardianState}</p>
+        <p>Zip: {guardianInfoSecond.guardianZip}</p>
         <p> ID number: {guardianInfoSecond.IDNumber} </p>
         <p> ID issued by: {guardianInfoSecond.IDIssuedBy} </p>
         <p> ID expiration month: {guardianInfoSecond.IDExpirationDateMonth} </p>

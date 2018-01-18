@@ -37,19 +37,22 @@ const state  = {
       ID: '',
       form: ''
     },
-    homeAddress: {
-      street_1: '',
-      street_2: '',
-      city: '',
-      state: 'CA',
-      zip: ''
-    },
-    mailingAddress: {
-      street_1: '',
-      street_2: '',
-      city: '',
-      state: 'CA',
-      zip: ''
+    address: {
+      homeAddressSameAsMailing: '',
+      home: {
+        street_1: '',
+        street_2: '',
+        city: '',
+        state: 'CA',
+        zip: ''
+      },
+      mailing: {
+        street_1: '',
+        street_2: '',
+        city: '',
+        state: 'CA',
+        zip: '',
+      }
     },
     dateOfBirth: {
       month: '',

@@ -11,11 +11,34 @@ import AddressForm from '../../../client/presentations/address-template.jsx';
 
 describe('AddressTemplateForm', function() {
   let stateData = {
-    street_1: '123 main street',
-    street_2: 'Unit No. 45',
-    city: 'Cray',
-    state: 'CA',
-    zip: 93366
+    homeAddressSameAsMailing: '',
+    home: {
+      street_1: '123 main street',
+      street_2: 'Unit No. 45',
+      city: 'Cray',
+      state: 'CA',
+      zip: 93366,
+    },
+    mailing: {
+      street_1: '',
+      street_2: '',
+      city: '',
+      state: 'CA',
+      zip: '',
+    }
+  };
+  let validations = {
+    homeStreet_1:               sinon.spy(),
+    mailingStreet_1:            sinon.spy(),
+    homeStreet_2:               sinon.spy(),
+    mailingStreet_2:            sinon.spy(),
+    homeCity:                   sinon.spy(),
+    mailingCity:                sinon.spy(),
+    homeZip:                    sinon.spy(),
+    mailingZip:                 sinon.spy(),
+    homeAddressSameAsMailing:   sinon.spy(),
+    all:                        sinon.spy(),
+    isValid:                    () => { return true; }
   };
 
   let component;
@@ -23,10 +46,11 @@ describe('AddressTemplateForm', function() {
   beforeEach(function() {
     component = render(
       <AddressForm
-        type='home'
-        address={ stateData }
-        onChange={ sinon.spy() }
-        onSubmit={ sinon.spy() }
+        type        = 'home'
+        address     = { stateData }
+        onChange    = { sinon.spy() }
+        onSubmit    = { sinon.spy() }
+        validations = { validations}
       />
     );
   });
@@ -38,7 +62,7 @@ describe('AddressTemplateForm', function() {
     );
 
     assert.ok(
-      component.find('input[name=street_1]').length,
+      component.find('input[name=homeStreet_1]').length,
       'Street address input has incorrect name'
     );
   });
@@ -50,7 +74,7 @@ describe('AddressTemplateForm', function() {
     );
 
     assert.ok(
-      component.find('input[name=street_2]').length,
+      component.find('input[name=homeStreet_2]').length,
       'Unit or apartment input has incorrect name'
     );
   });
@@ -62,7 +86,7 @@ describe('AddressTemplateForm', function() {
     );
 
     assert.ok(
-      component.find('input[name=city]').length,
+      component.find('input[name=homeCity]').length,
       'City input has incorrect name'
     );
   });
@@ -74,7 +98,7 @@ describe('AddressTemplateForm', function() {
     );
 
     assert.ok(
-      component.find('select[name=state]').length,
+      component.find('select[name=homeState]').length,
       'State input has incorrect name'
     );
   });
@@ -86,7 +110,7 @@ describe('AddressTemplateForm', function() {
     );
 
     assert.ok(
-      component.find('input[name=zip]').length,
+      component.find('input[name=homeZip]').length,
       'Zip input has incorrect name'
     );
   });

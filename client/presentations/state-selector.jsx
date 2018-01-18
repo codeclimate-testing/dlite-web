@@ -79,7 +79,7 @@ const StateSelector = (props) => {
     <div className='select-input-block'>
       <label className='row' htmlFor={props.id}>State</label>
       <select
-        name='state'
+        name={props.id}
         id={props.id}
         value={value}
         onChange={props.onChange}

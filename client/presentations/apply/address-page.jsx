@@ -9,14 +9,6 @@ import InterstitialAddress  from './address/interstitial-address-form.jsx';
 import MailingAddress       from './address/mailing-address-form.jsx';
 
 const AddressPage = (props) => {
-  // TODO: refactor how the reducers get called so that the mailingAddress is set outside of the view
-  if(props.homeAddress.homeAddressSameAsMailing === 'Yes') {
-    for(var item in props.homeAddress) {
-      if(props.homeAddress.hasOwnProperty(item)) {
-        props.mailingAddress[item] = props.homeAddress[item];
-      }
-    }
-  };
 
   return (
     <Page
@@ -24,17 +16,26 @@ const AddressPage = (props) => {
       sectionKey='myBasics'
     >
       <form onSubmit={props.onSubmit} className='address-form'>
-        <HomeAddress {...props}
-          onChange = { props.onHomeChange }
+        <HomeAddress
+          {...props}
+          address     = { props.address.home }
+          onChange    = { props.onHomeChange }
         />
-        <InterstitialAddress {...props}
-          onChange = { props.onHomeChange }
-          selectedValue = { props.homeAddress.homeAddressSameAsMailing }
+        <InterstitialAddress
+          {...props}
+          onChange      = { props.onAddressChange }
+          selectedValue = { props.address.homeAddressSameAsMailing }
         />
-        <MailingAddress {...props}
-          onChange = { props.onMailingChange }
+        <MailingAddress
+          {...props}
+          isSameAsHome  = { props.address.homeAddressSameAsMailing }
+          address       = { props.address.mailing }
+          onChange      = { props.onMailingChange }
         />
-        <NavigationButtons {...props} />
+        <NavigationButtons
+          {...props}
+          errorMessage={ props.validations.all() }
+        />
       </form>
     </Page>
   )

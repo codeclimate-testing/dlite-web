@@ -5,7 +5,7 @@ import React            from 'react';
 import AddressTemplate  from '../../address-template.jsx';
 
 const Form = (props) => {
-  if(props.homeAddress.homeAddressSameAsMailing !== 'No') { return null; }
+  if(props.isSameAsHome !== 'No') { return null; }
 
   return (
     <div className='mailing-address-form'>
@@ -14,9 +14,8 @@ const Form = (props) => {
       <p>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</p>
       <div className='addresses-section'>
           <AddressTemplate
-            type      = 'mailing'
-            address   = { props.mailingAddress }
-            onChange  = { props.onChange }
+            {...props}
+            type = 'mailing'
           />
       </div>
     </div>
