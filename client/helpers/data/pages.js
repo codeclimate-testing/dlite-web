@@ -154,7 +154,8 @@ const myHistory = [
   {
     key: 'veterans',
     description: 'Veterans service',
-    path: '/my-history/veterans-service'
+    path: '/my-history/veterans-service',
+    next: 'organDonation'
   }
 ];
 

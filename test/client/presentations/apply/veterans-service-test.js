@@ -35,16 +35,24 @@ describe('VeteransServicePage', function() {
       lastName: 'Doe'
     };
 
-    let continueDisabled = !(dataPresent.veteransService(veteransService));
     let onChange = spy();
+
+    let validations = {
+      isVeteran: spy(),
+      receiveBenefits: spy(),
+      veteransDesignation: spy(),
+      veteransIdentifier: spy(),
+      all: spy(),
+      isValid: () => { return true; }
+    };
 
     props = {
       veteransService,
       cardType,
       cardAction,
       legalName,
-      continueDisabled,
-      onChange
+      onChange,
+      validations
     }
   });
 
@@ -58,27 +66,6 @@ describe('VeteransServicePage', function() {
       assert.ok(component.find('label[for="isVeteran-Yes"]').length, 'yes button missing');
       assert.ok(component.find('label[for="isVeteran-No"]').length, 'no button missing');
       assert.ok(component.find('.veterans-questionnaire-form').length, 'form missing');
-    });
-
-    it('next button is disabled', function() {
-      let component = render(
-        <Wrapper>
-          <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
-    it('selecting No makes next button no longer disabled', function() {
-      props.veteransService.isVeteran = 'No';
-      props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
-
-      let component = render(
-        <Wrapper>
-          <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, false);
     });
 
     it('selecting Yes makes messageBox className "thanks" appear', function() {
@@ -106,33 +93,10 @@ describe('VeteransServicePage', function() {
       assert.ok(component.find('.new-designation').length, 'new designation form did not render');
     });
 
-    it('selecting Yes will keep continue button disabled', function() {
-      props.veteransService.isVeteran = 'Yes';
-
-      let component = render(
-        <Wrapper>
-          <VeteransPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(props.continueDisabled, true);
-    });
-
     describe('answering veterans identifier question', function() {
       beforeEach(function() {
         props.veteransService.isVeteran = 'Yes';
         props.veteransService.receiveBenefits = 'Yes';
-      });
-
-      it('selecting No enables the continue button', function() {
-        props.veteransService.veteransIdentifier = 'No';
-        props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
-
-        let component = render(
-          <Wrapper>
-            <VeteransPage {...props} />
-          </Wrapper>
-        );
-        assert.equal(props.continueDisabled, false);
       });
 
       it('selecting No makes messageBox "info" appear', function() {
@@ -160,18 +124,6 @@ describe('VeteransServicePage', function() {
         );
         assert.ok(component.find('.message-box .info').length, 'info message box not found');
         assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
-      });
-
-      it('selecting Yes enables the continue button', function() {
-        props.veteransService.veteransIdentifier = 'Yes';
-        props.continueDisabled = !(dataPresent.veteransService(props.veteransService));
-
-        let component = render(
-          <Wrapper>
-          <VeteransPage {...props} />
-          </Wrapper>
-        );
-        assert.equal(props.continueDisabled, false);
       });
     });
   });
@@ -216,17 +168,6 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.new-designation').length, 'new designation form did not render');
       });
 
-      it('selecting No keeps continue button disabled', function() {
-        props.veteransService.previouslyDesignated = 'No';
-
-        let component = render(
-          <Wrapper>
-          <VeteransPage {...props} />
-          </Wrapper>
-        );
-        assert.equal(props.continueDisabled, true);
-      });
-
       it('selecting Yes shows veterans identifier section for previous designation', function() {
         props.veteransService.previouslyDesignated = 'Yes';
 
@@ -237,17 +178,6 @@ describe('VeteransServicePage', function() {
         );
         assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
         assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
-      });
-
-      it('selecting Yes keeps continue button disabled', function() {
-        props.veteransService.previouslyDesignated = 'Yes';
-
-        let component = render(
-          <Wrapper>
-            <VeteransPage {...props} />
-          </Wrapper>
-        );
-        assert.equal(props.continueDisabled, true);
       });
     });
 

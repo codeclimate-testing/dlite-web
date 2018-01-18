@@ -17,17 +17,24 @@ const VeteransServicePage = (props) => {
       <form onSubmit    = {props.onSubmit} className='veterans-service-form'>
         <VeteransQuestionnaire {...props}
           selectedValue = {props.veteransService.isVeteran}
+          errorMessage  = { props.validations.isVeteran() }
         />
         <VeteransBenefits {...props}
           selectedValue = {props.veteransService.receiveBenefits}
+          errorMessage  = { props.validations.receiveBenefits() }
         />
         <VeteransPreviousDesignation {...props}
           selectedValue = {props.veteransService.previouslyDesignated}
+          errorMessage  = { props.validations.veteransDesignation() }
         />
         <VeteransIdentifier {...props}
           selectedValue = {props.veteransService.veteransIdentifier}
+          errorMessage  = { props.validations.veteransIdentifier() }
         />
-        <NavigationButtons {...props}/>
+        <NavigationButtons
+          {...props}
+          errorMessage={props.validations.all()}
+        />
       </form>
     </Page>
   )
