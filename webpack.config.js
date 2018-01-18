@@ -5,8 +5,8 @@ const webpack             = require('webpack');
 const ExtractTextPlugin   = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin   = require('html-webpack-plugin');
 
-const childProcess = require('child_process'),
-GITHASH = childProcess.execSync('git rev-parse HEAD').toString();
+const childProcess = require('child_process');
+const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
 
 let config = {
   entry: ['babel-polyfill', './client.js'],
