@@ -14,10 +14,13 @@ import {
 import { eligibleForReducedFee } from './reduced-fee';
 import {
   eligibleForCitizen,
-  eligibleForRequirements,
+  eligibileForRequirements,
   eligibleForOptOut,
   eligibleForOptOutExist
 } from '../../helpers/data/voting';
+import {
+  isPreregistering
+} from '../../helpers/calculate-age';
 
 export const chooseCardType = (props) => {
   let key = 'realID';
@@ -112,7 +115,7 @@ export const citizenship = (props) => {
 export const votingEligibility = (props) => {
   let key = 'summary';
   if (eligibileForRequirements(props)) {
-    key = 'optOut';
+    key = 'votingOptOut';
   } else if (isPreregistering(props.dateOfBirth)){
     key = 'guardianSignature';
   } 

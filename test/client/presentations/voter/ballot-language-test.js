@@ -8,7 +8,7 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language/ballot-language-form.jsx';
+import BallotLanguagePage       from '../../../../client/presentations/voter-registration/ballot-language-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('BallotLanguagePage', function() {
@@ -19,19 +19,24 @@ describe('BallotLanguagePage', function() {
     
     beforeEach(function() {
       let ballotLanguage = '';
-      let continueDisabled = true;
       let onChange = spy();
       let dateOfBirth = {
         month: '',
         day: '',
         year: ''
       };
+      let validations = {
+        ballotLanguage: spy(),
+        all: spy(),
+        isValid: spy()
+      };
 
       props = {
         ballotLanguage,
         dateOfBirth,
-        onChange
-      }
+        onChange,
+        validations
+      };
     });
     
     it('shows the form asking user to choose language', function() {

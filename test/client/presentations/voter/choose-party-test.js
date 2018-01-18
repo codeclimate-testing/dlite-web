@@ -7,14 +7,10 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
-import ChoosePartyPage          from '../../../../client/presentations/voter-registration/voter-choose-party/voter-choose-party-form.jsx';
+import ChoosePartyPage          from '../../../../client/presentations/voter-registration/choose-party-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('ChoosePartyPage ', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -26,10 +22,16 @@ describe('ChoosePartyPage ', function() {
       };
 
       let onChange = spy();
+      let validations = {
+        isSelected: spy(),
+        politicalPartyChoose: spy(),
+        all: spy()
+      };
 
       props = {
         politicalPartyChoose,
-        onChange
+        onChange,
+        validations
       }
     });
     

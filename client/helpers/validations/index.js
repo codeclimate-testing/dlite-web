@@ -26,7 +26,6 @@ import veteransRules            from './veterans-rules';
 import ballotByMailRules        from './ballot-by-mail-rules';
 import optOutRules              from './opt-out-rules';
 import choosePartyRules         from './choose-party-rules';
-import politicalPartyRules      from './political-party-rules';
 import ballotLanguageRules      from './ballot-language-rules';
 
 
@@ -54,5 +53,4 @@ export const VeteransValidator        = formValidationGenerator(veteransRules);
 export const BallotByMailValidator    = formValidationGenerator(ballotByMailRules);
 export const OptOutValidator          = formValidationGenerator(optOutRules);
 export const ChoosePartyValidator     = formValidationGenerator(choosePartyRules);
-export const PoliticalPartyValidator  = formValidationGenerator(politicalPartyRules);
 export const BallotLanguageValidator  = formValidationGenerator(ballotLanguageRules);

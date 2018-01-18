@@ -10,7 +10,7 @@ import { ChoosePartyValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
   let validations         = new ChoosePartyValidator(props.politicalPartyChoose, props.validations);
-  let onSubmit            = handlers.navigateOrSubmit('choosePoliticalParty', props, validations);
+  let onSubmit            = handlers.navigateOrShowErrors('choosePoliticalParty', props, validations);
   let onBack              = handlers.navigateOnBack(props, validations);
 
   let focus             =   function(e) {

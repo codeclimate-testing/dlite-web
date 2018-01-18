@@ -6,8 +6,7 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
-import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out/opt-out-radio-page.jsx';
+import OptOutPage               from '../../../../client/presentations/voter-registration/opt-out-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('OptOutPage', function() {
@@ -16,18 +15,21 @@ describe('OptOutPage', function() {
 
   beforeEach(function() {
     let optOut = '';
-    let continueDisabled = true;
     let onChange = spy();
     let dateOfBirth = {
       month: '',
       day: '',
       year: ''
     };
+    let validations = {
+      optOut: spy(),
+      all: spy()
+    };
 
     props = {
       dateOfBirth,
       optOut,
-      continueDisabled,
+      validations,
       onChange
     }
   });

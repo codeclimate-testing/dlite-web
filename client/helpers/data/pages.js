@@ -9,7 +9,7 @@ import {
   chooseLicenseClass,
   chooseCardReplacement,
   socialSecurity,
-  organDonationPath
+  organDonationPath,
   citizenship,
   votingEligibility,
   optOut

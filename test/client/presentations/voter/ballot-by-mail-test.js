@@ -20,7 +20,6 @@ describe('BallotByMailPage', function() {
 
     beforeEach(function() {
       let ballotByMail = '';
-      let continueDisabled = true;
       let onChange = spy();
       let dateOfBirth = {
         month: '',
@@ -35,7 +34,6 @@ describe('BallotByMailPage', function() {
       props = {
         ballotByMail,
         dateOfBirth,
-        continueDisabled,
         onChange,
         validations
       };
@@ -47,7 +45,6 @@ describe('BallotByMailPage', function() {
           <BallotByMailPage  {...props} />
         </Wrapper>
       );
-      assert.equal(props.continueDisabled, true);
       assert.ok(component.find('label[for="ballotByMail-Yes"]').length, 'Yes button missing');
       assert.ok(component.find('label[for="ballotByMail-No"]').length, 'No button missing');
       assert.ok(component.find('.ballot-by-mail-form').length, 'form missing');

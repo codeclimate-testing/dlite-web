@@ -9,6 +9,7 @@ import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import CitizenStatusPage        from '../../../../client/presentations/voter-registration/citizen-status-page.jsx';
 import store                    from '../../support/page-store';
+import { checkPreReg }          from '../../../../client/helpers/data/youth';
 
 describe('CitizenStatusPage', function() {
   const Wrapper = wrapperGenerator(store);
@@ -17,7 +18,6 @@ describe('CitizenStatusPage', function() {
     let props;
     
     beforeEach(function() {
-      let continueDisabled = true;
       let onChange = spy();
       let dateOfBirth = {
         month: '',
@@ -25,12 +25,14 @@ describe('CitizenStatusPage', function() {
         year: ''
       };
       let citizenStatus = '';
+      let prereg = checkPreReg(dateOfBirth);
 
       props = {
         dateOfBirth,
         citizenStatus,
-        onChange
-      }
+        onChange,
+        prereg
+      };
     });
     
     it('shows the form asking if user is a US citizen', function() {
@@ -42,7 +44,24 @@ describe('CitizenStatusPage', function() {
       assert.ok(component.find('.citizen-status-form').length, 'form missing');
     });
 
-    // TODO add test for FAQ drawers
+    it('shows pre-registration language for users who are preregistering', function() {
+      let today = new Date();
+
+      props.dateOfBirth = {
+        month: '09',
+        day: '20',
+        year: (today.getFullYear - 17).toString()
+      };
+      props.prereg = checkPreReg(props.dateOfBirth);
+
+      let component = render(
+        <Wrapper>
+          <CitizenStatusPage  {...props} />
+        </Wrapper>
+      );
+   
+      assert.ok(component.text().includes('If you decline to answer, you cannot pre-register to vote'), 'pre-registration language not found');
+    });
 
   });
 

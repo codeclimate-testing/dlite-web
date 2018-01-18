@@ -8,7 +8,9 @@ import { checkPreReg }                    from '../../helpers/data/youth';
 import Presentation                       from '../../presentations/voter-registration/eligibility-requirements-page.jsx';
 
 const Page = (props) => {
-  let validations       = {};
+  let validations       = {
+    isValid: () => true
+  };
   let onSubmit          = handlers.navigateOrShowErrors('votingEligibility', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
