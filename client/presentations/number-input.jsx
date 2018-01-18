@@ -12,7 +12,7 @@ import ExampleLabel from './example-label.jsx';
 const NumberInput = (props) => {
   let className   = `input-container ${props.identifier}-input`;
   let errorName   = errorClass(props);
-  let inputClass  = props.hasOwnProperty('error') ? `${props.error}` : errorName ;
+  let inputClass  = props.error ? 'error' : errorName ;
 
   return (
     <div className  = 'unit'>

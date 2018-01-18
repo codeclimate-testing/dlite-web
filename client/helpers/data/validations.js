@@ -29,3 +29,8 @@ export const hasOnlyEnglishChars = (text) => {
 export const hasOnlyNumbers = (text) => {
   return /^[0-9]*$/.test(text);
 };
+
+export const emailRegex = (value) => {
+  let reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+  return reg.test(value.toLowerCase());
+};

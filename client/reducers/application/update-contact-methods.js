@@ -5,9 +5,11 @@ import formObjectReducer from './form-object-reducer';
 
 function defaultState() {
   return {
-    shouldContact:  '',
-    emailAddress:   '',
-    phoneNumber:    ''
+    shouldContact: '',
+    emailAddress: '',
+    phoneNumber1: '',
+    phoneNumber2: '',
+    phoneNumber3: ''
   };
 }
 

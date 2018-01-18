@@ -6,7 +6,8 @@ import {
   hasAllAttributes,
   hasAnyAttributes,
   hasOnlyEnglishChars,
-  hasOnlyNumbers
+  hasOnlyNumbers,
+  emailRegex
 } from '../../../../client/helpers/data/validations';
 
 describe('validations', function() {
@@ -119,5 +120,24 @@ describe('validations', function() {
     it('returns true when only numbers', function() {
       assert.equal(hasOnlyNumbers('3290812'), true)
     });
+  });
+
+  describe('#emailRegex', function() {
+    it('fails if no @ character', function() {
+      assert.equal(emailRegex('heyyou.com'), false);
+    });
+
+    it('fails if multiple @ character', function() {
+      assert.equal(emailRegex('hey@@you.com'), false)
+    });
+
+    it('fails if quoted strings aren\'t separated by dots', function() {
+      assert.equal(emailRegex('"so""ironic"@you.com'), false);
+    });
+
+    it('fails if double dot after the @', function() {
+      assert.equal(emailRegex('aperson@a..domain.somewhere'), false);
+    });
+
   });
 });

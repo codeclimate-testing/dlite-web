@@ -227,7 +227,8 @@ const voterRegistration = [
   {
     key: 'contactMethods',
     description: 'Contact methods',
-    path: '/voting-registration/contact-methods'
+    path: '/voting-registration/contact-methods',
+    next: 'voterConfirmation'
   },
   {
     key: 'voterConfirmation',

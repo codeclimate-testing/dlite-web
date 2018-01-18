@@ -6,14 +6,10 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import * as dataPresent         from '../../../../client/helpers/data-present';
-import ContactMethodsPage       from '../../../../client/presentations/voter-registration/contact-methods/contact-methods-choice.jsx';
+import ContactMethodsPage       from '../../../../client/presentations/voter-registration/contact-methods-page.jsx';
+import store                    from '../../support/page-store';
 
 describe('ContactMethodsPage', function() {
-  let store = {
-    ui: {}
-  };
-
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -30,16 +26,22 @@ describe('ContactMethodsPage', function() {
         emailAddress: '',
         phoneNumber: ''
       };
-      let continueDisabled = !(dataPresent.contactMethods(contactMethods));
-
+      let validations = {
+        shouldContact: spy(),
+        emailAddress: spy(),
+        phoneNumber1: spy(),
+        phoneNumber2: spy(),
+        phoneNumber3: spy(),
+        all: spy()
+      };
       let onChange = spy();
 
       props = {
         dateOfBirth,
         contactMethods,
-        continueDisabled,
+        validations,
         onChange
-      }
+      };
     });
     
     it('shows the form asking if user would like to receive election info', function() {
@@ -54,9 +56,19 @@ describe('ContactMethodsPage', function() {
       assert.ok(component.find('label[for="shouldContact-Skip"]').length, 'Skip Question button missing');
     });
 
-    // TODO add test for FAQ drawers
-
-    // TODO add test for selecting Yes makes contact details form appear
+    it('answering yes shows the form to enter contact details', function() {
+      props.contactMethods.shouldContact = 'Yes';
+      let component = render(
+        <Wrapper>
+          <ContactMethodsPage  {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.contact-methods-details-form').length, 'contact details form missing');
+      assert.ok(component.find('input#emailAddress[type="text"]').length, 'email text form missing');
+      assert.ok(component.find('input#phoneNumber1[type="number"]').length, 'phone first 3 digits form missing');
+      assert.ok(component.find('input#phoneNumber2[type="number"]').length, 'phone second 3 digits form missing');
+      assert.ok(component.find('input#phoneNumber3[type="number"]').length, 'phone last 4 digits form missing');
+    });
 
   });
 

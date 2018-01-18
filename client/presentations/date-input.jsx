@@ -2,12 +2,13 @@
 
 import React from 'react';
 
-import errorClass   from '../helpers/validations/error-class';
 import { hasValue } from '../helpers/data/validations';
 import NumberInput  from './number-input.jsx';
 import {
   ErrorIcon,
-  ErrorLabel
+  ErrorLabel,
+  errorMessage,
+  errorClass
 } from './validations.jsx';
 
 const DateInput = (props) => {
@@ -16,31 +17,16 @@ const DateInput = (props) => {
     day   : props.validations.day(),
     year  : props.validations.year()
   }; 
-  let errorMessage = '';
-
-  let generateErrorClass = (string) => {
-    return errorClass({
-      errorMessage: string
-    });
-  };
-
-  let errorName = Object.values(errors).reduce((total, error) => {
-    if (errorClass({errorMessage: error})) {
-      errorMessage = error;
-      return total = 'error';
-    }
-    return total;
-  }, '');
-
-  let labelClass = `normal`
+  let message = errorMessage(errors);
+  let addError = errorClass(message);
 
   return (
     <div className='date-input'>
       <label 
         htmlFor       = { props.identifier}
-        className     = { errorName }
+        className     = { addError }
       >
-        <ErrorIcon errorClass= {errorName} />
+        <ErrorIcon errorClass= { addError } />
         {props.description}
       </label>
 
@@ -49,8 +35,9 @@ const DateInput = (props) => {
         identifier    = 'month'
         example       = 'MM'
         value         = { props.values.month}
-        labelClass    = { labelClass }
-        error         = { generateErrorClass(errors.month) }
+        error         = { hasValue(errors.month) }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
   
       <div className  = 'unit spacer'/>
@@ -60,8 +47,9 @@ const DateInput = (props) => {
         identifier    = 'day'
         example       = 'DD'
         value         = { props.values.day }
-        labelClass    = { labelClass }
-        error         = { generateErrorClass(errors.day) }
+        error         = { hasValue(errors.day) }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
 
       <div className  = 'unit spacer'/>
@@ -71,13 +59,14 @@ const DateInput = (props) => {
         identifier    = 'year'
         example       = 'YYYY'
         value         = { props.values.year }
-        labelClass    = { labelClass }
-        error         = { generateErrorClass(errors.year)  }
+        error         = { hasValue(errors.year)  }
+        onChange      = { props.onChange }
+        onBlur        = { props.onBlur }
       />
 
       <ErrorLabel 
-        errorMessage  = { errorMessage }
-        errorClass    = { errorName }
+        errorMessage  = { message }
+        errorClass    = { addError }
       />
     </div>
   );

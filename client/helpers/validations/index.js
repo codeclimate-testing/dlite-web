@@ -27,7 +27,7 @@ import ballotByMailRules        from './ballot-by-mail-rules';
 import optOutRules              from './opt-out-rules';
 import choosePartyRules         from './choose-party-rules';
 import ballotLanguageRules      from './ballot-language-rules';
-
+import contactRules             from './contact-rules';
 
 export const NamePageValidator        = formValidationGenerator(namePageRules);
 export const DOBValidator             = formValidationGenerator(dobPageRules);
@@ -54,3 +54,4 @@ export const BallotByMailValidator    = formValidationGenerator(ballotByMailRule
 export const OptOutValidator          = formValidationGenerator(optOutRules);
 export const ChoosePartyValidator     = formValidationGenerator(choosePartyRules);
 export const BallotLanguageValidator  = formValidationGenerator(ballotLanguageRules);
+export const ContactValidator         = formValidationGenerator(contactRules);

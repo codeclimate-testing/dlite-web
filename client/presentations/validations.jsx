@@ -7,17 +7,13 @@ import { hasValue } from '../helpers/data/validations';
 export const ErrorLabel= (props) => {
   if (!props.errorClass) { return null; }
 
-
-  let additionalText = '';
-  if (props.errorClass) {
-    additionalText = props.errorMessage;
-  }
+  let errorText = props.errorClass ? props.errorMessage : '';
 
   let className = 'additional-label input-margin-bottom ' + props.errorClass;
 
   return (
     <div className={className} >
-      { additionalText }
+      { errorText }
     </div>
   );
 };
@@ -27,4 +23,17 @@ export const ErrorIcon = (props) => {
   return (
     <div className='unit error-icon'></div>
   );
+};
+
+export const errorMessage = (errors) => {  
+  return Object.values(errors).reduce((total, error) => {
+    if (hasValue(error)) {
+      total = error;
+    }
+    return total;
+  }, '');
+};
+
+export const errorClass = (message) => {
+  return hasValue(message) ? 'error' : ''
 };

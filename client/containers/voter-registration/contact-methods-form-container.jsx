@@ -2,41 +2,38 @@
 
 import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
-
 import handlers                 from '../../helpers/handlers';
-import * as dataPresent         from '../../helpers/data-present';
 import { updateContactMethods } from '../../actions/index';
-import ContactMethodsPage       from '../../presentations/voter-registration/contact-methods/contact-methods-choice-page.jsx';
-import PreRegContactMethodsPage from '../../presentations/voter-registration/contact-methods/contact-methods-prereg-choice-page.jsx';
-import { isPreregistering }     from '../../helpers/calculate-age';
-import {
-   shouldContactMethods
-  } from '../../helpers/data/voting';
+import Presentation             from '../../presentations/voter-registration/contact-methods-page.jsx';
+import { ContactValidator }     from '../../helpers/validations';
 
 const Page = (props) => {
-  let continueDisabled = !(dataPresent.contactMethods(props.contactMethods));
-  if (shouldContactMethods(props)) {
-    continueDisabled = false;
+  let validations    = new ContactValidator(props.contactMethods, props.validations);
+  let onSubmit       = handlers.navigateOrShowErrors('contactMethods', props, validations);
+  let onBack         = handlers.navigateOnBack(props, validations);
+  
+  let focus          =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
   };
-  let onSubmit            = handlers.navigateOnSubmit('/voting-registration/confirmation', props);
-  let onBack              = handlers.navigateOnBack(props);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegContactMethodsPage : ContactMethodsPage;
-    return (
+  return (
     <Presentation
       {...props}
-      onBack            = { onBack }
-      onSubmit          = { onSubmit }
-      continueDisabled  = { continueDisabled }
-      />
+      onBack          = { onBack }
+      onSubmit        = { onSubmit }
+      validations     = { validations }
+      onFocus         = { focus }
+    />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    contactMethods: state.application.contactMethods,
-    dateOfBirth:  state.application.dateOfBirth,
-    focused:  state.ui.focus
+    contactMethods  : state.application.contactMethods,
+    dateOfBirth     : state.application.dateOfBirth,
+    focused         : state.ui.focus,
+    validations     : state.ui.validations
   };
 };
 
