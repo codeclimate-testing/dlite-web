@@ -41,7 +41,7 @@ export default {
   citizenshipSelectionMissing: 'Please select if you\'re a US citizen.',
   votingEligibilitySelectionMissing: 'Please select if you meet the eligibility requirements.',
   wantToPreregisterSelectionMissing: 'Please tell us if you would like to be registered to vote.',
-  choosePolicitalPartyNowSelectionMissing: 'Please tell us if you want to choose a political party preference.',
+  choosePoliticalPartyNowSelectionMissing: 'Please tell us if you want to choose a political party preference.',
   politicalPartySelectionMissing: 'Please select a political party.',
   ballotLanguageSelectionMissing: 'Please select a language.',
   ballotByMailSelectionMissing: 'Please tell us if you want to get your ballot in the mail.',

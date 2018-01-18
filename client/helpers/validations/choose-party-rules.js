@@ -8,6 +8,6 @@ const chooseParty = (props) => {
 };
 
 export default {
-  isSelected: selectionValidator('choosePolicitalPartyNowSelectionMissing', 'isSelected'),
+  isSelected: selectionValidator('choosePoliticalPartyNowSelectionMissing', 'isSelected'),
   politicalPartyChoose: chooseParty
 };

@@ -13,7 +13,7 @@ module.exports.createDateJson = function createDateJson(date) {
   }
 };
 
-module.exports.strToBool = function strToBool(val) {
+function strToBool(val) {
   // add ability to store a non-answer
   return val === 'Yes' ? true : val === 'No' ? false : val;
 };
@@ -21,3 +21,9 @@ module.exports.strToBool = function strToBool(val) {
 module.exports.boolToStr = function boolToStr(val) {
   return val.toString() === 'true' ? 'Yes' : val.toString() === 'false' ? 'No' : val;
 };
+
+module.exports.blankIsDecline = function blankIsDecline(val) {
+  return val === '' ? 'decline' : strToBool(val);
+};
+
+module.exports.strToBool = strToBool;

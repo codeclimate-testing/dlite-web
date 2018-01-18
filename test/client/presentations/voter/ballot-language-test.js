@@ -57,10 +57,6 @@ describe('BallotLanguagePage', function() {
       assert.ok(component.find('label[for="ballotLanguage-Vietnamese"]').length, 'Vietnamese option missing');
       assert.ok(component.find('.ballot-language-form').length, 'form missing');
     });
-
-
-    // TODO add testing for if pre-reg is shown in container
-
   });
 
 });

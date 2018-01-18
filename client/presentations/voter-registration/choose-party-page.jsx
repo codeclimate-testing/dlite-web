@@ -41,7 +41,7 @@ const ChoosePartyPage = (props) => {
               value='Skip'
             />
           </RadioCollection>
-      </div>
+        </div>
 
         <PoliticalPartyPreference
           {...props} 

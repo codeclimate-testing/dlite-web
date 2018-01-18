@@ -54,8 +54,22 @@ describe('ChoosePartyPage ', function() {
       assert.ok(component.find('label[for="isSelected-Skip"]').length, 'Skip checkbox missing');
     });
 
-    // TODO add test for selecting Yes adds form letting user choose the party
-
+    it('selecting yes shows list of parties', function() {
+      props.politicalPartyChoose.isSelected = 'Yes';
+      let component = render(
+        <Wrapper>
+          <ChoosePartyPage   {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.political-party-preference').length, 'political party form missing');
+      assert.ok(component.find('label.radio-selector[for="American Independent Party"]', 'AIP radio not found'));
+      assert.ok(component.find('label.radio-selector[for="Libertarian Party"]', 'libertarian radio not found'))
+      assert.ok(component.find('label.radio-selector[for="Democratic Party"]', 'democratic radio not found'))
+      assert.ok(component.find('label.radio-selector[for="Green Party"]', 'green radio not found'))
+      assert.ok(component.find('label.radio-selector[for="Peace and Freedom Party"]', 'peace and freedom radio not found'))
+      assert.ok(component.find('label.radio-selector[for="Republican Party"]', 'repub radio not found'))
+      assert.ok(component.find('label.radio-selector[for="Other"]', 'other radio not found'))
+    });
   });
 
 });

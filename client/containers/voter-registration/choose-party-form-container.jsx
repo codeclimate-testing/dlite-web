@@ -13,11 +13,6 @@ const Page = (props) => {
   let onSubmit            = handlers.navigateOrShowErrors('choosePoliticalParty', props, validations);
   let onBack              = handlers.navigateOnBack(props, validations);
 
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
-
   let prereg = checkPreReg(props.dateOfBirth);
 
   return (

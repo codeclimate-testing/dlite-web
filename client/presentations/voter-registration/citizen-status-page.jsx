@@ -8,7 +8,7 @@ import Page                 from '../../containers/page.jsx';
 
 const values = {
   Yes: 'Yes',
-  No: 'No'
+  decline: 'Decline to answer'
 };
 
 const text = {
@@ -36,7 +36,7 @@ const CitizenStatusPage = (props) => {
             value='Yes'
           />
           <RadioSelector 
-            value='No'
+            value='decline'
           />
         </RadioCollection>
 

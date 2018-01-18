@@ -38,6 +38,20 @@ describe('dataParser', function() {
     });
   });
 
+  describe('blankIsDecline', function() {
+    it('returns the same value when a user does not select an answer as when the user declines to answer', function() {
+      let val = '';
+      assert.equal(dataParser.blankIsDecline(val), 'decline');
+      assert.equal(dataParser.blankIsDecline(val), dataParser.strToBool('decline'));
+    });
+
+    it('returns a boolean when the user does select an answer', function() {
+      let val = 'Yes';
+      assert.equal(dataParser.blankIsDecline(val), true);
+      assert.equal(dataParser.blankIsDecline(val), dataParser.strToBool(val));
+    });
+  });
+
 });
 
 

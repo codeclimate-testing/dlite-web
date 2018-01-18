@@ -206,8 +206,8 @@ function extractVotingRegistrations(data) {
   const voterChoice = voterChoiceConverter.uiToRecord(data.optOut);
   return [{
     application_id:     data.id,
-    is_citizen:         parserHelper.strToBool(data.citizenStatus),
-    is_eligible:        parserHelper.strToBool(data.eligibilityRequirements),
+    is_citizen:         parserHelper.blankIsDecline(data.citizenStatus),
+    is_eligible:        parserHelper.blankIsDecline(data.eligibilityRequirements),
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     is_preregistering:  parserHelper.strToBool(data.politicalPartyChoose.isSelected),

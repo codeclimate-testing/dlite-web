@@ -14,11 +14,6 @@ const Page = (props) => {
   let onSubmit          = handlers.navigateOrShowErrors('ballotByMail', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
-
   let prereg = checkPreReg(props.dateOfBirth);
 
   return (
@@ -27,7 +22,6 @@ const Page = (props) => {
         onSubmit          = {onSubmit}
         onBack            = {onBack}
         selectedValue     = {props.ballotByMail}
-        onFocus           = {focus}
         validations       = {validations}
         prereg            = {prereg}
       />

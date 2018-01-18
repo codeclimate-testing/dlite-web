@@ -48,9 +48,9 @@ describe('CitizenStatusPage', function() {
       let today = new Date();
 
       props.dateOfBirth = {
-        month: '09',
-        day: '20',
-        year: (today.getFullYear - 17).toString()
+        month: (today.getMonth() + 1).toString(),
+        day: (today.getDate()).toString(),
+        year: (today.getFullYear() - 17).toString()
       };
       props.prereg = checkPreReg(props.dateOfBirth);
 
