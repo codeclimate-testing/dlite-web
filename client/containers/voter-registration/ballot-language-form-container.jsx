@@ -1,39 +1,44 @@
 'use strict';
 
-import React                    from 'react';
-import connectForm              from '../../helpers/connect-form';
+import React                      from 'react';
+import connectForm                from '../../helpers/connect-form';
 
-import { updateBallotLanguage } from '../../actions/index';
-import BallotLanguageForm       from '../../presentations/voter-registration/ballot-language/ballot-language-form.jsx';
-import BallotLanguageFormPreReg from '../../presentations/voter-registration/ballot-language/ballot-language-prereg-form.jsx';
-import handlers                 from '../../helpers/handlers';
-
-import { isPreregistering } from '../../helpers/calculate-age';
+import { updateBallotLanguage }   from '../../actions/index';
+import Presentation               from '../../presentations/voter-registration/ballot-language-page.jsx';
+import handlers                   from '../../helpers/handlers';
+import { checkPreReg }            from '../../helpers/data/youth';
+import { BallotLanguageValidator} from '../../helpers/validations';
 
 const Page = (props) => {
-  let onSubmit          = handlers.navigateOnSubmit('/voting-registration/vote-by-mail', props);
-  let onBack            = handlers.navigateOnBack(props);
-  let continueDisabled  = false;
+  let validations       = new BallotLanguageValidator(props.ballotLanguage, props.validations);
+  let onSubmit          = handlers.navigateOrShowErrors('chooseBallotLanguage', props, validations);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? BallotLanguageFormPreReg : BallotLanguageForm;
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
+
+  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
     <Presentation
       {...props}
-      onSubmit         ={ onSubmit }
-      onBack           ={ onBack }
-      onChange         ={ props.onChange }
-      selectedValue    ={ props.ballotLanguage }
-      continueDisabled ={ continueDisabled }
+      onSubmit        = { onSubmit }
+      onBack          = { onBack }
+      selectedValue   = { props.ballotLanguage }
+      validations     = { validations }
+      prereg          = { prereg }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    ballotLanguage: state.application.ballotLanguage,
-    dateOfBirth:  state.application.dateOfBirth,
-    focused:      state.ui.focus
+    ballotLanguage  : state.application.ballotLanguage,
+    dateOfBirth     : state.application.dateOfBirth,
+    focused         : state.ui.focus,
+    validations     : state.ui.validations
   };
 };
 

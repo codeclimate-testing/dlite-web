@@ -9,8 +9,9 @@ import handlers              from '../../helpers/handlers';
 import { isPreregistering }  from '../../helpers/calculate-age';
 
 const Page = (props) => {
-  let onSubmit          = handlers.navigateOnSubmit('/voting-registration/citizenship', props);
-  let onBack            = handlers.navigateOnBack(props);
+  let validations       = {};
+  let onSubmit          = handlers.navigateOrShowErrors('voterIntro', props, validations);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
   const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterIntro : VoterIntro;
 

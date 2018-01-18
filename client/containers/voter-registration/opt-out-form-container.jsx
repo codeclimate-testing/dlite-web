@@ -4,54 +4,42 @@ import React                  from 'react';
 import connectForm            from '../../helpers/connect-form';
 
 import { updateOptOut }       from '../../actions/index';
-
-import OptOutForm             from '../../presentations/voter-registration/opt-out/opt-out-radio-page.jsx';
-import PreregOptOutForm       from '../../presentations/voter-registration/opt-out/opt-out-prereg-radio-page.jsx';
-
+import Presentation           from '../../presentations/voter-registration/opt-out-page.jsx';
 import handlers               from '../../helpers/handlers';
-import * as dataPresent       from '../../helpers/data-present';
-import { hasValue }           from '../../helpers/data/validations';
-import { eligibleForOptOut, eligibleForOptOutExist
-} from '../../helpers/data/voting';
-import { isPreregistering
-} from '../../helpers/calculate-age';
+import { checkPreReg }        from '../../helpers/data/youth';
+import { OptOutValidator }    from '../../helpers/validations';
 
 const Page = (props) => {
+  let validations       = new OptOutValidator(props.optOut, props.validations);
+  let onSubmit          = handlers.navigateOrShowErrors('votingOptOut', props, validations);
+  let onBack            = handlers.navigateOnBack(props, validations);
 
-  let address = '/summary';
-  if(isPreregistering(props.dateOfBirth)){
-    address = '/guardian-signature';
-  }
-  if (eligibleForOptOut(props)) {
-    address = '/voting-registration/preferences';
-  };
-  if (eligibleForOptOutExist(props)) {
-    address = '/voting-registration/preferences-updated';
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
   };
 
-  let onSubmit           = handlers.navigateOnSubmit(address, props);
-  let onBack             = handlers.navigateOnBack(props);
-  let continueDisabled   = !(dataPresent.value(props.optOut));
-
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreregOptOutForm : OptOutForm;
+  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
     <Presentation
       {...props}
-      onSubmit={onSubmit}
-      onBack={onBack}
-      onChange={props.onChange}
-      selectedValue={props.optOut}
-      continueDisabled={continueDisabled}
+      onSubmit      = {onSubmit}
+      onBack        = {onBack}
+      onChange      = {props.onChange}
+      selectedValue = {props.optOut}
+      validations   = {validations}
+      prereg        = {prereg}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    optOut: state.application.optOut,
-    dateOfBirth: state.application.dateOfBirth,
-    focused: state.ui.focus
+    optOut        : state.application.optOut,
+    dateOfBirth   : state.application.dateOfBirth,
+    focused       : state.ui.focus,
+    validations   : state.ui.validations
   };
 };
 

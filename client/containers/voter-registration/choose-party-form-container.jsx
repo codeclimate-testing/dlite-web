@@ -1,27 +1,32 @@
 'use strict';
 
-import React                           from 'react';
-import connectForm            from '../../helpers/connect-form';
-
-import handlers                        from '../../helpers/handlers';
-import { updatePoliticalPartyChoose }  from '../../actions/index';
-import PoliticalPartyChoosePage        from '../../presentations/voter-registration/voter-choose-party/voter-choose-party-page.jsx';
-import PreRegPoliticalPartyChoosePage  from '../../presentations/voter-registration/voter-choose-party/voter-choose-party-prereg-page.jsx';
-import { isPreregistering }            from '../../helpers/calculate-age';
+import React                          from 'react';
+import connectForm                    from '../../helpers/connect-form';
+import { updatePoliticalPartyChoose } from '../../actions/index';
+import Presentation                   from '../../presentations/voter-registration/choose-party-page.jsx';
+import handlers                       from '../../helpers/handlers';
+import { checkPreReg }                from '../../helpers/data/youth';
+import { ChoosePartyValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
-  let continueDisabled    = false;
-  let onSubmit            = handlers.navigateOnSubmit('/voting-registration/language', props);
-  let onBack              = handlers.navigateOnBack(props);
+  let validations         = new ChoosePartyValidator(props.politicalPartyChoose, props.validations);
+  let onSubmit            = handlers.navigateOrSubmit('choosePoliticalParty', props, validations);
+  let onBack              = handlers.navigateOnBack(props, validations);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegPoliticalPartyChoosePage : PoliticalPartyChoosePage;
+  let focus             =   function(e) {
+    props.onFocusClearValidation(e);
+    return props.onFocus(e);
+  };
 
-    return (
+  let prereg = checkPreReg(props.dateOfBirth);
+
+  return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      continueDisabled  = { continueDisabled }
+      validations       = { validations }
+      prereg            = { prereg }
     />
   );
 };
@@ -29,9 +34,10 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     politicalPartyChoose: state.application.politicalPartyChoose,
-    optOut: state.application.optOut,
-    dateOfBirth:  state.application.dateOfBirth,
-    focused:  state.ui.focus
+    optOut              : state.application.optOut,
+    dateOfBirth         : state.application.dateOfBirth,
+    focused             : state.ui.focus,
+    validations         : state.ui.validations
   };
 };
 

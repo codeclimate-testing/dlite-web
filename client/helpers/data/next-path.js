@@ -14,7 +14,9 @@ import {
 import { eligibleForReducedFee } from './reduced-fee';
 import {
   eligibleForCitizen,
-  eligibleForRequirements
+  eligibleForRequirements,
+  eligibleForOptOut,
+  eligibleForOptOutExist
 } from '../../helpers/data/voting';
 
 export const chooseCardType = (props) => {
@@ -99,20 +101,32 @@ export const organDonationPath = (props) => {
 };
 export const citizenship = (props) => {
   let key = 'summary';
-  if(isPreregistering(props.dateOfBirth)){
-    key = '/guardian-signature';
-  } else if (eligibleForCitizen(props)) {
-    key = '/voting-registration/eligibility';
-  };
+  if (eligibleForCitizen(props)) {
+    key = 'votingEligibility';
+  } else if (isPreregistering(props.dateOfBirth)){
+    key = 'guardianSignature';
+  } 
   return key;
 };
 
 export const votingEligibility = (props) => {
-  let key = '/summary';
-  if(isPreregistering(props.dateOfBirth)){
-    key = '/guardian-signature';
-  } else if (eligibileForRequirements(props)) {
-    key = '/voting-registration/opt-out';
-  };
+  let key = 'summary';
+  if (eligibileForRequirements(props)) {
+    key = 'optOut';
+  } else if (isPreregistering(props.dateOfBirth)){
+    key = 'guardianSignature';
+  } 
+  return key;
+};
+
+export const optOut = (props) => {
+  let key = 'summary';
+  if (eligibleForOptOut(props)) {
+    key = 'voterPreferences';
+  } else if (eligibleForOptOutExist(props)) {
+    key = 'voterPreferencesUpdated'
+  } else if (isPreregistering(props.dateOfBirth)) {
+    key = 'guardianSignature';
+  } 
   return key;
 };

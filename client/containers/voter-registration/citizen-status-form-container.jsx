@@ -8,7 +8,7 @@ import handlers                 from '../../helpers/handlers';
 import { checkPreReg }          from '../../helpers/data/youth';
 
 const Page = (props) => {
-  let validations       = [];
+  let validations       = {};
   let onSubmit          = handlers.navigateOrShowErrors('citizenship', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
