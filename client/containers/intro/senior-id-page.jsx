@@ -14,11 +14,6 @@ const Page = (props) => {
   let onSubmit          =   handlers.navigateOrShowErrors('seniorID', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
-
   return (
     <Presentation
       {...props}
@@ -26,7 +21,6 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       selectedValue     = { props.seniorID }
       validations       = { validations }
-      onFocus           = { focus }
     />
   )
 };

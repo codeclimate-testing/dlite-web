@@ -20,48 +20,42 @@ const AddressTemplate = (props) => {
   return (
     <div className='addresses-section'>
       <TextInput
+        {...props}
         name={ generateIdentifier('street_1', props.type) }
         id={ generateIdentifier('street_1', props.type) }
         description='Street Address'
         value={ props.address['street_1'] }
-        onChange={props.onChange}
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_1()        :
           props.type === 'mailing' ? props.validations.mailingStreet_1()  :
           null
         }
-        onBlur={props.onBlurValidate}
-        onFocus={props.onFocusClearValidation}
       />
 
       <TextInput
+        {...props}
         name={ generateIdentifier('street_2', props.type) }
         id={ generateIdentifier('street_2', props.type) }
         description='Apartment or Unit Number (optional)'
         value={ props.address['street_2'] }
-        onChange={props.onChange}
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_2()        :
           props.type === 'mailing' ? props.validations.mailingStreet_2()  :
           null
         }
-        onBlur={props.onBlurValidate}
-        onFocus={props.onFocusClearValidation}
       />
 
       <TextInput
+        {...props}
         name={ generateIdentifier('city', props.type) }
         id={ generateIdentifier('city', props.type) }
         description='City'
         value={ props.address['city'] }
-        onChange={props.onChange}
         errorMessage={
           props.type === 'home' ? props.validations.homeCity()        :
           props.type === 'mailing' ? props.validations.mailingCity()  :
           null
         }
-        onBlur={props.onBlurValidate}
-        onFocus={props.onFocusClearValidation}
       />
 
       <StateSelector
@@ -72,18 +66,16 @@ const AddressTemplate = (props) => {
       />
 
       <TextInput
+        {...props}
         name={ generateIdentifier('zip', props.type) }
         id={ generateIdentifier('zip', props.type) }
         description='Zip Code'
         value={ props.address['zip'] }
-        onChange={props.onChange}
         errorMessage={
           props.type === 'home' ? props.validations.homeZip()        :
           props.type === 'mailing' ? props.validations.mailingZip()  :
           null
         }
-        onBlur={props.onBlurValidate}
-        onFocus={props.onFocusClearValidation}
       />
     </div>
   );

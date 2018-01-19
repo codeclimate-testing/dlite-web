@@ -35,8 +35,8 @@ const NumberInput = (props) => {
           id        = { props.identifier }
           name      = { props.identifier }
           onChange  = { props.onChange }
-          onBlur    = { props.onBlur }
-          onFocus   = { props.onFocus }
+          onBlur    = { props.onBlurValidate }
+          onFocus   = { props.onFocusClearValidation }
           value     = { props.value }
         />
       </div>

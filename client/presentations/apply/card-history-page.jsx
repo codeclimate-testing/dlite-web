@@ -22,7 +22,6 @@ const CardHistoryPage = (props) => {
 
         <EnterLicenseAndIdHistory 
           {...props} 
-          onFocus         = { props.onFocusClearValidation }
         />
 
         <NavigationButtons 

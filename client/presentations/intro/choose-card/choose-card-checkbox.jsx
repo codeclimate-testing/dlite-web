@@ -23,7 +23,6 @@ const Form = (props) => {
           array         = {props.cardType}
           text          = {text}
           onBlur        = { props.onBlurValidate }
-          onFocus       = { props.focus }
           errorMessage  = { props.validations.cardType()}
         >
           <CheckboxSelector

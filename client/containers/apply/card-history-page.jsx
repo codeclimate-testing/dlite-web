@@ -12,10 +12,6 @@ const Page = (props) => {
   let validations       = new LicenseHistoryValidator(props.licenseAndIdHistory, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('licenseHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-  // let focus = (e) => {
-  //   props.onFocus(e);
-  //   props.onFocusClearValidation(e);    
-  // };
   
   return (
     <Presentation 

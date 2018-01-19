@@ -20,11 +20,8 @@ const Presentation = (props) => {
         <div className='row'>
           <DateInput
             {...props}
-            onBlur      = { props.onBlurValidate }
-            onFocus     = { props.onFocusClearValidation }
             description = 'Date of birth'
             values      = { props.dateOfBirth }
-            validations = { props.validations }
           />
 
         </div>

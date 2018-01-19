@@ -16,7 +16,6 @@ const OrganDonationPage = (props) => {
       <form onSubmit    = { props.onSubmit }>
         <DonateOrgan
           {...props}
-          onChange      = { props.onChange }
           selectedValue = { props.organDonation.donateOrgan }
           errorMessage  = { props.validations.donateOrgan() }
         />
@@ -25,7 +24,6 @@ const OrganDonationPage = (props) => {
 
         <DonateMoney
           {...props}
-          onChange      = { props.onChange }
           selectedValue = { props.organDonation.donateMoney }
           errorMessage  = { props.validations.donateMoney() }
         />

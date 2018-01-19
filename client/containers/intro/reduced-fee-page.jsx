@@ -12,18 +12,12 @@ const Page = (props) => {
   let onSubmit          = handlers.navigateOrShowErrors('reducedFeeID', props, validations)
   let onBack            = handlers.navigateOnBack(props, validations);
 
-  let focus = function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
-
   return (
     <Presentation
       {...props}
       onSubmit    = { onSubmit }
       onBack      = { onBack }
       validations = { validations }
-      onFocus     = { focus }
     />
   );
 };

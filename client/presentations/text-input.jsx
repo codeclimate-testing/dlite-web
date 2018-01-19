@@ -36,8 +36,8 @@ const TextInput = (props) => {
           id        = { id }
           name      = { name }
           onChange  = { props.onChange }
-          onBlur    = { props.onBlur }
-          onFocus   = { props.onFocus }
+          onBlur    = { props.onBlurValidate }
+          onFocus   = { props.onFocusClearValidation }
           value     = { props.value }
         />
       </div>

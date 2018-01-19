@@ -15,7 +15,6 @@ const EnterPreviousNames = (props) => {
           {...props}
           identifier='previousNames'
           description='Previous Names:'
-          onBlur    = { props.onBlurValidate }
           value     = { props.namesHistory.previousNames }
         />
     </div>

@@ -11,11 +11,6 @@ const Page = (props) => {
   let validations       = new NamesValidator(props.namesHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('nameHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-  
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   return (
     <Presentation
@@ -23,7 +18,6 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       validations       = { validations }
-      onFocus           = { focus }
     />
   );
 };

@@ -19,7 +19,7 @@ const NamesHistoryPage = (props) => {
         />
         <EnterPreviousNames 
           {...props}
-          errorMessage = { props.validations.previousNames() }
+          errorMessage  = { props.validations.previousNames() }
         />
         <NavigationButtons 
           {...props}

@@ -17,11 +17,6 @@ const Page = (props) => {
   const continueDisabled  = ageChecks.Under15(props.dateOfBirth) ? props.cardType.youthIDInstead !== 'Yes' : false;
   let onSubmit            = handlers.navigateOrShowErrors('youthIDInstead', props, validations);
   const onBack            = handlers.navigateOnBack(props, validations);
-  
-  let focus               =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   const selectedValue     = props.cardType.youthIDInstead === 'Yes' && getDL(props) ? 'No' : props.cardType.youthIDInstead;
 
@@ -33,7 +28,6 @@ const Page = (props) => {
       selectedValue     = { selectedValue }
       continueDisabled  = { continueDisabled }
       validations       = { validations }
-      onFocus           = { focus }
     />
   )
 };

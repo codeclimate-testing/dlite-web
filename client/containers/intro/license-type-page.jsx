@@ -13,17 +13,12 @@ const Page = (props) => {
   let validations = new LicenseTypeValidator(props, props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('chooseLicenseClass', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
-  let focus       = function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   return <Presentation
     {...props}
     onSubmit    = { onSubmit }
     onBack      = { onBack }
     validations = { validations }
-    onFocus     = { focus }
   />;
 };
 

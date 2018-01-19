@@ -17,9 +17,9 @@ const EnterMedicalInfo = (props) => {
         {headerText}
       </h3>
       <TextInput
+        {...props}
         identifier    = 'other'
         value         = { props.cardChanges.other }
-        onChange      = { props.onChange }
         errorMessage  = { props.validations.other() }
       />
     </div>

@@ -34,7 +34,6 @@ const EnterLicenseAndIdHistory = (props) => {
           description = { text.issuedBy }
           value       = { props.licenseAndIdHistory.issuedBy }
           errorMessage  = { props.validations.issuedBy() }
-          onBlur        = { props.onBlurValidate }
         />
       </div>
       <div id='expirationDate' className='row'>
@@ -42,7 +41,6 @@ const EnterLicenseAndIdHistory = (props) => {
           {...props}
           description   = { text.expiration }
           values        = { props.licenseAndIdHistory }
-          onBlur        = { props.onBlurValidate }
         />
       </div>
     </div>

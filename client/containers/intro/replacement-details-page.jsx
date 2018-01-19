@@ -12,11 +12,6 @@ const Page = (props) => {
   let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('chooseCardReplacement', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
-  
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   return (
     <Presentation
@@ -25,7 +20,6 @@ const Page = (props) => {
       onBack            = { onBack }
       selectedValue     = { props.cardReplacement.reason }
       validations       = { validations }
-      onFocus           = { focus }
     />
   )
 };

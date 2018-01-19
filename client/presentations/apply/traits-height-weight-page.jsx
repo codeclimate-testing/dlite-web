@@ -18,25 +18,21 @@ const TraitsPage = (props) => {
         <form onSubmit={ props.onSubmit } >
           <div className='row'>
             <NumberInput
-              onChange={ props.onChange }
+              {...props}
               identifier='heightFeet'
               description='Feet'
               value={ props.traitsHeightWeight.heightFeet }
               errorMessage={ props.validations.heightFeet() }
-              onBlur={props.onBlurValidate}
-              onFocus={props.onFocusClearValidation}
             />
 
             <div className='unit spacer' />
 
             <NumberInput
-              onChange={ props.onChange }
+              {...props}
               identifier='heightInches'
               description='Inches'
               value={ props.traitsHeightWeight.heightInches }
               errorMessage={ props.validations.heightInches() }
-              onBlur={props.onBlurValidate}
-              onFocus={props.onFocusClearValidation}
             />
           </div>
 
@@ -46,13 +42,11 @@ const TraitsPage = (props) => {
 
           <div className='row'>
             <NumberInput
-              onChange={ props.onChange }
+              {...props}
               identifier='weight'
               description='Pounds'
               value={ props.traitsHeightWeight.weight }
               errorMessage={ props.validations.weight() }
-              onBlur={props.onBlurValidate}
-              onFocus={props.onFocusClearValidation}
             />
           </div>
 

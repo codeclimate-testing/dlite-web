@@ -21,33 +21,27 @@ const LegalNameForm = (props) => {
         </p>
 
         <TextInput
+          {...props}
           identifier='firstName'
           description='First name'
           value={props.legalName.firstName}
           errorMessage={ props.validations.firstName() }
-          onChange={props.onChange}
-          onBlur={props.onBlurValidate}
-          onFocus={props.onFocusClearValidation}
         />
 
         <TextInput
+          {...props}
           identifier='middleName'
           description='Middle name(s)'
           value={props.legalName.middleName}
           errorMessage={ props.validations.middleName() }
-          onChange={props.onChange}
-          onBlur={props.onBlurValidate}
-          onFocus={props.onFocusClearValidation}
         />
 
         <TextInput
+          {...props}
           identifier='lastName'
           description='Last name'
           value={props.legalName.lastName}
           errorMessage={ props.validations.lastName() }
-          onChange={props.onChange}
-          onBlur={props.onBlurValidate}
-          onFocus={props.onFocusClearValidation}
         />
 
         <SuffixSelector

@@ -11,11 +11,6 @@ const Page = (props) => {
   let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing'); 
   let onSubmit          = handlers.navigateOrShowErrors('chooseCardChanges', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
   
   return (
     <Presentation
@@ -23,7 +18,6 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.cardChanges.correctOrUpdate }
-      onFocus           = { focus }
       validations       = { validations }
     />
   )

@@ -17,7 +17,10 @@ describe('NumberInput not used in DateInput', function() {
       description: 'test',
       identifier: 'testDate',
       value: '',
-      errorMessage: ''
+      errorMessage: '',
+      onChange: spy(),
+      onFocus: spy(),
+      onBlur: spy()
     };
 
     component = render(

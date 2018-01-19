@@ -19,7 +19,6 @@ const Page = (props) => {
   let onBack                  = handlers.navigateOnBack(props, validations);
   let onSubmit                = handlers.navigateOrShowErrors('addresses', props, validations);
 
-
   return (
     <Presentation
       {...props}
@@ -46,7 +45,7 @@ function mapDispatchToProps(dispatch) {
   const onBlurValidate          = handlers.onBlurValidate(dispatch);
   const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
   const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
-
+  const onFocus                 = handlers.onFocus(dispatch);
 
   return {
     onSubmit,
@@ -55,7 +54,8 @@ function mapDispatchToProps(dispatch) {
     onMailingChange,
     onBlurValidate,
     onFocusClearValidation,
-    onSubmitShowErrors
+    onSubmitShowErrors,
+    onFocus
   };
 }
 

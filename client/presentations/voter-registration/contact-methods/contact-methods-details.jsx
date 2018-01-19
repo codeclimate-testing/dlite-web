@@ -14,18 +14,18 @@ const ContactDetails = (props) => {
       <h2 className='question'>Please enter your contact information below.</h2>
       <p>This is optional</p>
       <TextInput
+        {...props}
         identifier='emailAddress'
         description='Email address'
         example='aliceball1234@gmail.com'
         value={props.contactDetails.emailAddress}
-        onChange={props.onChange}
       />
       <TextInput
+        {...props}
         identifier='phoneNumber'
         description='Phone number'
         example='916 314 8765'
         value={props.contactDetails.phoneNumber}
-        onChange={props.onChange}
       />
       <p>Who gets this information?</p>
       <p>Secretary of State and county election officials have access to this information</p>

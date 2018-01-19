@@ -22,7 +22,6 @@ const Form = (props) => {
             name          = 'homeAddressSameAsMailing'
             text          = { values }
             onBlur        = { props.onBlurValidate }
-            onFocus       = { props.focus }
             errorMessage  = { props.validations.homeAddressSameAsMailing()}
           >
             <RadioSelector

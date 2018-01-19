@@ -21,7 +21,6 @@ const LicenseIssuesPage = (props) => {
 
         <EnterIssues 
           {...props} 
-          onBlur        = { props.onBlurValidate }
         />
 
         <NavigationButtons 

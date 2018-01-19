@@ -2,7 +2,6 @@
 
 import React            from 'react';
 import TextArea         from '../../text-area.jsx';
-import NumberInput      from '../../number-input.jsx';
 import DateInput        from '../../date-input.jsx';
 
 const EnterRevokedSuspended = (props) => {
@@ -22,10 +21,10 @@ const EnterRevokedSuspended = (props) => {
 
         <div className='row'>
           <TextArea
+            { ...props }
             identifier  = 'reason'
             description = 'What was the reason?'
             value       = { props.licenseIssues.reason }
-            onChange    = { props.onChange }
             errorMessage = { props.validations.reason() }
           />
         </div>

@@ -14,11 +14,6 @@ const Page = (props) => {
   let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('wdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
-  
-  let focus             =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   return (
     <Presentation
@@ -27,7 +22,6 @@ const Page = (props) => {
       onBack            = { onBack }
       selectedValue     = { props.cardAction }
       validations       = { validations }
-      onFocus           = { focus }
     />
   )
 };

@@ -28,7 +28,6 @@ const Form = (props) => {
         selectedValue   = {selectedValue}
         text            = {text}
         onBlur          = { props.onBlurValidate }
-        onFocus         = { props.focus }
         errorMessage    = { props.validations.cardType()}
       >
         <RadioSelector

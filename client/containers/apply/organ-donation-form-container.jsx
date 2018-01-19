@@ -22,8 +22,6 @@ const Page = (props) => {
       onSubmit     = { onSubmit }
       onBack       = { onBack }
       validations  = { validations }
-      onBlur       = { props.onBlurValidate }
-      onFocus      = { props.onFocusClearValidation }
     />
   );
 }

@@ -45,40 +45,34 @@ const DateInput = (props) => {
       </label>
 
       <NumberInput
+        {...props}
         identifier    = 'month'
         example       = 'MM'
         value         = { props.values.month}
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.month) }
-        onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
-        onFocus       = { props.onFocus }
       />
   
       <div className  = 'unit spacer'/>
  
       <NumberInput
+        {...props}
         identifier    = 'day'
         example       = 'DD'
         value         = { props.values.day }
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.day) }
-        onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
-        onFocus       = { props.onFocus }
       />
 
       <div className  = 'unit spacer'/>
 
       <NumberInput
+        {...props}
         identifier    = 'year'
         example       = 'YYYY'
         value         = { props.values.year }
         labelClass    = { labelClass }
         error         = { generateErrorClass(errors.year)  }
-        onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
-        onFocus       = { props.onFocus }
       />
 
       <ErrorLabel 

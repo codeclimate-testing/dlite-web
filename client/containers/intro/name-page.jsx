@@ -26,6 +26,7 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     legalName: state.application.legalName,
+    focused: state.ui.focus,
     validations: state.ui.validations
   };
 };

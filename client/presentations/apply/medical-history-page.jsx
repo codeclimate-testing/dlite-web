@@ -18,7 +18,6 @@ const MedicalHistoryPage = (props) => {
         />
         <EnterMedicalInfo 
           {...props}
-          onBlur = { props.onBlurValidate }
         />
         <NavigationButtons 
           {...props}
