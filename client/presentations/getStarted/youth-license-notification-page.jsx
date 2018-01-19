@@ -9,6 +9,7 @@ import Page               from '../../containers/page.jsx';
 
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
+import MessageBox          from '../message-box.jsx';
 
 const FormHeader = (props) => {
   return (
@@ -42,7 +43,7 @@ let ErrorMessage = (props) => {
   if (validToContinue(props)) { return null; }
 
   return (
-    <p>Ok, please come back when you turn 15.</p>
+    <MessageBox className='info'>Ok, please come back when you turn 15.</MessageBox>
   );
 };
 
@@ -82,8 +83,6 @@ const Form = (props) => {
                 value='No'
               />
             </RadioCollection>
- 
-            <div className='unit spacer' />
           </div>
 
           <ErrorMessage {...props} />
