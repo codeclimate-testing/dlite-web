@@ -59,7 +59,9 @@ module.exports = function(world) {
 
   world.and('I enter my phone number', function(done){
     browser
-      .type('#phoneNumber', '(111) 000-8888')
+      .type('#phoneNumber1', '111')
+      .type('#phoneNumber2', '000')
+      .type('#phoneNumber3', '8888')
       .then(() => { done(); })
       .catch(done);
   });
@@ -95,46 +97,18 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I have already eneterd my contact details', function(done){
-    browser
-      .click('a.contact-methods')
-      .waitForSelector('.contact-methods-choice-form')
-      .click('label[for="shouldContact-Yes"]')
-      .type('#emailAddress', 'sample@example.com')
-      .type('#phoneNumber', '(111) 000-8888')
-      .click('a.sections')
-      .waitForSelector('.section-links')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.then('I will see my email and phone number', function(done){
     browser
     .value('#emailAddress')
     .then((value) => { assert.equal(value, 'sample@example.com'); })
-    .value('#phoneNumber')
-    .then((value) => { assert.equal(value, '(111) 000-8888') })
+    .value('#phoneNumber1')
+    .then((value) => { assert.equal(value, '111'); })
+    .value('#phoneNumber2')
+    .then((value) => { assert.equal(value, '000'); })
+    .value('#phoneNumber3')
+    .then((value) => { assert.equal(value, '8888'); })
     .then(() => { done(); })
     .catch(done);
-  });
-
-  world.when('I update my email and phone number', function(done){
-    browser
-      .type('#emailAddress', 'example@sample.com')
-      .type('#phoneNumber', '(111) 000-9999')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.then('I will see my updated email and phone number in summary', function(done){
-    browser
-      .text()
-      .then((text) => {
-        assert.ok(text.includes('example@sample.com'), 'email not found on summary');
-        assert.ok(text.includes('(111) 000-9999'), 'phone number not found on summary');
-      })
-      .then(() => { done(); })
-      .catch(done);
   });
 
 };

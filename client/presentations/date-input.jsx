@@ -31,37 +31,37 @@ const DateInput = (props) => {
       </label>
 
       <NumberInput
-        {...props}
         identifier    = 'month'
         example       = 'MM'
         value         = { props.values.month}
         error         = { hasValue(errors.month) }
         onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
+        onBlurValidate = { props.onBlurValidate }
+        onFocusClearValidation = { props.onFocusClearValidation }
       />
   
       <div className  = 'unit spacer'/>
  
       <NumberInput
-        {...props}
         identifier    = 'day'
         example       = 'DD'
         value         = { props.values.day }
         error         = { hasValue(errors.day) }
         onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
+        onBlurValidate = { props.onBlurValidate }
+        onFocusClearValidation = { props.onFocusClearValidation }
       />
 
       <div className  = 'unit spacer'/>
 
       <NumberInput
-        {...props}
         identifier    = 'year'
         example       = 'YYYY'
         value         = { props.values.year }
         error         = { hasValue(errors.year)  }
         onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
+        onBlurValidate = { props.onBlurValidate }
+        onFocusClearValidation = { props.onFocusClearValidation }
       />
 
       <ErrorLabel 

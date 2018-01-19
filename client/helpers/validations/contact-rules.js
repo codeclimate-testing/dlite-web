@@ -8,18 +8,10 @@ import {
   emailRegex
 }             from '../data/validations';
 
-
-const hasPhone = (props) => {
-  return (hasValue(props.phoneNumber1) && hasValue(props.phoneNumber2) && hasValue(props.phoneNumber3));
-};
-
-const hasNeither = (props) => {
-  if (!hasValue(props.emailAddress) && !hasPhone(props)){
-    return true;
-  } else {
-    return false;
-  }
-};
+import {
+  hasNeither,
+  hasPhone
+}   from '../data/contact-methods';
 
 const emailAddress = (props) => {
   if (props.shouldContact !== 'Yes') { return []; };

@@ -325,7 +325,9 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
   return {
     shouldContact: parserHelper.boolToStr(voting_registrations.should_contact),
     emailAddress: emails.address,
-    phoneNumber: phone_numbers.number
+    phoneNumber1: phone_numbers.number.slice(0, 3),
+    phoneNumber2: phone_numbers.number.slice(3, 6),
+    phoneNumber3: phone_numbers.number.slice(6, 10)
   };
 }
 

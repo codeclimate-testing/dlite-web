@@ -55,7 +55,6 @@ export default {
   errorPreventContinuing: 'You cannot continue until you fix the errors on this page.',
   selectionMissing: 'Please make a selection',
   pleaseEnterValidData: 'Please enter valid information',
-  inputIncludesNonEnglishCharacters: 'Please enter only English characters.'
   inputIncludesNonEnglishCharacters: 'Please enter only English characters.',
   licenseClassMissing: 'Please select a license class',
   contactMethod: 'Please enter either an email address or a phone number.'

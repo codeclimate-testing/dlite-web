@@ -92,7 +92,7 @@ function extractEmail(data) {
 function extractPhoneNumber(data) {
   return [{
     application_id:   data.id,
-    number:           data.contactMethods.phoneNumber
+    number:           data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3
   }];
 }
 

@@ -130,7 +130,9 @@ function fakeClientData() {
     'contactMethods': {
       'shouldContact': 'Yes',
       'emailAddress': 'aliceball1234@gmail.com',
-      'phoneNumber': '916314 8765'
+      'phoneNumber1': '916',
+      'phoneNumber2': '314',
+      'phoneNumber3': '8765'
     }
   };
 }

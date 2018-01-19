@@ -108,7 +108,7 @@ describe('client data parser', function() {
   it('correctly extracts the phone number', function() {
     let phoneNumber = parsedData.phone_numbers[0];
     assert.equal(phoneNumber.application_id, data.id);
-    assert.equal(phoneNumber.number, data.contactMethods.phoneNumber);
+    assert.equal(phoneNumber.number, data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3);
   });
 
   it('correctly extracts the organ donations', function() {

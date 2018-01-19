@@ -590,7 +590,9 @@ describe('Summary section', function() {
       let contactMethods = {
         shouldContact: 'Yes',
         emailAddress: 'email@email.com',
-        phoneNumber: '111-111-1111'
+        phoneNumber1: '111',
+        phoneNumber2: '111',
+        phoneNumber3: '1111'
       };
 
       let component = render(
@@ -603,7 +605,7 @@ describe('Summary section', function() {
       )
       assert.equal(component.text().includes('Should Contact: Yes'), true);
       assert.equal(component.text().includes('Email Address: email@email.com'), true);
-      assert.equal(component.text().includes('Phone Number: 111-111-1111'), true);
+      assert.equal(component.text().includes('Phone Number: (111) 111-1111'), true);
     });
   });
 

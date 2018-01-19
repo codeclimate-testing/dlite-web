@@ -11,11 +11,6 @@ const Page = (props) => {
   let validations    = new ContactValidator(props.contactMethods, props.validations);
   let onSubmit       = handlers.navigateOrShowErrors('contactMethods', props, validations);
   let onBack         = handlers.navigateOnBack(props, validations);
-  
-  let focus          =   function(e) {
-    props.onFocusClearValidation(e);
-    return props.onFocus(e);
-  };
 
   return (
     <Presentation
@@ -23,7 +18,6 @@ const Page = (props) => {
       onBack          = { onBack }
       onSubmit        = { onSubmit }
       validations     = { validations }
-      onFocus         = { focus }
     />
   );
 };

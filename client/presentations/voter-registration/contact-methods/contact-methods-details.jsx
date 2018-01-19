@@ -31,13 +31,12 @@ const ContactDetails = (props) => {
       <p>This is optional</p>
       
       <TextInput
+        {...props}
         identifier    = 'emailAddress'
         description   = 'Email address'
         example       = 'aliceball1234@gmail.com'
         value         = {props.contactMethods.emailAddress}
         errorMessage  = {props.validations.emailAddress()}
-        onChange      = { props.onChange }
-        onBlur        = { props.onBlur }
       />
 
       <label
@@ -51,34 +50,31 @@ const ContactDetails = (props) => {
       <div className='row'>
 
         <NumberInput
+          {...props}
           identifier    = 'phoneNumber1'
           example       = '916'
           value         = { props.contactMethods.phoneNumber1}
           error         = { hasValue(errors.one)}
-          onChange      = { props.onChange }
-          onBlur        = { props.onBlur }
         />
 
         <div className  = 'unit spacer'/>
 
         <NumberInput
+          {...props}
           identifier    = 'phoneNumber2'
           example       = '314'
           value         = { props.contactMethods.phoneNumber2}
           error         = { hasValue(errors.two)}
-          onChange      = { props.onChange }
-          onBlur        = { props.onBlur }
         />
 
         <div className  = 'unit spacer'/>
 
         <NumberInput
+          {...props}
           identifier    = 'phoneNumber3'
           example       = '8765'
           value         = { props.contactMethods.phoneNumber3}
           error         = { hasValue(errors.three)}
-          onChange      = { props.onChange }
-          onBlur        = { props.onBlur }
         />
       </div>
       <div className='row'>

@@ -152,9 +152,7 @@ Feature: Save user data
     Then I will see proof of social security section
     When I visit contact methods details page
     Then I will see my email and phone number
-    When I update my email and phone number
     And I go to the page with my summary
-    Then I will see my updated email and phone number in summary
     When I click to edit my name
     Then I will be taken to the names page
     When I click "Next" to continue

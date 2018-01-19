@@ -125,7 +125,9 @@ const state  = {
     contactMethods: {
       shouldContact: '',
       emailAddress: '',
-      phoneNumber: ''
+      phoneNumber1: '',
+      phoneNumber2: '',
+      phoneNumber3: ''
     },
     guardianSignature: {
       isSigned:  '',
