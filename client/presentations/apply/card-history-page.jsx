@@ -22,7 +22,7 @@ const CardHistoryPage = (props) => {
 
         <EnterLicenseAndIdHistory 
           {...props} 
-          onBlur          = { props.onBlurValidate }
+          onFocus         = { props.onFocusClearValidation }
         />
 
         <NavigationButtons 

@@ -16,7 +16,9 @@ const MedicalHistoryPage = (props) => {
         <MedicalCondition {...props}
           selectedValue = {props.medicalHistory.hasMedicalCondition}
         />
-        <EnterMedicalInfo {...props}
+        <EnterMedicalInfo 
+          {...props}
+          onBlur = { props.onBlurValidate }
         />
         <NavigationButtons 
           {...props}

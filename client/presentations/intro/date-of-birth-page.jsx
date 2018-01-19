@@ -4,7 +4,6 @@ import React from 'react';
 
 import Page               from '../../containers/page.jsx';
 import TextInput          from '../text-input.jsx';
-import NumberInput        from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
 

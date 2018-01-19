@@ -35,6 +35,7 @@ const LicenseAndIdHistory = (props) => {
           {...props}
           name='isIssued'
           text={values}
+          errorMessage = { props.validations.isIssued() }
         >
           <RadioSelector 
             value='Yes'

@@ -52,6 +52,7 @@ const DateInput = (props) => {
         error         = { generateErrorClass(errors.month) }
         onChange      = { props.onChange }
         onBlur        = { props.onBlur }
+        onFocus       = { props.onFocus }
       />
   
       <div className  = 'unit spacer'/>
@@ -64,6 +65,7 @@ const DateInput = (props) => {
         error         = { generateErrorClass(errors.day) }
         onChange      = { props.onChange }
         onBlur        = { props.onBlur }
+        onFocus       = { props.onFocus }
       />
 
       <div className  = 'unit spacer'/>
@@ -76,6 +78,7 @@ const DateInput = (props) => {
         error         = { generateErrorClass(errors.year)  }
         onChange      = { props.onChange }
         onBlur        = { props.onBlur }
+        onFocus       = { props.onFocus }
       />
 
       <ErrorLabel 

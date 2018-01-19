@@ -15,6 +15,8 @@ const Form = (props) => {
       <div className='row'>
         <NumberInput
           onChange={props.onChange}
+          onBlur = {props.onBlur}
+          onFocus = {props.onFocus}
           identifier='part1'
           description=''
           value={props.socialSecurity.part1}
@@ -24,6 +26,8 @@ const Form = (props) => {
 
         <NumberInput
           onChange={props.onChange}
+          onBlur = {props.onBlur}
+          onFocus = {props.onFocus}
           identifier='part2'
           description=''
           value={props.socialSecurity.part2}
@@ -33,6 +37,8 @@ const Form = (props) => {
 
         <NumberInput
           onChange={props.onChange}
+          onBlur = {props.onBlur}
+          onFocus = {props.onFocus}
           identifier='part3'
           description=''
           value={props.socialSecurity.part3}
