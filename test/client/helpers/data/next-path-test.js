@@ -5,8 +5,8 @@ const assert = require('assert');
 import {
   chooseCardType,
   currentCardInfo,
-  chooseCardChanges,
-  chooseCardReplacement,
+  updateAndCorrect,
+  replacementDetails,
   realID,
   chooseLicenseClass
 } from '../../../../client/helpers/data/next-path';
@@ -125,7 +125,7 @@ describe('Data helpers for determining next path from current page and props', f
     });
   });
 
-  describe('#chooseCardReplacement', function() {
+  describe('#replacementDetails', function() {
     it('takes seniors replacing a DL to the realID page', function() {
       let today = new Date();
 
@@ -142,7 +142,7 @@ describe('Data helpers for determining next path from current page and props', f
         },
         cardAction: 'replace'
       };
-      assert.equal(chooseCardReplacement(data), 'realID');
+      assert.equal(replacementDetails(data), 'realID');
     });
 
     it('takes seniors replacing an ID to the seniorID page', function(){
@@ -161,7 +161,7 @@ describe('Data helpers for determining next path from current page and props', f
         },
         cardAction: 'replace'
       };
-      assert.equal(chooseCardReplacement(data), 'seniorID');
+      assert.equal(replacementDetails(data), 'seniorID');
     });
 
     it('takes not-yet-seniors to the realID page', function() {
@@ -180,7 +180,7 @@ describe('Data helpers for determining next path from current page and props', f
         },
         cardAction: 'replace'
       };
-      assert.equal(chooseCardReplacement(data), 'realID');
+      assert.equal(replacementDetails(data), 'realID');
     });
   });
 
@@ -259,7 +259,7 @@ describe('Data helpers for determining next path from current page and props', f
     });
   });
 
-  describe('#chooseCardChanges', function() {
+  describe('#updateAndCorrect', function() {
     it('goes to seniorID page if user is senior updating an ID', function() {
       let today = new Date();
 
@@ -279,7 +279,7 @@ describe('Data helpers for determining next path from current page and props', f
           sections: ['name']
         }
       };
-      assert.equal(chooseCardChanges(data), 'seniorID');
+      assert.equal(updateAndCorrect(data), 'seniorID');
     });
   })
 });

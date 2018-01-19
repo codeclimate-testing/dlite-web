@@ -20,7 +20,7 @@ describe('Data helpers for page', function() {
   });
 
   it('#nextPath return the full path given page with only one path', function() {
-    assert.equal(nextPath('trueName', {}), '/apply/my-basics/date-of-birth');
+    assert.equal(nextPath('legalName', {}), '/apply/my-basics/date-of-birth');
   });
 
   it('#nextPath return the full path given page with a function defining its next page', function() {

@@ -38,16 +38,16 @@ export const chooseCardType = (props) => {
 export const currentCardInfo = (props) => {
   let key = 'realID';
   if (isChangingCard(props)) {
-    key = 'chooseCardChanges'
+    key = 'updateAndCorrect'
   } else if (isReplacingCard(props)) {
-    key = 'chooseCardReplacement'
+    key = 'replacementDetails'
   } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
   } 
   return key;
 };
 
-export const chooseCardChanges = (props) => {
+export const updateAndCorrect = (props) => {
   let key = 'realID';
   if (eligibleForSeniorID(props)) {
     key = 'seniorID';
@@ -55,7 +55,7 @@ export const chooseCardChanges = (props) => {
   return key;
 };
 
-export const chooseCardReplacement = (props) => {
+export const replacementDetails = (props) => {
   let key = 'realID';
   if (eligibleForSeniorID(props)) {
     key = 'seniorID';
@@ -86,7 +86,7 @@ export const chooseLicenseClass = (props) => {
 };
 
 export const socialSecurity = (props) => {
-  let key = 'licenseHistory';
+  let key = 'cardHistory';
 
   if (getDL(props)) {
     key = 'medicalHistory';

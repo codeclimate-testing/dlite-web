@@ -4,10 +4,10 @@ import alicePath from '../alice-path';
 import {
   chooseCardType,
   currentCardInfo,
-  chooseCardChanges,
+  updateAndCorrect,
   realID,
   chooseLicenseClass,
-  chooseCardReplacement,
+  replacementDetails,
   socialSecurity,
   organDonationPath,
   citizenship,
@@ -20,11 +20,11 @@ const getStarted = [
     key: 'welcome',
     description: 'Welcome',
     path: '/welcome',
-    next: 'trueName',
+    next: 'legalName',
   },
   {
-    key: 'trueName',
-    description: 'True name',
+    key: 'legalName',
+    description: 'Legal name',
     path: '/my-basics/legal-name',
     next: 'dateOfBirth',
   },
@@ -47,10 +47,10 @@ const getStarted = [
     next: chooseCardType
   },
   {
-    key: 'chooseCardReplacement',
+    key: 'replacementDetails',
     description: 'Replacement Details',
     path: '/replacement-details',
-    next: chooseCardReplacement
+    next: replacementDetails
   },
   {
     key: 'currentCardInfo',
@@ -59,10 +59,10 @@ const getStarted = [
     next: currentCardInfo
   },
   {
-    key: 'chooseCardChanges',
+    key: 'updateAndCorrect',
     description: 'Updates and Corrections',
     path: '/updates-and-corrections',
-    next: chooseCardChanges
+    next: updateAndCorrect
   },
   {
     key: 'youthIDInstead',
@@ -134,10 +134,10 @@ const myHistory = [
     key: 'medicalHistory',
     description: 'Medical history',
     path: '/my-history/medical/',
-    next: 'licenseHistory'
+    next: 'cardHistory'
   },
   {
-    key: 'licenseHistory',
+    key: 'cardHistory',
     description: 'License and id history',
     path: '/my-history/license-and-id',
     next: 'nameHistory'
