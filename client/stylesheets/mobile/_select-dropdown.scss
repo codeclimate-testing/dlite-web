@@ -1,0 +1,72 @@
+.select-dropdown {
+  .dropdown {
+    outline-style: none;
+    font-size: 18px;
+    font-family: $form-font;
+
+    background-color: white;
+    color: $darkest-color;
+
+    margin-bottom: 2px; // fixes for the focus sizing on the bottom
+
+    @include bordered;
+    @include rounded;
+
+    width: 100px;
+
+    &:focus,
+    &.focus {
+      @include focus-outline-input;
+
+      .dropdown-options {
+        display: block;
+        @include focus-outline-input;
+      }
+    }
+
+    &.error {
+      border-bottom-width: $border-width-special;
+      border-color: $error;
+    }
+
+    .icon {
+      height: 16px;
+      width: 16px;
+      background-image: url("/images/icons/misc/dropdown.svg");
+      background-repeat: no-repeat;
+    }
+
+    .dropdown-selected {
+      min-height: 39px;
+      padding: 5px 9px 5px;
+    }
+
+    .dropdown-options {
+      @include border-bottom-radius($border-radius-size);
+      @include border-left-radius($border-radius-size);
+      @include border-right-radius($border-radius-size);
+      margin-left: -1px;
+      margin-top: -2px;
+      width: 100px;
+      background-color: #efefef;
+      max-height: 37px * 2.8;
+      overflow-y: scroll;
+      border: 1px solid gray;
+      display: none;
+    }
+
+    .dropdown-option {
+      min-height: 37px;
+      padding: 5px 9px;
+      border-top: 1px solid gray;
+      &:hover {
+        background-color: darken(#efefef, 5%);
+      }
+
+      &.selected {
+        font-weight: bold;
+      }
+    }
+  }
+}
+

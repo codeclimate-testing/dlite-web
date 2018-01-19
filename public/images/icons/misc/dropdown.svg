@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="13px" height="20px" viewBox="0 0 13 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>icons/misc/dropdown</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="20" font-family="FontAwesome" font-weight="normal">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icons/misc/dropdown" fill="#5E5E5E">
-            <text id="">
-                <tspan x="0" y="17"></tspan>
-            </text>
+            <path d="M11.8861607,7.81473214 C11.9605658,7.88913728 11.9977679,7.9747019 11.9977679,8.07142857 C11.9977679,8.16815525 11.9605658,8.25371987 11.8861607,8.328125 L6.68526786,13.5290179 C6.61086272,13.603423 6.5252981,13.640625 6.42857143,13.640625 C6.33184475,13.640625 6.24628013,13.603423 6.171875,13.5290179 L0.970982143,8.328125 C0.896577009,8.25371987 0.859375,8.16815525 0.859375,8.07142857 C0.859375,7.9747019 0.896577009,7.88913728 0.970982143,7.81473214 L1.52901786,7.25669643 C1.60342299,7.18229129 1.68898761,7.14508929 1.78571429,7.14508929 C1.88244096,7.14508929 1.96800558,7.18229129 2.04241071,7.25669643 L6.42857143,11.6428571 L10.8147321,7.25669643 C10.8891373,7.18229129 10.9747019,7.14508929 11.0714286,7.14508929 C11.1681552,7.14508929 11.2537199,7.18229129 11.328125,7.25669643 L11.8861607,7.81473214 Z" id=""></path>
         </g>
     </g>
 </svg>

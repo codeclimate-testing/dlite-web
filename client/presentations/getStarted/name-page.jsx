@@ -7,6 +7,7 @@ import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
+import SelectDropdown     from '../select-dropdown.jsx';
 
 const LegalNameForm = (props) => {
   return (
@@ -44,6 +45,20 @@ const LegalNameForm = (props) => {
           value={props.legalName.lastName}
           errorMessage={ props.validations.lastName() }
         />
+
+        <SelectDropdown
+          name='suffix'
+          selected={ props.legalName.suffix }
+          onChange={ props.onChange }
+          description='Suffix'
+        >
+          <option value='' />
+          <option value='Sr.' />
+          <option value='Jr.' />
+          <option value='I' />
+          <option value='II' />
+          <option value='III' />
+        </SelectDropdown>
 
         <SuffixSelector
           identifier='suffix'
