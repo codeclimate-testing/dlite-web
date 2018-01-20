@@ -1,6 +1,7 @@
 'use strict'
 
 import React                from 'react'
+import Accordion            from '../../containers/accordion.jsx';
 import Page                 from '../../containers/page.jsx';
 import { ageChecks }        from '../../helpers/calculate-age';
 import {
@@ -89,39 +90,52 @@ const SummaryPage = (props) => {
 
   let contents = [
 
-    <LegalName legalName={application.legalName} key='legal-name' />,
-    <DateOfBirth dateOfBirth={application.dateOfBirth} key='date-of-birth' />,
-    <Address address={application.address} key='address' />,
-    <PhysicalTraits physicalTraits={application.physicalTraits} key='physicalTraits' />,
-    <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} key='traits-height-weight' />,
-    <SocialSecurity socialSecurity={application.socialSecurity} key='social-security' />,
-    <Cards
-      cardType        = { application.cardType }
-      cardAction      = { application.cardAction }
-      cardChanges     = { application.cardChanges }
-      currentCardInfo = {application.currentCardInfo}
-      cardReplacement = { application.cardReplacement }
-      key             = 'card-type'
-    />,
-    <SeniorID seniorID={application.seniorID} key='senior-id' />,
-    <RealID realID={application.realID} key='real-id' />,
-    <LicenseType licenseType={application.licenseType} key='license-type' />,
-    <ReducedFee reducedFee={application.reducedFee} key='reduced-fee' />,
-    <OrganDonation organDonation={application.organDonation} key='organ-donation' />,
-    <LicenseIssues licenseIssues={application.licenseIssues} key='license-issues' />,
-    <LicenseAndIdHistory licenseAndIdHistory={application.licenseAndIdHistory} key='license-and-id-history' />,
-    <NamesHistory namesHistory={application.namesHistory} key='names-history' />,
-    <MedicalHistory medicalHistory={application.medicalHistory} key='medical-history' />,
-    <VeteransService veteransService={application.veteransService} key='veterans-service' />,
-    <CitizenStatus citizenStatus={application.citizenStatus} key='citizen-status' />,
-    <BallotByMail ballotByMail={application.ballotByMail} key='ballot-by-mail' />,
-    <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} key='eligibility-requirements' />,
-    <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} key='choose-party' />,
-    <BallotLanguage ballotLanguage={application.ballotLanguage} key='ballot-language' />,
-    <GuardianSignature guardianSignature={application.guardianSignature} key='guardian-signature' />,
-    <ContactMethods contactMethods={application.contactMethods} key='contact-methods' />,
-    <OptOut optOut={application.optOut} key='opt-out' />,
-    <Empty {...application} key='empty' />
+    <Accordion id='application-details-summary' title='My application details' key='application-details-summary'>
+      <Cards
+        cardType        = { application.cardType }
+        cardAction      = { application.cardAction }
+        cardChanges     = { application.cardChanges }
+        currentCardInfo = {application.currentCardInfo}
+        cardReplacement = { application.cardReplacement }
+      />
+      <SeniorID seniorID={application.seniorID} />
+      <RealID realID={application.realID} />
+      <LicenseType licenseType={application.licenseType} />
+      <ReducedFee reducedFee={application.reducedFee} />
+      <GuardianSignature guardianSignature={application.guardianSignature}/>
+    </Accordion>,
+
+    <Accordion id='basics-summary' title='My basics' key='basics-summary'>
+      <Empty {...application} key='empty' />
+      <LegalName legalName={application.legalName} />
+      <DateOfBirth dateOfBirth={application.dateOfBirth} />
+      <Address address={application.address} />
+      <PhysicalTraits physicalTraits={application.physicalTraits} />
+      <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} />
+      <SocialSecurity socialSecurity={application.socialSecurity} />
+    </Accordion>,
+
+    <Accordion id='history-summary' title='My history' key='history-summary'>
+      <MedicalHistory medicalHistory={application.medicalHistory} />
+      <LicenseAndIdHistory licenseAndIdHistory={application.licenseAndIdHistory} />
+      <NamesHistory namesHistory={application.namesHistory} />
+      <LicenseIssues licenseIssues={application.licenseIssues} />
+      <VeteransService veteransService={application.veteransService} />
+    </Accordion>,
+
+    <Accordion id='organ-donation-summary' title='Organ donation' key='organ-donation-summary'>
+      <OrganDonation organDonation={application.organDonation} />,
+    </Accordion>,
+
+    <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
+      <CitizenStatus citizenStatus={application.citizenStatus} />
+      <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} />
+      <OptOut optOut={application.optOut} />
+      <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} />
+      <BallotLanguage ballotLanguage={application.ballotLanguage} />
+      <BallotByMail ballotByMail={application.ballotByMail} />
+      <ContactMethods contactMethods={application.contactMethods} />
+    </Accordion>
   ];
 
   contents = contents.reduce((summaries, item) => {

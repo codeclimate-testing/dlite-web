@@ -6,7 +6,11 @@ import {
   removeValue
 } from './array-add-remove';
 
-const accordionsReducer = (state=[], action) => {
+const defaultState = () => {
+  return ['basics-summary'];
+};
+
+const accordionsReducer = (state=defaultState() , action) => {
   if (action.type !== TYPES.TOGGLE_ACCORDION) { return state; }
 
   const value = action.payload.value;
