@@ -20,4 +20,13 @@ describe('choose party rules:', function() {
     };
     assert.deepEqual(rule.politicalPartyChoose(props), [messages.politicalPartySelectionMissing]);
   });
+
+  it('will give the inputIncludesNonEnglishCharacters error when other party text input includes non-English characters', function() {
+    let props = {
+      isSelected: 'Yes',
+      politicalPartyChoose: 'Other',
+      otherParty: 'Unia Europejskich Demokratów'
+    };
+    assert.deepEqual(rule.otherParty(props), [messages.inputIncludesNonEnglishCharacters]);
+  });
 });

@@ -18,13 +18,16 @@ describe('ChoosePartyPage ', function() {
     
     beforeEach(function() {
       let politicalPartyChoose = {
-        isSelected: ''
+        isSelected: '',
+        politicalPartyChoose: '',
+        otherParty: ''
       };
 
       let onChange = spy();
       let validations = {
         isSelected: spy(),
         politicalPartyChoose: spy(),
+        otherParty: spy(),
         all: spy()
       };
 
@@ -32,7 +35,8 @@ describe('ChoosePartyPage ', function() {
         politicalPartyChoose,
         onChange,
         validations
-      }
+      };
+      
     });
     
     it('shows the form asking if user would like to choose political party', function() {
@@ -70,7 +74,30 @@ describe('ChoosePartyPage ', function() {
       assert.ok(component.find('label.radio-selector[for="Republican Party"]', 'repub radio not found'))
       assert.ok(component.find('label.radio-selector[for="Other"]', 'other radio not found'))
     });
-  });
 
+    describe('choosing other party', function() {
+      it('selecting other party causes text input to appear', function() {
+        props.politicalPartyChoose.isSelected = 'Yes';
+        props.politicalPartyChoose.politicalPartyChoose = 'Other';
+        let component = render(
+          <Wrapper>
+            <ChoosePartyPage   {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('input#otherParty').length, 'input within radio selector not found');
+      });
+
+      it('placeholder text reads "Please enter your selection"', function() {
+        props.politicalPartyChoose.isSelected = 'Yes';
+        props.politicalPartyChoose.politicalPartyChoose = 'Other';
+        let component = render(
+          <Wrapper>
+            <ChoosePartyPage   {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('input#otherParty[placeholder="Please enter your selection"]').length, 'placeholder text not found');
+      });
+    });
+  });
 });
 
