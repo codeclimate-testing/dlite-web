@@ -3,6 +3,7 @@
 import React                  from 'react';
 import RadioSelector          from '../../radio-selector.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
+import TextInput              from '../../text-input.jsx';
 
 const PARTIES = [ "American Independent Party",
                   "Libertarian Party",
@@ -12,6 +13,19 @@ const PARTIES = [ "American Independent Party",
                   "Republican Party",
                   "Other"
                 ];
+
+const OtherInput = (props) => {
+  if (props.politicalPartyChoose.politicalPartyChoose !== 'Other') { return null; }
+  return (
+    <TextInput 
+      onChange = {props.onChange}
+      onFocus = {props.onFocus}
+      id='otherParty'
+      name='otherParty'
+      value={props.politicalPartyChoose.otherParty}
+    />
+  )
+};
 
 const PoliticalPartyPreference = (props) => {
   if(props.politicalPartyChoose.isSelected !== 'Yes') { return null; }
@@ -49,10 +63,14 @@ const PoliticalPartyPreference = (props) => {
           value='Republican Party'
           text='Republican Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Other'
           text='Other'
-        />
+        >
+          <OtherInput 
+            {...props}
+          />
+        </RadioSelector>
       </RadioCollection>
     </div>
   );
