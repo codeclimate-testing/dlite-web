@@ -40,13 +40,15 @@ function mapDispatchToProps(dispatch) {
   const onSubmit        = handlers.onFormSubmit(dispatch);
   const onBlur          = handlers.onBlur(dispatch);
   const onFocus         = handlers.onFocus(dispatch);
+  const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
 
   return {
     onSubmit,
     onFirstChange,
     onSecondChange,
     onBlur,
-    onFocus
+    onFocus,
+    onFocusClearValidation
   };
 }
 

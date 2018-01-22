@@ -10,6 +10,7 @@ import {
   errorMessage, 
   errorClass
 } from '../../validations.jsx';
+import ExampleLabel from '../../example-label.jsx';
 
 const ContactDetails = (props) => {
 
@@ -47,22 +48,23 @@ const ContactDetails = (props) => {
         Phone number
       </label>
 
+      <ExampleLabel
+        example         = '916 314 8765'
+      />
+
       <div className='row'>
 
         <NumberInput
           {...props}
           identifier    = 'phoneNumber1'
-          example       = '916'
           value         = { props.contactMethods.phoneNumber1}
           error         = { hasValue(errors.one)}
         />
-
         <div className  = 'unit spacer'/>
 
         <NumberInput
           {...props}
           identifier    = 'phoneNumber2'
-          example       = '314'
           value         = { props.contactMethods.phoneNumber2}
           error         = { hasValue(errors.two)}
         />
@@ -72,7 +74,6 @@ const ContactDetails = (props) => {
         <NumberInput
           {...props}
           identifier    = 'phoneNumber3'
-          example       = '8765'
           value         = { props.contactMethods.phoneNumber3}
           error         = { hasValue(errors.three)}
         />

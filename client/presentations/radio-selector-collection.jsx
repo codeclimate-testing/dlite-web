@@ -28,7 +28,12 @@ const childPropsAdditions = (props, value, values) => {
   let focusedValue = focus[1];
   let focused     = focusedValue === value && focusedName === props.name;
   let custom      = props.custom ? props.custom : false;
-  let text        = props.text ? props.text[value] : ''
+  let text        = props.text ? props.text[value] : '';
+
+  let focusFunction = (e) => {
+    props.onFocus(e);
+    props.onFocusClearValidation(e);
+  };
 
   return {
     name    : props.name,
@@ -39,7 +44,7 @@ const childPropsAdditions = (props, value, values) => {
     custom  : custom,
     onChange: props.onChange,
     onBlur  : props.onBlur,
-    onFocus : props.onFocus,
+    onFocus : focusFunction,
     text    : text
   };
 };

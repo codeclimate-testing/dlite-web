@@ -13,6 +13,11 @@ const childPropsAdditions = (props, value, values) => {
   let selected = props.array[props.name].includes(value);
   let custom = props.custom ? props.custom : false;
 
+  let focusFunction = (e) => {
+    props.onFocus(e);
+    props.onFocusClearValidation(e);
+  };
+
   return {
     name    : props.name,
     key     : value,
@@ -21,7 +26,7 @@ const childPropsAdditions = (props, value, values) => {
     custom  : custom,
     onChange: props.onChange,
     onBlur  : props.onBlur,
-    onFocus : props.onFocus,
+    onFocus : focusFunction,
     text    : props.text[value]
   };
 };

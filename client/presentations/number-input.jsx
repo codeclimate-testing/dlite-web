@@ -8,7 +8,18 @@ import {
 } from './validations.jsx';
 import ExampleLabel from './example-label.jsx';
 
-
+const Label = (props) => {
+  if (!props.description) { return null; }
+  return (
+    <label 
+      htmlFor     = { props.identifier }
+      className   = { props.errorName }
+    >
+      <ErrorIcon errorClass={ props.errorName } />
+      {props.description}
+    </label>
+  )
+};
 const NumberInput = (props) => {
   let className   = `input-container ${props.identifier}-input`;
   let errorName   = errorClass(props);
@@ -16,14 +27,11 @@ const NumberInput = (props) => {
 
   return (
     <div className  = 'unit'>
-      <label 
-        htmlFor     = { props.identifier }
-        className   = { errorName }
-      >
-        <ErrorIcon errorClass={ errorName } />
-        {props.description}
-      </label>
-
+      <Label 
+        {...props} 
+        errorName = { errorName }
+      />
+    
       <ExampleLabel
         example     = { props.example }
       />
