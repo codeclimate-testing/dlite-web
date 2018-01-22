@@ -346,8 +346,8 @@ describe('Summary section', function() {
           <OrganDonation { ...props }/>
         </Wrapper>
       );
-      assert.equal(component.text().includes('Donate Organs: Yes'), true);
-      assert.equal(component.text().includes('Voluntary Contribution: Yes'), true);
+      assert.equal(component.text().includes('Be an organ donorYes'), true);
+      assert.equal(component.text().includes('Donate $2Yes'), true);
     });
   });
 

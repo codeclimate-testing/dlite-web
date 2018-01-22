@@ -9,41 +9,24 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('Donate Organs'), 'Donate organ not saved in summary');
+      assert.ok(text.includes('Be an organ donorYes'), 'Donate organ not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
-  });
-
-  world.then('I will see my contribution selection in the summary', function(done) {
-    browser
-    .text()
-    .then((text) => {
-      assert.ok(text.includes('Voluntary Contribution'), 'Voluntary contribution not saved in summary');
-    })
-    .then(() => { done(); })
-    .catch(done);
-  });
-
-  world.and('I will not see any contribution selection in the summary', function(done) {
-    browser
-      .exists('a.summary')
-      .then((exists) => { assert.ok(!exists, 'Voluntary contributions'); })
-      .then(() => { done(); })
-      .catch(done);
   });
 
   world.and('I will not see any organ selection in the summary', function(done) {
     browser
       .exists('a.summary')
-      .then((exists) => { assert.ok(!exists, 'Donate Organs'); })
+      .then((exists) => { assert.ok(!exists, 'Be an organ donorYes'); })
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.and('I choose to donate', function(done) {
+  world.and('I choose to donate my organs', function(done) {
     browser
       .click('label[for="donateOrgan-Yes"]')
+      .click('label[for="donateMoney-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -81,16 +64,6 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see my updated organ selection in the summary', function(done){
-    browser
-      .text()
-      .then((text) => {
-        assert.ok(text.includes('No'), 'Voluntary contribution not saved in summary');
-      })
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.then('I will see text for donate - Yes', function(done){
     browser
     .waitForSelector('.donate-organ-yes-info')
@@ -113,7 +86,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('Yes'), 'Yes not saved in summary');
+      assert.ok(text.includes('Donate $2Yes'), 'Yes not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -149,7 +122,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('No'), 'Voluntary contribution not saved in summary');
+      assert.ok(text.includes('Donate$2No'), 'Voluntary contribution not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);

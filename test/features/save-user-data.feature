@@ -81,7 +81,7 @@ Feature: Save user data
     And I click "Next" to continue
     Then I will be on the page for organ donation
     Then I will see the page title has postfix " - Organ donation"
-    And I choose to donate
+    And I choose to donate my organs
     And I choose to contribute
     And I click "Next" to continue
     Then I will be taken to voter intro info page
@@ -216,7 +216,7 @@ Feature: Save user data
     And I click "Next" to continue
     Then I will be on the page for organ donation
     Then I will see the page title has postfix " - Organ donation"
-    And I change my organ selection
+    And I choose to donate my organs
     When I visit voter citizen status page
     And I decline to answer
     When I click "Next" to continue

@@ -124,7 +124,7 @@ const SummaryPage = (props) => {
     </Accordion>,
 
     <Accordion id='organ-donation-summary' title='Organ donation' key='organ-donation-summary'>
-      <OrganDonation organDonation={application.organDonation} />,
+      <OrganDonation organDonation={application.organDonation} />
     </Accordion>,
 
     <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
