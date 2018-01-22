@@ -46,8 +46,6 @@ a.button.arrow-button.forward.get-started {
 
 .loading:empty{
   position: absolute;
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
   top: calc(30% - 4em);
   left: calc(50% - 4em);
   width: 7em;
@@ -55,14 +53,6 @@ a.button.arrow-button.forward.get-started {
   border-radius: 50%;
   background-image: url("/images/icons/misc/loadingIcon.gif");
   background-position: center;
-  background-repeat: 'no-repeat';
+  background-repeat: no-repeat;
 }
 
-@keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
