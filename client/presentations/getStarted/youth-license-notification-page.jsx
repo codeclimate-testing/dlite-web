@@ -89,6 +89,7 @@ const Form = (props) => {
 
           <NavigationButtons {...props}
           errorMessage = {props.validations.youthIDInstead() }
+          continueHidden = { props.continueHidden }
           />
         </form>
       </div>

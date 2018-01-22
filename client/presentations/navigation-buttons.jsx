@@ -24,12 +24,14 @@ const ErrorMessageBox = (props) => {
 
 const NavigationButtons = (props) => {
   const disabled = props.continueDisabled;
+  const hidden = props.continueHidden;
   return (
     <div className='navigation-buttons row'>
       <hr />
       <ErrorMessageBox errorMessage={props.errorMessage} />
-      <ContinueButton disabled={disabled} />
+      <ContinueButton disabled={disabled} hidden={hidden} />
       <BackButton onBack={props.onBack} />
+
     </div>
   );
 };

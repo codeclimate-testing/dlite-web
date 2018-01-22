@@ -14,19 +14,19 @@ import { ageChecks }              from '../../helpers/calculate-age';
 
 const Page = (props) => {
   let validations         = new YouthDLValidator(props.cardType.youthIDInstead, props.validations);
-  const continueDisabled  = ageChecks.Under15(props.dateOfBirth) ? props.cardType.youthIDInstead !== 'Yes' : false;
+  const continueHidden    = props.cardType.youthIDInstead === 'No' && ageChecks.Under15(props.dateOfBirth)? true : false;
   let onSubmit            = handlers.navigateOrShowErrors('youthIDInstead', props, validations);
   const onBack            = handlers.navigateOnBack(props, validations);
 
   const selectedValue     = props.cardType.youthIDInstead === 'Yes' && getDL(props) ? 'No' : props.cardType.youthIDInstead;
-
+  
   return (
     <Presentation
-      {...props}
+      {...props} 
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { selectedValue }
-      continueDisabled  = { continueDisabled }
+      continueHidden    = { continueHidden }
       validations       = { validations }
     />
   )

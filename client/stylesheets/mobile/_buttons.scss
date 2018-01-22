@@ -51,6 +51,13 @@ label.button {
     border-color: darken($primary, 10%);
   }
 
+  &.hidden,
+  &[hidden],
+  &[hidden]:focus,
+  &.hidden.focus, {
+    visibility: hidden;
+  }
+
   &.disabled,
   &[disabled],
   &[disabled]:hover,

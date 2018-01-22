@@ -19,7 +19,8 @@ import {
   eligibleForOptOutExist
 } from '../../helpers/data/voting';
 import {
-  isPreregistering
+  isPreregistering,
+  ageChecks
 } from '../../helpers/calculate-age';
 
 export const chooseCardType = (props) => {
