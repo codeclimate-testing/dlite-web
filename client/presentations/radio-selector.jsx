@@ -19,7 +19,7 @@ const RadioSelector = function(props) {
           className='row relative radio-selector'
           htmlFor={id}
         > 
-          
+
           <div className='off-screen'>
             <input
               type='radio'

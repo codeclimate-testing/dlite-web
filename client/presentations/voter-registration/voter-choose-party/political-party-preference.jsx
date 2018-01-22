@@ -4,6 +4,11 @@ import React                  from 'react';
 import RadioSelector          from '../../radio-selector.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import TextInput              from '../../text-input.jsx';
+import {
+  ErrorIcon,
+  ErrorLabel,
+  errorClass
+} from '../../validations.jsx';
 
 const PARTIES = [ "American Independent Party",
                   "Libertarian Party",
@@ -14,17 +19,46 @@ const PARTIES = [ "American Independent Party",
                   "Other"
                 ];
 
-const OtherInput = (props) => {
-  if (props.politicalPartyChoose.politicalPartyChoose !== 'Other') { return null; }
+const OtherParty = (props) => {
+  if (props.politicalPartyChoose.politicalPartyChoose !== 'Other') { 
+    return (
+      <RadioSelector
+        {...props}
+        value='Other'
+        text='Other'
+      />
+    )
+  }
+  
+  let errorMessage = props.validations.otherParty();
+  let error = errorClass(errorMessage);
+
   return (
-    <TextInput 
-      onChange = {props.onChange}
-      onFocus = {props.onFocus}
-      id='otherParty'
-      name='otherParty'
-      value={props.politicalPartyChoose.otherParty}
-    />
-  )
+    <div className='radio-input'>
+      <ErrorIcon
+        errorClass= { error }
+      />
+      <RadioSelector
+        {...props}
+        value=''
+        text=''
+        selected = {true}
+      >
+        <TextInput 
+          {...props}
+          id            = 'otherParty'
+          name          = 'otherParty'
+          value         = { props.politicalPartyChoose.otherParty }
+          error         = { error} 
+          placeholder   = 'Please enter your selection'
+        />
+      </RadioSelector>
+      <ErrorLabel
+        errorMessage  = { errorMessage }
+        errorClass    = { error }
+      />
+    </div>
+  );
 };
 
 const PoliticalPartyPreference = (props) => {
@@ -63,14 +97,10 @@ const PoliticalPartyPreference = (props) => {
           value='Republican Party'
           text='Republican Party'
         />
-        <RadioSelector
-          value='Other'
-          text='Other'
-        >
-          <OtherInput 
-            {...props}
-          />
-        </RadioSelector>
+        <OtherParty
+          {...props}
+          key='otherParty'
+        />
       </RadioCollection>
     </div>
   );

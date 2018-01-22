@@ -12,6 +12,7 @@ const TextInput = (props) => {
   let id              = props.id   || props.identifier;
   let name            = props.name || props.identifier;
   let className       = errorClass(props);
+  let inputClass      = props.error ? 'error' : className;
 
   return (
     <div className='text-input-block input-margin-bottom'>
@@ -31,7 +32,7 @@ const TextInput = (props) => {
 
       <div className="input-container">
         <input
-          className = { className }
+          className = { inputClass }
           type      = 'text'
           id        = { id }
           name      = { name }
@@ -39,6 +40,7 @@ const TextInput = (props) => {
           onBlur    = { props.onBlurValidate }
           onFocus   = { props.onFocusClearValidation }
           value     = { props.value }
+          placeholder = { props.placeholder }
         />
       </div>
       <ErrorLabel
