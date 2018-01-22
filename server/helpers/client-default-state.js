@@ -118,7 +118,8 @@ const state  = {
     eligibilityRequirements: '',
     politicalPartyChoose: {
       isSelected: '',
-      politicalPartyChoose: ''
+      politicalPartyChoose: '',
+      otherParty: ''
     },
     ballotLanguage: '',
     optOut: '',

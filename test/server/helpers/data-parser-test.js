@@ -4,6 +4,26 @@ const assert            = require('assert');
 const dataParser        = require('../../../server/helpers/data-parser');
 
 describe('dataParser', function() {
+  describe('parseParty', function() {
+    it('returns the selected party that has been saved to politicalPartyChoose', function() {
+      let obj = {
+        isSelected: 'Yes',
+        politicalPartyChoose: 'Peace and Freedom Party',
+        otherParty: ''
+      };
+      assert.equal(dataParser.parseParty(obj), 'Peace and Freedom Party');
+    });
+
+    it('returns the other party that has been typed in', function() {
+      let obj = {
+        isSelected: 'Yes',
+        politicalPartyChoose: 'Other',
+        otherParty: 'Oprah'
+      };
+      assert.equal(dataParser.parseParty(obj), 'Oprah');
+    });
+  });
+
   describe('stringToBool', function() {
     it('returns null when data equals "decline"', function() {
       let val = 'decline';

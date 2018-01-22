@@ -30,14 +30,20 @@ const OtherParty = (props) => {
     )
   }
   
-  let errorMessage = props.validations.otherParty();
+  let errorMessage = props.validations.otherParty(props);
   let error = errorClass(errorMessage);
 
   return (
     <div className='radio-input'>
-      <ErrorIcon
-        errorClass= { error }
-      />
+      <div style={{display: 'flex'}}>
+        <ErrorIcon
+          errorClass= { error }
+        />
+        <ErrorLabel
+          errorMessage  = { errorMessage }
+          errorClass    = { error }
+        />
+      </div>
       <RadioSelector
         {...props}
         value=''
@@ -53,10 +59,7 @@ const OtherParty = (props) => {
           placeholder   = 'Please enter your selection'
         />
       </RadioSelector>
-      <ErrorLabel
-        errorMessage  = { errorMessage }
-        errorClass    = { error }
-      />
+      
     </div>
   );
 };

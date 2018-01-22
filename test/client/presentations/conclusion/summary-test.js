@@ -665,8 +665,42 @@ describe('Summary section', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Political Party: Green Party'), true);
-      assert.equal(component.text().includes('Political Party Preference: Yes'), true);
+      assert.equal(component.text().includes('Political partyGreen Party'), true);
+    });
+
+    it('shows No Answer after user has switched answer', function() {
+      let politicalPartyChoose = {
+        isSelected: 'Skip',
+        politicalPartyChoose: 'Green Party'
+      };
+
+      let component = render(
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
+      );
+      assert.equal(component.text().includes('Political partyNo answer'), true);
+    });
+
+    it('shows the other party typed into the form', function() {
+      let politicalPartyChoose = {
+        isSelected: 'Yes',
+        politicalPartyChoose: 'Other',
+        otherParty: 'the French Canadians'
+      };
+
+      let component = render(
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
+      );
+      assert.equal(component.text().includes('Political partythe French Canadians'), true);
     });
   });
 

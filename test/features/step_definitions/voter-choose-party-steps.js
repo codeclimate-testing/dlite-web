@@ -50,7 +50,7 @@ module.exports = function(world) {
     browser
       .text('.summary')
       .then( text => {
-        assert(text.includes('Political Party: No Answer'), 'wrong political party answer')
+        assert(text.includes('Political partyNo answer'), 'wrong political party answer')
       })
       .then(() => { done(); })
       .catch(done);

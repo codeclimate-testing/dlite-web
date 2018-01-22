@@ -211,7 +211,7 @@ function extractVotingRegistrations(data) {
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     is_preregistering:  parserHelper.strToBool(data.politicalPartyChoose.isSelected),
-    party:              data.politicalPartyChoose.politicalPartyChoose,
+    party:              parserHelper.parseParty(data.politicalPartyChoose),
     language:           data.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
     should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)

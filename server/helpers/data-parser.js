@@ -13,6 +13,15 @@ module.exports.createDateJson = function createDateJson(date) {
   }
 };
 
+module.exports.parseParty = function parseParty(obj) {
+  let party = obj.politicalPartyChoose;
+
+  if (obj.politicalPartyChoose === 'Other' && obj.otherParty.length > 0) {
+    party = obj.otherParty;
+  }
+  return party;
+};
+
 function strToBool(val) {
   // add ability to store a non-answer
   return val === 'Yes' ? true : val === 'No' ? false : val;

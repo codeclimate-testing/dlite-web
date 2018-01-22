@@ -299,9 +299,26 @@ function getEligibility(voting_registrations) {
 }
 
 function getParty(voting_registrations) {
+  const parties = [ "American Independent Party",
+    "Libertarian Party",
+    "Democratic Party",
+    "Green Party",
+    "Peace and Freedom Party",
+    "Republican Party"
+  ];
+
+  let politicalParty = voting_registrations.party;
+  let otherParty = '';
+
+  if (voting_registrations.party.length > 0 && !parties.includes(voting_registrations.party)) {
+    politicalParty = 'Other';
+    otherParty = voting_registrations.party;
+  };
+
   return {
     isSelected:             parserHelper.boolToStr(voting_registrations.is_preregistering),
-    politicalPartyChoose:   voting_registrations.party
+    politicalPartyChoose:   politicalParty,
+    otherParty:             otherParty
   };
 }
 

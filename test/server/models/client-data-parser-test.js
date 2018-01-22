@@ -191,4 +191,11 @@ describe('client data parser', function() {
     assert.equal(votingReg.is_citizen, 'decline');
     assert.equal(votingReg.is_eligible, 'decline');
   });
+
+  it('saves other political party that has been typed in', function() {
+    data.politicalPartyChoose.otherParty = 'some other one';
+    data.politicalPartyChoose.politicalPartyChoose = 'Other';
+    parsedData = parse(data).voting_registrations[0];
+    assert.equal(parsedData.party, data.politicalPartyChoose.otherParty);
+  });
 });

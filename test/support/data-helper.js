@@ -123,7 +123,8 @@ function fakeClientData() {
     'eligibilityRequirements': 'Yes',
     'politicalPartyChoose': {
       'isSelected': 'Yes',
-      'politicalPartyChoose': 'Green Party'
+      'politicalPartyChoose': 'Green Party',
+      'otherParty': ''
     },
     'ballotLanguage': 'English',
     'optOut': 'new',

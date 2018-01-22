@@ -12,7 +12,7 @@ const chooseParty = (props) => {
 };
 
 const otherParty = (props) => {
-  if (props.isSelected !== 'Yes' && props.politicalPartyChoose !== 'Other') { return null; }
+  if (props.isSelected !== 'Yes' && props.politicalPartyChoose !== 'Other') { return []; }
   let errors = [];
   let value = props.otherParty;
 
