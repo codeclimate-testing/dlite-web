@@ -6,6 +6,7 @@ import Page               from '../../containers/page.jsx';
 import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import translations       from '../../i18n';
 
 const LegalNameForm = (props) => {
   return (
