@@ -90,4 +90,11 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.when('I click to edit my license and id history', function(done) {
+    browser
+      .click('.licenseAndIdHistory.button.summary')
+      .then(done)
+      .catch(done);
+  });
+
 };

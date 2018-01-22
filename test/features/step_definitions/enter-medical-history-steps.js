@@ -55,4 +55,11 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I click to edit my medical history', function(done) {
+    browser
+      .click('.medicalHistory.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

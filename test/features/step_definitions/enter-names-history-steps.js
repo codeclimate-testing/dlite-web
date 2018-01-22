@@ -94,4 +94,11 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click to edit my previous names', function(done) {
+    browser
+      .click('.namesHistory.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

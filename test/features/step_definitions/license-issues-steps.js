@@ -81,4 +81,10 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I click to edit my license issues', function(done) {
+    browser
+      .click('.licenseIssues.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

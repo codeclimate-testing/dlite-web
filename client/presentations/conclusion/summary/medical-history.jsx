@@ -2,25 +2,32 @@
 
 import React from 'react';
 import * as dataPresent from '../../../helpers/data-present';
+import PageSummaryLink  from '../../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 
 const MedicalHistory = (props) => {
-  let hasMedicalCondition = props.medicalHistory.hasMedicalCondition;
-   if (!(dataPresent.hasMedicalCondition(props.medicalHistory))) { return null; }
+  let medicalCondition = 'None'
+  if(props.medicalHistory.hasMedicalCondition === 'Yes') {
+    medicalCondition = props.medicalHistory.medicalInfo
+  } else {
+    medicalCondition
+  };
 
-  if(hasMedicalCondition === 'No') {
+  if(props.cardType.new.indexOf('DL') > -1 || props.cardType.renew === 'DL' || props.cardType.change === 'DL' || props.cardType.replace === 'DL') {
     return (
-      <div className='summary-section'>
-        <p> Medical history: {hasMedicalCondition} </p>
-      </div>
-    );
+      <PageSummaryLink
+        to='/my-history/medical'
+        name='medicalHistory'
+      >
+        <SummaryItem
+          title='Medical conditions:'
+          text={medicalCondition}
+        />
+      </PageSummaryLink>
+      );
+  } else {
+    return null;
   }
-
-  return (
-    <div className='summary-section'>
-      <p> Medical history: {hasMedicalCondition} </p>
-      <p> Medical conditions: {props.medicalHistory.medicalInfo} </p>
-    </div>
-  );
 };
 
 export default MedicalHistory;

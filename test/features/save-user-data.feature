@@ -116,33 +116,6 @@ Feature: Save user data
     Then I will be taken to voter registration complete page
     And I click "Next" to continue
     Then I will be on the page with my summary
-    Then I will see my name on that summary
-    Then I will see my date of birth on that summary
-    Then I will see my mailing address on that summary
-    Then I will see my updated home zip
-    Then I will see that my DL card type has been saved
-    Then I will see that I am not getting a real id
-    Then I will see what license type I need
-    Then I will see my sex in the summary
-    Then I will see my eye color in the summary
-    Then I will see my hair color in the summary
-    Then I will see my height on that summary
-    Then I will see Yes in my citizenship selection
-    Then I will see my social security on that summary
-    Then I will see my language in the summary
-    Then I will see mail by ballot as Yes in summary
-    Then I will see Yes for having reportable medical history
-    Then I will see Yes in my suspended license selection
-    Then I will see the date and reason for my license suspension
-    Then I will see Yes for having a previous name
-    Then I will see that I am a veteran
-    Then I will see that I would like additional veterans benefits info
-    Then I will see that I would like that veterans label on my id
-    Then I will see voter registration choice as I am a new voter in California in summary
-    And I will see my organ selection in the summary
-    Then I will see Yes for my political party choice
-    And I will see my political party in summary
-    Then I will see my contact details in summary
     When I visit the required documents page
     Then I will not see a section about RealID information
     And I will see a section about medical information
@@ -175,6 +148,26 @@ Feature: Save user data
     Then I will be on the page with my summary
     When I click to edit my social security
     Then I will be on the page for entering my social security
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I click to edit my license and id history
+    Then I will be on the page to enter existing license and id
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I click to edit my previous names
+    Then I will be taken to previous names page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I click to edit my medical history
+    Then I will be taken to medical history page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I click to edit my license issues
+    Then I will be taken to the license issues page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I click to edit my veterans service
+    Then Then I will be on the page for veteran related services
     When I click "Next" to continue
     Then I will be on the page with my summary
 
@@ -228,17 +221,6 @@ Feature: Save user data
     And I decline to answer
     When I click "Next" to continue
     Then I will be on the page with my summary
-    Then I will see that my ID card type has been saved
-    Then I will see the info of the card I want renewed
-    Then I will see that I am getting a real id
-    Then I will see that I am opting for a reduced fee and my answer about not having documents
-    Then I will see that I do not have a social security number
-    Then I will see my previous DL/ID information
-    Then I will see Yes in my existing DL/ID selection
-    Then I will see No for having a previous name
-    Then I will see that I am not a veteran
-    And I will see that I declined to answer citizenship
-    Then I will see my updated organ selection in the summary
     When I visit the date of birth page
     Then I will see the date of birth that I entered
     When I change my year of birth

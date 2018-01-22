@@ -3,32 +3,51 @@
 import React            from "react";
 import * as dataPresent from '../../../helpers/data-present';
 import { printDate }    from '../../../helpers/print-date';
+import PageSummaryLink  from '../../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 
 const LicenseAndIdHistory = (props) => {
-
-  let isIssued        = props.licenseAndIdHistory.isIssued;
   if (!dataPresent.licenseAndIdHistory(props.licenseAndIdHistory)) { return null; }
+  let date       = printDate(props.licenseAndIdHistory);
+  let issuedBy   = props.licenseAndIdHistory.issuedBy;
+  let DLIDNumber = 'None';
 
-  let date            = printDate(props.licenseAndIdHistory);
-  let DLIDNumber      = props.licenseAndIdHistory.DLIDNumber;
-  let issuedBy        = props.licenseAndIdHistory.issuedBy;
-
-  if(isIssued !== 'Yes') {
-    if(isIssued === 'No')
+  if(props.licenseAndIdHistory.isIssued === 'Yes' ) {
+    DLIDNumber = props.licenseAndIdHistory.DLIDNumber;
     return (
-    <div className='summary-section'>
-      <p>Has existing DL/ID: {isIssued} </p>
-    </div>
-  );
-}
-  return (
-    <div className='summary-section'>
-      <p>Has existing DL/ID: {isIssued} </p>
-      <p>Existing DL/ID number: {DLIDNumber}</p>
-      <p>Existing DL/ID issued by: {issuedBy} </p>
-      <p>Existing DL/ID expiration date: {date}</p>
-    </div>
-  );
+      <PageSummaryLink
+        to='/my-history/license-and-id'
+        name='licenseAndIdHistory'
+      >
+        <SummaryItem
+          title='Previous DL/ID card number:'
+          text={DLIDNumber}
+        />
+        <br></br>
+        <SummaryItem
+          title='Issued in:'
+          text={issuedBy}
+        />
+        <br></br>
+        <SummaryItem
+          title='Expiration date:'
+          text={date}
+        />
+      </PageSummaryLink>
+    )
+  } else {
+    return (
+      <PageSummaryLink
+        to='/my-history/license-and-id'
+        name='licenseAndId'
+      >
+        <SummaryItem
+          title='Previous DL/ID card number:'
+          text={DLIDNumber}
+        />
+      </PageSummaryLink>
+    )
+  };
 };
 
 export default LicenseAndIdHistory;

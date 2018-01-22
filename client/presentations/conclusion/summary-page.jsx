@@ -116,7 +116,7 @@ const SummaryPage = (props) => {
     </Accordion>,
 
     <Accordion id='history-summary' title='My history' key='history-summary'>
-      <MedicalHistory medicalHistory={application.medicalHistory} />
+      <MedicalHistory medicalHistory={application.medicalHistory} cardType={application.cardType} />
       <LicenseAndIdHistory licenseAndIdHistory={application.licenseAndIdHistory} />
       <NamesHistory namesHistory={application.namesHistory} />
       <LicenseIssues licenseIssues={application.licenseIssues} />

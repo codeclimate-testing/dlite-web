@@ -125,4 +125,11 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click to edit my veterans service', function(done) {
+    browser
+      .click('.veteransService.button.summary')
+      .then(done)
+      .catch(done);
+  });
 };

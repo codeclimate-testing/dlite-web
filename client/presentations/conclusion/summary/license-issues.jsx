@@ -2,31 +2,47 @@
 
 import React            from 'react';
 import { printDate }    from '../../../helpers/print-date';
-import { hasValue }     from '../../../helpers/data/validations';
+import * as dataPresent from '../../../helpers/data-present';
+import PageSummaryLink  from '../../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 
 const LicenseIssues = (props) => {
+  if (!dataPresent.licenseIssues(props.licenseIssues)) { return null; }
   let isSuspended = props.licenseIssues.isSuspended;
-  if (!hasValue(isSuspended)) { return null; }
-
   let date        = printDate(props.licenseIssues);
-  let reason      = props.licenseIssues.reason;
+  let reason      = 'None';
 
-  if(isSuspended !== 'Yes') {
-    if(isSuspended === 'No')
+  if(props.licenseIssues.isSuspended === 'Yes') {
+    reason = props.licenseIssues.reason;
     return (
-      <div className='summary-section'>
-        <p> Have suspended license: {isSuspended} </p>
-      </div>
-    );
+      <PageSummaryLink
+        to='/my-history/license-issues'
+        name='licenseIssues'
+      >
+        <SummaryItem
+          title='Driving record:'
+          text={reason}
+        />
+        <br></br>
+        <SummaryItem
+          title='Record date:'
+          text={date}
+        />
+      </PageSummaryLink>
+    )
+  } else {
+    return (
+      <PageSummaryLink
+        to='/my-history/license-issues'
+        name='licenseIssues'
+      >
+        <SummaryItem
+          title='Driving record:'
+          text={reason}
+        />
+      </PageSummaryLink>
+    )
   }
-
-  return (
-    <div className='summary-section'>
-      <p> Have suspended license: {isSuspended} </p>
-      <p> Suspended license date: {date} </p>
-      <p> Suspended license reason: {reason} </p>
-    </div>
-  );
 };
 
 export default LicenseIssues;
