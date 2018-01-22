@@ -52,9 +52,7 @@ label.button {
   }
 
   &.hidden,
-  &[hidden],
-  &[hidden]:focus,
-  &.hidden.focus, {
+  &[hidden] {
     visibility: hidden;
   }
 
