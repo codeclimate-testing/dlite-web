@@ -765,42 +765,54 @@ describe('Summary section', function() {
       let guardianSignature = {
         isSigned:  'Yes',
         guardianInfo: [{
-          id: 'first',
+          id: '0',
           acceptLiabilities: true,
-          signature: 'GuardianSignature',
-          signatureDateMonth: '10',
-          signatureDateDay: '4',
-          signatureDateYear: '2018',
+          signature: {
+            name: 'GuardianSignature',
+            month: '10',
+            day: '4',
+            year: '2018',
+          },
           phoneNumber: '(616)-923-1221',
-          guardianStreet_1: '865 Main Street',
-          guardianStreet_2: 'Unit no. 05',
-          guardianCity: 'Crazidino Here',
-          state: 'CA',
-          guardianZip: '94000',
-          IDNumber: 'XYZ12344321',
-          IDIssuedBy: 'U.S.A.',
-          IDExpirationDateMonth: '10',
-          IDExpirationDateDay: '14',
-          IDExpirationDateYear: '2020'
+          address: {
+            street_1: '865 Main Street',
+            street_2: 'Unit no. 05',
+            city: 'Crazidino Here',
+            state: 'CA',
+            zip: '94000',
+          },
+          ID:{
+            number: 'XYZ12344321',
+            issuedBy: 'U.S.A.',
+            expirationMonth: '10',
+            expirationDay: '14',
+            expirationYear: '2020'
+          }
         },
         {
-          id: '',
+          id: '1',
           acceptLiabilities: null,
-          signature: '',
-          signatureDateMonth: '',
-          signatureDateDay: '',
-          signatureDateYear: '',
+          signature: {
+            name: '',
+            month: '',
+            day: '',
+            year: '',
+          },
           phoneNumber: '',
-          guardianStreet_1: '',
-          guardianStreet_2: '',
-          guardianCity: '',
-          state: '',
-          guardianZip: '',
-          IDNumber: '',
-          IDIssuedBy: '',
-          IDExpirationDateMonth: '',
-          IDExpirationDateDay: '',
-          IDExpirationDateYear: ''
+          address: {
+            street_1: '',
+            street_2: '',
+            city: '',
+            state: 'CA',
+            zip: '',
+          },
+          ID:{
+            number: '',
+            issuedBy: '',
+            expirationMonth: '',
+            expirationDay: '',
+            expirationYear: ''
+          }
         }]
       };
 
@@ -811,8 +823,6 @@ describe('Summary section', function() {
         />
       )
 
-      assert.equal(component.text().includes('Parent/guardian available: Yes'), true);
-      assert.equal(component.text().includes('Accept Liabilities: Yes'), true);
       assert.equal(component.text().includes('GuardianSignature'), true);
       assert.equal(component.text().includes('10'), true);
       assert.equal(component.text().includes('4'), true);

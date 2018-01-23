@@ -1,9 +1,13 @@
 .month-input,
+.month_0-input,
+.month_1-input,
+.expirationMonth_0-input,
+.expirationMonth_1-input,
 .day-input,
-.signatureDateMonth-input,
-.signatureDateDay-input,
-.IDExpirationDateMonth-input,
-.IDExpirationDateDay-input,
+.day_0-input,
+.day_1-input,
+.expirationDay_0-input,
+.expirationDay_1-input,
 .heightInches-input,
 .heightFeet-input,
 .part2-input,
@@ -19,8 +23,10 @@
 }
 
 .year-input,
-.signatureDateYear-input,
-.IDExpirationDateYear-input,
+.year_0-input,
+.year_1-input,
+.expirationYear_0-input,
+.expirationYear_1-input,
 .phoneNumber3-input {
   width: $em * 6;
 }

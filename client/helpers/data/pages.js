@@ -263,7 +263,8 @@ const conclusion = [
   {
     key: 'guardianSignature',
     description: 'Parent/Guardian Signature',
-    path: '/guardian-signature'
+    path: '/guardian-signature',
+    next: 'summary'
   }
 ];
 

@@ -27,8 +27,11 @@ const SignatureChoice = (props) => {
       <div>
         <RadioCollection
           {...props}
-          name='isSigned'
-          onChange={props.onFirstChange}
+          name          = 'isSigned'
+          text          = {values}
+          onChange      = {props.onGuardianSignatureChange}
+          onBlur        = { props.onBlurValidate }
+          errorMessage  = { props.validations.isSigned()}
         >
           { radioYesNoGroup() }
         </RadioCollection>

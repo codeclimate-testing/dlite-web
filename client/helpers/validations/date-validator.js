@@ -26,7 +26,10 @@ const thisYear = new Date().getFullYear();
 const min = {
   month: 1,
   day: 1,
-  year: thisYear - 130
+  year: thisYear - 130,
+  expirationMonth: 1,
+  expirationDay: 1,
+  expirationYear: thisYear - 130
 };
 let max = {
   month: (props) => {
@@ -37,6 +40,15 @@ let max = {
   },
   year: (props, allowFuture) => {
     return allowFuture ? thisYear + 130 : thisYear;
+  },
+  expirationMonth: (props) => {
+    return 12;
+  },
+  expirationDay: (props) => {
+    return hash[props.expirationMonth.replace(/\b0+/g, '')];
+  },
+  expirationYear: (props) => {
+    return 3000;
   }
 };
 

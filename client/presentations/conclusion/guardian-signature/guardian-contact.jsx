@@ -12,16 +12,20 @@ const GuardianContact = (props) => {
     <div className='guardian-contact'>
       <TextInput
         {...props}
-        identifier='phoneNumber'
+        identifier={`phoneNumber_${guardianID}`}
         description='Phone number'
         example='916 314 8765'
         value={props.guardianSignature.guardianInfo[guardianID].phoneNumber}
-        onChange={props.onChange}
+        errorMessage={
+          guardianID === 0 ? props.validations.phoneNumber_0() :
+          guardianID === 1 ? props.validations.phoneNumber_1() :
+          null
+        }
       />
       <AddressTemplate
         {...props}
-        type='guardian'
-        address={ props.guardianSignature.guardianInfo[guardianID]}
+        type={`guardian_${guardianID}`}
+        address={ props.guardianSignature.guardianInfo[guardianID].address}
       />
     </div>
   );

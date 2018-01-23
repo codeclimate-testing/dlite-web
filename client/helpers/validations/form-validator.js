@@ -60,7 +60,6 @@ class Validator {
 const validatorGenerator = (rules) => {
   class FormValidator extends Validator {}
   FormValidator.prototype.rules = rules;
-
   Object.keys(rules).forEach((name) => {
     FormValidator.prototype[name] = function() {
       return this.validate(name);

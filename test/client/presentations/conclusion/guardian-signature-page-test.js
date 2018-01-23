@@ -23,52 +23,100 @@ describe('GuardianSignaturePage', function() {
       let guardianSignature = {
         isSigned:  '',
         guardianInfo: [{
-          id: '',
-          acceptLiabilities: null,
-          signature: '',
-          signatureDateMonth: '',
-          signatureDateDay: '',
-          signatureDateYear: '',
+          id: '0',
+          acceptLiabilities: '',
+          signature: {
+            name: '',
+            month: '',
+            day: '',
+            year: '',
+          },
           phoneNumber: '',
-          guardianStreet_1: '',
-          guardianStreet_2: '',
-          guardianCity: '',
-          state: '',
-          guardianZip: '',
-          IDNumber: '',
-          IDIssuedBy: '',
-          IDExpirationDateMonth: '',
-          IDExpirationDateDay: '',
-          IDExpirationDateYear: ''
+          address: {
+            street_1: '',
+            street_2: '',
+            city: '',
+            state: 'CA',
+            zip: '',
+          },
+          ID:{
+            number: '',
+            issuedBy: '',
+            expirationMonth: '',
+            expirationDay: '',
+            expirationYear: ''
+          }
         },
         {
-          id: '',
-          acceptLiabilities: null,
-          signature: '',
-          signatureDateMonth: '',
-          signatureDateDay: '',
-          signatureDateYear: '',
+          id: '1',
+          acceptLiabilities: '',
+          signature: {
+            name: '',
+            month: '',
+            day: '',
+            year: '',
+          },
           phoneNumber: '',
-          guardianStreet_1: '',
-          guardianStreet_2: '',
-          guardianCity: '',
-          state: '',
-          guardianZip: '',
-          IDNumber: '',
-          IDIssuedBy: '',
-          IDExpirationDateMonth: '',
-          IDExpirationDateDay: '',
-          IDExpirationDateYear: ''
+          address: {
+            street_1: '',
+            street_2: '',
+            city: '',
+            state: 'CA',
+            zip: '',
+          },
+          ID:{
+            number: '',
+            issuedBy: '',
+            expirationMonth: '',
+            expirationDay: '',
+            expirationYear: ''
+          }
         }]
       };
 
       let continueDisabled = !(dataPresent.guardianSignature(guardianSignature));
       let onChange = spy();
+      let validations = {
+            isSigned:                   spy(),
+            acceptLiabilities_0:        spy(),
+            name_0:                     spy(),
+            month_0:                    spy(),
+            day_0:                      spy(),
+            year_0:                     spy(),
+            phoneNumber_0:              spy(),
+            guardian_0Street_1:         spy(),
+            guardian_0Street_2:         spy(),
+            guardian_0City:             spy(),
+            guardian_0Zip:              spy(),
+            number_0:                   spy(),
+            issuedBy_0:                 spy(),
+            expirationMonth_0:          spy(),
+            expirationDay_0:            spy(),
+            expirationYear_0:           spy(),
+            acceptLiabilities_1:        spy(),
+            name_1:                     spy(),
+            month_1:                    spy(),
+            day_1:                      spy(),
+            year_1:                     spy(),
+            phoneNumber_1:              spy(),
+            guardian_1Street_1:         spy(),
+            guardian_1Street_2:         spy(),
+            guardian_1City:             spy(),
+            guardian_1Zip:              spy(),
+            number_1:                   spy(),
+            issuedBy_1:                 spy(),
+            expirationMonth_1:          spy(),
+            expirationDay_1:            spy(),
+            expirationYear_1:           spy(),
+            all:                        spy(),
+            isValid:                    () => { return true; }
+      };
 
       props = {
         guardianSignature,
         continueDisabled,
-        onChange
+        onChange,
+        validations
       }
     });
 
@@ -90,21 +138,21 @@ describe('GuardianSignaturePage', function() {
           <GuardianSignaturePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="signature"]').length, 'Guardian signature - name input missing');
-      assert.ok(component.find('label[for="signatureDateMonth"]').length, 'Guardian signature - today month missing');
-      assert.ok(component.find('label[for="signatureDateDay"]').length, 'Guardian signature - today day missing');
-      assert.ok(component.find('label[for="signatureDateYear"]').length, 'Guardian signature - today year missing');
-      assert.ok(component.find('label[for="phoneNumber"]').length, 'Guardian signature - phone number missing');
-      assert.ok(component.find('label[for="guardianStreet_1"]').length, 'Guardian signature - street address missing');
-      assert.ok(component.find('label[for="guardianStreet_2"]').length, 'Guardian signature - apt number missing');
-      assert.ok(component.find('label[for="guardianCity"]').length, 'Guardian signature - address city missing');
-      assert.ok(component.find('label[for="state"]').length, 'Guardian signature - address state missing');
-      assert.ok(component.find('label[for="guardianZip"]').length, 'Guardian signature - address zip missing');
-      assert.ok(component.find('label[for="IDNumber"]').length, 'Guardian signature - ID number missing');
-      assert.ok(component.find('label[for="IDIssuedBy"]').length, 'Guardian signature - Id issued by missing');
-      assert.ok(component.find('label[for="IDExpirationDateMonth"]').length, 'Guardian signature - ID expiration month missing');
-      assert.ok(component.find('label[for="IDExpirationDateDay"]').length, 'Guardian signature - ID expiration day missing');
-      assert.ok(component.find('label[for="IDExpirationDateYear"]').length, 'Guardian signature - ID expiration year missing');
+      assert.ok(component.find('label[for="name_0"]').length, 'Guardian signature - name input missing');
+      assert.ok(component.find('label[for="month_0"]').length, 'Guardian signature - today month missing');
+      assert.ok(component.find('label[for="day_0"]').length, 'Guardian signature - today day missing');
+      assert.ok(component.find('label[for="year_0"]').length, 'Guardian signature - today year missing');
+      assert.ok(component.find('label[for="phoneNumber_0"]').length, 'Guardian signature - phone number missing');
+      assert.ok(component.find('label[for="guardian_0Street_1"]').length, 'Guardian signature - street address missing');
+      assert.ok(component.find('label[for="guardian_0Street_2"]').length, 'Guardian signature - apt number missing');
+      assert.ok(component.find('label[for="guardian_0City"]').length, 'Guardian signature - address city missing');
+      assert.ok(component.find('label[for="guardian_0State"]').length, 'Guardian signature - address state missing');
+      assert.ok(component.find('label[for="guardian_0Zip"]').length, 'Guardian signature - address zip missing');
+      assert.ok(component.find('label[for="number_0"]').length, 'Guardian signature - ID number missing');
+      assert.ok(component.find('label[for="issuedBy_0"]').length, 'Guardian signature - Id issued by missing');
+      assert.ok(component.find('label[for="expirationMonth_0"]').length, 'Guardian signature - ID expiration month missing');
+      assert.ok(component.find('label[for="expirationDay_0"]').length, 'Guardian signature - ID expiration day missing');
+      assert.ok(component.find('label[for="expirationYear_0"]').length, 'Guardian signature - ID expiration year missing');
 
     });
 
@@ -124,21 +172,21 @@ describe('GuardianSignaturePage', function() {
     it('entering Yes to sign and filling in details makes next button no longer disabled', function() {
       props.guardianSignature.isSigned =   'Yes';
       props.guardianSignature.guardianInfo[0].acceptLiabilities = true,
-      props.guardianSignature.guardianInfo[0].signature = 'GuardianSignature',
-      props.guardianSignature.guardianInfo[0].signatureDateMonth = '10',
-      props.guardianSignature.guardianInfo[0].signatureDateDay = '4',
-      props.guardianSignature.guardianInfo[0].signatureDateYear = '2018',
+      props.guardianSignature.guardianInfo[0].signature.name = 'GuardianSignature',
+      props.guardianSignature.guardianInfo[0].signature.month = '10',
+      props.guardianSignature.guardianInfo[0].signature.day = '4',
+      props.guardianSignature.guardianInfo[0].signature.year = '2018',
       props.guardianSignature.guardianInfo[0].phoneNumber = '(616)-923-1221',
-      props.guardianSignature.guardianInfo[0].guardianStreet_1 = '865 Main Street',
-      props.guardianSignature.guardianInfo[0].guardianStreet_2 = 'Unit no. 05',
-      props.guardianSignature.guardianInfo[0].guardianCity = 'Crazidino Here',
-      props.guardianSignature.guardianInfo[0].state = 'CA',
-      props.guardianSignature.guardianInfo[0].guardianZip = '94000',
-      props.guardianSignature.guardianInfo[0].IDNumber = 'XYZ12344321',
-      props.guardianSignature.guardianInfo[0].IDIssuedBy = 'U.S.A.',
-      props.guardianSignature.guardianInfo[0].IDExpirationDateMonth = '10',
-      props.guardianSignature.guardianInfo[0].IDExpirationDateDay = '14',
-      props.guardianSignature.guardianInfo[0].IDExpirationDateYear = '2020'
+      props.guardianSignature.guardianInfo[0].address.street_1 = '865 Main Street',
+      props.guardianSignature.guardianInfo[0].address.street_2 = 'Unit no. 05',
+      props.guardianSignature.guardianInfo[0].address.city = 'Crazidino Here',
+      props.guardianSignature.guardianInfo[0].address.state = 'CA',
+      props.guardianSignature.guardianInfo[0].address.zip = '94000',
+      props.guardianSignature.guardianInfo[0].ID.number = 'XYZ12344321',
+      props.guardianSignature.guardianInfo[0].ID.issuedBy = 'U.S.A.',
+      props.guardianSignature.guardianInfo[0].ID.expirationMonth = '10',
+      props.guardianSignature.guardianInfo[0].ID.expirationDay = '14',
+      props.guardianSignature.guardianInfo[0].ID.expirationYear = '2020'
 
       props.continueDisabled = !(dataPresent.guardianSignature(props.guardianSignature));
 

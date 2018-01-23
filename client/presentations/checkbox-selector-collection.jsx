@@ -1,8 +1,7 @@
 'use strict'
 
 import React              from 'react'
-import { arrayIncludes }  from '../helpers/data/validations';
-import errorClass   from '../helpers/validations/error-class';
+import errorClass         from '../helpers/validations/error-class';
 
 import {
   ErrorIcon,

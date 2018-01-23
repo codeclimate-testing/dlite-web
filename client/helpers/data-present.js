@@ -119,23 +119,12 @@ const realID = (props) => {
 const guardianSignature = (props) => {
   let guardianInfoFirst = props.guardianInfo[0];
   return props && (props.isSigned === 'No' ||
-    hasAllAttributes(guardianInfoFirst, [
+    hasAnyAttributes(guardianInfoFirst, [
       'acceptLiabilities',
       'signature',
-      'signatureDateMonth',
-      'signatureDateDay',
-      'signatureDateYear',
       'phoneNumber',
-      'guardianStreet_1',
-      'guardianStreet_2',
-      'guardianCity',
-      'state',
-      'guardianZip',
-      'IDNumber',
-      'IDIssuedBy',
-      'IDExpirationDateMonth',
-      'IDExpirationDateDay',
-      'IDExpirationDateYear'
+      'address',
+      'ID'
   ]));
 }
 

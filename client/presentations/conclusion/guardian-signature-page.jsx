@@ -21,7 +21,11 @@ const Form = (props) => {
 
         <GuardianDetails {...props} />
 
-        <NavigationButtons {...props} />
+        <NavigationButtons
+          {...props}
+          errorMessage={ props.validations.all() }
+        />
+
       </form>
     </Page>
   );

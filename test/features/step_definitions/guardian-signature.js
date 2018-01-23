@@ -9,21 +9,21 @@ module.exports = function(world) {
     browser
     .click('label[for="isSigned-Yes"]')
     .click('label[for="acceptLiabilities_0"]')
-    .type('#signature', 'GuardianSignature')
-    .type('#signatureDateMonth', '10')
-    .type('#signatureDateDay', '4')
-    .type('#signatureDateYear', '2018')
-    .type('#phoneNumber', '(616)-923-1221')
-    .type('#guardianStreet_1', '865 Main Street')
-    .type('#guardianStreet_2', 'Unit no. 05')
-    .type('#guardianCity', 'Crazidino Here')
-    .select('#state', 'CA')
-    .type('#guardianZip', '94000')
-    .type('#IDNumber', 'XYZ12344321')
-    .type('#IDIssuedBy', 'U.S.A.')
-    .type('#IDExpirationDateMonth', '10')
-    .type('#IDExpirationDateDay', '14')
-    .type('#IDExpirationDateYear', '2020')
+    .type('#name_0', 'GuardianSignature')
+    .type('#month_0', '10')
+    .type('#day_0', '4')
+    .type('#year_0', '2018')
+    .type('#phoneNumber_0', '(616)-923-1221')
+    .type('#guardian_0Street_1', '865 Main Street')
+    .type('#guardian_0Street_2', 'Unit no. 05')
+    .type('#guardian_0City', 'Crazidino Here')
+    .select('#guardian_0State', 'CA')
+    .type('#guardian_0Zip', '94000')
+    .type('#number_0', 'XYZ12344321')
+    .type('#issuedBy_0', 'U.S.A.')
+    .type('#expirationMonth_0', '10')
+    .type('#expirationDay_0', '14')
+    .type('#expirationYear_0', '2020')
     .then(() => { done(); })
     .catch(done);
   });
@@ -32,8 +32,6 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert(text.includes('Parent/guardian available: Yes'), 'parent/guardian signature choice missing');
-      assert(text.includes('Accept Liabilities: Yes'), 'parent/guardian liability acceptance missing');
       assert(text.includes('GuardianSignature'), 'parent/guardian signature missing ');
       assert(text.includes('10'), 'parent/guardian signature month missing');
       assert(text.includes('4'), 'parent/guardian signature day missing');

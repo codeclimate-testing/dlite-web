@@ -26,8 +26,10 @@ const AddressTemplate = (props) => {
         description='Street Address'
         value={ props.address['street_1'] }
         errorMessage={
-          props.type === 'home' ? props.validations.homeStreet_1()        :
-          props.type === 'mailing' ? props.validations.mailingStreet_1()  :
+          props.type === 'home' ? props.validations.homeStreet_1()              :
+          props.type === 'mailing' ? props.validations.mailingStreet_1()        :
+          props.type === 'guardian_0' ? props.validations.guardian_0Street_1()  :
+          props.type === 'guardian_1' ? props.validations.guardian_1Street_1()  :
           null
         }
       />
@@ -39,8 +41,10 @@ const AddressTemplate = (props) => {
         description='Apartment or Unit Number (optional)'
         value={ props.address['street_2'] }
         errorMessage={
-          props.type === 'home' ? props.validations.homeStreet_2()        :
-          props.type === 'mailing' ? props.validations.mailingStreet_2()  :
+          props.type === 'home' ? props.validations.homeStreet_2()              :
+          props.type === 'mailing' ? props.validations.mailingStreet_2()        :
+          props.type === 'guardian_0' ? props.validations.guardian_0Street_2()  :
+          props.type === 'guardian_1' ? props.validations.guardian_1Street_2()  :
           null
         }
       />
@@ -52,8 +56,10 @@ const AddressTemplate = (props) => {
         description='City'
         value={ props.address['city'] }
         errorMessage={
-          props.type === 'home' ? props.validations.homeCity()        :
-          props.type === 'mailing' ? props.validations.mailingCity()  :
+          props.type === 'home' ? props.validations.homeCity()              :
+          props.type === 'mailing' ? props.validations.mailingCity()        :
+          props.type === 'guardian_0' ? props.validations.guardian_0City()  :
+          props.type === 'guardian_1' ? props.validations.guardian_1City()  :
           null
         }
       />
@@ -72,8 +78,10 @@ const AddressTemplate = (props) => {
         description='Zip Code'
         value={ props.address['zip'] }
         errorMessage={
-          props.type === 'home' ? props.validations.homeZip()        :
-          props.type === 'mailing' ? props.validations.mailingZip()  :
+          props.type === 'home' ? props.validations.homeZip()              :
+          props.type === 'mailing' ? props.validations.mailingZip()        :
+          props.type === 'guardian_0' ? props.validations.guardian_0Zip()  :
+          props.type === 'guardian_1' ? props.validations.guardian_1Zip()  :
           null
         }
       />
