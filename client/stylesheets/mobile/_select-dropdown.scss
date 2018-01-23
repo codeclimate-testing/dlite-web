@@ -17,10 +17,11 @@
     &:focus,
     &.focus {
       @include focus-outline-input;
+      margin-bottom: 1px;
 
       .dropdown-options {
         display: block;
-        @include focus-outline-input;
+        font-size: 13px;
       }
     }
 
@@ -48,7 +49,7 @@
       margin-left: -1px;
       margin-top: -2px;
       width: 100px;
-      background-color: #efefef;
+      background-color: #F7F7F7;
       max-height: 37px * 2.8;
       overflow-y: scroll;
       border: 1px solid gray;
@@ -56,11 +57,11 @@
     }
 
     .dropdown-option {
-      min-height: 37px;
+      min-height: 30px;
       padding: 5px 9px;
       border-top: 1px solid gray;
       &:hover {
-        background-color: darken(#efefef, 5%);
+        background-color: darken(#F7F7F7, 5%);
       }
 
       &.selected {

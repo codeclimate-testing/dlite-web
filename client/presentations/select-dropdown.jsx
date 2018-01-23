@@ -3,9 +3,9 @@
 import React from 'react';
 
 const dropDownOptions = (props) => {
-  return props.children.map((option) => {
+  return props.values.map((value) => {
     let className = 'dropdown-option value-block';
-    if (option.props.value === props.selected) {
+    if (value === props.selected) {
       className += ' selected';
     }
 
@@ -13,34 +13,43 @@ const dropDownOptions = (props) => {
       <div
         className={ className }
         onClick={ props.onClick }
-        key={ option.props.value }
+        key={ value }
+        role='option'
       >
-        {option.props.value}
+        {value}
       </div>
     );
   });
 }
 
 const SelectDropdown = (props) => {
+  let dropDownId = `dropdown-options-${props.name}`;
+  let labelId = `label-${props.name}`;
   return (
     <div className='select-dropdown'>
-      <select
-        className='off-screen'
-        name={ props.name }
-        id={ props.name }
-      >
-        { props.children }
-      </select>
-
-      <label htmlFor={ props.name }>
-        {props.description}
+      <label htmlFor={ props.name } id={ labelId }>
+        { props.description }
       </label>
-      <div className='relative dropdown' tabIndex='0'>
+      <div
+        className='relative dropdown'
+        tabIndex='0'
+        id={ props.name }
+        role='combobox'
+        aria-readonly='true'
+        aria-autocomplete='none'
+        aria-expanded='false'
+        aria-owns={ dropDownId }
+        aria-labelledby={ labelId }
+      >
         <div className='value-block dropdown-selected'>
           { props.selected }
           <div className='icon unit-right'></div>
         </div>
-        <div className='absolute dropdown-options'>
+        <div
+          className='absolute dropdown-options'
+          id={ dropDownId }
+          role='listbox'
+        >
           { dropDownOptions(props) }
         </div>
       </div>
