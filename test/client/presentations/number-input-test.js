@@ -43,19 +43,12 @@ describe('NumberInput not used in DateInput', function() {
       ); 
     });
 
-    it('will have 3 elements with the error class', function() {
-      assert.equal(component.find('.error').length, 3, 'error classes missing');
+    it('will have 2 elements with the error class', function() {
+      assert.equal(component.find('.error').length, 2, 'error classes missing');
     });
 
     it('will have an error icon', function() {
       assert(component.find('.error-icon').length, 'error icon missing');
-    });
-
-    it('will have additional text', function() {
-      assert(
-        component.find('.additional-label.error').length,
-        'additional label does not have an error class'
-      );
     });
 
     it('will add error class to bold label', function(){

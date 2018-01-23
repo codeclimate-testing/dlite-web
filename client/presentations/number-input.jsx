@@ -48,10 +48,6 @@ const NumberInput = (props) => {
           value     = { props.value }
         />
       </div>
-      <ErrorLabel
-        errorMessage={ props.errorMessage }
-        errorClass={ errorName }
-      />
     </div>
   );
 };
