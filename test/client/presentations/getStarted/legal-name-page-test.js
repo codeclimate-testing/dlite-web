@@ -51,7 +51,7 @@ describe('NamePage', function() {
       assert.ok(component.find('input#firstName').length, 'first name input missing');
       assert.ok(component.find('input#middleName').length, 'middle name input missing');
       assert.ok(component.find('input#lastName').length, 'last name input missing');
-      assert.ok(component.find('select#suffix').length, 'suffix selection missing');
+      assert.ok(component.find('#label-suffix').length, 'suffix selection missing');
     });
   });
 });

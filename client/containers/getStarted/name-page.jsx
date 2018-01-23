@@ -32,6 +32,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  const onSelectChange = handlers.onSelectChange(updateLegalName, dispatch);
   const onChange = handlers.onInputChange(updateLegalName, dispatch);
   const onSubmit = handlers.onFormSubmit(dispatch);
   const onBlurValidate = handlers.onBlurValidate(dispatch);
@@ -43,7 +44,8 @@ const mapDispatchToProps = (dispatch) => {
     onSubmit,
     onBlurValidate,
     onFocusClearValidation,
-    onSubmitShowErrors
+    onSubmitShowErrors,
+    onSelectChange
   };
 };
 

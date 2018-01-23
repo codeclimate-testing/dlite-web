@@ -21,6 +21,7 @@ import onFormSubmit       from './on-form-submit-generator';
 import navigateOrShowErrors from './navigate-or-show-errors';
 import onSubmitShowErrors from './on-submit-show-errors';
 import onInputChange      from './on-input-change';
+import onSelectChange     from './on-select-change';
 import onPageLoad         from './on-page-load';
 
 export default {
@@ -30,6 +31,7 @@ export default {
   onBlur,
   onFormSubmit,
   onInputChange,
+  onSelectChange,
   onPageLoad,
   onBlurValidate,
   onFocusClearValidation,

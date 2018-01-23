@@ -12,9 +12,11 @@ const dropDownOptions = (props) => {
     return (
       <div
         className={ className }
-        onClick={ props.onClick }
+        onClick={ props.onChange }
         key={ value }
         role='option'
+        value={ value }
+        name={ props.name }
       >
         {value}
       </div>

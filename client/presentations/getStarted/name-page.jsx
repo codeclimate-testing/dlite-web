@@ -49,15 +49,9 @@ const LegalNameForm = (props) => {
         <SelectDropdown
           name='suffix'
           selected={ props.legalName.suffix }
-          onChange={ props.onChange }
+          onChange={ props.onSelectChange }
           values={ ['', 'Sr.', 'Jr.', 'I', 'II', 'III'] }
           description='Suffix'
-        />
-
-        <SuffixSelector
-          identifier='suffix'
-          value={ props.legalName.suffix }
-          onChange={props.onChange}
         />
 
         <NavigationButtons
