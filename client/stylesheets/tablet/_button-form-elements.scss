@@ -7,7 +7,7 @@ textarea {
   width: $max-tablet-input-width;
 }
 
-.physical-traits-form {
+.physical-traits-form, .license-type-form {
   .choice-selector {
     width: 255px;
   }
@@ -17,3 +17,14 @@ textarea {
   }
 }
 
+// .license-type-form {
+//   .choice-selector {
+//     .text-region {
+//     margin-top: 0px;
+//     margin-left: 0px;
+//     margin-bottom: 0px;
+//     margin-right: 0px;
+//      padding: 0px 0px 0px 0px;
+//     }
+//   }
+// }
