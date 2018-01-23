@@ -65,6 +65,7 @@ describe('date validator:', function() {
       let name = 'year';
       assert.equal(compareValues(name, props), false);
     });
+
     it('returns false if the day is less than the 1st', function() {
       let props = {
         month: '-2'
@@ -72,6 +73,7 @@ describe('date validator:', function() {
       let name = 'month';
       assert.equal(compareValues(name, props), false);
     });
+
     it('returns false if the day is greater than the number of days in that month', function() {
       let props = {
         month: '01',
@@ -80,6 +82,16 @@ describe('date validator:', function() {
       let name = 'day';
       assert.equal(compareValues(name, props), false);
     });
+
+    it('returns false if no month and day is greater than 31', function() {
+      let props = {
+        month: '',
+        day: '32'
+      };
+      let name = 'day';
+      assert.equal(compareValues(name, props), false);
+    });
+
     it('returns true when the year has 4 digits and has only numerical characters', function() {
       let props = {
         year: '2000'
@@ -87,6 +99,7 @@ describe('date validator:', function() {
       let name = 'year';
       assert.equal(compareValues(name, props), true);
     });
+
     it('returns true when the day is between 1 and the number alloted to the month and has only numerical characters', function() {
       let props = {
         day: '29',

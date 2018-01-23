@@ -33,7 +33,7 @@ let max = {
     return 12;
   },
   day: (props) => {
-    return hash[props.month.replace(/\b0+/g, '')];
+    return hash[props.month.replace(/\b0+/g, '')] || 31;
   },
   year: (props, allowFuture) => {
     return allowFuture ? thisYear + 130 : thisYear;
