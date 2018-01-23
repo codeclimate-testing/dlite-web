@@ -82,7 +82,19 @@ body {}
 }
 
 #footer {
-  background-color: $dark-blue;
-  color: $lightest-color;
+  border-top: 1px solid $light-gray;
+  background-color: $light-light-gray;
+
+  .links {
+    .inner {
+      padding: $spacing / 4 $spacing / 2;
+
+      a {
+        font-size: $font-size-label;
+        font-weight: bold;
+        line-height: 1.3;
+      }
+    }
+  }
 }
 
