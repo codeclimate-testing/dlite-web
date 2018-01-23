@@ -32,6 +32,7 @@ describe('SocialSecurityPage', function() {
         ssnFirstSegment: spy(),
         ssnSecondSegment: spy(),
         ssnThirdSegment: spy(),
+        ssnAll: spy(),
         all: spy(),
         isValid: () => { return true; }
       };

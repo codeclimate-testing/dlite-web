@@ -14,7 +14,8 @@ const Form = (props) => {
   let errors = {
     ssnFirstSegment : props.validations.ssnFirstSegment(),
     ssnSecondSegment : props.validations.ssnSecondSegment(),
-    ssnThirdSegment : props.validations.ssnThirdSegment()
+    ssnThirdSegment : props.validations.ssnThirdSegment(),
+    ssnAll : props.validations.ssnAll()
   }; 
   let message = errorMessage(errors);
   let addError = errorClass(message);

@@ -11,6 +11,16 @@ const ssn = (props) => {
   return [];
 };
 
+const ssnAll = (props) => {
+  let value = props.part1 && props.part2 && props.part3;
+  let selection = props.hasSocialSecurity;
+  let errors = [];
+  if(selection === 'Yes' && !hasValue(value)) {
+    errors = [errorMessages.socialSecurityNumberMissing];
+  }
+  return errors;
+};
+
 const ssnFirstSegment = (props) => {
   let value = props.part1;
   let selection = props.hasSocialSecurity;
@@ -43,6 +53,7 @@ const ssnThirdSegment = (props) => {
 
 export default {
   ssn: ssn,
+  ssnAll: ssnAll,
   ssnFirstSegment: ssnFirstSegment,
   ssnSecondSegment: ssnSecondSegment,
   ssnThirdSegment: ssnThirdSegment
