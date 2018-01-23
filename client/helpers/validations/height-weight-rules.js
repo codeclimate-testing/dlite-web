@@ -25,7 +25,7 @@ const heightFeet = (props) => {
 const heightInches = (props) => {
   let value = props.heightInches;
   let errors = [];
-  if(value && (!hasOnlyNumbers(value) || value < 1 || value > 12)) {
+  if(value && (!hasOnlyNumbers(value) || value < 0 || value > 12)) {
     errors = [errorMessages.heightMissing];
   }
   return errors;
