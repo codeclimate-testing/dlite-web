@@ -23,7 +23,7 @@ describe('License (card) history rules:', function() {
     assert.deepEqual(rules.year(props), []);
   });
 
-  it('when the year is in the future, it gives the expirationDateInvalid error', function() {
+  it('accepts a future year', function() {
     let props = {
       isIssued: 'Yes',
       DLIDNumber: '129da1',
@@ -35,7 +35,7 @@ describe('License (card) history rules:', function() {
  
     assert.deepEqual(rules.month(props), []);
     assert.deepEqual(rules.day(props), []);
-    assert.deepEqual(rules.year(props), [messages.expirationDateInvalid]);
+    assert.deepEqual(rules.year(props), []);
   });
 
   it('it is ok for the user to provide only part of a date', function() {

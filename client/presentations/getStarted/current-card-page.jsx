@@ -4,7 +4,7 @@ import React              from 'react';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
-import DateInput          from '../date-input.jsx';
+import ExpirationDate     from '../expiration-date.jsx';
 
 const question = {
   ID: 'If you know it, <b>please enter your California ID number</b>.',
@@ -53,14 +53,11 @@ const Form = (props) => {
             />
           </div>
 
-          <div id='expirationDate' className='row'>
-          <DateInput
-            {...props}
-            description = 'Expiration Date'
+          <ExpirationDate 
+            {...props} 
             values      = { props.currentCardInfo }
             validations = { props.currentCardValidation }
           />
-          </div>
 
           <NavigationButtons
             {...props}

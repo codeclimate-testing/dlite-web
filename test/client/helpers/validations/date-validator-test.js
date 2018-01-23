@@ -3,7 +3,10 @@
 import assert       from 'assert';
 import {
   checkIfYearError,
-  dateValidator
+  compareValues,
+  expirationDateValidator,
+  dateValidator,
+  hasDate
 }   from '../../../../client/helpers/validations/date-validator';
 import messages     from '../../../../client/presentations/error-messages';
 
@@ -38,21 +41,13 @@ describe('date validator:', function() {
     });
   });
 
-  describe('#dateValidator', function() {
+  describe('#compareValues', function() {
     it('returns false if the input has non-numerical characters', function() {
       let props = {
         month: 'january'
       };
       let name = 'month';
-      assert.equal(dateValidator(name, props), false);
-    });
-
-    it('returns false if the year is in the future', function() {
-      let props = {
-        year: '2020'
-      };
-      let name = 'year';
-      assert.equal(dateValidator(name, props), false);
+      assert.equal(compareValues(name, props), false);
     });
 
     it('returns false if the month is greater than 12', function() {
@@ -60,7 +55,7 @@ describe('date validator:', function() {
         month: '13'
       };
       let name = 'month';
-      assert.equal(dateValidator(name, props), false);
+      assert.equal(compareValues(name, props), false);
     });
 
     it('returns false if the year is more than 130 years ago', function() {
@@ -68,14 +63,14 @@ describe('date validator:', function() {
         year: '1800'
       };
       let name = 'year';
-      assert.equal(dateValidator(name, props), false);
+      assert.equal(compareValues(name, props), false);
     });
     it('returns false if the day is less than the 1st', function() {
       let props = {
         month: '-2'
       };
       let name = 'month';
-      assert.equal(dateValidator(name, props), false);
+      assert.equal(compareValues(name, props), false);
     });
     it('returns false if the day is greater than the number of days in that month', function() {
       let props = {
@@ -83,14 +78,14 @@ describe('date validator:', function() {
         day: '32'
       };
       let name = 'day';
-      assert.equal(dateValidator(name, props), false);
+      assert.equal(compareValues(name, props), false);
     });
-    it('returns true when the year has 4 digits and is not in the future and has only numerical characters', function() {
+    it('returns true when the year has 4 digits and has only numerical characters', function() {
       let props = {
         year: '2000'
       };
       let name = 'year';
-      assert.equal(dateValidator(name, props), true);
+      assert.equal(compareValues(name, props), true);
     });
     it('returns true when the day is between 1 and the number alloted to the month and has only numerical characters', function() {
       let props = {
@@ -98,7 +93,7 @@ describe('date validator:', function() {
         month: '09'
       };
       let name = 'day';
-      assert.equal(dateValidator(name, props), true);
+      assert.equal(compareValues(name, props), true);
     });
 
     it('returns true when the month is between 1 and 12 and has only numerical characters', function() {
@@ -106,7 +101,47 @@ describe('date validator:', function() {
         month: '09'
       };
       let name = 'month';
-      assert.equal(dateValidator(name, props), true);
+      assert.equal(compareValues(name, props), true);
+    });
+  });
+
+  describe('dateValidator', function() {
+    it('returns false if the year is in the future', function() {
+      let props = {
+        year: '2020'
+      };
+      let name = 'year';
+      assert.equal(dateValidator(name, props), false);
+    });
+  });
+
+  describe('expirationDateValidator', function() {
+    it('returns true if the year is in the future', function() {
+      let props = {
+        year: '2020'
+      };
+      let name = 'year';
+      assert.equal(expirationDateValidator(name, props), true);
+    });
+  });
+
+  describe('hasDate', function() {
+    it('returns true if any month, year, or day of the date is present', function() {
+      let props = {
+        year: '1000',
+        day: '',
+        month: ''
+      };
+      assert.equal(hasDate(props), true);
+    });
+
+    it('returns false if month, year, and day are missing', function() {
+      let props = {
+        year: '',
+        day: '',
+        month: ''
+      };
+      assert.equal(hasDate(props), false);
     });
   });
 });

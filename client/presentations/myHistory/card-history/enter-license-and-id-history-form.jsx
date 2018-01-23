@@ -2,12 +2,11 @@
 
 import React          from 'react';
 import TextInput      from '../../text-input.jsx';
-import DateInput      from '../../date-input.jsx';
+import ExpirationDate from '../../expiration-date.jsx';
 
 const text = {
   DLIDNumber: 'Driver license or ID card number',
-  issuedBy: 'State or country card was issued',
-  expiration: 'Expiration date'
+  issuedBy: 'State or country card was issued'
 };
 
 const EnterLicenseAndIdHistory = (props) => {
@@ -36,13 +35,10 @@ const EnterLicenseAndIdHistory = (props) => {
           errorMessage  = { props.validations.issuedBy() }
         />
       </div>
-      <div id='expirationDate' className='row'>
-        <DateInput
+      <ExpirationDate
           {...props}
-          description   = { text.expiration }
-          values        = { props.licenseAndIdHistory }
-        />
-      </div>
+          values      = { props.licenseAndIdHistory }
+      />
     </div>
   )
 };

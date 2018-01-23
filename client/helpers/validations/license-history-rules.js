@@ -3,7 +3,7 @@
 import selectionValidator       from './selection-validator';
 import { hasOnlyEnglishChars }  from '../data/validations';
 import errorMessages            from '../../presentations/error-messages';
-import { dateValidator }          from './date-validator';
+import { expirationDateValidator } from './date-validator';
 
 let checkChars = (name) => {
   return (props) => {
@@ -24,7 +24,7 @@ let checkNums = (name) => {
     if (props.isIssued !== 'Yes') {
       return error;
     }
-    if (!dateValidator(name, props)) {
+    if (!expirationDateValidator(name, props)) {
       error.push(errorMessages.expirationDateInvalid);
     }
     return error;

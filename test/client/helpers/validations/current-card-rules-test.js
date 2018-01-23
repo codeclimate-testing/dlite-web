@@ -57,7 +57,7 @@ describe('current card page validation rules', function() {
       assert.deepEqual(rules.year(props), []);
     });
 
-    it('when the year is in the future, it gives the expirationDateInvalid error', function() {
+    it('accepts a year in the future', function() {
       let props = {
         month: '09',
         day: '29',
@@ -66,7 +66,7 @@ describe('current card page validation rules', function() {
 
       assert.deepEqual(rules.month(props), []);
       assert.deepEqual(rules.day(props), []);
-      assert.deepEqual(rules.year(props), [messages.expirationDateInvalid]);
+      assert.deepEqual(rules.year(props), []);
     });
 
     it('when the year is over 130 years ago, it gives the expirationDateInvalid error', function() {

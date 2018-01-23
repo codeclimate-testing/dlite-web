@@ -35,8 +35,8 @@ let max = {
   day: (props) => {
     return hash[props.month.replace(/\b0+/g, '')];
   },
-  year: (props) => {
-    return thisYear;
+  year: (props, allowFuture) => {
+    return allowFuture ? thisYear + 130 : thisYear;
   }
 };
 
@@ -46,17 +46,27 @@ export const checkIfYearError = (name, props) => {
   return name === 'year' ? value.length !== 4 && value.length !== 0: false;
 };
 
-export const dateValidator = (name, props) => {
+export const compareValues = (name, props, allowFuture) => {
   let hasError = true;
   let value = props[name];
   let minValue = min[name];
-  let maxValue = max[name](props);
+  let maxValue = max[name](props, allowFuture);
   let checkMin = parseInt(value, 10) < minValue;
   
   if (!hasOnlyNumbers(value) || checkMin || value > maxValue || checkIfYearError(name, props) ) {
     hasError = false;
   } 
   return hasError;
+};
+
+export const expirationDateValidator = (name, props) => {
+  // allow years in the future
+  return compareValues(name, props, true);
+};
+
+export const dateValidator = (name, props) => {
+  // dont allow years in the future
+  return compareValues(name, props, false);
 };
 
 export const hasDate = (props) => {
