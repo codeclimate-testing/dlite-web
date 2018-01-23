@@ -35,7 +35,7 @@ const OtherParty = (props) => {
 
   return (
     <div className='radio-input'>
-      <div style={{display: 'flex'}}>
+      <div className={`radio-input-error ${error}`}>
         <ErrorIcon
           errorClass= { error }
         />

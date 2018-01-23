@@ -22,3 +22,16 @@
   background-image: url("/images/icons/misc/alert.svg");
   margin-right: 9px;
 }
+
+.radio-input-error{
+  display: flex;
+  align-items: center;
+  &.error{
+    margin-top: -10px;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    .input-margin-bottom{
+      margin-bottom: 0px;
+    }
+  }
+}
