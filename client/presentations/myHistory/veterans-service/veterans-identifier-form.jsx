@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import RadioSelector        from '../../radio-selector.jsx';
+import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 import MessageBox           from '../../message-box.jsx';
 import { getDL }            from '../../../helpers/data/card-type';
@@ -20,7 +20,7 @@ const questionText = {
 
 const Question = (props) => {
   const keepOrAdd   = props.veteransService.previouslyDesignated === 'Yes' ? 'previous' : 'new';
-  const IDorDL      = getDL(props) ? 'DL' : 'ID'; 
+  const IDorDL      = getDL(props) ? 'DL' : 'ID';
   const className   = keepOrAdd + '-designation';
   let text = questionText[keepOrAdd][IDorDL];
 
@@ -32,51 +32,50 @@ const Question = (props) => {
   )
 };
 
-const VeteransIdentifier = (props) => {
+const MessageAddAmount = (props) => {
+  if (props.veteransService.veteransIdentifier !== 'Yes') { return null; }
+  return (
+    <MessageBox className = 'info'>
+      <div className='veteran-identifier-fee'>
+        <p>OK, we will add the $5 to your total fee.</p>
+      </div>
+    </MessageBox>
+  );
+};
 
-  if(!(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))){ return null; }
-
+const MessageRemovingDesignation = (props) => {
   const removeIdentifierNotification = (props.veteransService.previouslyDesignated === 'Yes' && props.veteransService.veteransIdentifier === 'No');
+  if (!removeIdentifierNotification) { return null; }
 
-  const values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
+  return (
+    <MessageBox className='info'>
+      <div className='remove-veteran-identifier'>
+        <p>OK, we will remove it.</p>
+      </div>
+    </MessageBox>
+  );
+};
+
+const VeteransIdentifier = (props) => {
+  if (!(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))) { return null; }
+
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
       <p>Many organizations give discounts with a valid military ID.</p>
       <div className='input-container'>
-        <RadioCollection 
+        <RadioCollection
           {...props}
           name='veteransIdentifier'
-          text={values}
         >
-          <RadioSelector 
-            value='Yes'
-          />
-          <RadioSelector 
-            value='No'
-          />
+          { radioYesNoGroup() }
         </RadioCollection>
       </div>
-      { props.veteransService.veteransIdentifier === 'Yes' &&
-        <MessageBox className = 'info'>
-          <div className='veteran-identifier-fee'>
-            <p>OK, we will add the $5 to your total fee.</p>
-          </div>
-        </MessageBox>
-      }
-      { removeIdentifierNotification &&
-        <MessageBox className='info'>
-          <div className='remove-veteran-identifier'>
-            <p>OK, we will remove it.</p>
-          </div>
-        </MessageBox>
-      }
+
+      <MessageAddAmount {...props} />
+      <MessageRemovingDesignation {...props} />
     </div>
   );
-
 };
 
 export default VeteransIdentifier;

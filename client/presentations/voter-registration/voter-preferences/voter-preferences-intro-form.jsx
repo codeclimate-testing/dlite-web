@@ -7,7 +7,7 @@ import Page                   from '../../../containers/page.jsx';
 
 const VoterPreferencesIntro = (props) => {
   return (
-     <Page
+    <Page
       {...props}
       sectionKey='voterRegistration'
     >

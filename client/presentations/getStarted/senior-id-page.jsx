@@ -3,16 +3,11 @@
 import React from 'react';
 
 import RadioCollection    from '../radio-selector-collection.jsx';
-import RadioSelector      from '../radio-selector.jsx';
+import radioYesNoGroup    from '../radio-yes-no-group.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
 
 const Form = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
-
   return (
     <Page
       {...props}
@@ -25,22 +20,18 @@ const Form = (props) => {
           will be printed on your card.
         </p>
 
-        <h2 className='question'>Would you like this card for no fee?</h2>
+        <hr />
+
+        <h3 className='question'>Would you like this card for no fee?</h3>
 
         <div className='row'>
           <RadioCollection
             {...props}
             name    = 'seniorID'
-            text    = { values }
             onBlur  = { props.onBlurValidate }
             errorMessage = {props.validations.seniorID() }
           >
-            <RadioSelector
-              value='Yes'
-            />
-            <RadioSelector
-              value='No'
-            />
+            { radioYesNoGroup() }
           </RadioCollection>
         </div>
 

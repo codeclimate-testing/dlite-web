@@ -6,7 +6,7 @@ import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
 
-const values = {
+const allOptionText = {
   voterRegistration: {
     new       : 'I am a new voter in California',
     existing  : 'I am already registered to vote in California',
@@ -20,6 +20,7 @@ const values = {
 };
 
 const OptOutPage = (props) => {
+  let optionText = allOptionText[props.prereg];
 
   return (
     <Page
@@ -28,26 +29,28 @@ const OptOutPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
       <h2 className='question'>Which best describes you?</h2>
-        
-      <RadioCollection 
+
+      <RadioCollection
         {...props}
         name          = 'optOut'
-        text          = {values[props.prereg]}
         errorMessage  = {props.validations.optOut()}
       >
         <RadioSelector
           value='new'
+          text={ optionText.new }
         />
         <RadioSelector
           value='existing'
+          text={ optionText.existing }
         />
         <RadioSelector
           value='optOut'
+          text={ optionText.optOut }
         />
       </RadioCollection>
 
-        <NavigationButtons 
-          {...props} 
+        <NavigationButtons
+          {...props}
           errorMessage = { props.validations.all() }
         />
       </form>

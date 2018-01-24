@@ -7,11 +7,6 @@ import RadioCollection    from '../radio-selector-collection.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
-const values = {
-  Yes: 'Yes',
-  decline: 'Decline to answer'
-};
-
 const YouthPoint = (props) => {
   if (props.prereg !== 'voterPreRegistration'){ return null; }
   return <li>I am 16 or 17 years old and would like to pre-register to vote</li>
@@ -23,7 +18,6 @@ const text = {
 };
 
 const EligibilityRequirements = (props) => {
-  
   return (
     <Page
       {...props}
@@ -43,16 +37,16 @@ const EligibilityRequirements = (props) => {
 
           <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div>
-            <RadioCollection  
+            <RadioCollection
               {...props}
               name='eligibilityRequirements'
-              text={values}
             >
-              <RadioSelector 
+              <RadioSelector
                 value='Yes'
               />
-              <RadioSelector 
+              <RadioSelector
                 value='decline'
+                text='Decline to answer'
               />
             </RadioCollection>
           </div>

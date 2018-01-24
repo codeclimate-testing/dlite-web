@@ -8,13 +8,6 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 
 const Form = (props) => {
-  let values = {
-    new: 'Get a new card',
-    renew: 'Renew a card',
-    change: 'Correct or update a card',
-    replace: 'Replace a card'
-  };
-
   return (
     <Page
       {...props}
@@ -31,21 +24,24 @@ const Form = (props) => {
             <RadioCollection
               {...props}
               name    = 'cardAction'
-              text    = { values }
               onBlur  = { props.onBlurValidate }
               errorMessage = { props.validations.cardAction()}
             >
               <RadioSelector
                 value = 'new'
+                text='Get a new card'
               />
               <RadioSelector
                 value = 'renew'
+                text='Renew a card'
               />
               <RadioSelector
                 value = 'change'
+                text='Correct or update a card'
               />
               <RadioSelector
                 value='replace'
+                text='Replace a card'
               />
             </RadioCollection>
           </div>

@@ -17,14 +17,14 @@ const Form = (props) => {
         <p>Your answer will help DMV employees better assist you.</p>
         <form onSubmit={ props.onSubmit }>
           <ReplacementReason {...props} />
-          <NavigationButtons 
+          <NavigationButtons
             errorMessage = { props.validations.reason() }
-            {...props} 
+            {...props}
           />
         </form>
       </div>
     </Page>
-  )
+  );
 };
 
 export default Form;

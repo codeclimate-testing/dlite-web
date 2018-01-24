@@ -8,7 +8,7 @@ import EnterPreviousNames   from './names-history/enter-previous-names.jsx';
 
 const NamesHistoryPage = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='myHistory'
     >
@@ -17,11 +17,11 @@ const NamesHistoryPage = (props) => {
           selectedValue = { props.namesHistory.hasUsedPreviousNames }
           errorMessage  = { props.validations.hasUsedPreviousNames() }
         />
-        <EnterPreviousNames 
+        <EnterPreviousNames
           {...props}
           errorMessage  = { props.validations.previousNames() }
         />
-        <NavigationButtons 
+        <NavigationButtons
           {...props}
           errorMessage = { props.validations.all() }
         />

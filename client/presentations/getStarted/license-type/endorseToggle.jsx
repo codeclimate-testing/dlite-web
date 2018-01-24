@@ -2,13 +2,9 @@
 
 import React            from 'react';
 import RadioCollection  from '../../radio-selector-collection.jsx';
-import RadioSelector    from '../../radio-selector.jsx';
+import radioYesNoGroup  from '../../radio-yes-no-group.jsx';
 
-const Form = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
+const FormControls = (props) => {
   return (
     <div className='endorsement-toggle'>
       <hr/>
@@ -18,20 +14,14 @@ const Form = (props) => {
         <RadioCollection
           {...props}
           name='needEndorsement'
-          text={values}
           onBlur = { props.onBlurValidate }
           errorMessage={ props.validations.needEndorsement() }
         >
-          <RadioSelector
-            value = 'Yes'
-          />
-          <RadioSelector
-            value= 'No'
-          />
+          { radioYesNoGroup() }
         </RadioCollection>
       </div>
     </div>
-  )
+  );
 };
 
-export default Form;
+export default FormControls;

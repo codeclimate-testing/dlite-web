@@ -2,67 +2,13 @@
 
 import React from 'react';
 
-import RealIdDesignationForm  from "./real-id/choose-card-selectors.jsx";
-import RadioCollection        from '../radio-selector-collection.jsx';
-import RadioSelector          from '../radio-selector.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
+import RealIdDesignationForm  from './real-id/choose-card-selectors.jsx';
+import ChooseRealID           from './real-id/choose-real-id.jsx';
 
-import { hasMultipleCards }   from '../../helpers/data/cards';
-import { mustChooseCard }     from '../../helpers/data/real-id';
-import { getDL }              from '../../helpers/data/card-type';
-
-const headerTexts = {
-  DL: 'Do you plan on using your Driver License to fly?',
-  ID: 'Do you plan on using your ID to fly?',
-  both: 'Do you plan on using one of your cards to fly?'
-};
-
-const headerText = (props) => {
-  const multiCard = hasMultipleCards(props);
-  if (multiCard)     { return headerTexts.both; }
-  if (getDL(props))  { return headerTexts.DL; }
-  return headerTexts.ID;
-};
-
-const values = {
-  Yes: 'Yes',
-  No: 'No'
-};
-
-const ChooseRealID = (props) => {
-  return (
-    <div className='real-id-form'>
-      <h2 className='question'>{ headerText(props) }</h2>
-
-      <p>
-        As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
-        <b> within</b> the United States.
-      </p>
-
-      <div className='row'>
-        <RadioCollection
-          {...props}
-          name          = 'getRealID'
-          text          = { values}
-          errorMessage  = { props.validations.realID() }
-        >
-          <RadioSelector
-            value='Yes'
-          />
-
-          <RadioSelector
-            value='No'
-          />
-        </RadioCollection>
-
-      </div>
-    </div>
-  )
-};
-
-const Form = (props) => {
+const FormPage = (props) => {
   return (
     <Page
       {...props}
@@ -124,5 +70,5 @@ const Form = (props) => {
   )
 };
 
-export default Form;
+export default FormPage;
 

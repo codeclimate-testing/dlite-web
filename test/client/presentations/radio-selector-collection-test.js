@@ -16,21 +16,24 @@ describe('RadioSelectorCollection', function() {
   beforeEach(function() {
     onChange = spy();
 
-    const text = {
-      new: 'I am a new voter in California',
-      existing: 'I am already registered to vote in California',
-      optOut : 'I am eligible to vote, but do not want to register to vote'
-    }
     component = render(
       <RadioSelectorCollection
         name='voting-registration'
         selectedValue='existing'
         onChange={onChange}
-        text={text}
       >
-        <RadioSelector value='new' />
-        <RadioSelector value='existing' />
-        <RadioSelector value='optOut' />
+        <RadioSelector
+          value='new'
+          text='I am a new voter in California'
+        />
+        <RadioSelector
+          value='existing'
+          text='I am already registered to vote in California'
+        />
+        <RadioSelector
+          value='optOut'
+          text='I am eligible to vote, but do not want to register to vote'
+        />
       </RadioSelectorCollection>
     );
   });

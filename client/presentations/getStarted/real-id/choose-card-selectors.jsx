@@ -3,14 +3,9 @@
 import React from 'react';
 
 import RadioCollection        from '../../radio-selector-collection.jsx';
-import RadioSelector          from '../../radio-selector.jsx';
+import radioIdDlGroup         from '../../radio-id-dl-group.jsx';
 
 import { mustChooseCard }     from '../../../helpers/data/real-id';
-
-let collectionTexts = {
-  ID: 'ID',
-  DL: 'DL'
-};
 
 const Form = (props) => {
   if (!mustChooseCard(props)) { return null; }
@@ -27,11 +22,9 @@ const Form = (props) => {
       <RadioCollection
         {...props}
         name          = 'realIdDesignation'
-        text          = { collectionTexts }
         errorMessage  = { props.validations.designation() }
       >
-        <RadioSelector value='ID' />
-        <RadioSelector value='DL' />
+        { radioIdDlGroup() }
       </RadioCollection>
 
     </div>

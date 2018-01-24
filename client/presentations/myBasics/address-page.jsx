@@ -5,7 +5,7 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import Page                 from '../../containers/page.jsx';
 
 import HomeAddress          from './address/home-address-form.jsx';
-import InterstitialAddress  from './address/interstitial-address-form.jsx';
+import MailingSameAsHome    from './address/mailing-same-as-home.jsx';
 import MailingAddress       from './address/mailing-address-form.jsx';
 
 const AddressPage = (props) => {
@@ -21,7 +21,7 @@ const AddressPage = (props) => {
           address     = { props.address.home }
           onChange    = { props.onHomeChange }
         />
-        <InterstitialAddress
+        <MailingSameAsHome
           {...props}
           onChange      = { props.onAddressChange }
           selectedValue = { props.address.homeAddressSameAsMailing }

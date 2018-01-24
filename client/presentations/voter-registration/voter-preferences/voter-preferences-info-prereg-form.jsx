@@ -6,9 +6,8 @@ import NavigationButtons      from '../../navigation-buttons.jsx';
 import Page                   from '../../../containers/page.jsx';
 
 const PreRegVoterPreferencesIntro = (props) => {
-
   return (
-     <Page
+    <Page
       {...props}
       sectionKey='voterPreRegistration'
     >
@@ -27,7 +26,7 @@ const PreRegVoterPreferencesIntro = (props) => {
 
           <h4>Contact Information</h4>
           <p>Election officials can contact you with election and voting information.</p>
-          
+
         <NavigationButtons {...props} />
         </div>
       </form>

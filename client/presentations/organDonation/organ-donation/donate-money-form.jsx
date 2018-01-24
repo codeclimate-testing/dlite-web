@@ -1,7 +1,7 @@
 'use strict';
 
 import React              from 'react';
-import RadioSelector      from '../../radio-selector.jsx';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import MessageBox         from '../../message-box.jsx';
 
@@ -17,10 +17,6 @@ const Message = (props) => {
 };
 
 const DonateContribution = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
   return (
     <div className='donate-money-form'>
       <h2 className='question'>Do you want to make a voluntary contribution of $2?</h2>
@@ -29,14 +25,8 @@ const DonateContribution = (props) => {
       <RadioCollection
         {...props}
         name='donateMoney'
-        text={values}
       >
-        <RadioSelector
-          value='Yes'
-        />
-        <RadioSelector
-          value='No'
-        />
+        { radioYesNoGroup() }
       </RadioCollection>
 
       <Message {...props} />

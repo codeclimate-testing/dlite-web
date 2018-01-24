@@ -3,66 +3,7 @@
 import React                  from 'react';
 import RadioSelector          from '../../radio-selector.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
-import TextInput              from '../../text-input.jsx';
-import {
-  ErrorIcon,
-  ErrorLabel,
-  errorClass
-} from '../../validations.jsx';
-
-const PARTIES = [ "American Independent Party",
-                  "Libertarian Party",
-                  "Democratic Party",
-                  "Green Party",
-                  "Peace and Freedom Party",
-                  "Republican Party",
-                  "Other"
-                ];
-
-const OtherParty = (props) => {
-  if (props.politicalPartyChoose.politicalPartyChoose !== 'Other') { 
-    return (
-      <RadioSelector
-        {...props}
-        value='Other'
-        text='Other'
-      />
-    )
-  }
-  
-  let errorMessage = props.validations.otherParty(props);
-  let error = errorClass(errorMessage);
-
-  return (
-    <div className='radio-input'>
-      <div className={`radio-input-error ${error}`}>
-        <ErrorIcon
-          errorClass= { error }
-        />
-        <ErrorLabel
-          errorMessage  = { errorMessage }
-          errorClass    = { error }
-        />
-      </div>
-      <RadioSelector
-        {...props}
-        value=''
-        text=''
-        selected = {true}
-      >
-        <TextInput 
-          {...props}
-          id            = 'otherParty'
-          name          = 'otherParty'
-          value         = { props.politicalPartyChoose.otherParty }
-          error         = { error} 
-          placeholder   = 'Please enter your selection'
-        />
-      </RadioSelector>
-      
-    </div>
-  );
-};
+import OtherParty             from './other-party.jsx';
 
 const PoliticalPartyPreference = (props) => {
   if(props.politicalPartyChoose.isSelected !== 'Yes') { return null; }
@@ -72,31 +13,31 @@ const PoliticalPartyPreference = (props) => {
       <hr/>
       <h2 className='question'>Please select a party below</h2>
 
-      <RadioCollection 
+      <RadioCollection
         {...props}
         name='politicalPartyChoose'
       >
-        <RadioSelector 
+        <RadioSelector
           value='American Independent Party'
           text='American Independent Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Libertarian Party'
           text='Libertarian Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Democratic Party'
           text='Democratic Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Green Party'
           text='Green Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Peace and Freedom Party'
           text='Peace and Freedom Party'
         />
-        <RadioSelector 
+        <RadioSelector
           value='Republican Party'
           text='Republican Party'
         />

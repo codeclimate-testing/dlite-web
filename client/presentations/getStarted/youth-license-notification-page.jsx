@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import RadioSelector      from '../radio-selector.jsx';
+import radioYesNoGroup    from '../radio-yes-no-group.jsx';
 import RadioCollection    from '../radio-selector-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
@@ -16,7 +16,8 @@ const FormHeader = (props) => {
     <div>
       <h2 className='question'>{props.title}</h2>
       <p>{props.helpText}</p>
-      <h2 className='question'>Do you want to apply for an ID instead?</h2>
+      <hr />
+      <h3 className='question'>Do you want to apply for an ID instead?</h3>
     </div>
   );
 };
@@ -53,11 +54,6 @@ const Form = (props) => {
     props.checkAnswer(e.target.value, false); // update props.cardType.new
   }
 
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
-
   const Header = ageChecks.Under15(props.dateOfBirth) ? Under15FormHeader : YouthFormHeader;
 
   return (
@@ -69,19 +65,13 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <Header />
           <div className='row'>
-            <RadioCollection  
+            <RadioCollection
               {...props}
               name = 'youthIDInstead'
-              text = { values }
               onBlur  = { props.onBlurValidate }
               errorMessage = { props.validations.youthIDInstead() }
             >
-              <RadioSelector 
-                value='Yes'
-              />
-              <RadioSelector 
-                value='No'
-              />
+              { radioYesNoGroup() }
             </RadioCollection>
           </div>
 

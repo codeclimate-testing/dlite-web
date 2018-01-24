@@ -6,7 +6,6 @@ import NavigationButtons      from '../../navigation-buttons.jsx';
 import Page                   from '../../../containers/page.jsx';
 
 const PreRegVoterPreferencesIntroUpdated = (props) => {
-
   return (
      <Page
       {...props}

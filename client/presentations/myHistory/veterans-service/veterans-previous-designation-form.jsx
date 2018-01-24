@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import RadioSelector        from '../../radio-selector.jsx';
+import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 import { getDL }            from '../../../helpers/data/card-type';
 
@@ -16,26 +16,15 @@ const VeteransPreviousDesignation = (props) => {
 
   const headerText = getDL(props) ? header.DL : header.ID;
 
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
-
   return (
     <div className='veterans-previous-designation-form'>
       <h2 className='question'>{headerText}</h2>
       <div className='input-container'>
-        <RadioCollection 
+        <RadioCollection
           {...props}
           name='previouslyDesignated'
-          text={values}
         >
-          <RadioSelector 
-            value='Yes'
-          />
-          <RadioSelector 
-            value='No'
-          />
+          { radioYesNoGroup() }
         </RadioCollection>
       </div>
     </div>

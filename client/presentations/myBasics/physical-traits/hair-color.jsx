@@ -4,8 +4,6 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 
-const COLORS = ['Auburn', 'Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red', 'White', 'Other'];
-
 const HairColor = (props) => {
   return (
     <div className='hair-color'>

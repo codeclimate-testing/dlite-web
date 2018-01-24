@@ -7,14 +7,7 @@ import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../../containers/page.jsx';
 import ContactDetails           from './contact-methods/contact-methods-details.jsx';
 
-const values = {
-  Yes   : 'Yes',
-  No    : 'No',
-  Skip  : 'Skip Section'
-};
-
 const ContactMethodsPage = (props) => {
-
   return (
      <Page
       {...props}
@@ -23,21 +16,21 @@ const ContactMethodsPage = (props) => {
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
         <h2 className='question'>Would you like to receive election information via email or text</h2>
 
-        <RadioCollection  
+        <RadioCollection
           {...props}
           name          = 'shouldContact'
-          text          = {values}
           selectedValue = {props.contactMethods.shouldContact}
           errorMessage  = {props.validations.shouldContact()}
         >
-          <RadioSelector 
+          <RadioSelector
             value='Yes'
           />
-          <RadioSelector 
+          <RadioSelector
             value='No'
           />
-          <RadioSelector 
+          <RadioSelector
             value='Skip'
+            text='Skip Section'
           />
         </RadioCollection>
 
@@ -47,15 +40,14 @@ const ContactMethodsPage = (props) => {
         </div>
 
         <ContactDetails
-          {...props} 
+          {...props}
         />
 
-        <NavigationButtons 
-          {...props} 
+        <NavigationButtons
+          {...props}
           errorMessage = {props.validations.all()}
         />
       </form>
-
     </Page>
   );
 };

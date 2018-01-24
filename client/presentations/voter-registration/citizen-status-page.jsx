@@ -6,18 +6,12 @@ import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
 
-const values = {
-  Yes: 'Yes',
-  decline: 'Decline to answer'
-};
-
 const text = {
   voterPreRegistration: 'If you decline to answer, you cannot pre-register to vote.',
   voterRegistration: 'If you decline to answer, you cannot register to vote.'
 };
 
 const CitizenStatusPage = (props) => {
-
   return (
     <Page
       {...props}
@@ -26,24 +20,24 @@ const CitizenStatusPage = (props) => {
       <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
         <h2 className='question'>Are you a United States citizen?</h2>
         <p>{text[props.prereg]}</p>
-        
-        <RadioCollection 
+
+        <RadioCollection
           {...props}
           name          = 'citizenStatus'
-          text          = {values}
         >
-          <RadioSelector 
+          <RadioSelector
             value='Yes'
           />
-          <RadioSelector 
+          <RadioSelector
             value='decline'
+            text='Decline to answer'
           />
         </RadioCollection>
 
         <NavigationButtons {...props} />
       </form>
     </Page>
-  )
+  );
 };
 
 export default CitizenStatusPage;

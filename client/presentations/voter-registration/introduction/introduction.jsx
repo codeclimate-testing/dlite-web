@@ -24,8 +24,10 @@ const VoterIntro = (props) => {
 
           <hr />
 
-          <p>This section takes customers<br />
-            <b>3 minutes</b></p>
+          <p>This section takes customers
+            <br />
+            <b>3 minutes</b>
+          </p>
 
           <NavigationButtons {...props} />
         </div>

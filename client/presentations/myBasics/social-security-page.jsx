@@ -1,5 +1,7 @@
 'use strict';
+
 import React                from 'react';
+
 import Page                 from '../../containers/page.jsx';
 import SocialSecurityOption from './social-security/social-security-option-form.jsx';
 import SocialSecurityEnter  from './social-security/social-security-enter-form.jsx';
@@ -23,15 +25,14 @@ const SocialPage = (props) => {
         {...props}
         />
 
-        <SocialSecurityNoInfo 
+        <SocialSecurityNoInfo
           socialSecurity = { props.socialSecurity }
         />
 
         <NavigationButtons
-        {...props}
-        errorMessage={props.validations.all()}
+          {...props}
+          errorMessage={props.validations.all()}
         />
-
       </form>
     </Page>
   )

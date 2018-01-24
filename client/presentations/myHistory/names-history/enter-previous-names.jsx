@@ -11,12 +11,12 @@ const EnterPreviousNames = (props) => {
       <h2 className='question'>Please list all previous legal names.</h2>
       <p>For example, include your maiden name.</p>
       <p>Separate by commas.</p>
-        <TextArea
-          {...props}
-          identifier='previousNames'
-          description='Previous Names:'
-          value     = { props.namesHistory.previousNames }
-        />
+      <TextArea
+        {...props}
+        identifier='previousNames'
+        description='Previous Names:'
+        value     = { props.namesHistory.previousNames }
+      />
     </div>
   );
 };

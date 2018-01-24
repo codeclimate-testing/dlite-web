@@ -7,15 +7,14 @@ import { hasValue } from '../../../helpers/data/validations';
 import {
   ErrorIcon,
   ErrorLabel,
-  errorMessage, 
+  errorMessage,
   errorClass
 } from '../../validations.jsx';
 import ExampleLabel from '../../example-label.jsx';
 
 const ContactDetails = (props) => {
-
   if(props.contactMethods.shouldContact !== 'Yes') { return null; }
-  
+
   let errors = {
     one: props.validations.phoneNumber1(),
     two: props.validations.phoneNumber2(),
@@ -30,7 +29,7 @@ const ContactDetails = (props) => {
       <hr/>
       <h2 className='question'>Please enter your contact information below.</h2>
       <p>This is optional</p>
-      
+
       <TextInput
         {...props}
         identifier    = 'emailAddress'
@@ -57,7 +56,7 @@ const ContactDetails = (props) => {
         <NumberInput
           {...props}
           identifier    = 'phoneNumber1'
-          value         = { props.contactMethods.phoneNumber1}
+          value         = { props.contactMethods.phoneNumber1 }
           error         = { hasValue(errors.one)}
         />
         <div className  = 'unit spacer'/>
@@ -65,7 +64,7 @@ const ContactDetails = (props) => {
         <NumberInput
           {...props}
           identifier    = 'phoneNumber2'
-          value         = { props.contactMethods.phoneNumber2}
+          value         = { props.contactMethods.phoneNumber2 }
           error         = { hasValue(errors.two)}
         />
 
@@ -75,11 +74,11 @@ const ContactDetails = (props) => {
           {...props}
           identifier    = 'phoneNumber3'
           value         = { props.contactMethods.phoneNumber3}
-          error         = { hasValue(errors.three)}
+          error         = { hasValue(errors.three) }
         />
       </div>
       <div className='row'>
-        <ErrorLabel 
+        <ErrorLabel
           errorMessage  = { message }
           errorClass    = { addError }
         />
@@ -88,7 +87,6 @@ const ContactDetails = (props) => {
         <p>Who gets this information?</p>
         <p>Secretary of State and county election officials have access to this information</p>
       </div>
-
     </div>
   )
 };

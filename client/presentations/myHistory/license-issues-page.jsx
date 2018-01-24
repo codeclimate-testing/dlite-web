@@ -9,7 +9,7 @@ import LicenseIssues        from './license-issues/license-issues-form.jsx';
 
 const LicenseIssuesPage = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='myHistory'
     >
@@ -19,11 +19,11 @@ const LicenseIssuesPage = (props) => {
           selectedValue = { props.licenseIssues.isSuspended }
         />
 
-        <EnterIssues 
-          {...props} 
+        <EnterIssues
+          {...props}
         />
 
-        <NavigationButtons 
+        <NavigationButtons
           {...props}
           errorMessage = { props.validations.all() }
         />

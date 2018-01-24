@@ -10,7 +10,7 @@ import Sex                  from './physical-traits/sex.jsx';
 
 const PhysicalPage = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='myBasics'
     >
@@ -20,23 +20,21 @@ const PhysicalPage = (props) => {
           selectedValue = {props.physicalTraits.sex}
           errorMessage={ props.validations.sex() }
         />
-        <br></br>
         <EyeColor
           {...props}
           selectedValue = {props.physicalTraits.eyeColor}
           errorMessage={ props.validations.eyeColor() }
         />
-        <br></br>
         <HairColor
           {...props}
           selectedValue = {props.physicalTraits.hairColor}
           errorMessage={ props.validations.hairColor() }
         />
 
-      <NavigationButtons
-        {...props}
-        errorMessage={props.validations.all()}
-      />
+        <NavigationButtons
+          {...props}
+          errorMessage={props.validations.all()}
+        />
       </form>
     </Page>
   )

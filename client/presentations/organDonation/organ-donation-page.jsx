@@ -28,10 +28,10 @@ const OrganDonationPage = (props) => {
           errorMessage  = { props.validations.donateMoney() }
         />
 
-          <NavigationButtons
-            {...props}
-            errorMessage={ props.validations.all() }
-          />
+        <NavigationButtons
+          {...props}
+          errorMessage={ props.validations.all() }
+        />
       </form>
     </Page>
   )

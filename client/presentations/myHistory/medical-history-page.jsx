@@ -8,7 +8,7 @@ import EnterMedicalInfo     from './medical-history/enter-medical-info.jsx';
 
 const MedicalHistoryPage = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='myHistory'
     >
@@ -16,10 +16,10 @@ const MedicalHistoryPage = (props) => {
         <MedicalCondition {...props}
           selectedValue = {props.medicalHistory.hasMedicalCondition}
         />
-        <EnterMedicalInfo 
+        <EnterMedicalInfo
           {...props}
         />
-        <NavigationButtons 
+        <NavigationButtons
           {...props}
           errorMessage  = { props.validations.all() }
         />

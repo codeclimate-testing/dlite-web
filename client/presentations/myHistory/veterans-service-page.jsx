@@ -10,7 +10,7 @@ import VeteransIdentifier           from './veterans-service/veterans-identifier
 
 const VeteransServicePage = (props) => {
   return (
-    <Page 
+    <Page
       {...props}
       sectionKey='myHistory'
     >

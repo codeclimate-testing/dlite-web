@@ -2,14 +2,23 @@
 
 import React from 'react';
 
-import RadioSelector      from '../../radio-selector.jsx';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
+import MessageBox             from '../../message-box.jsx';
+
+const MessageNo = (props) => {
+  if (props.guardianSignature.isSigned !== 'No') { return null; }
+
+  return (
+    <MessageBox className='info'>
+      <div>
+        <p>Your application will not be complete until your parent/guardian signs.</p>
+      </div>
+    </MessageBox>
+  );
+};
 
 const SignatureChoice = (props) => {
-  let values = {
-    Yes: 'Yes',
-    No: 'No'
-  };
   return (
     <div className='signature-choice-form'>
       <h2 className='question'>Because you are under 18, you will need a parent or guardian signature.</h2>
@@ -19,17 +28,11 @@ const SignatureChoice = (props) => {
         <RadioCollection
           {...props}
           name='isSigned'
-          text={values}
           onChange={props.onFirstChange}
         >
-          <RadioSelector
-            value='Yes'
-          />
-          <RadioSelector
-            value='No'
-          />
+          { radioYesNoGroup() }
         </RadioCollection>
-
+        <MessageNo {...props} />
       </div>
     </div>
   );

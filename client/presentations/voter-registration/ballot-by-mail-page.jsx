@@ -2,7 +2,7 @@
 
 import React                from 'react';
 import NavigationButtons    from '../navigation-buttons.jsx';
-import RadioSelector        from '../radio-selector.jsx';
+import radioYesNoGroup      from '../radio-yes-no-group.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import MessageBox           from '../message-box.jsx';
 import Page                 from '../../containers/page.jsx';
@@ -21,13 +21,7 @@ const InfoMessage = (props) => {
   )
 };
 
-const values = {
-  Yes: 'Yes',
-  No: 'No'
-};
-
 const BallotByMailPage = (props) => {
-
   return (
     <Page
       {...props}
@@ -36,27 +30,21 @@ const BallotByMailPage = (props) => {
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
         <h2 className='question'>Would you like to get your ballot by mail before each election?</h2>
         <p>If you answer Yes, you can still vote in-person.</p>
-        
-        <RadioCollection 
+
+        <RadioCollection
           {...props}
           name          = 'ballotByMail'
-          text          = {values}
-          errorMessage  = {props.validations.ballotByMail() }
+          errorMessage  = { props.validations.ballotByMail() }
         >
-          <RadioSelector 
-            value='Yes'
-          />
-          <RadioSelector 
-            value='No'
-          />
+          { radioYesNoGroup() }
         </RadioCollection>
 
-        <InfoMessage 
+        <InfoMessage
           selectedValue = { props.selectedValue }
         />
 
-        <NavigationButtons 
-          {...props} 
+        <NavigationButtons
+          {...props}
           errorMessage = { props.validations.all() }
         />
       </form>
