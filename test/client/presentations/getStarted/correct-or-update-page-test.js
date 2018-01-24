@@ -9,7 +9,7 @@ import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
-import CorrectOrUpdate          from '../../../../client/presentations/getStarted/correct-or-update-page.jsx';
+import CorrectOrUpdate          from '../../../../client/presentations/get-started/correct-or-update-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('CorrectOrUpdate', function() {
@@ -25,7 +25,7 @@ describe('CorrectOrUpdate', function() {
         change: '',
         youthIDInstead: ''
       };
-  
+
       let cardAction = 'change';
 
       let cardChanges = {

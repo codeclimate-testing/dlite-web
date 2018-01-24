@@ -23,7 +23,7 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          renew: 'ID', 
+          renew: 'ID',
           new: [],
           replace: '',
           change: ''

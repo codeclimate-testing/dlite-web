@@ -25,7 +25,7 @@ export const ErrorIcon = (props) => {
   );
 };
 
-export const errorMessage = (errors) => {  
+export const errorMessage = (errors) => {
   return Object.values(errors).reduce((total, error) => {
     if (hasValue(error)) {
       total = error;

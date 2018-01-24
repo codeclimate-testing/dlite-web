@@ -8,7 +8,7 @@ import configure                from '../../support/configure-enzyme';
 import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
-import SeniorIDPage             from '../../../../client/presentations/getStarted/senior-id-page.jsx';
+import SeniorIDPage             from '../../../../client/presentations/get-started/senior-id-page.jsx';
 
 describe('SeniorIDPage', function() {
   const Wrapper = wrapperGenerator(store);

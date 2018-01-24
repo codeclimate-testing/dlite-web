@@ -16,7 +16,7 @@ describe('CitizenStatusPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let onChange = spy();
       let dateOfBirth = {
@@ -34,7 +34,7 @@ describe('CitizenStatusPage', function() {
         prereg
       };
     });
-    
+
     it('shows the form asking if user is a US citizen', function() {
       let component = render(
         <Wrapper>
@@ -59,7 +59,7 @@ describe('CitizenStatusPage', function() {
           <CitizenStatusPage  {...props} />
         </Wrapper>
       );
-   
+
       assert.ok(component.text().includes('If you decline to answer, you cannot pre-register to vote'), 'pre-registration language not found');
     });
 

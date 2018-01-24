@@ -9,7 +9,7 @@ const formCheckArrayReducer  = (name, value, data) => {
     array.push(item);
   } else {
     let index = array.indexOf(item);
-    
+
     if(index > -1) {
       array.splice(index, 1);
     }

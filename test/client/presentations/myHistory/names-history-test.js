@@ -6,7 +6,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
-import NamesHistoryPage         from '../../../../client/presentations/myHistory/names-history-page.jsx';
+import NamesHistoryPage         from '../../../../client/presentations/my-history/names-history-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('NamesHistoryPage', function() {
@@ -14,7 +14,7 @@ describe('NamesHistoryPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let namesHistory = {
         hasUsedPreviousNames: '',
@@ -35,7 +35,7 @@ describe('NamesHistoryPage', function() {
         onChange
       }
     });
-    
+
     it('shows the form asking if you have ever had a different name', function() {
       let component = render(
         <Wrapper>

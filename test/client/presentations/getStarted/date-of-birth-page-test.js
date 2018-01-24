@@ -9,7 +9,7 @@ import store                    from '../../support/page-store';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import DateOfBirthPage          from '../../../../client/presentations/getStarted/date-of-birth-page.jsx';
+import DateOfBirthPage          from '../../../../client/presentations/get-started/date-of-birth-page.jsx';
 
 describe('DateOfBirthPage', function() {
   const Wrapper = wrapperGenerator(store);

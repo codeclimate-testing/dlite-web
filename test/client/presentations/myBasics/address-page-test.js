@@ -7,7 +7,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import AddressPage              from '../../../../client/presentations/myBasics/address-page.jsx';
+import AddressPage              from '../../../../client/presentations/my-basics/address-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('AddressPage', function() {

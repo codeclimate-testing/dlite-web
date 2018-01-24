@@ -1,7 +1,7 @@
 'use strict';
 
 import selectionValidator from './selection-validator';
-import { 
+import {
   mustChooseBenefits,
   mustChoosePreviousDesignation,
   mustChooseIdentifier,

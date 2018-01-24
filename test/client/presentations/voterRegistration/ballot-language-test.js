@@ -16,7 +16,7 @@ describe('BallotLanguagePage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let ballotLanguage = '';
       let onChange = spy();
@@ -38,7 +38,7 @@ describe('BallotLanguagePage', function() {
         validations
       };
     });
-    
+
     it('shows the form asking user to choose language', function() {
       let component = render(
         <Wrapper>

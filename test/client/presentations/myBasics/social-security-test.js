@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import SocialSecurityPage       from '../../../../client/presentations/myBasics/social-security-page.jsx';
+import SocialSecurityPage       from '../../../../client/presentations/my-basics/social-security-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('SocialSecurityPage', function() {
@@ -16,7 +16,7 @@ describe('SocialSecurityPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let socialSecurity = {
         hasSocialSecurity: '',
@@ -24,7 +24,7 @@ describe('SocialSecurityPage', function() {
         part2: '',
         part3: ''
       }
-      
+
       let onChange = spy();
 
       let validations = {
@@ -43,7 +43,7 @@ describe('SocialSecurityPage', function() {
         onChange
       }
     });
-    
+
     it('shows the form asking if you have have a social security number', function() {
       let component = render(
         <Wrapper>

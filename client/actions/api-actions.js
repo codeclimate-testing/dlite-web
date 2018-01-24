@@ -14,7 +14,7 @@ export const postData = function (body) {
       },
       body: JSON.stringify(body)
     })
-      .then(function(res){ 
+      .then(function(res){
         return res.json();
       })
       .then(function (data) {

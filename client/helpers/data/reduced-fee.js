@@ -1,6 +1,6 @@
 'use strict';
 import { hasValue }           from '../data/validations';
-import { getID } from './card-type';
+import { getID }              from './card-type';
 
 export const eligibleForReducedFee = (props) => {
   return props.seniorID !== 'Yes' && getID(props);

@@ -10,7 +10,7 @@ import { postData }         from '../../actions/api-actions';
 const Page = props =>{
   let onSubmit            = navigateOnSubmit('/appointment-preparation', props);
   return (
-    <Presentation 
+    <Presentation
       {...props}
       onSubmit            = { onSubmit }
     />

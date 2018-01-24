@@ -44,7 +44,7 @@ describe('Required Docs for Reduced Fee', function() {
       )
       assert.equal(component.text().includes('No fee eligibility'), true);
     });
-  
+
     it('is false when condition is No', function() {
       reducedFee =  {
         ID: 'No'
@@ -85,7 +85,7 @@ describe('Required Docs for Reduced Fee', function() {
       )
       assert.equal(component.text().includes('No fee eligibility'), true);
     });
-  
+
     it('is false when condition is No', function() {
       reducedFee =  {
         ID: 'No'
@@ -97,7 +97,7 @@ describe('Required Docs for Reduced Fee', function() {
         />
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
-    }); 
+    });
 
     it('is false when condition is blank', function() {
       reducedFee =  {
@@ -110,7 +110,7 @@ describe('Required Docs for Reduced Fee', function() {
         />
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
-    }); 
+    });
   });
 });
 

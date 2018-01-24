@@ -1,7 +1,7 @@
 'use strict';
 
-import { 
-  ageChecks, 
+import {
+  ageChecks,
   isPreregistering
 } from '../calculate-age';
 import { getDL } from './card-type';

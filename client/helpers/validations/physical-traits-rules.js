@@ -1,7 +1,7 @@
 'use strict';
 
-import errorMessages from '../../presentations/error-messages';
-import { hasValue } from '../data/validations';
+import errorMessages  from '../../presentations/error-messages';
+import { hasValue }   from '../data/validations';
 
 const sex = (props) => {
   let value = props.sex;

@@ -13,7 +13,6 @@ import {
   citizenship,
   votingEligibility,
   optOut
-
 } from './next-path';
 
 const getStarted = [

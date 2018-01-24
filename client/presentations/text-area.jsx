@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React        from 'react';
 import errorClass   from '../helpers/validations/error-class';
 import {
   ErrorIcon,
@@ -13,11 +13,11 @@ const TextArea = (props) => {
 
   return (
     <div className='text-area-input-block'>
-      <label 
+      <label
         htmlFor={ props.identifier }
         className={ className }
       >
-        <ErrorIcon errorClass={ className } /> 
+        <ErrorIcon errorClass={ className } />
         { props.description }
       </label>
       <div className="input-container">
@@ -35,7 +35,7 @@ const TextArea = (props) => {
       <ErrorLabel
         errorMessage={ props.errorMessage }
         errorClass={ className }
-      /> 
+      />
     </div>
   );
 };

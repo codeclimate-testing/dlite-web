@@ -3,7 +3,7 @@ const csrf          = require('csurf');
 const cookieParser  = require('cookie-parser');
 
 function check(req, res, next) {
-  res.cookie('csrfToken', req.csrfToken ? req.csrfToken() : null, { sameSite: 'Strict', httpOnly: true}); 
+  res.cookie('csrfToken', req.csrfToken ? req.csrfToken() : null, { sameSite: 'Strict', httpOnly: true});
   next();
 };
 

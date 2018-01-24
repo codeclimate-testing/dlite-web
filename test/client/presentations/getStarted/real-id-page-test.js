@@ -6,7 +6,7 @@ import { render }   from 'enzyme';
 import React        from 'react';
 import { spy }      from 'sinon';
 
-import RealIdPage   from '../../../../client/presentations/getStarted/real-id-page.jsx';
+import RealIdPage   from '../../../../client/presentations/get-started/real-id-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
 import pageStore    from '../../support/page-store';
 
@@ -122,20 +122,20 @@ describe('RealIdPage', function() {
           <RealIdPage  {...props}/>
         </Wrapper>
       );
-  
+
       assert.ok(
         component.text().includes('Do you plan on using your ID to fly?'),
         'Header does not include ID type'
       );
-  
+
       props.cardType.new = ['DL'];
-  
+
       component = render(
         <Wrapper>
           <RealIdPage  {...props}/>
         </Wrapper>
       );
-  
+
       assert.ok(
         component.text().includes('Do you plan on using your Driver License to fly?'),
         'Header does not include DL type'
@@ -144,13 +144,13 @@ describe('RealIdPage', function() {
 
     it('should have a header indicating you are applying for both cards is applicable', function() {
       props.cardType.new = ['DL', 'ID'];
-  
+
       let component = render(
         <Wrapper>
           <RealIdPage  {...props}/>
         </Wrapper>
       );
-  
+
       assert.ok(
         component.text().includes('Do you plan on using one of your cards to fly?'),
         'Header does not for multicard'

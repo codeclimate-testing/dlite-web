@@ -16,13 +16,13 @@ const DateInput = (props) => {
     month : props.validations.month(),
     day   : props.validations.day(),
     year  : props.validations.year()
-  }; 
+  };
   let message = errorMessage(errors);
   let addError = errorClass(message);
 
   return (
     <div className='date-input'>
-      <label 
+      <label
         htmlFor       = { props.identifier}
         className     = { addError }
       >
@@ -39,9 +39,9 @@ const DateInput = (props) => {
         onBlurValidate = { props.onBlurValidate }
         onFocusClearValidation = { props.onFocusClearValidation }
       />
-  
+
       <div className  = 'unit spacer'/>
- 
+
       <NumberInput
         identifier    = 'day'
         example       = 'DD'
@@ -64,7 +64,7 @@ const DateInput = (props) => {
         onFocusClearValidation = { props.onFocusClearValidation }
       />
 
-      <ErrorLabel 
+      <ErrorLabel
         errorMessage  = { message }
         errorClass    = { addError }
       />

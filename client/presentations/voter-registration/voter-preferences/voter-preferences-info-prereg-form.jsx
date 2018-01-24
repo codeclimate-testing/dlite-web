@@ -1,9 +1,9 @@
 'use strict';
 
-import React from 'react';
+import React                from 'react';
 
-import NavigationButtons      from '../../navigation-buttons.jsx';
-import Page                   from '../../../containers/page.jsx';
+import NavigationButtons    from '../../navigation-buttons.jsx';
+import Page                 from '../../../containers/page.jsx';
 
 const PreRegVoterPreferencesIntro = (props) => {
   return (

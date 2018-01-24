@@ -4,7 +4,7 @@ import React          from 'react';
 import { ageChecks }  from '../../../helpers/calculate-age';
 
 const YouthDocuments = (props) => {
-  
+
   const caLicenseRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true';
   const newDriverRequirements           = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT';
   const driverHandbook                  = 'https://www.dmv.ca.gov/portal/dmv/detail/mobile';

@@ -14,7 +14,7 @@ describe('ContactMethodsPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let dateOfBirth = {
         month: '',
@@ -43,7 +43,7 @@ describe('ContactMethodsPage', function() {
         onChange
       };
     });
-    
+
     it('shows the form asking if user would like to receive election info', function() {
       let component = render(
         <Wrapper>

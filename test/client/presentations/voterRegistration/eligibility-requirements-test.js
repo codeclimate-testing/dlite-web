@@ -16,7 +16,7 @@ describe('EligibilityPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let eligibilityRequirements = '';
       let continueDisabled = true;
@@ -35,7 +35,7 @@ describe('EligibilityPage', function() {
         prereg
       }
     });
-    
+
     it('shows the form asking if user meets all the voter registration reqs', function() {
       let component = render(
         <Wrapper>

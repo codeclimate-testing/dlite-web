@@ -5,7 +5,7 @@ import configure        from '../../support/configure-enzyme';
 import { render }       from 'enzyme';
 import React            from 'react';
 import {spy}            from 'sinon';
-import CurrentCardPage  from '../../../../client/presentations/getStarted/current-card-page.jsx';
+import CurrentCardPage  from '../../../../client/presentations/get-started/current-card-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
 import store            from '../../support/page-store';
 
@@ -22,7 +22,7 @@ describe('CurrentCardPage', function() {
         renew: 'DL',
         youthIDInstead: ''
       };
-  
+
       let currentCardInfo = {
         number: '',
         day: '',

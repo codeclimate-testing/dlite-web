@@ -44,7 +44,7 @@ describe('Required Docs for Real ID', function() {
       )
       assert.equal(component.text().includes('Real ID birth date'), true);
     });
-  
+
     it('is false when condition is No', function() {
       realID = {
         getRealID: 'No'
@@ -83,11 +83,11 @@ describe('Required Docs for Real ID', function() {
           realID={realID}
         />
       )
-      assert.equal(component.text().includes('Real ID birth date') && 
-        !component.text().includes('All applicants need to prove their date of birth.'), 
+      assert.equal(component.text().includes('Real ID birth date') &&
+        !component.text().includes('All applicants need to prove their date of birth.'),
         true);
     });
-  
+
     it('is false when condition is No', function() {
       realID = {
         getRealID: 'No'
@@ -98,8 +98,8 @@ describe('Required Docs for Real ID', function() {
           realID={realID}
         />
       )
-      assert.equal(component.text().includes('Real ID birth date') && 
-        !component.text().includes('All applicants need to prove their date of birth.'), 
+      assert.equal(component.text().includes('Real ID birth date') &&
+        !component.text().includes('All applicants need to prove their date of birth.'),
         false);
     });
 
@@ -113,8 +113,8 @@ describe('Required Docs for Real ID', function() {
           realID={realID}
         />
       )
-      assert.equal(component.text().includes('Real ID birth date') && 
-        !component.text().includes('All applicants need to prove their date of birth.'), 
+      assert.equal(component.text().includes('Real ID birth date') &&
+        !component.text().includes('All applicants need to prove their date of birth.'),
         false);
     });
   });

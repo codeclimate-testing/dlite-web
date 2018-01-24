@@ -8,7 +8,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 
-import MedicalPage              from '../../../../client/presentations/myHistory/medical-history-page.jsx';
+import MedicalPage              from '../../../../client/presentations/my-history/medical-history-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('MedicalHistoryPage', function() {
@@ -17,7 +17,7 @@ describe('MedicalHistoryPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let medicalHistory = {
         hasMedicalCondition: '',
@@ -39,7 +39,7 @@ describe('MedicalHistoryPage', function() {
         validations
       }
     });
-    
+
     it('shows the yes/no form asking if user has medical condition', function() {
       let component = render(
         <Wrapper>

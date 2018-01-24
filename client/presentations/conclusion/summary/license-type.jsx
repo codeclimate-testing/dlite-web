@@ -43,11 +43,11 @@ const Endorsement = (props) => {
 
 const LicenseType = (props) => {
   if (!dataPresent.licenseType(props.licenseType)) { return null; }
-  
+
   return (
     <div className='summary-section license-type'>
       <Type types={ props.licenseType.type } />
-      <Endorsement licenseType={ props.licenseType } />   
+      <Endorsement licenseType={ props.licenseType } />
     </div>
   );
 

@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
-import VeteransPage             from '../../../../client/presentations/myHistory/veterans-service-page.jsx';
+import VeteransPage             from '../../../../client/presentations/my-history/veterans-service-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('VeteransServicePage', function() {

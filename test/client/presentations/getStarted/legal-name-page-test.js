@@ -10,7 +10,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 
-import NamePage                 from '../../../../client/presentations/getStarted/name-page.jsx';
+import NamePage                 from '../../../../client/presentations/get-started/name-page.jsx';
 
 describe('NamePage', function() {
   const Wrapper = wrapperGenerator(store);

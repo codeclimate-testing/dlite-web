@@ -2,9 +2,9 @@
 
 import errorMessages        from '../../presentations/error-messages';
 import selectionValidator   from './selection-validator';
-import { 
+import {
   hasOnlyNumbers,
-  hasValue 
+  hasValue
 } from '../data/validations';
 
 const hash = {
@@ -18,7 +18,7 @@ const hash = {
   8: 31,
   9: 30,
   10: 31,
-  11: 30, 
+  11: 30,
   12: 31
 };
 
@@ -52,10 +52,10 @@ export const compareValues = (name, props, allowFuture) => {
   let minValue = min[name];
   let maxValue = max[name](props, allowFuture);
   let checkMin = parseInt(value, 10) < minValue;
-  
+
   if (!hasOnlyNumbers(value) || checkMin || value > maxValue || checkIfYearError(name, props) ) {
     hasError = false;
-  } 
+  }
   return hasError;
 };
 

@@ -8,7 +8,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import HeightWeightPage         from '../../../../client/presentations/myBasics/traits-height-weight-page.jsx';
+import HeightWeightPage         from '../../../../client/presentations/my-basics/traits-height-weight-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('HeightWeightPage', function() {
@@ -16,7 +16,7 @@ describe('HeightWeightPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let traitsHeightWeight = {
         heightFeet: '',
@@ -42,7 +42,7 @@ describe('HeightWeightPage', function() {
         validations
       }
     });
-    
+
     it('shows the form allowing you to enter your height and weight', function() {
       let component = render(
         <Wrapper>

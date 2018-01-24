@@ -1,10 +1,10 @@
 'use strict';
 
 import errorMessages            from '../../presentations/error-messages';
-import { 
+import {
   hasValue,
-  hasOnlyEnglishChars 
-}             from '../data/validations';
+  hasOnlyEnglishChars
+}                               from '../data/validations';
 import selectionValidator       from './selection-validator';
 
 const sections = (props) => {

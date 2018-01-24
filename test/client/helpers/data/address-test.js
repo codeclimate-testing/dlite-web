@@ -1,8 +1,7 @@
 'use strict';
 
-import assert from 'assert';
-
-import { canContinue } from '../../../../client/helpers/data/address';
+import assert           from 'assert';
+import { canContinue }  from '../../../../client/helpers/data/address';
 
 describe('Data helpers for addresses', function() {
   let data = {

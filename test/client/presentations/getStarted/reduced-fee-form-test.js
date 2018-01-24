@@ -8,7 +8,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import store                    from '../../support/page-store';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import ReducedFeePage           from '../../../../client/presentations/getStarted/reduced-fee-page.jsx';
+import ReducedFeePage           from '../../../../client/presentations/get-started/reduced-fee-page.jsx';
 
 describe('Reduced Fee Page', function() {
   const Wrapper = wrapperGenerator(store);

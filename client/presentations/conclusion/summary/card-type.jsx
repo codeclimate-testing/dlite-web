@@ -1,7 +1,7 @@
 'use strict';
 
-import React from 'react';
-import * as dataPresent from '../../../helpers/data-present';
+import React              from 'react';
+import * as dataPresent   from '../../../helpers/data-present';
 import {
   getDL,
   getID,
@@ -9,7 +9,7 @@ import {
   getNewDL,
   prettyDL
 } from '../../../helpers/data/card-type';
-import { printDate } from '../../../helpers/print-date.js';
+import { printDate }      from '../../../helpers/print-date.js';
 
 const NewCard = (props) => {
   let newID = getNewID(props);
@@ -19,7 +19,7 @@ const NewCard = (props) => {
   let values = [];
   if(newID) {
     values.push('ID');
-  } 
+  }
   if(newDL) {
     values.push('Driver License')
   }
@@ -28,7 +28,7 @@ const NewCard = (props) => {
 
 const CardDetails = (props) => {
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
-  
+
   let date  = printDate(props.currentCardInfo);
   let IDorDL = props.cardType[props.cardAction];
 
@@ -55,7 +55,7 @@ const CardDetails = (props) => {
     renew: {
       ID: 'Expiration date of ID to renew',
       DL: 'Expiration date of Driver License to renew'
-    }, 
+    },
     update: {
       ID: 'Expiration date of ID to update',
       DL: 'Expiration date of Driver License to update'
@@ -85,12 +85,12 @@ const Renew = (props) => {
     ID: 'Renewing: ID',
     DL: 'Renewing: Driver License'
   };
-  
+
   return (
     <div>
       <p>{ text[props.cardType.renew] } </p>
-      <CardDetails 
-        {...props} 
+      <CardDetails
+        {...props}
         action = 'renew'
       />
     </div>
@@ -115,7 +115,7 @@ const Change = (props) => {
     <div>
       <p>{ text[props.cardChanges.correctOrUpdate][props.cardType.change] }</p>
       <UpdatingItems {...props} />
-      <CardDetails 
+      <CardDetails
         {...props}
         action={props.cardChanges.correctOrUpdate}
       />
@@ -125,11 +125,11 @@ const Change = (props) => {
 
 const UpdatingItems = (props) => {
   if(!dataPresent.value(props.cardChanges.sections)){ return null; }
-  
+
   const updateLabel   = 'Updating sections';
   const correctLabel  = 'Correcting sections';
   const label         = props.cardChanges.correctOrUpdate === 'update' ? updateLabel : correctLabel;
-  
+
   const text = {
     name              : 'Name',
     dateOfBirth       : 'Date of birth',

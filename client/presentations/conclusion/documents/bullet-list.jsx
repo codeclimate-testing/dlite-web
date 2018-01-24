@@ -1,11 +1,11 @@
 'use strict'
 
-import React from 'react';
+import React          from 'react';
 import { ageChecks }  from '../../../helpers/calculate-age';
 
 const BulletList = (props) => {
   let now = props.now ? props.now : new Date();
-  
+
   let bulletList = [];
   if(props.realID.getRealID === 'Yes') {
     bulletList.push(<li key='real-id'>Real ID birth date, name and legal presence proof</li>);

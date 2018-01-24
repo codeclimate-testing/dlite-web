@@ -2,7 +2,7 @@
 
 import errorMessages            from '../../presentations/error-messages';
 import selectionValidator       from './selection-validator';
-import { 
+import {
   hasValue,
   hasOnlyEnglishChars,
   emailRegex
@@ -11,7 +11,7 @@ import {
 import {
   hasNeither,
   hasPhone
-}   from '../data/contact-methods';
+}             from '../data/contact-methods';
 
 const emailAddress = (props) => {
   if (props.shouldContact !== 'Yes') { return []; };
@@ -24,7 +24,7 @@ const emailAddress = (props) => {
     return [errorMessages['emailAddressMissingOrInvalid']];
   } else if (!hasOnlyEnglishChars(value)) {
     return [errorMessages['inputIncludesNonEnglishCharacters']];
-  } 
+  }
   return [];
 };
 
@@ -36,7 +36,7 @@ const phoneNumber = (name, number) => {
       return [errorMessages['phoneMissingOrInvalid']];
     } else if (hasNeither(props)) {
       return [errorMessages['contactMethod']];
-    } 
+    }
     return [];
   };
 };

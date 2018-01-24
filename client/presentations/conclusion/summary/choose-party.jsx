@@ -10,7 +10,7 @@ const PoliticalPartyChoose = (props) => {
   if (!hasValue(props.politicalPartyChoose.isSelected) ) { return null; }
 
   let party = '';
-  
+
   if (props.politicalPartyChoose.isSelected === 'Skip') {
     party = 'No answer';
   } else if(props.politicalPartyChoose.politicalPartyChoose === 'Other' && hasValue(props.politicalPartyChoose.otherParty)) {

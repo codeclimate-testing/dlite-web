@@ -7,14 +7,14 @@ import { render }               from 'enzyme';
 import sinon                    from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import store                    from '../../support/page-store';
-import YouthDLNotificationPage  from '../../../../client/presentations/getStarted/youth-license-notification-page.jsx';
+import YouthDLNotificationPage  from '../../../../client/presentations/get-started/youth-license-notification-page.jsx';
 
 describe('YouthDLNotificationPage', function() {
   const Wrapper = wrapperGenerator(store);
 
   let props;
 
-  beforeEach(function() { 
+  beforeEach(function() {
     let cardType = { youthIDInstead: "" };
     let onChange = sinon.spy();
     let validations = {
@@ -32,7 +32,7 @@ describe('YouthDLNotificationPage', function() {
       validations
     }
   });
-  
+
 
   it('should render the right intro header if the license seeker is under 15', function() {
     let today = new Date();

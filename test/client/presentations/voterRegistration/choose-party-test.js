@@ -15,7 +15,7 @@ describe('ChoosePartyPage ', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let politicalPartyChoose = {
         isSelected: '',
@@ -36,9 +36,9 @@ describe('ChoosePartyPage ', function() {
         onChange,
         validations
       };
-      
+
     });
-    
+
     it('shows the form asking if user would like to choose political party', function() {
       let component = render(
         <Wrapper>

@@ -6,7 +6,7 @@ const cardOptionsParser = require('.././parsers/card-options-parser');
 module.exports = function createApplication(data) {
 
   let returnedData = {};
-  
+
   function insert(key) {
     return db(key).insert(data[key]).returning('*');
   }

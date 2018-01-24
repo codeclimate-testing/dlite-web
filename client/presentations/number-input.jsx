@@ -11,7 +11,7 @@ import ExampleLabel from './example-label.jsx';
 const Label = (props) => {
   if (!props.description) { return null; }
   return (
-    <label 
+    <label
       htmlFor     = { props.identifier }
       className   = { props.errorName }
     >
@@ -27,15 +27,15 @@ const NumberInput = (props) => {
 
   return (
     <div className  = 'unit'>
-      <Label 
-        {...props} 
+      <Label
+        {...props}
         errorName = { errorName }
       />
-    
+
       <ExampleLabel
         example     = { props.example }
       />
-      
+
       <div className= { className }>
         <input
           className = { inputClass }

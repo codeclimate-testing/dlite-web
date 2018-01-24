@@ -1,12 +1,12 @@
 'use strict';
 
-import { getDL } from './card-type';
-import { eligibleForSeniorID } from './senior';
+import { getDL }                from './card-type';
+import { eligibleForSeniorID }  from './senior';
 import {
   tooYoungForDL,
   under16GuardianSignature
 } from './youth';
-import { 
+import {
   hasExistingCard,
   isChangingCard,
   isReplacingCard
@@ -44,7 +44,7 @@ export const currentCardInfo = (props) => {
     key = 'replacementDetails'
   } else if (eligibleForSeniorID(props)) {
     key = 'seniorID';
-  } 
+  }
   return key;
 };
 
@@ -119,7 +119,7 @@ export const citizenship = (props) => {
     key = 'votingEligibility';
   } else if (isPreregistering(props.dateOfBirth)){
     key = 'guardianSignature';
-  } 
+  }
   return key;
 };
 
@@ -129,7 +129,7 @@ export const votingEligibility = (props) => {
     key = 'votingOptOut';
   } else if (isPreregistering(props.dateOfBirth)){
     key = 'guardianSignature';
-  } 
+  }
   return key;
 };
 
@@ -141,6 +141,6 @@ export const optOut = (props) => {
     key = 'voterPreferencesUpdated'
   } else if (isPreregistering(props.dateOfBirth)) {
     key = 'guardianSignature';
-  } 
+  }
   return key;
 };

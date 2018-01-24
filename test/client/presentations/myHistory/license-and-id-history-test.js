@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
-import LicenseIDHistoryPage     from '../../../../client/presentations/myHistory/card-history-page.jsx';
+import LicenseIDHistoryPage     from '../../../../client/presentations/my-history/card-history-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('LicenseIDHistoryPage', function() {
@@ -16,7 +16,7 @@ describe('LicenseIDHistoryPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let licenseAndIdHistory = {
         isIssued: '',
@@ -52,7 +52,7 @@ describe('LicenseIDHistoryPage', function() {
         onChange
       }
     });
-    
+
     it('shows the yes/no form asking if user has ever had an ID', function() {
       let component = render(
         <Wrapper>
@@ -66,25 +66,25 @@ describe('LicenseIDHistoryPage', function() {
 
     it('renders general license and id history page when applying for both ID and DL', function() {
       props.cardType.new = ['DL', 'ID'];
-  
+
       let component = render(
         <Wrapper>
           <LicenseIDHistoryPage {...props} />
         </Wrapper>
       );
-  
+
       assert.ok(component.find('.applying-for-dl').length, 'general license and id history page not found');
     });
 
     it('renders general license and id history page when applying for DL', function() {
       props.cardType.new = ['DL'];
-  
+
       let component = render(
         <Wrapper>
           <LicenseIDHistoryPage {...props} />
         </Wrapper>
       );
-  
+
       assert.ok(component.find('.applying-for-dl').length, 'general license and id form not found');
     });
 
@@ -97,7 +97,7 @@ describe('LicenseIDHistoryPage', function() {
       );
       assert.ok(component.find('.applying-for-only-id').length, 'CA specific form not found');
     });
-    
+
     it('selecting Yes makes form appear asking for most recent license details', function() {
       props.licenseAndIdHistory.isIssued = 'Yes';
       let component = render(

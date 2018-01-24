@@ -7,7 +7,7 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import PhysicalTraitsPage       from '../../../../client/presentations/myBasics/physical-traits-page.jsx';
+import PhysicalTraitsPage       from '../../../../client/presentations/my-basics/physical-traits-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('PhysicalTraitsPage', function() {
@@ -15,7 +15,7 @@ describe('PhysicalTraitsPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let physicalTraits = {
         sex: '',
@@ -40,7 +40,7 @@ describe('PhysicalTraitsPage', function() {
         validations
       }
     });
-    
+
     it('shows forms asking for sex, eye color, and hair color ', function() {
       let component = render(
         <Wrapper>

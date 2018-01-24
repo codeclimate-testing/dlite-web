@@ -9,9 +9,9 @@ const LegalName = (props) => {
   if (!dataPresent.legalName(props.legalName)) { return null; }
 
   let printedName = `${props.legalName.firstName} ${props.legalName.middleName} ${props.legalName.lastName} ${props.legalName.suffix}`;
-  
+
   return (
-    <PageSummaryLink 
+    <PageSummaryLink
       to='/my-basics/legal-name'
       name='legalName'
     >

@@ -1,7 +1,7 @@
 'use strict';
 
 import selectionValidator       from './selection-validator';
-import { 
+import {
   hasValue,
   hasOnlyEnglishChars }  from '../data/validations';
 import errorMessages            from '../../presentations/error-messages';
@@ -16,7 +16,7 @@ const otherParty = (props) => {
   let errors = [];
   let value = props.otherParty;
 
-  if (hasValue(value) && !hasOnlyEnglishChars(value)) { 
+  if (hasValue(value) && !hasOnlyEnglishChars(value)) {
     errors.push(errorMessages.inputIncludesNonEnglishCharacters);
   };
   return errors;

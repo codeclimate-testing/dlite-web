@@ -5,7 +5,7 @@ import configure    from '../../support/configure-enzyme';
 import { render }   from 'enzyme';
 import React        from 'react';
 import { spy }      from 'sinon';
-import LicenseType   from '../../../../client/presentations/getStarted/license-type-page.jsx';
+import LicenseType   from '../../../../client/presentations/get-started/license-type-page.jsx';
 import wrapperGenerator from '../../support/wrapper';
 import store        from '../../support/page-store';
 
@@ -30,7 +30,7 @@ describe('LicenseType Page', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-    
+
       props = {
         licenseType,
         onChange,

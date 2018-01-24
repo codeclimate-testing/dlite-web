@@ -8,7 +8,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../support/wrapper';
-import ChooseCardPage           from '../../../../client/presentations/getStarted/choose-card-page.jsx';
+import ChooseCardPage           from '../../../../client/presentations/get-started/choose-card-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('ChooseCardPage', function() {

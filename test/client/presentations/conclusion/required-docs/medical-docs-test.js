@@ -32,7 +32,7 @@ describe('Required Docs for Medical Condition', function() {
   };
 
   describe('BulletList', function() {
-  
+
     it('is true when condition is Yes', function() {
       medicalHistory = {
         hasMedicalCondition: 'Yes'
@@ -45,7 +45,7 @@ describe('Required Docs for Medical Condition', function() {
       )
       assert.equal(component.text().includes('Medical Information'), true);
     });
-  
+
     it('is false when condition is No', function() {
       medicalHistory = {
         hasMedicalCondition: 'No'
@@ -87,7 +87,7 @@ describe('Required Docs for Medical Condition', function() {
       )
       assert.equal(component.text().includes('Medical Information'), true);
     });
-  
+
     it('is false when condition is No', function() {
       medicalHistory = {
         hasMedicalCondition: 'No'

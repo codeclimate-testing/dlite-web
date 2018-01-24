@@ -7,7 +7,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import OrganDonationPage        from '../../../../client/presentations/organDonation/organ-donation-page.jsx';
+import OrganDonationPage        from '../../../../client/presentations/organ-donation/organ-donation-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('OrganDonationPage', function() {

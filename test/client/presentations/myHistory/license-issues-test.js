@@ -6,7 +6,7 @@ import React                    from 'react';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
-import LicenseIssuesPage        from '../../../../client/presentations/myHistory/license-issues-page.jsx';
+import LicenseIssuesPage        from '../../../../client/presentations/my-history/license-issues-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('LicenseIssuesPage', function() {
@@ -15,7 +15,7 @@ describe('LicenseIssuesPage', function() {
 
   describe('when it renders initially', function() {
     let props;
-    
+
     beforeEach(function() {
       let licenseIssues = {
         isSuspended: '',
@@ -41,7 +41,7 @@ describe('LicenseIssuesPage', function() {
         onChange
       }
     });
-    
+
     it('shows the yes/no form asking if user has ever had driving privilege revoked', function() {
       let component = render(
         <Wrapper>
@@ -59,13 +59,13 @@ describe('LicenseIssuesPage', function() {
           <LicenseIssuesPage {...props} />
         </Wrapper>
       );
-  
+
       assert.equal(component.find('.suspended-license-form'), false);
     });
 
     it('when user selects Yes the page adds a form asking for more info about suspended license', function() {
       props.licenseIssues.isSuspended = 'Yes';
-  
+
       let component = render(
         <Wrapper>
           <LicenseIssuesPage {...props} />

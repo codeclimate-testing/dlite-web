@@ -20,8 +20,8 @@ const TextInput = (props) => {
         htmlFor={ id }
         className={ className }
       >
-        <ErrorIcon 
-          errorClass={ className } 
+        <ErrorIcon
+          errorClass={ className }
         />
         { props.description }
       </label>
