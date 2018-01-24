@@ -8,7 +8,7 @@ export const getCurrentAge = (dob, now = new Date() ) => {
 
   let dayDiff = now.getDate() - parseInt(dob.day, 10);
 
-  let fraction = Math.abs( monthDiff / 12 );
+  let fraction = monthDiff / 12;
 
   // if the birthday has not occurred this year, add the positive or negative day fraction to fraction total
   if(monthDiff < 0 || (monthDiff === 0 && dayDiff < 0 ) || (monthDiff === 6 && dayDiff < 0)){
