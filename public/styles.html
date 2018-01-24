@@ -122,27 +122,27 @@
           <input type='text' class='focus' value='This is focused'>
         </div>
 
-        <p>Nothing special is happening with the select, radio or checkbox</p>
-
         <div class='input-container'>
-          <input type='checkbox'> Hello checkbox!
+          <div class="select-dropdown">
+            <label for="suffix" id="label-suffix">Suffix</label>
+            <div class="relative dropdown" tabindex="0" id="suffix" role="combobox" aria-readonly="true" aria-autocomplete="none" aria-expanded="false" aria-owns="dropdown-options-suffix" aria-labelledby="label-suffix">
+              <div class="value-block dropdown-selected">
+                <div class="icon unit-right"></div>
+              </div>
+              <div class="absolute dropdown-options" id="dropdown-options-suffix" role="listbox">
+                <div class="dropdown-option value-block selected" role="option" value="" name="suffix"></div>
+                <div class="dropdown-option value-block" role="option" value="Sr." name="suffix">Sr.</div>
+                <div class="dropdown-option value-block" role="option" value="Jr." name="suffix">Jr.</div>
+                <div class="dropdown-option value-block" role="option" value="I" name="suffix">I</div>
+                <div class="dropdown-option value-block" role="option" value="II" name="suffix">II</div>
+                <div class="dropdown-option value-block" role="option" value="III" name="suffix">III</div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class='row pad-bottom-20'></div>
 
-        <div class='input-container'>
-          <input type='radio'> Radio 1<br>
-          <input type='radio'> Radio 2<br>
-        </div>
-
-        <div class='input-container'>
-          <select>
-            <option></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </div>
-
-        <div class='row'>
+        <div class='row pad-bottom-20'>
           <div class='shadow-container unit'>
             <a href='#' class='summary edit button focus'>
               <div class='unit edit-icon'></div>
@@ -156,6 +156,180 @@
             </a>
           </div>
         </div>
+        
+        <h4>Radio selectors</h4>
+        <div class='row'>
+          <div class='choice-selector'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    Yes
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='choice-selector selected'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    No
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <h4 class='inner-top'>Hover: radio selectors</h4>
+        <div class='row'>
+          <div class='choice-selector hover'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    Yes
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='choice-selector selected hover'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    No
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <h4 class='inner-top'>Focus: radio selectors</h4>
+        <div class='row'>
+          <div class='choice-selector focus'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    Yes
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='choice-selector focus selected'>
+            <div class='outline-container'>
+              <label class="unit relative radio-selector" for="has-ssn-yes">
+                <div class="off-screen">
+                  <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    No
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row spacer'></div>
+
+        <h4>Checkboxes</h4>
+        <div class='row'>
+          <div class='choice-selector'>
+            <div class='outline-container'>
+              <label class="unit relative checkbox-selector" for="id">
+                <div class="off-screen">
+                  <input type="checkbox" name="id" id="id" value="ID" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    ID
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='choice-selector selected'>
+            <div class='outline-container'>
+              <label class="unit relative checkbox-selector" for="dl">
+                <div class="off-screen">
+                  <input type="checkbox" name="dl" id="dl" value="DL" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    Driver license
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='choice-selector focus'>
+            <div class='outline-container'>
+              <label class="unit relative checkbox-selector" for="dl">
+                <div class="off-screen">
+                  <input type="checkbox" name="dl" id="dl" value="DL" tabindex="0">
+                </div>
+                <div class="unit selector-contents">
+                  <div class='icon-region unit'>
+                  </div>
+                  <div class='text-region last-unit'>
+                    Focused!
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row spacer'></div>
 
         <p>And then we move to some submit buttons</p>
 
@@ -220,180 +394,6 @@
             <button class='arrow-button unit forward focus'>
               Next
             </button>
-          </div>
-
-          <div class='row spacer'></div>
-
-          <h4>Radio selectors</h4>
-          <div class='row'>
-            <div class='choice-selector'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      Yes
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='choice-selector selected'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      No
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <h4 class='inner-top'>Hover: radio selectors</h4>
-          <div class='row'>
-            <div class='choice-selector hover'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      Yes
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='choice-selector selected hover'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      No
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <h4 class='inner-top'>Focus: radio selectors</h4>
-          <div class='row'>
-            <div class='choice-selector focus'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      Yes
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='choice-selector focus selected'>
-              <div class='outline-container'>
-                <label class="unit relative radio-selector" for="has-ssn-yes">
-                  <div class="off-screen">
-                    <input type="radio" name="has-ssn-yes" id="has-ssn-yes" value="Yes" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      No
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class='row spacer'></div>
-
-          <h4>Checkboxes</h4>
-          <div class='row'>
-            <div class='choice-selector'>
-              <div class='outline-container'>
-                <label class="unit relative checkbox-selector" for="id">
-                  <div class="off-screen">
-                    <input type="checkbox" name="id" id="id" value="ID" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      ID
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='choice-selector selected'>
-              <div class='outline-container'>
-                <label class="unit relative checkbox-selector" for="dl">
-                  <div class="off-screen">
-                    <input type="checkbox" name="dl" id="dl" value="DL" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      Driver license
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class='row'>
-            <div class='choice-selector focus'>
-              <div class='outline-container'>
-                <label class="unit relative checkbox-selector" for="dl">
-                  <div class="off-screen">
-                    <input type="checkbox" name="dl" id="dl" value="DL" tabindex="0">
-                  </div>
-                  <div class="unit selector-contents">
-                    <div class='icon-region unit'>
-                    </div>
-                    <div class='text-region last-unit'>
-                      Focused!
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
           </div>
 
           <div class='row spacer'></div>
