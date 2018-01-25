@@ -12,7 +12,7 @@ const ssn = (props) => {
 };
 
 const ssnAll = (props) => {
-  let value = props.part1 && props.part2 && props.part3;
+  let value = props.part1 || props.part2 || props.part3;
   let selection = props.hasSocialSecurity;
   let errors = [];
   if(selection === 'Yes' && !hasValue(value)) {
