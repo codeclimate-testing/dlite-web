@@ -1,12 +1,7 @@
 'use strict';
 
-import React from 'react';
-
-const Option = (props) => {
-  return (
-    <option value={ props.identifier }>{ props.identifier }</option>
-  );
-};
+import React 					from 'react';
+import SelectDropdown	from './select-dropdown.jsx';
 
 const stateList = [
 	"AK",
@@ -58,34 +53,21 @@ const stateList = [
 	"WA",
 	"WI",
 	"WV",
-	"WY",
+	"WY"
 ];
 
 const StateSelector = (props) => {
-  let value = props.value;
-
-  let options = stateList.map((stateCode) => {
-    let selected = (value === stateCode);
-    return (
-      <Option
-        key={stateCode}
-        identifier={stateCode}
-        value={props.value}
-      />
-    );
-  });
 
   return (
     <div className='select-input-block'>
-      <label className='row' htmlFor={props.id}>State</label>
-      <select
-        name={props.id}
-        id={props.id}
-        value={value}
-        onChange={props.onChange}
-      >
-        { options }
-      </select>
+			<SelectDropdown
+				name				= { props.name }
+				id					= { props.id }
+				values			= { stateList }
+				onChange		= { props.onChange }
+				description	= 'State'
+				selected		= { props.value }
+			/>
     </div>
   );
 };

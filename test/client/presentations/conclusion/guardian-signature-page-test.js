@@ -33,7 +33,7 @@ describe('GuardianSignaturePage', function() {
           guardianStreet_1: '',
           guardianStreet_2: '',
           guardianCity: '',
-          guardianState: '',
+          state: '',
           guardianZip: '',
           IDNumber: '',
           IDIssuedBy: '',
@@ -52,7 +52,7 @@ describe('GuardianSignaturePage', function() {
           guardianStreet_1: '',
           guardianStreet_2: '',
           guardianCity: '',
-          guardianState: '',
+          state: '',
           guardianZip: '',
           IDNumber: '',
           IDIssuedBy: '',
@@ -98,7 +98,7 @@ describe('GuardianSignaturePage', function() {
       assert.ok(component.find('label[for="guardianStreet_1"]').length, 'Guardian signature - street address missing');
       assert.ok(component.find('label[for="guardianStreet_2"]').length, 'Guardian signature - apt number missing');
       assert.ok(component.find('label[for="guardianCity"]').length, 'Guardian signature - address city missing');
-      assert.ok(component.find('label[for="guardianState"]').length, 'Guardian signature - address state missing');
+      assert.ok(component.find('label[for="state"]').length, 'Guardian signature - address state missing');
       assert.ok(component.find('label[for="guardianZip"]').length, 'Guardian signature - address zip missing');
       assert.ok(component.find('label[for="IDNumber"]').length, 'Guardian signature - ID number missing');
       assert.ok(component.find('label[for="IDIssuedBy"]').length, 'Guardian signature - Id issued by missing');
@@ -132,7 +132,7 @@ describe('GuardianSignaturePage', function() {
       props.guardianSignature.guardianInfo[0].guardianStreet_1 = '865 Main Street',
       props.guardianSignature.guardianInfo[0].guardianStreet_2 = 'Unit no. 05',
       props.guardianSignature.guardianInfo[0].guardianCity = 'Crazidino Here',
-      props.guardianSignature.guardianInfo[0].guardianState = 'CA',
+      props.guardianSignature.guardianInfo[0].state = 'CA',
       props.guardianSignature.guardianInfo[0].guardianZip = '94000',
       props.guardianSignature.guardianInfo[0].IDNumber = 'XYZ12344321',
       props.guardianSignature.guardianInfo[0].IDIssuedBy = 'U.S.A.',

@@ -599,7 +599,7 @@ describe('dataPresent', function() {
             guardianStreet_1: '865 Main Street',
             guardianStreet_2: 'Unit no. 05',
             guardianCity: 'Crazidino Here',
-            guardianState: 'CA',
+            state: 'CA',
             guardianZip: '94000',
             IDNumber: 'XYZ12344321',
             IDIssuedBy: 'U.S.A.',

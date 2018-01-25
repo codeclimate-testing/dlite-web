@@ -93,12 +93,12 @@ describe('AddressTemplateForm', function() {
 
   it('constructs the state selector correctly', function() {
     assert.ok(
-      component.find('#homeState').length,
+      component.find('.dropdown#homeState').length,
       'State select not found'
     );
 
     assert.ok(
-      component.find('select[name=homeState]').length,
+      component.find('.dropdown#homeState').length,
       'State input has incorrect name'
     );
   });

@@ -17,7 +17,7 @@ module.exports = function(world) {
     .type('#guardianStreet_1', '865 Main Street')
     .type('#guardianStreet_2', 'Unit no. 05')
     .type('#guardianCity', 'Crazidino Here')
-    .select('#guardianState', 'CA')
+    .select('#state', 'CA')
     .type('#guardianZip', '94000')
     .type('#IDNumber', 'XYZ12344321')
     .type('#IDIssuedBy', 'U.S.A.')

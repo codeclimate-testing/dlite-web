@@ -34,7 +34,7 @@ const GuardianSignature = (props) => {
       <p>Street Address: {guardianInfoFirst.guardianStreet_1}</p>
       <p>Apartment or Unit Number: {guardianInfoFirst.guardianStreet_2}</p>
       <p>City: {guardianInfoFirst.guardianCity}</p>
-      <p>State: {guardianInfoFirst.guardianState}</p>
+      <p>State: {guardianInfoFirst.state}</p>
       <p>Zip: {guardianInfoFirst.guardianZip}</p>
       <p> ID number: {guardianInfoFirst.IDNumber} </p>
       <p> ID issued by: {guardianInfoFirst.IDIssuedBy} </p>
@@ -58,7 +58,7 @@ const GuardianSignature = (props) => {
         <p>Street Address: {guardianInfoSecond.guardianStreet_1}</p>
         <p>Apartment or Unit Number: {guardianInfoSecond.guardianStreet_2}</p>
         <p>City: {guardianInfoSecond.guardianCity}</p>
-        <p>State: {guardianInfoSecond.guardianState}</p>
+        <p>State: {guardianInfoSecond.state}</p>
         <p>Zip: {guardianInfoSecond.guardianZip}</p>
         <p> ID number: {guardianInfoSecond.IDNumber} </p>
         <p> ID issued by: {guardianInfoSecond.IDIssuedBy} </p>

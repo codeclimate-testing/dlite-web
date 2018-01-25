@@ -129,7 +129,7 @@ const guardianSignature = (props) => {
       'guardianStreet_1',
       'guardianStreet_2',
       'guardianCity',
-      'guardianState',
+      'state',
       'guardianZip',
       'IDNumber',
       'IDIssuedBy',

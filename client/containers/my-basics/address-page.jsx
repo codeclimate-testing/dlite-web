@@ -46,6 +46,8 @@ function mapDispatchToProps(dispatch) {
   const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
   const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
   const onFocus                 = handlers.onFocus(dispatch);
+  const onHomeSelectChange      = handlers.onSelectChange(updateHomeAddress, dispatch);
+  const onMailingSelectChange   = handlers.onSelectChange(updateMailingAddress, dispatch);
 
   return {
     onSubmit,
@@ -55,7 +57,9 @@ function mapDispatchToProps(dispatch) {
     onBlurValidate,
     onFocusClearValidation,
     onSubmitShowErrors,
-    onFocus
+    onFocus,
+    onHomeSelectChange,
+    onMailingSelectChange
   };
 }
 

@@ -25,7 +25,6 @@ module.exports = function(world) {
       .type('#homeStreet_1', '123 Main Street')
       .type('#homeStreet_2', 'Unit no. 45')
       .type('#homeCity', 'Crazidino')
-      .select('#homeState', 'CA')
       .type('#homeZip', '94666')
       .then(() => { done(); })
       .catch(done);
@@ -52,7 +51,6 @@ module.exports = function(world) {
       .type('#homeStreet_1', '123 Main Street')
       .type('#homeStreet_2', 'Unit no. 45')
       .type('#homeCity', 'Crazidino')
-      .select('#homeState', 'CA')
       .type('#homeZip', '94666')
       .click('label[for="homeAddressSameAsMailing-true"]')
       .click('button.forward')
@@ -73,7 +71,7 @@ module.exports = function(world) {
       .value('#homeZip')
       .then((value) => { assert.equal(value, '94666'); })
       .value('#homeState')
-      .then((value) => { assert.equal(value, 'CA'); })
+      .then((value) => { assert.equal(value, ''); })
       .then(() => { done(); })
       .catch(done);
   });
@@ -103,7 +101,6 @@ module.exports = function(world) {
       .type('#homeStreet_1', '123 Main Street')
       .type('#homeStreet_2', 'Unit no. 45')
       .type('#homeCity', 'Crazidino')
-      .select('#homeState', 'CA')
       .type('#homeZip', '94666')
       .then(() => { done(); })
       .catch(done);
@@ -158,7 +155,6 @@ module.exports = function(world) {
       .type('#mailingStreet_1', '123 Main Street')
       .type('#mailingStreet_2', 'Unit no. 45')
       .type('#mailingCity', 'Crazidino')
-      .select('#mailingState', 'CA')
       .type('#mailingZip', '94666')
       .then(() => { done(); })
       .catch(done);

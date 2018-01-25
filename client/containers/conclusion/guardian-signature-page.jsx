@@ -35,12 +35,14 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const onFirstChange    = handlers.onInputChange(updateGuardianSignatureFirst, dispatch);
-  const onSecondChange = handlers.onInputChange(updateGuardianSignatureSecond, dispatch);
-  const onSubmit        = handlers.onFormSubmit(dispatch);
-  const onBlur          = handlers.onBlur(dispatch);
-  const onFocus         = handlers.onFocus(dispatch);
+  const onFirstChange         = handlers.onInputChange(updateGuardianSignatureFirst, dispatch);
+  const onSecondChange        = handlers.onInputChange(updateGuardianSignatureSecond, dispatch);
+  const onSubmit              = handlers.onFormSubmit(dispatch);
+  const onBlur                = handlers.onBlur(dispatch);
+  const onFocus               = handlers.onFocus(dispatch);
   const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
+  const onFirstSelectChange   = handlers.onSelectChange(updateGuardianSignatureFirst, dispatch);
+  const onSecondSelectChange  = handlers.onSelectChange(updateGuardianSignatureSecond, dispatch);
 
   return {
     onSubmit,
@@ -48,7 +50,9 @@ function mapDispatchToProps(dispatch) {
     onSecondChange,
     onBlur,
     onFocus,
-    onFocusClearValidation
+    onFocusClearValidation,
+    onFirstSelectChange,
+    onSecondSelectChange
   };
 }
 

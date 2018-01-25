@@ -35,7 +35,7 @@ const SelectDropdown = (props) => {
       <div
         className='relative dropdown'
         tabIndex='0'
-        id={ props.name }
+        id={ props.id }
         role='combobox'
         aria-readonly='true'
         aria-autocomplete='none'

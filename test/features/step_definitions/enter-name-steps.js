@@ -17,7 +17,7 @@ module.exports = function(world) {
   world.then('I will see the name I entered', function(done) {
     browser
       .value('#firstName')
-      .then((value) => { 
+      .then((value) => {
         assert.equal(value, 'FirstName1'); })
       .value('#middleName')
       .then((value) => { assert.equal(value, 'MiddleName1'); })
@@ -115,7 +115,7 @@ module.exports = function(world) {
   });
 
   world.when('I click to edit my name', function(done) {
-    browser 
+    browser
       .click('.legalName.button.summary')
       .then(done)
       .catch(done);

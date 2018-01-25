@@ -18,19 +18,21 @@ const AddressPage = (props) => {
       <form onSubmit={props.onSubmit} className='address-form'>
         <HomeAddress
           {...props}
-          address     = { props.address.home }
-          onChange    = { props.onHomeChange }
+          address         = { props.address.home }
+          onChange        = { props.onHomeChange }
+          onSelectChange  = { props.onHomeSelectChange }
         />
         <MailingSameAsHome
           {...props}
-          onChange      = { props.onAddressChange }
-          selectedValue = { props.address.homeAddressSameAsMailing }
+          onChange        = { props.onAddressChange }
+          selectedValue   = { props.address.homeAddressSameAsMailing }
         />
         <MailingAddress
           {...props}
-          isSameAsHome  = { props.address.homeAddressSameAsMailing }
-          address       = { props.address.mailing }
-          onChange      = { props.onMailingChange }
+          isSameAsHome    = { props.address.homeAddressSameAsMailing }
+          address         = { props.address.mailing }
+          onChange        = { props.onMailingChange }
+          onSelectChange  = { props.onMailingSelectChange }
         />
         <NavigationButtons
           {...props}

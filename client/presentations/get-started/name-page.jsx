@@ -45,6 +45,7 @@ const LegalNameForm = (props) => {
 
         <SelectDropdown
           name='suffix'
+          id  = 'suffix'
           selected={ props.legalName.suffix }
           onChange={ props.onSelectChange }
           values={translations.intro.namePage.suffixValues}

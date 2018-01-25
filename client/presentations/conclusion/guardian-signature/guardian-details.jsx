@@ -17,18 +17,19 @@ const SignatureDetails = (props) => {
         <h2 className='question'>For the parent/guardian to complete:</h2>
         <ElectronicSignature
           {...props}
-          guardianID = {0}
-          onChange={props.onFirstChange}
+          guardianID      = {0}
+          onChange        = {props.onFirstChange}
         />
         <GuardianContact
           {...props}
-          guardianID = {0}
-          onChange={props.onFirstChange}
+          guardianID      = {0}
+          onChange        = {props.onFirstChange}
+          onSelectChange  = { props.onFirstSelectChange}
         />
         <IdentityDocument
           {...props}
-          guardianID = {0}
-          onChange={props.onFirstChange}
+          guardianID      = {0}
+          onChange        = {props.onFirstChange}
         />
       </div>
 
@@ -41,18 +42,19 @@ const SignatureDetails = (props) => {
           <h2 className='question'>For the parent/guardian to complete:</h2>
           <ElectronicSignature
             {...props}
-            guardianID = {1}
-            onChange={props.onSecondChange}
+            guardianID      = {1}
+            onChange        = { props.onSecondChange}
           />
           <GuardianContact
             {...props}
-            guardianID = {1}
-            onChange={props.onSecondChange}
+            guardianID      = {1}
+            onChange        = { props.onSecondChange}
+            onSelectChange  = { props.onSecondSelectChange }
           />
           <IdentityDocument
             {...props}
-            guardianID = {1}
-            onChange={props.onSecondChange}
+            guardianID      = {1}
+            onChange        = { props.onSecondChange}
           />
         </div>
       </Accordion>
