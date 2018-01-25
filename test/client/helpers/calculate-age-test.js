@@ -381,7 +381,7 @@ describe('age helpers', function() {
       });
 
     describe('Under 15', function() {
-      it('should be true age is 15', function() {
+      it('should be age 15', function() {
         let dob = {
           month: '1',
           year: '2002',
@@ -394,18 +394,52 @@ describe('age helpers', function() {
         });
       });
 
-      describe('Over 15.5', function() {
-      it('should be true age is 15.9', function() {
+      describe('Under 15', function() {
+      it('should be true age is 15.1', function() {
         let dob = {
-          month: '2',
+          month: '11',
           year: '2002',
-          day: '1'
+          day: '23'
         };
-        let mockNow = new Date(2017, 1, 24);
-  
+        let mockNow = new Date(2017, 1, 25);
+        let age = getCurrentAge(dob, mockNow);
+        
+        assert.equal(ageChecks.Under15(dob, mockNow), true);
+        assert(age = 15, 'age should be 15');
+        });
+      });
+
+      describe('Under 15', function() {
+      it('should be true age is 15.3', function() {
+        let dob = {
+          month: '9',
+          year: '2002',
+          day: '23'
+        };
+        let mockNow = new Date(2017, 1, 25);
+        let age = getCurrentAge(dob, mockNow);
+        
+        assert.equal(ageChecks.Under15(dob, mockNow), true);
         assert.equal(ageChecks.Under15Half(dob, mockNow), true);
-        assert.equal(ageChecks.Under15(dob, mockNow), false);
         assert.equal(ageChecks.Under16(dob, mockNow), true);
+        assert(age = 15, 'age should be 15');
+        });
+      });
+
+      describe('Under 15', function() {
+      it('should be true age is 15.4', function() {
+        let dob = {
+          month: '8',
+          year: '2002',
+          day: '23'
+        };
+        let mockNow = new Date(2017, 1, 25);
+        let age = getCurrentAge(dob, mockNow);
+        
+        assert.equal(ageChecks.Under15(dob, mockNow), true);
+        assert.equal(ageChecks.Under15Half(dob, mockNow), true);
+        assert.equal(ageChecks.Under16(dob, mockNow), true);
+        assert(age = 15, 'age should be 15');
         });
       });
 
@@ -429,8 +463,10 @@ describe('age helpers', function() {
           day: '13'
         };
         let mockNow = new Date(2017, 11, 12);
+        let age = getCurrentAge(dob, mockNow);
   
         assert.equal(ageChecks.Under15Half(dob, mockNow), true);
+        assert(age = 15.5, 'age should be 15.5');
       });
 
       it('should be false if the dob is the day turning 15.5', function() {
@@ -442,6 +478,28 @@ describe('age helpers', function() {
         let mockNow = new Date(2017, 11, 12);
   
         assert.equal(ageChecks.Under15Half(dob, mockNow), false);
+      });
+
+      it('should be true age 15.6', function() {
+        let dob = {
+          month: '5',
+          year: '2002',
+          day: '22'
+        };
+        let mockNow = new Date(2017, 1, 25);
+  
+        assert.equal(ageChecks.Under15Half(dob, mockNow), true);
+      });
+
+    it('should be true age is 15.8', function() {
+        let dob = {
+          month: '3',
+          year: '2002',
+          day: '22'
+        };
+        let mockNow = new Date(2017, 1, 25);
+  
+        assert.equal(ageChecks.Under15Half(dob, mockNow), true);
       });
     });
 
