@@ -45,6 +45,10 @@ const EligibilityRequirements = (props) => {
                 value='Yes'
               />
               <RadioSelector
+                value='No'
+                text='No'
+              />
+              <RadioSelector
                 value='decline'
                 text='Decline to answer'
               />
