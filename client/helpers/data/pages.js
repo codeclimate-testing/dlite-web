@@ -9,6 +9,7 @@ import {
   chooseLicenseClass,
   replacementDetails,
   socialSecurity,
+  medicalHistory,
   organDonationPath,
   citizenship,
   votingEligibility,
@@ -134,7 +135,7 @@ const myHistory = [
     key: 'medicalHistory',
     description: 'Medical history',
     path: '/my-history/medical/',
-    next: 'cardHistory'
+    next: medicalHistory
   },
   {
     key: 'cardHistory',

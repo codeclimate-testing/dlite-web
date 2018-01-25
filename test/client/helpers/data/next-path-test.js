@@ -8,7 +8,9 @@ import {
   updateAndCorrect,
   replacementDetails,
   realID,
-  chooseLicenseClass
+  chooseLicenseClass,
+  socialSecurity,
+  medicalHistory
 } from '../../../../client/helpers/data/next-path';
 
 describe('Data helpers for determining next path from current page and props', function() {
@@ -281,6 +283,70 @@ describe('Data helpers for determining next path from current page and props', f
       };
       assert.equal(updateAndCorrect(data), 'seniorID');
     });
-  })
+  });
+
+  describe('#socialSecurity', function() {
+    it('goes to medicalHistory page if user is replacing a DL', function() {
+      let props = {
+        cardType: {
+          replace: 'DL',
+          new: []
+        }
+      };
+      assert.equal(socialSecurity(props), 'medicalHistory');
+    });
+
+    it('goes to medicalHistory page if user is getting a new DL', function() {
+      let props = {
+        cardType: {
+          replace: '',
+          new: ['DL']
+        }
+      };
+      assert.equal(socialSecurity(props), 'medicalHistory');
+    });
+
+    it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
+      let props = {
+        cardType: {
+          replace: '',
+          new: ['ID']
+        }
+      };
+      assert.equal(socialSecurity(props), 'cardHistory');
+    });
+
+    it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
+      let props = {
+        cardType: {
+          replace: 'ID',
+          new: []
+        }
+      };
+      assert.equal(socialSecurity(props), 'nameHistory');
+    });
+  });
+
+  describe('#medicalHistory', function() {
+    it('goes to cardHistory if user is getting a new DL', function() {
+      let props = {
+        cardType: {
+          replace: '',
+          new: ['DL']
+        }
+      };
+      assert.equal(medicalHistory(props), 'cardHistory');
+    });
+
+    it('goes to nameHistory, skipping cardHistory, if user is changing an existing DL', function() {
+      let props = {
+        cardType: {
+          replace: 'DL',
+          new: []
+        }
+      };
+      assert.equal(medicalHistory(props), 'nameHistory');
+    });
+  });
 });
 

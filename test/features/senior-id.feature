@@ -39,8 +39,8 @@ Feature: Customers can get a senior ID for free
     Then I will be on the reduced fee page
     When I click to go back
     Then I will be on the page for choosing real id
-  
-  Scenario: senior user updating ID 
+
+  Scenario: senior user updating ID
     Given I go to the new online DL application
     When I visit the date of birth page
     And I indicate that I am turning 62 today

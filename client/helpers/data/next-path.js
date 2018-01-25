@@ -1,7 +1,11 @@
 'use strict';
 
-import { getDL }                from './card-type';
-import { eligibleForSeniorID }  from './senior';
+import {
+  getDL,
+  getNewDL,
+  getNewID
+} from './card-type';
+import { eligibleForSeniorID } from './senior';
 import {
   tooYoungForDL,
   under16GuardianSignature
@@ -76,16 +80,6 @@ export const realID = (props) => {
   return key;
 };
 
-export const ssn = (props) => {
-  let key = 'licenseHistory';
-
-  if (getDL(props)) {
-    key = 'medicalHistory';
-  };
-
-  return key;
-};
-
 export const chooseLicenseClass = (props) => {
   let key = 'getStarted';
 
@@ -97,10 +91,21 @@ export const chooseLicenseClass = (props) => {
 };
 
 export const socialSecurity = (props) => {
-  let key = 'cardHistory';
+  let key = 'nameHistory';
 
   if (getDL(props)) {
     key = 'medicalHistory';
+  } else if (getNewID(props)) {
+    key = 'cardHistory';
+  }
+  return key;
+};
+
+export const medicalHistory = (props) => {
+  let key = 'nameHistory';
+
+  if (getNewDL(props)) {
+    key = 'cardHistory';
   }
   return key;
 };

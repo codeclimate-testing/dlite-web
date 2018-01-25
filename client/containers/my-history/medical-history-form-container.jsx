@@ -26,6 +26,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     medicalHistory    : state.application.medicalHistory,
+    cardType          : state.application.cardType,
     focused           : state.ui.focus,
     validations       : state.ui.validations
   };

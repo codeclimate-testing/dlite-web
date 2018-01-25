@@ -200,14 +200,8 @@ Feature: Save user data
     Then I will see the page title has postfix " - My basics"
     When I select No for social security
     And I click "Next" to continue
-    Then I will be on the page to enter existing license and id
-    Then I will see the page title has postfix " - My history"
-    When I select exisiting DL/ID Yes
-    When I enter my existing DL/ID card number
-    And I enter the issuing state or country
-    And I enter the date of DL/ID expiration
-    When I click "Next" to continue
     And I will be taken to previous names page
+    Then I will see the page title has postfix " - My history"
     When I select previously used names No
     When I click "Next" to continue
     Then I will be taken to the license issues page
@@ -333,7 +327,7 @@ Feature: Save user data
     Then I will be on the page for appointment preparation
     And I click link for required documents
     Then I will be on the required documents page
-    
+
 
   Scenario: Replacing a DL
     Given I go to the new online DL application page
