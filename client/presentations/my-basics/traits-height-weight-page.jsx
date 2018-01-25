@@ -29,62 +29,62 @@ const TraitsPage = (props) => {
         <h2 className='question'>How tall are you?</h2>
         <p>Example: 5 feet 9 inches</p>
 
-          <div className='row'>
-            <NumberInput
-              {...props}
-              identifier='heightFeet'
-              description='Feet'
-              value={ props.traitsHeightWeight.heightFeet }
-              errorMessage={ props.validations.heightFeet() }
-              onChange      = { props.onChange }
-              onBlurValidate = { props.onBlurValidate }
-              onFocusClearValidation = { props.onFocusClearValidation }
-            />
+        <NumberInput
+          {...props}
+          identifier='heightFeet'
+          description='Feet'
+          value={ props.traitsHeightWeight.heightFeet }
+          errorMessage={ props.validations.heightFeet() }
+          onChange      = { props.onChange }
+          onBlurValidate = { props.onBlurValidate }
+          onFocusClearValidation = { props.onFocusClearValidation }
+        />
 
-            <div className='unit spacer' />
+        <div className='unit spacer' />
 
-            <NumberInput
-              {...props}
-              identifier='heightInches'
-              description='Inches'
-              value={ props.traitsHeightWeight.heightInches }
-              errorMessage={ props.validations.heightInches() }
-              onChange      = { props.onChange }
-              onBlurValidate = { props.onBlurValidate }
-              onFocusClearValidation = { props.onFocusClearValidation }
-            />
-          </div>
-            <ErrorLabel
-              errorMessage  = { errors.heightFeet || errors.heightInches }
-              errorClass    = { addError }
-            />
+        <NumberInput
+          {...props}
+          identifier='heightInches'
+          description='Inches'
+          value={ props.traitsHeightWeight.heightInches }
+          errorMessage={ props.validations.heightInches() }
+          onChange      = { props.onChange }
+          onBlurValidate = { props.onBlurValidate }
+          onFocusClearValidation = { props.onFocusClearValidation }
+        />
+        <div className='row'>
+          <ErrorLabel
+            errorMessage  = { errors.heightFeet || errors.heightInches }
+            errorClass    = { addError }
+          />
+        </div>
 
         <hr/>
         <h2 className='question'>And how much do you weigh?</h2>
         <p>Example: 190 pounds</p>
 
-          <div className='row'>
-            <NumberInput
-              {...props}
-              identifier='weight'
-              description='Pounds'
-              value={ props.traitsHeightWeight.weight }
-              errorMessage={ props.validations.weight() }
-              onChange      = { props.onChange }
-              onBlurValidate = { props.onBlurValidate }
-              onFocusClearValidation = { props.onFocusClearValidation }
-            />
-          </div>
-            <ErrorLabel
-              errorMessage  = { errors.weight }
-              errorClass    = { addError }
-            />
-
-          <NavigationButtons
-            {...props}
-            errorMessage={props.validations.all()}
+        <NumberInput
+          {...props}
+          identifier='weight'
+          description='Pounds'
+          value={ props.traitsHeightWeight.weight }
+          errorMessage={ props.validations.weight() }
+          onChange      = { props.onChange }
+          onBlurValidate = { props.onBlurValidate }
+          onFocusClearValidation = { props.onFocusClearValidation }
+        />
+        <div className='row'>
+          <ErrorLabel
+            errorMessage  = { errors.weight }
+            errorClass    = { addError }
           />
-        </form>
+        </div>
+
+        <NavigationButtons
+          {...props}
+          errorMessage={props.validations.all()}
+        />
+      </form>
     </Page>
   );
 };

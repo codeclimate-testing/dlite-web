@@ -51,32 +51,30 @@ const ContactDetails = (props) => {
         example         = '916 314 8765'
       />
 
-      <div className='row'>
+      <NumberInput
+        {...props}
+        identifier    = 'phoneNumber1'
+        value         = { props.contactMethods.phoneNumber1 }
+        error         = { hasValue(errors.one)}
+      />
+      <div className  = 'unit spacer'/>
 
-        <NumberInput
-          {...props}
-          identifier    = 'phoneNumber1'
-          value         = { props.contactMethods.phoneNumber1 }
-          error         = { hasValue(errors.one)}
-        />
-        <div className  = 'unit spacer'/>
+      <NumberInput
+        {...props}
+        identifier    = 'phoneNumber2'
+        value         = { props.contactMethods.phoneNumber2 }
+        error         = { hasValue(errors.two)}
+      />
 
-        <NumberInput
-          {...props}
-          identifier    = 'phoneNumber2'
-          value         = { props.contactMethods.phoneNumber2 }
-          error         = { hasValue(errors.two)}
-        />
+      <div className  = 'unit spacer'/>
 
-        <div className  = 'unit spacer'/>
+      <NumberInput
+        {...props}
+        identifier    = 'phoneNumber3'
+        value         = { props.contactMethods.phoneNumber3}
+        error         = { hasValue(errors.three) }
+      />
 
-        <NumberInput
-          {...props}
-          identifier    = 'phoneNumber3'
-          value         = { props.contactMethods.phoneNumber3}
-          error         = { hasValue(errors.three) }
-        />
-      </div>
       <div className='row'>
         <ErrorLabel
           errorMessage  = { message }

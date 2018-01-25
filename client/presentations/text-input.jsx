@@ -15,7 +15,7 @@ const TextInput = (props) => {
   let inputClass      = props.error ? 'error' : className;
 
   return (
-    <div className='text-input-block input-margin'>
+    <div className='text-input-block input-margin-bottom'>
       <label
         htmlFor={ id }
         className={ className }

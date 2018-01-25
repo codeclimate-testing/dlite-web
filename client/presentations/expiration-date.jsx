@@ -5,7 +5,7 @@ import DateInput  from './date-input.jsx';
 
 const ExpirationDate = (props) => {
   return (
-    <div id='expirationDate' className='row'>
+    <div id='expirationDate'>
       <DateInput
         {...props}
         description = 'Expiration Date'
