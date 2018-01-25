@@ -10,7 +10,6 @@ import translations       from '../../i18n';
 import SelectDropdown     from '../select-dropdown.jsx';
 
 const LegalNameForm = (props) => {
-  console.log(translations);
   return (
     <Page
       sectionKey='intro'
