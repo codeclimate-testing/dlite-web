@@ -10,22 +10,20 @@ import translations       from '../../i18n';
 import SelectDropdown     from '../select-dropdown.jsx';
 
 const LegalNameForm = (props) => {
+  console.log(translations);
   return (
     <Page
       sectionKey='intro'
       {...props}
     >
       <form onSubmit={ props.onSubmit } className='legal-name-form'>
-        <h2 className='question'>What's your true full name?</h2>
-        <p>
-          This is the name that appears on official identity documents
-          like your birth certificate and passport.
-        </p>
+        <h2 className='question'>{translations.intro.namePage.prompt}</h2>
+        <p>{translations.intro.namePage.explanation}</p>
 
         <TextInput
           {...props}
           identifier='firstName'
-          description='First name'
+          description={translations.shared.labels.firstName}
           value={props.legalName.firstName}
           errorMessage={ props.validations.firstName() }
         />
@@ -33,7 +31,7 @@ const LegalNameForm = (props) => {
         <TextInput
           {...props}
           identifier='middleName'
-          description='Middle name(s)'
+          description={translations.shared.labels.middleName}
           value={props.legalName.middleName}
           errorMessage={ props.validations.middleName() }
         />
@@ -41,7 +39,7 @@ const LegalNameForm = (props) => {
         <TextInput
           {...props}
           identifier='lastName'
-          description='Last name'
+          description={translations.shared.labels.lastName}
           value={props.legalName.lastName}
           errorMessage={ props.validations.lastName() }
         />
@@ -50,8 +48,8 @@ const LegalNameForm = (props) => {
           name='suffix'
           selected={ props.legalName.suffix }
           onChange={ props.onSelectChange }
-          values={ ['', 'Sr.', 'Jr.', 'I', 'II', 'III'] }
-          description='Suffix'
+          values={translations.intro.namePage.suffixValues}
+          description={translations.intro.namePage.suffixLabel}
         />
 
         <NavigationButtons

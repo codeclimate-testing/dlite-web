@@ -1,6 +1,7 @@
 'use strict';
 
 import errorMessages from '../../presentations/error-messages';
+import translations from '../../i18n';
 
 export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
@@ -11,7 +12,7 @@ export const englishValidator = (value) => {
 
   if (!hasOnlyEnglishChars(value)) {
     errors = [
-      errorMessages.dataIncludesNonEnglishCharacters
+      translations.errorMessages.dataIncludesNonEnglishCharacters
     ];
   }
 

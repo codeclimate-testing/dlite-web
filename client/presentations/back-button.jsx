@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import translations from '../i18n';
 
 const BackButton = (props) => {
   return (
@@ -10,7 +11,7 @@ const BackButton = (props) => {
         onClick={props.onBack}
         type='button'
       >
-        Back
+        {translations.shared.navigation.back}
       </button>
     </div>
   );

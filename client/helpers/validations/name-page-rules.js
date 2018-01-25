@@ -2,6 +2,7 @@
 
 import errorMessages from '../../presentations/error-messages';
 import { hasValue } from '../data/validations';
+import translations from '../../i18n';
 import {
   englishValidatorGenerator,
   englishValidator
@@ -12,7 +13,7 @@ const lastName = (props) => {
   let errors = englishValidator(value);
 
   if (!hasValue(value)) {
-    errors.push(errorMessages.lastNameMissing);
+    errors.push(translations.errorMessages.lastNameMissing);
   }
   return errors;
 };
