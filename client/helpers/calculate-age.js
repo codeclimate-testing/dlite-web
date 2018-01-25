@@ -17,8 +17,8 @@ export const getCurrentAge = (dob, now = new Date() ) => {
   } else {
     fraction += Math.abs( dayDiff / 365 );
   }
-
-  return yearDiff + fraction
+  let calcAge = yearDiff + fraction;
+  return calcAge
 };
 
 export const getAgeGroup = (age) => {
