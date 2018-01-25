@@ -9,7 +9,7 @@ export const ErrorLabel= (props) => {
 
   let errorText = props.errorClass ? props.errorMessage : '';
 
-  let className = 'additional-label input-margin-bottom ' + props.errorClass;
+  let className = 'additional-label input-margin ' + props.errorClass;
 
   return (
     <div className={className} >
