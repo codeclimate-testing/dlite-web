@@ -18,6 +18,12 @@ import {
 
 const getStarted = [
   {
+    key: 'IDme',
+    description: 'ID Me',
+    path: '/sign-in',
+    next: 'welcome'
+  },
+  {
     key: 'welcome',
     description: 'Welcome',
     path: '/welcome',

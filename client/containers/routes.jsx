@@ -6,7 +6,7 @@ import { pathForPage }                        from '../helpers/data/page';
 import alicePath                              from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
-
+import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';
 import LegalName                              from './get-started/name-page.jsx';
 import DateOfBirth                            from './get-started/date-of-birth-page.jsx';
@@ -60,6 +60,7 @@ class Router extends React.Component {
 
         <Route path={ alicePath('/') } exact component={Welcome} />
         <Route path={ pathForPage('welcome') } component={Welcome} />
+        <Route path={ alicePath('/sign-in') } component={IDMe} />
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
         <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
         <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
@@ -73,12 +74,12 @@ class Router extends React.Component {
         <Route path={ alicePath('/license-type') } component={LicenseType} />
         <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
         <Route path={ alicePath('/get-started') } component={GetStarted} />
-        
+
         <Route path={ alicePath('/my-basics/address') } component={Address} />
         <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
         <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />
         <Route path={ alicePath('/my-basics/social-security' ) } component={SocialSecurity} />
-        
+
         <Route path={ alicePath('/my-history/medical' ) } component={MedicalHistory} />
         <Route path={ alicePath('/my-history/license-and-id')} component={CardHistory} />
         <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
