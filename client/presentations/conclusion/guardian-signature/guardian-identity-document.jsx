@@ -25,32 +25,30 @@ const IdentityForm = (props) => {
         value={props.guardianSignature.guardianInfo[guardianID].IDIssuedBy}
       />
 
-      <div className='row'>
-        <NumberInput
-          {...props}
-          identifier='IDExpirationDateMonth'
-          description='MM'
-          value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateMonth}
-        />
+      <NumberInput
+        {...props}
+        identifier='IDExpirationDateMonth'
+        description='MM'
+        value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateMonth}
+      />
 
-        <div className='unit spacer' />
+      <div className='unit spacer' />
 
-        <NumberInput
-          {...props}
-          identifier='IDExpirationDateDay'
-          description='DD'
-          value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateDay}
-        />
+      <NumberInput
+        {...props}
+        identifier='IDExpirationDateDay'
+        description='DD'
+        value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateDay}
+      />
 
-        <div className='unit spacer' />
+      <div className='unit spacer' />
 
-        <NumberInput
-          {...props}
-          identifier='IDExpirationDateYear'
-          description='YYYY'
-          value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateYear}
-        />
-      </div>
+      <NumberInput
+        {...props}
+        identifier='IDExpirationDateYear'
+        description='YYYY'
+        value={props.guardianSignature.guardianInfo[guardianID].IDExpirationDateYear}
+      />
     </div>
   );
 }

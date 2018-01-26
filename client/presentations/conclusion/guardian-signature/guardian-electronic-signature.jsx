@@ -30,32 +30,31 @@ const ElectronicSignature = (props) => {
         value={props.guardianSignature.guardianInfo[guardianID].signature}
       />
 
-      <div className='row'>
-        <NumberInput
-          {...props}
-          identifier='signatureDateMonth'
-          description='MM'
-          value={props.guardianSignature.guardianInfo[guardianID].signatureDateMonth}
-        />
+      <NumberInput
+        {...props}
+        identifier='signatureDateMonth'
+        description='MM'
+        value={props.guardianSignature.guardianInfo[guardianID].signatureDateMonth}
+      />
 
-        <div className='unit spacer' />
+      <div className='unit spacer' />
 
-        <NumberInput
-          {...props}
-          identifier='signatureDateDay'
-          description='DD'
-          value={props.guardianSignature.guardianInfo[guardianID].signatureDateDay}
-        />
+      <NumberInput
+        {...props}
+        identifier='signatureDateDay'
+        description='DD'
+        value={props.guardianSignature.guardianInfo[guardianID].signatureDateDay}
+      />
 
-        <div className='unit spacer' />
+      <div className='unit spacer' />
 
-        <NumberInput
-          {...props}
-          identifier='signatureDateYear'
-          description='YYYY'
-          value={props.guardianSignature.guardianInfo[guardianID].signatureDateYear}
-        />
-      </div>
+      <NumberInput
+        {...props}
+        identifier='signatureDateYear'
+        description='YYYY'
+        value={props.guardianSignature.guardianInfo[guardianID].signatureDateYear}
+      />
+      <div className='row' />
     </div>
   );
 }
