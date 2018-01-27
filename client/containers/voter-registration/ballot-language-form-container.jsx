@@ -30,7 +30,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    ballotLanguage  : state.application.ballotLanguage,
+    ballotLanguage  : state.application.language.ballotLanguage,
     dateOfBirth     : state.application.dateOfBirth,
     focused         : state.ui.focus,
     validations     : state.ui.validations

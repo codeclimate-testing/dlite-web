@@ -44,6 +44,7 @@ function extractApplication(data) {
 
   return {
     id:                       data.id,
+    language:                 data.language.appLanguage,
     first_name:               legalName.firstName,
     middle_name:              legalName.middleName,
     last_name:                legalName.lastName,
@@ -211,7 +212,7 @@ function extractVotingRegistrations(data) {
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     is_preregistering:  parserHelper.strToBool(data.politicalPartyChoose.isSelected),
     party:              parserHelper.parseParty(data.politicalPartyChoose),
-    language:           data.ballotLanguage,
+    language:           data.language.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
     should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)
   }];

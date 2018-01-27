@@ -2,11 +2,11 @@
 
 import React                from 'react';
 import NavigationButtons    from '../navigation-buttons.jsx';
-import RadioSelector        from '../radio-selector.jsx';
-import RadioCollection      from '../radio-selector-collection.jsx';
+import LanguageRadios       from '../language-radios.jsx'
 import Page                 from '../../containers/page.jsx';
 
 const BallotLanguagePage = (props) => {
+  console.log(props.selectedValue)
   return (
     <Page
       {...props}
@@ -14,42 +14,11 @@ const BallotLanguagePage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'ballot-language-form'>
         <h2 className='question'>Choose a language for your election materials.</h2>
-        <RadioCollection
+        <LanguageRadios
           {...props}
-          name          = 'ballotLanguage'
-          errorMessage  = {props.validations.ballotLanguage()}
-        >
-          <RadioSelector
-            value='English'
-          />
-          <RadioSelector
-            value='Chinese'
-          />
-          <RadioSelector
-            value='Japanese'
-          />
-          <RadioSelector
-            value='Spanish'
-          />
-          <RadioSelector
-            value='Thai'
-          />
-          <RadioSelector
-            value='Korean'
-          />
-          <RadioSelector
-            value='Tagalog'
-          />
-          <RadioSelector
-            value='Hindi'
-          />
-          <RadioSelector
-            value='Khmer'
-          />
-          <RadioSelector
-            value='Vietnamese'
-          />
-        </RadioCollection>
+          name         = 'ballotLanguage'
+          errorMessage = {props.validations.ballotLanguage()}
+        />
 
         <NavigationButtons
           {...props}

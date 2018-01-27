@@ -127,7 +127,10 @@ const state  = {
       politicalPartyChoose: '',
       otherParty: ''
     },
-    ballotLanguage: '',
+    language: {
+      ballotLanguage: '',
+      appLanguage: ''
+    },
     optOut: '',
     contactMethods: {
       shouldContact: '',

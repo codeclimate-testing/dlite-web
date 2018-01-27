@@ -6,6 +6,7 @@ import { pathForPage }                        from '../helpers/data/page';
 import alicePath                              from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
+import ChooseLanguage                         from './get-started/choose-language-page.jsx';
 import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';
 import LegalName                              from './get-started/name-page.jsx';
@@ -59,6 +60,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/links') } exact component={Home} />
 
         <Route path={ alicePath('/') } exact component={Welcome} />
+        <Route path={ alicePath('/choose-language')} component={ChooseLanguage} />
         <Route path={ pathForPage('welcome') } component={Welcome} />
         <Route path={ alicePath('/sign-in') } component={IDMe} />
         <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />

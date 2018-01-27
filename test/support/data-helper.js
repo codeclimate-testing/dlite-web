@@ -131,7 +131,10 @@ function fakeClientData() {
       'politicalPartyChoose': 'Green Party',
       'otherParty': ''
     },
-    'ballotLanguage': 'English',
+    'language': {
+      'ballotLanguage': 'en',
+      'appLanguage': 'ko'
+    },
     'optOut': 'new',
     'contactMethods': {
       'shouldContact': 'Yes',

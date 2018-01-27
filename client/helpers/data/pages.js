@@ -18,6 +18,12 @@ import {
 
 const getStarted = [
   {
+    key: 'chooseLanguage',
+    description: 'Choose language for app',
+    path: '/choose-language',
+    next: 'choose'
+  },
+  {
     key: 'IDme',
     description: 'ID Me',
     path: '/sign-in',
