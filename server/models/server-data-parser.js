@@ -53,7 +53,7 @@ function parse(data) {
         ballotByMail:             getBallotByMail(voting_registrations),
         eligibilityRequirements:  getEligibility(voting_registrations),
         politicalPartyChoose:     getParty(voting_registrations),
-        ballotLanguage:           getBallotLanguage(voting_registrations),
+        language:                 getLanguage(application, voting_registrations),
         optOut:                   getOptedOut(voting_registrations),
         contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations)
       }
@@ -322,8 +322,11 @@ function getParty(voting_registrations) {
   };
 }
 
-function getBallotLanguage(voting_registrations) {
-  return voting_registrations.language;
+function getLanguage(application, voting_registrations) {
+  return {
+    ballotLanguage: voting_registrations.language,
+    appLanguage: application.language
+  };
 }
 
 function getOptedOut(voting_registrations) {

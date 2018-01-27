@@ -5,12 +5,10 @@ import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 
-import { updateAppLanguage }  from "../../actions/index";
+import { updateLanguage }     from "../../actions/index";
 import Presentation           from "../../presentations/get-started/choose-language-page.jsx";
 
-
 const Page = (props) => {
-  console.log(props.appLanguage)
   let onSubmit          =   handlers.navigateOrShowErrors('chooseLanguage', props, {isValid: () => true });
   let onBack            =   handlers.navigateOnBack(props);
 
@@ -20,6 +18,7 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.appLanguage }
+      name              = 'appLanguage'
     />
   );
 };
@@ -32,4 +31,4 @@ function mapStateToProps(state) {
   };
 };
 
-export default connectForm(mapStateToProps, updateAppLanguage, Page);
+export default connectForm(mapStateToProps, updateLanguage, Page);

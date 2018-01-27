@@ -33,7 +33,7 @@ module.exports = function (world) {
 
   world.when('I select a language', function(done){
     browser
-      .click('label[for="ballotLanguage-Thai"]')
+      .click('label[for="ballotLanguage-th"]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -59,7 +59,7 @@ module.exports = function (world) {
   world.given('I have already entered my language', function(done){
     browser
       .click('a.ballot-language')
-      .click('label[for="ballotLanguage-Thai"]')
+      .click('label[for="ballotLanguage-th"]')
       .click('button.forward')
       .click('a.sections')
       .waitForSelector('.section-links')
@@ -69,7 +69,7 @@ module.exports = function (world) {
 
   world.when('I change my language', function(done){
     browser
-      .click('label[for="ballotLanguage-Korean"]')
+      .click('label[for="ballotLanguage-ko"]')
       .then(() => { done(); })
       .catch(done);
   });

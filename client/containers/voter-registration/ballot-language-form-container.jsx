@@ -3,7 +3,7 @@
 import React                      from 'react';
 import connectForm                from '../../helpers/connect-form';
 
-import { updateBallotLanguage }   from '../../actions/index';
+import { updateLanguage }         from '../../actions/index';
 import Presentation               from '../../presentations/voter-registration/ballot-language-page.jsx';
 import handlers                   from '../../helpers/handlers';
 import { checkPreReg }            from '../../helpers/data/youth';
@@ -24,6 +24,7 @@ const Page = (props) => {
       selectedValue   = { props.ballotLanguage }
       validations     = { validations }
       prereg          = { prereg }
+      name            = 'ballotLanguage'
     />
   );
 };
@@ -37,5 +38,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connectForm(mapStateToProps, updateBallotLanguage, Page);
+export default connectForm(mapStateToProps, updateLanguage, Page);
 

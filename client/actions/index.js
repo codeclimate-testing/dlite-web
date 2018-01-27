@@ -20,7 +20,7 @@ function generateValueAction(type) {
 
 export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
-  UPDATE_APP_LANGUAGE:                    'UPDATE_APP_LANGUAGE',
+  UPDATE_LANGUAGE:                        'UPDATE_LANGUAGE',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
   UPDATE_CARD_CHANGES:                    'UPDATE_CARD_CHANGES',
@@ -48,7 +48,6 @@ export const TYPES = {
   UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS',
   UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE',
   UPDATE_POLITICAL_PARTY_CHOOSE_PREREG:   'UPDATE_POLITICAL_PARTY_CHOOSE_PREREG',
-  UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE',
   UPDATE_OPT_OUT:                         'UPDATE_OPT_OUT',
   UPDATE_CONTACT_METHODS:                 'UPDATE_POLITICAL_METHODS',
   UPDATE_GUARDIAN_SIGNATURE:              'UPDATE_GUARDIAN_SIGNATURE',
@@ -69,6 +68,7 @@ export const TYPES = {
 };
 
 export const createApplicationID                      = generateFormAction(TYPES.CREATE_APPLICATION_ID);
+export const updateLanguage                           = generateFormAction(TYPES.UPDATE_LANGUAGE);
 export const updateLegalName                          = generateFormAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateCardAction                         = generateFormAction(TYPES.UPDATE_CARD_ACTION);
 export const updateCardType                           = generateFormAction(TYPES.UPDATE_CARD_TYPE);
@@ -97,7 +97,6 @@ export const updateBallotByMail                       = generateFormAction(TYPES
 export const updateEligibilityRequirements            = generateFormAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
 export const updatePoliticalPartyChoose               = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
 export const updatePoliticalPartyChoosePreReg         = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE_PREREG);
-export const updateBallotLanguage                     = generateFormAction(TYPES.UPDATE_BALLOT_LANGUAGE);
 export const updateOptOut                             = generateFormAction(TYPES.UPDATE_OPT_OUT);
 export const updateContactMethods                     = generateFormAction(TYPES.UPDATE_CONTACT_METHODS);
 export const updateGuardianSignature                  = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE);

@@ -740,7 +740,7 @@ describe('Summary section', function() {
 
   describe('BallotLanguage', function() {
     it('shows ballot language selection', function(){
-      let ballotLanguage = 'Korean';
+      let ballotLanguage = 'ko';
 
       let component = render(
         <Wrapper>

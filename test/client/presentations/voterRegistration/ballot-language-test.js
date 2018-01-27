@@ -18,7 +18,7 @@ describe('BallotLanguagePage', function() {
     let props;
 
     beforeEach(function() {
-      let ballotLanguage = '';
+      let ballotLanguage = 'en';
       let onChange = spy();
       let dateOfBirth = {
         month: '',
@@ -45,17 +45,27 @@ describe('BallotLanguagePage', function() {
           <BallotLanguagePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="ballotLanguage-Japanese"]').length, 'Japanese option missing');
-      assert.ok(component.find('label[for="ballotLanguage-English"]').length, 'English option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Chinese"]').length, 'Chinese option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Spanish"]').length, 'Spanish option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Thai"]').length, 'Thai option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Korean"]').length, 'Korean option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Tagalog"]').length, 'Tagalog option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Hindi"]').length, 'Hindi option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Khmer"]').length, 'Khmer option missing');
-      assert.ok(component.find('label[for="ballotLanguage-Vietnamese"]').length, 'Vietnamese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-ja"]').length, 'Japanese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-en"]').length, 'English option missing');
+      assert.ok(component.find('label[for="ballotLanguage-zh"]').length, 'Chinese option missing');
+      assert.ok(component.find('label[for="ballotLanguage-es"]').length, 'Spanish option missing');
+      assert.ok(component.find('label[for="ballotLanguage-th"]').length, 'Thai option missing');
+      assert.ok(component.find('label[for="ballotLanguage-ko"]').length, 'Korean option missing');
+      assert.ok(component.find('label[for="ballotLanguage-tl"]').length, 'Tagalog option missing');
+      assert.ok(component.find('label[for="ballotLanguage-hi"]').length, 'Hindi option missing');
+      assert.ok(component.find('label[for="ballotLanguage-km"]').length, 'Khmer option missing');
+      assert.ok(component.find('label[for="ballotLanguage-vi"]').length, 'Vietnamese option missing');
       assert.ok(component.find('.ballot-language-form').length, 'form missing');
+    });
+
+    it('english is the default selection if the user has not chosen a different app language', function() {
+      let component = render(
+        <Wrapper>
+          <BallotLanguagePage  {...props} />
+        </Wrapper>
+      );
+
+      assert.ok(component.find('#ballotLanguage-en[tabindex="0"]').length, 'english radio not selected by default if no app language chosen');
     });
   });
 

@@ -131,7 +131,7 @@ const SummaryPage = (props) => {
       <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} />
       <OptOut optOut={application.optOut} />
       <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} />
-      <BallotLanguage ballotLanguage={application.ballotLanguage} />
+      <BallotLanguage ballotLanguage={application.language.ballotLanguage} />
       <BallotByMail ballotByMail={application.ballotByMail} />
       <ContactMethods contactMethods={application.contactMethods} />
     </Accordion>

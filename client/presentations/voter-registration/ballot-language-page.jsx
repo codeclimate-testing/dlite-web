@@ -6,7 +6,6 @@ import LanguageRadios       from '../language-radios.jsx'
 import Page                 from '../../containers/page.jsx';
 
 const BallotLanguagePage = (props) => {
-  console.log(props.selectedValue)
   return (
     <Page
       {...props}

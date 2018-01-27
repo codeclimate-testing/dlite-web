@@ -244,15 +244,15 @@ describe('server data parser', function() {
       .catch(done);
     });
 
-    it('correctly extracts the ballot by mail info', function(done) {
-      getApplication(data.application.id)
-      .then((records) => {
-        parsedData = parse(records);
-        assert.equal(parsedData.application.ballotByMail, clientData.ballotByMail);
-        done();
-      })
-      .catch(done);
-    });
+  it('correctly extracts the ballot language', function(done) {
+    getApplication(data.application.id)
+    .then((records) => {
+      parsedData = parse(records);
+      assert.equal(parsedData.application.language.ballotLanguage, clientData.language.ballotLanguage);
+      done();
+    })
+    .catch(done);
+  });
 
     it('correctly extracts the ballot language', function(done) {
       getApplication(data.application.id)
