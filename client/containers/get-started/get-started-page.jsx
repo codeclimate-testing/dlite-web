@@ -11,14 +11,22 @@ const Page = (props) => {
   let onBack = navigateOnBack(props);
 
   return (
-    <Presentation onBack = { onBack } />
+    <Presentation
+      {...props}
+      onBack = { onBack }
+    />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    cardType: state.application.cardType,
-    seniorID: state.application.seniorID
+    cardAction:      state.application.cardAction,
+    cardType:        state.application.cardType,
+    cardChanges:     state.application.cardChanges,
+    realID :         state.application.realID,
+    licenseType:     state.application.licenseType,
+    reducedFee:      state.application.reducedFee,
+    seniorID:        state.application.seniorID
   };
 };
 
