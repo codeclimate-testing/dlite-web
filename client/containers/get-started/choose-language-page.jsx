@@ -1,21 +1,17 @@
 'use strict';
 
 import React                  from 'react';
-import connectForm            from '../../helpers/connect-form';
-
+import { connect }            from 'react-redux';
 import handlers               from '../../helpers/handlers';
-
 import { updateLanguage }     from "../../actions/index";
 import Presentation           from "../../presentations/get-started/choose-language-page.jsx";
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOrShowErrors('chooseLanguage', props, {isValid: () => true });
   let onBack            =   handlers.navigateOnBack(props);
 
   return (
     <Presentation
       {...props}
-      onSubmit          = { onSubmit }
       onBack            = { onBack }
       selectedValue     = { props.appLanguage }
       name              = 'appLanguage'
@@ -31,4 +27,37 @@ function mapStateToProps(state) {
   };
 };
 
-export default connectForm(mapStateToProps, updateLanguage, Page);
+const mapDispatchToProps = (dispatch) => {
+  const onChange                = handlers.onInputChange(updateLanguage, dispatch);
+  const onFormSubmit            = handlers.onFormSubmit(dispatch);
+  const onBlurValidate          = handlers.onBlurValidate(dispatch);
+  const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
+  const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
+
+  return {
+    onChange,
+    onFormSubmit,
+    onBlurValidate,
+    onFocusClearValidation,
+    onSubmitShowErrors,
+    dispatch
+  };
+};
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const { dispatch, onFormSubmit }  = dispatchProps;
+  const { appLanguage }             = stateProps;
+
+  return Object.assign({}, ownProps, {
+    onSubmit: (e) => {
+      e.preventDefault();
+
+      if (!appLanguage) {
+        dispatch(updateLanguage('appLanguage', 'en'));
+      }
+      return ownProps.history.push('/apply/choose');
+    }
+  });
+};
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Page);

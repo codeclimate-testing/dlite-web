@@ -5,8 +5,8 @@ import { hasValue }     from '../../helpers/data/validations';
 
 const defaultState = () => {
   return {
-    appLanguage: 'en',
-    ballotLanguage: 'en',
+    appLanguage: '',
+    ballotLanguage: '',
     hasChosenBallot: false
   };
 };
@@ -17,9 +17,8 @@ const formReducer = (state = defaultState(), action) => {
   let data = Object.assign({}, state);
   data[action.payload.name] = action.payload.value;
 
-  // choosing the app language at the beginning of the flow should cause the ballot language to be pre-selected
-  if (action.payload.name === 'appLanguage' && !data.hasChosenBallot ) {
-      data.ballotLanguage = data.appLanguage;
+  if (action.payload.name === 'appLanguage' && !data.hasChosenBallot) {
+    data.ballotLanguage = data.appLanguage;
   } else if (action.payload.name === 'ballotLanguage') {
     data.hasChosenBallot = true;
   }

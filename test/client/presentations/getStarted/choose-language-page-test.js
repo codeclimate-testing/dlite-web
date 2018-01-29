@@ -15,7 +15,7 @@ describe('BallotLanguagePage', function() {
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
-    let props;
+    let props, component;
 
     beforeEach(function() {
       let appLanguage = '';
@@ -25,14 +25,16 @@ describe('BallotLanguagePage', function() {
         appLanguage,
         onChange
       };
-    });
 
-    it('shows the form asking user to choose language', function() {
-      let component = render(
+      component = render(
         <Wrapper>
           <AppLanguagePage  {...props} />
         </Wrapper>
       );
+
+    });
+
+    it('shows the form asking user to choose language', function() {
       assert.ok(component.find('label[for="appLanguage-ja"]').length, 'Japanese option missing');
       assert.ok(component.find('label[for="appLanguage-en"]').length, 'English option missing');
       assert.ok(component.find('label[for="appLanguage-zh"]').length, 'Chinese option missing');
@@ -43,6 +45,10 @@ describe('BallotLanguagePage', function() {
       assert.ok(component.find('label[for="appLanguage-hi"]').length, 'Hindi option missing');
       assert.ok(component.find('label[for="appLanguage-km"]').length, 'Khmer option missing');
       assert.ok(component.find('label[for="appLanguage-vi"]').length, 'Vietnamese option missing');
+    });
+
+    it('no option is selected', function() {
+      assert.ok(!component.find('.selected').length, 'option is already selected');
     });
   });
 

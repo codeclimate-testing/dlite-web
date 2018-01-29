@@ -15,21 +15,25 @@ describe('app and ballot language reducer', function() {
       }
     };
     state = {
-      appLanguage: 'en',
-      ballotLanguage: 'en',
+      appLanguage: '',
+      ballotLanguage: '',
       hasChosenBallot: false
     };
     firstState = updateLanguage(state, action);
   });
 
   describe('#app language', function() {
-    it('initially defaults to english as pre-selected app and ballot language', function() {
-      assert.equal(state.appLanguage, 'en');
-      assert.equal(state.ballotLanguage, 'en');
+    it('initially nothing is selected', function() {
+      assert.equal(state.appLanguage, '');
     });
     it('passes selection to app language', function() {
       assert.equal(firstState.appLanguage, 'zh');
     });
+    it('passes selection to ballot language if ballot language has not yet been chosen', function() {
+      assert.equal(firstState.ballotLanguage, 'zh');
+      assert.equal(firstState.hasChosenBallot, false);
+    });
+    // TODO how to test the mergeProps handler in choose-language-page?
   });
 
   describe('#ballot language', function() {
