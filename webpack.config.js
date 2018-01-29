@@ -46,7 +46,7 @@ let configDev = {
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',
       gitHash: GITHASH,
-      envCSS: '/app.dev.css',
+      stylesheet: '/app.dev.css',
       filename: 'index.dev.html'
     })
   ]
@@ -56,7 +56,7 @@ let configStage = {
   entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
-    filename: 'app.stage.js',
+    filename: 'app.js',
     publicPath: '/'
   },
   module: {
@@ -79,15 +79,15 @@ let configStage = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('app.stage.css'),
+    new ExtractTextPlugin('app.css'),
     new webpack.DefinePlugin({
       APP_ENV: JSON.stringify('stage')
     }),
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',
       gitHash: GITHASH,
-      envCSS: '/app.stage.css',
-      filename: 'index.stage.html'
+      stylesheet: '/app.css',
+      filename: 'index.html'
     })
   ]
 };

@@ -12,7 +12,7 @@ const jwtStrategy   = require('./server/config/jwt-strategy').strategy;
 const logging       = require('./server/config/logging');
 const csrf          = require('./server/config/csrf');
 const api           = require('./server/api');
-let startingIndex   = process.env.APP_ENV == 'development' ? 'index.dev.html' : 'index.stage.html';
+let startingIndex   = process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test' ? 'index.dev.html' : 'index.html';
 const layout        = fs.readFileSync(path.resolve(__dirname, 'public/'+startingIndex)).toString();
 let   server        = express();
 
