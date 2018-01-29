@@ -7,8 +7,6 @@ import LinkButton   from '../link-button.jsx';
 import BackButton   from '../back-button.jsx';
 import translations from '../../i18n';
 import {
-  getNewID,
-  getNewDL,
   getID,
   getDL
 } from '../../helpers/data/card-type';
@@ -52,7 +50,7 @@ const Intro = (props) => {
 
 
   if(getDL(props)) {
-    switch(props.cardAction) {
+    switch(props.cardType.cardAction) {
       case 'new':
         DL = newDL;
         break;
@@ -75,7 +73,7 @@ const Intro = (props) => {
   }
 
   if(getID(props)) {
-    switch(props.cardAction) {
+    switch(props.cardType.cardAction) {
       case 'new':
         if(props.reducedFee.ID === 'Yes') {
           ID = reducedFeeID
@@ -197,7 +195,7 @@ const Intro = (props) => {
   const IDReplace = translations.intro.getStartedPage.explanation.replace.id;
 
   if(getDL(props)) {
-    switch(props.cardAction) {
+    switch(props.cardType.cardAction) {
       case 'change':
         if(props.cardChanges.correctOrUpdate === 'update') {
           licenseExplanation = licenseUpdate;
@@ -214,7 +212,7 @@ const Intro = (props) => {
   }
 
   if(getID(props)) {
-    switch(props.cardAction) {
+    switch(props.cardType.cardAction) {
       case 'change':
         if(props.cardChanges.correctOrUpdate === 'update') {
           IDExplanation = IDUpdate;

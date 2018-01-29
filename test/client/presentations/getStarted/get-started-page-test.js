@@ -19,11 +19,10 @@ describe.only('GetStartedPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: [],
-        renew: '',
+        IDDL: [],
+        cardAction: '',
         youthIDInstead: ''
       };
-      let cardAction = '';
       let cardChanges = {
         correctOrUpdate: '',
         sections: []
@@ -48,7 +47,6 @@ describe.only('GetStartedPage', function() {
 
       props = {
         cardType,
-        cardAction,
         cardChanges,
         licenseType,
         realID,
@@ -60,11 +58,11 @@ describe.only('GetStartedPage', function() {
 
     describe('applying for a DL', function() {
       beforeEach(function() {
-        props.cardType.new = ['DL'];
+        props.cardType.IDDL = ['DL'];
       });
 
       it('user getting new DL will see they are applying for driver license on get started page', function() {
-        props.cardAction = 'new';
+        props.cardType.cardAction = 'new';
 
         let component = render(
           <Wrapper>
@@ -75,7 +73,7 @@ describe.only('GetStartedPage', function() {
       });
 
       it('user renewing DL will see they are renewing driver license on get started page', function() {
-        props.cardAction = 'renew';
+        props.cardType.cardAction = 'renew';
 
         let component = render(
           <Wrapper>
@@ -86,7 +84,7 @@ describe.only('GetStartedPage', function() {
       });
 
       it('user updating DL will see they are updating driver license on get started page', function() {
-        props.cardAction = 'change';
+        props.cardType.cardAction = 'change';
         props.cardChanges.correctOrUpdate = 'update'
 
         let component = render(
@@ -99,7 +97,7 @@ describe.only('GetStartedPage', function() {
       });
 
       it('user correcting DL will see they are correcting driver license on get started page', function() {
-        props.cardAction = 'change';
+        props.cardType.cardAction = 'change';
         props.cardChanges.correctOrUpdate = 'correct'
 
         let component = render(
@@ -112,8 +110,7 @@ describe.only('GetStartedPage', function() {
       });
 
       it('user replacing DL will see they are replacing driver license on get started page', function() {
-        props.cardAction = 'change';
-        props.cardAction = 'replace';
+        props.cardType.cardAction = 'replace';
 
         let component = render(
           <Wrapper>
@@ -127,12 +124,12 @@ describe.only('GetStartedPage', function() {
 
     describe('applying for ID', function() {
       beforeEach(function() {
-        props.cardType.new = ['ID'];
+        props.cardType.IDDL = ['ID'];
       });
 
       describe('new ID', function() {
         beforeEach(function() {
-          props.cardAction = 'new';
+          props.cardType.cardAction = 'new';
         });
 
         it('user getting new ID will see they are applying for ID on get started page', function() {
@@ -171,7 +168,7 @@ describe.only('GetStartedPage', function() {
 
       describe('renew ID', function() {
         beforeEach(function() {
-          props.cardAction = 'renew';
+          props.cardType.cardAction = 'renew';
         });
 
         it('user getting new ID will see they are applying for ID on get started page', function() {
@@ -221,7 +218,7 @@ describe.only('GetStartedPage', function() {
 
       describe('change ID', function() {
         beforeEach(function() {
-          props.cardAction = 'change';
+          props.cardType.cardAction = 'change';
         });
 
         describe('correct ID', function() {
@@ -327,7 +324,7 @@ describe.only('GetStartedPage', function() {
 
       describe('replace ID', function() {
         beforeEach(function() {
-          props.cardAction = 'replace';
+          props.cardType.cardAction = 'replace';
         });
 
         it('user replacing ID will see they are replacing ID on get started page', function() {
@@ -378,7 +375,7 @@ describe.only('GetStartedPage', function() {
 
     describe('license type', function() {
       beforeEach(function() {
-        props.cardType.new = ['DL'];
+        props.cardType.IDDL = ['DL'];
       });
 
       describe('type', function() {
@@ -449,7 +446,7 @@ describe.only('GetStartedPage', function() {
       describe('ID', function() {
         it('shows that ID card will be real id compliant', function() {
           props.realID.realIdDesignation = 'ID'
-          props.cardType.new = ['ID', 'DL']
+          props.cardType.IDDL = ['ID', 'DL']
 
           let component = render(
             <Wrapper>
@@ -463,7 +460,7 @@ describe.only('GetStartedPage', function() {
       describe('DL', function() {
         it('shows that DL will be real id compliant', function() {
           props.realID.realIdDesignation = ''
-          props.cardType.new = ['DL']
+          props.cardType.IDDL = ['DL']
 
           let component = render(
             <Wrapper>
@@ -478,11 +475,11 @@ describe.only('GetStartedPage', function() {
     describe('new application language', function() {
       describe('DL', function() {
         beforeEach(function() {
-          props.cardType.new = ['DL'];
+          props.cardType.IDDL = ['DL'];
         });
 
         it('shows relevant language for updating DL', function() {
-          props.cardAction = 'change'
+          props.cardType.cardAction = 'change'
           props.cardChanges.correctOrUpdate = 'update'
 
           let component = render(
@@ -494,7 +491,7 @@ describe.only('GetStartedPage', function() {
         });
 
         it('shows relevant language for correcting DL', function() {
-          props.cardAction = 'change'
+          props.cardType.cardAction = 'change'
           props.cardChanges.correctOrUpdate = 'correct'
 
           let component = render(
@@ -506,7 +503,7 @@ describe.only('GetStartedPage', function() {
         });
 
         it('shows relevant language for replacing DL', function() {
-          props.cardAction = 'replace'
+          props.cardType.cardAction = 'replace'
 
           let component = render(
             <Wrapper>
@@ -519,11 +516,11 @@ describe.only('GetStartedPage', function() {
 
       describe('ID', function() {
         beforeEach(function() {
-          props.cardType.new = ['ID'];
+          props.cardType.IDDL = ['ID'];
         });
 
         it('shows relevant language for updating ID', function() {
-          props.cardAction = 'change'
+          props.cardType.cardAction = 'change'
           props.cardChanges.correctOrUpdate = 'update'
 
           let component = render(
@@ -535,7 +532,7 @@ describe.only('GetStartedPage', function() {
         });
 
         it('shows relevant language for correcting ID', function() {
-          props.cardAction = 'change'
+          props.cardType.cardAction = 'change'
           props.cardChanges.correctOrUpdate = 'correct'
 
           let component = render(
@@ -547,7 +544,7 @@ describe.only('GetStartedPage', function() {
         });
 
         it('shows relevant language for replacing ID', function() {
-          props.cardAction = 'replace'
+          props.cardType.cardAction = 'replace'
 
           let component = render(
             <Wrapper>
