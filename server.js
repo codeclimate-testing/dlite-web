@@ -10,10 +10,10 @@ const passport      = require('passport');
 const helmet        = require('helmet');
 const jwtStrategy   = require('./server/config/jwt-strategy').strategy;
 const logging       = require('./server/config/logging');
-const csrf          = require('./server/config/csrf'); 
+const csrf          = require('./server/config/csrf');
 const api           = require('./server/api');
-
-const layout        = fs.readFileSync(path.resolve(__dirname, 'public/index.html')).toString();
+let startingIndex   = process.env.APP_ENV == 'development' ? 'index.dev.html' : 'index.stage.html';
+const layout        = fs.readFileSync(path.resolve(__dirname, 'public/'+startingIndex)).toString();
 let   server        = express();
 
 passport.use(jwtStrategy);

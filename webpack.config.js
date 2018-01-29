@@ -8,11 +8,11 @@ const HtmlWebpackPlugin   = require('html-webpack-plugin');
 const childProcess = require('child_process');
 const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
 
-let config = {
+let configDev = {
   entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
-    filename: 'app.js',
+    filename: 'app.dev.js',
     publicPath: '/'
   },
   module: {
@@ -39,15 +39,57 @@ let config = {
     extensions: ['.js', '.json']
   },
   plugins: [
-    new ExtractTextPlugin('app.css'),
+    new ExtractTextPlugin('app.dev.css'),
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify(process.env.APP_ENV)
+      APP_ENV: JSON.stringify('development')
     }),
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',
-      gitHash: GITHASH
+      gitHash: GITHASH,
+      envCSS: '/app.dev.css',
+      filename: 'index.dev.html'
     })
   ]
 };
 
-module.exports = config;
+let configStage = {
+  entry: ['babel-polyfill', './client.js'],
+  output: {
+    path: path.resolve('./public'),
+    filename: 'app.stage.js',
+    publicPath: '/'
+  },
+  module: {
+    loaders: [
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: [
+            'css-loader',
+            'sass-loader?includePaths[]=' + path.resolve(__dirname, "./node_modules/compass-mixins/lib")]
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('app.stage.css'),
+    new webpack.DefinePlugin({
+      APP_ENV: JSON.stringify('stage')
+    }),
+    new HtmlWebpackPlugin({
+      template: './server/templates/layout.html',
+      gitHash: GITHASH,
+      envCSS: '/app.stage.css',
+      filename: 'index.stage.html'
+    })
+  ]
+};
+
+module.exports = [ configDev, configStage ];
