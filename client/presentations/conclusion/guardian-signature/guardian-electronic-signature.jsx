@@ -60,7 +60,7 @@ const ElectronicSignature = (props) => {
         />
       </div>
 
-      <div className='electronic-signature row'>
+      <div className='electronic-signature'>
         <p>Please type your name and today’s date to electronically sign.</p>
 
         <TextInput
@@ -111,10 +111,12 @@ const ElectronicSignature = (props) => {
               value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
               error       = { hasValue(dateErrors.year) }
             />
-            <ErrorLabel
-              errorMessage  = { dateErrorMessage }
-              errorClass    = { addDateErrorClass }
-            />
+            <div className='row'>
+              <ErrorLabel
+                errorMessage  = { dateErrorMessage }
+                errorClass    = { addDateErrorClass }
+              />
+            </div>
           </div>
         </div>
 
