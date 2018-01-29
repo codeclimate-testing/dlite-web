@@ -20,22 +20,21 @@ describe('SocialSecurityPage', function() {
     beforeEach(function() {
       let socialSecurity = {
         hasSocialSecurity: '',
-        part1: '',
-        part2: '',
-        part3: ''
-      }
-
-      let onChange = spy();
+        socialSecurity: ''
+      };
 
       let validations = {
-        ssn: spy(),
-        ssnFirstSegment: spy(),
-        ssnSecondSegment: spy(),
-        ssnThirdSegment: spy(),
+        hasSocialSecurity: spy(),
+        socialSecurity: spy(),
+        part1: spy(),
+        part2: spy(),
+        part3: spy(),
         ssnAll: spy(),
         all: spy(),
         isValid: () => { return true; }
       };
+      let onChange = spy();
+
 
       props = {
         socialSecurity,
@@ -56,32 +55,19 @@ describe('SocialSecurityPage', function() {
       assert.equal(component.find('.social-security-no-form'), false);
     });
 
-
-    it('selecting No makes next button no longer disabled and shows info message', function() {
-      props.socialSecurity.hasSocialSecurity = 'No';
-
-      let component = render(
-        <Wrapper>
-          <SocialSecurityPage {...props} />
-        </Wrapper>
-      );
-      assert.ok(component.find('.social-security-no-form', 'message not rendered'));
-      assert.ok(component.find('.message-box .info').length, 'info message box not found');
-    });
-
     it('selecting Yes makes form render to enter social number', function() {
       props.socialSecurity.hasSocialSecurity = 'Yes';
-
       let component = render(
         <Wrapper>
-          <SocialSecurityPage {...props} />
+          <SocialSecurityPage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('.social-security-enter-form').length, 'form not rendered');
-      assert.ok(component.find('input#part1').length, 'social input not found');
-      assert.ok(component.find('input#part2').length, 'social input not found');
-      assert.ok(component.find('input#part3').length, 'social input not found');
+      assert.ok(component.find('.social-security-form').length, 'social security details form missing');
+      assert.ok(component.find('input#part1[type="number"]').length, 'first 3 digit ssn missing');
+      assert.ok(component.find('input#part2[type="number"]').length, 'second 2 digit ssn missing');
+      assert.ok(component.find('input#part3[type="number"]').length, 'third 4 digit ssn missing');
     });
-  });
-});
 
+  });
+
+});

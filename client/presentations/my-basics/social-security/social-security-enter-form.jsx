@@ -11,16 +11,16 @@ import {
 } from '../../validations.jsx';
 
 const Form = (props) => {
+  if(props.socialSecurity.hasSocialSecurity !== 'Yes') { return null; }
+  
   let errors = {
-    ssnFirstSegment : props.validations.ssnFirstSegment(),
-    ssnSecondSegment : props.validations.ssnSecondSegment(),
-    ssnThirdSegment : props.validations.ssnThirdSegment(),
+    part1 : props.validations.part1(),
+    part2 : props.validations.part2(),
+    part3 : props.validations.part3(),
     ssnAll : props.validations.ssnAll()
   };
   let message = errorMessage(errors);
   let addError = errorClass(message);
-
-  if(props.socialSecurity.hasSocialSecurity !== 'Yes') { return null; }
 
   return (
     <div className='social-security-enter-form'>
@@ -31,12 +31,8 @@ const Form = (props) => {
       <NumberInput
         {...props}
         identifier    = 'part1'
-        description   = ''
         value         = { props.socialSecurity.part1 }
-        error         = { hasValue(errors.ssnFirstSegment) }
-        onChange      = { props.onChange }
-        onBlurValidate = { props.onBlurValidate }
-        onFocusClearValidation = { props.onFocusClearValidation }
+        error         = { hasValue(errors.part1) }
       />
 
       <div className='unit social-security-dash'>-</div>
@@ -44,12 +40,8 @@ const Form = (props) => {
       <NumberInput
         {...props}
         identifier     = 'part2'
-        description    = ''
         value          = { props.socialSecurity.part2 }
-        error          = { hasValue(errors.ssnSecondSegment) }
-        onChange       = { props.onChange }
-        onBlurValidate = { props.onBlurValidate }
-        onFocusClearValidation = { props.onFocusClearValidation }
+        error          = { hasValue(errors.part2) }
       />
 
       <div className='unit social-security-dash'>-</div>
@@ -57,12 +49,8 @@ const Form = (props) => {
       <NumberInput
         {...props}
         identifier     = 'part3'
-        description    = ''
         value          = { props.socialSecurity.part3 }
-        error          = { hasValue(errors.ssnThirdSegment) }
-        onChange       = { props.onChange }
-        onBlurValidate = { props.onBlurValidate }
-        onFocusClearValidation = { props.onFocusClearValidation }
+        error          = { hasValue(errors.part3) }
       />
 
       <div className='row'>

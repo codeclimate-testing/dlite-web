@@ -385,13 +385,13 @@ describe('Summary section', function() {
     });
   });
 
-  describe('SocialSecurity', function() {
+    describe('SocialSecurity', function() {
     it('shows social security number', function(){
       let socialSecurity = {
-        part1: '111',
-        part2: '11',
-        part3: '1111',
-        hasSocialSecurity: 'Yes'
+        hasSocialSecurity: 'Yes',
+        part1: '234',
+        part2: '56',
+        part3: '1293'
       };
 
       let component = render(
@@ -403,7 +403,7 @@ describe('Summary section', function() {
         </Wrapper>
       )
       assert.equal(component.text().includes('Social Security Number'), true);
-      assert.equal(component.text().includes('xxx-xx-1111'), true);
+      assert.equal(component.text().includes('xxx-xx-1293'), true);
     });
   });
 

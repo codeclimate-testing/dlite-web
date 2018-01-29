@@ -2,13 +2,10 @@
 
 import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
-
 import handlers                 from '../../helpers/handlers';
 import { SSNValidator }         from '../../helpers/validations';
-
 import { updateSocialSecurity } from "../../actions/index";
 import Presentation             from '../../presentations/my-basics/social-security-page.jsx';
-
 import { getDL }                from '../../helpers/data/card-type';
 
 const Page = (props) => {
@@ -19,14 +16,14 @@ const Page = (props) => {
   return (
     <Presentation
       {...props}
-      onSubmit          = { onSubmit }
-      onBack            = { onBack }
-      validations       = { validations }
+      onBack          = { onBack }
+      onSubmit        = { onSubmit }
+      validations     = { validations }
     />
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     socialSecurity: state.application.socialSecurity,
     cardType:       state.application.cardType,

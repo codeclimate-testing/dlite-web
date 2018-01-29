@@ -59,7 +59,7 @@ const homeAddressSameAsMailing = (props) => {
 const traitsHeightWeight = (props) => {
   return hasAllAttributes(props, ['weight', 'heightFeet']);
 };
-
+ 
 const organDonation = (props) => {
   return hasAllAttributes(props, ['donateMoney', 'donateOrgan']);
 };
@@ -67,7 +67,6 @@ const organDonation = (props) => {
 const socialSecurity = (props) => {
   return hasAllAttributes(props, ['part1', 'part2', 'part3']) || (props && props.hasSocialSecurity === 'No');
 };
-
 const veteransService = (props) => {
   return props && (props.isVeteran === 'No' || hasAllAttributes(props, ['isVeteran', 'receiveBenefits', 'veteransIdentifier']));
 };

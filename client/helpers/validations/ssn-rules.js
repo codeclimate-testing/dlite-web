@@ -2,8 +2,14 @@
 
 import errorMessages        from '../../presentations/error-messages';
 import { hasValue }         from '../data/validations';
+import selectionValidator       from './selection-validator';
 
-const ssn = (props) => {
+import {
+  hasNone,
+  hasAnySSN
+}             from '../data/ssn';
+
+const ssnAll = (props) => {
   let value = props.hasSocialSecurity;
   if (!hasValue(value)) {
    return [errorMessages.socialSecurityAvailabilityMissing];
@@ -11,50 +17,24 @@ const ssn = (props) => {
   return [];
 };
 
-const ssnAll = (props) => {
-  let value = props.part1 || props.part2 || props.part3;
-  let selection = props.hasSocialSecurity;
-  let errors = [];
-  if(selection === 'Yes' && !hasValue(value)) {
-    errors = [errorMessages.socialSecurityNumberMissing];
-  }
-  return errors;
+const socialSecurity = (name, number) => {
+  return (props) => {
+    if (props.hasSocialSecurity !== 'Yes') { return [];};
+
+    if (props[name].length !== number) {
+      return [errorMessages['socialSecurityNumberInvalid']];
+    } else if (hasNone(props)) {
+      return [errorMessages['socialSecurityNumberMissing']];
+    }
+    return [];
+  };
 };
 
-const ssnFirstSegment = (props) => {
-  let value = props.part1;
-  let selection = props.hasSocialSecurity;
-  let errors = [];
-  if(selection === 'Yes' && value.length !== 3) {
-    errors = [errorMessages.socialSecurityNumberInvalid];
-  }
-  return errors;
-};
-
-const ssnSecondSegment = (props) => {
-  let value = props.part2;
-  let selection = props.hasSocialSecurity;
-  let errors = [];
-  if(selection === 'Yes' && value.length !== 2) {
-    errors = [errorMessages.socialSecurityNumberInvalid];
-  }
-  return errors;
-};
-
-const ssnThirdSegment = (props) => {
-  let value = props.part3;
-  let selection = props.hasSocialSecurity;
-  let errors = [];
-  if(selection === 'Yes' && value.length !== 4) {
-    errors = [errorMessages.socialSecurityNumberInvalid];
-  }
-  return errors;
-};
 
 export default {
-  ssn: ssn,
+  hasSocialSecurity: selectionValidator('selectionMissing', 'hasSocialSecurity'),
   ssnAll: ssnAll,
-  ssnFirstSegment: ssnFirstSegment,
-  ssnSecondSegment: ssnSecondSegment,
-  ssnThirdSegment: ssnThirdSegment
+  part1: socialSecurity('part1', 3),
+  part2: socialSecurity('part2', 2),
+  part3: socialSecurity('part3', 4)
 };

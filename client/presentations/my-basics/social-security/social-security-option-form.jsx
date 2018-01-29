@@ -13,7 +13,7 @@ const Form = (props) => {
         <RadioCollection
           {...props}
           name='hasSocialSecurity'
-          errorMessage={ props.validations.ssn() }
+          errorMessage={ props.validations.ssnAll() }
         >
           { radioYesNoGroup() }
         </RadioCollection>
