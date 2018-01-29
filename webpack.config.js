@@ -52,7 +52,7 @@ let configDev = {
   ]
 };
 
-let configStage = {
+let config = {
   entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
@@ -92,4 +92,4 @@ let configStage = {
   ]
 };
 
-module.exports = [ configDev, configStage ];
+module.exports = [ configDev, config ];
