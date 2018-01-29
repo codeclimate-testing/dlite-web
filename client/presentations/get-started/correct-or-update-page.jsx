@@ -6,11 +6,15 @@ import UpdateForm         from './correct-or-update/update-form.jsx';
 import OtherText          from './correct-or-update/text-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import { IDorDL }         from '../../helpers/data/card-type';
+
+const text = {
+  ID: 'You may need to pay a fee for a new ID with these updates',
+  DL: 'You may need to pay a fee for a new DL with these updates'
+};
 
 const Form = (props) => {
-  let IDTag         = 'You may need to pay a fee for a new ID with these updates';
-  let DLTag         = 'You may need to pay a fee for a new DL with these updates';
-  let tag           = props.cardType.change === 'ID' ? IDTag : DLTag;
+  let tag           = text[IDorDL(props)];
 
   return (
     <Page
@@ -24,10 +28,7 @@ const Form = (props) => {
         </p>
         <form onSubmit={ props.onSubmit }>
           <RadioForm {...props} />
-          <UpdateForm
-            {...props}
-            selected={props.cardType.update}
-          />
+          <UpdateForm {...props} />
           <OtherText {...props} />
           <NavigationButtons
             {...props}

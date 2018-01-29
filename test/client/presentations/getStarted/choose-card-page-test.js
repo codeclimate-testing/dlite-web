@@ -19,8 +19,8 @@ describe('ChooseCardPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: [],
-        renew: '',
+        IDDL: [],
+        cardAction: '',
         youthIDInstead: ''
       };
       let dateOfBirth = {
@@ -28,7 +28,6 @@ describe('ChooseCardPage', function() {
         day: '',
         year: ''
       };
-      let cardAction = '';
 
       let accordions = {};
 
@@ -43,7 +42,6 @@ describe('ChooseCardPage', function() {
       props = {
         cardType,
         dateOfBirth,
-        cardAction,
         accordions,
         onChange,
         validations
@@ -51,7 +49,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is getting a new card the form shows a button for ID and a button for DL', function() {
-      props.cardAction = 'new';
+      props.cardType.cardAction = 'new';
 
       let component = render(
         <Wrapper>
@@ -66,7 +64,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('it shows a form with radio buttons asking renewing users which card type to renew', function() {
-      props.cardAction = 'renew';
+      props.cardType.cardAction = 'renew';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>
@@ -78,7 +76,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is changing a card it shows radio buttons and asks about correcting or updating', function() {
-      props.cardAction = 'change';
+      props.cardType.cardAction = 'change';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>
@@ -89,7 +87,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is replacing a card it shows radio buttons and asks for the reason', function() {
-      props.cardAction = 'replace';
+      props.cardType.cardAction = 'replace';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>

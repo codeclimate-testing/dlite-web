@@ -30,7 +30,7 @@ const CardDetails = (props) => {
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
 
   let date  = printDate(props.currentCardInfo);
-  let IDorDL = props.cardType[props.cardAction];
+  let IDorDL = props.cardType.IDDL[0];
 
   const numberText = {
     renew: {
@@ -79,7 +79,7 @@ const CardDetails = (props) => {
 };
 
 const Renew = (props) => {
-  if(!dataPresent.value(props.cardType.renew)) { return null;}
+  if (props.cardType.cardAction !== 'renew') { return null; }
 
   let text = {
     ID: 'Renewing: ID',
@@ -88,7 +88,7 @@ const Renew = (props) => {
 
   return (
     <div>
-      <p>{ text[props.cardType.renew] } </p>
+      <p>{ text[props.cardType.IDDL[0]] } </p>
       <CardDetails
         {...props}
         action = 'renew'
@@ -98,7 +98,7 @@ const Renew = (props) => {
 };
 
 const Change = (props) => {
-  if(!dataPresent.value(props.cardType.change)) { return null; }
+  if (props.cardType.cardAction !== 'change') { return null; }
 
   let text = {
     correct: {
@@ -113,7 +113,7 @@ const Change = (props) => {
 
   return (
     <div>
-      <p>{ text[props.cardChanges.correctOrUpdate][props.cardType.change] }</p>
+      <p>{ text[props.cardChanges.correctOrUpdate][props.cardType.IDDL[0]] }</p>
       <UpdatingItems {...props} />
       <CardDetails
         {...props}
@@ -149,7 +149,7 @@ const UpdatingItems = (props) => {
 };
 
 const Replace = (props) => {
-  if(!dataPresent.value(props.cardType.replace)) { return null; }
+  if (props.cardType.cardAction !== 'replace') { return null; }
 
   let text = {
     ID: 'Replacing: ID',
@@ -158,7 +158,7 @@ const Replace = (props) => {
 
   return (
     <div>
-      <p>{ text[props.cardType.replace]}</p>
+      <p>{ text[props.cardType.IDDL[0]]}</p>
       <ReplacementReason {...props} />
       <CardDetails
         {...props}

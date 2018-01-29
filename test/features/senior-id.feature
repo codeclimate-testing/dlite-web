@@ -29,7 +29,7 @@ Feature: Customers can get a senior ID for free
     When I visit the what do you want to do today page
     And I choose to renew a card
     When I visit the ID or DL selection page
-    And I click to renew my ID
+    And I choose ID
     When I visit the senior id page
     When I select no to not get a senior id
     And I click "Next" to continue
@@ -48,7 +48,7 @@ Feature: Customers can get a senior ID for free
     And I choose to change a card
     When I click "Next" to continue
     When I visit the ID or DL selection page
-    And I choose to change my ID
+    And I choose ID
     When I click "Next" to continue
     Then I will be on the current card info page
     And I enter my current card data
@@ -76,7 +76,7 @@ Feature: Customers can get a senior ID for free
     And I choose to replace a card
     When I click "Next" to continue
     When I visit the ID or DL selection page
-    And I choose to replace my ID
+    And I choose ID
     When I click "Next" to continue
     Then I will be on the current card info page
     And I enter my current card data

@@ -25,7 +25,7 @@ const date = (props) => {
 };
 
 const cardType = (props) => {
-  return hasAnyAttributes(props, ['renew', 'change', 'new', 'replace']);
+  return hasAllAttributes(props, ['IDDL', 'cardAction']);
 };
 
 const cardChanges = (props) => {

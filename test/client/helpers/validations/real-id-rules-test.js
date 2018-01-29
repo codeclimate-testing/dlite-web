@@ -10,9 +10,8 @@ let props;
 describe('RealID page validation rules:', function() {
   beforeEach(function() {
     let cardType = {
-      new: [],
-      renew: '',
-      change: '',
+      IDDL: [],
+      cardAction: '',
       youthIDInstead: ''
     };
 
@@ -40,7 +39,8 @@ describe('RealID page validation rules:', function() {
   });
 
   it('when no realIdDesignation is selected it will give realIdCardSelectionMissing', function() {
-    props.cardType.new = ['ID', 'DL'];
+    props.cardType.IDDL = ['ID', 'DL'];
+    props.cardType.cardAction = 'new';
     props.realID = {
       getRealID: 'Yes',
       realIdDesignation: ''

@@ -6,7 +6,7 @@ import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 
 const Form = (props) => {
-  if(props.cardAction !== 'new') { return null; }
+  if(props.cardType.cardAction !== 'new') { return null; }
 
   let text = {
     ID: 'ID',
@@ -19,9 +19,9 @@ const Form = (props) => {
       <div className='row'>
         <CheckboxCollection
           {...props}
-          name          = 'new'
-          array         = {props.cardType}
-          text          = {text}
+          name          = 'IDDL'
+          array         = { props.cardType.IDDL }
+          text          = { text}
           onBlur        = { props.onBlurValidate }
           errorMessage  = { props.validations.cardType()}
         >

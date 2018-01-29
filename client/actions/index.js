@@ -21,7 +21,6 @@ function generateValueAction(type) {
 export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
-  UPDATE_CARD_ACTION:                     'UPDATE_CARD_ACTION',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
   UPDATE_CARD_CHANGES:                    'UPDATE_CARD_CHANGES',
   UPDATE_CARD_REPLACEMENT:                'UPDATE_CARD_REPLACEMENT',

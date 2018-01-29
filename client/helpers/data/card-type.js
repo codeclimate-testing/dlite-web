@@ -1,28 +1,51 @@
 'use strict';
 
-import { hasValue } from '../data/validations';
+import { hasMultipleCards } from './cards';
 
 export const getNewID = (props) => {
-  return props.cardType['new'].indexOf('ID') > -1;
+  return getID(props) && props.cardType.ID.action === 'new';
 };
 
 export const getNewDL = (props) => {
-  return props.cardType['new'].indexOf('DL') > -1;
+  return getDL(props) && props.cardType.DL.action === 'new';
+};
+
+export const replaceID = (props) => {
+  return getID(props) && props.cardType.ID.action === 'replace';
+};
+
+export const replaceDL = (props) => {
+  return getDL(props) && props.cardType.DL.action === 'replace';
+};
+
+export const changeID = (props) => {
+  return getID(props) && props.cardType.ID.action === 'change';
+};
+
+export const changeDL = (props) => {
+  return getDL(props) && props.cardType.DL.action === 'change';
+};
+
+export const renewID = (props) => {
+  return getID(props) && props.cardType.ID.action === 'renew';
+};
+
+export const renewDL = (props) => {
+  return getDL(props) && props.cardType.DL.action === 'renew';
 };
 
 export const getID = (props) => {
-  return getNewID(props) || props.cardType.renew === 'ID' || props.cardType.change === 'ID' || props.cardType.replace === 'ID';
+  return props.cardType.IDDL.includes('ID');
 };
 
 export const getDL = (props) => {
-  return getNewDL(props) || props.cardType.renew === 'DL' || props.cardType.change === 'DL' || props.cardType.replace === 'DL';
-};
-
-export const canContinue = (props) => {
-  return (props.cardAction === 'new' && (getNewID(props) || getNewDL(props))) ||
-     hasValue(props.cardType[props.cardAction]);
+  return props.cardType.IDDL.includes('DL');
 };
 
 export const prettyDL = (props) => {
   return props === 'DL' ? 'Driver License' : 'ID';
-}
+};
+
+export const IDorDL = (props) => {
+  return hasMultipleCards(props) ? 'both' : getID(props) ? 'ID' : getDL(props) ? 'DL' : 'none';
+};

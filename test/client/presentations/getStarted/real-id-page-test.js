@@ -20,8 +20,8 @@ describe('RealIdPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: ['ID', 'DL'],
-        renew: '',
+        IDDL: ['ID', 'DL'],
+        cardAction: 'new',
         youthIDInstead: ''
       }
       let realID = {
@@ -104,7 +104,7 @@ describe('RealIdPage', function() {
 
     it('does not show the form asking which type if you only are getting one card', function() {
       props.realID.getRealID = 'Yes';
-      props.cardType.new = ['DL'];
+      props.cardType.IDDL = ['ID'];
 
       let component = render(
         <Wrapper>
@@ -116,7 +116,7 @@ describe('RealIdPage', function() {
     });
 
     it('should have a header indicating your particular card type', function() {
-      props.cardType.new = ['ID']
+      props.cardType.IDDL = ['ID'];
       let component = render(
         <Wrapper>
           <RealIdPage  {...props}/>
@@ -128,7 +128,8 @@ describe('RealIdPage', function() {
         'Header does not include ID type'
       );
 
-      props.cardType.new = ['DL'];
+      props.cardType.IDDL = 'DL';
+      props.cardType.cardAction = 'new';
 
       component = render(
         <Wrapper>
@@ -143,7 +144,7 @@ describe('RealIdPage', function() {
     });
 
     it('should have a header indicating you are applying for both cards is applicable', function() {
-      props.cardType.new = ['DL', 'ID'];
+      props.cardType.IDDL = ['DL', 'ID'];
 
       let component = render(
         <Wrapper>

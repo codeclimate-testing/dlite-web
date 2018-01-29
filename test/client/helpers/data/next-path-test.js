@@ -25,12 +25,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          renew: 'ID',
-          new: [],
-          replace: '',
-          change: ''
-        },
-        cardAction: 'renew'
+          IDDL: ['ID'],
+          cardAction: 'renew'
+        }
       };
 
       assert.equal(chooseCardType(data), 'currentCardInfo');
@@ -46,9 +43,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: ['DL']
-        },
-        cardAction: 'new'
+          IDDL: ['DL'],
+          cardAction: 'new'
+        }
       };
 
       assert.equal(chooseCardType(data), 'youthIDInstead');
@@ -64,9 +61,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: ['ID']
-        },
-        cardAction: 'new'
+          IDDL: ['ID'],
+          cardAction: 'new'
+        }
       };
       assert.equal(chooseCardType(data), 'seniorID');
     });
@@ -81,9 +78,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: ['DL']
-        },
-        cardAction: 'new'
+          IDDL: ['DL'],
+          cardAction: 'new'
+        }
       };
       assert.equal(chooseCardType(data), 'realID');
     });
@@ -100,10 +97,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: 'ID'
-        },
-        cardAction: 'renew'
+          IDDL: ['ID'],
+          cardAction: 'renew'
+        }
       };
       assert.equal(currentCardInfo(data), 'seniorID');
     });
@@ -118,10 +114,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: 'DL'
-        },
-        cardAction: 'renew'
+          IDDL: ['DL'],
+          cardAction: 'renew'
+        }
       };
       assert.equal(currentCardInfo(data), 'realID');
     });
@@ -138,11 +133,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: '',
-          replace: 'DL'
-        },
-        cardAction: 'replace'
+          IDDL: ['DL'],
+          cardAction: 'replace'
+        }
       };
       assert.equal(replacementDetails(data), 'realID');
     });
@@ -157,11 +150,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: '',
-          replace: 'ID'
-        },
-        cardAction: 'replace'
+          IDDL: ['ID'],
+          cardAction: 'replace'
+        }
       };
       assert.equal(replacementDetails(data), 'seniorID');
     });
@@ -176,11 +167,9 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: '',
-          replace: 'DL'
-        },
-        cardAction: 'replace'
+          IDDL: ['DL'],
+          cardAction: 'replace'
+        }
       };
       assert.equal(replacementDetails(data), 'realID');
     });
@@ -190,10 +179,9 @@ describe('Data helpers for determining next path from current page and props', f
     it('when getting a DL, it goes to the page for choosing a class', function() {
       let data = {
         cardType: {
-          new: [],
-          renew: 'DL'
-        },
-        cardAction: 'renew'
+          IDDL: ['DL'],
+          cardAction: 'renew'
+        }
       };
       assert.equal(realID(data), 'chooseLicenseClass');
     });
@@ -201,10 +189,9 @@ describe('Data helpers for determining next path from current page and props', f
     it('if eligible for a reduced fee, it goes to that page', function() {
       let data = {
         cardType: {
-          new: [],
-          renew: 'ID'
-        },
-        cardAction: 'renew'
+          IDDL: ['ID'],
+          cardAction: 'renew'
+        }
       };
       assert.equal(realID(data), 'reducedFeeID');
     });
@@ -219,11 +206,10 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: [],
-          renew: 'ID',
+          IDDL: ['ID'],
+          cardAction: 'renew'
         },
-        seniorID: 'Yes',
-        cardAction: 'renew'
+        seniorID: 'Yes'
       };
       assert.equal(realID(data), 'getStarted');
     });
@@ -233,10 +219,9 @@ describe('Data helpers for determining next path from current page and props', f
     it('if eligible for a reduced fee, it goes to that page', function() {
       let data = {
         cardType: {
-          new: ['ID', 'DL'],
-          renew: ''
-        },
-        cardAction: 'new'
+          IDDL: ['ID', 'DL'],
+          cardAction: 'new'
+        }
       };
       assert.equal(chooseLicenseClass(data), 'reducedFeeID');
     });
@@ -251,11 +236,10 @@ describe('Data helpers for determining next path from current page and props', f
           day: today.getDate().toString()
         },
         cardType: {
-          new: ['ID', 'DL'],
-          renew: '',
+          IDDL: ['ID', 'DL'],
+          cardAction: 'new'
         },
-        seniorID: 'Yes',
-        cardAction: 'new'
+        seniorID: 'Yes'
       };
       assert.equal(chooseLicenseClass(data), 'getStarted');
     });
@@ -271,10 +255,9 @@ describe('Data helpers for determining next path from current page and props', f
           month: (today.getMonth()).toString(),
           day: today.getDate().toString()
         },
-        cardAction: 'change',
         cardType: {
-          change: "ID",
-          new: []
+          cardAction: 'change',
+          IDDL: ['ID']
         },
         cardChanges: {
           correctOrUpdate: 'update',
@@ -289,8 +272,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to medicalHistory page if user is replacing a DL', function() {
       let props = {
         cardType: {
-          replace: 'DL',
-          new: []
+          cardAction: 'replace',
+          IDDL: ['DL'],
+          DL: {
+            action: 'replace'
+          }
         }
       };
       assert.equal(socialSecurity(props), 'medicalHistory');
@@ -299,8 +285,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to medicalHistory page if user is getting a new DL', function() {
       let props = {
         cardType: {
-          replace: '',
-          new: ['DL']
+          cardAction: 'new',
+          IDDL: ['DL'],
+          DL: {
+            action: 'new'
+          }
         }
       };
       assert.equal(socialSecurity(props), 'medicalHistory');
@@ -309,8 +298,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
       let props = {
         cardType: {
-          replace: '',
-          new: ['ID']
+          cardAction: 'new',
+          IDDL: ['ID'],
+          ID: {
+            action: 'new'
+          }
         }
       };
       assert.equal(socialSecurity(props), 'cardHistory');
@@ -319,8 +311,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
       let props = {
         cardType: {
-          replace: 'ID',
-          new: []
+          cardAction: 'replace',
+          IDDL: ['ID'],
+          ID: {
+            action: 'replace'
+          }
         }
       };
       assert.equal(socialSecurity(props), 'nameHistory');
@@ -331,8 +326,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to cardHistory if user is getting a new DL', function() {
       let props = {
         cardType: {
-          replace: '',
-          new: ['DL']
+          cardAction: 'new',
+          IDDL: ['DL'],
+          DL: {
+            action: 'new'
+          }
         }
       };
       assert.equal(medicalHistory(props), 'cardHistory');
@@ -341,8 +339,11 @@ describe('Data helpers for determining next path from current page and props', f
     it('goes to nameHistory, skipping cardHistory, if user is changing an existing DL', function() {
       let props = {
         cardType: {
-          replace: 'DL',
-          new: []
+          cardAction: 'replace',
+          IDDL: ['DL'],
+          DL: {
+            action: 'replace'
+          }
         }
       };
       assert.equal(medicalHistory(props), 'nameHistory');

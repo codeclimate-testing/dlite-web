@@ -21,7 +21,7 @@ const calculateTabIndex = (props, value, values) => {
 };
 
 const childPropsAdditions = (props, value, values) => {
-  const selected  = props.selectedValue === value;
+  let selected  = props.selectedValue === value;
   let tabIndex    = calculateTabIndex(props, value, values);
   let focus       = props.focused ? props.focused.split('-') : '';
   let focusedName = focus[0];

@@ -21,7 +21,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-form'>
-        <h2 className='question'>{question[props.cardAction]}</h2>
+        <h2 className='question'>{question[props.cardType.cardAction]}</h2>
 
         <form onSubmit={ props.onSubmit } >
           <ChooseCardCheckbox

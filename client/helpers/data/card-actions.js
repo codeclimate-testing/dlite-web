@@ -1,13 +1,17 @@
 'use strict';
 
 export const hasExistingCard = (props) => {
-  return props.cardAction === 'renew';
+  return props.cardType.cardAction === 'renew';
 };
 
 export const isChangingCard = (props) => {
-  return props.cardAction === 'change'
+  return props.cardType.cardAction === 'change'
 };
 
 export const isReplacingCard = (props) => {
-  return props.cardAction === 'replace'
+  return props.cardType.cardAction === 'replace'
+};
+
+export const isGettingNew = (props) => {
+  return props.cardType.cardAction === 'new';
 };

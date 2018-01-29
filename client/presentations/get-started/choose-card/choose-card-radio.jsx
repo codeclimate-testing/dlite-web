@@ -3,17 +3,18 @@
 import React                from 'react';
 
 import RadioCollection      from '../../radio-selector-collection.jsx';
+import { IDorDL }           from '../../../helpers/data/card-type'
 import radioIdDlGroup       from '../../radio-id-dl-group.jsx';
 
 const Form = (props) => {
-  if(props.cardAction === 'new') { return null; }
-  let selectedValue = props.cardType[props.cardAction];
+  if(props.cardType.cardAction === 'new') { return null; }
+  let selectedValue = IDorDL(props);
 
   return (
     <div className='row chooseRadioCard'>
       <RadioCollection
         {...props}
-        name            = {props.cardAction}
+        name            = 'IDDL'
         selectedValue   = {selectedValue}
         onBlur          = { props.onBlurValidate }
         errorMessage    = { props.validations.cardType()}

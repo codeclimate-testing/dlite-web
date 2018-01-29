@@ -9,7 +9,7 @@ import {
 } from './validations.jsx';
 
 const childPropsAdditions = (props, value, values) => {
-  let selected = props.array[props.name].includes(value);
+  let selected = props.array.includes(value);
   let custom = props.custom ? props.custom : false;
 
   let focusFunction = (e) => {

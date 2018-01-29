@@ -2,6 +2,7 @@
 
 import React from 'react';
 import * as dataPresent from '../../../helpers/data-present';
+import { getDL }        from '../../../helpers/data/card-type';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 
@@ -13,7 +14,7 @@ const MedicalHistory = (props) => {
     medicalCondition
   };
 
-  if(props.cardType.new.indexOf('DL') > -1 || props.cardType.renew === 'DL' || props.cardType.change === 'DL' || props.cardType.replace === 'DL') {
+  if (getDL(props)) {
     return (
       <PageSummaryLink
         to='/my-history/medical'

@@ -22,8 +22,8 @@ describe('Reduced Fee Page', function() {
         form: ''
       };
       let cardType = {
-        new: ['ID'],
-        renew: '',
+        IDDL: ['ID'],
+        cardType: 'new',
         youthIDInstead: ''
       };
       let onChange = spy();
@@ -66,7 +66,7 @@ describe('Reduced Fee Page', function() {
     });
 
     it('has special language if user is getting both new ID and new DL', function() {
-      props.cardType.new = ['ID', 'DL'];
+      props.cardType.IDDL = ['ID', 'DL'];
 
       let component = render(
         <Wrapper>

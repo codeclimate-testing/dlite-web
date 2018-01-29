@@ -8,11 +8,17 @@ const state  = {
       suffix: ''
     },
     cardType: {
-      new: [],
-      renew: '',
-      change: '',
-      replace: '',
-      youthIDInstead: ''
+      IDDL: [],
+      cardAction: '',
+      youthIDInstead: '',
+      ID: {
+        isApplying: false,
+        action: ''
+      },
+      DL: {
+        isApplying: false,
+        action: ''
+      }
     },
     cardChanges: {
       correctOrUpdate: '',

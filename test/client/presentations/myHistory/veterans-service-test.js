@@ -24,11 +24,9 @@ describe('VeteransServicePage', function() {
     };
 
     let cardType = {
-      new: ['ID', 'DL'],
-      renew: ''
+      IDDL: ['ID', 'DL'],
+      cardAction: 'new'
     };
-
-    let cardAction = 'new';
 
     let legalName = {
       firstName: 'John',
@@ -49,7 +47,6 @@ describe('VeteransServicePage', function() {
     props = {
       veteransService,
       cardType,
-      cardAction,
       legalName,
       onChange,
       validations
@@ -130,7 +127,7 @@ describe('VeteransServicePage', function() {
 
   describe('when veteran is renewing a card', function() {
     beforeEach(function() {
-      props.cardAction = 'renew';
+      props.cardType.cardAction = 'renew';
     });
 
     it('selecting Yes renders benefits and designation forms', function() {

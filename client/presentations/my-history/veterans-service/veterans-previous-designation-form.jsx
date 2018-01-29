@@ -12,7 +12,7 @@ const header = {
 };
 
 const VeteransPreviousDesignation = (props) => {
-  if(props.veteransService.isVeteran !== 'Yes' || props.cardAction !== 'renew') { return null; }
+  if(props.veteransService.isVeteran !== 'Yes' || props.cardType.cardAction !== 'renew') { return null; }
 
   const headerText = getDL(props) ? header.DL : header.ID;
 

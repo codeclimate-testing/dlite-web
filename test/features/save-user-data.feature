@@ -183,7 +183,7 @@ Feature: Save user data
     And I choose to renew a card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    When I click to renew my ID
+    When I choose ID
     Then I will see the application title says "DMV Identification card application"
     And I will see the application header says "Identification card application"
     When I click "Next" to continue
@@ -335,7 +335,7 @@ Feature: Save user data
     And I choose to replace a card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    Then I choose to replace my DL
+    Then I choose DL
     When I click "Next" to continue
     Then I will be on the current card info page
     And I enter my current card data

@@ -32,7 +32,7 @@ const Form = (props) => {
       <CheckboxCollection
         {...props}
         name          = 'sections'
-        array         = { props.cardChanges }
+        array         = { props.cardChanges.sections }
         text          = { text }
         errorMessage  = { props.validations.sections() }
       >

@@ -51,10 +51,12 @@ let ErrorMessage = (props) => {
 const Form = (props) => {
   const handleChange = (e) => {
     props.onChange(e); // update props.cardType.youthIDInstead
-    props.checkAnswer(e.target.value, false); // update props.cardType.new
+    props.checkAnswer(e.target.value, false); // update props.cardType.IDDL
   }
 
   const Header = ageChecks.Under15(props.dateOfBirth) ? Under15FormHeader : YouthFormHeader;
+
+  const actionName = props.multCards ? 'youthIDOnly' : 'youthIDInstead';
 
   return (
     <Page
@@ -67,9 +69,9 @@ const Form = (props) => {
           <div className='row'>
             <RadioCollection
               {...props}
-              name = 'youthIDInstead'
-              onBlur  = { props.onBlurValidate }
-              errorMessage = { props.validations.youthIDInstead() }
+              name          = { actionName }
+              onBlur        = { props.onBlurValidate }
+              errorMessage  = { props.validations.youthIDInstead() }
             >
               { radioYesNoGroup() }
             </RadioCollection>

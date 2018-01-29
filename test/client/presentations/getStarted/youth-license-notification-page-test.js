@@ -38,17 +38,17 @@ describe('YouthDLNotificationPage', function() {
     let today = new Date();
 
     props.cardType = {
-        ID: false,
-        DL: true,
-        youthIDInstead: 'Yes'
-      }
+      IDDL: ['DL'],
+      cardAction: 'new',
+      youthIDInstead: 'Yes'
+    }
 
-      props.dateOfBirth = {
-        year: (today.getFullYear() - 10).toString(),
-        month: (today.getMonth() + 1).toString(),
-        day: today.getDate().toString()
-      }
-      props.onChange = sinon.spy();
+    props.dateOfBirth = {
+      year: (today.getFullYear() - 10).toString(),
+      month: (today.getMonth() + 1).toString(),
+      day: today.getDate().toString()
+    }
+    props.onChange = sinon.spy();
 
     let component = render(
       <Wrapper>
@@ -63,16 +63,16 @@ describe('YouthDLNotificationPage', function() {
     let today = new Date();
 
     props.cardType = {
-        ID: false,
-        DL: true,
-        youthIDInstead: 'Yes'
-      }
-      props.dateOfBirth = {
-        year: (today.getFullYear() - 15).toString(),
-        month: (today.getMonth() + 1 - 7).toString(),
-        day: today.getDate().toString()
-      }
-      props.onChange = sinon.spy();
+      IDDL: ['DL'],
+      cardAction: 'new',
+      youthIDInstead: 'Yes'
+    }
+    props.dateOfBirth = {
+      year: (today.getFullYear() - 15).toString(),
+      month: (today.getMonth() + 1 - 7).toString(),
+      day: today.getDate().toString()
+    }
+    props.onChange = sinon.spy();
 
     let component = render(
       <Wrapper>
@@ -87,17 +87,17 @@ describe('YouthDLNotificationPage', function() {
     let today = new Date();
 
     props.cardType = {
-        ID: false,
-        DL: true,
-        youthIDInstead: 'No'
-      }
-      props.dateOfBirth = {
-        year: (today.getFullYear() - 10).toString(),
-        month: (today.getMonth() + 1).toString(),
-        day: today.getDate().toString()
-      }
+      IDDL: ['DL'],
+      cardAction: 'new',
+      youthIDInstead: 'No'
+    }
+    props.dateOfBirth = {
+      year: (today.getFullYear() - 10).toString(),
+      month: (today.getMonth() + 1).toString(),
+      day: today.getDate().toString()
+    }
 
-       props.onChange = sinon.spy();
+    props.onChange = sinon.spy();
 
     let component = render(
       <Wrapper>
@@ -114,9 +114,9 @@ describe('YouthDLNotificationPage', function() {
   it('should not render an error message if consent to only getting an id', function() {
     let today = new Date();
 
-       props.cardType = {
-        ID: false,
-        DL: true,
+      props.cardType = {
+        IDDL: ['DL'],
+        cardAction: 'new',  
         youthIDInstead: 'Yes'
       }
 
@@ -144,8 +144,8 @@ it('shows the form allowing you to choose to get a youth ID', function() {
     let today = new Date();
 
     props.cardType = {
-        ID: false,
-        DL: true,
+        IDDL: ['DL'],
+        cardAction: 'new',
         youthIDInstead: 'Yes'
       }
       props.dateOfBirth = {

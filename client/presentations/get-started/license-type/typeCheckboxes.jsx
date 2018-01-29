@@ -22,7 +22,7 @@ const Form = (props) => {
           {...props}
           text  = {text}
           name  = 'type'
-          array = {props.licenseType}
+          array = {props.licenseType.type }
           onBlur = { props.onBlurValidate }
           errorMessage={ props.validations.licenseType() }
         >

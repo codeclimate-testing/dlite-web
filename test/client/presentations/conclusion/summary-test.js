@@ -96,10 +96,18 @@ describe('Summary section', function() {
   describe('Cards', function() {
     it('shows DL and ID when getting both new', function() {
       props.cardType = {
-        new: ['ID', 'DL'],
-        renew: ''
+        IDDL: ['ID', 'DL'],
+        cardAction: 'new',
+        ID: {
+          isApplying: true,
+          action: 'new'
+        },
+        DL: {
+          isApplying: true,
+          action: 'new'
+        }
       };
-      props.cardAction = 'new';
+
       let component = render(
         <Wrapper>
           <Cards
@@ -112,10 +120,18 @@ describe('Summary section', function() {
 
     it('shows DL when only getting a new DL', function() {
       props.cardType = {
-        new: ['DL'],
-        renew: ''
+        IDDL: ['DL'],
+        cardAction: 'new',
+        DL: {
+          isApplying: true,
+          action: 'new'
+        },
+        ID: {
+          isApplying: false,
+          action: ''
+        }
       };
-      props.cardAction = 'new';
+
       let component = render(
         <Wrapper>
           <Cards
@@ -128,9 +144,16 @@ describe('Summary section', function() {
 
     it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
       props.cardType = {
-        new: [],
-        renew: 'ID',
-        change: ''
+        IDDL: ['ID'],
+        cardAction: 'renew',
+        DL: {
+          isApplying: false,
+          action: ''
+        },
+        ID: {
+          isApplying: true,
+          action: 'renew'
+        }
       };
       props.currentCardInfo = {
         number: 'a90382kf',
@@ -138,7 +161,6 @@ describe('Summary section', function() {
         day: '13',
         year: '2008'
       };
-      props.cardAction = 'renew';
       let component = render(
         <Wrapper>
           <Cards
@@ -153,8 +175,12 @@ describe('Summary section', function() {
     });
 
     it('shows which sections are being updated', function() {
-      props.cardType.change = 'DL'
-      props.cardAction = 'change'
+      props.cardType.IDDL = ['DL'];
+      props.cardType.cardAction = 'change';
+      props.cardType.DL.action = 'change';
+      props.cardType.DL.isApplying = true;
+      props.cardType.DL.action = '';
+      props.cardType.DL.isApplying = false;
       props.cardChanges.correctOrUpdate = 'update'
       props.cardChanges.sections = ['name', 'restrictions'];
       let component = render(
@@ -167,8 +193,16 @@ describe('Summary section', function() {
     });
 
     it('shows the text the user entered in the case of a "Something else" change', function() {
-      props.cardType.change = 'DL'
-      props.cardAction = 'change'
+      props.cardType.IDDL = ['DL'];
+      props.cardType.cardAction = 'change';
+      props.cardType.DL = {
+        isApplying: true,
+        action: 'change'
+      };
+      props.cardType.ID = {
+        isApplying: false,
+        action: ''
+      };
       props.cardChanges.correctOrUpdate = 'update'
       props.cardChanges.sections = ['other'];
       props.cardChanges.other = 'my picture sucks!'
@@ -467,16 +501,16 @@ describe('Summary section', function() {
           medicalInfo: 'blind'
         };
         props.cardType = {
-          new: ['ID'],
-          renew: ''
+          IDDL: ['ID'],
+          cardAction: 'new'
         };
 
         let component = render(
           <Wrapper>
-          <MedicalHistory
-          { ...props }
-          medicalHistory={medicalHistory}
-          />
+            <MedicalHistory
+            { ...props }
+            medicalHistory={medicalHistory}
+            />
           </Wrapper>
         )
         assert.equal(!component.text().includes('Medical conditions'), true);
@@ -491,8 +525,8 @@ describe('Summary section', function() {
           medicalInfo: ''
         };
         props.cardType = {
-          new: ['DL'],
-          renew: ''
+          IDDL: ['DL'],
+          cardAction: 'new'
         };
 
         let component = render(
@@ -513,8 +547,8 @@ describe('Summary section', function() {
         medicalInfo: 'Blind'
       };
       props.cardType = {
-        new: ['DL'],
-        renew: ''
+        IDDL: ['DL'],
+        cardAction: 'new'
       };
 
       let component = render(

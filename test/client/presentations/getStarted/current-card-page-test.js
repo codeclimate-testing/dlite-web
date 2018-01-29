@@ -18,8 +18,8 @@ describe('CurrentCardPage', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: [],
-        renew: 'DL',
+        IDDL : ['DL'],
+        cardAction: 'renew',
         youthIDInstead: ''
       };
 
@@ -29,8 +29,6 @@ describe('CurrentCardPage', function() {
         month: '',
         year: ''
       };
-
-      let cardAction = 'renew';
 
       let accordions = {};
 
@@ -48,7 +46,6 @@ describe('CurrentCardPage', function() {
       props = {
         cardType,
         currentCardInfo,
-        cardAction,
         accordions,
         onChange,
         currentCardValidation
@@ -69,7 +66,7 @@ describe('CurrentCardPage', function() {
     });
 
     it('it asks for the ID number when the user has chosen to renew an ID', function() {
-      props.cardType.renew = 'ID';
+      props.cardType.IDDL = ['ID'];
 
       let component = render(
         <Wrapper>
@@ -82,7 +79,7 @@ describe('CurrentCardPage', function() {
     });
 
     it('it asks for the DL number when the user has chosen to renew a DL', function() {
-      props.cardType.renew = 'DL';
+      props.cardType.IDDL = ['DL'];
 
       let component = render(
         <Wrapper>
@@ -95,7 +92,8 @@ describe('CurrentCardPage', function() {
     });
 
     it('asks for the ID number when the user has chosen to renew or change an ID', function() {
-      props.cardType.renew = 'ID';
+      props.cardType.IDDL = ['ID'];
+      
       let component = render(
         <Wrapper>
           <CurrentCardPage {...props} />

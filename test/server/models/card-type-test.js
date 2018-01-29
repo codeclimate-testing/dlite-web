@@ -4,73 +4,127 @@ const assert            = require('assert');
 const cardTypeParser    = require('../../../server/models/parsers/card-type');
 const dataHelper        = require('../../support/data-helper');
 
-let cardType = { new: [], renew: '', change: '', youthIDInstead: '' };
+let cardType;
 
 describe('cardType', function() {
-  describe('hasNewID', function() {
+  beforeEach(function() {
+    cardType = {
+      IDDL: [],
+      cardAction: '',
+      youthIDInstead: '' ,
+      ID: {action: ''},
+      DL: {action: ''}
+    }
+  });
+  describe('#getNew', function() {
+    it('returns false when cardAction is not new', function() {
+      cardType.ID.action = 'replace';
+      cardType.DL.action = 'change'
+      assert.equal(cardTypeParser.getNew(cardType), false);
+    });
+    it('returns true when cardAction is new', function() {
+      cardType.ID.action = 'new';
+      assert.equal(cardTypeParser.getNew(cardType), true);
+    });
+  });
+
+  describe('#getReplace', function() {
+    it('returns false when cardAction is not replace', function() {
+      cardType.ID.action = 'renew';
+      assert.equal(cardTypeParser.getReplace(cardType), false);
+    });
+    it('returns true when cardAction is replace', function() {
+      cardType.DL.action = 'replace';
+      assert.equal(cardTypeParser.getReplace(cardType), true);
+    });
+  });
+
+  describe('#getChange', function() {
+    it('returns false when cardAction is not change', function() {
+      cardType.ID.action = 'replace';
+      assert.equal(cardTypeParser.getChange(cardType), false);
+    });
+    it('returns true when cardAction is change', function() {
+      cardType.DL.action = 'change';
+      assert.equal(cardTypeParser.getChange(cardType), true);
+    });
+  });
+
+  describe('#needCurrentCardInfo', function(){
+    it('returns false when cardAction is new', function() {
+      cardType.DL.action = 'new';
+      assert.equal(cardTypeParser.needCurrentCardInfo(cardType), false);
+    });
+    it('returns true when cardAction is replace, renew, or change', function() {
+      cardType.DL.action = 'replace';
+      assert.equal(cardTypeParser.needCurrentCardInfo(cardType), true);
+    });
+  });
+
+  describe('#hasNewID', function() {
     it('returns false when new ID is not selected', function() {
-      cardType = { new: ['DL'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], ID: {action: ''}, DL: {action: 'new'}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasNewID(cardType), false);
     });
 
     it('returns true when new ID is selected', function() {
-      cardType = { new: ['ID'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'new'}, DL: {action: ''},youthIDInstead: ''};
       assert.equal(cardTypeParser.hasNewID(cardType), true);
     });
   });
 
-  describe('hasID', function() {
+  describe('#hasID', function() {
     it('returns false when an ID is not selected', function() {
-      cardType = { new: [], renew: 'DL', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], DL: {action: 'new'}, ID: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasID(cardType), false);
     });
 
     it('returns true when new ID is selected', function() {
-      cardType = { new: ['ID'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'new'}, DL: {action: 'new'}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasID(cardType), true);
     });
 
     it('returns true when card option is to renew an ID', function() {
-      cardType = { new: [''], renew: 'ID', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'renew'}, DL: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasID(cardType), true);
     });
 
     it('returns true when card option is to change an ID', function() {
-      cardType = { new: [''], renew: 'ID', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'renew'}, DL: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasID(cardType), true);
     });
   });
 
-  describe('hasNewDL', function() {
+  describe('#hasNewDL', function() {
     it('returns false when new DL is not selected', function() {
-      cardType = { new: ['ID'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'new'}, DL: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasNewDL(cardType), false);
     });
 
     it('returns true when new DL is selected', function() {
-      cardType = { new: ['DL'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], DL: {action: 'new'}, ID: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasNewDL(cardType), true);
     });
   });
 
-  describe('hasDL', function() {
+  describe('#hasDL', function() {
     it('returns false when an DL is not selected', function() {
-      cardType = { new: [], renew: 'ID', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['ID'], ID: {action: 'renew'}, DL: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasDL(cardType), false);
     });
 
     it('returns true when new DL is selected', function() {
-      cardType = { new: ['DL'], renew: '', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], ID: {action: ''}, DL: {action: 'new'}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasDL(cardType), true);
     });
 
     it('returns true when card option is to renew a DL', function() {
-      cardType = { new: [''], renew: 'DL', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], DL: {action: 'renew'}, ID: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasDL(cardType), true);
     });
 
     it('returns true when card option is to change a DL', function() {
-      cardType = { new: [''], renew: 'DL', change: '', youthIDInstead: ''};
+      cardType = { IDDL: ['DL'], DL: {action: 'change'}, ID: {action: ''}, youthIDInstead: ''};
       assert.equal(cardTypeParser.hasDL(cardType), true);
     });
   });

@@ -350,28 +350,28 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
 
 function getCardTypes(card_options, cards) {
   let cardType = {
-    new: [],
-    renew: '',
-    change: '',
-    replace: '',
-    youthIDInstead: ''
+    IDDL: [],
+    youthIDInstead: '',
+    ID: {
+      isApplying: false,
+      action: ''
+    },
+    DL: {
+      isApplying: false,
+      action: ''
+    }
   };
 
   card_options.forEach(option => {
     if(option.option_type === 'action'){
-      if(option.option_value === 'new'){
-        cards.forEach(card => {
-          if(card.id === option.card_id) {
-            cardType.new.push(card.type)
-          }
-        })
-      } else {
-        cards.forEach(card => {
-          if(card.id === option.card_id) {
-            cardType[option.option_value] = card.type;
-          }
-        });
-      }
+      cards.forEach(card => {
+        if(card.id === option.card_id) {
+          cardType.IDDL.push(card.type);
+          cardType[card.type].isApplying = true;
+          cardType[card.type].action = option.option_value;
+        }
+      });
+      cardType.IDDL.sort();
     }
   });
 

@@ -20,10 +20,8 @@ describe('ReplacementDetails', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: [],
-        renew: '',
-        change: '',
-        replace: '',
+        IDDL : [],
+        cardAction: '',
         youthIDInstead: ''
       };
 
@@ -42,7 +40,6 @@ describe('ReplacementDetails', function() {
 
       props = {
         cardType,
-        cardAction,
         cardReplacement,
         onChange,
         validations
@@ -50,7 +47,7 @@ describe('ReplacementDetails', function() {
     });
 
     it('if the user is replacinga DL the instruction text mentions DL and has radio buttons', function() {
-      props.cardType.replace = 'DL';
+      props.cardType.IDDL = ['DL'];
 
       let component = render(
         <Wrapper>

@@ -17,7 +17,8 @@ describe('Data helpers for senior', function() {
         day: today.getDate().toString()
       },
       cardType: {
-        new: ['ID']
+        IDDL: ['ID'],
+        cardAction: 'new'
       }
     };
     assert.equal(eligibleForSeniorID(data), false);
@@ -33,7 +34,8 @@ describe('Data helpers for senior', function() {
         day: today.getDate().toString()
       },
       cardType: {
-        new: ['DL']
+        IDDL: ['DL'],
+        cardAction: 'new'
       }
     };
     assert.equal(eligibleForSeniorID(data), false);
@@ -49,7 +51,8 @@ describe('Data helpers for senior', function() {
         day: today.getDate().toString()
       },
       cardType: {
-        new: ['ID']
+        IDDL: ['ID'],
+        cardAction: 'new'
       }
     };
     assert.equal(eligibleForSeniorID(data), true);

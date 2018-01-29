@@ -63,7 +63,6 @@ module.exports = function createApplication(data) {
     .then((cards) => {
       returnedData.cards = cards;
       let card_options = data.card_options;
-
       cardOptionsParser.cardOptions(cards, card_options, data);
       return insert('card_options');
     })

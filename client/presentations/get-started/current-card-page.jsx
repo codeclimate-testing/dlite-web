@@ -5,6 +5,7 @@ import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
 import ExpirationDate     from '../expiration-date.jsx';
+import { IDorDL }         from '../../helpers/data/card-type';
 
 const question = {
   ID: 'If you know it, <b>please enter your California ID number</b>.',
@@ -27,11 +28,11 @@ const description = {
 };
 
 const Form = (props) => {
-  const IDorDL          = props.cardType[props.cardAction] || 'ID';
-  const cardText        = card[IDorDL]
-  const questionText    = question[IDorDL];
-  const instructionText = instruction[IDorDL];
-  const descriptionText = description[IDorDL];
+  const cardType        = IDorDL(props) || 'ID';
+  const cardText        = card[cardType]
+  const questionText    = question[cardType];
+  const instructionText = instruction[cardType];
+  const descriptionText = description[cardType];
 
   return (
     <Page
@@ -43,13 +44,15 @@ const Form = (props) => {
           <h2 className='question'>Card details</h2>
           <p dangerouslySetInnerHTML={{__html: questionText}} />
           <p dangerouslySetInnerHTML={{__html: instructionText}} />
-          <TextInput
-            {...props}
-            identifier='number'
-            description={ descriptionText }
-            value={ props.currentCardInfo.number }
-            errorMessage={ props.currentCardValidation.number() }
-          />
+          <div className='row'>
+            <TextInput
+              {...props}
+              identifier    = 'number'
+              description   = { descriptionText }
+              value         = { props.currentCardInfo.number }
+              errorMessage  = { props.currentCardValidation.number() }
+            />
+          </div>
 
           <ExpirationDate
             {...props}

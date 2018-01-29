@@ -13,7 +13,7 @@ function parse(data) {
     { phone_numbers:          extractPhoneNumber(data) },
     { organ_donations:        extractOrganDonation(data) },
     { card_histories:         extractCardHistories(data) },
-    { renewal_card:           extractRenewalCard(data) },
+    { renewal_card:           extractCardInfo(data) },
     { previous_names:         extractPreviousNames(data) },
     { medical_histories:      extractMedicalHistories(data) },
     { license_issues:         extractLicenseIssues(data) },
@@ -119,15 +119,14 @@ function extractCardHistories(data) {
   }
 }
 
-function extractRenewalCard(data) {
-  if(data.cardType.renew === 'DL' || data.cardType.renew === 'ID'){
-    let _date = parserHelper.createDateString(data.currentCardInfo);
-    return {
-      application_id:   data.id,
-      number:           data.currentCardInfo.number,
-      date:             _date
-    };
-  } else { return null; }
+function extractCardInfo(data) {
+  if (!cardTypeParser.needCurrentCardInfo(data.cardType)) { return null; }
+  let _date = parserHelper.createDateString(data.currentCardInfo);
+  return {
+    application_id:   data.id,
+    number:           data.currentCardInfo.number,
+    date:             _date
+  };
 };
 
 function extractPreviousNames(data) {
@@ -239,69 +238,35 @@ function extractCardTypes(data) {
 
 function extractCardOptions(data) {
   let cardOptions = [ ];
-  if(cardTypeParser.hasNewID(data.cardType)){
-    cardOptions.push({
-      type:               'ID',
-      option_type:        'action',
-      option_value:       'new'
-    });
-  }
 
-  if(cardTypeParser.hasNewDL(data.cardType)){
+  data.cardType.IDDL.forEach(type => {
     cardOptions.push({
-      type:               'DL',
-      option_type:        'action',
-      option_value:       'new'
+      type        : type,
+      option_type : 'action',
+      option_value: data.cardType[type].action
     });
-  }
+  });
 
-  if(data.cardType.renew === 'ID') {
-    cardOptions.push({
-      type:                 'ID',
-      option_type:          'action',
-      option_value:         'renew'
-    });
-  }
-
-  if(data.cardType.renew === 'DL') {
-    cardOptions.push({
-      type:                  'DL',
-      option_type:           'action',
-      option_value:          'renew'
-    });
-  };
-
-  if(data.cardType.change.length > 0) {
-    cardOptions.push({
-      type:               data.cardType.change,
-      option_type:        'action',
-      option_value:       'change'
-    });
-
+  ////////// CHANGES AND REPLACEMENTS ///////////
+  if (cardTypeParser.getChange(data.cardType)){
     const correctOrUpdate = data.cardChanges.correctOrUpdate;
     const changes = data.cardChanges.sections.join('_');
 
     cardOptions.push({
-      type:               data.cardType.change,
+      type:               data.cardType.IDDL[0],
       option_type:        'modification',
       option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
     });
-  };
-
-  if(data.cardType.replace) {
+  } else if (cardTypeParser.getReplace(data.cardType)) {
     cardOptions.push({
-      type:          data.cardType.replace,
-      option_type:   'action',
-      option_value:  'replace',
-    });
-
-    cardOptions.push({
-      type:               data.cardType.replace,
+      type:               data.cardType.IDDL[0],
       option_type:        'modification',
       option_value:       'replace-' + data.cardReplacement.reason
     });
-  };
+  }
 
+
+  ///////// REDUCED FEE ////////////////
   if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
     cardOptions.push({
       type:               'ID',
@@ -316,10 +281,11 @@ function extractCardOptions(data) {
     })
   }
 
+  ////////// REAL ID ///////////////
   if(data.realID.getRealID === 'Yes'){
     var hasID = cardTypeParser.hasID(data.cardType);
     var hasDL = cardTypeParser.hasDL(data.cardType);
-    var designation = hasID && hasDL ? data.realID.realIdDesignation : hasID ? 'ID' : hasDL ? 'DL' : ''
+    var designation = hasID && hasDL ? data.realID.realIdDesignation : data.cardType.IDDL[0];
 
     cardOptions.push({
       type:               designation,
@@ -328,6 +294,7 @@ function extractCardOptions(data) {
     });
   }
 
+  ///////// SENIOR ID ///////////
   if(data.seniorID=== 'Yes') {
     cardOptions.push({
       type:               'ID',
@@ -337,7 +304,7 @@ function extractCardOptions(data) {
   }
 
   return cardOptions;
-}
+};
 
 function extractLicenseClasses(data) {
   let license_classes = [];

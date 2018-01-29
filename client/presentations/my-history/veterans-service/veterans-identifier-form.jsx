@@ -57,7 +57,7 @@ const MessageRemovingDesignation = (props) => {
 };
 
 const VeteransIdentifier = (props) => {
-  if (!(props.veteransService.previouslyDesignated || (props.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))) { return null; }
+  if (!(props.veteransService.previouslyDesignated || (props.cardType.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))) { return null; }
 
   return (
     <div className='veterans-identifier-form'>

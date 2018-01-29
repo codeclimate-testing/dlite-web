@@ -93,9 +93,8 @@ const SummaryPage = (props) => {
     <Accordion id='application-details-summary' title='My application details' key='application-details-summary'>
       <Cards
         cardType        = { application.cardType }
-        cardAction      = { application.cardAction }
         cardChanges     = { application.cardChanges }
-        currentCardInfo = {application.currentCardInfo}
+        currentCardInfo = { application.currentCardInfo}
         cardReplacement = { application.cardReplacement }
       />
       <SeniorID seniorID={application.seniorID} />

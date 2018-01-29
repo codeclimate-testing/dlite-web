@@ -11,7 +11,16 @@ import {
 } from '../../../../client/helpers/data/veteran';
 
 describe('Data helpers for veterans', function() {
+  let cardType;
+  beforeEach(function() {
+    cardType = {
+      cardAction: 'renew'
+    };
+  });
+
+
   describe('#mustChooseBenefits', function() {
+    
     it('is false if not a veteran', function() {
       let data = {
         veteransService: {
@@ -20,7 +29,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseBenefits(data), false);
     });
@@ -33,7 +42,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseBenefits(data), true);
     });
@@ -48,7 +57,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChoosePreviousDesignation(data), false);
     });
@@ -61,7 +70,9 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'replace'
+        cardType: {
+          cardAction: 'new'
+        }
       };
       assert.equal(mustChoosePreviousDesignation(data), false);
     });
@@ -74,7 +85,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChoosePreviousDesignation(data), true);
     });
@@ -89,7 +100,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'Yes',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseIdentifier(data), false);
     });
@@ -102,7 +113,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseIdentifier(data), false);
     });
@@ -115,7 +126,9 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'replace'
+        cardType: {
+          cardAction: 'replace'
+        }
       };
       assert.equal(mustChooseIdentifier(data), true);
     });
@@ -130,7 +143,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
@@ -143,7 +156,9 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'Yes',
           veteransIdentifier: ''
         },
-        cardAction: 'replace'
+        cardType: {
+          cardAction: 'replace'
+        }
       };
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
@@ -156,7 +171,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'No',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
@@ -169,7 +184,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'Yes',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseKeepVeteranIdentifier(data), true);
     });
@@ -184,7 +199,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: '',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
@@ -197,7 +212,9 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'Yes',
           veteransIdentifier: ''
         },
-        cardAction: 'replace'
+        cardType: {
+          cardAction: 'replace'
+        }
       };
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
@@ -210,7 +227,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'Yes',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
@@ -223,7 +240,7 @@ describe('Data helpers for veterans', function() {
           previouslyDesignated: 'No',
           veteransIdentifier: ''
         },
-        cardAction: 'renew'
+        cardType: cardType
       };
       assert.equal(mustChooseAddVeteranIdentifier(data), true);
     });

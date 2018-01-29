@@ -1,39 +1,44 @@
 'use strict';
 
 import { TYPES }              from '../../actions';
-import formCheckArrayReducer  from './form-check-array-reducer';
+import cardAction             from './card-type/card-action';
+import IDDL                   from './card-type/IDDL';
+import youthID                from './card-type/youth-ID';
 
 const defaultState = () => {
   return {
-    new: [],
-    renew: '',
-    change: '',
-    replace: '',
-    youthIDInstead: ''
-  }
-};
-
-const youthID = (value, data) => {
-  if (value !== 'Yes') { return data; }
-  return Object.assign({}, data, {new: ['ID']});
+    ID: {
+      isApplying: false,
+      action: ''
+    },
+    DL: {
+      isApplying: false,
+      action: ''
+    },
+    IDDL: [],
+    youthIDInstead: '',
+    cardAction: ''
+  };
 };
 
 const formReducer = (state = defaultState(), action) => {
   if (action.type !== TYPES.UPDATE_CARD_TYPE) { return state; }
   if (!action.payload) { return state; }
 
-  let data = defaultState();
   let name = action.payload.name;
   let value = action.payload.value;
+  let data = Object.assign({}, state);
 
-  if (name === 'new') {
-    data = Object.assign({}, data, {new: state.new});
-    data = formCheckArrayReducer(name, value, data);
-  } else if (name === 'youthIDInstead') {
-    data[name] = value;
-    data = youthID(value, data);
+  if (name === 'cardAction') {
+    data = cardAction(value, data, defaultState());
+  } else if (name === 'youthIDInstead' || name === 'youthIDOnly') {
+    data = youthID(value, data, name);
+  } else if (name === 'IDDL') {
+    data = IDDL(value, data, defaultState());
   } else {
-    data[name] = value;
+    // placeholder possibility for handling changing one of two cards from the summary screen
+    // cardAction container could pass a value passed by the Link to the radio collection's name prop
+    data[name].action = value;
   }
   return Object.assign({}, state, data);
 };

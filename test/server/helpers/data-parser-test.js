@@ -29,12 +29,12 @@ describe('dataParser', function() {
       let val = 'decline';
       assert.equal(dataParser.strToBool(val), 'decline');
     });
-  
+
     it('returns false when data equals "No"', function(){
       let val = 'No';
       assert.equal(dataParser.strToBool(val), false);
     });
-  
+
     it('returns true when data equals "Yes"', function() {
       let val = 'Yes';
       assert.equal(dataParser.strToBool(val), true);

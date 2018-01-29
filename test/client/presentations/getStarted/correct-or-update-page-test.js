@@ -20,13 +20,10 @@ describe('CorrectOrUpdate', function() {
 
     beforeEach(function() {
       let cardType = {
-        new: [],
-        renew: '',
-        change: '',
+        IDDL: [],
+        cardAction: 'change',
         youthIDInstead: ''
       };
-
-      let cardAction = 'change';
 
       let cardChanges = {
         correctOrUpdate: '',
@@ -44,7 +41,6 @@ describe('CorrectOrUpdate', function() {
 
       props = {
         cardType,
-        cardAction,
         cardChanges,
         onChange,
         validations
@@ -52,7 +48,7 @@ describe('CorrectOrUpdate', function() {
     });
 
     it('if the user is changing a DL the instruction text mentions DL and has radio buttons', function() {
-      props.cardType.change = 'DL';
+      props.cardType.IDDL = ['DL'];
 
       let component = render(
         <Wrapper>
@@ -65,7 +61,7 @@ describe('CorrectOrUpdate', function() {
     });
 
     it('making a selection causes the section form to appear', function() {
-      props.cardType.change = 'DL'
+      props.cardType.IDDL = ['DL'];
       props.cardChanges.correctOrUpdate = 'correct';
       let component = render(
         <Wrapper>
@@ -77,7 +73,7 @@ describe('CorrectOrUpdate', function() {
     });
 
     it('the section form shows 8 checkboxes', function() {
-      props.cardType.change = 'DL'
+      props.cardType.IDDL = ['DL']
       props.cardChanges.correctOrUpdate = 'correct';
       let component = render(
         <Wrapper>

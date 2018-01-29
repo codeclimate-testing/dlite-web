@@ -28,7 +28,6 @@ function mapStateToProps(state) {
   return {
     veteransService: state.application.veteransService,
     cardType:        state.application.cardType,
-    cardAction:      state.application.cardAction,
     focused:         state.ui.focus,
     validations:     state.ui.validations
   };

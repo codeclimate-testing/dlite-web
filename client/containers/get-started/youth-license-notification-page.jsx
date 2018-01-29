@@ -11,6 +11,7 @@ import Presentation               from '../../presentations/get-started/youth-li
 import { updateCardType }         from '../../actions/index';
 import { getDL }                  from '../../helpers/data/card-type';
 import { ageChecks }              from '../../helpers/calculate-age';
+import { hasMultipleCards }       from '../../helpers/data/cards';
 
 const Page = (props) => {
   let validations         = new YouthDLValidator(props.cardType.youthIDInstead, props.validations);
@@ -28,6 +29,7 @@ const Page = (props) => {
       selectedValue     = { selectedValue }
       continueHidden    = { continueHidden }
       validations       = { validations }
+      multCards         = { hasMultipleCards(props) }
     />
   )
 };

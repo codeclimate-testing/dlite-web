@@ -13,25 +13,30 @@ function fakeClientData() {
       'suffix': 'II'
     },
     'cardType': {
-      'new': ['DL'],
-      'renew': 'ID',
-      'change': 'ID',
-      'replace': 'ID',
-      'youthIDInstead': ''
+      'IDDL': ['DL', 'ID'],
+      'youthIDInstead': '',
+      ID: {
+        isApplying: true,
+        action: 'new'
+      },
+      DL: {
+        isApplying: true,
+        action: 'renew'
+      }
     },
     'cardChanges': {
-      'correctOrUpdate': 'correct',
-      'sections': ['name', 'other'],
-      'other': 'I dislike my photograph'
+      'correctOrUpdate': '',
+      'sections': [],
+      'other': ''
     },
     'cardReplacement': {
-      'reason': 'damaged'
+      'reason': ''
     },
     'currentCardInfo': {
-      'number': 'e203f390',
-      'day': '13',
-      'month': '10',
-      'year': '2000'
+      number: 'aewe',
+      day: '09',
+      month: '10',
+      year: '2020'
     },
     'dateOfBirth': {
       'day': '13',
@@ -136,14 +141,44 @@ function fakeClientData() {
       'phoneNumber3': '8765'
     }
   };
-}
+};
+
+function updateCorrect() {
+  let data = fakeClientData();
+  data.cardType.IDDL = ['DL'];
+  data.cardType.DL = {
+    isApplying: true,
+    action: 'change'
+  };
+  data.cardChanges =  {
+    'correctOrUpdate': 'correct',
+    'sections': ['name', 'other'],
+    'other': 'I dislike my photograph'
+  };
+  return data;
+};
+
+function replaceDamaged() {
+  let data = fakeClientData();
+  data.cardType.IDDL = ['DL'];
+  data.cardType.DL = {
+    isApplying: true,
+    action: 'replace'
+  };
+  data.cardReplacement = {
+    'reason': 'damaged'
+  };
+  return data;
+};
 
 function fakeRecords() {
   let clientData = fakeClientData();
   return parse(clientData);
-}
+};
 
 module.exports = {
-  fakeClientData: fakeClientData,
-  fakeRecords: fakeRecords
+  fakeClientData    : fakeClientData,
+  replaceDamaged    : replaceDamaged,
+  updateCorrect     : updateCorrect,
+  fakeRecords       : fakeRecords
 };

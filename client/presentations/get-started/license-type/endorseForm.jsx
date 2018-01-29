@@ -21,7 +21,7 @@ const Form = (props) => {
         <CheckboxCollection
           {...props}
           name  = 'endorsement'
-          array = {props.licenseType}
+          array = {props.licenseType.endorsement }
           text  = {text}
           onBlur = { props.onBlurValidate }
           errorMessage={ props.validations.endorsement() }

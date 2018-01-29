@@ -26,10 +26,9 @@ describe('Data helpers for page', function() {
   it('#nextPath return the full path given page with a function defining its next page', function() {
     let props = {
       cardType: {
-        new: ['ID', 'DL'],
-        renew: ''
-      },
-      cardAction: 'new'
+        IDDL: ['ID', 'DL'],
+        cardAction: 'new'
+      }
     };
 
     assert.equal(

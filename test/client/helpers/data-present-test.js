@@ -70,23 +70,9 @@ describe('dataPresent', function() {
   });
 
   describe('#cardType', function() {
-    it('is true when the new array has a value but the renew string is empty', function() {
-      assert(
-        dataPresent.cardType({new: ['DL'], renew: ''}),
-        'card type not true with one field'
-      );
-    });
-
-    it('is true when the new array has a value and the renew string has a value', function() {
-      assert(
-        dataPresent.cardType({new: ['DL'], renew: 'ID'}),
-        'card type not true with both fields'
-      );
-    });
-
     it('is false when no data are present', function() {
       assert(
-        !dataPresent.cardType({new: [], renew: ''}),
+        !dataPresent.cardType({IDDL: [], cardAction: ''}),
         'card type not false when no fields selected'
       );
     });

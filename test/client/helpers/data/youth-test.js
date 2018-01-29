@@ -23,8 +23,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          DL: true,
-          ID: false,
+          IDDL: ['DL'],
+          cardAction: 'new',
           youthIDInstead: 'No'
         }
       };
@@ -40,8 +40,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          DL: true,
-          ID: false,
+          IDDL: ['DL'],
+          cardAction: 'new',
           youthIDInstead: 'No'
         }
       };
@@ -57,8 +57,8 @@ describe('Data helpers for youth', function() {
           day: today.getDate().toString()
         },
         cardType: {
-          DL: true,
-          ID: false,
+          IDDL: ['DL'],
+          cardAction: 'new',
           youthIDInstead: 'Yes'
         }
       };
@@ -76,7 +76,8 @@ describe('Data helpers for youth', function() {
           day: today.getDate().toString()
         },
         cardType: {
-          new: ['ID', 'DL']
+          IDDL: ['ID', 'DL'],
+          cardAction: 'new'
         }
       };
       assert.equal(tooYoungForDL(data), true);
@@ -91,7 +92,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          new: ['ID']
+          IDDL: ['ID'],
+          cardAction: 'new'
         }
       };
       assert.equal(tooYoungForDL(data), false);
@@ -106,7 +108,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          new: ['ID']
+          IDDL: ['ID'],
+          cardAction: 'new'
         }
       };
       assert.equal(tooYoungForDL(data), false);
@@ -123,7 +126,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          new: ['ID', 'DL']
+          IDDL: ['ID', 'DL'],
+          cardAction: 'new'
         }
       };
       assert.equal(tooYoungForDL(data), true);
@@ -138,7 +142,8 @@ describe('Data helpers for youth', function() {
           day: day.toString()
         },
         cardType: {
-          new: ['ID']
+          IDDL: ['ID'],
+          cardAction: 'new'
         }
       };
       assert.equal(tooYoungForDL(data), false);

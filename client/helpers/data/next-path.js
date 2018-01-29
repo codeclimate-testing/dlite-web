@@ -29,7 +29,7 @@ import {
 
 export const chooseCardType = (props) => {
   let key = 'realID';
-
+  
   if (tooYoungForDL(props)) {
     key = 'youthIDInstead';
   } else if (hasExistingCard(props) || isChangingCard(props) || isReplacingCard(props)) {

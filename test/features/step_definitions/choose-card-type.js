@@ -47,45 +47,17 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.when('I click to renew my ID', function(done) {
+  world.when('I choose ID', function(done) {
     browser
-      .click('label[for="renew-ID"]')
+      .click('label[for="IDDL-ID"]')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.when('I click to renew my DL', function(done) {
+  world.when('I choose DL', function(done) {
     browser
-      .click('label[for="renew-DL"]')
+      .click('label[for="IDDL-DL"]')
       .then(() => {done(); })
-      .catch(done);
-  });
-
-  world.then('I choose to change my DL', function(done) {
-    browser
-      .click('label[for="change-DL"]')
-      .then(() => {done(); })
-      .catch(done);
-  });
-
-  world.then('I choose to change my ID', function(done) {
-    browser
-      .click('label[for="change-ID"]')
-      .then(() => {done(); })
-      .catch(done);
-  });
-
-  world.then('I choose to replace my DL', function(done) {
-    browser
-      .click('label[for="replace-DL"]')
-      .then(done)
-      .catch(done);
-  });
-
-  world.then('I choose to replace my ID', function(done) {
-    browser
-      .click('label[for="replace-ID"]')
-      .then(done)
       .catch(done);
   });
 
