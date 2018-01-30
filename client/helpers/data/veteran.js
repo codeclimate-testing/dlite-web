@@ -1,7 +1,11 @@
 'use strict';
 
 import { hasValue }           from '../data/validations';
-import { hasExistingCard }    from './card-actions'
+import {
+  hasExistingCard,
+  isGettingNew,
+  isCardActionSelected
+ }    from './card-actions'
 
 export const mustChooseBenefits = (props) => {
   return props.veteransService.isVeteran === 'Yes'
@@ -23,3 +27,18 @@ export const mustChooseAddVeteranIdentifier = (props) => {
   return props.veteransService.isVeteran === 'Yes' && hasExistingCard(props) && props.veteransService.previouslyDesignated === 'No'
 };
 
+export const showBenefitsPage = (props) => {
+  return props.veteransService.isVeteran === 'Yes';
+};
+
+export const showPreviousDesignationPage = (props) => {
+  return props.veteransService.isVeteran === 'Yes' && isCardActionSelected(props) &&  !isGettingNew(props) ;
+};
+
+export const showIdentifierPage = (props) => {
+  let isVeteran = props.veteransService.isVeteran === 'Yes';
+  let isNewApplication = isGettingNew(props) && isCardActionSelected(props);
+  let preDesignation = props.veteransService.previouslyDesignated;
+
+  return (isVeteran && isNewApplication) || (isVeteran && preDesignation);
+};

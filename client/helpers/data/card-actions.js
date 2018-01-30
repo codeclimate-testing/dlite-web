@@ -15,3 +15,7 @@ export const isReplacingCard = (props) => {
 export const isGettingNew = (props) => {
   return props.cardType.cardAction === 'new';
 };
+
+export const isCardActionSelected = (props) => {
+  return props.cardType.cardAction;
+}

@@ -1,12 +1,12 @@
 'use strict';
 
-import React                from 'react';
+import React                    from 'react';
 
-import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
-import RadioCollection      from '../../radio-selector-collection.jsx';
-import MessageBox           from '../../message-box.jsx';
-import { getDL }            from '../../../helpers/data/card-type';
-
+import radioYesNoGroup          from '../../radio-yes-no-group.jsx';
+import RadioCollection          from '../../radio-selector-collection.jsx';
+import MessageBox               from '../../message-box.jsx';
+import { getDL }                from '../../../helpers/data/card-type';
+import { showIdentifierPage }   from '../../../helpers/data/veteran';
 const questionText = {
   previous: {
     ID: 'Would you like to keep "Veteran" on your ID for a $5 fee?',
@@ -57,25 +57,27 @@ const MessageRemovingDesignation = (props) => {
 };
 
 const VeteransIdentifier = (props) => {
-  if (!(props.veteransService.previouslyDesignated || (props.cardType.cardAction !== 'renew' && props.veteransService.isVeteran === 'Yes'))) { return null; }
 
-  return (
-    <div className='veterans-identifier-form'>
-      <Question {...props} />
-      <p>Many organizations give discounts with a valid military ID.</p>
-      <div className='input-container'>
-        <RadioCollection
-          {...props}
-          name='veteransIdentifier'
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+  if(showIdentifierPage(props)) {
+    return (
+      <div className='veterans-identifier-form'>
+        <Question {...props} />
+        <p>Many organizations give discounts with a valid military ID.</p>
+        <div className='input-container'>
+          <RadioCollection
+            {...props}
+            name='veteransIdentifier'
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
+        </div>
+
+        <MessageAddAmount {...props} />
+        <MessageRemovingDesignation {...props} />
       </div>
-
-      <MessageAddAmount {...props} />
-      <MessageRemovingDesignation {...props} />
-    </div>
-  );
+    );
+  }
+  return null;
 };
 
 export default VeteransIdentifier;

@@ -28,11 +28,6 @@ describe('VeteransServicePage', function() {
       cardAction: 'new'
     };
 
-    let legalName = {
-      firstName: 'John',
-      lastName: 'Doe'
-    };
-
     let onChange = spy();
 
     let validations = {
@@ -47,7 +42,6 @@ describe('VeteransServicePage', function() {
     props = {
       veteransService,
       cardType,
-      legalName,
       onChange,
       validations
     }
@@ -145,12 +139,10 @@ describe('VeteransServicePage', function() {
 
     describe('when selecting veterans designation', function() {
       beforeEach(function() {
-        let veteransService = {
-          isVeteran: 'Yes',
-          receiveBenfits: 'Yes',
-          previouslyDesignated: '',
-          veteransIdentifier: ''
-        };
+        props.veteransService.isVeteran             = 'Yes';
+        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.previouslyDesignated  = '';
+        props.veteransService.veteransIdentifier    = '';
       });
 
       it('selecting No shows veterans identifier section for new designation', function() {
@@ -208,5 +200,170 @@ describe('VeteransServicePage', function() {
       });
     });
   });
+
+  describe('when veteran is updating a card', function() {
+    beforeEach(function() {
+      props.cardType.cardAction = 'change';
+    });
+
+    it('selecting Yes renders benefits and designation forms', function() {
+      props.veteransService.isVeteran = 'Yes';
+
+      let component = render(
+        <Wrapper>
+          <VeteransPage {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.veterans-benefits-form').length, 'veterans benefits form did not render');
+      assert.ok(component.find('.veterans-previous-designation-form').length, 'veterans previous designation form did not render');
+      assert.ok(!component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+    });
+
+    describe('when selecting veterans designation', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran             = 'Yes';
+        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.previouslyDesignated  = '';
+        props.veteransService.veteransIdentifier    = '';
+      });
+
+      it('selecting No shows veterans identifier section for new designation', function() {
+        props.veteransService.previouslyDesignated = 'No';
+
+        let component = render(
+          <Wrapper>
+          <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.new-designation').length, 'new designation form did not render');
+      });
+
+      it('selecting Yes shows veterans identifier section for previous designation', function() {
+        props.veteransService.previouslyDesignated = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
+      });
+    });
+
+    describe('when selecting veterans identifier', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran = 'Yes';
+        props.veteransService.receiveBenefits = 'Yes';
+        props.veteransService.previouslyDesignated = 'Yes';
+      });
+
+      it('shows removal notification when selecting No and veteran was previously designated', function() {
+        props.veteransService.veteransIdentifier = 'No';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
+      });
+
+      it('shows fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+      });
+    });
+  });
+
+  describe('when veteran is replacing a card', function() {
+    beforeEach(function() {
+      props.cardType.cardAction = 'replace';
+    });
+
+    it('selecting Yes renders benefits and designation forms', function() {
+      props.veteransService.isVeteran = 'Yes';
+
+      let component = render(
+        <Wrapper>
+          <VeteransPage {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.veterans-benefits-form').length, 'veterans benefits form did not render');
+      assert.ok(component.find('.veterans-previous-designation-form').length, 'veterans previous designation form did not render');
+      assert.ok(!component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+    });
+
+    describe('when selecting veterans designation', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran             = 'Yes';
+        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.previouslyDesignated  = '';
+        props.veteransService.veteransIdentifier    = '';
+      });
+
+      it('selecting No shows veterans identifier section for new designation', function() {
+        props.veteransService.previouslyDesignated = 'No';
+
+        let component = render(
+          <Wrapper>
+          <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.new-designation').length, 'new designation form did not render');
+      });
+
+      it('selecting Yes shows veterans identifier section for previous designation', function() {
+        props.veteransService.previouslyDesignated = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
+        assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
+      });
+    });
+
+    describe('when selecting veterans identifier', function() {
+      beforeEach(function() {
+        props.veteransService.isVeteran = 'Yes';
+        props.veteransService.receiveBenefits = 'Yes';
+        props.veteransService.previouslyDesignated = 'Yes';
+      });
+
+      it('shows removal notification when selecting No and veteran was previously designated', function() {
+        props.veteransService.veteransIdentifier = 'No';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
+      });
+
+      it('shows fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+      });
+    });
+  });
+
 });
 
