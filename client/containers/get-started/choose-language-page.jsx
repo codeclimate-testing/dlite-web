@@ -8,7 +8,6 @@ import Presentation           from "../../presentations/get-started/choose-langu
 
 const Page = (props) => {
   let onBack            =   handlers.navigateOnBack(props);
-
   return (
     <Presentation
       {...props}
@@ -21,34 +20,23 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    appLanguage:  state.application.language.appLanguage,
     focused:      state.ui.focus,
-    validations:  state.ui.validations
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  const onChange                = handlers.onInputChange(updateLanguage, dispatch);
-  const onFormSubmit            = handlers.onFormSubmit(dispatch);
-  const onBlurValidate          = handlers.onBlurValidate(dispatch);
-  const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
-  const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
-
-  return {
-    onChange,
-    onFormSubmit,
-    onBlurValidate,
-    onFocusClearValidation,
-    onSubmitShowErrors,
-    dispatch
+    appLanguage:  state.application.language.appLanguage
   };
 };
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const { dispatch, onFormSubmit }  = dispatchProps;
-  const { appLanguage }             = stateProps;
+  const { dispatch }        = dispatchProps;
+  const { appLanguage }     = stateProps;
 
   return Object.assign({}, ownProps, {
+    onFocus               : handlers.onFocus(dispatch),
+    onFocusClearValidation: handlers.onFocusClearValidation(dispatch),
+    onBlurValidate        : handlers.onBlurValidate(dispatch),
+    onBlur                : handlers.onBlur(dispatch),
+    onChange              : handlers.onInputChange(updateLanguage, dispatch),
+    appLanguage           : stateProps.appLanguage,
+    focused               : stateProps.focused,
     onSubmit: (e) => {
       e.preventDefault();
 
@@ -60,4 +48,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Page);
+export default connect(mapStateToProps, null, mergeProps)(Page);
