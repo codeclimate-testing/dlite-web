@@ -59,7 +59,7 @@ const homeAddressSameAsMailing = (props) => {
 const traitsHeightWeight = (props) => {
   return hasAllAttributes(props, ['weight', 'heightFeet']);
 };
- 
+
 const organDonation = (props) => {
   return hasAllAttributes(props, ['donateMoney', 'donateOrgan']);
 };
@@ -78,6 +78,10 @@ const licenseIssues = (props) => {
 const licenseAndIdHistory = (props) => {
   return props && (props.isIssued === 'No' || (date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy'])));
 };
+
+const cardIssued = (props) => {
+  return props.licenseAndIdHistory.isIssued === 'Yes';
+}
 
 const namesHistory = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames', 'previousNames']);
@@ -181,6 +185,7 @@ export {
   hasMedicalCondition,
   medicalHistory,
   licenseIssues,
+  cardIssued,
   licenseAndIdHistory,
   politicalPartyChoose,
   contactMethods,

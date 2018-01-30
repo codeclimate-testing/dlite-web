@@ -10,7 +10,7 @@ const text = {
 };
 
 const EnterLicenseAndIdHistory = (props) => {
-  if(props.licenseAndIdHistory.isIssued !== 'Yes') { return null; }
+  if (!props.showIf) { return null; }
 
   return (
     <div className='existing-license-id-number-form'>
