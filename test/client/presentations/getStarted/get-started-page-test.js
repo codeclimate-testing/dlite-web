@@ -11,7 +11,7 @@ import GetStartedPage           from '../../../../client/presentations/get-start
 import store                    from '../../support/page-store';
 import translations             from '../../../../client/i18n';
 
-describe.only('GetStartedPage', function() {
+describe('GetStartedPage', function() {
   const Wrapper = wrapperGenerator(store);
 
   describe('when it renders initially', function() {
@@ -53,7 +53,7 @@ describe.only('GetStartedPage', function() {
         reducedFee,
         seniorID,
         onChange
-      }
+      };
     });
 
     describe('applying for a DL', function() {
@@ -120,7 +120,7 @@ describe.only('GetStartedPage', function() {
         assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.replacingLicense), true);
         assert.equal(component.text().includes(translations.intro.getStartedPage.explanation.replace.license), true);
       });
-    })
+    });
 
     describe('applying for ID', function() {
       beforeEach(function() {
@@ -411,7 +411,7 @@ describe.only('GetStartedPage', function() {
           );
           assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.classes.A), true);
         });
-        
+
         it('shows class B when user selects trailer', function() {
           props.licenseType.type = ['trailer']
 

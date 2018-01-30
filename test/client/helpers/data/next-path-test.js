@@ -53,7 +53,7 @@ const seniorYear = (today) => {
 const today = new Date();
 
 describe('Data helpers for determining next path from current page and props', function() {
-  let today, data;
+  let data;
   beforeEach(function() {
     data = {
       dateOfBirth: {
@@ -207,7 +207,7 @@ describe('Data helpers for determining next path from current page and props', f
 
       it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
         data.cardType = buildCardType('ID', 'replace');
-        assert.equal(socialSecurity(props), 'nameHistory');
+        assert.equal(socialSecurity(data), 'nameHistory');
       });
     });
   });
@@ -238,12 +238,12 @@ describe('Data helpers for determining next path from current page and props', f
         assert.equal(nameHistory(data), 'licenseIssues');
       });
 
-      it('goes to veterans page if user is changing an existing DL (or in all other cases)', function() {
+      it('goes to lienseIssues page if user is getting a DL that is not new', function() {
         data.cardType = buildCardType('DL', 'change');
-        assert.equal(nameHistory(data), 'veterans');
+        assert.equal(nameHistory(data), 'licenseIssues');
       });
 
-      it('goes to veterans page if user is getting a new ID', function() {
+      it('goes to veterans page if user is getting an ID', function() {
         data.cardType = buildCardType('ID', 'new');
         assert.equal(nameHistory(data), 'veterans');
       });

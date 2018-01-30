@@ -112,7 +112,7 @@ export const medicalHistory = (props) => {
 
 export const nameHistory = (props) => {
   let key = 'veterans';
-  if (getNewDL(props)) {
+  if (getDL(props)) {
     key = 'licenseIssues';
   }
   return key;
