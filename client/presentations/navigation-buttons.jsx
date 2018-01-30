@@ -6,21 +6,8 @@ import BackButton     from './back-button.jsx';
 
 import { hasValue }   from '../helpers/data/validations';
 import errorClass     from '../helpers/validations/error-class';
+import { ErrorMessageBox } from './validations.jsx'
 
-const ErrorMessageBox = (props) => {
-  let className = errorClass(props);
-  if (!hasValue(className)) { return null; }
-
-  className += ' message-box';
-
-  return (
-    <div className={className}>
-      <div className='unit error-icon'></div>
-      &nbsp;
-      {props.errorMessage}
-    </div>
-  );
-};
 
 const NavigationButtons = (props) => {
   const disabled = props.continueDisabled;

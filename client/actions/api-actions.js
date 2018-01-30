@@ -5,6 +5,13 @@ require('es6-promise').polyfill();
 
 export const postData = function (body) {
   return function (dispatch) {
+    dispatch({
+      type: 'UPDATE_API_STATUS',
+      payload: {
+        name:   'apiStatus',
+        value:  'loading'
+      }
+    });
     return fetch('/api/application',{
       method: 'POST',
       credentials: 'include',
@@ -15,7 +22,12 @@ export const postData = function (body) {
       body: JSON.stringify(body)
     })
       .then(function(res){
-        return res.json();
+        if (res.status === 200) {
+          return res.json();
+        }
+        else{
+          throw new Error('api-fail');
+        }
       })
       .then(function (data) {
         dispatch({
@@ -23,6 +35,13 @@ export const postData = function (body) {
           payload: {
             data: data,
             error: null }
+        });
+        dispatch({
+          type: 'UPDATE_API_STATUS',
+          payload: {
+            name:   'apiStatus',
+            value:  'success'
+          }
         });
       })
       .catch(function (err) {
@@ -32,15 +51,34 @@ export const postData = function (body) {
             data: {},
             error: err.message }
         });
+        dispatch({
+          type: 'UPDATE_API_STATUS',
+          payload: {
+            name:   'apiStatus',
+            value:  'error'
+          }
+        });
       });
   };
 };
 
 export const getData = function (id) {
   return function (dispatch) {
+    dispatch({
+      type: 'UPDATE_API_STATUS',
+      payload: {
+        name:   'apiStatus',
+        value:  'loading'
+      }
+    });
     return fetch('/api/application/' + id)
       .then(function(res){
-        return res.json();
+        if(res.status >= 200 && res.status <= 299) {
+          return res.json();
+        }
+        else{
+          throw new Error('api-fail');
+        }
       })
       .then(function (data) {
         dispatch({
@@ -49,6 +87,13 @@ export const getData = function (id) {
             data: data,
             error: null }
         });
+        dispatch({
+          type: 'UPDATE_API_STATUS',
+          payload: {
+            name:   'apiStatus',
+            value:  'success'
+          }
+        });
       })
       .catch(function (err) {
         dispatch({
@@ -56,6 +101,13 @@ export const getData = function (id) {
           payload: {
             data: {},
             error: err.message }
+          });
+          dispatch({
+            type: 'UPDATE_API_STATUS',
+            payload: {
+              name:   'apiStatus',
+              value:  'error'
+            }
           });
       });
   };

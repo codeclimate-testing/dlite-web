@@ -50,11 +50,11 @@ describe('DateInput', function() {
       props.validations = {
         month: () => '',
         day: () => '',
-        year: () => 'error' 
+        year: () => 'error'
       };
       component = render(
         <DateInput {...props} />
-      ); 
+      );
     });
 
     it('it will have additional text', function() {

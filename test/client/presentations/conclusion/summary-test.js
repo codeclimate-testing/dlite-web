@@ -38,7 +38,36 @@ import {
   GuardianSignature
 } from '../../../../client/presentations/conclusion/summary/index.js';
 
-describe('Summary section', function() {
+import SummaryPage        from '../../../../client/presentations/conclusion/summary-page.jsx';
+
+
+describe('SummaryPage', function() {
+  const Wrapper = wrapperGenerator(store);
+  let props, component;
+
+  beforeEach(function() {
+    props = {
+      application: data.application,
+      server: ''
+    };
+    component = render(
+      <Wrapper>
+        <SummaryPage { ...props } />
+      </Wrapper>
+    );
+  });
+
+  // TODO add testing here or elsewhere for summary-handler
+  // it('saving data with server error re-renders page with data', function() {
+  //   assert.ok(component.find('.error').length);
+  // });
+
+  // it('saving data with server error shows error message', function() {
+  //   assert.ok(component.text().includes('Sorry, something went wrong'));
+  // });
+});
+
+describe('Summary components', function() {
   const Wrapper = wrapperGenerator(store);
   let props = data.application;
 

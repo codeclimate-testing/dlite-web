@@ -37,6 +37,9 @@ import {
   OptOut,
   Empty
 } from './summary/index.js';
+import {
+  ErrorMessageBox
+} from '../validations.jsx';
 
 const header = {
   question: 'Please take a minute to review your answers'
@@ -86,7 +89,8 @@ const ButtonComponent = (props) => {
 
 
 const SummaryPage = (props) => {
-  let application = props.state;
+
+  let application = props.application;
 
   let contents = [
 
@@ -142,25 +146,32 @@ const SummaryPage = (props) => {
     return summaries;
   }, []);
 
+  let showOrHide = props.server.apiStatus === 'loading' ? 'hide' : '';
+
   return (
-    <Page
-      {...props}
-      sectionKey='summary'
-    >
-      <form onSubmit  = { props.onSubmit }>
-        <h2 className='question'>{header.question}</h2>
-        <div className= 'summary'>
-          <Alerts
-            cardType    = {application.cardType}
-            dateOfBirth = {application.dateOfBirth}
+      <Page
+        {...props}
+        sectionKey='summary'
+      >
+        <div className={props.server.apiStatus}/>
+        <form onSubmit  = { props.onSubmit } className={showOrHide}>
+          <h2 className='question'>{header.question}</h2>
+
+          <ErrorMessageBox
+            errorMessage={props.server.apiStatus === 'error' ? 'Sorry, something went wrong' : '' }
           />
-          {contents}
-          <ButtonComponent
-            continueDisabled = { props.continueDisabled }
-          />
-        </div>
-      </form>
-    </Page>
+          <div className= 'summary'>
+            <Alerts
+              cardType    = {application.cardType}
+              dateOfBirth = {application.dateOfBirth}
+            />
+            {contents}
+            <ButtonComponent
+              continueDisabled = { props.continueDisabled }
+            />
+          </div>
+        </form>
+      </Page>
   )
 };
 

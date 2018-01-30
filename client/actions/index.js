@@ -65,6 +65,7 @@ export const TYPES = {
   CLEAR_VALIDATIONS:                      'CLEAR_VALIDATIONS',
   ADD_VALIDATION:                         'ADD_VALIDATION',
   REMOVE_VALIDATION:                      'REMOVE_VALIDATION'
+
 };
 
 export const createApplicationID                      = generateFormAction(TYPES.CREATE_APPLICATION_ID);

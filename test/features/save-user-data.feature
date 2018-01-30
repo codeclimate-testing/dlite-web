@@ -167,12 +167,9 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my veterans service
-    Then Then I will be on the page for veteran related services
+    Then I will be on the page for veteran related services
     When I click "Next" to continue
     Then I will be on the page with my summary
-
-
-
 
   Scenario: renewing one new ID and no social
     Given I go to the new online DL application page
@@ -318,14 +315,15 @@ Feature: Save user data
     Then I will see voter registration choice as I am already registered to vote in California in summary
     Then I will see that I declined to choose a political party
     Then I will see my social security on that summary
-    When I visit the required documents page
-    Then I will not see a section about medical information
-    Then I will not see any information about proving veterans status
-    And I go to the page with my summary
-    When I click "Next" to continue
-    Then I will be on the page for appointment preparation
+    # TODO: integrate these tests back in
+    # When I click "Next" to continue
+    # Then I will see a blank page with the loading icon
+    # Then I will be on the page for appointment preparation
+    When I visit appointment preparation page
     And I click link for required documents
     Then I will be on the required documents page
+    Then I will not see a section about medical information
+    Then I will not see any information about proving veterans status
 
 
   Scenario: Replacing a DL

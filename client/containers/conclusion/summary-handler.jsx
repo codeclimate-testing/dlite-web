@@ -4,16 +4,13 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { Link }             from 'react-router-dom';
 import Presentation         from '../../presentations/conclusion/summary-page.jsx';
-import navigateOnSubmit     from '../../helpers/handlers/navigate-on-submit';
 import { postData }         from '../../actions/api-actions';
+import alicePath            from '../../helpers/alice-path';
 
 const Page = props =>{
-  let onSubmit            = navigateOnSubmit('/appointment-preparation', props);
+
   return (
-    <Presentation
-      {...props}
-      onSubmit            = { onSubmit }
-    />
+    <Presentation {...props} />
   );
 };
 
@@ -23,12 +20,25 @@ function mapStateToProps(state) {
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const { application }   = stateProps;
+  const { server }        = stateProps;
   const { dispatch }      = dispatchProps;
 
   return Object.assign({}, ownProps, {
-    state: application,
-    onSubmit: () => {
-      dispatch(postData(application));
+    application: application,
+    server: server,
+    onSubmit: (e) => {
+      e.preventDefault();
+      dispatch(postData(application))
+      .then(
+        () => {
+          if(server.apiStatus === 'success') {
+            return ownProps.history.push(alicePath('/appointment-preparation'));
+          }
+
+          return ownProps.history.push(alicePath('/summary'));
+        }
+      );
+
     }
   });
 };

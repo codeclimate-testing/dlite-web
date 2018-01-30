@@ -347,4 +347,8 @@ module.exports = function(world) {
   world.then('I will be on the page for guardian signature', function(done){
     assertOnPage('.guardian-signature-form', /guardian-signature/, done);
   });
+
+  world.then('I will see a blank page with the loading icon', function(done) {
+    assertOnPage('.loading', /summary/, done);
+  });
 };

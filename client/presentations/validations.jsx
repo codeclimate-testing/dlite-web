@@ -37,3 +37,18 @@ export const errorMessage = (errors) => {
 export const errorClass = (message) => {
   return hasValue(message) ? 'error' : ''
 };
+
+export const ErrorMessageBox = (props) => {
+  let className = errorClass(props) || errorClass(props.errorMessage);
+  if (!hasValue(className)) { return null; }
+
+  className += ' message-box';
+
+  return (
+    <div className={className}>
+      <div className='unit error-icon'></div>
+      &nbsp;
+      {props.errorMessage}
+    </div>
+  );
+};
