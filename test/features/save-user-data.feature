@@ -204,8 +204,7 @@ Feature: Save user data
     Then I will see the page title has postfix " - My history"
     When I select previously used names No
     When I click "Next" to continue
-    Then I will be taken to the license issues page
-    And I visit the veteran services page
+    Then I will be on the page for veteran related services
     When I click No for veteran
     And I click "Next" to continue
     Then I will be on the page for organ donation

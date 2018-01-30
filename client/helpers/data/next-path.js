@@ -29,7 +29,7 @@ import {
 
 export const chooseCardType = (props) => {
   let key = 'realID';
-  
+
   if (tooYoungForDL(props)) {
     key = 'youthIDInstead';
   } else if (hasExistingCard(props) || isChangingCard(props) || isReplacingCard(props)) {
@@ -106,6 +106,14 @@ export const medicalHistory = (props) => {
 
   if (getNewDL(props)) {
     key = 'cardHistory';
+  }
+  return key;
+};
+
+export const nameHistory = (props) => {
+  let key = 'veterans';
+  if (getNewDL(props)) {
+    key = 'licenseIssues';
   }
   return key;
 };

@@ -10,6 +10,7 @@ import {
   replacementDetails,
   socialSecurity,
   medicalHistory,
+  nameHistory,
   organDonationPath,
   citizenship,
   votingEligibility,
@@ -159,7 +160,7 @@ const myHistory = [
     key: 'nameHistory',
     description: 'Names history',
     path: '/my-history/names/',
-    next: 'licenseIssues'
+    next: nameHistory
   },
   {
     key: 'licenseIssues',

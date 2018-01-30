@@ -10,344 +10,256 @@ import {
   realID,
   chooseLicenseClass,
   socialSecurity,
-  medicalHistory
+  medicalHistory,
+  nameHistory
 } from '../../../../client/helpers/data/next-path';
 
+const bothCards = {
+  IDDL: ['ID', 'DL'],
+  cardAction: 'new',
+  ID: {
+    isApplying: true,
+    action: 'new'
+  },
+  DL: {
+    isApplying: true,
+    action: 'new'
+  }
+};
+
+const buildCardType = (type, action) => {
+  let cardType = {
+    IDDL: [type],
+    cardAction: action,
+    ID: {
+      isApplying: false,
+      action: ''
+    },
+    DL: {
+      isApplying: false,
+      action: ''
+    },
+    youthIDInstead: ''
+  };
+  cardType[type].isApplying = true;
+  cardType[type].action = action;
+  return cardType;
+};
+
+const seniorYear = (today) => {
+  return (today.getFullYear() - 65).toString()
+};
+
+const today = new Date();
+
 describe('Data helpers for determining next path from current page and props', function() {
-  describe('#chooseCardType', function() {
-    it('if senior customer has existing card it will navigate to the existing card page', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
+  let today, data;
+  beforeEach(function() {
+    data = {
+      dateOfBirth: {
+        year: (today.getFullYear() - 40).toString(),
+        month: (today.getMonth()).toString(),
+        day: today.getDate().toString()
+      },
+      cardType: {
+        IDDL: [''],
+        cardAction: '',
+        ID: {
+          isApplying: false,
+          action: ''
         },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'renew'
+        DL: {
+          isApplying: false,
+          action: ''
         }
-      };
-
-      assert.equal(chooseCardType(data), 'currentCardInfo');
-    });
-
-    it('if too young for a DL diverts to the youth notifcation page', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 15).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'new'
-        }
-      };
-
-      assert.equal(chooseCardType(data), 'youthIDInstead');
-    });
-
-    it('if applying for a new ID and a senior', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'new'
-        }
-      };
-      assert.equal(chooseCardType(data), 'seniorID');
-    });
-
-    it('if applying for a new DL, will go to real id', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'new'
-        }
-      };
-      assert.equal(chooseCardType(data), 'realID');
-    });
+      }
+    };
   });
+  describe('#getStarted section', function() {
+    describe('##chooseCardType', function() {
 
-  describe('#currentCardInfo', function() {
-    it('if applying for an ID and a senior', function() {
-      let today = new Date();
+      it('if senior customer has existing card it will navigate to the existing card page', function() {
+        data.cardType = buildCardType('ID', 'renew');
+        data.dateOfBirth.year = seniorYear(today);
+        assert.equal(chooseCardType(data), 'currentCardInfo');
+      });
 
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'renew'
-        }
-      };
-      assert.equal(currentCardInfo(data), 'seniorID');
+      it('if too young for a DL diverts to the youth notifcation page', function() {
+        data.dateOfBirth.year =(today.getFullYear() - 15).toString();
+        data.cardType = buildCardType('DL', 'new');
+        assert.equal(chooseCardType(data), 'youthIDInstead');
+      });
+
+      it('if applying for a new ID and a senior', function() {
+        data.cardType = buildCardType('ID', 'new');
+        data.dateOfBirth.year = seniorYear(today);
+        assert.equal(chooseCardType(data), 'seniorID');
+      });
+
+      it('if applying for a new DL, will go to real id', function() {
+        data.cardType = buildCardType('DL', 'new');
+        assert.equal(chooseCardType(data), 'realID');
+      });
     });
 
-    it('if not eligible for senior id moves to real id', function() {
-      let today = new Date();
+    describe('##replacementDetails', function() {
+      it('takes seniors replacing a DL to the realID page', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('DL', 'replace');
+        assert.equal(replacementDetails(data), 'realID');
+      });
 
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'renew'
-        }
-      };
-      assert.equal(currentCardInfo(data), 'realID');
-    });
-  });
+      it('takes seniors replacing an ID to the seniorID page', function(){
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('ID', 'replace');
 
-  describe('#replacementDetails', function() {
-    it('takes seniors replacing a DL to the realID page', function() {
-      let today = new Date();
+        assert.equal(replacementDetails(data), 'seniorID');
+      });
 
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'replace'
-        }
-      };
-      assert.equal(replacementDetails(data), 'realID');
+      it('takes not-yet-seniors to the realID page', function() {
+        data.dateOfBirth.year = (today.getFullYear() - 30).toString();
+        data.cardType = buildCardType('DL', 'replace');
+        assert.equal(replacementDetails(data), 'realID');
+      });
     });
 
-    it('takes seniors replacing an ID to the seniorID page', function(){
-      let today = new Date();
+    describe('##currentCardInfo', function() {
+      it('if applying for an ID and a senior', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('ID', 'renew');
+        assert.equal(currentCardInfo(data), 'seniorID');
+      });
 
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'replace'
-        }
-      };
-      assert.equal(replacementDetails(data), 'seniorID');
+      it('if not eligible for senior id moves to real id', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('DL', 'renew');
+
+        assert.equal(currentCardInfo(data), 'realID');
+      });
     });
 
-    it('takes not-yet-seniors to the realID page', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 30).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'replace'
-        }
-      };
-      assert.equal(replacementDetails(data), 'realID');
-    });
-  });
-
-  describe('#realID', function() {
-    it('when getting a DL, it goes to the page for choosing a class', function() {
-      let data = {
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'renew'
-        }
-      };
-      assert.equal(realID(data), 'chooseLicenseClass');
-    });
-
-    it('if eligible for a reduced fee, it goes to that page', function() {
-      let data = {
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'renew'
-        }
-      };
-      assert.equal(realID(data), 'reducedFeeID');
-    });
-
-    it('goes to get started in other cases', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'renew'
-        },
-        seniorID: 'Yes'
-      };
-      assert.equal(realID(data), 'getStarted');
-    });
-  });
-
-  describe('#chooseLicenseClass', function() {
-    it('if eligible for a reduced fee, it goes to that page', function() {
-      let data = {
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        }
-      };
-      assert.equal(chooseLicenseClass(data), 'reducedFeeID');
-    });
-
-    it('goes to get started in other cases', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        },
-        seniorID: 'Yes'
-      };
-      assert.equal(chooseLicenseClass(data), 'getStarted');
-    });
-  });
-
-  describe('#updateAndCorrect', function() {
-    it('goes to seniorID page if user is senior updating an ID', function() {
-      let today = new Date();
-
-      let data = {
-        dateOfBirth: {
-          year: (today.getFullYear() - 65).toString(),
-          month: (today.getMonth()).toString(),
-          day: today.getDate().toString()
-        },
-        cardType: {
-          cardAction: 'change',
-          IDDL: ['ID']
-        },
-        cardChanges: {
+    describe('#updateAndCorrect', function() {
+      it('goes to seniorID page if user is senior updating an ID', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('ID', 'change');
+        data.cardChanges = {
           correctOrUpdate: 'update',
           sections: ['name']
-        }
-      };
-      assert.equal(updateAndCorrect(data), 'seniorID');
+        };
+        assert.equal(updateAndCorrect(data), 'seniorID');
+      });
+      it('otherwise goes to realID page', function() {
+        assert.equal(updateAndCorrect(data), 'realID');
+      });
+    });
+
+    describe('##realID', function() {
+      it('when getting a DL, it goes to the page for choosing a class', function() {
+        data.cardType = buildCardType('DL', 'renew');
+        assert.equal(realID(data), 'chooseLicenseClass');
+      });
+
+      it('if eligible for a reduced fee, it goes to that page', function() {
+        data.cardType = buildCardType('ID', 'renew');
+        assert.equal(realID(data), 'reducedFeeID');
+      });
+
+      it('goes to get started in other cases', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = buildCardType('ID', 'renew');
+        data.seniorID = 'Yes';
+        assert.equal(realID(data), 'getStarted');
+      });
+    });
+
+    describe('#chooseLicenseClass', function() {
+      it('if eligible for a reduced fee, it goes to that page', function() {
+        data.cardType = bothCards;
+        assert.equal(chooseLicenseClass(data), 'reducedFeeID');
+      });
+
+      it('goes to get started in other cases', function() {
+        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = bothCards;
+        data.seniorID = 'Yes';
+
+        assert.equal(chooseLicenseClass(data), 'getStarted');
+      });
     });
   });
 
-  describe('#socialSecurity', function() {
-    it('goes to medicalHistory page if user is replacing a DL', function() {
-      let props = {
-        cardType: {
-          cardAction: 'replace',
-          IDDL: ['DL'],
-          DL: {
-            action: 'replace'
-          }
-        }
-      };
-      assert.equal(socialSecurity(props), 'medicalHistory');
-    });
+  describe('#myBasics section', function() {
+    describe('#socialSecurity', function() {
+      it('goes to medicalHistory page if user is replacing a DL', function() {
+        data.cardType = buildCardType('DL', 'replace');
+        assert.equal(socialSecurity(data), 'medicalHistory');
+      });
 
-    it('goes to medicalHistory page if user is getting a new DL', function() {
-      let props = {
-        cardType: {
-          cardAction: 'new',
-          IDDL: ['DL'],
-          DL: {
-            action: 'new'
-          }
-        }
-      };
-      assert.equal(socialSecurity(props), 'medicalHistory');
-    });
+      it('goes to medicalHistory page if user is getting a new DL', function() {
+        data.cardType = buildCardType('DL', 'new');
+        assert.equal(socialSecurity(data), 'medicalHistory');
+      });
 
-    it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
-      let props = {
-        cardType: {
-          cardAction: 'new',
-          IDDL: ['ID'],
-          ID: {
-            action: 'new'
-          }
-        }
-      };
-      assert.equal(socialSecurity(props), 'cardHistory');
-    });
+      it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
+        data.cardType = buildCardType('ID', 'new');
+        assert.equal(socialSecurity(data), 'cardHistory');
+      });
 
-    it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
-      let props = {
-        cardType: {
-          cardAction: 'replace',
-          IDDL: ['ID'],
-          ID: {
-            action: 'replace'
-          }
-        }
-      };
-      assert.equal(socialSecurity(props), 'nameHistory');
+      it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
+        data.cardType = buildCardType('ID', 'replace');
+        assert.equal(socialSecurity(props), 'nameHistory');
+      });
     });
   });
 
-  describe('#medicalHistory', function() {
-    it('goes to cardHistory if user is getting a new DL', function() {
-      let props = {
-        cardType: {
-          cardAction: 'new',
-          IDDL: ['DL'],
-          DL: {
-            action: 'new'
-          }
-        }
-      };
-      assert.equal(medicalHistory(props), 'cardHistory');
+  describe('#myHistory section', function() {
+    describe('#medicalHistory', function() {
+      it('goes to cardHistory if user is getting a new DL', function() {
+        data.cardType = buildCardType('DL', 'new');
+
+        assert.equal(medicalHistory(data), 'cardHistory');
+      });
+
+      it('goes to nameHistory, skipping cardHistory, if user is changing an existing DL', function() {
+        data.cardType = buildCardType('DL', 'replace');
+
+        assert.equal(medicalHistory(data), 'nameHistory');
+      });
+
+      it('goes to nameHistory, skipping cardHistory, if user is getting a new ID', function() {
+        data.cardType = buildCardType('ID', 'new');
+        assert.equal(medicalHistory(data), 'nameHistory');
+      });
     });
 
-    it('goes to nameHistory, skipping cardHistory, if user is changing an existing DL', function() {
-      let props = {
-        cardType: {
-          cardAction: 'replace',
-          IDDL: ['DL'],
-          DL: {
-            action: 'replace'
-          }
-        }
-      };
-      assert.equal(medicalHistory(props), 'nameHistory');
+    describe('#nameHistory', function() {
+      it('goes to licenseIssues if user is getting a new DL', function() {
+        data.cardType = buildCardType('DL', 'new');
+        assert.equal(nameHistory(data), 'licenseIssues');
+      });
+
+      it('goes to veterans page if user is changing an existing DL (or in all other cases)', function() {
+        data.cardType = buildCardType('DL', 'change');
+        assert.equal(nameHistory(data), 'veterans');
+      });
+
+      it('goes to veterans page if user is getting a new ID', function() {
+        data.cardType = buildCardType('ID', 'new');
+        assert.equal(nameHistory(data), 'veterans');
+      });
     });
+  });
+
+  describe('#organDonation section', function() {
+
+  });
+
+  describe('#voterRegistration', function() {
+
+  });
+
+  describe('#conclusion section', function() {
+
   });
 });
 
