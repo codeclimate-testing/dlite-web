@@ -5,6 +5,9 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import Page                 from '../../containers/page.jsx';
 import UsedPreviousNames    from './names-history/used-previous-names.jsx';
 import EnterPreviousNames   from './names-history/enter-previous-names.jsx';
+import {
+  hasUsedPreviousNames
+} from '../../helpers/data/my-history';
 
 const NamesHistoryPage = (props) => {
   return (
@@ -20,6 +23,7 @@ const NamesHistoryPage = (props) => {
         <EnterPreviousNames
           {...props}
           errorMessage  = { props.validations.previousNames() }
+          showIf        = { hasUsedPreviousNames(props) }
         />
         <NavigationButtons
           {...props}

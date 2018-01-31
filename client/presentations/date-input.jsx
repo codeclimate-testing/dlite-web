@@ -27,7 +27,7 @@ const DateInput = (props) => {
         className     = { addError }
       >
         <ErrorIcon errorClass= { addError } />
-        {props.description}
+        {props.title}
       </label>
 
       <NumberInput

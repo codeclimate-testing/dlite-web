@@ -19,7 +19,7 @@ const Presentation = (props) => {
 
         <DateInput
           {...props}
-          description = 'Date of birth'
+          title       = 'Date of birth'
           values      = { props.dateOfBirth }
         />
 

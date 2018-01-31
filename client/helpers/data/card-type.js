@@ -49,3 +49,7 @@ export const prettyDL = (props) => {
 export const IDorDL = (props) => {
   return hasMultipleCards(props) ? 'both' : getID(props) ? 'ID' : getDL(props) ? 'DL' : 'none';
 };
+
+export const IDOnly = (props) => {
+  return getID(props) && !getDL(props);
+};

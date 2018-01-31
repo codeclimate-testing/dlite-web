@@ -5,6 +5,7 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import Page                 from '../../containers/page.jsx';
 import MedicalCondition     from './medical-history/medical-condition-info.jsx';
 import EnterMedicalInfo     from './medical-history/enter-medical-info.jsx';
+import { hasMedical }       from '../../helpers/data/my-history';
 
 const MedicalHistoryPage = (props) => {
   return (
@@ -18,6 +19,7 @@ const MedicalHistoryPage = (props) => {
         />
         <EnterMedicalInfo
           {...props}
+          showIf        = { hasMedical(props) }
         />
         <NavigationButtons
           {...props}

@@ -5,8 +5,7 @@ import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 
 import {
-  getID,
-  getDL
+  IDOnly
 } from '../../../helpers/data/card-type';
 
 const OnlyID = () => {
@@ -28,7 +27,7 @@ const IDAndDL = () => {
 
 const LicenseAndIdHeader = (props) => {
   let licenseAndIdHeader = <IDAndDL />;
-  if (getID(props) && !getDL(props)) {
+  if (IDOnly(props)) {
     licenseAndIdHeader = <OnlyID />;
   }
   return licenseAndIdHeader;

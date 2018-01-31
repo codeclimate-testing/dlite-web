@@ -4,7 +4,8 @@ import React     from 'react';
 import TextArea  from '../../text-area.jsx';
 
 const EnterMedicalInfo = (props) => {
-  if(props.medicalHistory.hasMedicalCondition !== 'Yes') { return null; }
+  if (!props.showIf) { return null; }
+
   return (
     <div className='enter-medical-info'>
       <hr/>

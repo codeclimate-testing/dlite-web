@@ -19,23 +19,23 @@ const EnterLicenseAndIdHistory = (props) => {
 
       <TextInput
         {...props}
-        identifier  = 'DLIDNumber'
-        description = { text.DLIDNumber }
-        value       = { props.licenseAndIdHistory.DLIDNumber }
-        errorMessage = { props.validations.DLIDNumber() }
+        identifier    = 'DLIDNumber'
+        description   = { text.DLIDNumber }
+        value         = { props.licenseAndIdHistory.DLIDNumber }
+        errorMessage  = { props.validations.DLIDNumber() }
       />
 
       <TextInput
         {...props}
-        identifier  = 'issuedBy'
-        description = { text.issuedBy }
-        value       = { props.licenseAndIdHistory.issuedBy }
+        identifier    = 'issuedBy'
+        description   = { text.issuedBy }
+        value         = { props.licenseAndIdHistory.issuedBy }
         errorMessage  = { props.validations.issuedBy() }
       />
 
       <ExpirationDate
-          {...props}
-          values      = { props.licenseAndIdHistory }
+        {...props}
+        values        = { props.licenseAndIdHistory }
       />
     </div>
   )

@@ -8,7 +8,7 @@ const ExpirationDate = (props) => {
     <div id='expirationDate'>
       <DateInput
         {...props}
-        description = 'Expiration Date'
+        title       = 'Expiration Date'
         values      = { props.values }
         validations = { props.validations }
       />

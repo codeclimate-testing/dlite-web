@@ -15,7 +15,7 @@ describe('DateInput', function() {
   beforeEach(function() {
 
     props = {
-      description: 'test',
+      title: 'test',
       identifier: 'testDate',
       values: {
         month: '',

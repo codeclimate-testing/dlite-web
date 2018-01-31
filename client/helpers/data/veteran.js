@@ -6,39 +6,65 @@ import {
   isGettingNew,
   isCardActionSelected
  }    from './card-actions'
+ import { getDL }             from './card-type';
 
-export const mustChooseBenefits = (props) => {
+export const isVeteran = (props) => {
   return props.veteransService.isVeteran === 'Yes'
 };
 
 export const mustChoosePreviousDesignation = (props) => {
-  return props.veteransService.isVeteran === 'Yes' && hasExistingCard(props)
+  return isVeteran(props) && hasExistingCard(props)
 };
 
 export const mustChooseIdentifier = (props) => {
-  return props.veteransService.isVeteran === 'Yes' && !hasExistingCard(props)
+  return isVeteran(props) && !hasExistingCard(props)
 };
 
 export const mustChooseKeepVeteranIdentifier = (props) => {
-  return props.veteransService.isVeteran === 'Yes' && hasExistingCard(props) && props.veteransService.previouslyDesignated === 'Yes'
+  return isVeteran(props) && hasExistingCard(props) && isPreviouslyDesignated(props)
 };
 
 export const mustChooseAddVeteranIdentifier = (props) => {
-  return props.veteransService.isVeteran === 'Yes' && hasExistingCard(props) && props.veteransService.previouslyDesignated === 'No'
-};
-
-export const showBenefitsPage = (props) => {
-  return props.veteransService.isVeteran === 'Yes';
+  return isVeteran(props) && hasExistingCard(props) && props.veteransService.previouslyDesignated === 'No'
 };
 
 export const showPreviousDesignationPage = (props) => {
-  return props.veteransService.isVeteran === 'Yes' && isCardActionSelected(props) &&  !isGettingNew(props) ;
+  return isVeteran(props) && isCardActionSelected(props) &&  !isGettingNew(props) ;
 };
 
 export const showIdentifierPage = (props) => {
-  let isVeteran = props.veteransService.isVeteran === 'Yes';
-  let isNewApplication = isGettingNew(props) && isCardActionSelected(props);
-  let preDesignation = props.veteransService.previouslyDesignated;
+  let preDesignation = hasValue(props.veteransService.previouslyDesignated);
+  return isVeteran(props) && (isGettingNew(props)|| preDesignation);
+};
 
-  return (isVeteran && isNewApplication) || (isVeteran && preDesignation);
+export const isPreviouslyDesignated = (props) => {
+  return props.veteransService.previouslyDesignated === 'Yes';
+};
+
+export const showIdentifierMessage = (props) => {
+  return props.veteransService.veteransIdentifier === 'Yes';
+};
+
+export const removeIdentifierNotification = (props) => {
+  return isPreviouslyDesignated(props) && props.veteransService.veteransIdentifier === 'No';
+};
+
+export const showPreviousIDHeader = (props) => {
+  return isPreviouslyDesignated(props) && !getDL(props);
+};
+
+export const showPreviousDLHeader = (props) => {
+  return isPreviouslyDesignated(props) && getDL(props);
+};
+
+export const showNewIDHeader = (props) => {
+  return !isPreviouslyDesignated(props) && !getDL(props);
+};
+
+export const showNewDLHeader = (props) => {
+  return !isPreviouslyDesignated(props) && getDL(props);
+};
+
+export const keepOrAdd = (props) => {
+  return isPreviouslyDesignated(props) ? 'previous' : 'new';
 };

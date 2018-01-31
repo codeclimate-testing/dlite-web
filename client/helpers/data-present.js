@@ -79,10 +79,6 @@ const licenseAndIdHistory = (props) => {
   return props && (props.isIssued === 'No' || (date(props) || hasAnyAttributes(props, ['DLIDNumber', 'issuedBy'])));
 };
 
-const cardIssued = (props) => {
-  return props.licenseAndIdHistory.isIssued === 'Yes';
-}
-
 const namesHistory = (props) => {
   return hasAllAttributes(props, ['hasUsedPreviousNames', 'previousNames']);
 };
@@ -185,7 +181,6 @@ export {
   hasMedicalCondition,
   medicalHistory,
   licenseIssues,
-  cardIssued,
   licenseAndIdHistory,
   politicalPartyChoose,
   contactMethods,

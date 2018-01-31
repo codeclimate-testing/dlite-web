@@ -5,7 +5,7 @@ import TextArea         from '../../text-area.jsx';
 import DateInput        from '../../date-input.jsx';
 
 const EnterRevokedSuspended = (props) => {
-  if(props.licenseIssues.isSuspended !== 'Yes') { return null; }
+  if (!props.showIf) { return null; }
   return (
     <div className='suspended-license-form'>
       <hr/>

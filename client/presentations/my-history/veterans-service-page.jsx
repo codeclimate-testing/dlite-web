@@ -7,6 +7,11 @@ import VeteransQuestionnaire        from './veterans-service/veterans-questionna
 import VeteransBenefits             from './veterans-service/veterans-benefits-form.jsx';
 import VeteransPreviousDesignation  from './veterans-service/veterans-previous-designation-form.jsx';
 import VeteransIdentifier           from './veterans-service/veterans-identifier-form.jsx';
+import {
+  isVeteran,
+  showPreviousDesignationPage,
+  showIdentifierPage
+} from '../../helpers/data/veteran';
 
 const VeteransServicePage = (props) => {
   return (
@@ -20,16 +25,19 @@ const VeteransServicePage = (props) => {
           errorMessage  = { props.validations.isVeteran() }
         />
         <VeteransBenefits {...props}
-          selectedValue = {props.veteransService.receiveBenefits}
+          selectedValue = { props.veteransService.receiveBenefits}
           errorMessage  = { props.validations.receiveBenefits() }
+          showIf        = { isVeteran(props) }
         />
         <VeteransPreviousDesignation {...props}
           selectedValue = {props.veteransService.previouslyDesignated}
           errorMessage  = { props.validations.veteransDesignation() }
+          showIf        = { showPreviousDesignationPage(props) }
         />
         <VeteransIdentifier {...props}
           selectedValue = {props.veteransService.veteransIdentifier}
           errorMessage  = { props.validations.veteransIdentifier() }
+          showIf        = { showIdentifierPage(props) }
         />
         <NavigationButtons
           {...props}

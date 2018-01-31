@@ -2,7 +2,7 @@
 
 import selectionValidator from './selection-validator';
 import {
-  mustChooseBenefits,
+  isVeteran,
   mustChoosePreviousDesignation,
   mustChooseIdentifier,
   mustChooseKeepVeteranIdentifier,
@@ -10,7 +10,7 @@ import {
 } from '../data/veteran';
 
 let receiveBenefits = (props) => {
-  if(!mustChooseBenefits(props)) {
+  if(!isVeteran(props)) {
     return [];
   }
   return selectionValidator('veteranBenefitSelectionMissing', 'veteransService', 'receiveBenefits')(props);

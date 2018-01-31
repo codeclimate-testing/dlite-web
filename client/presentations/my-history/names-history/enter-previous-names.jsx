@@ -4,7 +4,7 @@ import React     from 'react';
 import TextArea  from '../../text-area.jsx';
 
 const EnterPreviousNames = (props) => {
-  if(props.namesHistory.hasUsedPreviousNames !== 'Yes') { return null; }
+  if (!props.showIf) { return null; }
   return (
     <div className='enter-previous-names'>
       <hr/>

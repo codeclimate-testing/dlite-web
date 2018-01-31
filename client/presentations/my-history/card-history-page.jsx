@@ -6,8 +6,7 @@ import Page                     from '../../containers/page.jsx';
 
 import LicenseAndIdHistory      from "./card-history/license-and-id-history-form.jsx";
 import EnterLicenseAndIdHistory from "./card-history/enter-license-and-id-history-form.jsx";
-
-import { cardIssued }           from '../../helpers/data-present';
+import { licenseAndIdIssued }   from '../../helpers/data/my-history';
 
 const CardHistoryPage = (props) => {
 
@@ -24,7 +23,7 @@ const CardHistoryPage = (props) => {
 
         <EnterLicenseAndIdHistory
           {...props}
-          showIf          = { cardIssued(props) }
+          showIf          = { licenseAndIdIssued(props) }
         />
 
         <NavigationButtons
