@@ -20,7 +20,7 @@ describe('Data helpers for page', function() {
   });
 
   it('#nextPath return the full path given page with only one path', function() {
-    assert.equal(nextPath('legalName', {}), '/apply/my-basics/date-of-birth');
+    assert.equal(nextPath('legalName', {}), '/apply/id-and-license/my-basics/date-of-birth');
   });
 
   it('#nextPath return the full path given page with a function defining its next page', function() {
@@ -33,14 +33,14 @@ describe('Data helpers for page', function() {
 
     assert.equal(
       nextPath('chooseLicenseClass', props),
-      '/apply/reduced-fee'
+      '/apply/id-and-license/reduced-fee'
     );
   });
 
   it('return /apply/summary if state has been passed from link', function() {
     assert.equal(
       nextPath('trueName', {location: {state: {nextAddress: '/summary'}}}),
-      '/apply/summary'
+      '/apply/id-and-license/summary'
     );
   });
 });

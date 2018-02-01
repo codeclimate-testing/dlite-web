@@ -22,6 +22,6 @@ describe('navigateOnSubmit', function() {
 
   it('pushes an alice url to history', function() {
     navigateOnSubmit('/foo/bar', props)();
-    assert.equal(props.history[0], '/apply/foo/bar');
+    assert.equal(props.history[0], '/apply/id-and-license/foo/bar');
   });
 });

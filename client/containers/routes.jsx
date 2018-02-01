@@ -59,7 +59,8 @@ class Router extends React.Component {
       <div className='routes'>
         <Route path={ alicePath('/links') } exact component={Home} />
 
-        <Route path={ alicePath('/') } exact component={Welcome} />
+        <Route path={ '/apply/'} exact component={Welcome} />
+        <Route path={ '/apply/welcome' } component={Welcome} />
         <Route path={ alicePath('/choose-language')} component={ChooseLanguage} />
         <Route path={ pathForPage('welcome') } component={Welcome} />
         <Route path={ alicePath('/sign-in') } component={IDMe} />
