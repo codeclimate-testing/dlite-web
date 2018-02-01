@@ -40,10 +40,13 @@ const DLAction = (props) => {
   }
 
   return (
-    <SummaryItem
-      title='I am'
-      text={dlAction}
-    />
+    <div>
+      <SummaryItem
+        title='I am'
+        text={dlAction}
+      />
+      <br></br>
+    </div>
   )
 };
 

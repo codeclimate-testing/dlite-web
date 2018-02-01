@@ -38,13 +38,13 @@ const LicenseType = (props) => {
         title='Need to drive'
         text={vehicles}
       />
+      <br></br>
       <SummaryItem
         title='Firefighter endorsement'
         text={value}
       />
     </div>
   )
-
 };
 
 export default LicenseType;

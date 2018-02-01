@@ -13,10 +13,13 @@ const DLRealID = (props) => {
   props.realID.getRealID === 'Yes' ? value : value = 'No'
 
   return (
-    <SummaryItem
-      title='Real ID'
-      text={value}
-    />
+    <div>
+      <SummaryItem
+        title='Real ID'
+        text={value}
+      />
+      <br></br>
+    </div>
   )
 };
 

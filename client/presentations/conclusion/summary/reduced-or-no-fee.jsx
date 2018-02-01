@@ -11,10 +11,13 @@ const ReducedOrNoFee = (props) => {
   props.reducedFee.ID === 'Yes' ? value : value = 'No';
 
   return (
-    <SummaryItem
-      title='Reduced or no-fee'
-      text={value}
-    />
+    <div>
+      <SummaryItem
+        title='Reduced or no-fee'
+        text={value}
+      />
+      <br></br>
+    </div>
   );
 };
 

@@ -40,10 +40,13 @@ const IDAction = (props) => {
   }
 
   return (
-    <SummaryItem
-      title='I am'
-      text={idAction}
-    />
+    <div>
+      <SummaryItem
+        title='I am'
+        text={idAction}
+      />
+      <br></br>
+    </div>
   )
 };
 

@@ -8,10 +8,13 @@ const SeniorID = (props) => {
   if (!hasValue(props.seniorID)) { return null; }
 
   return (
-    <SummaryItem
-      title='Senior ID'
-      text={props.seniorID}
-    />
+    <div>
+      <SummaryItem
+        title='Senior ID'
+        text={props.seniorID}
+      />
+      <br></br>
+    </div>
   )
 };
 
