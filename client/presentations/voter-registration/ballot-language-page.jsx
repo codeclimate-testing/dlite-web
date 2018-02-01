@@ -4,6 +4,7 @@ import React                from 'react';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import LanguageRadios       from '../language-radios.jsx'
 import Page                 from '../../containers/page.jsx';
+import translations         from '../../i18n';
 
 const BallotLanguagePage = (props) => {
   return (
@@ -12,7 +13,7 @@ const BallotLanguagePage = (props) => {
       sectionKey={props.prereg}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-language-form'>
-        <h2 className='question'>Choose a language for your election materials.</h2>
+        <h2 className='question'>{translations.votingRegistration.chooseLanguagePage.pagePrompt}</h2>
         <LanguageRadios
           {...props}
           name         = 'ballotLanguage'

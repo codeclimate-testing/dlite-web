@@ -4,7 +4,8 @@ import selectionValidator       from './selection-validator';
 import {
   hasValue,
   hasOnlyEnglishChars }  from '../data/validations';
-import errorMessages            from '../../presentations/error-messages';
+import errorMessages     from '../../presentations/error-messages';
+import translations      from '../../i18n';
 
 const chooseParty = (props) => {
   if (props.isSelected !== 'Yes') { return []; }
@@ -17,7 +18,7 @@ const otherParty = (props) => {
   let value = props.otherParty;
 
   if (hasValue(value) && !hasOnlyEnglishChars(value)) {
-    errors.push(errorMessages.inputIncludesNonEnglishCharacters);
+    errors.push(translations.errorMessages.inputIncludesNonEnglishCharacters);
   };
   return errors;
 };

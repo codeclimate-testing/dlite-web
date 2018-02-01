@@ -5,17 +5,18 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
+import translations         from '../../i18n';
 
 const allOptionText = {
   voterRegistration: {
-    new       : 'I am a new voter in California',
-    existing  : 'I am already registered to vote in California',
-    optOut    : 'I am eligible to vote, but do not want to register to vote'
+    new       : translations.votingRegistration.optOutPage.answerNewRegistration,
+    existing  : translations.votingRegistration.optOutPage.answerUpdateRegistration,
+    optOut    : translations.votingRegistration.optOutPage.answerOptOut
   },
   voterPreRegistration: {
-    new       : 'I would like to pre-register to vote',
-    existing  : 'I am already pre-registered to vote in California',
-    optOut    : 'I am eligible to vote, but do not want to pre-register to vote'
+    new       : translations.votingRegistration.preRegOptOutPage.answerNewRegistration,
+    existing  : translations.votingRegistration.preRegOptOutPage.answerUpdateRegistration,
+    optOut    : translations.votingRegistration.preRegOptOutPage.answerOptOut
   }
 };
 
@@ -28,7 +29,7 @@ const OptOutPage = (props) => {
       sectionKey={props.prereg}
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
-      <h2 className='question'>Which best describes you?</h2>
+      <h2 className='question'>{translations.votingRegistration.optOutPage.pagePrompt}</h2>
 
       <RadioCollection
         {...props}

@@ -65,6 +65,6 @@ describe('OptOutPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.text().includes('I would like to pre-register to vote'), 'pre-registration language not found');
+      assert.ok(component.text().includes('I want to pre-register to vote'), 'pre-registration language not found');
   });
 });

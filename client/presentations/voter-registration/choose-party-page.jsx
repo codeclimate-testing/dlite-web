@@ -6,6 +6,7 @@ import RadioSelector            from '../radio-selector.jsx';
 import RadioCollection          from '../radio-selector-collection.jsx';
 import Page                     from '../../containers/page.jsx';
 import PoliticalPartyPreference from './voter-choose-party/political-party-preference.jsx';
+import translations             from '../../i18n';
 
 const ChoosePartyPage = (props) => {
   return (
@@ -15,9 +16,8 @@ const ChoosePartyPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'choose-party-form'>
         <div className='choose-political-party'>
-          <h2 className='question'>Would you like to choose a political party preference?</h2>
-          <p>In order to vote for a presidential candidate in a primary election, you
-          may need to be registered with that political party.</p>
+          <h2 className='question'>{translations.votingRegistration.choosePartyPage.pagePrompt}</h2>
+          <p>{translations.votingRegistration.choosePartyPage.explanation}</p>
 
           <RadioCollection
             {...props}
@@ -27,10 +27,11 @@ const ChoosePartyPage = (props) => {
           >
             <RadioSelector
               value='Yes'
+              text={translations.shared.commonAnswers.yes}
             />
             <RadioSelector
               value='Skip'
-              text='I do not wish to choose a political party'
+              text={translations.votingRegistration.choosePartyPage.answerNo}
             />
           </RadioCollection>
         </div>

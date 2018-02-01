@@ -4,6 +4,7 @@ import React        from 'react';
 import TextInput    from '../../text-input.jsx';
 import NumberInput  from '../../number-input.jsx';
 import { hasValue } from '../../../helpers/data/validations';
+import translations from '../../../i18n';
 import {
   ErrorIcon,
   ErrorLabel,
@@ -13,9 +14,7 @@ import {
 import ExampleLabel from '../../example-label.jsx';
 
 const ContactDetails = (props) => {
-  if(props.contactMethods.shouldContact !== 'Yes') { return null; }
-
-  let errors = {
+  if(props.contactMethods.shouldContact !== 'Yes') { return null; } let errors = {
     one: props.validations.phoneNumber1(),
     two: props.validations.phoneNumber2(),
     three: props.validations.phoneNumber3()
@@ -27,14 +26,14 @@ const ContactDetails = (props) => {
   return (
     <div className='contact-methods-details-form'>
       <hr/>
-      <h2 className='question'>Please enter your contact information below.</h2>
-      <p>This is optional</p>
+      <h2 className='question'>{translations.votingRegistration.contactInfoPage.formPrompt}</h2>
+      <p className='translation-missing'>This is optional</p>
 
       <TextInput
         {...props}
         identifier    = 'emailAddress'
-        description   = 'Email address'
-        example       = 'aliceball1234@gmail.com'
+        description   = {translations.votingRegistration.contactInfoPage.emailLabel}
+        example       = {translations.votingRegistration.contactInfoPage.emailExample}
         value         = {props.contactMethods.emailAddress}
         errorMessage  = {props.validations.emailAddress()}
       />
@@ -44,11 +43,12 @@ const ContactDetails = (props) => {
         className     = { addError }
       >
         <ErrorIcon errorClass = { addError } />
-        Phone number
+        {translations.votingRegistration.contactInfoPage.phoneLabel}
       </label>
 
       <ExampleLabel
-        example         = '916 314 8765'
+        example = {translations.votingRegistration.contactInfoPage.phoneExample}
+
       />
 
       <NumberInput
@@ -82,8 +82,8 @@ const ContactDetails = (props) => {
         />
       </div>
       <div className='row'>
-        <p>Who gets this information?</p>
-        <p>Secretary of State and county election officials have access to this information</p>
+        <p className='translation-missing'>Who gets this information?</p>
+        <p className='translation-missing'>Secretary of State and county election officials have access to this information</p>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import RadioSelector        from './radio-selector.jsx';
 import translations         from '../i18n';
 
 const LanguageRadios = (props) => {
-  let translationAddress    = translations.intro.switchLanguagePage;
+  let translationAddress = translations.intro.switchLanguagePage;
 
   return (
     <RadioCollection

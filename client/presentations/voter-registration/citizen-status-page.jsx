@@ -5,10 +5,11 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
+import translations         from '../../i18n';
 
 const text = {
-  voterPreRegistration: 'If you decline to answer, you cannot pre-register to vote.',
-  voterRegistration: 'If you decline to answer, you cannot register to vote.'
+  voterPreRegistration: translations.votingRegistration.shared.declineToAnswerInformationPreRegistration,
+  voterRegistration: translations.votingRegistration.shared.declineToAnswerInformationRegistration
 };
 
 const CitizenStatusPage = (props) => {
@@ -18,7 +19,7 @@ const CitizenStatusPage = (props) => {
       sectionKey={props.prereg}
     >
       <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
-        <h2 className='question'>Are you a United States citizen?</h2>
+        <h2 className='question'>{translations.votingRegistration.citizenshipPage.pagePrompt}</h2>
         <p>{text[props.prereg]}</p>
 
         <RadioCollection
@@ -27,14 +28,15 @@ const CitizenStatusPage = (props) => {
         >
           <RadioSelector
             value='Yes'
+            text={translations.shared.commonAnswers.yes}
           />
           <RadioSelector
             value='No'
-            text='No'
+            text={translations.shared.commonAnswers.no}
           />
           <RadioSelector
             value='decline'
-            text='Decline to answer'
+            text={translations.shared.commonAnswers.declineToAnswer}
           />
         </RadioCollection>
 

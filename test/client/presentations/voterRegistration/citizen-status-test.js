@@ -60,7 +60,7 @@ describe('CitizenStatusPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.text().includes('If you decline to answer, you cannot pre-register to vote'), 'pre-registration language not found');
+      assert.ok(component.text().includes('If you select <em>Decline to answer</em>, you will not be pre-registered to vote'), 'pre-registration language not found');
     });
 
   });

@@ -6,6 +6,7 @@ import RadioCollection          from '../radio-selector-collection.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../../containers/page.jsx';
 import ContactDetails           from './contact-methods/contact-methods-details.jsx';
+import translations             from '../../i18n';
 
 const ContactMethodsPage = (props) => {
   return (
@@ -14,7 +15,7 @@ const ContactMethodsPage = (props) => {
       sectionKey={props.prereg}>
 
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
-        <h2 className='question'>Would you like to receive election information via email or text</h2>
+        <h2 className='question'>{translations.votingRegistration.contactInfoPage.pagePrompt}</h2>
 
         <RadioCollection
           {...props}
@@ -24,19 +25,21 @@ const ContactMethodsPage = (props) => {
         >
           <RadioSelector
             value='Yes'
+            text={translations.shared.commonAnswers.Yes}
           />
           <RadioSelector
             value='No'
+            text={translations.shared.commonAnswers.No}
           />
           <RadioSelector
             value='Skip'
-            text='Skip Section'
+            text={translations.shared.commonAnswers.skipSection}
           />
         </RadioCollection>
 
         <div>
-          <p>Who gets this information?</p>
-          <p>Secretary of State and County election officials have access to this information.</p>
+          <p className='translation-missing'>Who gets this information?</p>
+          <p className='translation-missing'>Secretary of State and County election officials have access to this information.</p>
         </div>
 
         <ContactDetails
