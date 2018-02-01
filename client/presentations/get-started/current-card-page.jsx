@@ -44,15 +44,13 @@ const Form = (props) => {
           <h2 className='question'>Card details</h2>
           <p dangerouslySetInnerHTML={{__html: questionText}} />
           <p dangerouslySetInnerHTML={{__html: instructionText}} />
-          <div className='row'>
-            <TextInput
-              {...props}
-              identifier    = 'number'
-              description   = { descriptionText }
-              value         = { props.currentCardInfo.number }
-              errorMessage  = { props.currentCardValidation.number() }
-            />
-          </div>
+          <TextInput
+            {...props}
+            identifier    = 'number'
+            description   = { descriptionText }
+            value         = { props.currentCardInfo.number }
+            errorMessage  = { props.currentCardValidation.number() }
+          />
 
           <ExpirationDate
             {...props}
