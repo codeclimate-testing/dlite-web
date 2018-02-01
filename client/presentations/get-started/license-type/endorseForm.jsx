@@ -7,11 +7,6 @@ import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 const Form = (props) => {
   if(props.licenseType.needEndorsement !== 'Yes') { return null; }
 
-  const text = {
-    firefighter: 'Firefighter',
-    ambulance: 'Ambulance'
-  };
-
   return (
     <div className='endorsement-form'>
       <hr/>
@@ -22,15 +17,16 @@ const Form = (props) => {
           {...props}
           name  = 'endorsement'
           array = {props.licenseType.endorsement }
-          text  = {text}
           onBlur = { props.onBlurValidate }
           errorMessage={ props.validations.endorsement() }
         >
           <CheckboxSelector
             value     = 'firefighter'
+            text      = 'Firefighter'
           />
           <CheckboxSelector
             value     = 'ambulance'
+            text      = 'Ambulance'
           />
         </CheckboxCollection>
       </div>

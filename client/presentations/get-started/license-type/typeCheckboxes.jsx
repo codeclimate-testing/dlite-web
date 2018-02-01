@@ -5,13 +5,6 @@ import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 
 const Form = (props) => {
-  const text = {
-    car       : 'Car',
-    cycle     : 'Motorcycle or scooter',
-    trailer   : '5th wheel or livestock trailer',
-    long      : 'Housecar over 45 feet or trailer over 25 feet',
-    unsure    : "I'm not sure"
-  };
 
   return (
     <div className='license-type-form'>
@@ -20,7 +13,6 @@ const Form = (props) => {
       <div className='row'>
         <CheckboxCollection
           {...props}
-          text  = {text}
           name  = 'type'
           array = {props.licenseType.type }
           onBlur = { props.onBlurValidate }
@@ -28,18 +20,23 @@ const Form = (props) => {
         >
           <CheckboxSelector
             value = 'car'
+            text  = 'Car'
           />
           <CheckboxSelector
             value = 'cycle'
+            text  = 'Motorcycle or scooter'
           />
           <CheckboxSelector
             value = 'trailer'
+            text  = '5th wheel or livestock trailer'
           />
           <CheckboxSelector
             value = 'long'
+            text  = 'Housecar over 45 feet or trailer over 25 feet'
           />
           <CheckboxSelector
             value = 'unsure'
+            text  = "I'm not sure"
           />
         </CheckboxCollection>
       </div>

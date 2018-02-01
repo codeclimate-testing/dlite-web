@@ -3,69 +3,58 @@
 import React                from 'react';
 import CheckboxCollection   from '../../checkbox-selector-collection.jsx';
 import CheckboxSelector     from '../../checkbox-selector.jsx';
+import { SubQuestionHeader } from '../../question-header.jsx';
+import {
+  isCorrecting,
+  isUpdating
+}   from '../../../helpers/data/card-actions';
 
 const Form = (props) => {
-
-  if(!props.cardChanges.correctOrUpdate ){ return null; }
-
-  const text = {
-    name          : 'Name',
-    dateOfBirth   : 'Date of birth',
-    sex           : 'Sex',
-    address       : 'Address',
-    licenseType   : 'What you can drive',
-    endorsements  : 'Endorsements on your license',
-    restrictions  : 'Add or remove a restriction',
-    other         : 'Something else'
-  };
-
-  const correctHeader   = 'What would you like to correct?';
-  const updateHeader    = 'What would you like to update?';
-  const headerText      = props.cardChanges.correctOrUpdate === 'correct' ? correctHeader : updateHeader;
-
+  if(!props.showIf ){ return null; }
   return (
     <div className='row change-sections-form'>
       <hr/>
-      <h3 className='question'>{headerText}</h3>
+
+      <SubQuestionHeader
+        text    = { props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct }
+        showIf  = { isCorrecting(props) }
+      />
+      <SubQuestionHeader
+        text    = { props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update }
+        showIf  = { isUpdating(props) }
+      />
+
       <p>Select all that apply.</p>
 
       <CheckboxCollection
         {...props}
         name          = 'sections'
         array         = { props.cardChanges.sections }
-        text          = { text }
         errorMessage  = { props.validations.sections() }
       >
         <CheckboxSelector
           value='name'
-        />
-
-        <CheckboxSelector
-          value='dateOfBirth'
+          text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[0]}
         />
 
         <CheckboxSelector
           value='sex'
+          text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[1]}
+        />
+
+        <CheckboxSelector
+          value='dateOfBirth'
+          text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[2]}
         />
 
         <CheckboxSelector
           value='address'
-        />
-
-        <CheckboxSelector
-          value='licenseType'
-        />
-
-        <CheckboxSelector
-          value='endorsements'
-        />
-
-        <CheckboxSelector
-          value='restrictions'
+          text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[3]}
         />
 
         <CheckboxSelector
           value='other'
+          text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[4]}
         />
       </CheckboxCollection>
     </div>

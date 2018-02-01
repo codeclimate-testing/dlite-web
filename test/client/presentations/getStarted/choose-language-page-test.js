@@ -34,7 +34,7 @@ describe('BallotLanguagePage', function() {
 
     });
 
-    it('shows the form asking user to choose language', function() {
+    it('shows 10 labels with 2-character values', function() {
       assert.ok(component.find('label[for="appLanguage-ja"]').length, 'Japanese option missing');
       assert.ok(component.find('label[for="appLanguage-en"]').length, 'English option missing');
       assert.ok(component.find('label[for="appLanguage-zh"]').length, 'Chinese option missing');
@@ -47,7 +47,7 @@ describe('BallotLanguagePage', function() {
       assert.ok(component.find('label[for="appLanguage-vi"]').length, 'Vietnamese option missing');
     });
 
-    it('no option is selected', function() {
+    it('no option is selected on initial render', function() {
       assert.ok(!component.find('.selected').length, 'option is already selected');
     });
   });

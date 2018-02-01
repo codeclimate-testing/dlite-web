@@ -6,6 +6,8 @@ import Page               from '../../containers/page.jsx';
 import ChooseCardCheckbox from './choose-card/choose-card-checkbox.jsx';
 import ChooseCardRadio    from './choose-card/choose-card-radio.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import { isGettingNew }   from '../../helpers/data/card-actions';
+import { IDorDL }         from '../../helpers/data/card-type';
 
 const Form = (props) => {
   let question = {
@@ -26,9 +28,12 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <ChooseCardCheckbox
             {...props}
+            showIf    = { isGettingNew(props) }
           />
           <ChooseCardRadio
             {...props}
+            showIf        = { !isGettingNew(props) }
+            selectedValue = { IDorDL(props) }
           />
 
           <NavigationButtons errorMessage = { props.validations.cardType() }

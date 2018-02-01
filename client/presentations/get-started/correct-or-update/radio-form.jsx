@@ -6,7 +6,7 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 
 const Form = (props) => {
   return (
-    <div className    = 'row inner-buttom'>
+    <div className    = 'row inner-button'>
       <RadioCollection
         {...props}
         name          = 'correctOrUpdate'

@@ -17,11 +17,6 @@ const instruction = {
   DL: 'Your number can be found at the top of your Driver License, starting with a letter.'
 };
 
-const card = {
-  ID: 'ID',
-  DL: 'Driver License'
-}
-
 const description = {
   ID: 'ID card number',
   DL: 'Driver License card number'
@@ -29,7 +24,6 @@ const description = {
 
 const Form = (props) => {
   const cardType        = IDorDL(props) || 'ID';
-  const cardText        = card[cardType]
   const questionText    = question[cardType];
   const instructionText = instruction[cardType];
   const descriptionText = description[cardType];

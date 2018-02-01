@@ -101,11 +101,11 @@ describe('Data helpers for veterans', function() {
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
 
-    it('is false if not renewing', function() {
+    it('is false if getting a new card', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.cardAction = 'replace';
+      data.cardType.cardAction = 'new';
 
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });

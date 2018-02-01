@@ -11,6 +11,7 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import CorrectOrUpdate          from '../../../../client/presentations/get-started/correct-or-update-page.jsx';
 import store                    from '../../support/page-store';
+import translations             from '../../../../client/i18n';
 
 describe('CorrectOrUpdate', function() {
   const Wrapper = wrapperGenerator(store);
@@ -43,7 +44,8 @@ describe('CorrectOrUpdate', function() {
         cardType,
         cardChanges,
         onChange,
-        validations
+        validations,
+        translations
       }
     });
 
@@ -69,10 +71,10 @@ describe('CorrectOrUpdate', function() {
         </Wrapper>
       );
       assert.ok(component.find('.change-sections-form').length, 'section form not found');
-      assert.equal(component.text().includes('What would you like to correct?'), true);
+      assert.ok(component.text().includes('What would you like to correct?'));
     });
 
-    it('the section form shows 8 checkboxes', function() {
+    it('the section form shows 5 checkboxes', function() {
       props.cardType.IDDL = ['DL']
       props.cardChanges.correctOrUpdate = 'correct';
       let component = render(
@@ -84,9 +86,6 @@ describe('CorrectOrUpdate', function() {
       assert.ok(component.find('label[for="dateOfBirth"]').length, 'dob selection missing');
       assert.ok(component.find('label[for="sex"]').length, 'sex section selection missing');
       assert.ok(component.find('label[for="address"]').length, 'address selection missing');
-      assert.ok(component.find('label[for="licenseType"]').length, 'licenseType selection missing');
-      assert.ok(component.find('label[for="endorsements"]').length, 'endorsement selection missing');
-      assert.ok(component.find('label[for="restrictions"]').length, 'restrictions selection missing');
       assert.ok(component.find('label[for="other"]').length, 'other selection missing');
     });
   });

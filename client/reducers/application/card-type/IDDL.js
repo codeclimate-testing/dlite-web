@@ -14,6 +14,9 @@ const IDDL = (value, data, blankState) => {
     data = Object.assign({}, data, {IDDL: [value]});
   }
 
+  // reset the youthIDInstead value
+  data.youthIDInstead = '';
+
   // populate the ID and DL objects based on what is in the updated IDDL array
   if(getDL({cardType: data})){
     data.DL = {

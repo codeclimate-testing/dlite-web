@@ -6,6 +6,7 @@ import handlers               from '../../helpers/handlers';
 import { updateCardChanges }  from '../../actions/index';
 import Presentation           from '../../presentations/get-started/correct-or-update-page.jsx';
 import { ChangeValidator }    from '../../helpers/validations';
+import translations           from '../../i18n';
 
 const Page = (props) => {
   let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing');
@@ -19,6 +20,7 @@ const Page = (props) => {
       onBack            = { onBack }
       selectedValue     = { props.cardChanges.correctOrUpdate }
       validations       = { validations }
+      translations      = { translations }
     />
   )
 };

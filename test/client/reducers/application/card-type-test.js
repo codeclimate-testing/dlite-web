@@ -4,25 +4,74 @@ import assert from 'assert';
 
 import updateCardType from '../../../../client/reducers/application/update-card-type';
 
+const buildState = (type, action) => {
+  let newState = {
+    IDDL: [type],
+    cardAction: action,
+    ID: {
+      isApplying: type === 'ID',
+      action: type === 'ID' ? action : ''
+    },
+    DL: {
+      isApplying: type === 'DL',
+      action: type === 'DL' ? action : ''
+    }
+  };
+  return newState;
+};
+
+const checkboxID = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'IDDL',
+    value: 'ID-true'
+  }
+};
+
+const checkboxDL = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'IDDL',
+    value: 'DL-true'
+  }
+};
+
+const radioDL = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'IDDL',
+    value: 'DL'
+  }
+};
+
+const radioID = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'IDDL',
+    value: 'ID'
+  }
+};
+
+const selectYes = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'youthIDInstead',
+    value: 'Yes'
+  }
+};
+
+const selectNo = {
+  type: 'UPDATE_CARD_TYPE',
+  payload: {
+    name: 'youthIDInstead',
+    value: 'No'
+  }
+};
+
 describe('cardTypeReducer', function() {
   describe('#youthID', function() {
-
     describe('##youthIDInstead user asking for just DL', function(){
       let state;
-      let selectYes = {
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'youthIDInstead',
-          value: 'Yes'
-        }
-      };
-      let selectNo = {
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'youthIDInstead',
-          value: 'No'
-        }
-      };
 
       beforeEach(function() {
         state = {
@@ -90,20 +139,6 @@ describe('cardTypeReducer', function() {
 
     describe('## youthIDOnly when user is getting both ID and DL', function() {
       let state;
-      const selectYes ={
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'youthIDOnly',
-          value: 'Yes'
-        }
-      };
-      const selectNo ={
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'youthIDOnly',
-          value: 'No'
-        }
-      };
 
       beforeEach(function() {
         state = {
@@ -130,8 +165,13 @@ describe('cardTypeReducer', function() {
       });
 
       it('shows the user getting both an ID and a DL when user has selected No', function() {
-        let newState = updateCardType(state, selectNo);
-
+        let newState = updateCardType(state, {
+          type: 'UPDATE_CARD_TYPE',
+          payload: {
+            name: 'youthIDOnly',
+            value: 'No'
+          }
+        });
         assert.deepEqual(newState.IDDL, ['ID', 'DL']);
         assert.deepEqual(newState.ID, {isApplying: true, action: 'new'});
         assert.deepEqual(newState.DL, {isApplying: true, action: 'new'});
@@ -139,7 +179,6 @@ describe('cardTypeReducer', function() {
 
       it('shows the user getting only an ID after selecting No then Yes', function() {
         let newState1 = updateCardType(state, selectNo);
-
         let newState2 = updateCardType(newState1, selectYes);
 
         assert.deepEqual(newState2.IDDL, ['ID']);
@@ -169,13 +208,7 @@ describe('cardTypeReducer', function() {
     });
 
     it('it adds ID to array and sets ID action when ID checkbox is updated', function() {
-      let newState = updateCardType(state, {
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'IDDL',
-          value: 'ID-true'
-        }
-      });
+      let newState = updateCardType(state, checkboxID);
 
       assert.deepEqual(newState.IDDL, ['ID']);
       assert.deepEqual(newState.ID, {
@@ -213,74 +246,33 @@ describe('cardTypeReducer', function() {
     });
 
     it('updates IDDL array when ID radio box is selected', function() {
-      let newState = updateCardType({
-        IDDL: ['DL'],
-        cardAction: 'renew',
-        DL: {
-          action: 'renew'
-        },
-        ID: {
-          action: ''
-        }
-      }, {
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'IDDL',
-          value: 'ID'
-        }
-      });
+      state = buildState('DL', 'renew');
+      let newState = updateCardType(state, radioID);
       assert.deepEqual(newState.IDDL, ['ID']);
     });
 
     it('updates the card objects when DL radio box is selected', function() {
-      let newState = updateCardType({
-        IDDL: ['ID'],
-        cardAction: 'change',
-        DL: {
-          action: ''
-        },
-        ID: {
-          action: 'change'
-        }
-      }, {
-        type: 'UPDATE_CARD_TYPE',
-        payload: {
-          name: 'IDDL',
-          value: 'DL'
-        }
-      });
+      state = buildState('ID', 'change');
+      let newState = updateCardType(state, radioDL);
 
       assert.deepEqual(newState.DL, { action: 'change', isApplying: true});
       assert.deepEqual(newState.ID, { action: '', isApplying: false});
     });
 
     it('updates the card object action when the card type is chosen', function() {
-      const newState = updateCardType(
-        {
-          IDDL: [''],
-          cardAction: 'renew',
-          youthIDInstead: '',
-          DL: {
-            isApplying: false,
-            action: ''
-          },
-          ID: {
-            isApplying: false,
-            action: ''
-          }
-        },
-        {
-          type: 'UPDATE_CARD_TYPE',
-          payload: {
-            name: 'IDDL',
-            value: 'DL'
-          }
-        }
-      );
+      state.cardAction = 'renew';
+      const newState = updateCardType(state, radioDL);
       assert.deepEqual(
         newState.IDDL[0], 'DL', 'IDDL array value not changed'
       );
       assert.deepEqual(newState.DL, {isApplying: true, action: 'renew'})
+    });
+
+    it('clears the youthIDInstead value when user has selected to change DL to ID, then goes back and chooses DL', function() {
+      const getDLState = buildState('DL', 'new');
+      const getIDInsteadState = updateCardType(getDLState, selectYes);
+      const reselectDLState = updateCardType(getIDInsteadState, checkboxDL);
+      assert.deepEqual(reselectDLState.youthIDInstead, '');
     });
   });
 
@@ -338,12 +330,7 @@ describe('cardTypeReducer', function() {
   });
 
   it('updates the ID object when card action is changed from renew to replace', function() {
-    let newState = updateCardType({
-      IDDL: ['ID'],
-      cardAction: 'renew',
-      DL: {action: ''},
-      ID: {action: 'renew'}
-    }, {
+    let newState = updateCardType(buildState('ID', 'renew'), {
       type: 'UPDATE_CARD_TYPE',
       payload: {
         name: 'cardAction',

@@ -22,3 +22,11 @@ export const under16GuardianSignature = (props) => {
 export const checkPreReg = (dateOfBirth) => {
   return isPreregistering(dateOfBirth) ? 'voterPreRegistration' : 'voterRegistration';
 };
+
+export const continueHidden = (props) => {
+  if (!validToContinue(props)) {
+    return true;
+  } else {
+    return false;
+  }
+};

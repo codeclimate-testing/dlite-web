@@ -7,6 +7,10 @@ import OtherText          from './correct-or-update/text-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import { IDorDL }         from '../../helpers/data/card-type';
+import {
+  otherIsSelected,
+  hasSpecifiedChange
+}  from '../../helpers/data/card-actions';
 
 const text = {
   ID: 'You may need to pay a fee for a new ID with these updates',
@@ -28,8 +32,14 @@ const Form = (props) => {
         </p>
         <form onSubmit={ props.onSubmit }>
           <RadioForm {...props} />
-          <UpdateForm {...props} />
-          <OtherText {...props} />
+          <UpdateForm
+            {...props}
+            showIf    = { hasSpecifiedChange(props) }
+          />
+          <OtherText
+            {...props}
+            showIf    = { otherIsSelected(props) }
+          />
           <NavigationButtons
             {...props}
             errorMessage = { props.validations.all() }

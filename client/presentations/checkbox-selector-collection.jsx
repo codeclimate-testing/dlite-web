@@ -25,8 +25,7 @@ const childPropsAdditions = (props, value, values) => {
     custom  : custom,
     onChange: props.onChange,
     onBlur  : props.onBlur,
-    onFocus : focusFunction,
-    text    : props.text[value]
+    onFocus : focusFunction
   };
 };
 

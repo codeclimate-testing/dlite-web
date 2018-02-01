@@ -9,25 +9,21 @@ import { YouthDLValidator }       from '../../helpers/validations';
 
 import Presentation               from '../../presentations/get-started/youth-license-notification-page.jsx';
 import { updateCardType }         from '../../actions/index';
-import { getDL }                  from '../../helpers/data/card-type';
-import { ageChecks }              from '../../helpers/calculate-age';
+import { continueHidden }         from '../../helpers/data/youth';
 import { hasMultipleCards }       from '../../helpers/data/cards';
 
 const Page = (props) => {
   let validations         = new YouthDLValidator(props.cardType.youthIDInstead, props.validations);
-  const continueHidden    = props.cardType.youthIDInstead === 'No' && ageChecks.Under15(props.dateOfBirth)? true : false;
   let onSubmit            = handlers.navigateOrShowErrors('youthIDInstead', props, validations);
   const onBack            = handlers.navigateOnBack(props, validations);
-
-  const selectedValue     = props.cardType.youthIDInstead === 'Yes' && getDL(props) ? 'No' : props.cardType.youthIDInstead;
 
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      selectedValue     = { selectedValue }
-      continueHidden    = { continueHidden }
+      selectedValue     = { props.cardType.youthIDInstead }
+      continueHidden    = { continueHidden(props) }
       validations       = { validations }
       multCards         = { hasMultipleCards(props) }
     />

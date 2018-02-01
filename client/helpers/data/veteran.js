@@ -3,8 +3,8 @@
 import { hasValue }           from '../data/validations';
 import {
   hasExistingCard,
-  isGettingNew,
-  isCardActionSelected
+  isRenewingCard,
+  isGettingNew
  }    from './card-actions'
  import { getDL }             from './card-type';
 
@@ -17,19 +17,19 @@ export const mustChoosePreviousDesignation = (props) => {
 };
 
 export const mustChooseIdentifier = (props) => {
-  return isVeteran(props) && !hasExistingCard(props)
+  return isVeteran(props) && !isRenewingCard(props)
 };
 
 export const mustChooseKeepVeteranIdentifier = (props) => {
-  return isVeteran(props) && hasExistingCard(props) && isPreviouslyDesignated(props)
+  return mustChoosePreviousDesignation(props) && isPreviouslyDesignated(props)
 };
 
 export const mustChooseAddVeteranIdentifier = (props) => {
-  return isVeteran(props) && hasExistingCard(props) && props.veteransService.previouslyDesignated === 'No'
+  return mustChoosePreviousDesignation(props) && props.veteransService.previouslyDesignated === 'No'
 };
 
 export const showPreviousDesignationPage = (props) => {
-  return isVeteran(props) && isCardActionSelected(props) &&  !isGettingNew(props) ;
+  return isVeteran(props) && hasExistingCard(props);
 };
 
 export const showIdentifierPage = (props) => {

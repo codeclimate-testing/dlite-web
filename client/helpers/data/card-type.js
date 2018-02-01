@@ -1,38 +1,12 @@
 'use strict';
 
 import { hasMultipleCards } from './cards';
-
-export const getNewID = (props) => {
-  return getID(props) && props.cardType.ID.action === 'new';
-};
-
-export const getNewDL = (props) => {
-  return getDL(props) && props.cardType.DL.action === 'new';
-};
-
-export const replaceID = (props) => {
-  return getID(props) && props.cardType.ID.action === 'replace';
-};
-
-export const replaceDL = (props) => {
-  return getDL(props) && props.cardType.DL.action === 'replace';
-};
-
-export const changeID = (props) => {
-  return getID(props) && props.cardType.ID.action === 'change';
-};
-
-export const changeDL = (props) => {
-  return getDL(props) && props.cardType.DL.action === 'change';
-};
-
-export const renewID = (props) => {
-  return getID(props) && props.cardType.ID.action === 'renew';
-};
-
-export const renewDL = (props) => {
-  return getDL(props) && props.cardType.DL.action === 'renew';
-};
+import {
+  isGettingNew,
+  isChangingCard,
+  isReplacingCard,
+  isRenewingCard
+} from './card-actions';
 
 export const getID = (props) => {
   return props.cardType.IDDL.includes('ID');
@@ -52,4 +26,36 @@ export const IDorDL = (props) => {
 
 export const IDOnly = (props) => {
   return getID(props) && !getDL(props);
+};
+
+export const getNewID = (props) => {
+  return getID(props) && isGettingNew(props);
+};
+
+export const getNewDL = (props) => {
+  return getDL(props) && isGettingNew(props);
+};
+
+export const replaceID = (props) => {
+  return getID(props) && isReplacingCard(props);
+};
+
+export const replaceDL = (props) => {
+  return getDL(props) && isReplacingCard(props);
+};
+
+export const changeID = (props) => {
+  return getID(props) && isChangingCard(props);
+};
+
+export const changeDL = (props) => {
+  return getDL(props) && isChangingCard(props);
+};
+
+export const renewID = (props) => {
+  return getID(props) && isRenewingCard(props);
+};
+
+export const renewDL = (props) => {
+  return getDL(props) && isRenewingCard(props);
 };
