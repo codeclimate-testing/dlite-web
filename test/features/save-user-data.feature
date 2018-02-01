@@ -305,7 +305,6 @@ Feature: Save user data
     Then I will see residence address and mailing address will have the same information
     Then I will see that my card types have been saved
     Then I will see that I am getting a real id
-    Then I will see that I am not opting for a reduced fee
     Then I will see my height on that summary
     Then I will see No in my existing DL/ID selection
     Then I will see No in my suspended license selection

@@ -11,11 +11,11 @@ import {
 import {
   LegalName,
   DateOfBirth,
-  Cards,
   SeniorID,
-  RealID,
+  IDRealID,
+  DLRealID,
   LicenseType,
-  ReducedFee,
+  ReducedOrNoFee,
   Address,
   TraitsHeightWeight,
   PhysicalTraits,
@@ -35,7 +35,13 @@ import {
   ContinueButton,
   GuardianSignature,
   OptOut,
-  Empty
+  Empty,
+  IDApplicationNotStarted,
+  DLApplicationNotStarted,
+  IDAction,
+  DLAction,
+  CurrentIDInfo,
+  CurrentDLInfo
 } from './summary/index.js';
 import {
   ErrorMessageBox
@@ -89,23 +95,29 @@ const ButtonComponent = (props) => {
 
 
 const SummaryPage = (props) => {
-
   let application = props.application;
 
   let contents = [
 
-    <Accordion id='application-details-summary' title='My application details' key='application-details-summary'>
-      <Cards
-        cardType        = { application.cardType }
-        cardChanges     = { application.cardChanges }
-        currentCardInfo = { application.currentCardInfo}
-        cardReplacement = { application.cardReplacement }
-      />
+    <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
+      <IDApplicationNotStarted {...application} key='id-application-not-started' />
+
+      <IDAction {...application} />
+
+      <ReducedOrNoFee {...application} />
       <SeniorID seniorID={application.seniorID} />
-      <RealID realID={application.realID} />
-      <LicenseType licenseType={application.licenseType} />
-      <ReducedFee reducedFee={application.reducedFee} />
-      <GuardianSignature guardianSignature={application.guardianSignature}/>
+      <IDRealID {...application} />
+      <CurrentIDInfo {...application} />
+    </Accordion>,
+
+    <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
+      <DLApplicationNotStarted {...application} key='dl-application-not-started' />
+
+      <DLAction {...application} />
+
+      <DLRealID {...application} />
+      <LicenseType {...application} />
+      <CurrentDLInfo {...application} />
     </Accordion>,
 
     <Accordion id='basics-summary' title='My basics' key='basics-summary'>

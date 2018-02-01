@@ -1,6 +1,7 @@
 'use strict';
 
 import React from "react";
+import translations   from '../../../i18n';
 import {
   getDL
 } from '../../../helpers/data/card-type'
@@ -11,7 +12,7 @@ const DLApplicationNotStarted = (props) => {
 
   return (
     <div className='summary-section'>
-      <p>No application started</p>
+      <p>{translations.summaryPage.whatImDoing.nothing}</p>
     </div>
   );
 };

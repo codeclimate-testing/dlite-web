@@ -7,7 +7,7 @@ import {
 } from './array-add-remove';
 
 const defaultState = () => {
-  return ['basics-summary'];
+  return ['basics-summary', 'id-application-details-summary', 'driver-license-application-details-summary'];
 };
 
 const accordionsReducer = (state=defaultState() , action) => {

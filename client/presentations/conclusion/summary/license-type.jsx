@@ -1,55 +1,49 @@
 'use strict';
 
 import React            from 'react';
-import { hasValue }     from '../../../helpers/data/validations';
 import * as dataPresent from '../../../helpers/data-present';
+import translations     from '../../../i18n';
+import SummaryItem      from './summary-item.jsx';
+import {
+  getDL
+} from '../../../helpers/data/card-type';
 
-const Type = (props) => {
-  if (!hasValue(props.types)) { return null; }
-
-  let types = [];
-  props.types.forEach(function(type) {
-    switch(type) {
-      case 'car':
-        types.push('Car');
-        break;
-      case 'cycle':
-        types.push('Motorcycle or scooter');
-        break;
-      case 'trailer':
-        types.push('5th wheel or livestock trailer');
-        break;
-      case 'long':
-        types.push('Housecar over 45 feet or trailer over 25 feet');
-        break;
-      case 'unsure':
-        types.push("I'm not sure");
-        break;
-    }
-  });
-
-  return (
-    <p>Need to drive: {types.join(', and ')}</p>
-  )
-};
-
-const Endorsement = (props) => {
-
-  let endorsements = props.licenseType.needEndorsement === 'Yes' ? props.licenseType.endorsement.join(' and ') : 'not needed';
-  return (
-    <p>Endorsements: {endorsements}</p>
-  )
-};
+const classC = translations.intro.getStartedPage.whatYouAreDoing.classes.C;
+const classM = translations.intro.getStartedPage.whatYouAreDoing.classes.M;
+const classA = translations.intro.getStartedPage.whatYouAreDoing.classes.A;
+const classB = translations.intro.getStartedPage.whatYouAreDoing.classes.B;
 
 const LicenseType = (props) => {
-  if (!dataPresent.licenseType(props.licenseType)) { return null; }
+  if(!getDL(props)) { return null; }
+  props.licenseType.endorsement === 'firefighter' ? value : value = 'No';
+  let value = 'Yes';
+  let vehicles = [];
+
+  if(props.licenseType.type.indexOf('car') > -1) {
+    vehicles.push(<li key='car'>{classC}</li>)
+  }
+  if(props.licenseType.type.indexOf('cycle') > -1) {
+    vehicles.push(<li key='cycle'>{classM}</li>)
+  }
+  if(props.licenseType.type.indexOf('long') > -1) {
+    vehicles.push(<li key='long'>{classA}</li>)
+  }
+  if(props.licenseType.type.indexOf('trailer') > -1) {
+    vehicles.push(<li key='trailer'>{classB}</li>)
+  }
 
   return (
-    <div className='summary-section license-type'>
-      <Type types={ props.licenseType.type } />
-      <Endorsement licenseType={ props.licenseType } />
+    <div>
+      <SummaryItem
+        title='Need to drive'
+        text={vehicles}
+      />
+      <SummaryItem
+        title='Firefighter endorsement'
+        text={value}
+      />
     </div>
-  );
+  )
 
 };
 

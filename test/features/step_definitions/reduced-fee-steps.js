@@ -30,7 +30,7 @@ module.exports = function (world) {
     browser
       .text()
       .then( text => {
-        assert(text.includes('Reduced Fee: No'))
+        assert(text.includes('Reduced FeeNo'))
       })
       .then(() => { done(); })
       .catch(done);

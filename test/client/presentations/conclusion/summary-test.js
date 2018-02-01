@@ -9,14 +9,13 @@ import store            from '../../support/page-store';
 import wrapperGenerator from '../../support/wrapper';
 import data             from '../../../../server/helpers/client-default-state.js';
 import {
-  Empty,
   LegalName,
   DateOfBirth,
-  Cards,
   SeniorID,
-  RealID,
-  ReducedFee,
+  IDRealID,
+  DLRealID,
   LicenseType,
+  ReducedOrNoFee,
   Address,
   TraitsHeightWeight,
   PhysicalTraits,
@@ -28,14 +27,21 @@ import {
   MedicalHistory,
   VeteransService,
   CitizenStatus,
-  EligibilityRequirements,
   BallotByMail,
+  EligibilityRequirements,
   PoliticalPartyChoose,
   BallotLanguage,
   ContactMethods,
   ContinueButton,
+  GuardianSignature,
   OptOut,
-  GuardianSignature
+  Empty,
+  IDApplicationNotStarted,
+  DLApplicationNotStarted,
+  IDAction,
+  DLAction,
+  CurrentIDInfo,
+  CurrentDLInfo
 } from '../../../../client/presentations/conclusion/summary/index.js';
 
 import SummaryPage        from '../../../../client/presentations/conclusion/summary-page.jsx';
@@ -122,67 +128,47 @@ describe('Summary components', function() {
     });
   });
 
-  describe('Cards', function() {
-    it('shows DL and ID when getting both new', function() {
+  describe('IDAction', function() {
+    it('shows action for ID', function() {
       props.cardType = {
-        IDDL: ['ID', 'DL'],
-        cardAction: 'new',
-        ID: {
-          isApplying: true,
-          action: 'new'
-        },
-        DL: {
-          isApplying: true,
-          action: 'new'
-        }
+        IDDL: ['ID'],
+        cardAction: 'new'
       };
 
       let component = render(
         <Wrapper>
-          <Cards
+          <IDAction
             { ...props }
           />
         </Wrapper>
       );
-      assert.equal(component.text().includes('Applying for new: ID and Driver License'), true);
+      assert.equal(component.text().includes('Applying for the first time'), true);
     });
+  });
 
-    it('shows DL when only getting a new DL', function() {
+  describe('DLAction', function() {
+    it('shows action for DL', function() {
       props.cardType = {
         IDDL: ['DL'],
-        cardAction: 'new',
-        DL: {
-          isApplying: true,
-          action: 'new'
-        },
-        ID: {
-          isApplying: false,
-          action: ''
-        }
+        cardAction: 'new'
       };
 
       let component = render(
         <Wrapper>
-          <Cards
+          <DLAction
             { ...props }
           />
         </Wrapper>
-      )
-      assert.equal(component.text().includes('Applying for new: Driver License'), true);
+      );
+      assert.equal(component.text().includes('Applying for the first time'), true);
     });
+  });
 
+  describe('CurrentIDInfo', function() {
     it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
       props.cardType = {
         IDDL: ['ID'],
-        cardAction: 'renew',
-        DL: {
-          isApplying: false,
-          action: ''
-        },
-        ID: {
-          isApplying: true,
-          action: 'renew'
-        }
+        cardAction: 'renew'
       };
       props.currentCardInfo = {
         number: 'a90382kf',
@@ -192,53 +178,37 @@ describe('Summary components', function() {
       };
       let component = render(
         <Wrapper>
-          <Cards
+          <CurrentIDInfo
             {...props}
           />
         </Wrapper>
       );
-      assert.equal(component.text().includes('Renewing: ID'), true);
-      assert.equal(component.text().includes('Renewal ID number: a90382kf'), true);
-      assert.equal(component.text().includes('Expiration date of ID to renew: 11/13/2008'), true)
-      assert.equal(component.text().includes('Applying for new:'), false);
+      assert.equal(component.text().includes('ID card numbera90382kf'), true);
+      assert.equal(component.text().includes('Expiration date11/13/2008'), true)
     });
+  });
 
-    it('shows which sections are being updated', function() {
-      props.cardType.IDDL = ['DL'];
-      props.cardType.cardAction = 'change';
-      props.cardType.DL.action = 'change';
-      props.cardType.DL.isApplying = true;
-      props.cardType.DL.action = '';
-      props.cardType.DL.isApplying = false;
-      props.cardChanges.correctOrUpdate = 'update'
-      props.cardChanges.sections = ['name', 'restrictions'];
-      let component = render(
-        <Cards
-          {...props}
-        />
-      );
-      assert.equal(component.text().includes('Updating: Driver License'), true);
-      assert.equal(component.text().includes('Updating sections: Name and Add or remove a restriction'), true);
-    });
-
-    it('shows the text the user entered in the case of a "Something else" change', function() {
-      props.cardType.IDDL = ['DL'];
-      props.cardType.cardAction = 'change';
-      props.cardType.DL = {
-        isApplying: true,
-        action: 'change'
+  describe('CurrentDLInfo', function() {
+    it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
+      props.cardType = {
+        IDDL: ['DL'],
+        cardAction: 'renew'
       };
-      props.cardType.ID = {
-        isApplying: false,
-        action: ''
+      props.currentCardInfo = {
+        number: 'a90382kf',
+        month: '11',
+        day: '13',
+        year: '2008'
       };
-      props.cardChanges.correctOrUpdate = 'update'
-      props.cardChanges.sections = ['other'];
-      props.cardChanges.other = 'my picture sucks!'
       let component = render(
-        <Cards {...props} />
+        <Wrapper>
+          <CurrentDLInfo
+            {...props}
+          />
+        </Wrapper>
       );
-      assert.equal(component.text().includes('Updating sections: my picture sucks!'), true);
+      assert.equal(component.text().includes('Driver license numbera90382kf'), true);
+      assert.equal(component.text().includes('Expiration date11/13/2008'), true)
     });
   });
 
@@ -253,12 +223,13 @@ describe('Summary components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Senior ID: Yes'), true);
+      assert.equal(component.text().includes('Senior IDYes'), true);
     });
   });
 
-  describe('RealID', function() {
-    it('shows RealID fields', function(){
+  describe('IDRealID', function() {
+    it('shows RealID fields for ID', function(){
+      props.cardType.IDDL = ['ID'];
       props.realID = {
         getRealID : 'Yes',
         realIdDesignation: 'ID'
@@ -266,18 +237,35 @@ describe('Summary components', function() {
 
       let component = render(
         <Wrapper>
-          <RealID { ...props } />
+          <IDRealID { ...props } />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Real ID: Yes'), true);
-      assert.equal(component.text().includes('Real ID Designation: ID'), true);
+      assert.equal(component.text().includes('Real IDYes'), true);
+    });
+  });
+
+  describe('DLRealID', function() {
+    it('shows RealID fields DL', function(){
+      props.cardType.IDDL = ['DL'];
+      props.realID = {
+        getRealID : 'Yes',
+        realIdDesignation: 'DL'
+      };
+
+      let component = render(
+        <Wrapper>
+          <DLRealID { ...props } />
+        </Wrapper>
+      )
+      assert.equal(component.text().includes('Real IDYes'), true);
     });
   });
 
   describe('LicenseType', function() {
     it('lists which types of licenses the user has selected', function() {
-      props.licenseType.type = ['car', 'unsure'];
-      props.licenseType.needEndorsement = 'No';
+      props.licenseType.type = ['car', 'cycle'];
+      props.licenseType.needEndorsement = 'Yes';
+      props.licenseType.endorsement = 'firefighter';
       let component = render(
         <Wrapper>
           <LicenseType
@@ -285,35 +273,21 @@ describe('Summary components', function() {
           />
         </Wrapper>
       )
-      assert.ok(component.text().includes('Need to drive: Car, and I\'m not sure'), 'license type not rendered in summary');
+      assert.ok(component.text().includes('Car (Class C)'), 'license type not rendered in summary');
+      assert.ok(component.text().includes('Firefighter endorsementYes'), 'license endorsement not rendered in summary');
     });
   });
 
-  describe('ReducedFee', function() {
+  describe('ReducedOrNoFee', function() {
     it('returns null when no value', function(){
       let component = render(
         <Wrapper>
-          <ReducedFee
+          <ReducedOrNoFee
             { ...props }
           />
         </Wrapper>
       )
       assert.equal(component.find('.summary-section'), false);
-    });
-  });
-
-  describe('ReducedFee', function() {
-    it('shows that user does not have correct forms for reduced fee application', function() {
-      props.reducedFee = {
-        ID: 'Yes',
-        form: 'No'
-      }
-      let component = render(
-        <Wrapper>
-          <ReducedFee {...props} />
-        </Wrapper>
-      )
-      assert.ok(component.text().includes('Correct Forms for Reduced Fee: No'), 'reduced fee form line not rendered');
     });
   });
 

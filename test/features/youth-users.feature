@@ -92,7 +92,6 @@ Feature: Happy path for youth users
     And I will see my updated eligibility requirement status
     Then I will see my updated language in the summary
     Then I will see my political party updated in summary
-    Then I will see my guardian details in summary
     When I visit the required documents page
     Then I will see section about new driver requirements
     Then I will see section about knowledge test

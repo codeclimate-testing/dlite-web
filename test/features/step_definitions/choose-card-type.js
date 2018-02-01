@@ -86,8 +86,8 @@ module.exports = function(world) {
     browser
       .text()
       .then( text => {
-        assert(text.includes('Updating sections: Name'), 'update sections not shown in summary');
-        assert(text.includes('Updating: ID'), 'update ID not on summary')
+        assert(text.includes('My ID'), 'my id section not shown in summary');
+        assert(text.includes('Updating'), 'update sections not shown in summary');
       })
       .then(done)
       .catch(done);
@@ -97,8 +97,8 @@ module.exports = function(world) {
     browser
       .text()
       .then( text => {
-        assert(text.includes('Replacing: Driver License'), 'replacing not shown in summary');
-        assert(text.includes('Replacement Reason: damaged'), 'replace DL not on summary')
+        assert(text.includes('My Driver License'), 'my driver license section not shown in summary');
+        assert(text.includes('Replacing'), 'replacing not shown in summary');
       })
       .then(done)
       .catch(done);
@@ -108,7 +108,7 @@ module.exports = function(world) {
     browser
       .text('.inner')
       .then((text) => {
-        assert.ok(text.includes('Applying for new: ID') || text.includes('Renewing: ID'), 'ID card type not saved in summary');
+        assert.ok(text.includes('Applying for the first time') || text.includes('Renewing'), 'ID card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

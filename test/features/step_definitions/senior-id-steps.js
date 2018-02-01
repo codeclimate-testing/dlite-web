@@ -14,9 +14,9 @@ module.exports = function(world) {
 
   world.then('I will see that I have opted for my senior ID', function(done) {
     browser
-      .text('.senior-section')
+      .text('.summary-item')
       .then( text => {
-        assert(text.includes('Senior ID: Yes'), 'does not show Senior ID: Yes')
+        assert(text.includes('Senior IDYes'), 'does not show Senior ID: Yes')
       })
       .then( () => { done(); })
       .catch( done );
