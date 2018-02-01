@@ -33,6 +33,7 @@ const VehicleInfo = (props) => {
     <div className='vehicle-info'>
       {toDriveHeader}
       {vehicles}
+      <br></br>
     </div>
   );
 };

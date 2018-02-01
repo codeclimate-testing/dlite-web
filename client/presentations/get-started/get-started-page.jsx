@@ -31,9 +31,7 @@ const Intro = (props) => {
         <UpdatingIDInfo {...props} />
         <CorrectingIDInfo {...props} />
         <ReplacingIDInfo {...props} />
-        <br></br>
         <VehicleInfo {...props} />
-        <br></br>
         <EndorsementInfo {...props} />
         <RealIDInfo {...props} />
         <UpdateApplicationInfo {...props} />
