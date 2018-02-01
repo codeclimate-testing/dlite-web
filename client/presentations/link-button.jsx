@@ -1,8 +1,8 @@
 'use strict';
 
-import React from 'react';
-import { Link }     from 'react-router-dom';
-import alicePath from '../helpers/alice-path';
+import React          from 'react';
+import { Link }       from 'react-router-dom';
+import { iddlPath }   from '../helpers/alice-path';
 
 const LinkButton = (props) => {
   let className = 'button arrow-button ' + (props.className || '');
@@ -11,7 +11,7 @@ const LinkButton = (props) => {
     <div className='shadow-container unit'>
       <Link
         to={{
-          pathname: alicePath(props.to),
+          pathname: iddlPath(props.to),
           state: {
             nextAddress: props.nextAddress
           }

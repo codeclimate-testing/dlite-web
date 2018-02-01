@@ -1,9 +1,13 @@
 'use strict';
 
-export default (path) => {
-  return `/apply/id-and-license${path}`;
+export const alicePath = (path) => {
+  return `/apply${path}`;
 };
 
 export const cdlPath = (path) => {
-  return `/apply/cdl${path}`;
+  return alicePath(`/cdl${path}`);
 };
+
+export const iddlPath = (path) => {
+  return alicePath(`/id-and-license${path}`);
+}

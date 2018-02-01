@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import alicePath from '../helpers/alice-path';
+import { alicePath } from '../helpers/alice-path';
 
 const HomeLink = () => {
   if(APP_ENV === 'development') {

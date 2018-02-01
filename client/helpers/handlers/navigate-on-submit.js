@@ -1,6 +1,6 @@
 'use strict';
 
-import alicePath from '../alice-path';
+import { iddlPath } from '../alice-path';
 
 const onSubmitGenerator = (address, props) => {
   return (event) => {
@@ -8,7 +8,7 @@ const onSubmitGenerator = (address, props) => {
 
     let goTo = props.location && props.location.state && props.location.state.nextAddress === '/summary' && props.location.pathname !== '/apply/summary' ? '/summary' : address ;
     return props.history.push(
-      alicePath(goTo)
+      iddlPath(goTo)
     );
   };
 };

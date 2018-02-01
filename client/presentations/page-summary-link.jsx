@@ -2,13 +2,13 @@
 
 import React        from 'react';
 import { Link }     from 'react-router-dom';
-import alicePath    from '../helpers/alice-path';
+import { iddlPath } from '../helpers/alice-path';
 
 const PageSummaryLink = (props) => {
   let className = `${props.name} summary edit button`;
 
   let linkTo = {
-    pathname: alicePath(props.to),
+    pathname: iddlPath(props.to),
     state: { nextAddress: '/summary' }
   };
 

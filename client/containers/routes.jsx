@@ -3,7 +3,7 @@
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
 import { pathForPage }                        from '../helpers/data/page';
-import alicePath                              from '../helpers/alice-path';
+import { alicePath, iddlPath }                from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
@@ -58,55 +58,55 @@ class Router extends React.Component {
     return (
       <div className='routes'>
         <Route path={ alicePath('/links') } exact component={Home} />
-
-        <Route path={ '/apply/'} exact component={Welcome} />
-        <Route path={ '/apply/welcome' } component={Welcome} />
+        <Route path={ alicePath('/')} exact component={Welcome} />
+        <Route path={ alicePath('/welcome') } component={Welcome} />
         <Route path={ alicePath('/choose-language')} component={ChooseLanguage} />
         <Route path={ pathForPage('welcome') } component={Welcome} />
         <Route path={ alicePath('/sign-in') } component={IDMe} />
-        <Route path={ alicePath('/my-basics/legal-name') } component={LegalName} />
-        <Route path={ alicePath('/my-basics/date-of-birth') } component={DateOfBirth} />
-        <Route path={ alicePath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
-        <Route path={ alicePath('/select-id-dl') } component={ChooseCard} />
-        <Route path={ alicePath('/current-card-information') } component={CurrentCardInfo} />
-        <Route path={ alicePath('/updates-and-corrections') } component={UpdatesCorrects} />
-        <Route path={ alicePath('/replacement-details') } component={ReplacementDetails} />
-        <Route path={ alicePath('/senior-id') } component={SeniorID} />
-        <Route path={ alicePath('/youth-license-notification') } component={YouthLicenseNotification} />
-        <Route path={ alicePath('/real-id') } component={RealID} />
-        <Route path={ alicePath('/license-type') } component={LicenseType} />
-        <Route path={ alicePath('/reduced-fee')} component={ReducedFee} />
-        <Route path={ alicePath('/get-started') } component={GetStarted} />
 
-        <Route path={ alicePath('/my-basics/address') } component={Address} />
-        <Route path={ alicePath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
-        <Route path={ alicePath('/my-basics/physical-traits') } component={PhysicalTraits} />
-        <Route path={ alicePath('/my-basics/social-security' ) } component={SocialSecurity} />
+        <Route path={ iddlPath('/my-basics/legal-name') } component={LegalName} />
+        <Route path={ iddlPath('/my-basics/date-of-birth') } component={DateOfBirth} />
+        <Route path={ iddlPath('/what-do-you-want-to-do-today') } component={WhatDoYouWantToDoToday} />
+        <Route path={ iddlPath('/select-id-dl') } component={ChooseCard} />
+        <Route path={ iddlPath('/current-card-information') } component={CurrentCardInfo} />
+        <Route path={ iddlPath('/updates-and-corrections') } component={UpdatesCorrects} />
+        <Route path={ iddlPath('/replacement-details') } component={ReplacementDetails} />
+        <Route path={ iddlPath('/senior-id') } component={SeniorID} />
+        <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
+        <Route path={ iddlPath('/real-id') } component={RealID} />
+        <Route path={ iddlPath('/license-type') } component={LicenseType} />
+        <Route path={ iddlPath('/reduced-fee')} component={ReducedFee} />
+        <Route path={ iddlPath('/get-started') } component={GetStarted} />
 
-        <Route path={ alicePath('/my-history/medical' ) } component={MedicalHistory} />
-        <Route path={ alicePath('/my-history/license-and-id')} component={CardHistory} />
-        <Route path={ alicePath('/my-history/names' ) } component={NamesHistory} />
-        <Route path={ alicePath('/my-history/license-issues')} component={LicenseIssues} />
-        <Route path={ alicePath('/my-history/veterans-service') } component={VeteransService} />
+        <Route path={ iddlPath('/my-basics/address') } component={Address} />
+        <Route path={ iddlPath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
+        <Route path={ iddlPath('/my-basics/physical-traits') } component={PhysicalTraits} />
+        <Route path={ iddlPath('/my-basics/social-security' ) } component={SocialSecurity} />
 
-        <Route path={ alicePath('/organ-donation' ) } component={OrganDonation} />
+        <Route path={ iddlPath('/my-history/medical' ) } component={MedicalHistory} />
+        <Route path={ iddlPath('/my-history/license-and-id')} component={CardHistory} />
+        <Route path={ iddlPath('/my-history/names' ) } component={NamesHistory} />
+        <Route path={ iddlPath('/my-history/license-issues')} component={LicenseIssues} />
+        <Route path={ iddlPath('/my-history/veterans-service') } component={VeteransService} />
 
-        <Route path={ alicePath('/voting-registration/introduction') } component={VoterIntro} />
-        <Route path={ alicePath('/voting-registration/citizenship') } component={VoterCitizenStatus} />
-        <Route path={ alicePath('/voting-registration/eligibility') } component={EligibilityRequirements} />
-        <Route path={ alicePath('/voting-registration/opt-out') } component={OptOut} />
-        <Route path={ alicePath('/voting-registration/preferences') } component={VoterPreferencesIntro} />
-        <Route path={ alicePath('/voting-registration/preferences-updated') } component={VoterPreferencesIntroUpdated} />
-        <Route path={ alicePath('/voting-registration/choose-party') } component={PoliticalPartyChoose} />
-        <Route path={ alicePath('/voting-registration/language') } component={BallotLanguage} />
-        <Route path={ alicePath('/voting-registration/vote-by-mail') } component={BallotByMail} />
-        <Route path={ alicePath('/voting-registration/contact-methods') } component={ContactMethods} />
-        <Route path={ alicePath('/voting-registration/confirmation') } component={VoterRegComplete} />
+        <Route path={ iddlPath('/organ-donation' ) } component={OrganDonation} />
 
-        <Route path={ alicePath('/summary') } component={Summary} />
-        <Route path={ alicePath('/guardian-signature') } component={GuardianSignature} />
-        <Route exact path={ alicePath('/appointment-preparation/') } component={AppointmentPreparation} />
-        <Route path={ alicePath('/appointment-preparation/documents') } component={RequiredDocuments} />
+        <Route path={ iddlPath('/voting-registration/introduction') } component={VoterIntro} />
+        <Route path={ iddlPath('/voting-registration/citizenship') } component={VoterCitizenStatus} />
+        <Route path={ iddlPath('/voting-registration/eligibility') } component={EligibilityRequirements} />
+        <Route path={ iddlPath('/voting-registration/opt-out') } component={OptOut} />
+        <Route path={ iddlPath('/voting-registration/preferences') } component={VoterPreferencesIntro} />
+        <Route path={ iddlPath('/voting-registration/preferences-updated') } component={VoterPreferencesIntroUpdated} />
+        <Route path={ iddlPath('/voting-registration/choose-party') } component={PoliticalPartyChoose} />
+        <Route path={ iddlPath('/voting-registration/language') } component={BallotLanguage} />
+        <Route path={ iddlPath('/voting-registration/vote-by-mail') } component={BallotByMail} />
+        <Route path={ iddlPath('/voting-registration/contact-methods') } component={ContactMethods} />
+        <Route path={ iddlPath('/voting-registration/confirmation') } component={VoterRegComplete} />
+
+        <Route path={ iddlPath('/summary') } component={Summary} />
+        <Route path={ iddlPath('/guardian-signature') } component={GuardianSignature} />
+        <Route exact path={ iddlPath('/appointment-preparation/') } component={AppointmentPreparation} />
+        <Route path={ iddlPath('/appointment-preparation/documents') } component={RequiredDocuments} />
       </div>
     );
   }

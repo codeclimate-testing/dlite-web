@@ -1,6 +1,6 @@
 'use strict';
 
-import alicePath from '../alice-path';
+import {iddlPath} from '../alice-path';
 import {
   chooseCardType,
   currentCardInfo,
@@ -277,7 +277,7 @@ const conclusion = [
 
 const expand = (collection) => {
   return collection.map((item) => {
-    let path = alicePath(item.path);
+    let path = iddlPath(item.path);
     return Object.assign({}, item, {path: path});
   });
 };

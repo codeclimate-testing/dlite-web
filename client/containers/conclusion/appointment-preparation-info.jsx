@@ -4,7 +4,7 @@ import React            from 'react';
 import { Link }         from 'react-router-dom';
 
 import HomeLink         from '../../presentations/home-link.jsx';
-import alicePath        from '../../helpers/alice-path';
+import { iddlPath }     from '../../helpers/alice-path';
 
 const AppointmentPreparation = (props) => {
   const documentsLink = '/appointment-preparation/documents';
@@ -25,7 +25,7 @@ const AppointmentPreparation = (props) => {
             <li>You will receive a <b>confirmation code</b> via text or email for you to present to the counter agent at your DMV visit.</li>
             <li>Make <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment">an appointment</a> to visit your local DMV office.
             Most offices require appointments for new driver licenses.</li>
-            <li>Prepare for your visit by collecting the <Link className="required-documents-link" to={alicePath(documentsLink)}>required documents.</Link>
+            <li>Prepare for your visit by collecting the <Link className="required-documents-link" to={iddlPath(documentsLink)}>required documents.</Link>
             We’ve created a custom list for you, based on the information you provided in your application.
             You will also receive a link to that page in your electronice receipt.</li>
             <li>Should you require one, make <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment">an appointment</a> to take your driving skills test.
