@@ -31,6 +31,16 @@ const ElectronicSignature = (props) => {
   let acceptLiabilityErrorClass = errorClass(acceptLiabilityErrors);
   let acceptLiabilityErrorLabel = 'Civil liability';
 
+  let focusFunction = (e) => {
+    props.onFocus(e);
+    props.onFocusClearValidation(e);
+  };
+
+  let blurFunction = (e) => {
+    props.onBlur(e);
+    props.onBlurValidate(e);
+  };
+
   return (
 
     <div className='electronic-signature'>
@@ -49,8 +59,8 @@ const ElectronicSignature = (props) => {
           selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
           text      = { acceptLiabilityText }
           error     = { hasValue(acceptLiabilityErrors) }
-          onBlur    = { props.onBlurValidate }
-          onFocus   = { props.onFocusClearValidation }
+          onBlur    = { blurFunction }
+          onFocus   = { focusFunction }
         />
       </div>
       <div className='row'>
