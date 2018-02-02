@@ -1,21 +1,15 @@
-const istanbul = require('istanbul'),
-  fs = require('fs'),
-  path = require('path'),
-  collector = new istanbul.Collector(),
-  reporter = new istanbul.Reporter();
+'use strict'
 
-const workingDir = `${__dirname}/../../coverage`;
+const combine = require('istanbul-combine');
 
-console.log('\n\n');
-console.log('=============================== Combined Coverage summary ===============================');
+var opts = {
+  dir:      `coverage/combined`,              // output directory for combined report(s)
+  pattern:  `coverage/*/coverage.raw.json`,   // json reports to be combined
+  print:    'both',                           // print to the console (summary, detail, both, none)
+  base:     `${__dirname}/../../coverage`     // base directory for resolving absolute paths, see karma bug
+};
 
-['unit', 'bdd'].forEach(function (item) {
-  var file = path.join(workingDir, item, 'coverage.json');
-  collector.add(JSON.parse(fs.readFileSync(file, 'utf8')));
-});
-
-reporter.add('text');
-reporter.addAll(['lcov', 'clover']);
-reporter.write(collector, true, function () {
-  console.log('All reports generated!');
-});
+console.log('=======================================================================================');
+console.log('---------------------------------- COMBINED COVERAGE ----------------------------------')
+console.log('=======================================================================================')
+combine.sync(opts);
