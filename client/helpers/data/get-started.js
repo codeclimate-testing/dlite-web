@@ -8,25 +8,6 @@ import {
   getDL,
   IDOnly
 } from './card-type';
-import {
-  isGettingNew,
-  isChangingCard,
-  isRenewingCard,
-  isReplacingCard,
-  isCorrecting,
-  isUpdating
-} from './card-actions';
-
-
-export const getCorrectString = (props, DLString, IDString) => {
-  if (getID(props)) {
-    return IDString
-  } else if (getDL(props)) {
-    return DLString
-  } else {
-    return '';
-  }
-};
 
 export const getIDString = (props, defaultString, reducedString, noFeeString, seniorString) => {
   if (props.seniorID === 'Yes') {
@@ -40,21 +21,6 @@ export const getIDString = (props, defaultString, reducedString, noFeeString, se
   }
 };
 
-export const getStringByAction = (props, newString, renew, replace, update, correct) => {
-  if (isGettingNew(props)) {
-    return newString
-  } else if (isRenewingCard(props)) {
-    return renew
-  } else if (isReplacingCard(props)) {
-    return replace
-  } else if (isUpdating(props) && isChangingCard(props)) {
-    return update
-  } else if (isCorrecting(props) && isChangingCard(props)) {
-    return correct
-  } else {
-    return '';
-  }
-};
 
 export const getEndorsementString = (props, fireString) => {
   if (props.licenseType.endorsement.indexOf('firefighter') > -1) {

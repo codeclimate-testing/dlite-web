@@ -5,7 +5,7 @@ import translations from '../../../i18n';
 import { getDL }    from '../../../helpers/data/card-type';
 import {
   getStringByAction
-} from '../../../helpers/data/get-started';
+} from '../../../helpers/data/card-actions';
 
 const newDL = translations.intro.getStartedPage.whatYouAreDoing.applyingLicense
 const renewingDL = translations.intro.getStartedPage.whatYouAreDoing.renewingLicense
@@ -15,7 +15,7 @@ const replacingDL = translations.intro.getStartedPage.whatYouAreDoing.replacingL
 
 const DLInfo = (props) => {
   if(!getDL(props)) { return null; }
-  let DL = getStringByAction(props, newDL, renewingDL, replacingDL, updatingDL, correctingDL);
+  let DL = getStringByAction(props, newDL, renewingDL, replacingDL, null, updatingDL, correctingDL);
 
   return (
     <div className='dl-info'>

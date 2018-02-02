@@ -8,14 +8,18 @@ import ChooseCardRadio    from './choose-card/choose-card-radio.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import { isGettingNew }   from '../../helpers/data/card-actions';
 import { IDorDL }         from '../../helpers/data/card-type';
+import {
+  getStringByAction
+}  from   '../../helpers/data/card-actions';
+
+const newString = 'What type of card would you like?';
+const renewString ='What type of card are you renewing?';
+const replaceString ='What type of card are you replacing?';
+const changeString = 'What type of card are you correcting or updating?';
 
 const Form = (props) => {
-  let question = {
-    new: 'What type of card would you like?',
-    renew: 'What type of card are you renewing?',
-    change: 'What type of card are you correcting or updating?',
-    replace: 'What type of card are you replacing?'
-  };
+
+  let questionText = getStringByAction(props, newString, renewString, replaceString, changeString);
 
   return (
     <Page
@@ -23,7 +27,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-form'>
-        <h2 className='question'>{question[props.cardType.cardAction]}</h2>
+        <h2 className='question'>{questionText}</h2>
 
         <form onSubmit={ props.onSubmit } >
           <ChooseCardCheckbox

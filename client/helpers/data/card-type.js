@@ -69,3 +69,19 @@ export const renewID = (props) => {
 export const renewDL = (props) => {
   return getDL(props) && isRenewingCard(props);
 };
+
+export const needsEndorsement = (props) => {
+  return props.licenseType.needEndorsement === 'Yes';
+};
+
+export const getCorrectString = (props, DLString, IDString, bothString) => {
+  if (hasMultipleCards(props)) {
+    return bothString;
+  } else if (getID(props)) {
+    return IDString
+  } else if (getDL(props)) {
+    return DLString
+  } else {
+    return '';
+  }
+};

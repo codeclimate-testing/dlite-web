@@ -30,7 +30,7 @@ export const otherIsSelected = (props) => {
 };
 
 export const hasSpecifiedChange = (props) => {
-  return hasValue(props.cardChanges.correctOrUpdate);
+  return props.hasOwnProperty('cardChanges') && hasValue(props.cardChanges.correctOrUpdate);
 };
 
 export const isCorrecting = (props) => {
@@ -47,4 +47,22 @@ export const hasActionIsCorrecting = (props) => {
 
 export const hasActionIsUpdating = (props) => {
   return isChangingCard(props) && isUpdating(props);
+};
+
+export const getStringByAction = (props, newString, renew, replace, change, update, correct) => {
+  if (isGettingNew(props)) {
+    return newString
+  } else if (isRenewingCard(props)) {
+    return renew
+  } else if (isReplacingCard(props)) {
+    return replace
+  } else if (isChangingCard(props) && !hasSpecifiedChange(props)){
+    return change
+  } else if (isUpdating(props) && isChangingCard(props)) {
+    return update || change;
+  } else if (isCorrecting(props) && isChangingCard(props)) {
+    return correct || change;
+  } else {
+    return '';
+  }
 };

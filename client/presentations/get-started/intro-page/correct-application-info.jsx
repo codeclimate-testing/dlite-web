@@ -5,7 +5,7 @@ import translations           from '../../../i18n';
 import {
   hasActionIsCorrecting
 } from '../../../helpers/data/card-actions';
-import { getCorrectString }   from '../../../helpers/data/get-started';
+import { getCorrectString }   from '../../../helpers/data/card-type';
 
 const licenseCorrection = translations.intro.getStartedPage.explanation.correct.license;
 const IDCorrection = translations.intro.getStartedPage.explanation.correct.id;

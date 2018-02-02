@@ -5,7 +5,7 @@ import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 
 const Form = (props) => {
-  if(props.licenseType.needEndorsement !== 'Yes') { return null; }
+  if (!props.showIf) { return null; }
 
   return (
     <div className='endorsement-form'>

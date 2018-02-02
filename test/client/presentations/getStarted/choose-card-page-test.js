@@ -23,6 +23,9 @@ describe('ChooseCardPage', function() {
         cardAction: '',
         youthIDInstead: ''
       };
+      let cardChanges = {
+        correctOrUpdate: ''
+      };
       let dateOfBirth = {
         month: '',
         day: '',
@@ -41,6 +44,7 @@ describe('ChooseCardPage', function() {
 
       props = {
         cardType,
+        cardChanges,
         dateOfBirth,
         accordions,
         onChange,

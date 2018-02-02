@@ -14,7 +14,8 @@ import {
   isCorrecting,
   isUpdating,
   hasActionIsCorrecting,
-  hasActionIsUpdating
+  hasActionIsUpdating,
+  getStringByAction
 } from '../../../../client/helpers/data/card-actions';
 
 describe('Data helpers for card actions', function() {
@@ -224,6 +225,42 @@ describe('Data helpers for card actions', function() {
       data.cardChanges.correctOrUpdate = 'update';
       data.cardType.cardAction = 'renew';
       assert.equal(hasActionIsUpdating(data), false);
+    });
+  });
+
+  describe('#getStringByAction', function() {
+    const newString = 'new string';
+    const renewString = 'this is the string I see when I renew my card';
+    const replaceString = 'now i am replacing it';
+    const changeString = 'changing but i dont know how';
+    const updateString = 'update string';
+    const correctString = 'correct string';
+
+    it('returns the new string if cardAction is new', function() {
+      data.cardType.cardAction = 'new';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, null, updateString, correctString), newString);
+    });
+    it('returns the renew string if cardAction is renew', function() {
+      data.cardType.cardAction = 'renew';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, null, updateString, correctString), renewString);
+    });
+    it('returns the replace string if cardAction is replace', function() {
+      data.cardType.cardAction = 'replace';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, null, updateString, correctString), replaceString);
+    });
+    it('returns the change string if cardAction is change and cardChange hasnt been selected', function() {
+      data.cardType.cardAction = 'change';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, changeString, updateString, correctString), changeString);
+    });
+    it('returns the update string if cardAction is change and cardChange is update', function() {
+      data.cardType.cardAction = 'change';
+      data.cardChanges.correctOrUpdate = 'update';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, null, updateString, correctString), updateString);
+    });
+    it('returns the correct string if cardAction is change and cardChange is correct', function() {
+      data.cardType.cardAction = 'change';
+      data.cardChanges.correctOrUpdate = 'correct';
+      assert.equal(getStringByAction(data, newString, renewString, replaceString, null, updateString, correctString), correctString);
     });
   });
 });

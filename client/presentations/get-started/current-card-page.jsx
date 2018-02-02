@@ -5,7 +5,9 @@ import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
 import ExpirationDate     from '../expiration-date.jsx';
-import { IDorDL }         from '../../helpers/data/card-type';
+import {
+  getCorrectString
+}   from '../../helpers/data/card-type';
 
 const question = {
   ID: 'If you know it, <b>please enter your California ID number</b>.',
@@ -23,10 +25,9 @@ const description = {
 };
 
 const Form = (props) => {
-  const cardType        = IDorDL(props) || 'ID';
-  const questionText    = question[cardType];
-  const instructionText = instruction[cardType];
-  const descriptionText = description[cardType];
+  const questionText    = getCorrectString(props, question.DL, question.ID);
+  const instructionText = getCorrectString(props, instruction.DL, instruction.ID);
+  const descriptionText = getCorrectString(props, description.DL, description.ID);
 
   return (
     <Page

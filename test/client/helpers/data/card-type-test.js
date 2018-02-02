@@ -19,7 +19,8 @@ import {
   updateDL,
   updateID,
   renewID,
-  renewDL
+  renewDL,
+  getCorrectString
 } from '../../../../client/helpers/data/card-type';
 
 
@@ -352,6 +353,24 @@ describe('Data helpers for card-type', function() {
     });
     it('returns false if IDDL array is empty', function() {
       assert.equal(IDOnly(data), false);
+    });
+  });
+
+  describe('#getCorrectString', function() {
+    const DLString = 'license string';
+    const IDString = 'ID string';
+    it('returns ID string when user is changing ID', function() {
+      data.cardType.IDDL = ['ID'];
+      data.cardType.cardAction = 'change';
+      let result = getCorrectString(data, DLString, IDString);
+      assert.equal(result, IDString);
+    });
+
+    it('returns DL string when user is changing a DL', function() {
+      data.cardType.IDDL = ['DL'];
+      data.cardType.cardAction = 'change';
+      let result = getCorrectString(data, DLString, IDString);
+      assert.equal(result, DLString);
     });
   });
 });

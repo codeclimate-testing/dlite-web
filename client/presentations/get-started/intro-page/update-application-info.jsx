@@ -2,7 +2,7 @@
 
 import React                  from 'react';
 import translations           from '../../../i18n';
-import { getCorrectString }   from '../../../helpers/data/get-started';
+import { getCorrectString }   from '../../../helpers/data/card-type';
 import { hasActionIsUpdating } from '../../../helpers/data/card-actions';
 
 const licenseUpdate = translations.intro.getStartedPage.explanation.update.license;

@@ -3,9 +3,7 @@
 import assert from 'assert';
 
 import {
-  getCorrectString,
   getIDString,
-  getStringByAction,
   getEndorsementString,
   getRealIDString,
   getVehicleInfoArray
@@ -18,12 +16,6 @@ const defaultString = 'show this if other conditions not met';
 const reducedString = 'reduced';
 const noFeeString = 'no fee';
 const seniorString = 'senior';
-
-const newString = 'new string';
-const renewString = 'this is the string I see when I renew my card';
-const replaceString = 'now i am replacing it';
-const updateString = 'update string';
-const correctString = 'correct string';
 
 const classC = 'class C';
 const classM = 'class M';
@@ -57,22 +49,6 @@ describe('Data helpers for get started page', function() {
     }
   });
 
-  describe('#getCorrectString', function() {
-    it('returns ID string when user is changing ID', function() {
-      props.cardType.IDDL = ['ID'];
-      props.cardType.cardAction = 'change';
-      let result = getCorrectString(props, DLString, IDString);
-      assert.equal(result, IDString);
-    });
-
-    it('returns DL string when user is changing a DL', function() {
-      props.cardType.IDDL = ['DL'];
-      props.cardType.cardAction = 'change';
-      let result = getCorrectString(props, DLString, IDString);
-      assert.equal(result, DLString);
-    });
-  });
-
   describe('#getIDString', function() {
     it('returns the no fee string if user selected Yes to getting senior ID', function() {
       props.seniorID = 'Yes';
@@ -92,31 +68,6 @@ describe('Data helpers for get started page', function() {
     it('returns the default string if other conditions are not met', function() {
       let result = getIDString(props, defaultString, reducedString, noFeeString, seniorString);
       assert.equal(result, defaultString);
-    });
-  });
-
-  describe('#getStringByAction', function() {
-    it('returns the new string if cardAction is new', function() {
-      props.cardType.cardAction = 'new';
-      assert.equal(getStringByAction(props, newString, renewString, replaceString, updateString, correctString), newString);
-    });
-    it('returns the renew string if cardAction is renew', function() {
-      props.cardType.cardAction = 'renew';
-      assert.equal(getStringByAction(props, newString, renewString, replaceString, updateString, correctString), renewString);
-    });
-    it('returns the replace string if cardAction is replace', function() {
-      props.cardType.cardAction = 'replace';
-      assert.equal(getStringByAction(props, newString, renewString, replaceString, updateString, correctString), replaceString);
-    });
-    it('returns the update string if cardAction is change and cardChange is update', function() {
-      props.cardType.cardAction = 'change';
-      props.cardChanges.correctOrUpdate = 'update';
-      assert.equal(getStringByAction(props, newString, renewString, replaceString, updateString, correctString), updateString);
-    });
-    it('returns the correct string if cardAction is change and cardChange is correct', function() {
-      props.cardType.cardAction = 'change';
-      props.cardChanges.correctOrUpdate = 'correct';
-      assert.equal(getStringByAction(props, newString, renewString, replaceString, updateString, correctString), correctString);
     });
   });
 

@@ -2,7 +2,7 @@
 
 import React                  from 'react';
 import translations           from '../../../i18n';
-import { getCorrectString }   from '../../../helpers/data/get-started';
+import { getCorrectString }   from '../../../helpers/data/card-type';
 import { isReplacingCard }    from '../../../helpers/data/card-actions';
 
 const licenseReplace = translations.intro.getStartedPage.explanation.replace.license;

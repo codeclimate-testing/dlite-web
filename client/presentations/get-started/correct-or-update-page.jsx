@@ -6,7 +6,9 @@ import UpdateForm         from './correct-or-update/update-form.jsx';
 import OtherText          from './correct-or-update/text-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import { IDorDL }         from '../../helpers/data/card-type';
+import {
+  getCorrectString
+}  from '../../helpers/data/card-type';
 import {
   otherIsSelected,
   hasSpecifiedChange
@@ -18,7 +20,7 @@ const text = {
 };
 
 const Form = (props) => {
-  let tag           = text[IDorDL(props)];
+  let tag  = getCorrectString(props, text.DL, text.ID);
 
   return (
     <Page

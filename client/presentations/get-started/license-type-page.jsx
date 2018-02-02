@@ -7,6 +7,7 @@ import EndorsementToggle      from './license-type/endorseToggle.jsx';
 import EndorsementForm        from './license-type/endorseForm.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
+import { needsEndorsement }   from '../../helpers/data/card-type';
 
 const Form = (props) => {
   return (
@@ -25,7 +26,8 @@ const Form = (props) => {
         />
 
         <EndorsementForm
-        {...props}
+          {...props}
+          showIf    = { needsEndorsement(props) }
         />
 
         <NavigationButtons

@@ -5,9 +5,7 @@ import React from 'react';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
 
-import { hasMultipleCards }   from '../../../helpers/data/cards';
-import { mustChooseCard }     from '../../../helpers/data/real-id';
-import { getDL }              from '../../../helpers/data/card-type';
+import { getCorrectString }   from '../../../helpers/data/card-type';
 
 const headerTexts = {
   DL: 'Do you plan on using your Driver License to fly?',
@@ -15,17 +13,12 @@ const headerTexts = {
   both: 'Do you plan on using one of your cards to fly?'
 };
 
-const headerText = (props) => {
-  const multiCard = hasMultipleCards(props);
-  if (multiCard)     { return headerTexts.both; }
-  if (getDL(props))  { return headerTexts.DL; }
-  return headerTexts.ID;
-};
-
 const ChooseRealID = (props) => {
+  let headerText = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both);
+
   return (
     <div className='real-id-form'>
-      <h2 className='question'>{ headerText(props) }</h2>
+      <h2 className='question'>{ headerText }</h2>
 
       <p>
         As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
