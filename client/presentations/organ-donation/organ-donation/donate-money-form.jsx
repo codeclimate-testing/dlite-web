@@ -4,13 +4,15 @@ import React              from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import MessageBox         from '../../message-box.jsx';
+import { donateMoney }    from '../../../helpers/data/organ-donation';
+import translations       from '../../../i18n';
 
 const Message = (props) => {
-  if (props.organDonation.donateMoney !== 'Yes') { return null; }
+  if (!donateMoney(props)) { return null; }
   return (
     <MessageBox className='thanks'>
       <div className = 'donate-money-yes-info'>
-        <p>Thank you for your donation! We will add $2 to your total fee.</p>
+        <p>{translations.organDonation.monetaryContribution.messageYes}</p>
       </div>
     </MessageBox>
   );
@@ -19,8 +21,8 @@ const Message = (props) => {
 const DonateContribution = (props) => {
   return (
     <div className='donate-money-form'>
-      <h2 className='question'>Do you want to make a voluntary contribution of $2?</h2>
-      <p>Your donation helps support and promote organ and tissue donation.</p>
+      <h2 className='question'>{translations.organDonation.monetaryContribution.prompt}</h2>
+      <p className='translation-missing'>Your donation helps support and promote organ and tissue donation.</p>
 
       <RadioCollection
         {...props}
