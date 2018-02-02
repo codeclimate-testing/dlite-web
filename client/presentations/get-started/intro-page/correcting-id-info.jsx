@@ -1,10 +1,10 @@
 'use strict';
 
-import React                  from 'react';
-import translations from '../../../i18n';
+import React          from 'react';
+import translations   from '../../../i18n';
+import { correctID }  from '../../../helpers/data/card-type';
 import {
-  changeID,
-  getCorrectIDString
+  getIDString
 } from '../../../helpers/data/get-started';
 
 const correctingID = translations.intro.getStartedPage.whatYouAreDoing.correctingID;
@@ -13,8 +13,8 @@ const correctingNoFeeID = <p className='translation-missing'>You are correcting 
 const correctingSeniorID = translations.intro.getStartedPage.whatYouAreDoing.correctingSeniorID;
 
 const CorrectingIDInfo = (props) => {
-  if(!changeID(props)) { return null; }
-  let ID = getCorrectIDString(props, correctingID, correctingReducedFeeID, correctingNoFeeID, correctingSeniorID);
+  if(!correctID(props)) { return null; }
+  let ID = getIDString(props, correctingID, correctingReducedFeeID, correctingNoFeeID, correctingSeniorID);
 
   return (
     <div className='correcting-id-info'>

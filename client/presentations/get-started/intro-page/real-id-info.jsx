@@ -1,25 +1,16 @@
 'use strict';
 
-import React                  from 'react';
-import translations from '../../../i18n';
-import {
-  getDL,
-  getID
-} from '../../../helpers/data/card-type';
+import React                from 'react';
+import translations         from '../../../i18n';
+import { gettingRealID }    from '../../../helpers/data/real-id';
+import { getRealIDString }  from '../../../helpers/data/get-started';
 
 const idRealID = translations.intro.getStartedPage.whatYouAreDoing.realIDCompliantID;
 const dlRealID = translations.intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense;
 
 const RealIDInfo = (props) => {
-  if(props.realID.getRealID !== 'Yes') { return null; }
-  let realIdCompliant = '';
-
-  if(props.realID.realIdDesignation === 'ID' || (getID(props) && !getDL(props))) {
-    realIdCompliant = idRealID
-  }
-  if(props.realID.realIdDesignation === 'DL' || (getDL(props) && !getID(props))) {
-    realIdCompliant = dlRealID
-  }
+  if (!gettingRealID(props)) { return null; }
+  let realIdCompliant = getRealIDString(props, idRealID, dlRealID);
 
   return (
     <div className='real-id-info'>

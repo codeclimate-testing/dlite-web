@@ -1,10 +1,11 @@
 'use strict';
 
-import React                  from 'react';
+import React        from 'react';
 import translations from '../../../i18n';
+import { getDL }    from '../../../helpers/data/card-type';
 import {
-  getDL
-} from '../../../helpers/data/card-type';
+  getStringByAction
+} from '../../../helpers/data/get-started';
 
 const newDL = translations.intro.getStartedPage.whatYouAreDoing.applyingLicense
 const renewingDL = translations.intro.getStartedPage.whatYouAreDoing.renewingLicense
@@ -14,28 +15,7 @@ const replacingDL = translations.intro.getStartedPage.whatYouAreDoing.replacingL
 
 const DLInfo = (props) => {
   if(!getDL(props)) { return null; }
-  let DL = '';
-
-  switch(props.cardType.cardAction) {
-    case 'new':
-      DL = newDL;
-      break;
-    case 'renew':
-      DL = renewingDL;
-      break;
-    case 'replace':
-      DL = replacingDL;
-      break;
-    case 'change':
-      if(props.cardChanges.correctOrUpdate === 'update') {
-        DL = updatingDL;
-      } else if(props.cardChanges.correctOrUpdate === 'correct') {
-        DL = correctingDL;
-      }
-      break;
-    default:
-      DL;
-  }
+  let DL = getStringByAction(props, newDL, renewingDL, replacingDL, updatingDL, correctingDL);
 
   return (
     <div className='dl-info'>

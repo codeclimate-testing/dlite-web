@@ -5,7 +5,9 @@ import {
   isGettingNew,
   isChangingCard,
   isReplacingCard,
-  isRenewingCard
+  isRenewingCard,
+  hasActionIsCorrecting,
+  hasActionIsUpdating
 } from './card-actions';
 
 export const getID = (props) => {
@@ -50,6 +52,14 @@ export const changeID = (props) => {
 
 export const changeDL = (props) => {
   return getDL(props) && isChangingCard(props);
+};
+
+export const correctID = (props) => {
+  return getID(props) && hasActionIsCorrecting(props);
+};
+
+export const updateID = (props) => {
+  return getID(props) && hasActionIsUpdating(props);
 };
 
 export const renewID = (props) => {

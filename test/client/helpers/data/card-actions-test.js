@@ -12,7 +12,9 @@ import {
   otherIsSelected,
   hasSpecifiedChange,
   isCorrecting,
-  isUpdating
+  isUpdating,
+  hasActionIsCorrecting,
+  hasActionIsUpdating
 } from '../../../../client/helpers/data/card-actions';
 
 describe('Data helpers for card actions', function() {
@@ -180,6 +182,48 @@ describe('Data helpers for card actions', function() {
     });
     it('is false when field is blank', function() {
       assert.equal(isUpdating(data), false);
+    });
+  });
+
+  describe('#hasActionIsCorrecting', function() {
+    beforeEach(function() {
+      data.cardType.cardAction = 'change';
+    });
+    it('is true when cardAction is "change" and user is correcting card', function() {
+      data.cardChanges.correctOrUpdate = 'correct';
+      assert.equal(hasActionIsCorrecting(data), true);
+    });
+
+    it('is false when user is updating card', function(){
+      data.cardChanges.correctOrUpdate = 'update';
+      assert.equal(hasActionIsCorrecting(data), false);
+    });
+
+    it('is false when user is correcting a card but current cardAction is not "change"', function() {
+      data.cardChanges.correctOrUpdate = 'correct';
+      data.cardType.cardAction = 'renew';
+      assert.equal(hasActionIsCorrecting(data), false);
+    });
+  });
+
+  describe('#hasActionIsUpdating', function() {
+    beforeEach(function() {
+      data.cardType.cardAction = 'change';
+    });
+    it('is true when cardAction is "change" and user is updating card', function() {
+      data.cardChanges.correctOrUpdate = 'update';
+      assert.equal(hasActionIsUpdating(data), true);
+    });
+
+    it('is false when user is correcting card', function(){
+      data.cardChanges.correctOrUpdate = 'correct';
+      assert.equal(hasActionIsUpdating(data), false);
+    });
+
+    it('is false when user is updating a card but current cardAction is not "change"', function() {
+      data.cardChanges.correctOrUpdate = 'update';
+      data.cardType.cardAction = 'renew';
+      assert.equal(hasActionIsUpdating(data), false);
     });
   });
 });

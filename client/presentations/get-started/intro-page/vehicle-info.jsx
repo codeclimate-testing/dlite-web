@@ -1,39 +1,24 @@
 'use strict';
 
-import React                  from 'react';
-import translations from '../../../i18n';
-import {
-  getDL
-} from '../../../helpers/data/card-type';
+import React                    from 'react';
+import translations             from '../../../i18n';
+import { getDL }                from '../../../helpers/data/card-type';
+import { getVehicleInfoArray }  from '../../../helpers/data/get-started';
 
-const classC = translations.intro.getStartedPage.whatYouAreDoing.classes.C;
-const classM = translations.intro.getStartedPage.whatYouAreDoing.classes.M;
-const classA = translations.intro.getStartedPage.whatYouAreDoing.classes.A;
-const classB = translations.intro.getStartedPage.whatYouAreDoing.classes.B;
+const classC = <li key='car'>{translations.intro.getStartedPage.whatYouAreDoing.classes.C}</li>;
+const classM = <li key='cycle'>{translations.intro.getStartedPage.whatYouAreDoing.classes.M}</li>;
+const classA = <li key='long'>{translations.intro.getStartedPage.whatYouAreDoing.classes.A}</li>;
+const classB = <li key='trailer'>{translations.intro.getStartedPage.whatYouAreDoing.classes.B}</li>;
 const toDriveHeader = <h4>{translations.intro.getStartedPage.whatYouAreDoing.toDrive}</h4>
 
 const VehicleInfo = (props) => {
   if(!getDL(props)) { return null; }
-  let vehicles = [];
-
-  if(props.licenseType.type.indexOf('car') > -1) {
-    vehicles.push(<li key='car'>{classC}</li>)
-  }
-  if(props.licenseType.type.indexOf('cycle') > -1) {
-    vehicles.push(<li key='cycle'>{classM}</li>)
-  }
-  if(props.licenseType.type.indexOf('long') > -1) {
-    vehicles.push(<li key='long'>{classA}</li>)
-  }
-  if(props.licenseType.type.indexOf('trailer') > -1) {
-    vehicles.push(<li key='trailer'>{classB}</li>)
-  }
+  let vehicles = getVehicleInfoArray(props, classC, classM, classA, classB);
 
   return (
     <div className='vehicle-info'>
       {toDriveHeader}
       {vehicles}
-      <br></br>
     </div>
   );
 };

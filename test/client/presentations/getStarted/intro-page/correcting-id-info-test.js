@@ -68,13 +68,14 @@ describe('CorrectingIDInfo', function() {
     });
 
     it('returns null when user is not correcting an ID', function() {
-      props.cardChanges.correctOrUpdate = 'update'
+      props.cardChanges.correctOrUpdate = 'update';
 
       let component = render(
         <Wrapper>
         <GetStartedPage {...props} />
         </Wrapper>
       );
+
 
       assert.equal(component.find('.correcting-id-info'), false);
     });

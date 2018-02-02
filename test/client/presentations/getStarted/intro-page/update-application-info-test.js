@@ -56,14 +56,13 @@ describe('UpdateApplicationInfo', function() {
 
   describe('null', function() {
     it('returns null when user is not updating a card', function() {
-      props.cardChanges.correctOrUpdate = 'correct'
+      props.cardChanges.correctOrUpdate = 'correct';
 
       let component = render(
         <Wrapper>
         <GetStartedPage {...props} />
         </Wrapper>
       );
-
       assert.equal(component.find('.update-application-info'), false);
     });
   });

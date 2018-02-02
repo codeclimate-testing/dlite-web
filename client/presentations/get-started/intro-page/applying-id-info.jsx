@@ -2,10 +2,9 @@
 
 import React                  from 'react';
 import translations from '../../../i18n';
-
+import { getNewID } from '../../../helpers/data/card-type';
 import {
-  getNewID,
-  getIDInfoString
+  getIDString
 } from '../../../helpers/data/get-started';
 
 const newID = translations.intro.getStartedPage.whatYouAreDoing.applyingID;
@@ -16,7 +15,7 @@ const seniorID = translations.intro.getStartedPage.whatYouAreDoing.applyingSenio
 const ApplyingIDInfo = (props) => {
   if(!getNewID(props)) { return null; }
 
-  let ID = getIDInfoString(props, newID, reducedFeeID, noFeeID, seniorID);
+  let ID = getIDString(props, newID, reducedFeeID, noFeeID, seniorID);
 
   return (
     <div className='applying-id-info'>

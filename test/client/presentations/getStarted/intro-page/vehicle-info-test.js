@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../../support/wrapper';
-import VehicleInfo           from '../../../../../client/presentations/get-started/intro-page/vehicle-info.jsx';
+import VehicleInfo              from '../../../../../client/presentations/get-started/intro-page/vehicle-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
 import translations             from '../../../../../client/i18n';
@@ -83,7 +83,9 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.classes.C), true);
+
+        let text = translations.intro.getStartedPage.whatYouAreDoing.classes.C;
+        assert.equal(component.text().includes(text), true);
       });
 
       it('shows class M when user selects cycle', function() {

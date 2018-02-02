@@ -5,17 +5,21 @@ const assert = require('assert');
 import {
   getID,
   getDL,
+  prettyDL,
+  IDorDL,
+  IDOnly,
   getNewID,
   getNewDL,
   replaceID,
   replaceDL,
   changeID,
   changeDL,
+  correctDL,
+  correctID,
+  updateDL,
+  updateID,
   renewID,
-  renewDL,
-  prettyDL,
-  IDorDL,
-  IDOnly
+  renewDL
 } from '../../../../client/helpers/data/card-type';
 
 
@@ -48,12 +52,7 @@ describe('Data helpers for card-type', function() {
   };
 
   beforeEach(function() {
-    data = {
-      cardType: {
-        IDDL: [],
-        cardAction: ''
-      }
-    };
+    data = buildCardType('', '');
   });
 
   describe('#getID', function() {
@@ -153,6 +152,28 @@ describe('Data helpers for card-type', function() {
       data.cardType.cardAction = 'new';
       assert.equal(replaceID(data), false);
     });
+    it('is false if IDDL does not include ID', function() {
+      data.cardType.IDDL = ['DL'];
+      assert.equal(replaceID(data), false);
+    });
+  });
+
+  describe('#replaceDL', function() {
+    beforeEach(function() {
+      data = buildCardType('DL', 'replace');
+    });
+
+    it('is true if the cardAction is replace and IDDL includes DL', function(){
+      assert.equal(replaceDL(data), true);
+    });
+    it('is false if the cardAction is not replace', function() {
+      data.cardType.cardAction = 'new';
+      assert.equal(replaceDL(data), false);
+    });
+    it('is false if IDDL does not include DL', function() {
+      data.cardType.IDDL = ['ID'];
+      assert.equal(replaceDL(data), false);
+    });
   });
 
   describe('#changeID', function() {
@@ -163,9 +184,91 @@ describe('Data helpers for card-type', function() {
     it('is true if the cardAction is change and the IDDL includes ID', function(){
       assert.equal(changeID(data), true);
     });
-    it('is false if the ID object action is not change', function() {
+    it('is false if the cardAction is not change', function() {
       data = buildCardType('ID', 'renew');
       assert.equal(changeID(data), false);
+    });
+    it('is false if IDDL does not include ID', function() {
+      data.cardType.IDDL = ['DL'];
+      assert.equal(changeID(data), false);
+    });
+  });
+
+  describe('#changeDL', function() {
+    beforeEach(function() {
+      data = buildCardType('DL', 'change');
+    });
+
+    it('is true if the cardAction is change and the IDDL includes DL', function(){
+      assert.equal(changeDL(data), true);
+    });
+    it('is false if the cardAction is not change', function() {
+      data = buildCardType('ID', 'renew');
+      assert.equal(changeDL(data), false);
+    });
+    it('is false if IDDL does not include DL', function() {
+      data.cardType.IDDL = ['ID'];
+      assert.equal(changeDL(data), false);
+    });
+  });
+
+  describe('#correctID', function() {
+    beforeEach(function() {
+      data = {
+        cardType: {
+          cardAction: 'change',
+          IDDL: ['ID']
+        },
+        cardChanges: {
+          correctOrUpdate: 'correct'
+        }
+      };
+    });
+
+    it('is true if the cardAction is change and the IDDL includes ID and the user is correcting the card', function(){
+      assert.equal(correctID(data), true);
+    });
+    it('is false if the cardAction is not change', function() {
+      data = buildCardType('ID', 'renew');
+      assert.equal(correctID(data), false);
+    });
+    it('is false if IDDL does not include ID', function() {
+      data.cardType.IDDL = ['DL'];
+      assert.equal(correctID(data), false);
+    });
+    it('is false if the user is updating the card', function() {
+      data.cardChanges.correctOrUpdate = 'update';
+      assert.equal(correctID(data), false);
+    });
+  });
+
+  describe('#updateID', function() {
+    beforeEach(function() {
+      data = {
+        cardType: {
+          cardAction: 'change',
+          IDDL: ['ID']
+        },
+        cardChanges: {
+          correctOrUpdate: 'update'
+        }
+      };
+    });
+
+    it('is true if the cardAction is change and the IDDL includes ID and the user is updating the card', function(){
+      assert.equal(updateID(data), true);
+    });
+    it('is false if the cardAction is not change', function() {
+      data = buildCardType('ID', 'renew');
+      assert.equal(updateID(data), false);
+    });
+    it('is false if IDDL does not include ID', function() {
+      data.cardType.IDDL = ['DL'];
+      assert.equal(updateID(data), false);
+    });
+    it('is false if the user is correcting the card', function() {
+      data.cardChanges.correctOrUpdate = 'correct';
+      assert.equal(updateID(data), false);
     });
   });
 
@@ -177,9 +280,31 @@ describe('Data helpers for card-type', function() {
     it('is true if the cardAction is renew and IDDL includes ID', function(){
       assert.equal(renewID(data), true);
     });
-    it('is false if the ID object action is not renew', function() {
+    it('is false if the cardAction is not renew', function() {
       data = buildCardType('ID', 'change');
       assert.equal(renewID(data), false);
+    });
+    it('is false if the IDDL does not include ID', function() {
+      data.cardType.IDDL = ['DL'];
+      assert.equal(renewID(data), false);
+    });
+  });
+
+  describe('#renewDL', function() {
+    beforeEach(function() {
+      data = buildCardType('DL', 'renew');
+    });
+
+    it('is true if the cardAction is renew and IDDL includes DL', function(){
+      assert.equal(renewDL(data), true);
+    });
+    it('is false if the cardAction is not renew', function() {
+      data = buildCardType('DL', 'change');
+      assert.equal(renewDL(data), false);
+    });
+    it('is false if the IDDL does not include DL', function() {
+      data.cardType.IDDL = ['ID'];
+      assert.equal(renewDL(data), false);
     });
   });
 

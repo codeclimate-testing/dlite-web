@@ -13,6 +13,10 @@ export const validToContinue = (props) => {
 };
 
 export const mustChooseCard = (props) => {
-  return props.realID.getRealID === 'Yes' &&
+  return gettingRealID(props) &&
     (getID(props) && getDL(props));
+};
+
+export const gettingRealID = (props) => {
+  return props.realID.getRealID === 'Yes';
 };

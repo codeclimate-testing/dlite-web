@@ -2,7 +2,9 @@
 
 import React                  from 'react';
 import translations           from '../../../i18n';
-import { hasActionIsCorrecting }   from '../../../helpers/data/card-actions';
+import {
+  hasActionIsCorrecting
+} from '../../../helpers/data/card-actions';
 import { getCorrectString }   from '../../../helpers/data/get-started';
 
 const licenseCorrection = translations.intro.getStartedPage.explanation.correct.license;

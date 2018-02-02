@@ -45,3 +45,6 @@ export const hasActionIsCorrecting = (props) => {
   return isChangingCard(props) && isCorrecting(props);
 };
 
+export const hasActionIsUpdating = (props) => {
+  return isChangingCard(props) && isUpdating(props);
+};
