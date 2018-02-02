@@ -9,6 +9,7 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import AddressPage              from '../../../../client/presentations/my-basics/address-page.jsx';
 import store                    from '../../support/page-store';
+import translations             from '../../../../client/i18n';
 
 describe('AddressPage', function() {
   let props;
@@ -31,6 +32,10 @@ describe('AddressPage', function() {
         state: 'CA',
         zip: '',
       }
+    };
+    let cardType = {
+      IDDL: ['ID'],
+      cardAction: ''
     };
     let onMailingChange   = spy();
     let onHomeChange      = spy();
@@ -55,6 +60,7 @@ describe('AddressPage', function() {
 
     props = {
       address,
+      cardType,
       onMailingChange,
       onHomeChange,
       onAddressChange,
@@ -93,6 +99,37 @@ describe('AddressPage', function() {
     assert.ok(component.find('input#mailingCity').length,   'City input not found');
     assert.ok(component.find('.dropdown#homeState').length,  'State select not found');
     assert.ok(component.find('input#mailingZip').length,    'State select not found');
+  });
+
+  it('shows the ID header', function() {
+    let component = render(
+      <Wrapper>
+        <AddressPage {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.ID));
+  });
+
+  it('shows the DL header', function() {
+    props.cardType.IDDL = ['DL'];
+
+    let component = render(
+      <Wrapper>
+        <AddressPage {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.license));
+  });
+
+  it('shows the header for both cards', function() {
+    props.cardType.IDDL = ['ID', 'DL'];
+
+    let component = render(
+      <Wrapper>
+        <AddressPage {...props} />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.cards));
   });
 });
 

@@ -5,9 +5,13 @@ export const hasAnySSN = (props) => {
 };
 
 export const hasNone = (props) => {
-  if (!hasAnySSN(props)){
-    return true;
-  } else {
-    return false;
-  }
+  return !hasAnySSN(props);
+};
+
+export const hasSocialSecurityYes = (props) => {
+  return props.socialSecurity.hasSocialSecurity === 'Yes';
+};
+
+export const hasSocialSecurityNo = (props) => {
+  return props.socialSecurity.hasSocialSecurity === 'No';
 };

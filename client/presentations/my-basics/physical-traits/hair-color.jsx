@@ -3,6 +3,9 @@
 import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
+import translations       from '../../../i18n';
+
+const translationPath = translations.myBasics.traitsPage.hairColor;
 
 const HairColor = (props) => {
   return (
@@ -16,39 +19,39 @@ const HairColor = (props) => {
             custom={true}
           >
             <RadioSelector
-              text='Auburn'
+              text={translationPath.values[0]}
               value='Auburn'
             />
             <RadioSelector
-              text='Bald'
+            text={translationPath.values[1]}
               value='Bald'
             />
             <RadioSelector
-              text='Black'
+              text={translationPath.values[2]}
               value='Black'
             />
             <RadioSelector
-              text='Blonde'
+              text={translationPath.values[3]}
               value='Blonde'
             />
             <RadioSelector
-              text='Brown'
+              text={translationPath.values[4]}
               value='Brown'
             />
             <RadioSelector
-              text='Gray'
+              text={translationPath.values[5]}
               value='Gray'
             />
             <RadioSelector
-              text='Red'
+              text={translationPath.values[6]}
               value='Red'
             />
             <RadioSelector
-              text='White'
+              text={translationPath.values[7]}
               value='White'
             />
             <RadioSelector
-              text='Other'
+              text={translationPath.values[8]}
               value='Other'
             />
           </RadioCollection>

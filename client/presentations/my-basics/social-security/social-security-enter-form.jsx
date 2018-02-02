@@ -9,10 +9,14 @@ import {
   errorMessage,
   errorClass
 } from '../../validations.jsx';
+import {
+  hasSocialSecurityYes
+} from '../../../helpers/data/ssn';
+import translations     from '../../../i18n';
 
 const Form = (props) => {
-  if(props.socialSecurity.hasSocialSecurity !== 'Yes') { return null; }
-  
+  if (!hasSocialSecurityYes(props)) { return null; }
+
   let errors = {
     part1 : props.validations.part1(),
     part2 : props.validations.part2(),
@@ -22,11 +26,13 @@ const Form = (props) => {
   let message = errorMessage(errors);
   let addError = errorClass(message);
 
+  let translationPath = translations.myBasics.socialSecurityPage.enterSocialNumber;
+
   return (
     <div className='social-security-enter-form'>
       <hr/>
-      <h2 className='question'>What’s your Social Security Number?</h2>
-      <p>Example: 123 - 45 - 6789</p>
+      <h2 className='question'>{translationPath.prompt}</h2>
+      <p>{translationPath.explanation}</p>
 
       <NumberInput
         {...props}

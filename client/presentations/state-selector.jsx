@@ -2,6 +2,7 @@
 
 import React 					from 'react';
 import SelectDropdown	from './select-dropdown.jsx';
+import translations		from '../i18n';
 
 const stateList = [
 	"AK",
@@ -65,7 +66,7 @@ const StateSelector = (props) => {
 				id					= { props.id }
 				values			= { stateList }
 				onChange		= { props.onChange }
-				description	= 'State'
+				description	= {translations.myBasics.addressesPage.stateLabel}
 				selected		= { props.value }
 			/>
     </div>

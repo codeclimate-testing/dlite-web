@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from 'react';
-
+import translations     from '../../../i18n'
 import AddressTemplate  from '../../address-template.jsx';
 
 const Form = (props) => {
@@ -10,8 +10,8 @@ const Form = (props) => {
   return (
     <div className='mailing-address-form'>
       <hr/>
-      <h2 className='question'>Where do you receive mail?</h2>
-      <p>For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017</p>
+      <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressPrompt}</h2>
+      <p>{translations.myBasics.addressesPage.explanation}</p>
       <div className='addresses-section'>
           <AddressTemplate
             {...props}

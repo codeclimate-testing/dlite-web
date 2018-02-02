@@ -10,6 +10,9 @@ import {
   errorMessage,
   errorClass
 } from '../validations.jsx';
+import translations       from '../../i18n';
+
+let translationsPath = translations.myBasics.heightWeightPage;
 
 const TraitsPage = (props) => {
   let errors = {
@@ -26,13 +29,13 @@ const TraitsPage = (props) => {
       sectionKey='myBasics'
     >
       <form onSubmit={ props.onSubmit } className='traits-height-weight-form' >
-        <h2 className='question'>How tall are you?</h2>
-        <p>Example: 5 feet 9 inches</p>
+        <h2 className='question'>{translationsPath.height.prompt}</h2>
+        <p>{translationsPath.height.explanation}</p>
 
         <NumberInput
           {...props}
           identifier='heightFeet'
-          description='Feet'
+          description={translationsPath.height.feetLabel}
           value={ props.traitsHeightWeight.heightFeet }
           errorMessage={ props.validations.heightFeet() }
           onChange      = { props.onChange }
@@ -45,7 +48,7 @@ const TraitsPage = (props) => {
         <NumberInput
           {...props}
           identifier='heightInches'
-          description='Inches'
+          description={translationsPath.height.inchesLabel}
           value={ props.traitsHeightWeight.heightInches }
           errorMessage={ props.validations.heightInches() }
           onChange      = { props.onChange }
@@ -60,13 +63,13 @@ const TraitsPage = (props) => {
         </div>
 
         <hr/>
-        <h2 className='question'>And how much do you weigh?</h2>
-        <p>Example: 190 pounds</p>
+        <h2 className='question'>{translationsPath.weight.prompt}</h2>
+        <p>{translationsPath.weight.explanation}</p>
 
         <NumberInput
           {...props}
           identifier='weight'
-          description='Pounds'
+          description={translationsPath.weight.poundsLabel}
           value={ props.traitsHeightWeight.weight }
           errorMessage={ props.validations.weight() }
           onChange      = { props.onChange }

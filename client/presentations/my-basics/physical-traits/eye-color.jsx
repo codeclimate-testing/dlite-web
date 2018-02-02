@@ -3,12 +3,15 @@
 import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
+import translations       from '../../../i18n';
+
+const translationPath = translations.myBasics.traitsPage.eyeColor;
 
 const EyeColor = (props) => {
   return (
     <div className='eye-color'>
       <hr/>
-      <h2 className='question'>What color are your eyes?</h2>
+      <h2 className='question'>{translationPath.prompt}</h2>
       <div>
         <RadioCollection
           {...props}
@@ -16,27 +19,27 @@ const EyeColor = (props) => {
           custom={true}
         >
           <RadioSelector
-            text='Black'
+            text={translationPath.values[0]}
             value='Black'
           />
           <RadioSelector
-            text='Blue'
+            text={translationPath.values[1]}
             value='Blue'
           />
           <RadioSelector
-            text='Brown'
+            text={translationPath.values[2]}
             value='Brown'
           />
           <RadioSelector
-            text='Gray'
+            text={translationPath.values[3]}
             value='Gray'
           />
           <RadioSelector
-            text='Green'
+            text={translationPath.values[4]}
             value='Green'
           />
           <RadioSelector
-            text='Hazel'
+            text={translationPath.values[5]}
             value='Hazel'
           />
         </RadioCollection>

@@ -1,10 +1,11 @@
 'use strict';
 
-import React from 'react';
+import React          from 'react';
 
-import StateSelector from './state-selector.jsx';
-import TextInput from './text-input.jsx';
-import { error } from 'util';
+import StateSelector  from './state-selector.jsx';
+import TextInput      from './text-input.jsx';
+import { error }      from 'util';
+import translations   from '../i18n';
 
 const generateIdentifier = (name, type) => {
   const upcasedName = name[0].toUpperCase() + name.slice(1);
@@ -23,7 +24,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('street_1', props.type) }
         id={ generateIdentifier('street_1', props.type) }
-        description='Street Address'
+        description={translations.myBasics.addressesPage.streetAddressLabel}
         value={ props.address['street_1'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_1()              :
@@ -38,7 +39,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('street_2', props.type) }
         id={ generateIdentifier('street_2', props.type) }
-        description='Apartment or Unit Number (optional)'
+        description={translations.myBasics.addressesPage.apartmentLabel}
         value={ props.address['street_2'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_2()              :
@@ -53,7 +54,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('city', props.type) }
         id={ generateIdentifier('city', props.type) }
-        description='City'
+        description={translations.myBasics.addressesPage.cityLabel}
         value={ props.address['city'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeCity()              :
@@ -75,7 +76,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('zip', props.type) }
         id={ generateIdentifier('zip', props.type) }
-        description='Zip Code'
+        description={translations.myBasics.addressesPage.zipLabel}
         value={ props.address['zip'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeZip()              :
