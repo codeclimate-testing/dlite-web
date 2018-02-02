@@ -3,26 +3,22 @@
 import React                from 'react';
 import CheckboxCollection   from '../../checkbox-selector-collection.jsx';
 import CheckboxSelector     from '../../checkbox-selector.jsx';
-import { SubQuestionHeader } from '../../question-header.jsx';
 import {
-  isCorrecting,
-  isUpdating
+  getStringByAction
 }   from '../../../helpers/data/card-actions';
 
 const Form = (props) => {
   if(!props.showIf ){ return null; }
+
+  const correctText = props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct;
+  const updateText = props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update;
+  let headerText = getStringByAction(props, null, null, null, null, updateText, correctText);
+
   return (
     <div className='row change-sections-form'>
       <hr/>
 
-      <SubQuestionHeader
-        text    = { props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct }
-        showIf  = { isCorrecting(props) }
-      />
-      <SubQuestionHeader
-        text    = { props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update }
-        showIf  = { isUpdating(props) }
-      />
+      <h3 className = 'question'>{headerText}</h3>
 
       <p>Select all that apply.</p>
 

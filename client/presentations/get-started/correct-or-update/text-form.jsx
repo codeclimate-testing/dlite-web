@@ -2,28 +2,22 @@
 
 import React                from 'react';
 import TextInput            from '../../text-input.jsx';
-import { SubQuestionHeader }from '../../question-header.jsx';
 import {
-  isCorrecting,
-  isUpdating
+  getStringByAction
 }   from '../../../helpers/data/card-actions';
+
+const correctString = 'Enter your correction below';
+const updateString = 'Enter your udpate below';
 
 const EnterMedicalInfo = (props) => {
   if (!props.showIf) { return null; }
 
+  let headerText = getStringByAction(props, null, null, null, null, updateString, correctString);
   return (
     <div className    = 'enter-other-section'>
       <hr/>
-      <SubQuestionHeader
-        showIf        = { isCorrecting(props) }
-        text          = 'Enter your correction below'
-        translationMissing = {true}
-      />
-      <SubQuestionHeader
-        showIf        = { isUpdating(props) }
-        text          = 'Enter your update below'
-        translationMissing = {true}
-      />
+      <h3 className='question'>{headerText}</h3>
+
       <TextInput
         {...props}
         identifier    = 'other'
