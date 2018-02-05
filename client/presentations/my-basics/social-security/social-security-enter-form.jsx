@@ -34,6 +34,7 @@ const Form = (props) => {
       <h2 className='question'>{translationPath.prompt}</h2>
       <p>{translationPath.explanation}</p>
 
+      <fieldset>
       <NumberInput
         {...props}
         identifier    = 'part1'
@@ -58,6 +59,7 @@ const Form = (props) => {
         value          = { props.socialSecurity.part3 }
         error          = { hasValue(errors.part3) }
       />
+      </fieldset>
 
       <div className='row'>
         <ErrorLabel

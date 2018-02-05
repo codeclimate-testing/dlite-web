@@ -10,6 +10,7 @@ const GuardianContact = (props) => {
   let guardianID = props.guardianID;
   return (
     <div className='guardian-contact'>
+      <fieldset>
       <TextInput
         {...props}
         identifier={`phoneNumber_${guardianID}`}
@@ -22,11 +23,14 @@ const GuardianContact = (props) => {
           null
         }
       />
+      </fieldset>
+      <fieldset>
       <AddressTemplate
         {...props}
         type={`guardian_${guardianID}`}
         address={ props.guardianSignature.guardianInfo[guardianID].address}
       />
+      </fieldset>
     </div>
   );
 }

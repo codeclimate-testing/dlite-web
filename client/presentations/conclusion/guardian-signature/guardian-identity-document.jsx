@@ -27,6 +27,7 @@ const IdentityForm = (props) => {
       <h2 className='question'>Finally, please provide information from a document that can prove your identity.</h2>
       <p>Documents include: a California driver license or ID card, a passport, a consultant card, a birth certificate.</p>
 
+      <fieldset>
       <TextInput
         {...props}
         identifier={`number_${guardianID}`}
@@ -49,6 +50,7 @@ const IdentityForm = (props) => {
           null
         }
       />
+      </fieldset>
 
       <div className='date-input'>
         <label
@@ -59,6 +61,7 @@ const IdentityForm = (props) => {
           {errorLabel}
         </label>
         <div className='expiration-date'>
+          <fieldset>
           <NumberInput
             {...props}
             identifier={`expirationMonth_${guardianID}`}
@@ -86,6 +89,7 @@ const IdentityForm = (props) => {
             value={props.guardianSignature.guardianInfo[guardianID].ID.expirationYear}
             error={ hasValue(dateErrors.year) }
           />
+          </fieldset>
           <ErrorLabel
               errorMessage  = { message }
               errorClass    = { addError }

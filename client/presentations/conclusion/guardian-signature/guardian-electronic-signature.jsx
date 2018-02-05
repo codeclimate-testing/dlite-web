@@ -52,6 +52,7 @@ const ElectronicSignature = (props) => {
           <ErrorIcon errorClass = { acceptLiabilityErrorClass } />
             {acceptLiabilityErrorLabel}
         </label>
+        <fieldset>
         <CheckboxSelector
           {...props}
           name      = { `acceptLiabilities_${guardianID}` }
@@ -62,6 +63,7 @@ const ElectronicSignature = (props) => {
           onBlur    = { blurFunction }
           onFocus   = { focusFunction }
         />
+        </fieldset>
       </div>
       <div className='row'>
         <ErrorLabel
@@ -73,7 +75,8 @@ const ElectronicSignature = (props) => {
       <div className='electronic-signature'>
         <p>Please type your name and today’s date to electronically sign.</p>
 
-        <TextInput
+        <fieldset>
+          <TextInput
           {...props}
           identifier    = { `name_${guardianID}` }
           description   = 'Parent/Guardian signature'
@@ -84,6 +87,7 @@ const ElectronicSignature = (props) => {
             null
           }
         />
+        </fieldset>
 
         <div className='date-input'>
           <label
@@ -94,7 +98,8 @@ const ElectronicSignature = (props) => {
               {dateErrorLabel}
           </label>
           <div className  = 'electronic-signature-date'>
-            <NumberInput
+            <fieldset>
+              <NumberInput
               {...props}
               identifier  = { `month_${guardianID}` }
               description = 'MM'
@@ -121,6 +126,7 @@ const ElectronicSignature = (props) => {
               value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
               error       = { hasValue(dateErrors.year) }
             />
+            </fieldset>
             <div className='row'>
               <ErrorLabel
                 errorMessage  = { dateErrorMessage }

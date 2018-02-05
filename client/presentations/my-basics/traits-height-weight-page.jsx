@@ -32,6 +32,7 @@ const TraitsPage = (props) => {
         <h2 className='question'>{translationsPath.height.prompt}</h2>
         <p>{translationsPath.height.explanation}</p>
 
+        <fieldset>
         <NumberInput
           {...props}
           identifier='heightFeet'
@@ -55,6 +56,7 @@ const TraitsPage = (props) => {
           onBlurValidate = { props.onBlurValidate }
           onFocusClearValidation = { props.onFocusClearValidation }
         />
+        </fieldset>
         <div className='row'>
           <ErrorLabel
             errorMessage  = { errors.heightFeet || errors.heightInches }

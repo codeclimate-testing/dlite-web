@@ -51,6 +51,7 @@ const ContactDetails = (props) => {
 
       />
 
+      <fieldset>
       <NumberInput
         {...props}
         identifier    = 'phoneNumber1'
@@ -74,6 +75,7 @@ const ContactDetails = (props) => {
         value         = { props.contactMethods.phoneNumber3}
         error         = { hasValue(errors.three) }
       />
+      </fieldset>
 
       <div className='row'>
         <ErrorLabel
