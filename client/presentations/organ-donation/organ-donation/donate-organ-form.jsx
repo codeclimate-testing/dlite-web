@@ -41,12 +41,14 @@ const DonateOrgan = (props) => {
       <h2 className='question'>{translations.organDonation.organDonor.prompt}</h2>
       <p>{translations.organDonation.organDonor.validationMessage}</p>
 
-      <RadioCollection
+      <fieldset>
+        <RadioCollection
         {...props}
         name='donateOrgan'
       >
         { radioYesNoGroup() }
       </RadioCollection>
+      </fieldset>
 
       <MessageForYesChoice organDonation={props.organDonation} />
       <MessageForNoChoice organDonation={props.organDonation} />

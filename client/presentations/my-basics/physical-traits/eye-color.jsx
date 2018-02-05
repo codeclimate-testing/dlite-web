@@ -13,6 +13,7 @@ const EyeColor = (props) => {
       <hr/>
       <h2 className='question'>{translationPath.prompt}</h2>
       <div>
+        <fieldset>
         <RadioCollection
           {...props}
           name='eyeColor'
@@ -43,6 +44,7 @@ const EyeColor = (props) => {
             value='Hazel'
           />
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

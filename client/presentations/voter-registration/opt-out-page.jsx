@@ -31,6 +31,7 @@ const OptOutPage = (props) => {
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
       <h2 className='question'>{translations.votingRegistration.optOutPage.pagePrompt}</h2>
 
+      <fieldset>
       <RadioCollection
         {...props}
         name          = 'optOut'
@@ -49,6 +50,7 @@ const OptOutPage = (props) => {
           text={ optionText.optOut }
         />
       </RadioCollection>
+      </fieldset>
 
         <NavigationButtons
           {...props}

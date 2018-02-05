@@ -8,6 +8,7 @@ const LanguageRadios = (props) => {
   let translationAddress = translations.intro.switchLanguagePage;
 
   return (
+    <fieldset>
     <RadioCollection
       {...props}
     >
@@ -52,6 +53,7 @@ const LanguageRadios = (props) => {
         value = 'vi'
       />
     </RadioCollection>
+    </fieldset>
   );
 };
 

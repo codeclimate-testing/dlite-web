@@ -67,6 +67,7 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <Header />
           <div className='row'>
+            <fieldset>
             <RadioCollection
               {...props}
               name          = { actionName }
@@ -75,6 +76,7 @@ const Form = (props) => {
             >
               { radioYesNoGroup() }
             </RadioCollection>
+            </fieldset>
           </div>
 
           <ErrorMessage {...props} />

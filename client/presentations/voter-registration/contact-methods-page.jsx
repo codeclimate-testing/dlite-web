@@ -17,6 +17,7 @@ const ContactMethodsPage = (props) => {
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
         <h2 className='question'>{translations.votingRegistration.contactInfoPage.pagePrompt}</h2>
 
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'shouldContact'
@@ -36,6 +37,7 @@ const ContactMethodsPage = (props) => {
             text={translations.shared.commonAnswers.skipSection}
           />
         </RadioCollection>
+        </fieldset>
 
         <div>
           <p className='translation-missing'>Who gets this information?</p>

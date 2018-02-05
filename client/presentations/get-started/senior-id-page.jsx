@@ -25,6 +25,7 @@ const Form = (props) => {
         <h3 className='question'>Would you like this card for no fee?</h3>
 
         <div className='row'>
+          <fieldset>
           <RadioCollection
             {...props}
             name    = 'seniorID'
@@ -33,6 +34,7 @@ const Form = (props) => {
           >
             { radioYesNoGroup() }
           </RadioCollection>
+          </fieldset>
         </div>
 
         <NavigationButtons

@@ -13,6 +13,7 @@ const HairColor = (props) => {
       <hr/>
       <h2 className='question'>What color is your hair?</h2>
         <div>
+          <fieldset>
           <RadioCollection
             {...props}
             name='hairColor'
@@ -55,6 +56,7 @@ const HairColor = (props) => {
               value='Other'
             />
           </RadioCollection>
+          </fieldset>
         </div>
     </div>
   );

@@ -21,6 +21,7 @@ const Question = (props) => {
       <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressSamePrompt}</h2>
       <p>{headerText}</p>
       <div className='input-container'>
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'homeAddressSameAsMailing'
@@ -29,6 +30,7 @@ const Question = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

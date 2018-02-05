@@ -13,6 +13,7 @@ const Form = (props) => {
       <h2 className='question'>{translationPath.prompt}</h2>
       <p>{translationPath.explanation}</p>
         <div className='input-container'>
+        <fieldset>
         <RadioCollection
           {...props}
           name='hasSocialSecurity'
@@ -20,6 +21,7 @@ const Form = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

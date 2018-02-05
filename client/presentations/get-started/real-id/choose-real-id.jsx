@@ -26,6 +26,7 @@ const ChooseRealID = (props) => {
       </p>
 
       <div className='row'>
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'getRealID'
@@ -33,6 +34,7 @@ const ChooseRealID = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
 
       </div>
     </div>

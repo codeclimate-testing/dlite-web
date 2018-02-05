@@ -32,6 +32,7 @@ const BallotByMailPage = (props) => {
         <h2 className='question'>{translations.votingRegistration.byMailPage.pagePrompt}</h2>
         <p>{translations.votingRegistration.byMailPage.explanation}</p>
 
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'ballotByMail'
@@ -39,6 +40,7 @@ const BallotByMailPage = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
 
         <InfoMessage
           selectedValue = { props.selectedValue }

@@ -18,12 +18,14 @@ const VeteransPreviousDesignation = (props) => {
     <div className='veterans-previous-designation-form'>
       <h2 className='question'>{headerText}</h2>
       <div className='input-container'>
+        <fieldset>
         <RadioCollection
           {...props}
           name='previouslyDesignated'
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

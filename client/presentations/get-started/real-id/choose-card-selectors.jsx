@@ -19,6 +19,7 @@ const Form = (props) => {
         compliant to fly within the United States, but not both
       </p>
 
+      <fieldset>
       <RadioCollection
         {...props}
         name          = 'realIdDesignation'
@@ -26,6 +27,7 @@ const Form = (props) => {
       >
         { radioIdDlGroup() }
       </RadioCollection>
+      </fieldset>
 
     </div>
   );

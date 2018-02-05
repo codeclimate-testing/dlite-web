@@ -13,6 +13,7 @@ const Form = (props) => {
       <h2 className='question'>Which?</h2>
       <p>Select all that apply</p>
       <div className='row'>
+        <fieldset>
         <CheckboxCollection
           {...props}
           name  = 'endorsement'
@@ -29,6 +30,7 @@ const Form = (props) => {
             text      = 'Ambulance'
           />
         </CheckboxCollection>
+        </fieldset>
       </div>
     </div>
   );

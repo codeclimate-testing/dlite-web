@@ -9,6 +9,7 @@ const LicenseIssues = (props) => {
     <div className='license-issues-form'>
       <h2 className='question'>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h2>
       <div>
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'isSuspended'
@@ -16,6 +17,7 @@ const LicenseIssues = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

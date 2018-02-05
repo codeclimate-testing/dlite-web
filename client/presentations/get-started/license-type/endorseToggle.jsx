@@ -11,6 +11,7 @@ const FormControls = (props) => {
       <h2 className='question'>Do you need any professional endorsements?</h2>
       <p>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
       <div className='row'>
+        <fieldset>
         <RadioCollection
           {...props}
           name='needEndorsement'
@@ -19,6 +20,7 @@ const FormControls = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

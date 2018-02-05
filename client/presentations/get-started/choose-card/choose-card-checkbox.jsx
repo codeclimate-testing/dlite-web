@@ -12,6 +12,7 @@ const Form = (props) => {
     <div className='row choose-new-cards'>
       <p>Select all that apply.</p>
       <div className='row'>
+        <fieldset>
         <CheckboxCollection
           {...props}
           name          = 'IDDL'
@@ -28,6 +29,7 @@ const Form = (props) => {
             text      = 'Driver License'
           />
         </CheckboxCollection>
+        </fieldset>
         <div className='unit spacer' />
       </div>
     </div>

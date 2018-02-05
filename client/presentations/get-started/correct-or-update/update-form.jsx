@@ -22,6 +22,7 @@ const Form = (props) => {
 
       <p>Select all that apply.</p>
 
+      <fieldset>
       <CheckboxCollection
         {...props}
         name          = 'sections'
@@ -53,6 +54,7 @@ const Form = (props) => {
           text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[4]}
         />
       </CheckboxCollection>
+      </fieldset>
     </div>
   )
 };

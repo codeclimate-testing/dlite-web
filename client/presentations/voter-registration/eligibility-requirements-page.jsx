@@ -38,6 +38,7 @@ const EligibilityRequirements = (props) => {
 
           <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div>
+            <fieldset>
             <RadioCollection
               {...props}
               name='eligibilityRequirements'
@@ -55,6 +56,7 @@ const EligibilityRequirements = (props) => {
                 text={translations.shared.commonAnswers.declineToAnswer}
               />
             </RadioCollection>
+            </fieldset>
           </div>
 
           <NavigationButtons {...props} />

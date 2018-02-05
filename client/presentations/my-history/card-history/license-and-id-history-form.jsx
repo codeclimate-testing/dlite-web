@@ -39,6 +39,7 @@ const LicenseAndIdHistory = (props) => {
       <LicenseAndIdHeader {...props} />
 
       <div>
+        <fieldset>
         <RadioCollection
           {...props}
           name='isIssued'
@@ -46,6 +47,7 @@ const LicenseAndIdHistory = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

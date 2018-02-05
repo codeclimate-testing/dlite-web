@@ -19,6 +19,7 @@ const LegalNameForm = (props) => {
         <h2 className='question'>{translations.intro.namePage.prompt}</h2>
         <p>{translations.intro.namePage.explanation}</p>
 
+        <fieldset>
         <TextInput
           {...props}
           identifier='firstName'
@@ -51,6 +52,7 @@ const LegalNameForm = (props) => {
           values={translations.intro.namePage.suffixValues}
           description={translations.intro.namePage.suffixLabel}
         />
+        </fieldset>
 
         <NavigationButtons
           errorMessage={ props.validations.all() }

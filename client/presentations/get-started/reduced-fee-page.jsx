@@ -35,6 +35,7 @@ const Form = (props) => {
           <DLText {...props} />
 
           <div className='row'>
+            <fieldset>
             <RadioCollection
               {...props}
               name='ID'
@@ -43,6 +44,7 @@ const Form = (props) => {
             >
               { radioYesNoGroup() }
             </RadioCollection>
+            </fieldset>
 
           </div>
 

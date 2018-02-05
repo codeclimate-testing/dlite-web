@@ -19,7 +19,8 @@ const ChoosePartyPage = (props) => {
           <h2 className='question'>{translations.votingRegistration.choosePartyPage.pagePrompt}</h2>
           <p>{translations.votingRegistration.choosePartyPage.explanation}</p>
 
-          <RadioCollection
+          <fieldset>
+            <RadioCollection
             {...props}
             name          = 'isSelected'
             selectedValue = {props.politicalPartyChoose.isSelected}
@@ -34,6 +35,7 @@ const ChoosePartyPage = (props) => {
               text={translations.votingRegistration.choosePartyPage.answerNo}
             />
           </RadioCollection>
+          </fieldset>
         </div>
 
         <PoliticalPartyPreference

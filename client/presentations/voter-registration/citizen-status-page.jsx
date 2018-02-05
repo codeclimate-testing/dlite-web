@@ -22,6 +22,7 @@ const CitizenStatusPage = (props) => {
         <h2 className='question'>{translations.votingRegistration.citizenshipPage.pagePrompt}</h2>
         <p>{text[props.prereg]}</p>
 
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'citizenStatus'
@@ -39,6 +40,7 @@ const CitizenStatusPage = (props) => {
             text={translations.shared.commonAnswers.declineToAnswer}
           />
         </RadioCollection>
+        </fieldset>
 
         <NavigationButtons {...props} />
       </form>

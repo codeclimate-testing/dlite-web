@@ -9,12 +9,14 @@ const UsedPreviousNames = (props) => {
     <div className='previous-names-form'>
         <h2 className='question'>Have you ever applied for a Driver License or ID card under a different name?</h2>
       <div>
+        <fieldset>
         <RadioCollection
           {...props}
           name='hasUsedPreviousNames'
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
       </div>
     </div>
   );

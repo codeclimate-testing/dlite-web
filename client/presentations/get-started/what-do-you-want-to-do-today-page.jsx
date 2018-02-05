@@ -21,6 +21,7 @@ const Form = (props) => {
         </p>
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
+            <fieldset>
             <RadioCollection
               {...props}
               name    = 'cardAction'
@@ -44,6 +45,7 @@ const Form = (props) => {
                 text='Replace a card'
               />
             </RadioCollection>
+            </fieldset>
           </div>
           <NavigationButtons
             errorMessage = { props.validations.cardAction() }

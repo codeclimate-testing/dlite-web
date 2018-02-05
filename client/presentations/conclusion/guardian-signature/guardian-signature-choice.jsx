@@ -25,6 +25,7 @@ const SignatureChoice = (props) => {
       <p>If you have more than one parent or guardian with custody, both must sign.</p>
       <p>Is your parent/guardian available to sign your application?</p>
       <div>
+        <fieldset>
         <RadioCollection
           {...props}
           name          = 'isSigned'
@@ -35,6 +36,7 @@ const SignatureChoice = (props) => {
         >
           { radioYesNoGroup() }
         </RadioCollection>
+        </fieldset>
         <MessageNo {...props} />
       </div>
     </div>

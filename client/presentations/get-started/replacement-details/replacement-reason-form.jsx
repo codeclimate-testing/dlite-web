@@ -7,6 +7,7 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 const Form = (props) => {
   return (
     <div className='row inner-buttom'>
+      <fieldset>
       <RadioCollection
         {...props}
         name='reason'
@@ -26,6 +27,7 @@ const Form = (props) => {
           text='Other'
         />
       </RadioCollection>
+      </fieldset>
     </div>
   )
 };

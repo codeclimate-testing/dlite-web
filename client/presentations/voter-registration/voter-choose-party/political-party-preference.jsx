@@ -14,7 +14,8 @@ const PoliticalPartyPreference = (props) => {
       <hr/>
       <h2 className='question'>{translations.votingRegistration.choosePartyPage.choosePrompt}</h2>
 
-      <RadioCollection
+        <fieldset>
+        <RadioCollection
         {...props}
         name='politicalPartyChoose'
       >
@@ -47,6 +48,7 @@ const PoliticalPartyPreference = (props) => {
           key='otherParty'
         />
       </RadioCollection>
+      </fieldset>
     </div>
   );
 };

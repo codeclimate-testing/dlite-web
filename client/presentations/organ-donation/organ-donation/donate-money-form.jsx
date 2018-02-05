@@ -24,12 +24,14 @@ const DonateContribution = (props) => {
       <h2 className='question'>{translations.organDonation.monetaryContribution.prompt}</h2>
       <p className='translation-missing'>Your donation helps support and promote organ and tissue donation.</p>
 
-      <RadioCollection
+        <fieldset>
+        <RadioCollection
         {...props}
         name='donateMoney'
       >
         { radioYesNoGroup() }
       </RadioCollection>
+      </fieldset>
 
       <Message {...props} />
     </div>

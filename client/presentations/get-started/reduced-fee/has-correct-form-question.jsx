@@ -20,7 +20,8 @@ const FormQuestion = (props) => {
         To get a free ID you need to have form 933.
       </p>
 
-      <RadioCollection
+      <fieldset>
+        <RadioCollection
         {...props}
         name='form'
         selectedValue= { props.reducedFee.form }
@@ -28,6 +29,7 @@ const FormQuestion = (props) => {
       >
         { radioYesNoGroup() }
       </RadioCollection>
+      </fieldset>
 
       <Accordion
         id='reduced-fee-form-info'

@@ -10,6 +10,7 @@ const Form = (props) => {
 
   return (
     <div className='row chooseRadioCard'>
+      <fieldset>
       <RadioCollection
         {...props}
         name            = 'IDDL'
@@ -18,6 +19,7 @@ const Form = (props) => {
       >
         { radioIdDlGroup() }
       </RadioCollection>
+      </fieldset>
     </div>
   )
 };

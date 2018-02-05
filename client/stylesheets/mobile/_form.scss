@@ -38,3 +38,7 @@ form {
 .input-margin-bottom {
   margin-bottom: $spacing;
 }
+
+fieldset {
+  padding: $spacing / 2 0 $spacing;
+}
