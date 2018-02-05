@@ -32,51 +32,49 @@ const ContactDetails = (props) => {
       <fieldset>
         <TextInput
           {...props}
-          identifier    = 'emailAddress'
-          description   = {translations.votingRegistration.contactInfoPage.emailLabel}
-          example       = {translations.votingRegistration.contactInfoPage.emailExample}
-          value         = {props.contactMethods.emailAddress}
-          errorMessage  = {props.validations.emailAddress()}
+          identifier='emailAddress'
+          description={translations.votingRegistration.contactInfoPage.emailLabel}
+          example={translations.votingRegistration.contactInfoPage.emailExample}
+          value={props.contactMethods.emailAddress}
+          errorMessage={props.validations.emailAddress()}
         />
-      </fieldset>
 
-      <label
-        htmlFor       = 'phoneNumber'
-        className     = { addError }
-      >
-        <ErrorIcon errorClass = { addError } />
-        {translations.votingRegistration.contactInfoPage.phoneLabel}
-      </label>
+        <label
+          htmlFor='phoneNumber'
+          className={addError}
+        >
+          <ErrorIcon errorClass={addError} />
+          {translations.votingRegistration.contactInfoPage.phoneLabel}
+        </label>
 
-      <ExampleLabel
-        example = {translations.votingRegistration.contactInfoPage.phoneExample}
+        <ExampleLabel
+          example={translations.votingRegistration.contactInfoPage.phoneExample}
 
-      />
+        />
 
-      <fieldset>
         <NumberInput
-        {...props}
-        identifier    = 'phoneNumber1'
-        value         = { props.contactMethods.phoneNumber1 }
-        error         = { hasValue(errors.one)}
-      />
-      <div className  = 'unit spacer'/>
+          {...props}
+          identifier='phoneNumber1'
+          value={props.contactMethods.phoneNumber1}
+          error={hasValue(errors.one)}
+        />
+        <div className='unit spacer' />
 
-      <NumberInput
-        {...props}
-        identifier    = 'phoneNumber2'
-        value         = { props.contactMethods.phoneNumber2 }
-        error         = { hasValue(errors.two)}
-      />
+        <NumberInput
+          {...props}
+          identifier='phoneNumber2'
+          value={props.contactMethods.phoneNumber2}
+          error={hasValue(errors.two)}
+        />
 
-      <div className  = 'unit spacer'/>
+        <div className='unit spacer' />
 
-      <NumberInput
-        {...props}
-        identifier    = 'phoneNumber3'
-        value         = { props.contactMethods.phoneNumber3}
-        error         = { hasValue(errors.three) }
-      />
+        <NumberInput
+          {...props}
+          identifier='phoneNumber3'
+          value={props.contactMethods.phoneNumber3}
+          error={hasValue(errors.three)}
+        />
       </fieldset>
 
       <div className='row'>
