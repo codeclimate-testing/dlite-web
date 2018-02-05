@@ -7,15 +7,15 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 const UsedPreviousNames = (props) => {
   return (
     <div className='previous-names-form'>
-        <h2 className='question'>Have you ever applied for a Driver License or ID card under a different name?</h2>
+      <h2 className='question'>Have you ever applied for a Driver License or ID card under a different name?</h2>
       <div>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='hasUsedPreviousNames'
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='hasUsedPreviousNames'
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

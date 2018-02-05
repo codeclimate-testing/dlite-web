@@ -9,16 +9,16 @@ const Form = (props) => {
 
   return (
     <div className='mailing-address-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressPrompt}</h2>
       <p>{translations.myBasics.addressesPage.explanation}</p>
       <div className='addresses-section'>
-          <fieldset>
+        <fieldset>
           <AddressTemplate
             {...props}
             type = 'mailing'
           />
-          </fieldset>
+        </fieldset>
       </div>
     </div>
   )

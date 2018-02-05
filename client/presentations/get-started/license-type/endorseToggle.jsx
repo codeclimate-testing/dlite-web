@@ -12,14 +12,14 @@ const FormControls = (props) => {
       <p>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
       <div className='row'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='needEndorsement'
-          onBlur = { props.onBlurValidate }
-          errorMessage={ props.validations.needEndorsement() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='needEndorsement'
+            onBlur = { props.onBlurValidate }
+            errorMessage={ props.validations.needEndorsement() }
+          >
+            {radioYesNoGroup()}
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

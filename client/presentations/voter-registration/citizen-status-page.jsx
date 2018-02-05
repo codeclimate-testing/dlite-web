@@ -46,10 +46,10 @@ const CitizenStatusPage = (props) => {
         <p>{text[props.prereg]}</p>
 
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'citizenStatus'
-        >
+          <RadioCollection
+            {...props}
+            name='citizenStatus'
+          >
           <RadioSelector
             value='Yes'
             text={translations.shared.commonAnswers.yes}
@@ -62,7 +62,7 @@ const CitizenStatusPage = (props) => {
             value='decline'
             text={translations.shared.commonAnswers.declineToAnswer}
           />
-        </RadioCollection>
+          </RadioCollection>
         </fieldset>
 
         <NavigationButtons {...props} />

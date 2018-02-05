@@ -26,14 +26,14 @@ const Form = (props) => {
 
         <div className='row'>
           <fieldset>
-          <RadioCollection
-            {...props}
-            name    = 'seniorID'
-            onBlur  = { props.onBlurValidate }
-            errorMessage = {props.validations.seniorID() }
-          >
-            { radioYesNoGroup() }
-          </RadioCollection>
+            <RadioCollection
+              {...props}
+              name = 'seniorID'
+              onBlur = { props.onBlurValidate }
+              errorMessage = {props.validations.seniorID() }
+            >
+              { radioYesNoGroup() }
+            </RadioCollection>
           </fieldset>
         </div>
 

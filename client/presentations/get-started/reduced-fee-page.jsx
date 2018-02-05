@@ -36,14 +36,14 @@ const Form = (props) => {
 
           <div className='row'>
             <fieldset>
-            <RadioCollection
-              {...props}
-              name='ID'
-              selectedValue= { props.reducedFee.ID }
-              errorMessage  = { props.validations.reducedFee() }
-            >
-              { radioYesNoGroup() }
-            </RadioCollection>
+              <RadioCollection
+                {...props}
+                name='ID'
+                selectedValue = { props.reducedFee.ID }
+                errorMessage  = { props.validations.reducedFee() }
+              >
+                { radioYesNoGroup() }
+              </RadioCollection>
             </fieldset>
 
           </div>
@@ -51,7 +51,7 @@ const Form = (props) => {
           <HasCorrectFormQuestion {...props} />
 
           <NavigationButtons {...props}
-            errorMessage      = { props.validations.all() }
+            errorMessage     = { props.validations.all() }
           />
         </form>
       </div>

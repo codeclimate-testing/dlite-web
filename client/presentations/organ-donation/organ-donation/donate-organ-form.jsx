@@ -43,11 +43,11 @@ const DonateOrgan = (props) => {
 
       <fieldset>
         <RadioCollection
-        {...props}
-        name='donateOrgan'
-      >
-        { radioYesNoGroup() }
-      </RadioCollection>
+          {...props}
+          name='donateOrgan'
+        >
+          { radioYesNoGroup() }
+        </RadioCollection>
       </fieldset>
 
       <MessageForYesChoice organDonation={props.organDonation} />

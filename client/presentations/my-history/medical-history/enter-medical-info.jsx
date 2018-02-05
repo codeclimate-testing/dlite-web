@@ -8,16 +8,16 @@ const EnterMedicalInfo = (props) => {
 
   return (
     <div className='enter-medical-info'>
-      <hr/>
+      <hr />
       <h2 className='question'>Please explain below.</h2>
-    <fieldset>
+      <fieldset>
         <TextArea
           {...props}
           identifier    = 'medicalInfo'
           value         = { props.medicalHistory.medicalInfo}
           errorMessage  = { props.validations.medicalInfo() }
         />
-    </fieldset>
+      </fieldset>
     </div>
   );
 };

@@ -44,13 +44,13 @@ const BallotByMailPage = (props) => {
         <p>{translations.votingRegistration.byMailPage.explanation}</p>
 
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'ballotByMail'
+          <RadioCollection
+            {...props}
+             name          = 'ballotByMail'
           errorMessage  = { props.validations.ballotByMail() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
 
         <InfoMessageYes

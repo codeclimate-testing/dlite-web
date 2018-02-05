@@ -17,18 +17,18 @@ const VeteransBenefits = (props) => {
         </div>
       </MessageBox>
 
-      <hr/>
+      <hr />
 
       <h2 className='question'>Would you like to receive benefits information for which you may be eligible?</h2>
 
       <div className='input-container'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='receiveBenefits'
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='receiveBenefits'
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

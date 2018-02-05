@@ -12,7 +12,7 @@ const Form = (props) => {
 
   return (
     <div className='real-id-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>Which card would you like to fly with?</h2>
       <p>
         Either your license or your ID card can be made federally
@@ -20,13 +20,13 @@ const Form = (props) => {
       </p>
 
       <fieldset>
-      <RadioCollection
-        {...props}
-        name          = 'realIdDesignation'
-        errorMessage  = { props.validations.designation() }
-      >
-        { radioIdDlGroup() }
-      </RadioCollection>
+        <RadioCollection
+          {...props}
+          name          = 'realIdDesignation'
+          errorMessage  = { props.validations.designation() }
+        >
+          { radioIdDlGroup() }
+        </RadioCollection>
       </fieldset>
 
     </div>

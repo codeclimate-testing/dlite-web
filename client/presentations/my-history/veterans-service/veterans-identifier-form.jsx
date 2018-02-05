@@ -84,12 +84,12 @@ const VeteransIdentifier = (props) => {
       <p>Many organizations give discounts with a valid military ID.</p>
       <div className='input-container'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='veteransIdentifier'
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='veteransIdentifier'
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
 

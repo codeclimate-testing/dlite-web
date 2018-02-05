@@ -53,16 +53,16 @@ const ElectronicSignature = (props) => {
             {acceptLiabilityErrorLabel}
         </label>
         <fieldset>
-        <CheckboxSelector
-          {...props}
-          name      = { `acceptLiabilities_${guardianID}` }
-          value     = { `acceptLiabilities_${guardianID}` }
-          selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
-          text      = { acceptLiabilityText }
-          error     = { hasValue(acceptLiabilityErrors) }
-          onBlur    = { blurFunction }
-          onFocus   = { focusFunction }
-        />
+          <CheckboxSelector
+            {...props}
+            name      = { `acceptLiabilities_${guardianID}` }
+            value     = { `acceptLiabilities_${guardianID}` }
+            selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
+            text      = { acceptLiabilityText }
+            error     = { hasValue(acceptLiabilityErrors) }
+            onBlur    = { blurFunction }
+            onFocus   = { focusFunction }
+          />
         </fieldset>
       </div>
       <div className='row'>

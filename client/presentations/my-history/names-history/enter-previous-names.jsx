@@ -7,19 +7,19 @@ const EnterPreviousNames = (props) => {
   if (!props.showIf) { return null; }
   return (
     <div className='enter-previous-names'>
-      <hr/>
+      <hr />
       <h2 className='question'>Please list all previous legal names.</h2>
       <p>For example, include your maiden name.</p>
       <p>Separate by commas.</p>
-      
-    <fieldset>
-      <TextArea
-        {...props}
-        identifier='previousNames'
-        description='Previous Names:'
-        value     = { props.namesHistory.previousNames }
-      />
-    </fieldset>
+
+      <fieldset>
+        <TextArea
+          {...props}
+          identifier='previousNames'
+          description='Previous Names:'
+          value      = { props.namesHistory.previousNames }
+        />
+      </fieldset>
     </div>
   );
 };

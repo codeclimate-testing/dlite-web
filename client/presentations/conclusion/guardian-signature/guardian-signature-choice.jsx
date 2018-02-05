@@ -26,16 +26,16 @@ const SignatureChoice = (props) => {
       <p>Is your parent/guardian available to sign your application?</p>
       <div>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'isSigned'
-          text          = {['Yes', 'No']}
-          onChange      = {props.onGuardianSignatureChange}
-          onBlur        = { props.onBlurValidate }
-          errorMessage  = { props.validations.isSigned()}
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name          = 'isSigned'
+            text          = {['Yes', 'No']}
+            onChange      = {props.onGuardianSignatureChange}
+            onBlur        = { props.onBlurValidate }
+            errorMessage  = { props.validations.isSigned()}
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
         <MessageNo {...props} />
       </div>

@@ -8,25 +8,25 @@ const Form = (props) => {
   return (
     <div className='row inner-buttom'>
       <fieldset>
-      <RadioCollection
-        {...props}
-        name='reason'
-        onBlur  = { props.onBlurValidate }
-        errorMessage = {props.validations.reason() }
-      >
-        <RadioSelector
-          value='lostOrStolen'
-          text='It was lost or stolen.'
-        />
-        <RadioSelector
-          value='damaged'
-          text='It was damaged.'
-        />
-        <RadioSelector
-          value='other'
-          text='Other'
-        />
-      </RadioCollection>
+        <RadioCollection
+          {...props}
+          name = 'reason'
+          onBlur = { props.onBlurValidate }
+          errorMessage={ props.validations.reason() }
+        >
+          <RadioSelector
+            value='lostOrStolen'
+            text='It was lost or stolen.'
+          />
+          <RadioSelector
+            value='damaged'
+            text='It was damaged.'
+          />
+          <RadioSelector
+            value='other'
+            text='Other'
+          />
+        </RadioCollection>
       </fieldset>
     </div>
   )

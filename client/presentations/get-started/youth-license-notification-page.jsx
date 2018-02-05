@@ -64,26 +64,26 @@ const Form = (props) => {
       {...props}
     >
       <div className='youth-license-notification'>
-        <form onSubmit={ props.onSubmit } >
+        <form onSubmit={props.onSubmit} >
           <Header />
           <div className='row'>
             <fieldset>
-            <RadioCollection
-              {...props}
-              name          = { actionName }
-              onBlur        = { props.onBlurValidate }
-              errorMessage  = { props.validations.youthIDInstead() }
-            >
-              { radioYesNoGroup() }
-            </RadioCollection>
+              <RadioCollection
+                { ...props }
+                name = { actionName }
+                onBlur = { props.onBlurValidate }
+                errorMessage = { props.validations.youthIDInstead() }
+              >
+                {radioYesNoGroup()}
+              </RadioCollection>
             </fieldset>
           </div>
 
           <ErrorMessage {...props} />
 
           <NavigationButtons {...props}
-          errorMessage = {props.validations.youthIDInstead() }
-          continueHidden = { props.continueHidden }
+            errorMessage = { props.validations.youthIDInstead() }
+            continueHidden = { props.continueHidden }
           />
         </form>
       </div>

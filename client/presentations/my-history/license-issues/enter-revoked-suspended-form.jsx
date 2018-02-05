@@ -8,25 +8,25 @@ const EnterRevokedSuspended = (props) => {
   if (!props.showIf) { return null; }
   return (
     <div className='suspended-license-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>When did this happen?</h2>
       <p>Example: 03/21/1967</p>
 
       <fieldset>
         <DateInput
-        {...props }
-        values      = { props.licenseIssues }
-      />
+          {...props }
+          values      = { props.licenseIssues }
+        />
 
-      <div className='row' />
+        <div className='row' />
 
-      <TextArea
-        { ...props }
-        identifier  = 'reason'
-        description = 'What was the reason?'
-        value       = { props.licenseIssues.reason }
-        errorMessage = { props.validations.reason() }
-      />
+        <TextArea
+          { ...props }
+          identifier  = 'reason'
+          description = 'What was the reason?'
+          value       = { props.licenseIssues.reason }
+          errorMessage = { props.validations.reason() }
+        />
       </fieldset>
     </div>
   )

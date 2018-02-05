@@ -27,13 +27,13 @@ const ChooseRealID = (props) => {
 
       <div className='row'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'getRealID'
-          errorMessage  = { props.validations.realID() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name          = 'getRealID'
+            errorMessage  = { props.validations.realID() }
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
 
       </div>

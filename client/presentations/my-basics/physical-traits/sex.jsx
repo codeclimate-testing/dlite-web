@@ -11,8 +11,8 @@ const Sex = (props) => {
   return (
     <div className="sex">
       <h2 className='question'>{translationPath.prompt}</h2>
-        <div>
-          <fieldset>
+      <div>
+        <fieldset>
           <RadioCollection
             {...props}
             name='sex'
@@ -26,8 +26,8 @@ const Sex = (props) => {
               text={translationPath.values[0]}
             />
           </RadioCollection>
-          </fieldset>
-        </div>
+        </fieldset>
+      </div>
     </div>
   );
 };

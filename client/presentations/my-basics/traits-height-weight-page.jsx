@@ -33,29 +33,29 @@ const TraitsPage = (props) => {
         <p>{translationsPath.height.explanation}</p>
 
         <fieldset>
-        <NumberInput
-          {...props}
-          identifier='heightFeet'
-          description={translationsPath.height.feetLabel}
-          value={ props.traitsHeightWeight.heightFeet }
-          errorMessage={ props.validations.heightFeet() }
-          onChange      = { props.onChange }
-          onBlurValidate = { props.onBlurValidate }
-          onFocusClearValidation = { props.onFocusClearValidation }
-        />
+          <NumberInput
+            {...props}
+            identifier='heightFeet'
+            description={translationsPath.height.feetLabel}
+            value={ props.traitsHeightWeight.heightFeet }
+            errorMessage={ props.validations.heightFeet() }
+            onChange      = { props.onChange }
+            onBlurValidate = { props.onBlurValidate }
+            onFocusClearValidation = { props.onFocusClearValidation }
+          />
 
-        <div className='unit spacer' />
+          <div className='unit spacer' />
 
-        <NumberInput
-          {...props}
-          identifier='heightInches'
-          description={translationsPath.height.inchesLabel}
-          value={ props.traitsHeightWeight.heightInches }
-          errorMessage={ props.validations.heightInches() }
-          onChange      = { props.onChange }
-          onBlurValidate = { props.onBlurValidate }
-          onFocusClearValidation = { props.onFocusClearValidation }
-        />
+          <NumberInput
+            {...props}
+            identifier='heightInches'
+            description={translationsPath.height.inchesLabel}
+            value={ props.traitsHeightWeight.heightInches }
+            errorMessage={ props.validations.heightInches() }
+            onChange      = { props.onChange }
+            onBlurValidate = { props.onBlurValidate }
+            onFocusClearValidation = { props.onFocusClearValidation }
+          />
         </fieldset>
         <div className='row'>
           <ErrorLabel
@@ -64,21 +64,21 @@ const TraitsPage = (props) => {
           />
         </div>
 
-        <hr/>
+        <hr />
         <h2 className='question'>{translationsPath.weight.prompt}</h2>
         <p>{translationsPath.weight.explanation}</p>
 
         <fieldset>
           <NumberInput
-          {...props}
-          identifier='weight'
-          description={translationsPath.weight.poundsLabel}
-          value={ props.traitsHeightWeight.weight }
-          errorMessage={ props.validations.weight() }
-          onChange      = { props.onChange }
-          onBlurValidate = { props.onBlurValidate }
-          onFocusClearValidation = { props.onFocusClearValidation }
-        />
+            {...props}
+            identifier='weight'
+            description={translationsPath.weight.poundsLabel}
+            value={ props.traitsHeightWeight.weight }
+            errorMessage={ props.validations.weight() }
+            onChange      = { props.onChange }
+            onBlurValidate = { props.onBlurValidate }
+            onFocusClearValidation = { props.onFocusClearValidation }
+          />
         </fieldset>
         <div className='row'>
           <ErrorLabel

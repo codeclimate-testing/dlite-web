@@ -35,29 +35,29 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='current-card-form'>
-        <form onSubmit={ props.onSubmit }>
+        <form onSubmit = { props.onSubmit }>
           <h2 className='question'>Card details</h2>
-          <p dangerouslySetInnerHTML={{__html: questionText}} />
-          <p dangerouslySetInnerHTML={{__html: instructionText}} />
-       <fieldset>
-          <TextInput
-            {...props}
-            identifier    = 'number'
-            description   = { descriptionText }
-            value         = { props.currentCardInfo.number }
-            errorMessage  = { props.currentCardValidation.number() }
-          />
+          <p dangerouslySetInnerHTML={{ __html: questionText }} />
+          <p dangerouslySetInnerHTML={{ __html: instructionText }} />
+          <fieldset>
+            <TextInput
+              {...props}
+              identifier   = 'number'
+              description  = { descriptionText }
+              value        = { props.currentCardInfo.number }
+              errorMessage = {props.currentCardValidation.number() }
+            />
 
-          <ExpirationDate
-            {...props}
-            values      = { props.currentCardInfo }
-            validations = { props.currentCardValidation }
-          />
-       </fieldset>
+            <ExpirationDate
+              {...props}
+              values      = { props.currentCardInfo }
+              validations = { props.currentCardValidation }
+            />
+          </fieldset>
 
           <NavigationButtons
             {...props}
-            errorMessage={ props.currentCardValidation.all() }
+            errorMessage = { props.currentCardValidation.all() }
           />
         </form>
       </div>

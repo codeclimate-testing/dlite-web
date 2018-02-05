@@ -22,13 +22,13 @@ const FormQuestion = (props) => {
 
       <fieldset>
         <RadioCollection
-        {...props}
-        name='form'
-        selectedValue= { props.reducedFee.form }
-        errorMessage  = { props.validations.form() }
-      >
-        { radioYesNoGroup() }
-      </RadioCollection>
+          {...props}
+          name = 'form'
+          selectedValue = { props.reducedFee.form }
+          errorMessage = { props.validations.form() }
+        >
+          {radioYesNoGroup()}
+        </RadioCollection>
       </fieldset>
 
       <Accordion

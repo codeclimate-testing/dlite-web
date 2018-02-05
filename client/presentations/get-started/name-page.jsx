@@ -15,43 +15,43 @@ const LegalNameForm = (props) => {
       sectionKey='intro'
       {...props}
     >
-      <form onSubmit={ props.onSubmit } className='legal-name-form'>
+      <form onSubmit={props.onSubmit} className='legal-name-form'>
         <h2 className='question'>{translations.intro.namePage.prompt}</h2>
         <p>{translations.intro.namePage.explanation}</p>
 
         <fieldset>
-        <TextInput
-          {...props}
-          identifier='firstName'
-          description={translations.shared.labels.firstName}
-          value={props.legalName.firstName}
-          errorMessage={ props.validations.firstName() }
-        />
+          <TextInput
+            {...props}
+            identifier='firstName'
+            description={translations.shared.labels.firstName}
+            value={props.legalName.firstName}
+            errorMessage={ props.validations.firstName() }
+          />
 
-        <TextInput
-          {...props}
-          identifier='middleName'
-          description={translations.shared.labels.middleName}
-          value={props.legalName.middleName}
-          errorMessage={ props.validations.middleName() }
-        />
+          <TextInput
+            {...props}
+            identifier='middleName'
+            description={translations.shared.labels.middleName}
+            value={props.legalName.middleName}
+            errorMessage={ props.validations.middleName() }
+          />
 
-        <TextInput
-          {...props}
-          identifier='lastName'
-          description={translations.shared.labels.lastName}
-          value={props.legalName.lastName}
-          errorMessage={ props.validations.lastName() }
-        />
+          <TextInput
+            {...props}
+            identifier='lastName'
+            description={translations.shared.labels.lastName}
+            value={props.legalName.lastName}
+            errorMessage={ props.validations.lastName() }
+          />
 
-        <SelectDropdown
-          name='suffix'
-          id  = 'suffix'
-          selected={ props.legalName.suffix }
-          onChange={ props.onSelectChange }
-          values={translations.intro.namePage.suffixValues}
-          description={translations.intro.namePage.suffixLabel}
-        />
+          <SelectDropdown
+            name='suffix'
+            id='suffix'
+            selected={ props.legalName.suffix }
+            onChange={ props.onSelectChange }
+            values={translations.intro.namePage.suffixValues}
+            description={translations.intro.namePage.suffixLabel}
+          />
         </fieldset>
 
         <NavigationButtons

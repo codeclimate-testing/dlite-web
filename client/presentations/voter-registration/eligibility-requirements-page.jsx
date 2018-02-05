@@ -54,23 +54,23 @@ const EligibilityRequirements = (props) => {
           <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div>
             <fieldset>
-            <RadioCollection
-              {...props}
-              name='eligibilityRequirements'
-            >
-              <RadioSelector
-                value='Yes'
-                text={translations.shared.commonAnswers.Yes}
-              />
-              <RadioSelector
-                value='No'
-                text={translations.shared.commonAnswers.No}
-              />
-              <RadioSelector
-                value='decline'
-                text={translations.shared.commonAnswers.declineToAnswer}
-              />
-            </RadioCollection>
+              <RadioCollection
+                {...props}
+                name='eligibilityRequirements'
+              >
+                <RadioSelector
+                  value='Yes'
+                  text={translations.shared.commonAnswers.Yes}
+                />
+                <RadioSelector
+                  value='No'
+                  text={translations.shared.commonAnswers.No}
+                />
+                <RadioSelector
+                  value='decline'
+                  text={translations.shared.commonAnswers.declineToAnswer}
+                />
+              </RadioCollection>
             </fieldset>
           </div>
 

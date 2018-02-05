@@ -19,37 +19,37 @@ const Form = (props) => {
           Pick one option for now. If you need to do more,
           you can do so at the end.
         </p>
-        <form onSubmit= { props.onSubmit }>
+        <form onSubmit={props.onSubmit}>
           <div className='row inner-buttom'>
             <fieldset>
-            <RadioCollection
-              {...props}
-              name    = 'cardAction'
-              onBlur  = { props.onBlurValidate }
-              errorMessage = { props.validations.cardAction()}
-            >
-              <RadioSelector
-                value = 'new'
-                text='Get a new card'
-              />
-              <RadioSelector
-                value = 'renew'
-                text='Renew a card'
-              />
-              <RadioSelector
-                value = 'change'
-                text='Correct or update a card'
-              />
-              <RadioSelector
-                value='replace'
-                text='Replace a card'
-              />
-            </RadioCollection>
+              <RadioCollection
+                { ...props }
+                name = 'cardAction'
+                onBlur = { props.onBlurValidate }
+                errorMessage = { props.validations.cardAction() }
+              >
+                <RadioSelector
+                  value='new'
+                  text='Get a new card'
+                />
+                <RadioSelector
+                  value='renew'
+                  text='Renew a card'
+                />
+                <RadioSelector
+                  value='change'
+                  text='Correct or update a card'
+                />
+                <RadioSelector
+                  value='replace'
+                  text='Replace a card'
+                />
+              </RadioCollection>
             </fieldset>
           </div>
           <NavigationButtons
-            errorMessage = { props.validations.cardAction() }
-            {...props}
+            errorMessage= { props.validations.cardAction() }
+            { ...props }
           />
         </form>
       </div>

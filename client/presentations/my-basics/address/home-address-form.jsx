@@ -13,11 +13,11 @@ const Form = (props) => {
       <h2 className='question'>{translations.myBasics.addressesPage.prompt}</h2>
       <p>{translations.myBasics.addressesPage.explanation}</p>
       <div className='addresses-section'>
-          <fieldset>
+        <fieldset>
           <AddressTemplate
-          {...props}
-          type= 'home'
-        />
+            {...props}
+            type= 'home'
+          />
         </fieldset>
       </div>
     </div>

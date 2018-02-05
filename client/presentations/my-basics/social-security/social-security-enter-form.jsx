@@ -30,35 +30,35 @@ const Form = (props) => {
 
   return (
     <div className='social-security-enter-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>{translationPath.prompt}</h2>
       <p>{translationPath.explanation}</p>
 
       <fieldset>
-      <NumberInput
-        {...props}
-        identifier    = 'part1'
-        value         = { props.socialSecurity.part1 }
-        error         = { hasValue(errors.part1) }
-      />
+        <NumberInput
+          {...props}
+          identifier    = 'part1'
+          value         = { props.socialSecurity.part1 }
+          error         = { hasValue(errors.part1) }
+        />
 
-      <div className='unit social-security-dash'>-</div>
+        <div className='unit social-security-dash'>-</div>
 
-      <NumberInput
-        {...props}
-        identifier     = 'part2'
-        value          = { props.socialSecurity.part2 }
-        error          = { hasValue(errors.part2) }
-      />
+        <NumberInput
+          {...props}
+          identifier     = 'part2'
+          value          = { props.socialSecurity.part2 }
+          error          = { hasValue(errors.part2) }
+        />
 
-      <div className='unit social-security-dash'>-</div>
+        <div className='unit social-security-dash'>-</div>
 
-      <NumberInput
-        {...props}
-        identifier     = 'part3'
-        value          = { props.socialSecurity.part3 }
-        error          = { hasValue(errors.part3) }
-      />
+        <NumberInput
+          {...props}
+          identifier     = 'part3'
+          value          = { props.socialSecurity.part3 }
+          error          = { hasValue(errors.part3) }
+        />
       </fieldset>
 
       <div className='row'>

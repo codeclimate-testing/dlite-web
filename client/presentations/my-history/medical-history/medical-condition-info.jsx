@@ -10,13 +10,13 @@ const MedicalCondition = (props) => {
       <h2 className='question'>Have you had any medical conditions in the last three years that affected your ability to drive?</h2>
       <div>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name  = 'hasMedicalCondition'
-          errorMessage = { props.validations.hasMedicalCondition() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name  = 'hasMedicalCondition'
+            errorMessage = { props.validations.hasMedicalCondition() }
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

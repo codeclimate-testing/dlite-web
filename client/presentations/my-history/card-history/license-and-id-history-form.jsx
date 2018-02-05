@@ -40,13 +40,13 @@ const LicenseAndIdHistory = (props) => {
 
       <div>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='isIssued'
-          errorMessage = { props.validations.isIssued() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='isIssued'
+            errorMessage = { props.validations.isIssued() }
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

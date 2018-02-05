@@ -9,50 +9,50 @@ const LanguageRadios = (props) => {
 
   return (
     <fieldset>
-    <RadioCollection
-      {...props}
-    >
-      <RadioSelector
-        text  = {translationAddress.values[0]}
-        value = 'en'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[1]}
-        value = 'zh'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[2]}
-        value = 'ja'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[3]}
-        value = 'es'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[4]}
-        value = 'th'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[5]}
-        value = 'tl'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[6]}
-        value = 'ko'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[7]}
-        value = 'km'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[8]}
-        value = 'hi'
-      />
-      <RadioSelector
-        text  = {translationAddress.values[9]}
-        value = 'vi'
-      />
-    </RadioCollection>
+      <RadioCollection
+        {...props}
+      >
+        <RadioSelector
+          text = {translationAddress.values[0]}
+          value = 'en'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[1]}
+          value = 'zh'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[2]}
+          value = 'ja'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[3]}
+          value = 'es'
+          />
+        <RadioSelector
+          text  = {translationAddress.values[4]}
+          value = 'th'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[5]}
+          value = 'tl'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[6]}
+          value = 'ko'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[7]}
+          value = 'km'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[8]}
+          value = 'hi'
+        />
+        <RadioSelector
+          text  = {translationAddress.values[9]}
+          value = 'vi'
+        />
+      </RadioCollection>
     </fieldset>
   );
 };

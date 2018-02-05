@@ -10,13 +10,13 @@ const LicenseIssues = (props) => {
       <h2 className='question'>Have you ever had your driving privilege cancelled, refused, suspended, or revoked?</h2>
       <div>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'isSuspended'
-          errorMessage  = { props.validations.isSuspended() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name          = 'isSuspended'
+            errorMessage  = { props.validations.isSuspended() }
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

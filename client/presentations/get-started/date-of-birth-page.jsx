@@ -17,12 +17,12 @@ const Presentation = (props) => {
         <h2 className='question'>What's your date of birth?</h2>
         <p>Example: 03 21 1967</p>
 
-          <fieldset>
+        <fieldset>
           <DateInput
-          {...props}
-          title       = 'Date of birth'
-          values      = { props.dateOfBirth }
-        />
+            {...props}
+            title       = 'Date of birth'
+            values      = { props.dateOfBirth }
+          />
         </fieldset>
 
 

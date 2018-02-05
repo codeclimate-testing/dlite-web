@@ -28,28 +28,28 @@ const IdentityForm = (props) => {
       <p>Documents include: a California driver license or ID card, a passport, a consultant card, a birth certificate.</p>
 
       <fieldset>
-      <TextInput
-        {...props}
-        identifier={`number_${guardianID}`}
-        description='Document number'
-        value={props.guardianSignature.guardianInfo[guardianID].ID.number}
-        errorMessage={
-          guardianID === 0 ? props.validations.number_0() :
-          guardianID === 1 ? props.validations.number_1() :
-          null
-        }
-      />
-      <TextInput
-        {...props}
-        identifier={`issuedBy_${guardianID}`}
-        description='State or agency that issued this document'
-        value={props.guardianSignature.guardianInfo[guardianID].ID.issuedBy}
-        errorMessage={
-          guardianID === 0 ? props.validations.issuedBy_0() :
-          guardianID === 1 ? props.validations.issuedBy_1() :
-          null
-        }
-      />
+        <TextInput
+          {...props}
+          identifier={`number_${guardianID}`}
+          description='Document number'
+          value={props.guardianSignature.guardianInfo[guardianID].ID.number}
+          errorMessage={
+            guardianID === 0 ? props.validations.number_0() :
+            guardianID === 1 ? props.validations.number_1() :
+            null
+          }
+        />
+        <TextInput
+          {...props}
+          identifier={`issuedBy_${guardianID}`}
+          description='State or agency that issued this document'
+          value={props.guardianSignature.guardianInfo[guardianID].ID.issuedBy}
+          errorMessage={
+            guardianID === 0 ? props.validations.issuedBy_0() :
+            guardianID === 1 ? props.validations.issuedBy_1() :
+            null
+          }
+        />
       </fieldset>
 
       <div className='date-input'>
@@ -62,37 +62,37 @@ const IdentityForm = (props) => {
         </label>
         <div className='expiration-date'>
           <fieldset>
-          <NumberInput
-            {...props}
-            identifier={`expirationMonth_${guardianID}`}
-            description='MM'
-            value={props.guardianSignature.guardianInfo[guardianID].ID.expirationMonth}
-            error={ hasValue(dateErrors.month) }
-          />
+            <NumberInput
+              {...props}
+              identifier={`expirationMonth_${guardianID}`}
+              description='MM'
+              value={props.guardianSignature.guardianInfo[guardianID].ID.expirationMonth}
+              error={ hasValue(dateErrors.month) }
+            />
 
-          <div className='unit spacer' />
+            <div className='unit spacer' />
 
-          <NumberInput
-            {...props}
-            identifier={`expirationDay_${guardianID}`}
-            description='DD'
-            value={props.guardianSignature.guardianInfo[guardianID].ID.expirationDay}
-            error={ hasValue(dateErrors.day) }
-          />
+            <NumberInput
+              {...props}
+              identifier={`expirationDay_${guardianID}`}
+              description='DD'
+              value={props.guardianSignature.guardianInfo[guardianID].ID.expirationDay}
+              error={ hasValue(dateErrors.day) }
+            />
 
-          <div className='unit spacer' />
+            <div className='unit spacer' />
 
-          <NumberInput
-            {...props}
-            identifier={`expirationYear_${guardianID}`}
-            description='YYYY'
-            value={props.guardianSignature.guardianInfo[guardianID].ID.expirationYear}
-            error={ hasValue(dateErrors.year) }
-          />
+            <NumberInput
+              {...props}
+              identifier={`expirationYear_${guardianID}`}
+              description='YYYY'
+              value={props.guardianSignature.guardianInfo[guardianID].ID.expirationYear}
+              error={ hasValue(dateErrors.year) }
+            />
           </fieldset>
           <ErrorLabel
-              errorMessage  = { message }
-              errorClass    = { addError }
+            errorMessage  = { message }
+            errorClass    = { addError }
           />
         </div>
       </div>

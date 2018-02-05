@@ -10,10 +10,10 @@ const translationPath = translations.myBasics.traitsPage.hairColor;
 const HairColor = (props) => {
   return (
     <div className='hair-color'>
-      <hr/>
+      <hr />
       <h2 className='question'>What color is your hair?</h2>
-        <div>
-          <fieldset>
+      <div>
+        <fieldset>
           <RadioCollection
             {...props}
             name='hairColor'
@@ -24,7 +24,7 @@ const HairColor = (props) => {
               value='Auburn'
             />
             <RadioSelector
-            text={translationPath.values[1]}
+              text={translationPath.values[1]}
               value='Bald'
             />
             <RadioSelector
@@ -56,8 +56,8 @@ const HairColor = (props) => {
               value='Other'
             />
           </RadioCollection>
-          </fieldset>
-        </div>
+        </fieldset>
+      </div>
     </div>
   );
 };

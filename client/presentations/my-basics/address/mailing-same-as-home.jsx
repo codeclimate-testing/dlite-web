@@ -17,19 +17,19 @@ const Question = (props) => {
 
   return (
     <div className='interstitial-address-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressSamePrompt}</h2>
       <p>{headerText}</p>
       <div className='input-container'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'homeAddressSameAsMailing'
-          onBlur        = { props.onBlurValidate }
-          errorMessage  = { props.validations.homeAddressSameAsMailing()}
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name          = 'homeAddressSameAsMailing'
+            onBlur        = { props.onBlurValidate }
+            errorMessage  = { props.validations.homeAddressSameAsMailing()}
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

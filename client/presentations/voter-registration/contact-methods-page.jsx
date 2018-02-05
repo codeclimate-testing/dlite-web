@@ -19,25 +19,25 @@ const ContactMethodsPage = (props) => {
         <h2 className='question'>{translations.votingRegistration.contactInfoPage.pagePrompt}</h2>
 
         <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'shouldContact'
-          selectedValue = {props.contactMethods.shouldContact}
-          errorMessage  = {props.validations.shouldContact()}
-        >
-          <RadioSelector
-            value='Yes'
-            text={translations.shared.commonAnswers.Yes}
-          />
-          <RadioSelector
-            value='No'
-            text={translations.shared.commonAnswers.No}
-          />
-          <RadioSelector
-            value='Skip'
-            text={translations.shared.commonAnswers.skipSection}
-          />
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name          = 'shouldContact'
+            selectedValue = {props.contactMethods.shouldContact}
+            errorMessage  = {props.validations.shouldContact()}
+          >
+            <RadioSelector
+              value='Yes'
+              text={translations.shared.commonAnswers.Yes}
+            />
+            <RadioSelector
+              value='No'
+              text={translations.shared.commonAnswers.No}
+            />
+            <RadioSelector
+              value='Skip'
+              text={translations.shared.commonAnswers.skipSection}
+            />
+          </RadioCollection>
         </fieldset>
 
         <div>

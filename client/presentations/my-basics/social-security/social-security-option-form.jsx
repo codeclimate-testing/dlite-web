@@ -12,15 +12,15 @@ const Form = (props) => {
     <div className='social-security-option-form'>
       <h2 className='question'>{translationPath.prompt}</h2>
       <p>{translationPath.explanation}</p>
-        <div className='input-container'>
+      <div className='input-container'>
         <fieldset>
-        <RadioCollection
-          {...props}
-          name='hasSocialSecurity'
-          errorMessage={ props.validations.ssnAll() }
-        >
-          { radioYesNoGroup() }
-        </RadioCollection>
+          <RadioCollection
+            {...props}
+            name='hasSocialSecurity'
+            errorMessage={ props.validations.ssnAll() }
+          >
+            { radioYesNoGroup() }
+          </RadioCollection>
         </fieldset>
       </div>
     </div>

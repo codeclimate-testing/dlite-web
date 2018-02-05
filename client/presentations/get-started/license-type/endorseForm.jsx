@@ -9,27 +9,27 @@ const Form = (props) => {
 
   return (
     <div className='endorsement-form'>
-      <hr/>
+      <hr />
       <h2 className='question'>Which?</h2>
       <p>Select all that apply</p>
       <div className='row'>
         <fieldset>
-        <CheckboxCollection
-          {...props}
-          name  = 'endorsement'
-          array = {props.licenseType.endorsement }
-          onBlur = { props.onBlurValidate }
-          errorMessage={ props.validations.endorsement() }
-        >
-          <CheckboxSelector
-            value     = 'firefighter'
-            text      = 'Firefighter'
-          />
-          <CheckboxSelector
-            value     = 'ambulance'
-            text      = 'Ambulance'
-          />
-        </CheckboxCollection>
+          <CheckboxCollection
+            {...props}
+            name  = 'endorsement'
+            array = {props.licenseType.endorsement }
+            onBlur = { props.onBlurValidate }
+            errorMessage={ props.validations.endorsement() }
+          >
+            <CheckboxSelector
+              value = 'firefighter'
+              text = 'Firefighter'
+            />
+            <CheckboxSelector
+              value = 'ambulance'
+              text = 'Ambulance'
+            />
+          </CheckboxCollection>
         </fieldset>
       </div>
     </div>

@@ -14,40 +14,40 @@ const PoliticalPartyPreference = (props) => {
       <hr/>
       <h2 className='question'>{translations.votingRegistration.choosePartyPage.choosePrompt}</h2>
 
-        <fieldset>
+      <fieldset>
         <RadioCollection
-        {...props}
-        name='politicalPartyChoose'
-      >
-        <RadioSelector
-          value='American Independent Party'
-          text={translations.votingRegistration.choosePartyPage.answerAmericanIndependent}
-        />
-        <RadioSelector
-          value='Libertarian Party'
-          text={translations.votingRegistration.choosePartyPage.answerLibertarianParty}
-        />
-        <RadioSelector
-          value='Democratic Party'
-          text={translations.votingRegistration.choosePartyPage.answerDemocracticParty}
-        />
-        <RadioSelector
-          value='Green Party'
-          text={translations.votingRegistration.choosePartyPage.answerGreenParty}
-        />
-        <RadioSelector
-          value='Peace and Freedom Party'
-          text={translations.votingRegistration.choosePartyPage.answerPeaceAndFreedomParty}
-        />
-        <RadioSelector
-          value='Republican Party'
-          text={translations.votingRegistration.choosePartyPage.answerRepublicanParty}
-        />
-        <OtherParty
           {...props}
-          key='otherParty'
-        />
-      </RadioCollection>
+          name='politicalPartyChoose'
+        >
+          <RadioSelector
+            value='American Independent Party'
+            text={translations.votingRegistration.choosePartyPage.answerAmericanIndependent}
+          />
+          <RadioSelector
+            value='Libertarian Party'
+            text={translations.votingRegistration.choosePartyPage.answerLibertarianParty}
+          />
+          <RadioSelector
+            value='Democratic Party'
+            text={translations.votingRegistration.choosePartyPage.answerDemocracticParty}
+          />
+          <RadioSelector
+            value='Green Party'
+            text={translations.votingRegistration.choosePartyPage.answerGreenParty}
+          />
+          <RadioSelector
+            value='Peace and Freedom Party'
+            text={translations.votingRegistration.choosePartyPage.answerPeaceAndFreedomParty}
+          />
+          <RadioSelector
+            value='Republican Party'
+            text={translations.votingRegistration.choosePartyPage.answerRepublicanParty}
+          />
+          <OtherParty
+            {...props}
+            key='otherParty'
+          />
+        </RadioCollection>
       </fieldset>
     </div>
   );
