@@ -1,8 +1,8 @@
 'use strict';
 
-import errorMessages        from '../../presentations/error-messages';
+import translations         from '../../i18n';
 import { hasValue }         from '../data/validations';
-import selectionValidator       from './selection-validator';
+import selectionValidator   from './selection-validator';
 
 import {
   hasNone,
@@ -12,7 +12,7 @@ import {
 const ssnAll = (props) => {
   let value = props.hasSocialSecurity;
   if (!hasValue(value)) {
-   return [errorMessages.socialSecurityAvailabilityMissing];
+   return [translations.errorMessages.socialSecurityAvailabilityMissing];
   }
   return [];
 };
@@ -22,9 +22,9 @@ const socialSecurity = (name, number) => {
     if (props.hasSocialSecurity !== 'Yes') { return [];};
 
     if (props[name].length !== number) {
-      return [errorMessages['socialSecurityNumberInvalid']];
+      return [translations.errorMessages['socialSecurityNumberInvalid']];
     } else if (hasNone(props)) {
-      return [errorMessages['socialSecurityNumberMissing']];
+      return [translations.errorMessages['socialSecurityNumberMissing']];
     }
     return [];
   };

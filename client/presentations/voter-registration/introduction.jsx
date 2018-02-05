@@ -9,7 +9,7 @@ import { checkPreReg }        from '../../helpers/data/youth';
 
 const IntroPage = (props) => {
   let showPreregistering = isPreregistering(props.dateOfBirth);
-
+  console.log(checkPreReg(props.dateOfBirth))
   return (
     <Page
       {...props}

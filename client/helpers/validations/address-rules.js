@@ -1,12 +1,14 @@
 'use strict';
 
-import errorMessages      from '../../presentations/error-messages';
+import translations       from '../../i18n';
 import { hasValue }       from '../data/validations';
 import { hasOnlyNumbers } from '../data/validations';
 import {
   englishValidatorGenerator,
   englishValidator
 } from './english-validator';
+
+const errorMessages = translations.errorMessages;
 
 const homeAddressSameAsMailing = (props) => {
   let value = props.homeAddressSameAsMailing;

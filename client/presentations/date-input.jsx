@@ -4,6 +4,7 @@ import React from 'react';
 
 import { hasValue } from '../helpers/data/validations';
 import NumberInput  from './number-input.jsx';
+import translations from '../i18n';
 import {
   ErrorIcon,
   ErrorLabel,
@@ -32,7 +33,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'month'
-        example       = 'MM'
+        example       = { translations.shared.labels.mm }
         value         = { props.values.month}
         error         = { hasValue(errors.month) }
         onChange      = { props.onChange }
@@ -44,7 +45,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'day'
-        example       = 'DD'
+        example       = { translations.shared.labels.dd }
         value         = { props.values.day }
         error         = { hasValue(errors.day) }
         onChange      = { props.onChange }
@@ -56,7 +57,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'year'
-        example       = 'YYYY'
+        example       = { translations.shared.labels.YYYY }
         value         = { props.values.year }
         error         = { hasValue(errors.year)  }
         onChange      = { props.onChange }

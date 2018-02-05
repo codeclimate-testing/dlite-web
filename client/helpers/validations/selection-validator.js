@@ -1,4 +1,4 @@
-import errorMessages      from '../../presentations/error-messages';
+import translations       from '../../i18n';
 import { hasValue }       from '../data/validations';
 
 function selectionValidator(error, name, subname) {
@@ -7,7 +7,7 @@ function selectionValidator(error, name, subname) {
     let errors = [];
 
     if (!hasValue(value)) {
-      errors.push(errorMessages[error]);
+      errors.push(translations.errorMessages[error]);
     }
     return errors;
   };

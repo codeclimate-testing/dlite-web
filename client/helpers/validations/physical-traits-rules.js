@@ -1,13 +1,13 @@
 'use strict';
 
-import errorMessages  from '../../presentations/error-messages';
+import translations   from '../../i18n';
 import { hasValue }   from '../data/validations';
 
 const sex = (props) => {
   let value = props.sex;
   let errors = [];
   if (!hasValue(value)) {
-    errors = [errorMessages.sexSelectionMissing]
+    errors = [translations.errorMessages.sexSelectionMissing]
   }
   return errors;
 };
@@ -16,7 +16,7 @@ const eyeColor = (props) => {
   let value = props.eyeColor;
   let errors = [];
   if (!hasValue(value)) {
-    errors = [errorMessages.eyeColorMissing]
+    errors = [translations.errorMessages.eyeColorMissing]
   }
   return errors;
 };
@@ -24,7 +24,7 @@ const hairColor = (props) => {
   let value = props.hairColor;
   let errors = [];
   if (!hasValue(value)) {
-    errors = [errorMessages.hairColorMissing]
+    errors = [translations.errorMessages.hairColorMissing]
   }
   return errors;
 };
