@@ -12,7 +12,8 @@ const EnterRevokedSuspended = (props) => {
       <h2 className='question'>When did this happen?</h2>
       <p>Example: 03/21/1967</p>
 
-      <DateInput
+      <fieldset>
+        <DateInput
         {...props }
         values      = { props.licenseIssues }
       />
@@ -26,6 +27,7 @@ const EnterRevokedSuspended = (props) => {
         value       = { props.licenseIssues.reason }
         errorMessage = { props.validations.reason() }
       />
+      </fieldset>
     </div>
   )
 };

@@ -10,12 +10,14 @@ const EnterMedicalInfo = (props) => {
     <div className='enter-medical-info'>
       <hr/>
       <h2 className='question'>Please explain below.</h2>
+    <fieldset>
         <TextArea
           {...props}
           identifier    = 'medicalInfo'
           value         = { props.medicalHistory.medicalInfo}
           errorMessage  = { props.validations.medicalInfo() }
         />
+    </fieldset>
     </div>
   );
 };

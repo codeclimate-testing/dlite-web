@@ -17,7 +17,8 @@ const EnterLicenseAndIdHistory = (props) => {
       <hr/>
       <h2 className     = 'question'>Please tell us about your most recent license or ID card.</h2>
 
-      <TextInput
+      <fieldset>
+        <TextInput
         {...props}
         identifier    = 'DLIDNumber'
         description   = { text.DLIDNumber }
@@ -37,6 +38,7 @@ const EnterLicenseAndIdHistory = (props) => {
         {...props}
         values        = { props.licenseAndIdHistory }
       />
+      </fieldset>
     </div>
   )
 };

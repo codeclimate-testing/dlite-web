@@ -29,6 +29,7 @@ const ContactDetails = (props) => {
       <h2 className='question'>{translations.votingRegistration.contactInfoPage.formPrompt}</h2>
       <p className='translation-missing'>This is optional</p>
 
+      <fieldset>
       <TextInput
         {...props}
         identifier    = 'emailAddress'
@@ -37,6 +38,7 @@ const ContactDetails = (props) => {
         value         = {props.contactMethods.emailAddress}
         errorMessage  = {props.validations.emailAddress()}
       />
+      </fieldset>
 
       <label
         htmlFor       = 'phoneNumber'
@@ -51,13 +53,12 @@ const ContactDetails = (props) => {
 
       />
 
-      <fieldset>
-      <NumberInput
+      <fieldset><NumberInput
         {...props}
         identifier    = 'phoneNumber1'
         value         = { props.contactMethods.phoneNumber1 }
         error         = { hasValue(errors.one)}
-      />
+      /></fieldset>
       <div className  = 'unit spacer'/>
 
       <NumberInput
@@ -68,7 +69,7 @@ const ContactDetails = (props) => {
       />
 
       <div className  = 'unit spacer'/>
-
+      <fieldset>
       <NumberInput
         {...props}
         identifier    = 'phoneNumber3'

@@ -68,7 +68,8 @@ const TraitsPage = (props) => {
         <h2 className='question'>{translationsPath.weight.prompt}</h2>
         <p>{translationsPath.weight.explanation}</p>
 
-        <NumberInput
+        <fieldset>
+          <NumberInput
           {...props}
           identifier='weight'
           description={translationsPath.weight.poundsLabel}
@@ -78,6 +79,7 @@ const TraitsPage = (props) => {
           onBlurValidate = { props.onBlurValidate }
           onFocusClearValidation = { props.onFocusClearValidation }
         />
+        </fieldset>
         <div className='row'>
           <ErrorLabel
             errorMessage  = { errors.weight }

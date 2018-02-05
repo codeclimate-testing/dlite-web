@@ -39,6 +39,7 @@ const Form = (props) => {
           <h2 className='question'>Card details</h2>
           <p dangerouslySetInnerHTML={{__html: questionText}} />
           <p dangerouslySetInnerHTML={{__html: instructionText}} />
+       <fieldset>
           <TextInput
             {...props}
             identifier    = 'number'
@@ -52,6 +53,7 @@ const Form = (props) => {
             values      = { props.currentCardInfo }
             validations = { props.currentCardValidation }
           />
+       </fieldset>
 
           <NavigationButtons
             {...props}
