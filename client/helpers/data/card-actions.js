@@ -6,11 +6,11 @@ export const hasExistingCard = (props) => {
 };
 
 export const isChangingCard = (props) => {
-  return props.cardType.cardAction === 'change'
+  return props.cardType.cardAction === 'change';
 };
 
 export const isReplacingCard = (props) => {
-  return props.cardType.cardAction === 'replace'
+  return props.cardType.cardAction === 'replace';
 };
 
 export const isRenewingCard = (props) => {
@@ -51,18 +51,16 @@ export const hasActionIsUpdating = (props) => {
 
 export const getStringByAction = (props, newString, renew, replace, change, update, correct) => {
   if (isGettingNew(props)) {
-    return newString
+    return newString;
   } else if (isRenewingCard(props)) {
-    return renew
+    return renew;
   } else if (isReplacingCard(props)) {
-    return replace
-  } else if (isChangingCard(props) && !hasSpecifiedChange(props)){
-    return change
-  } else if (isUpdating(props) && isChangingCard(props)) {
+    return replace;
+  } else if (!hasSpecifiedChange(props)){
+    return change;
+  } else if (isUpdating(props)) {
     return update || change;
-  } else if (isCorrecting(props) && isChangingCard(props)) {
-    return correct || change;
   } else {
-    return '';
+    return correct || change;
   }
 };
