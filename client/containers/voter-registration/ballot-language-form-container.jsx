@@ -6,15 +6,12 @@ import connectForm                from '../../helpers/connect-form';
 import { updateLanguage }         from '../../actions/index';
 import Presentation               from '../../presentations/voter-registration/ballot-language-page.jsx';
 import handlers                   from '../../helpers/handlers';
-import { checkPreReg }            from '../../helpers/data/youth';
 import { BallotLanguageValidator} from '../../helpers/validations';
 
 const Page = (props) => {
   let validations       = new BallotLanguageValidator(props.ballotLanguage, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('chooseBallotLanguage', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
-  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
     <Presentation
@@ -23,7 +20,6 @@ const Page = (props) => {
       onBack          = { onBack }
       selectedValue   = { props.ballotLanguage }
       validations     = { validations }
-      prereg          = { prereg }
       name            = 'ballotLanguage'
     />
   );

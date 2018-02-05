@@ -5,7 +5,6 @@ import connectForm              from '../../helpers/connect-form';
 import { updateCitizenStatus }  from '../../actions/index';
 import Presentation             from '../../presentations/voter-registration/citizen-status-page.jsx';
 import handlers                 from '../../helpers/handlers';
-import { checkPreReg }          from '../../helpers/data/youth';
 
 const Page = (props) => {
   let validations       = {
@@ -14,8 +13,6 @@ const Page = (props) => {
   let onSubmit          = handlers.navigateOrShowErrors('citizenship', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
-  let prereg = checkPreReg(props.dateOfBirth);
-
   return (
     <Presentation
       {...props}
@@ -23,7 +20,6 @@ const Page = (props) => {
       onBack            = {onBack}
       onChange          = {props.onChange}
       selectedValue     = {props.citizenStatus}
-      prereg            = {prereg}
     />
   );
 };

@@ -7,7 +7,9 @@ import {
   hasAnyAttributes,
   hasOnlyEnglishChars,
   hasOnlyNumbers,
-  emailRegex
+  emailRegex,
+  isYes,
+  isNo
 } from '../../../../client/helpers/data/validations';
 
 describe('validations', function() {
@@ -139,5 +141,35 @@ describe('validations', function() {
       assert.equal(emailRegex('aperson@a..domain.somewhere'), false);
     });
 
+  });
+
+  describe('#isYes', function() {
+    it('returns true when value is Yes', function(){
+      let data = 'Yes';
+      assert.equal(isYes(data), true);
+    });
+    it('returns false when value is No', function(){
+      let data = 'No';
+      assert.equal(isYes(data), false);
+    });
+    it('returns false when value is blank', function(){
+      let data = '';
+      assert.equal(isYes(data), false);
+    });
+  });
+
+  describe('#isNo', function() {
+    it('returns false when value is Yes', function(){
+      let data = 'Yes';
+      assert.equal(isNo(data), false);
+    });
+    it('returns true when value is No', function(){
+      let data = 'No';
+      assert.equal(isNo(data), true);
+    });
+    it('returns false when value is blank', function(){
+      let data = '';
+      assert.equal(isNo(data), false);
+    });
   });
 });

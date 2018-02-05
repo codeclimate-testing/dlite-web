@@ -7,14 +7,11 @@ import { updateBallotByMail }   from '../../actions/index';
 import Presentation             from '../../presentations/voter-registration/ballot-by-mail-page.jsx';
 import handlers                 from '../../helpers/handlers';
 import { BallotByMailValidator }from '../../helpers/validations';
-import { checkPreReg }          from '../../helpers/data/youth';
 
 const Page = (props) => {
   let validations       = new BallotByMailValidator(props.ballotByMail, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('ballotByMail', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
-  let prereg = checkPreReg(props.dateOfBirth);
 
   return (
       <Presentation
@@ -23,7 +20,6 @@ const Page = (props) => {
         onBack            = {onBack}
         selectedValue     = {props.ballotByMail}
         validations       = {validations}
-        prereg            = {prereg}
       />
     );
   };

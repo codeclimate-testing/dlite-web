@@ -23,6 +23,12 @@ describe('ChoosePartyPage ', function() {
         otherParty: ''
       };
 
+      let dateOfBirth = {
+        year: '',
+        day: '',
+        month: ''
+      };
+
       let onChange = spy();
       let validations = {
         isSelected: spy(),
@@ -33,6 +39,7 @@ describe('ChoosePartyPage ', function() {
 
       props = {
         politicalPartyChoose,
+        dateOfBirth,
         onChange,
         validations
       };

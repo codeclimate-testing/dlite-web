@@ -7,12 +7,13 @@ import NavigationButtons        from '../navigation-buttons.jsx';
 import Page                     from '../../containers/page.jsx';
 import ContactDetails           from './contact-methods/contact-methods-details.jsx';
 import translations             from '../../i18n';
+import { checkPreReg }          from '../../helpers/data/youth';
 
 const ContactMethodsPage = (props) => {
   return (
      <Page
       {...props}
-      sectionKey={props.prereg}>
+      sectionKey={checkPreReg(props.dateOfBirth)}>
 
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
         <h2 className='question'>{translations.votingRegistration.contactInfoPage.pagePrompt}</h2>

@@ -34,3 +34,11 @@ export const emailRegex = (value) => {
   let reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   return reg.test(value.toLowerCase());
 };
+
+export const isYes = (value) => {
+  return value === 'Yes';
+};
+
+export const isNo = (value) => {
+  return value === 'No';
+};

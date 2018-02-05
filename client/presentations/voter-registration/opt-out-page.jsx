@@ -6,6 +6,7 @@ import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
+import { checkPreReg }      from '../../helpers/data/youth';
 
 const allOptionText = {
   voterRegistration: {
@@ -21,36 +22,38 @@ const allOptionText = {
 };
 
 const OptOutPage = (props) => {
-  let optionText = allOptionText[props.prereg];
+
+  let preRegString = checkPreReg(props.dateOfBirth);
+  let optionText = allOptionText[preRegString];
 
   return (
     <Page
       {...props}
-      sectionKey={props.prereg}
+      sectionKey={preRegString}
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
-      <h2 className='question'>{translations.votingRegistration.optOutPage.pagePrompt}</h2>
+        <h2 className='question'>{translations.votingRegistration.optOutPage.pagePrompt}</h2>
 
-      <fieldset>
-      <RadioCollection
-        {...props}
-        name          = 'optOut'
-        errorMessage  = {props.validations.optOut()}
-      >
-        <RadioSelector
-          value='new'
-          text={ optionText.new }
-        />
-        <RadioSelector
-          value='existing'
-          text={ optionText.existing }
-        />
-        <RadioSelector
-          value='optOut'
-          text={ optionText.optOut }
-        />
-      </RadioCollection>
-      </fieldset>
+        <fieldset>
+        <RadioCollection
+          {...props}
+          name          = 'optOut'
+          errorMessage  = {props.validations.optOut()}
+        >
+          <RadioSelector
+            value='new'
+            text={ optionText.new }
+          />
+          <RadioSelector
+            value='existing'
+            text={ optionText.existing }
+          />
+          <RadioSelector
+            value='optOut'
+            text={ optionText.optOut }
+          />
+        </RadioCollection>
+        </fieldset>
 
         <NavigationButtons
           {...props}

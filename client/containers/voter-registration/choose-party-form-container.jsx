@@ -5,7 +5,6 @@ import connectForm                    from '../../helpers/connect-form';
 import { updatePoliticalPartyChoose } from '../../actions/index';
 import Presentation                   from '../../presentations/voter-registration/choose-party-page.jsx';
 import handlers                       from '../../helpers/handlers';
-import { checkPreReg }                from '../../helpers/data/youth';
 import { ChoosePartyValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
@@ -13,15 +12,12 @@ const Page = (props) => {
   let onSubmit            = handlers.navigateOrShowErrors('choosePoliticalParty', props, validations);
   let onBack              = handlers.navigateOnBack(props, validations);
 
-  let prereg = checkPreReg(props.dateOfBirth);
-
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       validations       = { validations }
-      prereg            = { prereg }
     />
   );
 };

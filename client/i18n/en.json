@@ -709,8 +709,8 @@
     "optOutPage": {
       "pagePrompt": "Which best describes you?",
       "answerNewRegistration": "I want to register to vote.",
-      "anwserUpdateRegistration": "I am registered to vote and want to update my voter registration information.",
-      "anwserOptOut": "I do not want to register to vote or update my voter registration information."
+      "answerUpdateRegistration": "I am registered to vote and want to update my voter registration information.",
+      "answerOptOut": "I do not want to register to vote or update my voter registration information."
     },
     "preRegIntroductionPage": {
       "pagePrompt": "Voter Pre-registration",
@@ -726,8 +726,8 @@
     },
     "preRegOptOutPage": {
       "answerNewRegistration": "I want to pre-register to vote.",
-      "anwserUpdateRegistration": "I am pre-registered to vote and want to update my voter pre-registration information.",
-      "anwserOptOut": "I do not want to pre-register to vote or update my voter pre-registration information."
+      "answerUpdateRegistration": "I am pre-registered to vote and want to update my voter pre-registration information.",
+      "answerOptOut": "I do not want to pre-register to vote or update my voter pre-registration information."
     },
     "preferencesIntroPage": {
       "pagePrompt": "Next you will choose your voter preferences.",

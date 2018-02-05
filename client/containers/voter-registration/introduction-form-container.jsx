@@ -1,12 +1,9 @@
 'use strict';
 
-import React                 from 'react';
+import React                  from 'react';
 import connectForm            from '../../helpers/connect-form';
-
-import VoterIntro            from '../../presentations/voter-registration/introduction/introduction.jsx';
-import PreRegVoterIntro      from '../../presentations/voter-registration/introduction/introduction-prereg.jsx';
-import handlers              from '../../helpers/handlers';
-import { isPreregistering }  from '../../helpers/calculate-age';
+import Presentation           from '../../presentations/voter-registration/introduction.jsx';
+import handlers               from '../../helpers/handlers';
 
 const Page = (props) => {
   let validations       = {
@@ -14,8 +11,6 @@ const Page = (props) => {
   };
   let onSubmit          = handlers.navigateOrShowErrors('voterIntro', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterIntro : VoterIntro;
 
   return (
     <Presentation

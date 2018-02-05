@@ -7,12 +7,13 @@ import RadioCollection          from '../radio-selector-collection.jsx';
 import Page                     from '../../containers/page.jsx';
 import PoliticalPartyPreference from './voter-choose-party/political-party-preference.jsx';
 import translations             from '../../i18n';
+import { checkPreReg }          from '../../helpers/data/youth';
 
 const ChoosePartyPage = (props) => {
   return (
     <Page
       {...props}
-      sectionKey={props.prereg}
+      sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'choose-party-form'>
         <div className='choose-political-party'>

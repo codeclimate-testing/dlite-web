@@ -5,12 +5,13 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import LanguageRadios       from '../language-radios.jsx'
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
+import { checkPreReg }      from '../../helpers/data/youth';
 
 const BallotLanguagePage = (props) => {
   return (
     <Page
       {...props}
-      sectionKey={props.prereg}
+      sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-language-form'>
         <h2 className='question'>{translations.votingRegistration.chooseLanguagePage.pagePrompt}</h2>

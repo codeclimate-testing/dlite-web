@@ -1,34 +1,27 @@
 'use strict';
 
-import React                        from 'react';
-import connectForm                  from '../../helpers/connect-form';
-
-import { updateDateOfBirth }        from '../../actions/index';
-import VoterPreferencesIntro        from '../../presentations/voter-registration//voter-preferences/voter-preferences-intro-form.jsx';
-import PreRegVoterPreferencesIntro  from '../../presentations/voter-registration//voter-preferences/voter-preferences-info-prereg-form.jsx';
-import handlers                     from '../../helpers/handlers';
-import { isPreregistering
-} from '../../helpers/calculate-age';
-
+import React                    from 'react';
+import connectForm              from '../../helpers/connect-form';
+import Presentation             from '../../presentations/voter-registration/voter-preferences-page.jsx';
+import { updateDateOfBirth }    from '../../actions/index';
+import handlers                 from '../../helpers/handlers';
 
 const Page = (props) => {
   let onSubmit          = handlers.navigateOnSubmit('/voting-registration/choose-party', props);
   let onBack            = handlers.navigateOnBack(props);
 
-  const Presentation = isPreregistering(props.dateOfBirth) ? PreRegVoterPreferencesIntro : VoterPreferencesIntro;
   return (
     <Presentation
       {...props}
-      optOut={props.optOut}
-      onSubmit={onSubmit}
-      onBack={onBack}
-      />
+      onSubmit= { onSubmit }
+      onBack  = { onBack }
+    />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    optOut: state.application.optOut,
+    optOut:       state.application.optOut,
     dateOfBirth:  state.application.dateOfBirth,
     focused:      state.ui.focus
   };

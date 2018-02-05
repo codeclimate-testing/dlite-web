@@ -1,15 +1,15 @@
 'use strict';
-
-import React from 'react';
-
-import RadioSelector      from '../radio-selector.jsx';
-import RadioCollection    from '../radio-selector-collection.jsx';
-import Page               from '../../containers/page.jsx';
-import NavigationButtons  from '../navigation-buttons.jsx';
-import translations       from '../../i18n';
+import React                from 'react';
+import RadioSelector        from '../radio-selector.jsx';
+import RadioCollection      from '../radio-selector-collection.jsx';
+import Page                 from '../../containers/page.jsx';
+import NavigationButtons    from '../navigation-buttons.jsx';
+import translations         from '../../i18n';
+import { checkPreReg }      from '../../helpers/data/youth';
+import { isPreregistering } from '../../helpers/calculate-age';
 
 const YouthPoint = (props) => {
-  if (props.prereg !== 'voterPreRegistration'){ return null; }
+  if (!props.showIf){ return null; }
   return <li className='translation-missing'>I am 16 or 17 years old and would like to pre-register to vote</li>
 };
 
@@ -18,18 +18,33 @@ const text = {
   'voterRegistration': translations.votingRegistration.eligibilityPage.faqAnswerWhatIfDontMeetRequirements
 };
 
+const PreRegText = (props) => {
+  if (!props.showIf) { return null; }
+  return <p className='translation-missing'>{text.voterPreRegistration}</p>
+};
+
+const RegText = (props) => {
+  if (!props.showIf) { return null; }
+  return <p>{text.voterRegistration}</p>
+};
+
 const EligibilityRequirements = (props) => {
+
+  let showPreReg = isPreregistering(props.dateOfBirth);
+
   return (
     <Page
       {...props}
-      sectionKey={props.prereg}
+      sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <div>
         <h2 className='question'>{translations.votingRegistration.eligibilityPage.pagePrompt}</h2>
         <ul className='bullet-list'>
           <li>{translations.votingRegistration.eligibilityPage.usCitizenshipStatement}</li>
           <li>{translations.votingRegistration.eligibilityPage.caCitizenshipStatement}</li>
-          <YouthPoint prereg = {props.prereg} />
+          <YouthPoint
+            showIf = {showPreReg}
+          />
           <li>{translations.votingRegistration.eligibilityPage.convictionStatement}</li>
           <li>{translations.votingRegistration.eligibilityPage.mentalCompetenceStatement}</li>
         </ul>
@@ -60,10 +75,13 @@ const EligibilityRequirements = (props) => {
           </div>
 
           <NavigationButtons {...props} />
-          </form>
+        </form>
 
         <p><b>{translations.votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements}</b></p>
-        <p className='translation-missing'>{text[props.prereg]}</p>
+
+        <PreRegText showIf={showPreReg} />
+        <RegText showIf={!showPreReg} />
+
         <p className='translation-missing'>Your response to this question <b>will not</b> be shared with election officials.</p>
       </div>
     </Page>
