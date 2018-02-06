@@ -1,5 +1,6 @@
 'use strict';
 
+import { hasValue } from './validations';
 import {
   ageChecks,
   isPreregistering
@@ -29,4 +30,24 @@ export const continueHidden = (props) => {
   } else {
     return false;
   }
+};
+
+export const isNewDriver = (props) => {
+  return ageChecks.Under18(props.dateOfBirth, props.now) && ageChecks.GreaterThanEqual15Half(props.dateOfBirth, props.now) && props.licenseIssued !== 'Yes';
+};
+
+export const needsKnowledgeTest = (props) => {
+  return ageChecks.Under17Half(props.dateOfBirth, props.now)
+};
+
+export const guardianSigned = (props) => {
+  return props.guardianSignature.isSigned === 'Yes';
+};
+
+export const guardianNotSigned = (props) => {
+  return props.guardianSignature.isSigned === 'No';
+};
+
+export const guardianHasValue = (props) => {
+  return hasValue(props.guardianSignature.isSigned);
 };

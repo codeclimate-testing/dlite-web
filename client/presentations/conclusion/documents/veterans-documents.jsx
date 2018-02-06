@@ -1,11 +1,12 @@
 'use strict';
 
-import React from 'react';
+import React                  from 'react';
+import { showBulletPoint }   from '../../../helpers/data/veteran';
+
+const veteranVerificationLink = 'https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license';
 
 const VeteransDocuments = (props) => {
-  const veteranVerificationLink = 'https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license';
-
-  if(props.veteransService.isVeteran !== 'Yes' && props.veteransService.veteransIdentifier !== 'Yes') {return null;}
+  if (!showBulletPoint(props)) { return null; }
 
   return (
     <div key='proof-of-veterans-service'>

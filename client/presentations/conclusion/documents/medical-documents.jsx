@@ -1,9 +1,10 @@
 'use strict';
 
-import React from 'react';
+import React            from 'react';
+import { hasMedical }   from '../../../helpers/data/my-history';
 
 const MedicalDocuments = (props) => {
-  if(props.medicalHistory.hasMedicalCondition !== 'Yes') {return null;}
+  if(!hasMedical(props)) {return null;}
 
   return (
     <div key='medical-information-documents'>

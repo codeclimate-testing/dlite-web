@@ -30,7 +30,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       e.preventDefault();
       dispatch(postData(application))
       .then(
-        ownHistory.history.push(
+        ownProps.history.push(
           nextPath('summary', server)
         )
       );

@@ -1,9 +1,10 @@
 'use strict';
 
-import React from 'react';
+import React                  from 'react';
+import { choosingReducedFee } from '../../../helpers/data/reduced-fee';
 
 const ReducedFee = (props) => {
-  if(props.reducedFee.ID !== 'Yes') {return null;}
+  if (!choosingReducedFee(props)) {return null;}
 
   return (
     <div key='reduced-fee'>

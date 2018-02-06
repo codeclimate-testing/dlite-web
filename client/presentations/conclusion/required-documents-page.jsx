@@ -26,7 +26,6 @@ const Presentation = (props) => {
 
   return (
     <div>
-    <HomeLink/>
       <div className='required-documents'>
         <h3>Here's what you need to bring to the DMV</h3>
         <p> Below is a list of what you will need to bring to a DMV office visit to complete your application.
@@ -45,7 +44,6 @@ const Presentation = (props) => {
           reducedFee         = { props.reducedFee }
         />
 
-        <br></br>
           { documentList }
         <hr></hr>
 
@@ -54,6 +52,7 @@ const Presentation = (props) => {
         <p>Hearing Impaired: TTY 1-800-368-4327</p>
         <p>Call Center business hours are: Monday, Tuesday, Thursday, Friday 8 am to 5 pm, and Wednesday, 9am to 5pm.</p>
       </div>
+      <HomeLink/>
     </div>
   );
 };

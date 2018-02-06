@@ -5,6 +5,10 @@ import Accordion            from '../../containers/accordion.jsx';
 import Page                 from '../../containers/page.jsx';
 import { ageChecks }        from '../../helpers/calculate-age';
 import Alerts               from './summary/alerts.jsx';
+import {
+  hideMain,
+  getErrorMessage
+} from '../../helpers/data/summary';
 
 import {
   LegalName,
@@ -50,8 +54,9 @@ const header = {
   question: 'Please take a minute to review your answers'
 };
 
-let contents = [
+const contents = (application) => {
 
+  return([
   <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
     <IDApplicationNotStarted {...application} key='id-application-not-started' />
     <IDAction {...application} />
@@ -100,12 +105,8 @@ let contents = [
     <BallotByMail ballotByMail={application.ballotByMail} />
     <ContactMethods contactMethods={application.contactMethods} />
   </Accordion>
-];
-
-contents = contents.reduce((summaries, item) => {
-  if (item.type) { summaries.push(item); }
-  return summaries;
-}, []);
+  ]);
+};
 
 const ButtonComponent = (props) => {
   if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
@@ -126,26 +127,26 @@ const ButtonComponent = (props) => {
 const SummaryPage = (props) => {
   let application = props.application;
 
-  let showOrHide = props.server.apiStatus === 'loading' ? 'hide' : '';
-
   return (
       <Page
         {...props}
         sectionKey='summary'
       >
         <div className={props.server.apiStatus}/>
-        <form onSubmit  = { props.onSubmit } className={showOrHide}>
+        <form onSubmit  = { props.onSubmit } className={hideMain(props)}>
           <h2 className='question'>{header.question}</h2>
 
-          <ErrorMessageBox
-            errorMessage={props.server.apiStatus === 'error' ? 'Sorry, something went wrong' : '' }
-          />
+          <div className='translation-missing'>
+            <ErrorMessageBox
+              errorMessage={getErrorMessage(props)}
+            />
+          </div>
           <div className= 'summary'>
             <Alerts
               cardType    = {application.cardType}
               dateOfBirth = {application.dateOfBirth}
             />
-            {contents}
+            {contents(application)}
             <ButtonComponent
               continueDisabled = { props.continueDisabled }
             />

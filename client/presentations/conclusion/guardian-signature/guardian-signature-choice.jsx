@@ -1,13 +1,13 @@
 'use strict';
 
-import React from 'react';
-
-import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
-import RadioCollection    from '../../radio-selector-collection.jsx';
+import React                  from 'react';
+import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
+import RadioCollection        from '../../radio-selector-collection.jsx';
 import MessageBox             from '../../message-box.jsx';
+import { guardianNotSigned }  from '../../../helpers/data/youth';
 
 const MessageNo = (props) => {
-  if (props.guardianSignature.isSigned !== 'No') { return null; }
+  if (!guardianNotSigned(props)) { return null; }
 
   return (
     <MessageBox className='info'>

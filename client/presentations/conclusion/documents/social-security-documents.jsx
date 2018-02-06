@@ -1,11 +1,13 @@
 'use strict';
 
-import React from 'react';
+import React                    from 'react';
+import { hasSocialSecurityYes } from '../../../helpers/data/ssn';
+
+
+const socialSecurityDocumentsList = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08';
 
 const SocialSecurityDocuments = (props) => {
-  const socialSecurityDocumentsList = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08';
-
-  if(props.socialSecurity.hasSocialSecurity !== 'Yes') { return null; }
+  if (!hasSocialSecurityYes(props)) { return null; }
 
   return (
     <div key='proof-of-ssn-documents'>

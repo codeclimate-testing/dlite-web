@@ -1,14 +1,18 @@
 'use strict';
 
-import React from 'react';
+import React                from 'react';
+import { gettingRealID }    from '../../../helpers/data/real-id';
+
+
+const realIDInformationPage = 'https://www.dmv.ca.gov/portal/dmv/detail/realid';
+const caLicenseRequirements = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'
+const ab60Checklist     = 'https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist';
+const legalPresenceList = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP';
+
 
 const RealIdDocuments = (props) => {
-  const realIDInformationPage = 'https://www.dmv.ca.gov/portal/dmv/detail/realid';
-  const caLicenseRequirements = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'
-  const ab60Checklist     = 'https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist';
-  const legalPresenceList = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP';
 
-  if(props.realID.getRealID === 'Yes'){
+  if (gettingRealID(props)){
     return (
       <div key='real-id-documents'>
         <h4 className="real-id-documents">Real ID birth date, name and legal presence proof</h4>

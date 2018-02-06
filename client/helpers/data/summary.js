@@ -1,6 +1,7 @@
 'use strict';
 
 import { hasValue } from './validations';
+import translations from '../../i18n';
 
 export const IDChanging = (props) => {
   return props.cardType.ID.action === 'change';
@@ -42,3 +43,10 @@ export const summaryHasDL = (props) => {
   return hasValue(props.cardType.DL.action);
 };
 
+export const hideMain = (props) => {
+  return props.server.apiStatus === 'loading' ? 'hide' : '';
+};
+
+export const getErrorMessage = (props) => {
+  return props.server.apiStatus === 'error' ? 'Sorry, something went wrong' : '';
+};

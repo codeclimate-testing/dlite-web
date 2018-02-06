@@ -45,6 +45,10 @@ export const showIdentifierMessage = (props) => {
   return props.veteransService.veteransIdentifier === 'Yes';
 };
 
+export const showBulletPoint = (props) => {
+  return showIdentifierMessage(props) && isVeteran(props);
+};
+
 export const removeIdentifierNotification = (props) => {
   return isPreviouslyDesignated(props) && props.veteransService.veteransIdentifier === 'No';
 };
