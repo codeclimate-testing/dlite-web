@@ -40,3 +40,7 @@ export const getStringByParty = (props) => {
   return party;
 };
 
+export const citizenStatusNotChosen = (props) => {
+  return !hasValue(props.citizenStatus);
+};
+

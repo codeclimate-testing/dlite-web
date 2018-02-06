@@ -1,10 +1,16 @@
 'use strict';
 
-import React                    from 'react';
-import connectForm              from '../../helpers/connect-form';
-import { updateCitizenStatus }  from '../../actions/index';
-import Presentation             from '../../presentations/voter-registration/citizen-status-page.jsx';
-import handlers                 from '../../helpers/handlers';
+import React                          from 'react';
+import { connect }                    from 'react-redux';
+import { updateCitizenStatus }        from '../../actions/index';
+import Presentation                   from '../../presentations/voter-registration/citizen-status-page.jsx';
+import handlers                       from '../../helpers/handlers';
+import { onSubmitUpdateCitizenship }  from '../../helpers/handlers/on-submit-dispatches';
+import {
+  mergePropsGenerator,
+  onSubmitDispatches
+} from '../../helpers/handlers/merge-props';
+
 
 const Page = (props) => {
   let validations       = {
@@ -19,17 +25,16 @@ const Page = (props) => {
       onSubmit          = {onSubmit}
       onBack            = {onBack}
       onChange          = {props.onChange}
-      selectedValue     = {props.citizenStatus}
+      selectedValue     = {props.application.citizenStatus}
     />
   );
 };
 
 const mapStateToProps = (state) => {
-  return {
-    citizenStatus       : state.application.citizenStatus,
-    dateOfBirth         : state.application.dateOfBirth,
-    focused             : state.ui.focus
-  };
+  return state;
 };
 
-export default connectForm(mapStateToProps, updateCitizenStatus, Page);
+
+let mergeProps = mergePropsGenerator(updateCitizenStatus, onSubmitDispatches.updateCitizenship);
+
+export default connect(mapStateToProps, null, mergeProps)(Page);

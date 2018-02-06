@@ -9,6 +9,7 @@ import translations           from '../../i18n';
 import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  console.log(props)
   return (
     <Page
       {...props}

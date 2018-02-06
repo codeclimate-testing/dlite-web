@@ -5,12 +5,12 @@ import React from 'react';
 import PageSummaryLink            from '../../page-summary-link.jsx';
 import SummaryItem                from './summary-item.jsx';
 import {
-  politicalPartyChoose,
+  politicalPartySelected,
   getStringByParty
 }   from '../../../helpers/data/voting';
 
 const PoliticalPartyChoose = (props) => {
-  if (!politicalPartyChoose(props) ) { return null; }
+  if (!politicalPartySelected(props) ) { return null; }
 
   let party = getStringByParty(props);
 

@@ -37,7 +37,7 @@ export const isNewDriver = (props) => {
 };
 
 export const needsKnowledgeTest = (props) => {
-  return ageChecks.Under17Half(props.dateOfBirth, props.now)
+  return ageChecks.Under17Half(props.dateOfBirth, props.now);
 };
 
 export const guardianSigned = (props) => {

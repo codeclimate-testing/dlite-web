@@ -12,11 +12,11 @@ import pages from '../../../../client/helpers/data/pages';
 
 describe('Data helpers for page', function() {
   it('#pageFor return the value object for the page', function() {
-    assert.deepEqual(pageFor('realID'), pages.getStarted[12]);
+    assert.deepEqual(pageFor('realID'), pages.getStarted[13]);
   });
 
   it('#pathForPage return the path of that key', function() {
-    assert.deepEqual(pathForPage('realID'), pages.getStarted[12].path);
+    assert.deepEqual(pathForPage('realID'), pages.getStarted[13].path);
   });
 
   it('#nextPath return the full path given page with only one path', function() {

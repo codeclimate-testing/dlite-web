@@ -168,9 +168,9 @@ describe('Required Docs for Youth', function() {
         };
         component = render(
           <YouthDocuments
-          dateOfBirth={dob}
-          now={mockNow}
-          license={license}
+            dateOfBirth={dob}
+            now={mockNow}
+            license={license}
           />
         )
         assert.equal(component.text().includes(newDriver), true);
@@ -200,9 +200,9 @@ describe('Required Docs for Youth', function() {
         };
         component = render(
           <YouthDocuments
-          dateOfBirth={dob}
-          now={mockNow}
-          license={license}
+            dateOfBirth={dob}
+            now={mockNow}
+            license={license}
           />
         )
         assert.equal(component.text().includes(newDriver), false);

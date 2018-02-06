@@ -12,7 +12,7 @@ const driverHandbook                  = 'https://www.dmv.ca.gov/portal/dmv/detai
 const practiceKnowledgeTest           = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam';
 
 const YouthDocuments = (props) => {
-  if (!isNewDriver) { return null; }
+  if (!isNewDriver(props)) { return null; }
 
   let KnowledgeTest = (props) => {
     if (!needsKnowledgeTest(props)) { return null; }
@@ -32,7 +32,7 @@ const YouthDocuments = (props) => {
       </div>
       <KnowledgeTest
         dateOfBirth = {props.dateOfBirth}
-        now = {now}
+        now = {props.now}
       />
     </div>
   );

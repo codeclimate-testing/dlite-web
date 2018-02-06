@@ -1,6 +1,6 @@
 'use strict';
 
-import {iddlPath} from '../alice-path';
+import {alicePath, iddlPath} from '../alice-path';
 import {
   chooseCardType,
   currentCardInfo,
@@ -22,13 +22,18 @@ const getStarted = [
   {
     key: 'chooseLanguage',
     description: 'Choose language for app',
-    path: '/choose-language',
+    path: alicePath('/choose-language'),
     next: 'choose'
+  },
+  {
+    key: 'choose',
+    description: '',
+    path: alicePath('/choose')
   },
   {
     key: 'IDme',
     description: 'ID Me',
-    path: '/sign-in',
+    path: alicePath('/sign-in'),
     next: 'welcome'
   },
   {
@@ -279,7 +284,7 @@ const conclusion = [
 
 const expand = (collection) => {
   return collection.map((item) => {
-    let path = iddlPath(item.path);
+    let path = item.path.startsWith('/apply/') ? item.path : iddlPath(item.path);
     return Object.assign({}, item, {path: path});
   });
 };

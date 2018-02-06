@@ -139,9 +139,9 @@ describe('GuardianSignaturePage', function() {
         </Wrapper>
       );
       assert.ok(component.find('label[for="name_0"]').length, 'Guardian signature - name input missing');
-      assert.ok(component.find('label[for="month_0"]').length, 'Guardian signature - today month missing');
-      assert.ok(component.find('label[for="day_0"]').length, 'Guardian signature - today day missing');
-      assert.ok(component.find('label[for="year_0"]').length, 'Guardian signature - today year missing');
+      assert.ok(component.find('#month_0').length, 'Guardian signature - today month missing');
+      assert.ok(component.find('#day_0').length, 'Guardian signature - today day missing');
+      assert.ok(component.find('#year_0').length, 'Guardian signature - today year missing');
       assert.ok(component.find('label[for="phoneNumber_0"]').length, 'Guardian signature - phone number missing');
       assert.ok(component.find('label[for="guardian_0Street_1"]').length, 'Guardian signature - street address missing');
       assert.ok(component.find('label[for="guardian_0Street_2"]').length, 'Guardian signature - apt number missing');
