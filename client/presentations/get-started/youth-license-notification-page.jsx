@@ -10,14 +10,16 @@ import Page               from '../../containers/page.jsx';
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
 import MessageBox          from '../message-box.jsx';
+import translations         from '../../i18n';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const FormHeader = (props) => {
   return (
     <div>
-      <h2 className='question'>{props.title}</h2>
-      <p>{props.helpText}</p>
+      <h2 className='question translation-missing'>{props.title}</h2>
+      <p className='translation-missing'>{props.helpText}</p>
       <hr />
-      <h3 className='question'>Do you want to apply for an ID instead?</h3>
+      <h3 className='question translation-missing'>Do you want to apply for an ID instead?</h3>
     </div>
   );
 };
@@ -44,7 +46,7 @@ let ErrorMessage = (props) => {
   if (validToContinue(props)) { return null; }
 
   return (
-    <MessageBox className='info'>Ok, please come back when you turn 15.</MessageBox>
+    <MessageBox className='info translation-missing'>Ok, please come back when you turn 15.</MessageBox>
   );
 };
 

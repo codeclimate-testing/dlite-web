@@ -4,13 +4,15 @@ import React from 'react';
 
 import CheckboxSelector from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
+import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
 
   return (
     <div className='row choose-new-cards'>
-      <p>Select all that apply.</p>
+      {convertToHtml('p', translations.intro.chooseSelectionPage.explanationMultiCard)}
       <div className='row'>
         <fieldset>
           <CheckboxCollection
@@ -22,11 +24,11 @@ const Form = (props) => {
           >
           <CheckboxSelector
             value     = 'ID'
-            text      = 'ID'
+            text={translations.intro.chooseSelectionPage.values[0]}
           />
           <CheckboxSelector
             value     = 'DL'
-            text      = 'Driver License'
+            text={translations.intro.chooseSelectionPage.values[1]}
           />
           </CheckboxCollection>
         </fieldset>

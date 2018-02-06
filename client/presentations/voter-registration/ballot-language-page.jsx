@@ -6,6 +6,7 @@ import LanguageRadios       from '../language-radios.jsx'
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const BallotLanguagePage = (props) => {
   return (
@@ -14,7 +15,7 @@ const BallotLanguagePage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-language-form'>
-        <h2 className='question'>{translations.votingRegistration.chooseLanguagePage.pagePrompt}</h2>
+        {convertToHtml('h2', translations.votingRegistration.chooseLanguagePage.pagePrompt, 'question')}
         <LanguageRadios
           {...props}
           name         = 'ballotLanguage'

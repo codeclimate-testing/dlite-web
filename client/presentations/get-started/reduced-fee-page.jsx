@@ -10,15 +10,14 @@ import Accordion                from '../../containers/accordion.jsx';
 import HasCorrectFormQuestion   from './reduced-fee/has-correct-form-question.jsx';
 import { hasMultipleCards }     from '../../helpers/data/cards';
 import { choosingReducedFee }   from '../../helpers/data/reduced-fee';
+import translations             from '../../i18n';
+import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
 
 const DLText = (props) => {
   if (!hasMultipleCards(props)) { return null; }
 
   return (
-    <p>
-      This only applies to your ID Card. You cannot get a free or reduced
-      fee driver license.
-    </p>
+    convertToHtml('p', translations.intro.reducedFeePage.licenseExplanation)
   );
 };
 
@@ -30,7 +29,7 @@ const Form = (props) => {
     >
       <div className='reduced-fee-form'>
         <form onSubmit={ props.onSubmit } >
-          <h2 className='question'>Are you applying for a reduced fee or free ID?</h2>
+          {convertToHtml('h2', translations.intro.reducedFeePage.prompt, 'question')}
 
           <DLText {...props} />
 

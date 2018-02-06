@@ -5,6 +5,8 @@ import React from 'react';
 import Accordion                from '../../../containers/accordion.jsx';
 import RadioCollection          from '../../radio-selector-collection.jsx';
 import radioYesNoGroup          from '../../radio-yes-no-group.jsx';
+import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 import { choosingReducedFee }   from '../../../helpers/data/reduced-fee';
 
@@ -14,11 +16,8 @@ const FormQuestion = (props) => {
   return (
     <div>
       <hr />
-      <h2 className='question'>Do you have the right form?</h2>
-      <p>
-        In order to get a reduced fee you need to have form 937.
-        To get a free ID you need to have form 933.
-      </p>
+      {convertToHtml('h2', translations.intro.reducedFeePage.rightFormsSection.prompt, 'question')}
+      {convertToHtml('p', translations.intro.reducedFeePage.rightFormsSection.explanation)}
 
       <fieldset>
         <RadioCollection
@@ -33,12 +32,9 @@ const FormQuestion = (props) => {
 
       <Accordion
         id='reduced-fee-form-info'
-        title='How do I get these forms?'
+        title={translations.intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.title}
       >
-        <p>
-          The DMV does not provide these forms. If you get assistance through
-          the government or a non-profit, speak with them about getting a form.
-        </p>
+      {convertToHtml('p', translations.intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.body)}
       </Accordion>
     </div>
   );

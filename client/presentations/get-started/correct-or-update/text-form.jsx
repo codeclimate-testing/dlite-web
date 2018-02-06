@@ -16,7 +16,7 @@ const EnterMedicalInfo = (props) => {
   return (
     <div className    = 'enter-other-section'>
       <hr/>
-      <h3 className='question'>{headerText}</h3>
+      <h3 className='question translation-missing'>{headerText}</h3>
 
       <TextInput
         {...props}

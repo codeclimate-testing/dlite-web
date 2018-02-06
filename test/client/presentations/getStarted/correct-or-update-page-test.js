@@ -59,7 +59,7 @@ describe('CorrectOrUpdate', function() {
       );
       assert.ok(component.find('label[for="correctOrUpdate-correct"]').length, 'radio button to select correct is missing');
       assert.ok(component.find('label[for="correctOrUpdate-update"]').length, 'radio button to select update is missing');
-      assert.equal(component.text().includes('You may need to pay a fee for a new DL'), true);
+      assert.equal(component.text().includes('You may need to pay a fee for a new Driver License with these updates.'), true);
     });
 
     it('making a selection causes the section form to appear', function() {

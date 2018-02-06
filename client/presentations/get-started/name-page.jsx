@@ -8,6 +8,7 @@ import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
 import SelectDropdown     from '../select-dropdown.jsx';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const LegalNameForm = (props) => {
   return (
@@ -15,9 +16,9 @@ const LegalNameForm = (props) => {
       sectionKey='intro'
       {...props}
     >
-      <form onSubmit={props.onSubmit} className='legal-name-form'>
-        <h2 className='question'>{translations.intro.namePage.prompt}</h2>
-        <p>{translations.intro.namePage.explanation}</p>
+      <form onSubmit={ props.onSubmit } className='legal-name-form'>
+        {convertToHtml('h2', translations.intro.namePage.prompt, 'question')}
+        {convertToHtml('p', translations.intro.namePage.explanation)}
 
         <fieldset>
           <TextInput

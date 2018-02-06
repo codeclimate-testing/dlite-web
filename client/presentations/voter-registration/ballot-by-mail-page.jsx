@@ -9,6 +9,7 @@ import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
 import { isYes, isNo }      from '../../helpers/data/validations';
 import { checkPreReg }      from '../../helpers/data/youth';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const infoText = {
   Yes: 'Ok, your ballot will now come by mail. You can still vote in-person at your polling place.',
@@ -40,8 +41,8 @@ const BallotByMailPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
-        <h2 className='question'>{translations.votingRegistration.byMailPage.pagePrompt}</h2>
-        <p>{translations.votingRegistration.byMailPage.explanation}</p>
+        {convertToHtml('h2', translations.votingRegistration.byMailPage.pagePrompt, 'question')}
+        {convertToHtml('p', translations.votingRegistration.byMailPage.explanation)}
 
         <fieldset>
           <RadioCollection

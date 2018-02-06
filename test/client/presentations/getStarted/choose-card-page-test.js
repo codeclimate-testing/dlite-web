@@ -64,7 +64,7 @@ describe('ChooseCardPage', function() {
       assert.ok(component.find('label[for="DL"]').length, 'DL checkbox missing');
       assert.ok(component.find('input[type="checkbox"]').length, 'checkbox inputs not found');
       assert.ok(component.find('.choose-card-form').length, 'form missing');
-      assert.equal(component.text().includes('What type of card would you like?'), true);
+      assert.equal(component.text().includes('What would you like?'), true);
     });
 
     it('it shows a form with radio buttons asking renewing users which card type to renew', function() {

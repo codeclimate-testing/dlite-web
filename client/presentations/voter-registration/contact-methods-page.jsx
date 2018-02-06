@@ -8,6 +8,7 @@ import Page                     from '../../containers/page.jsx';
 import ContactDetails           from './contact-methods/contact-methods-details.jsx';
 import translations             from '../../i18n';
 import { checkPreReg }          from '../../helpers/data/youth';
+import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
 
 const ContactMethodsPage = (props) => {
   return (
@@ -16,7 +17,7 @@ const ContactMethodsPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}>
 
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
-        <h2 className='question'>{translations.votingRegistration.contactInfoPage.pagePrompt}</h2>
+        {convertToHtml('h2', translations.votingRegistration.contactInfoPage.pagePrompt, 'question')}
 
         <fieldset>
           <RadioCollection

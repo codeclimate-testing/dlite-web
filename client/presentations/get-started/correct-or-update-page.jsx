@@ -13,10 +13,12 @@ import {
   otherIsSelected,
   hasSpecifiedChange
 }  from '../../helpers/data/card-actions';
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const text = {
-  ID: 'You may need to pay a fee for a new ID with these updates',
-  DL: 'You may need to pay a fee for a new DL with these updates'
+  ID: convertToHtml('p', translations.intro.correctOrUpdatePage.chooseChangeSection.id.explanation),
+  DL: convertToHtml('p', translations.intro.correctOrUpdatePage.chooseChangeSection.license.explanation)
 };
 
 const Form = (props) => {
@@ -28,10 +30,8 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-change'>
-        <h2 className='question'>What would you like to do?</h2>
-        <p>
-          {tag}
-        </p>
+        {convertToHtml('h2', translations.intro.correctOrUpdatePage.prompt, 'question')}
+        {tag}
         <form onSubmit={ props.onSubmit }>
           <RadioForm {...props} />
           <UpdateForm

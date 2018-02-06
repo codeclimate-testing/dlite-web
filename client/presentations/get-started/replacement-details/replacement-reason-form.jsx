@@ -3,6 +3,7 @@
 import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
+import translations         from '../../../i18n';
 
 const Form = (props) => {
   return (
@@ -10,21 +11,21 @@ const Form = (props) => {
       <fieldset>
         <RadioCollection
           {...props}
-          name = 'reason'
-          onBlur = { props.onBlurValidate }
-          errorMessage={ props.validations.reason() }
+          name='reason'
+          onBlur  = { props.onBlurValidate }
+          errorMessage = {props.validations.reason() }
         >
           <RadioSelector
             value='lostOrStolen'
-            text='It was lost or stolen.'
+            text={translations.intro.replacementReasonPage.values[0]}
           />
           <RadioSelector
             value='damaged'
-            text='It was damaged.'
+            text={translations.intro.replacementReasonPage.values[1]}
           />
           <RadioSelector
             value='other'
-            text='Other'
+            text={translations.intro.replacementReasonPage.values[2]}
           />
         </RadioCollection>
       </fieldset>

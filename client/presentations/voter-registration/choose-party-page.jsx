@@ -8,6 +8,7 @@ import Page                     from '../../containers/page.jsx';
 import PoliticalPartyPreference from './voter-choose-party/political-party-preference.jsx';
 import translations             from '../../i18n';
 import { checkPreReg }          from '../../helpers/data/youth';
+import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
 
 const ChoosePartyPage = (props) => {
   return (
@@ -17,8 +18,8 @@ const ChoosePartyPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'choose-party-form'>
         <div className='choose-political-party'>
-          <h2 className='question'>{translations.votingRegistration.choosePartyPage.pagePrompt}</h2>
-          <p>{translations.votingRegistration.choosePartyPage.explanation}</p>
+          {convertToHtml('h2', translations.votingRegistration.choosePartyPage.pagePrompt, 'question')}
+          {convertToHtml('p', translations.votingRegistration.choosePartyPage.explanation)}
 
           <fieldset>
             <RadioCollection

@@ -6,6 +6,8 @@ import RadioCollection    from '../radio-selector-collection.jsx';
 import radioYesNoGroup    from '../radio-yes-no-group.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   return (
@@ -14,15 +16,10 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        <h2 className='question'>Senior identification card</h2>
-        <p>
-          You qualify for a free ID card. The word "Senior Identification Card"
-          will be printed on your card.
-        </p>
+        {convertToHtml('h2', translations.intro.seniorIdPage.prompt, 'question')}
+        {convertToHtml('p', translations.intro.seniorIdPage.explanation)}
 
         <hr />
-
-        <h3 className='question'>Would you like this card for no fee?</h3>
 
         <div className='row'>
           <fieldset>

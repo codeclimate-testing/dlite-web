@@ -12,6 +12,7 @@ import {
   errorClass
 } from '../../validations.jsx';
 import ExampleLabel from '../../example-label.jsx';
+import { convertToHtml }    from '../../../i18n/convert-to-html.jsx';
 
 const ContactDetails = (props) => {
   if(props.contactMethods.shouldContact !== 'Yes') { return null; } let errors = {
@@ -26,7 +27,7 @@ const ContactDetails = (props) => {
   return (
     <div className='contact-methods-details-form'>
       <hr/>
-      <h2 className='question'>{translations.votingRegistration.contactInfoPage.formPrompt}</h2>
+      {convertToHtml('h2', translations.votingRegistration.contactInfoPage.pagePrompt, 'question')}
       <p className='translation-missing'>This is optional</p>
 
       <fieldset>
@@ -39,14 +40,13 @@ const ContactDetails = (props) => {
           errorMessage={props.validations.emailAddress()}
         />
 
-        <label
-          htmlFor='phoneNumber'
-          className={addError}
-        >
-          <ErrorIcon errorClass={addError} />
-          {translations.votingRegistration.contactInfoPage.phoneLabel}
-        </label>
-
+      <label
+        htmlFor       = 'phoneNumber'
+        className     = { addError }
+      >
+        <ErrorIcon errorClass = { addError } />
+        {convertToHtml('p', translations.votingRegistration.contactInfoPage.phoneLabel)}
+      </label>
         <ExampleLabel
           example={translations.votingRegistration.contactInfoPage.phoneExample}
 

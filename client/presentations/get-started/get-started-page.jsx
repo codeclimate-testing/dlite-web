@@ -17,6 +17,7 @@ import RealIDInfo             from './intro-page/real-id-info.jsx';
 import UpdateApplicationInfo  from './intro-page/update-application-info.jsx';
 import CorrectApplicationInfo from './intro-page/correct-application-info.jsx';
 import ReplaceApplicationInfo from './intro-page/replace-application-info.jsx';
+import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
 
 const Intro = (props) => {
   const linkAddress = '/my-basics/address';
@@ -24,7 +25,7 @@ const Intro = (props) => {
   return (
     <Page {...props} >
       <div className='intro-info'>
-        <h2 className='question'>{translations.intro.getStartedPage.title}</h2>
+        {convertToHtml('h2', translations.intro.getStartedPage.title, 'question')}
         <DLInfo {...props} />
         <ApplyingIDInfo {...props} />
         <RenewingIDInfo {...props} />
@@ -41,17 +42,17 @@ const Intro = (props) => {
         <hr/>
         <p>{translations.intro.getStartedPage.listHeader}</p>
         <ol className='decimal-list'>
-          <li>{translations.intro.getStartedPage.listItems[0]}</li>
-          <li>{translations.intro.getStartedPage.listItems[1]}</li>
-          <li>{translations.intro.getStartedPage.listItems[2]}</li>
-          <li>{translations.intro.getStartedPage.listItems[3]}</li>
+          {convertToHtml('li', translations.intro.getStartedPage.listItems[0])}
+          {convertToHtml('li', translations.intro.getStartedPage.listItems[1])}
+          {convertToHtml('li', translations.intro.getStartedPage.listItems[2])}
+          {convertToHtml('li', translations.intro.getStartedPage.listItems[3])}
         </ol>
 
         <div className='navigation-buttons row'>
           <hr/>
 
-          <p>{translations.intro.getStartedPage.timeToComplete}</p>
-          <p>{translations.intro.getStartedPage.afterComplete}</p>
+          {convertToHtml('p', translations.intro.getStartedPage.timeToComplete)}
+          {convertToHtml('p', translations.intro.getStartedPage.afterComplete)}
 
           <div className='shadow-container unit'>
             <BackButton

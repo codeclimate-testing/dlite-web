@@ -4,7 +4,6 @@ import React from 'react';
 
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import radioIdDlGroup         from '../../radio-id-dl-group.jsx';
-
 import { mustChooseCard }     from '../../../helpers/data/real-id';
 
 const Form = (props) => {
@@ -12,9 +11,9 @@ const Form = (props) => {
 
   return (
     <div className='real-id-form'>
-      <hr />
-      <h2 className='question'>Which card would you like to fly with?</h2>
-      <p>
+      <hr/>
+      <h2 className='question translation-missing'>Which card would you like to fly with?</h2>
+      <p className='translation-missing'>
         Either your license or your ID card can be made federally
         compliant to fly within the United States, but not both
       </p>

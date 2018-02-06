@@ -11,11 +11,13 @@ import { IDorDL }         from '../../helpers/data/card-type';
 import {
   getStringByAction
 }  from   '../../helpers/data/card-actions';
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
-const newString = 'What type of card would you like?';
-const renewString ='What type of card are you renewing?';
-const replaceString ='What type of card are you replacing?';
-const changeString = 'What type of card are you correcting or updating?';
+const newString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.new, 'question');
+const renewString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.renew, 'question');
+const replaceString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.replace, 'question');
+const changeString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.correctOrUpdate, 'question');
 
 const Form = (props) => {
 
@@ -27,7 +29,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-form'>
-        <h2 className='question'>{questionText}</h2>
+        {questionText}
 
         <form onSubmit={ props.onSubmit } >
           <ChooseCardCheckbox

@@ -4,17 +4,18 @@ import React              from 'react';
 import ReplacementReason  from './replacement-details/replacement-reason-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
-
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-replacement-detail'>
-        <h2 className='question'>Why do you need to replace your card?</h2>
-        <p>Your answer will help DMV employees better assist you.</p>
+        {convertToHtml('h2', translations.intro.replacementReasonPage.prompt, 'question')}
+        {convertToHtml('p', translations.intro.replacementReasonPage.explanation)}
         <form onSubmit={ props.onSubmit }>
           <ReplacementReason {...props} />
           <NavigationButtons

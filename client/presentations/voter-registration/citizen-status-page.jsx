@@ -9,10 +9,11 @@ import translations         from '../../i18n';
 import { isYes, isNo }      from '../../helpers/data/validations';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const text = {
-  voterPreRegistration: translations.votingRegistration.shared.declineToAnswerInformationPreRegistration,
-  voterRegistration: translations.votingRegistration.shared.declineToAnswerInformationRegistration
+  voterPreRegistration: convertToHtml('p', translations.votingRegistration.shared.declineToAnswerInformationPreRegistration),
+  voterRegistration: convertToHtml('p', translations.votingRegistration.shared.declineToAnswerInformationRegistration)
 };
 
 const PreRegText = (props) => {
@@ -34,8 +35,7 @@ const CitizenStatusPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
-        <h2 className='question'>{translations.votingRegistration.citizenshipPage.pagePrompt}</h2>
-
+        {convertToHtml('h2', translations.votingRegistration.citizenshipPage.pagePrompt, 'question')}
         <PreRegText
           showIf = {showPreReg}
         />
@@ -43,7 +43,7 @@ const CitizenStatusPage = (props) => {
           showIf = {!showPreReg}
         />
 
-        <p>{text[props.prereg]}</p>
+        {text[props.prereg]}
 
         <fieldset>
           <RadioCollection

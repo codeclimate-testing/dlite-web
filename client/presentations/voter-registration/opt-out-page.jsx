@@ -7,6 +7,7 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const allOptionText = {
   voterRegistration: {
@@ -32,7 +33,7 @@ const OptOutPage = (props) => {
       sectionKey={preRegString}
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
-        <h2 className='question'>{translations.votingRegistration.optOutPage.pagePrompt}</h2>
+        {convertToHtml('h2', translations.votingRegistration.optOutPage.pagePrompt, 'question')}
 
       <fieldset>
         <RadioCollection

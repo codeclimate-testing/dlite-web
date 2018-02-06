@@ -6,22 +6,21 @@ import CheckboxSelector     from '../../checkbox-selector.jsx';
 import {
   getStringByAction
 }   from '../../../helpers/data/card-actions';
+import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
 
-  const correctText = props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct;
-  const updateText = props.translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update;
+  const correctText = convertToHtml('h3', translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct, 'question');
+  const updateText = convertToHtml('h3', translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update, 'question');
   let headerText = getStringByAction(props, null, null, null, null, updateText, correctText);
 
   return (
     <div className='row change-sections-form'>
       <hr />
-
-      <h3 className='question'>{headerText}</h3>
-
-      <p>Select all that apply.</p>
-
+      {headerText}
+      <p className='translation-missing'>Select all that apply.</p>
       <fieldset>
         <CheckboxCollection
           {...props}

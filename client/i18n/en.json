@@ -203,11 +203,11 @@
         "card": "Do you plan on using your card to fly?"
       },
       "explanation": "As of October 1, 2020, you will need a REAL ID compliant driver license or ID card to fly <b>within</b> the United States.",
-      "FAQ-whatIsRealID": {
+      "FAQWhatIsRealID": {
         "title": "What's a REAL ID compliant card?",
         "body": "To meet the REAL ID Act, the California DMV will offer two types of cards: a REAL ID compliant card and a federal non-compliant card. Both a REAL ID compliant and a federal non-compliant driver license allow you to legally drive. \n\n You need a REAL ID compliant card in order to fly within the U.S or to enter military bases and most federal facilities starting October 1, 2020. \n\n Otherwise, you will need a passport or other document accepted by the Transportation Security Administration and the Department of Homeland Security."
       },
-      "FAQ-whatRequiredForRealID": {
+      "FAQWhatIsRequiredForRealID": {
         "title": "What's required to get a REAL ID compliant card?",
         "body": {
           "header": "You will need <b>1</b> of the following:",
@@ -247,7 +247,7 @@
       "rightFormsSection": {
         "prompt": "Do you have the right form?",
         "explanation": "In order to get a reduced fee ID you need to have the Reduced Fee Identification Card Eligibility Verification form (DL 937). To get a free ID you need to have No Fee Identification Card Eligibility Verification (DL 933) form.",
-        "FAQ-howToGetForms": {
+        "FAQHowToGetForms": {
           "title": "How do I get these forms?",
           "body": "The DMV does not provide these forms. If you get assistance through the government or a non-profit, speak with them about getting a form."
         }

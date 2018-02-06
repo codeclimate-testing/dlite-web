@@ -6,6 +6,7 @@ import Page                   from '../../containers/page.jsx';
 import LanguageRadios         from '../language-radios.jsx'
 import ContinueButton         from '../continue-button.jsx';
 import translations           from '../../i18n';
+import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   return (
@@ -14,7 +15,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-form'>
-        <h2 className='question'>{translations.intro.switchLanguagePage.prompt}</h2>
+        {convertToHtml('h2', translations.intro.switchLanguagePage.prompt.title, 'question')}
 
         <form onSubmit={ props.onSubmit } >
 

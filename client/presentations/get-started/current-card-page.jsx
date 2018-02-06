@@ -8,57 +8,40 @@ import ExpirationDate     from '../expiration-date.jsx';
 import {
   getCorrectString
 }   from '../../helpers/data/card-type';
-
-const question = {
-  ID: 'If you know it, <b>please enter your California ID number</b>.',
-  DL: 'If you know it, <b>please enter your California Driver License number</b>.'
-};
-
-const instruction = {
-  ID: 'Your number can be found at the top of your ID, starting with a letter.',
-  DL: 'Your number can be found at the top of your Driver License, starting with a letter.'
-};
-
-const description = {
-  ID: 'ID card number',
-  DL: 'Driver License card number'
-};
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
-  const questionText    = getCorrectString(props, question.DL, question.ID);
-  const instructionText = getCorrectString(props, instruction.DL, instruction.ID);
-  const descriptionText = getCorrectString(props, description.DL, description.ID);
-
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='current-card-form'>
-        <form onSubmit = { props.onSubmit }>
-          <h2 className='question'>Card details</h2>
-          <p dangerouslySetInnerHTML={{ __html: questionText }} />
-          <p dangerouslySetInnerHTML={{ __html: instructionText }} />
+        <form onSubmit={ props.onSubmit }>
+          <h2 className='question translation-missing'>Card details</h2>
+          {convertToHtml('p', translations.intro.currentCardPage.prompt)}
+          {convertToHtml('p', translations.intro.currentCardPage.explanation)}
           <fieldset>
             <TextInput
               {...props}
-              identifier   = 'number'
-              description  = { descriptionText }
-              value        = { props.currentCardInfo.number }
-              errorMessage = {props.currentCardValidation.number() }
+              identifier    = 'number'
+              description   = { translations.intro.currentCardPage.numberLabel }
+              value         = { props.currentCardInfo.number }
+              errorMessage  = { props.currentCardValidation.number() }
             />
 
-            <ExpirationDate
-              {...props}
-              values      = { props.currentCardInfo }
-              validations = { props.currentCardValidation }
-            />
-          </fieldset>
-
-          <NavigationButtons
+          <ExpirationDate
             {...props}
-            errorMessage = { props.currentCardValidation.all() }
+            values      = { props.currentCardInfo }
+            validations = { props.currentCardValidation }
           />
+        </fieldset>
+
+        <NavigationButtons
+          {...props}
+          errorMessage = { props.currentCardValidation.all() }
+        />
         </form>
       </div>
     </Page>

@@ -6,6 +6,8 @@ import Page                 from '../../containers/page.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
+import translations         from '../../i18n';
+import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   return (
@@ -14,35 +16,32 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <h2 className='question'>What would you like to do today?</h2>
-        <p>
-          Pick one option for now. If you need to do more,
-          you can do so at the end.
-        </p>
-        <form onSubmit={props.onSubmit}>
+        {convertToHtml('h2', translations.intro.wdywtdtPage.prompt, 'question')}
+        {convertToHtml('p', translations.intro.wdywtdtPage.explanation)}
+        <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <fieldset>
               <RadioCollection
-                { ...props }
-                name = 'cardAction'
-                onBlur = { props.onBlurValidate }
-                errorMessage = { props.validations.cardAction() }
+                {...props}
+                name    = 'cardAction'
+                onBlur  = { props.onBlurValidate }
+                errorMessage = { props.validations.cardAction()}
               >
                 <RadioSelector
-                  value='new'
-                  text='Get a new card'
+                  value = 'new'
+                  text={translations.intro.wdywtdtPage.values[0]}
                 />
                 <RadioSelector
-                  value='renew'
-                  text='Renew a card'
+                  value = 'renew'
+                  text={translations.intro.wdywtdtPage.values[1]}
                 />
                 <RadioSelector
-                  value='change'
-                  text='Correct or update a card'
+                  value = 'change'
+                  text={translations.intro.wdywtdtPage.values[2]}
                 />
                 <RadioSelector
                   value='replace'
-                  text='Replace a card'
+                  text={translations.intro.wdywtdtPage.values[3]}
                 />
               </RadioCollection>
             </fieldset>

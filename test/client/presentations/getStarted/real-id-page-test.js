@@ -153,7 +153,7 @@ describe('RealIdPage', function() {
       );
 
       assert.ok(
-        component.text().includes('Do you plan on using one of your cards to fly?'),
+        component.text().includes('Do you plan on using your card to fly?'),
         'Header does not for multicard'
       );
     });

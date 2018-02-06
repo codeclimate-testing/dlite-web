@@ -1,14 +1,15 @@
 'use strict';
 
-import React            from 'react';
-import translations     from '../../../i18n';
-import { getIDString }  from '../../../helpers/data/get-started';
-import { replaceID }    from '../../../helpers/data/card-type';
+import React              from 'react';
+import translations       from '../../../i18n';
+import { getIDString }    from '../../../helpers/data/get-started';
+import { replaceID }      from '../../../helpers/data/card-type';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const replacingID = translations.intro.getStartedPage.whatYouAreDoing.replacingID;
-const replacingReducedFeeID = translations.intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID;
+const replacingID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.replacingID);
+const replacingReducedFeeID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID);
 const replacingNoFeeID = <p className='translation-missing'>You are replacing a no-fee ID card</p>;
-const replacingSeniorID = translations.intro.getStartedPage.whatYouAreDoing.replacingSeniorID;
+const replacingSeniorID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.replacingSeniorID);
 
 const ReplacingIDInfo = (props) => {
   if(!replaceID(props)) { return null; }
@@ -16,7 +17,7 @@ const ReplacingIDInfo = (props) => {
 
   return (
     <div className='replacing-id-info'>
-      <p>{ID}</p>
+      {ID}
     </div>
     );
 };

@@ -4,12 +4,13 @@ import React                    from 'react';
 import translations             from '../../../i18n';
 import { getDL }                from '../../../helpers/data/card-type';
 import { getVehicleInfoArray }  from '../../../helpers/data/get-started';
+import { convertToHtml }        from '../../../i18n/convert-to-html.jsx';
 
-const classC = <li key='car'>{translations.intro.getStartedPage.whatYouAreDoing.classes.C}</li>;
-const classM = <li key='cycle'>{translations.intro.getStartedPage.whatYouAreDoing.classes.M}</li>;
-const classA = <li key='long'>{translations.intro.getStartedPage.whatYouAreDoing.classes.A}</li>;
-const classB = <li key='trailer'>{translations.intro.getStartedPage.whatYouAreDoing.classes.B}</li>;
-const toDriveHeader = <h4>{translations.intro.getStartedPage.whatYouAreDoing.toDrive}</h4>
+const classC = convertToHtml('li', translations.intro.getStartedPage.whatYouAreDoing.classes.C, undefined, 'car');
+const classM = convertToHtml('li', translations.intro.getStartedPage.whatYouAreDoing.classes.M, undefined, 'cycle');
+const classA = convertToHtml('li', translations.intro.getStartedPage.whatYouAreDoing.classes.A, undefined, 'long');
+const classB = convertToHtml('li', translations.intro.getStartedPage.whatYouAreDoing.classes.B, undefined, 'trailer');
+const toDriveHeader = convertToHtml('h4', translations.intro.getStartedPage.whatYouAreDoing.toDrive);
 
 const VehicleInfo = (props) => {
   if(!getDL(props)) { return null; }

@@ -3,6 +3,7 @@
 import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
+import translations         from '../../../i18n';
 
 const Form = (props) => {
   return (
@@ -14,12 +15,12 @@ const Form = (props) => {
           errorMessage  = { props.validations.correctOrUpdate() }
         >
           <RadioSelector
-            value='correct'
-            text='Correct'
+            value= 'correct'
+            text={translations.intro.correctOrUpdatePage.values[0]}
           />
           <RadioSelector
             value='update'
-            text='Update'
+            text={translations.intro.correctOrUpdatePage.values[1]}
           />
         </RadioCollection>
       </fieldset>

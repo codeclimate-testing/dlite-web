@@ -1,19 +1,21 @@
 'use strict';
 
-import React            from 'react';
-import translations     from '../../../i18n';
+import React             from 'react';
+import translations      from '../../../i18n';
+import { convertToHtml } from '../../../i18n/convert-to-html.jsx';
 
 const VoterIntro = (props) => {
   if (!props.showIf) { return null; }
   return (
     <div className='voter-intro-info'>
-      <h5><img src='/images/stop.png' alt='Stop' /> {translations.votingRegistration.introductionPage.citizenOnlyDisclaimer} </h5>
-      <h2 className='question'>{translations.votingRegistration.introductionPage.pagePrompt}</h2>
-      <p>{translations.votingRegistration.introductionPage.explanation}</p>
+      <img src='/images/stop.png' alt='Stop' />
+      {convertToHtml('h5', translations.votingRegistration.introductionPage.citizenOnlyDisclaimer)}
+      {convertToHtml('h2', translations.votingRegistration.introductionPage.pagePrompt, 'question')}
+      {convertToHtml('p', translations.votingRegistration.introductionPage.explanation)}
 
       <hr />
 
-      <p>{translations.votingRegistration.introductionPage.timeItWillTake}</p>
+      {convertToHtml('p', translations.votingRegistration.introductionPage.timeItWillTake)}
 
     </div>
   );

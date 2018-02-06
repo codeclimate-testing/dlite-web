@@ -65,7 +65,7 @@ describe('CurrentCardPage', function() {
       assert.ok(component.find('.current-card-form').length, 'form missing');
     });
 
-    it('it asks for the ID number when the user has chosen to renew an ID', function() {
+    it('it asks for the DL/ID number when the user has chosen to renew an ID', function() {
       props.cardType.IDDL = ['ID'];
 
       let component = render(
@@ -74,11 +74,10 @@ describe('CurrentCardPage', function() {
         </Wrapper>
       );
 
-      assert.equal(component.text().includes('please enter your California ID number.'), true);
-      assert.equal(component.text().includes('please enter your California Driver License number.'), false)
+      assert.equal(component.text().includes('If you know it, please enter your California DL/ID card number.'), true);
     });
 
-    it('it asks for the DL number when the user has chosen to renew a DL', function() {
+    it('it asks for the DL/ID number when the user has chosen to renew a DL', function() {
       props.cardType.IDDL = ['DL'];
 
       let component = render(
@@ -87,11 +86,10 @@ describe('CurrentCardPage', function() {
         </Wrapper>
       );
 
-      assert.equal(component.text().includes('please enter your California ID number.'), false);
-      assert.equal(component.text().includes('please enter your California Driver License number.'), true);
+      assert.equal(component.text().includes('If you know it, please enter your California DL/ID card number.'), true);
     });
 
-    it('asks for the ID number when the user has chosen to renew or change an ID', function() {
+    it('asks for the DL/ID number when the user has chosen to renew or change an ID', function() {
       props.cardType.IDDL = ['ID'];
       
       let component = render(
@@ -100,8 +98,7 @@ describe('CurrentCardPage', function() {
         </Wrapper>
       );
 
-      assert.equal(component.text().includes('please enter your California ID number.'), true);
-      assert.equal(component.text().includes('please enter your California Driver License number.'), false);
+      assert.equal(component.text().includes('If you know it, please enter your California DL/ID card number.'), true);
     });
   });
 });

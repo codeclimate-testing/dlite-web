@@ -1,4 +1,5 @@
 'use strict';
+
 import React                from 'react';
 import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
@@ -7,6 +8,7 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const YouthPoint = (props) => {
   if (!props.showIf){ return null; }
@@ -29,7 +31,6 @@ const RegText = (props) => {
 };
 
 const EligibilityRequirements = (props) => {
-
   let showPreReg = isPreregistering(props.dateOfBirth);
 
   return (
@@ -38,15 +39,15 @@ const EligibilityRequirements = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <div>
-        <h2 className='question'>{translations.votingRegistration.eligibilityPage.pagePrompt}</h2>
+        {convertToHtml('h2', translations.votingRegistration.eligibilityPage.pagePrompt, 'question')}
         <ul className='bullet-list'>
-          <li>{translations.votingRegistration.eligibilityPage.usCitizenshipStatement}</li>
-          <li>{translations.votingRegistration.eligibilityPage.caCitizenshipStatement}</li>
+          {convertToHtml('li', translations.votingRegistration.eligibilityPage.usCitizenshipStatement)}
+          {convertToHtml('li', translations.votingRegistration.eligibilityPage.caCitizenshipStatement)}
           <YouthPoint
             showIf = {showPreReg}
           />
-          <li>{translations.votingRegistration.eligibilityPage.convictionStatement}</li>
-          <li>{translations.votingRegistration.eligibilityPage.mentalCompetenceStatement}</li>
+          {convertToHtml('li', translations.votingRegistration.eligibilityPage.convictionStatement)}
+          {convertToHtml('li', translations.votingRegistration.eligibilityPage.mentalCompetenceStatement)}
         </ul>
 
         <p className='translation-missing'>If you decline to answer, you cannot register to vote.</p>

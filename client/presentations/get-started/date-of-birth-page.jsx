@@ -6,6 +6,8 @@ import Page               from '../../containers/page.jsx';
 import TextInput          from '../text-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
+import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Presentation = (props) => {
   return (
@@ -14,8 +16,8 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={ props.onSubmit } className='date-of-birth-form'>
-        <h2 className='question'>What's your date of birth?</h2>
-        <p>Example: 03 21 1967</p>
+        <h2 className='question translation-missing'>What's your date of birth?</h2>
+        {convertToHtml('p', translations.intro.dateOfBirthPage.explanation)}
 
         <fieldset>
           <DateInput

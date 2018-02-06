@@ -4,13 +4,14 @@ import React from 'react';
 
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
-
 import { getCorrectString }   from '../../../helpers/data/card-type';
+import translations           from '../../../i18n';
+import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
 
 const headerTexts = {
-  DL: 'Do you plan on using your Driver License to fly?',
-  ID: 'Do you plan on using your ID to fly?',
-  both: 'Do you plan on using one of your cards to fly?'
+  DL: convertToHtml('h2', translations.intro.realIdPage.prompt.license, 'question'),
+  ID: convertToHtml('h2', translations.intro.realIdPage.prompt.id, 'question'),
+  both: convertToHtml('h2', translations.intro.realIdPage.prompt.card, 'question')
 };
 
 const ChooseRealID = (props) => {
@@ -18,12 +19,9 @@ const ChooseRealID = (props) => {
 
   return (
     <div className='real-id-form'>
-      <h2 className='question'>{ headerText }</h2>
+      {headerText}
 
-      <p>
-        As of October 1, 2020, you will need a federally compliant driver license or ID card to fly
-        <b> within</b> the United States.
-      </p>
+      {convertToHtml('p', translations.intro.realIdPage.explanation)}
 
       <div className='row'>
         <fieldset>
