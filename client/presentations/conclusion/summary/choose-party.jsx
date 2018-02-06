@@ -2,22 +2,17 @@
 
 import React from 'react';
 
-import PageSummaryLink  from '../../page-summary-link.jsx';
-import SummaryItem      from './summary-item.jsx';
-import { hasValue }     from '../../../helpers/data/validations';
+import PageSummaryLink            from '../../page-summary-link.jsx';
+import SummaryItem                from './summary-item.jsx';
+import {
+  politicalPartyChoose,
+  getStringByParty
+}   from '../../../helpers/data/voting';
 
 const PoliticalPartyChoose = (props) => {
-  if (!hasValue(props.politicalPartyChoose.isSelected) ) { return null; }
+  if (!politicalPartyChoose(props) ) { return null; }
 
-  let party = '';
-
-  if (props.politicalPartyChoose.isSelected === 'Skip') {
-    party = 'No answer';
-  } else if(props.politicalPartyChoose.politicalPartyChoose === 'Other' && hasValue(props.politicalPartyChoose.otherParty)) {
-    party = props.politicalPartyChoose.otherParty;
-  } else {
-    party = props.politicalPartyChoose.politicalPartyChoose;
-  };
+  let party = getStringByParty(props);
 
   return (
     <PageSummaryLink

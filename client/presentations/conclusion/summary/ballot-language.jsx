@@ -1,9 +1,8 @@
 'use strict';
 
-import React            from 'react';
-
-import { hasValue }     from '../../../helpers/data/validations';
-import translations     from '../../../i18n';
+import React                        from 'react';
+import { ballotLanguageIsSelected } from '../../../helpers/data/application';
+import translations                 from '../../../i18n';
 
 
 const mapValToString = (val) => {
@@ -43,7 +42,7 @@ const mapValToString = (val) => {
 };
 
 const BallotLanguage = (props) => {
-  if (!hasValue(props.ballotLanguage)) { return null; }
+  if (!ballotLanguageIsSelected(props.ballotLanguage)) { return null; }
 
   return (
     <div className='summary-section'>

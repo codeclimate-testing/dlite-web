@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import { hasValue } from '../../../helpers/data/validations';
+import { ballotByMailSelected } from '../../../helpers/data/voting';
 
 const BallotByMail = (props) => {
-  if (!hasValue(props.ballotByMail)) { return null; }
+  if (!ballotByMailSelected(props)) { return null; }
 
   return (
     <div className='summary-section'>

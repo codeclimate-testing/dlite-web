@@ -7,30 +7,25 @@ import {
   getID,
   getNewID,
   getNewDL,
-  prettyDL
+  prettyDL,
+  IDorDL,
+  getCorrectString
 } from '../../../helpers/data/card-type';
+import {
+  isChangingCard,
+  isReplacingCard,
+  isRenewingCard,
+  isGettingNew,
+  hasExistingCard,
+  getStringByAction
+} from '../../../helpers/data/card-actions';
 import { printDate }      from '../../../helpers/print-date.js';
 
-const NewCard = (props) => {
-  let newID = getNewID(props);
-  let newDL = getNewDL(props);
-  if(!newID && !newDL) { return null;}
-
-  let values = [];
-  if(newID) {
-    values.push('ID');
-  }
-  if(newDL) {
-    values.push('Driver License')
-  }
-  return <p>Applying for new: { values.join(' and ') } </p>;
-};
 
 const CardDetails = (props) => {
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
 
   let date  = printDate(props.currentCardInfo);
-  let IDorDL = props.cardType.IDDL[0];
 
   const numberText = {
     renew: {
@@ -70,65 +65,35 @@ const CardDetails = (props) => {
     }
   };
 
+  let IDNumberString = getStringByAction(props, null, numberText.renew.ID, numberText.replace.ID, null, numberText.update.ID, numberText.correct.ID);
+  let DLNumberString = getStringByAction(props, null, numberText.renew.DL, numberText.replace.DL, null, numberText.update.DL, numberText.correct.DL);
+  let numberString = getCorrectString(props, DLNumberString, IDNumberString);
+
+  let IDExpirationString = getStringByAction(props, null, expirationText.renew.ID, expirationText.replace.ID, null, expirationText.update.ID, expirationText.correct.ID);
+  let DLExpirationString = getStringByAction(props, null, expirationText.renew.DL, expirationText.replace.DL, null, expirationText.update.DL, expirationText.correct.DL);
+  let expirationText = getCorrectString(props, IDExpirationString, DLExpirationString);
+
   return (
     <div>
-      <p>{numberText[props.action][IDorDL]}: {props.currentCardInfo.number}</p>
-      <p>{expirationText[props.action][IDorDL]}: {date}</p>
+      <p>{numberString}: {props.currentCardInfo.number}</p>
+      <p>{expirationText}: {date}</p>
     </div>
   )
 };
 
-const Renew = (props) => {
-  if (props.cardType.cardAction !== 'renew') { return null; }
-
-  let text = {
-    ID: 'Renewing: ID',
-    DL: 'Renewing: Driver License'
-  };
-
+const ReplacementReason = (props) => {
+  if(!dataPresent.value(props.cardReplacement.reason) && !isReplacingCard(props)) { return null; }
   return (
-    <div>
-      <p>{ text[props.cardType.IDDL[0]] } </p>
-      <CardDetails
-        {...props}
-        action = 'renew'
-      />
-    </div>
+    <p>Replacement Reason: {props.cardReplacement.reason}</p>
   );
 };
 
-const Change = (props) => {
-  if (props.cardType.cardAction !== 'change') { return null; }
-
-  let text = {
-    correct: {
-      ID: 'Correcting: ID',
-      DL: 'Correcting: Driver License'
-    },
-    update: {
-      ID: 'Updating: ID',
-      DL: 'Updating: Driver License'
-    }
-  };
-
-  return (
-    <div>
-      <p>{ text[props.cardChanges.correctOrUpdate][props.cardType.IDDL[0]] }</p>
-      <UpdatingItems {...props} />
-      <CardDetails
-        {...props}
-        action={props.cardChanges.correctOrUpdate}
-      />
-    </div>
-  )
-};
-
 const UpdatingItems = (props) => {
-  if(!dataPresent.value(props.cardChanges.sections)){ return null; }
+  if(!dataPresent.value(props.cardChanges.sections) && !isUpdating(props)){ return null; }
 
   const updateLabel   = 'Updating sections';
   const correctLabel  = 'Correcting sections';
-  const label         = props.cardChanges.correctOrUpdate === 'update' ? updateLabel : correctLabel;
+  const label         = getStringByAction(props, null, null, null, null, updateLabel, correctLabel);
 
   const text = {
     name              : 'Name',
@@ -145,46 +110,51 @@ const UpdatingItems = (props) => {
     return text[section];
   });
 
-  return (<p>{label}: {sections.join(' and ')}</p>)
-};
-
-const Replace = (props) => {
-  if (props.cardType.cardAction !== 'replace') { return null; }
-
-  let text = {
-    ID: 'Replacing: ID',
-    DL: 'Replacing: Driver License'
-  };
-
-  return (
-    <div>
-      <p>{ text[props.cardType.IDDL[0]]}</p>
-      <ReplacementReason {...props} />
-      <CardDetails
-        {...props}
-        action='replace'
-      />
-    </div>
-  )
-};
-
-const ReplacementReason = (props) => {
-  if(!dataPresent.value(props.cardReplacement.reason)) { return null; }
-  return (
-    <p>Replacement Reason: {props.cardReplacement.reason}</p>
-  );
+  return (<p>{label}: {sections.join(' , ')}</p>)
 };
 
 
 const CardType = (props) => {
   if (!dataPresent.cardType(props.cardType)) { return null; }
 
+  let text = {
+    new: {
+      ID: 'Applying for new: ID',
+      DL: 'Applying for new: Driver License',
+      both: 'Applying for new: ID and Driver License'
+    },
+    renew: {
+      ID: 'Renewing: ID',
+      DL: 'Renewing: Driver License'
+    },
+    correct: {
+      ID: 'Correcting: ID',
+      DL: 'Correcting: Driver License'
+    },
+    update: {
+      ID: 'Updating: ID',
+      DL: 'Updating: Driver License'
+    },
+    replace: {
+      ID: 'Replacing: ID',
+      DL: 'Replacing: Driver License'
+    }
+  };
+  let bothString = 'Applying for new: ID and Driver License';
+
+  let IDString = getStringByAction(props, text.new.ID, text.renew.ID, text.replace.ID, null, text.update.ID, text.correct.ID);
+  let DLString = getStringByAction(props, text.new.DL, text.renew.DL, text.replace.DL, null, text.update.DL, text.correct.DL);
+  let textString = getCorrectString(props, DLString, IDString, bothString);
+
+
   return (
     <div className='summary-section'>
-      <NewCard {...props} />
-      <Renew {...props} />
-      <Change {...props} />
-      <Replace {...props} />
+      <p>{ textString }</p>
+      <UpdatingItems {...props} />
+      <ReplacementReason {...props} />
+      <CardDetails
+        {...props}
+      />
     </div>
   );
 };
