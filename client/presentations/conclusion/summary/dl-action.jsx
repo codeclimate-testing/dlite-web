@@ -1,8 +1,9 @@
 'use strict';
 
-import React          from 'react';
-import translations   from '../../../i18n';
-import SummaryItem    from './summary-item.jsx';
+import React            from 'react';
+import translations     from '../../../i18n';
+import PageSummaryLink  from '../../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 import {
   getDL
 } from '../../../helpers/data/card-type';
@@ -40,13 +41,15 @@ const DLAction = (props) => {
   }
 
   return (
-    <div>
+    <PageSummaryLink
+      to='/what-do-you-want-to-do-today'
+      name='wdywtdt'
+    >
       <SummaryItem
         title='I am'
         text={dlAction}
       />
-      <br></br>
-    </div>
+    </PageSummaryLink>
   )
 };
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import * as dataPresent from '../../../helpers/data-present';
+import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 
 const ReducedOrNoFee = (props) => {
@@ -11,13 +12,15 @@ const ReducedOrNoFee = (props) => {
   props.reducedFee.ID === 'Yes' ? value : value = 'No';
 
   return (
-    <div>
+    <PageSummaryLink
+      to='/reduced-fee'
+      name='address'
+    >
       <SummaryItem
         title='Reduced or no-fee'
         text={value}
       />
-      <br></br>
-    </div>
+    </PageSummaryLink>
   );
 };
 

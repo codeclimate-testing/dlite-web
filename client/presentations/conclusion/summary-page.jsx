@@ -101,23 +101,19 @@ const SummaryPage = (props) => {
 
     <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
       <IDApplicationNotStarted {...application} key='id-application-not-started' />
-
       <IDAction {...application} />
-
       <ReducedOrNoFee {...application} />
       <SeniorID seniorID={application.seniorID} />
-      <IDRealID {...application} />
       <CurrentIDInfo {...application} />
+      <IDRealID {...application} />
     </Accordion>,
 
     <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
       <DLApplicationNotStarted {...application} key='dl-application-not-started' />
-
       <DLAction {...application} />
-
+      <CurrentDLInfo {...application} />
       <DLRealID {...application} />
       <LicenseType {...application} />
-      <CurrentDLInfo {...application} />
     </Accordion>,
 
     <Accordion id='basics-summary' title='My basics' key='basics-summary'>

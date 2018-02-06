@@ -23,7 +23,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Real IDYes'), 'Real ID missing from summary');
+        assert(text.includes('Real-ID CompliantYes'), 'Real ID missing from summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -33,7 +33,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Real ID: No'), 'Real ID missing from summary');
+        assert(text.includes('Real-ID CompliantNo'), 'Real ID missing from summary');
       })
       .then(() => { done(); })
       .catch(done);

@@ -15,7 +15,7 @@ const PageSummaryLink = (props) => {
   return (
     <div className='summary-section'>
       <div className='row'>
-        <div className='unit'>
+        <div className='unit summary-content'>
           {props.children}
         </div>
         <div className='shadow-container unit-right'>

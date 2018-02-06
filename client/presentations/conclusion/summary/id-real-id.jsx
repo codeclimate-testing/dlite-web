@@ -1,8 +1,9 @@
 'use strict';
 
-import React          from "react";
-import { hasValue }   from '../../../helpers/data/validations';
-import SummaryItem    from './summary-item.jsx';
+import React            from "react";
+import { hasValue }     from '../../../helpers/data/validations';
+import PageSummaryLink  from '../../page-summary-link.jsx';
+import SummaryItem      from './summary-item.jsx';
 import {
   getID
 } from '../../../helpers/data/card-type';
@@ -13,13 +14,15 @@ const IDRealID = (props) => {
   props.realID.getRealID === 'Yes' ? value : value = 'No'
 
   return (
-    <div>
+    <PageSummaryLink
+      to='/real-id'
+      name='realID'
+    >
       <SummaryItem
-        title='Real ID'
+        title='Real-ID Compliant'
         text={value}
       />
-      <br></br>
-    </div>
+    </PageSummaryLink>
   )
 };
 

@@ -30,11 +30,11 @@ const Form = (props) => {
             text  = {translations.intro.licenseTypePage.values[1].label}
           />
           <CheckboxSelector
-            value = 'trailer'
+            value = 'long'
             text  = {translations.intro.licenseTypePage.values[2].label}
           />
           <CheckboxSelector
-            value = 'long'
+            value = 'trailer'
             text  = {translations.intro.licenseTypePage.values[3].label}
           />
           <CheckboxSelector

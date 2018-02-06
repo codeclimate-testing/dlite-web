@@ -4,6 +4,7 @@ import React              from 'react';
 import * as dataPresent   from '../../../helpers/data-present';
 import translations       from '../../../i18n';
 import { printDate }      from '../../../helpers/print-date';
+import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
 import {
   getDL
@@ -17,7 +18,10 @@ const CurrentDLInfo = (props) => {
   let date = printDate(props.currentCardInfo);
 
   return (
-    <div>
+    <PageSummaryLink
+      to='/current-card-information'
+      name='currentCardInformation'
+    >
       <SummaryItem
         title='Driver license number'
         text={DLNumber}
@@ -27,7 +31,7 @@ const CurrentDLInfo = (props) => {
         title='Expiration date'
         text={date}
       />
-    </div>
+    </PageSummaryLink>
   )
 };
 
