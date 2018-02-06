@@ -1,7 +1,8 @@
 'use strict';
 
-import errorMessages            from '../../presentations/error-messages';
-import selectionValidator       from './selection-validator';
+import translations        from '../../i18n';
+import errorMessages       from '../../presentations/error-messages';
+import selectionValidator  from './selection-validator';
 import {
   hasValue,
   hasOnlyEnglishChars,
@@ -19,11 +20,11 @@ const emailAddress = (props) => {
   let value = props.emailAddress;
 
   if (hasNeither(props)) {
-    return [errorMessages['contactMethod']];
+    return [translations.errorMessages.contactMethod];
   } else if (!emailRegex(value) && hasValue(value)){
-    return [errorMessages['emailAddressMissingOrInvalid']];
+    return [translations.errorMessages.emailAddressMissingOrInvalid];
   } else if (!hasOnlyEnglishChars(value)) {
-    return [errorMessages['inputIncludesNonEnglishCharacters']];
+    return [translations.errorMessages.inputIncludesNonEnglishCharacters];
   }
   return [];
 };
@@ -33,9 +34,9 @@ const phoneNumber = (name, number) => {
     if (props.shouldContact !== 'Yes') { return [];};
 
     if (props[name].length !== number && props[name].length !== 0) {
-      return [errorMessages['phoneMissingOrInvalid']];
+      return [translations.errorMessages.phoneMissingOrInvalid];
     } else if (hasNeither(props)) {
-      return [errorMessages['contactMethod']];
+      return [translations.errorMessages.contactMethod];
     }
     return [];
   };

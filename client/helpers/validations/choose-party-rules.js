@@ -4,7 +4,6 @@ import selectionValidator       from './selection-validator';
 import {
   hasValue,
   hasOnlyEnglishChars }  from '../data/validations';
-import errorMessages     from '../../presentations/error-messages';
 import translations      from '../../i18n';
 
 const chooseParty = (props) => {
