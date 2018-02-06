@@ -5,7 +5,7 @@ import { connect }          from 'react-redux';
 import { Link }             from 'react-router-dom';
 import Presentation         from '../../presentations/conclusion/summary-page.jsx';
 import { postData }         from '../../actions/api-actions';
-import { iddlPath }         from '../../helpers/alice-path';
+import { nextPath }         from '../../helpers/data/page';
 
 const Page = props =>{
 
@@ -30,15 +30,10 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       e.preventDefault();
       dispatch(postData(application))
       .then(
-        () => {
-          if(server.apiStatus === 'success') {
-            return ownProps.history.push(iddlPath('/appointment-preparation'));
-          }
-
-          return ownProps.history.push(iddlPath('/summary'));
-        }
+        ownHistory.history.push(
+          nextPath('summary', server)
+        )
       );
-
     }
   });
 };

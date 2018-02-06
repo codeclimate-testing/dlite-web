@@ -157,3 +157,12 @@ export const optOut = (props) => {
   }
   return key;
 };
+
+export const summary = (server) => {
+  let key = 'summary';
+  if(server.apiStatus === 'success') {
+    key = 'appointmentPreparation'
+  }
+
+  return key;
+};

@@ -14,7 +14,8 @@ import {
   organDonationPath,
   citizenship,
   votingEligibility,
-  optOut
+  optOut,
+  summary
 } from './next-path';
 
 const getStarted = [
@@ -255,7 +256,8 @@ const conclusion = [
   {
     key: 'summary',
     description: 'Summary',
-    path: '/summary'
+    path: '/summary',
+    next: summary
   },
   {
     key: 'appointmentPreparation',

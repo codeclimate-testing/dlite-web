@@ -26,6 +26,16 @@ const RegText = (props) => {
   return text.voterRegistration;
 };
 
+const PreRegText = (props) => {
+  if (!props.showIf) { return null; }
+  return text.voterPreRegistration;
+};
+
+const RegText = (props) => {
+  if (!props.showIf) { return null; }
+  return text.voterRegistration;
+};
+
 const CitizenStatusPage = (props) => {
   let showPreReg = isPreregistering(props.dateOfBirth);
 
@@ -35,7 +45,12 @@ const CitizenStatusPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
+<<<<<<< HEAD
         {convertToHtml('h2', translations.votingRegistration.citizenshipPage.pagePrompt, 'question')}
+=======
+        <h2 className='question'>{translations.votingRegistration.citizenshipPage.pagePrompt}</h2>
+
+>>>>>>> what is going on with git
         <PreRegText
           showIf = {showPreReg}
         />
@@ -43,7 +58,11 @@ const CitizenStatusPage = (props) => {
           showIf = {!showPreReg}
         />
 
+<<<<<<< HEAD
         {text[props.prereg]}
+=======
+        <p>{text[props.prereg]}</p>
+>>>>>>> what is going on with git
 
         <fieldset>
           <RadioCollection

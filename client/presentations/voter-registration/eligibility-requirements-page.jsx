@@ -1,5 +1,4 @@
 'use strict';
-
 import React                from 'react';
 import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';

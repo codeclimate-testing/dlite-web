@@ -11,7 +11,8 @@ import {
   chooseLicenseClass,
   socialSecurity,
   medicalHistory,
-  nameHistory
+  nameHistory,
+  summary
 } from '../../../../client/helpers/data/next-path';
 
 const bothCards = {
@@ -238,7 +239,7 @@ describe('Data helpers for determining next path from current page and props', f
         assert.equal(nameHistory(data), 'licenseIssues');
       });
 
-      it('goes to lienseIssues page if user is getting a DL that is not new', function() {
+      it('goes to licenseIssues page if user is getting a DL that is not new', function() {
         data.cardType = buildCardType('DL', 'change');
         assert.equal(nameHistory(data), 'licenseIssues');
       });
@@ -259,7 +260,20 @@ describe('Data helpers for determining next path from current page and props', f
   });
 
   describe('#conclusion section', function() {
-
+    describe('#summary', function() {
+      it('goes to application prep page if server apiStatus is successful', function() {
+        let server = {
+          apiStatus: 'success'
+        };
+        assert.equal(summary(server), 'appointmentPreparation');
+      });
+      it('goes to summary page if server apiStatus is unsuccessful', function() {
+        let server = {
+          apiStatus: 'error'
+        };
+        assert.equal(summary(server), 'summary');
+      });
+    });
   });
 });
 
