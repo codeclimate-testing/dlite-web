@@ -240,7 +240,7 @@ describe('Summary components', function() {
           <IDRealID { ...props } />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Real IDYes'), true);
+      assert.equal(component.text().includes('Real-ID CompliantYes'), true);
     });
   });
 
@@ -257,7 +257,7 @@ describe('Summary components', function() {
           <DLRealID { ...props } />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Real IDYes'), true);
+      assert.equal(component.text().includes('Real-ID CompliantYes'), true);
     });
   });
 
