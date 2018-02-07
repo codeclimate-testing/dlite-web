@@ -1,13 +1,14 @@
 'use strict';
 
 import React from 'react';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import { getDL }          from '../../../helpers/data/card-type';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-import radioYesNoGroup                  from '../../radio-yes-no-group.jsx';
-import RadioCollection                  from '../../radio-selector-collection.jsx';
-import { getDL }                        from '../../../helpers/data/card-type';
-
-const headerDL = 'Is "Veteran" printed on your Driver License?';
-const headerID = 'Is "Veteran" printed on your ID?';
+const headerDL = convertToHtml('h2', translations.myHistory.veteransPage.existingDesignation.promptLicense, 'question');
+const headerID = convertToHtml('h2', translations.myHistory.veteransPage.existingDesignation.promptID, 'question');
 
 const VeteransPreviousDesignation = (props) => {
   if (!props.showIf) { return null; }
@@ -16,7 +17,7 @@ const VeteransPreviousDesignation = (props) => {
 
   return (
     <div className='veterans-previous-designation-form'>
-      <h2 className='question'>{headerText}</h2>
+      { headerText }
       <div className='input-container'>
         <fieldset>
           <RadioCollection

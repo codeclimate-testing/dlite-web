@@ -1,7 +1,9 @@
 'use strict';
 
-import React     from 'react';
-import TextArea  from '../../text-area.jsx';
+import React              from 'react';
+import TextArea           from '../../text-area.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterMedicalInfo = (props) => {
   if (!props.showIf) { return null; }
@@ -9,7 +11,7 @@ const EnterMedicalInfo = (props) => {
   return (
     <div className='enter-medical-info'>
       <hr />
-      <h2 className='question'>Please explain below.</h2>
+      {convertToHtml('h2', translations.myHistory.medicalConditionsPage.explanationPrompt, 'question')}
       <fieldset>
         <TextArea
           {...props}

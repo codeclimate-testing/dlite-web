@@ -1,10 +1,11 @@
 'use strict';
 
-import React                from 'react';
-
-import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
-import RadioCollection      from '../../radio-selector-collection.jsx';
-import MessageBox           from '../../message-box.jsx';
+import React              from 'react';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import MessageBox         from '../../message-box.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const VeteransBenefits = (props) => {
   if (!props.showIf) { return null; }
@@ -13,13 +14,13 @@ const VeteransBenefits = (props) => {
     <div className='veterans-benefits-form'>
       <MessageBox className='thanks'>
         <div className='veteran-thank-you-message'>
-          <p className='question'>Thank you for your service.</p>
+          {convertToHtml('p', translations.myHistory.veteransPage.messageYes, 'question')}
         </div>
       </MessageBox>
 
       <hr />
 
-      <h2 className='question'>Would you like to receive benefits information for which you may be eligible?</h2>
+      {convertToHtml('h2', translations.myHistory.veteransPage.benefitsPrompt, 'question')}
 
       <div className='input-container'>
         <fieldset>

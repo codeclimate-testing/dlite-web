@@ -1,12 +1,14 @@
 'use strict';
 
-import React          from 'react';
-import TextInput      from '../../text-input.jsx';
-import ExpirationDate from '../../expiration-date.jsx';
+import React              from 'react';
+import TextInput          from '../../text-input.jsx';
+import ExpirationDate     from '../../expiration-date.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const text = {
-  DLIDNumber: 'Driver license or ID card number',
-  issuedBy: 'State or country card was issued'
+  DLIDNumber: translations.myHistory.cardHistoryPage.numberLabel,
+  issuedBy: translations.myHistory.cardHistoryPage.stateOrCountryLabel
 };
 
 const EnterLicenseAndIdHistory = (props) => {
@@ -15,7 +17,7 @@ const EnterLicenseAndIdHistory = (props) => {
   return (
     <div className='existing-license-id-number-form'>
       <hr/>
-      <h2 className     = 'question'>Please tell us about your most recent license or ID card.</h2>
+      {convertToHtml('h2', translations.myHistory.cardHistoryPage.explanationPrompt, 'question')}
 
       <fieldset>
         <TextInput

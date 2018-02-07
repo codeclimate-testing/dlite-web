@@ -1,7 +1,6 @@
 'use strict';
 
 import React                    from 'react';
-
 import radioYesNoGroup          from '../../radio-yes-no-group.jsx';
 import RadioCollection          from '../../radio-selector-collection.jsx';
 import MessageBox               from '../../message-box.jsx';
@@ -15,31 +14,32 @@ import {
   showNewDLHeader,
   keepOrAdd
 }   from '../../../helpers/data/veteran';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
-  return <h2 className='question'>Would you like to keep "Veteran" on your ID for a $5 fee?</h2>;
+  return convertToHtml('h2', translations.myHistory.veteransPage.keepDesignationPrompt.id, 'question')
 };
 
 const PreviousDLHeader = (props) => {
   if (!showPreviousDLHeader(props)) {return null; }
-  return <h2 className='question'>Would you like to keep "Veteran" on your Driver License for a $5 fee?</h2>
+  return convertToHtml('h2', translations.myHistory.veteransPage.keepDesignationPrompt.license, 'question')
 };
 
 const NewIDHeader = (props) => {
   if (!showNewIDHeader(props)) { return null; }
-  return <h2 className='question'>Would you like to add the word "Veteran" on your ID for a $5 fee?</h2>
+  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignationPrompt.id, 'question')
 };
 
 const NewDLHeader = (props) => {
   if (!showNewDLHeader(props)) { return null; }
-  return <h2 className='question'>Would you like to add the word "Veteran" on your Driver License for a $5 fee?</h2>
+  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignationPrompt.license, 'question')
 };
 
 
 const Question = (props) => {
   const className   = keepOrAdd(props) + '-designation';
-
   return (
     <div className={className}>
       <hr/>
@@ -56,7 +56,7 @@ const MessageAddAmount = (props) => {
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        <p>OK, we will add the $5 to your total fee.</p>
+        {convertToHtml('p', translations.myHistory.veteransPage.newDesignationPrompt.messageYes)}
       </div>
     </MessageBox>
   );
@@ -64,24 +64,21 @@ const MessageAddAmount = (props) => {
 
 const MessageRemovingDesignation = (props) => {
   if (!removeIdentifierNotification(props)) { return null; }
-
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <p>OK, we will remove it.</p>
+        <p className='translation-missing'>OK, we will remove it.</p>
       </div>
     </MessageBox>
   );
 };
 
 const VeteransIdentifier = (props) => {
-
   if(!props.showIf) { return null; }
-
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      <p>Many organizations give discounts with a valid military ID.</p>
+      {convertToHtml('p', translations.myHistory.veteransPage.newDesignationPrompt.explanation)}
       <div className='input-container'>
         <fieldset>
           <RadioCollection
@@ -97,7 +94,6 @@ const VeteransIdentifier = (props) => {
       <MessageRemovingDesignation {...props} />
     </div>
   );
-
 };
 
 export default VeteransIdentifier;

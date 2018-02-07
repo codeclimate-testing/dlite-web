@@ -480,7 +480,7 @@
       "explanation": "The license or ID card must be issued by a U.S. state or another country.",
       "explanationPrompt": "Please tell us about your most recent driver license or ID card, even if it's expired.",
       "numberLabel": "Driver license or ID card number",
-      "stateOrCountryLabel": "Driver license or ID card number",
+      "stateOrCountryLabel": "State or country card was issued",
       "expirationDateLabel": "Expiration Date"
     },
     "nameHistoryPage": {
@@ -502,8 +502,9 @@
       "cardsExplanation": "Your cards can also display the word \"Veteran\".",
       "messageYes": "Thank you for your service.",
       "benefitsPrompt": "Would you like to receive benefits information for which you may be eligible?",
-      "newDesignation": {
-        "prompt": "Would you like to add the word “Veteran” on your {card type} for a $5 fee?",
+      "newDesignationPrompt": {
+        "license": "Would you like to add the word “Veteran” on your Driver License for a $5 fee?",
+        "id": "Would you like to add the word “Veteran” on your ID for a $5 fee?",
         "explanation": "Many organizations give discounts to veterans with a valid ID.",
         "messageYes": "OK, we will add the $5 to your total fee. You will need to complete the Veteran Status Verification Form from your county’s Veteran Service Office and bring it to a DMV field office."
       },
@@ -514,7 +515,7 @@
         "promptCards": "Is \"Veteran\" printed on your cards?"
       },
       "keepDesignationPrompt": {
-        "licence": "Would you like to keep \"Veteran\" on your Driver License?",
+        "license": "Would you like to keep \"Veteran\" on your Driver License?",
         "id": "Would you like to keep \"Veteran\" on your ID?",
         "cards": "Would you like to keep \"Veteran\" on your cards?"
       }

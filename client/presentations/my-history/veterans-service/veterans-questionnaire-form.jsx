@@ -1,15 +1,16 @@
 'use strict';
 
-import React                from 'react';
-
-import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
-import RadioCollection      from '../../radio-selector-collection.jsx';
+import React              from 'react';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const VeteransQuestionnaire = (props) => {
   return (
     <div className='veterans-questionnaire-form'>
-      <h2 className='question'>Have you ever served in the United States Military?</h2>
-      <p>As a veteran, you may be eligible for benefits like disability compensation. Your license can also display the word “Veteran”.</p>
+      {convertToHtml('h2', translations.myHistory.veteransPage.pagePrompt, 'question')}
+      {convertToHtml('p', translations.myHistory.veteransPage.explanationStart)}
       <div>
         <fieldset>
           <RadioCollection

@@ -1,16 +1,17 @@
 'use strict';
 
-import React     from 'react';
-import TextArea  from '../../text-area.jsx';
+import React              from 'react';
+import TextArea           from '../../text-area.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterPreviousNames = (props) => {
   if (!props.showIf) { return null; }
   return (
     <div className='enter-previous-names'>
       <hr />
-      <h2 className='question'>Please list all previous legal names.</h2>
-      <p>For example, include your maiden name.</p>
-      <p>Separate by commas.</p>
+      {convertToHtml('h2', translations.myHistory.nameHistoryPage.explanationPrompt, 'question')}
+      {convertToHtml('p', translations.myHistory.nameHistoryPage.helpText)}
 
       <fieldset>
         <TextArea

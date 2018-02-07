@@ -1,30 +1,32 @@
 'use strict';
 
-import React            from 'react';
-import TextArea         from '../../text-area.jsx';
-import DateInput        from '../../date-input.jsx';
+import React              from 'react';
+import TextArea           from '../../text-area.jsx';
+import DateInput          from '../../date-input.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterRevokedSuspended = (props) => {
   if (!props.showIf) { return null; }
   return (
     <div className='suspended-license-form'>
       <hr />
-      <h2 className='question'>When did this happen?</h2>
-      <p>Example: 03/21/1967</p>
+      {convertToHtml('h2', translations.myHistory.licenseIssuesPage.explanationPrompt, 'question')}
+      {convertToHtml('p', translations.myHistory.licenseIssuesPage.helpText)}
 
       <fieldset>
         <DateInput
           {...props }
-          values      = { props.licenseIssues }
+          values = { props.licenseIssues }
         />
 
         <div className='row' />
 
         <TextArea
           { ...props }
-          identifier  = 'reason'
-          description = 'What was the reason?'
-          value       = { props.licenseIssues.reason }
+          identifier   = 'reason'
+          description  = {translations.myHistory.licenseIssuesPage.reasonLabel}
+          value        = { props.licenseIssues.reason }
           errorMessage = { props.validations.reason() }
         />
       </fieldset>

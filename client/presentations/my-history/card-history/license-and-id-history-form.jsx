@@ -1,8 +1,10 @@
 'use strict';
 
-import React                  from 'react';
-import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
-import RadioCollection        from '../../radio-selector-collection.jsx';
+import React              from 'react';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 import {
   IDOnly
@@ -11,7 +13,7 @@ import {
 const OnlyID = () => {
   return (
     <div className="applying-for-only-id">
-      <h2 className='question'>Have you ever had a California driver license or ID card?</h2>
+      {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptID, 'question')}
     </div>
   );
 };
@@ -19,8 +21,8 @@ const OnlyID = () => {
 const IDAndDL = () => {
   return (
     <div className="applying-for-dl">
-      <h2 className='question'>Have you ever had a driver license or state-issued ID card?</h2>
-      <p>The license or ID card must be issued by a U.S. state or another country.</p>
+      {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptLicense, 'question')}
+      {convertToHtml('p', translations.myHistory.cardHistoryPage.explanation)}
     </div>
   );
 };
