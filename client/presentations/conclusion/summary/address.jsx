@@ -28,7 +28,6 @@ const Address = (props) => {
         title='Home Address'
         text={homeAddress}
       />
-      <br></br>
       <SummaryItem
         title='Mailing Address'
         text={mailingAddress}

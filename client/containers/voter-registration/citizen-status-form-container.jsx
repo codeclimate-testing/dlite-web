@@ -1,15 +1,10 @@
 'use strict';
 
 import React                          from 'react';
-import { connect }                    from 'react-redux';
 import { updateCitizenStatus }        from '../../actions/index';
 import Presentation                   from '../../presentations/voter-registration/citizen-status-page.jsx';
 import handlers                       from '../../helpers/handlers';
-import { onSubmitUpdateCitizenship }  from '../../helpers/handlers/on-submit-dispatches';
-import {
-  mergePropsGenerator,
-  onSubmitDispatches
-} from '../../helpers/handlers/merge-props';
+import { mergePropsGenerator }        from '../../helpers/merge-props';
 
 
 const Page = (props) => {
@@ -25,16 +20,17 @@ const Page = (props) => {
       onSubmit          = {onSubmit}
       onBack            = {onBack}
       onChange          = {props.onChange}
-      selectedValue     = {props.application.citizenStatus}
+      selectedValue     = {props.citizenStatus}
     />
   );
 };
 
 const mapStateToProps = (state) => {
-  return state;
+  return {
+    citizenStatus       : state.application.citizenStatus,
+    dateOfBirth         : state.application.dateOfBirth,
+    focused             : state.ui.focus
+  };
 };
 
-
-let mergeProps = mergePropsGenerator(updateCitizenStatus, onSubmitDispatches.updateCitizenship);
-
-export default connect(mapStateToProps, null, mergeProps)(Page);
+export default mergePropsGenerator(mapStateToProps, updateCitizenStatus, 'updateCitizenship', Page);

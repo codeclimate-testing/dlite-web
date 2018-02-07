@@ -7,11 +7,15 @@ import SummaryItem      from './summary-item.jsx';
 import {
   getID
 } from '../../../helpers/data/card-type';
+import {
+  getStringByStatus
+} from '../../../helpers/data/summary';
 
 const IDRealID = (props) => {
   if(!getID(props)) { return null; }
-  let value = 'Yes';
-  props.realID.getRealID === 'Yes' ? value : value = 'No'
+  const yesString = 'Yes';
+  const noString = 'No';
+  let value = getStringByStatus(props.realID.getRealID, yesString, noString);
 
   return (
     <PageSummaryLink

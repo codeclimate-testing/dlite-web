@@ -2,10 +2,19 @@
 
 import React from 'react';
 
-import { hasValue } from '../../../helpers/data/validations';
+import { hasValue }             from '../../../helpers/data/validations';
 import {
-  hasPhone
+  shouldContactMethods
+} from '../../../helpers/data/voting';
+import {
+  hasPhone,
+  shouldContactNotSelected,
+  shouldContact,
+  skipAnswer
 } from '../../../helpers/data/contact-methods';
+import {
+  getStringByStatus
+} from '../../../helpers/data/summary'
 
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
@@ -13,23 +22,24 @@ const PhoneNumber = (props) => {
   return (<p> Phone Number: {phone} </p>);
 };
 
-const ContactMethods = (props) => {
-  let shouldContact = props.contactMethods.shouldContact;
-  if (!hasValue(shouldContact)) { return null; }
+const EmailAddress = (props) => {
+  if (!shouldContact(props)) { return null; }
+  return <p> Email Address: {props.contactMethods.emailAddress} </p>
+};
 
-  if(shouldContact !== 'Yes') {
-    if(shouldContact === 'Skip') { shouldContact = 'No Answer'; }
-    return (
-      <div className='summary-section'>
-        <p> Should Contact: {shouldContact} </p>
-      </div>
-    );
-  }
+const ContactMethods = (props) => {
+  if (shouldContactNotSelected(props)) { return null; }
+
+  const yesText = 'Yes';
+  const noText = 'No';
+  const declineText = 'No Answer';
+
+  let text = getStringByStatus(props.contactMethods.shouldContact, yesText, noText, declineText);
 
   return (
     <div className='summary-section'>
-      <p> Should Contact: {shouldContact} </p>
-      <p> Email Address: {props.contactMethods.emailAddress} </p>
+      <p> Should Contact: {text} </p>
+      <EmailAddress contactMethods = {props.contactMethods} />
       <PhoneNumber {...props} />
     </div>
   );

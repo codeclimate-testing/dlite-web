@@ -38,6 +38,14 @@ export const getNewDL = (props) => {
   return getDL(props) && isGettingNew(props);
 };
 
+export const existingDL = (props) => {
+  return getDL(props) && !isGettingNew(props);
+};
+
+export const existingID = (props) => {
+  return getID(props) && !isGettingNew(props);
+};
+
 export const replaceID = (props) => {
   return getID(props) && isReplacingCard(props);
 };

@@ -7,12 +7,12 @@ import { printDate }      from '../../../helpers/print-date';
 import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
 import {
-  getDL
+  existingDL
 } from '../../../helpers/data/card-type';
 
+
 const CurrentDLInfo = (props) => {
-  if(!getDL(props)) { return null; }
-  if(props.cardType.cardAction === 'new') { return null; }
+  if(!existingDL(props)) { return null; }
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
   let DLNumber = props.currentCardInfo.number
   let date = printDate(props.currentCardInfo);

@@ -2,20 +2,25 @@
 
 import React from 'react';
 
-import { hasValue } from '../../../helpers/data/validations';
+import {
+  citizenStatusNotChosen
+ }  from '../../../helpers/data/voting';
+ import {
+  getStringByStatus
+ }  from '../../../helpers/data/summary';
 
 const CitizenStatus = (props) => {
-  let value = props.citizenStatus;
+  if (citizenStatusNotChosen(props)) { return null; }
 
-  if (!hasValue(value)) { return null; }
+  let yesText = 'Yes';
+  let noText = 'No';
+  let declineText = 'Decline to answer';
 
-  if(props.citizenStatus === 'decline') {
-    value = 'Decline to answer';
-  }
+  let text = getStringByStatus(props.citizenStatus, yesText, noText, declineText);
 
   return (
     <div className='summary-section'>
-      <p> US Citizen: {value} </p>
+      <p> US Citizen: {text} </p>
     </div>
   );
 };

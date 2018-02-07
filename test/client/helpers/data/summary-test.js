@@ -12,7 +12,11 @@ import {
   IDRenewing,
   DLRenewing,
   summaryHasID,
-  summaryHasDL
+  summaryHasDL,
+  hideMain,
+  getErrorMessage,
+  getStringByStatus,
+  getStringByEndorsements
 } from '../../../../client/helpers/data/summary';
 
 describe('#summary status helpers', function() {
@@ -60,7 +64,7 @@ describe('#summary status helpers', function() {
     });
   });
 
-  describe('#summaryIsRenewing', function() {
+  describe('#IDRenewing', function() {
     it('is true when ID action is renew and DL action is not renew', function() {
       data.cardType.ID.action = 'renew';
       data.cardType.DL.action = 'new';
@@ -76,7 +80,7 @@ describe('#summary status helpers', function() {
     });
   });
 
-  describe('#summaryIsGettingNew', function() {
+  describe('#IDGettingNew', function() {
     it('is true when ID action is new and DL action is not new', function() {
       data.cardType.ID.action = 'new';
       assert.equal(IDGettingNew(data), true);
@@ -88,6 +92,109 @@ describe('#summary status helpers', function() {
     });
     it('is false when neither action is new', function() {
       assert.equal(IDGettingNew(data), false);
+    });
+  });
+
+  describe('#summaryHasID', function() {
+    it('is true if value is "renew"', function() {
+      data.cardType.ID.action = 'renew';
+      assert.equal(summaryHasID(data), true);
+    });
+    it('is false if value is blank', function() {
+      assert.equal(summaryHasID(data), false);
+    });
+  });
+  describe('#hideMain', function() {
+    beforeEach(function() {
+      data = {
+        server: {
+          apiStatus: ''
+        }
+      };
+    });
+    it('returns "hide" if apiStatus is "loading"', function() {
+      data.server.apiStatus = 'loading';
+      assert.equal(hideMain(data), 'hide');
+    });
+    it('returns a blank string if apiStatus is ""', function() {
+      assert.equal(hideMain(data), '');
+    });
+    it('returns a blank string if apiStatus is "success"', function() {
+      data.server.apiStatus = 'success';
+      assert.equal(hideMain(data), '');
+    });
+    it('returns a blank string if apiStatus is "error"', function() {
+      data.server.apiStatus = 'error';
+      assert.equal(hideMain(data), '');
+    });
+  });
+
+  describe('#getErrorMessage', function() {
+    beforeEach(function() {
+      data = {
+        server: {
+          apiStatus: ''
+        }
+      };
+    });
+    it('returns a blank string if apiStatus is "loading"', function() {
+      data.server.apiStatus = 'loading';
+      assert.equal(getErrorMessage(data), '');
+    });
+    it('returns a blank string if apiStatus is ""', function() {
+      assert.equal(getErrorMessage(data), '');
+    });
+    it('returns a blank string if apiStatus is "success"', function() {
+      data.server.apiStatus = 'success';
+      assert.equal(getErrorMessage(data), '');
+    });
+    it('returns a string if apiStatus is "error"', function() {
+      data.server.apiStatus = 'error';
+      assert.equal(getErrorMessage(data), 'Sorry, something went wrong');
+    });
+  });
+
+  describe('#getStringByStatus', function() {
+    const yesString = 'Yes';
+    const noString = 'No';
+    const declineString = 'decline to answer';
+
+    it('returns the 2nd argument if value is "Yes"', function() {
+      assert.equal(getStringByStatus('Yes', yesString, noString, declineString), yesString);
+    });
+
+    it('returns the 3rd argument if value is "No"', function() {
+      assert.equal(getStringByStatus('No', yesString, noString, declineString), noString);
+    });
+    it('returns the 4th argument if value is "decline"', function() {
+      assert.equal(getStringByStatus('decline', yesString, noString, declineString), declineString);
+    });
+  });
+
+  describe('#getStringByEndorsements', function() {
+    const yesString = 'Yes';
+    const noString = 'No';
+    let props;
+
+    beforeEach(function() {
+      props ={
+        licenseType: {
+          needEndorsement: '',
+          endorsement: [],
+          type: []
+        }
+      }
+    });
+
+    it('returns the 2nd argument if array includes "firefighter"', function() {
+      props.licenseType.endorsement =['firefighter'];
+      props.licenseType.needEndorsement = 'Yes';
+      assert.equal(getStringByEndorsements(props, yesString, noString), yesString);
+    });
+    it('returns the 3rd argument if array does not include "firefighter"', function() {
+      props.licenseType.endorsement =['athlete'];
+      props.licenseType.needEndorsement = 'Yes';
+      assert.equal(getStringByEndorsements(props, yesString, noString), noString);
     });
   });
 });

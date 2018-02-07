@@ -5,10 +5,22 @@ import assert from 'assert';
 import {
   hasNeither,
   hasAnyPhone,
-  hasPhone
+  hasPhone,
+  shouldContactNotSelected,
+  shouldContact,
+  skipAnswer
 } from '../../../../client/helpers/data/contact-methods';
 
 describe('data helpers for contact methods', function() {
+  let data;
+  beforeEach(function() {
+    data = {
+      contactMethods: {
+        shouldContact: ''
+      }
+    }
+  });
+
   describe('#hasPhone', function() {
     it('returns false if phoneNumber1 is missing', function() {
       let props = {
@@ -118,6 +130,54 @@ describe('data helpers for contact methods', function() {
         emailAddress: ''
       };
       assert.equal(hasNeither(props), false);
+    });
+  });
+
+  describe('#shouldContactNotSelected', function() {
+    it('returns true if shouldContact is blank', function() {
+      assert.equal(shouldContactNotSelected(data), true);
+    });
+    it('returns false if shouldContact has value', function() {
+      data.contactMethods.shouldContact = 'Yes';
+      assert.equal(shouldContactNotSelected(data), false);
+    });
+  });
+
+  describe('#shouldContact', function() {
+    it('returns true if value is Yes', function() {
+      data.contactMethods.shouldContact = 'Yes';
+      assert.equal(shouldContact(data), true);
+    });
+    it('returns false if value is No', function() {
+      data.contactMethods.shouldContact = 'No';
+      assert.equal(shouldContact(data), false);
+    });
+    it('returns false if value is blank', function() {
+      data.contactMethods.shouldContact = '';
+      assert.equal(shouldContact(data), false);
+    });
+    it('returns false if value is Skip', function() {
+      data.contactMethods.shouldContact = 'Skip';
+      assert.equal(shouldContact(data), false);
+    });
+  });
+
+  describe('#skipAnswer', function() {
+    it('returns true if value is Skip', function() {
+      data.contactMethods.shouldContact = 'Skip';
+      assert.equal(skipAnswer(data), true);
+    });
+    it('returns false if value is No', function() {
+      data.contactMethods.shouldContact = 'No';
+      assert.equal(skipAnswer(data), false);
+    });
+    it('returns false if value is blank', function() {
+      data.contactMethods.shouldContact = '';
+      assert.equal(skipAnswer(data), false);
+    });
+    it('returns false if value is Yes', function() {
+      data.contactMethods.shouldContact = 'Yes';
+      assert.equal(skipAnswer(data), false);
     });
   });
 });

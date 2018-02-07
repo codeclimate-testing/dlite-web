@@ -21,7 +21,6 @@ const TraitsHeightWeight = (props) => {
         title='Height'
         text={height}
       />
-      <br></br>
       <SummaryItem
         title='Weight'
         text={weight}

@@ -20,6 +20,7 @@ import {
   updateID,
   renewID,
   renewDL,
+  needsEndorsement,
   getCorrectString
 } from '../../../../client/helpers/data/card-type';
 
@@ -356,6 +357,28 @@ describe('Data helpers for card-type', function() {
     });
   });
 
+  describe('#needsEndorsement', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        licenseType: {
+          needEndorsement: ''
+        }
+      }
+    });
+    it('returns true if value is Yes', function() {
+      props.licenseType.needEndorsement = 'Yes';
+      assert.equal(needsEndorsement(props), true);
+    });
+    it('returns false if value is blank', function() {
+      props.licenseType.needEndorsement = '';
+      assert.equal(needsEndorsement(props), false);
+    });
+    it('returns false if value is No', function() {
+      props.licenseType.needEndorsement = 'No';
+      assert.equal(needsEndorsement(props), false);
+    });
+  });
   describe('#getCorrectString', function() {
     const DLString = 'license string';
     const IDString = 'ID string';

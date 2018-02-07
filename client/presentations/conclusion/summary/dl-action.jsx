@@ -4,6 +4,7 @@ import React            from 'react';
 import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import { getStringByAction }  from '../../../helpers/data/card-actions';
 import {
   getDL
 } from '../../../helpers/data/card-type';
@@ -17,28 +18,7 @@ const actionUpdate = translations.summaryPage.whatImDoing.updating
 
 const DLAction = (props) => {
   if(!getDL(props)) { return null; }
-  let dlAction = ''
-
-  switch(props.cardType.cardAction) {
-    case 'new':
-      dlAction = actionNew
-      break;
-    case 'renew':
-      dlAction = actionRenew
-      break;
-    case 'replace':
-      dlAction = actionReplace
-      break;
-    case 'change':
-      if(props.cardChanges.correctOrUpdate === 'update') {
-        dlAction = actionUpdate
-      } else if(props.cardChanges.correctOrUpdate === 'correct') {
-        dlAction = actionCorrect
-      }
-      break;
-    default:
-      dlAction;
-  }
+  let dlAction = getStringByAction(props, actionNew, actionRenew, actionReplace, null, actionUpdate, actionCorrect);
 
   return (
     <PageSummaryLink

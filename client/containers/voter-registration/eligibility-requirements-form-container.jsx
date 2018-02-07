@@ -1,10 +1,10 @@
 'use strict';
 
 import React                              from 'react';
-import connectForm                        from '../../helpers/connect-form';
 import { updateEligibilityRequirements }  from '../../actions/index';
 import handlers                           from '../../helpers/handlers';
 import Presentation                       from '../../presentations/voter-registration/eligibility-requirements-page.jsx';
+import { mergePropsGenerator }            from '../../helpers/merge-props';
 
 const Page = (props) => {
   let validations       = {
@@ -16,19 +16,19 @@ const Page = (props) => {
   return (
     <Presentation
       {...props}
-      onSubmit  = {onSubmit}
-      onBack    = {onBack}
-      selectedValue={props.eligibilityRequirements}
+      onSubmit      = {onSubmit}
+      onBack        = {onBack}
+      selectedValue = {props.eligibilityRequirements}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    eligibilityRequirements: state.application.eligibilityRequirements,
-    dateOfBirth:  state.application.dateOfBirth,
-    focused:      state.ui.focus
+    eligibilityRequirements:  state.application.eligibilityRequirements,
+    dateOfBirth:              state.application.dateOfBirth,
+    focused:                  state.ui.focus
   };
 };
 
-export default connectForm(mapStateToProps, updateEligibilityRequirements, Page);
+export default mergePropsGenerator(mapStateToProps, updateEligibilityRequirements, 'updateEligibility', Page);

@@ -7,11 +7,14 @@ import SummaryItem      from './summary-item.jsx';
 import {
   getDL
 } from '../../../helpers/data/card-type';
+import { getStringByStatus }  from '../../../helpers/data/summary';
 
 const DLRealID = (props) => {
   if(!getDL(props)) { return null; }
-  let value = 'Yes';
-  props.realID.getRealID === 'Yes' ? value : value = 'No'
+
+  let yesString = 'Yes';
+  let noString = 'No';
+  let value = getStringByStatus(props.realID.getRealID, yesString, noString);
 
   return (
     <PageSummaryLink

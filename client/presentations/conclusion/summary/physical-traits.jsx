@@ -18,12 +18,12 @@ const PhysicalTraits = (props) => {
         title='Sex'
         text={props.physicalTraits.sex}
       />
-      <br></br>
+
       <SummaryItem
         title='Eye Color'
         text={props.physicalTraits.eyeColor}
       />
-      <br></br>
+
       <SummaryItem
         title='Hair Color'
         text={props.physicalTraits.hairColor}

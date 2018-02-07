@@ -7,3 +7,7 @@ export const eligibleForSeniorID = (props) => {
   return canBeSenior(props.dateOfBirth) &&
     getID(props);
 };
+
+export const gettingSeniorID = (props) => {
+  return props.seniorID === 'Yes';
+};

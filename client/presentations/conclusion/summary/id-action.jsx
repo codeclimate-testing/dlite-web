@@ -7,6 +7,9 @@ import SummaryItem      from './summary-item.jsx';
 import {
   getID
 } from '../../../helpers/data/card-type';
+import {
+  getStringByAction
+} from '../../../helpers/data/card-actions';
 
 
 const actionNew = translations.summaryPage.whatImDoing.applying
@@ -17,28 +20,8 @@ const actionUpdate = translations.summaryPage.whatImDoing.updating
 
 const IDAction = (props) => {
   if(!getID(props)) { return null; }
-  let idAction = ''
+  let idAction = getStringByAction(props, actionNew, actionRenew, actionReplace, null, actionUpdate, actionCorrect);
 
-  switch(props.cardType.cardAction) {
-    case 'new':
-      idAction = actionNew
-      break;
-    case 'renew':
-      idAction = actionRenew
-      break;
-    case 'replace':
-      idAction = actionReplace
-      break;
-    case 'change':
-      if(props.cardChanges.correctOrUpdate === 'update') {
-        idAction = actionUpdate
-      } else if(props.cardChanges.correctOrUpdate === 'correct') {
-        idAction = actionCorrect
-      }
-      break;
-    default:
-      idAction;
-  }
 
   return (
     <PageSummaryLink

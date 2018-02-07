@@ -4,12 +4,20 @@ import React from "react";
 import * as dataPresent from '../../../helpers/data-present';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import {
+  reducedOrNoFee
+} from '../../../helpers/data/reduced-fee';
+import {
+  getStringByStatus
+} from '../../../helpers/data/summary';
 
 const ReducedOrNoFee = (props) => {
-  if (!dataPresent.value(props.reducedFee.ID) || props.seniorID === 'Yes') { return null; }
-  let value = 'Yes';
+  if (!reducedOrNoFee(props)) { return null; }
 
-  props.reducedFee.ID === 'Yes' ? value : value = 'No';
+  const yesString = 'Yes';
+  const noString = 'No';
+
+  let value = getStringByStatus(props.reducedFee.ID, yesString, noString);
 
   return (
     <PageSummaryLink

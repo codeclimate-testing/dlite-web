@@ -5,6 +5,9 @@ import { printDate }    from '../../../helpers/print-date';
 import * as dataPresent from '../../../helpers/data-present';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import {
+  licenseIssuesIsSuspended
+} from '../../../helpers/data/my-history';
 
 const LicenseIssues = (props) => {
   if (!dataPresent.licenseIssues(props.licenseIssues)) { return null; }
@@ -12,7 +15,7 @@ const LicenseIssues = (props) => {
   let date        = printDate(props.licenseIssues);
   let reason      = 'None';
 
-  if(props.licenseIssues.isSuspended === 'Yes') {
+  if(licenseIssuesIsSuspended(props)) {
     reason = props.licenseIssues.reason;
     return (
       <PageSummaryLink
@@ -23,7 +26,6 @@ const LicenseIssues = (props) => {
           title='Driving record:'
           text={reason}
         />
-        <br></br>
         <SummaryItem
           title='Record date:'
           text={date}

@@ -50,3 +50,20 @@ export const hideMain = (props) => {
 export const getErrorMessage = (props) => {
   return props.server.apiStatus === 'error' ? 'Sorry, something went wrong' : '';
 };
+
+export const getStringByStatus = (value, yesString, noString, declineString) => {
+  if (value === 'Yes') {
+    return yesString;
+  } else if (value === 'No') {
+    return noString;
+  } else if (value === 'decline') {
+    return declineString;
+  }
+};
+export const getStringByEndorsements = (props, yesString, noString) => {
+  if (props.licenseType.endorsement.includes('firefighter') && props.licenseType.needEndorsement === 'Yes') {
+    return yesString;
+  } else {
+    return noString;
+  }
+}

@@ -4,16 +4,18 @@ import React from 'react';
 import * as dataPresent from '../../../helpers/data-present';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import {
+  getStringByStatus
+} from '../../../helpers/data/summary';
+
+const yesString = 'Yes';
+const noString = 'No';
 
 const VeteransService = (props) => {
   if (!dataPresent.veteransService(props.veteransService)) { return null; }
-  let veteran = 'No';
-  let benefitsInfo = 'No';
-  let printVeteran = 'No';
-
-  if(props.veteransService.isVeteran === 'Yes') { veteran = 'Yes'};
-  if(props.veteransService.receiveBenefits === 'Yes') { benefitsInfo = 'Yes'};
-  if(props.veteransService.veteransIdentifier === 'Yes') { printVeteran = 'Yes'};
+  let veteran = getStringByStatus(props.veteransService.isVeteran, yesString, noString);
+  let benefitsInfo = getStringByStatus(props.veteransService.receiveBenefits, yesString, noString);
+  let printVeteran = getStringByStatus(props.veteransService.veteransIdentifier, yesString, noString);
 
   return (
     <PageSummaryLink
@@ -24,12 +26,10 @@ const VeteransService = (props) => {
         title='Veteran:'
         text={veteran}
       />
-      <br></br>
       <SummaryItem
         title='Get benefit information:'
         text={benefitsInfo}
       />
-      <br></br>
       <SummaryItem
         title='"Veteran" printed on card(s):'
         text={printVeteran}

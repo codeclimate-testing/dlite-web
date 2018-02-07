@@ -7,12 +7,11 @@ import { printDate }      from '../../../helpers/print-date';
 import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
 import {
-  getID
+  existingID
 } from '../../../helpers/data/card-type';
 
 const CurrentIDInfo = (props) => {
-  if(!getID(props)) { return null; }
-  if(props.cardType.cardAction === 'new') { return null; }
+  if(!existingID(props)) { return null; }
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
   let IDNumber = props.currentCardInfo.number
   let date = printDate(props.currentCardInfo);

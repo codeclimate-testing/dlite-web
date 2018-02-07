@@ -5,6 +5,9 @@ import * as dataPresent from '../../../helpers/data-present';
 import { printDate }    from '../../../helpers/print-date';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import {
+  licenseAndIdIssued
+} from '../../../helpers/data/my-history'
 
 const LicenseAndIdHistory = (props) => {
   if (!dataPresent.licenseAndIdHistory(props.licenseAndIdHistory)) { return null; }
@@ -12,7 +15,7 @@ const LicenseAndIdHistory = (props) => {
   let issuedBy   = props.licenseAndIdHistory.issuedBy;
   let DLIDNumber = 'None';
 
-  if(props.licenseAndIdHistory.isIssued === 'Yes' ) {
+  if(licenseAndIdIssued(props)) {
     DLIDNumber = props.licenseAndIdHistory.DLIDNumber;
     return (
       <PageSummaryLink
@@ -23,12 +26,10 @@ const LicenseAndIdHistory = (props) => {
           title='Previous DL/ID card number:'
           text={DLIDNumber}
         />
-        <br></br>
         <SummaryItem
           title='Issued in:'
           text={issuedBy}
         />
-        <br></br>
         <SummaryItem
           title='Expiration date:'
           text={date}

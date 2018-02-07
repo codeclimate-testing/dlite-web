@@ -6,7 +6,14 @@ import {
   validToContinue,
   tooYoungForDL,
   checkPreReg,
-  continueHidden
+  continueHidden,
+  under16GuardianSignature,
+  isNewDriver,
+  needsKnowledgeTest,
+  guardianSigned,
+  guardianNotSigned,
+  guardianHasValue,
+  secondGuardian
 } from '../../../../client/helpers/data/youth';
 
 describe('Data helpers for youth', function() {
@@ -27,6 +34,17 @@ describe('Data helpers for youth', function() {
         IDDL: ['DL'],
         cardAction: 'new',
         youthIDInstead: ''
+      },
+      guardianSignature: {
+        isSigned: '',
+        guardianInfo: {
+          0: {
+
+          },
+          1: {
+            acceptLiabilities: ''
+          }
+        }
       }
     };
   });
@@ -119,6 +137,91 @@ describe('Data helpers for youth', function() {
       data.dateOfBirth.month = (month + 1).toString();
       data.cardType.youthIDInstead = 'Yes';
       assert.equal(continueHidden(data), false);
+    });
+  });
+
+  describe('#under16GuardianSignature', function() {
+    it('returns true when under 16', function() {
+      assert.equal(under16GuardianSignature(data), true);
+    });
+    it('returns false when user over 16', function() {
+      data.dateOfBirth.year = (year - 16).toString();
+      assert.equal(under16GuardianSignature(data), false);
+    });
+  });
+  describe('#isNewDriver', function() {
+    it('returns true when user is 16', function() {
+      data.dateOfBirth.year = (year - 16).toString();
+      assert.equal(isNewDriver(data), true);
+    });
+    it('returns false when user is 14', function() {
+      data.dateOfBirth.year = (year - 14).toString();
+      assert.equal(isNewDriver(data), false);
+    });
+    it('returns false when user is 18', function() {
+      data.dateOfBirth.year = (year - 18).toString();
+      assert.equal(isNewDriver(data), false);
+    });
+  });
+  describe('#needsKnowledgeTest', function() {
+    it('returns true when user is under 17.5', function() {
+      assert.equal(needsKnowledgeTest(data), true);
+    });
+    it('returns false when user is 18', function() {
+      data.dateOfBirth.year = (year - 18).toString();
+      assert.equal(needsKnowledgeTest(data), false);
+    });
+  });
+  describe('#guardianSigned', function() {
+    it('returns true when value is Yes', function() {
+      data.guardianSignature.isSigned = 'Yes';
+      assert.equal(guardianSigned(data), true);
+    });
+    it('returns false when value is No', function() {
+      data.guardianSignature.isSigned = 'No';
+      assert.equal(guardianSigned(data), false);
+    });
+    it('returns false when value is blank', function() {
+      assert.equal(guardianSigned(data), false);
+    });
+  });
+  describe('#guardianNotSigned', function() {
+    it('returns true when value is No', function() {
+      data.guardianSignature.isSigned = 'No';
+      assert.equal(guardianNotSigned(data), true);
+    });
+    it('returns false when value is Yes', function() {
+      data.guardianSignature.isSigned = 'Yes';
+      assert.equal(guardianNotSigned(data), false);
+    });
+    it('returns false when value is blank', function() {
+      assert.equal(guardianNotSigned(data), false);
+    });
+  });
+  describe('#guardianHasValue', function() {
+    it('returns true when value is Yes', function() {
+      data.guardianSignature.isSigned = 'Yes';
+      assert.equal(guardianHasValue(data), true);
+    });
+    it('returns true when value is Yes', function() {
+      data.guardianSignature.isSigned = 'No';
+      assert.equal(guardianHasValue(data), true);
+    });
+    it('returns false when value is blank', function() {
+      assert.equal(guardianHasValue(data), false);
+    });
+  });
+  describe('#secondGuardian', function() {
+    it('returns true when value is true', function() {
+      data.guardianSignature.guardianInfo[1].acceptLiabilities = true;
+      assert.equal(secondGuardian(data), true);
+    });
+    it('returns false when value is false', function() {
+      data.guardianSignature.guardianInfo[1].acceptLiabilities = false;
+      assert.equal(secondGuardian(data), false);
+    });
+    it('returns false when value is blank', function() {
+      assert.equal(secondGuardian(data), false);
     });
   });
 });

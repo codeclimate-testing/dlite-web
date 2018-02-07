@@ -15,3 +15,15 @@ export const hasNeither = (props) => {
     return false;
   }
 };
+
+export const shouldContactNotSelected = (props) => {
+  return !hasValue(props.contactMethods.shouldContact);
+};
+
+export const shouldContact = (props) => {
+  return props.contactMethods.shouldContact === 'Yes';
+};
+
+export const skipAnswer = (props) => {
+  return props.contactMethods.shouldContact === 'Skip';
+};

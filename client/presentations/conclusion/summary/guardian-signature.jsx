@@ -1,14 +1,18 @@
 'use strict';
 
-import React from 'react';
-import * as dataPresent from '../../../helpers/data-present';
+import React          from 'react';
+import { hasValue }   from '../../../helpers/data/validations';
+import {
+  guardianNotSigned,
+  secondGuardian
+} from '../../../helpers/data/youth';
 
 const GuardianSignature = (props) => {
 
   let isSigned = props.guardianSignature.isSigned;
-  if (!dataPresent.value(isSigned)) { return null; }
+  if (!hasValue(isSigned)) { return null; }
 
-  if(isSigned === 'No') {
+  if(guardianNotSigned(props)) {
     return (
       <div className='summary-section'>
         <p> Parent/guardian available: {isSigned} </p>
@@ -44,7 +48,7 @@ const GuardianSignature = (props) => {
     </div>
   );
 
-  if(guardianInfoSecond.acceptLiabilities) {
+  if(secondGuardian(props)) {
     content.push(
       <div className='summary-section' key='guardian-second-info'>
         <hr/>

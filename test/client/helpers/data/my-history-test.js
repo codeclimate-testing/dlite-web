@@ -5,7 +5,9 @@ import {
   licenseAndIdIssued,
   licenseIssuesIsSuspended,
   hasMedical,
-  hasUsedPreviousNames
+  hasUsedPreviousNames,
+  getStringByMedical,
+  getStringByPreviousNames
 } from '../../../../client/helpers/data/my-history';
 
 describe('Data helpers for my-history data', function() {
@@ -85,6 +87,54 @@ describe('Data helpers for my-history data', function() {
     it('is false when value is blank', function() {
       props.namesHistory.hasUsedPreviousNames = '';
       assert.equal(hasUsedPreviousNames(props), false);
+    });
+  });
+
+  describe('#getStringByMedical', function() {
+    let props;
+    let medicalInfo = 'test';
+    beforeEach(function() {
+      props = {
+        medicalHistory: {
+          medicalInfo: '',
+          hasMedicalCondition: ''
+        }
+      };
+    });
+
+    it('returns medicalInfo is user indicated they have a condition', function() {
+      props.medicalHistory.hasMedicalCondition = 'Yes';
+      props.medicalHistory.medicalInfo = medicalInfo;
+      assert.equal(getStringByMedical(props), medicalInfo);
+    });
+
+    it('returns "None" if user has indicated they do not have a condition', function() {
+      props.medicalHistory.hasMedicalCondition = 'No';
+      props.medicalHistory.medicalInfo = medicalInfo;
+      assert.equal(getStringByMedical(props), "None");
+    });
+  });
+
+  describe('#getStringByPreviousNames', function() {
+    let props;
+    let previousNames = 'that one, and that one';
+    beforeEach(function() {
+      props = {
+        namesHistory: {
+          hasUsedPreviousNames: '',
+          previousNames: ''
+        }
+      };
+    });
+
+    it('returns previous names if user has indicated they have used previous names', function() {
+      props.namesHistory.hasUsedPreviousNames = 'Yes';
+      props.namesHistory.previousNames = previousNames;
+      assert.equal(getStringByPreviousNames(props), previousNames);
+    });
+    it('returns "None" if user has indicated they do not have a condition', function() {
+      props.namesHistory.hasUsedPreviousNames = 'No';
+      assert.equal(getStringByPreviousNames(props), 'None');
     });
   });
 });

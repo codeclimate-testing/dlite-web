@@ -4,9 +4,12 @@ import React            from 'react';
 import * as dataPresent from '../../../helpers/data-present';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import {
+  hasSocialSecurityNo
+} from '../../../helpers/data/ssn';
 
 const SocialSecurity = (props) => {
-  if(!dataPresent.socialSecurity(props.socialSecurity) || props.socialSecurity.hasSocialSecurity === 'No') { return null; }
+  if(hasSocialSecurityNo(props)) { return null; }
 
   let socialSecurity =  'xxx' + '-' + 'xx' + '-' + props.socialSecurity.part3;
 

@@ -1,14 +1,10 @@
 'use strict';
 
 import React                      from 'react';
-import { connect }                from 'react-redux';
 import handlers                   from '../../helpers/handlers';
 import Presentation               from "../../presentations/get-started/choose-language-page.jsx";
 import { updateLanguage }         from '../../actions/index';
-import {
-  mergePropsGenerator,
-  onSubmitDispatches
-}    from '../../helpers/handlers/merge-props';
+import { mergePropsGenerator }    from '../../helpers/merge-props';
 
 const Page = (props) => {
   let onBack            =   handlers.navigateOnBack(props);
@@ -16,16 +12,18 @@ const Page = (props) => {
     <Presentation
       {...props}
       onBack            = { onBack }
-      selectedValue     = { props.application.appLanguage }
+      selectedValue     = { props.appLanguage }
       name              = 'appLanguage'
-      appLanguage       = { props.application.appLanguage }
     />
   );
 };
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    focused:      state.ui.focus,
+    appLanguage:  state.application.language.appLanguage
+  };
 };
 
-let mergeProps = mergePropsGenerator(updateLanguage, onSubmitDispatches.defaultLanguage);
-export default connect(mapStateToProps, null, mergeProps)(Page);
+
+export default mergePropsGenerator(mapStateToProps, updateLanguage, 'defaultLanguage', Page);
