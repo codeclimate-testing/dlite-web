@@ -5,6 +5,7 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import MessageBox         from '../../message-box.jsx';
 import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 import {
   donateOrganYes,
   donateOrganNo
@@ -15,7 +16,7 @@ const MessageForYesChoice = (props) => {
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-yes-info'>
-        <p>{translations.organDonation.organDonor.messageYes}</p>
+        {convertToHtml('p', translations.organDonation.organDonor.messageYes)}
       </div>
     </MessageBox>
   );
@@ -26,9 +27,7 @@ const MessageForNoChoice = (props) => {
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-no-info'>
-        <h4>{translations.organDonation.organDonor.messageNo}</h4>
-        <p className='translation-missing'>If you wish to remove your name from the registry, you must contact Donate
-        Life California. DMV can remove the pink dot from your DL/ID card but cannot remove you from the registry.</p>
+        {convertToHtml('p', translations.organDonation.organDonor.messageNo)}
       </div>
     </MessageBox>
   );
@@ -38,8 +37,8 @@ const MessageForNoChoice = (props) => {
 const DonateOrgan = (props) => {
   return (
     <div className='donate-organ-form'>
-      <h2 className='question'>{translations.organDonation.organDonor.prompt}</h2>
-      <p>{translations.organDonation.organDonor.validationMessage}</p>
+        {convertToHtml('h2', translations.organDonation.organDonor.prompt, 'question')}
+        {convertToHtml('p', translations.organDonation.organDonor.validationMessage)}
 
       <fieldset>
         <RadioCollection
