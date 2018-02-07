@@ -152,7 +152,8 @@
     "licenseClassMissing": "Please select a license class",
     "needEndorsement": "Please select if you need a professional endorsement",
     "endorsement": "Please select an endorsement",
-    "contactMethod": "Please enter either an email address or a phone number."
+    "contactMethod": "Please enter either an email address or a phone number.",
+    "cardTypeMissing": "Please select what card(s) you would like."
   },
   "intro": {
     "switchLanguagePage": {

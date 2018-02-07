@@ -1,11 +1,11 @@
 'use strict';
 
-import errorMessages  from '../../presentations/error-messages';
+import translations   from '../../i18n';
 import { hasValue }   from '../data/validations';
 
 const cardAction = (props) => {
   if (!hasValue(props)) {
-    return [errorMessages.applicationActionMissing];
+    return [translations.errorMessages.applicationActionMissing];
   }
   return [];
 };

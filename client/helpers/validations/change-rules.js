@@ -6,6 +6,7 @@ import {
   hasOnlyEnglishChars
 }                               from '../data/validations';
 import selectionValidator       from './selection-validator';
+import translations             from '../../i18n';
 
 const sections = (props) => {
   if (!props.correctOrUpdate){ return [] };
@@ -17,7 +18,7 @@ const other = (props) => {
 
   let errors = selectionValidator('pleaseEnterValidData', 'other')(props);
   if (!hasOnlyEnglishChars(props.other)) {
-    errors.push(errorMessages.inputIncludesNonEnglishCharacters)
+    errors.push(translations.errorMessages.inputIncludesNonEnglishCharacters)
   }
   return errors;
 };

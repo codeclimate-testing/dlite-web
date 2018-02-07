@@ -2,14 +2,14 @@
 
 import { englishValidatorGenerator }  from './english-validator';
 import { expirationDateValidator }    from './date-validator';
-import errorMessages                  from '../../presentations/error-messages';
+import translations       from '../../i18n';
 
 
 let errorFunction = (name) => {
   return (props) => {
     let errors = [];
     if (!expirationDateValidator(name, props)) {
-      errors.push(errorMessages['expirationDateInvalid']);
+      errors.push(translations.errorMessages['expirationDateInvalid']);
     }
     return errors;
   }
