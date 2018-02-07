@@ -12,7 +12,8 @@ import {
 import {
   hasSocialSecurityYes
 } from '../../../helpers/data/ssn';
-import translations     from '../../../i18n';
+import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if (!hasSocialSecurityYes(props)) { return null; }
@@ -31,8 +32,8 @@ const Form = (props) => {
   return (
     <div className='social-security-enter-form'>
       <hr />
-      <h2 className='question'>{translationPath.prompt}</h2>
-      <p>{translationPath.explanation}</p>
+      {convertToHtml('h2', translationPath.prompt, 'question')}
+      {convertToHtml('p', translationPath.explanation)}
 
       <fieldset>
         <NumberInput

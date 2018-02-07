@@ -4,6 +4,7 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const translationPath = translations.myBasics.traitsPage.hairColor;
 
@@ -11,7 +12,7 @@ const HairColor = (props) => {
   return (
     <div className='hair-color'>
       <hr />
-      <h2 className='question'>What color is your hair?</h2>
+        {convertToHtml('h2', translationPath.prompt, 'question')}
       <div>
         <fieldset>
           <RadioCollection

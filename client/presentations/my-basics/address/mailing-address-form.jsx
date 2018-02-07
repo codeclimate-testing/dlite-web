@@ -1,8 +1,9 @@
 'use strict';
 
-import React            from 'react';
-import translations     from '../../../i18n'
-import AddressTemplate  from '../../address-template.jsx';
+import React              from 'react';
+import AddressTemplate    from '../../address-template.jsx';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if(props.isSameAsHome !== 'No') { return null; }
@@ -10,8 +11,8 @@ const Form = (props) => {
   return (
     <div className='mailing-address-form'>
       <hr />
-      <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressPrompt}</h2>
-      <p>{translations.myBasics.addressesPage.explanation}</p>
+        {convertToHtml('h2', translations.myBasics.addressesPage.mailingAddressPrompt, 'question')}
+        {convertToHtml('p', translations.myBasics.addressesPage.explanation)}
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate

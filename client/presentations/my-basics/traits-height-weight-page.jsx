@@ -11,8 +11,9 @@ import {
   errorClass
 } from '../validations.jsx';
 import translations       from '../../i18n';
+import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
-let translationsPath = translations.myBasics.heightWeightPage;
+const translationPath = translations.myBasics.heightWeightPage;
 
 const TraitsPage = (props) => {
   let errors = {
@@ -29,14 +30,14 @@ const TraitsPage = (props) => {
       sectionKey='myBasics'
     >
       <form onSubmit={ props.onSubmit } className='traits-height-weight-form' >
-        <h2 className='question'>{translationsPath.height.prompt}</h2>
-        <p>{translationsPath.height.explanation}</p>
+        {convertToHtml('h2', translationPath.height.prompt, 'question')}
+        {convertToHtml('p', translationPath.height.explanation)}
 
         <fieldset>
           <NumberInput
             {...props}
             identifier='heightFeet'
-            description={translationsPath.height.feetLabel}
+            description={translationPath.height.feetLabel}
             value={ props.traitsHeightWeight.heightFeet }
             errorMessage={ props.validations.heightFeet() }
             onChange      = { props.onChange }
@@ -49,7 +50,7 @@ const TraitsPage = (props) => {
           <NumberInput
             {...props}
             identifier='heightInches'
-            description={translationsPath.height.inchesLabel}
+            description={translationPath.height.inchesLabel}
             value={ props.traitsHeightWeight.heightInches }
             errorMessage={ props.validations.heightInches() }
             onChange      = { props.onChange }
@@ -65,14 +66,14 @@ const TraitsPage = (props) => {
         </div>
 
         <hr />
-        <h2 className='question'>{translationsPath.weight.prompt}</h2>
-        <p>{translationsPath.weight.explanation}</p>
+        {convertToHtml('h2', translationPath.weight.prompt, 'question')}
+        {convertToHtml('p', translationPath.weight.explanation)}
 
         <fieldset>
           <NumberInput
             {...props}
             identifier='weight'
-            description={translationsPath.weight.poundsLabel}
+            description={translationPath.weight.poundsLabel}
             value={ props.traitsHeightWeight.weight }
             errorMessage={ props.validations.weight() }
             onChange      = { props.onChange }

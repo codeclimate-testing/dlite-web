@@ -1,16 +1,16 @@
 'use strict';
 
-import React                from 'react';
-
-import radioYesNoGroup      from '../../radio-yes-no-group.jsx';
-import RadioCollection      from '../../radio-selector-collection.jsx';
-import { IDorDL }           from '../../../helpers/data/card-type';
-import translations         from '../../../i18n'
+import React              from 'react';
+import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import { IDorDL }         from '../../../helpers/data/card-type';
+import translations       from '../../../i18n'
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Question = (props) => {
-  let IDString = translations.myBasics.addressesPage.mailingAddressSameExplanation.ID;
-  let DLString = translations.myBasics.addressesPage.mailingAddressSameExplanation.license;
-  let bothString = translations.myBasics.addressesPage.mailingAddressSameExplanation.cards;
+  let IDString = convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.ID);
+  let DLString = convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.license);
+  let bothString = convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.cards);
 
   let cardType = IDorDL(props);
   let headerText = cardType === 'both' ? bothString : cardType === 'DL' ? DLString : IDString;
@@ -18,8 +18,8 @@ const Question = (props) => {
   return (
     <div className='interstitial-address-form'>
       <hr />
-      <h2 className='question'>{translations.myBasics.addressesPage.mailingAddressSamePrompt}</h2>
-      <p>{headerText}</p>
+        {convertToHtml('h2', translations.myBasics.addressesPage.mailingAddressSamePrompt, 'question')}
+        {headerText}
       <div className='input-container'>
         <fieldset>
           <RadioCollection

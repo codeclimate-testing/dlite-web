@@ -1,16 +1,17 @@
 'use strict';
 
-import React                from 'react';
-import RadioCollection      from '../../radio-selector-collection.jsx';
-import RadioSelector        from '../../radio-selector.jsx';
-import translations         from '../../../i18n';
+import React              from 'react';
+import RadioCollection    from '../../radio-selector-collection.jsx';
+import RadioSelector      from '../../radio-selector.jsx';
+import translations       from '../../../i18n';
+import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const translationPath = translations.myBasics.traitsPage.sex;
 
 const Sex = (props) => {
   return (
     <div className="sex">
-      <h2 className='question'>{translationPath.prompt}</h2>
+        {convertToHtml('h2', translationPath.prompt, 'question')}
       <div>
         <fieldset>
           <RadioCollection
