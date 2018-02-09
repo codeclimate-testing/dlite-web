@@ -1,6 +1,5 @@
 'use strict';
-
-import errorMessages from '../../presentations/error-messages';
+import translations   from '../../i18n';
 
 class Validator {
   constructor(props, requestedValidations, allMessage) {
@@ -40,7 +39,7 @@ class Validator {
     let errorMessage = '';
 
     if (allErrors.length > 1) {
-      errorMessage = this.allMessage ? errorMessages[this.allMessage] : errorMessages.errorPreventContinuing;
+      errorMessage = this.allMessage ? translations.errorMessages[this.allMessage] : translations.errorMessages.errorPreventContinuing;
     } else if (allErrors.length === 1) {
       errorMessage = allErrors[0];
     }
