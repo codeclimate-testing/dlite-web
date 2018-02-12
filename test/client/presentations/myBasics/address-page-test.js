@@ -81,7 +81,7 @@ describe('AddressPage', function() {
     assert.ok(component.find('input#homeStreet_1').length, 'Street address input not found');
     assert.ok(component.find('input#homeStreet_2').length, 'Unit or apartment input not found');
     assert.ok(component.find('input#homeCity').length,   'City input not found');
-    assert.ok(component.find('.dropdown#homeState').length,  'State select not found');
+    assert.ok(component.find('#homeState').length,  'State select not found');
     assert.ok(component.find('input#homeZip').length,    'State select not found');
     assert.ok(!component.find('.mailing-address-form').length, 'mailing address rendered');
   });
@@ -97,7 +97,7 @@ describe('AddressPage', function() {
     assert.ok(component.find('input#mailingStreet_1').length, 'Street address input not found');
     assert.ok(component.find('input#mailingStreet_2').length, 'Unit or apartment input not found');
     assert.ok(component.find('input#mailingCity').length,   'City input not found');
-    assert.ok(component.find('.dropdown#homeState').length,  'State select not found');
+    assert.ok(component.find('#homeState').length,  'State select not found');
     assert.ok(component.find('input#mailingZip').length,    'State select not found');
   });
 

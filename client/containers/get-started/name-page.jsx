@@ -19,6 +19,7 @@ const Page = (props) => {
       onSubmit={ onSubmit }
       onBack={ onBack }
       validations={ validations }
+      changeAction={ updateLegalName }
     />
   );
 };
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => {
   return {
     legalName: state.application.legalName,
     focused: state.ui.focus,
-    validations: state.ui.validations
+    validations: state.ui.validations,
+    hover: state.ui.hover
   };
 };
 

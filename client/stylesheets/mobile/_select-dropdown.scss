@@ -1,5 +1,5 @@
-.select-dropdown {
-  .dropdown {
+.select-dropdown-container {
+  .select-dropdown {
     outline-style: none;
     font-size: 18px;
     font-family: $form-font;
@@ -18,7 +18,9 @@
     &.focus {
       @include focus-outline-input;
       margin-bottom: 1px;
+    }
 
+    &.open {
       .dropdown-options {
         display: block;
         font-size: 13px;
@@ -60,7 +62,8 @@
       min-height: 30px;
       padding: 5px 9px;
       border-top: 1px solid gray;
-      &:hover {
+      &:hover,
+      &.hover {
         background-color: darken(#F7F7F7, 5%);
       }
 

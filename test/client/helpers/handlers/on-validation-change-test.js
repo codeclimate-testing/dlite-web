@@ -8,7 +8,7 @@ import {
   onFocusClearValidationGenerator
 } from '../../../../client/helpers/handlers/on-validation-change';
 
-describe('onFormSubmit', function() {
+describe('onValidationChange', function() {
   let event, dispatch;
 
   beforeEach(function() {

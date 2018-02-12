@@ -3,14 +3,16 @@
 import React from 'react';
 
 import Page               from '../../containers/page.jsx';
+import SelectDropdown     from '../../containers/select-dropdown.jsx';
 import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
-import SelectDropdown     from '../select-dropdown.jsx';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const LegalNameForm = (props) => {
+  let suffixValues = ['', ...translations.intro.namePage.suffixValues];
+
   return (
     <Page
       sectionKey='intro'
@@ -47,10 +49,12 @@ const LegalNameForm = (props) => {
 
           <SelectDropdown
             name='suffix'
-            id='suffix'
+            id  = 'suffix'
             selected={ props.legalName.suffix }
+            hover={ props.hover }
             onChange={ props.onSelectChange }
-            values={translations.intro.namePage.suffixValues}
+            changeAction={ props.changeAction }
+            values={ suffixValues }
             description={translations.intro.namePage.suffixLabel}
           />
         </fieldset>
