@@ -49,9 +49,9 @@ const EligibilityRequirements = (props) => {
           {convertToHtml('li', translations.votingRegistration.eligibilityPage.mentalCompetenceStatement)}
         </ul>
 
-        <p className='translation-missing'>If you decline to answer, you cannot register to vote.</p>
+        {convertToHtml('p', translations.votingRegistration.shared.declineToAnswerInformationRegistration)}
 
-          <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
+        <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
           <div>
             <fieldset>
               <RadioCollection
