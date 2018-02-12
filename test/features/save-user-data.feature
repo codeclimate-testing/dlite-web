@@ -225,7 +225,13 @@ Feature: Save user data
 
   Scenario: Save user data with both ID and DL
     Given I go to the new online DL application page
-    And I visit the what do you want to do today page
+    Then I visit the legal name page
+    And I enter my full name
+    When I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I enter my full date of birth into the form
+    When I click "Next" to continue
+    Then I will be on the what do you want to do today page
     And I choose to get a new card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
@@ -314,11 +320,20 @@ Feature: Save user data
     Then I will see voter registration choice as I am already registered to vote in California in summary
     Then I will see that I declined to choose a political party
     Then I will see my social security on that summary
-    # TODO: integrate these tests back in
-    # When I click "Next" to continue
-    # Then I will see a blank page with the loading icon
-    # Then I will be on the page for appointment preparation
-    When I visit appointment preparation page
+    When I click "Next" to continue
+    Then I will be on the page for appointment preparation
+    Then I go to the page with my summary
+
+    When I click to edit my name
+    Then I will be taken to the names page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my date of birth
+    Then I will be on the page for entering my date of birth
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click "Next" to continue
+    Then I will be on the page for appointment preparation
     And I click link for required documents
     Then I will be on the required documents page
     Then I will not see a section about medical information

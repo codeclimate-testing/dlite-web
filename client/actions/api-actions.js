@@ -36,6 +36,9 @@ export const postData = function (body) {
             data: data,
             error: null }
         });
+        return data;
+      })
+      .then(function(data) {
         dispatch({
           type: 'UPDATE_API_STATUS',
           payload: {
@@ -43,6 +46,7 @@ export const postData = function (body) {
             value:  'success'
           }
         });
+        return 'success';
       })
       .catch(function (err) {
         dispatch({
@@ -58,7 +62,8 @@ export const postData = function (body) {
             value:  'error'
           }
         });
-      });
+        return 'api-fail';
+      })
   };
 };
 

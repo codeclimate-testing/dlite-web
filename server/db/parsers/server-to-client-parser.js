@@ -311,7 +311,7 @@ function getParty(voting_registrations) {
   };
 
   return {
-    isSelected:             parserHelper.boolToStr(voting_registrations.is_preregistering),
+    isSelected:             parserHelper.boolToStr( politicalParty || otherParty ? true : false),
     politicalPartyChoose:   politicalParty,
     otherParty:             otherParty
   };

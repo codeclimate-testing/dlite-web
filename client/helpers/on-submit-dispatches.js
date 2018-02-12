@@ -33,11 +33,11 @@ export const useAPI = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();
     dispatch(postData(stateProps.application))
-    .then(
+    .then((res) => {
       ownProps.history.push(
-        nextPath('summary', stateProps.server)
+        nextPath('summary', res)
       )
-    )
+    })
   };
 };
 

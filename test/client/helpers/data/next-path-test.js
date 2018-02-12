@@ -262,16 +262,12 @@ describe('Data helpers for determining next path from current page and props', f
   describe('#conclusion section', function() {
     describe('#summary', function() {
       it('goes to application prep page if server apiStatus is successful', function() {
-        let server = {
-          apiStatus: 'success'
-        };
-        assert.equal(summary(server), 'appointmentPreparation');
+        let res = 'success'
+        assert.equal(summary(res), 'appointmentPreparation');
       });
       it('goes to summary page if server apiStatus is unsuccessful', function() {
-        let server = {
-          apiStatus: 'error'
-        };
-        assert.equal(summary(server), 'summary');
+        let res = 'api-fail'
+        assert.equal(summary(res), 'summary');
       });
     });
   });
