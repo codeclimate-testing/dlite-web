@@ -5,8 +5,8 @@ const assert             = require('assert');
 const env                = require('../../../support/env');
 const dbHelper           = require('../../../support/db-helper');
 const dataHelper         = require('../../../support/data-helper');
-const createApplication  = require('../../../../server/models/db/create-application');
-const getApplication     = require('../../../../server/models/db/get-application');
+const post               = require('../../../../server/db/models/post-application');
+const getApplication     = require('../../../../server/db/models/get-application');
 
 describe('getApplication', function() {
   let application;
@@ -32,7 +32,7 @@ describe('getApplication', function() {
 
     beforeEach(function(done) {
       data = dataHelper.fakeRecords();
-      createApplication(data)
+      post.saveApplication(data)
       .then(() => { done(); })
       .catch(done);
     });
@@ -125,7 +125,7 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.emails[0].id);
         assert.equal(records.emails[0].application_id, data.application.id);
-        assert.equal(records.emails[0].address, data.emails[0].address);
+        assert.equal(records.emails[0].address, data.emails.address);
         done();
       })
       .catch(done);
@@ -136,7 +136,7 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.phone_numbers[0].id);
         assert.equal(records.phone_numbers[0].application_id, data.application.id);
-        assert.equal(records.phone_numbers[0].number, data.phone_numbers[0].number);
+        assert.equal(records.phone_numbers[0].number, data.phone_numbers.number);
         done();
       })
       .catch(done);
@@ -147,8 +147,8 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.organ_donations.id);
         assert.equal(records.organ_donations.application_id, data.application.id);
-        assert.equal(records.organ_donations.donating_organs, data.organ_donations[0].donating_organs);
-        assert.equal(records.organ_donations.donating_money, data.organ_donations[0].donating_money);
+        assert.equal(records.organ_donations.donating_organs, data.organ_donations.donating_organs);
+        assert.equal(records.organ_donations.donating_money, data.organ_donations.donating_money);
       })
       .then(done)
       .catch(done);
@@ -159,9 +159,21 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.card_histories[0].id);
         assert.equal(records.card_histories[0].application_id, data.application.id);
-        assert.equal(records.card_histories[0].number, data.card_histories[0].number);
-        assert.equal(records.card_histories[0].issuing_entity, data.card_histories[0].issuing_entity);
-        assert.equal(records.card_histories[0].date_description, data.card_histories[0].date_description);
+        assert.equal(records.card_histories[0].number, data.card_histories.number);
+        assert.equal(records.card_histories[0].issuing_entity, data.card_histories.issuing_entity);
+        assert.equal(records.card_histories[0].date_description, data.card_histories.date_description);
+      })
+      .then(done)
+      .catch(done);
+    });
+
+    it('returns renewal card', function(done) {
+      getApplication(data.application.id)
+      .then((records) => {
+        assert(records.renewal_card[0].id);
+        assert.equal(records.renewal_card[0].application_id, data.application.id);
+        assert.equal(records.renewal_card[0].number, data.renewal_card.number);
+        assert.equal(records.renewal_card[0].date, data.renewal_card.date);
       })
       .then(done)
       .catch(done);
@@ -187,7 +199,7 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.medical_histories[0].id);
         assert.equal(records.medical_histories[0].application_id, data.application.id);
-        assert.equal(records.medical_histories[0].description, data.medical_histories[0].description);
+        assert.equal(records.medical_histories[0].description, data.medical_histories.description);
       })
       .then(done)
       .catch(done);
@@ -198,8 +210,8 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.license_issues[0].id);
         assert.equal(records.license_issues[0].application_id, data.application.id);
-        assert.equal(records.license_issues[0].description, data.license_issues[0].description);
-        assert.equal(records.license_issues[0].date_description, data.license_issues[0].date_description);
+        assert.equal(records.license_issues[0].description, data.license_issues.description);
+        assert.equal(records.license_issues[0].date_description, data.license_issues.date_description);
       })
       .then(done)
       .catch(done);
@@ -210,9 +222,9 @@ describe('getApplication', function() {
       .then((records) => {
         assert(records.veterans_info.id);
         assert.equal(records.veterans_info.application_id, data.application.id);
-        assert.equal(records.veterans_info.has_requested_information, data.veterans_info[0].has_requested_information);
-        assert.equal(records.veterans_info.labeling, data.veterans_info[0].labeling);
-        assert.equal(records.veterans_info.previously_designated, data.veterans_info[0].previously_designated);
+        assert.equal(records.veterans_info.has_requested_information, data.veterans_info.has_requested_information);
+        assert.equal(records.veterans_info.labeling, data.veterans_info.labeling);
+        assert.equal(records.veterans_info.previously_designated, data.veterans_info.previously_designated);
       })
       .then(done)
       .catch(done);
@@ -224,15 +236,15 @@ describe('getApplication', function() {
         assert(records.voting_registrations.id);
         assert.equal(records.voting_registrations.application_id, data.application.id);
 
-        assert.equal(records.voting_registrations.is_citizen, data.voting_registrations[0].is_citizen);
-        assert.equal(records.voting_registrations.is_eligible, data.voting_registrations[0].is_eligible);
-        assert.equal(records.voting_registrations.type, data.voting_registrations[0].type);
-        assert.equal(records.voting_registrations.opted_out, data.voting_registrations[0].opted_out);
-        assert.equal(records.voting_registrations.is_preregistering, data.voting_registrations[0].is_preregistering);
-        assert.equal(records.voting_registrations.party, data.voting_registrations[0].party);
-        assert.equal(records.voting_registrations.language, data.voting_registrations[0].language);
-        assert.equal(records.voting_registrations.vote_by_mail, data.voting_registrations[0].vote_by_mail);
-        assert.equal(records.voting_registrations.should_contact, data.voting_registrations[0].should_contact);
+        assert.equal(records.voting_registrations.is_citizen, data.voting_registrations.is_citizen);
+        assert.equal(records.voting_registrations.is_eligible, data.voting_registrations.is_eligible);
+        assert.equal(records.voting_registrations.type, data.voting_registrations.type);
+        assert.equal(records.voting_registrations.opted_out, data.voting_registrations.opted_out);
+        assert.equal(records.voting_registrations.is_preregistering, data.voting_registrations.is_preregistering);
+        assert.equal(records.voting_registrations.party, data.voting_registrations.party);
+        assert.equal(records.voting_registrations.language, data.voting_registrations.language);
+        assert.equal(records.voting_registrations.vote_by_mail, data.voting_registrations.vote_by_mail);
+        assert.equal(records.voting_registrations.should_contact, data.voting_registrations.should_contact);
       })
       .then(done)
       .catch(done);

@@ -50,5 +50,9 @@ module.exports = function getApplication(id) {
   ]).then(() => {
     if (!aggregate.application) { return undefined; }
     return aggregate;
+  })
+  .catch(function(err) {
+    console.error('GET APPLICATION ERROR',err);
+    return err;
   });
 };

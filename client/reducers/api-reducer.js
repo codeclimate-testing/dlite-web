@@ -7,7 +7,10 @@ const apiReducer = (state, action) => {
     case 'GET_DATA_ERROR':
       return state;
     case 'POST_DATA_SUCCESS':
-      return Object.assign({}, state, action.payload.data);
+      let applicationID               = action.payload.data.application_id;
+      let applicationState            = Object.assign({}, state);
+      applicationState.application.id = applicationID;
+      return applicationState;
     case 'POST_DATA_ERROR':
       return state;
     default:

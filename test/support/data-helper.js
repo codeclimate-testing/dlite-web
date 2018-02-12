@@ -1,7 +1,7 @@
 'use strict';
 
 const uuid = require('uuid/v1');
-const parse = require('../../server/models/client-data-parser');
+const parse = require('../../server/db/parsers/client-to-server-parser');
 
 function fakeClientData() {
   return {
@@ -91,8 +91,8 @@ function fakeClientData() {
       'hasSocialSecurity': 'Yes'
     },
     'organDonation': {
-      'donate': 'Yes',
-      'contribute': 'No'
+      'donateOrgan': 'Yes',
+      'donateMoney': 'No'
     },
     'licenseAndIdHistory': {
       'DLIDNumber': 'DL12345',

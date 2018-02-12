@@ -36,6 +36,9 @@ function hasDL(cardType) {
   return cardType.IDDL.indexOf('DL') > -1;
 }
 
+function getSingleCardType(cardType) {
+  return cardType.IDDL[0];
+}
 module.exports = {
   getNew,
   getReplace,
@@ -45,6 +48,7 @@ module.exports = {
   hasNewID,
   hasID,
   hasNewDL,
-  hasDL
+  hasDL,
+  getSingleCardType
 };
 

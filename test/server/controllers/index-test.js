@@ -6,7 +6,6 @@ const uuidv1    = require('uuid/v1');
 
 const dbHelper      = require('../../support/db-helper');
 const dataHelper    = require('../../support/data-helper');
-const db            = require('../../../server/db/connect')();
 const ctrl          = require('../../../server/controllers');
 
 describe('Testing application APIs for basic CRUD operations', () => {
@@ -35,19 +34,24 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
   describe('create new application', (done) => {
     before((done) => {
-      //Create request and response objects
+      //Create request object
       _request = httpMocks.createRequest({
         method: 'POST',
         url: '/api/application',
         body: application
       });
-      _response = httpMocks.createResponse({eventEmitter: require('events').EventEmitter});
-
-      const createApplication = ctrl.createApplication;
+      //create response objects
+      _response = httpMocks.createResponse({
+        eventEmitter: require('events').EventEmitter
+      });
+      //Call controller function
+      const createApplication = ctrl.postApplication;
       createApplication(_request, _response);
+
       _response.on('end', () => {
         done();
       })
+
     });
 
     it('responds with http status 200', (done) => {
@@ -57,7 +61,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
     it('should post application info', (done) => {
       const _data = _response._getData();
-      assert.deepEqual(application, _data.application);
+      assert.equal(application.id, _data.application_id);
       done();
     });
   });

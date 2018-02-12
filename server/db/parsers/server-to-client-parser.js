@@ -1,8 +1,8 @@
 'use strict';
 
-const parserHelper         = require('../helpers/data-parser');
-const voterChoiceConverter = require('./parsers/voter-choice-converter');
-const defaultClientState   = require('../helpers/client-default-state');
+const parserHelper         = require('../../helpers/data-parser');
+const voterChoiceConverter = require('../../helpers/voter-choice');
+const defaultClientState   = require('../../helpers/client-default-state');
 
 function parse(data) {
   if(!data) {
@@ -151,8 +151,8 @@ function getSocialSecurity(application) {
 
 function getOrganDonations(organ_donations) {
   return {
-    donate: parserHelper.boolToStr(organ_donations.donating_organs),
-    contribute: parserHelper.boolToStr(organ_donations.donating_money)
+    donateOrgan: parserHelper.boolToStr(organ_donations.donating_organs),
+    donateMoney: parserHelper.boolToStr(organ_donations.donating_money)
   };
 }
 
@@ -260,19 +260,14 @@ function getLicenseIssues(license_issues) {
 
 function getVeteransService(veterans_info) {
   if(veterans_info){
-    let designation = 'No';
     let label = 'No';
-    if(veterans_info.previously_designated === 'Yes') {
-      designation = 'Yes';
-    }
     if(veterans_info.labeling === 'add'){
       label = 'Yes';
     }
-
     return {
       isVeteran:            'Yes',
       receiveBenefits:      parserHelper.boolToStr(veterans_info.has_requested_information),
-      previouslyDesignated: designation,
+      previouslyDesignated: parserHelper.boolToStr(veterans_info.previously_designated),
       veteransIdentifier:   label
     };
   }
@@ -333,7 +328,7 @@ function getOptedOut(voting_registrations) {
   let optOut      = '';
   let opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
   let type       = voting_registrations.type;
-  return voterChoiceConverter.recordToUi({
+  return voterChoiceConverter.DBToClientMapping({
     opted_out: opted_out,
     type: type
   });

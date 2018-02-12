@@ -1,7 +1,7 @@
 'use strict';
 
 const assert            = require('assert');
-const cardTypeParser    = require('../../../server/models/parsers/card-type');
+const cardTypeParser    = require('../../../server/helpers/card-type');
 const dataHelper        = require('../../support/data-helper');
 
 let cardType;
@@ -128,4 +128,17 @@ describe('cardType', function() {
       assert.equal(cardTypeParser.hasDL(cardType), true);
     });
   });
+
+  describe('#getSingleCardType', function() {
+    it('returns DL when only DL is selected', function() {
+      cardType = { IDDL: ['DL'], ID: {action: 'new'}, DL: {action: ''}, youthIDInstead: ''};
+      assert.equal(cardTypeParser.getSingleCardType(cardType), 'DL');
+    });
+
+    it('returns ID when only ID is selected', function() {
+      cardType = { IDDL: ['ID'], ID: {action: 'new'}, DL: {action: ''}, youthIDInstead: ''};
+      assert.equal(cardTypeParser.getSingleCardType(cardType), 'ID');
+    });
+  });
+
 });

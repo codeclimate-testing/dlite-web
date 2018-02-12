@@ -2,10 +2,10 @@
 
 const assert             = require('assert');
 
-const dataHelper         = require('../../support/data-helper');
-const parse              = require('../../../server/models/server-data-parser');
-const createApplication  = require('../../../server/models/db/create-application');
-const getApplication     = require('../../../server/models/db/get-application');
+const dataHelper         = require('../../../support/data-helper');
+const parse              = require('../../../../server/db/parsers/server-to-client-parser');
+const post               = require('../../../../server/db/models/post-application');
+const getApplication     = require('../../../../server/db/models/get-application');
 
 describe('server data parser', function() {
 
@@ -15,7 +15,7 @@ describe('server data parser', function() {
 
     beforeEach(function(done) {
       data = dataHelper.fakeRecords();
-      createApplication(data)
+      post.saveApplication(data)
       .then(() => { done(); })
       .catch(done);
     });

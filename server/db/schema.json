@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 14,
-    "constraints": 15,
-    "tables": 16,
-    "columns": 82
+    "sequences": 15,
+    "constraints": 16,
+    "tables": 17,
+    "columns": 86
   },
   "tables": {
     "addresses": {
@@ -236,40 +236,6 @@
         }
       }
     },
-    "renewal_card": {
-      "table_schema": "public",
-      "table_name": "renewal_card",
-      "obj_description": null,
-      "columns": {
-        "application_id": {
-          "table_schema": "public",
-          "table_name": "renewal_card",
-          "column_name": "application_id",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "character varying",
-          "col_description": null
-        },
-        "number": {
-          "table_schema": "public",
-          "table_name": "renewal_card",
-          "column_name": "number",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "character varying",
-          "col_description": null
-        },
-        "date": {
-          "table_schema": "public",
-          "table_name": "renewal_card",
-          "column_name": "date",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "character varying",
-          "col_description": null
-        }
-      }
-    },
     "card_histories": {
       "table_schema": "public",
       "table_name": "card_histories",
@@ -399,40 +365,6 @@
         }
       }
     },
-    "license_classes": {
-      "table_schema": "public",
-      "table_name": "license_classes",
-      "obj_description": null,
-      "columns": {
-        "id": {
-          "table_schema": "public",
-          "table_name": "license_classes",
-          "column_name": "id",
-          "column_default": "nextval('license_classes_seq'::regclass)",
-          "is_nullable": false,
-          "data_type": "integer",
-          "col_description": null
-        },
-        "card_id": {
-          "table_schema": "public",
-          "table_name": "license_classes",
-          "column_name": "card_id",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "integer",
-          "col_description": null
-        },
-        "type": {
-          "table_schema": "public",
-          "table_name": "license_classes",
-          "column_name": "type",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "character varying",
-          "col_description": null
-        }
-      }
-    },
     "emails": {
       "table_schema": "public",
       "table_name": "emails",
@@ -531,6 +463,40 @@
           "column_default": null,
           "is_nullable": true,
           "data_type": "integer",
+          "col_description": null
+        }
+      }
+    },
+    "license_classes": {
+      "table_schema": "public",
+      "table_name": "license_classes",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "id",
+          "column_default": "nextval('license_classes_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "card_id": {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "card_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "type": {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
           "col_description": null
         }
       }
@@ -732,6 +698,49 @@
         }
       }
     },
+    "renewal_card": {
+      "table_schema": "public",
+      "table_name": "renewal_card",
+      "obj_description": null,
+      "columns": {
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "number": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "date": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "date",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "id": {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "id",
+          "column_default": "nextval('renewal_card_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        }
+      }
+    },
     "veterans_info": {
       "table_schema": "public",
       "table_name": "veterans_info",
@@ -779,7 +788,7 @@
           "column_name": "previously_designated",
           "column_default": null,
           "is_nullable": true,
-          "data_type": "character varying",
+          "data_type": "boolean",
           "col_description": null
         }
       }
@@ -956,22 +965,6 @@
         }
       ]
     },
-    "license_classes": {
-      "id": [
-        {
-          "table_schema": "public",
-          "table_name": "license_classes",
-          "column_name": "id",
-          "constraint_schema": "public",
-          "constraint_name": "license_classes_pkey",
-          "constraint_type": "PRIMARY KEY",
-          "check_clause": null,
-          "referenced_schema": "public",
-          "referenced_table": "license_classes",
-          "referenced_column": "id"
-        }
-      ]
-    },
     "cards": {
       "id": [
         {
@@ -1016,6 +1009,22 @@
           "check_clause": null,
           "referenced_schema": "public",
           "referenced_table": "knex_migrations",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "license_classes": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "license_classes",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "license_classes_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "license_classes",
           "referenced_column": "id"
         }
       ]
@@ -1100,6 +1109,22 @@
         }
       ]
     },
+    "renewal_card": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "renewal_card",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "renewal_card_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "renewal_card",
+          "referenced_column": "id"
+        }
+      ]
+    },
     "veterans_info": {
       "id": [
         {
@@ -1178,17 +1203,6 @@
         "increment": "1"
       }
     },
-    "license_classes": {
-      "id": {
-        "table_schema": "public",
-        "table_name": "voting_registrations",
-        "column_name": "id",
-        "sequence_name": "voting_registrations_id_seq",
-        "start_value": "1",
-        "minimum_value": "1",
-        "increment": "1"
-      }
-    },
     "emails": {
       "id": {
         "table_schema": "public",
@@ -1201,6 +1215,17 @@
       }
     },
     "knex_migrations": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "license_classes": {
       "id": {
         "table_schema": "public",
         "table_name": "voting_registrations",
@@ -1256,6 +1281,17 @@
       }
     },
     "previous_names": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "renewal_card": {
       "id": {
         "table_schema": "public",
         "table_name": "voting_registrations",

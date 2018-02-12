@@ -1,8 +1,8 @@
 'use strict';
 
-const parserHelper          = require('../helpers/data-parser');
-const voterChoiceConverter  = require('./parsers/voter-choice-converter');
-const cardTypeParser        = require('./parsers/card-type');
+const parserHelper          = require('../../helpers/data-parser');
+const voterChoiceConverter  = require('../../helpers/voter-choice');
+const cardTypeParser        = require('../../helpers/card-type');
 
 function parse(data) {
   return Object.assign(
@@ -13,7 +13,7 @@ function parse(data) {
     { phone_numbers:          extractPhoneNumber(data) },
     { organ_donations:        extractOrganDonation(data) },
     { card_histories:         extractCardHistories(data) },
-    { renewal_card:           extractCardInfo(data) },
+    { renewal_card:           extractExistingCardInfo(data) },
     { previous_names:         extractPreviousNames(data) },
     { medical_histories:      extractMedicalHistories(data) },
     { license_issues:         extractLicenseIssues(data) },
@@ -29,15 +29,10 @@ function extractApplication(data) {
   let legalName         = data.legalName || {};
   let heightWeight      = data.traitsHeightWeight || {};
   let physicalTraits    = data.physicalTraits || {};
-  let dob               = null;
-  let socialSecurity    = null;
+  let dob               = new Date(parserHelper.createDateString(data.dateOfBirth));
+  let socialSecurity    = 'No';
 
-
-  if(data.dateOfBirth.month && data.dateOfBirth.day && data.dateOfBirth.year){
-    dob = new Date(parserHelper.createDateString(data.dateOfBirth));
-  }
-
-  if(data.socialSecurity && data.socialSecurity.hasSocialSecurity === 'Yes'){
+  if(data.socialSecurity.hasSocialSecurity === 'Yes'){
     let _socialSecurity = data.socialSecurity;
     socialSecurity = _socialSecurity.part1+'-'+_socialSecurity.part2+'-'+_socialSecurity.part3;
   }
@@ -52,15 +47,16 @@ function extractApplication(data) {
     date_of_birth:            dob,
     hair_color:               physicalTraits.hairColor,
     eye_color:                physicalTraits.eyeColor,
-    height_feet:              heightWeight.heightFeet,
-    height_inches:            heightWeight.heightInches,
-    weight:                   heightWeight.weight,
     sex:                      physicalTraits.sex,
+    height_feet:              heightWeight.heightFeet ? heightWeight.heightFeet : 0,
+    height_inches:            heightWeight.heightInches ? heightWeight.heightInches : 0,
+    weight:                   heightWeight.weight ? heightWeight.weight : 0,
     social_security_number:   socialSecurity
   };
 }
 
 function extractAddresses(data) {
+  if(data.address.home.street_1 === '') { return null; }
   return [
     {
       application_id:     data.id,
@@ -84,69 +80,77 @@ function extractAddresses(data) {
 }
 
 function extractEmail(data) {
-  return [{
-    application_id:   data.id,
-    address:          data.contactMethods.emailAddress
-  }];
+  let email = data.contactMethods.emailAddress;
+  if(email) {
+    return {
+      application_id:   data.id,
+      address:          email
+    };
+  }
+  return null;
 }
 
 function extractPhoneNumber(data) {
-  return [{
-    application_id:   data.id,
-    number:           data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3
-  }];
+  if (data.contactMethods.phoneNumber1 || data.contactMethods.phoneNumber2 || data.contactMethods.phoneNumber3) {
+    return {
+      application_id:   data.id,
+      number:           data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3
+    };
+  }
+  return null;
 }
 
 function extractOrganDonation(data) {
-  return [{
+  if(data.organDonation.donateOrgan === '' || data.organDonation.donateMoney === '') { return null; }
+  return {
     application_id:   data.id,
-    donating_organs:  parserHelper.strToBool(data.organDonation.donate),
-    donating_money:   parserHelper.strToBool(data.organDonation.contribute)
-  }];
+    donating_organs:  parserHelper.strToBool(data.organDonation.donateOrgan),
+    donating_money:   parserHelper.strToBool(data.organDonation.donateMoney)
+  };
 }
 
 function extractCardHistories(data) {
   if(data.licenseAndIdHistory.isIssued === 'Yes'){
-    let _date = parserHelper.createDateString(data.licenseAndIdHistory);
-    return [{
+    let dateString = parserHelper.createDateString(data.licenseAndIdHistory);
+    return {
       application_id:   data.id,
       number:           data.licenseAndIdHistory.DLIDNumber,
       issuing_entity:   data.licenseAndIdHistory.issuedBy,
-      date_description: _date,
-    }];
+      date_description: dateString,
+    };
   }
   else {
     return null;
   }
 }
 
-function extractCardInfo(data) {
+function extractExistingCardInfo(data) {
   if (!cardTypeParser.needCurrentCardInfo(data.cardType)) { return null; }
-  let _date = parserHelper.createDateString(data.currentCardInfo);
+  let dateString = parserHelper.createDateString(data.currentCardInfo);
   return {
     application_id:   data.id,
     number:           data.currentCardInfo.number,
-    date:             _date
+    date:             dateString
   };
-};
+}
 
 function extractPreviousNames(data) {
-  let _previousNames  = data.namesHistory;
-  let _names          = [];
-  if( _previousNames.hasUsedPreviousNames === 'Yes') {
-    let tokens = _previousNames.previousNames.split(',');
+  let previousNames  = data.namesHistory;
+  let names          = [];
+  if( previousNames.hasUsedPreviousNames === 'Yes') {
+    let tokens = previousNames.previousNames.split(',');
     tokens.forEach(function (token){
       token = token.trim();
       if(token){
-        _names.push(
+        names.push(
           {
-            application_id:   data.id,
-            name:             token
+            application_id: data.id,
+            name:           token
           }
         );
       }
     });
-    return _names;
+    return names;
   }
   else {
     return null;
@@ -155,10 +159,10 @@ function extractPreviousNames(data) {
 
 function extractMedicalHistories(data) {
   if(data.medicalHistory.hasMedicalCondition === 'Yes') {
-    return [{
+    return {
       application_id:   data.id,
       description:      data.medicalHistory.medicalInfo
-    }];
+    };
   }
   else {
     return null;
@@ -167,12 +171,12 @@ function extractMedicalHistories(data) {
 
 function extractLicenseIssues(data) {
   if( data.licenseIssues.isSuspended === 'Yes'){
-    let _date = parserHelper.createDateString(data.licenseIssues);
-    return [{
+    let dateString = parserHelper.createDateString(data.licenseIssues);
+    return {
       application_id:     data.id,
       description:        data.licenseIssues.reason,
-      date_description:   _date
-    }];
+      date_description:   dateString
+    };
   }
   else{
     return null;
@@ -181,20 +185,21 @@ function extractLicenseIssues(data) {
 
 function extractVeteransInfo(data) {
   if(data.veteransService.isVeteran === 'Yes'){
-    let designation = null;
+
     let label = null;
-    if(data.veteransService.previouslyDesignated === 'Yes') {
-      designation = 'Yes';
-    }
-    if(data.veteransService.veteransIdentifier === 'Yes'){
+    if(data.veteransService.veteransIdentifier === 'Yes') {
       label = 'add';
     }
-    return [{
+    if(data.veteransService.previouslyDesignated === 'Yes' && data.veteransService.veteransIdentifier === 'No' ) {
+      label = 'remove';
+    }
+
+    return {
       application_id:               data.id,
       has_requested_information:    parserHelper.strToBool(data.veteransService.receiveBenefits),
-      previously_designated:        designation,
+      previously_designated:        parserHelper.strToBool(data.veteransService.previouslyDesignated),
       labeling:                     label
-    }];
+    };
   }
   else {
     return null;
@@ -203,8 +208,9 @@ function extractVeteransInfo(data) {
 }
 
 function extractVotingRegistrations(data) {
-  const voterChoice = voterChoiceConverter.uiToRecord(data.optOut);
-  return [{
+  if(data.citizenStatus === '' || data.eligibilityRequirements === '' || data.optOut === '') { return null; }
+  const voterChoice = voterChoiceConverter.clientToDBMapping(data.optOut);
+  return {
     application_id:     data.id,
     is_citizen:         parserHelper.blankIsDecline(data.citizenStatus),
     is_eligible:        parserHelper.blankIsDecline(data.eligibilityRequirements),
@@ -215,7 +221,7 @@ function extractVotingRegistrations(data) {
     language:           data.language.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
     should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)
-  }];
+  };
 }
 
 function extractCardTypes(data) {
@@ -248,24 +254,23 @@ function extractCardOptions(data) {
     });
   });
 
-  ////////// CHANGES AND REPLACEMENTS ///////////
+  ////////// CHANGES(UPDATE or CORRECT) AND REPLACEMENTS ///////////
   if (cardTypeParser.getChange(data.cardType)){
     const correctOrUpdate = data.cardChanges.correctOrUpdate;
     const changes = data.cardChanges.sections.join('_');
 
     cardOptions.push({
-      type:               data.cardType.IDDL[0],
+      type:               cardTypeParser.getSingleCardType(data.cardType),
       option_type:        'modification',
       option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
     });
   } else if (cardTypeParser.getReplace(data.cardType)) {
     cardOptions.push({
-      type:               data.cardType.IDDL[0],
+      type:               cardTypeParser.getSingleCardType(data.cardType),
       option_type:        'modification',
       option_value:       'replace-' + data.cardReplacement.reason
     });
   }
-
 
   ///////// REDUCED FEE ////////////////
   if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
@@ -274,7 +279,7 @@ function extractCardOptions(data) {
       option_type:        'modification',
       option_value:       'reduced-fee-has-form'
     })
-  } else if(data.reducedFee.ID === 'Yes' && !data.reducedFee.form === 'Yes') {
+  } else if(data.reducedFee.ID === 'Yes' && data.reducedFee.form !== 'Yes') {
     cardOptions.push({
       type:               'ID',
       option_type:        'modification',
@@ -284,12 +289,8 @@ function extractCardOptions(data) {
 
   ////////// REAL ID ///////////////
   if(data.realID.getRealID === 'Yes'){
-    var hasID = cardTypeParser.hasID(data.cardType);
-    var hasDL = cardTypeParser.hasDL(data.cardType);
-    var designation = hasID && hasDL ? data.realID.realIdDesignation : data.cardType.IDDL[0];
-
     cardOptions.push({
-      type:               designation,
+      type:               data.realID.realIdDesignation,
       option_type:        'modification',
       option_value:       'real-id'
     });
@@ -309,18 +310,17 @@ function extractCardOptions(data) {
 
 function extractLicenseClasses(data) {
   let license_classes = [];
-  function pushToLicenseClasses(item) {
+
+  data.licenseType.endorsement.forEach(function(item) {
     license_classes.push({
       type: item
     });
-  };
-
-  data.licenseType.endorsement.forEach(function(item) {
-    pushToLicenseClasses(item);
   });
 
   data.licenseType.type.forEach(function(item) {
-    pushToLicenseClasses(item);
+    license_classes.push({
+      type: item
+    });
   });
 
   return license_classes;

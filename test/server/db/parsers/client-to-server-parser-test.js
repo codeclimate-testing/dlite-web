@@ -2,57 +2,12 @@
 
 const assert             = require('assert');
 
-const env                = require('../../support/env');
-const dataHelper         = require('../../support/data-helper');
-const parse              = require('../../../server/models/client-data-parser');
-const parserHelper       = require('../../../server/helpers/data-parser');
+const env                = require('../../../support/env');
+const dataHelper         = require('../../../support/data-helper');
+const parse              = require('../../../../server/db/parsers/client-to-server-parser');
+const parserHelper       = require('../../../../server/helpers/data-parser');
 
 describe('client data parser', function() {
-  describe('#update/correct client data parser', function() {
-    let data, parsedData;
-
-    beforeEach(function() {
-      data = dataHelper.updateCorrect();
-      parsedData = parse(data);
-    });
-
-    it('correctly extracts cards', function() {
-      let cards = parsedData.cards;
-      assert.equal(cards[0].application_id, data.id);
-      assert.equal(cards[0].type, 'DL');
-    });
-
-    it('correctly extracts card options', function() {
-      let options = parsedData.card_options;
-      assert.equal(options[0].option_type, 'action');
-      assert.equal(options[0].option_value, 'change');
-      assert.equal(options[1].option_type, 'modification');
-      assert.equal(options[1].option_value, 'change-correct-name_other-I dislike my photograph');
-    });
-  });
-
-  describe('#replace damaged DL', function() {
-    let data, parsedData;
-
-    beforeEach(function() {
-      data = dataHelper.replaceDamaged();
-      parsedData = parse(data);
-    });
-
-    it('correctly extracts cards', function() {
-      let cards = parsedData.cards;
-      assert.equal(cards[0].application_id, data.id);
-      assert.equal(cards[0].type, 'DL');
-    });
-
-    it('correctly extracts card options', function() {
-      let options = parsedData.card_options;
-      assert.equal(options[0].option_type, 'action');
-      assert.equal(options[0].option_value, 'replace');
-      assert.equal(options[1].option_type, 'modification');
-      assert.equal(options[1].option_value, 'replace-damaged');
-    });
-  });
 
   describe('#get ID and DL default story', function() {
     let data, parsedData;
@@ -133,26 +88,26 @@ describe('client data parser', function() {
     });
 
     it('correctly extracts the email', function() {
-      let email = parsedData.emails[0];
+      let email = parsedData.emails;
       assert.equal(email.application_id, data.id);
       assert.equal(email.address, data.contactMethods.emailAddress);
     });
 
     it('correctly extracts the phone number', function() {
-      let phoneNumber = parsedData.phone_numbers[0];
+      let phoneNumber = parsedData.phone_numbers;
       assert.equal(phoneNumber.application_id, data.id);
       assert.equal(phoneNumber.number, data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3);
     });
 
     it('correctly extracts the organ donations', function() {
-      let organDonations = parsedData.organ_donations[0];
+      let organDonations = parsedData.organ_donations;
       assert.equal(organDonations.application_id, data.id);
-      assert.equal(organDonations.donating_organs, parserHelper.strToBool(data.organDonation.donate));
-      assert.equal(organDonations.donating_money, parserHelper.strToBool(data.organDonation.contribute));
+      assert.equal(organDonations.donating_organs, parserHelper.strToBool(data.organDonation.donateOrgan));
+      assert.equal(organDonations.donating_money, parserHelper.strToBool(data.organDonation.donateMoney));
     });
 
     it('correctly extracts the card histories', function() {
-      let cardHistories = parsedData.card_histories[0];
+      let cardHistories = parsedData.card_histories;
       let _date = parserHelper.createDateString(data.licenseAndIdHistory);
       assert.equal(cardHistories.application_id, data.id);
       assert.equal(cardHistories.number, data.licenseAndIdHistory.DLIDNumber);
@@ -178,13 +133,13 @@ describe('client data parser', function() {
     });
 
     it('correctly extracts the medical history', function() {
-      let medicalHistory = parsedData.medical_histories[0];
+      let medicalHistory = parsedData.medical_histories;
       assert.equal(medicalHistory.application_id, data.id);
       assert.equal(medicalHistory.description, data.medicalHistory.medicalInfo);
     });
 
     it('correctly extracts the license issues', function() {
-      let licenseIssues = parsedData.license_issues[0];
+      let licenseIssues = parsedData.license_issues;
       let _date = parserHelper.createDateString(data.licenseIssues);
       assert.equal(licenseIssues.application_id, data.id);
       assert.equal(licenseIssues.description, data.licenseIssues.reason);
@@ -192,7 +147,7 @@ describe('client data parser', function() {
     });
 
     it('correctly extracts the veterans info', function() {
-      let veteransInfo = parsedData.veterans_info[0];
+      let veteransInfo = parsedData.veterans_info;
       let _label = null;
       let previously_designated = null;
       if(data.veteransService.veteransIdentifier){
@@ -203,12 +158,12 @@ describe('client data parser', function() {
       }
       assert.equal(veteransInfo.application_id, data.id);
       assert.equal(veteransInfo.has_requested_information, parserHelper.strToBool(data.veteransService.receiveBenefits));
-      assert.equal(veteransInfo.previously_designated, previously_designated);
+      assert.equal(veteransInfo.previously_designated, parserHelper.strToBool(previously_designated));
       assert.equal(veteransInfo.labeling, _label);
     });
 
     it('correctly extracts the voting registrations', function() {
-      let votingReg = parsedData.voting_registrations[0];
+      let votingReg = parsedData.voting_registrations;
       assert.equal(votingReg.application_id, data.id);
       assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.citizenStatus));
       assert.equal(votingReg.is_eligible, parserHelper.strToBool(data.eligibilityRequirements));
@@ -225,7 +180,7 @@ describe('client data parser', function() {
       data.citizenStatus = 'decline';
       data.eligibilityRequirements = 'decline';
       parsedData = parse(data);
-      let votingReg = parsedData.voting_registrations[0];
+      let votingReg = parsedData.voting_registrations;
       assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.citizenStatus));
       assert.equal(votingReg.is_citizen, 'decline');
       assert.equal(votingReg.is_eligible, 'decline');
@@ -234,8 +189,55 @@ describe('client data parser', function() {
     it('saves other political party that has been typed in', function() {
       data.politicalPartyChoose.otherParty = 'some other one';
       data.politicalPartyChoose.politicalPartyChoose = 'Other';
-      parsedData = parse(data).voting_registrations[0];
+      parsedData = parse(data).voting_registrations;
       assert.equal(parsedData.party, data.politicalPartyChoose.otherParty);
     });
   });
+
+  describe('#update/correct client data parser', function() {
+    let data, parsedData;
+
+    beforeEach(function() {
+      data = dataHelper.updateCorrect();
+      parsedData = parse(data);
+    });
+
+    it('correctly extracts cards', function() {
+      let cards = parsedData.cards;
+      assert.equal(cards[0].application_id, data.id);
+      assert.equal(cards[0].type, 'DL');
+    });
+
+    it('correctly extracts card options', function() {
+      let options = parsedData.card_options;
+      assert.equal(options[0].option_type, 'action');
+      assert.equal(options[0].option_value, 'change');
+      assert.equal(options[1].option_type, 'modification');
+      assert.equal(options[1].option_value, 'change-correct-name_other-I dislike my photograph');
+    });
+  });
+
+  describe('#replace damaged DL', function() {
+    let data, parsedData;
+
+    beforeEach(function() {
+      data = dataHelper.replaceDamaged();
+      parsedData = parse(data);
+    });
+
+    it('correctly extracts cards', function() {
+      let cards = parsedData.cards;
+      assert.equal(cards[0].application_id, data.id);
+      assert.equal(cards[0].type, 'DL');
+    });
+
+    it('correctly extracts card options', function() {
+      let options = parsedData.card_options;
+      assert.equal(options[0].option_type, 'action');
+      assert.equal(options[0].option_value, 'replace');
+      assert.equal(options[1].option_type, 'modification');
+      assert.equal(options[1].option_value, 'replace-damaged');
+    });
+  });
+
 });
