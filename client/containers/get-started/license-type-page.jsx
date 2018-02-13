@@ -11,7 +11,7 @@ import { LicenseTypeValidator } from '../../helpers/validations';
 const Page = (props) => {
 
   let validations = new LicenseTypeValidator(props, props.validations);
-  let onSubmit    = handlers.navigateOrShowErrors('chooseLicenseClass', props, validations);
+  let onSubmit    = handlers.navigateOrShowErrors(props.name, props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
   return <Presentation

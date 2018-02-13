@@ -60,7 +60,7 @@ Feature: Save user data
     And I enter my medical conditions into the textarea
     When I click "Next" to continue
     Then I will be on the page to enter existing license and id
-    And I select exisiting DL/ID Yes
+    And I select existing DL/ID Yes
     And I enter my existing DL/ID card number
     And I enter the issuing state or country
     And I enter the date of DL/ID expiration
@@ -266,7 +266,7 @@ Feature: Save user data
     When I select No to having reportable medical history
     And I click "Next" to continue
     Then I will be on the page to enter existing license and id
-    When I select exisiting DL/ID Yes
+    When I select existing DL/ID Yes
     When I enter my existing DL/ID card number
     And I enter the issuing state or country
     And I enter the date of DL/ID expiration

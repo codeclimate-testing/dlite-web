@@ -59,6 +59,9 @@ const Home = () => {
         <LinkSection name='Conclusion'>
           { wrapGroup(linkData.conclusion) }
         </LinkSection>
+        <LinkSection name='Add DL'>
+          { wrapGroup(linkData.addCard) }
+        </LinkSection>
       </ul>
     </div>
   );

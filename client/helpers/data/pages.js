@@ -1,6 +1,9 @@
 'use strict';
-
-import {alicePath, iddlPath} from '../alice-path';
+import {
+  alicePath,
+  iddlPath,
+  addPath
+} from '../alice-path';
 import {
   chooseCardType,
   currentCardInfo,
@@ -282,9 +285,49 @@ const conclusion = [
   }
 ];
 
+const addCard = [
+  {
+    key: 'addWdywtdt',
+    description: 'what do you want to do with added card',
+    path: '/driver-license',
+    next: 'addLicenseClass'
+  },
+  {
+    key: 'addLicenseClass',
+    description: 'choose license class for added card',
+    path: '/driver-license/type',
+    next: 'addMedicalHistory'
+  },
+  {
+    key: 'addMedicalHistory',
+    description: 'add medical history for added card',
+    path: '/driver-license/medical-history',
+    next: 'addLicenseHistory'
+  },
+  {
+    key: 'addLicenseHistory',
+    description: 'add license history for added card',
+    path: '/driver-license/license-history',
+    next: 'addIssueHistory'
+  },
+  {
+    key: 'addIssueHistory',
+    description: 'add issue history for added card',
+    path: '/driver-license/issue-history',
+    next: 'summary'
+  }
+];
+
 const expand = (collection) => {
   return collection.map((item) => {
     let path = item.path.startsWith('/apply/') ? item.path : iddlPath(item.path);
+    return Object.assign({}, item, {path: path});
+  });
+};
+
+const expandAdd = (collection) => {
+  return collection.map((item) => {
+    let path = addPath(item.path);
     return Object.assign({}, item, {path: path});
   });
 };
@@ -295,6 +338,7 @@ export default {
   myHistory: expand(myHistory),
   organDonation: expand(organDonation),
   voterRegistration: expand(voterRegistration),
-  conclusion: expand(conclusion)
+  conclusion: expand(conclusion),
+  addCard: expandAdd(addCard)
 };
 

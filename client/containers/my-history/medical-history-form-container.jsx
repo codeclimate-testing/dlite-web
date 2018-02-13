@@ -10,7 +10,7 @@ import { MedicalValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
   let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
-  let onSubmit          = handlers.navigateOrShowErrors('medicalHistory', props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors(props.name, props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (

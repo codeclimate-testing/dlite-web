@@ -176,6 +176,29 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/my-history/medical', '.medical-history-form', done);
   });
 
+  world.when('I visit the page to add a DL', function(done){
+    navigateToPath('/add/driver-license', '.choose-card-action', done);
+  });
+  world.when('I visit the page to add license type', function(done) {
+    navigateToPath('/add/driver-license/type', 'license-type-form', done);
+  });
+
+  world.then('I will be on the page to add license type', function(done) {
+    assertOnPage('.license-type-form', /add\/driver-license\/type/, done);
+  });
+  world.then('I will be on the page to add a DL', function(done) {
+    assertOnPage('.choose-card-action', /add\/driver-license/, done);
+  });
+  world.then('I will be on the page to add medical history', function(done) {
+    assertOnPage('.medical-history-form', /add\/driver-license\/medical-history/, done);
+  });
+  world.then('I will be on the page to add license history', function(done) {
+    assertOnPage('.card-history-form', /add\/driver-license\/license-history/, done);
+  });
+  world.then('I will be on the page to add license issues', function(done) {
+    assertOnPage('.license-issues-form', /add\/driver-license\/issue-history/, done);
+  });
+
   world.then('I will be on the page for entering my legal name', function(done) {
     assertOnPage('.legal-name-form', /apply\/id-and-license\/my-basics\/legal-name/, done);
   });

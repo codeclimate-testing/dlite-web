@@ -9,7 +9,7 @@ import Presentation             from '../../presentations/my-history/license-iss
 
 const Page = (props) => {
   let validations       = new LicenseIssuesValidator(props.licenseIssues, props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors('licenseIssues', props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors(props.name, props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (

@@ -21,7 +21,7 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.when('I select exisiting DL/ID Yes', function(done){
+  world.when('I select existing DL/ID Yes', function(done){
     browser
     .click('label[for="isIssued-Yes"]')
     .then(() => { done(); })

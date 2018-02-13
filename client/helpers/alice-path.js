@@ -10,4 +10,8 @@ export const cdlPath = (path) => {
 
 export const iddlPath = (path) => {
   return alicePath(`/id-and-license${path}`);
-}
+};
+
+export const addPath = (path) => {
+  return `/add${path}`;
+};

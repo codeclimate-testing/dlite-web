@@ -37,6 +37,10 @@ server.get('/apply*', (req, res) => {
   res.send(layout);
 });
 
+server.get('/add*', (req, res) => {
+  res.send(layout);
+});
+
 let authenticate = passport.authenticate('jwt', { session: false });
 
 server.get('/protected', authenticate, function(req, res){

@@ -8,16 +8,31 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import { getTextFromPathname }  from '../../helpers/data/pathnames';
+
+const tempObjectThatNeedsTranslations = {
+  prePrompt: translations.intro.wdywtdtPage.prePrompt,
+  prompt: translations.intro.wdywtdtPage.prompt,
+  explanation: '',
+  values: [
+    "Get a driver license for the first time",
+    "Renew your driver license",
+    "Correct or update your driver license",
+    "Replace your driver license"
+  ]
+};
 
 const Form = (props) => {
+  let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
+
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        {convertToHtml('h2', translations.intro.wdywtdtPage.prompt, 'question')}
-        {convertToHtml('p', translations.intro.wdywtdtPage.explanation)}
+        {convertToHtml('h2', text.prompt, 'question')}
+        {convertToHtml('p', text.explanation)}
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <fieldset>
@@ -29,19 +44,19 @@ const Form = (props) => {
               >
                 <RadioSelector
                   value = 'new'
-                  text={translations.intro.wdywtdtPage.values[0]}
+                  text={text.values[0]}
                 />
                 <RadioSelector
                   value = 'renew'
-                  text={translations.intro.wdywtdtPage.values[1]}
+                  text={text.values[1]}
                 />
                 <RadioSelector
                   value = 'change'
-                  text={translations.intro.wdywtdtPage.values[2]}
+                  text={text.values[2]}
                 />
                 <RadioSelector
                   value='replace'
-                  text={translations.intro.wdywtdtPage.values[3]}
+                  text={text.values[3]}
                 />
               </RadioCollection>
             </fieldset>

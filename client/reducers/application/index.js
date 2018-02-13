@@ -5,7 +5,6 @@ import { combineReducers }                from 'redux';
 import createApplicationID                from './create-application-id';
 import updateLanguage                     from './update-language';
 import updateLegalNames                   from './update-legal-name';
-import updateCardAction                   from './update-card-action';
 import updateCardType                     from './update-card-type';
 import updateCardChanges                  from './update-card-changes';
 import updateCardReplacement              from './update-card-replacement';
@@ -37,7 +36,6 @@ const rootReducer = combineReducers({
   id                          : createApplicationID,
   language                    : updateLanguage,
   legalName                   : updateLegalNames,
-  cardAction                  : updateCardAction,
   cardType                    : updateCardType,
   cardChanges                 : updateCardChanges,
   cardReplacement             : updateCardReplacement,

@@ -3,11 +3,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Presentation from '../presentations/page.jsx';
-import handlers from '../helpers/handlers';
+import Presentation             from '../presentations/page.jsx';
+import handlers                 from '../helpers/handlers';
+import { getTextFromPathname }  from '../helpers/data/pathnames';
 
 const Page = (props) => {
-  props.onPageLoad(props.sectionKey, props.section);
+  let sectionKey = getTextFromPathname(props, props.sectionKey, '');
+
+  props.onPageLoad(sectionKey, props.section);
 
   return (
     <Presentation {...props} />
