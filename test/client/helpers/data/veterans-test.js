@@ -4,7 +4,6 @@ const assert = require('assert');
 
 import {
   isVeteran,
-  mustChoosePreviousDesignation,
   mustChooseIdentifier,
   mustChooseKeepVeteranIdentifier,
   mustChooseAddVeteranIdentifier,
@@ -31,7 +30,7 @@ describe('Data helpers for veterans', function() {
         veteransIdentifier: ''
       },
       cardType: {
-        cardAction: 'renew',
+        cardAction: '',
         IDDL: []
       }
     };
@@ -49,38 +48,16 @@ describe('Data helpers for veterans', function() {
     });
   });
 
-  describe('#mustChoosePreviousDesignation', function() {
-    it('is false if not a veteran', function() {
-      data.veteransService.isVeteran = 'No';
-      data.veteransService.receiveBenefits = 'Yes';
-      assert.equal(mustChoosePreviousDesignation(data), false);
-    });
-
-    it('is false if not renewing a card', function() {
-      data.veteransService.isVeteran = 'Yes';
-      data.veteransService.receiveBenefits = 'Yes';
-      data.cardType.cardAction = 'new';
-      assert.equal(mustChoosePreviousDesignation(data), false);
-    });
-
-    it('is true if veteran and renewing', function() {
-      data.veteransService.isVeteran = 'Yes';
-      data.veteransService.receiveBenefits = 'Yes';
-      assert.equal(mustChoosePreviousDesignation(data), true);
-    });
-  });
-
   describe('#mustChooseIdentifier', function() {
     it('is false if not a veteran', function() {
       data.veteransService.isVeteran = 'No';
-
       assert.equal(mustChooseIdentifier(data), false);
     });
 
     it('is false if renewing', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
-
+      data.cardType.cardAction = 'renew';
       assert.equal(mustChooseIdentifier(data), false);
     });
 
@@ -88,7 +65,6 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.cardType.cardAction = 'replace';
-
       assert.equal(mustChooseIdentifier(data), true);
     });
   });
@@ -97,7 +73,6 @@ describe('Data helpers for veterans', function() {
     it('is false if not a veteran', function() {
       data.veteransService.isVeteran = 'No';
       data.cardType.cardAction = 'replace';
-
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
 
@@ -106,7 +81,6 @@ describe('Data helpers for veterans', function() {
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
       data.cardType.cardAction = 'new';
-
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
 
@@ -121,7 +95,7 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
-
+      data.cardType.cardAction = 'renew';
       assert.equal(mustChooseKeepVeteranIdentifier(data), true);
     });
   });
@@ -129,7 +103,6 @@ describe('Data helpers for veterans', function() {
   describe('#mustChooseAddVeteranIdentifier', function() {
     it('is false if not a veteran', function() {
       data.veteransService.isVeteran = 'No';
-
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
 
@@ -138,7 +111,6 @@ describe('Data helpers for veterans', function() {
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
       data.cardType.cardAction = 'replace';
-
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
 
@@ -146,7 +118,6 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
-
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
 
@@ -154,7 +125,7 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'No';
-
+      data.cardType.cardAction = 'renew';
       assert.equal(mustChooseAddVeteranIdentifier(data), true);
     });
   });
@@ -162,6 +133,7 @@ describe('Data helpers for veterans', function() {
   describe('#showPreviousDesignationPage', function() {
     it('is true if user is veteran not getting a new card', function() {
       data.veteransService.isVeteran = 'Yes';
+      data.cardType.cardAction = 'renew';
       assert.equal(showPreviousDesignationPage(data), true);
     });
 

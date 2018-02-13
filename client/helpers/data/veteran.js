@@ -12,24 +12,20 @@ export const isVeteran = (props) => {
   return props.veteransService.isVeteran === 'Yes'
 };
 
-export const mustChoosePreviousDesignation = (props) => {
-  return isVeteran(props) && hasExistingCard(props)
-};
-
 export const mustChooseIdentifier = (props) => {
   return isVeteran(props) && !isRenewingCard(props)
 };
 
 export const mustChooseKeepVeteranIdentifier = (props) => {
-  return mustChoosePreviousDesignation(props) && isPreviouslyDesignated(props)
+  return showPreviousDesignationPage(props) && isPreviouslyDesignated(props)
 };
 
 export const mustChooseAddVeteranIdentifier = (props) => {
-  return mustChoosePreviousDesignation(props) && props.veteransService.previouslyDesignated === 'No'
+  return showPreviousDesignationPage(props) && props.veteransService.previouslyDesignated === 'No'
 };
 
 export const showPreviousDesignationPage = (props) => {
-  return isVeteran(props) && hasExistingCard(props);
+  return isVeteran(props) && !isGettingNew(props);
 };
 
 export const showIdentifierPage = (props) => {

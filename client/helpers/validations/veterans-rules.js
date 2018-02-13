@@ -3,7 +3,7 @@
 import selectionValidator from './selection-validator';
 import {
   isVeteran,
-  mustChoosePreviousDesignation,
+  showPreviousDesignationPage,
   mustChooseIdentifier,
   mustChooseKeepVeteranIdentifier,
   mustChooseAddVeteranIdentifier
@@ -17,7 +17,7 @@ let receiveBenefits = (props) => {
 };
 
 let veteransDesignation = (props) => {
-  if(!mustChoosePreviousDesignation(props)) {
+  if(!showPreviousDesignationPage(props)) {
     return []
   }
   return selectionValidator('veteranDesignationExistsMissing2', 'veteransService', 'previouslyDesignated')(props)
