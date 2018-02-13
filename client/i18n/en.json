@@ -207,7 +207,7 @@
       "explanation": "As of October 1, 2020, you will need a REAL ID compliant driver license or ID card to fly <b>within</b> the United States.",
       "FAQWhatIsRealID": {
         "title": "What's a REAL ID compliant card?",
-        "body": "To meet the REAL ID Act, the California DMV will offer two types of cards: a REAL ID compliant card and a federal non-compliant card. Both a REAL ID compliant and a federal non-compliant driver license allow you to legally drive. \n\n You need a REAL ID compliant card in order to fly within the U.S or to enter military bases and most federal facilities starting October 1, 2020. \n\n Otherwise, you will need a passport or other document accepted by the Transportation Security Administration and the Department of Homeland Security."
+        "body": "<p>To meet the REAL ID Act, the California DMV will offer two types of cards: a REAL ID compliant card and a federal non-compliant card. Both a REAL ID compliant and a federal non-compliant driver license allow you to legally drive. </p><p> You need a REAL ID compliant card in order to fly within the U.S or to enter military bases and most federal facilities starting October 1, 2020. </p><p> Otherwise, you will need a passport or other document accepted by the Transportation Security Administration and the Department of Homeland Security.</p>"
       },
       "FAQWhatIsRequiredForRealID": {
         "title": "What's required to get a REAL ID compliant card?",
@@ -463,7 +463,7 @@
     "socialSecurityPage": {
       "prompt": "Do you have a Social Security Number?",
       "explanation": "If you have a Social Security Number you must select Yes.",
-      "messageNo": "By answering <em>No</em>, you confirm that a Social Security Number has never been issued to you and you are not presently eligible for a Social Security Number. You understand that pursuant to California Vehicle Code §12801, you must provide your Social Security Number to the Department of Motor Vehicles when one is assigned to you. \n\n Read the disclaimer for more information.",
+      "messageNo": "<p>By answering <em>No</em>, you confirm that a Social Security Number has never been issued to you and you are not presently eligible for a Social Security Number. You understand that pursuant to California Vehicle Code §12801, you must provide your Social Security Number to the Department of Motor Vehicles when one is assigned to you. </p><p> Read the disclaimer for more information.</p>",
       "enterSocialNumber": {
         "prompt": "What's your Social Security Number?",
         "explanation": "Example: 123 - 45 - 6789"
@@ -487,7 +487,7 @@
     "nameHistoryPage": {
       "pagePrompt": "Have you ever applied for a Driver License or ID card under a different name?",
       "explanationPrompt": "Please list all previous legal names.",
-      "helpText": "For example, include your maiden name. \n\n Separate by commas."
+      "helpText": "<p>For example, include your maiden name. </p><p> Separate by commas.</p>"
     },
     "licenseIssuesPage": {
       "pagePrompt": "Have you ever had your driving privilege cancelled, refused, suspended, or revoked?",
@@ -691,8 +691,8 @@
     "introductionPage": {
       "citizenOnlyDisclaimer": "US Citizens Only",
       "pagePrompt": "Voter Registration",
-      "explanation": "Under state law, eligible citizens will be registered to vote unless they choose not to in this section. \n\n If you’re already registered to vote, this service helps make sure your information is up to date. \n\n If you need to register to vote before your DMV visit, you can register online at <a href='RegisterToVote.ca.gov'>RegisterToVote.ca.gov</a>.",
-      "timeItWillTake": "This section takes most customers \n\n 3 minutes"
+      "explanation": "<p>Under state law, eligible citizens will be registered to vote unless they choose not to in this section. </p><p> If you’re already registered to vote, this service helps make sure your information is up to date. </p><p> If you need to register to vote before your DMV visit, you can register online at <a href='RegisterToVote.ca.gov'>RegisterToVote.ca.gov</a>.</p>",
+      "timeItWillTake": "<p>This section takes most customers </p><p> 3 minutes</p>"
     },
     "citizenshipPage": {
       "pagePrompt": "Are you a United States citizen?",
@@ -717,7 +717,7 @@
     },
     "preRegIntroductionPage": {
       "pagePrompt": "Voter Pre-registration",
-      "explanation": "Under state law, eligible citizens will be pre-registered to vote unless they choose not to in this section. \n\n If you’re 16 or 17, you can pre-register today. Once you turn 18, you’re automatically registered to vote."
+      "explanation": "<p>Under state law, eligible citizens will be pre-registered to vote unless they choose not to in this section. </p><p> If you’re 16 or 17, you can pre-register today. Once you turn 18, you’re automatically registered to vote.</p>"
     },
     "preRegCitizenshipPage": {
       "faqAnswer-whatIfNotCitizen": "If you are not a U.S. citizen, you are not eligible to pre-register to vote."
@@ -783,14 +783,14 @@
     },
     "confirmation": {
       "pagePrompt": "Thank you, your voter registration application will be processed when you complete your business at the DMV.",
-      "explanation": "If you do not receive a voter notification card within four weeks after your visit to the DMV, contact your county elections official. \n\n You can check your voter registration status with the California Secretary of State at <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>."
+      "explanation": "<p>If you do not receive a voter notification card within four weeks after your visit to the DMV, contact your county elections official. </p><p> You can check your voter registration status with the California Secretary of State at <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "preferencesUpdateIntroPage": {
       "pagePrompt": "Next we’d like to quickly make sure your voter registration is up to date.",
       "explanation": "This will replace your previous voter preferences."
     },
     "updateChoosePartyPage": {
-      "explanation": "If you do not choose a political party, you may not be able to vote for some parties’ candidates at a primary election for US President or central committee. \n\n This will overwrite your previous political party preference."
+      "explanation": "<p>If you do not choose a political party, you may not be able to vote for some parties’ candidates at a primary election for US President or central committee. </p><p> This will overwrite your previous political party preference.</p>"
     },
     "updateContactInfoPage": {
       "explanation": "Answering No will also remove any previous contact information."
