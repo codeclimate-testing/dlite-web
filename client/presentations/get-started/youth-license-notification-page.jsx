@@ -16,10 +16,10 @@ import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 const FormHeader = (props) => {
   return (
     <div>
-      <h2 className='question translation-missing'>{props.title}</h2>
-      <p className='translation-missing'>{props.helpText}</p>
+      {convertToHtml('h2', translations.intro.youthDlNotificationPage.prompt, 'question')}
+      {convertToHtml('p', translations.intro.youthDlNotificationPage.explanation)}
       <hr />
-      <h3 className='question translation-missing'>Do you want to apply for an ID instead?</h3>
+      {convertToHtml('h3', translations.intro.youthDlNotificationPage.question, 'question')}
     </div>
   );
 };
@@ -36,8 +36,8 @@ const Under15FormHeader = (props) => {
 const YouthFormHeader = (props) => {
   return (
     <FormHeader
-      title='You must be 15.5 years old to get a learners permit.'
-      helpText='If you go to a DMV office sooner to complete your application, you can only apply for a Junior permit. These permits are issued only in exceptional circumstances.'
+      title={translations.intro.youthDlNotificationPage.prompt}
+      helpText={translations.intro.youthDlNotificationPage.explanation}
     />
   );
 };

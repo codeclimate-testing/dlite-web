@@ -16,13 +16,13 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={ props.onSubmit } className='date-of-birth-form'>
-        <h2 className='question translation-missing'>What's your date of birth?</h2>
+        {convertToHtml('h2', translations.intro.dateOfBirthPage.prompt, 'question')}
         {convertToHtml('p', translations.intro.dateOfBirthPage.explanation)}
 
         <fieldset>
           <DateInput
             {...props}
-            title       = 'Date of birth'
+            title       = { translations.shared.labels.dateOfBirth }
             values      = { props.dateOfBirth }
           />
         </fieldset>
