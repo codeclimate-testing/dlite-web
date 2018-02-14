@@ -142,7 +142,8 @@ function fakeClientData() {
       'phoneNumber1': '916',
       'phoneNumber2': '314',
       'phoneNumber3': '8765'
-    }
+    },
+    isPreRegistering: 'No'
   };
 };
 

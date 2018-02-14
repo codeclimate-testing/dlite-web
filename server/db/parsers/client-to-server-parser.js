@@ -29,8 +29,12 @@ function extractApplication(data) {
   let legalName         = data.legalName || {};
   let heightWeight      = data.traitsHeightWeight || {};
   let physicalTraits    = data.physicalTraits || {};
-  let dob               = new Date(parserHelper.createDateString(data.dateOfBirth));
+  let dob               = null;
   let socialSecurity    = 'No';
+
+  if(parserHelper.createDateString(data.dateOfBirth)) {
+    dob = new Date(parserHelper.createDateString(data.dateOfBirth));
+  }
 
   if(data.socialSecurity.hasSocialSecurity === 'Yes'){
     let _socialSecurity = data.socialSecurity;
@@ -216,7 +220,7 @@ function extractVotingRegistrations(data) {
     is_eligible:        parserHelper.blankIsDecline(data.eligibilityRequirements),
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
-    //is_preregistering:  parserHelper.strToBool(data.is_preregistering),
+    is_preregistering:  parserHelper.strToBool(data.isPreRegistering),
     party:              parserHelper.parseParty(data.politicalPartyChoose),
     language:           data.language.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.ballotByMail),

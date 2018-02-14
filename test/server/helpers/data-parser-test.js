@@ -4,6 +4,7 @@ const assert            = require('assert');
 const dataParser        = require('../../../server/helpers/data-parser');
 
 describe('dataParser', function() {
+
   describe('parseParty', function() {
     it('returns the selected party that has been saved to politicalPartyChoose', function() {
       let obj = {
@@ -72,6 +73,50 @@ describe('dataParser', function() {
     });
   });
 
+  describe('createDateString', function() {
+    it('returns null when date object does not have all values', function() {
+      let date = {
+        month: 12,
+        year: '',
+        day: 24
+      };
+      assert.equal(dataParser.createDateString(date), null);
+    });
+
+    it('returns string when date object has all values', function() {
+      let date = {
+        month: 12,
+        year: 2004,
+        day: 24
+      };
+      assert.equal(dataParser.createDateString(date), '12/24/2004');
+    });
+  });
+
+  describe('createDateJson', function() {
+    it('returns empty values when date string is not correct', function() {
+      let date = '12/2004'
+      assert.deepEqual(
+        dataParser.createDateJson(date),
+        {
+          month:  '',
+          day:    '',
+          year:   ''
+        }
+      );
+    });
+
+    it('returns proper json with all values when date string is correct', function() {
+      let date = '12/24/2004'
+      assert.deepEqual(
+        dataParser.createDateJson(date),
+        {
+          month:  '12',
+          day:    '24',
+          year:   '2004'
+        }
+      );
+    });
+  });
+
 });
-
-

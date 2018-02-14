@@ -57,6 +57,7 @@ export const TYPES = {
   UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND: 'UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND',
   UPDATE_GUARDIAN_ID_DOC_FIRST:           'UPDATE_GUARDIAN_ID_DOC_FIRST',
   UPDATE_GUARDIAN_ID_DOC_SECOND:          'UPDATE_GUARDIAN_ID_DOC_SECOND',
+  UPDATE_IS_PRE_REGISTERING:              'UPDATE_IS_PRE_REGISTERING',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -109,6 +110,7 @@ export const updateGuardianContactDetailsFirst        = generateFormAction(TYPES
 export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND);
 export const updateGuardianIDDocFirst                 = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_FIRST);
 export const updateGuardianIDDocSecond                = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_SECOND);
+export const updateIsPreRegistering                   = generateFormAction(TYPES.UPDATE_IS_PRE_REGISTERING);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

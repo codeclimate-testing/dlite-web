@@ -306,5 +306,16 @@ describe('server data parser', function() {
       })
       .catch(done);
     });
+
+    it('correctly extracts the isPreRegistering', function(done) {
+      getApplication(data.application.id)
+      .then((records) => {
+        parsedData = parse(records);
+        assert.equal(parsedData.application.isPreRegistering, clientData.isPreRegistering);
+        done();
+      })
+      .catch(done);
+    });
+
   });
 });

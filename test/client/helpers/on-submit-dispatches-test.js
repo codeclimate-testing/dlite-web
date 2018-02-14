@@ -33,7 +33,7 @@ describe('on submit dispatches', function() {
 
   describe('#updateCitizenship', function() {
     it('if citizenStatus is blank the update citizenship status action will be dispatched', function() {
-      let onSubmit = onSubmitDispatches.updateCitizenship(stateProps, dispatchProps.dispatch, ownProps);
+      let onSubmit = onSubmitDispatches.updateCitizenship(stateProps, dispatchProps.dispatch);
       onSubmit(event);
       assert.ok(
         dispatchProps.dispatch.calledWith({
@@ -49,7 +49,7 @@ describe('on submit dispatches', function() {
 
     it('if citizenStatus is not blank the action will not be dispatched', function() {
       stateProps.citizenStatus = 'Yes';
-      let onSubmit = onSubmitDispatches.updateCitizenship(stateProps, dispatchProps.dispatch, ownProps);
+      let onSubmit = onSubmitDispatches.updateCitizenship(stateProps, dispatchProps.dispatch);
       onSubmit(event);
       assert(
         !dispatchProps.dispatch.calledWith({
@@ -120,6 +120,49 @@ describe('on submit dispatches', function() {
       onSubmit(event);
       assert.equal(ownProps.history.entries[1].pathname, '/apply/choose');
     });
+  });
+
+  describe('#isPreRegistering', function() {
+    it('dispatch action to update pre registering to Yes', function() {
+      let now     = new Date();
+      let day     = now.getDate();
+      let month   = now.getMonth();
+      let year    = now.getFullYear() - 17;
+      stateProps.dateOfBirth = { year, month, day};
+      let onSubmit = onSubmitDispatches.isPreRegistering(stateProps, dispatchProps.dispatch);
+      onSubmit(event);
+      assert(
+        dispatchProps.dispatch.calledWith({
+          type: 'UPDATE_IS_PRE_REGISTERING',
+          payload: {
+            name: 'isPreregistering',
+            value: 'Yes'
+          }
+        }),
+        'dispatch not called with Yes'
+      );
+    });
+
+    it('dispatch action to update pre registering to No', function() {
+      let now     = new Date();
+      let day     = now.getDate();
+      let month   = now.getMonth();
+      let year    = now.getFullYear() - 19;
+      stateProps.dateOfBirth = { year, month, day};
+      let onSubmit = onSubmitDispatches.isPreRegistering(stateProps, dispatchProps.dispatch);
+      onSubmit(event);
+      assert(
+        dispatchProps.dispatch.calledWith({
+          type: 'UPDATE_IS_PRE_REGISTERING',
+          payload: {
+            name: 'isPreregistering',
+            value: 'No'
+          }
+        }),
+        'dispatch not called with No'
+      );
+    });
+
   });
 
 });

@@ -123,9 +123,9 @@ describe('getApplication', function() {
     it('returns the email', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.emails[0].id);
-        assert.equal(records.emails[0].application_id, data.application.id);
-        assert.equal(records.emails[0].address, data.emails.address);
+        assert(records.emails.id);
+        assert.equal(records.emails.application_id, data.application.id);
+        assert.equal(records.emails.address, data.emails.address);
         done();
       })
       .catch(done);
@@ -134,9 +134,9 @@ describe('getApplication', function() {
     it('returns the phone_numbers', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.phone_numbers[0].id);
-        assert.equal(records.phone_numbers[0].application_id, data.application.id);
-        assert.equal(records.phone_numbers[0].number, data.phone_numbers.number);
+        assert(records.phone_numbers.id);
+        assert.equal(records.phone_numbers.application_id, data.application.id);
+        assert.equal(records.phone_numbers.number, data.phone_numbers.number);
         done();
       })
       .catch(done);
@@ -157,11 +157,11 @@ describe('getApplication', function() {
     it('returns card histories', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.card_histories[0].id);
-        assert.equal(records.card_histories[0].application_id, data.application.id);
-        assert.equal(records.card_histories[0].number, data.card_histories.number);
-        assert.equal(records.card_histories[0].issuing_entity, data.card_histories.issuing_entity);
-        assert.equal(records.card_histories[0].date_description, data.card_histories.date_description);
+        assert(records.card_histories.id);
+        assert.equal(records.card_histories.application_id, data.application.id);
+        assert.equal(records.card_histories.number, data.card_histories.number);
+        assert.equal(records.card_histories.issuing_entity, data.card_histories.issuing_entity);
+        assert.equal(records.card_histories.date_description, data.card_histories.date_description);
       })
       .then(done)
       .catch(done);
@@ -170,10 +170,10 @@ describe('getApplication', function() {
     it('returns renewal card', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.renewal_card[0].id);
-        assert.equal(records.renewal_card[0].application_id, data.application.id);
-        assert.equal(records.renewal_card[0].number, data.renewal_card.number);
-        assert.equal(records.renewal_card[0].date, data.renewal_card.date);
+        assert(records.renewal_card.id);
+        assert.equal(records.renewal_card.application_id, data.application.id);
+        assert.equal(records.renewal_card.number, data.renewal_card.number);
+        assert.equal(records.renewal_card.date, data.renewal_card.date);
       })
       .then(done)
       .catch(done);
@@ -197,9 +197,9 @@ describe('getApplication', function() {
     it('returns medical histories', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.medical_histories[0].id);
-        assert.equal(records.medical_histories[0].application_id, data.application.id);
-        assert.equal(records.medical_histories[0].description, data.medical_histories.description);
+        assert(records.medical_histories.id);
+        assert.equal(records.medical_histories.application_id, data.application.id);
+        assert.equal(records.medical_histories.description, data.medical_histories.description);
       })
       .then(done)
       .catch(done);
@@ -208,10 +208,10 @@ describe('getApplication', function() {
     it('returns license issues', function(done) {
       getApplication(data.application.id)
       .then((records) => {
-        assert(records.license_issues[0].id);
-        assert.equal(records.license_issues[0].application_id, data.application.id);
-        assert.equal(records.license_issues[0].description, data.license_issues.description);
-        assert.equal(records.license_issues[0].date_description, data.license_issues.date_description);
+        assert(records.license_issues.id);
+        assert.equal(records.license_issues.application_id, data.application.id);
+        assert.equal(records.license_issues.description, data.license_issues.description);
+        assert.equal(records.license_issues.date_description, data.license_issues.date_description);
       })
       .then(done)
       .catch(done);

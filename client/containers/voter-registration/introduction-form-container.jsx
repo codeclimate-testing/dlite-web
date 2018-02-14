@@ -1,9 +1,10 @@
 'use strict';
 
-import React                  from 'react';
-import connectForm            from '../../helpers/connect-form';
-import Presentation           from '../../presentations/voter-registration/introduction.jsx';
-import handlers               from '../../helpers/handlers';
+import React                        from 'react';
+import { mergePropsGenerator }      from '../../helpers/merge-props';
+import Presentation                 from '../../presentations/voter-registration/introduction.jsx';
+import handlers                     from '../../helpers/handlers';
+import { updateIsPreRegistering }   from '../../actions';
 
 const Page = (props) => {
   let validations       = {
@@ -28,4 +29,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connectForm(mapStateToProps, null, Page);
+export default mergePropsGenerator(mapStateToProps, updateIsPreRegistering, 'isPreRegistering', Page);

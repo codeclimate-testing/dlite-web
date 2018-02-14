@@ -5,9 +5,11 @@ import { nextPath }               from './data/page';
 import { postData }               from '../actions/api-actions';
 import { updateLanguage }         from '../actions/index';
 import { appLanguageIsSelected }  from './data/application';
+import { isPreregistering }       from './calculate-age';
 import {
   updateCitizenStatus,
-  updateEligibilityRequirements
+  updateEligibilityRequirements,
+  updateIsPreRegistering
 }    from '../actions/index';
 
 
@@ -51,5 +53,12 @@ export const defaultLanguage = (stateProps, dispatch, ownProps) => {
     return ownProps.history.push(
       nextPath('chooseLanguage', stateProps)
     )
+  };
+};
+
+export const isPreRegistering = (stateProps, dispatch) => {
+  return (e) => {
+    e.preventDefault();
+    dispatch(updateIsPreRegistering('isPreregistering', isPreregistering(stateProps.dateOfBirth) ? 'Yes': 'No'));
   };
 };

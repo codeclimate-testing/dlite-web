@@ -1,15 +1,27 @@
 'use strict';
 
 module.exports.createDateString = function createDateString(date) {
-  return date.month + '/' + date.day + '/' + date.year;
+  if(date.month && date.day && date.year) {
+    return date.month + '/' + date.day + '/' + date.year;
+  }
+  return null;
 };
 
 module.exports.createDateJson = function createDateJson(date) {
-  let _date = date.split('/');
-  return {
-    month:  _date[0],
-    day:    _date[1],
-    year:   _date[2]
+  let dateArr = date.split('/');
+  if(dateArr.length === 3){
+    return {
+      month:  dateArr[0],
+      day:    dateArr[1],
+      year:   dateArr[2]
+    }
+  }
+  else{
+    return {
+      month:  '',
+      day:    '',
+      year:   ''
+    }
   }
 };
 

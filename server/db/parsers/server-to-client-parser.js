@@ -55,7 +55,8 @@ function parse(data) {
         politicalPartyChoose:     getParty(voting_registrations),
         language:                 getLanguage(application, voting_registrations),
         optOut:                   getOptedOut(voting_registrations),
-        contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations)
+        contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations),
+        isPreRegistering:         getIsPreRegistering(voting_registrations)
       }
     }
   );
@@ -150,15 +151,20 @@ function getSocialSecurity(application) {
 }
 
 function getOrganDonations(organ_donations) {
-  return {
-    donateOrgan: parserHelper.boolToStr(organ_donations.donating_organs),
-    donateMoney: parserHelper.boolToStr(organ_donations.donating_money)
-  };
+  let organDonation = {
+    donateOrgan: '',
+    donateMoney: ''
+  }
+  if(organ_donations) {
+    organDonation.donateOrgan = parserHelper.boolToStr(organ_donations.donating_organs),
+    organDonation.donateMoney = parserHelper.boolToStr(organ_donations.donating_money)
+  }
+  return organDonation;
 }
 
 function getLicenseAndIdHistory(card_histories) {
-  if(card_histories && card_histories.length > 0){
-    card_histories = card_histories[0];
+
+  if(card_histories){
     let _date = parserHelper.createDateJson(card_histories.date_description);
     return {
       DLIDNumber:   card_histories.number,
@@ -188,10 +194,10 @@ function getCurrentCardInfo(renewal_card) {
     day: '',
     year: ''
   };
-  if(renewal_card[0]){
-    let _date = parserHelper.createDateJson(renewal_card[0].date);
+  if(renewal_card){
+    let _date = parserHelper.createDateJson(renewal_card.date);
     return {
-      number:   renewal_card[0].number,
+      number:   renewal_card.number,
       month:    _date.month,
       day:      _date.day,
       year:     _date.year
@@ -220,8 +226,7 @@ function getNamesHistories(previous_names) {
 }
 
 function getMedicalHistories(medical_histories) {
-  if(medical_histories && medical_histories.length > 0){
-    medical_histories = medical_histories[0];
+  if(medical_histories){
     return {
       hasMedicalCondition:  'Yes',
       medicalInfo:          medical_histories.description
@@ -236,8 +241,7 @@ function getMedicalHistories(medical_histories) {
 }
 
 function getLicenseIssues(license_issues) {
-  if(license_issues && license_issues.length > 0){
-    license_issues = license_issues[0];
+  if(license_issues){
     let _date = parserHelper.createDateJson(license_issues.date_description);
     return {
       isSuspended:  'Yes',
@@ -282,18 +286,34 @@ function getVeteransService(veterans_info) {
 }
 
 function getCitizenStatus(voting_registrations) {
-  return parserHelper.boolToStr(voting_registrations.is_citizen);
+  if(voting_registrations) {
+    return parserHelper.boolToStr(voting_registrations.is_citizen);
+  }
+  return '';
 }
 
 function getBallotByMail(voting_registrations) {
-  return parserHelper.boolToStr(voting_registrations.vote_by_mail);
+  if(voting_registrations) {
+    return parserHelper.boolToStr(voting_registrations.vote_by_mail);
+  }
+  return '';
 }
 
 function getEligibility(voting_registrations) {
-  return parserHelper.boolToStr(voting_registrations.is_eligible);
+  if(voting_registrations) {
+    return parserHelper.boolToStr(voting_registrations.is_eligible);
+  }
+  return '';
 }
 
 function getParty(voting_registrations) {
+  if(!voting_registrations) {
+    return {
+      isSelected:             '',
+      politicalPartyChoose:   '',
+      otherParty:             ''
+    };
+  }
   const parties = [ "American Independent Party",
     "Libertarian Party",
     "Democratic Party",
@@ -318,16 +338,26 @@ function getParty(voting_registrations) {
 }
 
 function getLanguage(application, voting_registrations) {
+  let ballotLanguage  = '';
+  let appLanguage     = application.language;
+
+  if(voting_registrations) {
+    ballotLanguage    = voting_registrations.language;
+  }
   return {
-    ballotLanguage: voting_registrations.language,
-    appLanguage: application.language
+    ballotLanguage:   ballotLanguage,
+    appLanguage:      appLanguage
   };
 }
 
 function getOptedOut(voting_registrations) {
-  let optOut      = '';
-  let opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
-  let type       = voting_registrations.type;
+
+  let opted_out  = '';
+  let type       = '';
+  if(voting_registrations){
+    opted_out  = parserHelper.boolToStr(voting_registrations.opted_out);
+    type       = voting_registrations.type;
+  }
   return voterChoiceConverter.DBToClientMapping({
     opted_out: opted_out,
     type: type
@@ -335,14 +365,29 @@ function getOptedOut(voting_registrations) {
 }
 
 function getContactMethods(emails, phone_numbers, voting_registrations) {
-  emails          = emails[0];
-  phone_numbers   = phone_numbers[0];
+  let shouldContact = '';
+  let emailAddress  = '';
+  let phoneNumber1  = '';
+  let phoneNumber2  = '';
+  let phoneNumber3  = '';
+  if(voting_registrations) {
+    shouldContact = parserHelper.boolToStr(voting_registrations.should_contact);
+  }
+  if(emails) {
+    emailAddress = emails.address;
+  }
+  if(phone_numbers) {
+    phoneNumber1 = phone_numbers.number.slice(0, 3),
+    phoneNumber2 = phone_numbers.number.slice(3, 6),
+    phoneNumber3 = phone_numbers.number.slice(6, 10)
+  }
+
   return {
-    shouldContact: parserHelper.boolToStr(voting_registrations.should_contact),
-    emailAddress: emails.address,
-    phoneNumber1: phone_numbers.number.slice(0, 3),
-    phoneNumber2: phone_numbers.number.slice(3, 6),
-    phoneNumber3: phone_numbers.number.slice(6, 10)
+    shouldContact: shouldContact,
+    emailAddress: emailAddress,
+    phoneNumber1: phoneNumber1,
+    phoneNumber2: phoneNumber2,
+    phoneNumber3: phoneNumber3
   };
 }
 
@@ -480,5 +525,13 @@ function getCardReplacement(card_options) {
   });
   return cardReplacement
 };
+
+function getIsPreRegistering(voting_registrations) {
+  if(voting_registrations) {
+    return parserHelper.boolToStr(voting_registrations.is_preregistering);
+  }
+
+  return '';
+}
 
 module.exports = parse;

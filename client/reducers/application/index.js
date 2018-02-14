@@ -31,6 +31,7 @@ import updatePoliticalPartyChoose         from './update-choose-party';
 import updateOptOut                       from './update-opt-out';
 import updateContactMethods               from './update-contact-methods';
 import updateGuardianSignature            from './update-guardian-signature';
+import updateIsPreRegistering             from './update-is-pre-registering';
 
 const rootReducer = combineReducers({
   id                          : createApplicationID,
@@ -61,8 +62,8 @@ const rootReducer = combineReducers({
   politicalPartyChoose        : updatePoliticalPartyChoose,
   optOut                      : updateOptOut,
   contactMethods              : updateContactMethods,
-  guardianSignature           : updateGuardianSignature
-
+  guardianSignature           : updateGuardianSignature,
+  isPreRegistering            : updateIsPreRegistering
 });
 
 export default rootReducer;

@@ -11,21 +11,21 @@ module.exports = function getApplication(id) {
     db('addresses').where('application_id', id)
       .then((records) => { aggregate.addresses = records; }),
     db('emails').where('application_id', id)
-      .then((records) => { aggregate.emails = records; }),
+      .then((records) => { aggregate.emails = records[0]; }),
     db('phone_numbers').where('application_id', id)
-      .then((records) => { aggregate.phone_numbers = records; }),
+      .then((records) => { aggregate.phone_numbers = records[0]; }),
     db('organ_donations').where('application_id', id)
       .then((records) => { aggregate.organ_donations = records[0]; }),
     db('card_histories').where('application_id', id)
-      .then((records) => { aggregate.card_histories = records; }),
+      .then((records) => { aggregate.card_histories = records[0]; }),
     db('renewal_card').where('application_id', id)
-      .then((records) => { aggregate.renewal_card = records; }),
+      .then((records) => { aggregate.renewal_card = records[0]; }),
     db('previous_names').where('application_id', id)
       .then((records) => { aggregate.previous_names = records; }),
     db('medical_histories').where('application_id', id)
-      .then((records) => { aggregate.medical_histories = records; }),
+      .then((records) => { aggregate.medical_histories = records[0]; }),
     db('license_issues').where('application_id', id)
-      .then((records) => { aggregate.license_issues = records; }),
+      .then((records) => { aggregate.license_issues = records[0]; }),
     db('veterans_info').where('application_id', id)
       .then((records) => { aggregate.veterans_info = records[0]; }),
     db('voting_registrations').where('application_id', id)

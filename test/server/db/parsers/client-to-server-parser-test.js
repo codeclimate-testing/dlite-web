@@ -169,7 +169,7 @@ describe('client data parser', function() {
       assert.equal(votingReg.is_eligible, parserHelper.strToBool(data.eligibilityRequirements));
       assert.equal(votingReg.type, 'new');
       assert.equal(votingReg.opted_out, false);
-      //assert.equal(votingReg.is_preregistering, parserHelper.strToBool(data.is_preregistering));
+      assert.equal(votingReg.is_preregistering, parserHelper.strToBool(data.isPreRegistering));
       assert.equal(votingReg.party, data.politicalPartyChoose.politicalPartyChoose);
       assert.equal(votingReg.language, data.language.ballotLanguage);
       assert.equal(votingReg.vote_by_mail, parserHelper.strToBool(data.ballotByMail));

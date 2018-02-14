@@ -279,8 +279,14 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page for veteran related services
     When I click No for veteran
-    When I visit voter citizen status page
-    Then I will see the page title has postfix " - Voting registration"
+    And I click "Next" to continue
+    Then I will be on the page for organ donation
+    And I choose to donate my organs
+    And I choose to contribute
+    And I click "Next" to continue
+    Then I will be taken to voter intro info page
+    When I click "Next" to continue
+    Then I will be on the page for voter citizen status entry
     And I select citizen Yes
     When I visit the voter eligibility requirements page
     And I click "Next" to continue
@@ -323,7 +329,6 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page for appointment preparation
     Then I go to the page with my summary
-
     When I click to edit my name
     Then I will be taken to the names page
     When I click "Next" to continue
