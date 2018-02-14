@@ -64,4 +64,8 @@ Scenario: Adding a DL renewal
   Then I will be on the page with my summary
   And I will see my renewal DL card type has been saved
   And I will not see a card history section
+<<<<<<< HEAD
   And I will see my DL card info saved
+=======
+
+>>>>>>> added renewal button to add DL flow
