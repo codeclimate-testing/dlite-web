@@ -9,7 +9,7 @@ module.exports = function (world) {
     browser
       .text()
       .then( text => {
-        assert(text.includes('Would you like to get a California ID instead?') || text.includes('Do you want to apply for an ID instead?'), 'message not on page')
+        assert(text.includes('Would you like to get a California ID card instead?') || text.includes('Do you want to apply for an ID instead?'), 'message not on page')
       })
       .then(() => { done(); })
       .catch(done);
