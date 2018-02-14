@@ -60,9 +60,9 @@ const contents = (application) => {
   <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
     <IDApplicationNotStarted {...application} key='id-application-not-started' />
     <IDAction {...application} />
-    <ReducedOrNoFee {...application} />
-    <SeniorID seniorID={application.seniorID} />
-    <CurrentIDInfo {...application} />
+    <ReducedOrNoFee {...application} reducedFee = {application.IDApp.reducedFee}/>
+    <SeniorID seniorID={application.IDApp.seniorID} />
+    <CurrentIDInfo {...application} currentCardInfo={application.IDApp.currentCard}/>
     <IDRealID {...application} />
   </Accordion>,
 
@@ -76,20 +76,20 @@ const contents = (application) => {
 
   <Accordion id='basics-summary' title='My basics' key='basics-summary'>
     <Empty {...application} key='empty' />
-    <LegalName legalName={application.legalName} />
-    <DateOfBirth dateOfBirth={application.dateOfBirth} />
-    <Address address={application.address} />
-    <PhysicalTraits physicalTraits={application.physicalTraits} />
-    <TraitsHeightWeight traitsHeightWeight={application.traitsHeightWeight} />
-    <SocialSecurity socialSecurity={application.socialSecurity} />
+    <LegalName legalName={application.basics.legalName} />
+    <DateOfBirth dateOfBirth={application.basics.dateOfBirth} />
+    <Address address={application.basics.address} />
+    <PhysicalTraits physicalTraits={application.basics.physicalTraits} />
+    <TraitsHeightWeight traitsHeightWeight={application.basics.traitsHeightWeight} />
+    <SocialSecurity socialSecurity={application.basics.socialSecurity} />
   </Accordion>,
 
   <Accordion id='history-summary' title='My history' key='history-summary'>
-    <MedicalHistory medicalHistory={application.medicalHistory} cardType={application.cardType} />
-    <LicenseAndIdHistory licenseAndIdHistory={application.licenseAndIdHistory} />
-    <NamesHistory namesHistory={application.namesHistory} />
-    <LicenseIssues licenseIssues={application.licenseIssues} />
-    <VeteransService veteransService={application.veteransService} />
+    <MedicalHistory medicalHistory={application.history.medicalHistory} cardType={application.cardType} />
+    <LicenseAndIdHistory licenseAndIdHistory={application.history.licenseAndIdHistory} />
+    <NamesHistory namesHistory={application.history.namesHistory} />
+    <LicenseIssues licenseIssues={application.history.licenseIssues} />
+    <VeteransService veteransService={application.history.veteransService} />
   </Accordion>,
 
   <Accordion id='organ-donation-summary' title='Organ donation' key='organ-donation-summary'>
@@ -97,13 +97,13 @@ const contents = (application) => {
   </Accordion>,
 
   <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
-    <CitizenStatus citizenStatus={application.citizenStatus} />
-    <EligibilityRequirements eligibilityRequirements={application.eligibilityRequirements} />
-    <OptOut optOut={application.optOut} />
-    <PoliticalPartyChoose politicalPartyChoose={application.politicalPartyChoose} />
-    <BallotLanguage ballotLanguage={application.language.ballotLanguage} />
-    <BallotByMail ballotByMail={application.ballotByMail} />
-    <ContactMethods contactMethods={application.contactMethods} />
+    <CitizenStatus citizenStatus={application.voting.citizenStatus} />
+    <EligibilityRequirements eligibilityRequirements={application.voting.eligibilityRequirements} />
+    <OptOut optOut={application.voting.optOut} />
+    <PoliticalPartyChoose politicalPartyChoose={application.voting.politicalPartyChoose} />
+    <BallotLanguage ballotLanguage={application.basics.language.ballotLanguage} />
+    <BallotByMail ballotByMail={application.voting.ballotByMail} />
+    <ContactMethods contactMethods={application.voting.contactMethods} />
   </Accordion>
   ]);
 };
@@ -144,7 +144,7 @@ const SummaryPage = (props) => {
           <div className= 'summary'>
             <Alerts
               cardType    = {application.cardType}
-              dateOfBirth = {application.dateOfBirth}
+              dateOfBirth = {application.basics.dateOfBirth}
             />
             {contents(application)}
             <ButtonComponent

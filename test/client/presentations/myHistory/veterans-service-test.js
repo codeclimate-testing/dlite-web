@@ -23,11 +23,6 @@ describe('VeteransServicePage', function() {
       veteransIdentifier: ''
     };
 
-    let cardType = {
-      IDDL: ['ID', 'DL'],
-      cardAction: 'new'
-    };
-
     let onChange = spy();
 
     let validations = {
@@ -41,7 +36,16 @@ describe('VeteransServicePage', function() {
 
     props = {
       veteransService,
-      cardType,
+      cardType: ['ID', 'DL'],
+      cardAction: 'new',
+      IDApp: {
+        isApplying: true,
+        action: 'new'
+      },
+      DLApp: {
+        isApplying: true,
+        action: 'new'
+      },
       onChange,
       validations
     }
@@ -121,7 +125,7 @@ describe('VeteransServicePage', function() {
 
   describe('when veteran is renewing a card', function() {
     beforeEach(function() {
-      props.cardType.cardAction = 'renew';
+      props.cardAction = 'renew';
     });
 
     it('selecting Yes renders benefits and designation forms', function() {
@@ -140,7 +144,7 @@ describe('VeteransServicePage', function() {
     describe('when selecting veterans designation', function() {
       beforeEach(function() {
         props.veteransService.isVeteran             = 'Yes';
-        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.receiveBenefits        = 'Yes';
         props.veteransService.previouslyDesignated  = '';
         props.veteransService.veteransIdentifier    = '';
       });
@@ -203,7 +207,7 @@ describe('VeteransServicePage', function() {
 
   describe('when veteran is updating a card', function() {
     beforeEach(function() {
-      props.cardType.cardAction = 'change';
+      props.cardAction = 'change';
     });
 
     it('selecting Yes renders benefits and designation forms', function() {
@@ -222,7 +226,7 @@ describe('VeteransServicePage', function() {
     describe('when selecting veterans designation', function() {
       beforeEach(function() {
         props.veteransService.isVeteran             = 'Yes';
-        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.receiveBenefits        = 'Yes';
         props.veteransService.previouslyDesignated  = '';
         props.veteransService.veteransIdentifier    = '';
       });
@@ -285,7 +289,7 @@ describe('VeteransServicePage', function() {
 
   describe('when veteran is replacing a card', function() {
     beforeEach(function() {
-      props.cardType.cardAction = 'replace';
+      props.cardAction = 'replace';
     });
 
     it('selecting Yes renders benefits and designation forms', function() {
@@ -304,7 +308,7 @@ describe('VeteransServicePage', function() {
     describe('when selecting veterans designation', function() {
       beforeEach(function() {
         props.veteransService.isVeteran             = 'Yes';
-        props.veteransService.receiveBenfits        = 'Yes';
+        props.veteransService.receiveBenefits        = 'Yes';
         props.veteransService.previouslyDesignated  = '';
         props.veteransService.veteransIdentifier    = '';
       });

@@ -11,7 +11,7 @@ import { LicenseTypeValidator } from '../../helpers/validations';
 const Page = (props) => {
 
   let validations = new LicenseTypeValidator(props, props.validations);
-  let onSubmit    = handlers.navigateOrShowErrors(props.name, props, validations);
+  let onSubmit    = handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
   return <Presentation
@@ -24,11 +24,13 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cardType:     state.application.cardType,
-    seniorID:     state.application.seniorID,
-    licenseType:  state.application.licenseType,
-    focused:      state.ui.focus,
-    validations:  state.ui.validations
+    IDApp         : state.application.IDApp,
+    DLApp         : state.application.DLApp,
+    cardType      : state.application.cardType,
+    seniorID      : state.application.IDApp.seniorID,
+    licenseType   : state.application.DLApp.licenseType,
+    focused       : state.ui.focus,
+    validations   : state.ui.validations
   };
 };
 

@@ -7,6 +7,8 @@ import handlers                   from '../../helpers/handlers';
 import { ReplaceValidator }       from '../../helpers/validations';
 import { updateCardReplacement }  from "../../actions/index";
 import Presentation               from "../../presentations/get-started/replacement-details-page.jsx";
+import { getCorrectApp }          from '../../helpers/data/card-type';
+
 
 const Page = (props) => {
   let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
@@ -26,9 +28,9 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardReplacement     : state.application.cardReplacement,
+    cardReplacement     : getCorrectApp(state.application).replacementDetails,
     cardType            : state.application.cardType,
-    dateOfBirth         : state.application.dateOfBirth,
+    dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations
   };

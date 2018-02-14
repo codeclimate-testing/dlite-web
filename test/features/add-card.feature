@@ -5,11 +5,10 @@ So that my process is efficient and I have a better experience with government s
 
 Scenario: Choosing to add a new DL
 Given I have already filled out my ID application
-# And I want to add a DL
 When I visit the page to add a DL
 Then I will see a WDYWTDT page with only the new DL option
 Then I will see that the validations work the same as the WDYWTDT page
-When I choose to get a new card
+When I choose to add a new DL
 And I click "Next" to continue
 Then I will be on the page to add license type
 Then I will see that the page looks the same as the normal license type page
@@ -36,4 +35,7 @@ Then I will be on the page to add license issues
 When I select suspended license No
 And I click "Next" to continue
 Then I will be on the page with my summary
-# And I will see the information I filled out about my DL in the My Driver License section of the summary
+And I will see that my DL card type has been saved
+And I will see No for having reportable medical history
+And I will see what license type I need
+And I will see No in my suspended license selection

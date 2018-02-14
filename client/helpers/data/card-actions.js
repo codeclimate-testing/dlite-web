@@ -6,23 +6,23 @@ export const hasExistingCard = (props) => {
 };
 
 export const isChangingCard = (props) => {
-  return props.cardType.cardAction === 'change';
+  return props.cardAction === 'change';
 };
 
 export const isReplacingCard = (props) => {
-  return props.cardType.cardAction === 'replace';
+  return props.cardAction === 'replace';
 };
 
 export const isRenewingCard = (props) => {
-  return props.cardType.cardAction === 'renew';
+  return props.cardAction === 'renew';
 };
 
 export const isGettingNew = (props) => {
-  return props.cardType.cardAction === 'new';
+  return props.cardAction === 'new';
 };
 
 export const isCardActionSelected = (props) => {
-  return hasValue(props.cardType.cardAction);
+  return hasValue(props.cardAction);
 };
 
 export const otherIsSelected = (props) => {

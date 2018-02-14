@@ -17,11 +17,7 @@ describe('RealIDInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: [''],
-      cardAction: '',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -44,9 +40,24 @@ describe('RealIDInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: [],
+      cardAction: '',
+      IDApp: {
+        isApplying: false,
+        action: '',
+        reducedFee,
+        seniorID,
+        cardChanges
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        licenseType,
+        cardChanges
+      },
       cardChanges,
       licenseType,
+      cardChanges,
       realID,
       reducedFee,
       seniorID,
@@ -60,7 +71,7 @@ describe('RealIDInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <RealIDInfo {...props} />
         </Wrapper>
       );
 
@@ -72,11 +83,13 @@ describe('RealIDInfo', function() {
     describe('ID', function() {
       it('shows that ID card will be real id compliant', function() {
         props.realID.realIdDesignation = 'ID'
-        props.cardType.IDDL = ['ID', 'DL']
+        props.cardType = ['ID', 'DL'];
+        props.IDApp.isApplying = true;
+        props.DLApp.isApplying = true;
 
         let component = render(
           <Wrapper>
-          <GetStartedPage {...props} />
+            <GetStartedPage {...props} />
           </Wrapper>
         );
         assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.realIDCompliantID), true);
@@ -86,7 +99,8 @@ describe('RealIDInfo', function() {
     describe('DL', function() {
       it('shows that DL will be real id compliant', function() {
         props.realID.realIdDesignation = ''
-        props.cardType.IDDL = ['DL']
+        props.cardType = ['DL'];
+        props.DLApp.isApplying = true;
 
         let component = render(
           <Wrapper>

@@ -43,6 +43,7 @@ import {
   CurrentIDInfo,
   CurrentDLInfo
 } from '../../../../client/presentations/conclusion/summary/index.js';
+import translations       from '../../../../client/i18n';
 
 import SummaryPage        from '../../../../client/presentations/conclusion/summary-page.jsx';
 
@@ -62,20 +63,15 @@ describe('SummaryPage', function() {
       </Wrapper>
     );
   });
-
-  // TODO add testing here or elsewhere for summary-handler
-  // it('saving data with server error re-renders page with data', function() {
-  //   assert.ok(component.find('.error').length);
-  // });
-
-  // it('saving data with server error shows error message', function() {
-  //   assert.ok(component.text().includes('Sorry, something went wrong'));
-  // });
 });
 
 describe('Summary components', function() {
   const Wrapper = wrapperGenerator(store);
-  let props = data.application;
+  let props;
+
+  beforeEach(function() {
+    props = data.application;
+  });
 
   describe('Empty', function() {
     it('returns null when no value', function() {
@@ -130,9 +126,10 @@ describe('Summary components', function() {
 
   describe('IDAction', function() {
     it('shows action for ID', function() {
-      props.cardType = {
-        IDDL: ['ID'],
-        cardAction: 'new'
+      props.cardType = ['ID'];
+      props.IDApp = {
+        isApplying: true,
+        action: 'new'
       };
 
       let component = render(
@@ -148,10 +145,10 @@ describe('Summary components', function() {
 
   describe('DLAction', function() {
     it('shows action for DL', function() {
-      props.cardType = {
-        IDDL: ['DL'],
-        cardAction: 'new'
-      };
+      props.cardType = ['DL'];
+      props.cardAction = 'new';
+      props.DLApp.isApplying = true;
+      props.DLApp.action = 'new';
 
       let component = render(
         <Wrapper>
@@ -166,10 +163,13 @@ describe('Summary components', function() {
 
   describe('CurrentIDInfo', function() {
     it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
-      props.cardType = {
-        IDDL: ['ID'],
-        cardAction: 'renew'
+      props.cardType = ['ID'];
+      props.cardAction = 'renew';
+      props.IDApp = {
+        isApplying: true,
+        action: 'renew'
       };
+
       props.currentCardInfo = {
         number: 'a90382kf',
         month: '11',
@@ -190,10 +190,13 @@ describe('Summary components', function() {
 
   describe('CurrentDLInfo', function() {
     it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
-      props.cardType = {
-        IDDL: ['DL'],
-        cardAction: 'renew'
-      };
+      props.cardType = ['DL'];
+      props.cardAction = 'renew';
+      props.DLApp = {
+        isApplying: true,
+        action: 'renew'
+      }
+
       props.currentCardInfo = {
         number: 'a90382kf',
         month: '11',
@@ -229,7 +232,10 @@ describe('Summary components', function() {
 
   describe('IDRealID', function() {
     it('shows RealID fields for ID', function(){
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.IDApp = {
+        isApplying: true
+      }
       props.realID = {
         getRealID : 'Yes',
         realIdDesignation: 'ID'
@@ -246,7 +252,8 @@ describe('Summary components', function() {
 
   describe('DLRealID', function() {
     it('shows RealID fields DL', function(){
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
+      props.DLApp.isApplying = true;
       props.realID = {
         getRealID : 'Yes',
         realIdDesignation: 'DL'
@@ -259,31 +266,85 @@ describe('Summary components', function() {
       )
       assert.equal(component.text().includes('Real-ID CompliantYes'), true);
     });
+
+    it('does not show if user is not getting a DL', function() {
+      let data = props;
+      data.realID.getRealID = 'Yes';
+      data.DLApp.isApplying = false;
+
+      let component = render(
+        <Wrapper>
+          <DLRealID { ...data } />
+        </Wrapper>
+      )
+
+      assert.equal(component.text().includes('Real-ID'), false);
+    });
+
+    it('does not show if the user has not selected to get a real id', function() {
+      let data = props;
+      data.DLApp.isApplying = true;
+      data.realID.getRealID = '';
+
+      let component = render(
+        <Wrapper>
+          <DLRealID { ...data } />
+        </Wrapper>
+      )
+
+
+      assert.equal(component.text().includes('Real-ID'), false);
+    });
   });
 
   describe('LicenseType', function() {
     it('lists which types of licenses the user has selected', function() {
-      props.licenseType.type = ['car', 'cycle'];
-      props.licenseType.needEndorsement = 'Yes';
-      props.licenseType.endorsement = 'firefighter';
+      let data = {
+        cardType: ['DL'],
+        DLApp: {
+          isApplying: true,
+          action: 'new',
+          licenseType: {
+            type: ['car', 'cycle'],
+            needEndorsement: 'Yes',
+            endorsement: 'firefighter'
+          }
+        },
+        licenseType: {
+          type: ['car', 'cycle'],
+          needEndorsement: 'Yes',
+          endorsement: 'firefighter'
+        },
+      };
       let component = render(
         <Wrapper>
           <LicenseType
-            { ...props }
+            { ...data }
           />
         </Wrapper>
       )
-      assert.ok(component.text().includes('Car (Class C)'), 'license type not rendered in summary');
+      assert.ok(component.text().includes('Car (Class C)'), 'car type not rendered in summary');
+      assert.ok(component.text().includes('Motorcycle (Class M)'), 'moto type not rendered in summary');
+      assert.ok(!component.text().includes('Housecar'));
       assert.ok(component.text().includes('Firefighter endorsementYes'), 'license endorsement not rendered in summary');
     });
   });
 
   describe('ReducedOrNoFee', function() {
     it('returns null when no value', function(){
+      props.IDApp = {
+        isApplying: true,
+        action: 'new',
+        reducedFee: {
+          ID: 'Yes',
+          form: 'Yes'
+        }
+      };
       let component = render(
         <Wrapper>
           <ReducedOrNoFee
             { ...props }
+            reducedFee = {props.IDApp.reducedFee}
           />
         </Wrapper>
       )
@@ -293,8 +354,8 @@ describe('Summary components', function() {
 
   describe('Address', function() {
     it('shows address fields', function(){
-      props.homeAddressSameAsMailing = 'No';
-      props.address.home = {
+      props.basics.address.homeAddressSameAsMailing = 'No';
+      props.basics.address.home = {
         street_1: '111 Main Street',
         street_2: '',
         city: 'Sacramento',
@@ -302,7 +363,7 @@ describe('Summary components', function() {
         zip: '95814'
       };
 
-      props.address.mailing = {
+      props.basics.address.mailing = {
         street_1: '222 High Street',
         street_2: '',
         city: 'Beverly Hills',
@@ -314,13 +375,15 @@ describe('Summary components', function() {
         <Wrapper>
           <Address
             { ...props }
+            address = {props.basics.address}
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Home Address'), true);
+
+      assert.equal(component.text().includes(`${translations.summaryPage.myBasics.homeAddress}`), true);
       assert.equal(component.text().includes('111 Main Street'), true);
       assert.equal(component.text().includes('Sacramento, CA 95814'), true);
-      assert.equal(component.text().includes('Mailing Address'), true);
+      assert.equal(component.text().includes(`${translations.summaryPage.myBasics.mailingAddress}`), true);
       assert.equal(component.text().includes('222 High Street'), true);
       assert.equal(component.text().includes('Beverly Hills, CA 90210'), true);
     });
@@ -503,10 +566,7 @@ describe('Summary components', function() {
           hasMedicalCondition: 'Yes',
           medicalInfo: 'blind'
         };
-        props.cardType = {
-          IDDL: ['ID'],
-          cardAction: 'new'
-        };
+        props.cardType = ['ID'];
 
         let component = render(
           <Wrapper>
@@ -516,8 +576,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(!component.text().includes('Medical conditions'), true);
-        assert.equal(!component.text().includes('None'), true);
+        assert.equal(component.text().includes('Medical conditions'), false);
+        assert.equal(component.text().includes('None'), false);
       });
     });
 
@@ -527,9 +587,10 @@ describe('Summary components', function() {
           hasMedicalCondition: 'No',
           medicalInfo: ''
         };
-        props.cardType = {
-          IDDL: ['DL'],
-          cardAction: 'new'
+        props.cardType = ['DL'];
+        props.DLApp = {
+          isApplying: true,
+          action: 'new'
         };
 
         let component = render(
@@ -549,9 +610,10 @@ describe('Summary components', function() {
         hasMedicalCondition: 'Yes',
         medicalInfo: 'Blind'
       };
-      props.cardType = {
-        IDDL: ['DL'],
-        cardAction: 'new'
+      props.cardType = ['DL'];
+      props.DLApp = {
+        isApplying: true,
+        action: 'new'
       };
 
       let component = render(
@@ -653,6 +715,19 @@ describe('Summary components', function() {
       )
       assert.equal(component.text().includes('US Citizen: Yes'), true);
     });
+    it('shows decline to answer text when user has declined to answer', function() {
+      let citizenStatus = 'decline';
+
+      let component = render(
+        <Wrapper>
+          <CitizenStatus
+            { ...props }
+            citizenStatus={citizenStatus}
+          />
+        </Wrapper>
+      )
+      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}: ${translations.shared.commonAnswers.declineToAnswer}`), true);
+    });
   });
 
   describe('EligibilityRequirements', function() {
@@ -667,7 +742,7 @@ describe('Summary components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Voter registration eligibility met: Yes'), true);
+      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}: Yes`), true);
     });
   });
 
@@ -769,7 +844,7 @@ describe('Summary components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Ballot by mail: Yes'), true);
+      assert.equal(component.text().includes('Vote by mail: Yes'), true);
     });
   });
 

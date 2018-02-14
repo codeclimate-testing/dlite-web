@@ -27,7 +27,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    seniorID :  state.application.seniorID,
+    seniorID :  state.application.IDApp.seniorID,
     focused:    state.ui.focus,
     validations:state.ui.validations
   };

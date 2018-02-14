@@ -6,16 +6,6 @@ import {
   hasAllAttributes,
 } from './data/validations';
 
-// TODO: move to `data/validations`
-
-
-// const hasValues = (props) => {
-//   if (!props) { return; }
-
-//   return props.length > 0;
-// };
-// // --------------------------------
-
 const legalName = (props) => {
   return hasAllAttributes(props, ['lastName']);
 };

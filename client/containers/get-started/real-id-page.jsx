@@ -25,7 +25,9 @@ const mapStateToProps = (state) => {
   return {
     realID :    state.application.realID,
     cardType:   state.application.cardType,
-    seniorID:   state.application.seniorID,
+    IDApp:      state.application.IDApp,
+    DLApp:      state.application.DLApp,
+    seniorID:   state.application.IDApp.seniorID,
     focused:    state.ui.focus,
     validations:state.ui.validations
   };

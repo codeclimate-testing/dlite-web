@@ -24,7 +24,9 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    namesHistory: state.application.namesHistory,
+    namesHistory: state.application.history.namesHistory,
+    IDApp       : state.application.IDApp,
+    DLApp       : state.application.DLApp,
     cardType    : state.application.cardType,
     focused     : state.ui.focus,
     validations : state.ui.validations

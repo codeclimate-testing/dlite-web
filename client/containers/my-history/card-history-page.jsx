@@ -10,7 +10,7 @@ import Presentation                   from '../../presentations/my-history/card-
 
 const Page = (props) => {
   let validations       = new LicenseHistoryValidator(props.licenseAndIdHistory, props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors(props.name, props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -25,7 +25,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    licenseAndIdHistory : state.application.licenseAndIdHistory,
+    licenseAndIdHistory : state.application.history.licenseAndIdHistory,
     cardType            : state.application.cardType,
     focused             : state.ui.focus,
     validations         : state.ui.validations

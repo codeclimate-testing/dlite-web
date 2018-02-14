@@ -2,20 +2,31 @@
 
 import React                  from 'react';
 import translations           from '../../../i18n';
-import { getCorrectString }   from '../../../helpers/data/card-type';
-import { hasActionIsUpdating } from '../../../helpers/data/card-actions';
+import { hasActionIsUpdating }     from '../../../helpers/data/card-actions';
 import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import {
+  getID,
+  getDL
+ }   from '../../../helpers/data/card-type';
 
-const licenseUpdate = convertToHtml('p', translations.intro.getStartedPage.explanation.update.license);
-const IDUpdate = convertToHtml('p', translations.intro.getStartedPage.explanation.update.id);
+const License = (props) => {
+  if (!getDL(props)) { return null;}
+  return convertToHtml('p', translations.intro.getStartedPage.explanation.update.license);
+};
+
+const ID = (props) => {
+  if (!getID(props)) { return null; }
+  return convertToHtml('p', translations.intro.getStartedPage.explanation.update.id);
+};
+
 
 const UpdateApplicationInfo = (props) => {
   if (!hasActionIsUpdating(props)) { return null; }
-  let updateInfo = getCorrectString(props, licenseUpdate, IDUpdate);
 
   return (
     <div className='update-application-info'>
-      {updateInfo}
+      <License cardType = {props.cardType} />
+      <ID cardType = {props.cardType } />
     </div>
     );
 };

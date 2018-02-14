@@ -30,11 +30,9 @@ describe('Data helpers for youth', function() {
         month: month.toString(),
         day: day.toString()
       },
-      cardType: {
-        IDDL: ['DL'],
-        cardAction: 'new',
-        youthIDInstead: ''
-      },
+      cardType:  ['DL'],
+      cardAction: 'new',
+      youthIDInstead: '',
       guardianSignature: {
         isSigned: '',
         guardianInfo: {
@@ -52,7 +50,7 @@ describe('Data helpers for youth', function() {
   describe('validToContinue', function() {
     it('should be false if they are under 15 and dont want to switch to an ID', function() {
       data.dateOfBirth.year = (year - 10).toString();
-      data.cardType.youthIDInstead = 'No';
+      data.youthIDInstead = 'No';
       assert.equal(validToContinue(data), false);
     });
 
@@ -63,7 +61,7 @@ describe('Data helpers for youth', function() {
     it('should be true if they are a month under 15 but will switch to an ID', function() {
       data.dateOfBirth.year = (year - 15).toString();
       data.dateOfBirth.month = (month + 1).toString();
-      data.cardType.youthIDInstead = 'Yes';
+      data.youthIDInstead = 'Yes';
 
       assert.equal(validToContinue(data), true);
     });
@@ -71,12 +69,12 @@ describe('Data helpers for youth', function() {
 
   describe('#tooYoungForDL', function() {
     it('should be true if they are under 15.5 and getting both an ID and a DL', function() {
-      data.cardType.IDDL = ['ID', 'DL'];
+      data.cardType = ['ID', 'DL'];
       assert.equal(tooYoungForDL(data), true);
     });
 
     it('should be false if they are under 15.5 but only getting an ID', function() {
-      data.cardType.IDDL = ['ID'];
+      data.cardType = ['ID'];
       assert.equal(tooYoungForDL(data), false);
     });
 
@@ -122,12 +120,12 @@ describe('Data helpers for youth', function() {
   describe('#continueHidden', function() {
     it('returns true if user is not valid to continue', function() {
       data.dateOfBirth.year = (year - 10).toString();
-      data.cardType.youthIDInstead = 'No';
+      data.youthIDInstead = 'No';
       assert.equal(continueHidden(data), true);
     });
 
     it('returns false if user is valid to continue because they are over 15', function() {
-      data.cardType.youthIDInstead = 'No';
+      data.youthIDInstead = 'No';
 
       assert.equal(continueHidden(data), false);
     });
@@ -135,7 +133,7 @@ describe('Data helpers for youth', function() {
     it('returns false if user is under 15 but selects Yes to getting an ID instead of a DL', function() {
       data.dateOfBirth.year = (year - 15).toString();
       data.dateOfBirth.month = (month + 1).toString();
-      data.cardType.youthIDInstead = 'Yes';
+      data.youthIDInstead = 'Yes';
       assert.equal(continueHidden(data), false);
     });
   });

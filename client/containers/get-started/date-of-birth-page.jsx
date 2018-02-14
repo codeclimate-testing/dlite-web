@@ -26,7 +26,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth:  state.application.dateOfBirth,
+    dateOfBirth:  state.application.basics.dateOfBirth,
     validations:  state.ui.validations
   };
 };

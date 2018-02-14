@@ -8,6 +8,6 @@ function defaultState() {
     getRealID: '',
     realIdDesignation: ''
   };
-}
+};
 
 export default formObjectReducer(defaultState, TYPES.UPDATE_REAL_ID);

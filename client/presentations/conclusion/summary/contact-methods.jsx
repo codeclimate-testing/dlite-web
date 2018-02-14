@@ -1,10 +1,10 @@
 'use strict';
 
 import React from 'react';
+import translations   from '../../../i18n';
 
-import { hasValue }             from '../../../helpers/data/validations';
 import {
-  shouldContactMethods
+  declineToAnswer
 } from '../../../helpers/data/voting';
 import {
   hasPhone,
@@ -12,9 +12,7 @@ import {
   shouldContact,
   skipAnswer
 } from '../../../helpers/data/contact-methods';
-import {
-  getStringByStatus
-} from '../../../helpers/data/summary'
+
 
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
@@ -27,18 +25,29 @@ const EmailAddress = (props) => {
   return <p> Email Address: {props.contactMethods.emailAddress} </p>
 };
 
+const Yes = (props) => {
+  if (!shouldContact(props)) { return null; }
+  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.yes}</p>)
+};
+
+const No = (props) => {
+  if (shouldContact(props) || declineToAnswer(props.contactMethods.shouldContact)) { return null; }
+  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.no}</p>)
+};
+
+const Decline = (props) => {
+  if (!declineToAnswer(props.contactMethods.shouldContact)) { return null; }
+  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.declineToAnswer}</p>)
+};
+
 const ContactMethods = (props) => {
   if (shouldContactNotSelected(props)) { return null; }
 
-  const yesText = 'Yes';
-  const noText = 'No';
-  const declineText = 'No Answer';
-
-  let text = getStringByStatus(props.contactMethods.shouldContact, yesText, noText, declineText);
-
   return (
     <div className='summary-section'>
-      <p> Should Contact: {text} </p>
+      <Yes contactMethods = {props.contactMethods} />
+      <No contactMethods = {props.contactMethods} />
+      <Decline contactMethods = {props.contactMethods} />
       <EmailAddress contactMethods = {props.contactMethods} />
       <PhoneNumber {...props} />
     </div>

@@ -26,7 +26,6 @@ const CurrentDLInfo = (props) => {
         title='Driver license number'
         text={DLNumber}
       />
-      <br></br>
       <SummaryItem
         title='Expiration date'
         text={date}

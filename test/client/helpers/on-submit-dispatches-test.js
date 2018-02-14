@@ -64,25 +64,6 @@ describe('on submit dispatches', function() {
     });
   });
 
-  describe('#useAPI', function() {
-    // TODO: if possible, test the useAPI function with a promise
-
-    // it('dispatches the postData API call to update api status to loading', function() {
-    //   dispatchProps.dispatch = stub();
-    //   let onSubmit = onSubmitDispatches.useAPI(stateProps, dispatchProps.dispatch, ownProps);
-    //   onSubmit(event);
-    //   assert(
-    //     dispatchProps.dispatch.calledWith({
-    //       type: 'UPDATE_API_STATUS',
-    //       payload: {
-    //         value: 'loading'
-    //       }
-    //     }),
-    //     'dispatch to set api status to loading not called'
-    //   );
-    // });
-  });
-
   describe('#defaultLanguage', function() {
     it('if appLanguage is blank the updateLanguage action will be dispatched', function() {
       let onSubmit = onSubmitDispatches.defaultLanguage(stateProps, dispatchProps.dispatch, ownProps);

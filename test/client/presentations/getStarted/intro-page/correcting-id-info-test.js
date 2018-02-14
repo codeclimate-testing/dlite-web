@@ -17,11 +17,7 @@ describe('CorrectingIDInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['ID'],
-      cardAction: 'change',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: 'correct',
       sections: []
@@ -44,23 +40,32 @@ describe('CorrectingIDInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
-      cardChanges,
-      licenseType,
+      cardType: ['ID'],
+      cardAction: 'change',
+      IDApp: {
+        reducedFee,
+        seniorID: '',
+        isApplying: true,
+        action: 'change',
+        cardChanges: cardChanges
+      },
+      DLApp: {
+        licenseType,
+        isApplying: false
+      },
+      cardChanges: cardChanges,
       realID,
-      reducedFee,
-      seniorID,
       onChange
     }
   });
 
   describe('null', function() {
     it('returns null when user not applying for an ID', function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType= ['DL'];
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <CorrectingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -68,11 +73,11 @@ describe('CorrectingIDInfo', function() {
     });
 
     it('returns null when user is not correcting an ID', function() {
-      props.cardChanges.correctOrUpdate = 'update';
+      props.cardChanges.correctOrUpdate = 'update'
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <CorrectingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -86,14 +91,14 @@ describe('CorrectingIDInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.correctingID), true);
     });
 
     it('shows that user is getting a reduced fee ID on get started page', function() {
-      props.reducedFee.ID = 'Yes';
+      props.IDApp.reducedFee.ID = 'Yes';
 
       let component = render(
         <Wrapper>
@@ -104,7 +109,7 @@ describe('CorrectingIDInfo', function() {
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
-      props.seniorID = 'No';
+      props.IDApp.seniorID = 'Yes';
 
       let component = render(
         <Wrapper>
@@ -112,18 +117,6 @@ describe('CorrectingIDInfo', function() {
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.correctingSeniorID), true);
-    });
-
-    it('shows that user getting no fee ID on get started page', function() {
-      props.seniorID = 'Yes';
-
-      let component = render(
-        <Wrapper>
-        <GetStartedPage {...props} />
-        </Wrapper>
-      );
-      assert.equal(component.text().includes('You are correcting a no-fee ID card'), true);
-      assert.ok(component.find('p.translation-missing').length, 'translation for noFeeID not present');
     });
   });
 });

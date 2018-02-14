@@ -10,11 +10,11 @@ import {
 } from './card-type';
 
 export const getIDString = (props, defaultString, reducedString, noFeeString, seniorString) => {
-  if (props.seniorID === 'Yes') {
+  if (props.IDApp.seniorID === 'Yes') {
     return noFeeString;
-  } else if (props.seniorID === 'No') {
+  } else if (props.IDApp.seniorID === 'No') {
     return seniorString;
-  } else if (choosingReducedFee(props)) {
+  } else if (choosingReducedFee(props.IDApp)) {
     return reducedString;
   } else {
     return defaultString;
@@ -23,7 +23,7 @@ export const getIDString = (props, defaultString, reducedString, noFeeString, se
 
 
 export const getEndorsementString = (props, fireString) => {
-  if (props.licenseType.endorsement.indexOf('firefighter') > -1) {
+  if (props.DLApp.licenseType.endorsement.indexOf('firefighter') > -1) {
     return fireString;
   } else {
     return '';
@@ -42,16 +42,16 @@ export const getRealIDString = (props, IDString, DLString) => {
 
 export const getVehicleInfoArray = (props, classC, classM, classA, classB) => {
   let vehicles = [];
-  if(props.licenseType.type.indexOf('car') > -1) {
+  if(props.DLApp.licenseType.type.indexOf('car') > -1) {
     vehicles.push(classC)
   }
-  if(props.licenseType.type.indexOf('cycle') > -1) {
+  if(props.DLApp.licenseType.type.indexOf('cycle') > -1) {
     vehicles.push(classM)
   }
-  if(props.licenseType.type.indexOf('long') > -1) {
+  if(props.DLApp.licenseType.type.indexOf('long') > -1) {
     vehicles.push(classA)
   }
-  if(props.licenseType.type.indexOf('trailer') > -1) {
+  if(props.DLApp.licenseType.type.indexOf('trailer') > -1) {
     vehicles.push(classB)
   }
   return vehicles;

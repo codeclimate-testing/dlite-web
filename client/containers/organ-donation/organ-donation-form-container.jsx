@@ -29,7 +29,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     organDonation:  state.application.organDonation,
-    dateOfBirth:    state.application.dateOfBirth,
+    dateOfBirth:    state.application.basics.dateOfBirth,
     focused:        state.ui.focus,
     validations:    state.ui.validations
   };

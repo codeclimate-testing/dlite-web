@@ -13,7 +13,7 @@ const Form = (props) => {
       <fieldset>
         <RadioCollection
           {...props}
-          name            = 'IDDL'
+          name            = { props.cardAction }
           onBlur          = { props.onBlurValidate }
           errorMessage    = { props.validations.cardType()}
         >

@@ -17,11 +17,6 @@ describe('UpdateApplicationInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: [],
-      cardAction: 'change',
-      youthIDInstead: ''
-    };
     let cardChanges = {
       correctOrUpdate: 'update',
       sections: []
@@ -40,11 +35,24 @@ describe('UpdateApplicationInfo', function() {
     };
     let seniorID = '';
 
-
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: [],
+      cardAction: 'change',
+      IDApp: {
+        action: '',
+        isApplying: false,
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -60,7 +68,7 @@ describe('UpdateApplicationInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <UpdateApplicationInfo {...props} />
         </Wrapper>
       );
       assert.equal(component.find('.update-application-info'), false);
@@ -69,7 +77,9 @@ describe('UpdateApplicationInfo', function() {
 
   describe('when applying for ID', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.IDApp.action = 'change';
+      props.IDApp.cardChanges.correctOrUpdate = 'update';
     });
 
     it('shows application info for update an ID', function() {
@@ -85,7 +95,9 @@ describe('UpdateApplicationInfo', function() {
 
   describe('when applying for DL', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
+      props.DLApp.action = 'change';
+      props.DLApp.cardChanges.correctOrUpdate = 'update';
     });
 
     it('shows application info for update a DL', function() {

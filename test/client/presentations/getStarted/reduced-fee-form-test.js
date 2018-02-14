@@ -17,16 +17,11 @@ describe('Reduced Fee Page', function() {
     let props;
 
     beforeEach(function() {
+      let onChange = spy();
       let reducedFee = {
         ID: '',
         form: ''
       };
-      let cardType = {
-        IDDL: ['ID'],
-        cardType: 'new',
-        youthIDInstead: ''
-      };
-      let onChange = spy();
 
       let validations = {
         form: spy(),
@@ -36,8 +31,18 @@ describe('Reduced Fee Page', function() {
       };
 
       props = {
+        cardType: ['ID'],
+        cardAction: 'new',
+        youthIDInstead: '',
+        DLApp: {
+          isApplying: false
+        },
+        IDApp: {
+          isApplying: true,
+          action: 'new',
+          reducedFee
+        },
         reducedFee,
-        cardType,
         onChange,
         validations
       }
@@ -54,8 +59,8 @@ describe('Reduced Fee Page', function() {
     });
 
     it('selecting Yes makes form show asking if user has the correct forms', function() {
-      props.reducedFee.ID = 'Yes';
-      props.continueDisabled  =   !(dataPresent.reducedFee(props.reducedFee));
+      props.IDApp.reducedFee.ID = 'Yes';
+      props.continueDisabled  =   !(dataPresent.reducedFee(props.IDApp.reducedFee));
       let component = render(
         <Wrapper>
           <ReducedFeePage  {...props} />
@@ -66,7 +71,9 @@ describe('Reduced Fee Page', function() {
     });
 
     it('has special language if user is getting both new ID and new DL', function() {
-      props.cardType.IDDL = ['ID', 'DL'];
+      props.cardType = ['ID', 'DL'];
+      props.IDApp.isApplying = true;
+      props.DLApp.isApplying = true;
 
       let component = render(
         <Wrapper>

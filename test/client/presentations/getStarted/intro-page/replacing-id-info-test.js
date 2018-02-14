@@ -17,11 +17,7 @@ describe('ReplacingIDInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['ID'],
-      cardAction: 'replace',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -45,7 +41,21 @@ describe('ReplacingIDInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: ['ID'],
+      cardAction: 'replace',
+      IDApp: {
+        action: 'replace',
+        isApplying: true,
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -57,11 +67,11 @@ describe('ReplacingIDInfo', function() {
 
   describe('null', function() {
     it('returns null when user not applying for an ID', function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <ReplacingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -69,11 +79,11 @@ describe('ReplacingIDInfo', function() {
     });
 
     it('returns null when user is not replacing an ID', function() {
-      props.cardType.cardAction = 'renew';
+      props.cardAction = 'renew';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <ReplacingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -104,7 +114,7 @@ describe('ReplacingIDInfo', function() {
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
-      props.seniorID = 'No';
+      props.IDApp.seniorID = 'No';
 
       let component = render(
         <Wrapper>
@@ -115,7 +125,7 @@ describe('ReplacingIDInfo', function() {
     });
 
     it('shows that user getting no fee ID on get started page', function() {
-      props.seniorID = 'Yes';
+      props.IDApp.seniorID = 'Yes';
 
       let component = render(
         <Wrapper>

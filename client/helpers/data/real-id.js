@@ -1,22 +1,23 @@
 'use strict';
 
-import { hasValue }           from '../data/validations';
-import {
-  getID,
-  getDL
-} from './card-type'
+import { hasValue }           from './validations';
+import { bothAppsExist }      from './cards';
 
 export const validToContinue = (props) => {
-  let toCheck = mustChooseCard(props) ? props.realID.realIdDesignation : props.realID.getRealID;
-
-  return hasValue(toCheck)
+  if (mustChooseCard(props)) {
+    return hasValue(props.realID.realIdDesignation);
+  }
+  return isSelected(props);
 };
 
 export const mustChooseCard = (props) => {
-  return gettingRealID(props) &&
-    (getID(props) && getDL(props));
+  return bothAppsExist(props) && gettingRealID(props);
 };
 
 export const gettingRealID = (props) => {
   return props.realID.getRealID === 'Yes';
+};
+
+export const isSelected = (props) => {
+  return hasValue(props.realID.getRealID)
 };

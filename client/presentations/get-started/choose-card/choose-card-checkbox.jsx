@@ -17,8 +17,8 @@ const Form = (props) => {
         <fieldset>
           <CheckboxCollection
             {...props}
-            name          = 'IDDL'
-            array         = { props.cardType.IDDL }
+            name          = 'new'
+            array         = { props.cardType }
             onBlur        = { props.onBlurValidate }
             errorMessage  = { props.validations.cardType()}
           >

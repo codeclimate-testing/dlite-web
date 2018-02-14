@@ -24,10 +24,10 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    reducedFee:  state.application.reducedFee,
-    cardType:    state.application.cardType,
-    focused:     state.ui.focus,
-    validations: state.ui.validations
+    reducedFee  : state.application.IDApp.reducedFee,
+    cardType    : state.application.cardType,
+    focused     : state.ui.focus,
+    validations : state.ui.validations
   };
 };
 

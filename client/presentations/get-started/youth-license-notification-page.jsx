@@ -24,6 +24,7 @@ const FormHeader = (props) => {
 };
 
 const Under15FormHeader = (props) => {
+  if (!ageChecks.Under15(props.dateOfBirth)) { return null; }
   return (
     <FormHeader
       title='You must be 15 years old to start an application for a learners permit.'
@@ -33,6 +34,7 @@ const Under15FormHeader = (props) => {
 };
 
 const YouthFormHeader = (props) => {
+  if (ageChecks.Under15(props.dateOfBirth)) { return null; }
   return (
     <FormHeader
       title={translations.intro.youthDlNotificationPage.prompt}
@@ -50,13 +52,6 @@ let ErrorMessage = (props) => {
 };
 
 const Form = (props) => {
-  const handleChange = (e) => {
-    props.onChange(e); // update props.cardType.youthIDInstead
-    props.checkAnswer(e.target.value, false); // update props.cardType.IDDL
-  }
-
-  const Header = ageChecks.Under15(props.dateOfBirth) ? Under15FormHeader : YouthFormHeader;
-
   const actionName = props.multCards ? 'youthIDOnly' : 'youthIDInstead';
 
   return (
@@ -66,7 +61,8 @@ const Form = (props) => {
     >
       <div className='youth-license-notification'>
         <form onSubmit={props.onSubmit} >
-          <Header />
+          <Under15FormHeader dateOfBirth = {props.dateOfBirth} />
+          <YouthFormHeader dateOfBirth = {props.dateOfBirth} />
           <div className='row'>
             <fieldset>
               <RadioCollection

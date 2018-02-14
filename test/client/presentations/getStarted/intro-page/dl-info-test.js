@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../../support/wrapper';
-import DLInfo           from '../../../../../client/presentations/get-started/intro-page/dl-info.jsx';
+import DLInfo                   from '../../../../../client/presentations/get-started/intro-page/dl-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
 import translations             from '../../../../../client/i18n';
@@ -17,11 +17,7 @@ describe('DLInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['DL'],
-      cardAction: '',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -44,7 +40,21 @@ describe('DLInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: ['DL'],
+      cardAction: '',
+      DLApp: {
+        isApplying: true,
+        action: '',
+        cardChanges,
+        licenseType
+      },
+      IDApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
       cardChanges,
       licenseType,
       realID,
@@ -56,11 +66,12 @@ describe('DLInfo', function() {
 
   describe('null', function() {
     it('returns null when user not applying for an DL', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.DLApp.isApplying = false;
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <DLInfo  {...props} />
         </Wrapper>
       );
 
@@ -70,38 +81,43 @@ describe('DLInfo', function() {
 
   describe('applying for a DL', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardAction = '';
+      props.DLApp.action = '';
     });
 
     it('user getting new DL will see they are applying for driver license on get started page', function() {
       props.cardType.cardAction = 'new';
+      props.DLApp.action = 'new';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage  {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.applyingLicense), true);
     });
 
     it('user renewing DL will see they are renewing driver license on get started page', function() {
-      props.cardType.cardAction = 'renew';
+      props.cardAction = 'renew';
+      props.DLApp.action = 'renew';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.renewingLicense), true);
     });
 
     it('user updating DL will see they are updating driver license on get started page', function() {
-      props.cardType.cardAction = 'change';
-      props.cardChanges.correctOrUpdate = 'update'
+      props.cardAction = 'change';
+      props.cardChanges.correctOrUpdate = 'update';
+      props.DLApp.cardChanges.correctOrUpdate = 'update';
+      props.DLApp.action = 'change';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.updatingLicense), true);
@@ -109,12 +125,14 @@ describe('DLInfo', function() {
     });
 
     it('user correcting DL will see they are correcting driver license on get started page', function() {
-      props.cardType.cardAction = 'change';
-      props.cardChanges.correctOrUpdate = 'correct'
+      props.cardAction = 'change';
+      props.cardChanges.correctOrUpdate = 'correct';
+      props.DLApp.cardChanges.correctOrUpdate = 'correct';
+      props.DLApp.action = 'change';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.correctingLicense), true);
@@ -122,11 +140,12 @@ describe('DLInfo', function() {
     });
 
     it('user replacing DL will see they are replacing driver license on get started page', function() {
-      props.cardType.cardAction = 'replace';
+      props.DLApp.action = 'replace';
+      props.cardAction = 'replace';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.replacingLicense), true);

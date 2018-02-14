@@ -2,7 +2,7 @@
 
 import assert from 'assert';
 
-import updateAddress from '../../../../client/reducers/application/update-address';
+import updateAddress from '../../../../client/reducers/application/basics/update-address';
 
 describe('addressReducer', function() {
   it('it updates mailing address to be same as home address', function() {

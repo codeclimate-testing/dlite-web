@@ -7,6 +7,7 @@ import handlers                   from '../../helpers/handlers';
 import { CurrentCardValidator}    from '../../helpers/validations';
 import { updateCurrentCardInfo }  from '../../actions/index';
 import Presentation               from '../../presentations/get-started/current-card-page.jsx';
+import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let currentCardValidation = new CurrentCardValidator(props.currentCardInfo, props.validations);
@@ -27,10 +28,11 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    currentCardInfo:  state.application.currentCardInfo,
-    cardType:         state.application.cardType,
-    dateOfBirth:      state.application.dateOfBirth,
-    validations:      state.ui.validations
+    currentCardInfo   : getCorrectApp(state.application).currentCard,
+    cardType          : state.application.cardType,
+    cardAction        : state.application.cardAction,
+    dateOfBirth       : state.application.basics.dateOfBirth,
+    validations       : state.ui.validations
   };
 };
 

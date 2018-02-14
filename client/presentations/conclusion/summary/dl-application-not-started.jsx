@@ -3,12 +3,12 @@
 import React from "react";
 import translations   from '../../../i18n';
 import {
-  getDL
+  DLAppExists
 } from '../../../helpers/data/card-type'
 
 const DLApplicationNotStarted = (props) => {
   document.title = 'Summary of my application';
-  if(getDL(props)) { return null; }
+  if(DLAppExists(props)) { return null; }
 
   return (
     <div className='summary-section'>

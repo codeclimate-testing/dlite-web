@@ -40,7 +40,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('No'), 'Medical conditions not saved in summary');
+        assert.ok(text.includes('Medical conditions:None'), 'Medical conditions not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

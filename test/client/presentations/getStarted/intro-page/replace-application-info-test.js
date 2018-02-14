@@ -44,7 +44,21 @@ describe('ReplaceApplicationInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: [],
+      cardAction: 'replace',
+      IDApp: {
+        action: '',
+        isApplying: false,
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -56,11 +70,11 @@ describe('ReplaceApplicationInfo', function() {
 
   describe('null', function() {
     it('returns null when user not replacing a card', function() {
-      props.cardType.cardAction = 'renew';
+      props.cardAction = 'renew';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <ReplaceApplicationInfo {...props} />
         </Wrapper>
       );
 
@@ -70,7 +84,7 @@ describe('ReplaceApplicationInfo', function() {
 
   describe('when applying for ID', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
     });
 
     it('shows application info for replaceing an ID', function() {
@@ -86,7 +100,7 @@ describe('ReplaceApplicationInfo', function() {
 
   describe('when applying for DL', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
     });
 
     it('shows application info for replaceing a DL', function() {

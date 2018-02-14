@@ -11,19 +11,23 @@ import {
 } from './card-actions';
 
 export const getID = (props) => {
-  return props.cardType.IDDL.includes('ID');
+  return props.cardType.includes('ID');
 };
 
 export const getDL = (props) => {
-  return props.cardType.IDDL.includes('DL');
+  return props.cardType.includes('DL');
 };
 
-export const prettyDL = (props) => {
-  return props === 'DL' ? 'Driver License' : 'ID';
+export const IDAppExists = (props) => {
+  return props.IDApp.isApplying;
 };
 
-export const IDorDL = (props) => {
-  return hasMultipleCards(props) ? 'both' : getID(props) ? 'ID' : getDL(props) ? 'DL' : 'none';
+export const DLAppExists = (props) => {
+  return props.DLApp.isApplying;
+};
+
+export const prettyDL = (value) => {
+  return value === 'DL' ? 'Driver License' : 'ID';
 };
 
 export const IDOnly = (props) => {
@@ -31,55 +35,63 @@ export const IDOnly = (props) => {
 };
 
 export const getNewID = (props) => {
-  return getID(props) && isGettingNew(props);
+  return props.IDApp.action === 'new';
 };
 
 export const getNewDL = (props) => {
-  return getDL(props) && isGettingNew(props);
+  return props.DLApp.action === 'new';
 };
 
 export const existingDL = (props) => {
-  return getDL(props) && !isGettingNew(props);
+  return props.DLApp.action !== 'new';
 };
 
 export const existingID = (props) => {
-  return getID(props) && !isGettingNew(props);
+  return props.IDApp.action !== 'new';
 };
 
 export const replaceID = (props) => {
-  return getID(props) && isReplacingCard(props);
+  return props.IDApp.action === 'replace';
 };
 
 export const replaceDL = (props) => {
-  return getDL(props) && isReplacingCard(props);
+  return props.DLApp.action === 'replace';
 };
 
 export const changeID = (props) => {
-  return getID(props) && isChangingCard(props);
+  return props.IDApp.action === 'change';
 };
 
 export const changeDL = (props) => {
-  return getDL(props) && isChangingCard(props);
+  return props.DLApp.action === 'change';
 };
 
 export const correctID = (props) => {
-  return getID(props) && hasActionIsCorrecting(props);
+  return props.IDApp.cardChanges.correctOrUpdate === 'correct' && changeID(props);
+};
+
+export const correctDL = (props) => {
+  return props.DLApp.cardChanges.correctOrUpdate === 'correct' && changeDL(props);
 };
 
 export const updateID = (props) => {
-  return getID(props) && hasActionIsUpdating(props);
+  return props.IDApp.cardChanges.correctOrUpdate === 'update' && changeID(props);
+};
+
+export const updateDL = (props) => {
+  return props.DLApp.cardChanges.correctOrUpdate === 'update' && changeDL(props);
 };
 
 export const renewID = (props) => {
-  return getID(props) && isRenewingCard(props);
+  return props.IDApp.action === 'renew';
 };
 
 export const renewDL = (props) => {
-  return getDL(props) && isRenewingCard(props);
+  return props.DLApp.action === 'renew';
 };
 
 export const needsEndorsement = (props) => {
-  return props.licenseType.needEndorsement === 'Yes';
+  return props.DLApp.licenseType.needEndorsement === 'Yes';
 };
 
 export const getCorrectString = (props, DLString, IDString, bothString) => {
@@ -92,4 +104,11 @@ export const getCorrectString = (props, DLString, IDString, bothString) => {
   } else {
     return '';
   }
+};
+
+export const getCorrectApp = (state) => {
+  if (getID(state)) {
+    return state.IDApp;
+  }
+  return state.DLApp;
 };

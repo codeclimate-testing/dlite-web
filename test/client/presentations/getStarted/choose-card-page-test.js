@@ -18,11 +18,7 @@ describe('ChooseCardPage', function() {
     let props;
 
     beforeEach(function() {
-      let cardType = {
-        IDDL: [],
-        cardAction: '',
-        youthIDInstead: ''
-      };
+
       let cardChanges = {
         correctOrUpdate: ''
       };
@@ -43,8 +39,18 @@ describe('ChooseCardPage', function() {
       };
 
       props = {
-        cardType,
-        cardChanges,
+        cardType: [],
+        cardAction: '',
+        IDApp: {
+          isApplying: false,
+          action: '',
+          cardChanges
+        },
+        DLApp: {
+          isApplying: false,
+          action: '',
+          cardChanges
+        },
         dateOfBirth,
         accordions,
         onChange,
@@ -53,7 +59,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is getting a new card the form shows a button for ID and a button for DL', function() {
-      props.cardType.cardAction = 'new';
+      props.cardAction = 'new';
 
       let component = render(
         <Wrapper>
@@ -68,7 +74,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('it shows a form with radio buttons asking renewing users which card type to renew', function() {
-      props.cardType.cardAction = 'renew';
+      props.cardAction = 'renew';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>
@@ -80,7 +86,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is changing a card it shows radio buttons and asks about correcting or updating', function() {
-      props.cardType.cardAction = 'change';
+      props.cardAction = 'change';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>
@@ -91,7 +97,7 @@ describe('ChooseCardPage', function() {
     });
 
     it('if the user is replacing a card it shows radio buttons and asks for the reason', function() {
-      props.cardType.cardAction = 'replace';
+      props.cardAction = 'replace';
       let component = render(
         <Wrapper>
           <ChooseCardPage {...props}/>

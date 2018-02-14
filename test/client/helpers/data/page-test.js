@@ -25,9 +25,10 @@ describe('Data helpers for page', function() {
 
   it('#nextPath return the full path given page with a function defining its next page', function() {
     let props = {
-      cardType: {
-        IDDL: ['ID', 'DL'],
-        cardAction: 'new'
+      cardType: ['ID', 'DL'],
+      cardAction: 'new',
+      IDApp:{
+        seniorID: ''
       }
     };
 

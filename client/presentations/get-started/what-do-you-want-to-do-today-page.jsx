@@ -25,6 +25,9 @@ const tempObjectThatNeedsTranslations = {
 const Form = (props) => {
   let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
 
+  // this is temporary as we go through the stories to add all options in for the DL
+  let hideSomeButtons = props.location.pathname.startsWith('/add/');
+
   return (
     <Page
       {...props}
@@ -38,7 +41,7 @@ const Form = (props) => {
             <fieldset>
               <RadioCollection
                 {...props}
-                name    = 'cardAction'
+                name    = {getTextFromPathname(props, 'cardAction', 'DLAction')}
                 onBlur  = { props.onBlurValidate }
                 errorMessage = { props.validations.cardAction()}
               >
@@ -47,14 +50,17 @@ const Form = (props) => {
                   text={text.values[0]}
                 />
                 <RadioSelector
+                  hide = {hideSomeButtons}
                   value = 'renew'
                   text={text.values[1]}
                 />
                 <RadioSelector
+                  hide = {hideSomeButtons}
                   value = 'change'
                   text={text.values[2]}
                 />
                 <RadioSelector
+                  hide= {hideSomeButtons}
                   value='replace'
                   text={text.values[3]}
                 />

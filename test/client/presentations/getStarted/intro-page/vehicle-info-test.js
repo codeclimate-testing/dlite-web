@@ -17,11 +17,7 @@ describe('VehicleInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['DL'],
-      cardAction: '',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -45,7 +41,21 @@ describe('VehicleInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: ['DL'],
+      cardAction: 'renew',
+      IDApp: {
+        action: 'renew',
+        isApplying: true,
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -57,11 +67,11 @@ describe('VehicleInfo', function() {
 
   describe('null', function() {
     it('returns null when user not applying for a DL', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <VehicleInfo  {...props} />
         </Wrapper>
       );
 
@@ -71,7 +81,7 @@ describe('VehicleInfo', function() {
 
   describe('license type', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
     });
 
     describe('type', function() {
@@ -80,7 +90,7 @@ describe('VehicleInfo', function() {
 
         let component = render(
           <Wrapper>
-          <GetStartedPage {...props} />
+            <VehicleInfo  {...props} />
           </Wrapper>
         );
 

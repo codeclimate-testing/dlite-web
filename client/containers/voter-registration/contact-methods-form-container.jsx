@@ -24,8 +24,8 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    contactMethods  : state.application.contactMethods,
-    dateOfBirth     : state.application.dateOfBirth,
+    contactMethods  : state.application.voting.contactMethods,
+    dateOfBirth     : state.application.basics.dateOfBirth,
     focused         : state.ui.focus,
     validations     : state.ui.validations
   };

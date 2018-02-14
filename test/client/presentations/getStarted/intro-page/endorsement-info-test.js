@@ -17,11 +17,6 @@ describe('EndorsementInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['DL'],
-      cardAction: '',
-      youthIDInstead: ''
-    };
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -44,7 +39,21 @@ describe('EndorsementInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: ['DL'],
+      cardAction: '',
+      IDApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -56,11 +65,11 @@ describe('EndorsementInfo', function() {
 
   describe('null', function() {
     it('returns null when not applying for DL', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <EndorsementIngo  {...props} />
         </Wrapper>
       );
 
@@ -74,7 +83,7 @@ describe('EndorsementInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <EndorsementIngo  {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.firefighterEndorsement), true);

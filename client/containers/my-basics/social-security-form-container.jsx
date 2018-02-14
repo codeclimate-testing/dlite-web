@@ -25,10 +25,12 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    socialSecurity: state.application.socialSecurity,
-    cardType:       state.application.cardType,
-    focused:        state.ui.focus,
-    validations:    state.ui.validations
+    socialSecurity: state.application.basics.socialSecurity,
+    cardType      : state.application.cardType,
+    IDApp         : state.application.IDApp,
+    DLApp         : state.application.DLApp,
+    focused       : state.ui.focus,
+    validations   : state.ui.validations
   };
 };
 

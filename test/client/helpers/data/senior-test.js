@@ -17,10 +17,8 @@ describe('Data helpers for senior', function() {
           month: (today.getMonth()).toString(),
           day: today.getDate().toString()
         },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'new'
-        }
+        cardType: ['ID'],
+        cardAction: 'new'
       };
       assert.equal(eligibleForSeniorID(data), false);
     });
@@ -33,10 +31,8 @@ describe('Data helpers for senior', function() {
           month: (today.getMonth()).toString(),
           day: today.getDate().toString()
         },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'new'
-        }
+        cardType: ['DL'],
+        cardAction: 'new'
       };
       assert.equal(eligibleForSeniorID(data), false);
     });
@@ -48,10 +44,8 @@ describe('Data helpers for senior', function() {
           month: (today.getMonth()).toString(),
           day: today.getDate().toString()
         },
-        cardType: {
-          IDDL: ['ID'],
-          cardAction: 'new'
-        }
+        cardType:['ID'],
+        cardAction: 'new'
       };
       assert.equal(eligibleForSeniorID(data), true);
     });
@@ -61,19 +55,21 @@ describe('Data helpers for senior', function() {
     let props;
     beforeEach(function() {
       props = {
-        seniorID: ''
+        IDApp: {
+          seniorID: ''
+        }
       }
     });
     it('returns false if value is No', function() {
-      props.seniorID = 'No';
+      props.IDApp.seniorID = 'No';
       assert.equal(gettingSeniorID(props), false);
     });
     it('returns false if value is blank', function() {
-      props.seniorID = '';
+      props.IDApp.seniorID = '';
       assert.equal(gettingSeniorID(props), false);
     });
     it('returns true if value is Yes', function() {
-      props.seniorID = 'Yes';
+      props.IDApp.seniorID = 'Yes';
       assert.equal(gettingSeniorID(props), true);
     });
   });

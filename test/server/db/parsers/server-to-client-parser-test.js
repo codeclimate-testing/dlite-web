@@ -24,10 +24,10 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.legalName.firstName, clientData.legalName.firstName);
-        assert.equal(parsedData.application.legalName.middleName, clientData.legalName.middleName);
-        assert.equal(parsedData.application.legalName.lastName, clientData.legalName.lastName);
-        assert.equal(parsedData.application.legalName.suffix, clientData.legalName.suffix);
+        assert.equal(parsedData.application.basics.legalName.firstName, clientData.basics.legalName.firstName);
+        assert.equal(parsedData.application.basics.legalName.middleName, clientData.basics.legalName.middleName);
+        assert.equal(parsedData.application.basics.legalName.lastName, clientData.basics.legalName.lastName);
+        assert.equal(parsedData.application.basics.legalName.suffix, clientData.basics.legalName.suffix);
         done();
       })
       .catch(done);
@@ -37,9 +37,9 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.dateOfBirth.day, clientData.dateOfBirth.day);
-        assert.equal(parsedData.application.dateOfBirth.month, clientData.dateOfBirth.month);
-        assert.equal(parsedData.application.dateOfBirth.year, clientData.dateOfBirth.year);
+        assert.equal(parsedData.application.basics.dateOfBirth.day, clientData.basics.dateOfBirth.day);
+        assert.equal(parsedData.application.basics.dateOfBirth.month, clientData.basics.dateOfBirth.month);
+        assert.equal(parsedData.application.basics.dateOfBirth.year, clientData.basics.dateOfBirth.year);
         done();
       })
       .catch(done);
@@ -49,11 +49,11 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.address.home.street_1, clientData.address.home.street_1);
-        assert.equal(parsedData.application.address.home.street_2, clientData.address.home.street_2);
-        assert.equal(parsedData.application.address.home.city, clientData.address.home.city);
-        assert.equal(parsedData.application.address.home.state, clientData.address.home.state);
-        assert.equal(parsedData.application.address.home.zip, clientData.address.home.zip);
+        assert.equal(parsedData.application.basics.address.home.street_1, clientData.basics.address.home.street_1);
+        assert.equal(parsedData.application.basics.address.home.street_2, clientData.basics.address.home.street_2);
+        assert.equal(parsedData.application.basics.address.home.city, clientData.basics.address.home.city);
+        assert.equal(parsedData.application.basics.address.home.state, clientData.basics.address.home.state);
+        assert.equal(parsedData.application.basics.address.home.zip, clientData.basics.address.home.zip);
         done();
       })
       .catch(done);
@@ -63,26 +63,15 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.address.mailing.street_1, clientData.address.mailing.street_1);
-        assert.equal(parsedData.application.address.mailing.street_2, clientData.address.mailing.street_2);
-        assert.equal(parsedData.application.address.mailing.city, clientData.address.mailing.city);
-        assert.equal(parsedData.application.address.mailing.state, clientData.address.mailing.state);
-        assert.equal(parsedData.application.address.mailing.zip, clientData.address.mailing.zip);
+        assert.equal(parsedData.application.basics.address.mailing.street_1, clientData.basics.address.mailing.street_1);
+        assert.equal(parsedData.application.basics.address.mailing.street_2, clientData.basics.address.mailing.street_2);
+        assert.equal(parsedData.application.basics.address.mailing.city, clientData.basics.address.mailing.city);
+        assert.equal(parsedData.application.basics.address.mailing.state, clientData.basics.address.mailing.state);
+        assert.equal(parsedData.application.basics.address.mailing.zip, clientData.basics.address.mailing.zip);
         done();
       })
       .catch(done);
     });
-
-    it('correctly extracts the cards', function(done) {
-      getApplication(data.application.id)
-      .then((records) => {
-        parsedData = parse(records);
-        assert.deepEqual(parsedData.application.cardType.IDDL.sort(), clientData.cardType.IDDL.sort());
-        assert.deepEqual(parsedData.application.cardType.cardAction, clientData.cardType.cardAction);
-        done();
-      })
-      .catch(done);
-    } )
 
     it('correctly extracts the card options', function(done) {
       getApplication(data.application.id)
@@ -90,8 +79,8 @@ describe('server data parser', function() {
         parsedData = parse(records);
         assert.equal(parsedData.application.realID.getRealID, clientData.realID.getRealID);
         assert.equal(parsedData.application.realID.realIdDesignation, clientData.realID.realIdDesignation);
-        assert.equal(parsedData.application.seniorID, clientData.seniorID);
-        assert.equal(parsedData.application.seniorID, 'Yes');
+        assert.equal(parsedData.application.IDApp.seniorID, clientData.IDApp.seniorID);
+        assert.equal(parsedData.application.IDApp.seniorID, 'Yes');
         done();
       })
       .catch(done);
@@ -101,9 +90,9 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then( records => {
         parsedData = parse(records);
-        assert.deepEqual(parsedData.application.licenseType.type, clientData.licenseType.type);
-        assert.deepEqual(parsedData.application.licenseType.endorsement, clientData.licenseType.endorsement);
-        assert.deepEqual(parsedData.application.licenseType.needEndorsement, clientData.licenseType.needEndorsement);
+        assert.deepEqual(parsedData.application.DLApp.licenseType.type, clientData.DLApp.licenseType.type);
+        assert.deepEqual(parsedData.application.DLApp.licenseType.endorsement, clientData.DLApp.licenseType.endorsement);
+        assert.deepEqual(parsedData.application.DLApp.licenseType.needEndorsement, clientData.DLApp.licenseType.needEndorsement);
         done();
       })
       .catch(done)
@@ -113,10 +102,10 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then( records => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.currentCardInfo.number, clientData.currentCardInfo.number);
-        assert.equal(parsedData.application.currentCardInfo.day, clientData.currentCardInfo.day);
-        assert.equal(parsedData.application.currentCardInfo.month, clientData.currentCardInfo.month);
-        assert.equal(parsedData.application.currentCardInfo.year, clientData.currentCardInfo.year);
+        assert.equal(parsedData.application.IDApp.currentCard.number, clientData.IDApp.currentCard.number);
+        assert.equal(parsedData.application.IDApp.currentCard.day, clientData.IDApp.currentCard.day);
+        assert.equal(parsedData.application.IDApp.currentCard.month, clientData.IDApp.currentCard.month);
+        assert.equal(parsedData.application.IDApp.currentCard.year, clientData.IDApp.currentCard.year);
         done();
       })
       .catch(done);
@@ -126,9 +115,9 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.physicalTraits.hairColor, clientData.physicalTraits.hairColor);
-        assert.equal(parsedData.application.physicalTraits.eyeColor, clientData.physicalTraits.eyeColor);
-        assert.equal(parsedData.application.physicalTraits.sex, clientData.physicalTraits.sex);
+        assert.equal(parsedData.application.basics.physicalTraits.hairColor, clientData.basics.physicalTraits.hairColor);
+        assert.equal(parsedData.application.basics.physicalTraits.eyeColor, clientData.basics.physicalTraits.eyeColor);
+        assert.equal(parsedData.application.basics.physicalTraits.sex, clientData.basics.physicalTraits.sex);
         done();
       })
       .catch(done);
@@ -138,9 +127,9 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.traitsHeightWeight.weight, clientData.traitsHeightWeight.weight);
-        assert.equal(parsedData.application.traitsHeightWeight.heightFeet, clientData.traitsHeightWeight.heightFeet);
-        assert.equal(parsedData.application.traitsHeightWeight.heightInches, clientData.traitsHeightWeight.heightInches);
+        assert.equal(parsedData.application.basics.traitsHeightWeight.weight, clientData.basics.traitsHeightWeight.weight);
+        assert.equal(parsedData.application.basics.traitsHeightWeight.heightFeet, clientData.basics.traitsHeightWeight.heightFeet);
+        assert.equal(parsedData.application.basics.traitsHeightWeight.heightInches, clientData.basics.traitsHeightWeight.heightInches);
         done();
       })
       .catch(done);
@@ -150,10 +139,10 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.socialSecurity.part1, clientData.socialSecurity.part1);
-        assert.equal(parsedData.application.socialSecurity.part2, clientData.socialSecurity.part2);
-        assert.equal(parsedData.application.socialSecurity.part3, clientData.socialSecurity.part3);
-        assert.equal(parsedData.application.socialSecurity.hasSocialSecurity, clientData.socialSecurity.hasSocialSecurity);
+        assert.equal(parsedData.application.basics.socialSecurity.part1, clientData.basics.socialSecurity.part1);
+        assert.equal(parsedData.application.basics.socialSecurity.part2, clientData.basics.socialSecurity.part2);
+        assert.equal(parsedData.application.basics.socialSecurity.part3, clientData.basics.socialSecurity.part3);
+        assert.equal(parsedData.application.basics.socialSecurity.hasSocialSecurity, clientData.basics.socialSecurity.hasSocialSecurity);
         done();
       })
       .catch(done);
@@ -174,12 +163,12 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.licenseAndIdHistory.DLIDNumber, clientData.licenseAndIdHistory.DLIDNumber);
-        assert.equal(parsedData.application.licenseAndIdHistory.issuedBy, clientData.licenseAndIdHistory.issuedBy);
-        assert.equal(parsedData.application.licenseAndIdHistory.month, clientData.licenseAndIdHistory.month);
-        assert.equal(parsedData.application.licenseAndIdHistory.day, clientData.licenseAndIdHistory.day);
-        assert.equal(parsedData.application.licenseAndIdHistory.year, clientData.licenseAndIdHistory.year);
-        assert.equal(parsedData.application.licenseAndIdHistory.isIssued, clientData.licenseAndIdHistory.isIssued);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.DLIDNumber, clientData.history.licenseAndIdHistory.DLIDNumber);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.issuedBy, clientData.history.licenseAndIdHistory.issuedBy);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.month, clientData.history.licenseAndIdHistory.month);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.day, clientData.history.licenseAndIdHistory.day);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.year, clientData.history.licenseAndIdHistory.year);
+        assert.equal(parsedData.application.history.licenseAndIdHistory.isIssued, clientData.history.licenseAndIdHistory.isIssued);
         done();
       })
       .catch(done);
@@ -189,8 +178,8 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.namesHistory.hasUsedPreviousNames, clientData.namesHistory.hasUsedPreviousNames);
-        assert.equal(parsedData.application.namesHistory.previousNames, clientData.namesHistory.previousNames);
+        assert.equal(parsedData.application.history.namesHistory.hasUsedPreviousNames, clientData.history.namesHistory.hasUsedPreviousNames);
+        assert.equal(parsedData.application.history.namesHistory.previousNames, clientData.history.namesHistory.previousNames);
         done();
       })
       .catch(done);
@@ -200,8 +189,8 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.medicalHistory.hasMedicalCondition, clientData.medicalHistory.hasMedicalCondition);
-        assert.equal(parsedData.application.medicalHistory.medicalInfo, clientData.medicalHistory.medicalInfo);
+        assert.equal(parsedData.application.history.medicalHistory.hasMedicalCondition, clientData.history.medicalHistory.hasMedicalCondition);
+        assert.equal(parsedData.application.history.medicalHistory.medicalInfo, clientData.history.medicalHistory.medicalInfo);
         done();
       })
       .catch(done);
@@ -211,11 +200,11 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.licenseIssues.isSuspended, clientData.licenseIssues.isSuspended);
-        assert.equal(parsedData.application.licenseIssues.month, clientData.licenseIssues.month);
-        assert.equal(parsedData.application.licenseIssues.day, clientData.licenseIssues.day);
-        assert.equal(parsedData.application.licenseIssues.year, clientData.licenseIssues.year);
-        assert.equal(parsedData.application.licenseIssues.reason, clientData.licenseIssues.reason);
+        assert.equal(parsedData.application.history.licenseIssues.isSuspended, clientData.history.licenseIssues.isSuspended);
+        assert.equal(parsedData.application.history.licenseIssues.month, clientData.history.licenseIssues.month);
+        assert.equal(parsedData.application.history.licenseIssues.day, clientData.history.licenseIssues.day);
+        assert.equal(parsedData.application.history.licenseIssues.year, clientData.history.licenseIssues.year);
+        assert.equal(parsedData.application.history.licenseIssues.reason, clientData.history.licenseIssues.reason);
         done();
       })
       .catch(done);
@@ -225,10 +214,10 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.veteransService.isVeteran, clientData.veteransService.isVeteran);
-        assert.equal(parsedData.application.veteransService.receiveBenefits, clientData.veteransService.receiveBenefits);
-        assert.equal(parsedData.application.veteransService.previouslyDesignated, clientData.veteransService.previouslyDesignated);
-        assert.equal(parsedData.application.veteransService.veteransIdentifier, clientData.veteransService.veteransIdentifier);
+        assert.equal(parsedData.application.history.veteransService.isVeteran, clientData.history.veteransService.isVeteran);
+        assert.equal(parsedData.application.history.veteransService.receiveBenefits, clientData.history.veteransService.receiveBenefits);
+        //assert.equal(parsedData.application.history.veteransService.previouslyDesignated, clientData.history.veteransService.previouslyDesignated);
+        assert.equal(parsedData.application.history.veteransService.veteransIdentifier, clientData.history.veteransService.veteransIdentifier);
         done();
       })
       .catch(done);
@@ -238,27 +227,17 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.citizenStatus, clientData.citizenStatus);
+        assert.equal(parsedData.application.voting.citizenStatus, clientData.voting.citizenStatus);
         done();
       })
       .catch(done);
     });
 
-  it('correctly extracts the ballot language', function(done) {
-    getApplication(data.application.id)
-    .then((records) => {
-      parsedData = parse(records);
-      assert.equal(parsedData.application.language.ballotLanguage, clientData.language.ballotLanguage);
-      done();
-    })
-    .catch(done);
-  });
-
     it('correctly extracts the ballot language', function(done) {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.ballotLanguage, clientData.ballotLanguage);
+        assert.equal(parsedData.application.basics.language.ballotLanguage, clientData.basics.language.ballotLanguage);
         done();
       })
       .catch(done);
@@ -268,7 +247,7 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.eligibilityRequirements, clientData.eligibilityRequirements);
+        assert.equal(parsedData.application.voting.eligibilityRequirements, clientData.voting.eligibilityRequirements);
         done();
       })
       .catch(done);
@@ -278,7 +257,7 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.optOut, clientData.optOut);
+        assert.equal(parsedData.application.voting.optOut, clientData.voting.optOut);
         done();
       })
       .catch(done);
@@ -288,8 +267,8 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.politicalPartyChoose.isSelected, clientData.politicalPartyChoose.isSelected);
-        assert.equal(parsedData.application.politicalPartyChoose.politicalPartyChoose, clientData.politicalPartyChoose.politicalPartyChoose);
+        assert.equal(parsedData.application.voting.politicalPartyChoose.isSelected, clientData.voting.politicalPartyChoose.isSelected);
+        assert.equal(parsedData.application.voting.politicalPartyChoose.politicalPartyChoose, clientData.voting.politicalPartyChoose.politicalPartyChoose);
         done();
       })
       .catch(done);
@@ -299,9 +278,9 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.contactMethods.shouldContact, clientData.contactMethods.shouldContact);
-        assert.equal(parsedData.application.contactMethods.emailAddress, clientData.contactMethods.emailAddress);
-        assert.equal(parsedData.application.contactMethods.phoneNumber, clientData.contactMethods.phoneNumber);
+        assert.equal(parsedData.application.voting.contactMethods.shouldContact, clientData.voting.contactMethods.shouldContact);
+        assert.equal(parsedData.application.voting.contactMethods.emailAddress, clientData.voting.contactMethods.emailAddress);
+        assert.equal(parsedData.application.voting.contactMethods.phoneNumber, clientData.voting.contactMethods.phoneNumber);
         done();
       })
       .catch(done);

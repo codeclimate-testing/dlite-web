@@ -24,9 +24,9 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    politicalPartyChoose: state.application.politicalPartyChoose,
-    optOut              : state.application.optOut,
-    dateOfBirth         : state.application.dateOfBirth,
+    politicalPartyChoose: state.application.voting.politicalPartyChoose,
+    optOut              : state.application.voting.optOut,
+    dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations
   };

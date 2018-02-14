@@ -21,7 +21,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     focused:      state.ui.focus,
-    appLanguage:  state.application.language.appLanguage
+    appLanguage:  state.application.basics.language.appLanguage
   };
 };
 

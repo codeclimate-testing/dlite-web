@@ -20,7 +20,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth : state.application.dateOfBirth,
+    dateOfBirth : state.application.basics.dateOfBirth,
     focused     : state.ui.focus
   };
 };

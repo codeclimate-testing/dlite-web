@@ -4,14 +4,18 @@ import { hasValue }   from './validations';
 
 export const eligibleForCitizen = (props) => {
   return props.citizenStatus === 'Yes';
-}
+};
 
-export const eligibileForRequirements = (props) => {
+export const citizenStatusNotChosen = (props) => {
+  return !hasValue(props.citizenStatus);
+};
+
+export const declineToAnswer = (value) => {
+  return value === 'decline';
+};
+
+export const eligibilityRequirementsYes = (props) => {
   return props.eligibilityRequirements === 'Yes';
-}
-
-export const shouldContactMethods = (props) => {
-  return props.contactMethods.shouldContact !== 'Yes';
 }
 
 export const eligibleForOptOut =  (props) => {
@@ -40,7 +44,6 @@ export const getStringByParty = (props) => {
   return party;
 };
 
-export const citizenStatusNotChosen = (props) => {
-  return !hasValue(props.citizenStatus);
-};
+
+
 

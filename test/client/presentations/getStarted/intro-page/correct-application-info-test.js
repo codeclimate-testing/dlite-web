@@ -17,11 +17,7 @@ describe('CorrectApplicationInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: [],
-      cardAction: 'change',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: 'correct',
       sections: []
@@ -44,8 +40,22 @@ describe('CorrectApplicationInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: [],
+      cardAction: 'change',
       cardChanges,
+      IDApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       licenseType,
       realID,
       reducedFee,
@@ -70,7 +80,8 @@ describe('CorrectApplicationInfo', function() {
 
   describe('when applying for ID', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.IDApp.isApplying = true;
     });
 
     it('shows application info for correcting an ID', function() {
@@ -86,7 +97,8 @@ describe('CorrectApplicationInfo', function() {
 
   describe('when applying for DL', function() {
     beforeEach(function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
+      props.DLApp.isApplying = true;
     });
 
     it('shows application info for correcting a DL', function() {

@@ -7,6 +7,8 @@ import { updateCardChanges }  from '../../actions/index';
 import Presentation           from '../../presentations/get-started/correct-or-update-page.jsx';
 import { ChangeValidator }    from '../../helpers/validations';
 import translations           from '../../i18n';
+import { getCorrectApp }      from '../../helpers/data/card-type';
+
 
 const Page = (props) => {
   let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing');
@@ -27,9 +29,9 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardChanges         : state.application.cardChanges,
+    cardChanges         : getCorrectApp(state.application).cardChanges,
     cardType            : state.application.cardType,
-    dateOfBirth         : state.application.dateOfBirth,
+    dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations
   };

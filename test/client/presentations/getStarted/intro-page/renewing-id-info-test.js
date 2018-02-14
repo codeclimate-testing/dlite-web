@@ -17,11 +17,7 @@ describe('RenewingIDInfo', function() {
   let props;
 
   beforeEach(function() {
-    let cardType = {
-      IDDL: ['ID'],
-      cardAction: 'renew',
-      youthIDInstead: ''
-    };
+
     let cardChanges = {
       correctOrUpdate: '',
       sections: []
@@ -45,7 +41,21 @@ describe('RenewingIDInfo', function() {
     let onChange = spy();
 
     props = {
-      cardType,
+      cardType: ['ID'],
+      cardAction: 'renew',
+      IDApp: {
+        action: 'renew',
+        isApplying: true,
+        cardChanges,
+        reducedFee,
+        seniorID
+      },
+      DLApp: {
+        isApplying: false,
+        action: '',
+        cardChanges,
+        licenseType
+      },
       cardChanges,
       licenseType,
       realID,
@@ -57,11 +67,11 @@ describe('RenewingIDInfo', function() {
 
   describe('null', function() {
     it('returns null when user not applying for an ID', function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <RenewingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -69,11 +79,11 @@ describe('RenewingIDInfo', function() {
     });
 
     it('returns null when user is not renewing an ID', function() {
-      props.cardType.cardAction = 'new';
+      props.cardAction = 'new';
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <RenewingIDInfo {...props} />
         </Wrapper>
       );
 
@@ -87,7 +97,7 @@ describe('RenewingIDInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.renewingID), true);
@@ -105,7 +115,7 @@ describe('RenewingIDInfo', function() {
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
-      props.seniorID = 'No';
+      props.IDApp.seniorID = 'No';
 
       let component = render(
         <Wrapper>
@@ -116,7 +126,7 @@ describe('RenewingIDInfo', function() {
     });
 
     it('shows that user getting no fee ID on get started page', function() {
-      props.seniorID = 'Yes';
+      props.IDApp.seniorID = 'Yes';
 
       let component = render(
         <Wrapper>

@@ -26,7 +26,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    traitsHeightWeight: state.application.traitsHeightWeight,
+    traitsHeightWeight: state.application.basics.traitsHeightWeight,
     focused:            state.ui.focus,
     validations:        state.ui.validations
   };

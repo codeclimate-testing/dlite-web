@@ -25,9 +25,9 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    eligibilityRequirements:  state.application.eligibilityRequirements,
-    dateOfBirth:              state.application.dateOfBirth,
-    focused:                  state.ui.focus
+    eligibilityRequirements : state.application.voting.eligibilityRequirements,
+    dateOfBirth             : state.application.basics.dateOfBirth,
+    focused                 : state.ui.focus
   };
 };
 

@@ -70,12 +70,6 @@ const getStarted = [
     next: chooseCardType
   },
   {
-    key: 'replacementDetails',
-    description: 'Replacement Details',
-    path: '/replacement-details',
-    next: replacementDetails
-  },
-  {
     key: 'currentCardInfo',
     description: 'Current card info',
     path: '/current-card-information',
@@ -86,6 +80,12 @@ const getStarted = [
     description: 'Updates and Corrections',
     path: '/updates-and-corrections',
     next: updateAndCorrect
+  },
+  {
+    key: 'replacementDetails',
+    description: 'Replacement Details',
+    path: '/replacement-details',
+    next: replacementDetails
   },
   {
     key: 'youthIDInstead',

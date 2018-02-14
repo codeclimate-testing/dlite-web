@@ -29,10 +29,8 @@ describe('Data helpers for veterans', function() {
         previouslyDesignated: '',
         veteransIdentifier: ''
       },
-      cardType: {
-        cardAction: '',
-        IDDL: []
-      }
+      cardType: [],
+      cardAction: 'renew'
     };
   });
 
@@ -64,7 +62,8 @@ describe('Data helpers for veterans', function() {
     it('is true if veteran and not renewing', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
-      data.cardType.cardAction = 'replace';
+      data.cardAction = 'replace';
+
       assert.equal(mustChooseIdentifier(data), true);
     });
   });
@@ -72,7 +71,8 @@ describe('Data helpers for veterans', function() {
   describe('#mustChooseKeepVeteranIdentifier', function() {
     it('is false if not a veteran', function() {
       data.veteransService.isVeteran = 'No';
-      data.cardType.cardAction = 'replace';
+      data.cardAction = 'replace';
+
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
 
@@ -80,7 +80,8 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.cardAction = 'new';
+      data.cardAction = 'new';
+
       assert.equal(mustChooseKeepVeteranIdentifier(data), false);
     });
 
@@ -110,7 +111,8 @@ describe('Data helpers for veterans', function() {
       data.veteransService.isVeteran = 'Yes';
       data.veteransService.receiveBenefits = 'Yes';
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.cardAction = 'replace';
+      data.cardAction = 'replace';
+
       assert.equal(mustChooseAddVeteranIdentifier(data), false);
     });
 
@@ -144,7 +146,7 @@ describe('Data helpers for veterans', function() {
 
     it('is false if user is getting a new card', function() {
       data.veteransService.isVeteran = 'Yes';
-      data.cardType.cardAction = 'new';
+      data.cardAction = 'new';
       assert.equal(showPreviousDesignationPage(data), false);
     });
   });
@@ -152,7 +154,7 @@ describe('Data helpers for veterans', function() {
   describe('#showIdentifierPage', function() {
     it('is true if user is a veteran getting a new card', function() {
       data.veteransService.isVeteran = 'Yes';
-      data.cardType.cardAction = 'new';
+      data.cardAction = 'new';
       assert.equal(showIdentifierPage(data), true);
     });
 
@@ -232,21 +234,21 @@ describe('Data helpers for veterans', function() {
   describe('#showPreviousIDHeader', function() {
     it('is true if user is previously designated and renewing a ID', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['ID'];
+      data.cardType = ['ID'];
       assert.equal(showPreviousIDHeader(data), true);
     });
 
     it('is true if user is previously designated and getting a new ID', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
       assert.equal(showPreviousIDHeader(data), true);
     });
 
     it('is false if user is previously designated and getting a new DL', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['DL'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['DL'];
+      data.cardAction = 'new';
       assert.equal(showPreviousIDHeader(data), false);
     });
 
@@ -259,21 +261,21 @@ describe('Data helpers for veterans', function() {
   describe('#showPreviousDLHeader', function() {
     it('is true if user is previously designated and renewing a DL', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['DL'];
+      data.cardType = ['DL'];
       assert.equal(showPreviousDLHeader(data), true);
     });
 
     it('is true if user is previously designated and getting a new DL', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['DL'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['DL'];
+      data.cardAction = 'new';
       assert.equal(showPreviousDLHeader(data), true);
     });
 
     it('is false if user is previously designated and getting a new ID', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
       assert.equal(showPreviousDLHeader(data), false);
     });
 
@@ -286,21 +288,21 @@ describe('Data helpers for veterans', function() {
   describe('#showNewIDHeader', function() {
     it('is true if user is not previously designated and renewing an ID', function() {
       data.veteransService.previouslyDesignated = 'No';
-      data.cardType.IDDL = ['ID'];
+      data.cardType = ['ID'];
       assert.equal(showNewIDHeader(data), true);
     });
 
     it('is true if user is not previously designated and getting a new ID', function() {
       data.veteransService.previouslyDesignated = 'No';
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
       assert.equal(showNewIDHeader(data), true);
     });
 
     it('is false if user is previously designated and getting a new ID', function() {
       data.veteransService.previouslyDesignated = 'Yes';
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
       assert.equal(showNewIDHeader(data), false);
     });
 
@@ -312,21 +314,21 @@ describe('Data helpers for veterans', function() {
   describe('#showNewDLHeader', function() {
     it('is true if user is not previously designated and renewing a DL', function() {
       data.veteransService.previouslyDesignated = 'No';
-      data.cardType.IDDL = ['DL'];
+      data.cardType = ['DL'];
       assert.equal(showNewDLHeader(data), true);
     });
 
     it('is true if user is not previously designated and getting a new DL', function() {
       data.veteransService.previouslyDesignated = 'No';
-      data.cardType.IDDL = ['DL'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['DL'];
+      data.cardAction = 'new';
       assert.equal(showNewDLHeader(data), true);
     });
 
     it('is false if user is not previously designated and getting a new ID', function() {
       data.veteransService.previouslyDesignated = 'No';
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
       assert.equal(showNewDLHeader(data), false);
     });
 

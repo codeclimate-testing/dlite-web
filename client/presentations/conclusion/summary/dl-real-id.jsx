@@ -4,27 +4,44 @@ import React            from "react";
 import { hasValue }     from '../../../helpers/data/validations';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import translations     from '../../../i18n';
 import {
-  getDL
+  DLAppExists
 } from '../../../helpers/data/card-type';
-import { getStringByStatus }  from '../../../helpers/data/summary';
+import {
+  gettingRealID,
+  isSelected
+ }  from '../../../helpers/data/real-id';
 
+
+const Yes = (props) => {
+  if (!gettingRealID(props)) { return null; }
+  return (
+    <SummaryItem
+      title='Real-ID Compliant'
+      text={translations.shared.commonAnswers.yes}
+    />
+  )
+};
+
+const No = (props) => {
+  if (gettingRealID(props)) { return null; }
+  return (
+    <SummaryItem
+      title='Real-ID Compliant'
+      text={translations.shared.commonAnswers.no}
+    />
+  )
+};
 const DLRealID = (props) => {
-  if(!getDL(props)) { return null; }
-
-  let yesString = 'Yes';
-  let noString = 'No';
-  let value = getStringByStatus(props.realID.getRealID, yesString, noString);
-
+  if(!DLAppExists(props) || !isSelected(props)) { return null; }
   return (
     <PageSummaryLink
       to='/real-id'
       name='realID'
     >
-      <SummaryItem
-        title='Real-ID Compliant'
-        text={value}
-      />
+      <Yes realID = {props.realID} />
+      <No realID = {props.realID} />
     </PageSummaryLink>
   )
 };

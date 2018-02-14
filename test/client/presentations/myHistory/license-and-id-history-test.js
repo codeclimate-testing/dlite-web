@@ -27,12 +27,6 @@ describe('LicenseIDHistoryPage', function() {
         year: ''
       };
 
-      let cardType = {
-        IDDL: [],
-        cardAction: '',
-        youthIDInstead: ''
-      };
-
       let validations = {
         isIssued: spy(),
         DLIDNumber: spy(),
@@ -47,7 +41,13 @@ describe('LicenseIDHistoryPage', function() {
 
       props = {
         licenseAndIdHistory,
-        cardType,
+        cardType: [],
+        DLApp: {
+          isApplying: false
+        },
+        IDApp: {
+          isApplying: false
+        },
         validations,
         onChange
       }
@@ -65,7 +65,7 @@ describe('LicenseIDHistoryPage', function() {
     });
 
     it('renders general license and id history page when applying for both ID and DL', function() {
-      props.cardType.IDDL = ['DL', 'ID'];
+      props.cardType = ['DL', 'ID'];
 
       let component = render(
         <Wrapper>
@@ -77,7 +77,7 @@ describe('LicenseIDHistoryPage', function() {
     });
 
     it('renders general license and id history page when applying for DL', function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
 
       let component = render(
         <Wrapper>
@@ -89,7 +89,7 @@ describe('LicenseIDHistoryPage', function() {
     });
 
     it('is limited to CA if user is only getting an ID', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
       let component = render(
         <Wrapper>
           <LicenseIDHistoryPage {...props} />

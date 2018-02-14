@@ -20,9 +20,9 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth: state.application.dateOfBirth,
-    optOut: state.application.optOut,
-    focused:      state.ui.focus
+    dateOfBirth   : state.application.basics.dateOfBirth,
+    optOut        : state.application.voting.optOut,
+    focused       : state.ui.focus
   };
 };
 

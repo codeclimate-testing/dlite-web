@@ -1,7 +1,7 @@
 'use strict';
 
 import assert           from 'assert';
-import updateChooseParty from '../../../../client/reducers/application/update-choose-party';
+import updateChooseParty from '../../../../client/reducers/application/voting/update-choose-party';
 
 describe('updateChooseParty Reducer', function() {
   it('it clears the otherParty value when politicalPartyChoose is changed', function() {

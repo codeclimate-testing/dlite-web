@@ -8,7 +8,7 @@ import {
 import { getDL } from './card-type';
 
 export const validToContinue = (props) => {
-  return props.cardType.youthIDInstead !== 'No' ||
+  return props.youthIDInstead !== 'No' ||
     ageChecks.GreaterThanEqual15(props.dateOfBirth);
 };
 

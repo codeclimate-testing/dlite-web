@@ -10,7 +10,8 @@ import {
   IDOnly
 } from '../../../helpers/data/card-type';
 
-const OnlyID = () => {
+const OnlyIDHeader = (props) => {
+  if (!IDOnly(props)) { return null; }
   return (
     <div className="applying-for-only-id">
       {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptID, 'question')}
@@ -18,7 +19,8 @@ const OnlyID = () => {
   );
 };
 
-const IDAndDL = () => {
+const IDAndDLHeader = (props) => {
+  if (IDOnly(props)) { return null; }
   return (
     <div className="applying-for-dl">
       {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptLicense, 'question')}
@@ -27,18 +29,12 @@ const IDAndDL = () => {
   );
 };
 
-const LicenseAndIdHeader = (props) => {
-  let licenseAndIdHeader = <IDAndDL />;
-  if (IDOnly(props)) {
-    licenseAndIdHeader = <OnlyID />;
-  }
-  return licenseAndIdHeader;
-};
 
 const LicenseAndIdHistory = (props) => {
   return (
     <div className='license-and-id-history-form'>
-      <LicenseAndIdHeader {...props} />
+      <OnlyIDHeader cardType = {props.cardType} />
+      <IDAndDLHeader cardType = {props.cardType} />
 
       <div>
         <fieldset>

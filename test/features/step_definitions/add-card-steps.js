@@ -35,6 +35,13 @@ module.exports = function(world) {
   //   browser.text().then(done).catch(done);
   // });
 
+  world.when('I choose to add a new DL', function(done) {
+    browser
+      .click('label[for=DLAction-new]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see a WDYWTDT page with only the new DL option', function(done) {
     browser
       .text()

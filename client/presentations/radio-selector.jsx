@@ -5,6 +5,7 @@ import SelectorContents from './selector-contents.jsx';
 
 
 const RadioSelector = function(props) {
+  if (props.hide) { return null; }
   let className = 'choice-selector unit';
   if (props.selected) { className += ' selected'; };
   if (props.focused)  { className += ' focus'; }

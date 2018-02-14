@@ -13,9 +13,9 @@ describe('YouthDLNotificationPage', function() {
   const Wrapper = wrapperGenerator(store);
 
   let props;
+  let today = new Date();
 
   beforeEach(function() {
-    let cardType = { youthIDInstead: "" };
     let onChange = sinon.spy();
     let validations = {
       youthIDInstead: sinon.spy()
@@ -26,29 +26,30 @@ describe('YouthDLNotificationPage', function() {
         day: ''
     };
     props = {
-      cardType,
+      cardType: ['DL'],
+      cardAction: 'new',
+      youthIDInstead: '',
+      IDApp: {
+        isApplying: false,
+        action: ''
+      },
+      DLApp: {
+        isApplying: true,
+        action: 'new'
+      },
       onChange,
       dateOfBirth,
       validations
-    }
+    };
   });
 
 
   it('should render the right intro header if the license seeker is under 15', function() {
-    let today = new Date();
-
-    props.cardType = {
-      IDDL: ['DL'],
-      cardAction: 'new',
-      youthIDInstead: 'Yes'
-    }
-
     props.dateOfBirth = {
       year: (today.getFullYear() - 10).toString(),
       month: (today.getMonth() + 1).toString(),
       day: today.getDate().toString()
-    }
-    props.onChange = sinon.spy();
+    };
 
     let component = render(
       <Wrapper>
@@ -60,19 +61,11 @@ describe('YouthDLNotificationPage', function() {
   });
 
   it('should render the right intro header if the license seeker is between 15.5 and 16', function() {
-    let today = new Date();
-
-    props.cardType = {
-      IDDL: ['DL'],
-      cardAction: 'new',
-      youthIDInstead: 'Yes'
-    }
     props.dateOfBirth = {
       year: (today.getFullYear() - 15).toString(),
       month: (today.getMonth() + 1 - 7).toString(),
       day: today.getDate().toString()
-    }
-    props.onChange = sinon.spy();
+    };
 
     let component = render(
       <Wrapper>
@@ -84,21 +77,12 @@ describe('YouthDLNotificationPage', function() {
   });
 
   it('should render an error message if you are under age and insist on a DL', function() {
-    let today = new Date();
-
-    props.cardType = {
-      IDDL: ['DL'],
-      cardAction: 'new',
-      youthIDInstead: 'No'
-    }
     props.dateOfBirth = {
       year: (today.getFullYear() - 10).toString(),
       month: (today.getMonth() + 1).toString(),
       day: today.getDate().toString()
-    }
-
-    props.onChange = sinon.spy();
-
+    };
+    props.youthIDInstead = 'No';
     let component = render(
       <Wrapper>
         <YouthDLNotificationPage {...props}/>
@@ -112,21 +96,13 @@ describe('YouthDLNotificationPage', function() {
   });
 
   it('should not render an error message if consent to only getting an id', function() {
-    let today = new Date();
+    props.youthIDInstead = 'Yes';
 
-      props.cardType = {
-        IDDL: ['DL'],
-        cardAction: 'new',  
-        youthIDInstead: 'Yes'
-      }
-
-      props.dateOfBirth =  {
-        year: (today.getFullYear() - 10).toString(),
-        month: (today.getMonth() + 1).toString(),
-        day: today.getDate().toString()
-      }
-
-      props.onChange = sinon.spy();
+    props.dateOfBirth =  {
+      year: (today.getFullYear() - 10).toString(),
+      month: (today.getMonth() + 1).toString(),
+      day: today.getDate().toString()
+    };
 
     let component = render(
       <Wrapper>
@@ -140,20 +116,12 @@ describe('YouthDLNotificationPage', function() {
     );
   });
 
-it('shows the form allowing you to choose to get a youth ID', function() {
-    let today = new Date();
-
-    props.cardType = {
-        IDDL: ['DL'],
-        cardAction: 'new',
-        youthIDInstead: 'Yes'
-      }
-      props.dateOfBirth = {
-        year: (today.getFullYear() - 10).toString(),
-        month: (today.getMonth() + 1).toString(),
-        day: today.getDate().toString()
-      }
-      props.onChange= sinon.spy();
+  it('shows the form allowing you to choose to get a youth ID', function() {
+    props.dateOfBirth = {
+      year: (today.getFullYear() - 10).toString(),
+      month: (today.getMonth() + 1).toString(),
+      day: today.getDate().toString()
+    }
 
     let component = render(
       <Wrapper>
@@ -162,6 +130,31 @@ it('shows the form allowing you to choose to get a youth ID', function() {
     );
     assert.ok(component.find('label[for="youthIDInstead-No"]').length, 'No button missing');
     assert.ok(component.find('label[for="youthIDInstead-Yes"]').length, 'Yes button missing');
+  });
+
+  it('should not show continue button if user is under 15 and has selected No to getting ID instead', function() {
+    props.cardType = ['DL'];
+    props.youthIDInstead = 'No';
+    props.IDApp = {
+      isApplying: false,
+      action: ''
+    };
+    props.DLApp = {
+      isApplying: true,
+      action: 'new'
+    };
+    props.dateOfBirth = {
+      year: (today.getFullYear() - 10).toString(),
+      month: (today.getMonth() + 1).toString(),
+      day: today.getDate().toString()
+    };
+
+    let component = render(
+      <Wrapper>
+        <YouthDLNotificationPage {...props}/>
+      </Wrapper>
+    );
+    assert.ok(component.find('button.forward').length);
   });
 });
 

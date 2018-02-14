@@ -15,14 +15,14 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    socialSecurity:         state.application.socialSecurity,
-    veteransService:        state.application.veteransService,
-    medicalHistory:         state.application.medicalHistory,
+    socialSecurity:         state.application.basics.socialSecurity,
+    veteransService:        state.application.history.veteransService,
+    medicalHistory:         state.application.history.medicalHistory,
     realID:                 state.application.realID,
-    reducedFee:             state.application.reducedFee,
-    dateOfBirth:            state.application.dateOfBirth,
-    licenseAndIdHistory:    state.application.licenseAndIdHistory,
-    reducedFee:             state.application.reducedFee
+    reducedFee:             state.application.IDApp.reducedFee,
+    dateOfBirth:            state.application.basics.dateOfBirth,
+    licenseAndIdHistory:    state.application.history.licenseAndIdHistory,
+    reducedFee:             state.application.IDApp.reducedFee
   };
 };
 

@@ -5,33 +5,77 @@ import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 import {
-  getID
+  IDAppExists,
+  getNewID,
+  renewID,
+  replaceID,
+  correctID,
+  updateID
 } from '../../../helpers/data/card-type';
-import {
-  getStringByAction
-} from '../../../helpers/data/card-actions';
 
+const New = (props) => {
+  if (!getNewID) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.applying}
+    />
+  )
+};
 
-const actionNew = translations.summaryPage.whatImDoing.applying
-const actionRenew = translations.summaryPage.whatImDoing.renewing
-const actionReplace = translations.summaryPage.whatImDoing.replacing
-const actionCorrect = translations.summaryPage.whatImDoing.correcting
-const actionUpdate = translations.summaryPage.whatImDoing.updating
+const Renew = (props) => {
+  if (!renewID) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.renewing}
+    />
+  )
+};
 
+const Replace = (props) => {
+  if (!replaceID) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.replacing}
+    />
+  )
+};
+
+const Correct = (props) => {
+  if (!correctID) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.correcting}
+    />
+  )
+};
+
+const Update = (props) => {
+  if (!updateID) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.updating}
+    />
+  )
+};
 const IDAction = (props) => {
-  if(!getID(props)) { return null; }
-  let idAction = getStringByAction(props, actionNew, actionRenew, actionReplace, null, actionUpdate, actionCorrect);
-
+  if(!IDAppExists(props)) { return null; }
 
   return (
     <PageSummaryLink
       to='/what-do-you-want-to-do-today'
       name='wdywtdt'
     >
-      <SummaryItem
-        title='I am'
-        text={idAction}
-      />
+      <New IDApp = {props.IDApp}/>
+      <Renew IDApp = {props.IDApp}/>
+      <Replace IDApp = {props.IDApp}/>
+      <Correct IDApp = {props.IDApp}/>
+      <Update IDApp = {props.IDApp}/>
+
     </PageSummaryLink>
   )
 };

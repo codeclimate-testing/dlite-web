@@ -22,7 +22,7 @@ const Form = (props) => {
 
         <EndorsementToggle
           {...props}
-          selectedValue={ props.licenseType.needEndorsement }
+          selectedValue={ props.DLApp.licenseType.needEndorsement }
         />
 
         <EndorsementForm

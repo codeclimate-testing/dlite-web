@@ -1,26 +1,36 @@
 'use strict';
 
-import React from 'react';
-
+import React          from 'react';
+import translations   from '../../../i18n';
 import {
-  citizenStatusNotChosen
+  citizenStatusNotChosen,
+  eligibleForCitizen,
+  declineToAnswer
  }  from '../../../helpers/data/voting';
- import {
-  getStringByStatus
- }  from '../../../helpers/data/summary';
+
+const Yes = (props) => {
+  if (!eligibleForCitizen(props)) { return null; }
+  return (<p> {translations.summaryPage.voterRegistration.citizen}: {translations.shared.commonAnswers.yes}</p>)
+};
+
+const No = (props) => {
+  if (eligibleForCitizen(props) || declineToAnswer(props.citizenStatus)) { return null; }
+  return (<p> {translations.summaryPage.voterRegistration.citizen}: {translations.shared.commonAnswers.no}</p>)
+};
+
+const Decline = (props) => {
+  if (!declineToAnswer(props.citizenStatus)) { return null; }
+  return (<p> {translations.summaryPage.voterRegistration.citizen}: {translations.shared.commonAnswers.declineToAnswer}</p>)
+};
 
 const CitizenStatus = (props) => {
   if (citizenStatusNotChosen(props)) { return null; }
 
-  let yesText = 'Yes';
-  let noText = 'No';
-  let declineText = 'Decline to answer';
-
-  let text = getStringByStatus(props.citizenStatus, yesText, noText, declineText);
-
   return (
     <div className='summary-section'>
-      <p> US Citizen: {text} </p>
+      <Yes citizenStatus = {props.citizenStatus} />
+      <No citizenStatus = {props.citizenStatus} />
+      <Decline citizenStatus = {props.citizenStatus} />
     </div>
   );
 };

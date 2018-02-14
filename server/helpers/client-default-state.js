@@ -1,143 +1,161 @@
 const state  = {
   application: {
     id: '',
-    legalName: {
-      firstName: '',
-      middleName: '',
-      lastName: '',
-      suffix: ''
-    },
-    cardType: {
-      IDDL: [],
-      cardAction: '',
-      youthIDInstead: '',
-      ID: {
-        isApplying: false,
-        action: ''
-      },
-      DL: {
-        isApplying: false,
-        action: ''
-      }
-    },
-    cardChanges: {
-      correctOrUpdate: '',
-      sections: [],
-      other: ''
-    },
-    cardReplacement: {
-      reason: ''
-    },
-    currentCardInfo: {
-      number: '',
-      day: '',
-      month: '',
-      year: ''
-    },
-    licenseType: {
-      type: [],
-      endorsement: [],
-      needEndorsement: ''
-    },
-    reducedFee: {
-      ID: '',
-      form: ''
-    },
-    address: {
-      homeAddressSameAsMailing: '',
-      home: {
-        street_1: '',
-        street_2: '',
-        city: '',
-        state: 'CA',
-        zip: ''
-      },
-      mailing: {
-        street_1: '',
-        street_2: '',
-        city: '',
-        state: 'CA',
-        zip: '',
-      }
-    },
-    dateOfBirth: {
-      month: '',
-      day: '',
-      year: ''
-    },
+    cardAction: '',
+    cardType: [],
     realID: {
       getRealID: '',
       realIdDesignation: ''
     },
-    seniorID: '',
-    physicalTraits: {
-      sex: '',
-      eyeColor: '',
-      hairColor: ''
+    IDApp: {
+      isApplying: false,
+      action: '',
+      reducedFee: {
+        ID: '',
+        form: ''
+      },
+      seniorID: '',
+      currentCard: {
+        number: '',
+        day: '',
+        month: '',
+        year: ''
+      },
+      replacementDetails: {
+        reason: ''
+      },
+      cardChanges: {
+        correctOrUpdate: '',
+        sections: [],
+        other: ''
+      }
     },
-    traitsHeightWeight: {
-      weight: '',
-      heightFeet: '',
-      heightInches: ''
+    DLApp: {
+      isApplying: false,
+      action: '',
+      licenseType: {
+        type: [],
+        endorsement: [],
+        needEndorsement: ''
+      },
+      currentCard: {
+        number: '',
+        day: '',
+        month: '',
+        year: ''
+      },
+      replacementDetails: {
+        reason: ''
+      },
+      cardChanges: {
+        correctOrUpdate: '',
+        sections: [],
+        other: ''
+      }
+    },
+    youthIDInstead: '',
+    basics: {
+      language: {
+        ballotLanguage: '',
+        appLanguage: ''
+      },
+      legalName: {
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        suffix: ''
+      },
+      address: {
+        homeAddressSameAsMailing: '',
+        home: {
+          street_1: '',
+          street_2: '',
+          city: '',
+          state: 'CA',
+          zip: ''
+        },
+        mailing: {
+          street_1: '',
+          street_2: '',
+          city: '',
+          state: 'CA',
+          zip: '',
+        }
+      },
+      dateOfBirth: {
+        month: '',
+        day: '',
+        year: ''
+      },
+      physicalTraits: {
+        sex: '',
+        eyeColor: '',
+        hairColor: ''
+      },
+      traitsHeightWeight: {
+        weight: '',
+        heightFeet: '',
+        heightInches: ''
+      },
+      socialSecurity: {
+        part1: '',
+        part2: '',
+        part3: '',
+        hasSocialSecurity: ''
+      }
+    },
+    history: {
+      licenseAndIdHistory: {
+        DLIDNumber: '',
+        issuedBy: '',
+        month: '',
+        day: '',
+        year: '',
+        isIssued: ''
+      },
+      namesHistory: {
+        hasUsedPreviousNames: '',
+        previousNames: ''
+      },
+      medicalHistory: {
+        hasMedicalCondition: '',
+        medicalInfo: ''
+      },
+      licenseIssues: {
+        isSuspended: '',
+        month: '',
+        day: '',
+        year: '',
+        reason: ''
+      },
+      veteransService: {
+        isVeteran: '',
+        receiveBenefits: '',
+        previouslyDesignated: '',
+        veteransIdentifier: ''
+      }
     },
     organDonation: {
       donateOrgan: '',
       donateMoney: ''
     },
-    licenseAndIdHistory: {
-      DLIDNumber: '',
-      issuedBy: '',
-      month: '',
-      day: '',
-      year: '',
-      isIssued: ''
-    },
-    namesHistory: {
-      hasUsedPreviousNames: '',
-      previousNames: ''
-    },
-    medicalHistory: {
-      hasMedicalCondition: '',
-      medicalInfo: ''
-    },
-    licenseIssues: {
-      isSuspended: '',
-      month: '',
-      day: '',
-      year: '',
-      reason: ''
-    },
-    socialSecurity: {
-      part1: '',
-      part2: '',
-      part3: '',
-      hasSocialSecurity: ''
-    },
-    veteransService: {
-      isVeteran: '',
-      receiveBenefits: '',
-      previoulyDesignated: '',
-      veteransIdentifier: ''
-    },
-    citizenStatus: '',
-    ballotByMail: '',
-    eligibilityRequirements: '',
-    politicalPartyChoose: {
-      isSelected: '',
-      politicalPartyChoose: '',
-      otherParty: ''
-    },
-    language: {
-      ballotLanguage: '',
-      appLanguage: ''
-    },
-    optOut: '',
-    contactMethods: {
-      shouldContact: '',
-      emailAddress: '',
-      phoneNumber1: '',
-      phoneNumber2: '',
-      phoneNumber3: ''
+    voting: {
+      citizenStatus: '',
+      ballotByMail: '',
+      eligibilityRequirements: '',
+      politicalPartyChoose: {
+        isSelected: '',
+        politicalPartyChoose: '',
+        otherParty: ''
+      },
+      optOut: '',
+      contactMethods: {
+        shouldContact: '',
+        emailAddress: '',
+        phoneNumber1: '',
+        phoneNumber2: '',
+        phoneNumber3: ''
+      }
     },
     guardianSignature: {
       isSigned:  '',

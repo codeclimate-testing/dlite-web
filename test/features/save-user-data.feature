@@ -171,7 +171,7 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page with my summary
 
-  Scenario: renewing one new ID and no social
+  Scenario: renewing one ID and no social
     Given I go to the new online DL application page
     When I visit the date of birth page
     And I enter my full date of birth into the form
@@ -180,7 +180,7 @@ Feature: Save user data
     And I choose to renew a card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    When I choose ID
+    When I choose to renew an ID
     Then I will see the application title says "DMV Identification card application"
     And I will see the application header says "Identification card application"
     When I click "Next" to continue
@@ -288,6 +288,7 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page for voter citizen status entry
     And I select citizen Yes
+    And I click "Next" to continue
     When I visit the voter eligibility requirements page
     And I click "Next" to continue
     Then I will be on the page with my summary
@@ -326,9 +327,6 @@ Feature: Save user data
     Then I will see voter registration choice as I am already registered to vote in California in summary
     Then I will see that I declined to choose a political party
     Then I will see my social security on that summary
-    When I click "Next" to continue
-    Then I will be on the page for appointment preparation
-    Then I go to the page with my summary
     When I click to edit my name
     Then I will be taken to the names page
     When I click "Next" to continue
@@ -351,7 +349,7 @@ Feature: Save user data
     And I choose to replace a card
     When I click "Next" to continue
     Then I will be on the ID and DL selection page
-    Then I choose DL
+    Then I choose to replace a DL
     When I click "Next" to continue
     Then I will be on the current card info page
     And I enter my current card data
@@ -362,3 +360,14 @@ Feature: Save user data
     Then I will be on the page for choosing real id
     When I go to the page with my summary
     Then I will see that I am replacing my DL
+
+  Scenario: Saving to db
+    Given I go to the new online DL application page
+    Then I visit the legal name page
+    And I enter my full name
+    When I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I enter my full date of birth into the form
+    Then I go to the page with my summary
+    When I click "Next" to continue
+    Then I will be on the page for appointment preparation

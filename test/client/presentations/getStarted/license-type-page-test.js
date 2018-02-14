@@ -32,9 +32,12 @@ describe('LicenseType Page', function() {
       };
 
       props = {
-        licenseType,
         onChange,
-        validations
+        validations,
+        DLApp: {
+          licenseType
+        },
+        licenseType
       }
     });
 
@@ -60,7 +63,7 @@ describe('LicenseType Page', function() {
     });
 
     it('shows the form asking which endorsement if yes is selected', function() {
-      props.licenseType.needEndorsement = 'Yes';
+      props.DLApp.licenseType.needEndorsement = 'Yes';
 
       let component = render(
         <Wrapper>

@@ -10,7 +10,7 @@ import { MedicalValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
   let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
-  let onSubmit          = handlers.navigateOrShowErrors(props.name, props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -25,8 +25,9 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    medicalHistory    : state.application.medicalHistory,
-    cardType          : state.application.cardType,
+    medicalHistory    : state.application.history.medicalHistory,
+    IDApp             : state.application.IDApp,
+    DLApp             : state.application.DLApp,
     focused           : state.ui.focus,
     validations       : state.ui.validations
   };

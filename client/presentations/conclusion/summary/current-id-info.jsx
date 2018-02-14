@@ -25,7 +25,6 @@ const CurrentIDInfo = (props) => {
         title='ID card number'
         text={IDNumber}
       />
-      <br></br>
       <SummaryItem
         title='Expiration date'
         text={date}

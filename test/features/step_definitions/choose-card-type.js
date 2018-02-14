@@ -47,16 +47,30 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.when('I choose ID', function(done) {
+  world.when('I choose to renew an ID', function(done) {
     browser
-      .click('label[for="IDDL-ID"]')
+      .click('label[for="renew-ID"]')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.when('I choose DL', function(done) {
+  world.when('I choose to change an ID', function(done) {
     browser
-      .click('label[for="IDDL-DL"]')
+      .click('label[for="change-ID"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to replace an ID', function(done) {
+    browser
+      .click('label[for="replace-ID"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to replace a DL', function(done) {
+    browser
+      .click('label[for="replace-DL"]')
       .then(() => {done(); })
       .catch(done);
   });
@@ -118,7 +132,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Applying for new: Driver License') || text.includes('Renewing: Driver License'), 'DL card type not saved in summary');
+        assert(text.includes('Applying for the first time') || text.includes('Renewing'), 'DL card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -183,8 +197,9 @@ module.exports = function(world) {
     browser
       .text()
       .then(text => {
-        assert.ok(text.includes('Need to drive: Car'));
-        assert.ok(text.includes('Endorsements: not needed'));
+        assert.ok(text.includes('Need to driveCar (Class C)'));
+        assert.ok(!text.includes('Motorcycle (Class M)'))
+        assert.ok(text.includes('Firefighter endorsementNo'));
       })
       .then(() => { done(); })
       .catch(done);

@@ -1,7 +1,7 @@
 'use strict';
 
 import assert         from 'assert';
-import updateCardType from '../../../../client/reducers/application/update-license-type';
+import updateCardType from '../../../../client/reducers/application/dl-app/update-license-type';
 
 describe('licenseTypeReducer', function() {
   it('it adds license type to type array', function() {

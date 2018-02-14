@@ -13,37 +13,37 @@ describe('Data helpers for reduced fee', function() {
   let data;
   beforeEach(function() {
     data = {
-      cardType: {
-        IDDL: [],
-        cardAction: ''
-      },
-      seniorID: '',
+      cardType: [],
+      cardAction: '',
       reducedFee: {
         ID: '',
         form: ''
+      },
+      IDApp: {
+        seniorID: ''
       }
     };
   });
 
   describe('#eligibleForReducedFee', function() {
     it('is false if the person has already opted for a senior id', function() {
-      data.cardType.IDDL = ['ID', 'DL'];
-      data.cardType.cardAction = 'new';
-      data.seniorID = 'Yes';
+      data.cardType = ['ID', 'DL'];
+      data.cardAction = 'new';
+      data.IDApp.seniorID = 'Yes';
 
       assert.equal(eligibleForReducedFee(data), false);
     });
 
     it('is true if the person has no seniorId value and is getting an ID', function() {
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['ID'];
+      data.cardAction = 'new';
 
       assert.equal(eligibleForReducedFee(data), true);
     });
 
     it('is false if the person is not getting an ID', function() {
-      data.cardType.IDDL = ['DL'];
-      data.cardType.cardAction = 'new';
+      data.cardType = ['DL'];
+      data.cardAction = 'new';
 
       assert.equal(eligibleForReducedFee(data), false);
     });
@@ -100,11 +100,11 @@ describe('Data helpers for reduced fee', function() {
     });
     it('returns false if user has not selected to getting a reduced fee and is not getting a senior ID', function() {
       data.reducedFee.ID = '';
-      data.seniorID = 'No';
+      data.IDApp.seniorID = 'No';
       assert.equal(reducedOrNoFee(data), false);
     });
     it('returns true if user is getting a senior ID', function() {
-      data.seniorID = 'Yes';
+      data.IDApp.seniorID = 'Yes';
       assert.equal(reducedOrNoFee(data), true);
     });
   });

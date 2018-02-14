@@ -1,8 +1,10 @@
 'use strict';
 
-const parserHelper         = require('../../helpers/data-parser');
-const voterChoiceConverter = require('../../helpers/voter-choice');
-const defaultClientState   = require('../../helpers/client-default-state');
+const parserHelper          = require('../../helpers/data-parser');
+const voterChoiceConverter  = require('../../helpers/voter-choice');
+const defaultClientState    = require('../../helpers/client-default-state');
+const getIDApp              = require('./get-id-app');
+const getDLApp              = require('./get-dl-app');
 
 function parse(data) {
   if(!data) {
@@ -14,7 +16,6 @@ function parse(data) {
   let phone_numbers         = data.phone_numbers;
   let organ_donations       = data.organ_donations;
   let card_histories        = data.card_histories;
-  let renewal_card          = data.renewal_card;
   let previous_names        = data.previous_names;
   let medical_histories     = data.medical_histories;
   let license_issues        = data.license_issues;
@@ -29,37 +30,62 @@ function parse(data) {
     {
       application: {
         id:                       application.id,
-        legalName:                getLegalName(application),
-        dateOfBirth:              getDateOfBirth(application),
-        cardType:                 getCardTypes(card_options, cards),
-        cardChanges:              getCardChanges(card_options),
-        cardReplacement:          getCardReplacement(card_options),
-        currentCardInfo:          getCurrentCardInfo(renewal_card),
-        realID:                   getRealID(card_options, cards),
-        licenseType:              getLicenseType(license_classes),
-        reducedFee:               getReducedFee(card_options),
-        seniorID:                 getSeniorID(card_options),
-        address:                  getAddress(addresses),
-        physicalTraits:           getPhysicalTraits(application),
-        traitsHeightWeight:       getHeightAndWeight(application),
-        socialSecurity:           getSocialSecurity(application),
-        organDonation:            getOrganDonations(organ_donations),
-        licenseAndIdHistory:      getLicenseAndIdHistory(card_histories),
-        namesHistory:             getNamesHistories(previous_names),
-        medicalHistory:           getMedicalHistories(medical_histories),
-        licenseIssues:            getLicenseIssues(license_issues),
-        veteransService:          getVeteransService(veterans_info),
-        citizenStatus:            getCitizenStatus(voting_registrations),
-        ballotByMail:             getBallotByMail(voting_registrations),
-        eligibilityRequirements:  getEligibility(voting_registrations),
-        politicalPartyChoose:     getParty(voting_registrations),
-        language:                 getLanguage(application, voting_registrations),
-        optOut:                   getOptedOut(voting_registrations),
-        contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations),
-        isPreRegistering:         getIsPreRegistering(voting_registrations)
+        basics: {
+          language:                 getLanguage(application, voting_registrations),
+          legalName:                getLegalName(application),
+          dateOfBirth:              getDateOfBirth(application),
+          address:                  getAddress(addresses),
+          physicalTraits:           getPhysicalTraits(application),
+          traitsHeightWeight:       getHeightAndWeight(application),
+          socialSecurity:           getSocialSecurity(application)
+        },
+        IDApp:                      getIDApp(cards, card_options, card_histories),
+        DLApp:                      getDLApp(cards, card_options, card_histories, license_classes),
+
+        cardType:                   [],
+        cardAction:                 '',
+        youthIDInstead:             '',
+        realID:                     getRealID(card_options, cards),
+        organDonation:              getOrganDonations(organ_donations),
+
+        history: {
+          licenseAndIdHistory:      getLicenseAndIdHistory(card_histories),
+          namesHistory:             getNamesHistories(previous_names),
+          medicalHistory:           getMedicalHistories(medical_histories),
+          licenseIssues:            getLicenseIssues(license_issues),
+          veteransService:          getVeteransService(veterans_info)
+        },
+
+        voting: {
+          citizenStatus:            getCitizenStatus(voting_registrations),
+          ballotByMail:             getBallotByMail(voting_registrations),
+          eligibilityRequirements:  getEligibility(voting_registrations),
+          politicalPartyChoose:     getParty(voting_registrations),
+          optOut:                   getOptedOut(voting_registrations),
+          contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations)
+        },
+        isPreRegistering:           getIsPreRegistering(voting_registrations)
       }
     }
   );
+}
+
+
+function getCardTypes(card_options, cards) {
+  let cardType = [];
+
+  card_options.forEach(option => {
+    if(option.option_type === 'action'){
+      cards.forEach(card => {
+        if(card.id === option.card_id) {
+          cardType.push(card.type);
+        }
+      });
+      cardType.sort();
+    }
+  });
+
+  return cardType;
 }
 
 function getLegalName(application) {
@@ -163,12 +189,23 @@ function getOrganDonations(organ_donations) {
 }
 
 function getLicenseAndIdHistory(card_histories) {
+  if(card_histories && card_histories.length > 0 && parserHelper.historyForDL(card_histories).length > 0){
+    let card_history = parserHelper.historyForDL(card_histories);
+    let _date = parserHelper.createDateJson(card_history.date_description);
 
-  if(card_histories){
-    let _date = parserHelper.createDateJson(card_histories.date_description);
+    if (card_history.issuing_entity === 'licenseAndIdHistory not issued') {
+      return {
+        DLIDNumber:   '',
+        issuedBy:     '',
+        month:        '',
+        day:          '',
+        year:         '',
+        isIssued:     'No'
+      };
+    }
     return {
-      DLIDNumber:   card_histories.number,
-      issuedBy:     card_histories.issuing_entity,
+      DLIDNumber:   card_history.number,
+      issuedBy:     card_history.issuing_entity,
       month:        _date.month,
       day:          _date.day,
       year:         _date.year,
@@ -182,29 +219,10 @@ function getLicenseAndIdHistory(card_histories) {
       month:        '',
       day:          '',
       year:         '',
-      isIssued:     'No'
+      isIssued:     ''
     };
   }
 }
-
-function getCurrentCardInfo(renewal_card) {
-  let currentCardInfo = {
-    number: '',
-    month: '',
-    day: '',
-    year: ''
-  };
-  if(renewal_card){
-    let _date = parserHelper.createDateJson(renewal_card.date);
-    return {
-      number:   renewal_card.number,
-      month:    _date.month,
-      day:      _date.day,
-      year:     _date.year
-    }
-  }
-  return currentCardInfo
-};
 
 function getNamesHistories(previous_names) {
   if(previous_names && previous_names.length > 0){
@@ -391,57 +409,6 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
   };
 }
 
-function getCardTypes(card_options, cards) {
-  let cardType = {
-    IDDL: [],
-    youthIDInstead: '',
-    ID: {
-      isApplying: false,
-      action: ''
-    },
-    DL: {
-      isApplying: false,
-      action: ''
-    }
-  };
-
-  card_options.forEach(option => {
-    if(option.option_type === 'action'){
-      cards.forEach(card => {
-        if(card.id === option.card_id) {
-          cardType.IDDL.push(card.type);
-          cardType[card.type].isApplying = true;
-          cardType[card.type].action = option.option_value;
-        }
-      });
-      cardType.IDDL.sort();
-    }
-  });
-
-  return cardType;
-}
-
-function getLicenseType(license_classes) {
-  let licenseType = {
-    type: [],
-    endorsement: [],
-    needEndorsement: ''
-  };
-  if(license_classes.length > 0){
-    license_classes.forEach(item => {
-
-      if(item.type === 'firefighter' || item.type === 'ambulance') {
-        licenseType.endorsement.push(item.type);
-        licenseType.needEndorsement = 'Yes'
-      } else {
-        licenseType.type.push(item.type);
-      }
-
-    });
-  }
-  return licenseType;
-}
-
 function getRealID(card_options, cards) {
   let realID = {
     getRealID: '',
@@ -461,70 +428,6 @@ function getRealID(card_options, cards) {
 
   return realID;
 }
-
-function getReducedFee(card_options) {
-  let reducedFee = {
-    ID: '',
-    form: ''
-  };
-  card_options.forEach(option => {
-    if(option.option_value === 'reduced-fee-has-form') {
-      reducedFee.ID = 'Yes';
-      reducedFee.form = 'Yes';
-    }
-    else if(option.option_value === 'reduced-fee-no-form') {
-      reducedFee.ID = 'Yes';
-      reducedFee.form = 'No';
-    }
-  });
-  return reducedFee;
-}
-
-function getSeniorID(card_options) {
-  let seniorID = 'No';
-  card_options.forEach(option => {
-    if(option.option_value === 'senior-id') {
-      seniorID = 'Yes';
-    }
-  });
-  return seniorID;
-};
-
-function getCardChanges(card_options) {
-  let cardChanges = {
-    correctOrUpdate: '',
-    sections: [],
-    other: ''
-  };
-  card_options.forEach(option => {
-    if(option.option_type === 'modification') {
-      const value = option.option_value.split('-');
-      if(value[0] === 'change'){
-        cardChanges = {
-          correctOrUpdate: value[1],
-          sections: value[2].split('_'),
-          other: value[3]
-        }
-      }
-    }
-  });
-  return cardChanges;
-};
-
-function getCardReplacement(card_options) {
-  let cardReplacement = {
-    reason: ''
-  };
-  card_options.forEach(option => {
-    const value = option.option_value.split('-');
-    if(value[0] === 'replace') {
-      cardReplacement = {
-        reason: value[1]
-      }
-    }
-  });
-  return cardReplacement
-};
 
 function getIsPreRegistering(voting_registrations) {
   if(voting_registrations) {

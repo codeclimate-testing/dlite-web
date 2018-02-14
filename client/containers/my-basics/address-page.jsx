@@ -31,10 +31,10 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    address:        state.application.address,
-    focused:        state.ui.focus,
-    validations:    state.ui.validations,
-    cardType:       state.application.cardType
+    address       : state.application.basics.address,
+    focused       : state.ui.focus,
+    validations   : state.ui.validations,
+    cardType      : state.application.cardType
   };
 }
 

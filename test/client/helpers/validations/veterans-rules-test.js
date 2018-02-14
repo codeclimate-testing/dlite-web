@@ -15,13 +15,10 @@ describe('veterans page validation rules:', function() {
       previouslyDesignated: '',
       veteransIdentifier: ''
     };
-    let cardType = {
-      cardAction: 'renew'
-    };
 
     props = {
       veteransService,
-      cardType
+      cardAction: 'renew'
     }
   });
 
@@ -68,7 +65,7 @@ describe('veterans page validation rules:', function() {
         previouslyDesignated: '',
         veteransIdentifier: ''
       }
-      props.cardType.cardAction = 'replace';
+      props.cardAction = 'replace';
 
       assert.deepEqual(rules.veteransIdentifier(props), [messages.wantVeteransDesignationSelectionMissing]);
     });

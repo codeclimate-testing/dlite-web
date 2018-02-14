@@ -27,8 +27,8 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    ballotLanguage  : state.application.language.ballotLanguage,
-    dateOfBirth     : state.application.dateOfBirth,
+    ballotLanguage  : state.application.basics.language.ballotLanguage,
+    dateOfBirth     : state.application.basics.dateOfBirth,
     focused         : state.ui.focus,
     validations     : state.ui.validations
   };

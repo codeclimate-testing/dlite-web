@@ -2,7 +2,7 @@
 
 import assert from 'assert';
 
-import updateLanguage from '../../../../client/reducers/application/update-language';
+import updateLanguage from '../../../../client/reducers/application/basics/update-language';
 
 describe('app and ballot language reducer', function() {
   let action, state, firstState;
@@ -33,7 +33,6 @@ describe('app and ballot language reducer', function() {
       assert.equal(firstState.ballotLanguage, 'zh');
       assert.equal(firstState.hasChosenBallot, false);
     });
-    // TODO how to test the mergeProps handler in choose-language-page?
   });
 
   describe('#ballot language', function() {

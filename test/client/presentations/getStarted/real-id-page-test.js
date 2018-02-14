@@ -19,11 +19,6 @@ describe('RealIdPage', function() {
     let props;
 
     beforeEach(function() {
-      let cardType = {
-        IDDL: ['ID', 'DL'],
-        cardAction: 'new',
-        youthIDInstead: ''
-      }
       let realID = {
         realIdDesignation: '',
         getRealID: ''
@@ -39,8 +34,16 @@ describe('RealIdPage', function() {
       let onChange = spy();
 
       props = {
-        cardType,
-        realID,
+        cardType: ['ID', 'DL'],
+        cardAction: 'new',
+        youthIDInstead: '',
+        IDApp: {
+          isApplying: false
+        },
+        DLApp: {
+          isApplying: false
+        },
+        realID: realID,
         validations,
         accordions,
         onChange
@@ -78,9 +81,10 @@ describe('RealIdPage', function() {
       assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL showing');
     });
 
-    it('shows the form asking which card if you select yes to real id', function() {
+    it('shows the form asking which card if you select yes to real id and are getting both cards', function() {
       props.realID.getRealID = 'Yes';
-
+      props.IDApp.isApplying = true;
+      props.DLApp.isApplying = true;
       let component = render(
         <Wrapper>
           <RealIdPage {...props}/>
@@ -104,7 +108,8 @@ describe('RealIdPage', function() {
 
     it('does not show the form asking which type if you only are getting one card', function() {
       props.realID.getRealID = 'Yes';
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.IDApp.isApplying = true;
 
       let component = render(
         <Wrapper>
@@ -116,7 +121,8 @@ describe('RealIdPage', function() {
     });
 
     it('should have a header indicating your particular card type', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
+      props.IDApp.isApplying = true;
       let component = render(
         <Wrapper>
           <RealIdPage  {...props}/>
@@ -128,8 +134,9 @@ describe('RealIdPage', function() {
         'Header does not include ID type'
       );
 
-      props.cardType.IDDL = 'DL';
-      props.cardType.cardAction = 'new';
+      props.cardType = ['DL'];
+      props.IDApp.isApplying = false;
+      props.DLApp.isApplying = true;
 
       component = render(
         <Wrapper>

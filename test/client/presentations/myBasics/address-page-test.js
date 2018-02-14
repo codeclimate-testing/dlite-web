@@ -33,10 +33,7 @@ describe('AddressPage', function() {
         zip: '',
       }
     };
-    let cardType = {
-      IDDL: ['ID'],
-      cardAction: ''
-    };
+    let cardType = ['ID'];
     let onMailingChange   = spy();
     let onHomeChange      = spy();
     let onAddressChange   = spy();
@@ -61,6 +58,14 @@ describe('AddressPage', function() {
     props = {
       address,
       cardType,
+      IDApp: {
+        isApplying: true,
+        action: 'new'
+      },
+      DLApp: {
+        isApplying: false,
+        action: ''
+      },
       onMailingChange,
       onHomeChange,
       onAddressChange,
@@ -111,7 +116,11 @@ describe('AddressPage', function() {
   });
 
   it('shows the DL header', function() {
-    props.cardType.IDDL = ['DL'];
+    props.cardType = ['DL'];
+    props.DLApp = {
+      isApplying: true,
+      action: 'new'
+    };
 
     let component = render(
       <Wrapper>
@@ -122,7 +131,7 @@ describe('AddressPage', function() {
   });
 
   it('shows the header for both cards', function() {
-    props.cardType.IDDL = ['ID', 'DL'];
+    props.cardType = ['ID', 'DL'];
 
     let component = render(
       <Wrapper>

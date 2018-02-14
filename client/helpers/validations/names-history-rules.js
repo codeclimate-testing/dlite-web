@@ -1,6 +1,6 @@
 import selectionValidator       from './selection-validator';
 import { hasOnlyEnglishChars }  from '../data/validations';
-import errorMessages            from '../../presentations/error-messages';
+import translations             from '../../i18n';
 
 let checkNames = (props) => {
   if (props.hasUsedPreviousNames !== 'Yes') { return [];}
@@ -8,7 +8,7 @@ let checkNames = (props) => {
   let errors = [];
   errors = selectionValidator('nameHistorySelectionMissing', 'previousNames')(props);
   if (!hasOnlyEnglishChars(props.previousNames)) {
-    errors.push(errorMessages.inputIncludesNonEnglishCharacters);
+    errors.push(translations.errorMessages.inputIncludesNonEnglishCharacters);
   }
   return errors;
 };

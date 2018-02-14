@@ -21,37 +21,50 @@ import {
   renewID,
   renewDL,
   needsEndorsement,
-  getCorrectString
+  getCorrectString,
+  getCorrectApp
 } from '../../../../client/helpers/data/card-type';
 
 
 const bothCards = {
-  cardType: {
-    IDDL: ['ID', 'DL'],
-    cardAction: 'new',
-    ID: {
-      isApplying: true,
-      action: 'new'
-    },
-    DL: {
-      isApplying: true,
-      action: 'new'
-    }
+  cardType: ['ID', 'DL'],
+  cardAction: 'new',
+  IDApp: {
+    isApplying: true,
+    action: 'new'
+  },
+  DLApp: {
+    isApplying: true,
+    action: 'new'
   }
 };
 
+function buildCardType(type, action){
+  let state = {
+    cardType: [type],
+    cardAction: action,
+    IDApp: {
+      isApplying: false,
+      action: ''
+    },
+    DLApp: {
+      isApplying: false,
+      action: ''
+    }
+  };
+  if (type === 'DL') {
+    state.DLApp.isApplying = true;
+    state.DLApp.action = action;
+  }
+  if (type === 'ID') {
+    state.IDApp.isApplying = true;
+    state.IDApp.action = action;
+  }
+  return state;
+};
 
 describe('Data helpers for card-type', function() {
   let data;
-
-  function buildCardType(type, action){
-    return {
-      cardType: {
-        IDDL: [type],
-        cardAction: action
-      }
-    };
-  };
 
   beforeEach(function() {
     data = buildCardType('', '');
@@ -151,11 +164,13 @@ describe('Data helpers for card-type', function() {
       assert.equal(replaceID(data), true);
     });
     it('is false if the cardAction is not replace', function() {
-      data.cardType.cardAction = 'new';
+      data.IDApp.action = 'renew';
       assert.equal(replaceID(data), false);
     });
     it('is false if IDDL does not include ID', function() {
-      data.cardType.IDDL = ['DL'];
+      data.cardType = ['DL'];
+      data.IDApp.isApplying = false;
+      data.IDApp.action = '';
       assert.equal(replaceID(data), false);
     });
   });
@@ -169,11 +184,12 @@ describe('Data helpers for card-type', function() {
       assert.equal(replaceDL(data), true);
     });
     it('is false if the cardAction is not replace', function() {
-      data.cardType.cardAction = 'new';
+      data.DLApp.action = 'new';
       assert.equal(replaceDL(data), false);
     });
     it('is false if IDDL does not include DL', function() {
-      data.cardType.IDDL = ['ID'];
+      data.DLApp.isApplying = false;
+      data.DLApp.action = '';
       assert.equal(replaceDL(data), false);
     });
   });
@@ -190,8 +206,9 @@ describe('Data helpers for card-type', function() {
       data = buildCardType('ID', 'renew');
       assert.equal(changeID(data), false);
     });
-    it('is false if IDDL does not include ID', function() {
-      data.cardType.IDDL = ['DL'];
+    it('is false if user is not getting an ID', function() {
+      data.IDApp.isApplying = false;
+      data.IDApp.action = '';
       assert.equal(changeID(data), false);
     });
   });
@@ -205,25 +222,21 @@ describe('Data helpers for card-type', function() {
       assert.equal(changeDL(data), true);
     });
     it('is false if the cardAction is not change', function() {
-      data = buildCardType('ID', 'renew');
+      data = buildCardType('DL', 'renew');
       assert.equal(changeDL(data), false);
     });
-    it('is false if IDDL does not include DL', function() {
-      data.cardType.IDDL = ['ID'];
+    it('is false if user is not getting a DL', function() {
+      data.DLApp.isApplying = false;
+      data.DLApp.action = '';
       assert.equal(changeDL(data), false);
     });
   });
 
   describe('#correctID', function() {
     beforeEach(function() {
-      data = {
-        cardType: {
-          cardAction: 'change',
-          IDDL: ['ID']
-        },
-        cardChanges: {
-          correctOrUpdate: 'correct'
-        }
+      data = buildCardType('ID', 'change');
+      data.IDApp.cardChanges = {
+        correctOrUpdate: 'correct'
       };
     });
 
@@ -231,45 +244,43 @@ describe('Data helpers for card-type', function() {
       assert.equal(correctID(data), true);
     });
     it('is false if the cardAction is not change', function() {
-      data = buildCardType('ID', 'renew');
+      data.IDApp.action = 'renew';
       assert.equal(correctID(data), false);
     });
-    it('is false if IDDL does not include ID', function() {
-      data.cardType.IDDL = ['DL'];
+    it('is false if user is not getting an ID', function() {
+      data.cardType = ['DL'];
+      data.IDApp.isApplying = false;
+      data.IDApp.action = '';
       assert.equal(correctID(data), false);
     });
     it('is false if the user is updating the card', function() {
-      data.cardChanges.correctOrUpdate = 'update';
+      data.IDApp.cardChanges.correctOrUpdate = 'update';
       assert.equal(correctID(data), false);
     });
   });
 
   describe('#updateID', function() {
     beforeEach(function() {
-      data = {
-        cardType: {
-          cardAction: 'change',
-          IDDL: ['ID']
-        },
-        cardChanges: {
-          correctOrUpdate: 'update'
-        }
+      data = buildCardType('ID', 'change');
+      data.IDApp.cardChanges = {
+        correctOrUpdate: 'update'
       };
     });
 
-    it('is true if the cardAction is change and the IDDL includes ID and the user is updating the card', function(){
+    it('is true if the cardAction is change and the user is updating the ID card', function(){
       assert.equal(updateID(data), true);
     });
     it('is false if the cardAction is not change', function() {
-      data = buildCardType('ID', 'renew');
+      data.IDApp.action = 'renew';
       assert.equal(updateID(data), false);
     });
-    it('is false if IDDL does not include ID', function() {
-      data.cardType.IDDL = ['DL'];
+    it('is false if user is not getting an ID', function() {
+      data.IDApp.action = '';
+      data.IDApp.isApplying = false;
       assert.equal(updateID(data), false);
     });
     it('is false if the user is correcting the card', function() {
-      data.cardChanges.correctOrUpdate = 'correct';
+      data.IDApp.cardChanges.correctOrUpdate = 'correct';
       assert.equal(updateID(data), false);
     });
   });
@@ -287,7 +298,7 @@ describe('Data helpers for card-type', function() {
       assert.equal(renewID(data), false);
     });
     it('is false if the IDDL does not include ID', function() {
-      data.cardType.IDDL = ['DL'];
+      data = buildCardType('DL', 'new');
       assert.equal(renewID(data), false);
     });
   });
@@ -305,7 +316,7 @@ describe('Data helpers for card-type', function() {
       assert.equal(renewDL(data), false);
     });
     it('is false if the IDDL does not include DL', function() {
-      data.cardType.IDDL = ['ID'];
+      data = buildCardType('ID', 'new');
       assert.equal(renewDL(data), false);
     });
   });
@@ -313,31 +324,10 @@ describe('Data helpers for card-type', function() {
   describe('#prettyDL', function() {
 
     it('returns "Driver License" when user is renewing a DL', function() {
-      data = buildCardType('DL', 'renew');
-      assert.equal(prettyDL(IDorDL(data)), 'Driver License');
+      assert.equal(prettyDL('DL'), 'Driver License');
     });
   });
 
-  describe('#IDorDL', function() {
-    it('returns "ID" if user is just getting an ID', function() {
-      data = buildCardType('ID', 'renew');
-      assert.equal(IDorDL(data), 'ID');
-    });
-
-    it('returns "DL" if user is just getting a DL', function() {
-      data = buildCardType('DL', 'renew');
-      assert.equal(IDorDL(data), 'DL');
-    });
-
-    it('returns "both" if user is getting both cards', function() {
-      data = bothCards;
-      assert.equal(IDorDL(data), 'both');
-    });
-
-    it('returns "none" if user has not selected any cards yet', function() {
-      assert.equal(IDorDL(data), 'none');
-    });
-  });
 
   describe('#IDOnly', function() {
     it('returns true if IDDL array only contains an ID', function() {
@@ -361,21 +351,23 @@ describe('Data helpers for card-type', function() {
     let props;
     beforeEach(function() {
       props = {
-        licenseType: {
-          needEndorsement: ''
+        DLApp: {
+          licenseType: {
+            needEndorsement: ''
+          }
         }
       }
     });
     it('returns true if value is Yes', function() {
-      props.licenseType.needEndorsement = 'Yes';
+      props.DLApp.licenseType.needEndorsement = 'Yes';
       assert.equal(needsEndorsement(props), true);
     });
     it('returns false if value is blank', function() {
-      props.licenseType.needEndorsement = '';
+      props.DLApp.licenseType.needEndorsement = '';
       assert.equal(needsEndorsement(props), false);
     });
     it('returns false if value is No', function() {
-      props.licenseType.needEndorsement = 'No';
+      props.DLApp.licenseType.needEndorsement = 'No';
       assert.equal(needsEndorsement(props), false);
     });
   });
@@ -383,17 +375,42 @@ describe('Data helpers for card-type', function() {
     const DLString = 'license string';
     const IDString = 'ID string';
     it('returns ID string when user is changing ID', function() {
-      data.cardType.IDDL = ['ID'];
-      data.cardType.cardAction = 'change';
+      data.cardType = ['ID'];
+      data.cardAction = 'change';
       let result = getCorrectString(data, DLString, IDString);
       assert.equal(result, IDString);
     });
 
     it('returns DL string when user is changing a DL', function() {
-      data.cardType.IDDL = ['DL'];
-      data.cardType.cardAction = 'change';
+      data.cardType = ['DL'];
+      data.cardAction = 'change';
       let result = getCorrectString(data, DLString, IDString);
       assert.equal(result, DLString);
+    });
+  });
+
+  describe('#getCorrectApp', function() {
+    let testState;
+    beforeEach(function() {
+      testState = {
+        cardType: [],
+        IDApp: {
+          isApplying: false
+        },
+        DLApp: {
+          isApplying: false
+        }
+      };
+    });
+
+    it('returns the IDApp if current flow is for ID card', function() {
+      testState.cardType = ['ID'];
+      assert.equal(getCorrectApp(testState), testState.IDApp);
+    });
+
+    it('returns the DLApp if current flow is not for ID card', function() {
+      testState.cardType = ['DL']
+      assert.equal(getCorrectApp(testState), testState.DLApp);
     });
   });
 });

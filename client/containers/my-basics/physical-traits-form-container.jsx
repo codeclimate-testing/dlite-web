@@ -25,7 +25,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    physicalTraits: state.application.physicalTraits,
+    physicalTraits: state.application.basics.physicalTraits,
     focused:        state.ui.focus,
     validations:    state.ui.validations
   };

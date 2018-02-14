@@ -4,31 +4,78 @@ import React            from 'react';
 import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
-import { getStringByAction }  from '../../../helpers/data/card-actions';
 import {
-  getDL
+  DLAppExists,
+  renewDL,
+  replaceDL,
+  correctDL,
+  updateDL,
+  getNewDL
 } from '../../../helpers/data/card-type';
 
+const New = (props) => {
+  if (!getNewDL(props)) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.applying}
+    />
+  )
+};
 
-const actionNew = translations.summaryPage.whatImDoing.applying
-const actionRenew = translations.summaryPage.whatImDoing.renewing
-const actionReplace = translations.summaryPage.whatImDoing.replacing
-const actionCorrect = translations.summaryPage.whatImDoing.correcting
-const actionUpdate = translations.summaryPage.whatImDoing.updating
+const Renew = (props) => {
+  if (!renewDL(props)) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.renewing}
+    />
+  )
+};
+
+const Replace = (props) => {
+  if (!replaceDL(props)) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.replacing}
+    />
+  )
+};
+
+const Correct = (props) => {
+  if (!correctDL(props)) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.correcting}
+    />
+  )
+};
+
+const Update = (props) => {
+  if (!updateDL(props)) { return null; }
+  return(
+    <SummaryItem
+      title='I am'
+      text={translations.summaryPage.whatImDoing.updating}
+    />
+  )
+};
 
 const DLAction = (props) => {
-  if(!getDL(props)) { return null; }
-  let dlAction = getStringByAction(props, actionNew, actionRenew, actionReplace, null, actionUpdate, actionCorrect);
+  if(!DLAppExists(props)) { return null; }
 
   return (
     <PageSummaryLink
       to='/what-do-you-want-to-do-today'
       name='wdywtdt'
     >
-      <SummaryItem
-        title='I am'
-        text={dlAction}
-      />
+      <New DLApp = {props.DLApp}/>
+      <Renew DLApp = {props.DLApp}/>
+      <Replace DLApp = {props.DLApp}/>
+      <Correct DLApp = {props.DLApp}/>
+      <Update DLApp = {props.DLApp}/>
     </PageSummaryLink>
   )
 };

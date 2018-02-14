@@ -26,8 +26,8 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    ballotByMail: state.application.ballotByMail,
-    dateOfBirth:  state.application.dateOfBirth,
+    ballotByMail: state.application.voting.ballotByMail,
+    dateOfBirth:  state.application.basics.dateOfBirth,
     focused:      state.ui.focus,
     validations:  state.ui.validations
   };

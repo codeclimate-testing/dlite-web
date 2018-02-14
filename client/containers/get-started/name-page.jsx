@@ -26,7 +26,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    legalName: state.application.legalName,
+    legalName: state.application.basics.legalName,
     focused: state.ui.focus,
     validations: state.ui.validations,
     hover: state.ui.hover

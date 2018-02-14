@@ -9,5 +9,5 @@ export const eligibleForSeniorID = (props) => {
 };
 
 export const gettingSeniorID = (props) => {
-  return props.seniorID === 'Yes';
+  return props.IDApp.seniorID === 'Yes';
 };

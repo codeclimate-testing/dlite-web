@@ -8,112 +8,73 @@ import {
 } from '../../../../client/helpers/data/real-id';
 
 describe('Data helpers for real-id', function() {
+  let data;
+  beforeEach(function() {
+    data = {
+      realID: {
+        getRealID: '',
+        realIdDesignation: ''
+      },
+      IDApp: {
+        isApplying: false
+      },
+      DLApp: {
+        isApplying: false
+      }
+    }
+  });
   describe('mustChooseCard', function() {
     it('is false if real id has not been chosen', function() {
-      let data = {
-        realID: {
-          getRealID: 'No'
-        },
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'No';
       assert.equal(mustChooseCard(data), false);
     });
 
     it('is false if real id has been chosen but only one card exists', function() {
-      let data = {
-        realID: {
-          getRealID: 'Yes'
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'Yes';
+      data.IDApp.isApplying = true;
       assert.equal(mustChooseCard(data), false);
     });
 
     it('is true if real id has been chosen and both cards are desired', function() {
-      let data = {
-        realID: {
-          getRealID: 'Yes'
-        },
-        cardType: {
-          IDDL: ['DL', 'ID'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+
       assert.equal(mustChooseCard(data), true);
     });
   });
 
   describe('validToContinue', function() {
     it('should be false if the person has not yet made a decision about real id', function() {
-      let data = {
-        realID: {
-          getRealID: ''
-        },
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        }
-      };
       assert.equal(validToContinue(data), false);
     });
 
     it('should be true if the person is not getting a real id', function() {
-      let data = {
-        realID: {
-          getRealID: 'No'
-        },
-        cardType: {
-          IDDL: ['DL', 'ID'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'No';
       assert.equal(validToContinue(data), true);
     });
 
     it('should be false if the person is choosing a real id and has not yet chosen which card', function() {
-      let data = {
-        realID: {
-          getRealID: 'Yes',
-          realIdDesignation: ''
-        },
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+
       assert.equal(validToContinue(data), false);
     });
 
     it('should be true if the person is choosing a real id and does not need to choose a card', function() {
-      let data = {
-        realID: {
-          getRealID: 'Yes'
-        },
-        cardType: {
-          IDDL: ['DL'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'Yes';
+      data.DLApp.isApplying = true;
+
       assert.equal(validToContinue(data), true);
     });
 
     it('should be true if the person is choosing a real id and has chosen which card', function() {
-      let data = {
-        realID: {
-          getRealID: 'Yes',
-          realIdDesignation: 'ID'
-        },
-        cardType: {
-          IDDL: ['ID', 'DL'],
-          cardAction: 'new'
-        }
-      };
+      data.realID.getRealID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+      data.realID.realIdDesignation = 'ID';
+
       assert.equal(validToContinue(data), true);
     });
   });

@@ -159,12 +159,6 @@ function saveApplication(data) {
       if(records.length > 0) {
         returnedData.card_histories = records;
       }
-      return insertOneToOne('renewal_card', data.renewal_card, application_id);
-    })
-    .then((records)=> {
-      if(records.length > 0) {
-        returnedData.renewal_card = records;
-      }
       return insertPreviousNames(data.previous_names, application_id);
     })
     .then((records) => {

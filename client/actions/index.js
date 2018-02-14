@@ -22,7 +22,9 @@ export const TYPES = {
   CREATE_APPLICATION_ID:                  'CREATE_APPLICATION_ID',
   UPDATE_LANGUAGE:                        'UPDATE_LANGUAGE',
   UPDATE_LEGAL_NAME:                      'UPDATE_LEGAL_NAME',
+  UPDATE_CARD_ACTION:                     'UPDATE_CARD_ACTION',
   UPDATE_CARD_TYPE:                       'UPDATE_CARD_TYPE',
+  UPDATE_YOUTH_ID_INSTEAD:                'UPDATE_YOUTH_ID_INSTEAD',
   UPDATE_CARD_CHANGES:                    'UPDATE_CARD_CHANGES',
   UPDATE_CARD_REPLACEMENT:                'UPDATE_CARD_REPLACEMENT',
   UPDATE_CURRENT_CARD_INFO:               'UPDATE_CURRENT_CARD_INFO',
@@ -76,6 +78,7 @@ export const updateLanguage                           = generateFormAction(TYPES
 export const updateLegalName                          = generateFormAction(TYPES.UPDATE_LEGAL_NAME);
 export const updateCardAction                         = generateFormAction(TYPES.UPDATE_CARD_ACTION);
 export const updateCardType                           = generateFormAction(TYPES.UPDATE_CARD_TYPE);
+export const updateYouthIDInstead                     = generateFormAction(TYPES.UPDATE_YOUTH_ID_INSTEAD);
 export const updateCardChanges                        = generateFormAction(TYPES.UPDATE_CARD_CHANGES);
 export const updateCardReplacement                    = generateFormAction(TYPES.UPDATE_CARD_REPLACEMENT);
 export const updateCurrentCardInfo                    = generateFormAction(TYPES.UPDATE_CURRENT_CARD_INFO);

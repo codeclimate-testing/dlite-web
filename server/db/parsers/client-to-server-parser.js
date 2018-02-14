@@ -13,7 +13,6 @@ function parse(data) {
     { phone_numbers:          extractPhoneNumber(data) },
     { organ_donations:        extractOrganDonation(data) },
     { card_histories:         extractCardHistories(data) },
-    { renewal_card:           extractExistingCardInfo(data) },
     { previous_names:         extractPreviousNames(data) },
     { medical_histories:      extractMedicalHistories(data) },
     { license_issues:         extractLicenseIssues(data) },
@@ -26,24 +25,26 @@ function parse(data) {
 }
 
 function extractApplication(data) {
-  let legalName         = data.legalName || {};
-  let heightWeight      = data.traitsHeightWeight || {};
-  let physicalTraits    = data.physicalTraits || {};
+  let basics            = data.basics;
+  let legalName         = basics.legalName || {};
+  let heightWeight      = basics.traitsHeightWeight || {};
+  let physicalTraits    = basics.physicalTraits || {};
+  let language          = basics.language.appLanguage || '';
   let dob               = null;
   let socialSecurity    = 'No';
 
-  if(parserHelper.createDateString(data.dateOfBirth)) {
-    dob = new Date(parserHelper.createDateString(data.dateOfBirth));
+  if(parserHelper.createDateString(basics.dateOfBirth)) {
+    dob = new Date(parserHelper.createDateString(basics.dateOfBirth));
   }
 
-  if(data.socialSecurity.hasSocialSecurity === 'Yes'){
-    let _socialSecurity = data.socialSecurity;
+  if(basics.socialSecurity.hasSocialSecurity === 'Yes'){
+    let _socialSecurity = basics.socialSecurity;
     socialSecurity = _socialSecurity.part1+'-'+_socialSecurity.part2+'-'+_socialSecurity.part3;
   }
 
   return {
     id:                       data.id,
-    language:                 data.language.appLanguage,
+    language:                 language,
     first_name:               legalName.firstName,
     middle_name:              legalName.middleName,
     last_name:                legalName.lastName,
@@ -60,31 +61,31 @@ function extractApplication(data) {
 }
 
 function extractAddresses(data) {
-  if(data.address.home.street_1 === '') { return null; }
+  if(data.basics.address.home.street_1 === '') { return null; }
   return [
     {
       application_id:     data.id,
       type:               'mailing',
-      street_address_1:   data.address.mailing.street_1,
-      street_address_2:   data.address.mailing.street_2,
-      city:               data.address.mailing.city,
-      state:              data.address.mailing.state,
-      zip:                data.address.mailing.zip
+      street_address_1:   data.basics.address.mailing.street_1,
+      street_address_2:   data.basics.address.mailing.street_2,
+      city:               data.basics.address.mailing.city,
+      state:              data.basics.address.mailing.state,
+      zip:                data.basics.address.mailing.zip
     },
     {
       application_id:     data.id,
       type:               'home',
-      street_address_1:   data.address.home.street_1,
-      street_address_2:   data.address.home.street_2,
-      city:               data.address.home.city,
-      state:              data.address.home.state,
-      zip:                data.address.home.zip
+      street_address_1:   data.basics.address.home.street_1,
+      street_address_2:   data.basics.address.home.street_2,
+      city:               data.basics.address.home.city,
+      state:              data.basics.address.home.state,
+      zip:                data.basics.address.home.zip
     }
   ];
 }
 
 function extractEmail(data) {
-  let email = data.contactMethods.emailAddress;
+  let email = data.voting.contactMethods.emailAddress;
   if(email) {
     return {
       application_id:   data.id,
@@ -95,10 +96,10 @@ function extractEmail(data) {
 }
 
 function extractPhoneNumber(data) {
-  if (data.contactMethods.phoneNumber1 || data.contactMethods.phoneNumber2 || data.contactMethods.phoneNumber3) {
+  if (data.voting.contactMethods.phoneNumber1 || data.voting.contactMethods.phoneNumber2 || data.voting.contactMethods.phoneNumber3) {
     return {
       application_id:   data.id,
-      number:           data.contactMethods.phoneNumber1 + data.contactMethods.phoneNumber2 + data.contactMethods.phoneNumber3
+      number:           data.voting.contactMethods.phoneNumber1 + data.voting.contactMethods.phoneNumber2 + data.voting.contactMethods.phoneNumber3
     };
   }
   return null;
@@ -114,35 +115,55 @@ function extractOrganDonation(data) {
 }
 
 function extractCardHistories(data) {
-  if(data.licenseAndIdHistory.isIssued === 'Yes'){
-    let dateString = parserHelper.createDateString(data.licenseAndIdHistory);
-    return {
-      application_id:   data.id,
-      number:           data.licenseAndIdHistory.DLIDNumber,
-      issuing_entity:   data.licenseAndIdHistory.issuedBy,
-      date_description: dateString,
-    };
-  }
-  else {
-    return null;
-  }
-}
+  let cardHistories = [];
+  let getIDInfo = cardTypeParser.needCurrentCardInfo(data.IDApp.action);
+  let getDLInfo = cardTypeParser.needCurrentCardInfo(data.DLApp.action);
 
-function extractExistingCardInfo(data) {
-  if (!cardTypeParser.needCurrentCardInfo(data.cardType)) { return null; }
-  let dateString = parserHelper.createDateString(data.currentCardInfo);
-  return {
-    application_id:   data.id,
-    number:           data.currentCardInfo.number,
-    date:             dateString
-  };
+  if (cardTypeParser.hasNewDL(data.DLApp)){
+    if(data.history.licenseAndIdHistory.isIssued === 'Yes'){
+      let dateString = parserHelper.createDateString(data.history.licenseAndIdHistory);
+      cardHistories.push({
+        application_id:   data.id,
+        number:           data.history.licenseAndIdHistory.DLIDNumber,
+        issuing_entity:   data.history.licenseAndIdHistory.issuedBy,
+        date_description: dateString,
+      });
+    } else if (data.history.licenseAndIdHistory.isIssued === 'No') {
+      cardHistories.push({
+        application_id:   data.id,
+        number:           '',
+        issuing_entity:   'licenseAndIdHistory not issued',
+        date_description: ''
+      });
+    }
+  } else if (getDLInfo) {
+    let _date = parserHelper.createDateString(data.DLApp.currentCard);
+    cardHistories.push({
+      application_id:   data.id,
+      number:           data.DLApp.currentCard.number,
+      issuing_entity:   '',
+      date_description: _date
+    });
+  }
+
+  if (getIDInfo) {
+    let _date = parserHelper.createDateString(data.IDApp.currentCard);
+    cardHistories.push({
+      application_id:   data.id,
+      number:           data.IDApp.currentCard.number,
+      issuing_entity:   '',
+      date_description: _date
+    });
+  }
+
+  return cardHistories;
 }
 
 function extractPreviousNames(data) {
-  let previousNames  = data.namesHistory;
+  let _previousNames  = data.history.namesHistory;
   let names          = [];
-  if( previousNames.hasUsedPreviousNames === 'Yes') {
-    let tokens = previousNames.previousNames.split(',');
+  if( _previousNames.hasUsedPreviousNames === 'Yes') {
+    let tokens = _previousNames.previousNames.split(',');
     tokens.forEach(function (token){
       token = token.trim();
       if(token){
@@ -162,10 +183,10 @@ function extractPreviousNames(data) {
 }
 
 function extractMedicalHistories(data) {
-  if(data.medicalHistory.hasMedicalCondition === 'Yes') {
+  if(data.history.medicalHistory.hasMedicalCondition === 'Yes') {
     return {
       application_id:   data.id,
-      description:      data.medicalHistory.medicalInfo
+      description:      data.history.medicalHistory.medicalInfo
     };
   }
   else {
@@ -174,11 +195,11 @@ function extractMedicalHistories(data) {
 }
 
 function extractLicenseIssues(data) {
-  if( data.licenseIssues.isSuspended === 'Yes'){
-    let dateString = parserHelper.createDateString(data.licenseIssues);
+  if( data.history.licenseIssues.isSuspended === 'Yes'){
+    let dateString = parserHelper.createDateString(data.history.licenseIssues);
     return {
       application_id:     data.id,
-      description:        data.licenseIssues.reason,
+      description:        data.history.licenseIssues.reason,
       date_description:   dateString
     };
   }
@@ -188,20 +209,20 @@ function extractLicenseIssues(data) {
 }
 
 function extractVeteransInfo(data) {
-  if(data.veteransService.isVeteran === 'Yes'){
-
+  if(data.history.veteransService.isVeteran === 'Yes'){
     let label = null;
-    if(data.veteransService.veteransIdentifier === 'Yes') {
+
+    if(data.history.veteransService.veteransIdentifier === 'Yes'){
       label = 'add';
     }
-    if(data.veteransService.previouslyDesignated === 'Yes' && data.veteransService.veteransIdentifier === 'No' ) {
+    if(data.history.veteransService.previouslyDesignated === 'Yes' && data.history.veteransService.veteransIdentifier === 'No' ) {
       label = 'remove';
     }
 
     return {
       application_id:               data.id,
-      has_requested_information:    parserHelper.strToBool(data.veteransService.receiveBenefits),
-      previously_designated:        parserHelper.strToBool(data.veteransService.previouslyDesignated),
+      has_requested_information:    parserHelper.strToBool(data.history.veteransService.receiveBenefits),
+      previously_designated:        parserHelper.strToBool(data.history.veteransService.previouslyDesignated),
       labeling:                     label
     };
   }
@@ -212,32 +233,33 @@ function extractVeteransInfo(data) {
 }
 
 function extractVotingRegistrations(data) {
-  if(data.citizenStatus === '' || data.eligibilityRequirements === '' || data.optOut === '') { return null; }
-  const voterChoice = voterChoiceConverter.clientToDBMapping(data.optOut);
+
+  if(data.voting.citizenStatus === '' || data.voting.eligibilityRequirements === '' || data.voting.optOut === '') { return null; }
+  const voterChoice = voterChoiceConverter.clientToDBMapping(data.voting.optOut);
   return {
     application_id:     data.id,
-    is_citizen:         parserHelper.blankIsDecline(data.citizenStatus),
-    is_eligible:        parserHelper.blankIsDecline(data.eligibilityRequirements),
+    is_citizen:         parserHelper.strToBool(data.voting.citizenStatus),
+    is_eligible:        parserHelper.strToBool(data.voting.eligibilityRequirements),
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     is_preregistering:  parserHelper.strToBool(data.isPreRegistering),
-    party:              parserHelper.parseParty(data.politicalPartyChoose),
-    language:           data.language.ballotLanguage,
-    vote_by_mail:       parserHelper.strToBool(data.ballotByMail),
-    should_contact:     parserHelper.strToBool(data.contactMethods.shouldContact)
+    party:              parserHelper.parseParty(data.voting.politicalPartyChoose),
+    language:           data.basics.language.ballotLanguage,
+    vote_by_mail:       parserHelper.strToBool(data.voting.ballotByMail),
+    should_contact:     parserHelper.strToBool(data.voting.contactMethods.shouldContact)
   };
 }
 
 function extractCardTypes(data) {
   let cards = [ ];
-  if(cardTypeParser.hasID(data.cardType)){
+  if(cardTypeParser.hasID(data.IDApp)){
     cards.push({
       application_id:   data.id,
       type:             'ID'
     });
   }
 
-  if(cardTypeParser.hasDL(data.cardType)) {
+  if(cardTypeParser.hasDL(data.DLApp)) {
     cards.push({
       application_id:   data.id,
       type:             'DL'
@@ -250,64 +272,96 @@ function extractCardTypes(data) {
 function extractCardOptions(data) {
   let cardOptions = [ ];
 
-  data.cardType.IDDL.forEach(type => {
+  //////----------- DRIVER LICENSE OPTIONS ---------/////////
+  if (cardTypeParser.hasDL(data.DLApp)) {
     cardOptions.push({
-      type        : type,
+      type        : 'DL',
       option_type : 'action',
-      option_value: data.cardType[type].action
+      option_value: data.DLApp.action
     });
-  });
 
-  ////////// CHANGES(UPDATE or CORRECT) AND REPLACEMENTS ///////////
-  if (cardTypeParser.getChange(data.cardType)){
-    const correctOrUpdate = data.cardChanges.correctOrUpdate;
-    const changes = data.cardChanges.sections.join('_');
-
-    cardOptions.push({
-      type:               cardTypeParser.getSingleCardType(data.cardType),
-      option_type:        'modification',
-      option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
-    });
-  } else if (cardTypeParser.getReplace(data.cardType)) {
-    cardOptions.push({
-      type:               cardTypeParser.getSingleCardType(data.cardType),
-      option_type:        'modification',
-      option_value:       'replace-' + data.cardReplacement.reason
-    });
+    // changing and replacing DL
+    if (cardTypeParser.getChange(data.DLApp.action)) {
+      let correctOrUpdate = data.DLApp.cardChanges.correctOrUpdate;
+      let changes = data.DLApp.cardChanges.sections.join('_');
+      cardOptions.push({
+        type:               'DL',
+        option_type:        'modification',
+        option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.DLApp.cardChanges.other
+      });
+    }
+    else if (cardTypeParser.getReplace(data.DLApp.action)) {
+      cardOptions.push({
+        type:               'DL',
+        option_type:        'modification',
+        option_value:       'replace-' + data.DLApp.replacementDetails.reason
+      });
+    }
   }
 
-  ///////// REDUCED FEE ////////////////
-  if(data.reducedFee.ID === 'Yes' && data.reducedFee.form === 'Yes') {
+  //////-----  ID OPTIONS --------------//////////////////
+  if (cardTypeParser.hasID(data.IDApp)) {
     cardOptions.push({
-      type:               'ID',
-      option_type:        'modification',
-      option_value:       'reduced-fee-has-form'
-    })
-  } else if(data.reducedFee.ID === 'Yes' && data.reducedFee.form !== 'Yes') {
-    cardOptions.push({
-      type:               'ID',
-      option_type:        'modification',
-      option_value:       'reduced-fee-no-form'
-    })
-  }
+      type        : 'ID',
+      option_type : 'action',
+      option_value: data.IDApp.action
+    });
+
+    // changing and replacing ID
+    if (cardTypeParser.getChange(data.IDApp.action)) {
+      let correctOrUpdate = data.IDApp.cardChanges.correctOrUpdate;
+      let changes = data.IDApp.cardChanges.sections.join('_');
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'change-' + correctOrUpdate + '-' + changes + '-' + data.cardChanges.other
+      });
+    }
+    else if (cardTypeParser.getReplace(data.IDApp.action)) {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'replace-' + data.IDApp.replacementDetails.reason
+      });
+    };
+
+    // reduced fee
+    if(data.IDApp.reducedFee.ID === 'Yes' && data.IDApp.reducedFee.form === 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'reduced-fee-has-form'
+      })
+    } else if(data.IDApp.reducedFee.ID === 'Yes' && !data.IDApp.reducedFee.form === 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'reduced-fee-no-form'
+      })
+    };
+
+    // senior ID
+    if(data.IDApp.seniorID=== 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'senior-id'
+      })
+    };
+  };
 
   ////////// REAL ID ///////////////
   if(data.realID.getRealID === 'Yes'){
+    var hasID = cardTypeParser.hasID(data.IDApp);
+    var hasDL = cardTypeParser.hasDL(data.DLApp);
+    var designation = hasID && hasDL ? data.realID.realIdDesignation : hasID ? 'ID' : 'DL';
+
     cardOptions.push({
       type:               data.realID.realIdDesignation,
       option_type:        'modification',
       option_value:       'real-id'
     });
-  }
-
-  ///////// SENIOR ID ///////////
-  if(data.seniorID=== 'Yes') {
-    cardOptions.push({
-      type:               'ID',
-      option_type:        'modification',
-      option_value:       'senior-id'
-    })
-  }
+  };
 
   return cardOptions;
 };
@@ -315,13 +369,13 @@ function extractCardOptions(data) {
 function extractLicenseClasses(data) {
   let license_classes = [];
 
-  data.licenseType.endorsement.forEach(function(item) {
+  data.DLApp.licenseType.endorsement.forEach(function(item) {
     license_classes.push({
       type: item
     });
   });
 
-  data.licenseType.type.forEach(function(item) {
+  data.DLApp.licenseType.type.forEach(function(item) {
     license_classes.push({
       type: item
     });

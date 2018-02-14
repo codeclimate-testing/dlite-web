@@ -5,12 +5,12 @@ import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 import { WDYWTDTValidator }   from '../../helpers/validations';
-import { updateCardType }     from "../../actions/index";
+import { updateCardAction }     from "../../actions/index";
 import Presentation           from "../../presentations/get-started/what-do-you-want-to-do-today-page.jsx";
 
 const Page = (props) => {
-  let validations       =   new WDYWTDTValidator(props.cardType.cardAction, props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors(props.name, props, validations);
+  let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
+  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
@@ -18,7 +18,7 @@ const Page = (props) => {
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      selectedValue     = { props.cardType.cardAction }
+      selectedValue     = { props.cardAction }
       validations       = { validations }
     />
   )
@@ -26,10 +26,10 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardType:     state.application.cardType,
+    cardAction:   state.application.cardAction,
     focused:      state.ui.focus,
     validations:  state.ui.validations
   };
 };
 
-export default connectForm(mapStateToProps, updateCardType, Page);
+export default connectForm(mapStateToProps, updateCardAction, Page);

@@ -26,10 +26,13 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    veteransService: state.application.veteransService,
-    cardType:        state.application.cardType,
-    focused:         state.ui.focus,
-    validations:     state.ui.validations
+    veteransService : state.application.history.veteransService,
+    IDApp           : state.application.IDApp,
+    DLApp           : state.application.DLApp,
+    cardAction      : state.application.cardAction,
+    cardType        : state.application.cardType,
+    focused         : state.ui.focus,
+    validations     : state.ui.validations
   };
 };
 

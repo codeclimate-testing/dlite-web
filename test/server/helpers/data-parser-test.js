@@ -59,38 +59,14 @@ describe('dataParser', function() {
     });
   });
 
-  describe('blankIsDecline', function() {
-    it('returns the same value when a user does not select an answer as when the user declines to answer', function() {
-      let val = '';
-      assert.equal(dataParser.blankIsDecline(val), 'decline');
-      assert.equal(dataParser.blankIsDecline(val), dataParser.strToBool('decline'));
-    });
 
-    it('returns a boolean when the user does select an answer', function() {
-      let val = 'Yes';
-      assert.equal(dataParser.blankIsDecline(val), true);
-      assert.equal(dataParser.blankIsDecline(val), dataParser.strToBool(val));
-    });
-  });
-
-  describe('createDateString', function() {
-    it('returns null when date object does not have all values', function() {
-      let date = {
-        month: 12,
-        year: '',
-        day: 24
-      };
-      assert.equal(dataParser.createDateString(date), null);
-    });
-
-    it('returns string when date object has all values', function() {
-      let date = {
-        month: 12,
-        year: 2004,
-        day: 24
-      };
-      assert.equal(dataParser.createDateString(date), '12/24/2004');
-    });
+  it('returns string when date object has all values', function() {
+    let date = {
+      month: 12,
+      year: 2004,
+      day: 24
+    };
+    assert.equal(dataParser.createDateString(date), '12/24/2004');
   });
 
   describe('createDateJson', function() {

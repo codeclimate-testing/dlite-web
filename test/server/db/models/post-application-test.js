@@ -447,57 +447,24 @@ describe('Post Application Data', () => {
         .then(((records) => {
           assert(records[0].id);
           assert.equal(records[0].application_id, application_id);
-          assert.equal(records[0].number, data.number);
-          assert.equal(records[0].issuing_entity, data.issuing_entity);
-          assert.equal(records[0].date_description, data.date_description);
+          assert.equal(records[0].number, data[0].number);
+          assert.equal(records[0].issuing_entity, data[0].issuing_entity);
+          assert.equal(records[0].date_description, data[0].date_description);
         }))
         .then(done)
         .catch(done);
     });
 
     it('updates existing records', (done) => {
-      data.number             = 'IDDL144'
-      data.issuing_entity     = 'Umbrella Corp.';
-      data.date_description   = '12/12/2012';
+      data[0].number             = 'IDDL144'
+      data[0].date_description   = '12/12/2012';
       ctrl.insertOneToOne('card_histories', data, application_id)
         .then((records) => {
           assert(records[0].id);
           assert.equal(records[0].application_id, application_id);
-          assert.equal(records[0].number, data.number);
-          assert.equal(records[0].issuing_entity, data.issuing_entity);
-          assert.equal(records[0].date_description, data.date_description);
-        })
-        .then(done)
-        .catch(done);
-    });
-  });
-
-  describe('renewal_card table', () => {
-    let data            = dataHelper.fakeRecords();
-    let application_id  = data.application.id;
-    data                = data.renewal_card;
-
-    it('inserts new records', (done) => {
-      ctrl.insertOneToOne('renewal_card', data, application_id)
-        .then(((records) => {
-          assert(records[0].id);
-          assert.equal(records[0].application_id, application_id);
-          assert.equal(records[0].number, data.number);
-          assert.equal(records[0].date, data.date);
-        }))
-        .then(done)
-        .catch(done);
-    });
-
-    it('updates existing records', (done) => {
-      data.number = 'UPDATED NUMBER';
-      data.date   = '12/15/2016';
-      ctrl.insertOneToOne('renewal_card', data, application_id)
-        .then((records) => {
-          assert(records[0].id);
-          assert.equal(records[0].application_id, application_id);
-          assert.equal(records[0].number, data.number);
-          assert.equal(records[0].date, data.date);
+          assert.equal(records[0].number, data[0].number);
+          assert.equal(records[0].issuing_entity, data[0].issuing_entity);
+          assert.equal(records[0].date_description, data[0].date_description);
         })
         .then(done)
         .catch(done);
@@ -576,7 +543,7 @@ describe('Post Application Data', () => {
           assert.equal(records[0].application_id, application_id);
           assert.equal(records[0].has_requested_information, data.has_requested_information);
           assert.equal(records[0].labeling, data.labeling);
-          assert.equal(records[0].previously_designated, data.previously_designated);
+          assert.equal(records[0].previously_designated.toString(), data.previously_designated.toString());
         }))
         .then(done)
         .catch(done);
@@ -592,7 +559,7 @@ describe('Post Application Data', () => {
           assert.equal(records[0].application_id, application_id);
           assert.equal(records[0].has_requested_information, data.has_requested_information);
           assert.equal(records[0].labeling, data.labeling);
-          assert.equal(records[0].previously_designated, data.previously_designated);
+          assert.equal(records[0].previously_designated.toString(), data.previously_designated.toString());
         })
         .then(done)
         .catch(done);
@@ -714,15 +681,9 @@ describe('Post Application Data', () => {
           //Card histories table
           assert(records.card_histories[0].id);
           assert.equal(records.card_histories[0].application_id, data.application.id);
-          assert.equal(records.card_histories[0].number, data.card_histories.number);
-          assert.equal(records.card_histories[0].issuing_entity, data.card_histories.issuing_entity);
-          assert.equal(records.card_histories[0].date_description, data.card_histories.date_description);
-
-          //Renewal card table
-          assert(records.renewal_card[0].id);
-          assert.equal(records.renewal_card[0].application_id, data.application.id);
-          assert.equal(records.renewal_card[0].number, data.renewal_card.number);
-          assert.equal(records.renewal_card[0].date, data.renewal_card.date);
+          assert.equal(records.card_histories[0].number, data.card_histories[0].number);
+          assert.equal(records.card_histories[0].issuing_entity, data.card_histories[0].issuing_entity);
+          assert.equal(records.card_histories[0].date_description, data.card_histories[0].date_description);
 
           //Previous names table
           assert(records.previous_names[0].id);
@@ -749,7 +710,7 @@ describe('Post Application Data', () => {
           assert.equal(records.veterans_info[0].application_id, data.application.id);
           assert.equal(records.veterans_info[0].has_requested_information, data.veterans_info.has_requested_information);
           assert.equal(records.veterans_info[0].labeling, data.veterans_info.labeling);
-          assert.equal(records.veterans_info[0].previously_designated, data.veterans_info.previously_designated);
+          assert.equal(records.veterans_info[0].previously_designated.toString(), data.veterans_info.previously_designated.toString());
 
           //Voting registrations table
           assert(records.voting_registrations[0].id);

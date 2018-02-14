@@ -6,10 +6,10 @@ import Page               from '../../containers/page.jsx';
 import ChooseCardCheckbox from './choose-card/choose-card-checkbox.jsx';
 import ChooseCardRadio    from './choose-card/choose-card-radio.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import { isGettingNew }   from '../../helpers/data/card-actions';
-import { IDorDL }         from '../../helpers/data/card-type';
+import { IDorDL }         from '../../helpers/data/cards';
 import {
-  getStringByAction
+  getStringByAction,
+  isGettingNew
 }  from   '../../helpers/data/card-actions';
 import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';

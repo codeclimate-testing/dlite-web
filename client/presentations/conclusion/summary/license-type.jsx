@@ -5,12 +5,13 @@ import * as dataPresent from '../../../helpers/data-present';
 import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+
 import {
-  getDL
-} from '../../../helpers/data/card-type';
-import {
-  getStringByEndorsements
+  showLicenseClass
 } from '../../../helpers/data/summary';
+import {
+  needsEndorsement
+} from '../../../helpers/data/card-type';
 
 const classC = translations.intro.getStartedPage.whatYouAreDoing.classes.C;
 const classM = translations.intro.getStartedPage.whatYouAreDoing.classes.M;
@@ -24,33 +25,47 @@ const Car = (props) => {
 };
 
 const Cycle = (props) => {
-  if (props.array.includes('cycle') === -1) { return null; }
+  if (props.array.indexOf('cycle') === -1) { return null; }
   return <li key='cycle'>{classM}</li>
 };
 
 const Long = (props) => {
-  if (props.array.includes('long') === -1) { return null; }
+  if (props.array.indexOf('long') === -1) { return null; }
   return <li key='long'>{classA}</li>
 };
 
 const Trailer = (props) => {
-  if (props.array.includes('trailer') === -1) { return null; }
+  if (props.array.indexOf('trailer') === -1) { return null; }
   return <li key='trailer'>{classB}</li>
 };
 
-const LicenseType = (props) => {
-  if(!getDL(props)) { return null; }
+const Yes = (props) => {
+  if (!needsEndorsement(props)) { return null; }
+  return translations.shared.commonAnswers.yes;
+};
 
-  const yesString = 'Yes';
-  const noString = 'No';
-  let value = getStringByEndorsements(props, yesString, noString);
+const No = (props) => {
+  if (needsEndorsement(props)) { return null; }
+  return translations.shared.commonAnswers.no;
+};
+
+
+const LicenseType = (props) => {
+  if(!showLicenseClass(props) ) { return null; }
 
   let vehicles = (
     <div>
-      <Car array = {props.licenseType.type} />
-      <Cycle array = {props.licenseType.type} />
-      <Long array = {props.licenseType.type} />
-      <Trailer array = {props.licenseType.type} />
+      <Car array = {props.DLApp.licenseType.type} />
+      <Cycle array = {props.DLApp.licenseType.type} />
+      <Long array = {props.DLApp.licenseType.type} />
+      <Trailer array = {props.DLApp.licenseType.type} />
+    </div>
+  );
+
+  let endorsements = (
+    <div>
+      <Yes DLApp = {props.DLApp} />
+      <No DLApp = {props.DLApp} />
     </div>
   );
 
@@ -65,7 +80,7 @@ const LicenseType = (props) => {
       />
       <SummaryItem
         title='Firefighter endorsement'
-        text={value}
+        text={endorsements}
       />
     </PageSummaryLink>
   )

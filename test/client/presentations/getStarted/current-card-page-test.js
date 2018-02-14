@@ -17,12 +17,6 @@ describe('CurrentCardPage', function() {
     let props;
 
     beforeEach(function() {
-      let cardType = {
-        IDDL : ['DL'],
-        cardAction: 'renew',
-        youthIDInstead: ''
-      };
-
       let currentCardInfo = {
         number: '',
         day: '',
@@ -44,7 +38,9 @@ describe('CurrentCardPage', function() {
       };
 
       props = {
-        cardType,
+        cardType: [],
+        cardAction: '',
+        youthIDInstead: '',
         currentCardInfo,
         accordions,
         onChange,

@@ -18,7 +18,7 @@ import {
 import { eligibleForReducedFee } from './reduced-fee';
 import {
   eligibleForCitizen,
-  eligibileForRequirements,
+  eligibilityRequirementsYes,
   eligibleForOptOut,
   eligibleForOptOutExist
 } from '../../helpers/data/voting';
@@ -42,6 +42,7 @@ export const chooseCardType = (props) => {
 
 export const currentCardInfo = (props) => {
   let key = 'realID';
+
   if (isChangingCard(props)) {
     key = 'updateAndCorrect'
   } else if (isReplacingCard(props)) {
@@ -138,7 +139,7 @@ export const citizenship = (props) => {
 
 export const votingEligibility = (props) => {
   let key = 'summary';
-  if (eligibileForRequirements(props)) {
+  if (eligibilityRequirementsYes(props)) {
     key = 'votingOptOut';
   } else if (isPreregistering(props.dateOfBirth)){
     key = 'guardianSignature';

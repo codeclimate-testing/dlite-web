@@ -21,7 +21,16 @@ describe('RealID page validation rules:', function() {
     };
 
     props = {
-      cardType,
+      cardType: [],
+      cardAction: '',
+      IDApp: {
+        isApplying: false,
+        action: ''
+      },
+      DLApp: {
+        isApplying: false,
+        action: ''
+      },
       realID
     }
   });
@@ -39,8 +48,10 @@ describe('RealID page validation rules:', function() {
   });
 
   it('when no realIdDesignation is selected it will give realIdCardSelectionMissing', function() {
-    props.cardType.IDDL = ['ID', 'DL'];
-    props.cardType.cardAction = 'new';
+    props.cardType= ['ID', 'DL'];
+    props.cardAction = 'new';
+    props.IDApp.isApplying = true;
+    props.DLApp.isApplying = true;
     props.realID = {
       getRealID: 'Yes',
       realIdDesignation: ''

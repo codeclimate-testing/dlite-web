@@ -19,13 +19,6 @@ describe('ReplacementDetails', function() {
     let props;
 
     beforeEach(function() {
-      let cardType = {
-        IDDL : [],
-        cardAction: '',
-        youthIDInstead: ''
-      };
-
-      let cardAction = 'replace';
 
       let cardReplacement = {
         reason: ''
@@ -39,15 +32,27 @@ describe('ReplacementDetails', function() {
       let onChange = spy();
 
       props = {
-        cardType,
-        cardReplacement,
+        cardType: [],
+        cardAction: 'replace',
+        IDApp: {
+          isApplying: false,
+          action: '',
+          cardReplacement
+        },
+        DLApp: {
+          isApplying: false,
+          action: '',
+          cardReplacement
+        },
         onChange,
         validations
       }
     });
 
-    it('if the user is replacinga DL the instruction text mentions DL and has radio buttons', function() {
-      props.cardType.IDDL = ['DL'];
+    it('if the user is replacing a DL the form has radio buttons', function() {
+      props.cardType = ['DL'];
+      props.DLApp.isApplying = true;
+      props.DLApp.action = 'replace';
 
       let component = render(
         <Wrapper>

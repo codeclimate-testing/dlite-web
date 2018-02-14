@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import Presentation       from "../../presentations/get-started/get-started-page.jsx";
 import navigateOnBack     from '../../helpers/handlers/navigate-on-back';
 import { changeSection }  from '../../actions';
+import { getCorrectApp }  from '../../helpers/data/card-type';
+
 
 const Page = (props) => {
   let onBack = navigateOnBack(props);
@@ -20,13 +22,14 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cardAction:      state.application.cardAction,
-    cardType:        state.application.cardType,
-    cardChanges:     state.application.cardChanges,
-    realID :         state.application.realID,
-    licenseType:     state.application.licenseType,
-    reducedFee:      state.application.reducedFee,
-    seniorID:        state.application.seniorID
+    cardAction      : state.application.cardAction,
+    IDApp           : state.application.IDApp,
+    DLApp           : state.application.DLApp,
+    cardType        : state.application.cardType,
+    cardChanges     : getCorrectApp(state.application).cardChanges,
+    realID          : state.application.realID,
+    reducedFee      : state.application.IDApp.reducedFee,
+    seniorID        : state.application.IDApp.seniorID
   };
 };
 

@@ -11,6 +11,10 @@ export const choosingReducedFee = (props) => {
   return props.reducedFee.ID === 'Yes';
 };
 
+export const reducedFeeHasSelection = (props) => {
+  return hasValue(props.reducedFee.ID);
+};
+
 export const canContinue = (props) => {
   let consider = choosingReducedFee(props) ? props.reducedFee.form : props.reducedFee.ID.toString();
   return hasValue(consider);
