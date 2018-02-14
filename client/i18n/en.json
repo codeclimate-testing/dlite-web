@@ -503,9 +503,8 @@
       "cardsExplanation": "Your cards can also display the word \"Veteran\".",
       "messageYes": "Thank you for your service.",
       "benefitsPrompt": "Would you like to receive benefits information for which you may be eligible?",
-      "newDesignationPrompt": {
-        "license": "Would you like to add the word “Veteran” on your Driver License for a $5 fee?",
-        "id": "Would you like to add the word “Veteran” on your ID for a $5 fee?",
+      "newDesignation": {
+        "prompt": "Would you like to add the word “Veteran” on your {card type} for a $5 fee?",
         "explanation": "Many organizations give discounts to veterans with a valid ID.",
         "messageYes": "OK, we will add the $5 to your total fee. You will need to complete the Veteran Status Verification Form from your county’s Veteran Service Office and bring it to a DMV field office."
       },

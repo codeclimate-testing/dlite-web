@@ -9,20 +9,20 @@ import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
-const allOptionText = {
-  voterRegistration: {
-    new       : translations.votingRegistration.optOutPage.answerNewRegistration,
-    existing  : translations.votingRegistration.optOutPage.answerUpdateRegistration,
-    optOut    : translations.votingRegistration.optOutPage.answerOptOut
-  },
-  voterPreRegistration: {
-    new       : translations.votingRegistration.preRegOptOutPage.answerNewRegistration,
-    existing  : translations.votingRegistration.preRegOptOutPage.answerUpdateRegistration,
-    optOut    : translations.votingRegistration.preRegOptOutPage.answerOptOut
-  }
-};
-
 const OptOutPage = (props) => {
+  let allOptionText = {
+    voterRegistration: {
+      new       : translations.votingRegistration.optOutPage.answerNewRegistration,
+      existing  : translations.votingRegistration.optOutPage.answerUpdateRegistration,
+      optOut    : translations.votingRegistration.optOutPage.answerOptOut
+    },
+    voterPreRegistration: {
+      new       : translations.votingRegistration.preRegOptOutPage.answerNewRegistration,
+      existing  : translations.votingRegistration.preRegOptOutPage.answerUpdateRegistration,
+      optOut    : translations.votingRegistration.preRegOptOutPage.answerOptOut
+    }
+  };
+
 
   let preRegString = checkPreReg(props.dateOfBirth);
   let optionText = allOptionText[preRegString];

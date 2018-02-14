@@ -28,15 +28,15 @@ const ContactMethodsPage = (props) => {
           >
             <RadioSelector
               value='Yes'
-              text={translations.shared.commonAnswers.Yes}
+              text={translations.shared.commonAnswers.yes}
             />
             <RadioSelector
               value='No'
-              text={translations.shared.commonAnswers.No}
+              text={translations.shared.commonAnswers.no}
             />
             <RadioSelector
               value='Skip'
-              text={translations.shared.commonAnswers.skipSection}
+              text={translations.shared.commonAnswers.skip}
             />
           </RadioCollection>
         </fieldset>

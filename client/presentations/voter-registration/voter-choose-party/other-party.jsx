@@ -9,13 +9,14 @@ import {
   ErrorLabel,
   errorClass
 } from '../../validations.jsx';
+import translations           from '../../../i18n';
 
 const OtherPartyRadio = (props) => {
   return (
     <RadioSelector
       {...props}
       value='Other'
-      text='Other'
+      text={translations.votingRegistration.choosePartyPage.answerOther}
     />
   );
 };

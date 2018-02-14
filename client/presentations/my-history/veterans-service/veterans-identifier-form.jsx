@@ -27,14 +27,9 @@ const PreviousDLHeader = (props) => {
   return convertToHtml('h2', translations.myHistory.veteransPage.keepDesignationPrompt.license, 'question')
 };
 
-const NewIDHeader = (props) => {
-  if (!showNewIDHeader(props)) { return null; }
-  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignationPrompt.id, 'question')
-};
-
-const NewDLHeader = (props) => {
+const CardHeader = (props) => {
   if (!showNewDLHeader(props)) { return null; }
-  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignationPrompt.license, 'question')
+  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignation.prompt, 'question')
 };
 
 
@@ -45,8 +40,7 @@ const Question = (props) => {
       <hr/>
       <PreviousIDHeader {...props} />
       <PreviousDLHeader {...props}/>
-      <NewIDHeader {...props}/>
-      <NewDLHeader {...props}/>
+      <CardHeader {...props}/>
     </div>
   )
 };
@@ -56,7 +50,7 @@ const MessageAddAmount = (props) => {
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        {convertToHtml('p', translations.myHistory.veteransPage.newDesignationPrompt.messageYes)}
+        {convertToHtml('p', translations.myHistory.veteransPage.newDesignation.messageYes)}
       </div>
     </MessageBox>
   );
@@ -78,7 +72,7 @@ const VeteransIdentifier = (props) => {
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      {convertToHtml('p', translations.myHistory.veteransPage.newDesignationPrompt.explanation)}
+      {convertToHtml('p', translations.myHistory.veteransPage.newDesignation.explanation)}
       <div className='input-container'>
         <fieldset>
           <RadioCollection

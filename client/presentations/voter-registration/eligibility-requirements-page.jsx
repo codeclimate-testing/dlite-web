@@ -60,11 +60,11 @@ const EligibilityRequirements = (props) => {
               >
                 <RadioSelector
                   value='Yes'
-                  text={translations.shared.commonAnswers.Yes}
+                  text={translations.shared.commonAnswers.yes}
                 />
                 <RadioSelector
                   value='No'
-                  text={translations.shared.commonAnswers.No}
+                  text={translations.shared.commonAnswers.no}
                 />
                 <RadioSelector
                   value='decline'
