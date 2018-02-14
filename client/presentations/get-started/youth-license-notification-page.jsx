@@ -6,7 +6,6 @@ import radioYesNoGroup    from '../radio-yes-no-group.jsx';
 import RadioCollection    from '../radio-selector-collection.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
-
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
 import MessageBox          from '../message-box.jsx';
@@ -16,8 +15,8 @@ import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 const FormHeader = (props) => {
   return (
     <div>
-      {convertToHtml('h2', translations.intro.youthDlNotificationPage.prompt, 'question')}
-      {convertToHtml('p', translations.intro.youthDlNotificationPage.explanation)}
+      <h2 className='question translation-missing'>{props.title}</h2>
+      <p className='translation-missing'>{props.helpText}</p>
       <hr />
       {convertToHtml('h3', translations.intro.youthDlNotificationPage.question, 'question')}
     </div>
