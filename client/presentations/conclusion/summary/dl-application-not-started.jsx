@@ -1,7 +1,9 @@
 'use strict';
 
-import React from "react";
+import React          from "react";
 import translations   from '../../../i18n';
+import AddAppLink     from '../../add-app-link.jsx';
+
 import {
   DLAppExists
 } from '../../../helpers/data/card-type'
@@ -11,9 +13,11 @@ const DLApplicationNotStarted = (props) => {
   if(DLAppExists(props)) { return null; }
 
   return (
-    <div className='summary-section'>
+    <AddAppLink
+      to      = '/driver-license'
+    >
       <p>{translations.summaryPage.whatImDoing.nothing}</p>
-    </div>
+    </AddAppLink>
   );
 };
 

@@ -172,18 +172,31 @@ describe('cardTypeReducer', function() {
       assert.deepEqual(newState, []);
     });
 
-    it('updates to just a DL when cardAction is changed from get a DL path', function() {
-      let newState = updateCardType(['ID'], {
+    it('maintains the current state when cardAction on addDL wdywtdt page is changed', function() {
+      state = ['DL'];
+      let newState = updateCardType(state, {
         type: 'UPDATE_CARD_ACTION',
         payload: {
           name: 'DLAction',
           value: 'renew'
         }
       });
-      assert.deepEqual(newState, ['DL']);
+      assert.deepEqual(newState, state);
     });
   });
 
+  describe('#addApp', function() {
+    it('changes state to ["DL"] if user clicks button to add a DL application', function() {
+      state = ['ID'];
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'driver-license'
+        }
+      });
+      assert.deepEqual(newState, ['DL']);
+    });
+  });
 });
 
 

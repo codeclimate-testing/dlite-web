@@ -7,13 +7,15 @@ import accordions           from './accordions';
 import section              from './section';
 import validations          from './validations';
 import hover                from './hover';
+import addApp               from './add-app';
 
 const rootReducer = combineReducers({
   focus,
   accordions,
   section,
   validations,
-  hover
+  hover,
+  addApp
 });
 
 export default rootReducer;

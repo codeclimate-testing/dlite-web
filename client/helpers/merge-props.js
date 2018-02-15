@@ -13,6 +13,7 @@ export const mergePropsGenerator = (mapStateToProps, action, onSubmitFunction, f
     const onBlurValidate = handlers.onBlurValidate(dispatch);
     const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
     const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
+
     return {
       onSubmit,
       onChange,

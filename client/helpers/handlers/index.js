@@ -24,6 +24,7 @@ import onInputChange        from './on-input-change';
 import onSelectChange       from './on-select-change';
 import onPageLoad           from './on-page-load';
 
+
 export default {
   navigateOnBack,
   navigateOnSubmit,

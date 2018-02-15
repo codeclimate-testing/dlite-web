@@ -4,7 +4,9 @@ const assert = require('assert');
 
 import {
   startsWithAdd,
-  getTextFromPathname
+  getTextFromPathname,
+  setKeyFromPathname,
+  addingApp
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
@@ -48,5 +50,44 @@ describe('Data helpers for pathnames', function() {
       assert.equal(getTextFromPathname(props, applyString, addString), applyString);
     });
 
+  });
+
+  describe('#setKeyFromPathname', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        location: {
+          pathname: ''
+        },
+        sectionKey: 'intro'
+      };
+    })
+    it('returns "driver-license" if user is on a url to add DL to existing app', function() {
+      props.location.pathname = '/add/driver-license/';
+      assert.equal(setKeyFromPathname(props), 'driver-license');
+    });
+
+    it('returns "id-card" if user is on a url to add an ID to existing application', function() {
+      props.location.pathname = '/add/id-card/';
+      assert.equal(setKeyFromPathname(props), 'id-card');
+    });
+
+    it('returns the props.sectionKey if user is on initial flow', function() {
+      assert.equal(setKeyFromPathname(props), 'intro');
+    });
+  });
+
+  describe('#addingApp', function() {
+    it('returns true if value equals "driver-license"', function() {
+      assert.equal(addingApp('driver-license'), true);
+    });
+
+    it('returns true if value equals "id-card"', function() {
+      assert.equal(addingApp('id-card'), true);
+    });
+
+    it('returns false if value equals "intro"', function() {
+      assert.equal(addingApp('intro'), false);
+    });
   });
 });

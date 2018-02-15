@@ -54,8 +54,8 @@ const header = {
   question: 'Please take a minute to review your answers'
 };
 
-const contents = (application) => {
-
+const contents = (props) => {
+  let application = props.application;
   return([
   <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
     <IDApplicationNotStarted {...application} key='id-application-not-started' />
@@ -67,7 +67,7 @@ const contents = (application) => {
   </Accordion>,
 
   <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
-    <DLApplicationNotStarted {...application} key='dl-application-not-started' />
+    <DLApplicationNotStarted {...application} addApp={props.addApp} key='dl-application-not-started' />
     <DLAction {...application} />
     <CurrentDLInfo {...application} currentCardInfo={application.DLApp.currentCard}/>
     <DLRealID {...application} />
@@ -146,7 +146,7 @@ const SummaryPage = (props) => {
               cardType    = {application.cardType}
               dateOfBirth = {application.basics.dateOfBirth}
             />
-            {contents(application)}
+            {contents(props)}
             <ButtonComponent
               continueDisabled = { props.continueDisabled }
             />

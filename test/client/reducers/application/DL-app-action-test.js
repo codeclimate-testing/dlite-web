@@ -138,6 +138,29 @@ describe('DL app action reducer', function() {
       assert.deepEqual(newState, '');
     });
 
+    it('updates to chosen action if action is updated on add DL flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'DLAction',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, 'replace');
+    });
+
+  });
+
+  describe('#addApp', function() {
+    it('resets to default blank string when user clicks button to add a DL after completing ID app', function() {
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'driver-license'
+        }
+      });
+      assert.equal(newState, '');
+    });
   });
 });
 

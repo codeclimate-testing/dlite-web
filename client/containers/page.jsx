@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 
 import Presentation             from '../presentations/page.jsx';
 import handlers                 from '../helpers/handlers';
-import { getTextFromPathname }  from '../helpers/data/pathnames';
+import { setKeyFromPathname }  from '../helpers/data/pathnames';
 
 const Page = (props) => {
-  let sectionKey = getTextFromPathname(props, props.sectionKey, '');
-
+  let sectionKey = setKeyFromPathname(props);
   props.onPageLoad(sectionKey, props.section);
 
   return (

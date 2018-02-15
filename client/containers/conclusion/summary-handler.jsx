@@ -5,7 +5,6 @@ import Presentation             from '../../presentations/conclusion/summary-pag
 import { mergePropsGenerator }  from '../../helpers/merge-props';
 
 const Page = props =>{
-
   return (
     <Presentation {...props} />
   );

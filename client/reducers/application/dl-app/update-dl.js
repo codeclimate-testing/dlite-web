@@ -2,6 +2,7 @@
 
 import { TYPES }            from '../../../actions';
 import { cardTypeAction }   from '../../../helpers/reducers';
+import { driverLicense }    from '../../../helpers/data/pathnames';
 
 const defaultState = () => {
  return false;
@@ -30,10 +31,13 @@ const formReducer = (state = defaultState(), action) => {
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
 
-    // this is here until we add an "add DL" button to the summary page that will trigger a different action
     if (action.payload.name === 'DLAction') {
-      newState = true;
+      newState = state;
     }
+  }
+
+  else if (action.type === TYPES.ADD_APP && driverLicense(action.payload.value)) {
+    newState = true;
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {

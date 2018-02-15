@@ -136,6 +136,32 @@ describe('DLApp isApplying reducer', function() {
       assert.deepEqual(newState, false);
     });
 
+    it('maintains the current state if cardAction is changed when user is on the add DL flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'DLAction',
+          value: 'renew'
+        }
+      });
+
+      assert.deepEqual(newState, state);
+    });
+
+  });
+
+  describe('#addApp', function() {
+    it('returns true when user has clicked button to add DL application', function() {
+      state = false;
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'driver-license'
+        }
+      });
+      console.log(newState)
+      assert.equal(newState, true);
+    });
   });
 });
 

@@ -70,7 +70,8 @@ export const TYPES = {
   REMOVE_VALIDATION:                      'REMOVE_VALIDATION',
   HOVER_UP:                               'HOVER_UP',
   HOVER_DOWN:                             'HOVER_DOWN',
-  CLEAR_HOVER:                            'CLEAR_HOVER'
+  CLEAR_HOVER:                            'CLEAR_HOVER',
+  ADD_APP:                                'ADD_APP'
 };
 
 export const createApplicationID                      = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -125,3 +126,4 @@ export const removeValidation                         = generateValueAction(TYPE
 export const hoverUp                                  = generateValueAction(TYPES.HOVER_UP);
 export const hoverDown                                = generateValueAction(TYPES.HOVER_DOWN);
 export const clearHover                               = generateValueAction(TYPES.CLEAR_HOVER);
+export const addApp                                   = generateValueAction(TYPES.ADD_APP);

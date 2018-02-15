@@ -3,7 +3,7 @@
 import { TYPES }              from '../../actions';
 import formValueArrayReducer  from './form-value-array-reducer';
 import { cardTypeAction }     from '../../helpers/reducers';
-
+import { driverLicense }      from '../../helpers/data/pathnames';
 
 const defaultState = () => {
   return [];
@@ -20,6 +20,12 @@ const formReducer = (state = defaultState(), action) => {
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
     if (action.payload.name === 'DLAction') {
+      newState = state;
+    }
+  }
+
+  else if (action.type === TYPES.ADD_APP) {
+    if (driverLicense(action.payload.value)) {
       newState = ['DL'];
     }
   }
