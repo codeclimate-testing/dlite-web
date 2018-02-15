@@ -3,7 +3,7 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
 
-import linkData from '../helpers/data/pages';
+import linkData from '../helpers/navigation/pages';
 
 const LinkListItem = (props) => {
   let className = props.description.replace(/\s+/g, '-');

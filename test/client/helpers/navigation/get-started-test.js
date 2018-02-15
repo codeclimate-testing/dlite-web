@@ -8,12 +8,8 @@ import {
   updateAndCorrect,
   replacementDetails,
   realID,
-  chooseLicenseClass,
-  socialSecurity,
-  medicalHistory,
-  nameHistory,
-  summary
-} from '../../../../client/helpers/data/next-path';
+  chooseLicenseClass
+} from '../../../../client/helpers/navigation/get-started/next-path';
 
 const today = new Date();
 const bothCards = {
@@ -70,7 +66,7 @@ const seniorYear = (today) => {
   return (today.getFullYear() - 65).toString()
 };
 
-describe('Data helpers for determining next path from current page and props', function() {
+describe('Data helpers for determining next path from current page and props in get-started section', function() {
   let data;
   beforeEach(function() {
     data = buildCardType('', '');
@@ -197,87 +193,5 @@ describe('Data helpers for determining next path from current page and props', f
     });
   });
 
-  describe('#myBasics section', function() {
-    describe('#socialSecurity', function() {
-      it('goes to medicalHistory page if user is replacing a DL', function() {
-        data = buildCardType('DL', 'replace');
-        assert.equal(socialSecurity(data), 'medicalHistory');
-      });
-
-      it('goes to medicalHistory page if user is getting a new DL', function() {
-        data = buildCardType('DL', 'new');
-        assert.equal(socialSecurity(data), 'medicalHistory');
-      });
-
-      it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
-        data = buildCardType('ID', 'new');
-        assert.equal(socialSecurity(data), 'cardHistory');
-      });
-
-      it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
-        data = buildCardType('ID', 'replace');
-        assert.equal(socialSecurity(data), 'nameHistory');
-      });
-    });
-  });
-
-  describe('#myHistory section', function() {
-    describe('#medicalHistory', function() {
-      it('goes to cardHistory if user is getting a new DL', function() {
-        data = buildCardType('DL', 'new');
-
-        assert.equal(medicalHistory(data), 'cardHistory');
-      });
-
-      it('goes to nameHistory, skipping cardHistory, if user is changing an existing DL', function() {
-        data = buildCardType('DL', 'replace');
-
-        assert.equal(medicalHistory(data), 'nameHistory');
-      });
-
-      it('goes to nameHistory, skipping cardHistory, if user is getting a new ID', function() {
-        data = buildCardType('ID', 'new');
-        assert.equal(medicalHistory(data), 'nameHistory');
-      });
-    });
-
-    describe('#nameHistory', function() {
-      it('goes to licenseIssues if user is getting a new DL', function() {
-        data = buildCardType('DL', 'new');
-        assert.equal(nameHistory(data), 'licenseIssues');
-      });
-
-      it('goes to licenseIssues page if user is getting a DL that is not new', function() {
-        data = buildCardType('DL', 'change');
-        assert.equal(nameHistory(data), 'licenseIssues');
-      });
-
-      it('goes to veterans page if user is getting an ID', function() {
-        data = buildCardType('ID', 'new');
-        assert.equal(nameHistory(data), 'veterans');
-      });
-    });
-  });
-
-  describe('#organDonation section', function() {
-
-  });
-
-  describe('#voterRegistration', function() {
-
-  });
-
-  describe('#conclusion section', function() {
-    describe('#summary', function() {
-      it('goes to application prep page if server apiStatus is successful', function() {
-        let res = 'success'
-        assert.equal(summary(res), 'appointmentPreparation');
-      });
-      it('goes to summary page if server apiStatus is unsuccessful', function() {
-        let res = 'api-fail'
-        assert.equal(summary(res), 'summary');
-      });
-    });
-  });
 });
 

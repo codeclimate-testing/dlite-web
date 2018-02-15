@@ -1,6 +1,6 @@
 'use strict';
 
-import { nextPath } from '../data/page';
+import { nextPath } from '../navigation/page';
 
 const isSubmitable = (props, validator) => {
   return props.onSubmitShowErrors && validator && validator.isValid();

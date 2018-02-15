@@ -2,7 +2,7 @@
 
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
-import { pathForPage }                        from '../helpers/data/page';
+import { pathForPage }                        from '../helpers/navigation/page';
 import {
   alicePath,
   iddlPath,

@@ -6,9 +6,9 @@ import {
   pageFor,
   nextPath,
   pathForPage
-} from '../../../../client/helpers/data/page';
+} from '../../../../client/helpers/navigation/page';
 
-import pages from '../../../../client/helpers/data/pages';
+import pages from '../../../../client/helpers/navigation/pages';
 
 describe('Data helpers for page', function() {
   it('#pageFor return the value object for the page', function() {

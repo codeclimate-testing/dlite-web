@@ -1,7 +1,7 @@
 'use strict';
 
 import { hasValue }               from './data/validations';
-import { nextPath }               from './data/page';
+import { nextPath }               from './navigation/page';
 import { postData }               from '../actions/api-actions';
 import { updateLanguage }         from '../actions/index';
 import { appLanguageIsSelected }  from './data/application';
