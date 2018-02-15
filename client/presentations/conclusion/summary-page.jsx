@@ -68,10 +68,10 @@ const contents = (props) => {
 
   <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
     <DLApplicationNotStarted {...application} addApp={props.addApp} key='dl-application-not-started' />
-    <DLAction {...application} />
-    <CurrentDLInfo {...application} currentCardInfo = {application.DLApp.currentCard}/>
+    <DLAction {...application} addApp = {props.ui.addApp} />
+    <CurrentDLInfo {...application} currentCardInfo = {application.DLApp.currentCard} addApp = {props.ui.addApp} />
     <DLRealID {...application} />
-    <LicenseType {...application} />
+    <LicenseType {...application} addApp={props.ui.addApp}/>
   </Accordion>,
 
   <Accordion id='basics-summary' title='My basics' key='basics-summary'>
@@ -85,10 +85,10 @@ const contents = (props) => {
   </Accordion>,
 
   <Accordion id='history-summary' title='My history' key='history-summary'>
-    <MedicalHistory medicalHistory={application.history.medicalHistory} cardType={application.cardType} />
-    <LicenseAndIdHistory licenseAndIdHistory={application.history.licenseAndIdHistory} />
+    <MedicalHistory medicalHistory={application.history.medicalHistory} cardType={application.cardType} addApp = {props.ui.addApp}/>
+    <LicenseAndIdHistory licenseAndIdHistory={application.history.licenseAndIdHistory} addApp = {props.ui.addApp}/>
     <NamesHistory namesHistory={application.history.namesHistory} />
-    <LicenseIssues licenseIssues={application.history.licenseIssues} />
+    <LicenseIssues licenseIssues={application.history.licenseIssues} addApp = {props.ui.addApp} />
     <VeteransService veteransService={application.history.veteransService} />
   </Accordion>,
 

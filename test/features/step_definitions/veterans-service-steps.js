@@ -128,7 +128,7 @@ module.exports = function (world) {
 
   world.when('I click to edit my veterans service', function(done) {
     browser
-      .click('.veteransService.button.summary')
+      .click('.veterans.button.summary')
       .then(done)
       .catch(done);
   });

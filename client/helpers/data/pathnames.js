@@ -3,8 +3,8 @@ export const startsWithAdd = (pathname) => {
   return pathname.startsWith('/add/');
 };
 
-export const textFromFlow = (props, iddlText, addDLText) => {
-  if (driverLicense(props.addApp)) {
+export const ifAddLicense = (value, iddlText, addDLText) => {
+  if (driverLicense(value)) {
     return addDLText;
   }
   return iddlText;

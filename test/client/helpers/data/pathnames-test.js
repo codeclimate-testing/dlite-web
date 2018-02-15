@@ -4,7 +4,7 @@ const assert = require('assert');
 
 import {
   startsWithAdd,
-  textFromFlow,
+  ifAddLicense,
   setKeyFromPathname,
   addingApp,
   splitPathname
@@ -23,24 +23,22 @@ describe('Data helpers for pathnames', function() {
     });
   });
 
-  describe('#textFromFlow', function() {
-    let props;
+  describe('#ifAddLicense', function() {
+    let addApp;
     const applyString = 'I am going through the initial flow';
     const addDLString = 'I am adding another DL card after reaching the summary';
 
     beforeEach(function() {
-      props = {
-        addApp: ''
-      };
+      addApp = '';
     });
 
     it('returns third argument if addApp state is "driver-license"', function() {
-      props.addApp = 'driver-license';
-      assert.equal(textFromFlow(props, applyString, addDLString), addDLString);
+      addApp = 'driver-license';
+      assert.equal(ifAddLicense(addApp, applyString, addDLString), addDLString);
     });
 
     it('returns the second argument if addApp state is blank', function() {
-      assert.equal(textFromFlow(props, applyString, addDLString), applyString);
+      assert.equal(ifAddLicense(addApp, applyString, addDLString), applyString);
     });
   });
 

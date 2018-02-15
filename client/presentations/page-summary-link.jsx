@@ -2,7 +2,7 @@
 
 import React            from 'react';
 import { Link }         from 'react-router-dom';
-import { pathForPage }  from '../helpers/data/page';
+import { pathForPage }  from '../helpers/navigation/page';
 
 const PageSummaryLink = (props) => {
   let className = `${props.name} summary edit button`;

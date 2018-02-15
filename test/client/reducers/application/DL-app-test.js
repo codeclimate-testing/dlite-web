@@ -159,7 +159,6 @@ describe('DLApp isApplying reducer', function() {
           value: 'driver-license'
         }
       });
-      console.log(newState)
       assert.equal(newState, true);
     });
   });

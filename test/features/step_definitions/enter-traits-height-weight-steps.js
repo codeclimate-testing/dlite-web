@@ -149,7 +149,7 @@ module.exports = function(world) {
 
   world.when('I click to edit my height and weight', function(done) {
     browser
-      .click('.traitsHeightWeight.button.summary')
+      .click('.heightWeight.button.summary')
       .then(done)
       .catch(done);
   });

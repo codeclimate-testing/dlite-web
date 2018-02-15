@@ -176,7 +176,7 @@ module.exports = function(world) {
 
   world.when('I click to edit my address', function(done) {
     browser
-      .click('.address.button.summary')
+      .click('.addresses.button.summary')
       .then(done)
       .catch(done);
   });

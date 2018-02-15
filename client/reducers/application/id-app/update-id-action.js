@@ -29,7 +29,9 @@ const formReducer = (state = defaultState(), action) => {
   }
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
-    newState = defaultState();
+    if (action.payload.name === 'DLAction') {
+      newState = state;
+    }
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {
@@ -39,6 +41,10 @@ const formReducer = (state = defaultState(), action) => {
     else if (action.payload.value === 'Yes') {
       newState = 'new';
     }
+  }
+
+  else if (action.type === TYPES.ADD_APP) {
+    newState = state;
   }
 
   return newState;

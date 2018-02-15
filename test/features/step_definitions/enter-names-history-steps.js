@@ -97,7 +97,7 @@ module.exports = function(world) {
 
   world.when('I click to edit my previous names', function(done) {
     browser
-      .click('.namesHistory.button.summary')
+      .click('.nameHistory.button.summary')
       .then(done)
       .catch(done);
   });

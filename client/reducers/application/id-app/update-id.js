@@ -26,10 +26,8 @@ const formReducer = (state = defaultState(), action) => {
     }
   }
 
-  else if (action.type === TYPES.UPDATE_CARD_ACTION) {
-    // clear when user changes action
-    // alternatively could call updateCardAction on submit
-    newState = defaultState();
+  else if (action.type === TYPES.UPDATE_CARD_ACTION && action.payload.name === 'DLAction') {
+    newState = state;
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {
@@ -39,6 +37,10 @@ const formReducer = (state = defaultState(), action) => {
     else {
       newState = action.payload.value === 'Yes';
     }
+  }
+
+  else if (action.type === TYPES.ADD_APP) {
+    newState = state;
   }
 
   return newState;

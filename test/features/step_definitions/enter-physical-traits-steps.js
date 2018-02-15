@@ -70,7 +70,7 @@ module.exports = function (world) {
 
   world.when('I click to edit my physical traits', function(done) {
     browser
-      .click('.physicalTraits.button.summary')
+      .click('.sexEyeHair.button.summary')
       .then(done)
       .catch(done);
   });

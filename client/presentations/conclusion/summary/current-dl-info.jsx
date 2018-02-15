@@ -6,9 +6,8 @@ import translations       from '../../../i18n';
 import { printDate }      from '../../../helpers/print-date';
 import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
-import {
-  existingDL
-} from '../../../helpers/data/card-type';
+import { ifAddLicense }   from '../../../helpers/data/pathnames';
+import { existingDL }     from '../../../helpers/data/card-type';
 
 
 const CurrentDLInfo = (props) => {
@@ -20,7 +19,7 @@ const CurrentDLInfo = (props) => {
   return (
     <PageSummaryLink
       to='/current-card-information'
-      name='currentCardInfo'
+      name = {ifAddLicense(props.addApp, 'currentCardInfo', 'addCurrentCardInfo')}
     >
       <SummaryItem
         title='Driver license number'
