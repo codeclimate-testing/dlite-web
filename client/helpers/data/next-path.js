@@ -175,6 +175,14 @@ export const addWdywtdt = (props) => {
   return key;
 };
 
+export const addCurrentCardInfo = (props) => {
+  let key = 'addLicenseClass';
+  if (isChangingCard(props)) {
+    key = 'addUpdateCorrect';
+  }
+  return key;
+};
+
 export const addMedicalHistory = (props) => {
   let key = 'addLicenseHistory';
   if (hasExistingCard(props)) {
