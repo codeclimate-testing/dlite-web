@@ -17,7 +17,7 @@ const EnterPreviousNames = (props) => {
         <TextArea
           {...props}
           identifier='previousNames'
-          description='Previous Names:'
+          description={ translations.summaryPage.myHistory.previousNames }
           value      = { props.namesHistory.previousNames }
         />
       </fieldset>

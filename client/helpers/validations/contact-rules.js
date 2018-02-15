@@ -20,7 +20,8 @@ const emailAddress = (props) => {
   let value = props.emailAddress;
 
   if (hasNeither(props)) {
-    return [translations.errorMessages.contactMethod];
+    //translation missing for errormMessages.contactMethod
+    return [errorMessages.contactMethod];
   } else if (!emailRegex(value) && hasValue(value)){
     return [translations.errorMessages.emailAddressMissingOrInvalid];
   } else if (!hasOnlyEnglishChars(value)) {
@@ -36,7 +37,7 @@ const phoneNumber = (name, number) => {
     if (props[name].length !== number && props[name].length !== 0) {
       return [translations.errorMessages.phoneMissingOrInvalid];
     } else if (hasNeither(props)) {
-      return [translations.errorMessages.contactMethod];
+      return [errorMessages.contactMethod];
     }
     return [];
   };
