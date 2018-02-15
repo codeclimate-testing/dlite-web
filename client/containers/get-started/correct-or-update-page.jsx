@@ -12,7 +12,7 @@ import { getCorrectApp }      from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing');
-  let onSubmit          = handlers.navigateOrShowErrors('updateAndCorrect', props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -31,6 +31,7 @@ function mapStateToProps(state) {
   return {
     cardChanges         : getCorrectApp(state.application).cardChanges,
     cardType            : state.application.cardType,
+    cardAction          : state.application.cardAction,
     dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations

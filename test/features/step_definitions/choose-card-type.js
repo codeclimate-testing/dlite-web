@@ -107,6 +107,17 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see that I am updating my DL', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('My Driver License'), 'my dl section not shown in summary');
+        assert(text.includes('Updating'), 'update sections not shown in summary');
+      })
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am replacing my DL', function(done) {
     browser
       .text()

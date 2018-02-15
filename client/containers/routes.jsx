@@ -74,7 +74,7 @@ class Router extends React.Component {
         <Route path={ iddlPath('/what-do-you-want-to-do-today') } exact render={(props) => <WhatDoYouWantToDoToday addressName='wdywtdt' {...props}/>} />
         <Route path={ iddlPath('/select-id-dl') }               component={ChooseCard} />
         <Route path={ iddlPath('/current-card-information') }   exact render={(props) => <CurrentCardInfo {...props} addressName='currentCardInfo' />}/>
-        <Route path={ iddlPath('/updates-and-corrections') }    component={UpdatesCorrects} />
+        <Route path={ iddlPath('/updates-and-corrections') }    exact render={(props) => <UpdatesCorrects {...props} addressName='updateAndCorrect' />} />
         <Route path={ iddlPath('/replacement-details') }        component={ReplacementDetails} />
         <Route path={ iddlPath('/senior-id') }                  component={SeniorID} />
         <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
@@ -115,6 +115,7 @@ class Router extends React.Component {
 
         <Route path={ addPath('/driver-license') } exact                  render={(props) => <WhatDoYouWantToDoToday {...props} addressName='addWdywtdt' />}/>
         <Route path={ addPath('/driver-license/current-card-information') } exact render={(props) => <CurrentCardInfo {...props} addressName='addCurrentCardInfo' />}/>
+        <Route path={ addPath('/driver-license/updates-and-corrections') } exact render={(props) => <UpdatesCorrects {...props} addressName='addUpdateCorrect' />}/>
         <Route path={ addPath('/driver-license/type') } exact             render={(props) => <LicenseType {...props} addressName='addLicenseClass' />} />
         <Route path={ addPath('/driver-license/medical-history') } exact  render={(props) => <MedicalHistory {...props} addressName='addMedicalHistory' />} />
         <Route path={ addPath('/driver-license/license-history') } exact  render={(props) => <CardHistory {...props} addressName='addLicenseHistory'/> } />

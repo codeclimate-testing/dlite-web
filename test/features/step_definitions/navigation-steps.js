@@ -185,6 +185,9 @@ module.exports = function(world) {
   world.then('I will be on the page to add current card info', function(done) {
     assertOnPage('.current-card-form', /add\/driver-license\/current-card-information/, done);
   });
+  world.then('I will be on the page to add update/correct info', function(done) {
+    assertOnPage('.choose-card-change', /add\/driver-license\/updates-and-corrections/, done);
+  });
   world.then('I will be on the page to add license type', function(done) {
     assertOnPage('.license-type-form', /add\/driver-license\/type/, done);
   });

@@ -64,8 +64,32 @@ Scenario: Adding a DL renewal
   Then I will be on the page with my summary
   And I will see my renewal DL card type has been saved
   And I will not see a card history section
-<<<<<<< HEAD
   And I will see my DL card info saved
-=======
 
->>>>>>> added renewal button to add DL flow
+
+  Scenario: Adding a DL update/correct
+  Given I have already filled out my ID application
+  When I visit the page to add a DL
+  And I choose to change a DL
+  And I click "Next" to continue
+  Then I will be on the page to add current card info
+  When I enter my current card data
+  And I click "Next" to continue
+  Then I will be on the page to add update/correct info
+  And I choose to update my card
+  And I check the box to update my name
+  When I click "Next" to continue
+  Then I will be on the page to add license type
+  When I click on the car checkbox
+  Then I click to not need endorsements
+  And I click "Next" to continue
+  Then I will be on the page to add medical history
+  When I select No to having reportable medical history
+  And I click "Next" to continue
+  Then I will be on the page to add license issues
+  When I select suspended license No
+  And I click "Next" to continue
+  Then I will be on the page with my summary
+  And I will not see a card history section
+  Then I will see that I am updating my DL
+

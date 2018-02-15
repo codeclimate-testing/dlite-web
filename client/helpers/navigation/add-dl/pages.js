@@ -1,6 +1,7 @@
 'use strict';
 import {
   addWdywtdt,
+  addCurrentCardInfo,
   addMedicalHistory
 } from './next-path';
 
@@ -15,6 +16,12 @@ const addCard = [
     key: 'addCurrentCardInfo',
     description: 'add current card info',
     path: '/driver-license/current-card-information',
+    next: addCurrentCardInfo
+  },
+  {
+    key: 'addUpdateCorrect',
+    description: 'specify update and correction for added DL',
+    path: '/driver-license/updates-and-corrections',
     next: 'addLicenseClass'
   },
   {
