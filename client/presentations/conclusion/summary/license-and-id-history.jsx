@@ -40,7 +40,7 @@ const LicenseAndIdHistory = (props) => {
     return (
       <PageSummaryLink
         to='/my-history/license-and-id'
-        name='licenseAndId'
+        name='cardHistory'
       >
         <SummaryItem
           title='Previous DL/ID card number:'

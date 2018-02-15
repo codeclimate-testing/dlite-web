@@ -19,11 +19,11 @@ export const getDL = (props) => {
 };
 
 export const IDAppExists = (props) => {
-  return props.IDApp.isApplying;
+  return props.IDApp.isApplying.toString() === 'true';
 };
 
 export const DLAppExists = (props) => {
-  return props.DLApp.isApplying;
+  return props.DLApp.isApplying.toString() === 'true';
 };
 
 export const prettyDL = (value) => {
@@ -51,19 +51,19 @@ export const existingID = (props) => {
 };
 
 export const replaceID = (props) => {
-  return props.IDApp.action === 'replace';
+  return props.IDApp.action === 'replace' && IDAppExists(props);
 };
 
 export const replaceDL = (props) => {
-  return props.DLApp.action === 'replace';
+  return props.DLApp.action === 'replace' && DLAppExists(props);
 };
 
 export const changeID = (props) => {
-  return props.IDApp.action === 'change';
+  return props.IDApp.action === 'change' && IDAppExists(props);
 };
 
 export const changeDL = (props) => {
-  return props.DLApp.action === 'change';
+  return props.DLApp.action === 'change' && DLAppExists(props);
 };
 
 export const correctID = (props) => {

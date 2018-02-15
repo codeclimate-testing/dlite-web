@@ -3,20 +3,23 @@ export const startsWithAdd = (pathname) => {
   return pathname.startsWith('/add/');
 };
 
-export const getTextFromPathname = (props, iddlText, addText) => {
-  if (props.hasOwnProperty('location') && startsWithAdd(props.location.pathname)) {
-    return addText;
+export const textFromFlow = (props, iddlText, addDLText) => {
+  if (driverLicense(props.addApp)) {
+    return addDLText;
   }
   return iddlText;
 };
 
 export const setKeyFromPathname = (props) => {
   if (props.hasOwnProperty('location') && startsWithAdd(props.location.pathname)) {
-    let pathname = props.location.pathname.split('/');
-    return pathname[2];
+    return splitPathname(props.location.pathname);
   } else {
     return props.sectionKey;
   }
+};
+
+export const splitPathname = (pathname) => {
+  return pathname.split('/')[2];
 };
 
 export const addingApp = (value) => {
@@ -25,4 +28,8 @@ export const addingApp = (value) => {
 
 export const driverLicense = (value) => {
   return value === 'driver-license';
+};
+
+export const changeFlow = (value) => {
+  return driverLicense(value);
 };

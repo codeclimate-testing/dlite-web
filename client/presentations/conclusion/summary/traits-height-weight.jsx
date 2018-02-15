@@ -15,7 +15,7 @@ const TraitsHeightWeight = (props) => {
   return (
     <PageSummaryLink
       to='/my-basics/traits-height-weight'
-      name='traitsHeightWeight'
+      name='heightWeight'
     >
       <SummaryItem
         title='Height'

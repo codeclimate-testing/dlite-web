@@ -23,7 +23,7 @@ import onSubmitShowErrors   from './on-submit-show-errors';
 import onInputChange        from './on-input-change';
 import onSelectChange       from './on-select-change';
 import onPageLoad           from './on-page-load';
-
+import onFlowChange         from './on-flow-change';
 
 export default {
   navigateOnBack,
@@ -37,5 +37,6 @@ export default {
   onBlurValidate,
   onFocusClearValidation,
   onSubmitShowErrors,
+  onFlowChange,
   navigateOrShowErrors
 };

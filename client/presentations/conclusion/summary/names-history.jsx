@@ -15,7 +15,7 @@ const NamesHistory = (props) => {
   return (
     <PageSummaryLink
       to='/my-history/names'
-      name='namesHistory'
+      name='nameHistory'
     >
       <SummaryItem
         title='Previous Names'

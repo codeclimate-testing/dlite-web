@@ -8,7 +8,7 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
-import { getTextFromPathname }  from '../../helpers/data/pathnames';
+import { textFromFlow }     from '../../helpers/data/pathnames';
 
 const tempObjectThatNeedsTranslations = {
   prePrompt: translations.intro.wdywtdtPage.prePrompt,
@@ -23,7 +23,7 @@ const tempObjectThatNeedsTranslations = {
 };
 
 const Form = (props) => {
-  let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
+  let text = textFromFlow(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
 
   // this is temporary as we go through the stories to add all options in for the ID
   let hideSomeButtons = props.location.pathname.startsWith('/add/id-card');
@@ -41,7 +41,7 @@ const Form = (props) => {
             <fieldset>
               <RadioCollection
                 {...props}
-                name    = {getTextFromPathname(props, 'cardAction', 'DLAction')}
+                name    = { textFromFlow(props, 'cardAction', 'DLAction')}
                 onBlur  = { props.onBlurValidate }
                 errorMessage = { props.validations.cardAction()}
               >

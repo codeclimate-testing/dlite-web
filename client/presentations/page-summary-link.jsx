@@ -1,14 +1,14 @@
 'use strict'
 
-import React        from 'react';
-import { Link }     from 'react-router-dom';
-import { iddlPath } from '../helpers/alice-path';
+import React            from 'react';
+import { Link }         from 'react-router-dom';
+import { pathForPage }  from '../helpers/data/page';
 
 const PageSummaryLink = (props) => {
   let className = `${props.name} summary edit button`;
 
   let linkTo = {
-    pathname: iddlPath(props.to),
+    pathname: pathForPage(props.name),
     state: { nextAddress: '/summary' }
   };
 

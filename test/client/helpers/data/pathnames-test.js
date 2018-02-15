@@ -4,9 +4,10 @@ const assert = require('assert');
 
 import {
   startsWithAdd,
-  getTextFromPathname,
+  textFromFlow,
   setKeyFromPathname,
-  addingApp
+  addingApp,
+  splitPathname
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
@@ -22,34 +23,25 @@ describe('Data helpers for pathnames', function() {
     });
   });
 
-  describe('#getTextFromPathname', function() {
+  describe('#textFromFlow', function() {
     let props;
     const applyString = 'I am going through the initial flow';
-    const addString = 'I am adding another card after reaching the summary';
+    const addDLString = 'I am adding another DL card after reaching the summary';
 
     beforeEach(function() {
       props = {
-        location: {
-          pathname: ''
-        }
+        addApp: ''
       };
     });
 
-    it('returns second argument if startsWithAdd is false', function() {
-      props.location.pathname = '/apply/choose-card-type';
-      assert.equal(getTextFromPathname(props, applyString, addString), applyString);
+    it('returns third argument if addApp state is "driver-license"', function() {
+      props.addApp = 'driver-license';
+      assert.equal(textFromFlow(props, applyString, addDLString), addDLString);
     });
 
-    it('returns the third argument if startsWithAdd is true', function() {
-      props.location.pathname = '/add/driver-license';
-      assert.equal(getTextFromPathname(props, applyString, addString), addString);
+    it('returns the second argument if addApp state is blank', function() {
+      assert.equal(textFromFlow(props, applyString, addDLString), applyString);
     });
-
-    it('returns the second argument if props does not have a location property', function() {
-      props = '';
-      assert.equal(getTextFromPathname(props, applyString, addString), applyString);
-    });
-
   });
 
   describe('#setKeyFromPathname', function() {
@@ -88,6 +80,18 @@ describe('Data helpers for pathnames', function() {
 
     it('returns false if value equals "intro"', function() {
       assert.equal(addingApp('intro'), false);
+    });
+  });
+
+  describe('#splitPathname', function() {
+    it('returns "driver-license" in the url for the add DL wdywtdt page', function() {
+      let pathname = '/add/driver-license/what-do-you-want-to-do-today';
+      assert.equal(splitPathname(pathname), 'driver-license');
+    });
+
+    it('returns "id-card" in the url for the add ID wdywtdt url', function() {
+      let pathname = '/add/id-card/what-do-you-want-to-do-today';
+      assert.equal(splitPathname(pathname), 'id-card');
     });
   });
 });

@@ -11,7 +11,7 @@ const SeniorID = (props) => {
   return (
     <PageSummaryLink
       to='/senior-id'
-      name='senior'
+      name='seniorID'
     >
       <SummaryItem
         title='Senior ID'

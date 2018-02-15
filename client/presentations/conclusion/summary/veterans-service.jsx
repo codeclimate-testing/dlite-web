@@ -20,7 +20,7 @@ const VeteransService = (props) => {
   return (
     <PageSummaryLink
       to='/my-history/veterans-service'
-      name='veteransService'
+      name='veterans'
     >
       <SummaryItem
         title='Veteran:'

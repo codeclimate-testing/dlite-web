@@ -20,7 +20,7 @@ const CurrentDLInfo = (props) => {
   return (
     <PageSummaryLink
       to='/current-card-information'
-      name='currentCardInformation'
+      name='currentCardInfo'
     >
       <SummaryItem
         title='Driver license number'

@@ -23,7 +23,7 @@ const Address = (props) => {
   return (
     <PageSummaryLink
       to='/my-basics/address'
-      name='address'
+      name='addresses'
     >
       <SummaryItem
         title={translations.summaryPage.myBasics.homeAddress}

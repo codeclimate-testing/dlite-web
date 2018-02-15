@@ -28,7 +28,8 @@ function mapStateToProps(state) {
   return {
     cardAction:   state.application.cardAction,
     focused:      state.ui.focus,
-    validations:  state.ui.validations
+    validations:  state.ui.validations,
+    addApp:       state.ui.addApp
   };
 };
 

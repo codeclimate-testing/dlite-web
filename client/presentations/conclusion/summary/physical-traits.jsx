@@ -12,7 +12,7 @@ const PhysicalTraits = (props) => {
   return (
     <PageSummaryLink
       to='/my-basics/physical-traits'
-      name='physicalTraits'
+      name='sexEyeHair'
     >
       <SummaryItem
         title='Sex'

@@ -37,7 +37,7 @@ const ReducedOrNoFee = (props) => {
   return (
     <PageSummaryLink
       to='/reduced-fee'
-      name='address'
+      name='reducedFeeID'
     >
       <Yes reducedFee = {props.reducedFee} />
       <No reducedFee = {props.reducedFee} />

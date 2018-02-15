@@ -19,6 +19,7 @@ const formReducer = (state = defaultState(), action) => {
   }
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
+    console.log(action)
     if (action.payload.name === 'DLAction') {
       newState = state;
     }

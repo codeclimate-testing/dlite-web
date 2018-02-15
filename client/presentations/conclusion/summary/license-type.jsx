@@ -72,7 +72,7 @@ const LicenseType = (props) => {
   return (
     <PageSummaryLink
       to='/license-type'
-      name='licenseType'
+      name='chooseLicenseClass'
     >
       <SummaryItem
         title='Need to drive'
