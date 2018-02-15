@@ -25,6 +25,12 @@ const addCard = [
     next: 'addLicenseClass'
   },
   {
+    key: 'addReplacementDetails',
+    description: 'specify replacement details for added DL',
+    path: '/driver-license/replacement-details',
+    next: 'addLicenseClass'
+  },
+  {
     key: 'addLicenseClass',
     description: 'choose license class for added card',
     path: '/driver-license/type',

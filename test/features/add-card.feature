@@ -93,7 +93,7 @@ Scenario: Adding a DL renewal
   And I will not see a card history section
   Then I will see that I am updating my DL
 
-  Scenario: Adding a DL update/correct
+Scenario: Adding a DL update/correct
   Given I have already filled out my ID application
   When I visit the page to add a DL
   And I choose to change a DL
@@ -118,4 +118,20 @@ Scenario: Adding a DL renewal
   Then I will be on the page with my summary
   And I will not see a card history section
   Then I will see that I am updating my DL
+
+Scenario: Adding a DL replacement
+  Given I have already filled out my ID application
+  When I visit the page to add a DL
+  And I choose to replace an added DL
+  And I click "Next" to continue
+  Then I will be on the page to add current card info
+  When I enter my current card data
+  And I click "Next" to continue
+  Then I will be on the page to add replacement details
+  And I select it was damaged
+  When I click "Next" to continue
+  Then I will be on the page to add license type
+  When I go to the page with my summary
+  Then I will not see a card history section
+  And I will see that I am replacing my DL
 

@@ -12,7 +12,7 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors('replacementDetails', props, validations);
+  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (

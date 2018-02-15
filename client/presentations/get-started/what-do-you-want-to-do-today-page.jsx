@@ -25,8 +25,8 @@ const tempObjectThatNeedsTranslations = {
 const Form = (props) => {
   let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
 
-  // this is temporary as we go through the stories to add all options in for the DL
-  let hideSomeButtons = props.location.pathname.startsWith('/add/');
+  // this is temporary as we go through the stories to add all options in for the ID
+  let hideSomeButtons = props.location.pathname.startsWith('/add/id-card');
 
   return (
     <Page
@@ -58,7 +58,6 @@ const Form = (props) => {
                   text={text.values[2]}
                 />
                 <RadioSelector
-                  hide= {hideSomeButtons}
                   value='replace'
                   text={text.values[3]}
                 />

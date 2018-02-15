@@ -50,6 +50,11 @@ describe('Add-DL next paths', function() {
       data.cardAction = 'change';
       assert.equal(addCurrentCardInfo(data), 'addUpdateCorrect');
     });
+
+    it('returns "addReplacementDetails" if user is replacing a card', function() {
+      data.cardAction = 'replace';
+      assert.equal(addCurrentCardInfo(data), 'addReplacementDetails');
+    });
   });
 
   describe('#addMedicalHistory', function() {

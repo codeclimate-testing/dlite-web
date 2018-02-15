@@ -52,6 +52,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I choose to replace an added DL', function(done) {
+    browser
+      .click('label[for=DLAction-replace]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see a WDYWTDT page with only the new DL option', function(done) {
     browser
       .text()
