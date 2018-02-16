@@ -61,7 +61,6 @@ const Form = (props) => {
                   text={text.values[0]}
                 />
                 <RadioSelector
-                  hide = {hideSomeButtons}
                   value = 'renew'
                   text={text.values[1]}
                 />

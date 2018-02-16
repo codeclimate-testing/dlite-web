@@ -219,6 +219,9 @@ module.exports = function(world) {
   world.then('I will be on the page to add senior id', function(done) {
     assertOnPage('.senior-id-form', /add\/id-card\/senior-id/, done);
   });
+  world.then('I will be on the page to add current ID info', function(done) {
+    assertOnPage('.current-card-form', /add\/id-card\/current-card-information/, done);
+  });
   world.then('I will be on the page for entering my legal name', function(done) {
     assertOnPage('.legal-name-form', /apply\/id-and-license\/my-basics\/legal-name/, done);
   });

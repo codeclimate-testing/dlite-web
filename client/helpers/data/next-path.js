@@ -172,7 +172,10 @@ export const summary = (res) => {
 
 export const addIDWdywtdt = (props) => {
   let key = 'addReducedFee';
-  if (eligibleForSeniorID(props)){
+  if (hasExistingCard(props)) {
+    key = 'addCurrentIDInfo'
+  }
+  else if (eligibleForSeniorID(props)){
     key = 'addSeniorID';
   }
   return key;
@@ -182,6 +185,14 @@ export const addSeniorID = (props) => {
   let key = 'addReducedFee';
   if (gettingSeniorID(props)) {
     key = 'summary';
+  }
+  return key;
+};
+
+export const addCurrentIDInfo = (props) => {
+  let key = 'addReducedFee';
+  if (eligibleForSeniorID(props)){
+    key = 'addSeniorID';
   }
   return key;
 };

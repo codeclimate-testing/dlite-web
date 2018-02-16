@@ -120,3 +120,15 @@ Scenario: Choosing to add a new ID
   Then I will be on the page with my summary
   And I will see that my new ID card type has been saved
   And I will see that I am not opting for a reduced fee
+
+Scenario: Choosing to add a renewal ID
+  Given I have already filled out my DL application
+  When I visit the page to add an ID
+  Then I choose to add a renewal ID
+  And I click "Next" to continue
+  Then I will be on the page to add current ID info
+  When I enter my current card data
+  And I click "Next" to continue
+  Then I will be on the page to add reduced fee
+  When I go to the page with my summary
+  Then I will see the info of the ID card saved

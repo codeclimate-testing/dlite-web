@@ -71,7 +71,7 @@ class Router extends React.Component {
 
         <Route path={ iddlPath('/my-basics/legal-name') }       component={LegalName} />
         <Route path={ iddlPath('/my-basics/date-of-birth') }    component={DateOfBirth} />
-        <Route path={ iddlPath('/what-do-you-want-to-do-today') } exact render={(props) => <WhatDoYouWantToDoToday addressName='wdywtdt' {...props}/>} />
+        <Route path={ iddlPath('/what-do-you-want-to-do-today') } exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='wdywtdt' />} />
         <Route path={ iddlPath('/select-id-dl') }               component={ChooseCard} />
         <Route path={ iddlPath('/current-card-information') }   exact render={(props) => <CurrentCardInfo {...props} addressName='currentCardInfo' />}/>
         <Route path={ iddlPath('/updates-and-corrections') }    exact render={(props) => <UpdatesCorrects {...props} addressName='updateAndCorrect' />} />
@@ -79,20 +79,20 @@ class Router extends React.Component {
         <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID addressName='seniorID' {...props}/>}/>
         <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ iddlPath('/real-id') }                    component={RealID} />
-        <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType addressName='chooseLicenseClass' {...props} />}/>
-        <Route path={ iddlPath('/reduced-fee')}                 exact render={(props) => <ReducedFee addressName='reducedFeeID' {...props}/>}/>
+        <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType {...props} addressName='chooseLicenseClass'/>}/>
+        <Route path={ iddlPath('/reduced-fee')}                 exact render={(props) => <ReducedFee {...props} addressName='reducedFeeID' />}/>
         <Route path={ iddlPath('/get-started') }                component={GetStarted} />
 
         <Route path={ iddlPath('/my-basics/address') }          component={Address} />
-        <Route path={ iddlPath('/my-basics/traits-height-weight' ) } component={TraitsHeightWeight} />
+        <Route path={ iddlPath('/my-basics/traits-height-weight')} component={TraitsHeightWeight} />
         <Route path={ iddlPath('/my-basics/physical-traits') }  component={PhysicalTraits} />
         <Route path={ iddlPath('/my-basics/social-security' ) } component={SocialSecurity} />
 
-        <Route path={ iddlPath('/my-history/medical' ) }  exact     render={(props) => <MedicalHistory {...props} addressName='medicalHistory' />} />
-        <Route path={ iddlPath('/my-history/license-and-id')} exact render={(props) => <CardHistory {...props} addressName='cardHistory' />} />
-        <Route path={ iddlPath('/my-history/names' ) }              component={NamesHistory} />
-        <Route path={ iddlPath('/my-history/license-issues')} exact render={(props) => <LicenseIssues {...props} addressName='licenseIssues' />} />
-        <Route path={ iddlPath('/my-history/veterans-service') }    component={VeteransService} />
+        <Route path={ iddlPath('/my-history/medical' ) }        exact render={(props) => <MedicalHistory {...props} addressName='medicalHistory' />} />
+        <Route path={ iddlPath('/my-history/license-and-id')}   exact render={(props) => <CardHistory {...props} addressName='cardHistory' />} />
+        <Route path={ iddlPath('/my-history/names' ) }          component={NamesHistory} />
+        <Route path={ iddlPath('/my-history/license-issues')}   exact render={(props) => <LicenseIssues {...props} addressName='licenseIssues' />} />
+        <Route path={ iddlPath('/my-history/veterans-service')} component={VeteransService} />
 
         <Route path={ iddlPath('/organ-donation' ) }            component={OrganDonation} />
 
@@ -122,9 +122,10 @@ class Router extends React.Component {
         <Route path={ addPath('/driver-license/license-history') }      exact render={(props) => <CardHistory {...props} addressName='addLicenseHistory'/> } />
         <Route path={ addPath('/driver-license/issue-history') }        exact render={(props) => <LicenseIssues {...props} addressName='addIssueHistory' />} />
 
-        <Route path={ addPath('/id-card') }                         exact render={(props) => <WhatDoYouWantToDoToday addressName='addIDWdywtdt' {...props}/>}/>
-        <Route path={ addPath('/id-card/senior-id') }               exact render={(props) => <SeniorID addressName='addSeniorID' {...props}/>} />
-        <Route path={ addPath('/id-card/reduced-fee') }             exact render={(props) => <ReducedFee addressName='addReducedFee' {...props}/>} />
+        <Route path={ addPath('/id-card') }                         exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='addIDWdywtdt' />}/>
+        <Route path={ addPath('/id-card/current-card-information')} exact render={(props) => <CurrentCardInfo {...props} addressName='addCurrentIDInfo' />} />
+        <Route path={ addPath('/id-card/senior-id') }               exact render={(props) => <SeniorID {...props} addressName='addSeniorID' />} />
+        <Route path={ addPath('/id-card/reduced-fee') }             exact render={(props) => <ReducedFee {...props} addressName='addReducedFee' />} />
       </div>
     );
   }

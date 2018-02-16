@@ -20,6 +20,7 @@ import {
   optOut,
   summary,
   addIDWdywtdt,
+  addCurrentIDInfo,
   addSeniorID
 } from './next-path';
 
@@ -326,6 +327,12 @@ const addIDCard = [
     description: 'what do you want to do with added ID card',
     path: '/id-card',
     next: addIDWdywtdt
+  },
+  {
+    key: 'addCurrentIDInfo',
+    description: 'add current ID info',
+    path: '/id-card/current-card-information',
+    next: addCurrentIDInfo
   },
   {
     key: 'addSeniorID',

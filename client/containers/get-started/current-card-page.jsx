@@ -29,6 +29,7 @@ function mapStateToProps(state) {
   return {
     currentCardInfo   : getCorrectApp(state.application).currentCard,
     cardType          : state.application.cardType,
+    IDApp             : state.application.IDApp,
     cardAction        : state.application.cardAction,
     dateOfBirth       : state.application.basics.dateOfBirth,
     validations       : state.ui.validations

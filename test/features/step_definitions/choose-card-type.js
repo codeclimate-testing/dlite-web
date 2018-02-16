@@ -244,6 +244,17 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see the info of the ID card saved', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert(text.includes('ID card numbera111'))
+        assert(text.includes('11/11/2011'))
+      })
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I click on the car checkbox', function(done) {
     browser
       .click('label[for="car"]')
