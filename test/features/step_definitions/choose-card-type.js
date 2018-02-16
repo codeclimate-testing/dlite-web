@@ -143,6 +143,15 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see that I am replacing my ID', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('My IDI amReplacing'));
+      })
+      .then(done)
+      .catch(done);
+  });
   world.then('I will see that my ID card type has been saved', function(done) {
     browser
       .text('.inner')

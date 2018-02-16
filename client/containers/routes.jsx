@@ -74,9 +74,15 @@ class Router extends React.Component {
         <Route path={ iddlPath('/what-do-you-want-to-do-today') } exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='wdywtdt' />} />
         <Route path={ iddlPath('/select-id-dl') }               component={ChooseCard} />
         <Route path={ iddlPath('/current-card-information') }   exact render={(props) => <CurrentCardInfo {...props} addressName='currentCardInfo' />}/>
+<<<<<<< HEAD
         <Route path={ iddlPath('/updates-and-corrections') }    exact render={(props) => <UpdatesCorrects {...props} addressName='updateAndCorrect' />} />
         <Route path={ iddlPath('/replacement-details') }        exact render={(props) => <ReplacementDetails {...props} addressName='replacementDetails' />} />
         <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID addressName='seniorID' {...props}/>}/>
+=======
+        <Route path={ iddlPath('/updates-and-corrections') }    exact render={(props) => <UpdatesCorrects {...props} addressName='updateAndCorrect' />}  />
+        <Route path={ iddlPath('/replacement-details') }        exact render={(props) => <ReplacementDetails {...props} addressName='replacementDetails' />} />
+        <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID {...props} addressName='seniorID' />}/>
+>>>>>>> added button to replace ID added from summary
         <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
         <Route path={ iddlPath('/real-id') }                    component={RealID} />
         <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType {...props} addressName='chooseLicenseClass'/>}/>
@@ -125,6 +131,7 @@ class Router extends React.Component {
         <Route path={ addPath('/id-card') }                         exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='addIDWdywtdt' />}/>
         <Route path={ addPath('/id-card/current-card-information')} exact render={(props) => <CurrentCardInfo {...props} addressName='addCurrentIDInfo' />} />
         <Route path={ addPath('/id-card/updates-and-corrections') } exact render={(props) => <UpdatesCorrects {...props} addressName='addCorrectUpdateID' />} />
+        <Route path={ addPath('/id-card/replacement-details') }     exact render={(props) => <ReplacementDetails {...props} addressName='addIDReplacementDetails' />} />
         <Route path={ addPath('/id-card/senior-id') }               exact render={(props) => <SeniorID {...props} addressName='addSeniorID' />} />
         <Route path={ addPath('/id-card/reduced-fee') }             exact render={(props) => <ReducedFee {...props} addressName='addReducedFee' />} />
       </div>

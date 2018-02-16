@@ -87,6 +87,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I choose to add a replacement ID', function(done) {
+    browser
+      .click('label[for=IDAction-replace]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see a WDYWTDT page with only the new DL option', function(done) {
     browser
       .text()

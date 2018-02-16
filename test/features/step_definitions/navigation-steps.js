@@ -225,6 +225,9 @@ module.exports = function(world) {
   world.then('I will be on the page to add correct/update details', function(done) {
     assertOnPage('.choose-card-change', /add\/id-card\/updates-and-corrections/, done);
   });
+  world.then('I will be on the page to add ID replacement details', function(done) {
+    assertOnPage('.choose-replacement-detail', /add\/id-card\/replacement-details/, done);
+  });
   world.then('I will be on the page for entering my legal name', function(done) {
     assertOnPage('.legal-name-form', /apply\/id-and-license\/my-basics\/legal-name/, done);
   });

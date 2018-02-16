@@ -147,3 +147,13 @@ Scenario: Choosing to add a correct/updated ID
   When I go to the page with my summary
   Then I will see that I am updating the name on my ID
   And I will see the info of the ID card saved
+
+Scenario: Choosing to add a replacement ID
+  Given I have already filled out my DL application
+  When I visit the page to add an ID
+  Then I choose to add a replacement ID
+  And I click "Next" to continue
+  Then I will be on the page to add current ID info
+  When I enter my current card data
+  And I click "Next" to continue
+  Then I will be on the page to add ID replacement details

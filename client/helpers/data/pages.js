@@ -21,7 +21,7 @@ import {
   summary,
   addIDWdywtdt,
   addCurrentIDInfo,
-  addCorrectUpdateID,
+  addChangedID,
   addSeniorID
 } from './next-path';
 
@@ -337,9 +337,15 @@ const addIDCard = [
   },
   {
     key: 'addCorrectUpdateID',
-    description: 'add correct/update info to added ID',
+    description: 'correct/update info for added ID',
     path: '/id-card/updates-and-corrections',
-    next: addCorrectUpdateID
+    next: addChangedID
+  },
+  {
+    key: 'addIDReplacementDetails',
+    description: 'add replacement details to added ID',
+    path: '/id-card/replacement-details',
+    next: addChangedID
   },
   {
     key: 'addSeniorID',

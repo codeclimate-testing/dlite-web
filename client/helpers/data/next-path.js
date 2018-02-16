@@ -185,6 +185,8 @@ export const addCurrentIDInfo = (props) => {
   let key = 'addReducedFee';
   if (isChangingCard(props)) {
     key = 'addCorrectUpdateID';
+  } else if (isReplacingCard(props)) {
+    key = 'addIDReplacementDetails';
   }
   else if (eligibleForSeniorID(props)){
     key = 'addSeniorID';
@@ -192,7 +194,7 @@ export const addCurrentIDInfo = (props) => {
   return key;
 };
 
-export const addCorrectUpdateID = (props) => {
+export const addChangedID = (props) => {
   let key = 'addReducedFee';
   if(eligibleForSeniorID(props)) {
     key = 'addSeniorID';
