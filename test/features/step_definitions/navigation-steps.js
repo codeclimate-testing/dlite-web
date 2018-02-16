@@ -179,6 +179,9 @@ module.exports = function(world) {
   world.when('I visit the page to add a DL', function(done){
     navigateToPath('/add/driver-license', '.choose-card-action', done);
   });
+  world.when('I visit the page to add an ID', function(done){
+    navigateToPath('/add/id-card', '.choose-card-action', done);
+  });
   world.when('I visit the page to add license type', function(done) {
     navigateToPath('/add/driver-license/type', 'license-type-form', done);
   });
@@ -206,7 +209,12 @@ module.exports = function(world) {
   world.then('I will be on the page to add license issues', function(done) {
     assertOnPage('.license-issues-form', /add\/driver-license\/issue-history/, done);
   });
-
+  world.then('I will be on the page to add reduced fee', function(done) {
+    assertOnPage('.reduced-fee-form', /add\/id-card\/reduced-fee/, done);
+  });
+  world.then('I will be on the page to add senior id', function(done) {
+    assertOnPage('.senior-id-form', /add\/id-card\/senior-id/, done);
+  });
   world.then('I will be on the page for entering my legal name', function(done) {
     assertOnPage('.legal-name-form', /apply\/id-and-license\/my-basics\/legal-name/, done);
   });

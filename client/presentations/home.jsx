@@ -60,7 +60,10 @@ const Home = () => {
           { wrapGroup(linkData.conclusion) }
         </LinkSection>
         <LinkSection name='Add DL'>
-          { wrapGroup(linkData.addCard) }
+          { wrapGroup(linkData.addDLCard) }
+        </LinkSection>
+        <LinkSection name='Add ID'>
+          { wrapGroup(linkData.addIDCard) }
         </LinkSection>
       </ul>
     </div>

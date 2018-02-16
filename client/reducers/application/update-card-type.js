@@ -27,6 +27,8 @@ const formReducer = (state = defaultState(), action) => {
   else if (action.type === TYPES.ADD_APP) {
     if (driverLicense(action.payload.value)) {
       newState = ['DL'];
+    } else if (action.payload.name === 'IDAction') {
+      newState = ['ID'];
     }
   }
 

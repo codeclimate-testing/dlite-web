@@ -27,6 +27,8 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     cardAction:   state.application.cardAction,
+    cardType:     state.application.cardType,
+    dateOfBirth:  state.application.basics.dateOfBirth,
     focused:      state.ui.focus,
     validations:  state.ui.validations,
     addApp:       state.ui.addApp

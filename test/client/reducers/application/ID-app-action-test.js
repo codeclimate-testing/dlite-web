@@ -129,12 +129,8 @@ describe('IDApp action reducer', function() {
 
 
   describe('#updates cardTypes', function(){
-    let state;
-    beforeEach(function() {
-      state = false;
-    });
 
-    it('it returns state when DL checkbox is updated', function() {
+    it('it returns existing state when DL checkbox is updated', function() {
       let newState = updateCardType(state, checkboxDL);
 
       assert.deepEqual(newState, state);
@@ -174,13 +170,33 @@ describe('IDApp action reducer', function() {
   });
 
   describe('#cardAction', function() {
-    let state = 'new';
     it('reverts to default state when action updated', function() {
+      state = 'new';
       let newState = updateCardType(state, updateAction);
-
       assert.deepEqual(newState, '');
     });
+    it('returns the action payload value when action updated from get ID flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'IDAction',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, 'replace');
+    });
 
+    it('returns the existing state when action updated from get DL flow', function() {
+      state = 'change';
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'DLAction',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, state);
+    });
   });
 });
 

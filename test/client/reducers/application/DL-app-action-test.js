@@ -138,7 +138,7 @@ describe('DL app action reducer', function() {
       assert.deepEqual(newState, '');
     });
 
-    it('updates to chosen action if action is updated on add DL flow', function() {
+    it('returns the action payload value when action updated from get DL flow', function() {
       let newState = updateCardType(state, {
         type: 'UPDATE_CARD_ACTION',
         payload: {
@@ -161,6 +161,18 @@ describe('DL app action reducer', function() {
       });
       assert.equal(newState, '');
     });
+    it('returns the existing state when action updated from get ID flow', function() {
+      state = 'change';
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'IDAction',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, state);
+    });
+
   });
 });
 

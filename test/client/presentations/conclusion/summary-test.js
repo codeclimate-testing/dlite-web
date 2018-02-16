@@ -129,7 +129,10 @@ describe('Summary components', function() {
       props.cardType = ['ID'];
       props.IDApp = {
         isApplying: true,
-        action: 'new'
+        action: 'new',
+        cardChanges: {
+          correctOrUpdate: ''
+        }
       };
 
       let component = render(

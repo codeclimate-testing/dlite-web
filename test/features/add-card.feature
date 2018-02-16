@@ -1,6 +1,6 @@
-Feature: Add a drivers license to an existing ID application
-As a DMV customer, who has already completed an ID application
-I want to create a DL application for a new DL without entering everything again
+Feature: Add a second card to an existing application
+As a DMV customer, who has already completed a single-card application
+I want to create a second application for a new card without entering everything again
 So that my process is efficient and I have a better experience with government software
 
 Scenario: Choosing to add a new DL
@@ -135,3 +135,16 @@ Scenario: Adding a DL replacement
   Then I will not see a card history section
   And I will see that I am replacing my DL
 
+Scenario: Choosing to add a new ID
+  Given I have already filled out my DL application
+  When I visit the page to add an ID
+  Then I will see a WDYWTDT page with the new ID option
+  Then I will see that the validations work the same as the WDYWTDT page
+  When I choose to add a new ID
+  And I click "Next" to continue
+  Then I will be on the page to add reduced fee
+  When I select No to getting a reduced fee
+  And I click "Next" to continue
+  Then I will be on the page with my summary
+  And I will see that my new ID card type has been saved
+  And I will see that I am not opting for a reduced fee

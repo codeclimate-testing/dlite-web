@@ -8,11 +8,9 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
-import { ifAddLicense }     from '../../helpers/data/pathnames';
+import { getTextFromPathname }     from '../../helpers/data/pathnames';
 
 const tempObjectThatNeedsTranslations = {
-  prePrompt: translations.intro.wdywtdtPage.prePrompt,
-  prompt: translations.intro.wdywtdtPage.prompt,
   explanation: '',
   values: [
     "Get a driver license for the first time",
@@ -22,8 +20,18 @@ const tempObjectThatNeedsTranslations = {
   ]
 };
 
+const anotherTempObjectThatNeedsTranslation = {
+  explanation: '',
+  values: [
+    'Get an ID card for the first time',
+    'Renew your ID card',
+    'Correct or update your ID card',
+    'Replace your ID card'
+  ]
+};
+
 const Form = (props) => {
-  let text = ifAddLicense(props.addApp, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations);
+  let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations, anotherTempObjectThatNeedsTranslation);
 
   // this is temporary as we go through the stories to add all options in for the ID
   let hideSomeButtons = props.location.pathname.startsWith('/add/id-card');
@@ -34,14 +42,14 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        {convertToHtml('h2', text.prompt, 'question')}
+        {convertToHtml('h2', translations.intro.wdywtdtPage.prompt, 'question')}
         {convertToHtml('p', text.explanation)}
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <fieldset>
               <RadioCollection
                 {...props}
-                name    = { ifAddLicense(props.addApp, 'cardAction', 'DLAction')}
+                name    = {getTextFromPathname(props, 'cardAction', 'DLAction', 'IDAction')}
                 onBlur  = { props.onBlurValidate }
                 errorMessage = { props.validations.cardAction()}
               >

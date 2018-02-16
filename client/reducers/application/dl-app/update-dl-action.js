@@ -11,41 +11,39 @@ const formReducer = (state = defaultState(), action) => {
   if (!action.payload) { return state; }
   if (!cardTypeAction(action)) { return state; }
 
-  let newState = '';
+  let newState = defaultState();
+  let value = action.payload.value;
 
   if (action.type === TYPES.UPDATE_CARD_TYPE) {
-    let value = action.payload.value.split('-');
-    if (value.length > 1) {
-      if (value[0] === 'ID') {
+    let split = action.payload.value.split('-');
+    if (split.length > 1) {
+      if (split[0] === 'ID') {
         newState = state;
       }
-      else {
-        newState = action.payload.value === 'DL-true' ? 'new' : '';
+      else if(value === 'DL-true'){
+        newState = 'new';
       }
     }
-    else {
-      newState = action.payload.value === 'DL' ? action.payload.name : defaultState();
+    else if (value === 'DL'){
+      newState =  action.payload.name;
     }
   }
 
-  else if (action.type === TYPES.UPDATE_CARD_ACTION) {
-    if (action.payload.name === 'DLAction') {
-      newState = action.payload.value;
+  else if (action.type === TYPES.UPDATE_CARD_ACTION ){
+    if(action.payload.name === 'DLAction') {
+      newState = value;
     }
-    else {
-      newState = defaultState();
+    else if (action.payload.name === 'IDAction') {
+      newState = state;
     }
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {
-    if (action.payload.value === 'Yes') {
-      newState = defaultState();
-    } else {
+    if (value === 'No') {
       newState = 'new';
     }
   }
 
   return newState;
-
 };
 export default formReducer;

@@ -154,6 +154,11 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert(text.includes('I amRenewing'), 'DL renewal card type not saved in summary');
+  world.then('I will see that my new ID card type has been saved', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('My IDI amApplying for the first time'), 'ID card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

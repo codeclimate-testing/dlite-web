@@ -14,7 +14,7 @@ import {
 } from '../../../helpers/data/card-type';
 
 const New = (props) => {
-  if (!getNewID) { return null; }
+  if (!getNewID(props)) { return null; }
   return(
     <SummaryItem
       title='I am'
@@ -24,7 +24,7 @@ const New = (props) => {
 };
 
 const Renew = (props) => {
-  if (!renewID) { return null; }
+  if (!renewID(props)) { return null; }
   return(
     <SummaryItem
       title='I am'
@@ -34,7 +34,7 @@ const Renew = (props) => {
 };
 
 const Replace = (props) => {
-  if (!replaceID) { return null; }
+  if (!replaceID(props)) { return null; }
   return(
     <SummaryItem
       title='I am'
@@ -44,7 +44,7 @@ const Replace = (props) => {
 };
 
 const Correct = (props) => {
-  if (!correctID) { return null; }
+  if (!correctID(props)) { return null; }
   return(
     <SummaryItem
       title='I am'
@@ -54,7 +54,7 @@ const Correct = (props) => {
 };
 
 const Update = (props) => {
-  if (!updateID) { return null; }
+  if (!updateID(props)) { return null; }
   return(
     <SummaryItem
       title='I am'

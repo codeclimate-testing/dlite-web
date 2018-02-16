@@ -167,11 +167,34 @@ describe('IDApp isApplying reducer', function() {
   });
 
   describe('#cardAction', function() {
-    state = true;
+
     it('reverts to default state when action updated', function() {
+      state = true;
       let newState = updateCardType(state, updateAction);
 
       assert.deepEqual(newState, false);
+    });
+
+    it('returns true when card action updated from get ID flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'IDAction',
+          value: 'new'
+        }
+      });
+      assert.equal(newState, true);
+    });
+
+    it('maintains the existing state when card action updated from get DL flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'DLAction',
+          value: 'new'
+        }
+      });
+      assert.equal(newState, state);
     });
 
   });

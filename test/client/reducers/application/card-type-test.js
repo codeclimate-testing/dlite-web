@@ -183,6 +183,17 @@ describe('cardTypeReducer', function() {
       });
       assert.deepEqual(newState, state);
     });
+
+    it('updates to just an ID when cardAction is changed from get an ID path', function() {
+      let newState = updateCardType(['ID'], {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'IDAction',
+          value: 'replace'
+        }
+      });
+      assert.deepEqual(newState, ['ID']);
+    });
   });
 
   describe('#addApp', function() {

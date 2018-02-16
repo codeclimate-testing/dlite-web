@@ -9,7 +9,7 @@ import {
   replacementDetails,
   realID,
   chooseLicenseClass
-} from '../../../../client/helpers/navigation/get-started/next-path';
+} from '../../../../client/helpers/data/next-path';
 
 const today = new Date();
 const bothCards = {
@@ -192,6 +192,5 @@ describe('Data helpers for determining next path from current page and props in 
       });
     });
   });
-
 });
 

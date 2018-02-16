@@ -12,6 +12,7 @@ const formReducer = (state = defaultState(), action) => {
   if ( !cardTypeAction(action) ) { return state; }
 
   let newState = false;
+
   if (action.type === TYPES.UPDATE_CARD_TYPE) {
     let value = action.payload.value.split('-');
     if (value.length > 1) {
@@ -26,8 +27,13 @@ const formReducer = (state = defaultState(), action) => {
     }
   }
 
-  else if (action.type === TYPES.UPDATE_CARD_ACTION && action.payload.name === 'DLAction') {
-    newState = state;
+  else if (action.type === TYPES.UPDATE_CARD_ACTION){
+    if (action.payload.name === 'IDAction') {
+      newState = true;
+    }
+    else if (action.payload.name === 'DLAction') {
+      newState = state;
+    }
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {

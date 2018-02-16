@@ -12,33 +12,38 @@ const formReducer = (state = defaultState(), action) => {
   if (!cardTypeAction(action)) { return state; }
 
   let newState = defaultState();
+  let value = action.payload.value;
+  let name = action.payload.name;
 
   if (action.type === TYPES.UPDATE_CARD_TYPE) {
-    let value = action.payload.value.split('-');
-    if (value.length > 1) {
-      if (value[0] === 'DL') {
+    let split = value.split('-');
+    if (split.length > 1) {
+      if (split[0] === 'DL') {
         newState = state;
       }
-      else {
-        newState = action.payload.value === 'ID-true' ? 'new' : defaultState();
+      else if (value === 'ID-true') {
+        newState = 'new';
       }
     }
-    else {
-      newState = action.payload.value === 'ID' ? action.payload.name : defaultState();
+    else if (value === 'ID'){
+      newState = name;
     }
   }
 
-  else if (action.type === TYPES.UPDATE_CARD_ACTION) {
-    if (action.payload.name === 'DLAction') {
+  else if (action.type === TYPES.UPDATE_CARD_ACTION){
+    if(name === 'IDAction') {
+      newState = value;
+    }
+    else if(name === 'DLAction') {
       newState = state;
     }
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {
-    if (action.payload.name === 'youthIDOnly') {
+    if (name === 'youthIDOnly') {
       newState = 'new';
     }
-    else if (action.payload.value === 'Yes') {
+    else if (value === 'Yes') {
       newState = 'new';
     }
   }

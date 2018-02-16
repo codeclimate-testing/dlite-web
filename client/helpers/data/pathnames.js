@@ -3,9 +3,18 @@ export const startsWithAdd = (pathname) => {
   return pathname.startsWith('/add/');
 };
 
-export const ifAddLicense = (value, iddlText, addDLText) => {
-  if (driverLicense(value)) {
-    return addDLText;
+export const onIDFlow = (pathname) => {
+  return pathname.startsWith('/add/id-card');
+};
+
+export const getTextFromPathname = (props, iddlText, addDLText, addIDText) => {
+  if (props.hasOwnProperty('location')){
+    if (onIDFlow(props.location.pathname)) {
+      return addIDText;
+    }
+    else if (startsWithAdd(props.location.pathname)) {
+      return addDLText;
+    }
   }
   return iddlText;
 };

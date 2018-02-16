@@ -31,6 +31,20 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.given('I have already filled out my DL application', function(done) {
+    browser
+      .on('consoleMessage', function( msg ){
+        console.log('log', msg);
+      })
+      .on('error', function( err ){
+        console.log('error', err);
+      })
+      .open(world.url('/'))
+      .waitForSelector('.welcome-page')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.when('I choose to add a new DL', function(done) {
     browser
       .click('label[for=DLAction-new]')
@@ -41,6 +55,9 @@ module.exports = function(world) {
   world.when('I choose to renew a DL', function(done) {
     browser
       .click('label[for=DLAction-renew]')
+  world.when('I choose to add a new ID', function(done) {
+    browser
+      .click('label[for=IDAction-new]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -64,6 +81,17 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert.ok(text.includes('Get a driver license for the first time'), 'DL text not on page');
+        assert.ok(!text.includes('Get a card for the first time'), 'generic wdywtd today language on page');
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see a WDYWTDT page with the new ID option', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('Get an ID card for the first time'), 'ID-specific text not on page');
         assert.ok(!text.includes('Get a card for the first time'), 'generic wdywtd today language on page');
       })
       .then(done)

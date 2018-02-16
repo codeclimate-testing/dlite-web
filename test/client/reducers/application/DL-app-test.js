@@ -129,7 +129,9 @@ describe('DLApp isApplying reducer', function() {
   });
 
   describe('#cardAction', function() {
-    state = false;
+    beforeEach(function() {
+      state = false;
+    });
     it('reverts to default state when action updated', function() {
       let newState = updateCardType(state, updateAction);
 
