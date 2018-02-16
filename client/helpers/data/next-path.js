@@ -181,18 +181,29 @@ export const addIDWdywtdt = (props) => {
   return key;
 };
 
-export const addSeniorID = (props) => {
+export const addCurrentIDInfo = (props) => {
   let key = 'addReducedFee';
-  if (gettingSeniorID(props)) {
-    key = 'summary';
+  if (isChangingCard(props)) {
+    key = 'addCorrectUpdateID';
+  }
+  else if (eligibleForSeniorID(props)){
+    key = 'addSeniorID';
   }
   return key;
 };
 
-export const addCurrentIDInfo = (props) => {
+export const addCorrectUpdateID = (props) => {
   let key = 'addReducedFee';
-  if (eligibleForSeniorID(props)){
+  if(eligibleForSeniorID(props)) {
     key = 'addSeniorID';
+  }
+  return key;
+};
+
+export const addSeniorID = (props) => {
+  let key = 'addReducedFee';
+  if (gettingSeniorID(props)) {
+    key = 'summary';
   }
   return key;
 };

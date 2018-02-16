@@ -124,6 +124,7 @@ class Router extends React.Component {
 
         <Route path={ addPath('/id-card') }                         exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='addIDWdywtdt' />}/>
         <Route path={ addPath('/id-card/current-card-information')} exact render={(props) => <CurrentCardInfo {...props} addressName='addCurrentIDInfo' />} />
+        <Route path={ addPath('/id-card/updates-and-corrections') } exact render={(props) => <UpdatesCorrects {...props} addressName='addCorrectUpdateID' />} />
         <Route path={ addPath('/id-card/senior-id') }               exact render={(props) => <SeniorID {...props} addressName='addSeniorID' />} />
         <Route path={ addPath('/id-card/reduced-fee') }             exact render={(props) => <ReducedFee {...props} addressName='addReducedFee' />} />
       </div>
