@@ -43,11 +43,11 @@ export const getNewDL = (props) => {
 };
 
 export const existingDL = (props) => {
-  return props.DLApp.action !== 'new';
+  return DLAppExists(props) && (replaceDL(props) || renewDL(props) || changeDL(props));
 };
 
 export const existingID = (props) => {
-  return props.IDApp.action !== 'new';
+  return IDAppExists(props) && (replaceID(props) || renewID(props) || changeID(props));
 };
 
 export const replaceID = (props) => {

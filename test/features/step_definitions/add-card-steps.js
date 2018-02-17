@@ -31,13 +31,16 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  // world.and('I want to add a DL', function(done) {
-  //   browser.text().then(done).catch(done);
-  // });
-
   world.when('I choose to add a new DL', function(done) {
     browser
       .click('label[for=DLAction-new]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to renew a DL', function(done) {
+    browser
+      .click('label[for=DLAction-renew]')
       .then(() => { done(); })
       .catch(done);
   });
@@ -97,11 +100,12 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I will see the information I filled out about my DL in the My Driver License section of the summary', function(done){
+
+  world.and('I will not see a card history section', function(done){
     browser
       .text()
       .then((text) => {
-
+        assert.ok(!text.includes('Previous DL/ID card number:'), 'card history section rendered');
       })
       .then(done)
       .catch(done);

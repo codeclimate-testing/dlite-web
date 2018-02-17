@@ -18,7 +18,9 @@ import {
   citizenship,
   votingEligibility,
   optOut,
-  summary
+  summary,
+  addWdywtdt,
+  addMedicalHistory
 } from './next-path';
 
 const getStarted = [
@@ -290,6 +292,12 @@ const addCard = [
     key: 'addWdywtdt',
     description: 'what do you want to do with added card',
     path: '/driver-license',
+    next: addWdywtdt
+  },
+  {
+    key: 'addCurrentCardInfo',
+    description: 'add current card info',
+    path: '/driver-license/current-card-information',
     next: 'addLicenseClass'
   },
   {
@@ -302,7 +310,7 @@ const addCard = [
     key: 'addMedicalHistory',
     description: 'add medical history for added card',
     path: '/driver-license/medical-history',
-    next: 'addLicenseHistory'
+    next: addMedicalHistory
   },
   {
     key: 'addLicenseHistory',

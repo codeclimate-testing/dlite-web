@@ -11,7 +11,7 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let currentCardValidation = new CurrentCardValidator(props.currentCardInfo, props.validations);
-  let onSubmit = handlers.navigateOrShowErrors('currentCardInfo', props, currentCardValidation);
+  let onSubmit = handlers.navigateOrShowErrors(props.addressName, props, currentCardValidation);
   let onBack   = handlers.navigateOnBack(props, currentCardValidation);
 
   return (

@@ -182,7 +182,9 @@ module.exports = function(world) {
   world.when('I visit the page to add license type', function(done) {
     navigateToPath('/add/driver-license/type', 'license-type-form', done);
   });
-
+  world.then('I will be on the page to add current card info', function(done) {
+    assertOnPage('.current-card-form', /add\/driver-license\/current-card-information/, done);
+  });
   world.then('I will be on the page to add license type', function(done) {
     assertOnPage('.license-type-form', /add\/driver-license\/type/, done);
   });

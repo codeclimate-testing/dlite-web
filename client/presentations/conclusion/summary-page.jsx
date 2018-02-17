@@ -69,7 +69,7 @@ const contents = (application) => {
   <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
     <DLApplicationNotStarted {...application} key='dl-application-not-started' />
     <DLAction {...application} />
-    <CurrentDLInfo {...application} />
+    <CurrentDLInfo {...application} currentCardInfo={application.DLApp.currentCard}/>
     <DLRealID {...application} />
     <LicenseType {...application} />
   </Accordion>,

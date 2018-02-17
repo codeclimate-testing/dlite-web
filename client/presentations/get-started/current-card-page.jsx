@@ -19,8 +19,7 @@ const Form = (props) => {
     >
       <div className='current-card-form'>
         <form onSubmit={ props.onSubmit }>
-          <h2 className='question translation-missing'>Card details</h2>
-          {convertToHtml('p', translations.intro.currentCardPage.prompt)}
+          {convertToHtml('h2', translations.intro.currentCardPage.prompt, 'question')}
           {convertToHtml('p', translations.intro.currentCardPage.explanation)}
           <fieldset>
             <TextInput

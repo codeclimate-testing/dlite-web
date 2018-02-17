@@ -138,6 +138,16 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see my renewal DL card type has been saved', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('I amRenewing'), 'DL renewal card type not saved in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see that my card types have been saved', function(done) {
     browser
       .text()
@@ -165,6 +175,26 @@ module.exports = function(world) {
       .type('#month', '11')
       .type('#year', '2011')
       .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.and('I will see my ID card info saved', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert(text.includes('ID card numbera111'));
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.and('I will see my DL card info saved', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert(text.includes('Driver license numbera111'));
+      })
+      .then(done)
       .catch(done);
   });
 
