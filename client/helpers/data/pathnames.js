@@ -1,20 +1,13 @@
 'use strict';
-export const startsWithAdd = (pathname) => {
-  return pathname.startsWith('/add/');
+
+
+export const onIDFlow = (props) => {
+  return props.location.pathname.startsWith('/add/id-card');
 };
 
-export const onIDFlow = (pathname) => {
-  return pathname.startsWith('/add/id-card');
-};
-
-export const getTextFromPathname = (props, iddlText, addDLText, addIDText) => {
-  if (props.hasOwnProperty('location')){
-    if (onIDFlow(props.location.pathname)) {
-      return addIDText;
-    }
-    else if (startsWithAdd(props.location.pathname)) {
-      return addDLText;
-    }
+export const ifSecondFlow = (props, iddlText, addText) => {
+  if (addingApp(props.addApp)) {
+    return addText;
   }
   return iddlText;
 };
@@ -25,6 +18,14 @@ export const setKeyFromPathname = (props) => {
   } else {
     return props.sectionKey;
   }
+export const getTextFromPathname = (props, initialFlow, addDLFlow, addIDFlow) => {
+  let value = splitPathname(props.location.pathname);
+  if (driverLicense(value)) {
+    return addDLFlow;
+  } else if (idCard(value)) {
+    return addIDFlow;
+  }
+  return initialFlow;
 };
 
 export const splitPathname = (pathname) => {
@@ -32,13 +33,13 @@ export const splitPathname = (pathname) => {
 };
 
 export const addingApp = (value) => {
-  return driverLicense(value) || value === 'id-card';
+  return driverLicense(value) || idCard(value);
 };
 
 export const driverLicense = (value) => {
   return value === 'driver-license';
 };
 
-export const changeFlow = (value) => {
-  return driverLicense(value);
+export const idCard = (value) => {
+  return value === 'id-card';
 };

@@ -8,7 +8,10 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
-import { getTextFromPathname }     from '../../helpers/data/pathnames';
+import {
+  getTextFromPathname,
+  onIDFlow
+}  from '../../helpers/data/pathnames';
 
 const tempObjectThatNeedsTranslations = {
   explanation: '',
@@ -34,7 +37,7 @@ const Form = (props) => {
   let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations, anotherTempObjectThatNeedsTranslation);
 
   // this is temporary as we go through the stories to add all options in for the ID
-  let hideSomeButtons = props.location.pathname.startsWith('/add/id-card');
+  let hideSomeButtons = onIDFlow(props);
 
   return (
     <Page

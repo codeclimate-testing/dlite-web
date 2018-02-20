@@ -4,13 +4,14 @@ import {
   iddlPath,
   addPath
 } from '../alice-path';
-import getStarted         from './get-started/pages';
-import myBasics           from './my-basics/pages';
-import myHistory          from './my-history/pages';
-import voterRegistration  from './voter-registration/pages';
-import organDonation      from './organ-donation/pages';
-import conclusion         from './conclusion/pages';
-import addCard            from './add-dl/pages';
+import getStarted           from './get-started/pages';
+import myBasics             from './my-basics/pages';
+import myHistory            from './my-history/pages';
+import voterRegistration    from './voter-registration/pages';
+import organDonation        from './organ-donation/pages';
+import conclusion           from './conclusion/pages';
+import addDLCard            from './add-dl/pages';
+import addIDCard            from './add-id/pages';
 
 const expand = (collection) => {
   return collection.map((item) => {
@@ -33,6 +34,7 @@ export default {
   organDonation: expand(organDonation),
   voterRegistration: expand(voterRegistration),
   conclusion: expand(conclusion),
-  addCard: expandAdd(addCard)
+  addDLCard: expandAdd(addDLCard),
+  addIDCard: expandAdd(addIDCard)
 };
 

@@ -39,8 +39,9 @@ const formReducer = (state = defaultState(), action) => {
     else if (action.payload.name === 'youthIDOnly') {
       newState = ['ID', 'DL'];
     }
-    else { newState = ['DL']} ;
+    else { newState = ['DL']; }
   }
+
   return newState;
 };
 

@@ -58,7 +58,7 @@ const contents = (props) => {
   let application = props.application;
   return([
   <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
-    <IDApplicationNotStarted {...application} key='id-application-not-started' />
+    <IDApplicationNotStarted {...application} key='id-application-not-started' onFlowChange = {props.onFlowChange} />
     <IDAction {...application} />
     <ReducedOrNoFee {...application} reducedFee = {application.IDApp.reducedFee}/>
     <SeniorID seniorID={application.IDApp.seniorID} />
@@ -67,7 +67,7 @@ const contents = (props) => {
   </Accordion>,
 
   <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
-    <DLApplicationNotStarted {...application} addApp={props.addApp} key='dl-application-not-started' />
+    <DLApplicationNotStarted {...application} changeFlow={props.onFlowChange} key='dl-application-not-started' />
     <DLAction {...application} addApp = {props.ui.addApp} />
     <CurrentDLInfo {...application} currentCardInfo = {application.DLApp.currentCard} addApp = {props.ui.addApp} />
     <DLRealID {...application} />
