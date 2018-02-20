@@ -3,47 +3,67 @@
 const assert = require('assert');
 
 import {
-  startsWithAdd,
-  ifAddLicense,
-  setKeyFromPathname,
+  onIDFlow,
+  getTextFromState,
+  getTextFromPathname,
   addingApp,
   splitPathname
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
-  describe('#startsWithAdd', function() {
-    it('returns true if pathname begins with string /add/', function() {
-      let pathname = '/add/driver-license';
-      assert.equal(startsWithAdd(pathname), true);
+
+  let props;
+    beforeEach(function() {
+      props = {
+        location: {
+          pathname: ''
+        }
+      };
+    });
+  describe('#onIDFlow', function() {
+
+    it('returns true if pathname begins with string /add/id-card', function() {
+      props.location.pathname = '/add/id-card';
+      assert.equal(onIDFlow(props), true);
     });
 
     it('returns false if pathname begins with string /apply/', function() {
-      let pathname = '/apply/what-do-you-want-to-do-today';
-      assert.equal(startsWithAdd(pathname), false);
+      props.location.pathname = '/apply/what-do-you-want-to-do-today';
+      assert.equal(onIDFlow(props), false);
     });
   });
 
-  describe('#ifAddLicense', function() {
-    let addApp;
+  describe('#getTextFromState', function() {
+
     const applyString = 'I am going through the initial flow';
-    const addDLString = 'I am adding another DL card after reaching the summary';
+    const addString = 'I am adding another card after reaching the summary';
 
     beforeEach(function() {
-      addApp = '';
+      props = {
+        addApp: ''
+      }
     });
 
     it('returns third argument if addApp state is "driver-license"', function() {
-      addApp = 'driver-license';
-      assert.equal(ifAddLicense(addApp, applyString, addDLString), addDLString);
+      props.addApp = 'driver-license';
+      assert.deepEqual(getTextFromState(props, applyString, addString), addString);
     });
 
     it('returns the second argument if addApp state is blank', function() {
-      assert.equal(ifAddLicense(addApp, applyString, addDLString), applyString);
+      assert.deepEqual(getTextFromState(props, applyString, addString), applyString);
+    });
+
+    it('returns the third argument if addApp state is "id-card"', function() {
+      props.addApp = 'id-card';
+      assert.deepEqual(getTextFromState(props, applyString, addString), addString);
     });
   });
 
-  describe('#setKeyFromPathname', function() {
-    let props;
+  describe('#getTextFromPathname', function() {
+    const DLText = 'Now I want to add a DL';
+    const IDText = 'Now I want to add an ID';
+    const initialText = 'This is the regular initial flow';
+
     beforeEach(function() {
       props = {
         location: {
@@ -51,19 +71,20 @@ describe('Data helpers for pathnames', function() {
         },
         sectionKey: 'intro'
       };
-    })
-    it('returns "driver-license" if user is on a url to add DL to existing app', function() {
+    });
+
+    it('returns DLString if user is on a url to add DL to existing app', function() {
       props.location.pathname = '/add/driver-license/';
-      assert.equal(setKeyFromPathname(props), 'driver-license');
+      assert.equal(getTextFromPathname(props, initialText, DLText, IDText), DLText);
     });
 
     it('returns "id-card" if user is on a url to add an ID to existing application', function() {
       props.location.pathname = '/add/id-card/';
-      assert.equal(setKeyFromPathname(props), 'id-card');
+      assert.equal(getTextFromPathname(props, initialText, DLText, IDText), IDText);
     });
 
-    it('returns the props.sectionKey if user is on initial flow', function() {
-      assert.equal(setKeyFromPathname(props), 'intro');
+    it('returns the second argument if user is on initial flow', function() {
+      assert.equal(getTextFromPathname(props, initialText, DLText, IDText), initialText);
     });
   });
 

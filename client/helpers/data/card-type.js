@@ -107,8 +107,9 @@ export const getCorrectString = (props, DLString, IDString, bothString) => {
 };
 
 export const getCorrectApp = (state) => {
+  let app = state.DLApp;
   if (getID(state)) {
-    return state.IDApp;
+    app = state.IDApp;
   }
-  return state.DLApp;
+  return app;
 };

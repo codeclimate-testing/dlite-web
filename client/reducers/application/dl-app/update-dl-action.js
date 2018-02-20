@@ -44,6 +44,10 @@ const formReducer = (state = defaultState(), action) => {
     }
   }
 
+  else if (action.type === TYPES.ADD_APP) {
+    newState = state;
+  }
+
   return newState;
 };
 export default formReducer;

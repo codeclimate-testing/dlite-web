@@ -55,6 +55,10 @@ module.exports = function(world) {
   world.when('I choose to renew a DL', function(done) {
     browser
       .click('label[for=DLAction-renew]')
+      .then(done)
+      .catch(done);
+  });
+
   world.when('I choose to add a new ID', function(done) {
     browser
       .click('label[for=IDAction-new]')
@@ -141,7 +145,6 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
-
 
   world.and('I will not see a card history section', function(done){
     browser

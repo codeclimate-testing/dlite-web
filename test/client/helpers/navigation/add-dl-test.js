@@ -14,17 +14,20 @@ describe('Add-DL next paths', function() {
   beforeEach(function() {
     data = {
       cardType: [],
-      cardAction: ''
+      cardAction: '',
+      currentCardInfo: {
+        number: ''
+      }
     };
   });
 
   describe('#addWdywtdt', function() {
-    it('returns "addCurrentCardInfo" if user is renewing a card', function() {
+    it('returns "addCurrentCardInfo" if user is renewing a card and user hasnt already added currentCardInfo in ID path', function() {
       data.cardAction = 'renew';
       assert.equal(addWdywtdt(data), 'addCurrentCardInfo');
     });
 
-    it('returns "addCurrentCardInfo" if user is replacing a card', function() {
+    it('returns "addCurrentCardInfo" if user is replacing a card and user hasnt already added currentCardInfo in ID path', function() {
       data.cardAction = 'replace';
       assert.equal(addWdywtdt(data), 'addCurrentCardInfo');
     });
@@ -32,6 +35,14 @@ describe('Add-DL next paths', function() {
     it('returns "addLicenseClass" if user is getting a new card', function() {
       data.cardAction = 'new';
       assert.equal(addWdywtdt(data), 'addLicenseClass');
+    });
+
+    it('returns "addReplacementDetails" if user is replacing a card but has already entered currentCardInfo in ID flow', function() {
+      data.cardAction = 'replace';
+      data.currentCardInfo = {
+        number: '00000'
+      };
+      assert.equal(addWdywtdt(data), 'addReplacementDetails');
     });
   });
 

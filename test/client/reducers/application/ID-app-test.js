@@ -175,7 +175,7 @@ describe('IDApp isApplying reducer', function() {
       assert.deepEqual(newState, false);
     });
 
-    it('returns true when card action updated from get ID flow', function() {
+    it('retains existing state when card action updated from get ID flow', function() {
       let newState = updateCardType(state, {
         type: 'UPDATE_CARD_ACTION',
         payload: {
@@ -183,7 +183,7 @@ describe('IDApp isApplying reducer', function() {
           value: 'new'
         }
       });
-      assert.equal(newState, true);
+      assert.equal(newState, state);
     });
 
     it('maintains the existing state when card action updated from get DL flow', function() {
@@ -197,6 +197,31 @@ describe('IDApp isApplying reducer', function() {
       assert.equal(newState, state);
     });
 
+  });
+
+
+  describe('#addApp', function() {
+    it('returns true when user has clicked button to add ID application', function() {
+      state = false;
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'id-card'
+        }
+      });
+      assert.equal(newState, true);
+    });
+
+    it('maintains state when has clicked button to add DL application', function() {
+      state = false;
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'driver-license'
+        }
+      });
+      assert.equal(newState, state);
+    });
   });
 });
 

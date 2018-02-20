@@ -56,7 +56,7 @@ Feature: Customers can get a senior ID for free
     Then I will be on the page for choosing to update or correct my card
     When I click "Next" to continue
     Then I will see an error message telling me I need to make a selection
-    And I choose to update my card
+    And I choose to update my ID
     And I check the box to update my name
     When I click "Next" to continue
     Then I will be on the senior id page
@@ -81,7 +81,7 @@ Feature: Customers can get a senior ID for free
     Then I will be on the current card info page
     And I enter my current card data
     When I click "Next" to continue
-    And I select it was damaged
+    And I select the ID was damaged
     When I click "Next" to continue
     Then I will be on the senior id page
     When I select yes to get a senior id

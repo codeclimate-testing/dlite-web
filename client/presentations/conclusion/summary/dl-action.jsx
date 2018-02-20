@@ -12,7 +12,7 @@ import {
   updateDL,
   getNewDL
 } from '../../../helpers/data/card-type';
-import { ifAddLicense } from '../../../helpers/data/pathnames';
+import { getTextFromState } from '../../../helpers/data/pathnames';
 
 const New = (props) => {
   if (!getNewDL(props)) { return null; }
@@ -70,7 +70,7 @@ const DLAction = (props) => {
   return (
     <PageSummaryLink
       to='/what-do-you-want-to-do-today'
-      name={ifAddLicense(props.addApp, 'wdywtdt', 'addWdywtdt')}
+      name={getTextFromState(props, 'wdywtdt', 'addWdywtdt')}
     >
       <New DLApp = {props.DLApp}/>
       <Renew DLApp = {props.DLApp}/>

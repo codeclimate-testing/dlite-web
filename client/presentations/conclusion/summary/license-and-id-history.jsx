@@ -5,7 +5,7 @@ import * as dataPresent from '../../../helpers/data-present';
 import { printDate }    from '../../../helpers/print-date';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
-import { ifAddLicense } from '../../../helpers/data/pathnames';
+import { getTextFromState } from '../../../helpers/data/pathnames';
 import {
   licenseAndIdIssued
 } from '../../../helpers/data/my-history'
@@ -21,7 +21,7 @@ const LicenseAndIdHistory = (props) => {
     return (
       <PageSummaryLink
         to='/my-history/license-and-id'
-        name={ifAddLicense(props.addApp, 'cardHistory', 'addLicenseHistory')}
+        name={getTextFromState(props, 'cardHistory', 'addLicenseHistory')}
       >
         <SummaryItem
           title='Previous DL/ID card number:'
@@ -41,7 +41,7 @@ const LicenseAndIdHistory = (props) => {
     return (
       <PageSummaryLink
         to='/my-history/license-and-id'
-        name={ifAddLicense(props.addApp, 'cardHistory', 'addLicenseHistory')}
+        name={getTextFromState(props, 'cardHistory', 'addLicenseHistory')}
       >
         <SummaryItem
           title='Previous DL/ID card number:'

@@ -24,7 +24,7 @@ const Form = (props) => {
       <fieldset>
         <CheckboxCollection
           {...props}
-          name          = 'sections'
+          name          = {`${props.formName}-sections`}
           array         = { props.cardChanges.sections }
           errorMessage  = { props.validations.sections() }
         >

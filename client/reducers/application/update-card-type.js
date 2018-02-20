@@ -3,7 +3,10 @@
 import { TYPES }              from '../../actions';
 import formValueArrayReducer  from './form-value-array-reducer';
 import { cardTypeAction }     from '../../helpers/reducers';
-import { driverLicense }      from '../../helpers/data/pathnames';
+import {
+  driverLicense,
+  idCard
+}      from '../../helpers/data/pathnames';
 
 const defaultState = () => {
   return [];
@@ -19,7 +22,7 @@ const formReducer = (state = defaultState(), action) => {
   }
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
-    if (action.payload.name === 'DLAction') {
+    if (action.payload.name === 'DLAction' || action.payload.name === 'IDAction') {
       newState = state;
     }
   }
@@ -27,7 +30,7 @@ const formReducer = (state = defaultState(), action) => {
   else if (action.type === TYPES.ADD_APP) {
     if (driverLicense(action.payload.value)) {
       newState = ['DL'];
-    } else if (action.payload.name === 'IDAction') {
+    } else if (idCard(action.payload.value)) {
       newState = ['ID'];
     }
   }

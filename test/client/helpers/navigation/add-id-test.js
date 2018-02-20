@@ -5,7 +5,7 @@ const assert = require('assert');
 import {
   addIDWdywtdt,
   addSeniorID
-} from '../../../../client/helpers/navigations/add-id/next-path';
+} from '../../../../client/helpers/navigation/add-id/next-path';
 
 describe('Add ID Card next-paths', function() {
   describe('#addIDWdywtdt', function() {

@@ -108,16 +108,16 @@ describe('dataPresent', function() {
   });
 
   describe('#currentCardInfo', function() {
-    it('is false when number given but no expiration date', function() {
+    it('is true when number given but no expiration date', function() {
       assert.equal(
         dataPresent.currentCardInfo({number: '404020', month: '', day: '', year: ''}),
-        false
+        true
       );
     });
-    it('is false when expiration date given but no number', function() {
+    it('is true when expiration date given but no number', function() {
       assert.equal(
         dataPresent.currentCardInfo({number: '',month: '09', day: '09', year: '1940'}),
-        false
+        true
       );
     });
     it('is true when both number and expiration date provided', function() {

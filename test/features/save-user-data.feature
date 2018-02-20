@@ -355,7 +355,7 @@ Feature: Save user data
     And I enter my current card data
     When I click "Next" to continue
     Then I will be on the page for choosing reason for replacement
-    And I select it was damaged
+    And I select the DL was damaged
     When I click "Next" to continue
     Then I will be on the page for choosing real id
     When I go to the page with my summary

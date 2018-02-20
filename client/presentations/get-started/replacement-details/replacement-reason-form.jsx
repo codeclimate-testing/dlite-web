@@ -4,14 +4,19 @@ import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 import translations         from '../../../i18n';
+import {
+  getCorrectString
+} from '../../../helpers/data/card-type';
 
 const Form = (props) => {
+  let formName = getCorrectString(props, 'DL', 'ID');
+
   return (
     <div className='row inner-buttom'>
       <fieldset>
         <RadioCollection
           {...props}
-          name='reason'
+          name= {formName}
           onBlur  = { props.onBlurValidate }
           errorMessage = {props.validations.reason() }
         >

@@ -4,6 +4,7 @@ const assert = require('assert');
 
 import {
   hasExistingCard,
+  showCurrentCardInfo,
   isRenewingCard,
   isChangingCard,
   isReplacingCard,
@@ -26,6 +27,9 @@ describe('Data helpers for card actions', function() {
       cardChanges: {
         correctOrUpdate: '',
         sections: []
+      },
+      currentCardInfo: {
+        number: ''
       }
     };
   });
@@ -45,6 +49,23 @@ describe('Data helpers for card actions', function() {
     it('##hasExistingCard should be true if the card action is change', function() {
       data.cardAction = 'change';
       assert.equal(hasExistingCard(data), true);
+    });
+  });
+
+  describe('#showCurrentCardInfo', function() {
+    it('returns false if user is not getting a new card', function() {
+      data.cardAction = 'new';
+      assert.equal(showCurrentCardInfo(data), false);
+    });
+
+    it('returns false if user has already entered current card info', function() {
+      data.currentCardInfo.number = '0000';
+      assert.equal(showCurrentCardInfo(data), false);
+    });
+
+    it('returns true if user is replacing a card and has not already entered info', function() {
+      data.cardAction = 'replace';
+      assert.equal(showCurrentCardInfo(data), true);
     });
   });
 

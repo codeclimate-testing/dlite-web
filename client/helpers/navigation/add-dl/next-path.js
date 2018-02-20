@@ -2,14 +2,17 @@
 
 import {
   hasExistingCard,
+  showCurrentCardInfo,
   isChangingCard,
   isReplacingCard
 }    from '../../data/card-actions';
 
 export const addWdywtdt = (props) => {
   let key = 'addLicenseClass';
-  if (hasExistingCard(props)) {
+  if (showCurrentCardInfo(props)) {
     key = 'addCurrentCardInfo';
+  } else if (isReplacingCard(props)) {
+    key = 'addReplacementDetails'
   }
   return key;
 };

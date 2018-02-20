@@ -52,6 +52,10 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/my-basics/address', '.home-address-form', done);
   });
 
+  world.when('I visit the current card info page', function(done) {
+    navigateToPath('id-and-license/current-card-information', '.current-card-form', done);
+  });
+
   world.when('I visit the legal name page', function(done) {
     navigateToPath('/apply/id-and-license/my-basics/legal-name', '.legal-name-form', done);
   });

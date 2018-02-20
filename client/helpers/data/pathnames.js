@@ -5,20 +5,15 @@ export const onIDFlow = (props) => {
   return props.location.pathname.startsWith('/add/id-card');
 };
 
-export const ifSecondFlow = (props, iddlText, addText) => {
-  if (addingApp(props.addApp)) {
+export const getTextFromState = (props, iddlText, addText) => {
+  if (props.hasOwnProperty('addApp') && addingApp(props.addApp)) {
     return addText;
   }
   return iddlText;
 };
 
-export const setKeyFromPathname = (props) => {
-  if (props.hasOwnProperty('location') && startsWithAdd(props.location.pathname)) {
-    return splitPathname(props.location.pathname);
-  } else {
-    return props.sectionKey;
-  }
 export const getTextFromPathname = (props, initialFlow, addDLFlow, addIDFlow) => {
+  if (!props.hasOwnProperty('location')) { return initialFlow; }
   let value = splitPathname(props.location.pathname);
   if (driverLicense(value)) {
     return addDLFlow;

@@ -31,15 +31,17 @@ const formReducer = (state = defaultState(), action) => {
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
 
-    if (action.payload.name === 'DLAction') {
-      newState = true;
-    } else if (action.payload.name === 'IDAction') {
+    if (action.payload.name === 'DLAction' || action.payload.name === 'IDAction') {
       newState = state;
     }
   }
 
-  else if (action.type === TYPES.ADD_APP && driverLicense(action.payload.value)) {
-    newState = true;
+  else if (action.type === TYPES.ADD_APP ){
+    if (driverLicense(action.payload.value)) {
+      newState = true;
+    } else {
+      newState = state;
+    }
   }
 
   else if (action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD) {

@@ -1,8 +1,13 @@
 'use strict';
 import { hasValue }     from './validations';
+import * as dataPresent from '../data-present';
 
 export const hasExistingCard = (props) => {
   return isChangingCard(props) || isReplacingCard(props) || isRenewingCard(props);
+};
+
+export const showCurrentCardInfo = (props) => {
+  return hasExistingCard(props) && !dataPresent.currentCardInfo(props.currentCardInfo);
 };
 
 export const isChangingCard = (props) => {

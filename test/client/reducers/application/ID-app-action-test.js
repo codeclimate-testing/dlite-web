@@ -198,6 +198,18 @@ describe('IDApp action reducer', function() {
       assert.equal(newState, state);
     });
   });
+
+  describe('#addApp', function() {
+    it('returns existing state when user clicks button to add a DL after completing ID app', function() {
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'driver-license'
+        }
+      });
+      assert.equal(newState, state);
+    });
+  });
 });
 
 

@@ -27,7 +27,7 @@ const cardReplacement = (props) => {
 };
 
 const currentCardInfo = (props) => {
-  return date(props) && hasAllAttributes(props, ['number'])
+  return hasAnyAttributes(props, ['number', 'month', 'day', 'year']);
 };
 
 const reducedFee = (props) => {

@@ -29,9 +29,17 @@ const formReducer = (state = defaultState(), action) => {
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION){
     if (action.payload.name === 'IDAction') {
-      newState = true;
+      newState = state;
     }
     else if (action.payload.name === 'DLAction') {
+      newState = state;
+    }
+  }
+
+  else if (action.type === TYPES.ADD_APP){
+    if (action.payload.value === 'id-card') {
+      newState = true;
+    } else {
       newState = state;
     }
   }
@@ -44,11 +52,6 @@ const formReducer = (state = defaultState(), action) => {
       newState = action.payload.value === 'Yes';
     }
   }
-
-  else if (action.type === TYPES.ADD_APP) {
-    newState = state;
-  }
-
   return newState;
 };
 export default formReducer;

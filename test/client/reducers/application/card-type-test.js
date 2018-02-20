@@ -207,6 +207,17 @@ describe('cardTypeReducer', function() {
       });
       assert.deepEqual(newState, ['DL']);
     });
+
+    it('changes state to ["ID"] if user clicks button to add an ID application', function() {
+      state = ['DL'];
+      let newState = updateCardType(state, {
+        type: 'ADD_APP',
+        payload: {
+          value: 'id-card'
+        }
+      });
+      assert.deepEqual(newState, ['ID']);
+    });
   });
 });
 

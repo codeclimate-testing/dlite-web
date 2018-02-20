@@ -5,7 +5,8 @@ import connectForm            from '../../helpers/connect-form';
 
 import handlers               from '../../helpers/handlers';
 import { WDYWTDTValidator }   from '../../helpers/validations';
-import { updateCardAction }     from "../../actions/index";
+import { updateCardAction }   from "../../actions/index";
+import { getCorrectApp }      from '../../helpers/data/card-type';
 import Presentation           from "../../presentations/get-started/what-do-you-want-to-do-today-page.jsx";
 
 const Page = (props) => {
@@ -31,7 +32,8 @@ function mapStateToProps(state) {
     dateOfBirth:  state.application.basics.dateOfBirth,
     focused:      state.ui.focus,
     validations:  state.ui.validations,
-    addApp:       state.ui.addApp
+    addApp:       state.ui.addApp,
+    currentCardInfo   : getCorrectApp(state.application).currentCard
   };
 };
 

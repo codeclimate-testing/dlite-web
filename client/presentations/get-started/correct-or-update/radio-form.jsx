@@ -11,7 +11,7 @@ const Form = (props) => {
       <fieldset>
         <RadioCollection
           {...props}
-          name          = 'correctOrUpdate'
+          name          = {`${props.formName}-correctOrUpdate`}
           errorMessage  = { props.validations.correctOrUpdate() }
         >
           <RadioSelector

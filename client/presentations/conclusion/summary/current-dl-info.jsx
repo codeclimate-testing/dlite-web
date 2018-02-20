@@ -6,29 +6,48 @@ import translations       from '../../../i18n';
 import { printDate }      from '../../../helpers/print-date';
 import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
-import { ifAddLicense }   from '../../../helpers/data/pathnames';
+import { getTextFromState }   from '../../../helpers/data/pathnames';
 import { existingDL }     from '../../../helpers/data/card-type';
+import { hasValue }       from '../../../helpers/data/validations';
 
+const DLNumber = (props) => {
+  if (!hasValue(props.number)) { return null; }
+  return (
+    <SummaryItem
+      title='Driver license number'
+      text={props.number}
+    />
+  )
+};
+
+const DLDate = (props) => {
+  if (!dataPresent.date(props.currentCardInfo)) { return null; }
+  let date = printDate(props.currentCardInfo);
+  return (
+    <SummaryItem
+      title='Expiration date'
+      text={date}
+    />
+  )
+};
 
 const CurrentDLInfo = (props) => {
   if(!existingDL(props)) { return null; }
   if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
-  let DLNumber = props.currentCardInfo.number
-  let date = printDate(props.currentCardInfo);
 
   return (
     <PageSummaryLink
       to='/current-card-information'
-      name = {ifAddLicense(props.addApp, 'currentCardInfo', 'addCurrentCardInfo')}
+      name = {getTextFromState(props, 'currentCardInfo', 'addCurrentCardInfo')}
     >
-      <SummaryItem
-        title='Driver license number'
-        text={DLNumber}
+      <DLNumber
+        number = {props.currentCardInfo.number}
       />
-      <SummaryItem
-        title='Expiration date'
-        text={date}
+
+      <DLDate
+        currentCardInfo = {props.currentCardInfo}
       />
+
     </PageSummaryLink>
   )
 };

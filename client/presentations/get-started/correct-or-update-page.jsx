@@ -23,6 +23,7 @@ const text = {
 
 const Form = (props) => {
   let tag  = getCorrectString(props, text.DL, text.ID);
+  let formName = getCorrectString(props, 'DL', 'ID');
 
   return (
     <Page
@@ -33,14 +34,19 @@ const Form = (props) => {
         {convertToHtml('h2', translations.intro.correctOrUpdatePage.prompt, 'question')}
         {tag}
         <form onSubmit={ props.onSubmit }>
-          <RadioForm {...props} />
+          <RadioForm
+            {...props}
+            formName  = { formName }
+          />
           <UpdateForm
             {...props}
             showIf    = { hasSpecifiedChange(props) }
+            formName  = { formName }
           />
           <OtherText
             {...props}
             showIf    = { otherIsSelected(props) }
+            formName  = { formName }
           />
           <NavigationButtons
             {...props}

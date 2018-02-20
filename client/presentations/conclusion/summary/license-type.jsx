@@ -5,7 +5,7 @@ import * as dataPresent from '../../../helpers/data-present';
 import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
-import { ifAddLicense } from '../../../helpers/data/pathnames';
+import { getTextFromState } from '../../../helpers/data/pathnames';
 
 
 import {
@@ -74,7 +74,7 @@ const LicenseType = (props) => {
   return (
     <PageSummaryLink
       to='/license-type'
-      name={ifAddLicense(props.addApp, 'chooseLicenseClass', 'addLicenseClass')}
+      name={getTextFromState(props, 'chooseLicenseClass', 'addLicenseClass')}
     >
       <SummaryItem
         title='Need to drive'

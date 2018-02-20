@@ -59,9 +59,9 @@ describe('ReplacementDetails', function() {
           <ReplacementDetail {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="reason-lostOrStolen"]').length, 'radio button to select correct is missing');
-      assert.ok(component.find('label[for="reason-damaged"]').length, 'radio button to select update is missing');
-      assert.ok(component.find('label[for="reason-other"]').length, 'radio button to select update is missing');
+      assert.ok(component.find('label[for="DL-lostOrStolen"]').length, 'radio button to select correct is missing');
+      assert.ok(component.find('label[for="DL-damaged"]').length, 'radio button to select update is missing');
+      assert.ok(component.find('label[for="DL-other"]').length, 'radio button to select update is missing');
     });
   });
 });

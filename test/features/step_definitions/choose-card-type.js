@@ -75,9 +75,16 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I choose to update my card', function(done) {
+  world.and('I choose to update my DL', function(done) {
     browser
-      .click('label[for="correctOrUpdate-update"]')
+      .click('label[for="DL-correctOrUpdate-update"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.and('I choose to update my ID', function(done) {
+    browser
+      .click('label[for="ID-correctOrUpdate-update"]')
       .then(done)
       .catch(done);
   });
@@ -89,9 +96,16 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.and('I select it was damaged', function(done) {
+  world.and('I select the DL was damaged', function(done) {
     browser
-      .click('label[for="reason-damaged"]')
+      .click('label[for="DL-damaged"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.and('I select the ID was damaged', function(done) {
+    browser
+      .click('label[for="ID-damaged"]')
       .then(done)
       .catch(done);
   });
@@ -154,6 +168,11 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert(text.includes('I amRenewing'), 'DL renewal card type not saved in summary');
+      })
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that my new ID card type has been saved', function(done) {
     browser
       .text()

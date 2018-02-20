@@ -152,27 +152,15 @@ describe('DL app action reducer', function() {
   });
 
   describe('#addApp', function() {
-    it('resets to default blank string when user clicks button to add a DL after completing ID app', function() {
+    it('returns existing state when user clicks button to add a DL after completing ID app', function() {
       let newState = updateCardType(state, {
         type: 'ADD_APP',
         payload: {
           value: 'driver-license'
         }
       });
-      assert.equal(newState, '');
-    });
-    it('returns the existing state when action updated from get ID flow', function() {
-      state = 'change';
-      let newState = updateCardType(state, {
-        type: 'UPDATE_CARD_ACTION',
-        payload: {
-          name: 'IDAction',
-          value: 'replace'
-        }
-      });
       assert.equal(newState, state);
     });
-
   });
 });
 
