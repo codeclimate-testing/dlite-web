@@ -48,6 +48,10 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
   });
 
+  world.when('I visit the page to choose application language', function(done) {
+    navigateToPath('/apply/choose-language', '.choose-card-form', done);
+  });
+
   world.when('I visit the addresses page', function(done) {
     navigateToPath('/apply/id-and-license/my-basics/address', '.home-address-form', done);
   });
@@ -189,6 +193,19 @@ module.exports = function(world) {
   world.when('I visit the page to add license type', function(done) {
     navigateToPath('/add/driver-license/type', 'license-type-form', done);
   });
+
+  world.when('I will be on the page to choose application', function(done) {
+    assertOnPage('.choose-application-form', /apply\/choose-application/, done);
+  });
+
+  world.when('I will be on the CDL welcome page', function(done) {
+    assertOnPage('.apply-cdl', /apply\/cdl/, done);
+  });
+
+  world.when('I will be on the IDDL page', function(done) {
+    assertOnPage('.apply-iddl', /apply\/id-dl/, done);
+  });
+
   world.then('I will be on the page to add current card info', function(done) {
     assertOnPage('.current-card-form', /add\/driver-license\/current-card-information/, done);
   });

@@ -12,6 +12,13 @@ module.exports = function (world) {
       .catch((err) => { done(new Error(err)); });
   });
 
+  world.and('I click to continue', function(done) {
+    browser
+      .click('.arrow-button.forward')
+      .then(() => { done(); })
+      .catch((err) => { done(new Error(err)); });
+  });
+
   world.and('I click to go back', function(done) {
     browser
       .click('.navigation-buttons .backwards')

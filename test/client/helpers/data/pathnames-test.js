@@ -8,7 +8,8 @@ import {
   getTextFromPathname,
   addingApp,
   splitPathname,
-  getActionFromState
+  getActionFromState,
+  hasChosenApp
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
@@ -144,6 +145,27 @@ describe('Data helpers for pathnames', function() {
     it('returns the default cardAction if page is regular flow', function() {
       state.ui.addApp = 'id-and-card';
       assert.equal(getActionFromState(state), state.application.cardAction);
+    });
+  });
+
+  describe('#hasChosenApp', function() {
+    it('returns true if props.chooseApp equals "cdl"', function() {
+      let props = {
+        chooseApp: 'cdl'
+      };
+      assert.equal(hasChosenApp(props), true);
+    });
+    it('returns true if props.chooseApp equals "iddl"', function() {
+      let props = {
+        chooseApp: 'iddl'
+      };
+      assert.equal(hasChosenApp(props), true);
+    });
+    it('returns false if props.chooseApp is blank', function() {
+      let props = {
+        chooseApp: ''
+      };
+      assert.equal(hasChosenApp(props), false);
     });
   });
 });

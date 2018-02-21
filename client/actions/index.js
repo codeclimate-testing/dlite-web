@@ -71,7 +71,8 @@ export const TYPES = {
   HOVER_UP:                               'HOVER_UP',
   HOVER_DOWN:                             'HOVER_DOWN',
   CLEAR_HOVER:                            'CLEAR_HOVER',
-  ADD_APP:                                'ADD_APP'
+  ADD_APP:                                'ADD_APP',
+  CHOOSE_APP:                             'CHOOSE_APP'
 };
 
 export const createApplicationID                      = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -115,6 +116,7 @@ export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES
 export const updateGuardianIDDocFirst                 = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_FIRST);
 export const updateGuardianIDDocSecond                = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_SECOND);
 export const updateIsPreRegistering                   = generateFormAction(TYPES.UPDATE_IS_PRE_REGISTERING);
+export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

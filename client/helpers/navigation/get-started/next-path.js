@@ -1,21 +1,14 @@
 'use strict';
-import { getDL }                from '../../data/card-type';
-import { eligibleForSeniorID }  from '../../data/senior';
-import { tooYoungForDL }        from '../../data/youth';
-import { eligibleForReducedFee } from '../../data/reduced-fee';
+import { getDL }                  from '../../data/card-type';
+import { eligibleForSeniorID }    from '../../data/senior';
+import { tooYoungForDL }          from '../../data/youth';
+import { eligibleForReducedFee }  from '../../data/reduced-fee';
 import {
   hasExistingCard,
   isChangingCard,
   isReplacingCard
  } from '../../data/card-actions';
 
-export const chooseApplication = (props) => {
-  let key = 'id-dl';
-  if (props.addApp === 'cdl') {
-    key = 'cdl';
-  }
-  return key;
-};
 
 export const chooseCardType = (props) => {
   let key = 'realID';

@@ -41,6 +41,12 @@ const Home = () => {
     <div>
       <h2 className='question'>Pages</h2>
       <ul className='section-links'>
+        <LinkSection name='Intro'>
+          { wrapGroup(linkData.intro) }
+        </LinkSection>
+        <LinkSection name='CDL App'>
+          { wrapGroup(linkData.cdl) }
+        </LinkSection>
         <LinkSection name='Get started'>
           { wrapGroup(linkData.getStarted) }
         </LinkSection>

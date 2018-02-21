@@ -39,6 +39,18 @@ export const idCard = (value) => {
   return value === 'id-card';
 };
 
+export const cdlApp = (value) => {
+  return value === 'cdl';
+};
+
+const IDDLApp = (value) => {
+  return value === 'iddl';
+};
+
+export const hasChosenApp = (props) => {
+  return cdlApp(props.chooseApp) || IDDLApp(props.chooseApp);
+};
+
 export const getActionFromState = (state) => {
   let key = state.application.cardAction;
   if (driverLicense(state.ui.addApp)) {

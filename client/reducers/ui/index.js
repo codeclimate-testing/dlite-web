@@ -8,6 +8,7 @@ import section              from './section';
 import validations          from './validations';
 import hover                from './hover';
 import addApp               from './add-app';
+import chooseApp            from './choose-app';
 
 const rootReducer = combineReducers({
   focus,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   section,
   validations,
   hover,
-  addApp
+  addApp,
+  chooseApp
 });
 
 export default rootReducer;

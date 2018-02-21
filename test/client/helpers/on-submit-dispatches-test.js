@@ -99,7 +99,7 @@ describe('on submit dispatches', function() {
     it('the pathname will be updated to go to the choose application type page', function() {
       let onSubmit = onSubmitDispatches.defaultLanguage(stateProps, dispatchProps.dispatch, ownProps);
       onSubmit(event);
-      assert.equal(ownProps.history.entries[1].pathname, '/apply/choose');
+      assert.equal(ownProps.history.entries[1].pathname, '/apply/choose-application');
     });
   });
 

@@ -7,4 +7,4 @@ function defaultState() {
   return '';
 };
 
-export default formValueReducer(defaultState, TYPES.ADD_APP);
+export default formValueReducer(defaultState, TYPES.CHOOSE_APP);

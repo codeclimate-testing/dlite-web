@@ -13,8 +13,8 @@ import {
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
-import IDDLWelcome                            from '';
-import CDLWelcome                             from '';
+import IDDLWelcome                            from './get-started/id-dl-page.jsx';
+import CDLWelcome                             from './cdl/cdl-page.jsx';
 
 import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';

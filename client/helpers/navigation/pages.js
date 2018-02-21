@@ -5,6 +5,7 @@ import {
   addPath,
   cdlPath
 } from '../alice-path';
+import intro                from './intro/pages';
 import getStarted           from './get-started/pages';
 import myBasics             from './my-basics/pages';
 import myHistory            from './my-history/pages';
@@ -15,36 +16,23 @@ import addDLCard            from './add-dl/pages';
 import addIDCard            from './add-id/pages';
 import cdl                  from './cdl/pages';
 
-const expand = (collection) => {
+const expand = (collection, action) => {
   return collection.map((item) => {
-    let path = item.path.startsWith('/apply/') ? item.path : iddlPath(item.path);
-    return Object.assign({}, item, {path: path});
-  });
-};
-
-const expandAdd = (collection) => {
-  return collection.map((item) => {
-    let path = addPath(item.path);
-    return Object.assign({}, item, {path: path});
-  });
-};
-
-const expandCDL = (collection) => {
-  return collection.map((item) => {
-    let path = cdlPath(item.path);
+    let path = action(item.path);
     return Object.assign({}, item, {path: path});
   });
 };
 
 export default {
-  getStarted: expand(getStarted),
-  myBasics: expand(myBasics),
-  myHistory: expand(myHistory),
-  organDonation: expand(organDonation),
-  voterRegistration: expand(voterRegistration),
-  conclusion: expand(conclusion),
-  addDLCard: expandAdd(addDLCard),
-  addIDCard: expandAdd(addIDCard),
-  cdl: expandCDL(cdl)
+  intro:            expand(intro, alicePath),
+  getStarted:       expand(getStarted, iddlPath),
+  myBasics:         expand(myBasics, iddlPath),
+  myHistory:        expand(myHistory, iddlPath),
+  organDonation:    expand(organDonation, iddlPath),
+  voterRegistration: expand(voterRegistration, iddlPath),
+  conclusion:       expand(conclusion, iddlPath),
+  addDLCard:        expand(addDLCard, addPath),
+  addIDCard:        expand(addIDCard, addPath),
+  cdl:              expand(cdl, cdlPath)
 };
 

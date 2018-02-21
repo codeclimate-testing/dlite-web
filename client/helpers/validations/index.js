@@ -2,6 +2,7 @@
 
 import formValidationGenerator  from './form-validator';
 
+import chooseApplicationRules   from './choose-application-rules';
 import namePageRules            from './name-page-rules';
 import dobPageRules             from './dob-page-rules';
 import wdywtdtRules             from './wdywtdt-rules';
@@ -31,6 +32,7 @@ import contactRules             from './contact-rules';
 import ssnRules                 from './ssn-rules';
 import guardianSignatureRules   from './guardian-signature-rules';
 
+export const ChooseAppValidator           = formValidationGenerator(chooseApplicationRules);
 export const NamePageValidator            = formValidationGenerator(namePageRules);
 export const DOBValidator                 = formValidationGenerator(dobPageRules);
 export const WDYWTDTValidator             = formValidationGenerator(wdywtdtRules);

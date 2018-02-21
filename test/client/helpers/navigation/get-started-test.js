@@ -77,6 +77,14 @@ describe('Data helpers for determining next path from current page and props in 
     };
   });
   describe('#getStarted section', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        chooseApp: ''
+      }
+    });
+
+
     describe('##chooseCardType', function() {
 
       it('if senior customer has existing card it will navigate to the existing card page', function() {
