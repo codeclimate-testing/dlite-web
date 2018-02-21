@@ -8,6 +8,7 @@ import { WDYWTDTValidator }   from '../../helpers/validations';
 import { updateCardAction }   from "../../actions/index";
 import { getCorrectApp }      from '../../helpers/data/card-type';
 import Presentation           from "../../presentations/get-started/what-do-you-want-to-do-today-page.jsx";
+import { getActionFromState } from '../../helpers/data/pathnames';
 
 const Page = (props) => {
   let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
@@ -27,13 +28,13 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardAction:   state.application.cardAction,
-    cardType:     state.application.cardType,
-    dateOfBirth:  state.application.basics.dateOfBirth,
-    focused:      state.ui.focus,
-    validations:  state.ui.validations,
-    addApp:       state.ui.addApp,
-    currentCardInfo   : getCorrectApp(state.application).currentCard
+    cardAction:       getActionFromState(state),
+    cardType:         state.application.cardType,
+    dateOfBirth:      state.application.basics.dateOfBirth,
+    focused:          state.ui.focus,
+    validations:      state.ui.validations,
+    addApp:           state.ui.addApp,
+    currentCardInfo:  getCorrectApp(state.application).currentCard
   };
 };
 

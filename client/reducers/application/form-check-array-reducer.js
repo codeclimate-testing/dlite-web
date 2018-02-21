@@ -1,3 +1,5 @@
+'use strict';
+
 const formCheckArrayReducer  = (name, value, data) => {
   let array = data[name];
 

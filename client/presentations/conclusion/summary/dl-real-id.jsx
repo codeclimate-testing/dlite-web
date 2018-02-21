@@ -37,7 +37,6 @@ const DLRealID = (props) => {
   if(!DLAppExists(props) || !isSelected(props)) { return null; }
   return (
     <PageSummaryLink
-      to='/real-id'
       name='realID'
     >
       <Yes realID = {props.realID} />

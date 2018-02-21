@@ -2,23 +2,20 @@
 
 import React from 'react';
 import * as dataPresent from '../../../helpers/data-present';
-import { getDL }        from '../../../helpers/data/card-type';
+import { DLAppExists }        from '../../../helpers/data/card-type';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
-import { getStringByStatus} from '../../../helpers/data/summary';
-import { getTextFromState } from '../../../helpers/data/pathnames';
 import {
   getStringByMedical
 }   from '../../../helpers/data/my-history';
 
 const MedicalHistory = (props) => {
-  if (!getDL(props)) { return null; }
+  if (!DLAppExists(props)) { return null; }
   let medicalCondition = getStringByMedical(props);
 
   return (
     <PageSummaryLink
-      to='/my-history/medical'
-      name={getTextFromState(props, 'medicalHistory', 'addMedicalHistory')}
+      name= 'addMedicalHistory'
     >
       <SummaryItem
         title='Medical conditions:'

@@ -20,7 +20,7 @@ const DLChanges = {
 };
 
 
-describe('DL replacement reason', function() {
+describe('ID corrections and updates reducer', function() {
   let state;
 
   beforeEach(function() {

@@ -33,11 +33,11 @@ describe('DL replacement reason', function() {
 
   it('returns the action payload value if action payload name is DL', function() {
     let newState = updateChanges(state, DLChanges);
-    assert.equal(newState.correctOrUpdate, DLChanges.payload.value);
+    assert.deepEqual(newState.correctOrUpdate, DLChanges.payload.value);
   });
 
   it('returns the existing state if action payload name is ID', function(){
     let newState = updateChanges(state, IDChanges);
-    assert.equal(newState, state);
+    assert.deepEqual(newState, state);
   });
 });

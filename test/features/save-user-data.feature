@@ -151,7 +151,7 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my license and id history
-    Then I will be on the page to enter existing license and id
+    Then I will be on the page to add license history
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my previous names
@@ -159,7 +159,7 @@ Feature: Save user data
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my medical history
-    Then I will be taken to medical history page
+    Then I will be on the page to add medical history
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my license issues
@@ -168,8 +168,6 @@ Feature: Save user data
     Then I will be on the page with my summary
     Then I click to edit my veterans service
     Then I will be on the page for veteran related services
-    When I click "Next" to continue
-    Then I will be on the page with my summary
 
   Scenario: renewing one ID and no social
     Given I go to the new online DL application page

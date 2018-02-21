@@ -67,8 +67,7 @@ const IDAction = (props) => {
 
   return (
     <PageSummaryLink
-      to='/what-do-you-want-to-do-today'
-      name='wdywtdt'
+      name='addIDWdywtdt'
     >
       <New IDApp = {props.IDApp}/>
       <Renew IDApp = {props.IDApp}/>

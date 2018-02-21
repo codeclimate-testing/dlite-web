@@ -27,12 +27,6 @@ describe('onFlowChange', function() {
     }));
   });
 
-  it('does not dispatch an action if the split pathname does not equal "driver-license"', function() {
-    props.location.pathname = '/apply/some-url/';
-    onChange(props);
-    assert.equal(dispatch.called, false);
-  });
-
   it('does not dispatch an action if the existing state already matches the split pathname', function() {
     props.location.pathname = '/add/driver-license/';
     props.addApp = 'driver-license';

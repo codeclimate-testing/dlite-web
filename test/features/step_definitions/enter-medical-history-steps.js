@@ -58,7 +58,7 @@ module.exports = function(world) {
 
   world.when('I click to edit my medical history', function(done) {
     browser
-      .click('.medicalHistory.button.summary')
+      .click('.addMedicalHistory.button.summary')
       .then(done)
       .catch(done);
   });

@@ -87,6 +87,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I choose to add a renewal ID', function(done) {
+    browser
+      .click('label[for=IDAction-renew]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.when('I choose to add a replacement ID', function(done) {
     browser
       .click('label[for=IDAction-replace]')

@@ -7,7 +7,8 @@ import {
   getTextFromState,
   getTextFromPathname,
   addingApp,
-  splitPathname
+  splitPathname,
+  getActionFromState
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
@@ -111,6 +112,38 @@ describe('Data helpers for pathnames', function() {
     it('returns "id-card" in the url for the add ID wdywtdt url', function() {
       let pathname = '/add/id-card/what-do-you-want-to-do-today';
       assert.equal(splitPathname(pathname), 'id-card');
+    });
+  });
+
+  describe('#getActionFromState', function() {
+    let state;
+    beforeEach(function() {
+      state = {
+        application: {
+          cardAction: 'default',
+          DLApp: {
+            action: 'DL action'
+          },
+          IDApp: {
+            action: 'ID action'
+          }
+        },
+        ui: {
+          addApp: ''
+        }
+      };
+    })
+    it('returns the DLApp action if addApp state is "driver-license"', function() {
+      state.ui.addApp = 'driver-license';
+      assert.equal(getActionFromState(state), state.application.DLApp.action);
+    });
+    it('returns the IDApp action if addApp state is "id-card"', function() {
+      state.ui.addApp = 'id-card';
+      assert.equal(getActionFromState(state), state.application.IDApp.action);
+    });
+    it('returns the default cardAction if page is regular flow', function() {
+      state.ui.addApp = 'id-and-card';
+      assert.equal(getActionFromState(state), state.application.cardAction);
     });
   });
 });

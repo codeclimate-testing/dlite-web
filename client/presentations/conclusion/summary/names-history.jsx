@@ -14,7 +14,6 @@ const NamesHistory = (props) => {
 
   return (
     <PageSummaryLink
-      to='/my-history/names'
       name='nameHistory'
     >
       <SummaryItem

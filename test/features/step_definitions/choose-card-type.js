@@ -98,14 +98,14 @@ module.exports = function(world) {
 
   world.and('I select the DL was damaged', function(done) {
     browser
-      .click('label[for="DL-damaged"]')
+      .click('label[for="DL-reason-damaged"]')
       .then(done)
       .catch(done);
   });
 
   world.and('I select the ID was damaged', function(done) {
     browser
-      .click('label[for="ID-damaged"]')
+      .click('label[for="ID-reason-damaged"]')
       .then(done)
       .catch(done);
   });

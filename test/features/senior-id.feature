@@ -119,7 +119,7 @@ Feature: Customers can get a senior ID for free
     When I enter my current card data
     And I click "Next" to continue
     Then I will be on the page to add ID replacement details
-    When I select it was damaged
+    When I select the ID was damaged
     And I click "Next" to continue
     Then I will be on the page to add senior id
     When I select yes to get a senior id
@@ -127,3 +127,4 @@ Feature: Customers can get a senior ID for free
     Then I will be on the page with my summary
     Then I will see that I have opted for my senior ID
     And I will see that I am replacing my ID
+

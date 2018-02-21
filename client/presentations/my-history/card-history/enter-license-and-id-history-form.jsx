@@ -8,12 +8,11 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const text = {
   DLIDNumber: translations.myHistory.cardHistoryPage.numberLabel,
-  issuedBy: translations.myHistory.cardHistoryPage.stateOrCountryLabel
+  issuedBy:   translations.myHistory.cardHistoryPage.stateOrCountryLabel
 };
 
 const EnterLicenseAndIdHistory = (props) => {
   if (!props.showIf) { return null; }
-
   return (
     <div className='existing-license-id-number-form'>
       <hr/>

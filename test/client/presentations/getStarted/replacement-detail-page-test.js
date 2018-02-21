@@ -51,17 +51,16 @@ describe('ReplacementDetails', function() {
 
     it('if the user is replacing a DL the form has radio buttons', function() {
       props.cardType = ['DL'];
-      props.DLApp.isApplying = true;
-      props.DLApp.action = 'replace';
 
       let component = render(
         <Wrapper>
           <ReplacementDetail {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="DL-lostOrStolen"]').length, 'radio button to select correct is missing');
-      assert.ok(component.find('label[for="DL-damaged"]').length, 'radio button to select update is missing');
-      assert.ok(component.find('label[for="DL-other"]').length, 'radio button to select update is missing');
+
+      assert.ok(component.find('label[for="DL-reason-lostOrStolen"]').length, 'radio button to select correct is missing');
+      assert.ok(component.find('label[for="DL-reason-damaged"]').length, 'radio button to select update is missing');
+      assert.ok(component.find('label[for="DL-reason-other"]').length, 'radio button to select update is missing');
     });
   });
 });

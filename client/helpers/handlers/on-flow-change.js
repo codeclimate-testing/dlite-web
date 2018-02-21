@@ -12,7 +12,7 @@ export default (dispatch) =>  {
     if (!props.hasOwnProperty('location')){ return; }
 
     let value = splitPathname(props.location.pathname);
-    if (value === props.addApp || !addingApp(value)) { return; }
+    if (value === props.addApp ) { return; }
     dispatch(addApp(value));
   };
 };

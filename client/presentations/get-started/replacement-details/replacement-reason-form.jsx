@@ -16,7 +16,7 @@ const Form = (props) => {
       <fieldset>
         <RadioCollection
           {...props}
-          name= {formName}
+          name= {`${formName}-reason`}
           onBlur  = { props.onBlurValidate }
           errorMessage = {props.validations.reason() }
         >

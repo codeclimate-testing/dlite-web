@@ -95,15 +95,13 @@ export const needsEndorsement = (props) => {
 };
 
 export const getCorrectString = (props, DLString, IDString, bothString) => {
+  let key = DLString;
   if (hasMultipleCards(props)) {
-    return bothString;
+    key = bothString;
   } else if (getID(props)) {
-    return IDString
-  } else if (getDL(props)) {
-    return DLString
-  } else {
-    return '';
+    key = IDString
   }
+  return key;
 };
 
 export const getCorrectApp = (state) => {

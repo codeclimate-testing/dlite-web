@@ -38,3 +38,13 @@ export const driverLicense = (value) => {
 export const idCard = (value) => {
   return value === 'id-card';
 };
+
+export const getActionFromState = (state) => {
+  let key = state.application.cardAction;
+  if (driverLicense(state.ui.addApp)) {
+    key = state.application.DLApp.action;
+  } else if (idCard(state.ui.addApp)) {
+    key = state.application.IDApp.action;
+  }
+  return key;
+}

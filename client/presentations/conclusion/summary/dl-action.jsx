@@ -64,13 +64,13 @@ const Update = (props) => {
   )
 };
 
+
 const DLAction = (props) => {
   if(!DLAppExists(props)) { return null; }
 
   return (
     <PageSummaryLink
-      to='/what-do-you-want-to-do-today'
-      name={getTextFromState(props, 'wdywtdt', 'addWdywtdt')}
+      name= 'addWdywtdt'
     >
       <New DLApp = {props.DLApp}/>
       <Renew DLApp = {props.DLApp}/>

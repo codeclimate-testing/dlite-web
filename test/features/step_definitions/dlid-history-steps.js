@@ -92,7 +92,7 @@ module.exports = function (world) {
 
   world.when('I click to edit my license and id history', function(done) {
     browser
-      .click('.cardHistory.button.summary')
+      .click('.addLicenseHistory.button.summary')
       .then(done)
       .catch(done);
   });

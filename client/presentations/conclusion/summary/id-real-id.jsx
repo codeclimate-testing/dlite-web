@@ -37,7 +37,6 @@ const IDRealID = (props) => {
 
   return (
     <PageSummaryLink
-      to='/real-id'
       name='realID'
     >
       <Yes realID = {props.realID} />

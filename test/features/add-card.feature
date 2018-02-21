@@ -92,7 +92,7 @@ Scenario: Adding a DL update/correct
   And I will not see a card history section
   Then I will see that I am updating my DL
 
-Scenario: Adding a DL replacement
+Scenario: Adding a DL replacement after replacing an ID
   Given I have already filled out my ID application
   When I visit the current card info page
   And I enter my current card data
@@ -133,6 +133,15 @@ Scenario: Choosing to add a renewal ID
   When I go to the page with my summary
   Then I will see the info of the ID card saved
 
+Scenario: Adding a renewal ID after renewing a DL
+  Given I have already filled out my DL application
+  When I visit the current card info page
+  And I enter my current card data
+  When I visit the page to add an ID
+  And I choose to add a renewal ID
+  And I click "Next" to continue
+  Then I will be on the page to add reduced fee
+
 Scenario: Choosing to add a correct/updated ID
   Given I have already filled out my DL application
   When I visit the page to add an ID
@@ -142,7 +151,7 @@ Scenario: Choosing to add a correct/updated ID
   When I enter my current card data
   And I click "Next" to continue
   Then I will be on the page to add correct/update details
-  Then I choose to update my card
+  Then I choose to update my ID
   And I check the box to update my name
   When I go to the page with my summary
   Then I will see that I am updating the name on my ID
@@ -155,5 +164,14 @@ Scenario: Choosing to add a replacement ID
   And I click "Next" to continue
   Then I will be on the page to add current ID info
   When I enter my current card data
+  And I click "Next" to continue
+  Then I will be on the page to add ID replacement details
+
+Scenario: Adding a replacement ID after replacing a DL
+  Given I have already filled out my DL application
+  When I visit the current card info page
+  And I enter my current card data
+  When I visit the page to add an ID
+  And I choose to add a replacement ID
   And I click "Next" to continue
   Then I will be on the page to add ID replacement details

@@ -6,7 +6,6 @@ import translations       from '../../../i18n';
 import { printDate }      from '../../../helpers/print-date';
 import PageSummaryLink    from '../../page-summary-link.jsx';
 import SummaryItem        from './summary-item.jsx';
-import { getTextFromState }   from '../../../helpers/data/pathnames';
 import { existingDL }     from '../../../helpers/data/card-type';
 import { hasValue }       from '../../../helpers/data/validations';
 
@@ -37,8 +36,7 @@ const CurrentDLInfo = (props) => {
 
   return (
     <PageSummaryLink
-      to='/current-card-information'
-      name = {getTextFromState(props, 'currentCardInfo', 'addCurrentCardInfo')}
+      name = 'addCurrentCardInfo'
     >
       <DLNumber
         number = {props.currentCardInfo.number}

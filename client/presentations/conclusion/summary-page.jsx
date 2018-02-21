@@ -85,7 +85,7 @@ const contents = (props) => {
   </Accordion>,
 
   <Accordion id='history-summary' title='My history' key='history-summary'>
-    <MedicalHistory medicalHistory={application.history.medicalHistory} cardType={application.cardType} addApp = {props.ui.addApp}/>
+    <MedicalHistory medicalHistory={application.history.medicalHistory} DLApp={application.DLApp} addApp = {props.ui.addApp}/>
     <LicenseAndIdHistory licenseAndIdHistory={application.history.licenseAndIdHistory} addApp = {props.ui.addApp}/>
     <NamesHistory namesHistory={application.history.namesHistory} />
     <LicenseIssues licenseIssues={application.history.licenseIssues} addApp = {props.ui.addApp} />

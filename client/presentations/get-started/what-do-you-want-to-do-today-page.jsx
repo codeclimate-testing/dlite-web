@@ -36,9 +36,6 @@ const anotherTempObjectThatNeedsTranslation = {
 const Form = (props) => {
   let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations, anotherTempObjectThatNeedsTranslation);
 
-  // this is temporary as we go through the stories to add all options in for the ID
-  let hideSomeButtons = onIDFlow(props);
-
   return (
     <Page
       {...props}
@@ -65,12 +62,10 @@ const Form = (props) => {
                   text={text.values[1]}
                 />
                 <RadioSelector
-                  hide = {hideSomeButtons}
                   value = 'change'
                   text={text.values[2]}
                 />
                 <RadioSelector
-                  hide = {hideSomeButtons}
                   value='replace'
                   text={text.values[3]}
                 />

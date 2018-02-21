@@ -569,7 +569,7 @@ describe('Summary components', function() {
           hasMedicalCondition: 'Yes',
           medicalInfo: 'blind'
         };
-        props.cardType = ['ID'];
+        props.DLApp.isApplying = false;
 
         let component = render(
           <Wrapper>

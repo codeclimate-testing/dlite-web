@@ -1,4 +1,9 @@
 'use strict';
+import {
+  showCurrentCardInfo,
+  isChangingCard,
+  isReplacingCard
+} from '../../data/card-actions';
 
 import {
   eligibleForSeniorID,
@@ -7,7 +12,34 @@ import {
 
 export const addIDWdywtdt = (props) => {
   let key = 'addReducedFee';
-  if (eligibleForSeniorID(props)){
+  if (showCurrentCardInfo(props)) {
+    key = 'addCurrentIDInfo';
+  }
+  else if (isReplacingCard(props)) {
+    key = 'addIDReplacementDetails'
+  }
+  else if (eligibleForSeniorID(props)){
+    key = 'addSeniorID';
+  }
+  return key;
+};
+
+export const addCurrentIDInfo = (props) => {
+  let key = 'addReducedFee';
+  if (isChangingCard(props)) {
+    key = 'addCorrectUpdateID';
+  } else if (isReplacingCard(props)) {
+    key = 'addIDReplacementDetails';
+  }
+  else if (eligibleForSeniorID(props)){
+    key = 'addSeniorID';
+  }
+  return key;
+};
+
+export const addChangedID = (props) => {
+  let key = 'addReducedFee';
+  if(eligibleForSeniorID(props)) {
     key = 'addSeniorID';
   }
   return key;
@@ -15,6 +47,7 @@ export const addIDWdywtdt = (props) => {
 
 export const addSeniorID = (props) => {
   let key = 'addReducedFee';
+
   if (gettingSeniorID(props)) {
     key = 'summary';
   }

@@ -38,8 +38,7 @@ const CurrentIDInfo = (props) => {
 
   return (
     <PageSummaryLink
-      to='/current-card-information'
-      name='currentCardInfo'
+      name='addCurrentIDInfo'
     >
       <IDNumber
         number = {props.currentCardInfo.number}

@@ -374,6 +374,7 @@ describe('Data helpers for card-type', function() {
   describe('#getCorrectString', function() {
     const DLString = 'license string';
     const IDString = 'ID string';
+    const bothString = 'getting both';
     it('returns ID string when user is changing ID', function() {
       data.cardType = ['ID'];
       data.cardAction = 'change';
@@ -386,6 +387,12 @@ describe('Data helpers for card-type', function() {
       data.cardAction = 'change';
       let result = getCorrectString(data, DLString, IDString);
       assert.equal(result, DLString);
+    });
+    it('returns bothString when user is getting both card types', function() {
+      data.cardType = ['DL', 'ID'];
+      data.cardAction = 'new';
+      let result = getCorrectString(data, DLString, IDString, bothString);
+      assert.equal(result, bothString);
     });
   });
 
