@@ -67,8 +67,34 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('#getRealID-Yes').length, 'Yes button missing');
-      assert.ok(component.find('#getRealID-No').length, 'No button missing');
+      assert.ok(component.find('#getRealID-both-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#getRealID-both-No').length, 'No button missing');
+    });
+
+    it('updates the radio button names with ID when user is just on ID flow', function() {
+      props.cardType = ['ID'];
+
+      let component = render(
+        <Wrapper>
+          <RealIdPage {...props}/>
+        </Wrapper>
+      );
+
+      assert.ok(component.find('#getRealID-ID-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#getRealID-ID-No').length, 'No button missing');
+    });
+
+    it('updates the radio button names with DL when user is just on ID flow', function() {
+      props.cardType = ['DL'];
+
+      let component = render(
+        <Wrapper>
+          <RealIdPage {...props}/>
+        </Wrapper>
+      );
+
+      assert.ok(component.find('#getRealID-DL-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#getRealID-DL-No').length, 'No button missing');
     });
 
     it('does not show the form asking which card if no selection is made', function() {

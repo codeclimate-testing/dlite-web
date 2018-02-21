@@ -27,7 +27,7 @@ const ChooseRealID = (props) => {
         <fieldset>
           <RadioCollection
             {...props}
-            name          = 'getRealID'
+            name          = {`getRealID-${props.formName}`}
             errorMessage  = { props.validations.realID() }
           >
             { radioYesNoGroup() }

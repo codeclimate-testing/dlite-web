@@ -186,7 +186,7 @@ Feature: Save user data
     When I enter my current card data
     And I click "Next" to continue
     Then I will be on the page for choosing real id
-    And I click yes to getting a real id
+    And I click yes to getting a real id on the ID
     And I click "Next" to continue
     Then I will be on the reduced fee page
     And I select Yes to getting a reduced fee
@@ -238,7 +238,7 @@ Feature: Save user data
     Then I will see the application title says "DMV Drivers license and ID application"
     And I will see the application header says "Drivers license and ID application"
     And I click "Next" to continue
-    When I click yes to getting a real id
+    When I click yes to getting a real id on both
     When I select ID to have my real id designation
     And I click "Next" to continue
     Then I will be on the license type page

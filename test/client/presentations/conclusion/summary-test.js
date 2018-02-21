@@ -266,7 +266,7 @@ describe('Summary components', function() {
         <Wrapper>
           <DLRealID { ...props } />
         </Wrapper>
-      )
+      );
       assert.equal(component.text().includes('Real-ID CompliantYes'), true);
     });
 
@@ -279,8 +279,20 @@ describe('Summary components', function() {
         <Wrapper>
           <DLRealID { ...data } />
         </Wrapper>
-      )
+      );
+      assert.equal(component.text().includes('Real-ID'), false);
+    });
 
+    it('does not show if realIdDesignation is not DL', function() {
+      let data = props;
+      data.realID.getRealID = 'Yes';
+      data.realID.realIdDesignation = 'ID';
+
+      let component = render(
+        <Wrapper>
+          <DLRealID { ...data } />
+        </Wrapper>
+      );
       assert.equal(component.text().includes('Real-ID'), false);
     });
 
@@ -293,9 +305,7 @@ describe('Summary components', function() {
         <Wrapper>
           <DLRealID { ...data } />
         </Wrapper>
-      )
-
-
+      );
       assert.equal(component.text().includes('Real-ID'), false);
     });
   });

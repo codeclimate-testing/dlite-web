@@ -9,8 +9,12 @@ import RealIdDesignationForm  from './real-id/choose-card-selectors.jsx';
 import ChooseRealID           from './real-id/choose-real-id.jsx';
 import translations           from '../../i18n';
 import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
+import {
+  getCorrectString
+} from '../../helpers/data/card-type';
 
 const FormPage = (props) => {
+  let formName = getCorrectString(props, 'DL', 'ID', 'both');
   return (
     <Page
       {...props}
@@ -20,6 +24,7 @@ const FormPage = (props) => {
         <ChooseRealID
           {...props}
           selectedValue = { props.realID.getRealID }
+          formName      = { formName }
         />
 
         <RealIdDesignationForm

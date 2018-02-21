@@ -5,12 +5,11 @@ import { hasValue }     from '../../../helpers/data/validations';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 import translations     from '../../../i18n';
-import {
-  DLAppExists
-} from '../../../helpers/data/card-type';
+
 import {
   gettingRealID,
-  isSelected
+  isSelected,
+  DLAsRealID
  }  from '../../../helpers/data/real-id';
 
 
@@ -34,7 +33,7 @@ const No = (props) => {
   )
 };
 const DLRealID = (props) => {
-  if(!DLAppExists(props) || !isSelected(props)) { return null; }
+  if(!DLAsRealID(props)) { return null; }
   return (
     <PageSummaryLink
       name='realID'

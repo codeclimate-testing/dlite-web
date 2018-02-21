@@ -5,11 +5,10 @@ import { hasValue }     from '../../../helpers/data/validations';
 import PageSummaryLink  from '../../page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
 import translations   from '../../../i18n';
+
 import {
-  IDAppExists
-} from '../../../helpers/data/card-type';
-import {
-  gettingRealID
+  gettingRealID,
+  IDAsRealID
 } from '../../../helpers/data/real-id';
 
 const Yes = (props) => {
@@ -33,7 +32,7 @@ const No = (props) => {
 };
 
 const IDRealID = (props) => {
-  if(!IDAppExists(props)) { return null; }
+  if(!IDAsRealID(props)) { return null; }
 
   return (
     <PageSummaryLink

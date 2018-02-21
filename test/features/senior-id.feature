@@ -15,7 +15,7 @@ Feature: Customers can get a senior ID for free
     Then I will be on the senior id page
     When I select yes to get a senior id
     And I click "Next" to continue
-    And I click yes to getting a real id
+    And I click yes to getting a real id on the ID
     And I click "Next" to continue
     Then I will be on the get started page
     When I go to the page with my summary
@@ -34,7 +34,7 @@ Feature: Customers can get a senior ID for free
     When I select no to not get a senior id
     And I click "Next" to continue
     Then I will be on the page for choosing real id
-    When I click yes to getting a real id
+    When I click yes to getting a real id on the ID
     And I click "Next" to continue
     Then I will be on the reduced fee page
     When I click to go back
@@ -62,7 +62,7 @@ Feature: Customers can get a senior ID for free
     Then I will be on the senior id page
     When I select yes to get a senior id
     And I click "Next" to continue
-    And I click yes to getting a real id
+    And I click yes to getting a real id on the ID
     And I click "Next" to continue
     Then I will be on the get started page
     When I go to the page with my summary
@@ -86,7 +86,7 @@ Feature: Customers can get a senior ID for free
     Then I will be on the senior id page
     When I select yes to get a senior id
     And I click "Next" to continue
-    And I click yes to getting a real id
+    And I click yes to getting a real id on the ID
     And I click "Next" to continue
     Then I will be on the get started page
 
