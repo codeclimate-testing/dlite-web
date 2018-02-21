@@ -7,25 +7,30 @@ import AddressTemplate    from '../../address-template.jsx';
 
 
 const GuardianContact = (props) => {
-  let guardianID = props.guardianID;
+  const guardianID = props.guardianID;
+  const phoneId = `phoneNumber_${guardianID}`;
+  const phoneValue = props.guardianSignature.guardianInfo[guardianID].phoneNumber;
+  const addressType = `guardian_${guardianID}`;
+  const address = props.guardianSignature.guardianInfo[guardianID].address;
+
   return (
     <div className='guardian-contact'>
       <fieldset>
         <TextInput
           {...props}
-          identifier  = {`phoneNumber_${guardianID}`}
+          identifier  = { phoneId }
           description = 'Phone number'
           example     = '916 314 8765'
-          value       = {props.guardianSignature.guardianInfo[guardianID].phoneNumber}
-          errorMessage= {props.phoneNumber}
+          value       = { phoneValue }
+          errorMessage= { props.phoneNumber }
         />
       </fieldset>
 
       <fieldset>
       <AddressTemplate
         {...props}
-        type          = {`guardian_${guardianID}`}
-        address       = { props.guardianSignature.guardianInfo[guardianID].address}
+        type          = { addressType }
+        address       = { address }
       />
       </fieldset>
     </div>

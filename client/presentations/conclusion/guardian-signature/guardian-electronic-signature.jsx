@@ -34,22 +34,24 @@ const ElectronicSignature = (props) => {
     props.onBlurValidate(e);
   };
 
+  const liabilityID = `acceptLiabilities_${guardianID}`;
+
   return (
 
     <div className='electronic-signature'>
       <div className='accept-liabilities-box input-container'>
         <label
-          htmlFor       = {`acceptLiabilities_${guardianID}`}
+          htmlFor       = { liabilityID }
           className     = { acceptLiabilityErrorClass }
         >
           <ErrorIcon errorClass = { acceptLiabilityErrorClass } />
-            {acceptLiabilityErrorLabel}
+          {acceptLiabilityErrorLabel}
         </label>
         <fieldset>
         <CheckboxSelector
           {...props}
-          name      = { `acceptLiabilities_${guardianID}` }
-          value     = { `acceptLiabilities_${guardianID}` }
+          name      = { liabilityID }
+          value     = { liabilityID }
           selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
           text      = { acceptLiabilityText }
           error     = { hasValue(props.validations.acceptLiabilityErrors) }
