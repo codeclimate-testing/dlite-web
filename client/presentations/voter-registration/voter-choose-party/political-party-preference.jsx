@@ -25,16 +25,16 @@ const PoliticalPartyPreference = (props) => {
             text={translations.votingRegistration.choosePartyPage.answerAmericanIndependent}
           />
           <RadioSelector
-            value='Libertarian Party'
-            text={translations.votingRegistration.choosePartyPage.answerLibertarianParty}
-          />
-          <RadioSelector
             value='Democratic Party'
             text={translations.votingRegistration.choosePartyPage.answerDemocraticParty}
           />
           <RadioSelector
             value='Green Party'
             text={translations.votingRegistration.choosePartyPage.answerGreenParty}
+          />
+          <RadioSelector
+            value='Libertarian Party'
+            text={translations.votingRegistration.choosePartyPage.answerLibertarianParty}
           />
           <RadioSelector
             value='Peace and Freedom Party'
