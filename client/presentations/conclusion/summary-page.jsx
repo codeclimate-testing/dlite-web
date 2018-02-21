@@ -68,10 +68,10 @@ const contents = (props) => {
 
   <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
     <DLApplicationNotStarted {...application}  key='dl-application-not-started' />
-    <DLAction {...application} addApp = {props.ui.addApp} />
-    <CurrentDLInfo {...application} currentCardInfo = {application.DLApp.currentCard} addApp = {props.ui.addApp} />
+    <DLAction {...application}  />
+    <CurrentDLInfo {...application} currentCardInfo = {application.DLApp.currentCard}  />
     <DLRealID {...application} />
-    <LicenseType {...application} addApp={props.ui.addApp}/>
+    <LicenseType {...application} />
   </Accordion>,
 
   <Accordion id='basics-summary' title='My basics' key='basics-summary'>

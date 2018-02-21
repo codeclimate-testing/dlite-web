@@ -11,6 +11,8 @@ export const addWdywtdt = (props) => {
   let key = 'addLicenseClass';
   if (showCurrentCardInfo(props)) {
     key = 'addCurrentCardInfo';
+  } else if (isChangingCard(props)) {
+    key = 'addUpdateCorrect';
   } else if (isReplacingCard(props)) {
     key = 'addReplacementDetails'
   }

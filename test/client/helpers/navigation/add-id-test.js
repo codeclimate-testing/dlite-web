@@ -24,12 +24,15 @@ describe('Add ID Card next-paths', function() {
   });
 
   describe('#addIDWdywtdt', function() {
-    it('returns "addSeniorID" if user is a senior', function() {
-      props.dateOfBirth.year = '1950';
-      assert.equal(addIDWdywtdt(props), 'addSeniorID');
-    });
 
     it('returns "addReducedFee" if user is a non-senior getting a new card', function() {
+      assert.equal(addIDWdywtdt(props), 'addReducedFee');
+    });
+    it('returns "addReducedFee" if user is a non-senior renewing a card who has already entered current card info', function() {
+      props.cardAction = 'renew';
+      props.currentCardInfo = {
+        number: '0000'
+      };
       assert.equal(addIDWdywtdt(props), 'addReducedFee');
     });
 
@@ -44,6 +47,15 @@ describe('Add ID Card next-paths', function() {
       assert.equal(addIDWdywtdt(props), 'addCurrentIDInfo');
     });
 
+    it('returns "addCorrectUpdateID" if user is a senior changing a card who has already entered current card info', function() {
+      props.cardAction = 'change';
+      props.dateOfBirth.year = '1950';
+      props.currentCardInfo = {
+        number: '00000000'
+      };
+      assert.equal(addIDWdywtdt(props), 'addCorrectUpdateID');
+    });
+
     it('returns "addIDReplacementDetails" if user is a senior replacing a card who has already entered current card info', function() {
       props.cardAction = 'replace';
       props.dateOfBirth = '1950';
@@ -53,12 +65,9 @@ describe('Add ID Card next-paths', function() {
       assert.equal(addIDWdywtdt(props), 'addIDReplacementDetails');
     });
 
-    it('returns "addReducedFee" if user is a non-senior renewing a card who has already entered current card info', function() {
-      props.cardAction = 'renew';
-      props.currentCardInfo = {
-        number: '0000'
-      };
-      assert.equal(addIDWdywtdt(props), 'addReducedFee');
+    it('returns "addSeniorID" if user is a senior', function() {
+      props.dateOfBirth.year = '1950';
+      assert.equal(addIDWdywtdt(props), 'addSeniorID');
     });
   });
 

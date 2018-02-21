@@ -17,24 +17,38 @@ describe('Add-DL next paths', function() {
       cardAction: '',
       currentCardInfo: {
         number: ''
+      },
+      dateOfBirth: {
+        year: (new Date().getFullYear() - 30).toString(),
+        month: '10',
+        day: '10'
       }
     };
   });
 
   describe('#addWdywtdt', function() {
-    it('returns "addCurrentCardInfo" if user is renewing a card and user hasnt already added currentCardInfo in ID path', function() {
+    it('returns "addLicenseClass" if user is getting a new card', function() {
+      data.cardAction = 'new';
+      assert.equal(addWdywtdt(data), 'addLicenseClass');
+    });
+
+    it('returns "addCurrentCardInfo" if user is renewing a card and user has not already added currentCardInfo in ID path', function() {
       data.cardAction = 'renew';
       assert.equal(addWdywtdt(data), 'addCurrentCardInfo');
     });
 
-    it('returns "addCurrentCardInfo" if user is replacing a card and user hasnt already added currentCardInfo in ID path', function() {
+    it('returns "addCurrentCardInfo" if user is replacing a card and user has not already added currentCardInfo in ID path', function() {
       data.cardAction = 'replace';
       assert.equal(addWdywtdt(data), 'addCurrentCardInfo');
     });
 
-    it('returns "addLicenseClass" if user is getting a new card', function() {
-      data.cardAction = 'new';
-      assert.equal(addWdywtdt(data), 'addLicenseClass');
+    it('returns "addUpdateCorrect" if user is a senior changing a card who has already entered current card info', function() {
+      data.cardAction = 'change';
+      data.dateOfBirth.year = '1950';
+      data.currentCardInfo = {
+        number: '00000'
+      };
+      assert.equal(addWdywtdt(data), 'addUpdateCorrect');
     });
 
     it('returns "addReplacementDetails" if user is replacing a card but has already entered currentCardInfo in ID flow', function() {

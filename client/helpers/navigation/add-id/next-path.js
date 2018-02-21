@@ -15,6 +15,9 @@ export const addIDWdywtdt = (props) => {
   if (showCurrentCardInfo(props)) {
     key = 'addCurrentIDInfo';
   }
+  else if (isChangingCard(props)) {
+    key = 'addCorrectUpdateID';
+  }
   else if (isReplacingCard(props)) {
     key = 'addIDReplacementDetails'
   }

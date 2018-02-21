@@ -2,6 +2,7 @@
 
 import React from "react";
 import translations   from '../../../i18n';
+import AddAppLink     from '../../add-app-link.jsx';
 import {
   IDAppExists
 } from '../../../helpers/data/card-type'
@@ -11,9 +12,11 @@ const IDApplicationNotStarted = (props) => {
   if(IDAppExists(props)) { return null; }
 
   return (
-    <div className='summary-section'>
+    <AddAppLink
+      to = '/id-card'
+    >
       <p>{translations.summaryPage.whatImDoing.nothing}</p>
-    </div>
+    </AddAppLink>
   );
 };
 
