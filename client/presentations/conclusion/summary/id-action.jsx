@@ -1,9 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
-import SummaryItem      from './summary-item.jsx';
 import {
   IDAppExists,
   getNewID,
@@ -11,57 +9,15 @@ import {
   replaceID,
   correctID,
   updateID
-} from '../../../helpers/data/card-type';
+}  from '../../../helpers/data/card-type';
+import {
+  New,
+  Renew,
+  Replace,
+  Correct,
+  Update
+} from './actions.jsx';
 
-const New = (props) => {
-  if (!getNewID(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.applying}
-    />
-  )
-};
-
-const Renew = (props) => {
-  if (!renewID(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.renewing}
-    />
-  )
-};
-
-const Replace = (props) => {
-  if (!replaceID(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.replacing}
-    />
-  )
-};
-
-const Correct = (props) => {
-  if (!correctID(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.correcting}
-    />
-  )
-};
-
-const Update = (props) => {
-  if (!updateID(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.updating}
-    />
-  )
-};
 const IDAction = (props) => {
   if(!IDAppExists(props)) { return null; }
 
@@ -69,11 +25,11 @@ const IDAction = (props) => {
     <PageSummaryLink
       name='addIDWdywtdt'
     >
-      <New IDApp = {props.IDApp}/>
-      <Renew IDApp = {props.IDApp}/>
-      <Replace IDApp = {props.IDApp}/>
-      <Correct IDApp = {props.IDApp}/>
-      <Update IDApp = {props.IDApp}/>
+      <New        showIf = {getNewID(props)}/>
+      <Renew      showIf = {renewID(props)}/>
+      <Replace    showIf = {replaceID(props)}/>
+      <Correct    showIf = {correctID(props)}/>
+      <Update     showIf = {updateID(props)}/>
 
     </PageSummaryLink>
   )

@@ -1,9 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import translations     from '../../../i18n';
 import PageSummaryLink  from '../../page-summary-link.jsx';
-import SummaryItem      from './summary-item.jsx';
 import {
   DLAppExists,
   renewDL,
@@ -12,58 +10,13 @@ import {
   updateDL,
   getNewDL
 } from '../../../helpers/data/card-type';
-import { getTextFromState } from '../../../helpers/data/pathnames';
-
-const New = (props) => {
-  if (!getNewDL(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.applying}
-    />
-  )
-};
-
-const Renew = (props) => {
-  if (!renewDL(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.renewing}
-    />
-  )
-};
-
-const Replace = (props) => {
-  if (!replaceDL(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.replacing}
-    />
-  )
-};
-
-const Correct = (props) => {
-  if (!correctDL(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.correcting}
-    />
-  )
-};
-
-const Update = (props) => {
-  if (!updateDL(props)) { return null; }
-  return(
-    <SummaryItem
-      title='I am'
-      text={translations.summaryPage.whatImDoing.updating}
-    />
-  )
-};
-
+import {
+  New,
+  Renew,
+  Replace,
+  Correct,
+  Update
+} from './actions.jsx';
 
 const DLAction = (props) => {
   if(!DLAppExists(props)) { return null; }
@@ -72,11 +25,11 @@ const DLAction = (props) => {
     <PageSummaryLink
       name= 'addWdywtdt'
     >
-      <New DLApp = {props.DLApp}/>
-      <Renew DLApp = {props.DLApp}/>
-      <Replace DLApp = {props.DLApp}/>
-      <Correct DLApp = {props.DLApp}/>
-      <Update DLApp = {props.DLApp}/>
+      <New        showIf = {getNewDL(props)}/>
+      <Renew      showIf = {renewDL(props)}/>
+      <Replace    showIf = {replaceDL(props)}/>
+      <Correct    showIf = {correctDL(props)}/>
+      <Update     showIf = {updateDL(props)}/>
     </PageSummaryLink>
   )
 };
