@@ -6,11 +6,16 @@ import { pathForPage }                        from '../helpers/navigation/page';
 import {
   alicePath,
   iddlPath,
-  addPath
+  addPath,
+  cdlPath
 }   from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
+import ChooseApplication                      from './get-started/choose-application-page.jsx';
+import IDDLWelcome                            from '';
+import CDLWelcome                             from '';
+
 import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';
 import LegalName                              from './get-started/name-page.jsx';
@@ -63,11 +68,16 @@ class Router extends React.Component {
     return (
       <div className='routes'>
         <Route path={ alicePath('/links') }                     exact component={Home} />
+
+        <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
+        <Route path={ alicePath('/choose-application')}         component={ChooseApplication}/>
+        <Route path={ alicePath('/id-dl')}                      component={IDDLWelcome} />
+        <Route path={ cdlPath('')}                              component={CDLWelcome} />
+
         <Route path={ alicePath('/sign-in') }                   component={IDMe} />
         <Route path={ alicePath('/')}                           exact component={Welcome} />
         <Route path={ alicePath('/welcome') }                   component={Welcome} />
         <Route path={ pathForPage('welcome') }                  component={Welcome} />
-        <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
 
         <Route path={ iddlPath('/my-basics/legal-name') }       component={LegalName} />
         <Route path={ iddlPath('/my-basics/date-of-birth') }    component={DateOfBirth} />

@@ -9,6 +9,14 @@ import {
   isReplacingCard
  } from '../../data/card-actions';
 
+export const chooseApplication = (props) => {
+  let key = 'id-dl';
+  if (props.addApp === 'cdl') {
+    key = 'cdl';
+  }
+  return key;
+};
+
 export const chooseCardType = (props) => {
   let key = 'realID';
 

@@ -1,6 +1,7 @@
 'use strict';
 import { alicePath }    from '../../alice-path';
 import {
+  chooseApplication,
   chooseCardType,
   currentCardInfo,
   updateAndCorrect,
@@ -17,9 +18,16 @@ const getStarted = [
     next: 'choose'
   },
   {
-    key: 'choose',
-    description: '',
-    path: alicePath('/choose')
+    key: 'chooseApplication',
+    description: 'choose CDL or ID/DL application',
+    path: alicePath('/choose-application'),
+    next: chooseApplication
+  },
+  {
+    key: 'id-dl',
+    description: 'ID/DL welcome page after choosing application',
+    path: '/apply/id-dl',
+    next: 'IDme'
   },
   {
     key: 'IDme',

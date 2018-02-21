@@ -2,7 +2,8 @@
 import {
   alicePath,
   iddlPath,
-  addPath
+  addPath,
+  cdlPath
 } from '../alice-path';
 import getStarted           from './get-started/pages';
 import myBasics             from './my-basics/pages';
@@ -12,6 +13,7 @@ import organDonation        from './organ-donation/pages';
 import conclusion           from './conclusion/pages';
 import addDLCard            from './add-dl/pages';
 import addIDCard            from './add-id/pages';
+import cdl                  from './cdl/pages';
 
 const expand = (collection) => {
   return collection.map((item) => {
@@ -27,6 +29,13 @@ const expandAdd = (collection) => {
   });
 };
 
+const expandCDL = (collection) => {
+  return collection.map((item) => {
+    let path = cdlPath(item.path);
+    return Object.assign({}, item, {path: path});
+  });
+};
+
 export default {
   getStarted: expand(getStarted),
   myBasics: expand(myBasics),
@@ -35,6 +44,7 @@ export default {
   voterRegistration: expand(voterRegistration),
   conclusion: expand(conclusion),
   addDLCard: expandAdd(addDLCard),
-  addIDCard: expandAdd(addIDCard)
+  addIDCard: expandAdd(addIDCard),
+  cdl: expandCDL(cdl)
 };
 
