@@ -39,6 +39,7 @@ export const ageChecks =  {
   Under16                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 16; },
   Under17Half             : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 17.5; },
   Under18                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 18 },
+  Under21                 : (dob, now = new Date() ) => { return getCurrentAge(dob, now) < 21 },
   GreaterThanEqual14      : (dob, now = new Date() ) => { return getCurrentAge(dob, now) >= 14; },
   GreaterThanEqual15      : (dob, now = new Date() ) => { return getCurrentAge(dob, now) >= 15; },
   GreaterThanEqual15Half  : (dob, now = new Date() ) => { return getCurrentAge(dob, now) >= 15.5; },

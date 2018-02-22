@@ -4,7 +4,7 @@ import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
 import handlers                 from '../../helpers/handlers';
 import { NamePageValidator }    from '../../helpers/validations';
-import Presentation             from '../../presentations/cdl/cdl-legal-name.jsx';
+import Presentation             from '../../presentations/get-started/name-page.jsx';
 import { updateCdlLegalName }   from '../../actions/index';
 
 const Page = (props) => {
@@ -24,7 +24,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    legalName:    state.CDL.basics.legalName,
+    legalName:    state.cdl.basics.legalName,
     validations:  state.ui.validations,
     focused:      state.ui.focus,
     hover:        state.ui.hover

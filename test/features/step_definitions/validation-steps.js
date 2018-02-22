@@ -15,6 +15,26 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see an error message telling me to enter my name', function(done) {
+    browser
+      .exists('.error')
+      .then( input => {
+        assert.ok(input, 'Please enter your last name.')
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see an error message telling me to enter a valid date', function(done) {
+    browser
+      .exists('.error')
+      .then( input => {
+        assert.ok(input, 'Please enter a valid date.')
+      })
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see the error message disapper', function(done) {
     browser
       .text()

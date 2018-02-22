@@ -43,6 +43,12 @@ module.exports = function(world) {
   world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
+  world.when('I visit the CDL name page', function(done) {
+    navigateToPath('/apply/cdl/true-name', '.legal-name-form', done);
+  });
+  world.when('I visit the CDL dob page', function(done) {
+    navigateToPath('/apply/cdl/date-of-birth', '.date-of-birth-form', done);
+  });
 
   world.and('I return to the home page', function(done) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
@@ -200,6 +206,12 @@ module.exports = function(world) {
 
   world.when('I will be on the CDL welcome page', function(done) {
     assertOnPage('.apply-cdl', /apply\/cdl/, done);
+  });
+  world.when('I will be on the CDL name page', function(done) {
+    assertOnPage('.legal-name-form', /apply\/cdl\/true-name/, done);
+  });
+  world.when('I will be on the CDL dob page', function(done) {
+    assertOnPage('.date-of-birth-form', /apply\/cdl\/date-of-birth/, done);
   });
 
   world.when('I will be on the IDDL page', function(done) {

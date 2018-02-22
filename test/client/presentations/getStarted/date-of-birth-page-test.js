@@ -51,6 +51,30 @@ describe('DateOfBirthPage', function() {
       assert.ok(component.find('input#day').length, 'day input missing');
       assert.ok(component.find('input#year').length, 'year input missing');
     });
+
+    it('does not show under 21 message if props do not include chooseApp property', function() {
+      let component = render(
+        <Wrapper>
+          <DateOfBirthPage {...props} />
+        </Wrapper>
+      );
+      assert.equal(component.find('.cdl-under-21').length, 0);
+    });
+
+    it('shows the under 21 message when user is on cdl application and is under 21', function() {
+      props.dateOfBirth = {
+        day: '4',
+        month: '04',
+        year: (new Date().getFullYear() - 18).toString()
+      };
+      props.addApp = 'cdl';
+      let component = render(
+        <Wrapper>
+          <DateOfBirthPage {...props} />
+        </Wrapper>
+      );
+      assert.ok(component.find('.cdl-under-21').length);
+    });
   });
 });
 

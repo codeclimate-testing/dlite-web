@@ -6,10 +6,12 @@ import applicationReducers    from './application';
 import uiReducers             from './ui';
 import apiReducer             from './api-reducer';
 import serverReducers         from './server';
+import cdlReducers            from './cdl';
 
 
 const combinedReducers = combineReducers({
   application:    applicationReducers,
+  cdl:            cdlReducers,
   ui:             uiReducers,
   server:         serverReducers
 });

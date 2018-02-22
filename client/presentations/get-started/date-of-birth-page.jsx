@@ -8,6 +8,7 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
 import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import CDLUnder21         from '../cdl/dob-under21.jsx';
 
 const Presentation = (props) => {
   return (
@@ -27,6 +28,9 @@ const Presentation = (props) => {
           />
         </fieldset>
 
+        <CDLUnder21
+          {...props}
+        />
 
         <NavigationButtons
           {...props}
