@@ -14,7 +14,7 @@ import {
 } from '../../validations.jsx';
 
 const ElectronicSignature = (props) => {
-  let guardianID = props.guardianID;
+  const guardianID = props.guardianID;
   const acceptLiabilityText = 'I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.';
 
   let dateErrorMessage = errorMessage(props.validations.date);
@@ -24,17 +24,11 @@ const ElectronicSignature = (props) => {
   let acceptLiabilityErrorClass = errorClass(props.validations.acceptLiabilities);
   let acceptLiabilityErrorLabel = 'Civil liability';
 
-  let focusFunction = (e) => {
-    props.onFocus(e);
-    props.onFocusClearValidation(e);
-  };
-
-  let blurFunction = (e) => {
-    props.onBlur(e);
-    props.onBlurValidate(e);
-  };
-
   const liabilityID = `acceptLiabilities_${guardianID}`;
+
+  const guarianIdentifierFor = (name) => {
+    return `${name}_${guardianID}`;
+  };
 
   return (
 
@@ -55,8 +49,8 @@ const ElectronicSignature = (props) => {
           selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
           text      = { acceptLiabilityText }
           error     = { hasValue(props.validations.acceptLiabilityErrors) }
-          onBlur    = { blurFunction }
-          onFocus   = { focusFunction }
+          onBlur    = { props.onCheckboxBlur }
+          onFocus   = { props.onCheckboxFocus}
         />
         </fieldset>
       </div>
@@ -72,12 +66,12 @@ const ElectronicSignature = (props) => {
 
         <fieldset>
           <TextInput
-          {...props}
-          identifier    = { `name_${guardianID}` }
-          description   = 'Parent/Guardian signature'
-          value         = { props.guardianSignature.guardianInfo[guardianID].signature.name }
-          errorMessage  = { props.validations.name }
-        />
+            {...props}
+            identifier    = { guarianIdentifierFor('name') }
+            description   = 'Parent/Guardian signature'
+            value         = { props.guardianSignature.guardianInfo[guardianID].signature.name }
+            errorMessage  = { props.validations.name }
+          />
         </fieldset>
 
         <div className='date-input'>
@@ -92,7 +86,7 @@ const ElectronicSignature = (props) => {
             <fieldset>
               <NumberInput
               {...props}
-              identifier  = { `month_${guardianID}` }
+              identifier  = { guarianIdentifierFor('month') }
               example     = 'MM'
               value       = { props.guardianSignature.guardianInfo[guardianID].signature.month }
               error       = { hasValue(props.validations.date.month) }
@@ -102,7 +96,7 @@ const ElectronicSignature = (props) => {
 
             <NumberInput
               {...props}
-              identifier  = { `day_${guardianID}` }
+              identifier  = { guarianIdentifierFor('day') }
               example     = 'DD'
               value       = { props.guardianSignature.guardianInfo[guardianID].signature.day }
               error       = { hasValue(props.validations.date.day) }
@@ -112,7 +106,7 @@ const ElectronicSignature = (props) => {
 
             <NumberInput
               {...props}
-              identifier  = { `year_${guardianID}` }
+              identifier  = { guarianIdentifierFor('year') }
               example     = 'YYYY'
               value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
               error       = { hasValue(props.validations.date.year) }
