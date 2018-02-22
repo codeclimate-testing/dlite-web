@@ -13,11 +13,15 @@ import {
 } from '../../validations.jsx';
 
 const IdentityForm = (props) => {
-  let guardianID = props.guardianID;
+  const guardianID = props.guardianID;
 
   let message = errorMessage(props.validations.date);
   let addError = errorClass(message);
   let errorLabel = 'Expiration date';
+
+  const guarianIdentifierFor = (name) => {
+    return `${name}_${guardianID}`;
+  };
 
   return (
     <div className='guardian-identity'>
@@ -27,14 +31,14 @@ const IdentityForm = (props) => {
       <fieldset>
         <TextInput
           {...props}
-          identifier    = {`number_${guardianID}`}
+          identifier    = { guarianIdentifierFor('number') }
           description   = 'Document number'
           value         = {props.guardianSignature.guardianInfo[guardianID].ID.number}
           errorMessage  = {props.validations.number}
         />
         <TextInput
           {...props}
-          identifier    = {`issuedBy_${guardianID}`}
+          identifier    = { guarianIdentifierFor('issuedBy') }
           description   = 'State or agency that issued this document'
           value         = {props.guardianSignature.guardianInfo[guardianID].ID.issuedBy}
           errorMessage  = {props.validations.issuedBy}
@@ -54,7 +58,7 @@ const IdentityForm = (props) => {
           <fieldset>
             <NumberInput
               {...props}
-              identifier={`expirationMonth_${guardianID}`}
+              identifier={ guarianIdentifierFor('expirationMonth') }
               description='MM'
               value={props.guardianSignature.guardianInfo[guardianID].ID.expirationMonth}
               error={ hasValue(props.validations.date.month) }
@@ -64,7 +68,7 @@ const IdentityForm = (props) => {
 
             <NumberInput
               {...props}
-              identifier={`expirationDay_${guardianID}`}
+              identifier={ guarianIdentifierFor('expirationDay') }
               description='DD'
               value={props.guardianSignature.guardianInfo[guardianID].ID.expirationDay}
               error={ hasValue(props.validations.date.day) }
@@ -74,7 +78,7 @@ const IdentityForm = (props) => {
 
             <NumberInput
               {...props}
-              identifier={`expirationYear_${guardianID}`}
+              identifier={ guarianIdentifierFor('expirationYear') }
               description='YYYY'
               value={props.guardianSignature.guardianInfo[guardianID].ID.expirationYear}
               error={ hasValue(props.validations.date.year) }
