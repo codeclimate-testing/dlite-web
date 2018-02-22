@@ -1,7 +1,7 @@
 'use strict';
 
 import { TYPES }              from '../../../actions';
-import formCheckArrayReducer  from '../form-check-array-reducer';
+import formCheckArrayReducer  from '../../form-check-array-reducer';
 import reduceByCardType       from '../reduce-by-card-type';
 
 const defaultState = () => {

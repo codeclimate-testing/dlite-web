@@ -108,6 +108,7 @@ export const updatePoliticalPartyChoose               = generateFormAction(TYPES
 export const updatePoliticalPartyChoosePreReg         = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE_PREREG);
 export const updateOptOut                             = generateFormAction(TYPES.UPDATE_OPT_OUT);
 export const updateContactMethods                     = generateFormAction(TYPES.UPDATE_CONTACT_METHODS);
+
 export const updateGuardianSignature                  = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE);
 export const updateGuardianSignatureFirst             = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE_FIRST);
 export const updateGuardianSignatureSecond            = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE_SECOND);
@@ -115,6 +116,7 @@ export const updateGuardianContactDetailsFirst        = generateFormAction(TYPES
 export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND);
 export const updateGuardianIDDocFirst                 = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_FIRST);
 export const updateGuardianIDDocSecond                = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_SECOND);
+
 export const updateIsPreRegistering                   = generateFormAction(TYPES.UPDATE_IS_PRE_REGISTERING);
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 

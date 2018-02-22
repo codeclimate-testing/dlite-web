@@ -1,7 +1,7 @@
 'use strict';
 
 import { TYPES }              from '../../actions';
-import formValueArrayReducer  from './form-value-array-reducer';
+import formValueArrayReducer  from '../form-value-array-reducer';
 import { cardTypeAction }     from '../../helpers/reducers';
 import {
   driverLicense,
