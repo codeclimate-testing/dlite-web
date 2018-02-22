@@ -9,9 +9,9 @@ import { updateLegalName }    from '../../actions/index';
 import Presentation           from '../../presentations/get-started/name-page.jsx';
 
 const Page = (props) => {
-  let validations = new NamePageValidator(props.legalName, props.validations);
-  let onBack = handlers.navigateOnBack(props, validations);
-  let onSubmit = handlers.navigateOrShowErrors('legalName', props, validations);
+  let validations   = new NamePageValidator(props.legalName, props.validations);
+  let onBack        = handlers.navigateOnBack(props, validations);
+  let onSubmit      = handlers.navigateOrShowErrors('legalName', props, validations);
 
   return (
     <Presentation

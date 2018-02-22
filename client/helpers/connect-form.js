@@ -12,6 +12,7 @@ function connectForm(mapStateToProps, action, form) {
     const onBlurValidate = handlers.onBlurValidate(dispatch);
     const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
     const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
+    const onSelectChange = handlers.onSelectChange(action, dispatch);
 
     return {
       onSubmit,
@@ -20,7 +21,8 @@ function connectForm(mapStateToProps, action, form) {
       onFocus,
       onBlurValidate,
       onFocusClearValidation,
-      onSubmitShowErrors
+      onSubmitShowErrors,
+      onSelectChange
     };
   }
 

@@ -14,7 +14,6 @@ import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
 import IDDLWelcome                            from './get-started/id-dl-page.jsx';
-import CDLWelcome                             from './cdl/cdl-page.jsx';
 
 import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';
@@ -35,6 +34,7 @@ import MyBasicsRoutes                         from './my-basics/routes.jsx';
 import MyHistoryRoutes                        from './my-history/routes.jsx';
 import VotingRoutes                           from './voter-registration/routes.jsx';
 import ConclusionRoutes                       from './conclusion/routes.jsx';
+import CDLRoutes                              from './cdl/routes.jsx';
 
 
 class Router extends React.Component {
@@ -46,7 +46,8 @@ class Router extends React.Component {
         <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
         <Route path={ alicePath('/choose-application')}         component={ChooseApplication}/>
         <Route path={ alicePath('/id-dl')}                      component={IDDLWelcome} />
-        <Route path={ cdlPath('')}                              component={CDLWelcome} />
+
+        <CDLRoutes />
 
         <Route path={ alicePath('/sign-in') }                   component={IDMe} />
         <Route path={ alicePath('/')}                           exact component={Welcome} />
