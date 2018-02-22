@@ -14,8 +14,9 @@ const TextArea = (props) => {
   return (
     <div className='text-area-input-block'>
       <label
-        htmlFor={ props.identifier }
-        className={ className }
+        htmlFor         = { props.identifier }
+        className       = { className }
+        aria-labelledby = { props.identifier }
       >
         <ErrorIcon errorClass={ className } />
         { props.description }

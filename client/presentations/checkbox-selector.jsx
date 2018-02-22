@@ -13,7 +13,8 @@ const CheckboxSelector = function(props) {
       <div className='outline-container'>
         <label
           className='row relative checkbox-selector'
-          htmlFor={props.value}
+          htmlFor         = { props.value }
+          aria-labelledby = { props.value }
         >
           <div className='off-screen'>
             <input

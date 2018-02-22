@@ -17,8 +17,9 @@ const TextInput = (props) => {
   return (
     <div className='text-input-block input-margin-bottom'>
       <label
-        htmlFor={ id }
-        className={ className }
+        htmlFor         = { id }
+        className       = { className }
+        aria-labelledby = { id }
       >
         <ErrorIcon
           errorClass={ className }

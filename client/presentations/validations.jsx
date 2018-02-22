@@ -12,7 +12,7 @@ export const ErrorLabel= (props) => {
   let className = 'additional-label input-margin-bottom ' + props.errorClass;
 
   return (
-    <div className={className} >
+    <div className={className} role="alert" aria-live="assertive" aria-atomic="true">
       { errorText }
     </div>
   );
@@ -46,7 +46,7 @@ export const ErrorMessageBox = (props) => {
 
   return (
     <div className={className}>
-      <div className='unit error-icon'></div>
+      <div className='unit error-icon' role="alert" aria-live="assertive" aria-atomic="true"></div>
       &nbsp;
       {props.errorMessage}
     </div>

@@ -13,8 +13,9 @@ const Label = (props) => {
   if (!hasValue(props.description)) { return null; }
   return (
     <label
-      htmlFor     = { props.identifier }
-      className   = { props.errorName }
+      htmlFor         = { props.identifier }
+      className       = { props.errorName }
+      aria-labelledby = { props.identifier }
     >
       <ErrorIcon errorClass={ props.errorName } />
       {props.description}
@@ -43,6 +44,7 @@ const NumberInput = (props) => {
           type      = 'number'
           id        = { props.identifier }
           name      = { props.identifier }
+          aria-label= { props.identifier }
           onChange  = { props.onChange }
           onBlur    = { props.onBlurValidate }
           onFocus   = { props.onFocusClearValidation }
