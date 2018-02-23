@@ -4,7 +4,7 @@ const cdl = [
   {
     key: 'cdl',
     description: 'CDL welcome page',
-    path: '/',
+    path: '',
     next: 'cdlLegalName'
   },
   {
@@ -17,6 +17,12 @@ const cdl = [
     key: 'cdlDateOfBirth',
     description: 'Date of Birth',
     path: '/date-of-birth',
+    next: 'cdlSummary'
+  },
+  {
+    key: 'cdlSummary',
+    description: 'summary of CDL app',
+    path: '/summary',
     next: ''
   }
 ];

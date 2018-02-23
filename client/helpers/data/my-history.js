@@ -4,6 +4,14 @@ export const licenseAndIdIssued = (props) => {
   return props.licenseAndIdHistory.isIssued === 'Yes';
 };
 
+export const dateOfIssue = (props) => {
+  let key = 'None';
+  if (licenseAndIdIssued(props)) {
+    key = props.licenseAndIdHistory.DLIDNumber;
+  }
+  return key;
+};
+
 export const licenseIssuesIsSuspended = (props) => {
   return props.licenseIssues.isSuspended === 'Yes';
 };
