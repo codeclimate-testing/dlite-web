@@ -3,7 +3,6 @@
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
 import { iddlPath }                           from '../../helpers/alice-path';
-import VoterIntro                             from './introduction-form-container.jsx';
 import VoterCitizenStatus                     from './citizen-status-form-container.jsx';
 import EligibilityRequirements                from './eligibility-requirements-form-container.jsx';
 import OptOut                                 from './opt-out-form-container.jsx';
@@ -18,7 +17,6 @@ import VoterRegComplete                       from './voter-confirmation-form-co
 const VotingRoutes = () => {
   return (
     <div>
-      <Route path={ iddlPath('/voting-registration/introduction') }         component={VoterIntro} />
       <Route path={ iddlPath('/voting-registration/citizenship') }          component={VoterCitizenStatus} />
       <Route path={ iddlPath('/voting-registration/eligibility') }          component={EligibilityRequirements} />
       <Route path={ iddlPath('/voting-registration/opt-out') }              component={OptOut} />

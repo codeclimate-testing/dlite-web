@@ -84,10 +84,8 @@ Feature: Save user data
     And I choose to donate my organs
     And I choose to contribute
     And I click "Next" to continue
-    Then I will be taken to voter intro info page
-    Then I will see the page title has postfix " - Voting registration"
-    When I click "Next" to continue
     Then I will be on the page for voter citizen status entry
+    And I will see the page title has postfix " - Voting registration"
     And I select citizen Yes
     When I click "Next" to continue
     Then I will be on the eligibility page
@@ -282,8 +280,6 @@ Feature: Save user data
     And I choose to donate my organs
     And I choose to contribute
     And I click "Next" to continue
-    Then I will be taken to voter intro info page
-    When I click "Next" to continue
     Then I will be on the page for voter citizen status entry
     And I select citizen Yes
     And I click "Next" to continue

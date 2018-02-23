@@ -68,7 +68,8 @@ hr {
   border: 0;
   background-color: $dark-blue;
   height: 2px;
-  margin-bottom: $spacing;
+  margin-bottom: $spacing * 1.5;
+  margin-top: $spacing * 2;
 }
 
 ul.bullet-list,

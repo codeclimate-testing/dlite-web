@@ -8,12 +8,6 @@ import {
 
 const voterRegistration = [
   {
-    key: 'voterIntro',
-    description: 'Voter intro',
-    path: '/voting-registration/introduction',
-    next: 'citizenship'
-  },
-  {
     key: 'citizenship',
     description: 'Citizenship',
     path: '/voting-registration/citizenship',

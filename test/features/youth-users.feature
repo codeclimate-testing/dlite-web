@@ -52,11 +52,8 @@ Feature: Happy path for youth users
     Given I go to the new online DL application page
     When I visit the date of birth page
     And Today I turned 16 years old
-    When I visit voter intro page
+    When I visit voter citizen status page
     Then I will see header for Voting pre-registration
-    And I click "Next" to continue
-    Then I will be on the page for voter citizen status entry
-    And I will see header for Voting pre-registration
     When I select citizen Yes
     When I click "Next" to continue
     Then I will be on the eligibility page

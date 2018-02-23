@@ -154,10 +154,6 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/voting-registration/choose-party', '.choose-party-form', done);
   });
 
-   world.when('I visit voter intro page', function (done) {
-    navigateToPath('/apply/id-and-license/voting-registration/introduction', '.voter-intro-info', done);
-  });
-
   world.and('I visit appointment preparation page', function(done) {
     navigateToPath('/apply/id-and-license/appointment-preparation', '.appointment-preparation', done);
   });
@@ -391,10 +387,6 @@ module.exports = function(world) {
 
   world.then('I will be taken to updated voter preferences info page', function(done) {
     assertOnPage('.updating-voter-preferences', /id-and-license\/voting-registration\/preferences-updated/, done);
-  });
-
-  world.then('I will be taken to voter intro info page', function(done) {
-    assertOnPage('.voter-intro-info', /id-and-license\/voting-registration\/introduction/, done);
   });
 
   world.then('I will be taken to voter registration complete page', function(done) {

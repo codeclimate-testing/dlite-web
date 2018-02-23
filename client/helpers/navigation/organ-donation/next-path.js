@@ -3,7 +3,7 @@
 import { under16GuardianSignature } from '../../data/youth';
 
 export const organDonationPath = (props) => {
-  let key = 'voterIntro';
+  let key = 'citizenship';
 
   if (under16GuardianSignature(props)) {
     key = 'guardianSignature';

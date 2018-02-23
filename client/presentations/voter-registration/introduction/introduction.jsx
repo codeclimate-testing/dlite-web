@@ -6,8 +6,6 @@ import Translate         from '../../../i18n/translate-tag.jsx';
 import StopCitizensOnly  from './stop-citizens-only.jsx';
 
 const VoterIntro = (props) => {
-  if (!props.showIf) { return null; }
-
   return (
     <div className='voter-intro-info'>
       <StopCitizensOnly />

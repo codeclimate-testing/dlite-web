@@ -4,14 +4,16 @@ import React                from 'react';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
+import Accordion            from '../../containers/accordion.jsx';
+import RegIntro             from './introduction/introduction.jsx';
+import PreRegIntro          from './introduction/introduction-prereg.jsx';
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
-import { isYes, isNo }      from '../../helpers/data/validations';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import Translate            from '../../i18n/translate-tag.jsx';
 
-const DeclineStatement = (props) => {
+const declineStatement = (props) => {
   let translation = translations.votingRegistration.shared;
 
   if (isPreregistering(props.dateOfBirth)) {
@@ -20,7 +22,11 @@ const DeclineStatement = (props) => {
     translation = translation.declineToAnswerInformationRegistration;
   }
 
-  return convertToHtml('p', translation);
+  return translation;
+};
+
+const VoterIntro = (props) => {
+  return isPreregistering(props.dateOfBirth) ? <PreRegIntro /> : <RegIntro />;
 };
 
 const CitizenStatusPage = (props) => {
@@ -31,10 +37,19 @@ const CitizenStatusPage = (props) => {
       {...props}
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
-      <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
-        {convertToHtml('h2', translations.votingRegistration.citizenshipPage.pagePrompt, 'question')}
+     <VoterIntro {...props} />
 
-        <DeclineStatement {...props} />
+     <hr />
+
+     <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
+        <Translate tag='h2' className='question'>
+          { translations.votingRegistration.citizenshipPage.pagePrompt }
+        </Translate>
+
+        <Translate tag='p'>
+          { declineStatement(props) }
+        </Translate>
+
         <fieldset>
           <RadioCollection
             {...props}
@@ -54,6 +69,13 @@ const CitizenStatusPage = (props) => {
           />
           </RadioCollection>
         </fieldset>
+
+        <Accordion
+          id='what-if-not-citizen'
+          title={translations.votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen}
+        >
+          {translations.votingRegistration.citizenshipPage.faqAnswerWhatIfNotCitizen}
+        </Accordion>
 
         <NavigationButtons {...props} />
       </form>
