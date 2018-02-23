@@ -22,8 +22,6 @@ const DLText = (props) => {
 };
 
 const ReducedFeeFormInfo = (props) => {
-  if (!choosingReducedFee(props)) { return null; }
-
   return (
     <div className='reduced-fee-form-info'>
       <MessageBox className='info'>
