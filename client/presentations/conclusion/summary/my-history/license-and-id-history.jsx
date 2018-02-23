@@ -3,8 +3,8 @@
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import {
   licenseAndIdIssued,
   dateOfIssue
@@ -36,7 +36,7 @@ const LicenseAndIdHistory = (props) => {
 
   return (
     <PageSummaryLink
-      to    = '/my-history/license-and-id'
+      summary = {props.summary}
       name  = 'addLicenseHistory'
     >
       <SummaryItem

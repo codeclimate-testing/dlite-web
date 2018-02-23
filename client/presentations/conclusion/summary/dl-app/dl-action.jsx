@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
 import {
   DLAppExists,
   renewDL,
@@ -23,7 +23,8 @@ const DLAction = (props) => {
 
   return (
     <PageSummaryLink
-      name= 'addWdywtdt'
+      name    = 'addWdywtdt'
+      summary = {props.summary}
     >
       <New        showIf = {getNewDL(props)}/>
       <Renew      showIf = {renewDL(props)}/>

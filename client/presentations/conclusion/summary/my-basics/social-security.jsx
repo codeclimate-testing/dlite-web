@@ -2,8 +2,8 @@
 
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import {
   hasSocialSecurityNo
 } from '../../../../helpers/data/ssn';
@@ -15,7 +15,7 @@ const SocialSecurity = (props) => {
 
   return (
     <PageSummaryLink
-      to='/my-basics/social-security'
+      summary = {props.summary}
       name='socialSecurity'
     >
       <SummaryItem

@@ -4,8 +4,8 @@ import React              from 'react';
 import * as dataPresent   from '../../../../helpers/data-present';
 import translations       from '../../../../i18n';
 import { printDate }      from '../../../../helpers/print-date';
-import PageSummaryLink    from '../../../page-summary-link.jsx';
-import SummaryItem        from '../summary-item.jsx';
+import PageSummaryLink    from '../Page-summary-link.jsx';
+import SummaryItem        from '../Summary-item.jsx';
 import { existingDL }     from '../../../../helpers/data/card-type';
 import { hasValue }       from '../../../../helpers/data/validations';
 
@@ -36,7 +36,8 @@ const CurrentDLInfo = (props) => {
 
   return (
     <PageSummaryLink
-      name = 'addCurrentCardInfo'
+      name    = 'addCurrentCardInfo'
+      summary = {props.summary}
     >
       <DLNumber
         number = {props.currentCardInfo.number}

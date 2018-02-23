@@ -4,8 +4,8 @@ import React              from 'react';
 import * as dataPresent   from '../../../../helpers/data-present';
 import translations       from '../../../../i18n';
 import { printDate }      from '../../../../helpers/print-date';
-import PageSummaryLink    from '../../../page-summary-link.jsx';
-import SummaryItem        from '../summary-item.jsx';
+import PageSummaryLink    from '../Page-summary-link.jsx';
+import SummaryItem        from '../Summary-item.jsx';
 import { hasValue }       from '../../../../helpers/data/validations';
 import {
   existingID
@@ -39,6 +39,7 @@ const CurrentIDInfo = (props) => {
   return (
     <PageSummaryLink
       name='addCurrentIDInfo'
+      summary = {props.summary}
     >
       <IDNumber
         number = {props.currentCardInfo.number}

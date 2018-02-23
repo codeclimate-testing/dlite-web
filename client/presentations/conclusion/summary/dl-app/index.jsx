@@ -1,5 +1,6 @@
 'use strict';
 
+import React                       from 'react';
 import DLApplicationNotStarted     from './dl-application-not-started.jsx';
 import DLRealID                    from './dl-real-id.jsx';
 import DLAction                    from './dl-action.jsx';
@@ -12,13 +13,22 @@ const DLApp = (props) => {
   const application = props.application;
   return (
     <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
-      <DLApplicationNotStarted  {...application}  />
-      <DLAction                 {...application}  />
-      <CurrentDLInfo            {...application}
-        currentCardInfo = {application.DLApp.currentCard}
+      <DLApplicationNotStarted  {...application}
+        summary             = 'summary'
       />
-      <DLRealID                 {...application} />
-      <LicenseType              {...application} />
+      <DLAction                 {...application}
+        summary             = 'summary'
+      />
+      <CurrentDLInfo            {...application}
+        currentCardInfo     = {application.DLApp.currentCard}
+        summary             = 'summary'
+      />
+      <DLRealID                 {...application}
+        summary             = 'summary'
+      />
+      <LicenseType              {...application}
+        summary             = 'summary'
+      />
     </Accordion>
   );
 };

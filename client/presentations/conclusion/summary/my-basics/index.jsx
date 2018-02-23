@@ -1,5 +1,6 @@
 'use strict';
 
+import React                       from 'react';
 import Accordion                   from '../../../../containers/accordion.jsx';
 import LegalName                   from './legal-name.jsx';
 import DateOfBirth                 from './date-of-birth.jsx';
@@ -17,21 +18,29 @@ const MyBasics = (props) => {
       <Empty              {...application} />
       <LegalName
         legalName         = {application.basics.legalName}
+        editKey           = 'legalName'
+        summary           = 'summary'
       />
       <DateOfBirth
         dateOfBirth       = {application.basics.dateOfBirth}
+        editKey           = 'dateOfBirth'
+        summary           = 'summary'
       />
       <Address
         address           = {application.basics.address}
+        summary           = 'summary'
       />
       <PhysicalTraits
         physicalTraits    = {application.basics.physicalTraits}
+        summary           = 'summary'
       />
       <TraitsHeightWeight
         traitsHeightWeight= {application.basics.traitsHeightWeight}
+        summary           = 'summary'
       />
       <SocialSecurity
         socialSecurity    = {application.basics.socialSecurity}
+        summary           = 'summary'
       />
     </Accordion>
   );

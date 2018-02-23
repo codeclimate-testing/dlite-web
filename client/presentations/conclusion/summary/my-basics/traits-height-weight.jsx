@@ -2,8 +2,8 @@
 
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 
 const TraitsHeightWeight = (props) => {
   if (!dataPresent.traitsHeightWeight(props.traitsHeightWeight)) { return null; }
@@ -14,8 +14,8 @@ const TraitsHeightWeight = (props) => {
 
   return (
     <PageSummaryLink
-      to='/my-basics/traits-height-weight'
-      name='heightWeight'
+      summary = {props.summary}
+      name    = 'heightWeight'
     >
       <SummaryItem
         title='Height'

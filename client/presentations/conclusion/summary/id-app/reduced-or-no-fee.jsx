@@ -2,8 +2,8 @@
 
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import translations     from '../../../../i18n';
 import {
   reducedFeeHasSelection,
@@ -36,8 +36,8 @@ const ReducedOrNoFee = (props) => {
 
   return (
     <PageSummaryLink
-      to='/reduced-fee'
-      name='reducedFeeID'
+      summary = {props.summary}
+      name    = 'reducedFeeID'
     >
       <Yes reducedFee = {props.reducedFee} />
       <No reducedFee = {props.reducedFee} />

@@ -2,8 +2,8 @@
 
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 
 const LegalName = (props) => {
   if (!dataPresent.legalName(props.legalName)) { return null; }
@@ -12,12 +12,12 @@ const LegalName = (props) => {
 
   return (
     <PageSummaryLink
-      to='/my-basics/legal-name'
-      name='legalName'
+      summary = {props.summary}
+      name    = 'legalName'
     >
       <SummaryItem
-        title='Name'
-        text={printedName}
+        title = 'Name'
+        text  = {printedName}
       />
     </PageSummaryLink>
   );

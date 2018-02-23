@@ -2,8 +2,8 @@
 
 import React from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import {
   getStringByPreviousNames
 } from '../../../../helpers/data/my-history';
@@ -15,6 +15,7 @@ const NamesHistory = (props) => {
   return (
     <PageSummaryLink
       name='nameHistory'
+      summary = {props.summary}
     >
       <SummaryItem
         title='Previous Names'

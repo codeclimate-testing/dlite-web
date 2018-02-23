@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import PageSummaryLink            from '../../../page-summary-link.jsx';
-import SummaryItem                from '../summary-item.jsx';
+import PageSummaryLink            from '../Page-summary-link.jsx';
+import SummaryItem                from '../Summary-item.jsx';
 import {
   politicalPartySelected,
   getStringByParty
@@ -16,7 +16,7 @@ const PoliticalPartyChoose = (props) => {
 
   return (
     <PageSummaryLink
-      to='/voting-registration/choose-party'
+      summary = {props.summary}
       name='choosePoliticalParty'
     >
       <SummaryItem

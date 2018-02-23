@@ -1,5 +1,5 @@
 'use strict';
-
+import React                       from 'react';
 import Accordion                   from '../../../../containers/accordion.jsx';
 import CitizenStatus               from './citizen-status.jsx';
 import EligibilityRequirements     from './eligibility-requirements.jsx';
@@ -16,24 +16,31 @@ const Voting = (props) => {
     <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
       <CitizenStatus
         citizenStatus           = {application.voting.citizenStatus}
+        summary                 = 'summary'
       />
       <EligibilityRequirements
         eligibilityRequirements = {application.voting.eligibilityRequirements}
+        summary                 = 'summary'
       />
       <OptOut
         optOut                  = {application.voting.optOut}
+        summary                 = 'summary'
       />
       <PoliticalPartyChoose
         politicalPartyChoose    = {application.voting.politicalPartyChoose}
+        summary                 = 'summary'
       />
       <BallotLanguage
         ballotLanguage          = {application.basics.language.ballotLanguage}
+        summary                 = 'summary'
       />
       <BallotByMail
         ballotByMail            = {application.voting.ballotByMail}
+        summary                 = 'summary'
       />
       <ContactMethods
         contactMethods          = {application.voting.contactMethods}
+        summary                 = 'summary'
       />
     </Accordion>
   )

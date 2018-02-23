@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
 import {
   IDAppExists,
   getNewID,
@@ -23,7 +23,8 @@ const IDAction = (props) => {
 
   return (
     <PageSummaryLink
-      name='addIDWdywtdt'
+      name    = 'addIDWdywtdt'
+      summary = {props.summary}
     >
       <New        showIf = {getNewID(props)}/>
       <Renew      showIf = {renewID(props)}/>

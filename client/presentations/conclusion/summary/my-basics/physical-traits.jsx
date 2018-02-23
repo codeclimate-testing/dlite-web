@@ -3,16 +3,16 @@
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 
 const PhysicalTraits = (props) => {
   if (!dataPresent.physicalTraits(props.physicalTraits)) { return null; }
 
   return (
     <PageSummaryLink
-      to='/my-basics/physical-traits'
-      name='sexEyeHair'
+      summary = {props.summary}
+      name    = 'sexEyeHair'
     >
       <SummaryItem
         title='Sex'

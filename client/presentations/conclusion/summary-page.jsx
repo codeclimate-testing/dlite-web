@@ -3,8 +3,7 @@
 import React                from 'react'
 import Page                 from '../../containers/page.jsx';
 import { ageChecks }        from '../../helpers/calculate-age';
-import contents             from './summary/index';
-
+import Content              from './summary/Content.jsx';
 import {
   hideMain,
   getErrorMessage
@@ -38,7 +37,10 @@ const SummaryPage = (props) => {
             />
           </div>
 
-          <Content {...props} />
+          <Content
+            {...props}
+            summary='summary'
+          />
         </form>
       </Page>
   )

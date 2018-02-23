@@ -60,3 +60,11 @@ export const getActionFromState = (state) => {
   }
   return key;
 }
+
+export const goToSummary = (props) => {
+  console.log(props.location.state)
+  return props.location &&
+  props.location.state &&
+  (props.location.state.nextAddress === 'summary' ||
+  props.location.state.nextAddress === 'cdlSummary' );
+};

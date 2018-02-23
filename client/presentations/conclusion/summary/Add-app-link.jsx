@@ -2,7 +2,7 @@
 
 import React                from 'react';
 import { Link }             from 'react-router-dom';
-import { addPath }          from '../helpers/alice-path';
+import { addPath }          from '../../../helpers/alice-path';
 
 
 const AddAppLink = (props) => {

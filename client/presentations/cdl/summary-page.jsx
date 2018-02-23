@@ -3,6 +3,8 @@
 import React                from 'react';
 import Accordion            from '../../containers/accordion.jsx';
 import Page                 from '../../containers/page.jsx';
+import MyBasics             from './summary/my-basics.jsx';
+
 import {
   ErrorMessageBox
 } from '../validations.jsx';
@@ -18,12 +20,10 @@ const Contents = (props) => {
   return (
     <div className = 'summary'>
       <Accordion id='cdl-summary' title='My commercial driver license'>
-
       </Accordion>
 
-      <Accordion id='basics-summary' title='My basics'>
+      <MyBasics {...application} />
 
-      </Accordion>
 
       <Accordion id='self-certification' title='Self certification'>
 

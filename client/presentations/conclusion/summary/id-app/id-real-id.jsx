@@ -2,8 +2,8 @@
 
 import React            from "react";
 import { hasValue }     from '../../../../helpers/data/validations';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import translations     from '../../../../i18n';
 
 import {
@@ -36,7 +36,8 @@ const IDRealID = (props) => {
 
   return (
     <PageSummaryLink
-      name='realID'
+      name    = 'realID'
+      summary = {props.summary}
     >
       <Yes realID = {props.realID} />
       <No realID = {props.realID} />

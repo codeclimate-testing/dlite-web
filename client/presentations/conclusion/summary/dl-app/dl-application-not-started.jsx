@@ -2,7 +2,7 @@
 
 import React          from "react";
 import translations   from '../../../../i18n';
-import AddAppLink     from '../../../add-app-link.jsx';
+import AddAppLink     from '../Add-app-link.jsx';
 
 import {
   DLAppExists

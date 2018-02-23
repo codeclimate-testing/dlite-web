@@ -2,14 +2,14 @@
 
 import React            from 'react';
 import { Link }         from 'react-router-dom';
-import { pathForPage }  from '../helpers/navigation/page';
+import { pathForPage }  from '../../../helpers/navigation/page';
 
 const PageSummaryLink = (props) => {
   let className = `${props.name} summary edit button`;
 
   let linkTo = {
     pathname: pathForPage(props.name),
-    state: { nextAddress: '/summary' }
+    state: { nextAddress: props.summary }
   };
 
   return (

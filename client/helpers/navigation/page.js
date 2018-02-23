@@ -1,6 +1,7 @@
 'use strict';
 
-import sections from './pages';
+import sections         from './pages';
+import { goToSummary }  from '../data/pathnames';
 
 const all = Object.keys(sections).reduce((keyedObject, sectionName) => {
   let section = sections[sectionName];
@@ -19,7 +20,9 @@ export const pathForPage = (name) => {
 };
 
 export const nextPath = (name, props) => {
-  if (props.location && props.location.state && props.location.state.nextAddress === '/summary') { return pageFor('summary').path; }
+  if (goToSummary(props)) {
+    return pageFor(props.location.state.nextAddress).path;
+  }
 
   let page = pageFor(name);
   let nextKey = page.next;

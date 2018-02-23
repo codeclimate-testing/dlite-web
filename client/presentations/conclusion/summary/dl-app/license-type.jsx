@@ -3,8 +3,8 @@
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import translations     from '../../../../i18n';
-import PageSummaryLink  from '../../../page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
+import SummaryItem      from '../Summary-item.jsx';
 import {
   showLicenseClass
 } from '../../../../helpers/data/summary';
@@ -71,6 +71,7 @@ const LicenseType = (props) => {
   return (
     <PageSummaryLink
       name= 'addLicenseClass'
+      summary = {props.summary}
     >
       <SummaryItem
         title='Need to drive'
