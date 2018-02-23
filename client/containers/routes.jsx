@@ -13,7 +13,6 @@ import {
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
-import IDDLWelcome                            from './get-started/id-dl-page.jsx';
 
 import IDMe                                   from './get-started/id-me-page.jsx';
 import Welcome                                from './get-started/welcome-page.jsx';
@@ -45,7 +44,6 @@ class Router extends React.Component {
 
         <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
         <Route path={ alicePath('/choose-application')}         component={ChooseApplication}/>
-        <Route path={ alicePath('/id-dl')}                      component={IDDLWelcome} />
 
         <CDLRoutes />
 

@@ -18,12 +18,6 @@ const intro = [
     next: chooseApplication
   },
   {
-    key: 'id-dl',
-    description: 'ID/DL welcome page',
-    path: '/id-dl',
-    next: 'IDme'
-  },
-  {
     key: 'IDme',
     description: 'ID Me',
     path: '/sign-in',

@@ -20,9 +20,9 @@ describe('Intro next-path', function() {
       props.chooseApp = 'cdl';
       assert.equal(chooseApplication(props), 'cdl');
     });
-    it('returns "id-dl" if state.ui.chooseApp equals "iddl"', function() {
+    it('returns "welcome" if state.ui.chooseApp equals "iddl"', function() {
       props.chooseApp = 'iddl';
-      assert.equal(chooseApplication(props), 'id-dl');
+      assert.equal(chooseApplication(props), 'welcome');
     });
   });
 });

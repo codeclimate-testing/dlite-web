@@ -15,7 +15,7 @@ Scenario: Navigating to the new page
   Then I will be on the page to choose application
   When I select a regular ID or DL application
   And I click "Next" to continue
-  Then I will be on the IDDL page
+  Then I will be on the IDDL welcome page
 
 Scenario: Name page
   Given I go to the new online DL application page

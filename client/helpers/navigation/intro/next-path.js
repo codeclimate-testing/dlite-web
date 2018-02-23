@@ -3,7 +3,7 @@
 import { cdlApp }       from '../../data/pathnames';
 
 export const chooseApplication = (props) => {
-  let key = 'id-dl';
+  let key = 'welcome';
   if (cdlApp(props.chooseApp)) {
     key = 'cdl';
   }

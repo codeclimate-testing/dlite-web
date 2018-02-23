@@ -214,8 +214,8 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/cdl\/date-of-birth/, done);
   });
 
-  world.when('I will be on the IDDL page', function(done) {
-    assertOnPage('.apply-iddl', /apply\/id-dl/, done);
+  world.when('I will be on the IDDL welcome page', function(done) {
+    assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);
   });
 
   world.then('I will be on the page to add current card info', function(done) {
