@@ -6,15 +6,16 @@ import translations from '../../../i18n';
 
 const StopCitizensOnly = (props) => {
   return (
-    <div className='row'>
+    <div className='row citizens-only'>
       <img
         src='/images/stop.png'
         alt='Stop'
         className='unit'
       />
-      <Translate tag='h5' className='unit citizens-only-text'>
+      <Translate tag='h5' className='unit'>
         { translations.votingRegistration.introductionPage.citizenOnlyDisclaimer }
       </Translate>
+      <hr className='last-unit mid-line' />
     </div>
   );
 };

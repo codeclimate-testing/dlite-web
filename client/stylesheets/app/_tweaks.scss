@@ -70,8 +70,20 @@ a.button.arrow-button.forward.get-started {
   display: none;
 }
 
-.citizens-only-text {
-  padding-left: $spacing;
-  padding-top: 10px;
+.citizens-only {
+  padding-bottom: 10px;
+
+  h5 {
+    padding: 10px $spacing/2 0 $spacing/4;
+  }
+
+  img {
+    margin-left: -5px;
+  }
+
+  .mid-line {
+    margin-top: 20px;
+    background-color: $another-gray;
+  }
 }
 
