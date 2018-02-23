@@ -36,6 +36,22 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see my between 17.5 and 18 dob on that summary', function(done) {
+    browser
+      .text('.summary')
+      .then((text) => {
+        var d = new Date();
+        // calculate a date of 3 days shy of being 18
+        var month = (d.getMonth() + 1).toString();
+        var day = (d.getDate() + 3).toString();
+        var year = (d.getFullYear() - 18).toString();
+
+        assert(text.includes(month + '/' + day + '/' + year), 'date of birth missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.and('I have already entered my date of birth', function(done) {
     browser
       .click('a.date-of-birth')
@@ -211,6 +227,13 @@ module.exports = function(world) {
   world.when('I click to edit my date of birth', function(done) {
     browser
       .click('.dateOfBirth.button.summary')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to edit my CDL date of birth', function(done) {
+    browser
+      .click('.cdlDateOfBirth.button.summary')
       .then(done)
       .catch(done);
   });

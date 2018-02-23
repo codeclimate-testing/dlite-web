@@ -1,15 +1,16 @@
 'use strict';
 
 import React                       from 'react';
-import Accordion                   from '../../../../containers/accordion.jsx';
-import LegalName                   from './legal-name.jsx';
-import DateOfBirth                 from './date-of-birth.jsx';
-import Address                     from './address.jsx';
-import TraitsHeightWeight          from './traits-height-weight.jsx';
-import PhysicalTraits              from './physical-traits.jsx';
-import Empty                       from './empty.jsx';
-import SocialSecurity              from './social-security.jsx';
-
+import Accordion                   from '../../../containers/accordion.jsx';
+import {
+  Empty,
+  LegalName,
+  DateOfBirth,
+  Address,
+  TraitsHeightWeight,
+  PhysicalTraits,
+  SocialSecurity
+} from './my-basics/index';
 
 const MyBasics = (props) => {
   const application = props.application;

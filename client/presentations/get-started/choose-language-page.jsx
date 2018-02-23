@@ -14,7 +14,7 @@ const Form = (props) => {
       {...props}
       sectionKey='intro'
     >
-      <div className='choose-card-form'>
+      <div className='choose-language-form'>
         {convertToHtml('h2', translations.intro.switchLanguagePage.prompt, 'question')}
 
         <form onSubmit={ props.onSubmit } >

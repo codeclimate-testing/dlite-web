@@ -9,7 +9,8 @@ import {
   addingApp,
   splitPathname,
   getActionFromState,
-  hasChosenApp
+  hasChosenApp,
+  goToSummary
 } from '../../../../client/helpers/data/pathnames';
 
 describe('Data helpers for pathnames', function() {
@@ -18,7 +19,8 @@ describe('Data helpers for pathnames', function() {
     beforeEach(function() {
       props = {
         location: {
-          pathname: ''
+          pathname: '',
+          nextAddress: ''
         }
       };
     });
@@ -166,6 +168,30 @@ describe('Data helpers for pathnames', function() {
         chooseApp: ''
       };
       assert.equal(hasChosenApp(props), false);
+    });
+  });
+
+  describe('#goToSummary', function() {
+    it('returns false if props location does not have state object', function() {
+      assert.equal(goToSummary(props), false);
+    });
+    it('returns false if location state nextAddress does not equal "summary" or "cdlSummary"', function() {
+      props.location.state = {
+        nextAddress: 'someOtherOne'
+      };
+      assert.equal(goToSummary(props), false);
+    });
+    it('returns true if location state nextAddress equals "summary"', function() {
+      props.location.state = {
+        nextAddress: 'summary'
+      };
+      assert.equal(goToSummary(props), true);
+    });
+    it('returns true if location state nextAddress equals "cdlSummary"', function() {
+      props.location.state = {
+        nextAddress: 'cdlSummary'
+      };
+      assert.equal(goToSummary(props), true);
     });
   });
 });

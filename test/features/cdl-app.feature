@@ -32,3 +32,15 @@ Scenario: Name page
   Then I will see an error message telling me to enter a valid date
   When I indicate that I am between 17.5 and 18
   Then I will see an info message box show up letting me know limitations on my CDL based on my age
+  When I go to the CDL summary
+  And I will see my name on that summary
+  And I will see my between 17.5 and 18 dob on that summary
+  When I click to edit my CDL name
+  Then I will be on the CDL name page
+  When I change my first name
+  And I click "Next" to continue
+  Then I will be on the CDL summary
+  When I click to edit my CDL date of birth
+  Then I will be on the CDL dob page
+  When I click "Next" to continue
+  Then I will be on the CDL summary

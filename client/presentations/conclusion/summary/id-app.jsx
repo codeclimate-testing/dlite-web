@@ -1,13 +1,15 @@
 'use strict';
 
 import React                        from 'react';
-import IDApplicationNotStarted      from './id-application-not-started.jsx';
-import SeniorID                     from './senior-id.jsx';
-import IDRealID                     from './id-real-id.jsx';
-import ReducedOrNoFee               from './reduced-or-no-fee.jsx';
-import IDAction                     from './id-action.jsx';
-import CurrentIDInfo                from './current-id-info.jsx';
-import Accordion                    from '../../../../containers/accordion.jsx';
+import Accordion                    from '../../../containers/accordion.jsx';
+import {
+  IDApplicationNotStarted,
+  SeniorID,
+  IDRealID,
+  ReducedOrNoFee,
+  IDAction,
+  CurrentIDInfo
+} from './id-app/index';
 
 const IDApp = (props) => {
   const application = props.application;

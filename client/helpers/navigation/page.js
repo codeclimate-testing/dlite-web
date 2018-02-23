@@ -20,7 +20,7 @@ export const pathForPage = (name) => {
 };
 
 export const nextPath = (name, props) => {
-  if (goToSummary(props)) {
+  if (props.hasOwnProperty('location') && goToSummary(props)) {
     return pageFor(props.location.state.nextAddress).path;
   }
 

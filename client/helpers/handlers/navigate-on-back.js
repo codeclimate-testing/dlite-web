@@ -1,7 +1,8 @@
 'use strict';
+import { goToSummary }    from '../data/pathnames';
 
 const normalFlowOrValid = (props, validator) => {
-  if (props.location && props.location.state && props.location.state.nextAddress === '/summary') {
+  if (goToSummary(props)) {
     return (props.onSubmitShowErrors && validator && validator.isValid());
   } else {
     return true;

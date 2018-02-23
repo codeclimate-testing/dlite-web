@@ -6,10 +6,11 @@ import { pathForPage }  from '../../../helpers/navigation/page';
 
 const PageSummaryLink = (props) => {
   let className = `${props.name} summary edit button`;
+  let nextPathKey = props.summary || 'summary';
 
   let linkTo = {
     pathname: pathForPage(props.name),
-    state: { nextAddress: props.summary }
+    state: { nextAddress: nextPathKey }
   };
 
   return (

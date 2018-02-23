@@ -47,12 +47,6 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  // world.and('I select a suffix', function(done){
-  //   browser
-  //     .select('')
-  //     .then(() => { done(); })
-  //     .catch(done);
-  // });
 
   world.then('I will see my name on that summary', function(done) {
     browser
@@ -117,6 +111,13 @@ module.exports = function(world) {
   world.when('I click to edit my name', function(done) {
     browser
       .click('.legalName.button.summary')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to edit my CDL name', function(done) {
+    browser
+      .click('.cdlLegalName.button.summary')
       .then(done)
       .catch(done);
   });

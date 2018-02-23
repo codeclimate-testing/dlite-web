@@ -1,13 +1,14 @@
 'use strict';
 
 import React                       from 'react';
-import DLApplicationNotStarted     from './dl-application-not-started.jsx';
-import DLRealID                    from './dl-real-id.jsx';
-import DLAction                    from './dl-action.jsx';
-import LicenseType                 from './license-type.jsx';
-import CurrentDLInfo               from './current-dl-info.jsx';
-import Accordion                   from '../../../../containers/accordion.jsx';
-
+import Accordion                   from '../../../containers/accordion.jsx';
+import {
+  DLApplicationNotStarted,
+  DLAction,
+  CurrentDLInfo,
+  DLRealID,
+  LicenseType
+} from './dl-app/index';
 
 const DLApp = (props) => {
   const application = props.application;

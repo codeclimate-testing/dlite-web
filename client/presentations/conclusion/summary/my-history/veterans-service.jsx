@@ -3,7 +3,7 @@
 import React from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import PageSummaryLink  from '../Page-summary-link.jsx';
-import SummaryItem      from '../Summary-item.jsx';
+import SummaryItem      from '../summary-item.jsx';
 import {
   getStringByStatus
 } from '../../../../helpers/data/summary';

@@ -1,13 +1,14 @@
 'use strict';
 
 import React                       from 'react';
-import LicenseIssues               from './license-issues.jsx';
-import LicenseAndIdHistory         from './license-and-id-history.jsx';
-import NamesHistory                from './names-history.jsx';
-import MedicalHistory              from './medical-history.jsx';
-import VeteransService             from './veterans-service.jsx';
-import Accordion                   from '../../../../containers/accordion.jsx';
-
+import Accordion                   from '../../../containers/accordion.jsx';
+import {
+  LicenseIssues,
+  LicenseAndIdHistory,
+  NamesHistory,
+  MedicalHistory,
+  VeteransService
+} from './my-history/index';
 const MyHistory = (props) => {
   const application = props.application;
 

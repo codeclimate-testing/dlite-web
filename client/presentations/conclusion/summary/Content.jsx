@@ -2,14 +2,14 @@
 import React                from 'react';
 import GuardianSignature    from './guardian-signature.jsx';
 import ContinueButton       from '../../continue-button.jsx';
-import IDApp                from './id-app/index.jsx';
-import DLApp                from './dl-app/index.jsx';
-import MyBasics             from './my-basics/index.jsx';
-import MyHistory            from './my-history/index.jsx';
-import OrganDonation        from './organ-donation/index.jsx';
-import Voting               from './voting/index.jsx';
-import SubmitButton         from './Submit-button.jsx';
-import Alerts               from './Alerts.jsx';
+import IDApp                from './id-app.jsx';
+import DLApp                from './dl-app.jsx';
+import MyBasics             from './my-basics.jsx';
+import MyHistory            from './my-history.jsx';
+import OrganDonation        from './organ-donation.jsx';
+import Voting               from './voting.jsx';
+import SubmitButton         from './submit-button.jsx';
+import Alerts               from './alerts.jsx';
 
 
 const Contents = (props) => {

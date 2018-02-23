@@ -24,15 +24,15 @@ describe('navigateOnBack', function() {
     };
   });
 
-  it('if props.location.state.nextAddress does not equal "/summary", will go back one step in history', function() {
+  it('if props.location.state.nextAddress does not equal "summary", will go back one step in history', function() {
     navigateOnBack(props, validations)(event);
     assert.equal(props.history.entries[0].pathname, '/');
   });
 
-  it('if props.location.state.nextAddress equals "/summary", it will check the validations before going back', function() {
+  it('if props.location.state.nextAddress equals "summary", it will check the validations before going back', function() {
     props.location = {
       state: {
-        nextAddress: '/summary'
+        nextAddress: 'summary'
       }
     };
     props.validations = false;

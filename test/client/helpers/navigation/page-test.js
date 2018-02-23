@@ -40,7 +40,7 @@ describe('Data helpers for page', function() {
 
   it('return /apply/summary if state has been passed from link', function() {
     assert.equal(
-      nextPath('trueName', {location: {state: {nextAddress: '/summary'}}}),
+      nextPath('trueName', {location: {state: {nextAddress: 'summary'}}}),
       '/apply/id-and-license/summary'
     );
   });

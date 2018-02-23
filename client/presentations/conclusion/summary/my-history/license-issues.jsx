@@ -4,7 +4,7 @@ import React            from 'react';
 import { printDate }    from '../../../../helpers/print-date';
 import * as dataPresent from '../../../../helpers/data-present';
 import PageSummaryLink  from '../Page-summary-link.jsx';
-import SummaryItem      from '../Summary-item.jsx';
+import SummaryItem      from '../summary-item.jsx';
 import {
   licenseIssuesIsSuspended
 } from '../../../../helpers/data/my-history';

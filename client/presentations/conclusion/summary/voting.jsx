@@ -1,13 +1,15 @@
 'use strict';
 import React                       from 'react';
-import Accordion                   from '../../../../containers/accordion.jsx';
-import CitizenStatus               from './citizen-status.jsx';
-import EligibilityRequirements     from './eligibility-requirements.jsx';
-import BallotByMail                from './ballot-by-mail.jsx';
-import PoliticalPartyChoose        from './choose-party.jsx';
-import BallotLanguage              from './ballot-language.jsx';
-import ContactMethods              from './contact-methods.jsx';
-import OptOut                      from './opt-out.jsx';
+import Accordion                   from '../../../containers/accordion.jsx';
+import {
+  CitizenStatus,
+  EligibilityRequirements,
+  BallotByMail,
+  PoliticalPartyChoose,
+  BallotLanguage,
+  ContactMethods,
+  OptOut
+} from './voting/index';
 
 const Voting = (props) => {
   const application = props.application;

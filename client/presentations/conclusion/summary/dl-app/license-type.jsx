@@ -4,7 +4,7 @@ import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import translations     from '../../../../i18n';
 import PageSummaryLink  from '../Page-summary-link.jsx';
-import SummaryItem      from '../Summary-item.jsx';
+import SummaryItem      from '../summary-item.jsx';
 import {
   showLicenseClass
 } from '../../../../helpers/data/summary';

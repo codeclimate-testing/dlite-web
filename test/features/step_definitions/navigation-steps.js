@@ -43,6 +43,9 @@ module.exports = function(world) {
   world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
+  world.when('I go to the CDL summary', function(done){
+    navigateToPath('/apply/cdl/summary', '.summary', done);
+  });
   world.when('I visit the CDL name page', function(done) {
     navigateToPath('/apply/cdl/true-name', '.legal-name-form', done);
   });
@@ -55,7 +58,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the page to choose application language', function(done) {
-    navigateToPath('/apply/choose-language', '.choose-card-form', done);
+    navigateToPath('/apply/choose-language', '.choose-language-form', done);
   });
 
   world.when('I visit the addresses page', function(done) {
@@ -359,6 +362,10 @@ module.exports = function(world) {
 
   world.then('I will be on the page with my summary', function(done) {
     assertOnPage('.summary', /apply\/id-and-license\/summary/, done);
+  });
+
+  world.then('I will be on the CDL summary', function(done) {
+    assertOnPage('.summary', /apply\/cdl\/summary/, done);
   });
 
   world.then('I will be on the page for appointment preparation', function(done) {

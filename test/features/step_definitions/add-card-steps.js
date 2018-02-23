@@ -27,7 +27,7 @@ module.exports = function(world) {
       })
       .open(world.url('/'))
       .waitForSelector('.welcome-page')
-      .then(() => { done(); })
+      .then(done)
       .catch(done);
   });
 
@@ -41,7 +41,7 @@ module.exports = function(world) {
       })
       .open(world.url('/'))
       .waitForSelector('.welcome-page')
-      .then(() => { done(); })
+      .then(done)
       .catch(done);
   });
 

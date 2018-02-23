@@ -5,7 +5,7 @@ import * as dataPresent   from '../../../../helpers/data-present';
 import translations       from '../../../../i18n';
 import { printDate }      from '../../../../helpers/print-date';
 import PageSummaryLink    from '../Page-summary-link.jsx';
-import SummaryItem        from '../Summary-item.jsx';
+import SummaryItem        from '../summary-item.jsx';
 import { hasValue }       from '../../../../helpers/data/validations';
 import {
   existingID

@@ -62,9 +62,12 @@ export const getActionFromState = (state) => {
 }
 
 export const goToSummary = (props) => {
-  console.log(props.location.state)
-  return props.location &&
-  props.location.state &&
-  (props.location.state.nextAddress === 'summary' ||
-  props.location.state.nextAddress === 'cdlSummary' );
+  let returnToSummary = false;
+  if (props.location.state){
+    if (props.location.state.nextAddress === 'summary' ||
+      props.location.state.nextAddress === 'cdlSummary' ) {
+        returnToSummary = true;
+      }
+  }
+  return returnToSummary;
 };
