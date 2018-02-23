@@ -48,12 +48,12 @@ const Intro = (props) => {
           {convertToHtml('li', translations.intro.getStartedPage.listItems[3])}
         </ol>
 
+
+        {convertToHtml('p', translations.intro.getStartedPage.timeToComplete)}
+        {convertToHtml('p', translations.intro.getStartedPage.afterComplete)}
+
         <div className='navigation-buttons row'>
           <hr/>
-
-          {convertToHtml('p', translations.intro.getStartedPage.timeToComplete)}
-          {convertToHtml('p', translations.intro.getStartedPage.afterComplete)}
-
           <div className='shadow-container unit'>
             <BackButton
               onBack={props.onBack}
