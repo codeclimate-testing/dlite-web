@@ -26,9 +26,14 @@ describe('dataParser', function() {
   });
 
   describe('stringToBool', function() {
-    it('returns null when data equals "decline"', function() {
+    it('returns "decline" when data equals "decline"', function() {
       let val = 'decline';
       assert.equal(dataParser.strToBool(val), 'decline');
+    });
+
+    it('returns null when data is unrecognized', function() {
+      let val = 'foo';
+      assert.equal(dataParser.strToBool(val), null);
     });
 
     it('returns false when data equals "No"', function(){

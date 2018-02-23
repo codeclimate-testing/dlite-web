@@ -213,7 +213,7 @@ function saveApplication(data) {
       return returnedData;
     })
     .catch(function(err) {
-      console.error('SAVE APPLICATION ERROR',err);
+      console.error('SAVE APPLICATION ERROR', err);
       return err;
     });
 };

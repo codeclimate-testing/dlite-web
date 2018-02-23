@@ -32,7 +32,10 @@ module.exports.parseParty = function parseParty(obj) {
 };
 
 function strToBool(val) {
-  return val === 'Yes' ? true : val === 'No' ? false : val;
+  if (val === 'Yes') { return true; }
+  if (val === 'No') { return false; }
+  if (val === true || val === false || val === 'decline') { return val; }
+  return null;
 };
 
 module.exports.boolToStr = function boolToStr(val) {
