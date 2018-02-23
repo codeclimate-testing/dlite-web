@@ -58,7 +58,7 @@ describe('Reduced Fee Page', function() {
       assert.ok(component.find('label[for="ID-No"]').length, 'reduced No button missing');
     });
 
-    it('selecting Yes makes form show asking if user has the correct forms', function() {
+    it('selecting Yes makes FAQ drawer and info message show up', function() {
       props.IDApp.reducedFee.ID = 'Yes';
       props.continueDisabled  =   !(dataPresent.reducedFee(props.IDApp.reducedFee));
       let component = render(
@@ -66,8 +66,9 @@ describe('Reduced Fee Page', function() {
           <ReducedFeePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="form-Yes"]').length, 'form Yes button missing');
-      assert.ok(component.find('label[for="form-No"]').length, 'form No button missing');
+
+      assert.ok(component.find('#reduced-fee-form-info-accordion').length, 'FAQ missing');
+      assert.ok(component.find('.message-box').length, 'message box missing');
     });
 
     it('has special language if user is getting both new ID and new DL', function() {

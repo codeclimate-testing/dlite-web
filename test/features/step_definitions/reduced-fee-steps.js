@@ -19,9 +19,13 @@ module.exports = function (world) {
       .catch(done);
   });
 
-  world.when('I select No to having the correct forms', function(done) {
+  world.then('I will see info about how to get the right forms', function(done) {
     browser
-      .click('label[for="form-No"]')
+      .text()
+      .then( text => {
+        assert(text.includes('How do I get these forms'));
+        assert(text.includes('In order to get a reduced fee ID you need to have'));
+      })
       .then(() => { done(); })
       .catch(done);
   });

@@ -190,7 +190,7 @@ Feature: Save user data
     And I click "Next" to continue
     Then I will be on the reduced fee page
     And I select Yes to getting a reduced fee
-    When I select No to having the correct forms
+    Then I will see info about how to get the right forms
     When I visit the social security page
     Then I will see the page title has postfix " - My basics"
     When I select No for social security
