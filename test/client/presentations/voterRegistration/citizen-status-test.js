@@ -63,7 +63,23 @@ describe('CitizenStatusPage', function() {
       assert.ok(component.text().includes('If you select Decline to answer, you will not be pre-registered to vote'), 'pre-registration language not found');
     });
 
-  });
+    it('shows normal registration language for users who are above 18', function() {
+      let today = new Date();
 
+      props.dateOfBirth = {
+        month: (today.getMonth()).toString(),
+        day: (today.getDate()).toString(),
+        year: (today.getFullYear() - 21).toString()
+      };
+
+      let component = render(
+        <Wrapper>
+          <CitizenStatusPage  {...props} />
+        </Wrapper>
+      );
+
+      assert.ok(component.text().includes('If you select Decline to answer, you will not be registered to vote'), 'registration language not found');
+    });
+  });
 });
 

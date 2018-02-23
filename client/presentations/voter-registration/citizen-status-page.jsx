@@ -11,19 +11,16 @@ import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
-const text = {
-  voterPreRegistration: convertToHtml('p', translations.votingRegistration.shared.declineToAnswerInformationPreRegistration),
-  voterRegistration: convertToHtml('p', translations.votingRegistration.shared.declineToAnswerInformationRegistration)
-};
+const DeclineStatement = (props) => {
+  let translation = translations.votingRegistration.shared;
 
-const PreRegText = (props) => {
-  if (!props.showIf) { return null; }
-  return text.voterPreRegistration;
-};
+  if (isPreregistering(props.dateOfBirth)) {
+    translation = translation.declineToAnswerInformationPreRegistration;
+  } else {
+    translation = translation.declineToAnswerInformationRegistration;
+  }
 
-const RegText = (props) => {
-  if (!props.showIf) { return null; }
-  return text.voterRegistration;
+  return convertToHtml('p', translation);
 };
 
 const CitizenStatusPage = (props) => {
@@ -36,15 +33,8 @@ const CitizenStatusPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
         {convertToHtml('h2', translations.votingRegistration.citizenshipPage.pagePrompt, 'question')}
-        <PreRegText
-          showIf = {showPreReg}
-        />
-        <RegText
-          showIf = {!showPreReg}
-        />
 
-        {text[props.prereg]}
-
+        <DeclineStatement {...props} />
         <fieldset>
           <RadioCollection
             {...props}
