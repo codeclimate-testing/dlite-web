@@ -140,9 +140,8 @@ describe('client data parser', function() {
 
     it('correctly extracts the license type info', function() {
       let licenseType = parsedData.license_classes;
-      assert.equal(licenseType[0].type, data.DLApp.licenseType.endorsement[0]);
-      assert.equal(licenseType[1].type, data.DLApp.licenseType.type[0]);
-      assert.equal(licenseType[2].type, data.DLApp.licenseType.type[1]);
+      assert.equal(licenseType[0].type, data.DLApp.licenseType.type[0]);
+      assert.equal(licenseType[1].type, data.DLApp.licenseType.type[1]);
     });
 
     it('correctly extracts the email', function() {

@@ -50,28 +50,16 @@ describe('LicenseType Page', function() {
 
       assert.ok(component.find('.license-type-form').length, 'form not rendered');
       assert.ok(component.find('label.checkbox-selector[for="car"]').length, 'car checkbox not rendered');
+    });
+
+    it('shows radio buttons asking if firefighter endorsement is needed', function() {
+      let component = render(
+        <Wrapper>
+          <LicenseType {...props}/>
+        </Wrapper>
+      );
+
       assert.ok(component.find('.endorsement-toggle').length, 'endorsements form not rendered');
-    });
-
-    it('does not show the form asking which endorsements if no selection is made', function() {
-      let component = render(
-        <Wrapper>
-          <LicenseType {...props}/>
-        </Wrapper>
-      );
-      assert.equal(component.find('.endorsement-form'), false);
-    });
-
-    it('shows the form asking which endorsement if yes is selected', function() {
-      props.DLApp.licenseType.needEndorsement = 'Yes';
-
-      let component = render(
-        <Wrapper>
-          <LicenseType {...props}/>
-        </Wrapper>
-      );
-
-      assert.ok(component.find('.endorsement-form').length, 'endorsement form not rendered');
     });
   });
 });

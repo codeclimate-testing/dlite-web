@@ -35,7 +35,6 @@ const state  = {
       action: '',
       licenseType: {
         type: [],
-        endorsement: [],
         needEndorsement: ''
       },
       currentCard: {

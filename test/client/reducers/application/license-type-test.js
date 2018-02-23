@@ -9,7 +9,6 @@ describe('licenseTypeReducer', function() {
       updateCardType(
         {
           type: [],
-          endorsement: [],
           needEndorsement: ''
         },
         {
@@ -22,32 +21,7 @@ describe('licenseTypeReducer', function() {
       ),
       {
         type: ['car'],
-        endorsement: [],
         needEndorsement: ''
-      }
-    );
-  });
-
-  it('it adds endorsement to endorsement array', function() {
-    assert.deepEqual(
-      updateCardType(
-        {
-          type: [],
-          endorsement: [],
-          needEndorsement: true
-        },
-        {
-          type: 'UPDATE_LICENSE_TYPE',
-          payload: {
-            name: 'endorsement',
-            value: 'firefighter-true'
-          }
-        }
-      ),
-      {
-        type: [],
-        endorsement: ['firefighter'],
-        needEndorsement: true
       }
     );
   });
@@ -57,7 +31,6 @@ describe('licenseTypeReducer', function() {
       updateCardType(
         {
           type: [],
-          endorsement: [],
           needEndorsement: ''
         },
         {
@@ -70,7 +43,6 @@ describe('licenseTypeReducer', function() {
       ),
       {
         type: [],
-        endorsement: [],
         needEndorsement: true
       }
     );

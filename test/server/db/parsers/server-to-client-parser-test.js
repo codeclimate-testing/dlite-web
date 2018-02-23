@@ -91,7 +91,6 @@ describe('server data parser', function() {
       .then( records => {
         parsedData = parse(records);
         assert.deepEqual(parsedData.application.DLApp.licenseType.type, clientData.DLApp.licenseType.type);
-        assert.deepEqual(parsedData.application.DLApp.licenseType.endorsement, clientData.DLApp.licenseType.endorsement);
         assert.deepEqual(parsedData.application.DLApp.licenseType.needEndorsement, clientData.DLApp.licenseType.needEndorsement);
         done();
       })

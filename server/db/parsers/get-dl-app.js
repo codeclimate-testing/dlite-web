@@ -60,15 +60,13 @@ function getDLApp(cards, card_options, card_histories, license_classes) {
 function getLicenseType(license_classes) {
   let licenseType = {
     type: [],
-    endorsement: [],
     needEndorsement: ''
   };
   if(license_classes.length > 0){
     license_classes.forEach(item => {
 
-      if(item.type === 'firefighter' || item.type === 'ambulance') {
-        licenseType.endorsement.push(item.type);
-        licenseType.needEndorsement = 'Yes'
+      if(item.type.startsWith('firefighter')) {
+        licenseType.needEndorsement = item.type.split('-')[1];
       } else {
         licenseType.type.push(item.type);
       }

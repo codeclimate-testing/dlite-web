@@ -319,14 +319,12 @@ describe('Summary components', function() {
           action: 'new',
           licenseType: {
             type: ['car', 'cycle'],
-            needEndorsement: 'Yes',
-            endorsement: 'firefighter'
+            needEndorsement: 'Yes'
           }
         },
         licenseType: {
           type: ['car', 'cycle'],
-          needEndorsement: 'Yes',
-          endorsement: 'firefighter'
+          needEndorsement: 'Yes'
         },
       };
       let component = render(

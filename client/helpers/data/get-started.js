@@ -23,7 +23,7 @@ export const getIDString = (props, defaultString, reducedString, noFeeString, se
 
 
 export const getEndorsementString = (props, fireString) => {
-  if (props.DLApp.licenseType.endorsement.indexOf('firefighter') > -1) {
+  if (props.DLApp.licenseType.needEndorsement === 'Yes') {
     return fireString;
   } else {
     return '';

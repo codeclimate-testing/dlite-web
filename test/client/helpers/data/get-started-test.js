@@ -78,8 +78,8 @@ describe('Data helpers for get started page', function() {
 
   describe('#getEndorsementString', function() {
     const fireString = 'test test test';
-    it('returns the firefighter endorsement if the endorsement array includes firefighter', function() {
-      props.DLApp.licenseType.endorsement = ['firefighter'];
+    it('returns the firefighter endorsement if needEndorsement is Yes', function() {
+      props.DLApp.licenseType.needEndorsement = 'Yes';
       assert.equal(getEndorsementString(props, fireString), fireString);
     });
     it('returns a blank string if array does not include firefighter', function() {

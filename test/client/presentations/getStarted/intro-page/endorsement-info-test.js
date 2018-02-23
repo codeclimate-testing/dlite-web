@@ -23,7 +23,6 @@ describe('EndorsementInfo', function() {
     };
     let licenseType = {
       type: [],
-      endorsement: [],
       needEndorsement: ''
     };
     let realID = {
@@ -78,8 +77,8 @@ describe('EndorsementInfo', function() {
   });
 
   describe('endorsements', function() {
-    it('shows firefighter endorsement when user selects firefighter', function() {
-      props.licenseType.endorsement = ['firefighter']
+    it('shows firefighter endorsement when user selects Yes to needing endorsement', function() {
+      props.licenseType.needEndorsement = 'Yes'
 
       let component = render(
         <Wrapper>

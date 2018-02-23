@@ -100,7 +100,6 @@ function fakeClientData() {
       },
       'licenseType': {
         'type': ['car', 'trailer'],
-        'endorsement': ['firefighter'],
         'needEndorsement': 'Yes'
       },
     },

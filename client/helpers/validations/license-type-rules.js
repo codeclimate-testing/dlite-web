@@ -22,17 +22,7 @@ const needEndorsement = (props) => {
   return errors;
 };
 
-const endorsement = (props) => {
-  let value = props.licenseType.endorsement;
-  let errors = [];
-  if (props.licenseType.needEndorsement === 'Yes' && !hasValue(value)){
-    errors = [translations.errorMessages.selectionMissing]
-  }
-  return errors;
-};
-
 export default {
   licenseType: licenseType,
-  needEndorsement: needEndorsement,
-  endorsement: endorsement
+  needEndorsement: needEndorsement
 };
