@@ -20,7 +20,7 @@ const EnterMedicalInfo = (props) => {
 
       <TextInput
         {...props}
-        identifier    = {`${props.formname}-other`}
+        identifier    = {`${props.formName}-other`}
         value         = { props.cardChanges.other }
         errorMessage  = { props.validations.other() }
       />
