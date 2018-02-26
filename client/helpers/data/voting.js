@@ -11,7 +11,7 @@ export const citizenStatusNotChosen = (props) => {
 };
 
 export const eligibilityNotChosen = (props) => {
-  return !hasValue(props.eli);
+  return !hasValue(props.eligibilityRequirements);
 };
 
 export const declineToAnswer = (value) => {
