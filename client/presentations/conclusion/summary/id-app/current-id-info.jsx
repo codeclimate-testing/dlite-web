@@ -33,20 +33,21 @@ const IDDate = (props) => {
 };
 
 const CurrentIDInfo = (props) => {
-  if(!existingID(props)) { return null; }
-  if(!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
+  let application = props.application;
+  if(!existingID(application)) { return null; }
+  if(!dataPresent.currentCardInfo(application.IDApp.currentCardInfo)) { return null; }
 
   return (
     <PageSummaryLink
+      {...props}
       name='addCurrentIDInfo'
-      summary = {props.summary}
     >
       <IDNumber
-        number = {props.currentCardInfo.number}
+        number = {application.IDApp.currentCardInfo.number}
       />
 
       <IDDate
-        currentCardInfo = {props.currentCardInfo}
+        currentCardInfo = {application.IDApp.currentCardInfo}
       />
     </PageSummaryLink>
   )

@@ -13,6 +13,7 @@ const IDApplicationNotStarted = (props) => {
   if(IDAppExists(props)) { return null; }
   return (
     <AddAppLink
+      {...props}
       to = '/id-card'
     >
       <p>{translations[locale].summaryPage.whatImDoing.nothing}</p>

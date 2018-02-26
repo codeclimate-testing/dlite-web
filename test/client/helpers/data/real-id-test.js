@@ -6,8 +6,8 @@ import {
   validToContinue,
   mustChooseCard,
   isSelected,
-  DLAsRealID,
-  IDAsRealID
+  IDgettingRealID,
+  DLgettingRealID
 } from '../../../../client/helpers/data/real-id';
 
 describe('Data helpers for real-id', function() {
@@ -88,34 +88,46 @@ describe('Data helpers for real-id', function() {
   describe('#DLAsRealID', function() {
     it('returns true if realIdDesignation equals "DL"', function() {
       data.realID.realIdDesignation = 'DL';
-      assert.equal(DLAsRealID(data), true);
+      data.realID.getRealID = 'Yes';
+      assert.equal(DLgettingRealID(data), true);
     });
     it('returns false if realIdDesignation equals "ID"', function() {
       data.realID.realIdDesignation = 'ID';
-      assert.equal(DLAsRealID(data), false);
+      data.realID.getRealID = 'Yes';
+      assert.equal(DLgettingRealID(data), false);
     });
     it('returns false if realIdDesignation is blank', function() {
       data.realID.realIdDesignation = '';
-      assert.equal(DLAsRealID(data), false);
+      data.realID.getRealID = 'Yes';
+      assert.equal(DLgettingRealID(data), false);
     });
     it('returns false if DLApp does not exist', function() {
       data.DLApp.isApplying = false;
-      assert.equal(DLAsRealID(data), false);
+      data.realID.getRealID = 'Yes';
+      assert.equal(DLgettingRealID(data), false);
+    });
+    it('returns false if user is not getting real id', function() {
+      data.DLApp.isApplying = true;
+      data.realID.getRealID = 'No';
+      assert.equal(DLgettingRealID(data), false);
     });
   });
 
-  describe('#IDAsRealID', function() {
+  describe('#IDgettingRealID', function() {
     it('returns true if realIdDesignation equals "ID"', function() {
       data.realID.realIdDesignation = 'ID';
-      assert.equal(IDAsRealID(data), true);
+      data.realID.getRealID = 'Yes';
+      assert.equal(IDgettingRealID(data), true);
     });
     it('returns false if realIdDesignation equals "DL"', function() {
       data.realID.realIdDesignation = 'DL';
-      assert.equal(IDAsRealID(data), false);
+      data.realID.getRealID = 'Yes';
+      assert.equal(IDgettingRealID(data), false);
     });
     it('returns false if realIdDesignation is blank', function() {
       data.realID.realIdDesignation = '';
-      assert.equal(IDAsRealID(data), false);
+      data.realID.getRealID = 'Yes';
+      assert.equal(IDgettingRealID(data), false);
     });
   });
 

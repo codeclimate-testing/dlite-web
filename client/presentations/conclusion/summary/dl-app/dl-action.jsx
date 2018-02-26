@@ -23,8 +23,8 @@ const DLAction = (props) => {
   let locale = props.locale;
   return (
     <PageSummaryLink
+      {...props}
       name    = 'addWdywtdt'
-      summary = {props.summary}
     >
       <New        showIf = {getNewDL(props)}  locale = {locale}/>
       <Renew      showIf = {renewDL(props)}   locale = {locale}/>

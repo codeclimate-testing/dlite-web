@@ -5,34 +5,37 @@ import {
   bothAppsExist
 }      from './cards';
 
-import {
-  IDAppExists,
-  DLAppExists
-} from './card-type';
-
-export const validToContinue = (props) => {
-  if (mustChooseCard(props)) {
-    return hasValue(props.realID.realIdDesignation);
-  }
-  return isSelected(props);
-};
 
 export const mustChooseCard = (props) => {
-  return bothAppsExist(props) && gettingRealID(props);
+  return DLgettingRealID(props) && IDgettingRealID(props);
 };
 
+export const showDesignation = (props) => {
+  return hasValue(props.IDApp.realID) && hasValue(props.DLApp.realID);
+};
+
+export const designatedValue = (props) => {
+  let key = '';
+  if (DLgettingRealID(props) && !IDgettingRealID(props)) {
+    key = 'DL';
+  } else if (IDgettingRealID(props) && !DLgettingRealID(props)) {
+    key = 'ID';
+  }
+  return key;
+}
+
 export const gettingRealID = (props) => {
-  return props.realID.getRealID === 'Yes';
+  return props.realID === 'Yes';
 };
 
 export const isSelected = (props) => {
   return hasValue(props.realID.getRealID)
 };
 
-export const DLAsRealID = (props) => {
-  return props.realID.realIdDesignation === 'DL' && DLAppExists(props);
+export const DLgettingRealID = (props) => {
+  return props.DLApp.realID === 'Yes';
 };
 
-export const IDAsRealID = (props) => {
-  return props.realID.realIdDesignation === 'ID' && IDAppExists(props);
+export const IDgettingRealID = (props) => {
+  return props.IDApp.realID === 'Yes';
 };

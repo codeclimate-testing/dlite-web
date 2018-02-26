@@ -13,8 +13,13 @@ const PageSummaryLink = (props) => {
     state: { nextAddress: nextPathKey }
   };
 
+  let app = props.app || '';
+  const handleClick = (e) => {
+    return props.onFlowChange(app);
+  };
+
   return (
-    <div className='summary-section'>
+    <div className='summary-section' onClick={handleClick}>
       <div className='row'>
         <div className='unit summary-content'>
           {props.children}

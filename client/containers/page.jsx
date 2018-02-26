@@ -10,7 +10,6 @@ import { getTextFromPathname }  from '../helpers/data/pathnames';
 const Page = (props) => {
   let sectionKey = getTextFromPathname(props, props.sectionKey, '');
   props.onPageLoad(sectionKey, props.section);
-  props.onFlowChange(props);
 
   return (
     <Presentation {...props} />

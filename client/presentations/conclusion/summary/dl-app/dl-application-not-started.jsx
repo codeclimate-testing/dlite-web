@@ -11,10 +11,11 @@ import {
 const DLApplicationNotStarted = (props) => {
   let locale = props.locale;
   document.title = 'Summary of my application';
-  if(DLAppExists(props)) { return null; }
+  if(DLAppExists(props.application)) { return null; }
 
   return (
     <AddAppLink
+      {...props}
       to      = '/driver-license'
     >
       <p>{translations[locale].summaryPage.whatImDoing.nothing}</p>

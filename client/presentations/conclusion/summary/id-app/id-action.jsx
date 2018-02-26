@@ -23,8 +23,8 @@ const IDAction = (props) => {
   let locale = props.locale;
   return (
     <PageSummaryLink
+      {...props}
       name    = 'addIDWdywtdt'
-      summary = {props.summary}
     >
       <New        showIf = {getNewID(props)}    locale = {locale}/>
       <Renew      showIf = {renewID(props)}     locale = {locale}/>

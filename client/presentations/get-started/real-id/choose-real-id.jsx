@@ -17,6 +17,7 @@ const ChooseRealID = (props) => {
   };
 
   let headerText = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both);
+  let formName = getCorrectString(props, 'DL', 'ID', 'both');
 
   return (
     <div className='real-id-form'>
@@ -28,7 +29,7 @@ const ChooseRealID = (props) => {
         <fieldset>
           <RadioCollection
             {...props}
-            name          = {`getRealID-${props.formName}`}
+            name          = { formName}
             errorMessage  = { props.validations.realID() }
           >
             { radioYesNoGroup(locale) }

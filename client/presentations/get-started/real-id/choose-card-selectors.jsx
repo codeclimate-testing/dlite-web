@@ -4,10 +4,10 @@ import React from 'react';
 
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import radioIdDlGroup         from '../../radio-id-dl-group.jsx';
-import { mustChooseCard }     from '../../../helpers/data/real-id';
+import { showDesignation }     from '../../../helpers/data/real-id';
 
 const Form = (props) => {
-  if (!mustChooseCard(props)) { return null; }
+  if (!showDesignation(props)) { return null; }
 
   return (
     <div className='real-id-form'>

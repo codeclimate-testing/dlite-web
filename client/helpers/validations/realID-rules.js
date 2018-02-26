@@ -2,15 +2,18 @@
 
 import selectionValidator   from './selection-validator';
 import { mustChooseCard }   from '../data/real-id';
+import translations         from '../../i18n';
+
 
 let designation = (props) => {
-  if (!mustChooseCard(props)) {
-    return [];
+  let errors = [];
+  if (mustChooseCard(props)) {
+    errors.push(translations.errorMessages.realIdCardSelectionMissing);
   }
-  return selectionValidator('realIdCardSelectionMissing', 'realID', 'realIdDesignation')(props);
+  return errors;
 };
 
 export default {
-  realID: selectionValidator('realIdSelectionMissing', 'realID', 'getRealID'),
+  realID: selectionValidator('realIdSelectionMissing', 'realID'),
   designation: designation
 };

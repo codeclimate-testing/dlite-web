@@ -18,6 +18,7 @@ import updateReducedFee                   from './id-app/update-reduced-fee';
 import updateCurrentID                    from './id-app/update-current';
 import updateIDReplacement                from './id-app/update-replacement';
 import updateIDChanges                    from './id-app/update-changes';
+import updateIDRealID                     from './id-app/update-id-real-id';
 
 import updateDL                           from './dl-app/update-dl';
 import updateDLAction                     from './dl-app/update-dl-action';
@@ -25,6 +26,7 @@ import updateLicenseType                  from './dl-app/update-license-type';
 import updateCurrentDL                    from './dl-app/update-current';
 import updateDLReplacement                from './dl-app/update-replacement';
 import updateDLChanges                    from './dl-app/update-changes';
+import updateDLRealID                     from './dl-app/update-dl-real-id';
 
 import updateLicenseIssues                from './history/update-license-issues';
 import updateLicenseAndIdHistory          from './history/update-license-and-id-history';
@@ -34,7 +36,6 @@ import updateVeteranService               from './history/update-veterans-servic
 
 import updateCardAction                   from './update-card-action';
 import updateCardType                     from './update-card-type';
-import updateRealID                       from './update-real-id';
 import updateOrganDonation                from './update-organ-donation';
 import updateGuardianSignature            from './update-guardian-signature';
 import updateYouthIDInstead               from './update-youth-id-instead';
@@ -51,7 +52,6 @@ const rootReducer = combineReducers({
   id                          : createApplicationID,
   cardAction                  : updateCardAction,
   cardType                    : updateCardType,
-  realID                      : updateRealID,
   IDApp                       : combineReducers({
     isApplying                  : updateID,
     action                      : updateIDAction,
@@ -59,7 +59,8 @@ const rootReducer = combineReducers({
     seniorID                    : updateSeniorID,
     currentCard                 : updateCurrentID,
     replacementDetails          : updateIDReplacement,
-    cardChanges                 : updateIDChanges
+    cardChanges                 : updateIDChanges,
+    realID                      : updateIDRealID
   }),
   DLApp                       : combineReducers({
     isApplying                  : updateDL,
@@ -67,7 +68,8 @@ const rootReducer = combineReducers({
     licenseType                 : updateLicenseType,
     currentCard                 : updateCurrentDL,
     replacementDetails          : updateDLReplacement,
-    cardChanges                 : updateDLChanges
+    cardChanges                 : updateDLChanges,
+    realID                      : updateDLRealID
   }),
   basics                      : combineReducers({
     language                    : updateLanguage,
@@ -96,7 +98,6 @@ const rootReducer = combineReducers({
   }),
   youthIDInstead              : updateYouthIDInstead,
   guardianSignature           : updateGuardianSignature
-
 });
 
 export default rootReducer;

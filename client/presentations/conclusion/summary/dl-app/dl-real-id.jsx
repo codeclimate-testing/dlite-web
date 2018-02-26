@@ -7,14 +7,17 @@ import SummaryItem      from '../summary-item.jsx';
 import translations     from '../../../../i18n';
 
 import {
-  gettingRealID,
+  DLAppExists
+} from '../../../../helpers/data/card-type';
+
+import {
+  DLgettingRealID,
   isSelected,
-  DLAsRealID
  }  from '../../../../helpers/data/real-id';
 
 
 const Yes = (props) => {
-  if (!gettingRealID(props)) { return null; }
+  if (!DLgettingRealID(props)) { return null; }
   let locale = props.locale;
   return (
     <SummaryItem
@@ -25,7 +28,7 @@ const Yes = (props) => {
 };
 
 const No = (props) => {
-  if (gettingRealID(props)) { return null; }
+  if (DLgettingRealID(props)) { return null; }
   let locale = props.locale;
   return (
     <SummaryItem
@@ -35,15 +38,15 @@ const No = (props) => {
   )
 };
 const DLRealID = (props) => {
-  if(!DLAsRealID(props)) { return null; }
+  if(!DLAppExists(props)) { return null; }
   let locale = props.locale;
   return (
     <PageSummaryLink
+      {...props}
       name='realID'
-      summary = {props.summary}
     >
-      <Yes  realID = {props.realID} locale = {locale}/>
-      <No   realID = {props.realID} locale = {locale}/>
+      <Yes  DLApp = {props.application.DLApp}   locale = {locale}/>
+      <No   DLApp = {props.application.DLApp}   locale = {locale}/>
     </PageSummaryLink>
   )
 };

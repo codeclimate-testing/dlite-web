@@ -144,6 +144,61 @@ describe('Summary components', function() {
         assert.equal(component.text().includes('Expiration date11/13/2008'), true)
       });
     });
+    describe('DLRealID', function() {
+      it('shows RealID fields DL', function(){
+        props.cardType = ['DL'];
+        props.DLApp.isApplying = true;
+        props.realID = {
+          getRealID : 'Yes',
+          realIdDesignation: 'DL'
+        };
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...props } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID CompliantYes'), true);
+      });
+      it('does not show if user is not getting a DL', function() {
+        let data = props;
+        data.realID.getRealID = 'Yes';
+        data.DLApp.isApplying = false;
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...data } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID'), false);
+      });
+
+      it('shows No if realIdDesignation is not DL', function() {
+        let data = props;
+        data.realID.getRealID = 'Yes';
+        data.realID.realIdDesignation = 'ID';
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...data } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID CompliantNo'), true);
+      });
+
+      it('shows No if realIdDesignation is DL and user has selected to not get a real ID', function() {
+        let data = props;
+        data.DLApp.isApplying = true;
+        data.realID.getRealID = 'No';
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...data } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID'), false);
+      });
+    });
     describe('LicenseType', function() {
       it('lists which types of licenses the user has selected', function() {
         let props = {
@@ -244,7 +299,7 @@ describe('Summary components', function() {
     });
 
     describe('IDRealID', function() {
-      it('shows RealID fields for ID', function(){
+      it('shows RealID fields for ID when user is using ID as real ID', function(){
         props.cardType = ['ID'];
         props.IDApp = {
           isApplying: true
@@ -261,12 +316,12 @@ describe('Summary components', function() {
         )
         assert.equal(component.text().includes('Real-ID CompliantYes'), true);
       });
-    });
 
-    describe('DLRealID', function() {
-      it('shows RealID fields DL', function(){
+      it('shows RealID fields for ID when user is using DL as real ID', function(){
         props.cardType = ['DL'];
-        props.DLApp.isApplying = true;
+        props.IDApp = {
+          isApplying: true
+        }
         props.realID = {
           getRealID : 'Yes',
           realIdDesignation: 'DL'
@@ -274,48 +329,10 @@ describe('Summary components', function() {
 
         let component = render(
           <Wrapper>
-            <DLRealID { ...props } />
+            <IDRealID { ...props } />
           </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID CompliantYes'), true);
-      });
-      it('does not show if user is not getting a DL', function() {
-        let data = props;
-        data.realID.getRealID = 'Yes';
-        data.DLApp.isApplying = false;
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...data } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID'), false);
-      });
-
-      it('does not show if realIdDesignation is not DL', function() {
-        let data = props;
-        data.realID.getRealID = 'Yes';
-        data.realID.realIdDesignation = 'ID';
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...data } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID'), false);
-      });
-
-      it('does not show if the user has not selected to get a real id', function() {
-        let data = props;
-        data.DLApp.isApplying = true;
-        data.realID.getRealID = '';
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...data } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID'), false);
+        )
+        assert.equal(component.text().includes('Real-ID CompliantNo'), true);
       });
     });
 

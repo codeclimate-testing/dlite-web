@@ -19,13 +19,13 @@ const Contents = (props) => {
         cardType    = {props.application.cardType}
         dateOfBirth = {props.application.basics.dateOfBirth}
       />
-      <IDApp          {...props} />
-      <DLApp          {...props} />
-      <MyBasics       {...props} />
-      <MyHistory      {...props} />
-      <OrganDonation  {...props} />
-      <Voting         {...props} />
-      <SubmitButton   {...props} />
+      <IDApp {...props}     app='id-card'/>
+      <DLApp {...props}     app='driver-license'/>
+      <MyBasics {...props} />
+      <MyHistory  {...props} />
+      <OrganDonation {...props} />
+      <Voting {...props} />
+      <SubmitButton />
     </div>
   )
 };
