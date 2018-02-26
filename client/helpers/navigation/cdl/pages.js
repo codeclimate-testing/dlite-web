@@ -23,6 +23,12 @@ const cdl = [
     key: 'cdlWdywtdt',
     description: 'What do you want to do today',
     path: '/what-do-you-want-to-do-today',
+    next: 'cdlResidency'
+  },
+  {
+    key: 'cdlResidency',
+    description: 'California residency',
+    path: '/california-residency',
     next: 'cdlSummary'
   },
   {
