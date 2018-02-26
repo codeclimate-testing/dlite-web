@@ -17,7 +17,7 @@ const formReducer = (state = defaultState(), action) => {
       data = 'No';
     }
   }
-  else if(action.payload.name === 'ID'){
+  else if(action.payload.name === 'ID' || action.payload.name === 'both'){
     data = action.payload.value;
   }
   return data;

@@ -6,8 +6,7 @@ import PageSummaryLink  from '../Page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 
 const SeniorID = (props) => {
-  let application = props.application.IDApp;
-  if (!hasValue(application.seniorID)) { return null; }
+  if (!hasValue(props.IDApp.seniorID)) { return null; }
 
   return (
     <PageSummaryLink
@@ -16,7 +15,7 @@ const SeniorID = (props) => {
     >
       <SummaryItem
         title='Senior ID'
-        text={application.seniorID}
+        text={props.IDApp.seniorID}
       />
     </PageSummaryLink>
   )

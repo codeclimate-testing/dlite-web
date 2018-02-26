@@ -1,87 +1,111 @@
 'use strict';
 
 import assert           from 'assert';
-import updateRealID from '../../../../client/reducers/application/update-real-id';
+import updateRealID     from '../../../../client/reducers/application/update-real-id';
+import updateIDRealID   from '../../../../client/reducers/application/id-app/update-id-real-id';
+import updateDLRealID   from '../../../../client/reducers/application/dl-app/update-dl-real-id';
 
-const getRealonDL = {
+const getDLRealID = {
   type: 'UPDATE_REAL_ID',
   payload: {
-    name: 'getRealID-DL',
+    name: 'DL',
     value: 'Yes'
   }
 };
 
-const getRealonID = {
+const getIDRealID = {
   type: 'UPDATE_REAL_ID',
   payload: {
-    name: 'getRealID-ID',
+    name: 'ID',
     value: 'Yes'
   }
 };
 
-const getRealonBoth = {
+const getBothRealID = {
   type: 'UPDATE_REAL_ID',
   payload: {
-    name: 'getRealID-both',
+    name: 'both',
     value: 'Yes'
   }
 };
 
-describe('updateRealID Reducer', function() {
+const setIDRealIdDesignation = {
+  type: 'UPDATE_REAL_ID',
+  payload: {
+    name: 'realIdDesignation',
+    value: 'ID'
+  }
+};
+
+const setDLRealIdDesignation = {
+  type: 'UPDATE_REAL_ID',
+  payload: {
+    name: 'realIdDesignation',
+    value: 'DL'
+  }
+};
+
+describe('updateRealID Reducers', function() {
   let state;
   beforeEach(function() {
-    state = {
-      getRealID: '',
-      realIdDesignation: ''
-    };
+    state = '';
   });
 
-  describe('applying real ID to DL', function() {
-    it('updates the getRealID key when real ID is updated on single card', function() {
-      let newState = updateRealID(state, getRealonDL);
-      assert.equal(newState.getRealID, getRealonDL.payload.value);
+  describe('#base-level realID value for user getting two new cards', function() {
+    it('returns existing state when payload.name is not "both"', function() {
+      let newState = updateRealID(state, getIDRealID);
+      assert.equal(newState, state);
     });
-
-    it('updates the realIdDesignation key when real ID is updated on single card', function() {
-      let newState = updateRealID(state, getRealonDL);
-      assert.equal(newState.realIdDesignation, 'DL');
+    it('returns existing state when payload.name is "realIdDesignation"', function() {
+      state = 'Yes';
+      let newState = updateRealID(state, setIDRealIdDesignation);
+      assert.equal(newState, state);
     });
   });
 
-  describe('applying real ID to ID', function() {
-    it('updates the getRealID key when real ID is updated on single card', function() {
-      let newState = updateRealID(state, getRealonID);
-      assert.equal(newState.getRealID, getRealonID.payload.value);
+  describe('#IDApp realID reducer', function() {
+    it('saves the action payload value when the name is ID', function() {
+      let newState = updateIDRealID(state, getIDRealID);
+      assert.equal(newState, getIDRealID.payload.value);
     });
-
-    it('updates the realIdDesignation key when real ID is updated on single card', function() {
-      let newState = updateRealID(state, getRealonID);
-      assert.equal(newState.realIdDesignation, 'ID');
+    it('returns existing state when name is DL', function() {
+      let newState = updateIDRealID(state, getDLRealID);
+      assert.equal(newState, state);
+    });
+    it('returns action payload value when name is both', function() {
+      let newState = updateIDRealID(state, getBothRealID);
+      assert.equal(newState, getBothRealID.payload.value);
+    });
+    it('returns "No" when name is realIdDesignation and value is DL', function() {
+      let newState = updateIDRealID(state, setDLRealIdDesignation);
+      assert.equal(newState, 'No');
+    });
+    it('returns "Yes" when action.payload.name is realIdDesignation and value is ID', function() {
+      let newState = updateIDRealID(state, setIDRealIdDesignation);
+      assert.equal(newState, 'Yes');
     });
   });
 
-  describe('applying real ID when user is getting both cards', function() {
-    it('updates the getRealID key when real ID is updated on both cards', function() {
-      let newState = updateRealID(state, getRealonBoth);
-      assert.equal(newState.getRealID, getRealonBoth.payload.value);
+  describe('#DLApp realID reducer', function() {
+    it('saves the action payload value when the name is DL', function() {
+      let newState = updateDLRealID(state, getDLRealID);
+      assert.equal(newState, getDLRealID.payload.value);
     });
-
-    it('does not update the realIdDesignation key when real ID is updated on single card', function() {
-      let newState = updateRealID(state, getRealonBoth);
-      assert.equal(newState.realIdDesignation, state.realIdDesignation);
+    it('returns existing state when name is ID', function() {
+      let newState = updateIDRealID(state, getDLRealID);
+      assert.equal(newState, state);
     });
-  });
-
-  describe('updating realIdDesignation', function() {
-    it('updates the value with the action.payload.value', function() {
-      let newState = updateRealID(state, {
-        type: 'UPDATE_REAL_ID',
-        payload: {
-          name: 'realIdDesignation',
-          value: 'DL'
-        }
-      });
-      assert.equal(newState.realIdDesignation, 'DL');
+    it('returns action payload value when name is both', function() {
+      let newState = updateDLRealID(state, getBothRealID);
+      assert.equal(newState, getBothRealID.payload.value);
+    });
+    it('returns "No" when name is realIdDesignation and value is ID', function() {
+      let newState = updateDLRealID(state, setIDRealIdDesignation);
+      assert.equal(newState, 'No');
+    });
+    it('returns "Yes" when action.payload.name is realIdDesignation and value is DL', function() {
+      let newState = updateDLRealID(state, setDLRealIdDesignation);
+      assert.equal(newState, 'Yes');
     });
   });
 

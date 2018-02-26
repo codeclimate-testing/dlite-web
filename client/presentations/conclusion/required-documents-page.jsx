@@ -16,7 +16,7 @@ import {
 
 const Presentation = (props) => {
   let documentList = [
-    <RealIdDocuments realID={props.realID} key='real-id'/>,
+    <RealIdDocuments {...props} key='real-id'/>,
     <SocialSecurityDocuments socialSecurity={props.socialSecurity} key='social-security'/>,
     <CaliforniaResidencyDocuments key='ca-residency'/>,
     <VeteransDocuments veteransService={props.veteransService} key='proof-veteran-services'/>,
@@ -38,13 +38,15 @@ const Presentation = (props) => {
 
         <h4>We need original documents to confirm the following:</h4>
         <BulletList
-          socialSecurity     = { props.socialSecurity }
-          veteransService    = { props.veteransService }
-          medicalHistory     = { props.medicalHistory }
-          realID             = { props.realID }
-          dateOfBirth        = { props.dateOfBirth }
-          licenseIssued      = { props.licenseAndIdHistory.isIssued }
-          reducedFee         = { props.reducedFee }
+          socialSecurity      = { props.socialSecurity }
+          veteransService     = { props.veteransService }
+          medicalHistory      = { props.medicalHistory }
+          realID              = { props.realID }
+          dateOfBirth         = { props.dateOfBirth }
+          licenseIssued       = { props.licenseAndIdHistory.isIssued }
+          reducedFee          = { props.reducedFee }
+          IDApp               = { props.IDApp }
+          DLApp               = { props.DLApp }
         />
 
           { documentList }

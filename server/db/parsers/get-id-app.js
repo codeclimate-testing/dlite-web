@@ -20,7 +20,8 @@ function getIDApp(cards, card_options, card_histories) {
       correctOrUpdate: '',
       sections: [],
       other: ''
-    }
+    },
+    realID: ''
   };
 
   let IDCard = cards.filter(card => card.type === 'ID');
@@ -50,6 +51,11 @@ function getIDApp(cards, card_options, card_histories) {
       // senior id
       if (option.option_value === 'senior-id'){
         IDApp.seniorID = 'Yes';
+      }
+
+      // real ID
+      if (option.option_value === 'real-id') {
+        IDApp.realID = 'Yes';
       }
 
       // card changes and replacements

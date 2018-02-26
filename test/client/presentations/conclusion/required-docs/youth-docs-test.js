@@ -14,9 +14,7 @@ describe('Required Docs for Youth', function() {
   let knowledgeTest = 'You will need to take a knowledge test';
   let newDriver = 'New driver requirements';
   let props = {
-    realID: {
-      getRealID: 'No',
-    },
+    realID: 'No',
     socialSecurity: {
       hasSocialSecurity: 'No'
     },
@@ -28,6 +26,12 @@ describe('Required Docs for Youth', function() {
     },
     reducedFee: {
       ID: false
+    },
+    IDApp: {
+      realID: ''
+    },
+    DLApp: {
+      realID: ''
     }
   };
 

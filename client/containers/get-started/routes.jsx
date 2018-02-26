@@ -2,7 +2,6 @@
 
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
-import { iddlPath }                           from '../../helpers/alice-path';
 import LegalName                              from './name-page.jsx';
 import DateOfBirth                            from './date-of-birth-page.jsx';
 import WhatDoYouWantToDoToday                 from './what-do-you-want-to-do-today-page.jsx';
@@ -16,6 +15,10 @@ import RealID                                 from './real-id-page.jsx';
 import LicenseType                            from './license-type-page.jsx';
 import ReducedFee                             from './reduced-fee-page.jsx';
 import GetStarted                             from './get-started-page.jsx';
+import {
+  iddlPath,
+  addPath
+ }                           from '../../helpers/alice-path';
 
 
 const GetStartedRoutes = () => {
@@ -31,6 +34,8 @@ const GetStartedRoutes = () => {
       <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID addressName='seniorID' {...props}/>}/>
       <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
       <Route path={ iddlPath('/real-id') }                    component={RealID} />
+      <Route path={ addPath('/driver-license/real-id') }      component={RealID} />
+      <Route path={ addPath('/id-card/real-id') }             component={RealID} />
       <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType {...props} addressName='chooseLicenseClass'/>}/>
       <Route path={ iddlPath('/reduced-fee')}                 exact render={(props) => <ReducedFee {...props} addressName='reducedFeeID' />}/>
       <Route path={ iddlPath('/get-started') }                component={GetStarted} />

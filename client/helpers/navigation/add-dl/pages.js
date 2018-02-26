@@ -53,6 +53,12 @@ const addCard = [
     description: 'add issue history for added card',
     path: '/driver-license/issue-history',
     next: 'summary'
+  },
+  {
+    key: 'addDLRealID',
+    description: 'add real ID to DL',
+    path: '/driver-license/real-id',
+    next: 'summary'
   }
 ];
 

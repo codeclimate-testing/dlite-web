@@ -8,8 +8,11 @@ import {
 
 
 export default (dispatch) =>  {
-  return (app) => {
-    if (app !== 'id-card' && app !== 'driver-license'){ return; }
-    dispatch(addApp(app));
+  return (props) => {
+    if (!props.hasOwnProperty('location')){ return; }
+
+    let value = splitPathname(props.location.pathname);
+    if (value === props.addApp ) { return; }
+    dispatch(addApp(value));
   };
 };

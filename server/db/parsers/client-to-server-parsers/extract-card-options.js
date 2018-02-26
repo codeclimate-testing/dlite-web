@@ -29,6 +29,15 @@ function extractCardOptions(data) {
         option_value:       'replace-' + data.DLApp.replacementDetails.reason
       });
     }
+
+    // real ID
+    if (data.DLApp.realID === 'Yes') {
+      cardOptions.push({
+        type:               'DL',
+        option_type:        'modification',
+        option_value:       'real-id'
+      });
+    }
   }
 
   //////-----  ID OPTIONS --------------//////////////////
@@ -80,19 +89,15 @@ function extractCardOptions(data) {
         option_value:       'senior-id'
       })
     };
-  };
 
-  ////////// REAL ID ///////////////
-  if(data.realID.getRealID === 'Yes'){
-    var hasID = cardTypeParser.hasID(data.IDApp);
-    var hasDL = cardTypeParser.hasDL(data.DLApp);
-    var designation = hasID && hasDL ? data.realID.realIdDesignation : hasID ? 'ID' : 'DL';
-
-    cardOptions.push({
-      type:               data.realID.realIdDesignation,
-      option_type:        'modification',
-      option_value:       'real-id'
-    });
+    // real ID
+    if (data.IDApp.realID === 'Yes') {
+      cardOptions.push({
+        type:               'ID',
+        option_type:        'modification',
+        option_value:       'real-id'
+      });
+    }
   };
 
   return cardOptions;

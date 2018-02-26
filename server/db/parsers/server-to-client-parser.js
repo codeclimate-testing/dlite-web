@@ -409,19 +409,11 @@ function getContactMethods(emails, phone_numbers, voting_registrations) {
 }
 
 function getRealID(card_options, cards) {
-  let realID = {
-    getRealID: '',
-    realIdDesignation: ''
-  };
+  let realID = '';
 
   card_options.forEach((option) => {
     if(option.option_value === 'real-id') {
-      realID.getRealID = 'Yes';
-      cards.forEach((card) => {
-        if(card.id === option.card_id) {
-          realID.realIdDesignation = card.type
-        }
-      });
+      realID = 'Yes';
     }
   });
 

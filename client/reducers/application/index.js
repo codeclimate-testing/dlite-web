@@ -39,6 +39,7 @@ import updateCardType                     from './update-card-type';
 import updateOrganDonation                from './update-organ-donation';
 import updateGuardianSignature            from './update-guardian-signature';
 import updateYouthIDInstead               from './update-youth-id-instead';
+import updateRealID                       from './update-real-id';
 
 import updateCitizenStatus                from './voting/update-citizen-status';
 import updateBallotByMail                 from './voting/update-ballot-by-mail';
@@ -97,7 +98,8 @@ const rootReducer = combineReducers({
     contactMethods              : updateContactMethods,
   }),
   youthIDInstead              : updateYouthIDInstead,
-  guardianSignature           : updateGuardianSignature
+  guardianSignature           : updateGuardianSignature,
+  realID                      : updateRealID
 });
 
 export default rootReducer;

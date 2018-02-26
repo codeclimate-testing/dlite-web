@@ -26,12 +26,9 @@ describe('Data helpers for get started page', function() {
   let props;
   beforeEach(function() {
     props = {
-      realID: {
-        getRealID: '',
-        realIdDesignation: ''
-      },
       cardType: [],
       cardAction: '',
+      realID: '',
       DLApp: {
         licenseType: {
           type: [],
@@ -39,7 +36,8 @@ describe('Data helpers for get started page', function() {
         },
         cardChanges: {
           correctOrUpdate: ''
-        }
+        },
+        realID: ''
       },
       IDApp: {
         seniorID: '',
@@ -49,7 +47,8 @@ describe('Data helpers for get started page', function() {
         },
         cardChanges: {
           correctOrUpdate: ''
-        }
+        },
+        realID: ''
       }
     }
   });
@@ -87,22 +86,27 @@ describe('Data helpers for get started page', function() {
     });
   });
   describe('#getRealIDString', function() {
-    it('returns the DL string if user is only getting a DL', function() {
+    it('returns the DL string if user is only getting a real ID on the DL', function() {
       props.cardType = ['DL'];
+      props.DLApp.realID = 'Yes';
       assert.equal(getRealIDString(props, IDString, DLString), DLString);
     });
     it('returns the DL string if user is getting both card types and has specified real ID on DL', function() {
       props.cardType= ['DL', 'ID'];
-      props.realID.realIdDesignation = 'DL';
+      props.DLApp.realID = 'Yes';
+      props.IDApp.realID = 'No';
       assert.equal(getRealIDString(props, IDString, DLString), DLString);
     });
-    it('returns the ID string if user is getting only an ID', function() {
+    it('returns the ID string if user is getting only a real ID on the ID', function() {
       props.cardType = ['ID'];
+      props.IDApp.realID = 'Yes';
+      props.DLApp.realID = 'No';
       assert.equal(getRealIDString(props, IDString, DLString), IDString);
     });
     it('returns the ID string if user is getting both card types and has specified real ID on ID', function() {
       props.cardType = ['DL', 'ID'];
-      props.realID.realIdDesignation = 'ID';
+      props.DLApp.realID = 'No';
+      props.IDApp.realID = 'Yes';
       assert.equal(getRealIDString(props, IDString, DLString), IDString);
     });
     it('returns a blank string if user is getting both card types but has not specified which card to put real id', function() {

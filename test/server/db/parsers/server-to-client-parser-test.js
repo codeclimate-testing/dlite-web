@@ -77,8 +77,8 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.realID.getRealID, clientData.realID.getRealID);
-        assert.equal(parsedData.application.realID.realIdDesignation, clientData.realID.realIdDesignation);
+        assert.equal(parsedData.application.realID, clientData.realID);
+        assert.equal(parsedData.application.DLApp.realID, clientData.DLApp.realID);
         assert.equal(parsedData.application.IDApp.seniorID, clientData.IDApp.seniorID);
         assert.equal(parsedData.application.IDApp.seniorID, 'Yes');
         done();

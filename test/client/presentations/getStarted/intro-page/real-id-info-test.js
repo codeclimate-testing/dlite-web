@@ -83,10 +83,10 @@ describe('RealIDInfo', function() {
   describe('realID', function() {
     describe('ID', function() {
       it('shows that ID card will be real id compliant', function() {
-        props.realID.realIdDesignation = 'ID'
+        props.realID = 'Yes';
         props.cardType = ['ID', 'DL'];
-        props.IDApp.isApplying = true;
-        props.DLApp.isApplying = true;
+        props.IDApp.realID = 'Yes';
+        props.DLApp.realID = 'No';
 
         let component = render(
           <Wrapper>
@@ -99,9 +99,8 @@ describe('RealIDInfo', function() {
 
     describe('DL', function() {
       it('shows that DL will be real id compliant', function() {
-        props.realID.realIdDesignation = ''
         props.cardType = ['DL'];
-        props.DLApp.isApplying = true;
+        props.DLApp.realID = 'Yes';
 
         let component = render(
           <Wrapper>

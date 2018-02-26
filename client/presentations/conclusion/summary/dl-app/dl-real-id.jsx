@@ -11,8 +11,7 @@ import {
 } from '../../../../helpers/data/card-type';
 
 import {
-  DLgettingRealID,
-  isSelected,
+  DLgettingRealID
  }  from '../../../../helpers/data/real-id';
 
 
@@ -43,10 +42,10 @@ const DLRealID = (props) => {
   return (
     <PageSummaryLink
       {...props}
-      name='realID'
+      name='addDLRealID'
     >
-      <Yes  DLApp = {props.application.DLApp}   locale = {locale}/>
-      <No   DLApp = {props.application.DLApp}   locale = {locale}/>
+      <Yes  DLApp = {props.DLApp}   locale = {locale}/>
+      <No   DLApp = {props.DLApp}   locale = {locale}/>
     </PageSummaryLink>
   )
 };

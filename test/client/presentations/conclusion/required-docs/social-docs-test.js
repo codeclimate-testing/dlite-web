@@ -28,6 +28,12 @@ describe('Required Docs for Social Security Number', function() {
       year: 1988,
       month: 9,
       day: 29
+    },
+    IDApp: {
+      realID: ''
+    },
+    DLApp: {
+      realID: ''
     }
   };
 

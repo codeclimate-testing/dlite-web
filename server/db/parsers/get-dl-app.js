@@ -15,7 +15,8 @@ function getDLApp(cards, card_options, card_histories, license_classes) {
       correctOrUpdate: '',
       sections: [],
       other: ''
-    }
+    },
+    realID: ''
   };
 
   let DLCard = cards.filter(card => card.type === 'DL');
@@ -30,6 +31,11 @@ function getDLApp(cards, card_options, card_histories, license_classes) {
       // action
       if (option.option_type === 'action') {
         DLApp.action = option.option_value;
+      }
+
+      // real ID
+      if (option.option_value === 'real-id') {
+        DLApp.realID = 'Yes';
       }
 
       // card changes and replacements

@@ -78,7 +78,8 @@ function fakeClientData() {
         day: '',
         month: '',
         year: ''
-      }
+      },
+      realID: ''
     },
 
     DLApp: {
@@ -102,16 +103,14 @@ function fakeClientData() {
         'type': ['car', 'trailer'],
         'needEndorsement': 'Yes'
       },
+      realID: 'Yes'
     },
 
     cardType: [],
     cardAction: '',
 
     youthIDInstead: '',
-    'realID': {
-      'getRealID': 'Yes',
-      'realIdDesignation': 'DL'
-    },
+    'realID': 'Yes',
     'organDonation': {
       'donateOrgan': 'Yes',
       'donateMoney': 'No'

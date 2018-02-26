@@ -8,6 +8,10 @@ import {
   getDL,
   IDOnly
 } from './card-type';
+import {
+  DLgettingRealID,
+  IDgettingRealID
+} from './real-id';
 
 export const getIDString = (props, defaultString, reducedString, noFeeString, seniorString) => {
   if (props.IDApp.seniorID === 'Yes') {
@@ -31,9 +35,9 @@ export const getEndorsementString = (props, fireString) => {
 };
 
 export const getRealIDString = (props, IDString, DLString) => {
-  if (props.realID.realIdDesignation === 'DL' || (getDL(props) && !getID(props))) {
+  if (DLgettingRealID(props)) {
     return DLString;
-  } else if (props.realID.realIdDesignation === 'ID' || IDOnly(props)) {
+  } else if (IDgettingRealID(props)) {
     return IDString
   } else {
     return '';

@@ -41,11 +41,10 @@ const IDRealID = (props) => {
   return (
     <PageSummaryLink
       {...props}
-      name    = 'realID'
-
+      name    = 'addIDRealID'
     >
-      <Yes  IDApp = {application.IDApp} locale = {locale}/>
-      <No   IDApp = {application.IDApp} locale = {locale}/>
+      <Yes  IDApp = {props.IDApp} locale = {locale}/>
+      <No   IDApp = {props.IDApp} locale = {locale}/>
     </PageSummaryLink>
   )
 };

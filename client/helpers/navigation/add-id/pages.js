@@ -42,6 +42,12 @@ const addIDCard = [
     description: 'add reduced fee to added ID card',
     path: '/id-card/reduced-fee',
     next: 'summary'
+  },
+  {
+    key: 'addIDRealID',
+    description: 'add real ID',
+    path: '/id-card/real-id',
+    next: 'summary'
   }
 ];
 

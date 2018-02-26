@@ -7,28 +7,28 @@ module.exports = function(world) {
 
   world.and('I click yes to getting a real id on both', function(done) {
     browser
-      .click('label[for="getRealID-both-Yes"]')
+      .click('label[for="both-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I click yes to getting a real id on the ID', function(done) {
     browser
-      .click('label[for="getRealID-ID-Yes"]')
+      .click('label[for="ID-Yes"]')
       .then(done)
       .catch(done);
   });
 
   world.and('I click yes to getting a real id on the DL', function(done) {
     browser
-      .click('label[for="getRealID-DL-Yes"]')
+      .click('label[for="DL-Yes"]')
       .then(() => { done(); })
       .catch(done);
   });
 
   world.and('I click no to getting a real id', function(done) {
     browser
-      .click('label[for="getRealID-DL-No"]')
+      .click('label[for="DL-No"]')
       .then(() => { done(); })
       .catch(done);
   });

@@ -3,10 +3,7 @@ const state  = {
     id: '',
     cardAction: '',
     cardType: [],
-    realID: {
-      getRealID: '',
-      realIdDesignation: ''
-    },
+    realID: '',
     IDApp: {
       isApplying: false,
       action: '',
@@ -28,7 +25,8 @@ const state  = {
         correctOrUpdate: '',
         sections: [],
         other: ''
-      }
+      },
+      realID: ''
     },
     DLApp: {
       isApplying: false,
@@ -50,7 +48,8 @@ const state  = {
         correctOrUpdate: '',
         sections: [],
         other: ''
-      }
+      },
+      realID: ''
     },
     youthIDInstead: '',
     basics: {

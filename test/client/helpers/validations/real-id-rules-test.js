@@ -15,23 +15,21 @@ describe('RealID page validation rules:', function() {
       youthIDInstead: ''
     };
 
-    let realID = {
-      getRealID: '',
-      realIdDesignation: ''
-    };
 
     props = {
       cardType: [],
+      realID: '',
       cardAction: '',
       IDApp: {
         isApplying: false,
-        action: ''
+        action: '',
+        realID: ''
       },
       DLApp: {
         isApplying: false,
-        action: ''
+        action: '',
+        realID: ''
       },
-      realID,
       locale: 'en'
     }
   });
@@ -40,25 +38,10 @@ describe('RealID page validation rules:', function() {
   });
 
   it('when "No" is selected it will not give an error', function() {
-    props.realID = {
-      getRealID: 'No',
-      realIdDesignation: ''
-    };
+    props.realID = 'No';
 
     assert.deepEqual(rules.realID(props), []);
   });
 
-  it('when no realIdDesignation is selected it will give realIdCardSelectionMissing', function() {
-    props.cardType= ['ID', 'DL'];
-    props.cardAction = 'new';
-    props.IDApp.isApplying = true;
-    props.DLApp.isApplying = true;
-    props.realID = {
-      getRealID: 'Yes',
-      realIdDesignation: ''
-    };
-
-    assert.deepEqual(rules.designation(props), [messages.realIdCardSelectionMissing]);
-  });
 });
 

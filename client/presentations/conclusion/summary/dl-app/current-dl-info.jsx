@@ -31,9 +31,8 @@ const DLDate = (props) => {
 };
 
 const CurrentDLInfo = (props) => {
-  if(!existingDL(props.application)) { return null; }
-  let application = props.application.DLApp;
-  if(!dataPresent.currentCardInfo(application.currentCardInfo)) { return null; }
+  if(!existingDL(props)) { return null; }
+  if(!dataPresent.currentCardInfo(props.DLApp.currentCard)) { return null; }
 
   return (
     <PageSummaryLink
@@ -42,11 +41,11 @@ const CurrentDLInfo = (props) => {
       summary = {props.summary}
     >
       <DLNumber
-        number = {application.currentCardInfo.number}
+        number = {props.DLApp.currentCard.number}
       />
 
       <DLDate
-        currentCardInfo = {application.currentCardInfo}
+        currentCardInfo = {props.DLApp.currentCard}
       />
 
     </PageSummaryLink>

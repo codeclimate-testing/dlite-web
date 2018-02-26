@@ -11,14 +11,8 @@ const AddAppLink = (props) => {
     pathname: addPath(props.to)
   };
 
-  let app = props.app || '';
-  const handleClick = (e) => {
-    e.preventDefault();
-    props.onFlowChange(app);
-  };
-
   return (
-    <div className='summary-section' onClick={handleClick}>
+    <div className='summary-section'>
       <div className='row'>
         <div className='unit summary-content'>
           {props.children}

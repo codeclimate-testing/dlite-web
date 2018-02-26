@@ -19,10 +19,6 @@ describe('RealIdPage', function() {
     let props;
 
     beforeEach(function() {
-      let realID = {
-        realIdDesignation: '',
-        getRealID: ''
-      };
       let validations = {
         designation: spy(),
         realID: spy(),
@@ -37,13 +33,15 @@ describe('RealIdPage', function() {
         cardType: ['ID', 'DL'],
         cardAction: 'new',
         youthIDInstead: '',
+        realID: '',
         IDApp: {
-          isApplying: false
+          isApplying: false,
+          realID: ''
         },
         DLApp: {
-          isApplying: false
+          isApplying: false,
+          realID: ''
         },
-        realID: realID,
         validations,
         accordions,
         onChange,
@@ -68,8 +66,8 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('#getRealID-both-Yes').length, 'Yes button missing');
-      assert.ok(component.find('#getRealID-both-No').length, 'No button missing');
+      assert.ok(component.find('#both-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#both-No').length, 'No button missing');
     });
 
     it('updates the radio button names with ID when user is just on ID flow', function() {
@@ -81,11 +79,11 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('#getRealID-ID-Yes').length, 'Yes button missing');
-      assert.ok(component.find('#getRealID-ID-No').length, 'No button missing');
+      assert.ok(component.find('#ID-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#ID-No').length, 'No button missing');
     });
 
-    it('updates the radio button names with DL when user is just on ID flow', function() {
+    it('updates the radio button names with DL when user is just on DL flow', function() {
       props.cardType = ['DL'];
 
       let component = render(
@@ -94,8 +92,8 @@ describe('RealIdPage', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('#getRealID-DL-Yes').length, 'Yes button missing');
-      assert.ok(component.find('#getRealID-DL-No').length, 'No button missing');
+      assert.ok(component.find('#DL-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#DL-No').length, 'No button missing');
     });
 
     it('does not show the form asking which card if no selection is made', function() {
@@ -109,9 +107,8 @@ describe('RealIdPage', function() {
     });
 
     it('shows the form asking which card if you select yes to real id and are getting both cards', function() {
-      props.realID.getRealID = 'Yes';
-      props.IDApp.isApplying = true;
-      props.DLApp.isApplying = true;
+      props.realID = 'Yes';
+      props.cardType = ['ID', 'DL'];
       let component = render(
         <Wrapper>
           <RealIdPage {...props}/>
@@ -121,8 +118,23 @@ describe('RealIdPage', function() {
       assert(component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
 
-    it('does not shows the form asking which card if you select yes to real id', function() {
-      props.realID.getRealID = 'No';
+    it('shows the form asking which card if you select yes to real id to both cards', function() {
+      props.cardType = ['ID'];
+      props.IDApp.realID = 'Yes';
+      props.DLApp.realID = 'Yes';
+
+      let component = render(
+        <Wrapper>
+          <RealIdPage {...props}/>
+        </Wrapper>
+      );
+
+      assert(component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
+    });
+
+    it('does not shows the form asking which card if only one card is getting real id', function() {
+      props.IDApp.realID = 'No';
+      props.DLApp.realID = 'Yes';
 
       let component = render(
         <Wrapper>
@@ -133,10 +145,9 @@ describe('RealIdPage', function() {
       assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
 
-    it('does not show the form asking which type if you only are getting one card', function() {
-      props.realID.getRealID = 'Yes';
-      props.cardType = ['ID'];
-      props.IDApp.isApplying = true;
+    it('does not show the form asking which type if user is getting both cards but selected No to getting Real ID', function() {
+      props.cardType = ['ID', 'DL'];
+      props.realID = 'No';
 
       let component = render(
         <Wrapper>

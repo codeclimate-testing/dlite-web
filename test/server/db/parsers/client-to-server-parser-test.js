@@ -128,14 +128,14 @@ describe('client data parser', function() {
       let options = parsedData.card_options;
       assert.equal(options[0].option_type, 'action');
       assert.equal(options[0].option_value, 'renew');
-      assert.equal(options[1].option_type, 'action');
-      assert.equal(options[1].option_value, 'new');
-      assert.equal(options[2].option_type, 'modification');
-      assert.equal(options[2].option_value, 'reduced-fee-has-form');
+      assert.equal(options[1].option_type, 'modification');
+      assert.equal(options[1].option_value, 'real-id');
+      assert.equal(options[2].option_type, 'action');
+      assert.equal(options[2].option_value, 'new');
       assert.equal(options[3].option_type, 'modification');
-      assert.equal(options[3].option_value, 'senior-id');
+      assert.equal(options[3].option_value, 'reduced-fee-has-form');
       assert.equal(options[4].option_type, 'modification');
-      assert.equal(options[4].option_value, 'real-id');
+      assert.equal(options[4].option_value, 'senior-id');
     });
 
     it('correctly extracts the license type info', function() {

@@ -12,12 +12,12 @@ const formReducer = (state = defaultState(), action) => {
   let data = state;
   if (action.payload.name === 'realIdDesignation'){
     if (action.payload.value === 'DL') {
-      data = 'Yes'
+      data = 'Yes';
     } else {
       data = 'No';
     }
   }
-  else if(action.payload.name === 'DL'){
+  else if(action.payload.name === 'DL' || action.payload.name === 'both'){
     data = action.payload.value;
   }
   return data;
