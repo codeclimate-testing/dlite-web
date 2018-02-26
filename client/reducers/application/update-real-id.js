@@ -6,14 +6,15 @@ const defaultState = () =>  {
   return '';
 };
 
-const formReducer = (state = defaultState(), action) => {
-  if (action.type !== TYPES.UPDATE_REAL_ID) { return state; }
-  let data = state;
+const updateRealIDOnBothCards = (action) => {
+  return action.type === TYPES.UPDATE_REAL_ID && action.payload.name === 'both';
+};
 
-  if (action.payload.name === 'both') {
-    data = action.payload.value;
-  };
-  return data;
+const formReducer = (state = defaultState(), action) => {
+  if (!updateRealIDOnBothCards(action)) { return state; }
+  else {
+    return action.payload.value;
+  }
 };
 
 export default formReducer;

@@ -22,7 +22,7 @@ module.exports = function(world) {
       .then((url) => {
         assert.ok(url.match(pageRegex), `Not on page with selector: ${pageSelector}`);
       })
-      .then(() => { done(); })
+      .then(done)
       .catch(done);
   }
 

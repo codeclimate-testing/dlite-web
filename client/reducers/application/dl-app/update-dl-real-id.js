@@ -1,6 +1,7 @@
 'use strict';
 
 import {TYPES}          from '../../../actions';
+import { realID }       from '../../../helpers/reducers';
 
 const defaultState = () => {
   return '';
@@ -9,18 +10,7 @@ const defaultState = () => {
 const formReducer = (state = defaultState(), action) => {
   if (action.type !== TYPES.UPDATE_REAL_ID) { return state; }
 
-  let data = state;
-  if (action.payload.name === 'realIdDesignation'){
-    if (action.payload.value === 'DL') {
-      data = 'Yes';
-    } else {
-      data = 'No';
-    }
-  }
-  else if(action.payload.name === 'DL' || action.payload.name === 'both'){
-    data = action.payload.value;
-  }
-  return data;
+  return realID(state, action, 'DL')
 };
 
 export default formReducer;

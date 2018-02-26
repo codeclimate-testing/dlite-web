@@ -27,3 +27,18 @@ export const addressReducer = (payload, data, defaultState) => {
   }
   return data;
 }
+export const realID = (state, action, type) => {
+  let data = state;
+  if (action.payload.name === 'realIdDesignation'){
+    if (action.payload.value === type) {
+      data = 'Yes'
+    } else {
+      data = 'No';
+    }
+  }
+  else if(action.payload.name === type || action.payload.name === 'both'){
+    data = action.payload.value;
+  }
+
+  return data;
+}
