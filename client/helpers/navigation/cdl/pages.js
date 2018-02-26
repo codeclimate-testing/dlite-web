@@ -17,6 +17,12 @@ const cdl = [
     key: 'cdlDateOfBirth',
     description: 'Date of Birth',
     path: '/date-of-birth',
+    next: 'cdlWdywtdt'
+  },
+  {
+    key: 'cdlWdywtdt',
+    description: 'What do you want to do today',
+    path: '/what-do-you-want-to-do-today',
     next: 'cdlSummary'
   },
   {

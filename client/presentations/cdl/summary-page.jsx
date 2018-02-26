@@ -4,6 +4,7 @@ import React                from 'react';
 import Accordion            from '../../containers/accordion.jsx';
 import Page                 from '../../containers/page.jsx';
 import MyBasics             from './summary/my-basics.jsx';
+import CdlAction             from './summary/cdl-action.jsx';
 
 import {
   ErrorMessageBox
@@ -20,6 +21,7 @@ const Contents = (props) => {
   return (
     <div className = 'summary'>
       <Accordion id='cdl-summary' title='My commercial driver license'>
+        <CdlAction {...application} />
       </Accordion>
 
       <MyBasics {...application} />

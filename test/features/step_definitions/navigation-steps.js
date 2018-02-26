@@ -213,6 +213,10 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/cdl\/date-of-birth/, done);
   });
 
+  world.when('I will be on the CDL WDYWTDT page', function(done) {
+    assertOnPage('.choose-card-action', /apply\/cdl\/what-do-you-want-to-do-today/, done);
+  });
+
   world.when('I will be on the IDDL welcome page', function(done) {
     assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);
   });

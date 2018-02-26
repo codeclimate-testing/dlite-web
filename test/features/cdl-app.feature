@@ -32,8 +32,12 @@ Scenario: Name page
   Then I will see an error message telling me to enter a valid date
   When I indicate that I am between 17.5 and 18
   Then I will see an info message box show up letting me know limitations on my CDL based on my age
+  When I click "Next" to continue
+  Then I will be on the CDL WDYWTDT page
+  When I select a new commercial DL
   When I go to the CDL summary
   And I will see my name on that summary
+  And I will see that I am applying for a new CDL
   And I will see my between 17.5 and 18 dob on that summary
   When I click to edit my CDL name
   Then I will be on the CDL name page

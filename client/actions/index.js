@@ -62,6 +62,7 @@ export const TYPES = {
   UPDATE_IS_PRE_REGISTERING:              'UPDATE_IS_PRE_REGISTERING',
   UPDATE_CDL_LEGAL_NAME:                  'UPDATE_CDL_LEGAL_NAME',
   UPDATE_CDL_DOB:                         'UPDATE_CDL_DOB',
+  UPDATE_CDL_CARD_ACTION:                 'UPDATE_CDL_CARD_ACTION',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -123,6 +124,7 @@ export const updateIsPreRegistering                   = generateFormAction(TYPES
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 export const updateCdlLegalName                       = generateFormAction(TYPES.UPDATE_CDL_LEGAL_NAME);
 export const updateCdlDob                             = generateFormAction(TYPES.UPDATE_CDL_DOB);
+export const updateCdlCardAction                      = generateFormAction(TYPES.UPDATE_CDL_CARD_ACTION);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);
