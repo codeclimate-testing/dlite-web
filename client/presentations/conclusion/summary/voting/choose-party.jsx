@@ -2,26 +2,27 @@
 
 import React from 'react';
 
-import PageSummaryLink            from '../Page-summary-link.jsx';
-import SummaryItem                from '../summary-item.jsx';
+import PageSummaryLink              from '../page-summary-link.jsx';
+import SummaryItem                  from '../summary-item.jsx';
 import {
   politicalPartySelected,
   getStringByParty
 }   from '../../../../helpers/data/voting';
+import translations                 from '../../../../i18n';
 
 const PoliticalPartyChoose = (props) => {
   if (!politicalPartySelected(props) ) { return null; }
 
   let party = getStringByParty(props);
-
+  
   return (
     <PageSummaryLink
-      summary = {props.summary}
+      to='/voting-registration/choose-party'
       name='choosePoliticalParty'
     >
       <SummaryItem
-        title = 'Political party'
-        text  = {party}
+        title={translations.summaryPage.voterRegistration.politicalParty}
+        text={party}
       />
     </PageSummaryLink>
   )

@@ -729,6 +729,11 @@ describe('Summary components', function() {
   describe('Voting', function() {
     describe('CitizenStatus', function() {
       it('shows citizens status', function(){
+         props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
         let citizenStatus = 'Yes';
   
         let component = render(
@@ -739,10 +744,16 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes('US Citizen: Yes'), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
       });
       it('shows decline to answer text when user has declined to answer', function() {
         let citizenStatus = 'decline';
+         props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
   
         let component = render(
           <Wrapper>
@@ -752,13 +763,40 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}: ${translations.shared.commonAnswers.declineToAnswer}`), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes(`${translations.shared.commonAnswers.declineToAnswer}`), true);
+      });
+       it('citizenship shows not available because youth cannot preregister', function() {
+         let youthYear = new Date().getFullYear() - 14;
+         let citizenStatus = 'Decline to answer';
+         props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: youthYear
+        };
+  
+        let component = render(
+          <Wrapper>
+            <CitizenStatus
+              { ...props }
+              citizenStatus={citizenStatus}
+            />
+          </Wrapper>
+        )
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes('Not Available'), true);
       });
     });
 
     describe('EligibilityRequirements', function() {
-      it('shows eligibility', function(){
-        let eligibilityRequirements = 'Yes';
+      it('eligibility shows not available because youth cannot preregister', function(){
+        let eligibilityRequirements = 'Decline to answer';
+        let youthYear = new Date().getFullYear() - 14;
+         props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: youthYear
+        };
   
         let component = render(
           <Wrapper>
@@ -768,7 +806,27 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}: Yes`), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}`), true);
+        assert.equal(component.text().includes('Not Available'), true);
+      });
+       it('shows eligibility', function(){
+        let eligibilityRequirements = 'Yes';
+         props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
+  
+        let component = render(
+          <Wrapper>
+            <EligibilityRequirements
+              { ...props }
+              eligibilityRequirements={eligibilityRequirements}
+            />
+          </Wrapper>
+        )
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}`), true);
+        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
       });
     });
 
@@ -784,63 +842,67 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes('Choose opt out: new'), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.registrationChoice}`), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.choiceYes}`), true);
       });
     });
 
     describe('PoliticalPartyChoose', function() {
-      it('shows political party selections', function(){
-        let politicalPartyChoose = {
-          isSelected: 'Yes',
-          politicalPartyChoose: 'Green Party'
-        };
+    it('shows political party selections', function(){
+      let politicalPartyChoose = {
+        isSelected: 'Yes',
+        politicalPartyChoose: 'Green Party'
+      };
 
-        let component = render(
-          <Wrapper>
-            <PoliticalPartyChoose
-              { ...props }
-              politicalPartyChoose={politicalPartyChoose}
-            />
-          </Wrapper>
-        )
-        assert.equal(component.text().includes('Political partyGreen Party'), true);
-      });
-
-      it('shows No Answer after user has switched answer', function() {
-        let politicalPartyChoose = {
-          isSelected: 'Skip',
-          politicalPartyChoose: 'Green Party'
-        };
-
-        let component = render(
-          <Wrapper>
-            <PoliticalPartyChoose
-              { ...props }
-              politicalPartyChoose={politicalPartyChoose}
-            />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Political partyNo answer'), true);
-      });
-
-      it('shows the other party typed into the form', function() {
-        let politicalPartyChoose = {
-          isSelected: 'Yes',
-          politicalPartyChoose: 'Other',
-          otherParty: 'the French Canadians'
-        };
-
-        let component = render(
-          <Wrapper>
-            <PoliticalPartyChoose
-              { ...props }
-              politicalPartyChoose={politicalPartyChoose}
-            />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Political partythe French Canadians'), true);
-      });
+      let component = render(
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
+      )
+      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes('Green Party'), true);
     });
+
+    it('shows No Answer after user has switched answer', function() {
+      let politicalPartyChoose = {
+        isSelected: 'Skip',
+        politicalPartyChoose: 'Green Party'
+      };
+
+      let component = render(
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
+      );
+      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes('No answer'), true);
+    });
+
+    it('shows the other party typed into the form', function() {
+      let politicalPartyChoose = {
+        isSelected: 'Yes',
+        politicalPartyChoose: 'Other',
+        otherParty: 'the French Canadians'
+      };
+
+      let component = render(
+        <Wrapper>
+          <PoliticalPartyChoose
+            { ...props }
+            politicalPartyChoose={politicalPartyChoose}
+          />
+        </Wrapper>
+      );
+      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes('the French Canadians'), true);
+    });
+  });
 
     describe('BallotLanguage', function() {
       it('shows ballot language selection', function(){
@@ -854,7 +916,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes('Ballot language preference: Korean'), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.ballotLanguage}`), true);
+        assert.equal(component.text().includes('Korean'), true);
       });
     });
 
@@ -870,7 +933,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes('Vote by mail: Yes'), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.voteByMail}`), true);
+        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
       });
     });
 
@@ -892,9 +956,12 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes('Should Contact: Yes'), true);
-        assert.equal(component.text().includes('Email Address: email@email.com'), true);
-        assert.equal(component.text().includes('Phone Number: (111) 111-1111'), true);
+        assert.equal(component.text().includes('Should Contact'), true);
+        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.email}`), true);
+        assert.equal(component.text().includes('email@email.com'), true);
+        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.phone}`), true);
+        assert.equal(component.text().includes('(111) 111-1111'), true);
       });
     });
   });

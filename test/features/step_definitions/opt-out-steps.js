@@ -9,7 +9,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('new'), 'voter registration choice as I am a new voter in California not saved in summary');
+      assert.ok(text.includes('Will be registered'), 'voter registration choice as I am a new voter in California not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -19,7 +19,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('existing'), 'voter registration choice as I am already registered to vote in California in summary');
+      assert.ok(text.includes('Update voter preferences'), 'voter registration choice as I am already registered to vote in California in summary');
     })
     .then(() => { done(); })
     .catch(done);
@@ -29,7 +29,7 @@ module.exports = function(world) {
     browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('opt-out'), 'voter registration choice as I am eligible to vote, but do not want to register to vote saved in summary');
+      assert.ok(text.includes('Opted out'), 'voter registration choice as I am eligible to vote, but do not want to register to vote saved in summary');
     })
     .then(() => { done(); })
     .catch(done);

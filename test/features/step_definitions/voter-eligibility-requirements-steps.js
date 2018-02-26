@@ -91,7 +91,7 @@ world.then('I will see my updated eligibility requirement status', function(done
   browser
     .text()
     .then((text) => {
-      assert.ok(text.includes('Meets eligibility requirements: Decline to answer'), 'No not saved in summary');
+      assert.ok(text.includes('Decline to answer'), 'No not saved in summary');
     })
     .then(() => { done(); })
     .catch(done);

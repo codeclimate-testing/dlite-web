@@ -10,6 +10,9 @@ import {
   ContactMethods,
   OptOut
 } from './voting/index';
+import {
+  DateOfBirth,
+} from './my-basics/index';
 
 const Voting = (props) => {
   const application = props.application;
@@ -18,10 +21,14 @@ const Voting = (props) => {
     <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
       <CitizenStatus
         citizenStatus           = {application.voting.citizenStatus}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
       />
       <EligibilityRequirements
         eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
       />
       <OptOut

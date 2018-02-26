@@ -10,6 +10,10 @@ export const citizenStatusNotChosen = (props) => {
   return !hasValue(props.citizenStatus);
 };
 
+export const eligibilityNotChosen = (props) => {
+  return !hasValue(props.eli);
+};
+
 export const declineToAnswer = (value) => {
   return value === 'decline';
 };

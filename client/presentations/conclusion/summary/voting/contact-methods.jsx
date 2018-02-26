@@ -12,46 +12,69 @@ import {
   shouldContact,
   skipAnswer
 } from '../../../../helpers/data/contact-methods';
+import PageSummaryLink              from '../page-summary-link.jsx';
+import SummaryItem                  from '../summary-item.jsx';
 
+const title = <div className='translation-missing'>Should Contact</div>;
 
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
   const phone = `(${props.contactMethods.phoneNumber1}) ${props.contactMethods.phoneNumber2}-${props.contactMethods.phoneNumber3}`;
-  return (<p> Phone Number: {phone} </p>);
+  return (<SummaryItem
+    title={translations.summaryPage.voterRegistration.phone}
+    text={phone}
+	        />);
 };
 
 const EmailAddress = (props) => {
   if (!shouldContact(props)) { return null; }
-  return <p> Email Address: {props.contactMethods.emailAddress} </p>
+  return (<SummaryItem
+    title={translations.summaryPage.voterRegistration.email}
+    text={props.contactMethods.emailAddress}
+	        />)
 };
 
 const Yes = (props) => {
   if (!shouldContact(props)) { return null; }
-  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.yes}</p>)
+  return  (
+    <SummaryItem
+      title= {title}
+      text={translations.shared.commonAnswers.yes}
+    />
+  )
 };
 
 const No = (props) => {
   if (shouldContact(props) || declineToAnswer(props.contactMethods.shouldContact)) { return null; }
-  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.no}</p>)
+  return (<SummaryItem
+      title={title}
+      text={translations.shared.commonAnswers.no}
+    />)
 };
 
 const Decline = (props) => {
   if (!declineToAnswer(props.contactMethods.shouldContact)) { return null; }
-  return (<p className='translation-missing'>Should Contact: {translations.shared.commonAnswers.declineToAnswer}</p>)
+  return (<SummaryItem
+      title={title}
+      text={translations.shared.commonAnswers.declineToAnswer}
+    />)
 };
 
 const ContactMethods = (props) => {
   if (shouldContactNotSelected(props)) { return null; }
-
+  
   return (
-    <div className='summary-section'>
+    <PageSummaryLink
+      to='/voting-registration/contact-methods'
+      name='contactMethods'
+    >
       <Yes contactMethods = {props.contactMethods} />
       <No contactMethods = {props.contactMethods} />
       <Decline contactMethods = {props.contactMethods} />
       <EmailAddress contactMethods = {props.contactMethods} />
       <PhoneNumber {...props} />
-    </div>
-  );
+    </PageSummaryLink>
+  )
 };
 
 export default ContactMethods;

@@ -3,6 +3,8 @@
 import React                        from 'react';
 import { ballotLanguageIsSelected } from '../../../../helpers/data/application';
 import translations                 from '../../../../i18n';
+import PageSummaryLink              from '../page-summary-link.jsx';
+import SummaryItem                  from '../summary-item.jsx';
 
 
 const mapValToString = (val) => {
@@ -45,10 +47,16 @@ const BallotLanguage = (props) => {
   if (!ballotLanguageIsSelected(props.ballotLanguage)) { return null; }
 
   return (
-    <div className='summary-section'>
-      <p> Ballot language preference: {mapValToString(props.ballotLanguage)} </p>
-    </div>
-  );
+    <PageSummaryLink
+      to='/voting-registration/language'
+      name='choosePoliticalParty'
+    >
+      <SummaryItem
+        title={translations.summaryPage.voterRegistration.ballotLanguage}
+        text={mapValToString(props.ballotLanguage)}
+      />
+    </PageSummaryLink>
+  )
 };
 
 export default BallotLanguage;

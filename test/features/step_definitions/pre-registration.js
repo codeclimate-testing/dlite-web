@@ -16,7 +16,7 @@ module.exports = function (world) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('opt out: new'), 'voter registration choice as I would like to pre-register to vote not saved in summary');
+        assert.ok(text.includes('Will be registered'), 'voter registration choice as I would like to pre-register to vote not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
