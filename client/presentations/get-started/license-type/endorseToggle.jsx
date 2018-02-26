@@ -9,8 +9,8 @@ const FormControls = (props) => {
   return (
     <div className='endorsement-toggle'>
       <hr/>
-      <h2 className='question translation-missing'>Do you need a firefigher endorsement?</h2>
-      <p className='translation-missing'>Firefighters and ambulance drivers need special endorsements to drive their vehicles.</p>
+      <h2 className='question translation-missing'>Do you need a firefighter endorsement?</h2>
+      <p className='translation-missing'>If you only want an ambulance certificate, please visit a DMV field office.</p>
       <div className='row'>
         <fieldset>
           <RadioCollection
