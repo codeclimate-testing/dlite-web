@@ -9,7 +9,7 @@ import {
 }  from '../../../../helpers/data/voting';
 import { hasValue }            from '../../../../helpers/data/validations';
 import { ageChecks }           from '../../../../helpers/calculate-age';
-import PageSummaryLink         from '../page-summary-link.jsx';
+import PageSummaryLink         from '../Page-summary-link.jsx';
 import SummaryItem             from '../summary-item.jsx';
 import * as dataPresent        from '../../../../helpers/data-present';
 

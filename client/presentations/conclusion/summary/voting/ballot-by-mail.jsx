@@ -4,7 +4,7 @@ import React                    from 'react';
 import translations             from '../../../../i18n';
 import { ballotByMailSelected } from '../../../../helpers/data/voting';
 
-import PageSummaryLink  from '../page-summary-link.jsx';
+import PageSummaryLink  from '../Page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 
 const BallotByMail = (props) => {

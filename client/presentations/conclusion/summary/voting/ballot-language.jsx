@@ -3,7 +3,7 @@
 import React                        from 'react';
 import { ballotLanguageIsSelected } from '../../../../helpers/data/application';
 import translations                 from '../../../../i18n';
-import PageSummaryLink              from '../page-summary-link.jsx';
+import PageSummaryLink              from '../Page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
 

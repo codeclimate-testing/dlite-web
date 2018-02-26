@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import PageSummaryLink              from '../page-summary-link.jsx';
+import PageSummaryLink              from '../Page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 import {
   politicalPartySelected,

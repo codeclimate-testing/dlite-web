@@ -12,7 +12,7 @@ import {
   shouldContact,
   skipAnswer
 } from '../../../../helpers/data/contact-methods';
-import PageSummaryLink              from '../page-summary-link.jsx';
+import PageSummaryLink              from '../Page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
 const title = <div className='translation-missing'>Should Contact</div>;
