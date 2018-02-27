@@ -38,18 +38,22 @@ const Form = (props) => {
                 <RadioSelector
                   value = 'new'
                   text={tempObjectThatNeedsTranslations.values[0]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value = 'renew'
                   text={tempObjectThatNeedsTranslations.values[1]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value = 'change'
                   text={tempObjectThatNeedsTranslations.values[2]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value='replace'
                   text={tempObjectThatNeedsTranslations.values[3]}
+                  className='long-text'
                 />
               </RadioCollection>
             </fieldset>

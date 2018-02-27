@@ -132,7 +132,7 @@ module.exports = function(world) {
       .text()
       .then((text) => {
         assert.ok(text.includes('What do you need to drive?'));
-        assert.ok(text.includes("I'm not sure"));
+        assert.ok(text.includes("Car"));
       })
       .then(done)
       .catch(done);

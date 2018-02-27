@@ -14,9 +14,9 @@ const OptOutPage = (props) => {
   let translation;
 
   if (isPreregistering(props.dateOfBirth)) {
-    translation = translations.votingRegistration.optOutPage;
-  } else {
     translation = translations.votingRegistration.preRegOptOutPage;
+  } else {
+    translation = translations.votingRegistration.optOutPage;
   }
 
   let preRegString = checkPreReg(props.dateOfBirth);
