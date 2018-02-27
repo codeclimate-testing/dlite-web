@@ -6,7 +6,7 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 import TextInput          from '../text-input.jsx';
 import ExpirationDate     from '../expiration-date.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translate          from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
 
@@ -17,8 +17,12 @@ const Form = (props) => {
     >
       <div className='current-card-form'>
         <form onSubmit={ props.onSubmit }>
-          {convertToHtml('h2', translations.intro.currentCardPage.prompt, 'question')}
-          {convertToHtml('p', translations.intro.currentCardPage.explanation)}
+          <Translate tag='h2' className='question'>
+            { translations.intro.currentCardPage.prompt }
+          </Translate>
+          <Translate tag='p'>
+            { translations.intro.currentCardPage.explanation }
+          </Translate>
           <fieldset>
             <TextInput
               {...props}
