@@ -3,7 +3,10 @@
 import React                from 'react'
 import Page                 from '../../containers/page.jsx';
 import { ageChecks }        from '../../helpers/calculate-age';
-import Content              from './summary/Content.jsx';
+import Content              from './summary/body.jsx';
+import Translate            from '../../i18n/translate-tag.jsx';
+import translations         from '../../i18n';
+
 import {
   hideMain,
   getErrorMessage
@@ -12,9 +15,6 @@ import {
 import {
   ErrorMessageBox
 } from '../validations.jsx';
-
-
-const header = 'Please take a minute to review your answers';
 
 
 const SummaryPage = (props) => {
@@ -29,7 +29,9 @@ const SummaryPage = (props) => {
           onSubmit  = { props.onSubmit }
           className ={hideMain(props)}
         >
-          <h2 className='question'>{header}</h2>
+          <Translate tag='h2'>
+            { translations.summaryPage.prompt}
+          </Translate>
 
           <div className='translation-missing'>
             <ErrorMessageBox

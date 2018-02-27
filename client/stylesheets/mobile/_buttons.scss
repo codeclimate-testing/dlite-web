@@ -190,6 +190,10 @@ a.button.arrow-button {
       background-image: url("/images/arrow-buttons/forward/active-focused.svg");
     }
   }
+
+  &.submit {
+    padding-left: 26px;
+  }
 }
 
 a.button.arrow-button {

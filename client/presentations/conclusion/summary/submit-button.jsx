@@ -1,18 +1,17 @@
 'use strict';
-import React                       from 'react';
+
+import React from 'react';
+import translations from '../../../i18n';
 
 const SubmitButton = (props) => {
-  if(APP_ENV && (APP_ENV === 'development' || APP_ENV === 'test')){
-    return (
-        <div className='navigation-buttons row' key='save-and-continue'>
-          <button type='submit' className='arrow-button forward'>
-            Save & Continue
-          </button>
-        </div>
-    );
-  }
+  let submitText = translations.summaryPage.buttons.submit;
+
   return (
-      <ContinueButton disabled={props.continueDisabled} key="submit"/>
+    <div className='navigation-buttons row' key='save-and-continue'>
+      <button type='submit' className='arrow-button forward submit'>
+        { submitText }
+      </button>
+    </div>
   );
 };
 
