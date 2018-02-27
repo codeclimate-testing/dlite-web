@@ -51,6 +51,7 @@ const ElectronicSignature = (props) => {
           error     = { hasValue(props.validations.acceptLiabilityErrors) }
           onBlur    = { props.onCheckboxBlur }
           onFocus   = { props.onCheckboxFocus}
+          className = 't-size-1-1'
         />
         </fieldset>
       </div>
