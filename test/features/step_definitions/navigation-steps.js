@@ -212,7 +212,7 @@ module.exports = function(world) {
   });
 
   world.when('I will be on the id.me page', function(done) {
-    assertOnPage('.id-me', /apply\/id-and-license\/sign-in/, done);
+    assertOnPage('.id-me', /apply\/sign-in/, done);
   });
 
   world.when('I will be on the CDL name page', function(done) {

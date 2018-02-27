@@ -6,7 +6,10 @@ import handlers               from '../../helpers/handlers';
 import Presentation           from '../../presentations/cdl/cdl-page.jsx';
 
 const Page = (props) => {
-  let onSubmit          =   handlers.navigateOnSubmit('/sign-in', props);
+  let validations       = {
+    isValid: () => true
+  };
+  let onSubmit          =   handlers.navigateOrShowErrors('cdl', props, validations);
   let onBack            =   handlers.navigateOnBack(props);
 
   return (

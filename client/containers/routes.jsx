@@ -47,7 +47,7 @@ class Router extends React.Component {
 
         <CDLRoutes />
 
-        <Route path={ iddlPath('/sign-in') }                   component={IDMe} />
+        <Route path={ alicePath('/sign-in') }                    component={IDMe} />
         <Route path={ alicePath('/')}                           exact component={Welcome} />
         <Route path={ alicePath('/welcome') }                   component={Welcome} />
         <Route path={ pathForPage('welcome') }                  component={Welcome} />
