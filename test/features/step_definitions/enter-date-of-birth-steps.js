@@ -41,12 +41,14 @@ module.exports = function(world) {
       .text('.summary')
       .then((text) => {
         var d = new Date();
-        // calculate a date of 3 days shy of being 18
-        var month = (d.getMonth() + 1).toString();
-        var day = (d.getDate() + 3).toString();
-        var year = (d.getFullYear() - 18).toString();
 
-        assert(text.includes(month + '/' + day + '/' + year), 'date of birth missing');
+        // calculate a date of under 18
+        var month = d.getMonth() > 11 ? 13 - d.getMonth() : d.getMonth() + 2;
+        var day = '10' ;
+        var year = (d.getFullYear() - 18).toString();
+        var d = new Date();
+
+        assert(text.includes(month.toString() + '/' + day + '/' + year), 'date of birth missing');
       })
       .then(() => { done(); })
       .catch(done);
@@ -198,15 +200,15 @@ module.exports = function(world) {
   world.and('I indicate that I am between 17.5 and 18', function(done) {
     var d = new Date();
 
-    // calculate a date of 3 days shy of being 18
-    var month = d.getMonth() + 1;
-    var day = d.getDate() + 3 ;
-    var year = d.getFullYear() - 18;
+    // calculate a date of under 18
+    var month = d.getMonth() > 11 ? 13 - d.getMonth() : d.getMonth() + 2;
+    var day = '10' ;
+    var year = (d.getFullYear() - 18).toString();
 
     browser
       .type('#month', month.toString())
-      .type('#day', day.toString())
-      .type('#year', year.toString())
+      .type('#day', day)
+      .type('#year', year)
       .then(() => { done(); })
       .catch(done);
   });
