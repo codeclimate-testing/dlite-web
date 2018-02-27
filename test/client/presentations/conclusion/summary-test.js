@@ -644,13 +644,10 @@ describe('Summary components', function() {
           state: 'CA',
           zip: '90210'
         };
-<<<<<<< HEAD
         props.locale = locale;
-=======
 
         props.editKey = 'addresses';
 
->>>>>>> added the summary presentation
         let component = render(
           <Wrapper>
             <Address

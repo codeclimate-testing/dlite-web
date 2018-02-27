@@ -23,9 +23,7 @@ const Form = (props) => {
         <ResidencyMessageNo
           residency     = {props.residency}
         />
-        <AddressForm
-          {...props}
-        />
+        <AddressForm    {...props} />
         <NavigationButtons
           {...props}
           errorMessage   = { props.validations.all() }
