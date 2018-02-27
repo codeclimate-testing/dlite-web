@@ -40,40 +40,39 @@ const Decline = (props) => {
 };
 
 const CitizenStatus = (props) => {
-    if (citizenStatusNotChosen(props)) { return null; }
-	  let notAvailable = <div className='translation-missing'>Not Available</div>
-	  let now = props.now ? props.now : new Date(); 
-	    if (ageChecks.Under16(props.dateOfBirth, now)) {
-	    return (
-	      <SummaryItem
-	        title={translations.summaryPage.voterRegistration.citizen}
-	        text={notAvailable}
-	      />
-	    )
-	  }
-	  if ((citizenStatusNotChosen(props)) && (declineToAnswer(props.citizenStatus))) {
-	    return (
-	      <PageSummaryLink
-	        to='/voting-registration/citizenship'
-	        name='citizenship'
-	      >
-	        <SummaryItem
-	          title={translations.summaryPage.voterRegistration.citizen}
-	          text={translations.shared.commonAnswers.declineToAnswer}
-	        />
-	      </PageSummaryLink>
-	    )
-	  }
-	  return (
-	    <PageSummaryLink
-	      to='/voting-registration/citizenship'
-	      name='citizenship'
-	    >
-	      <Yes citizenStatus={props.citizenStatus} />
-	      <Decline citizenStatus={props.citizenStatus} />
-	      <No citizenStatus={props.citizenStatus} /> 
-	    </PageSummaryLink>
-	  )
-	};
+  let notAvailable = <div className='translation-missing'>Not Available</div>
+  let now = props.now ? props.now : new Date();
+  if (ageChecks.Under16(props.dateOfBirth, now)) {
+    return (
+      <SummaryItem
+        title={translations.summaryPage.voterRegistration.citizen}
+        text={notAvailable}
+      />
+    )
+  }
+  if ((declineToAnswer(props.citizenStatus)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (citizenStatusNotChosen(props))) {
+    return (
+      <PageSummaryLink
+        to='/voting-registration/citizenship'
+        name='citizenship'
+      >
+        <SummaryItem
+          title={translations.summaryPage.voterRegistration.citizen}
+          text={translations.shared.commonAnswers.declineToAnswer}
+        />
+      </PageSummaryLink>
+    )
+  }
+  return (
+    <PageSummaryLink
+      to='/voting-registration/citizenship'
+      name='citizenship'
+    >
+      <Yes citizenStatus={props.citizenStatus} />
+      <Decline citizenStatus={props.citizenStatus} />
+      <No citizenStatus={props.citizenStatus} />
+    </PageSummaryLink>
+  )
+};
 
 export default CitizenStatus;

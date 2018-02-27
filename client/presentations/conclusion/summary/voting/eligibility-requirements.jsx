@@ -38,7 +38,6 @@ const Decline = (props) => {
 	        />)
 };
 const EligibilityRequirements = (props) => {
-  if (!hasValue(props.eligibilityRequirements)) { return null; }
   let notAvailable = <div className='translation-missing'>Not Available</div>
   let now = props.now ? props.now : new Date();
   if (ageChecks.Under16(props.dateOfBirth, now)) {
@@ -49,7 +48,7 @@ const EligibilityRequirements = (props) => {
       />
     )
   }
-  if ((eligibilityNotChosen(props)) && (declineToAnswer(props.citizenStatus))) {
+  if ((declineToAnswer(props.eligibilityRequirements)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (eligibilityNotChosen(props))) {
     return (
       <PageSummaryLink
         to='/voting-registration/eligibility'
