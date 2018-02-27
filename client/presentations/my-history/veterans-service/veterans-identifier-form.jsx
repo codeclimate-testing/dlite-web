@@ -12,7 +12,8 @@ import {
   showPreviousDLHeader,
   showNewIDHeader,
   showNewDLHeader,
-  keepOrAdd
+  keepOrAdd,
+  isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
 import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
@@ -46,7 +47,7 @@ const Question = (props) => {
 };
 
 const MessageAddAmount = (props) => {
-  if (!showIdentifierMessage(props)) { return null; }
+  if (!showIdentifierMessage(props) || isPreviouslyDesignated(props)) { return null; }
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>

@@ -172,6 +172,17 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
         assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
       });
+
+      it('does not show a fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(!component.find('.veteran-identifier-fee').length, 'fee notification present and should not be');
+      });
     });
 
     describe('when selecting veterans identifier', function() {
@@ -192,7 +203,7 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
       });
 
-      it('shows fee notification when selecting Yes', function() {
+      it('does not show a fee notification when selecting Yes', function() {
         props.veteransService.veteransIdentifier = 'Yes';
 
         let component = render(
@@ -200,7 +211,7 @@ describe('VeteransServicePage', function() {
             <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+        assert.ok(!component.find('.veteran-identifier-fee').length, 'fee notification present and should not be');
       });
     });
   });
@@ -254,6 +265,17 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.veterans-identifier-form').length, 'veterans identifier form did not render');
         assert.ok(component.find('.previous-designation').length, 'previous designation form did not render');
       });
+
+      it('does not show a fee notification when selecting Yes', function() {
+        props.veteransService.veteransIdentifier = 'Yes';
+
+        let component = render(
+          <Wrapper>
+            <VeteransPage {...props} />
+          </Wrapper>
+        );
+        assert.ok(!component.find('.veteran-identifier-fee').length, 'fee notification present and should not be');
+      });
     });
 
     describe('when selecting veterans identifier', function() {
@@ -274,7 +296,7 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
       });
 
-      it('shows fee notification when selecting Yes', function() {
+      it('does not show a fee notification when selecting Yes', function() {
         props.veteransService.veteransIdentifier = 'Yes';
 
         let component = render(
@@ -282,7 +304,7 @@ describe('VeteransServicePage', function() {
             <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+        assert.ok(!component.find('.veteran-identifier-fee').length, 'fee notification present and should not be');
       });
     });
   });
@@ -356,7 +378,7 @@ describe('VeteransServicePage', function() {
         assert.ok(component.find('.remove-veteran-identifier').length, 'removal notification did not render');
       });
 
-      it('shows fee notification when selecting Yes', function() {
+      it('does not show a fee notification when selecting Yes', function() {
         props.veteransService.veteransIdentifier = 'Yes';
 
         let component = render(
@@ -364,10 +386,9 @@ describe('VeteransServicePage', function() {
             <VeteransPage {...props} />
           </Wrapper>
         );
-        assert.ok(component.find('.veteran-identifier-fee').length, 'fee notification did not render');
+        assert.ok(!component.find('.veteran-identifier-fee').length, 'fee notification present and should not be');
       });
     });
   });
-
 });
 
