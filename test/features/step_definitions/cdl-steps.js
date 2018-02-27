@@ -57,6 +57,17 @@ module.exports = function(world) {
         assert(className.includes('open'), 'Accordion for cdl what can i do did not open');
       })
       .then((d) => { done(); })
+  world.when('I click Yes to being a resident', function() {
+    browser
+      .click('label[isResident-Yes]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click No to being a resident', function() {
+    browser
+      .click('label[isResident-No]')
+      .then(done)
       .catch(done);
   });
 };

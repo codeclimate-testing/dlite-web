@@ -32,6 +32,7 @@ const MyBasics = (props) => {
       />
       <Address
         address           = {application.basics.address}
+        editKey           = 'addresses'
         summary           = 'summary'
         locale            = { locale }
       />

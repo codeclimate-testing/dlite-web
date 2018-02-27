@@ -15,7 +15,7 @@ const isResident = (props) => {
   if(!props.hasOwnProperty('isResident')) { return [];}
   let errors = [];
   if (!hasValue(props.isResident)) {
-    errors.push('selectionMissing');
+    errors.push(errorMessages['selectionMissing']);
   }
   return errors;
 };

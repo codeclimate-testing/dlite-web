@@ -6,7 +6,7 @@ import NavigationButtons        from '../navigation-buttons.jsx';
 import ResidencyRadios          from './residency/resident-form.jsx';
 import AddressForm              from './residency/address.jsx';
 import ResidencyMessageNo       from './residency/no-message.jsx';
-
+import { notResident }          from '../../helpers/data/cdl';
 const Form = (props) => {
   return (
     <Page
@@ -27,8 +27,9 @@ const Form = (props) => {
           {...props}
         />
         <NavigationButtons
-        {...props}
-        errorMessage= { props.validations.all() }
+          {...props}
+          errorMessage   = { props.validations.all() }
+          continueHidden = { notResident(props.residency) }
       />
       </form>
     </Page>

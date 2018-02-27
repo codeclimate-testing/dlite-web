@@ -10,14 +10,14 @@ import {
   Update
 } from '../../conclusion/summary/actions.jsx';
 
-const CdlAction = (application) => {
-  let cardAction = application.basics.cardAction;
+const CdlAction = (cdl) => {
+  let cardAction = cdl.basics.cardAction;
   if(!cardAction) { return null; }
   let locale = application.locale;
   return (
     <PageSummaryLink
       name    = 'cdlWdywtdt'
-      summary = {application.summary}
+      summary = {cdl.summary}
     >
       <New        showIf = {cardAction === 'new'}       locale={locale}/>
       <Renew      showIf = {cardAction === 'renew'}     locale={locale}/>

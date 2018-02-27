@@ -226,6 +226,10 @@ module.exports = function(world) {
     assertOnPage('.choose-card-action', /apply\/cdl\/what-do-you-want-to-do-today/, done);
   });
 
+  world.when('I will be on the residency page', function(don) {
+    assertOnPage('.cdl-residency', /apply\/cdl\/california-residency/, done);
+  });
+
   world.when('I will be on the IDDL welcome page', function(done) {
     assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);
   });

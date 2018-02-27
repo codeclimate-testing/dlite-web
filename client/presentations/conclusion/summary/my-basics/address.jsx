@@ -24,7 +24,7 @@ const Address = (props) => {
   return (
     <PageSummaryLink
       summary = {props.summary}
-      name    = 'addresses'
+      name    = {props.editKey}
     >
       <SummaryItem
         title={translations[locale].summaryPage.myBasics.homeAddress}
