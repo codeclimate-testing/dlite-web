@@ -35,4 +35,28 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I will see the title of each accordion for cdl what can I do page', function(done) {
+    browser
+      .waitForSelector('#apply-cdl')
+      .then((d) => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click in the title for cdl what can I do accordion', function(done) {
+    browser
+      .click('#apply-cdl')
+      .then(() => { done(); })
+      .catch((err) => { done(new Error(err)); });
+  });
+
+  world.then('The cdl what can I do info accordion will open to show its full content', function(done) {
+    browser
+      .attribute('#apply-cdl-accordion', 'class')
+      .then((className) => {
+        assert(className.includes('open'), 'Accordion for cdl what can i do did not open');
+      })
+      .then((d) => { done(); })
+      .catch(done);
+  });
 };

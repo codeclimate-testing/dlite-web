@@ -57,6 +57,10 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
   });
 
+  world.when('I visit the page about what I can do in the CDL application', function(done) {
+    navigateToPath('/apply/cdl', '.apply-cdl', done);
+  });
+
   world.when('I visit the page to choose application language', function(done) {
     navigateToPath('/apply/choose-language', '.choose-language-form', done);
   });
@@ -206,6 +210,11 @@ module.exports = function(world) {
   world.when('I will be on the CDL welcome page', function(done) {
     assertOnPage('.apply-cdl', /apply\/cdl/, done);
   });
+
+  world.when('I will be on the id.me page', function(done) {
+    assertOnPage('.id-me', /apply\/sign-in/, done);
+  });
+
   world.when('I will be on the CDL name page', function(done) {
     assertOnPage('.legal-name-form', /apply\/cdl\/true-name/, done);
   });

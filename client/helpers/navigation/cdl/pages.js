@@ -5,7 +5,7 @@ const cdl = [
     key: 'cdl',
     description: 'CDL welcome page',
     path: '',
-    next: 'cdlLegalName'
+    next: 'IDme'
   },
   {
     key: 'cdlLegalName',
