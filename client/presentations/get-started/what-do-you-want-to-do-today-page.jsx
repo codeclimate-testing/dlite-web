@@ -8,6 +8,7 @@ import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import Translate            from '../../i18n/translate-tag.jsx';
 import {
   getTextFromPathname,
   onIDFlow
@@ -34,7 +35,16 @@ const anotherTempObjectThatNeedsTranslation = {
 };
 
 const Form = (props) => {
-  let text = getTextFromPathname(props, translations.intro.wdywtdtPage, tempObjectThatNeedsTranslations, anotherTempObjectThatNeedsTranslation);
+  let text = getTextFromPathname(
+    props,
+    translations.intro.wdywtdtPage,
+    tempObjectThatNeedsTranslations,
+    anotherTempObjectThatNeedsTranslation
+  );
+
+  let name = getTextFromPathname(
+    props, 'cardAction', 'DLAction', 'IDAction'
+  );
 
   return (
     <Page
@@ -42,32 +52,42 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        {convertToHtml('h2', translations.intro.wdywtdtPage.prompt, 'question')}
-        {convertToHtml('p', text.explanation)}
+        <Translate tag='h2' className='question'>
+          { translations.intro.wdywtdtPage.prompt }
+        </Translate>
+
+        <Translate tag='p'>
+          { text.explanation }
+        </Translate>
+
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <fieldset>
               <RadioCollection
                 {...props}
-                name    = {getTextFromPathname(props, 'cardAction', 'DLAction', 'IDAction')}
+                name    = { name }
                 onBlur  = { props.onBlurValidate }
-                errorMessage = { props.validations.cardAction()}
+                errorMessage = { props.validations.cardAction() }
               >
                 <RadioSelector
                   value = 'new'
                   text={text.values[0]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value = 'renew'
                   text={text.values[1]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value = 'change'
                   text={text.values[2]}
+                  className='long-text'
                 />
                 <RadioSelector
                   value='replace'
                   text={text.values[3]}
+                  className='long-text'
                 />
               </RadioCollection>
             </fieldset>

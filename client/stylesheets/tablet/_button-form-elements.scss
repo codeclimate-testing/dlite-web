@@ -8,7 +8,12 @@ textarea,
   width: $max-tablet-input-width;
 }
 
-.physical-traits-form, .license-type-form {
+.choice-selector.long-text {
+  width: 480px;
+}
+
+.physical-traits-form,
+.license-type-form {
   .choice-selector {
     width: 255px;
   }
