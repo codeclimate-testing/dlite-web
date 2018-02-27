@@ -8,3 +8,7 @@ export const canContinue = (props) => {
   let hasAddress = dataPresent.address(address);
   return hasAddress && hasValue(props.homeAddress.homeAddressSameAsMailing);
 };
+
+export const notSameAsHome = (props) => {
+  return props.isSameAsHome === 'No';
+};

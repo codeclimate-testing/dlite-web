@@ -1,8 +1,7 @@
 'use strict';
 
 import React                        from 'react';
-import { connect }                  from 'react-redux';
-
+import connectForm                  from '../../helpers/connect-form';
 import handlers                     from '../../helpers/handlers';
 import { AddressValidator }         from '../../helpers/validations';
 
@@ -33,37 +32,12 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     address       : state.application.basics.address,
+    cardType      : state.application.cardType,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
     cardType      : state.application.cardType,
     locale        : state.ui.locale
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
-  const onAddressChange         = handlers.onInputChange(updateAddress, dispatch);
-  const onHomeChange            = handlers.onInputChange(updateHomeAddress, dispatch);
-  const onMailingChange         = handlers.onInputChange(updateMailingAddress, dispatch);
-  const onSubmit                = handlers.onFormSubmit(dispatch);
-  const onBlurValidate          = handlers.onBlurValidate(dispatch);
-  const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
-  const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
-  const onFocus                 = handlers.onFocus(dispatch);
-  const onHomeSelectChange      = handlers.onSelectChange(updateHomeAddress, dispatch);
-  const onMailingSelectChange   = handlers.onSelectChange(updateMailingAddress, dispatch);
-
-  return {
-    onSubmit,
-    onAddressChange,
-    onHomeChange,
-    onMailingChange,
-    onBlurValidate,
-    onFocusClearValidation,
-    onSubmitShowErrors,
-    onFocus,
-    onHomeSelectChange,
-    onMailingSelectChange
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connectForm(mapStateToProps, updateAddress, Page);

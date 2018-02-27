@@ -5,10 +5,13 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import Page                 from '../../containers/page.jsx';
 
 import HomeAddress          from './address/home-address-form.jsx';
+import ExplanatoryString    from './address/string.jsx';
 import MailingSameAsHome    from './address/mailing-same-as-home.jsx';
 import MailingAddress       from './address/mailing-address-form.jsx';
 
 const AddressPage = (props) => {
+
+
 
   return (
     <Page
@@ -19,20 +22,20 @@ const AddressPage = (props) => {
         <HomeAddress
           {...props}
           address         = { props.address.home }
-          onChange        = { props.onHomeChange }
-          onSelectChange  = { props.onHomeSelectChange }
         />
         <MailingSameAsHome
           {...props}
-          onChange        = { props.onAddressChange }
-          selectedValue   = { props.address.homeAddressSameAsMailing }
-        />
+          selectedValue   = { props.address.homeAddressSameAsMailing}
+        >
+          <ExplanatoryString
+            cardType      = { props.cardType }
+            locale        = { props.locale }
+          />
+        </MailingSameAsHome>
         <MailingAddress
           {...props}
           isSameAsHome    = { props.address.homeAddressSameAsMailing }
           address         = { props.address.mailing }
-          onChange        = { props.onMailingChange }
-          onSelectChange  = { props.onMailingSelectChange }
         />
         <NavigationButtons
           {...props}

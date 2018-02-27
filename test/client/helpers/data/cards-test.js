@@ -7,7 +7,10 @@ import {
   hasMultipleCards,
   IDAppExists,
   DLAppExists,
-  hasSelectedClass
+  hasSelectedClass,
+  showID,
+  showDL,
+  showBoth
 } from '../../../../client/helpers/data/cards';
 
 function buildCardType(type, action){
@@ -119,6 +122,51 @@ describe('Data helpers for cards', function() {
     it('returns true if array has a value', function() {
       data.DLApp.licenseType.type = ['car'];
       assert.equal(hasSelectedClass(data), true);
+    });
+  });
+
+  describe('#showID', function() {
+    it('returns true when cardType array just has ID', function() {
+      data.cardType = ['ID'];
+      assert.equal(showID(data), true);
+    });
+    it('returns false when cardType array just has DL', function() {
+      data.cardType = ['DL'];
+      assert.equal(showID(data), false);
+    });
+    it('returns false when cardType array has both ID and DL', function() {
+      data.cardType = ['DL', 'ID'];
+      assert.equal(showID(data), false);
+    });
+  });
+
+  describe('#showDL', function() {
+    it('returns true when cardType array just has DL', function() {
+      data.cardType = ['DL'];
+      assert.equal(showDL(data), true);
+    });
+    it('returns false when cardType array just has ID', function() {
+      data.cardType = ['ID'];
+      assert.equal(showDL(data), false);
+    });
+    it('returns false when cardType array has both ID and DL', function() {
+      data.cardType = ['DL', 'ID'];
+      assert.equal(showDL(data), false);
+    });
+  });
+
+  describe('#showBoth', function() {
+    it('returns false when cardType array just has ID', function() {
+      data.cardType = ['ID'];
+      assert.equal(showBoth(data), false);
+    });
+    it('returns false when cardType array just has DL', function() {
+      data.cardType = ['DL'];
+      assert.equal(showBoth(data), false);
+    });
+    it('returns true when cardType array has both ID and DL', function() {
+      data.cardType = ['DL', 'ID'];
+      assert.equal(showBoth(data), true);
     });
   });
 });

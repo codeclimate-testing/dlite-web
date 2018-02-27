@@ -1,6 +1,8 @@
 'use strict';
 
-import { TYPES } from '../../../actions';
+import { TYPES }          from '../../../actions';
+import { addressReducer } from '../../../helpers/reducers';
+
 
 function defaultState() {
   return {
@@ -23,44 +25,12 @@ function defaultState() {
 }
 
 const formReducer = (state = defaultState(), action) => {
-  if (action.type === TYPES.UPDATE_ADDRESS          ||
-      action.type === TYPES.UPDATE_HOME_ADDRESS     ||
-      action.type === TYPES.UPDATE_MAILING_ADDRESS) {
+  if (action.type !== TYPES.UPDATE_ADDRESS) { return state; }
 
-        let data  = Object.assign({}, state);
-        let name  = action.payload.name;
-        let value = action.payload.value;
-        let type  = '';
+  let data  = Object.assign({}, state);
 
-        if (action.type === TYPES.UPDATE_HOME_ADDRESS) {
-          type = 'home';
-          name = name.replace(type, '').toLowerCase();
-          data[type][name] = value;
-        }
+  return addressReducer(action.payload, data, defaultState);
 
-        if (action.type === TYPES.UPDATE_MAILING_ADDRESS) {
-          type = 'mailing';
-          name = name.replace(type, '').toLowerCase();
-          data[type][name] = value;
-        }
-
-        if (action.type === TYPES.UPDATE_ADDRESS) {
-          data[name] = value;
-          if(name === 'homeAddressSameAsMailing'){
-            if(value === 'Yes') {
-              data.mailing = data.home;
-            }
-            if(value === 'No') {
-              data.mailing = defaultState().mailing;
-            }
-          }
-
-        }
-        return Object.assign({}, state, data);
-
-  }
-
-  return state;
 };
 
 export default formReducer;

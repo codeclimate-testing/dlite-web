@@ -10,6 +10,7 @@ import * as dataPresent         from '../../../../client/helpers/data-present';
 import AddressPage              from '../../../../client/presentations/my-basics/address-page.jsx';
 import store                    from '../../support/page-store';
 import translations             from '../../../../client/i18n';
+import ExplanatoryString        from '../../../../client/presentations/my-basics/address/string.jsx';
 
 describe('AddressPage', function() {
   let props;
@@ -143,3 +144,69 @@ describe('AddressPage', function() {
   });
 });
 
+describe('Explanatory String on Address Page', function() {
+  let cardType, component;
+  describe('#cardType array just includes ID', function() {
+    beforeEach(function() {
+      cardType = ['ID'];
+      component = render(
+        <ExplanatoryString cardType = {cardType} />
+      );
+    });
+    it('shows ID string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.ID), true);
+    });
+
+    it('does not show DL string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.license), false);
+
+    });
+
+    it('does not show both string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.cards), false);
+    });
+  });
+
+  describe('#cardType array just includes DL', function() {
+    beforeEach(function() {
+      cardType = ['DL'];
+      component = render(
+        <ExplanatoryString cardType = {cardType} />
+      );
+    });
+
+    it('does not show ID string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.ID), false);
+    });
+
+    it('shows DL string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.license), true);
+
+    });
+
+    it('does not show both string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.cards), false);
+    });
+  });
+
+  describe('#cardType array includes both cards', function() {
+    beforeEach(function() {
+      cardType = ['DL', 'ID'];
+      component = render(
+        <ExplanatoryString cardType = {cardType} />
+      );
+    });
+    it('does not show ID string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.ID), false);
+    });
+
+    it('does not show DL string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.license), false);
+
+    });
+
+    it('shows both string', function() {
+      assert.equal(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.cards), true);
+    });
+  });
+});

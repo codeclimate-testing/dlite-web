@@ -11,11 +11,10 @@ const Page = (props) => {
   let validations       = new ResidencyValidator(props.residency, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlResidency', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
   return (
     <Presentation
       {...props}
-      onBack      = {onBack}
+      onBack      = { onBack }
       onSubmit    = { onSubmit }
       validations = { validations }
     />
@@ -24,11 +23,11 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    residency:     state.cdl.residency,
-    validations:  state.ui.validations,
-    focused:      state.ui.focus,
-    hover:        state.ui.hover
+    residency:      state.cdl.basics.residency,
+    validations:    state.ui.validations,
+    focused:        state.ui.focus,
+    hover:          state.ui.hover
   };
 };
 
-export default connectForm(mapStateToProps, updateCdlLegalName, Page);
+export default connectForm(mapStateToProps, updateCdlResidency, Page);

@@ -4,9 +4,10 @@ import React              from 'react';
 import AddressTemplate    from '../../address-template.jsx';
 import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import { notSameAsHome }  from '../../../helpers/data/address';
 
 const Form = (props) => {
-  if(props.isSameAsHome !== 'No') { return null; }
+  if(!notSameAsHome(props)) { return null; }
   let locale = props.locale;
   return (
     <div className='mailing-address-form'>

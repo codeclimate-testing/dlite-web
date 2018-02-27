@@ -10,3 +10,11 @@ export const showCDLUnder21 = (props) => {
     dataPresent.date(props.dateOfBirth) &&
     ageChecks.Under21(props.dateOfBirth);
 };
+
+export const needsAddress = (props) => {
+  return props.isResident === 'Yes';
+};
+
+export const notResident = (props) => {
+  return props.isResident === 'No';
+};

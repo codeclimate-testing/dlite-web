@@ -8,3 +8,22 @@ export const cardTypeAction = (action) => {
     action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD ||
     action.type === TYPES.ADD_APP;
 };
+
+export const addressReducer = (payload, data, defaultState) => {
+  if (payload.name === 'homeAddressSameAsMailing') {
+    data.homeAddressSameAsMailing = payload.value;
+    let mailingAddress = data.home;
+    if (payload.value === 'No') {
+      mailingAddress =  defaultState().mailing;
+    }
+    data.mailing = mailingAddress;
+  }
+
+  else {
+    let splitName = payload.name.split(/(?=[A-Z])/);
+    let type = splitName[0];
+    let name = splitName[1].toLowerCase();
+    data[type][name] = payload.value;
+  }
+  return data;
+}
