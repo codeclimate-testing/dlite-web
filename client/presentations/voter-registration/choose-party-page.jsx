@@ -8,7 +8,7 @@ import Page                     from '../../containers/page.jsx';
 import PoliticalPartyPreference from './voter-choose-party/political-party-preference.jsx';
 import translations             from '../../i18n';
 import { checkPreReg }          from '../../helpers/data/youth';
-import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
+import Translate                from '../../i18n/translate-tag.jsx';
 
 const ChoosePartyPage = (props) => {
   return (
@@ -18,8 +18,12 @@ const ChoosePartyPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'choose-party-form'>
         <div className='choose-political-party'>
-          {convertToHtml('h2', translations.votingRegistration.choosePartyPage.pagePrompt, 'question')}
-          {convertToHtml('p', translations.votingRegistration.choosePartyPage.explanation)}
+          <Translate tag='h2' className='question'>
+            { translations.votingRegistration.choosePartyPage.pagePrompt }
+          </Translate>
+          <Translate tag='p'>
+            { translations.votingRegistration.choosePartyPage.explanation }
+          </Translate>
 
           <fieldset>
             <RadioCollection
@@ -31,10 +35,12 @@ const ChoosePartyPage = (props) => {
             <RadioSelector
               value='Yes'
               text={translations.shared.commonAnswers.yes}
+              className='long-text'
             />
             <RadioSelector
               value='Skip'
               text={translations.votingRegistration.choosePartyPage.answerNo}
+              className='long-text'
             />
           </RadioCollection>
           </fieldset>
