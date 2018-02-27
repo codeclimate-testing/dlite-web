@@ -30,13 +30,6 @@ describe('enter guardian signature page validation rules:', function() {
             city: '',
             state: 'CA',
             zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
           }
         },
         {
@@ -55,13 +48,6 @@ describe('enter guardian signature page validation rules:', function() {
             city: '',
             state: 'CA',
             zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
           }
         }]
       }
@@ -83,11 +69,6 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[0].address.city = 'Sacramento';
     props.guardianSignature.guardianInfo[0].address.state = 'CA';
     props.guardianSignature.guardianInfo[0].address.zip = '99999';
-    props.guardianSignature.guardianInfo[0].ID.number = 'ABC123';
-    props.guardianSignature.guardianInfo[0].ID.issuedBy = 'Govt.';
-    props.guardianSignature.guardianInfo[0].ID.expirationMonth = '12';
-    props.guardianSignature.guardianInfo[0].ID.expirationDay = '12';
-    props.guardianSignature.guardianInfo[0].ID.expirationYear = '3000';
 
     props.guardianSignature.guardianInfo[1].acceptLiabilities = true;
     props.guardianSignature.guardianInfo[1].signature.name = 'X';
@@ -100,11 +81,6 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[1].address.city = 'Sacramento';
     props.guardianSignature.guardianInfo[1].address.state = 'CA';
     props.guardianSignature.guardianInfo[1].address.zip = '11111';
-    props.guardianSignature.guardianInfo[1].ID.number = 'XYZ321';
-    props.guardianSignature.guardianInfo[1].ID.issuedBy = 'Freedom Inc.';
-    props.guardianSignature.guardianInfo[1].ID.expirationMonth = '11';
-    props.guardianSignature.guardianInfo[1].ID.expirationDay = '11';
-    props.guardianSignature.guardianInfo[1].ID.expirationYear = '2099';
 
     assert.deepEqual(rules.isSigned(props), []);
     assert.deepEqual(rules.acceptLiabilities_0(props), []);
@@ -117,11 +93,6 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.guardian_0Street_2(props), []);
     assert.deepEqual(rules.guardian_0City(props), []);
     assert.deepEqual(rules.guardian_0Zip(props), []);
-    assert.deepEqual(rules.number_0(props), []);
-    assert.deepEqual(rules.issuedBy_0(props), []);
-    assert.deepEqual(rules.expirationMonth_0(props), []);
-    assert.deepEqual(rules.expirationDay_0(props), []);
-    assert.deepEqual(rules.expirationYear_0(props), []);
     assert.deepEqual(rules.acceptLiabilities_1(props), []);
     assert.deepEqual(rules.name_1(props), []);
     assert.deepEqual(rules.month_1(props), []);
@@ -132,15 +103,9 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.guardian_1Street_2(props), []);
     assert.deepEqual(rules.guardian_1City(props), []);
     assert.deepEqual(rules.guardian_1Zip(props), []);
-    assert.deepEqual(rules.number_1(props), []);
-    assert.deepEqual(rules.issuedBy_1(props), []);
-    assert.deepEqual(rules.expirationMonth_1(props), []);
-    assert.deepEqual(rules.expirationDay_1(props), []);
-    assert.deepEqual(rules.expirationYear_1(props), []);
   });
 
   it('has errors, when there is no data entered', function() {
-
     assert.deepEqual(rules.isSigned(props), ['Please make a selection']);
 
     assert.deepEqual(rules.acceptLiabilities_0(props), ['Please check the box to accept liability.']);
@@ -148,26 +113,15 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.month_0(props), ['Please enter a valid date.']);
     assert.deepEqual(rules.day_0(props), ['Please enter a valid date.']);
     assert.deepEqual(rules.year_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.number_0(props), ['Please enter your identity document information.']);
-    assert.deepEqual(rules.issuedBy_0(props), ['Please enter valid information']);
-    assert.deepEqual(rules.expirationMonth_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationDay_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationYear_0(props), ['Please enter a valid date.']);
 
     assert.deepEqual(rules.acceptLiabilities_1(props), ['Please check the box to accept liability.']);
     assert.deepEqual(rules.name_1(props), ['Please enter your name.']);
     assert.deepEqual(rules.month_1(props), ['Please enter a valid date.']);
     assert.deepEqual(rules.day_1(props), ['Please enter a valid date.']);
     assert.deepEqual(rules.year_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.number_1(props), ['Please enter your identity document information.']);
-    assert.deepEqual(rules.issuedBy_1(props), ['Please enter valid information']);
-    assert.deepEqual(rules.expirationMonth_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationDay_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationYear_1(props), ['Please enter a valid date.']);
   });
 
   it('has errors, when non-english data are entered', function() {
-
     props.guardianSignature.guardianInfo[0].signature.name = '嗨';
     props.guardianSignature.guardianInfo[0].signature.month = '嗨';
     props.guardianSignature.guardianInfo[0].signature.day = '嗨';
@@ -178,11 +132,6 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[0].address.city = '嗨';
     props.guardianSignature.guardianInfo[0].address.state = '嗨';
     props.guardianSignature.guardianInfo[0].address.zip = '嗨';
-    props.guardianSignature.guardianInfo[0].ID.number = '嗨';
-    props.guardianSignature.guardianInfo[0].ID.issuedBy = '嗨';
-    props.guardianSignature.guardianInfo[0].ID.expirationMonth = '嗨';
-    props.guardianSignature.guardianInfo[0].ID.expirationDay = '嗨';
-    props.guardianSignature.guardianInfo[0].ID.expirationYear = '嗨';
 
     props.guardianSignature.guardianInfo[1].signature.name = '嗨';
     props.guardianSignature.guardianInfo[1].signature.month = '嗨';
@@ -194,11 +143,6 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[1].address.city = '嗨';
     props.guardianSignature.guardianInfo[1].address.state = '嗨';
     props.guardianSignature.guardianInfo[1].address.zip = '嗨';
-    props.guardianSignature.guardianInfo[1].ID.number = '嗨';
-    props.guardianSignature.guardianInfo[1].ID.issuedBy = '嗨';
-    props.guardianSignature.guardianInfo[1].ID.expirationMonth = '嗨';
-    props.guardianSignature.guardianInfo[1].ID.expirationDay = '嗨';
-    props.guardianSignature.guardianInfo[1].ID.expirationYear = '嗨';
 
     assert.deepEqual(rules.name_0(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.month_0(props), ['Please enter a valid date.']);
@@ -209,11 +153,6 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.guardian_0Street_2(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.guardian_0City(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.guardian_0Zip(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.number_0(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.issuedBy_0(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.expirationMonth_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationDay_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationYear_0(props), ['Please enter a valid date.']);
 
      assert.deepEqual(rules.name_1(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.month_1(props), ['Please enter a valid date.']);
@@ -224,11 +163,5 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.guardian_1Street_2(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.guardian_1City(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.guardian_1Zip(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.number_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.issuedBy_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.expirationMonth_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationDay_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.expirationYear_1(props), ['Please enter a valid date.']);
   });
-
 });//End describe

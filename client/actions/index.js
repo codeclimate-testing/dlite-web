@@ -117,8 +117,6 @@ export const updateGuardianSignatureFirst             = generateFormAction(TYPES
 export const updateGuardianSignatureSecond            = generateFormAction(TYPES.UPDATE_GUARDIAN_SIGNATURE_SECOND);
 export const updateGuardianContactDetailsFirst        = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_FIRST);
 export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND);
-export const updateGuardianIDDocFirst                 = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_FIRST);
-export const updateGuardianIDDocSecond                = generateFormAction(TYPES.UPDATE_GUARDIAN_ID_DOC_SECOND);
 
 export const updateIsPreRegistering                   = generateFormAction(TYPES.UPDATE_IS_PRE_REGISTERING);
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);

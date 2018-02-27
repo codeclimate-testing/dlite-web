@@ -4,7 +4,6 @@ import React from 'react';
 
 import ElectronicSignature    from './guardian-electronic-signature.jsx';
 import GuardianContact        from './guardian-contact.jsx';
-import IdentityDocument       from './guardian-identity-document.jsx';
 import Accordion              from '../../../containers/accordion.jsx';
 import MessageBox             from '../../message-box.jsx';
 import {
@@ -23,21 +22,10 @@ const validationsFor = (props, i) => {
     name: props.validations[`name_${i}`]()
   };
 
-  const identity = {
-    date: {
-      month: props.validations[`expirationMonth_${i}`](),
-      day: props.validations[`expirationDay_${i}`](),
-      year: props.validations[`expirationYear_${i}`](),
-    },
-    issuedBy: props.validations[`issuedBy_${i}`](),
-    number: props.validations[`number_${i}`]()
-  };
-
   const contact = props.validations[`phoneNumber_${i}`]();
 
   return {
     signature,
-    identity,
     contact
   };
 };
@@ -58,11 +46,6 @@ const GuardianDetail = (props) => {
         {...props}
         onChange    = {props.onContactDetailsFirstChange}
         phoneNumber = {validations.contact}
-      />
-      <IdentityDocument
-        {...props}
-        onChange    = {props.onIDDocFirstChange}
-        validations = {validations.identity}
       />
     </div>
   );

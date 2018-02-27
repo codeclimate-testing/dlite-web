@@ -10,9 +10,7 @@ import {
   updateGuardianSignatureFirst,
   updateGuardianSignatureSecond,
   updateGuardianContactDetailsFirst,
-  updateGuardianContactDetailsSecond,
-  updateGuardianIDDocFirst,
-  updateGuardianIDDocSecond
+  updateGuardianContactDetailsSecond
  }     from '../../actions/index';
 
 import Presentation                 from '../../presentations/conclusion/guardian-signature-page.jsx';
@@ -47,8 +45,6 @@ function mapDispatchToProps(dispatch) {
   const onSignatureSecondChange          = handlers.onInputChange(updateGuardianSignatureSecond, dispatch);
   const onContactDetailsFirstChange      = handlers.onInputChange(updateGuardianContactDetailsFirst, dispatch);
   const onContactDetailsSecondChange     = handlers.onInputChange(updateGuardianContactDetailsSecond, dispatch);
-  const onIDDocFirstChange               = handlers.onInputChange(updateGuardianIDDocFirst, dispatch);
-  const onIDDocSecondChange              = handlers.onInputChange(updateGuardianIDDocSecond, dispatch);
   const onSubmit                         = handlers.onFormSubmit(dispatch);
   const onBlurValidate                   = handlers.onBlurValidate(dispatch);
   const onBlur                           = handlers.onBlur(dispatch);
@@ -72,8 +68,6 @@ function mapDispatchToProps(dispatch) {
     onSignatureSecondChange,
     onContactDetailsFirstChange,
     onContactDetailsSecondChange,
-    onIDDocFirstChange,
-    onIDDocSecondChange,
     onSubmit,
     onBlurValidate,
     onBlur,

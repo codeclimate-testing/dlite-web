@@ -78,28 +78,6 @@ const guardian_0Zip = (props) => {
   return englishValidator(value);
 };
 
-const number_0 = (props) => {
-  let value = props.guardianSignature.guardianInfo[0].ID.number;
-  return validateHasValue(value, errorMessages.identityDocumentationMissing);
-};
-
-const issuedBy_0 = (props) => {
-  let value = props.guardianSignature.guardianInfo[0].ID.issuedBy;
-  return validateHasValue(value, errorMessages.pleaseEnterValidData);
-};
-
-const expirationMonth_0 = (props) => {
-  return validateDate(props.guardianSignature.guardianInfo[0].ID, 'expirationMonth');
-};
-
-const expirationDay_0 = (props) => {
-  return validateDate(props.guardianSignature.guardianInfo[0].ID, 'expirationDay');
-};
-
-const expirationYear_0 = (props) => {
-  return validateDate(props.guardianSignature.guardianInfo[0].ID, 'expirationYear');
-};
-
 const acceptLiabilities_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
   let value = props.guardianSignature.guardianInfo[1].acceptLiabilities;
@@ -163,27 +141,6 @@ const number_1 = (props) => {
   return validateHasValue(value, errorMessages.identityDocumentationMissing);
 };
 
-const issuedBy_1 = (props) => {
-  if(!props.accordions.includes('guardian-signature-add')) { return []; }
-  let value = props.guardianSignature.guardianInfo[1].ID.issuedBy;
-  return validateHasValue(value, errorMessages.pleaseEnterValidData);
-};
-
-const expirationMonth_1 = (props) => {
-  if(!props.accordions.includes('guardian-signature-add')) { return []; }
-  return validateDate(props.guardianSignature.guardianInfo[1].ID, 'expirationMonth');
-};
-
-const expirationDay_1 = (props) => {
-  if(!props.accordions.includes('guardian-signature-add')) { return []; }
-  return validateDate(props.guardianSignature.guardianInfo[1].ID, 'expirationDay');
-};
-
-const expirationYear_1 = (props) => {
-  if(!props.accordions.includes('guardian-signature-add')) { return []; }
-  return validateDate(props.guardianSignature.guardianInfo[1].ID, 'expirationYear');
-};
-
 export default {
   isSigned,
 
@@ -197,11 +154,6 @@ export default {
   guardian_0Street_2,
   guardian_0City,
   guardian_0Zip,
-  number_0,
-  issuedBy_0,
-  expirationMonth_0,
-  expirationDay_0,
-  expirationYear_0,
 
   acceptLiabilities_1,
   name_1,
@@ -212,10 +164,5 @@ export default {
   guardian_1Street_1,
   guardian_1Street_2,
   guardian_1City,
-  guardian_1Zip,
-  number_1,
-  issuedBy_1,
-  expirationMonth_1,
-  expirationDay_1,
-  expirationYear_1
+  guardian_1Zip
 }

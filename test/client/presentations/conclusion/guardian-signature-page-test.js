@@ -148,11 +148,6 @@ describe('GuardianSignaturePage', function() {
       assert.ok(component.find('label[for="guardian_0City"]').length, 'Guardian signature - address city missing');
       assert.ok(component.find('#guardian_0State').length, 'Guardian signature - address state missing');
       assert.ok(component.find('label[for="guardian_0Zip"]').length, 'Guardian signature - address zip missing');
-      assert.ok(component.find('label[for="number_0"]').length, 'Guardian signature - ID number missing');
-      assert.ok(component.find('label[for="issuedBy_0"]').length, 'Guardian signature - Id issued by missing');
-      assert.ok(component.find('label[for="expirationMonth_0"]').length, 'Guardian signature - ID expiration month missing');
-      assert.ok(component.find('label[for="expirationDay_0"]').length, 'Guardian signature - ID expiration day missing');
-      assert.ok(component.find('label[for="expirationYear_0"]').length, 'Guardian signature - ID expiration year missing');
 
     });
 

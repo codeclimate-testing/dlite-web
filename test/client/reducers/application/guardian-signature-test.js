@@ -24,13 +24,6 @@ function defaultState() {
         state: 'CA',
         zip: '',
       },
-      ID:{
-        number: '',
-        issuedBy: '',
-        expirationMonth: '',
-        expirationDay: '',
-        expirationYear: ''
-      }
     },
     {
       id: '1',
@@ -49,13 +42,6 @@ function defaultState() {
         state: 'CA',
         zip: '',
       },
-      ID:{
-        number: '',
-        issuedBy: '',
-        expirationMonth: '',
-        expirationDay: '',
-        expirationYear: ''
-      }
     }]
   };
 }
@@ -92,13 +78,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -117,13 +96,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       }
     );
@@ -160,13 +132,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -185,13 +150,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       },
     );
@@ -228,13 +186,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -253,13 +204,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       },
     );
@@ -296,13 +240,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -321,13 +258,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       },
     );
@@ -364,13 +294,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -389,13 +312,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       },
     );
@@ -432,13 +348,6 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         },
         {
           id: '1',
@@ -457,154 +366,8 @@ describe('updateGuardianSignature', function() {
             state: 'CA',
             zip: '99999',
           },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
         }]
       },
     );
   });
-
-  it('it updates first guardian ID number', function() {
-    assert.deepEqual(
-      updateGuardianSignature(
-        defaultState(),
-        {
-          type: 'UPDATE_GUARDIAN_ID_DOC_FIRST',
-          payload: {
-            name: 'number_0',
-            value: '10101000111'
-          }
-        }
-      ),
-      {
-        isSigned:  '',
-        guardianInfo: [{
-          id: '0',
-          acceptLiabilities: '',
-          signature: {
-            name: '',
-            month: '',
-            day: '',
-            year: '',
-          },
-          phoneNumber: '',
-          address: {
-            street_1: '',
-            street_2: '',
-            city: '',
-            state: 'CA',
-            zip: '',
-          },
-          ID:{
-            number: '10101000111',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
-        },
-        {
-          id: '1',
-          acceptLiabilities: '',
-          signature: {
-            name: '',
-            month: '',
-            day: '',
-            year: '',
-          },
-          phoneNumber: '',
-          address: {
-            street_1: '',
-            street_2: '',
-            city: '',
-            state: 'CA',
-            zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
-        }]
-      },
-    );
-  });
-
-  it('it updates second guardian ID issuing authority', function() {
-    assert.deepEqual(
-      updateGuardianSignature(
-        defaultState(),
-        {
-          type: 'UPDATE_GUARDIAN_ID_DOC_SECOND',
-          payload: {
-            name: 'issuedBy_1',
-            value: 'U.S.A.'
-          }
-        }
-      ),
-      {
-        isSigned:  '',
-        guardianInfo: [{
-          id: '0',
-          acceptLiabilities: '',
-          signature: {
-            name: '',
-            month: '',
-            day: '',
-            year: '',
-          },
-          phoneNumber: '',
-          address: {
-            street_1: '',
-            street_2: '',
-            city: '',
-            state: 'CA',
-            zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
-        },
-        {
-          id: '1',
-          acceptLiabilities: '',
-          signature: {
-            name: '',
-            month: '',
-            day: '',
-            year: '',
-          },
-          phoneNumber: '',
-          address: {
-            street_1: '',
-            street_2: '',
-            city: '',
-            state: 'CA',
-            zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: 'U.S.A.',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
-        }]
-      },
-    );
-  });
-
-
-
 }); //End describe

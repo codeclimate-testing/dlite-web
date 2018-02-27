@@ -22,13 +22,6 @@ function defaultState() {
         city: '',
         state: 'CA',
         zip: '',
-      },
-      ID:{
-        number: '',
-        issuedBy: '',
-        expirationMonth: '',
-        expirationDay: '',
-        expirationYear: ''
       }
     },
     {
@@ -47,13 +40,6 @@ function defaultState() {
         city: '',
         state: 'CA',
         zip: '',
-      },
-      ID:{
-        number: '',
-        issuedBy: '',
-        expirationMonth: '',
-        expirationDay: '',
-        expirationYear: ''
       }
     }]
   };
@@ -82,13 +68,6 @@ const updateGuardianContactDetails = (guardianID, name, value, state) => {
     name = name.replace(`guardian_${guardianID}`, '').toLowerCase();
     data['guardianInfo'][guardianID]['address'][name] = value;
   }
-  return Object.assign({}, state, data);
-}
-
-const updateGuardianIDDetails = (guardianID, name, value, state) => {
-  let data = Object.assign({}, state);
-  name = name.split('_')[0];
-  data['guardianInfo'][guardianID]['ID'][name] = value;
   return Object.assign({}, state, data);
 }
 
@@ -123,12 +102,6 @@ export default function(state = defaultState(), action) {
 
     case 'UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND':
       return updateGuardianContactDetails(1, name, value, state);
-
-    case 'UPDATE_GUARDIAN_ID_DOC_FIRST':
-      return updateGuardianIDDetails(0, name, value, state);
-
-    case 'UPDATE_GUARDIAN_ID_DOC_SECOND':
-      return updateGuardianIDDetails(1, name, value, state);
 
     default:
       return state;
