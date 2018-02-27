@@ -16,7 +16,9 @@ const AddressForm = (props) => {
       <MailingSameAsHome
         {...props}
         selectedValue   = { props.residency.homeAddressSameAsMailing }
-      />
+      >
+        <p className='translation-missing'>The DMV will print your mailing address on your CDL. The CDL will also be sent to your mailing address.</p>
+      </MailingSameAsHome>
       <MailingAddress
         {...props}
         isSameAsHome    = { props.residency.homeAddressSameAsMailing }

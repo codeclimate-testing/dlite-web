@@ -19,14 +19,14 @@ Scenario: Navigating to the new page
   And I visit the page to choose application language
   When I click to continue
   Then I will be on the page to choose application
-  When I select a regular ID or DL application
-  And I click "Next" to continue
-  Then I will be on the IDDL welcome page
-  When I click to go back
-  Then I will be on the page to choose application
   When I select a commercial DL application
   And I click "Next" to continue
   Then I will be on the CDL welcome page
+  When I click to go back
+  Then I will be on the page to choose application
+  When I select a regular ID or DL application
+  And I click "Next" to continue
+  Then I will be on the IDDL welcome page
 
 
 Scenario: Name page

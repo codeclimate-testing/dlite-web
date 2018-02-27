@@ -11,7 +11,7 @@ import Presentation           from "../../presentations/cdl/what-do-you-want-to-
 const Page = (props) => {
   let locale            =   props.locale;
   let validations       =   new WDYWTDTValidator(Object.assign(props.cardAction, {locale}), props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('cdlWdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (

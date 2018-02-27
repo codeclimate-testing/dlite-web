@@ -36,6 +36,7 @@ module.exports = function(world) {
       .catch(done);
   });
 
+
   world.and('I will see the title of each accordion for cdl what can I do page', function(done) {
     browser
       .waitForSelector('#apply-cdl')
@@ -56,17 +57,20 @@ module.exports = function(world) {
       .then((className) => {
         assert(className.includes('open'), 'Accordion for cdl what can i do did not open');
       })
-      .then((d) => { done(); })
-  world.when('I click Yes to being a resident', function() {
-    browser
-      .click('label[isResident-Yes]')
       .then(done)
       .catch(done);
   });
 
-  world.when('I click No to being a resident', function() {
+  world.when('I click Yes to being a resident', function(done) {
     browser
-      .click('label[isResident-No]')
+      .click('label[for="isResident-Yes"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click No to being a resident', function(done) {
+    browser
+      .click('label[for="isResident-No"]')
       .then(done)
       .catch(done);
   });

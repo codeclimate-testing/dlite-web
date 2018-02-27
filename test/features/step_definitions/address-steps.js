@@ -10,11 +10,11 @@ module.exports = function(world) {
     .text()
     .then((text) => {
       assert(text.includes('Where do you live?'), 'Address label missing');
-      assert(text.includes('For example: 1234 H Street, Apt. 200, Los Angeles, CA. 90017'), 'Address example label missing');
-      assert(text.includes('Street Address'), 'Street address label missing');
-      assert(text.includes('Apartment or Unit Number (optional)'), 'Apartment or Unit Number label missing');
+      assert(text.includes('Example: 1234 Main St., Los Angeles, CA 90017'), 'Address example label missing');
+      assert(text.includes('Street address'), 'Street address label missing');
+      assert(text.includes('Apartment or unit number'), 'Apartment or Unit Number label missing');
       assert(text.includes('City'), 'City label missing');
-      assert(text.includes('Zip Code'), 'Zip Code label missing');
+      assert(text.includes('Zip code'), 'Zip Code label missing');
     })
     .then(() => { done(); })
     .catch(done);

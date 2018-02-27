@@ -116,11 +116,6 @@ describe('CDL California Resident Page', function() {
     });
 
     it('shows the form asking for home address but not mailing address', function() {
-      let component = render(
-        <Wrapper>
-          <AddressPage {...props} />
-        </Wrapper>
-      );
 
       assert.ok(component.find('input#homeStreet_1').length, 'Street address input not found');
       assert.ok(component.find('input#homeStreet_2').length, 'Unit or apartment input not found');
@@ -143,6 +138,10 @@ describe('CDL California Resident Page', function() {
       assert.ok(component.find('input#mailingCity').length,   'City input not found');
       assert.ok(component.find('#homeState').length,  'State select not found');
       assert.ok(component.find('input#mailingZip').length,    'State select not found');
+    });
+
+    it('shows explanatory text', function(){
+      assert.equal(component.text().includes('The DMV will print your mailing address on your CDL. The CDL will also be sent to your mailing address.'), true);
     });
 
   });

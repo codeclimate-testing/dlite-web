@@ -226,7 +226,7 @@ module.exports = function(world) {
     assertOnPage('.choose-card-action', /apply\/cdl\/what-do-you-want-to-do-today/, done);
   });
 
-  world.when('I will be on the residency page', function(don) {
+  world.when('I will be on the residency page', function(done) {
     assertOnPage('.cdl-residency', /apply\/cdl\/california-residency/, done);
   });
 
