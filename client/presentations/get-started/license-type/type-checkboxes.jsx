@@ -24,22 +24,26 @@ const Form = (props) => {
           <CheckboxSelector
             value = 'car'
             text  = {translations.intro.licenseTypePage.values[0].label}
+            className='vehicle-class'
+            iconClass='car'
           />
           <CheckboxSelector
             value = 'cycle'
             text  = {translations.intro.licenseTypePage.values[1].label}
+            className='vehicle-class'
+            iconClass='cycle'
           />
           <CheckboxSelector
             value = 'long'
             text  = {translations.intro.licenseTypePage.values[2].label}
+            className='vehicle-class'
+            iconClass='long'
           />
           <CheckboxSelector
             value = 'trailer'
             text  = {translations.intro.licenseTypePage.values[3].label}
-          />
-          <CheckboxSelector
-            value = 'unsure'
-            text  = "I'm not sure"
+            className='vehicle-class'
+            iconClass='trailer'
           />
         </CheckboxCollection>
         </fieldset>

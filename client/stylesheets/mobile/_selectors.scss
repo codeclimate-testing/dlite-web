@@ -75,54 +75,47 @@
     }
   }
 
-  &.choice-selector{
-    &.car{
-      .checkbox-selector .icon-region{
-        background-image: url("/images/icons/license/car.svg");
-      }
+  &.vehicle-class {
+    .checkbox-selector .icon-region{
+      background-color: #2309C1;
     }
-    &.cycle{
-       .checkbox-selector .icon-region{
-        background-image: url("/images/icons/license/motorcycle.svg");
-      }
-    }
-    &.trailer{
-       .checkbox-selector .icon-region{
-        background-image: url("/images/icons/license/5thwheel.svg");
-      }
-    }
-    &.long{
-       .checkbox-selector .icon-region{
-        background-image: url("/images/icons/license/trailer.svg");
-      }
-    }
-     &.unsure{
-       .checkbox-selector .icon-region{
-        background-image: url("/images/icons/license/_.svg");
-      }
-    }
-  }
-  
-  &.choice-selector{
-    &.car, &.cycle, &.trailer, &.long, &.unsure{
-      .checkbox-selector .icon-region{
-        background-color: #2309C1;
-      }
-      &.trailer, &.long {
-      .checkbox-selector .text-region{
+
+    &.trailer,
+    &.long {
+      .checkbox-selector .text-region {
         margin-top: 5px;
         padding: 3px 5px 0px 10px;
       }
     }
-    &.selected{
-      &.car, &.cycle, &.trailer, &.long, &.unsure{
-        .checkbox-selector .icon-region{
-          background-image: url("/images/icons/checkbox/check.svg");
-        }
+
+    &.selected .checkbox-selector .icon-region {
+      &.car,
+      &.cycle,
+      &.trailer,
+      &.long {
+        background-image: url("/images/icons/checkbox/check.svg");
       }
     }
-  } 
-}
+
+    .checkbox-selector {
+      .icon-region.car {
+        background-image: url("/images/icons/license/car.svg");
+      }
+
+      .icon-region.cycle {
+        background-image: url("/images/icons/license/motorcycle.svg");
+      }
+
+      .icon-region.trailer {
+        background-image: url("/images/icons/license/5thwheel.svg");
+      }
+
+      .icon-region.long {
+        height: 72px;
+        background-image: url("/images/icons/license/trailer.svg");
+      }
+    }
+  }
 
   &.eyeColor{
     .radio-selector .icon-region{
@@ -140,7 +133,7 @@
         background-color: #2309C1;
       }
     }
-  
+
     &.Hazel{
       .radio-selector .icon-region{
         background-image: url("/images/icons/selectors/eyeLight.svg"), linear-gradient(#282D1E, #927622);
@@ -152,25 +145,25 @@
         }
       }
     }
-  
+
     &.Green{
       .radio-selector .icon-region{
         background-color: #208304;
       }
     }
-  
+
     &.Gray{
       .radio-selector .icon-region{
         background-color: #898989;
       }
     }
-  
+
     &.Brown{
       .radio-selector .icon-region{
         background-color: #663F05;
       }
     }
-  
+
     &.Black{
       .radio-selector .icon-region{
         background-color: #000;
@@ -251,7 +244,7 @@
 
     &.Other{
       .radio-selector .icon-region{
-        background-image: url("/images/icons/selectors/hairLight.svg"), linear-gradient(#03B9D9, #6F06D5); 
+        background-image: url("/images/icons/selectors/hairLight.svg"), linear-gradient(#03B9D9, #6F06D5);
         background-position: center;
       }
       &.selected{
@@ -260,7 +253,7 @@
         }
       }
     }
-  }  
+  }
 }
 
 .radio-input{
@@ -277,4 +270,3 @@
     }
   }
 }
-

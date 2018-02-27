@@ -4,7 +4,8 @@ import React from 'react';
 import SelectorContents from './selector-contents.jsx';
 
 const CheckboxSelector = function(props) {
-  let className = props.value + ' choice-selector unit';
+  let className = props.className || ' ';
+  className += ` ${props.value} choice-selector unit`;
   if (props.selected) { className += ' selected'; }
   if (props.focused === props.value) { className += ' focus'; }
 

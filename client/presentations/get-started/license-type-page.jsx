@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import LicenseTypeForm        from './license-type/typeCheckboxes.jsx';
-import EndorsementToggle      from './license-type/endorseToggle.jsx';
+import LicenseTypeForm        from './license-type/type-checkboxes.jsx';
+import EndorsementToggle      from './license-type/endorse-toggle.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 import { needsEndorsement }   from '../../helpers/data/card-type';
@@ -16,7 +16,7 @@ const Form = (props) => {
     >
       <form onSubmit={props.onSubmit}>
         <LicenseTypeForm
-        {...props}
+          {...props}
         />
 
         <EndorsementToggle
