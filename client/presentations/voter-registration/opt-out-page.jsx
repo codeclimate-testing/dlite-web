@@ -7,25 +7,19 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import { isPreregistering } from '../../helpers/calculate-age';
+import Translate            from '../../i18n/translate-tag.jsx';
 
 const OptOutPage = (props) => {
-  let allOptionText = {
-    voterRegistration: {
-      new       : translations.votingRegistration.optOutPage.answerNewRegistration,
-      existing  : translations.votingRegistration.optOutPage.answerUpdateRegistration,
-      optOut    : translations.votingRegistration.optOutPage.answerOptOut
-    },
-    voterPreRegistration: {
-      new       : translations.votingRegistration.preRegOptOutPage.answerNewRegistration,
-      existing  : translations.votingRegistration.preRegOptOutPage.answerUpdateRegistration,
-      optOut    : translations.votingRegistration.preRegOptOutPage.answerOptOut
-    }
-  };
+  let translation;
 
+  if (isPreregistering(props.dateOfBirth)) {
+    translation = translations.votingRegistration.optOutPage;
+  } else {
+    translation = translations.votingRegistration.preRegOptOutPage;
+  }
 
   let preRegString = checkPreReg(props.dateOfBirth);
-  let optionText = allOptionText[preRegString];
 
   return (
     <Page
@@ -33,28 +27,33 @@ const OptOutPage = (props) => {
       sectionKey={preRegString}
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
-        {convertToHtml('h2', translations.votingRegistration.optOutPage.pagePrompt, 'question')}
+        <Translate tag='h2' className='question'>
+         {translations.votingRegistration.optOutPage.pagePrompt}
+        </Translate>
 
-      <fieldset>
-        <RadioCollection
-          {...props}
-          name          = 'optOut'
-          errorMessage  = {props.validations.optOut()}
-        >
-          <RadioSelector
-            value='new'
-            text={ optionText.new }
-          />
-          <RadioSelector
-            value='existing'
-            text={ optionText.existing }
-          />
-          <RadioSelector
-            value='optOut'
-            text={ optionText.optOut }
-          />
-        </RadioCollection>
-      </fieldset>
+        <fieldset>
+          <RadioCollection
+            {...props}
+            name          = 'optOut'
+            errorMessage  = {props.validations.optOut()}
+          >
+            <RadioSelector
+              value='new'
+              text={ translation.answerNewRegistration }
+              className='long-text'
+            />
+            <RadioSelector
+              value='existing'
+              text={ translation.answerUpdateRegistration }
+              className='long-text'
+            />
+            <RadioSelector
+              value='optOut'
+              text={ translation.answerOptOut }
+              className='long-text'
+            />
+          </RadioCollection>
+        </fieldset>
 
         <NavigationButtons
           {...props}
