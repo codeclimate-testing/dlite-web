@@ -13,11 +13,12 @@ const Form = (props) => {
       {...props}
       sectionKey='intro'
     >
-      <form className='cdl-residency' onSubmit = {props.onSubmit} >
+      <form onSubmit = {props.onSubmit} className='cdl-residency'  >
         <h2 className='question'>Are you a resident of California?</h2>
         <ResidencyRadios
           {...props}
-          selectedValue = {props.residency.isResident}
+          selectedValue = { props.residency.isResident }
+          errorMessage  = { props.validations.isResident() }
         />
         <ResidencyMessageNo
           residency     = {props.residency}
@@ -25,12 +26,11 @@ const Form = (props) => {
         <AddressForm
           {...props}
         />
-
-      </form>
-      <NavigationButtons
+        <NavigationButtons
         {...props}
         errorMessage= { props.validations.all() }
       />
+      </form>
     </Page>
   )
 };

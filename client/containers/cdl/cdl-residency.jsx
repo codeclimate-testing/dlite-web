@@ -3,14 +3,15 @@
 import React                    from 'react';
 import connectForm              from '../../helpers/connect-form';
 import handlers                 from '../../helpers/handlers';
-import { ResidencyValidator }   from '../../helpers/validations';
+import { AddressValidator }         from '../../helpers/validations';
 import Presentation             from '../../presentations/cdl/residency.jsx';
 import { updateCdlResidency }   from '../../actions/index';
 
 const Page = (props) => {
-  let validations       = new ResidencyValidator(props.residency, props.validations);
+  let validations       = new AddressValidator(props.residency, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlResidency', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
+
   return (
     <Presentation
       {...props}

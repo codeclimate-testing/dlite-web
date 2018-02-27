@@ -22,7 +22,6 @@ class Validator {
     if (this.shouldIgnore(name)) { return ''; }
     if (name === 'all') { return this.validateAll(); }
     if (!this.rules[name]) { return ''; }
-
     let errors = this.rules[name](this.props);
     return errors.join('');
   }
@@ -51,7 +50,6 @@ class Validator {
     let exists = this.requestedValidations.some((item) => {
       return item === name || item === 'all';
     });
-
     return !exists;
   }
 }

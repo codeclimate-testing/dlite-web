@@ -10,7 +10,6 @@ const ResidencyRadios = (props) => {
       <RadioCollection
         {...props}
         name  = 'isResident'
-        errorMessage  = { props.validations.isResident() }
       >
         { radioYesNoGroup() }
       </RadioCollection>

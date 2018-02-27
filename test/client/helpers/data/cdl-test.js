@@ -2,7 +2,8 @@
 
 import assert           from 'assert';
 import {
-  showCDLUnder21
+  showCDLUnder21,
+  needsAddress
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -32,6 +33,20 @@ describe('Data helpers for cdl data', function() {
     it('returns true when user is under than 21 and is on cdl application', function() {
       props.addApp = 'cdl';
       assert.equal(showCDLUnder21(props), true);
+    });
+  });
+
+  describe('#needsAddress', function() {
+    it('returns true if props does not have isResident property', function() {
+      assert.equal(needsAddress(props), true);
+    });
+    it('returns true if props has isResident property that equals "Yes"', function() {
+      props.isResident = 'Yes';
+      assert.equal(needsAddress(props), true);
+    });
+    it('returns false if props has isResident property that equals "No"', function() {
+      props.isResident = 'No';
+      assert.equal(needsAddress(props), false);
     });
   });
 });

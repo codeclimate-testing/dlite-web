@@ -12,7 +12,12 @@ export const showCDLUnder21 = (props) => {
 };
 
 export const needsAddress = (props) => {
-  return props.isResident === 'Yes';
+  if (props.hasOwnProperty('isResident')) {
+    return props.isResident === 'Yes';
+  }
+  else {
+    return true;
+  }
 };
 
 export const notResident = (props) => {

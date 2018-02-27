@@ -31,7 +31,6 @@ import ballotLanguageRules      from './ballot-language-rules';
 import contactRules             from './contact-rules';
 import ssnRules                 from './ssn-rules';
 import guardianSignatureRules   from './guardian-signature-rules';
-import residencyRules           from './residency-rules';
 
 export const ChooseAppValidator           = formValidationGenerator(chooseApplicationRules);
 export const NamePageValidator            = formValidationGenerator(namePageRules);
@@ -62,4 +61,3 @@ export const BallotLanguageValidator      = formValidationGenerator(ballotLangua
 export const ContactValidator             = formValidationGenerator(contactRules);
 export const SSNValidator                 = formValidationGenerator(ssnRules);
 export const GuardianSignatureValidator   = formValidationGenerator(guardianSignatureRules);
-export const ResidencyValidator           = formValidationGenerator(residencyRules);
