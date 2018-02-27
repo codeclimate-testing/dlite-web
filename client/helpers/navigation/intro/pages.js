@@ -20,7 +20,7 @@ const intro = [
   {
     key: 'IDme',
     description: 'ID Me',
-    path: '/sign-in',
+    path: '/id-and-license/sign-in',
     next: 'welcome'
   }
 ];

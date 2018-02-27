@@ -10,7 +10,9 @@ const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
   return (
-    <Presentation onBack = { onBack } />
+    <Presentation 
+    {...props}
+    onBack = {onBack} />
   );
 };
 

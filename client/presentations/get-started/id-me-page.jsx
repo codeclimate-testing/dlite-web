@@ -32,7 +32,7 @@ const Presentation = (props) => {
 
         <p><a className='translation-missing' href='https://shop.id.me/how-it-works/faq' target='_blank'>For more information, please visit ID.me</a>.</p>
 
-        <NavigationButtons/>
+       <NavigationButtons {...props} />
       </div>
     </Page>
   );
