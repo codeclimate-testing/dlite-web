@@ -83,10 +83,6 @@ const ContactDetails = (props) => {
           errorClass    = { addError }
         />
       </div>
-      <div className='row'>
-        <p className='translation-missing'>Who gets this information?</p>
-        <p className='translation-missing'>Secretary of State and county election officials have access to this information</p>
-      </div>
     </div>
   )
 };

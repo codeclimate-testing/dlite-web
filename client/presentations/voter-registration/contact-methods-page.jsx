@@ -8,7 +8,7 @@ import Page                     from '../../containers/page.jsx';
 import ContactDetails           from './contact-methods/contact-methods-details.jsx';
 import translations             from '../../i18n';
 import { checkPreReg }          from '../../helpers/data/youth';
-import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
+import Translate                from '../../i18n/translate-tag.jsx';
 
 const ContactMethodsPage = (props) => {
   return (
@@ -17,7 +17,9 @@ const ContactMethodsPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}>
 
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
-        {convertToHtml('h2', translations.votingRegistration.contactInfoPage.pagePrompt, 'question')}
+        <Translate tag='h2' className='question'>
+         {translations.votingRegistration.contactInfoPage.pagePrompt}
+        </Translate>
 
         <fieldset>
           <RadioCollection
@@ -40,11 +42,6 @@ const ContactMethodsPage = (props) => {
             />
           </RadioCollection>
         </fieldset>
-
-        <div>
-          <p className='translation-missing'>Who gets this information?</p>
-          <p className='translation-missing'>Secretary of State and County election officials have access to this information.</p>
-        </div>
 
         <ContactDetails
           {...props}
