@@ -5,6 +5,8 @@ import SummaryItem        from './summary-item.jsx';
 import { printDate }      from '../../../helpers/print-date';
 import * as dataPresent   from '../../../helpers/data-present';
 import { hasValue }       from '../../../helpers/data/validations';
+import PageSummaryLink    from './Page-summary-link.jsx';
+
 
 
 export const CardNumber = (props) => {
@@ -26,4 +28,23 @@ export const CardDate = (props) => {
       text  = {date}
     />
   )
+};
+
+export const CurrentCardInfo = (props) => {
+  if (!dataPresent.currentCardInfo(props.currentCard)) { return null; }
+  return (
+    <PageSummaryLink
+      {...props}
+      name      = {props.editKey}
+    >
+      <CardNumber
+        number  = {props.currentCard.number}
+        title   = {props.title}
+      />
+
+      <CardDate
+        currentCardInfo = {props.currentCard}
+      />
+    </PageSummaryLink>
+  );
 };

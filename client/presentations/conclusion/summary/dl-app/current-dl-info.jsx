@@ -1,13 +1,9 @@
 'use strict';
 
 import React              from 'react';
-import * as dataPresent   from '../../../../helpers/data-present';
-import translations       from '../../../../i18n';
-import PageSummaryLink    from '../Page-summary-link.jsx';
 import { existingDL }     from '../../../../helpers/data/card-type';
 import {
-  CardNumber,
-  CardDate
+  CurrentCardInfo
 } from '../current-card-info.jsx';
 
 
@@ -16,23 +12,13 @@ const CurrentDLInfo = (props) => {
   if(!dataPresent.currentCardInfo(props.DLApp.currentCard)) { return null; }
 
   return (
-    <PageSummaryLink
+    <CurrentCardInfo
       {...props}
-      name    = 'addCurrentCardInfo'
-      summary = {props.summary}
-    >
-      <CardNumber
-        number  = {props.DLApp.currentCard.number}
-        title   = 'Driver license number'
-      />
-
-      <CardDate
-        currentCardInfo = {props.DLApp.currentCard}
-      />
-
-    </PageSummaryLink>
+      editKey     = 'addCurrentCardInfo'
+      currentCard = { props.DLApp.currentCard }
+      title       = 'Driver license number'
+    />
   )
 };
 
 export default CurrentDLInfo;
-

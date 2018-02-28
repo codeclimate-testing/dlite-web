@@ -1,16 +1,8 @@
 'use strict';
 
 import React              from 'react';
-import * as dataPresent   from '../../../../helpers/data-present';
-import translations       from '../../../../i18n';
-import PageSummaryLink    from '../Page-summary-link.jsx';
-import {
-  existingID
-} from '../../../../helpers/data/card-type';
-import {
-  CardNumber,
-  CardDate
-} from '../current-card-info.jsx';
+import { existingID }     from '../../../../helpers/data/card-type';
+import { CurrentCardInfo }from '../current-card-info.jsx';
 
 
 const CurrentIDInfo = (props) => {
@@ -19,20 +11,13 @@ const CurrentIDInfo = (props) => {
   if(!dataPresent.currentCardInfo(props.IDApp.currentCard)) { return null; }
 
   return (
-    <PageSummaryLink
+    <CurrentCardInfo
       {...props}
-      name='addCurrentIDInfo'
-    >
-      <CardNumber
-        number  = {props.IDApp.currentCard.number}
-        title   = 'ID card number'
-      />
-
-      <CardDate
-        currentCardInfo = {props.IDApp.currentCard}
-      />
-    </PageSummaryLink>
-  )
+      editKey     = 'addCurrentIDInfo'
+      currentCard = { props.IDApp.currentCard }
+      title       = 'ID card number'
+    />
+  );
 };
 
 export default CurrentIDInfo;
