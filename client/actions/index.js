@@ -59,7 +59,6 @@ export const TYPES = {
   UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND: 'UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND',
   UPDATE_GUARDIAN_ID_DOC_FIRST:           'UPDATE_GUARDIAN_ID_DOC_FIRST',
   UPDATE_GUARDIAN_ID_DOC_SECOND:          'UPDATE_GUARDIAN_ID_DOC_SECOND',
-  UPDATE_IS_PRE_REGISTERING:              'UPDATE_IS_PRE_REGISTERING',
   UPDATE_CDL_LEGAL_NAME:                  'UPDATE_CDL_LEGAL_NAME',
   UPDATE_CDL_DOB:                         'UPDATE_CDL_DOB',
   UPDATE_CDL_CARD_ACTION:                 'UPDATE_CDL_CARD_ACTION',
@@ -118,7 +117,6 @@ export const updateGuardianSignatureSecond            = generateFormAction(TYPES
 export const updateGuardianContactDetailsFirst        = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_FIRST);
 export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND);
 
-export const updateIsPreRegistering                   = generateFormAction(TYPES.UPDATE_IS_PRE_REGISTERING);
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 export const updateCdlLegalName                       = generateFormAction(TYPES.UPDATE_CDL_LEGAL_NAME);
 export const updateCdlDob                             = generateFormAction(TYPES.UPDATE_CDL_DOB);

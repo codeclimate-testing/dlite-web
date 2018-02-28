@@ -330,7 +330,7 @@ describe('dataPresent', function() {
     });
   });
 
-    describe('#medicalHistory', function() {
+  describe('#medicalHistory', function() {
     it('is true when only medical history is present', function() {
       assert(
         dataPresent.medicalHistory({hasMedicalCondition: 'Yes', medicalInfo: 'epileptic seizure, tremor'}),
@@ -598,6 +598,122 @@ describe('dataPresent', function() {
 
       assert(dataPresent.application(data), 'Data not present with parent/guardian signature');
 
+    });
+  });
+
+  describe('#myBasics', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        basics: {
+          dateOfBirth: {
+            day: '',
+            year: '',
+            month: ''
+          },
+          legalName: {
+            firstName: '',
+            middleName: '',
+            lastName: '',
+            suffix: ''
+          },
+          address: {
+            home: {
+              street_1: '',
+              street_2: '',
+              city: '',
+              zip: '',
+              state: ''
+            },
+            mailing: {
+              street_1: '',
+              street_2: '',
+              city: '',
+              zip: '',
+              state: ''
+            }
+          },
+          socialSecurity: {
+            part1: '',
+            part2: '',
+            part3: '',
+            hasSocialSecurity: ''
+          },
+          traitsHeightWeight: {
+            weight: '',
+            heightFeet: '',
+            heightInches: ''
+          },
+          physicalTraits: {
+            sex: '',
+            hairColor: '',
+            eyeColor: ''
+          }
+        }
+      }
+    });
+    it('is true when application.basics.dateOfBirth has data', function() {
+      props.basics.dateOfBirth = {
+        year: '1990',
+        day: '20',
+        month: '4'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.legalName has data', function() {
+      props.basics.legalName = {
+        lastName: 'Carsonthehighway'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.homeAddress has data', function() {
+      props.basics.address.home = {
+        city: 'somewhere',
+        state: 'CA',
+        zip: '1111',
+        street_1: '4040'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.mailingAddress has data', function() {
+      props.basics.address.mailing = {
+        city: 'somewhere else',
+        state: 'MN',
+        zip: '010101',
+        street_1: '11000'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.socialSecurity has data', function() {
+      props.basics.socialSecurity = {
+        hasSocialSecurity: 'No'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.traitsHeightWeight has data', function() {
+      props.basics.traitsHeightWeight = {
+        weight: '135',
+        heightFeet: '5',
+        heightInches: '9'
+      };
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+
+    it('is true when application.basics.physicalTraits has data', function() {
+      props.basics.physicalTraits = {
+        sex: 'Female',
+        hairColor: 'brown',
+        eyeColor: 'grey'
+      }
+      assert.equal(dataPresent.myBasics(props), true);
+    });
+    it('is false when no myBasics data are present', function() {
+      assert.equal(dataPresent.myBasics(props), false);
     });
   });
 });

@@ -63,8 +63,7 @@ function parse(data) {
           politicalPartyChoose:     getParty(voting_registrations),
           optOut:                   getOptedOut(voting_registrations),
           contactMethods:           getContactMethods(emails, phone_numbers, voting_registrations)
-        },
-        isPreRegistering:           getIsPreRegistering(voting_registrations)
+        }
       }
     }
   );
@@ -427,14 +426,6 @@ function getRealID(card_options, cards) {
   });
 
   return realID;
-}
-
-function getIsPreRegistering(voting_registrations) {
-  if(voting_registrations) {
-    return parserHelper.boolToStr(voting_registrations.is_preregistering);
-  }
-
-  return '';
 }
 
 module.exports = parse;

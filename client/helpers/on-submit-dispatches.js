@@ -8,8 +8,7 @@ import { appLanguageIsSelected }  from './data/application';
 import { isPreregistering }       from './calculate-age';
 import {
   updateCitizenStatus,
-  updateEligibilityRequirements,
-  updateIsPreRegistering
+  updateEligibilityRequirements
 }    from '../actions/index';
 
 
@@ -53,12 +52,5 @@ export const defaultLanguage = (stateProps, dispatch, ownProps) => {
     return ownProps.history.push(
       nextPath('chooseLanguage', stateProps)
     )
-  };
-};
-
-export const isPreRegistering = (stateProps, dispatch) => {
-  return (e) => {
-    e.preventDefault();
-    dispatch(updateIsPreRegistering('isPreregistering', isPreregistering(stateProps.dateOfBirth) ? 'Yes': 'No'));
   };
 };

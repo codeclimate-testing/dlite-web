@@ -117,6 +117,16 @@ const guardianSignature = (props) => {
   ]));
 }
 
+const myBasics = (props) => {
+  return date(props.basics.dateOfBirth) ||
+  legalName(props.basics.legalName) ||
+  address(props.basics.address.home) ||
+  address(props.basics.address.mailing) ||
+  socialSecurity(props.basics.socialSecurity) ||
+  traitsHeightWeight(props.basics.traitsHeightWeight) ||
+  physicalTraits(props.basics.physicalTraits)
+};
+
 const application = (props) => {
   return legalName(props.legalName) ||
     date(props.dateOfBirth) ||
@@ -178,5 +188,6 @@ export {
   homeAddressSameAsMailing,
   application,
   realID,
-  guardianSignature
+  guardianSignature,
+  myBasics
 };

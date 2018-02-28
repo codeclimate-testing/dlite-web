@@ -5,7 +5,7 @@ import * as dataPresent from '../../../../helpers/data-present';
 
 const Empty = (props) => {
   document.title = 'Summary of my application';
-  if (dataPresent.application(props)) { return null; }
+  if (dataPresent.myBasics(props)) { return null; }
 
   return (
     <div className='summary-section'>

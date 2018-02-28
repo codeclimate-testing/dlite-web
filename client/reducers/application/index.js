@@ -37,7 +37,6 @@ import updateCardType                     from './update-card-type';
 import updateRealID                       from './update-real-id';
 import updateOrganDonation                from './update-organ-donation';
 import updateGuardianSignature            from './update-guardian-signature';
-import updateIsPreRegistering             from './update-is-pre-registering';
 import updateYouthIDInstead               from './update-youth-id-instead';
 
 import updateCitizenStatus                from './voting/update-citizen-status';
@@ -96,7 +95,6 @@ const rootReducer = combineReducers({
     contactMethods              : updateContactMethods,
   }),
   youthIDInstead              : updateYouthIDInstead,
-  isPreRegistering            : updateIsPreRegistering,
   guardianSignature           : updateGuardianSignature
 
 });
