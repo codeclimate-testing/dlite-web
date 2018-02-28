@@ -32,6 +32,12 @@ const cdl = [
     next: 'cdlSSN'
   },
   {
+    key: 'cdlCurrentDL',
+    description: 'current DL info',
+    path: '/current-ca-license',
+    next: ''
+  },
+  {
     key: 'cdlSummary',
     description: 'summary of CDL app',
     path: '/summary',

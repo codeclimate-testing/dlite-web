@@ -17,11 +17,11 @@ const Page = (props) => {
   return (
     <Presentation
       {...props}
-      onSubmit                = { onSubmit }
-      onBack                  = { onBack }
-      currentCardValidation   = { currentCardValidation }
-      onBlur                  = { props.onBlurValidate }
-      onFocus                 = { props.onFocusClearValidation }
+      onSubmit        = { onSubmit }
+      onBack          = { onBack }
+      validations     = { currentCardValidation }
+      onBlur          = { props.onBlurValidate }
+      onFocus         = { props.onFocusClearValidation }
     />
   );
 };

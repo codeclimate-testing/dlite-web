@@ -15,9 +15,19 @@ let errorFunction = (name) => {
     return errors;
   }
 };
+
+const hasCurrentDL = (props) => {
+  let errors = [];
+  if (props.hasCurrentDL === '') {
+    errors.push('error');
+  }
+  return errors;
+}
+
 export default {
-  month   : errorFunction('month'),
-  day     : errorFunction('day'),
-  year    : errorFunction('year'),
-  number  : englishValidatorGenerator('number')
+  month         : errorFunction('month'),
+  day           : errorFunction('day'),
+  year          : errorFunction('year'),
+  number        : englishValidatorGenerator('number'),
+  hasCurrentDL
 };

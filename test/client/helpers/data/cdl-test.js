@@ -3,7 +3,8 @@
 import assert           from 'assert';
 import {
   showCDLUnder21,
-  needsAddress
+  needsAddress,
+  needsCurrentDLInfo
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -15,6 +16,9 @@ describe('Data helpers for cdl data', function() {
         month: '03',
         day: '10',
         year: (new Date().getFullYear() - 15).toString()
+      },
+      currentCardInfo: {
+        hasCurrentDL: ''
       }
     };
   });

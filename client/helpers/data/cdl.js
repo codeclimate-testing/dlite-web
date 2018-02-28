@@ -23,3 +23,10 @@ export const needsAddress = (props) => {
 export const notResident = (props) => {
   return props.isResident === 'No';
 };
+export const needsCurrentDLInfo = (props) => {
+  return props.currentCardInfo.hasCurrentDL === 'Yes';
+};
+
+export const firstTime = (props) => {
+  return props.currentCardInfo.hasCurrentDL === 'No';
+};
