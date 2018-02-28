@@ -25,11 +25,11 @@ const Organ = (props) => {
   );
 };
 
-const OrganDonation = (props) => {
+const OrganDonation = (application) => {
   return (
     <Accordion id='organ-donation-summary' title='Organ donation' key='organ-donation-summary'>
       <Organ
-        organDonation       = {props.organDonation}
+        organDonation       = {application.organDonation}
         summary             = 'summary'
       />
     </Accordion>

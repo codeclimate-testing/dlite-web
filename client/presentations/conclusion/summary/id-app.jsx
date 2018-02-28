@@ -12,41 +12,27 @@ import {
 } from './id-app/index';
 
 const IDApp = (props) => {
-  let locale          = props.ui.locale;
-  const application   = props.application;
   return (
     <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
       <IDApplicationNotStarted
-        {...application}
-        summary           = 'summary'
-        locale            = { locale }
+        {...props}
       />
       <IDAction
-        {...application}
-        summary           = 'summary'
-        locale            = { locale }
+        {...props}
       />
       <ReducedOrNoFee
-        {...application}
-        reducedFee        = {application.IDApp.reducedFee}
-        summary           = 'summary'
-        locale            = { locale }
+        {...props}
+        reducedFee        = {props.IDApp.reducedFee}
       />
       <SeniorID
-        seniorID          = {application.IDApp.seniorID}
-        summary           = 'summary'
-        locale            = { locale }
+        seniorID          = {props.IDApp.seniorID}
       />
       <CurrentIDInfo
-        {...application}
-        summary           = 'summary'
-        locale            = { locale }
-        currentCardInfo   = {application.IDApp.currentCard}
+        {...props}
+        currentCardInfo   = {props.IDApp.currentCard}
       />
       <IDRealID
-        {...application}
-        summary           = 'summary'
-        locale            = { locale }
+        {...props}
       />
     </Accordion>
   )

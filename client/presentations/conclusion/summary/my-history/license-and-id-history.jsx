@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from "react";
-import * as dataPresent from '../../../../helpers/data-present';
+import { hasValue }     from '../../../../helpers/data/validations';
 import { printDate }    from '../../../../helpers/print-date';
 import PageSummaryLink  from '../Page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
@@ -30,17 +30,17 @@ const IsIssued = (props) => {
 };
 
 const LicenseAndIdHistory = (props) => {
-  if (!dataPresent.licenseAndIdHistory(props.licenseAndIdHistory)) { return null; }
+  if (!hasValue(props.licenseAndIdHistory.isIssued)) { return null; }
 
   let DLIDNumber = dateOfIssue(props);
 
   return (
     <PageSummaryLink
       summary = {props.summary}
-      name  = 'addLicenseHistory'
+      name    = {props.editKey}
     >
       <SummaryItem
-        title = 'Previous DL/ID card number:'
+        title = {props.title}
         text  = {DLIDNumber}
       />
       <IsIssued

@@ -69,3 +69,18 @@ Scenario: Name page
   Then I will be on the CDL dob page
   When I click "Next" to continue
   Then I will be on the CDL summary
+
+
+  Scenario: Saying no to having a current DL
+    Given I go to the new online DL application page
+    When I visit the CDL page to enter my current DL
+    And I select existing DL/ID No
+    Then I will see an info message about needing to pass the driving test
+    When I select existing DL/ID Yes
+    Then I will see input fields for entering my current DL info
+    When I enter my driver license number
+    And I enter the date of DL/ID expiration
+    Then I will see an info message letting me know I will need to do more work to get a CDL
+    When I go to the CDL summary
+    Then I will see my "Yes" answer about having a current DL in California
+    And I will see my driver license number and expiration date

@@ -8,24 +8,25 @@ import MyBasics             from './my-basics.jsx';
 import MyHistory            from './my-history.jsx';
 import OrganDonation        from './organ-donation.jsx';
 import Voting               from './voting.jsx';
-import SubmitButton         from './submit-button.jsx';
 import Alerts               from './alerts.jsx';
 
 
 const Contents = (props) => {
+  let application     = props.application;
+  application.locale  = props.locale;
+  application.summary = 'summary'
   return (
-    <div className = 'summary'>
+    <div className    = 'summary'>
       <Alerts
-        cardType    = {props.application.cardType}
-        dateOfBirth = {props.application.basics.dateOfBirth}
+        cardType      = {application.cardType}
+        dateOfBirth   = {application.basics.dateOfBirth}
       />
-      <IDApp {...props}     app='id-card'/>
-      <DLApp {...props}     app='driver-license'/>
-      <MyBasics {...props} />
-      <MyHistory  {...props} />
-      <OrganDonation {...props} />
-      <Voting {...props} />
-      <SubmitButton {...props}/>
+      <IDApp        {...application} />
+      <DLApp        {...application} />
+      <MyBasics     {...application} />
+      <MyHistory    {...application} />
+      <OrganDonation {...application} />
+      <Voting       {...application} />
     </div>
   )
 };

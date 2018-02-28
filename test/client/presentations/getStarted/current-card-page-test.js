@@ -28,7 +28,7 @@ describe('CurrentCardPage', function() {
 
       let onChange = spy();
 
-      let currentCardValidation = {
+      let validations = {
         number: spy(),
         month: spy(),
         day: spy(),
@@ -44,8 +44,8 @@ describe('CurrentCardPage', function() {
         currentCardInfo,
         accordions,
         onChange,
-        currentCardValidation,
-        locale
+        validations,
+>>>>>>> added and organized summary and added testing
       }
     });
 
@@ -63,7 +63,7 @@ describe('CurrentCardPage', function() {
     });
 
     it('it asks for the DL/ID number when the user has chosen to renew an ID', function() {
-      props.cardType.IDDL = ['ID'];
+      props.cardType = ['ID'];
 
       let component = render(
         <Wrapper>
@@ -75,7 +75,7 @@ describe('CurrentCardPage', function() {
     });
 
     it('it asks for the DL/ID number when the user has chosen to renew a DL', function() {
-      props.cardType.IDDL = ['DL'];
+      props.cardType = ['DL'];
 
       let component = render(
         <Wrapper>
@@ -87,8 +87,7 @@ describe('CurrentCardPage', function() {
     });
 
     it('asks for the DL/ID number when the user has chosen to renew or change an ID', function() {
-      props.cardType.IDDL = ['ID'];
-
+      props.cardType = ['ID'];
       let component = render(
         <Wrapper>
           <CurrentCardPage {...props} />

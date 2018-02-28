@@ -103,6 +103,7 @@ describe('Summary components', function() {
         props.cardAction = 'new';
         props.DLApp.isApplying = true;
         props.DLApp.action = 'new';
+        props.summary = 'summary';
 
         component = render(
           <Wrapper>
@@ -128,6 +129,7 @@ describe('Summary components', function() {
           isApplying: true,
           action: 'renew'
         }
+        props.summary = 'summary';
 
         props.DLApp.currentCard = {
           number: 'a90382kf',
@@ -205,8 +207,10 @@ describe('Summary components', function() {
             type: ['car', 'cycle'],
             needEndorsement: 'Yes',
             endorsement: 'firefighter'
-          }
-        }
+          },
+          locale: 'en'
+        };
+        data.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -235,6 +239,7 @@ describe('Summary components', function() {
             correctOrUpdate: ''
           }
         };
+        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -254,6 +259,8 @@ describe('Summary components', function() {
           isApplying: true,
           action: 'renew'
         };
+        props.summary = 'summary';
+
 
         props.IDApp.currentCard = {
           number: 'a90382kf',
@@ -275,6 +282,7 @@ describe('Summary components', function() {
     describe('SeniorID', function() {
       it('shows SeniorID selection', function(){
         props.seniorID = 'Yes';
+        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -294,7 +302,7 @@ describe('Summary components', function() {
           isApplying: true,
           realID: 'Yes'
         };
-        props.locale = locale;
+        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -311,9 +319,49 @@ describe('Summary components', function() {
           realID: ''
         };
         props.DLApp = {
+          isApplying: true,
           realID: 'Yes'
         };
-        props.locale = locale;
+        props.summary = 'summary';
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...props } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID CompliantYes'), true);
+      });
+      it('does not show if user is not getting a DL', function() {
+        let data = props;
+        data.realID.getRealID = 'Yes';
+        data.DLApp.isApplying = false;
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...data } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID'), false);
+      });
+
+      it('does not show if realIdDesignation is not DL', function() {
+        let data = props;
+        data.realID.getRealID = 'Yes';
+        data.realID.realIdDesignation = 'ID';
+
+        let component = render(
+          <Wrapper>
+            <DLRealID { ...data } />
+          </Wrapper>
+        );
+        assert.equal(component.text().includes('Real-ID'), false);
+      });
+
+      it('does not show if the user has not selected to get a real id', function() {
+        let data = props;
+        data.DLApp.isApplying = true;
+        data.realID.getRealID = '';
+
         let component = render(
           <Wrapper>
             <IDRealID { ...props } />
@@ -334,6 +382,8 @@ describe('Summary components', function() {
           },
           realID: ''
         };
+        props.summary = 'summary';
+
         let component = render(
           <Wrapper>
             <ReducedOrNoFee
@@ -359,11 +409,15 @@ describe('Summary components', function() {
           year: '',
           isIssued: 'No'
         };
+        props.summary = 'summary';
+
 
         let component = render(
           <Wrapper>
             <LicenseAndIdHistory
               { ...props }
+              title = 'Previous DL/ID card number'
+              editKey = 'addLicenseHistory'
               licenseAndIdHistory={licenseAndIdHistory}
             />
           </Wrapper>
@@ -381,15 +435,19 @@ describe('Summary components', function() {
           year: '2018',
           isIssued: 'Yes'
         };
+        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
             <LicenseAndIdHistory
               { ...props }
+              title = 'Previous DL/ID card number'
+              editKey = 'addLicenseHistory'
               licenseAndIdHistory={licenseAndIdHistory}
             />
           </Wrapper>
         )
+
         assert.equal(component.text().includes('Previous DL/ID card number'), true);
         assert.equal(component.text().includes('111'), true);
         assert.equal(component.text().includes('Issued in'), true);
@@ -405,6 +463,8 @@ describe('Summary components', function() {
           hasUsedPreviousNames: 'No',
           previousNames: ''
         };
+
+        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -422,6 +482,8 @@ describe('Summary components', function() {
           hasUsedPreviousNames: 'Yes',
           previousNames: 'John Doe'
         };
+        props.summary = 'summary';
+
 
         let component = render(
           <Wrapper>
@@ -442,6 +504,8 @@ describe('Summary components', function() {
             hasMedicalCondition: 'Yes',
             medicalInfo: 'blind'
           };
+          props.summary = 'summary';
+
           props.DLApp.isApplying = false;
 
           let component = render(

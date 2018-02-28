@@ -24,11 +24,11 @@ export const notResident = (props) => {
   return props.isResident === 'No';
 };
 export const needsCurrentDLInfo = (props) => {
-  return props.currentCardInfo.hasCurrentDL === 'Yes';
+  return props.currentCardInfo.isIssued === 'Yes';
 };
 
 export const firstTime = (props) => {
-  return props.currentCardInfo.hasCurrentDL === 'No';
+  return props.currentCardInfo.isIssued === 'No';
 };
 
 export const expiredCard = (currentCardInfo) => {
@@ -41,5 +41,5 @@ export const expiredCard = (currentCardInfo) => {
   let year  = currentCardInfo.year;
   let cardExpiration = new Date(year, month, day);
 
-  return yesterday > cardExpiration;
+  return yesterday >= cardExpiration;
 };

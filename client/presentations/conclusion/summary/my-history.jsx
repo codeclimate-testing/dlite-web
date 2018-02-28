@@ -10,35 +10,26 @@ import {
   VeteransService
 } from './my-history/index';
 const MyHistory = (props) => {
-  const application = props.application;
-  let locale        = props.ui.locale;
+
   return (
     <Accordion id='history-summary' title='My history' key='history-summary'>
       <MedicalHistory
-        medicalHistory      = {application.history.medicalHistory}
-        DLApp               = {application.DLApp}
-        summary             = 'summary'
-        locale              = { locale }
+        medicalHistory      = {props.history.medicalHistory}
+        DLApp               = {props.DLApp}
       />
       <LicenseAndIdHistory
-        licenseAndIdHistory = {application.history.licenseAndIdHistory}
-        summary             = 'summary'
-        locale              = { locale }
+        licenseAndIdHistory = {props.history.licenseAndIdHistory}
+        editKey             = 'addLicenseHistory'
+        title               = 'Previous DL/ID card number:'
       />
       <NamesHistory
-        namesHistory        = {application.history.namesHistory}
-        summary             = 'summary'
-        locale              = { locale }
+        namesHistory        = {props.history.namesHistory}
       />
       <LicenseIssues
-        licenseIssues       = {application.history.licenseIssues}
-        summary             = 'summary'
-        locale              = { locale }
+        licenseIssues       = {props.history.licenseIssues}
       />
       <VeteransService
-        veteransService     = {application.history.veteransService}
-        summary             = 'summary'
-        locale              = { locale }
+        veteransService     = {props.history.veteransService}
       />
     </Accordion>
   );

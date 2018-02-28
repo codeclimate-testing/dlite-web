@@ -9,6 +9,12 @@ import {
   Correct,
   Update
 } from '../../conclusion/summary/actions.jsx';
+import {
+  isRenewingCard,
+  isGettingNew,
+  isCardActionSelected,
+  isReplacingCard
+} from '../../../helpers/data/card-actions';
 
 const CdlAction = (cdl) => {
   let cardAction = cdl.basics.cardAction;
@@ -19,11 +25,9 @@ const CdlAction = (cdl) => {
       name    = 'cdlWdywtdt'
       summary = {cdl.summary}
     >
-      <New        showIf = {cardAction === 'new'}       locale={locale}/>
-      <Renew      showIf = {cardAction === 'renew'}     locale={locale}/>
-      <Replace    showIf = {cardAction === 'replace'}   locale={locale}/>
-      <Correct    showIf = {cardAction === 'correct'}   locale={locale}/>
-      <Update     showIf = {cardAction === 'update'}    locale={locale}/>
+      <New        showIf = {isGettingNew(props)} locale={locale}/>
+      <Renew      showIf = {isRenewingCard(props)} locale={locale}/>
+      <Replace    showIf = {isReplacingCard(props)} locale={locale}/>
     </PageSummaryLink>
   )
 };

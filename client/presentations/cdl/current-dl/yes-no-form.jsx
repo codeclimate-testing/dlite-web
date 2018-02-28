@@ -11,9 +11,9 @@ const Form = (props) => {
 
       <RadioCollection
         {...props}
-        name          = 'hasCurrentDL'
-        errorMessage  = { props.validations.hasCurrentDL() }
-        selectedValue = {props.currentCardInfo.hasCurrentDL}
+        name          = 'isIssued'
+        errorMessage  = { props.validations.isIssued() }
+        selectedValue = {props.currentCardInfo.isIssued}
       >
         { radioYesNoGroup() }
       </RadioCollection>

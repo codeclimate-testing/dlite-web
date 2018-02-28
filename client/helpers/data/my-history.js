@@ -7,7 +7,7 @@ export const licenseAndIdIssued = (props) => {
 export const dateOfIssue = (props) => {
   let key = 'None';
   if (licenseAndIdIssued(props)) {
-    key = props.licenseAndIdHistory.DLIDNumber;
+    key = props.licenseAndIdHistory.DLIDNumber || props.licenseAndIdHistory.number
   }
   return key;
 };

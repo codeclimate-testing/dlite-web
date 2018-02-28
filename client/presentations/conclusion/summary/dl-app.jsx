@@ -11,35 +11,26 @@ import {
 } from './dl-app/index';
 
 const DLApp = (props) => {
-  let locale          = props.ui.locale;
-  const application   = props.application;
+  let locale = props.locale;
   return (
     <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
       <DLApplicationNotStarted
-        {...application}
-        summary           = 'summary'
-        locale            = { locale }
+        {...props}
+
       />
       <DLAction
-        {...application}
-        summary             = 'summary'
-        locale              = { locale }
+        {...props}
       />
       <CurrentDLInfo
-        {...application}
-        currentCardInfo     = {application.DLApp.currentCard}
-        summary             = 'summary'
-        locale              = { locale }
+        {...props}
+        currentCardInfo     = {props.DLApp.currentCard}
       />
       <DLRealID
-        {...application}
-        summary             = 'summary'
-        locale              = { locale }
+        {...props}
       />
       <LicenseType
-        {...application}
-        summary             = 'summary'
-        locale              = { locale }
+        {...props}
+
       />
     </Accordion>
   );

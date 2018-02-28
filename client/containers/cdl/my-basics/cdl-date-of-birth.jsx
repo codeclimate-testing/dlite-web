@@ -1,11 +1,11 @@
 'use strict';
 
 import React                    from 'react';
-import connectForm              from '../../helpers/connect-form';
-import handlers                 from '../../helpers/handlers';
-import { DOBValidator }         from '../../helpers/validations';
-import Presentation             from '../../presentations/get-started/date-of-birth-page.jsx';
-import { updateCdlDob }         from '../../actions/index';
+import connectForm              from '../../../helpers/connect-form';
+import handlers                 from '../../../helpers/handlers';
+import { DOBValidator }         from '../../../helpers/validations';
+import Presentation             from '../../../presentations/get-started/date-of-birth-page.jsx';
+import { updateCdlDob }         from '../../../actions/index';
 
 const Page = (props) => {
   let locale = props.locale;

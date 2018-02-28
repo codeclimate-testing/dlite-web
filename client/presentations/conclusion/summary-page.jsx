@@ -2,20 +2,8 @@
 
 import React                from 'react'
 import Page                 from '../../containers/page.jsx';
-import { ageChecks }        from '../../helpers/calculate-age';
+import SummaryForm          from './summary/summary-form.jsx';
 import Content              from './summary/body.jsx';
-import Translate            from '../../i18n/translate-tag.jsx';
-import translations         from '../../i18n';
-
-import {
-  hideMain,
-  getErrorMessage
-} from '../../helpers/data/summary';
-
-import {
-  ErrorMessageBox
-} from '../validations.jsx';
-
 
 const SummaryPage = (props) => {
   let locale = props.ui.locale;
@@ -24,27 +12,14 @@ const SummaryPage = (props) => {
         {...props}
         sectionKey  ='summary'
       >
-        <div className={props.server.apiStatus}/>
-
-        <form
-          onSubmit  = { props.onSubmit }
-          className ={hideMain(props)}
+        <SummaryForm
+          {...props}
         >
-          <Translate tag='h2'>
-            { translations[locale].summaryPage.prompt}
-          </Translate>
-
-          <div className='translation-missing'>
-            <ErrorMessageBox
-              errorMessage={getErrorMessage(props)}
-            />
-          </div>
-
-          <Content
-            {...props}
-            summary='summary'
-          />
-        </form>
+        <Content
+          {...props}
+          summary='summary'
+        />
+        </SummaryForm>
       </Page>
   )
 };

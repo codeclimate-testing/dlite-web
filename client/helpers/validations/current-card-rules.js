@@ -16,9 +16,9 @@ let errorFunction = (name) => {
   }
 };
 
-const hasCurrentDL = (props) => {
+const isIssued = (props) => {
   let errors = [];
-  if (props.hasCurrentDL === '') {
+  if (props.isIssued === '') {
     errors.push(translations.errorMessages['selectionMissing']);
   }
   return errors;
@@ -29,5 +29,5 @@ export default {
   day           : errorFunction('day'),
   year          : errorFunction('year'),
   number        : englishValidatorGenerator('number'),
-  hasCurrentDL
+  isIssued
 };

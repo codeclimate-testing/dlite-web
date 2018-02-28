@@ -27,7 +27,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardAction:       state.cdl.basics.cardAction,
+    cardAction:       state.cdl.cardAction,
     focused:          state.ui.focus,
     validations:      state.ui.validations,
     addApp:           state.ui.addApp,

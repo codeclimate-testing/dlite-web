@@ -15,49 +15,33 @@ import {
 } from './my-basics/index';
 
 const Voting = (props) => {
-  const application   = props.application;
-  let locale          = props.ui.locale;
 
   return (
     <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
       <CitizenStatus
-        citizenStatus           = {application.voting.citizenStatus}
-        eligibilityRequirements = {application.voting.eligibilityRequirements}
-        dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
-        locale                  = { locale }
+        citizenStatus           = {props.voting.citizenStatus}
+        eligibilityRequirements = {props.voting.eligibilityRequirements}
+        dateOfBirth             = {props.basics.dateOfBirth}
       />
       <EligibilityRequirements
-        eligibilityRequirements = {application.voting.eligibilityRequirements}
-        citizenStatus           = {application.voting.citizenStatus}
-        dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
-        locale                  = { locale }
+        eligibilityRequirements = {props.voting.eligibilityRequirements}
+        citizenStatus           = {props.voting.citizenStatus}
+        dateOfBirth             = {props.basics.dateOfBirth}
       />
       <OptOut
-        optOut                  = {application.voting.optOut}
-        summary                 = 'summary'
-        locale                  = { locale }
+        optOut                  = {props.voting.optOut}
       />
       <PoliticalPartyChoose
-        politicalPartyChoose    = {application.voting.politicalPartyChoose}
-        summary                 = 'summary'
-        locale                  = { locale }
+        politicalPartyChoose    = {props.voting.politicalPartyChoose}
       />
       <BallotLanguage
-        ballotLanguage          = {application.basics.language.ballotLanguage}
-        summary                 = 'summary'
-        locale                  = { locale }
+        ballotLanguage          = {props.basics.language.ballotLanguage}
       />
       <BallotByMail
-        ballotByMail            = {application.voting.ballotByMail}
-        summary                 = 'summary'
-        locale                  = { locale }
+        ballotByMail            = {props.voting.ballotByMail}
       />
       <ContactMethods
-        contactMethods          = {application.voting.contactMethods}
-        summary                 = 'summary'
-        locale                  = { locale }
+        contactMethods          = {props.voting.contactMethods}
       />
     </Accordion>
   )

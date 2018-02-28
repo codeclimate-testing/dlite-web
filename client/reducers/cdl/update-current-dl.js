@@ -9,7 +9,7 @@ function defaultState() {
     month:        '',
     day:          '',
     year:         '',
-    hasCurrentDL: '',
+    isIssued:     '',
     issuedBy:     ''
   };
 }

@@ -4,11 +4,11 @@ import React                            from 'react';
 import { Route }                        from 'react-router-dom';
 import { cdlPath }                      from '../../helpers/alice-path';
 import CDLWelcome                       from './cdl-welcome.jsx';
-import DateOfBirth                      from './cdl-date-of-birth.jsx';
-import LegalName                        from './cdl-legal-name.jsx';
+import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
+import LegalName                        from './my-basics/cdl-legal-name.jsx';
 import cdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
 import Residency                        from './cdl-residency.jsx';
-import cdlCurrentLicense                from './cdl-current-dl.jsx';
+import cdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {

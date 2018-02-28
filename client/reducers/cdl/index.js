@@ -10,15 +10,16 @@ import updateCurrentDL              from './update-current-dl';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
+  cardAction              : updateCardAction,
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,
     residency             : updateResidency
   }),
-  history: {
+
+  history                 : combineReducers({
     currentDLInfo         : updateCurrentDL
-  },
-  cardAction              : updateCardAction
+  })
 });
 
 export default rootReducer;

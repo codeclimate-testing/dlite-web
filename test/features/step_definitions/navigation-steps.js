@@ -52,6 +52,9 @@ module.exports = function(world) {
   world.when('I visit the CDL dob page', function(done) {
     navigateToPath('/apply/cdl/date-of-birth', '.date-of-birth-form', done);
   });
+  world.when('I visit the CDL page to enter my current DL', function(done) {
+    navigateToPage('/apply\/cdl\/current-ca-license/', '.cdl-current-dl-yes-no', done);
+  });
 
   world.and('I return to the home page', function(done) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);

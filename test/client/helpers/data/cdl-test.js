@@ -4,7 +4,9 @@ import assert           from 'assert';
 import {
   showCDLUnder21,
   needsAddress,
-  needsCurrentDLInfo
+  needsCurrentDLInfo,
+  firstTime,
+  expiredCard
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -16,9 +18,6 @@ describe('Data helpers for cdl data', function() {
         month: '03',
         day: '10',
         year: (new Date().getFullYear() - 15).toString()
-      },
-      currentCardInfo: {
-        hasCurrentDL: ''
       }
     };
   });
@@ -39,6 +38,46 @@ describe('Data helpers for cdl data', function() {
       assert.equal(showCDLUnder21(props), true);
     });
   });
+  describe('#expiredCard', function() {
+    let currentCardInfo;
+    beforeEach(function() {
+      currentCardInfo = {
+        month: '',
+        day: '',
+        year: ''
+      };
+    });
+
+    it('returns true if expired date is in the past', function() {
+      let today = new Date();
+
+      currentCardInfo.year = today.getFullYear().toString();
+      currentCardInfo.month = (today.getMonth() + 1).toString();
+      currentCardInfo.day = (today.getDate() - 1).toString();
+
+      assert.equal(expiredCard(currentCardInfo), true);
+    });
+
+    it('returns false if expired date is today', function() {
+      let today = new Date();
+
+      currentCardInfo.year = today.getFullYear();
+      currentCardInfo.month = today.getMonth() + 1;
+      currentCardInfo.day = today.getDate();
+      assert.equal(expiredCard(currentCardInfo), false);
+    });
+
+    it('returns false if expired date is tomorrow', function() {
+      let tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      currentCardInfo.year = tomorrow.getFullYear();
+      currentCardInfo.month = tomorrow.getMonth() + 1;
+      currentCardInfo.day = tomorrow.getDate();
+
+      assert.equal(expiredCard(currentCardInfo), false);
+    });
+  });
 
   describe('#needsAddress', function() {
     it('returns true if props does not have isResident property', function() {
@@ -53,4 +92,6 @@ describe('Data helpers for cdl data', function() {
       assert.equal(needsAddress(props), false);
     });
   });
+
+
 });
