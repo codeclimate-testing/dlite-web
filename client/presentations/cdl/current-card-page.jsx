@@ -6,6 +6,7 @@ import YesNoForm              from './current-dl/yes-no-form.jsx';
 import TestsInfo              from './current-dl/test-info.jsx';
 import EnterDLInfo            from '../get-started/current-card-info/enter-info.jsx';
 import ExplanationString      from './current-dl/explanation-string.jsx';
+import ExpiredMessage         from './current-dl/expired-message.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import { needsCurrentDLInfo}  from '../../helpers/data/cdl';
 
@@ -17,22 +18,27 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='current-card-form'>
-        <form onSubmit={ props.onSubmit }>
+        <form onSubmit      = {props.onSubmit }>
 
           <YesNoForm {...props} />
-          <TestsInfo currentCardInfo = {props.currentCardInfo} />
+          <TestsInfo
+            currentCardInfo = {props.currentCardInfo}
+          />
           <EnterDLInfo
             {...props}
             textDescription = 'DL number'
-            showIf = {needsCurrentDLInfo(props)}
+            showIf          = {needsCurrentDLInfo(props)}
           >
             <ExplanationString
-              showIf = {needsCurrentDLInfo(props)}
+              showIf        = {needsCurrentDLInfo(props)}
             />
           </EnterDLInfo>
+          <ExpiredMessage
+            currentCardInfo = {props.currentCardInfo}
+          />
           <NavigationButtons
             {...props}
-            errorMessage = { props.validations.all() }
+            errorMessage    = { props.validations.all() }
           />
         </form>
       </div>

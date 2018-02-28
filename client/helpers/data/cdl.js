@@ -30,3 +30,16 @@ export const needsCurrentDLInfo = (props) => {
 export const firstTime = (props) => {
   return props.currentCardInfo.hasCurrentDL === 'No';
 };
+
+export const expiredCard = (currentCardInfo) => {
+  if (currentCardInfo.year.length !== 4) { return false; }
+  let yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  let month = currentCardInfo.month - 1;
+  let day   = currentCardInfo.day;
+  let year  = currentCardInfo.year;
+  let cardExpiration = new Date(year, month, day);
+
+  return yesterday > cardExpiration;
+};

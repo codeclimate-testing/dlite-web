@@ -19,7 +19,7 @@ let errorFunction = (name) => {
 const hasCurrentDL = (props) => {
   let errors = [];
   if (props.hasCurrentDL === '') {
-    errors.push('error');
+    errors.push(translations.errorMessages['selectionMissing']);
   }
   return errors;
 }
