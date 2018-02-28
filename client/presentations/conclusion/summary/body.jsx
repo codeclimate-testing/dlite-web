@@ -25,7 +25,7 @@ const Contents = (props) => {
       <MyHistory  {...props} />
       <OrganDonation {...props} />
       <Voting {...props} />
-      <SubmitButton />
+      <SubmitButton {...props}/>
     </div>
   )
 };

@@ -87,11 +87,9 @@ describe('Summary components', function() {
   let props;
   let locale = 'en';
   beforeEach(function() {
-    props = {
-      application: Object.assign({}, data.application),
-      server: '',
-      onSubmit: spy()
-    };
+    props = Object.assign({}, data.application);
+    props.server = '';
+    props.onSubmit = spy();
     props.summary = 'summary';
     props.locale = locale;
   });
@@ -101,10 +99,10 @@ describe('Summary components', function() {
     describe('DLAction', function() {
       let component;
       beforeEach(function() {
-        props.application.cardType = ['DL'];
-        props.application.cardAction = 'new';
-        props.application.DLApp.isApplying = true;
-        props.application.DLApp.action = 'new';
+        props.cardType = ['DL'];
+        props.cardAction = 'new';
+        props.DLApp.isApplying = true;
+        props.DLApp.action = 'new';
 
         component = render(
           <Wrapper>
@@ -124,14 +122,14 @@ describe('Summary components', function() {
     });
     describe('CurrentDLInfo', function() {
       it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
-        props.application.cardType = ['DL'];
-        props.application.cardAction = 'renew';
-        props.application.DLApp = {
+        props.cardType = ['DL'];
+        props.cardAction = 'renew';
+        props.DLApp = {
           isApplying: true,
           action: 'renew'
         }
 
-        props.application.DLApp.currentCard = {
+        props.DLApp.currentCard = {
           number: 'a90382kf',
           month: '11',
           day: '13',
@@ -152,9 +150,9 @@ describe('Summary components', function() {
     describe('DLRealID', function() {
 
       it('shows RealID fields DL', function(){
-        props.application.cardType = ['DL'];
-        props.application.DLApp.realID = 'Yes';
-        props.application.DLApp.isApplying = true;
+        props.cardType = ['DL'];
+        props.DLApp.realID = 'Yes';
+        props.DLApp.isApplying = true;
 
         let component = render(
           <Wrapper>
@@ -164,7 +162,7 @@ describe('Summary components', function() {
         assert.ok(component.text().includes('Real-ID CompliantYes'));
       });
       it('does not show if user is not getting a DL', function() {
-        props.application.DLApp.isApplying = false;
+        props.DLApp.isApplying = false;
 
         let component = render(
           <Wrapper>
@@ -175,8 +173,8 @@ describe('Summary components', function() {
       });
 
       it('shows No if props.DLApp.realID is blank', function() {
-        props.application.DLApp.isApplying = true;
-        props.application.DLApp.realID = '';
+        props.DLApp.isApplying = true;
+        props.DLApp.realID = '';
 
         let component = render(
           <Wrapper>
@@ -187,8 +185,8 @@ describe('Summary components', function() {
       });
 
       it('shows No if props.DLApp.realID is No', function() {
-        props.application.DLApp.realID = 'No';
-        props.application.DLApp.isApplying = true;
+        props.DLApp.realID = 'No';
+        props.DLApp.isApplying = true;
         let component = render(
           <Wrapper>
             <DLRealID { ...props } />
@@ -199,18 +197,17 @@ describe('Summary components', function() {
     });
     describe('LicenseType', function() {
       it('lists which types of licenses the user has selected', function() {
-        let props = {
-          cardType: ['DL'],
-          DLApp: {
-            isApplying: true,
-            action: 'new',
-            licenseType: {
-              type: ['car', 'cycle'],
-              needEndorsement: 'Yes',
-              endorsement: 'firefighter'
-            }
+        props.cardType = ['DL'];
+        props.DLApp = {
+          isApplying: true,
+          action: 'new',
+          licenseType: {
+            type: ['car', 'cycle'],
+            needEndorsement: 'Yes',
+            endorsement: 'firefighter'
           }
-        };
+        }
+
         let component = render(
           <Wrapper>
             <LicenseType
@@ -230,8 +227,8 @@ describe('Summary components', function() {
 
     describe('IDAction', function() {
       it('shows action for ID', function() {
-        props.application.cardType = ['ID'];
-        props.application.IDApp = {
+        props.cardType = ['ID'];
+        props.IDApp = {
           isApplying: true,
           action: 'new',
           cardChanges: {
@@ -251,14 +248,14 @@ describe('Summary components', function() {
     });
     describe('CurrentIDInfo', function() {
       it('shows current card info when user is renewing a card and has provided info of card to renew', function() {
-        props.application.cardType = ['ID'];
-        props.application.cardAction = 'renew';
-        props.application.IDApp = {
+        props.cardType = ['ID'];
+        props.cardAction = 'renew';
+        props.IDApp = {
           isApplying: true,
           action: 'renew'
         };
 
-        props.application.IDApp.currentCard = {
+        props.IDApp.currentCard = {
           number: 'a90382kf',
           month: '11',
           day: '13',
@@ -277,7 +274,7 @@ describe('Summary components', function() {
     });
     describe('SeniorID', function() {
       it('shows SeniorID selection', function(){
-        props.application.IDApp.seniorID = 'Yes';
+        props.seniorID = 'Yes';
 
         let component = render(
           <Wrapper>
@@ -292,11 +289,12 @@ describe('Summary components', function() {
 
     describe('IDRealID', function() {
       it('shows RealID fields for ID when user is using ID as real ID', function(){
-        props.application.cardType = ['ID'];
-        props.application.IDApp = {
+        props.cardType = ['ID'];
+        props.IDApp = {
           isApplying: true,
           realID: 'Yes'
         };
+        props.locale = locale;
 
         let component = render(
           <Wrapper>
@@ -307,15 +305,15 @@ describe('Summary components', function() {
       });
 
       it('shows RealID fields for ID when user is using DL as real ID', function(){
-        props.application.cardType = ['DL'];
-        props.application.IDApp = {
+        props.cardType = ['DL'];
+        props.IDApp = {
           isApplying: true,
           realID: ''
         };
-        props.application.DLApp = {
+        props.DLApp = {
           realID: 'Yes'
         };
-
+        props.locale = locale;
         let component = render(
           <Wrapper>
             <IDRealID { ...props } />
@@ -327,7 +325,7 @@ describe('Summary components', function() {
 
     describe('ReducedOrNoFee', function() {
       it('returns null when no value', function(){
-        props.application.IDApp = {
+        props.IDApp = {
           isApplying: true,
           action: 'new',
           reducedFee: {
@@ -340,7 +338,7 @@ describe('Summary components', function() {
           <Wrapper>
             <ReducedOrNoFee
               { ...props }
-              reducedFee = {props.application.IDApp.reducedFee}
+              reducedFee = {props.IDApp.reducedFee}
             />
           </Wrapper>
         )
@@ -350,9 +348,7 @@ describe('Summary components', function() {
   });
 
   describe('MyHistory', function() {
-    beforeEach(function() {
-      props = Object.assign({}, data.application);
-    });
+
     describe('LicenseAndIDHistory', function() {
       it('shows "None" when no license and id history', function() {
         let licenseAndIdHistory = {

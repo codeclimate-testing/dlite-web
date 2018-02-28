@@ -43,8 +43,8 @@ const IDRealID = (props) => {
       {...props}
       name    = 'addIDRealID'
     >
-      <Yes  IDApp = {props.IDApp} locale = {locale}/>
-      <No   IDApp = {props.IDApp} locale = {locale}/>
+      <Yes  IDApp = {props.IDApp} locale = {props.locale}/>
+      <No   IDApp = {props.IDApp} locale = {props.locale}/>
     </PageSummaryLink>
   )
 };

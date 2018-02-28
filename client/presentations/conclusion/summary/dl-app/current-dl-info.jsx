@@ -9,7 +9,6 @@ import {
 
 const CurrentDLInfo = (props) => {
   if(!existingDL(props)) { return null; }
-  if(!dataPresent.currentCardInfo(props.DLApp.currentCard)) { return null; }
 
   return (
     <CurrentCardInfo
