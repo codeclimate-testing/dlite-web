@@ -37,9 +37,9 @@ class Validator {
     }, []);
 
     let errorMessage = '';
-
+    let locale = this.props.locale;
     if (allErrors.length > 1) {
-      errorMessage = this.allMessage ? translations.errorMessages[this.allMessage] : translations.errorMessages.errorPreventContinuing;
+      errorMessage = this.allMessage ? translations[locale].errorMessages[this.allMessage] : translations[locale].errorMessages.errorPreventContinuing;
     } else if (allErrors.length === 1) {
       errorMessage = allErrors[0];
     }

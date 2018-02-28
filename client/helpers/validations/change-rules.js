@@ -15,10 +15,10 @@ const sections = (props) => {
 
 const other = (props) => {
   if (props.sections.indexOf('other') === -1) { return [] };
-
+  let locale = props.locale;
   let errors = selectionValidator('pleaseEnterValidData', 'other')(props);
   if (!hasOnlyEnglishChars(props.other)) {
-    errors.push(translations.errorMessages.inputIncludesNonEnglishCharacters)
+    errors.push(translations[locale].errorMessages.inputIncludesNonEnglishCharacters)
   }
   return errors;
 };

@@ -9,7 +9,8 @@ import { updatePhysicalTraits }     from '../../actions/index';
 import { PhysicalTraitsValidator }  from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations = new PhysicalTraitsValidator(props.physicalTraits, props.validations);
+  let locale      = props.locale;
+  let validations = new PhysicalTraitsValidator(Object.assign(props.physicalTraits, {locale}), props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('sexEyeHair', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -27,7 +28,8 @@ function mapStateToProps(state) {
   return {
     physicalTraits: state.application.basics.physicalTraits,
     focused:        state.ui.focus,
-    validations:    state.ui.validations
+    validations:    state.ui.validations,
+    locale:         state.ui.locale
   };
 };
 

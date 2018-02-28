@@ -15,7 +15,7 @@ import translations             from '../../../../../client/i18n';
 describe('VehicleInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
 
     let cardChanges = {
@@ -36,7 +36,6 @@ describe('VehicleInfo', function() {
       form: ''
     };
     let seniorID = '';
-
 
     let onChange = spy();
 
@@ -61,7 +60,8 @@ describe('VehicleInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange
+      onChange,
+      locale
     }
   });
 
@@ -94,7 +94,7 @@ describe('VehicleInfo', function() {
           </Wrapper>
         );
 
-        let text = translations.intro.getStartedPage.whatYouAreDoing.classes.C;
+        let text = translations[locale].intro.getStartedPage.whatYouAreDoing.classes.C;
         assert.equal(component.text().includes(text), true);
       });
 
@@ -106,7 +106,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.classes.M), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.M), true);
       });
 
       it('shows class A when user selects long', function() {
@@ -117,7 +117,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.classes.A), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.A), true);
       });
 
       it('shows class B when user selects trailer', function() {
@@ -128,7 +128,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.classes.B), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.B), true);
       });
     });
   });

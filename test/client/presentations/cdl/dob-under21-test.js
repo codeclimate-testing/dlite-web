@@ -17,9 +17,12 @@ describe('OrganDonationPage', function() {
 
     let addApp = 'cdl';
 
+    let locale = 'en';
+
     props = {
       dateOfBirth,
-      addApp
+      addApp,
+      locale
     };
   });
 

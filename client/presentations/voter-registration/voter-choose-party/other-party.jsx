@@ -2,21 +2,22 @@
 
 import React from 'react';
 
-import TextInput from '../../text-input.jsx';
-import RadioSelector from '../../radio-selector.jsx';
+import TextInput        from '../../text-input.jsx';
+import RadioSelector    from '../../radio-selector.jsx';
 import {
   ErrorIcon,
   ErrorLabel,
   errorClass
 } from '../../validations.jsx';
-import translations           from '../../../i18n';
+import translations     from '../../../i18n';
 
 const OtherPartyRadio = (props) => {
+  let locale = props.locale;
   return (
     <RadioSelector
       {...props}
       value='Other'
-      text={translations.votingRegistration.choosePartyPage.answerOther}
+      text={translations[locale].votingRegistration.choosePartyPage.answerOther}
     />
   );
 };

@@ -11,7 +11,8 @@ describe('update and corrections page validation rules:', function() {
     props = {
       correctOrUpdate: '',
       sections: [],
-      other: ''
+      other: '',
+      locale: 'en'
     };
   });
   it('will give error when no answer has been selected', function() {

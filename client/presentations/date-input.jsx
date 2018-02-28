@@ -13,6 +13,7 @@ import {
 } from './validations.jsx';
 
 const DateInput = (props) => {
+  let locale = props.locale;
   let errors = {
     month : props.validations.month(),
     day   : props.validations.day(),
@@ -33,7 +34,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'month'
-        example       = { translations.shared.labels.mm }
+        example       = { translations[locale].shared.labels.mm }
         value         = { props.values.month}
         error         = { hasValue(errors.month) }
         onChange      = { props.onChange }
@@ -45,7 +46,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'day'
-        example       = { translations.shared.labels.dd }
+        example       = { translations[locale].shared.labels.dd }
         value         = { props.values.day }
         error         = { hasValue(errors.day) }
         onChange      = { props.onChange }
@@ -57,7 +58,7 @@ const DateInput = (props) => {
 
       <NumberInput
         identifier    = 'year'
-        example       = { translations.shared.labels.YYYY }
+        example       = { translations[locale].shared.labels.YYYY }
         value         = { props.values.year }
         error         = { hasValue(errors.year)  }
         onChange      = { props.onChange }

@@ -21,7 +21,8 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     dateOfBirth : state.application.basics.dateOfBirth,
-    focused     : state.ui.focus
+    focused     : state.ui.focus,
+    locale      : state.ui.locale
   };
 };
 

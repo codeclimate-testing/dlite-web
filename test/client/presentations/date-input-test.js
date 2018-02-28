@@ -26,7 +26,8 @@ describe('DateInput', function() {
         month: spy(),
         day: spy(),
         year: spy()
-      }
+      },
+      locale: 'en'
     };
     component = render(
       <DateInput {...props} />

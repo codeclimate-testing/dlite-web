@@ -13,29 +13,41 @@ import {
 
 const IDString = (props) => {
   if (!getID(props)) { return null;}
-  return convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.ID);
+  let locale = props.locale;
+  return convertToHtml('p', translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.ID);
 };
 
 const DLString = (props) => {
   if (!getDL(props)) { return null; }
-  return convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.license);
+  let locale = props.locale;
+  return convertToHtml('p', translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.license);
 };
 
 const BothString = (props) => {
   if (!hasMultipleCards(props)) { return null; }
-  return convertToHtml('p', translations.myBasics.addressesPage.mailingAddressSameExplanation.cards);
+  let locale = props.locale;
+  return convertToHtml('p', translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.cards);
 };
 
 
 const Question = (props) => {
-
+  let locale = props.locale;
   return (
     <div className='interstitial-address-form'>
       <hr />
-        {convertToHtml('h2', translations.myBasics.addressesPage.mailingAddressSamePrompt, 'question')}
-        <IDString cardType={props.cardType} />
-        <DLString cardType={props.cardType} />
-        <BothString cardType={props.cardType}/>
+        {convertToHtml('h2', translations[locale].myBasics.addressesPage.mailingAddressSamePrompt, 'question')}
+        <IDString
+          {...props}
+          cardType={props.cardType}
+        />
+        <DLString
+          {...props}
+          cardType={props.cardType}
+        />
+        <BothString
+          {...props}
+          cardType={props.cardType}
+        />
       <div className='input-container'>
         <fieldset>
           <RadioCollection
@@ -44,7 +56,7 @@ const Question = (props) => {
             onBlur        = { props.onBlurValidate }
             errorMessage  = { props.validations.homeAddressSameAsMailing()}
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

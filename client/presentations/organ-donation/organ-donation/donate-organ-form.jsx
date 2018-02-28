@@ -13,21 +13,23 @@ import {
 
 const MessageForYesChoice = (props) => {
   if (!donateOrganYes(props)) { return null; }
+  let locale = props.locale;
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-yes-info'>
-        {convertToHtml('p', translations.organDonation.organDonor.messageYes)}
+        {convertToHtml('p', translations[locale].organDonation.organDonor.messageYes)}
       </div>
     </MessageBox>
   );
 };
 
 const MessageForNoChoice = (props) => {
+  let locale = props.locale;
   if (!(donateOrganNo(props))) { return null;}
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-no-info'>
-        {convertToHtml('p', translations.organDonation.organDonor.messageNo)}
+        {convertToHtml('p', translations[locale].organDonation.organDonor.messageNo)}
       </div>
     </MessageBox>
   );
@@ -35,22 +37,29 @@ const MessageForNoChoice = (props) => {
 
 
 const DonateOrgan = (props) => {
+  let locale = props.locale;
   return (
     <div className='donate-organ-form'>
-        {convertToHtml('h2', translations.organDonation.organDonor.prompt, 'question')}
-        {convertToHtml('p', translations.organDonation.organDonor.validationMessage)}
+        {convertToHtml('h2', translations[locale].organDonation.organDonor.prompt, 'question')}
+        {convertToHtml('p', translations[locale].organDonation.organDonor.validationMessage)}
 
       <fieldset>
         <RadioCollection
           {...props}
           name='donateOrgan'
         >
-          { radioYesNoGroup() }
+          { radioYesNoGroup(locale) }
         </RadioCollection>
       </fieldset>
 
-      <MessageForYesChoice organDonation={props.organDonation} />
-      <MessageForNoChoice organDonation={props.organDonation} />
+      <MessageForYesChoice
+        {...props}
+        organDonation={props.organDonation}
+      />
+      <MessageForNoChoice
+        {...props}
+        organDonation={props.organDonation}
+      />
     </div>
   );
 };

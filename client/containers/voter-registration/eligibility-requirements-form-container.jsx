@@ -27,7 +27,8 @@ const mapStateToProps = (state) => {
   return {
     eligibilityRequirements : state.application.voting.eligibilityRequirements,
     dateOfBirth             : state.application.basics.dateOfBirth,
-    focused                 : state.ui.focus
+    focused                 : state.ui.focus,
+    locale                  : state.ui.locale
   };
 };
 

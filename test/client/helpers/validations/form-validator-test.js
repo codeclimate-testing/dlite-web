@@ -10,7 +10,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: '',
       middleName: '',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     let requestedValidations = [];
@@ -28,7 +29,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jackson',
       middleName: 'Hendricks',
-      lastName: 'Wilson'
+      lastName: 'Wilson',
+      locale: 'en'
     };
 
     let requestedValidations = ['firstName', 'middleName', 'lastName'];
@@ -46,7 +48,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     let requestedValidations = [];
@@ -64,7 +67,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     let requestedValidations = ['firstName'];
@@ -82,7 +86,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     let requestedValidations = ['all'];
@@ -100,7 +105,8 @@ describe('FormValidator:', function() {
     let props = {
       firstName: '',
       middleName: '',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     let requestedValidations = ['all'];
@@ -119,7 +125,8 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: ''
+        lastName: '',
+        locale: 'en'
       };
 
       let requestedValidations = ['all'];
@@ -134,7 +141,8 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: ''
+        lastName: '',
+        locale: 'en'
       };
 
       let requestedValidations = [];
@@ -149,7 +157,8 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: 'Jonesing'
+        lastName: 'Jonesing',
+        locale: 'en'
       };
 
       let requestedValidations = [];

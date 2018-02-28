@@ -12,11 +12,13 @@ import NavigationButtons from '../../../client/presentations/navigation-buttons.
 
 describe('NavigationButtons', function() {
   let Wrapper = wrapperGenerator({});
-
+  let props = {
+    locale: 'en'
+  }
   it('will show an error message in a box if one is provided', function() {
     let component = render(
       <Wrapper>
-        <NavigationButtons errorMessage='Jumpsuit is all wrong!'/>
+        <NavigationButtons {...props} errorMessage='Jumpsuit is all wrong!'/>
       </Wrapper>
     );
 
@@ -30,7 +32,7 @@ describe('NavigationButtons', function() {
   it('will omit the error message box if no message is provided', function() {
     let component = render(
       <Wrapper>
-        <NavigationButtons errorMessage=''/>
+        <NavigationButtons {...props} errorMessage=''/>
       </Wrapper>
     );
 

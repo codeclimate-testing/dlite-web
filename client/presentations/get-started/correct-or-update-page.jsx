@@ -16,12 +16,13 @@ import {
 import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
-const text = {
-  ID: convertToHtml('p', translations.intro.correctOrUpdatePage.chooseChangeSection.id.explanation),
-  DL: convertToHtml('p', translations.intro.correctOrUpdatePage.chooseChangeSection.license.explanation)
-};
-
 const Form = (props) => {
+  let locale = props.locale;
+  const text = {
+    ID: convertToHtml('p', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.id.explanation),
+    DL: convertToHtml('p', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.license.explanation)
+  };
+
   let tag  = getCorrectString(props, text.DL, text.ID);
   let formName = getCorrectString(props, 'DL', 'ID');
 
@@ -31,7 +32,7 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-change'>
-        {convertToHtml('h2', translations.intro.correctOrUpdatePage.prompt, 'question')}
+        {convertToHtml('h2', translations[locale].intro.correctOrUpdatePage.prompt, 'question')}
         {tag}
         <form onSubmit={ props.onSubmit }>
           <RadioForm

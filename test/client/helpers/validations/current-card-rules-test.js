@@ -9,7 +9,8 @@ describe('current card page validation rules', function() {
   describe('current card number', function() {
     it('has no errors when entering english characters', function() {
       let props = {
-        number: '123123hasfh231'
+        number: '123123hasfh231',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.number(props), []);
@@ -17,7 +18,8 @@ describe('current card page validation rules', function() {
 
     it('has no errors when left blank', function() {
       let props = {
-        number: ''
+        number: '',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.number(props), []);
@@ -25,7 +27,8 @@ describe('current card page validation rules', function() {
 
     it('reports errors when using non-english characters', function() {
       let props = {
-        number: '12313మీ తెలుగు '
+        number: '12313మీ తెలుగు ',
+        locale: 'en'
       };
 
     assert.deepEqual(rules.number(props),  ['Sorry, your card can only include English characters.']);
@@ -37,7 +40,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '12',
         day: '12',
-        year: '1999'
+        year: '1999',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -49,7 +53,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '',
         day: '',
-        year: ''
+        year: '',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -61,7 +66,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '09',
         day: '29',
-        year: (new Date().getFullYear() + 2).toString()
+        year: (new Date().getFullYear() + 2).toString(),
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -73,7 +79,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '09',
         day: '29',
-        year: (new Date().getFullYear() - 135).toString()
+        year: (new Date().getFullYear() - 135).toString(),
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -85,7 +92,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '09',
         day: '29',
-        year: '88'
+        year: '88',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -97,7 +105,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '14',
         day: '29',
-        year: '1988'
+        year: '1988',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), [messages.expirationDateInvalid]);
@@ -109,7 +118,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '09',
         day: '31',
-        year: '1988'
+        year: '1988',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);
@@ -121,7 +131,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '-9',
         day: '29',
-        year: '1988'
+        year: '1988',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), [messages.expirationDateInvalid]);
@@ -133,7 +144,8 @@ describe('current card page validation rules', function() {
       let props = {
         month: '09',
         day: '',
-        year: '2017'
+        year: '2017',
+        locale: 'en'
       };
 
       assert.deepEqual(rules.month(props), []);

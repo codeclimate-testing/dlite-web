@@ -9,23 +9,23 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
-const tempObjectThatNeedsTranslations = {
-  values: [
-    "Get a California CDL for the first time",
-    "Renew my CDL",
-    "Correct or update my CDL",
-    "Replace my CDL"
-  ]
-};
-
 const Form = (props) => {
+  let locale = props.locale;
+  const tempObjectThatNeedsTranslations = {
+    values: [
+      "Get a California CDL for the first time",
+      "Renew my CDL",
+      "Correct or update my CDL",
+      "Replace my CDL"
+    ]
+  };
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        {convertToHtml('h2', translations.intro.wdywtdtPage.prompt, 'question')}
+        {convertToHtml('h2', translations[locale].intro.wdywtdtPage.prompt, 'question')}
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-buttom'>
             <fieldset>

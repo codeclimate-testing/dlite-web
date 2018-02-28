@@ -8,14 +8,15 @@ import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <div className='choose-replacement-detail'>
-        {convertToHtml('h2', translations.intro.replacementReasonPage.prompt, 'question')}
-        {convertToHtml('p', translations.intro.replacementReasonPage.explanation)}
+        {convertToHtml('h2', translations[locale].intro.replacementReasonPage.prompt, 'question')}
+        {convertToHtml('p', translations[locale].intro.replacementReasonPage.explanation)}
         <form onSubmit={ props.onSubmit }>
           <ReplacementReason {...props} />
           <NavigationButtons

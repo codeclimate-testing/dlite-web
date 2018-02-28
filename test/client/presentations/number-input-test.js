@@ -20,7 +20,8 @@ describe('NumberInput not used in DateInput', function() {
       errorMessage: '',
       onChange: spy(),
       onFocus: spy(),
-      onBlur: spy()
+      onBlur: spy(),
+      locale: 'en'
     };
 
     component = render(
@@ -40,7 +41,7 @@ describe('NumberInput not used in DateInput', function() {
       props.errorMessage = 'error';
       component = render(
         <NumberInput {...props} />
-      ); 
+      );
     });
 
     it('will have 2 elements with the error class', function() {

@@ -7,7 +7,8 @@ import messages from '../../../../client/presentations/error-messages';
 describe('Contact Methods page validation rules:', function() {
   it('when nothing has been selected, it shows the generic selection missing error', function() {
     let props = {
-      shouldContact: ''
+      shouldContact: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.shouldContact(props), [messages['selectionMissing']]);
@@ -21,7 +22,8 @@ describe('Contact Methods page validation rules:', function() {
         emailAddress: '',
         phoneNumber1: '',
         phoneNumber2: '',
-        phoneNumber3: ''
+        phoneNumber3: '',
+        locale: 'en'
       };
     });
 

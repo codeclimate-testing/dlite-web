@@ -22,11 +22,12 @@ describe('SeniorIDPage', function() {
     let validations = {
       seniorID: spy()
     };
-
+    let locale = 'en';
     props = {
       seniorID,
       onChange,
-      validations
+      validations,
+      locale
     }
   });
 

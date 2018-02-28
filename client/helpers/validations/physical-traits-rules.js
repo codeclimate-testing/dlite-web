@@ -4,27 +4,30 @@ import translations   from '../../i18n';
 import { hasValue }   from '../data/validations';
 
 const sex = (props) => {
-  let value = props.sex;
-  let errors = [];
+  let locale  = props.locale;
+  let value   = props.sex;
+  let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations.errorMessages.sexSelectionMissing]
+    errors = [translations[locale].errorMessages.sexSelectionMissing]
   }
   return errors;
 };
 
 const eyeColor = (props) => {
-  let value = props.eyeColor;
-  let errors = [];
+  let locale  = props.locale;
+  let value   = props.eyeColor;
+  let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations.errorMessages.eyeColorMissing]
+    errors = [translations[locale].errorMessages.eyeColorMissing]
   }
   return errors;
 };
 const hairColor = (props) => {
-  let value = props.hairColor;
-  let errors = [];
+  let locale  = props.locale;
+  let value   = props.hairColor;
+  let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations.errorMessages.hairColorMissing]
+    errors = [translations[locale].errorMessages.hairColorMissing]
   }
   return errors;
 };

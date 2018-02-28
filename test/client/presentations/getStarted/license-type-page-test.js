@@ -30,14 +30,15 @@ describe('LicenseType Page', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-
+      let locale = 'en';
       props = {
         onChange,
         validations,
         DLApp: {
           licenseType
         },
-        licenseType
+        licenseType,
+        locale
       }
     });
 

@@ -7,9 +7,10 @@ import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const LicenseIssues = (props) => {
+  let locale = props.locale;
   return (
     <div className='license-issues-form'>
-      {convertToHtml('h2', translations.myHistory.licenseIssuesPage.pagePrompt, 'question')}
+      {convertToHtml('h2', translations[locale].myHistory.licenseIssuesPage.pagePrompt, 'question')}
       <div>
         <fieldset>
           <RadioCollection
@@ -17,7 +18,7 @@ const LicenseIssues = (props) => {
             name          = 'isSuspended'
             errorMessage  = { props.validations.isSuspended() }
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

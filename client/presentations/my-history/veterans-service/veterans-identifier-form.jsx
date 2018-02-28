@@ -20,17 +20,20 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
-  return convertToHtml('h2', translations.myHistory.veteransPage.keepDesignationPrompt.id, 'question')
+  let locale = props.locale;
+  return convertToHtml('h2', translations[locale].myHistory.veteransPage.keepDesignationPrompt.id, 'question')
 };
 
 const PreviousDLHeader = (props) => {
   if (!showPreviousDLHeader(props)) {return null; }
-  return convertToHtml('h2', translations.myHistory.veteransPage.keepDesignationPrompt.license, 'question')
+  let locale = props.locale;
+  return convertToHtml('h2', translations[locale].myHistory.veteransPage.keepDesignationPrompt.license, 'question')
 };
 
 const CardHeader = (props) => {
   if (!showNewDLHeader(props)) { return null; }
-  return convertToHtml('h2', translations.myHistory.veteransPage.newDesignation.prompt, 'question')
+  let locale = props.locale;
+  return convertToHtml('h2', translations[locale].myHistory.veteransPage.newDesignation.prompt, 'question')
 };
 
 
@@ -41,17 +44,18 @@ const Question = (props) => {
       <hr/>
       <PreviousIDHeader {...props} />
       <PreviousDLHeader {...props}/>
-      <CardHeader {...props}/>
+      <CardHeader       {...props}/>
     </div>
   )
 };
 
 const MessageAddAmount = (props) => {
   if (!showIdentifierMessage(props) || isPreviouslyDesignated(props)) { return null; }
+  let locale = props.locale;
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        {convertToHtml('p', translations.myHistory.veteransPage.newDesignation.messageYes)}
+        {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.messageYes)}
       </div>
     </MessageBox>
   );
@@ -70,22 +74,23 @@ const MessageRemovingDesignation = (props) => {
 
 const VeteransIdentifier = (props) => {
   if(!props.showIf) { return null; }
+  let locale = props.locale;
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      {convertToHtml('p', translations.myHistory.veteransPage.newDesignation.explanation)}
+      {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.explanation)}
       <div className='input-container'>
         <fieldset>
           <RadioCollection
             {...props}
             name='veteransIdentifier'
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>
 
-      <MessageAddAmount {...props} />
+      <MessageAddAmount           {...props} />
       <MessageRemovingDesignation {...props} />
     </div>
   );

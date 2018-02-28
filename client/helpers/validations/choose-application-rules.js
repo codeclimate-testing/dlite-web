@@ -4,9 +4,10 @@ import translations           from '../../i18n';
 import { hasChosenApp }       from '../data/pathnames';
 
 const selectedApplication = (props) => {
+  let locale = props.locale;
   let errors = [];
   if (!hasChosenApp(props)) {
-    errors.push(translations.errorMessages.selectionMissing);
+    errors.push(translations[locale].errorMessages.selectionMissing);
   }
   return errors;
 };

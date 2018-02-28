@@ -12,7 +12,8 @@ describe('License issues rules:', function() {
       reason: 'a good one',
       month: '09',
       day: '29',
-      year: '2010'
+      year: '2010',
+      locale: 'en'
     };
     assert.deepEqual(rules.isSuspended(props), []);
     assert.deepEqual(rules.reason(props), []);
@@ -27,7 +28,8 @@ describe('License issues rules:', function() {
       reason: 'a good one',
       month: '09',
       day: '',
-      year: '2010'
+      year: '2010',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.isSuspended(props), []);
@@ -39,7 +41,8 @@ describe('License issues rules:', function() {
 
   it('gives the selectionMissing error if user doesn\'t choose a radio button', function() {
     let props = {
-      isSuspended: ''
+      isSuspended: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.isSuspended(props), [messages.selectionMissing]);
@@ -48,7 +51,8 @@ describe('License issues rules:', function() {
   it('gives the licenseIssueSelectionMissing error if user doesn\'t give a reason', function() {
     let props = {
       isSuspended: 'Yes',
-      reason: ''
+      reason: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.reason(props), [messages.licenseIssueSelectionMissing]);
@@ -57,7 +61,8 @@ describe('License issues rules:', function() {
   it('gives the inputIncludesNonEnglishCharacters error if user types in non-English characters', function() {
     let props = {
       isSuspended: 'Yes',
-      reason: 'chciałabym iść do kina samochodem ale piałam ża duźo piwo'
+      reason: 'chciałabym iść do kina samochodem ale piałam ża duźo piwo',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.reason(props), [messages.inputIncludesNonEnglishCharacters]);
@@ -69,7 +74,8 @@ describe('License issues rules:', function() {
       reason: 'something',
       month: '40',
       day: '',
-      year: ''
+      year: '',
+      locale: 'en'
     };
     assert.deepEqual(rules.month(props), [messages.invalidOrMissingDate]);
     assert.deepEqual(rules.year(props), []);

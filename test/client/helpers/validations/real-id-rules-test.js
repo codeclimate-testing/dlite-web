@@ -31,7 +31,8 @@ describe('RealID page validation rules:', function() {
         isApplying: false,
         action: ''
       },
-      realID
+      realID,
+      locale: 'en'
     }
   });
   it('when nothing has been selected it will give realIdSelectionMissing error', function() {

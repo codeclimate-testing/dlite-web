@@ -9,10 +9,11 @@ import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <div className='home-address-form'>
-        {convertToHtml('h2', translations.myBasics.addressesPage.prompt, 'question')}
-        {convertToHtml('p', translations.myBasics.addressesPage.explanation)}
+        {convertToHtml('h2', translations[locale].myBasics.addressesPage.prompt, 'question')}
+        {convertToHtml('p', translations[locale].myBasics.addressesPage.explanation)}
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate

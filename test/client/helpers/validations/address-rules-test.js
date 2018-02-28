@@ -23,7 +23,8 @@ describe('enter address page validation rules:', function() {
         city:     'Crazydino',
         state:    'CA',
         zip:      '95666'
-      }
+      },
+      locale: 'en'
     };
 
     assert.deepEqual(rules.homeAddressSameAsMailing(props), []);
@@ -53,7 +54,8 @@ describe('enter address page validation rules:', function() {
         city:     '',
         state:    '',
         zip:      ''
-      }
+      },
+      locale: 'en'
     };
     assert.deepEqual(rules.homeAddressSameAsMailing(props), ['Please let us know where you receive mail.']);
     assert.deepEqual(rules.homeStreet_1(props), ['Please enter what street you live on.']);
@@ -79,7 +81,8 @@ describe('enter address page validation rules:', function() {
         city:     'नमस्ते',
         state:    'CA',
         zip:      'नमस्ते'
-      }
+      },
+      locale: 'en'
     };
     assert.deepEqual(rules.homeStreet_1(props), ['Sorry, your card can only include English characters.']);
     assert.deepEqual(rules.homeStreet_2(props), ['Sorry, your card can only include English characters.']);

@@ -26,12 +26,13 @@ describe('CitizenStatusPage', function() {
       };
       let citizenStatus = '';
       let prereg = checkPreReg(dateOfBirth);
-
+      let locale = 'en';
       props = {
         dateOfBirth,
         citizenStatus,
         onChange,
-        prereg
+        prereg,
+        locale
       };
     });
 

@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import HomeLink           from './home-link.jsx';
+import EmojiDebugLink     from './emoji-debug-link.jsx';
 import SectionHeader      from './section-header.jsx';
 
 const setTitleLiteral = (title, section) => {
@@ -57,6 +58,12 @@ const Page = (props) => {
       />
       {props.children}
       <HomeLink />
+
+      <EmojiDebugLink
+        locale         =  { props.locale }
+        onLocaleChange = { props.onLocaleChange }
+      />
+
     </div>
   );
 };

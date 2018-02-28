@@ -9,27 +9,29 @@ import { updateLegalName }    from '../../actions/index';
 import Presentation           from '../../presentations/get-started/name-page.jsx';
 
 const Page = (props) => {
-  let validations   = new NamePageValidator(props.legalName, props.validations);
+  let locale        = props.locale;
+  let validations   = new NamePageValidator(Object.assign(props.legalName, { locale }), props.validations);
   let onBack        = handlers.navigateOnBack(props, validations);
   let onSubmit      = handlers.navigateOrShowErrors('legalName', props, validations);
 
   return (
     <Presentation
       {...props}
-      onSubmit={ onSubmit }
-      onBack={ onBack }
-      validations={ validations }
-      changeAction={ updateLegalName }
+      onSubmit      = { onSubmit }
+      onBack        = { onBack }
+      validations   = { validations }
+      changeAction  = { updateLegalName }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    legalName: state.application.basics.legalName,
-    focused: state.ui.focus,
-    validations: state.ui.validations,
-    hover: state.ui.hover
+    legalName:    state.application.basics.legalName,
+    focused:      state.ui.focus,
+    validations:  state.ui.validations,
+    hover:        state.ui.hover,
+    locale:       state.ui.locale
   };
 };
 

@@ -32,7 +32,8 @@ function mapStateToProps(state) {
     cardAction      : state.application.cardAction,
     cardType        : state.application.cardType,
     focused         : state.ui.focus,
-    validations     : state.ui.validations
+    validations     : state.ui.validations,
+    locale          : state.ui.locale
   };
 };
 

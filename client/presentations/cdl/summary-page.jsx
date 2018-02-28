@@ -18,13 +18,14 @@ const header = 'Please take a minute to review your answers';
 
 const Contents = (props) => {
   let application = props.cdl;
+  let locale      = props.ui.locale;
   return (
     <div className = 'summary'>
       <Accordion id='cdl-summary' title='My commercial driver license'>
-        <CdlAction {...application} />
+        <CdlAction {...application} locale={locale}/>
       </Accordion>
 
-      <MyBasics {...application} />
+      <MyBasics {...application} locale={locale}/>
 
 
       <Accordion id='self-certification' title='Self certification'>

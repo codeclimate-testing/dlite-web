@@ -9,18 +9,18 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const VeteransBenefits = (props) => {
   if (!props.showIf) { return null; }
-
+  let locale = props.locale;
   return (
     <div className='veterans-benefits-form'>
       <MessageBox className='thanks'>
         <div className='veteran-thank-you-message'>
-          {convertToHtml('p', translations.myHistory.veteransPage.messageYes, 'question')}
+          {convertToHtml('p', translations[locale].myHistory.veteransPage.messageYes, 'question')}
         </div>
       </MessageBox>
 
       <hr />
 
-      {convertToHtml('h2', translations.myHistory.veteransPage.benefitsPrompt, 'question')}
+      {convertToHtml('h2', translations[locale].myHistory.veteransPage.benefitsPrompt, 'question')}
 
       <div className='input-container'>
         <fieldset>
@@ -28,7 +28,7 @@ const VeteransBenefits = (props) => {
             {...props}
             name='receiveBenefits'
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

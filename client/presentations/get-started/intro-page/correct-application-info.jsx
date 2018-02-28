@@ -10,22 +10,24 @@ import {
 import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
 
 const License = (props) => {
+  let locale = props.locale;
   if (!getDL(props)) { return null;}
-  return convertToHtml('p', translations.intro.getStartedPage.explanation.correct.license);
+  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.correct.license);
 };
 
 const ID = (props) => {
+  let locale = props.locale;
   if (!getID(props)) { return null; }
-  return convertToHtml('p', translations.intro.getStartedPage.explanation.correct.id);
+  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.correct.id);
 };
 
 const CorrectApplicationInfo = (props) => {
   if( !hasActionIsCorrecting(props)) { return null; }
-
+  let locale = props.locale;
   return (
     <div className='correct-application-info'>
-      <License cardType = {props.cardType} />
-      <ID cardType = {props.cardType } />
+      <License  cardType = {props.cardType}   locale  = {locale} />
+      <ID       cardType = {props.cardType }  locale  = {locale} />
     </div>
     );
 };

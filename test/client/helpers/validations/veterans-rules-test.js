@@ -18,7 +18,8 @@ describe('veterans page validation rules:', function() {
 
     props = {
       veteransService,
-      cardAction: 'renew'
+      cardAction: 'renew',
+      locale: 'en'
     }
   });
 

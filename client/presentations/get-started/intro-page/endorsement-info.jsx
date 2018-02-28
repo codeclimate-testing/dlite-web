@@ -8,9 +8,10 @@ import {
   getEndorsementString
 } from '../../../helpers/data/get-started';
 
-const fireFighterEndorsement = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.firefighterEndorsement);
-
 const EndorsementInfo = (props) => {
+  let locale = props.locale;
+  const fireFighterEndorsement = convertToHtml('p', translations[locale] .intro.getStartedPage.whatYouAreDoing.firefighterEndorsement);
+
   if(!getDL(props)) { return null; }
   let endorsement = getEndorsementString(props, fireFighterEndorsement);
 

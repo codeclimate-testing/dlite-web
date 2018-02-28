@@ -9,7 +9,8 @@ import handlers                   from '../../helpers/handlers';
 import { BallotLanguageValidator} from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations       = new BallotLanguageValidator(props.ballotLanguage, props.validations);
+  let locale            = props.locale;
+  let validations       = new BallotLanguageValidator(Object.assign(props.ballotLanguage, {locale}), props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('chooseBallotLanguage', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -30,7 +31,8 @@ const mapStateToProps = (state) => {
     ballotLanguage  : state.application.basics.language.ballotLanguage,
     dateOfBirth     : state.application.basics.dateOfBirth,
     focused         : state.ui.focus,
-    validations     : state.ui.validations
+    validations     : state.ui.validations,
+    locale          : state.ui.locale
   };
 };
 

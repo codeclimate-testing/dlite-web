@@ -30,12 +30,13 @@ describe('BallotByMailPage', function() {
         ballotByMail: spy(),
         all: spy()
       };
-
+      let locale = 'en';
       props = {
         ballotByMail,
         dateOfBirth,
         onChange,
-        validations
+        validations,
+        locale
       };
     });
 

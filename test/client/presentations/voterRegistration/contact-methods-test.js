@@ -35,12 +35,13 @@ describe('ContactMethodsPage', function() {
         all: spy()
       };
       let onChange = spy();
-
+      let locale = 'en';
       props = {
         dateOfBirth,
         contactMethods,
         validations,
-        onChange
+        onChange,
+        locale
       };
     });
 

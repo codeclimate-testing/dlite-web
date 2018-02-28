@@ -7,7 +7,9 @@ import messages from '../../../../client/presentations/error-messages';
 
 describe('YouthDL page validation rules:', function() {
   it('will give error when nothing has been selected', function() {
-    let props = '';
+    let props = {
+      locale: 'en'
+    };
 
     assert.deepEqual(rules.youthIDInstead(props), [messages.selectionMissing]);
   });

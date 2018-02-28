@@ -18,6 +18,7 @@ import {
 
 
 const SummaryPage = (props) => {
+  let locale = props.ui.locale;
   return (
       <Page
         {...props}
@@ -30,7 +31,7 @@ const SummaryPage = (props) => {
           className ={hideMain(props)}
         >
           <Translate tag='h2'>
-            { translations.summaryPage.prompt}
+            { translations[locale].summaryPage.prompt}
           </Translate>
 
           <div className='translation-missing'>

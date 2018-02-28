@@ -7,8 +7,8 @@ import PageSummaryLink              from '../Page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
 
-const mapValToString = (val) => {
-  let translationAddress    = translations.intro.switchLanguagePage.values;
+const mapValToString = (val, locale) => {
+  let translationAddress    = translations[locale].intro.switchLanguagePage.values;
   switch(val) {
     case 'en':
     return translationAddress[0];
@@ -45,15 +45,15 @@ const mapValToString = (val) => {
 
 const BallotLanguage = (props) => {
   if (!ballotLanguageIsSelected(props.ballotLanguage)) { return null; }
-
+  let locale = props.locale;
   return (
     <PageSummaryLink
       to='/voting-registration/language'
       name='choosePoliticalParty'
     >
       <SummaryItem
-        title={translations.summaryPage.voterRegistration.ballotLanguage}
-        text={mapValToString(props.ballotLanguage)}
+        title={translations[locale].summaryPage.voterRegistration.ballotLanguage}
+        text={mapValToString(props.ballotLanguage, locale)}
       />
     </PageSummaryLink>
   )

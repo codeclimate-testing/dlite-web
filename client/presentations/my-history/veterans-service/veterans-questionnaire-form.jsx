@@ -7,17 +7,18 @@ import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const VeteransQuestionnaire = (props) => {
+  let locale = props.locale;
   return (
     <div className='veterans-questionnaire-form'>
-      {convertToHtml('h2', translations.myHistory.veteransPage.pagePrompt, 'question')}
-      {convertToHtml('p', translations.myHistory.veteransPage.explanationStart)}
+      {convertToHtml('h2', translations[locale].myHistory.veteransPage.pagePrompt, 'question')}
+      {convertToHtml('p', translations[locale].myHistory.veteransPage.explanationStart)}
       <div>
         <fieldset>
           <RadioCollection
             {...props}
             name='isVeteran'
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

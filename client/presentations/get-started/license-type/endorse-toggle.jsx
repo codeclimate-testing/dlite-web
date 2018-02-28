@@ -6,6 +6,7 @@ import radioYesNoGroup  from '../../radio-yes-no-group.jsx';
 import translations     from '../../../i18n';
 
 const FormControls = (props) => {
+  let locale = props.locale;
   return (
     <div className='endorsement-toggle'>
       <hr/>
@@ -19,7 +20,7 @@ const FormControls = (props) => {
             onBlur = { props.onBlurValidate }
             errorMessage={ props.validations.needEndorsement() }
           >
-            {radioYesNoGroup()}
+            {radioYesNoGroup(locale)}
           </RadioCollection>
         </fieldset>
       </div>

@@ -11,6 +11,7 @@ import { checkPreReg }          from '../../helpers/data/youth';
 import Translate                from '../../i18n/translate-tag.jsx';
 
 const ContactMethodsPage = (props) => {
+  let locale = props.locale;
   return (
      <Page
       {...props}
@@ -18,7 +19,7 @@ const ContactMethodsPage = (props) => {
 
       <form onSubmit={props.onSubmit} className='contact-methods-choice-form'>
         <Translate tag='h2' className='question'>
-         {translations.votingRegistration.contactInfoPage.pagePrompt}
+         {translations[locale].votingRegistration.contactInfoPage.pagePrompt}
         </Translate>
 
         <fieldset>
@@ -30,15 +31,15 @@ const ContactMethodsPage = (props) => {
           >
             <RadioSelector
               value='Yes'
-              text={translations.shared.commonAnswers.yes}
+              text={translations[locale].shared.commonAnswers.yes}
             />
             <RadioSelector
               value='No'
-              text={translations.shared.commonAnswers.no}
+              text={translations[locale].shared.commonAnswers.no}
             />
             <RadioSelector
               value='Skip'
-              text={translations.shared.commonAnswers.skip}
+              text={translations[locale].shared.commonAnswers.skip}
             />
           </RadioCollection>
         </fieldset>

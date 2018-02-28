@@ -11,6 +11,7 @@ import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
 
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -64,6 +65,7 @@ const Form = (props) => {
         <NavigationButtons
           onBack            = { props.onBack }
           errorMessage      = { props.validations.all() }
+          locale            = { locale }
         />
       </form>
     </Page>

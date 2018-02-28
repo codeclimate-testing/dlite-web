@@ -8,20 +8,21 @@ import { getCorrectString }   from '../../../helpers/data/card-type';
 import translations           from '../../../i18n';
 import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
 
-const headerTexts = {
-  DL: convertToHtml('h2', translations.intro.realIdPage.prompt.license, 'question'),
-  ID: convertToHtml('h2', translations.intro.realIdPage.prompt.id, 'question'),
-  both: convertToHtml('h2', translations.intro.realIdPage.prompt.card, 'question')
-};
-
 const ChooseRealID = (props) => {
+  let locale = props.locale;
+  const headerTexts = {
+    DL: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.license, 'question'),
+    ID: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.id, 'question'),
+    both: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.card, 'question')
+  };
+
   let headerText = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both);
 
   return (
     <div className='real-id-form'>
       {headerText}
 
-      {convertToHtml('p', translations.intro.realIdPage.explanation)}
+      {convertToHtml('p', translations[locale].intro.realIdPage.explanation)}
 
       <div className='row'>
         <fieldset>
@@ -30,7 +31,7 @@ const ChooseRealID = (props) => {
             name          = {`getRealID-${props.formName}`}
             errorMessage  = { props.validations.realID() }
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
 

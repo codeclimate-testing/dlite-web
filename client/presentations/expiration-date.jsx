@@ -5,11 +5,12 @@ import DateInput  from './date-input.jsx';
 import translations from '../i18n';
 
 const ExpirationDate = (props) => {
+  let locale = props.locale;
   return (
     <div id='expirationDate'>
       <DateInput
         {...props}
-        title       = { translations.shared.labels.expirationDate }
+        title       = { translations[locale].shared.labels.expirationDate }
         values      = { props.values }
         validations = { props.validations }
       />

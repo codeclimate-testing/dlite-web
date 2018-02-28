@@ -9,7 +9,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '6',
       heightInches: '6',
-      weight: '190'
+      weight: '190',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), []);
@@ -21,7 +22,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '-6',
       heightInches: '6',
-      weight: '190'
+      weight: '190',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), [messages.heightMissing]);
@@ -33,7 +35,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '13',
       heightInches: '6',
-      weight: '190'
+      weight: '190',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), [messages.heightMissing]);
@@ -45,7 +48,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '6',
       heightInches: '-6',
-      weight: '190'
+      weight: '190',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), []);
@@ -57,7 +61,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '6',
       heightInches: '16',
-      weight: '190'
+      weight: '190',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), []);
@@ -69,7 +74,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '6',
       heightInches: '6',
-      weight: '-2'
+      weight: '-2',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), []);
@@ -81,7 +87,8 @@ describe('height weight traits page validation rules:', function() {
     let props = {
       heightFeet: '6',
       heightInches: '6',
-      weight: '9000'
+      weight: '9000',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.heightFeet(props), []);

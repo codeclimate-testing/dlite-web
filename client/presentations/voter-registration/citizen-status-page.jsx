@@ -14,7 +14,8 @@ import { isPreregistering } from '../../helpers/calculate-age';
 import Translate            from '../../i18n/translate-tag.jsx';
 
 const declineStatement = (props) => {
-  let translation = translations.votingRegistration.shared;
+  let locale = props.locale;
+  let translation = translations[locale].votingRegistration.shared;
 
   if (isPreregistering(props.dateOfBirth)) {
     translation = translation.declineToAnswerInformationPreRegistration;
@@ -26,12 +27,12 @@ const declineStatement = (props) => {
 };
 
 const VoterIntro = (props) => {
-  return isPreregistering(props.dateOfBirth) ? <PreRegIntro /> : <RegIntro />;
+  return isPreregistering(props.dateOfBirth) ? <PreRegIntro {...props}/> : <RegIntro {...props}/>;
 };
 
 const CitizenStatusPage = (props) => {
   let showPreReg = isPreregistering(props.dateOfBirth);
-
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -43,7 +44,7 @@ const CitizenStatusPage = (props) => {
 
      <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
         <Translate tag='h2' className='question'>
-          { translations.votingRegistration.citizenshipPage.pagePrompt }
+          { translations[locale].votingRegistration.citizenshipPage.pagePrompt }
         </Translate>
 
         <Translate tag='p'>
@@ -57,24 +58,24 @@ const CitizenStatusPage = (props) => {
           >
           <RadioSelector
             value='Yes'
-            text={translations.shared.commonAnswers.yes}
+            text={translations[locale].shared.commonAnswers.yes}
           />
           <RadioSelector
             value='No'
-            text={translations.shared.commonAnswers.no}
+            text={translations[locale].shared.commonAnswers.no}
           />
           <RadioSelector
             value='decline'
-            text={translations.shared.commonAnswers.declineToAnswer}
+            text={translations[locale].shared.commonAnswers.declineToAnswer}
           />
           </RadioCollection>
         </fieldset>
 
         <Accordion
           id='what-if-not-citizen'
-          title={translations.votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen}
+          title={translations[locale].votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen}
         >
-          {translations.votingRegistration.citizenshipPage.faqAnswerWhatIfNotCitizen}
+          {translations[locale].votingRegistration.citizenshipPage.faqAnswerWhatIfNotCitizen}
         </Accordion>
 
         <NavigationButtons {...props} />

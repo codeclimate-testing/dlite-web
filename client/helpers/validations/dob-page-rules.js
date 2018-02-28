@@ -6,9 +6,10 @@ import { dateValidator }  from './date-validator';
 
 const checkInput = (name) => {
   return (props) => {
+    let locale = props.locale;
     let errors = selectionValidator('invalidOrMissingDate', name)(props);
     if (!dateValidator(name, props)) {
-      errors.push(translations.errorMessages.invalidOrMissingDate)
+      errors.push(translations[locale].errorMessages.invalidOrMissingDate)
     }
     return errors;
   }

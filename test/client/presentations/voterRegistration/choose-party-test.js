@@ -36,12 +36,13 @@ describe('ChoosePartyPage ', function() {
         otherParty: spy(),
         all: spy()
       };
-
+      let locale = 'en';
       props = {
         politicalPartyChoose,
         dateOfBirth,
         onChange,
-        validations
+        validations,
+        locale
       };
 
     });

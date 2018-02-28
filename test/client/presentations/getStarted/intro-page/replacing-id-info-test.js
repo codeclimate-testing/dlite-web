@@ -15,7 +15,7 @@ import translations             from '../../../../../client/i18n';
 describe('ReplacingIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
 
     let cardChanges = {
@@ -36,7 +36,6 @@ describe('ReplacingIDInfo', function() {
       form: ''
     };
     let seniorID = '';
-
 
     let onChange = spy();
 
@@ -61,7 +60,8 @@ describe('ReplacingIDInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange
+      onChange,
+      locale
     }
   });
 
@@ -99,7 +99,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.replacingID), true);
+      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingID), true);
     });
 
     it('shows that user is getting a reduced fee ID on get started page', function() {
@@ -110,7 +110,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID), true);
+      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID), true);
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
@@ -121,7 +121,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.replacingSeniorID), true);
+      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingSeniorID), true);
     });
 
     it('shows that user getting no fee ID on get started page', function() {

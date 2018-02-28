@@ -10,14 +10,15 @@ import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        {convertToHtml('h2', translations.intro.seniorIdPage.prompt, 'question')}
-        {convertToHtml('p', translations.intro.seniorIdPage.explanation)}
+        {convertToHtml('h2', translations[locale].intro.seniorIdPage.prompt, 'question')}
+        {convertToHtml('p', translations[locale].intro.seniorIdPage.explanation)}
 
         <hr />
 
@@ -29,7 +30,7 @@ const Form = (props) => {
               onBlur = { props.onBlurValidate }
               errorMessage = {props.validations.seniorID() }
             >
-              { radioYesNoGroup() }
+              { radioYesNoGroup(locale) }
             </RadioCollection>
           </fieldset>
         </div>

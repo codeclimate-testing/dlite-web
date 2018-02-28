@@ -14,12 +14,13 @@ import {
 import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
-const newString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.new, 'question');
-const renewString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.renew, 'question');
-const replaceString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.replace, 'question');
-const changeString = convertToHtml('h2', translations.intro.chooseSelectionPage.prompt.correctOrUpdate, 'question');
-
 const Form = (props) => {
+  let locale = props.locale;
+  const newString = convertToHtml('h2', translations[locale].intro.chooseSelectionPage.prompt.new, 'question');
+  const renewString = convertToHtml('h2', translations[locale].intro.chooseSelectionPage.prompt.renew, 'question');
+  const replaceString = convertToHtml('h2', translations[locale].intro.chooseSelectionPage.prompt.replace, 'question');
+  const changeString = convertToHtml('h2', translations[locale].intro.chooseSelectionPage.prompt.correctOrUpdate, 'question');
+
 
   let questionText = getStringByAction(props, newString, renewString, replaceString, changeString);
 

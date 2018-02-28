@@ -3,7 +3,7 @@
 import React            from 'react';
 import { Link }         from 'react-router-dom';
 
-import HomeLink         from '../../presentations/home-link.jsx';
+import Page             from '../page.jsx';
 import { iddlPath }     from '../../helpers/alice-path';
 
 const AppointmentPreparation = (props) => {
@@ -11,9 +11,9 @@ const AppointmentPreparation = (props) => {
   const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
 
   return (
-    <div>
-      <HomeLink />
-
+    <Page
+      {...props}
+    >
       <div className='appointment-preparation'>
         <h2 className='question'>Your form has been submitted!</h2>
         <p>You will need to go to your local DMV office to complete your application.</p>
@@ -53,7 +53,7 @@ const AppointmentPreparation = (props) => {
         </div>
 
       </div>
-    </div>
+    </Page>
   );
 };
 

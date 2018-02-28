@@ -9,11 +9,11 @@ import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
 
 const PoliticalPartyPreference = (props) => {
   if(props.politicalPartyChoose.isSelected !== 'Yes') { return null; }
-
+  let locale = props.locale;
   return (
     <div className='political-party-preference'>
       <hr/>
-      {convertToHtml('h2', translations.votingRegistration.choosePartyPage.choosePrompt, 'question')}
+      {convertToHtml('h2', translations[locale].votingRegistration.choosePartyPage.choosePrompt, 'question')}
 
       <fieldset>
         <RadioCollection
@@ -22,27 +22,27 @@ const PoliticalPartyPreference = (props) => {
         >
           <RadioSelector
             value='American Independent Party'
-            text={translations.votingRegistration.choosePartyPage.answerAmericanIndependent}
+            text={translations[locale].votingRegistration.choosePartyPage.answerAmericanIndependent}
           />
           <RadioSelector
             value='Democratic Party'
-            text={translations.votingRegistration.choosePartyPage.answerDemocraticParty}
+            text={translations[locale].votingRegistration.choosePartyPage.answerDemocraticParty}
           />
           <RadioSelector
             value='Green Party'
-            text={translations.votingRegistration.choosePartyPage.answerGreenParty}
+            text={translations[locale].votingRegistration.choosePartyPage.answerGreenParty}
           />
           <RadioSelector
             value='Libertarian Party'
-            text={translations.votingRegistration.choosePartyPage.answerLibertarianParty}
+            text={translations[locale].votingRegistration.choosePartyPage.answerLibertarianParty}
           />
           <RadioSelector
             value='Peace and Freedom Party'
-            text={translations.votingRegistration.choosePartyPage.answerPeaceAndFreedomParty}
+            text={translations[locale].votingRegistration.choosePartyPage.answerPeaceAndFreedomParty}
           />
           <RadioSelector
             value='Republican Party'
-            text={translations.votingRegistration.choosePartyPage.answerRepublicanParty}
+            text={translations[locale].votingRegistration.choosePartyPage.answerRepublicanParty}
           />
           <OtherParty
             {...props}

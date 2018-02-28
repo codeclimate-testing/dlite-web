@@ -10,7 +10,7 @@ const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
   return (
-    <Presentation 
+    <Presentation
     {...props}
     onBack = {onBack} />
   );
@@ -18,6 +18,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    locale: state.ui.locale
   };
 };
 

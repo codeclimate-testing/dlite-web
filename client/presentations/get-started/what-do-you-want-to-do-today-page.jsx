@@ -14,30 +14,32 @@ import {
   onIDFlow
 }  from '../../helpers/data/pathnames';
 
-const tempObjectThatNeedsTranslations = {
-  explanation: '',
-  values: [
-    "Get a driver license for the first time",
-    "Renew your driver license",
-    "Correct or update your driver license",
-    "Replace your driver license"
-  ]
-};
-
-const anotherTempObjectThatNeedsTranslation = {
-  explanation: '',
-  values: [
-    'Get an ID card for the first time',
-    'Renew your ID card',
-    'Correct or update your ID card',
-    'Replace your ID card'
-  ]
-};
-
 const Form = (props) => {
+  let locale = props.locale;
+
+  const tempObjectThatNeedsTranslations = {
+    explanation: '',
+    values: [
+      "Get a driver license for the first time",
+      "Renew your driver license",
+      "Correct or update your driver license",
+      "Replace your driver license"
+    ]
+  };
+
+  const anotherTempObjectThatNeedsTranslation = {
+    explanation: '',
+    values: [
+      'Get an ID card for the first time',
+      'Renew your ID card',
+      'Correct or update your ID card',
+      'Replace your ID card'
+    ]
+  };
+
   let text = getTextFromPathname(
     props,
-    translations.intro.wdywtdtPage,
+    translations[locale].intro.wdywtdtPage,
     tempObjectThatNeedsTranslations,
     anotherTempObjectThatNeedsTranslation
   );
@@ -53,7 +55,7 @@ const Form = (props) => {
     >
       <div className='choose-card-action'>
         <Translate tag='h2' className='question'>
-          { translations.intro.wdywtdtPage.prompt }
+          { translations[locale].intro.wdywtdtPage.prompt }
         </Translate>
 
         <Translate tag='p'>

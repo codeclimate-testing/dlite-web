@@ -7,17 +7,20 @@ import Accordion            from '../../../containers/accordion.jsx';
 
 
 const MyBasics = (application) => {
+  let locale = application.locale;
   return (
     <Accordion id='basics-summary' title='My basics'>
       <LegalName
         legalName         = {application.basics.legalName}
         editKey           = 'cdlLegalName'
         summary           = 'cdlSummary'
+        locale            = {locale}
       />
       <DateOfBirth
         dateOfBirth       = {application.basics.dateOfBirth}
         editKey           = 'cdlDateOfBirth'
         summary           = 'cdlSummary'
+        locale            = {locale}
       />
     </Accordion>
   )

@@ -10,7 +10,7 @@ import {
 
 const Form = (props) => {
   let formName = getCorrectString(props, 'DL', 'ID');
-
+  let locale = props.locale;
   return (
     <div className='row inner-buttom'>
       <fieldset>
@@ -22,15 +22,15 @@ const Form = (props) => {
         >
           <RadioSelector
             value='lostOrStolen'
-            text={translations.intro.replacementReasonPage.values[0]}
+            text={translations[locale].intro.replacementReasonPage.values[0]}
           />
           <RadioSelector
             value='damaged'
-            text={translations.intro.replacementReasonPage.values[1]}
+            text={translations[locale].intro.replacementReasonPage.values[1]}
           />
           <RadioSelector
             value='other'
-            text={translations.intro.replacementReasonPage.values[2]}
+            text={translations[locale].intro.replacementReasonPage.values[2]}
           />
         </RadioCollection>
       </fieldset>

@@ -7,12 +7,12 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if(props.isSameAsHome !== 'No') { return null; }
-
+  let locale = props.locale;
   return (
     <div className='mailing-address-form'>
       <hr />
-        {convertToHtml('h2', translations.myBasics.addressesPage.mailingAddressPrompt, 'question')}
-        {convertToHtml('p', translations.myBasics.addressesPage.explanation)}
+        {convertToHtml('h2', translations[locale].myBasics.addressesPage.mailingAddressPrompt, 'question')}
+        {convertToHtml('p', translations[locale].myBasics.addressesPage.explanation)}
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate

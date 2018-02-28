@@ -6,50 +6,55 @@ import translations     from '../../../i18n';
 
 export const New = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return(
     <SummaryItem
       title='I am'
-      text={translations.summaryPage.whatImDoing.applying}
+      text={translations[locale].summaryPage.whatImDoing.applying}
     />
   )
 };
 
 export const Renew = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return(
     <SummaryItem
       title='I am'
-      text={translations.summaryPage.whatImDoing.renewing}
+      text={translations[locale].summaryPage.whatImDoing.renewing}
     />
   )
 };
 
 export const Replace = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return(
     <SummaryItem
       title='I am'
-      text={translations.summaryPage.whatImDoing.replacing}
+      text={translations[locale].summaryPage.whatImDoing.replacing}
     />
   )
 };
 
 export const Correct = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return(
     <SummaryItem
       title='I am'
-      text={translations.summaryPage.whatImDoing.correcting}
+      text={translations[locale].summaryPage.whatImDoing.correcting}
     />
   )
 };
 
 export const Update = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return(
     <SummaryItem
       title='I am'
-      text={translations.summaryPage.whatImDoing.updating}
+      text={translations[locale].summaryPage.whatImDoing.updating}
     />
   )
 };

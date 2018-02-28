@@ -9,6 +9,7 @@ import validations          from './validations';
 import hover                from './hover';
 import addApp               from './add-app';
 import chooseApp            from './choose-app';
+import locale               from './locale';
 
 const rootReducer = combineReducers({
   focus,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   validations,
   hover,
   addApp,
-  chooseApp
+  chooseApp,
+  locale
 });
 
 export default rootReducer;

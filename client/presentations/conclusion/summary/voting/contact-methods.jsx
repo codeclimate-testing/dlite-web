@@ -19,60 +19,65 @@ const title = <div className='translation-missing'>Should Contact</div>;
 
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
+  let locale = props.locale;
   const phone = `(${props.contactMethods.phoneNumber1}) ${props.contactMethods.phoneNumber2}-${props.contactMethods.phoneNumber3}`;
   return (<SummaryItem
-    title={translations.summaryPage.voterRegistration.phone}
+    title={translations[locale].summaryPage.voterRegistration.phone}
     text={phone}
 	        />);
 };
 
 const EmailAddress = (props) => {
   if (!shouldContact(props)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
-    title={translations.summaryPage.voterRegistration.email}
+    title={translations[locale].summaryPage.voterRegistration.email}
     text={props.contactMethods.emailAddress}
 	        />)
 };
 
 const Yes = (props) => {
   if (!shouldContact(props)) { return null; }
+  let locale = props.locale;
   return  (
     <SummaryItem
       title= {title}
-      text={translations.shared.commonAnswers.yes}
+      text={translations[locale].shared.commonAnswers.yes}
     />
   )
 };
 
 const No = (props) => {
   if (shouldContact(props) || declineToAnswer(props.contactMethods.shouldContact)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
       title={title}
-      text={translations.shared.commonAnswers.no}
+      text={translations[locale].shared.commonAnswers.no}
     />)
 };
 
 const Decline = (props) => {
   if (!declineToAnswer(props.contactMethods.shouldContact)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
       title={title}
-      text={translations.shared.commonAnswers.declineToAnswer}
+      text={translations[locale].shared.commonAnswers.declineToAnswer}
     />)
 };
 
 const ContactMethods = (props) => {
   if (shouldContactNotSelected(props)) { return null; }
-  
+
   return (
     <PageSummaryLink
       to='/voting-registration/contact-methods'
       name='contactMethods'
     >
-      <Yes contactMethods = {props.contactMethods} />
-      <No contactMethods = {props.contactMethods} />
-      <Decline contactMethods = {props.contactMethods} />
-      <EmailAddress contactMethods = {props.contactMethods} />
-      <PhoneNumber {...props} />
+      <Yes          {...props} />
+      <No           {...props} />
+      <Decline      {...props} />
+      <EmailAddress {...props} />
+      <PhoneNumber  {...props} />
     </PageSummaryLink>
   )
 };

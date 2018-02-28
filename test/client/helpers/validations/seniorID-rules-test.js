@@ -7,7 +7,9 @@ import messages from '../../../../client/presentations/error-messages';
 
 describe('SeniorID page validation rules:', function() {
   it('will give error when nothing has been selected', function() {
-    let props = '';
+    let props = {
+      locale: 'en'
+    };
 
     assert.deepEqual(rules.seniorID(props), [messages.selectionMissing]);
   });

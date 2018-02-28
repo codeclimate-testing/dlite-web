@@ -6,20 +6,21 @@ import Translate         from '../../../i18n/translate-tag.jsx';
 import StopCitizensOnly  from './stop-citizens-only.jsx';
 
 const VoterIntro = (props) => {
+  let locale = props.locale;
   return (
     <div className='voter-intro-info'>
-      <StopCitizensOnly />
+      <StopCitizensOnly {...props}/>
 
       <Translate tag='h2'>
-        { translations.votingRegistration.introductionPage.pagePrompt }
+        { translations[locale].votingRegistration.introductionPage.pagePrompt }
       </Translate>
 
       <Translate tag='p'>
-        { translations.votingRegistration.introductionPage.explanation }
+        { translations[locale].votingRegistration.introductionPage.explanation }
       </Translate>
 
       <Translate tag='p'>
-        { translations.votingRegistration.introductionPage.timeItWillTake }
+        { translations[locale].votingRegistration.introductionPage.timeItWillTake }
       </Translate>
     </div>
   );

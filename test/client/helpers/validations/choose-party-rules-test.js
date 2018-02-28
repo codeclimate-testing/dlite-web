@@ -7,7 +7,8 @@ import messages   from '../../../../client/presentations/error-messages';
 describe('choose party rules:', function() {
   it('will give the choosePoliticalPartyNowSelectionMissing message when nothing is selected', function() {
     let props = {
-      isSelected: ''
+      isSelected: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rule.isSelected(props), [messages.choosePoliticalPartyNowSelectionMissing]);
@@ -16,7 +17,8 @@ describe('choose party rules:', function() {
   it('will give the politicalPartySelectionMissing message when no political party is chosen', function() {
     let props = {
       isSelected: 'Yes',
-      politicalPartyChoose: ''
+      politicalPartyChoose: '',
+      locale: 'en'
     };
     assert.deepEqual(rule.politicalPartyChoose(props), [messages.politicalPartySelectionMissing]);
   });
@@ -25,7 +27,8 @@ describe('choose party rules:', function() {
     let props = {
       isSelected: 'Yes',
       politicalPartyChoose: 'Other',
-      otherParty: 'Unia Europejskich Demokratów'
+      otherParty: 'Unia Europejskich Demokratów',
+      locale: 'en'
     };
     assert.deepEqual(rule.otherParty(props), [messages.inputIncludesNonEnglishCharacters]);
   });

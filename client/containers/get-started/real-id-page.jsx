@@ -23,13 +23,14 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    realID :    state.application.realID,
-    cardType:   state.application.cardType,
-    IDApp:      state.application.IDApp,
-    DLApp:      state.application.DLApp,
-    seniorID:   state.application.IDApp.seniorID,
-    focused:    state.ui.focus,
-    validations:state.ui.validations
+    realID :      state.application.realID,
+    cardType:     state.application.cardType,
+    IDApp:        state.application.IDApp,
+    DLApp:        state.application.DLApp,
+    seniorID:     state.application.IDApp.seniorID,
+    focused:      state.ui.focus,
+    validations:  state.ui.validations,
+    locale:       state.ui.locale
   };
 };
 

@@ -8,7 +8,8 @@ import handlers                       from '../../helpers/handlers';
 import { ChoosePartyValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations         = new ChoosePartyValidator(props.politicalPartyChoose, props.validations);
+  let locale              = props.locale;
+  let validations         = new ChoosePartyValidator(Object.assign(props.politicalPartyChoose, {locale}), props.validations);
   let onSubmit            = handlers.navigateOrShowErrors('choosePoliticalParty', props, validations);
   let onBack              = handlers.navigateOnBack(props, validations);
 
@@ -28,7 +29,8 @@ const mapStateToProps = (state) => {
     optOut              : state.application.voting.optOut,
     dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
-    validations         : state.ui.validations
+    validations         : state.ui.validations,
+    locale              : state.ui.locale
   };
 };
 

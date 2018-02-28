@@ -7,6 +7,7 @@ import translations             from '../../i18n';
 import Translate                from '../../i18n/translate-tag.jsx';
 
 const VotingConfirmationPage = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -15,10 +16,10 @@ const VotingConfirmationPage = (props) => {
       <form onSubmit  = { props.onSubmit } >
         <div className='voter-reg-complete'>
           <Translate tag='h2'>
-            {translations.votingRegistration.confirmation.pagePrompt}
+            {translations[locale].votingRegistration.confirmation.pagePrompt}
           </Translate>
           <Translate tag='p'>
-            {translations.votingRegistration.confirmation.explanation}
+            {translations[locale].votingRegistration.confirmation.explanation}
           </Translate>
         </div>
         <NavigationButtons {...props} />

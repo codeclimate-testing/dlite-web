@@ -20,17 +20,17 @@ import {
 
 const IDAction = (props) => {
   if(!IDAppExists(props)) { return null; }
-
+  let locale = props.locale;
   return (
     <PageSummaryLink
       name    = 'addIDWdywtdt'
       summary = {props.summary}
     >
-      <New        showIf = {getNewID(props)}/>
-      <Renew      showIf = {renewID(props)}/>
-      <Replace    showIf = {replaceID(props)}/>
-      <Correct    showIf = {correctID(props)}/>
-      <Update     showIf = {updateID(props)}/>
+      <New        showIf = {getNewID(props)}    locale = {locale}/>
+      <Renew      showIf = {renewID(props)}     locale = {locale}/>
+      <Replace    showIf = {replaceID(props)}   locale = {locale}/>
+      <Correct    showIf = {correctID(props)}   locale = {locale}/>
+      <Update     showIf = {updateID(props)}    locale = {locale}/>
 
     </PageSummaryLink>
   )

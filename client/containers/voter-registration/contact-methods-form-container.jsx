@@ -8,7 +8,8 @@ import Presentation             from '../../presentations/voter-registration/con
 import { ContactValidator }     from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations    = new ContactValidator(props.contactMethods, props.validations);
+  let locale         = props.locale;
+  let validations    = new ContactValidator(Object.assign(props.contactMethods, {locale}), props.validations);
   let onSubmit       = handlers.navigateOrShowErrors('contactMethods', props, validations);
   let onBack         = handlers.navigateOnBack(props, validations);
 
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => {
     contactMethods  : state.application.voting.contactMethods,
     dateOfBirth     : state.application.basics.dateOfBirth,
     focused         : state.ui.focus,
-    validations     : state.ui.validations
+    validations     : state.ui.validations,
+    locale          : state.ui.locale
   };
 };
 

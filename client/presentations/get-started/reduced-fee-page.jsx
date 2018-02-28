@@ -15,30 +15,32 @@ import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
 
 const DLText = (props) => {
   if (!hasMultipleCards(props)) { return null; }
-
+  let locale = props.locale;
   return (
-    convertToHtml('p', translations.intro.reducedFeePage.licenseExplanation)
+    convertToHtml('p', translations[locale].intro.reducedFeePage.licenseExplanation)
   );
 };
 
 const ReducedFeeFormInfo = (props) => {
+  let locale = props.locale;
   return (
     <div className='reduced-fee-form-info'>
       <MessageBox className='info'>
-        {convertToHtml('p', translations.intro.reducedFeePage.rightFormsSection.explanation)}
+        {convertToHtml('p', translations[locale].intro.reducedFeePage.rightFormsSection.explanation)}
       </MessageBox>
 
       <Accordion
         id='reduced-fee-form-info'
-        title={translations.intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.title}
+        title={translations[locale].intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.title}
       >
-        {convertToHtml('p', translations.intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.body)}
+        {convertToHtml('p', translations[locale].intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.body)}
       </Accordion>
     </div>
   );
 };
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -46,7 +48,7 @@ const Form = (props) => {
     >
       <div className='reduced-fee-form'>
         <form onSubmit={ props.onSubmit } >
-          {convertToHtml('h2', translations.intro.reducedFeePage.prompt, 'question')}
+          {convertToHtml('h2', translations[locale].intro.reducedFeePage.prompt, 'question')}
 
           <DLText {...props} />
 
@@ -58,7 +60,7 @@ const Form = (props) => {
                 selectedValue = { props.reducedFee.ID }
                 errorMessage  = { props.validations.reducedFee() }
               >
-                { radioYesNoGroup() }
+                { radioYesNoGroup(locale) }
               </RadioCollection>
             </fieldset>
           </div>

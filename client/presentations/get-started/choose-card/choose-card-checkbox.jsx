@@ -9,10 +9,10 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
-
+  let locale = props.locale;
   return (
     <div className='row choose-new-cards'>
-      {convertToHtml('p', translations.intro.chooseSelectionPage.explanationMultiCard)}
+      {convertToHtml('p', translations[locale].intro.chooseSelectionPage.explanationMultiCard)}
       <div className='row'>
         <fieldset>
           <CheckboxCollection
@@ -24,11 +24,11 @@ const Form = (props) => {
           >
           <CheckboxSelector
             value     = 'ID'
-            text={translations.intro.chooseSelectionPage.values[0]}
+            text={translations[locale].intro.chooseSelectionPage.values[0]}
           />
           <CheckboxSelector
             value     = 'DL'
-            text={translations.intro.chooseSelectionPage.values[1]}
+            text={translations[locale].intro.chooseSelectionPage.values[1]}
           />
           </CheckboxCollection>
         </fieldset>

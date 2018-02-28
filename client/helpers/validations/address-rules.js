@@ -1,85 +1,89 @@
 'use strict';
 
-import translations       from '../../i18n';
-import { hasValue }       from '../data/validations';
-import { hasOnlyNumbers } from '../data/validations';
-import {
-  englishValidatorGenerator,
-  englishValidator
-} from './english-validator';
-
-const errorMessages = translations.errorMessages;
+import translations         from '../../i18n';
+import { hasValue }         from '../data/validations';
+import { hasOnlyNumbers }   from '../data/validations';
+import { englishValidator } from './english-validator';
 
 const homeAddressSameAsMailing = (props) => {
-  let value = props.homeAddressSameAsMailing;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.homeAddressSameAsMailing;
+  let errors  = englishValidator(value, locale);
   if (!hasValue(value)) {
-    errors.push(errorMessages.mailingAddressMissing);
+    errors.push(translations[locale].errorMessages.mailingAddressMissing);
   }
   return errors;
 };
 
 const homeStreet_1 = (props) => {
-  let value = props.home.street_1;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.home.street_1;
+  let errors  = englishValidator(value, locale);
 
   if (!hasValue(value)) {
-    errors.push(errorMessages.streetAddressMissing);
+    errors.push(translations[locale].errorMessages.streetAddressMissing);
   }
   return errors;
 };
 
 const homeStreet_2 = (props) => {
-  let value = props.home.street_2;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.home.street_2;
+  let errors  = englishValidator(value, locale);
   return errors;
 };
 
 const homeCity = (props) => {
-  let value = props.home.city;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.home.city;
+  let errors  = englishValidator(value, locale);
 
   if (!hasValue(value)) {
-    errors.push(errorMessages.cityMissing);
+    errors.push(translations[locale].errorMessages.cityMissing);
   }
   return errors;
 };
 
 const homeZip = (props) => {
-  let value = props.home.zip;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.home.zip;
+  let errors  = englishValidator(value, locale);
   return errors;
 };
 
 const mailingStreet_1 = (props) => {
-  let value = props.mailing.street_1;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.mailing.street_1;
+  let errors  = englishValidator(value, locale);
 
   if (!hasValue(value)) {
-    errors.push(errorMessages.streetAddressMissing);
+    errors.push(translations[locale].errorMessages.streetAddressMissing);
   }
   return errors;
 };
 
 const mailingStreet_2 = (props) => {
-  let value = props.mailing.street_2;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.mailing.street_2;
+  let errors  = englishValidator(value, locale);
   return errors;
 };
 
 const mailingCity = (props) => {
-  let value = props.mailing.city;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.mailing.city;
+  let errors  = englishValidator(value, locale);
 
   if (!hasValue(value)) {
-    errors.push(errorMessages.cityMissing);
+    errors.push(translations[locale].errorMessages.cityMissing);
   }
   return errors;
 };
 
 const mailingZip = (props) => {
-  let value = props.mailing.zip;
-  let errors = englishValidator(value);
+  let locale  = props.locale;
+  let value   = props.mailing.zip;
+  let errors  = englishValidator(value, locale);
   return errors;
 };
 

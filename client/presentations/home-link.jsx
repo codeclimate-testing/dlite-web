@@ -7,7 +7,9 @@ import { alicePath } from '../helpers/alice-path';
 
 const HomeLink = () => {
   if(APP_ENV === 'development') {
-    return <Link className='sections' to={ alicePath('/links') } tabIndex='-1' >All Pages</Link>;
+    return (
+      <Link className='sections' to={ alicePath('/links') } tabIndex='-1' >All Pages</Link>
+    )
   }
   return null;
 };

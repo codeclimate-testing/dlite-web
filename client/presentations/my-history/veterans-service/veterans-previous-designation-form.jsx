@@ -7,10 +7,11 @@ import { getDL }          from '../../../helpers/data/card-type';
 import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const headerDL = convertToHtml('h2', translations.myHistory.veteransPage.existingDesignation.promptLicense, 'question');
-const headerID = convertToHtml('h2', translations.myHistory.veteransPage.existingDesignation.promptID, 'question');
-
 const VeteransPreviousDesignation = (props) => {
+  let locale = props.locale;
+  const headerDL = convertToHtml('h2', translations[locale].myHistory.veteransPage.existingDesignation.promptLicense, 'question');
+  const headerID = convertToHtml('h2', translations[locale].myHistory.veteransPage.existingDesignation.promptID, 'question');
+
   if (!props.showIf) { return null; }
 
   const headerText = getDL(props) ? headerDL : headerID;
@@ -24,7 +25,7 @@ const VeteransPreviousDesignation = (props) => {
             {...props}
             name='previouslyDesignated'
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

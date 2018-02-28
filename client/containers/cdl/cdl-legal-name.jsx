@@ -8,7 +8,8 @@ import Presentation             from '../../presentations/get-started/name-page.
 import { updateCdlLegalName }   from '../../actions/index';
 
 const Page = (props) => {
-  let validations       = new NamePageValidator(props.legalName, props.validations);
+  let locale = props.locale;
+  let validations       = new NamePageValidator(Object.assign(props.legalName, {locale}), props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlLegalName', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -27,7 +28,8 @@ function mapStateToProps(state) {
     legalName:    state.cdl.basics.legalName,
     validations:  state.ui.validations,
     focused:      state.ui.focus,
-    hover:        state.ui.hover
+    hover:        state.ui.hover,
+    locale:       state.ui.locale
   };
 };
 

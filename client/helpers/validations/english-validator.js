@@ -7,12 +7,12 @@ export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
 
-export const englishValidator = (value) => {
+export const englishValidator = (value, locale) => {
   let errors = [];
 
   if (!hasOnlyEnglishChars(value)) {
     errors = [
-      translations.errorMessages.dataIncludesNonEnglishCharacters
+      translations[locale].errorMessages.dataIncludesNonEnglishCharacters
     ];
   }
 
@@ -21,7 +21,8 @@ export const englishValidator = (value) => {
 
 export const englishValidatorGenerator = (name) => {
   return (props) => {
+    let locale = props.locale;
     let value = props[name] || [];
-    return englishValidator(value);
+    return englishValidator(value, locale);
   };
 };

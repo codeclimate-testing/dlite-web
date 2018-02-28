@@ -9,7 +9,8 @@ describe('Names history page validation rules:', function() {
   it('when there are no data issues, it has no errors', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: 'Lorna'
+      previousNames: 'Lorna',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);
@@ -18,7 +19,8 @@ describe('Names history page validation rules:', function() {
 
   it('when no selection has been made, nameHistorySelectionMissing error appears', function() {
     let props = {
-      hasUsedPreviousNames: ''
+      hasUsedPreviousNames: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), [messages.nameHistorySelectionMissing]);
@@ -27,7 +29,8 @@ describe('Names history page validation rules:', function() {
   it('when no previous name has been entered, the nameHistorySelectionMissing error shows', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: ''
+      previousNames: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);
@@ -37,7 +40,8 @@ describe('Names history page validation rules:', function() {
   it('when non-English characters are used, the inputIncludesNonEnglishCharacters error shows', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: 'François'
+      previousNames: 'François',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);

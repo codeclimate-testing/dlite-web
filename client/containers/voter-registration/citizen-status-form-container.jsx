@@ -30,7 +30,8 @@ const mapStateToProps = (state) => {
     citizenStatus       : state.application.voting.citizenStatus,
     cardAction          : state.application.cardAction,
     dateOfBirth         : state.application.basics.dateOfBirth,
-    focused             : state.ui.focus
+    focused             : state.ui.focus,
+    locale              : state.ui.locale
   };
 };
 

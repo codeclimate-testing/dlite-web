@@ -13,17 +13,17 @@ import {
 const CdlAction = (application) => {
   let cardAction = application.basics.cardAction;
   if(!cardAction) { return null; }
-
+  let locale = application.locale;
   return (
     <PageSummaryLink
       name    = 'cdlWdywtdt'
       summary = {application.summary}
     >
-      <New        showIf = {cardAction === 'new'}/>
-      <Renew      showIf = {cardAction === 'renew'}/>
-      <Replace    showIf = {cardAction === 'replace'}/>
-      <Correct    showIf = {cardAction === 'correct'}/>
-      <Update     showIf = {cardAction === 'update'}/>
+      <New        showIf = {cardAction === 'new'}       locale={locale}/>
+      <Renew      showIf = {cardAction === 'renew'}     locale={locale}/>
+      <Replace    showIf = {cardAction === 'replace'}   locale={locale}/>
+      <Correct    showIf = {cardAction === 'correct'}   locale={locale}/>
+      <Update     showIf = {cardAction === 'update'}    locale={locale}/>
     </PageSummaryLink>
   )
 };

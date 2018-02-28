@@ -8,17 +8,16 @@ import {
 } from '../../../../helpers/data/card-type'
 
 const IDApplicationNotStarted = (props) => {
+  let locale = props.locale;
   document.title = 'Summary of my application';
   if(IDAppExists(props)) { return null; }
-
   return (
     <AddAppLink
       to = '/id-card'
     >
-      <p>{translations.summaryPage.whatImDoing.nothing}</p>
+      <p>{translations[locale].summaryPage.whatImDoing.nothing}</p>
     </AddAppLink>
   );
 };
 
 export default IDApplicationNotStarted;
-

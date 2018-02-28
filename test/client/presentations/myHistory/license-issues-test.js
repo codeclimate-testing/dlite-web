@@ -34,11 +34,12 @@ describe('LicenseIssuesPage', function() {
       };
 
       let onChange = spy();
-
+      let locale = 'en';
       props = {
         licenseIssues,
         validations,
-        onChange
+        onChange,
+        locale
       }
     });
 
@@ -53,7 +54,7 @@ describe('LicenseIssuesPage', function() {
       assert.ok(component.find('.license-issues-form').length, 'form missing');
     });
 
-    it('does not show reason why form when no answer is selected', function() { 
+    it('does not show reason why form when no answer is selected', function() {
       let component = render(
         <Wrapper>
           <LicenseIssuesPage {...props} />

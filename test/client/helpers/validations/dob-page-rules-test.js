@@ -10,7 +10,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -22,7 +23,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: (new Date().getFullYear() + 2).toString()
+      year: (new Date().getFullYear() + 2).toString(),
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -34,7 +36,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: (new Date().getFullYear() - 135).toString()
+      year: (new Date().getFullYear() - 135).toString(),
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -46,7 +49,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '29',
-      year: '88'
+      year: '88',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -58,7 +62,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '14',
       day: '29',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), [messages.invalidOrMissingDate]);
@@ -70,7 +75,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '09',
       day: '31',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -82,7 +88,8 @@ describe('DOB page validation rules:', function() {
     let props = {
       month: '-9',
       day: '29',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), [messages.invalidOrMissingDate]);

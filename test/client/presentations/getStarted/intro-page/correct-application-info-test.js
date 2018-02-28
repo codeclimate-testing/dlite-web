@@ -15,7 +15,7 @@ import translations             from '../../../../../client/i18n';
 describe('CorrectApplicationInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,7 +60,8 @@ describe('CorrectApplicationInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange
+      onChange,
+      locale
     }
   });
 
@@ -91,7 +92,7 @@ describe('CorrectApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.explanation.correct.id), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.correct.id), true);
     });
   });
 
@@ -108,7 +109,7 @@ describe('CorrectApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.explanation.correct.license), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.correct.license), true);
     });
   });
 });

@@ -13,11 +13,11 @@ const EligibilityRequirements = (props) => {
       {...props}
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
-      <IntroContent dateOfBirth={props.dateOfBirth} />
+      <IntroContent {...props} dateOfBirth={props.dateOfBirth} />
 
       <form onSubmit={props.onSubmit} className='eligibility-requirements-form'>
         <Selectors {...props} />
-        <FAQ dateOfBirth={props.dateOfBirth} />
+        <FAQ {...props} dateOfBirth={props.dateOfBirth} />
         <NavigationButtons {...props} />
       </form>
     </Page>

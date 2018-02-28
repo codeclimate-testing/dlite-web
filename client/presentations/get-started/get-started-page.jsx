@@ -19,8 +19,9 @@ import CorrectApplicationInfo from './intro-page/correct-application-info.jsx';
 import ReplaceApplicationInfo from './intro-page/replace-application-info.jsx';
 import Translate              from '../../i18n/translate-tag.jsx';
 
-const ListItems = () => {
-  return translations.intro.getStartedPage.listItems.map((text, i) => {
+const ListItems = (props) => {
+  let locale = props.locale;
+  return translations[locale].intro.getStartedPage.listItems.map((text, i) => {
     return (
       <Translate tag='li' key={i} keyProp={i}>
         {text}
@@ -31,12 +32,12 @@ const ListItems = () => {
 
 const Intro = (props) => {
   const linkAddress = '/my-basics/address';
-
+  let locale = props.locale;
   return (
     <Page {...props} >
       <div className='intro-info'>
         <Translate tag='h2'>
-          {translations.intro.getStartedPage.title}
+          {translations[locale].intro.getStartedPage.title}
         </Translate>
 
         <DLInfo {...props} />
@@ -55,25 +56,26 @@ const Intro = (props) => {
         <hr/>
 
         <Translate tag='p'>
-          {translations.intro.getStartedPage.listHeader}
+          {translations[locale].intro.getStartedPage.listHeader}
         </Translate>
 
         <ol className='decimal-list'>
-          <ListItems />
+          <ListItems {...props}/>
         </ol>
 
         <Translate tag='p'>
-          {translations.intro.getStartedPage.timeToComplete}
+          {translations[locale].intro.getStartedPage.timeToComplete}
         </Translate>
 
         <Translate tag='p'>
-          {translations.intro.getStartedPage.afterComplete}
+          {translations[locale].intro.getStartedPage.afterComplete}
         </Translate>
 
         <div className='navigation-buttons row'>
           <hr/>
           <div className='shadow-container unit'>
             <BackButton
+              {...props}
               onBack={props.onBack}
               key='back-button'
             />

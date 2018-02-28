@@ -35,14 +35,15 @@ const InfoMessageNo = (props) => {
 };
 
 const BallotByMailPage = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
-        {convertToHtml('h2', translations.votingRegistration.byMailPage.pagePrompt, 'question')}
-        {convertToHtml('p', translations.votingRegistration.byMailPage.explanation)}
+        {convertToHtml('h2', translations[locale].votingRegistration.byMailPage.pagePrompt, 'question')}
+        {convertToHtml('p', translations[locale].votingRegistration.byMailPage.explanation)}
 
         <fieldset>
           <RadioCollection
@@ -50,7 +51,7 @@ const BallotByMailPage = (props) => {
              name          = 'ballotByMail'
           errorMessage  = { props.validations.ballotByMail() }
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
 

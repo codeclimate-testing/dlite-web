@@ -58,7 +58,7 @@ const stateList = [
 ];
 
 const StateSelector = (props) => {
-
+	let locale = props.locale;
   return (
     <div className='select-input-block'>
 			<SelectDropdown
@@ -66,7 +66,7 @@ const StateSelector = (props) => {
 				id					= { props.id }
 				values			= { stateList }
 				onChange		= { props.onChange }
-				description	= {translations.myBasics.addressesPage.stateLabel}
+				description	= {translations[locale].myBasics.addressesPage.stateLabel}
 				selected		= { props.value }
 			/>
     </div>

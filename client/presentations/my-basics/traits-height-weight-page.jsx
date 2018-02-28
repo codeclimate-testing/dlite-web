@@ -13,9 +13,10 @@ import {
 import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
-const translationPath = translations.myBasics.heightWeightPage;
-
 const TraitsPage = (props) => {
+  let locale = props.locale;
+  const translationPath = translations[locale].myBasics.heightWeightPage;
+
   let errors = {
     heightFeet:   props.validations.heightFeet(),
     heightInches: props.validations.heightInches(),

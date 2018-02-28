@@ -6,9 +6,10 @@ import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const translationPath = translations.myBasics.traitsPage.hairColor;
-
 const HairColor = (props) => {
+  let locale = props.locale;
+  const translationPath = translations[locale].myBasics.traitsPage.hairColor;
+
   return (
     <div className='hair-color'>
       <hr />

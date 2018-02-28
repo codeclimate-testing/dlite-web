@@ -15,7 +15,8 @@ import {
 import Presentation                 from '../../presentations/my-basics/address-page.jsx';
 
 const Page = (props) => {
-  let validations             = new AddressValidator(props.address, props.validations);
+  let locale                  = props.locale;
+  let validations             = new AddressValidator(Object.assign(props.address, {locale}), props.validations);
   let onBack                  = handlers.navigateOnBack(props, validations);
   let onSubmit                = handlers.navigateOrShowErrors('addresses', props, validations);
 
@@ -34,7 +35,8 @@ function mapStateToProps(state) {
     address       : state.application.basics.address,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    cardType      : state.application.cardType
+    cardType      : state.application.cardType,
+    locale        : state.ui.locale
   };
 }
 

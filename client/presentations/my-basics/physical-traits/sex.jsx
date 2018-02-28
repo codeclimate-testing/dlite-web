@@ -6,9 +6,10 @@ import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const translationPath = translations.myBasics.traitsPage.sex;
-
 const Sex = (props) => {
+  let locale = props.locale;
+  const translationPath = translations[locale].myBasics.traitsPage.sex;
+
   return (
     <div className="sex">
         {convertToHtml('h2', translationPath.prompt, 'question')}

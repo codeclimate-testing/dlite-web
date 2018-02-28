@@ -8,9 +8,10 @@ import {
 import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-let translationPath = translations.myBasics.socialSecurityPage;
-
 const NoInfo = (props) => {
+  let locale = props.locale;
+  let translationPath = translations[locale].myBasics.socialSecurityPage;
+
   if (!hasSocialSecurityNo(props)) { return null; }
 
   return (

@@ -35,7 +35,8 @@ function mapStateToProps(state) {
     guardianSignature:  state.application.guardianSignature,
     focused:            state.ui.focus,
     validations:        state.ui.validations,
-    accordions:         state.ui.accordions
+    accordions:         state.ui.accordions,
+    locale:             state.ui.locale
   };
 }
 

@@ -12,16 +12,16 @@ import translations                 from '../../../../i18n';
 
 const PoliticalPartyChoose = (props) => {
   if (!politicalPartySelected(props) ) { return null; }
-
+  let locale = props.locale;
   let party = getStringByParty(props);
-  
+
   return (
     <PageSummaryLink
       to='/voting-registration/choose-party'
       name='choosePoliticalParty'
     >
       <SummaryItem
-        title={translations.summaryPage.voterRegistration.politicalParty}
+        title={translations[locale].summaryPage.voterRegistration.politicalParty}
         text={party}
       />
     </PageSummaryLink>

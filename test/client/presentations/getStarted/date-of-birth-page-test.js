@@ -33,11 +33,12 @@ describe('DateOfBirthPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-
+      let locale = 'en';
       props = {
         dateOfBirth,
         onChange,
-        validations
+        validations,
+        locale
       }
     });
 

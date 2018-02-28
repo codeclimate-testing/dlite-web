@@ -30,7 +30,7 @@ describe('ReplacementDetails', function() {
       };
 
       let onChange = spy();
-
+      let locale = 'en';
       props = {
         cardType: [],
         cardAction: 'replace',
@@ -45,7 +45,8 @@ describe('ReplacementDetails', function() {
           cardReplacement
         },
         onChange,
-        validations
+        validations,
+        locale
       }
     });
 

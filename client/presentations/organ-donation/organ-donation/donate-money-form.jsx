@@ -10,19 +10,21 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Message = (props) => {
   if (!donateMoney(props)) { return null; }
+  let locale = props.locale;
   return (
     <MessageBox className='thanks'>
       <div className = 'donate-money-yes-info'>
-      {convertToHtml('p', translations.organDonation.monetaryContribution.messageYes)}
+      {convertToHtml('p', translations[locale].organDonation.monetaryContribution.messageYes)}
       </div>
     </MessageBox>
   );
 };
 
 const DonateContribution = (props) => {
+  let locale = props.locale;
   return (
     <div className='donate-money-form'>
-      {convertToHtml('h2', translations.organDonation.monetaryContribution.prompt, 'question')}
+      {convertToHtml('h2', translations[locale].organDonation.monetaryContribution.prompt, 'question')}
       <p className='translation-missing'>Your donation helps support and promote organ and tissue donation.</p>
 
       <fieldset>
@@ -30,7 +32,7 @@ const DonateContribution = (props) => {
           {...props}
           name='donateMoney'
         >
-          { radioYesNoGroup() }
+          { radioYesNoGroup(locale) }
         </RadioCollection>
       </fieldset>
 

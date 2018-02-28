@@ -34,6 +34,7 @@ describe('CorrectOrUpdate', function() {
         other: spy(),
         all: spy()
       };
+      let locale = 'en';
 
       props = {
         cardType: [],
@@ -50,7 +51,8 @@ describe('CorrectOrUpdate', function() {
         cardChanges,
         onChange,
         validations,
-        translations
+        translations,
+        locale
       }
     });
 

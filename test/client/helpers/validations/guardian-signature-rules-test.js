@@ -50,7 +50,8 @@ describe('enter guardian signature page validation rules:', function() {
             zip: '',
           }
         }]
-      }
+      },
+      locale: 'en'
     };
   });
 

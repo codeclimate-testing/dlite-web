@@ -18,13 +18,14 @@ const generateErrorMessage = (validations, name) => {
 }
 
 const AddressTemplate = (props) => {
+  let locale = props.locale;
   return (
     <div className='addresses-section'>
       <TextInput
         {...props}
         name={ generateIdentifier('street_1', props.type) }
         id={ generateIdentifier('street_1', props.type) }
-        description={translations.myBasics.addressesPage.streetAddressLabel}
+        description={translations[locale].myBasics.addressesPage.streetAddressLabel}
         value={ props.address['street_1'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_1()              :
@@ -39,7 +40,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('street_2', props.type) }
         id={ generateIdentifier('street_2', props.type) }
-        description={translations.myBasics.addressesPage.apartmentLabel}
+        description={translations[locale].myBasics.addressesPage.apartmentLabel}
         value={ props.address['street_2'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeStreet_2()              :
@@ -54,7 +55,7 @@ const AddressTemplate = (props) => {
         {...props}
         name={ generateIdentifier('city', props.type) }
         id={ generateIdentifier('city', props.type) }
-        description={translations.myBasics.addressesPage.cityLabel}
+        description={translations[locale].myBasics.addressesPage.cityLabel}
         value={ props.address['city'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeCity()              :
@@ -66,17 +67,18 @@ const AddressTemplate = (props) => {
       />
 
       <StateSelector
-        name    = 'state'
-        id      = { generateIdentifier('state', props.type)}
-        value   = { props.address['state'] }
-        onChange= {props.onSelectChange}
+        name      = 'state'
+        id        = { generateIdentifier('state', props.type)}
+        value     = { props.address['state'] }
+        onChange  = { props.onSelectChange }
+        locale    = { locale }
       />
 
       <TextInput
         {...props}
         name={ generateIdentifier('zip', props.type) }
         id={ generateIdentifier('zip', props.type) }
-        description={translations.myBasics.addressesPage.zipLabel}
+        description={translations[locale].myBasics.addressesPage.zipLabel}
         value={ props.address['zip'] }
         errorMessage={
           props.type === 'home' ? props.validations.homeZip()              :

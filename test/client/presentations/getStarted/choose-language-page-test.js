@@ -20,10 +20,11 @@ describe('BallotLanguagePage', function() {
     beforeEach(function() {
       let appLanguage = '';
       let onChange = spy();
-
+      let locale = 'en';
       props = {
         appLanguage,
-        onChange
+        onChange,
+        locale
       };
 
       component = render(

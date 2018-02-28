@@ -8,7 +8,8 @@ describe('Choose Application page validation rules:', function() {
   let props;
   beforeEach(function() {
     props = {
-      chooseApp: ''
+      chooseApp: '',
+      locale:    'en'
     };
   });
 

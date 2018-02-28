@@ -11,7 +11,8 @@ describe('Medical history page validation rules:', function() {
   beforeEach(function() {
     props = {
       hasMedicalCondition: '',
-      medicalInfo: ''
+      medicalInfo: '',
+      locale: 'en'
     };
   });
   it('when nothing has been selected it will give selectionMissing error', function() {

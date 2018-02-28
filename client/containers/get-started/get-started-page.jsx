@@ -29,7 +29,8 @@ const mapStateToProps = (state) => {
     cardChanges     : getCorrectApp(state.application).cardChanges,
     realID          : state.application.realID,
     reducedFee      : state.application.IDApp.reducedFee,
-    seniorID        : state.application.IDApp.seniorID
+    seniorID        : state.application.IDApp.seniorID,
+    locale          : state.ui.locale
   };
 };
 

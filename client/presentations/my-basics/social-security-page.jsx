@@ -23,10 +23,11 @@ const SocialPage = (props) => {
         />
 
         <SocialSecurityEnter
-        {...props}
+          {...props}
         />
 
         <SocialSecurityNoInfo
+          {...props}
           socialSecurity = { props.socialSecurity }
         />
 

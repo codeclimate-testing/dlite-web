@@ -6,9 +6,9 @@ import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const translationPath = translations.myBasics.traitsPage.eyeColor;
-
 const EyeColor = (props) => {
+  let locale = props.locale;
+  const translationPath = translations[locale].myBasics.traitsPage.eyeColor;
   return (
     <div className='eye-color'>
       <hr />

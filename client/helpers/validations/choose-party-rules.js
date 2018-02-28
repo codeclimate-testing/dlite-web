@@ -15,9 +15,9 @@ const otherParty = (props) => {
   if (props.isSelected !== 'Yes' && props.politicalPartyChoose !== 'Other') { return []; }
   let errors = [];
   let value = props.otherParty;
-
+  let locale = props.locale;
   if (hasValue(value) && !hasOnlyEnglishChars(value)) {
-    errors.push(translations.errorMessages.inputIncludesNonEnglishCharacters);
+    errors.push(translations[locale].errorMessages.inputIncludesNonEnglishCharacters);
   };
   return errors;
 };

@@ -9,7 +9,8 @@ describe('organ donation validation rules', function() {
   it('has no errors when selections are made', function() {
     let props = {
       donateOrgan: 'Yes',
-      donateMoney: 'No'
+      donateMoney: 'No',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.donateOrgan(props), []);
@@ -19,7 +20,8 @@ describe('organ donation validation rules', function() {
   it('has organDonationSelectionMissing error when organ donation question not answered', function() {
     let props = {
       donateOrgan: '',
-      donateMoney: 'No'
+      donateMoney: 'No',
+      locale: 'en'
     };
       assert.deepEqual(rules.donateOrgan(props), [messages.organDonationSelectionMissing]);
       assert.deepEqual(rules.donateMoney(props), []);
@@ -28,7 +30,8 @@ describe('organ donation validation rules', function() {
   it('has moneyOrganDonationSelectionMissing error when organ money question not answered', function() {
     let props = {
       donateOrgan: 'No',
-      donateMoney: ''
+      donateMoney: '',
+      locale: 'en'
     };
       assert.deepEqual(rules.donateOrgan(props), []);
       assert.deepEqual(rules.donateMoney(props), [messages.moneyOrganDonationSelectionMissing]);

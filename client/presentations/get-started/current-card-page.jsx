@@ -9,7 +9,7 @@ import translations       from '../../i18n';
 import Translate          from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
-
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -18,16 +18,16 @@ const Form = (props) => {
       <div className='current-card-form'>
         <form onSubmit={ props.onSubmit }>
           <Translate tag='h2' className='question'>
-            { translations.intro.currentCardPage.prompt }
+            { translations[locale].intro.currentCardPage.prompt }
           </Translate>
           <Translate tag='p'>
-            { translations.intro.currentCardPage.explanation }
+            { translations[locale].intro.currentCardPage.explanation }
           </Translate>
           <fieldset>
             <TextInput
               {...props}
               identifier    = 'number'
-              description   = { translations.intro.currentCardPage.numberLabel }
+              description   = { translations[locale].intro.currentCardPage.numberLabel }
               value         = { props.currentCardInfo.number }
               errorMessage  = { props.currentCardValidation.number() }
             />

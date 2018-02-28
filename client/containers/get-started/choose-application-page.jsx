@@ -28,7 +28,8 @@ function mapStateToProps(state) {
   return {
     chooseApp:    state.ui.chooseApp,
     focused:      state.ui.focus,
-    validations:  state.ui.validations
+    validations:  state.ui.validations,
+    locale:       state.ui.locale
   };
 };
 

@@ -6,7 +6,9 @@ import messages   from '../../../../client/presentations/error-messages';
 
 describe('ballot language rules:', function() {
   it('will give the ballotLanguageSelectionMissing message when nothing is selected', function() {
-    let props = '';
+    let props = {
+      locale: 'en'
+    };
 
     assert.deepEqual(rule.ballotLanguage(props), [messages.ballotLanguageSelectionMissing]);
   });

@@ -4,17 +4,17 @@ import React          from 'react';
 import RadioSelector  from './radio-selector.jsx';
 import translations   from '../i18n';
 
-const radioYesNoGroup = () => {
+const radioYesNoGroup = (locale) => {
   return [
     <RadioSelector
       key='Yes'
       value='Yes'
-      text={translations.shared.commonAnswers.yes}
+      text={translations[locale].shared.commonAnswers.yes}
     />,
     <RadioSelector
       key='No'
       value='No'
-      text={translations.shared.commonAnswers.no}
+      text={translations[locale].shared.commonAnswers.no}
     />
   ];
 };

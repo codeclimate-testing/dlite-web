@@ -36,7 +36,7 @@ describe('CurrentCardPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-
+      let locale = 'en';
       props = {
         cardType: [],
         cardAction: '',
@@ -44,7 +44,8 @@ describe('CurrentCardPage', function() {
         currentCardInfo,
         accordions,
         onChange,
-        currentCardValidation
+        currentCardValidation,
+        locale
       }
     });
 
@@ -87,7 +88,7 @@ describe('CurrentCardPage', function() {
 
     it('asks for the DL/ID number when the user has chosen to renew or change an ID', function() {
       props.cardType.IDDL = ['ID'];
-      
+
       let component = render(
         <Wrapper>
           <CurrentCardPage {...props} />

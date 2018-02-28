@@ -13,12 +13,13 @@ import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const FormHeader = (props) => {
+  let locale = props.locale;
   return (
     <div>
       <h2 className='question translation-missing'>{props.title}</h2>
       <p className='translation-missing'>{props.helpText}</p>
       <hr />
-      {convertToHtml('h3', translations.intro.youthDlNotificationPage.question, 'question')}
+      {convertToHtml('h3', translations[locale].intro.youthDlNotificationPage.question, 'question')}
     </div>
   );
 };
@@ -27,18 +28,21 @@ const Under15FormHeader = (props) => {
   if (!ageChecks.Under15(props.dateOfBirth)) { return null; }
   return (
     <FormHeader
-      title='You must be 15 years old to start an application for a learners permit.'
-      helpText='In exceptional circumstances youth between 14 and 15.5 can get a Junior permit. Visit an office or consult documentation on the DMV website if you feel you might be eligible for a Junior permit.'
+      title     = 'You must be 15 years old to start an application for a learners permit.'
+      helpText  = 'In exceptional circumstances youth between 14 and 15.5 can get a Junior permit. Visit an office or consult documentation on the DMV website if you feel you might be eligible for a Junior permit.'
+      {...props}
     />
   );
 };
 
 const YouthFormHeader = (props) => {
   if (ageChecks.Under15(props.dateOfBirth)) { return null; }
+  let locale = props.locale;
   return (
     <FormHeader
-      title={translations.intro.youthDlNotificationPage.prompt}
-      helpText={translations.intro.youthDlNotificationPage.explanation}
+      title     = {translations[locale].intro.youthDlNotificationPage.prompt}
+      helpText  = {translations[locale].intro.youthDlNotificationPage.explanation}
+      {...props}
     />
   );
 };
@@ -53,7 +57,7 @@ let ErrorMessage = (props) => {
 
 const Form = (props) => {
   const actionName = props.multCards ? 'youthIDOnly' : 'youthIDInstead';
-
+  let locale = props.locale;
   return (
     <Page
       sectionKey='intro'
@@ -61,8 +65,14 @@ const Form = (props) => {
     >
       <div className='youth-license-notification'>
         <form onSubmit={props.onSubmit} >
-          <Under15FormHeader dateOfBirth = {props.dateOfBirth} />
-          <YouthFormHeader dateOfBirth = {props.dateOfBirth} />
+          <Under15FormHeader
+            {...props}
+            dateOfBirth = {props.dateOfBirth}
+          />
+          <YouthFormHeader
+            dateOfBirth = {props.dateOfBirth}
+            {...props}
+          />
           <div className='row'>
             <fieldset>
               <RadioCollection
@@ -71,7 +81,7 @@ const Form = (props) => {
                 onBlur = { props.onBlurValidate }
                 errorMessage = { props.validations.youthIDInstead() }
               >
-                {radioYesNoGroup()}
+                {radioYesNoGroup(locale)}
               </RadioCollection>
             </fieldset>
           </div>

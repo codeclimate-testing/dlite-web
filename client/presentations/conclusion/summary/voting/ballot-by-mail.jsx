@@ -9,14 +9,14 @@ import SummaryItem      from '../summary-item.jsx';
 
 const BallotByMail = (props) => {
   if (!ballotByMailSelected(props)) { return null; }
-  
+  let locale = props.locale;
   return (
   <PageSummaryLink
     to='/voting-registration/vote-by-mail'
     name='ballotByMail'
   >
     <SummaryItem
-      title={translations.summaryPage.voterRegistration.voteByMail}
+      title={translations[locale].summaryPage.voterRegistration.voteByMail}
       text={props.ballotByMail}
     />
   </PageSummaryLink>

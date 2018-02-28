@@ -27,13 +27,14 @@ describe('OptOutPage', function() {
       all: spy()
     };
     let prereg = checkPreReg(dateOfBirth);
-
+    let locale = 'en';
     props = {
       dateOfBirth,
       optOut,
       validations,
       onChange,
-      prereg
+      prereg,
+      locale
     };
   });
 

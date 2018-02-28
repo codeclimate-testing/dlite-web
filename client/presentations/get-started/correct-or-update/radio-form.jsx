@@ -6,6 +6,7 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 import translations         from '../../../i18n';
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <div className='row inner-buttom'>
       <fieldset>
@@ -16,11 +17,11 @@ const Form = (props) => {
         >
           <RadioSelector
             value= 'correct'
-            text={translations.intro.correctOrUpdatePage.values[0]}
+            text={translations[locale].intro.correctOrUpdatePage.values[0]}
           />
           <RadioSelector
             value='update'
-            text={translations.intro.correctOrUpdatePage.values[1]}
+            text={translations[locale].intro.correctOrUpdatePage.values[1]}
           />
         </RadioCollection>
       </fieldset>

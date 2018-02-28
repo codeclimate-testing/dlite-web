@@ -12,29 +12,38 @@ import {
 
 const OnlyIDHeader = (props) => {
   if (!IDOnly(props)) { return null; }
+  let locale = props.locale;
   return (
     <div className="applying-for-only-id">
-      {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptID, 'question')}
+      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.pagePromptID, 'question')}
     </div>
   );
 };
 
 const IDAndDLHeader = (props) => {
   if (IDOnly(props)) { return null; }
+  let locale = props.locale;
   return (
     <div className="applying-for-dl">
-      {convertToHtml('h2', translations.myHistory.cardHistoryPage.pagePromptLicense, 'question')}
-      {convertToHtml('p', translations.myHistory.cardHistoryPage.explanation)}
+      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.pagePromptLicense, 'question')}
+      {convertToHtml('p', translations[locale].myHistory.cardHistoryPage.explanation)}
     </div>
   );
 };
 
 
 const LicenseAndIdHistory = (props) => {
+  let locale = props.locale;
   return (
     <div className='license-and-id-history-form'>
-      <OnlyIDHeader cardType = {props.cardType} />
-      <IDAndDLHeader cardType = {props.cardType} />
+      <OnlyIDHeader
+        {...props}
+        cardType = {props.cardType}
+      />
+      <IDAndDLHeader
+        {...props}
+        cardType = {props.cardType}
+      />
 
       <div>
         <fieldset>
@@ -43,7 +52,7 @@ const LicenseAndIdHistory = (props) => {
             name='isIssued'
             errorMessage = { props.validations.isIssued() }
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

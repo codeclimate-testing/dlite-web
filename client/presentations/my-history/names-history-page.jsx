@@ -16,7 +16,8 @@ const NamesHistoryPage = (props) => {
       sectionKey='myHistory'
     >
       <form onSubmit    = {props.onSubmit} className='names-history-form'>
-        <UsedPreviousNames {...props}
+        <UsedPreviousNames
+          {...props}
           selectedValue = { props.namesHistory.hasUsedPreviousNames }
           errorMessage  = { props.validations.hasUsedPreviousNames() }
         />

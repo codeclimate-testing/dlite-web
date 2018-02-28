@@ -58,12 +58,13 @@ import GuardianSignature  from '../../../../client/presentations/conclusion/summ
 describe('SummaryPage', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
     props = {
       application: data.application,
       server: '',
-      onSubmit: spy()
+      onSubmit: spy(),
+      ui: {locale}
     };
   });
   it('has 6 accordions', function() {
@@ -84,10 +85,11 @@ describe('SummaryPage', function() {
 describe('Summary components', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
     props = Object.assign({}, data.application);
     props.summary = 'summary';
+    props.locale = locale;
   });
 
   describe('DLApp', function() {
@@ -144,7 +146,7 @@ describe('Summary components', function() {
     });
     describe('LicenseType', function() {
       it('lists which types of licenses the user has selected', function() {
-        let data = {
+        let props = {
           cardType: ['DL'],
           DLApp: {
             isApplying: true,
@@ -160,11 +162,12 @@ describe('Summary components', function() {
             needEndorsement: 'Yes',
             endorsement: 'firefighter'
           },
+          locale
         };
         let component = render(
           <Wrapper>
             <LicenseType
-              { ...data }
+              { ...props }
             />
           </Wrapper>
         )
@@ -188,7 +191,7 @@ describe('Summary components', function() {
             correctOrUpdate: ''
           }
         };
-  
+
         let component = render(
           <Wrapper>
             <IDAction
@@ -641,7 +644,7 @@ describe('Summary components', function() {
           state: 'CA',
           zip: '90210'
         };
-
+        props.locale = locale;
         let component = render(
           <Wrapper>
             <Address
@@ -651,10 +654,10 @@ describe('Summary components', function() {
           </Wrapper>
         )
 
-        assert.equal(component.text().includes(`${translations.summaryPage.myBasics.homeAddress}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.myBasics.homeAddress}`), true);
         assert.equal(component.text().includes('111 Main Street'), true);
         assert.equal(component.text().includes('Sacramento, CA 95814'), true);
-        assert.equal(component.text().includes(`${translations.summaryPage.myBasics.mailingAddress}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.myBasics.mailingAddress}`), true);
         assert.equal(component.text().includes('222 High Street'), true);
         assert.equal(component.text().includes('Beverly Hills, CA 90210'), true);
       });
@@ -735,7 +738,7 @@ describe('Summary components', function() {
           year: '1999'
         };
         let citizenStatus = 'Yes';
-  
+
         let component = render(
           <Wrapper>
             <CitizenStatus
@@ -744,8 +747,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
-        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes(`${translations[locale].shared.commonAnswers.yes}`), true);
       });
       it('shows decline to answer text when user has declined to answer', function() {
         let citizenStatus = 'decline';
@@ -754,7 +757,7 @@ describe('Summary components', function() {
           day: '11',
           year: '1999'
         };
-  
+
         let component = render(
           <Wrapper>
             <CitizenStatus
@@ -763,8 +766,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
-        assert.equal(component.text().includes(`${translations.shared.commonAnswers.declineToAnswer}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes(`${translations[locale].shared.commonAnswers.declineToAnswer}`), true);
       });
        it('citizenship shows not available because youth cannot preregister', function() {
          let youthYear = new Date().getFullYear() - 14;
@@ -774,7 +777,7 @@ describe('Summary components', function() {
           day: '11',
           year: youthYear
         };
-  
+
         let component = render(
           <Wrapper>
             <CitizenStatus
@@ -783,7 +786,7 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.citizen}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.citizen}`), true);
         assert.equal(component.text().includes('Not Available'), true);
       });
     });
@@ -797,7 +800,7 @@ describe('Summary components', function() {
           day: '11',
           year: youthYear
         };
-  
+
         let component = render(
           <Wrapper>
             <EligibilityRequirements
@@ -806,7 +809,7 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.eligible}`), true);
         assert.equal(component.text().includes('Not Available'), true);
       });
        it('shows eligibility', function(){
@@ -816,7 +819,7 @@ describe('Summary components', function() {
           day: '11',
           year: '1999'
         };
-  
+
         let component = render(
           <Wrapper>
             <EligibilityRequirements
@@ -825,8 +828,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.eligible}`), true);
-        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.eligible}`), true);
+        assert.equal(component.text().includes(`${translations[locale].shared.commonAnswers.yes}`), true);
       });
     });
 
@@ -842,8 +845,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.registrationChoice}`), true);
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.choiceYes}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.registrationChoice}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.choiceYes}`), true);
       });
     });
 
@@ -862,7 +865,7 @@ describe('Summary components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.politicalParty}`), true);
       assert.equal(component.text().includes('Green Party'), true);
     });
 
@@ -880,7 +883,7 @@ describe('Summary components', function() {
           />
         </Wrapper>
       );
-      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.politicalParty}`), true);
       assert.equal(component.text().includes('No answer'), true);
     });
 
@@ -899,7 +902,7 @@ describe('Summary components', function() {
           />
         </Wrapper>
       );
-      assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.politicalParty}`), true);
+      assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.politicalParty}`), true);
       assert.equal(component.text().includes('the French Canadians'), true);
     });
   });
@@ -916,7 +919,7 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.ballotLanguage}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.ballotLanguage}`), true);
         assert.equal(component.text().includes('Korean'), true);
       });
     });
@@ -933,8 +936,8 @@ describe('Summary components', function() {
             />
           </Wrapper>
         )
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.voteByMail}`), true);
-        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.voteByMail}`), true);
+        assert.equal(component.text().includes(`${translations[locale].shared.commonAnswers.yes}`), true);
       });
     });
 
@@ -957,10 +960,10 @@ describe('Summary components', function() {
           </Wrapper>
         )
         assert.equal(component.text().includes('Should Contact'), true);
-        assert.equal(component.text().includes(`${translations.shared.commonAnswers.yes}`), true);
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.email}`), true);
+        assert.equal(component.text().includes(`${translations[locale].shared.commonAnswers.yes}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.email}`), true);
         assert.equal(component.text().includes('email@email.com'), true);
-        assert.equal(component.text().includes(`${translations.summaryPage.voterRegistration.phone}`), true);
+        assert.equal(component.text().includes(`${translations[locale].summaryPage.voterRegistration.phone}`), true);
         assert.equal(component.text().includes('(111) 111-1111'), true);
       });
     });

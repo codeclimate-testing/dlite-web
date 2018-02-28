@@ -10,7 +10,8 @@ import Presentation               from '../../presentations/get-started/current-
 import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
-  let currentCardValidation = new CurrentCardValidator(props.currentCardInfo, props.validations);
+  let locale = props.locale;
+  let currentCardValidation = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
   let onSubmit = handlers.navigateOrShowErrors(props.addressName, props, currentCardValidation);
   let onBack   = handlers.navigateOnBack(props, currentCardValidation);
   return (
@@ -32,7 +33,8 @@ function mapStateToProps(state) {
     IDApp             : state.application.IDApp,
     cardAction        : state.application.cardAction,
     dateOfBirth       : state.application.basics.dateOfBirth,
-    validations       : state.ui.validations
+    validations       : state.ui.validations,
+    locale            : state.ui.locale
   };
 };
 

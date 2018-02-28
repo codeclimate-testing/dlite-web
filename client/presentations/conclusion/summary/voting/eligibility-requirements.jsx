@@ -16,34 +16,38 @@ import * as dataPresent        from '../../../../helpers/data-present';
 
 const Yes = (props) => {
   if (!eligibilityRequirementsYes(props)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
-	          title={translations.summaryPage.voterRegistration.eligible}
-	          text={translations.shared.commonAnswers.yes}
+	          title={translations[locale].summaryPage.voterRegistration.eligible}
+	          text={translations[locale].shared.commonAnswers.yes}
 	        />)
 };
 
 const No = (props) => {
   if (eligibilityRequirementsYes(props) || declineToAnswer(props.eligibilityRequirements)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
-	          title={translations.summaryPage.voterRegistration.eligible}
-	          text={translations.shared.commonAnswers.no}
+	          title={translations[locale].summaryPage.voterRegistration.eligible}
+	          text={translations[locale].shared.commonAnswers.no}
 	        />)
 };
 
 const Decline = (props) => {
   if (!declineToAnswer(props.eligibilityRequirements)) { return null; }
+  let locale = props.locale;
   return (<SummaryItem
-	          title={translations.summaryPage.voterRegistration.eligible}
-	          text={translations.shared.commonAnswers.declineToAnswer}
+	          title={translations[locale].summaryPage.voterRegistration.eligible}
+	          text={translations[locale].shared.commonAnswers.declineToAnswer}
 	        />)
 };
 const EligibilityRequirements = (props) => {
   let notAvailable = <div className='translation-missing'>Not Available</div>
   let now = props.now ? props.now : new Date();
+  let locale = props.locale;
   if (ageChecks.Under16(props.dateOfBirth, now)) {
     return (
       <SummaryItem
-        title={translations.summaryPage.voterRegistration.eligible}
+        title={translations[locale].summaryPage.voterRegistration.eligible}
         text={notAvailable}
       />
     )
@@ -55,8 +59,8 @@ const EligibilityRequirements = (props) => {
         name='votingEligibility'
       >
         <SummaryItem
-          title={translations.summaryPage.voterRegistration.eligible}
-          text={translations.shared.commonAnswers.declineToAnswer}
+          title={translations[locale].summaryPage.voterRegistration.eligible}
+          text={translations[locale].shared.commonAnswers.declineToAnswer}
         />
       </PageSummaryLink>
     )
@@ -66,9 +70,9 @@ const EligibilityRequirements = (props) => {
       to='/voting-registration/eligibility'
       name='votingEligibility'
     >
-      <Yes eligibilityRequirements={props.eligibilityRequirements} />
-      <Decline eligibilityRequirements={props.eligibilityRequirements} />
-      <No eligibilityRequirements={props.eligibilityRequirements} />
+      <Yes        {...props} />
+      <Decline    {...props} />
+      <No         {...props} />
     </PageSummaryLink>
   )
 };

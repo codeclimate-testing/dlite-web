@@ -10,21 +10,23 @@ import {
 }             from '../data/ssn';
 
 const ssnAll = (props) => {
-  let value = props.hasSocialSecurity;
+  let locale  = props.locale;
+  let value   = props.hasSocialSecurity;
   if (!hasValue(value)) {
-   return [translations.errorMessages.socialSecurityAvailabilityMissing];
+   return [translations[locale].errorMessages.socialSecurityAvailabilityMissing];
   }
   return [];
 };
 
 const socialSecurity = (name, number) => {
   return (props) => {
+    let locale = props.locale;
     if (props.hasSocialSecurity !== 'Yes') { return [];};
 
     if (props[name].length !== number) {
-      return [translations.errorMessages['socialSecurityNumberInvalid']];
+      return [translations[locale].errorMessages['socialSecurityNumberInvalid']];
     } else if (hasNone(props)) {
-      return [translations.errorMessages['socialSecurityNumberMissing']];
+      return [translations[locale].errorMessages['socialSecurityNumberMissing']];
     }
     return [];
   };

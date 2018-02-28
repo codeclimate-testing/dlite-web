@@ -7,11 +7,11 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterMedicalInfo = (props) => {
   if (!props.showIf) { return null; }
-
+  let locale = props.locale;
   return (
     <div className='enter-medical-info'>
       <hr />
-      {convertToHtml('h2', translations.myHistory.medicalConditionsPage.explanationPrompt, 'question')}
+      {convertToHtml('h2', translations[locale].myHistory.medicalConditionsPage.explanationPrompt, 'question')}
       <fieldset>
         <TextArea
           {...props}

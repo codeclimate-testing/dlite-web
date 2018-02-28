@@ -8,11 +8,12 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterRevokedSuspended = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return (
     <div className='suspended-license-form'>
       <hr />
-      {convertToHtml('h2', translations.myHistory.licenseIssuesPage.explanationPrompt, 'question')}
-      {convertToHtml('p', translations.myHistory.licenseIssuesPage.helpText)}
+      {convertToHtml('h2', translations[locale].myHistory.licenseIssuesPage.explanationPrompt, 'question')}
+      {convertToHtml('p', translations[locale].myHistory.licenseIssuesPage.helpText)}
 
       <fieldset>
         <DateInput
@@ -25,7 +26,7 @@ const EnterRevokedSuspended = (props) => {
         <TextArea
           { ...props }
           identifier   = 'reason'
-          description  = {translations.myHistory.licenseIssuesPage.reasonLabel}
+          description  = {translations[locale].myHistory.licenseIssuesPage.reasonLabel}
           value        = { props.licenseIssues.reason }
           errorMessage = { props.validations.reason() }
         />

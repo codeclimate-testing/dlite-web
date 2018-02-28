@@ -19,19 +19,21 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cardType:   state.application.cardType,
-    section:    state.ui.section,
-    addApp:     state.ui.addApp
+    cardType:       state.application.cardType,
+    section:        state.ui.section,
+    addApp:         state.ui.addApp,
+    locale:         state.ui.locale
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const onPageLoad    = handlers.onPageLoad(dispatch);
-  const onFlowChange  = handlers.onFlowChange(dispatch);
-
+  const onPageLoad            = handlers.onPageLoad(dispatch);
+  const onFlowChange          = handlers.onFlowChange(dispatch);
+  const onLocaleChange        = handlers.onLocaleChange(dispatch);
   return {
     onPageLoad,
-    onFlowChange
+    onFlowChange,
+    onLocaleChange
   };
 };
 

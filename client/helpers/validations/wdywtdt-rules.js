@@ -4,8 +4,9 @@ import translations   from '../../i18n';
 import { hasValue }   from '../data/validations';
 
 const cardAction = (props) => {
+  let locale = props.locale;
   if (!hasValue(props)) {
-    return [translations.errorMessages.applicationActionMissing];
+    return [translations[locale].errorMessages.applicationActionMissing];
   }
   return [];
 };

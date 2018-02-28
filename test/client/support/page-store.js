@@ -4,7 +4,8 @@
 export default {
   ui: {
     section: {},
-    addApp: ''
+    addApp: '',
+    locale: 'en'
   },
 
   application: {}

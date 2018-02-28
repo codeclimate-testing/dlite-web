@@ -6,9 +6,10 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-let translationPath = translations.myBasics.socialSecurityPage;
-
 const Form = (props) => {
+  let locale = props.locale;
+  let translationPath = translations[locale].myBasics.socialSecurityPage;
+
   return (
     <div className='social-security-option-form'>
       {convertToHtml('h2', translationPath.prompt, 'question')}
@@ -20,7 +21,7 @@ const Form = (props) => {
             name='hasSocialSecurity'
             errorMessage={ props.validations.ssnAll() }
           >
-            { radioYesNoGroup() }
+            { radioYesNoGroup(locale) }
           </RadioCollection>
         </fieldset>
       </div>

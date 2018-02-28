@@ -14,6 +14,7 @@ import {
 } from '../../helpers/data/card-type';
 
 const FormPage = (props) => {
+  let locale = props.locale;
   let formName = getCorrectString(props, 'DL', 'ID', 'both');
   return (
     <Page
@@ -34,32 +35,33 @@ const FormPage = (props) => {
 
        <Accordion
           id='real-id-info'
-          title={translations.intro.realIdPage.FAQWhatIsRealID.title}
+          title={translations[locale].intro.realIdPage.FAQWhatIsRealID.title}
         >
-          {convertToHtml('p', translations.intro.realIdPage.FAQWhatIsRealID.body)}
+          {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRealID.body)}
         </Accordion>
 
 
         <Accordion
           id='real-id-requirements'
-          title={translations.intro.realIdPage.FAQWhatIsRequiredForRealID.title}
+          title={translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.title}
         >
           <div>
-            {convertToHtml('p', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.header)}
+            {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.header)}
             <ul className='bullet-list'>
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[0])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[1])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[2])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[3])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[4])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[5])}
-              {convertToHtml('li', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[6])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[0])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[1])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[2])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[3])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[4])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[5])}
+              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[6])}
             </ul>
-            {convertToHtml('p', translations.intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements)}
+            {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements)}
           </div>
         </Accordion>
 
         <NavigationButtons
+          locale            = { locale }
           onBack            = { props.onBack }
           errorMessage      = { props.validations.all() }
         />

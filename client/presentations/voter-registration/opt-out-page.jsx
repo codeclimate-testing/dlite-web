@@ -12,11 +12,11 @@ import Translate            from '../../i18n/translate-tag.jsx';
 
 const OptOutPage = (props) => {
   let translation;
-
+  let locale = props.locale;
   if (isPreregistering(props.dateOfBirth)) {
-    translation = translations.votingRegistration.preRegOptOutPage;
+    translation = translations[locale].votingRegistration.preRegOptOutPage;
   } else {
-    translation = translations.votingRegistration.optOutPage;
+    translation = translations[locale].votingRegistration.optOutPage;
   }
 
   let preRegString = checkPreReg(props.dateOfBirth);
@@ -28,7 +28,7 @@ const OptOutPage = (props) => {
     >
       <form onSubmit={props.onSubmit} className = 'opt-out-form'>
         <Translate tag='h2' className='question'>
-         {translations.votingRegistration.optOutPage.pagePrompt}
+         {translations[locale].votingRegistration.optOutPage.pagePrompt}
         </Translate>
 
         <fieldset>

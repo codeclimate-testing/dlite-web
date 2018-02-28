@@ -6,17 +6,18 @@ import ExpirationDate     from '../../expiration-date.jsx';
 import translations       from '../../../i18n'
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
-const text = {
-  DLIDNumber: translations.myHistory.cardHistoryPage.numberLabel,
-  issuedBy:   translations.myHistory.cardHistoryPage.stateOrCountryLabel
-};
-
 const EnterLicenseAndIdHistory = (props) => {
+  let locale = props.locale;
+  const text = {
+    DLIDNumber: translations[locale].myHistory.cardHistoryPage.numberLabel,
+    issuedBy:   translations[locale].myHistory.cardHistoryPage.stateOrCountryLabel
+  };
+
   if (!props.showIf) { return null; }
   return (
     <div className='existing-license-id-number-form'>
       <hr/>
-      {convertToHtml('h2', translations.myHistory.cardHistoryPage.explanationPrompt, 'question')}
+      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.explanationPrompt, 'question')}
 
       <fieldset>
         <TextInput

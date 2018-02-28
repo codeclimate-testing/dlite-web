@@ -9,11 +9,12 @@ import {
 } from './english-validator';
 
 const lastName = (props) => {
+  let locale = props.locale;
   let value = props.lastName;
-  let errors = englishValidator(value);
+  let errors = englishValidator(value, locale);
 
   if (!hasValue(value)) {
-    errors.push(translations.errorMessages.lastNameMissing);
+    errors.push(translations[locale].errorMessages.lastNameMissing);
   }
   return errors;
 };

@@ -7,9 +7,10 @@ import translations       from '../../i18n';
 
 let errorFunction = (name) => {
   return (props) => {
+    let locale = props.locale;
     let errors = [];
     if (!expirationDateValidator(name, props)) {
-      errors.push(translations.errorMessages['expirationDateInvalid']);
+      errors.push(translations[locale].errorMessages['expirationDateInvalid']);
     }
     return errors;
   }

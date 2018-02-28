@@ -9,7 +9,8 @@ import handlers                 from '../../helpers/handlers';
 import { BallotByMailValidator }from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations       = new BallotByMailValidator(props.ballotByMail, props.validations);
+  let locale            = props.locale;
+  let validations       = new BallotByMailValidator(Object.assign(props.ballotByMail, {locale}), props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('ballotByMail', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +30,8 @@ const mapStateToProps = (state) => {
     ballotByMail: state.application.voting.ballotByMail,
     dateOfBirth:  state.application.basics.dateOfBirth,
     focused:      state.ui.focus,
-    validations:  state.ui.validations
+    validations:  state.ui.validations,
+    locale:       state.ui.locale
   };
 };
 

@@ -51,6 +51,7 @@ describe('AddressTemplateForm', function() {
         onChange    = { sinon.spy() }
         onSubmit    = { sinon.spy() }
         validations = { validations}
+        locale      = 'en'
       />
     );
   });

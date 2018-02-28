@@ -13,34 +13,36 @@ import {
 
 const Yes = (props) => {
   if (!choosingReducedFee(props)) { return null; }
+  let locale = props.locale;
   return (
     <SummaryItem
       title='Reduced or no-fee'
-      text={translations.shared.commonAnswers.yes}
+      text={translations[locale].shared.commonAnswers.yes}
     />
   )
 };
 
 const No = (props) => {
   if (choosingReducedFee(props)) { return null; }
+  let locale = props.locale;
   return (
     <SummaryItem
       title='Reduced or no-fee'
-      text={translations.shared.commonAnswers.no}
+      text={translations[locale].shared.commonAnswers.no}
     />
   )
 };
 
 const ReducedOrNoFee = (props) => {
   if (!reducedFeeHasSelection(props)) { return null; }
-
+  let locale = props.locale;
   return (
     <PageSummaryLink
       summary = {props.summary}
       name    = 'reducedFeeID'
     >
-      <Yes reducedFee = {props.reducedFee} />
-      <No reducedFee = {props.reducedFee} />
+      <Yes  reducedFee = {props.reducedFee} locale = {locale}/>
+      <No   reducedFee = {props.reducedFee} locale = {locale}/>
 
     </PageSummaryLink>
   );

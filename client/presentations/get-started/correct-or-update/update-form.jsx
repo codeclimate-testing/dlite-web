@@ -11,9 +11,9 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
-
-  const correctText = convertToHtml('h3', translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.correct, 'question');
-  const updateText = convertToHtml('h3', translations.intro.correctOrUpdatePage.chooseChangeSection.prompt.update, 'question');
+  let locale = props.locale;
+  const correctText = convertToHtml('h3', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.correct, 'question');
+  const updateText = convertToHtml('h3', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.update, 'question');
   let headerText = getStringByAction(props, null, null, null, null, updateText, correctText);
 
   return (
@@ -30,27 +30,27 @@ const Form = (props) => {
         >
           <CheckboxSelector
             value='name'
-            text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[0]}
+            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[0]}
           />
 
           <CheckboxSelector
             value='sex'
-            text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[1]}
+            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[1]}
           />
 
           <CheckboxSelector
             value='dateOfBirth'
-            text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[2]}
+            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[2]}
           />
 
           <CheckboxSelector
             value='address'
-            text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[3]}
+            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[3]}
           />
 
           <CheckboxSelector
             value='other'
-            text = {props.translations.intro.correctOrUpdatePage.chooseChangeSection.values[4]}
+            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[4]}
           />
         </CheckboxCollection>
       </fieldset>

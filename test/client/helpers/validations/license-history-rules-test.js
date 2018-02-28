@@ -13,7 +13,8 @@ describe('License (card) history rules:', function() {
       issuedBy: 'State of Georgia',
       month: '09',
       day: '29',
-      year: '2010'
+      year: '2010',
+      locale: 'en'
     };
     assert.deepEqual(rules.isIssued(props), []);
     assert.deepEqual(rules.DLIDNumber(props), []);
@@ -30,9 +31,10 @@ describe('License (card) history rules:', function() {
       issuedBy: 'State of Georgia',
       month: '09',
       day: '29',
-      year: (new Date().getFullYear() + 2).toString()
+      year: (new Date().getFullYear() + 2).toString(),
+      locale: 'en'
     };
- 
+
     assert.deepEqual(rules.month(props), []);
     assert.deepEqual(rules.day(props), []);
     assert.deepEqual(rules.year(props), []);
@@ -45,7 +47,8 @@ describe('License (card) history rules:', function() {
       issuedBy: '',
       month: '09',
       day: '',
-      year: '2014'
+      year: '2014',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -58,7 +61,8 @@ describe('License (card) history rules:', function() {
 
   it('gives the licenseHistorySelectionMissing error if user doesn\'t choose radio button', function() {
     let props = {
-      isIssued: ''
+      isIssued: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.isIssued(props), [messages.licenceHistorySelectionMissing]);
@@ -71,7 +75,8 @@ describe('License (card) history rules:', function() {
       issuedBy: 'twója matka',
       month: '09',
       day: '',
-      year: '2014'
+      year: '2014',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.issuedBy(props), [messages.dataIncludesNonEnglishCharacters]);
@@ -83,7 +88,8 @@ describe('License (card) history rules:', function() {
       isIssued: 'Yes',
       month: '09',
       day: '31',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), []);
@@ -96,7 +102,8 @@ describe('License (card) history rules:', function() {
       isIssued: 'Yes',
       month: 'january',
       day: '29',
-      year: '1988'
+      year: '1988',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.month(props), [messages.expirationDateInvalid]);

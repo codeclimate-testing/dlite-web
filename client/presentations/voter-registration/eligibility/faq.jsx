@@ -5,7 +5,8 @@ import translations         from '../../../i18n';
 import { isPreregistering } from '../../../helpers/calculate-age';
 import Translate            from '../../../i18n/translate-tag.jsx';
 
-const FAQcontentsPreReg = () => {
+const FAQcontentsPreReg = (props) => {
+  let locale = props.locale;
   return (
     <p className='translation-missing'>
       'If you don\'t meet all the requirements, you are not eligible to pre-register to vote.',
@@ -13,20 +14,22 @@ const FAQcontentsPreReg = () => {
   );
 };
 
-const FAQcontentsReg = () => {
+const FAQcontentsReg = (props) => {
+  let locale = props.locale;
   return (
     <Translate tag='p'>
-      { translations.votingRegistration.eligibilityPage.faqAnswerWhatIfDontMeetRequirements }
+      { translations[locale].votingRegistration.eligibilityPage.faqAnswerWhatIfDontMeetRequirements }
     </Translate>
   );
 };
 
 const FAQcontents = (props) => {
-  return isPreregistering(props.dateOfBirth) ? <FAQcontentsPreReg /> : <FAQcontentsReg />;
+  return isPreregistering(props.dateOfBirth) ? <FAQcontentsPreReg {...props}/> : <FAQcontentsReg {...props}/>;
 };
 
 const FAQ = (props) => {
-  const accordionTitle =  translations.votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements;
+  let locale = props.locale;
+  const accordionTitle =  translations[locale].votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements;
 
   return (
     <Accordion

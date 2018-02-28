@@ -16,16 +16,16 @@ import {
 
 const emailAddress = (props) => {
   if (props.shouldContact !== 'Yes') { return []; };
-
+  let locale = props.locale;
   let value = props.emailAddress;
 
   if (hasNeither(props)) {
     //translation missing for errormMessages.contactMethod
     return [errorMessages.contactMethod];
   } else if (!emailRegex(value) && hasValue(value)){
-    return [translations.errorMessages.emailAddressMissingOrInvalid];
+    return [translations[locale].errorMessages.emailAddressMissingOrInvalid];
   } else if (!hasOnlyEnglishChars(value)) {
-    return [translations.errorMessages.inputIncludesNonEnglishCharacters];
+    return [translations[locale].errorMessages.inputIncludesNonEnglishCharacters];
   }
   return [];
 };
@@ -33,9 +33,9 @@ const emailAddress = (props) => {
 const phoneNumber = (name, number) => {
   return (props) => {
     if (props.shouldContact !== 'Yes') { return [];};
-
+    let locale = props.locale;
     if (props[name].length !== number && props[name].length !== 0) {
-      return [translations.errorMessages.phoneMissingOrInvalid];
+      return [translations[locale].errorMessages.phoneMissingOrInvalid];
     } else if (hasNeither(props)) {
       return [errorMessages.contactMethod];
     }

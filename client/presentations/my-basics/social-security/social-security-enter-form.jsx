@@ -26,8 +26,8 @@ const Form = (props) => {
   };
   let message = errorMessage(errors);
   let addError = errorClass(message);
-
-  let translationPath = translations.myBasics.socialSecurityPage.enterSocialNumber;
+  let locale = props.locale;
+  let translationPath = translations[locale].myBasics.socialSecurityPage.enterSocialNumber;
 
   return (
     <div className='social-security-enter-form'>

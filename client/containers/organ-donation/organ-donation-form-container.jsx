@@ -12,9 +12,10 @@ import Presentation                   from '../../presentations/organ-donation/o
 import { OrganDonationValidator }     from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations = new OrganDonationValidator(props.organDonation, props.validations);
-  let onSubmit = handlers.navigateOrShowErrors('organDonation', props, validations);
-  let onBack   = handlers.navigateOnBack(props, validations);
+  let locale      = props.locale;
+  let validations = new OrganDonationValidator(Object.assign(props.organDonation, {locale}), props.validations);
+  let onSubmit    = handlers.navigateOrShowErrors('organDonation', props, validations);
+  let onBack      = handlers.navigateOnBack(props, validations);
 
   return (
     <Presentation
@@ -31,7 +32,8 @@ function mapStateToProps(state) {
     organDonation:  state.application.organDonation,
     dateOfBirth:    state.application.basics.dateOfBirth,
     focused:        state.ui.focus,
-    validations:    state.ui.validations
+    validations:    state.ui.validations,
+    locale:         state.ui.locale
   };
 };
 

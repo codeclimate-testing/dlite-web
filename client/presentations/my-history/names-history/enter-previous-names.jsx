@@ -7,17 +7,18 @@ import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const EnterPreviousNames = (props) => {
   if (!props.showIf) { return null; }
+  let locale = props.locale;
   return (
     <div className='enter-previous-names'>
       <hr />
-      {convertToHtml('h2', translations.myHistory.nameHistoryPage.explanationPrompt, 'question')}
-      {convertToHtml('p', translations.myHistory.nameHistoryPage.helpText)}
+      {convertToHtml('h2', translations[locale].myHistory.nameHistoryPage.explanationPrompt, 'question')}
+      {convertToHtml('p', translations[locale].myHistory.nameHistoryPage.helpText)}
 
       <fieldset>
         <TextArea
           {...props}
           identifier='previousNames'
-          description={ translations.summaryPage.myHistory.previousNames }
+          description={ translations[locale].summaryPage.myHistory.previousNames }
           value      = { props.namesHistory.previousNames }
         />
       </fieldset>

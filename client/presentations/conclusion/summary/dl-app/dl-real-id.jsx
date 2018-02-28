@@ -15,32 +15,35 @@ import {
 
 const Yes = (props) => {
   if (!gettingRealID(props)) { return null; }
+  let locale = props.locale;
   return (
     <SummaryItem
       title='Real-ID Compliant'
-      text={translations.shared.commonAnswers.yes}
+      text={translations[locale].shared.commonAnswers.yes}
     />
   )
 };
 
 const No = (props) => {
   if (gettingRealID(props)) { return null; }
+  let locale = props.locale;
   return (
     <SummaryItem
       title='Real-ID Compliant'
-      text={translations.shared.commonAnswers.no}
+      text={translations[locale].shared.commonAnswers.no}
     />
   )
 };
 const DLRealID = (props) => {
   if(!DLAsRealID(props)) { return null; }
+  let locale = props.locale;
   return (
     <PageSummaryLink
       name='realID'
       summary = {props.summary}
     >
-      <Yes realID = {props.realID} />
-      <No realID = {props.realID} />
+      <Yes  realID = {props.realID} locale = {locale}/>
+      <No   realID = {props.realID} locale = {locale}/>
     </PageSummaryLink>
   )
 };

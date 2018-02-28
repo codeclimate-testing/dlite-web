@@ -10,15 +10,25 @@ import { ErrorMessageBox } from './validations.jsx'
 
 
 const NavigationButtons = (props) => {
-  const disabled = props.continueDisabled;
-  const hidden = props.continueHidden;
+  const disabled  = props.continueDisabled;
+  const hidden    = props.continueHidden;
+  let locale      = props.locale;
   return (
     <div className='navigation-buttons row'>
       <hr />
-      <ErrorMessageBox errorMessage={props.errorMessage} />
-      <ContinueButton disabled={disabled} hidden={hidden} />
-      <BackButton onBack={props.onBack} />
-
+      <ErrorMessageBox
+        errorMessage  = { props.errorMessage }
+        locale        = { locale }
+      />
+      <ContinueButton
+        disabled  = { disabled }
+        hidden    = { hidden }
+        locale    = { locale }
+        />
+      <BackButton
+        onBack  = { props.onBack }
+        locale  = { locale }
+      />
     </div>
   );
 };

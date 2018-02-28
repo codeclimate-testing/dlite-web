@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
   return {
     dateOfBirth   : state.application.basics.dateOfBirth,
     optOut        : state.application.voting.optOut,
-    focused       : state.ui.focus
+    focused       : state.ui.focus,
+    locale        : state.ui.locale
   };
 };
 

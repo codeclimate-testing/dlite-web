@@ -35,10 +35,13 @@ describe('NamePage', function() {
         isValid: () => { return true; }
       };
 
+      let locale = 'en';
+
       props = {
         legalName,
         onChange,
-        validations
+        validations,
+        locale
       }
     });
 

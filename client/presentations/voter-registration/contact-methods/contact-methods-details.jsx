@@ -15,27 +15,28 @@ import ExampleLabel from '../../example-label.jsx';
 import { convertToHtml }    from '../../../i18n/convert-to-html.jsx';
 
 const ContactDetails = (props) => {
+
   if(props.contactMethods.shouldContact !== 'Yes') { return null; } let errors = {
     one: props.validations.phoneNumber1(),
     two: props.validations.phoneNumber2(),
     three: props.validations.phoneNumber3()
   };
 
-  let message = errorMessage(errors);
-  let addError = errorClass(message);
-
+  let message   = errorMessage(errors);
+  let addError  = errorClass(message);
+  let locale    = props.locale;
   return (
     <div className='contact-methods-details-form'>
       <hr/>
-      {convertToHtml('h2', translations.votingRegistration.contactInfoPage.pagePrompt, 'question')}
+      {convertToHtml('h2', translations[locale].votingRegistration.contactInfoPage.pagePrompt, 'question')}
       <p className='translation-missing'>This is optional</p>
 
       <fieldset>
         <TextInput
           {...props}
           identifier='emailAddress'
-          description={translations.votingRegistration.contactInfoPage.emailLabel}
-          example={translations.votingRegistration.contactInfoPage.emailExample}
+          description={translations[locale].votingRegistration.contactInfoPage.emailLabel}
+          example={translations[locale].votingRegistration.contactInfoPage.emailExample}
           value={props.contactMethods.emailAddress}
           errorMessage={props.validations.emailAddress()}
         />
@@ -45,10 +46,10 @@ const ContactDetails = (props) => {
         className     = { addError }
       >
         <ErrorIcon errorClass = { addError } />
-        {convertToHtml('p', translations.votingRegistration.contactInfoPage.phoneLabel)}
+        {convertToHtml('p', translations[locale].votingRegistration.contactInfoPage.phoneLabel)}
       </label>
         <ExampleLabel
-          example={translations.votingRegistration.contactInfoPage.phoneExample}
+          example={translations[locale].votingRegistration.contactInfoPage.phoneExample}
 
         />
 

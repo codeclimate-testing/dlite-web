@@ -11,7 +11,8 @@ import translations       from '../../i18n';
 import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
 
 const LegalNameForm = (props) => {
-  let suffixValues = ['', ...translations.intro.namePage.suffixValues];
+  let locale = props.locale;
+  let suffixValues = ['', ...translations[locale].intro.namePage.suffixValues];
 
   return (
     <Page
@@ -19,14 +20,14 @@ const LegalNameForm = (props) => {
       {...props}
     >
       <form onSubmit={ props.onSubmit } className='legal-name-form'>
-        {convertToHtml('h2', translations.intro.namePage.prompt, 'question')}
-        {convertToHtml('p', translations.intro.namePage.explanation)}
+        {convertToHtml('h2', translations[locale].intro.namePage.prompt, 'question')}
+        {convertToHtml('p', translations[locale].intro.namePage.explanation)}
 
         <fieldset>
           <TextInput
             {...props}
             identifier='firstName'
-            description={translations.shared.labels.firstName}
+            description={translations[locale].shared.labels.firstName}
             value={props.legalName.firstName}
             errorMessage={ props.validations.firstName() }
           />
@@ -34,7 +35,7 @@ const LegalNameForm = (props) => {
           <TextInput
             {...props}
             identifier='middleName'
-            description={translations.shared.labels.middleName}
+            description={translations[locale].shared.labels.middleName}
             value={props.legalName.middleName}
             errorMessage={ props.validations.middleName() }
           />
@@ -42,7 +43,7 @@ const LegalNameForm = (props) => {
           <TextInput
             {...props}
             identifier='lastName'
-            description={translations.shared.labels.lastName}
+            description={translations[locale].shared.labels.lastName}
             value={props.legalName.lastName}
             errorMessage={ props.validations.lastName() }
           />
@@ -55,7 +56,7 @@ const LegalNameForm = (props) => {
             onChange={ props.onSelectChange }
             changeAction={ props.changeAction }
             values={ suffixValues }
-            description={translations.intro.namePage.suffixLabel}
+            description={translations[locale].intro.namePage.suffixLabel}
           />
         </fieldset>
 

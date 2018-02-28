@@ -8,7 +8,8 @@ import Presentation             from '../../presentations/get-started/date-of-bi
 import { updateCdlDob }         from '../../actions/index';
 
 const Page = (props) => {
-  let validations       = new DOBValidator(props.dateOfBirth, props.validations);
+  let locale = props.locale;
+  let validations       = new DOBValidator(Object.assign(props.dateOfBirth, {locale} ), props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlDateOfBirth', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -27,7 +28,8 @@ function mapStateToProps(state) {
     dateOfBirth:  state.cdl.basics.dateOfBirth,
     validations:  state.ui.validations,
     focused:      state.ui.focus,
-    addApp:       state.ui.addApp
+    addApp:       state.ui.addApp,
+    locale:       state.ui.locale
   };
 };
 

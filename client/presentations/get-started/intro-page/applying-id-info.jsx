@@ -8,12 +8,13 @@ import {
   getIDString
 } from '../../../helpers/data/get-started';
 
-const newID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.applyingID)
-const reducedFeeID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.applyingReducedFeeID)
-const noFeeID = <p className='translation-missing'>You are applying for a no-fee ID card</p>;
-const seniorID = convertToHtml('p', translations.intro.getStartedPage.whatYouAreDoing.applyingSeniorID)
-
 const ApplyingIDInfo = (props) => {
+  let locale = props.locale;
+  const newID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.applyingID)
+  const reducedFeeID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.applyingReducedFeeID)
+  const noFeeID = <p className='translation-missing'>You are applying for a no-fee ID card</p>;
+  const seniorID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.applyingSeniorID)
+
   if(!getNewID(props)) { return null; }
 
   let ID = getIDString(props, newID, reducedFeeID, noFeeID, seniorID);

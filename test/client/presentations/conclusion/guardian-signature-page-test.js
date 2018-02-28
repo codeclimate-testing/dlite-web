@@ -112,11 +112,13 @@ describe('GuardianSignaturePage', function() {
             isValid:                    () => { return true; }
       };
 
+      let locale = 'en';
       props = {
         guardianSignature,
         continueDisabled,
         onChange,
-        validations
+        validations,
+        locale
       }
     });
 

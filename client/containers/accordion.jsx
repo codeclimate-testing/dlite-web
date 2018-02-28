@@ -25,7 +25,8 @@ const Accordion = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    accordions: state.ui.accordions
+    accordions: state.ui.accordions,
+    locale:     state.ui.locale
   };
 }
 

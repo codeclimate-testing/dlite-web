@@ -9,7 +9,8 @@ import handlers               from '../../helpers/handlers';
 import { OptOutValidator }    from '../../helpers/validations';
 
 const Page = (props) => {
-  let validations       = new OptOutValidator(props.optOut, props.validations);
+  let locale            = props.locale;
+  let validations       = new OptOutValidator(Object.assign(props.optOut, {locale}), props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('votingOptOut', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +30,8 @@ const mapStateToProps = (state) => {
     optOut        : state.application.voting.optOut,
     dateOfBirth   : state.application.basics.dateOfBirth,
     focused       : state.ui.focus,
-    validations   : state.ui.validations
+    validations   : state.ui.validations,
+    locale        : state.ui.locale
   };
 };
 

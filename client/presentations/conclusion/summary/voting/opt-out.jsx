@@ -9,15 +9,15 @@ import SummaryItem             from '../summary-item.jsx';
 
 const OptOut = (props) => {
   if (!hasValue(props.optOut)) { return null; }
-
+  let locale = props.locale;
   let optOut = '';
 
   if (props.optOut === 'new') {
-    optOut = <p>{translations.summaryPage.voterRegistration.choiceYes}</p>
+    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceYes}</p>
   } else if (props.optOut === 'existing') {
-    optOut = <p>{translations.summaryPage.voterRegistration.choiceUpdate}</p>
+    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceUpdate}</p>
   } else {
-    optOut = <p>{translations.summaryPage.voterRegistration.choiceNo}</p>
+    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceNo}</p>
   };
 
   return (
@@ -26,7 +26,7 @@ const OptOut = (props) => {
       name='votingOptOut'
     >
       <SummaryItem
-        title={translations.summaryPage.voterRegistration.registrationChoice}
+        title={translations[locale].summaryPage.voterRegistration.registrationChoice}
         text={optOut}
       />
     </PageSummaryLink>

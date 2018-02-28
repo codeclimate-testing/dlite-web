@@ -27,7 +27,8 @@ const mapStateToProps = (state) => {
     reducedFee  : state.application.IDApp.reducedFee,
     cardType    : state.application.cardType,
     focused     : state.ui.focus,
-    validations : state.ui.validations
+    validations : state.ui.validations,
+    locale      : state.ui.locale
   };
 };
 

@@ -15,7 +15,7 @@ import translations             from '../../../../../client/i18n';
 describe('RealIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-
+  let locale = 'en';
   beforeEach(function() {
 
     let cardChanges = {
@@ -61,7 +61,8 @@ describe('RealIDInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange
+      onChange,
+      locale
     }
   });
 
@@ -92,7 +93,7 @@ describe('RealIDInfo', function() {
             <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.realIDCompliantID), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantID), true);
       });
     });
 
@@ -107,7 +108,7 @@ describe('RealIDInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations.intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense), true);
+        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense), true);
       });
     });
   });

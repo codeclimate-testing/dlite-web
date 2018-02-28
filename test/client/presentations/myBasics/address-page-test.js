@@ -14,7 +14,7 @@ import translations             from '../../../../client/i18n';
 describe('AddressPage', function() {
   let props;
   const Wrapper = wrapperGenerator(store);
-
+  let locale = 'en';
   beforeEach(function() {
     let address = {
       homeAddressSameAsMailing: '',
@@ -72,7 +72,8 @@ describe('AddressPage', function() {
       validations,
       sectionName,
       sectionNumber,
-      focused
+      focused,
+      locale
     }
   });
 
@@ -112,7 +113,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.ID));
+    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.ID));
   });
 
   it('shows the DL header', function() {
@@ -127,7 +128,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.license));
+    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.license));
   });
 
   it('shows the header for both cards', function() {
@@ -138,7 +139,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations.myBasics.addressesPage.mailingAddressSameExplanation.cards));
+    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.cards));
   });
 });
 

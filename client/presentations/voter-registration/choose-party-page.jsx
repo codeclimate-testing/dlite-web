@@ -11,6 +11,7 @@ import { checkPreReg }          from '../../helpers/data/youth';
 import Translate                from '../../i18n/translate-tag.jsx';
 
 const ChoosePartyPage = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -19,10 +20,10 @@ const ChoosePartyPage = (props) => {
       <form onSubmit={props.onSubmit} className = 'choose-party-form'>
         <div className='choose-political-party'>
           <Translate tag='h2' className='question'>
-            { translations.votingRegistration.choosePartyPage.pagePrompt }
+            { translations[locale].votingRegistration.choosePartyPage.pagePrompt }
           </Translate>
           <Translate tag='p'>
-            { translations.votingRegistration.choosePartyPage.explanation }
+            { translations[locale].votingRegistration.choosePartyPage.explanation }
           </Translate>
 
           <fieldset>
@@ -34,12 +35,12 @@ const ChoosePartyPage = (props) => {
           >
             <RadioSelector
               value='Yes'
-              text={translations.shared.commonAnswers.yes}
+              text={translations[locale].shared.commonAnswers.yes}
               className='long-text'
             />
             <RadioSelector
               value='Skip'
-              text={translations.votingRegistration.choosePartyPage.answerNo}
+              text={translations[locale].votingRegistration.choosePartyPage.answerNo}
               className='long-text'
             />
           </RadioCollection>

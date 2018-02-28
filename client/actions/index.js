@@ -74,7 +74,8 @@ export const TYPES = {
   HOVER_DOWN:                             'HOVER_DOWN',
   CLEAR_HOVER:                            'CLEAR_HOVER',
   ADD_APP:                                'ADD_APP',
-  CHOOSE_APP:                             'CHOOSE_APP'
+  CHOOSE_APP:                             'CHOOSE_APP',
+  UPDATE_LOCALE:                          'UPDATE_LOCALE'
 };
 
 export const createApplicationID                      = generateFormAction(TYPES.CREATE_APPLICATION_ID);
@@ -133,3 +134,4 @@ export const hoverUp                                  = generateValueAction(TYPE
 export const hoverDown                                = generateValueAction(TYPES.HOVER_DOWN);
 export const clearHover                               = generateValueAction(TYPES.CLEAR_HOVER);
 export const addApp                                   = generateValueAction(TYPES.ADD_APP);
+export const updateLocale                             = generateValueAction(TYPES.UPDATE_LOCALE);

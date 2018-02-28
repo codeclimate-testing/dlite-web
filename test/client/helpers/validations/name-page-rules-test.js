@@ -9,7 +9,8 @@ describe('Name page validation rules:', function() {
     let props = {
       firstName: 'Jerimiah',
       middleName: 'Wilson',
-      lastName: 'Smith'
+      lastName: 'Smith',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.firstName(props), []);
@@ -21,7 +22,8 @@ describe('Name page validation rules:', function() {
     let props = {
       firstName: 'J£rimiah',
       middleName: 'Wil§on',
-      lastName: ''
+      lastName: '',
+      locale: 'en'
     };
 
     assert.deepEqual(rules.firstName(props),  ['Sorry, your card can only include English characters.']);
