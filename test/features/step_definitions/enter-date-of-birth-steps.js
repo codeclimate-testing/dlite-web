@@ -43,12 +43,12 @@ module.exports = function(world) {
         var d = new Date();
 
         // calculate a date of under 18
-        var month = d.getMonth() > 11 ? 13 - d.getMonth() : d.getMonth() + 2;
+        var novemberOrLater = d.getMonth() >= 10;
+        var month = novemberOrLater ? (12 - d.getMonth()) : (d.getMonth() + 2);
         var day = '10' ;
-        var year = (d.getFullYear() - 18).toString();
-        var d = new Date();
+        var year = novemberOrLater ? (d.getFullYear() - 17 ): (d.getFullYear() - 18);
 
-        assert(text.includes(month.toString() + '/' + day + '/' + year), 'date of birth missing');
+        assert(text.includes(month.toString() + '/' + day + '/' + year.toString()), 'date of birth missing');
       })
       .then(() => { done(); })
       .catch(done);
@@ -102,7 +102,7 @@ module.exports = function(world) {
 
     var month = d.getMonth();
     var day = d.getDate();
-    var year = d.getFullYear() - 5;
+    var year = d.getFullYear() - 13;
 
     browser
       .type('#month', month.toString())
@@ -114,9 +114,9 @@ module.exports = function(world) {
 
   world.when('I am under 16 years old', function(done) {
     let d = new Date();
-    let month = d.getMonth() + 2;
-    let day = d.getDate() + 2;
-    let year = d.getFullYear() - 16;
+    let month = d.getMonth();
+    let day = d.getDate();
+    let year = d.getFullYear() - 13;
 
     browser
       .type('#month', month.toString())
@@ -154,7 +154,7 @@ module.exports = function(world) {
   world.and('I indicate that I am between 14 and 15', function(done) {
     var d = new Date();
     // calculate birthday for someone who has just turned 14
-    var month = d.getMonth();
+    var month = d.getMonth() + 1;
     var day = d.getDate();
     var year = d.getFullYear() - 14;
 
@@ -201,14 +201,15 @@ module.exports = function(world) {
     var d = new Date();
 
     // calculate a date of under 18
-    var month = d.getMonth() > 11 ? 13 - d.getMonth() : d.getMonth() + 2;
+    var novemberOrLater = d.getMonth() >= 10;
+    var month = novemberOrLater ? (12 - d.getMonth()) : (d.getMonth() + 2);
     var day = '10' ;
-    var year = (d.getFullYear() - 18).toString();
+    var year = novemberOrLater ? (d.getFullYear() - 17 ): (d.getFullYear() - 18);
 
     browser
       .type('#month', month.toString())
       .type('#day', day)
-      .type('#year', year)
+      .type('#year', year.toString())
       .then(() => { done(); })
       .catch(done);
   });
