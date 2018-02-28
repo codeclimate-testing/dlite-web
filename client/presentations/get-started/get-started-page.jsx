@@ -17,7 +17,17 @@ import RealIDInfo             from './intro-page/real-id-info.jsx';
 import UpdateApplicationInfo  from './intro-page/update-application-info.jsx';
 import CorrectApplicationInfo from './intro-page/correct-application-info.jsx';
 import ReplaceApplicationInfo from './intro-page/replace-application-info.jsx';
-import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
+import Translate              from '../../i18n/translate-tag.jsx';
+
+const ListItems = () => {
+  return translations.intro.getStartedPage.listItems.map((text, i) => {
+    return (
+      <Translate tag='li' key={i} keyProp={i}>
+        {text}
+      </Translate>
+    );
+  });
+};
 
 const Intro = (props) => {
   const linkAddress = '/my-basics/address';
@@ -25,7 +35,10 @@ const Intro = (props) => {
   return (
     <Page {...props} >
       <div className='intro-info'>
-        {convertToHtml('h2', translations.intro.getStartedPage.title, 'question')}
+        <Translate tag='h2'>
+          {translations.intro.getStartedPage.title}
+        </Translate>
+
         <DLInfo {...props} />
         <ApplyingIDInfo {...props} />
         <RenewingIDInfo {...props} />
@@ -40,17 +53,22 @@ const Intro = (props) => {
         <ReplaceApplicationInfo {...props} />
 
         <hr/>
-        <p>{translations.intro.getStartedPage.listHeader}</p>
+
+        <Translate tag='p'>
+          {translations.intro.getStartedPage.listHeader}
+        </Translate>
+
         <ol className='decimal-list'>
-          {convertToHtml('li', translations.intro.getStartedPage.listItems[0])}
-          {convertToHtml('li', translations.intro.getStartedPage.listItems[1])}
-          {convertToHtml('li', translations.intro.getStartedPage.listItems[2])}
-          {convertToHtml('li', translations.intro.getStartedPage.listItems[3])}
+          <ListItems />
         </ol>
 
+        <Translate tag='p'>
+          {translations.intro.getStartedPage.timeToComplete}
+        </Translate>
 
-        {convertToHtml('p', translations.intro.getStartedPage.timeToComplete)}
-        {convertToHtml('p', translations.intro.getStartedPage.afterComplete)}
+        <Translate tag='p'>
+          {translations.intro.getStartedPage.afterComplete}
+        </Translate>
 
         <div className='navigation-buttons row'>
           <hr/>
@@ -64,8 +82,8 @@ const Intro = (props) => {
           <div className='shadow-container unit-right'>
             <LinkButton
               to={linkAddress}
-              linkText='Get started'
-              className='continue get-started forward'
+              linkText='Next'
+              className='continue forward'
             />
           </div>
         </div>

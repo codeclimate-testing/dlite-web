@@ -9,7 +9,7 @@ const Translate = (props) => {
   return (
     <Tag
       className={props.className}
-      key={props.key}
+      key={props.keyProp}
       dangerouslySetInnerHTML={content}
     />
   );
