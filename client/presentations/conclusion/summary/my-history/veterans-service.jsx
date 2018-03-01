@@ -4,18 +4,31 @@ import React from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import PageSummaryLink  from '../Page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
-import {
-  getStringByStatus
-} from '../../../../helpers/data/summary';
+import { isVeteran }    from '../../../../helpers/data/veteran';
 
-const yesString = 'Yes';
-const noString = 'No';
+
+const BenefitInfo = (props) => {
+  if (!isVeteran(props)) { return null; }
+  return (
+    <SummaryItem
+      title='Get benefit information:'
+      text={props.veteransService.receiveBenefits}
+    />
+  )
+};
+
+const PrintedOnCard = (props) => {
+  if (!isVeteran(props)) { return null; }
+  return (
+    <SummaryItem
+      title='"Veteran" printed on card(s):'
+      text={props.veteransService.veteransIdentifier}
+    />
+  )
+};
 
 const VeteransService = (props) => {
   if (!dataPresent.veteransService(props.veteransService)) { return null; }
-  let veteran = getStringByStatus(props.veteransService.isVeteran, yesString, noString);
-  let benefitsInfo = getStringByStatus(props.veteransService.receiveBenefits, yesString, noString);
-  let printVeteran = getStringByStatus(props.veteransService.veteransIdentifier, yesString, noString);
 
   return (
     <PageSummaryLink
@@ -24,16 +37,12 @@ const VeteransService = (props) => {
     >
       <SummaryItem
         title='Veteran:'
-        text={veteran}
+        text={props.veteransService.isVeteran}
       />
-      <SummaryItem
-        title='Get benefit information:'
-        text={benefitsInfo}
-      />
-      <SummaryItem
-        title='"Veteran" printed on card(s):'
-        text={printVeteran}
-      />
+
+      <BenefitInfo    veteransService={props.veteransService} />
+      <PrintedOnCard  veteransService={props.veteransService} />
+
     </PageSummaryLink>
   )
 };

@@ -574,6 +574,26 @@ describe('Summary components', function() {
         assert.equal(component.text().includes('No'), true);
         assert.equal(component.text().includes('"Veteran" printed on card(s):'), true);
       });
+
+      it('shows only isVeteran answer if answer is No', function() {
+        let veteransService = {
+          isVeteran: 'No',
+          receiveBenefits: '',
+          previouslyDesignated: '',
+          veteransIdentifier: ''
+        };
+        let component = render(
+          <Wrapper>
+            <VeteransService
+              { ...props }
+              veteransService={veteransService}
+            />
+          </Wrapper>
+        )
+        assert.equal(component.text().includes('Veteran:No'), true);
+        assert.equal(component.text().includes('Get benefit information:'), false);
+        assert.equal(component.text().includes('"Veteran" printed on card(s):'), false);
+      });
     });
   });
 
