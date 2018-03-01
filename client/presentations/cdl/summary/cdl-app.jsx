@@ -5,7 +5,9 @@ import Accordion            from '../../../containers/accordion.jsx';
 import CdlAction            from './cdl-action.jsx';
 
 
-const CDLApp = (application) => {
+const CDLApp = (props) => {
+  let application = props.cdl;
+  let locale      = props.ui.locale;
   return (
     <Accordion id='cdl-summary' title='My commercial driver license'>
       <CdlAction

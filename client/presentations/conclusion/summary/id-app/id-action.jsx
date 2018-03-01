@@ -21,6 +21,7 @@ import {
 const IDAction = (props) => {
   if(!IDAppExists(props)) { return null; }
   let locale = props.locale;
+
   return (
     <PageSummaryLink
       {...props}

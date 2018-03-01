@@ -7,17 +7,17 @@ import Accordion            from '../../../containers/accordion.jsx';
 
 
 const Contents = (props) => {
-  let application = props.cdl;
+
   return (
     <div className = 'summary'>
-      <CDLApp         {...application} />
+      <CDLApp         {...props} />
 
-      <MyBasics       {...application} />
+      <MyBasics       {...props} />
 
       <Accordion id='self-certification' title='Self certification'>
       </Accordion>
 
-      <MyHistory      {...application} />
+      <MyHistory      {...props} />
 
       <Accordion id='organ-donation-summary' title='Organ donation'>
       </Accordion>

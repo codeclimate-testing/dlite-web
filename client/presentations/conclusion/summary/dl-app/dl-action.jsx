@@ -21,6 +21,7 @@ import {
 const DLAction = (props) => {
   if(!DLAppExists(props)) { return null; }
   let locale = props.locale;
+
   return (
     <PageSummaryLink
       {...props}

@@ -17,9 +17,10 @@ let errorFunction = (name) => {
 };
 
 const isIssued = (props) => {
+  let locale = props.locale;
   let errors = [];
   if (props.isIssued === '') {
-    errors.push(translations.errorMessages['selectionMissing']);
+    errors.push(translations[locale].errorMessages['selectionMissing']);
   }
   return errors;
 }

@@ -12,21 +12,18 @@ import Alerts               from './alerts.jsx';
 
 
 const Contents = (props) => {
-  let application     = props.application;
-  application.locale  = props.locale;
-  application.summary = 'summary'
   return (
     <div className    = 'summary'>
       <Alerts
-        cardType      = {application.cardType}
-        dateOfBirth   = {application.basics.dateOfBirth}
+        cardType      = {props.application.cardType}
+        dateOfBirth   = {props.application.basics.dateOfBirth}
       />
-      <IDApp        {...application} />
-      <DLApp        {...application} />
-      <MyBasics     {...application} />
-      <MyHistory    {...application} />
-      <OrganDonation {...application} />
-      <Voting       {...application} />
+      <IDApp        {...props} />
+      <DLApp        {...props} />
+      <MyBasics     {...props} />
+      <MyHistory    {...props} />
+      <OrganDonation {...props} />
+      <Voting       {...props} />
     </div>
   )
 };

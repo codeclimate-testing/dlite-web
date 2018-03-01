@@ -15,7 +15,7 @@ const Form = (props) => {
         errorMessage  = { props.validations.isIssued() }
         selectedValue = {props.currentCardInfo.isIssued}
       >
-        { radioYesNoGroup() }
+        { radioYesNoGroup(props.locale) }
       </RadioCollection>
     </div>
   );

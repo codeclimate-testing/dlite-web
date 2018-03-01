@@ -43,7 +43,10 @@ describe('CDL Summary page', function() {
         }
       },
       server: '',
-      onSubmit: spy()
+      onSubmit: spy(),
+      ui: {
+        locale: 'en'
+      }
     };
   });
   it('has 5 accordions', function() {

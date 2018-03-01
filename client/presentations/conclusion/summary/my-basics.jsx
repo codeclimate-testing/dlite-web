@@ -13,31 +13,47 @@ import {
 } from './my-basics/index';
 
 const MyBasics = (props) => {
+  let application = props.application;
+  let locale      = props.ui.locale;
+
   return (
     <Accordion id='basics-summary' title='My basics' key='basics-summary'>
-      <Empty              {...props} />
+      <Empty
+        {...application}
+        locale            = { locale }
+        summary           = 'summary'
+      />
       <LegalName
-        legalName         = {props.basics.legalName}
+        locale            = { locale }
+        summary           = 'summary'
+        legalName         = {application.basics.legalName}
         editKey           = 'legalName'
       />
       <DateOfBirth
-        dateOfBirth       = {props.basics.dateOfBirth}
+        locale            = { locale }
+        summary           = 'summary'
+        dateOfBirth       = {application.basics.dateOfBirth}
         editKey           = 'dateOfBirth'
       />
       <Address
-        address           = {props.basics.address}
-        editKey           = 'addresses'
-        summary           = 'summary'
         locale            = { locale }
+        summary           = 'summary'
+        address           = { application.basics.address}
       />
       <PhysicalTraits
-        physicalTraits    = {props.basics.physicalTraits}
+        locale            = { locale }
+        summary           = 'summary'
+        physicalTraits    = { application.basics.physicalTraits}
       />
       <TraitsHeightWeight
-        traitsHeightWeight= {props.basics.traitsHeightWeight}
+        locale            = { locale }
+        summary           = 'summary'
+        traitsHeightWeight= { application.basics.traitsHeightWeight}
       />
       <SocialSecurity
-        socialSecurity    = {props.basics.socialSecurity}
+        locale            = { locale }
+        summary           = 'summary'
+        socialSecurity    = { application.basics.socialSecurity}
       />
     </Accordion>
   );

@@ -4,7 +4,7 @@ import React from 'react';
 import translations from '../../../i18n';
 
 const SubmitButton = (props) => {
-  let locale = props.ui.locale;
+  let locale = props.locale;
   let submitText = translations[locale].summaryPage.buttons.submit;
 
   return (

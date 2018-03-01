@@ -45,7 +45,7 @@ describe('CurrentCardPage', function() {
         accordions,
         onChange,
         validations,
->>>>>>> added and organized summary and added testing
+        locale
       }
     });
 

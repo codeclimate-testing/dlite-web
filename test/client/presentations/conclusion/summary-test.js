@@ -86,6 +86,7 @@ describe('Summary components', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
   let locale = 'en';
+
   beforeEach(function() {
     props = Object.assign({}, data.application);
     props.server = '';
@@ -662,10 +663,6 @@ describe('Summary components', function() {
   });
 
   describe('MyBasics', function() {
-    beforeEach(function() {
-      props = Object.assign({}, data.application);
-      props.summary = 'summary';
-    });
     describe('Empty', function() {
       it('returns null when no value', function() {
         let app = Object.assign({}, data.application);
@@ -736,7 +733,6 @@ describe('Summary components', function() {
           state: 'CA',
           zip: '90210'
         };
-        props.locale = locale;
 
         props.editKey = 'addresses';
 
@@ -1066,13 +1062,18 @@ describe('Summary components', function() {
 
   describe('OrganDonation', function() {
     it('shows organ donation selections', function(){
-      props.organDonation = {
-        donateMoney: 'Yes',
-        donateOrgan: 'Yes'
+      let data = {
+        application: {
+          organDonation: {
+            donateMoney: 'Yes',
+            donateOrgan: 'Yes'
+          }
+        }
       };
+
       let component = render(
         <Wrapper>
-          <OrganDonation { ...props }/>
+          <OrganDonation { ...data }/>
         </Wrapper>
       );
       assert.equal(component.text().includes('Be an organ donorYes'), true);

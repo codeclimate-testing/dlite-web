@@ -6,7 +6,6 @@ import SummaryForm          from './summary/summary-form.jsx';
 import Content              from './summary/body.jsx';
 
 const SummaryPage = (props) => {
-  let locale = props.ui.locale;
   return (
       <Page
         {...props}
@@ -15,10 +14,9 @@ const SummaryPage = (props) => {
         <SummaryForm
           {...props}
         >
-        <Content
-          {...props}
-          summary='summary'
-        />
+          <Content
+            {...props}
+          />
         </SummaryForm>
       </Page>
   )

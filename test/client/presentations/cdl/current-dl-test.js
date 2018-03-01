@@ -40,7 +40,8 @@ describe('CurrentCardPage', function() {
       props = {
         currentCardInfo,
         onChange,
-        validations
+        validations,
+        locale: 'en'
       };
     });
 

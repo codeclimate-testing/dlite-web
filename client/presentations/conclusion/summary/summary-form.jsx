@@ -15,6 +15,7 @@ import {
 } from '../../validations.jsx';
 
 const SummaryForm = (props) => {
+  let locale = props.ui.locale;
   return (
     <div>
       <div className={props.server.apiStatus}/>
@@ -24,7 +25,7 @@ const SummaryForm = (props) => {
         className ={hideMain(props)}
       >
         <Translate tag='h2'>
-          { translations.summaryPage.prompt}
+          { translations[locale].summaryPage.prompt}
         </Translate>
 
         <div className='translation-missing'>
@@ -36,7 +37,8 @@ const SummaryForm = (props) => {
         {props.children}
 
         <SubmitButton
-          continueDisabled = { props.continueDisabled }
+          locale            = { locale }
+          continueDisabled  = { props.continueDisabled }
         />
       </form>
     </div>
