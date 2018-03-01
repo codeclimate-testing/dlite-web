@@ -16,35 +16,39 @@ describe('CDL Summary My Basics section', function() {
 
   beforeEach(function() {
     props = {
-      locale: 'en',
-      basics: {
-        legalName: {
-          firstName: 'Steve',
-          middleName: '',
-          lastName: 'Pastrami',
-          suffix: ''
-        },
-        dateOfBirth: {
-          month: '01',
-          day: '29',
-          year: '1957'
-        },
-        residency: {
-          isResident: 'Yes',
-          homeAddressSameAsMailing: 'Yes',
-          home: {
-            street_1: '9900142',
-            street_2: 'Apt 30-Q',
-            city: 'Rockville',
-            state: 'CA',
-            zip: '010101',
+      ui: {
+        locale: 'en'
+      },
+      cdl: {
+        basics: {
+          legalName: {
+            firstName: 'Steve',
+            middleName: '',
+            lastName: 'Pastrami',
+            suffix: ''
           },
-          mailing: {
-            street_1: '9900142',
-            street_2: 'Apt 30-Q',
-            city: 'Rockville',
-            state: 'CA',
-            zip: '010101',
+          dateOfBirth: {
+            month: '01',
+            day: '29',
+            year: '1957'
+          },
+          residency: {
+            isResident: 'Yes',
+            homeAddressSameAsMailing: 'Yes',
+            home: {
+              street_1: '9900142',
+              street_2: 'Apt 30-Q',
+              city: 'Rockville',
+              state: 'CA',
+              zip: '010101',
+            },
+            mailing: {
+              street_1: '9900142',
+              street_2: 'Apt 30-Q',
+              city: 'Rockville',
+              state: 'CA',
+              zip: '010101',
+            }
           }
         }
       }
@@ -66,10 +70,10 @@ describe('CDL Summary My Basics section', function() {
   });
 
   it('shows the home address', function() {
-    assert.equal(component.text().includes(`${translations[props.locale].summaryPage.myBasics.homeAddress}`), true);
+    assert.equal(component.text().includes(`${translations[props.ui.locale].summaryPage.myBasics.homeAddress}`), true);
     assert.equal(component.text().includes('9900142'), true);
     assert.equal(component.text().includes('Apt 30-Q'), true);
-    assert.equal(component.text().includes(`${translations[props.locale].summaryPage.myBasics.mailingAddress}`), true);
+    assert.equal(component.text().includes(`${translations[props.ui.locale].summaryPage.myBasics.mailingAddress}`), true);
     assert.equal(component.text().includes('Rockville, CA 010101'), true);
   });
 

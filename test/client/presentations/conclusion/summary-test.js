@@ -104,7 +104,6 @@ describe('Summary components', function() {
         props.cardAction = 'new';
         props.DLApp.isApplying = true;
         props.DLApp.action = 'new';
-        props.summary = 'summary';
 
         component = render(
           <Wrapper>
@@ -130,7 +129,6 @@ describe('Summary components', function() {
           isApplying: true,
           action: 'renew'
         }
-        props.summary = 'summary';
 
         props.DLApp.currentCard = {
           number: 'a90382kf',
@@ -197,6 +195,7 @@ describe('Summary components', function() {
         );
         assert.equal(component.text().includes('Real-ID CompliantNo'), true);
       });
+
     });
     describe('LicenseType', function() {
       it('lists which types of licenses the user has selected', function() {
@@ -240,7 +239,6 @@ describe('Summary components', function() {
             correctOrUpdate: ''
           }
         };
-        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -260,8 +258,6 @@ describe('Summary components', function() {
           isApplying: true,
           action: 'renew'
         };
-        props.summary = 'summary';
-
 
         props.IDApp.currentCard = {
           number: 'a90382kf',
@@ -283,7 +279,6 @@ describe('Summary components', function() {
     describe('SeniorID', function() {
       it('shows SeniorID selection', function(){
         props.seniorID = 'Yes';
-        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -303,7 +298,6 @@ describe('Summary components', function() {
           isApplying: true,
           realID: 'Yes'
         };
-        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -313,7 +307,7 @@ describe('Summary components', function() {
         assert.equal(component.text().includes('Real-ID CompliantYes'), true);
       });
 
-      it('shows RealID fields for ID when user is using DL as real ID', function(){
+      it('shows RealID fields for ID when user is using DL as real ID but is getting an ID', function(){
         props.cardType = ['DL'];
         props.IDApp = {
           isApplying: true,
@@ -323,52 +317,24 @@ describe('Summary components', function() {
           isApplying: true,
           realID: 'Yes'
         };
-        props.summary = 'summary';
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...props } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID CompliantYes'), true);
-      });
-      it('does not show if user is not getting a DL', function() {
-        let data = props;
-        data.realID.getRealID = 'Yes';
-        data.DLApp.isApplying = false;
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...data } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID'), false);
-      });
-
-      it('does not show if realIdDesignation is not DL', function() {
-        let data = props;
-        data.realID.getRealID = 'Yes';
-        data.realID.realIdDesignation = 'ID';
-
-        let component = render(
-          <Wrapper>
-            <DLRealID { ...data } />
-          </Wrapper>
-        );
-        assert.equal(component.text().includes('Real-ID'), false);
-      });
-
-      it('does not show if the user has not selected to get a real id', function() {
-        let data = props;
-        data.DLApp.isApplying = true;
-        data.realID.getRealID = '';
 
         let component = render(
           <Wrapper>
             <IDRealID { ...props } />
           </Wrapper>
         );
-        assert.ok(component.text().includes('Real-ID CompliantNo'));
+        assert.equal(component.text().includes('Real-ID CompliantNo'), true);
+      });
+
+
+      it('does not show if the user is not getting an ID', function() {
+
+        let component = render(
+          <Wrapper>
+            <IDRealID { ...props } />
+          </Wrapper>
+        );
+        assert.ok(!component.text().includes('Real-ID Compliant'));
       });
     });
 
@@ -383,7 +349,6 @@ describe('Summary components', function() {
           },
           realID: ''
         };
-        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -410,8 +375,6 @@ describe('Summary components', function() {
           year: '',
           isIssued: 'No'
         };
-        props.summary = 'summary';
-
 
         let component = render(
           <Wrapper>
@@ -436,7 +399,6 @@ describe('Summary components', function() {
           year: '2018',
           isIssued: 'Yes'
         };
-        props.summary = 'summary';
 
         let component = render(
           <Wrapper>
@@ -464,9 +426,6 @@ describe('Summary components', function() {
           hasUsedPreviousNames: 'No',
           previousNames: ''
         };
-
-        props.summary = 'summary';
-
         let component = render(
           <Wrapper>
             <NamesHistory
@@ -483,8 +442,6 @@ describe('Summary components', function() {
           hasUsedPreviousNames: 'Yes',
           previousNames: 'John Doe'
         };
-        props.summary = 'summary';
-
 
         let component = render(
           <Wrapper>
@@ -505,7 +462,6 @@ describe('Summary components', function() {
             hasMedicalCondition: 'Yes',
             medicalInfo: 'blind'
           };
-          props.summary = 'summary';
 
           props.DLApp.isApplying = false;
 
@@ -665,10 +621,9 @@ describe('Summary components', function() {
   describe('MyBasics', function() {
     describe('Empty', function() {
       it('returns null when no value', function() {
-        let app = Object.assign({}, data.application);
         let component = render(
           <Wrapper>
-            <Empty { ...app } />
+            <Empty { ...props } />
           </Wrapper>
         );
 

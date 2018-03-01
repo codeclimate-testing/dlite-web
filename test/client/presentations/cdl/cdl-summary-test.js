@@ -29,6 +29,23 @@ describe('CDL Summary page', function() {
             month: '',
             day: '',
             year: ''
+          },
+          residency: {
+            home: {
+              street_1: '',
+              street_2: '',
+              zip: '',
+              city: '',
+              state: ''
+            },
+            sameAddressAsMailing: '',
+            mailing: {
+              street_1: '',
+              street_2: '',
+              zip: '',
+              city: '',
+              state: ''
+            }
           }
         },
         history: {

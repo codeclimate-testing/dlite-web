@@ -5,12 +5,12 @@ import Accordion            from '../../../containers/accordion.jsx';
 import CurrentDL            from '../../conclusion/summary/my-history/license-and-id-history.jsx';
 
 const MyHistory = (props) => {
-  let application = props.cdl;
-  let locale      = props.ui.locale;
+  let cdl       = props.cdl;
+  let locale    = props.ui.locale;
   return (
     <Accordion id='history-summary' title='My history' >
       <CurrentDL
-        licenseAndIdHistory = {application.history.currentDLInfo}
+        licenseAndIdHistory = { cdl.history.currentDLInfo}
         locale              = { locale }
         editKey             = 'cdlCurrentDL'
         summary             = 'cdlSummary'

@@ -35,7 +35,6 @@ const DLApp = (props) => {
         DLApp             = { application.DLApp }
         locale            = { locale }
         summary           = 'summary'
-        realID            = { application.realID }
       />
       <LicenseType
         DLApp             = { application.DLApp }

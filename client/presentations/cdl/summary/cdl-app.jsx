@@ -6,13 +6,14 @@ import CdlAction            from './cdl-action.jsx';
 
 
 const CDLApp = (props) => {
-  let application = props.cdl;
+  let cdl         = props.cdl;
   let locale      = props.ui.locale;
   return (
     <Accordion id='cdl-summary' title='My commercial driver license'>
       <CdlAction
-        cardAction  = {application.cardAction}
+        cardAction  = { cdl.cardAction }
         summary     = 'cdlSummary'
+        locale      = { locale }
       />
     </Accordion>
   )

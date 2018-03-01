@@ -46,7 +46,7 @@ const IDApp = (props) => {
       <IDRealID
         IDApp             = { application.IDApp }
         summary           = 'summary'
-        realID            = { application.realID }
+        locale            = { locale }
       />
     </Accordion>
   )

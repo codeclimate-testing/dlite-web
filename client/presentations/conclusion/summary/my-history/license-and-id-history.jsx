@@ -6,33 +6,39 @@ import { printDate }    from '../../../../helpers/print-date';
 import PageSummaryLink  from '../Page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import {
-  licenseAndIdIssued,
-  dateOfIssue
+  showIssuedIn,
+  showExpirationDate,
+  cardNumber
 } from '../../../../helpers/data/my-history';
 
-const IsIssued = (props) => {
-  if (!licenseAndIdIssued(props)) { return null; }
-  let date       = printDate(props.licenseAndIdHistory);
+const IssuedIn = (props) => {
   let issuedBy   = props.licenseAndIdHistory.issuedBy;
+  if (!showIssuedIn(props)) { return null; }
 
   return (
-    <div>
-      <SummaryItem
-        title='Issued in:'
-        text={issuedBy}
-      />
-      <SummaryItem
-        title='Expiration date:'
-        text={date}
-      />
-    </div>
-  );
+    <SummaryItem
+      title='Issued in:'
+      text={issuedBy}
+    />
+  )
 };
+
+const ExpirationDate = (props) => {
+  if (!showExpirationDate(props)) { return null; }
+  let date       = printDate(props.licenseAndIdHistory);
+  return (
+  <SummaryItem
+      title='Expiration date:'
+      text={date}
+    />
+  )
+};
+
 
 const LicenseAndIdHistory = (props) => {
   if (!hasValue(props.licenseAndIdHistory.isIssued)) { return null; }
 
-  let DLIDNumber = dateOfIssue(props);
+  let DLIDNumber = cardNumber(props);
 
   return (
     <PageSummaryLink
@@ -43,9 +49,10 @@ const LicenseAndIdHistory = (props) => {
         title = {props.title}
         text  = {DLIDNumber}
       />
-      <IsIssued
-        licenseAndIdHistory = {props.licenseAndIdHistory}
-      />
+      <IssuedIn       licenseAndIdHistory = {props.licenseAndIdHistory}/>
+
+      <ExpirationDate licenseAndIdHistory = {props.licenseAndIdHistory}/>
+
     </PageSummaryLink>
   )
 };

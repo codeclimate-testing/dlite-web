@@ -8,23 +8,24 @@ import Accordion            from '../../../containers/accordion.jsx';
 
 
 const MyBasics = (props) => {
-  let locale = props.locale;
+  let cdl         = props.cdl;
+  let locale      = props.ui.locale;
   return (
     <Accordion id='basics-summary' title='My basics'>
       <LegalName
-        legalName         = {props.basics.legalName}
+        legalName         = {cdl.basics.legalName}
         editKey           = 'cdlLegalName'
         summary           = 'cdlSummary'
         locale            = {locale}
       />
       <DateOfBirth
-        dateOfBirth       = {props.basics.dateOfBirth}
+        dateOfBirth       = {cdl.basics.dateOfBirth}
         editKey           = 'cdlDateOfBirth'
         summary           = 'cdlSummary'
         locale            = {locale}
       />
       <Address
-        address           = {props.basics.residency}
+        address           = {cdl.basics.residency}
         editKey           = 'cdlResidency'
         summary           = 'cdlSummary'
         locale            = {locale}

@@ -39,6 +39,7 @@ const MyBasics = (props) => {
         locale            = { locale }
         summary           = 'summary'
         address           = { application.basics.address}
+        editKey           = 'addresses'
       />
       <PhysicalTraits
         locale            = { locale }

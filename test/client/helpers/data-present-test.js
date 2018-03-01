@@ -55,15 +55,17 @@ describe('dataPresent', function() {
 
   describe('#date', function() {
     it('is true when all three parts are present', function() {
-      assert(
+      assert.equal(
         dataPresent.date({month: '12', day: '28', year: '1931'}),
+        true,
         'date not present with all fields'
       );
     });
 
     it('is false when only partial data present', function() {
-      assert(
-        !dataPresent.date({month: '12', year: '1931'}),
+      assert.equal(
+        dataPresent.date({month: '12', year: '1931'}),
+        false,
         'date present with only parts of date'
       );
     });
@@ -72,7 +74,7 @@ describe('dataPresent', function() {
   describe('#cardType', function() {
     it('is false when no data are present', function() {
       assert(
-        !dataPresent.cardType({IDDL: [], cardAction: ''}),
+        !dataPresent.cardType([]),
         'card type not false when no fields selected'
       );
     });

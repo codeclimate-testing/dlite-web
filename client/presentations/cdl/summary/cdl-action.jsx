@@ -16,17 +16,17 @@ import {
   isReplacingCard
 } from '../../../helpers/data/card-actions';
 
-const CdlAction = (cdl) => {
-  let cardAction = cdl.basics.cardAction;
-  if(!cardAction) { return null; }
-  let locale = cdl.locale;
+const CdlAction = (props) => {
+  if(!isCardActionSelected(props)) { return null; }
+  let locale = props.locale;
+
   return (
     <PageSummaryLink
       name    = 'cdlWdywtdt'
-      summary = {cdl.summary}
+      summary = {props.summary}
     >
-      <New        showIf = {isGettingNew(props)} locale={locale}/>
-      <Renew      showIf = {isRenewingCard(props)} locale={locale}/>
+      <New        showIf = {isGettingNew(props)}    locale={locale}/>
+      <Renew      showIf = {isRenewingCard(props)}  locale={locale}/>
       <Replace    showIf = {isReplacingCard(props)} locale={locale}/>
     </PageSummaryLink>
   )

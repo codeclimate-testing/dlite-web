@@ -28,12 +28,14 @@ const voterRegistration = [
   {
     key: 'voterPreferences',
     description: 'Voter preferences',
-    path: '/voting-registration/preferences'
+    path: '/voting-registration/preferences',
+    next: 'choosePoliticalParty'
   },
   {
     key: 'voterPreferencesUpdated',
     description: 'Voter preferences updated',
-    path: '/voting-registration/preferences-updated'
+    path: '/voting-registration/preferences-updated',
+    next: 'choosePoliticalParty'
   },
   {
     key: 'choosePoliticalParty',
@@ -62,8 +64,9 @@ const voterRegistration = [
   {
     key: 'voterConfirmation',
     description: 'Voter registration confirmation',
-    path: '/voting-registration/confirmation'
-  },
+    path: '/voting-registration/confirmation',
+    next: 'summary'
+  }
 ];
 
 export default voterRegistration;

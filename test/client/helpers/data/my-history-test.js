@@ -3,6 +3,9 @@ const assert = require('assert');
 
 import {
   licenseAndIdIssued,
+  showIssuedIn,
+  showExpirationDate,
+  cardNumber,
   licenseIssuesIsSuspended,
   hasMedical,
   hasUsedPreviousNames,
@@ -11,10 +14,20 @@ import {
 } from '../../../../client/helpers/data/my-history';
 
 describe('Data helpers for my-history data', function() {
-  describe('#licenseAndIdIssued', function() {
-    let props = {
-      licenseAndIdHistory: { isIssued: ''}
+  let props = {
+    licenseAndIdHistory: {}
+  }
+  beforeEach(function() {
+    props.licenseAndIdHistory = {
+      isIssued: '',
+      number: '',
+      month: '',
+      day: '',
+      year: '',
+      issuedBy: ''
     };
+  });
+  describe('#licenseAndIdIssued', function() {
     it('is true when value equals Yes', function() {
       props.licenseAndIdHistory.isIssued = 'Yes';
       assert.equal(licenseAndIdIssued(props), true);
@@ -27,6 +40,42 @@ describe('Data helpers for my-history data', function() {
     it('is false when value is blank', function() {
       props.licenseAndIdHistory.isIssued = '';
       assert.equal(licenseAndIdIssued(props), false);
+    });
+  });
+
+  describe('#showIssuedIn', function() {
+    it('returns false when card not issued', function() {
+      props.licenseAndIdHistory.isIssued = 'No';
+      assert.equal(showIssuedIn(props), false);
+    });
+    it('returns false when issuedBy field is blank', function() {
+      props.licenseAndIdHistory.isIssued = 'Yes';
+      props.licenseAndIdHistory.issuedBy = '';
+      assert.equal(showIssuedIn(props), false);
+    });
+  });
+
+  describe('#showExpirationDate', function() {
+    it('returns false when card not issued', function() {
+      props.licenseAndIdHistory.isIssued = 'No';
+      assert.equal(showExpirationDate(props), false);
+    });
+    it('returns false when date not complete', function() {
+      props.licenseAndIdHistory.isIssued = 'Yes';
+      props.licenseAndIdHistory.month = '10';
+      assert.equal(showExpirationDate(props), false);
+    });
+  });
+
+  describe('#dateOfIssue', function() {
+    it('returns "None" when card not issued', function() {
+      props.licenseAndIdHistory.isIssued = 'No';
+      assert.equal(cardNumber(props), "None");
+    });
+    it('returns the card number when card is issued', function() {
+      props.licenseAndIdHistory.isIssued = 'Yes';
+      props.licenseAndIdHistory.number = 'AA999';
+      assert.equal(cardNumber(props), 'AA999');
     });
   });
 

@@ -59,7 +59,7 @@ module.exports = function (world) {
   world.when('I enter my driver license number', function(done){
     browser
       .type('#number', 'DMV2000')
-      .then(done)
+      .then(() => { done(); })
       .catch(done);
   });
 
@@ -67,7 +67,7 @@ module.exports = function (world) {
     browser
       .text()
       .then(text => {
-
+        assert.equal(text.includes('Current DL number:'), true);
       })
       .then(done)
       .catch(done);
@@ -77,7 +77,7 @@ module.exports = function (world) {
     browser
       .text()
       .then(text => {
-
+        assert.equal(text.includes('Current DL number:DMV2000'), true);
       })
       .then(done)
       .catch(done);

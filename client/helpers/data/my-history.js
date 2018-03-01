@@ -1,10 +1,21 @@
 'use strict';
 
+import { hasValue }       from './validations';
+import * as dataPresent   from '../data-present';
+
 export const licenseAndIdIssued = (props) => {
   return props.licenseAndIdHistory.isIssued === 'Yes';
 };
 
-export const dateOfIssue = (props) => {
+export const showIssuedIn = (props) => {
+  return licenseAndIdIssued(props) && hasValue(props.licenseAndIdHistory.issuedBy);
+};
+
+export const showExpirationDate = (props) => {
+  return licenseAndIdIssued(props) && dataPresent.date(props.licenseAndIdHistory);
+};
+
+export const cardNumber = (props) => {
   let key = 'None';
   if (licenseAndIdIssued(props)) {
     key = props.licenseAndIdHistory.DLIDNumber || props.licenseAndIdHistory.number
