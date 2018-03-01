@@ -4,17 +4,16 @@ import React              from 'react';
 import SummaryItem        from './summary-item.jsx';
 import { printDate }      from '../../../helpers/print-date';
 import * as dataPresent   from '../../../helpers/data-present';
-import { hasValue }       from '../../../helpers/data/validations';
 import PageSummaryLink    from './Page-summary-link.jsx';
-
+import { cardNumberOrNone } from '../../../helpers/data/my-history';
 
 
 export const CardNumber = (props) => {
-  if (!hasValue(props.number)) { return null; }
+  let cardNumber = cardNumberOrNone(props);
   return (
     <SummaryItem
       title = {props.title}
-      text  = {props.number}
+      text  = {cardNumber}
     />
   )
 };
@@ -24,26 +23,26 @@ export const CardDate = (props) => {
   let date = printDate(props.currentCardInfo);
   return (
     <SummaryItem
-      title = 'Expiration date'
+      title = 'Expiration date:'
       text  = {date}
     />
   )
 };
 
 export const CurrentCardInfo = (props) => {
-  if (!dataPresent.currentCardInfo(props.currentCard)) { return null; }
+  if (!dataPresent.currentCardInfo(props.currentCardInfo)) { return null; }
   return (
     <PageSummaryLink
       {...props}
       name      = {props.editKey}
     >
       <CardNumber
-        number  = {props.currentCard.number}
+        number  = {props.currentCardInfo.number}
         title   = {props.title}
       />
 
       <CardDate
-        currentCardInfo = {props.currentCard}
+        currentCardInfo = {props.currentCardInfo}
       />
     </PageSummaryLink>
   );

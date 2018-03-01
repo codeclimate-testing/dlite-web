@@ -1,7 +1,6 @@
 'use strict';
-
-import { hasValue }       from './validations';
-import * as dataPresent   from '../data-present';
+import { hasValue }     from './validations';
+import * as dataPresent from '../data-present';
 
 export const licenseAndIdIssued = (props) => {
   return props.licenseAndIdHistory.isIssued === 'Yes';
@@ -41,4 +40,12 @@ export const getStringByMedical = (props) => {
 
 export const getStringByPreviousNames = (props) => {
   return hasUsedPreviousNames(props) ? props.namesHistory.previousNames : 'None';
+};
+
+export const cardNumberOrNone = (props) => {
+  let key = 'None';
+  if (hasValue(props.number)) {
+    key = props.number;
+  }
+  return key;
 };

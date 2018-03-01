@@ -11,17 +11,17 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
   let locale = props.locale;
-  let currentCardValidation = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
-  let onSubmit = handlers.navigateOrShowErrors('cdlCurrentCard', props, currentCardValidation);
-  let onBack   = handlers.navigateOnBack(props, currentCardValidation);
+  let validations = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
+  let onSubmit = handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onBack   = handlers.navigateOnBack(props, validations);
   return (
     <Presentation
       {...props}
-      onSubmit        = { onSubmit }
-      onBack          = { onBack }
-      validations     = { currentCardValidation }
-      onBlur          = { props.onBlurValidate }
-      onFocus         = { props.onFocusClearValidation }
+      onSubmit          = { onSubmit }
+      onBack            = { onBack }
+      validations       = { validations }
+      onBlur            = { props.onBlurValidate }
+      onFocus           = { props.onFocusClearValidation }
     />
   );
 };

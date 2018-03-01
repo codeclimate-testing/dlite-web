@@ -10,7 +10,8 @@ import {
   hasMedical,
   hasUsedPreviousNames,
   getStringByMedical,
-  getStringByPreviousNames
+  getStringByPreviousNames,
+  cardNumberOrNone
 } from '../../../../client/helpers/data/my-history';
 
 describe('Data helpers for my-history data', function() {
@@ -184,6 +185,22 @@ describe('Data helpers for my-history data', function() {
     it('returns "None" if user has indicated they do not have a condition', function() {
       props.namesHistory.hasUsedPreviousNames = 'No';
       assert.equal(getStringByPreviousNames(props), 'None');
+    });
+  });
+
+  describe('#cardNumberOrNone', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        number: ''
+      }
+    })
+    it('returns "None" if props.number is blank', function() {
+      assert.equal(cardNumberOrNone(props), "None");
+    });
+    it('returns the value of props.number', function() {
+      props.number = '1010101000';
+      assert.equal(cardNumberOrNone(props), props.number);
     });
   });
 });

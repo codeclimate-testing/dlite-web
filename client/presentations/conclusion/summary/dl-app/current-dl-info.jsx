@@ -13,9 +13,9 @@ const CurrentDLInfo = (props) => {
   return (
     <CurrentCardInfo
       {...props}
-      editKey     = 'addCurrentCardInfo'
-      currentCard = { props.DLApp.currentCard }
-      title       = 'Driver license number'
+      editKey         = 'addCurrentCardInfo'
+      currentCardInfo = { props.DLApp.currentCard }
+      title           = 'Driver license number'
     />
   )
 };

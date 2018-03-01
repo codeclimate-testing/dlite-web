@@ -26,6 +26,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I select a renewal CDL', function(done) {
+    browser
+      .click('label[for="cdlWDYWTDT -renew"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am applying for a new CDL', function(done) {
     browser
       .text()

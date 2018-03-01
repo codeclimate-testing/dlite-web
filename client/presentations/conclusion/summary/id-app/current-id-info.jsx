@@ -12,9 +12,9 @@ const CurrentIDInfo = (props) => {
   return (
     <CurrentCardInfo
       {...props}
-      editKey     = 'addCurrentIDInfo'
-      currentCard = { props.IDApp.currentCard }
-      title       = 'ID card number'
+      editKey         = 'addCurrentIDInfo'
+      currentCardInfo = { props.IDApp.currentCard }
+      title           = 'ID card number'
     />
   );
 };

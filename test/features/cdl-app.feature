@@ -84,3 +84,10 @@ Scenario: Name page
     When I go to the CDL summary
     Then I will see my "Yes" answer about having a current DL in California
     And I will see my driver license number and expiration date
+
+  Scenario: Renewing a CDL
+    Given I go to the new online DL application page
+    When I go to the CDL WDYWTDT page
+    When I select a renewal CDL
+    And I click "Next" to continue
+    Then I will be on the current CDL page

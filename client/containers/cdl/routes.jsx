@@ -7,7 +7,7 @@ import CDLWelcome                       from './cdl-welcome.jsx';
 import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
 import LegalName                        from './my-basics/cdl-legal-name.jsx';
 import cdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
-import Residency                        from './cdl-residency.jsx';
+import Residency                        from './my-basics/cdl-residency.jsx';
 import cdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
 import cdlCurrentCard                   from './cdl-current-card.jsx';
 import Summary                          from './cdl-summary.jsx';

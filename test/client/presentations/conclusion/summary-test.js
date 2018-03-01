@@ -144,7 +144,7 @@ describe('Summary components', function() {
           </Wrapper>
         );
         assert.equal(component.text().includes('Driver license numbera90382kf'), true);
-        assert.equal(component.text().includes('Expiration date11/13/2008'), true)
+        assert.equal(component.text().includes('Expiration date:11/13/2008'), true)
       });
     });
 
@@ -273,7 +273,7 @@ describe('Summary components', function() {
           </Wrapper>
         );
         assert.equal(component.text().includes('ID card numbera90382kf'), true);
-        assert.equal(component.text().includes('Expiration date11/13/2008'), true);
+        assert.equal(component.text().includes('Expiration date:11/13/2008'), true);
       });
     });
     describe('SeniorID', function() {
@@ -383,6 +383,9 @@ describe('Summary components', function() {
               title = 'Previous DL/ID card number'
               editKey = 'addLicenseHistory'
               licenseAndIdHistory={licenseAndIdHistory}
+              title = 'Previous DL/ID card number'
+              editKey = 'cardHistory'
+              summary = 'summary'
             />
           </Wrapper>
         )
@@ -407,6 +410,9 @@ describe('Summary components', function() {
               title = 'Previous DL/ID card number'
               editKey = 'addLicenseHistory'
               licenseAndIdHistory={licenseAndIdHistory}
+              title = 'Previous DL/ID card number'
+              editKey = 'cardHistory'
+              summary = 'summary'
             />
           </Wrapper>
         )

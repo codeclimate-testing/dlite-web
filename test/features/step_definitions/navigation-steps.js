@@ -55,6 +55,9 @@ module.exports = function(world) {
   world.when('I visit the CDL page to enter my current DL', function(done) {
     navigateToPath('/apply\/cdl\/current-ca-license/', '.cdl-current-dl-yes-no', done);
   });
+  world.when('I go to the CDL WDYWTDT page', function(done) {
+    navigateToPath('/apply/cdl/what-do-you-want-to-do-today', '.choose-card-action', done);
+  });
 
   world.and('I return to the home page', function(done) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
@@ -227,6 +230,10 @@ module.exports = function(world) {
 
   world.when('I will be on the CDL WDYWTDT page', function(done) {
     assertOnPage('.choose-card-action', /apply\/cdl\/what-do-you-want-to-do-today/, done);
+  });
+
+  world.when('I will be on the current CDL page', function(done) {
+    assertOnPage('.enter-current-card-info', /apply\/cdl\/current-card-information/, done);
   });
 
   world.when('I will be on the residency page', function(done) {

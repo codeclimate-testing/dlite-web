@@ -5,7 +5,8 @@ import React                    from 'react';
 import { render }               from 'enzyme';
 import {
   CardDate,
-  CardNumber
+  CardNumber,
+  CurrentCardInfo
 } from '../../../../client/presentations/conclusion/summary/current-card-info.jsx';
 
 describe('Current Card Info shared components', function() {
@@ -25,11 +26,11 @@ describe('Current Card Info shared components', function() {
   });
 
   describe('#CardNumber', function() {
-    it('returns null if number is blank', function() {
+    it('returns "None" if number is blank', function() {
       let component = render(
         <CardNumber {...props} />
       );
-      assert.equal(component.text(), '');
+      assert.ok(component.text().includes('None'));
     });
     it('includes the title passed in props', function() {
       props.title = 'Driver License Number';
@@ -65,6 +66,16 @@ describe('Current Card Info shared components', function() {
         <CardDate { ...props } />
       );
       assert.equal(component.text().includes('10/10/2000'), true);
+    });
+
+  });
+
+  describe('#CurrentCardInfo', function() {
+    it('returns null if currentCardInfo is blank', function() {
+      let component = render(
+        <CurrentCardInfo {...props} />
+      )
+      assert.ok(!component.text().includes('None'));
     });
 
   });
