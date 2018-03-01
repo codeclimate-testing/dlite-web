@@ -28,8 +28,8 @@ describe('Contact Methods page validation rules:', function() {
     });
 
     it('the "please enter either an email address or a phone number" message shows when neither email nor phone has been entered', function() {
-      assert.deepEqual(rules.emailAddress(props), [messages['contactMethod']]);
-      assert.deepEqual(rules.phoneNumber1(props), [messages['contactMethod']]);
+      assert.deepEqual(rules.emailAddress(props), [messages['emailAddressMissingOrInvalid']]);
+      assert.deepEqual(rules.phoneNumber1(props), [messages['phoneMissingOrInvalid']]);
     });
 
     it('shows inputIncludesNonEnglishCharacters error if non-English characters used in email', function() {
@@ -58,10 +58,10 @@ describe('Contact Methods page validation rules:', function() {
       assert.deepEqual(rules.phoneNumber3(props), [messages['phoneMissingOrInvalid']]);
     });
 
-    it('still gives phone error if email exists but invalid phone entered', function() {
+    it('does not give error if email exists but invalid phone entered', function() {
       props.phoneNumber1 = '11';
       props.emailAddress = 'me@mydomain.com';
-      assert.deepEqual(rules.phoneNumber1(props), [messages['phoneMissingOrInvalid']]);
+      assert.deepEqual(rules.phoneNumber1(props), []);
     });
 
     it('does not give phone error if email exists and no phone entered', function() {

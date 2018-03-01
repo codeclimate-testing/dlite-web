@@ -1,17 +1,17 @@
 'use strict';
 
 import React        from 'react';
-import errorClass   from '../helpers/validations/error-class';
 import {
   ErrorIcon,
-  ErrorLabel
+  ErrorLabel,
+  errorClass
 } from './validations.jsx';
 import ExampleLabel from './example-label.jsx';
 
 const TextInput = (props) => {
   let id              = props.id   || props.identifier;
   let name            = props.name || props.identifier;
-  let className       = errorClass(props);
+  let className       = errorClass(props.errorMessage);
   let inputClass      = props.error ? 'error' : className;
 
   return (
