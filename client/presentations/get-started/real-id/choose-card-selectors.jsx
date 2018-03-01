@@ -7,6 +7,7 @@ import radioIdDlGroup         from '../../radio-id-dl-group.jsx';
 import { showDesignation }     from '../../../helpers/data/real-id';
 
 const Form = (props) => {
+  let locale = props.locale;
   if (!showDesignation(props)) { return null; }
 
   return (
@@ -24,7 +25,7 @@ const Form = (props) => {
           name          = 'realIdDesignation'
           errorMessage  = { props.validations.designation() }
         >
-          { radioIdDlGroup() }
+          { radioIdDlGroup(locale) }
         </RadioCollection>
       </fieldset>
 

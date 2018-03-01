@@ -31,7 +31,7 @@ const PreviousDLHeader = (props) => {
 };
 
 const CardHeader = (props) => {
-  if (!showNewDLHeader(props)) { return null; }
+  if (isPreviouslyDesignated(props)) { return null; }
   let locale = props.locale;
   return convertToHtml('h2', translations[locale].myHistory.veteransPage.newDesignation.prompt, 'question')
 };

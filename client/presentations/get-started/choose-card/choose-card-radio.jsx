@@ -6,6 +6,7 @@ import RadioCollection      from '../../radio-selector-collection.jsx';
 import radioIdDlGroup       from '../../radio-id-dl-group.jsx';
 
 const Form = (props) => {
+  let locale = props.locale;
   if (!props.showIf) { return null; }
 
   return (
@@ -17,7 +18,7 @@ const Form = (props) => {
           onBlur          = { props.onBlurValidate }
           errorMessage    = { props.validations.cardType()}
         >
-        {radioIdDlGroup()}
+        {radioIdDlGroup(locale)}
         </RadioCollection>
       </fieldset>
     </div>
