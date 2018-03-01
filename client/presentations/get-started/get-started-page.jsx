@@ -84,7 +84,7 @@ const Intro = (props) => {
           <div className='shadow-container unit-right'>
             <LinkButton
               to={linkAddress}
-              linkText='Next'
+              linkText={translations[locale].shared.navigation.next}
               className='continue forward'
             />
           </div>

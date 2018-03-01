@@ -20,7 +20,7 @@ const Form = (props) => {
     <div className='row change-sections-form'>
       <hr />
       {headerText}
-      <p className='translation-missing'>Select all that apply.</p>
+        {convertToHtml('p', translations[locale].intro.chooseSelectionPage.explanationMultiCard)}
       <fieldset>
         <CheckboxCollection
           {...props}
