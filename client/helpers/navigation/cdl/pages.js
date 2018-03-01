@@ -1,5 +1,9 @@
 'use strict';
 
+import {
+  cdlWdywtdt
+} from './next-path';
+
 const cdl = [
   {
     key: 'cdl',
@@ -23,6 +27,12 @@ const cdl = [
     key: 'cdlWdywtdt',
     description: 'What do you want to do today',
     path: '/what-do-you-want-to-do-today',
+    next: cdlWdywtdt
+  },
+  {
+    key: 'cdlCurrentCard',
+    description: 'Current CDL info',
+    path: '/current-card-information',
     next: 'cdlResidency'
   },
   {

@@ -7,6 +7,7 @@ import updateDateOfBirth            from './update-date-of-birth';
 import updateCardAction             from './update-card-action';
 import updateResidency              from './update-residency';
 import updateCurrentDL              from './update-current-dl';
+import updateCurrentCard            from './update-current-card';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
 
   history                 : combineReducers({
     currentDLInfo         : updateCurrentDL
-  })
+  }),
+  currentCardInfo         : updateCurrentCard
 });
 
 export default rootReducer;

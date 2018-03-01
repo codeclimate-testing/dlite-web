@@ -2,33 +2,32 @@
 
 import React                      from 'react';
 import connectForm                from '../../helpers/connect-form';
-
 import handlers                   from '../../helpers/handlers';
 import { CurrentCardValidator}    from '../../helpers/validations';
-import { updateCurrentCardInfo }  from '../../actions/index';
+import { updateCurrentCDL }       from '../../actions/index';
 import Presentation               from '../../presentations/get-started/current-card-page.jsx';
-import { getCorrectApp }          from '../../helpers/data/card-type';
+
 
 const Page = (props) => {
   let locale = props.locale;
-  let currentCardValidation = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
-  let onSubmit = handlers.navigateOrShowErrors('cdlCurrentCard', props, currentCardValidation);
-  let onBack   = handlers.navigateOnBack(props, currentCardValidation);
+  let validations = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
+  let onSubmit = handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onBack   = handlers.navigateOnBack(props, validations);
   return (
     <Presentation
       {...props}
-      onSubmit        = { onSubmit }
-      onBack          = { onBack }
-      validations     = { currentCardValidation }
-      onBlur          = { props.onBlurValidate }
-      onFocus         = { props.onFocusClearValidation }
+      onSubmit                = { onSubmit }
+      onBack                  = { onBack }
+      validations             = { validations }
+      onBlur                  = { props.onBlurValidate }
+      onFocus                 = { props.onFocusClearValidation }
     />
   );
 };
 
 function mapStateToProps(state) {
   return {
-    currentCardInfo   : getCorrectApp(state.application).currentCard,
+    currentCardInfo   : state.cdl.currentCardInfo,
     cardType          : state.application.cardType,
     IDApp             : state.application.IDApp,
     cardAction        : state.application.cardAction,
@@ -38,5 +37,5 @@ function mapStateToProps(state) {
   };
 };
 
-export default connectForm(mapStateToProps, updateCurrentCardInfo, Page);
+export default connectForm(mapStateToProps, updateCurrentCDL, Page);
 

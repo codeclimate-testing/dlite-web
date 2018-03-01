@@ -1,11 +1,11 @@
 'use strict';
 
 import React                    from 'react';
-import connectForm              from '../../helpers/connect-form';
-import handlers                 from '../../helpers/handlers';
-import { AddressValidator }         from '../../helpers/validations';
-import Presentation             from '../../presentations/cdl/residency.jsx';
-import { updateCdlResidency }   from '../../actions/index';
+import connectForm              from '../../../helpers/connect-form';
+import handlers                 from '../../../helpers/handlers';
+import { AddressValidator }     from '../../../helpers/validations';
+import Presentation             from '../../../presentations/cdl/residency.jsx';
+import { updateCdlResidency }   from '../../../actions/index';
 
 const Page = (props) => {
   let locale            = props.locale;
