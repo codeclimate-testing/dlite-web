@@ -9,7 +9,6 @@ import { updateCardType }     from "../../actions/index";
 import Presentation           from "../../presentations/get-started/choose-card-page.jsx";
 
 const Page = (props) => {
-
   let validations       =   new CardTypeValidator(props, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('chooseCardType', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);

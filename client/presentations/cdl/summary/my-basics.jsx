@@ -27,6 +27,7 @@ const MyBasics = (props) => {
         address           = {props.basics.residency}
         editKey           = 'cdlResidency'
         summary           = 'cdlSummary'
+        locale            = {locale}
       />
     </Accordion>
   )

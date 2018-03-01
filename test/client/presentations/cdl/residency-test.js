@@ -65,7 +65,8 @@ describe('CDL California Resident Page', function() {
       validations,
       sectionName,
       sectionNumber,
-      focused
+      focused,
+      locale: 'en'
     };
   });
 

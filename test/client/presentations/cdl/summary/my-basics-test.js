@@ -16,6 +16,7 @@ describe('CDL Summary My Basics section', function() {
 
   beforeEach(function() {
     props = {
+      locale: 'en',
       basics: {
         legalName: {
           firstName: 'Steve',
@@ -65,10 +66,10 @@ describe('CDL Summary My Basics section', function() {
   });
 
   it('shows the home address', function() {
-    assert.equal(component.text().includes(`${translations.summaryPage.myBasics.homeAddress}`), true);
+    assert.equal(component.text().includes(`${translations[props.locale].summaryPage.myBasics.homeAddress}`), true);
     assert.equal(component.text().includes('9900142'), true);
     assert.equal(component.text().includes('Apt 30-Q'), true);
-    assert.equal(component.text().includes(`${translations.summaryPage.myBasics.mailingAddress}`), true);
+    assert.equal(component.text().includes(`${translations[props.locale].summaryPage.myBasics.mailingAddress}`), true);
     assert.equal(component.text().includes('Rockville, CA 010101'), true);
   });
 

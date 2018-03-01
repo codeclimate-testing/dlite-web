@@ -16,7 +16,7 @@ const addressValue = (type, name, message) => {
     let value = props[type][name];
     let errors = englishValidator(value, locale);
     if (message && !hasValue(value)) {
-      errors.push(translations[locale][message]);
+      errors.push(translations[locale].errorMessages[message]);
     }
     return errors;
   };
@@ -27,7 +27,7 @@ const isResident = (props) => {
   let locale = props.locale;
   let errors = [];
   if (!hasValue(props.isResident)) {
-    errors.push(translations[locale]['selectionMissing']);
+    errors.push(translations[locale].errorMessages.selectionMissing);
   }
   return errors;
 };

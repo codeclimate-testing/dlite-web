@@ -29,7 +29,7 @@ const cdl = [
     key: 'cdlResidency',
     description: 'California residency',
     path: '/california-residency',
-    next: ''
+    next: 'cdlSSN'
   },
   {
     key: 'cdlSummary',

@@ -13,7 +13,7 @@ import {
 const CdlAction = (cdl) => {
   let cardAction = cdl.basics.cardAction;
   if(!cardAction) { return null; }
-  let locale = application.locale;
+  let locale = cdl.locale;
   return (
     <PageSummaryLink
       name    = 'cdlWdywtdt'
