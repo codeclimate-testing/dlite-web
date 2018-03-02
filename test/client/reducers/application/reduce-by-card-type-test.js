@@ -1,6 +1,6 @@
 'use strict';
 import assert               from 'assert';
-import reduceByCardType     from '../../../../client/reducers/application/reduce-by-card-type';
+import reduceByCardType     from '../../../../client/reducers/reduce-by-card-type';
 
 describe('reduce-by-card-type reducer', function() {
   let action, state, type;

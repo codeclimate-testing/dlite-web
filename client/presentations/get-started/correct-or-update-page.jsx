@@ -14,17 +14,18 @@ import {
   hasSpecifiedChange
 }  from '../../helpers/data/card-actions';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
+
 
 const Form = (props) => {
   let locale = props.locale;
   const text = {
-    ID: convertToHtml('p', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.id.explanation),
-    DL: convertToHtml('p', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.license.explanation)
+    ID: translations[locale].intro.correctOrUpdatePage.chooseChangeSection.id.explanation,
+    DL: translations[locale].intro.correctOrUpdatePage.chooseChangeSection.license.explanation
   };
 
   let tag  = getCorrectString(props, text.DL, text.ID);
-  let formName = getCorrectString(props, 'DL', 'ID');
+  let formName = `${getCorrectString(props, 'DL', 'ID')}-`;
 
   return (
     <Page
@@ -32,8 +33,14 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-change'>
-        {convertToHtml('h2', translations[locale].intro.correctOrUpdatePage.prompt, 'question')}
-        {tag}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.correctOrUpdatePage.prompt}
+        </Translation>
+
+        <Translation tag='p'>
+          {tag}
+        </Translation>
+
         <form onSubmit={ props.onSubmit }>
           <RadioForm
             {...props}
@@ -41,8 +48,9 @@ const Form = (props) => {
           />
           <UpdateForm
             {...props}
-            showIf    = { hasSpecifiedChange(props) }
-            formName  = { formName }
+            showIf        = { hasSpecifiedChange(props) }
+            translations  = { translations}
+            formName      = { formName }
           />
           <OtherText
             {...props}

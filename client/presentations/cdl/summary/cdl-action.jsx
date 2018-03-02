@@ -13,7 +13,9 @@ import {
   isRenewingCard,
   isGettingNew,
   isCardActionSelected,
-  isReplacingCard
+  isReplacingCard,
+  isCorrecting,
+  isUpdating
 } from '../../../helpers/data/card-actions';
 
 const CdlAction = (props) => {
@@ -28,6 +30,8 @@ const CdlAction = (props) => {
       <New        showIf = {isGettingNew(props)}    locale={locale}/>
       <Renew      showIf = {isRenewingCard(props)}  locale={locale}/>
       <Replace    showIf = {isReplacingCard(props)} locale={locale}/>
+      <Correct    showIf = {isCorrecting(props)}    locale = {locale}/>
+      <Update     showIf = {isUpdating(props)}      locale = {locale}/>
     </PageSummaryLink>
   )
 };

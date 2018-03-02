@@ -1,7 +1,8 @@
 'use strict';
 
 import {
-  cdlWdywtdt
+  cdlWdywtdt,
+  cdlCurrentCard
 } from './next-path';
 
 const cdl = [
@@ -33,6 +34,12 @@ const cdl = [
     key: 'cdlCurrentCard',
     description: 'Current CDL info',
     path: '/current-card-information',
+    next: cdlCurrentCard
+  },
+  {
+    key: 'cdlChanges',
+    description: 'make updates and corrections',
+    path: '/change-details',
     next: 'cdlResidency'
   },
   {

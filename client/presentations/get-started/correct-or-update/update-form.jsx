@@ -6,25 +6,32 @@ import CheckboxSelector     from '../../checkbox-selector.jsx';
 import {
   getStringByAction
 }   from '../../../helpers/data/card-actions';
-import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translate          from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
-  const correctText = convertToHtml('h3', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.correct, 'question');
-  const updateText = convertToHtml('h3', translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.update, 'question');
-  let headerText = getStringByAction(props, null, null, null, null, updateText, correctText);
+  let formName = props.formName ? `${props.formName}sections` : 'sections';
+
+  const correctText = props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.correct;
+  const updateText  = props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.update;
+  let headerText    = getStringByAction(props, null, null, null, null, updateText, correctText);
 
   return (
     <div className='row change-sections-form'>
       <hr />
-      {headerText}
-        {convertToHtml('p', translations[locale].intro.chooseSelectionPage.explanationMultiCard)}
+        <Translate tag='h3' className='question'>
+          {headerText}
+        </Translate>
+
+        <Translate tag='p'>
+          {props.translations[locale].intro.chooseSelectionPage.explanationMultiCard}
+        </Translate>
+
       <fieldset>
         <CheckboxCollection
           {...props}
-          name          = {`${props.formName}-sections`}
+          name          = { formName }
           array         = { props.cardChanges.sections }
           errorMessage  = { props.validations.sections() }
         >

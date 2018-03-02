@@ -7,12 +7,13 @@ import translations         from '../../../i18n';
 
 const Form = (props) => {
   let locale = props.locale;
+
   return (
-    <div className='row inner-buttom'>
+    <div className='row inner-button'>
       <fieldset>
         <RadioCollection
           {...props}
-          name          = {`${props.formName}-correctOrUpdate`}
+          name          = {`${props.formName}correctOrUpdate`}
           errorMessage  = { props.validations.correctOrUpdate() }
         >
           <RadioSelector

@@ -15,6 +15,7 @@ const CDLApp = (props) => {
     <Accordion id='cdl-summary' title='My commercial driver license'>
       <CdlAction
         cardAction  = { cdl.cardAction }
+        cardChanges = { cdl.cardChanges }
         summary     = 'cdlSummary'
         locale      = { locale }
       />

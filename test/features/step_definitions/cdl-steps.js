@@ -33,11 +33,42 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I select to change my CDL', function(done) {
+    browser
+      .click('label[for="cdlWDYWTDT -change"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to Update my CDL', function(done) {
+    browser
+      .click('label[for="correctOrUpdate-update"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to change my name section', function(done) {
+    browser
+      .click('label[for="name"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am applying for a new CDL', function(done) {
     browser
       .text()
       .then((text) => {
         assert(text.includes('Applying for the first time'), 'applying for new cdl missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see that I am updating my card', function(done) {
+    browser
+      .text()
+      .then(text=> {
+        assert.ok(text.includes('I amUpdating'));
       })
       .then(() => { done(); })
       .catch(done);

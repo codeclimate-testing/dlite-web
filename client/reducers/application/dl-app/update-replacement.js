@@ -1,6 +1,6 @@
 'use strict';
 import { TYPES }            from '../../../actions';
-import reduceByCardType     from '../reduce-by-card-type';
+import reduceByCardType     from '../../reduce-by-card-type';
 
 const defaultState = () => {
   return {

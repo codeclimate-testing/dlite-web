@@ -26,6 +26,9 @@ describe('CDL Summary My CDL Application section', function() {
           day: '',
           year: '',
           number: ''
+        },
+        cardChanges: {
+          correctOrUpdate: ''
         }
       }
     };
@@ -113,6 +116,38 @@ describe('CDL Summary My CDL Application section', function() {
       );
       assert.ok(component.text().includes('Expiration date:09/03/2000'));
     });
+  });
+
+  it('shows user replacing a CDL if cardAction equals replace', function() {
+    props.cdl.cardAction = 'replace';
+    let component = render(
+      <Wrapper>
+        <MyApp { ...props } />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes('I amReplacing'));
+  });
+
+  it('shows user updating a CDL if cardAction equals change', function() {
+    props.cdl.cardAction = 'change';
+    props.cdl.cardChanges.correctOrUpdate = 'update'
+    let component = render(
+      <Wrapper>
+        <MyApp { ...props } />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes('I amUpdating'));
+  });
+
+  it('shows user correcting a CDL if cardAction equals change', function() {
+    props.cdl.cardAction = 'change';
+    props.cdl.cardChanges.correctOrUpdate = 'correct'
+    let component = render(
+      <Wrapper>
+        <MyApp { ...props } />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes('I amCorrecting'));
   });
 
 });
