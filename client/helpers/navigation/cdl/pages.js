@@ -74,6 +74,12 @@ const cdl = [
     next: 'cdlSummary'
   },
   {
+    key: 'cdlClass',
+    description: 'CDL class',
+    path: '/license-class',
+    next: ''
+  },
+  {
     key: 'motorcycle',
     description: 'add classM to cdl',
     path: '/motorcycle',

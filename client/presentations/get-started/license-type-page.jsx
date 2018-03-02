@@ -21,7 +21,7 @@ const Form = (props) => {
 
         <EndorsementToggle
           {...props}
-          selectedValue={ props.DLApp.licenseType.needEndorsement }
+          selectedValue={ props.licenseType.needEndorsement }
         />
 
         <NavigationButtons
