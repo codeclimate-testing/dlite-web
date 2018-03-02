@@ -28,7 +28,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     currentCardInfo   : state.cdl.currentCardInfo,
-    cardAction        : state.application.cardAction,
+    cardAction        : state.cdl.cardAction,
     validations       : state.ui.validations,
     locale            : state.ui.locale
   };

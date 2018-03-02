@@ -64,11 +64,31 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.then('I will see that I am renewing my card', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('I amRenewing'), 'applying for new cdl missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
   world.then('I will see that I am updating my card', function(done) {
     browser
       .text()
       .then(text=> {
         assert.ok(text.includes('I amUpdating'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see my current CDL number', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert.ok(text.includes('CDL number:DMV2000'));
       })
       .then(() => { done(); })
       .catch(done);

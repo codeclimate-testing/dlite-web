@@ -91,6 +91,11 @@ Scenario: Name page
     When I select a renewal CDL
     And I click "Next" to continue
     Then I will be on the current CDL page
+    When I enter my driver license number
+    And I enter the date of DL/ID expiration
+    When I go to the CDL summary
+    Then I will see that I am renewing my card
+    And I will see my current CDL number
 
   Scenario: Updating my CDL
     Given I go to the new online DL application page
@@ -98,7 +103,10 @@ Scenario: Name page
     And I select to change my CDL
     And I click "Next" to continue
     Then I will be on the current CDL page
-    When I go to the page to specify my changes to my CDL
+    When I enter my driver license number
+    And I enter the date of DL/ID expiration
+    And I click "Next" to continue
+    Then I will be on the page to specify my changes to my CDL
     Then I click to Update my CDL
     And I click to change my name section
     When I go to the CDL summary
