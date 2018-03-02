@@ -11,12 +11,14 @@ import updateResidency              from './update-residency';
 import updateSocialSecurity         from './update-social-security';
 import updateCurrentDL              from './update-current-dl';
 import updateCurrentCard            from './update-current-card';
+import updateRealID                 from './update-real-id';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
   cardAction              : updateCardAction,
   cardChanges             : updateCardChanges,
   cardReplacement         : updateCDLCardReplacement,
+  realID                  : updateRealID,
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,
