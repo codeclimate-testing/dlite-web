@@ -117,4 +117,14 @@ module.exports = function(world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.and('I will not see political party section in summary', function(done) {
+    browser
+    .text()
+    .then((text) => {
+      assert(!text.includes('Peace and Freedom Party'), 'political party section is present');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
 };

@@ -83,4 +83,14 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.and('I will not see language section in the summary', function(done) {
+    browser
+    .text()
+    .then((text) => {
+      assert(!text.includes('Korean'), 'language section is present');
+    })
+    .then(() => { done(); })
+    .catch(done);
+  });
 };

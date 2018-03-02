@@ -87,8 +87,8 @@ Feature: Happy path for youth users
     When I click "Next" to continue
     Then I will be on the page with my summary
     And I will see my updated eligibility requirement status
-    Then I will see my updated language in the summary
-    Then I will see my political party updated in summary
+    Then I will not see language section in the summary
+    Then I will not see political party section in summary
     When I visit the required documents page
     Then I will see section about new driver requirements
     Then I will see section about knowledge test
