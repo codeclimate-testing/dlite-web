@@ -34,6 +34,10 @@ export const ballotByMailSelected = (props) => {
   return hasValue(props.ballotByMail);
 };
 
+export const optOutSelected = (props) => {
+  return hasValue(props.optOut);
+};
+
 export const politicalPartySelected = (props) => {
   return hasValue(props.politicalPartyChoose.isSelected);
 };

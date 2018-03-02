@@ -4,8 +4,10 @@ import React from 'react';
 import translations   from '../../../../i18n';
 
 import {
-  declineToAnswer
+  eligibilityRequirementsYes,
+  eligibleForCitizen
 } from '../../../../helpers/data/voting';
+import { ageChecks }           from '../../../../helpers/calculate-age';
 import {
   hasPhone,
   shouldContactNotSelected,
@@ -24,7 +26,7 @@ const PhoneNumber = (props) => {
   return (<SummaryItem
     title={translations[locale].summaryPage.voterRegistration.phone}
     text={phone}
-	        />);
+          />);
 };
 
 const EmailAddress = (props) => {
@@ -33,53 +35,40 @@ const EmailAddress = (props) => {
   return (<SummaryItem
     title={translations[locale].summaryPage.voterRegistration.email}
     text={props.contactMethods.emailAddress}
-	        />)
-};
-
-const Yes = (props) => {
-  if (!shouldContact(props)) { return null; }
-  let locale = props.locale;
-  return  (
-    <SummaryItem
-      title= {title}
-      text={translations[locale].shared.commonAnswers.yes}
-    />
-  )
-};
-
-const No = (props) => {
-  if (shouldContact(props) || declineToAnswer(props.contactMethods.shouldContact)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-      title={title}
-      text={translations[locale].shared.commonAnswers.no}
-    />)
-};
-
-const Decline = (props) => {
-  if (!declineToAnswer(props.contactMethods.shouldContact)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-      title={title}
-      text={translations[locale].shared.commonAnswers.declineToAnswer}
-    />)
+          />)
 };
 
 const ContactMethods = (props) => {
-  if (shouldContactNotSelected(props)) { return null; }
+  let locale = props.locale;
+  let contactMethods = '';
 
-  return (
+  if (shouldContact(props)) {
+    contactMethods = <p>{translations[locale].shared.commonAnswers.yes}</p>
+  } else if (props.contactMethods.shouldContact === 'no') {
+    contactMethods = <p>{translations[locale].shared.commonAnswers.no}</p>
+  } else if (skipAnswer(props)) {
+    contactMethods = <p>{translations[locale].shared.commonAnswers.skip}</p>
+  };
+  
+  let now = props.now ? props.now : new Date();
+  if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props)))
+  {
+    return (
     <PageSummaryLink
       to='/voting-registration/contact-methods'
       name='contactMethods'
     >
-      <Yes          {...props} />
-      <No           {...props} />
-      <Decline      {...props} />
+    <SummaryItem
+        title={title}
+        text={contactMethods}
+      />
       <EmailAddress {...props} />
-      <PhoneNumber  {...props} />
+      <PhoneNumber  {...props} /> 
     </PageSummaryLink>
-  )
+    )
+  }
+  return null;
 };
 
 export default ContactMethods;
+

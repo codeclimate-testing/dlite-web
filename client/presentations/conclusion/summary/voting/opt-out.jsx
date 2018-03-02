@@ -4,11 +4,17 @@ import React from 'react';
 import translations            from '../../../../i18n';
 
 import { hasValue }            from '../../../../helpers/data/validations';
+import {
+  optOutSelected,
+  eligibilityRequirementsYes,
+  eligibleForCitizen
+}   from '../../../../helpers/data/voting';
+import { ageChecks }                from '../../../../helpers/calculate-age';
+
 import PageSummaryLink         from '../Page-summary-link.jsx';
 import SummaryItem             from '../summary-item.jsx';
 
 const OptOut = (props) => {
-  if (!hasValue(props.optOut)) { return null; }
   let locale = props.locale;
   let optOut = '';
 
@@ -16,21 +22,26 @@ const OptOut = (props) => {
     optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceYes}</p>
   } else if (props.optOut === 'existing') {
     optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceUpdate}</p>
-  } else {
+  } else if (props.optOut === 'optOut') {
     optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceNo}</p>
   };
 
-  return (
-    <PageSummaryLink
-      to='/voting-registration/opt-out'
-      name='votingOptOut'
-    >
-      <SummaryItem
-        title={translations[locale].summaryPage.voterRegistration.registrationChoice}
-        text={optOut}
-      />
-    </PageSummaryLink>
-  )
+  let now = props.now ? props.now : new Date();
+  if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props))) {
+    return (
+      <PageSummaryLink
+        to='/voting-registration/opt-out'
+        name='votingOptOut'
+      >
+        <SummaryItem
+          title={translations[locale].summaryPage.voterRegistration.registrationChoice}
+          text={optOut}
+        />
+      </PageSummaryLink>
+    )
+  }
+  return null;
 };
 
 export default OptOut;
+

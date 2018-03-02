@@ -20,43 +20,58 @@ const Voting = (props) => {
   return (
     <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
       <CitizenStatus
-        locale                  = { locale }
-        summary                 = 'summary'
         citizenStatus           = { application.voting.citizenStatus}
         eligibilityRequirements = { application.voting.eligibilityRequirements}
         dateOfBirth             = { application.basics.dateOfBirth}
+        locale                  = { locale }
+        summary                 = 'summary'
       />
       <EligibilityRequirements
-        locale                  = { locale }
-        summary                 = 'summary'
         eligibilityRequirements = { application.voting.eligibilityRequirements}
         citizenStatus           = { application.voting.citizenStatus}
         dateOfBirth             = { application.basics.dateOfBirth}
+        locale                  = { locale }
+        summary                 = 'summary'
       />
       <OptOut
+        optOut                  = {application.voting.optOut}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         locale                  = { locale }
         summary                 = 'summary'
-        optOut                  = { application.voting.optOut}
       />
       <PoliticalPartyChoose
-        locale                  = { locale }
+        politicalPartyChoose    = {application.voting.politicalPartyChoose}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
-        politicalPartyChoose    = { application.voting.politicalPartyChoose}
+        locale                  = { locale }
       />
       <BallotLanguage
-        locale                  = { locale }
+        ballotLanguage          = {application.basics.language.ballotLanguage}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
-        ballotLanguage          = { application.basics.language.ballotLanguage}
+        locale                  = { locale }
       />
       <BallotByMail
-        locale                  = { locale }
+        ballotByMail            = {application.voting.ballotByMail}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
-        ballotByMail            = { application.voting.ballotByMail}
+        locale                  = { locale }
       />
       <ContactMethods
-        locale                  = { locale }
+        contactMethods          = {application.voting.contactMethods}
+        eligibilityRequirements = {application.voting.eligibilityRequirements}
+        citizenStatus           = {application.voting.citizenStatus}
+        dateOfBirth             = {application.basics.dateOfBirth}
         summary                 = 'summary'
-        contactMethods          = { application.voting.contactMethods}
+        locale                  = { locale }
       />
     </Accordion>
   )

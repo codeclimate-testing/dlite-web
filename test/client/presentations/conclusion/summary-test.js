@@ -881,6 +881,13 @@ describe('Summary components', function() {
 
     describe('OptOut', function() {
       it('shows opt out', function(){
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
         let optOut = 'new';
 
         let component = render(
@@ -898,6 +905,13 @@ describe('Summary components', function() {
 
     describe('PoliticalPartyChoose', function() {
     it('shows political party selections', function(){
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
       let politicalPartyChoose = {
         isSelected: 'Yes',
         politicalPartyChoose: 'Green Party'
@@ -916,6 +930,13 @@ describe('Summary components', function() {
     });
 
     it('shows No Answer after user has switched answer', function() {
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
       let politicalPartyChoose = {
         isSelected: 'Skip',
         politicalPartyChoose: 'Green Party'
@@ -934,6 +955,13 @@ describe('Summary components', function() {
     });
 
     it('shows the other party typed into the form', function() {
+      props.citizenStatus = 'Yes';
+      props.eligibilityRequirements = 'Yes';
+      props.dateOfBirth = {
+        month: '11',
+        day: '11',
+        year: '1999'
+      };
       let politicalPartyChoose = {
         isSelected: 'Yes',
         politicalPartyChoose: 'Other',
@@ -955,6 +983,13 @@ describe('Summary components', function() {
 
     describe('BallotLanguage', function() {
       it('shows ballot language selection', function(){
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
         let ballotLanguage = 'ko';
 
         let component = render(
@@ -972,6 +1007,13 @@ describe('Summary components', function() {
 
     describe('BallotByMail', function() {
       it('shows ballot by mail selection', function(){
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
         let ballotByMail = 'Yes';
 
         let component = render(
@@ -988,7 +1030,14 @@ describe('Summary components', function() {
     });
 
     describe('ContactMethods', function() {
-      it('shows contact methods selections', function(){
+      it('shows contact methods selections', function () {
+        props.citizenStatus = 'Yes';
+        props.eligibilityRequirements = 'Yes';
+        props.dateOfBirth = {
+          month: '11',
+          day: '11',
+          year: '1999'
+        };
         let contactMethods = {
           shouldContact: 'Yes',
           emailAddress: 'email@email.com',
@@ -1117,4 +1166,5 @@ describe('Summary components', function() {
     });
   });
 });
+
 
