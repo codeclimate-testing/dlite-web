@@ -11,7 +11,7 @@ import {
   hasActionIsCorrecting,
   hasActionIsUpdating
 } from './card-actions';
-import { hasValue }   from './validations';
+import { noCardTypeArray }  from './cdl';
 
 export const getID = (props) => {
   return props.cardType.includes('ID');
@@ -97,9 +97,12 @@ export const needsEndorsement = (props) => {
   return props.DLApp.licenseType.needEndorsement === 'Yes';
 };
 
-export const getCorrectString = (props, DLString, IDString, bothString) => {
+export const getCorrectString = (props, DLString, IDString, bothString, CDLString) => {
   let key = DLString;
-  if (hasMultipleCards(props) || !hasValue(props.cardType)) {
+  if (noCardTypeArray(props)) {
+    key = CDLString;
+  }
+  else if (hasMultipleCards(props)) {
     key = bothString;
   } else if (getID(props)) {
     key = IDString

@@ -6,7 +6,8 @@ import {
   needsAddress,
   needsCurrentDLInfo,
   firstTime,
-  expiredCard
+  expiredCard,
+  noCardTypeArray
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -93,5 +94,16 @@ describe('Data helpers for cdl data', function() {
     });
   });
 
+  describe('#noCardTypeArray', function() {
+    it('returns true if props do not include cardType array', function() {
+      assert.equal(noCardTypeArray({}), true);
+    });
+    it('returns false if props include cardType array', function() {
+      let props = {
+        cardType: []
+      };
+      assert.equal(noCardTypeArray(props), false);
+    });
+  });
 
 });

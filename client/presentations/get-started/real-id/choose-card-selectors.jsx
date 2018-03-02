@@ -2,9 +2,12 @@
 
 import React from 'react';
 
-import RadioCollection        from '../../radio-selector-collection.jsx';
-import radioIdDlGroup         from '../../radio-id-dl-group.jsx';
-import { showDesignation }     from '../../../helpers/data/real-id';
+import RadioCollection          from '../../radio-selector-collection.jsx';
+import radioIdDlGroup           from '../../radio-id-dl-group.jsx';
+import {
+  showDesignation,
+  designatedValue
+}      from '../../../helpers/data/real-id';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -24,6 +27,7 @@ const Form = (props) => {
           {...props}
           name          = 'realIdDesignation'
           errorMessage  = { props.validations.designation() }
+          selectedValue = { designatedValue(props) }
         >
           { radioIdDlGroup(locale) }
         </RadioCollection>

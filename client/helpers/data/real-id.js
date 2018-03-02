@@ -1,6 +1,7 @@
 'use strict';
 
 import { hasValue }           from './validations';
+import { noCardTypeArray }    from './cdl';
 import {
   bothAppsExist
 }   from './cards';
@@ -47,15 +48,3 @@ export const DLgettingRealID = (props) => {
 export const IDgettingRealID = (props) => {
   return props.IDApp.realID === 'Yes';
 };
-
-// export const getCorrectRealIDApp = (state) => {
-//   let app = state.DLApp;
-//   if (getID(state)){
-//     if (getDL(state)) {
-//       app = state;
-//     } else {
-//       app = state.IDApp;
-//     }
-//   };
-//   return app;
-// };

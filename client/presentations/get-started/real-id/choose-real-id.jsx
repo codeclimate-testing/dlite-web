@@ -6,24 +6,30 @@ import RadioCollection        from '../../radio-selector-collection.jsx';
 import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
 import { getCorrectString }   from '../../../helpers/data/card-type';
 import translations           from '../../../i18n';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation            from '../../../i18n/translate-tag.jsx';
+
 
 const ChooseRealID = (props) => {
   let locale = props.locale;
   const headerTexts = {
-    DL: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.license, 'question'),
-    ID: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.id, 'question'),
-    both: convertToHtml('h2', translations[locale].intro.realIdPage.prompt.card, 'question')
+    DL: translations[locale].intro.realIdPage.prompt.license,
+    ID: translations[locale].intro.realIdPage.prompt.id,
+    both: translations[locale].intro.realIdPage.prompt.card,
+    CDL: 'Do you plan on using your Commercial Driver License to fly?'
   };
 
-  let headerText = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both);
-  let formName = getCorrectString(props, 'DL', 'ID', 'both');
+  let headerText = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both, headerTexts.CDL);
+  let formName = getCorrectString(props, 'DL', 'ID', 'both', 'CDL');
 
   return (
     <div className='real-id-form'>
-      {headerText}
+      <Translation tag='h2' className='question'>
+        {headerText}
+      </Translation>
 
-      {convertToHtml('p', translations[locale].intro.realIdPage.explanation)}
+      <Translation tag='p'>
+        {translations[locale].intro.realIdPage.explanation}
+      </Translation>
 
       <div className='row'>
         <fieldset>

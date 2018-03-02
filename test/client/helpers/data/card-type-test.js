@@ -375,6 +375,8 @@ describe('Data helpers for card-type', function() {
     const DLString = 'license string';
     const IDString = 'ID string';
     const bothString = 'getting both';
+    const CDLString = 'CDL string';
+
     it('returns ID string when user is changing ID', function() {
       data.cardType = ['ID'];
       data.cardAction = 'change';
@@ -399,6 +401,11 @@ describe('Data helpers for card-type', function() {
       let result = getCorrectString(data, DLString, IDString, bothString);
       assert.equal(result, bothString);
     })
+
+    it('returns CDL string when props does not include cardType array', function() {
+      let result = getCorrectString({}, DLString, IDString, bothString, CDLString);
+      assert.equal(result, CDLString);
+    });
   });
 
   describe('#getCorrectApp', function() {

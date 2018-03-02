@@ -44,6 +44,9 @@ export const expiredCard = (currentCardInfo) => {
   return yesterday >= cardExpiration;
 };
 
+export const noCardTypeArray = (props) => {
+  return !props.hasOwnProperty('cardType');
+};
 export const noSSN = (props) => {
   return props.hasSocialSecurity === 'No';
 };

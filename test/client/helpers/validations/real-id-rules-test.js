@@ -1,11 +1,11 @@
 'use strict';
 
-import assert   from 'assert';
-
-import rules    from '../../../../client/helpers/validations/realID-rules';
-import messages from '../../../../client/presentations/error-messages';
+import assert       from 'assert';
+import rules        from '../../../../client/helpers/validations/realID-rules';
+import translations from '../../../../client/i18n';
 
 let props;
+let messages = translations['en'].errorMessages;
 
 describe('RealID page validation rules:', function() {
   beforeEach(function() {
@@ -59,6 +59,15 @@ describe('RealID page validation rules:', function() {
       assert.ok(rules.designation(props).length > 0);
     });
 
+    it('when container does not pass a cardType array it will not give an error', function() {
+      assert.deepEqual(rules.designation({}), []);
+    });
+
+    it('when both ID and DL apps are getting a real ID it returns realIdCardSelectionMissing error', function() {
+      props.DLApp.realID = 'Yes';
+      props.IDApp.realID = 'Yes';
+      assert.deepEqual(rules.designation(props), [messages.realIdCardSelectionMissing]);
+    });
   });
 
 });

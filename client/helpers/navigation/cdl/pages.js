@@ -64,6 +64,12 @@ const cdl = [
     key: 'cdlCurrentDL',
     description: 'current DL info',
     path: '/current-ca-license',
+    next: 'cdlRealID'
+  },
+  {
+    key: 'cdlRealID',
+    description: 'realID',
+    path: '/real-id',
     next: ''
   },
   {

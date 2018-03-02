@@ -51,6 +51,7 @@ describe('Data helpers for real-id', function() {
       assert.equal(mustChooseCard(data), true);
     });
   });
+
   describe('#showDesignation', function() {
     it('is true if user is getting both cards, and user has selected Yes to getting real ID', function() {
       data.realID = 'Yes';
@@ -104,6 +105,10 @@ describe('Data helpers for real-id', function() {
       data.cardType = ['DL']
       assert.equal(showDesignation(data), true);
     });
+
+    it('is false if container did not pass along a cardType array', function() {
+      assert.equal(showDesignation({locale: 'en'}), false);
+    })
   });
   describe('#designatedValue', function() {
     it('returns blank string if both IDApp.realID and DLApp.realID are blank', function() {

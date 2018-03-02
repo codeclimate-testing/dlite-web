@@ -9,8 +9,6 @@ import RealIdDesignationForm  from './real-id/choose-card-selectors.jsx';
 import ChooseRealID           from './real-id/choose-real-id.jsx';
 import translations           from '../../i18n';
 import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
-import { designatedValue }    from '../../helpers/data/real-id';
-
 
 const FormPage = (props) => {
   let locale = props.locale;
@@ -27,7 +25,6 @@ const FormPage = (props) => {
 
         <RealIdDesignationForm
           {...props}
-          selectedValue = { designatedValue(props) }
         />
 
        <Accordion

@@ -15,16 +15,17 @@ describe('RealIdPage', function() {
   store.ui.accordions = [];
   const Wrapper = wrapperGenerator(store);
 
+  let validations = {
+    designation: spy(),
+    realID: spy(),
+    all: spy(),
+    isValid: () => { return true; }
+  };
+
   describe('when it renders initially', function() {
     let props;
 
     beforeEach(function() {
-      let validations = {
-        designation: spy(),
-        realID: spy(),
-        all: spy(),
-        isValid: () => { return true; }
-      };
 
       let accordions = {};
       let onChange = spy();
@@ -212,5 +213,34 @@ describe('RealIdPage', function() {
       );
     });
   });
+
+  describe('on CDL flow', function() {
+    let props, component;
+
+    beforeEach(function() {
+      props = {
+        realID: '',
+        locale: 'en',
+        validations
+      };
+      component = render(
+        <Wrapper>
+          <RealIdPage {...props}/>
+        </Wrapper>
+      );
+    });
+    it('shows the form allowing you to choose a real id', function() {
+
+
+      assert.ok(component.find('#CDL-Yes').length, 'Yes button missing');
+      assert.ok(component.find('#CDL-No').length, 'No button missing');
+    });
+    it('should have a header indicating user is applying for CDL', function() {
+      assert.ok(
+        component.text().includes('Do you plan on using your Commercial Driver License to fly?'),
+        'Header does not include ID type'
+      );
+    });
+  })
 });
 
