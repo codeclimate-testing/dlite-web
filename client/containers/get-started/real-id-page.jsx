@@ -11,7 +11,7 @@ import { getCorrectRealIDApp }    from '../../helpers/data/real-id';
 
 const Page = (props) => {
   let validations       = new RealIDValidator(props, props.validations, 'realIdSelectionMissing');
-  let onSubmit          = handlers.navigateOrShowErrors('realID', props, validations)
+  let onSubmit          = handlers.navigateOrShowErrors('realID', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return <Presentation
@@ -24,13 +24,13 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    realID :    getCorrectRealIDApp(state.application).realID,
-    cardType:   state.application.cardType,
-    IDApp:      state.application.IDApp,
-    DLApp:      state.application.DLApp,
-    seniorID:   state.application.IDApp.seniorID,
-    focused:    state.ui.focus,
-    validations:state.ui.validations,
+    realID :      getCorrectRealIDApp(state.application).realID,
+    cardType:     state.application.cardType,
+    IDApp:        state.application.IDApp,
+    DLApp:        state.application.DLApp,
+    seniorID:     state.application.IDApp.seniorID,
+    focused:      state.ui.focus,
+    validations:  state.ui.validations,
     locale:       state.ui.locale
   };
 };

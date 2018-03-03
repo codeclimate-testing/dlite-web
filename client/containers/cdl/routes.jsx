@@ -16,7 +16,7 @@ import Summary                          from './cdl-summary.jsx';
 const CDLRoutes = () => {
   return (
     <div>
-      <Route path= '/apply/cdl'                         exact component={CDLWelcome}  />
+      <Route path= '/apply/cdl'                         exact component={CDLWelcome} />
       <Route path={ cdlPath('/true-name')}              component={LegalName}   />
       <Route path={ cdlPath('/date-of-birth')}          component={DateOfBirth} />
       <Route path={ cdlPath('/what-do-you-want-to-do-today')} component={cdlWdywtdt} />

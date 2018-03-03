@@ -12,7 +12,6 @@ function extractVotingRegistrations(data) {
     is_eligible:        parserHelper.strToBool(data.voting.eligibilityRequirements),
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
-    is_preregistering:  parserHelper.strToBool(data.isPreRegistering),
     party:              parserHelper.parseParty(data.voting.politicalPartyChoose),
     language:           data.basics.language.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.voting.ballotByMail),

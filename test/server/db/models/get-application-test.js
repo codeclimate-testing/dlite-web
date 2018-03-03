@@ -228,7 +228,6 @@ describe('getApplication', function() {
         assert.equal(records.voting_registrations.is_eligible, data.voting_registrations.is_eligible);
         assert.equal(records.voting_registrations.type, data.voting_registrations.type);
         assert.equal(records.voting_registrations.opted_out, data.voting_registrations.opted_out);
-        assert.equal(records.voting_registrations.is_preregistering, data.voting_registrations.is_preregistering);
         assert.equal(records.voting_registrations.party, data.voting_registrations.party);
         assert.equal(records.voting_registrations.language, data.voting_registrations.language);
         assert.equal(records.voting_registrations.vote_by_mail, data.voting_registrations.vote_by_mail);

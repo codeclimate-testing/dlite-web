@@ -852,15 +852,6 @@
           "data_type": "boolean",
           "col_description": null
         },
-        "is_preregistering": {
-          "table_schema": "public",
-          "table_name": "voting_registrations",
-          "column_name": "is_preregistering",
-          "column_default": null,
-          "is_nullable": true,
-          "data_type": "boolean",
-          "col_description": null
-        },
         "party": {
           "table_schema": "public",
           "table_name": "voting_registrations",

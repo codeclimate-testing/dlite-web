@@ -580,7 +580,6 @@ describe('Post Application Data', () => {
           assert.equal(records[0].is_eligible, data.is_citizen);
           assert.equal(records[0].type, data.type);
           assert.equal(records[0].opted_out, data.opted_out);
-          assert.equal(records[0].is_preregistering, data.is_preregistering);
           assert.equal(records[0].party, data.party);
           assert.equal(records[0].language, data.language);
           assert.equal(records[0].vote_by_mail, data.vote_by_mail);
@@ -595,7 +594,6 @@ describe('Post Application Data', () => {
       data.is_eligible        = false;
       data.type               = 'existing';
       data.opted_out          = true;
-      data.is_preregistering  = false;
       data.party              = 'Peace Party';
       data.language           = 'es';
       data.vote_by_mail       = false;
@@ -609,7 +607,6 @@ describe('Post Application Data', () => {
           assert.equal(records[0].is_eligible, data.is_citizen);
           assert.equal(records[0].type, data.type);
           assert.equal(records[0].opted_out, data.opted_out);
-          assert.equal(records[0].is_preregistering, data.is_preregistering);
           assert.equal(records[0].party, data.party);
           assert.equal(records[0].language, data.language);
           assert.equal(records[0].vote_by_mail, data.vote_by_mail);
@@ -719,7 +716,6 @@ describe('Post Application Data', () => {
           assert.equal(records.voting_registrations[0].is_eligible, data.voting_registrations.is_eligible);
           assert.equal(records.voting_registrations[0].type, data.voting_registrations.type);
           assert.equal(records.voting_registrations[0].opted_out, data.voting_registrations.opted_out);
-          assert.equal(records.voting_registrations[0].is_preregistering, data.voting_registrations.is_preregistering);
           assert.equal(records.voting_registrations[0].party, data.voting_registrations.party);
           assert.equal(records.voting_registrations[0].language, data.voting_registrations.language);
           assert.equal(records.voting_registrations[0].vote_by_mail, data.voting_registrations.vote_by_mail);
