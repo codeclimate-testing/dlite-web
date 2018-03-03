@@ -150,10 +150,16 @@ describe('Summary components', function() {
 
     describe('DLRealID', function() {
 
-      it('shows RealID fields DL', function(){
-        props.cardType = ['DL'];
-        props.DLApp.realID = 'Yes';
-        props.DLApp.isApplying = true;
+      it('shows that user is getting Real ID even if user is not getting real ID on the DL', function(){
+        props.realID = 'Yes';
+        props.DLApp = {
+          isApplying: true,
+          realID: 'No'
+        };
+        props.IDApp = {
+          isApplying: true,
+          realID: 'Yes'
+        };
 
         let component = render(
           <Wrapper>
@@ -163,7 +169,15 @@ describe('Summary components', function() {
         assert.ok(component.text().includes('Real-ID CompliantYes'));
       });
       it('does not show if user is not getting a DL', function() {
-        props.DLApp.isApplying = false;
+        props.realID = 'Yes';
+        props.DLApp = {
+          isApplying: false,
+          realID: ''
+        };
+        props.IDApp = {
+          isApplying: false,
+          realID: ''
+        };
 
         let component = render(
           <Wrapper>
@@ -173,9 +187,16 @@ describe('Summary components', function() {
         assert.ok(!component.text().includes('Real-ID'));
       });
 
-      it('shows No if props.DLApp.realID is blank', function() {
-        props.DLApp.isApplying = true;
-        props.DLApp.realID = '';
+      it('shows No if props.realID is blank', function() {
+        props.realID = '';
+        props.DLApp = {
+          isApplying: true,
+          realID: ''
+        };
+        props.IDApp = {
+          isApplying: false,
+          realID: ''
+        };
 
         let component = render(
           <Wrapper>
@@ -185,9 +206,17 @@ describe('Summary components', function() {
         assert.ok(component.text().includes('Real-ID CompliantNo'));
       });
 
-      it('shows No if props.DLApp.realID is No', function() {
-        props.DLApp.realID = 'No';
-        props.DLApp.isApplying = true;
+      it('shows No if props.realID is No', function() {
+        props.realID = 'No';
+        props.DLApp = {
+          isApplying: true,
+          realID: ''
+        };
+        props.IDApp = {
+          isApplying: false,
+          realID: ''
+        };
+
         let component = render(
           <Wrapper>
             <DLRealID { ...props } />
@@ -292,11 +321,15 @@ describe('Summary components', function() {
     });
 
     describe('IDRealID', function() {
-      it('shows RealID fields for ID when user is using ID as real ID', function(){
-        props.cardType = ['ID'];
+      it('shows RealID fields when user is using ID as real ID', function(){
         props.IDApp = {
           isApplying: true,
           realID: 'Yes'
+        };
+        props.realID = 'Yes';
+        props.DLApp = {
+          isApplying: true,
+          realID: 'No'
         };
 
         let component = render(
@@ -307,12 +340,12 @@ describe('Summary components', function() {
         assert.equal(component.text().includes('Real-ID CompliantYes'), true);
       });
 
-      it('shows RealID fields for ID when user is using DL as real ID but is getting an ID', function(){
-        props.cardType = ['DL'];
+      it('shows RealID Compliant Yes for ID when user is using DL as real ID but is getting an ID', function(){
         props.IDApp = {
           isApplying: true,
-          realID: ''
+          realID: 'No'
         };
+        props.realID = 'Yes';
         props.DLApp = {
           isApplying: true,
           realID: 'Yes'
@@ -323,7 +356,7 @@ describe('Summary components', function() {
             <IDRealID { ...props } />
           </Wrapper>
         );
-        assert.equal(component.text().includes('Real-ID CompliantNo'), true);
+        assert.equal(component.text().includes('Real-ID CompliantYes'), true);
       });
 
 

@@ -52,14 +52,15 @@ describe('updateRealID Reducers', function() {
   });
 
   describe('#base-level realID value for user getting two new cards', function() {
-    it('returns existing state when payload.name is not "both"', function() {
-      let newState = updateRealID(state, getIDRealID);
-      assert.equal(newState, state);
-    });
     it('returns existing state when payload.name is "realIdDesignation"', function() {
       state = 'Yes';
       let newState = updateRealID(state, setIDRealIdDesignation);
       assert.equal(newState, state);
+    });
+    it('returns payload value when payload.name is not "realIdDesignation"', function() {
+      state = 'No';
+      let newState = updateRealID(state, getIDRealID);
+      assert.equal(newState, getIDRealID.payload.value);
     });
   });
 

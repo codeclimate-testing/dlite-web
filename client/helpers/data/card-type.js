@@ -1,6 +1,8 @@
 'use strict';
 
-import { hasMultipleCards } from './cards';
+import {
+  hasMultipleCards
+} from './cards';
 import {
   isGettingNew,
   isChangingCard,
@@ -9,6 +11,7 @@ import {
   hasActionIsCorrecting,
   hasActionIsUpdating
 } from './card-actions';
+import { hasValue }   from './validations';
 
 export const getID = (props) => {
   return props.cardType.includes('ID');
@@ -96,7 +99,7 @@ export const needsEndorsement = (props) => {
 
 export const getCorrectString = (props, DLString, IDString, bothString) => {
   let key = DLString;
-  if (hasMultipleCards(props)) {
+  if (hasMultipleCards(props) || !hasValue(props.cardType)) {
     key = bothString;
   } else if (getID(props)) {
     key = IDString

@@ -7,7 +7,7 @@ import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../../client/helpers/data-present';
 import wrapperGenerator         from '../../../support/wrapper';
-import RealIDInfo           from '../../../../../client/presentations/get-started/intro-page/real-id-info.jsx';
+import RealIDInfo               from '../../../../../client/presentations/get-started/intro-page/real-id-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
 import translations             from '../../../../../client/i18n';
@@ -27,10 +27,7 @@ describe('RealIDInfo', function() {
       endorsement: [],
       needEndorsement: ''
     };
-    let realID = {
-      realIdDesignation: '',
-      getRealID: 'Yes'
-    };
+    let realID = '';
     let reducedFee = {
       ID: '',
       form: ''
@@ -47,13 +44,15 @@ describe('RealIDInfo', function() {
         action: '',
         reducedFee,
         seniorID,
-        cardChanges
+        cardChanges,
+        realID
       },
       DLApp: {
         isApplying: false,
         action: '',
         licenseType,
-        cardChanges
+        cardChanges,
+        realID
       },
       cardChanges,
       licenseType,
@@ -68,7 +67,7 @@ describe('RealIDInfo', function() {
 
   describe('null', function() {
     it('returns null when user does not want real id', function() {
-      props.realID.getRealID = 'No';
+      props.realID = 'No';
 
       let component = render(
         <Wrapper>
@@ -99,7 +98,7 @@ describe('RealIDInfo', function() {
 
     describe('DL', function() {
       it('shows that DL will be real id compliant', function() {
-        props.cardType = ['DL'];
+        props.realID = 'Yes';
         props.DLApp.realID = 'Yes';
 
         let component = render(

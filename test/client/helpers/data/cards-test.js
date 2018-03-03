@@ -5,6 +5,7 @@ import assert from 'assert';
 import {
   IDorDL,
   hasMultipleCards,
+  hasNoCards,
   IDAppExists,
   DLAppExists,
   hasSelectedClass,

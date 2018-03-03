@@ -42,7 +42,7 @@ describe('Required Docs for Real ID', function() {
 
   describe('BulletList', function() {
     it('is true when condition is Yes', function() {
-      props.IDApp.realID = 'Yes';
+      props.realID = 'Yes';
       component = render(
         <BulletList
           {...props}
@@ -52,8 +52,7 @@ describe('Required Docs for Real ID', function() {
     });
 
     it('is false when condition is No', function() {
-      props.IDApp.realID = 'No';
-      props.DLApp.realID = 'No';
+      props.realID = 'No';
       component = render(
         <BulletList
           {...props}
@@ -75,7 +74,7 @@ describe('Required Docs for Real ID', function() {
 
   describe('Docs component', function() {
     it('is true when condition is Yes', function() {
-      props.IDApp.realID = 'Yes';
+      props.realID = 'Yes';
       component = render(
         <RealID
           {...props}
@@ -87,7 +86,7 @@ describe('Required Docs for Real ID', function() {
     });
 
     it('is false when condition is No', function() {
-      props.IDApp.realID = 'No';
+      props.realID = 'No';
       component = render(
         <RealID
           {...props}

@@ -10,7 +10,6 @@ import {
   gettingRealID,
   IDgettingRealID,
   DLgettingRealID,
-  getCorrectRealIDApp
 } from '../../../../client/helpers/data/real-id';
 
 describe('Data helpers for real-id', function() {
@@ -45,50 +44,65 @@ describe('Data helpers for real-id', function() {
       assert.equal(mustChooseCard(data), false);
     });
 
-    it('is true if real id has been chosen and both cards are desired', function() {
+    it('is true if real id has been chosen and both cards are getting the real ID', function() {
       data.DLApp.realID = 'Yes';
       data.IDApp.realID = 'Yes';
+      data.realID = 'Yes';
       assert.equal(mustChooseCard(data), true);
     });
   });
   describe('#showDesignation', function() {
-    it('is true if cardType array has two cards in it and user has selected Yes to getting real ID', function() {
+    it('is true if user is getting both cards, and user has selected Yes to getting real ID', function() {
       data.realID = 'Yes';
-      data.cardType = ['ID', 'DL'];
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
       assert.equal(showDesignation(data), true);
     });
 
-    it('is true if cardType array has two cards in it and user has selected Yes to getting real ID then specified to get realID on ID card', function() {
+    it('is true if user is getting both cards and is getting a real ID only on the DL', function() {
       data.realID = 'Yes';
-      data.cardType = ['ID', 'DL'];
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+      data.IDApp.realID = 'Yes';
       data.DLApp.realID = 'No';
       assert.equal(showDesignation(data), true);
     });
 
-    it('is false if cardType array has two cards in it and user has selected No to getting real ID', function() {
+    it('is false if user is getting both cards and user has selected No to getting real ID', function() {
       data.realID = 'No';
-      data.cardType = ['ID', 'DL'];
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
       assert.equal(showDesignation(data), false);
     });
 
-    it('is true if cardType array has one card in it but both IDApp and DLApp are getting real ID', function() {
+    it('is true if user is on a single-card flow but both IDApp and DLApp are getting real ID', function() {
       data.DLApp.realID = 'Yes';
       data.IDApp.realID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+      data.realID = 'Yes';
+      data.cardType = ['ID'];
       assert.equal(showDesignation(data), true);
     });
 
     it('is true if cardType array has one card in it and both card apps have realID values', function() {
       data.DLApp.realID = 'No';
       data.IDApp.realID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+      data.realID = 'Yes';
       data.cardType = ['ID']
       assert.equal(showDesignation(data), true);
     });
 
-    it('is false if cardType array has one card in it and only one card app has a realID value', function() {
+    it('is true if user is on a single-card flow and only one card app has a realID value but user is getting both cards', function() {
       data.DLApp.realID = '';
-      data.IDApp.realID = 'No';
-      data.cardType = ['ID']
-      assert.equal(showDesignation(data), false);
+      data.IDApp.realID = 'Yes';
+      data.realID = 'Yes';
+      data.IDApp.isApplying = true;
+      data.DLApp.isApplying = true;
+      data.cardType = ['DL']
+      assert.equal(showDesignation(data), true);
     });
   });
   describe('#designatedValue', function() {
@@ -112,36 +126,17 @@ describe('Data helpers for real-id', function() {
   });
 
   describe('#gettingRealID', function() {
-    it('returns true if user is getting real ID on IDApp', function() {
-      data.IDApp.realID = 'Yes';
-      assert.equal(gettingRealID(data), true);
-    });
-    it('returns true if user is getting real ID on DLApp', function() {
-      data.DLApp.realID = 'Yes';
-      assert.equal(gettingRealID(data), true);
-    });
-    it('returns true if user is getting real ID on either of two cards', function() {
-      data.cardType = ['ID', 'DL'];
+    it('returns true if user is getting real ID', function() {
       data.realID = 'Yes';
       assert.equal(gettingRealID(data), true);
     });
     it('returns false if user is not getting a real ID', function() {
+      data.realID = 'No';
       assert.equal(gettingRealID(data), false);
     });
-  });
-
-  describe('#getCorrectRealIDApp', function() {
-    it('returns the state.application object if cardType includes ID and DL', function() {
-      data.cardType = ['ID', 'DL'];
-      assert.deepEqual(getCorrectRealIDApp(data), data);
-    });
-    it('returns the state.application.IDApp object if cardType includes only ID', function() {
-      data.cardType = ['ID'];
-      assert.deepEqual(getCorrectRealIDApp(data), data.IDApp);
-    });
-    it('returns the state.application.DLApp object if cardType includes only DL', function() {
-      data.cardType = ['DL'];
-      assert.deepEqual(getCorrectRealIDApp(data), data.DLApp);
+    it('returns false if value is blank', function() {
+      data.realID = '';
+      assert.equal(gettingRealID(data), false);
     });
   });
 

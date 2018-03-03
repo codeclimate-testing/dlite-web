@@ -32,6 +32,7 @@ const DLApp = (props) => {
         summary           = 'summary'
       />
       <DLRealID
+        realID            = { application.realID }
         DLApp             = { application.DLApp }
         locale            = { locale }
         summary           = 'summary'

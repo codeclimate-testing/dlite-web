@@ -106,9 +106,12 @@ describe('RealIdPage', function() {
       assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL showing');
     });
 
-    it('shows the form asking which card if you select yes to real id and are getting both cards', function() {
+    it('shows the form asking which card if you selected yes to getting real ID and are getting both cards but getting Real ID on only one card', function() {
       props.realID = 'Yes';
-      props.cardType = ['ID', 'DL'];
+      props.IDApp.isApplying = true;
+      props.DLApp.isApplying = true;
+      props.IDApp.realID = 'Yes';
+      props.DLApp.realID = 'No';
       let component = render(
         <Wrapper>
           <RealIdPage {...props}/>
@@ -119,7 +122,9 @@ describe('RealIdPage', function() {
     });
 
     it('shows the form asking which card if you select yes to real id to both cards', function() {
-      props.cardType = ['ID'];
+      props.realID = 'Yes';
+      props.IDApp.isApplying = true;
+      props.DLApp.isApplying = true;
       props.IDApp.realID = 'Yes';
       props.DLApp.realID = 'Yes';
 
@@ -132,21 +137,10 @@ describe('RealIdPage', function() {
       assert(component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
     });
 
-    it('does not shows the form asking which card if only one card is getting real id', function() {
-      props.IDApp.realID = 'No';
-      props.DLApp.realID = 'Yes';
-
-      let component = render(
-        <Wrapper>
-          <RealIdPage {...props}/>
-        </Wrapper>
-      );
-
-      assert(!component.find('#realIdDesignation-ID').length, 'form asking to choose between ID and DL not showing');
-    });
-
     it('does not show the form asking which type if user is getting both cards but selected No to getting Real ID', function() {
-      props.cardType = ['ID', 'DL'];
+      props.cardType = ['ID'];
+      props.IDApp.isApplying = true;
+      props.DLApp.isApplying = true;
       props.realID = 'No';
 
       let component = render(
@@ -189,7 +183,22 @@ describe('RealIdPage', function() {
     });
 
     it('should have a header indicating you are applying for both cards is applicable', function() {
-      props.cardType.IDDL = ['DL', 'ID'];
+      props.cardType = ['DL', 'ID'];
+
+      let component = render(
+        <Wrapper>
+          <RealIdPage  {...props}/>
+        </Wrapper>
+      );
+
+      assert.ok(
+        component.text().includes('Do you plan on using your card to fly?'),
+        'Header does not for multicard'
+      );
+    });
+
+    it('should have a header indicating you are applying for both cards when cardType array is empty', function() {
+      props.cardType = [];
 
       let component = render(
         <Wrapper>

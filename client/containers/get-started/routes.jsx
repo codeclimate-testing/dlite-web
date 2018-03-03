@@ -34,8 +34,6 @@ const GetStartedRoutes = () => {
       <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID addressName='seniorID' {...props}/>}/>
       <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
       <Route path={ iddlPath('/real-id') }                    component={RealID} />
-      <Route path={ addPath('/driver-license/real-id') }      component={RealID} />
-      <Route path={ addPath('/id-card/real-id') }             component={RealID} />
       <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType {...props} addressName='chooseLicenseClass'/>}/>
       <Route path={ iddlPath('/reduced-fee')}                 exact render={(props) => <ReducedFee {...props} addressName='reducedFeeID' />}/>
       <Route path={ iddlPath('/get-started') }                component={GetStarted} />

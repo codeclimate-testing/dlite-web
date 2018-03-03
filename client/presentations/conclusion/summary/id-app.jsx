@@ -44,6 +44,7 @@ const IDApp = (props) => {
         currentCardInfo   = {application.IDApp.currentCard}
       />
       <IDRealID
+        realID            = { application.realID }
         IDApp             = { application.IDApp }
         summary           = 'summary'
         locale            = { locale }

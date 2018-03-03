@@ -7,7 +7,6 @@ import * as dataPresent   from '../../../helpers/data-present';
 import PageSummaryLink    from './Page-summary-link.jsx';
 import { cardNumberOrNone } from '../../../helpers/data/my-history';
 
-
 export const CardNumber = (props) => {
   let cardNumber = cardNumberOrNone(props);
   return (

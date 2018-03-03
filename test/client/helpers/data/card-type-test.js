@@ -394,6 +394,11 @@ describe('Data helpers for card-type', function() {
       let result = getCorrectString(data, DLString, IDString, bothString);
       assert.equal(result, bothString);
     });
+    it('returns bothString when cardType array is empty', function() {
+      data.cardType = [];
+      let result = getCorrectString(data, DLString, IDString, bothString);
+      assert.equal(result, bothString);
+    })
   });
 
   describe('#getCorrectApp', function() {

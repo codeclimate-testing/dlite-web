@@ -11,15 +11,15 @@ import {
 
 
 export const mustChooseCard = (props) => {
-  return DLgettingRealID(props) && IDgettingRealID(props);
+  return props.realID === 'Yes' && DLgettingRealID(props) && IDgettingRealID(props);
 };
 
 export const showDesignation = (props) => {
-  if (getID(props) && getDL(props)) {
-    return props.realID === 'Yes';
-  } else {
-    return hasValue(props.IDApp.realID) && hasValue(props.DLApp.realID);
+  let key = false;
+  if (bothAppsExist(props)) {
+    key = props.realID === 'Yes';
   }
+  return key;
 };
 
 export const designatedValue = (props) => {
@@ -33,7 +33,7 @@ export const designatedValue = (props) => {
 };
 
 export const gettingRealID = (props) => {
-  return props.realID === 'Yes' || DLgettingRealID(props) || IDgettingRealID(props);
+  return props.realID === 'Yes';
 };
 
 export const isSelected = (props) => {
@@ -48,14 +48,14 @@ export const IDgettingRealID = (props) => {
   return props.IDApp.realID === 'Yes';
 };
 
-export const getCorrectRealIDApp = (state) => {
-  let app = state.DLApp;
-  if (getID(state)){
-    if (getDL(state)) {
-      app = state;
-    } else {
-      app = state.IDApp;
-    }
-  };
-  return app;
-};
+// export const getCorrectRealIDApp = (state) => {
+//   let app = state.DLApp;
+//   if (getID(state)){
+//     if (getDL(state)) {
+//       app = state;
+//     } else {
+//       app = state.IDApp;
+//     }
+//   };
+//   return app;
+// };

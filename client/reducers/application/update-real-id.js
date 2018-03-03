@@ -6,12 +6,12 @@ const defaultState = () =>  {
   return '';
 };
 
-const updateRealIDOnBothCards = (action) => {
-  return action.type === TYPES.UPDATE_REAL_ID && action.payload.name === 'both';
+const doNotUpdate = (action) => {
+  return action.type !== TYPES.UPDATE_REAL_ID || action.payload.name === 'realIdDesignation';
 };
 
 const formReducer = (state = defaultState(), action) => {
-  if (!updateRealIDOnBothCards(action)) { return state; }
+  if (doNotUpdate(action)) { return state; }
   else {
     return action.payload.value;
   }
