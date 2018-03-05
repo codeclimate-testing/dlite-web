@@ -17,6 +17,8 @@ describe('RealID sections on summary pages', function() {
       name: 'realID',
       summary: 'summary',
       realID: '',
+      showIf: true,
+      title: 'Real-ID Compliant',
       locale
     };
   });

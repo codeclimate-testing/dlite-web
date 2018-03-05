@@ -25,6 +25,12 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
+  world.and('I click yes to getting a real id on my CDL', function(done) {
+    browser
+      .click('label[for="CDL-Yes"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
 
   world.and('I click no to getting a real id', function(done) {
     browser

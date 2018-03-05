@@ -17,8 +17,10 @@ export const mustChooseCard = (props) => {
 
 export const showDesignation = (props) => {
   let key = false;
-  if (bothAppsExist(props)) {
-    key = props.realID === 'Yes';
+  if (!noCardTypeArray(props)) {
+    if (bothAppsExist(props)) {
+      key = props.realID === 'Yes';
+    }
   }
   return key;
 };

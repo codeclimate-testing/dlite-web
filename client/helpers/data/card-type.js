@@ -12,6 +12,7 @@ import {
   hasActionIsUpdating
 } from './card-actions';
 import { noCardTypeArray }  from './cdl';
+import { hasValue }         from './validations';
 
 export const getID = (props) => {
   return props.cardType.includes('ID');
@@ -102,7 +103,7 @@ export const getCorrectString = (props, DLString, IDString, bothString, CDLStrin
   if (noCardTypeArray(props)) {
     key = CDLString;
   }
-  else if (hasMultipleCards(props)) {
+  else if (hasMultipleCards(props) || !hasValue(props.cardType)) {
     key = bothString;
   } else if (getID(props)) {
     key = IDString

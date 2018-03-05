@@ -251,6 +251,10 @@ module.exports = function(world) {
     assertOnPage('.enter-current-card-info', /apply\/cdl\/current-card-information/, done);
   });
 
+  world.when('I will be on the CDL page to enter my current DL', function(done) {
+    assertOnPage('.current-card-form', /apply\/cdl\/current-ca-license/, done);
+  });
+
   world.when('I will be on the residency page', function(done) {
     assertOnPage('.cdl-residency', /apply\/cdl\/california-residency/, done);
   });
@@ -262,6 +266,15 @@ module.exports = function(world) {
   world.when('I will be on the page to select reason for replacing my CDL', function(done) {
     assertOnPage('.choose-replacement-detail', /apply\/cdl\/replacement-details/, done);
   });
+
+  world.when('I will be on the CDL Social Security page', function(done) {
+    assertOnPage('.social-security-form', /apply\/cdl\/social-security/, done);
+  });
+
+  world.when('I will be on the CDL Real ID page', function(done) {
+    assertOnPage('.real-id-form', /apply\/cdl\/real-id/, done);
+  });
+
 
   world.when('I will be on the IDDL welcome page', function(done) {
     assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);

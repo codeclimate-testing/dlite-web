@@ -13,8 +13,8 @@ const Yes = (props) => {
   let locale = props.locale;
   return (
     <SummaryItem
-      title='Real-ID Compliant'
-      text={translations[locale].shared.commonAnswers.yes}
+      title = { props.title }
+      text  = { translations[locale].shared.commonAnswers.yes}
     />
   )
 };
@@ -24,14 +24,14 @@ const No = (props) => {
   let locale = props.locale;
   return (
     <SummaryItem
-      title='Real-ID Compliant'
-      text={translations[locale].shared.commonAnswers.no}
+      title = { props.title }
+      text  = { translations[locale].shared.commonAnswers.no}
     />
   )
 };
 
 const RealID = (props) => {
-  let locale = props.locale;
+  if (!props.showIf) { return null; }
   return (
     <PageSummaryLink
       {...props}

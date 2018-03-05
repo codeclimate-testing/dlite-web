@@ -44,10 +44,12 @@ const IDApp = (props) => {
         currentCardInfo   = {application.IDApp.currentCard}
       />
       <IDRealID
-        realID            = { application.realID }
+        realID            = { application.IDApp.realID }
         IDApp             = { application.IDApp }
         summary           = 'summary'
         locale            = { locale }
+        name              = 'realID'
+        title             = 'Real-ID Compliant'
       />
     </Accordion>
   )

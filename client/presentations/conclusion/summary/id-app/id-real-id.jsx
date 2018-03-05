@@ -8,12 +8,13 @@ import {
 
 
 const IDRealID = (props) => {
-  if(!IDAppExists(props)) { return null; }
 
   return (
     <RealID
       {...props}
-      name = 'realID'
+      showIf = {IDAppExists(props)}
+      name  = 'realID'
+      title = 'Real-ID Compliant'
     />
   )
 };

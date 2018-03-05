@@ -32,10 +32,12 @@ const DLApp = (props) => {
         summary           = 'summary'
       />
       <DLRealID
-        realID            = { application.realID }
+        realID            = { application.DLApp.realID }
         DLApp             = { application.DLApp }
         locale            = { locale }
         summary           = 'summary'
+        name              = 'realID'
+        title             = 'Real-ID Compliant'
       />
       <LicenseType
         DLApp             = { application.DLApp }

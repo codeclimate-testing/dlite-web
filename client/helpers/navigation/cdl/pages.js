@@ -2,7 +2,8 @@
 
 import {
   cdlWdywtdt,
-  cdlCurrentCard
+  cdlCurrentCard,
+  cdlSSN
 } from './next-path';
 
 const cdl = [
@@ -58,7 +59,7 @@ const cdl = [
     key: 'cdlSocialSecurity',
     description: 'Social Security',
     path: '/social-security',
-    next: 'cdlCurrentDL'
+    next: cdlSSN
   },
   {
     key: 'cdlCurrentDL',
@@ -70,7 +71,7 @@ const cdl = [
     key: 'cdlRealID',
     description: 'realID',
     path: '/real-id',
-    next: ''
+    next: 'cdlSummary'
   },
   {
     key: 'cdlSummary',

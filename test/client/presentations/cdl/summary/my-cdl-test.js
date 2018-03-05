@@ -29,7 +29,8 @@ describe('CDL Summary My CDL Application section', function() {
         },
         cardChanges: {
           correctOrUpdate: ''
-        }
+        },
+        realID: ''
       }
     };
   });
@@ -63,7 +64,68 @@ describe('CDL Summary My CDL Application section', function() {
       );
       assert.ok(component.text().includes('I amRenewing'));
     });
+
+    it('shows user replacing a CDL if cardAction equals replace', function() {
+      props.cdl.cardAction = 'replace';
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('I amReplacing'));
+    });
+
+    it('shows user updating a CDL if cardAction equals change', function() {
+      props.cdl.cardAction = 'change';
+      props.cdl.cardChanges.correctOrUpdate = 'update'
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('I amUpdating'));
+    });
+
+    it('shows user correcting a CDL if cardAction equals change', function() {
+      props.cdl.cardAction = 'change';
+      props.cdl.cardChanges.correctOrUpdate = 'correct'
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('I amCorrecting'));
+    });
   });
+
+  describe('#Real ID', function() {
+    it('does not render if user has not selected Real ID Yes or No', function() {
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Real ID:'));
+    });
+    it('shows Yes if user has selected Yes to Real ID', function() {
+      props.cdl.realID = 'Yes';
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Real ID:Yes'));
+    });
+    it('shows No if user has selected No to Real ID', function() {
+      props.cdl.realID = 'No';
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Real ID:No'));
+    });
+  })
 
   describe('#CurrentCardInfo', function() {
     it('does not render if props.currentCardInfo is blank', function() {
@@ -116,38 +178,6 @@ describe('CDL Summary My CDL Application section', function() {
       );
       assert.ok(component.text().includes('Expiration date:09/03/2000'));
     });
-  });
-
-  it('shows user replacing a CDL if cardAction equals replace', function() {
-    props.cdl.cardAction = 'replace';
-    let component = render(
-      <Wrapper>
-        <MyApp { ...props } />
-      </Wrapper>
-    );
-    assert.ok(component.text().includes('I amReplacing'));
-  });
-
-  it('shows user updating a CDL if cardAction equals change', function() {
-    props.cdl.cardAction = 'change';
-    props.cdl.cardChanges.correctOrUpdate = 'update'
-    let component = render(
-      <Wrapper>
-        <MyApp { ...props } />
-      </Wrapper>
-    );
-    assert.ok(component.text().includes('I amUpdating'));
-  });
-
-  it('shows user correcting a CDL if cardAction equals change', function() {
-    props.cdl.cardAction = 'change';
-    props.cdl.cardChanges.correctOrUpdate = 'correct'
-    let component = render(
-      <Wrapper>
-        <MyApp { ...props } />
-      </Wrapper>
-    );
-    assert.ok(component.text().includes('I amCorrecting'));
   });
 
 });

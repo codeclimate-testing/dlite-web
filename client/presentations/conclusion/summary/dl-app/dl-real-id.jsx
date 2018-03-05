@@ -8,11 +8,13 @@ import {
 
 
 const DLRealID = (props) => {
-  if(!DLAppExists(props)) { return null; }
+  let showIf = DLAppExists(props);
   return (
     <RealID
       {...props}
-      name='realID'
+      showIf  = { showIf }
+      name    = 'realID'
+      title   = 'Real-ID Compliant'
     />
   );
 };

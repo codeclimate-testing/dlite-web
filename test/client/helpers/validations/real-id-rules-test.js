@@ -66,6 +66,11 @@ describe('RealID page validation rules:', function() {
     it('when both ID and DL apps are getting a real ID it returns realIdCardSelectionMissing error', function() {
       props.DLApp.realID = 'Yes';
       props.IDApp.realID = 'Yes';
+      props.cardType = [];
+      props.DLApp.isApplying = true;
+      props.IDApp.isApplying = true;
+      props.realID = 'Yes';
+
       assert.deepEqual(rules.designation(props), [messages.realIdCardSelectionMissing]);
     });
   });

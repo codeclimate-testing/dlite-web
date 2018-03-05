@@ -4,7 +4,8 @@ const assert = require('assert');
 
 import {
   cdlWdywtdt,
-  cdlCurrentCard
+  cdlCurrentCard,
+  cdlSSN
 } from '../../../../client/helpers/navigation/cdl/next-path';
 
 describe('CDL next-paths', function() {
@@ -47,6 +48,16 @@ describe('CDL next-paths', function() {
     it('returns "cdlChanges" if user is changing a card', function() {
       props.cardAction = 'change';
       assert.equal(cdlCurrentCard(props), 'cdlChanges');
+    });
+  });
+
+  describe('#cdlSSN', function() {
+    it('returns "cdlCurrentDL" if user is getting a new card', function() {
+      assert.equal(cdlSSN(props), 'cdlCurrentDL');
+    });
+    it('returns "cdlRealID" if user is replacing, renewing, or changing a card', function() {
+      props.cardAction = 'renew';
+      assert.equal(cdlSSN(props), 'cdlRealID');
     });
   });
 

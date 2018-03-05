@@ -25,3 +25,10 @@ export const cdlCurrentCard = (props) => {
   return key;
 };
 
+export const cdlSSN = (props) => {
+  let key = 'cdlRealID';
+  if (!hasExistingCard(props)) {
+    key = 'cdlCurrentDL';
+  }
+  return key;
+};

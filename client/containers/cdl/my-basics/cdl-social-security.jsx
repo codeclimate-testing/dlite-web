@@ -26,6 +26,7 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     socialSecurity: state.cdl.basics.socialSecurity,
+    cardAction    : state.cdl.cardAction,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
     locale        : state.ui.locale
