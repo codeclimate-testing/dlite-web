@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
 import CdlAction            from './cdl-action.jsx';

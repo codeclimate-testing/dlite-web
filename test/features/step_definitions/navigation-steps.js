@@ -75,6 +75,10 @@ module.exports = function(world) {
     navigateToPath('/apply/cdl/license-class', '.cdl-class-form', done);
   });
 
+  world.when('I visit the self cert page for CDL', function(done) {
+    navigateToPath('/apply/cdl/self-certification', '.cdl-self-certification', done);
+  });
+
   world.when('I visit the CDL Social Security page', function(done) {
     navigateToPath('/apply/cdl/social-security', '.social-security-form', done);
   });

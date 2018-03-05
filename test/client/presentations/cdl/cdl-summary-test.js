@@ -18,6 +18,7 @@ describe('CDL Summary page', function() {
     props = {
       cdl: {
         cardAction: '',
+        certification: '',
         basics: {
           legalName: {
             firstName: '',
@@ -101,5 +102,15 @@ describe('CDL Summary page', function() {
       </Wrapper>
     );
     assert.ok(component.text().includes('Please take a minute to review your answers.'));
+  });
+
+  it('shows user answer to certification type', function() {
+    props.cdl.certification = 'inter';
+    let component = render(
+      <Wrapper>
+        <SummaryPage { ...props } />
+      </Wrapper>
+    );
+    assert.ok(component.text().includes('Type of driving:Interstate'));
   });
 });

@@ -73,13 +73,6 @@ const cdl = [
     path: '/social-security',
     next: cdlSSN
   },
-  // /* **** placeholder for incoming SSN page *** /
-  // {
-  //   key: 'cdlSSN',
-  //   description: 'social security',
-  //   path: '',
-  //   next: cdlSSN (either cdlCurrentDL or cdlRealID)
-  // },
   {
     key: 'cdlCurrentDL',
     description: 'current DL info',
@@ -102,6 +95,12 @@ const cdl = [
     key: 'motorcycle',
     description: 'add classM to cdl',
     path: '/motorcycle',
+    next: ''
+  },
+  {
+    key: 'cdlCertification',
+    description: 'self-certification inter/intra-state',
+    path: '/self-certification',
     next: ''
   },
   {

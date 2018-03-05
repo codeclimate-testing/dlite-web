@@ -29,7 +29,7 @@ const Presentation = (props) => {
           />
         </fieldset>
 
-        <CDLUnder21   dateOfBirth = {props.dateOfBirth } />
+        <CDLUnder21   {...props} />
 
         <NavigationButtons
           {...props}

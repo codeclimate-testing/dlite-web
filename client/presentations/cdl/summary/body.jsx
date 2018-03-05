@@ -3,6 +3,7 @@ import React                from 'react';
 import CDLApp               from './cdl-app.jsx';
 import MyBasics             from './my-basics.jsx';
 import MyHistory            from './my-history.jsx';
+import SelfCert             from './self-cert.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
 
 
@@ -14,8 +15,7 @@ const Contents = (props) => {
 
       <MyBasics       {...props} />
 
-      <Accordion id='self-certification' title='Self certification'>
-      </Accordion>
+      <SelfCert       {...props} />
 
       <MyHistory      {...props} />
 

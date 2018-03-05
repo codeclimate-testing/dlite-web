@@ -6,23 +6,22 @@ import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
 
 const Form = (props) => {
+
   return (
-    <div className = 'cdl-current-dl-yes-no'>
-      <h2 className='question'>Do you currently have a California driver license?</h2>
+    <div className = 'cdl-self-cert-intra-inter translation-missing'>
 
       <RadioCollection
         {...props}
-        name          = 'isIssued'
-        errorMessage  = { props.validations.isIssued() }
-        selectedValue = {props.currentCardInfo.isIssued}
+        name          = 'certification'
+        errorMessage  = { props.validations.select() }
       >
         <RadioSelector
-          value='inter'
-          text='Interstate driving Non-Excepted'
+          value   = 'inter'
+          text    = {<h6>Interstate driving <br/>Non-Excepted</h6>}
         />
         <RadioSelector
-          value='intra'
-          text='Intrastate driving Non-Excepted'
+          value   = 'intra'
+          text    = {<h6>Intrastate driving <br/>Non-Excepted</h6>}
         />
       </RadioCollection>
     </div>

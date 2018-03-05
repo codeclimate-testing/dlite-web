@@ -9,19 +9,22 @@ import LegalAgreement         from './self-certification/legal-agreement.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 
 const Form = (props) => {
-
   return (
     <Page
       {...props}
-      sectionKey='self-certification'
+      sectionKey='selfCert'
     >
       <div className='cdl-self-certification'>
-        <form onSubmit      = {props.onSubmit }>
-          <h2 className='question'>What type of driving do you need to do?</h2>
+        <form onSubmit = {props.onSubmit }>
+          <h2 className='question translation-missing'>What type of driving do you need to do?</h2>
 
-          <Under21 dateOfBirth = { props.dateOfBirth } />
+          <Under21 {...props} />
 
-          <RadioSelections {...props} />
+          <RadioSelections
+            {...props}
+            selectedValue     = { props.certification}
+            errorMessage      = { props.validations.select() }
+          />
 
           <Accordion {...props} />
 

@@ -10,7 +10,8 @@ import {
   noCardTypeArray,
   yesClassM,
   noClassM,
-  getClassText
+  getClassText,
+  getCert
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -150,6 +151,19 @@ describe('Data helpers for cdl data', function() {
         classM: 'No'
       };
       assert.equal(noClassM(props), true);
+    });
+  });
+
+  describe('#getCert', function() {
+    beforeEach(function(){
+      props.certification = 'inter';
+    });
+    it('returns the 2nd argument by default', function() {
+      assert.equal(getCert(props, '2nd arg', '3rd arg'), '2nd arg');
+    });
+    it('returns the 3rd argument if certification value is "intra"', function() {
+      props.certification = 'intra';
+      assert.equal(getCert(props, '2nd arg', '3rd arg'), '3rd arg');
     });
   });
 

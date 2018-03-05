@@ -39,6 +39,12 @@ const voterPreRegistration = {
   name: 'Voting pre-registration'
 };
 
+const selfCert = {
+  key: 'selfCert',
+  number: '1',
+  name: 'Self-certification'
+};
+
 const summary = {
   key: 'summary',
   number: '',
@@ -53,6 +59,7 @@ const sections = {
   organDonation,
   voterRegistration,
   voterPreRegistration,
+  selfCert,
   summary
 };
 

@@ -9,7 +9,7 @@ import connectForm                from '../../helpers/connect-form';
 
 const Page = (props) => {
   let locale            =   props.locale;
-  let validations       =   new SelectionValidator(Object.assign(props.certification, {locale}), props.validations);
+  let validations       =   new SelectionValidator(Object.assign(props.certification, {locale}), props.validations, 'applicationActionMissing');
   let onSubmit          =   handlers.navigateOrShowErrors('cdlCertification', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -18,7 +18,7 @@ const Page = (props) => {
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      selectedValue     = { props.certification }
+      certification     = { props.certification }
       validations       = { validations }
       dateOfBirth       = { props.dateOfBirth }
     />
@@ -30,7 +30,8 @@ function mapStateToProps(state) {
     focused:        state.ui.focus,
     dateOfBirth:    state.cdl.basics.dateOfBirth,
     certification:  state.cdl.certification,
-    locale:         state.ui.locale
+    locale:         state.ui.locale,
+    validations:    state.ui.validations
   };
 };
 

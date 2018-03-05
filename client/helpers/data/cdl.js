@@ -71,3 +71,11 @@ export const getClassText = (licenseClass, locale) => {
   }
   return key;
 };
+
+export const getCert = (props, interstate, intrastate) => {
+  let key = interstate;
+  if (props.certification === 'intra') {
+    key = intrastate;
+  }
+  return key;
+};

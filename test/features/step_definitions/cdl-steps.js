@@ -82,6 +82,13 @@ module.exports = function(world){
       .catch(done);
   });
 
+  world.when('I click to drive interstate', function(done) {
+    browser
+      .click('label[for="certification-inter"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am applying for a new CDL', function(done) {
     browser
       .text()
@@ -190,6 +197,23 @@ module.exports = function(world){
   world.when('I click no to have a social security number', function(done) {
     browser
       .click('label[for="hasSocialSecurity-No"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click in the self-certification drawer', function(done) {
+    browser
+      .click('#self-certification-accordion')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am driving interstate', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert.ok(text.includes('Type of driving:Interstate'));
+      })
       .then(done)
       .catch(done);
   });

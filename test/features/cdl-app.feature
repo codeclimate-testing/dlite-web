@@ -72,8 +72,13 @@ Scenario: New CDL
   When I click "Next" to continue
   Then I will be on the CDL Real ID page
   When I click yes to getting a real id on my CDL
+
   When I visit the CDL class page
   And I select Class A
+
+  When I visit the self cert page for CDL
+  When I click to drive interstate
+
   When I go to the CDL summary
   And I will see my name on that summary
   And I will see that I am applying for a new CDL
@@ -83,6 +88,9 @@ Scenario: New CDL
   And I will see my social security on that summary
   Then I will see my "Yes" answer about having a current DL in California
   And I will see my driver license number and expiration date
+  When I click in the self-certification drawer
+  Then I will see that I am driving interstate
+
   When I click to edit my CDL name
   Then I will be on the CDL name page
   When I change my first name
