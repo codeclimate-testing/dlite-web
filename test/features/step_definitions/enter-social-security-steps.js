@@ -110,6 +110,16 @@ module.exports = function(world) {
       });
   });
 
+    world.then('I will see text for yes social security info', function(done){
+      browser
+        .text()
+        .then(text => {
+          assert(text.includes('By continuing with the application you agree to the below'));
+        })
+        .then(done)
+        .catch(done);
+    });
+
   world.then('I will see that I do not have a social security number', function(done){
     browser
     .text()

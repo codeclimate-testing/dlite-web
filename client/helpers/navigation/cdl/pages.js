@@ -46,7 +46,13 @@ const cdl = [
     key: 'cdlResidency',
     description: 'California residency',
     path: '/california-residency',
-    next: 'cdlSSN'
+    next: 'cdlSocialSecurity'
+  },
+  {
+    key: 'cdlSocialSecurity',
+    description: 'Social Security',
+    path: '/social-security',
+    next: 'cdlCurrentDL'
   },
   {
     key: 'cdlCurrentDL',

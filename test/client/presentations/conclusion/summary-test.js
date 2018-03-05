@@ -800,6 +800,8 @@ describe('Summary components', function() {
           part3: '1293'
         };
 
+        props.editKey = 'socialSecurity';
+
         let component = render(
           <Wrapper>
             <SocialSecurity

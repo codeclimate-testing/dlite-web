@@ -55,6 +55,7 @@ const MyBasics = (props) => {
         locale            = { locale }
         summary           = 'summary'
         socialSecurity    = { application.basics.socialSecurity}
+        editKey           = 'socialSecurity'
       />
     </Accordion>
   );

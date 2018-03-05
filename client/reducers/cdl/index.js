@@ -7,6 +7,7 @@ import updateDateOfBirth            from './update-date-of-birth';
 import updateCardAction             from './update-card-action';
 import updateCardChanges            from './update-card-changes';
 import updateResidency              from './update-residency';
+import updateSocialSecurity         from './update-social-security';
 import updateCurrentDL              from './update-current-dl';
 import updateCurrentCard            from './update-current-card';
 
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,
-    residency             : updateResidency
+    residency             : updateResidency,
+    socialSecurity        : updateSocialSecurity,
   }),
 
   history                 : combineReducers({

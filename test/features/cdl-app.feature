@@ -70,22 +70,36 @@ Scenario: Name page
   When I click "Next" to continue
   Then I will be on the CDL summary
 
+Scenario: CDL Social Security page
+  Given I go to the new online DL application page
+  When I visit the CDL Social Security page
+  And I select Yes for social security
+  And I will see text for yes social security info
+  And I will see a number field for each part of my social security number
+  And I enter my full social security number
+  When I click "Next" to continue
+  Then I will be on the CDL current card page
+  When I go to the CDL summary
+  And I will see my social security on that summary
+  Then I visit the CDL Social Security page
+  And I select No for social security
+  Then I will see text for no social security info
 
-  Scenario: Saying no to having a current DL
-    Given I go to the new online DL application page
-    When I visit the CDL page to enter my current DL
-    And I select existing DL/ID No
-    Then I will see an info message about needing to pass the driving test
-    When I select existing DL/ID Yes
-    Then I will see input fields for entering my current DL info
-    When I enter my driver license number
-    And I enter the date of DL/ID expiration
-    Then I will see an info message letting me know I will need to do more work to get a CDL
-    When I go to the CDL summary
-    Then I will see my "Yes" answer about having a current DL in California
-    And I will see my driver license number and expiration date
+Scenario: Saying no to having a current DL
+  Given I go to the new online DL application page
+  When I visit the CDL page to enter my current DL
+  And I select existing DL/ID No
+  Then I will see an info message about needing to pass the driving test
+  When I select existing DL/ID Yes
+  Then I will see input fields for entering my current DL info
+  When I enter my driver license number
+  And I enter the date of DL/ID expiration
+  Then I will see an info message letting me know I will need to do more work to get a CDL
+  When I go to the CDL summary
+  Then I will see my "Yes" answer about having a current DL in California
+  And I will see my driver license number and expiration date
 
-  Scenario: Renewing a CDL
+Scenario: Renewing a CDL
     Given I go to the new online DL application page
     When I go to the CDL WDYWTDT page
     When I select a renewal CDL
@@ -97,7 +111,7 @@ Scenario: Name page
     Then I will see that I am renewing my card
     And I will see my current CDL number
 
-  Scenario: Updating my CDL
+Scenario: Updating my CDL
     Given I go to the new online DL application page
     When I visit the CDL WDYWTDT page
     And I select to change my CDL
@@ -111,3 +125,10 @@ Scenario: Name page
     And I click to change my name section
     When I go to the CDL summary
     Then I will see that I am updating my card
+
+Scenario: Renewing a CDL
+  Given I go to the new online DL application page
+  When I go to the CDL WDYWTDT page
+  When I select a renewal CDL
+  And I click "Next" to continue
+  Then I will be on the current CDL page

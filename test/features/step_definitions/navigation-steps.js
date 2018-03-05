@@ -65,6 +65,9 @@ module.exports = function(world) {
   world.when('I go to the CDL WDYWTDT page', function(done) {
     navigateToPath('/apply/cdl/what-do-you-want-to-do-today', '.choose-card-action', done);
   });
+  world.when('I visit the CDL Social Security page', function(done) {
+    navigateToPath('/apply/cdl/social-security', '.social-security-form', done);
+  });
 
   world.and('I return to the home page', function(done) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
@@ -404,6 +407,10 @@ module.exports = function(world) {
 
   world.then('I will be on the CDL summary', function(done) {
     assertOnPage('.summary', /apply\/cdl\/summary/, done);
+  });
+
+  world.then('I will be on the CDL current card page', function(done) {
+    assertOnPage('.current-card-form', /apply\/cdl\/current-ca-license/, done);
   });
 
   world.then('I will be on the page for appointment preparation', function(done) {

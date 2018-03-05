@@ -16,9 +16,9 @@ const SocialSecurity = (props) => {
   return (
     <PageSummaryLink
       summary = {props.summary}
-      name='socialSecurity'
+      name    = {props.editKey}
     >
-      <SummaryItem
+    <SummaryItem
         title='Social Security Number'
         text={socialSecurity}
       />

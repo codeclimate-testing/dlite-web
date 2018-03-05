@@ -32,6 +32,12 @@ describe('CDL Summary My Basics section', function() {
             day: '29',
             year: '1957'
           },
+          socialSecurity: {
+            hasSocialSecurity: 'Yes',
+            part1: '123',
+            part2: '45',
+            part3: '6789'
+          },
           residency: {
             isResident: 'Yes',
             homeAddressSameAsMailing: 'Yes',
@@ -77,4 +83,8 @@ describe('CDL Summary My Basics section', function() {
     assert.equal(component.text().includes('Rockville, CA 010101'), true);
   });
 
+  it('shows the social security', function() {
+    assert.equal(component.text().includes('Social Security Number'), true);
+    assert.equal(component.text().includes('xxx-xx-6789'), true);
+  });
 });

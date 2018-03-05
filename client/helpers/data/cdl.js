@@ -43,3 +43,7 @@ export const expiredCard = (currentCardInfo) => {
 
   return yesterday >= cardExpiration;
 };
+
+export const noSSN = (props) => {
+  return props.hasSocialSecurity === 'No';
+};

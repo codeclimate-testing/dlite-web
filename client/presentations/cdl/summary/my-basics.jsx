@@ -4,6 +4,7 @@ import React                from 'react';
 import DateOfBirth          from '../../conclusion/summary/my-basics/date-of-birth.jsx';
 import LegalName            from '../../conclusion/summary/my-basics/legal-name.jsx';
 import Address              from '../../conclusion/summary/my-basics/address.jsx';
+import SocialSecurity       from '../../conclusion/summary/my-basics/social-security.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
 
 
@@ -30,6 +31,12 @@ const MyBasics = (props) => {
         summary           = 'cdlSummary'
         locale            = {locale}
       />
+      <SocialSecurity
+        socialSecurity    = {cdl.basics.socialSecurity}
+        editKey           = 'cdlSocialSecurity'
+        summary           = 'cdlSummary'
+        locale            = {locale}
+      /> 
     </Accordion>
   )
 };

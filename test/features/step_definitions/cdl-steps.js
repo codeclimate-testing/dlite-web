@@ -132,4 +132,18 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
+  
+  world.when('I click yes to have a social security number', function(done) {
+    browser
+      .click('label[for="hasSocialSecurity-Yes"]')
+      .then(done)
+      .catch(done);
+  });
+  
+  world.when('I click no to have a social security number', function(done) {
+    browser
+      .click('label[for="hasSocialSecurity-No"]')
+      .then(done)
+      .catch(done);
+  });
 };

@@ -30,6 +30,12 @@ describe('CDL Summary page', function() {
             day: '',
             year: ''
           },
+          socialSecurity: {
+            hasSocialSecurity: 'Yes',
+            part1: '123',
+            part2: '45',
+            part3: '6789'
+          },
           residency: {
             home: {
               street_1: '',
