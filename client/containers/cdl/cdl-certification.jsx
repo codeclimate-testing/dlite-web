@@ -5,7 +5,7 @@ import handlers                   from '../../helpers/handlers';
 import { SelectionValidator }     from '../../helpers/validations';
 import Presentation               from '../../presentations/cdl/certification-page.jsx';
 import { updateCDLCert }          from '../../actions/index';
-import { mergePropsGenerator }    from '../../helpers/merge-props';
+import connectForm                from '../../helpers/connect-form';
 
 const Page = (props) => {
   let locale            =   props.locale;
@@ -20,6 +20,7 @@ const Page = (props) => {
       onBack            = { onBack }
       selectedValue     = { props.certification }
       validations       = { validations }
+      dateOfBirth       = { props.dateOfBirth }
     />
   );
 };
@@ -27,10 +28,11 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     focused:        state.ui.focus,
+    dateOfBirth:    state.cdl.basics.dateOfBirth,
     certification:  state.cdl.certification,
     locale:         state.ui.locale
   };
 };
 
 
-export default mergePropsGenerator(mapStateToProps, updateCDLCert, null, Page);
+export default connectForm(mapStateToProps, updateCDLCert, Page);
