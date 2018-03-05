@@ -29,7 +29,7 @@ const Form = (props) => {
         <li className='translation-missing'>
           <div className='unit icon card change'/>
           <b>Correct or update</b> your CDL
-         </li>
+        </li>
       </ul>
 
       <p>When you submit this application, we will give you a list of required documents. You must go to a DMV office with these documents to finish your application.</p>

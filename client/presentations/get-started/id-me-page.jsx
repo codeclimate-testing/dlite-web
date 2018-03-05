@@ -12,11 +12,28 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <div className='id-me'>
-        <h2 className='question translation-missing'>The DMV is partnering with ID.me to protect your digital identity.</h2>
+        <h2 className='translation-missing'>
+          The DMV is partnering with ID.me to protect your digital identity.
+        </h2>
 
-        <button className='ID-me green translation-missing'>Create an ID.me account</button>
-        <p>Or</p>
-        <button className='ID-me translation-missing'>Sign in with an ID.me account</button>
+        <fieldset className='id-me-buttons'>
+          <button className='green translation-missing id-me-create'>
+            <div className='unit'>Create an </div>
+            <img src='/images/id-me/white-logo.svg' alt='id.me' className='id-me-logo unit' />
+            <div className='unit'> account</div>
+          </button>
+
+          <div className='or-block'>
+            <hr className='mid-line'/>
+            <p className='or'>Or</p>
+          </div>
+
+          <button className='translation-missing id-me-sign-in'>
+            <div className='unit'>Sign in with an </div>
+            <img src='/images/id-me/dark-logo.svg' alt='id.me' className='id-me-logo unit' />
+            <div className='unit'> account</div>
+          </button>
+        </fieldset>
 
         <p>
           <b className='translation-missing'>An email address and phone number are required. </b>

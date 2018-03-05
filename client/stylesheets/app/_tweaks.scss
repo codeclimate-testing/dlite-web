@@ -80,12 +80,13 @@ a.button.arrow-button.forward.get-started {
   img {
     margin-left: -5px;
   }
-
-  .mid-line {
-    margin-top: 20px;
-    background-color: $another-gray;
-  }
 }
+
+hr.mid-line {
+  margin-top: 20px;
+  background-color: $another-gray;
+}
+
 
 .flexPhone {
   display: flex;
@@ -103,4 +104,54 @@ a.button.arrow-button.forward.get-started {
     &.renew { background-image: url("/images/icons/cards/renew.svg"); }
     &.change { background-image: url("/images/icons/cards/change.svg"); }
   }
+}
+
+.id-me-buttons {
+  margin-bottom: $spacing * 1.5;
+
+  img {
+    height: 18px;
+    width: 50px;
+    margin: 0px 7px;
+  }
+
+  .id-me-create,
+  .id-me-sign-in {
+    @include border-radius($border-radius-size);
+    padding: 12px 18px;
+    margin: 0 auto;
+    font-weight: normal;
+    font-size: 15px;
+
+    div {
+      margin-top: 1px;
+    }
+  }
+
+  .id-me-create {
+    border: none;
+    background-color: $green;
+    padding: 12px 43px;
+  }
+
+  .id-me-sign-in {
+    border-width: 2px;
+    border-color: $green;
+    color: $green;
+    background-color: transparent;
+  }
+
+  .or-block {
+    width: 300px;
+    margin: 0 auto;
+    padding: $spacing / 2 0 $spacing;
+  }
+
+  .or {
+    background-color: white;
+    margin: -42px auto 0;
+    width: 50px;
+    text-align: center;
+  }
+
 }
