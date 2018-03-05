@@ -18,9 +18,6 @@ const ClassRadios = (props) => {
         <RadioCollection
           {...props}
           name          = 'class'
-          onBlur        = { props.onBlurValidate }
-          errorMessage  = { props.validations.select() }
-          selectedValue = { props.licenseClass}
         >
           <RadioSelector
             value = 'classA'

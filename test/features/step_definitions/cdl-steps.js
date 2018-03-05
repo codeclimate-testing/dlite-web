@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-module.exports = function(world) {
+module.exports = function(world){
   let browser = world.browser;
 
   world.when('I select a commercial DL application', function(done) {
@@ -127,6 +127,9 @@ module.exports = function(world) {
       .text()
       .then(text => {
         assert.ok(text.includes('Motorcycle on CDLNo'));
+      })
+      .then(done)
+      .catch(done);
   });
 
   world.then('I will see that I am applying for a class A license', function(done) {
@@ -138,7 +141,6 @@ module.exports = function(world) {
       .then(() => { done(); })
       .catch(done);
   });
-
 
   world.and('I will see the title of each accordion for cdl what can I do page', function(done) {
     browser
@@ -177,14 +179,14 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
-  
+
   world.when('I click yes to have a social security number', function(done) {
     browser
       .click('label[for="hasSocialSecurity-Yes"]')
       .then(done)
       .catch(done);
   });
-  
+
   world.when('I click no to have a social security number', function(done) {
     browser
       .click('label[for="hasSocialSecurity-No"]')

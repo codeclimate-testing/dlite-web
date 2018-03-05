@@ -14,7 +14,11 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit}>
-        <LicenseClassForm {...props} />
+        <LicenseClassForm
+          {...props}
+          errorMessage  = { props.validations.select() }
+          selectedValue = { props.licenseClass}
+        />
 
         <WhatDoINeedFAQ />
 

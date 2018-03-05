@@ -21,7 +21,7 @@ describe('CDL Class Page', function() {
     let focused           = '';
 
     let validations = {
-      cdlClasses:         spy(),
+      select:             spy(),
       all:                spy(),
       isValid: () => { return true; }
     };
