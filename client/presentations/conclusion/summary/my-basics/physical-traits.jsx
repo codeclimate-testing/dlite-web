@@ -12,7 +12,7 @@ const PhysicalTraits = (props) => {
   return (
     <PageSummaryLink
       summary = {props.summary}
-      name    = 'sexEyeHair'
+      name    = {props.editKey}
     >
       <SummaryItem
         title='Sex'

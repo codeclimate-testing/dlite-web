@@ -775,6 +775,8 @@ describe('Summary components', function() {
           heightInches: '3'
         };
 
+        props.editKey = 'heightWeight';
+
         let component = render(
           <Wrapper>
             <TraitsHeightWeight
@@ -795,6 +797,8 @@ describe('Summary components', function() {
           eyeColor: 'Green',
           hairColor: 'Black'
         };
+
+        props.editKey = 'sexEyeHair';
 
         let component = render(
           <Wrapper>

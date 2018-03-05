@@ -229,6 +229,10 @@ module.exports = function(world) {
     navigateToPath('/add/driver-license/type', 'license-type-form', done);
   });
 
+  world.when('I visit the CDL page for entering my physical traits', function(done) {
+    navigateToPath('/apply/cdl/physical-traits', '.physical-traits-form', done);
+  });
+
   world.when('I will be on the page to choose application', function(done) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });
@@ -502,5 +506,9 @@ module.exports = function(world) {
 
   world.then('I will see a blank page with the loading icon', function(done) {
     assertOnPage('.loading', /id-and-license\/summary/, done);
+  });
+
+  world.then('I will be on the CDL page for entering my height and weight', function(done) {
+    assertOnPage('.traits-height-weight-form', /cdl\/traits-height-weight/, done);
   });
 };

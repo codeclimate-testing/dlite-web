@@ -32,6 +32,16 @@ describe('CDL Summary My Basics section', function() {
             day: '29',
             year: '1957'
           },
+          physicalTraits: {
+            sex: 'Female',
+            eyeColor: 'Black',
+            hairColor: 'Gray'
+          },
+          traitsHeightWeight: {
+            weight: '156',
+            heightFeet: '5',
+            heightInches: '4'
+          },
           socialSecurity: {
             hasSocialSecurity: 'Yes',
             part1: '123',
@@ -73,6 +83,22 @@ describe('CDL Summary My Basics section', function() {
   it('shows the dob', function() {
     assert.equal(component.text().includes('Date Of Birth'), true);
     assert.equal(component.text().includes('01/29/1957'), true);
+  });
+
+  it('shows the physical traits', function() {
+    assert.equal(component.text().includes('Sex'), true);
+    assert.equal(component.text().includes('Female'), true);
+    assert.equal(component.text().includes('Eye Color'), true);
+    assert.equal(component.text().includes('Black'), true);
+    assert.equal(component.text().includes('Hair Color'), true);
+    assert.equal(component.text().includes('Gray'), true);
+  });
+
+  it('shows the physical traits', function() {
+    assert.equal(component.text().includes('Height'), true);
+    assert.equal(component.text().includes('5 feet 4 inches'), true);
+    assert.equal(component.text().includes('Weight'), true);
+    assert.equal(component.text().includes('156 pounds'), true);
   });
 
   it('shows the home address', function() {

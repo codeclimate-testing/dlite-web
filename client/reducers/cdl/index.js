@@ -4,6 +4,8 @@ import { combineReducers }          from 'redux';
 import createApplicationID          from './create-application-id';
 import updateLegalName              from './update-legal-name';
 import updateDateOfBirth            from './update-date-of-birth';
+import updatePhysicalTraits         from './update-physical-traits';
+import updateHeightWeight           from './update-traits-height-weight';
 import updateCardAction             from './update-card-action';
 import updateCardChanges            from './update-card-changes';
 import updateCDLCardReplacement     from './update-cdl-card-replacement';
@@ -24,6 +26,8 @@ const rootReducer = combineReducers({
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,
+    physicalTraits        : updatePhysicalTraits,
+    traitsHeightWeight    : updateHeightWeight,
     residency             : updateResidency,
     socialSecurity        : updateSocialSecurity,
   }),

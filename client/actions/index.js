@@ -61,6 +61,8 @@ export const TYPES = {
   UPDATE_GUARDIAN_ID_DOC_SECOND:          'UPDATE_GUARDIAN_ID_DOC_SECOND',
   UPDATE_CDL_LEGAL_NAME:                  'UPDATE_CDL_LEGAL_NAME',
   UPDATE_CDL_DOB:                         'UPDATE_CDL_DOB',
+  UPDATE_CDL_PHYSICAL_TRAITS:             'UPDATE_CDL_PHYSICAL_TRAITS',
+  UPDATE_CDL_HEIGHT_WEIGHT:               'UPDATE_CDL_HEIGHT_WEIGHT',
   UPDATE_CDL_CARD_ACTION:                 'UPDATE_CDL_CARD_ACTION',
   UPDATE_CDL_SOCIAL_SECURITY:             'UPDATE_CDL_SOCIAL_SECURITY',
   UPDATE_CDL_RESIDENCY:                   'UPDATE_CDL_RESIDENCY',
@@ -130,6 +132,8 @@ export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 export const updateCdlLegalName                       = generateFormAction(TYPES.UPDATE_CDL_LEGAL_NAME);
 export const updateCdlDob                             = generateFormAction(TYPES.UPDATE_CDL_DOB);
+export const updateCdlPhysicalTraits                  = generateFormAction(TYPES.UPDATE_CDL_PHYSICAL_TRAITS);
+export const updateCdlHeightWeight                    = generateFormAction(TYPES.UPDATE_CDL_HEIGHT_WEIGHT);
 export const updateCdlCardAction                      = generateFormAction(TYPES.UPDATE_CDL_CARD_ACTION);
 export const updateCdlResidency                       = generateFormAction(TYPES.UPDATE_CDL_RESIDENCY);
 export const updateCdlCurrentDL                       = generateFormAction(TYPES.UPDATE_CDL_CURRENT_DL);

@@ -44,11 +44,13 @@ const MyBasics = (props) => {
       <PhysicalTraits
         locale            = { locale }
         summary           = 'summary'
+        editKey           = 'sexEyeHair'
         physicalTraits    = { application.basics.physicalTraits}
       />
       <TraitsHeightWeight
         locale            = { locale }
         summary           = 'summary'
+        editKey           = 'heightWeight'
         traitsHeightWeight= { application.basics.traitsHeightWeight}
       />
       <SocialSecurity

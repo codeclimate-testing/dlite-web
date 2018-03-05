@@ -155,3 +155,20 @@ Scenario: Renewing a CDL
     When I go to the CDL summary
     Then I will see my "Yes" answer about having a current DL in California
     And I will see my driver license number and expiration date
+
+
+Scenario: Enter my basic information
+  Given I go to the new online DL application page
+  When I visit the CDL page for entering my physical traits
+  And I select my sex
+  And I select an eye color
+  And I select a hair color
+  And I click "Next" to continue
+  Then I will be on the CDL page for entering my height and weight
+  And I enter my traits
+  When I go to the CDL summary
+  Then I will see my sex in the summary
+  And I will see my eye color in the summary
+  And I will see my hair color in the summary
+  And I will see my height on that summary
+  And I will see my weight on that summary

@@ -26,6 +26,18 @@ const cdl = [
     next: 'cdlWdywtdt'
   },
   {
+    key: 'cdlSexEyeHair',
+    description: 'Physical Traits',
+    path: '/physical-traits',
+    next: 'cdlHeightWeight'
+  },
+  {
+    key: 'cdlHeightWeight',
+    description: 'Height and Weight',
+    path: '/traits-height-weight',
+    next: ''
+  },
+  {
     key: 'cdlWdywtdt',
     description: 'What do you want to do today',
     path: '/what-do-you-want-to-do-today',

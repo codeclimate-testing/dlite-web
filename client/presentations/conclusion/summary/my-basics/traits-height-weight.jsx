@@ -15,7 +15,7 @@ const TraitsHeightWeight = (props) => {
   return (
     <PageSummaryLink
       summary = {props.summary}
-      name    = 'heightWeight'
+      name    = {props.editKey}
     >
       <SummaryItem
         title='Height'
