@@ -16,6 +16,7 @@ import updateCurrentCard            from './update-current-card';
 import updateRealID                 from './update-real-id';
 import updateMotorcycle             from './update-motorcycle';
 import updateLicenseClass           from './update-license-class';
+import updateSelfCertification      from './update-self-cert';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -37,7 +38,8 @@ const rootReducer = combineReducers({
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,
-  licenseClass            : updateLicenseClass
+  licenseClass            : updateLicenseClass,
+  certification           : updateSelfCertification
 });
 
 export default rootReducer;

@@ -18,6 +18,7 @@ import cdlCurrentCard                   from './cdl-current-card.jsx';
 import cdlRealID                        from './cdl-real-id.jsx';
 import Motorcycle                       from './motorcycle.jsx';
 import LicenseClass                     from './license-class.jsx';
+import cdlCertification                 from './cdl-certification.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {
@@ -37,6 +38,8 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/current-ca-license')}             component={cdlCurrentLicense} />
       <Route path={ cdlPath('/real-id')}                        component={cdlRealID} />
       <Route path={ cdlPath('/motorcycle')}                     component={Motorcycle} />
+      <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
+      <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
       <Route path={ cdlPath('/summary')}                        component={Summary}     />
       <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
     </div>
