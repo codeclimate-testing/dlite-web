@@ -15,7 +15,7 @@ import ChooseLanguage                         from './get-started/choose-languag
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
 
 import IDMe                                   from './get-started/id-me-page.jsx';
-import Welcome                                from './get-started/welcome-page.jsx';
+import Welcome                                from '../presentations/get-started/welcome-page.jsx';
 import WhatDoYouWantToDoToday                 from './get-started/what-do-you-want-to-do-today-page.jsx';
 import ReplacementDetails                     from './get-started/replacement-details-page.jsx';
 import CurrentCardInfo                        from './get-started/current-card-page.jsx';

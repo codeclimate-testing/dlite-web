@@ -1,8 +1,8 @@
 'use strict';
 
 import React            from 'react';
-import Page             from '../page.jsx';
-import LinkButton       from '../../presentations/link-button.jsx';
+import Page             from '../../containers/page.jsx';
+import LinkButton       from '../link-button.jsx';
 
 const Welcome = (props) => {
   const linkAddress = '/my-basics/legal-name';
