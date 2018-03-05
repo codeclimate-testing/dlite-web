@@ -58,6 +58,8 @@ export const yesClassM = (props) => {
 
 export const noClassM = (props) => {
   return props.classM === 'No';
+};
+
 export const getClassText = (licenseClass, locale) => {
   let key = '';
   if (licenseClass === 'classA') {

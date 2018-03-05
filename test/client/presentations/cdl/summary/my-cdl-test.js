@@ -30,7 +30,7 @@ describe('CDL Summary My CDL Application section', function() {
         cardChanges: {
           correctOrUpdate: ''
         },
-        realID: ''
+        realID: '',
         licenseClass: ''
       }
     };

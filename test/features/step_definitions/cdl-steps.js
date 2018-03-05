@@ -64,6 +64,8 @@ module.exports = function(world) {
   world.when('I select my reason for replacing my CDL', function(done) {
     browser
       .click('label[for="reason-lostOrStolen"]')
+      .then(done)
+      .catch(done);
   });
 
   world.when('I select Class A', function(done) {

@@ -29,6 +29,7 @@ const CDLApp = (props) => {
         locale      = { locale }
         title       = 'Real ID:'
         showIf      = { hasValue(cdl.realID) }
+      />
       <LicenseClass
         licenseClass      = { cdl.licenseClass }
         locale            = { locale }

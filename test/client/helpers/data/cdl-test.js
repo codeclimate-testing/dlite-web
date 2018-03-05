@@ -106,6 +106,9 @@ describe('Data helpers for cdl data', function() {
         cardType: []
       };
       assert.equal(noCardTypeArray(props), false);
+    });
+  });
+
   describe('#getClassText', function() {
     it('returns "Class A" when value is "classA"', function() {
       assert.equal(getClassText('classA', 'en'), 'Class A');
