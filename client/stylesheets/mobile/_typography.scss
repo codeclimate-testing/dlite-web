@@ -76,10 +76,6 @@ ul.bullet-list,
 ol.decimal-list {
   padding: $spacing * 3 / 8 0;
   margin-left: $spacing;
-
-  li {
-    padding-bottom: $spacing * 3 / 4;
-  }
 }
 
 ul.bullet-list {
@@ -89,9 +85,10 @@ ul.bullet-list {
 ol.decimal-list {
   list-style-type: decimal;
   margin-left: $spacing;
+}
 
-  li {
-    padding-left: $spacing / 2;
-  }
+li {
+  padding-left: $spacing / 2;
+  padding-bottom: $spacing * 3 / 4;
 }
 

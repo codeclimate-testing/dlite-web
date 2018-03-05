@@ -14,13 +14,22 @@ const Form = (props) => {
       {...props}
       sectionKey='intro'
     >
-    <form onSubmit  = { props.onSubmit } >
+    <form onSubmit  = { props.onSubmit } className='what-you-can-do-page' >
       <div className='apply-cdl'/>
-      <p className='translation-missing'>On this website, you can:</p>
-      <ul className='bullet-list'>
-        <li className='translation-missing'><b>Apply</b> for commercial Driver driver license</li>
-        <li className='translation-missing'><b>Renew or replace</b> your CDL</li>
-        <li className='translation-missing'><b>Correct or update</b> your CDL</li>
+      <h3 className='translation-missing'>On this website, you can:</h3>
+      <ul>
+        <li className='translation-missing'>
+          <div className='unit icon card new'/>
+          <b>Apply</b> for commercial Driver driver license
+        </li>
+        <li className='translation-missing'>
+          <div className='unit icon card renew'/>
+          <b>Renew or replace</b> your CDL
+        </li>
+        <li className='translation-missing'>
+          <div className='unit icon card change'/>
+          <b>Correct or update</b> your CDL
+         </li>
       </ul>
 
       <p>When you submit this application, we will give you a list of required documents. You must go to a DMV office with these documents to finish your application.</p>
