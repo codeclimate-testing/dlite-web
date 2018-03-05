@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "Bumalik",
+      "next": "Kasunod"
+    },
+    "commonAnswers": {
+      "yes": "Oo",
+      "no": "Hindi",
+      "declineToAnswer": "Tumangging sumagot",
+      "skip": "Laktawan ang tanong"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "Kung pinili mo ang <em>Tumangging sumagot</em>, hindi ka irerehistro para makaboto.",
+      "declineToAnswerInformationPreRegistration": "Kung pinili mo ang <em>Tumangging sumagot</em>, hindi ka maagang irerehistro para makaboto."
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "Mamamayan Lamang ng US",
+      "pagePrompt": "Pagpaparehistro ng Botante",
+      "explanation": "<p>Sa ilalim ng batas ng estado, ang mga karapat-dapat na mamamayan ay irerehistro para makaboto maliban kung pinili nilang hindi bumoto sa bahaging ito. </p><p> Kung ikaw ay nakarehistro na para makaboto, ang serbisyong ito ay tutulong sa iyo na matiyak na ang iyong impormasyon ay napapanahon. </p><p> Kung kailangan mong magparehistro para makaboto bago ang iyong pagbisita sa DMV, maaari kang magparehistro online sa RegisterToVote.ca.gov.</p>",
+      "timeItWillTake": "<p>Sa karamihan ng mga parokyano ang bahaging ito ay nangangailangan ng </p><p> 3 minutes</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "Ikaw ba ay isang mamamayan ng United States?",
+      "faqQuestionWhatIfNotCitizen": "Paano kung ako ay hindi isang mamamayan?",
+      "faqAnswerWhatIfNotCitizen": "Kung ikaw ay hindi isang mamamayan ng U.S., hindi ka karapat-dapat magparehistro para makaboto."
+    },
+    "eligibilityPage": {
+      "pagePrompt": "Natutugunan mo ba ang LAHAT ng mga iniaatas sa pagpaparehistro ng botante na nakalista sa ibaba?",
+      "usCitizenshipStatement": "Ako ay isang mamamayan ng United States",
+      "caCitizenshipStatement": "Ako ay isang residente ng California",
+      "ageStatement": "Ako ay hindi kukulangin sa 18 taong gulang",
+      "convictionStatement": "Ako ay kasalukuyang hindi nakabilanggo sa isang pang-estado o pederal na bilangguan o parolado para sa isang napatunayang felony",
+      "mentalCompetenceStatement": "Ako ay kasalukuyang hindi ipinasiya ng isang hukuman na walang kakayahan ang isipan",
+      "faqQuestionWhatIfDontMeetRequirements": "Paano kung hindi ako nakatutugon sa lahat ng mga iniaatas?",
+      "faqAnswerWhatIfDontMeetRequirements": "Kung ikaw ay hindi nakatutugon sa lahat ng mga iniaatas, hindi ka karapat-dapat magparehistro para makaboto."
+    },
+    "optOutPage": {
+      "pagePrompt": "Alin ang pinakamahusay na naglalarawan sa iyo?",
+      "answerNewRegistration": "Gusto kong magparehistro para makaboto.",
+      "answerUpdateRegistration": "Ako ay nakarehistro para makaboto at gustong isapanahon ang aking impormasyon sa pagpaparehistro bilang botante.",
+      "answerOptOut": "Hindi ko gustong magparehistro para makaboto o isapanahon ang aking impormasyon sa pagpaparehistro bilang botante."
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "Maagang Pagpaparehistro ng Botante",
+      "explanation": "<p>Sa ilalim ng batas ng estado, ang mga karapat-dapat na mamamayan ay maagang irerehistro para makaboto maliban kung pinili nilang hindi bumoto sa bahaging ito. </p><p> Kung ikaw ay 16 o 17, maaari kang maagang magparehistro ngayon. Sa sandaling umabot ka sa edad na 18, ikaw ay awtomatikong nakarehistro para makaboto.</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "Kung ikaw ay hindi isang mamamayan ng U.S., hindi ka karapat-dapat na maagang magparehistro para makaboto."
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "Ako ay hindi kukulangin sa 16 o 17 taong gulang",
+      "faqQuestionHowDoesPreRegWork": "Paano gumagana ang maagang pagpaparehistro para makaboto?",
+      "faqAnswerHowDoesPreRegWork": "Upang maagang magparehistro para makaboto sa California, ikaw ay dapat na 16 o 17 taong gulang at nakatutugon sa lahat ng ibang mga iniaatas sa pagiging karapat-dapat bumoto. Ikaw ay awtomatikong irerehistro para makaboto sa iyong ika-18 kaarawan."
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "Gusto kong maagang magparehistro para makaboto.",
+      "answerUpdateRegistration": "Ako ay maagang nakarehistro para makaboto at gustong isapanahon ang aking impormasyon sa maagang pagpaparehistro bilang botante.",
+      "answerOptOut": "Hindi ko gustong maagang magparehistro para makaboto o isapanahon ang aking impormasyon sa maagang pagpaparehistro bilang botante."
+    },
+    "choosePartyPage": {
+      "pagePrompt": "Gusto mo bang pumili ng isang kinakatigang partidong pampulitika?",
+      "explanation": "Kung hindi ka pipili ng isang partidong pampulitika, maaaring hindi ka makaboto para sa mga kandidato ng ilang partido sa isang primaryang halalan para sa Presidente ng US o komite sentral.",
+      "choosePrompt": "Mangyaring pumili ng isang partido sa ibaba.",
+      "answerNo": "Hindi ko gustong pumili ng isang partidong pampulitika",
+      "answerAmericanIndependent": "Partidong Amerikanong Independiyente",
+      "answerLibertarianParty": "Partidong Libertaryan",
+      "answerDemocraticParty": "Partidong Demokratiko",
+      "answerGreenParty": "Partidong Luntian",
+      "answerPeaceAndFreedomParty": "Partidong Kapayapaan at Kalayaan",
+      "answerRepublicanParty": "Partidong Republikano",
+      "answerOther": "Iba"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "Pumili ng isang wika para sa iyong mga materyal sa halalan.",
+      "answerJapanese": "Hapon",
+      "answerChinese": "Tsino",
+      "answerEnglish": "Ingles",
+      "answerSpanish": "Espanyol",
+      "answerTagalog": "Tagalog",
+      "answerThai": "Thai",
+      "answerKorean": "Koreano",
+      "answerHindi": "Hindi",
+      "answerKhmer": "Khmer",
+      "answerVietnamese": "Biyetnamis"
+    },
+    "byMailPage": {
+      "pagePrompt": "Gusto mo bang matanggap ang iyong balota sa pamamagitan ng koreo bago ang bawat halalan?",
+      "explanation": "Kung sasagot ka ng Oo, makakaboto ka pa rin ng personal."
+    },
+    "contactInfoPage": {
+      "pagePrompt": "Gusto mo bang tumanggap ng impormasyon tungkol sa halalan sa pamamagitan ng email o teksto?",
+      "formPrompt": "Mangyaring ipasok ang iyong impormasyon sa ibaba.",
+      "emailLabel": "Email address",
+      "phoneLabel": "Numero ng telepono",
+      "emailExample": "Halimbawa: name@company.com",
+      "phoneExample": "Halimbawa: 987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "Maraming salamat, ang iyong aplikasyon para sa pagpaparehistro bilang botante ay ipoproseso kapag nakumpleto mo ang iyong transaksiyon sa DMV.",
+      "explanation": "<p>Kung hindi ka makatanggap ng kard ng paunawa sa botante sa loob ng apat na linggo pagkatapos ng iyong pagbisita sa DMV, kontakin ang iyong opisyal sa mga halalan ng county. </p><p> Maaari mong alamin ang katayuan ng iyong pagpaparehistro bilang botante sa Kalihim ng Estado ng California sa <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>Kung hindi ka pipili ng isang partidong pampulitika, maaaring hindi ka makaboto para sa mga kandidato ng ilang partido sa isang primaryang halalan para sa Presidente ng US o komite sentral., </p><p> Ito ay magpapawalang-saysay sa iyong dating kinakatigang partidong pampulitika.</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "Ang pagsagot ng Hindi ay magtatanggal din ng anumang naunang impormasyon tungkol sa matatawagan."
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "Kasunod ay pipiliin mo ang iyong mga gusto bilang botante.",
+      "partyHeadline": "Partidong pampulitika",
+      "partyExplanation": "Piliin ang iyong kinakatigang partidong pampulitika.",
+      "languageHeadline": "Wika",
+      "languageExplanation": "Pumili ng isang wika para sa iyong mga materyal sa halalan.",
+      "byMailHeadline": "Pagboto sa pamamagitan ng koreo",
+      "byMailExplanation": "Tanggapin ang iyong balota sa koreo para sa lahat ng mga halalan sa hinaharap, ibig sabihin hindi mo kailangang pumunta sa isang lugar ng botohan para bumoto.",
+      "contactInfoHeadline": "Impormasyon tungkol sa matatawagan",
+      "contactInfoExplanation": "Ibigay ang iyong impormasyon tungkol sa matatawagan kung gusto mong kontakin ka ng mga opisyal sa halalan tungkol sa halalan at impormasyon para sa botante."
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "Kasunod gusto naming mabilis na tiyakin na ang iyong pagpaparehistro bilang botante ay napapanahon.",
+      "explanation": "Ito ay papalit sa iyong dating mga gusto bilang botante."
+    }
+  }
+}

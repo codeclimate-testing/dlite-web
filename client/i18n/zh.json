@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "上一頁",
+      "next": "下一頁"
+    },
+    "commonAnswers": {
+      "yes": "是",
+      "no": "否",
+      "declineToAnswer": "拒絕回答",
+      "skip": "跳過問題"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "如果您選擇<em>拒絕回答</em>，您不會登記投票。",
+      "declineToAnswerInformationPreRegistration": "如果您選擇<em>拒絕回答</em>，您不會預先登記投票。"
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "只限美國公民",
+      "pagePrompt": "選民登記",
+      "explanation": "<p>根據州法，合格公民可以登記投票，除非他們在這部分選擇不登記。</p><p> 如果您已經登記投票，這項服務幫助確保您的資訊是最新的。</p><p> 如果您需要在前往DMV之前登記投票，您可以在RegisterToVote.ca.gov線上登記。</p>",
+      "timeItWillTake": "<p>大多數客戶在這部分最多花費</p><p> 3分鐘</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "您是美國公民嗎？",
+      "faqQuestionWhatIfNotCitizen": "我不是公民怎麼辦？",
+      "faqAnswerWhatIfNotCitizen": "如果您不是美國公民，您就沒有資格登記投票。"
+    },
+    "eligibilityPage": {
+      "pagePrompt": "您符合以下所有的選民登記要求嗎？",
+      "usCitizenshipStatement": "我是美國公民",
+      "caCitizenshipStatement": "我是加州居民",
+      "ageStatement": "我至少年滿18歲",
+      "convictionStatement": "我目前未因重罪定罪在州或聯邦監獄服刑或假釋",
+      "mentalCompetenceStatement": "我目前沒有被法庭認定為精神上無能力投票",
+      "faqQuestionWhatIfDontMeetRequirements": "如果我不符合所有要求怎麼辦？",
+      "faqAnswerWhatIfDontMeetRequirements": "如果您不符合所有要求，您就沒有資格登記投票。"
+    },
+    "optOutPage": {
+      "pagePrompt": "哪一項最能描述您的情況？",
+      "answerNewRegistration": "我想登記投票。",
+      "answerUpdateRegistration": "我已登記投票，想要更新我的選民登記資訊。",
+      "answerOptOut": "我不想登記投票或更新我的選民登記資訊。"
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "選民預先登記",
+      "explanation": "<p>根據州法，合格公民會預先登記投票，除非他們在這部分選擇不登記。</p><p> 如果您現年16歲或17歲，您可以在今天預先登記。等您年滿18歲，您就會自動登記投票。</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "如果您不是美國公民，您就沒有資格預先登記投票。"
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "我至少年滿16或17歲",
+      "faqQuestionHowDoesPreRegWork": "如何進行預先登記投票？",
+      "faqAnswerHowDoesPreRegWork": "要在加州預先登記投票，您必須現年16歲或17歲，而且符合其他所有的投票資格要求。您將在18歲生日時自動登記投票。"
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "我想預先登記投票。",
+      "answerUpdateRegistration": "我已預先登記投票，想要更新我的選民預先登記資訊。",
+      "answerOptOut": "我不想預先登記投票或更新我的選民預先登記資訊。"
+    },
+    "choosePartyPage": {
+      "pagePrompt": "您想要選擇黨派歸屬嗎？",
+      "explanation": "如果您不選擇一個政黨，您可能無法在美國總統或中央委員會的初選中投票選舉某些政黨的候選人。",
+      "choosePrompt": "請選擇以下一個政黨。",
+      "answerNo": "我不想選擇政黨",
+      "answerAmericanIndependent": "美國獨立黨",
+      "answerLibertarianParty": "自由黨",
+      "answerDemocraticParty": "民主黨",
+      "answerGreenParty": "綠黨",
+      "answerPeaceAndFreedomParty": "和平與自由黨",
+      "answerRepublicanParty": "共和黨",
+      "answerOther": "其他"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "選擇您的選舉資料語言。",
+      "answerJapanese": "日文",
+      "answerChinese": "中文",
+      "answerEnglish": "英文",
+      "answerSpanish": "西班牙文",
+      "answerTagalog": "他加祿文",
+      "answerThai": "泰文",
+      "answerKorean": "韓文",
+      "answerHindi": "地印文",
+      "answerKhmer": "高棉文",
+      "answerVietnamese": "越南文"
+    },
+    "byMailPage": {
+      "pagePrompt": "您是否想要在每次選舉前透過郵寄方式獲得您的選票？",
+      "explanation": "如果您選擇「是」，您還是可以親自投票。"
+    },
+    "contactInfoPage": {
+      "pagePrompt": "您是否希望透過電子郵件或簡訊收取選舉資訊？",
+      "formPrompt": "請在下面輸入您的資訊。",
+      "emailLabel": "電子郵件地址",
+      "phoneLabel": "電話號碼",
+      "emailExample": "例如：name@company.com",
+      "phoneExample": "例如：987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "謝謝您，當您辦完今天在DMV的事務後，將會處理您的選民登記申請表。",
+      "explanation": "<p>如果在您此次前往DMV之後沒有在四週內收到選民通知卡，請聯絡您的選舉官員。</p><p> 您可以向加州州務卿查詢您的選民登記狀態<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>如果您不選擇一個政黨，您可能無法在美國總統或中央委員會的初選中投票選舉某些政黨的候選人。</p><p> 這會取代您先前的黨派歸屬。</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "選擇「否」也會刪除任何先前的聯絡資訊。"
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "接下來您要選擇您的選民喜好。",
+      "partyHeadline": "政黨",
+      "partyExplanation": "選擇您的黨派歸屬。",
+      "languageHeadline": "語言",
+      "languageExplanation": "選擇您的選舉資料語言。",
+      "byMailHeadline": "郵寄投票",
+      "byMailExplanation": "在未來所有選舉中收到郵寄的選票，也就是您不必到投票所投票。",
+      "contactInfoHeadline": "聯絡資訊",
+      "contactInfoExplanation": "如果您希望選舉官員與您聯絡選舉事宜和選民資訊，請提供您的聯絡資訊。"
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "接下來我們要確認您的選民登記是最新資訊。",
+      "explanation": "這會取代您先前的選民喜好。"
+    }
+  }
+}

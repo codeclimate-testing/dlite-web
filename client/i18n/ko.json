@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "뒤로",
+      "next": "다음"
+    },
+    "commonAnswers": {
+      "yes": "예",
+      "no": "아니요",
+      "declineToAnswer": "답변 거부",
+      "skip": "질문 건너뛰기"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "귀하가 <em>답변 거부</em>를 선택하는 경우, 유권자 등록이 되지 않을 것입니다.",
+      "declineToAnswerInformationPreRegistration": "귀하가 <em>답변 거부</em>를 선택하는 경우, 유권자 예비등록이 되지 않을 것입니다."
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "미국 시민권자만",
+      "pagePrompt": "유권자 등록",
+      "explanation": "<p>주법에 따라, 유자격 시민권자들이 이 항목에서 유권자 등록을 하지 않기로 선택하지 않는 한 등록이 될 것입니다. </p><p> 귀하가 이미 유권자 등록을 한 경우, 이 서비스는 귀하의 정보가 최신이라는 것을 확인하도록 도와줍니다. </p><p> 귀하가 DMV를 방문하기 전에 유권자 등록을 해야 하는 경우에는 RegisterToVote.ca.gov에서 온라인으로 등록할 수 있습니다.</p>",
+      "timeItWillTake": "<p>이 항목에서 대부분의 고객들이 걸리는 시간 </p><p> 3분</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "귀하는 미국 시민권자입니까?",
+      "faqQuestionWhatIfNotCitizen": "본인이 시민권자가 아니면 어떻게 됩니까?",
+      "faqAnswerWhatIfNotCitizen": "귀하가 미국 시민권자가 아니면, 유권자 등록을 할 자격이 없습니다."
+    },
+    "eligibilityPage": {
+      "pagePrompt": "귀하는 아래에 기재된 모든 유권자 등록 요건을 충족시킵니까?",
+      "usCitizenshipStatement": "본인은 미국 시민권자입니다",
+      "caCitizenshipStatement": "본인은 캘리포니아 주민입니다",
+      "ageStatement": "본인은 18세 이상 되었습니다",
+      "convictionStatement": "본인은 현재 중죄로 유죄 판결을 받고 주 또는 연방 교도소에 수감 중이거나 가석방 중이 아닙니다",
+      "mentalCompetenceStatement": "본인은 현재 법원에서 투표를 하기 위한 정신적 무능력자라는 판결을 받지 않았습니다",
+      "faqQuestionWhatIfDontMeetRequirements": "본인이 모든 요건을 충족시키지 않으면 어떻게 됩니까?",
+      "faqAnswerWhatIfDontMeetRequirements": "귀하가 모든 요건을 충족시키지 않으면, 유권자 등록을 할 자격이 없습니다."
+    },
+    "optOutPage": {
+      "pagePrompt": "어느 것이 귀하를 가장 잘 설명합니까?",
+      "answerNewRegistration": "본인은 유권자 등록을 하기를 원합니다.",
+      "answerUpdateRegistration": "본인은 유권자 등록이 되어 있고, 본인의 유권자 등록 정보를 갱신하기를 원합니다.",
+      "answerOptOut": "본인은 유권자 등록을 하거나 본인의 유권자 등록 정보를 갱신하기를 원하지 않습니다."
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "유권자 예비등록",
+      "explanation": "<p>주법에 따라, 유자격 시민권자들이 이 항목에서 유권자 예비등록을 하지 않기로 선택하지 않는 한 예비등록이 될 것입니다. </p><p> 귀하가 16세 또는 17세인 경우, 지금 예비등록을 할 수 있습니다. 귀하가 18세가 되면 자동으로 등록 유권자가 됩니다.</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "귀하가 미국 시민권자가 아니면, 유권자 예비등록을 할 자격이 없습니다."
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "본인은 16세 또는 17세 이상 되었습니다",
+      "faqQuestionHowDoesPreRegWork": "유권자 예비등록은 어떻게 합니까?",
+      "faqAnswerHowDoesPreRegWork": "캘리포니아 주에서 유권자 예비등록을 하려면, 귀하는 16세 또는 17세이고, 다른 모든 투표 자격 요건을 충족시켜야 합니다. 귀하는 18세가 되는 생일에 자동으로 등록 유권자가 됩니다."
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "본인은 유권자 예비등록을 하기를 원합니다.",
+      "answerUpdateRegistration": "본인은 유권자 예비등록이 되어 있고, 본인의 유권자 예비등록 정보를 갱신하기를 원합니다.",
+      "answerOptOut": "본인은 유권자 예비등록을 하거나 본인의 유권자 예비등록 정보를 갱신하기를 원하지 않습니다."
+    },
+    "choosePartyPage": {
+      "pagePrompt": "귀하는 선호 정당을 선택하시겠습니까?",
+      "explanation": "귀하가 정당을 선택하지 않으면, 미국 대통령 또는 중앙 위원회에 대한 예비선거에서 일부 정당 입후보자에게 투표를 하지 못할 수도 있습니다.",
+      "choosePrompt": "아래에서 한 정당을 선택해 주십시오.",
+      "answerNo": "본인은 선호 정당을 선택하기를 원하지 않습니다",
+      "answerAmericanIndependent": "미국독립당",
+      "answerLibertarianParty": "자유당",
+      "answerDemocraticParty": "민주당",
+      "answerGreenParty": "녹색당",
+      "answerPeaceAndFreedomParty": "평화자유당",
+      "answerRepublicanParty": "공화당",
+      "answerOther": "기타"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "귀하의 선거 자료를 받기 위한 언어를 선택하십시오.",
+      "answerJapanese": "일본어",
+      "answerChinese": "중국어",
+      "answerEnglish": "영어",
+      "answerSpanish": "스페인어",
+      "answerTagalog": "필리핀어",
+      "answerThai": "태국어",
+      "answerKorean": "한국어",
+      "answerHindi": "인도어",
+      "answerKhmer": "크메르어",
+      "answerVietnamese": "베트남어"
+    },
+    "byMailPage": {
+      "pagePrompt": "귀하의 투표용지를 각 선거 전에 우편으로 받으시겠습니까?",
+      "explanation": "귀하가 \"예\"라고 답변하는 경우, 귀하는 여전히 직접 투표할 수 있습니다."
+    },
+    "contactInfoPage": {
+      "pagePrompt": "귀하는 이메일 또는 문자를 통해서 선거 정보를 받으시겠습니까?",
+      "formPrompt": "아래에 귀하의 정보를 입력해 주십시오.",
+      "emailLabel": "이메일 주소",
+      "phoneLabel": "전화번호",
+      "emailExample": "예: name@company.com",
+      "phoneExample": "예: 987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "감사합니다. 귀하의 유권자 등록 신청서는 DMV에서 일을 마칠 때 처리될 것입니다.",
+      "explanation": "<p>귀하가 DMV를 방문한 후 4주 이내에 유권자 통지 카드를 받지 못하면, 카운티 선거관리 담당관에게 연락하십시오. </p><p> 캘리포니아 주 총무처장관 웹사이트 <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>에서 유권자 등록 상태를 확인할 수 있습니다.</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>귀하가 정당을 선택하지 않으면, 미국 대통령 또는 중앙 위원회에 대한 예비선거에서 일부 정당 입후보자에게 투표를 하지 못할 수도 있습니다. </p><p> 그러면 귀하의 이전 선호 정당을 덮어쓸 것입니다.</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "또한 \"아니요\"라고 답변하면 이전의 연락처 정보가 삭제될 것입니다."
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "다음에는 귀하가 유권자 선호를 선택할 것입니다.",
+      "partyHeadline": "정당",
+      "partyExplanation": "귀하의 선호 정당을 선택하십시오.",
+      "languageHeadline": "언어",
+      "languageExplanation": "귀하의 선거 자료를 받기 위한 언어를 선택하십시오.",
+      "byMailHeadline": "우편투표",
+      "byMailExplanation": "차후의 모든 선거에 대한 귀하의 투표용지를 우편으로 받고, 이것은 귀하가 투표를 하기 위해 투표소에 갈 필요가 없다는 것을 의미합니다.",
+      "contactInfoHeadline": "연락처 정보",
+      "contactInfoExplanation": "선거관리 담당관이 선거와 유권자 정보에 대해 귀하에게 연락하기를 원하는 경우, 귀하의 연락처 정보를 제공하십시오."
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "다음에 저희는 귀하의 유권자 등록이 최신인지 신속하게 확인하고 싶습니다.",
+      "explanation": "이것은 이전의 유권자 선호를 대체할 것입니다."
+    }
+  }
+}

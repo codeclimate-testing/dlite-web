@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "Appointment preparation",
+    "explanation": "Below is a list of what you will need to bring to a DMV office in order to complete your application.",
+    "ending": {
+      "callCenterDetails": "Call Center business hours are: Monday, Tuesday, Thursday, Friday 8 am to 5 pm, and Wednesday, 9am to 5pm"
+    },
+    "noRealIdSection": {
+      "header": "Federal Non-Compliant Card requirements",
+      "identity": {
+        "header": "Identity",
+        "body": "<p>All applicants need to prove their identity, true full name (first, middle, last ) and date of birth. </p><p> You will need to bring original versions of these documents, as <b>photocopies and laminated versions are not accepted</b>. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>See the DMV’s list of acceptable identity documents</a>. </p><p> <b>If the name on your identity document is different from the name you provided on your application</b>, you must submit <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
+      },
+      "socialSecurity": {
+        "header": "Social Security number",
+        "body": "<p>You are required to provide your Social Security Number to the DMV. </p><p> If you changed your name, make sure that change is updated  with the Social Security Administration prior to your visit.</p>"
+      },
+      "californiaResidency": {
+        "header": "California residency",
+        "body": "You will need to bring in <b>1</b> document that proves that you live in California. This document should show the address where you want your card mailed. This address will also appear on the front of your card. Please review our <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>list of acceptable <b>California Residency documents</b></a>."
+      }
+    },
+    "realIdSection": {
+      "header": "REAL ID requirements",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Please view the Real ID Document PDF for a list of acceptable documents for these 3 categories.</a>"
+    },
+    "veteransSection": {
+      "header": "Veteran documentation",
+      "body": "To get a Veteran Designation on your card, you need to submit a completed <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>Veteran Status Verification</a> Form (VSD- 001). You can obtain a VSD-001 from your County Veteran Service Office. We thank you for your service!"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "New driver requirements",
+        "needListHeader": "In order to get a provisional driving permit we will need to see  1 of the following:",
+        "needListItems": [
+          "Certificate of Completion of California Driver Education (classroom) or",
+          "Certificate of Completion of California Driver Education and Driver Training or",
+          "Certificate of Enrollment in a California Integrated Driver Education and Driver Training Program."
+        ],
+        "provisionalExplanation": "You will need to apply for a provisional driving permit.",
+        "knowledgeTest": "You will need to take a knowledge test.",
+        "testAdvice": "We recommend studying the <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit.",
+        "FAQHaveAnotherState": {
+          "title": "Already have a permit or training certificate in another state?",
+          "body": {
+            "proofListHeader": "You will need to bring <b>1</b> of the following:",
+            "proofListItems": [
+              "Proof that you completed a Driver Education/Training course that is equivalent to a California secondary school course.",
+              "A completed DL 33 form. Obtain this form from your local DMV office or by calling DMV at 1-800-777-0133. Send the DL 33 form to your out-of-state secondary school to complete."
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Review the Driver Education and Driver Training Form Requirements for more information.</a>",
+            "juniorPermitNote": "Please note that as a minor, we cannot directly transfer driver licenses that state \"probationary\", \"provisional\", or \"junior\", driving permits, or accept training certificates from out of state."
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "New California driver requirements",
+      "body": {
+        "openingExplanation": "We see that you may have had a driver license from another state. California's <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>laws for teen drivers between 16 and 18 years of age</a> may be different than those in other states.",
+        "knowledgeTest": "As a new driver in California, you will need to pass a knowledge test.",
+        "juniorPermitNote": "As a minor, we cannot transfer any driver license from a different state if your driver license says \"probationary\", \"provisional\", or \"junior\".",
+        "provisionalProcess": "<b>Drivers under 18 years of age in California must first apply for a provisional permit.</b> After six months you will be eligible to get a provisional driver license.",
+        "FAQWillIneedToTakeTest": {
+          "title": "Will I need to take the drive test?",
+          "listHeader": "We can only waive your drive test if you:",
+          "listItems": [
+            "Currently hold a driver license from a state outside of California <b><em>and</em></b>",
+            "Successfully completed a driving skills course in a qualifying secondary school <b><em>and</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Can verify successful course completion</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "As a new driver in California, you will need to pass a knowledge test.",
+        "permitProcess": "Once you pass the knowledge test, you will get a permit. You then need to take your drive test.",
+        "waiverCanProcess": "<b>We can only waive your drive test if:</b> you have been previously licensed.",
+        "waiverMayProcess": "<b>We may waive your drive test if:</b> you have a valid driver license in another state."
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "Motorcycle/scooter requirements",
+      "body": {
+        "explanation": "To receive a motorcycle or scooter license, you need to pass the motorcycle knowledge test. Please review the <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>California Motorcycle handbook</a>.",
+        "waiverProcess": "<b>We may waive your drive test if:</b> you have a <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program . The course instructor will provide this form upon successful completion of the course."
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "Because you are under 21 you <b>must</b> have a <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program prior to visiting DMV. The course instructor will provide this form upon successful completion of the course.",
+        "onCompletion": "Once you have completed the course, you must hold your permit for 6 months prior to obtaining your license."
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>We may waive your drive test if:</b> you have a valid motorcycle license in another state  or you have a <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program."
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "Additional testing requirements",
+      "body": "In California, to receive a motorcycle or scooter license, <b>you need to pass the basic driver license knowledge test</b>. We recommend studying the <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit."
+    },
+    "nonCommercialASection": {
+      "header": "Non- Commercial Class A requirements",
+      "body": {
+        "healthQuestionnaire": "In order to get a Non-Commercial Class A permit, you need to submit a valid <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546).</a>",
+        "knowledgeTest": "The <b>Recreational Vehicles and Non-Commercial Class A Trailers</b> knowledge test is also required. We recommend studying California's RV & Trailers handbook in advance of your exam.",
+        "afterPassingExam": "Once you pass the exams, you will be issued a permit. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>The DMV website</a> provides information on what’s needed to get your full license."
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "Non-Commercial Class B requirements",
+      "body": {
+        "healthQuestionnaire": "In order to get a Non-Commercial Class B permit, you need to submit a valid <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>Health Questionnaire (DL 546A)</a> signed by your physician.",
+        "houseCarTest": "The <b>45' Housecar knowledge test</b> is also required. We recommend studying <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>California's RV & Trailers handbook</a> in advance of your exam."
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "Firefighter endorsement requirements",
+      "body": {
+        "testRequirements": "To get a <b>Firefighter endorsement</b> you will need to take and pass the <b>Firefighter endorsement</b> knowledge test.",
+        "otherRequirements": "You will also need to submit a valid <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546)</a> and an <b>Original Firefighter Employment and Training Verification letter</b> that meets the following criteria:",
+        "otherRequirementsValues": [
+          "Be on fire department letterhead",
+          "Certifies current employment as a firefighter or proof of registration as a volunteer firefighter",
+          "Certifies completion of fire equipment operator training",
+          "Signed by fire chief or designee"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "Sex change",
+      "body": "<p>In order to make this change, you must bring a <a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Medical Certification and Authorization Form (DL 329)</a> that has been completed and signed by your physician or psychologist. </p><p> You’ll also need to bring your <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both before and after your name change.</p>"
+    },
+    "nameChangeSection": {
+      "header": "Name change",
+      "body": "<p>In order to reflect your name change on your card(s), you must first change your name at your local <a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>Social Security Administration</a> office. </p><p> You’ll also need to bring your <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both <em>before</em> and <em>after</em> your name change.</p>"
+    },
+    "reducedFeeSection": {
+      "header": "Reduced fee eligibility",
+      "body": "Finally, we’ll need the Reduced Fee Identification Card Eligibility Verification (DL 389) form. DMV does not provide this form. If you get assistance through the government or a nonprofit, speak with them about getting a form."
+    },
+    "noFeeSection": {
+      "header": "No fee eligibility",
+      "body": "Finally, we’ll need the No Fee Identification Card Eligibility Verification (DL 933) form. DMV does not provide this form. If you get assistance through the government or a nonprofit, speak with them about getting a form."
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "What are you here for?",
+      "answerIDorDL": "ID or driver license",
+      "answerCDL": "Commercial driver license",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "I don’t know if I need a commercial driver license",
+        "body": {
+          "youWillNeedIf": {
+            "header": "You will need a CDL if you plan to operate a vehicle that:",
+            "values": [
+              "Has a gross vehicle weight rating (GVWR) of 26,001+ pounds.",
+              "Is designed, used, or maintained for carrying more than 10 persons, including the driver.",
+              "Tows a vehicle or trailer which has a GVWR of 10,001+ pounds.",
+              "Transports hazardous materials which require placards.",
+              "Tows any combination of two trailers or a vehicle and trailer."
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "You will not need a CDL if you only expect to drive:",
+            "values": [
+              "Recreational vehicles (5th wheel travel trailers and motor homes)",
+              "Firefighting equipment.",
+              "Class C agricultural hazardous materials transporters.",
+              "Department of Defense employees who are in uniform and driving Department of Defense vehicles.",
+              "Some Farm vehicles."
+            ]
+          },
+          "seeDMV": "Detailed information is available at dmv.ca.gov"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "On this website, you can:",
+      "whatYouCanDoItems": [
+        "<b>Apply</b> for a driver license or ID card.",
+        "<b>Renew or replace</b> your card.",
+        "<b>Correct or update</b> your card."
+      ],
+      "requiredDocuments": "After you submit this application, we will give you a list of required documents. You must go to a DMV office with these documents to finish your application.",
+      "doNotUseIf": {
+        "header": "Do not use this application if:",
+        "values": [
+          "You do not have an email address and phone number. These are required to fill this out from home.q`",
+          "You are in a confidential address program or in Safe at Home."
+        ],
+        "instead": "Instead, <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>make an appointment</a> to visit your local DMV office."
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "<b>Apply</b> for commercial driver license (CDL).",
+        "<b>Renew or replace</b> your CDL.",
+        "<b>Correct or update</b> your  CDL"
+      ],
+      "doNotUseIf": {
+        "values": [
+          "You do not have an email address and phone number. These are required to fill this out from home.",
+          "You only want an Ambulance, VTT, or HAM certificate for your CDL.",
+          "You are in a confidential address program or in Safe at Home."
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "I need to do something else",
+        "body": {
+          "header": "You <b>cannot</b> use this application to:",
+          "listItems": [
+            "Update your medical certificate",
+            "Update your Self-Certification",
+            "Get copies of your driving record",
+            "Report an accident",
+            "Schedule a drive test"
+          ],
+          "instead": "Visit the DMV website to do these tasks."
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "The DMV is working with ID.me to protect your digital identity.",
+      "buttonCreateAccount": "Create an ID.me account",
+      "or": "Or",
+      "buttonSignIn": "Sign in with an ID.me account",
+      "emailRequired": "<b>An email address and phone number are required.</b> Please visit a DMV office if you do not want to make an ID.me account",
+      "legalIdentity": "<b>ID.me allows you to prove your legal identity.</b> The DMV of California has partnered with ID.me to ensure that your personal information is accurate and secure.",
+      "dmvPartnering": "The DMV of California chose to partner with ID.me because it has met rigorous requirements for security and identity-proofing.",
+      "learnMore": "<a href='https://www.id.me'>For more information, please visit ID.me.</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "Welcome back.",
+      "youHaveSomeUnfinishedApps": "You have some unfinished applications.",
+      "youCanStartNewApp": "You can also start a new application.",
+      "applyingDL": "Applying for a driver license",
+      "applyingID": "Applying for an ID card",
+      "applyingBoth": "Applying for a driver license and an ID card",
+      "applyingCDL": "Applying for a commercial driver license",
+      "percentComplete": "% complete",
+      "newApplication": "New application",
+      "delete": "Delete"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "We aren’t able to access your account.",
+      "wantToTryAgain": "Want to try again?",
+      "comeToDMVoffice": "If you can't sign in or don't want to use ID.me, you will need to complete this application at a DMV field office. Make an appointment for faster service."
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "Applicants under 21 years of age are not allowed to engage in interstate commerce or transport hazardous materials."
+    },
+    "wdywtdtPage": {
+      "values": [
+        "Get a California CDL for the first time",
+        "Renew my CDL",
+        "Correct or update my CDL",
+        "Replace my CDL"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "If you know it, <b>please enter your California CDL number</b>.",
+      "explanation": "Your number can be found at the top of your commercial driver license, starting with a letter.",
+      "cdlNumberLabel": "CDL number"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "You cannot update your medical certificate through this form.",
+      "values": [
+        "Correct my CDL",
+        "Update my CDL"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "Are you a resident of California?",
+      "infoMessageNo": {
+        "header": "We’re sorry, but you do not qualify for a California CDL at this time.",
+        "explanation": "You must be a California resident to apply."
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "The DMV will print your mailing address on your CDL. The CDL will also be sent to your mailing address."
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "We're sorry, but you do not qualify for a California CDL at this time.",
+        "explanation": "Commercial Drivers must have a Social Security Number and are required to provide proof upon application. Both US citizens and non-citizen residents with legal presence are eligible to receive a Social Security Number. Contact the Social Security Administration for more information."
+      }
+    },
+    "caDlPage": {
+      "prompt": "Do you currently have a California driver license?",
+      "noMessage": "In order to get your Commercial Learner’s Permit, you’ll need to first pass the knowledge and driving skills tests for a basic (Non-Commercial Class C) driver license.",
+      "yesSection": {
+        "prompt": "Please tell us about your most recent driver license.",
+        "explanation": "We'll ask for a complete license history later in the application.",
+        "dlNumberLabel": "Driver license number",
+        "issuedInLabel": "Issued in",
+        "messageBody": "In order to get your Commercial Learner's Permit (CLP), you'll need to obtain a California Non-Commercial Class C driver license.  To do this, you will need to pass the Non-Commercial Class C knowledge test.",
+        "expiredMessage": {
+          "header": "We see your driver license is expired."
+        },
+        "nonCaliforniaMessage": {
+          "header": "We see your driver license isn’t from California."
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "What class of commercial driver license do you need?",
+      "values": [
+        "Class A",
+        "Class B",
+        "Class C"
+      ],
+      "youMayDrive": "You may drive:",
+      "youMayTow": "You may tow:",
+      "classA": {
+        "header": "With a Commercial Class A",
+        "driveItems": [
+          "Any legal <em>combination</em> of vehicles, including vehicles under Class B and Class C"
+        ],
+        "towItems": [
+          "All vehicles a Class B and a Class C licensed driver may tow",
+          "Any single vehicle with a GVWR of more than 10,000 pounds",
+          "Any trailer bus, with endorsement OR more than 1 vehicle, with endorsement"
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "I'm not sure which class I need",
+        "classC": {
+          "header": "With a Commercial Class C",
+          "driveItems": [
+            "Any 2-axle vehicle with a GVWR of 26,000 pounds or less, or any 3-axle vehicle weighing 6,000 pounds gross or less, carrying hazardous materials (HazMat) requiring placards.  This requires a HazMat endorsement.",
+            "Any bus or passenger vehicle with a GVWR of 26,000 pounds or less, designed, used, or maintained to carry more than 10 persons, including the driver. This requires a passenger endorsement.",
+            "Any vehicle allowed under a Non-Commercial Class C license."
+          ],
+          "explanation": "You may tow all vehicles allowed under the Non-Commercial Class C driver license."
+        },
+        "classB": {
+          "header": "With a Commercial Class B",
+          "driveItems": [
+            "All vehicles a Commercial Class C licensed driver may drive.",
+            "A 2-axle vehicle weighing over 26,000 pounds.",
+            "A 3-axle vehicle weighing over 6,000 pounds.",
+            "A bus (except a trailer bus). This requires a passenger endorsement.",
+            "Any farm labor vehicle, with endorsement"
+          ],
+          "towItems": [
+            "A single vehicle with a GVWR of 10,000 pounds or less",
+            "All vehicles a Commercial Class C licensed driver may tow"
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "Do you need any endorsements on your CDL?",
+      "whichSection": {
+        "prompt": "Which?",
+        "values": {
+          "T": "Doubles/Triples combination",
+          "N": "Tank vehicles",
+          "P": "Passenger vehicles",
+          "S": "School bus",
+          "H": "Marked vehicles transporting hazardous materials or wastes",
+          "X": "Tank vehicles transporting hazardous materials or wastes",
+          "F": "Firefighter Endorsement"
+        }
+      },
+      "certificationSection": {
+        "prompt": "Do you need a professional certificate from the DMV?",
+        "certifications": {
+          "prompt": "You can request the following certificates at a DMV field office:",
+          "values": {
+            "transit": "Verification of Transit Training (VTT) Certificate",
+            "ambulance": "Ambulance Driver Certificate",
+            "ham": "Hazardous Agricultural Materials (HAM) Certificate."
+          },
+          "FAQMissingCertifications": {
+            "title": "I need a certificate I don’t see here",
+            "body": {
+              "header": "The California Highway Patrol (CHP) is responsible for issuing the following professional certificates:",
+              "listItems": [
+                "General Public Paratransit Vehicle (GPPV)",
+                "School Bus Driver Certificate",
+                "School Pupil Activity Bus Certificate",
+                "Vehicle for Developmentally Disabled Persons",
+                "Farm Labor Vehicle Certificate",
+                "Tow Truck Driver Certificate",
+                "Youth Bus Certificate"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "The <b>Verification of Transit Testing</b> certificate requires a <b>Passenger Vehicle</b> endorsement.",
+                "fullEndorsment": "Full class, endorsement, and certificate descriptions requirements are available in California’s <b>Commercial Driver Handbook</b>."
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "I'm not sure",
+        "body": {
+          "header": "You need an endorsement if you plan to operate a commercial motor vehicle that is:",
+          "listItems": [
+            "Carrying more than 10 persons, including the driver.",
+            "Hauling hazardous materials requiring placards.",
+            "Towing more than one vehicle or trailer.",
+            "A tank vehicle."
+          ],
+          "explanation": "Full class, endorsement, and certificate descriptions and requirements are available in California’s Commercial Driver Handbook."
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "Do you need a motorcycle (Class M) on your CDL?"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "To review:",
+        "values": {
+          "applyingClassA": "You're applying for a Class A commercial driver license.",
+          "applyingClassB": "You're applying for a Class B commercial driver license.",
+          "applyingClassC": "You're applying for a Class C commercial driver license.",
+          "renewingClassA": "You're renewing your Class A commercial driver license.",
+          "renewingClassB": "You're renewing your Class B commercial driver license.",
+          "renewingClassC": "You're renewing your Class C commercial driver license.",
+          "updatingClassA": "You're updating your Class A commercial driver license.",
+          "updatingClassB": "You're updating your Class B commercial driver license.",
+          "updatingClassC": "You're updating your Class C commercial driver license.",
+          "correctingClassA": "You're correcting your Class A commercial driver license.",
+          "correctingClassB": "You're correcting your Class B commercial driver license.",
+          "correctingClassC": "You're correcting your Class C commercial driver license.",
+          "replacingClassA": "You're replacing your Class A commercial driver license.",
+          "replacingClassB": "You're replacing your Class B commercial driver license.",
+          "replacingClassC": "You're replacing your Class C commercial driver license."
+        }
+      },
+      "motorcycleSentence": "You also want to drive a motorcycle/scooter",
+      "endorsements": {
+        "header": "You need the following endorsement(s):",
+        "values": {
+          "T": "Doubles/Triples",
+          "N": "Tank vehicles",
+          "P": "Passenger vehicles",
+          "S": "School bus",
+          "H": "HazMat (hazardous materials)",
+          "X": "Tank/HazMat",
+          "F": "Firefighter"
+        }
+      },
+      "certificates": {
+        "header": "You want the following certificate(s):",
+        "values": {
+          "ambulance": "Ambulance driver",
+          "ham": "HAM",
+          "transit": "Verification of Transit Training (VTT)"
+        }
+      },
+      "realID": "Your CDL will be REAL ID compliant.",
+      "fillOutNewApplication": {
+        "update": "In order to update your CDL, you’re going to need to fill out a new application.",
+        "correct": "In order to correct your CDL, you’re going to need to fill out a new application.",
+        "replace": "In order to replace your CDL, you’re going to need to fill out a new application."
+      },
+      "sections": {
+        "header": "This application has six sections:"
+      },
+      "timeStatement": "<p>It takes around <b>10 minutes</b> to complete. </p><p> Once you’re done, you will need to visit your local DMV office.</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "My CDL",
+    "CdlNumberLabel": "CDL number",
+    "typeOfDriving": "Type of driving",
+    "currentDlNumberLabel": "Current DL number",
+    "licenseOutsideCAlabel": "License outside of California"
+  },
   "confirmationPage": {
     "header": "Confirmation",
     "subHeader": "We've received your information.",
@@ -22,136 +501,6 @@
   },
   "confirmationCDL": {
     "commercialLearnersPermit": "Should you pass your knowledge tests and fulfill all other requirements, you will be issued a Commercial Learner's Permit (CLP). There is a mandatory waiting period of 14 days between when your CLP is issued and when you will become eligible to receive a temporary Commercial Driver License."
-  },
-  "disclaimers": {
-    "medical": {
-      "title": "Medical information",
-      "body": "The following conditions that may affect your ability to operate a motor vehicle safely include, but are not limited to: loss of consciousness; episode of marked confusion caused by any condition which may bring about recurring lapses; disease, disorder, or disability (examples of these are epilepsy, diabetes, stroke, cataracts, Parkinson’s disease); decrease or change in your vision due to cataracts, macular degeneration, diabetic retinopathy, glaucoma, retinitis pigmentosa, or other progressive condition; health problems because of alcohol or drug abuse."
-    },
-    "veteran": {
-      "title": "Veteran statement",
-      "body": "By marking the veteran box on this application, I certify that I am a veteran of the United States Armed Forces and that I want to receive veteran benefits information from the California Department of Veterans A airs (CalVet). By marking the veteran box on this application, I also consent to DMV transmitting my name and mailing address to CalVet for this purpose only, and I certify that I have been notified that this transmittal will occur."
-    },
-    "organDonation": {
-      "title": "Organ donation statement",
-      "body": "If you marked ‘Yes’ to register as an organ and tissue donor, you are legally authorizing the recovery of organs and tissues in the event of your death. Registering as a donor will not a ect your medical treatment in any way. As outlined in the California Anatomical Gift Act, your authorization is legally binding and, unless the donor is under 18 years of age, your decision does not require the consent of any other person. For registered donors under 18 years of age, the legal guardian shall make the  nal donation decision. You may limit your donation to speci c organs or tissues, place usage restrictions (for example transplantation or research), obtain more information about donation, or remove your name from the registry on the website of Donate Life California: www.donateLIFEcalifornia.org. By registering as an Organ Donor, you are giving your consent to allow DMV to electronically transmit your true full name, residence or mailing address, year of birth, and California driver license or identi cation card number to Donate Life California. By signing this form, you consent to this process and have been notified that this transmittal will occur."
-    },
-    "voterRegistration": {
-      "title": "Voter registration",
-      "bodyBullets": [
-        "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the Safe at Home program at (877) 322-5227 or visit <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
-        "For U.S. citizens only. If you indicate that you are eligible to vote, the DMV will send all of the voter registration information collected on this form, including your digital signature, to the Secretary of State. The o ce where you registered will remain con dential and will be used only for voter registration purposes.",
-        "If you are eligible to vote and decline to register to vote, your decision will remain con dential; however this information will be sent to the Secretary of State to be used only for voter outreach and registration purposes.",
-        "Voter registration information provided on this application is con dential. The DMV does not make voter eligibility determinations.",
-        "If you have not received voter registration information within 30 days of registering, contact your county elections o cial or the Secretary of State.",
-        "Please visit <a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> for more information about your voter registration or <a href='www.sos.ca.gov'>www.sos.ca.gov</a> for general information."
-      ]
-    },
-    "criminalProsecution": {
-      "title": "Criminal prosecution",
-      "bodyBullets": [
-        "If you submit fraudulent information, the DMV may pursue criminal prosecution.",
-        "Any person who uses false documents to conceal their true citizenship or resident alien status is guilty of a felony pursuant to California Penal Code §114."
-      ]
-    },
-    "financialResponsibility": {
-      "title": "Financial responsibility",
-      "bodyBullets": [
-        "Financial responsibility (commonly known as insurance) is required on all vehicles operated or parked on California roadways. You must carry evidence of financial responsibility in your vehicle at all times and it must be provided when: requested by law enforcement, renewing vehicle registration, the vehicle is involved in a traffic collision.",
-        "If you cannot afford liability insurance, you may be eligible for the California Low Cost Automobile Insurance Program. Additional information is available at <a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> or by calling (866) 602-8861."
-      ]
-    },
-    "paymentRefunds": {
-      "title": "Payments / Refunds",
-      "bodyBullets": [
-        "Visit <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> to review payment options at your local DMV field office. If you are mailing your renewal, payment must be by check. (Checks should be payable to DMV).",
-        "Once this application form and fee have been submitted, no refunds will be made."
-      ]
-    },
-    "privacy": {
-      "title": "Privacy notice",
-      "bodyBullets": [
-        "DMV uses the information on this form to determine your eligibility for a Driver License or Identification Card and for the administration of driver license laws.",
-        "Information provided to DMV on this form is collected and subject to the limitations in the Information Practices Act (Civil Code 1798 et seq.), the Driver’s Privacy Protection Act (18 U.S.C. 2721-2725), the California Vehicle Code (CVC) and other applicable state and federal laws and regulations.",
-        "DMV verifies the information and documents you provide with other governmental agencies.",
-        "All information on this form is mandatory except where noted. DMV may deny your application for not providing the required information. Failure to provide the information required on this form is cause for refusal to issue a driver license or identi cation card, or, in some cases, cancellation or withdrawal of the driving privilege.",
-        "DMV shares your information with other governmental agencies, law enforcement, and commercial entities as authorized by law. You may obtain a copy of your record at <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Licensing Operations Division Mandatory Actions Unit at (916) 657-6525.",
-        "Questions regarding your Driver License or Identification Card should be addressed to: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
-        "For more information regarding specific CVC Sections or how DMV shares your information, please visit <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>. You may also request a copy of How Your DMV Information is Shared (FFDMV 17) Fast Facts brochure from any field office.",
-        "DMV’s Privacy Policy is located at <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> under the 'Privacy Policy' link at the bottom of the page.",
-        "Questions regarding this notice should be addressed to: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
-      ]
-    },
-    "certifications": {
-      "title": "Certifications",
-      "bodyBullets": [
-        "I agree to submit to a chemical test of my blood, breath, or urine for the purpose of determining the alcohol or drug content of my blood when testing is requested by a peace o cer acting in accordance with California Vehicle Code (CVC) §23612.",
-        "I am hereby advised that being under the in uence of alcohol or drugs, or both, impairs the ability to safely operate a motor vehicle. Therefore, it is extremely dangerous to human life to drive while under the in uence of alcohol or drugs, or both. If I drive while under the in uence of alcohol or drugs, or both, and as a result, a person is killed, I can be charged with murder.",
-        "By signing this application, I certify that I was notified that if I am under 21 years of age, I cannot legally drive with a blood alcohol concentration (BAC) of 0.01% or more. Driving with a BAC of 0.01% or more, or refusing to take, or failing to complete an alcohol screening or drug test, results in a one-year suspension of my driving privilege.",
-        "By signing this application, I certify that I was notified that if I am currently on court probation for a driving under the in uence o ense, I cannot legally drive with a BAC of 0.01% or more. Driving with a BAC of 0.01% or more results in a one-year suspension of my driving privilege. Refusing to take, or failing to complete an alcohol screening or chemical test will result in a two to three year suspension/revocation of my driving privilege.",
-        "I am the person whose name appears on the front of this form. The mailing address shown is valid, existing, and accurate. I agree to accept service of process at this mailing address according to §§415.20(b), 415.30(a), and 416.90 of the California Code of Civil Procedure.",
-        "I understand DMV may add traffic convictions reported by other states or jurisdictions to my driving record that may result in sanctions against my California driving privilege.",
-        "By signing this form, I am acknowledging my presence in the United States is authorized under federal law, except as speci ed in CVC §12801.",
-        "I understand I may have no more than one driver license in my possession or under my control in accordance with CVC §12511.",
-        "By signing this application, I certify that I understand traffic signs and signals in accordance with CVC §12800(h)."
-      ]
-    }
-  },
-  "errorMessages": {
-    "lastNameMissing": "Please enter your last name.",
-    "dateOfBirthMissing": "Please enter your date of birth.",
-    "applicationActionMissing": "Please select what you want to do.",
-    "realIdSelectionMissing": "Please select if you want a Real ID card.",
-    "realIdCardSelectionMissing": "Please select which card you want to be a Real ID card.",
-    "licenceClassMissing": "Please select what you need to drive.",
-    "cardNumberMissing": "Please enter a valid driver license or ID number.",
-    "streetAddressMissing": "Please enter what street you live on.",
-    "cityMissing": "Please enter the city you live in.",
-    "mailingAddressMissing": "Please let us know where you receive mail.",
-    "sexSelectionMissing": "Please select your sex.",
-    "hairColorMissing": "Please select your hair color.",
-    "eyeColorMissing": "Please select your eye color.",
-    "heightMissing": "Please enter your height.",
-    "weightMissing": "Please enter your weight.",
-    "socialSecurityAvailabilityMissing": "Please tell us if you have a Social Security Number.",
-    "socialSecurityNumberMissing": "Please enter your Social Security Number.",
-    "socialSecurityNumberInvalid": "Please enter a valid Social Security Number.",
-    "medicalHistorySelectionMissing": "Please tell us about any medical conditions.",
-    "licenceHistorySelectionMissing": "Please tell us if you've had a driver license or ID card.",
-    "expirationDateInvalid": "Please enter a valid expiration date.",
-    "nameHistorySelectionMissing": "Please tell us if you've had a license or ID card under a different name.",
-    "licenseIssueSelectionMissing": "Please tell us why you've had your driving privileges cancelled, suspended, or revoked.",
-    "licenseIssueDateMissing": "Please tell us when this happened.",
-    "veteranSelectionMissing": "Please select if you've served in the US military.",
-    "veteranBenefitSelectionMissing": "Please tell us if you would like to get info about benefits for veterans.",
-    "veteranDesignationExistsMissing": "Please tell us if \"Veteran\" has been on an ID or driver license.",
-    "veteranDesignationExistsMissing2": "Please tell us if \"Veteran\" is on your card.",
-    "keepVeteranDesignationSelectionMissing": "Please tell us if you want to keep \"Veteran\" on your card.",
-    "wantVeteransDesignationSelectionMissing": "Please tell us if you want \"Veteran\" on your card.",
-    "organDonationSelectionMissing": "Please tell us if you want to be an organ donor.",
-    "moneyOrganDonationSelectionMissing": "Please tell us if you want to donate.",
-    "citizenshipSelectionMissing": "Please select if you're a US citizen.",
-    "votingEligibilitySelectionMissing": "Please select if you meet the eligibility requirements.",
-    "wantToPreregisterSelectionMissing": "Please tell us if you would like to be registered to vote.",
-    "politicalPartySelectionMissing": "Please select a political party.",
-    "ballotLanguageSelectionMissing": "Please select a language.",
-    "ballotByMailSelectionMissing": "Please tell us if you want to get your ballot in the mail.",
-    "emailAddressMissingOrInvalid": "Please enter a valid email address.",
-    "phoneMissingOrInvalid": "Please enter a valid phone number.",
-    "liabilityAcceptanceMissing": "Please check the box to accept liability.",
-    "parentNameMissing": "Please enter your name.",
-    "invalidOrMissingDate": "Please enter a valid date.",
-    "identityDocumentationMissing": "Please enter your identity document information.",
-    "dataIncludesNonEnglishCharacters": "Sorry, your card can only include English characters.",
-    "errorPreventContinuing": "You cannot continue until you fix the errors on this page.",
-    "selectionMissing": "Please make a selection",
-    "pleaseEnterValidData": "Please enter valid information",
-    "inputIncludesNonEnglishCharacters": "Please enter only English characters.",
-    "licenseClassMissing": "Please select a license class",
-    "needEndorsement": "Please select if you need a professional endorsement",
-    "endorsement": "Please select an endorsement",
-    "cardTypeMissing": "Please select what card(s) you would like.",
-    "choosePoliticalPartyNowSelectionMissing": "Please tell us if you want to choose a political party preference."
   },
   "intro": {
     "switchLanguagePage": {
@@ -393,6 +742,225 @@
       }
     }
   },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "Have you had any medical conditions in the last three years that affected your ability to drive?",
+      "explanationPrompt": "Please explain below."
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "Have you ever had a driver license or state-issued ID card?",
+      "pagePromptID": "Have you ever had a California driver license or ID card?",
+      "explanation": "The license or ID card must be issued by a U.S. state or another country.",
+      "explanationPrompt": "Please tell us about your most recent driver license or ID card, even if it's expired.",
+      "numberLabel": "Driver license or ID card number",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "Expiration Date"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "Have you ever applied for a Driver License or ID card under a different name?",
+      "explanationPrompt": "Please list all previous legal names.",
+      "helpText": "<p>For example, include your maiden name. </p><p> Separate by commas.</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "Have you ever had your driving privilege cancelled, refused, suspended, or revoked?",
+      "explanationPrompt": "When did this happen?",
+      "helpText": "Example: 03/21/1967",
+      "reasonLabel": "What was the reason?"
+    },
+    "veteransPage": {
+      "pagePrompt": "Have you ever served in the United States Military?",
+      "explanationStart": "As a veteran, you may be eligible for benefits like disability compensation.",
+      "licensExplanation": "Your Driver License can also display the word \"Veteran\".",
+      "idExplanation": "Your ID can also display the word \"Veteran\".",
+      "cardsExplanation": "Your cards can also display the word \"Veteran\".",
+      "messageYes": "Thank you for your service.",
+      "benefitsPrompt": "Would you like to receive benefits information for which you may be eligible?",
+      "newDesignation": {
+        "prompt": "Would you like to add the word “Veteran” on your {card type} for a $5 fee?",
+        "explanation": "Many organizations give discounts to veterans with a valid ID.",
+        "messageYes": "OK, we will add the $5 to your total fee. You will need to complete the Veteran Status Verification Form from your county’s Veteran Service Office and bring it to a DMV field office."
+      },
+      "historicDesignationPrompt": "Have you ever had the word \"Veteran\" on a license or state-issued ID card?",
+      "existingDesignation": {
+        "promptLicense": "Is \"Veteran\" printed on your Driver License?",
+        "promptID": "Is \"Veteran\" printed on your ID?",
+        "promptCards": "Is \"Veteran\" printed on your cards?"
+      },
+      "keepDesignationPrompt": {
+        "id": "Would you like to keep \"Veteran\" on your ID?",
+        "cards": "Would you like to keep \"Veteran\" on your cards?",
+        "license": "Would you like to keep \"Veteran\" on your Driver License?"
+      }
+    }
+  },
+  "disclaimers": {
+    "medical": {
+      "title": "Medical information",
+      "body": "The following conditions that may affect your ability to operate a motor vehicle safely include, but are not limited to: loss of consciousness; episode of marked confusion caused by any condition which may bring about recurring lapses; disease, disorder, or disability (examples of these are epilepsy, diabetes, stroke, cataracts, Parkinson’s disease); decrease or change in your vision due to cataracts, macular degeneration, diabetic retinopathy, glaucoma, retinitis pigmentosa, or other progressive condition; health problems because of alcohol or drug abuse."
+    },
+    "veteran": {
+      "title": "Veteran statement",
+      "body": "By marking the veteran box on this application, I certify that I am a veteran of the United States Armed Forces and that I want to receive veteran benefits information from the California Department of Veterans A airs (CalVet). By marking the veteran box on this application, I also consent to DMV transmitting my name and mailing address to CalVet for this purpose only, and I certify that I have been notified that this transmittal will occur."
+    },
+    "organDonation": {
+      "title": "Organ donation statement",
+      "body": "If you marked ‘Yes’ to register as an organ and tissue donor, you are legally authorizing the recovery of organs and tissues in the event of your death. Registering as a donor will not a ect your medical treatment in any way. As outlined in the California Anatomical Gift Act, your authorization is legally binding and, unless the donor is under 18 years of age, your decision does not require the consent of any other person. For registered donors under 18 years of age, the legal guardian shall make the  nal donation decision. You may limit your donation to speci c organs or tissues, place usage restrictions (for example transplantation or research), obtain more information about donation, or remove your name from the registry on the website of Donate Life California: www.donateLIFEcalifornia.org. By registering as an Organ Donor, you are giving your consent to allow DMV to electronically transmit your true full name, residence or mailing address, year of birth, and California driver license or identi cation card number to Donate Life California. By signing this form, you consent to this process and have been notified that this transmittal will occur."
+    },
+    "voterRegistration": {
+      "title": "Voter registration",
+      "bodyBullets": [
+        "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the Safe at Home program at (877) 322-5227 or visit <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+        "For U.S. citizens only. If you indicate that you are eligible to vote, the DMV will send all of the voter registration information collected on this form, including your digital signature, to the Secretary of State. The o ce where you registered will remain con dential and will be used only for voter registration purposes.",
+        "If you are eligible to vote and decline to register to vote, your decision will remain con dential; however this information will be sent to the Secretary of State to be used only for voter outreach and registration purposes.",
+        "Voter registration information provided on this application is con dential. The DMV does not make voter eligibility determinations.",
+        "If you have not received voter registration information within 30 days of registering, contact your county elections o cial or the Secretary of State.",
+        "Please visit <a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> for more information about your voter registration or <a href='www.sos.ca.gov'>www.sos.ca.gov</a> for general information."
+      ]
+    },
+    "criminalProsecution": {
+      "title": "Criminal prosecution",
+      "bodyBullets": [
+        "If you submit fraudulent information, the DMV may pursue criminal prosecution.",
+        "Any person who uses false documents to conceal their true citizenship or resident alien status is guilty of a felony pursuant to California Penal Code §114."
+      ]
+    },
+    "financialResponsibility": {
+      "title": "Financial responsibility",
+      "bodyBullets": [
+        "Financial responsibility (commonly known as insurance) is required on all vehicles operated or parked on California roadways. You must carry evidence of financial responsibility in your vehicle at all times and it must be provided when: requested by law enforcement, renewing vehicle registration, the vehicle is involved in a traffic collision.",
+        "If you cannot afford liability insurance, you may be eligible for the California Low Cost Automobile Insurance Program. Additional information is available at <a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> or by calling (866) 602-8861."
+      ]
+    },
+    "paymentRefunds": {
+      "title": "Payments / Refunds",
+      "bodyBullets": [
+        "Visit <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> to review payment options at your local DMV field office. If you are mailing your renewal, payment must be by check. (Checks should be payable to DMV).",
+        "Once this application form and fee have been submitted, no refunds will be made."
+      ]
+    },
+    "privacy": {
+      "title": "Privacy notice",
+      "bodyBullets": [
+        "DMV uses the information on this form to determine your eligibility for a Driver License or Identification Card and for the administration of driver license laws.",
+        "Information provided to DMV on this form is collected and subject to the limitations in the Information Practices Act (Civil Code 1798 et seq.), the Driver’s Privacy Protection Act (18 U.S.C. 2721-2725), the California Vehicle Code (CVC) and other applicable state and federal laws and regulations.",
+        "DMV verifies the information and documents you provide with other governmental agencies.",
+        "All information on this form is mandatory except where noted. DMV may deny your application for not providing the required information. Failure to provide the information required on this form is cause for refusal to issue a driver license or identi cation card, or, in some cases, cancellation or withdrawal of the driving privilege.",
+        "DMV shares your information with other governmental agencies, law enforcement, and commercial entities as authorized by law. You may obtain a copy of your record at <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Licensing Operations Division Mandatory Actions Unit at (916) 657-6525.",
+        "Questions regarding your Driver License or Identification Card should be addressed to: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
+        "For more information regarding specific CVC Sections or how DMV shares your information, please visit <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>. You may also request a copy of How Your DMV Information is Shared (FFDMV 17) Fast Facts brochure from any field office.",
+        "DMV’s Privacy Policy is located at <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> under the 'Privacy Policy' link at the bottom of the page.",
+        "Questions regarding this notice should be addressed to: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "bodyBullets": [
+        "I agree to submit to a chemical test of my blood, breath, or urine for the purpose of determining the alcohol or drug content of my blood when testing is requested by a peace o cer acting in accordance with California Vehicle Code (CVC) §23612.",
+        "I am hereby advised that being under the in uence of alcohol or drugs, or both, impairs the ability to safely operate a motor vehicle. Therefore, it is extremely dangerous to human life to drive while under the in uence of alcohol or drugs, or both. If I drive while under the in uence of alcohol or drugs, or both, and as a result, a person is killed, I can be charged with murder.",
+        "By signing this application, I certify that I was notified that if I am under 21 years of age, I cannot legally drive with a blood alcohol concentration (BAC) of 0.01% or more. Driving with a BAC of 0.01% or more, or refusing to take, or failing to complete an alcohol screening or drug test, results in a one-year suspension of my driving privilege.",
+        "By signing this application, I certify that I was notified that if I am currently on court probation for a driving under the in uence o ense, I cannot legally drive with a BAC of 0.01% or more. Driving with a BAC of 0.01% or more results in a one-year suspension of my driving privilege. Refusing to take, or failing to complete an alcohol screening or chemical test will result in a two to three year suspension/revocation of my driving privilege.",
+        "I am the person whose name appears on the front of this form. The mailing address shown is valid, existing, and accurate. I agree to accept service of process at this mailing address according to §§415.20(b), 415.30(a), and 416.90 of the California Code of Civil Procedure.",
+        "I understand DMV may add traffic convictions reported by other states or jurisdictions to my driving record that may result in sanctions against my California driving privilege.",
+        "By signing this form, I am acknowledging my presence in the United States is authorized under federal law, except as speci ed in CVC §12801.",
+        "I understand I may have no more than one driver license in my possession or under my control in accordance with CVC §12511.",
+        "By signing this application, I certify that I understand traffic signs and signals in accordance with CVC §12800(h)."
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "Please enter your last name.",
+    "dateOfBirthMissing": "Please enter your date of birth.",
+    "applicationActionMissing": "Please select what you want to do.",
+    "realIdSelectionMissing": "Please select if you want a Real ID card.",
+    "realIdCardSelectionMissing": "Please select which card you want to be a Real ID card.",
+    "licenceClassMissing": "Please select what you need to drive.",
+    "cardNumberMissing": "Please enter a valid driver license or ID number.",
+    "streetAddressMissing": "Please enter what street you live on.",
+    "cityMissing": "Please enter the city you live in.",
+    "mailingAddressMissing": "Please let us know where you receive mail.",
+    "sexSelectionMissing": "Please select your sex.",
+    "hairColorMissing": "Please select your hair color.",
+    "eyeColorMissing": "Please select your eye color.",
+    "heightMissing": "Please enter your height.",
+    "weightMissing": "Please enter your weight.",
+    "socialSecurityAvailabilityMissing": "Please tell us if you have a Social Security Number.",
+    "socialSecurityNumberMissing": "Please enter your Social Security Number.",
+    "socialSecurityNumberInvalid": "Please enter a valid Social Security Number.",
+    "medicalHistorySelectionMissing": "Please tell us about any medical conditions.",
+    "licenceHistorySelectionMissing": "Please tell us if you've had a driver license or ID card.",
+    "expirationDateInvalid": "Please enter a valid expiration date.",
+    "nameHistorySelectionMissing": "Please tell us if you've had a license or ID card under a different name.",
+    "licenseIssueSelectionMissing": "Please tell us why you've had your driving privileges cancelled, suspended, or revoked.",
+    "licenseIssueDateMissing": "Please tell us when this happened.",
+    "veteranSelectionMissing": "Please select if you've served in the US military.",
+    "veteranBenefitSelectionMissing": "Please tell us if you would like to get info about benefits for veterans.",
+    "veteranDesignationExistsMissing": "Please tell us if \"Veteran\" has been on an ID or driver license.",
+    "veteranDesignationExistsMissing2": "Please tell us if \"Veteran\" is on your card.",
+    "keepVeteranDesignationSelectionMissing": "Please tell us if you want to keep \"Veteran\" on your card.",
+    "wantVeteransDesignationSelectionMissing": "Please tell us if you want \"Veteran\" on your card.",
+    "organDonationSelectionMissing": "Please tell us if you want to be an organ donor.",
+    "moneyOrganDonationSelectionMissing": "Please tell us if you want to donate.",
+    "citizenshipSelectionMissing": "Please select if you're a US citizen.",
+    "votingEligibilitySelectionMissing": "Please select if you meet the eligibility requirements.",
+    "wantToPreregisterSelectionMissing": "Please tell us if you would like to be registered to vote.",
+    "politicalPartySelectionMissing": "Please select a political party.",
+    "ballotLanguageSelectionMissing": "Please select a language.",
+    "ballotByMailSelectionMissing": "Please tell us if you want to get your ballot in the mail.",
+    "emailAddressMissingOrInvalid": "Please enter a valid email address.",
+    "phoneMissingOrInvalid": "Please enter a valid phone number.",
+    "liabilityAcceptanceMissing": "Please check the box to accept liability.",
+    "parentNameMissing": "Please enter your name.",
+    "invalidOrMissingDate": "Please enter a valid date.",
+    "identityDocumentationMissing": "Please enter your identity document information.",
+    "dataIncludesNonEnglishCharacters": "Sorry, your card can only include English characters.",
+    "errorPreventContinuing": "You cannot continue until you fix the errors on this page.",
+    "selectionMissing": "Please make a selection",
+    "pleaseEnterValidData": "Please enter valid information",
+    "inputIncludesNonEnglishCharacters": "Please enter only English characters.",
+    "licenseClassMissing": "Please select a license class",
+    "needEndorsement": "Please select if you need a professional endorsement",
+    "endorsement": "Please select an endorsement",
+    "cardTypeMissing": "Please select what card(s) you would like.",
+    "choosePoliticalPartyNowSelectionMissing": "Please tell us if you want to choose a political party preference."
+  },
+  "footer": {
+    "accessibility": "Accessibility",
+    "conditionsOfUser": "Conditions of use",
+    "disabilityServices": "Disability services",
+    "help": "Help",
+    "home": "Home",
+    "privacy": "Privacy policy",
+    "siteMap": "Site map",
+    "support": "Technical support",
+    "copyright": "Copyright &copy; 2018 State of California"
+  },
+  "header": {
+    "dlApplication": "Driver license application",
+    "idApplication": "ID card application",
+    "bothApplications": "Drivers license and ID application",
+    "cdlApplication": "Commercial driver license application",
+    "Logout": "Log out"
+  },
+  "sections": {
+    "getStarted": "Get started",
+    "selfCertification": "Self certification",
+    "myHistory": "My history",
+    "tenYearHistory": "Ten year history",
+    "summary": "Summary",
+    "welcomeBack": "Welcome back"
+  },
+  "ageMessages": {
+    "notASenior": "You are no longer eligible for a free Senior ID card.",
+    "preregistration": "You will be pre-registered to vote.",
+    "cdlAgeRestriction": "You must be 18 years or older to apply for a commercial driver license in California."
+  },
+  "extras": {
+    "enterTextHere": "Enter text here",
+    "notRegisteredToVoteMessage": "If you select <em>No</em> or <em>Decline to answer</em>, you will not be registered to vote.",
+    "vetranRemoveMessage": "OK, we will remove it",
+    "yourConfirmationCode": "Your confirmation code is:",
+    "confirmationAlsoEmailed": "This will also be emailed to you."
+  },
   "myBasics": {
     "addressesPage": {
       "prompt": "Where do you live?",
@@ -468,57 +1036,6 @@
       }
     }
   },
-  "myHistory": {
-    "medicalConditionsPage": {
-      "pagePrompt": "Have you had any medical conditions in the last three years that affected your ability to drive?",
-      "explanationPrompt": "Please explain below."
-    },
-    "cardHistoryPage": {
-      "pagePromptLicense": "Have you ever had a driver license or state-issued ID card?",
-      "pagePromptID": "Have you ever had a California driver license or ID card?",
-      "explanation": "The license or ID card must be issued by a U.S. state or another country.",
-      "explanationPrompt": "Please tell us about your most recent driver license or ID card, even if it's expired.",
-      "numberLabel": "Driver license or ID card number",
-      "stateOrCountryLabel": "Driver license or ID card number",
-      "expirationDateLabel": "Expiration Date"
-    },
-    "nameHistoryPage": {
-      "pagePrompt": "Have you ever applied for a Driver License or ID card under a different name?",
-      "explanationPrompt": "Please list all previous legal names.",
-      "helpText": "<p>For example, include your maiden name. </p><p> Separate by commas.</p>"
-    },
-    "licenseIssuesPage": {
-      "pagePrompt": "Have you ever had your driving privilege cancelled, refused, suspended, or revoked?",
-      "explanationPrompt": "When did this happen?",
-      "helpText": "Example: 03/21/1967",
-      "reasonLabel": "What was the reason?"
-    },
-    "veteransPage": {
-      "pagePrompt": "Have you ever served in the United States Military?",
-      "explanationStart": "As a veteran, you may be eligible for benefits like disability compensation.",
-      "licensExplanation": "Your Driver License can also display the word \"Veteran\".",
-      "idExplanation": "Your ID can also display the word \"Veteran\".",
-      "cardsExplanation": "Your cards can also display the word \"Veteran\".",
-      "messageYes": "Thank you for your service.",
-      "benefitsPrompt": "Would you like to receive benefits information for which you may be eligible?",
-      "newDesignation": {
-        "prompt": "Would you like to add the word “Veteran” on your {card type} for a $5 fee?",
-        "explanation": "Many organizations give discounts to veterans with a valid ID.",
-        "messageYes": "OK, we will add the $5 to your total fee. You will need to complete the Veteran Status Verification Form from your county’s Veteran Service Office and bring it to a DMV field office."
-      },
-      "historicDesignationPrompt": "Have you ever had the word \"Veteran\" on a license or state-issued ID card?",
-      "existingDesignation": {
-        "promptLicense": "Is \"Veteran\" printed on your Driver License?",
-        "promptID": "Is \"Veteran\" printed on your ID?",
-        "promptCards": "Is \"Veteran\" printed on your cards?"
-      },
-      "keepDesignationPrompt": {
-        "id": "Would you like to keep \"Veteran\" on your ID?",
-        "cards": "Would you like to keep \"Veteran\" on your cards?",
-        "license": "Would you like to keep \"Veteran\" on your Driver License?"
-      }
-    }
-  },
   "organDonation": {
     "title": "Organ Donation",
     "organDonor": {
@@ -531,6 +1048,31 @@
       "prompt": "Would you like to make a voluntary contribution of $2?",
       "messageYes": "Thank you for your donation! We will add this $2 to your total fee."
     }
+  },
+  "parentGuardianSignaturePage": {
+    "Prompt": "Because you are under 18, you will need a parent or guardian signature.",
+    "explanation": "If you have more than one parent or guardian with custody, both must sign.",
+    "methodSection": {
+      "prompt": "What would you like to do?",
+      "values": {
+        "electronically": "My parent/guardian(s) will sign electronically",
+        "atDMV": "My parent/guardian(s) will sign at the DMV",
+        "emancipated": "I'm an emancipated minor"
+      }
+    },
+    "signatureSection": {
+      "explanation": "Your application will not be complete until your parent/guardian(s) signs.",
+      "prompt": "For the parent/guardian to complete:",
+      "liabilityStatement": "I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.",
+      "electronicSignatureSection": {
+        "prompt": "Please type your name and today’s date to electronically sign.",
+        "nameLabel": "Full legal name",
+        "dateLabel": "Today's date"
+      },
+      "weNeedBasicInfo": "We need some basic information about you.",
+      "addAnotherSigntature": "Add another parent/guardian signature"
+    },
+    "emancipatedInfoMessage": "<b>To prove you are an emancipated minor</b>, you must declare your emancipation on a DL 11 form <b>and</b> provide proof of financial responsibility. <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>For more information, refer to the DMV website.</a>"
   },
   "shared": {
     "navigation": {
@@ -561,6 +1103,70 @@
     "summary": {
       "notProvided": "Not provided",
       "none": "None"
+    }
+  },
+  "usStates": {
+    "label": "State",
+    "values": {
+      "AL": "Alabama",
+      "AK": "Alaska",
+      "AZ": "Arizona",
+      "AR": "Arkansas",
+      "CA": "California",
+      "CO": "Colorado",
+      "CT": "Connecticut",
+      "DE": "Delaware",
+      "DC": "District of Columbia",
+      "FL": "Florida",
+      "GA": "Georgia",
+      "HI": "Hawaii",
+      "ID": "Idaho",
+      "IL": "Illinois",
+      "IN": "Indiana",
+      "IA": "Iowa",
+      "KS": "Kansas",
+      "KY": "Kentucky",
+      "LA": "Louisiana",
+      "ME": "Maine",
+      "MD": "Maryland",
+      "MA": "Massachusetts",
+      "MI": "Michigan",
+      "MN": "Minnesota",
+      "MS": "Mississippi",
+      "MO": "Missouri",
+      "MT": "Montana",
+      "NE": "Nebraska",
+      "NV": "Nevada",
+      "NH": "New Hampshire",
+      "NJ": "New Jersey",
+      "NM": "New Mexico",
+      "NY": "New York",
+      "NC": "North Carolina",
+      "ND": "North Dakota",
+      "OH": "Ohio",
+      "OK": "Oklahoma",
+      "OR": "Oregon",
+      "PA": "Pennsylvania",
+      "RI": "Rhode Island",
+      "SC": "South Carolina",
+      "SD": "South Dakota",
+      "TN": "Tennessee",
+      "TX": "Texas",
+      "UT": "Utah",
+      "VT": "Vermont",
+      "VA": "Virginia",
+      "WA": "Washington",
+      "WV": "West Virginia",
+      "WI": "Wisconsin",
+      "WY": "Wyoming",
+      "AS": "American Samoa",
+      "GU": "Guam",
+      "MH": "Marshall Islands",
+      "FM": "Micronesia",
+      "MP": "Northern Marianas",
+      "PW": "Palau",
+      "PR": "Puerto Rico",
+      "VI": "Virgin Islands"
     }
   },
   "summaryPage": {
@@ -688,7 +1294,7 @@
     "introductionPage": {
       "citizenOnlyDisclaimer": "US Citizens Only",
       "pagePrompt": "Voter Registration",
-      "explanation": "<p>Under state law, eligible citizens will be registered to vote unless they choose not to in this section. </p><p> If you’re already registered to vote, this service helps make sure your information is up to date. </p><p> If you need to register to vote before your DMV visit, you can register online at <a href='RegisterToVote.ca.gov'>RegisterToVote.ca.gov</a>.</p>",
+      "explanation": "<p>Under state law, eligible citizens will be registered to vote unless they choose not to in this section. </p><p> If you’re already registered to vote, this service helps make sure your information is up to date. </p><p> If you need to register to vote before your DMV visit, you can register online at RegisterToVote.ca.gov.</p>",
       "timeItWillTake": "<p>This section takes most customers </p><p> 3 minutes</p>"
     },
     "citizenshipPage": {
@@ -791,6 +1397,14 @@
     "preferencesUpdateIntroPage": {
       "pagePrompt": "Next we’d like to quickly make sure your voter registration is up to date.",
       "explanation": "This will replace your previous voter preferences."
+    }
+  },
+  "sharedAdditions": {
+    "shared": {
+      "buttons": {
+        "exit": "Exit"
+      },
+      "contactDMV": "<p>Please contact the DMV if you have further questions. </p><p> Telephone: 1-800-777-0133 </p><p> Hearing Impaired: TTY 1-800-368-4327</p>"
     }
   }
 }

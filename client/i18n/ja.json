@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "戻る",
+      "next": "次へ"
+    },
+    "commonAnswers": {
+      "yes": "はい",
+      "no": "いいえ",
+      "declineToAnswer": "回答を拒否する",
+      "skip": "質問を飛ばす"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "<em>回答を拒否する</em>を選択した場合、有権者登録されません。",
+      "declineToAnswerInformationPreRegistration": "<em>回答を拒否する</em>を選択した場合、有権者事前登録されません。"
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "米国市民のみ",
+      "pagePrompt": "有権者登録",
+      "explanation": "<p>州法において、有権者は、本セクションで登録しない旨を選択しない限り、有権者登録されます。</p><p> 既に有権者登録をお済ませの方は、このサービスでご自身の情報を最新のものに更新できます。</p><p> DMVの訪問前に有権者登録の必要がある方は、RegisterToVote.ca.govでオンライン登録できます。</p>",
+      "timeItWillTake": "<p>本セクションの所要時間は</p><p> 約3分です</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "あなたは米国市民ですか。",
+      "faqQuestionWhatIfNotCitizen": "米国市民でない場合はどうなりますか。",
+      "faqAnswerWhatIfNotCitizen": "米国市民でない方は、有権者登録する資格がありません。"
+    },
+    "eligibilityPage": {
+      "pagePrompt": "下記の有権者登録の要求事項をすべて満たしておられますか。",
+      "usCitizenshipStatement": "米国市民であること",
+      "caCitizenshipStatement": "カリフォルニア州居住者であること",
+      "ageStatement": "少なくとも18歳であること",
+      "convictionStatement": "現在、重罪の有罪判決による州または連邦刑務所の被収容者または仮釈放者でないこと",
+      "mentalCompetenceStatement": "現在、裁判所によって精神的に投票する能力がないと判断されていないこと",
+      "faqQuestionWhatIfDontMeetRequirements": "有権者登録の要求事項をすべて満たしていない場合はどうなりますか。",
+      "faqAnswerWhatIfDontMeetRequirements": "要求事項をすべて満たしていない方は、有権者登録をする資格がありません。"
+    },
+    "optOutPage": {
+      "pagePrompt": "最も該当するのは以下のどれですか。",
+      "answerNewRegistration": "有権者登録をする。",
+      "answerUpdateRegistration": "有権者登録を済ませており、有権者登録の情報更新をする。",
+      "answerOptOut": "有権者登録または有権者登録の情報更新をしない。"
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "有権者事前登録",
+      "explanation": "<p>州法において、有権者は、本セクションで登録しない旨を選択しない限り、有権者事前登録されます。</p><p> 16歳または17歳の方は、本日、事前登録できます。18歳になられた時点で自動的に有権者登録されます。</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "米国市民でない方は、有権者事前登録をする資格がありません。"
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "私は少なくとも16歳または17歳です",
+      "faqQuestionHowDoesPreRegWork": "有権者事前登録は、どのような仕組みですか。",
+      "faqAnswerHowDoesPreRegWork": "カリフォルニア州で有権者事前登録をするには、16歳または17歳であり、投票のためのその他すべての要求事項を満たしている必要があります。18歳になられた時点で自動的に有権者登録されます。"
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "有権者事前登録をする。",
+      "answerUpdateRegistration": "有権者事前登録を済ませており、有権者事前登録の情報更新をする。",
+      "answerOptOut": "有権者事前登録または有権者事前登録の情報更新をしない。"
+    },
+    "choosePartyPage": {
+      "pagePrompt": "支持政党をお選びになりますか。",
+      "explanation": "支持政党を選択しない方は、米国大統領または中央委員会についての予備選挙で一部の政党の候補者に投票できない場合があります。",
+      "choosePrompt": "以下から政党をひとつお選びください。",
+      "answerNo": "支持政党を選択しません",
+      "answerAmericanIndependent": "アメリカ独立党（American Independent Party）",
+      "answerLibertarianParty": "リバタリアン党（Libertarian Party）",
+      "answerDemocraticParty": "民主党（Democratic Party）",
+      "answerGreenParty": "グリーン党（Green Party）",
+      "answerPeaceAndFreedomParty": "平和自由党（Peace and Freedom Party）",
+      "answerRepublicanParty": "共和党（Republican Party）",
+      "answerOther": "その他"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "選挙書類の言語をお選びください。",
+      "answerJapanese": "日本語",
+      "answerChinese": "中国語",
+      "answerEnglish": "英語",
+      "answerSpanish": "スペイン語",
+      "answerTagalog": "タガログ語",
+      "answerThai": "タイ語",
+      "answerKorean": "韓国語",
+      "answerHindi": "ヒンディー語",
+      "answerKhmer": "クメール語",
+      "answerVietnamese": "ベトナム語"
+    },
+    "byMailPage": {
+      "pagePrompt": "各選挙の前に投票用紙を郵送で受け取ることを希望されますか。",
+      "explanation": "「はい」と答えられた方でも、投票所に出向いて投票できます。"
+    },
+    "contactInfoPage": {
+      "pagePrompt": "Eメールまたはテキストで選挙情報を受け取ることを希望されますか。",
+      "formPrompt": "以下にあなたの情報を入力してください。",
+      "emailLabel": "Eメールアドレス",
+      "phoneLabel": "電話番号",
+      "emailExample": "例: name@company.com",
+      "phoneExample": "例: 987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "ありがとうございます。DMVでのご用件をお済ませになったときに、有権者登録の申し込みが処理されます。",
+      "explanation": "<p>DMVにお越しいただいてから4週間以内に有権者通知の葉書が届かなかった場合、あなたの郡の選挙管理人までご連絡ください。</p><p> カリフォルニア州務長官の<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>にて有権者登録状況を確認できます。</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>支持政党を選択なさらない方は、米国大統領または中央委員会についての予備選挙で一部の政党の候補者に投票できない場合があります。</p><p> これにより以前の支持政党が上書きされます。</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "「いいえ」と答えられた場合、以前の連絡先情報も削除されます。"
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "次に支持政党をお選びいただきます。",
+      "partyHeadline": "政党",
+      "partyExplanation": "支持政党をお選びください。",
+      "languageHeadline": "言語",
+      "languageExplanation": "選挙書類の言語をお選びください。",
+      "byMailHeadline": "郵便投票",
+      "byMailExplanation": "将来におけるすべての選挙の投票用紙を郵便で受け取る。つまり投票所に出向いて投票する必要がありません。",
+      "contactInfoHeadline": "連絡先情報",
+      "contactInfoExplanation": "選挙および有権者情報について選挙管理人からの連絡を希望する方は、連絡先情報を提供してください。"
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "次に有権者登録の情報が最新のものであるかご確認ください。",
+      "explanation": "これにより以前の選択内容が書き替えられます。"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "Anterior",
+      "next": "Siguiente"
+    },
+    "commonAnswers": {
+      "yes": "Sí",
+      "no": "No",
+      "declineToAnswer": "Prefiero no contestar",
+      "skip": "Saltar la pregunta"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "Si selecciona <em>Prefiero no contestar</em>, no se podrá inscribir para votar.",
+      "declineToAnswerInformationPreRegistration": "Si selecciona <em>Prefiero no contestar</em>, no se podrá pre-inscribir para votar."
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "Ciudadanos de EE. UU. solamente",
+      "pagePrompt": "Inscripción de Votante",
+      "explanation": "<p>Bajo la ley estatal, los ciudadanos elegibles seran inscriptos para votar a menos que decidan no hacerlo en esta sección. </p><p> Si ya se inscribió para votar, este servicio ayuda a verificar que su información esté al día. </p><p> Si se tiene que inscribir para votar antes de ir al DMV, puede inscribirse en línea en RegisterToVote.ca.gov.</p>",
+      "timeItWillTake": "<p>Esta sección solo tomará unos 3 minutos </p><p> para la mayoría de los clientes</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "¿Es ciudadano de los Estados Unidos?",
+      "faqQuestionWhatIfNotCitizen": "¿Qué pasa si no soy ciudadano?",
+      "faqAnswerWhatIfNotCitizen": "Si no es ciudadano de EE. UU., no podrá inscribirse para votar."
+    },
+    "eligibilityPage": {
+      "pagePrompt": "¿Cumple con TODOS los requisitos de inscripción de votante que se indican a continuación?",
+      "usCitizenshipStatement": "Soy ciudadano de los Estados Unidos",
+      "caCitizenshipStatement": "Soy residente de California",
+      "ageStatement": "Tengo al menos 18 años de edad",
+      "convictionStatement": "No estoy actualmente en una prisión estatal o federal o en libertad condicional por haber sido condenado de un delito mayor",
+      "mentalCompetenceStatement": "No he sido declarado mentalmente incompetente para votar actualmente por una corte judicial",
+      "faqQuestionWhatIfDontMeetRequirements": "¿Qué pasa si no cumplo con todos los requisitos?",
+      "faqAnswerWhatIfDontMeetRequirements": "Si no cumple con todos los requisitos, no se podrá inscribir para votar."
+    },
+    "optOutPage": {
+      "pagePrompt": "¿Qué quiere hacer?",
+      "answerNewRegistration": "Me quiero inscribir para votar.",
+      "answerUpdateRegistration": "Estoy inscrito para votar y quiero actualizar mis datos de inscripción de votante.",
+      "answerOptOut": "No quiero inscribirme para votar ni actualizar mis datos de inscripción de votante."
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "Pre-inscripción de votante",
+      "explanation": "<p>Bajo la ley estatal, los ciudadanos elegibles seran pre-inscriptos para votar a menos que decidan no hacerlo en esta sección. </p><p> Si tiene 16 o 17 años de edad, se puede preinscribir hoy. Cuando cumpla 18 años, quedará automáticamente inscrito para votar.</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "Si no es ciudadano de EE. UU., no podrá pre-inscribirse para votar."
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "Tengo 16 o 17 años de edad",
+      "faqQuestionHowDoesPreRegWork": "¿Cómo funciona la pre-inscripción de votante?",
+      "faqAnswerHowDoesPreRegWork": "Para pre-inscribirse para votar en California, tiene que tener 16 o 17 años de edad y cumplir con todos los demás requisitos para votar. Cuando cumpla los 18 años, quedará automáticamente inscrito para votar."
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "Me quiero pre-inscribir para votar.",
+      "answerUpdateRegistration": "Estoy pre-inscrito para votar y quiero actualizar mis datos de pre-inscripción de votante.",
+      "answerOptOut": "No quiero pre-inscribirme para votar ni actualizar mis datos de pre-inscripción de votante."
+    },
+    "choosePartyPage": {
+      "pagePrompt": "¿Quiere elegir una preferencia de partido político?",
+      "explanation": "Si no selecciona un partido político, es posible que no pueda votar por algunos de los candidatos partidarios en una elección primaria para presidente de EE. UU. o comité central partidario.",
+      "choosePrompt": "Seleccione un partido a continuación.",
+      "answerNo": "No quiero elegir un partido político",
+      "answerAmericanIndependent": "Partido Americano Independiente",
+      "answerLibertarianParty": "Partido Libertario",
+      "answerDemocraticParty": "Partido Demócrata",
+      "answerGreenParty": "Partido Verde",
+      "answerPeaceAndFreedomParty": "Partido Paz y Libertad",
+      "answerRepublicanParty": "Partido Republicano",
+      "answerOther": "Otro"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "Elija un idioma para sus materiales electorales.",
+      "answerJapanese": "Japonés",
+      "answerChinese": "Chino",
+      "answerEnglish": "Inglés",
+      "answerSpanish": "Español",
+      "answerTagalog": "Tagalog",
+      "answerThai": "Tailandés",
+      "answerKorean": "Coreano",
+      "answerHindi": "Hindi",
+      "answerKhmer": "Camboyano",
+      "answerVietnamese": "Vietnamita"
+    },
+    "byMailPage": {
+      "pagePrompt": "¿Quiere recibir su boleta por correo antes de cada elección?",
+      "explanation": "Si responde Sí, igualmente podrá votar en persona."
+    },
+    "contactInfoPage": {
+      "pagePrompt": "¿Quiere recibir información electoral por correo electrónico o mensaje de texto?",
+      "formPrompt": "Ponga sus datos a continuación.",
+      "emailLabel": "Dirección de correo electrónico",
+      "phoneLabel": "Número de teléfono",
+      "emailExample": "Ejemplo: name@company.com",
+      "phoneExample": "Ejemplo: 987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "Gracias. Su solicitud de inscripción de votante se procesará cuando complete su transacción con el DMV.",
+      "explanation": "<p>Si no recibe una tarjeta de notificación de votante a cuatro semanas de haber ido al DMV, comuníquese con el funcionario electoral de su condado. </p><p> Puede verificar el estado de su inscripción de votante en la página web de la Secretaría de Estado de California: <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>Si no selecciona un partido político, es posible que no pueda votar por algunos de los candidatos partidarios en una elección primaria para presidente de EE. UU. o comité central partidario. </p><p> Esto reemplazará su preferencia anterior de partido político.</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "Si responde No se eliminará cualquier información de contacto previa."
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "A continuación elegirá sus preferencias de votante.",
+      "partyHeadline": "Partido político",
+      "partyExplanation": "Elija su preferencia de partido político.",
+      "languageHeadline": "Idioma",
+      "languageExplanation": "Elija un idioma para sus materiales electorales.",
+      "byMailHeadline": "Votar por correo",
+      "byMailExplanation": "Reciba su boleta por correo para todas las elecciones futuras. De esa manera no tendrá que ir a un centro de votación para votar.",
+      "contactInfoHeadline": "Información de contacto",
+      "contactInfoExplanation": "Si quiere que los funcionarios electorales se pongan en contacto para darle información electoral y del votante, proporcione su información de contacto."
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "A continuación queremos verificar brevemente que su inscripción de votante esté al día.",
+      "explanation": "Esto reemplazará sus preferencias de votante anteriores."
+    }
+  }
+}

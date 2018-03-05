@@ -1,0 +1,127 @@
+{
+  "shared": {
+    "navigation": {
+      "back": "Trở Lại",
+      "next": "Kế Tiếp"
+    },
+    "commonAnswers": {
+      "yes": "Có",
+      "no": "Không",
+      "declineToAnswer": "Từ chối trả lời",
+      "skip": "Bỏ qua câu hỏi"
+    }
+  },
+  "votingRegistration": {
+    "shared": {
+      "declineToAnswerInformationRegistration": "Nếu quý vị chọn <em>Từ chối trả lời</em>, quý vị sẽ không được ghi danh bỏ phiếu.",
+      "declineToAnswerInformationPreRegistration": "Nếu quý vị chọn <em>Từ chối trả lời</em>, quý vị sẽ không được ghi danh trước để bỏ phiếu."
+    },
+    "introductionPage": {
+      "citizenOnlyDisclaimer": "Chỉ Dành Cho Công Dân Hoa Kỳ",
+      "pagePrompt": "Ghi Danh Cử Tri",
+      "explanation": "<p>Theo luật tiểu bang, công dân hội đủ điều kiện sẽ được ghi danh bỏ phiếu trừ phi họ chọn không ghi danh trong phần này. </p><p> Nếu quý vị đã được ghi danh bỏ phiếu, dịch vụ này giúp bảo đảm cập nhật dữ kiện của quý vị. </p><p> Nếu quý vị cần ghi danh bỏ phiếu trước khi đến DMV, quý vị có thể ghi danh trên mạng tại RegisterToVote.ca.gov.</p>",
+      "timeItWillTake": "<p>Đa số khách hàng cần </p><p> 3 phút để điền phần này</p>"
+    },
+    "citizenshipPage": {
+      "pagePrompt": "Quý vị có phải là công dân Hoa Kỳ hay không?",
+      "faqQuestionWhatIfNotCitizen": "Nếu tôi không phải là công dân thì sao?",
+      "faqAnswerWhatIfNotCitizen": "Nếu quý vị không phải là công dân Hoa Kỳ, quý vị không hội đủ điều kiện ghi danh bỏ phiếu."
+    },
+    "eligibilityPage": {
+      "pagePrompt": "Quý vị có hội đủ TẤT CẢ điều kiện ghi danh cử tri liệt kê dưới đây hay không?",
+      "usCitizenshipStatement": "Tôi là công dân Hoa Kỳ",
+      "caCitizenshipStatement": "Tôi là cư dân California",
+      "ageStatement": "Tôi đủ ít nhất là 18 tuổi",
+      "convictionStatement": "Tôi hiện không ở tù tiểu bang hoặc liên bang hoặc được phóng thích có điều kiện sau khi bị kết hình tội",
+      "mentalCompetenceStatement": "Tôi không bị một tòa phán quyết là tâm thần không minh mẫn",
+      "faqQuestionWhatIfDontMeetRequirements": "Nếu tôi không hội đủ tất cả các điều kiện thì sao?",
+      "faqAnswerWhatIfDontMeetRequirements": "Nếu quý vị không hội đủ tất cả các điều kiện, quý vị không hội đủ điều kiện ghi danh bỏ phiếu."
+    },
+    "optOutPage": {
+      "pagePrompt": "Câu nào sau đây diễn tả đúng trường hợp quý vị nhất?",
+      "answerNewRegistration": "Tôi muốn ghi danh bỏ phiếu.",
+      "answerUpdateRegistration": "Tôi đã ghi danh bỏ phiếu và muốn cập nhật dữ kiện ghi danh cử tri của tôi.",
+      "answerOptOut": "Tôi không muốn ghi danh bỏ phiếu hoặc cập nhật dữ kiện ghi danh cử tri của tôi."
+    },
+    "preRegIntroductionPage": {
+      "pagePrompt": "Ghi Danh Cử Tri Trước",
+      "explanation": "<p>Theo luật tiểu bang, công dân hội đủ điều kiện sẽ được ghi danh trước để bỏ phiếu trừ phi họ chọn không ghi danh trong phần này. </p><p> Nếu quý vị đủ 16 hoặc 17 tuổi thì có thể ghi danh trước ngày hôm nay. Sau khi đủ 18 tuổi, quý vị được tự động ghi danh bỏ phiếu.</p>"
+    },
+    "preRegCitizenshipPage": {
+      "faqAnswerWhatIfNotCitizen": "Nếu quý vị không phải là công dân Hoa Kỳ, quý vị không hội đủ điều kiện  ghi danh trước để bỏ phiếu."
+    },
+    "preRegEligibilityPage": {
+      "ageStatement": "Tôi đủ ít nhất là 16 hoặc 17 tuổi",
+      "faqQuestionHowDoesPreRegWork": "Thế nào là ghi danh trước để bỏ phiếu?",
+      "faqAnswerHowDoesPreRegWork": "Muốn ghi danh trước để bỏ phiếu tại California, quý vị phải đủ 16 hoặc 17 tuổi và hội đủ tất cả các điều kiện khác để bỏ phiếu. Quý vị sẽ được tự động ghi danh bỏ phiếu vào ngày sinh nhật thứ 18 của mình."
+    },
+    "preRegOptOutPage": {
+      "answerNewRegistration": "Tôi muốn ghi danh trước để bỏ phiếu.",
+      "answerUpdateRegistration": "Tôi đã ghi danh trước để bỏ phiếu và muốn cập nhật dữ kiện ghi danh cử tri trước của tôi.",
+      "answerOptOut": "Tôi không muốn ghi danh trước để bỏ phiếu hoặc cập nhật dữ kiện ghi danh cử tri trước của tôi."
+    },
+    "choosePartyPage": {
+      "pagePrompt": "Quý vị có muốn chọn một chính đảng hay không?",
+      "explanation": "Nếu quý vị không chọn một chính đảng, quý vị có thể không được bầu cho một số ứng cử viên của đảng trong cuộc bầu cử sơ bộ bầu Tổng Thống Hoa Kỳ hoặc ủy ban trung ương.",
+      "choosePrompt": "Xin chọn một đảng dưới đây.",
+      "answerNo": "Tôi không muốn chọn chính đảng",
+      "answerAmericanIndependent": "Đảng Người Mỹ Độc Lập",
+      "answerLibertarianParty": "Đảng Tự Do",
+      "answerDemocraticParty": "Đảng Dân Chủ",
+      "answerGreenParty": "Đảng Xanh",
+      "answerPeaceAndFreedomParty": "Đảng Hòa Bình và Tự Do",
+      "answerRepublicanParty": "Đảng Cộng Hòa",
+      "answerOther": "Đảng khác"
+    },
+    "chooseLanguagePage": {
+      "pagePrompt": "Chọn một ngôn ngữ cho các  tài liệu bầu cử của quý vị.",
+      "answerJapanese": "Tiếng Nhật",
+      "answerChinese": "Tiếng Hoa",
+      "answerEnglish": "Tiếng Anh",
+      "answerSpanish": "Tiếng Tây Ban Nha",
+      "answerTagalog": "Tiếng Tagalog",
+      "answerThai": "Tiếng Thái",
+      "answerKorean": "Tiếng Triều Tiên",
+      "answerHindi": "Tiếng Ấn",
+      "answerKhmer": "Tiếng Khmer",
+      "answerVietnamese": "Tiếng Việt"
+    },
+    "byMailPage": {
+      "pagePrompt": "Quý vị có muốn nhận lá phiếu bằng thư trước mỗi kỳ bầu cử hay không?",
+      "explanation": "Nếu quý vị trả lời Có, quý vị vẫn có thể đích thân đi bầu."
+    },
+    "contactInfoPage": {
+      "pagePrompt": "Quý vị muốn nhận tin tức bầu cử qua email hay văn bản text?",
+      "formPrompt": "Xin ghi chi tiết của quý vị dưới đây.",
+      "emailLabel": "Địa chỉ email",
+      "phoneLabel": "Số điện thoại",
+      "emailExample": "Thí dụ: name@company.com",
+      "phoneExample": "Thí dụ: 987 654 3210"
+    },
+    "confirmation": {
+      "pagePrompt": "Cám ơn quý vị, đơn ghi danh cử tri của quý vị sẽ được lập thủ tục khi quý vị xong việc của mình tại DMV.",
+      "explanation": "<p>Nếu quý vị không nhận được thẻ thông báo cử tri của mình trong vòng bốn tuần sau khi đến DMV, hãy liên lạc với viên chức bầu cử quận của quý vị. </p><p> Quý vị có thể xem tình trạng ghi danh cử tri của mình tại trang của Tổng Thư Ký Tiểu Bang California <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+    },
+    "updateChoosePartyPage": {
+      "explanation": "<p>Nếu quý vị không chọn một chính đảng, quý vị có thể không được bầu cho một số ứng cử viên của đảng trong cuộc bầu cử sơ bộ bầu Tổng Thống Hoa Kỳ hoặc ủy ban trung ương. </p><p> Lần này sẽ thay thế chọn lựa chính đảng trước đây của quý vị.</p>"
+    },
+    "updateContactInfoPage": {
+      "explanation": "Trả lời Không cũng sẽ xóa bất cứ chi tiết liên lạc nào trước đây."
+    },
+    "preferencesIntroPage": {
+      "pagePrompt": "Kế tiếp quý vị sẽ có các chọn lựa sau đây của cử tri.",
+      "partyHeadline": "Chính đảng",
+      "partyExplanation": "Chọn chính đảng của quý vị.",
+      "languageHeadline": "Ngôn ngữ",
+      "languageExplanation": "Chọn một ngôn ngữ để nhận tài liệu bầu cử.",
+      "byMailHeadline": "Bầu bằng thư",
+      "byMailExplanation": "Nhận lá phiếu qua đường bưu điện cho tất cả các cuộc bầu cử trong tương lai, tức là quý vị không phải đến địa điểm bầu cử để bỏ phiếu.",
+      "contactInfoHeadline": "Chi tiết liên lạc",
+      "contactInfoExplanation": "Cung cấp chi tiết liên lạc nếu quý vị muốn các viên chức bầu cử liên lạc với mình về cuộc bầu cử và dữ kiện cử tri."
+    },
+    "preferencesUpdateIntroPage": {
+      "pagePrompt": "Kế tiếp chúng tôi muốn kiểm điểm nhanh để chắc chắn là chi tiết ghi danh cử tri của quý vị là chi tiết mới nhất.",
+      "explanation": "Lần này sẽ thay thế các chọn lựa của cử tri trước đây của quý vị."
+    }
+  }
+}
