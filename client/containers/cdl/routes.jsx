@@ -19,16 +19,15 @@ import cdlRealID                        from './cdl-real-id.jsx';
 import Motorcycle                       from './motorcycle.jsx';
 import LicenseClass                     from './license-class.jsx';
 import cdlCertification                 from './cdl-certification.jsx';
+import CDLHistory                       from './my-history/routes.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {
   return (
     <div>
-      <Route path= '/apply/cdl'                                 exact component={CDLWelcome} />
+      <Route path= '/apply/cdl'                           exact component={CDLWelcome} />
       <Route path={ cdlPath('/true-name')}                      component={LegalName}   />
       <Route path={ cdlPath('/date-of-birth')}                  component={DateOfBirth} />
-      <Route path={ cdlPath('/physical-traits')}                component={PhysicalTraits} />
-      <Route path={ cdlPath('/traits-height-weight')}           component={HeightWeight} />
       <Route path={ cdlPath('/what-do-you-want-to-do-today')}   component={cdlWdywtdt} />
       <Route path={ cdlPath('/current-card-information')}       component={cdlCurrentCard} />
       <Route path={ cdlPath('/change-details')}                 component={UpdatesAndCorrections} />
@@ -40,6 +39,12 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/motorcycle')}                     component={Motorcycle} />
       <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
       <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
+
+      <CDLHistory />
+
+      <Route path={ cdlPath('/physical-traits')}                component={PhysicalTraits} />
+      <Route path={ cdlPath('/traits-height-weight')}           component={HeightWeight} />
+
       <Route path={ cdlPath('/summary')}                        component={Summary}     />
     </div>
   )

@@ -26,12 +26,12 @@ const wrapGroup = (listItems) => {
 
 const LinkSection = (props) => {
   return (
-    <li>
-      <hr />
+    <li style={{marginLeft: '20px'}}>
       <h4>{props.name}</h4>
       <ul>
         { props.children }
       </ul>
+      <hr/>
     </li>
   );
 }
@@ -44,9 +44,9 @@ const Home = () => {
         <LinkSection name='Intro'>
           { wrapGroup(linkData.intro) }
         </LinkSection>
-        <LinkSection name='CDL App'>
-          { wrapGroup(linkData.cdl) }
-        </LinkSection>
+
+        <hr/>
+        <h3>ID/DL App</h3>
         <LinkSection name='Get started'>
           { wrapGroup(linkData.getStarted) }
         </LinkSection>
@@ -71,6 +71,16 @@ const Home = () => {
         <LinkSection name='Add ID'>
           { wrapGroup(linkData.addIDCard) }
         </LinkSection>
+
+        <hr/>
+        <h3>CDL App</h3>
+        <LinkSection name='CDL Get Started'>
+          { wrapGroup(linkData.cdl) }
+        </LinkSection>
+        <LinkSection name='CDL History'>
+          { wrapGroup(linkData.cdlHistory) }
+        </LinkSection>
+
       </ul>
     </div>
   );
