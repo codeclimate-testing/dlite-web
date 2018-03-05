@@ -71,6 +71,10 @@ module.exports = function(world) {
     navigateToPath('/apply/cdl/motorcycle', '.cdl-class-m', done);
   });
 
+  world.when('I visit the CDL class page', function(done) {
+    navigateToPath('/apply/cdl/license-class', '.cdl-class-form', done);
+  });
+
   world.when('I visit the CDL Social Security page', function(done) {
     navigateToPath('/apply/cdl/social-security', '.social-security-form', done);
   });

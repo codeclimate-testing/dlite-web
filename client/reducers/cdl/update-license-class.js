@@ -1,7 +1,7 @@
 'use strict';
 
 import { TYPES }            from '../../actions';
-import formValueReducer    from '../form-object-reducer';
+import formValueReducer    from '../form-value-reducer';
 
 function defaultState() {
   return '';

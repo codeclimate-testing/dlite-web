@@ -25,7 +25,7 @@ const CdlAction = (props) => {
   return (
     <PageSummaryLink
       name    = 'cdlWdywtdt'
-      summary = {props.summary}
+      summary = 'cdlSummary'
     >
       <New        showIf = {isGettingNew(props)}    locale={locale}/>
       <Renew      showIf = {isRenewingCard(props)}  locale={locale}/>

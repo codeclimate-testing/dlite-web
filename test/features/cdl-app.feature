@@ -72,9 +72,12 @@ Scenario: New CDL
   When I click "Next" to continue
   Then I will be on the CDL Real ID page
   When I click yes to getting a real id on my CDL
+  When I visit the CDL class page
+  And I select Class A
   When I go to the CDL summary
   And I will see my name on that summary
   And I will see that I am applying for a new CDL
+  And I will see that I am applying for a class A license
   And I will see my between 17.5 and 18 dob on that summary
   And I will see my home address on that summary
   And I will see my social security on that summary
@@ -89,7 +92,6 @@ Scenario: New CDL
   Then I will be on the CDL dob page
   When I click "Next" to continue
   Then I will be on the CDL summary
-
 
 Scenario: Renewing a CDL
     Given I go to the new online DL application page
@@ -111,7 +113,7 @@ Scenario: Renewing a CDL
     And I will see my current CDL number
     And I will see that I am not getting a motorcycle class
 
-Scenario: Updating my CDL
+  Scenario: Updating my CDL
     Given I go to the new online DL application page
     When I visit the CDL WDYWTDT page
     And I select to change my CDL
@@ -126,16 +128,30 @@ Scenario: Updating my CDL
     When I go to the CDL summary
     Then I will see that I am updating my card
 
-Scenario: Replacing my CDL
-  Given I go to the new online DL application page
-  When I visit the CDL WDYWTDT page
-  And I select to replace my CDL
-  And I click "Next" to continue
-  Then I will be on the current CDL page
-  When I enter my driver license number
-  And I enter the date of DL/ID expiration
-  And I click "Next" to continue
-  Then I will be on the page to select reason for replacing my CDL
-  Then I select my reason for replacing my CDL
-  And I click "Next" to continue
-  Then I will be on the residency page
+  Scenario: Replacing my CDL
+    Given I go to the new online DL application page
+    When I visit the CDL WDYWTDT page
+    And I select to replace my CDL
+    And I click "Next" to continue
+    Then I will be on the current CDL page
+    When I enter my driver license number
+    And I enter the date of DL/ID expiration
+    And I click "Next" to continue
+    Then I will be on the page to select reason for replacing my CDL
+    Then I select my reason for replacing my CDL
+    And I click "Next" to continue
+    Then I will be on the residency page
+
+  Scenario: Saying no to having a current DL
+    Given I go to the new online DL application page
+    When I visit the CDL page to enter my current DL
+    And I select existing DL/ID No
+    Then I will see an info message about needing to pass the driving test
+    When I select existing DL/ID Yes
+    Then I will see input fields for entering my current DL info
+    When I enter my driver license number
+    And I enter the date of DL/ID expiration
+    Then I will see an info message letting me know I will need to do more work to get a CDL
+    When I go to the CDL summary
+    Then I will see my "Yes" answer about having a current DL in California
+    And I will see my driver license number and expiration date

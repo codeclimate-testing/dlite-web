@@ -9,7 +9,8 @@ import {
   expiredCard,
   noCardTypeArray,
   yesClassM,
-  noClassM
+  noClassM,
+  getClassText
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -105,6 +106,17 @@ describe('Data helpers for cdl data', function() {
         cardType: []
       };
       assert.equal(noCardTypeArray(props), false);
+  describe('#getClassText', function() {
+    it('returns "Class A" when value is "classA"', function() {
+      assert.equal(getClassText('classA', 'en'), 'Class A');
+    });
+
+    it('returns "Class B" when value is "classB"', function() {
+      assert.equal(getClassText('classB', 'en'), 'Class B');
+    });
+
+    it('returns "Class C" when value is "classC"', function() {
+      assert.equal(getClassText('classC', 'en'), 'Class C');
     });
   });
 

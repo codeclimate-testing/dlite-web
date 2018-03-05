@@ -5,6 +5,7 @@
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
 import CdlAction            from './cdl-action.jsx';
+import LicenseClass         from './license-class.jsx';
 import { CurrentCardInfo }  from '../../conclusion/summary/current-card-info.jsx';
 import RealID               from '../../conclusion/summary/real-id.jsx';
 import { hasValue }         from '../../../helpers/data/validations';
@@ -19,7 +20,6 @@ const CDLApp = (props) => {
       <CdlAction
         cardAction  = { cdl.cardAction }
         cardChanges = { cdl.cardChanges }
-        summary     = 'cdlSummary'
         locale      = { locale }
       />
       <RealID
@@ -29,6 +29,9 @@ const CDLApp = (props) => {
         locale      = { locale }
         title       = 'Real ID:'
         showIf      = { hasValue(cdl.realID) }
+      <LicenseClass
+        licenseClass      = { cdl.licenseClass }
+        locale            = { locale }
       />
       <CurrentCardInfo
         currentCardInfo   = { cdl.currentCardInfo }

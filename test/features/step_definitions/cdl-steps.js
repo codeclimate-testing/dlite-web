@@ -64,6 +64,11 @@ module.exports = function(world) {
   world.when('I select my reason for replacing my CDL', function(done) {
     browser
       .click('label[for="reason-lostOrStolen"]')
+  });
+
+  world.when('I select Class A', function(done) {
+    browser
+      .click('label[for="class-classA"]')
       .then(done)
       .catch(done);
   });
@@ -120,6 +125,13 @@ module.exports = function(world) {
       .text()
       .then(text => {
         assert.ok(text.includes('Motorcycle on CDLNo'));
+  });
+
+  world.then('I will see that I am applying for a class A license', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert.ok(text.includes('License class:Class A'));
       })
       .then(() => { done(); })
       .catch(done);

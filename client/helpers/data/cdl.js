@@ -3,6 +3,7 @@
 import { ageChecks }        from '../calculate-age';
 import { cdlApp }           from './pathnames';
 import * as dataPresent     from '../data-present';
+import  translations        from '../../i18n';
 
 export const showCDLUnder21 = (props) => {
   return props.hasOwnProperty('addApp') &&
@@ -57,4 +58,14 @@ export const yesClassM = (props) => {
 
 export const noClassM = (props) => {
   return props.classM === 'No';
+export const getClassText = (licenseClass, locale) => {
+  let key = '';
+  if (licenseClass === 'classA') {
+    key = translations[locale].intro.licenseTypePage.values[2].helpText;
+  } else if (licenseClass === 'classB') {
+    key = translations[locale].intro.licenseTypePage.values[3].helpText;
+  } else if (licenseClass === 'classC') {
+    key = translations[locale].intro.licenseTypePage.values[0].helpText;
+  }
+  return key;
 };

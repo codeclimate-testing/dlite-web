@@ -31,6 +31,7 @@ describe('CDL Summary My CDL Application section', function() {
           correctOrUpdate: ''
         },
         realID: ''
+        licenseClass: ''
       }
     };
   });
@@ -179,5 +180,27 @@ describe('CDL Summary My CDL Application section', function() {
       assert.ok(component.text().includes('Expiration date:09/03/2000'));
     });
   });
+
+  describe('#LicenseClass', function() {
+    it('does not render if licenseClass is not selected', function() {
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('License class'));
+    });
+
+    it('shows "Class A" if user has selected classA', function() {
+      props.cdl.licenseClass = 'classA';
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('License class:Class A'));
+    });
+  });
+
 
 });

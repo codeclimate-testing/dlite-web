@@ -61,6 +61,13 @@ const cdl = [
     path: '/social-security',
     next: cdlSSN
   },
+  // /* **** placeholder for incoming SSN page *** /
+  // {
+  //   key: 'cdlSSN',
+  //   description: 'social security',
+  //   path: '',
+  //   next: cdlSSN (either cdlCurrentDL or cdlRealID)
+  // },
   {
     key: 'cdlCurrentDL',
     description: 'current DL info',
