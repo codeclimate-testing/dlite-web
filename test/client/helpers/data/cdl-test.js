@@ -7,7 +7,9 @@ import {
   needsCurrentDLInfo,
   firstTime,
   expiredCard,
-  noCardTypeArray
+  noCardTypeArray,
+  yesClassM,
+  noClassM
 } from '../../../../client/helpers/data/cdl';
 
 describe('Data helpers for cdl data', function() {
@@ -103,6 +105,36 @@ describe('Data helpers for cdl data', function() {
         cardType: []
       };
       assert.equal(noCardTypeArray(props), false);
+    });
+  });
+
+  describe('#yesClassM', function() {
+    it('returns true if props.classM equals "Yes"', function() {
+      let props = {
+        classM: 'Yes'
+      };
+      assert.equal(yesClassM(props), true);
+    });
+    it('returns false if props.classM equals "No"', function() {
+      let props = {
+        classM: 'No'
+      };
+      assert.equal(yesClassM(props), false);
+    });
+  });
+
+  describe('#noClassM', function() {
+    it('returns false if props.classM equals "Yes"', function() {
+      let props = {
+        classM: 'Yes'
+      };
+      assert.equal(noClassM(props), false);
+    });
+    it('returns true if props.classM equals "No"', function() {
+      let props = {
+        classM: 'No'
+      };
+      assert.equal(noClassM(props), true);
     });
   });
 

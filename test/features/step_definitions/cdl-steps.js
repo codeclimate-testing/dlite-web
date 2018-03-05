@@ -68,6 +68,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I select No to getting a motorcycle class', function(done) {
+    browser
+      .click('label[for="classM-No"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am applying for a new CDL', function(done) {
     browser
       .text()
@@ -103,6 +110,16 @@ module.exports = function(world) {
       .text()
       .then(text => {
         assert.ok(text.includes('CDL number:DMV2000'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see that I am not getting a motorcycle class', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert.ok(text.includes('Motorcycle on CDLNo'));
       })
       .then(() => { done(); })
       .catch(done);

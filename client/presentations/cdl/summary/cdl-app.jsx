@@ -8,6 +8,8 @@ import CdlAction            from './cdl-action.jsx';
 import { CurrentCardInfo }  from '../../conclusion/summary/current-card-info.jsx';
 import RealID               from '../../conclusion/summary/real-id.jsx';
 import { hasValue }         from '../../../helpers/data/validations';
+import Motorcycle           from './motorcycle.jsx';
+
 
 const CDLApp = (props) => {
   let cdl         = props.cdl;
@@ -34,6 +36,11 @@ const CDLApp = (props) => {
         summary           = 'cdlSummary'
         editKey           = 'cdlCurrentCard'
         title             = 'CDL number:'
+      />
+      <Motorcycle
+        classM            = { cdl.classM }
+        locale            = { locale }
+        title             = 'Motorcycle on CDL'
       />
     </Accordion>
   )

@@ -93,7 +93,7 @@ Scenario: New CDL
 
 Scenario: Renewing a CDL
     Given I go to the new online DL application page
-    When I go to the CDL WDYWTDT page
+    When I visit the CDL WDYWTDT page
     When I select a renewal CDL
     And I click "Next" to continue
     Then I will be on the current CDL page
@@ -104,9 +104,12 @@ Scenario: Renewing a CDL
     And I enter my full social security number
     And I click "Next" to continue
     Then I will be on the CDL Real ID page
+    When I visit the CDL motorcycle license page
+    And I select No to getting a motorcycle class
     When I go to the CDL summary
     Then I will see that I am renewing my card
     And I will see my current CDL number
+    And I will see that I am not getting a motorcycle class
 
 Scenario: Updating my CDL
     Given I go to the new online DL application page

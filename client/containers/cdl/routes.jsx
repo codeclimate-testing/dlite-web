@@ -14,6 +14,7 @@ import CardReplacement                  from './card-replacement.jsx';
 import cdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
 import cdlCurrentCard                   from './cdl-current-card.jsx';
 import cdlRealID                        from './cdl-real-id.jsx';
+import Motorcycle                       from './motorcycle.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {
@@ -30,6 +31,7 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/social-security')}        component={cdlSocialSecurity} />
       <Route path={ cdlPath('/current-ca-license')}     component={cdlCurrentLicense} />
       <Route path={ cdlPath('/real-id')}                component={cdlRealID} />
+      <Route path={ cdlPath('/motorcycle')}             component={Motorcycle} />
       <Route path={ cdlPath('/summary')}                component={Summary}     />
     </div>
   )

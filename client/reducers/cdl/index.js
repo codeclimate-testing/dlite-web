@@ -12,6 +12,7 @@ import updateSocialSecurity         from './update-social-security';
 import updateCurrentDL              from './update-current-dl';
 import updateCurrentCard            from './update-current-card';
 import updateRealID                 from './update-real-id';
+import updateMotorcycle             from './update-motorcycle';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
   history                 : combineReducers({
     currentDLInfo         : updateCurrentDL
   }),
-  currentCardInfo         : updateCurrentCard
+  currentCardInfo         : updateCurrentCard,
+  classM                  : updateMotorcycle
 });
 
 export default rootReducer;

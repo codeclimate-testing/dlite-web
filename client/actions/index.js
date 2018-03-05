@@ -69,6 +69,7 @@ export const TYPES = {
   UPDATE_CDL_CHANGES:                     'UPDATE_CDL_CHANGES',
   UPDATE_CDL_CARD_REPLACEMENT:            'UPDATE_CDL_CARD_REPLACEMENT',
   UPDATE_CDL_REAL_ID:                     'UPDATE_CDL_REAL_ID',
+  UPDATE_CDL_MOTORCYCLE:                  'UPDATE_CDL_MOTORCYCLE',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -136,6 +137,7 @@ export const updateCDLChanges                         = generateFormAction(TYPES
 export const updateCdlSocialSecurity                  = generateFormAction(TYPES.UPDATE_CDL_SOCIAL_SECURITY);
 export const updateCDLCardReplacement                 = generateFormAction(TYPES.UPDATE_CDL_CARD_REPLACEMENT);
 export const updateCDLRealID                          = generateFormAction(TYPES.UPDATE_CDL_REAL_ID);
+export const updateCDLMotorcycle                      = generateFormAction(TYPES.UPDATE_CDL_MOTORCYCLE);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

@@ -50,3 +50,11 @@ export const noCardTypeArray = (props) => {
 export const noSSN = (props) => {
   return props.hasSocialSecurity === 'No';
 };
+
+export const yesClassM = (props) => {
+  return props.classM === 'Yes';
+};
+
+export const noClassM = (props) => {
+  return props.classM === 'No';
+};
