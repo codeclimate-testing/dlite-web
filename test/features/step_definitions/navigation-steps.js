@@ -62,6 +62,11 @@ module.exports = function(world) {
   world.when('I go to the page to specify my changes to my CDL', function(done) {
     navigateToPath('/apply/cdl/change-details', '.choose-card-change', done);
   });
+
+  world.when('I go to the page to specify my changes to my CDL', function(done) {
+    navigateToPath('/apply/cdl/change-details', '.choose-card-change', done);
+  });
+
   world.when('I go to the CDL WDYWTDT page', function(done) {
     navigateToPath('/apply/cdl/what-do-you-want-to-do-today', '.choose-card-action', done);
   });
@@ -252,6 +257,10 @@ module.exports = function(world) {
 
   world.when('I will be on the page to specify my changes to my CDL', function(done) {
     assertOnPage('.choose-card-change', /apply\/cdl\/change-details/, done);
+  });
+
+  world.when('I will be on the page to select reason for replacing my CDL', function(done) {
+    assertOnPage('.choose-replacement-detail', /apply\/cdl\/replacement-details/, done);
   });
 
   world.when('I will be on the IDDL welcome page', function(done) {

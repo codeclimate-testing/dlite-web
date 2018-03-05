@@ -37,6 +37,12 @@ const cdl = [
     next: cdlCurrentCard
   },
   {
+    key: 'cdlCardReplacement',
+    description: 'CDL Replacement Details',
+    path: '/replacement-details',
+    next: 'cdlResidency'
+  },
+  {
     key: 'cdlChanges',
     description: 'make updates and corrections',
     path: '/change-details',

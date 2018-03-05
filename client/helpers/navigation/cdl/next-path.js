@@ -19,5 +19,9 @@ export const cdlCurrentCard = (props) => {
   if (isChangingCard(props)) {
     key = 'cdlChanges';
   }
+  if (isReplacingCard(props)) {
+    key = 'cdlCardReplacement';
+  }
   return key;
 };
+

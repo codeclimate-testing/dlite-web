@@ -41,7 +41,7 @@ describe('CDL next-paths', function() {
 
     it('returns "cdlResidency" if user is replacing a card', function() {
       props.cardAction = 'replace';
-      assert.equal(cdlCurrentCard(props), 'cdlResidency');
+      assert.equal(cdlCurrentCard(props), 'cdlCardReplacement');
     });
 
     it('returns "cdlChanges" if user is changing a card', function() {

@@ -67,6 +67,7 @@ export const TYPES = {
   UPDATE_CDL_CURRENT_DL:                  'UPDATE_CDL_CURRENT_DL',
   UPDATE_CURRENT_CDL:                     'UPDATE_CURRENT_CDL',
   UPDATE_CDL_CHANGES:                     'UPDATE_CDL_CHANGES',
+  UPDATE_CDL_CARD_REPLACEMENT:            'UPDATE_CDL_CARD_REPLACEMENT',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -132,6 +133,7 @@ export const updateCdlCurrentDL                       = generateFormAction(TYPES
 export const updateCurrentCDL                         = generateFormAction(TYPES.UPDATE_CURRENT_CDL);
 export const updateCDLChanges                         = generateFormAction(TYPES.UPDATE_CDL_CHANGES);
 export const updateCdlSocialSecurity                  = generateFormAction(TYPES.UPDATE_CDL_SOCIAL_SECURITY);
+export const updateCDLCardReplacement                 = generateFormAction(TYPES.UPDATE_CDL_CARD_REPLACEMENT);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

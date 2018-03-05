@@ -47,9 +47,23 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.when('I select to replace my CDL', function(done) {
+    browser
+      .click('label[for="cdlWDYWTDT -replace"]')
+      .then(done)
+      .catch(done);
+  });
+
   world.when('I click to change my name section', function(done) {
     browser
       .click('label[for="name"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I select my reason for replacing my CDL', function(done) {
+    browser
+      .click('label[for="reason-lostOrStolen"]')
       .then(done)
       .catch(done);
   });

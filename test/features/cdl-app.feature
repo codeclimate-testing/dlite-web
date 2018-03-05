@@ -25,9 +25,8 @@ Scenario: Navigating to the new page
   When I click to go back
   Then I will be on the page to choose application
   When I select a regular ID or DL application
-  And I click "Next" to continue
-  Then I will be on the IDDL welcome page
-
+  And I click "Next" to continue 
+  Then I will be on the IDDL welcome page 
 
 Scenario: Name page
   Given I go to the new online DL application page
@@ -126,9 +125,16 @@ Scenario: Updating my CDL
     When I go to the CDL summary
     Then I will see that I am updating my card
 
-Scenario: Renewing a CDL
+Scenario: Replacing my CDL
   Given I go to the new online DL application page
-  When I go to the CDL WDYWTDT page
-  When I select a renewal CDL
+  When I visit the CDL WDYWTDT page
+  And I select to replace my CDL
   And I click "Next" to continue
   Then I will be on the current CDL page
+  When I enter my driver license number
+  And I enter the date of DL/ID expiration
+  And I click "Next" to continue
+  Then I will be on the page to select reason for replacing my CDL
+  Then I select my reason for replacing my CDL
+  And I click "Next" to continue
+  Then I will be on the residency page
