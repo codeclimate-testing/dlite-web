@@ -28,19 +28,47 @@ describe('CDL Summary My Basics section', function() {
             year:         '',
             isIssued:     '',
             issuedBy:     ''
+          },
+          medicalHistory: {
+            hasMedicalCondition: '',
+            medicalInfo: ''
           }
         }
       }
     };
-    component = render(
-      <Wrapper>
-        <MyHistory { ...props } />
-      </Wrapper>
-    );
+
+  });
+
+  describe('#medical history', function() {
+    it('does not render if no selection made', function() {
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Medical conditions:'))
+    });
+
+    it('shows the medical info text if user selected Yes to having a medical condition', function() {
+      let testString = 'missing toenails';
+      props.cdl.history.medicalHistory.hasMedicalCondition = 'Yes';
+      props.cdl.history.medicalHistory.medicalInfo = testString;
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes(testString));
+    });
   });
 
   describe('#Current DL Info', function() {
     it('does not render if no info provided', function() {
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
       assert.ok(!component.text().includes('Current DL number:'))
     });
 

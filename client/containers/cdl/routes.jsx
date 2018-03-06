@@ -5,8 +5,6 @@ import { Route }                        from 'react-router-dom';
 import { cdlPath }                      from '../../helpers/alice-path';
 import CDLWelcome                       from './cdl-welcome.jsx';
 import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
-import PhysicalTraits                   from './my-basics/cdl-physical-traits.jsx';
-import HeightWeight                     from './my-basics/cdl-height-weight.jsx';
 import LegalName                        from './my-basics/cdl-legal-name.jsx';
 import cdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
 import Residency                        from './my-basics/cdl-residency.jsx';
@@ -19,6 +17,7 @@ import cdlRealID                        from './cdl-real-id.jsx';
 import Motorcycle                       from './motorcycle.jsx';
 import LicenseClass                     from './license-class.jsx';
 import cdlCertification                 from './cdl-certification.jsx';
+import MyBasics                         from './my-basics/routes.jsx';
 import CDLHistory                       from './my-history/routes.jsx';
 import Summary                          from './cdl-summary.jsx';
 
@@ -42,8 +41,7 @@ const CDLRoutes = () => {
 
       <CDLHistory />
 
-      <Route path={ cdlPath('/physical-traits')}                component={PhysicalTraits} />
-      <Route path={ cdlPath('/traits-height-weight')}           component={HeightWeight} />
+      <MyBasics />
 
       <Route path={ cdlPath('/summary')}                        component={Summary}     />
     </div>

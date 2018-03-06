@@ -77,6 +77,9 @@ const Home = () => {
         <LinkSection name='CDL Get Started'>
           { wrapGroup(linkData.cdl) }
         </LinkSection>
+        <LinkSection name='CDL Basics'>
+          { wrapGroup(linkData.cdlBasics)}
+        </LinkSection>
         <LinkSection name='CDL History'>
           { wrapGroup(linkData.cdlHistory) }
         </LinkSection>
