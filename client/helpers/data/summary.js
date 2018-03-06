@@ -5,10 +5,6 @@ import translations         from '../../i18n';
 import { hasSelectedClass } from './cards';
 import { DLAppExists }      from './card-type';
 
-export const hideMain = (props) => {
-  return props.server.apiStatus === 'loading' ? 'hide' : '';
-};
-
 export const getErrorMessage = (props) => {
   return props.server.apiStatus === 'error' ? 'Sorry, something went wrong' : '';
 };

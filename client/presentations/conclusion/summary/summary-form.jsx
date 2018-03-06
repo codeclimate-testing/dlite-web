@@ -8,7 +8,7 @@ import SubmitButton         from './submit-button.jsx';
 import {
   hideMain,
   getErrorMessage
-} from '../../../helpers/data/summary';
+} from '../../../helpers/data/api';
 
 import {
   ErrorMessageBox
@@ -22,7 +22,7 @@ const SummaryForm = (props) => {
 
       <form
         onSubmit  = { props.onSubmit }
-        className ={hideMain(props)}
+        className ={ hideMain(props) }
       >
         <Translate tag='h2'>
           { translations[locale].summaryPage.prompt}
