@@ -8,8 +8,8 @@ function extractVotingRegistrations(data) {
   const voterChoice = voterChoiceConverter.clientToDBMapping(data.voting.optOut);
   return {
     application_id:     data.id,
-    is_citizen:         parserHelper.strToBool(data.voting.citizenStatus),
-    is_eligible:        parserHelper.strToBool(data.voting.eligibilityRequirements),
+    is_citizen:         data.voting.citizenStatus,
+    is_eligible:        data.voting.eligibilityRequirements,
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     party:              parserHelper.parseParty(data.voting.politicalPartyChoose),

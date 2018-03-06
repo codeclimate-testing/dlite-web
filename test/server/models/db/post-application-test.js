@@ -590,8 +590,8 @@ describe('Post Application Data', () => {
     });
 
     it('updates existing records', (done) => {
-      data.is_citizen         = false;
-      data.is_eligible        = false;
+      data.is_citizen         = 'No';
+      data.is_eligible        = 'No';
       data.type               = 'existing';
       data.opted_out          = true;
       data.party              = 'Peace Party';

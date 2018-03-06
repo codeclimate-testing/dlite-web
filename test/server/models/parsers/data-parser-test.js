@@ -26,9 +26,9 @@ describe('dataParser', function() {
   });
 
   describe('stringToBool', function() {
-    it('returns "decline" when data equals "decline"', function() {
+    it('returns "null" when data equals "decline"', function() {
       let val = 'decline';
-      assert.equal(dataParser.strToBool(val), 'decline');
+      assert.equal(dataParser.strToBool(val), null);
     });
 
     it('returns null when data is unrecognized', function() {
@@ -48,9 +48,9 @@ describe('dataParser', function() {
   });
 
   describe('boolToStr', function() {
-    it('returns "decline" when data equals "decline"', function() {
-      let val = "decline";
-      assert.equal(dataParser.boolToStr(val), 'decline');
+    it('returns empty string when data equals null', function() {
+      let val = null;
+      assert.equal(dataParser.boolToStr(val), '');
     });
 
     it('returns "No" when data is false', function() {

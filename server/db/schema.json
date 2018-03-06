@@ -822,7 +822,7 @@
           "column_name": "is_citizen",
           "column_default": null,
           "is_nullable": true,
-          "data_type": "boolean",
+          "data_type": "string",
           "col_description": null
         },
         "is_eligible": {
@@ -831,7 +831,7 @@
           "column_name": "is_eligible",
           "column_default": null,
           "is_nullable": true,
-          "data_type": "boolean",
+          "data_type": "string",
           "col_description": null
         },
         "type": {

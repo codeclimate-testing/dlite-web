@@ -1,9 +1,9 @@
 'use strict';
-const parserHelper          = require('./data-parser');
+const parserHelper          = require('../data-parser');
 const getCardInfo           = require('./get-current-card-info');
 
-function getDLApp(cards, card_options, card_histories, license_classes) {
-  let DLApp = {
+function DLApp(cards, card_options, card_histories, license_classes) {
+  let DLAppObject = {
     isApplying:               false,
     action:                   '',
     licenseType:              getLicenseType(license_classes),
@@ -25,41 +25,41 @@ function getDLApp(cards, card_options, card_histories, license_classes) {
   });
 
   if (DLCard.length > 0) {
-    DLApp.isApplying = true;
+    DLAppObject.isApplying = true;
     cardOptions.forEach(option => {
 
       // action
       if (option.option_type === 'action') {
-        DLApp.action = option.option_value;
+        DLAppObject.action = option.option_value;
       }
 
       // real ID
       if (option.option_value === 'real-id') {
-        DLApp.realID = 'Yes';
+        DLAppObject.realID = 'Yes';
       }
 
       // card changes and replacements
-      if (DLApp.action === 'change'){
+      if (DLAppObject.action === 'change'){
         if (option.option_value === 'modification' && option.option_value.split('-')[0] === 'change') {
           let value = option.option_value.split('-');
-          DLApp.cardChanges = {
+          DLAppObject.cardChanges = {
             correctOrUpdate: value[1],
             sections: value[2].split('_'),
             other: value[3]
           }
         }
-      } else if (DLApp.action === 'replace') {
+      } else if (DLAppObject.action === 'replace') {
         let value = option.option_value.split('-');
         if (option.option_value === 'modification' && value[0] === 'replace') {
-          DLApp.replacementDetails = {
+          DLAppObject.replacementDetails = {
             reason: value[1]
           }
         }
       }
     });
   }
-  DLApp.currentCard = getCardInfo(card_histories, DLApp.action);
-  return DLApp;
+  DLAppObject.currentCard = getCardInfo(card_histories, DLAppObject.action);
+  return DLAppObject;
 };
 
 
@@ -82,4 +82,4 @@ function getLicenseType(license_classes) {
   return licenseType;
 }
 
-module.exports = getDLApp;
+module.exports = DLApp;

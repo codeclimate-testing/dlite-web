@@ -222,8 +222,8 @@ describe('client data parser', function() {
     it('correctly extracts the voting registrations', function() {
       let votingReg = parsedData.voting_registrations;
       assert.equal(votingReg.application_id, data.id);
-      assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.voting.citizenStatus));
-      assert.equal(votingReg.is_eligible, parserHelper.strToBool(data.voting.eligibilityRequirements));
+      assert.equal(votingReg.is_citizen, data.voting.citizenStatus);
+      assert.equal(votingReg.is_eligible, data.voting.eligibilityRequirements);
       assert.equal(votingReg.type, 'new');
       assert.equal(votingReg.opted_out, false);
       assert.equal(votingReg.party, data.voting.politicalPartyChoose.politicalPartyChoose);
@@ -232,12 +232,12 @@ describe('client data parser', function() {
       assert.equal(votingReg.should_contact, parserHelper.strToBool(data.voting.contactMethods.shouldContact));
     });
 
-    it('saves citizenship and eligibility decline to answer as decline instead of false', function() {
+    it('saves citizenship and eligibility decline to answer as "decline" string', function() {
       data.voting.citizenStatus = 'decline';
       data.voting.eligibilityRequirements = 'decline';
       parsedData = parse(data);
       let votingReg = parsedData.voting_registrations;
-      assert.equal(votingReg.is_citizen, parserHelper.strToBool(data.voting.citizenStatus));
+      assert.equal(votingReg.is_citizen, data.voting.citizenStatus);
       assert.equal(votingReg.is_citizen, 'decline');
       assert.equal(votingReg.is_eligible, 'decline');
     });

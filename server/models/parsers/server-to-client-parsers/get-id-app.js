@@ -1,9 +1,9 @@
 'use strict';
-const parserHelper        = require('./data-parser');
+const parserHelper        = require('../data-parser');
 const getCardInfo         = require('./get-current-card-info');
 
-function getIDApp(cards, card_options, card_histories) {
-  let IDApp = {
+function IDApp(cards, card_options, card_histories) {
+  let IDAppObject = {
     isApplying:           false,
     action:               '',
     reducedFee:           {
@@ -31,55 +31,55 @@ function getIDApp(cards, card_options, card_histories) {
 
 
   if (IDCard.length > 0) {
-    IDApp.isApplying = true;
+    IDAppObject.isApplying = true;
     cardOptions.forEach(option => {
       // action
       if (option.option_type === 'action') {
-        IDApp.action = option.option_value;
+        IDAppObject.action = option.option_value;
       }
 
       // reduced fee
       if(option.option_value === 'reduced-fee-has-form') {
-        IDApp.reducedFee.ID = 'Yes';
-        IDApp.reducedFee.form = 'Yes';
+        IDAppObject.reducedFee.ID = 'Yes';
+        IDAppObject.reducedFee.form = 'Yes';
       }
       else if(option.option_value === 'reduced-fee-no-form') {
-        IDApp.reducedFee.ID = 'Yes';
-        IDApp.reducedFee.form = 'No';
+        IDAppObject.reducedFee.ID = 'Yes';
+        IDAppObject.reducedFee.form = 'No';
       }
 
       // senior id
       if (option.option_value === 'senior-id'){
-        IDApp.seniorID = 'Yes';
+        IDAppObject.seniorID = 'Yes';
       }
 
       // real ID
       if (option.option_value === 'real-id') {
-        IDApp.realID = 'Yes';
+        IDAppObject.realID = 'Yes';
       }
 
       // card changes and replacements
-      if (IDApp.action === 'change'){
+      if (IDAppObject.action === 'change'){
         if (option.option_value === 'modification' && option.option_value.split('-')[0] === 'change') {
           let value = option.option_value.split('-');
-          IDApp.cardChanges = {
+          IDAppObject.cardChanges = {
             correctOrUpdate: value[1],
             sections: value[2].split('_'),
             other: value[3]
           }
         }
-      } else if (IDApp.action === 'replace') {
+      } else if (IDAppObject.action === 'replace') {
         let value = option.option_value.split('-');
         if (option.option_value === 'modification' && value[0] === 'replace') {
-          IDApp.replacementDetails = {
+          IDAppObject.replacementDetails = {
             reason: value[1]
           }
         }
       }
     });
   }
-  IDApp.currentCard = getCardInfo(card_histories, IDApp.action);
-  return IDApp;
+  IDAppObject.currentCard = getCardInfo(card_histories, IDAppObject.action);
+  return IDAppObject;
 };
 
-module.exports = getIDApp;
+module.exports = IDApp;
