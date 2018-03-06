@@ -4,7 +4,7 @@ const assert = require('assert');
 
 import {
   summary
-} from '../../../../client/helpers/navigation/conclusion/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/conclusion/next-path';
 
 
 describe('Data helpers for determining next path from current page and props', function() {

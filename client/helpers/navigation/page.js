@@ -5,8 +5,11 @@ import { goToSummary }  from '../data/pathnames';
 
 const all = Object.keys(sections).reduce((keyedObject, sectionName) => {
   let section = sections[sectionName];
-  section.forEach((object) => {
-    keyedObject[object.key] = object;
+
+  Object.values(section).forEach((array) => {
+    array.forEach(object => {
+      keyedObject[object.key] = object;
+    });
   });
   return keyedObject;
 }, {});

@@ -4,7 +4,7 @@ const assert = require('assert');
 
 import {
   socialSecurity
-} from '../../../../client/helpers/navigation/my-basics/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/my-basics/next-path';
 
 const today = new Date();
 const bothCards = {

@@ -1,7 +1,7 @@
 'use strict';
 
 import assert               from 'assert';
-import updateResidency      from '../../../../client/reducers/cdl/update-residency';
+import updateResidency      from '../../../../client/reducers/cdl/basics/update-residency';
 
 
 describe('CDL Residency reducer', function() {

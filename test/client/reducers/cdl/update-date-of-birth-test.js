@@ -1,7 +1,7 @@
 'use strict';
 
 import assert         from 'assert';
-import updateDOB      from '../../../../client/reducers/cdl/update-date-of-birth';
+import updateDOB      from '../../../../client/reducers/cdl/basics/update-date-of-birth';
 
 
 describe('CDL DOB reducer', function() {

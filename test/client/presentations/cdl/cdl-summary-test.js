@@ -63,6 +63,10 @@ describe('CDL Summary page', function() {
             year:         '',
             isIssued:     '',
             issuedBy:     ''
+          },
+          medicalHistory: {
+            hasMedicalCondition: '',
+            medicalInfo: ''
           }
         }
       },

@@ -6,7 +6,7 @@ import {
   citizenship,
   votingEligibility,
   optOut
-} from '../../../../client/helpers/navigation/voter-registration/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/voter-registration/next-path';
 
 const today = new Date();
 const isPrereg = (today.getFullYear() - 17).toString();

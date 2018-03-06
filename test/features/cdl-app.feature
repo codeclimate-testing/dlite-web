@@ -77,7 +77,9 @@ Scenario: New CDL
   And I select Class A
 
   When I visit the self cert page for CDL
-  When I click to drive interstate
+  And I click to drive interstate
+  When I click "Next" to continue
+  Then I will be on the page to add a motorcycle class
 
   When I go to the CDL summary
   And I will see my name on that summary

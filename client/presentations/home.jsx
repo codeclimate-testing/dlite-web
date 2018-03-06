@@ -8,7 +8,7 @@ import linkData from '../helpers/navigation/pages';
 const LinkListItem = (props) => {
   let className = props.description.replace(/\s+/g, '-');
   return (
-    <li>
+    <li style={{padding: '0px'}}>
       <Link className={className} to={ props.path }>{props.description}</Link>
     </li>
   );
@@ -26,7 +26,7 @@ const wrapGroup = (listItems) => {
 
 const LinkSection = (props) => {
   return (
-    <li style={{marginLeft: '20px'}}>
+    <li style={{padding: '0px'}}>
       <h4>{props.name}</h4>
       <ul>
         { props.children }
@@ -41,49 +41,54 @@ const Home = () => {
     <div>
       <h2 className='question'>Pages</h2>
       <ul className='section-links'>
+
+        <h3>Shared</h3>
         <LinkSection name='Intro'>
-          { wrapGroup(linkData.intro) }
+          { wrapGroup(linkData.shared.intro) }
         </LinkSection>
 
         <hr/>
         <h3>ID/DL App</h3>
         <LinkSection name='Get started'>
-          { wrapGroup(linkData.getStarted) }
+          { wrapGroup(linkData.iddl.getStarted) }
         </LinkSection>
         <LinkSection name='My basics'>
-          { wrapGroup(linkData.myBasics) }
+          { wrapGroup(linkData.iddl.basics) }
         </LinkSection>
         <LinkSection name='My history'>
-          { wrapGroup(linkData.myHistory) }
+          { wrapGroup(linkData.iddl.myHistory) }
         </LinkSection>
         <LinkSection name='Organ donation'>
-          { wrapGroup(linkData.organDonation) }
+          { wrapGroup(linkData.iddl.organDonation) }
         </LinkSection>
         <LinkSection name='Voting registration'>
-          { wrapGroup(linkData.voterRegistration) }
+          { wrapGroup(linkData.iddl.voterRegistration) }
         </LinkSection>
-        <LinkSection name='Conclusion'>
-          { wrapGroup(linkData.conclusion) }
+        <LinkSection name='IDDL Conclusion'>
+          { wrapGroup(linkData.iddl.conclusion) }
         </LinkSection>
         <LinkSection name='Add DL'>
-          { wrapGroup(linkData.addDLCard) }
+          { wrapGroup(linkData.iddl.addDL) }
         </LinkSection>
         <LinkSection name='Add ID'>
-          { wrapGroup(linkData.addIDCard) }
+          { wrapGroup(linkData.iddl.addID) }
         </LinkSection>
 
         <hr/>
         <h3>CDL App</h3>
         <LinkSection name='CDL Get Started'>
-          { wrapGroup(linkData.cdl) }
+          { wrapGroup(linkData.cdl.getStarted) }
         </LinkSection>
         <LinkSection name='CDL Basics'>
-          { wrapGroup(linkData.cdlBasics)}
+          { wrapGroup(linkData.cdl.basics)}
         </LinkSection>
         <LinkSection name='CDL History'>
-          { wrapGroup(linkData.cdlHistory) }
+          { wrapGroup(linkData.cdl.myHistory) }
         </LinkSection>
 
+        <LinkSection name='CDL Conclusion'>
+          { wrapGroup(linkData.cdl.conclusion) }
+        </LinkSection>
       </ul>
     </div>
   );

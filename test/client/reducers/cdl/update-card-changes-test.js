@@ -1,7 +1,7 @@
 'use strict';
 
 import assert           from 'assert';
-import updateChanges    from '../../../../client/reducers/cdl/update-card-changes';
+import updateChanges    from '../../../../client/reducers/cdl/get-started/update-card-changes';
 
 
 describe('CDL update card changes reducer', function() {

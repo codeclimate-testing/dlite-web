@@ -1,7 +1,7 @@
 'use strict';
 
 import assert         from 'assert';
-import updateName     from '../../../../client/reducers/cdl/update-legal-name';
+import updateName     from '../../../../client/reducers/cdl/basics/update-legal-name';
 
 const changeFirstName = {
   name: 'firstName',

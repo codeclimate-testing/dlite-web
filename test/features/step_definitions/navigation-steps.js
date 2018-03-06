@@ -288,6 +288,9 @@ module.exports = function(world) {
     assertOnPage('.real-id-form', /apply\/cdl\/real-id/, done);
   });
 
+  world.when('I will be on the page to add a motorcycle class', function(done) {
+    assertOnPage('.cdl-class-m', /apply\/cdl\/motorcycle/, done);
+  });
 
   world.when('I will be on the IDDL welcome page', function(done) {
     assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);

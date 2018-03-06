@@ -7,7 +7,7 @@ import {
   addCurrentIDInfo,
   addChangedID,
   addSeniorID
-} from '../../../../client/helpers/navigation/add-id/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/add-id/next-path';
 
 describe('Add ID Card next-paths', function() {
   let props;

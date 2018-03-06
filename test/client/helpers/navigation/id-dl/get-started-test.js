@@ -9,7 +9,7 @@ import {
   replacementDetails,
   realID,
   chooseLicenseClass
-} from '../../../../client/helpers/navigation/get-started/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/get-started/next-path';
 
 const today = new Date();
 const bothCards = {

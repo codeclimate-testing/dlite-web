@@ -8,7 +8,7 @@ import {
 import {
   eligibleForSeniorID,
   gettingSeniorID
-}    from '../../data/senior';
+}    from '../../../data/senior';
 
 export const addIDWdywtdt = (props) => {
   let key = 'addReducedFee';

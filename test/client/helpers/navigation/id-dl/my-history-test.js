@@ -5,7 +5,7 @@ const assert = require('assert');
 import {
   medicalHistory,
   nameHistory
-} from '../../../../client/helpers/navigation/my-history/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/my-history/next-path';
 
 
 function buildCardType(type, action){

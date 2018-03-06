@@ -9,6 +9,14 @@ import conclusion         from './conclusion/pages';
 import addID              from './add-id/pages';
 import addDL              from './add-dl/pages';
 
-const iddl = getStarted.concat(basics, myHistory, organDonation, voterRegistration, addID, addDL, conclusion);
 
-export default iddl;
+export {
+  getStarted,
+  basics,
+  myHistory,
+  organDonation,
+  voterRegistration,
+  conclusion,
+  addID,
+  addDL
+};

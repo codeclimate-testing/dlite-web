@@ -5,9 +5,9 @@ import {
   addPath,
   cdlPath
 } from '../alice-path';
-import intro                from './intro/pages';
-import iddl                 from './id-dl/pages';
-import cdl                  from './cdl/pages';
+import shared               from './intro/pages';
+import * as iddl            from './id-dl/pages';
+import * as cdl             from './cdl/pages';
 
 const expand = (collection, action) => {
   return collection.map((item) => {
@@ -17,8 +17,24 @@ const expand = (collection, action) => {
 };
 
 export default {
-  intro             : expand(intro, alicePath),
-  iddl              : expand(iddl, iddlPath),
-  cdl               : expand(cdl, cdlPath)
+  shared              : {
+    intro             : expand(shared, alicePath)
+  },
+  iddl                : {
+    getStarted        : expand(iddl.getStarted, iddlPath),
+    basics            : expand(iddl.basics, iddlPath),
+    myHistory         : expand(iddl.myHistory, iddlPath),
+    organDonation     : expand(iddl.organDonation, iddlPath),
+    voterRegistration : expand(iddl.voterRegistration, iddlPath),
+    conclusion        : expand(iddl.conclusion, iddlPath),
+    addID             : expand(iddl.addID, addPath),
+    addDL             : expand(iddl.addDL, addPath)
+  },
+  cdl                 : {
+    getStarted        : expand(cdl.getStarted, cdlPath),
+    basics            : expand(cdl.basics, cdlPath),
+    myHistory         : expand(cdl.myHistory, cdlPath),
+    conclusion        : expand(cdl.conclusion, cdlPath)
+  }
 };
 

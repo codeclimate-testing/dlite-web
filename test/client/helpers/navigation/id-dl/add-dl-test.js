@@ -6,7 +6,7 @@ import {
   addWdywtdt,
   addCurrentCardInfo,
   addMedicalHistory
-} from '../../../../client/helpers/navigation/add-dl/next-path';
+} from '../../../../../client/helpers/navigation/id-dl/add-dl/next-path';
 
 
 describe('Add-DL next paths', function() {

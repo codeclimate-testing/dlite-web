@@ -7,7 +7,7 @@ import {
   cdlCurrentCard,
   cdlSSN,
   cdlCertification
-} from '../../../../client/helpers/navigation/cdl/next-path';
+} from '../../../../../client/helpers/navigation/cdl/get-started/next-path';
 
 describe('CDL next-paths', function() {
   let props;
