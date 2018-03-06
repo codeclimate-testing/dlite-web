@@ -32,3 +32,11 @@ export const cdlSSN = (props) => {
   }
   return key;
 };
+
+export const cdlCertification = (props) => {
+  let key = 'cdlSummary';
+  if (!hasExistingCard(props)) {
+    key = 'motorcycle';
+  }
+  return key;
+};

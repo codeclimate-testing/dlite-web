@@ -28,6 +28,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     focused:        state.ui.focus,
+    cardAction:     state.cdl.cardAction,
     dateOfBirth:    state.cdl.basics.dateOfBirth,
     certification:  state.cdl.certification,
     locale:         state.ui.locale,

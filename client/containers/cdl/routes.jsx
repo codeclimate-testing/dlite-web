@@ -41,7 +41,6 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
       <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
       <Route path={ cdlPath('/summary')}                        component={Summary}     />
-      <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
     </div>
   )
 };

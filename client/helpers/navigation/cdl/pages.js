@@ -3,7 +3,8 @@
 import {
   cdlWdywtdt,
   cdlCurrentCard,
-  cdlSSN
+  cdlSSN,
+  cdlCertification
 } from './next-path';
 
 const cdl = [
@@ -24,18 +25,6 @@ const cdl = [
     description: 'Date of Birth',
     path: '/date-of-birth',
     next: 'cdlWdywtdt'
-  },
-  {
-    key: 'cdlSexEyeHair',
-    description: 'Physical Traits',
-    path: '/physical-traits',
-    next: 'cdlHeightWeight'
-  },
-  {
-    key: 'cdlHeightWeight',
-    description: 'Height and Weight',
-    path: '/traits-height-weight',
-    next: ''
   },
   {
     key: 'cdlWdywtdt',
@@ -83,25 +72,37 @@ const cdl = [
     key: 'cdlRealID',
     description: 'realID',
     path: '/real-id',
-    next: 'cdlSummary'
+    next: 'cdlClass'
   },
   {
     key: 'cdlClass',
     description: 'CDL class',
     path: '/license-class',
-    next: ''
-  },
-  {
-    key: 'motorcycle',
-    description: 'add classM to cdl',
-    path: '/motorcycle',
-    next: ''
+    next: '' //next will go to endorsements page
   },
   {
     key: 'cdlCertification',
     description: 'self-certification inter/intra-state',
     path: '/self-certification',
-    next: ''
+    next: cdlCertification
+  },
+  {
+    key: 'motorcycle',
+    description: 'add classM to cdl',
+    path: '/motorcycle',
+    next: '' //next will go to get started summary page
+  },
+  {
+    key: 'cdlSexEyeHair',
+    description: 'Physical Traits',
+    path: '/physical-traits',
+    next: 'cdlHeightWeight'
+  },
+  {
+    key: 'cdlHeightWeight',
+    description: 'Height and Weight',
+    path: '/traits-height-weight',
+    next: 'cdlCertification'
   },
   {
     key: 'cdlSummary',
