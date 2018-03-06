@@ -41,9 +41,14 @@ let veteransIdentifier = (props) => {
   }
 }
 
+let militaryWaiver = (props) => {
+  return selectionValidator('selectionMissing', 'veteransService', 'militaryWaiver')(props)
+}
+
 export default {
-  isVeteran: selectionValidator('veteranSelectionMissing', 'veteransService', 'isVeteran'),
-  receiveBenefits: receiveBenefits,
-  veteransDesignation: veteransDesignation,
-  veteransIdentifier: veteransIdentifier
+  isVeteran:            selectionValidator('veteranSelectionMissing', 'veteransService', 'isVeteran'),
+  receiveBenefits:      receiveBenefits,
+  veteransDesignation:  veteransDesignation,
+  veteransIdentifier:   veteransIdentifier,
+  militaryWaiver:       militaryWaiver
 };

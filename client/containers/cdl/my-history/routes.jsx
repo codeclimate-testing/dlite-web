@@ -10,6 +10,7 @@ import MedicalHistory               from './medical-history.jsx';
 import NamesHistory                 from './names-history.jsx';
 import OtherStateLicenses           from './other-state-licenses.jsx';
 import LicenseIssues                from './license-issues.jsx';
+import VeteransService              from './cdl-veterans-service.jsx';
 
 const CDLHistory = () => {
   return (
@@ -25,6 +26,9 @@ const CDLHistory = () => {
 
       <Route path={ cdlPath('/my-history/issues')}                        component={LicenseIssues}  />
       <Route path={ editCDLPath('/my-history/issues')}                    component={LicenseIssues}  />
+
+      <Route path={ cdlPath('/my-history/veteran')}                       component={VeteransService} />
+      <Route path={ editCDLPath('/my-history/veteran')}                   component={VeteransService}  />
     </div>
   )
 };

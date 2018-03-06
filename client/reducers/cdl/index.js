@@ -34,6 +34,7 @@ import updateCurrentDL              from './my-history/update-current-dl';
 import updateNamesHistory           from './my-history/update-names-history';
 import updateOtherStateLicenses     from './my-history/update-other-state-licenses';
 import updateLicenseIssues          from './my-history/update-license-issues';
+import updateVeteransService        from './update-veterans-service';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -59,7 +60,8 @@ const rootReducer = combineReducers({
     medicalHistory        : updateMedical,
     namesHistory          : updateNamesHistory,
     otherStateLicenses    : updateOtherStateLicenses,
-    licenseIssues         : updateLicenseIssues
+    licenseIssues         : updateLicenseIssues,
+    veteransService       : updateVeteransService
   }),
   voting                    : combineReducers({
     citizenStatus           : updateCitizenStatus,

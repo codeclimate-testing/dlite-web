@@ -790,6 +790,15 @@
           "is_nullable": true,
           "data_type": "boolean",
           "col_description": null
+        },
+        "military_waiver": {
+          "table_schema": "public",
+          "table_name": "veterans_info",
+          "column_name": "military_waiver",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
         }
       }
     },

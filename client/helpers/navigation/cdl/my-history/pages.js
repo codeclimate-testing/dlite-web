@@ -27,8 +27,15 @@ const cdlHistory = [
     key: 'cdlOtherStateLicenses',
     description: 'Other State Licenses',
     path: applyOrEditCDLPath('/my-history/other-state-licenses'),
+    next: nextOrCDLSummary('cdlVeterans')
+  },
+  {
+    key: 'cdlVeterans',
+    description: 'Veterans Service',
+    path: applyOrEditCDLPath('/my-history/veteran'),
     next: nextOrCDLSummary('cdlOrganDonation')
   }
+
 ];
 
 export default cdlHistory;
