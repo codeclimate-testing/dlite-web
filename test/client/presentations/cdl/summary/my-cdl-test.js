@@ -31,7 +31,11 @@ describe('CDL Summary My CDL Application section', function() {
           correctOrUpdate: ''
         },
         realID: '',
-        licenseClass: ''
+        licenseClass: '',
+        cdlEndorsements: {
+          type: [],
+          needEndorsement: ''
+        }
       }
     };
   });
@@ -202,5 +206,25 @@ describe('CDL Summary My CDL Application section', function() {
     });
   });
 
+  describe('#Endorsements', function() {
+    it('does not render if endorsement is not selected', function() {
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Endorsement(s)'));
+    });
 
+    it('shows selected endorsement', function() {
+      props.cdl.cdlEndorsements.needEndorsement = 'Yes';
+      props.cdl.cdlEndorsements.type = ['tank']
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Endorsement(s)Tank'));
+    });
+  });
 });

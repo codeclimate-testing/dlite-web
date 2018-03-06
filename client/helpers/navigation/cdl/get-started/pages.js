@@ -66,7 +66,13 @@ const cdlGetStarted = [
     key: 'cdlClass',
     description: 'CDL class',
     path: '/license-class',
-    next: '' //next will go to endorsements page
+    next: 'cdlEndorsements'
+  },
+  {
+    key: 'cdlEndorsements',
+    description: 'CDL Endorsements',
+    path: '/endorsements',
+    next: ''
   },
   {
     key: 'cdlCertification',

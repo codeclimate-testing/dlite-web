@@ -58,8 +58,7 @@ describe('CDL Summary page', function() {
         history: {
           currentDLInfo: {
             number:   '',
-            month:        '',
-            day:          '',
+            month:        '', day:          '',
             year:         '',
             isIssued:     '',
             issuedBy:     ''
@@ -68,6 +67,10 @@ describe('CDL Summary page', function() {
             hasMedicalCondition: '',
             medicalInfo: ''
           }
+        },
+        cdlEndorsements: {
+          type: [],
+          needEndorsement: ''
         }
       },
       server: '',

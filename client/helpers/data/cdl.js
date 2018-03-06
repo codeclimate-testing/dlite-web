@@ -18,8 +18,7 @@ export const needsAddress = (props) => {
   }
   else {
     return true;
-  }
-};
+  } };
 
 export const notResident = (props) => {
   return props.isResident === 'No';
@@ -78,4 +77,8 @@ export const getCert = (props, interstate, intrastate) => {
     key = intrastate;
   }
   return key;
+};
+
+export const showCDLEndorsements = (props) => {
+  return props.needEndorsement === 'Yes';
 };

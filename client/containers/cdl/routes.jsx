@@ -11,6 +11,7 @@ import Residency                        from './my-basics/cdl-residency.jsx';
 import UpdatesAndCorrections            from './change-details.jsx';
 import cdlSocialSecurity                from './my-basics/cdl-social-security.jsx';
 import CardReplacement                  from './card-replacement.jsx';
+import cdlEndorsements                  from './cdl-endorsements.jsx';
 import cdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
 import cdlCurrentCard                   from './cdl-current-card.jsx';
 import cdlRealID                        from './cdl-real-id.jsx';
@@ -38,6 +39,7 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/motorcycle')}                     component={Motorcycle} />
       <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
       <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
+      <Route path={ cdlPath('/endorsements')}           component={cdlEndorsements} />
 
       <CDLHistory />
 

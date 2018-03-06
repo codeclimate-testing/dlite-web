@@ -11,6 +11,7 @@ import updateRealID                 from './get-started/update-real-id';
 import updateMotorcycle             from './get-started/update-motorcycle';
 import updateLicenseClass           from './get-started/update-license-class';
 import updateSelfCertification      from './get-started/update-self-cert';
+import updateCDLEndorsements        from './update-cdl-endorsements';
 
 import updateLegalName              from './basics/update-legal-name';
 import updateSocialSecurity         from './basics/update-social-security';
@@ -22,13 +23,13 @@ import updateHeightWeight           from './basics/update-traits-height-weight';
 import updateMedical                from './my-history/update-medical';
 import updateCurrentDL              from './my-history/update-current-dl';
 
-
 const rootReducer = combineReducers({
   id                      : createApplicationID,
   cardAction              : updateCardAction,
   cardChanges             : updateCardChanges,
   cardReplacement         : updateCDLCardReplacement,
   realID                  : updateRealID,
+  cdlEndorsements         : updateCDLEndorsements,
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,

@@ -43,20 +43,29 @@ module.exports = function(world) {
   world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
+
   world.when('I go to the CDL summary', function(done){
     navigateToPath('/apply/cdl/summary', '.summary', done);
   });
+
   world.when('I visit the CDL name page', function(done) {
     navigateToPath('/apply/cdl/true-name', '.legal-name-form', done);
   });
+
   world.when('I visit the CDL dob page', function(done) {
     navigateToPath('/apply/cdl/date-of-birth', '.date-of-birth-form', done);
   });
+
   world.when('I visit the CDL WDYWTDT page', function(done) {
     navigateToPath('/apply/cdl/what-do-you-want-to-do-today', '.choose-card-action', done);
   });
+
   world.when('I visit the CDL page to enter my current DL', function(done) {
     navigateToPath('/apply/cdl/current-ca-license/', '.cdl-current-dl-yes-no', done);
+  });
+
+  world.when('I visit the endorsements page', function(done) {
+    navigateToPath('/apply/cdl/endorsements/', '.cdl-endorsements-form', done);
   });
 
   world.when('I go to the page to specify my changes to my CDL', function(done) {

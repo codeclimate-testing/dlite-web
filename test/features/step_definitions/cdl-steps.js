@@ -217,4 +217,28 @@ module.exports = function(world){
       .then(done)
       .catch(done);
   });
+
+  world.when('I click yes to wanting an endorsement', function(done) {
+    browser
+      .click('label[for="needEndorsement-Yes"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click on the tank checkbox', function(done) {
+    browser
+      .click('label[for="tank"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see I selected to get a tank endorsement', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('Endorsement(s)Tank'), 'applying for new cdl missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 };

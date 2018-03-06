@@ -32,6 +32,7 @@ import contactRules             from './contact-rules';
 import ssnRules                 from './ssn-rules';
 import guardianSignatureRules   from './guardian-signature-rules';
 import selectionValidator       from './selection-validator';
+import cdlEndorsementsRules     from './cdl-endorsements-rules';
 
 export const ChooseAppValidator           = formValidationGenerator(chooseApplicationRules);
 export const NamePageValidator            = formValidationGenerator(namePageRules);
@@ -63,3 +64,4 @@ export const ContactValidator             = formValidationGenerator(contactRules
 export const SSNValidator                 = formValidationGenerator(ssnRules);
 export const GuardianSignatureValidator   = formValidationGenerator(guardianSignatureRules);
 export const SelectionValidator           = formValidationGenerator({select: selectionValidator('selectionMissing')});
+export const CDLEndorsementsValidator      = formValidationGenerator(cdlEndorsementsRules);

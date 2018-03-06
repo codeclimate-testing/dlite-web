@@ -117,6 +117,60 @@
     }
   }
 
+  &.endorsements-class {
+    .checkbox-selector .icon-region{
+      background-color: #2309C1;
+    }
+
+    &.choice-selector {
+      width: 320px;
+    }
+
+    &.selected .checkbox-selector .icon-region {
+      &.double-triple,
+      &.tank,
+      &.passenger-vehicle,
+      &.school-bus,
+      &.hazmat,
+      &.tank-hazmat,
+      &.firefighter {
+        background-image: url("/images/icons/checkbox/check.svg");
+      }
+    }
+
+    .checkbox-selector {
+      .icon-region.double-triple {
+        background-image: url("/images/icons/cdl-endorsements/T.svg");
+      }
+
+      .icon-region.tank {
+        background-image: url("/images/icons/cdl-endorsements/N.svg");
+      }
+
+      .icon-region.passenger-vehicle {
+        background-image: url("/images/icons/cdl-endorsements/P.svg");
+      }
+
+      .icon-region.school-bus {
+        background-image: url("/images/icons/cdl-endorsements/S.svg");
+      }
+
+      .icon-region.hazmat {
+        height: 65px;
+        background-image: url("/images/icons/cdl-endorsements/H.svg");
+      }
+
+      .icon-region.tank-hazmat {
+        height: 65px;
+        background-image: url("/images/icons/cdl-endorsements/X.svg");
+      }
+
+      .icon-region.firefighter {
+        background-image: url("/images/icons/cdl-endorsements/F.svg");
+      }
+    }
+  }
+
   &.eyeColor{
     .radio-selector .icon-region{
       background-image: url("/images/icons/selectors/eyeLight.svg");

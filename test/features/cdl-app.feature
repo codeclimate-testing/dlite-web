@@ -167,18 +167,26 @@ Scenario: Renewing a CDL
     And I will see my driver license number and expiration date
 
 
-Scenario: Enter my basic information
-  Given I go to the new online DL application page
-  When I visit the CDL page for entering my physical traits
-  And I select my sex
-  And I select an eye color
-  And I select a hair color
-  And I click "Next" to continue
-  Then I will be on the CDL page for entering my height and weight
-  And I enter my traits
-  When I go to the CDL summary
-  Then I will see my sex in the summary
-  And I will see my eye color in the summary
-  And I will see my hair color in the summary
-  And I will see my height on that summary
-  And I will see my weight on that summary
+  Scenario: Enter my basic information
+    Given I go to the new online DL application page
+    When I visit the CDL page for entering my physical traits
+    And I select my sex
+    And I select an eye color
+    And I select a hair color
+    And I click "Next" to continue
+    Then I will be on the CDL page for entering my height and weight
+    And I enter my traits
+    When I go to the CDL summary
+    Then I will see my sex in the summary
+    And I will see my eye color in the summary
+    And I will see my hair color in the summary
+    And I will see my height on that summary
+    And I will see my weight on that summary
+
+  Scenario: Endorsements
+    Given I go to the new online DL application page
+    When I visit the endorsements page
+    And I click yes to wanting an endorsement
+    And I click on the tank checkbox
+    When I go to the CDL summary
+    Then I will see I selected to get a tank endorsement
