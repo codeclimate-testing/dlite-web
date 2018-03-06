@@ -7,10 +7,11 @@ import translations       from '../../../i18n';
 import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  let locale = props.locale
   if(props.cdlEndorsements.needEndorsement === 'Yes' && props.licenseClass === 'classA') {
     return (
       <div className='license-type-form'>
-        <h2 className='question translation-missing'>Which?</h2>
+          {convertToHtml('h2', translations[locale].cdl.endorsmentsPage.whichSection.prompt, 'question')}
         <div className='row'>
           <fieldset>
             <CheckboxCollection
@@ -22,43 +23,43 @@ const Form = (props) => {
             >
               <CheckboxSelector
                 value = 'doubleTriple'
-                text  = 'Doubles/Triples combination'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.T}
                 className='endorsements-class'
                 iconClass='double-triple'
               />
               <CheckboxSelector
                 value = 'tank'
-                text  = 'Tank vehicles'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.N}
                 className='endorsements-class'
                 iconClass='tank'
               />
               <CheckboxSelector
                 value = 'passengerVehicle'
-                text  = 'Passenger vehicles'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.P}
                 className='endorsements-class'
                 iconClass='passenger-vehicle'
               />
               <CheckboxSelector
                 value = 'schoolBus'
-                text  = 'School bus'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.S}
                 className='endorsements-class'
                 iconClass='school-bus'
               />
               <CheckboxSelector
                 value = 'hazmat'
-                text  = 'Marked vehicles transporting hazardous materials or wastes'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.H}
                 className='endorsements-class'
                 iconClass='hazmat'
               />
               <CheckboxSelector
                 value = 'tankHazmat'
-                text  = 'Tank vehicles transporting hazardous materials or wastes'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.X}
                 className='endorsements-class'
                 iconClass='tank-hazmat'
               />
               <CheckboxSelector
                 value = 'firefighter'
-                text  = 'Firefighter Endorsement'
+                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.F}
                 className='endorsements-class'
                 iconClass='firefighter'
               />

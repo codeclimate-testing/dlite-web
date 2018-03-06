@@ -7,8 +7,11 @@ import ClassBCCheckboxes      from './endorsements/class-b-c-checkboxes.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
+import translations           from '../../i18n';
+import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -30,21 +33,19 @@ const Form = (props) => {
 
        <Accordion
           id='cdl-endorsement-info'
-          title='I"m not sure'
+          title={translations[locale].cdl.endorsmentsPage.FAQNotSure.title}
         >
           <div>
-            <p><b>You need an endorsement if you plan to operate a commercial motor vehicle that is:</b></p>
+          {convertToHtml('p', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.header)}
             <ul className='bullet-list'>
-              <li>Carrying more than 10 persons, including the driver.</li>
-              <li>Hauling hazardous materials requiring placards.</li>
-              <li>Towing more than one vehicle or trailer.</li>
-              <li>A thank vehicle</li>
+              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[0])}
+              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[1])}
+              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[2])}
+              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[3])}
             </ul>
-            <p> Full class, endorsement, and certificate descriptions and requirements are available in California's Commercial Driver Handbook.</p>
+          {convertToHtml('p', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.explanation)}
         </div>
         </Accordion>
-
-
 
         <NavigationButtons
           {...props}

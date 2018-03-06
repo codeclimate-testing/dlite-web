@@ -10,7 +10,7 @@ const FormControls = (props) => {
   let locale = props.locale
   return (
     <div className='endorsement-toggle'>
-      <h2 className='question translation-missing'>Do you need any endorsements on your CDL?</h2>
+          {convertToHtml('h2', translations[locale].cdl.endorsmentsPage.prompt, 'question')}
       <div className='row'>
         <fieldset>
           <RadioCollection
