@@ -1,13 +1,13 @@
 'use strict';
 
 import React                from 'react';
-import NavigationButtons    from '../navigation-buttons.jsx';
-import Page                 from '../../containers/page.jsx';
-import MedicalCondition     from '../my-history/medical-history/medical-condition-info.jsx';
-import EnterMedicalInfo     from '../my-history/medical-history/enter-medical-info.jsx';
-import { hasMedical }       from '../../helpers/data/my-history';
-import translations         from '../../i18n';
-import Translate            from '../../i18n/translate-tag.jsx';
+import NavigationButtons    from '../../navigation-buttons.jsx';
+import Page                 from '../../../containers/page.jsx';
+import MedicalCondition     from '../../my-history/medical-history/medical-condition-info.jsx';
+import EnterMedicalInfo     from '../../my-history/medical-history/enter-medical-info.jsx';
+import { hasMedical }       from '../../../helpers/data/my-history';
+import translations         from '../../../i18n';
+import Translate            from '../../../i18n/translate-tag.jsx';
 
 const MedicalHistoryPage = (props) => {
   let locale = props.locale;

@@ -4,7 +4,7 @@ import React                      from 'react';
 import { updateCDLMedical }       from '../../../actions/index';
 import connectForm                from '../../../helpers/connect-form';
 import handlers                   from '../../../helpers/handlers';
-import Presentation               from '../../../presentations/cdl/medical-history-page.jsx';
+import Presentation               from '../../../presentations/cdl/my-history/medical-history-page.jsx';
 import { MedicalValidator }       from '../../../helpers/validations';
 
 const Page = (props) => {

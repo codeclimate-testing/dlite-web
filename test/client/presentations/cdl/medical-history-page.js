@@ -7,7 +7,7 @@ import { spy }                  from 'sinon';
 import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import MedicalHistory           from '../../../../client/presentations/cdl/medical-history-page.jsx';
+import MedicalHistory           from '../../../../client/presentations/cdl/my-history/medical-history-page.jsx';
 import store                    from '../../support/page-store';
 import translations             from '../../../../client/i18n';
 

@@ -3,6 +3,7 @@
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
 import MedicalInfo          from './medical-history.jsx';
+import NamesInfo            from './names-history.jsx';
 import CurrentDL            from '../../conclusion/summary/my-history/license-and-id-history.jsx';
 
 const MyHistory = (props) => {
@@ -12,6 +13,10 @@ const MyHistory = (props) => {
     <Accordion id='history-summary' title='My history' >
       <MedicalInfo
         medicalHistory      = { cdl.history.medicalHistory }
+        locale              = { locale }
+      />
+      <NamesInfo
+        namesHistory        = { cdl.history.namesHistory }
         locale              = { locale }
       />
       <CurrentDL

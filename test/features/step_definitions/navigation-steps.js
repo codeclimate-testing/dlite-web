@@ -88,6 +88,10 @@ module.exports = function(world) {
     navigateToPath('/apply/cdl/self-certification', '.cdl-self-certification', done);
   });
 
+  world.when('I visit the CDL name history page', function(done) {
+    navigateToPath('/apply/cdl/my-history/names', '.names-history-form', done);
+  });
+
   world.when('I visit the CDL Social Security page', function(done) {
     navigateToPath('/apply/cdl/social-security', '.social-security-form', done);
   });
@@ -275,6 +279,10 @@ module.exports = function(world) {
 
   world.when('I will be on the CDL page to enter my current DL', function(done) {
     assertOnPage('.current-card-form', /apply\/cdl\/current-ca-license/, done);
+  });
+
+  world.when('I will be on the CDL endorsements page', function(done) {
+    assertOnPage('.cdl-endorsements-form', /apply\/cdl\/endorsements/, done);
   });
 
   world.when('I will be on the residency page', function(done) {

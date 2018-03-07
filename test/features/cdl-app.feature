@@ -75,11 +75,20 @@ Scenario: New CDL
 
   When I visit the CDL class page
   And I select Class A
+  And I click "Next" to continue
+
+  When I will be on the CDL endorsements page
+  And I click yes to wanting an endorsement
+  And I click on the tank checkbox
 
   When I visit the self cert page for CDL
   And I click to drive interstate
   When I click "Next" to continue
   Then I will be on the page to add a motorcycle class
+
+  When I visit the CDL name history page
+  And I select previously used names Yes
+  And I enter my previously used names
 
   When I go to the CDL summary
   And I will see my name on that summary
@@ -88,6 +97,7 @@ Scenario: New CDL
   And I will see my between 17.5 and 18 dob on that summary
   And I will see my home address on that summary
   And I will see my social security on that summary
+  And I will see I selected to get a tank endorsement
   Then I will see my "Yes" answer about having a current DL in California
   And I will see my driver license number and expiration date
   When I click in the self-certification drawer
@@ -183,10 +193,3 @@ Scenario: Renewing a CDL
     And I will see my height on that summary
     And I will see my weight on that summary
 
-  Scenario: Endorsements
-    Given I go to the new online DL application page
-    When I visit the endorsements page
-    And I click yes to wanting an endorsement
-    And I click on the tank checkbox
-    When I go to the CDL summary
-    Then I will see I selected to get a tank endorsement

@@ -32,6 +32,10 @@ describe('CDL Summary My Basics section', function() {
           medicalHistory: {
             hasMedicalCondition: '',
             medicalInfo: ''
+          },
+          namesHistory: {
+            hasUsedPreviousNames: '',
+            previousNames: ''
           }
         }
       }
@@ -108,4 +112,26 @@ describe('CDL Summary My Basics section', function() {
     });
   });
 
+  describe('#names history', function() {
+    it('does not render if no selection made', function() {
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Previous NamesNone'))
+    });
+
+    it('shows the previous names text box if user selected Yes to having previous names', function() {
+      let previousNames = 'doe doe doe';
+      props.cdl.history.namesHistory.hasUsedPreviousNames = 'Yes';
+      props.cdl.history.namesHistory.previousNames = previousNames;
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes(previousNames));
+    });
+  });
 });

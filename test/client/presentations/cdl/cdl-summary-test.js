@@ -66,6 +66,10 @@ describe('CDL Summary page', function() {
           medicalHistory: {
             hasMedicalCondition: '',
             medicalInfo: ''
+          },
+          namesHistory: {
+            hasUsedPreviousNames: '',
+            previousNames: ''
           }
         },
         cdlEndorsements: {

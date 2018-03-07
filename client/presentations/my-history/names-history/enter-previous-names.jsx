@@ -20,6 +20,7 @@ const EnterPreviousNames = (props) => {
           identifier='previousNames'
           description={ translations[locale].summaryPage.myHistory.previousNames }
           value      = { props.namesHistory.previousNames }
+          errorMessage  = { props.validations.previousNames() }
         />
       </fieldset>
     </div>

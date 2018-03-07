@@ -22,6 +22,7 @@ import updateHeightWeight           from './basics/update-traits-height-weight';
 
 import updateMedical                from './my-history/update-medical';
 import updateCurrentDL              from './my-history/update-current-dl';
+import updateNamesHistory           from './my-history/update-names-history';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -41,7 +42,8 @@ const rootReducer = combineReducers({
 
   history                 : combineReducers({
     currentDLInfo         : updateCurrentDL,
-    medicalHistory        : updateMedical
+    medicalHistory        : updateMedical,
+    namesHistory          : updateNamesHistory
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,
