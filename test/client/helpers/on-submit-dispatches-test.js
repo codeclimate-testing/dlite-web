@@ -102,4 +102,77 @@ describe('on submit dispatches', function() {
       assert.equal(ownProps.history.entries[1].pathname, '/apply/choose-application');
     });
   });
+
+  describe('#applicationLanguageSubmit', function() {
+    it('prevent browser default submit', function() {
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(
+        stateProps,
+        dispatchProps.dispatch,
+        ownProps
+      );
+      onSubmit(event);
+      assert(event.preventDefault.called, 'browser submit triggered');
+    });
+
+    it('if appLanguage is blank the updateLanguage action will be dispatched', function() {
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert(
+        dispatchProps.dispatch.calledWith({
+          type: 'UPDATE_LANGUAGE',
+          payload: {
+            name: 'appLanguage',
+            value: 'en'
+          }
+        }),
+        'dispatch not called'
+      );
+    });
+
+    it('if appLanguage has been chosen the updateLanguage action will not be dispatched', function() {
+      stateProps.appLanguage = 'en';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert(!dispatchProps.dispatch.called, 'dispatch should not have been called, but was');
+    });
+
+    it('if language is selected as english, it redirects to the next page', function() {
+      stateProps.appLanguage = 'en';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert.equal(ownProps.history.entries[1].pathname, '/apply/choose-application');
+    });
+
+    it('if language is not selected, it redirects to the next page', function() {
+      stateProps.appLanguage = '';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert.equal(ownProps.history.entries[1].pathname, '/apply/choose-application');
+    });
+
+    it('if a non-english language is selected, it does not redirect to the next page', function() {
+      stateProps.appLanguage = 'es';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert(!ownProps.history.entries[1], 'navigation happened before api request');
+    });
+
+    it('dispatches a call to get translations if language is not en', function() {
+      stateProps.appLanguage = 'es';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      let dispatchedFunction = onSubmit(event);
+
+      dispatchedFunction(dispatchProps.dispatch);
+
+      assert(
+        dispatchProps.dispatch.calledWith({
+          type: 'UPDATE_API_STATUS',
+          payload: {
+            value: 'loading'
+          }
+        }),
+        'dispatch not called to get translations'
+      );
+    });
+  });
 });

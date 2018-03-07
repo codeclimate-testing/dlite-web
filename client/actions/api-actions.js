@@ -76,6 +76,7 @@ export const getData = function (id) {
         value:  'loading'
       }
     });
+
     return fetch('/api/application/' + id)
       .then(function(res){
         if(res.status >= 200 && res.status <= 299) {

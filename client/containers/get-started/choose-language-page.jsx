@@ -22,7 +22,8 @@ function mapStateToProps(state) {
   return {
     focused:      state.ui.focus,
     appLanguage:  state.application.basics.language.appLanguage,
-    locale:       state.ui.locale
+    locale:       state.ui.locale,
+    server:       state.server
   };
 };
 
