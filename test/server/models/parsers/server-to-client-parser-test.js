@@ -3,9 +3,9 @@
 const assert             = require('assert');
 
 const dataHelper         = require('../../../support/data-helper');
-const parse              = require('../../../../server/db/parsers/server-to-client-parser');
-const post               = require('../../../../server/db/models/post-application');
-const getApplication     = require('../../../../server/db/models/get-application');
+const parse              = require('../../../../server/models/parsers/server-to-client-parser');
+const post               = require('../../../../server/models/db/post-application');
+const getApplication     = require('../../../../server/models/db/get-application');
 
 describe('server data parser', function() {
 

@@ -1,5 +1,5 @@
 'use strict';
-const parserHelper          = require('../../../helpers/data-parser');
+const parserHelper          = require('../data-parser');
 
 function extractLicenseIssues(data) {
   if( data.history.licenseIssues.isSuspended === 'Yes'){

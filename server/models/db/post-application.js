@@ -1,7 +1,7 @@
 'use strict';
 
 const db = require('../../db/connect')();
-const cardOptionsParser = require('../../helpers/card-options');
+const cardOptionsParser = require('../parsers/card-options');
 
 function insertApplication(application) {
   return db('applications').where('id', application.id)

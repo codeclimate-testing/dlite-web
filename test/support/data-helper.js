@@ -1,7 +1,7 @@
 'use strict';
 
 const uuid = require('uuid/v1');
-const parse = require('../../server/db/parsers/client-to-server-parser');
+const parse = require('../../server/models/parsers/client-to-server-parser');
 
 function fakeClientData() {
   return {

@@ -1,5 +1,5 @@
 'use strict';
-const parserHelper          = require('../../../helpers/data-parser');
+const parserHelper          = require('../data-parser');
 
 function extractOrganDonation(data) {
   if(data.organDonation.donateOrgan === '' || data.organDonation.donateMoney === '') { return null; }

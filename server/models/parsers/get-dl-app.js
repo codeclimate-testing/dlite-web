@@ -1,5 +1,5 @@
 'use strict';
-const parserHelper          = require('../../helpers/data-parser');
+const parserHelper          = require('./data-parser');
 const getCardInfo           = require('./get-current-card-info');
 
 function getDLApp(cards, card_options, card_histories, license_classes) {

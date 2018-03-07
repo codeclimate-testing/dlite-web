@@ -1,8 +1,8 @@
 'use strict';
 
-const parserHelper          = require('../../helpers/data-parser');
-const voterChoiceConverter  = require('../../helpers/voter-choice');
-const defaultClientState    = require('../../helpers/client-default-state');
+const parserHelper          = require('./data-parser');
+const voterChoiceConverter  = require('./voter-choice');
+const defaultClientState    = require('./client-default-state');
 const getIDApp              = require('./get-id-app');
 const getDLApp              = require('./get-dl-app');
 

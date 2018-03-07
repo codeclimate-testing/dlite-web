@@ -1,5 +1,5 @@
 'use strict';
-const parserHelper      = require('../../../helpers/data-parser');
+const parserHelper      = require('../data-parser');
 
 function extractApplication(data) {
   let basics            = data.basics;

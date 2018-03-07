@@ -7,7 +7,7 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../support/page-store';
 import wrapperGenerator from '../../support/wrapper';
-import data             from '../../../../server/helpers/client-default-state.js';
+import data             from '../../../../server/models/parsers/client-default-state.js';
 import translations     from '../../../../client/i18n';
 import SummaryPage      from '../../../../client/presentations/conclusion/summary-page.jsx';
 import {

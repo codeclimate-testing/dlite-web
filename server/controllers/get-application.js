@@ -1,7 +1,7 @@
 'use strict';
 
-const fetchApplication  = require('../db/models/get-application');
-const serverParser      = require('../db/parsers/server-to-client-parser');
+const fetchApplication  = require('../models/db/get-application');
+const serverParser      = require('../models/parsers/server-to-client-parser');
 
 module.exports = function getApplication(req, res) {
   fetchApplication(req.params.id)

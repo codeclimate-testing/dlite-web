@@ -5,8 +5,8 @@ const assert             = require('assert');
 const env                = require('../../../support/env');
 const dbHelper           = require('../../../support/db-helper');
 const dataHelper         = require('../../../support/data-helper');
-const post               = require('../../../../server/db/models/post-application');
-const getApplication     = require('../../../../server/db/models/get-application');
+const post               = require('../../../../server/models/db/post-application');
+const getApplication     = require('../../../../server/models/db/get-application');
 
 describe('getApplication', function() {
   let application;

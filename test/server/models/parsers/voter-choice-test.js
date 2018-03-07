@@ -1,7 +1,7 @@
 'use strict';
 
 const assert      = require('assert');
-const voterChoiceConverter = require('../../../server/helpers/voter-choice');
+const voterChoiceConverter = require('../../../../server/models/parsers/voter-choice');
 
 describe('voterChoiceConverter', function() {
   describe('opted-out string to values', function() {

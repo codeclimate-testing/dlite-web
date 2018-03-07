@@ -1,8 +1,8 @@
 'use strict';
 
 const uuidv1            = require('uuid/v1');
-const clientParser      = require('../db/parsers/client-to-server-parser');
-const post              = require('../db/models/post-application');
+const clientParser      = require('../models/parsers/client-to-server-parser');
+const post              = require('../models/db/post-application');
 
 module.exports = function postApplication(req, res) {
   var data = req.body;

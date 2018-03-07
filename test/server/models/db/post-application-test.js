@@ -5,7 +5,7 @@ const assert                = require('assert');
 const env                   = require('../../../support/env');
 const dbHelper              = require('../../../support/db-helper');
 const dataHelper            = require('../../../support/data-helper');
-const ctrl                  = require('../../../../server/db/models/post-application');
+const ctrl                  = require('../../../../server/models/db/post-application');
 
 describe('Post Application Data', () => {
 

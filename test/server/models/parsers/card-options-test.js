@@ -1,8 +1,8 @@
 'use strict';
 
 const assert            = require('assert');
-const generator         = require('../../../server/helpers/card-options');
-const dataHelper        = require('../../support/data-helper');
+const generator         = require('../../../../server/models/parsers/card-options');
+const dataHelper        = require('../../../support/data-helper');
 
 describe('cardOptionsGenerator', function() {
 

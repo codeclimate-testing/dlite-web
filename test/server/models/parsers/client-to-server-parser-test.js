@@ -4,8 +4,8 @@ const assert             = require('assert');
 
 const env                = require('../../../support/env');
 const dataHelper         = require('../../../support/data-helper');
-const parse              = require('../../../../server/db/parsers/client-to-server-parser');
-const parserHelper       = require('../../../../server/helpers/data-parser');
+const parse              = require('../../../../server/models/parsers/client-to-server-parser');
+const parserHelper       = require('../../../../server/models/parsers/data-parser');
 
 describe('client data parser', function() {
   describe('#get new dl ', function() {

@@ -1,8 +1,8 @@
 'use strict';
 
 const assert            = require('assert');
-const cardTypeParser    = require('../../../server/helpers/card-type');
-const dataHelper        = require('../../support/data-helper');
+const cardTypeParser    = require('../../../../server/models/parsers/card-type');
+const dataHelper        = require('../../../support/data-helper');
 
 let data;
 

@@ -1,5 +1,5 @@
 'use strict';
-const parserHelper          = require('../../../helpers/data-parser');
+const parserHelper          = require('../data-parser');
 
 function extractVeteransInfo(data) {
   if(data.history.veteransService.isVeteran === 'Yes'){

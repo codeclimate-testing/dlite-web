@@ -23,6 +23,7 @@ csrf(server);
 
 server.use(logging());
 server.use(helmet());
+server.use(express.static('public'));
 
 server.port = env.port;
 server.environment  = env.env;
@@ -31,7 +32,6 @@ server.get('/', (req, res) => {
   res.redirect('/apply/welcome');
 });
 
-server.use(express.static('public'));
 
 server.get('/apply*', (req, res) => {
   res.send(layout);

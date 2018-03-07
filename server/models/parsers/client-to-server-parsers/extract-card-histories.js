@@ -1,7 +1,7 @@
 'use strict';
 
-const cardTypeParser        = require('../../../helpers/card-type');
-const parserHelper          = require('../../../helpers/data-parser');
+const cardTypeParser        = require('../card-type');
+const parserHelper          = require('../data-parser');
 
 function extractCardHistories(data) {
   let cardHistories = [];

@@ -1,6 +1,6 @@
 'use strict';
-const parserHelper          = require('../../../helpers/data-parser');
-const voterChoiceConverter  = require('../../../helpers/voter-choice');
+const parserHelper          = require('../data-parser');
+const voterChoiceConverter  = require('../voter-choice');
 
 function extractVotingRegistrations(data) {
 

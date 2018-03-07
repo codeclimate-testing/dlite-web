@@ -1,7 +1,7 @@
 'use strict';
 
 const assert            = require('assert');
-const dataParser        = require('../../../server/helpers/data-parser');
+const dataParser        = require('../../../../server/models/parsers/data-parser');
 
 describe('dataParser', function() {
 
