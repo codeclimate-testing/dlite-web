@@ -10,9 +10,7 @@ const passport      = require('passport');
 const helmet        = require('helmet');
 const logging       = require('./server/config/logging');
 const csrf          = require('./server/config/csrf');
-const api           = require('./server/api');
-let startingIndex   = process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test' ? 'index.dev.html' : 'index.html';
-const layout        = fs.readFileSync(path.resolve(__dirname, 'public/'+startingIndex)).toString();
+const routes        = require('./server/routes');
 let   server        = express();
 
 server.use(passport.initialize());
@@ -30,21 +28,6 @@ server.get('/', (req, res) => {
   res.redirect('/apply/welcome');
 });
 
-
-server.get('/apply*', (req, res) => {
-  res.send(layout);
-});
-
-server.get('/add*', (req, res) => {
-  res.send(layout);
-});
-
-let authenticate = passport.authenticate('jwt', { session: false });
-
-server.get('/protected', authenticate, function(req, res){
-  res.json({hello: 'protected world'});
-});
-
-server.use('/api', api);
+server.use('/', routes);
 
 module.exports = server;
