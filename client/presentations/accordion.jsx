@@ -5,11 +5,13 @@ import React from 'react';
 const Accordion = (props) => {
   const className = 'row accordion ' + props.accordionState || '';
   const id        = props.id + '-accordion'
-
+ 
   return (
     <div
       className={className}
       id={id}
+      aria-controls = {props.id}
+      aria-expanded = {props.accordionBol}
     >
       <a
         className='row accordion-header'
@@ -30,6 +32,9 @@ const Accordion = (props) => {
         </div>
       </a>
       <div
+        id = {props.id}
+        aria-hidden = {props.ariaHidden}
+        aria-labelledby = {props.id}
         className='row accordion-body'>
         {props.children}
       </div>
@@ -38,3 +43,4 @@ const Accordion = (props) => {
 };
 
 export default Accordion;
+

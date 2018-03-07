@@ -8,10 +8,14 @@ import Presentation from '../presentations/accordion.jsx';
 
 const Accordion = (props) => {
   let accordionState = 'closed';
+  let accordionBol = 'false';
+  let ariaHidden = 'true';
 
   props.accordions.forEach((d) => {
     if(d === props.id) {
       accordionState = 'open';
+      accordionBol = 'true';
+      ariaHidden = 'false';
     }
   });
 
@@ -19,6 +23,8 @@ const Accordion = (props) => {
     <Presentation
       {...props}
       accordionState={accordionState}
+      accordionBol={accordionBol}
+      ariaHidden={ariaHidden}
     />
   );
 };
@@ -41,3 +47,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Accordion);
+
