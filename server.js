@@ -8,7 +8,6 @@ const express       = require('express');
 const bodyParser    = require('body-parser');
 const passport      = require('passport');
 const helmet        = require('helmet');
-const jwtStrategy   = require('./server/config/jwt-strategy').strategy;
 const logging       = require('./server/config/logging');
 const csrf          = require('./server/config/csrf');
 const api           = require('./server/api');
@@ -16,7 +15,6 @@ let startingIndex   = process.env.APP_ENV === 'development' || process.env.APP_E
 const layout        = fs.readFileSync(path.resolve(__dirname, 'public/'+startingIndex)).toString();
 let   server        = express();
 
-passport.use(jwtStrategy);
 server.use(passport.initialize());
 server.use(bodyParser.json());
 csrf(server);
