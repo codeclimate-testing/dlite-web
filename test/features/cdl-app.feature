@@ -204,3 +204,10 @@ Scenario: Renewing a CDL
     And I will see my height on that summary
     And I will see my weight on that summary
 
+  Scenario: Organ Donation
+    Given I go to the new online DL application page
+    When I visit the CDL page for Organ Donation
+    Then I choose to donate my organs
+    And I choose to contribute
+    When I go to the CDL summary
+    And I will see my organ selection in the summary

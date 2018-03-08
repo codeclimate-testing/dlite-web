@@ -96,6 +96,10 @@ describe('CDL Summary page', function() {
           needCertificates: ''
         }
       },
+       organDonation: {
+          donateMoney: 'Yes',
+          donateOrgan: 'Yes'
+        },
       server: '',
       onSubmit: spy(),
       ui: {

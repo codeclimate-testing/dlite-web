@@ -250,6 +250,10 @@ module.exports = function(world) {
     navigateToPath('/apply/cdl/physical-traits', '.physical-traits-form', done);
   });
 
+  world.when('I visit the CDL page for Organ Donation', function(done) {
+    navigateToPath('/apply/cdl/organ-donation', '.donate-organ-form', done);
+  });
+
   world.when('I will be on the page to choose application', function(done) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });
