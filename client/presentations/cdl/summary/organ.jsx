@@ -2,6 +2,7 @@
 
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
+import translations         from '../../../i18n';
 import CDLOrganDonation     from './organ-donation.jsx';
 
 const Organ = (props) => {
@@ -12,7 +13,7 @@ const Organ = (props) => {
       <CDLOrganDonation
         organDonation     = { cdl.organDonation }
         locale            = { locale }
-        title             = 'Organ Donation'
+        title             = {translations[locale].summaryPage.organDonation.title}
       />
     </Accordion>
   )

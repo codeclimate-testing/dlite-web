@@ -17,11 +17,11 @@ const CDLOrganDonation = (props) => {
       summary = 'cdlSummary'
     >
       <SummaryItem
-        title = 'Be an organ donor'
+        title={translations[locale].summaryPage.organDonation.beAnOrganDonor}
         text = {props.organDonation.donateOrgan}
       />
       <SummaryItem
-        title = 'Donate $2'
+        title = {translations[locale].summaryPage.organDonation.donate}
         text = {props.organDonation.donateMoney}
       />
     </PageSummaryLink>
