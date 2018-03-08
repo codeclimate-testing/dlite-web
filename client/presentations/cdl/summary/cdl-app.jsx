@@ -9,10 +9,7 @@ import RealID               from '../../conclusion/summary/real-id.jsx';
 import { hasValue }         from '../../../helpers/data/validations';
 import Motorcycle           from './motorcycle.jsx';
 import CDLEndorsements      from './endorsements.jsx';
-<<<<<<< HEAD
 import CDLCertificates      from './certificates.jsx';
-=======
->>>>>>> Organ donation summary page
 
 
 const CDLApp = (props) => {
