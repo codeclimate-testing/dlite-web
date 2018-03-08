@@ -23,7 +23,7 @@ const cdlHistory = [
     key: 'cdlOtherStateLicenses',
     description: 'Other State Licenses',
     path: '/my-history/other-state-licenses',
-    next: ''
+    next: 'organDonation'
   }
 ];
 
