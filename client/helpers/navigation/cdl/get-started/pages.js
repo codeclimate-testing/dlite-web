@@ -72,6 +72,12 @@ const cdlGetStarted = [
     key: 'cdlEndorsements',
     description: 'CDL Endorsements',
     path: '/endorsements',
+    next: 'cdlCertificates'
+  },
+  {
+    key: 'cdlCertificates',
+    description: 'CDL Certificates',
+    path: '/certificates',
     next: ''
   },
   {

@@ -241,4 +241,30 @@ module.exports = function(world){
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click yes to wanting a certificate', function(done) {
+    browser
+      .click('label[for="needCertificates-Yes"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click on the ambulance checkbox', function(done) {
+    browser
+      .click('label[for="ambulance"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see I selected to get an ambulance certificate', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('Certificates(s)Ambulance'), 'cdl certificate missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+
 };

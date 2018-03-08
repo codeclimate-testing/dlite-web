@@ -35,6 +35,10 @@ describe('CDL Summary My CDL Application section', function() {
         cdlEndorsements: {
           type: [],
           needEndorsement: ''
+       },
+        cdlCertificates: {
+          type: [],
+          needCertificates: ''
         }
       }
     };
@@ -225,6 +229,28 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('Endorsement(s)Tank'));
+    });
+  });
+
+  describe('#Certificates', function() {
+    it('does not render if certificates is not selected', function() {
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Certificates(s)'));
+    });
+
+    it('shows selected certificates', function() {
+      props.cdl.cdlCertificates.needCertificates = 'Yes';
+      props.cdl.cdlCertificates.type = ['ambulance']
+      let component = render(
+        <Wrapper>
+          <MyApp { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Ambulance'));
     });
   });
 });

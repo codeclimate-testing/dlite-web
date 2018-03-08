@@ -75,6 +75,10 @@ describe('CDL Summary page', function() {
         cdlEndorsements: {
           type: [],
           needEndorsement: ''
+        },
+        cdlCertificates: {
+          type: [],
+          needCertificates: ''
         }
       },
       server: '',

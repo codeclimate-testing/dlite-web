@@ -12,6 +12,7 @@ import updateMotorcycle             from './get-started/update-motorcycle';
 import updateLicenseClass           from './get-started/update-license-class';
 import updateSelfCertification      from './get-started/update-self-cert';
 import updateCDLEndorsements        from './update-cdl-endorsements';
+import updateCDLCertificates        from './update-cdl-certificates';
 
 import updateLegalName              from './basics/update-legal-name';
 import updateSocialSecurity         from './basics/update-social-security';
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   cardReplacement         : updateCDLCardReplacement,
   realID                  : updateRealID,
   cdlEndorsements         : updateCDLEndorsements,
+  cdlCertificates         : updateCDLCertificates,
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,

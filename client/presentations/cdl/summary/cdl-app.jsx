@@ -8,7 +8,8 @@ import { CurrentCardInfo }  from '../../conclusion/summary/current-card-info.jsx
 import RealID               from '../../conclusion/summary/real-id.jsx';
 import { hasValue }         from '../../../helpers/data/validations';
 import Motorcycle           from './motorcycle.jsx';
-import CDLEndorsements         from './endorsements.jsx';
+import CDLEndorsements      from './endorsements.jsx';
+import CDLCertificates      from './certificates.jsx';
 
 
 const CDLApp = (props) => {
@@ -49,6 +50,11 @@ const CDLApp = (props) => {
         cdlEndorsements   = { cdl.cdlEndorsements }
         locale            = { locale }
         title             = 'Endorsement(s)'
+        />
+      <CDLCertificates
+        cdlCertificates   = { cdl.cdlCertificates }
+        locale            = { locale }
+        title             = 'Certificates(s)'
       />
     </Accordion>
   )

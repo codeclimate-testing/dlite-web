@@ -80,6 +80,11 @@ Scenario: New CDL
   When I will be on the CDL endorsements page
   And I click yes to wanting an endorsement
   And I click on the tank checkbox
+  And I click "Next" to continue
+
+  When I will be on the CDL certificates page
+  And I click yes to wanting a certificate
+  And I click on the ambulance checkbox
 
   When I visit the self cert page for CDL
   And I click to drive interstate
