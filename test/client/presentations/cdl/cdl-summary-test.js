@@ -70,6 +70,10 @@ describe('CDL Summary page', function() {
           namesHistory: {
             hasUsedPreviousNames: '',
             previousNames: ''
+          },
+          otherStateLicenses: {
+            hasNonCALicenses: '',
+            tenYearHistory: ''
           }
         },
         cdlEndorsements: {

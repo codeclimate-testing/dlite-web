@@ -36,6 +36,10 @@ describe('CDL Summary My Basics section', function() {
           namesHistory: {
             hasUsedPreviousNames: '',
             previousNames: ''
+          },
+          otherStateLicenses: {
+            hasNonCALicense: '',
+            tenYearHistory: ''
           }
         }
       }
@@ -132,6 +136,28 @@ describe('CDL Summary My Basics section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes(previousNames));
+    });
+  });
+
+  describe('#other state licenses', function() {
+    it('does not render if no selection made', function() {
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Previous NamesNone'))
+    });
+
+    it('shows the ten year history selections if user selected Yes to having out of state licenses', function() {
+      props.cdl.history.otherStateLicenses.hasNonCALicense = 'Yes';
+      props.cdl.history.otherStateLicenses.tenYearHistory = 'online';
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Online'));
     });
   });
 });

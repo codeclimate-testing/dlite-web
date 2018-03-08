@@ -11,6 +11,12 @@ const cdlHistory = [
     key: 'cdlNamesHistory',
     description: 'Names History',
     path: '/my-history/names',
+    next: 'cdlOtherStateLicenses'
+  },
+  {
+    key: 'cdlOtherStateLicenses',
+    description: 'Other State Licenses',
+    path: '/my-history/other-state-licenses',
     next: ''
   }
 ];

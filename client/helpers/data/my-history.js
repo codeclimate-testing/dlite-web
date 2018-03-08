@@ -1,6 +1,7 @@
 'use strict';
 import { hasValue }     from './validations';
 import * as dataPresent from '../data-present';
+import translations     from '../../i18n';
 
 export const licenseAndIdIssued = (props) => {
   return props.licenseAndIdHistory.isIssued === 'Yes';
@@ -48,4 +49,15 @@ export const cardNumberOrNone = (props) => {
     key = props.number;
   }
   return key;
+};
+
+export const hasOtherStateLicenses = (props) => {
+  return props.otherStateLicenses.hasNonCALicense === 'Yes';
+};
+
+export const getTenYearHistorySelection = (props) => {
+  let locale = props.locale;
+  if(props.otherStateLicenses.tenYearHistory === 'online') { return translations[locale].tenYearHistoryPage.fillOutHistoryVia.answerOnline}
+  if(props.otherStateLicenses.tenYearHistory === 'home') { return translations[locale].tenYearHistoryPage.fillOutHistoryVia.answerPrint}
+  if(props.otherStateLicenses.tenYearHistory === 'field') { return translations[locale].tenYearHistoryPage.fillOutHistoryVia.answerField}
 };
