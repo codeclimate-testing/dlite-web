@@ -91,6 +91,12 @@ const cdlGetStarted = [
     description: 'add classM to cdl',
     path: '/motorcycle',
     next: '' //next will go to get started overview page
+  },
+  {
+    key: 'cdlOrganDonation',
+    description: 'organ donation',
+    path: '/organ-donation',
+    next: ''
   }
 ];
 

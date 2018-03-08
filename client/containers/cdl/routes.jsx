@@ -21,6 +21,7 @@ import LicenseClass                     from './license-class.jsx';
 import cdlCertification                 from './cdl-certification.jsx';
 import MyBasics                         from './my-basics/routes.jsx';
 import CDLHistory                       from './my-history/routes.jsx';
+import cdlOrganDonation                 from './cdl-organ-donation.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {
@@ -42,6 +43,7 @@ const CDLRoutes = () => {
       <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
       <Route path={ cdlPath('/endorsements')}                   component={cdlEndorsements} />
       <Route path={ cdlPath('/certificates')}                   component={cdlCertificates} />
+      <Route path={ cdlPath('/organ-donation')}                 component={cdlOrganDonation} />
 
       <CDLHistory />
 

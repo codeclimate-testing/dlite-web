@@ -4,6 +4,7 @@ import CDLApp               from './cdl-app.jsx';
 import MyBasics             from './my-basics.jsx';
 import MyHistory            from './my-history.jsx';
 import SelfCert             from './self-cert.jsx';
+import CDLOrganDonation     from './organ-donation.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
 
 

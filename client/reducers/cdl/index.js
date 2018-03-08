@@ -14,6 +14,8 @@ import updateSelfCertification      from './get-started/update-self-cert';
 import updateCDLEndorsements        from './update-cdl-endorsements';
 import updateCDLCertificates        from './update-cdl-certificates';
 
+import updateOrganDonation         from './update-cdl-organ-donation';
+
 import updateLegalName              from './basics/update-legal-name';
 import updateSocialSecurity         from './basics/update-social-security';
 import updateResidency              from './basics/update-residency';
@@ -35,6 +37,7 @@ const rootReducer = combineReducers({
   realID                  : updateRealID,
   cdlEndorsements         : updateCDLEndorsements,
   cdlCertificates         : updateCDLCertificates,
+  organDonation           : updateOrganDonation,
   basics                  : combineReducers({
     legalName             : updateLegalName,
     dateOfBirth           : updateDateOfBirth,
