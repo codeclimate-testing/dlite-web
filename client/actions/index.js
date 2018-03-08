@@ -79,6 +79,7 @@ export const TYPES = {
   UPDATE_CDL_CERTIFICATES:                'UPDATE_CDL_CERTIFICATES',
   UPDATE_CDL_NAMES_HISTORY:               'UPDATE_CDL_NAMES_HISTORY',
   UPDATE_CDL_OTHER_STATE_LICENSES:        'UPDATE_CDL_OTHER_STATE_LICENSES',
+  UPDATE_CDL_LICENSE_ISSUES:              'UPDATE_CDL_LICENSE_ISSUES',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -160,6 +161,7 @@ export const updateCDLEndorsements                    = generateFormAction(TYPES
 export const updateCDLCertificates                    = generateFormAction(TYPES.UPDATE_CDL_CERTIFICATES);
 export const updateCDLNamesHistory                    = generateFormAction(TYPES.UPDATE_CDL_NAMES_HISTORY);
 export const updateCDLOtherStateLicenses              = generateFormAction(TYPES.UPDATE_CDL_OTHER_STATE_LICENSES);
+export const updateCDLLicenseIssues                   = generateFormAction(TYPES.UPDATE_CDL_LICENSE_ISSUES);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

@@ -25,6 +25,7 @@ import updateMedical                from './my-history/update-medical';
 import updateCurrentDL              from './my-history/update-current-dl';
 import updateNamesHistory           from './my-history/update-names-history';
 import updateOtherStateLicenses     from './my-history/update-other-state-licenses';
+import updateLicenseIssues          from './my-history/update-license-issues';
 
 const rootReducer = combineReducers({
   id                      : createApplicationID,
@@ -47,7 +48,8 @@ const rootReducer = combineReducers({
     currentDLInfo         : updateCurrentDL,
     medicalHistory        : updateMedical,
     namesHistory          : updateNamesHistory,
-    otherStateLicenses    : updateOtherStateLicenses
+    otherStateLicenses    : updateOtherStateLicenses,
+    licenseIssues         : updateLicenseIssues
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,

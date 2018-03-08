@@ -40,6 +40,13 @@ describe('CDL Summary My Basics section', function() {
           otherStateLicenses: {
             hasNonCALicense: '',
             tenYearHistory: ''
+          },
+          licenseIssues: {
+            isSuspended: '',
+            month: '',
+            day: '',
+            year: '',
+            reason: ''
           }
         }
       }
@@ -158,6 +165,29 @@ describe('CDL Summary My Basics section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('Online'));
+    });
+  });
+
+  describe('#license issues', function() {
+    it('does not render if no selection made', function() {
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Driving record'))
+    });
+
+    it('shows the reason when license issues exist', function() {
+      let reason = 'dui';
+      props.cdl.history.licenseIssues.isSuspended = 'Yes';
+      props.cdl.history.licenseIssues.reason = reason;
+      component = render(
+        <Wrapper>
+          <MyHistory { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes(reason));
     });
   });
 });

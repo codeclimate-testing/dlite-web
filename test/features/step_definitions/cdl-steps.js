@@ -266,5 +266,15 @@ module.exports = function(world){
       .catch(done);
   });
 
+  world.then('I will see my license suspension reason', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('I was not very responsible, I guess!'), 'license issue reason missing');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 
 };

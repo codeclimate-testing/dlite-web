@@ -94,6 +94,11 @@ Scenario: New CDL
   When I visit the CDL name history page
   And I select previously used names Yes
   And I enter my previously used names
+  When I click "Next" to continue
+  Then I will be on the CDL license issues page
+  And I select suspended license Yes
+  And I enter date of my license suspension
+  And I enter the reason for my license suspension
 
   When I go to the CDL summary
   And I will see my name on that summary
@@ -103,6 +108,7 @@ Scenario: New CDL
   And I will see my home address on that summary
   And I will see my social security on that summary
   And I will see I selected to get a tank endorsement
+  And I will see my license suspension reason
   Then I will see my "Yes" answer about having a current DL in California
   And I will see my driver license number and expiration date
   When I click in the self-certification drawer

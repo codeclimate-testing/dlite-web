@@ -74,6 +74,17 @@ describe('CDL Summary page', function() {
           otherStateLicenses: {
             hasNonCALicenses: '',
             tenYearHistory: ''
+          },
+          otherStateLicenses: {
+            hasNonCALicenses: '',
+            tenYearHistory: ''
+          },
+          licenseIssues: {
+            isSuspended: '',
+            month: '',
+            day: '',
+            year: '',
+            reason: ''
           }
         },
         cdlEndorsements: {

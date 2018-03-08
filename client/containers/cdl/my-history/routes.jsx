@@ -6,6 +6,7 @@ import { cdlPath }                  from '../../../helpers/alice-path';
 import medicalHistory               from './medical-history.jsx';
 import namesHistory                 from './names-history.jsx';
 import otherStateLicenses           from './other-state-licenses.jsx';
+import licenseIssues                from './license-issues.jsx';
 
 const CDLHistory = () => {
   return (
@@ -13,6 +14,7 @@ const CDLHistory = () => {
       <Route path={ cdlPath('/my-history/medical')}  component={medicalHistory} />
       <Route path={ cdlPath('/my-history/names')}    component={namesHistory} />
       <Route path={ cdlPath('/my-history/other-state-licenses')}    component={otherStateLicenses} />
+      <Route path={ cdlPath('/my-history/issues')}    component={licenseIssues} />
     </div>
   )
 };
