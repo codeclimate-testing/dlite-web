@@ -146,7 +146,7 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       );
-      assert.ok(!component.text().includes('Previous NamesNone'))
+      assert.ok(!component.text().includes('Driver License Outside California'))
     });
 
     it('shows the ten year history selections if user selected Yes to having out of state licenses', function() {
