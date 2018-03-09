@@ -55,8 +55,8 @@ const EligibilityRequirements = (props) => {
   if ((declineToAnswer(props.eligibilityRequirements)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (eligibilityNotChosen(props))) {
     return (
       <PageSummaryLink
-        to='/voting-registration/eligibility'
-        name='votingEligibility'
+        summary={props.summary}
+        name={props.editKey}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.eligible}
@@ -67,8 +67,8 @@ const EligibilityRequirements = (props) => {
   }
   return (
     <PageSummaryLink
-      to='/voting-registration/eligibility'
-      name='votingEligibility'
+      summary={props.summary}
+      name={props.editKey}
     >
       <Yes        {...props} />
       <Decline    {...props} />

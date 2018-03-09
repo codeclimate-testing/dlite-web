@@ -30,8 +30,8 @@ const OptOut = (props) => {
   if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props))) {
     return (
       <PageSummaryLink
-        to='/voting-registration/opt-out'
-        name='votingOptOut'
+        summary={props.summary}
+        name={props.editKey}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.registrationChoice}

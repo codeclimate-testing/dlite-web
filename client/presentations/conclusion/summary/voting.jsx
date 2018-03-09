@@ -25,6 +25,7 @@ const Voting = (props) => {
         dateOfBirth             = { application.basics.dateOfBirth}
         locale                  = { locale }
         summary                 = 'summary'
+        editKey                 = 'citizenship'
       />
       <EligibilityRequirements
         eligibilityRequirements = { application.voting.eligibilityRequirements}
@@ -32,6 +33,7 @@ const Voting = (props) => {
         dateOfBirth             = { application.basics.dateOfBirth}
         locale                  = { locale }
         summary                 = 'summary'
+        editKey                 = 'votingEligibility'
       />
       <OptOut
         optOut                  = {application.voting.optOut}
@@ -40,6 +42,7 @@ const Voting = (props) => {
         dateOfBirth             = {application.basics.dateOfBirth}
         locale                  = { locale }
         summary                 = 'summary'
+        editKey                 = 'votingOptOut'
       />
       <PoliticalPartyChoose
         politicalPartyChoose    = {application.voting.politicalPartyChoose}

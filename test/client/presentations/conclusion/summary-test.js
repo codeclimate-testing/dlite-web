@@ -849,6 +849,7 @@ describe('Summary components', function() {
           year: '1999'
         };
         let citizenStatus = 'Yes';
+        props.editKey = 'citizenship';
 
         let component = render(
           <Wrapper>
@@ -868,6 +869,7 @@ describe('Summary components', function() {
           day: '11',
           year: '1999'
         };
+        props.editKey = 'citizenship';
 
         let component = render(
           <Wrapper>
@@ -930,6 +932,7 @@ describe('Summary components', function() {
           day: '11',
           year: '1999'
         };
+        props.editKey = 'votingEligibility';
 
         let component = render(
           <Wrapper>
@@ -954,6 +957,7 @@ describe('Summary components', function() {
           year: '1999'
         };
         let optOut = 'new';
+        props.editKey = 'votingOptOut';
 
         let component = render(
           <Wrapper>

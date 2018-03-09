@@ -23,6 +23,10 @@ import updateDateOfBirth            from './basics/update-date-of-birth';
 import updatePhysicalTraits         from './basics/update-physical-traits';
 import updateHeightWeight           from './basics/update-traits-height-weight';
 
+import updateCitizenStatus                from './voting/update-citizen-status';
+import updateEligibilityRequirements      from './voting/update-eligibility-requirements';
+import updateOptOut                       from './voting/update-opt-out';
+
 import updateMedical                from './my-history/update-medical';
 import updateCurrentDL              from './my-history/update-current-dl';
 import updateNamesHistory           from './my-history/update-names-history';
@@ -53,6 +57,11 @@ const rootReducer = combineReducers({
     namesHistory          : updateNamesHistory,
     otherStateLicenses    : updateOtherStateLicenses,
     licenseIssues         : updateLicenseIssues
+  }),
+  voting                    : combineReducers({
+    citizenStatus           : updateCitizenStatus,
+    eligibilityRequirements : updateEligibilityRequirements,
+    optOut                  : updateOptOut
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,

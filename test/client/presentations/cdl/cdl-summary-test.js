@@ -58,7 +58,8 @@ describe('CDL Summary page', function() {
         history: {
           currentDLInfo: {
             number:   '',
-            month:        '', day:          '',
+            month:        '',
+            day:          '',
             year:         '',
             isIssued:     '',
             issuedBy:     ''
@@ -87,6 +88,11 @@ describe('CDL Summary page', function() {
             reason: ''
           }
         },
+        voting: {
+          citizenStatus: '',
+          eligibilityRequirements: '',
+          optOut: ''
+        },
         cdlEndorsements: {
           type: [],
           needEndorsement: ''
@@ -107,6 +113,7 @@ describe('CDL Summary page', function() {
       }
     };
   });
+
   it('has 5 accordions', function() {
     let component = render(
       <Wrapper>

@@ -81,6 +81,9 @@ export const TYPES = {
   UPDATE_CDL_OTHER_STATE_LICENSES:        'UPDATE_CDL_OTHER_STATE_LICENSES',
   UPDATE_CDL_LICENSE_ISSUES:              'UPDATE_CDL_LICENSE_ISSUES',
   UPDATE_CDL_ORGAN_DONATION:              'UPDATE_CDL_ORGAN_DONATION',
+  UPDATE_CDL_CITIZEN_STATUS:              'UPDATE_CDL_CITIZEN_STATUS',
+  UPDATE_CDL_ELIGIBILITY_REQUIREMENTS:    'UPDATE_CDL_ELIGIBILITY_REQUIREMENTS',
+  UPDATE_CDL_OPT_OUT:                     'UPDATE_CDL_OPT_OUT',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -164,6 +167,9 @@ export const updateCDLNamesHistory                    = generateFormAction(TYPES
 export const updateCDLOtherStateLicenses              = generateFormAction(TYPES.UPDATE_CDL_OTHER_STATE_LICENSES);
 export const updateCDLLicenseIssues                   = generateFormAction(TYPES.UPDATE_CDL_LICENSE_ISSUES);
 export const updateCDLOrganDonation                   = generateFormAction(TYPES.UPDATE_CDL_ORGAN_DONATION);
+export const updateCDLCitizenStatus                   = generateFormAction(TYPES.UPDATE_CDL_CITIZEN_STATUS);
+export const updateCDLEligibilityRequirements         = generateFormAction(TYPES.UPDATE_CDL_ELIGIBILITY_REQUIREMENTS);
+export const updateCDLOptOut                          = generateFormAction(TYPES.UPDATE_CDL_OPT_OUT);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

@@ -57,8 +57,8 @@ const CitizenStatus = (props) => {
   if ((declineToAnswer(props.citizenStatus)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (citizenStatusNotChosen(props))) {
     return (
       <PageSummaryLink
-        to='/voting-registration/citizenship'
-        name='citizenship'
+        summary={props.summary}
+        name={props.editKey}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.citizen}
@@ -69,8 +69,8 @@ const CitizenStatus = (props) => {
   }
   return (
     <PageSummaryLink
-      to='/voting-registration/citizenship'
-      name='citizenship'
+      summary={props.summary}
+      name={props.editKey}
     >
       <Yes     {...props}   citizenStatus={props.citizenStatus} />
       <Decline {...props}   citizenStatus={props.citizenStatus} />

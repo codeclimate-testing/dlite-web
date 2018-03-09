@@ -34,6 +34,7 @@ export default {
     getStarted        : expand(cdl.getStarted, cdlPath),
     basics            : expand(cdl.basics, cdlPath),
     myHistory         : expand(cdl.myHistory, cdlPath),
+    voterRegistration : expand(cdl.voterRegistration, cdlPath),
     conclusion        : expand(cdl.conclusion, cdlPath)
   }
 };

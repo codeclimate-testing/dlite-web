@@ -3,27 +3,28 @@ import React                from 'react';
 import CDLApp               from './cdl-app.jsx';
 import MyBasics             from './my-basics.jsx';
 import MyHistory            from './my-history.jsx';
+import VoterRegistration    from './voter-registration.jsx';
 import SelfCert             from './self-cert.jsx';
 import Organ                from './organ.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
+import Alerts               from '../../conclusion/summary/alerts.jsx';
 
 
 const Contents = (props) => {
 
   return (
     <div className = 'summary'>
-      <CDLApp         {...props} />
+      <CDLApp             {...props} />
 
-      <MyBasics       {...props} />
+      <MyBasics           {...props} />
 
-      <SelfCert       {...props} />
+      <SelfCert           {...props} />
 
-      <MyHistory      {...props} />
+      <MyHistory          {...props} />
 
-      <Organ          {...props} />
+      <Organ              {...props} />
 
-      <Accordion id='voter-registration-summary' title='Voter registration'>
-      </Accordion>
+      <VoterRegistration  {...props} />
     </div>
   )
 };

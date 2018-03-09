@@ -85,6 +85,9 @@ const Home = () => {
         <LinkSection name='CDL History'>
           { wrapGroup(linkData.cdl.myHistory) }
         </LinkSection>
+        <LinkSection name='CDL Voting Registration'>
+          { wrapGroup(linkData.cdl.voterRegistration) }
+        </LinkSection>
 
         <LinkSection name='CDL Conclusion'>
           { wrapGroup(linkData.cdl.conclusion) }

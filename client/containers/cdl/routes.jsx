@@ -20,6 +20,7 @@ import Motorcycle                       from './motorcycle.jsx';
 import LicenseClass                     from './license-class.jsx';
 import cdlCertification                 from './cdl-certification.jsx';
 import MyBasics                         from './my-basics/routes.jsx';
+import CDLVoterRegistration             from './voter-registration/routes.jsx';
 import CDLHistory                       from './my-history/routes.jsx';
 import cdlOrganDonation                 from './cdl-organ-donation.jsx';
 import Summary                          from './cdl-summary.jsx';
@@ -48,6 +49,8 @@ const CDLRoutes = () => {
       <CDLHistory />
 
       <MyBasics />
+
+      <CDLVoterRegistration />
 
       <Route path={ cdlPath('/summary')}                        component={Summary}     />
     </div>
