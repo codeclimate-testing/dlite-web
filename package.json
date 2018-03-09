@@ -69,6 +69,7 @@
     "dotenv": "^4.0.0",
     "es6-promise": "^4.1.1",
     "express": "^4.15.3",
+    "express-session": "^1.15.6",
     "helmet": "^3.6.1",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",

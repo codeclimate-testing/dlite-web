@@ -46,6 +46,9 @@ function clearAll() {
     .then(() => {
       return db('voting_registrations').truncate();
     })
+    .then(() => {
+      return db('users').truncate();
+    });
 }
 
 module.exports = {

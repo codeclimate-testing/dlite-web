@@ -1,18 +1,24 @@
 'use strict';
 
 const db = require('../../db/connect')();
+const getUser = require('./get-user').byUuid;
 
-module.exports = function findOrSaveUser(user) {
-  return db('authentications').where('uuid', user.uuid)
-    .then((records) => {
-      if(records.length > 0){
-        return records;
-      } else{
-        return db('authentications').insert(user).returning('*');
+const saveUser = (userData) => {
+  return db('users')
+    .insert(userData)
+    .returning('*');
+};
+
+module.exports = (userData) => {
+  return getUser(userData.uuid)
+    .then((user) => {
+      if (user) {
+        return [user];
+      } else {
+        return saveUser(userData);
       }
     })
-    .catch(function(err) {
-      console.error('ERROR IN SAVING USER AUTHENTICATION', err);
-      return err;
+    .then((users) => {
+      return users[0];
     });
 };

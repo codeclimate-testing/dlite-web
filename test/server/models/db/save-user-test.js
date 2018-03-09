@@ -5,11 +5,9 @@ const assert                = require('assert');
 const dbHelper              = require('../../../support/db-helper');
 const findOrSaveUser        = require('../../../../server/models/db/save-user');
 
-describe('Save User Authentication Data: ', () => {
+describe('findOrSaveUser', () => {
   let userData = {
-    uuid:       'e81bb7a2014543e8934679b54fab09ad',
-    full_name:  'Alice B',
-    email:      'alice@edl.gov'
+    uuid: 'e81bb7a2014543e8934679b54fab09ad'
   };
 
   beforeEach(function(done) {
@@ -19,33 +17,38 @@ describe('Save User Authentication Data: ', () => {
       .catch(done);
   });
 
-  describe('New user', () => {
+  describe('when no user with a matching uuid exists', () => {
     it('inserts new record', (done) => {
       findOrSaveUser(userData)
         .then((record) => {
-          assert.equal(record[0].uuid, userData.uuid);
-          assert.equal(record[0].full_name, userData.full_name);
-          assert.equal(record[0].email, userData.email);
+          assert.equal(record.uuid, userData.uuid);
+          assert(record.id);
         })
         .then(done)
         .catch(done);
     });
   });
 
-  describe('Returning user', () => {
+  describe('when the user exists in the database already', () => {
+    let existing;
 
     beforeEach(function(done) {
-      findOrSaveUser(userData)
-        .then(() => { done(); })
+      dbHelper
+        .db('users')
+        .insert(userData)
+        .returning('*')
+        .then((users) => {
+          existing = users[0];
+        })
+        .then(done)
         .catch(done);
     });
 
     it('gets existing record', (done) => {
       findOrSaveUser(userData)
         .then((record) => {
-          assert.equal(record[0].uuid, userData.uuid);
-          assert.equal(record[0].full_name, userData.full_name);
-          assert.equal(record[0].email, userData.email);
+          assert.equal(record.uuid, userData.uuid);
+          assert.equal(record.id, existing.id);
         })
         .then(done)
         .catch(done);

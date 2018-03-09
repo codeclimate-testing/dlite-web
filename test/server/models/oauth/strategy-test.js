@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('assert');
+const sinon = require('sinon');
 const dataHelper = require('../../../support/data-helper');
 const OauthStrategy = require('../../../../server/models/oauth/strategy');
 
@@ -11,53 +12,46 @@ describe('OauthStrategy', function () {
   describe('#onAuthentication', function() {
     it('finds or creates a database user, and returns it', function (done) {
       authorizer('aToken', 'rToken', { uuid: 'A123' }, function (err, user) {
-        assert(user[0].uuid);
-        done();
+        assert(user.uuid);
+        done(err);
       });
     });
   });
 
   describe('#userProfile', function() {
-    var strategy = new Strategy({
-      callbackURL: 'http://lvh.me/auth/oauth/callback',
-      clientID: 'ABC123',
-      clientSecret: 'secret'
-    }, function () {});
+    let strategy, doneSpy;
 
-    strategy._oauth2.get = function (url, accessToken, callback) {
-      if (url !== 'https://api.idmelabs.com/api/public/v3/attributes.json') {
-        callback(new Error('wrong url argument'));
-        return;
-      }
-
-      if (accessToken !== 'token') {
-        callback(new Error('wrong token argument'));
-        return;
-      }
-
-      var body = JSON.stringify(dataHelper.fakeUserData());
-
-      callback(null, body, undefined);
-    };
-
-    var profile;
-
-    before(function (done) {
-      strategy.userProfile('token', function (err, p) {
-        if (err) {
-          done(err);
-        }
-        else {
-          profile = p;
-          done();
-        }
-      });
+    beforeEach(function() {
+      strategy = OauthStrategy.strategy;
+      doneSpy = sinon.spy();
+      strategy._oauth2.get = sinon.spy();
+      strategy.userProfile('access-token', doneSpy);
     });
 
-    it('should parse profile', function () {
-      assert.equal(profile.uuid, 'd733a89e2e634f04ac2fe66c97f71612');
-      assert.equal(profile.email, 'test.user@id.me');
-      assert.equal(profile.full_name, 'Test Success');
+    it('makes a oauth get request to the right url with the right token', function() {
+      assert(strategy._oauth2.get.called);
+      assert.equal(strategy._oauth2.get.args[0][0], strategy._userProfileURL);
+      assert.equal(strategy._oauth2.get.args[0][1], 'access-token');
+    });
+
+    it('processes the request by parsing the request body', function() {
+      let requestCallback = strategy._oauth2.get.args[0][2];
+      requestCallback(null, JSON.stringify(dataHelper.fakeUserData()));
+      assert(doneSpy.called);
+      assert(!doneSpy.args[0][0]);
+      assert.deepEqual(doneSpy.args[0][1], {uuid: "d733a89e2e634f04ac2fe66c97f71612"});
+    });
+
+    it('passes along an error when it recieves one in the request callback', function() {
+      let requestCallback = strategy._oauth2.get.args[0][2];
+      requestCallback('fire in the hole!');
+      assert(doneSpy.args[0][0]);
+    });
+
+    it('passes along an error when the response is not parsable as json', function() {
+      let requestCallback = strategy._oauth2.get.args[0][2];
+      requestCallback(null, '{"half-a-:');
+      assert(doneSpy.args[0][0]);
     });
   });
 });

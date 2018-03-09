@@ -38,7 +38,7 @@ class Strategy extends OauthStrategy {
 
       let profile;
       try {
-        profile = Profile.parse(json);
+        profile = Profile.parse(body);
       } catch (e) {
         return done(e);
       }

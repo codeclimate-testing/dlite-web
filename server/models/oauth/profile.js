@@ -5,7 +5,7 @@ const convertToJsObject = (json) => {
   return JSON.parse(json);
 };
 
-exports.parse = (json) => {
+const firstPass = (json) => {
   let profile = {};
   json = convertToJsObject(json);
 
@@ -19,3 +19,12 @@ exports.parse = (json) => {
 
   return profile;
 };
+
+const parse = (json) => {
+  let profile = firstPass(json);
+  return {
+    uuid: profile.uuid
+  }
+};
+
+exports.parse = parse;
