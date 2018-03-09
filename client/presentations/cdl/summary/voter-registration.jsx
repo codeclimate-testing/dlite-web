@@ -7,7 +7,6 @@ import EligibilityRequirements from '../../conclusion/summary/voting/eligibility
 import OptOut                  from '../../conclusion/summary/voting/opt-out.jsx';
 
 const VoterRegistration = (props) => {
-  console.log(props)
   let cdl       = props.cdl;
   let locale    = props.ui.locale;
   return (
