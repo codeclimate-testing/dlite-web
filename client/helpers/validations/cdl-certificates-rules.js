@@ -9,7 +9,7 @@ const needCertificates = (props) => {
   let value   = props.cdlCertificates.needCertificates;
   let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations[locale].errorMessages.needCertificates]
+    errors = [translations[locale].errorMessages.applicationActionMissing]
   }
   return errors;
 };
@@ -20,7 +20,7 @@ const certificatesType = (props) => {
   let value   = props.cdlCertificates.type;
   let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations[locale].errorMessages.certificates]
+    errors = [translations[locale].errorMessages.selectionMissing]
   }
   return errors;
 };
