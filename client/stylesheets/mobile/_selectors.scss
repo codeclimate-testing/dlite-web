@@ -141,32 +141,39 @@
     .checkbox-selector {
       .icon-region.double-triple {
         background-image: url("/images/icons/cdl-endorsements/T.svg");
+        background-position: 15px 15px;
       }
 
       .icon-region.tank {
         background-image: url("/images/icons/cdl-endorsements/N.svg");
+        background-position: 15px 15px;
       }
 
       .icon-region.passenger-vehicle {
         background-image: url("/images/icons/cdl-endorsements/P.svg");
+        background-position: 15px 15px;
       }
 
       .icon-region.school-bus {
         background-image: url("/images/icons/cdl-endorsements/S.svg");
+        background-position: 15px 15px;
       }
 
       .icon-region.hazmat {
         height: 65px;
         background-image: url("/images/icons/cdl-endorsements/H.svg");
+        background-position: 15px 22px;
       }
 
       .icon-region.tank-hazmat {
         height: 65px;
         background-image: url("/images/icons/cdl-endorsements/X.svg");
+        background-position: 15px 22px;
       }
 
       .icon-region.firefighter {
         background-image: url("/images/icons/cdl-endorsements/F.svg");
+        background-position: 15px 15px;
       }
     }
   }
