@@ -17,22 +17,22 @@ const Presentation = (props) => {
         </h2>
 
         <fieldset className='id-me-buttons'>
-          <button className='green translation-missing id-me-create'>
+          <a href='/auth/new' className='button green translation-missing id-me-create'>
             <div className='unit'>Create an </div>
             <img src='/images/id-me/white-logo.svg' alt='id.me' className='id-me-logo unit' />
             <div className='unit'> account</div>
-          </button>
+          </a>
 
           <div className='or-block'>
             <hr className='mid-line'/>
             <p className='or'>Or</p>
           </div>
 
-          <button className='translation-missing id-me-sign-in'>
+          <a href='/auth/new' className='button translation-missing id-me-sign-in'>
             <div className='unit'>Sign in with an </div>
             <img src='/images/id-me/dark-logo.svg' alt='id.me' className='id-me-logo unit' />
             <div className='unit'> account</div>
-          </button>
+          </a>
         </fieldset>
 
         <p>
@@ -45,11 +45,15 @@ const Presentation = (props) => {
           The DMV of California has partnered with ID.me to ensure that your personal information is accurate and secure.
         </p>
 
-        <p className='translation-missing'>The DMV of California chose to partner with ID.me because it has met rigorous requirements for security and identity-proofing.</p>
+        <p className='translation-missing'>
+          The DMV of California chose to partner with ID.me because it has met rigorous requirements for security and identity-proofing.
+        </p>
 
-        <p><a className='translation-missing' href='https://shop.id.me/how-it-works/faq' target='_blank'>For more information, please visit ID.me</a>.</p>
-
-       <NavigationButtons {...props} />
+        <p>
+          <a className='translation-missing' href='https://shop.id.me/how-it-works/faq' target='_blank'>
+            For more information, please visit ID.me
+          </a>.
+        </p>
       </div>
     </Page>
   );
