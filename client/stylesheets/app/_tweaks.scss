@@ -93,21 +93,9 @@ hr.mid-line {
   height: 48px;
 }
 
-.what-you-can-do-page {
-  .icon.card {
-    height: 22px;
-    width: 35px;
-    margin-right: $spacing / 2;
-    background-repeat: no-repeat;
-
-    &.new { background-image: url("/images/icons/cards/new.svg"); }
-    &.renew { background-image: url("/images/icons/cards/renew.svg"); }
-    &.change { background-image: url("/images/icons/cards/change.svg"); }
-  }
-}
-
 .id-me-buttons {
-  margin-bottom: $spacing * 1.5;
+  margin: 0 auto $spacing * 1.5;
+  max-width: 300px;
 
   img {
     height: 18px;
@@ -132,6 +120,12 @@ hr.mid-line {
     border: none;
     background-color: $green;
     padding: 12px 43px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($green, 5%);
+    }
   }
 
   .id-me-sign-in {
@@ -139,6 +133,18 @@ hr.mid-line {
     border-color: $green;
     color: $green;
     background-color: transparent;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      border-color: darken($green, 5%);
+      color: darken($green, 5%);
+    }
+  }
+
+  .id-me-create:focus,
+  .id-me-sign-in:focus {
+    @include focus-outline;
   }
 
   .or-block {
@@ -153,5 +159,4 @@ hr.mid-line {
     width: 50px;
     text-align: center;
   }
-
 }

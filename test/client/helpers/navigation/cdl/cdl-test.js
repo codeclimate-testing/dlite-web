@@ -21,14 +21,17 @@ describe('CDL next-paths', function() {
     it('returns "cdlResidency" if user is getting a new card', function() {
       assert.equal(cdlWdywtdt(props), 'cdlResidency');
     });
+
     it('returns "cdlCurrentCard" if user is replacing card', function() {
       props.cardAction = 'replace';
       assert.equal(cdlWdywtdt(props), 'cdlCurrentCard');
     });
+
     it('returns "cdlCurrentCard" if user is renewing card', function() {
       props.cardAction = 'renew';
       assert.equal(cdlWdywtdt(props), 'cdlCurrentCard');
     });
+
     it('returns "cdlCurrentCard" if user is changing a card', function() {
       props.cardAction = 'change';
       assert.equal(cdlWdywtdt(props), 'cdlCurrentCard');
@@ -56,6 +59,7 @@ describe('CDL next-paths', function() {
     it('returns "cdlCurrentDL" if user is getting a new card', function() {
       assert.equal(cdlSSN(props), 'cdlCurrentDL');
     });
+
     it('returns "cdlRealID" if user is replacing, renewing, or changing a card', function() {
       props.cardAction = 'renew';
       assert.equal(cdlSSN(props), 'cdlRealID');
@@ -69,6 +73,7 @@ describe('CDL next-paths', function() {
       };
       assert.equal(cdlCertification(props), 'motorcycle');
     });
+
     it('returns "cdlSummary" if user is replacing, renewing, or changing a card', function() {
       let props = {
         cardAction: 'replace'
@@ -76,5 +81,4 @@ describe('CDL next-paths', function() {
       assert.equal(cdlCertification(props), 'cdlSummary');
     });
   });
-
 });

@@ -26,7 +26,7 @@ module.exports = function(world) {
         console.log('error', err);
       })
       .open(world.url('/'))
-      .waitForSelector('.welcome-page')
+      .waitForSelector('.choose-application-form')
       .then(() => { done(); })
       .catch(done);
   });
@@ -40,7 +40,7 @@ module.exports = function(world) {
         console.log('error', err);
       })
       .open(world.url('/'))
-      .waitForSelector('.welcome-page')
+      .waitForSelector('.choose-application-form')
       .then(done)
       .catch(done);
   });

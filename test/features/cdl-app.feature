@@ -3,30 +3,19 @@ As a DMV customer
 I would like to be able to choose whether I need a CDL or an ID/DL application
 So that I can get what I need easily
 
-Scenario: Navigating to cdl what can I do page
-  Given  I go to the new online DL application page
-  And I visit the page about what I can do in the CDL application
-  Then I will see the title of each accordion for cdl what can I do page
-  And I click in the title for cdl what can I do accordion
-  Then The cdl what can I do info accordion will open to show its full content
-  When I click "Next" to continue
-  And I will be on the id.me page
-  When I click to go back
-  Then I will be on the CDL welcome page
-
-Scenario: Navigating to the new page
+Scenario: Navigating to the start of the CDL or ID/DL application after choosing
   Given I go to the new online DL application page
   And I visit the page to choose application language
   When I click to continue
   Then I will be on the page to choose application
   When I select a commercial DL application
   And I click "Next" to continue
-  Then I will be on the CDL welcome page
+  Then I will be on the CDL true name page
   When I click to go back
   Then I will be on the page to choose application
   When I select a regular ID or DL application
   And I click "Next" to continue
-  Then I will be on the IDDL welcome page
+  Then I will be on the ID.me page
 
 Scenario: New CDL
   Given I go to the new online DL application page
