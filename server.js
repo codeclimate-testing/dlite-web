@@ -39,6 +39,6 @@ server.get('/', (req, res) => {
   res.redirect('/apply/welcome');
 });
 
-server.use('/', routes);
+server.use('/', routes(passport));
 
 module.exports = server;
