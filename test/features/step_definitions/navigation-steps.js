@@ -270,6 +270,11 @@ module.exports = function(world) {
     assertOnPage('.id-me', /apply\/sign-in/, done);
   });
 
+  world.when('I will be on the CDL other state licenses page', function(done) {
+    assertOnPage('.other-state-licenses-form', /apply\/cdl\/my-history\/other-state-licenses/, done);
+  });
+
+
   world.when('I will be on the CDL name page', function(done) {
     assertOnPage('.legal-name-form', /apply\/cdl\/true-name/, done);
   });

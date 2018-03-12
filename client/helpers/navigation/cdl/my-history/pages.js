@@ -17,7 +17,7 @@ const cdlHistory = [
     key: 'cdlLicenseIssues',
     description: 'License Issues',
     path: '/my-history/issues',
-    next: ''
+    next: 'cdlOtherStateLicenses'
   },
   {
     key: 'cdlOtherStateLicenses',

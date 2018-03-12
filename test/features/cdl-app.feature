@@ -99,6 +99,10 @@ Scenario: New CDL
   And I select suspended license Yes
   And I enter date of my license suspension
   And I enter the reason for my license suspension
+  When I click "Next" to continue
+  Then I will be on the CDL other state licenses page
+  And I click that I have had out of state license
+  And I click that I will complete form online
 
   When I go to the CDL summary
   And I will see my name on that summary

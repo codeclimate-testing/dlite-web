@@ -276,5 +276,17 @@ module.exports = function(world){
       .catch(done);
   });
 
+    world.when('I click that I have had out of state license', function(done) {
+    browser
+      .click('label[for="hasNonCALicense-Yes"]')
+      .then(done)
+      .catch(done);
+  });
 
+  world.when('I click that I will complete form online', function(done) {
+    browser
+      .click('label[for="tenYearHistory-online"]')
+      .then(done)
+      .catch(done);
+  });
 };
