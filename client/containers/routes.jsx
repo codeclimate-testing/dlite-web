@@ -15,7 +15,6 @@ import ChooseLanguage                         from './get-started/choose-languag
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
 
 import IDMe                                   from './get-started/id-me-page.jsx';
-import Welcome                                from '../presentations/get-started/welcome-page.jsx';
 import WhatDoYouWantToDoToday                 from './get-started/what-do-you-want-to-do-today-page.jsx';
 import ReplacementDetails                     from './get-started/replacement-details-page.jsx';
 import CurrentCardInfo                        from './get-started/current-card-page.jsx';
@@ -42,15 +41,13 @@ class Router extends React.Component {
       <div className='routes'>
         <Route path={ alicePath('/links') }                     exact component={Home} />
 
+        <Route path={ alicePath('/')}                           exact component={ChooseApplication} />
         <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
         <Route path={ alicePath('/choose-application')}         component={ChooseApplication}/>
 
         <CDLRoutes />
 
-        <Route path={ alicePath('/sign-in') }                    component={IDMe} />
-        <Route path={ alicePath('/')}                           exact component={Welcome} />
-        <Route path={ alicePath('/welcome') }                   component={Welcome} />
-        <Route path={ pathForPage('welcome') }                  component={Welcome} />
+        <Route path={ alicePath('/sign-in') }                   component={IDMe} />
 
         <GetStartedRoutes />
         <MyBasicsRoutes />

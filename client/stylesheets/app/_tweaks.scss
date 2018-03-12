@@ -93,19 +93,6 @@ hr.mid-line {
   height: 48px;
 }
 
-.what-you-can-do-page {
-  .icon.card {
-    height: 22px;
-    width: 35px;
-    margin-right: $spacing / 2;
-    background-repeat: no-repeat;
-
-    &.new { background-image: url("/images/icons/cards/new.svg"); }
-    &.renew { background-image: url("/images/icons/cards/renew.svg"); }
-    &.change { background-image: url("/images/icons/cards/change.svg"); }
-  }
-}
-
 .id-me-buttons {
   margin: 0 auto $spacing * 1.5;
   max-width: 300px;

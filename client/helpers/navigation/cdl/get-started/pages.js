@@ -9,12 +9,6 @@ import {
 
 const cdlGetStarted = [
   {
-    key: 'cdl',
-    description: 'CDL welcome page',
-    path: '',
-    next: 'IDme'
-  },
-  {
     key: 'cdlWdywtdt',
     description: 'What do you want to do today',
     path: '/what-do-you-want-to-do-today',

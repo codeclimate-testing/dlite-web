@@ -8,21 +8,22 @@ import {
 
 
 describe('Intro next-path', function() {
-
   let props;
   beforeEach(function() {
     props = {
       chooseApp: ''
     }
   });
+
   describe('##chooseApplication', function() {
-    it('returns "cdl" if state.ui.chooseApp equals "cdl"', function() {
+    it('returns "cdlLegalName" if state.ui.chooseApp equals "cdl"', function() {
       props.chooseApp = 'cdl';
-      assert.equal(chooseApplication(props), 'cdl');
+      assert.equal(chooseApplication(props), 'cdlLegalName');
     });
-    it('returns "welcome" if state.ui.chooseApp equals "iddl"', function() {
+
+    it('returns "IDme" if state.ui.chooseApp equals "iddl"', function() {
       props.chooseApp = 'iddl';
-      assert.equal(chooseApplication(props), 'welcome');
+      assert.equal(chooseApplication(props), 'IDme');
     });
   });
 });

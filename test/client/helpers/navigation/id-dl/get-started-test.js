@@ -76,6 +76,7 @@ describe('Data helpers for determining next path from current page and props in 
       day: today.getDate().toString()
     };
   });
+
   describe('#getStarted section', function() {
     let props;
     beforeEach(function() {
@@ -84,9 +85,7 @@ describe('Data helpers for determining next path from current page and props in 
       }
     });
 
-
     describe('##chooseCardType', function() {
-
       it('if senior customer has existing card it will navigate to the existing card page', function() {
         data = buildCardType('ID', 'renew');
         data.dateOfBirth.year = seniorYear(today);
@@ -160,6 +159,7 @@ describe('Data helpers for determining next path from current page and props in 
         };
         assert.equal(updateAndCorrect(data), 'seniorID');
       });
+
       it('otherwise goes to realID page', function() {
         assert.equal(updateAndCorrect(data), 'realID');
       });

@@ -35,7 +35,7 @@ module.exports = function(world) {
         console.log('error', err);
       })
       .open(world.url('/'))
-      .waitForSelector('.welcome-page')
+      .waitForSelector('.choose-application-form')
       .then(() => { done(); })
       .catch(done);
   });
@@ -98,10 +98,6 @@ module.exports = function(world) {
 
   world.and('I return to the home page', function(done) {
     navigateToPath('/apply/id-and-license/links', '.section-links', done);
-  });
-
-  world.when('I visit the page about what I can do in the CDL application', function(done) {
-    navigateToPath('/apply/cdl', '.apply-cdl', done);
   });
 
   world.when('I visit the page to choose application language', function(done) {
@@ -258,8 +254,8 @@ module.exports = function(world) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });
 
-  world.when('I will be on the CDL welcome page', function(done) {
-    assertOnPage('.apply-cdl', /apply\/cdl/, done);
+  world.when('I will be on the CDL true name page', function(done) {
+    assertOnPage('.legal-name-form', /apply\/cdl\/true-name/, done);
   });
 
   world.when('I will be on the CDL license issues page', function(done) {
@@ -321,8 +317,8 @@ module.exports = function(world) {
     assertOnPage('.cdl-class-m', /apply\/cdl\/motorcycle/, done);
   });
 
-  world.when('I will be on the IDDL welcome page', function(done) {
-    assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);
+  world.when('I will be on the ID.me page', function(done) {
+    assertOnPage('.id-me', /apply\/sign-in/, done);
   });
 
   world.then('I will be on the page to add current card info', function(done) {

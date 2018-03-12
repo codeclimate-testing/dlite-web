@@ -10,7 +10,7 @@ const authCallback = (passport) => {
 
 const authSuccess = (req, res) => {
   req.session.user = req.user; // is this right? or should be use a method in passport to do the serialization?
-  res.redirect('/apply/welcome');
+  res.redirect('/apply/id-and-license/my-basics/legal-name');
 };
 
 const authError = (req, res) => {
