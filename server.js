@@ -30,14 +30,13 @@ csrf(server);
 
 server.use(logging());
 server.use(helmet());
+server.get('/', (req, res) => {
+  res.redirect('/apply/sign-in');
+});
 server.use(express.static('public'));
 
 server.port = env.port;
 server.environment = env.env;
-
-server.get('/', (req, res) => {
-  res.redirect('/apply/welcome');
-});
 
 server.use('/', routes(passport));
 
