@@ -53,6 +53,9 @@ describe('CDL Summary page', function() {
               city: '',
               state: ''
             }
+          },
+          language: {
+            ballotLanguage: ''
           }
         },
         history: {
@@ -91,7 +94,8 @@ describe('CDL Summary page', function() {
         voting: {
           citizenStatus: '',
           eligibilityRequirements: '',
-          optOut: ''
+          optOut: '',
+          politicalPartyChoose: ''
         },
         cdlEndorsements: {
           type: [],

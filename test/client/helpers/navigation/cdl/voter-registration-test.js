@@ -8,8 +8,6 @@ import {
   optOut
 } from '../../../../../client/helpers/navigation/cdl/voter-registration/next-path';
 
-const today = new Date();
-const isPrereg = (today.getFullYear() - 17).toString();
 
 describe('Data helpers for determining next path from current page and props in voter-registration section', function() {
   let data;
@@ -18,11 +16,6 @@ describe('Data helpers for determining next path from current page and props in 
       optOut: '',
       citizenStatus: '',
       eligibilityRequirements: '',
-      dateOfBirth: {
-        year: (today.getFullYear() - 40).toString(),
-        month: (today.getMonth()).toString(),
-        day: today.getDate().toString()
-      }
     };
   });
 
@@ -40,7 +33,6 @@ describe('Data helpers for determining next path from current page and props in 
 
       it('returns "votingEligibility" if user is eligible for citizenship and is preregistering', function() {
         data.citizenStatus = 'Yes';
-        data.dateOfBirth.year = isPrereg;
         assert.equal(citizenship(data), 'cdlVotingEligibility');
       });
     });
@@ -57,8 +49,24 @@ describe('Data helpers for determining next path from current page and props in 
 
       it('returns "votingOptOut" if user is eligible for voting and is preregistering', function() {
         data.eligibilityRequirements = 'Yes';
-        data.dateOfBirth.year = isPrereg;
         assert.equal(votingEligibility(data), 'cdlVotingOptOut');
+      });
+    });
+
+    describe('##optOut', function() {
+      it('returns "summary" if user does not want to register or update', function() {
+        data.optOut = 'optOut';
+        assert.equal(optOut(data), 'summary');
+      });
+
+      it('returns "cdlVoterPreferences" if user wants to register to vote', function() {
+        data.optOut = 'new';
+        assert.equal(optOut(data), 'cdlVoterPreferences');
+      });
+
+      it('returns "cdlVoterPreferencesUpdated" if user wants to register and update voter info', function() {
+        data.optOut = 'existing';
+        assert.equal(optOut(data), 'cdlVoterPreferencesUpdated');
       });
     });
   });

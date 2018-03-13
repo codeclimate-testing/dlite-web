@@ -21,12 +21,20 @@ describe('CDL Summary voting registration section', function() {
       },
       cdl: {
         basics: {
-          dateOfBirth: ''
+          dateOfBirth: '',
+          language: {
+            ballotLanguage: ''
+          }
         },
         voting: {
-          citizenStatus: '',
-          eligibilityRequirements: '',
-          optOut: ''
+          citizenStatus: 'Yes',
+          eligibilityRequirements: 'Yes',
+          optOut: '',
+          politicalPartyChoose: {
+            isSelected: '',
+            otherParty: '',
+            politicalPartyChoose: ''
+          }
         }
       }
     };
@@ -34,6 +42,7 @@ describe('CDL Summary voting registration section', function() {
 
   describe('#citizen status', function() {
     it('shows decline to answer if no selection made', function() {
+      props.cdl.voting.citizenStatus = '';
       component = render(
         <Wrapper>
           <VoterRegistration { ...props } />
@@ -43,7 +52,6 @@ describe('CDL Summary voting registration section', function() {
     });
 
     it('shows yes if user is a citizen', function() {
-      props.cdl.voting.citizenStatus = 'Yes';
       component = render(
         <Wrapper>
           <VoterRegistration { ...props } />
@@ -55,6 +63,7 @@ describe('CDL Summary voting registration section', function() {
 
   describe('#voting eligibility', function() {
     it('shows decline to answer if no selection made', function() {
+      props.cdl.voting.eligibilityRequirements = '';
       component = render(
         <Wrapper>
           <VoterRegistration { ...props } />
@@ -64,7 +73,6 @@ describe('CDL Summary voting registration section', function() {
     });
 
     it('shows yes if user is eligible', function() {
-      props.cdl.voting.eligibilityRequirements = 'Yes';
       component = render(
         <Wrapper>
           <VoterRegistration { ...props } />
@@ -76,6 +84,7 @@ describe('CDL Summary voting registration section', function() {
 
   describe('#opt out', function() {
     it('does not render if no selection made', function() {
+      props.cdl.voting.citizenStatus = '';
       component = render(
         <Wrapper>
           <VoterRegistration { ...props } />
@@ -85,8 +94,6 @@ describe('CDL Summary voting registration section', function() {
     });
 
     it('shows choice if selection made and citizen and eligible', function() {
-      props.cdl.voting.citizenStatus = 'Yes';
-      props.cdl.voting.eligibilityRequirements = 'Yes';
       props.cdl.voting.optOut = 'new'
       component = render(
         <Wrapper>
@@ -94,6 +101,29 @@ describe('CDL Summary voting registration section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('Voter registration choiceWill be registered'));
+    });
+  });
+
+  describe('#political party choose', function() {
+    it('does not render if no selection made', function() {
+      props.cdl.voting.eligibilityRequirements = '';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Political party'))
+    });
+
+    it('shows choice if selection made', function() {
+      props.cdl.voting.politicalPartyChoose.isSelected = 'Yes';
+      props.cdl.voting.politicalPartyChoose.politicalPartyChoose = 'Libertarian Party';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Political partyLibertarian Party'));
     });
   });
 });

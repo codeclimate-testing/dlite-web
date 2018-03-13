@@ -14,7 +14,7 @@ import updateSelfCertification      from './get-started/update-self-cert';
 import updateCDLEndorsements        from './update-cdl-endorsements';
 import updateCDLCertificates        from './update-cdl-certificates';
 
-import updateOrganDonation         from './update-cdl-organ-donation';
+import updateOrganDonation          from './update-cdl-organ-donation';
 
 import updateLegalName              from './basics/update-legal-name';
 import updateSocialSecurity         from './basics/update-social-security';
@@ -22,10 +22,12 @@ import updateResidency              from './basics/update-residency';
 import updateDateOfBirth            from './basics/update-date-of-birth';
 import updatePhysicalTraits         from './basics/update-physical-traits';
 import updateHeightWeight           from './basics/update-traits-height-weight';
+import updateLanguage               from './basics/update-language';
 
 import updateCitizenStatus                from './voting/update-citizen-status';
 import updateEligibilityRequirements      from './voting/update-eligibility-requirements';
 import updateOptOut                       from './voting/update-opt-out';
+import updatePoliticalPartyChoose         from './voting/update-choose-party';
 
 import updateMedical                from './my-history/update-medical';
 import updateCurrentDL              from './my-history/update-current-dl';
@@ -49,6 +51,7 @@ const rootReducer = combineReducers({
     traitsHeightWeight    : updateHeightWeight,
     residency             : updateResidency,
     socialSecurity        : updateSocialSecurity,
+    language              : updateLanguage
   }),
 
   history                 : combineReducers({
@@ -61,7 +64,8 @@ const rootReducer = combineReducers({
   voting                    : combineReducers({
     citizenStatus           : updateCitizenStatus,
     eligibilityRequirements : updateEligibilityRequirements,
-    optOut                  : updateOptOut
+    optOut                  : updateOptOut,
+    politicalPartyChoose    : updatePoliticalPartyChoose
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,
