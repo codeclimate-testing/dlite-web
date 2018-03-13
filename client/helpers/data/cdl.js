@@ -6,8 +6,8 @@ import * as dataPresent     from '../data-present';
 import  translations        from '../../i18n';
 
 export const showCDLUnder21 = (props) => {
-  return props.hasOwnProperty('addApp') &&
-    cdlApp(props.addApp) &&
+  return props.hasOwnProperty('chooseApp') &&
+    cdlApp(props.chooseApp) &&
     dataPresent.date(props.dateOfBirth) &&
     ageChecks.Under21(props.dateOfBirth);
 };

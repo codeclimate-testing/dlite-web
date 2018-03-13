@@ -7,36 +7,12 @@ import {
 } from '../../../../../client/helpers/navigation/id-dl/my-basics/next-path';
 
 const today = new Date();
-const bothCards = {
-  cardAction: 'new',
-  cardType: ['ID', 'DL'],
-  IDApp: {
-    isApplying: true,
-    action: 'new',
-    reducedFee: {
-      ID: ''
-    }
-  },
-  DLApp: {
-    isApplying: true,
-    action: 'new'
-  },
-  dateOfBirth: {
-    year: (today.getFullYear() - 40).toString(),
-    month: (today.getMonth()).toString(),
-    day: today.getDate().toString()
-  }
-};
 
-function buildCardType(type, action){
-  let state = {
-    cardType: [type],
-    cardAction: action,
+const state = () => {
+  return {
+    cardType: [],
+    cardAction: '',
     IDApp: {
-      isApplying: false,
-      action: ''
-    },
-    DLApp: {
       isApplying: false,
       action: ''
     },
@@ -44,55 +20,56 @@ function buildCardType(type, action){
       year: (today.getFullYear() - 40).toString(),
       month: (today.getMonth()).toString(),
       day: today.getDate().toString()
-    }
+    },
+    seniorID: '',
+    flow: ''
   };
-  if (type === 'DL') {
-    state.DLApp.isApplying = true;
-    state.DLApp.action = action;
-  }
-  if (type === 'ID') {
-    state.IDApp.isApplying = true;
-    state.IDApp.action = action;
-  }
-  return state;
 };
-
-const seniorYear = (today) => {
-  return (today.getFullYear() - 65).toString()
-};
+const seniorYear =  (today.getFullYear() - 65).toString();
+const ID = ['ID'];
+const DL = ['DL'];
+const both = ['ID', 'DL'];
 
 describe('Data helpers for determining next path from current page and props in my-basics section', function() {
   let data;
   beforeEach(function() {
-    data = buildCardType('', '');
-    data.dateOfBirth = {
-      year: (today.getFullYear() - 40).toString(),
-      month: (today.getMonth()).toString(),
-      day: today.getDate().toString()
-    };
+    data = state();
   });
 
   describe('#myBasics section', function() {
     describe('#socialSecurity', function() {
       it('goes to medicalHistory page if user is replacing a DL', function() {
-        data = buildCardType('DL', 'replace');
+        data.cardType = DL;
+        data.cardAction = 'replace';
         assert.equal(socialSecurity(data), 'medicalHistory');
       });
 
       it('goes to medicalHistory page if user is getting a new DL', function() {
-        data = buildCardType('DL', 'new');
+        data.cardType = DL;
+        data.cardAction = 'new';
         assert.equal(socialSecurity(data), 'medicalHistory');
       });
 
       it('goes to cardHistory, skipping medicalHistory, if user is getting a new ID', function() {
-        data = buildCardType('ID', 'new');
+        data.cardType = ID;
+        data.cardAction = 'new';
+        data.IDApp.action = 'new';
         assert.equal(socialSecurity(data), 'cardHistory');
       });
 
       it('goes to nameHistory, skipping medicalHistory and cardHistory, if user is replacing an ID', function() {
-        data = buildCardType('ID', 'replace');
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.IDApp.action = 'replace';
         assert.equal(socialSecurity(data), 'nameHistory');
       });
+    });
+  });
+
+  describe('#editing', function() {
+    it('goes to summary', function() {
+      data.flow = 'edit';
+      assert.equal(socialSecurity(data), 'summary');
     });
   });
 });

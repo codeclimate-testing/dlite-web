@@ -13,6 +13,7 @@ describe('navigateOnBack', function() {
     event = { preventDefault: spy() };
     dispatch = spy();
     props = {
+      addressName: '',
       location: {},
       onSubmit: spy(),
       history: createMemoryHistory('/'),
@@ -24,17 +25,20 @@ describe('navigateOnBack', function() {
     };
   });
 
-  it('if props.location.state.nextAddress does not equal "summary", will go back one step in history', function() {
+  it('will go back one step in history if props.addressName key page does not have "canGoBack" property', function() {
+    props.addressName = 'wdywtdt';
     navigateOnBack(props, validations)(event);
     assert.equal(props.history.entries[0].pathname, '/');
   });
 
-  it('if props.location.state.nextAddress equals "summary", it will check the validations before going back', function() {
-    props.location = {
-      state: {
-        nextAddress: 'summary'
-      }
-    };
+  it('will go back one step in history if props.addressName key page has "canGoBack" property that is equal to true', function() {
+    props.addressName = 'updateAndCorrect';
+    navigateOnBack(props, validations)(event);
+    assert.equal(props.history.entries[0].pathname, '/');
+  });
+
+  it('it will check the validations before going back if props.addressName key page has "canGoBack" property that is false', function() {
+    props.addressName = 'medicalHistory';
     props.validations = false;
     navigateOnBack(props, validations)(event);
 
@@ -46,4 +50,6 @@ describe('navigateOnBack', function() {
       'dispatch not called'
     );
   });
+
+
 });

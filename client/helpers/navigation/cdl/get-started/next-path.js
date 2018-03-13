@@ -1,15 +1,29 @@
 'use strict';
-
+import { editFlow }   from '../../../data/pathnames';
+import { hasValue }   from '../../../data/validations';
 import {
   hasExistingCard,
+  showCurrentCardInfo,
   isChangingCard,
   isReplacingCard
 }    from '../../../data/card-actions';
 
 export const cdlWdywtdt = (props) => {
   let key = 'cdlResidency';
-  if (hasExistingCard(props)) {
+
+  if (showCurrentCardInfo(props)) {
     key = 'cdlCurrentCard';
+  }
+  else if(editFlow(props)) {
+    if (isChangingCard(props)) {
+      key = 'cdlChanges';
+    } else if (isReplacingCard(props)) {
+      key = 'cdlCardReplacement';
+    } else if (!hasExistingCard(props)) {
+      key = 'cdlCurrentDL';
+    } else {
+      key = 'cdlSummary';
+    }
   }
   return key;
 };
@@ -19,23 +33,48 @@ export const cdlCurrentCard = (props) => {
   if (isChangingCard(props)) {
     key = 'cdlChanges';
   }
-  if (isReplacingCard(props)) {
+  else if (isReplacingCard(props)) {
     key = 'cdlCardReplacement';
+  }
+  else if (editFlow(props)){
+    key = 'cdlSummary';
+  }
+  return key;
+};
+
+export const changedCDL = (props) => {
+  let key = 'cdlResidency';
+  if (editFlow(props)) {
+    key = 'cdlSummary';
+  }
+  return key;
+};
+
+export const cdlCurrentDL = (props) => {
+  let key = 'cdlRealID';
+  if (editFlow(props)){
+    key = 'cdlSummary';
+    if (!hasValue(props.classM)) {
+      key = 'motorcycle';
+    }
   }
   return key;
 };
 
 export const cdlSSN = (props) => {
-  let key = 'cdlRealID';
-  if (!hasExistingCard(props)) {
-    key = 'cdlCurrentDL';
+  let key = 'cdlSummary';
+  if (!editFlow(props)) {
+    key = 'cdlRealID';
+    if (!hasExistingCard(props)) {
+      key = 'cdlCurrentDL';
+    }
   }
   return key;
 };
 
 export const cdlCertification = (props) => {
   let key = 'cdlSummary';
-  if (!hasExistingCard(props)) {
+  if (!editFlow(props) && !hasExistingCard(props)) {
     key = 'motorcycle';
   }
   return key;

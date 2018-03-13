@@ -1,8 +1,8 @@
 'use strict';
-import { goToSummary }    from '../data/pathnames';
+import { editMode }    from '../data/pathnames';
 
 const normalFlowOrValid = (props, validator) => {
-  if (goToSummary(props)) {
+  if (editMode(props)) {
     return (props.onSubmitShowErrors && validator && validator.isValid());
   } else {
     return true;

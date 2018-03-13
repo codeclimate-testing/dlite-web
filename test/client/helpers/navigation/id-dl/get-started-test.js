@@ -3,200 +3,601 @@
 const assert = require('assert');
 
 import {
+  dateOfBirth,
+  wdywtdt,
   chooseCardType,
   currentCardInfo,
-  updateAndCorrect,
-  replacementDetails,
+  changedCard,
   realID,
+  seniorID,
   chooseLicenseClass
 } from '../../../../../client/helpers/navigation/id-dl/get-started/next-path';
 
 const today = new Date();
-const bothCards = {
-  cardAction: 'new',
-  cardType: ['ID', 'DL'],
-  IDApp: {
-    isApplying: true,
-    action: 'new',
-    reducedFee: {
-      ID: ''
-    }
-  },
-  DLApp: {
-    isApplying: true,
-    action: 'new'
-  },
-  dateOfBirth: {
-    year: (today.getFullYear() - 40).toString(),
-    month: (today.getMonth()).toString(),
-    day: today.getDate().toString()
-  }
-};
 
-function buildCardType(type, action){
-  let state = {
-    cardType: [type],
-    cardAction: action,
-    IDApp: {
-      isApplying: false,
-      action: ''
-    },
-    DLApp: {
-      isApplying: false,
-      action: ''
-    },
+const state = () => {
+  return {
+    cardType: [],
+    cardAction: '',
     dateOfBirth: {
       year: (today.getFullYear() - 40).toString(),
       month: (today.getMonth()).toString(),
       day: today.getDate().toString()
-    }
+    },
+    currentCardInfo: {
+      number: '',
+      day: '',
+      year: ''
+    },
+    licenseAndIdHistory: {
+      isIssued: '',
+      month: '',
+      year: '',
+      day: ''
+    },
+    reducedFee: {
+      ID: ''
+    },
+    seniorID: '',
+    flow: ''
   };
-  if (type === 'DL') {
-    state.DLApp.isApplying = true;
-    state.DLApp.action = action;
-  }
-  if (type === 'ID') {
-    state.IDApp.isApplying = true;
-    state.IDApp.action = action;
-  }
-  return state;
 };
 
-const seniorYear = (today) => {
-  return (today.getFullYear() - 65).toString()
-};
+const ID = ['ID'];
+const DL = ['DL'];
+const both = ['ID', 'DL'];
+
+const seniorYear = (today.getFullYear() - 65).toString();
+
+const youthYear = (today.getFullYear() - 15).toString();
 
 describe('Data helpers for determining next path from current page and props in get-started section', function() {
   let data;
-  beforeEach(function() {
-    data = buildCardType('', '');
-    data.dateOfBirth = {
-      year: (today.getFullYear() - 40).toString(),
-      month: (today.getMonth()).toString(),
-      day: today.getDate().toString()
-    };
-  });
 
-  describe('#getStarted section', function() {
-    let props;
+  describe('#normal flow', function() {
     beforeEach(function() {
-      props = {
-        chooseApp: ''
-      }
+      data = state();
     });
-
+    describe('##dateOfBirth', function() {
+      it('goes to wdywtdt page', function() {
+        assert.equal(dateOfBirth(data), 'wdywtdt');
+      });
+    });
+    describe('##wdywtdt', function() {
+      it('goes to chooseCardType', function() {
+        assert.equal(wdywtdt(data), 'chooseCardType');
+      });
+    });
     describe('##chooseCardType', function() {
       it('if senior customer has existing card it will navigate to the existing card page', function() {
-        data = buildCardType('ID', 'renew');
-        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
         assert.equal(chooseCardType(data), 'currentCardInfo');
       });
 
       it('if too young for a DL diverts to the youth notifcation page', function() {
-        data = buildCardType('DL', 'new');
+        data.cardType = DL;
+        data.cardAction = 'new';
         data.dateOfBirth.year =(today.getFullYear() - 15).toString();
 
         assert.equal(chooseCardType(data), 'youthIDInstead');
       });
 
       it('if applying for a new ID and a senior', function() {
-        data = buildCardType('ID', 'new');
-        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = ID;
+        data.cardAction = 'new';
+        data.dateOfBirth.year = seniorYear;
         assert.equal(chooseCardType(data), 'seniorID');
       });
 
       it('if applying for a new DL, will go to real id', function() {
-        data = buildCardType('DL', 'new');
+        data.cardType = DL;
+        data.cardAction = 'new';
         assert.equal(chooseCardType(data), 'realID');
       });
     });
-
-    describe('##replacementDetails', function() {
+    describe('##changedCard', function() {
       it('takes seniors replacing a DL to the realID page', function() {
-        data = buildCardType('DL', 'replace');
-        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
 
-        assert.equal(replacementDetails(data), 'realID');
+        assert.equal(changedCard(data), 'realID');
       });
 
       it('takes seniors replacing an ID to the seniorID page', function(){
-        data = buildCardType('ID', 'replace');
-        data.dateOfBirth.year = seniorYear(today);
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
 
-        assert.equal(replacementDetails(data), 'seniorID');
+        assert.equal(changedCard(data), 'seniorID');
       });
 
       it('takes not-yet-seniors to the realID page', function() {
-        data = buildCardType('DL', 'replace');
+        data.cardType = DL;
+        data.cardAction = 'replace';
         data.dateOfBirth.year = (today.getFullYear() - 30).toString();
 
-        assert.equal(replacementDetails(data), 'realID');
+        assert.equal(changedCard(data), 'realID');
       });
     });
-
     describe('##currentCardInfo', function() {
-      it('if applying for an ID and a senior', function() {
-        data = buildCardType('ID', 'renew');
-        data.dateOfBirth.year = seniorYear(today);
-
+      it('senior renewing an ID goes to seniorID', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
         assert.equal(currentCardInfo(data), 'seniorID');
       });
 
-      it('if not eligible for senior id moves to real id', function() {
-        data = buildCardType('DL', 'renew');
-        data.dateOfBirth.year = seniorYear(today);
+      it('non-senior user renewing an ID goes to realID', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
         assert.equal(currentCardInfo(data), 'realID');
       });
-    });
 
-    describe('#updateAndCorrect', function() {
-      it('goes to seniorID page if user is senior updating an ID', function() {
-        data = buildCardType('ID', 'change');
-        data.dateOfBirth.year = seniorYear(today);
-        data.IDApp.cardChanges = {
-          correctOrUpdate: 'update',
-          sections: ['name']
-        };
-        assert.equal(updateAndCorrect(data), 'seniorID');
+      it('senior renewing a DL goes to real id', function() {
+        data.cardType = DL;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'realID');
       });
-
-      it('otherwise goes to realID page', function() {
-        assert.equal(updateAndCorrect(data), 'realID');
+      it('senior changing an ID goes to updates and corrections', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+      it('senior changing a DL goes to updates and corrections', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+      it('senior replacing an ID goes to replacementDetails', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'replacementDetails');
+      });
+      it('senior replacing a DL goes to updates and corrections', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'replacementDetails');
       });
     });
-
     describe('##realID', function() {
       it('when getting a DL, it goes to the page for choosing a class', function() {
-        data = buildCardType('DL', 'renew');
+        data.cardType = DL;
+        data.cardAction = 'renew';
         assert.equal(realID(data), 'chooseLicenseClass');
       });
 
       it('if eligible for a reduced fee, it goes to that page', function() {
-        data = buildCardType('ID', 'renew');
+        data.cardType = ID;
+        data.cardAction = 'renew';
         assert.equal(realID(data), 'reducedFeeID');
       });
 
-      it('goes to get started in other cases', function() {
-        data = buildCardType('ID', 'renew');
-        data.dateOfBirth.year = seniorYear(today);
-        data.IDApp.seniorID = 'Yes';
+      it('goes to get started if user is renewing a senior ID', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
+        data.seniorID = 'Yes';
         assert.equal(realID(data), 'getStarted');
       });
     });
-
+    describe('##seniorID', function() {
+      it('goes to realID', function() {
+        assert.equal(seniorID(data), 'realID');
+      });
+    });
     describe('#chooseLicenseClass', function() {
       it('if eligible for a reduced fee, it goes to that page', function() {
-        data = bothCards;
-        data.IDApp.reducedFee.ID = 'Yes';
+        data.cardType = both;
+        data.reducedFee.ID = 'Yes';
         assert.equal(chooseLicenseClass(data), 'reducedFeeID');
       });
 
       it('goes to get started in other cases', function() {
-        data = bothCards;
-        data.dateOfBirth.year = seniorYear(today);
-        data.IDApp.seniorID = 'Yes';
+        data.cardType = both;
+        data.dateOfBirth.year = seniorYear;
+        data.seniorID = 'Yes';
 
         assert.equal(chooseLicenseClass(data), 'getStarted');
+      });
+    });
+  });
+
+  describe('#adding card flow', function() {
+    beforeEach(function() {
+      data = state()
+      data.flow = 'add';
+    });
+    describe('##wdywtdt', function() {
+      it('user getting a new DL goes to licenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        assert.equal(wdywtdt(data), 'chooseLicenseClass');
+      });
+      it('non-senior user getting a new ID goes to reducedfee', function() {
+        data.cardType = ID;
+        data.cardAction = 'new';
+        assert.equal(wdywtdt(data), 'reducedFeeID');
+      });
+      it('senior user getting a new DL goes to licenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(wdywtdt(data), 'chooseLicenseClass');
+      });
+      it('senior user getting a new ID goes to seniorID', function() {
+        data.cardType = ID;
+        data.cardAction = 'new';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(wdywtdt(data), 'seniorID');
+      });
+      it('user replacing an ID  who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user renewing an ID who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user changing an ID who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user replacing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user renewing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;
+        data.cardAction = 'renew';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user changing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user renewing an ID who has entered current card info goes to reduced fee', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'reducedFeeID');
+      });
+      it('senior renewing an ID who has entered current card info goes to seniorID', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'seniorID');
+      });
+      it('user renewing a DL who has entered current card info goes to licenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'renew';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'chooseLicenseClass');
+      });
+      it('user replacing an ID who has entered current card info goes to replacementDetails', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'replacementDetails');
+      });
+      it('user changing an ID who has entered current card info goes to updateAndCorrect', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'updateAndCorrect');
+      });
+      it('user replacing a DL who has entered current card info goes to replacementDetails', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'replacementDetails');
+      });
+      it('user changing a DL who has entered current card info goes to updateAndCorrect', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'updateAndCorrect');
+      });
+    });
+    describe('##currentCardInfo', function() {
+      it('user renewing a DL goes to licenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'renew';
+        data.currentCardInfo.number = '1111';
+        assert.equal(currentCardInfo(data), 'chooseLicenseClass');
+      });
+      it('user getting a new DL goes to chooseLicenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.currentCardInfo.number = '1111';
+        assert.equal(currentCardInfo(data), 'chooseLicenseClass');
+      });
+      it('senior user renewing an ID goes to reducedFee (not seniorID, that will come later)', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.currentCardInfo.number = '1111';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(currentCardInfo(data), 'reducedFeeID');
+      });
+      it('user getting a new ID goes to reducedFee', function() {
+        data.cardType = ID;         data.cardAction = 'new';
+        data.currentCardInfo.number = '1111';
+        assert.equal(currentCardInfo(data), 'reducedFeeID');
+      });
+      it('user replacing an ID goes to replacementDetails', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        assert.equal(currentCardInfo(data), 'replacementDetails');
+      });
+      it('user changing an ID goes to updateAndCorrect', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+      it('user replacing a DL goes to replacementDetails', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        assert.equal(currentCardInfo(data), 'replacementDetails');
+      });
+      it('user changing a DL goes to updateAndCorrect', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+    });
+    describe('##changedCard', function() {
+      it('user getting a DL goes to licenseClass', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        assert.equal(changedCard(data), 'chooseLicenseClass');
+      });
+      it('user getting an ID goes to reducedFee', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        assert.equal(changedCard(data), 'reducedFeeID');
+      });
+      it('senior user getting an ID goes to seniorID', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(changedCard(data), 'seniorID');
+      });
+    });
+    describe('##realID', function() {
+      it('goes to summary', function() {
+        assert.equal(realID(data), 'summary');
+      });
+    });
+    describe('##seniorID', function() {
+      it('senior user getting a senior ID goes to summary', function() {
+        data.cardType = ID;
+        data.cardAction = 'new';
+        data.seniorID = 'Yes';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(seniorID(data), 'summary');
+      });
+      it('senior user not getting a senior ID goes to reducedFee', function() {
+        data.cardType = ID;
+        data.cardAction = 'new';
+        data.seniorID = 'No';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(seniorID(data), 'reducedFeeID');
+      });
+    });
+
+    describe('##chooseLicenseClass', function() {
+      it('user adding a DL goes to medicalHistory', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        assert.equal(chooseLicenseClass(data), 'medicalHistory');
+      });
+    })
+  });
+
+  describe('#editing card flow', function() {
+    beforeEach(function() {
+      data = state()
+      data.flow = 'edit';
+    });
+
+    describe('##dateOfBirth', function() {
+      it('senior user getting an ID goes to seniorID', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(dateOfBirth(data), 'seniorID');
+      });
+      it('youth user getting an ID goes to summary', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.dateOfBirth.year = youthYear;
+        assert.equal(dateOfBirth(data), 'summary');
+      });
+      it('youth user getting a DL goes to youthIDInstead', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.dateOfBirth.year = youthYear;
+        assert.equal(dateOfBirth(data), 'youthIDInstead');
+      });
+      it('30-something user goes to summary always', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        assert.equal(dateOfBirth(data), 'summary');
+      });
+    });
+
+    describe('##wdywtdt', function() {
+      it('user replacing an ID  who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user renewing an ID who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user changing an ID who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user replacing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user renewing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;         data.cardAction = 'renew';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user changing a DL who has not entered current card info goes to currentCardInfo', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user replacing an ID who has entered current card info goes to replacementDetails', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'replacementDetails');
+      });
+      it('user changing an ID who has entered current card info goes to updateAndCorrect', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'updateAndCorrect');
+      });
+      it('user replacing a DL who has entered current card info goes to replacementDetails', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'replacementDetails');
+      });
+      it('user changing a DL who has entered current card info goes to updateAndCorrect', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'updateAndCorrect');
+      });
+      it('user who is getting a new ID or DL who has not entered any licenseAndIdHistory goes to cardHistory', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        assert.equal(wdywtdt(data), 'cardHistory');
+      });
+      it('user who is getting a new ID or DL who has entered licenseAndIdHistory goes to summary', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.licenseAndIdHistory.isIssued = 'No';
+        assert.equal(wdywtdt(data), 'summary');
+      });
+      it('user who is renewing an ID or DL who has not entered any licenseAndIdHistory goes to currentCardInfo ', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        assert.equal(wdywtdt(data), 'currentCardInfo');
+      });
+      it('user who is renewing an ID or DL who has entered current card info goes to summary', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        data.currentCardInfo.number = '1111';
+        assert.equal(wdywtdt(data), 'summary');
+      });
+    });
+
+    describe('##currentCardInfo', function() {
+      it('user replacing an ID goes to replacementDetails', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        assert.equal(currentCardInfo(data), 'replacementDetails');
+      });
+      it('user changing an ID goes to updateAndCorrect', function() {
+        data.cardType = ID;
+        data.cardAction = 'change';
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+      it('user replacing a DL goes to replacementDetails', function() {
+        data.cardType = DL;
+        data.cardAction = 'replace';
+        assert.equal(currentCardInfo(data), 'replacementDetails');
+      });
+      it('user changing a DL goes to updateAndCorrect', function() {
+        data.cardType = DL;
+        data.cardAction = 'change';
+        assert.equal(currentCardInfo(data), 'updateAndCorrect');
+      });
+      it('user renewing an ID or DL goes to summary', function() {
+        data.cardType = ID;
+        data.cardAction = 'renew';
+        assert.equal(currentCardInfo(data), 'summary');
+      });
+      it('user getting a new ID or DL goes to cardHistory', function() {
+        data.cardType = ID;
+        data.cardAction = 'new';
+        assert.equal(currentCardInfo(data), 'cardHistory');
+      });
+      it('user getting a new ID or DL who has already entered licenseAndIdHistory goes to summary', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.licenseAndIdHistory.isIssued = 'No';
+        assert.equal(currentCardInfo(data), 'summary');
+      });
+    });
+
+    describe('##changedCard', function() {
+      it('senior user replacing an ID goes to summary', function() {
+        data.cardType = ID;
+        data.cardAction = 'replace';
+        data.dateOfBirth.year = seniorYear;
+        assert.equal(changedCard(data), 'summary');
+      });
+      it('user getting a new card who has not entered licenseAndIdHistory goes to cardHistory', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        assert.equal(changedCard(data), 'cardHistory');
+      });
+      it('user getting a new card who has entered licenseAndIdHistory goes to summary', function() {
+        data.cardType = DL;
+        data.cardAction = 'new';
+        data.licenseAndIdHistory.isIssued = 'No';
+        assert.equal(changedCard(data), 'summary');
+      });
+    });
+
+    describe('##realID', function(){
+      it('goes to summary', function() {
+        assert.equal(realID(data), 'summary');
+      });
+    });
+
+    describe('##seniorID', function() {
+      it('senior user getting senior ID goes to summary', function() {
+        data.seniorID = 'Yes';
+        assert.equal(seniorID(data), 'summary');
+      });
+      it('senior user not getting senior ID who has already entered reduced fee info goes to summary', function() {
+        data.seniorID = 'No';
+        data.reducedFee.ID = 'No';
+        assert.equal(seniorID(data), 'summary');
+      });
+      it('senior user not getting senior ID who has not already entered reduced fee info goes to reducedFee', function() {
+        data.seniorID = 'No';
+        data.reducedFee.ID = '';
+        assert.equal(seniorID(data), 'reducedFeeID');
       });
     });
   });

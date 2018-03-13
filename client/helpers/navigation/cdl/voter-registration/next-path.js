@@ -9,7 +9,7 @@ export const citizenship = (props) => {
   let key = 'cdlSummary';
   if (eligibleForCitizen(props)) {
     key = 'cdlVotingEligibility';
-  } 
+  }
   return key;
 };
 

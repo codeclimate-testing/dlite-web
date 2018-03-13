@@ -19,9 +19,7 @@ describe('Data helpers for reduced fee', function() {
         ID: '',
         form: ''
       },
-      IDApp: {
-        seniorID: ''
-      }
+      seniorID: ''
     };
   });
 
@@ -29,7 +27,7 @@ describe('Data helpers for reduced fee', function() {
     it('is false if the person has already opted for a senior id', function() {
       data.cardType = ['ID', 'DL'];
       data.cardAction = 'new';
-      data.IDApp.seniorID = 'Yes';
+      data.seniorID = 'Yes';
 
       assert.equal(eligibleForReducedFee(data), false);
     });
@@ -100,11 +98,11 @@ describe('Data helpers for reduced fee', function() {
     });
     it('returns false if user has not selected to getting a reduced fee and is not getting a senior ID', function() {
       data.reducedFee.ID = '';
-      data.IDApp.seniorID = 'No';
+      data.seniorID = 'No';
       assert.equal(reducedOrNoFee(data), false);
     });
     it('returns true if user is getting a senior ID', function() {
-      data.IDApp.seniorID = 'Yes';
+      data.seniorID = 'Yes';
       assert.equal(reducedOrNoFee(data), true);
     });
   });

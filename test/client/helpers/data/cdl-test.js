@@ -18,7 +18,7 @@ describe('Data helpers for cdl data', function() {
   let props;
   beforeEach(function() {
     props = {
-      addApp: '',
+      chooseApp: '',
       dateOfBirth: {
         month: '03',
         day: '10',
@@ -28,18 +28,18 @@ describe('Data helpers for cdl data', function() {
   });
   describe('#showCDLUnder21', function() {
     it('returns false when user is on regular IDDL application', function() {
-      props.addApp = 'iddl';
+      props.chooseApp = 'iddl';
       assert.equal(showCDLUnder21(props), false);
     });
 
     it('returns false when user is older than 21', function() {
-      props.addApp = 'cdl';
+      props.chooseApp = 'cdl';
       props.dateOfBirth = '1970';
       assert.equal(showCDLUnder21(props), false);
     });
 
     it('returns true when user is under than 21 and is on cdl application', function() {
-      props.addApp = 'cdl';
+      props.chooseApp = 'cdl';
       assert.equal(showCDLUnder21(props), true);
     });
   });

@@ -55,21 +55,19 @@ describe('Data helpers for senior', function() {
     let props;
     beforeEach(function() {
       props = {
-        IDApp: {
-          seniorID: ''
-        }
+        seniorID: ''
       }
     });
     it('returns false if value is No', function() {
-      props.IDApp.seniorID = 'No';
+      props.seniorID = 'No';
       assert.equal(gettingSeniorID(props), false);
     });
     it('returns false if value is blank', function() {
-      props.IDApp.seniorID = '';
+      props.seniorID = '';
       assert.equal(gettingSeniorID(props), false);
     });
     it('returns true if value is Yes', function() {
-      props.IDApp.seniorID = 'Yes';
+      props.seniorID = 'Yes';
       assert.equal(gettingSeniorID(props), true);
     });
   });

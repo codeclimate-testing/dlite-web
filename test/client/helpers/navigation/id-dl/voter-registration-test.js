@@ -22,7 +22,8 @@ describe('Data helpers for determining next path from current page and props in 
         year: (today.getFullYear() - 40).toString(),
         month: (today.getMonth()).toString(),
         day: today.getDate().toString()
-      }
+      },
+      flow: ''
     };
   });
 

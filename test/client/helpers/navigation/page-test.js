@@ -12,11 +12,17 @@ import pages from '../../../../client/helpers/navigation/pages';
 
 describe('Data helpers for page', function() {
   it('#pageFor return the value object for the page', function() {
-    assert.deepEqual(pageFor('realID'), pages.iddl.getStarted[10]);
+    assert.deepEqual(pageFor('realID', {flow: ''}), pages.iddl.getStarted[10]);
   });
 
   it('#pathForPage return the path of that key', function() {
-    assert.deepEqual(pathForPage('realID'), pages.iddl.getStarted[10].path);
+    let props = {flow: ''};
+    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[10].path(props));
+  });
+  it('#pathForPage return the edit path of that key when props.flow equals edit', function() {
+    let props = { flow: 'edit'};
+    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[10].path(props));
+    assert.ok(pathForPage('realID', props).includes('/edit/'));
   });
 
   it('#nextPath return the full path given page with only one path', function() {
@@ -38,11 +44,5 @@ describe('Data helpers for page', function() {
     );
   });
 
-  it('return /apply/summary if state has been passed from link', function() {
-    assert.equal(
-      nextPath('trueName', {location: {state: {nextAddress: 'summary'}}}),
-      '/apply/id-and-license/summary'
-    );
-  });
 });
 
