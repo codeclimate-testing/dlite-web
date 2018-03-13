@@ -6,7 +6,7 @@ import {
 } from '../../../data/voting';
 
 export const citizenship = (props) => {
-  let key = 'summary';
+  let key = 'cdlSummary';
   if (eligibleForCitizen(props)) {
     key = 'cdlVotingEligibility';
   } 
@@ -14,7 +14,7 @@ export const citizenship = (props) => {
 };
 
 export const votingEligibility = (props) => {
-  let key = 'summary';
+  let key = 'cdlSummary';
   if (eligibilityRequirementsYes(props)) {
     key = 'cdlVotingOptOut';
   }

@@ -202,5 +202,7 @@ Scenario: Renewing a CDL
     When I visit the CDL page for Organ Donation
     Then I choose to donate my organs
     And I choose to contribute
+    And I click "Next" to continue
+    Then I will be on the CDL citizen status page
     When I go to the CDL summary
     And I will see my organ selection in the summary

@@ -5,7 +5,7 @@ const organDonation = [
     key: 'cdlOrganDonation',
     description: 'Organ donation',
     path: '/organ-donation',
-    next: ''
+    next: 'cdlCitizenship'
   }
 ];
 

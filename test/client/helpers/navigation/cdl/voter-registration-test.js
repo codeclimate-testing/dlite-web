@@ -29,8 +29,8 @@ describe('Data helpers for determining next path from current page and props in 
 
   describe('#voterRegistration', function() {
     describe('##citizenship', function() {
-      it('returns "summary" if user is not eligible for citizenship and is not preregistering', function() {
-        assert.equal(citizenship(data), 'summary');
+      it('returns "cdlSummary" if user is not eligible for citizenship and is not preregistering', function() {
+        assert.equal(citizenship(data), 'cdlSummary');
       });
 
       it('returns "votingEligibility" if user is eligible for citizenship and is not preregistering', function() {
@@ -46,8 +46,8 @@ describe('Data helpers for determining next path from current page and props in 
     });
 
     describe('##votingEligibility', function() {
-      it('returns "summary" if user is not eligible for voting and is not preregistering', function() {
-        assert.equal(votingEligibility(data), 'summary');
+      it('returns "cdlSummary" if user is not eligible for voting and is not preregistering', function() {
+        assert.equal(votingEligibility(data), 'cdlSummary');
       });
 
       it('returns "votingOptOut" if user is eligible for voting and is not preregistering', function() {
