@@ -25,10 +25,6 @@ const Form = (props) => {
             selectedValue = {props.otherStateLicenses.tenYearHistory}
           >
             <RadioSelector
-              value='online'
-              text={translations[locale].tenYearHistoryPage.fillOutHistoryVia.answerOnline}
-            />
-            <RadioSelector
               value='home'
               text={translations[locale].tenYearHistoryPage.fillOutHistoryVia.answerPrint}
             />

@@ -283,9 +283,9 @@ module.exports = function(world){
       .catch(done);
   });
 
-  world.when('I click that I will complete form online', function(done) {
+  world.when('I click that I will complete form at home', function(done) {
     browser
-      .click('label[for="tenYearHistory-online"]')
+      .click('label[for="tenYearHistory-home"]')
       .then(done)
       .catch(done);
   });

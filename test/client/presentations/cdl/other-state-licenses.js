@@ -56,7 +56,6 @@ describe('LicenseType Page', function() {
         </Wrapper>
       );
 
-      assert.ok(component.find('label[for="tenYearHistory-online"]').length, 'online selector missing');
       assert.ok(component.find('label[for="tenYearHistory-home"]').length, 'home selector missing');
       assert.ok(component.find('label[for="tenYearHistory-field"]').length, 'field office selector missing');
     });

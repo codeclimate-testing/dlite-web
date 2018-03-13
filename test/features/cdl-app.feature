@@ -91,7 +91,7 @@ Scenario: New CDL
   When I click "Next" to continue
   Then I will be on the CDL other state licenses page
   And I click that I have had out of state license
-  And I click that I will complete form online
+  And I click that I will complete form at home
 
   When I go to the CDL summary
   And I will see my name on that summary
