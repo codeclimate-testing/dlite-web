@@ -22,6 +22,7 @@ const NamesHistoryPage = (props) => {
       {convertToHtml('h2', translations[locale].myHistory.nameHistoryPage.pagePrompt, 'question')}
         <UsedPreviousNames
           {...props}
+          selectedValue = { props.namesHistory.hasUsedPreviousNames}
         />
         <EnterPreviousNames
           {...props}

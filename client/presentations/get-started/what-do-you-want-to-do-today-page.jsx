@@ -10,9 +10,8 @@ import translations         from '../../i18n';
 import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 import Translate            from '../../i18n/translate-tag.jsx';
 import {
-  getTextFromPathname,
-  onIDFlow
-}  from '../../helpers/data/pathnames';
+  getCorrectString
+}  from '../../helpers/data/card-type';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -37,15 +36,15 @@ const Form = (props) => {
     ]
   };
 
-  let text = getTextFromPathname(
+  let text = getCorrectString(
     props,
-    translations[locale].intro.wdywtdtPage,
     tempObjectThatNeedsTranslations,
-    anotherTempObjectThatNeedsTranslation
+    anotherTempObjectThatNeedsTranslation,
+    translations[locale].intro.wdywtdtPage,
   );
 
-  let name = getTextFromPathname(
-    props, 'cardAction', 'DLAction', 'IDAction'
+  let name = getCorrectString(
+    props, 'DLAction', 'IDAction', 'cardAction',
   );
 
   return (
@@ -63,7 +62,7 @@ const Form = (props) => {
         </Translate>
 
         <form onSubmit= { props.onSubmit }>
-          <div className='row inner-buttom'>
+          <div className='row inner-button'>
             <fieldset>
               <RadioCollection
                 {...props}

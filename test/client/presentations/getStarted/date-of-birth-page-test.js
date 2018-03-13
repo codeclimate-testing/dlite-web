@@ -68,7 +68,7 @@ describe('DateOfBirthPage', function() {
         month: '04',
         year: (new Date().getFullYear() - 18).toString()
       };
-      props.addApp = 'cdl';
+      props.chooseApp = 'cdl';
       let component = render(
         <Wrapper>
           <DateOfBirthPage {...props} />

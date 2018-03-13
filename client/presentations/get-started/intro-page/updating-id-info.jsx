@@ -8,7 +8,7 @@ import { choosingReducedFee } from '../../../helpers/data/reduced-fee';
 import { convertToHtml } from '../../../i18n/convert-to-html.jsx';
 
 const Senior = (props) => {
-  if (!gettingSeniorID(props)) { return null; }
+  if (!gettingSeniorID(props.IDApp)) { return null; }
   let locale = props.locale;
   return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingSeniorID);
 };
@@ -20,7 +20,7 @@ const Reduced = (props) => {
 };
 
 const Regular = (props) => {
-  if (gettingSeniorID(props) || choosingReducedFee(props.IDApp)) { return null; }
+  if (gettingSeniorID(props.IDApp) || choosingReducedFee(props.IDApp)) { return null; }
   let locale = props.locale;
   return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingID);
 };

@@ -11,7 +11,7 @@ import { correctID }          from '../../../helpers/data/card-type';
 
 const Senior = (props) => {
   let locale = props.locale;
-  if (!gettingSeniorID(props)) { return null; }
+  if (!gettingSeniorID(props.IDApp)) { return null; }
   return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.correctingSeniorID);
 };
 
@@ -23,7 +23,7 @@ const Reduced = (props) => {
 
 const Regular = (props) => {
   let locale = props.locale;
-  if (gettingSeniorID(props) || choosingReducedFee(props.IDApp)) { return null; }
+  if (gettingSeniorID(props.IDApp) || choosingReducedFee(props.IDApp)) { return null; }
   return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.correctingID);
 };
 

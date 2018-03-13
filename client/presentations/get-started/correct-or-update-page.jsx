@@ -45,6 +45,7 @@ const Form = (props) => {
           <RadioForm
             {...props}
             formName  = { formName }
+            selectedValue = { props.cardChanges.correctOrUpdate }
           />
           <UpdateForm
             {...props}
