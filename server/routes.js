@@ -9,7 +9,7 @@ const routes = (passport) => {
 
   router.get( '/api/application/:id',   controllers.getApplication);
   router.post('/api/application',       controllers.postApplication);
-  router.post('/api/translation/:code', controllers.getTranslation);
+  router.get('/api/translation/:code',  controllers.getTranslation);
 
   router.get( '/auth/new',              controllers.authNew(passport));
   router.get( '/auth/oauth/callback',   controllers.authCallback(passport),

@@ -8,7 +8,7 @@ import configure                from '../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import { spy }                  from 'sinon';
 import * as dataPresent         from '../../../../client/helpers/data-present';
-import AppLanguagePage          from '../../../../client/presentations/get-started/choose-language-page.jsx';
+import LanguagePage             from '../../../../client/presentations/get-started/choose-language-page.jsx';
 import store                    from '../../support/page-store';
 
 describe('BallotLanguagePage', function() {
@@ -18,12 +18,12 @@ describe('BallotLanguagePage', function() {
     let props, component, server;
 
     beforeEach(function() {
-      let appLanguage = '';
+      let language = '';
       let onChange = spy();
       let locale = 'en';
       server = {apiStatus: ''};
       props = {
-        appLanguage,
+        language,
         onChange,
         locale,
         server
@@ -31,22 +31,22 @@ describe('BallotLanguagePage', function() {
 
       component = render(
         <Wrapper>
-          <AppLanguagePage  {...props} />
+          <LanguagePage  {...props} />
         </Wrapper>
       );
     });
 
     it('shows 10 labels with 2-character values', function() {
-      assert.ok(component.find('label[for="appLanguage-ja"]').length, 'Japanese option missing');
-      assert.ok(component.find('label[for="appLanguage-en"]').length, 'English option missing');
-      assert.ok(component.find('label[for="appLanguage-zh"]').length, 'Chinese option missing');
-      assert.ok(component.find('label[for="appLanguage-es"]').length, 'Spanish option missing');
-      assert.ok(component.find('label[for="appLanguage-th"]').length, 'Thai option missing');
-      assert.ok(component.find('label[for="appLanguage-ko"]').length, 'Korean option missing');
-      assert.ok(component.find('label[for="appLanguage-tl"]').length, 'Tagalog option missing');
-      assert.ok(component.find('label[for="appLanguage-hi"]').length, 'Hindi option missing');
-      assert.ok(component.find('label[for="appLanguage-km"]').length, 'Khmer option missing');
-      assert.ok(component.find('label[for="appLanguage-vi"]').length, 'Vietnamese option missing');
+      assert.ok(component.find('label[for="language-ja"]').length, 'Japanese option missing');
+      assert.ok(component.find('label[for="language-en"]').length, 'English option missing');
+      assert.ok(component.find('label[for="language-zh"]').length, 'Chinese option missing');
+      assert.ok(component.find('label[for="language-es"]').length, 'Spanish option missing');
+      assert.ok(component.find('label[for="language-th"]').length, 'Thai option missing');
+      assert.ok(component.find('label[for="language-ko"]').length, 'Korean option missing');
+      assert.ok(component.find('label[for="language-tl"]').length, 'Tagalog option missing');
+      assert.ok(component.find('label[for="language-hi"]').length, 'Hindi option missing');
+      assert.ok(component.find('label[for="language-km"]').length, 'Khmer option missing');
+      assert.ok(component.find('label[for="language-vi"]').length, 'Vietnamese option missing');
     });
 
     it('no option is selected on initial render', function() {
@@ -59,7 +59,7 @@ describe('BallotLanguagePage', function() {
 
       component = render(
         <Wrapper>
-          <AppLanguagePage  {...props} />
+          <LanguagePage  {...props} />
         </Wrapper>
       );
 

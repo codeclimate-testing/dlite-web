@@ -17,6 +17,7 @@ const medicalHistories    = require('./get-medical-histories');
 const licenseIssues       = require('./get-license-issues');
 const veteransService     = require('./get-veterans-service');
 const citizenStatus       = require('./get-citizen-status');
+const ballotLanguage      = require('./get-ballot-language');
 const ballotByMail        = require('./get-ballot-by-mail');
 const eligibility         = require('./get-eligibility');
 const party               = require('./get-party');
@@ -42,6 +43,7 @@ module.exports = {
   licenseIssues,
   veteransService,
   citizenStatus,
+  ballotLanguage,
   ballotByMail,
   eligibility,
   party,

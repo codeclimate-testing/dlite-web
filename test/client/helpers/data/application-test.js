@@ -3,17 +3,17 @@
 import assert from 'assert';
 
 import {
-  appLanguageIsSelected
+  languageIsSelected
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
-  describe('#appLanguageIsSelected', function() {
+  describe('#languageIsSelected', function() {
     it('is true when string exists', function() {
-      assert.equal(appLanguageIsSelected('en'), true);
+      assert.equal(languageIsSelected('en'), true);
     });
 
     it('is false when value is blank', function() {
-      assert.equal(appLanguageIsSelected(''), false);
+      assert.equal(languageIsSelected(''), false);
     });
   });
 });

@@ -8,16 +8,27 @@ import RadioCollection          from '../radio-selector-collection.jsx';
 import Accordion                from '../../containers/accordion.jsx';
 import translations             from '../../i18n';
 import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
-
+import {
+  hideMain,
+  getErrorMessage
+} from '../../helpers/data/api';
 
 const Form = (props) => {
   let locale = props.locale;
+  let className = `choose-application-form ${hideMain(props)}`;
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
-      <form onSubmit = { props.onSubmit } className='choose-application-form'>
+
+      <div className={props.server.apiStatus}/>
+
+      { (props.server.apiStatus === 'error') &&
+        <p className = 'error-message'> {getErrorMessage(props)} </p>
+      }
+
+      <form onSubmit = { props.onSubmit } className={className}>
       {convertToHtml('h2', 'What are you here for?' , 'question')}
         <fieldset>
           <RadioCollection

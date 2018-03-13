@@ -33,7 +33,7 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit } >
           <LanguageRadios
             {...props}
-            name='appLanguage'
+            name='language'
           />
           <ContinueButton
             locale = { locale }

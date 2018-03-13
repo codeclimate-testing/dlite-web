@@ -13,7 +13,7 @@ function extractVotingRegistrations(data) {
     type:               voterChoice.type,
     opted_out:          parserHelper.strToBool(voterChoice.opted_out),
     party:              parserHelper.parseParty(data.voting.politicalPartyChoose),
-    language:           data.basics.language.ballotLanguage,
+    language:           data.voting.ballotLanguage,
     vote_by_mail:       parserHelper.strToBool(data.voting.ballotByMail),
     should_contact:     parserHelper.strToBool(data.voting.contactMethods.shouldContact)
   };

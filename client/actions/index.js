@@ -47,6 +47,7 @@ export const TYPES = {
   UPDATE_VETERANS_SERVICE:                'UPDATE_VETERANS_SERVICE',
   UPDATE_CITIZEN_STATUS:                  'UPDATE_CITIZEN_STATUS',
   UPDATE_BALLOT_BY_MAIL:                  'UPDATE_BALLOT_BY_MAIL',
+  UPDATE_BALLOT_LANGUAGE:                 'UPDATE_BALLOT_LANGUAGE',
   UPDATE_ELIGIBILITY_REQUIREMENTS:        'UPDATE_ELIGIBILITY_REQUIREMENTS',
   UPDATE_POLITICAL_PARTY_CHOOSE:          'UPDATE_POLITICAL_PARTY_CHOOSE',
   UPDATE_POLITICAL_PARTY_CHOOSE_PREREG:   'UPDATE_POLITICAL_PARTY_CHOOSE_PREREG',
@@ -134,6 +135,7 @@ export const updateSocialSecurity                     = generateFormAction(TYPES
 export const updateVeteranService                     = generateFormAction(TYPES.UPDATE_VETERANS_SERVICE);
 export const updateCitizenStatus                      = generateFormAction(TYPES.UPDATE_CITIZEN_STATUS);
 export const updateBallotByMail                       = generateFormAction(TYPES.UPDATE_BALLOT_BY_MAIL);
+export const updateBallotLanguage                       = generateFormAction(TYPES.UPDATE_BALLOT_LANGUAGE);
 export const updateEligibilityRequirements            = generateFormAction(TYPES.UPDATE_ELIGIBILITY_REQUIREMENTS);
 export const updatePoliticalPartyChoose               = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE);
 export const updatePoliticalPartyChoosePreReg         = generateFormAction(TYPES.UPDATE_POLITICAL_PARTY_CHOOSE_PREREG);

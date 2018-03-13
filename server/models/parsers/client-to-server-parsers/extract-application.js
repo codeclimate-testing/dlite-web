@@ -6,7 +6,7 @@ function extractApplication(data) {
   let legalName         = basics.legalName || {};
   let heightWeight      = basics.traitsHeightWeight || {};
   let physicalTraits    = basics.physicalTraits || {};
-  let language          = basics.language.appLanguage || '';
+  let language          = basics.language || '';
   let dob               = null;
   let socialSecurity    = 'No';
 

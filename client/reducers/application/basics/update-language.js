@@ -1,28 +1,13 @@
 'use strict';
 
-import { TYPES }        from '../../../actions';
-import { hasValue }     from '../../../helpers/data/validations';
+import { TYPES } from '../../../actions';
 
-const defaultState = () => {
-  return {
-    appLanguage: '',
-    ballotLanguage: '',
-    hasChosenBallot: false
-  };
-};
-
-const formReducer = (state = defaultState(), action) => {
-  if (action.type !== TYPES.UPDATE_LANGUAGE ) { return state;}
-
-  let data = Object.assign({}, state);
-  data[action.payload.name] = action.payload.value;
-
-  if (action.payload.name === 'appLanguage' && !data.hasChosenBallot) {
-    data.ballotLanguage = data.appLanguage;
-  } else if (action.payload.name === 'ballotLanguage') {
-    data.hasChosenBallot = true;
-  }
-
-  return Object.assign({}, state, data);
+function defaultState() {
+  return '';
 }
-export default formReducer;
+
+export default function(state = defaultState(), action) {
+  if (action.type !== TYPES.UPDATE_LANGUAGE) { return state; }
+  let payload = action.payload.value;
+  return payload || state;
+}

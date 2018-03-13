@@ -236,7 +236,7 @@ describe('server data parser', function() {
       getApplication(data.application.id)
       .then((records) => {
         parsedData = parse(records);
-        assert.equal(parsedData.application.basics.language.ballotLanguage, clientData.basics.language.ballotLanguage);
+        assert.equal(parsedData.application.voting.ballotLanguage, clientData.voting.ballotLanguage);
         done();
       })
       .catch(done);

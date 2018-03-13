@@ -50,7 +50,7 @@ const Voting = (props) => {
         editKey                 = 'choosePoliticalParty'
       />
       <BallotLanguage
-        ballotLanguage          = {application.basics.language.ballotLanguage}
+        ballotLanguage          = {application.voting.ballotLanguage}
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}

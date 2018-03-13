@@ -80,6 +80,7 @@ describe('client data parser', function() {
       let dob = new Date(parserHelper.createDateString(data.basics.dateOfBirth));
       let social = data.basics.socialSecurity.part1+'-'+data.basics.socialSecurity.part2+'-'+data.basics.socialSecurity.part3
       assert.equal(applicationData.id, data.id);
+      assert.equal(applicationData.language, data.basics.language);
       assert.equal(applicationData.first_name, data.basics.legalName.firstName);
       assert.equal(applicationData.middle_name, data.basics.legalName.middleName);
       assert.equal(applicationData.last_name, data.basics.legalName.lastName);
@@ -227,7 +228,7 @@ describe('client data parser', function() {
       assert.equal(votingReg.type, 'new');
       assert.equal(votingReg.opted_out, false);
       assert.equal(votingReg.party, data.voting.politicalPartyChoose.politicalPartyChoose);
-      assert.equal(votingReg.language, data.basics.language.ballotLanguage);
+      assert.equal(votingReg.language, data.voting.ballotLanguage);
       assert.equal(votingReg.vote_by_mail, parserHelper.strToBool(data.voting.ballotByMail));
       assert.equal(votingReg.should_contact, parserHelper.strToBool(data.voting.contactMethods.shouldContact));
     });

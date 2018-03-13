@@ -12,18 +12,16 @@ import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
 import Translate            from '../../i18n/translate-tag.jsx';
+import Translator           from '../../i18n/translator-tag.jsx';
 
 const declineStatement = (props) => {
-  let locale = props.locale;
-  let translation = translations[locale].votingRegistration.shared;
 
   if (isPreregistering(props.dateOfBirth)) {
-    translation = translation.declineToAnswerInformationPreRegistration;
+    return  'votingRegistration.shared.declineToAnswerInformationPreRegistration';
   } else {
-    translation = translation.declineToAnswerInformationRegistration;
+    return 'votingRegistration.shared.declineToAnswerInformationRegistration';
   }
 
-  return translation;
 };
 
 const VoterIntro = (props) => {
@@ -43,13 +41,16 @@ const CitizenStatusPage = (props) => {
      <hr />
 
      <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
-        <Translate tag='h2' className='question'>
-          { translations[locale].votingRegistration.citizenshipPage.pagePrompt }
-        </Translate>
+        <Translator
+          tag           = 'h2'
+          className     = 'question'
+          contentKey    = 'votingRegistration.citizenshipPage.pagePrompt'
+        />
 
-        <Translate tag='p'>
-          { declineStatement(props) }
-        </Translate>
+        <Translator
+          tag         = 'p'
+          contentKey  = { declineStatement(props) }
+        />
 
         <fieldset>
           <RadioCollection

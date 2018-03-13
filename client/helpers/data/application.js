@@ -2,8 +2,8 @@
 
 import { hasValue }     from './validations';
 
-export const appLanguageIsSelected = (appLanguage) => {
-  return hasValue(appLanguage);
+export const languageIsSelected = (language) => {
+  return hasValue(language);
 };
 
 export const ballotLanguageIsSelected = (ballotLanguage) => {

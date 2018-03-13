@@ -29,7 +29,7 @@ function parse(data) {
       application: {
         id:                       application.id,
         basics: {
-          language:                 get.language(application, voting_registrations),
+          language:                 get.language(application),
           legalName:                get.legalName(application),
           dateOfBirth:              get.dateOfBirth(application),
           address:                  get.address(addresses),
@@ -56,6 +56,7 @@ function parse(data) {
 
         voting: {
           citizenStatus:            get.citizenStatus(voting_registrations),
+          ballotLanguage:           get.ballotLanguage(voting_registrations),
           ballotByMail:             get.ballotByMail(voting_registrations),
           eligibilityRequirements:  get.eligibility(voting_registrations),
           politicalPartyChoose:     get.party(voting_registrations),

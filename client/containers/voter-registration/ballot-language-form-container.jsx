@@ -3,7 +3,7 @@
 import React                      from 'react';
 import connectForm                from '../../helpers/connect-form';
 
-import { updateLanguage }         from '../../actions/index';
+import { updateBallotLanguage }   from '../../actions/index';
 import Presentation               from '../../presentations/voter-registration/ballot-language-page.jsx';
 import handlers                   from '../../helpers/handlers';
 import { BallotLanguageValidator} from '../../helpers/validations';
@@ -28,7 +28,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    ballotLanguage  : state.application.basics.language.ballotLanguage,
+    ballotLanguage  : state.application.voting.ballotLanguage,
     dateOfBirth     : state.application.basics.dateOfBirth,
     focused         : state.ui.focus,
     validations     : state.ui.validations,
@@ -37,5 +37,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connectForm(mapStateToProps, updateLanguage, Page);
+export default connectForm(mapStateToProps, updateBallotLanguage, Page);
 

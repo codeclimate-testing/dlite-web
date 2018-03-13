@@ -12,8 +12,7 @@ const Page = (props) => {
     <Presentation
       {...props}
       onBack            = { onBack }
-      selectedValue     = { props.appLanguage }
-      name              = 'appLanguage'
+      selectedValue     = { props.language }
     />
   );
 };
@@ -21,11 +20,11 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     focused:      state.ui.focus,
-    appLanguage:  state.application.basics.language.appLanguage,
+    language:     state.application.basics.language,
     locale:       state.ui.locale,
     server:       state.server
   };
 };
 
 
-export default mergePropsGenerator(mapStateToProps, updateLanguage, 'defaultLanguage', Page);
+export default mergePropsGenerator(mapStateToProps, updateLanguage, 'applicationLanguageSubmit', Page);

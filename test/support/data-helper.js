@@ -7,10 +7,7 @@ function fakeClientData() {
   return {
     id: uuid(),
     basics: {
-      'language': {
-        'ballotLanguage': 'en',
-        'appLanguage': 'ko'
-      },
+      'language': 'en',
       'legalName': {
         'firstName': 'John',
         'middleName': 'x',
@@ -150,6 +147,7 @@ function fakeClientData() {
     'voting': {
       'citizenStatus': 'Yes',
       'ballotByMail': 'Yes',
+      'ballotLanguage': 'en',
       'eligibilityRequirements': 'Yes',
       'politicalPartyChoose': {
         'isSelected': 'Yes',

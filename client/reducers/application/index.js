@@ -42,6 +42,7 @@ import updateYouthIDInstead               from './update-youth-id-instead';
 import updateRealID                       from './update-real-id';
 
 import updateCitizenStatus                from './voting/update-citizen-status';
+import updateBallotLanguage               from './voting/update-ballot-language';
 import updateBallotByMail                 from './voting/update-ballot-by-mail';
 import updateEligibilityRequirements      from './voting/update-eligibility-requirements';
 import updatePoliticalPartyChoose         from './voting/update-choose-party';
@@ -91,6 +92,7 @@ const rootReducer = combineReducers({
   organDonation               : updateOrganDonation,
   voting                      : combineReducers({
     citizenStatus               : updateCitizenStatus,
+    ballotLanguage              : updateBallotLanguage,
     ballotByMail                : updateBallotByMail,
     eligibilityRequirements     : updateEligibilityRequirements,
     politicalPartyChoose        : updatePoliticalPartyChoose,
