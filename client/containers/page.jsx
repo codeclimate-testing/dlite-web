@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 
 import Presentation             from '../presentations/page.jsx';
 import handlers                 from '../helpers/handlers';
-import { getTextFromPathname }  from '../helpers/data/pathnames';
+import { getTextFromState }     from '../helpers/data/pathnames';
 
 const Page = (props) => {
-  let sectionKey = getTextFromPathname(props, props.sectionKey, '');
+  let sectionKey = getTextFromState(props, props.sectionKey, '');
   props.onPageLoad(sectionKey, props.section);
-  props.onFlowChange(props);
 
   return (
     <Presentation {...props} />
@@ -20,19 +19,17 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     cardType:       state.application.cardType,
+    appType:        state.ui.appType,
     section:        state.ui.section,
-    addApp:         state.ui.addApp,
     locale:         state.ui.locale
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   const onPageLoad            = handlers.onPageLoad(dispatch);
-  const onFlowChange          = handlers.onFlowChange(dispatch);
   const onLocaleChange        = handlers.onLocaleChange(dispatch);
   return {
     onPageLoad,
-    onFlowChange,
     onLocaleChange
   };
 };

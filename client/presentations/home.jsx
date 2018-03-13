@@ -7,9 +7,15 @@ import linkData from '../helpers/navigation/pages';
 
 const LinkListItem = (props) => {
   let className = props.description.replace(/\s+/g, '-');
+  let urlPath = props.path;
+  if (typeof(urlPath) !== 'string') {
+    urlPath = urlPath({
+      flow: ''
+    });
+  }
   return (
     <li style={{padding: '0px'}}>
-      <Link className={className} to={ props.path }>{props.description}</Link>
+      <Link className={className} to={ urlPath }>{props.description}</Link>
     </li>
   );
 };
@@ -67,13 +73,6 @@ const Home = () => {
         <LinkSection name='IDDL Conclusion'>
           { wrapGroup(linkData.iddl.conclusion) }
         </LinkSection>
-        <LinkSection name='Add DL'>
-          { wrapGroup(linkData.iddl.addDL) }
-        </LinkSection>
-        <LinkSection name='Add ID'>
-          { wrapGroup(linkData.iddl.addID) }
-        </LinkSection>
-
         <hr/>
         <h3>CDL App</h3>
         <LinkSection name='CDL Get Started'>

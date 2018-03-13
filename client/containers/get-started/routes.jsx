@@ -17,26 +17,58 @@ import ReducedFee                             from './reduced-fee-page.jsx';
 import GetStarted                             from './get-started-page.jsx';
 import {
   iddlPath,
-  addPath
- }                           from '../../helpers/alice-path';
+  addPath,
+  editPath
+} from '../../helpers/alice-path';
 
 
 const GetStartedRoutes = () => {
   return (
     <div>
-      <Route path={ iddlPath('/my-basics/legal-name') }       component={LegalName} />
-      <Route path={ iddlPath('/my-basics/date-of-birth') }    component={DateOfBirth} />
-      <Route path={ iddlPath('/what-do-you-want-to-do-today') } exact render={(props) => <WhatDoYouWantToDoToday {...props} addressName='wdywtdt' />} />
-      <Route path={ iddlPath('/select-id-dl') }               component={ChooseCard} />
-      <Route path={ iddlPath('/current-card-information') }   exact render={(props) => <CurrentCardInfo {...props} addressName='currentCardInfo' />}/>
-      <Route path={ iddlPath('/updates-and-corrections') }    exact render={(props) => <UpdatesCorrects {...props} addressName='updateAndCorrect' />} />
-      <Route path={ iddlPath('/replacement-details') }        exact render={(props) => <ReplacementDetails {...props} addressName='replacementDetails' />} />
-      <Route path={ iddlPath('/senior-id') }                  exact render={(props) => <SeniorID addressName='seniorID' {...props}/>}/>
-      <Route path={ iddlPath('/youth-license-notification') } component={YouthLicenseNotification} />
-      <Route path={ iddlPath('/real-id') }                    component={RealID} />
-      <Route path={ iddlPath('/license-type') }               exact render={(props) => <LicenseType {...props} addressName='chooseLicenseClass'/>}/>
-      <Route path={ iddlPath('/reduced-fee')}                 exact render={(props) => <ReducedFee {...props} addressName='reducedFeeID' />}/>
-      <Route path={ iddlPath('/get-started') }                component={GetStarted} />
+      <Route path={ iddlPath('/my-basics/legal-name') }           component={LegalName}               />
+      <Route path={ editPath('/my-basics/legal-name') }           component={LegalName}               />
+
+      <Route path={ iddlPath('/my-basics/date-of-birth') }        component={DateOfBirth}             />
+      <Route path={ editPath('/my-basics/date-of-birth') }        component={DateOfBirth}             />
+
+      <Route path={ iddlPath('/what-do-you-want-to-do-today') }   component={WhatDoYouWantToDoToday}  />
+      <Route path={ editPath('/what-do-you-want-to-do-today') }   component={WhatDoYouWantToDoToday}  />
+      <Route path={ addPath('/what-do-you-want-to-do-today') }    component={WhatDoYouWantToDoToday}  />
+
+      <Route path={ iddlPath('/select-id-dl') }                   component={ChooseCard}              />
+
+      <Route path={ iddlPath('/current-card-information') }       component={CurrentCardInfo}         />
+      <Route path={ editPath('/current-card-information') }       component={CurrentCardInfo}         />
+      <Route path={ addPath('/current-card-information') }        component={CurrentCardInfo}         />
+
+      <Route path={ iddlPath('/updates-and-corrections') }        component={UpdatesCorrects}         />
+      <Route path={ editPath('/updates-and-corrections') }        component={UpdatesCorrects}         />
+      <Route path={ addPath('/updates-and-corrections') }         component={UpdatesCorrects}         />
+
+      <Route path={ iddlPath('/replacement-details') }            component={ReplacementDetails}      />
+      <Route path={ editPath('/replacement-details') }            component={ReplacementDetails}      />
+      <Route path={ addPath('/replacement-details') }             component={ReplacementDetails}      />
+
+      <Route path={ iddlPath('/senior-id') }                      component={SeniorID}                />
+      <Route path={ editPath('/senior-id') }                      component={SeniorID}                />
+      <Route path={ addPath('/senior-id') }                       component={SeniorID}                />
+
+      <Route path={ iddlPath('/youth-license-notification') }     component={YouthLicenseNotification}  />
+      <Route path={ editPath('/youth-license-notification') }     component={YouthLicenseNotification}  />
+
+      <Route path={ iddlPath('/real-id') }                        component={RealID}                  />
+      <Route path={ editPath('/real-id') }                        component={RealID}                  />
+      <Route path={ addPath('/real-id') }                         component={RealID}                  />
+
+      <Route path={ iddlPath('/license-type') }                   component={LicenseType}             />
+      <Route path={ editPath('/license-type') }                   component={LicenseType}             />
+      <Route path={ addPath('/license-type') }                    component={LicenseType}             />
+
+      <Route path={ iddlPath('/reduced-fee')}                     component={ReducedFee}              />
+      <Route path={ editPath('/reduced-fee')}                     component={ReducedFee}              />
+      <Route path={ addPath('/reduced-fee')}                      component={ReducedFee}              />
+
+      <Route path={ iddlPath('/get-started') }                    component={GetStarted}              />
     </div>
     );
 };

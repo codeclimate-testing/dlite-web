@@ -6,13 +6,13 @@ import * as onSubmitDispatches    from './on-submit-dispatches';
 export const mergePropsGenerator = (mapStateToProps, action, onSubmitFunction, form) => {
 
   let mapDispatchToProps = (dispatch) => {
-    const onChange = handlers.onInputChange(action, dispatch);
-    const onSubmit = handlers.onFormSubmit(dispatch);
-    const onBlur   = handlers.onBlur(dispatch);
-    const onFocus  = handlers.onFocus(dispatch);
-    const onBlurValidate = handlers.onBlurValidate(dispatch);
-    const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
-    const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
+    const onChange                = handlers.onInputChange(action, dispatch);
+    const onSubmit                = handlers.onFormSubmit(dispatch);
+    const onBlur                  = handlers.onBlur(dispatch);
+    const onFocus                 = handlers.onFocus(dispatch);
+    const onBlurValidate          = handlers.onBlurValidate(dispatch);
+    const onFocusClearValidation  = handlers.onFocusClearValidation(dispatch);
+    const onSubmitShowErrors      = handlers.onSubmitShowErrors(dispatch);
 
     return {
       onSubmit,

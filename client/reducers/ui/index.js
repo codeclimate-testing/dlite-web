@@ -7,7 +7,7 @@ import accordions           from './accordions';
 import section              from './section';
 import validations          from './validations';
 import hover                from './hover';
-import addApp               from './add-app';
+import flow                 from './app-type';
 import chooseApp            from './choose-app';
 import locale               from './locale';
 
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   section,
   validations,
   hover,
-  addApp,
+  flow  ,
   chooseApp,
   locale
 });

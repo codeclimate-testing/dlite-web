@@ -1,18 +1,21 @@
 'use strict';
-
-import { addApp }           from '../../actions';
+import { hasValue }       from '../data/validations';
 import {
-  splitPathname,
-  addingApp
- }    from '../data/pathnames';
-
+  addApp,
+  updateCardType,
+  updateCardAction
+ } from '../../actions';
 
 export default (dispatch) =>  {
-  return (props) => {
-    if (!props.hasOwnProperty('location')){ return; }
+  return (flow, cardType) => {
+    dispatch(addApp(flow));
 
-    let value = splitPathname(props.location.pathname);
-    if (value === props.addApp ) { return; }
-    dispatch(addApp(value));
+    if (flow === 'add') {
+      dispatch(updateCardAction('newFlow', ''));
+    }
+
+    if (hasValue(cardType)) {
+      dispatch(updateCardType('addFromSummary', cardType));
+    }
   };
 };
