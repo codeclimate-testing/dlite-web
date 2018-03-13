@@ -111,7 +111,7 @@ describe('UpdatingIDInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingReducedFeeID), true);
@@ -122,7 +122,7 @@ describe('UpdatingIDInfo', function() {
 
       let component = render(
         <Wrapper>
-        <GetStartedPage {...props} />
+          <GetStartedPage {...props} />
         </Wrapper>
       );
       assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingSeniorID), true);

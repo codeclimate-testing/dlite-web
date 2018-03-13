@@ -5,33 +5,46 @@ import sinon        from 'sinon';
 import onFlowChange from '../../../../client/helpers/handlers/on-flow-change';
 
 describe('onFlowChange', function() {
-  let props, dispatch, onChange;
+  let value, dispatch, onChange, flow, cardType;
 
   beforeEach(function() {
-    props = {
-      location: {
-        pathname: ''
-      },
-      addApp: ''
-    };
+    value = ''
     dispatch = sinon.spy();
     onChange = onFlowChange(dispatch);
+    flow = 'edit';
+    cardType = '';
   });
 
-  it('dispatches an action with the value if the split pathname equals "driver-license"', function() {
-    props.location.pathname = '/add/driver-license/';
-    onChange(props);
+  it('dispatches the ADD_APP action', function() {
+    onChange(flow, cardType);
     assert.ok(dispatch.calledWith({
       type: 'ADD_APP',
-      payload: { value: 'driver-license'}
+      payload: { value: flow}
     }));
   });
 
-  it('does not dispatch an action if the existing state already matches the split pathname', function() {
-    props.location.pathname = '/add/driver-license/';
-    props.addApp = 'driver-license';
-    onChange(props);
-    assert.equal(dispatch.called, false);
+  it('dispatches updateCardType when cardType is also passed', function() {
+    cardType = 'DT';
+    onChange(flow, cardType);
+    assert.ok(dispatch.calledWith({
+      type: 'UPDATE_CARD_TYPE',
+      payload: {
+        name: 'addFromSummary',
+        value: cardType
+      }
+    }));
+  });
+
+  it('dispatches updateCardAction when flow equals "add"', function() {
+    flow = 'add';
+    onChange(flow, cardType);
+    assert.ok(dispatch.calledWith({
+      type: 'UPDATE_CARD_ACTION',
+      payload: {
+        name: 'newFlow',
+        value: ''
+      }
+    }));
   });
 });
 

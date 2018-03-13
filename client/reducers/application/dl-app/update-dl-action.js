@@ -24,7 +24,10 @@ const formReducer = (state = defaultState(), action) => {
         newState = 'new';
       }
     }
-    else if (value === 'DL'){
+    else if (action.payload.name === 'addFromSummary') {
+      newState = state;
+    }
+    else if (value === 'DL' ){
       newState =  action.payload.name;
     }
   }
@@ -43,11 +46,6 @@ const formReducer = (state = defaultState(), action) => {
       newState = 'new';
     }
   }
-
-  else if (action.type === TYPES.ADD_APP) {
-    newState = state;
-  }
-
   return newState;
 };
 export default formReducer;

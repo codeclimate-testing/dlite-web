@@ -3,14 +3,7 @@
 import {
   hasMultipleCards
 } from './cards';
-import {
-  isGettingNew,
-  isChangingCard,
-  isReplacingCard,
-  isRenewingCard,
-  hasActionIsCorrecting,
-  hasActionIsUpdating
-} from './card-actions';
+
 import { noCardTypeArray }  from './cdl';
 import { hasValue }         from './validations';
 

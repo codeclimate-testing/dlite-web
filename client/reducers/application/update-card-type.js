@@ -15,23 +15,18 @@ const defaultState = () => {
 const formReducer = (state = defaultState(), action) => {
   if (!action.payload) { return state;}
   if (!cardTypeAction(action)){ return state; }
-
   let newState = [];
   if (action.type === TYPES.UPDATE_CARD_TYPE) {
-    newState = formValueArrayReducer(action, state);
+    if (action.payload.name === 'addFromSummary') {
+      newState.push(action.payload.value);
+    } else {
+      newState = formValueArrayReducer(action, state);
+    }
   }
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION) {
     if (action.payload.name === 'DLAction' || action.payload.name === 'IDAction') {
       newState = state;
-    }
-  }
-
-  else if (action.type === TYPES.ADD_APP) {
-    if (driverLicense(action.payload.value)) {
-      newState = ['DL'];
-    } else if (idCard(action.payload.value)) {
-      newState = ['ID'];
     }
   }
 
@@ -44,7 +39,6 @@ const formReducer = (state = defaultState(), action) => {
     }
     else { newState = ['DL']; }
   }
-
   return newState;
 };
 

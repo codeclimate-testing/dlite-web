@@ -126,6 +126,16 @@ describe('DLApp isApplying reducer', function() {
 
       assert.deepEqual(newState, true);
     });
+    it('returns true if payload name if "addFromSummary"', function(){
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_TYPE',
+        payload: {
+          name: 'addFromSummary',
+          value: 'DL'
+        }
+      });
+      assert.equal(newState, true);
+    });
   });
 
   describe('#cardAction', function() {
@@ -164,29 +174,6 @@ describe('DLApp isApplying reducer', function() {
 
   });
 
-  describe('#addApp', function() {
-    it('returns true when user has clicked button to add DL application', function() {
-      state = false;
-      let newState = updateCardType(state, {
-        type: 'ADD_APP',
-        payload: {
-          value: 'driver-license'
-        }
-      });
-      assert.equal(newState, true);
-    });
-
-    it('maintains state when has clicked button to add ID application', function() {
-      state = false;
-      let newState = updateCardType(state, {
-        type: 'ADD_APP',
-        payload: {
-          value: 'id-card'
-        }
-      });
-      assert.equal(newState, state);
-    });
-  });
 });
 
 

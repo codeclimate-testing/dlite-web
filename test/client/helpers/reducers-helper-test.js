@@ -3,11 +3,16 @@
 import assert from 'assert';
 import {
   cardTypeAction,
+  trueIfYesNeverFalse,
+  sameIfAdding,
   realID
 } from '../../../client/helpers/reducers';
 
 describe('reducer helper functions', function() {
   let action;
+  const state = {
+    key: 'value'
+  };
   beforeEach(function() {
     action = {
       type: '',
@@ -34,6 +39,27 @@ describe('reducer helper functions', function() {
     it('returns false if type is neither UPDATE_CARD_TYPE, UPDATE_CARD_ACTION, or UPDATE_YOUTH_ID_INSTEAD', function() {
       action.type = 'UPDATE_SOMETHING_ELSE';
       assert.equal(cardTypeAction(action), false);
+    });
+  });
+
+  describe('#trueIfYesNeverFalse', function() {
+    it('returns true if value matches the type', function() {
+      assert.equal(trueIfYesNeverFalse('ID', 'ID', state), true);
+    });
+    it('returns state if value does not match the type', function() {
+      assert.equal(trueIfYesNeverFalse('ID', 'DL', state), state);
+    });
+  });
+
+  describe('#sameIfAdding', function() {
+    it('returns false if name does not match "IDAction" or "DLAction"', function() {
+      assert.equal(sameIfAdding('bothCards', state), false);
+    });
+    it('returns state if name is IDAction', function() {
+      assert.equal(sameIfAdding('IDAction', state), state);
+    });
+    it('returns state if name is DLAction', function() {
+      assert.equal(sameIfAdding('DLAction', state), state);
     });
   });
 

@@ -129,6 +129,17 @@ describe('DL app action reducer', function() {
 
       assert.deepEqual(newState, radioDL.payload.name);
     });
+
+    it('returns existing state when update_card_type is called from onFlowChange handler', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_TYPE',
+        payload: {
+          name: 'addFromSummary',
+          value: 'DL'
+        }
+      });
+      assert.deepEqual(newState, state);
+    });
   });
 
   describe('#cardAction', function() {
@@ -151,17 +162,6 @@ describe('DL app action reducer', function() {
 
   });
 
-  describe('#addApp', function() {
-    it('returns existing state when user clicks button to add a DL after completing ID app', function() {
-      let newState = updateCardType(state, {
-        type: 'ADD_APP',
-        payload: {
-          value: 'driver-license'
-        }
-      });
-      assert.equal(newState, state);
-    });
-  });
 });
 
 

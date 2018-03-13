@@ -5,8 +5,23 @@ import { TYPES } from '../actions';
 export const cardTypeAction = (action) => {
   return action.type === TYPES.UPDATE_CARD_TYPE ||
     action.type === TYPES.UPDATE_CARD_ACTION ||
-    action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD ||
-    action.type === TYPES.ADD_APP;
+    action.type === TYPES.UPDATE_YOUTH_ID_INSTEAD
+};
+
+export const trueIfYesNeverFalse = (value, type, state) => {
+  if (value === type) {
+    return true;
+  } else {
+    return state;
+  }
+};
+
+export const sameIfAdding = (name, state) => {
+  let newState = false;
+  if (name === 'IDAction' || name === 'DLAction') {
+    newState = state;
+  }
+  return newState;
 };
 
 export const addressReducer = (payload, data, defaultState) => {

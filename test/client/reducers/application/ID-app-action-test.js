@@ -197,19 +197,18 @@ describe('IDApp action reducer', function() {
       });
       assert.equal(newState, state);
     });
-  });
-
-  describe('#addApp', function() {
-    it('returns existing state when user clicks button to add a DL after completing ID app', function() {
+    it('returns existing state when update_card_type is called from onFlowChange handler', function() {
       let newState = updateCardType(state, {
-        type: 'ADD_APP',
+        type: 'UPDATE_CARD_TYPE',
         payload: {
-          value: 'driver-license'
+          name: 'addFromSummary',
+          value: 'ID'
         }
       });
-      assert.equal(newState, state);
+      assert.deepEqual(newState, state);
     });
   });
+
 });
 
 
