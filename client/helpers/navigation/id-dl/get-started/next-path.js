@@ -1,38 +1,45 @@
 'use strict';
-import {
-  getDL,
-  getID
-} from '../../../data/card-type';
-import {
-  eligibleForSeniorID,
-  gettingSeniorID
-} from '../../../data/senior';
+import { eligibleForSeniorID }    from '../../../data/senior';
 import { tooYoungForDL }          from '../../../data/youth';
-import { eligibleForReducedFee }  from '../../../data/reduced-fee';
-import { hasValue }               from '../../../data/validations';
 import {
   altFlow,
   addFlow,
-  goToCardHistory,
   editFlow
 } from '../../../data/pathnames';
 import {
   hasExistingCard,
   isChangingCard,
-  isReplacingCard,
-  showCurrentCardInfo
+  isReplacingCard
  } from '../../../data/card-actions';
+import {
+  editSeniorID,
+  editOrAddCurrentCardInfo,
+  editOrAddCardChanges,
+  editOrAddReplacementDetails,
+  editCardHistory,
+  initialSeniorID,
+  editReducedFee,
+  initialDL,
+  initialReducedFee
+}  from '../../../data/edit-flow';
+import {
+  addSeniorID,
+  addingSeniorID,
+  addingID,
+  addingDL
+} from '../../../data/add-flow';
 
 
 export const dateOfBirth = (props) => {
   let key = 'wdywtdt';
-  if (editFlow(props)) {
+  if (tooYoungForDL(props)) {
+    key = 'youthIDInstead';
+  }
+  else if (editSeniorID(props)) {
+    key = 'seniorID';
+  }
+  else if (editFlow(props)) {
     key = 'summary';
-    if (tooYoungForDL(props) && getDL(props)) {
-      key = 'youthIDInstead';
-    } else if (eligibleForSeniorID(props)) {
-      key = 'seniorID';
-    }
   }
   return key;
 };
@@ -40,31 +47,29 @@ export const dateOfBirth = (props) => {
 export const wdywtdt = (props) => {
   let key = 'chooseCardType';
 
-  if (altFlow(props)) {
-
-    if (showCurrentCardInfo(props)) {
-      key = 'currentCardInfo';
-    } else if (isChangingCard(props)) {
-      key = 'updateAndCorrect';
-    } else if (isReplacingCard(props)) {
-      key = 'replacementDetails';
-    }
-
-    else if (editFlow(props)) {
-      key = 'summary';
-      if (goToCardHistory(props)) {
-        key = 'cardHistory';
-      }
-    }
-    else if (addFlow(props)) {
-      key = 'chooseLicenseClass';
-      if (getID(props)) {
-        key = 'reducedFeeID';
-        if (eligibleForSeniorID(props)) {
-          key = 'seniorID';
-        }
-      }
-    }
+  if (editOrAddCurrentCardInfo(props)) {
+    key = 'currentCardInfo';
+  }
+  else if (editOrAddCardChanges(props)) {
+    key = 'updateAndCorrect';
+  }
+  else if (editOrAddReplacementDetails(props)) {
+    key = 'replacementDetails';
+  }
+  else if (editCardHistory(props)) {
+    key = 'cardHistory';
+  }
+  else if (editFlow(props)) {
+    key = 'summary';
+  }
+  else if (addSeniorID(props)) {
+    key = 'seniorID';
+  }
+  else if (addingID(props)) {
+    key = 'reducedFeeID';
+  }
+  else if (addFlow(props)) {
+    key = 'chooseLicenseClass';
   }
   return key;
 };
@@ -89,49 +94,45 @@ export const currentCardInfo = (props) => {
 
   if (isChangingCard(props)) {
     key = 'updateAndCorrect';
-  } else if (isReplacingCard(props)) {
+  }
+  else if (isReplacingCard(props)) {
     key = 'replacementDetails';
-  } else if (!altFlow(props) && eligibleForSeniorID(props)) {
+  }
+  else if (initialSeniorID(props)) {
     key = 'seniorID';
   }
-
-  else if (addFlow(props)) {
-    key = 'reducedFeeID';
-    if (getDL(props)) {
-      key = 'chooseLicenseClass';
-    }
+  else if (addingDL(props)) {
+    key = 'chooseLicenseClass';
   }
-
+  else if (addFlow(props)) {
+    key = 'reducedFeeID'
+  }
+  else if (editCardHistory(props)) {
+    key = 'cardHistory';
+  }
   else if (editFlow(props)) {
     key = 'summary';
-    if (goToCardHistory(props)) {
-      key = 'cardHistory';
-    }
   }
-
   return key;
 };
 
 
 export const changedCard = (props) => {
   let key = 'realID';
-  if (!altFlow(props) && eligibleForSeniorID(props)) {
+  if (initialSeniorID(props) || addSeniorID(props)) {
     key = 'seniorID';
   }
-  else if (addFlow(props)){
+  else if (addingID(props)) {
+    key = 'reducedFeeID';
+  }
+  else if (addFlow(props)) {
     key = 'chooseLicenseClass';
-    if (getID(props)) {
-      key = 'reducedFeeID';
-      if (eligibleForSeniorID(props)) {
-        key = 'seniorID';
-      }
-    }
+  }
+  else if (editCardHistory(props)) {
+    key = 'cardHistory';
   }
   else if (editFlow(props)) {
     key = 'summary';
-    if (goToCardHistory(props)) {
-      key = 'cardHistory';
-    }
   }
   return key;
 };
@@ -139,43 +140,41 @@ export const changedCard = (props) => {
 
 export const realID = (props) => {
   let key = 'summary';
-  if (!altFlow(props)){
+  if (initialDL(props)) {
+    key = 'chooseLicenseClass';
+  }
+  else if (initialReducedFee(props)) {
+    key = 'reducedFeeID';
+  }
+  else if (!altFlow(props)) {
     key = 'getStarted';
-    if (getDL(props)) {
-      key = 'chooseLicenseClass';
-    }
-    else if (eligibleForReducedFee(props)) {
-      key = 'reducedFeeID';
-    }
   }
   return key;
 };
 
 export const seniorID = (props) => {
   let key = 'realID';
-  if (editFlow(props)) {
+  if (editReducedFee(props)) {
+    key = 'reducedFeeID';
+  }
+  else if (editFlow(props) || addingSeniorID(props)) {
     key = 'summary';
-    if (!gettingSeniorID(props) && !hasValue(props.reducedFee.ID)) {
-      key = 'reducedFeeID';
-    }
   }
   else if (addFlow(props)) {
     key = 'reducedFeeID';
-    if (gettingSeniorID(props)) {
-      key = 'summary';
-    }
   }
   return key;
 };
 
 export const chooseLicenseClass = (props) => {
   let key = 'summary';
-  if (!altFlow(props)) {
+  if (initialReducedFee(props)) {
+    key = 'reducedFeeID';
+  }
+  else if (!altFlow(props)) {
     key = 'getStarted';
-    if (eligibleForReducedFee(props)) {
-      key = 'reducedFeeID';
-    }
-  } else if (addFlow(props) && getDL(props)) {
+  }
+  else if (addingDL(props)) {
     key = 'medicalHistory';
   }
   return key;

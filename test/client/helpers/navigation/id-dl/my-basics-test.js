@@ -63,6 +63,12 @@ describe('Data helpers for determining next path from current page and props in 
         data.IDApp.action = 'replace';
         assert.equal(socialSecurity(data), 'nameHistory');
       });
+
+      it('goes to medicalHistory if user is getting both new ID and DL', function() {
+        data.cardType = both;
+        data.cardAction = 'new';
+        assert.equal(socialSecurity(data), 'medicalHistory');
+      });
     });
   });
 

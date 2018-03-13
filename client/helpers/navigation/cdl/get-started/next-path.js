@@ -7,6 +7,10 @@ import {
   isChangingCard,
   isReplacingCard
 }    from '../../../data/card-actions';
+import {
+  editOrAddCardChanges,
+  editOrAddReplacementDetails
+} from '../../../data/edit-flow'
 
 export const cdlWdywtdt = (props) => {
   let key = 'cdlResidency';
@@ -14,16 +18,17 @@ export const cdlWdywtdt = (props) => {
   if (showCurrentCardInfo(props)) {
     key = 'cdlCurrentCard';
   }
-  else if(editFlow(props)) {
-    if (isChangingCard(props)) {
-      key = 'cdlChanges';
-    } else if (isReplacingCard(props)) {
-      key = 'cdlCardReplacement';
-    } else if (!hasExistingCard(props)) {
-      key = 'cdlCurrentDL';
-    } else {
-      key = 'cdlSummary';
-    }
+  else if (editOrAddCardChanges(props)) {
+    key = 'cdlChanges';
+  }
+  else if (editOrAddReplacementDetails(props)) {
+    key = 'cdlCardReplacement';
+  }
+  else if (editFlow(props) && !hasExistingCard(props)) {
+    key = 'cdlCurrentDL';
+  }
+  else if (editFlow(props)) {
+    key = 'cdlSummary';
   }
   return key;
 };

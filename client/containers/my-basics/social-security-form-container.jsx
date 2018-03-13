@@ -28,6 +28,7 @@ const mapStateToProps = (state) => {
   return {
     socialSecurity: state.application.basics.socialSecurity,
     cardType      : state.application.cardType,
+    cardAction    : state.application.cardAction,
     IDApp         : state.application.IDApp,
     DLApp         : state.application.DLApp,
     focused       : state.ui.focus,

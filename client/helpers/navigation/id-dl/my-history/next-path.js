@@ -1,53 +1,56 @@
 'use strict';
-import {
-  getDL,
-  getNewDL
-} from '../../../data/card-type';
-import {
-  altFlow,
-  addFlow,
-  goToCardHistory
-} from '../../../data/pathnames';
-import {
-  hasExistingCard
- } from '../../../data/card-actions';
 
+import {
+  altFlow
+} from '../../../data/pathnames';
+
+import {
+  addingDL,
+  addingExistingCard,
+  addCardHistory
+} from '../../../data/add-flow';
+import {
+   initialDL,
+   initialGetNewDL
+ }  from '../../../data/edit-flow';
 
 export const nameHistory = (props) => {
   let key = 'summary';
-  if (!altFlow(props)) {
+  if (initialDL(props)) {
+    key = 'licenseIssues';
+  }
+  else if (!altFlow(props)) {
     key = 'veterans';
-    if (getDL(props)) {
-      key = 'licenseIssues';
-    }
   }
   return key;
 };
 
 export const medicalHistory = (props) => {
   let key = 'summary';
-  if (!altFlow(props)){
+
+  if(initialGetNewDL(props)) {
+    key = 'cardHistory';
+  }
+  else if (!altFlow(props)) {
     key = 'nameHistory';
-    if (getNewDL(props)) {
-      key = 'cardHistory';
-    }
   }
-  else if (addFlow(props)){
-    if (hasExistingCard(props)) {
-      key = 'licenseIssues';
-    } else if (goToCardHistory(props)) {
-      key = 'cardHistory';
-    }
+  else if (addingExistingCard(props)) {
+    key = 'licenseIssues';
   }
+  else if (addCardHistory(props)) {
+    key = 'cardHistory';
+  }
+
   return key;
 };
 
 export const cardHistory = (props) => {
   let key = 'summary';
-  if (!altFlow(props)) {
-    key = 'nameHistory';
-  } else if (addFlow(props) && getDL(props)) {
+  if (addingDL(props)) {
     key = 'licenseIssues';
-  };
+  }
+  else if (!altFlow(props)) {
+    key = 'nameHistory';
+  }
   return key;
 };

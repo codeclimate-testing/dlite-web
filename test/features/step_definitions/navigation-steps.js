@@ -192,6 +192,7 @@ module.exports = function(world) {
 
   world.when('I will be on the id.me page', function(done) {
     assertOnPage('.id-me', /apply\/sign-in/, done);
+  });
   world.then('I will be on the what do you want to do today page', function(done) {
     assertOnPage('.choose-card-action', /apply\/id-and-license\/what-do-you-want-to-do-today/, done);
   });

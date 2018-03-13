@@ -19,9 +19,7 @@ const LinkPresentation = (props) => {
   let cardType  = props.cardType;
 
   let linkTo = {
-    pathname: pathForPage(props.editKey, {
-      flow: flow
-    })
+    pathname: pathForPage(props.editKey, {flow: flow})
   };
 
   const handleClick = (props) => {

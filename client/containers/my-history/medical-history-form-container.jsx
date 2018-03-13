@@ -28,6 +28,7 @@ function mapStateToProps(state) {
   return {
     medicalHistory    : state.application.history.medicalHistory,
     cardAction        : state.application.cardAction,
+    cardType          : state.application.cardType,
     DLApp             : state.application.DLApp,
     focused           : state.ui.focus,
     validations       : state.ui.validations,
