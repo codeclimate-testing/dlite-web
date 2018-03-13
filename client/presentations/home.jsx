@@ -58,9 +58,6 @@ const Home = () => {
         <LinkSection name='My history'>
           { wrapGroup(linkData.iddl.myHistory) }
         </LinkSection>
-        <LinkSection name='Organ donation'>
-          { wrapGroup(linkData.iddl.organDonation) }
-        </LinkSection>
         <LinkSection name='Voting registration'>
           { wrapGroup(linkData.iddl.voterRegistration) }
         </LinkSection>
@@ -85,10 +82,12 @@ const Home = () => {
         <LinkSection name='CDL History'>
           { wrapGroup(linkData.cdl.myHistory) }
         </LinkSection>
+        <LinkSection name='CDL Organ donation'>
+          { wrapGroup(linkData.cdl.organDonation) }
+        </LinkSection>
         <LinkSection name='CDL Voting Registration'>
           { wrapGroup(linkData.cdl.voterRegistration) }
         </LinkSection>
-
         <LinkSection name='CDL Conclusion'>
           { wrapGroup(linkData.cdl.conclusion) }
         </LinkSection>
