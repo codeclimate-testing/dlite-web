@@ -11,6 +11,7 @@ import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
+
   const tempObjectThatNeedsTranslations = {
     values: [
       "Get a California CDL for the first time",
@@ -27,13 +28,14 @@ const Form = (props) => {
       <div className='choose-card-action'>
         {convertToHtml('h2', translations[locale].intro.wdywtdtPage.prompt, 'question')}
         <form onSubmit= { props.onSubmit }>
-          <div className='row inner-buttom'>
+          <div className='row inner-button'>
             <fieldset>
               <RadioCollection
                 {...props}
-                name = "cdlWDYWTDT "
-                onBlur  = { props.onBlurValidate }
-                errorMessage = { props.validations.cardAction()}
+                name              = "cdlWDYWTDT "
+                onBlur            = { props.onBlurValidate }
+                selectedValue     = { props.cardAction }
+                errorMessage      = { props.validations.cardAction()}
               >
                 <RadioSelector
                   value = 'new'

@@ -1,19 +1,9 @@
 'use strict';
-
 import { TYPES }            from '../../../actions';
+import formValueReducer     from '../../form-value-reducer';
 
 const defaultState = () =>  {
   return '';
 };
 
-const formReducer = (state = defaultState(), action) => {
-  if (!action.payload) { return state; }
-  if (action.type !== TYPES.ADD_APP && action.type !== TYPES.UPDATE_CDL_CARD_ACTION) { return state; }
-
-  if (action.type === TYPES.UPDATE_CDL_CARD_ACTION) {
-    return action.payload.value;
-  }
-  return defaultState();
-};
-
-export default formReducer;
+export default formValueReducer(defaultState, TYPES.UPDATE_CDL_CARD_ACTION);

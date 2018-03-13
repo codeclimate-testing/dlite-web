@@ -114,11 +114,4 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
-
-  world.when('I click to edit my CDL name', function(done) {
-    browser
-      .click('.cdlLegalName.button.summary')
-      .then(done)
-      .catch(done);
-  });
 };

@@ -234,10 +234,4 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.when('I click to edit my CDL date of birth', function(done) {
-    browser
-      .click('.cdlDateOfBirth.button.summary')
-      .then(done)
-      .catch(done);
-  });
 };

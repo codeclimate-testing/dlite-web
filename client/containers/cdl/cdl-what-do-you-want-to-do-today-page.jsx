@@ -19,7 +19,7 @@ const Page = (props) => {
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
-      selectedValue     = { props.cardAction }
+      cardAction        = { props.cardAction }
       validations       = { validations }
     />
   )

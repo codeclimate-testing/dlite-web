@@ -289,4 +289,32 @@ module.exports = function(world){
       .then(done)
       .catch(done);
   });
+
+  world.when('I click to edit my CDL', function(done) {
+    browser
+      .click('.cdlWdywtdt')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to edit the name on my CDL', function(done) {
+    browser
+      .click('.cdlLegalName.button.summary')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click to edit the date of birth on my CDL', function(done) {
+    browser
+      .click('.cdlDateOfBirth.button.summary')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that my selection to get a new CDL is already selected', function(done) {
+    browser
+      .waitForSelector('.selected label[for="cdlWDYWTDT -new"]')
+      .then(done)
+      .catch(done);
+  });
 };

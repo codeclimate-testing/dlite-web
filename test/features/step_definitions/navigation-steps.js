@@ -185,11 +185,6 @@ module.exports = function(world) {
     assertOnPage('.date-of-birth-form', /apply\/id-and-license\/my-basics\/date-of-birth/, done);
   });
 
-
-  world.when('I will be on the CDL citizen status page', function(done) {
-    assertOnPage('.citizen-status-form', /apply\/cdl\/voting-registration\/citizenship/, done);
-  });
-
   world.when('I will be on the id.me page', function(done) {
     assertOnPage('.id-me', /apply\/sign-in/, done);
   });
@@ -486,12 +481,15 @@ module.exports = function(world) {
   world.when('I will be on the current CDL page', function(done) {
     assertOnPage('.enter-current-card-info', /apply\/cdl\/current-card-information/, done);
   });
-
-  world.then('I will be on the CDL current card page', function(done) {
-    assertOnPage('.current-card-form', /apply\/cdl\/current-ca-license/, done);
+  world.when('I will be on the edit current CDL page', function(done) {
+    assertOnPage('.enter-current-card-info', /apply\/cdl\/edit\/current-card-information/, done);
   });
+
   world.when('I will be on the page to specify my changes to my CDL', function(done) {
     assertOnPage('.choose-card-change', /apply\/cdl\/change-details/, done);
+  });
+  world.when('I will be on the page to edit my changes to my CDL', function(done) {
+    assertOnPage('.choose-card-change', /apply\/cdl\/edit\/change-details/, done);
   });
   world.when('I will be on the page to select reason for replacing my CDL', function(done) {
     assertOnPage('.choose-replacement-detail', /apply\/cdl\/replacement-details/, done);
@@ -499,6 +497,9 @@ module.exports = function(world) {
 
   world.when('I will be on the CDL page to enter my current DL', function(done) {
     assertOnPage('.current-card-form', /apply\/cdl\/current-ca-license/, done);
+  });
+  world.when('I will be on the CDL page to edit existing DL', function(done) {
+    assertOnPage('.current-card-form', /apply\/cdl\/edit\/current-ca-license/, done);
   });
   world.when('I will be on the residency page', function(done) {
     assertOnPage('.cdl-residency', /apply\/cdl\/california-residency/, done);
@@ -510,6 +511,10 @@ module.exports = function(world) {
 
   world.when('I will be on the CDL license issues page', function(done) {
     assertOnPage('.license-issues-form', /apply\/cdl\/my-history\/issues/, done);
+  });
+
+  world.when('I will be on the page to edit motorcycle class', function(done) {
+    assertOnPage('.cdl-class-m', /apply\/cdl\/edit\/motorcycle/, done);
   });
 
   world.when('I will be on the CDL endorsements page', function(done) {
@@ -530,6 +535,10 @@ module.exports = function(world) {
 
   world.when('I will be on the page to add a motorcycle class', function(done) {
     assertOnPage('.cdl-class-m', /apply\/cdl\/motorcycle/, done);
+  });
+
+  world.when('I will be on the CDL citizen status page', function(done) {
+    assertOnPage('.citizen-status-form', /apply\/cdl\/voting-registration\/citizenship/, done);
   });
 
   world.then('I will be on the CDL summary', function(done) {

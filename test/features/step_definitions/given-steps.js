@@ -115,4 +115,48 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
+
+  world.given('I have already filled out my CDL application', function(done) {
+    browser
+      .on('consoleMessage', function( msg ){
+        console.log('log', msg);
+      })
+      .on('error', function( err ){
+        console.log('error', err);
+      })
+      .open(world.url('/'))
+      .evaluate(function() {
+        window.__reactHistory.push(('/apply/cdl/what-do-you-want-to-do-today'));
+      })
+      .click('label[for="cdlWDYWTDT -new"]')
+      .evaluate(function() {
+        window.__reactHistory.push('/apply/cdl/summary')
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.given('I have already filled out an application to replace a CDL', function(done) {
+    browser
+      .on('consoleMessage', function( msg ){
+        console.log('log', msg);
+      })
+      .on('error', function( err ){
+        console.log('error', err);
+      })
+      .open(world.url('/'))
+      .evaluate(function() {
+        window.__reactHistory.push(('/apply/cdl/what-do-you-want-to-do-today'));
+      })
+      .click('label[for="cdlWDYWTDT -replace"]')
+      .click('.forward')
+      .type(
+        '#number', '1111zae'
+      )
+      .evaluate(function() {
+        window.__reactHistory.push('/apply/cdl/summary')
+      })
+      .then(done)
+      .catch(done);
+  });
 };

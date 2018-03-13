@@ -107,12 +107,12 @@ Scenario: New CDL
   When I click in the self-certification drawer
   Then I will see that I am driving interstate
 
-  When I click to edit my CDL name
+  When I click to edit the name on my CDL
   Then I will be on the CDL edit name page
   When I change my first name
   And I click "Next" to continue
   Then I will be on the CDL summary
-  When I click to edit my CDL date of birth
+  When I click to edit the date of birth on my CDL
   Then I will be on the CDL edit dob page
   When I click "Next" to continue
   Then I will be on the CDL summary
@@ -206,3 +206,31 @@ Scenario: Renewing a CDL
     Then I will be on the CDL citizen status page
     When I go to the CDL summary
     And I will see my organ selection in the summary
+
+  Scenario: Switching from new CDL to correct/update
+    Given I have already filled out my CDL application
+    When I click to edit my CDL
+    And I will see that my selection to get a new CDL is already selected
+    When I select to change my CDL
+    And I click "Next" to continue
+    Then I will be on the edit current CDL page
+    And I click "Next" to continue
+    Then I will be on the page to edit my changes to my CDL
+    When I click to Update my CDL
+    And I click to change my name section
+    And I click "Next" to continue
+    Then I will be on the CDL summary
+    And I will see that I am updating my card
+
+  Scenario: Switching from replace to new CDL
+    Given I have already filled out an application to replace a CDL
+    When I click to edit my CDL
+    When I select a new commercial DL
+    And I click "Next" to continue
+    Then I will be on the CDL page to edit existing DL
+    When I select existing DL/ID No
+    Then I click "Next" to continue
+    Then I will be on the page to edit motorcycle class
+    And I select No to getting a motorcycle class
+    When I go to the CDL summary
+    And I will see No in my existing DL/ID selection

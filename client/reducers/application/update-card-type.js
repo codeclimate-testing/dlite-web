@@ -3,10 +3,6 @@
 import { TYPES }              from '../../actions';
 import formValueArrayReducer  from '../form-value-array-reducer';
 import { cardTypeAction }     from '../../helpers/reducers';
-import {
-  driverLicense,
-  idCard
-}      from '../../helpers/data/pathnames';
 
 const defaultState = () => {
   return [];
