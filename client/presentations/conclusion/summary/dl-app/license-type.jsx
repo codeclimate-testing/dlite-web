@@ -3,7 +3,7 @@
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import translations     from '../../../../i18n';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import {
   showLicenseClass
@@ -74,16 +74,15 @@ const LicenseType = (props) => {
 
   return (
     <PageSummaryLink
-      name= 'addLicenseClass'
-      summary = {props.summary}
+      {...props}
     >
       <SummaryItem
-        title='Need to drive'
-        text={vehicles}
+        title = { translations[locale].summaryPage.myDL.needToDriver.header }
+        text  = { vehicles}
       />
       <SummaryItem
-        title='Firefighter endorsement'
-        text={endorsements}
+        title = { translations[locale].summaryPage.myDL.firefighterEndorsement }
+        text  = { endorsements}
       />
     </PageSummaryLink>
   )

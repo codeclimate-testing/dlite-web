@@ -3,8 +3,13 @@
 import React            from "react";
 import { hasValue }     from '../../../../helpers/data/validations';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
+import {
+  CardNumber,
+  CardDate
+} from '../../../conclusion/summary/current-card-info.jsx';
 import {
   showIssuedIn,
   showExpirationDate,
@@ -17,19 +22,8 @@ const IssuedIn = (props) => {
 
   return (
     <SummaryItem
-      title='Issued in:'
+      title={translations[props.locale].summaryPage.myHistory.issuedIn + ':'}
       text={issuedBy}
-    />
-  )
-};
-
-const ExpirationDate = (props) => {
-  if (!showExpirationDate(props)) { return null; }
-  let date       = printDate(props.licenseAndIdHistory);
-  return (
-  <SummaryItem
-      title='Expiration date:'
-      text={date}
     />
   )
 };
@@ -38,20 +32,28 @@ const ExpirationDate = (props) => {
 const LicenseAndIdHistory = (props) => {
   if (!hasValue(props.licenseAndIdHistory.isIssued)) { return null; }
 
-  let DLIDNumber = cardNumber(props);
+  let DLIDNumber  = cardNumber(props);
+  let locale      = props.locale;
 
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = {props.editKey}
+      {...props}
     >
-      <SummaryItem
-        title = {props.title}
-        text  = {DLIDNumber}
+      <CardNumber
+        title       = { props.title}
+        cardNumber  = { DLIDNumber}
+        locale      = { locale }
       />
-      <IssuedIn       licenseAndIdHistory = {props.licenseAndIdHistory}/>
+      <IssuedIn
+        licenseAndIdHistory = {props.licenseAndIdHistory}
+        locale      = { locale }
+      />
 
-      <ExpirationDate licenseAndIdHistory = {props.licenseAndIdHistory}/>
+      <CardDate
+        cardInfo  = { props.licenseAndIdHistory}
+        showIf    = { showExpirationDate(props)}
+        locale    = { locale }
+      />
 
     </PageSummaryLink>
   )

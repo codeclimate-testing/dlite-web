@@ -24,7 +24,6 @@ const Voting = (props) => {
         eligibilityRequirements = { application.voting.eligibilityRequirements}
         dateOfBirth             = { application.basics.dateOfBirth}
         locale                  = { locale }
-        summary                 = 'summary'
         editKey                 = 'citizenship'
       />
       <EligibilityRequirements
@@ -32,7 +31,6 @@ const Voting = (props) => {
         citizenStatus           = { application.voting.citizenStatus}
         dateOfBirth             = { application.basics.dateOfBirth}
         locale                  = { locale }
-        summary                 = 'summary'
         editKey                 = 'votingEligibility'
       />
       <OptOut
@@ -41,7 +39,6 @@ const Voting = (props) => {
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
         locale                  = { locale }
-        summary                 = 'summary'
         editKey                 = 'votingOptOut'
       />
       <PoliticalPartyChoose
@@ -49,32 +46,32 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
         locale                  = { locale }
+        editKey                 = 'choosePoliticalParty'
       />
       <BallotLanguage
         ballotLanguage          = {application.basics.language.ballotLanguage}
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
         locale                  = { locale }
+        editKey                 = 'chooseBallotLanguage'
       />
       <BallotByMail
         ballotByMail            = {application.voting.ballotByMail}
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
         locale                  = { locale }
+        editKey                 = 'ballotByMail'
       />
       <ContactMethods
         contactMethods          = {application.voting.contactMethods}
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        summary                 = 'summary'
         locale                  = { locale }
+        editKey                 = 'contactMethods'
       />
     </Accordion>
   )

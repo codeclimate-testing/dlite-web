@@ -3,7 +3,7 @@
 import React            from 'react';
 import { hasValue }     from '../../../helpers/data/validations';
 import translations     from '../../../i18n';
-import PageSummaryLink  from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
 import { getTenYearHistorySelection } from '../../../helpers/data/my-history';
 
@@ -14,8 +14,7 @@ const OtherStateLicenses = (props) => {
 
   return (
     <PageSummaryLink
-      name    = 'cdlOtherStateLicenses'
-      summary = 'cdlSummary'
+      {...props}
     >
       <SummaryItem
         title='Driver License Outside California'

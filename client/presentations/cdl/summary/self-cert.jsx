@@ -2,7 +2,7 @@
 
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
-import PageSummaryLink      from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink      from '../../../containers/page-summary-link.jsx';
 import SummaryItem          from '../../conclusion/summary/summary-item.jsx';
 import { getCert }          from '../../../helpers/data/cdl';
 import { hasValue }         from '../../../helpers/data/validations';
@@ -15,8 +15,7 @@ const CertItem = (props) => {
 
   return (
     <PageSummaryLink
-      name    = 'cdlCertification'
-      summary = 'cdlSummary'
+      {...props}
     >
       <SummaryItem
         title = 'Type of driving:'
@@ -27,10 +26,10 @@ const CertItem = (props) => {
 };
 
 const SelfCert = (props) => {
-
+  let locale = props.ui.locale;
   return (
     <Accordion id='self-certification' title='Self certification'>
-      <CertItem {...props} />
+      <CertItem {...props} locale={locale} editKey='cdlCertification'/>
     </Accordion>
   )
 };

@@ -2,23 +2,24 @@
 import React            from 'react';
 import Accordion        from '../../../containers/accordion.jsx';
 import * as dataPresent from '../../../helpers/data-present';
-import PageSummaryLink  from './Page-summary-link.jsx';
+import PageSummaryLink  from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from './summary-item.jsx';
+import translations     from '../../../i18n';
 
 const Organ = (props) => {
   if (!dataPresent.organDonation(props.organDonation)) { return null; }
+  let locale = props.locale;
 
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name='organDonation'
+      {...props}
     >
       <SummaryItem
-        title='Be an organ donor'
+        title={ translations[locale].summaryPage.organDonation.beAnOrganDonor}
         text={props.organDonation.donateOrgan}
       />
       <SummaryItem
-        title='Donate $2'
+        title={ translations[locale].summaryPage.organDonation.donate}
         text={props.organDonation.donateMoney}
       />
     </PageSummaryLink>
@@ -30,7 +31,8 @@ const OrganDonation = (props) => {
     <Accordion id='organ-donation-summary' title='Organ donation' key='organ-donation-summary'>
       <Organ
         organDonation       = { props.application.organDonation}
-        summary             = 'summary'
+        editKey             = 'organDonation'
+        locale              = { props.ui.locale }
       />
     </Accordion>
   );

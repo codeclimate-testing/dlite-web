@@ -2,8 +2,9 @@
 
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
 import {
   hasSocialSecurityNo
 } from '../../../../helpers/data/ssn';
@@ -12,14 +13,14 @@ const SocialSecurity = (props) => {
   if(hasSocialSecurityNo(props)) { return null; }
 
   let socialSecurity =  'xxx' + '-' + 'xx' + '-' + props.socialSecurity.part3;
+  let locale = props.locale;
 
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = {props.editKey}
+      {...props}
     >
     <SummaryItem
-        title='Social Security Number'
+        title={ translations[locale].applicationPreparationPage.noRealIdSection.socialSecurity.header}
         text={socialSecurity}
       />
     </PageSummaryLink>

@@ -18,38 +18,31 @@ const MyBasics = (props) => {
       <LegalName
         legalName         = {cdl.basics.legalName}
         editKey           = 'cdlLegalName'
-        summary           = 'cdlSummary'
         locale            = {locale}
       />
       <DateOfBirth
         dateOfBirth       = {cdl.basics.dateOfBirth}
         editKey           = 'cdlDateOfBirth'
-        summary           = 'cdlSummary'
         locale            = {locale}
       />
       <PhysicalTraits
         physicalTraits    = { cdl.basics.physicalTraits}
         editKey           = 'cdlSexEyeHair'
-        summary           = 'cdlSummary'
         locale            = { locale }
       />
       <HeightWeight
         traitsHeightWeight= { cdl.basics.traitsHeightWeight}
         editKey           = 'cdlHeightWeight'
-        summary           = 'cdlSummary'
         locale            = { locale }
-
       />
       <Address
         address           = {cdl.basics.residency}
         editKey           = 'cdlResidency'
-        summary           = 'cdlSummary'
         locale            = {locale}
       />
       <SocialSecurity
         socialSecurity    = {cdl.basics.socialSecurity}
         editKey           = 'cdlSocialSecurity'
-        summary           = 'cdlSummary'
         locale            = {locale}
       />
     </Accordion>

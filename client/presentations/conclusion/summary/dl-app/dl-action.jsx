@@ -1,7 +1,7 @@
 'use strict';
 
-import React            from 'react';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import React                from 'react';
+import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 import {
   DLAppExists,
   renewDL,
@@ -25,7 +25,6 @@ const DLAction = (props) => {
   return (
     <PageSummaryLink
       {...props}
-      name    = 'addWdywtdt'
     >
       <New        showIf = {getNewDL(props)}  locale = {locale}/>
       <Renew      showIf = {renewDL(props)}   locale = {locale}/>

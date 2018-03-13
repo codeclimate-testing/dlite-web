@@ -14,7 +14,7 @@ import {
   shouldContact,
   skipAnswer
 } from '../../../../helpers/data/contact-methods';
-import PageSummaryLink              from '../Page-summary-link.jsx';
+import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
 const title = <div className='translation-missing'>Should Contact</div>;
@@ -49,21 +49,20 @@ const ContactMethods = (props) => {
   } else if (skipAnswer(props)) {
     contactMethods = <p>{translations[locale].shared.commonAnswers.skip}</p>
   };
-  
+
   let now = props.now ? props.now : new Date();
   if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props)))
   {
     return (
     <PageSummaryLink
-      to='/voting-registration/contact-methods'
-      name='contactMethods'
+      {...props}
     >
-    <SummaryItem
+      <SummaryItem
         title={title}
         text={contactMethods}
       />
       <EmailAddress {...props} />
-      <PhoneNumber  {...props} /> 
+      <PhoneNumber  {...props} />
     </PageSummaryLink>
     )
   }

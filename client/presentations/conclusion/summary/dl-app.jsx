@@ -2,47 +2,51 @@
 
 import React                       from 'react';
 import Accordion                   from '../../../containers/accordion.jsx';
+import RealID                      from './real-id.jsx';
 import {
   DLApplicationNotStarted,
   DLAction,
   CurrentDLInfo,
-  DLRealID,
   LicenseType
 } from './dl-app/index';
 
 const DLApp = (props) => {
   let locale      = props.ui.locale;
   let application = props.application;
+  let cardType    = 'DL';
   return (
     <Accordion id='driver-license-application-details-summary' title='My Driver License' key='driver-license-application-details-summary'>
       <DLApplicationNotStarted
         DLApp             = { application.DLApp }
         locale            = { locale }
-        summary           = 'summary'
+        cardType          = { cardType }
+        editKey           = 'wdywtdt'
       />
       <DLAction
         DLApp             = { application.DLApp }
         locale            = { locale }
-        summary           = 'summary'
+        editKey           = 'wdywtdt'
+        cardType          = { cardType }
       />
       <CurrentDLInfo
         DLApp             = { application.DLApp }
-        currentCardInfo   = { application.DLApp.currentCard}
         locale            = { locale }
-        summary           = 'summary'
+        editKey           = 'currentCardInfo'
+        cardType          = { cardType }
       />
-      <DLRealID
+      <RealID
+        showIf            = { application.DLApp.isApplying }
         realID            = { application.DLApp.realID }
-        DLApp             = { application.DLApp }
         locale            = { locale }
-        summary           = 'summary'
-        name              = 'realID'
+        editKey           = 'realID'
         title             = 'Real-ID Compliant'
+        cardType          = { cardType }
       />
       <LicenseType
         DLApp             = { application.DLApp }
         locale            = { locale }
-        summary           = 'summary'
+        editKey           = 'chooseLicenseClass'
+        cardType          = { cardType }
       />
     </Accordion>
   );

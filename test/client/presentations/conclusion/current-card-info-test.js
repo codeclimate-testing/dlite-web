@@ -3,6 +3,10 @@
 import assert                   from 'assert';
 import React                    from 'react';
 import { render }               from 'enzyme';
+import { spy }                  from 'sinon';
+import wrapperGenerator         from '../../support/wrapper';
+import configure                from '../../support/configure-enzyme';
+import store                    from '../../support/page-store';
 import {
   CardDate,
   CardNumber,
@@ -11,7 +15,7 @@ import {
 
 describe('Current Card Info shared components', function() {
   let props;
-
+  const Wrapper = wrapperGenerator(store);
   beforeEach(function() {
     props = {
       currentCardInfo: {
@@ -21,47 +25,51 @@ describe('Current Card Info shared components', function() {
         year: ''
       },
       number: '',
-      title: ''
+      title: '',
+      showIf: true,
+      locale: 'en',
+      editKey: 'currentCardInfo'
     }
   });
 
   describe('#CardNumber', function() {
-    it('returns "None" if number is blank', function() {
-      let component = render(
-        <CardNumber {...props} />
-      );
-      assert.ok(component.text().includes('None'));
-    });
     it('includes the title passed in props', function() {
       props.title = 'Driver License Number';
-      props.number = '1111'
+      props.cardNumber = '1111'
       let component = render(
-        <CardNumber { ...props } />
+        <Wrapper>
+          <CardNumber { ...props } />
+        </Wrapper>
       );
       assert.equal(component.text().includes('Driver License Number'), true);
     });
     it('includes the number passed in props', function() {
-      props.number = '111111';
+      props.cardNumber = '111111';
+      props.title = 'Driver License Number';
       let component = render(
-        <CardNumber { ...props } />
+        <Wrapper>
+          <CardNumber { ...props } />
+        </Wrapper>
       );
       assert.equal(component.text().includes('111111'), true);
     });
   });
 
   describe('#CardDate', function() {
-    it('returns null if date is blank', function() {
+    it('returns null if showIf is false', function() {
+      props.showIf = false;
       let component = render(
         <CardDate { ...props } />
       );
       assert.equal(component.text(), '');
     });
     it('prints the date passed in props', function() {
-      props.currentCardInfo = {
+      props.cardInfo = {
         day: '10',
         month: '10',
         year: '2000'
       };
+      props.showIf = true;
       let component = render(
         <CardDate { ...props } />
       );
@@ -72,10 +80,32 @@ describe('Current Card Info shared components', function() {
 
   describe('#CurrentCardInfo', function() {
     it('returns null if currentCardInfo is blank', function() {
-      let component = render(
-        <CurrentCardInfo {...props} />
-      )
+        let component = render(
+          <Wrapper>
+            <CurrentCardInfo {...props} />
+          </Wrapper>
+        )
       assert.ok(!component.text().includes('None'));
+    });
+
+    it('does not show the date if the date is blank', function() {
+      let component = render(
+        <Wrapper>
+          <CurrentCardInfo {...props} />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Expiration date'));
+    });
+    it('returns "None" if number is blank', function() {
+      props.title = 'Number '
+      props.currentCardInfo.year = '1999';
+      let component = render(
+        <Wrapper>
+          <CurrentCardInfo {...props} />
+        </Wrapper>
+      );
+
+      assert.ok(component.text().includes('Number None'));
     });
 
   });

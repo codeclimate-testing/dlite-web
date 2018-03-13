@@ -8,7 +8,7 @@ import {
 } from '../../../../helpers/data/voting';
 import { ageChecks }                from '../../../../helpers/calculate-age';
 import translations                 from '../../../../i18n';
-import PageSummaryLink              from '../Page-summary-link.jsx';
+import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
 
@@ -55,8 +55,7 @@ const BallotLanguage = (props) => {
   {
     return (
       <PageSummaryLink
-        to='/voting-registration/language'
-        name='chooseBallotLanguage'
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.ballotLanguage}

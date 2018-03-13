@@ -2,20 +2,21 @@
 
 import React            from "react";
 import { hasValue }     from '../../../../helpers/data/validations';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
 
 const SeniorID = (props) => {
   if (!hasValue(props.seniorID)) { return null; }
 
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = 'seniorID'
+      {...props}
+      name    = { props.editKey }
     >
       <SummaryItem
-        title='Senior ID'
-        text={props.seniorID}
+        title = { translations[props.locale].summaryPage.myID.seniorIDHeading}
+        text  = { props.seniorID }
       />
     </PageSummaryLink>
   )

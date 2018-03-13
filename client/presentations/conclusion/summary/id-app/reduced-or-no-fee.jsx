@@ -2,7 +2,7 @@
 
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import translations     from '../../../../i18n';
 import {
@@ -16,8 +16,8 @@ const Yes = (props) => {
   let locale = props.locale;
   return (
     <SummaryItem
-      title='Reduced or no-fee'
-      text={translations[locale].shared.commonAnswers.yes}
+      title = { translations[locale].summaryPage.myID.reducedFeeHeading }
+      text  = { translations[locale].shared.commonAnswers.yes}
     />
   )
 };
@@ -27,8 +27,8 @@ const No = (props) => {
   let locale = props.locale;
   return (
     <SummaryItem
-      title='Reduced or no-fee'
-      text={translations[locale].shared.commonAnswers.no}
+      title = { translations[locale].summaryPage.myID.reducedFeeHeading }
+      text  = { translations[locale].shared.commonAnswers.no}
     />
   )
 };
@@ -38,8 +38,8 @@ const ReducedOrNoFee = (props) => {
   let locale = props.locale;
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = 'reducedFeeID'
+      {...props}
+      name  = { props.editKey}
     >
       <Yes  reducedFee = {props.reducedFee} locale = {locale}/>
       <No   reducedFee = {props.reducedFee} locale = {locale}/>

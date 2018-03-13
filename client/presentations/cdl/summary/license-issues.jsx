@@ -4,7 +4,7 @@ import React            from 'react';
 import { printDate }    from '../../../helpers/print-date';
 import { hasValue }     from '../../../helpers/data/validations';
 import * as dataPresent from '../../../helpers/data-present';
-import PageSummaryLink  from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
 import {
   licenseIssuesIsSuspended
@@ -20,7 +20,7 @@ const LicenseIssues = (props) => {
     reason = props.licenseIssues.reason;
     return (
       <PageSummaryLink
-        name='cdlLicenseIssues'
+        {...props}
       >
         <SummaryItem
           title='Driving record:'
@@ -35,8 +35,7 @@ const LicenseIssues = (props) => {
   } else {
     return (
       <PageSummaryLink
-        name= 'cdlLicenseIssues'
-        summary = {props.summary}
+        {...props}
       >
         <SummaryItem
           title='Driving record:'

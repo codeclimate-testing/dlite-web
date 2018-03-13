@@ -9,10 +9,10 @@ import {
   eligibilityRequirementsYes,
   eligibleForCitizen
 }   from '../../../../helpers/data/voting';
-import { ageChecks }                from '../../../../helpers/calculate-age';
+import { ageChecks }            from '../../../../helpers/calculate-age';
 
-import PageSummaryLink         from '../Page-summary-link.jsx';
-import SummaryItem             from '../summary-item.jsx';
+import PageSummaryLink          from '../../../../containers/page-summary-link.jsx';
+import SummaryItem              from '../summary-item.jsx';
 
 const OptOut = (props) => {
   let locale = props.locale;
@@ -30,8 +30,7 @@ const OptOut = (props) => {
   if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props))) {
     return (
       <PageSummaryLink
-        summary={props.summary}
-        name={props.editKey}
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.registrationChoice}

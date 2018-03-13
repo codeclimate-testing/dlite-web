@@ -19,6 +19,7 @@ describe('RealID sections on summary pages', function() {
       realID: '',
       showIf: true,
       title: 'Real-ID Compliant',
+      editKey: 'realID',
       locale
     };
   });

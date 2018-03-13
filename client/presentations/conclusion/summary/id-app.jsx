@@ -2,10 +2,10 @@
 
 import React                        from 'react';
 import Accordion                    from '../../../containers/accordion.jsx';
+import RealID                       from './real-id.jsx';
 import {
   IDApplicationNotStarted,
   SeniorID,
-  IDRealID,
   ReducedOrNoFee,
   IDAction,
   CurrentIDInfo
@@ -14,42 +14,47 @@ import {
 const IDApp = (props) => {
   let application = props.application;
   let locale = props.ui.locale;
+  let cardType = 'ID';
 
   return (
     <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
       <IDApplicationNotStarted
         IDApp             = { application.IDApp }
         locale            = { locale }
-        summary           = 'summary'
+        editKey           = 'wdywtdt'
+        cardType          = { cardType }
       />
       <IDAction
         IDApp             = { application.IDApp }
         locale            = { locale }
-        summary           = 'summary'
+        editKey           = 'wdywtdt'
+        cardType          = { cardType }
       />
       <ReducedOrNoFee
         locale            = { locale }
-        summary           = 'summary'
         reducedFee        = { application.IDApp.reducedFee}
+        editKey           = 'reducedFeeID'
+        cardType          = { cardType }
       />
       <SeniorID
         locale            = { locale }
-        summary           = 'summary'
-        seniorID          = {application.IDApp.seniorID}
+        seniorID          = { application.IDApp.seniorID}
+        editKey           = 'seniorID'
+        cardType          = { cardType }
       />
       <CurrentIDInfo
         IDApp             = { application.IDApp}
         locale            = { locale }
-        summary           = 'summary'
-        currentCardInfo   = {application.IDApp.currentCard}
+        editKey           = 'currentCardInfo'
+        cardType          = { cardType }
       />
-      <IDRealID
+      <RealID
+        showIf            = { application.IDApp.isApplying }
         realID            = { application.IDApp.realID }
-        IDApp             = { application.IDApp }
-        summary           = 'summary'
         locale            = { locale }
-        name              = 'realID'
+        editKey           = 'realID'
         title             = 'Real-ID Compliant'
+        cardType          = { cardType }
       />
     </Accordion>
   )

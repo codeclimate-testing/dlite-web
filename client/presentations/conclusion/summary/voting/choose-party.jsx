@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import PageSummaryLink              from '../Page-summary-link.jsx';
+import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 import {
   politicalPartySelected,
@@ -21,8 +21,7 @@ const PoliticalPartyChoose = (props) => {
   {
     return (
       <PageSummaryLink
-        to='/voting-registration/choose-party'
-        name='choosePoliticalParty'
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.politicalParty}

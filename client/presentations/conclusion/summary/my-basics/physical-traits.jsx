@@ -3,30 +3,30 @@
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
 
 const PhysicalTraits = (props) => {
   if (!dataPresent.physicalTraits(props.physicalTraits)) { return null; }
-
+  let locale = props.locale;
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = {props.editKey}
+      {...props}
     >
       <SummaryItem
-        title='Sex'
-        text={props.physicalTraits.sex}
+        title = { translations[locale].shared.labels.sex}
+        text  = { props.physicalTraits.sex}
       />
 
       <SummaryItem
-        title='Eye Color'
-        text={props.physicalTraits.eyeColor}
+        title = { translations[locale].summaryPage.myBasics.eyeColor}
+        text  = { props.physicalTraits.eyeColor}
       />
 
       <SummaryItem
-        title='Hair Color'
-        text={props.physicalTraits.hairColor}
+        title = { translations[locale].summaryPage.myBasics.hairColor }
+        text  = { props.physicalTraits.hairColor}
       />
     </PageSummaryLink>
     )

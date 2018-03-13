@@ -81,16 +81,16 @@ describe('CDL Summary My Basics section', function() {
   });
 
   it('shows the dob', function() {
-    assert.equal(component.text().includes('Date Of Birth'), true);
+    assert.equal(component.text().includes('Date of birth'), true);
     assert.equal(component.text().includes('01/29/1957'), true);
   });
 
   it('shows the physical traits', function() {
     assert.equal(component.text().includes('Sex'), true);
     assert.equal(component.text().includes('Female'), true);
-    assert.equal(component.text().includes('Eye Color'), true);
+    assert.equal(component.text().includes('Eye color'), true);
     assert.equal(component.text().includes('Black'), true);
-    assert.equal(component.text().includes('Hair Color'), true);
+    assert.equal(component.text().includes('Hair color'), true);
     assert.equal(component.text().includes('Gray'), true);
   });
 
@@ -110,7 +110,7 @@ describe('CDL Summary My Basics section', function() {
   });
 
   it('shows the social security', function() {
-    assert.equal(component.text().includes('Social Security Number'), true);
+    assert.equal(component.text().includes('Social Security number'), true);
     assert.equal(component.text().includes('xxx-xx-6789'), true);
   });
 });

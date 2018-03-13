@@ -2,15 +2,14 @@
 
 import React                    from 'react';
 import translations             from '../../../../i18n';
-import { 
+import {
   ballotByMailSelected,
   eligibilityRequirementsYes,
   eligibleForCitizen
 } from '../../../../helpers/data/voting';
-import { ageChecks }           from '../../../../helpers/calculate-age';
-
-import PageSummaryLink  from '../Page-summary-link.jsx';
-import SummaryItem      from '../summary-item.jsx';
+import { ageChecks }            from '../../../../helpers/calculate-age';
+import PageSummaryLink          from '../../../../containers/page-summary-link.jsx';
+import SummaryItem              from '../summary-item.jsx';
 
 const BallotByMail = (props) => {
   let locale = props.locale;
@@ -19,8 +18,7 @@ const BallotByMail = (props) => {
   {
     return (
       <PageSummaryLink
-        to='/voting-registration/vote-by-mail'
-        name='ballotByMail'
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.voteByMail}

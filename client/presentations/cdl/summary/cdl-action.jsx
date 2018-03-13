@@ -1,7 +1,7 @@
 'use strict';
 
-import React            from 'react';
-import PageSummaryLink  from '../../conclusion/summary/Page-summary-link.jsx';
+import React                from 'react';
+import PageSummaryLink      from '../../../containers/page-summary-link.jsx';
 import {
   New,
   Renew,
@@ -24,8 +24,7 @@ const CdlAction = (props) => {
 
   return (
     <PageSummaryLink
-      name    = 'cdlWdywtdt'
-      summary = 'cdlSummary'
+      {...props}
     >
       <New        showIf = {isGettingNew(props)}    locale={locale}/>
       <Renew      showIf = {isRenewingCard(props)}  locale={locale}/>

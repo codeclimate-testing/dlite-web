@@ -185,7 +185,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Expiration date:09/03/2000'));
+      assert.ok(component.text().includes('Expiration date09/03/2000'));
     });
   });
 

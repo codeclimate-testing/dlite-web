@@ -1,7 +1,7 @@
 'use strict';
 
 import React            from 'react';
-import PageSummaryLink  from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink  from '../../../containers/page-summary-link.jsx';
 import { hasValue }     from '../../../helpers/data/validations';
 import {
   yesClassM,
@@ -18,8 +18,7 @@ const Motorcycle = (props) => {
 
   return (
     <PageSummaryLink
-      name    = 'motorcycle'
-      summary = 'cdlSummary'
+      {...props}
     >
       <Yes  {...props} showIf={ yesClassM(props) }/>
       <No   {...props} showIf={ noClassM(props) }/>

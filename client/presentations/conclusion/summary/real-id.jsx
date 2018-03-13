@@ -1,7 +1,7 @@
 'use strict';
 
 import React              from "react";
-import PageSummaryLink    from './Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 
 import {
   Yes,

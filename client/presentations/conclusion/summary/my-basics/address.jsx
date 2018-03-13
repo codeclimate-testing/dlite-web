@@ -3,7 +3,7 @@
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import translations     from '../../../../i18n';
 
@@ -23,8 +23,7 @@ const Address = (props) => {
 
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name    = {props.editKey}
+      {...props}
     >
       <SummaryItem
         title={translations[locale].summaryPage.myBasics.homeAddress}

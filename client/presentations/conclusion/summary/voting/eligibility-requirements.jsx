@@ -9,7 +9,7 @@ import {
 }  from '../../../../helpers/data/voting';
 import { hasValue }            from '../../../../helpers/data/validations';
 import { ageChecks }           from '../../../../helpers/calculate-age';
-import PageSummaryLink         from '../Page-summary-link.jsx';
+import PageSummaryLink         from '../../../../containers/page-summary-link.jsx';
 import SummaryItem             from '../summary-item.jsx';
 import * as dataPresent        from '../../../../helpers/data-present';
 
@@ -55,8 +55,7 @@ const EligibilityRequirements = (props) => {
   if ((declineToAnswer(props.eligibilityRequirements)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (eligibilityNotChosen(props))) {
     return (
       <PageSummaryLink
-        summary={props.summary}
-        name={props.editKey}
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.eligible}
@@ -67,8 +66,7 @@ const EligibilityRequirements = (props) => {
   }
   return (
     <PageSummaryLink
-      summary={props.summary}
-      name={props.editKey}
+      {...props}
     >
       <Yes        {...props} />
       <Decline    {...props} />

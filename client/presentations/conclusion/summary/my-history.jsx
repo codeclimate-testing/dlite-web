@@ -1,7 +1,8 @@
 'use strict';
 
-import React                       from 'react';
-import Accordion                   from '../../../containers/accordion.jsx';
+import React                        from 'react';
+import Accordion                    from '../../../containers/accordion.jsx';
+import translations                 from '../../../i18n';
 import {
   LicenseIssues,
   LicenseAndIdHistory,
@@ -19,30 +20,31 @@ const MyHistory = (props) => {
       <MedicalHistory
         DLApp               = { application.DLApp }
         locale              = { locale }
-        summary             = 'summary'
         medicalHistory      = { application.history.medicalHistory}
+        showIf              = { application.DLApp.isApplying }
+        editKey             = 'medicalHistory'
       />
       <LicenseAndIdHistory
         locale              = { locale }
-        summary             = 'summary'
-        licenseAndIdHistory = {application.history.licenseAndIdHistory}
-        editKey             = 'addLicenseHistory'
-        title               = 'Previous DL/ID card number:'
+        licenseAndIdHistory = { application.history.licenseAndIdHistory}
+        editKey             = 'cardHistory'
+        title               = { translations[locale].summaryPage.myHistory.previousCard }
       />
       <NamesHistory
         locale              = { locale }
-        summary             = 'summary'
+        translations        = { translations }
         namesHistory        = { application.history.namesHistory}
+        editKey             = 'nameHistory'
       />
       <LicenseIssues
         locale              = { locale }
-        summary             = 'summary'
-        licenseIssues       = {application.history.licenseIssues}
+        licenseIssues       = { application.history.licenseIssues}
+        editKey             = 'licenseIssues'
       />
       <VeteransService
         locale              = { locale }
-        summary             = 'summary'
         veteransService     = { application.history.veteransService}
+        editKey             = 'veterans'
       />
     </Accordion>
   );

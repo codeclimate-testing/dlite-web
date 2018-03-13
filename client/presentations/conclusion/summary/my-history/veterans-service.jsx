@@ -2,16 +2,16 @@
 
 import React from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import { isVeteran }    from '../../../../helpers/data/veteran';
-
+import translations     from '../../../../i18n';
 
 const BenefitInfo = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title='Get benefit information:'
+    title= { translations[props.locale].summaryPage.myHistory.getBenefitsInformation + ':'}
       text={props.veteransService.receiveBenefits}
     />
   )
@@ -21,7 +21,7 @@ const PrintedOnCard = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title='"Veteran" printed on card(s):'
+    title= { translations[props.locale].summaryPage.myHistory.veteranPrintedOnCard + ':'}
       text={props.veteransService.veteransIdentifier}
     />
   )
@@ -29,19 +29,18 @@ const PrintedOnCard = (props) => {
 
 const VeteransService = (props) => {
   if (!dataPresent.veteransService(props.veteransService)) { return null; }
-
+  let locale = props.locale;
   return (
     <PageSummaryLink
-      summary = {props.summary}
-      name='veterans'
+      {...props}
     >
       <SummaryItem
-        title='Veteran:'
+        title= { translations[locale].summaryPage.myHistory.veteran + ':'}
         text={props.veteransService.isVeteran}
       />
 
-      <BenefitInfo    veteransService={props.veteransService} />
-      <PrintedOnCard  veteransService={props.veteransService} />
+      <BenefitInfo    veteransService={props.veteransService} locale={locale} />
+      <PrintedOnCard  veteransService={props.veteransService} locale={locale}/>
 
     </PageSummaryLink>
   )

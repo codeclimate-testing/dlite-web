@@ -61,13 +61,14 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       );
-      assert.ok(!component.text().includes('Medical conditions:'))
+      assert.ok(!component.text().includes('Medical conditions'))
     });
 
     it('shows the medical info text if user selected Yes to having a medical condition', function() {
       let testString = 'missing toenails';
       props.cdl.history.medicalHistory.hasMedicalCondition = 'Yes';
       props.cdl.history.medicalHistory.medicalInfo = testString;
+
       component = render(
         <Wrapper>
           <MyHistory { ...props } />
@@ -119,7 +120,7 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Expiration date:4/27/4058'), 'expiration date missing');
+      assert.ok(component.text().includes('Expiration date4/27/4058'), 'expiration date missing');
     });
   });
 

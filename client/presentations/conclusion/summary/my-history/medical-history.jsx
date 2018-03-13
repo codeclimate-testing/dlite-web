@@ -3,28 +3,28 @@
 import React            from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import { DLAppExists }  from '../../../../helpers/data/card-type';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
 import {
   getStringByMedical
 }   from '../../../../helpers/data/my-history';
 
 const MedicalHistory = (props) => {
-  if (!DLAppExists(props)) { return null; }
+  if (!props.showIf) { return null; }
   let medicalCondition = getStringByMedical(props);
+  let locale = props.locale;
 
   return (
     <PageSummaryLink
-      name= 'addMedicalHistory'
-      summary = {props.summary}
+      {...props}
     >
       <SummaryItem
-        title='Medical conditions:'
+        title= { translations[locale].summaryPage.myHistory.medicalConditions }
         text={medicalCondition}
       />
     </PageSummaryLink>
-    );
-
+  );
 };
 
 export default MedicalHistory;

@@ -3,7 +3,7 @@
 import React              from 'react';
 import { hasValue }       from '../../../helpers/data/validations';
 import { getClassText }   from '../../../helpers/data/cdl';
-import PageSummaryLink    from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
 
 const LicenseClass  = (props) => {
@@ -13,8 +13,7 @@ const LicenseClass  = (props) => {
 
   return (
     <PageSummaryLink
-      name    = 'cdlClass'
-      summary = 'cdlSummary'
+      {...props}
     >
       <SummaryItem
         title = 'License class:'

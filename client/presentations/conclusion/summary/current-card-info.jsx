@@ -1,29 +1,31 @@
 'use strict';
 
-import React              from 'react';
-import SummaryItem        from './summary-item.jsx';
-import { printDate }      from '../../../helpers/print-date';
-import * as dataPresent   from '../../../helpers/data-present';
-import PageSummaryLink    from './Page-summary-link.jsx';
+import React                from 'react';
+import SummaryItem          from './summary-item.jsx';
+import { printDate }        from '../../../helpers/print-date';
+import * as dataPresent     from '../../../helpers/data-present';
+import PageSummaryLink      from '../../../containers/page-summary-link.jsx';
 import { cardNumberOrNone } from '../../../helpers/data/my-history';
+import translations         from '../../../i18n';
 
 export const CardNumber = (props) => {
-  let cardNumber = cardNumberOrNone(props);
+
   return (
     <SummaryItem
       title = {props.title}
-      text  = {cardNumber}
+      text  = {props.cardNumber}
     />
   )
 };
 
 export const CardDate = (props) => {
-  if (!dataPresent.date(props.currentCardInfo)) { return null;}
-  let date = printDate(props.currentCardInfo);
+  if (!props.showIf) { return null; }
+  let date    = printDate(props.cardInfo);
+  let locale  = props.locale;
   return (
     <SummaryItem
-      title = 'Expiration date:'
-      text  = {date}
+      title = { translations[locale].summaryPage.shared.expirationDate }
+      text  = { date }
     />
   )
 };
@@ -33,15 +35,16 @@ export const CurrentCardInfo = (props) => {
   return (
     <PageSummaryLink
       {...props}
-      name      = {props.editKey}
     >
       <CardNumber
-        number  = {props.currentCardInfo.number}
-        title   = {props.title}
+        cardNumber  = { cardNumberOrNone(props.currentCardInfo)}
+        title       = { props.title}
       />
 
       <CardDate
-        currentCardInfo = {props.currentCardInfo}
+        cardInfo    = { props.currentCardInfo}
+        locale      = { props.locale }
+        showIf      = { dataPresent.date(props.currentCardInfo)}
       />
     </PageSummaryLink>
   );

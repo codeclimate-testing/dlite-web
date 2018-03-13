@@ -1,8 +1,8 @@
 'use strict';
 
-import React          from "react";
-import translations   from '../../../../i18n';
-import AddAppLink     from '../Add-app-link.jsx';
+import React                from "react";
+import translations         from '../../../../i18n';
+import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 
 import {
   DLAppExists
@@ -14,12 +14,12 @@ const DLApplicationNotStarted = (props) => {
   if(DLAppExists(props)) { return null; }
 
   return (
-    <AddAppLink
+    <PageSummaryLink
       {...props}
-      to      = '/driver-license'
+      add       = { true }
     >
       <p>{translations[locale].summaryPage.whatImDoing.nothing}</p>
-    </AddAppLink>
+    </PageSummaryLink>
   );
 };
 

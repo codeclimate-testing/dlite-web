@@ -3,7 +3,7 @@
 import React            from 'react';
 import * as dataPresent from '../../../helpers/data-present';
 import translations     from '../../../i18n';
-import PageSummaryLink  from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
 import { hasValue }     from '../../../helpers/data/validations';
 import {
@@ -69,12 +69,11 @@ const CDLEndorsements = (props) => {
 
   return (
     <PageSummaryLink
-      name= 'cdlEndorsements'
-      summary = {props.summary}
+      {...props}
     >
       <SummaryItem
-        title='Endorsement(s)'
-        text={endorsements}
+        title = 'Endorsement(s)'
+        text  = {endorsements}
       />
     </PageSummaryLink>
   )

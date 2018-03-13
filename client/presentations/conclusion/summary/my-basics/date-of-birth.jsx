@@ -3,8 +3,9 @@
 import React            from "react";
 import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
-import PageSummaryLink  from '../Page-summary-link.jsx';
+import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
+import translations     from '../../../../i18n';
 
 const DateOfBirth = (props) => {
   if (!dataPresent.date(props.dateOfBirth)) { return null; }
@@ -13,12 +14,11 @@ const DateOfBirth = (props) => {
 
   return (
     <PageSummaryLink
-      name    = {props.editKey}
-      summary = {props.summary}
+      {...props}
     >
       <SummaryItem
-        title = 'Date Of Birth'
-        text  = {dateOfBirth}
+        title = { translations[props.locale].shared.labels.dateOfBirth }
+        text  = { dateOfBirth}
       />
   </PageSummaryLink>
   );

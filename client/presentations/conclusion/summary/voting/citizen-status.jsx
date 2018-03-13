@@ -10,7 +10,7 @@ import {
  }  from '../../../../helpers/data/voting';
 import { hasValue }                 from '../../../../helpers/data/validations';
 import { ageChecks }                from '../../../../helpers/calculate-age';
-import PageSummaryLink              from '../Page-summary-link.jsx';
+import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 import * as dataPresent             from '../../../../helpers/data-present';
 
@@ -57,8 +57,7 @@ const CitizenStatus = (props) => {
   if ((declineToAnswer(props.citizenStatus)) || (!ageChecks.Under16(props.dateOfBirth, now)) && (citizenStatusNotChosen(props))) {
     return (
       <PageSummaryLink
-        summary={props.summary}
-        name={props.editKey}
+        {...props}
       >
         <SummaryItem
           title={translations[locale].summaryPage.voterRegistration.citizen}
@@ -69,8 +68,7 @@ const CitizenStatus = (props) => {
   }
   return (
     <PageSummaryLink
-      summary={props.summary}
-      name={props.editKey}
+      {...props}
     >
       <Yes     {...props}   citizenStatus={props.citizenStatus} />
       <Decline {...props}   citizenStatus={props.citizenStatus} />
