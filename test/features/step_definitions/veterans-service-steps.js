@@ -63,6 +63,13 @@ module.exports = function (world) {
       .catch(done);
   });
 
+  world.and('I click Yes for military experience driving CDL waiver', function(done){
+    browser
+      .click('label[for="militaryWaiver-Yes"]')
+      .then(() => { done(); })
+      .catch(done);
+  })
+
   world.then('I will see additional 5 dollars added to my fee message', function(done){
     browser
       .waitForSelector('.veteran-identifier-fee')

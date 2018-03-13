@@ -11,7 +11,7 @@ const VeteransPreviousDesignation = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
-    <div className='cdl-veterans-previous-designation-form'>
+    <div className='veterans-previous-designation-form'>
       {convertToHtml('h2','Is "Veteran" printed on your commercial driver license?', 'question translation-missing')}
       <div className='input-container'>
         <fieldset>

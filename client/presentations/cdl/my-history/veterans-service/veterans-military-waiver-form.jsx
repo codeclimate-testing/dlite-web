@@ -10,7 +10,7 @@ const VeteransMilitaryWaiver = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
-    <div className='cdl-veterans-military-waiver-form'>
+    <div className='veterans-military-waiver-form'>
       {convertToHtml('h2','Will you be seeking a military driving experience CDL waiver?', 'question translation-missing')}
       {convertToHtml('p', 'You must have served within the past year.', 'translation-missing')}
       <div>

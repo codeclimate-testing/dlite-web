@@ -48,6 +48,15 @@ describe('veterans page validation rules:', function() {
       assert.deepEqual(rules.receiveBenefits(props), [messages.veteranBenefitSelectionMissing]);
     });
 
+    it('returns selectionMissing error when benefits not selected', function() {
+      props.veteransService = {
+        isVeteran: 'Yes',
+        militaryWaiver: ''
+      }
+
+      assert.deepEqual(rules.militaryWaiver(props), [messages.selectionMissing]);
+    });
+
     it('returns veteranDesignationExistsMissing2 error when renewing and previous designation is not selected', function() {
       props.veteransService = {
         isVeteran: 'Yes',

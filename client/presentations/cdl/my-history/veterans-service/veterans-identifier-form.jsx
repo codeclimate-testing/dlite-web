@@ -20,10 +20,18 @@ import { convertToHtml }  from '../../../../i18n/convert-to-html.jsx';
 
 const Question = (props) => {
   if (!isPreviouslyDesignated(props)) {
-    return convertToHtml('h2', 'Would you like to add the word “Veteran” on your CDL for a $5 fee?', 'question translation-missing')
+    return(
+      <div className='new-designation'>
+        {convertToHtml('h2', 'Would you like to add the word “Veteran” on your CDL for a $5 fee?', 'question translation-missing')}
+      </div>
+    );
   }
   else{
-    return convertToHtml('h2', 'Would you like to keep "Veteran" on your CDL?', 'question translation-missing')
+    return(
+      <div className='previous-designation'>
+        {convertToHtml('h2', 'Would you like to keep "Veteran" on your CDL?', 'question translation-missing')}
+      </div>
+    );
   }
 
 };
@@ -55,7 +63,7 @@ const VeteransIdentifier = (props) => {
   if(!props.showIf) { return null; }
   let locale = props.locale;
   return (
-    <div className='cdl-veterans-identifier-form'>
+    <div className='veterans-identifier-form'>
     <Question {...props} />
       {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.explanation)}
       <div className='input-container'>
@@ -68,6 +76,9 @@ const VeteransIdentifier = (props) => {
           </RadioCollection>
         </fieldset>
       </div>
+
+      <MessageAddAmount           {...props} />
+      <MessageRemovingDesignation {...props} />
     </div>
   );
 };

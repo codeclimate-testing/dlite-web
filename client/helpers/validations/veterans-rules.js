@@ -42,7 +42,13 @@ let veteransIdentifier = (props) => {
 }
 
 let militaryWaiver = (props) => {
-  return selectionValidator('selectionMissing', 'veteransService', 'militaryWaiver')(props)
+  if(!isVeteran(props)) {
+    return [];
+  }
+  if(Object.keys(props.veteransService).includes('militaryWaiver')){
+    return selectionValidator('selectionMissing', 'veteransService', 'militaryWaiver')(props);
+  }
+  return [];
 }
 
 export default {

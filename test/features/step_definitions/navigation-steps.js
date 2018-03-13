@@ -317,15 +317,17 @@ module.exports = function(world) {
     assertOnPage('.veterans-questionnaire-form', /id-and-license\/edit\/my-history\/veterans-service/, done);
   });
 
-
-
   world.then('I will be on the page for organ donation', function(done) {
     assertOnPage('.donate-organ-form', /organ-donation/, done);
   });
+
+  world.then('I will be on the page for CDL organ donation', function(done) {
+    assertOnPage('.donate-organ-form', /cdl\/organ-donation/, done);
+  });
+
   world.then('I will be on the page for donate contribution', function(done) {
     assertOnPage('.donate-contribution-form', /id-and-license\/about-me\/donate-contribution/, done);
   });
-
 
   world.then('I will be taken to political party page', function(done){
     assertOnPage('.political-party-preference', /id-and-license\/voter\/political-party/, done);
@@ -342,6 +344,11 @@ module.exports = function(world) {
   world.then('I will be taken to voter registration complete page', function(done) {
     assertOnPage('.voter-reg-complete', /id-and-license\/voting-registration\/confirmation/, done);
   });
+
+  world.then('I will be on the page for CDL veteran related services', function(done) {
+    assertOnPage('.veterans-questionnaire-form', /cdl\/my-history\/veteran/, done);
+  });
+
   world.then('I will be on the page for voter citizen status entry', function(done) {
     assertOnPage('.citizen-status-form', /id-and-license\/voting-registration\/citizenship/, done);
   });

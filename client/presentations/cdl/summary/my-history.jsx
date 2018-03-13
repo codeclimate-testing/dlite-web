@@ -1,13 +1,14 @@
 'use strict';
 
-import React                from 'react';
-import Accordion            from '../../../containers/accordion.jsx';
-import NamesInfo            from './names-history.jsx';
+import React                  from 'react';
+import Accordion              from '../../../containers/accordion.jsx';
+import NamesInfo              from './names-history.jsx';
 import OtherStateLicenseInfo  from './other-state-licenses.jsx';
 import LicenseIssuesInfo      from './license-issues.jsx';
-import MedicalInfo          from '../../conclusion/summary/my-history/medical-history.jsx';
-import CurrentDL            from '../../conclusion/summary/my-history/license-and-id-history.jsx';
-import { hasValue }         from '../../../helpers/data/validations';
+import MedicalInfo            from '../../conclusion/summary/my-history/medical-history.jsx';
+import CurrentDL              from '../../conclusion/summary/my-history/license-and-id-history.jsx';
+import VeteransService        from './veterans-service.jsx';
+import { hasValue }           from '../../../helpers/data/validations';
 
 const MyHistory = (props) => {
   let cdl       = props.cdl;
@@ -34,6 +35,10 @@ const MyHistory = (props) => {
         licenseIssues       = { cdl.history.licenseIssues }
         locale              = { locale }
         editKey             = 'cdlLicenseIssues'
+      />
+      <VeteransService
+        veteransService     = { cdl.history.veteransService}
+        locale              = { locale }
       />
       <CurrentDL
         licenseAndIdHistory = { cdl.history.currentDLInfo}
