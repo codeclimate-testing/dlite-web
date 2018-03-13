@@ -26,10 +26,11 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    physicalTraits: state.application.basics.physicalTraits,
-    focused:        state.ui.focus,
-    validations:    state.ui.validations,
-    locale:         state.ui.locale
+    physicalTraits  : state.application.basics.physicalTraits,
+    focused         : state.ui.focus,
+    validations     : state.ui.validations,
+    locale          : state.ui.locale,
+    flow            : state.ui.flow
   };
 };
 

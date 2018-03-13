@@ -32,7 +32,8 @@ function mapStateToProps(state) {
     dateOfBirth:    state.cdl.basics.dateOfBirth,
     certification:  state.cdl.certification,
     locale:         state.ui.locale,
-    validations:    state.ui.validations
+    validations:    state.ui.validations,
+    flow:           state.ui.flow
   };
 };
 

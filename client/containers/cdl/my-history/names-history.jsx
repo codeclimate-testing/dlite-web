@@ -10,7 +10,7 @@ import Presentation               from '../../../presentations/cdl/my-history/na
 const Page = (props) => {
   let locale      = props.locale;
   let validations = new NamesValidator(Object.assign(props.namesHistory, {locale}), props.validations, 'selectionMissing');
-  let onSubmit    = handlers.navigateOrShowErrors('cdlNamesHistory', props, validations);
+  let onSubmit    = handlers.navigateOrShowErrors('cdlNameHistory', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
   return (
@@ -29,7 +29,8 @@ function mapStateToProps(state) {
     cardAction        : state.cdl.cardAction,
     focused           : state.ui.focus,
     validations       : state.ui.validations,
-    locale            : state.ui.locale
+    locale            : state.ui.locale,
+    flow              : state.ui.flow
   };
 };
 

@@ -12,7 +12,7 @@ const Page = (props) => {
   let locale            =   props.locale;
   let validations       =   new SSNValidator(Object.assign(props.socialSecurity, {locale}), props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('socialSecurity', props, validations);
-  let onBack            =   handlers.navigateOnBack(props);
+  let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
     <Presentation
@@ -32,7 +32,8 @@ const mapStateToProps = (state) => {
     DLApp         : state.application.DLApp,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    locale        : state.ui.locale
+    locale        : state.ui.locale,
+    flow          : state.ui.flow
   };
 };
 

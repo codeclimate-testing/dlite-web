@@ -12,7 +12,7 @@ import Presentation           from "../../presentations/get-started/senior-id-pa
 const Page = (props) => {
   let locale            =   props.locale;
   let validations       =   new SeniorIDValidator(Object.assign(props.seniorID, {locale}), props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('seniorID', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
@@ -28,11 +28,13 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    seniorID:       state.application.IDApp.seniorID,
-    IDApp:          state.application.IDApp,
-    focused:        state.ui.focus,
-    validations:    state.ui.validations,
-    locale:         state.ui.locale
+    seniorID            : state.application.IDApp.seniorID,
+    reducedFee          : state.application.IDApp.reducedFee,
+    licenseAndIdHistory : state.application.history.licenseAndIdHistory,
+    focused             : state.ui.focus,
+    validations         : state.ui.validations,
+    locale              : state.ui.locale,
+    flow                : state.ui.flow
   };
 };
 

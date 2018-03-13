@@ -29,7 +29,8 @@ function mapStateToProps(state) {
     validations:  state.ui.validations,
     focused:      state.ui.focus,
     hover:        state.ui.hover,
-    locale:       state.ui.locale
+    locale:       state.ui.locale,
+    flow:         state.ui.flow
   };
 };
 

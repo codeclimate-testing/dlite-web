@@ -31,7 +31,9 @@ const mapStateToProps = (state) => {
     focused:      state.ui.focus,
     validations:  state.ui.validations,
     hover:        state.ui.hover,
-    locale:       state.ui.locale
+    locale:       state.ui.locale,
+    flow: state.ui.flow
+
   };
 };
 

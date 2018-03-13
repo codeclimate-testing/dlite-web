@@ -8,12 +8,12 @@ import { WDYWTDTValidator }   from '../../helpers/validations';
 import { updateCardAction }   from "../../actions/index";
 import { getCorrectApp }      from '../../helpers/data/card-type';
 import Presentation           from "../../presentations/get-started/what-do-you-want-to-do-today-page.jsx";
-import { getActionFromState } from '../../helpers/data/pathnames';
+import { getActionFromState}  from '../../helpers/data/pathnames';
 
 const Page = (props) => {
   let locale            =   props.locale;
   let validations       =   new WDYWTDTValidator(Object.assign(props.cardAction, {locale}), props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('wdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
@@ -29,14 +29,16 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
+    currentCardInfo:  getCorrectApp(state.application).currentCard,
     cardAction:       getActionFromState(state),
     cardType:         state.application.cardType,
+    seniorID:         state.application.IDApp.seniorID,
     dateOfBirth:      state.application.basics.dateOfBirth,
+    licenseAndIdHistory:  state.application.history.licenseAndIdHistory,
     focused:          state.ui.focus,
     validations:      state.ui.validations,
-    addApp:           state.ui.addApp,
-    currentCardInfo:  getCorrectApp(state.application).currentCard,
-    locale:           state.ui.locale
+    locale:           state.ui.locale,
+    flow:             state.ui.flow
   };
 };
 

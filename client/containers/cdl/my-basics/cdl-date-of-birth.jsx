@@ -19,6 +19,7 @@ const Page = (props) => {
       onBack      = {onBack}
       onSubmit    = { onSubmit }
       validations = { validations }
+      chooseApp   = 'cdl'
     />
   );
 };
@@ -28,8 +29,8 @@ function mapStateToProps(state) {
     dateOfBirth:  state.cdl.basics.dateOfBirth,
     validations:  state.ui.validations,
     focused:      state.ui.focus,
-    addApp:       state.ui.addApp,
-    locale:       state.ui.locale
+    locale:       state.ui.locale,
+    flow:         state.ui.flow
   };
 };
 

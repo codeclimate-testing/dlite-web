@@ -13,7 +13,7 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 const Page = (props) => {
   let locale            =   props.locale;
   let validations       =   new ReplaceValidator(Object.assign(props.cardReplacement, {locale}), props.validations);
-  let onSubmit          =   handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          =   handlers.navigateOrShowErrors('replacementDetails', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
   return (
@@ -31,10 +31,13 @@ function mapStateToProps(state) {
   return {
     cardReplacement     : getCorrectApp(state.application).replacementDetails,
     cardType            : state.application.cardType,
+    cardAction          : state.application.cardAction,
+    licenseAndIdHistory : state.application.history.licenseAndIdHistory,
     dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale
+    locale              : state.ui.locale,
+    flow                : state.ui.flow
   };
 };
 

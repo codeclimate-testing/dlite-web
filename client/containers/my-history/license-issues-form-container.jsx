@@ -10,7 +10,7 @@ import Presentation             from '../../presentations/my-history/license-iss
 const Page = (props) => {
   let locale            = props.locale;
   let validations       = new LicenseIssuesValidator(Object.assign(props.licenseIssues, {locale}), props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors('licenseIssues', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -28,7 +28,8 @@ function mapStateToProps(state) {
     licenseIssues   : state.application.history.licenseIssues,
     focused         : state.ui.focus,
     validations     : state.ui.validations,
-    locale          : state.ui.locale
+    locale          : state.ui.locale,
+    flow            : state.ui.flow
   };
 };
 

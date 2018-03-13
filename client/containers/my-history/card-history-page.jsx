@@ -11,7 +11,7 @@ import Presentation                   from '../../presentations/my-history/card-
 const Page = (props) => {
   let locale            = props.locale;
   let validations       = new LicenseHistoryValidator(Object.assign(props.licenseAndIdHistory, {locale}), props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit          = handlers.navigateOrShowErrors('cardHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -30,7 +30,8 @@ function mapStateToProps(state) {
     cardType            : state.application.cardType,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale
+    locale              : state.ui.locale,
+    flow                : state.ui.flow
   };
 };
 

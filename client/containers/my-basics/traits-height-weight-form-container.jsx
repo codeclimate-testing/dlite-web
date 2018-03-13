@@ -27,10 +27,11 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    traitsHeightWeight: state.application.basics.traitsHeightWeight,
-    focused:            state.ui.focus,
-    validations:        state.ui.validations,
-    locale:             state.ui.locale
+    traitsHeightWeight  : state.application.basics.traitsHeightWeight,
+    focused             : state.ui.focus,
+    validations         : state.ui.validations,
+    locale              : state.ui.locale,
+    flow                : state.ui.flow
   };
 };
 

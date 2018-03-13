@@ -30,7 +30,8 @@ function mapStateToProps(state) {
     currentCardInfo   : state.cdl.currentCardInfo,
     cardAction        : state.cdl.cardAction,
     validations       : state.ui.validations,
-    locale            : state.ui.locale
+    locale            : state.ui.locale,
+    flow              : state.ui.flow
   };
 };
 

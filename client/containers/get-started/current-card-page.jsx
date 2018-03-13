@@ -12,13 +12,14 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 const Page = (props) => {
   let locale = props.locale;
   let validations = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
-  let onSubmit = handlers.navigateOrShowErrors(props.addressName, props, validations);
+  let onSubmit = handlers.navigateOrShowErrors('currentCardInfo', props, validations);
   let onBack   = handlers.navigateOnBack(props, validations);
   return (
     <Presentation
       {...props}
       onSubmit          = { onSubmit }
       onBack            = { onBack }
+      currentCardInfo   = { props.currentCardInfo }
       validations       = { validations }
       onBlur            = { props.onBlurValidate }
       onFocus           = { props.onFocusClearValidation }
@@ -29,12 +30,13 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     currentCardInfo   : getCorrectApp(state.application).currentCard,
+    licenseAndIdHistory: state.application.history.licenseAndIdHistory,
     cardType          : state.application.cardType,
-    IDApp             : state.application.IDApp,
     cardAction        : state.application.cardAction,
     dateOfBirth       : state.application.basics.dateOfBirth,
     validations       : state.ui.validations,
-    locale            : state.ui.locale
+    locale            : state.ui.locale,
+    flow              : state.ui.flow
   };
 };
 

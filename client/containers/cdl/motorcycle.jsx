@@ -31,7 +31,8 @@ function mapStateToProps(state) {
     classM              : state.cdl.classM,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale
+    locale              : state.ui.locale,
+    flow                : state.ui.flow
   };
 };
 

@@ -28,7 +28,8 @@ function mapStateToProps(state) {
     currentCardInfo:  state.cdl.history.currentDLInfo,
     validations:      state.ui.validations,
     focused:          state.ui.focus,
-    addApp:           state.ui.addApp,
+    flow:             state.ui.flow,
+    classM:           state.cdl.classM,
     locale:           state.ui.locale
   };
 };

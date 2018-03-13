@@ -27,9 +27,14 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    dateOfBirth:  state.application.basics.dateOfBirth,
-    validations:  state.ui.validations,
-    locale:       state.ui.locale
+    dateOfBirth   : state.application.basics.dateOfBirth,
+    cardType      : state.application.cardType,
+    seniorID      : state.application.IDApp.seniorID,
+    youthIDInstead: state.application.youthIDInstead,
+    chooseApp     : state.ui.chooseApp,
+    validations   : state.ui.validations,
+    locale        : state.ui.locale,
+    flow          : state.ui.flow
   };
 };
 

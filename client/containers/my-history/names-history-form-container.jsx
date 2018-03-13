@@ -26,12 +26,12 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     namesHistory: state.application.history.namesHistory,
-    IDApp       : state.application.IDApp,
-    DLApp       : state.application.DLApp,
     cardType    : state.application.cardType,
     focused     : state.ui.focus,
     validations : state.ui.validations,
-    locale      : state.ui.locale
+    licenseAndIdHistory:  state.application.history.licenseAndIdHistory,
+    locale      : state.ui.locale,
+    flow        : state.ui.flow
   };
 };
 

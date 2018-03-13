@@ -28,7 +28,8 @@ function mapStateToProps(state) {
     licenseIssues   : state.cdl.history.licenseIssues,
     focused         : state.ui.focus,
     validations     : state.ui.validations,
-    locale          : state.ui.locale
+    locale          : state.ui.locale,
+    flow            : state.ui.flow
   };
 };
 

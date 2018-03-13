@@ -9,7 +9,7 @@ import { ReducedFeeValidator }from '../../helpers/validations';
 
 const Page = (props) => {
   let validations       = new ReducedFeeValidator(props, props.validations);
-  let onSubmit          = handlers.navigateOrShowErrors(props.addressName, props, validations)
+  let onSubmit          = handlers.navigateOrShowErrors('reducedFeeID', props, validations)
   let onBack            = handlers.navigateOnBack(props, validations);
 
   return (
@@ -28,7 +28,8 @@ const mapStateToProps = (state) => {
     cardType    : state.application.cardType,
     focused     : state.ui.focus,
     validations : state.ui.validations,
-    locale      : state.ui.locale
+    locale      : state.ui.locale,
+    flow        : state.ui.flow
   };
 };
 
