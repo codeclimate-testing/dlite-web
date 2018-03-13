@@ -2,7 +2,10 @@
 
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
-import { iddlPath }                           from '../../helpers/alice-path';
+import {
+  iddlPath,
+  editPath
+} from '../../helpers/alice-path';
 import VoterCitizenStatus                     from './citizen-status-form-container.jsx';
 import EligibilityRequirements                from './eligibility-requirements-form-container.jsx';
 import OptOut                                 from './opt-out-form-container.jsx';
@@ -18,14 +21,32 @@ const VotingRoutes = () => {
   return (
     <div>
       <Route path={ iddlPath('/voting-registration/citizenship') }          component={VoterCitizenStatus} />
+      <Route path={ editPath('/voting-registration/citizenship') }          component={VoterCitizenStatus} />
+
       <Route path={ iddlPath('/voting-registration/eligibility') }          component={EligibilityRequirements} />
+      <Route path={ editPath('/voting-registration/eligibility') }          component={EligibilityRequirements} />
+
       <Route path={ iddlPath('/voting-registration/opt-out') }              component={OptOut} />
+      <Route path={ editPath('/voting-registration/opt-out') }              component={OptOut} />
+
       <Route path={ iddlPath('/voting-registration/preferences') }          component={VoterPreferencesIntro} />
+      <Route path={ editPath('/voting-registration/preferences') }          component={VoterPreferencesIntro} />
+
       <Route path={ iddlPath('/voting-registration/preferences-updated') }  component={VoterPreferencesIntroUpdated} />
+      <Route path={ editPath('/voting-registration/preferences-updated') }  component={VoterPreferencesIntroUpdated} />
+
       <Route path={ iddlPath('/voting-registration/choose-party') }         component={PoliticalPartyChoose} />
+      <Route path={ editPath('/voting-registration/choose-party') }         component={PoliticalPartyChoose} />
+
       <Route path={ iddlPath('/voting-registration/language') }             component={BallotLanguage} />
+      <Route path={ editPath('/voting-registration/language') }             component={BallotLanguage} />
+
       <Route path={ iddlPath('/voting-registration/vote-by-mail') }         component={BallotByMail} />
+      <Route path={ editPath('/voting-registration/vote-by-mail') }         component={BallotByMail} />
+
       <Route path={ iddlPath('/voting-registration/contact-methods') }      component={ContactMethods} />
+      <Route path={ editPath('/voting-registration/contact-methods') }      component={ContactMethods} />
+
       <Route path={ iddlPath('/voting-registration/confirmation') }         component={VoterRegComplete} />
     </div>
     );

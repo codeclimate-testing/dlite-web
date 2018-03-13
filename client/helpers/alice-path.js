@@ -12,6 +12,17 @@ export const iddlPath = (path) => {
   return alicePath(`/id-and-license${path}`);
 };
 
+export const editPath = (path) => {
+  let editPath = `/edit${path}`;
+  return `${iddlPath(editPath)}`;
+};
+
 export const addPath = (path) => {
-  return `/add${path}`;
+  let addPath = `/add${path}`;
+  return `${iddlPath(addPath)}`;
+};
+
+export const editCDLPath = (path) => {
+  let editPath = `/edit${path}`;
+  return `${cdlPath(editPath)}`;
 };

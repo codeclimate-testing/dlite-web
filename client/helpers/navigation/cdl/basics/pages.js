@@ -1,29 +1,33 @@
 'use strict';
+import {
+  nextOrCDLSummary,
+  applyOrEditCDLPath
+} from '../../../data/pathnames';
 
 const myBasics = [
   {
     key: 'cdlLegalName',
     description: 'Legal Name',
-    path: '/true-name',
-    next: 'cdlDateOfBirth'
+    path: applyOrEditCDLPath('/true-name'),
+    next: nextOrCDLSummary('cdlDateOfBirth')
   },
   {
     key: 'cdlDateOfBirth',
     description: 'Date of Birth',
-    path: '/date-of-birth',
-    next: 'cdlWdywtdt'
+    path: applyOrEditCDLPath('/date-of-birth'),
+    next: nextOrCDLSummary('cdlWdywtdt')
   },
   {
     key: 'cdlSexEyeHair',
     description: 'Physical Traits',
-    path: '/physical-traits',
-    next: 'cdlHeightWeight'
+    path: applyOrEditCDLPath('/physical-traits'),
+    next: nextOrCDLSummary('cdlHeightWeight')
   },
   {
     key: 'cdlHeightWeight',
     description: 'Height and Weight',
-    path: '/traits-height-weight',
-    next: 'cdlCertification'
+    path: applyOrEditCDLPath('/traits-height-weight'),
+    next: nextOrCDLSummary('cdlCertification')
   }
 ];
 

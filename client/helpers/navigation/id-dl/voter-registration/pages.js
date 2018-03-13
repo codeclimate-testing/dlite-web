@@ -1,4 +1,8 @@
 'use strict';
+import {
+  nextOrSummary,
+  applyEditOrAddPath
+} from '../../../data/pathnames';
 
 import {
   citizenship,
@@ -10,61 +14,61 @@ const voterRegistration = [
   {
     key: 'citizenship',
     description: 'Citizenship',
-    path: '/voting-registration/citizenship',
+    path: applyEditOrAddPath('/voting-registration/citizenship'),
     next: citizenship
   },
   {
     key: 'votingEligibility',
     description: 'Eligibility ',
-    path: '/voting-registration/eligibility',
+    path: applyEditOrAddPath('/voting-registration/eligibility'),
     next: votingEligibility
   },
   {
     key: 'votingOptOut',
     description: 'Opt out',
-    path: '/voting-registration/opt-out',
+    path: applyEditOrAddPath('/voting-registration/opt-out'),
     next: optOut
   },
   {
     key: 'voterPreferences',
     description: 'Voter preferences',
-    path: '/voting-registration/preferences',
-    next: 'choosePoliticalParty'
+    path: applyEditOrAddPath('/voting-registration/preferences'),
+    next: nextOrSummary('choosePoliticalParty')
   },
   {
     key: 'voterPreferencesUpdated',
     description: 'Voter preferences updated',
-    path: '/voting-registration/preferences-updated',
-    next: 'choosePoliticalParty'
+    path: applyEditOrAddPath('/voting-registration/preferences-updated'),
+    next: nextOrSummary('choosePoliticalParty')
   },
   {
     key: 'choosePoliticalParty',
     description: 'Choose party',
-    path: '/voting-registration/choose-party',
-    next: 'chooseBallotLanguage'
+    path: applyEditOrAddPath('/voting-registration/choose-party'),
+    next: nextOrSummary('chooseBallotLanguage')
   },
   {
     key: 'chooseBallotLanguage',
     description: 'Ballot language',
-    path: '/voting-registration/language',
-    next: 'ballotByMail'
+    path: applyEditOrAddPath('/voting-registration/language'),
+    next: nextOrSummary('ballotByMail')
   },
   {
     key: 'ballotByMail',
     description: 'Ballot by mail',
-    path: '/voting-registration/vote-by-mail',
-    next: 'contactMethods'
+    path: applyEditOrAddPath('/voting-registration/vote-by-mail'),
+    next: nextOrSummary('contactMethods')
   },
   {
     key: 'contactMethods',
     description: 'Contact methods',
-    path: '/voting-registration/contact-methods',
-    next: 'voterConfirmation'
+    path: applyEditOrAddPath('/voting-registration/contact-methods'),
+    next: nextOrSummary('voterConfirmation')
   },
   {
     key: 'voterConfirmation',
     description: 'Voter registration confirmation',
-    path: '/voting-registration/confirmation',
+    path: applyEditOrAddPath('/voting-registration/confirmation'),
     next: 'summary'
   }
 ];

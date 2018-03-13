@@ -5,7 +5,7 @@ const conclusion = [
     key: 'cdlSummary',
     description: 'summary of CDL app',
     path: '/summary',
-    next: ''
+    next: 'cdlSummary'
   }
 ];
 

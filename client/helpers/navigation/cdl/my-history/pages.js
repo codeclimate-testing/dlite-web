@@ -1,29 +1,33 @@
 'use strict';
+import {
+  nextOrCDLSummary,
+  applyOrEditCDLPath
+} from '../../../data/pathnames';
 
 const cdlHistory = [
   {
     key: 'cdlMedical',
     description: 'medical history',
-    path: '/my-history/medical',
-    next: 'cdlNamesHistory'
+    path: applyOrEditCDLPath('/my-history/medical'),
+    next: nextOrCDLSummary('cdlNameHistory')
   },
   {
-    key: 'cdlNamesHistory',
+    key: 'cdlNameHistory',
     description: 'Names History',
-    path: '/my-history/names',
-    next: 'cdlLicenseIssues'
+    path: applyOrEditCDLPath('/my-history/names'),
+    next: nextOrCDLSummary('cdlLicenseIssues')
   },
   {
     key: 'cdlLicenseIssues',
     description: 'License Issues',
-    path: '/my-history/issues',
-    next: 'cdlOtherStateLicenses'
+    path: applyOrEditCDLPath('/my-history/issues'),
+    next: nextOrCDLSummary('cdlOtherStateLicenses')
   },
   {
     key: 'cdlOtherStateLicenses',
     description: 'Other State Licenses',
-    path: '/my-history/other-state-licenses',
-    next: 'organDonation'
+    path: applyOrEditCDLPath('/my-history/other-state-licenses'),
+    next: nextOrCDLSummary('organDonation')
   }
 ];
 

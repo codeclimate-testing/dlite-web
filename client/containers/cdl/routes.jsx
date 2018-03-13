@@ -2,47 +2,83 @@
 
 import React                            from 'react';
 import { Route }                        from 'react-router-dom';
-import { cdlPath }                      from '../../helpers/alice-path';
+import {
+  cdlPath,
+  editCDLPath
+} from '../../helpers/alice-path';
+
 import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
 import LegalName                        from './my-basics/cdl-legal-name.jsx';
-import cdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
+import CdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
 import Residency                        from './my-basics/cdl-residency.jsx';
 import UpdatesAndCorrections            from './change-details.jsx';
-import cdlSocialSecurity                from './my-basics/cdl-social-security.jsx';
+import CdlSocialSecurity                from './my-basics/cdl-social-security.jsx';
 import CardReplacement                  from './card-replacement.jsx';
-import cdlEndorsements                  from './cdl-endorsements.jsx';
-import cdlCertificates                  from './cdl-certificates.jsx';
-import cdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
-import cdlCurrentCard                   from './cdl-current-card.jsx';
-import cdlRealID                        from './cdl-real-id.jsx';
+import CdlEndorsements                  from './cdl-endorsements.jsx';
+import CdlCertificates                  from './cdl-certificates.jsx';
+import CdlCurrentLicense                from './my-history/cdl-current-dl.jsx';
+import CdlCurrentCard                   from './cdl-current-card.jsx';
+import CdlRealID                        from './cdl-real-id.jsx';
 import Motorcycle                       from './motorcycle.jsx';
 import LicenseClass                     from './license-class.jsx';
-import cdlCertification                 from './cdl-certification.jsx';
+import CdlCertification                 from './cdl-certification.jsx';
 import MyBasics                         from './my-basics/routes.jsx';
 import CDLVoterRegistration             from './voter-registration/routes.jsx';
 import CDLHistory                       from './my-history/routes.jsx';
-import cdlOrganDonation                 from './cdl-organ-donation.jsx';
+import CdlOrganDonation                 from './cdl-organ-donation.jsx';
 import Summary                          from './cdl-summary.jsx';
 
 const CDLRoutes = () => {
   return (
     <div>
-      <Route path={ cdlPath('/true-name')}                      component={LegalName}   />
-      <Route path={ cdlPath('/date-of-birth')}                  component={DateOfBirth} />
-      <Route path={ cdlPath('/what-do-you-want-to-do-today')}   component={cdlWdywtdt} />
-      <Route path={ cdlPath('/current-card-information')}       component={cdlCurrentCard} />
-      <Route path={ cdlPath('/change-details')}                 component={UpdatesAndCorrections} />
-      <Route path={ cdlPath('/replacement-details')}            component={CardReplacement} />
-      <Route path={ cdlPath('/california-residency')}           component={Residency} />
-      <Route path={ cdlPath('/social-security')}                component={cdlSocialSecurity} />
-      <Route path={ cdlPath('/current-ca-license')}             component={cdlCurrentLicense} />
-      <Route path={ cdlPath('/real-id')}                        component={cdlRealID} />
-      <Route path={ cdlPath('/motorcycle')}                     component={Motorcycle} />
-      <Route path={ cdlPath('/license-class')}                  component={LicenseClass} />
-      <Route path={ cdlPath('/self-certification')}             component={cdlCertification} />
-      <Route path={ cdlPath('/endorsements')}                   component={cdlEndorsements} />
-      <Route path={ cdlPath('/certificates')}                   component={cdlCertificates} />
-      <Route path={ cdlPath('/organ-donation')}                 component={cdlOrganDonation} />
+
+      <Route path={ cdlPath('/true-name')}                              component={LegalName}  />
+      <Route path={ editCDLPath('/true-name')}                          component={LegalName}  />
+
+      <Route path={ cdlPath('/date-of-birth')}                          component={DateOfBirth}  />
+      <Route path={ editCDLPath('/date-of-birth')}                      component={DateOfBirth}  />
+
+      <Route path={ cdlPath('/what-do-you-want-to-do-today')}           component={CdlWdywtdt}   />
+      <Route path={ editCDLPath('/what-do-you-want-to-do-today')}       component={CdlWdywtdt}   />
+
+      <Route path={ cdlPath('/current-card-information')}               component={CdlCurrentCard} />
+      <Route path={ editCDLPath('/current-card-information')}           component={CdlCurrentCard} />
+
+      <Route path={ cdlPath('/change-details')}                         component={UpdatesAndCorrections} />
+      <Route path={ editCDLPath('/change-details')}                     component={UpdatesAndCorrections} />
+
+      <Route path={ cdlPath('/replacement-details')}                    component={CardReplacement} />
+      <Route path={ editCDLPath('/replacement-details')}                component={CardReplacement} />
+
+      <Route path={ cdlPath('/california-residency')}                   component={Residency}   />
+      <Route path={ editCDLPath('/california-residency')}               component={Residency}   />
+
+      <Route path={ cdlPath('/social-security')}                        component={CdlSocialSecurity}  />
+      <Route path={ editCDLPath('/social-security')}                    component={CdlSocialSecurity}  />
+
+      <Route path={ cdlPath('/current-ca-license')}                     component={CdlCurrentLicense}  />
+      <Route path={ editCDLPath('/current-ca-license')}                 component={CdlCurrentLicense}  />
+
+      <Route path={ cdlPath('/real-id')}                                component={CdlRealID}  />
+      <Route path={ editCDLPath('/real-id')}                            component={CdlRealID}  />
+
+      <Route path={ cdlPath('/motorcycle')}                             component={Motorcycle}  />
+      <Route path={ editCDLPath('/motorcycle')}                         component={Motorcycle}  />
+
+      <Route path={ cdlPath('/license-class')}                          component={LicenseClass} />
+      <Route path={ editCDLPath('/license-class')}                      component={LicenseClass} />
+
+      <Route path={ cdlPath('/self-certification')}                     component={CdlCertification}  />
+      <Route path={ editCDLPath('/self-certification')}                 component={CdlCertification}  />
+
+      <Route path={ cdlPath('/endorsements')}                           component={CdlEndorsements} />
+      <Route path={ editCDLPath('/endorsements')}                       component={CdlEndorsements} />
+
+      <Route path={ cdlPath('/certificates')}                           component={CdlCertificates} />
+      <Route path={ editCDLPath('/certificates')}                       component={CdlCertificates} />
+
+      <Route path={ cdlPath('/organ-donation')}                         component={CdlOrganDonation} />
+      <Route path={ editCDLPath('/organ-donation')}                     component={CdlOrganDonation} />
 
       <CDLHistory />
 

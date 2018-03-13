@@ -1,5 +1,7 @@
 'use strict';
-
+import {
+  applyOrEditCDLPath
+} from '../../../data/pathnames';
 import {
   citizenship,
   votingEligibility,
@@ -10,19 +12,19 @@ const cdlVoterRegistration = [
   {
     key: 'cdlCitizenship',
     description: 'Citizenship',
-    path: '/voting-registration/citizenship',
+    path: applyOrEditCDLPath('/voting-registration/citizenship'),
     next: citizenship
   },
   {
     key: 'cdlVotingEligibility',
     description: 'Eligibility ',
-    path: '/voting-registration/eligibility',
+    path: applyOrEditCDLPath('/voting-registration/eligibility'),
     next: votingEligibility
   },
   {
     key: 'cdlVotingOptOut',
     description: 'Opt out',
-    path: '/voting-registration/opt-out',
+    path: applyOrEditCDLPath('/voting-registration/opt-out'),
     next: ''
   }
 ];

@@ -1,98 +1,110 @@
 'use strict';
-
 import {
+  nextOrSummary,
+  applyEditOrAddPath
+} from '../../../data/pathnames';
+import {
+  dateOfBirth,
+  wdywtdt,
   chooseCardType,
   currentCardInfo,
-  updateAndCorrect,
+  changedCard,
+  seniorID,
   realID,
-  chooseLicenseClass,
-  replacementDetails
+  chooseLicenseClass
 } from './next-path';
+
 
 const getStarted = [
   {
     key: 'welcome',
     description: 'Welcome',
     path: '/welcome',
-    next: 'legalName',
+    next: nextOrSummary('legalName')
   },
   {
     key: 'legalName',
     description: 'Legal name',
-    path: '/my-basics/legal-name',
-    next: 'dateOfBirth',
+    path: applyEditOrAddPath('/my-basics/legal-name'),
+    next: nextOrSummary('dateOfBirth'),
+    validateFromSummary: true
   },
   {
     key: 'dateOfBirth',
     description: 'Date of birth',
-    path: '/my-basics/date-of-birth',
-    next: 'wdywtdt'
+    path: applyEditOrAddPath('/my-basics/date-of-birth'),
+    next: dateOfBirth,
+    validateFromSummary: true
   },
   {
     key: 'wdywtdt',
     description: 'What do you want to do today?',
-    path: '/what-do-you-want-to-do-today',
-    next: 'chooseCardType'
+    path: applyEditOrAddPath('/what-do-you-want-to-do-today'),
+    next: wdywtdt,
+    validateFromSummary: true
   },
   {
     key: 'chooseCardType',
     description: 'Choose card type',
-    path: '/select-id-dl',
+    path: applyEditOrAddPath('/select-id-dl'),
     next: chooseCardType
   },
   {
     key: 'currentCardInfo',
     description: 'Current card info',
-    path: '/current-card-information',
+    path: applyEditOrAddPath('/current-card-information'),
     next: currentCardInfo
   },
   {
     key: 'updateAndCorrect',
     description: 'Updates and Corrections',
-    path: '/updates-and-corrections',
-    next: updateAndCorrect
+    path: applyEditOrAddPath('/updates-and-corrections'),
+    next: changedCard
   },
   {
     key: 'replacementDetails',
     description: 'Replacement Details',
-    path: '/replacement-details',
-    next: replacementDetails
+    path: applyEditOrAddPath('/replacement-details'),
+    next: changedCard
   },
   {
     key: 'youthIDInstead',
     description: 'Youth DL message',
-    path: '/youth-license-notification',
-    next: 'realID',
+    path: applyEditOrAddPath('/youth-license-notification'),
+    next: nextOrSummary('realID'),
   },
   {
     key: 'seniorID',
     description: 'Senior ID',
-    path: '/senior-id',
-    next: 'realID'
+    path: applyEditOrAddPath('/senior-id'),
+    next: seniorID,
+    validateFromSummary: true
   },
   {
     key: 'realID',
     description: 'Real ID',
-    path: '/real-id',
-    next: realID
+    path: applyEditOrAddPath('/real-id'),
+    next: realID,
+    validateFromSummary: true
   },
   {
     key: 'chooseLicenseClass',
     description: 'Choose license class',
-    path: '/license-type',
-    next: chooseLicenseClass
+    path: applyEditOrAddPath('/license-type'),
+    next: chooseLicenseClass,
+    validateFromSummary: true
   },
   {
     key: 'reducedFeeID',
     description: 'Reduced fee ID',
-    path: '/reduced-fee',
-    next: 'getStarted'
+    path: applyEditOrAddPath('/reduced-fee'),
+    next: nextOrSummary('getStarted')
   },
   {
     key: 'getStarted',
     description: 'Get started intro page',
     path: '/get-started',
-    next: 'addresses',
+    next: 'addresses'
   }
 ];
 

@@ -6,17 +6,20 @@ import myHistory          from './my-history/pages';
 import organDonation      from './organ-donation/pages';
 import voterRegistration  from './voter-registration/pages';
 import conclusion         from './conclusion/pages';
-import addID              from './add-id/pages';
-import addDL              from './add-dl/pages';
 
+const intro = [{
+  key: 'IDme',
+  description: 'IDme',
+  path: '/apply/sign-in',
+  next: 'IDme'
+}];
 
 export {
+  intro,
   getStarted,
   basics,
   myHistory,
   organDonation,
   voterRegistration,
-  conclusion,
-  addID,
-  addDL
+  conclusion
 };

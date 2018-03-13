@@ -1,32 +1,39 @@
 'use strict';
-
-import { socialSecurity } from './next-path';
+import {
+  nextOrSummary,
+  applyEditOrAddPath
+} from '../../../data/pathnames';
+import { socialSecurity }   from './next-path';
 
 const myBasics = [
   {
     key: 'addresses',
     description: 'Addresses',
-    path: '/my-basics/address',
-    next: 'sexEyeHair'
+    path: applyEditOrAddPath('/my-basics/address'),
+    next: nextOrSummary('sexEyeHair'),
+    validateFromSummary: true
   },
   {
     key: 'sexEyeHair',
     description: 'Physical traits',
-    path: '/my-basics/physical-traits',
-    next: 'heightWeight'
+    path: applyEditOrAddPath('/my-basics/physical-traits'),
+    next: nextOrSummary('heightWeight'),
+    validateFromSummary: true
   },
   {
     key: 'heightWeight',
     description: 'Height and weight',
-    path: '/my-basics/traits-height-weight',
-    next: 'socialSecurity'
+    path: applyEditOrAddPath('/my-basics/traits-height-weight'),
+    next: nextOrSummary('socialSecurity'),
+    validateFromSummary: true
   },
   {
     key: 'socialSecurity',
     description: 'Social security',
-    path: '/my-basics/social-security',
-    next: socialSecurity
+    path: applyEditOrAddPath('/my-basics/social-security'),
+    next: socialSecurity,
+    validateFromSummary: true
   }
 ];
 
-export default myBasics
+export default myBasics;
