@@ -27,7 +27,7 @@ const cdlHistory = [
     key: 'cdlOtherStateLicenses',
     description: 'Other State Licenses',
     path: applyOrEditCDLPath('/my-history/other-state-licenses'),
-    next: nextOrCDLSummary('organDonation')
+    next: nextOrCDLSummary('cdlOrganDonation')
   }
 ];
 
