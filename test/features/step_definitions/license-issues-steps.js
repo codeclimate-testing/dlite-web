@@ -75,7 +75,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Driving record:None'), 'is license suspended value missing');
+        assert(text.includes('Driving recordNone'), 'is license suspended value missing');
       })
       .then(() => { done(); })
       .catch(done);

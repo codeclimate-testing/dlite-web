@@ -133,7 +133,7 @@ module.exports = function (world) {
 
   world.when('I click to edit my license and id history', function(done) {
     browser
-      .click('.addLicenseHistory.button.summary')
+      .click('.cardHistory.button.summary')
       .then(done)
       .catch(done);
   });

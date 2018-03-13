@@ -99,10 +99,11 @@ Feature: Customers can get a senior ID for free
     When I click "Next" to continue
     When I visit the ID or DL selection page
     And I choose to replace a DL
-    When I visit the page to add an ID
+    When I go to the page with my summary
+    And I click to add an ID
     When I choose to add a new ID
     And I click "Next" to continue
-    Then I will be on the page to add senior id
+    Then I will be on the add senior id page
     When I select yes to get a senior id
     And I click "Next" to continue
     Then I will be on the page with my summary
@@ -112,16 +113,17 @@ Feature: Customers can get a senior ID for free
     Given I go to the new online DL application
     When I visit the date of birth page
     And I indicate that I am turning 62 today
-    When I visit the page to add an ID
+    When I go to the page with my summary
+    And I click to add an ID
     And I choose to add a replacement ID
     And I click "Next" to continue
-    Then I will be on the page to add current ID info
+    Then I will be on the add current card info page
     When I enter my current card data
     And I click "Next" to continue
-    Then I will be on the page to add ID replacement details
+    Then I will be on the page to add choosing reason for replacement
     When I select the ID was damaged
     And I click "Next" to continue
-    Then I will be on the page to add senior id
+    Then I will be on the add senior id page
     When I select yes to get a senior id
     And I click "Next" to continue
     Then I will be on the page with my summary

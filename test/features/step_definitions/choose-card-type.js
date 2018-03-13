@@ -12,6 +12,13 @@ module.exports = function(world) {
       .catch(done);
   });
 
+  world.and('I click to edit my DL', function(done) {
+    browser
+      .click('.wdywtdt.DL')
+      .then(done)
+      .catch(done);
+  });
+
   world.and('I choose to renew a card', function(done) {
     browser
       .click('label[for="cardAction-renew"]')
@@ -74,7 +81,61 @@ module.exports = function(world) {
       .then(() => {done(); })
       .catch(done);
   });
+  world.when('I choose to add a new DL', function(done) {
+    browser
+      .click('label[for=DLAction-new]')
+      .then(() => { done(); })
+      .catch(done);
+  });
 
+  world.when('I choose to renew a DL', function(done) {
+    browser
+      .click('label[for=DLAction-renew]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I choose to add a new ID', function(done) {
+    browser
+      .click('label[for=IDAction-new]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to replace an added DL', function(done) {
+    browser
+      .click('label[for=DLAction-replace]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I choose to add a change ID', function(done) {
+    browser
+      .click('label[for=IDAction-change]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to add a renewal ID', function(done) {
+    browser
+      .click('label[for=IDAction-renew]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to add a replacement ID', function(done) {
+    browser
+      .click('label[for=IDAction-replace]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I choose to change a DL', function(done) {
+    browser
+      .click('label[for="DLAction-change"]')
+      .then(() => {done(); })
+      .catch(done);
+  });
   world.and('I choose to update my DL', function(done) {
     browser
       .click('label[for="DL-correctOrUpdate-update"]')
@@ -138,6 +199,28 @@ module.exports = function(world) {
       .then( text => {
         assert(text.includes('My Driver License'), 'my driver license section not shown in summary');
         assert(text.includes('Replacing'), 'replacing not shown in summary');
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am renewing my DL', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('My Driver License'), 'my driver license section not shown in summary');
+        assert(text.includes('Renewing'), 'renewing not shown in summary');
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am getting a new DL', function(done) {
+    browser
+      .text()
+      .then( text => {
+        assert(text.includes('My Driver License'), 'my driver license section not shown in summary');
+        assert(text.includes('Applying for the first time'), 'card action not shown in summary');
       })
       .then(done)
       .catch(done);
@@ -287,6 +370,27 @@ module.exports = function(world) {
         assert.ok(text.includes('Firefighter endorsementNo'));
       })
       .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see that my selection to get a new card is already selected', function(done) {
+    browser
+      .waitForSelector('.selected label[for="DLAction-new"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that my selection to get a replacement card is already selected', function(done) {
+    browser
+      .waitForSelector('.selected label[for="DLAction-replace"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that my selection to change a card is already selected', function(done) {
+    browser
+      .waitForSelector('.selected label[for="DLAction-change"]')
+      .then(done)
       .catch(done);
   });
 };

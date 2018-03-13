@@ -68,6 +68,7 @@ Feature: Happy path for youth users
     When I visit the political party choose page
     When I select choose party Yes
     When I select a political party button
+    And I click "Next" to continue
     When I go to the page with my summary
     And I will see I would like to pre-register to vote in summary
     Then I will see my language in the summary

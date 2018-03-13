@@ -40,7 +40,7 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('Medical conditions:None'), 'Medical conditions not saved in summary');
+        assert.ok(text.includes('Medical conditionsNone'), 'Medical conditions not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);
@@ -58,7 +58,7 @@ module.exports = function(world) {
 
   world.when('I click to edit my medical history', function(done) {
     browser
-      .click('.addMedicalHistory.button.summary')
+      .click('.medicalHistory.button.summary')
       .then(done)
       .catch(done);
   });

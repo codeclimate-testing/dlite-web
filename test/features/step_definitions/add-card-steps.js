@@ -17,96 +17,29 @@ module.exports = function(world) {
       .catch(done);
   };
 
-  world.given('I have already filled out my ID application', function(done) {
-    browser
-      .on('consoleMessage', function( msg ){
-        console.log('log', msg);
-      })
-      .on('error', function( err ){
-        console.log('error', err);
-      })
-      .open(world.url('/'))
-      .waitForSelector('.choose-application-form')
-      .then(() => { done(); })
-      .catch(done);
-  });
 
-  world.given('I have already filled out my DL application', function(done) {
+
+  world.when('I click to add an ID', function(done) {
     browser
-      .on('consoleMessage', function( msg ){
-        console.log('log', msg);
-      })
-      .on('error', function( err ){
-        console.log('error', err);
-      })
-      .open(world.url('/'))
-      .waitForSelector('.choose-application-form')
+      .click('.wdywtdt.ID')
       .then(done)
       .catch(done);
   });
 
-  world.when('I choose to add a new DL', function(done) {
+  world.when('I click to add a DL', function(done) {
     browser
-      .click('label[for=DLAction-new]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.when('I choose to renew a DL', function(done) {
-    browser
-      .click('label[for=DLAction-renew]')
+      .click('.wdywtdt.DL')
       .then(done)
-      .catch(done);
-  });
-
-  world.when('I choose to add a new ID', function(done) {
-    browser
-      .click('label[for=IDAction-new]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.when('I choose to change a DL', function(done) {
-    browser
-      .click('label[for=DLAction-change]')
-      .then(done)
-      .catch(done);
-  });
-
-  world.when('I choose to replace an added DL', function(done) {
-    browser
-      .click('label[for=DLAction-replace]')
-      .then(done)
-      .catch(done);
-  });
-
-  world.when('I choose to add a change ID', function(done) {
-    browser
-      .click('label[for=IDAction-change]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.when('I choose to add a renewal ID', function(done) {
-    browser
-      .click('label[for=IDAction-renew]')
-      .then(() => { done(); })
-      .catch(done);
-  });
-
-  world.when('I choose to add a replacement ID', function(done) {
-    browser
-      .click('label[for=IDAction-replace]')
-      .then(() => { done(); })
       .catch(done);
   });
 
   world.then('I will see a WDYWTDT page with only the new DL option', function(done) {
     browser
+      .waitForSelector('.choose-card-action')
       .text()
       .then((text) => {
         assert.ok(text.includes('Get a driver license for the first time'), 'DL text not on page');
-        assert.ok(!text.includes('Get a card for the first time'), 'generic wdywtd today language on page');
+        assert.ok(!text.includes('Get a card for the first time'), 'generic wdywtdt today language on page');
       })
       .then(done)
       .catch(done);
@@ -114,6 +47,7 @@ module.exports = function(world) {
 
   world.then('I will see a WDYWTDT page with the new ID option', function(done) {
     browser
+      .waitForSelector('.choose-card-action')
       .text()
       .then((text) => {
         assert.ok(text.includes('Get an ID card for the first time'), 'ID-specific text not on page');

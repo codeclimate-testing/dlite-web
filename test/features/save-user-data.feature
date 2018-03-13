@@ -3,6 +3,206 @@ Feature: Save user data
   I want to save my user data to my application from the summary screen
   So that my application can be used in the field office to enable my request
 
+Scenario: renewing one ID and no social
+    Given I go to the new online DL application page
+    When I visit the date of birth page
+    And I enter my full date of birth into the form
+    When I click "Next" to continue
+    Then I will be on the what do you want to do today page
+    And I choose to renew a card
+    When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    When I choose to renew an ID
+    Then I will see the application title says "DMV Identification card application"
+    And I will see the application header says "Identification card application"
+    When I click "Next" to continue
+    Then I will be on the current card info page
+    When I enter my current card data
+    And I click "Next" to continue
+    Then I will be on the page for choosing real id
+    And I click yes to getting a real id on the ID
+    And I click "Next" to continue
+    Then I will be on the reduced fee page
+    And I select Yes to getting a reduced fee
+    Then I will see info about how to get the right forms
+    When I visit the social security page
+    Then I will see the page title has postfix " - My basics"
+    When I select No for social security
+    And I click "Next" to continue
+    And I will be taken to previous names page
+    Then I will see the page title has postfix " - My history"
+    When I select previously used names No
+    When I click "Next" to continue
+    Then I will be on the page for veteran related services
+    When I click No for veteran
+    And I click "Next" to continue
+    Then I will be on the page for organ donation
+    Then I will see the page title has postfix " - Organ donation"
+    And I choose to donate my organs
+    When I visit voter citizen status page
+    And I decline to answer
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my date of birth
+    Then I will be taken to edit date of birth page
+    Then I will see the date of birth that I entered
+    When I change my year of birth
+    And I go to the page with my summary
+    Then I will see my updated birth year
+    When I visit the required documents page
+    Then I will see at the end two additional bullet points and corresponding sections: "Reduced fee eligibility", and "No fee eligibility"
+    Then I will see an additional bullet for RealID information
+    Then I will see a section about RealID information
+    Then I will not see the proof of social security section
+
+
+  Scenario: Save user data with both ID and DL
+    Given I go to the new online DL application page
+    Then I visit the legal name page
+    And I enter my full name
+    When I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I enter my full date of birth into the form
+    When I click "Next" to continue
+    Then I will be on the what do you want to do today page
+    And I choose to get a new card
+    When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    When I click on the ID checkbox
+    When I click on the DL checkbox
+    Then I will see the application title says "DMV Drivers license and ID application"
+    And I will see the application header says "Drivers license and ID application"
+    And I click "Next" to continue
+    When I click yes to getting a real id on both
+    When I select ID to have my real id designation
+    And I click "Next" to continue
+    Then I will be on the license type page
+    And I click on the car checkbox
+    And I click to not need endorsements
+    When I click "Next" to continue
+    Then I will be on the reduced fee page
+    And I select No to getting a reduced fee
+    When I visit the addresses page
+    Then I will see the page title has postfix " - My basics"
+    And I enter my home address
+    And I select address interstitial Yes
+    When I visit the traits height and weight page
+    And I enter my traits
+    When I click "Next" to continue
+    Then I will be on the page for entering my social security
+    When I select Yes for social security
+    And I click "Next" to continue
+    When I enter my full social security number
+    And I click "Next" to continue
+    Then I will be taken to medical history page
+    Then I will see the page title has postfix " - My history"
+    When I select No to having reportable medical history
+    And I click "Next" to continue
+    Then I will be on the page to enter existing license and id
+    When I select existing DL/ID Yes
+    When I enter my existing DL/ID card number
+    And I enter the issuing state or country
+    And I enter the date of DL/ID expiration
+    When I click "Next" to continue
+    And I will be taken to previous names page
+    And I select previously used names No
+    When I click "Next" to continue
+    Then I will be taken to the license issues page
+    When I select suspended license No
+    When I click "Next" to continue
+    Then I will be on the page for veteran related services
+    When I click No for veteran
+    And I click "Next" to continue
+    Then I will be on the page for organ donation
+    And I choose to donate my organs
+    And I choose to contribute
+    And I click "Next" to continue
+    Then I will be on the page for voter citizen status entry
+    And I select citizen Yes
+    And I click "Next" to continue
+    When I visit the voter eligibility requirements page
+    And I click "Next" to continue
+    Then I will be on the page with my summary
+    When I visit the voter eligibility requirements page
+    And I select voter registration Yes
+    When I click "Next" to continue
+    Then I will be on the page for entering voter opt-out
+    When I select I am already registered to vote in California
+    When I click "Next" to continue
+    Then I will be taken to updated voter preferences info page
+    When I click "Next" to continue
+    Then I will be taken to the political party choose page
+    When I select no political party
+    Then I click "Next" to continue
+    Then I will be taken to ballot language page
+    And I select a language
+    When I click "Next" to continue
+    Then I will be on the page for ballot by mail
+    And I select ballot by mail Yes
+    When I click "Next" to continue
+    Then I will be taken to contact methods page
+    When I select contact methods No
+    When I click "Next" to continue
+    Then I will be taken to voter registration complete page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    Then I will see residence address and mailing address will have the same information
+    Then I will see that my card types have been saved
+    Then I will see that I am getting a real id
+    Then I will see my height on that summary
+    Then I will see No in my existing DL/ID selection
+    Then I will see No in my suspended license selection
+    Then I will see No for having reportable medical history
+    Then I will see that I did not choose to be contacted
+    Then I will see that I do qualify to register to vote
+    Then I will see voter registration choice as I am already registered to vote in California in summary
+    Then I will see that I declined to choose a political party
+    Then I will see my social security on that summary
+    When I click to edit my name
+    Then I will be taken to the edit names page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click to edit my date of birth
+    Then I will be taken to edit date of birth page
+    When I click "Next" to continue
+    Then I will be on the page with my summary
+    When I click "Next" to continue
+    Then I will be on the page for appointment preparation
+    And I click link for required documents
+    Then I will be on the required documents page
+    Then I will not see a section about medical information
+    Then I will not see any information about proving veterans status
+
+
+  Scenario: Replacing a DL
+    Given I go to the new online DL application page
+    And I visit the what do you want to do today page
+    And I choose to replace a card
+    When I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    Then I choose to replace a DL
+    When I click "Next" to continue
+    Then I will be on the current card info page
+    And I enter my current card data
+    When I click "Next" to continue
+    Then I will be on the page for choosing reason for replacement
+    And I select the DL was damaged
+    When I click "Next" to continue
+    Then I will be on the page for choosing real id
+    When I go to the page with my summary
+    Then I will see that I am replacing my DL
+
+  Scenario: Saving to db
+    Given I go to the new online DL application page
+    Then I visit the legal name page
+    And I enter my full name
+    When I click "Next" to continue
+    Then I will be on the page for entering my date of birth
+    And I enter my full date of birth into the form
+    Then I go to the page with my summary
+    When I click "Next" to continue
+    Then I will be on the page for appointment preparation
+
   Scenario: applying for one new DL
     Given I go to the new online DL application page
     Then I visit the legal name page
@@ -125,243 +325,44 @@ Feature: Save user data
     Then I will see my email and phone number
     And I go to the page with my summary
     When I click to edit my name
-    Then I will be taken to the names page
+    Then I will be taken to the edit names page
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my date of birth
-    Then I will be on the page for entering my date of birth
+    Then I will be taken to edit date of birth page
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my address
-    Then I will be on the page for entering my address
+    Then I will be on the page for editing my address
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my height and weight
-    Then I will be on the page for entering my height and weight
+    Then I will be on the page for editing my height and weight
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my physical traits
-    Then I will be on the page for entering my physical traits
+    Then I will be on the page for editing my physical traits
     When I click "Next" to continue
     Then I will be on the page with my summary
     When I click to edit my social security
-    Then I will be on the page for entering my social security
+    Then I will be on the page for editing my social security
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my license and id history
-    Then I will be on the page to add license history
+    Then I will be on the page to edit existing license and id
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my previous names
-    Then I will be taken to previous names page
+    Then I will be taken to edit previous names page
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my medical history
-    Then I will be on the page to add medical history
+    Then I will be taken to edit medical history page
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my license issues
-    Then I will be taken to the license issues page
+    Then I will be taken to the edit license issues page
     When I click "Next" to continue
     Then I will be on the page with my summary
     Then I click to edit my veterans service
-    Then I will be on the page for veteran related services
-
-  Scenario: renewing one ID and no social
-    Given I go to the new online DL application page
-    When I visit the date of birth page
-    And I enter my full date of birth into the form
-    When I click "Next" to continue
-    Then I will be on the what do you want to do today page
-    And I choose to renew a card
-    When I click "Next" to continue
-    Then I will be on the ID and DL selection page
-    When I choose to renew an ID
-    Then I will see the application title says "DMV Identification card application"
-    And I will see the application header says "Identification card application"
-    When I click "Next" to continue
-    Then I will be on the current card info page
-    When I enter my current card data
-    And I click "Next" to continue
-    Then I will be on the page for choosing real id
-    And I click yes to getting a real id on the ID
-    And I click "Next" to continue
-    Then I will be on the reduced fee page
-    And I select Yes to getting a reduced fee
-    Then I will see info about how to get the right forms
-    When I visit the social security page
-    Then I will see the page title has postfix " - My basics"
-    When I select No for social security
-    And I click "Next" to continue
-    And I will be taken to previous names page
-    Then I will see the page title has postfix " - My history"
-    When I select previously used names No
-    When I click "Next" to continue
-    Then I will be on the page for veteran related services
-    When I click No for veteran
-    And I click "Next" to continue
-    Then I will be on the page for organ donation
-    Then I will see the page title has postfix " - Organ donation"
-    And I choose to donate my organs
-    When I visit voter citizen status page
-    And I decline to answer
-    When I click "Next" to continue
-    Then I will be on the page with my summary
-    When I visit the date of birth page
-    Then I will see the date of birth that I entered
-    When I change my year of birth
-    And I go to the page with my summary
-    Then I will see my updated birth year
-    When I visit the required documents page
-    Then I will see at the end two additional bullet points and corresponding sections: "Reduced fee eligibility", and "No fee eligibility"
-    Then I will see an additional bullet for RealID information
-    Then I will see a section about RealID information
-    Then I will not see the proof of social security section
-
-
-  Scenario: Save user data with both ID and DL
-    Given I go to the new online DL application page
-    Then I visit the legal name page
-    And I enter my full name
-    When I click "Next" to continue
-    Then I will be on the page for entering my date of birth
-    And I enter my full date of birth into the form
-    When I click "Next" to continue
-    Then I will be on the what do you want to do today page
-    And I choose to get a new card
-    When I click "Next" to continue
-    Then I will be on the ID and DL selection page
-    When I click on the ID checkbox
-    When I click on the DL checkbox
-    Then I will see the application title says "DMV Drivers license and ID application"
-    And I will see the application header says "Drivers license and ID application"
-    And I click "Next" to continue
-    When I click yes to getting a real id on both
-    When I select ID to have my real id designation
-    And I click "Next" to continue
-    Then I will be on the license type page
-    And I click on the car checkbox
-    And I click to not need endorsements
-    When I click "Next" to continue
-    Then I will be on the reduced fee page
-    And I select No to getting a reduced fee
-    When I visit the addresses page
-    Then I will see the page title has postfix " - My basics"
-    And I enter my home address
-    And I select address interstitial Yes
-    When I visit the traits height and weight page
-    And I enter my traits
-    When I click "Next" to continue
-    Then I will be on the page for entering my social security
-    When I select Yes for social security
-    And I click "Next" to continue
-    When I enter my full social security number
-    And I click "Next" to continue
-    Then I will be taken to medical history page
-    Then I will see the page title has postfix " - My history"
-    When I select No to having reportable medical history
-    And I click "Next" to continue
-    Then I will be on the page to enter existing license and id
-    When I select existing DL/ID Yes
-    When I enter my existing DL/ID card number
-    And I enter the issuing state or country
-    And I enter the date of DL/ID expiration
-    When I click "Next" to continue
-    And I will be taken to previous names page
-    And I select previously used names No
-    When I click "Next" to continue
-    Then I will be taken to the license issues page
-    When I select suspended license No
-    When I click "Next" to continue
-    Then I will be on the page for veteran related services
-    When I click No for veteran
-    And I click "Next" to continue
-    Then I will be on the page for organ donation
-    And I choose to donate my organs
-    And I choose to contribute
-    And I click "Next" to continue
-    Then I will be on the page for voter citizen status entry
-    And I select citizen Yes
-    And I click "Next" to continue
-    When I visit the voter eligibility requirements page
-    And I click "Next" to continue
-    Then I will be on the page with my summary
-    When I visit the voter eligibility requirements page
-    And I select voter registration Yes
-    When I click "Next" to continue
-    Then I will be on the page for entering voter opt-out
-    When I select I am already registered to vote in California
-    When I click "Next" to continue
-    Then I will be taken to updated voter preferences info page
-    When I click "Next" to continue
-    Then I will be taken to the political party choose page
-    When I select no political party
-    Then I click "Next" to continue
-    Then I will be taken to ballot language page
-    And I select a language
-    When I click "Next" to continue
-    Then I will be on the page for ballot by mail
-    And I select ballot by mail Yes
-    When I click "Next" to continue
-    Then I will be taken to contact methods page
-    When I select contact methods No
-    When I click "Next" to continue
-    Then I will be taken to voter registration complete page
-    When I click "Next" to continue
-    Then I will be on the page with my summary
-    Then I will see residence address and mailing address will have the same information
-    Then I will see that my card types have been saved
-    Then I will see that I am getting a real id
-    Then I will see my height on that summary
-    Then I will see No in my existing DL/ID selection
-    Then I will see No in my suspended license selection
-    Then I will see No for having reportable medical history
-    Then I will see that I did not choose to be contacted
-    Then I will see that I do qualify to register to vote
-    Then I will see voter registration choice as I am already registered to vote in California in summary
-    Then I will see that I declined to choose a political party
-    Then I will see my social security on that summary
-    When I click to edit my name
-    Then I will be taken to the names page
-    When I click "Next" to continue
-    Then I will be on the page with my summary
-    When I click to edit my date of birth
-    Then I will be on the page for entering my date of birth
-    When I click "Next" to continue
-    Then I will be on the page with my summary
-    When I click "Next" to continue
-    Then I will be on the page for appointment preparation
-    And I click link for required documents
-    Then I will be on the required documents page
-    Then I will not see a section about medical information
-    Then I will not see any information about proving veterans status
-
-
-  Scenario: Replacing a DL
-    Given I go to the new online DL application page
-    And I visit the what do you want to do today page
-    And I choose to replace a card
-    When I click "Next" to continue
-    Then I will be on the ID and DL selection page
-    Then I choose to replace a DL
-    When I click "Next" to continue
-    Then I will be on the current card info page
-    And I enter my current card data
-    When I click "Next" to continue
-    Then I will be on the page for choosing reason for replacement
-    And I select the DL was damaged
-    When I click "Next" to continue
-    Then I will be on the page for choosing real id
-    When I go to the page with my summary
-    Then I will see that I am replacing my DL
-
-  Scenario: Saving to db
-    Given I go to the new online DL application page
-    Then I visit the legal name page
-    And I enter my full name
-    When I click "Next" to continue
-    Then I will be on the page for entering my date of birth
-    And I enter my full date of birth into the form
-    Then I go to the page with my summary
-    When I click "Next" to continue
-    Then I will be on the page for appointment preparation
+    Then I will be on the page for editing veteran related services

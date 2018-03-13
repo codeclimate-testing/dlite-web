@@ -10,7 +10,7 @@ Scenario: Navigating to the start of the CDL or ID/DL application after choosing
   Then I will be on the page to choose application
   When I select a commercial DL application
   And I click "Next" to continue
-  Then I will be on the CDL true name page
+  Then I will be on the CDL name page
   When I click to go back
   Then I will be on the page to choose application
   When I select a regular ID or DL application
@@ -108,12 +108,12 @@ Scenario: New CDL
   Then I will see that I am driving interstate
 
   When I click to edit my CDL name
-  Then I will be on the CDL name page
+  Then I will be on the CDL edit name page
   When I change my first name
   And I click "Next" to continue
   Then I will be on the CDL summary
   When I click to edit my CDL date of birth
-  Then I will be on the CDL dob page
+  Then I will be on the CDL edit dob page
   When I click "Next" to continue
   Then I will be on the CDL summary
 
