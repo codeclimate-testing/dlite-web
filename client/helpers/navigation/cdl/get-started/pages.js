@@ -91,12 +91,6 @@ const cdlGetStarted = [
     description: 'add classM to cdl',
     path: applyOrEditCDLPath('/motorcycle'),
     next: ''
-  },
-  {
-    key: 'cdlOrganDonation',
-    description: 'organ donation',
-    path: applyOrEditCDLPath('/organ-donation'),
-    next: 'cdlSummary'
   }
 ];
 
