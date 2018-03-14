@@ -2,7 +2,7 @@
 
 import React              from 'react';
 import * as dataPresent   from '../../../helpers/data-present';
-import PageSummaryLink    from '../../conclusion/summary/Page-summary-link.jsx';
+import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
 import { isVeteran }      from '../../../helpers/data/veteran';
 
@@ -42,8 +42,9 @@ const VeteransService = (props) => {
 
   return (
     <PageSummaryLink
+      {...props}
       summary = 'cdlSummary'
-      name='cdlVeterans'
+      editKey='cdlVeterans'
     >
       <SummaryItem
         title='Veteran:'

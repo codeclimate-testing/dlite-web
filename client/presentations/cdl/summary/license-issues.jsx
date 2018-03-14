@@ -1,11 +1,11 @@
 'use strict';
 
-import React            from 'react';
-import { printDate }    from '../../../helpers/print-date';
-import { hasValue }     from '../../../helpers/data/validations';
-import * as dataPresent from '../../../helpers/data-present';
+import React              from 'react';
+import { printDate }      from '../../../helpers/print-date';
+import { hasValue }       from '../../../helpers/data/validations';
+import * as dataPresent   from '../../../helpers/data-present';
 import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
-import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
+import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
 import {
   licenseIssuesIsSuspended
 } from '../../../helpers/data/my-history';
