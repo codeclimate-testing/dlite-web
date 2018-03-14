@@ -92,10 +92,22 @@ describe('CDL Summary page', function() {
           }
         },
         voting: {
-          citizenStatus: '',
-          eligibilityRequirements: '',
+          citizenStatus: 'Yes',
+          eligibilityRequirements: 'Yes',
           optOut: '',
-          politicalPartyChoose: ''
+          ballotByMail: '',
+          politicalPartyChoose: {
+            isSelected: '',
+            otherParty: '',
+            politicalPartyChoose: ''
+          },
+          contactMethods: {
+            shouldContact: '',
+            emailAddress: '',
+            phoneNumber1: '',
+            phoneNumber2: '',
+            phoneNumber3: ''
+          }
         },
         cdlEndorsements: {
           type: [],

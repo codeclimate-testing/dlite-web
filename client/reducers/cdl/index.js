@@ -28,6 +28,8 @@ import updateCitizenStatus                from './voting/update-citizen-status';
 import updateEligibilityRequirements      from './voting/update-eligibility-requirements';
 import updateOptOut                       from './voting/update-opt-out';
 import updatePoliticalPartyChoose         from './voting/update-choose-party';
+import updateBallotByMail                 from './voting/update-ballot-by-mail';
+import updateContactMethods               from './voting/update-contact-methods';
 
 import updateMedical                      from './my-history/update-medical';
 import updateCurrentDL                    from './my-history/update-current-dl';
@@ -67,7 +69,9 @@ const rootReducer = combineReducers({
     citizenStatus           : updateCitizenStatus,
     eligibilityRequirements : updateEligibilityRequirements,
     optOut                  : updateOptOut,
-    politicalPartyChoose    : updatePoliticalPartyChoose
+    politicalPartyChoose    : updatePoliticalPartyChoose,
+    ballotByMail            : updateBallotByMail,
+    contactMethods          : updateContactMethods
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,

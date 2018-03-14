@@ -88,6 +88,8 @@ export const TYPES = {
   UPDATE_CDL_POLITICAL_PARTY_CHOOSE:      'UPDATE_CDL_POLITICAL_PARTY_CHOOSE',
   UPDATE_CDL_LANGUAGE:                    'UPDATE_CDL_LANGUAGE',
   UPDATE_CDL_VETERANS_SERVICE:            'UPDATE_CDL_VETERANS_SERVICE',
+  UPDATE_CDL_BALLOT_BY_MAIL:              'UPDATE_CDL_BALLOT_BY_MAIL',
+  UPDATE_CDL_CONTACT_METHODS:             'UPDATE_CDL_POLITICAL_METHODS',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -178,6 +180,8 @@ export const updateCDLOptOut                          = generateFormAction(TYPES
 export const updateCDLPoliticalPartyChoose            = generateFormAction(TYPES.UPDATE_CDL_POLITICAL_PARTY_CHOOSE);
 export const updateCDLLanguage                        = generateFormAction(TYPES.UPDATE_CDL_LANGUAGE);
 export const updateCDLVeteransService                 = generateFormAction(TYPES.UPDATE_CDL_VETERANS_SERVICE);
+export const updateCDLBallotByMail                    = generateFormAction(TYPES.UPDATE_CDL_BALLOT_BY_MAIL);
+export const updateCDLContactMethods                  = generateFormAction(TYPES.UPDATE_CDL_CONTACT_METHODS);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);

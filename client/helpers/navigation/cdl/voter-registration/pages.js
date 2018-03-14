@@ -31,27 +31,45 @@ const cdlVoterRegistration = [
   {
     key: 'cdlVoterPreferences',
     description: 'Voter preferences',
-    path: '/voting-registration/preferences',
+    path: applyOrEditCDLPath('/voting-registration/preferences'),
     next: nextOrCDLSummary('cdlChooseBallotLanguage')
   },
   {
     key: 'cdlVoterPreferencesUpdated',
     description: 'Voter preferences updated',
-    path: '/voting-registration/preferences-updated',
+    path: applyOrEditCDLPath('/voting-registration/preferences-updated'),
     next: nextOrCDLSummary('cdlChoosePoliticalParty')
   },
   {
     key: 'cdlChoosePoliticalParty',
     description: 'Choose party',
-    path: '/voting-registration/choose-party',
+    path: applyOrEditCDLPath('/voting-registration/choose-party'),
     next: nextOrCDLSummary('cdlChooseBallotLanguage')
   },
   {
     key: 'cdlChooseBallotLanguage',
     description: 'Ballot language',
-    path: '/voting-registration/language',
-    next: ''
-  }
+    path: applyOrEditCDLPath('/voting-registration/language'),
+    next: nextOrCDLSummary('cdlBallotByMail')
+  },
+  {
+    key: 'cdlBallotByMail',
+    description: 'Ballot by mail',
+    path: applyOrEditCDLPath('/voting-registration/vote-by-mail'),
+    next: nextOrCDLSummary('cdlContactMethods')
+  },
+  {
+    key: 'cdlContactMethods',
+    description: 'Contact methods',
+    path: applyOrEditCDLPath('/voting-registration/contact-methods'),
+    next: nextOrCDLSummary('cdlConfirmation')
+  },
+  {
+    key: 'cdlConfirmation',
+    description: 'Voter registration confirmation',
+    path: '/voting-registration/confirmation',
+    next: 'cdlSummary'
+  },
 ];
 
 export default cdlVoterRegistration;

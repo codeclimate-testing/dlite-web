@@ -7,6 +7,8 @@ import EligibilityRequirements from '../../conclusion/summary/voting/eligibility
 import OptOut                  from '../../conclusion/summary/voting/opt-out.jsx';
 import PoliticalPartyChoose    from '../../conclusion/summary/voting/choose-party.jsx';
 import BallotLanguage          from '../../conclusion/summary/voting/ballot-language.jsx';
+import BallotByMail            from '../../conclusion/summary/voting/ballot-by-mail.jsx';
+import ContactMethods          from '../../conclusion/summary/voting/contact-methods.jsx';
 
 const VoterRegistration = (props) => {
   let cdl       = props.cdl;
@@ -53,6 +55,22 @@ const VoterRegistration = (props) => {
         summary                 = 'summary'
         editKey                 = 'cdlChooseBallotLanguage'
         locale                  = { locale }
+      />
+      <BallotByMail
+        ballotByMail            = {cdl.voting.ballotByMail}
+        eligibilityRequirements = {cdl.voting.eligibilityRequirements}
+        citizenStatus           = {cdl.voting.citizenStatus}
+        dateOfBirth             = {cdl.basics.dateOfBirth}
+        locale                  = { locale }
+        editKey                 = 'cdlBallotByMail'
+      />
+      <ContactMethods
+        contactMethods          = {cdl.voting.contactMethods}
+        eligibilityRequirements = {cdl.voting.eligibilityRequirements}
+        citizenStatus           = {cdl.voting.citizenStatus}
+        dateOfBirth             = {cdl.basics.dateOfBirth}
+        locale                  = { locale }
+        editKey                 = 'cdlContactMethods'
       />
     </Accordion>
   )

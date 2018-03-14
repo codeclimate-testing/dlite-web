@@ -30,10 +30,18 @@ describe('CDL Summary voting registration section', function() {
           citizenStatus: 'Yes',
           eligibilityRequirements: 'Yes',
           optOut: '',
+          ballotByMail: '',
           politicalPartyChoose: {
             isSelected: '',
             otherParty: '',
             politicalPartyChoose: ''
+          },
+          contactMethods: {
+            shouldContact: '',
+            emailAddress: '',
+            phoneNumber1: '',
+            phoneNumber2: '',
+            phoneNumber3: ''
           }
         }
       }
@@ -124,6 +132,54 @@ describe('CDL Summary voting registration section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('Political partyLibertarian Party'));
+    });
+  });
+
+  describe('#ballot by mail', function() {
+    it('does not render if no selection made', function() {
+      props.cdl.voting.eligibilityRequirements = '';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Vote by mail'))
+    });
+
+    it('shows choice if selection made', function() {
+      props.cdl.voting.politicalPartyChoose.isSelected = 'Yes';
+      props.cdl.voting.ballotByMail = 'Yes';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Vote by mailYes'));
+    });
+  });
+
+  describe('#should contact', function() {
+    it('does not render if no selection made', function() {
+    props.cdl.voting.eligibilityRequirements = '';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(!component.text().includes('Should Contact'))
+    });
+
+    it('shows choice if selection made', function() {
+      props.cdl.voting.politicalPartyChoose.isSelected = 'Yes';
+      props.cdl.voting.contactMethods.shouldContact = 'Yes';
+      props.cdl.voting.contactMethods.emailAddress = 'email@email.com';
+      component = render(
+        <Wrapper>
+        <VoterRegistration { ...props } />
+        </Wrapper>
+      );
+      assert.ok(component.text().includes('Should ContactYes'));
+      assert.ok(component.text().includes('Emailemail@email.com'));
     });
   });
 });
