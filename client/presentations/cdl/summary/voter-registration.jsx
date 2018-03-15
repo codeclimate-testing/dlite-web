@@ -19,14 +19,12 @@ const VoterRegistration = (props) => {
         citizenStatus = { cdl.voting.citizenStatus }
         dateOfBirth   = { cdl.basics.dateOfBirth}
         editKey       = 'cdlCitizenship'
-        summary       = 'cdlSummary'
         locale        = { locale }
       />
       <EligibilityRequirements
         eligibilityRequirements = { cdl.voting.eligibilityRequirements }
         dateOfBirth   = { cdl.basics.dateOfBirth}
         editKey       = 'cdlVotingEligibility'
-        summary       = 'cdlSummary'
         locale        = { locale }
       />
       <OptOut
@@ -35,7 +33,6 @@ const VoterRegistration = (props) => {
         citizenStatus = { cdl.voting.citizenStatus }
         eligibilityRequirements = { cdl.voting.eligibilityRequirements }
         editKey      = 'cdlVotingOptOut'
-        summary      = 'cdlSummary'
         locale       = { locale }
       />
       <PoliticalPartyChoose
@@ -43,7 +40,6 @@ const VoterRegistration = (props) => {
         eligibilityRequirements = {cdl.voting.eligibilityRequirements}
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
-        summary                 = 'summary'
         editKey                 = 'cdlChoosePoliticalParty'
         locale                  = { locale }
       />
@@ -52,7 +48,6 @@ const VoterRegistration = (props) => {
         eligibilityRequirements = {cdl.voting.eligibilityRequirements}
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
-        summary                 = 'summary'
         editKey                 = 'cdlChooseBallotLanguage'
         locale                  = { locale }
       />

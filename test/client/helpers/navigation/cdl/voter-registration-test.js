@@ -56,7 +56,7 @@ describe('Data helpers for determining next path from current page and props in 
     describe('##optOut', function() {
       it('returns "summary" if user does not want to register or update', function() {
         data.optOut = 'optOut';
-        assert.equal(optOut(data), 'summary');
+        assert.equal(optOut(data), 'cdlSummary');
       });
 
       it('returns "cdlVoterPreferences" if user wants to register to vote', function() {

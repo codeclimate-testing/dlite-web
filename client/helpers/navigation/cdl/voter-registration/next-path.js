@@ -6,10 +6,11 @@ import {
   eligibleForOptOut,
   eligibleForOptOutExist
 } from '../../../data/voting';
+import { editFlow }   from '../../../data/pathnames';
 
 export const citizenship = (props) => {
   let key = 'cdlSummary';
-  if (eligibleForCitizen(props)) {
+  if (!editFlow(props) && eligibleForCitizen(props)) {
     key = 'cdlVotingEligibility';
   }
   return key;
@@ -17,18 +18,20 @@ export const citizenship = (props) => {
 
 export const votingEligibility = (props) => {
   let key = 'cdlSummary';
-  if (eligibilityRequirementsYes(props)) {
+  if (!editFlow(props) && eligibilityRequirementsYes(props)) {
     key = 'cdlVotingOptOut';
   }
   return key;
 };
 
 export const optOut = (props) => {
-  let key = 'summary';
-  if (eligibleForOptOut(props)) {
-    key = 'cdlVoterPreferences';
-  } else if (eligibleForOptOutExist(props)) {
-    key = 'cdlVoterPreferencesUpdated'
+  let key = 'cdlSummary';
+  if(!editFlow(props)) {
+    if (eligibleForOptOut(props)) {
+      key = 'cdlVoterPreferences';
+    } else if (eligibleForOptOutExist(props)) {
+      key = 'cdlVoterPreferencesUpdated'
+    }
   }
   return key;
 };

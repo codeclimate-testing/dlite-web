@@ -24,9 +24,10 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     eligibilityRequirements : state.cdl.voting.eligibilityRequirements,
-    dateOfBirth   : state.cdl.basics.dateOfBirth,
+    dateOfBirth             : state.cdl.basics.dateOfBirth,
     focused                 : state.ui.focus,
-    locale                  : state.ui.locale
+    locale                  : state.ui.locale,
+    flow                    : state.ui.flow
   };
 };
 
