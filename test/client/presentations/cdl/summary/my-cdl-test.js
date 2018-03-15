@@ -62,6 +62,9 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('I amApplying for the first time'));
+      assert.ok(!component.text().includes('Correcting'));
+      assert.ok(!component.text().includes('Replacing'));
+      assert.ok(!component.text().includes('Renewing'));
     });
 
     it('shows user renewing a CDL if cardAction equals renew', function() {
@@ -72,6 +75,9 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('I amRenewing'));
+      assert.ok(!component.text().includes('Correcting'));
+      assert.ok(!component.text().includes('Applying for the first time'));
+      assert.ok(!component.text().includes('Replacing'));
     });
 
     it('shows user replacing a CDL if cardAction equals replace', function() {
@@ -82,6 +88,9 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('I amReplacing'));
+      assert.ok(!component.text().includes('Correcting'));
+      assert.ok(!component.text().includes('Applying for the first time'));
+      assert.ok(!component.text().includes('Renewing'));
     });
 
     it('shows user updating a CDL if cardAction equals change', function() {
@@ -93,6 +102,10 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('I amUpdating'));
+      assert.ok(!component.text().includes('Correcting'));
+      assert.ok(!component.text().includes('Replacing'));
+      assert.ok(!component.text().includes('Renewing'));
+      assert.ok(!component.text().includes('Applying for the first time'));
     });
 
     it('shows user correcting a CDL if cardAction equals change', function() {
@@ -104,6 +117,9 @@ describe('CDL Summary My CDL Application section', function() {
         </Wrapper>
       );
       assert.ok(component.text().includes('I amCorrecting'));
+      assert.ok(!component.text().includes('Replacing'));
+      assert.ok(!component.text().includes('Renewing'));
+      assert.ok(!component.text().includes('Applying for the first time'));
     });
   });
 

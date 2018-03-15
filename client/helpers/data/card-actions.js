@@ -39,11 +39,11 @@ export const hasSpecifiedChange = (props) => {
 };
 
 export const isCorrecting = (props) => {
-  return props.cardChanges.correctOrUpdate === 'correct';
+  return props.cardChanges.correctOrUpdate === 'correct' && isChangingCard(props);
 };
 
 export const isUpdating = (props) => {
-  return props.cardChanges.correctOrUpdate === 'update';
+  return props.cardChanges.correctOrUpdate === 'update' && isChangingCard(props);
 };
 
 export const hasActionIsCorrecting = (props) => {

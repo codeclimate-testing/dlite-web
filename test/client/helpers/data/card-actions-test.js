@@ -177,11 +177,13 @@ describe('Data helpers for card actions', function() {
   });
 
   describe('#isCorrecting', function() {
+    beforeEach(function() {
+      data.cardAction = 'change';
+    });
     it('is true when field equals "correct"', function() {
       data.cardChanges.correctOrUpdate = 'correct';
       assert.equal(isCorrecting(data), true);
     });
-
     it('is false when field equals "update"', function() {
       data.cardChanges.correctOrUpdate = 'update';
       assert.equal(isCorrecting(data), false);
@@ -189,8 +191,15 @@ describe('Data helpers for card actions', function() {
     it('is false when field is blank', function() {
       assert.equal(isCorrecting(data), false);
     });
+    it('is false when cardAction does not equal "change"', function() {
+      data.cardAction = 'replace';
+      assert.equal(isCorrecting(data), false);
+    });
   });
   describe('#isUpdating', function() {
+    beforeEach(function() {
+      data.cardAction = 'change';
+    });
     it('is true when field equals "update"', function() {
       data.cardChanges.correctOrUpdate = 'update';
       assert.equal(isUpdating(data), true);
@@ -201,6 +210,10 @@ describe('Data helpers for card actions', function() {
       assert.equal(isUpdating(data), false);
     });
     it('is false when field is blank', function() {
+      assert.equal(isUpdating(data), false);
+    });
+    it('is false when cardAction does not equal "change"', function() {
+      data.cardAction = 'replace';
       assert.equal(isUpdating(data), false);
     });
   });
