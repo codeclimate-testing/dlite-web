@@ -15,7 +15,6 @@ const defaultState = () => {
 const formReducer = (state = defaultState(), action) => {
   if (!action.payload) { return state; }
   if ( !cardTypeAction(action) ) { return state; }
-
   let newState = false;
   let name = action.payload.name;
 

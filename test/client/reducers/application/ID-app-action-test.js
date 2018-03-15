@@ -167,14 +167,27 @@ describe('IDApp action reducer', function() {
 
       assert.deepEqual(newState, radioDL.payload.name);
     });
+
+    it('returns existing state when update_card_type is called from onFlowChange handler', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_TYPE',
+        payload: {
+          name: 'addFromSummary',
+          value: 'ID'
+        }
+      });
+      assert.deepEqual(newState, state);
+    });
   });
 
   describe('#cardAction', function() {
+
     it('reverts to default state when action updated', function() {
       state = 'new';
       let newState = updateCardType(state, updateAction);
       assert.deepEqual(newState, '');
     });
+
     it('returns the action payload value when action updated from get ID flow', function() {
       let newState = updateCardType(state, {
         type: 'UPDATE_CARD_ACTION',
@@ -197,15 +210,16 @@ describe('IDApp action reducer', function() {
       });
       assert.equal(newState, state);
     });
-    it('returns existing state when update_card_type is called from onFlowChange handler', function() {
+
+    it('returns the existing state when action updated from the summary page', function() {
       let newState = updateCardType(state, {
-        type: 'UPDATE_CARD_TYPE',
+        type: 'UPDATE_CARD_ACTION',
         payload: {
-          name: 'addFromSummary',
-          value: 'ID'
+          name: 'newFlow',
+          value: 'replace'
         }
       });
-      assert.deepEqual(newState, state);
+      assert.equal(newState, state);
     });
   });
 

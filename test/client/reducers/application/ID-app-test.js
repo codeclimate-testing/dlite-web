@@ -208,6 +208,17 @@ describe('IDApp isApplying reducer', function() {
       assert.equal(newState, state);
     });
 
+    it('maintains the existing state when card action updated from the summary', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'newFlow',
+          value: ''
+        }
+      });
+      assert.equal(newState, state);
+    });
+
   });
 
 });

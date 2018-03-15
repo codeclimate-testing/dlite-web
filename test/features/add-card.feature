@@ -35,6 +35,7 @@ Scenario: Choosing to add a new DL
   When I select suspended license No
   And I click "Next" to continue
   Then I will be on the page with my summary
+  And I will see that my new ID card type has been saved
   And I will see that my DL card type has been saved
   And I will see No for having reportable medical history
   And I will see what license type I need
@@ -65,6 +66,7 @@ Scenario: Adding a DL renewal
   And I will see my renewal DL card type has been saved
   And I will not see a card history section
   And I will see my DL card info saved
+  And I will see that my new ID card type has been saved
 
 Scenario: Adding a DL update/correct
   Given I have already filled out my ID application
@@ -91,6 +93,7 @@ Scenario: Adding a DL update/correct
   Then I will be on the page with my summary
   And I will not see a card history section
   Then I will see that I am updating my DL
+  And I will see that my new ID card type has been saved
 
 Scenario: Adding a DL replacement after replacing an ID
   Given I go to the new online DL application
@@ -110,6 +113,7 @@ Scenario: Adding a DL replacement after replacing an ID
   When I go to the page with my summary
   Then I will not see a card history section
   And I will see that I am replacing my DL
+  And I will see that I am replacing my ID
 
 Scenario: Choosing to add a new ID
   Given I have already filled out my DL application
@@ -123,6 +127,7 @@ Scenario: Choosing to add a new ID
   And I click "Next" to continue
   Then I will be on the page with my summary
   And I will see that my new ID card type has been saved
+  And I will see that I am getting a new DL
   And I will see that I am not opting for a reduced fee
 
 Scenario: Choosing to add a renewal ID
@@ -136,6 +141,7 @@ Scenario: Choosing to add a renewal ID
   Then I will be on the add reduced fee page
   When I go to the page with my summary
   Then I will see the info of the ID card saved
+  And I will see that I am getting a new DL
 
 Scenario: Adding a renewal ID after renewing a DL
   Given I go to the new online DL application
@@ -162,6 +168,7 @@ Scenario: Choosing to add a correct/updated ID
   When I go to the page with my summary
   Then I will see that I am updating the name on my ID
   And I will see the info of the ID card saved
+  And I will see that I am getting a new DL
 
 Scenario: Adding a replacement ID after replacing a DL skips current card data
   Given I go to the new online DL application

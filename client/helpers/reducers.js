@@ -18,7 +18,7 @@ export const trueIfYesNeverFalse = (value, type, state) => {
 
 export const sameIfAdding = (name, state) => {
   let newState = false;
-  if (name === 'IDAction' || name === 'DLAction') {
+  if (name === 'IDAction' || name === 'DLAction' || name === 'newFlow') {
     newState = state;
   }
   return newState;

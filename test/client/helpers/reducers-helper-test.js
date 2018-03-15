@@ -52,7 +52,7 @@ describe('reducer helper functions', function() {
   });
 
   describe('#sameIfAdding', function() {
-    it('returns false if name does not match "IDAction" or "DLAction"', function() {
+    it('returns false if name does not match "IDAction" or "DLAction" or "newFlow"', function() {
       assert.equal(sameIfAdding('bothCards', state), false);
     });
     it('returns state if name is IDAction', function() {
@@ -60,6 +60,9 @@ describe('reducer helper functions', function() {
     });
     it('returns state if name is DLAction', function() {
       assert.equal(sameIfAdding('DLAction', state), state);
+    });
+    it('returns state if name is newFlow', function() {
+      assert.equal(sameIfAdding('newFlow', state), state);
     });
   });
 

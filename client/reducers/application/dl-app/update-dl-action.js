@@ -1,7 +1,10 @@
 'use strict';
 
 import { TYPES }            from '../../../actions';
-import { cardTypeAction }   from '../../../helpers/reducers';
+import {
+  cardTypeAction,
+  sameIfAdding
+} from '../../../helpers/reducers';
 
 const defaultState = () => {
  return '';
@@ -33,11 +36,9 @@ const formReducer = (state = defaultState(), action) => {
   }
 
   else if (action.type === TYPES.UPDATE_CARD_ACTION ){
+    newState = sameIfAdding(action.payload.name, state);
     if(action.payload.name === 'DLAction') {
       newState = value;
-    }
-    else if (action.payload.name === 'IDAction') {
-      newState = state;
     }
   }
 

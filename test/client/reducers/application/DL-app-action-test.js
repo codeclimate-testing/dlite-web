@@ -160,6 +160,28 @@ describe('DL app action reducer', function() {
       assert.equal(newState, 'replace');
     });
 
+    it('returns the existing state when action updated from the IDAction flow', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'IDAction',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, state);
+    });
+
+    it('returns the existing state when action updated from the summary page', function() {
+      let newState = updateCardType(state, {
+        type: 'UPDATE_CARD_ACTION',
+        payload: {
+          name: 'newFlow',
+          value: 'replace'
+        }
+      });
+      assert.equal(newState, state);
+    });
+
   });
 
 });
