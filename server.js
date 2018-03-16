@@ -31,7 +31,7 @@ csrf(server);
 server.use(logging());
 server.use(helmet());
 server.get('/', (req, res) => {
-  res.redirect('/apply/sign-in');
+  res.redirect('/apply/choose-application');
 });
 server.use(express.static('public'));
 
