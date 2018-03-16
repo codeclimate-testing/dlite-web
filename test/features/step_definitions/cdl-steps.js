@@ -208,6 +208,27 @@ module.exports = function(world){
       .catch(done);
   });
 
+  world.when('I click in the voter registration drawer', function(done) {
+    browser
+      .click('#voter-registration-summary-accordion')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click in the my history drawer', function(done) {
+    browser
+      .click('#history-summary-accordion')
+      .then(done)
+      .catch(done);
+  });
+
+  world.when('I click in the organ donation drawer', function(done) {
+    browser
+      .click('#organ-donation-summary-accordion')
+      .then(done)
+      .catch(done);
+  });
+
   world.then('I will see that I am driving interstate', function(done) {
     browser
       .text()

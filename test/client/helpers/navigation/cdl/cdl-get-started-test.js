@@ -84,11 +84,11 @@ describe('CDL next-paths', function() {
     });
 
     describe('#cdlCertification', function() {
-      it('returns "motorcycle" if user is getting a new card', function() {
+      it('returns "cdlMedical" if user is getting a new card', function() {
         let props = {
           cardAction: 'new'
         };
-        assert.equal(cdlCertification(props), 'motorcycle');
+        assert.equal(cdlCertification(props), 'cdlMedical');
       });
       it('returns "cdlSummary" if user is replacing, renewing, or changing a card', function() {
         let props = {

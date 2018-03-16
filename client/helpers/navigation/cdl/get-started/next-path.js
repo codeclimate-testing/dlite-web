@@ -80,7 +80,7 @@ export const cdlSSN = (props) => {
 export const cdlCertification = (props) => {
   let key = 'cdlSummary';
   if (!editFlow(props) && !hasExistingCard(props)) {
-    key = 'motorcycle';
+    key = 'cdlMedical';
   }
   return key;
 };

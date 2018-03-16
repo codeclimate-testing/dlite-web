@@ -78,7 +78,7 @@ const cdlGetStarted = [
     key: 'cdlCertificates',
     description: 'CDL Certificates',
     path: applyOrEditCDLPath('/certificates'),
-    next: ''
+    next: 'motorcycle'
   },
   {
     key: 'cdlCertification',
@@ -90,7 +90,7 @@ const cdlGetStarted = [
     key: 'motorcycle',
     description: 'add classM to cdl',
     path: applyOrEditCDLPath('/motorcycle'),
-    next: ''
+    next: 'cdlSexEyeHair'
   }
 ];
 

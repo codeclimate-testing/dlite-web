@@ -516,12 +516,36 @@ module.exports = function(world) {
     assertOnPage('.traits-height-weight-form', /cdl\/traits-height-weight/, done);
   });
 
+  world.then('I will be on the CDL page for entering my physical traits', function(done) {
+    assertOnPage('.physical-traits-form', '/apply/cdl/physical-traits', done);
+  });
+
+  world.when('I will be on the self certification page for CDL', function(done) {
+    assertOnPage('.cdl-self-certification', '/apply/cdl/self-certification', done);
+  });
+
+  world.then('I will be taken to the CDL medical history page', function(done){
+    assertOnPage('.medical-history-form', /apply\/cdl\/my-history\/medical/, done);
+  });
+
+  world.when('I will be on the CDL name history page', function(done) {
+    assertOnPage('.names-history-form', '/apply/cdl/my-history/names', done);
+  });
+
   world.when('I will be on the CDL license issues page', function(done) {
     assertOnPage('.license-issues-form', /apply\/cdl\/my-history\/issues/, done);
   });
 
-  world.when('I will be on the page to edit motorcycle class', function(done) {
+  world.when('I will be on the CDL page to edit motorcycle class', function(done) {
     assertOnPage('.cdl-class-m', /apply\/cdl\/edit\/motorcycle/, done);
+  });
+
+  world.when('I will be on the CDL page for motorcycle class', function(done) {
+    assertOnPage('.cdl-class-m', /apply\/cdl\/motorcycle/, done);
+  });
+
+  world.when('I will be on the CDL class page', function(done) {
+    assertOnPage('.cdl-class-form', '/apply/cdl/license-class', done);
   });
 
   world.when('I will be on the CDL endorsements page', function(done) {
@@ -548,8 +572,39 @@ module.exports = function(world) {
     assertOnPage('.citizen-status-form', /apply\/cdl\/voting-registration\/citizenship/, done);
   });
 
+  world.then('I will be on the CDL eligibility page', function(done) {
+    assertOnPage('.eligibility-requirements-form', /apply\/cdl\/voting-registration\/eligibility/, done);
+  });
+
+  world.then('I will be taken to the CDL voter preferences info page', function(done) {
+    assertOnPage('.voter-preferences-intro', /apply\/cdl\/voting-registration\/preferences/, done);
+  });
+
+  world.then('I will be on the page for entering CDL voter opt-out', function(done) {
+    assertOnPage('.opt-out-form', /apply\/cdl\/voting-registration\/opt-out/, done);
+  });
+
+  world.then('I will be on the CDL page for choosing a party', function(done) {
+    assertOnPage('.choose-party-form', /apply\/cdl\/voting-registration\/choose-party/, done);
+  });
+
+  world.then('I will be on the CDL page for selecting a ballot language', function(done) {
+    assertOnPage('.ballot-language-form', /apply\/cdl\/voting-registration\/language/, done);
+  });
+
+   world.then('I will be on the CDL page for supplying my contact information', function(done) {
+    assertOnPage('.contact-methods-choice-form', /apply\/cdl\/voting-registration\/contact-methods/, done);
+  });
+
+  world.then('I will be on the CDL page for selecting whether to get my ballot by mail', function(done) {
+    assertOnPage('.ballot-by-mail-form', /apply\/cdl\/voting-registration\/vote-by-mail/, done);
+  });
+
+  world.then('I will be on the CDL voting registration summary', function(done) {
+    assertOnPage('.voter-reg-complete', /apply\/cdl\/voting-registration\/confirmation/, done);
+  });
+
   world.then('I will be on the CDL summary', function(done) {
     assertOnPage('.summary', /apply\/cdl\/summary/, done);
   });
-
 };
