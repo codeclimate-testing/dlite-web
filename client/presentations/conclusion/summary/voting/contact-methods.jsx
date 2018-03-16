@@ -40,7 +40,7 @@ const EmailAddress = (props) => {
 
 const ContactMethods = (props) => {
   let locale = props.locale;
-  let contactMethods = '';
+  let contactMethods = 'No';
 
   if (shouldContact(props)) {
     contactMethods = <p>{translations[locale].shared.commonAnswers.yes}</p>
