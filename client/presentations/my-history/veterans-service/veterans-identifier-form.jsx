@@ -16,24 +16,30 @@ import {
   isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('h2', translations[locale].myHistory.veteransPage.keepDesignationPrompt.id, 'question')
+  return <Translation tag='h2' className='question'>
+    {translations[locale].myHistory.veteransPage.keepDesignationPrompt.id}
+  </Translation>
 };
 
 const PreviousDLHeader = (props) => {
   if (!showPreviousDLHeader(props)) {return null; }
   let locale = props.locale;
-  return convertToHtml('h2', translations[locale].myHistory.veteransPage.keepDesignationPrompt.license, 'question')
+  return <Translation tag='h2' className='question'>
+    {translations[locale].myHistory.veteransPage.keepDesignationPrompt.license}
+  </Translation>
 };
 
 const CardHeader = (props) => {
   if (isPreviouslyDesignated(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('h2', translations[locale].myHistory.veteransPage.newDesignation.prompt, 'question')
+  return <Translation tag='h2' className='question'>
+    {translations[locale].myHistory.veteransPage.newDesignation.prompt}
+  </Translation>
 };
 
 
@@ -55,7 +61,9 @@ const MessageAddAmount = (props) => {
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.messageYes)}
+        <Translation tag='p'>
+          {translations[locale].myHistory.veteransPage.newDesignation.messageYes}
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -66,7 +74,9 @@ const MessageRemovingDesignation = (props) => {
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <p className='translation-missing'>OK, we will remove it.</p>
+        <Translation tag='p' className='translation-missing'>
+          OK, we will remove it.
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -78,7 +88,9 @@ const VeteransIdentifier = (props) => {
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.explanation)}
+      <Translation tag='p'>
+        {translations[locale].myHistory.veteransPage.newDesignation.explanation}
+      </Translation>
       <div className='input-container'>
         <fieldset>
           <RadioCollection

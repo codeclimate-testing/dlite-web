@@ -1,17 +1,30 @@
 'use strict';
 
 import React             from 'react';
-import translations      from '../../../i18n';
 import { renewID }       from '../../../helpers/data/card-type';
 import { getIDString }   from '../../../helpers/data/get-started';
-import { convertToHtml } from '../../../i18n/convert-to-html.jsx';
+import translations      from '../../../i18n';
+import Translation       from '../../../i18n/translate-tag.jsx';
 
 const RenewingIDInfo = (props) => {
   let locale = props.locale;
-  const renewingID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.renewingID);
-  const renewingReducedFeeID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.renewingReducedFeeID);
-  const renewingNoFeeID = <p className='translation-missing'>You are renewing a no-fee ID card</p>;
-  const renewingSeniorID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.renewingSeniorID);
+
+  const renewingID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.renewingID}
+        </Translation>
+  const renewingReducedFeeID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.renewingReducedFeeID}
+        </Translation>
+  const renewingNoFeeID = 
+        <Translation tag='p'>
+          You are renewing a no-fee ID card
+        </Translation>
+  const renewingSeniorID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.renewingSeniorID}
+        </Translation>
 
   if(!renewID(props)) { return null; }
   let ID = getIDString(props, renewingID, renewingReducedFeeID, renewingNoFeeID, renewingSeniorID);

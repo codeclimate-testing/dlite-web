@@ -3,7 +3,7 @@
 import React        from 'react';
 import translations from '../../../i18n';
 import { getDL }    from '../../../helpers/data/card-type';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation  from '../../../i18n/translate-tag.jsx';
 import {
   getNewDL,
   replaceDL,
@@ -15,31 +15,41 @@ import {
 const New = (props) => {
   if (!getNewDL(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.applyingLicense);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.applyingLicense}
+         </Translation>
 };
 
 const Renew = (props) => {
   if (!renewDL(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.renewingLicense);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.renewingLicense}
+         </Translation>
 };
 
 const Replace = (props) => {
   if (!replaceDL(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.replacingLicense);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingLicense}
+         </Translation>
 };
 
 const Update = (props) => {
   if (!updateDL(props)) {return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingLicense);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.updatingLicense}
+         </Translation>
 };
 
 const Correct = (props) => {
   if (!correctDL(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.correctingLicense);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.correctingLicense}
+         </Translation>
 };
 
 

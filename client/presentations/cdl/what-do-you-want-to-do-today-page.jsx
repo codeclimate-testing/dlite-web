@@ -7,7 +7,7 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import Translation          from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -26,7 +26,9 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        {convertToHtml('h2', translations[locale].intro.wdywtdtPage.prompt, 'question')}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.wdywtdtPage.prompt}
+        </Translation>
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-button'>
             <fieldset>

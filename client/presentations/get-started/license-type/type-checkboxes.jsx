@@ -4,14 +4,18 @@ import React from 'react';
 import CheckboxSelector from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
   return (
     <div className='license-type-form'>
-      {convertToHtml('h2', translations[locale].intro.licenseTypePage.prompt, 'question')}
-      {convertToHtml('p', translations[locale].intro.licenseTypePage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.licenseTypePage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.licenseTypePage.explanation}
+        </Translation>
       <div className='row'>
         <fieldset>
         <CheckboxCollection

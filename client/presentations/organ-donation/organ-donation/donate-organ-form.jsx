@@ -5,7 +5,7 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import MessageBox         from '../../message-box.jsx';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 import {
   donateOrganYes,
   donateOrganNo
@@ -17,7 +17,9 @@ const MessageForYesChoice = (props) => {
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-yes-info'>
-        {convertToHtml('p', translations[locale].organDonation.organDonor.messageYes)}
+        <Translation tag='p'>
+          {translations[locale].organDonation.organDonor.messageYes}
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -29,7 +31,9 @@ const MessageForNoChoice = (props) => {
   return (
     <MessageBox className='info'>
       <div className = 'donate-organ-no-info'>
-        {convertToHtml('p', translations[locale].organDonation.organDonor.messageNo)}
+        <Translation tag='p'>
+          {translations[locale].organDonation.organDonor.messageNo}
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -40,8 +44,12 @@ const DonateOrgan = (props) => {
   let locale = props.locale;
   return (
     <div className='donate-organ-form'>
-        {convertToHtml('h2', translations[locale].organDonation.organDonor.prompt, 'question')}
-        {convertToHtml('p', translations[locale].organDonation.organDonor.validationMessage)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].organDonation.organDonor.prompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].organDonation.organDonor.validationMessage}
+      </Translation>
 
       <fieldset>
         <RadioCollection

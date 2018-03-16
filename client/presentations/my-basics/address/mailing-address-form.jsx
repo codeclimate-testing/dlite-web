@@ -3,7 +3,7 @@
 import React              from 'react';
 import AddressTemplate    from '../../address-template.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 import { notSameAsHome }  from '../../../helpers/data/address';
 
 const Form = (props) => {
@@ -12,8 +12,12 @@ const Form = (props) => {
   return (
     <div className='mailing-address-form'>
       <hr />
-        {convertToHtml('h2', translations[locale].myBasics.addressesPage.mailingAddressPrompt, 'question')}
-        {convertToHtml('p', translations[locale].myBasics.addressesPage.explanation)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myBasics.addressesPage.mailingAddressPrompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].myBasics.addressesPage.explanation}
+      </Translation>
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate

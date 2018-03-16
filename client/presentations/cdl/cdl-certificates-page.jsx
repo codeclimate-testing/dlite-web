@@ -7,7 +7,6 @@ import CertificatesAccordion   from './certificates/certificates-accordion.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 import Page                    from '../../containers/page.jsx';
 import translations            from '../../i18n';
-import { convertToHtml }       from '../../i18n/convert-to-html.jsx';
 
 const Form = (props) => {
   let locale = props.locale;

@@ -4,7 +4,7 @@ import React              from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 import {
   IDOnly
@@ -15,7 +15,9 @@ const OnlyIDHeader = (props) => {
   let locale = props.locale;
   return (
     <div className="applying-for-only-id">
-      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.pagePromptID, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.cardHistoryPage.pagePromptID}
+      </Translation>
     </div>
   );
 };
@@ -25,8 +27,12 @@ const IDAndDLHeader = (props) => {
   let locale = props.locale;
   return (
     <div className="applying-for-dl">
-      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.pagePromptLicense, 'question')}
-      {convertToHtml('p', translations[locale].myHistory.cardHistoryPage.explanation)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.cardHistoryPage.pagePromptLicense}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].myHistory.cardHistoryPage.explanation}
+      </Translation>
     </div>
   );
 };

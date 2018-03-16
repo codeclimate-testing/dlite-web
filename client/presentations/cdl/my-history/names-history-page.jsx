@@ -7,7 +7,6 @@ import EnterPreviousNames    from '../../my-history/names-history/enter-previous
 import UsedPreviousNames   from '../../my-history/names-history/used-previous-names.jsx';
 import { hasUsedPreviousNames }       from '../../../helpers/data/my-history';
 import translations         from '../../../i18n';
-import { convertToHtml }    from '../../../i18n/convert-to-html.jsx';
 
 const NamesHistoryPage = (props) => {
   let locale = props.locale;

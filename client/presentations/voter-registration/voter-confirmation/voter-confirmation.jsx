@@ -2,15 +2,19 @@
 
 import React                  from 'react';
 import translations           from '../../../i18n';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation            from '../../../i18n/translate-tag.jsx';
 
 const VoterRegComplete = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
     <div className='voter-reg-complete'>
-      {convertToHtml('h4', translations[locale].votingRegistration.confirmation.pagePrompt)}
-      {convertToHtml('p', translations[locale].votingRegistration.confirmation.explanation)}
+      <Translation tag='h4'>
+        {translations[locale].votingRegistration.confirmation.pagePrompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.confirmation.explanation}
+      </Translation>
     </div>
   );
 };

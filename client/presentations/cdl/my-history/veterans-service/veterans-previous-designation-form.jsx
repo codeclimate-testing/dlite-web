@@ -5,14 +5,16 @@ import radioYesNoGroup    from '../../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../../radio-selector-collection.jsx';
 import { getDL }          from '../../../../helpers/data/card-type';
 import translations       from '../../../../i18n'
-import { convertToHtml }  from '../../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../../i18n/translate-tag.jsx';
 
 const VeteransPreviousDesignation = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
     <div className='veterans-previous-designation-form'>
-      {convertToHtml('h2','Is "Veteran" printed on your commercial driver license?', 'question translation-missing')}
+      <Translation tag='h2' className='question missing-translation'>
+        Is "Veteran" printed on your commercial driver license?
+      </Translation>
       <div className='input-container'>
         <fieldset>
           <RadioCollection

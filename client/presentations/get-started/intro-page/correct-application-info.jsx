@@ -7,18 +7,22 @@ import {
   getID,
   getDL
  }   from '../../../helpers/data/card-type';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const License = (props) => {
   let locale = props.locale;
   if (!getDL(props)) { return null;}
-  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.correct.license);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.explanation.correct.license}
+         </Translation>
 };
 
 const ID = (props) => {
   let locale = props.locale;
   if (!getID(props)) { return null; }
-  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.correct.id);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.explanation.correct.id}
+         </Translation>
 };
 
 const CorrectApplicationInfo = (props) => {

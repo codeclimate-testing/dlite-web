@@ -6,7 +6,7 @@ import Page                  from '../../../containers/page.jsx';
 import OtherStateLicenseInfo from '../my-history/other-state-licenses/other-state-license-info.jsx';
 import TenYearHistory        from '../my-history/other-state-licenses/ten-year-history.jsx';
 import translations          from '../../../i18n';
-import { convertToHtml }     from '../../../i18n/convert-to-html.jsx';
+import Translation           from '../../../i18n/translate-tag.jsx';
 import { hasOtherStateLicenses }       from '../../../helpers/data/my-history';
 
 const OtherStateLicenses = (props) => {
@@ -17,8 +17,12 @@ const OtherStateLicenses = (props) => {
       sectionKey='myHistory'
     >
       <form onSubmit={props.onSubmit} className='other-state-licenses-form'>
-        {convertToHtml('h2', translations[locale].tenYearHistoryPage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].tenYearHistoryPage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].tenYearHistoryPage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].tenYearHistoryPage.explanation}
+        </Translation>
         <OtherStateLicenseInfo
           {...props}
           selectedValue = {props.otherStateLicenses.hasNonCALicense}

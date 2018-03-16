@@ -4,7 +4,7 @@ import React              from 'react';
 import TextArea           from '../../text-area.jsx';
 import DateInput          from '../../date-input.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const EnterRevokedSuspended = (props) => {
   if (!props.showIf) { return null; }
@@ -12,8 +12,12 @@ const EnterRevokedSuspended = (props) => {
   return (
     <div className='suspended-license-form'>
       <hr />
-      {convertToHtml('h2', translations[locale].myHistory.licenseIssuesPage.explanationPrompt, 'question')}
-      {convertToHtml('p', translations[locale].myHistory.licenseIssuesPage.helpText)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.licenseIssuesPage.explanationPrompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].myHistory.licenseIssuesPage.helpText}
+      </Translation>
 
       <fieldset>
         <DateInput

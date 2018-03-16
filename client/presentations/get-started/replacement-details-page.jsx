@@ -5,7 +5,7 @@ import ReplacementReason  from './replacement-details/replacement-reason-form.js
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -15,8 +15,12 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-replacement-detail'>
-        {convertToHtml('h2', translations[locale].intro.replacementReasonPage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].intro.replacementReasonPage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.replacementReasonPage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.replacementReasonPage.explanation}
+        </Translation>
         <form onSubmit={ props.onSubmit }>
           <ReplacementReason {...props} />
           <NavigationButtons

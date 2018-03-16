@@ -4,7 +4,7 @@ import React              from 'react';
 import TextInput          from '../../text-input.jsx';
 import ExpirationDate     from '../../expiration-date.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const EnterLicenseAndIdHistory = (props) => {
   let locale = props.locale;
@@ -17,7 +17,9 @@ const EnterLicenseAndIdHistory = (props) => {
   return (
     <div className='existing-license-id-number-form'>
       <hr/>
-      {convertToHtml('h2', translations[locale].myHistory.cardHistoryPage.explanationPrompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.cardHistoryPage.explanationPrompt}
+      </Translation>
 
       <fieldset>
         <TextInput

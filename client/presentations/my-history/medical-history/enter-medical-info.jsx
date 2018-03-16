@@ -3,7 +3,7 @@
 import React              from 'react';
 import TextArea           from '../../text-area.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const EnterMedicalInfo = (props) => {
   if (!props.showIf) { return null; }
@@ -11,7 +11,9 @@ const EnterMedicalInfo = (props) => {
   return (
     <div className='enter-medical-info'>
       <hr />
-      {convertToHtml('h2', translations[locale].myHistory.medicalConditionsPage.explanationPrompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.medicalConditionsPage.explanationPrompt}
+      </Translation>
       <fieldset>
         <TextArea
           {...props}

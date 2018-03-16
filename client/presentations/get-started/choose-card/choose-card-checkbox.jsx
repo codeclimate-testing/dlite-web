@@ -5,14 +5,16 @@ import React from 'react';
 import CheckboxSelector from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
     <div className='row choose-new-cards'>
-      {convertToHtml('p', translations[locale].intro.chooseSelectionPage.explanationMultiCard)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].intro.chooseSelectionPage.explanationMultiCard}
+      </Translation>
       <div className='row'>
         <fieldset>
           <CheckboxCollection

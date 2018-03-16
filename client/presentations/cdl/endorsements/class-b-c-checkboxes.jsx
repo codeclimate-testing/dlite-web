@@ -4,14 +4,16 @@ import React from 'react';
 import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale
   if(props.cdlEndorsements.needEndorsement === 'Yes' && props.licenseClass !== 'classA') {
     return (
       <div className='license-type-form'>
-          {convertToHtml('h2', translations[locale].cdl.endorsmentsPage.whichSection.prompt, 'question')}
+        <Translation tag='h2' className='question'>
+          {translations[locale].cdl.endorsmentsPage.whichSection.prompt}
+        </Translation>
         <div className='row'>
           <fieldset>
             <CheckboxCollection

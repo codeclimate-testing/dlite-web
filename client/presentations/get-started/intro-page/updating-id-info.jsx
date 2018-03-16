@@ -1,28 +1,34 @@
 'use strict';
 
 import React             from 'react';
-import translations      from '../../../i18n';
 import { updateID }      from '../../../helpers/data/card-type';
 import { gettingSeniorID }    from '../../../helpers/data/senior';
 import { choosingReducedFee } from '../../../helpers/data/reduced-fee';
-import { convertToHtml } from '../../../i18n/convert-to-html.jsx';
+import translations       from '../../../i18n';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Senior = (props) => {
   if (!gettingSeniorID(props.IDApp)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingSeniorID);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.updatingSeniorID}
+         </Translation>
 };
 
 const Reduced = (props) => {
   if (!choosingReducedFee(props.IDApp)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingReducedFeeID);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.updatingReducedFeeID}
+         </Translation>
 };
 
 const Regular = (props) => {
   if (gettingSeniorID(props.IDApp) || choosingReducedFee(props.IDApp)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.updatingID);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.whatYouAreDoing.updatingID}
+         </Translation>
 };
 
 const UpdatingIDInfo = (props) => {

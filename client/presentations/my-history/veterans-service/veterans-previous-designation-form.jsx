@@ -5,12 +5,17 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import { getDL }          from '../../../helpers/data/card-type';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const VeteransPreviousDesignation = (props) => {
   let locale = props.locale;
-  const headerDL = convertToHtml('h2', translations[locale].myHistory.veteransPage.existingDesignation.promptLicense, 'question');
-  const headerID = convertToHtml('h2', translations[locale].myHistory.veteransPage.existingDesignation.promptID, 'question');
+  const headerDL = <Translation tag='h2' className='question'>
+    {translations[locale].myHistory.veteransPage.existingDesignation.promptLicense}
+  </Translation>
+
+  const headerID = <Translation tag='h2' className='question'>
+    {translations[locale].myHistory.veteransPage.existingDesignation.promptID}
+  </Translation>
 
   if (!props.showIf) { return null; }
 

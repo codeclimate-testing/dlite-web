@@ -7,9 +7,9 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import MessageBox           from '../message-box.jsx';
 import Page                 from '../../containers/page.jsx';
 import translations         from '../../i18n';
+import Translation          from '../../i18n/translate-tag.jsx';
 import { isYes, isNo }      from '../../helpers/data/validations';
 import { checkPreReg }      from '../../helpers/data/youth';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 
 const infoText = {
   Yes: 'Ok, your ballot will now come by mail. You can still vote in-person at your polling place.',
@@ -42,8 +42,12 @@ const BallotByMailPage = (props) => {
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
-        {convertToHtml('h2', translations[locale].votingRegistration.byMailPage.pagePrompt, 'question')}
-        {convertToHtml('p', translations[locale].votingRegistration.byMailPage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].votingRegistration.byMailPage.pagePrompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].votingRegistration.byMailPage.explanation}
+        </Translation>
 
         <fieldset>
           <RadioCollection

@@ -4,14 +4,16 @@ import React              from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Question = (props) => {
   let locale = props.locale;
   return (
     <div className='interstitial-address-form'>
       <hr />
-        {convertToHtml('h2', translations[locale].myBasics.addressesPage.mailingAddressSamePrompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myBasics.addressesPage.mailingAddressSamePrompt}
+      </Translation>
         {props.children}
       <div className='input-container'>
         <fieldset>

@@ -7,7 +7,7 @@ import TextInput          from '../text-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
 import CDLUnder21         from '../cdl/dob-under21.jsx';
 
 const Presentation = (props) => {
@@ -18,8 +18,12 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={ props.onSubmit } className='date-of-birth-form'>
-        {convertToHtml('h2', translations[locale].intro.dateOfBirthPage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].intro.dateOfBirthPage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.dateOfBirthPage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.dateOfBirthPage.explanation}
+        </Translation>
 
         <fieldset>
           <DateInput

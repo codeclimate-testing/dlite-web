@@ -8,7 +8,7 @@ import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
 import translations           from '../../i18n';
-import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
+import Translation            from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -31,21 +31,33 @@ const Form = (props) => {
           {...props}
         />
 
-       <Accordion
-          id='cdl-endorsement-info'
-          title={translations[locale].cdl.endorsmentsPage.FAQNotSure.title}
-        >
-          <div>
-          {convertToHtml('p', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.header)}
-            <ul className='bullet-list'>
-              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[0])}
-              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[1])}
-              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[2])}
-              {convertToHtml('li', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[3])}
-            </ul>
-          {convertToHtml('p', translations[locale].cdl.endorsmentsPage.FAQNotSure.body.explanation)}
+      <Accordion
+        id='cdl-endorsement-info'
+        title={translations[locale].cdl.endorsmentsPage.FAQNotSure.title}
+      >
+        <div>
+          <Translation tag='p'>
+            {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.header}
+          </Translation>
+          <ul className='bullet-list'>
+            <Translation tag='li'>
+              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[0]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[1]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[2]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[3]}
+            </Translation>
+          </ul>
+          <Translation tag='p'>
+            {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.explanation}
+          </Translation>
         </div>
-        </Accordion>
+      </Accordion>
 
         <NavigationButtons
           {...props}

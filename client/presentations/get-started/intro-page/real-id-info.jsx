@@ -1,16 +1,22 @@
 'use strict';
 
 import React                from 'react';
-import translations         from '../../../i18n';
 import { gettingRealID }    from '../../../helpers/data/real-id';
 import { getRealIDString }  from '../../../helpers/data/get-started';
-import { convertToHtml }    from '../../../i18n/convert-to-html.jsx';
+import translations         from '../../../i18n';
+import Translation          from '../../../i18n/translate-tag.jsx';
 
 const RealIDInfo = (props) => {
   let locale = props.locale;
-  const idRealID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantID);
-  const dlRealID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense);
 
+  const idRealID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantID}
+        </Translation>
+  const dlRealID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense}
+        </Translation>
   if (!gettingRealID(props)) { return null; }
   let realIdCompliant = getRealIDString(props, idRealID, dlRealID);
 

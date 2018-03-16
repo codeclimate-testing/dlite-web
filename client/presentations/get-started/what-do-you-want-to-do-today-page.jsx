@@ -7,7 +7,6 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
 import Translate            from '../../i18n/translate-tag.jsx';
 import {
   getCorrectString

@@ -5,7 +5,7 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import MessageBox         from '../../message-box.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const VeteransBenefits = (props) => {
   if (!props.showIf) { return null; }
@@ -14,13 +14,18 @@ const VeteransBenefits = (props) => {
     <div className='veterans-benefits-form'>
       <MessageBox className='thanks'>
         <div className='veteran-thank-you-message'>
-          {convertToHtml('p', translations[locale].myHistory.veteransPage.messageYes, 'question')}
+          <Translation tag='p'>
+            {translations[locale].myHistory.veteransPage.messageYes}
+          </Translation>
         </div>
       </MessageBox>
 
       <hr />
 
-      {convertToHtml('h2', translations[locale].myHistory.veteransPage.benefitsPrompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.veteransPage.benefitsPrompt}
+      </Translation>
+
 
       <div className='input-container'>
         <fieldset>

@@ -4,7 +4,7 @@ import React              from 'react';
 import Page               from '../../../../containers/page.jsx';
 import NavigationButtons  from '../../../navigation-buttons.jsx';
 import translations       from '../../../../i18n';
-import { convertToHtml }  from '../../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../../i18n/translate-tag.jsx';
 import RadioSelector      from '../../../radio-selector.jsx';
 import RadioCollection    from '../../../radio-selector-collection.jsx';
 
@@ -14,8 +14,12 @@ const Form = (props) => {
   return (
     <div className='ten-year-history'>
       <hr />
-      {convertToHtml('p', translations[locale].tenYearHistoryPage.fillOutHistoryVia.prompt)}
-      {convertToHtml('h2', translations[locale].tenYearHistoryPage.fillOutHistoryVia.explanation, 'question')}
+      <Translation tag='p'>
+        {translations[locale].tenYearHistoryPage.fillOutHistoryVia.prompt}
+      </Translation>
+      <Translation tag='h2' className='question'>
+        {translations[locale].tenYearHistoryPage.fillOutHistoryVia.explanation}
+      </Translation>
       <div className='row inner-buttom'>
         <fieldset>
           <RadioCollection

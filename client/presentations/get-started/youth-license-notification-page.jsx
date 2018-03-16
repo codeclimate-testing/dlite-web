@@ -2,15 +2,15 @@
 
 import React from 'react';
 
-import radioYesNoGroup    from '../radio-yes-no-group.jsx';
-import RadioCollection    from '../radio-selector-collection.jsx';
-import NavigationButtons  from '../navigation-buttons.jsx';
-import Page               from '../../containers/page.jsx';
+import radioYesNoGroup     from '../radio-yes-no-group.jsx';
+import RadioCollection     from '../radio-selector-collection.jsx';
+import NavigationButtons   from '../navigation-buttons.jsx';
+import Page                from '../../containers/page.jsx';
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
 import MessageBox          from '../message-box.jsx';
-import translations         from '../../i18n';
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import translations        from '../../i18n';
+import Translation         from '../../i18n/translate-tag.jsx';
 
 const FormHeader = (props) => {
   let locale = props.locale;
@@ -19,7 +19,9 @@ const FormHeader = (props) => {
       <h2 className='question translation-missing'>{props.title}</h2>
       <p className='translation-missing'>{props.helpText}</p>
       <hr />
-      {convertToHtml('h3', translations[locale].intro.youthDlNotificationPage.question, 'question')}
+      <Translation tag='h3' className='question'>
+        {translations[locale].intro.youthDlNotificationPage.question}
+      </Translation>
     </div>
   );
 };

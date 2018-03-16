@@ -16,24 +16,27 @@ import {
   isPreviouslyDesignated
 }   from '../../../../helpers/data/veteran';
 import translations       from '../../../../i18n'
-import { convertToHtml }  from '../../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../../i18n/translate-tag.jsx';
 
 const Question = (props) => {
   if (!isPreviouslyDesignated(props)) {
     return(
       <div className='new-designation'>
-        {convertToHtml('h2', 'Would you like to add the word “Veteran” on your CDL for a $5 fee?', 'question translation-missing')}
+        <Translation tag='h2' className='question translation-missing'>
+          Would you like to add the word “Veteran” on your CDL for a $5 fee?
+        </Translation>
       </div>
     );
   }
   else{
     return(
       <div className='previous-designation'>
-        {convertToHtml('h2', 'Would you like to keep "Veteran" on your CDL?', 'question translation-missing')}
+        <Translation tag='h2' className='question translation-missing'>
+          Would you like to keep "Veteran" on your CDL?
+        </Translation>
       </div>
     );
   }
-
 };
 
 const MessageAddAmount = (props) => {
@@ -42,7 +45,9 @@ const MessageAddAmount = (props) => {
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.messageYes)}
+        <Translation tag='p'>
+          {translations[locale].myHistory.veteransPage.newDesignation.messageYes}
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -53,7 +58,9 @@ const MessageRemovingDesignation = (props) => {
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <p className='translation-missing'>OK, we will remove it.</p>
+        <Translation tag='p' className='translation-missing'>
+          OK, we will remove it.
+        </Translation>
       </div>
     </MessageBox>
   );
@@ -65,7 +72,9 @@ const VeteransIdentifier = (props) => {
   return (
     <div className='veterans-identifier-form'>
     <Question {...props} />
-      {convertToHtml('p', translations[locale].myHistory.veteransPage.newDesignation.explanation)}
+        <Translation tag='p'>
+          {translations[locale].myHistory.veteransPage.newDesignation.explanation}
+        </Translation>
       <div className='input-container'>
         <fieldset>
           <RadioCollection

@@ -1,17 +1,32 @@
 'use strict';
 
 import React              from 'react';
-import translations       from '../../../i18n';
 import { getIDString }    from '../../../helpers/data/get-started';
 import { replaceID }      from '../../../helpers/data/card-type';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import translations       from '../../../i18n';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const ReplacingIDInfo = (props) => {
   let locale = props.locale;
-  const replacingID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.replacingID);
-  const replacingReducedFeeID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID);
-  const replacingNoFeeID = <p className='translation-missing'>You are replacing a no-fee ID card</p>;
-  const replacingSeniorID = convertToHtml('p', translations[locale].intro.getStartedPage.whatYouAreDoing.replacingSeniorID);
+  const replacingID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingID}
+        </Translation>
+    
+  const replacingReducedFeeID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID}
+        </Translation>
+    
+  const replacingNoFeeID = 
+        <Translation tag='p' className='translation-missing'>
+          You are replacing a no-fee ID card
+        </Translation>
+    
+  const replacingSeniorID = 
+        <Translation tag='p'>
+          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingSeniorID}
+        </Translation>
 
   if(!replaceID(props)) { return null; }
   let ID = getIDString(props, replacingID, replacingReducedFeeID, replacingNoFeeID, replacingSeniorID);

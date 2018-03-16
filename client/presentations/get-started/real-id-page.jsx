@@ -8,7 +8,7 @@ import Accordion              from '../../containers/accordion.jsx';
 import RealIdDesignationForm  from './real-id/choose-card-selectors.jsx';
 import ChooseRealID           from './real-id/choose-real-id.jsx';
 import translations           from '../../i18n';
-import { convertToHtml }      from '../../i18n/convert-to-html.jsx';
+import Translation            from '../../i18n/translate-tag.jsx';
 
 const FormPage = (props) => {
   let locale = props.locale;
@@ -31,7 +31,9 @@ const FormPage = (props) => {
           id='real-id-info'
           title={translations[locale].intro.realIdPage.FAQWhatIsRealID.title}
         >
-          {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRealID.body)}
+          <Translation tag='p'>
+            {translations[locale].intro.realIdPage.FAQWhatIsRealID.body}
+          </Translation>
         </Accordion>
 
 
@@ -40,17 +42,35 @@ const FormPage = (props) => {
           title={translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.title}
         >
           <div>
-            {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.header)}
+            <Translation tag='p'>
+              {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.header}
+            </Translation>
             <ul className='bullet-list'>
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[0])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[1])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[2])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[3])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[4])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[5])}
-              {convertToHtml('li', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[6])}
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[0]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[1]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[2]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[3]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[4]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[5]}
+              </Translation>
+              <Translation tag='li'>
+                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[6]}
+              </Translation>
             </ul>
-            {convertToHtml('p', translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements)}
+            <Translation tag='p'>
+              {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements}
+            </Translation>
           </div>
         </Accordion>
 

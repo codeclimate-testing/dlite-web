@@ -4,7 +4,7 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const HairColor = (props) => {
   let locale = props.locale;
@@ -13,7 +13,9 @@ const HairColor = (props) => {
   return (
     <div className='hair-color'>
       <hr />
-        {convertToHtml('h2', translationPath.prompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translationPath.prompt}
+      </Translation>
       <div>
         <fieldset>
           <RadioCollection

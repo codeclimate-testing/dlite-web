@@ -8,7 +8,7 @@ import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
 
 const LegalNameForm = (props) => {
   let locale = props.locale;
@@ -20,8 +20,12 @@ const LegalNameForm = (props) => {
       {...props}
     >
       <form onSubmit={ props.onSubmit } className='legal-name-form'>
-        {convertToHtml('h2', translations[locale].intro.namePage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].intro.namePage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.namePage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.namePage.explanation}
+        </Translation>
 
         <fieldset>
           <TextInput

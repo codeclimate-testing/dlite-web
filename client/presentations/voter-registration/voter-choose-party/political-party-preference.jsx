@@ -5,7 +5,7 @@ import RadioSelector          from '../../radio-selector.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import OtherParty             from './other-party.jsx';
 import translations           from '../../../i18n';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation            from '../../../i18n/translate-tag.jsx';
 
 const PoliticalPartyPreference = (props) => {
   if(props.politicalPartyChoose.isSelected !== 'Yes') { return null; }
@@ -13,7 +13,9 @@ const PoliticalPartyPreference = (props) => {
   return (
     <div className='political-party-preference'>
       <hr/>
-      {convertToHtml('h2', translations[locale].votingRegistration.choosePartyPage.choosePrompt, 'question')}
+      <Translation tag='h2' className='question'>
+        {translations[locale].votingRegistration.choosePartyPage.choosePrompt}
+      </Translation>
 
       <fieldset>
         <RadioCollection

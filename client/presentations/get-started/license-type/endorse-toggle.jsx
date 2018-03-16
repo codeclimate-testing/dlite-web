@@ -4,15 +4,19 @@ import React            from 'react';
 import RadioCollection  from '../../radio-selector-collection.jsx';
 import radioYesNoGroup  from '../../radio-yes-no-group.jsx';
 import translations     from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation      from '../../../i18n/translate-tag.jsx';
 
 const FormControls = (props) => {
   let locale = props.locale;
   return (
     <div className='endorsement-toggle'>
       <hr/>
-        {convertToHtml('h2', translations[locale].intro.licenseTypePage.endorsementsSection.prompt, 'question')}
-        {convertToHtml('p', translations[locale].intro.licenseTypePage.endorsementsSection.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.licenseTypePage.endorsementsSection.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.licenseTypePage.endorsementsSection.explanation}
+        </Translation>
       <div className='row'>
         <fieldset>
           <RadioCollection

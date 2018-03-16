@@ -7,7 +7,7 @@ import radioYesNoGroup    from '../radio-yes-no-group.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
@@ -17,8 +17,12 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='senior-id-form'>
-        {convertToHtml('h2', translations[locale].intro.seniorIdPage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].intro.seniorIdPage.explanation)}
+        <Translation tag='h2' className='question'>
+          {translations[locale].intro.seniorIdPage.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translations[locale].intro.seniorIdPage.explanation}
+        </Translation>
 
         <hr />
 

@@ -1,9 +1,9 @@
 'use strict';
 
 import React                  from 'react';
-import translations           from '../../../i18n';
 import { hasActionIsUpdating }     from '../../../helpers/data/card-actions';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import translations           from '../../../i18n';
+import Translation            from '../../../i18n/translate-tag.jsx';
 import {
   getID,
   getDL
@@ -12,13 +12,17 @@ import {
 const License = (props) => {
   if (!getDL(props)) { return null;}
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.update.license);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.explanation.update.license}
+         </Translation>
 };
 
 const ID = (props) => {
   if (!getID(props)) { return null; }
   let locale = props.locale;
-  return convertToHtml('p', translations[locale].intro.getStartedPage.explanation.update.id);
+  return <Translation tag='p'>
+            {translations[locale].intro.getStartedPage.explanation.update.id}
+         </Translation>
 };
 
 

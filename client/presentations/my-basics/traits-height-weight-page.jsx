@@ -11,7 +11,7 @@ import {
   errorClass
 } from '../validations.jsx';
 import translations       from '../../i18n';
-import { convertToHtml }  from '../../i18n/convert-to-html.jsx';
+import Translation        from '../../i18n/translate-tag.jsx';
 
 const TraitsPage = (props) => {
   let locale = props.locale;
@@ -31,8 +31,12 @@ const TraitsPage = (props) => {
       sectionKey='myBasics'
     >
       <form onSubmit={ props.onSubmit } className='traits-height-weight-form' >
-        {convertToHtml('h2', translationPath.height.prompt, 'question')}
-        {convertToHtml('p', translationPath.height.explanation)}
+        <Translation tag='h2' className='question'>
+          {translationPath.height.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translationPath.height.explanation}
+        </Translation>
 
         <fieldset>
           <NumberInput
@@ -67,8 +71,12 @@ const TraitsPage = (props) => {
         </div>
 
         <hr />
-        {convertToHtml('h2', translationPath.weight.prompt, 'question')}
-        {convertToHtml('p', translationPath.weight.explanation)}
+        <Translation tag='h2' className='question'>
+          {translationPath.weight.prompt}
+        </Translation>
+        <Translation tag='p'>
+          {translationPath.weight.explanation}
+        </Translation>
 
         <fieldset>
           <NumberInput

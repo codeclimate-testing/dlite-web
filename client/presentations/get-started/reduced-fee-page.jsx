@@ -11,13 +11,15 @@ import MessageBox               from '../message-box.jsx';
 import { hasMultipleCards }     from '../../helpers/data/cards';
 import { choosingReducedFee }   from '../../helpers/data/reduced-fee';
 import translations             from '../../i18n';
-import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
+import Translation              from '../../i18n/translate-tag.jsx';
 
 const DLText = (props) => {
   if (!hasMultipleCards(props)) { return null; }
   let locale = props.locale;
   return (
-    convertToHtml('p', translations[locale].intro.reducedFeePage.licenseExplanation)
+    <Translation tag='p'>
+      {translations[locale].intro.reducedFeePage.licenseExplanation}
+    </Translation>
   );
 };
 
@@ -26,14 +28,18 @@ const ReducedFeeFormInfo = (props) => {
   return (
     <div className='reduced-fee-form-info'>
       <MessageBox className='info'>
-        {convertToHtml('p', translations[locale].intro.reducedFeePage.rightFormsSection.explanation)}
+        <Translation tag='p'>
+          {translations[locale].intro.reducedFeePage.rightFormsSection.explanation}
+        </Translation>
       </MessageBox>
 
       <Accordion
         id='reduced-fee-form-info'
         title={translations[locale].intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.title}
       >
-        {convertToHtml('p', translations[locale].intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.body)}
+        <Translation tag='p'>
+          {translations[locale].intro.reducedFeePage.rightFormsSection.FAQHowToGetForms.body}
+        </Translation>
       </Accordion>
     </div>
   );
@@ -48,7 +54,9 @@ const Form = (props) => {
     >
       <div className='reduced-fee-form'>
         <form onSubmit={ props.onSubmit } >
-          {convertToHtml('h2', translations[locale].intro.reducedFeePage.prompt, 'question')}
+          <Translation tag='h2' className='question'>
+            {translations[locale].intro.reducedFeePage.prompt}
+          </Translation>
 
           <DLText {...props} />
 

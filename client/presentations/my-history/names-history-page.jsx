@@ -6,7 +6,7 @@ import Page                 from '../../containers/page.jsx';
 import UsedPreviousNames    from './names-history/used-previous-names.jsx';
 import EnterPreviousNames   from './names-history/enter-previous-names.jsx';
 import translations         from '../../i18n'
-import { convertToHtml }    from '../../i18n/convert-to-html.jsx';
+import Translation          from '../../i18n/translate-tag.jsx';
 import {
   hasUsedPreviousNames
 } from '../../helpers/data/my-history';
@@ -19,7 +19,9 @@ const NamesHistoryPage = (props) => {
       sectionKey='myHistory'
     >
       <form onSubmit    = {props.onSubmit} className='names-history-form'>
-      {convertToHtml('h2', translations[locale].myHistory.nameHistoryPage.pagePrompt, 'question')}
+        <Translation tag='h2' className='question'>
+          {translations[locale].myHistory.nameHistoryPage.pagePrompt}
+        </Translation>
         <UsedPreviousNames
           {...props}
           selectedValue = { props.namesHistory.hasUsedPreviousNames}

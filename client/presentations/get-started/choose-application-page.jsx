@@ -7,7 +7,7 @@ import RadioSelector            from '../radio-selector.jsx';
 import RadioCollection          from '../radio-selector-collection.jsx';
 import Accordion                from '../../containers/accordion.jsx';
 import translations             from '../../i18n';
-import { convertToHtml }        from '../../i18n/convert-to-html.jsx';
+import Translation              from '../../i18n/translate-tag.jsx';
 import {
   hideMain,
   getErrorMessage
@@ -29,7 +29,9 @@ const Form = (props) => {
       }
 
       <form onSubmit = { props.onSubmit } className={className}>
-      {convertToHtml('h2', 'What are you here for?' , 'question')}
+        <Translation tag='h2' className='question'>
+          {translations[locale].beforeIntro.chooseDLorCDLPage.prompt}
+        </Translation>
         <fieldset>
           <RadioCollection
             {...props}
@@ -52,25 +54,49 @@ const Form = (props) => {
           id='choose-application-info'
           title="I don't know if I need a commercial driver license"
         >
-          {convertToHtml('p', '<b>You will need a CDL if you plan to operate a vehicle that: </b>')}
+        <Translation tag='p'>
+          {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.header}
+        </Translation>
           <ul className = 'bullet-list'>
-            {convertToHtml('li', 'Has a gross vehicle weight rating (GVWR) of 26,001+ pounds.')}
-            {convertToHtml('li', 'Is designed, used, or maintained for carrying more than 10 persons, including the driver.')}
-            {convertToHtml('li', 'Tows a vehicle or trailer which has a GVWR of 10,001+ pounds.')}
-            {convertToHtml('li', 'Transports hazardous materials which require placards.')}
-            {convertToHtml('li', 'Tows any combination of two trailers or a vehicle and trailer.')}
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[0]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[1]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[2]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[3]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[4]}
+            </Translation>
           </ul>
-
-          {convertToHtml('p', '<b>You will not need a CDL if you only expect to drive: </b>')}
+            <Translation tag='p'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.header}
+            </Translation>
           <ul className = 'bullet-list'>
-            {convertToHtml('li', 'Recreational vehicles (5th wheel travel trailers and motor homes).')}
-            {convertToHtml('li', 'Firefighting equipment.')}
-            {convertToHtml('li', 'Class C agricultural hazardous materials transporters.')}
-            {convertToHtml('li', 'Department of Defense employees who are in uniform and driving Department of Defense vehicles.')}
-            {convertToHtml('li', 'Some Farm vehicles.')}
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[0]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[1]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[2]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[3]}
+            </Translation>
+            <Translation tag='li'>
+              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[4]}
+            </Translation>
           </ul>
-
-          {convertToHtml('p', 'Detailed information is available at <a href="https://dmv.ca.gov" target="_blank">dmv.ca.gov</a>')}
+          <Translation tag='p'>
+            {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.seeDMV}
+          </Translation>
         </Accordion>
 
         <NavigationButtons

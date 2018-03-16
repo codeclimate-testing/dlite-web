@@ -2,23 +2,48 @@
 
 import React          from 'react';
 import translations   from '../../../i18n';
-import { convertToHtml }      from '../../../i18n/convert-to-html.jsx';
+import Translation    from '../../../i18n/translate-tag.jsx';
 
 const VoterPreferencesIntro = (props) => {
   if (!props.showIf) { return null; }
   let locale = props.locale;
   return (
     <div className='voter-preferences-intro'>
-      {convertToHtml('h2', translations[locale].votingRegistration.preferencesIntroPage.pagePrompt, 'question')}
-      {convertToHtml('p', translations[locale].votingRegistration.preferencesUpdateIntroPage.partyExplanation)}
-      {convertToHtml('h4', translations[locale].votingRegistration.preferencesIntroPage.partyHeadline)}
-      {convertToHtml('p', translations[locale].votingRegistration.preferencesIntroPage.partyExplanation)}
-      {convertToHtml('h4', translations[locale].votingRegistration.preferencesIntroPage.byMailHeadline)}
-      {convertToHtml('p', translations[locale].votingRegistration.preferencesIntroPage.byMailExplanation)}
-      {convertToHtml('h4', translations[locale].votingRegistration.preferencesIntroPage.languageHeadline)}
-      {convertToHtml('p', translations[locale].votingRegistration.preferencesIntroPage.languageExplanation)}
-      {convertToHtml('h4', translations[locale].votingRegistration.preferencesIntroPage.contactInfoHeadline)}
-      {convertToHtml('p', translations[locale].votingRegistration.preferencesIntroPage.contactInfoExplanation)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].votingRegistration.preferencesIntroPage.pagePrompt}
+      </Translation>
+
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.preferencesIntroPage.explanation}
+      </Translation>
+      <Translation tag='h4'>
+        {translations[locale].votingRegistration.preferencesIntroPage.partyHeadline}
+      </Translation>
+
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.preferencesIntroPage.partyExplanation}
+      </Translation>
+      <Translation tag='h4'>
+        {translations[locale].votingRegistration.preferencesIntroPage.byMailHeadline}
+      </Translation>
+
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.preferencesIntroPage.byMailExplanation}
+      </Translation>
+      <Translation tag='h4'>
+        {translations[locale].votingRegistration.preferencesIntroPage.languageHeadline}
+      </Translation>
+
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.preferencesIntroPage.languageExplanation}
+      </Translation>
+      <Translation tag='h4'>
+        {translations[locale].votingRegistration.preferencesIntroPage.contactInfoHeadline}
+      </Translation>
+
+      <Translation tag='p'>
+        {translations[locale].votingRegistration.preferencesIntroPage.contactInfoExplanation}
+      </Translation>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 import React              from 'react';
 import TextArea           from '../../text-area.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const EnterPreviousNames = (props) => {
   if (!props.showIf) { return null; }
@@ -11,8 +11,12 @@ const EnterPreviousNames = (props) => {
   return (
     <div className='enter-previous-names'>
       <hr />
-      {convertToHtml('h2', translations[locale].myHistory.nameHistoryPage.explanationPrompt, 'question')}
-      {convertToHtml('p', translations[locale].myHistory.nameHistoryPage.helpText)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myHistory.nameHistoryPage.explanationPrompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].myHistory.nameHistoryPage.helpText}
+      </Translation>
 
       <fieldset>
         <TextArea

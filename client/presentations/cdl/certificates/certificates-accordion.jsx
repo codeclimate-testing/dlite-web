@@ -2,8 +2,8 @@
 
 import React from 'react';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
 import Accordion          from '../../../containers/accordion.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale
@@ -13,18 +13,34 @@ const Form = (props) => {
         id='cdl-certificates-info'
         title={translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.title} >
 
-        {convertToHtml('p', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.header)}
+        <Translation tag='p'>
+          {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.header}
+        </Translation>
         <ul className='bullet-list'>
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[0])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[1])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[2])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[3])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[4])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[5])}
-          {convertToHtml('li', translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[6])}
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[0]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[1]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[2]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[3]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[4]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[5]}
+          </Translation>
+          <Translation tag='li'>
+            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.FAQMissingCertifications.body.listItems[6]}
+          </Translation>
         </ul>
       </Accordion>
-    )
+      )
   } else { return null; }
 };
 

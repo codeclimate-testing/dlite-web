@@ -6,18 +6,19 @@ import {
   hasSocialSecurityNo
 }   from '../../../helpers/data/ssn';
 import translations       from '../../../i18n';
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const NoInfo = (props) => {
   let locale = props.locale;
-  let translationPath = translations[locale].myBasics.socialSecurityPage;
 
   if (!hasSocialSecurityNo(props)) { return null; }
 
   return (
     <MessageBox className='info'>
       <div className='social-security-no-info'>
-        {convertToHtml('p', translationPath.messageNo)}
+        <Translation tag='p'>
+          {translations[locale].myBasics.socialSecurityPage.messageNo}
+        </Translation>
       </div>
     </MessageBox>
   );

@@ -6,14 +6,18 @@ import StateSelector      from '../../state-selector.jsx';
 import TextInput          from '../../text-input.jsx';
 import AddressTemplate    from '../../address-template.jsx';
 import translations       from '../../../i18n'
-import { convertToHtml }  from '../../../i18n/convert-to-html.jsx';
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
   return (
     <div className='home-address-form'>
-        {convertToHtml('h2', translations[locale].myBasics.addressesPage.prompt, 'question')}
-        {convertToHtml('p', translations[locale].myBasics.addressesPage.explanation)}
+      <Translation tag='h2' className='question'>
+        {translations[locale].myBasics.addressesPage.prompt}
+      </Translation>
+      <Translation tag='p'>
+        {translations[locale].myBasics.addressesPage.explanation}
+      </Translation>
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate
