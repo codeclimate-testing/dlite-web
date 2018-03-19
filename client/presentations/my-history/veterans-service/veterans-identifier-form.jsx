@@ -4,6 +4,7 @@ import React                    from 'react';
 import radioYesNoGroup          from '../../radio-yes-no-group.jsx';
 import RadioCollection          from '../../radio-selector-collection.jsx';
 import MessageBox               from '../../message-box.jsx';
+import Translator               from '../../../i18n/translator-tag.jsx';
 import { getDL }                from '../../../helpers/data/card-type';
 import {
   showIdentifierMessage,
@@ -15,31 +16,38 @@ import {
   keepOrAdd,
   isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
-  let locale = props.locale;
-  return <Translation tag='h2' className='question'>
-    {translations[locale].myHistory.veteransPage.keepDesignationPrompt.id}
-  </Translation>
+  return(
+    <Translator
+      tag             = 'h2'
+      className       = 'question'
+      translationPath = 'myHistory.veteransPage.keepDesignationPrompt.id'
+    />
+  );
 };
 
 const PreviousDLHeader = (props) => {
   if (!showPreviousDLHeader(props)) {return null; }
-  let locale = props.locale;
-  return <Translation tag='h2' className='question'>
-    {translations[locale].myHistory.veteransPage.keepDesignationPrompt.license}
-  </Translation>
+  return(
+    <Translator
+      tag             = 'h2'
+      className       = 'question'
+      translationPath = 'myHistory.veteransPage.keepDesignationPrompt.license'
+    />
+  );
 };
 
 const CardHeader = (props) => {
   if (isPreviouslyDesignated(props)) { return null; }
-  let locale = props.locale;
-  return <Translation tag='h2' className='question'>
-    {translations[locale].myHistory.veteransPage.newDesignation.prompt}
-  </Translation>
+  return(
+    <Translator
+      tag             = 'h2'
+      className       = 'question'
+      translationPath = 'myHistory.veteransPage.newDesignation.prompt'
+    />
+  );
 };
 
 
@@ -57,13 +65,14 @@ const Question = (props) => {
 
 const MessageAddAmount = (props) => {
   if (!showIdentifierMessage(props) || isPreviouslyDesignated(props)) { return null; }
-  let locale = props.locale;
+
   return (
-    <MessageBox className = 'info'>
+    <MessageBox className='info'>
       <div className='veteran-identifier-fee'>
-        <Translation tag='p'>
-          {translations[locale].myHistory.veteransPage.newDesignation.messageYes}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = 'myHistory.veteransPage.newDesignation.messageYes'
+        />
       </div>
     </MessageBox>
   );
@@ -74,9 +83,9 @@ const MessageRemovingDesignation = (props) => {
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <Translation tag='p' className='translation-missing'>
+        <span className='translation-missing'>
           OK, we will remove it.
-        </Translation>
+        </span>
       </div>
     </MessageBox>
   );
@@ -84,20 +93,20 @@ const MessageRemovingDesignation = (props) => {
 
 const VeteransIdentifier = (props) => {
   if(!props.showIf) { return null; }
-  let locale = props.locale;
   return (
     <div className='veterans-identifier-form'>
       <Question {...props} />
-      <Translation tag='p'>
-        {translations[locale].myHistory.veteransPage.newDesignation.explanation}
-      </Translation>
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.veteransPage.newDesignation.explanation'
+      />
       <div className='input-container'>
         <fieldset>
           <RadioCollection
             {...props}
-            name='veteransIdentifier'
+            name  = 'veteransIdentifier'
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

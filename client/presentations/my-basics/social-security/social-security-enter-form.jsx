@@ -2,6 +2,7 @@
 
 import React            from 'react';
 import NumberInput      from '../../number-input.jsx';
+import Translator       from '../../../i18n/translator-tag.jsx';
 import { hasValue }     from '../../../helpers/data/validations';
 import {
   ErrorIcon,
@@ -12,8 +13,6 @@ import {
 import {
   hasSocialSecurityYes
 } from '../../../helpers/data/ssn';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   if (!hasSocialSecurityYes(props)) { return null; }
@@ -26,17 +25,19 @@ const Form = (props) => {
   };
   let message = errorMessage(errors);
   let addError = errorClass(message);
-  let locale = props.locale;
 
   return (
     <div className='social-security-enter-form'>
       <hr />
-      <Translation tag='h2' className='question'>
-        {translations[locale].myBasics.socialSecurityPage.enterSocialNumber.prompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myBasics.socialSecurityPage.enterSocialNumber.explanation}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.prompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.explanation'
+      />
 
       <fieldset>
         <NumberInput

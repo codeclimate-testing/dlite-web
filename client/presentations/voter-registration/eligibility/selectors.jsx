@@ -4,9 +4,13 @@ import React                from 'react';
 import translations         from '../../../i18n';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
+import {
+  RadioSelectorYesTranslation,
+  RadioSelectorNoTranslation,
+  RadioSelectorDeclineTranslation
+} from '../../shared/translations-radio-selector.jsx';
 
 const Selectors = (props) => {
-  let locale = props.locale;
   return (
     <fieldset>
       <RadioCollection
@@ -15,15 +19,15 @@ const Selectors = (props) => {
       >
         <RadioSelector
           value='Yes'
-          text={translations[locale].shared.commonAnswers.yes}
+          text={<RadioSelectorYesTranslation />}
         />
         <RadioSelector
           value='No'
-          text={translations[locale].shared.commonAnswers.no}
+          text={<RadioSelectorNoTranslation />}
         />
         <RadioSelector
           value='decline'
-          text={translations[locale].shared.commonAnswers.declineToAnswer}
+          text={<RadioSelectorDeclineTranslation />}
         />
       </RadioCollection>
     </fieldset>

@@ -1,8 +1,8 @@
 'use strict';
 
-import React 					from 'react';
-import SelectDropdown	from './select-dropdown.jsx';
-import translations		from '../i18n';
+import React 						from 'react';
+import SelectDropdown		from './select-dropdown.jsx';
+import Translator				from '../i18n/translator-tag.jsx';
 
 const stateList = [
 	"AK",
@@ -58,7 +58,6 @@ const stateList = [
 ];
 
 const StateSelector = (props) => {
-	let locale = props.locale;
   return (
     <div className='select-input-block'>
 			<SelectDropdown
@@ -66,7 +65,7 @@ const StateSelector = (props) => {
 				id					= { props.id }
 				values			= { stateList }
 				onChange		= { props.onChange }
-				description	= {translations[locale].myBasics.addressesPage.stateLabel}
+				description	=	{ <Translator tag = 'span' translationPath = 'myBasics.addressesPage.stateLabel' /> }
 				selected		= { props.value }
 			/>
     </div>

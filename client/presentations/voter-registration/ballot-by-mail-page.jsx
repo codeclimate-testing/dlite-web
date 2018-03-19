@@ -6,8 +6,7 @@ import radioYesNoGroup      from '../radio-yes-no-group.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import MessageBox           from '../message-box.jsx';
 import Page                 from '../../containers/page.jsx';
-import translations         from '../../i18n';
-import Translation          from '../../i18n/translate-tag.jsx';
+import Translator           from '../../i18n/translator-tag.jsx';
 import { isYes, isNo }      from '../../helpers/data/validations';
 import { checkPreReg }      from '../../helpers/data/youth';
 
@@ -35,27 +34,31 @@ const InfoMessageNo = (props) => {
 };
 
 const BallotByMailPage = (props) => {
-  let locale = props.locale;
+
   return (
     <Page
       {...props}
       sectionKey={checkPreReg(props.dateOfBirth)}
     >
       <form onSubmit={props.onSubmit} className = 'ballot-by-mail-form'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].votingRegistration.byMailPage.pagePrompt}
-        </Translation>
-        <Translation tag='p'>
-          {translations[locale].votingRegistration.byMailPage.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'votingRegistration.byMailPage.pagePrompt'
+        />
+
+        <Translator
+          tag             = 'p'
+          translationPath = 'votingRegistration.byMailPage.explanation'
+        />
 
         <fieldset>
           <RadioCollection
             {...props}
              name          = 'ballotByMail'
-          errorMessage  = { props.validations.ballotByMail() }
+            errorMessage  = { props.validations.ballotByMail() }
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
 

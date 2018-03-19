@@ -1,12 +1,12 @@
 'use strict';
 
-export const keyLookup = (contentKey, translation) => {
+export const keyLookup = (translationPath, translation) => {
   try {
-    let contentKeys = contentKey.split('.');
-    let tempObject  = translation;
+    let translationPaths  = translationPath.split('.');
+    let tempObject        = translation;
 
-    for (var i in contentKeys){
-      tempObject = tempObject[contentKeys[i]]
+    for (var i in translationPaths){
+      tempObject = tempObject[translationPaths[i]]
     }
     return tempObject ? tempObject : '';
   }
@@ -15,7 +15,7 @@ export const keyLookup = (contentKey, translation) => {
   }
 }
 
-export const translateThis = (contentKey, props) => {
+export const translateThis = (translationPath, props) => {
   const defaultTranslation    = props.translations.default;
   const selectedTranslation   = props.translations.selected;
   const appLanguage           = props.language;
@@ -23,11 +23,11 @@ export const translateThis = (contentKey, props) => {
   let value = '';
 
   if(appLanguage !== 'en') {
-    value = keyLookup(contentKey, selectedTranslation);
+    value = keyLookup(translationPath, selectedTranslation);
   }
 
   if(!value) {
-    value = keyLookup(contentKey, defaultTranslation);
+    value = keyLookup(translationPath, defaultTranslation);
   }
 
   return { __html: value };

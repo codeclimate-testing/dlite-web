@@ -3,21 +3,22 @@
 import React              from 'react';
 import TextArea           from '../../text-area.jsx';
 import DateInput          from '../../date-input.jsx';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const EnterRevokedSuspended = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return (
     <div className='suspended-license-form'>
       <hr />
-      <Translation tag='h2' className='question'>
-        {translations[locale].myHistory.licenseIssuesPage.explanationPrompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myHistory.licenseIssuesPage.helpText}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myHistory.licenseIssuesPage.explanationPrompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.licenseIssuesPage.helpText'
+      />
 
       <fieldset>
         <DateInput
@@ -30,7 +31,7 @@ const EnterRevokedSuspended = (props) => {
         <TextArea
           { ...props }
           identifier   = 'reason'
-          description  = {translations[locale].myHistory.licenseIssuesPage.reasonLabel}
+          description  = { <Translator tag = 'span' translationPath = 'myHistory.licenseIssuesPage.reasonLabel' /> }
           value        = { props.licenseIssues.reason }
           errorMessage = { props.validations.reason() }
         />

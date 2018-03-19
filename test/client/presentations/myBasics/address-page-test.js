@@ -148,7 +148,9 @@ describe('AddressPage', function() {
       beforeEach(function() {
         props.cardType = ['ID'];
         component = render(
-          <ExplanatoryString {...props} />
+          <Wrapper>
+            <ExplanatoryString {...props} />
+          </Wrapper>
         );
       });
       it('shows ID string', function() {
@@ -169,7 +171,9 @@ describe('AddressPage', function() {
       beforeEach(function() {
         props.cardType = ['DL'];
         component = render(
-          <ExplanatoryString {...props}/>
+          <Wrapper>
+            <ExplanatoryString {...props}/>
+          </Wrapper>
         );
       });
 
@@ -191,9 +195,9 @@ describe('AddressPage', function() {
       beforeEach(function() {
         props.cardType = ['DL', 'ID'];
         component = render(
-          <ExplanatoryString
-            {...props}
-          />
+          <Wrapper>
+            <ExplanatoryString {...props} />
+          </Wrapper>
         );
       });
       it('does not show ID string', function() {

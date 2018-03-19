@@ -4,10 +4,11 @@ import React                  from 'react';
 import { connect }            from 'react-redux';
 import { translateThis }      from '../helpers/data/translator';
 
-const Translate = (props) => {
-  const Tag           = props.tag;
-  const contentKey    = props.contentKey;
-  let translatedValue = translateThis(contentKey, props);
+const Translator = (props) => {
+  const Tag                 = props.tag;
+  const translationPath     = props.translationPath;
+  let translatedValue       = translateThis(translationPath, props);
+
   return (
     <Tag
       className               = { props.className }
@@ -24,4 +25,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Translate);
+export default connect(mapStateToProps)(Translator);

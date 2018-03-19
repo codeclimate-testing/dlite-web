@@ -1,4 +1,5 @@
 'use strict';
+
 import React                from 'react';
 import FAQ                  from './eligibility/faq.jsx';
 import IntroContent         from './eligibility/intro-content.jsx';

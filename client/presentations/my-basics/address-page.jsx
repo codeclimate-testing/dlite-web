@@ -29,7 +29,6 @@ const AddressPage = (props) => {
         >
           <ExplanatoryString
             cardType      = { props.cardType }
-            locale        = { props.locale }
           />
         </MailingSameAsHome>
         <MailingAddress

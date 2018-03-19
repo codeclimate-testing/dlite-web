@@ -4,20 +4,27 @@ import React from 'react';
 
 import TextInput        from '../../text-input.jsx';
 import RadioSelector    from '../../radio-selector.jsx';
+import Translator       from '../../../i18n/translator-tag.jsx';
 import {
   ErrorIcon,
   ErrorLabel,
   errorClass
 } from '../../validations.jsx';
-import translations     from '../../../i18n';
 
+const ChoosePartyPageAnswerOther = () =>{
+  return (
+    <Translator
+      tag             = 'span'
+      translationPath = 'votingRegistration.choosePartyPage.answerOther'
+    />
+  );
+}
 const OtherPartyRadio = (props) => {
-  let locale = props.locale;
   return (
     <RadioSelector
       {...props}
-      value='Other'
-      text={translations[locale].votingRegistration.choosePartyPage.answerOther}
+      value = 'Other'
+      text  = { <ChoosePartyPageAnswerOther/> }
     />
   );
 };
@@ -40,9 +47,9 @@ const OtherPartyEntry = (props) => {
       </div>
       <RadioSelector
         {...props}
-        value=''
-        text=''
-        selected = { true }
+        value     = ''
+        text      = ''
+        selected  = { true }
       >
         <TextInput
           {...props}
@@ -51,6 +58,7 @@ const OtherPartyEntry = (props) => {
           value         = { props.politicalPartyChoose.otherParty }
           error         = { error}
           placeholder   = 'Please enter your selection'
+          className     = 'translation-missing'
         />
       </RadioSelector>
     </div>

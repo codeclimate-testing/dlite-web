@@ -3,26 +3,28 @@
 import React              from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const VeteransQuestionnaire = (props) => {
-  let locale = props.locale;
+
   return (
     <div className='veterans-questionnaire-form'>
-      <Translation tag='h2' className='question'>
-        {translations[locale].myHistory.veteransPage.pagePrompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myHistory.veteransPage.explanationStart}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myHistory.veteransPage.pagePrompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.veteransPage.explanationStart'
+      />
       <div>
         <fieldset>
           <RadioCollection
             {...props}
-            name='isVeteran'
+            name  = 'isVeteran'
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

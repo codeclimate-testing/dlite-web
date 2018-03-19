@@ -8,7 +8,7 @@ import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 
 const LegalNameForm = (props) => {
   let locale = props.locale;
@@ -20,47 +20,50 @@ const LegalNameForm = (props) => {
       {...props}
     >
       <form onSubmit={ props.onSubmit } className='legal-name-form'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.namePage.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translations[locale].intro.namePage.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.namePage.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.namePage.explanation'
+        />
 
         <fieldset>
           <TextInput
             {...props}
-            identifier='firstName'
-            description={translations[locale].shared.labels.firstName}
-            value={props.legalName.firstName}
-            errorMessage={ props.validations.firstName() }
+            identifier    = 'firstName'
+            description   = { <Translator tag = 'span' translationPath = 'shared.labels.firstName' /> }
+            value         = { props.legalName.firstName }
+            errorMessage  = { props.validations.firstName() }
           />
 
           <TextInput
             {...props}
-            identifier='middleName'
-            description={translations[locale].shared.labels.middleName}
-            value={props.legalName.middleName}
-            errorMessage={ props.validations.middleName() }
+            identifier    = 'middleName'
+            description   = { <Translator tag = 'span' translationPath = 'shared.labels.middleName' /> }
+            value         = { props.legalName.middleName }
+            errorMessage  = { props.validations.middleName() }
           />
 
           <TextInput
             {...props}
-            identifier='lastName'
-            description={translations[locale].shared.labels.lastName}
-            value={props.legalName.lastName}
-            errorMessage={ props.validations.lastName() }
+            identifier    = 'lastName'
+            description   = { <Translator tag = 'span' translationPath = 'shared.labels.lastName' /> }
+            value         = { props.legalName.lastName }
+            errorMessage  = { props.validations.lastName() }
           />
 
           <SelectDropdown
-            name='suffix'
-            id  = 'suffix'
-            selected={ props.legalName.suffix }
-            hover={ props.hover }
-            onChange={ props.onSelectChange }
-            changeAction={ props.changeAction }
-            values={ suffixValues }
-            description={translations[locale].intro.namePage.suffixLabel}
+            name          = 'suffix'
+            id            = 'suffix'
+            selected      = { props.legalName.suffix }
+            hover         = { props.hover }
+            onChange      = { props.onSelectChange }
+            changeAction  = { props.changeAction }
+            values        = { suffixValues }
+            description   = { <Translator tag = 'span' translationPath = 'intro.namePage.suffixLabel' /> }
           />
         </fieldset>
 

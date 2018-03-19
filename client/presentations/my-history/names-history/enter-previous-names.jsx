@@ -2,27 +2,29 @@
 
 import React              from 'react';
 import TextArea           from '../../text-area.jsx';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const EnterPreviousNames = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
+
   return (
     <div className='enter-previous-names'>
       <hr />
-      <Translation tag='h2' className='question'>
-        {translations[locale].myHistory.nameHistoryPage.explanationPrompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myHistory.nameHistoryPage.helpText}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myHistory.nameHistoryPage.explanationPrompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.nameHistoryPage.helpText'
+      />
 
       <fieldset>
         <TextArea
           {...props}
           identifier='previousNames'
-          description={ translations[locale].summaryPage.myHistory.previousNames }
+          description={ <Translator tag = 'span' translationPath = 'summaryPage.myHistory.previousNames' /> }
           value      = { props.namesHistory.previousNames }
           errorMessage  = { props.validations.previousNames() }
         />

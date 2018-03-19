@@ -1,8 +1,7 @@
 'use strict';
 
 import React                  from 'react';
-import translations           from '../../../i18n';
-import Translate              from '../../../i18n/translate-tag.jsx';
+import Translator             from '../../../i18n/translator-tag.jsx';
 import StopCitizensOnly       from './stop-citizens-only.jsx';
 
 const VoterIntroPrereg = (props) => {
@@ -11,20 +10,22 @@ const VoterIntroPrereg = (props) => {
     <div className='voter-intro-info'>
       <StopCitizensOnly {...props}/>
 
-      <Translate tag='h2'>
-        { translations[locale].votingRegistration.preRegIntroductionPage.pagePrompt }
-      </Translate>
+      <Translator
+        tag               = 'h2'
+        translationPath   = 'votingRegistration.preRegIntroductionPage.pagePrompt'
+      />
 
-      <Translate tag='p'>
-        { translations[locale].votingRegistration.preRegIntroductionPage.explanation }
-      </Translate>
+      <Translator
+        tag               = 'p'
+        translationPath   = 'votingRegistration.preRegIntroductionPage.explanation'
+      />
 
-      <Translate tag='p'>
-        { translations[locale].votingRegistration.introductionPage.timeItWillTake }
-      </Translate>
+      <Translator
+        tag               = 'p'
+        translationPath   = 'votingRegistration.introductionPage.timeItWillTake'
+      />
     </div>
   );
 };
-
 
 export default VoterIntroPrereg;

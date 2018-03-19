@@ -1,8 +1,7 @@
 'use strict';
 
-import React                from 'react';
-import translations         from '../../../i18n';
-import Translate            from '../../../i18n/translate-tag.jsx';
+import React               from 'react';
+import Translator          from '../../../i18n/translator-tag.jsx';
 import {
   showID,
   showDL,
@@ -13,28 +12,27 @@ import {
 const CardString = (props) => {
   if (!props.showIf) { return null; }
   return (
-    <Translate tag='p'>
+    <span className='translation-missing'>
       {props.text}
-    </Translate>
+    </span>
   )
 };
 
 
 const ExplanatoryString = (props) => {
-  let locale = props.locale;
   return (
     <div>
       <CardString
-        showIf  = {showID(props)}
-        text    = {translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.ID}
+        showIf  = { showID(props) }
+        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.ID' /> }
       />
       <CardString
-        showIf  = {showDL(props)}
-        text    = {translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.license}
+        showIf  = { showDL(props) }
+        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.license' /> }
       />
       <CardString
-        showIf  = {showBoth(props)}
-        text    = {translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.cards}
+        showIf  = { showBoth(props) }
+        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.cards' /> }
       />
     </div>
   )

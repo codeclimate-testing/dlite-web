@@ -1,49 +1,61 @@
 'use strict';
 
 import React          from 'react';
-import translations   from '../../../i18n';
-import Translation    from '../../../i18n/translate-tag.jsx';
+import Translator     from '../../../i18n/translator-tag.jsx';
 
 const VoterPreferencesIntro = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return (
     <div className='voter-preferences-intro'>
-      <Translation tag='h2' className='question'>
-        {translations[locale].votingRegistration.preferencesIntroPage.pagePrompt}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'votingRegistration.preferencesIntroPage.pagePrompt'
+      />
 
-      <Translation tag='p'>
-        {translations[locale].votingRegistration.preferencesIntroPage.explanation}
-      </Translation>
-      <Translation tag='h4'>
-        {translations[locale].votingRegistration.preferencesIntroPage.partyHeadline}
-      </Translation>
+      <Translator
+        tag             = 'p'
+        translationPath = 'votingRegistration.preferencesIntroPage.explanation'
+      />
+      <Translator
+        tag             = 'h4'
+        translationPath = 'votingRegistration.preferencesIntroPage.partyHeadline'
+      />
 
-      <Translation tag='p'>
-        {translations[locale].votingRegistration.preferencesIntroPage.partyExplanation}
-      </Translation>
-      <Translation tag='h4'>
-        {translations[locale].votingRegistration.preferencesIntroPage.byMailHeadline}
-      </Translation>
+      <Translator
+        tag             = 'p'
+        translationPath = 'votingRegistration.preferencesIntroPage.partyExplanation'
+      />
 
-      <Translation tag='p'>
-        {translations[locale].votingRegistration.preferencesIntroPage.byMailExplanation}
-      </Translation>
-      <Translation tag='h4'>
-        {translations[locale].votingRegistration.preferencesIntroPage.languageHeadline}
-      </Translation>
+      <Translator
+        tag             = 'h4'
+        translationPath = 'votingRegistration.preferencesIntroPage.byMailHeadline'
+      />
 
-      <Translation tag='p'>
-        {translations[locale].votingRegistration.preferencesIntroPage.languageExplanation}
-      </Translation>
-      <Translation tag='h4'>
-        {translations[locale].votingRegistration.preferencesIntroPage.contactInfoHeadline}
-      </Translation>
+      <Translator
+        tag             = 'p'
+        translationPath = 'votingRegistration.preferencesIntroPage.byMailExplanation'
+      />
 
-      <Translation tag='p'>
-        {translations[locale].votingRegistration.preferencesIntroPage.contactInfoExplanation}
-      </Translation>
+      <Translator
+        tag             = 'h4'
+        translationPath = 'votingRegistration.preferencesIntroPage.languageHeadline'
+      />
+
+      <Translator
+        tag             = 'p'
+        translationPath = 'votingRegistration.preferencesIntroPage.languageExplanation'
+      />
+
+      <Translator
+        tag             = 'h4'
+        translationPath = 'votingRegistration.preferencesIntroPage.contactInfoHeadline'
+      />
+
+      <Translator
+        tag             = 'p'
+        translationPath = 'votingRegistration.preferencesIntroPage.contactInfoExplanation'
+      />
     </div>
   );
 };

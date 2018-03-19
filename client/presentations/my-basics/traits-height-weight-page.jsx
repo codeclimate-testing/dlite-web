@@ -4,18 +4,15 @@ import React              from 'react';
 import NumberInput        from '../number-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Page               from '../../containers/page.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 import {
   ErrorIcon,
   ErrorLabel,
   errorMessage,
   errorClass
 } from '../validations.jsx';
-import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
 
 const TraitsPage = (props) => {
-  let locale = props.locale;
-  const translationPath = translations[locale].myBasics.heightWeightPage;
 
   let errors = {
     heightFeet:   props.validations.heightFeet(),
@@ -31,36 +28,39 @@ const TraitsPage = (props) => {
       sectionKey='myBasics'
     >
       <form onSubmit={ props.onSubmit } className='traits-height-weight-form' >
-        <Translation tag='h2' className='question'>
-          {translationPath.height.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translationPath.height.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'myBasics.heightWeightPage.height.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'myBasics.heightWeightPage.height.explanation'
+        />
 
         <fieldset>
           <NumberInput
             {...props}
-            identifier='heightFeet'
-            description={translationPath.height.feetLabel}
-            value={ props.traitsHeightWeight.heightFeet }
-            errorMessage={ props.validations.heightFeet() }
-            onChange      = { props.onChange }
-            onBlurValidate = { props.onBlurValidate }
-            onFocusClearValidation = { props.onFocusClearValidation }
+            identifier              = 'heightFeet'
+            description             =  { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.feetLabel' /> }
+            value                   = { props.traitsHeightWeight.heightFeet }
+            errorMessage            = { props.validations.heightFeet() }
+            onChange                = { props.onChange }
+            onBlurValidate          = { props.onBlurValidate }
+            onFocusClearValidation  = { props.onFocusClearValidation }
           />
 
           <div className='unit spacer' />
 
           <NumberInput
             {...props}
-            identifier='heightInches'
-            description={translationPath.height.inchesLabel}
-            value={ props.traitsHeightWeight.heightInches }
-            errorMessage={ props.validations.heightInches() }
-            onChange      = { props.onChange }
-            onBlurValidate = { props.onBlurValidate }
-            onFocusClearValidation = { props.onFocusClearValidation }
+            identifier              = 'heightInches'
+            description             =  { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.inchesLabel' /> }
+            value                   = { props.traitsHeightWeight.heightInches }
+            errorMessage            = { props.validations.heightInches() }
+            onChange                = { props.onChange }
+            onBlurValidate          = { props.onBlurValidate }
+            onFocusClearValidation  = { props.onFocusClearValidation }
           />
         </fieldset>
         <div className='row'>
@@ -71,23 +71,26 @@ const TraitsPage = (props) => {
         </div>
 
         <hr />
-        <Translation tag='h2' className='question'>
-          {translationPath.weight.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translationPath.weight.explanation}
-        </Translation>
+        <Translator
+          tag='h2'
+          className='question'
+          translationPath = 'myBasics.heightWeightPage.weight.prompt'
+        />
+        <Translator
+          tag='p'
+          translationPath = 'myBasics.heightWeightPage.weight.explanation'
+        />
 
         <fieldset>
           <NumberInput
             {...props}
-            identifier='weight'
-            description={translationPath.weight.poundsLabel}
-            value={ props.traitsHeightWeight.weight }
-            errorMessage={ props.validations.weight() }
-            onChange      = { props.onChange }
-            onBlurValidate = { props.onBlurValidate }
-            onFocusClearValidation = { props.onFocusClearValidation }
+            identifier              = 'weight'
+            description             = { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.weight.poundsLabel' /> }
+            value                   = { props.traitsHeightWeight.weight }
+            errorMessage            = { props.validations.weight() }
+            onChange                = { props.onChange }
+            onBlurValidate          = { props.onBlurValidate }
+            onFocusClearValidation  = { props.onFocusClearValidation }
           />
         </fieldset>
         <div className='row'>

@@ -19,7 +19,7 @@ const SocialPage = (props) => {
         <SocialSecurityOption
           {...props}
           selectedValue = { props.socialSecurity.hasSocialSecurity }
-          errorMessage = {props.validations.hasSocialSecurity()}
+          errorMessage  = { props.validations.hasSocialSecurity() }
         />
 
         <SocialSecurityEnter
@@ -33,7 +33,7 @@ const SocialPage = (props) => {
 
         <NavigationButtons
           {...props}
-          errorMessage={props.validations.all()}
+          errorMessage  = { props.validations.all() }
         />
       </form>
     </Page>

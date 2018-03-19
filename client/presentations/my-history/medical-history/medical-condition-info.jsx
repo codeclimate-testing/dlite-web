@@ -5,7 +5,7 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 
 const MedicalCondition = (props) => {
-  let locale = props.locale;
+
   return (
     <div className='medical-condition-form'>
       <fieldset>
@@ -14,7 +14,7 @@ const MedicalCondition = (props) => {
           name  = 'hasMedicalCondition'
           errorMessage = { props.validations.hasMedicalCondition() }
         >
-          { radioYesNoGroup(locale) }
+          { radioYesNoGroup() }
         </RadioCollection>
       </fieldset>
     </div>

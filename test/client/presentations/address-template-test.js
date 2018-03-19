@@ -1,15 +1,17 @@
 'use strict';
 
-import assert     from 'assert';
+import assert                   from 'assert';
 
-import React      from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import sinon      from 'sinon';
-
-import AddressForm from '../../../client/presentations/address-template.jsx';
+import React                    from 'react';
+import configure                from '../support/configure-enzyme';
+import { render }               from 'enzyme';
+import sinon                    from 'sinon';
+import wrapperGenerator         from '../support/wrapper';
+import store                    from '../support/page-store';
+import AddressForm              from '../../../client/presentations/address-template.jsx';
 
 describe('AddressTemplateForm', function() {
+  const Wrapper = wrapperGenerator(store);
   let stateData = {
     homeAddressSameAsMailing: '',
     home: {
@@ -45,14 +47,16 @@ describe('AddressTemplateForm', function() {
 
   beforeEach(function() {
     component = render(
-      <AddressForm
-        type        = 'home'
-        address     = { stateData }
-        onChange    = { sinon.spy() }
-        onSubmit    = { sinon.spy() }
-        validations = { validations}
-        locale      = 'en'
-      />
+      <Wrapper>
+        <AddressForm
+          type        = 'home'
+          address     = { stateData }
+          onChange    = { sinon.spy() }
+          onSubmit    = { sinon.spy() }
+          validations = { validations}
+          locale      = 'en'
+        />
+      </Wrapper>
     );
   });
 

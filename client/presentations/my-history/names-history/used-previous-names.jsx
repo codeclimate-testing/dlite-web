@@ -5,16 +5,15 @@ import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 
 const UsedPreviousNames = (props) => {
-  let locale = props.locale;
   return (
     <div className='previous-names-form'>
       <fieldset>
         <RadioCollection
           {...props}
-          name='hasUsedPreviousNames'
+          name          = 'hasUsedPreviousNames'
           errorMessage  = { props.validations.hasUsedPreviousNames() }
         >
-          { radioYesNoGroup(locale) }
+          { radioYesNoGroup() }
         </RadioCollection>
       </fieldset>
     </div>

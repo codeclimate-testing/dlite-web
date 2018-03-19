@@ -6,29 +6,30 @@ import Page               from '../../containers/page.jsx';
 import TextInput          from '../text-input.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
-import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 import CDLUnder21         from '../cdl/dob-under21.jsx';
 
 const Presentation = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <form onSubmit={ props.onSubmit } className='date-of-birth-form'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.dateOfBirthPage.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translations[locale].intro.dateOfBirthPage.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.dateOfBirthPage.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.dateOfBirthPage.explanation'
+        />
 
         <fieldset>
           <DateInput
             {...props}
-            title       = { translations[locale].shared.labels.dateOfBirth }
+            title       = { <Translator tag = 'span' translationPath = 'shared.labels.dateOfBirth' /> }
             values      = { props.dateOfBirth }
           />
         </fieldset>

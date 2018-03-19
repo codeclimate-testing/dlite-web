@@ -4,7 +4,7 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const HairColor = (props) => {
   let locale = props.locale;
@@ -13,9 +13,11 @@ const HairColor = (props) => {
   return (
     <div className='hair-color'>
       <hr />
-      <Translation tag='h2' className='question'>
-        {translationPath.prompt}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myBasics.traitsPage.hairColor.prompt'
+      />
       <div>
         <fieldset>
           <RadioCollection

@@ -4,18 +4,11 @@ import React from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import { getDL }          from '../../../helpers/data/card-type';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const VeteransPreviousDesignation = (props) => {
-  let locale = props.locale;
-  const headerDL = <Translation tag='h2' className='question'>
-    {translations[locale].myHistory.veteransPage.existingDesignation.promptLicense}
-  </Translation>
-
-  const headerID = <Translation tag='h2' className='question'>
-    {translations[locale].myHistory.veteransPage.existingDesignation.promptID}
-  </Translation>
+  const headerDL = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptLicense' />
+  const headerID = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptID' />
 
   if (!props.showIf) { return null; }
 
@@ -28,9 +21,9 @@ const VeteransPreviousDesignation = (props) => {
         <fieldset>
           <RadioCollection
             {...props}
-            name='previouslyDesignated'
+            name  = 'previouslyDesignated'
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

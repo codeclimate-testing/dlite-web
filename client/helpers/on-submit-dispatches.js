@@ -46,18 +46,17 @@ export const applicationLanguageSubmit = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();
 
-    let choiceNotMade = !languageIsSelected(stateProps.language);
-    let choiceIsEnglish = stateProps.language == 'en';
+    let choiceMade        = languageIsSelected(stateProps.language);
+    let nonEnglishChoice  = stateProps.language !== 'en';
 
-    if (choiceNotMade) {
+    if (!choiceMade) {
       dispatch(updateLanguage('language', 'en'));
     }
 
-    if (choiceNotMade || choiceIsEnglish) {
-      //Do not call for translations.
-    } else {
+    if (choiceMade && nonEnglishChoice) {
       getTranslation(stateProps.language)(dispatch);
     }
+
     return ownProps.history.push(
       nextPath('chooseLanguage', stateProps)
     );

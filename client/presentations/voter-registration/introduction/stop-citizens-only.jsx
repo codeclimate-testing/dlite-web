@@ -1,8 +1,7 @@
 'use strict';
 
-import React from 'react';
-import Translate from '../../../i18n/translate-tag.jsx';
-import translations from '../../../i18n';
+import React        from 'react';
+import Translator   from '../../../i18n/translator-tag.jsx';
 
 const StopCitizensOnly = (props) => {
   let locale = props.locale;
@@ -13,9 +12,11 @@ const StopCitizensOnly = (props) => {
         alt='Stop'
         className='unit'
       />
-      <Translate tag='h5' className='unit'>
-        { translations[locale].votingRegistration.introductionPage.citizenOnlyDisclaimer }
-      </Translate>
+      <Translator
+        tag               = 'h5'
+        className         = 'unit'
+        translationPath   = 'votingRegistration.introductionPage.citizenOnlyDisclaimer'
+      />
       <hr className='last-unit mid-line' />
     </div>
   );

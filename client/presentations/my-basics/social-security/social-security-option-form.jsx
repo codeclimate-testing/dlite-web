@@ -3,28 +3,29 @@
 import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
 
   return (
     <div className='social-security-option-form'>
-      <Translation tag='h2' className='question'>
-        {translations[locale].myBasics.socialSecurityPage.prompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myBasics.socialSecurityPage.explanation}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myBasics.socialSecurityPage.prompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myBasics.socialSecurityPage.explanation'
+      />
       <div className='input-container'>
         <fieldset>
           <RadioCollection
             {...props}
-            name='hasSocialSecurity'
-            errorMessage={ props.validations.ssnAll() }
+            name          = 'hasSocialSecurity'
+            errorMessage  = { props.validations.ssnAll() }
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

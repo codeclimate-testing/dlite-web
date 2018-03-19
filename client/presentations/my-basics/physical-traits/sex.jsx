@@ -4,17 +4,17 @@ import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
 import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const Sex = (props) => {
   let locale = props.locale;
-  const translationPath = translations[locale].myBasics.traitsPage.sex;
-
   return (
     <div className="sex">
-      <Translation tag='h2' className='question'>
-        {translationPath.prompt}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myBasics.traitsPage.sex.prompt'
+      />
       <div>
         <fieldset>
           <RadioCollection
@@ -23,11 +23,11 @@ const Sex = (props) => {
           >
             <RadioSelector
               value='Female'
-              text={translationPath.values[1]}
+              text={translations[locale].myBasics.traitsPage.sex.values[1]}
             />
             <RadioSelector
               value='Male'
-              text={translationPath.values[0]}
+              text={translations[locale].myBasics.traitsPage.sex.values[0]}
             />
           </RadioCollection>
         </fieldset>

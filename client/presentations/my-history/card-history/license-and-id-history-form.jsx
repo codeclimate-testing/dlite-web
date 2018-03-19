@@ -3,8 +3,7 @@
 import React              from 'react';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 import {
   IDOnly
@@ -12,34 +11,39 @@ import {
 
 const OnlyIDHeader = (props) => {
   if (!IDOnly(props)) { return null; }
-  let locale = props.locale;
+
   return (
     <div className="applying-for-only-id">
-      <Translation tag='h2' className='question'>
-        {translations[locale].myHistory.cardHistoryPage.pagePromptID}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myHistory.cardHistoryPage.pagePromptID'
+      />
     </div>
   );
 };
 
 const IDAndDLHeader = (props) => {
   if (IDOnly(props)) { return null; }
-  let locale = props.locale;
+
   return (
     <div className="applying-for-dl">
-      <Translation tag='h2' className='question'>
-        {translations[locale].myHistory.cardHistoryPage.pagePromptLicense}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myHistory.cardHistoryPage.explanation}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myHistory.cardHistoryPage.pagePromptLicense'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.cardHistoryPage.explanation'
+      />
     </div>
   );
 };
 
 
 const LicenseAndIdHistory = (props) => {
-  let locale = props.locale;
+
   return (
     <div className='license-and-id-history-form'>
       <OnlyIDHeader
@@ -55,10 +59,10 @@ const LicenseAndIdHistory = (props) => {
         <fieldset>
           <RadioCollection
             {...props}
-            name='isIssued'
-            errorMessage = { props.validations.isIssued() }
+            name          = 'isIssued'
+            errorMessage  = { props.validations.isIssued() }
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

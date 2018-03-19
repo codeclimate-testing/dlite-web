@@ -2,7 +2,6 @@
 
 import React        from 'react';
 import errorClass   from '../helpers/validations/error-class';
-import { hasValue } from '../helpers/data/validations';
 import {
   ErrorIcon,
   ErrorLabel
@@ -10,7 +9,7 @@ import {
 import ExampleLabel from './example-label.jsx';
 
 const Label = (props) => {
-  if (!hasValue(props.description)) { return null; }
+  if (!(props.description)) { return null; }
   return (
     <label
       htmlFor         = { props.identifier }

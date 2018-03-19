@@ -8,14 +8,16 @@ import Accordion            from '../../containers/accordion.jsx';
 import RegIntro             from './introduction/introduction.jsx';
 import PreRegIntro          from './introduction/introduction-prereg.jsx';
 import Page                 from '../../containers/page.jsx';
-import translations         from '../../i18n';
 import { checkPreReg }      from '../../helpers/data/youth';
 import { isPreregistering } from '../../helpers/calculate-age';
-import Translate            from '../../i18n/translate-tag.jsx';
 import Translator           from '../../i18n/translator-tag.jsx';
+import {
+  RadioSelectorYesTranslation,
+  RadioSelectorNoTranslation,
+  RadioSelectorDeclineTranslation
+} from '../shared/translations-radio-selector.jsx';
 
 const declineStatement = (props) => {
-
   if (isPreregistering(props.dateOfBirth)) {
     return  'votingRegistration.shared.declineToAnswerInformationPreRegistration';
   } else {
@@ -28,9 +30,17 @@ const VoterIntro = (props) => {
   return isPreregistering(props.dateOfBirth) ? <PreRegIntro {...props}/> : <RegIntro {...props}/>;
 };
 
+const AccordionTitle = () => {
+  return (
+    <Translator
+      tag               = 'span'
+      translationPath   = 'votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen'
+    />
+  );
+};
+
 const CitizenStatusPage = (props) => {
   let showPreReg = isPreregistering(props.dateOfBirth);
-  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -42,14 +52,14 @@ const CitizenStatusPage = (props) => {
 
      <form onSubmit={props.onSubmit} className = 'citizen-status-form'>
         <Translator
-          tag           = 'h2'
-          className     = 'question'
-          contentKey    = 'votingRegistration.citizenshipPage.pagePrompt'
+          tag               = 'h2'
+          className         = 'question'
+          translationPath   = 'votingRegistration.citizenshipPage.pagePrompt'
         />
 
         <Translator
-          tag         = 'p'
-          contentKey  = { declineStatement(props) }
+          tag               = 'p'
+          translationPath   = { declineStatement(props) }
         />
 
         <fieldset>
@@ -58,25 +68,28 @@ const CitizenStatusPage = (props) => {
             name='citizenStatus'
           >
           <RadioSelector
-            value='Yes'
-            text={translations[locale].shared.commonAnswers.yes}
+            value = 'Yes'
+            text  = {<RadioSelectorYesTranslation />}
           />
           <RadioSelector
-            value='No'
-            text={translations[locale].shared.commonAnswers.no}
+            value = 'No'
+            text  = {<RadioSelectorNoTranslation />}
           />
           <RadioSelector
-            value='decline'
-            text={translations[locale].shared.commonAnswers.declineToAnswer}
+            value = 'decline'
+            text  = {<RadioSelectorDeclineTranslation />}
           />
           </RadioCollection>
         </fieldset>
 
         <Accordion
-          id='what-if-not-citizen'
-          title={translations[locale].votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen}
+          id     = 'what-if-not-citizen'
+          title  = {<AccordionTitle />}
         >
-          {translations[locale].votingRegistration.citizenshipPage.faqAnswerWhatIfNotCitizen}
+          <Translator
+            tag               = 'p'
+            translationPath   = 'votingRegistration.citizenshipPage.faqAnswerWhatIfNotCitizen'
+          />
         </Accordion>
 
         <NavigationButtons {...props} />

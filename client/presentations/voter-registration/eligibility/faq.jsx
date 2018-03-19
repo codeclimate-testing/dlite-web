@@ -1,12 +1,10 @@
 'use strict';
 import React                from 'react';
 import Accordion            from '../../../containers/accordion.jsx';
-import translations         from '../../../i18n';
 import { isPreregistering } from '../../../helpers/calculate-age';
-import Translate            from '../../../i18n/translate-tag.jsx';
+import Translator           from '../../../i18n/translator-tag.jsx';
 
-const FAQcontentsPreReg = (props) => {
-  let locale = props.locale;
+const FAQContentsPreReg = (props) => {
   return (
     <p className='translation-missing'>
       'If you don\'t meet all the requirements, you are not eligible to pre-register to vote.',
@@ -14,30 +12,35 @@ const FAQcontentsPreReg = (props) => {
   );
 };
 
-const FAQcontentsReg = (props) => {
-  let locale = props.locale;
+const FAQContentsReg = (props) => {
   return (
-    <Translate tag='p'>
-      { translations[locale].votingRegistration.eligibilityPage.faqAnswerWhatIfDontMeetRequirements }
-    </Translate>
+    <Translator
+      tag             = 'p'
+      translationPath = 'votingRegistration.eligibilityPage.faqAnswerWhatIfDontMeetRequirements'
+    />
   );
 };
 
-const FAQcontents = (props) => {
-  return isPreregistering(props.dateOfBirth) ? <FAQcontentsPreReg {...props}/> : <FAQcontentsReg {...props}/>;
+const FAQContents = (props) => {
+  return isPreregistering(props.dateOfBirth) ? <FAQContentsPreReg {...props}/> : <FAQContentsReg {...props}/>;
 };
 
+const AccordionTitle = () => {
+  return (
+    <Translator
+      tag             = 'span'
+      translationPath = 'votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements'
+    />
+  );
+}
 const FAQ = (props) => {
-  let locale = props.locale;
-  const accordionTitle =  translations[locale].votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements;
 
   return (
     <Accordion
-      title={accordionTitle}
-      id='dont-meet-eligibility-requirments'
+      title={<AccordionTitle />}
+      id='dont-meet-eligibility-requirements'
     >
-      <FAQcontents {...props} />
-
+      <FAQContents {...props} />
       <p className='translation-missing'>
         Your response to this question <b>will not</b> be shared with election officials.
       </p>

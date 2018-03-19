@@ -3,7 +3,6 @@
 import React                        from 'react';
 import NavigationButtons            from '../navigation-buttons.jsx';
 import Page                         from '../../containers/page.jsx';
-
 import EnterIssues                  from './license-issues/enter-revoked-suspended-form.jsx';
 import LicenseIssues                from './license-issues/license-issues-form.jsx';
 import { licenseIssuesIsSuspended } from '../../helpers/data/my-history';

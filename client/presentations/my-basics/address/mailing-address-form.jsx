@@ -2,22 +2,24 @@
 
 import React              from 'react';
 import AddressTemplate    from '../../address-template.jsx';
-import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 import { notSameAsHome }  from '../../../helpers/data/address';
 
 const Form = (props) => {
   if(!notSameAsHome(props)) { return null; }
-  let locale = props.locale;
+
   return (
     <div className='mailing-address-form'>
       <hr />
-      <Translation tag='h2' className='question'>
-        {translations[locale].myBasics.addressesPage.mailingAddressPrompt}
-      </Translation>
-      <Translation tag='p'>
-        {translations[locale].myBasics.addressesPage.explanation}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'myBasics.addressesPage.mailingAddressPrompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'myBasics.addressesPage.explanation'
+      />
       <div className='addresses-section'>
         <fieldset>
           <AddressTemplate
