@@ -8,7 +8,7 @@ function check(req, res, next) {
 };
 
 module.exports = function(app) {
-  app.use(cookieParser());
+  app.use(cookieParser(process.env.EXPRESS_SESSION_SECRET));
   app.use(csrf({ cookie: true, value: (req) => (req.cookies.csrfToken) }));
   app.use(check)
 };

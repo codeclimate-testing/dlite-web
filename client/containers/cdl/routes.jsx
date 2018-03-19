@@ -34,8 +34,7 @@ const CDLRoutes = () => {
   return (
     <div>
 
-      <Route path={ cdlPath('/sign-in') }                               component={IDMe} />
-
+      <Route path={ cdlPath('/sign-in')}                                component={IDMe}      />
       <Route path={ cdlPath('/true-name')}                              component={LegalName}  />
       <Route path={ editCDLPath('/true-name')}                          component={LegalName}  />
 

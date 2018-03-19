@@ -6,6 +6,9 @@ import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Presentation = (props) => {
+  let appName = props.location.pathname.includes('id-and-license') ? 'id-and-license' : 'cdl';
+  const newAuthURL = `/auth/new/${appName}`;
+
   return (
     <Page
       {...props}
@@ -28,7 +31,7 @@ const Presentation = (props) => {
             <p className='or'>Or</p>
           </div>
 
-          <a href='/auth/new' className='button translation-missing id-me-sign-in'>
+          <a href={newAuthURL} className='button translation-missing id-me-sign-in'>
             <div className='unit'>Sign in with an </div>
             <img src='/images/id-me/dark-logo.svg' alt='id.me' className='id-me-logo unit' />
             <div className='unit'> account</div>
