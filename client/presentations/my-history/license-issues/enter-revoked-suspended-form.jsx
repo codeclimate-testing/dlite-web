@@ -20,13 +20,11 @@ const EnterRevokedSuspended = (props) => {
         translationPath = 'myHistory.licenseIssuesPage.helpText'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='License issue explanation'>
         <DateInput
           {...props }
           values = { props.licenseIssues }
         />
-
-        <div className='row' />
 
         <TextArea
           { ...props }

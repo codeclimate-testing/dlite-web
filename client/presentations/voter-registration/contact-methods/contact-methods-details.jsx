@@ -62,7 +62,7 @@ const ContactDetails = (props) => {
 
       <p className='translation-missing'>This is optional</p>
 
-      <fieldset>
+      <fieldset role='group' aria-label='Contact methods'>
         <TextInput
           {...props}
           identifier    = 'emailAddress'

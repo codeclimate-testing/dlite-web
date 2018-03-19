@@ -7,7 +7,7 @@ import RadioCollection    from '../../radio-selector-collection.jsx';
 const UsedPreviousNames = (props) => {
   return (
     <div className='previous-names-form'>
-      <fieldset>
+      <fieldset role='group' aria-label='Previous name choice'>
         <RadioCollection
           {...props}
           name          = 'hasUsedPreviousNames'
@@ -21,4 +21,3 @@ const UsedPreviousNames = (props) => {
 };
 
 export default UsedPreviousNames;
-

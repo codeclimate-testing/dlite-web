@@ -27,7 +27,7 @@ const Form = (props) => {
         <hr />
 
         <div className='row'>
-          <fieldset>
+          <fieldset role='group' aria-label='Senior ID choice'>
             <RadioCollection
               {...props}
               name = 'seniorID'

@@ -18,7 +18,7 @@ const Question = (props) => {
         {props.children}
 
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Home address same as mailing'>
           <RadioCollection
             {...props}
             name          = 'homeAddressSameAsMailing'

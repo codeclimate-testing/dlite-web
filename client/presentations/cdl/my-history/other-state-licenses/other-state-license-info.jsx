@@ -8,7 +8,7 @@ const OtherStateLicenseInfo = (props) => {
   let locale = props.locale;
   return (
     <div className='other-state-licenses-form'>
-      <fieldset>
+      <fieldset role='group' aria-label='Out of state license choice'>
         <RadioCollection
           {...props}
           name='hasNonCALicense'

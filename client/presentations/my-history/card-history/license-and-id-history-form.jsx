@@ -56,7 +56,7 @@ const LicenseAndIdHistory = (props) => {
       />
 
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='License and id history'>
           <RadioCollection
             {...props}
             name          = 'isIssued'

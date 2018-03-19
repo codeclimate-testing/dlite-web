@@ -39,7 +39,7 @@ const Form = (props) => {
         translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.explanation'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='Social security number'>
         <NumberInput
           {...props}
           identifier    = 'part1'

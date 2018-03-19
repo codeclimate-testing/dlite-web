@@ -8,7 +8,7 @@ const MedicalCondition = (props) => {
 
   return (
     <div className='medical-condition-form'>
-      <fieldset>
+      <fieldset role='group' aria-label='Medical condition choice'>
         <RadioCollection
           {...props}
           name  = 'hasMedicalCondition'

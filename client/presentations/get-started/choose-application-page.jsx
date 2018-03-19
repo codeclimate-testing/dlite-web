@@ -32,7 +32,7 @@ const Form = (props) => {
         <Translation tag='h2' className='question'>
           {translations[locale].beforeIntro.chooseDLorCDLPage.prompt}
         </Translation>
-        <fieldset>
+        <fieldset role='group' aria-label='Which application choice'>
           <RadioCollection
             {...props}
             name= 'chooseApplication'

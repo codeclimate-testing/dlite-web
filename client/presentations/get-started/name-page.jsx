@@ -30,7 +30,7 @@ const LegalNameForm = (props) => {
           translationPath = 'intro.namePage.explanation'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Name'>
           <TextInput
             {...props}
             identifier    = 'firstName'

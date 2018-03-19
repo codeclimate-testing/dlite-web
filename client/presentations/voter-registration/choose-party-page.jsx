@@ -37,24 +37,24 @@ const ChoosePartyPage = (props) => {
             translationPath   = 'votingRegistration.choosePartyPage.explanation'
           />
 
-          <fieldset>
+          <fieldset role='group' aria-label='Choose party'>
             <RadioCollection
-            {...props}
-            name          = 'isSelected'
-            selectedValue = {props.politicalPartyChoose.isSelected}
-            errorMessage  = {props.validations.isSelected()}
-          >
-            <RadioSelector
-              value     = 'Yes'
-              text      = { <RadioSelectorYesTranslation /> }
-              className = 'long-text'
-            />
-            <RadioSelector
-              value     = 'Skip'
-              text      = { <ChoosePartyPageAnswerNo /> }
-              className = 'long-text'
-            />
-          </RadioCollection>
+              {...props}
+              name          = 'isSelected'
+              selectedValue = {props.politicalPartyChoose.isSelected}
+              errorMessage  = {props.validations.isSelected()}
+            >
+              <RadioSelector
+                value     = 'Yes'
+                text      = { <RadioSelectorYesTranslation /> }
+                className = 'long-text'
+              />
+              <RadioSelector
+                value     = 'Skip'
+                text      = { <ChoosePartyPageAnswerNo /> }
+                className = 'long-text'
+              />
+            </RadioCollection>
           </fieldset>
         </div>
 

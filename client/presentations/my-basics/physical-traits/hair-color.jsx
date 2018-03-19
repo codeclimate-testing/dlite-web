@@ -19,7 +19,7 @@ const HairColor = (props) => {
         translationPath = 'myBasics.traitsPage.hairColor.prompt'
       />
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='Hair color'>
           <RadioCollection
             {...props}
             name='hairColor'

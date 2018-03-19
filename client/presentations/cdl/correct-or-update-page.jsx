@@ -30,7 +30,7 @@ const Form = (props) => {
         <p>You cannot update your medical certificate through this form.</p>
 
         <form onSubmit={ props.onSubmit }>
-          <fieldset>
+          <fieldset role='group' aria-label='Correct or update choice'>
             <RadioCollection
               {...props}
               errorMessage  = { props.validations.correctOrUpdate() }

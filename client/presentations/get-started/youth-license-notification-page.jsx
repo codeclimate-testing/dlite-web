@@ -75,18 +75,16 @@ const Form = (props) => {
             dateOfBirth = {props.dateOfBirth}
             {...props}
           />
-          <div className='row'>
-            <fieldset>
-              <RadioCollection
-                { ...props }
-                name = { actionName }
-                onBlur = { props.onBlurValidate }
-                errorMessage = { props.validations.youthIDInstead() }
-              >
-                {radioYesNoGroup(locale)}
-              </RadioCollection>
-            </fieldset>
-          </div>
+          <fieldset role='group' aria-label='Choose youth ID instead'>
+            <RadioCollection
+              { ...props }
+              name = { actionName }
+              onBlur = { props.onBlurValidate }
+              errorMessage = { props.validations.youthIDInstead() }
+            >
+              {radioYesNoGroup(locale)}
+            </RadioCollection>
+          </fieldset>
 
           <ErrorMessage {...props} />
 

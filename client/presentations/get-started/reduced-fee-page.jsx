@@ -61,7 +61,7 @@ const Form = (props) => {
           <DLText {...props} />
 
           <div className='row'>
-            <fieldset>
+            <fieldset role='group' aria-label='Reduced fee choice'>
               <RadioCollection
                 {...props}
                 name='ID'

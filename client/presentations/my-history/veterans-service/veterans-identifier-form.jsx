@@ -101,7 +101,7 @@ const VeteransIdentifier = (props) => {
         translationPath = 'myHistory.veteransPage.newDesignation.explanation'
       />
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Choose veteran designation'>
           <RadioCollection
             {...props}
             name  = 'veteransIdentifier'

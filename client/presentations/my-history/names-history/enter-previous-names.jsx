@@ -20,7 +20,7 @@ const EnterPreviousNames = (props) => {
         translationPath = 'myHistory.nameHistoryPage.helpText'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='Previous names'>
         <TextArea
           {...props}
           identifier='previousNames'
@@ -34,4 +34,3 @@ const EnterPreviousNames = (props) => {
 };
 
 export default EnterPreviousNames;
-

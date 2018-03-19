@@ -39,7 +39,7 @@ const Form = (props) => {
           {translationPath.explanation}
         </Translation>
 
-      <fieldset>
+      <fieldset role='group' aria-label='Social security number'>
         <NumberInput
           {...props}
           identifier    = 'part1'

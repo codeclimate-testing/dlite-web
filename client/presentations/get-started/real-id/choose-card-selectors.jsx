@@ -22,7 +22,7 @@ const Form = (props) => {
         compliant to fly within the United States, but not both
       </p>
 
-      <fieldset>
+      <fieldset role='group' aria-label='Real ID card choice'>
         <RadioCollection
           {...props}
           name          = 'realIdDesignation'

@@ -18,7 +18,7 @@ const EyeColor = (props) => {
           translationPath = 'myBasics.traitsPage.eyeColor.prompt'
         />
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='Eye color'>
           <RadioCollection
             {...props}
             name='eyeColor'

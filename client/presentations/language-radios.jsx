@@ -9,7 +9,7 @@ const LanguageRadios = (props) => {
   let translationAddress = translations[locale].intro.switchLanguagePage;
 
   return (
-    <fieldset>
+    <fieldset role='group' aria-label='Languages'>
       <RadioCollection
         {...props}
       >

@@ -15,7 +15,7 @@ const LicenseIssues = (props) => {
         translationPath = 'myHistory.licenseIssuesPage.pagePrompt'
       />
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='License issue choice'>
           <RadioCollection
             {...props}
             name          = 'isSuspended'

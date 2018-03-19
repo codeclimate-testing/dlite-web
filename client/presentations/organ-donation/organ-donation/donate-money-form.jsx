@@ -33,7 +33,7 @@ const DonateContribution = (props) => {
         Your donation helps support and promote organ and tissue donation.
       </span>
 
-      <fieldset>
+      <fieldset role='group' aria-label='Donate choice'>
         <RadioCollection
           {...props}
           name  = 'donateMoney'

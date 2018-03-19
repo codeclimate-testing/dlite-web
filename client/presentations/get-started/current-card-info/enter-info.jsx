@@ -10,7 +10,7 @@ const Form = (props) => {
     <div className = 'enter-current-card-info'>
       {props.children}
 
-      <fieldset>
+      <fieldset role='group' aria-label='Card information'>
         <TextInput
           {...props}
           identifier    = 'number'

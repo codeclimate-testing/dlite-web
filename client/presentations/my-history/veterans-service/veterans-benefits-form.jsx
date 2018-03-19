@@ -29,7 +29,7 @@ const VeteransBenefits = (props) => {
       />
 
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Veterans benefits choice'>
           <RadioCollection
             {...props}
             name='receiveBenefits'

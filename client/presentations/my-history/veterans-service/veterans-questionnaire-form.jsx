@@ -19,7 +19,7 @@ const VeteransQuestionnaire = (props) => {
         translationPath = 'myHistory.veteransPage.explanationStart'
       />
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='Are you a veteran?'>
           <RadioCollection
             {...props}
             name  = 'isVeteran'

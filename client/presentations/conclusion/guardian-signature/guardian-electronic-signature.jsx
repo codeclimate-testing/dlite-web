@@ -41,18 +41,18 @@ const ElectronicSignature = (props) => {
           <ErrorIcon errorClass = { acceptLiabilityErrorClass } />
           {acceptLiabilityErrorLabel}
         </label>
-        <fieldset>
-        <CheckboxSelector
-          {...props}
-          name      = { liabilityID }
-          value     = { liabilityID }
-          selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
-          text      = { acceptLiabilityText }
-          error     = { hasValue(props.validations.acceptLiabilityErrors) }
-          onBlur    = { props.onCheckboxBlur }
-          onFocus   = { props.onCheckboxFocus}
-          className = 't-size-1-1'
-        />
+        <fieldset role='group' aria-label='Accept liability choice'>
+          <CheckboxSelector
+            {...props}
+            name      = { liabilityID }
+            value     = { liabilityID }
+            selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
+            text      = { acceptLiabilityText }
+            error     = { hasValue(props.validations.acceptLiabilityErrors) }
+            onBlur    = { props.onCheckboxBlur }
+            onFocus   = { props.onCheckboxFocus}
+            className = 't-size-1-1'
+          />
         </fieldset>
       </div>
       <div className='row'>
@@ -65,7 +65,7 @@ const ElectronicSignature = (props) => {
       <div className='electronic-signature'>
         <p>Please type your name and today’s date to electronically sign.</p>
 
-        <fieldset>
+        <fieldset role='group' aria-label='Guardian electronic signature'>
           <TextInput
             {...props}
             identifier    = { guarianIdentifierFor('name') }
@@ -81,37 +81,37 @@ const ElectronicSignature = (props) => {
             className     = { addDateErrorClass }
           >
             <ErrorIcon errorClass = { addDateErrorClass } />
-              {dateErrorLabel}
+            {dateErrorLabel}
           </label>
           <div className  = 'electronic-signature-date'>
-            <fieldset>
+            <fieldset role='group' aria-label='Date'>
               <NumberInput
-              {...props}
-              identifier  = { guarianIdentifierFor('month') }
-              example     = 'MM'
-              value       = { props.guardianSignature.guardianInfo[guardianID].signature.month }
-              error       = { hasValue(props.validations.date.month) }
-            />
+                {...props}
+                identifier  = { guarianIdentifierFor('month') }
+                example     = 'MM'
+                value       = { props.guardianSignature.guardianInfo[guardianID].signature.month }
+                error       = { hasValue(props.validations.date.month) }
+              />
 
-            <div className='unit spacer' />
+              <div className='unit spacer' />
 
-            <NumberInput
-              {...props}
-              identifier  = { guarianIdentifierFor('day') }
-              example     = 'DD'
-              value       = { props.guardianSignature.guardianInfo[guardianID].signature.day }
-              error       = { hasValue(props.validations.date.day) }
-            />
+              <NumberInput
+                {...props}
+                identifier  = { guarianIdentifierFor('day') }
+                example     = 'DD'
+                value       = { props.guardianSignature.guardianInfo[guardianID].signature.day }
+                error       = { hasValue(props.validations.date.day) }
+              />
 
-            <div className='unit spacer' />
+              <div className='unit spacer' />
 
-            <NumberInput
-              {...props}
-              identifier  = { guarianIdentifierFor('year') }
-              example     = 'YYYY'
-              value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
-              error       = { hasValue(props.validations.date.year) }
-            />
+              <NumberInput
+                {...props}
+                identifier  = { guarianIdentifierFor('year') }
+                example     = 'YYYY'
+                value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
+                error       = { hasValue(props.validations.date.year) }
+              />
             </fieldset>
             <div className='row'>
               <ErrorLabel

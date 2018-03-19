@@ -38,7 +38,7 @@ const TraitsPage = (props) => {
           translationPath = 'myBasics.heightWeightPage.height.explanation'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Height'>
           <NumberInput
             {...props}
             identifier              = 'heightFeet'
@@ -81,7 +81,7 @@ const TraitsPage = (props) => {
           translationPath = 'myBasics.heightWeightPage.weight.explanation'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='weight'>
           <NumberInput
             {...props}
             identifier              = 'weight'

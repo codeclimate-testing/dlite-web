@@ -14,7 +14,7 @@ const EnterMedicalInfo = (props) => {
         className       = 'question'
         translationPath = 'myHistory.medicalConditionsPage.explanationPrompt'
       />
-      <fieldset>
+      <fieldset role='group' aria-label='Medical conditions'>
         <TextArea
           {...props}
           identifier    = 'medicalInfo'

@@ -52,10 +52,10 @@ const BallotByMailPage = (props) => {
           translationPath = 'votingRegistration.byMailPage.explanation'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Ballot by mail choice'>
           <RadioCollection
             {...props}
-             name          = 'ballotByMail'
+            name          = 'ballotByMail'
             errorMessage  = { props.validations.ballotByMail() }
           >
             { radioYesNoGroup() }

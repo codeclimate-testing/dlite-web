@@ -26,7 +26,7 @@ const Form = (props) => {
         </Translation>
         <form onSubmit={ props.onSubmit }>
           <div className='row inner-buttom'>
-            <fieldset>
+            <fieldset role='group' aria-label='Reason for card replacement'>
               <RadioCollection
                 {...props}
                 name= 'reason'

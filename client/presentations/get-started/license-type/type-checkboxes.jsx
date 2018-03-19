@@ -17,39 +17,39 @@ const Form = (props) => {
           {translations[locale].intro.licenseTypePage.explanation}
         </Translation>
       <div className='row'>
-        <fieldset>
-        <CheckboxCollection
-          {...props}
-          name  = 'type'
-          array = {props.licenseType.type }
-          onBlur = { props.onBlurValidate }
-          errorMessage={ props.validations.licenseType() }
-        >
-          <CheckboxSelector
-            value = 'car'
-            text  = {translations[locale].intro.licenseTypePage.values[0].label}
-            className='vehicle-class'
-            iconClass='car'
-          />
-          <CheckboxSelector
-            value = 'cycle'
-            text  = {translations[locale].intro.licenseTypePage.values[1].label}
-            className='vehicle-class'
-            iconClass='cycle'
-          />
-          <CheckboxSelector
-            value = 'long'
-            text  = {translations[locale].intro.licenseTypePage.values[2].label}
-            className='vehicle-class'
-            iconClass='long'
-          />
-          <CheckboxSelector
-            value = 'trailer'
-            text  = {translations[locale].intro.licenseTypePage.values[3].label}
-            className='vehicle-class'
-            iconClass='trailer'
-          />
-        </CheckboxCollection>
+        <fieldset role='group' aria-label='License classes'>
+          <CheckboxCollection
+            {...props}
+            name  = 'type'
+            array = {props.licenseType.type }
+            onBlur = { props.onBlurValidate }
+            errorMessage={ props.validations.licenseType() }
+          >
+            <CheckboxSelector
+              value = 'car'
+              text  = {translations[locale].intro.licenseTypePage.values[0].label}
+              className='vehicle-class'
+              iconClass='car'
+            />
+            <CheckboxSelector
+              value = 'cycle'
+              text  = {translations[locale].intro.licenseTypePage.values[1].label}
+              className='vehicle-class'
+              iconClass='cycle'
+            />
+            <CheckboxSelector
+              value = 'long'
+              text  = {translations[locale].intro.licenseTypePage.values[2].label}
+              className='vehicle-class'
+              iconClass='long'
+            />
+            <CheckboxSelector
+              value = 'trailer'
+              text  = {translations[locale].intro.licenseTypePage.values[3].label}
+              className='vehicle-class'
+              iconClass='trailer'
+            />
+          </CheckboxCollection>
         </fieldset>
       </div>
     </div>

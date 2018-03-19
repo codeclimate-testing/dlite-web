@@ -10,7 +10,7 @@ const Form = (props) => {
 
   return (
     <div className='row inner-button'>
-      <fieldset>
+      <fieldset role='group' aria-label='Correct or update choice'>
         <RadioCollection
           {...props}
           name          = {`${props.formName}correctOrUpdate`}

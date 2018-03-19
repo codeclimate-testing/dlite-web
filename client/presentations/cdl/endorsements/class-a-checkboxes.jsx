@@ -15,7 +15,7 @@ const Form = (props) => {
           {translations[locale].cdl.endorsmentsPage.whichSection.prompt}
         </Translation>
         <div className='row'>
-          <fieldset>
+          <fieldset role='group' aria-label='Endorsements'>
             <CheckboxCollection
               {...props}
               name  = 'type'

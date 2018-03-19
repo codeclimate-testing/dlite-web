@@ -76,7 +76,7 @@ const VeteransIdentifier = (props) => {
           {translations[locale].myHistory.veteransPage.newDesignation.explanation}
         </Translation>
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Veteran designation choice'>
           <RadioCollection
             {...props}
             name='veteransIdentifier'

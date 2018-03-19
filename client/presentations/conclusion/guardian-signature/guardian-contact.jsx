@@ -15,7 +15,7 @@ const GuardianContact = (props) => {
 
   return (
     <div className='guardian-contact'>
-      <fieldset>
+      <fieldset role='group' aria-label='Phone number'>
         <TextInput
           {...props}
           identifier  = { phoneId }
@@ -26,12 +26,12 @@ const GuardianContact = (props) => {
         />
       </fieldset>
 
-      <fieldset>
-      <AddressTemplate
-        {...props}
-        type          = { addressType }
-        address       = { address }
-      />
+      <fieldset role='group' aria-label='Address'>
+        <AddressTemplate
+          {...props}
+          type          = { addressType }
+          address       = { address }
+        />
       </fieldset>
     </div>
   );

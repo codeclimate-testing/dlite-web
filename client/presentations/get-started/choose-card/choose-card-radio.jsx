@@ -11,7 +11,7 @@ const Form = (props) => {
 
   return (
     <div className='row chooseRadioCard'>
-      <fieldset>
+      <fieldset role='group' aria-label='Card choice'>
         <RadioCollection
           {...props}
           name            = { props.cardAction }

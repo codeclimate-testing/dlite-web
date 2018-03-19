@@ -32,7 +32,7 @@ const ChooseRealID = (props) => {
       </Translation>
 
       <div className='row'>
-        <fieldset>
+        <fieldset role='group' aria-label='Real ID choice'>
           <RadioCollection
             {...props}
             name          = { formName }

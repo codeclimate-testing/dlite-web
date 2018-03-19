@@ -16,7 +16,7 @@ const VeteransPreviousDesignation = (props) => {
         Is "Veteran" printed on your commercial driver license?
       </Translation>
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Veteran designation on license choice'>
           <RadioCollection
             {...props}
             name='previouslyDesignated'

@@ -33,7 +33,7 @@ const OptOutPage = (props) => {
           translationPath = 'votingRegistration.optOutPage.pagePrompt'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Choose to vote'>
           <RadioCollection
             {...props}
             name          = 'optOut'

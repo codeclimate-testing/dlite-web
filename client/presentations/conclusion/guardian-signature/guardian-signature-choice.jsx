@@ -26,7 +26,7 @@ const SignatureChoice = (props) => {
       <p>If you have more than one parent or guardian with custody, both must sign.</p>
       <p>Is your parent/guardian available to sign your application?</p>
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='Guardian available choice'>
           <RadioCollection
             {...props}
             name          = 'isSigned'

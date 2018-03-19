@@ -28,7 +28,7 @@ const Form = (props) => {
           {props.translations[locale].intro.chooseSelectionPage.explanationMultiCard}
         </Translate>
 
-      <fieldset>
+      <fieldset role='group' aria-label='What do you need to change choice'>
         <CheckboxCollection
           {...props}
           name          = { formName }

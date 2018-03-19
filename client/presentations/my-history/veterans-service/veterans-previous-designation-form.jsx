@@ -18,7 +18,7 @@ const VeteransPreviousDesignation = (props) => {
     <div className='veterans-previous-designation-form'>
       { headerText }
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Card has veterans desgination'>
           <RadioCollection
             {...props}
             name  = 'previouslyDesignated'

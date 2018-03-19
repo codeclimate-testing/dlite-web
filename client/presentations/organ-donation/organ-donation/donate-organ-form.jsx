@@ -55,7 +55,7 @@ const DonateOrgan = (props) => {
         translationPath = 'organDonation.organDonor.validationMessage'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='Donate organs?'>
         <RadioCollection
           {...props}
           name='donateOrgan'

@@ -16,7 +16,7 @@ const Presentation = (props) => {
           The DMV is partnering with ID.me to protect your digital identity.
         </h2>
 
-        <fieldset className='id-me-buttons'>
+        <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
           <a href='/auth/new' className='button green translation-missing id-me-create'>
             <div className='unit'>Create an </div>
             <img src='/images/id-me/white-logo.svg' alt='id.me' className='id-me-logo unit' />

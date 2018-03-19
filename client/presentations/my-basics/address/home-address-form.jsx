@@ -20,7 +20,7 @@ const Form = (props) => {
         translationPath = 'myBasics.addressesPage.explanation'
       />
       <div className='addresses-section'>
-        <fieldset>
+        <fieldset role='group' aria-label='Home address'>
           <AddressTemplate
             {...props}
             type  = 'home'

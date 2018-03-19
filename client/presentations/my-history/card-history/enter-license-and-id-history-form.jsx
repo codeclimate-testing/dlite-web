@@ -23,27 +23,27 @@ const EnterLicenseAndIdHistory = (props) => {
         translationPath = 'myHistory.cardHistoryPage.explanationPrompt'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='Card information'>
         <TextInput
-        {...props}
-        identifier    = 'DLIDNumber'
-        description   = { text.DLIDNumber }
-        value         = { props.licenseAndIdHistory.DLIDNumber }
-        errorMessage  = { props.validations.DLIDNumber() }
-      />
+          {...props}
+          identifier    = 'DLIDNumber'
+          description   = { text.DLIDNumber }
+          value         = { props.licenseAndIdHistory.DLIDNumber }
+          errorMessage  = { props.validations.DLIDNumber() }
+        />
 
-      <TextInput
-        {...props}
-        identifier    = 'issuedBy'
-        description   = { text.issuedBy }
-        value         = { props.licenseAndIdHistory.issuedBy }
-        errorMessage  = { props.validations.issuedBy() }
-      />
+        <TextInput
+          {...props}
+          identifier    = 'issuedBy'
+          description   = { text.issuedBy }
+          value         = { props.licenseAndIdHistory.issuedBy }
+          errorMessage  = { props.validations.issuedBy() }
+        />
 
-      <ExpirationDate
-        {...props}
-        values        = { props.licenseAndIdHistory }
-      />
+        <ExpirationDate
+          {...props}
+          values        = { props.licenseAndIdHistory }
+        />
       </fieldset>
     </div>
   )

@@ -21,7 +21,7 @@ const Form = (props) => {
         {translations[locale].tenYearHistoryPage.fillOutHistoryVia.explanation}
       </Translation>
       <div className='row inner-buttom'>
-        <fieldset>
+        <fieldset role='group' aria-label='How to fill out ten year history'>
           <RadioCollection
             {...props}
             name= 'tenYearHistory'

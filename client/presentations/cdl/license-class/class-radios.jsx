@@ -14,7 +14,7 @@ const ClassRadios = (props) => {
         What class of commercial driver license do you need?
       </Translation>
 
-      <fieldset>
+      <fieldset role='group' aria-label='Commercial classes'>
         <RadioCollection
           {...props}
           name          = 'class'

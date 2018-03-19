@@ -15,7 +15,7 @@ const Form = (props) => {
            {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.prompt}
         </Translation>
         <div className='row'>
-          <fieldset>
+          <fieldset role='group' aria-label='Types of certificates'>
             <CheckboxCollection
               {...props}
               name  = 'type'

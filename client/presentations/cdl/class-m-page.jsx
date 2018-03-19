@@ -14,7 +14,7 @@ const Form = (props) => {
     >
       <form onSubmit = {props.onSubmit} className='cdl-class-m'  >
         <h2 className='question'>Do you need a motorcycle (Class M) on your CDL?</h2>
-          <fieldset>
+          <fieldset role='group' aria-label='Motorcycle class choice'>
           <RadioCollection
             {...props}
             name  = 'classM'

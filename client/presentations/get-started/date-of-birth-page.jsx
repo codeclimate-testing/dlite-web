@@ -26,7 +26,7 @@ const Presentation = (props) => {
           translationPath = 'intro.dateOfBirthPage.explanation'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Date of birth'>
           <DateInput
             {...props}
             title       = { <Translator tag = 'span' translationPath = 'shared.labels.dateOfBirth' /> }

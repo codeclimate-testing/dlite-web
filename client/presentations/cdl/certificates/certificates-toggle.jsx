@@ -14,7 +14,7 @@ const FormControls = (props) => {
        {translations[locale].cdl.endorsmentsPage.certificationSection.prompt}
       </Translation>
       <div className='row'>
-        <fieldset>
+        <fieldset role='group' aria-label='Certificates needed choice'>
           <RadioCollection
             {...props}
             name='needCertificates'

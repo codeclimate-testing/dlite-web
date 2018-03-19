@@ -16,7 +16,7 @@ const Sex = (props) => {
         translationPath = 'myBasics.traitsPage.sex.prompt'
       />
       <div>
-        <fieldset>
+        <fieldset role='group' aria-label='Sex choices'>
           <RadioCollection
             {...props}
             name='sex'

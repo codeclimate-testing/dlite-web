@@ -19,7 +19,7 @@ const Form = (props) => {
         translationPath = 'myBasics.socialSecurityPage.explanation'
       />
       <div className='input-container'>
-        <fieldset>
+        <fieldset role='group' aria-label='Do you have a social security number?'>
           <RadioCollection
             {...props}
             name          = 'hasSocialSecurity'

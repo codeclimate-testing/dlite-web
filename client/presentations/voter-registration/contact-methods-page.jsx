@@ -27,7 +27,7 @@ const ContactMethodsPage = (props) => {
           translationPath = 'votingRegistration.contactInfoPage.pagePrompt'
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Do you want to be contacted'>
           <RadioCollection
             {...props}
             name          = 'shouldContact'

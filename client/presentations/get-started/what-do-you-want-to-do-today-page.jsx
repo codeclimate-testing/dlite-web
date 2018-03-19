@@ -61,37 +61,35 @@ const Form = (props) => {
         </Translate>
 
         <form onSubmit= { props.onSubmit }>
-          <div className='row inner-button'>
-            <fieldset>
-              <RadioCollection
-                {...props}
-                name    = { name }
-                onBlur  = { props.onBlurValidate }
-                errorMessage = { props.validations.cardAction() }
-              >
-                <RadioSelector
-                  value = 'new'
-                  text={text.values[0]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value = 'renew'
-                  text={text.values[1]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value = 'change'
-                  text={text.values[2]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value='replace'
-                  text={text.values[3]}
-                  className='long-text'
-                />
-              </RadioCollection>
-            </fieldset>
-          </div>
+          <fieldset role='group' aria-label='What do you want to do?'>
+            <RadioCollection
+              {...props}
+              name    = { name }
+              onBlur  = { props.onBlurValidate }
+              errorMessage = { props.validations.cardAction() }
+            >
+              <RadioSelector
+                value = 'new'
+                text={text.values[0]}
+                className='long-text'
+              />
+              <RadioSelector
+                value = 'renew'
+                text={text.values[1]}
+                className='long-text'
+              />
+              <RadioSelector
+                value = 'change'
+                text={text.values[2]}
+                className='long-text'
+              />
+              <RadioSelector
+                value='replace'
+                text={text.values[3]}
+                className='long-text'
+              />
+            </RadioCollection>
+          </fieldset>
           <NavigationButtons
             errorMessage= { props.validations.cardAction() }
             { ...props }

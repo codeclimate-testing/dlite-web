@@ -12,7 +12,7 @@ import {
 
 const Selectors = (props) => {
   return (
-    <fieldset>
+    <fieldset role='group' aria-label='Eligibility'>
       <RadioCollection
         {...props}
         name='eligibilityRequirements'

@@ -6,7 +6,7 @@ import RadioCollection          from '../../radio-selector-collection.jsx';
 
 const ResidencyRadios = (props) => {
   return (
-    <fieldset>
+    <fieldset role='group' aria-label='California residency choice'>
       <RadioCollection
         {...props}
         name  = 'isResident'

@@ -18,7 +18,7 @@ const FormControls = (props) => {
           {translations[locale].intro.licenseTypePage.endorsementsSection.explanation}
         </Translation>
       <div className='row'>
-        <fieldset>
+        <fieldset role='group' aria-label='Need endorsements choice'>
           <RadioCollection
             {...props}
             name='needEndorsement'

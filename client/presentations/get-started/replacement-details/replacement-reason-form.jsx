@@ -13,7 +13,7 @@ const Form = (props) => {
   let locale = props.locale;
   return (
     <div className='row inner-buttom'>
-      <fieldset>
+      <fieldset role='group' aria-label='Replacement reason'>
         <RadioCollection
           {...props}
           name= {`${formName}-reason`}

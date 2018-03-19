@@ -17,7 +17,7 @@ const PoliticalPartyPreference = (props) => {
         translationPath = 'votingRegistration.choosePartyPage.choosePrompt'
       />
 
-      <fieldset>
+      <fieldset role='group' aria-label='Political party'>
         <RadioCollection
           {...props}
           name='politicalPartyChoose'

@@ -62,7 +62,7 @@ const CitizenStatusPage = (props) => {
           translationPath   = { declineStatement(props) }
         />
 
-        <fieldset>
+        <fieldset role='group' aria-label='Citizen status'>
           <RadioCollection
             {...props}
             name='citizenStatus'
