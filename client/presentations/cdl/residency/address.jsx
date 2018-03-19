@@ -4,8 +4,11 @@ import HomeAddress              from '../../my-basics/address/home-address-form.
 import MailingSameAsHome        from '../../my-basics/address/mailing-same-as-home.jsx';
 import MailingAddress           from '../../my-basics/address/mailing-address-form.jsx';
 import { needsAddress }         from '../../../helpers/data/cdl';
+import translations             from '../../../i18n';
+import Translation              from '../../../i18n/translate-tag.jsx';
 
 const AddressForm = (props) => {
+  let locale = props.locale;
   if (!needsAddress(props.residency)) { return null; }
   return (
     <div>
@@ -17,7 +20,9 @@ const AddressForm = (props) => {
         {...props}
         selectedValue   = { props.residency.homeAddressSameAsMailing }
       >
-        <p className='translation-missing'>The DMV will print your mailing address on your CDL. The CDL will also be sent to your mailing address.</p>
+        <Translation tag='p'>
+          {translations[locale].cdl.addressPage.doYouGetMailingHereExplanation}
+        </Translation>
       </MailingSameAsHome>
       <MailingAddress
         {...props}

@@ -16,6 +16,8 @@ import {
   keepOrAdd,
   isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
+import translations       from '../../../i18n'
+import Translation        from '../../../i18n/translate-tag.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
@@ -79,12 +81,15 @@ const MessageAddAmount = (props) => {
 };
 
 const MessageRemovingDesignation = (props) => {
+  let locale = props.locale;
   if (!removeIdentifierNotification(props)) { return null; }
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
         <span className='translation-missing'>
-          OK, we will remove it.
+        <Translation tag='p' className='translation-missing'>
+          {translations[locale].extras.vetranRemoveMessage}
+        </Translation>
         </span>
       </div>
     </MessageBox>

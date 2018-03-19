@@ -54,12 +54,13 @@ const MessageAddAmount = (props) => {
 };
 
 const MessageRemovingDesignation = (props) => {
+  let locale = props.locale;
   if (!removeIdentifierNotification(props)) { return null; }
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
         <Translation tag='p' className='translation-missing'>
-          OK, we will remove it.
+          {translations[locale].extras.vetranRemoveMessage}
         </Translation>
       </div>
     </MessageBox>
