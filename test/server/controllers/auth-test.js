@@ -26,9 +26,9 @@ describe('Auth related controllers', () => {
     assert(passport.authenticate.calledWith('oauth2', { failureRedirect: '/auth/error' }));
   });
 
-  it('#authSuccess redirects to the legal name page', function() {
+  it('#authSuccess redirects to the logged in page', function() {
     controllers.authSuccess(req, res);
-    assert(res.redirect.calledWith('/apply/id-and-license/my-basics/legal-name'));
+    assert(res.redirect.calledWith('/apply/logged-in'));
   });
 
   it('#authSuccess sets isLoggedIn cookie to true', function() {

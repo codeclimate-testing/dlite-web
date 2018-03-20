@@ -29,7 +29,6 @@ export const pathForPage = (name, props) => {
 export const nextPath = (name, props) => {
   let page = pageFor(name);
   let nextKey = page.next;
-
   if (typeof(nextKey) !== 'string') {
     nextKey = nextKey(props);
   }

@@ -40,6 +40,7 @@ const ApplicationHeader = (props) => {
 
 const Logout = (props) => {
   let isLoggedIn = cookie.load('isLoggedIn');
+
   if (!isLoggedIn || isLoggedIn.toString() !== 'true') { return null;}
 
   let appType = getAppType(props);

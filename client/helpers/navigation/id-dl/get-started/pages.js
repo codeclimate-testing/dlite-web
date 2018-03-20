@@ -23,12 +23,6 @@ const getStarted = [
     next: 'legalName'
   },
   {
-    key: 'welcome',
-    description: 'Welcome',
-    path: '/welcome',
-    next: nextOrSummary('legalName')
-  },
-  {
     key: 'legalName',
     description: 'Legal name',
     path: applyEditOrAddPath('/my-basics/legal-name'),
