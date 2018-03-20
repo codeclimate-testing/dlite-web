@@ -32,7 +32,7 @@ $background:        $light-light-gray;
 $gray:              $neutral-50; // not used?
 $another-gray:      $neutral-60;
 
-$focus:             $gold;
+$focus:             transparentize($gold, 0.3);
 $button-rest:       $medium-blue;
 
 $header-light:            $darkest-blue;
