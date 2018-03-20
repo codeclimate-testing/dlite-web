@@ -36,6 +36,34 @@ function hasDL(DLApp) {
   return DLApp.isApplying.toString() === 'true';
 }
 
+function hasNewCDL(data) {
+  return data.cardAction === 'new';
+}
+
+function isIDDLApp(data) {
+  return data.hasOwnProperty('IDApp') || data.hasOwnProperty('DLApp');
+}
+
+function isCDLApp(data) {
+  return !isIDDLApp(data);
+}
+
+function isCDLDatabase(data) {
+  return data.cards[0].type === 'CDL';
+}
+
+function addingMotorcycle(data) {
+  return data.classM === 'Yes';
+}
+
+function changeOption(option) {
+  return option.option_type === 'modification' && option.option_value.split('-')[0] === 'change';
+}
+
+function replaceOption(option) {
+  return option.option_type === 'modification' && option.option_value.split('-')[0] === 'replace';
+}
+
 module.exports = {
   getNew,
   getReplace,
@@ -45,6 +73,13 @@ module.exports = {
   hasNewID,
   hasID,
   hasNewDL,
-  hasDL
+  hasDL,
+  hasNewCDL,
+  isIDDLApp,
+  isCDLApp,
+  isCDLDatabase,
+  addingMotorcycle,
+  changeOption,
+  replaceOption
 };
 

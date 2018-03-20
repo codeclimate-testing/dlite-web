@@ -60,7 +60,7 @@ const rootReducer = combineReducers({
     reducedFee                  : updateReducedFee,
     seniorID                    : updateSeniorID,
     currentCard                 : updateCurrentID,
-    replacementDetails          : updateIDReplacement,
+    cardReplacement             : updateIDReplacement,
     cardChanges                 : updateIDChanges,
     realID                      : updateIDRealID
   }),
@@ -69,7 +69,7 @@ const rootReducer = combineReducers({
     action                      : updateDLAction,
     licenseType                 : updateLicenseType,
     currentCard                 : updateCurrentDL,
-    replacementDetails          : updateDLReplacement,
+    cardReplacement             : updateDLReplacement,
     cardChanges                 : updateDLChanges,
     realID                      : updateDLRealID
   }),

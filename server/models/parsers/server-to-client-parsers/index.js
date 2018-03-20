@@ -23,7 +23,10 @@ const eligibility         = require('./get-eligibility');
 const party               = require('./get-party');
 const optedOut            = require('./get-opted-out');
 const contactMethods      = require('./get-contact-methods');
-
+const CDLApp              = require('./get-cdl-app');
+const cardInfo            = require('./get-current-card-info');
+const CDLType             = require('./get-cdl-type');
+const DLInfo              = require('./get-dl-info');
 
 module.exports = {
   language,
@@ -48,5 +51,9 @@ module.exports = {
   eligibility,
   party,
   optedOut,
-  contactMethods
+  contactMethods,
+  CDLApp,
+  cardInfo,
+  CDLType,
+  DLInfo
 };

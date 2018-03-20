@@ -23,7 +23,7 @@ const OtherPartyRadio = (props) => {
   return (
     <RadioSelector
       {...props}
-      value = 'Other'
+      value = 'other'
       text  = { <ChoosePartyPageAnswerOther/> }
     />
   );

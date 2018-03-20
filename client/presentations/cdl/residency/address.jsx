@@ -8,16 +8,17 @@ import translations             from '../../../i18n';
 import Translator               from '../../../i18n/translator-tag.jsx';
 
 const AddressForm = (props) => {
-  if (!needsAddress(props.residency)) { return null; }
+  if (!needsAddress(props.address)) { return null; }
+  let locale = props.locale;
   return (
     <div>
       <HomeAddress
         {...props}
-        address         = { props.residency.home }
+        address         = { props.address.home }
       />
       <MailingSameAsHome
         {...props}
-        selectedValue   = { props.residency.homeAddressSameAsMailing }
+        selectedValue   = { props.address.homeAddressSameAsMailing }
       >
         <Translator
           tag             = 'p'
@@ -26,8 +27,8 @@ const AddressForm = (props) => {
       </MailingSameAsHome>
       <MailingAddress
         {...props}
-        isSameAsHome    = { props.residency.homeAddressSameAsMailing }
-        address         = { props.residency.mailing }
+        isSameAsHome    = { props.address.homeAddressSameAsMailing }
+        address         = { props.address.mailing }
       />
     </div>
   );

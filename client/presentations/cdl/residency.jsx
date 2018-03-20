@@ -24,18 +24,17 @@ const Form = (props) => {
         />
         <ResidencyRadios
           {...props}
-          selectedValue = { props.residency.isResident }
+          selectedValue = { props.address.isResident }
           errorMessage  = { props.validations.isResident() }
         />
         <ResidencyMessageNo
-          {...props}
-          residency     = {props.residency}
+          residency     = {props.address}
         />
         <AddressForm    {...props} />
         <NavigationButtons
           {...props}
           errorMessage   = { props.validations.all() }
-          continueHidden = { notResident(props.residency) }
+          continueHidden = { notResident(props.address) }
       />
       </form>
     </Page>

@@ -16,7 +16,8 @@ function extractVeteransInfo(data) {
       application_id:               data.id,
       has_requested_information:    parserHelper.strToBool(data.history.veteransService.receiveBenefits),
       previously_designated:        parserHelper.strToBool(data.history.veteransService.previouslyDesignated),
-      labeling:                     label
+      labeling:                     label,
+      military_waiver:              parserHelper.strToBool(data.history.veteransService.militaryWaiver)
     };
   }
   else {  return null; }

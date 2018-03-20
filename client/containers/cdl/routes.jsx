@@ -28,6 +28,7 @@ import CDLVoterRegistration             from './voter-registration/routes.jsx';
 import CDLHistory                       from './my-history/routes.jsx';
 import CdlOrganDonation                 from './cdl-organ-donation.jsx';
 import Summary                          from './cdl-summary.jsx';
+import AppointmentPrep                  from './appointment-prep.jsx';
 
 const CDLRoutes = () => {
   return (
@@ -89,7 +90,8 @@ const CDLRoutes = () => {
 
       <CDLVoterRegistration />
 
-      <Route path={ cdlPath('/summary')}                        component={Summary}     />
+      <Route path={ cdlPath('/summary')}                            component={Summary}     />
+      <Route path={ cdlPath('/appointment-preparation') }           component={AppointmentPrep} />
     </div>
   )
 };

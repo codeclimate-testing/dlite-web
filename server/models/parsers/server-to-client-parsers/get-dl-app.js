@@ -1,6 +1,9 @@
 'use strict';
-const parserHelper          = require('../data-parser');
+const cardTypeParser        = require('../card-type');
 const getCardInfo           = require('./get-current-card-info');
+const getCardChange         = require('./get-card-change');
+const getCardReplacement    = require('./get-card-replacement');
+const getLicenseType        = require('./get-license-type');
 
 function DLApp(cards, card_options, card_histories, license_classes) {
   let DLAppObject = {
@@ -8,7 +11,7 @@ function DLApp(cards, card_options, card_histories, license_classes) {
     action:                   '',
     licenseType:              getLicenseType(license_classes),
     currentCard:              {},
-    replacementDetails:       {
+    cardReplacement:       {
       reason: ''
     },
     cardChanges:              {
@@ -39,47 +42,17 @@ function DLApp(cards, card_options, card_histories, license_classes) {
       }
 
       // card changes and replacements
-      if (DLAppObject.action === 'change'){
-        if (option.option_value === 'modification' && option.option_value.split('-')[0] === 'change') {
-          let value = option.option_value.split('-');
-          DLAppObject.cardChanges = {
-            correctOrUpdate: value[1],
-            sections: value[2].split('_'),
-            other: value[3]
-          }
-        }
-      } else if (DLAppObject.action === 'replace') {
-        let value = option.option_value.split('-');
-        if (option.option_value === 'modification' && value[0] === 'replace') {
-          DLAppObject.replacementDetails = {
-            reason: value[1]
-          }
-        }
+      if (cardTypeParser.changeOption(option)) {
+        DLAppObject.cardChanges = getCardChange(option);
+      } else if (cardTypeParser.replaceOption(option)) {
+        DLAppObject.cardReplacement   = getCardReplacement(option);
       }
+
     });
   }
   DLAppObject.currentCard = getCardInfo(card_histories, DLAppObject.action);
   return DLAppObject;
 };
 
-
-function getLicenseType(license_classes) {
-  let licenseType = {
-    type: [],
-    needEndorsement: ''
-  };
-  if(license_classes.length > 0){
-    license_classes.forEach(item => {
-
-      if(item.type.startsWith('firefighter')) {
-        licenseType.needEndorsement = item.type.split('-')[1];
-      } else {
-        licenseType.type.push(item.type);
-      }
-
-    });
-  }
-  return licenseType;
-}
 
 module.exports = DLApp;

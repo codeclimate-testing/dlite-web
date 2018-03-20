@@ -14,4 +14,4 @@ function mapStateToProps(state) {
   return state;
 };
 
-export default mergePropsGenerator(mapStateToProps, null, 'saveApplication', Page);
+export default mergePropsGenerator(mapStateToProps, null, 'saveCDL', Page);

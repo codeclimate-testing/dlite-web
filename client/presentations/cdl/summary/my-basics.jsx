@@ -37,7 +37,7 @@ const MyBasics = (props) => {
         locale            = { locale }
       />
       <Address
-        address           = {cdl.basics.residency}
+        address           = {cdl.basics.address}
         editKey           = 'cdlResidency'
         locale            = {locale}
       />

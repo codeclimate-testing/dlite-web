@@ -2,7 +2,6 @@
 
 const assert            = require('assert');
 const cardTypeParser    = require('../../../../server/models/parsers/card-type');
-const dataHelper        = require('../../../support/data-helper');
 
 let data;
 

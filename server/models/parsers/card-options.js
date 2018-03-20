@@ -23,7 +23,7 @@ function licenseClassGenerator(cards, license_classes) {
   let licenseClassesForDB = [];
   if(cards.length > 0) {
     cards.forEach( card => {
-      if(card.type === 'DL') {
+      if(card.type === 'DL' || card.type === 'CDL') {
         license_classes.forEach(license_class => {
           licenseClassesForDB.push({
             card_id:  card.id,

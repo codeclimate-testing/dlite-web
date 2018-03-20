@@ -104,7 +104,7 @@ export function applyEditOrAddPath(url){
     }
     return urlPath;
   };
-};
+}
 
 export function applyOrEditCDLPath(url) {
   return (props) => {
@@ -113,8 +113,8 @@ export function applyOrEditCDLPath(url) {
       urlPath = editCDLPath(url);
     }
     return urlPath;
-  }
-};
+  };
+}
 
 export function getAppType(props) {
   let appType = props.chooseApp;
@@ -123,3 +123,4 @@ export function getAppType(props) {
   }
   return appType;
 }
+

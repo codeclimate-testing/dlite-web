@@ -22,7 +22,7 @@ function party(voting_registrations) {
   let otherParty = '';
 
   if (voting_registrations.party.length > 0 && !parties.includes(voting_registrations.party)) {
-    politicalParty = 'Other';
+    politicalParty = 'other';
     otherParty = voting_registrations.party;
   };
 

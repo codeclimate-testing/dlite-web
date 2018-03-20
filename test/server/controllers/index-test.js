@@ -5,7 +5,7 @@ const httpMocks = require('node-mocks-http');
 const uuidv1    = require('uuid/v1');
 
 const dbHelper      = require('../../support/db-helper');
-const dataHelper    = require('../../support/data-helper');
+const dataHelper    = require('../../support/data-helper').IDDLData;
 const ctrl          = require('../../../server/controllers');
 
 describe('Testing application APIs for basic CRUD operations', () => {

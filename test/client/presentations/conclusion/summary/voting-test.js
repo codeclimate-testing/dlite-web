@@ -28,7 +28,7 @@ describe('Summary Voting section', function() {
   let props;
   beforeEach(function() {
     props = {
-      application: Object.assign({}, data.application),
+      application: Object.assign({}, data.IDDL.application),
       onSubmit: spy(),
       ui: { locale }
     };
@@ -49,7 +49,7 @@ describe('Summary Voting section', function() {
 describe('Summary Voter registration section components', function() {
   let props;
   beforeEach(function() {
-    props = Object.assign({}, data.application);
+    props = Object.assign({}, data.IDDL.application);
     props.locale = locale;
     props.editKey = '';
   });

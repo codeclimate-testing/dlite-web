@@ -20,7 +20,7 @@ describe('SummaryPage', function() {
   let locale = 'en';
   beforeEach(function() {
     props = {
-      application: Object.assign({}, data.application),
+      application: Object.assign({}, data.IDDL.application),
       server: '',
       onSubmit: spy(),
       ui: {locale}
@@ -47,7 +47,7 @@ describe('Summary components', function() {
   let locale = 'en';
 
   beforeEach(function() {
-    props = Object.assign({}, data.application);
+    props = Object.assign({}, data.IDDL.application);
     props.server = '';
     props.onSubmit = spy();
     props.locale = locale;

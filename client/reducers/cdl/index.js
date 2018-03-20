@@ -52,7 +52,7 @@ const rootReducer = combineReducers({
     dateOfBirth           : updateDateOfBirth,
     physicalTraits        : updatePhysicalTraits,
     traitsHeightWeight    : updateHeightWeight,
-    residency             : updateResidency,
+    address               : updateResidency,
     socialSecurity        : updateSocialSecurity,
     language              : updateLanguage
   }),

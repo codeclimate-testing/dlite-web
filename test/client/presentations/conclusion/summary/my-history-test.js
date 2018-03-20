@@ -27,7 +27,7 @@ describe('Summary My History section', function() {
   describe('#My history accordion', function() {
     it('shows a closed accordion with text "My history"', function() {
       let props = {
-        application: Object.assign({}, data.application),
+        application: Object.assign({}, data.IDDL.application),
         onSubmit: spy(),
         ui: { locale }
       };
@@ -45,7 +45,7 @@ describe('Summary My History section', function() {
 describe('Summary My history section components', function() {
   let props;
   beforeEach(function() {
-    props = Object.assign({}, data.application);
+    props = Object.assign({}, data.IDDL.application);
     props.locale = locale;
   });
 

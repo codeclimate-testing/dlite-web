@@ -16,7 +16,7 @@ describe('CDL California Resident Page', function() {
   const Wrapper = wrapperGenerator(store);
 
   beforeEach(function() {
-    let residency = {
+    let address = {
       homeAddressSameAsMailing: '',
       home: {
         street_1: '',
@@ -58,7 +58,7 @@ describe('CDL California Resident Page', function() {
     };
 
     props = {
-      residency,
+      address,
       onAddressChange,
       onSubmit,
       onChange,
@@ -90,7 +90,7 @@ describe('CDL California Resident Page', function() {
 
   describe('#not a resident', function() {
     beforeEach(function() {
-      props.residency.isResident = 'No';
+      props.address.isResident = 'No';
       component = render(
         <Wrapper>
           <AddressPage {...props} />
@@ -108,7 +108,7 @@ describe('CDL California Resident Page', function() {
 
   describe('#yes a resident', function() {
     beforeEach(function() {
-      props.residency.isResident = 'Yes';
+      props.address.isResident = 'Yes';
       component = render(
         <Wrapper>
           <AddressPage {...props} />
@@ -127,7 +127,7 @@ describe('CDL California Resident Page', function() {
     });
 
     it('shows the form asking for mailing address when user checks that mailing address is not same as home address', function() {
-      props.residency.homeAddressSameAsMailing = 'No';
+      props.address.homeAddressSameAsMailing = 'No';
       let component = render(
         <Wrapper>
           <AddressPage {...props} />

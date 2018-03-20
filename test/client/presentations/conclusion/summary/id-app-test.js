@@ -26,7 +26,7 @@ describe('Summary ID App section', function() {
   let props;
   beforeEach(function() {
     props = {
-      application: Object.assign({}, data.application),
+      application: Object.assign({}, data.IDDL.application),
       onSubmit: spy(),
       ui: { locale }
     };
@@ -116,7 +116,7 @@ describe('Summary ID App section', function() {
 describe('Summary ID App section components', function() {
   let props;
   beforeEach(function() {
-    props = Object.assign({}, data.application);
+    props = Object.assign({}, data.IDDL.application);
     props.locale = locale;
     props.cardType = 'ID';
   });

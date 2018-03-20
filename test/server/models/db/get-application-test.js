@@ -27,11 +27,75 @@ describe('getApplication', function() {
     .catch(done);
   });
 
-  describe('when there is a record matching the id', function() {
+  describe('#CDL data', function() {
+    let data;
+    let clientData = dataHelper.CDLData.clientData();
+    beforeEach(function(done) {
+      data = dataHelper.fakeCDLRecords(clientData);
+      post.saveApplication(data)
+      .then(() => { done(); })
+      .catch(done);
+    })
+
+    it('return the card options', function(done){
+      getApplication(data.application.id)
+      .then((records) => {
+        assert(records.card_options[0].id);
+        assert(records.card_options[1].id);
+        assert.equal(records.card_options[0].card_id, data.card_options[0].card_id);
+        assert.equal(records.card_options[1].card_id, data.card_options[1].card_id);
+        assert.equal(records.card_options[0].option_type, data.card_options[0].option_type);
+        assert.equal(records.card_options[1].option_type, data.card_options[1].option_type);
+        assert.equal(records.card_options[0].option_value, data.card_options[0].option_value);
+        assert.equal(records.card_options[1].option_value, data.card_options[1].option_value);
+      })
+      .then(done)
+      .catch(done);
+    });
+
+    it('returns the license classes', function(done) {
+      getApplication(data.application.id)
+      .then( records => {
+        assert.equal(records.license_classes[0].type, data.license_classes[0].type);
+        assert.equal(records.license_classes[1].type, data.license_classes[1].type)
+      })
+      .then(done)
+      .catch(done);
+    });
+
+    it('returns card histories', function(done) {
+      getApplication(data.application.id)
+      .then((records) => {
+        assert(records.card_histories[0].id);
+        assert.equal(records.card_histories[0].application_id, data.application.id);
+        assert.equal(records.card_histories[0].number, data.card_histories[0].number);
+        assert.equal(records.card_histories[0].issuing_entity, data.card_histories[0].issuing_entity);
+        assert.equal(records.card_histories[0].date_description, data.card_histories[0].date_description);
+      })
+      .then(done)
+      .catch(done);
+    });
+
+    it('returns veterans info', function(done) {
+      getApplication(data.application.id)
+      .then((records) => {
+        assert(records.veterans_info.id);
+        assert.equal(records.veterans_info.application_id, data.application.id);
+        assert.equal(records.veterans_info.has_requested_information, data.veterans_info.has_requested_information);
+        assert.equal(records.veterans_info.labeling, data.veterans_info.labeling);
+        assert.equal(records.veterans_info.previously_designated.toString(), data.veterans_info.previously_designated.toString());
+        assert.equal(records.veterans_info.military_waiver, data.veterans_info.military_waiver);
+      })
+      .then(done)
+      .catch(done);
+    });
+  });
+
+  describe('IDDL data when there is a record matching the id', function() {
     let data;
 
     beforeEach(function(done) {
-      data = dataHelper.fakeRecords();
+      data = dataHelper.fakeRecords(dataHelper.IDDLData);
       post.saveApplication(data)
       .then(() => { done(); })
       .catch(done);

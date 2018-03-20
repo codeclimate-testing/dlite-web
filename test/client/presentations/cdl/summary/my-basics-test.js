@@ -48,7 +48,7 @@ describe('CDL Summary My Basics section', function() {
             part2: '45',
             part3: '6789'
           },
-          residency: {
+          address: {
             isResident: 'Yes',
             homeAddressSameAsMailing: 'Yes',
             home: {

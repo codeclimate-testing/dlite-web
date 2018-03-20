@@ -29,7 +29,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    cardReplacement     : getCorrectApp(state.application).replacementDetails,
+    cardReplacement     : getCorrectApp(state.application).cardReplacement,
     cardType            : state.application.cardType,
     cardAction          : state.application.cardAction,
     licenseAndIdHistory : state.application.history.licenseAndIdHistory,

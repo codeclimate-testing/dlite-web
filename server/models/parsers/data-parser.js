@@ -25,7 +25,7 @@ module.exports.createDateJson = function createDateJson(date) {
 module.exports.parseParty = function parseParty(obj) {
   let party = obj.politicalPartyChoose;
 
-  if (obj.politicalPartyChoose === 'Other' && obj.otherParty.length > 0) {
+  if (obj.politicalPartyChoose.toLowerCase() === 'other' && obj.otherParty.length > 0) {
     party = obj.otherParty;
   }
   return party;
@@ -45,10 +45,8 @@ module.exports.boolToStr = function boolToStr(val) {
   return key;
 };
 
-module.exports.historyForDL = function historyForDL(cardHistories) {
-  return cardHistories.filter(card => {
-    return card.issuing_entity.length > 0
-  });
+module.exports.expectLicenseAndIdHistory = function expectLicenseAndIdHistory(DLApp, IDApp) {
+  return DLApp.action === 'new' || IDApp.action === 'new';
 }
 
 module.exports.strToBool = strToBool;

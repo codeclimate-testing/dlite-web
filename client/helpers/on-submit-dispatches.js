@@ -6,7 +6,6 @@ import { postData }               from '../actions/api-actions';
 import getTranslation             from '../actions/get-translation';
 import { updateLanguage }         from '../actions/index';
 import { languageIsSelected }     from './data/application';
-import { isPreregistering }       from './calculate-age';
 import {
   updateCitizenStatus,
   updateEligibilityRequirements
@@ -39,6 +38,18 @@ export const saveApplication = (stateProps, dispatch, ownProps) => {
           nextPath('summary', res)
         )
       });
+  };
+};
+
+export const saveCDL = (stateProps, dispatch, ownProps) => {
+  return (e) => {
+    e.preventDefault();
+    dispatch(postData(stateProps.cdl))
+    .then(res => {
+      ownProps.history.push(
+        nextPath('cdlSummary', res)
+      );
+    });
   };
 };
 

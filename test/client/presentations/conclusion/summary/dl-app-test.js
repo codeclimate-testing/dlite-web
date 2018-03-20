@@ -25,7 +25,7 @@ let locale = 'en';
 describe('Summary DL App section components', function() {
   let props;
   before(function() {
-    props = Object.assign({}, data.application);
+    props = Object.assign({}, data.IDDL.application);
     props.locale = locale;
     props.cardType = 'DL';
   });
@@ -135,7 +135,7 @@ describe('Summary DL App section components', function() {
 
   describe('#DL RealID', function() {
     beforeEach(function() {
-      props = Object.assign({}, data);
+      props = Object.assign({}, data.IDDL);
       props.editKey = 'realID';
       props.ui = { locale };
     });

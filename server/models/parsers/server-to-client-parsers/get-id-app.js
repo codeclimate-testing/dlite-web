@@ -1,6 +1,8 @@
 'use strict';
-const parserHelper        = require('../data-parser');
+const cardTypeParser      = require('../card-type');
 const getCardInfo         = require('./get-current-card-info');
+const getCardChange       = require('./get-card-change');
+const getCardReplacement  = require('./get-card-replacement');
 
 function IDApp(cards, card_options, card_histories) {
   let IDAppObject = {
@@ -13,7 +15,7 @@ function IDApp(cards, card_options, card_histories) {
     seniorID:             '',
     currentCard:          {
     },
-    replacementDetails:   {
+    cardReplacement: {
       reason: ''
     },
     cardChanges: {
@@ -39,13 +41,9 @@ function IDApp(cards, card_options, card_histories) {
       }
 
       // reduced fee
-      if(option.option_value === 'reduced-fee-has-form') {
+      if(option.option_value === 'reduced-fee') {
         IDAppObject.reducedFee.ID = 'Yes';
         IDAppObject.reducedFee.form = 'Yes';
-      }
-      else if(option.option_value === 'reduced-fee-no-form') {
-        IDAppObject.reducedFee.ID = 'Yes';
-        IDAppObject.reducedFee.form = 'No';
       }
 
       // senior id
@@ -58,24 +56,14 @@ function IDApp(cards, card_options, card_histories) {
         IDAppObject.realID = 'Yes';
       }
 
+
       // card changes and replacements
-      if (IDAppObject.action === 'change'){
-        if (option.option_value === 'modification' && option.option_value.split('-')[0] === 'change') {
-          let value = option.option_value.split('-');
-          IDAppObject.cardChanges = {
-            correctOrUpdate: value[1],
-            sections: value[2].split('_'),
-            other: value[3]
-          }
-        }
-      } else if (IDAppObject.action === 'replace') {
-        let value = option.option_value.split('-');
-        if (option.option_value === 'modification' && value[0] === 'replace') {
-          IDAppObject.replacementDetails = {
-            reason: value[1]
-          }
-        }
+      if (cardTypeParser.changeOption(option)) {
+        IDAppObject.cardChanges = getCardChange(option);
+      } else if (cardTypeParser.replaceOption(option)) {
+        IDAppObject.cardReplacement = getCardReplacement(option);
       }
+
     });
   }
   IDAppObject.currentCard = getCardInfo(card_histories, IDAppObject.action);

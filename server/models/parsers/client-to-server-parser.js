@@ -1,9 +1,9 @@
 'use strict';
-
+const cardTypeParser        = require('./card-type');
 const extract               = require('./client-to-server-parsers/index');
 
 function parse(data) {
-  return Object.assign(
+  let parsedData = Object.assign(
     {},
     { application:            extract.application(data) },
     { addresses:              extract.addresses(data) },
@@ -20,6 +20,8 @@ function parse(data) {
     { card_options:           extract.cardOptions(data) },
     { license_classes:        extract.licenseClasses(data) }
   );
+
+  return parsedData;
 }
 
 

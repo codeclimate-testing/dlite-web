@@ -37,7 +37,7 @@ describe('CDL Summary page', function() {
             part2: '45',
             part3: '6789'
           },
-          residency: {
+          address: {
             home: {
               street_1: '',
               street_2: '',
