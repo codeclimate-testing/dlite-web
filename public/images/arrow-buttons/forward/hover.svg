@@ -13,7 +13,7 @@
                     <use xlink:href="#path-1"></use>
                 </mask>
                 <g id="Mask"></g>
-                <g id="colours/primarydark" mask="url(#mask-2)" fill="#0E19A5">
+                <g id="colours/primarydark" mask="url(#mask-2)" fill="#08378E">
                     <rect id="Rectangle-9" x="0" y="0" width="130" height="52"></rect>
                 </g>
             </g>
