@@ -31,6 +31,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "compass-mixins": "^0.12.10",
+    "compression-webpack-plugin": "^1.1.11",
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.4",
     "cssurf": "https://github.com/CDTDigital/cssurf.git",

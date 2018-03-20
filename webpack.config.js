@@ -4,6 +4,7 @@ const path                = require('path');
 const webpack             = require('webpack');
 const ExtractTextPlugin   = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin   = require('html-webpack-plugin');
+const CompressionPlugin   = require('compression-webpack-plugin');
 
 const childProcess = require('child_process');
 const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
@@ -88,6 +89,14 @@ let config = {
       gitHash: GITHASH,
       stylesheet: '/app.css',
       filename: 'index.html'
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
     })
   ]
 };
