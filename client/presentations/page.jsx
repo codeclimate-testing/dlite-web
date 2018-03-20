@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-debug-link.jsx';
+import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
 
 const setTitleLiteral = (title, section) => {
@@ -49,6 +50,8 @@ const Page = (props) => {
 
   return (
     <div className='application-page'>
+      <GoogleAnalytics />
+      
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />
