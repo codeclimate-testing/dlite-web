@@ -139,7 +139,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Real ID:Yes'));
+      assert.ok(component.text().includes('Real IDYes'));
     });
     it('shows No if user has selected No to Real ID', function() {
       props.cdl.realID = 'No';
@@ -148,7 +148,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Real ID:No'));
+      assert.ok(component.text().includes('Real IDNo'));
     });
   })
 
@@ -169,7 +169,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('CDL number:None'));
+      assert.ok(component.text().includes('CDL numberNone'));
     });
 
     it('shows the CDL number', function() {
@@ -179,7 +179,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('CDL number:99999'));
+      assert.ok(component.text().includes('CDL number99999'));
     });
 
     it('does not show the date if only a partial date given', function() {

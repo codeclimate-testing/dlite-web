@@ -5,6 +5,7 @@ import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
 import RadioCollection        from '../../radio-selector-collection.jsx';
 import MessageBox             from '../../message-box.jsx';
 import { guardianNotSigned }  from '../../../helpers/data/youth';
+import Translator             from '../../../i18n/translator-tag.jsx';
 
 const MessageNo = (props) => {
   if (!guardianNotSigned(props)) { return null; }
@@ -12,7 +13,10 @@ const MessageNo = (props) => {
   return (
     <MessageBox className='info'>
       <div>
-        <p>Your application will not be complete until your parent/guardian signs.</p>
+        <Translator
+          tag             = 'p'
+          translationPath = 'parentGuardianSignaturePage.signatureSection.explanation'
+        />
       </div>
     </MessageBox>
   );
@@ -22,9 +26,16 @@ const SignatureChoice = (props) => {
   let locale = props.locale;
   return (
     <div className='signature-choice-form'>
-      <h2 className='question'>Because you are under 18, you will need a parent or guardian signature.</h2>
-      <p>If you have more than one parent or guardian with custody, both must sign.</p>
-      <p>Is your parent/guardian available to sign your application?</p>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'parentGuardianSignaturePage.prompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'parentGuardianSignaturePage.explanation'
+      />
+      <p className='translation-missing'>Is your parent/guardian available to sign your application?</p>
       <div>
         <fieldset role='group' aria-label='Guardian available choice'>
           <RadioCollection

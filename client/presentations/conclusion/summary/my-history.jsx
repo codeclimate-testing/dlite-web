@@ -2,7 +2,6 @@
 
 import React                        from 'react';
 import Accordion                    from '../../../containers/accordion.jsx';
-import translations                 from '../../../i18n';
 import {
   LicenseIssues,
   LicenseAndIdHistory,
@@ -10,13 +9,14 @@ import {
   MedicalHistory,
   VeteransService
 } from './my-history/index';
+import translations     from '../../../i18n';
 
 const MyHistory = (props) => {
   let application = props.application;
   let locale = props.ui.locale;
 
   return (
-    <Accordion id='history-summary' title='My history' key='history-summary'>
+    <Accordion id='history-summary' title={translations[locale].summaryPage.myHistory.title} key='history-summary'>
       <MedicalHistory
         DLApp               = { application.DLApp }
         locale              = { locale }

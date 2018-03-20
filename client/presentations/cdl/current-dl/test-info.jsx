@@ -3,12 +3,16 @@
 import React                from 'react';
 import MessageBox           from '../../message-box.jsx';
 import { firstTime }        from '../../../helpers/data/cdl';
+import Translator           from '../../../i18n/translator-tag.jsx';
 
 const NoMessage = (props) => {
   if (!firstTime(props)) { return null; }
   return (
     <MessageBox className='info'>
-      <p>In order to get your Commercial Learner’s Permit, you’ll need to first pass the knowledge and driving skills tests for a basic (Non-Commercial Class C) driver license. </p>
+      <Translator
+        tag             = 'p'
+        translationPath = 'cdl.caDlPage.noMessage'
+      />
     </MessageBox>
   );
 };

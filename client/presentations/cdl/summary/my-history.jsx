@@ -9,12 +9,14 @@ import MedicalInfo            from '../../conclusion/summary/my-history/medical-
 import CurrentDL              from '../../conclusion/summary/my-history/license-and-id-history.jsx';
 import VeteransService        from './veterans-service.jsx';
 import { hasValue }           from '../../../helpers/data/validations';
+import translations           from '../../../i18n';
+import Translation            from '../../../i18n/translate-tag.jsx';
 
 const MyHistory = (props) => {
   let cdl       = props.cdl;
   let locale    = props.ui.locale;
   return (
-    <Accordion id='history-summary' title='My history' >
+    <Accordion id='history-summary' title={translations[locale].summaryPage.myHistory.title} key='history-summary'>
       <MedicalInfo
         medicalHistory      = { cdl.history.medicalHistory }
         locale              = { locale }
@@ -44,7 +46,7 @@ const MyHistory = (props) => {
         licenseAndIdHistory = { cdl.history.currentDLInfo}
         locale              = { locale }
         editKey             = 'cdlCurrentDL'
-        title               = 'Current DL number:'
+        title               = {translations[locale].SummaryPage.currentDlNumberLabel}
       />
     </Accordion>
   )

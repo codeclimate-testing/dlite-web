@@ -4,9 +4,11 @@ import React                  from 'react';
 import Page                   from '../../containers/page.jsx';
 import EnterDLInfo            from '../get-started/current-card-info/enter-info.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
+import translations           from '../../i18n';
+import Translator             from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-
+  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -17,11 +19,18 @@ const Form = (props) => {
 
           <EnterDLInfo
             {...props}
-            textDescription = 'DL number'
+            textDescription = {translations[locale].cdl.currentCardInformationPage.cdlNumberLabel}
             showIf          = {true}
           >
-            <h2 className='question'>If you know it, please enter your California CDL number.</h2>
-            <p>Your number can be found at the top of your commercial driver license, starting with a letter.</p>
+            <Translator
+              tag             = 'h2'
+              className       = 'question'
+              translationPath = 'cdl.currentCardInformationPage.prompt'
+            />
+            <Translator
+              tag             = 'p'
+              translationPath = 'cdl.currentCardInformationPage.explanation'
+            />
           </EnterDLInfo>
           <NavigationButtons
             {...props}

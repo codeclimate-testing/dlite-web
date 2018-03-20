@@ -9,12 +9,13 @@ import PoliticalPartyChoose    from '../../conclusion/summary/voting/choose-part
 import BallotLanguage          from '../../conclusion/summary/voting/ballot-language.jsx';
 import BallotByMail            from '../../conclusion/summary/voting/ballot-by-mail.jsx';
 import ContactMethods          from '../../conclusion/summary/voting/contact-methods.jsx';
+import translations     from '../../../i18n';
 
 const VoterRegistration = (props) => {
   let cdl       = props.cdl;
   let locale    = props.ui.locale;
   return (
-    <Accordion id='voter-registration-summary' title='Voter registration' >
+    <Accordion id='voter-registration-summary' title={translations[locale].summaryPage.voterRegistration.title} key='voter-registration-summary'>
       <CitizenStatus
         citizenStatus = { cdl.voting.citizenStatus }
         dateOfBirth   = { cdl.basics.dateOfBirth}

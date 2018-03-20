@@ -5,6 +5,7 @@ import Page                     from '../../containers/page.jsx';
 import NavigationButtons        from '../navigation-buttons.jsx';
 import radioYesNoGroup          from '../radio-yes-no-group.jsx';
 import RadioCollection          from '../radio-selector-collection.jsx';
+import Translator               from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   return (
@@ -13,7 +14,11 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <form onSubmit = {props.onSubmit} className='cdl-class-m'  >
-        <h2 className='question'>Do you need a motorcycle (Class M) on your CDL?</h2>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'cdl.motorcyclePage.prompt'
+        />
           <fieldset role='group' aria-label='Motorcycle class choice'>
           <RadioCollection
             {...props}

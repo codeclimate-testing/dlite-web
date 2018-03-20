@@ -123,7 +123,7 @@ module.exports = function(world){
     browser
       .text()
       .then(text => {
-        assert.ok(text.includes('CDL number:DMV2000'));
+        assert.ok(text.includes('CDL numberDMV2000'));
       })
       .then(() => { done(); })
       .catch(done);
@@ -233,7 +233,7 @@ module.exports = function(world){
     browser
       .text()
       .then(text => {
-        assert.ok(text.includes('Type of driving:Interstate'));
+        assert.ok(text.includes('Type of drivingInterstate'));
       })
       .then(done)
       .catch(done);

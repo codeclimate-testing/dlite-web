@@ -11,13 +11,14 @@ import {
   PhysicalTraits,
   SocialSecurity
 } from './my-basics/index';
+import translations     from '../../../i18n';
 
 const MyBasics = (props) => {
   let application = props.application;
   let locale      = props.ui.locale;
 
   return (
-    <Accordion id='basics-summary' title='My basics' key='basics-summary'>
+    <Accordion id='basics-summary' title={translations[locale].summaryPage.myBasics.title} key='basics-summary'>
       <Empty
         {...application}
         locale            = { locale }

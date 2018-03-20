@@ -102,7 +102,7 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Current DL number:None'), 'None text missing');
+      assert.ok(component.text().includes('Current DL numberNone'), 'None text missing');
     });
 
     it('shows current DL number if number provided', function() {
@@ -113,7 +113,7 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('Current DL number:A10157'), 'Number missing');
+      assert.ok(component.text().includes('Current DL numberA10157'), 'Number missing');
     });
 
     it('shows expiration date if provided', function() {

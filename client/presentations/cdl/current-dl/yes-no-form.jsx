@@ -3,12 +3,17 @@
 import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import radioYesNoGroup    from '../../radio-yes-no-group.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
+
 
 const Form = (props) => {
   return (
     <div className = 'cdl-current-dl-yes-no'>
-      <h2 className='question'>Do you currently have a California driver license?</h2>
-
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'cdl.caDlPage.prompt'
+      />
       <RadioCollection
         {...props}
         name          = 'isIssued'

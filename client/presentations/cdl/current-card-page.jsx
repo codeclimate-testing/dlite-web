@@ -9,9 +9,10 @@ import ExplanationString      from './current-dl/explanation-string.jsx';
 import ExpiredMessage         from './current-dl/expired-message.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import { needsCurrentDLInfo}  from '../../helpers/data/cdl';
+import translations           from '../../i18n';
 
 const Form = (props) => {
-
+  let locale = props.locale
   return (
     <Page
       {...props}
@@ -22,18 +23,21 @@ const Form = (props) => {
 
           <YesNoForm {...props} />
           <TestsInfo
+            {...props}
             currentCardInfo = {props.currentCardInfo}
           />
           <EnterDLInfo
             {...props}
-            textDescription = 'DL number'
+            textDescription = {translations[locale].cdl.caDlPage.yesSection.dlNumberLabel}
             showIf          = {needsCurrentDLInfo(props)}
           >
             <ExplanationString
+              {...props}
               showIf        = {needsCurrentDLInfo(props)}
             />
           </EnterDLInfo>
           <ExpiredMessage
+            {...props}
             currentCardInfo = {props.currentCardInfo}
           />
           <NavigationButtons

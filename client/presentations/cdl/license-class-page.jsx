@@ -20,7 +20,9 @@ const Form = (props) => {
           selectedValue = { props.licenseClass}
         />
 
-        <WhatDoINeedFAQ />
+        <WhatDoINeedFAQ 
+          {...props}
+        />
 
         <NavigationButtons
           {...props}

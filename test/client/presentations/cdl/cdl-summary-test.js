@@ -168,6 +168,6 @@ describe('CDL Summary page', function() {
         <SummaryPage { ...props } />
       </Wrapper>
     );
-    assert.ok(component.text().includes('Type of driving:Interstate'));
+    assert.ok(component.text().includes('Type of drivingInterstate'));
   });
 });

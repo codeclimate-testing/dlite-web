@@ -17,6 +17,7 @@ import {
 }   from '../../../../helpers/data/veteran';
 import translations       from '../../../../i18n'
 import Translation        from '../../../../i18n/translate-tag.jsx';
+import Translator         from '../../../../i18n/translator-tag.jsx';
 
 const Question = (props) => {
   if (!isPreviouslyDesignated(props)) {
@@ -59,9 +60,10 @@ const MessageRemovingDesignation = (props) => {
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <Translation tag='p' className='translation-missing'>
-          {translations[locale].extras.vetranRemoveMessage}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = 'extras.vetranRemoveMessage'
+        />
       </div>
     </MessageBox>
   );

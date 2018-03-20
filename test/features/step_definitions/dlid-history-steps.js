@@ -67,7 +67,7 @@ module.exports = function (world) {
     browser
       .text()
       .then(text => {
-        assert.equal(text.includes('Current DL number:'), true);
+        assert.equal(text.includes('Current DL number'), true);
       })
       .then(done)
       .catch(done);
@@ -77,7 +77,7 @@ module.exports = function (world) {
     browser
       .text()
       .then(text => {
-        assert.equal(text.includes('Current DL number:DMV2000'), true);
+        assert.equal(text.includes('Current DL numberDMV2000'), true);
       })
       .then(done)
       .catch(done);

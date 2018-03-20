@@ -7,26 +7,28 @@ import ResidencyRadios          from './residency/resident-form.jsx';
 import AddressForm              from './residency/address.jsx';
 import ResidencyMessageNo       from './residency/no-message.jsx';
 import { notResident }          from '../../helpers/data/cdl';
-import translations           from '../../i18n';
-import Translation            from '../../i18n/translate-tag.jsx';
+import translations             from '../../i18n';
+import Translator               from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}
       sectionKey='intro'
     >
       <form onSubmit = {props.onSubmit} className='cdl-residency'  >
-        <Translation tag='h2' className='question'>
-          {translations[locale].cdl.californiaResidentPage.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'cdl.californiaResidentPage.prompt'
+        />
         <ResidencyRadios
           {...props}
           selectedValue = { props.residency.isResident }
           errorMessage  = { props.validations.isResident() }
         />
         <ResidencyMessageNo
+          {...props}
           residency     = {props.residency}
         />
         <AddressForm    {...props} />

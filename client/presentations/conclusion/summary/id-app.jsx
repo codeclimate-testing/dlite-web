@@ -10,6 +10,7 @@ import {
   IDAction,
   CurrentIDInfo
 } from './id-app/index';
+import translations     from '../../../i18n';
 
 const IDApp = (props) => {
   let application = props.application;
@@ -17,7 +18,7 @@ const IDApp = (props) => {
   let cardType = 'ID';
 
   return (
-    <Accordion id='id-application-details-summary' title='My ID' key='id-application-details-summary'>
+    <Accordion id='id-application-details-summary' title={translations[locale].summaryPage.myID.title} key='id-application-details-summary'>
       <IDApplicationNotStarted
         IDApp             = { application.IDApp }
         locale            = { locale }

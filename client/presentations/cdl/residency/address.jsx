@@ -5,10 +5,9 @@ import MailingSameAsHome        from '../../my-basics/address/mailing-same-as-ho
 import MailingAddress           from '../../my-basics/address/mailing-address-form.jsx';
 import { needsAddress }         from '../../../helpers/data/cdl';
 import translations             from '../../../i18n';
-import Translation              from '../../../i18n/translate-tag.jsx';
+import Translator               from '../../../i18n/translator-tag.jsx';
 
 const AddressForm = (props) => {
-  let locale = props.locale;
   if (!needsAddress(props.residency)) { return null; }
   return (
     <div>
@@ -20,9 +19,10 @@ const AddressForm = (props) => {
         {...props}
         selectedValue   = { props.residency.homeAddressSameAsMailing }
       >
-        <Translation tag='p'>
-          {translations[locale].cdl.addressPage.doYouGetMailingHereExplanation}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = 'cdl.addressPage.doYouGetMailingHereExplanation'
+        />
       </MailingSameAsHome>
       <MailingAddress
         {...props}

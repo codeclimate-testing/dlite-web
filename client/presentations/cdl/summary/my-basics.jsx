@@ -8,13 +8,14 @@ import HeightWeight         from '../../conclusion/summary/my-basics/traits-heig
 import Address              from '../../conclusion/summary/my-basics/address.jsx';
 import SocialSecurity       from '../../conclusion/summary/my-basics/social-security.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
+import translations         from '../../../i18n';
 
 
 const MyBasics = (props) => {
   let cdl         = props.cdl;
   let locale      = props.ui.locale;
   return (
-    <Accordion id='basics-summary' title='My basics'>
+    <Accordion id='basics-summary' title={translations[locale].summaryPage.myBasics.title} key='basics-summary'>
       <LegalName
         legalName         = {cdl.basics.legalName}
         editKey           = 'cdlLegalName'

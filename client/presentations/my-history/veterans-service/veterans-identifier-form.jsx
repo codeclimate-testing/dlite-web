@@ -17,7 +17,6 @@ import {
   isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
 import translations       from '../../../i18n'
-import Translation        from '../../../i18n/translate-tag.jsx';
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
@@ -87,9 +86,10 @@ const MessageRemovingDesignation = (props) => {
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
         <span className='translation-missing'>
-        <Translation tag='p' className='translation-missing'>
-          {translations[locale].extras.vetranRemoveMessage}
-        </Translation>
+          <Translator
+            tag             = 'p'
+            translationPath = 'extras.vetranRemoveMessage'
+          />
         </span>
       </div>
     </MessageBox>

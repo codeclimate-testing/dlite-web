@@ -7,17 +7,17 @@ import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
 import translations         from '../../i18n';
-import Translation          from '../../i18n/translate-tag.jsx';
+import Translator           from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   let locale = props.locale;
 
   const tempObjectThatNeedsTranslations = {
     values: [
-      "Get a California CDL for the first time",
-      "Renew my CDL",
-      "Correct or update my CDL",
-      "Replace my CDL"
+      translations[locale].cdl.wdywtdtPage.values[0],
+      translations[locale].cdl.wdywtdtPage.values[1],
+      translations[locale].cdl.wdywtdtPage.values[2],
+      translations[locale].cdl.wdywtdtPage.values[3]
     ]
   };
   return (
@@ -26,9 +26,11 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.wdywtdtPage.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.wdywtdtPage.prompt'
+        />
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-button'>
             <fieldset role='group' aria-label='What do you want to do?'>

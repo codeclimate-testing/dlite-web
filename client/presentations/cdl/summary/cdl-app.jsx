@@ -10,6 +10,8 @@ import { hasValue }         from '../../../helpers/data/validations';
 import Motorcycle           from './motorcycle.jsx';
 import CDLEndorsements      from './endorsements.jsx';
 import CDLCertificates      from './certificates.jsx';
+import translations         from '../../../i18n';
+import Translation          from '../../../i18n/translate-tag.jsx';
 
 
 const CDLApp = (props) => {
@@ -17,7 +19,7 @@ const CDLApp = (props) => {
   let locale      = props.ui.locale;
 
   return (
-    <Accordion id='cdl-summary' title='My commercial driver license'>
+    <Accordion id='cdl-summary' title={translations[locale].SummaryPage.MyCDL}>
       <CdlAction
         cardAction  = { cdl.cardAction }
         cardChanges = { cdl.cardChanges }
@@ -28,7 +30,7 @@ const CDLApp = (props) => {
         realID      = { cdl.realID }
         editKey     = 'cdlRealID'
         locale      = { locale }
-        title       = 'Real ID:'
+        title       = {translations[locale].summaryPage.myID.realIDHeading}
         showIf      = { hasValue(cdl.realID) }
       />
       <LicenseClass
@@ -39,7 +41,7 @@ const CDLApp = (props) => {
       <CurrentCardInfo
         currentCardInfo   = { cdl.currentCardInfo }
         locale            = { locale }
-        title             = 'CDL number:'
+        title             = {translations[locale].SummaryPage.CdlNumberLabel}
         editKey           = 'cdlCurrentCard'
       />
       <Motorcycle

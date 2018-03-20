@@ -13,12 +13,13 @@ import {
 import {
   DateOfBirth,
 } from './my-basics/index';
+import translations     from '../../../i18n';
 
 const Voting = (props) => {
   let application = props.application;
   let locale = props.ui.locale;
   return (
-    <Accordion id='voter-registration-summary' title='Voter registration' key='voter-registration-summary'>
+    <Accordion id='voter-registration-summary' title={translations[locale].summaryPage.voterRegistration.title} key='voter-registration-summary'>
       <CitizenStatus
         citizenStatus           = { application.voting.citizenStatus}
         eligibilityRequirements = { application.voting.eligibilityRequirements}
