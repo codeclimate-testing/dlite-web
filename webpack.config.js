@@ -84,12 +84,6 @@ let config = {
     new webpack.DefinePlugin({
       APP_ENV: JSON.stringify('stage')
     }),
-    new HtmlWebpackPlugin({
-      template: './server/templates/layout.html',
-      gitHash: GITHASH,
-      stylesheet: '/app.css',
-      filename: 'index.html'
-    }),
     new webpack.optimize.UglifyJsPlugin(),
     new CompressionPlugin({
       asset: "[path].gz[query]",
@@ -97,6 +91,12 @@ let config = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new HtmlWebpackPlugin({
+      template: './server/templates/layout.html',
+      gitHash: GITHASH,
+      stylesheet: '/app.css',
+      filename: 'index.html'
     })
   ]
 };

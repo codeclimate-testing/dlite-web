@@ -7,6 +7,7 @@ const bodyParser        = require('body-parser');
 const passport          = require('passport');
 const session           = require('express-session')
 const helmet            = require('helmet');
+const compress          = require('compression');
 
 const logging           = require('./server/config/logging');
 const sessionOptions    = require('./server/config/session-options');
@@ -33,10 +34,37 @@ server.use(helmet());
 server.get('/', (req, res) => {
   res.redirect('/apply/choose-application');
 });
+
+server.use(compress({
+  threshold: 0
+}));
 server.use(express.static('public'));
+
+
+server.get( '*.js',                   (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  res.set('Content-Type', 'application/javascript');
+  res.sendFile(req.url, {
+    headers: {
+      'Content-Encoding': 'gzip',
+      'Content-Type': 'application/javascript'
+    }
+  }, (err) => {
+    if (err) {
+      console.log(err);
+      next(err);
+    }
+    else {
+      console.log('file sent: ' + req.url);
+    }
+  })
+});
 
 server.port = env.port;
 server.environment = env.env;
+
+
 
 server.use('/', routes(passport));
 
