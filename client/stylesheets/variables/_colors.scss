@@ -1,57 +1,55 @@
-$lightest-color:    white;
-$darkest-color:     #233047;
+$black: black;
+$white: white;
 
-$headline-blue:     #001b4d;
-$paynes-gray:       #233047;
-$darkest-blue:      #002364;
-$dark-blue:         #010B96;
-$med-blue:          #2D3FCA;
-$bright-blue:       #000DC9;
-$green:             #12814f;
-$red:               #DF1515;
-$gold:              #FFC900;
+$navy:          #052561;
+$darkest-blue:  #08378E;
+$medium-blue:   #0C4CC3;
+$bright-blue:   #1D65EA;
 
-$light-light-gray:  #F7F7F7;
-$light-gray:        #E4E4E4;
-$med-gray:          #BDBDBD;
-$gray:              #7E7D7D; // not used?
-$another-gray:      #696969;
+$green:         #1A6325;
+$red:           #A8142D;
+$gold:          #FFC900;
 
-$background-light:  #EEF5FA;
-$background-dark:   #DBE9F4;
-
-$error-background:  #fff6f6;
-
-$focus:             $gold;
-$highlight:         $gold;
-$button-rest:       $med-blue;
-
-$header-light:            $dark-blue;
-$header-dark:             $darkest-blue;
-$header-secondary-light:  $med-blue;
-$header-secondary-dark:   $bright-blue;
-
-$selector-rest:           $med-blue;
-$accordion-color:         $light-gray;
-$accordion-hover:         $med-gray;
+$light-light-gray:  #F6F6F6;
 
 // Shades of gray
-$neutral-90: mix($lightest-color, $darkest-color, 10%);
-$neutral-80: mix($lightest-color, $darkest-color, 20%);
-$neutral-70: mix($lightest-color, $darkest-color, 30%);
-$neutral-60: mix($lightest-color, $darkest-color, 40%);
-$neutral-50: mix($lightest-color, $darkest-color, 50%);
-$neutral-40: mix($lightest-color, $darkest-color, 60%);
-$neutral-30: mix($lightest-color, $darkest-color, 70%);
-$neutral-20: mix($lightest-color, $darkest-color, 80%);
-$neutral-10: mix($lightest-color, $darkest-color, 90%);
+$neutral-90: mix($white, $black, 10%);
+$neutral-80: mix($white, $black, 20%);
+$neutral-70: mix($white, $black, 30%);
+$neutral-60: mix($white, $black, 40%);
+$neutral-50: mix($white, $black, 50%);
+$neutral-40: mix($white, $black, 60%);
+$neutral-30: mix($white, $black, 70%);
+$neutral-20: mix($white, $black, 80%);
+$neutral-10: mix($white, $black, 90%);
+
+$lightest-color:    $white;
+$darkest-color:     $black;
+$headline-blue:     $navy;
+$background:        $light-light-gray;
+
+$gray:              $neutral-50; // not used?
+$another-gray:      $neutral-60;
+
+$focus:             $gold;
+$button-rest:       $medium-blue;
+
+$header-light:            $darkest-blue;
+$header-dark:             $darkest-blue;
+$header-secondary-light:  $medium-blue;
+$header-secondary-dark:   $bright-blue;
+
+$selector-rest:           $medium-blue;
+$accordion-color:         $neutral-10;
+$accordion-hover:         $neutral-30;
+
 
 // Theme based color
-$primary:        $dark-blue;
+$primary:        $darkest-blue;
 $primary-light:  lighten($primary, 5%);
 $primary-dark:   darken($primary, 5%);
 
-$accent:         $med-blue;
+$accent:         $medium-blue;
 $accent-light:   lighten($accent, 10%);
 $accent-dark:    darken($accent, 10%);
 
@@ -64,7 +62,7 @@ $info:          $green;
 $info-light:    lighten($info, 5%);
 $info-dark:     darken($info, 5%);
 
-$info-2:        $med-blue;
+$info-2:        $medium-blue;
 $info-2-light:  lighten($info-2, 5%);
 $info-2-dark:   darken($info-2, 5%);
 
@@ -75,3 +73,4 @@ $warn-dark:     darken($warn, 5%);
 $error:         $red;
 $error-light:   lighten($error, 5%);
 $error-dark:    darken($error, 5%);
+$error-background:  lighten($red, 60%);

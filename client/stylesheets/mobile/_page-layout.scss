@@ -1,7 +1,7 @@
 html {
   height: 100%;
-  background-color: $dark-blue;
-  color: $paynes-gray;
+  background-color: $background;
+  color: $darkest-color;
 }
 
 body {}
@@ -82,7 +82,7 @@ body {}
 }
 
 #footer {
-  border-top: 1px solid $light-gray;
+  border-top: 1px solid $neutral-10;
   background-color: $light-light-gray;
 
   .links {
