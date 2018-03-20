@@ -186,8 +186,9 @@ module.exports = function(world) {
   });
 
   world.when('I will be on the id.me page', function(done) {
-    assertOnPage('.id-me', /apply\/sign-in/, done);
+    assertOnPage('.id-me', /apply\/id-and-license\/sign-in/, done);
   });
+  
   world.then('I will be on the what do you want to do today page', function(done) {
     assertOnPage('.choose-card-action', /apply\/id-and-license\/what-do-you-want-to-do-today/, done);
   });
@@ -463,8 +464,9 @@ module.exports = function(world) {
   world.when('I will be on the page to choose application', function(done) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });
-  world.when('I will be on the ID.me page', function(done) {
-    assertOnPage('.id-me', /apply\/sign-in/, done);
+
+  world.when('I will be on the cdl id.me page', function(done) {
+    assertOnPage('.id-me', /apply\/cdl\/sign-in/, done);
   });
 
   world.when('I will be on the CDL welcome page', function(done) {

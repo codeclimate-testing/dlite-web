@@ -118,8 +118,8 @@ export function applyOrEditCDLPath(url) {
 
 export function getAppType(props) {
   let appType = props.chooseApp;
-  if (!props.chooseApp) {
-    appType = props.pathname.split('/')[2];
+  if (!props.chooseApp && props.hasOwnProperty('location')) {
+    appType = props.location.pathname.split('/')[2];
   }
   return appType;
 }

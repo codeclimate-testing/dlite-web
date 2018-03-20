@@ -40,10 +40,11 @@ const ApplicationHeader = (props) => {
 
 const Logout = (props) => {
   let isLoggedIn = cookie.load('isLoggedIn');
-  if (isLoggedIn.toString() !== 'true') { return null;}
+  if (!isLoggedIn || isLoggedIn.toString() !== 'true') { return null;}
 
   let appType = getAppType(props);
   let url = `/apply/${appType}/log-out`;
+
   return ReactDOM.createPortal(
     <a href={url}>Log out</a>, document.getElementById('log-out')
   );
@@ -65,7 +66,7 @@ const Page = (props) => {
       />
       <Logout
         appType = {props.chooseApp}
-        pathname = {props.location.pathname}
+        location = {props.location}
       />
       {props.children}
 

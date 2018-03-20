@@ -10,12 +10,8 @@ Scenario: Navigating to the start of the CDL or ID/DL application after choosing
   Then I will be on the page to choose application
   When I select a commercial DL application
   And I click "Next" to continue
-  Then I will be on the CDL name page
-  When I click to go back
-  Then I will be on the page to choose application
-  When I select a regular ID or DL application
-  And I click "Next" to continue
-  Then I will be on the ID.me page
+  Then I will be on the cdl id.me page
+
 
 Scenario: New CDL
   Given I go to the new online DL application page

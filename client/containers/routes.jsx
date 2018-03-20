@@ -3,11 +3,7 @@
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
 import { pathForPage }                        from '../helpers/navigation/page';
-import {
-  alicePath,
-  iddlPath,
-  cdlPath
-} from '../helpers/alice-path';
+import { alicePath }                          from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';

@@ -11,7 +11,8 @@ import {
   goToCardHistory,
   nextOrSummary,
   applyEditOrAddPath,
-  applyOrEditCDLPath
+  applyOrEditCDLPath,
+  getAppType
 } from '../../../../client/helpers/data/pathnames';
 
 
@@ -208,6 +209,20 @@ describe('Data helpers for pathnames', function() {
     it('returns /apply/cdl/edit + url if props.flow is edit', function() {
       props.flow = 'edit';
       assert.equal(applyOrEditCDLPath('/motorcycle')(props), '/apply/cdl/edit/motorcycle');
+    });
+  });
+
+  describe('#getAppType', function() {
+    it('returns the props.chooseApp value if provided', function() {
+      props.chooseApp = 'cdl';
+      assert.equal(getAppType(props), props.chooseApp);
+    });
+    it('returns the 3rd piece of the url if props.chooseApp is undefined', function() {
+      props.chooseApp = undefined;
+      props.location = {
+        pathname :'localhost:3000/apply/id-and-license/sign-in'
+      };
+      assert.equal(getAppType(props), 'id-and-license');
     });
   });
 });

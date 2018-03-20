@@ -12,6 +12,7 @@ describe('Auth related controllers', () => {
     req = {session: {user: {id: 'foo'}}};
     res = httpMocks.createResponse({});
     res.redirect = sinon.spy();
+    res.cookie = sinon.spy();
     passport = { authenticate: sinon.spy() };
   });
 
@@ -28,5 +29,10 @@ describe('Auth related controllers', () => {
   it('#authSuccess redirects to the legal name page', function() {
     controllers.authSuccess(req, res);
     assert(res.redirect.calledWith('/apply/id-and-license/my-basics/legal-name'));
+  });
+
+  it('#authSuccess sets isLoggedIn cookie to true', function() {
+    controllers.authSuccess(req, res);
+    assert(res.cookie.calledWith('isLoggedIn', true));
   });
 });

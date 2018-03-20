@@ -16,9 +16,9 @@ describe('Intro next-path', function() {
   });
 
   describe('##chooseApplication', function() {
-    it('returns "cdlLegalName" if state.ui.chooseApp equals "cdl"', function() {
+    it('returns "cdlIDme" if state.ui.chooseApp equals "cdl"', function() {
       props.chooseApp = 'cdl';
-      assert.equal(chooseApplication(props), 'cdlLegalName');
+      assert.equal(chooseApplication(props), 'cdlIDme');
     });
 
     it('returns "IDme" if state.ui.chooseApp equals "iddl"', function() {
