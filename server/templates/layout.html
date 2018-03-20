@@ -7,104 +7,102 @@
     <meta name="viewport" content="initial-scale=1">
     <link href="/favicon.ico" rel="shortcut icon" type="image/ico">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.options.stylesheet%>">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
   </head>
   <body>
-    <div id='page'>
-      <div id='header'>
-        <h1 class='primary inner'>
-          <div class='unit dmv-text-logo'>
-            DMV
+    <div id='header'>
+      <div class='page-row'>
+        <div class='unit-right account-information'>
+          <div class='inner'>
+            <!--<a class='button log-out' href='/log-out'>Log out</a>-->
           </div>
-          <div class='last-unit dmv-application-area' id='application-header'>
-          </div>
-        </h1>
-        <h2 class='secondary'>
-          <div class='unit-right account-information'>
-            <div class='inner'>
-              <div class='unit-right log-out'>&nbsp;</div>
+        </div>
+        <h1 class='primary last-unit'>
+          <div class='inner'>
+            <div class='unit dmv-text-logo'>
+              DMV
+            </div>
+            <div class='last-unit dmv-application-area' id='application-header'>
             </div>
           </div>
-          <div class='last-unit section-information' id='section-header'>
-          </div>
-        </h2>
+        </h1>
       </div>
+    </div>
+    <div id='page' class='page-row'>
       <div class='row content'>
         <div class='inner' id='app'>
           <div class='loading' alt='loading icon' title='Loading icon by Ahm masum, https://commons.wikimedia.org/wiki/File:Loading_icon.gif. Creative Commons Attribution-Share Alike 4.0 International https://creativecommons.org/licenses/by/4.0/'></div>
         </div>
       </div>
-      <div id='footer'>
-        <div class='inner'>
-          <div class='links row pad-bottom-20'>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/accessibility'>Accessibility</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/conditionsofuse'>Conditions of Use</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/contactus'>Contact DMV</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/CustomerSurveys'>Customer Surveys</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/disabilityservices'>Disability Services</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/forms'>Forms</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/footerhelp'>Help</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/privacypolicy'>Privacy Policy</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/pubs'>Publications</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/sitemap'>Site Map</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter3/careers'>Employment Opportunities</a>
-              </div>
-            </div>
-            <div class='unit size-1-2 t-size-1-3'>
-              <div class='inner centered-content'>
-                <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/technicalsupport'>Technical Support</a>
-              </div>
+    </div>
+    <div id='footer'>
+      <div class='inner'>
+        <div class='links row pad-bottom-20'>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/accessibility'>Accessibility</a>
             </div>
           </div>
-
-          <p class='centered-content'>
-            Copyright &copy; 2018 State of California
-          </p>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/conditionsofuse'>Conditions of Use</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/contactus'>Contact DMV</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/CustomerSurveys'>Customer Surveys</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/disabilityservices'>Disability Services</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/forms'>Forms</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/footerhelp'>Help</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/privacypolicy'>Privacy Policy</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter2/pubs'>Publications</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/sitemap'>Site Map</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter3/careers'>Employment Opportunities</a>
+            </div>
+          </div>
+          <div class='unit size-1-2 t-size-1-3'>
+            <div class='inner centered-content'>
+              <a target='_blank' href='https://www.dmv.ca.gov/portal/dmv/dmvfooter1/technicalsupport'>Technical Support</a>
+            </div>
+          </div>
         </div>
+
+        <p class='centered-content'>
+          Copyright &copy; 2017 State of California
+        </p>
       </div>
     </div>
   </body>

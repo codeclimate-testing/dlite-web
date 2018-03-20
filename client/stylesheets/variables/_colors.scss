@@ -5,6 +5,7 @@ $navy:          #052561;
 $darkest-blue:  #08378E;
 $medium-blue:   #0C4CC3;
 $bright-blue:   #1D65EA;
+$dark-text:     #222430;
 
 $green:         #1A6325;
 $red:           #A8142D;
@@ -24,7 +25,7 @@ $neutral-20: mix($white, $black, 80%);
 $neutral-10: mix($white, $black, 90%);
 
 $lightest-color:    $white;
-$darkest-color:     $black;
+$darkest-color:     $dark-text;
 $headline-blue:     $navy;
 $background:        $light-light-gray;
 
@@ -35,9 +36,7 @@ $focus:             $gold;
 $button-rest:       $medium-blue;
 
 $header-light:            $darkest-blue;
-$header-dark:             $darkest-blue;
-$header-secondary-light:  $medium-blue;
-$header-secondary-dark:   $bright-blue;
+$header-dark:             $bright-blue;
 
 $selector-rest:           $medium-blue;
 $accordion-color:         $neutral-10;

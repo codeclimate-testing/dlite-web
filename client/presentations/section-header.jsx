@@ -5,19 +5,13 @@ import ReactDOM from 'react-dom';
 
 import { hasValue } from '../helpers/data/validations';
 
-const NumberPrefix = (props) => {
-  if (!hasValue(props.number)) { return null; }
-  return <div className='unit number'>{props.number}</div>
-};
-
 const SectionHeader = (props) => {
   if (!hasValue(props.name)) { return null; }
 
   return (
-    <div className='inner'>
-      <NumberPrefix number={props.number} />
-      <div className='unit name'>{props.name || '&nbsp;'}</div>
-    </div>
+    <p className='row secondary-header'>
+      {props.name || '&nbsp;'}
+    </p>
   );
 };
 

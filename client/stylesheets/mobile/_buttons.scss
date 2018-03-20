@@ -115,6 +115,32 @@ a.button.edit {
   }
 }
 
+a.button.log-out {
+  margin: 1px 2px;
+  background-color: transparent;
+  color: $light-light-gray;
+  font-size: 12px;
+  font-weight: normal;
+
+  border: 1px solid $neutral-20;
+  @include rounded;
+  padding: 1px 10px;
+
+  &.hover,
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $lightest-color;
+    border-color: $lightest-color;
+  }
+
+  &:focus,
+  &.focus {
+    @include focus-outline;
+  }
+
+}
+
 button.arrow-button,
 a.button.arrow-button {
   padding: 0 0 $border-width-special 0;

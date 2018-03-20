@@ -27,13 +27,6 @@ const setTitle = (literal, section) => {
   }
 }
 
-const Header = (props) => {
-  return ReactDOM.createPortal(
-    <SectionHeader {...props}/>,
-    document.getElementById('section-header')
-  );
-}
-
 const ApplicationHeader = (props) => {
   return ReactDOM.createPortal(
     <div className='application-header'>
@@ -44,9 +37,7 @@ const ApplicationHeader = (props) => {
 
 const Page = (props) => {
   setTitle(props.pageTitle, props.section);
-
   let name = props.sectionName || (props.section && props.section.name);
-  let number = props.sectionNumber || (props.section && props.section.number);
 
   return (
     <div className='application-page'>
@@ -55,13 +46,13 @@ const Page = (props) => {
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />
-      <Header
-        number={number}
+      <SectionHeader
         name={name}
       />
-      {props.children}
-      <HomeLink />
 
+      {props.children}
+
+      <HomeLink />
       <EmojiDebugLink
         locale         =  { props.locale }
         onLocaleChange = { props.onLocaleChange }

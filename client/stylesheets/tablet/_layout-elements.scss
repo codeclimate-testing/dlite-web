@@ -1,8 +1,17 @@
 #page {
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+  @include box-shadow(transparentize($darkest-color, 0.6) 0 0 $shadow-padding);
+  border: 1px solid $neutral-30;
+}
+
+#header .primary .dmv-text-logo {
+  margin-left: 0;
+}
+
+.page-row {
   width: 600px;
   margin: 0 auto;
-  border-left: 1px solid $neutral-10;
-  border-right: 1px solid $neutral-10;
 }
 
 #app.inner {

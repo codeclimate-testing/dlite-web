@@ -21,75 +21,46 @@ body {}
 
 #header {
   background-color: $header-light;
+  @include background-image(linear-gradient(to right, $header-light, $header-dark));
 
   .inner {
-    padding: 12px $spacing 11px;
+    padding: 4px 0 6px;
   }
 
   .primary {
-    color: $lightest-color;
-    @include background-image(linear-gradient(to right, $header-dark, $header-light));
-    font-family: $main-font;
-
+    font-size: 13px;
+    color: $light-light-gray;
     margin-bottom: 0;
 
     .dmv-text-logo {
-      margin-top: 3px;
-      font-size: 20px;
+      margin-left: $spacing;
+      font-size: 15px;
+      margin-top: 1px;
     }
 
     .dmv-application-area {
       padding-left: $spacing * 0.75;
-      margin-top: $spacing / 4;
-      font-size: $font-size-main;
-    }
-
-    .application-header {
-      margin-top: 4px;
-    }
-  }
-
-  .secondary {
-    color: $lightest-color;
-    margin-bottom: 0;
-
-    .inner {
-      padding: 9px 20px 8px;
-    }
-
-    background-color: $header-secondary-light;
-    font-family: $main-font;
-    font-size: 12px;
-
-    .section-information {
-      min-height: 35px;
-      .number {
-        padding-right: 15px;
-      }
-    }
-
-    .account-information {
-      background-color: $header-secondary-dark;
-      @include clip-path(polygon(15% 0%, 0% 100%, 100% 100%, 100% 0%));
-
-      .log-out {
-        padding-left: 10px;
-        min-width: 60px;
-        text-align: right;
-      }
+      margin-top: 3px;
+      font-weight: normal;
     }
   }
 }
 
+.secondary-header {
+  color: $neutral-60;
+  margin-top: -$spacing / 2;
+  margin-bottom: $spacing;
+}
+
 #footer {
-  border-top: 1px solid $neutral-10;
-  background-color: $light-light-gray;
+  background-color: $neutral-30;
 
   .links {
     .inner {
       padding: $spacing / 4 $spacing / 2;
 
       a {
+        color: $darkest-color;
         font-size: $font-size-label;
         font-weight: bold;
         line-height: 1.3;
