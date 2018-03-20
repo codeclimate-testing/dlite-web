@@ -21,10 +21,10 @@ const TextInput = (props) => {
         className       = { className }
         aria-labelledby = { id }
       >
+        <div className='unit'>{ props.description }</div>
         <ErrorIcon
           errorClass={ className }
         />
-        { props.description }
       </label>
 
       <ExampleLabel

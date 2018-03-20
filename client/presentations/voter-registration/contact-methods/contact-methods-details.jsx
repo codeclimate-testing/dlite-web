@@ -78,15 +78,14 @@ const ContactDetails = (props) => {
             htmlFor       = 'phoneNumber'
             className     = { addError }
           >
+            <Translator
+              tag               = 'div'
+              className         = 'unit'
+              translationPath   = 'votingRegistration.contactInfoPage.phoneLabel'
+            />
             <ErrorIcon
               errorClass = { addError }
             />
-
-            <Translator
-              tag               = 'span'
-              translationPath   = 'votingRegistration.contactInfoPage.phoneLabel'
-            />
-
           </label>
 
           <ExampleLabel

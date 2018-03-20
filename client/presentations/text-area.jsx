@@ -18,8 +18,8 @@ const TextArea = (props) => {
         className       = { className }
         aria-labelledby = { props.identifier }
       >
+        <div className='unit'>{ props.description }</div>
         <ErrorIcon errorClass={ className } />
-        { props.description }
       </label>
       <div className="input-container">
         <textarea

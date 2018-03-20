@@ -28,8 +28,8 @@ const DateInput = (props) => {
         htmlFor       = { props.identifier}
         className     = { addError }
       >
+        <div className='unit'>{props.title}</div>
         <ErrorIcon errorClass= { addError } />
-        {props.title}
       </label>
 
       <NumberInput
