@@ -11,10 +11,9 @@ h1, h2, h3, h4 {
   font-weight: bold;
   $line-height: 1;
   color: $headline-blue;
-  margin-bottom: $spacing / 2;
 }
 
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin-bottom: $spacing / 2;
 }
 
@@ -40,19 +39,22 @@ h3 {
 
 h5 {
   font-weight: bold;
-  color: $another-gray
+  color: $neutral-80;
+}
+
+h5 {
+  color: $neutral-80;
 }
 
 a {
   color: $darkest-blue;
-  text-decoration: none;
 }
 
 a:hover,
 a.hover,
 a:active,
 a.active {
-  text-decoration: underline;
+  color: $darkest-color;
 }
 
 a:not(.button):focus {
@@ -74,7 +76,7 @@ hr {
 
 ul.bullet-list,
 ol.decimal-list {
-  padding: $spacing * 3 / 8 0;
+  padding: $spacing / 8 0;
   margin-left: $spacing;
 }
 
@@ -89,6 +91,6 @@ ol.decimal-list {
 
 li {
   padding-left: $spacing / 2;
-  padding-bottom: $spacing * 3 / 4;
+  padding-bottom: $spacing / 2;
 }
 
