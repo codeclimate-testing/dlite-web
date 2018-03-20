@@ -13,54 +13,24 @@ describe('SectionHeader', function() {
 
   it('does not render if not passed a name', function() {
     component = render(
-      <SectionHeader number='0'/>
+      <SectionHeader />
     );
 
     assert.equal(
-      component.find('inner').length,
-      0,
+      component.text(),
+      '',
       'component rendered'
     );
   });
 
-  it('does not render the number and arrows if no number is presented', function() {
+  it('render when name is present', function() {
     component = render(
       <SectionHeader name='Get started'/>
     );
 
     assert.equal(
-      component.find('.name').length,
-      1,
-      'header not rendered'
-    );
-
-    assert.equal(
       component.text(),
       'Get started'
-    );
-  });
-
-  it('includes the number and name if both are provided', function() {
-    component = render(
-      <SectionHeader name='My basics' number='1'/>
-    );
-
-    assert.equal(
-      component.find('.name').length,
-      1,
-      'name container not rendered'
-    );
-
-    assert.equal(
-      component.text().includes('1'),
-      true,
-      'number not rendered'
-    );
-
-    assert.equal(
-      component.text().includes('My basics'),
-      true,
-      'name not rendered'
     );
   });
 });
