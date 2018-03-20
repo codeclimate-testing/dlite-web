@@ -4,12 +4,14 @@ const getApplication    = require('./get-application');
 const postApplication   = require('./post-application');
 const getTranslation    = require('./get-translation');
 const renderClient      = require('./render-client');
+const logout            = require('./logout');
 
 let controllers = {
   getApplication,
   postApplication,
   getTranslation,
-  renderClient
+  renderClient,
+  logout
 };
 
 const auth = require('./auth');

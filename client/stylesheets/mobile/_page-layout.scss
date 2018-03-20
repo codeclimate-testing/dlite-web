@@ -27,6 +27,12 @@ body {}
     padding: 4px 0 6px;
   }
 
+  .log-out {
+    a {
+      color: $lightest-color;
+    }
+  }
+
   .primary {
     font-size: 13px;
     color: $light-light-gray;

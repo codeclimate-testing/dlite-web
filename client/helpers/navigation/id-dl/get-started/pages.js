@@ -17,6 +17,12 @@ import {
 
 const getStarted = [
   {
+    key: 'IDme',
+    description: 'IDDL sign-in',
+    path: '/sign-in',
+    next: 'legalName'
+  },
+  {
     key: 'welcome',
     description: 'Welcome',
     path: '/welcome',

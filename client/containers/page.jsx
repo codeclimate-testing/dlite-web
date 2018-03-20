@@ -19,7 +19,7 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     cardType:       state.application.cardType,
-    appType:        state.ui.appType,
+    chooseApp:      state.ui.chooseApp,
     section:        state.ui.section,
     locale:         state.ui.locale
   };

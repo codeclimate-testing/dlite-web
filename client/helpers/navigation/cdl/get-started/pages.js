@@ -15,6 +15,12 @@ import {
 
 const cdlGetStarted = [
   {
+    key: 'cdlIDme',
+    description: 'CDL sign-in',
+    path: '/sign-in',
+    next: 'cdlLegalName'
+  },
+  {
     key: 'cdlWdywtdt',
     description: 'What do you want to do today',
     path: applyOrEditCDLPath('/what-do-you-want-to-do-today'),

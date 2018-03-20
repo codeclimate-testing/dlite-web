@@ -7,6 +7,9 @@ import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-debug-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
+import cookie from 'react-cookie'
+
+import { getAppType }     from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {
   if (!title) { return; }
@@ -35,6 +38,17 @@ const ApplicationHeader = (props) => {
   );
 }
 
+const Logout = (props) => {
+  let isLoggedIn = cookie.load('isLoggedIn');
+  if (isLoggedIn.toString() !== 'true') { return null;}
+
+  let appType = getAppType(props);
+  let url = `/apply/${appType}/log-out`;
+  return ReactDOM.createPortal(
+    <a href={url}>Log out</a>, document.getElementById('log-out')
+  );
+}
+
 const Page = (props) => {
   setTitle(props.pageTitle, props.section);
   let name = props.sectionName || (props.section && props.section.name);
@@ -42,14 +56,17 @@ const Page = (props) => {
   return (
     <div className='application-page'>
       <GoogleAnalytics />
-      
+
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />
       <SectionHeader
         name={name}
       />
-
+      <Logout
+        appType = {props.chooseApp}
+        pathname = {props.location.pathname}
+      />
       {props.children}
 
       <HomeLink />

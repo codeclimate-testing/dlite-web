@@ -3,12 +3,15 @@
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
 import { pathForPage }                        from '../helpers/navigation/page';
-import { alicePath }                          from '../helpers/alice-path';
+import {
+  alicePath,
+  iddlPath,
+  cdlPath
+} from '../helpers/alice-path';
 
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './get-started/choose-language-page.jsx';
 import ChooseApplication                      from './get-started/choose-application-page.jsx';
-import IDMe                                   from './get-started/id-me-page.jsx';
 
 import GetStartedRoutes                       from './get-started/routes.jsx';
 import MyBasicsRoutes                         from './my-basics/routes.jsx';
@@ -31,7 +34,7 @@ class Router extends React.Component {
 
         <CDLRoutes />
 
-        <Route path={ alicePath('/sign-in') }                   component={IDMe} />
+
 
         <GetStartedRoutes />
         <MyBasicsRoutes />

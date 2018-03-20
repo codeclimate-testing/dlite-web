@@ -16,12 +16,6 @@ const intro = [
     description: 'choose CDL or ID/DL application',
     path: '/choose-application',
     next: chooseApplication
-  },
-  {
-    key: 'IDme',
-    description: 'ID Me',
-    path: '/sign-in',
-    next: 'welcome'
   }
 ];
 

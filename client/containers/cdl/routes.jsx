@@ -7,6 +7,7 @@ import {
   editCDLPath
 } from '../../helpers/alice-path';
 
+import IDMe                             from '../get-started/id-me-page.jsx';
 import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
 import LegalName                        from './my-basics/cdl-legal-name.jsx';
 import CdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
@@ -31,6 +32,8 @@ import Summary                          from './cdl-summary.jsx';
 const CDLRoutes = () => {
   return (
     <div>
+
+      <Route path={ cdlPath('/sign-in') }                               component={IDMe} />
 
       <Route path={ cdlPath('/true-name')}                              component={LegalName}  />
       <Route path={ editCDLPath('/true-name')}                          component={LegalName}  />

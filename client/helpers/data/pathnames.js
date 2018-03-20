@@ -115,3 +115,11 @@ export function applyOrEditCDLPath(url) {
     return urlPath;
   }
 };
+
+export function getAppType(props) {
+  let appType = props.chooseApp;
+  if (!props.chooseApp) {
+    appType = props.pathname.split('/')[2];
+  }
+  return appType;
+}

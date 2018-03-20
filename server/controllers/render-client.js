@@ -19,5 +19,7 @@ module.exports = (req, res) => {
   if (env === 'development') {
     layout = fs.readFileSync(indexPath).toString();
   }
+  console.log('is logged in? ' + req.isAuthenticated());
+  res.cookie('isLoggedIn', req.isAuthenticated());
   res.send(layout);
 };
