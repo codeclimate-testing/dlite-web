@@ -3,6 +3,8 @@
 const dotenv = require('dotenv');
 const env    = process.env.APP_ENV || 'development';
 
+process.env.NODE_ENV = env;
+
 if (env === 'development' || env === 'test') {
   dotenv.config();
 }
@@ -17,4 +19,3 @@ module.exports = {
   env: env,
   port: port
 };
-
