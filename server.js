@@ -31,10 +31,10 @@ csrf(server);
 
 server.use(logging());
 server.use(helmet());
-server.use('/', expressStaticGzip('public'));
 server.get('/', (req, res) => {
   res.redirect('/apply/choose-application');
 });
+server.use('/', expressStaticGzip('public'));
 server.use(express.static('public'));
 
 server.port = env.port;
