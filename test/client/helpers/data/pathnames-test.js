@@ -12,7 +12,8 @@ import {
   nextOrSummary,
   applyEditOrAddPath,
   applyOrEditCDLPath,
-  getAppType
+  getAppType,
+  getAppKey
 } from '../../../../client/helpers/data/pathnames';
 
 
@@ -223,6 +224,20 @@ describe('Data helpers for pathnames', function() {
         pathname :'localhost:3000/apply/id-and-license/sign-in'
       };
       assert.equal(getAppType(props), 'id-and-license');
+    });
+  });
+
+  describe('#getAppKey', function() {
+    let cookieValue;
+    beforeEach(function() {
+      cookieValue = '';
+    });
+    it('returns IDme by defuault', function() {
+      assert.equal(getAppKey(cookieValue), 'IDme');
+    });
+    it('returns cdlIDme when cookieValue is cdl', function() {
+      cookieValue = 'cdl';
+      assert.equal(getAppKey(cookieValue), 'cdlIDme');
     });
   });
 });

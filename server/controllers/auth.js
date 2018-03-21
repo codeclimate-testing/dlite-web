@@ -8,11 +8,16 @@ const authCallback = (passport) => {
   return passport.authenticate('oauth2', { failureRedirect: '/auth/error'});
 };
 
-const authSuccess = (req, res) => {
+const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   req.session.user = req.user; // is this right? or should be use a method in passport to do the serialization?
   res.cookie('isLoggedIn', true);
 
-  res.redirect('/apply/logged-in');
+  if (env === 'development') {
+    res.redirect('http://localhost:3000/apply/logged-in');
+  } else {
+    res.redirect('/apply/logged-in');
+  }
+
 };
 
 const authError = (req, res) => {

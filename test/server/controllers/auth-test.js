@@ -6,7 +6,7 @@ const httpMocks   = require('node-mocks-http');
 const controllers = require('../../../server/controllers/auth');
 
 describe('Auth related controllers', () => {
-  let req, res, passport;
+  let req, res, next, passport;
 
   beforeEach(function() {
     req = {session: {user: {id: 'foo'}}};
@@ -34,5 +34,10 @@ describe('Auth related controllers', () => {
   it('#authSuccess sets isLoggedIn cookie to true', function() {
     controllers.authSuccess(req, res);
     assert(res.cookie.calledWith('isLoggedIn', true));
+  });
+
+  it('#authSuccess redirects to localhost if app_env is development', function() {
+    controllers.authSuccess(req, res, next, 'development');
+    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in'));
   });
 });

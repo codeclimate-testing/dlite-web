@@ -1,12 +1,20 @@
 'use strict';
-import { nextPath }     from '../../helpers/navigation/page';
+import { nextPath }             from '../../helpers/navigation/page';
+import { getAppKey }            from '../../helpers/data/pathnames';
+import {
+  buildCookie,
+  getAppNameCookie
+} from '../../helpers/data/cookies';
 
 const loggedIn = (props) => {
-  let appName = localStorage.getItem('appName');
-  let pageKey = 'IDme';
-  if (appName === 'cdl') {
-    pageKey = 'cdlIDme';
+
+  // set isLoggedIn key for localhost
+  if (APP_ENV === 'development') {
+    document.cookie = 'isLoggedIn=true;path=/';
   }
+
+  let appName = getAppNameCookie();
+  let pageKey = getAppKey(appName);
 
   // include placeholder flow prop
   let pathURL = nextPath(pageKey, {

@@ -118,9 +118,20 @@ export function applyOrEditCDLPath(url) {
 
 export function getAppType(props) {
   let appType = props.chooseApp;
-  if (!props.chooseApp && props.hasOwnProperty('location')) {
+  if (!props.chooseApp && props.location) {
     appType = props.location.pathname.split('/')[2];
   }
+  else if (!props.chooseApp && !props.location){
+    appType = 'id-and-license';
+  }
   return appType;
+}
+
+export function getAppKey(cookieValue) {
+  let pageKey = 'IDme';
+  if (cdlApp(cookieValue)) {
+    pageKey = 'cdlIDme';
+  }
+  return pageKey;
 }
 

@@ -7,8 +7,7 @@ import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-debug-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
-import cookie from 'react-cookie'
-
+import { getLoggedIn }    from '../helpers/data/cookies';
 import { getAppType }     from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {
@@ -39,8 +38,7 @@ const ApplicationHeader = (props) => {
 }
 
 const Logout = (props) => {
-  let isLoggedIn = cookie.load('isLoggedIn');
-
+  let isLoggedIn = getLoggedIn();
   if (!isLoggedIn || isLoggedIn.toString() !== 'true') { return null;}
 
   let appType = getAppType(props);

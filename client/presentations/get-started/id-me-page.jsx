@@ -3,11 +3,8 @@
 import React              from 'react';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import { getAppType }     from '../../helpers/data/pathnames';
 
 const Presentation = (props) => {
-  let appName = getAppType(props);
-  localStorage.setItem('appName', appName);
 
   return (
     <Page
