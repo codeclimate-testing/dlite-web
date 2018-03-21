@@ -64,7 +64,7 @@ const Page = (props) => {
         name={name}
       />
       <Logout
-        appType = {props.chooseApp}
+        chooseApp = {props.chooseApp}
         location = {props.location}
       />
       {props.children}

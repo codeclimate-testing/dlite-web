@@ -5,23 +5,24 @@ import {
   buildCookie,
   getAppNameCookie
 } from '../../helpers/data/cookies';
+import AutoLogout               from '../../helpers/handlers/auto-logout';
 
 const loggedIn = (props) => {
+  let appName = getAppNameCookie();
+  let pageKey = getAppKey(appName);
 
   // set isLoggedIn key for localhost
   if (APP_ENV === 'development') {
     document.cookie = 'isLoggedIn=true;path=/';
   }
-
-  let appName = getAppNameCookie();
-  let pageKey = getAppKey(appName);
-
   // include placeholder flow prop
   let pathURL = nextPath(pageKey, {
     flow: ''
   });
 
   props.history.push(pathURL);
+
+  new AutoLogout(props.history, appName);
   return null;
 };
 
