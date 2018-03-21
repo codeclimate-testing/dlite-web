@@ -7,13 +7,12 @@ import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-debug-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
-import { getLoggedIn }    from '../helpers/data/cookies';
-import { getAppType }     from '../helpers/data/pathnames';
+import { isLoggedIn }     from '../helpers/data/cookies';
 
 const setTitleLiteral = (title, section) => {
   if (!title) { return; }
   document.title = title;
-}
+};
 
 const setTitleFromState = (section) => {
   let name = section.name;
@@ -27,7 +26,7 @@ const setTitle = (literal, section) => {
   } else if (section) {
     setTitleFromState(section);
   }
-}
+};
 
 const ApplicationHeader = (props) => {
   return ReactDOM.createPortal(
@@ -38,11 +37,9 @@ const ApplicationHeader = (props) => {
 }
 
 const Logout = (props) => {
-  let isLoggedIn = getLoggedIn();
-  if (!isLoggedIn || isLoggedIn.toString() !== 'true') { return null;}
 
-  let appType = getAppType(props);
-  let url = `/apply/${appType}/log-out`;
+  if (!isLoggedIn(props)) { return null;}
+  let url = `/apply/${props.appName}/log-out`;
 
   return ReactDOM.createPortal(
     <a href={url}>Log out</a>, document.getElementById('log-out')
@@ -64,8 +61,7 @@ const Page = (props) => {
         name={name}
       />
       <Logout
-        chooseApp = {props.chooseApp}
-        location = {props.location}
+        appName = {props.appName}
       />
       {props.children}
 

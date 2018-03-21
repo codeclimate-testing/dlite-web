@@ -31,7 +31,10 @@ class Router extends React.Component {
         <Route path={ alicePath('/logged-in')}                  component={LoggedIn} />
         <Route path={ alicePath('/disclaimers') }               component={Disclaimers} />
         <CDLRoutes />
+<<<<<<< HEAD
 
+=======
+>>>>>>> added logic to onBack handler and to server routes so that user clicking back after logging out or user hitting the server at a route after logging out will be redirected to login
         <GetStartedRoutes />
         <MyBasicsRoutes />
         <MyHistoryRoutes />

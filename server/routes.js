@@ -3,6 +3,11 @@
 const router            = require('express').Router();
 const controllers       = require('./controllers');
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect(`/apply/${req.cookies.appName}/log-in`);
+}
+
 const routes = (passport) => {
   router.get( '/api/application/:id',     controllers.getApplication);
   router.post('/api/application',         controllers.postApplication);
@@ -16,8 +21,8 @@ const routes = (passport) => {
   router.get( '/apply/cdl/log-out',            controllers.logout('cdl'));
   router.get( '/apply/id-and-license/log-out', controllers.logout('id-and-license'));
 
-  router.get( '/apply*',                controllers.renderClient);
-  router.get( '/add*',                  controllers.renderClient);
+  router.get( '/apply*',                ensureAuthenticated,
+                                        controllers.renderClient);
   router.get( '*.js',                   controllers.sendZip);
 
   return router;

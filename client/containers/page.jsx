@@ -1,18 +1,27 @@
 'use strict';
 
-import React from 'react';
-import { connect } from 'react-redux';
-
+import React                    from 'react';
+import { connect }              from 'react-redux';
 import Presentation             from '../presentations/page.jsx';
 import handlers                 from '../helpers/handlers';
-import { getTextFromState }     from '../helpers/data/pathnames';
+
+import {
+  getTextFromState,
+  getAppType
+} from '../helpers/data/pathnames';
 
 const Page = (props) => {
   let sectionKey = getTextFromState(props, props.sectionKey, '');
   props.onPageLoad(sectionKey, props.section);
 
+  // determine which app (cdl or IDDL they are on)
+  let appName = getAppType(props);
+
   return (
-    <Presentation {...props} />
+    <Presentation
+      {...props}
+      appName = {appName}
+    />
   );
 };
 

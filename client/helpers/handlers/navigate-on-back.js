@@ -1,5 +1,6 @@
 'use strict';
-import { editMode }    from '../data/pathnames';
+import { editMode }             from '../data/pathnames';
+import { requireLogIn }         from '../data/cookies';
 
 const normalFlowOrValid = (props, validator) => {
   if (editMode(props)) {
@@ -16,9 +17,13 @@ const onBackGenerator = (props, validator) => {
     props.history.goBack();
   };
 
-  if (normalFlowOrValid(props, validator)) {
+  if (requireLogIn(props)) {
+    return props.history.push(`/apply/${props.appName}/sign-in`);
+  }
+  else if (normalFlowOrValid(props, validator)) {
     return goBack;
-  } else {
+  }
+  else {
     return props.onSubmitShowErrors;
   }
 

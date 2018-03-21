@@ -6,7 +6,7 @@ import {
   buildLoggedIn,
   buildAppName,
   getAppNameCookie,
-  getLoggedIn
+  isLoggedIn
 } from '../../../../client/helpers/data/cookies';
 
 describe('Data helpers for cookies', function() {
