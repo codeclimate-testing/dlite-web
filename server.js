@@ -7,7 +7,7 @@ const bodyParser        = require('body-parser');
 const passport          = require('passport');
 const session           = require('express-session')
 const helmet            = require('helmet');
-const compress          = require('compression');
+const expressStaticGzip = require("express-static-gzip");
 
 const logging           = require('./server/config/logging');
 const sessionOptions    = require('./server/config/session-options');
@@ -31,13 +31,11 @@ csrf(server);
 
 server.use(logging());
 server.use(helmet());
+server.use('/', expressStaticGzip('public'));
+
 server.get('/', (req, res) => {
   res.redirect('/apply/choose-application');
 });
-
-server.use(compress({
-  threshold: 0
-}));
 server.use(express.static('public'));
 
 
