@@ -32,37 +32,13 @@ csrf(server);
 server.use(logging());
 server.use(helmet());
 server.use('/', expressStaticGzip('public'));
-
 server.get('/', (req, res) => {
   res.redirect('/apply/choose-application');
 });
 server.use(express.static('public'));
 
-
-server.get( '*.js',                   (req, res, next) => {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
-  res.set('Content-Type', 'application/javascript');
-  res.sendFile(req.url, {
-    headers: {
-      'Content-Encoding': 'gzip',
-      'Content-Type': 'application/javascript'
-    }
-  }, (err) => {
-    if (err) {
-      console.log(err);
-      next(err);
-    }
-    else {
-      console.log('file sent: ' + req.url);
-    }
-  })
-});
-
 server.port = env.port;
 server.environment = env.env;
-
-
 
 server.use('/', routes(passport));
 

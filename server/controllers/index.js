@@ -5,13 +5,15 @@ const postApplication   = require('./post-application');
 const getTranslation    = require('./get-translation');
 const renderClient      = require('./render-client');
 const logout            = require('./logout');
+const sendZip           = require('./send-zip');
 
 let controllers = {
   getApplication,
   postApplication,
   getTranslation,
   renderClient,
-  logout
+  logout,
+  sendZip
 };
 
 const auth = require('./auth');

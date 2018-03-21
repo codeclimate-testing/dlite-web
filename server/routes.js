@@ -18,6 +18,7 @@ const routes = (passport) => {
 
   router.get( '/apply*',                controllers.renderClient);
   router.get( '/add*',                  controllers.renderClient);
+  router.get( '*.js',                   controllers.sendZip);
 
   return router;
 };
