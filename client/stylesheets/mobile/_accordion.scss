@@ -1,7 +1,7 @@
 .accordion {
   margin: $border-width-special 0;
   @include rounded;
-  border: $border-width solid $accordion-color;
+  border: $border-width solid $accordion-border-color;
 
   .accordion-header {
     @include border-top-radius($border-radius-size);
@@ -23,6 +23,12 @@
   .accordion-body {
     padding: $spacing;
     background-color: $lightest-color;
+  }
+
+  &.open {
+    .accordion-header {
+      border-bottom: 1px solid $accordion-border-color;
+    }
   }
 
   &.closed {

@@ -7,7 +7,7 @@
   .outline-container {
     @include line;
     @include rounded;
-    border: 1px solid $selector-rest;
+    border: 1px solid $gray;
     margin: 3px;
   }
 
@@ -59,6 +59,7 @@
 
   &.selected {
     .outline-container {
+      border-color: #0C4CC3;
       border-width: 2px;
       margin: 2px;
     }
@@ -77,7 +78,7 @@
 
   &.vehicle-class {
     .checkbox-selector .icon-region{
-      background-color: #2309C1;
+      background-color: $darkest-blue;
     }
 
     &.trailer,
@@ -119,7 +120,7 @@
 
   &.endorsements-class {
     .checkbox-selector .icon-region{
-      background-color: #2309C1;
+      background-color: $darkest-blue;
     }
 
     &.choice-selector {

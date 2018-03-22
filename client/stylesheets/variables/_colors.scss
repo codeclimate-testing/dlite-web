@@ -29,7 +29,7 @@ $darkest-color:     $dark-text;
 $headline-blue:     $navy;
 $background:        $light-light-gray;
 
-$gray:              $neutral-50; // not used?
+$gray:              $neutral-50;
 $another-gray:      $neutral-60;
 
 $focus:             transparentize($gold, 0.3);
@@ -38,9 +38,9 @@ $button-rest:       $medium-blue;
 $header-light:            $darkest-blue;
 $header-dark:             $bright-blue;
 
-$selector-rest:           $medium-blue;
-$accordion-color:         $neutral-10;
-$accordion-hover:         $neutral-30;
+$accordion-color:         lighten($darkest-blue, 65%);
+$accordion-border-color:  $neutral-20;
+$accordion-hover:         lighten($darkest-blue, 60%);
 
 
 // Theme based color

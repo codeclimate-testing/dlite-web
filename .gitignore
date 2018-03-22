@@ -2,12 +2,8 @@ node_modules
 coverage
 .env
 log
-public/app.js
-public/app.css
-public/app.dev.js
-public/app.dev.css
-public/app.stage.js
-public/app.stage.css
+public/*.js*
+public/*.css*
 **/*.DS_Store
 
 debug.png
