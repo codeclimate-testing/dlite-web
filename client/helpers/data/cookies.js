@@ -14,17 +14,22 @@ export const getAppNameCookie = () => {
   return document.cookie.replace(/(?:(?:^|.*;\s*)appName\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 };
 
-export const isLoggedIn = (props) => {
-  let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)isLoggedIn\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-  return (cookieValue && cookieValue.toString() === 'true');
+export const getLoggedIn = () => {
+  return document.cookie.replace(/(?:(?:^|.*;\s*)isLoggedIn\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 };
 
-export const isProduction =   APP_ENV !== 'development' &&
-                              APP_ENV !== 'test' &&
-                              APP_ENV !== 'acceptance';
+export const isLoggedIn = () => {
+  let cookieValue = getLoggedIn();
+  return cookieValue.toString() === 'true';
+};
 
-export const afterIntro = (props) => {
-  let pathname = props.location.pathname;
+export const isProduction = (env = APP_ENV) => {
+  return  env !== 'development' &&
+          env !== 'test' &&
+          env !== 'acceptance';
+};
+
+export const afterIntro = (pathname) => {
   let introPages = ['chooseLanguage', 'chooseApplication'];
   for(var i = 0; i < introPages.length; i++) {
     if(pathForPage(introPages[i]) === pathname) {
@@ -34,6 +39,6 @@ export const afterIntro = (props) => {
   return true;
 };
 
-export function requireLogIn(props){
-  return (isProduction && afterIntro(props) && !isLoggedIn(props));
+export function requireLogIn(props, env = APP_ENV){
+  return (isProduction(env) && afterIntro(props.location.pathname) && !isLoggedIn());
 };
