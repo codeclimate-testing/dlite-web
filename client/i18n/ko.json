@@ -1,4 +1,538 @@
 {
+  "confirmationPage": {
+    "header": "확인",
+    "subHeader": "귀하의 정보를 받았습니다. ",
+    "confirmationCode": "귀하의 확인 코드:",
+    "nextSteps": {
+      "title": "이후 진행 사항",
+      "steps": [
+        "귀하는 확인 코드를 이메일로 받게 됩니다.",
+        "귀하의 신청을 마무리하기 위해 DMV 지역 사무소를 방문 하셔야 합니다. ",
+        "필요한 서류준비와 시험 공부로 방문을 준비하시기 바랍니다.    <a href='/apply/appointment-preparation'> 귀하의 신청서에 있는 정보를 근거로 맞춤 준비 목록을 만들었습니다.",
+        "DMV 지역 사무소 직원에게 귀하의 확인 번호와 문서를 보여주십시오. 그러면 직원이 귀하의 신청서를 불러올 것입니다. ",
+        "귀하에게 귀하의 정보를 확인해 달라고 합니다. 그리고 귀하는 DMV 지역 사무소를 방문해서 정보가 정확함을 확인해주게 됩니다. "
+      ]
+    },
+    "registrationCompleteAtOffice": "다시 말씀 드리건대, 귀하의 투표자 등록 신청은 귀하가 DMV 지역 사무소에서 귀하의 신청서를 마무리 할 때 처리됩니다. ",
+    "checkVoterStatus": "귀하의 진행 상태를 체크하십시오. <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "registerSooner": "DMV 방문하기 전에 투표 등록을 해야 하는 경우.  RegisterToVote.ca.gov에서 온라인으로 등록할 수 있습니다.",
+    "register30days": "다음 번 주 단위 선거를 위한 투표를 원하시면 RegisterToVote.ca.gov에서 온라인으로 등록하십시오. ",
+    "avoidLines": "오래 기다리는 것이 싫으시면 귀하의 지역 DMV에서 약속 정하시기 바랍니다.",
+    "makeAnAppointment": "약속하기"
+  },
+  "confirmationCDL": {
+    "commercialLearnersPermit": "필기 시험에 통과하고, 다른 모든 조건을 충족하는 경우, 영업용 운전연수 허가증(CLP)을 발급해 줍니다. 영업용 운전연수 허가증(CLP)을 발급 받은 후 임시 영업용 운전 면허를 받을 수 있기까지 14일을 기다려야만 합니다."
+  },
+  "disclaimers": {
+    "medical": {
+      "title": "의료 정보",
+      "body": "차량을 안전하게 운전하는 능력에 영향을 끼칠 수 있는 상황은 다음을 포함하되 이에 국한되지는 않습니다.  의식 상실.깜짝 실수를 반복 초래할 수 혼돈 상황.질병, 장애 (예를 들면, 간질,뇌졸중, 백내장, 파킨슨 병), 시력 감퇴, 당뇨병성 망막증, 녹내장, 색소성 망막염, 또는 기타 진행성 질환에 의한 시력 저하나 변화. 음주나 약물 남용과 같은 건강 문제."
+    },
+    "veteran": {
+      "title": "재향군인 표시",
+      "body": "저는 본 신청서의 재향군인 박스에 체크함으로써 미국 재향군인임을 밝히며, 캘리포니아 재향군인청(CalVet)으로부터 재향군인 혜택에 관한 정보를 받기를 원합니다. 저는 본 신청서의 재향군인 박스에 체크함으로써 차량관리국(DMV)이 재향군인청(CalVet)에 본 목적을 위해서만 저의 이름과 우편주소를 전송하는 것에 동의하며, 전송에 대한 사실을 통지 받았음을 확인합니다. "
+    },
+    "organDonation": {
+      "title": "장기 기증 함",
+      "body": "귀하는 장기 및 조직 기증자로 등록하기에 ‘예’라고 표시한 경우, 사망 시 장기 및 조직 회수를 법적으로 허락하게 됩니다.  기증자로 등록해도 치료에는 어떤 영향도 미치지 않습니다. 캘리포니아 장기 기증법 (California Anatomical Gift Act)에 따라 귀하의 허락은 법적 효력을 가지며, 귀하가 18세 미만이 아닌 이상 본 하락에 다른 사람의 동의가 필요하지 않습니다. 등록자가 18세 미만인 경우, 법적 보호자가 장기 기증 결정을 합니다.  귀하는 기증을 특정한 장기 및 신체로 한정하고, 용도를 제한(예, 이식 이나 연구용)할 수 있습니다. 귀하는 기증에 관한 더 많은 정보를 얻거나 캘리포니아 생명 기부 (Donate Life California) 웹 사이트 을 통해 해당 등록부에서 귀하의 이름을 삭제할 수 있습니다. 귀하는 장기 기증자로 등록함으로써 DMV가 귀하의 성명, 거주지, 우편 주소, 출생연도, 캘리포니아 운전 면허증 또는 신분증 번호를 캘리포니아 생명 기부(Donate Life California)에 전송하는 것을 하락하게 됩니다. 귀하는 본 양식에 서명함으로써 본 절차에 동의하고, 이러한 전송이 이루어 질 것임을 통지 받은 것이 됩니다."
+    },
+    "voterRegistration": {
+      "title": "투표자 등록",
+      "bodyBullets": [
+        "귀하의 주소를 밝히는 것이 귀하의 목숨을 위험에 빠트릴 수도 있는 경우, 비밀리에 투표등록을 할 수도 있습니다. 더 상세한 정보는 가정 안전 (Safe at Home) 프로그램 (877) 322-5227으로 문의하거나, <ahref='www.sos.ca.gov/safeathome/'>>을 방문하십시오.",
+        "미국 시민에게만 해당. 투표 자격이 있다고 표시한 경우, DMV가 귀하의 디지털 서명을 포함해, 본 양식에서 수집한 투표자 등록 정보를 모두 국무장관에게 보내게 됩니다. 귀하가 등록한 사무소는 기밀로 유지되며, 이의 목적은 단지 투표자 등록을 위한 것입니다.",
+        "투표권이 있으나 투표 등록을 거부하는 경우, 귀하의 판단은 기밀로 유지됩니다. 하지만 이 정보는 국무장관에게 보내지고, 이는 투표자 홍보 및 등록 목적으로만 사용됩니다. ",
+        "본 신청서에서 제공되는 투표자 등록 정보는 기밀입니다.  DMV는 투표자 자격을 결정하지 않습니다. ",
+        "등록 30일 안에 투표자 등록 정보를 받지 못한 경우, 귀하의 카운티 선거 사무소 또는 국무장관에게 문의 하십시오.",
+        "투표자 등록에 관한 더 자세한 정보는<ahref='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a>을, 일반 정보는 <a href='www.sos.ca.gov'>>을 방문하십시오."
+      ]
+    },
+    "criminalProsecution": {
+      "title": "형사 소추",
+      "bodyBullets": [
+        "귀하가 거짓 정보를 제공하는 경우 DMV는 형사 소추를 할 수도 있습니다.",
+        "시민권 또는 영주권을 속이기 위해 허위문서를 사용하는 사람은 캘리포니아 형법(California Penal Code) §114에 따라 중죄에 해당합니다. "
+      ]
+    },
+    "financialResponsibility": {
+      "title": "재무 책임",
+      "bodyBullets": [
+        "캘리포니아 도로를 운행하거나 정차된 모든 차량에 대해서는 재무 책임(일반적으로 보험)이 요구됩니다.  귀하는 차량에 대한 재무 책임 증서를 늘 소지해야 하며, 다음 상황에서 이를 제시해야 합니다. 법 집행자의 요구가 있을 경우, 차량 등록을 갱신할 경우, 차량이 교통 추돌사고에 연루 되었을 경우.",
+        "배상책임 보험을 감당할 수 없는 경우, 캘리포니아 저 소득층 자동차 보험 프로그램(Low Cost Automobile Insurance Program)을 이용할 수 있습니다. 더 자세한 정보는href='www.mylowcostauto.com'>www.mylowcostauto.com</a> 에서 알아보거나 (866) 602-8861로 문의하십시오."
+      ]
+    },
+    "paymentRefunds": {
+      "title": "지불/환급",
+      "bodyBullets": [
+        "귀하의 지역 DMV 현장 서무소의 지불 방법(option) 보시려면 <a href='www.dmv.ca.gov'>>을 방문하십시오.  우편으로 갱신하는 경우, 지불은 수표로 해야만 합니다.  (수표 수취인은 DMV로 해야 합니다).",
+        "본 신청서와 수수료를 보낸 후에는 환불이 되지 않습니다."
+      ]
+    },
+    "privacy": {
+      "title": "개인 정보 고지",
+      "bodyBullets": [
+        "DMV는 본 양식에 있는 정보에 근거해 운전 면허증이나 신분증 및 운전 면허 법 적용을 위한 자격을 판단합니다. ",
+        "본 양식에서 DMV에서 제공되는 정보는 정보관리법(18 U.S.C. 2721-2725), 운전자 개인정보 보호법(18 U.S.C. 2721-2725), 캘리포니아 차량법(CVC) 및 기타 해당 주 및 연방법과 규정에 따라 수집 되고, 적용을 받습니다.",
+        "DMV는 귀하가 제공하는 정보와 문서를 다른 정보 기관에 확인합니다.",
+        "본 양식상의 모든 정보는 달리 명시하지 않은 한 모두 필수 정보입니다. DMV는 필수 정보를 제공하지 않는 경우 귀하의 신청을 거부할 수 있습니다. 본 양식의 필수 정보를 제공하지 않는 경우 운전 면허 또는 신분증 발급 거부, 또는 경우에 따라서는 운전 특권(driving privilege) 취소나 철회가 발생할 수 있습니다.",
+        "DMV는 귀하의 정보를 정부기관, 법 집행 기관, 그리고 법이 허용하는 상업적 기관과 공유합니다. 귀하의 기록 사본은 <a href='www.dmv.ca.gov'>>에서 또는 모든 DMV 지역 사무소에서 정상 업무 시간 중에 구할 수 있습니다.  귀하의 정보를 보는데 도움이 필요한 경우 (800) 777-0133로 문의하거나, 정상 업무시간 중에 DMV 지역 사무소 방문을 약속을 잡을 수 있습니다.   귀하의 정보를 정정하는 데 도움이 필요한 경우, DMV의 운전면허 업무 의무조치 부서(Licensing Operations Division Mandatory Actions Unit) (916) 657-6525로 문의하십시오. ",
+        "귀하의 운전면허 또는 신분증 관련문의를 위한 주소는 아래와 같습니다.  Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
+        "특정 CVC 법규 또는 DMV가 귀하의 정보를 공유하는 방법과 관련된더자세한정보는<ahref='www.dmv.ca.gov'>>에 나와있습니다. 귀하는 또한 귀하의 DMV정보 공유 방법 (FFDMV 17) 사실 요약 브로셔(Fast Facts brochure)사본을 어떤 지역 사무소에서든 요청할 수 있습니다.",
+        "DMV의 개인정보 보호 정책 (Privacy Policy )은 <a href='www.dmv.ca.gov'>>에 나와 있으며, 페이지 하단의 “개인정보보호 정책 (Privacy Policy)” 링크아래 아래에 있습니다.",
+        "본 고지 관련 문의는 아래주소로 해주시기 바랍니다. Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+      ]
+    },
+    "certifications": {
+      "title": "증서",
+      "bodyBullets": [
+        "본인은 캘리포니아 차량법 (Code (CVC) §23612)에 따라 대민 봉사관(peace officer)이 나의 혈중 알코올 또는 약물내용을 판단하기 위한 목적으로 혈액, 호흡, 소변에 대한 화학시험을 요구할 경우 이에 응할 것에 동의합니다. ",
+        "저는 음주나 약물 또는 이 둘 모두 차량을 안전하게 운행 하는 능력을 저하 시킨다는 사실을 안내 받았습니다.  따라서 음주나 약물 운전 또는 이 둘 모두는 인간 생명에 매우 위험하다는 사실을 알고 있습니다.  음주나 약물 운전 또는 이 둘에 의해 사람이 사망한 경우, 살인죄에 처할 수 있음을 알고 있습니다. ",
+        "저는 본 신청서에 서명함으로써, 제가 21살 미만인 경우 혈중 알코올 농도 (BAC) 0.01% 이상인 상태로는 운전하는 것은 불법임을 안내 받았음을 확인합니다.  혈중알코올 농도(BAC)가 0.01% 이상인 상태로 운전하거나, 음주 또는 약물 측정을 거부하거나, 완료하지 못하는 경우 1년간 운전면허가 정지됩니다. ",
+        "저는 본 신청서에 서명한으로써, 제가 음주나 약물 운전으로 인한 보호관찰 대상자인 경우, 혈중알코올 농도(BAC)가 0.01% 이상인 상태로 운전하는 것이 불법임을 안내 받았음을 확인 합니다.  혈중알코올 농도(BAC)가 0.01% 이상인 상태로 운전하면 1년간 운전면허가 정지됩니다. 음주 측정 또는 화학적 검정을 거부하거나 완료 하지 못하는 경우 2 또는 3년간 운전면허가 정지/취소 됩니다. ",
+        "저는 본 양식의 전면에 기록되어 있는 이름의 당사자가 맞습니다.   여기 있는 우편주소는 유효한, 실재하는 정확한 주소가 맞습니다.  저는 캘리포니아 민사 절차법 §§415.20(b), 415.30(a), 416.90에 따라 본 진행 서비스를 본 주소지로 받아보는 것에 동의합니다.",
+        "저는 DMV가 다른 주 및 관할구역이 보고한 교통 위반을 저의 운전기록에 추가 기록하며, 저의 캘리포니아 운전면허에 대한 징계로 이어질 수 있음을 인지하고 있습니다. ",
+        "저는 본 양식에 서명함으로써 CVC §12801에 명시된 경우를 제외하고, 저의 미국 거주가 연방법에 의해 인가 된 것으로 인지하고 있습니다.",
+        "저는 CVC §12511에 따라 운전면허를 하나이상 소지 하거나, 이용할 수 없음을 인지하고 있습니다.   ",
+        "저는 본 양식에 서명 함으로서 CVC §12800(h)에 따라 교통 표지와 신호를 이해하고 있음을 확인합니다."
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "귀하의 성을 입력하십시오.",
+    "dateOfBirthMissing": "귀하의 생년월일을 입력하십시오.",
+    "applicationActionMissing": "원하는 것을 선택하십시오.",
+    "realIdSelectionMissing": "Real ID 카드를 원하는 경우 선택하십시오.",
+    "realIdCardSelectionMissing": "어떤 카드를 Real ID카드로 사용하기 원하는지 선택하십시오.",
+    "licenceClassMissing": "운행을 원하는 차량을 선택해 주십시오.",
+    "cardNumberMissing": "유효한 운전 면허 또는 ID 번호를 입력하십시오.",
+    "streetAddressMissing": "사는 거리를 입력하십시오.  ",
+    "cityMissing": "사는 도시를 입력하십시오.",
+    "mailingAddressMissing": "우편주소를 알려주십시오.",
+    "sexSelectionMissing": "귀하의 성별을 선택해주십시오.",
+    "hairColorMissing": "머리 색깔을 선택해주십시오.",
+    "eyeColorMissing": "눈동자 색깔을 선택해주십시오.",
+    "heightMissing": "키를 입력해주십시오.",
+    "weightMissing": "몸무게를 입력해주십시오.",
+    "socialSecurityAvailabilityMissing": "사회보장번호(Social Security Number) 가 있는지 알려주십시오.",
+    "socialSecurityNumberMissing": "귀하의 사회보장번호(Social Security Number)를 입력하십시오.",
+    "socialSecurityNumberInvalid": "유효한 사회보장번호(Social Security Number)를 입력하십시오.",
+    "medicalHistorySelectionMissing": "질병이 있는지 알려주십시오.",
+    "licenceHistorySelectionMissing": "운전면허증 또는 ID카드가 있는지 알려주십시오. ",
+    "expirationDateInvalid": "유효한 만료일자를 입력해주십시오.",
+    "nameHistorySelectionMissing": "다른 이름으로 된 운전면허 또는 ID카드가 있는지 알려주십시오.",
+    "licenseIssueSelectionMissing": "운전 면허가 취소, 정지, 또는 폐지된 이유를 알려주십시오.",
+    "licenseIssueDateMissing": "이 일이 발생한 때를 알려주십시오.",
+    "veteranSelectionMissing": "미군에 복무한 적이 있는지 선택해 주십시오.",
+    "veteranBenefitSelectionMissing": "재향군인 혜택에 관한 정보를 받고 싶은지 알려주십시오.",
+    "veteranDesignationExistsMissing": "\"재향군인(Veteran)\" 이 ID 또는 운전면허에 표시되어 있는지 알려주십시오. .",
+    "veteranDesignationExistsMissing2": "귀하의 카드에 \"재향군인(Veteran)\"이 표시되어 있는지 알려주십시오.",
+    "keepVeteranDesignationSelectionMissing": "귀하의 카드에 표시되어 있는 \"재향군인(Veteran)\"을 그대로 유지하고 싶은지 알려주십시오.",
+    "wantVeteransDesignationSelectionMissing": "귀하의 카드에 \"재향군인(Veteran)\"을 표시하기 원하는지 알려주십시오.",
+    "organDonationSelectionMissing": "귀하의 장기 기증을 원하는지 알려주십시오.",
+    "moneyOrganDonationSelectionMissing": "기증을 원하시는 경우 알려주십시오.",
+    "citizenshipSelectionMissing": "미국 시민인 경우 선택하십시오.",
+    "votingEligibilitySelectionMissing": "귀하가 자격요건을 충족하는 경우 선택하십시오.",
+    "wantToPreregisterSelectionMissing": "투표 등록을 원하는 경우 알려주십시오.",
+    "politicalPartySelectionMissing": "정당을 선택하십시오.",
+    "ballotLanguageSelectionMissing": "언어를 선택하십시오.",
+    "ballotByMailSelectionMissing": "투표용지를 우편으로 받기 원하는지 알려주십시오.",
+    "emailAddressMissingOrInvalid": "유효한 이메일 주소를 입력하십시오.",
+    "phoneMissingOrInvalid": "유효한 전화번호를 입력하십시오.",
+    "liabilityAcceptanceMissing": "법적 책임을 지겠다고 박스에 체크하십시오.",
+    "parentNameMissing": "귀하의 이름을 입력하십시오.",
+    "invalidOrMissingDate": "유효 날짜를 입력하십시오.",
+    "identityDocumentationMissing": "귀하의 신분증 문서 정보를 입력하십시오.",
+    "dataIncludesNonEnglishCharacters": "미안하지만, 귀하의 카드에는 영어 알파벳만 사용할 수 있습니다. ",
+    "errorPreventContinuing": "이 페이지 에러를 정정하기 전까지는 진행할 수 없습니다. ",
+    "selectionMissing": "하나를 선택해 주십시오.",
+    "pleaseEnterValidData": "유효한 정보를 입력하십시오.",
+    "inputIncludesNonEnglishCharacters": "영문자만 입력할 수 있습니다. ",
+    "licenseClassMissing": "면허 형태(class)를 선택하십시오.",
+    "needEndorsement": "전문가 지지가 필요한 경우 선택하십시오.",
+    "endorsement": "지지를 선택하십시오.",
+    "cardTypeMissing": "원하는 카드를 선택하십시오.",
+    "choosePoliticalPartyNowSelectionMissing": "선호하는 정당을 선택하기 원하는지 알려주십시오."
+  },
+  "intro": {
+    "switchLanguagePage": {
+      "prompt": "본 신청에 사용할 언어를 선택하십시오.",
+      "values": [
+        "English",
+        "中文",
+        "日本語",
+        "Español",
+        "ไทย",
+        "Tagalog",
+        "한국어",
+        "ភាសាខ្មែរ",
+        "हिंदी",
+        "Tiếng Việt"
+      ]
+    },
+    "namePage": {
+      "prompt": "귀하의 성명은 무엇입니다?",
+      "explanation": "성명은 귀하의 출생증명서 및 여권과 같은 공공문서에 나와있는 성명을 말합니다.",
+      "suffixLabel": "호칭",
+      "suffixValues": [
+        "Sr.",
+        "Jr.",
+        "I",
+        "II",
+        "III"
+      ]
+    },
+    "dateOfBirthPage": {
+      "prompt": "귀하의 생년월일이 어떻게 됩니까?",
+      "explanation": "예, 09 / 15 / 1970."
+    },
+    "wdywtdtPage": {
+      "prePrompt": "감사합니다",
+      "prompt": "오늘 무엇을 하시겠습니까?",
+      "explanation": "지금 하나를 선택해 주세요. 이후 신청서에서 옵션을 추가할 수 있습니다.",
+      "values": [
+        "첫 카드를 발급 받기",
+        "카드 갱신하기",
+        "카드 정정 또는 업데이트하기",
+        "카드 교체하기"
+      ]
+    },
+    "realIdPage": {
+      "prompt": {
+        "id": "항공편 수속을 위해 귀하의 ID을 이용할 계획입니까? ",
+        "license": "항공편 수속을 위해 귀하의 운전면허증을 이용을 계획입니까?",
+        "card": "항공편 수속을 위해 귀하의 카드를 이용할 계획입니까?"
+      },
+      "explanation": "2020년부터는 미국 <b>국내선 </b> 항공편을 이용할 때는 REAL ID대용의 운전면허 또는 ID카드가 있어야 합니다.",
+      "FAQWhatIsRealID": {
+        "title": "REAL ID가 무엇입니까?",
+        "body": "<p>REAL ID 법에 따라 캘리포니아 DMV는 2가지 형태의 카드를 제공할 것입니다. 이는 REAL ID대용 카드와 대용이 불가한 연방 카드입니다.   법적으로 REAL ID대용 및 대용불가 연방 운전면허 모두 운전이 가능합니다.  </p><p> 2020년 10월 1일부터는 미국 국내선 항공편을 이용하거나, 군기지 및 대부분의 연방 시설에 출입하기 위해서는 REAL ID대용 카드가 있어야 합니다. </p><p> 그렇지 않은 경우, 교통 안전청(Transportation Security Administration) 및 국토 안보부(Department of Homeland Security)가 인정하는 여권이나 다른 문서가 필요할 것입니다. </p>"
+      },
+      "FAQWhatIsRequiredForRealID": {
+        "title": "REAL ID대용 카드를 발급 받으려면 어떻게 해야 합니까?",
+        "body": {
+          "header": "다음 중 <b>한가지</b>가 필요 합니다. ",
+          "items": [
+            "유효한, 만료되지 않은 미국 여권이나 여권카드",
+            "미국 출생 증명서 또는 해외 출생증명서 (CRBA).",
+            "미국 비자가 유효한, 만료되지 않은 외국 여권 및 I-94 양식.",
+            "미국(U.S. Territory)에서 발행한 출생증명서 사본",
+            "귀화 증명서 또는 시민권",
+            "유효한, 만료되지 않은 영주권카드(Permanent Resident Card)",
+            "만료되지 않은 고용허가 서류(EAD)카드 (I-766) 또는 결과 통지서 (I-797 C)가 있는 유효한/만료된 EAD 카드"
+          ],
+          "otherRequirements": "또한 캘리포니아 거주를 증명하는 문서, 그리고 사회보장 카드 또는 미국 국세청 양식(예, W2, 1099, 또는 1040)과 같은 사회보장번호가 있는 문서. "
+        }
+      }
+    },
+    "chooseSelectionPage": {
+      "prompt": {
+        "new": "무엇을 원하십니까?",
+        "renew": "어떤 종류의 카드를 갱신하십니까?",
+        "replace": "어떤 종류의 카드를 교체하십니까?",
+        "correctOrUpdate": "어떤 종류의 카드를 정정 또는 업데이트 하십니까?"
+      },
+      "explanationMultiCard": "해당되는 것들을 모두 선택하십시오.",
+      "values": [
+        "ID",
+        "운전 면허증"
+      ]
+    },
+    "seniorIdPage": {
+      "prompt": "무료 경노 신분증 (Senior Identification Card)이 필요하십니까?",
+      "explanation": "“경노 신분증”을 원치 않는 경우, 정상적인 요금을 지불해야 합니다. "
+    },
+    "reducedFeePage": {
+      "prompt": "할인 요금 ID 또는 무료 ID중 어떤 것을 신청하시겠습니까? ",
+      "licenseExplanation": "이것은 귀하의 ID카드에만 적용됩니다.  귀하는 무료 또는 할인 운전면허를 발급 받을 수 없습니다. ",
+      "rightFormsSection": {
+        "prompt": "올바른 양식이 맞습니까?",
+        "explanation": "할인 또는 무료 ID을 발급받기 위해서는 할인 무료 신분증 자격 확인 (Reduced Fee Identification Card Eligibility Verification) 양식 (DL 937)이 있어야 합니다. 무료 ID을 발급받기 위해서는 요금 무료 신분증 자격 확인 (DL 933)양식이 있어야 합니다. ",
+        "FAQHowToGetForms": {
+          "title": "이들 양식을 어떻게 구할 수 있습니까?",
+          "body": "DMV는 이들 양식을 제공하지 않습니다.  정부 또는 비영리 단체의 도움을 받고 있다면, 본 양식에 관해 문의하십시오."
+        }
+      }
+    },
+    "licenseTypePage": {
+      "prompt": "운전을 위해 무엇이 필요합니까?",
+      "explanation": "해당되는 것들 모두 선택하십시오",
+      "values": [
+        {
+          "label": "자동차 ",
+          "helpText": "캠핑카(Class C)"
+        },
+        {
+          "label": "오토바이나 스쿠터",
+          "helpText": "오토바이(Class M)"
+        },
+        {
+          "label": "유개화차, 15000 파운드를 초과하는 트레일러, 또는 가축 트레일러",
+          "helpText": "캠핑카 (Class A)"
+        },
+        {
+          "label": "유개화차 또는 트레일러",
+          "helpText": "캠핑 카 (Class B)"
+        }
+      ],
+      "endorsementsSection": {
+        "prompt": "소방관의 지지가 필요합니까?",
+        "explanation": "단지 구급차 증서가 필요하다면, DMV 지역 사무소를 방문하십시오."
+      }
+    },
+    "getStartedPage": {
+      "title": "검토 사항:",
+      "whatYouAreDoing": {
+        "applyingLicense": "귀하는 운전 면허증을 신청하고 있습니다",
+        "applyingID": "귀하는 ID카드를 신청하고 있습니다",
+        "applyingReducedFeeID": "귀하는 할인 요금 ID카드를 신청하고 있습니다",
+        "applyingSeniorID": "귀하는 경노 ID 카드를 신청하고 있습니다.",
+        "renewingLicense": "귀하는 운전 면허증을 갱신하고 있습니다",
+        "renewingID": "귀하는 ID 카드를 갱신하고 있습니다.",
+        "renewingReducedFeeID": "귀하는 할인 요금 ID 카드를 갱신하고 있습니다.",
+        "renewingSeniorID": "귀하는 경노 ID 카드를 신청하고 있습니다",
+        "replacingLicense": "귀하는 운전면허증을 교체하고 있습니다",
+        "replacingID": "귀하는 ID 카드를 교체하고 있습니다.",
+        "replacingReducedFeeID": "귀하는 할인 요금 ID 카드를 교체하고 있습니다",
+        "replacingSeniorID": "귀하는 경노 ID 카드를 신청하고 있습니다",
+        "correctingLicense": "귀하는 운전면허증을 정정하고 있습니다",
+        "correctingID": "귀하는 ID 카드를 정정하고 있습니다",
+        "correctingReducedFeeID": "귀하는 할인 요금 ID카드를 정정하고 있습니다",
+        "correctingSeniorID": "귀하는 경노 ID카드를 신청하고 있습니다",
+        "updatingLicense": "귀하는 운전 면허증을 업데이트하고 있습니다",
+        "updatingID": "귀하는 ID 카드를 업데이트하고 있습니다",
+        "updatingReducedFeeID": "귀하는 할인 요금 ID 카드를 업데이트하고 있습니다",
+        "updatingSeniorID": "귀하는 경노 ID 카드를 신청하고 있습니다",
+        "toDrive": "운전을 위한 사항:",
+        "classes": {
+          "C": "자동차 (Class C)",
+          "M": "오토바이 (Class M)",
+          "A": "유개화차, 15000파운드를 초과하는 트레일러, 또는 가축 트레일러  (Class A)",
+          "B": "유개화차 또는 트레일러 (Class B)"
+        },
+        "firefighterEndorsement": "귀하는 소방관의 지지가 필요합니다.",
+        "realIDCompliantID": "귀하의 ID카드는 REAL ID대용 가능 카드입니다. ",
+        "realIDCompliantLicense": "귀하의 운전 면허증은 REAL ID대용이 가능합니다. "
+      },
+      "explanation": {
+        "update": {
+          "license": "귀하의 운전면허증 업데이트를 위해서는 신청서를 새로 작성해야 합니다.",
+          "id": "귀하의 ID카드 업데이트를 위해서는 신청서를 새로 작성해야 합니다."
+        },
+        "correct": {
+          "license": "귀하의 운전면허증 정정을 위해서는 신청서를 새로 작성해야 합니다.",
+          "id": "귀하의 ID카드 정정을 위해서는 신청서를 새로 작성해야 합니다."
+        },
+        "replace": {
+          "license": "귀하의 운전면허증을 교체하기 위해서는 신청서를 새로 작성해야 합니다. ",
+          "id": "귀하의 ID 카드 교체를 위해서는 신청서를 새로 작성해야 합니다."
+        }
+      },
+      "listHeader": "본 신청서는 4개 섹션으로 되어 있습니다.",
+      "listItems": [
+        "나의 기본 정보",
+        "나의 기록",
+        "장기 기증",
+        "투표자 등록"
+      ],
+      "timeToComplete": "이를 작성하는 데 <b>10분 </b> 정도가 소유됩니다. ",
+      "afterComplete": "작성이 끝나면 지역 DMV 사무소를 방문해야 합니다.",
+      "buttonText": "시작하기"
+    },
+    "currentCardPage": {
+      "prompt": "귀하의 캘리포니아 DL/ID 카드 번호를 아시면 입력하십시오.",
+      "explanation": "귀하의 번호는 글자로 시작되며, DL/ID 카드 상단에 있습니다.",
+      "numberLabel": "DL/ID 카드 번호"
+    },
+    "correctOrUpdatePage": {
+      "prompt": "무엇을 하시겠습니까?",
+      "values": [
+        "정정",
+        "업데이트"
+      ],
+      "chooseChangeSection": {
+        "prompt": {
+          "update": "업데이트를 원하십니까?",
+          "correct": "무엇을 정정하시겠습니까? "
+        },
+        "values": [
+          "성명",
+          "성별",
+          "생년월일",
+          "주소",
+          "기타 "
+        ],
+        "license": {
+          "explanation": "업데이트된 새로운 운전면허증은 수수료를 지불하셔야 합니다. ",
+          "values": [
+            "몰 수 있는 차량",
+            "운전 면허증에 표시된 지지",
+            "제약 사항 추가 또는 삭제하기"
+          ]
+        },
+        "id": {
+          "explanation": "업데이트된 새로운 ID는 수수료를 지불해야 합니다."
+        }
+      }
+    },
+    "replacementReasonPage": {
+      "prompt": "차량을 교체해야 하는 이유는 무엇입니까?",
+      "explanation": "귀하의 대답은 DMV 직원이 귀하에게 더 나은 서비스를 제공하는 데 도움이 될 것입니다.",
+      "values": [
+        "도난 당했습니다.",
+        "손상 되었습니다.",
+        "기타 "
+      ]
+    },
+    "youthDlNotificationPage": {
+      "prompt": "운전연습 허가증을 발급받기 위해서는 15.5세가 되어야 합니다.",
+      "explanation": "그 이전에 DMV 에 신청하는 경우, 청소년(junior) 운전 연습 허가증만 신청할 수 있습니다.  이들 허가증은 예외적인 상황에 대해서만 발급됩니다.",
+      "question": "대신 캘리포니아 ID 카드 발급을 원하십니까?",
+      "cantApplyYet": {
+        "prompt": "귀하는 15세 미만이기 때문에 운전 면허증을 신청할 수 없습니다.  대신 캘리포니아 ID카드를 발급 받으시겠습니까?",
+        "infoMessage": "예, 14세가 되면 다시 오십시오. "
+      }
+    }
+  },
+  "myBasics": {
+    "addressesPage": {
+      "prompt": "사는 곳이 어디입니까?",
+      "explanation": "예, 1234 Main St., Los Angeles, CA 90017",
+      "streetAddressLabel": "거리",
+      "apartmentLabel": "아파트 또는 동 번호",
+      "cityLabel": "도시",
+      "stateLabel": "주",
+      "zipLabel": "우편번호",
+      "mailingAddressSamePrompt": "이주소로 우편물을 받습니까?",
+      "mailingAddressSameExplanation": {
+        "license": "DMV가 귀하의 운전면허증에 귀하의 우편주소를 인쇄합니다. 귀하의 운전면허증은 귀하의 우편주소로도 또한 보내줍니다.",
+        "ID": "DMV이 귀하의 ID에 귀하의 우편주소를 인쇄합니다. 귀하의 ID는 귀하의 우편주소로도 보내줍니다. ",
+        "cards": "DMV는 귀하의 우편주소를 귀하의 카드에 인쇄합니다. 귀하의 카드는 하의 우편주소로도 보내줍니다. "
+      },
+      "mailingAddressPrompt": "우편물을 받는 곳의 주소가 어디입니까?",
+      "mailingAddressExplanation": "예, PO Box 901, Los Angeles, CA 90017"
+    },
+    "traitsPage": {
+      "sex": {
+        "prompt": "귀하의 성별이 어떻게 됩니까?",
+        "values": [
+          "남성",
+          "여성"
+        ]
+      },
+      "eyeColor": {
+        "prompt": "귀하의 눈 색깔은?",
+        "values": [
+          "검정색",
+          "푸른색",
+          "갈색",
+          "회색",
+          "녹색",
+          "녹갈색 "
+        ]
+      },
+      "hairColor": {
+        "prompt": "귀하의 머리 색깔은?",
+        "values": [
+          "적갈색",
+          "벗겨진 머리",
+          "검은색",
+          "금발",
+          "갈색",
+          "회색",
+          "붉은색",
+          "흰색",
+          "기타",
+          "기타"
+        ]
+      }
+    },
+    "heightWeightPage": {
+      "height": {
+        "prompt": "귀하의 키는?",
+        "explanation": "예, 5피트 9인치",
+        "feetLabel": "피트",
+        "inchesLabel": "인치"
+      },
+      "weight": {
+        "prompt": "귀하의 몸무게는?",
+        "explanation": "예, 190 파운드",
+        "poundsLabel": "파운드 "
+      }
+    },
+    "socialSecurityPage": {
+      "prompt": "귀하의 사회보장 번호는?",
+      "explanation": "사회보장 번호가 있는 경우, ‘예’를 선택해야 합니다.",
+      "messageNo": "<p><em>아니오 </em>라고 대답하는 경우, 귀하는 사회보장 번호를 발급 받은 적이 없고, 현재 사회보장 번호 자격이 없음을 확인해 주는 것입니다.  귀하는 캘리포니아 차량법 §12801에 따라 사회보장 번호를 발급받은 경우 이를 차량관리부(Department of Motor Vehicles)에 제시 함을 인지하고 있습니다. </p><p> 보다 자세한 내용은 고지시항을 읽어보십시오.</p>",
+      "enterSocialNumber": {
+        "prompt": "귀하의 사회보장번호가 어떻게 됩니까?",
+        "explanation": "예, 123 - 45 - 6789"
+      }
+    }
+  },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "지난 3년 동안 운전에 영향을 미치는 질병을(medical condition)를 경험한 적이 있습니까?",
+      "explanationPrompt": "아래 설명해 주세요."
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "운전 면허증 또는 주가 발행하는 ID 카드를 발급 받은 적이 있습니까?",
+      "pagePromptID": "캘리포니아 운전면허 또는 ID카드를 발급받은 적이 있습니까?",
+      "explanation": "운전면허증은 미국 주 또는 기타 다른 나라가 발급한 것이라야 합니다.",
+      "explanationPrompt": "비록 만료된 것일지라도, 귀하의 가장 최근 운전면허증 또는 ID 카드를 알려주십시오.",
+      "numberLabel": "“주, 지역, 또는 카운티.",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "만료일자"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "다른 이름으로 운전면허증 또는 ID카드를 신청한 적이 있습니까?",
+      "explanationPrompt": "이전에 법적으로 사용했던 성명을 모두 기록해 주십시오. ",
+      "helpText": "<p>예를 들면, 귀하가 결혼하기 전에 쓰든 이름. </p><p> 콤마로 구분해 주십시오.</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "귀하는 운전 특권을 취소, 거부, 정지, 말소 당한 적이 있습니까? ",
+      "explanationPrompt": "그것이 언제였습니까?",
+      "helpText": "예, 03/21/1967",
+      "reasonLabel": "그 이유가 무엇이었습니까?"
+    },
+    "veteransPage": {
+      "pagePrompt": "미군에서 복무한 적이 있습니까?",
+      "explanationStart": "재향군인인 경우, 장애 보상과 같은 혜택을 받을 자격이 될 수도 있습니다. ",
+      "licensExplanation": "귀하의 운전면허증에 “재향군인”이라고 또한 표시할 수 있습니다. ",
+      "idExplanation": "귀하의 ID에 “재향군인”이라고 또한 표시할 수 있습니다.",
+      "cardsExplanation": "귀하의 카드에 “재향군인”이라고 또한 표시할 수 있습니다.",
+      "messageYes": "귀하의 복무서비스에 대해 감사합니다.",
+      "benefitsPrompt": "자격이 될 수도 있는 혜택 정보를 받아 보시겠습니까? ",
+      "newDesignation": {
+        "prompt": "$5을 지불하시고 귀하의 {카드 종류}에 “재향군인”이라는 단어를 추가하시겠습니까?",
+        "explanation": "유효한 ID가 있는 재향군인에게 할인을 제공하는 조직이 많습니다.    ",
+        "messageYes": "좋습니다, 귀하의 총 수수료에 $5을 추가하겠습니다. 귀하는 재향군인 지위 확인 양식 (Veteran Status Verification Form)을 귀하의 카운티 재향군인 서비스 사무소(Veteran Service Office)에서 작성하시어 DMV 지역 사무소에 제출하셔야 합니다."
+      },
+      "historicDesignationPrompt": "운전 면허증 또는 주 발급 ID 카드에 “재향군인”이라고 표시한적이 있습니까?",
+      "existingDesignation": {
+        "promptLicense": "귀하의 운전면허증에 “재향군인”이라고 인쇄되어 있습니까?",
+        "promptID": "귀하의 ID에 “재향군인” 이라고 인쇄되어 있습니까?",
+        "promptCards": "귀하의 카드에 “재향군인”이라고 인쇄되어 있습니까?"
+      },
+      "keepDesignationPrompt": {
+        "id": "귀하의 ID에 “재향군인” 표시를 그대로 유지하시겠습니까?",
+        "cards": "귀하의 카드에 “재향군인” 표시를 그대로 유지하시겠습니까?",
+        "license": "귀하의 운전면허증에 “재향군인” 표시를 그대로 유지하시겠습니까?"
+      }
+    }
+  },
+  "organDonation": {
+    "title": "장기 기증",
+    "organDonor": {
+      "prompt": "장기 또는 조직을 기증자가 되길 원하십니까?",
+      "validationMessage": "귀하의 운전면허증에 있는 기증자 표시(donor dot)를 유지하려면 ‘예’라고 표시해야 합니다.",
+      "messageYes": "‘예’라고 대답하시면 귀하의 성명이 생명 기증 캘리포니아 장기 및 조직 기증 등록부에 추가되고, 핑크색 “기증자” 표시(dot)가 귀하의 DL/ID 카드에 표시됩니다.",
+      "messageNo": "“아니오”라고 대답하시면, 귀하의 성명이 등록부에서 삭제됩니다. 등록부에서 귀하의 성명을 삭제하고 싶으시면 생명 기증 캘리포니아(Donate Life California)로 문의하셔야 합니다. DMV는 귀하의 DL/ID 카드에서 핑크 표시(dot)를 제거할 수 있지만 등록부에서는 재거할 수 없습니다. "
+    },
+    "monetaryContribution": {
+      "prompt": "$2을 자발적으로 기부하시겠습니까? ",
+      "messageYes": "기부해 주셔서 감사합니다! 귀하의 총 수수료에 $2을 추가 하겠습니다."
+    }
+  },
   "shared": {
     "navigation": {
       "back": "뒤로",
@@ -8,7 +542,143 @@
       "yes": "예",
       "no": "아니요",
       "declineToAnswer": "답변 거부",
-      "skip": "질문 건너뛰기"
+      "skip": "질문 건너뛰기",
+      "female": "여성",
+      "male": "남성"
+    },
+    "labels": {
+      "mm": "월",
+      "dd": "일",
+      "YYYY": "년",
+      "sex": "성별",
+      "socialSecurity": "사회보장번호",
+      "firstName": "이름",
+      "middleName": "중간 이름",
+      "lastName": "성",
+      "dateOfBirth": "생년월일",
+      "expirationDate": "만료일",
+      "name": "성명"
+    },
+    "summary": {
+      "notProvided": "제공되지 않음",
+      "none": "전혀"
+    }
+  },
+  "summaryPage": {
+    "buttons": {
+      "edit": "편집",
+      "submit": "제출"
+    },
+    "whatImDoing": {
+      "starter": "저는",
+      "applying": "처음으로 신청합니다",
+      "renewing": "갱신",
+      "updating": "업데이트",
+      "correcting": "정정",
+      "replacing": "교체",
+      "nothing": "신청이 시작되지 않았습니다"
+    },
+    "shared": {
+      "expirationDate": "만료일"
+    },
+    "prompt": "잠시 시간을 내어 귀하의 대답을 검토해주시기 비랍니다.",
+    "myID": {
+      "title": "나의 ID",
+      "reducedFeeHeading": "할인 또는 수수료 없음",
+      "seniorIDHeading": "경노 ID",
+      "realIDHeading": "Real ID",
+      "currentCard": "ID 카드 번호"
+    },
+    "myDL": {
+      "title": "저의 운전 면허증",
+      "needToDriver": {
+        "header": "운전이 필요합니다",
+        "values": [
+          "자동차(Class C)",
+          "오토바이 (Class M)",
+          "캠핑 트레일러, 15000파운드를 초과하는 핍스휠 트레일러, 또는 가축 트레일러",
+          "유개화차 또는 트레일러 (Class B))"
+        ]
+      },
+      "firefighterEndorsement": "소방관의 지지",
+      "currentCard": "운전면허증 번호"
+    },
+    "myBasics": {
+      "title": "나의 기본 정보",
+      "homeAddress": "집 주소",
+      "mailingAddress": "우편주소",
+      "same": "동일",
+      "eyeColor": "눈 색깔",
+      "hairColor": "머리 색깔",
+      "height": "키 ",
+      "feet": "피트",
+      "inches": "인치",
+      "weight": "몸무게",
+      "pounds": "파운드",
+      "ssnExplanation": "4자리만 수만 보여주는 사회보장 번호"
+    },
+    "myHistory": {
+      "title": "나의 기록",
+      "medicalConditions": "질병 기록 (Medical conditions)",
+      "previousCard": "이전의 DL/ID 카드 번호",
+      "issuedIn": "발급지",
+      "previousNames": "이전의 성명",
+      "drivingRecord": "운전 기록",
+      "recordDate": "기록일",
+      "veteran": "재향군인",
+      "getBenefitsInformation": "혜택정보 받기",
+      "veteranPrintedOnCard": "카드에 표시된 “재향군인”"
+    },
+    "organDonation": {
+      "title": "장기 기증",
+      "beAnOrganDonor": "“장기 기증자”",
+      "donate": "$2 기부하기"
+    },
+    "voterRegistration": {
+      "title": "투표자 등록",
+      "citizen": "US 시민",
+      "eligible": "자격 요건 충족",
+      "registrationChoice": "투표자 등록 선택",
+      "choiceYes": "등록될 것입니다",
+      "choiceUpdate": "투표자 선호사항 업데이트",
+      "choiceNo": "불참",
+      "ballotLanguage": "투표용지 언어",
+      "voteByMail": "우편 투표",
+      "phone": "전화 ",
+      "email": "이메일",
+      "politicalParty": "정당"
+    }
+  },
+  "tenYearHistoryPage": {
+    "prompt": "지난 10년 동안 캘리포니아 주 <em>이외에서</em> 운전면허증을 발급 받은 적이 있습니까? ",
+    "explanation": "동일한 이름 또는 다른 이름으로 운전한 모든 종류의 차량이 해당됩니다.  ",
+    "fillOutHistoryVia": {
+      "prompt": "지난 10년 동안에 대한 귀하의 운전 면허 기록을 제시해야 합니다.",
+      "explanation": "귀하의 10년 기록 양식을 어떤 방식으로 작성하길 원합니까?",
+      "answerOnline": "온라인",
+      "answerPrint": "집에서 인쇄 본으로 ",
+      "answerField": "DMV지역 사무소에서"
+    },
+    "onlineForm": {
+      "prompt": "귀하의 이전 면허에 대해 알려주십시오.",
+      "numberLabel": "운전면허증 번호 ",
+      "stateCountryLabel": "발급지 ",
+      "expirationLabel": "만료일"
+    },
+    "personalInformationSameQuestion": {
+      "prompt": "본 면허증에 있는 개인정보가 아래 보이는 것과 동일합니까?",
+      "yesAnswer": "예, 동일합니다.",
+      "noAnswer": "아니오, 동일하지 않습니다"
+    },
+    "personalInformationIsDifferent": {
+      "prompt": "귀하의 개인 정보가 본 운전면허증에 어떻게 나와있습니까? "
+    },
+    "additionalLicenses": {
+      "prompt": "캘리포니아 주 이외에서 운전면허증을 추가로 발급받은 적이 있습니까? ",
+      "explanation": "동일한 이름 또는 다른 이름으로 운행한 모든 차량이 해당됩니다. "
+    },
+    "listOfLicenses": {
+      "prompt": "다음은 귀하의 운전면허 목록입니다."
     }
   },
   "votingRegistration": {

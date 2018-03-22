@@ -1,4 +1,538 @@
 {
+  "confirmationPage": {
+    "header": "確認函",
+    "subHeader": "我們已收到您的資訊。",
+    "confirmationCode": "您的確認碼是：",
+    "nextSteps": {
+      "title": "接下來的流程是：",
+      "steps": [
+        "您的電子信箱會收到此確認碼。",
+        "您必須前往您當地的DMV辦事處完成您的申請。",
+        "為此次拜訪做好準備：收集所需的文件；努力學習以便通過知識測驗。根據您在申請表裡提供的資訊，<a href='/apply/appointment-preparation'>我們已生成一份定制化的準備清單</a>。",
+        "在DMV辦事處，向工作人員出示您的驗證碼和文件。工作人員會調取您的申請表，",
+        "問您一些問題，以核實您的資訊。您在DMV辦事處訪問期間，將證明該資訊是正確的。"
+      ]
+    },
+    "registrationCompleteAtOffice": "特此提示一下：您在DMV辦事處完成申請時，您的選民登記申請會獲處理。",
+    "checkVoterStatus": "查看您的狀態：<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。",
+    "registerSooner": "如果您必須在訪問DMV辦事處之前就進行選民登記：您可以在RegisterToVote.ca.gov上進行登記。",
+    "register30days": "如果您想在下一次州选举中进行投票，现在请在 RegisterToVote.ca.gov 上进行登记。",
+    "avoidLines": "為避免等候和排隊，現在就與您當地DMV辦事處預約。",
+    "makeAnAppointment": "預約"
+  },
+  "confirmationCDL": {
+    "commercialLearnersPermit": "如果您通過了知識測驗並符合所有其它要求，您會獲得商業學員許可證(CLP)。您獲得CLP之日，直至您獲得臨時商業駕照之日，期間必須有14天的等待期。"
+  },
+  "disclaimers": {
+    "medical": {
+      "title": "醫療資訊",
+      "body": "下列狀況可能影響您安全操縱機動車輛的能力，包括但不限於：失去知覺；由任何可能引起經常性失誤的狀況所帶來的顯著困惑；疾病、失調或殘疾（例如：癲癇、糖尿病、中風、白內障、帕金森氏症）；由於癲癇、黃斑退化、糖尿病視網膜病、青光眼、色素性視網膜炎或其它急進性狀況而導致的視力下降或改變；由於酒精或濫用藥物所帶來的健康問題。"
+    },
+    "veteran": {
+      "title": "退伍軍人聲明",
+      "body": "勾選本申請表裡的退伍軍人方框，即表示我證明自己是美國軍隊的退伍軍人，並且我想從加州退伍軍人事務部 (CalVet)獲得退伍軍人福利資訊。勾選本申請表裡的退役軍人方框，即表示我同意DMV僅為了此目的而將我的姓名和郵寄地址發送給CalVet，並且即表示我證明我已經被告知會發生該傳輸。"
+    },
+    "organDonation": {
+      "title": "器官捐贈聲明",
+      "body": "如果您勾選“是(‘Yes)”從而登記成為一名器官和組織捐贈者，即表示您依法授權在您死亡時對您的器官和組織進行回收。登記成為捐贈者，並不會以任何方式影響您的醫療治療。根據《加州遺體捐贈法案》的規定，您的授權是依法有約束力的，除非捐贈者未滿18歲。您的決定無須取得任何他人的同意。對於年齡未滿18歲的捐贈者，應由法定監護人作出捐贈決定。您可以將您的捐贈限定在某些特定的器官或組織，施加相應的使用限制（例如：用於移植或研究），獲得更多有關捐贈的資訊，或者將您的姓名從加州生命捐獻組織官網(www.donateLIFEcalifornia.org)上的登記處移除。登記成為器官捐贈者，即表示您同意DMV將您的真實全名、住址或郵寄地址、出生年份、加州駕照或身份證號等資訊以電子方式傳輸給加州生命捐獻組織。簽署本表格，即表示您同意此流程，並且您已被告知會發生該傳輸。"
+    },
+    "voterRegistration": {
+      "title": "選民登記",
+      "bodyBullets": [
+        "如果分享您的地址會導致您的生命受威脅，您應有權匿名進行選民登記。欲了解更多信息，请致电（877）322-5227 联系 <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>或访问Safe at Home program。",
+        "僅限美國公民。如果您註明您有權投票，DMV會將您在此表格中註明的所有關於選民登記的資訊（包括您的數位簽章）發送給國務院。您所註冊的地址會予以保密，且僅用於選民登記之目的。",
+        "如果您有權投票且拒絕投票，您的決定會予以保密；但此資訊會被發送給國務院，且僅用於選民外展和登記之目的。",
+        "本申請表所含的選民登記資訊是機密的。DMV 不會對選民的資格作出判定。",
+        "如果您在登記後30天內未收到選民登記資訊，請聯繫您所在郡的選舉官或州務卿。",
+        "请访问<a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> 了解更多关于选民登记或<a href='www.sos.ca.gov'>www.sos.ca.gov</a> 的信息。"
+      ]
+    },
+    "criminalProsecution": {
+      "title": "刑事檢控",
+      "bodyBullets": [
+        "如果您提交了虛假資訊，DMV可能追究刑事責任。",
+        "根據《加州刑法典》，任何人使用偽造的問卷來隱藏其真實公民身份或外國居民身份，都犯重罪。"
+      ]
+    },
+    "financialResponsibility": {
+      "title": "財務責任",
+      "bodyBullets": [
+        "必須對所有在加州公路上行駛或停放的車輛承擔財務責任（通常被稱為保險）。您的車內必須隨時攜帶財務責任證據，並且在下列情形必須提供：執法需要；更新車輛登記資訊；車輛發生交通事故。",
+        "如果您無法承擔責任保險，您有資格享受《加州低成本汽車保險計畫》更多資訊詳見<a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> 或者請撥打 (866) 602-8861。"
+      ]
+    },
+    "paymentRefunds": {
+      "title": "支付/退款",
+      "bodyBullets": [
+        "訪問<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>以查看您當地DMV辦事處所接受的付款方式。如果您以郵寄方式請求更新，則必須以支票方式付款。（支票必須以DMV為收款人）。",
+        "本申請表和費用均提交後，不可退款。"
+      ]
+    },
+    "privacy": {
+      "title": "隱私權通知",
+      "bodyBullets": [
+        "DMV使用本表格所含資訊，以判定您是否有資格獲得駕照或身份證，以及出於駕照法的管理需要。",
+        "DMV從本表格知悉的資訊，受限於《資訊實踐法（民法1798)》、《駕駛員隱私保護法案(18 U.S.C. 2721-2725)》、《加州車輛法(CVC)》及其他使用的州和聯邦法律法規。",
+        "DMV會與其他聯邦機構一起核實您所提供的資訊和文件。",
+        "除非另有說明，本表格所含的所有資訊都是必填項。DMV可能因為您未能提供所需資訊而拒絕您的申請。未能在本表格中提供所需資訊，構成拒絕簽發駕照或身份證（在某些情形下，取消或吊銷駕駛特權）之理由。",
+        "DMV與其他政府機構、執法部門或法律授權的商業實體分享您的資訊。您可以從<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>獲得一份副本，或于正常工作時間在任何DMV辦事處。在獲取您的記錄方面如需協助，請撥打(800) 777-0133 或預約在正常工作時間拜訪DMV辦事處。在更正您的記錄方面如需協助，請聯繫DMV的許可作業部Mandatory Actions Unit，電話(916) 657-6525。",
+        "任何有關您駕照或身份證的疑問，請寄至：Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
+        "若有任何關於特定CVC 部分的疑問或有關DMV如何分享您的資訊之疑問，請訪問 <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>。您也許還想從任何辦事處獲取一份《DMV如何分享您的資訊(FFDMV 17)簡介》手冊。",
+        "DMV的隱私政策詳見 <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>頁面底部的“隱私政策”連結。",
+        "有關此公告的任何疑問，請寄至：Department of Motor Vehicles, ATTN:Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+      ]
+    },
+    "certifications": {
+      "title": "證明",
+      "bodyBullets": [
+        "在治安官根據《加州車輛法 (CVC) §23612》要求檢測時，我同意提交血液、呼吸或尿液用於化學測試，以判定我的血液裡的酒精或藥物含量。",
+        "我在此已被告知，在酒精、藥物或兩者兼具的影響下，安全駕駛機動車的能力會受影響。因此，在酒精、藥物或兩者兼具的影響下駕駛車輛會對人類生命構成嚴重危險。如果我在酒精、藥物或兩者兼具的影響駕駛車輛，導致有人死亡，我可能會被以謀殺罪起訴。",
+        "簽署本申請表，我證明我已被告知：如果我未滿21歲，我在血液酒精濃度(BAC)大於等於0.01% 時依法不得駕駛車輛。我在血液酒精濃度(BAC)大於等於0.01% 時駕駛，或者我拒絕接受酒精檢測或藥物檢測，都會導致我的駕駛特權被暫停一年。",
+        "簽署本申請表，即表示我已被告知：如果我在保釋期間駕駛車輛，則我的BAC不得達到0.01%。在BAC達到0.01%的情況下駕駛車輛，會導致我的駕駛特權被暫停一年。拒絕接受或未能完成酒精檢測或化學檢測，會導致我的駕駛特權被暫停或吊銷兩年至三年。",
+        "本表格正面的簽名是我的親筆簽名。所示的郵寄地址是有效、最新且準確的。我同意按照《加州民事程式法》§§415.20(b)、415.30(a)和416.90 的規定，將該郵寄地址用於接受法庭送達的文書。",
+        "我瞭解，DMV可能將其它州或轄區的交通違法行為添加至我的駕駛記錄上，從而導致我的加州駕駛特權受制裁。",
+        "簽署本表格，我承認我依法身處美國，但CVC §12801所規定的除外。",
+        "我理解，我可能根據CVC §12511的規定，持有或控制不止一個駕照。",
+        "簽署本申請表，我證明我理解CVC §12800(h)所述的交通標牌和信號燈。"
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "請輸入您的姓。",
+    "dateOfBirthMissing": "請輸入您的出生日期。",
+    "applicationActionMissing": "請選擇您想做什麼。",
+    "realIdSelectionMissing": "請選擇您是否想要一張Real ID卡。",
+    "realIdCardSelectionMissing": "請選擇您想讓哪張卡變成Real ID卡。",
+    "licenceClassMissing": "請選擇您需要駕駛什麼車輛。",
+    "cardNumberMissing": "請輸入有效的駕照或身份證號。",
+    "streetAddressMissing": "請輸入您居住地所在的街道。",
+    "cityMissing": "請輸入您居住地所在的城市。",
+    "mailingAddressMissing": "請告訴我們您的收件地址。",
+    "sexSelectionMissing": "請選擇您的性別。",
+    "hairColorMissing": "請選擇您的頭髮顏色。",
+    "eyeColorMissing": "請選擇您的眼睛顏色。",
+    "heightMissing": "請輸入您的身高。",
+    "weightMissing": "請輸入您的體重。",
+    "socialSecurityAvailabilityMissing": "請告訴我們，您是否有一個社會安全碼。",
+    "socialSecurityNumberMissing": "請輸入您的社會安全碼。",
+    "socialSecurityNumberInvalid": "請輸入有效的社會安全碼。",
+    "medicalHistorySelectionMissing": "請將您的身體狀況告訴我們。",
+    "licenceHistorySelectionMissing": "請告訴我們，您是否已獲得駕照或身份證。",
+    "expirationDateInvalid": "請輸入有效的到期日。",
+    "nameHistorySelectionMissing": "請告訴我們，您已獲得的駕照或身份證所顯示的姓名是否與您現在的姓名不同。",
+    "licenseIssueSelectionMissing": "請告訴我們，您的駕駛特權為何被註銷、暫停或吊銷了。",
+    "licenseIssueDateMissing": "請告訴我們，這是什麼時候發生的。",
+    "veteranSelectionMissing": "請選擇您是否曾在美國軍隊服役。",
+    "veteranBenefitSelectionMissing": "請告訴我們，您是否想獲得有關退伍軍人的福利資訊。",
+    "veteranDesignationExistsMissing": "請告訴我們，您的身份證或駕照上是否顯示了“退伍軍人”字樣。",
+    "veteranDesignationExistsMissing2": "請告訴我們，您的卡上是否顯示了“退伍軍人”字樣。",
+    "keepVeteranDesignationSelectionMissing": "請告訴我們，您是否想在卡上保留“退伍軍人”字樣。",
+    "wantVeteransDesignationSelectionMissing": "請告訴我們，您是否想在卡上顯示“退伍軍人”字樣。",
+    "organDonationSelectionMissing": "請告訴我們，您是否想成為器官捐贈者。",
+    "moneyOrganDonationSelectionMissing": "請告訴我們，您是否想捐助。",
+    "citizenshipSelectionMissing": "請選擇您是否是一名美國公民。",
+    "votingEligibilitySelectionMissing": "請選擇，您是否滿足資格要求。",
+    "wantToPreregisterSelectionMissing": "請告訴我們，您是否想進行選民登記。",
+    "politicalPartySelectionMissing": "請選擇一個政黨。",
+    "ballotLanguageSelectionMissing": "請選擇一種語言。",
+    "ballotByMailSelectionMissing": "請告訴我們，選票是否郵寄給您？",
+    "emailAddressMissingOrInvalid": "請輸入有效的電子郵箱。",
+    "phoneMissingOrInvalid": "請輸入有效的電話號碼。",
+    "liabilityAcceptanceMissing": "請勾選方框，以接受責任。",
+    "parentNameMissing": "請輸入您的名。",
+    "invalidOrMissingDate": "請輸入有效的日期。",
+    "identityDocumentationMissing": "請輸入您的身份證件資訊。",
+    "dataIncludesNonEnglishCharacters": "很抱歉，您的卡只能含有英文字母。",
+    "errorPreventContinuing": "請更正本頁面的錯誤，否則您將不能進行下一步操作。",
+    "selectionMissing": "請做出一個選擇",
+    "pleaseEnterValidData": "請輸入有效的資訊",
+    "inputIncludesNonEnglishCharacters": "請只輸入英文字母。",
+    "licenseClassMissing": "請選擇一個駕照類別",
+    "needEndorsement": "請選擇您是否需要職業加註",
+    "endorsement": "請選擇一個加註",
+    "cardTypeMissing": "請選擇您想獲得什麼卡。",
+    "choosePoliticalPartyNowSelectionMissing": "請告訴我們，您是否想選擇一個政黨偏好。"
+  },
+  "intro": {
+    "switchLanguagePage": {
+      "prompt": "請選擇您在此次申請中所用的語言。",
+      "values": [
+        "English",
+        "中文",
+        "日本語",
+        "Español",
+        "ไทย",
+        "Tagalog",
+        "한국어",
+        "ភាសាខ្មែរ",
+        "हिंदी",
+        "Tiếng Việt"
+      ]
+    },
+    "namePage": {
+      "prompt": "您的真實名字是什麼?",
+      "explanation": "該姓名是官方身份證件（例如：您的出生證明和護照）所顯示的姓名。",
+      "suffixLabel": "尾碼",
+      "suffixValues": [
+        "Sr.",
+        "Jr.",
+        "I",
+        "II",
+        "III"
+      ]
+    },
+    "dateOfBirthPage": {
+      "prompt": "您的出生日期是什麼？",
+      "explanation": "例:09 / 15 / 1970."
+    },
+    "wdywtdtPage": {
+      "prePrompt": "非常感謝！",
+      "prompt": "您今天想做什麼？",
+      "explanation": "現在選擇一個選項。您稍後可以在申請表中加入其它選項。",
+      "values": [
+        "首次申請卡片",
+        "展續 卡片",
+        "更正或更新卡片",
+        "更換卡片"
+      ]
+    },
+    "realIdPage": {
+      "prompt": {
+        "id": "您打算使用您的身份證搭乘航班嗎？",
+        "license": "您打算使用您的駕照搭乘航班嗎？",
+        "card": "您打算使用您的卡片搭乘航班嗎？"
+      },
+      "explanation": "從2020年10月1日起，您需要攜帶一張符合REAL ID法規的駕照或身份證才能搭乘美國<b>國內</b>航班。",
+      "FAQWhatIsRealID": {
+        "title": "什麼是符合REAL ID法規的卡片？",
+        "body": "<p>為了滿足REAL ID法案，加州DMV將提供兩種卡片：符合REAL ID法規的卡；不符合聯邦法規的卡。您如果持有符合REAL ID法規的卡，或者持有不符合聯邦法規的駕照，都可以合法駕駛。</p><p>從2020年10月1日起，您需要一張符合REAL ID法規的卡片才能搭乘美國國內航班或訪問軍事基地或大多數聯邦設施。</p><p>否則，您需要一張由交通安全署和國土安全部認可的護照或其它證件。</p>"
+      },
+      "FAQWhatIsRequiredForRealID": {
+        "title": "若要獲得一張符合REAL ID法規的卡片，需要滿足什麼條件？",
+        "body": {
+          "header": "您需要提供下面其中<b>1</b>種資料：",
+          "items": [
+            "有效、未過期的美國護照或護照卡",
+            "國外出生證明（美國政府或領事館簽發）",
+            "未過期的外國護照（帶有效的美國簽證）及已獲批的 I-94 表",
+            "美國領土內的出生證明（經公證的副本）",
+            "歸化證明或公民證",
+            "有效的、未過期的永久居留卡",
+            "未過期的雇主授權證(EAD)卡 (I-766)或者有效/已過期的EAD卡（含受理通知）(I-797 C)"
+          ],
+          "otherRequirements": "您還需要提供一份能證明您在加州居住的檔，以及一份能證明您的社會安全碼的文件【例如：您的社保卡或稅務申報表（例如：W2、1099 或1040）】。"
+        }
+      }
+    },
+    "chooseSelectionPage": {
+      "prompt": {
+        "new": "您需要什麼？",
+        "renew": "您要展續哪種卡？",
+        "replace": "您要更換哪種卡？",
+        "correctOrUpdate": "您要更正或更新哪種卡？"
+      },
+      "explanationMultiCard": "選擇所有符合的項。",
+      "values": [
+        "身份證",
+        "駕照"
+      ]
+    },
+    "seniorIdPage": {
+      "prompt": "您想獲得一張免費的老年人身份證嗎？",
+      "explanation": "如果您不想獲得一張免費的“老年人身份證”，您必須支付正常的費用。"
+    },
+    "reducedFeePage": {
+      "prompt": "您想申請一份減費或免費的身份證嗎？",
+      "licenseExplanation": "這僅適用於您的身份證。您無法獲得一張免費或減費駕照。",
+      "rightFormsSection": {
+        "prompt": "您有正確的表格嗎？",
+        "explanation": "為了獲得一張減費身份證，您必須提供一份《減費身份證資格證明表》 (DL 937)。為了獲得一張免費的身份證，您必須提供一份《免費身份證資格證明表》 (DL 933)。",
+        "FAQHowToGetForms": {
+          "title": "我如何才能獲得這些表格？",
+          "body": "DMV不提供這些表格。如果您從政府或非盈利組織那裡獲得協助，請向其索要一份表格。"
+        }
+      }
+    },
+    "licenseTypePage": {
+      "prompt": "您需要什麼才能駕駛車輛？",
+      "explanation": "選擇所有符合的項",
+      "values": [
+        {
+          "label": "轎車",
+          "helpText": "C 類"
+        },
+        {
+          "label": "摩托車或踏板車",
+          "helpText": "M 類"
+        },
+        {
+          "label": "旅行掛車（帶鞍座，超過15000磅）或者家畜拖車",
+          "helpText": "A 類"
+        },
+        {
+          "label": "家用轎車或拖車",
+          "helpText": "B 類"
+        }
+      ],
+      "endorsementsSection": {
+        "prompt": "您需要消防員加註嗎？",
+        "explanation": "如果只想獲得救護車證書，請訪問DMV辦事處。"
+      }
+    },
+    "getStartedPage": {
+      "title": "檢查下列專案：",
+      "whatYouAreDoing": {
+        "applyingLicense": "您正在申請駕照",
+        "applyingID": "您正在申請身份證",
+        "applyingReducedFeeID": "您正在申請減費身份證",
+        "applyingSeniorID": "您正在申請老年人身份證",
+        "renewingLicense": "您正在展續 駕照",
+        "renewingID": "您正在展續 身份證",
+        "renewingReducedFeeID": "您正在展續 一張減費身份證",
+        "renewingSeniorID": "您正在展續老年人身份證",
+        "replacingLicense": "您正在更換駕照",
+        "replacingID": "您正在更換身份證",
+        "replacingReducedFeeID": "您正在更換一張減費身份證",
+        "replacingSeniorID": "您正在展續老年人身份證",
+        "correctingLicense": "您正在更正駕照",
+        "correctingID": "您正在更正身份證",
+        "correctingReducedFeeID": "您正在更正一張減費身份證",
+        "correctingSeniorID": "您正在展續老年人身份證",
+        "updatingLicense": "您正在更新駕照",
+        "updatingID": "您正在更新身份證",
+        "updatingReducedFeeID": "您正在更新一張減费身份證",
+        "updatingSeniorID": "您正在展續老年人身份證",
+        "toDrive": "要駕駛車輛：",
+        "classes": {
+          "C": "車（C類）",
+          "M": "摩托車（M類）",
+          "A": "旅行掛車（帶鞍座，超過15000磅）或者家畜拖車（A類）",
+          "B": "家用車或拖車（B類）"
+        },
+        "firefighterEndorsement": "您需要消防員加註。",
+        "realIDCompliantID": "您的身份證會是符合REAL ID法規。",
+        "realIDCompliantLicense": "您的駕照會是符合REAL ID法規。"
+      },
+      "explanation": {
+        "update": {
+          "license": "為了更新您的駕照，您必須完整填寫一張新的申請表。",
+          "id": "為了更新您的身份證，您必須完整填寫一張新的申請表。"
+        },
+        "correct": {
+          "license": "為了更正您的駕照，您必須完整填寫一張新的申請表。",
+          "id": "為了更正您的身份證，您必須完整填寫一張新的申請表。"
+        },
+        "replace": {
+          "license": "為了更換您的駕照，您必須完整填寫一張新的申請表。",
+          "id": "為了更換您的身份證，您必須完整填寫一張新的申請表。"
+        }
+      },
+      "listHeader": "此申請表共有四部分內容：",
+      "listItems": [
+        "我的基本資訊",
+        "我的歷史",
+        "器官捐贈",
+        "選民登記"
+      ],
+      "timeToComplete": "大約需要<b>10 分鐘</b>即可填寫完成。",
+      "afterComplete": "您填寫完後，必須訪問當地DMV辦事處。",
+      "buttonText": "開始"
+    },
+    "currentCardPage": {
+      "prompt": "如果您知道您的加州DL/ID號，請輸入。",
+      "explanation": "可在DL/ID卡的頂部找到這個以字母開頭的號碼。",
+      "numberLabel": "DL/ID卡號"
+    },
+    "correctOrUpdatePage": {
+      "prompt": "您想做什麼？",
+      "values": [
+        "更正",
+        "更新"
+      ],
+      "chooseChangeSection": {
+        "prompt": {
+          "update": "您想更新什麼？",
+          "correct": "您想更正什麼？"
+        },
+        "values": [
+          "名字",
+          "性別",
+          "出生日期",
+          "地址",
+          "其它事項"
+        ],
+        "license": {
+          "explanation": "您作出這些更新，可能得支付費用才能獲得新的駕照。",
+          "values": [
+            "您可以駕駛的車輛",
+            "您的駕照上的加註",
+            "將限制條件予以添加或移除"
+          ]
+        },
+        "id": {
+          "explanation": "您作出這些更新，可能得支付費用才能獲得新的身份證。"
+        }
+      }
+    },
+    "replacementReasonPage": {
+      "prompt": "您為什麼得更換您的卡？",
+      "explanation": "您的回答將有助於DMV工作人員更好地協助您。",
+      "values": [
+        "丟失了或被偷了。",
+        "受損壞了。",
+        "其它"
+      ]
+    },
+    "youthDlNotificationPage": {
+      "prompt": "您必須年滿15歲半才能申請一張臨時許可證。",
+      "explanation": "如果您未滿此年齡時就前往DMV辦事處進行申請，則您只能申請未成年人許可證。這些許可只在一些例外情形下會予以簽發。",
+      "question": "您想轉而申請一張加州身份證嗎？",
+      "cantApplyYet": {
+        "prompt": "由於您未滿15歲，因此您無法申請駕照。您想轉而申請一張加州身份證嗎？",
+        "infoMessage": "好的，當您年滿15歲半時再來申請。"
+      }
+    }
+  },
+  "myBasics": {
+    "addressesPage": {
+      "prompt": "您的居住地在哪裡？",
+      "explanation": "例:1234 Main St., Los Angeles, CA 90017",
+      "streetAddressLabel": "街道地址",
+      "apartmentLabel": "公寓或單元號",
+      "cityLabel": "城市",
+      "stateLabel": "州",
+      "zipLabel": "郵遞區號",
+      "mailingAddressSamePrompt": "您這個地址能接收郵件嗎？",
+      "mailingAddressSameExplanation": {
+        "license": "DMV會將您的郵寄地址列印在您的駕照上。您的駕照也會被寄至您的收件地址。",
+        "ID": "DMV會將您的郵寄地址列印在您的身份證上。您的身份證也會被寄至您的收件地址。",
+        "cards": "DMV會將您的郵寄地址列印在您的卡上。您的卡也會被寄至您的收件地址。"
+      },
+      "mailingAddressPrompt": "您的收件地址是哪裡？",
+      "mailingAddressExplanation": "例:PO Box 901, Los Angeles, CA 90017"
+    },
+    "traitsPage": {
+      "sex": {
+        "prompt": "您的性别是？",
+        "values": [
+          "男",
+          "女"
+        ]
+      },
+      "eyeColor": {
+        "prompt": "您的眼睛是什麼顏色？",
+        "values": [
+          "黑色",
+          "藍色",
+          "棕色",
+          "灰色",
+          "綠色",
+          "淡褐色",
+          "其它"
+        ]
+      },
+      "hairColor": {
+        "prompt": "您的頭髮是什麼顏色？",
+        "values": [
+          "棕色",
+          "禿",
+          "黑色",
+          "金色",
+          "棕色",
+          "灰色",
+          "紅色",
+          "白色",
+          "其它"
+        ]
+      }
+    },
+    "heightWeightPage": {
+      "height": {
+        "prompt": "您的身高是多少？",
+        "explanation": "例:5英尺9英寸",
+        "feetLabel": "英尺",
+        "inchesLabel": "英寸"
+      },
+      "weight": {
+        "prompt": "您的體重是多少？",
+        "explanation": "例:190磅",
+        "poundsLabel": "磅"
+      }
+    },
+    "socialSecurityPage": {
+      "prompt": "您有社會安全碼嗎？",
+      "explanation": "如果您有社會安全碼，則您必須選擇“是(Yes)”。",
+      "messageNo": "<p>回答<em>“否（No)\"</em>，即表示您從未獲得社會安全碼並且您目前無資格獲得社會安全碼。根據《加州車輛法§12801》，您在獲得社會安全碼後，必須立即向機動車輛管理局提供社會安全碼。您對此表示理解。</p><p>請閱讀免責聲明，以瞭解更多資訊。</p>",
+      "enterSocialNumber": {
+        "prompt": "您的社會安全碼是什麼？",
+        "explanation": "例:123 - 45 - 6789"
+      }
+    }
+  },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "過去三年間，是否有任何身體狀況影響了您的駕駛能力？",
+      "explanationPrompt": "請在下面作出解釋。"
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "您是否曾獲得駕照或由州簽發的身份證？",
+      "pagePromptID": "您是否曾獲得加州駕照或身份證？",
+      "explanation": "駕照或身份證必須由美國的一個州或者另一個國家簽發。",
+      "explanationPrompt": "請告訴我們您最近的駕照或身份證，即使它們已過期。",
+      "numberLabel": "駕照或身份證號",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "失效日期"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "您是否曾用不同的姓名去申請駕照或身份證？",
+      "explanationPrompt": "請列出您所有的合法姓名。",
+      "helpText": "<p>例如，請包含您的婚前姓。</p><p>用逗號分隔。</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "您的駕駛特權是否曾被註銷、拒絕、暫停或吊銷？",
+      "explanationPrompt": "這發生在什麼時候？",
+      "helpText": "例:03/21/1967",
+      "reasonLabel": "原因是什麼？"
+    },
+    "veteransPage": {
+      "pagePrompt": "您是否曾在美國軍隊服役？",
+      "explanationStart": "作為退伍軍人，您有資格獲得殘疾人補償等福利。",
+      "licensExplanation": "您的駕照還可以體現“退伍軍人”字樣。",
+      "idExplanation": "您的身份證還可以體現“退伍軍人”字樣。",
+      "cardsExplanation": "您的卡還可以體現“退伍軍人”字樣。",
+      "messageYes": "感謝您的服役！",
+      "benefitsPrompt": "您是否想接收您有資格享受的福利資訊？",
+      "newDesignation": {
+        "prompt": "您是否想花費5美元把“退伍軍人”字樣添加到您的{card type}？",
+        "explanation": "許多機構對於攜帶有效身份證的退伍軍人提供優惠。",
+        "messageYes": "好的。我們會把這5美元加到您的總費用裡。您得填寫您所在郡的退伍軍人服務辦公室出具的《退伍軍人身份驗證表》，並攜帶至DMV辦事處。"
+      },
+      "historicDesignationPrompt": "您是否曾把“退伍軍人”字樣添加到您的駕照或由州簽發的身份證上？",
+      "existingDesignation": {
+        "promptLicense": "您的駕照上是否印刷了“退伍軍人”字樣？",
+        "promptID": "您的身份證上是否印刷了“退伍軍人”字樣？",
+        "promptCards": "您的卡上是否印刷了“退伍軍人”字樣？"
+      },
+      "keepDesignationPrompt": {
+        "id": "您是否想在您的身份證上保留“退伍軍人”字樣？",
+        "cards": "您是否想在您的卡上保留“退伍軍人”字樣？",
+        "license": "您是否想在您的駕照上保留“退伍軍人”字樣？"
+      }
+    }
+  },
+  "organDonation": {
+    "title": "器官捐贈",
+    "organDonor": {
+      "prompt": "您想成為器官或組織捐贈者嗎？",
+      "validationMessage": "您必須勾選“是(Yes )”，才能在您的駕照上保留捐贈圓點。",
+      "messageYes": "勾選“是(Yes )”，即可將您的姓名添加至加州器官及組織捐贈者登記處(Donate Life California Organ and Tissue Donor Registry)，於是粉紅色的”捐贈“圓點就會顯示在您的駕照/身份證(DL/ID)上。",
+      "messageNo": "勾選“否(No )”，也不會將您的姓名從登記處移除。如果您想將您的姓名從登記處移除，您必須聯繫加州生命捐獻組織(Donate Life California)。DMV可將粉紅圓點從您的駕照/身份證移除，但無法將您從登記處移除。"
+    },
+    "monetaryContribution": {
+      "prompt": "您想自願捐助2美元嗎？",
+      "messageYes": "感謝您的捐贈！我們會把這2美元加到您的總費用裡。"
+    }
+  },
   "shared": {
     "navigation": {
       "back": "上一頁",
@@ -8,7 +542,143 @@
       "yes": "是",
       "no": "否",
       "declineToAnswer": "拒絕回答",
-      "skip": "跳過問題"
+      "skip": "跳過問題",
+      "female": "女",
+      "male": "男"
+    },
+    "labels": {
+      "mm": "月月",
+      "dd": "日日",
+      "YYYY": "年年年年",
+      "sex": "性别",
+      "socialSecurity": "社會安全碼",
+      "firstName": "名",
+      "middleName": "中間名",
+      "lastName": "姓",
+      "dateOfBirth": "出生日期",
+      "expirationDate": "失效日期",
+      "name": "名字"
+    },
+    "summary": {
+      "notProvided": "未提供",
+      "none": "無"
+    }
+  },
+  "summaryPage": {
+    "buttons": {
+      "edit": "編輯",
+      "submit": "提交"
+    },
+    "whatImDoing": {
+      "starter": "我是",
+      "applying": "首次申請",
+      "renewing": "展續 ",
+      "updating": "更新",
+      "correcting": "更正",
+      "replacing": "更換",
+      "nothing": "申請都未開始"
+    },
+    "shared": {
+      "expirationDate": "失效日期"
+    },
+    "prompt": "請花一點時間檢查您的回答。",
+    "myID": {
+      "title": "我的身份證",
+      "reducedFeeHeading": "減費或免費",
+      "seniorIDHeading": "老年人身份證",
+      "realIDHeading": "Real ID",
+      "currentCard": "身份證號"
+    },
+    "myDL": {
+      "title": "我的駕照",
+      "needToDriver": {
+        "header": "必須駕駛",
+        "values": [
+          "車（C類）",
+          "摩托車（M類）",
+          "旅行掛車（帶鞍座，超過15000磅）或者家畜拖車（A類）",
+          "家用車或拖車（B類）"
+        ]
+      },
+      "firefighterEndorsement": "消防員加註",
+      "currentCard": "駕照號碼"
+    },
+    "myBasics": {
+      "title": "我的基本資訊",
+      "homeAddress": "家庭住址",
+      "mailingAddress": "郵寄地址",
+      "same": "相同的",
+      "eyeColor": "眼睛顏色",
+      "hairColor": "頭髮顏色",
+      "height": "身高",
+      "feet": "英尺",
+      "inches": "英寸",
+      "weight": "體重",
+      "pounds": "磅",
+      "ssnExplanation": "SSN僅能顯示4個號碼。"
+    },
+    "myHistory": {
+      "title": "我的記錄",
+      "medicalConditions": "醫療狀況",
+      "previousCard": "之前的DL/ID卡號",
+      "issuedIn": "簽發地",
+      "previousNames": "曾用名",
+      "drivingRecord": "駕駛記錄",
+      "recordDate": "記錄日期",
+      "veteran": "退伍軍人",
+      "getBenefitsInformation": "獲取福利資訊",
+      "veteranPrintedOnCard": "卡上印刷“退伍軍人”字樣"
+    },
+    "organDonation": {
+      "title": "器官捐贈",
+      "beAnOrganDonor": "成為器官捐贈者",
+      "donate": "捐助2美元"
+    },
+    "voterRegistration": {
+      "title": "選民登記",
+      "citizen": "美國公民",
+      "eligible": "滿足合規要求",
+      "registrationChoice": "選民登記選擇",
+      "choiceYes": "會經過登記",
+      "choiceUpdate": "更新選民偏好",
+      "choiceNo": "退出",
+      "ballotLanguage": "投票語言",
+      "voteByMail": "經由郵件投票",
+      "phone": "電話",
+      "email": "電子郵件",
+      "politicalParty": "政黨"
+    }
+  },
+  "tenYearHistoryPage": {
+    "prompt": "過去十年間，加州<em>以外</em> 的地區是否向您簽發了駕照？",
+    "explanation": "這可能是相同名稱，也可能是不同名稱，並且任何類型機動車輛的駕駛資格均屬此列。",
+    "fillOutHistoryVia": {
+      "prompt": "我們需要您提供過去10年您的駕照記錄。",
+      "explanation": "您願意填寫《10年記錄表》嗎？",
+      "answerOnline": "線上",
+      "answerPrint": "在家列印",
+      "answerField": "訪問DMV辦事處"
+    },
+    "onlineForm": {
+      "prompt": "請將您以往的駕照告訴我們。",
+      "numberLabel": "駕照號碼",
+      "stateCountryLabel": "簽發地",
+      "expirationLabel": "失效日期"
+    },
+    "personalInformationSameQuestion": {
+      "prompt": "該駕照上顯示的您個人資訊是否與下列資訊一致？",
+      "yesAnswer": "是的，一致",
+      "noAnswer": "不同"
+    },
+    "personalInformationIsDifferent": {
+      "prompt": "該駕照上顯示的您個人資訊有什麼不同？"
+    },
+    "additionalLicenses": {
+      "prompt": "您是否另外還有其它由加州<em>以外</em> 的地區簽發的駕照？",
+      "explanation": "這可能是相同名稱，也可能是不同名稱，並且任何類型機動車輛的駕駛資格均屬此列。"
+    },
+    "listOfLicenses": {
+      "prompt": "您擁有的駕照如下。"
     }
   },
   "votingRegistration": {

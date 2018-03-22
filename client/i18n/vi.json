@@ -1,4 +1,537 @@
 {
+  "confirmationPage": {
+    "header": "Xác nhận",
+    "subHeader": "Chúng tôi đã nhận được thông tin của bạn.",
+    "confirmationCode": "Mã xác nhận của bạn là:",
+    "nextSteps": {
+      "title": "Tiếp theo:",
+      "steps": [
+        "Bạn sẽ nhận được mã xác nhận qua E-mail.",
+        "Bạn cần đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV).",
+        "Trước khi đến bạn cần chuẩn bị các giấy tờ được yêu cầu cũng như học bài để làm kiểm tra kiến thức. <a href='/apply/appointment-preparation'>Chúng tôi đã tạo danh sách những thứ cần chuẩn bị</a> dựa trên thông tin bạn cung cấp khi nộp đơn đăng ký.",
+        "Tại văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV), hãy cho nhân viên xem mã xác nhận và các tài liệu của bạn. Họ sẽ mở hồ sơ đăng ký của bạn ra.",
+        "Tại văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV), bạn sẽ được yêu cầu xác nhận thông tin của mình. Khi đó bạn xác nhận là thông tin đã chính xác."
+      ]
+    },
+    "registrationCompleteAtOffice": "Xin nhắc là đơn đăng ký bỏ phiếu của bạn sẽ được xử lý khi bạn hoàn thành việc đăng ký tại văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV).",
+    "checkVoterStatus": "Kiểm tra tình trạng của bạn: <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "registerSooner": "Nếu bạn cần đăng ký bỏ phiếu trước khi đến Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV): Bạn có thể đăng ký trực tuyến tại RegisterToVote.ca.gov.",
+    "register30days": "Nếu bạn muốn bỏ phiếu trong cuộc bầu cử toàn bang, hãy đăng ký trực tuyến tại RegisterToVote.ca.gov. ",
+    "avoidLines": "Để không phải chờ đợi hay xếp hàng, hãy đặt lịch hẹn tại văn tại phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) ngay bây giờ.",
+    "makeAnAppointment": "Đặt lịch hẹn."
+  },
+  "confirmationCDL": {
+    "commercialLearnersPermit": "Nếu bạn vượt qua các bài kiểm tra kiến thức và đáp ứng được hết các yêu cầu khác, bạn sẽ được cấp một Giấy Phép Học Lái Xe Thương Mại (CLP). Khi Giấy Phép Học Lái Xe Thương Mại (CLP) của bạn được cấp, phải qua thời gian chờ bắt buộc là 14 ngày thì bạn mới được phép nhận Bằng Lái Xe Thương mại tạm thời."
+  },
+  "disclaimers": {
+    "medical": {
+      "title": "Thông tin sức khỏe",
+      "body": "Những bệnh sau có thể ảnh hưởng đến khả năng bạn điều khiển mô tô an toàn, bao gồm, nhưng không giới hạn bởi: mất ý thức; rơi vào trạng thái luẩn quẩn do bất kỳ bệnh nào; bệnh, rối loạn, khuyết tật (ví dụ như động kinh, tiểu đường, đột quỵ, đục thủy tinh thể, bệnh liệt rung Parkinson); suy giảm thị lực do đục thủy tinh thể, thoái hóa điểm vàng, bệnh võng mạc do tiểu đường, bệnh Glaucoma (cườm nước hay thiên đầu thống), viêm võng mạc sắc tố, hoặc các bệnh tiến triển khác; các vấn đề sức khỏe do lạm dụng rượu bia và chất kích thích."
+    },
+    "veteran": {
+      "title": "Tuyên bố về việc là cựu chiến binh",
+      "body": "Bằng việc đánh dấu vào ô cựu chiến binh trong đơn này, tôi xác nhận rằng tôi là cựu chiến binh của Lực Lượng Vũ Trang Hoa Kỳ và rằng tôi muốn nhận thông tin về lợi ích dành cho cựu chiến binh từ Bộ Cựu Chiến Binh California (California Department of Veterans Affairs (CalVet)). Bằng việc đánh dấu vào ô cựu chiến binh trong đơn này, tôi cũng đồng ý cho Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) chuyển tên và địa chỉ nhận thư của tôi cho Bộ Cựu Chiến Binh California (CalVet) chỉ cho mục đích này, và tôi xác nhận rằng tôi đã được báo trước rằng việc chuyển thông tin này sẽ xảy ra."
+    },
+    "organDonation": {
+      "title": "Tuyên bố về việc hiến tạng",
+      "body": "Nếu bạn đánh dấu vào ô 'Có' để đăng ký hiến tặng nội tạng và mô, bạn cho phép về mặt luật pháp việc lấy các nội tạng và mô khỏi cơ thể bạn trong trường hợp bạn qua đời. Việc đăng ký làm người hiến tặng nội tạng sẽ không hề ảnh hưởng đến việc chữa trị y tế của bạn. Như được nêu sơ lược trong Đạo Luật Hiến Tặng Thi Thể Bang California (California Anatomical Gift Act), trừ khi người hiến tặng dưới 18 tuổi, quyết định của bạn không cần thông qua sự đồng ý của người khác. Trường hợp đăng ký hiến tặng nội tạng dù bạn chưa đủ 18 tuổi, thì người giám hộ hợp pháp của bạn là người ra quyết định sau cùng. Bạn có thể giới hạn xuống cụ thể những nội tạng hay mô nào sẽ hiến, thu hẹp phạm vi sử dụng (như dùng cho cấy ghép hay nghiên cứu), để có thêm thông tin về việc hiến tặng, hoặc xóa tên bạn khỏi hồ sơ trên trang web Donate Life California: www.donateLIFEcalifornia.org. Bằng việc đăng ký làm Người Hiến Tạng, bạn cho phép Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) chuyển thông tin điện tử gồm tên đầy đủ, nơi cư trú hoặc địa chỉ nhận thư, năm sinh, cùng số bằng lái xe bang California và chứng minh thư đến Donate Life California. Bằng việc ký vào đơn này, bạn đồng ý với quá trình này cũng như đã được thông báo cho biết việc chuyển thông tin sẽ diễn ra."
+    },
+    "voterRegistration": {
+      "title": "Đăng ký bỏ phiếu",
+      "bodyBullets": [
+        "Nếu việc chia sẻ địa chỉ của bạn có thể gây nguy hiểm đe dọa đến tính mạng, bạn có thể được quyền bỏ phiếu bí mật. Để biết thông tin, hãy liên hệ chương trình An Toàn tại Nhà (Safe at Home) tại số (877) 322-5227 hoặc ghé <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+        "Chỉ dành cho công dân Hoa Kỳ. Nếu bạn cho thấy bạn có tư cách bỏ phiếu, Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) sẽ gửi tất cả thông tin liên quan đến người bỏ phiếu có trên đơn này, bao gồm chữ ký điện tử của bạn, đến Bộ Trưởng Ngoại Giao. Văn phòng nơi bạn đăng ký sẽ được giữ bí mật và chỉ được dùng cho mục đích đăng ký bỏ phiếu.",
+        "Nếu bạn đủ tư cách bỏ phiếu và từ chối đăng ký bỏ phiếu, quyết định của bạn sẽ được giữ bí mật; tuy nhiên thông tin này sẽ được gửi đến Bộ Trưởng Ngoại Giao để dùng duy nhất vào mục đích tiếp cận người bỏ phiếu cũng như đăng ký bỏ phiếu.",
+        "Thông tin đăng ký bỏ phiếu được cung cấp trên đơn này sẽ được giữ bí mật. Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) không quyết định ai có quyền bỏ phiếu.",
+        "Nếu bạn vẫn chưa nhận được thông tin đăng ký bỏ phiếu trong 30 ngày từ khi đăng ký, hãy liên hệ văn phòng bầu cử tại hạt nơi bạn cư trú hoặc liên hệ Bộ Trưởng Ngoại Giao.",
+        "Vui lòng ghé <a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> để có thêm thông tin về việc đăng ký thông tin bỏ phiếu hoặc ghé <a href='www.sos.ca.gov'>www.sos.ca.gov</a> để biết thông tin chung."
+      ]
+    },
+    "criminalProsecution": {
+      "title": "Truy tố hình sự",
+      "bodyBullets": [
+        "Nếu bạn cố ý gửi thông tin gian, Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) có thể thực hiện truy tố hình sự.",
+        "Bất kỳ người nào sử dụng tài liệu sai thông tin để giữ bí mật về quốc tịch thật hay tình trạng người nước ngoài cư trú trong Hoa Kỳ, là phạm trọng tội theo Bộ Luật hình Sự California (California Penal Code) mục §114."
+      ]
+    },
+    "financialResponsibility": {
+      "title": "Trách nhiệm tài chính",
+      "bodyBullets": [
+        "Tất cả phương tiện cơ giới hoạt động hoặc đậu trên đường phố bang California bắt buộc phải có trách nhiệm tài chính (thường gọi là bảo hiểm). Bạn phải mang theo bằng chứng trách nhiệm tài chính trong phương tiện cơ giới của bạn và cung cấp nó khi: lực lượng hành pháp yêu cầu, đăng ký mới thông tin cho phương tiện cơ giới, phương tiện cơ giới liên quan đến vụ việc va chạm giao thông.",
+        "Nếu bạn không thể chi trả bảo hiểm trách nhiệm, bạn có thể đạt yêu cầu để tham gia Chương Trình Bảo Hiểm Chi Phí Thấp Cho Ô Tô (California Low Cost Automobile Insurance Program). Xem thêm thông tin tại trang <a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> hoặc gọi (866) 602-8861."
+      ]
+    },
+    "paymentRefunds": {
+      "title": "Thanh toán / Hoàn trả phí",
+      "bodyBullets": [
+        "Ghé trang <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> để xem lại các lựa chọn thanh toán tại văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV). Nếu bạn gửi thư xin làm mới giấy tờ, phải thanh toán bằng séc. (Nên viết rõ Séc này để chi trả cho Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV)).",
+        "Khi đơn và phí đã được gửi đi, phí sẽ không thể được hoàn trả."
+      ]
+    },
+    "privacy": {
+      "title": "Thông báo về quyền riêng tư",
+      "bodyBullets": [
+        "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) dùng thông tin trên đơn này để quyết định bạn có đủ tiêu chuẩn để được cấp Bằng Lái Xe hoặc Chứng Minh Thư không và thi hành căn cứ theo các luật về bằng lái xe.",
+        "Thông tin cung cấp cho Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) trên đơn này được thu thập và sẽ giới hạn trong Luật về Thông Lệ Xử Lý Thông Tin (Information Practices Act) (trong Bộ Luật Dân Sự 1978 (Civil Code 1978)), Luật Bảo Vệ Quyền Riêng Tư Cho Người Lái Xe (Driver’s Privacy Protection Act) (18 U.S.C. 2721-2725), Luật Dành Cho Phương Tiện Giao Thông Bang California (California Vehicle Code (CVC)) và những luật và quy định của bang khác và chính quyền liên bang có thể áp dụng được.",
+        "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) cùng các cơ quan chính quyền khác sẽ xác minh thông tin và các tài liệu bạn cung cấp.",
+        "Tất các thông tin trên đơn này là bắt buộc, chỉ trừ những chỗ được lưu ý trước. Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) có thể bác đơn của bạn nếu bạn không cung cấp thông tin bắt buộc. Việc không thể cung cấp các thông tin bắt buộc trên đơn sẽ khiến bạn bị bác bỏ yêu cầu xin cấp bằng lái xe hoặc chứng minh thư, hoặc, trong một số trường hợp, bị hủy hoặc rút quyền lái xe.",
+        "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) sẽ chia sẻ thông tin của bạn với các cơ quan chính quyền, lực lượng hành pháp, và các thực thể thương mại khác đã được pháp luật cho phép. Bạn có thể tìm được một bản sao hồ sơ của mình tại <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> hoặc tại bất kỳ văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) trong giờ hành chính. Để được hỗ trợ tiếp cận hồ sơ của bạn, hãy gọi (800) 777-0133 hoặc đặt lịch hẹn với một văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) trong giờ hành chính. Để được hỗ trợ sửa đổi hồ sơ của bạn, Đơn Vị Hành Động Bắt Buộc Bộ Phận Hoạt Động về Cấp Phép (Licensing Operations Division Mandatory Actions Unit) thuộc Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) qua số (916) 657-6525.",
+        "Câu hỏi liên quan đến Bằng Lái Xe hoặc Chứng Minh Thư nên được gửi đến: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
+        "Để biết thêm thông tin về những phần cụ thể trong Luật Dành Cho Phương Tiện Giao Thông Bang California (CVC) hoặc Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) chia sẻ thông tin của bạn như thế nào, vui lòng ghé trang <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>. Bạn cũng có thể yêu cầu có một bản sổ tay Thông Tin Nhanh về Cách chia sẻ hoặc sử dụng thông tin của bạn (How Your Information Is Shared or Used (FFDMV 17)) tại bất kỳ văn phòng địa phương nào.",
+        "Chính Sách Quyền Riêng Tư (Privacy Policy) của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) có tại <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> dưới đường link 'Privacy Policy' ở cuối trang.",
+        "Câu hỏi về thông báo này nên gửi đến: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+      ]
+    },
+    "certifications": {
+      "title": "Các xác nhận",
+      "bodyBullets": [
+        "Tôi đồng ý nộp kết quả xét nghiệm máu, hơi thở, hoặc nước tiểu để xác định nồng độ cồn hoặc chất kích thích có trong máu của tôi khi có cảnh sát làm việc căn cứ theo Luật Dành Cho Phương Tiện Giao Thông Bang California (California Vehicle Code(CVC)) §23612.",
+        "Tôi hiện được biết rằng tác động của cồn hoặc chất kích thích, hoặc cả hai, làm giảm khả năng điều khiển phương tiện cơ giới an toàn. Vì vậy, tính mạng người lái bị đe dọa nghiêm trọng nếu bị tác động bởi cồn hoặc chất kích thích, hoặc cả hai. Nếu tôi lái xe khi bị tác động bởi cồn hoặc chất kích thích, hoặc cả hai, và nếu dẫn đến việc một người bị giết, tôi có thể bị buộc tội giết người.",
+        "Bằng việc ký vào đơn này, tôi xác nhận rằng tôi đã được thông báo rằng nếu tôi chưa đủ 21 tuổi, theo luật tôi không được phép lái xe với nồng độ cồn trong máu (BAC) ở mức 0.01% hoặc cao hơn. Lái xe với nồng độ cồn trong máu (BAC) ở mức 0.01% hoặc cao hơn, hoặc từ chối, hoặc không thể hoàn thành kiểm tra nồng độ cồn hoặc kiểm tra chất kích thích, thì tôi sẽ bị treo bằng lái xe trong một năm.",
+        "Bằng việc ký vào đơn này, tôi xác nhận rằng tôi đã được thông báo rằng nếu tôi hiện đang trong thời gian thử thách do lái xe khi đang bị ảnh hưởng cồn hoặc chất kích thích, theo luật tôi không được phép lái xe với nồng độ cồn trong máu (BAC) ở mức 0.01% hoặc cao hơn. Lái xe với nồng độ cồn trong máu (BAC) ở mức 0.01% hoặc cao hơn sẽ dẫn đến việc bị treo bằng lái xe trong một năm. Từ chối, hoặc không thể hoàn thành kiểm tra nồng độ cồn hoặc kiểm tra hóa chất trong người thì tôi sẽ bị đình chỉ/thu hồi bằng lái xe trong hai đến ba năm.",
+        "Tôi là người có tên xuất hiện ở phần đầu đơn này. Địa chỉ trên đơn là hợp lệ, đang tồn tại và chính xác. Tôi đồng ý chấp nhận dịch vụ xử lý theo địa chỉ nhận thư này theo như trong mục §§415.20(b), 415.30(a), và 416.90 của Bộ Luật Thủ Tục Dân Sự California (California Code of Civil Procedure).",
+        "Tôi hiểu rằng Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) có thể thêm vào hồ sơ lái xe của tôi những lần bị tòa luận tội được báo cáo lại bởi các bang hoặc các cơ quan xét xử, việc này có thể khiến bị tước quyền lái xe ở bang California.",
+        "Bằng việc ký vào đơn này, tôi xác nhận rằng tôi việc tôi hiện diện tại Hoa Kỳ là hợp pháp theo luật liên bang, ngoại trừ trường hợp được quy định trong Luật Dành Cho Phương Tiện Giao Thông Bang California (CVC)mục §12801.",
+        "Tôi hiểu rằng tôi chỉ được phép sở hữu hoặc chi phối duy nhất một bằng lái xe theo như quy định trong Luật Dành Cho Phương Tiện Giao Thông Bang California (CVC) mục §12511.",
+        "Bằng việc ký vào đơn này, tôi xác nhận rằng tôi hiểu các biển báo giao thông và tín hiệu theo như quy định trong Luật Dành Cho Phương Tiện Giao Thông Bang California (CVC) mục §12800(h)."
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "Vui lòng nhập họ của bạn.",
+    "dateOfBirthMissing": "Vui lòng nhập ngày sinh của bạn.",
+    "applicationActionMissing": "Vui lòng chọn việc bạn muốn làm.",
+    "realIdSelectionMissing": "Vui lòng chọn nếu bạn muốn một thẻ Real ID.",
+    "realIdCardSelectionMissing": "Vui chọn thẻ mà bạn muốn dùng làm thẻ Real ID của bạn.",
+    "licenceClassMissing": "Vui lòng chọn xe bạn muốn lái.",
+    "cardNumberMissing": "Vui lòng nhập bằng lái xe hợp lệ hoặc số chứng minh thư (ID).",
+    "streetAddressMissing": "Vui lòng nhập tên đường nơi bạn sống.",
+    "cityMissing": "Vui lòng nhập thành phố nơi bạn sống.",
+    "mailingAddressMissing": "Vui lòng cho biết nơi bạn nhận thư.",
+    "sexSelectionMissing": "Vui lòng chọn giới tính của bạn.",
+    "hairColorMissing": "Vui lòng chọn màu tóc của bạn.",
+    "eyeColorMissing": "Vui lòng chọn màu mắt của bạn.",
+    "heightMissing": "Vui lòng nhập chiều cao của bạn.",
+    "weightMissing": "Vui lòng nhập cân nặng của bạn.",
+    "socialSecurityAvailabilityMissing": "Vui lòng cho chúng tôi biết nếu bạn có Số An Sinh Xã Hội.",
+    "socialSecurityNumberMissing": "Vui lòng nhập Số An Sinh Xã Hội của bạn.",
+    "socialSecurityNumberInvalid": "Vui lòng nhập Số An Sinh Xã Hội hợp lệ.",
+    "medicalHistorySelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn có bất bệnh lý nào.",
+    "licenceHistorySelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn có bằng lái xe hoặc chứng minh thư (ID).",
+    "expirationDateInvalid": "Vui lòng nhập ngày hết hạn hợp lệ.",
+    "nameHistorySelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn có giấy phép hoặc chứng minh thư (ID) dưới tên khác.",
+    "licenseIssueSelectionMissing": "Vui lòng cho chúng tôi biết vì sao bằng lái xe của bạn bị treo, hủy hoặc thu hồi.",
+    "licenseIssueDateMissing": "Vui lòng cho chúng tôi biết việc này xảy ra khi nào.",
+    "veteranSelectionMissing": "Vui lòng chọn nếu bạn từng phục vụ trong Quân Đội Hoa Kỳ.",
+    "veteranBenefitSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn nhận thông tin về lợi ích dành cho các cựu chiến binh.",
+    "veteranDesignationExistsMissing": "Vui lòng cho chúng tôi biết nếu bạn có dấu \"Veteran\" (cựu chiến binh) trên chứng minh thư (ID) hoặc bằng lái xe của bạn.",
+    "veteranDesignationExistsMissing2": "Vui lòng cho chúng tôi biết nếu bạn có dấu \"Veteran\" (cựu chiến binh) bằng lái xe của bạn.",
+    "keepVeteranDesignationSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn giữ dấu \"Veteran\" (cựu chiến binh) trên thẻ của bạn.",
+    "wantVeteransDesignationSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn có dấu \"Veteran\" (cựu chiến binh) trên thẻ của bạn.",
+    "organDonationSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn trở thành người hiến tạng.",
+    "moneyOrganDonationSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn đóng góp.",
+    "citizenshipSelectionMissing": "Vui lòng chọn nếu bạn là công dân Hòa Kỳ.",
+    "votingEligibilitySelectionMissing": "Vui lòng chọn nếu bạn đáp ứng được các yêu cầu để đủ tiêu chuẩn.",
+    "wantToPreregisterSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn đăng ký bỏ phiếu.",
+    "politicalPartySelectionMissing": "Vui lòng chọn một đảng chính trị.",
+    "ballotLanguageSelectionMissing": "Vui lòng chọn một ngôn ngữ.",
+    "ballotByMailSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn nhận lá phiếu kín qua thư.",
+    "emailAddressMissingOrInvalid": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "phoneMissingOrInvalid": "Vui lòng nhập số điện thoại hợp lệ.",
+    "liabilityAcceptanceMissing": "Vui lòng kiểm tra hộp thư để chấp nhận nghĩa vụ pháp lý.",
+    "parentNameMissing": "Vui lòng nhập tên của bạn.",
+    "invalidOrMissingDate": "Vui lòng nhập ngày hợp lệ.",
+    "identityDocumentationMissing": "Vui lòng nhập thông tin giấy tờ tùy thân của bạn.",
+    "dataIncludesNonEnglishCharacters": "Xin lỗi, thẻ của bạn chỉ có thể có các ký tự trong tiếng Anh.",
+    "errorPreventContinuing": "Bạn không thể tiếp tục cho đến khi bạn sửa các lỗi trên trang này.",
+    "selectionMissing": "Vui lòng đưa ra lựa chọn",
+    "pleaseEnterValidData": "Vui lòng nhập thông tin hợp lệ",
+    "inputIncludesNonEnglishCharacters": "Vui lòng chỉ nhập ký tự trong tiếng Anh.",
+    "licenseClassMissing": "Vui lòng chọn loại bằng lái xe",
+    "needEndorsement": "Vui lòng chọn nếu bạn muốn có chứng nhận chuyên môn",
+    "endorsement": "Vui lòng chọn một chứng nhận",
+    "cardTypeMissing": "Vui lòng chọn (những) thẻ mà bạn muốn.",
+    "choosePoliticalPartyNowSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn ưu tiên chọn một đảng chính trị."
+  },
+  "intro": {
+    "switchLanguagePage": {
+      "prompt": "Vui lòng chọn một ngôn ngữ để dùng cho đơn này.",
+      "values": [
+        "English",
+        "中文",
+        "日本語",
+        "Español",
+        "ไทย",
+        "Tagalog",
+        "한국어",
+        "ភាសាខ្មែរ",
+        "हिंदी",
+        "Tiếng Việt"
+      ]
+    },
+    "namePage": {
+      "prompt": "Tên thật đầy đủ của bạn là gì?",
+      "explanation": "Đây là tên xuất hiện trên các giấy tờ tùy thân chính thức, như giấy khai sinh và hộ chiếu của bạn.",
+      "suffixLabel": "Hậu tố",
+      "suffixValues": [
+        "Sr.",
+        "Jr.",
+        "I",
+        "II",
+        "III"
+      ]
+    },
+    "dateOfBirthPage": {
+      "prompt": "Ngày sinh của bạn là gì?",
+      "explanation": "Ví dụ: 09 / 15 / 1970."
+    },
+    "wdywtdtPage": {
+      "prePrompt": "Cám ơn.",
+      "prompt": "Hôm nay bạn muốn làm gì?",
+      "explanation": "Chọn một lựa chọn cho lúc này. Bạn có thể thêm một lựa chọn khác ở phần sau của đơn này.",
+      "values": [
+        "Lần đầu tiên làm một thẻ.",
+        "Cấp lại thẻ mới.",
+        "Sửa hoặc cập nhật thông tin cho một thẻ",
+        "Thay một thẻ"
+      ]
+    },
+    "realIdPage": {
+      "prompt": {
+        "id": "Bạn có định dùng chứng minh thư (ID) của mình để đi máy bay?",
+        "license": "Bạn có định dùng Bằng Lái Xe của mình để đi máy bay?",
+        "card": "Bạn có định dùng thẻ của mình để đi máy bay?"
+      },
+      "explanation": "Theo như ngày 1 tháng 10 năm 2020, bạn sẽ cần bằng lái xe hoặc chứng minh thư (ID) phù hợp với luật REAL ID  <b>trong</b> Hoa Kỳ.",
+      "FAQWhatIsRealID": {
+        "title": "Thẻ phù hợp với luật REAL ID là gì?",
+        "body": "<p>Để đáp ứng yêu cầu của Luật REAL ID (REAL ID Act), Cơ Quan Quản Lý Các Phương Tiện Cơ Giới California (California DMV) sẽ đề nghị cấp hai loại thẻ: thẻ phù hợp luật REAL ID và thẻ không phù hợp hệ thống liên bang. Cả bằng lái phù hợp luật REAL ID và thẻ không phù hợp hệ thống liên bang đều cho phép bạn chạy xe hợp pháp. </p><p> Kể từ ngày 1 tháng 10 năm 2020 bạn cần có thẻ phù hợp luật REAL ID để bay trong Hoa Kỳ hoặc vào các căn cứ quân sự và hầu hết các cơ sở liên bang. </p><p> Nếu không, bạn sẽ cần có hộ chiếu hoặc giấy tờ khác được sự chấp thuận của Cơ Quan An Ninh Giao Thông (Transportation Security Administration) và Bộ An Ninh Nội Địa Hoa Kỳ (Department of Homeland Security).</p>"
+      },
+      "FAQWhatIsRequiredForRealID": {
+        "title": "Cần có gì để nhận thẻ phù hợp luật REAL ID?",
+        "body": {
+          "header": "Bạn sẽ cần <b>1</b> trong những thứ sau:",
+          "items": [
+            "Hộ chiếu hoặc thẻ hộ chiếu Hoa Kỳ hợp lệ, chưa hết hạn",
+            "Giấy khai sinh tại Hoa Kỳ hoặc Giấy báo sinh ngoại quốc của lãnh sự Hoa Kỳ",
+            "Hộ chiếu ngoại quốc chưa hết hạn với visa Hoa Kỳ hợp lệ và đơn I-94 đã được chấp thuận",
+            "Bản sao đã công chứng của Giấy khai sinh trong một Lãnh Thổ của Hoa Kỳ",
+            "Giấy chứng nhận nhập tịch hoặc xác nhận Quốc Tịch",
+            "Thẻ Thường Trú hợp lệ, chưa hết hạn.",
+            "Giấy Cho Phép Làm Việc (employment authorization document (EAD)) chưa hết hạn (I-766) hoặc Giấy Cho Phép Làm Việc (EAD) còn hạn/hết hạn cùng với Giấy Thông Báo Công Việc (Notice of Action)(I-797 C))"
+          ],
+          "otherRequirements": "Bạn cũng cần một giấy tờ chứng minh bạn sống ở bang California và một giấy tờ với Số An Sinh Xã Hội của bạn ví dụ như thẻ An Sinh Xã Hội hoặc đơn từ Sở Thuế Vụ (ví dụ W2, 1099 hoặc 1040)."
+        }
+      }
+    },
+    "chooseSelectionPage": {
+      "prompt": {
+        "new": "Bạn muốn gì?",
+        "renew": "Bạn muốn cấp lại loại thẻ nào?",
+        "replace": "Bạn muốn thay đổi loại thẻ nào?",
+        "correctOrUpdate": "Bạn muốn sửa đổi hay cập nhật thông tin loại thẻ nào?"
+      },
+      "explanationMultiCard": "Chọn tất cả các lựa chọn phù hợp.",
+      "values": [
+        "Chứng minh thư (ID)",
+        "Bằng Lái Xe"
+      ]
+    },
+    "seniorIdPage": {
+      "prompt": "Bạn có muốn nhận một Chứng Minh Thư Cao Niên miễn phí không",
+      "explanation": "Nếu bạn không muốn thẻ \"Chứng Minh Thư Cao Niên\", bạn sẽ phải trả phí như bình thường."
+    },
+    "reducedFeePage": {
+      "prompt": "Bạn có muốn đăng ký một chứng minh thư (ID) được giảm phí hoặc miễn phí không?",
+      "licenseExplanation": "Điều này chỉ áp dụng được cho chứng minh thư (ID) của bạn. Bạn không thể được cấp bằng lái xe được giảm phí hoặc miễn phí.",
+      "rightFormsSection": {
+        "prompt": "Bạn có đúng loại mẫu đơn không?",
+        "explanation": "Để được cấp một chứng minh thư (ID) được giảm phí bạn cần có đơn Xác Nhận Được Giảm Phí Chứng Minh Thư (Reduced Fee Identification Card Eligibility Verification (DL 937)). Để được một chứng minh thư (ID) miễn phí bạn cần phải có đơn Xác Nhận Được Miễn Phí Chứng Minh Thư (No Fee Identification Card Eligibility Verification (DL 933)).",
+        "FAQHowToGetForms": {
+          "title": "Tôi làm sao để có những mẫu đơn này?",
+          "body": "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) không cung cấp những mẫu đơn này. Nếu bạn được hỗ trợ qua chính quyền hoặc đơn vị phi lợi nhuận, hãy nói với họ về việc cần lấy mẫu đơn."
+        }
+      }
+    },
+    "licenseTypePage": {
+      "prompt": "Tôi cần gì để được lái xe?",
+      "explanation": "Chọn tất cả các lựa chọn phù hợp",
+      "values": [
+        {
+          "label": "Ô tô",
+          "helpText": "Hạng C"
+        },
+        {
+          "label": "Xe mô tô hoặc xe gắn máy nhỏ",
+          "helpText": "Hạng M"
+        },
+        {
+          "label": "Xe nhà kéo di động, kéo theo phía sau (5th-wheel) trên 15000 pound,   hoặc xe kéo chở gia xúc",
+          "helpText": "Hạng A"
+        },
+        {
+          "label": "Xe dùng làm nhà ở hoặc xe kéo",
+          "helpText": "Hạng B"
+        }
+      ],
+      "endorsementsSection": {
+        "prompt": "Bạn có cần chứng nhận lính cứu hỏa?",
+        "explanation": "Nếu bạn chỉ cần chứng nhận lái xe cứu thương, vui lòng đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV)."
+      }
+    },
+    "getStartedPage": {
+      "title": "Để kiểm tra lại:",
+      "whatYouAreDoing": {
+        "applyingLicense": "Bạn đang đăng ký một Bằng Lái Xe",
+        "applyingID": "Bạn đang đăng ký một chứng minh thư (ID)",
+        "applyingReducedFeeID": "Bạn đang đăng ký một chứng minh thư (ID) được giảm phí",
+        "applyingSeniorID": "Bạn đang đăng ký chứng minh thư (ID) cao niên",
+        "renewingLicense": "Bạn đang đăng ký cấp lại Bằng Lái Xe",
+        "renewingID": "Bạn đang đăng ký cấp lại chứng minh thư (ID)",
+        "renewingReducedFeeID": "Bạn đang đăng ký cấp lại chứng minh thư (ID) được giảm phí",
+        "renewingSeniorID": "Bạn đang cập nhật thông tin chứng minh thư (ID) cao niên",
+        "replacingLicense": "Bạn đang đăng ký thay Bằng Lái Xe",
+        "replacingID": "Bạn đang đăng ký thay chứng minh thư (ID)",
+        "replacingReducedFeeID": "Bạn đang đăng ký thay một chứng minh thư (ID) được giảm phí",
+        "replacingSeniorID": "Bạn đang cập nhật thông tin chứng minh thư (ID) cao niên",
+        "correctingLicense": "Bạn đang sửa thông tin Bằng Lái Xe",
+        "correctingID": "Bạn đang sửa thông tin chứng minh thư (ID)",
+        "correctingReducedFeeID": "Bạn đang sửa thông tin chứng minh thư (ID) được giảm phí",
+        "correctingSeniorID": "Bạn đang cập nhật thông tin chứng minh thư (ID) cao niên",
+        "updatingLicense": "Bạn đang cập nhật thông tin Bằng Lái Xe",
+        "updatingID": "Bạn đang cập nhật thông tin chứng minh thư (ID)",
+        "updatingReducedFeeID": "Bạn đang cập nhật thông tin chứng minh thư (ID) được giảm phí",
+        "updatingSeniorID": "Bạn đang cập nhật thông tin chứng minh thư (ID) cao niên",
+        "toDrive": "Để lái:",
+        "classes": {
+          "C": "Xe ô tô (Hạng C)",
+          "M": "Xe mô tô (Hạng M)",
+          "A": "Xe nhà kéo di động, kéo theo phía sau (5th-wheel) trên 15000 pound, hoặc xe kéo chở gia xúc (Hạng A)",
+          "B": "Xe dùng làm nhà ở hoặc xe kéo (Hạng B)"
+        },
+        "firefighterEndorsement": "Bạn cần chứng nhận lính cứu hỏa.",
+        "realIDCompliantID": "Chứng minh thư (ID) của bạn sẽ phù hợp luật REAL ID.",
+        "realIDCompliantLicense": "Bằng lái xe của bạn sẽ phù hợp luật REAL ID."
+      },
+      "explanation": {
+        "update": {
+          "license": "Để cập nhật thông tin bằng lái xe của bạn, bạn cần điền một đơn mới.",
+          "id": "Để cập nhật thông tin chứng minh thư (ID) của bạn, bạn cần điền một đơn mới."
+        },
+        "correct": {
+          "license": "Để sửa thông tin bằng lái xe của bạn, bạn cần điền một đơn mới.",
+          "id": "Để sửa thông tin chứng minh thư (ID) của bạn, bạn cần điền một đơn mới."
+        },
+        "replace": {
+          "license": "Để thay đổi thông tin bằng lái xe của bạn, bạn cần điền một đơn mới.",
+          "id": "Để thay đổi thông tin chứng minh thư (ID) của bạn, bạn cần điền một đơn mới."
+        }
+      },
+      "listHeader": "Đơn này cố bốn phần:",
+      "listItems": [
+        "Thông tin cơ bản của tôi",
+        "Lược sử của tôi",
+        "Hiến tạng",
+        "Đăng ký bỏ phiếu"
+      ],
+      "timeToComplete": "Cần khoản <b>10 phút</b> để điền.",
+      "afterComplete": "Khi điền xong, bạn cần đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV).",
+      "buttonText": "Bắt đầu"
+    },
+    "currentCardPage": {
+      "prompt": "Hãy điền số bằng lái xe/chứng minh thư (DL/ID) nếu bạn biết.",
+      "explanation": "Có thể tìm thấy số bằng lái xe/chứng minh thư (DL/ID) của bạn trên đầu thẻ, nó bắt đầu với một chữ cái.",
+      "numberLabel": "Số bằng lái xe/chứng minh thư (DL/ID)"
+    },
+    "correctOrUpdatePage": {
+      "prompt": "Bạn muốn làm gì?",
+      "values": [
+        "Sửa",
+        "Cập nhật"
+      ],
+      "chooseChangeSection": {
+        "prompt": {
+          "update": "Bạn muốn cập nhật gì?",
+          "correct": "Bán muốn sửa gì?"
+        },
+        "values": [
+          "Tên",
+          "Giới tính",
+          "Ngày sinh",
+          "Địa chỉ",
+          "Thứ khác"
+        ],
+        "license": {
+          "explanation": "Bạn có thể cần trả phí để cấp Bằng Lái Xe mới với những cập nhật này.",
+          "values": [
+            "Bạn có thể lái xe gì",
+            "Các chứng nhận trên bằng lái của bạn",
+            "Thêm hoặc bỏ hạn chế"
+          ]
+        },
+        "id": {
+          "explanation": "Bạn có thể cần trả phí để cấp chứng minh thư (ID) mới với những cập nhật này."
+        }
+      }
+    },
+    "replacementReasonPage": {
+      "prompt": "Tại sao bạn muốn thay thẻ của bạn?",
+      "explanation": "Câu trả lời của bạn sẽ giúp nhân viên của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) hỗ trợ bạn tốt hơn.",
+      "values": [
+        "Thẻ bị trộm cắp.",
+        "Thẻ bị hư.",
+        "Màu khác"
+      ]
+    },
+    "youthDlNotificationPage": {
+      "prompt": "Bạn phải từ 15 tuổi rưỡi mới được cấp giấy phép lái xe tạm thời.",
+      "explanation": "Nếu bạn đến một văn phòng của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) để hoàn thành đơn đăng ký, bạn chỉ cần đăng ký một giấy phép cho người trẻ tuổi. Những giấy phép này chỉ được cấp trong trường hợp ngoại lệ.",
+      "question": "Thay vì vậy, bạn có muốn nhận một chứng minh thư (ID) bang California không?",
+      "cantApplyYet": {
+        "prompt": "Vì bạn dưới 15 tuổi, bạn không thể đăng ký cấp bằng lái xe. Thay vì vậy, bạn có muốn nhận một chứng minh thư (ID) bang California không?",
+        "infoMessage": "Vâng, vui lòng trở lại khi bạn đủ 15 tuổi rưỡi."
+      }
+    }
+  },
+  "myBasics": {
+    "addressesPage": {
+      "prompt": "Bạn sống ở đâu?",
+      "explanation": "Ví dụ: 1234 Main St., Los Angeles, CA 90017",
+      "streetAddressLabel": "Địa chỉ đường",
+      "apartmentLabel": "Số nhà",
+      "cityLabel": "Thành phố",
+      "stateLabel": "Bang",
+      "zipLabel": "Mã bưu chính",
+      "mailingAddressSamePrompt": "Bạn có nhận thư tại địa chỉ này không?",
+      "mailingAddressSameExplanation": {
+        "license": "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) sẽ in địa chỉ nhận thư của bạn trên bằng lái xe. Bằng lái xe của bạn cũng sẽ được gửi đến địa chỉ nhận thư của bạn.",
+        "ID": "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) sẽ in địa chỉ nhận thư của bạn trên chứng minh thư (ID). Chứng minh thư (ID) của bạn cũng sẽ được gửi đến địa chỉ nhận thư của bạn.",
+        "cards": "Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) sẽ in địa chỉ nhận thư của bạn lên các thẻ của bạn. Các thẻ của bạn cũng sẽ được gửi đến địa chỉ nhận thư của bạn."
+      },
+      "mailingAddressPrompt": "Bạn nhận thư ở đâu?",
+      "mailingAddressExplanation": "Ví dụ: PO Box 901, Los Angeles, CA 90017"
+    },
+    "traitsPage": {
+      "sex": {
+        "prompt": "Giới tính của bạn là gì?",
+        "values": [
+          "Nam",
+          "Nữ"
+        ]
+      },
+      "eyeColor": {
+        "prompt": "Mắt của bạn màu gì?",
+        "values": [
+          "Đen",
+          "Xanh lam",
+          "Nâu",
+          "Xám",
+          "Xanh lá cây",
+          "Màu nâu đỏ/ màu nâu lục nhạt (Hazel)"
+        ]
+      },
+      "hairColor": {
+        "prompt": "Tóc bạn màu gì?",
+        "values": [
+          "Nâu vàng",
+          "Không có tóc",
+          "Đen",
+          "Vàng",
+          "Nâu",
+          "Xám",
+          "Đỏ",
+          "Trắng",
+          "Màu khác"
+        ]
+      }
+    },
+    "heightWeightPage": {
+      "height": {
+        "prompt": "Chiều cao của bạn là bao nhiêu?",
+        "explanation": "Ví dụ: 5 feet 9 inch",
+        "feetLabel": "Feet",
+        "inchesLabel": "Inch"
+      },
+      "weight": {
+        "prompt": "Cân nặng của bạn là bao nhiêu?",
+        "explanation": "Ví dụ: 190 pound",
+        "poundsLabel": "Pound"
+      }
+    },
+    "socialSecurityPage": {
+      "prompt": "Bạn có Số An Sinh Xã Hội không?",
+      "explanation": "Nếu bạn có Số An Sinh Xã Hội, bạn buộc phải chọn Có.",
+      "messageNo": "<p>Bằng việc trả lời <em>Không</em>, bạn xác nhận là bạn chưa từng được cấp Số An Sinh Xã Hội và bạn hiện không được quyền cấp Số An Sinh Xã Hội. Bạn hiểu rằng theo Luật Dành Cho Phương Tiện Giao Thông Bang California (California Vehicle Code) §12801, bạn phải cung cấp Số An Sinh Xã Hội cho Cơ Quan Quản Lý Các Phương Tiện Cơ Giới khi bạn được ấn định một số. </p><p> Hãy đọc tuyên bố từ chối trách nhiệm để biết thêm thông tin.</p>",
+      "enterSocialNumber": {
+        "prompt": "Số An Sinh Xã Hội của bạn là gì?",
+        "explanation": "Ví dụ: 123 - 45 - 6789"
+      }
+    }
+  },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "Bạn có bất kỳ bệnh lý nào trong 3 năm trở lại làm ảnh hưởng đến khả năng lái xe của bạn không?",
+      "explanationPrompt": "Vui lòng giải thích dưới đây."
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "Bạn có từng sở hữu bằng lái xe hoặc chứng minh thư (ID) do bang cấp không?",
+      "pagePromptID": "Bạn có từng sở hữu bằng lái xe bang California hay chứng minh thư (ID) không?",
+      "explanation": "Bằng lái hoặc chứng minh thư (ID) phải do chính quyền một bang của Hoa Kỳ hoặc một quốc gia khác cấp.",
+      "explanationPrompt": "Vui lòng cho chúng tôi biết về bằng lái xe hoặc chứng minh thư (ID) mới nhất của bạn, kể cả nếu nó đã hết hạn.",
+      "numberLabel": "Tiểu bang, lãnh thổ hoặc quốc gia",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "Ngày Hết Hạn"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "Bạn có từng nộp đơn xin cấp Bằng Lái Xe hoặc chứng minh thư (ID) dưới một tên khác?",
+      "explanationPrompt": "Vui lòng liệt kê tất cả các tên hợp pháp trước đây của bạn.",
+      "helpText": "<p>Ví dụ như tên lúc con gái còn chưa kết hôn. </p><p> Cách nhau bởi dấu \",\".</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "Bạn có từng bị hủy, từ chối cấp, treo hoặc thu hồi bằng lái xe không?",
+      "explanationPrompt": "Việc này xảy ra khi nào?",
+      "helpText": "Ví dụ: 03/21/1967",
+      "reasonLabel": "Lý do là gì?"
+    },
+    "veteransPage": {
+      "pagePrompt": "Bạn có từng phục vụ trong Quân Đội Hoa Kỳ không?",
+      "explanationStart": "Nếu là cựu chiến binh, bạn có thể được quyền nhận những lợi ích, ví dụ như bồi thường thương tật.",
+      "licensExplanation": "Bằng Lái Xe của bạn cũng có thể có chữ \"Veteran\" (cựu chiến binh).",
+      "idExplanation": "Chứng minh thư (ID) của bạn cũng có thể có chữ \"Veteran\" (cựu chiến binh).",
+      "cardsExplanation": "Các thẻ của bạn cũng có thể có chữ \"Veteran\" (cựu chiến binh).",
+      "messageYes": "Cám ơn bạn vì đã phục vụ đất nước.",
+      "benefitsPrompt": "Bạn có muốn nhận thông tin về những lợi ích mà bạn có thể được quyền nhận không?",
+      "newDesignation": {
+        "prompt": "Bạn có muốn thêm chữ \"Veteran\" (cựu chiến binh) lên trên {card type} của bạn với phí $5 không?",
+        "explanation": "Nhiều tổ chức giảm giá cho các cựu chiến binh có chứng minh thư (ID) hợp lệ.",
+        "messageYes": "Vâng, chúng tôi sẽ thêm $5 vào tổng phí của bạn. Bạn sẽ phải hoàn thành Đơn Xác Nhận Tình Trạng Cựu Chiến Binh (Veteran Status Verification Form) tại Văn Phòng Dịch Vụ Cựu Chiến Binh (Veteran Service Office) tại hạt nơi bạn cư trú và mang nó đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV)."
+      },
+      "historicDesignationPrompt": "Trên bằng lái hay chứng minh thư (ID) do chính quyền bang cấp cho bạn có từng xuất hiện chữ \"Veteran\" (cựu chiến binh) không?",
+      "existingDesignation": {
+        "promptLicense": "Trên Bằng Lái Xe của bạn có in chữ \"Veteran\" (cựu chiến binh) không?",
+        "promptID": "Trên chứng minh thư (ID) của bạn có in chữ \"Veteran\" (cựu chiến binh) không?",
+        "promptCards": "Trên các thẻ của bạn có in chữ \"Veteran\" (cựu chiến binh) không?"
+      },
+      "keepDesignationPrompt": {
+        "id": "Bạn có muốn giữ chữ \"Veteran\" (cựu chiến binh) trên chứng minh thư (ID) của bạn không?",
+        "cards": "Bạn có muốn giữ chữ \"Veteran\" (cựu chiến binh) trên những thẻ của bạn không?",
+        "license": "Bạn có muốn giữ chữ \"Veteran\" (cựu chiến binh) trên Bằng Lái Xe của bạn không?"
+      }
+    }
+  },
+  "organDonation": {
+    "title": "Hiến Tạng",
+    "organDonor": {
+      "prompt": "Bạn có muốn làm người hiến tặng nội tạng và mô không?",
+      "validationMessage": "Bạn phải đánh dấu vào Có để duy trì dấu tròn có chữ \"donor\" (người hiến tặng) trên bằng lái xe của bạn.",
+      "messageYes": "Việc trả lời Có sẽ đưa tên bạn vào danh sách của Cơ quan đăng ký Hiến Tạng và Mô (Organ Tissue Donor Registry), và một dấu tròn màu hồng có ghi chữ \"donor\" (người hiến tặng) sẽ xuất hiện trên bằng lái xe/chứng minh thư (DL/ID) của bạn.",
+      "messageNo": "Việc trả lời Không sẽ xóa tên bạn khỏi hồ sơ đăng ký. Nếu bạn muốn xóa tên bạn khỏi hồ sơ đăng ký, bạn phải liên hệ Donate Life California. Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) có thể xóa dấu tròn màu hồng trên bằng lái xe/chứng minh thư (DL/ID) của bạn, nhưng không thể xóa tên bạn khỏi hồ sơ đăng ký."
+    },
+    "monetaryContribution": {
+      "prompt": "Bạn có muốn đóng góp tự nguyện $2 không?",
+      "messageYes": "Cám ơn bạn đã đóng góp! Chúng tôi sẽ thêm $2 này vào tổng phí của bạn."
+    }
+  },
   "shared": {
     "navigation": {
       "back": "Trở Lại",
@@ -8,7 +541,143 @@
       "yes": "Có",
       "no": "Không",
       "declineToAnswer": "Từ chối trả lời",
-      "skip": "Bỏ qua câu hỏi"
+      "skip": "Bỏ qua câu hỏi",
+      "female": "Nữ",
+      "male": "Nam"
+    },
+    "labels": {
+      "mm": "MM (Tháng)",
+      "dd": "DD (Ngày)",
+      "YYYY": "YYYY (Năm)",
+      "sex": "Giới tính",
+      "socialSecurity": "Số an sinh xã hội",
+      "firstName": "Tên",
+      "middleName": "Tên đệm",
+      "lastName": "Họ",
+      "dateOfBirth": "Ngày sinh",
+      "expirationDate": "Ngày hết hạn",
+      "name": "Tên"
+    },
+    "summary": {
+      "notProvided": "Không cung cấp",
+      "none": "Không có"
+    }
+  },
+  "summaryPage": {
+    "buttons": {
+      "edit": "Chỉnh sửa",
+      "submit": "Nộp"
+    },
+    "whatImDoing": {
+      "starter": "Tôi đang",
+      "applying": "Nộp đơn lần đầu tiên",
+      "renewing": "Xin cấp mới",
+      "updating": "Cập nhật",
+      "correcting": "Sửa",
+      "replacing": "Thay đổi",
+      "nothing": "Chưa thấy ứng dụng chạy"
+    },
+    "shared": {
+      "expirationDate": "Ngày hết hạn"
+    },
+    "prompt": "Vui lòng dành ra một phút để xem lại những câu trả lời của bạn",
+    "myID": {
+      "title": "Số chứng minh thư (ID) của tôi",
+      "reducedFeeHeading": "Được giảm phí hoặc miễn phí",
+      "seniorIDHeading": "Chứng minh thư cao niên (Senior ID)",
+      "realIDHeading": "Chứng minh thư thực (Real ID)",
+      "currentCard": "Số thẻ chứng minh thư (ID)"
+    },
+    "myDL": {
+      "title": "Bằng Lái Xe Của Tôi",
+      "needToDriver": {
+        "header": "Cần để điều khiển",
+        "values": [
+          "Xe ô tô (Hạng C)",
+          "Xe mô tô (Hạng M)",
+          "Xe nhà kéo di động, kéo theo phía sau (5th-wheel) trên 15000 pound, hoặc xe kéo chở gia xúc (Hạng A)",
+          "Xe dùng làm nhà hoặc xe kéo (Hạng B)"
+        ]
+      },
+      "firefighterEndorsement": "Chứng nhận lính cứu hỏa",
+      "currentCard": "Số bằng lái xe"
+    },
+    "myBasics": {
+      "title": "Thông tin cơ bản của tôi",
+      "homeAddress": "Địa chỉ nhà",
+      "mailingAddress": "Địa chỉ nhận thư",
+      "same": "Giống vậy",
+      "eyeColor": "Màu mắt",
+      "hairColor": "Màu tóc",
+      "height": "Chiều cao",
+      "feet": "feet",
+      "inches": "inch",
+      "weight": "Cân nặng",
+      "pounds": "pound",
+      "ssnExplanation": "Số An Sinh Xã Hội (chỉ điền 4 số cuối)"
+    },
+    "myHistory": {
+      "title": "Lược sử của tôi",
+      "medicalConditions": "Tình trạng sức khỏe",
+      "previousCard": "Số thẻ bằng lái xe/Chứng minh thư (DL/ID) ",
+      "issuedIn": "Cấp ngày",
+      "previousNames": "Tên cũ",
+      "drivingRecord": "Hồ sơ lái xe",
+      "recordDate": "Ngày lập",
+      "veteran": "Cựu chiến binh",
+      "getBenefitsInformation": "Nhận thông tin về các lợi ích",
+      "veteranPrintedOnCard": "Chữ \"Veteran\" (cựu chiến binh) được in trên (các) thẻ"
+    },
+    "organDonation": {
+      "title": "Hiến tạng",
+      "beAnOrganDonor": "Làm người hiến tạng",
+      "donate": "Đóng góp $2"
+    },
+    "voterRegistration": {
+      "title": "Đăng ký bỏ phiếu",
+      "citizen": "Công dân Hoa Kỳ",
+      "eligible": "Đạt các yêu cầu để đủ tiêu chủ",
+      "registrationChoice": "Lựa chọn đăng ký bỏ phiếu",
+      "choiceYes": "Sẽ được đăng ký",
+      "choiceUpdate": "Cập nhận lựa chọn ưa thích của người bỏ phiếu",
+      "choiceNo": "Không tham gia",
+      "ballotLanguage": "Ngôn ngữ bầu cử",
+      "voteByMail": "Bỏ phiếu qua thư",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "politicalParty": "Đảng chính trị"
+    }
+  },
+  "tenYearHistoryPage": {
+    "prompt": "Bạn đã từng được cấp bằng lái xe <em>bên ngoài</em> bang California trong 10 năm trở lại chưa?",
+    "explanation": "Có thể là dưới cùng một tên hoặc tên khác, và để điều khiển bất kỳ phương tiện cơ giới nào.",
+    "fillOutHistoryVia": {
+      "prompt": "Chúng tôi cần bạn cung cấp thông tin về những bằng lái xe của bạn trong 10 năm trở lại.",
+      "explanation": "Bạn muốn điều mẫu Đơn Khai Báo Lược Sử Trong Vòng 10 Năm như thế nào?",
+      "answerOnline": "Trực tuyến",
+      "answerPrint": "In tại nhà",
+      "answerField": "Đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) để nhận"
+    },
+    "onlineForm": {
+      "prompt": "Vui lòng cho chúng tôi biết về bằng lái xe trước đây của bạn.",
+      "numberLabel": "Số bằng lái xe",
+      "stateCountryLabel": "Ngày cấp",
+      "expirationLabel": "Ngày hết hạn"
+    },
+    "personalInformationSameQuestion": {
+      "prompt": "Thông tin cá nhân trên bằng lái xe của bạn có giống như dưới đây không?",
+      "yesAnswer": "Phải, giống như vậy",
+      "noAnswer": "Không, thông tin khác"
+    },
+    "personalInformationIsDifferent": {
+      "prompt": "Thông tin nào đã thay đổi?"
+    },
+    "additionalLicenses": {
+      "prompt": "Bạn có được cấp thêm bằng lái xe nào bên ngoài bang California không?",
+      "explanation": "Có thể là dưới cùng một tên hoặc tên khác, và để điều khiển bất kỳ phương tiện cơ giới nào."
+    },
+    "listOfLicenses": {
+      "prompt": "Dưới đây là danh sách bằng lái của bạn."
     }
   },
   "votingRegistration": {

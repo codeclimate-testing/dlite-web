@@ -1,4 +1,537 @@
 {
+  "confirmationPage": {
+    "header": "確認",
+    "subHeader": "あなたの情報を受理しました。",
+    "confirmationCode": "確認コードは以下になります。",
+    "nextSteps": {
+      "title": "次はこちらになります。",
+      "steps": [
+        "メール送信でこの確認コードを入手します。",
+        "申請を完了するにはお住まいの地域の運輸局事務所にお越しいただく必要があります。",
+        "必要な書類を回収し、あなたの知識を試験で調べますので、訪問のために準備をお願いします。申請で提供された情報に基づいて、<a href='/apply/appointment-preparation'>カスタム準備リストを作成しました。</a>",
+        "運輸局支局事務所では、従業員の社会保障確認番号と書類を見せてください。事務所に申請を提出します。",
+        "あなたの情報を確認するように求められます。その後、運輸局支局事務所を訪問中にそれが正しいことをあなたが証明します。"
+      ]
+    },
+    "registrationCompleteAtOffice": "注意点としては、運輸局支局事務所での申請終了時に、有権者登録の申請が処理されます。",
+    "checkVoterStatus": "あなたの状況を確認して下さい。<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "registerSooner": "運輸局を訪問する前に有権者登録をする必要がある場合。RegisterToVote.ca.gov.にてオンラインで登録することができます。",
+    "register30days": "次回の州選挙で投票したい場合、今すぐRegisterToVote.ca.govでオンライン登録してください。",
+    "avoidLines": "長時間並んで待つのを避けるために、あなたの地元の運輸局に今すぐ予約をしてください。",
+    "makeAnAppointment": "予約をする"
+  },
+  "confirmationCDL": {
+    "commercialLearnersPermit": "学科試験に合格し、他のすべての要件を満たす場合、営業用仮運転免許証（CLP）発行されます。CLPが発行された際と、一時的な営業用運転免許証を受け取る対象になった際の間に、14日間の強制待機期間があります。"
+  },
+  "disclaimers": {
+    "medical": {
+      "title": "医療情報",
+      "body": "次の条件は、再発性の喪失、病気、疾患、または障害（これらの例としては、てんかん、糖尿病、脳卒中、白内障、パーキンソン病）を引き起こす可能性がある何らかの疾患が原因による意識消失、著しい混乱の発作、白内障、加齢黄斑変性症、糖尿病性網膜症、緑内障、網膜色素変性症による視野の減少または変化、またはその他の進行性疾患 ; アルコールや薬物乱用が原因の健康問題を含むがこれらに限定されない、車両を安全に運転する能力に影響を及ぼす可能性があります。"
+    },
+    "veteran": {
+      "title": "退役軍人について",
+      "body": "この申請で退役軍人のチェックボックスに印を付けることで、私は、米軍の退役軍人で、カリフォルニア州退役軍人局(CalVet）から退役軍人の給付金の情報を受け取ることを証明します。この申請で退役軍人のチェックボックスに印を付けることで、私はまた、運輸局がこの目的のためのみに私の氏名と住所をCalVetに送信することにも同意し、私はこの送信が発生することが私に通知されていることを証明します。"
+    },
+    "organDonation": {
+      "title": "臓器提供について",
+      "body": "臓器や組織の提供者として登録するために「はい」の印を付けた場合は、あなたの死亡時に臓器や組織の回収を合法的に許可するものとします。提供者としての登録が、医療処置に決して影響を与えることはありません。カリフォルニア州死体提供法に記載されているように、あなたの許可は、法的拘束力があり、提供者の年齢 が18歳未満の場合を除いては、あなたの決定は、他者の同意を必要としません。18歳未満の登録されている提供者の場合、法定後見人が提供を最終決定するものとします。あなたは特定の臓器や組織の提供の制限、使用制限（例えば、移植または研究用）を設定し、提供に関する詳細情報を取得するか、または「命の寄付カリフォルニア」 www.donateLIFEcalifornia.org.のウェブサイト上の登録から自分の名前を削除することができます。臓器提供者として登録することで、あなたは運輸局があなたのフルネームの本名、居住先または郵送先住所、誕生年、およびカリフォルニア州の運転免許証または身分証明書番号を「命の寄付カリフォルニア」に電子的に送信できるように同意を与えています。この用紙に署名することにより、このプロセスに同意し、この送信が発生することが通知されていることに同意します。"
+    },
+    "voterRegistration": {
+      "title": "有権者登録",
+      "bodyBullets": [
+        "住所の共有が生命を脅かす危険にあなたを置くかも知れない場合は、内密に有権者登録を受けることができます。詳細については、在宅での安全プログラム（877）322-5227にお問い合わせいただくか、または<a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>を御覧ください。",
+        "米国市民にのみ適用されます。あなたに投票資格があることを示している場合には、運輸局はあなたのデジタル署名を含む、すべてのこの用紙で収集された有権者登録情報を、州務長官に送信します。あなたが登録した事務所は機密のままで有権者登録の目的にのみ使用されます。",
+        "投票権があり、有権者登録を拒否する場合は、あなたの決定は機密のままになりますが、ただし、この情報は有権者への働き掛け、登録目的のためのみに州務長官に送付されます。",
+        "この申請で提供される有権者登録情報は機密です。運輸局は有権者資格の判断をしていません。",
+        "登録中30日以内に有権者登録情報を受信していない場合、郡の選挙事務員または州務長官に連絡してください。",
+        "有権者登録に関する詳細については<a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a>または 一般的な情報については<a href='www.sos.ca.gov'>www.sos.ca.gov</a>をご覧ください。"
+      ]
+    },
+    "criminalProsecution": {
+      "title": "刑事訴追",
+      "bodyBullets": [
+        "詐欺的な情報を送信した場合、運輸局が刑事訴追を追求する可能性があります。",
+        "本当の市民権または在留外国人の地位を隠蔽するために偽造文書を使用する人物は、カリフォルニア州刑法§114に規定された重罪です。"
+      ]
+    },
+    "financialResponsibility": {
+      "title": "金融責任",
+      "bodyBullets": [
+        "金融責任（一般的に保険として知られている）はカリフォルニア州の道路上で運転または駐車されるすべての車両に必要があります。あなたの車に常に金融責任の証拠を携帯する必要があり、法の執行による要求、車両登録の更新、車両が交通事故に関与している場合に提供される必要があります。",
+        "賠償責任保険を掛けることができない場合は、カリフォルニア州の低費用自動車保険プログラムを利用することができます。追加情報は<a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> 、または電話(866) 602-8861で利用できます。"
+      ]
+    },
+    "paymentRefunds": {
+      "title": "支払い/払い戻し",
+      "bodyBullets": [
+        "<A HREF= 「 www.dmv.ca.gov'>www.dmv.ca.gov</a> あなたの地域の運輸局支局事務所でお支払いオプションを確認するには<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>をご覧ください。更新を郵送している場合は、小切手でのお支払いが必要になります。（小切手は運輸局に支払われる必要があります）。",
+        "この申請用紙と手数料が提出されると、払い戻しは行われません。"
+      ]
+    },
+    "privacy": {
+      "title": "プライバシー通知",
+      "bodyBullets": [
+        "運輸局は、この情報を使用し、運転免許証または身分証明書について、また運転免許の法の施行についてのあなたの適格性を判断するために、この用紙を使用しています。",
+        "この用紙で運輸局に提供された情報は収集され、情報慣例法（民法 1798 以下参照）、運転手のプライバシー保護法（合衆国法典第18編2721-2725）、カリフォルニア州車両条例（CVC）およびその他の該当する州および連邦政府の法律や規制の制限を受けます。",
+        "運輸局は、他の政府機関に提供する情報および書類を検証します。",
+        "この用紙上のすべての情報が記載されている場合を除き必須です。運輸局は、必要な情報を提供していないため、あなたの申請を拒否する可能性があります。この用紙に必要な情報の提供の障害が、運転免許証または身分証明書の発行の拒否、または、一部の場合は、運転の特権の中止または撤回の原因となります。",
+        "運輸局は他の政府機関、法執行機関、法律によって許可された事業体とあなたの情報を共有しています。<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>で、または通常の業務時間中にいずれの運輸局支局事務所でもあなたの記録のコピーを取得できます。あなたの記録へのアクセスの補助については、電話(800) 777-0133または通常の業務時間中に運輸局支局事務所を訪問する予約をしてください。あなたの記録への修正の補助については、運輸局の免許管理部義務行為課(916) 657-6525までお問い合わせください。",
+        "次のあなたの運転免許証または身分証明書に関する質問に対応する必要があります。Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
+        "特定のCVC部門または運輸局があなたの情報を共有する方法に関する詳細については<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>をご覧ください。.どの事務所でも「あなたの運輸局の情報がどのように高速な事実に共有されているか」 (FFDMV 17)のパンフレットのコピーも要求することができます。",
+        "運輸局のプライバシー・ポリシーは、ページの一番下にあるプライバシーポリシーリンクの下<a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>に位置しています。",
+        "この通知に関する質問は次にお問い合わせ下さい。Department of Motor Vehicles, ATTN:Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+      ]
+    },
+    "certifications": {
+      "title": "証明",
+      "bodyBullets": [
+        "私は、カリフォルニア州車両条例 (CVC)§23612に従って行動する警官により、検査が要求される場合、私の血液のアルコールや薬物含有量を判定する目的のために、私の血液、呼吸、または尿の化学検査に従うことに同意します。",
+        "私はここに、アルコールや薬物、またはその両方の影響の下では、自動車を安全に運転する機能を損なうことを忠告されました。そのため、アルコールや薬物、またはその両方の影響の下では、運転するのは、人間の生命にとって非常に危険です。私が、アルコールや薬物、またはその両方の影響の下で運転をした場合は、結果として、人が死亡した場合、私は、殺人罪に問われる可能性があります。",
+        "この申請書に署名することで、私は、年齢 21 歳以下ならば、法的に、血液の0.01％以上のアルコール濃度（BAC）で運転することができないことを通知されていることを証明します。運転時にBACが0.01％以上の場合、または採取を拒否し、または、アルコールまたは薬物のスクリーニング検査を終了させないことは、 1 年間の免許停止という結果になります。",
+        "この申請に署名することで、私は違反の影響の下で運転したことについて現在裁判所の保護観察中であり、法的にBAC0.01％以上で運転することはできません。BAC0.01％以上での運転の 1 年間の免許停止という結果になります。採取を拒否し、または、アルコールのスクリーニングまたは科学検査を終了させないことは、 2 、 3 年間の免許停止という結果になります。",
+        "私はこの用紙の一枚目に名前が表示される人物です。郵送先の住所表示は有効、既存、かつ正確です。私は、カリフォルニア州民事訴訟法の §§415.20(b),、415.30(a)、および416.90に従って、この郵送先住所で訴状の送達を受理することに同意します。",
+        "私は運輸局がカリフォルニア州での運転特権に対する制裁の結果である可能性がある私の運転の記録に他の州または司法管轄区域により報告された交通違反の有罪判決を追加する場合があることを理解します。",
+        "この用紙に署名することで、私はCVC §12801に指定された場合を除き、米国での私の存在は、連邦法の下での権限があることに同意しています。",
+        "私はCVC §12511.に従って、私の占有、または管理下では 1 枚の運転免許証のみ所持できることを理解します。",
+        "この申請に署名することで、私はCVC §12800(h)に従って交通標識と信号を理解することを証明します。"
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "姓を入力してください。",
+    "dateOfBirthMissing": "誕生日の日付を入力してください。",
+    "applicationActionMissing": "ご希望の項目を選択してください。",
+    "realIdSelectionMissing": "電子IDカードをご希望の場合は選択してください。",
+    "realIdCardSelectionMissing": "どのカードを電子IDカードにするか選択してください。",
+    "licenceClassMissing": "何を運転する必要があるか選択してください。",
+    "cardNumberMissing": "有効な運転免許証またはID番号を入力してください。",
+    "streetAddressMissing": "お住まいの番地を入力してください。",
+    "cityMissing": "お住まいの市町村を入力してください。",
+    "mailingAddressMissing": "メールを受信する場所を通知してください。",
+    "sexSelectionMissing": "性別を選択してください。",
+    "hairColorMissing": "髪の毛の色を選択してください。",
+    "eyeColorMissing": "目の色を選択してください。",
+    "heightMissing": "身長を入力してください。",
+    "weightMissing": "体重を入力してください。",
+    "socialSecurityAvailabilityMissing": "社会保障番号を保持しているか否か入力してください。",
+    "socialSecurityNumberMissing": "社会保障番号を入力してください。",
+    "socialSecurityNumberInvalid": "有効な社会保障番号を入力してください。",
+    "medicalHistorySelectionMissing": "あらゆる内科的疾患についてお知らせください。",
+    "licenceHistorySelectionMissing": "運転免許証またはIDカードの使用歴があればお知らせください。",
+    "expirationDateInvalid": "有効期限を入力してください。",
+    "nameHistorySelectionMissing": "異なる名義での、免許証またはIDカードの使用歴があればお知らせください。",
+    "licenseIssueSelectionMissing": "運転する特権が中止、停止、または失効になった理由をお知らせください。",
+    "licenseIssueDateMissing": "これがいつ起こったかお知らせください。",
+    "veteranSelectionMissing": "米軍に勤務した場合は選択してください。",
+    "veteranBenefitSelectionMissing": "退役軍人のための給付金についての情報を入手をご希望の場合お知らせください。",
+    "veteranDesignationExistsMissing": "IDまたは運転免許証に「退役軍人」と記載されている場合お知らせください。",
+    "veteranDesignationExistsMissing2": "カードに「退役軍人」と記載されている場合お知らせください。",
+    "keepVeteranDesignationSelectionMissing": "カードに「退役軍人」の記載の継続をご希望の場合お知らせください。",
+    "wantVeteransDesignationSelectionMissing": "カードに「退役軍人」と記載をご希望の場合お知らせください。",
+    "organDonationSelectionMissing": "カードに臓器提供者と記載をご希望の場合お知らせください。",
+    "moneyOrganDonationSelectionMissing": "臓器提供をご希望の場合お知らせください。",
+    "citizenshipSelectionMissing": "あなたが米国市民の場合は選択してください。",
+    "votingEligibilitySelectionMissing": "資格要件を満たしている場合は選択してください。",
+    "wantToPreregisterSelectionMissing": "選挙権登録をご希望の場合お知らせください。",
+    "politicalPartySelectionMissing": "政党を選択してください。",
+    "ballotLanguageSelectionMissing": "言語を選択してください。",
+    "ballotByMailSelectionMissing": "郵送での投票用紙の入手をご希望の場合お知らせください。",
+    "emailAddressMissingOrInvalid": "有効な電子メールアドレスを入力してください。",
+    "phoneMissingOrInvalid": "有効な電話番号を入力してください。",
+    "liabilityAcceptanceMissing": "上記の内容を確認いただき、責任を承諾いただける場合、□欄に印を入力してください。",
+    "parentNameMissing": "あなたのお名前を入力してください。",
+    "invalidOrMissingDate": "有効な日付を入力してください。",
+    "identityDocumentationMissing": "ID関係書類の情報を入力してください。",
+    "dataIncludesNonEnglishCharacters": "申し訳ありませんが、カードには英文字しか使用できません。",
+    "errorPreventContinuing": "このページでは、エラーを修正するまで続行することはできません。",
+    "selectionMissing": "選択をしてください。",
+    "pleaseEnterValidData": "有効な情報を入力してください。",
+    "inputIncludesNonEnglishCharacters": "英文字のみを入力してください。",
+    "licenseClassMissing": "免許証の等級を選択してください。",
+    "needEndorsement": "専門家からの推薦が必要な場合は選択してください。",
+    "endorsement": "推薦を選択してください。",
+    "cardTypeMissing": "ご希望のカードを選択してください。",
+    "choosePoliticalPartyNowSelectionMissing": "政党支持の選択をご希望の場合お知らせください。"
+  },
+  "intro": {
+    "switchLanguagePage": {
+      "prompt": "この申請で使用する言語を選択してください。",
+      "values": [
+        "English",
+        "中文",
+        "日本語",
+        "Español",
+        "ไทย",
+        "Tagalog",
+        "한국어",
+        "ភាសាខ្មែរ",
+        "हिंदी",
+        "Tiếng Việt"
+      ]
+    },
+    "namePage": {
+      "prompt": "あなたの本名は何ですか？",
+      "explanation": "これはあなたの出生証明書、パスポートなどの正式な身分証明書上に表示される氏名です。",
+      "suffixLabel": "接尾辞",
+      "suffixValues": [
+        "Sr.",
+        "Jr.",
+        "I",
+        "II",
+        "III"
+      ]
+    },
+    "dateOfBirthPage": {
+      "prompt": "誕生日はいつですか？",
+      "explanation": "例：09 / 15 / 1970."
+    },
+    "wdywtdtPage": {
+      "prePrompt": "ありがとう。",
+      "prompt": "今日は何をしますか？",
+      "explanation": "今のところ 1 つのオプションを選択します。申請で後から別のオプションを追加することができます。",
+      "values": [
+        "初めてカードを取得する",
+        "カードを更新",
+        "カードを修正または更新",
+        "カードを交換"
+      ]
+    },
+    "realIdPage": {
+      "prompt": {
+        "id": "IDを使用して飛行機に乗ることを計画していますか？",
+        "license": "運転免許証を使用して飛行機に乗ることを計画していますか？",
+        "card": "カードを使用して飛行機に乗ることを計画していますか？"
+      },
+      "explanation": "2020年10月1日以降、米国<b>内</b>で飛行機に搭乗するには電子IDに準拠した運転免許証またはIDカード が必要になります。",
+      "FAQWhatIsRealID": {
+        "title": "電子IDに準拠したカードとは何ですか？",
+        "body": "<p>電子ID法案に適合するために、カリフォルニア州の運輸局は 2 種類のカード、則ち、連邦政府の電子IDに準拠したカードと、非準拠のカードを提供します。連邦政府の電子IDに準拠、非準拠の運転免許証の両方で合法的に運転することができます。</p><p>2020年10月1日以降、米国内で飛行機に搭乗、またはほとんどの連邦政府施設や軍事基地に入るためには電子IDに準拠したカードが必要です。</p><p>それ以外の場合は、運輸保安庁と国土安全保障省により承認されたパスポートやその他の書類が必要になります。</p>"
+      },
+      "FAQWhatIsRequiredForRealID": {
+        "title": "電子IDに準拠したカードを取得するには何が必要ですか？",
+        "body": {
+          "header": "次の<b>1</b>が必要になりいます",
+          "items": [
+            "有効期限が切れていない米国のパスポートまたはパスポートカード",
+            "米国の出生証明書または米国大使館/領事館発行の出生証明書",
+            "有効期限内の米国ビザ付きの外国パスポート、および承認済出入国カード",
+            "米国領からの出生証明書の認定コピー",
+            "帰化、または市民権の証明書",
+            "有効期限内の有効な在留カード",
+            "有効期限内の就労許可証（EAD）カード(I-766) または訴訟通知付きの(I-797 C)有効/期限切れのEADカード"
+          ],
+          "otherRequirements": "またあなたがカリフォルニア在住であることを証明する 1 通の書類および社会保障カードまたは内国歳入庁の書類(例、W2、1099、または1040).など、社会保障番号の書類 1 通が必要です。"
+        }
+      }
+    },
+    "chooseSelectionPage": {
+      "prompt": {
+        "new": "何をご希望ですか？",
+        "renew": "どのような種類のカードを更新していますか？",
+        "replace": "どのような種類のカードを交換していますか？",
+        "correctOrUpdate": "どのような種類のカードを修正または更新していますか？"
+      },
+      "explanationMultiCard": "当てはまるものをすべて選択します。",
+      "values": [
+        "ID",
+        "運転免許証"
+      ]
+    },
+    "seniorIdPage": {
+      "prompt": "無料の高齢者身分証明書の取得をご希望ですか",
+      "explanation": "「高齢者身分証明書」を希望しない場合は、通常の費用を支払う必要があります。"
+    },
+    "reducedFeePage": {
+      "prompt": "低料金または無料のIDに申請していますか？",
+      "licenseExplanation": "これはあなたのIDカードにのみ適用されます。無料または低料金の運転免許証を取得することはできません。",
+      "rightFormsSection": {
+        "prompt": "適切な用紙を使用していますか ?",
+        "explanation": "低料金のIDを取得するためには、低料金の身分証明カードの資格証明用紙（運転免許証937）を持っている必要があります。無料のIDカードを取得するには、無料身分証明書資格証明(DL 933)用紙を使用する必要があります。",
+        "FAQHowToGetForms": {
+          "title": "これらの用紙はどのように取得すのでしょうか？",
+          "body": "運輸局はこれらの用紙を提供していません。政府や非営利団体を通じて支援を得る場合、これらの用紙の取得について彼等と話してください。"
+        }
+      }
+    },
+    "licenseTypePage": {
+      "prompt": "何を運転する必要がありますか？",
+      "explanation": "当てはまるものをすべて選択します。",
+      "values": [
+        {
+          "label": "自動車",
+          "helpText": "C級"
+        },
+        {
+          "label": "オートバイやスクーター",
+          "helpText": "M級"
+        },
+        {
+          "label": "15000ポンド以上の一輪有蓋車。または家畜牽引車（ A 級）",
+          "helpText": "A級"
+        },
+        {
+          "label": "有蓋車または牽引車",
+          "helpText": "B級"
+        }
+      ],
+      "endorsementsSection": {
+        "prompt": "消防士の推薦が必要ですか？",
+        "explanation": "救急車の証明書のみを希望する場合は、運輸局支局事務所にお越しください。"
+      }
+    },
+    "getStartedPage": {
+      "title": "確認事項：",
+      "whatYouAreDoing": {
+        "applyingLicense": "あなたは運転免許証を申請しています",
+        "applyingID": "あなたはIDカードを申請しています",
+        "applyingReducedFeeID": "あなたは低料金のIDカードを申請しています",
+        "applyingSeniorID": "あなたは高齢者証明書を申請しています",
+        "renewingLicense": "あなたは運転免許証を更新しています",
+        "renewingID": "あなたはIDカードを更新しています",
+        "renewingReducedFeeID": "あなたは低料金のIDカードを更新しています",
+        "renewingSeniorID": "あなたは高齢者証明書を申請しています",
+        "replacingLicense": "あなたは運転免許証を交換しています",
+        "replacingID": "あなたはIDカードを交換しています",
+        "replacingReducedFeeID": "あなたは低料金のIDカードを交換しています",
+        "replacingSeniorID": "あなたは高齢者証明書を申請しています",
+        "correctingLicense": "あなたは運転免許証を修正しています",
+        "correctingID": "あなたはIDカードを修正しています",
+        "correctingReducedFeeID": "あなたは低料金のIDカードを修正しています",
+        "correctingSeniorID": "あなたは高齢者証明書を申請しています",
+        "updatingLicense": "あなたは運転免許証を更新しています",
+        "updatingID": "あなたはIDカードを更新しています",
+        "updatingReducedFeeID": "あなたは低料金のIDカードを更新しています",
+        "updatingSeniorID": "あなたは高齢者証明書を申請しています",
+        "toDrive": "運転をするには：",
+        "classes": {
+          "C": "自動車（C級）",
+          "M": "オートバイ（M級）",
+          "A": "15000ポンド以上の一輪有蓋車。または家畜牽引車（ A 級）",
+          "B": "有蓋車または牽引車（ B 級）"
+        },
+        "firefighterEndorsement": "消防士の推薦が必要になります。",
+        "realIDCompliantID": "あなたのIDカードは電子IDに準拠しています。",
+        "realIDCompliantLicense": "あなたの運転免許証は電子IDに準拠しています。"
+      },
+      "explanation": {
+        "update": {
+          "license": "運転免許証を更新するには、新しい申請書に記入が必要になります。",
+          "id": "IDカードを更新するには、新しい申請書に記入が必要になります。"
+        },
+        "correct": {
+          "license": "運転免許証を修正するには、新しい申請書に記入が必要になります。",
+          "id": "IDカードを修正するには、新しい申請書に記入が必要になります。"
+        },
+        "replace": {
+          "license": "あなたの運転免許証を交換するには、新しい申請書に記入が必要になります。",
+          "id": "あなたのIDカードを交換するには、新しい申請書に記入が必要になります。"
+        }
+      },
+      "listHeader": "この申請は、 4 つのセクションがあります。",
+      "listItems": [
+        "申請者の基本情報",
+        "申請者の運転経歴",
+        "臓器提供",
+        "有権者登録"
+      ],
+      "timeToComplete": "終了するには<b>10分</b>程度かかります。",
+      "afterComplete": "これが終わったら、あなたの地元の運輸局の事務所を訪問する必要があります。",
+      "buttonText": "開始"
+    },
+    "currentCardPage": {
+      "prompt": "ご存知ならば、カリフォルニア州の運転免許証/IDカード番号を入力してください。",
+      "explanation": "あなたの番号は、運転免許証/IDカードの上部に記載されていて、文字で始まります。",
+      "numberLabel": "運転免許証/IDカード番号"
+    },
+    "correctOrUpdatePage": {
+      "prompt": "何をご希望ですか？",
+      "values": [
+        "修正",
+        "更新"
+      ],
+      "chooseChangeSection": {
+        "prompt": {
+          "update": "何の更新をご希望ですか？",
+          "correct": "何の修正をご希望ですか？"
+        },
+        "values": [
+          "名前",
+          "性別",
+          "誕生日",
+          "住所",
+          "その他"
+        ],
+        "license": {
+          "explanation": "これらの更新で新しい運転免許証について料金を支払う必要があります。",
+          "values": [
+            "運転できるもの",
+            "免許証の推薦",
+            "制限を追加または削除します"
+          ]
+        },
+        "id": {
+          "explanation": "これらの更新で新しいIDについて料金を支払う必要のある場合があります。"
+        }
+      }
+    },
+    "replacementReasonPage": {
+      "prompt": "なぜカードを交換する必要があるのですか？",
+      "explanation": "あなたの回答があなたをさらに支援する運輸局の職員の役に立ちます。",
+      "values": [
+        "紛失または盗難に遭いました。",
+        "破損しました。",
+        "その他"
+      ]
+    },
+    "youthDlNotificationPage": {
+      "prompt": "仮免許の取得は15歳半が義務年齢です。",
+      "explanation": "運輸局の事務所に、申請を完了するために早く行った場合、下級許可証しか申請できません。これらの許可証は、例外的な場合にのみ発行されます。",
+      "question": "その代わりに、カリフォルニアのIDカードの発行をお望みですか？",
+      "cantApplyYet": {
+        "prompt": "15歳未満なので、運転免許証を申請することはできません。その代わりに、カリフォルニアのIDカードの発行をお望みですか？",
+        "infoMessage": "いいですね、14歳以上になったら戻ってきてください。"
+      }
+    }
+  },
+  "myBasics": {
+    "addressesPage": {
+      "prompt": "どちらにお住いでいますか？",
+      "explanation": "例：1234 Main St., Los Angeles, CA 90017",
+      "streetAddressLabel": "番地",
+      "apartmentLabel": "集合住宅名または部屋番号",
+      "cityLabel": "都市",
+      "stateLabel": "州",
+      "zipLabel": "郵便番号",
+      "mailingAddressSamePrompt": "この住所で郵便物を受け取っていますか？",
+      "mailingAddressSameExplanation": {
+        "license": "運輸局はあなたの運転免許証に郵送先住所を記載します。あなたの運転免許証が郵送先住所にも送付されます。",
+        "ID": "運輸局はあなたのIDに郵送先住所を記載します。あなたのIDカードは、郵送先住所にも送付されます。",
+        "cards": "運輸局はあなたのカードに郵送先住所を記載します。あなたのカードは郵送先住所にも送付されます。"
+      },
+      "mailingAddressPrompt": "どちらで郵便物を受け取りますか？",
+      "mailingAddressExplanation": "例：PO Box 901, Los Angeles, CA 90017"
+    },
+    "traitsPage": {
+      "sex": {
+        "prompt": "性別は？",
+        "values": [
+          "男性",
+          "女性"
+        ]
+      },
+      "eyeColor": {
+        "prompt": "目の色は？",
+        "values": [
+          "黒",
+          "青",
+          "茶",
+          "グレー",
+          "緑",
+          "ハシバミ"
+        ]
+      },
+      "hairColor": {
+        "prompt": "髪の毛の色は？",
+        "values": [
+          "赤褐色",
+          "髪の毛が無い",
+          "黒",
+          "金",
+          "茶",
+          "グレー",
+          "赤",
+          "白",
+          "その他"
+        ]
+      }
+    },
+    "heightWeightPage": {
+      "height": {
+        "prompt": "身長は？",
+        "explanation": "例：5 フィート 9 インチ",
+        "feetLabel": "フィート",
+        "inchesLabel": "インチ"
+      },
+      "weight": {
+        "prompt": "体重は？",
+        "explanation": "例：190ポンド",
+        "poundsLabel": "ポンド"
+      }
+    },
+    "socialSecurityPage": {
+      "prompt": "社会保障番号をお持ちですか？",
+      "explanation": "社会保障番号をお持ちの場合には、「はい」を選択する必要があります。",
+      "messageNo": "<p><em>いいえ</em>と回答することで、あなたには、社会保障番号が発行されたことがなく、現在社会保障番号の無資格者であることを確認します。あなたは、カリフォルニア州車両条例 12801 §に準拠し、運転免許証を与えられる場合、 運輸局に社会保障番号を通知する必要があることを理解します。</p><p>詳細につきましては、免責事項をお読みください。</p>",
+      "enterSocialNumber": {
+        "prompt": "あなたの社会保障番号をお知らせいただけますか？",
+        "explanation": "例：123 -45 -6789"
+      }
+    }
+  },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "運転能力が影響を受けた、何らかの内科的疾患が過去 3 年以内にありましたか？",
+      "explanationPrompt": "以下に説明してください。"
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "今までに運転免許証または州発行のIDカードを所有したことがありますか？",
+      "pagePromptID": "今までにカリフォルニア州の運転免許証またはIDカードを所有したことがありますか？",
+      "explanation": "免許証またはIDカードは、米国の州または他の国で発行されている必要があります。",
+      "explanationPrompt": "有効期限が切れている場合でも、あなたの最新の運転免許証またはIDカードについて教えてください。",
+      "numberLabel": "運転免許証またはIDカード番号",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "有効期限"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "今までに異なる名義で運転免許証またはIDカードの申請を行ったことがありますか？",
+      "explanationPrompt": "以前の法的名義をすべて記入してください。",
+      "helpText": "<p>例えば、旧姓が含まれます。</p><p>カンマで区切ります。</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "これまでに、運転する特権が中止、停止、または失効になったことはありますか？",
+      "explanationPrompt": "これが発生したのはいつですか？",
+      "helpText": "例：03/21/1967",
+      "reasonLabel": "その理由は何だったのでしょうか？"
+    },
+    "veteransPage": {
+      "pagePrompt": "今までに米軍に勤務したことがありますか？",
+      "explanationStart": "退役軍人として、障害補償のような給付金の受給資格がある場合があります。",
+      "licensExplanation": "運転免許証には、「退役軍人」という言葉も表示できます。",
+      "idExplanation": "IDには、「退役軍人」という言葉も表示できます。",
+      "cardsExplanation": "カードには、「退役軍人」という言葉も表示できます。",
+      "messageYes": "あなたの兵役に感謝いたします。",
+      "benefitsPrompt": "受給資格対象の可能性がある給付金の情報を受け取りますか？",
+      "newDesignation": {
+        "prompt": "5 ドルの費用であなたの（カードの種類）に「退役軍人」という言葉の追加を希望しますか？",
+        "explanation": "多くの団体で、有効なIDを持つ退役軍人に割引があります。",
+        "messageYes": "「OK」、あなたの費用総額に 5 ドルを追加します。あなたの郡の退役軍人事務所からの退役軍人の状況確認書に記入し、運輸局支局事務所に提出する必要があります。"
+      },
+      "historicDesignationPrompt": "今までに運転免許証または州発行のIDカードに「退役軍人」という言葉を記載したことがありますか？",
+      "existingDesignation": {
+        "promptLicense": "運転免許証に「退役軍人」が記載されていますか？",
+        "promptID": "IDに「退役軍人」が記載されていますか？",
+        "promptCards": "カードに「退役軍人」が記載されていますか？"
+      },
+      "keepDesignationPrompt": {
+        "id": "IDへの「退役軍人」の記載の継続をお望みですか？",
+        "cards": "カードへの「退役軍人」の記載の継続をお望みですか？",
+        "license": "運転免許証への「退役軍人」の記載の継続をお望みですか？"
+      }
+    }
+  },
+  "organDonation": {
+    "title": "臓器提供",
+    "organDonor": {
+      "prompt": "臓器または組織の提供者になることを希望していますか？",
+      "validationMessage": "あなたの運転免許証にドナードットを維持するために「はい」にマークを付ける必要があります。",
+      "messageYes": "「はい」と答えると、命の寄付カリフォルニアの臓器と組織のドナーのレジストリにあなたの名前が追加され、ピンクの「援助」のドットが、 DL / ID カード上に表示されます。",
+      "messageNo": "「いいえ」と答えるても、レジストリからあなたの名前は削除されません。レジストリからあなたの名前を削除したい場合には、生命のカリフォルニアの寄付に連絡する必要があります。運輸局は、 DL / ID カードからピンクのドットは、削除することができますが、レジストリから削除することはできません。"
+    },
+    "monetaryContribution": {
+      "prompt": "2 ドルの自主的な貢献をすることをしますか？",
+      "messageYes": "あなたの寄付をいただき、ありがとうございました！私達は、この 2 ドルをあなたの合計の料金に追加します。"
+    }
+  },
   "shared": {
     "navigation": {
       "back": "戻る",
@@ -8,7 +541,143 @@
       "yes": "はい",
       "no": "いいえ",
       "declineToAnswer": "回答を拒否する",
-      "skip": "質問を飛ばす"
+      "skip": "質問を飛ばす",
+      "female": "女性",
+      "male": "男性"
+    },
+    "labels": {
+      "mm": "MM",
+      "dd": "DD",
+      "YYYY": "YYYY",
+      "sex": "性別",
+      "socialSecurity": "社会保障番号",
+      "firstName": "名",
+      "middleName": "ミドルネーム",
+      "lastName": "姓",
+      "dateOfBirth": "誕生日",
+      "expirationDate": "有効期限",
+      "name": "名前"
+    },
+    "summary": {
+      "notProvided": "未通知",
+      "none": "なし"
+    }
+  },
+  "summaryPage": {
+    "buttons": {
+      "edit": "編集",
+      "submit": "送信"
+    },
+    "whatImDoing": {
+      "starter": "私は",
+      "applying": "初めて申請をしています",
+      "renewing": "書き換え",
+      "updating": "更新",
+      "correcting": "修正",
+      "replacing": "交換",
+      "nothing": "申請が開始されません"
+    },
+    "shared": {
+      "expirationDate": "有効期限"
+    },
+    "prompt": "少々時間をかけて、もう一度回答をご確認ください。",
+    "myID": {
+      "title": "申請者の ID",
+      "reducedFeeHeading": "減額または無料",
+      "seniorIDHeading": "高齢者証明証",
+      "realIDHeading": "電子IDカード",
+      "currentCard": "IDカード番号"
+    },
+    "myDL": {
+      "title": "申請者の運転免許証",
+      "needToDriver": {
+        "header": "運転する必要がある車種",
+        "values": [
+          "自動車（ C 級）",
+          "オートバイ（ M 級）",
+          "15000ポンド以上の一輪有蓋車。または家畜牽引車（ A 級）",
+          "有蓋車または牽引車（ B 級）"
+        ]
+      },
+      "firefighterEndorsement": "消防士の推薦",
+      "currentCard": "運転免許証番号"
+    },
+    "myBasics": {
+      "title": "申請者の基本情報",
+      "homeAddress": "自宅住所",
+      "mailingAddress": "郵送先住所",
+      "same": "自宅住所と同じ",
+      "eyeColor": "目の色",
+      "hairColor": "髪の毛の色",
+      "height": "高さ",
+      "feet": "フィート",
+      "inches": "インチ",
+      "weight": "重量",
+      "pounds": "ポンド",
+      "ssnExplanation": "社会保障番号の末尾 4 桁のみを表示します"
+    },
+    "myHistory": {
+      "title": "私の経歴",
+      "medicalConditions": "内科的疾患",
+      "previousCard": "以前のDL/IDカード番号",
+      "issuedIn": "発行場所",
+      "previousNames": "旧姓",
+      "drivingRecord": "運転の記録",
+      "recordDate": "記録日",
+      "veteran": "退役軍人",
+      "getBenefitsInformation": "給付金情報を取得する",
+      "veteranPrintedOnCard": "カードに「退役軍人」と記載"
+    },
+    "organDonation": {
+      "title": "臓器提供",
+      "beAnOrganDonor": "臓器提供者になる",
+      "donate": "2 ドルを寄付する"
+    },
+    "voterRegistration": {
+      "title": "有権者登録",
+      "citizen": "米国市民",
+      "eligible": "資格要件への適合",
+      "registrationChoice": "有権者登録の選択",
+      "choiceYes": "次の項目が登録されます",
+      "choiceUpdate": "有権者の支持を更新します",
+      "choiceNo": "個人情報の収集・利用制限を選択済",
+      "ballotLanguage": "投票時の言語",
+      "voteByMail": "郵送による投票",
+      "phone": "電話番号",
+      "email": "電子メール",
+      "politicalParty": "政党"
+    }
+  },
+  "tenYearHistoryPage": {
+    "prompt": "過去10年間に、カリフォルニア州<em>外</em>で運転免許証を発行されたことがありますか？",
+    "explanation": "こちらは、同一または異なる名義、ならびに各種車両を運転可能な場合があります。",
+    "fillOutHistoryVia": {
+      "prompt": "過去10年間のあなたの運転免許証の経歴を提出する必要があります。",
+      "explanation": "どの方法で経歴書を記入されますか？",
+      "answerOnline": "オンライン",
+      "answerPrint": "ホームページから印刷",
+      "answerField": "運輸局支局で入手"
+    },
+    "onlineForm": {
+      "prompt": "以前の免許証について教えてください。",
+      "numberLabel": "運転免許証番号",
+      "stateCountryLabel": "発行日",
+      "expirationLabel": "有効期限"
+    },
+    "personalInformationSameQuestion": {
+      "prompt": "この免許証上のあなたの個人情報は以下に示されるものと同じですか？",
+      "yesAnswer": "はい、同じです",
+      "noAnswer": "いいえ、違います"
+    },
+    "personalInformationIsDifferent": {
+      "prompt": "この運転免許証に記載されていたあなたの個人情報は何ですか？"
+    },
+    "additionalLicenses": {
+      "prompt": "カリフォルニア州外で発行された追加の運転免許証を持っていましたか？",
+      "explanation": "こちらは、同一または異なる名義、ならびに各種車両を運転可能な場合があります。"
+    },
+    "listOfLicenses": {
+      "prompt": "以下は、あなたの免許証の一覧です。"
     }
   },
   "votingRegistration": {
