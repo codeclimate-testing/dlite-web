@@ -5,7 +5,7 @@ class AutoLogout {
     this.events = ['load', 'mousemove', 'mousedown',
                    'click', 'scroll', 'keypress'];
 
-                   this.warn = this.warn.bind(this);
+    this.warn = this.warn.bind(this);
     this.logout = this.logout.bind(this);
     this.resetTimeout = this.resetTimeout.bind(this);
     this.history = history;
@@ -28,8 +28,6 @@ class AutoLogout {
 
   setTimeout() {
     //this.warnTimeout = setTimeout(this.warn, 1.83 * 60 * 1000);
-    //this.warnTimeout = setTimeout(this.warn, 1000);
-    //this.logoutTime = setTimeout(this.logout, 2000);
     this.logoutTimeout = setTimeout(this.logout, 2 * 60 * 1000);
   }
 
@@ -44,7 +42,13 @@ class AutoLogout {
 
   logout() {
     // Send a logout request to the API
-    this.history.push(`/apply/${this.appName}/logout`);
+    if (this.appName) {
+      this.history.push(`/apply/${this.appName}/logout`);
+    }
+    else {
+      // have this for now until the sign-in story is merged
+      this.history.push('/apply/logout');
+    }
     this.destroy();  // Cleanup
   }
 

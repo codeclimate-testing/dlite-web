@@ -15,15 +15,16 @@ const loggedIn = (props) => {
   if (APP_ENV === 'development') {
     document.cookie = 'isLoggedIn=true;path=/';
   }
+
   // include placeholder flow prop
   let pathURL = nextPath(pageKey, {
     flow: ''
   });
 
-  props.history.push(pathURL);
-
-  new AutoLogout(props.history, appName);
+  // begin timer to log out after inactivity
+  new AutoLogout(props.history);
   return null;
+
 };
 
 

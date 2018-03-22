@@ -12,5 +12,3 @@ server/config/database.json
 public/index.html
 public/index.dev.html
 public/index.stage.html
-public/app.js.gz
-public/app.css.gz
