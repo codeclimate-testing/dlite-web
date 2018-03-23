@@ -86,7 +86,7 @@ describe('ChoosePartyPage ', function() {
     describe('choosing other party', function() {
       it('selecting other party causes text input to appear', function() {
         props.politicalPartyChoose.isSelected = 'Yes';
-        props.politicalPartyChoose.politicalPartyChoose = 'Other';
+        props.politicalPartyChoose.politicalPartyChoose = 'other';
         let component = render(
           <Wrapper>
             <ChoosePartyPage   {...props} />
@@ -97,7 +97,7 @@ describe('ChoosePartyPage ', function() {
 
       it('placeholder text reads "Please enter your selection"', function() {
         props.politicalPartyChoose.isSelected = 'Yes';
-        props.politicalPartyChoose.politicalPartyChoose = 'Other';
+        props.politicalPartyChoose.politicalPartyChoose = 'other';
         let component = render(
           <Wrapper>
             <ChoosePartyPage   {...props} />

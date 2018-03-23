@@ -68,7 +68,7 @@ const OtherPartyEntry = (props) => {
 const OtherParty = (props) => {
   let component;
 
-  if (props.politicalPartyChoose.politicalPartyChoose === 'Other') {
+  if (props.politicalPartyChoose.politicalPartyChoose === 'other') {
     component = <OtherPartyEntry {...props} />;
   } else {
     component = <OtherPartyRadio {...props} />;
