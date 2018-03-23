@@ -3,33 +3,39 @@
 import assert from 'assert';
 
 import {
-  buildCookie,
+  buildLoggedIn,
+  buildAppName,
   getAppNameCookie,
   getLoggedIn
 } from '../../../../client/helpers/data/cookies';
 
 describe('Data helpers for cookies', function() {
 
-  let stringToFind = 'appName';
-  let value = 'id-and-license';
+  describe('#buildLoggedIn', function() {
+    it('sets a cookie isLoggedIn to true', function() {
+      buildLoggedIn();
+      assert.equal(getLoggedIn(), 'true');
+    });
+  });
 
-  describe('#buildCookie', function() {
-    it('adds an appName cookie if one doesnt already exist', function() {
-      buildCookie(stringToFind, value);
-      assert.equal(document.cookie, `${stringToFind}=${value}`)
+  describe('#buildAppName', function() {
+    it('sets a cookie appName to given value', function() {
+      buildAppName('anApp');
+      assert.equal(getAppNameCookie(), 'anApp');
     });
   });
 
   describe('#getAppNameCookie', function() {
     it('returns the value', function() {
-      assert.equal(getAppNameCookie(document.cookie), value);
+      document.cookie = 'appName=id-and-license';
+      assert.equal(getAppNameCookie(), 'id-and-license');
     });
   });
 
   describe('#getLoggedIn', function() {
     it('returns the value', function() {
-      document.cookie = 'isLoggedIn=true'
-      assert.equal(getLoggedIn(document.cookie), 'true');
+      document.cookie = 'isLoggedIn=true';
+      assert.equal(getLoggedIn(), 'true');
     });
   });
 });

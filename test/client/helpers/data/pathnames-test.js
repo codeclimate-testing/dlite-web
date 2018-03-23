@@ -223,6 +223,11 @@ describe('Data helpers for pathnames', function() {
       props.location = {
         pathname :'localhost:3000/apply/id-and-license/sign-in'
       };
+      assert.equal(getAppType(props), props.location.pathname.split('/')[2]);
+    });
+    it('falls back to "id-and-license" if chooseApp is undefined and props doesnt have location object', function() {
+      props.location = null;
+      props.chooseApp = null;
       assert.equal(getAppType(props), 'id-and-license');
     });
   });

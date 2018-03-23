@@ -2,7 +2,7 @@
 import { nextPath }             from '../../helpers/navigation/page';
 import { getAppKey }            from '../../helpers/data/pathnames';
 import {
-  buildCookie,
+  buildLoggedIn,
   getAppNameCookie
 } from '../../helpers/data/cookies';
 import AutoLogout               from '../../helpers/handlers/auto-logout';
@@ -13,7 +13,7 @@ const loggedIn = (props) => {
 
   // set isLoggedIn key for localhost
   if (APP_ENV === 'development') {
-    document.cookie = 'isLoggedIn=true;path=/';
+    buildLoggedIn();
   }
 
   // include placeholder flow prop
@@ -21,8 +21,10 @@ const loggedIn = (props) => {
     flow: ''
   });
 
+  props.history.push(pathURL);
+
   // begin timer to log out after inactivity
-  new AutoLogout(props.history);
+  new AutoLogout(props.history, appName);
   return null;
 
 };

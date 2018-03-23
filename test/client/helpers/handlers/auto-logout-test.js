@@ -5,13 +5,12 @@ import sinon        from 'sinon';
 import AutoLogout   from '../../../../client/helpers/handlers/auto-logout';
 import { createMemoryHistory }  from 'history';
 
-
 describe('auto logout class', function() {
   let history, appName, event, auto, setTimeout;
 
   beforeEach(function() {
     history = createMemoryHistory('/');
-    appName = '';
+    appName = 'id-and-license';
     event = {
       preventDefault: sinon.spy()
     };
@@ -37,9 +36,8 @@ describe('auto logout class', function() {
     });
     it('adds event listeners to all the events in the events array', function() {
       assert.ok(window.addEventListener.calledWith('load'));
-      assert.ok(window.addEventListener.calledWith('scroll'));
       assert.ok(window.addEventListener.calledWith('click'));
-      assert.ok(window.addEventListener.calledWith('mousemove'));
+      assert.ok(window.addEventListener.calledWith('touchstart'));
       assert.ok(window.addEventListener.calledWith('mousedown'));
       assert.ok(window.addEventListener.calledWith('keypress'));
     });
@@ -63,8 +61,15 @@ describe('auto logout class', function() {
       auto.logout();
     });
     it('pushes logout url to history', function() {
-      assert.equal(history.location.pathname, '/apply/logout');
+      assert.equal(history.location.pathname, '/apply/id-and-license/logout');
     });
+    it('pushes /apply/cdl/logout if appName equals cld', function() {
+      appName = 'cdl';
+      auto.constructor(history, appName);
+      auto.logout();
+      assert.equal(history.location.pathname, '/apply/cdl/logout');
+    });
+
     it('calls destroy', function(){
       assert.ok(auto.destroy.called);
     });
