@@ -5,8 +5,8 @@ export const buildLoggedIn = () => {
   return document.cookie = 'isLoggedIn=true;path=/';
 };
 
-export const buildAppName = (value) => {
-  return document.cookie = `appName=${value};path=/`;
+export const buildAppName = (appName) => {
+  return document.cookie = `appName=${appName};path=/`;
 };
 
 

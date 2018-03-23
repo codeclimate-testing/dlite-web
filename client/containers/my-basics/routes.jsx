@@ -6,6 +6,7 @@ import {
   iddlPath,
   editPath
 } from '../../helpers/alice-path';
+import LegalName                              from './name-page.jsx';
 import Address                                from './address-page.jsx';
 import TraitsHeightWeight                     from './traits-height-weight-form-container.jsx';
 import PhysicalTraits                         from './physical-traits-form-container.jsx';
@@ -14,6 +15,9 @@ import SocialSecurity                         from './social-security-form-conta
 const MyBasicsRoutes = () => {
   return (
     <div>
+      <Route path={ iddlPath('/my-basics/legal-name') }             component={LegalName} />
+      <Route path={ editPath('/my-basics/legal-name') }             component={LegalName} />
+
       <Route path={ iddlPath('/my-basics/address') }                component={Address}  />
       <Route path={ editPath('/my-basics/address') }                component={Address}  />
 

@@ -6,8 +6,8 @@ import navigateOnBack from '../../../../client/helpers/handlers/navigate-on-back
 import onSubmitShowErrors from '../../../../client/helpers/handlers/on-submit-show-errors';
 import { createMemoryHistory }  from 'history';
 
-describe.only('navigateOnBack', function() {
-  let event, dispatch, onSubmit, props, validations, cookie, env;
+describe('navigateOnBack', function() {
+  let event, dispatch, props, validations, env;
 
   beforeEach(function() {
     event = { preventDefault: spy() };
@@ -23,34 +23,34 @@ describe.only('navigateOnBack', function() {
       all: spy(),
       isValid: spy()
     };
-    cookie = 'isLoggedIn=true';
+    document.cookie = 'isLoggedIn=true';
     env='production';
   });
 
-  it('will go back one step in history if props.addressName key page does not have "canGoBack" property', function() {
-    props.addressName = 'wdywtdt';
-    navigateOnBack(props, validations, env, cookie)(event);
-    assert.equal(props.history.entries[0].pathname, '/');
+  it('will go back one step in history if props.addressName key page does not have "validateFromSummary" property', function() {
+    props.addressName = 'chooseCardType';
+    navigateOnBack(props, validations, env)(event);
+    assert.equal(props.history.goBack.calledOnce);
   });
 
   it('will route user to sign-in page if requireLogIn is true', function() {
-    cookie = 'isLoggedIn=false';
-    env='development';
-    navigateOnBack(props, validations, env, cookie)(event);
-    console.log(props.history);
-    assert.equal(props.history.entries[0].pathname, '/apply/id-and-license/sign-in');
+    document.cookie = 'isLoggedIn=false';
+    env='production';
+    props.location.pathname = '/apply/id-and-license/legal-name';
+    navigateOnBack(props, validations, env)(event);
+    assert.equal(props.history.entries[1].pathname, '/apply/id-and-license/sign-in');
   });
 
-  it('will go back one step in history if props.addressName key page has "canGoBack" property that is equal to true', function() {
+  it('will go back one step in history if props.addressName key page has "validateFromSummary" property that is equal to true', function() {
     props.addressName = 'updateAndCorrect';
-    navigateOnBack(props, validations, env, cookie)(event);
-    assert.equal(props.history.entries[0].pathname, '/');
+    navigateOnBack(props, validations, env)(event);
+    assert.equal(props.history.goBack.calledOnce);
   });
 
   it('it will check the validations before going back if props.addressName key page has "canGoBack" property that is false', function() {
     props.addressName = 'medicalHistory';
     props.validations = false;
-    navigateOnBack(props, validations, env, cookie)(event);
+    navigateOnBack(props, validations, env)(event);
 
     assert(
       dispatch.calledWith({

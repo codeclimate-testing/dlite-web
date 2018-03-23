@@ -162,8 +162,8 @@ module.exports = function(world) {
   });
 
   /* IDDL assertOnPage */
-  world.when('I will be on the IDDL welcome page', function(done) {
-    assertOnPage('.welcome-page', /apply\/id-and-license\/welcome/, done);
+  world.when('I will be on the IDDL sign-in page', function(done) {
+    assertOnPage('.id-me', /apply\/id-and-license\/sign-in/, done);
   });
 
   world.then('I will be taken to date of birth page', function(done) {
@@ -188,7 +188,7 @@ module.exports = function(world) {
   world.when('I will be on the id.me page', function(done) {
     assertOnPage('.id-me', /apply\/id-and-license\/sign-in/, done);
   });
-  
+
   world.then('I will be on the what do you want to do today page', function(done) {
     assertOnPage('.choose-card-action', /apply\/id-and-license\/what-do-you-want-to-do-today/, done);
   });
@@ -397,11 +397,11 @@ module.exports = function(world) {
   });
 
   world.when('I visit the CDL name page', function(done) {
-    navigateToPath('/apply/cdl/true-name', '.legal-name-form', done);
+    navigateToPath('/apply/cdl/my-basics/true-name', '.legal-name-form', done);
   });
 
   world.when('I visit the CDL dob page', function(done) {
-    navigateToPath('/apply/cdl/date-of-birth', '.date-of-birth-form', done);
+    navigateToPath('/apply/cdl/my-basics/date-of-birth', '.date-of-birth-form', done);
   });
 
   world.when('I visit the CDL WDYWTDT page', function(done) {
@@ -441,7 +441,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the CDL Social Security page', function(done) {
-    navigateToPath('/apply/cdl/social-security', '.social-security-form', done);
+    navigateToPath('/apply/cdl/my-basics/social-security', '.social-security-form', done);
   });
 
   world.and('I return to the home page', function(done) {
@@ -453,7 +453,7 @@ module.exports = function(world) {
   });
 
   world.when('I visit the CDL page for entering my physical traits', function(done) {
-    navigateToPath('/apply/cdl/physical-traits', '.physical-traits-form', done);
+    navigateToPath('/apply/cdl/my-basics/physical-traits', '.physical-traits-form', done);
   });
 
   world.when('I visit the CDL page for Organ Donation', function(done) {
@@ -468,7 +468,7 @@ module.exports = function(world) {
   world.when('I will be on the cdl disclaimers page', function(done) {
     assertOnPage('.disclaimers-form', /apply\/cdl\/disclaimers/, done);
   });
-  
+
   world.when('I will be on the cdl id.me page', function(done) {
     assertOnPage('.id-me', /apply\/cdl\/sign-in/, done);
   });
@@ -477,16 +477,16 @@ module.exports = function(world) {
     assertOnPage('.apply-cdl', /apply\/cdl/, done);
   });
   world.when('I will be on the CDL name page', function(done) {
-    assertOnPage('.legal-name-form', /apply\/cdl\/true-name/, done);
+    assertOnPage('.legal-name-form', /apply\/cdl\/my-basics\/true-name/, done);
   });
   world.when('I will be on the CDL edit name page', function(done) {
-    assertOnPage('.legal-name-form', /apply\/cdl\/edit\/true-name/, done);
+    assertOnPage('.legal-name-form', /apply\/cdl\/edit\/my-basics\/true-name/, done);
   });
   world.when('I will be on the CDL dob page', function(done) {
-    assertOnPage('.date-of-birth-form', /apply\/cdl\/date-of-birth/, done);
+    assertOnPage('.date-of-birth-form', /apply\/cdl\/my-basics\/date-of-birth/, done);
   });
   world.when('I will be on the CDL edit dob page', function(done) {
-    assertOnPage('.date-of-birth-form', /apply\/cdl\/edit\/date-of-birth/, done);
+    assertOnPage('.date-of-birth-form', /apply\/cdl\/edit\/my-basics\/date-of-birth/, done);
   });
   world.when('I will be on the CDL WDYWTDT page', function(done) {
     assertOnPage('.choose-card-action', /apply\/cdl\/what-do-you-want-to-do-today/, done);
@@ -515,19 +515,19 @@ module.exports = function(world) {
     assertOnPage('.current-card-form', /apply\/cdl\/edit\/current-ca-license/, done);
   });
   world.when('I will be on the residency page', function(done) {
-    assertOnPage('.cdl-residency', /apply\/cdl\/california-residency/, done);
+    assertOnPage('.cdl-residency', /apply\/cdl\/my-basics\/california-residency/, done);
   });
 
   world.then('I will be on the CDL page for entering my height and weight', function(done) {
-    assertOnPage('.traits-height-weight-form', /cdl\/traits-height-weight/, done);
+    assertOnPage('.traits-height-weight-form', /cdl\/my-basics\/traits-height-weight/, done);
   });
 
   world.then('I will be on the CDL page for entering my physical traits', function(done) {
-    assertOnPage('.physical-traits-form', '/apply/cdl/physical-traits', done);
+    assertOnPage('.physical-traits-form', /apply\/cdl\/my-basics\/physical-traits/, done);
   });
 
   world.when('I will be on the self certification page for CDL', function(done) {
-    assertOnPage('.cdl-self-certification', '/apply/cdl/self-certification', done);
+    assertOnPage('.cdl-self-certification', /apply\/cdl\/self-certification/, done);
   });
 
   world.then('I will be taken to the CDL medical history page', function(done){
@@ -535,7 +535,7 @@ module.exports = function(world) {
   });
 
   world.when('I will be on the CDL name history page', function(done) {
-    assertOnPage('.names-history-form', '/apply/cdl/my-history/names', done);
+    assertOnPage('.names-history-form', /apply\/cdl\/my-history\/names/, done);
   });
 
   world.when('I will be on the CDL license issues page', function(done) {
@@ -551,7 +551,7 @@ module.exports = function(world) {
   });
 
   world.when('I will be on the CDL class page', function(done) {
-    assertOnPage('.cdl-class-form', '/apply/cdl/license-class', done);
+    assertOnPage('.cdl-class-form', /apply\/cdl\/license-class/, done);
   });
 
   world.when('I will be on the CDL endorsements page', function(done) {
@@ -563,7 +563,7 @@ module.exports = function(world) {
   });
 
   world.when('I will be on the CDL Social Security page', function(done) {
-    assertOnPage('.social-security-form', /apply\/cdl\/social-security/, done);
+    assertOnPage('.social-security-form', /apply\/cdl\/my-basics\/social-security/, done);
   });
 
   world.when('I will be on the CDL Real ID page', function(done) {

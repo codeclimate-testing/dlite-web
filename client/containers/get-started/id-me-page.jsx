@@ -3,8 +3,8 @@
 import React              from 'react';
 import { connect }        from 'react-redux';
 import handlers           from '../../helpers/handlers';
-import { getAppType }     from '../../helpers/data/pathnames';
 import { buildAppName }   from '../../helpers/data/cookies';
+import { getAppType }     from '../../helpers/data/pathnames';
 import Presentation       from "../../presentations/get-started/id-me-page.jsx";
 
 const Page = (props) => {

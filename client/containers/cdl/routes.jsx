@@ -9,12 +9,8 @@ import {
 
 import Disclaimers                      from './cdl-disclaimers.jsx';
 import IDMe                             from '../get-started/id-me-page.jsx';
-import DateOfBirth                      from './my-basics/cdl-date-of-birth.jsx';
-import LegalName                        from './my-basics/cdl-legal-name.jsx';
 import CdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
-import Residency                        from './my-basics/cdl-residency.jsx';
 import UpdatesAndCorrections            from './change-details.jsx';
-import CdlSocialSecurity                from './my-basics/cdl-social-security.jsx';
 import CardReplacement                  from './card-replacement.jsx';
 import CdlEndorsements                  from './cdl-endorsements.jsx';
 import CdlCertificates                  from './cdl-certificates.jsx';
@@ -35,15 +31,8 @@ const CDLRoutes = () => {
   return (
     <div>
 
-      <Route path={ cdlPath('/disclaimers') }                          component={Disclaimers} />
-
       <Route path={ cdlPath('/sign-in') }                               component={IDMe} />
-
-      <Route path={ cdlPath('/true-name')}                              component={LegalName}  />
-      <Route path={ editCDLPath('/true-name')}                          component={LegalName}  />
-
-      <Route path={ cdlPath('/date-of-birth')}                          component={DateOfBirth}  />
-      <Route path={ editCDLPath('/date-of-birth')}                      component={DateOfBirth}  />
+      <Route path={ cdlPath('/disclaimers') }                           component={Disclaimers} />
 
       <Route path={ cdlPath('/what-do-you-want-to-do-today')}           component={CdlWdywtdt}   />
       <Route path={ editCDLPath('/what-do-you-want-to-do-today')}       component={CdlWdywtdt}   />
@@ -56,12 +45,6 @@ const CDLRoutes = () => {
 
       <Route path={ cdlPath('/replacement-details')}                    component={CardReplacement} />
       <Route path={ editCDLPath('/replacement-details')}                component={CardReplacement} />
-
-      <Route path={ cdlPath('/california-residency')}                   component={Residency}   />
-      <Route path={ editCDLPath('/california-residency')}               component={Residency}   />
-
-      <Route path={ cdlPath('/social-security')}                        component={CdlSocialSecurity}  />
-      <Route path={ editCDLPath('/social-security')}                    component={CdlSocialSecurity}  />
 
       <Route path={ cdlPath('/current-ca-license')}                     component={CdlCurrentLicense}  />
       <Route path={ editCDLPath('/current-ca-license')}                 component={CdlCurrentLicense}  />

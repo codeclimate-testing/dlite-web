@@ -116,10 +116,14 @@ export function applyOrEditCDLPath(url) {
   };
 }
 
+export function splitPathname(props) {
+  return props.location.pathname.split('/')[2];
+}
+
 export function getAppType(props) {
   let appType = props.chooseApp;
   if (!props.chooseApp && props.location) {
-    appType = props.location.pathname.split('/')[2];
+    appType = splitPathname(props);
   }
   else if (!props.chooseApp && !props.location){
     appType = 'id-and-license';

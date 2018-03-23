@@ -2,7 +2,6 @@
 
 import React                                  from 'react';
 import { Route }                              from 'react-router-dom';
-import LegalName                              from './name-page.jsx';
 import DateOfBirth                            from './date-of-birth-page.jsx';
 import WhatDoYouWantToDoToday                 from './what-do-you-want-to-do-today-page.jsx';
 import ChooseCard                             from './choose-card-page.jsx';
@@ -28,8 +27,6 @@ const GetStartedRoutes = () => {
   return (
     <div>
       <Route path={ iddlPath('/sign-in') }                        component={IDMe} />
-      <Route path={ iddlPath('/my-basics/legal-name') }           component={LegalName}               />
-      <Route path={ editPath('/my-basics/legal-name') }           component={LegalName}               />
 
       <Route path={ iddlPath('/my-basics/date-of-birth') }        component={DateOfBirth}             />
       <Route path={ editPath('/my-basics/date-of-birth') }        component={DateOfBirth}             />

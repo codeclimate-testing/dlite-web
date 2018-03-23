@@ -12,7 +12,7 @@ const loggedIn = (props) => {
   let pageKey = getAppKey(appName);
 
   // set isLoggedIn key for localhost
-  if (APP_ENV === 'development') {
+  if (APP_ENV === 'development' || APP_ENV === 'test') {
     buildLoggedIn();
   }
 

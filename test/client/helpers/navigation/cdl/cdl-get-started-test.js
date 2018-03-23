@@ -7,7 +7,6 @@ import {
   cdlCurrentCard,
   changedCDL,
   cdlCurrentDL,
-  cdlSSN,
   cdlCertification
 } from '../../../../../client/helpers/navigation/cdl/get-started/next-path';
 
@@ -70,16 +69,6 @@ describe('CDL next-paths', function() {
     describe('#cdlCurrentDL', function() {
       it('returns cdlRealID', function() {
         assert.equal(cdlCurrentDL(props), 'cdlRealID');
-      });
-    });
-
-    describe('#cdlSSN', function() {
-      it('returns "cdlCurrentDL" if user is getting a new card', function() {
-        assert.equal(cdlSSN(props), 'cdlCurrentDL');
-      });
-      it('returns "cdlRealID" if user is replacing, renewing, or changing a card', function() {
-        props.cardAction = 'renew';
-        assert.equal(cdlSSN(props), 'cdlRealID');
       });
     });
 
@@ -163,12 +152,6 @@ describe('CDL next-paths', function() {
       it('goes to cdlSummary if user has already entered motorcycle data', function() {
         props.classM = 'Yes';
         assert.equal(cdlCurrentDL(props), 'cdlSummary');
-      });
-    });
-
-    describe('#cdlSSN', function() {
-      it('returns "cdlSummary" ', function() {
-        assert.equal(cdlSSN(props), 'cdlSummary');
       });
     });
 

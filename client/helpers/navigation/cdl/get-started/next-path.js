@@ -66,17 +66,6 @@ export const cdlCurrentDL = (props) => {
   return key;
 };
 
-export const cdlSSN = (props) => {
-  let key = 'cdlSummary';
-  if (!editFlow(props)) {
-    key = 'cdlRealID';
-    if (!hasExistingCard(props)) {
-      key = 'cdlCurrentDL';
-    }
-  }
-  return key;
-};
-
 export const cdlCertification = (props) => {
   let key = 'cdlSummary';
   if (!editFlow(props) && !hasExistingCard(props)) {

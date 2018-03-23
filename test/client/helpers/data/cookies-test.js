@@ -9,6 +9,7 @@ import {
   getAppNameCookie,
   isLoggedIn,
   afterIntro,
+  isProduction,
   requireLogIn
 } from '../../../../client/helpers/data/cookies';
 
@@ -22,7 +23,7 @@ describe('Data helpers for cookies', function() {
   });
 
   describe('#buildAppName', function() {
-    it('sets a cookie appName to given value', function() {
+    it('saves appName cookie to given value', function() {
       buildAppName('anApp');
       assert.equal(getAppNameCookie(), 'anApp');
     });
@@ -43,12 +44,6 @@ describe('Data helpers for cookies', function() {
   });
 
   describe('#isLoggedIn', function() {
-    beforeEach(function() {
-      document.cookie = '';
-    });
-    it('returns false if cookie does not have isLoggedIn entry', function() {
-      assert.equal(isLoggedIn(), false);
-    });
     it('returns false if cookie isLoggedIn value is false', function() {
       document.cookie = 'isLoggedIn=false';
       assert.equal(isLoggedIn(), false);
@@ -56,6 +51,25 @@ describe('Data helpers for cookies', function() {
     it('returns true if cookie isLoggedIn value is true', function() {
       document.cookie = 'isLoggedIn=true';
       assert.equal(isLoggedIn(), true);
+    });
+  });
+
+  describe('#isProduction', function() {
+    it('returns true if app_env is production', function() {
+      let env = 'production';
+      assert.equal(isProduction(env), true);
+    });
+    it('returns false if app_env is development', function() {
+      let env = 'development';
+      assert.equal(isProduction(env), false);
+    });
+    it('returns false if app_env is test', function() {
+      let env = 'test';
+      assert.equal(isProduction(env), false);
+    });
+    it('returns false if app_env is acceptance', function() {
+      let env = 'acceptance';
+      assert.equal(isProduction(env), false);
     });
   });
 
@@ -80,7 +94,7 @@ describe('Data helpers for cookies', function() {
         }
       };
       document.cookie = '';
-    })
+    });
     it('returns false if app_env is development', function() {
       appEnv = 'development';
       assert.equal(requireLogIn(props, appEnv), false);

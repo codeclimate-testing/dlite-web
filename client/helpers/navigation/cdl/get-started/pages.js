@@ -9,7 +9,6 @@ import {
   cdlCurrentCard,
   changedCDL,
   cdlCurrentDL,
-  cdlSSN,
   cdlCertification
 } from './next-path';
 
@@ -25,6 +24,18 @@ const cdlGetStarted = [
     description: 'CDL sign-in',
     path: '/sign-in',
     next: 'cdlLegalName'
+  },
+  {
+    key: 'cdlLegalName',
+    description: 'Legal Name',
+    path: applyOrEditCDLPath('/my-basics/true-name'),
+    next: nextOrCDLSummary('cdlDateOfBirth')
+  },
+  {
+    key: 'cdlDateOfBirth',
+    description: 'Date of Birth',
+    path: applyOrEditCDLPath('/my-basics/date-of-birth'),
+    next: nextOrCDLSummary('cdlWdywtdt')
   },
   {
     key: 'cdlWdywtdt',
@@ -49,18 +60,6 @@ const cdlGetStarted = [
     description: 'make updates and corrections',
     path: applyOrEditCDLPath('/change-details'),
     next: changedCDL
-  },
-  {
-    key: 'cdlResidency',
-    description: 'California residency',
-    path: applyOrEditCDLPath('/california-residency'),
-    next: nextOrCDLSummary('cdlSocialSecurity')
-  },
-  {
-    key: 'cdlSocialSecurity',
-    description: 'Social Security',
-    path: applyOrEditCDLPath('/social-security'),
-    next: cdlSSN
   },
   {
     key: 'cdlCurrentDL',

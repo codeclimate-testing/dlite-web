@@ -12,17 +12,19 @@ const normalFlowOrValid = (props, validator) => {
 };
 
 const onBackGenerator = (props, validator, env=APP_ENV, cookie=document.cookie) => {
-
   const goBack = (event) => {
     if (props.onSubmit) { props.onSubmit(event); }
     props.history.goBack();
   };
 
-  if (requireLogIn(props, env, cookie)) {
+  const signIn = () => {
     let appName = getAppType(props);
     return props.history.push(`/apply/${appName}/sign-in`);
-  }
+  };
 
+  if (requireLogIn(props, env, cookie)) {
+    return signIn;
+  }
   else if (normalFlowOrValid(props, validator)) {
     return goBack;
   }

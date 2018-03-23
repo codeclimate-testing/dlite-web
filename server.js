@@ -31,6 +31,7 @@ csrf(server);
 
 server.use(logging());
 server.use(helmet());
+
 server.get('/', (req, res) => {
   res.redirect('/apply/choose-application');
 });
