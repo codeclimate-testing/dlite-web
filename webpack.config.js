@@ -88,7 +88,7 @@ let config = {
     new CompressionPlugin({
       asset: "[path].gz[query]",
       algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
+      test: /\app.js$|\app.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
     }),
