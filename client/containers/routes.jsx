@@ -15,6 +15,7 @@ import MyHistoryRoutes                        from './my-history/routes.jsx';
 import VotingRoutes                           from './voter-registration/routes.jsx';
 import ConclusionRoutes                       from './conclusion/routes.jsx';
 import OrganDonationRoutes                    from './organ-donation/routes.jsx';
+import Disclaimers                            from './get-started/disclaimers-page.jsx';
 import CDLRoutes                              from './cdl/routes.jsx';
 
 
@@ -28,6 +29,7 @@ class Router extends React.Component {
         <Route path={ alicePath('/choose-language')}            component={ChooseLanguage} />
         <Route path={ alicePath('/choose-application')}         component={ChooseApplication}/>
         <Route path={ alicePath('/logged-in')}                  component={LoggedIn} />
+        <Route path={ alicePath('/disclaimers') }               component={Disclaimers} />
         <CDLRoutes />
 
         <GetStartedRoutes />

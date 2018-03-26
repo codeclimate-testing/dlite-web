@@ -33,6 +33,8 @@
   flex: 1;
   overflow-y: scroll;
   height: 375px;
+  border: $border-width solid $darkest-blue;
+  padding: 10px;
 }
 
 .radio-input-error{

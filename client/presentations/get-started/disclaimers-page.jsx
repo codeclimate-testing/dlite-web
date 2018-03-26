@@ -11,7 +11,7 @@ const Form = (props) => {
   return(
     <Page
       {...props}
-      pageTitle='Disclaimers'
+      sectionKey='intro'
     >
       <form onSubmit={props.onSubmit} className='disclaimers-form'>
 

@@ -16,6 +16,12 @@ const intro = [
     description: 'choose CDL or ID/DL application',
     path: '/choose-application',
     next: chooseApplication
+  },
+  {
+   key: 'disclaimers',
+   description: 'Disclaimers',
+   path: '/disclaimers',
+   next: 'IDme'
   }
 ];
 

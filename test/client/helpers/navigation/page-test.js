@@ -12,16 +12,16 @@ import pages from '../../../../client/helpers/navigation/pages';
 
 describe('Data helpers for page', function() {
   it('#pageFor return the value object for the page', function() {
-    assert.deepEqual(pageFor('realID', {flow: ''}), pages.iddl.getStarted[11]);
+    assert.deepEqual(pageFor('realID', {flow: ''}), pages.iddl.getStarted[10]);
   });
 
   it('#pathForPage return the path of that key', function() {
     let props = {flow: ''};
-    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[11].path(props));
+    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[10].path(props));
   });
   it('#pathForPage return the edit path of that key when props.flow equals edit', function() {
     let props = { flow: 'edit'};
-    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[11].path(props));
+    assert.deepEqual(pathForPage('realID', props), pages.iddl.getStarted[10].path(props));
     assert.ok(pathForPage('realID', props).includes('/edit/'));
   });
 
