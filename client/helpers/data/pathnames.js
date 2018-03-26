@@ -122,7 +122,10 @@ export function splitPathname(props) {
 
 export function getAppType(props) {
   let appType = props.chooseApp;
-  if (!props.chooseApp && props.location) {
+  if (props.chooseApp === 'iddl') {
+    appType = 'id-and-license';
+  }
+  else if (!props.chooseApp && props.location) {
     appType = splitPathname(props);
   }
   else if (!props.chooseApp && !props.location){

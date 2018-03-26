@@ -36,7 +36,8 @@ describe('Auth related controllers', () => {
     assert(res.cookie.calledWith('isLoggedIn', true));
   });
 
-  it('#authSuccess redirects to localhost if app_env is development', function() {
+  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
+    process.env.APP_URL = 'localhost';
     controllers.authSuccess(req, res, next, 'development');
     assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in'));
   });

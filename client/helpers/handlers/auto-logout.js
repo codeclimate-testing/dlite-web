@@ -32,7 +32,6 @@ class AutoLogout {
   }
 
   resetTimeout(e) {
-    e.preventDefault();
     this.clearTimeout();
     this.setTimeout();
   }
@@ -42,7 +41,7 @@ class AutoLogout {
   }
 
   logout() {
-    this.history.push(`/apply/${this.appName}/logout`);
+    this.history.push(`/apply/${this.appName}/log-out`);
     this.destroy();  // Cleanup
   }
 
