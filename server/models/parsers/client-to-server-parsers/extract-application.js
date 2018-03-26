@@ -9,10 +9,12 @@ function extractApplication(data) {
   let language          = basics.language || '';
   let dob               = null;
   let socialSecurity    = 'No';
+  let dateOfBirth       = basics.dateOfBirth
 
-  if(parserHelper.createDateString(basics.dateOfBirth)) {
+
+  if(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year) {
     dob = new Date(parserHelper.createDateString(basics.dateOfBirth));
-  }
+  };
 
   if(basics.socialSecurity.hasSocialSecurity === 'Yes'){
     let _socialSecurity = basics.socialSecurity;

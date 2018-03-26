@@ -105,6 +105,21 @@ function insertLicenseClasses(classes) {
   });
 }
 
+function insertCardHistories(card_histories, application_id) {
+  return db('card_histories').where('application_id', application_id)
+    .then((records) => {
+      if(records.length > 0){
+        return db('card_histories').where('application_id', application_id).del()
+          .then(() => {
+            return db('card_histories').insert(card_histories).returning('*');
+          })
+      }
+      else{
+        return db('card_histories').insert(card_histories).returning('*');
+      }
+    });
+}
+
 function insertOneToOne(key, data, application_id) {
   return db(key).where('application_id', application_id)
     .then((records) => {
@@ -153,7 +168,7 @@ function saveApplication(data) {
       if(records.length > 0) {
         returnedData.organ_donations = records;
       }
-      return insertOneToOne('card_histories', data.card_histories, application_id);
+      return insertCardHistories(data.card_histories, application_id);
     })
     .then((records) => {
       if(records.length > 0) {
