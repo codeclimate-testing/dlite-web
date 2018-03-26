@@ -338,4 +338,11 @@ module.exports = function(world){
       .then(done)
       .catch(done);
   });
+
+  world.when('I click on the disclaimers checkbox', function(done) {
+    browser
+      .click('label[for="agree"]')
+      .then(done)
+      .catch(done);
+  });
 };

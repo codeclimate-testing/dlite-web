@@ -16,14 +16,14 @@ describe('Intro next-path', function() {
   });
 
   describe('##chooseApplication', function() {
-    it('returns "cdlIDme" if state.ui.chooseApp equals "cdl"', function() {
+    it('returns "cdlDisclaimers" if state.ui.chooseApp equals "cdl"', function() {
       props.chooseApp = 'cdl';
-      assert.equal(chooseApplication(props), 'cdlIDme');
+      assert.equal(chooseApplication(props), 'cdlDisclaimers');
     });
 
-    it('returns "IDme" if state.ui.chooseApp equals "iddl"', function() {
+    it('returns "disclaimers" if state.ui.chooseApp equals "iddl"', function() {
       props.chooseApp = 'iddl';
-      assert.equal(chooseApplication(props), 'IDme');
+      assert.equal(chooseApplication(props), 'disclaimers');
     });
   });
 });

@@ -3,6 +3,7 @@
 import { combineReducers }                from 'redux';
 
 import createApplicationID                from './create-application-id';
+import updateDisclaimers                  from './update-disclaimers';
 import updateLanguage                     from './basics/update-language';
 import updateLegalNames                   from './basics/update-legal-name';
 import updateAddress                      from './basics/update-address';
@@ -101,7 +102,8 @@ const rootReducer = combineReducers({
   }),
   youthIDInstead              : updateYouthIDInstead,
   guardianSignature           : updateGuardianSignature,
-  realID                      : updateRealID
+  realID                      : updateRealID,
+  disclaimers                 : updateDisclaimers
 });
 
 export default rootReducer;

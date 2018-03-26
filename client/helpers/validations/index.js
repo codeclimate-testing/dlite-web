@@ -35,6 +35,7 @@ import selectionValidator       from './selection-validator';
 import cdlEndorsementsRules     from './cdl-endorsements-rules';
 import cdlCertificatesRules     from './cdl-certificates-rules';
 import otherStateLicenseRules   from './other-state-license-rules';
+import disclaimersRules         from './disclaimers-rules';
 
 export const ChooseAppValidator           = formValidationGenerator(chooseApplicationRules);
 export const NamePageValidator            = formValidationGenerator(namePageRules);
@@ -66,6 +67,7 @@ export const ContactValidator             = formValidationGenerator(contactRules
 export const SSNValidator                 = formValidationGenerator(ssnRules);
 export const GuardianSignatureValidator   = formValidationGenerator(guardianSignatureRules);
 export const SelectionValidator           = formValidationGenerator({select: selectionValidator('selectionMissing')});
-export const CDLEndorsementsValidator      = formValidationGenerator(cdlEndorsementsRules);
-export const CDLCertificatesValidator      = formValidationGenerator(cdlCertificatesRules);
+export const CDLEndorsementsValidator     = formValidationGenerator(cdlEndorsementsRules);
+export const CDLCertificatesValidator     = formValidationGenerator(cdlCertificatesRules);
 export const OtherStateLicenseValidator   = formValidationGenerator(otherStateLicenseRules);
+export const DisclaimersValidator         = formValidationGenerator(disclaimersRules);

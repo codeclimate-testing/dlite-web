@@ -15,6 +15,12 @@ import {
 
 const cdlGetStarted = [
   {
+   key: 'cdlDisclaimers',
+   description: 'CDL Disclaimers',
+   path: '/disclaimers',
+   next: 'cdlIDme'
+  },
+  {
     key: 'cdlIDme',
     description: 'CDL sign-in',
     path: '/sign-in',

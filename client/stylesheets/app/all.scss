@@ -23,6 +23,18 @@
   margin: 0 6px 0 9px;
 }
 
+.scroll-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-content {
+  flex: 1;
+  overflow-y: scroll;
+  height: 375px;
+}
+
 .radio-input-error{
   display: flex;
   align-items: center;

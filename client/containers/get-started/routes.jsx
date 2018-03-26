@@ -15,6 +15,7 @@ import RealID                                 from './real-id-page.jsx';
 import LicenseType                            from './license-type-page.jsx';
 import ReducedFee                             from './reduced-fee-page.jsx';
 import GetStarted                             from './get-started-page.jsx';
+import Disclaimers                            from './disclaimers-page.jsx';
 import IDMe                                   from './id-me-page.jsx';
 
 import {
@@ -27,7 +28,8 @@ import {
 const GetStartedRoutes = () => {
   return (
     <div>
-      <Route path={ iddlPath('/sign-in') }                    component={IDMe} />
+      <Route path={ iddlPath('/disclaimers') }                    component={Disclaimers} />
+      <Route path={ iddlPath('/sign-in') }                        component={IDMe} />
       <Route path={ iddlPath('/my-basics/legal-name') }           component={LegalName}               />
       <Route path={ editPath('/my-basics/legal-name') }           component={LegalName}               />
 

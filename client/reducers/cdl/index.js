@@ -13,6 +13,7 @@ import updateLicenseClass                 from './get-started/update-license-cla
 import updateSelfCertification            from './get-started/update-self-cert';
 import updateCDLEndorsements              from './update-cdl-endorsements';
 import updateCDLCertificates              from './update-cdl-certificates';
+import updateCDLDisclaimers               from './update-cdl-disclaimers';
 
 import updateOrganDonation                from './update-cdl-organ-donation';
 
@@ -76,7 +77,8 @@ const rootReducer = combineReducers({
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,
   licenseClass            : updateLicenseClass,
-  certification           : updateSelfCertification
+  certification           : updateSelfCertification,
+  cdlDisclaimers          : updateCDLDisclaimers
 });
 
 export default rootReducer;

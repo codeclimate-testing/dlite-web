@@ -60,6 +60,7 @@ export const TYPES = {
   UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND: 'UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND',
   UPDATE_GUARDIAN_ID_DOC_FIRST:           'UPDATE_GUARDIAN_ID_DOC_FIRST',
   UPDATE_GUARDIAN_ID_DOC_SECOND:          'UPDATE_GUARDIAN_ID_DOC_SECOND',
+  UPDATE_DISCLAIMERS:                     'UPDATE_DISCLAIMERS',
   UPDATE_CDL_LEGAL_NAME:                  'UPDATE_CDL_LEGAL_NAME',
   UPDATE_CDL_DOB:                         'UPDATE_CDL_DOB',
   UPDATE_CDL_PHYSICAL_TRAITS:             'UPDATE_CDL_PHYSICAL_TRAITS',
@@ -90,6 +91,7 @@ export const TYPES = {
   UPDATE_CDL_VETERANS_SERVICE:            'UPDATE_CDL_VETERANS_SERVICE',
   UPDATE_CDL_BALLOT_BY_MAIL:              'UPDATE_CDL_BALLOT_BY_MAIL',
   UPDATE_CDL_CONTACT_METHODS:             'UPDATE_CDL_POLITICAL_METHODS',
+  UPDATE_CDL_DISCLAIMERS:                 'UPDATE_CDL_DISCLAIMERS',
 
   FOCUS_PAGE_ELEMENT:                     'FOCUS_PAGE_ELEMENT',
   BLUR_PAGE_ELEMENT:                      'BLUR_PAGE_ELEMENT',
@@ -151,6 +153,8 @@ export const updateGuardianSignatureSecond            = generateFormAction(TYPES
 export const updateGuardianContactDetailsFirst        = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_FIRST);
 export const updateGuardianContactDetailsSecond       = generateFormAction(TYPES.UPDATE_GUARDIAN_CONTACT_DETAILS_SECOND);
 
+export const updateDisclaimers                         = generateFormAction(TYPES.UPDATE_DISCLAIMERS);
+
 export const chooseApp                                = generateFormAction(TYPES.CHOOSE_APP);
 export const updateCdlLegalName                       = generateFormAction(TYPES.UPDATE_CDL_LEGAL_NAME);
 export const updateCdlDob                             = generateFormAction(TYPES.UPDATE_CDL_DOB);
@@ -182,6 +186,7 @@ export const updateCDLLanguage                        = generateFormAction(TYPES
 export const updateCDLVeteransService                 = generateFormAction(TYPES.UPDATE_CDL_VETERANS_SERVICE);
 export const updateCDLBallotByMail                    = generateFormAction(TYPES.UPDATE_CDL_BALLOT_BY_MAIL);
 export const updateCDLContactMethods                  = generateFormAction(TYPES.UPDATE_CDL_CONTACT_METHODS);
+export const updateCDLDisclaimers                     = generateFormAction(TYPES.UPDATE_CDL_DISCLAIMERS);
 
 export const focusPageElement                         = generateValueAction(TYPES.FOCUS_PAGE_ELEMENT);
 export const blurPageElement                          = generateValueAction(TYPES.BLUR_PAGE_ELEMENT);
