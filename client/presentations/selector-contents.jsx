@@ -8,7 +8,12 @@ const SelectorContents = (props) => {
   return (
     <div className='unit selector-contents'>
       <div className={iconClass} />
-      <div className='text-region last-unit'>{text}</div>
+      <div className='text-region last-unit'>
+        <div className='row'>
+          {text}
+        </div>
+        { props.children }
+      </div>
     </div>
   );
 };

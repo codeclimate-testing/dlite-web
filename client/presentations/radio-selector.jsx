@@ -22,7 +22,6 @@ const RadioSelector = function(props) {
           htmlFor={id}
           aria-labelledby={id}
         >
-
           <div className='off-screen'>
             <input
               type='radio'
@@ -40,8 +39,9 @@ const RadioSelector = function(props) {
             value={props.value}
             text={props.text}
             iconClass={props.iconClass}
-          />
-          {props.children}
+          >
+            {props.children}
+          </SelectorContents>
         </label>
       </div>
     </div>

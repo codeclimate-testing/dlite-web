@@ -26,5 +26,4 @@ function mapStateToProps(state) {
   };
 };
 
-
 export default mergePropsGenerator(mapStateToProps, updateLanguage, 'applicationLanguageSubmit', Page);
