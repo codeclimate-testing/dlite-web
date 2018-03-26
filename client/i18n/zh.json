@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "準備預約到訪",
+    "explanation": "下方清單列明了您前往機動車輛管理局(DMV)完成申請需攜帶的資料。",
+    "ending": {
+      "callCenterDetails": "話務中心上班時間：星期一、星期二、星期四、星期五早上8點至下午5點，星期三早上9點至下午5點"
+    },
+    "noRealIdSection": {
+      "header": "不符合聯邦政府要求的身份證要求",
+      "identity": {
+        "header": "身份識別",
+        "body": "<p>所有申請者須提供身份識別、真實全名（名字、中間名、姓氏）和出生日期證明。</p><p>您需攜帶正本文件，因為<b>影印本和層壓版本不予接受。</b></p><p><a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>查閱機動車輛管理局(DMV)可接受的身份識別文件</a>。</p><p> <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
+      },
+      "socialSecurity": {
+        "header": "社會安全碼",
+        "body": "<p>您需向機動車輛管理局(DMV)提供者社會安全碼。</p><p>如果您的姓名已更改，請務必在到訪前與社會安全管理局就此更改進行更新。</p>"
+      },
+      "californiaResidency": {
+        "header": "加州居民",
+        "body": "您需帶上<b>1</b>份能證明您居住於加利福尼亞的文件。這份文件應能顯示您想接收卡片的郵寄地址。此地址也將顯示在您的卡片的正面。請檢閱 <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>可接受的<b>加州居民文件</b></a>清單。"
+      }
+    },
+    "realIdSection": {
+      "header": "真實身份（REAL ID）證件要求",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>請檢視真實身份（REAL ID）證件文檔PDF，了解予以接受的三種文檔。</a>"
+    },
+    "veteransSection": {
+      "header": "退伍軍人檔案",
+      "body": "如要在卡片上添加退伍軍人頭銜，您需要提交一份已填寫 的<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退伍軍人身份證明（Veteran Status Verification） </a> 表 (VSD- 001)。您可從您所在縣的退伍軍人服務局（Veteran Service Office）獲取VSD-001表。感謝您的服役！"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "新駕駛者要求",
+        "needListHeader": "為獲得臨時駕駛許可證，我們需要查看下列其中1項：",
+        "needListItems": [
+          "加州駕駛員教育結業證書（教室）或",
+          "加州駕駛員教育和駕駛員培訓結業證書或",
+          "加州綜合駕駛員教育報名和駕駛員培訓計劃證書。"
+        ],
+        "provisionalExplanation": "您需申請獲得臨時駕駛許可證。",
+        "knowledgeTest": "您需參加一項知識測試。",
+        "testAdvice": "我們建議您在到訪前學習<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。",
+        "FAQHaveAnotherState": {
+          "title": "已擁有另一州的許可證或培訓證書？",
+          "body": {
+            "proofListHeader": "您需要提供下面其中<b>1</b>種資料：",
+            "proofListItems": [
+              "證明您完成相當於加利福尼亞中學課程的駕駛教育/培訓課程。",
+              "一份已填好的DL 33表。您可以從當地的機動車輛管理局(DMV)分區辦事處或撥打1-800-777-0133致電機動車輛管理局(DMV)，獲取此表單。將(DL 33)表格寄送給您的外州中學學校並請求其填寫表單。"
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>更多資訊，請查閱駕駛員教育和駕駛員培訓表單要求。</a>",
+            "juniorPermitNote": "請注意，作為一名未成年人，我們不能直接轉入聲明有“試用”、“臨時”、或“初級”、駕駛許可證的駕駛執照，或接受外州的培訓證書。"
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "新加州駕駛者要求",
+      "body": {
+        "openingExplanation": "我們了解到您可能持有外州的駕駛執照。加利福尼亞州關於<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16至18歲的青少年駕駛者的法律</a>與外州有所不同。",
+        "knowledgeTest": "作為一名加州的新駕駛者，您需通過知識測試。",
+        "juniorPermitNote": "作為一名未成年人，如果您的駕駛執照上列有“試用”、“臨時”或“初級”，我們不能從他州轉入任何駕駛執照。",
+        "provisionalProcess": "<b>加利福尼亞18歲以下的駕駛者須先申請臨時許可證。</b>六個月後，您將有資格獲得臨時駕駛執照。",
+        "FAQWillIneedToTakeTest": {
+          "title": "我需要參加駕駛測試嗎？",
+          "listHeader": "若您能滿足下列條件，可不參加駕駛測試：",
+          "listItems": [
+            "現持有非加利福尼亞州的外州駕駛執照 <b><em>並</em></b>",
+            "在合格的中學成功完成駕駛技能課程 <b><em>且</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>能證明成功完成課程</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "作為一名加州的新駕駛者，您需通過知識測試。",
+        "permitProcess": "一旦您通過知識測驗，您將獲得許可證。然後，您需參加駕駛測試。",
+        "waiverCanProcess": "<b>我們可不要求您參加駕駛測試，若</b>您此前已獲得駕駛認證。",
+        "waiverMayProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已取得他州的有效駕駛執照。"
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "摩托車/輕型摩托車要求",
+      "body": {
+        "explanation": "要獲得摩托車或輕型摩托車執照，您需通過摩托車知識測試。請檢閱<a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>加利福尼亞州摩托車手册</a>。",
+        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。此課程的教員將在課程順利結業後提供本表單。"
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "因您未滿21歲，您<b>必須</b>持有<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表單</a> 。此課程的教員將在課程順利結業後提供本表單。",
+        "onCompletion": "一旦您完成此課程，您必須持有許可證6個月直到獲得駕駛執照。"
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得他州的有效摩托車執照或已持有<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。"
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "其他測試要求",
+      "body": "在加州，要獲得摩托車或輕型摩托車執照， <b>您需通過基礎駕駛執照知識測試</b>。我們建議您在到訪前學習<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。"
+    },
+    "nonCommercialASection": {
+      "header": "非商業 A  類要求",
+      "body": {
+        "healthQuestionnaire": "為獲得非商業A類許可證，您需提交一份有效的 <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>",
+        "knowledgeTest": "需參加<b>休閒車及非商業A類牽引車</b>知識測試。我們建議您在測試前，學習加州休閒車輛RV和牽引車手册。",
+        "afterPassingExam": "一旦您通過測驗，您將獲得許可證。<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>機動車輛管理局(DMV)網站</a>為您提供了獲得正式許可證要求的資訊。"
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "非商業 B  類要求",
+      "body": {
+        "healthQuestionnaire": "為獲得非商業B類許可證，您需提交一份有效的 <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>《健康問卷》(Health Questionnaire (DL 546))</a>",
+        "houseCarTest": "您還需參加<b> 45分鍾的房屋車知識測試</b>。我們建議您在測試前，學習<a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>加州休閒車輛RV和拖車手册</a> 。"
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "消防員加簽要求",
+      "body": {
+        "testRequirements": "要獲得<b>消防員加簽</b> ，您需參加並通過<b>消防員加簽</b> 知識測驗。",
+        "otherRequirements": "您還需提交一份有效的<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>和一份符合下列標準的<b>消防員雇用和培訓證明函</b>：",
+        "otherRequirementsValues": [
+          "採用消防局信箋",
+          "現為消防員的工作證明或登記為志願消防員的證明",
+          "消防設備操作培訓結業證書",
+          "消防隊長或委派人員的簽名"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "性別變化",
+      "body": "<p>為作此更改，您必須攜帶<a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>醫療認證和授權表（Medical Certification and Authorization Form（DL 329））</a>，且其由您的醫生或心理學家填寫並簽名。</p><p>您還需要帶上您的<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上須有您更名前後的真實全名（名字、中間名、姓氏）。</p>"
+    },
+    "nameChangeSection": {
+      "header": "更改姓名",
+      "body": "<p>為在卡上體現您姓名的更改，您必須先在您當地的<a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>社會安全局</a>辦事處進行變更。</p><p>您還需要帶上您的<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上有您更名<em>前</em><em>後</em>的真實全名（名字、中間名、姓氏）。</p>"
+    },
+    "reducedFeeSection": {
+      "header": "費用減免資格",
+      "body": "最後，我們需要費用減免身份證資格證明（Reduced Fee Identification Card Eligibility Verification （DL 389））表。機動車輛管理局(DMV)不提供此表單。如果您從政府或非盈利組織那裡獲得協助，請向其索要一份表單。"
+    },
+    "noFeeSection": {
+      "header": "免費資格",
+      "body": "最後，我們需要免費身份證資格證明（No Fee Identification Card Eligibility Verification （DL 933））表。機動車輛管理局(DMV)不提供此表單。如果您從政府或非盈利組織那裡獲得協助，請向其索要一份表單。"
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "您為何來此？",
+      "answerIDorDL": "身份證或駕駛執照",
+      "answerCDL": "商業駕駛執照",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "我不知道我是否需要商業駕駛駕照。",
+        "body": {
+          "youWillNeedIf": {
+            "header": "如果您打算駕駛下列車輛，剛需要商業駕駛駕照CDL：",
+            "values": [
+              "車輛總重量（GVWR）為26001磅以上的車輛。",
+              "經設計、使用或維護用於運載包括司機在內的10人以上的車輛",
+              "牽引一輛車或車輛總重量（GVWR）為10001磅以上牽引車。",
+              "需貼牌的危險物品運輸車。",
+              "牽引兩輛牽引車或一輛車輛和牽引車。"
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "如果您僅想駕駛以下車輛，剛不需要商業駕駛駕照CDL：",
+            "values": [
+              "休閒車輛（五輪旅行牽引車和露營車）",
+              "消防設備",
+              "C類農業危險物品運輸車。",
+              "著制服的國防部服役人員駕駛國防車輛。",
+              "部分農用車。"
+            ]
+          },
+          "seeDMV": "詳細資訊，請參閱dmv.ca.gov"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "在此網站上，您可以：",
+      "whatYouCanDoItems": [
+        "<b>申請</b> 駕駛執照或身份證。",
+        "<b>續期或更換</b>卡片。",
+        "<b>更正或更新</b>卡片。"
+      ],
+      "requiredDocuments": "提交此申請後，我們會提供您一張列明所需文件的清單。您必須攜帶這些文件前往機動車輛管理局(DMV)分區辦事處以完成申請。",
+      "doNotUseIf": {
+        "header": "如果出現以下情況，請勿使用此申請：",
+        "values": [
+          "您尚沒有電子郵件地址和電話號碼。這些都是在家裡申請需填寫的。",
+          "請處於機密地址計劃或在家安全中。"
+        ],
+        "instead": "或者，<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>預約</a>以到訪您當地的機動車輛管理局(DMV)分區辦事處。"
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "<b>申請</b>商業駕駛執照（CDL）。",
+        "<b>續期或更換</b>商業駕駛執照（CDL）。",
+        "<b>更正或更新</b>商業駕駛執照（CDL）。"
+      ],
+      "doNotUseIf": {
+        "values": [
+          "您尚沒有電子郵件地址和電話號碼。這些都是在家中申請需填寫的。",
+          "您只需為您的商業駕駛執照（CDL）申請救護車、VTT、或HAM證書。",
+          "請處於機密地址計劃或在家安全中。"
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "我需做其他事。",
+        "body": {
+          "header": "您<b>不能</b>使用此申請：",
+          "listItems": [
+            "更新您的醫療證",
+            "更新您的自我認證",
+            "獲得駕駛記錄影本",
+            "報告事故",
+            "安排時間參加駕駛測試"
+          ],
+          "instead": "參閱機動車輛管理局(DMV)網站來完成這些任務。"
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "機動車輛管理局(DMV)與ID.me合作保護您的電子身份。",
+      "buttonCreateAccount": "創建一個id.me帳戶",
+      "or": "或：",
+      "buttonSignIn": "用id.me帳戶登入",
+      "emailRequired": "<b>必須提供電子郵件地址和電話號碼。</b>如果您不想創建一個id.me帳戶，請到訪機動車輛管理局(DMV)分區辦事處",
+      "legalIdentity": "<b>ID.me允許您證明您的合法身份。</b>加州機動車輛管理局(DMV)已與ID.me合作以確保您的個人資訊的準確、安全。",
+      "dmvPartnering": "加州機動車輛管理局(DMV)選擇ID.me作為合作夥伴，因為其能滿足安全和身份證證明的嚴格要求。",
+      "learnMore": "<a href='https://www.id.me'>更多資訊，請參閱ID.me。</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "歡迎回來。",
+      "youHaveSomeUnfinishedApps": "您還有一些未完成的申請。",
+      "youCanStartNewApp": "您還可啟動一個新的應用程式。",
+      "applyingDL": "您正在申請駕駛執照",
+      "applyingID": "您正在申請身份證",
+      "applyingBoth": "您正在申請駕駛執照或身份證。",
+      "applyingCDL": "您正在申請商業駕駛執照",
+      "percentComplete": "已完成  %",
+      "newApplication": "新申請",
+      "delete": "删除"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "我們無法存取您的帳戶。",
+      "wantToTryAgain": "想再試一次嗎？",
+      "comeToDMVoffice": "如果您不能登入或不想使用ID.me，您需要在機動車輛管理局(DMV)分區辦事處填寫申請。若想獲得更快捷的服務，請預約。"
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "未滿21歲的申請者不得從事州際貿易或運輸危險物品。"
+    },
+    "wdywtdtPage": {
+      "values": [
+        "首次申請加州商業駕駛執照（CDL）",
+        "續期商業駕駛執照（CDL）",
+        "更正或更新商業駕駛執照（CDL）",
+        "更換商業駕駛執照（CDL）"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "如果您知道，<b>請輸入您的加州商業駕駛執照（CDL）編號</b>。",
+      "explanation": "可在DL/ID卡的頂部找到這個以字母開頭的號碼。",
+      "cdlNumberLabel": "商業駕駛執照（CDL）編號"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "您不能通過此表單更新您的醫療證（medical certificate）。",
+      "values": [
+        "更正商業駕駛執照（CDL）",
+        "更新商業駕駛執照（CDL）"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "您是加州居民嗎？",
+      "infoMessageNo": {
+        "header": "我們很抱歉，但您此時不具備資格申請加州商業駕駛執照（CDL）。",
+        "explanation": "您必須為加州居民才能申請。"
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "DMV會將您的郵寄地址列印在您的商業駕駛執照（CDL）上。您的身份證也會被寄至您的收件地址。"
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "我們很抱歉，但您此時不具備資格申請加州商業駕駛執照（CDL）。",
+        "explanation": "商業駕駛者必須擁有社會安全碼，並須在申請時提供相關證明。有合法居留證明的美國公民和非公民居民都有資格獲得社會安全號。更多資訊，請聯絡社會安全管理局。"
+      }
+    },
+    "caDlPage": {
+      "prompt": "您現在持有加州駕駛執照嗎？",
+      "noMessage": "為獲得商業初學者許可證，您首先需通過知識和駕駛技能測試獲得基礎（非商業C類）駕駛執照。",
+      "yesSection": {
+        "prompt": "請告知您最近使用的駕駛執照的相關資訊。",
+        "explanation": "我們將於申請後不久，要求您提供一份完整的許可證記錄。",
+        "dlNumberLabel": "駕照號碼",
+        "issuedInLabel": "簽發地",
+        "messageBody": "為獲得商業初學者許可（CLP），您需獲得加州非商業C類駕駛執照。要獲得C類駕駛執照，您需通過非商業C類知識測試。",
+        "expiredMessage": {
+          "header": "我們看到您的駕駛執照已過期。"
+        },
+        "nonCaliforniaMessage": {
+          "header": "我們看到您的駕駛執照不是加州的。"
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "您需要哪一類的商業駕駛執照？",
+      "values": [
+        "A 類",
+        "B 類",
+        "C 類"
+      ],
+      "youMayDrive": "您可以駕駛：",
+      "youMayTow": "您可以牽引：",
+      "classA": {
+        "header": "商業A 類駕駛執照：",
+        "driveItems": [
+          "任何合法的組合車輛，包括 B 類和 C類車輛。"
+        ],
+        "towItems": [
+          "任何B類和C類駕駛執照可牽引的車輛。",
+          "車輛總重量(GVWR)大於26,000磅的單體車輛。",
+          "任何拖掛客車（經過加簽）或者組合車輛（經過加簽）。"
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "我不確定我需要哪一類。",
+        "classC": {
+          "header": "C 類商業駕駛執照：",
+          "driveItems": [
+            "車輛總重量（GVWR）為26000磅及以下的2軸車輛，或總重6000磅及以下的3軸車輛，載運按要求貼牌的危險品（HazMat）。這需要危險品（HazMat）加簦。",
+            "車輛總重量（GVWR）為26000磅或以下的，且設計、用途或維護以承載10人以上（包括駕駛員）的公共汽車或客運車輛。這需要客運加簦。",
+            "任何經非商業C類駕駛執照可駕駛的車輛。"
+          ],
+          "explanation": "您可牽引非商業C類駕駛執照可牽引的所有車輛。"
+        },
+        "classB": {
+          "header": "B 類商業駕駛執照：",
+          "driveItems": [
+            "所有商業C類駕駛執照可駕駛的車輛。",
+            "車輛總重量(GVWR)大於26,000磅的兩軸車輛。",
+            "車輛總重量(GVWR)大於6,000磅的三軸車輛。",
+            "客車（但拖掛客車除外）。這需要客運加簦。",
+            "任何具有加簦的農場勞工車輛。"
+          ],
+          "towItems": [
+            "車輛總重量(GVWR)為10,000磅或以下的單體車輛。",
+            "所有C類駕駛執照可牽引的車輛。"
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "您需在商業駕駛執照（CDL）上加簽嗎？",
+      "whichSection": {
+        "prompt": "哪一類？",
+        "values": {
+          "T": "兩輪車/三輪車組合",
+          "N": "油罐車",
+          "P": "客運車輛",
+          "S": "校車",
+          "H": "貼有危險物品或廢物標誌的車輛",
+          "X": "運輸危險物品或廢物的油罐車",
+          "F": "消防隊員加簽許可證"
+        }
+      },
+      "certificationSection": {
+        "prompt": "您需要機動車輛管理局(DMV)的專業證書嗎？",
+        "certifications": {
+          "prompt": "您可在機動車輛管理局(DMV)分區辦事處申請下列證書：",
+          "values": {
+            "transit": "公共交通培訓證明書",
+            "ambulance": "救護車駕駛證書",
+            "ham": "危險農產品（HAM）證書。"
+          },
+          "FAQMissingCertifications": {
+            "title": "我需要一個未在此查到的證書",
+            "body": {
+              "header": "加州公路巡警(Cali fornia Highway Patrol(CHP))負責簽發下列專業證書：",
+              "listItems": [
+                "一般公用客運車輛（General Public Paratransit Vehicle（GPPV））",
+                "校車駕駛員證書",
+                "小學生活動校車證書",
+                "專為殘障人士開發設計的車輛",
+                "農用車輛證明書",
+                "拖車駕駛證書",
+                "青少年客車證書"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "<b>公共交通測試</b>證明書需<b>客運車輛</b> 加簽。",
+                "fullEndorsment": "全部駕駛類別、加簽和證書說明及要求，請查看加州<b>商業駕駛手冊</b>。"
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "我不確定",
+        "body": {
+          "header": "如果您打算駕駛下列商業車輛，則需要加簦：",
+          "listItems": [
+            "能承載包括駕駛者在內的10人以上的車輛。",
+            "拖曳按需貼牌的危險物品車輛。",
+            "牽引一輛以上車輛或牽引車。",
+            "油罐車"
+          ],
+          "explanation": "全部駕駛類別、加簽和證書說明及要求，請查看加州商業駕駛手冊。"
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "您需在商業駕駛執照（CDL）上加簽（M類）摩托車嗎？"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "檢查下列專案：",
+        "values": {
+          "applyingClassA": "您正在申請A類商業駕駛執照。",
+          "applyingClassB": "您正在申請B類商業駕駛執照。",
+          "applyingClassC": "您正在申請C類商業駕駛執照。",
+          "renewingClassA": "您正在續期A類商業駕駛執照。",
+          "renewingClassB": "您正在續期B類商業駕駛執照。",
+          "renewingClassC": "您正在續期C類商業駕駛執照。",
+          "updatingClassA": "您正在更新A類商業駕駛執照。",
+          "updatingClassB": "您正在更新B類商業駕駛執照。",
+          "updatingClassC": "您正在更新C類商業駕駛執照。",
+          "correctingClassA": "您正在更正A類商業駕駛執照。",
+          "correctingClassB": "您正在更正B類商業駕駛執照。",
+          "correctingClassC": "您正在更正C類商業駕駛執照。",
+          "replacingClassA": "您正在更換A類商業駕駛執照。",
+          "replacingClassB": "您正在更換B類商業駕駛執照。",
+          "replacingClassC": "您正在更換C類商業駕駛執照。"
+        }
+      },
+      "motorcycleSentence": "您還想駕駛摩托車/輕型摩托車。",
+      "endorsements": {
+        "header": "您需要以下加簽：",
+        "values": {
+          "T": "兩輪車/三輪車加簽許可證",
+          "N": "油罐車",
+          "P": "客運車輛",
+          "S": "校車",
+          "H": "HazMat （危險品）",
+          "X": "油罐車/危險品",
+          "F": "消防員"
+        }
+      },
+      "certificates": {
+        "header": "您需要以下證書：",
+        "values": {
+          "ambulance": "救護車駕駛員",
+          "ham": "危險農產品（HAM）",
+          "transit": "公共交通培訓證明書"
+        }
+      },
+      "realID": "您的商業駕駛執照（CDL）符合真實身份（REAL ID）法規。",
+      "fillOutNewApplication": {
+        "update": "為了更新您的商業駕駛執照（CDL），您必須完整填寫一份新的申請表。",
+        "correct": "為了更正您的商業駕駛執照（CDL），您必須完整填寫一張新的申請表。",
+        "replace": "為了更換您的商業駕駛執照（CDL），您必須完整填寫一張新的申請表。"
+      },
+      "sections": {
+        "header": "此申請表共有六部分內容："
+      },
+      "timeStatement": "<p>大約需要<b>10 分鐘</b>即可填寫完成。</p><p>您填寫完後，必須訪問當地DMV分區辦事處。</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "我的商業駕駛執照（CDL）",
+    "CdlNumberLabel": "商業駕駛執照（CDL）編號",
+    "typeOfDriving": "駕駛類型",
+    "currentDlNumberLabel": "目前的DL編號",
+    "licenseOutsideCAlabel": "非加州的執照"
+  },
   "confirmationPage": {
     "header": "確認函",
     "subHeader": "我們已收到您的資訊。",
@@ -152,6 +631,44 @@
     "endorsement": "請選擇一個加註",
     "cardTypeMissing": "請選擇您想獲得什麼卡。",
     "choosePoliticalPartyNowSelectionMissing": "請告訴我們，您是否想選擇一個政黨偏好。"
+  },
+  "footer": {
+    "accessibility": "協助工具",
+    "conditionsOfUser": "使用條件",
+    "disabilityServices": "殘障人士服務",
+    "help": "幫助",
+    "home": "首頁",
+    "privacy": "隱私權原則",
+    "siteMap": "網站地圖",
+    "support": "技術支援",
+    "copyright": "Copyright &copy; 2018加利福尼亞州"
+  },
+  "header": {
+    "dlApplication": "駕駛執照申請",
+    "idApplication": "身份證申請",
+    "bothApplications": "駕駛執照和身份證申請",
+    "cdlApplication": "商業駕駛執照申請",
+    "Logout": "登出"
+  },
+  "sections": {
+    "getStarted": "開始",
+    "selfCertification": "自我認證",
+    "myHistory": "我的記錄",
+    "tenYearHistory": "十年記錄",
+    "summary": "摘要",
+    "welcomeBack": "歡迎回來"
+  },
+  "ageMessages": {
+    "notASenior": "您不再具有資格申請免費長者身份證。",
+    "preregistration": "您將預先登錄以進行投票。",
+    "cdlAgeRestriction": "在加利福尼亞州，申請商業駕駛執照必須年滿18周歲或以上。"
+  },
+  "extras": {
+    "enterTextHere": "在此處輸入文字",
+    "notRegisteredToVoteMessage": "如果您選擇<em>不</em>或<em>拒絕回答</em>，則將不會登錄以進行投票。",
+    "vetranRemoveMessage": "好的，我們將删除它。",
+    "yourConfirmationCode": "您的確認碼是：",
+    "confirmationAlsoEmailed": "此代碼也將透過電子郵件發送給您。"
   },
   "intro": {
     "switchLanguagePage": {
@@ -533,6 +1050,31 @@
       "messageYes": "感謝您的捐贈！我們會把這2美元加到您的總費用裡。"
     }
   },
+  "parentGuardianSignaturePage": {
+    "Prompt": "因為您未滿18歲，您需要父親、母親或監護人的簽名。",
+    "explanation": "如果您受到不止一位父親、母親或監護人的監護，",
+    "methodSection": {
+      "prompt": "您想做什麼？",
+      "values": {
+        "electronically": "我的父母親/監護人將作電子簽名。",
+        "atDMV": "我的父母親/監護人將前往機動車輛管理局(DMV)簽名。",
+        "emancipated": "我是一位脫離父母而獨立生活的未成年人。"
+      }
+    },
+    "signatureSection": {
+      "explanation": "直到您的父母親/監護人簽名後，您的申請才填寫完整。",
+      "prompt": "父母親/監護人填寫：",
+      "liabilityStatement": "我/我們將承擔因此未成年人造成的民事責任。我/我們理解，在此未成年人開始駕駛訓練之前，向此未成年人簽發的臨時許可證是無效的。",
+      "electronicSignatureSection": {
+        "prompt": "請鍵入您的姓名和今天的日期以作電子簽名。",
+        "nameLabel": "法定全名",
+        "dateLabel": "今天的日期"
+      },
+      "weNeedBasicInfo": "我們需要一些關於您的基本資訊。",
+      "addAnotherSigntature": "添加另一位父親或母親/監護人的簽名"
+    },
+    "emancipatedInfoMessage": "<b>為證明您是脫離父母而獨立生活的未成年人</b>，您必須在DL表上宣告您已脫離父母而獨立生活<b>並</b>提供經濟責任證明。<a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>更多資訊，請參閱機動車輛管理局(DMV)網站。</a>"
+  },
   "shared": {
     "navigation": {
       "back": "上一頁",
@@ -562,6 +1104,70 @@
     "summary": {
       "notProvided": "未提供",
       "none": "無"
+    }
+  },
+  "usStates": {
+    "label": "州",
+    "values": {
+      "AL": "阿拉巴馬州",
+      "AK": "阿拉斯加",
+      "AZ": "亞利桑那州",
+      "AR": "阿肯色州",
+      "CA": "加州",
+      "CO": "科羅拉多州",
+      "CT": "康涅狄格",
+      "DE": "特拉華",
+      "DC": "哥倫比亞區",
+      "FL": "佛羅里達州",
+      "GA": "佐治亞州",
+      "HI": "夏威夷",
+      "ID": "愛達荷州",
+      "IL": "伊利諾斯",
+      "IN": "印第安娜",
+      "IA": "愛荷華",
+      "KS": "堪薩斯州",
+      "KY": "堪薩斯州",
+      "LA": "路易斯安那",
+      "ME": "緬因州",
+      "MD": "馬里蘭州",
+      "MA": "麻塞諸塞州",
+      "MI": "密歇根",
+      "MN": "明尼蘇達",
+      "MS": "密西西比",
+      "MO": "密蘇里州",
+      "MT": "蒙大拿",
+      "NE": "內布拉斯加州",
+      "NV": "內華達州",
+      "NH": "新罕布什爾州",
+      "NJ": "紐澤西",
+      "NM": "新墨西哥",
+      "NY": "紐約",
+      "NC": "北卡羅萊納",
+      "ND": "北達科他州",
+      "OH": "俄亥俄州",
+      "OK": "奧克拉荷馬",
+      "OR": "俄勒岡",
+      "PA": "賓夕法尼亞",
+      "RI": "羅德島",
+      "SC": "南卡羅來納州",
+      "SD": "南達科他州",
+      "TN": "田納西州",
+      "TX": "德克薩斯州",
+      "UT": "猶他州",
+      "VT": "佛蒙特州",
+      "VA": "維吉尼亞",
+      "WA": "華府",
+      "WV": "西佛吉尼亞",
+      "WI": "威斯康辛州",
+      "WY": "懷俄明",
+      "AS": "美國薩摩亞",
+      "GU": "關島",
+      "MH": "馬紹爾群島",
+      "FM": "密克羅尼西亞",
+      "MP": "北馬利安納群島",
+      "PW": "帕勞",
+      "PR": "波多黎各",
+      "VI": "維京群島"
     }
   },
   "summaryPage": {

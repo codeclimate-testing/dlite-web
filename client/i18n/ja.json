@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "予約の準備",
+    "explanation": "下記は申請するにあたってDMVオフィスまで持ってくる書類のリストです。",
+    "ending": {
+      "callCenterDetails": "コールセンターの営業時間:月曜日、火曜日、木曜日、金曜日の午前8時～午後5時、水曜日は、午前9時～午後5時"
+    },
+    "noRealIdSection": {
+      "header": "連邦非対応カードに必要事項",
+      "identity": {
+        "header": "身分証明",
+        "body": "<p>申込者は全員、自分の身分、真実のフルネーム（名前、ミドルネーム、苗字）と生年月日を証明すべきです。</p><p>以上の書類は、原本が必要で、<b>複写と加工したものは認められません</b>。</p><p><a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>DMVの受け付ける身分書類を確認してください</a>。</p><p><b>ご自身の身分書類における名前と申請書における名前が異なっている場合、</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>で名前変更書類</a>を提出し、真実の名前を確定する必要があります。</p>"
+      },
+      "socialSecurity": {
+        "header": "社会保障番号",
+        "body": "<p>DMVにご自身の社会保障番号を提出してください。</p><p>名前を変更した場合は、お越しになる前に、当の変更情報が既にソーシャ ルセキュリティ事務局によって更新されたことを確認しでください。</p>"
+      },
+      "californiaResidency": {
+        "header": "カリフォルニア在居者",
+        "body": "カリフォルニア在居者であることを証明できる書類を<b>1</b>提供する必要があります。当の書類には、カードの宛先となる住所を含むべきです。その住所がードの正面にも表示されます。<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>受け付け可能な<b>カリフォルニア在居者書類</b></a>を確認してください。"
+      }
+    },
+    "realIdSection": {
+      "header": "REAL IDに必要事項",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>以下の三書類 の受け付け可能な書類に関してはREAL IDのPDFをご覧ください。3</a>"
+    },
+    "veteransSection": {
+      "header": "退役軍人書類",
+      "body": "退役軍人の標識をカードに表示するには、<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退役証明</a>書(VSD- 001)を完成し、提出すべきです。VSD-001は、地元の退役軍人サービスオフィスから取得可能です。ご兵役に感謝いたします！"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "新米運転手に必要事項",
+        "needListHeader": "臨時運転免許証を取得するには、下記におけるいずれかのものを要求します。",
+        "needListItems": [
+          "カリフォルニアにおいて運転手育成（教育）課程を完成した証明、または",
+          "カリフォルニアにおいて運転手育成と運転手訓練を完成した証明、または",
+          "カリフォルニアにおいて総合的な運転手育成と運転手訓練プロジェクトに参加した証明。"
+        ],
+        "provisionalExplanation": "臨時運転免許証を申請する必要があります。",
+        "knowledgeTest": "知識試験を受ける必要があります。",
+        "testAdvice": "お越しになる前に、<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。",
+        "FAQHaveAnotherState": {
+          "title": "他国による免許・育成証明を持っている場合は？",
+          "body": {
+            "proofListHeader": "下記におけるいずれか<b>1</b>項のものを提出する必要があります。",
+            "proofListItems": [
+              "カリフォルニア高校課程に相当する運転手育成/訓練を完成した証明。",
+              "完成されたDL 33表。当の表は、地元のDMVオフィスから、または1-800-777-0133でDMVオフィスに連絡して取得できます。DL 33表をご在学の他州の高校に郵送し、完成する。"
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>より詳しい情報は、運転手育成と運転手訓練表に必要事項を確認してください。</a>",
+            "juniorPermitNote": "注意：未成年者であるため、「見習い」、「臨時」または「年少者」との表記がある運転免許証、あるいは他州による運転免許証を直接に受け入れることができません。"
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "カリフォルニア新米運転手に必要事項",
+      "body": {
+        "openingExplanation": "他州による運転免許証を持っていました。カリフォルニアにおいて、<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16歳から18歳までの青少年運転手に関する法令</a>は、他州のものと異なる可能性があります。",
+        "knowledgeTest": "カリフォルニアにおいての新米運転手として、知識試験に合格する必要があります。",
+        "juniorPermitNote": "未成年者であるため、他州による運転免許証に「見習い」、「臨時」または「年少者」との表記がある場合は、直接それを受け入れることはできません。",
+        "provisionalProcess": "<b>カリフォルニアにおいて、18歳以下の運転手はまず臨時許可を申請する必要があります。</b>6ヶ月後、臨時運転免許証が発行されます。",
+        "FAQWillIneedToTakeTest": {
+          "title": "運転試験を受ける必要がありますか？",
+          "listHeader": "下記の場合だけは、運転試験を取り消すことができます。",
+          "listItems": [
+            "すでにカリフォルニア以外の州による運転免許証をお持ちになっている場合、<b><em>及び</em></b>",
+            "高校に相当する学校で、運転課程を完成した場合、<b><em>及び</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>運転課程を終了した場合</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "カリフォルニアにおいての新米運転手として、知識試験に合格する必要があります。",
+        "permitProcess": "試験に合格した場合、許可が得られます。そこで運転試験を受けることになります。",
+        "waiverCanProcess": "<b>運転試験は：</b>既に免許をお持ちになっている場合だけに取り消されます。",
+        "waiverMayProcess": "<b運転試験は：</b>他州による有効な運転免許証をお持ちになっている場合に、取り消される可能があります。"
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "オートバイ/スクーターに必要事項",
+      "body": {
+        "explanation": "オートバイまたはスクーターの運転免許証を取得するには、オートバイに関する知識試験に合格する必要があります。<a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>カリフォルニアオートバイハンドブック</a>を確認してください。",
+        "waiverProcess": "<b>運転試験は：</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明</a>を、CHPによるカリフォルニアオートバイ安全企画から取得した場合に、取り消される可能があります。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。"
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "21歳未満であるため、DMVに訪ねる前は、<b>必ず</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得するようにしてください。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。",
+        "onCompletion": "課程を完成した後、免許を取得する前は、許可を6ヶ月間保有すべきです。"
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>運転試験は：</b>他州にいる有効なオートバイ免許、または<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得し、お持ちになっている場合に、取り消される可能があります。"
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "そのほかの試験必要事項",
+      "body": "カリフォルニアにおいて、オートバイまたはスクーターの免許を取得するには、<b>基本の運転免許証試験に合格する必要があります</b>。お越しになる前に、<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。"
+    },
+    "nonCommercialASection": {
+      "header": "非商用A級必要事項",
+      "body": {
+        "healthQuestionnaire": "非商用A級の許可を取得するには、有効な<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート（DL 546）を提出する必要があります。</a>",
+        "knowledgeTest": "<b>レクリエーション用車両と非商用A級トレーラー</b>の知識試験も、受ける必要があります。試験を受ける前に、カリフォルニアのRV   &トレーラーハンドブックで勉強することをおすすめします。",
+        "afterPassingExam": "試験に合格するにあたり、許可が発行されます。完全な免許を取るための情報は、<a   href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>DMV公式サイト</a>で確認できます。"
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "非商用B級必要事項",
+      "body": {
+        "healthQuestionnaire": "非商用B級の許可を取得するには、医者によって証明された有効な<a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>健康アンケート（DL 546A）を提出する必要があります。</a>",
+        "houseCarTest": "<b>45' ハウスカー知識試験</b>を受ける必要もあります。試験を受ける前に、<a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>カリフォルニアのRV &トレーラーハンドブック</a>で勉強することをおすすめします。"
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "消防士裏書き必要事項",
+      "body": {
+        "testRequirements": "<b>消防士裏書き</b>を取得するには、<b>消防士裏書き</b>知識試験、合格する必要があります。",
+        "otherRequirements": "有効な<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート (DL 546)</a>と、下記の基準に見合う<b>消防士雇用及び育成証明の原本</b>を提出する必要もあります。",
+        "otherRequirementsValues": [
+          "消防機関のレターヘッドによって証明されていること",
+          "現役消防士であること、または志願消防士として登録されていることの証明",
+          "消防用具使用に関する育成を完成した証明",
+          "消防署長またはそれに価する人による署名"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "性別の変更",
+      "body": "<p>性別を変更するには、医師または心理学者によって署名された、<a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>の健康診断及び許可書（DL 329）</a>を提出する必要があります。</p><p>氏名変更前後の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
+    },
+    "nameChangeSection": {
+      "header": "氏名の変更",
+      "body": "<p>Social Security Administration変更された氏名をカードに表示するには、まず地元の<a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>ソーシャ ルセキュリティ事務局</a>オフィスで氏名を変更する必要があります。</p><p>氏名変更<em>前</em><em>後r</em>の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
+    },
+    "reducedFeeSection": {
+      "header": "料金割引対象",
+      "body": "最後には、料金割引IDカード対象の証明（DL 389）書が必要となります。当の証明書は、DMVは提供しません。これについて、政府や非営利団体の支援を得ている場合は、それらにお問い合わせください。"
+    },
+    "noFeeSection": {
+      "header": "無料対象",
+      "body": "最後には、無料IDカード対象の証明(DL933)書が必要となります。当の証明書は、DMVは提供しません。これについて、政府や非営利団体の支援を得ている場合は、それらにお問い合わせください。"
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "ご用件は？",
+      "answerIDorDL": "IDまたは運転免許証",
+      "answerCDL": "商用運転免許証",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "商用運転免許証が必要かどうかはわかりません",
+        "body": {
+          "youWillNeedIf": {
+            "header": "下記の車両を運転しようとする場合は、CDLが必要となります。",
+            "values": [
+              "車両総重量（GVWR）が26,001ポンド以上のもの。",
+              "運転手を含め、10人以上を載せるために設計・使用・維持されたもの。",
+              "GVWRが10,001ポンド以上の車両またはトレーラーをけん引するもの。",
+              "標識が必要な危険物質を搬送するもの。",
+              "2台のトレーラーの組み合わせた、または車両とトレーラーの組み合わせたをけん引するもの。"
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "下記の車両だけを運転しようとする場合は、CDLは必要ではありません。",
+            "values": [
+              "レクリエーション用車両（第五輪旅行トレーラーとモーターホーム）",
+              "消防設備。",
+              "C級農業危険物質を搬送するもの。",
+              "制服を着ていて国防省車両を運転する国防省の従業員。",
+              "一部の農用車両。"
+            ]
+          },
+          "seeDMV": "詳しい情報は、dmv.ca.govで確認できます。"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "上記のサイトでは、下記のことが実行できます。",
+      "whatYouCanDoItems": [
+        "運転免許証またはIDカードの<b>申請</b>。",
+        "カードの<b>更新または交換</b>。",
+        "カードの<b>情報の修正または更新</b>。"
+      ],
+      "requiredDocuments": "申請を送ったあと、必要な書類のリストが提供されます。申請を完成するには、これらの書類をもって、DMVオフィスに訪ねる必要があります。",
+      "doNotUseIf": {
+        "header": "下記の場合には、申請を行わないでください。",
+        "values": [
+          "メールアドレスと電話番号がありません。これらは、自宅で記入すべきものとなります。",
+          "機密住所企画、もしくは自宅安全企画によって保護されています。"
+        ],
+        "instead": "そのかわり、<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>予約をとり</a>、地元DMVオフィスに訪ねてください。"
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "商用運転免許証（CDL）を<b>申請</b>します。",
+        "CDLを<b>更新または交換</b>します。",
+        "CDLの情報を<b>修正または更新</b>します。"
+      ],
+      "doNotUseIf": {
+        "values": [
+          "メールアドレスと電話番号がありません。これらは、自宅で記入すべきものとなります。",
+          "CDLに対し、救急車、VTTまたはHAMの証明だけを希望します。",
+          "機密住所企画、もしくは自宅安全企画によって保護されています。"
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "ほかの操作",
+        "body": {
+          "header": "この申請は、下記の用途に使用しては<b>いけません</b>。",
+          "listItems": [
+            "健康診断書の更新",
+            "自己保証の更新",
+            "運転記録の複製",
+            "事故の報告",
+            "運転試験の手配"
+          ],
+          "instead": "DMVのサイトにアクセスし、これらの作業を完成してください。"
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "DMVはID.meと連携して、デジタル的身分を守ってあげます。",
+      "buttonCreateAccount": "ID.meアカウントを作成してください",
+      "or": "もしくは",
+      "buttonSignIn": "ID.meアカウントでサインインしてください",
+      "emailRequired": "<b>メールアドレスと電話番号が必要となります。</b>ID.meアカウントを作成したくない場合は、DMVオフィスを訪ねてください。",
+      "legalIdentity": "<b>ID.meは、適法の身分を証明することを認めます。</b>カリフォルニアのDMVは ID.meと連携して、個人情報が正確、安全であることを保証してあげます。",
+      "dmvPartnering": "カリフォルニアのDMVが ID.meと連携する原因は、安全と身分証明に関する厳密な要求を満たしてくれたことです。",
+      "learnMore": "<a href='https://www.id.me'>より詳しい情報は、ID.meで確認してください。</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "このサイトにお戻りくださったことを感謝します。",
+      "youHaveSomeUnfinishedApps": "未完成の申請があります。",
+      "youCanStartNewApp": "新たな申請も始める可能です。",
+      "applyingDL": "運転免許証を申請します。",
+      "applyingID": "IDカードを申請します。",
+      "applyingBoth": "運転免許証とIDカードを申請します。",
+      "applyingCDL": "商用運転免許証を申請します。",
+      "percentComplete": "% 完成",
+      "newApplication": "新たな申請",
+      "delete": "削除"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "お持ちのアカウントにアクセスできません。",
+      "wantToTryAgain": "もう一回試しますか？",
+      "comeToDMVoffice": "サインインできない、またはID.meを利用したくない場合は、DMVオフィスで申請を完成する必要があります。快速なサービスのためには予約をとってください。"
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "21歳未満の申請者は、州外通商、または危険物質の搬送に従事してはいけません。"
+    },
+    "wdywtdtPage": {
+      "values": [
+        "初めてカリフォルニアのCDLを取得する",
+        "CDLを更新する",
+        "CDLの情報を修正または更新する",
+        "CDLを交換する"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "お持ちのカリフォルニアCDLの番号を知っている場合は、<b>それを入力してください</b>。",
+      "explanation": "お持ちの番号は、運転免許証/IDカードの上部に表示されていて、アルファベットで始まります。",
+      "cdlNumberLabel": "CDL番号"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "このページで、健康診断書の情報を更新することができません。",
+      "values": [
+        "CDLの情報を修正します",
+        "CDLの情報を更新します"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "カリフォルニアの在居者ですか？",
+      "infoMessageNo": {
+        "header": "すみませんが、ただいま、カリフォルニアのCDLを申し込む資格はありません。",
+        "explanation": "申し込むには、カリフォルニアの在居者になる必要があります。"
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "DMVは、お持ちのCDLに連絡先の住所を表示します。CDLも、連絡先の住所に郵送されます。"
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "すみませんが、ただいま、カリフォルニアのCDLを申し込む資格はありません。",
+        "explanation": "商用運転手は、社会保障番号を持ち、申請にあたり、それに関する証明を提出する必要があります。USの公民と、USの公民ではないが適法的な在居者であるものは全員、社会保障番号を取得することが可能です。より詳しい情報は、ソーシャ ルセキュリティ事務局にお問い合わせしてください。"
+      }
+    },
+    "caDlPage": {
+      "prompt": "カリフォルニアの運転免許証をお持ちになっていますか？",
+      "noMessage": "商用学習者許可を取得するには、まずは基礎（非商用C級）運転免許証のための知識および運転スキル試験に合格する必要があります。",
+      "yesSection": {
+        "prompt": "最近の運転免許証の情報を提供してください。",
+        "explanation": "もっと完全な免許証履歴は後ほどの申し込み過程にてお聞きします。",
+        "dlNumberLabel": "運転免許証番号",
+        "issuedInLabel": "発行日",
+        "messageBody": "商用学習者許可（CLP）を取得するには、カリフォルニアの非商用C級運転免許証を取得する必要があります。これに対し、非商用C級の知識試験に合格する必要があります。",
+        "expiredMessage": {
+          "header": "お持ちの運転免許証は、有効期間が切れています。"
+        },
+        "nonCaliforniaMessage": {
+          "header": "お持ちの運転免許証は、カリフォルニアによるものではありません。"
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "ご希望の商用運転免許証の級別は？",
+      "values": [
+        "A級",
+        "B級",
+        "C級"
+      ],
+      "youMayDrive": "以下の車両を運転できます：",
+      "youMayTow": "以下の車両をけん引できます：",
+      "classA": {
+        "header": "商用A級では",
+        "driveItems": [
+          "B級とC級では許可するものなど、すべての適法の車両の<em>組み合わせ</em>"
+        ],
+        "towItems": [
+          "B級とC級の免許証を持つ運転手がけん引できるすべての車両",
+          "GVWRが10,000ポンドを超える単一車両",
+          "裏書きつきのすべてのトレーラーバス、または裏書きつきの、1台以上の車両。"
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "どの級が必要なのかはわかりません",
+        "classC": {
+          "header": "商用C級では",
+          "driveItems": [
+            "GVWRが26,000ポンドを超えない２輪車、またはGVWRが6,000 ポンドを超えない、標識が必要な危険物質(HazMat)を搬送する3輪車。HazMat裏書きが必要となります。",
+            "GVWRが26,000ポンドを超えない、または運転手を含め、10人以上を乗せるために設計・使用・維持されたバスまたは乗用車。乗客裏書きが必要となります。",
+            "商用C級免許証の許可するすべての車両。"
+          ],
+          "explanation": "商用C級免許証の許可するすべての車両をけん引することができます。"
+        },
+        "classB": {
+          "header": "商用B級では",
+          "driveItems": [
+            "商用C級免許証を持つ運転手が運転できるすべての車両。",
+            "重量が26,000ポンドを超える2輪車。",
+            "重量が6,000ポンドを超える3輪車。",
+            "バス（トレーラーバスを除く）。乗客裏書きが必要となります。",
+            "裏書き付きの、すべての農用車両。"
+          ],
+          "towItems": [
+            "GVWRが10,000ポンドを超えない単一車両",
+            "商用C級免許証を持つ運転手がけん引できるすべての車両。"
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "CDLにほかの裏書きを要求しますか？",
+      "whichSection": {
+        "prompt": "どちらですか？",
+        "values": {
+          "T": "ダブル/トリプル組み合わせ",
+          "N": "タンク車両",
+          "P": "乗用車",
+          "S": "スクールバス",
+          "H": "危険物質または廃棄物を搬送する標識のある車両",
+          "X": "危険物質または廃棄物を搬送するタンク車両",
+          "F": "消防士裏書き"
+        }
+      },
+      "certificationSection": {
+        "prompt": "DMVによる専門証明書はご希望ですか？",
+        "certifications": {
+          "prompt": "DMVオフィスでは、下記の証明を要求できます。",
+          "values": {
+            "transit": "搬送訓練証明書(VTT)の検証",
+            "ambulance": "救急車運転証明書",
+            "ham": "危険農業物質 (HAM)証明書。"
+          },
+          "FAQMissingCertifications": {
+            "title": "希望している証明書はここで表示されていません",
+            "body": {
+              "header": "下記の専門証明書は、カリフォルニア・ハイウェイ・パトロール (CHP) によって発行されます。",
+              "listItems": [
+                "公共補助交通車両（GPPV）",
+                "スクールバスの運転手証明書",
+                "学校活動用バス証明書",
+                "発達障害車用車両",
+                "農業労働者車証明書",
+                "けん引トラック運転証明書",
+                "青少年用バス証明書"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "<b>搬送試験検証</b>の証明書は、<b>乗用車</b>裏書きを要求します。",
+                "fullEndorsment": "すべての級別、裏書き、及び証明書に対する説明と必要事項は、カリフォルニアの<b>商用運転ハンドブック</b>で確認できます。"
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "知りません",
+        "body": {
+          "header": "下記の商用自動車を運転しようとする場合は、裏書きが必要となります。",
+          "listItems": [
+            "運転手を含め、10人以上を乗せるもの。",
+            "標識が必要な危険物質を搬送するもの。",
+            "1台以上の車両、またはトレーラーをけん引するもの。",
+            "タンク車両。"
+          ],
+          "explanation": "すべての級別、裏書き、及び証明に対する説明と必要事項は、カリフォルニアの商用運転ハンドブックで確認できます。"
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "お持ちのCDLにオートバイ（M級）を希望しますか？"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "確認事項：",
+        "values": {
+          "applyingClassA": "A級商用運転免許証を申し込んでいます。",
+          "applyingClassB": "B級商用運転免許証を申し込んでいます。",
+          "applyingClassC": "C級商用運転免許証を申し込んでいます。",
+          "renewingClassA": "A級商用運転免許証を更新しています。",
+          "renewingClassB": "B級商用運転免許証を更新しています。",
+          "renewingClassC": "C級商用運転免許証を更新しています。",
+          "updatingClassA": "A級商用運転免許証の情報を更新しています。",
+          "updatingClassB": "B級商用運転免許証の情報を更新しています。",
+          "updatingClassC": "C級商用運転免許証の情報を更新しています。",
+          "correctingClassA": "A級商用運転免許証の情報を修正します。",
+          "correctingClassB": "B級商用運転免許証の情報を修正します。",
+          "correctingClassC": "C級商用運転免許証の情報を修正します。",
+          "replacingClassA": "A級商用運転免許証を交換しています。",
+          "replacingClassB": "B級商用運転免許証を交換しています。",
+          "replacingClassC": "C級商用運転免許証を交換しています。"
+        }
+      },
+      "motorcycleSentence": "オートバイ/スクーターも運転希望です。",
+      "endorsements": {
+        "header": "下記の裏書が必要となります。",
+        "values": {
+          "T": "ダブル/トリプル",
+          "N": "タンク車両",
+          "P": "乗用車",
+          "S": "スクールバス",
+          "H": "HazMat (危険物質)",
+          "X": "タンク/HazMat",
+          "F": "消防士"
+        }
+      },
+      "certificates": {
+        "header": "下記の証明書がご希望です。",
+        "values": {
+          "ambulance": "救急車運転手",
+          "ham": "HAM",
+          "transit": "搬送訓練証明書(VTT)の検証"
+        }
+      },
+      "realID": "お持ちのCDLは、REAL IDと一致します。",
+      "fillOutNewApplication": {
+        "update": "運転免許証の情報を更新するには、新しい申請書に記入する必要があります。",
+        "correct": "運転免許証の情報はを修正するには、新しい申請書に記入する必要があります。",
+        "replace": "運転免許証を交換するには、新しい申請書に記入する必要があります。"
+      },
+      "sections": {
+        "header": "この申請は、 6つのセクションがあります。"
+      },
+      "timeStatement": "<p>終了するには<b>10分</b>程度かかります。</p><p>これが終わったら、あなたの地元のDMVの事務所を訪問する必要があります。</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "マイCDL",
+    "CdlNumberLabel": "CDL番号",
+    "typeOfDriving": "運転種類",
+    "currentDlNumberLabel": "現在のDL番号",
+    "licenseOutsideCAlabel": "カリフォルニア地区以外の免許証"
+  },
   "confirmationPage": {
     "header": "確認",
     "subHeader": "あなたの情報を受理しました。",
@@ -152,6 +631,44 @@
     "endorsement": "推薦を選択してください。",
     "cardTypeMissing": "ご希望のカードを選択してください。",
     "choosePoliticalPartyNowSelectionMissing": "政党支持の選択をご希望の場合お知らせください。"
+  },
+  "footer": {
+    "accessibility": "可能性",
+    "conditionsOfUser": "使用条件",
+    "disabilityServices": "障害者福祉",
+    "help": "ヘルプ",
+    "home": "ホーム",
+    "privacy": "プライバシーポリシー",
+    "siteMap": "サイトマップ",
+    "support": "技術サポート",
+    "copyright": "Copyright &copy; 2018 State of California"
+  },
+  "header": {
+    "dlApplication": "運転免許証の申請",
+    "idApplication": "IDカードの申請",
+    "bothApplications": "運転免許証とIDカードの申請",
+    "cdlApplication": "商用運転免許証の申請",
+    "Logout": "ログアウト"
+  },
+  "sections": {
+    "getStarted": "開始する",
+    "selfCertification": "自己保証",
+    "myHistory": "私の経歴",
+    "tenYearHistory": "十年間の経歴",
+    "summary": "概要",
+    "welcomeBack": "このサイトにお戻りくださったことを感謝します"
+  },
+  "ageMessages": {
+    "notASenior": "無料高齢者IDカードの対象ではなくなりました。",
+    "preregistration": "投票者として、事前登録されます。",
+    "cdlAgeRestriction": "カリフォルニアにおいての運転免許証を申請するには、18歳以上でなければなりません。"
+  },
+  "extras": {
+    "enterTextHere": "ここでテキストを入力する",
+    "notRegisteredToVoteMessage": "<em>いいえ</em>または<em>答えたくない</em>と選択した場合は、投票者として事前登録されません。",
+    "vetranRemoveMessage": "はい、外します。",
+    "yourConfirmationCode": "確認コードは以下になります。",
+    "confirmationAlsoEmailed": "これはまた、メールでお送りします。"
   },
   "intro": {
     "switchLanguagePage": {
@@ -532,6 +1049,31 @@
       "messageYes": "あなたの寄付をいただき、ありがとうございました！私達は、この 2 ドルをあなたの合計の料金に追加します。"
     }
   },
+  "parentGuardianSignaturePage": {
+    "Prompt": "18歳未満であるため、親または保護者の署名が必要となります。",
+    "explanation": "1人以上の親または保護者がいる場合は、2人ともの署名が必要となります。",
+    "methodSection": {
+      "prompt": "何をご希望ですか？",
+      "values": {
+        "electronically": "親/保護者は電子署名します",
+        "atDMV": "親/保護者はDMVで署名します",
+        "emancipated": "自力で生活している未成年者です"
+      }
+    },
+    "signatureSection": {
+      "explanation": "親/保護者が署名しない限り、ご申請が完成しません。",
+      "prompt": "親/保護者によって完成される部分は、下記となります。",
+      "liabilityStatement": "この未成年者の民事責任を認め、且つ未成年者に発行された臨時許可は、彼/彼女が運転訓練を受けるまで有効ではないと理解しています。",
+      "electronicSignatureSection": {
+        "prompt": "電子署名として、お名前と今日の日付を入力してください。",
+        "nameLabel": "法律上のフルネーム",
+        "dateLabel": "今日の日付"
+      },
+      "weNeedBasicInfo": "いくつかの基本情報をいただきます。",
+      "addAnotherSigntature": "もうひとりの親/保護者の署名を追加します"
+    },
+    "emancipatedInfoMessage": "<b>自力で生活している未成年者であることを証明するには</b>、DL 11証をもって自分の独立性を証明し、<b>且つ</b>財政的責任に関する証明を提出する必要があります。<a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>より詳しい情報は、DMV公式サイトを参照してください。</a>"
+  },
   "shared": {
     "navigation": {
       "back": "戻る",
@@ -561,6 +1103,70 @@
     "summary": {
       "notProvided": "未通知",
       "none": "なし"
+    }
+  },
+  "usStates": {
+    "label": "州",
+    "values": {
+      "AL": "アラバマ",
+      "AK": "アラスカ",
+      "AZ": "アリゾナ",
+      "AR": "アーカンソー",
+      "CA": "カリフォルニア",
+      "CO": "コロラド",
+      "CT": "コネチカット",
+      "DE": "デラウェア",
+      "DC": "コロンビア特別区",
+      "FL": "フロリダ",
+      "GA": "ジョージア",
+      "HI": "ハワイ",
+      "ID": "アイダホ",
+      "IL": "イリノイ",
+      "IN": "インディアナ",
+      "IA": "アイオワ",
+      "KS": "カンザス",
+      "KY": "ケンタッキー",
+      "LA": "ルイジアナ",
+      "ME": "メーン",
+      "MD": "メリーランド",
+      "MA": "マサチューセッツ",
+      "MI": "ミシガン",
+      "MN": "ミネソタ",
+      "MS": "ミシシッピ－",
+      "MO": "ミズーリ",
+      "MT": "モンタナ",
+      "NE": "ネブラスカ",
+      "NV": "ネバダ",
+      "NH": "ニューハンプシャー",
+      "NJ": "ニュージャージー",
+      "NM": "ニューメキシコ",
+      "NY": "ニューヨーク",
+      "NC": "ノースカロライナ",
+      "ND": "ノースダコタ",
+      "OH": "オハイオ",
+      "OK": "オクラホマ",
+      "OR": "オレゴン",
+      "PA": "ペンシルバニア",
+      "RI": "ロードアイランド",
+      "SC": "サウスカロライナ",
+      "SD": "サウスダコタ",
+      "TN": "テネシー",
+      "TX": "テキサス",
+      "UT": "ユタ",
+      "VT": "バーモント",
+      "VA": "バージニア",
+      "WA": "ワシントン",
+      "WV": "ウェストバージニア",
+      "WI": "ウィスコンシン",
+      "WY": "ワイオミング",
+      "AS": "アメリカ領サモア",
+      "GU": "グアム",
+      "MH": "マーシャル諸島",
+      "FM": "ミクロネシア連邦",
+      "MP": "北マリアナ",
+      "PW": "パラオ",
+      "PR": "プエルトリコ",
+      "VI": "ヴァージン諸島"
     }
   },
   "summaryPage": {
