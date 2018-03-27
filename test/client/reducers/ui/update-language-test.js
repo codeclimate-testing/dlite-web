@@ -1,9 +1,8 @@
 'use strict';
 
-import assert from 'assert';
-
-import updateLanguage from '../../../../../client/reducers/application/basics/update-language';
-
+import assert                       from 'assert';
+import updateLanguage               from '../../../../client/reducers/ui/language';
+import { getLanguageFromCookie }    from '../../../../client/helpers/data/cookies';
 describe('application language reducer', function() {
   let action, language, firstState;
   beforeEach(function() {
@@ -15,7 +14,6 @@ describe('application language reducer', function() {
       }
     };
     language =  '',
-
     firstState = updateLanguage(language, action);
   });
 
@@ -25,6 +23,9 @@ describe('application language reducer', function() {
     });
     it('updates app language', function() {
       assert.equal(firstState, 'zh');
+    });
+    it('updates the language cookie', function() {
+      assert.equal(getLanguageFromCookie(), action.payload.value);
     });
   });
 

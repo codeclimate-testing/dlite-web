@@ -7,7 +7,7 @@ function defaultState() {
 }
 
 export default function(state = defaultState(), action) {
-  if (action.type === TYPES.UPDATE_LANGUAGE || action.type === TYPES.UPDATE_BALLOT_LANGUAGE) {
+  if (action.type === TYPES.UPDATE_CDL_LANGUAGE || action.type === TYPES.UPDATE_BALLOT_LANGUAGE) {
       let payload = action.payload.value;
       return payload || state;
   }

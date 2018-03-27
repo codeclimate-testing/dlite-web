@@ -45,7 +45,7 @@ const VoterRegistration = (props) => {
         locale                  = { locale }
       />
       <BallotLanguage
-        ballotLanguage          = {cdl.basics.language.ballotLanguage}
+        ballotLanguage          = {cdl.voting.ballotLanguage}
         eligibilityRequirements = {cdl.voting.eligibilityRequirements}
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}

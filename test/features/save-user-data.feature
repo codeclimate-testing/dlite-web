@@ -3,6 +3,16 @@ Feature: Save user data
   I want to save my user data to my application from the summary screen
   So that my application can be used in the field office to enable my request
 
+Scenario: Choosing a non-English language
+  Given I go to the new online DL application page
+  When I visit the page to choose application language
+  When I choose Thai as my application language
+  When I visit ballot language page
+  Then I will see the text is in Thai
+  And I will see the language I chose is selected
+  When I visit the page to choose application language
+  Then I choose English as my application language
+
 Scenario: renewing one ID and no social
     Given I go to the new online DL application page
     When I visit the date of birth page

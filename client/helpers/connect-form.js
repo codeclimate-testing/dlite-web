@@ -1,32 +1,10 @@
 'use strict';
 
-import { connect }  from 'react-redux';
-import handlers     from './handlers';
+import { connect }          from 'react-redux';
+import mapDispatchToProps   from './handlers/map-dispatch-to-props';
 
 function connectForm(mapStateToProps, action, form) {
-  function mapDispatchToProps(dispatch) {
-    const onChange = handlers.onInputChange(action, dispatch);
-    const onSubmit = handlers.onFormSubmit(dispatch);
-    const onBlur   = handlers.onBlur(dispatch);
-    const onFocus  = handlers.onFocus(dispatch);
-    const onBlurValidate = handlers.onBlurValidate(dispatch);
-    const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
-    const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
-    const onSelectChange = handlers.onSelectChange(action, dispatch);
-
-    return {
-      onSubmit,
-      onChange,
-      onBlur,
-      onFocus,
-      onBlurValidate,
-      onFocusClearValidation,
-      onSubmitShowErrors,
-      onSelectChange
-    };
-  }
-
-  return connect(mapStateToProps, mapDispatchToProps)(form);
+  return connect(mapStateToProps, mapDispatchToProps(action))(form);
 }
 
 export default connectForm;

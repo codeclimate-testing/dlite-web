@@ -93,4 +93,14 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.then('I will see the text is in Thai', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert(text.includes('เลือกภาษาสำหรับเอกสารการเลือกตั้งของท่าน'));
+      })
+      .then(done)
+      .catch(done);
+  });
 };

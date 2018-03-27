@@ -5,7 +5,6 @@ import { nextPath }               from './navigation/page';
 import { postData }               from '../actions/api-actions';
 import getTranslation             from '../actions/get-translation';
 import { updateLanguage }         from '../actions/index';
-import { languageIsSelected }     from './data/application';
 import {
   updateCitizenStatus,
   updateEligibilityRequirements
@@ -57,7 +56,7 @@ export const applicationLanguageSubmit = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();
 
-    let choiceMade        = languageIsSelected(stateProps.language);
+    let choiceMade        = hasValue(stateProps.language);
     let nonEnglishChoice  = stateProps.language !== 'en';
 
     if (!choiceMade) {

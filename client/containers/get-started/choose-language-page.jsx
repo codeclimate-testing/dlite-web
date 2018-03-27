@@ -20,7 +20,7 @@ const Page = (props) => {
 function mapStateToProps(state) {
   return {
     focused:      state.ui.focus,
-    language:     state.application.basics.language,
+    language:     state.ui.language,
     locale:       state.ui.locale,
     server:       state.server
   };

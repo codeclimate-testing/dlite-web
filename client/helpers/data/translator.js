@@ -32,3 +32,10 @@ export const translateThis = (translationPath, props) => {
 
   return { __html: value };
 }
+
+export const needToLoadTranslation = (props) => {
+  return (  props.language !== 'en' &&
+            !props.translations.selected.hasOwnProperty('shared') &&
+            props.apiStatus !== 'loading'
+  );
+};

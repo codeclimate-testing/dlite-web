@@ -20,10 +20,7 @@ describe('on submit dispatches', function() {
     };
 
     stateProps = {
-      language: {
-        appLanguage: '',
-        ballotLanguage: ''
-      },
+      language: '',
       citizenStatus: '',
       server: {
         apiState: ''

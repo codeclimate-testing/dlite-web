@@ -28,11 +28,7 @@ function clientData() {
       'donateMoney': 'No'
     },
     basics: {
-      'language':  {
-        'appLanguage': '',
-        'ballotLanguage': '',
-        'hasChosenBallot': ''
-      },
+      'language':  '',
       'legalName': {
         'firstName': 'Jane',
         'middleName': 'x',

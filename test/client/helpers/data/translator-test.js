@@ -6,7 +6,8 @@ import en_json    from '../../../../client/i18n/en.json';
 import es_json    from '../../../../client/i18n/es.json';
 import {
   keyLookup,
-  translateThis
+  translateThis,
+  needToLoadTranslation
 }    from '../../../../client/helpers/data/translator';
 
 describe('Translator', () => {
@@ -60,5 +61,35 @@ describe('Translator', () => {
       done();
     });
 
+  });
+
+  describe('#needToLoadTranslation', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        language: 'en',
+        translations: {
+          default: en_json,
+          selected: ''
+        },
+        apiStatus: 'success'
+      };
+    });
+
+    it('returns false if props.language is en', function() {
+      assert.equal(needToLoadTranslation(props), false);
+    });
+    it('returns false if translations.selected already exists', function() {
+      props.translations.selected = es_json;
+      assert.equal(needToLoadTranslation(props), false);
+    });
+    it('returns false if apiStatus is loading', function() {
+      props.apiStatus = 'loading';
+      assert.equal(needToLoadTranslation(props), false);
+    });
+    it('returns true if props.language is not english, the selected object is empty, and the apiStatus is not loading', function() {
+      props.language = 'vi';
+      assert.equal(needToLoadTranslation(props), true);
+    });
   });
 });

@@ -31,10 +31,6 @@ describe('ballot language reducer', function() {
       assert.equal(firstState, 'zh');
     });
 
-    it('changing the app language when the ballot language has already been selected will not update the ballot language', function() {
-      let secondState = updateBallotLanguage(firstState, { type: 'UPDATE_LANGUAGE', payload: { name: 'language', value: 'hi' }});
-      assert.equal(secondState, 'zh');
-    });
   });
 
   describe('ACTION UPDATE BALLOT LANGUAGE', function() {

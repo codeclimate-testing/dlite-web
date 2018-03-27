@@ -1,17 +1,16 @@
 'use strict';
 import { pathForPage }          from '../navigation/page';
 
-export const buildLoggedIn = () => {
-  return document.cookie = 'isLoggedIn=true;path=/';
-};
-
 export const buildAppName = (appName) => {
   return document.cookie = `appName=${appName};path=/`;
 };
 
-
 export const getAppNameCookie = () => {
   return document.cookie.replace(/(?:(?:^|.*;\s*)appName\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+};
+
+export const buildLoggedIn = () => {
+  return document.cookie = 'isLoggedIn=true;path=/';
 };
 
 export const getLoggedIn = () => {
@@ -41,4 +40,11 @@ export const afterIntro = (pathname) => {
 
 export function requireLogIn(props, env = APP_ENV){
   return (isProduction(env) && afterIntro(props.location.pathname) && !isLoggedIn());
+};
+export function getLanguageFromCookie() {
+  return document.cookie.replace(/(?:(?:^|.*;\s*)language\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+}
+
+export const saveLanguageCookie = (value) => {
+  return document.cookie = `language=${value};path=/`;
 };

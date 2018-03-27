@@ -18,4 +18,18 @@ module.exports = function (world) {
     .then(() => { done(); })
     .catch(done);
   });
+
+  world.when('I choose Thai as my application language', function(done) {
+    browser
+      .click('label[for="language-th"]')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I choose English as my application language', function(done) {
+    browser
+      .click('label[for="language-en"]')
+      .then(done)
+      .catch(done);
+  });
 };

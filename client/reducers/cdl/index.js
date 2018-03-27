@@ -23,7 +23,7 @@ import updateResidency                    from './basics/update-residency';
 import updateDateOfBirth                  from './basics/update-date-of-birth';
 import updatePhysicalTraits               from './basics/update-physical-traits';
 import updateHeightWeight                 from './basics/update-traits-height-weight';
-import updateLanguage                     from './basics/update-language';
+import updateLanguage                     from '../ui/language';
 
 import updateCitizenStatus                from './voting/update-citizen-status';
 import updateEligibilityRequirements      from './voting/update-eligibility-requirements';
@@ -31,6 +31,7 @@ import updateOptOut                       from './voting/update-opt-out';
 import updatePoliticalPartyChoose         from './voting/update-choose-party';
 import updateBallotByMail                 from './voting/update-ballot-by-mail';
 import updateContactMethods               from './voting/update-contact-methods';
+import updateBallotLanguage               from './voting/update-ballot-language';
 
 import updateMedical                      from './my-history/update-medical';
 import updateCurrentDL                    from './my-history/update-current-dl';
@@ -72,7 +73,8 @@ const rootReducer = combineReducers({
     optOut                  : updateOptOut,
     politicalPartyChoose    : updatePoliticalPartyChoose,
     ballotByMail            : updateBallotByMail,
-    contactMethods          : updateContactMethods
+    contactMethods          : updateContactMethods,
+    ballotLanguage          : updateBallotLanguage
   }),
   currentCardInfo         : updateCurrentCard,
   classM                  : updateMotorcycle,

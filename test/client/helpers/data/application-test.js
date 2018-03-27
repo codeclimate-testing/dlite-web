@@ -4,7 +4,8 @@ import assert from 'assert';
 
 import {
   languageIsSelected,
-  buildConfCode
+  buildConfCode,
+  cookieOrEnglish
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -25,5 +26,14 @@ describe('Data helpers for application', function() {
       };
       assert.equal(buildConfCode(props), '2B41-7380');
     });
-  })
+  });
+
+  describe('#cookieOrEnglish', function() {
+    it('returns en if there is no language cookie', function() {
+      assert.equal(cookieOrEnglish(''), 'en');
+    });
+    it('returns the cookie value if it exists', function() {
+      assert.equal(cookieOrEnglish('sl'), 'sl');
+    });
+  });
 });

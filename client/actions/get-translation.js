@@ -39,7 +39,6 @@ const getErrorMessage = (err) => {
 const getTranslation = function (locale, fetcher) {
   return function (dispatch) {
     dispatch(updateApiStatus('loading'));
-
     return fetchTranslation(locale, fetcher)
       .then(function (data) {
         dispatch(getTranslationSuccess(data));

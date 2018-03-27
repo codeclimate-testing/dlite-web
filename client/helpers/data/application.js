@@ -1,9 +1,16 @@
 'use strict';
 
-import { hasValue }     from './validations';
+import { hasValue }           from './validations';
 
-export const languageIsSelected = (language) => {
-  return hasValue(language);
+export const cookieOrEnglish = (cookieLanguage) => {
+  if (!hasValue(cookieLanguage)) {
+    return 'en';
+  }
+  return cookieLanguage;
+};
+
+export const languageIsSelected = (value) => {
+  return hasValue(value);
 };
 
 export const ballotLanguageIsSelected = (ballotLanguage) => {

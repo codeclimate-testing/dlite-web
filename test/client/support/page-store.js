@@ -7,7 +7,8 @@ export default {
   ui: {
     section: {},
     addApp: '',
-    locale: 'en'
+    locale: 'en',
+    language: 'en'
   },
   application: {
     basics: {
