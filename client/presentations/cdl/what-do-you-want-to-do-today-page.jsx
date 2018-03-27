@@ -6,20 +6,10 @@ import Page                 from '../../containers/page.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
-import translations         from '../../i18n';
 import Translator           from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
 
-  const tempObjectThatNeedsTranslations = {
-    values: [
-      translations[locale].cdl.wdywtdtPage.values[0],
-      translations[locale].cdl.wdywtdtPage.values[1],
-      translations[locale].cdl.wdywtdtPage.values[2],
-      translations[locale].cdl.wdywtdtPage.values[3]
-    ]
-  };
   return (
     <Page
       {...props}
@@ -41,26 +31,22 @@ const Form = (props) => {
                 selectedValue     = { props.cardAction }
                 errorMessage      = { props.validations.cardAction()}
               >
-                <RadioSelector
-                  value = 'new'
-                  text={tempObjectThatNeedsTranslations.values[0]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value = 'renew'
-                  text={tempObjectThatNeedsTranslations.values[1]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value = 'change'
-                  text={tempObjectThatNeedsTranslations.values[2]}
-                  className='long-text'
-                />
-                <RadioSelector
-                  value='replace'
-                  text={tempObjectThatNeedsTranslations.values[3]}
-                  className='long-text'
-                />
+                <RadioSelector value = 'new' className='long-text'>
+                  <Translator tag = 'span' translationPath = 'cdl.wdywtdtPage.values.0' />
+                </RadioSelector>
+
+                <RadioSelector value = 'renew' className='long-text'>
+                  <Translator tag = 'span' translationPath = 'cdl.wdywtdtPage.values.1' />
+                </RadioSelector>
+
+                <RadioSelector value = 'change' className='long-text'>
+                  <Translator tag = 'span' translationPath = 'cdl.wdywtdtPage.values.2' />
+                </RadioSelector>
+
+                <RadioSelector value='replace' className='long-text'>
+                  <Translator tag = 'span' translationPath = 'cdl.wdywtdtPage.values.3' />
+                </RadioSelector>
+
               </RadioCollection>
             </fieldset>
           </div>

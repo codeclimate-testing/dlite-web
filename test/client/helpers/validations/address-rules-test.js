@@ -1,9 +1,7 @@
 'use strict';
 
 import assert   from 'assert';
-
 import rules    from '../../../../client/helpers/validations/address-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 describe('enter address page validation rules:', function() {
 
@@ -23,8 +21,7 @@ describe('enter address page validation rules:', function() {
         city:     'Crazydino',
         state:    'CA',
         zip:      '95666'
-      },
-      locale: 'en'
+      }
     };
 
     assert.deepEqual(rules.homeAddressSameAsMailing(props), []);
@@ -54,15 +51,14 @@ describe('enter address page validation rules:', function() {
         city:     '',
         state:    '',
         zip:      ''
-      },
-      locale: 'en'
+      }
     };
-    assert.deepEqual(rules.homeAddressSameAsMailing(props), ['Please let us know where you receive mail.']);
-    assert.deepEqual(rules.homeStreet_1(props), ['Please enter what street you live on.']);
-    assert.deepEqual(rules.homeCity(props), ['Please enter the city you live in.']);
-    assert.deepEqual(rules.mailingStreet_1(props), ['Please enter what street you live on.']);
+    assert.deepEqual(rules.homeAddressSameAsMailing(props), ['errorMessages.mailingAddressMissing']);
+    assert.deepEqual(rules.homeStreet_1(props), ['errorMessages.streetAddressMissing']);
+    assert.deepEqual(rules.homeCity(props), ['errorMessages.cityMissing']);
+    assert.deepEqual(rules.mailingStreet_1(props), ['errorMessages.streetAddressMissing']);
     assert.deepEqual(rules.mailingStreet_2(props), []);
-    assert.deepEqual(rules.mailingCity(props), ['Please enter the city you live in.']);
+    assert.deepEqual(rules.mailingCity(props), ['errorMessages.cityMissing']);
   });
 
   it('has errors, when non-english data are entered', function() {
@@ -81,17 +77,16 @@ describe('enter address page validation rules:', function() {
         city:     'नमस्ते',
         state:    'CA',
         zip:      'नमस्ते'
-      },
-      locale: 'en'
+      }
     };
-    assert.deepEqual(rules.homeStreet_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.homeStreet_2(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.homeCity(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.homeZip(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.mailingStreet_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.mailingStreet_2(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.mailingCity(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.mailingZip(props), ['Sorry, your card can only include English characters.']);
+    assert.deepEqual(rules.homeStreet_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.homeStreet_2(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.homeCity(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.homeZip(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.mailingStreet_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.mailingStreet_2(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.mailingCity(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.mailingZip(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
   });
 
 

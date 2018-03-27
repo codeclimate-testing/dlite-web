@@ -20,6 +20,7 @@ const TextArea = (props) => {
       >
         <div className='unit'>{ props.description }</div>
         <ErrorIcon errorClass={ className } />
+        { props.children }
       </label>
       <div className="input-container">
         <textarea

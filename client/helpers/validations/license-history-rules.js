@@ -12,7 +12,7 @@ let checkChars = (name) => {
     }
     let value = props[name];
     if (!hasOnlyEnglishChars(value)) {
-      return [errorMessages.dataIncludesNonEnglishCharacters]
+      return ['errorMessages.dataIncludesNonEnglishCharacters']
     }
     return [];
   };
@@ -25,7 +25,7 @@ let checkNums = (name) => {
       return error;
     }
     if (!expirationDateValidator(name, props)) {
-      error.push(errorMessages.expirationDateInvalid);
+      error.push('errorMessages.expirationDateInvalid');
     }
     return error;
   };

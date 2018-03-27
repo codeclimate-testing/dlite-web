@@ -37,7 +37,6 @@ describe('ChooseCardPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
       props = {
         cardType: [],
         cardAction: '',
@@ -54,8 +53,7 @@ describe('ChooseCardPage', function() {
         dateOfBirth,
         accordions,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

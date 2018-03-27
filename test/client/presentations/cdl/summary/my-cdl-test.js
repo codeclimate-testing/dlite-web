@@ -7,7 +7,6 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
-import translations     from '../../../../../client/i18n';
 import MyApp            from '../../../../../client/presentations/cdl/summary/cdl-app.jsx';
 
 describe('CDL Summary My CDL Application section', function() {
@@ -16,9 +15,7 @@ describe('CDL Summary My CDL Application section', function() {
 
   beforeEach(function() {
     props = {
-      ui: {
-        locale: 'en'
-      },
+      ui: { },
       cdl: {
         cardAction: '',
         currentCardInfo: {

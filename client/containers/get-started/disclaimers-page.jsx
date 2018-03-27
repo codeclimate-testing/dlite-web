@@ -28,8 +28,7 @@ const mapStateToProps = (state) => {
   return {
     disclaimers      : state.application.disclaimers,
     focused          : state.ui.focus,
-    validations      : state.ui.validations,
-    locale           : state.ui.locale
+    validations      : state.ui.validations
   };
 };
 

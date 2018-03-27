@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import EndorsementIngo           from '../../../../../client/presentations/get-started/intro-page/endorsement-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('EndorsementInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
     let cardChanges = {
       correctOrUpdate: '',
@@ -58,8 +57,7 @@ describe('EndorsementInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -86,7 +84,7 @@ describe('EndorsementInfo', function() {
           <EndorsementIngo  {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.firefighterEndorsement), true);
+      assert.equal(component.text().includes('You need a firefighter endorsement.'), true);
     });
   });
 });

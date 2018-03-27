@@ -26,7 +26,7 @@ const Form = (props) => {
             selectedValue = { props.classM }
             errorMessage  = { props.validations.select() }
           >
-            { radioYesNoGroup(props.locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
 

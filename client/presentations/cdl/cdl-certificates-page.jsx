@@ -6,10 +6,8 @@ import CertificatesCheckboxes  from './certificates/certificates-checkboxes.jsx'
 import CertificatesAccordion   from './certificates/certificates-accordion.jsx';
 import NavigationButtons       from '../navigation-buttons.jsx';
 import Page                    from '../../containers/page.jsx';
-import translations            from '../../i18n';
 
 const Form = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}

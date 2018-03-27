@@ -4,7 +4,6 @@ import React from 'react';
 import * as dataPresent from '../../../../helpers/data-present';
 import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
-import translations     from '../../../../i18n';
 import {
   getStringByPreviousNames
 } from '../../../../helpers/data/my-history';
@@ -18,8 +17,8 @@ const NamesHistory = (props) => {
       {...props}
     >
       <SummaryItem
-        title = { translations[props.locale].summaryPage.myHistory.previousNames}
-        text  = {text}
+        title = 'summaryPage.myHistory.previousNames'
+        text  = { text }
       />
     </PageSummaryLink>
   );

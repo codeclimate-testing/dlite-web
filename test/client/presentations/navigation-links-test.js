@@ -1,20 +1,17 @@
 'use strict';
 
-import assert     from 'assert';
-
-import React      from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import sinon      from 'sinon';
-
-import wrapperGenerator  from '../support/wrapper';
-import NavigationButtons from '../../../client/presentations/navigation-buttons.jsx';
+import assert                   from 'assert';
+import React                    from 'react';
+import configure                from '../support/configure-enzyme';
+import { render }               from 'enzyme';
+import sinon                    from 'sinon';
+import store                    from '../support/page-store';
+import wrapperGenerator         from '../support/wrapper';
+import NavigationButtons        from '../../../client/presentations/navigation-buttons.jsx';
 
 describe('NavigationButtons', function() {
-  let Wrapper = wrapperGenerator({});
-  let props = {
-    locale: 'en'
-  }
+  let Wrapper = wrapperGenerator(store);
+  let props = { }
   it('will show an error message in a box if one is provided', function() {
     let component = render(
       <Wrapper>

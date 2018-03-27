@@ -30,12 +30,11 @@ describe('OrganDonationPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         organDonation,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

@@ -14,8 +14,8 @@ const RealIdDocuments = (props) => {
 
   if (gettingRealID(props)){
     return (
-      <div key='real-id-documents'>
-        <h4 className="real-id-documents">Real ID birth date, name and legal presence proof</h4>
+      <div key='real-id-documents translation-missing'>
+        <h4 className="real-id-documents ">Real ID birth date, name and legal presence proof</h4>
         <p>
         We need to verify your date of birth and what we call your “legal presence”.
         Documents should use your true, full name that you use today or we will need

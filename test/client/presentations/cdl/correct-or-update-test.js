@@ -36,8 +36,7 @@ describe('CDL Change Details page', function() {
       cardChanges,
       onSubmit,
       onChange,
-      validations,
-      locale: 'en'
+      validations
     };
   });
 

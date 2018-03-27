@@ -3,30 +3,13 @@
 import React              from 'react';
 import { getIDString }    from '../../../helpers/data/get-started';
 import { replaceID }      from '../../../helpers/data/card-type';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const ReplacingIDInfo = (props) => {
-  let locale = props.locale;
-  const replacingID = 
-        <Translation tag='p'>
-          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingID}
-        </Translation>
-    
-  const replacingReducedFeeID = 
-        <Translation tag='p'>
-          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID}
-        </Translation>
-    
-  const replacingNoFeeID = 
-        <Translation tag='p' className='translation-missing'>
-          You are replacing a no-fee ID card
-        </Translation>
-    
-  const replacingSeniorID = 
-        <Translation tag='p'>
-          {translations[locale].intro.getStartedPage.whatYouAreDoing.replacingSeniorID}
-        </Translation>
+  const replacingID           = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingID' />
+  const replacingReducedFeeID = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID' />
+  const replacingNoFeeID      = <p className='translation-missing'> You are replacing a no-fee ID card </p>
+  const replacingSeniorID     = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingSeniorID' />
 
   if(!replaceID(props)) { return null; }
   let ID = getIDString(props, replacingID, replacingReducedFeeID, replacingNoFeeID, replacingSeniorID);

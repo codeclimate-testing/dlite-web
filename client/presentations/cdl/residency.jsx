@@ -7,7 +7,6 @@ import ResidencyRadios          from './residency/resident-form.jsx';
 import AddressForm              from './residency/address.jsx';
 import ResidencyMessageNo       from './residency/no-message.jsx';
 import { notResident }          from '../../helpers/data/cdl';
-import translations             from '../../i18n';
 import Translator               from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {

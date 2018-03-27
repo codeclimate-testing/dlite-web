@@ -27,7 +27,6 @@ describe('Current Card Info shared components', function() {
       number: '',
       title: '',
       showIf: true,
-      locale: 'en',
       editKey: 'currentCardInfo'
     }
   });
@@ -59,7 +58,9 @@ describe('Current Card Info shared components', function() {
     it('returns null if showIf is false', function() {
       props.showIf = false;
       let component = render(
-        <CardDate { ...props } />
+        <Wrapper>
+          <CardDate { ...props } />
+        </Wrapper>
       );
       assert.equal(component.text(), '');
     });
@@ -71,7 +72,9 @@ describe('Current Card Info shared components', function() {
       };
       props.showIf = true;
       let component = render(
-        <CardDate { ...props } />
+        <Wrapper>
+          <CardDate { ...props } />
+        </Wrapper>
       );
       assert.equal(component.text().includes('10/10/2000'), true);
     });

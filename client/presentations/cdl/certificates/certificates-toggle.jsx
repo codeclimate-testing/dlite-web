@@ -3,16 +3,17 @@
 import React            from 'react';
 import RadioCollection  from '../../radio-selector-collection.jsx';
 import radioYesNoGroup  from '../../radio-yes-no-group.jsx';
-import translations     from '../../../i18n';
-import Translation      from '../../../i18n/translate-tag.jsx';
+import Translator       from '../../../i18n/translator-tag.jsx';
 
 const FormControls = (props) => {
-  let locale = props.locale
+
   return (
     <div className='certificates-toggle'>
-      <Translation tag='h2' className='question'>
-       {translations[locale].cdl.endorsmentsPage.certificationSection.prompt}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'cdl.endorsmentsPage.certificationSection.prompt'
+      />
       <div className='row'>
         <fieldset role='group' aria-label='Certificates needed choice'>
           <RadioCollection
@@ -21,7 +22,7 @@ const FormControls = (props) => {
             onBlur = { props.onBlurValidate }
             errorMessage={ props.validations.needCertificates() }
           >
-            {radioYesNoGroup(locale)}
+            {radioYesNoGroup()}
           </RadioCollection>
         </fieldset>
       </div>

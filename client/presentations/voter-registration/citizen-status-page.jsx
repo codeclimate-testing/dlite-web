@@ -30,15 +30,6 @@ const VoterIntro = (props) => {
   return isPreregistering(props.dateOfBirth) ? <PreRegIntro {...props}/> : <RegIntro {...props}/>;
 };
 
-const AccordionTitle = () => {
-  return (
-    <Translator
-      tag               = 'span'
-      translationPath   = 'votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen'
-    />
-  );
-};
-
 const CitizenStatusPage = (props) => {
   let showPreReg = isPreregistering(props.dateOfBirth);
   return (
@@ -84,7 +75,7 @@ const CitizenStatusPage = (props) => {
 
         <Accordion
           id     = 'what-if-not-citizen'
-          title  = {<AccordionTitle />}
+          title  = 'votingRegistration.citizenshipPage.faqQuestionWhatIfNotCitizen'
         >
           <Translator
             tag               = 'p'

@@ -34,12 +34,11 @@ describe('LicenseIssuesPage', function() {
       };
 
       let onChange = spy();
-      let locale = 'en';
+
       props = {
         licenseIssues,
         validations,
-        onChange,
-        locale
+        onChange
       }
     });
 

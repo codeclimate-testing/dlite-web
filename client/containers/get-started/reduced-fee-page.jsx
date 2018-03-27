@@ -28,7 +28,6 @@ const mapStateToProps = (state) => {
     cardType    : state.application.cardType,
     focused     : state.ui.focus,
     validations : state.ui.validations,
-    locale      : state.ui.locale,
     flow        : state.ui.flow
   };
 };

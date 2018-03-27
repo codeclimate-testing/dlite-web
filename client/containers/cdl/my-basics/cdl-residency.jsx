@@ -8,8 +8,7 @@ import Presentation             from '../../../presentations/cdl/residency.jsx';
 import { updateCdlResidency }   from '../../../actions/index';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new AddressValidator(Object.assign(props.address, {locale}), props.validations);
+  let validations       = new AddressValidator(props.address, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlResidency', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +28,6 @@ function mapStateToProps(state) {
     validations:    state.ui.validations,
     focused:        state.ui.focus,
     hover:          state.ui.hover,
-    locale:         state.ui.locale,
     flow:           state.ui.flow
   };
 };

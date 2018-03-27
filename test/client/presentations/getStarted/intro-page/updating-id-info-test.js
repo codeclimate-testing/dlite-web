@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import UpdatingIDInfo           from '../../../../../client/presentations/get-started/intro-page/updating-id-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('UpdatingIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
     let cardChanges = {
       correctOrUpdate: 'update',
@@ -59,8 +58,7 @@ describe('UpdatingIDInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -103,7 +101,7 @@ describe('UpdatingIDInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingID), true);
+      assert.equal(component.text().includes('You are updating an ID card'), true);
     });
 
     it('shows that user is getting a reduced fee ID on get started page', function() {
@@ -114,7 +112,7 @@ describe('UpdatingIDInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingReducedFeeID), true);
+      assert.equal(component.text().includes('You are updating a reduced-fee ID card'), true);
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
@@ -125,7 +123,7 @@ describe('UpdatingIDInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingSeniorID), true);
+      assert.equal(component.text().includes('You are updating a senior ID card'), true);
     });
   });
 });

@@ -11,12 +11,10 @@ import { render }       from 'enzyme';
 
 describe('Yes-No components on summary pages', function() {
   let props;
-  let locale = 'en';
   beforeEach(function() {
     props = {
       title: '',
-      showIf: '',
-      locale
+      showIf: ''
     };
   });
 

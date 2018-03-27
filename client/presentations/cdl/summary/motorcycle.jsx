@@ -14,7 +14,6 @@ import {
 
 const Motorcycle = (props) => {
   if(!hasValue(props.classM)) { return null; }
-  let locale = props.locale;
 
   return (
     <PageSummaryLink

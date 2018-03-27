@@ -10,7 +10,7 @@ let reason = (props) => {
     return [];
   }
   if (!hasOnlyEnglishChars(props.reason)) {
-    return [errorMessages.inputIncludesNonEnglishCharacters]
+    return ['errorMessages.inputIncludesNonEnglishCharacters']
   }
   return selectionValidator('licenseIssueSelectionMissing', 'reason')(props);
 };
@@ -22,7 +22,7 @@ let errorFunction = (name) => {
     }
     let errors = [];
     if (!dateValidator(name, props)) {
-      errors.push(errorMessages['invalidOrMissingDate']);
+      errors.push('errorMessages.invalidOrMissingDate');
     }
     return errors;
   };

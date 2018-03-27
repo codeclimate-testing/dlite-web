@@ -1,7 +1,6 @@
 'use strict';
 
-import React from 'react';
-import translations            from '../../../../i18n';
+import React                  from 'react';
 
 import { hasValue }            from '../../../../helpers/data/validations';
 import {
@@ -15,15 +14,14 @@ import PageSummaryLink          from '../../../../containers/page-summary-link.j
 import SummaryItem              from '../summary-item.jsx';
 
 const OptOut = (props) => {
-  let locale = props.locale;
   let optOut = '';
 
   if (props.optOut === 'new') {
-    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceYes}</p>
+    optOut =  'summaryPage.voterRegistration.choiceYes';
   } else if (props.optOut === 'existing') {
-    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceUpdate}</p>
+    optOut =  'summaryPage.voterRegistration.choiceUpdate';
   } else if (props.optOut === 'optOut') {
-    optOut = <p>{translations[locale].summaryPage.voterRegistration.choiceNo}</p>
+    optOut =  'summaryPage.voterRegistration.choiceNo';
   };
 
   let now = props.now ? props.now : new Date();
@@ -33,8 +31,8 @@ const OptOut = (props) => {
         {...props}
       >
         <SummaryItem
-          title={translations[locale].summaryPage.voterRegistration.registrationChoice}
-          text={optOut}
+          title = 'summaryPage.voterRegistration.registrationChoice'
+          text  = { optOut }
         />
       </PageSummaryLink>
     )

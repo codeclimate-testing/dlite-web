@@ -2,10 +2,8 @@
 
 import assert       from 'assert';
 import rules        from '../../../../client/helpers/validations/realID-rules';
-import translations from '../../../../client/i18n';
 
 let props;
-let messages = translations['en'].errorMessages;
 
 describe('RealID page validation rules:', function() {
   beforeEach(function() {
@@ -22,8 +20,7 @@ describe('RealID page validation rules:', function() {
         isApplying: false,
         action: '',
         realID: ''
-      },
-      locale: 'en'
+      }
     }
   });
 
@@ -32,7 +29,7 @@ describe('RealID page validation rules:', function() {
       assert.ok(rules.realID(props).length > 0);
     });
     it('when nothing has been selected it will give realIdSelectionMissing error', function() {
-      assert.deepEqual(rules.realID(props), [messages.realIdSelectionMissing]);
+      assert.deepEqual(rules.realID(props), ['errorMessages.realIdSelectionMissing']);
     });
     it('when "No" is selected it will not give an error', function() {
       props.realID = 'No';
@@ -71,7 +68,7 @@ describe('RealID page validation rules:', function() {
       props.IDApp.isApplying = true;
       props.realID = 'Yes';
 
-      assert.deepEqual(rules.designation(props), [messages.realIdCardSelectionMissing]);
+      assert.deepEqual(rules.designation(props), ['errorMessages.realIdCardSelectionMissing']);
     });
   });
 

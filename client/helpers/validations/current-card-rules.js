@@ -2,25 +2,22 @@
 
 import { englishValidatorGenerator }  from './english-validator';
 import { expirationDateValidator }    from './date-validator';
-import translations       from '../../i18n';
-
 
 let errorFunction = (name) => {
   return (props) => {
-    let locale = props.locale;
     let errors = [];
     if (!expirationDateValidator(name, props)) {
-      errors.push(translations[locale].errorMessages['expirationDateInvalid']);
+      errors.push('errorMessages.expirationDateInvalid');
     }
     return errors;
   }
 };
 
 const isIssued = (props) => {
-  let locale = props.locale;
+
   let errors = [];
   if (props.isIssued === '') {
-    errors.push(translations[locale].errorMessages['selectionMissing']);
+    errors.push('errorMessages.selectionMissing');
   }
   return errors;
 }

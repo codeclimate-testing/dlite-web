@@ -1,17 +1,13 @@
 'use strict';
 
 import assert   from 'assert';
-
 import rules    from '../../../../client/helpers/validations/youthDL-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 describe('YouthDL page validation rules:', function() {
   it('will give error when nothing has been selected', function() {
-    let props = {
-      locale: 'en'
-    };
+    let props = { };
 
-    assert.deepEqual(rules.youthIDInstead(props), [messages.selectionMissing]);
+    assert.deepEqual(rules.youthIDInstead(props), ['errorMessages.selectionMissing']);
   });
 
   it('when "No" is selected it will not give an error', function() {

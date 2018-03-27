@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import ReplacingIDInfo           from '../../../../../client/presentations/get-started/intro-page/replacing-id-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('ReplacingIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,8 +59,7 @@ describe('ReplacingIDInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -99,7 +97,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingID), true);
+      assert.equal(component.text().includes('You are replacing an ID card'), true);
     });
 
     it('shows that user is getting a reduced fee ID on get started page', function() {
@@ -110,7 +108,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID), true);
+      assert.equal(component.text().includes('You are replacing a reduced-fee ID card'), true);
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
@@ -121,7 +119,7 @@ describe('ReplacingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingSeniorID), true);
+      assert.equal(component.text().includes('You are replacing a senior ID card'), true);
     });
 
     it('shows that user getting no fee ID on get started page', function() {

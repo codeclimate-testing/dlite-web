@@ -8,7 +8,6 @@ import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
 import data             from '../../../../../server/models/parsers/client-default-state.js';
-import translations     from '../../../../../client/i18n';
 
 import MyBasics         from '../../../../../client/presentations/conclusion/summary/my-basics.jsx';
 import {
@@ -22,7 +21,6 @@ import {
 } from '../../../../../client/presentations/conclusion/summary/my-basics/index';
 
 const Wrapper = wrapperGenerator(store);
-let locale = 'en';
 
 describe('Summary My Basics section', function() {
   let props;
@@ -30,7 +28,7 @@ describe('Summary My Basics section', function() {
     props = {
       application: Object.assign({}, data.IDDL.application),
       onSubmit: spy(),
-      ui: { locale }
+      ui: { }
     };
   });
 
@@ -50,7 +48,6 @@ describe('Summary My basics section components', function() {
   let props;
   beforeEach(function() {
     props = Object.assign({}, data.IDDL.application);
-    props.locale = locale;
     props.editKey = '';
   });
 
@@ -135,10 +132,10 @@ describe('Summary My basics section components', function() {
         </Wrapper>
       )
 
-      assert.equal(component.text().includes(`${translations[locale].summaryPage.myBasics.homeAddress}`), true);
+      assert.equal(component.text().includes('Home address'), true);
       assert.equal(component.text().includes('111 Main Street'), true);
       assert.equal(component.text().includes('Sacramento, CA 95814'), true);
-      assert.equal(component.text().includes(`${translations[locale].summaryPage.myBasics.mailingAddress}`), true);
+      assert.equal(component.text().includes('Mailing address'), true);
       assert.equal(component.text().includes('222 High Street'), true);
       assert.equal(component.text().includes('Beverly Hills, CA 90210'), true);
     });

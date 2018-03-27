@@ -13,33 +13,6 @@ import {
   errorClass
 } from '../../validations.jsx';
 
-const EmailDescription = () => {
-  return (
-    <Translator
-      tag               = 'span'
-      translationPath   = 'votingRegistration.contactInfoPage.emailLabel'
-    />
-  );
-}
-
-const EmailExample = () => {
-  return (
-    <Translator
-      tag               = 'span'
-      translationPath   = 'votingRegistration.contactInfoPage.emailExample'
-    />
-  );
-}
-
-const PhoneExample = () => {
-  return (
-    <Translator
-      tag               = 'span'
-      translationPath   = 'votingRegistration.contactInfoPage.phoneExample'
-    />
-  );
-}
-
 const ContactDetails = (props) => {
 
   if(props.contactMethods.shouldContact !== 'Yes') { return null; } let errors = {
@@ -66,11 +39,15 @@ const ContactDetails = (props) => {
         <TextInput
           {...props}
           identifier    = 'emailAddress'
-          description   = { <EmailDescription /> }
-          example       = { <EmailExample /> }
+          example       = 'votingRegistration.contactInfoPage.emailExample'
           value         = { props.contactMethods.emailAddress }
           errorMessage  = { props.validations.emailAddress() }
-        />
+        >
+          <Translator
+            tag               = 'span'
+            translationPath   = 'votingRegistration.contactInfoPage.emailLabel'
+          />
+        </TextInput>
 
         <div className='text-input-block input-margin-bottom'>
 
@@ -88,9 +65,13 @@ const ContactDetails = (props) => {
             />
           </label>
 
-          <ExampleLabel
-            example = { <PhoneExample /> }
-          />
+          <ExampleLabel>
+            <Translator
+              tag               = 'span'
+              translationPath   = 'votingRegistration.contactInfoPage.phoneExample'
+            />
+          </ExampleLabel>
+
           <div className='input-container flexPhone'>
 
             <NumberInput

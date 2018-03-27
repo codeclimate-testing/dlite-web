@@ -7,7 +7,6 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
-import translations     from '../../../../../client/i18n';
 import VoterRegistration from '../../../../../client/presentations/cdl/summary/voter-registration.jsx';
 
 describe('CDL Summary voting registration section', function() {
@@ -16,9 +15,7 @@ describe('CDL Summary voting registration section', function() {
 
   beforeEach(function() {
     props = {
-      ui: {
-        locale: 'en'
-      },
+      ui: { },
       cdl: {
         basics: {
           dateOfBirth: '',

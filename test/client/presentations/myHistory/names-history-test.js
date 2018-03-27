@@ -28,12 +28,11 @@ describe('NamesHistoryPage', function() {
       };
 
       let onChange = spy();
-      let locale = 'en';
+
       props = {
         namesHistory,
         validations,
-        onChange,
-        locale
+        onChange
       }
     });
 

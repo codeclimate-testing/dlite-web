@@ -24,7 +24,6 @@ const AddressTemplate = (props) => {
         {...props}
         name          = { generateIdentifier('street_1', props.type) }
         id            = { generateIdentifier('street_1', props.type) }
-        description   = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.streetAddressLabel' /> }
         value         = { props.address['street_1'] }
         errorMessage  = {
           props.type === 'home' ? props.validations.homeStreet_1()              :
@@ -33,13 +32,14 @@ const AddressTemplate = (props) => {
           props.type === 'guardian_1' ? props.validations.guardian_1Street_1()  :
           null
         }
-      />
+      >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.streetAddressLabel' />
+      </TextInput>
 
       <TextInput
         {...props}
         name          = { generateIdentifier('street_2', props.type) }
         id            = { generateIdentifier('street_2', props.type) }
-        description   = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.apartmentLabel' /> }
         value         = { props.address['street_2'] }
         errorMessage  = {
           props.type === 'home' ? props.validations.homeStreet_2()              :
@@ -48,13 +48,14 @@ const AddressTemplate = (props) => {
           props.type === 'guardian_1' ? props.validations.guardian_1Street_2()  :
           null
         }
-      />
+      >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.apartmentLabel' />
+      </TextInput>
 
       <TextInput
         {...props}
         name          = { generateIdentifier('city', props.type) }
         id            = { generateIdentifier('city', props.type) }
-        description   = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.cityLabel' /> }
         value         = { props.address['city'] }
         errorMessage  = {
           props.type === 'home' ? props.validations.homeCity()              :
@@ -63,7 +64,9 @@ const AddressTemplate = (props) => {
           props.type === 'guardian_1' ? props.validations.guardian_1City()  :
           null
         }
-      />
+      >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.cityLabel' />
+      </TextInput>
 
       <StateSelector
         name      = 'state'
@@ -76,7 +79,6 @@ const AddressTemplate = (props) => {
         {...props}
         name          = { generateIdentifier('zip', props.type) }
         id            = { generateIdentifier('zip', props.type) }
-        description   = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.zipLabel' /> }
         value         = { props.address['zip'] }
         errorMessage  = {
           props.type === 'home' ? props.validations.homeZip()              :
@@ -85,7 +87,9 @@ const AddressTemplate = (props) => {
           props.type === 'guardian_1' ? props.validations.guardian_1Zip()  :
           null
         }
-      />
+      >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.zipLabel' />
+      </TextInput>
     </div>
   );
 }

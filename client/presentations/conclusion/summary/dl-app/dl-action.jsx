@@ -20,17 +20,16 @@ import {
 
 const DLAction = (props) => {
   if(!DLAppExists(props)) { return null; }
-  let locale = props.locale;
 
   return (
     <PageSummaryLink
       {...props}
     >
-      <New        showIf = {getNewDL(props)}  locale = {locale}/>
-      <Renew      showIf = {renewDL(props)}   locale = {locale}/>
-      <Replace    showIf = {replaceDL(props)} locale = {locale}/>
-      <Correct    showIf = {correctDL(props)} locale = {locale}/>
-      <Update     showIf = {updateDL(props)}  locale = {locale}/>
+      <New        showIf = {getNewDL(props)} />
+      <Renew      showIf = {renewDL(props)} />
+      <Replace    showIf = {replaceDL(props)} />
+      <Correct    showIf = {correctDL(props)} />
+      <Update     showIf = {updateDL(props)} />
     </PageSummaryLink>
   )
 };

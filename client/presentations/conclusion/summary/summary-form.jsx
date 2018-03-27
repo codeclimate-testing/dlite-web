@@ -1,8 +1,7 @@
 'use strict';
 
 import React                from 'react'
-import Translate            from '../../../i18n/translate-tag.jsx';
-import translations         from '../../../i18n';
+import Translator           from '../../../i18n/translator-tag.jsx';
 import SubmitButton         from './submit-button.jsx';
 
 import {
@@ -15,7 +14,7 @@ import {
 } from '../../validations.jsx';
 
 const SummaryForm = (props) => {
-  let locale = props.ui.locale;
+
   return (
     <div>
       <div className={props.server.apiStatus}/>
@@ -24,9 +23,10 @@ const SummaryForm = (props) => {
         onSubmit  = { props.onSubmit }
         className ={ hideMain(props) }
       >
-        <Translate tag='h2'>
-          { translations[locale].summaryPage.prompt}
-        </Translate>
+        <Translator
+          tag             = 'h2'
+          translationPath = 'summaryPage.prompt'
+        />
 
         <div className='translation-missing'>
           <ErrorMessageBox
@@ -37,7 +37,6 @@ const SummaryForm = (props) => {
         {props.children}
 
         <SubmitButton
-          locale            = { locale }
           continueDisabled  = { props.continueDisabled }
         />
       </form>

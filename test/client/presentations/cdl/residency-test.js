@@ -9,7 +9,6 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import AddressPage              from '../../../../client/presentations/cdl/residency.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 
 describe('CDL California Resident Page', function() {
   let props, component;
@@ -65,8 +64,7 @@ describe('CDL California Resident Page', function() {
       validations,
       sectionName,
       sectionNumber,
-      focused,
-      locale: 'en'
+      focused
     };
   });
 

@@ -9,8 +9,7 @@ import Presentation               from "../../presentations/cdl/cdl-card-replace
 
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new ReplaceValidator(Object.assign(props.cardReplacement, {locale}), props.validations);
+  let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('cdlCardReplacement', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -30,7 +29,6 @@ function mapStateToProps(state) {
     cardAction          : state.application.cardAction,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

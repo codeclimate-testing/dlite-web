@@ -9,7 +9,6 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import LicenseClass             from '../../../../client/presentations/cdl/license-class-page.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 
 describe('CDL Class Page', function() {
   let props, component;
@@ -31,8 +30,7 @@ describe('CDL Class Page', function() {
       onSubmit,
       onChange,
       validations,
-      focused,
-      locale: 'en'
+      focused
     };
   });
 

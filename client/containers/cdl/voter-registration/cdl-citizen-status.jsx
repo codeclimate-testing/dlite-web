@@ -29,7 +29,6 @@ const mapStateToProps = (state) => {
     dateOfBirth         : state.cdl.basics.dateOfBirth,
     cardAction          : state.cdl.cardAction,
     focused             : state.ui.focus,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

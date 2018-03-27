@@ -29,14 +29,13 @@ describe('CDLReplacementDetails', function() {
       };
 
       let onChange = spy();
-      let locale = 'en';
+
       props = {
         cardReplacement,
         cardType: [],
         cardAction: 'replace',
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

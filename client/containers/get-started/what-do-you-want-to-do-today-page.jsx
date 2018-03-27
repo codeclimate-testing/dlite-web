@@ -11,8 +11,7 @@ import Presentation           from "../../presentations/get-started/what-do-you-
 import { getActionFromState}  from '../../helpers/data/pathnames';
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new WDYWTDTValidator(Object.assign(props.cardAction, {locale}), props.validations);
+  let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('wdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -37,7 +36,6 @@ function mapStateToProps(state) {
     licenseAndIdHistory:  state.application.history.licenseAndIdHistory,
     focused:          state.ui.focus,
     validations:      state.ui.validations,
-    locale:           state.ui.locale,
     flow:             state.ui.flow
   };
 };

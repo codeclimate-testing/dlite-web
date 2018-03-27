@@ -8,7 +8,6 @@ import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
 import data             from '../../../../../server/models/parsers/client-default-state.js';
-import translations     from '../../../../../client/i18n';
 
 import IDApp            from '../../../../../client/presentations/conclusion/summary/id-app.jsx';
 import {
@@ -20,15 +19,13 @@ import {
 } from '../../../../../client/presentations/conclusion/summary/id-app/index';
 
 const Wrapper = wrapperGenerator(store);
-let locale = 'en';
 
 describe('Summary ID App section', function() {
   let props;
   beforeEach(function() {
     props = {
       application: Object.assign({}, data.IDDL.application),
-      onSubmit: spy(),
-      ui: { locale }
+      onSubmit: spy()
     };
   });
 
@@ -117,7 +114,6 @@ describe('Summary ID App section components', function() {
   let props;
   beforeEach(function() {
     props = Object.assign({}, data.IDDL.application);
-    props.locale = locale;
     props.cardType = 'ID';
   });
   describe('IDAction', function() {

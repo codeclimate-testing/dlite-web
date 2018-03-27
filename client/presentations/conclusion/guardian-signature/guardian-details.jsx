@@ -53,7 +53,7 @@ const GuardianDetail = (props) => {
 
 const SignatureDetails = (props) => {
   if (!guardianHasValue(props)) { return null; }
-
+//TODO: Translation key
   return (
     <div className='guardian-details-form'>
       <GuardianDetail
@@ -61,8 +61,8 @@ const SignatureDetails = (props) => {
         {...props}
       />
       <Accordion
-        id='guardian-signature-add'
-        title='Add another parent/guardian signature'
+        id    = 'guardian-signature-add'
+        title = 'Add another parent/guardian signature'
       >
         <GuardianDetail
           guardianID={1}

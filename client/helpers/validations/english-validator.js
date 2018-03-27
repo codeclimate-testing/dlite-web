@@ -1,18 +1,17 @@
 'use strict';
 
 import errorMessages from '../../presentations/error-messages';
-import translations from '../../i18n';
 
 export const hasOnlyEnglishChars = (text) => {
   return /^[\x00-\x7F]*$/.test(text);
 };
 
-export const englishValidator = (value, locale) => {
+export const englishValidator = (value) => {
   let errors = [];
 
   if (!hasOnlyEnglishChars(value)) {
     errors = [
-      translations[locale].errorMessages.dataIncludesNonEnglishCharacters
+      'errorMessages.dataIncludesNonEnglishCharacters'
     ];
   }
 
@@ -21,8 +20,7 @@ export const englishValidator = (value, locale) => {
 
 export const englishValidatorGenerator = (name) => {
   return (props) => {
-    let locale = props.locale;
     let value = props[name] || [];
-    return englishValidator(value, locale);
+    return englishValidator(value);
   };
 };

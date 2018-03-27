@@ -3,6 +3,7 @@
 import React              from 'react';
 import TextInput          from '../../text-input.jsx';
 import ExpirationDate     from '../../expiration-date.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
@@ -14,10 +15,11 @@ const Form = (props) => {
         <TextInput
           {...props}
           identifier    = 'number'
-          description   = { props.textDescription }
           value         = { props.currentCardInfo.number }
           errorMessage  = { props.validations.number() }
-        />
+        >
+          <Translator tag = 'span' translationPath = { props.textDescription } />
+        </TextInput>
 
         <ExpirationDate
           {...props}

@@ -2,8 +2,7 @@
 
 import React            from 'react';
 import { hasValue }     from '../../../helpers/data/validations';
-import translations     from '../../../i18n';
-import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
+import PageSummaryLink  from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
 import {
   getStringByPreviousNames
@@ -12,15 +11,14 @@ import {
 const NamesHistory = (props) => {
   if (!hasValue(props.namesHistory.hasUsedPreviousNames)) { return null; }
   let previousNames = getStringByPreviousNames(props);
-  let locale = props.locale;
 
   return (
     <PageSummaryLink
       {...props}
     >
       <SummaryItem
-        title={translations[locale].summaryPage.myHistory.previousNames}
-        text={previousNames}
+        title = 'summaryPage.myHistory.previousNames'
+        text  = { previousNames }
       />
     </PageSummaryLink>
     );

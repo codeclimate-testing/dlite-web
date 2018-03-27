@@ -22,7 +22,6 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    locale: state.ui.locale,
     chooseApp: state.ui.chooseApp
   };
 };

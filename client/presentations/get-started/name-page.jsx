@@ -7,13 +7,18 @@ import SelectDropdown     from '../../containers/select-dropdown.jsx';
 import TextInput          from '../text-input.jsx';
 import SuffixSelector     from '../suffix-selector.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import translations       from '../../i18n';
 import Translator         from '../../i18n/translator-tag.jsx';
+import TranslatorList     from '../../i18n/translator-list.jsx';
+
+const suffixList = [
+  "Sr.",
+  "Jr.",
+  "I",
+  "II",
+  "III"
+];
 
 const LegalNameForm = (props) => {
-  let locale = props.locale;
-  let suffixValues = ['', ...translations[locale].intro.namePage.suffixValues];
-
   return (
     <Page
       sectionKey='intro'
@@ -34,26 +39,29 @@ const LegalNameForm = (props) => {
           <TextInput
             {...props}
             identifier    = 'firstName'
-            description   = { <Translator tag = 'span' translationPath = 'shared.labels.firstName' /> }
             value         = { props.legalName.firstName }
             errorMessage  = { props.validations.firstName() }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'shared.labels.firstName' />
+          </TextInput>
 
           <TextInput
             {...props}
             identifier    = 'middleName'
-            description   = { <Translator tag = 'span' translationPath = 'shared.labels.middleName' /> }
             value         = { props.legalName.middleName }
             errorMessage  = { props.validations.middleName() }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'shared.labels.middleName' />
+          </TextInput>
 
           <TextInput
             {...props}
             identifier    = 'lastName'
-            description   = { <Translator tag = 'span' translationPath = 'shared.labels.lastName' /> }
             value         = { props.legalName.lastName }
             errorMessage  = { props.validations.lastName() }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'shared.labels.lastName' />
+          </TextInput>
 
           <SelectDropdown
             name          = 'suffix'
@@ -62,9 +70,10 @@ const LegalNameForm = (props) => {
             hover         = { props.hover }
             onChange      = { props.onSelectChange }
             changeAction  = { props.changeAction }
-            values        = { suffixValues }
-            description   = { <Translator tag = 'span' translationPath = 'intro.namePage.suffixLabel' /> }
-          />
+            values        = { suffixList }
+          >
+            <Translator tag = 'span' translationPath = 'intro.namePage.suffixLabel' />
+          </SelectDropdown>
         </fieldset>
 
         <NavigationButtons

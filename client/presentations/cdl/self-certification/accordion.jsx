@@ -4,9 +4,10 @@ import React              from 'react';
 import Accordion          from '../../../containers/accordion.jsx';
 
 const CertAccordion = (props) => {
+  //TODO: Translations key
   return (
     <Accordion
-      id='cdl-self-certification'
+      id    = 'cdl-self-certification'
       title = "I'm not sure which applies to me"
     >
       <h4 className='translation-missing' >Interstate commerce</h4>

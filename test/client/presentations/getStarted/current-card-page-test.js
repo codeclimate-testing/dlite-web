@@ -36,7 +36,7 @@ describe('CurrentCardPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         cardType: [],
         cardAction: '',
@@ -44,8 +44,7 @@ describe('CurrentCardPage', function() {
         currentCardInfo,
         accordions,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

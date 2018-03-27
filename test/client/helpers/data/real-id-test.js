@@ -107,7 +107,7 @@ describe('Data helpers for real-id', function() {
     });
 
     it('is false if container did not pass along a cardType array', function() {
-      assert.equal(showDesignation({locale: 'en'}), false);
+      assert.equal(showDesignation({}), false);
     })
   });
   describe('#designatedValue', function() {

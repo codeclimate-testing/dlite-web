@@ -3,12 +3,11 @@
 import React              from 'react';
 import Page               from '../../containers/page.jsx';
 import EnterInfo          from './current-card-info/enter-info.jsx';
-import translations       from '../../i18n';
-import Translate          from '../../i18n/translate-tag.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
+
   return (
     <Page
       {...props}
@@ -19,15 +18,18 @@ const Form = (props) => {
         <form onSubmit={ props.onSubmit }>
           <EnterInfo
             {...props}
-            showIf = {true}
-            textDescription = {translations[locale].intro.currentCardPage.numberLabel}
+            showIf          = { true }
+            textDescription = 'intro.currentCardPage.numberLabel'
           >
-            <Translate tag='h2' className='question'>
-              { translations[locale].intro.currentCardPage.prompt }
-            </Translate>
-            <Translate tag='p'>
-              { translations[locale].intro.currentCardPage.explanation }
-            </Translate>
+            <Translator
+              tag             = 'h2'
+              className       = 'question'
+              translationPath = 'intro.currentCardPage.prompt'
+            />
+            <Translator
+              tag             = 'p'
+              translationPath = 'intro.currentCardPage.explanation'
+            />
 
           </EnterInfo>
 

@@ -10,8 +10,8 @@ import { updateSeniorID }     from "../../actions/index";
 import Presentation           from "../../presentations/get-started/senior-id-page.jsx";
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new SeniorIDValidator(Object.assign(props.seniorID, {locale}), props.validations);
+
+  let validations       =   new SeniorIDValidator(props.seniorID, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('seniorID', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
     licenseAndIdHistory : state.application.history.licenseAndIdHistory,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

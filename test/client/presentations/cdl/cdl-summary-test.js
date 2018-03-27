@@ -7,7 +7,6 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../support/page-store';
 import wrapperGenerator from '../../support/wrapper';
-import translations     from '../../../../client/i18n';
 import SummaryPage      from '../../../../client/presentations/cdl/summary-page.jsx';
 
 describe('CDL Summary page', function() {
@@ -124,9 +123,7 @@ describe('CDL Summary page', function() {
         },
       server: '',
       onSubmit: spy(),
-      ui: {
-        locale: 'en'
-      }
+      ui: { }
     };
   });
 

@@ -3,7 +3,6 @@
 import React              from 'react';
 import RadioCollection    from '../../radio-selector-collection.jsx';
 import RadioSelector      from '../../radio-selector.jsx';
-import translations       from '../../../i18n';
 
 const Form = (props) => {
 

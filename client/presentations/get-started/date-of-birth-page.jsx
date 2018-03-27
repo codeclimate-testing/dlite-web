@@ -29,9 +29,10 @@ const Presentation = (props) => {
         <fieldset role='group' aria-label='Date of birth'>
           <DateInput
             {...props}
-            title       = { <Translator tag = 'span' translationPath = 'shared.labels.dateOfBirth' /> }
             values      = { props.dateOfBirth }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'shared.labels.dateOfBirth' />
+          </DateInput>
         </fieldset>
 
         <CDLUnder21   {...props} />

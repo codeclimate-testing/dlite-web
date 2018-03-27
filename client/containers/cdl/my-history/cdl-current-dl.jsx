@@ -8,8 +8,7 @@ import Presentation               from '../../../presentations/cdl/current-card-
 import { updateCdlCurrentDL }     from '../../../actions/index';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new CurrentCardValidator(Object.assign(props.currentCardInfo,{locale}), props.validations);
+  let validations       = new CurrentCardValidator(props.currentCardInfo, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlCurrentDL', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -29,8 +28,7 @@ function mapStateToProps(state) {
     validations:      state.ui.validations,
     focused:          state.ui.focus,
     flow:             state.ui.flow,
-    classM:           state.cdl.classM,
-    locale:           state.ui.locale
+    classM:           state.cdl.classM
   };
 };
 

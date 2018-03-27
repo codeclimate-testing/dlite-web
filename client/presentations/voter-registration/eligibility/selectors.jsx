@@ -1,7 +1,6 @@
 'use strict';
 
 import React                from 'react';
-import translations         from '../../../i18n';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
 import {

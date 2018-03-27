@@ -8,8 +8,7 @@ import handlers                   from '../../../helpers/handlers';
 import { BallotLanguageValidator} from '../../../helpers/validations';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new BallotLanguageValidator(Object.assign(props.ballotLanguage, {locale}), props.validations);
+  let validations       = new BallotLanguageValidator(props.ballotLanguage, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlChooseBallotLanguage', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -30,7 +29,6 @@ const mapStateToProps = (state) => {
     dateOfBirth     : state.cdl.basics.dateOfBirth,
     focused         : state.ui.focus,
     validations     : state.ui.validations,
-    locale          : state.ui.locale,
     flow            : state.ui.flow
   };
 };

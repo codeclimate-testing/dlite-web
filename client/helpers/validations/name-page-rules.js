@@ -2,19 +2,17 @@
 
 import errorMessages from '../../presentations/error-messages';
 import { hasValue } from '../data/validations';
-import translations from '../../i18n';
 import {
   englishValidatorGenerator,
   englishValidator
 } from './english-validator';
 
 const lastName = (props) => {
-  let locale = props.locale;
   let value = props.lastName;
-  let errors = englishValidator(value, locale);
+  let errors = englishValidator(value);
 
   if (!hasValue(value)) {
-    errors.push(translations[locale].errorMessages.lastNameMissing);
+    errors.push('errorMessages.lastNameMissing');
   }
   return errors;
 };

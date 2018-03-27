@@ -1,7 +1,6 @@
 'use strict';
 
 import { hasValue }         from './validations';
-import translations         from '../../i18n';
 import { hasSelectedClass } from './cards';
 import { DLAppExists }      from './card-type';
 

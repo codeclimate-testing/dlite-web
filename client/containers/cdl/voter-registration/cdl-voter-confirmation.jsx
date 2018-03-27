@@ -22,7 +22,6 @@ const mapStateToProps = (state) => {
   return {
     dateOfBirth : state.cdl.basics.dateOfBirth,
     focused     : state.ui.focus,
-    locale      : state.ui.locale,
     flow        : state.ui.flow
   };
 };

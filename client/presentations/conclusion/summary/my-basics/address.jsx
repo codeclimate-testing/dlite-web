@@ -5,11 +5,9 @@ import * as dataPresent from '../../../../helpers/data-present';
 import { printDate }    from '../../../../helpers/print-date';
 import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
-import translations     from '../../../../i18n';
 
 const Address = (props) => {
   if (!dataPresent.address(props.address.home)) { return null; }
-  let locale          = props.locale;
   let homeAddress     = props.address.home;
   let mailingAddress  = props.address.mailing;
 
@@ -26,12 +24,12 @@ const Address = (props) => {
       {...props}
     >
       <SummaryItem
-        title={translations[locale].summaryPage.myBasics.homeAddress}
-        text={homeAddress}
+        title = 'summaryPage.myBasics.homeAddress'
+        text  = { homeAddress }
       />
       <SummaryItem
-        title={translations[locale].summaryPage.myBasics.mailingAddress}
-        text={mailingAddress}
+        title = 'summaryPage.myBasics.mailingAddress'
+        text  = { mailingAddress  }
       />
     </PageSummaryLink>
   );

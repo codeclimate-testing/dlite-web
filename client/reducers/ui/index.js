@@ -9,7 +9,6 @@ import validations          from './validations';
 import hover                from './hover';
 import flow                 from './app-type';
 import chooseApp            from './choose-app';
-import locale               from './locale';
 import language             from './language';
 
 const rootReducer = combineReducers({
@@ -20,7 +19,6 @@ const rootReducer = combineReducers({
   hover,
   flow  ,
   chooseApp,
-  locale,
   language
 });
 

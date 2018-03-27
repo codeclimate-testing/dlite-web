@@ -29,12 +29,11 @@ describe('Certificates Page', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         onChange,
         validations,
-        cdlCertificates,
-        locale
+        cdlCertificates
       }
     });
 

@@ -7,9 +7,10 @@ import {
   ErrorLabel
 } from './validations.jsx';
 import ExampleLabel from './example-label.jsx';
+import Translator   from '../i18n/translator-tag.jsx'
 
 const Label = (props) => {
-  if (!(props.description)) { return null; }
+  if (!(props.children)) { return null; }
   return (
     <label
       htmlFor         = { props.identifier }
@@ -18,6 +19,7 @@ const Label = (props) => {
     >
       <div className='unit'>{props.description}</div>
       <ErrorIcon errorClass={ props.errorName } />
+      {props.children ? props.children : props.description}
     </label>
   )
 };
@@ -33,9 +35,9 @@ const NumberInput = (props) => {
         errorName = { errorName }
       />
 
-      <ExampleLabel
-        example     = { props.example }
-      />
+      <ExampleLabel>
+        <Translator tag = 'span' translationPath = { props.example } />
+      </ExampleLabel>
 
       <div className= { className }>
         <input

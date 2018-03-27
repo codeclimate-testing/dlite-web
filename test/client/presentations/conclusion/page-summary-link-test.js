@@ -11,13 +11,11 @@ import { pathForPage }  from '../../../../client/helpers/navigation/page';
 describe('PageSummaryLink edit buttons on summary pages', function() {
   const Wrapper = wrapperGenerator(store);
   let component, props;
-  let locale = 'en';
   beforeEach(function() {
     props = {
       editKey: 'wdywtdt',
       cardType: 'ID',
-      flow: '',
-      locale
+      flow: ''
     };
     component = render(
       <Wrapper>

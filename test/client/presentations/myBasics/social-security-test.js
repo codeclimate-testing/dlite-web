@@ -34,13 +34,11 @@ describe('SocialSecurityPage', function() {
         isValid: () => { return true; }
       };
       let onChange = spy();
-      let locale = 'en';
 
       props = {
         socialSecurity,
         validations,
-        onChange,
-        locale
+        onChange
       }
     });
 

@@ -9,7 +9,6 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import CurrentCDLPage           from '../../../../client/presentations/cdl/current-cdl-page.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 
 describe('Current CDL Page', function() {
   let props, component;
@@ -39,8 +38,7 @@ describe('Current CDL Page', function() {
       currentCardInfo,
       onSubmit,
       onChange,
-      validations,
-      locale: 'en'
+      validations
     };
   });
 

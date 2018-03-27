@@ -2,7 +2,6 @@
 
 import React            from 'react';
 import * as dataPresent from '../../../helpers/data-present';
-import translations     from '../../../i18n';
 import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
 import { hasValue }     from '../../../helpers/data/validations';
@@ -54,16 +53,15 @@ const Firefighter = (props) => {
 
 const CDLEndorsements = (props) => {
   if(!showCDLEndorsements(props.cdlEndorsements) ) { return null; }
-  let locale = props.locale;
   let endorsements = (
     <div>
-      <DoubleTriple     array = {props.cdlEndorsements.type} locale = {locale}/>
-      <PassengerVehicle array = {props.cdlEndorsements.type} locale = {locale}/>
-      <SchoolBus        array = {props.cdlEndorsements.type} locale = {locale}/>
-      <TankVehicles     array = {props.cdlEndorsements.type} locale = {locale}/>
-      <HazMat           array = {props.cdlEndorsements.type} locale = {locale}/>
-      <TankHazMat       array = {props.cdlEndorsements.type} locale = {locale}/>
-      <Firefighter      array = {props.cdlEndorsements.type} locale = {locale}/>
+      <DoubleTriple     array = {props.cdlEndorsements.type} />
+      <PassengerVehicle array = {props.cdlEndorsements.type} />
+      <SchoolBus        array = {props.cdlEndorsements.type} />
+      <TankVehicles     array = {props.cdlEndorsements.type} />
+      <HazMat           array = {props.cdlEndorsements.type} />
+      <TankHazMat       array = {props.cdlEndorsements.type} />
+      <Firefighter      array = {props.cdlEndorsements.type} />
     </div>
   );
 

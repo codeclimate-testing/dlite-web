@@ -11,27 +11,34 @@ import {
   getStringByAction,
   isGettingNew
 }  from   '../../helpers/data/card-actions';
-import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
+
   const newString =
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.chooseSelectionPage.prompt.new}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          lassName        = 'question'
+          translationPath = 'intro.chooseSelectionPage.prompt.new'
+        />
   const renewString =
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.chooseSelectionPage.prompt.renew}
-        </Translation>
+        <Translator
+          tag           = 'h2'
+          className     = 'question'
+          translationPath = 'intro.chooseSelectionPage.prompt.renew'
+        />
   const replaceString =
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.chooseSelectionPage.prompt.replace}
-        </Translation>
+        <Translator
+          tag           = 'h2'
+          className     = 'question'
+          translationPath = 'intro.chooseSelectionPage.prompt.replace'
+        />
   const changeString =
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.chooseSelectionPage.prompt.correctOrUpdate}
-        </Translation>
+        <Translator
+          tag           = 'h2'
+          className     = 'question'
+          translationPath = 'intro.chooseSelectionPage.prompt.correctOrUpdate'
+        />
 
 
   let questionText = getStringByAction(props, newString, renewString, replaceString, changeString);

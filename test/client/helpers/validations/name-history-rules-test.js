@@ -1,16 +1,13 @@
 'use strict';
 
 import assert from 'assert';
-
 import rules from '../../../../client/helpers/validations/names-history-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 describe('Names history page validation rules:', function() {
   it('when there are no data issues, it has no errors', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: 'Lorna',
-      locale: 'en'
+      previousNames: 'Lorna'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);
@@ -19,33 +16,30 @@ describe('Names history page validation rules:', function() {
 
   it('when no selection has been made, nameHistorySelectionMissing error appears', function() {
     let props = {
-      hasUsedPreviousNames: '',
-      locale: 'en'
+      hasUsedPreviousNames: ''
     };
 
-    assert.deepEqual(rules.hasUsedPreviousNames(props), [messages.nameHistorySelectionMissing]);
+    assert.deepEqual(rules.hasUsedPreviousNames(props), ['errorMessages.nameHistorySelectionMissing']);
   });
 
   it('when no previous name has been entered, the nameHistorySelectionMissing error shows', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: '',
-      locale: 'en'
+      previousNames: ''
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);
-    assert.deepEqual(rules.previousNames(props), [messages.nameHistorySelectionMissing]);
+    assert.deepEqual(rules.previousNames(props), ['errorMessages.nameHistorySelectionMissing']);
   });
 
   it('when non-English characters are used, the inputIncludesNonEnglishCharacters error shows', function() {
     let props = {
       hasUsedPreviousNames: 'Yes',
-      previousNames: 'François',
-      locale: 'en'
+      previousNames: 'François'
     };
 
     assert.deepEqual(rules.hasUsedPreviousNames(props), []);
-    assert.deepEqual(rules.previousNames(props), [messages.inputIncludesNonEnglishCharacters]);
+    assert.deepEqual(rules.previousNames(props), ['errorMessages.inputIncludesNonEnglishCharacters']);
   });
 });
 

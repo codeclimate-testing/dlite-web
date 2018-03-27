@@ -11,10 +11,8 @@ import {
   eligibleForCitizen
 }   from '../../../../helpers/data/voting';
 import { ageChecks }                from '../../../../helpers/calculate-age';
-import translations                 from '../../../../i18n';
 
 const PoliticalPartyChoose = (props) => {
-  let locale = props.locale;
   let party = getStringByParty(props);
   let now = props.now ? props.now : new Date();
   if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props)))
@@ -24,8 +22,8 @@ const PoliticalPartyChoose = (props) => {
         {...props}
       >
         <SummaryItem
-          title={translations[locale].summaryPage.voterRegistration.politicalParty}
-          text={party}
+          title = 'summaryPage.voterRegistration.politicalParty'
+          text  = { party }
         />
       </PageSummaryLink>
     )

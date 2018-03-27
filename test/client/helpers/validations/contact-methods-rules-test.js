@@ -2,16 +2,14 @@
 
 import assert   from 'assert';
 import rules    from '../../../../client/helpers/validations/contact-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 describe('Contact Methods page validation rules:', function() {
   it('when nothing has been selected, it shows the generic selection missing error', function() {
     let props = {
-      shouldContact: '',
-      locale: 'en'
+      shouldContact: ''
     };
 
-    assert.deepEqual(rules.shouldContact(props), [messages['selectionMissing']]);
+    assert.deepEqual(rules.shouldContact(props), ['errorMessages.selectionMissing']);
   });
 
   describe('when should contact has been selected', function() {
@@ -22,24 +20,23 @@ describe('Contact Methods page validation rules:', function() {
         emailAddress: '',
         phoneNumber1: '',
         phoneNumber2: '',
-        phoneNumber3: '',
-        locale: 'en'
+        phoneNumber3: ''
       };
     });
 
     it('the "please enter either an email address or a phone number" message shows when neither email nor phone has been entered', function() {
-      assert.deepEqual(rules.emailAddress(props), [messages['emailAddressMissingOrInvalid']]);
-      assert.deepEqual(rules.phoneNumber1(props), [messages['phoneMissingOrInvalid']]);
+      assert.deepEqual(rules.emailAddress(props), ['errorMessages.emailAddressMissingOrInvalid']);
+      assert.deepEqual(rules.phoneNumber1(props), ['errorMessages.phoneMissingOrInvalid']);
     });
 
     it('shows inputIncludesNonEnglishCharacters error if non-English characters used in email', function() {
       props.emailAddress = 'łażenko@kropka.pl';
-      assert.deepEqual(rules.emailAddress(props), [messages['inputIncludesNonEnglishCharacters']]);
+      assert.deepEqual(rules.emailAddress(props), ['errorMessages.inputIncludesNonEnglishCharacters']);
     });
 
     it('shows emailAddressMissingOrInvalid error if address fails regex check', function(){
       props.emailAddress = '[]@mail.com';
-      assert.deepEqual(rules.emailAddress(props), [messages['emailAddressMissingOrInvalid']]);
+      assert.deepEqual(rules.emailAddress(props), ['errorMessages.emailAddressMissingOrInvalid']);
     });
 
     it('does not give email error if a phone number has been entered', function() {
@@ -53,9 +50,9 @@ describe('Contact Methods page validation rules:', function() {
       props.phoneNumber1 = '11';
       props.phoneNumber2 = '99999';
       props.phoneNumber3 = '12';
-      assert.deepEqual(rules.phoneNumber1(props), [messages['phoneMissingOrInvalid']]);
-      assert.deepEqual(rules.phoneNumber2(props), [messages['phoneMissingOrInvalid']]);
-      assert.deepEqual(rules.phoneNumber3(props), [messages['phoneMissingOrInvalid']]);
+      assert.deepEqual(rules.phoneNumber1(props), ['errorMessages.phoneMissingOrInvalid']);
+      assert.deepEqual(rules.phoneNumber2(props), ['errorMessages.phoneMissingOrInvalid']);
+      assert.deepEqual(rules.phoneNumber3(props), ['errorMessages.phoneMissingOrInvalid']);
     });
 
     it('does not give error if email exists but invalid phone entered', function() {

@@ -3,20 +3,21 @@
 import React            from 'react';
 import RadioCollection  from '../../radio-selector-collection.jsx';
 import radioYesNoGroup  from '../../radio-yes-no-group.jsx';
-import translations     from '../../../i18n';
-import Translation      from '../../../i18n/translate-tag.jsx';
+import Translator       from '../../../i18n/translator-tag.jsx';
 
 const FormControls = (props) => {
-  let locale = props.locale;
   return (
     <div className='endorsement-toggle'>
       <hr/>
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.licenseTypePage.endorsementsSection.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translations[locale].intro.licenseTypePage.endorsementsSection.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.licenseTypePage.endorsementsSection.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.licenseTypePage.endorsementsSection.explanation'
+        />
       <div className='row'>
         <fieldset role='group' aria-label='Need endorsements choice'>
           <RadioCollection
@@ -25,7 +26,7 @@ const FormControls = (props) => {
             onBlur = { props.onBlurValidate }
             errorMessage={ props.validations.needEndorsement() }
           >
-            {radioYesNoGroup(locale)}
+            {radioYesNoGroup()}
           </RadioCollection>
         </fieldset>
       </div>

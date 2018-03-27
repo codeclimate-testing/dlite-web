@@ -8,43 +8,40 @@ import HeightWeight         from '../../conclusion/summary/my-basics/traits-heig
 import Address              from '../../conclusion/summary/my-basics/address.jsx';
 import SocialSecurity       from '../../conclusion/summary/my-basics/social-security.jsx';
 import Accordion            from '../../../containers/accordion.jsx';
-import translations         from '../../../i18n';
+import Translator           from '../../../i18n/translator-tag.jsx';
 
 
 const MyBasics = (props) => {
   let cdl         = props.cdl;
-  let locale      = props.ui.locale;
   return (
-    <Accordion id='basics-summary' title={translations[locale].summaryPage.myBasics.title} key='basics-summary'>
+    <Accordion
+      id    = 'basics-summary'
+      title = 'summaryPage.myBasics.title'
+      key   = 'basics-summary'
+    >
       <LegalName
         legalName         = {cdl.basics.legalName}
         editKey           = 'cdlLegalName'
-        locale            = {locale}
       />
       <DateOfBirth
         dateOfBirth       = {cdl.basics.dateOfBirth}
         editKey           = 'cdlDateOfBirth'
-        locale            = {locale}
       />
       <PhysicalTraits
         physicalTraits    = { cdl.basics.physicalTraits}
         editKey           = 'cdlSexEyeHair'
-        locale            = { locale }
       />
       <HeightWeight
         traitsHeightWeight= { cdl.basics.traitsHeightWeight}
         editKey           = 'cdlHeightWeight'
-        locale            = { locale }
       />
       <Address
         address           = {cdl.basics.address}
         editKey           = 'cdlResidency'
-        locale            = {locale}
       />
       <SocialSecurity
         socialSecurity    = {cdl.basics.socialSecurity}
         editKey           = 'cdlSocialSecurity'
-        locale            = {locale}
       />
     </Accordion>
   )

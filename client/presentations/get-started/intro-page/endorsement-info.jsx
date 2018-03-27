@@ -1,25 +1,22 @@
 'use strict';
 
 import React        from 'react';
-import translations from '../../../i18n';
 import { getDL }    from '../../../helpers/data/card-type';
-import Translation  from '../../../i18n/translate-tag.jsx';
+import Translator   from '../../../i18n/translator-tag.jsx';
 import {
   getEndorsementString
 } from '../../../helpers/data/get-started';
 
 const EndorsementInfo = (props) => {
-  let locale = props.locale;
-  const fireFighterEndorsement = 
-        <Translation tag='p'>
-            {translations[locale] .intro.getStartedPage.whatYouAreDoing.firefighterEndorsement}
-        </Translation>
+
+  const fireFighterEndorsementKey =  'intro.getStartedPage.whatYouAreDoing.firefighterEndorsement';
+
   if(!getDL(props)) { return null; }
-  let endorsement = getEndorsementString(props, fireFighterEndorsement);
+  let endorsement = getEndorsementString(props, fireFighterEndorsementKey);
 
   return (
     <div className='endorsement-info'>
-      {endorsement}
+      <Translator tag = 'p' translationPath = { endorsement } />
     </div>
     );
 };

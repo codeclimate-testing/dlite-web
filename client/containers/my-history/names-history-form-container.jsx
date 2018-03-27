@@ -8,8 +8,8 @@ import handlers                   from '../../helpers/handlers';
 import Presentation               from '../../presentations/my-history/names-history-page.jsx';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new NamesValidator(Object.assign(props.namesHistory, {locale}), props.validations, 'selectionMissing');
+
+  let validations       = new NamesValidator(props.namesHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('nameHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -25,13 +25,12 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    namesHistory: state.application.history.namesHistory,
-    cardType    : state.application.cardType,
-    focused     : state.ui.focus,
-    validations : state.ui.validations,
-    licenseAndIdHistory:  state.application.history.licenseAndIdHistory,
-    locale      : state.ui.locale,
-    flow        : state.ui.flow
+    namesHistory        : state.application.history.namesHistory,
+    cardType            : state.application.cardType,
+    focused             : state.ui.focus,
+    validations         : state.ui.validations,
+    licenseAndIdHistory :  state.application.history.licenseAndIdHistory,
+    flow                : state.ui.flow
   };
 };
 

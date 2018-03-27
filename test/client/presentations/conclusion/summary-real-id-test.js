@@ -11,7 +11,6 @@ import store            from '../../support/page-store';
 describe('RealID sections on summary pages', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
   beforeEach(function() {
     props = {
       name: 'realID',
@@ -19,8 +18,7 @@ describe('RealID sections on summary pages', function() {
       realID: '',
       showIf: true,
       title: 'Real-ID Compliant',
-      editKey: 'realID',
-      locale
+      editKey: 'realID'
     };
   });
 

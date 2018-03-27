@@ -30,7 +30,30 @@ export const translateThis = (translationPath, props) => {
     value = keyLookup(translationPath, defaultTranslation);
   }
 
+  //TODO: Remove this after all translations has valid key
+  if(!value) {
+    return { __html: translationPath};
+  }
+
   return { __html: value };
+}
+
+export const translateArray = (translationPath, props) => {
+  const defaultTranslation    = props.translations.default;
+  const selectedTranslation   = props.translations.selected;
+  const appLanguage           = props.language;
+
+  let values = [];
+
+  if(appLanguage !== 'en') {
+    values = keyLookup(translationPath, selectedTranslation);
+  }
+
+  if(values.length === 0) {
+    values = keyLookup(translationPath, defaultTranslation);
+  }
+
+  return values && Array.isArray(values) ? values : [];
 }
 
 export const needToLoadTranslation = (props) => {

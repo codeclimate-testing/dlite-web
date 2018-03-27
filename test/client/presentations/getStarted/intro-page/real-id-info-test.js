@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import RealIDInfo               from '../../../../../client/presentations/get-started/intro-page/real-id-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('RealIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,8 +59,7 @@ describe('RealIDInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -92,7 +90,7 @@ describe('RealIDInfo', function() {
             <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantID), true);
+        assert.equal(component.text().includes('Your ID card will be REAL ID Compliant.'), true);
       });
     });
 
@@ -106,7 +104,7 @@ describe('RealIDInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.realIDCompliantLicense), true);
+        assert.equal(component.text().includes('Your driver license will be REAL ID Compliant.'), true);
       });
     });
   });

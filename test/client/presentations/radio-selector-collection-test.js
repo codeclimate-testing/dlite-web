@@ -22,18 +22,15 @@ describe('RadioSelectorCollection', function() {
         selectedValue='existing'
         onChange={onChange}
       >
-        <RadioSelector
-          value='new'
-          text='I am a new voter in California'
-        />
-        <RadioSelector
-          value='existing'
-          text='I am already registered to vote in California'
-        />
-        <RadioSelector
-          value='optOut'
-          text='I am eligible to vote, but do not want to register to vote'
-        />
+        <RadioSelector value='new'>
+          {'I am a new voter in California'}
+        </RadioSelector>
+        <RadioSelector value='existing' >
+          {'I am already registered to vote in California'}
+        </RadioSelector>
+        <RadioSelector value='optOut'>
+          {'I am eligible to vote, but do not want to register to vote'}
+        </RadioSelector>
       </RadioSelectorCollection>
     );
   });

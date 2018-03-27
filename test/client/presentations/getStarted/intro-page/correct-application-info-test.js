@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import CorrectApplicationInfo           from '../../../../../client/presentations/get-started/intro-page/correct-application-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('CorrectApplicationInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,8 +59,7 @@ describe('CorrectApplicationInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -92,7 +90,7 @@ describe('CorrectApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.correct.id), true);
+        assert.equal(component.text().includes('In order to correct your ID card, you’re going to need to fill out a new application.'), true);
     });
   });
 
@@ -109,7 +107,7 @@ describe('CorrectApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.correct.license), true);
+        assert.equal(component.text().includes('In order to correct your driver license, you’re going to need to fill out a new application.'), true);
     });
   });
 });

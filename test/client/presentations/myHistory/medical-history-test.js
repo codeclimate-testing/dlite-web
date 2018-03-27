@@ -31,13 +31,12 @@ describe('MedicalHistoryPage', function() {
         medicalInfo: spy(),
         all: spy()
       };
-      let locale = 'en';
+
       props = {
         medicalHistory,
         continueDisabled,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

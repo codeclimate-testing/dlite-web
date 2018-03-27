@@ -11,7 +11,6 @@ import wrapperGenerator         from '../../support/wrapper';
 import configure                from '../../support/configure-enzyme';
 import CorrectOrUpdate          from '../../../../client/presentations/get-started/correct-or-update-page.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 
 describe('CorrectOrUpdate', function() {
   const Wrapper = wrapperGenerator(store);
@@ -34,7 +33,6 @@ describe('CorrectOrUpdate', function() {
         other: spy(),
         all: spy()
       };
-      let locale = 'en';
 
       props = {
         cardType: [],
@@ -50,9 +48,7 @@ describe('CorrectOrUpdate', function() {
         },
         cardChanges,
         onChange,
-        validations,
-        translations,
-        locale
+        validations
       }
     });
 

@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import ReplaceApplicationInfo           from '../../../../../client/presentations/get-started/intro-page/replace-application-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('ReplaceApplicationInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
     let cardType = {
       IDDL: [],
@@ -63,8 +62,7 @@ describe('ReplaceApplicationInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -94,7 +92,7 @@ describe('ReplaceApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.replace.id), true);
+        assert.equal(component.text().includes('In order to replace your ID card, you’re going to need to fill out a new application.'), true);
     });
   });
 
@@ -110,7 +108,7 @@ describe('ReplaceApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.replace.license), true);
+        assert.equal(component.text().includes('In order to replace your driver license, you’re going to need to fill out a new application.'), true);
     });
   });
 });

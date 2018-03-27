@@ -7,7 +7,7 @@ const CaliforniaResidencyDocuments = (props) => {
 
   return (
     <div key='california-residency-documents'>
-      <h4 className="california-residency-documents">California residency</h4>
+      <h4 className="california-residency-documents translation-missing">California residency</h4>
       <p>You will also need to bring in a document that proves that you live in California.
       Please review our <a target="_blank" href={ caResidencyList }>list of acceptable California residency documents</a>.
       </p>

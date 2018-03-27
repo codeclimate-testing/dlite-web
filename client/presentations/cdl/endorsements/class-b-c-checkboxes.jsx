@@ -3,17 +3,18 @@
 import React from 'react';
 import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale
+
   if(props.cdlEndorsements.needEndorsement === 'Yes' && props.licenseClass !== 'classA') {
     return (
       <div className='license-type-form'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].cdl.endorsmentsPage.whichSection.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'cdl.endorsmentsPage.whichSection.prompt'
+        />
         <div className='row'>
           <fieldset role='group' aria-label='endorsements'>
             <CheckboxCollection
@@ -23,42 +24,30 @@ const Form = (props) => {
               onBlur = { props.onBlurValidate }
               errorMessage={ props.validations.endorsementType() }
             >
-              <CheckboxSelector
-                value = 'tank'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.N}
-                className='endorsements-class'
-                iconClass='tank'
-              />
-              <CheckboxSelector
-                value = 'passengerVehicle'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.P}
-                className='endorsements-class'
-                iconClass='passenger-vehicle'
-              />
-              <CheckboxSelector
-                value = 'schoolBus'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.S}
-                className='endorsements-class'
-                iconClass='school-bus'
-              />
-              <CheckboxSelector
-                value = 'hazmat'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.H}
-                className='endorsements-class'
-                iconClass='hazmat'
-              />
-              <CheckboxSelector
-                value = 'tankHazmat'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.X}
-                className='endorsements-class'
-                iconClass='tank-hazmat'
-              />
-              <CheckboxSelector
-                value = 'firefighter'
-                text  = {translations[locale].cdl.endorsmentsPage.whichSection.values.F}
-                className='endorsements-class'
-                iconClass='firefighter'
-              />
+              <CheckboxSelector value = 'tank' className='endorsements-class' iconClass='tank'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.N' />
+              </CheckboxSelector>
+
+              <CheckboxSelector value = 'passengerVehicle' className='endorsements-class' iconClass='passenger-vehicle'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.P' />
+              </CheckboxSelector>
+
+              <CheckboxSelector value = 'schoolBus' className='endorsements-class' iconClass='school-bus'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.S' />
+              </CheckboxSelector>
+
+              <CheckboxSelector value = 'hazmat' className='endorsements-class' iconClass='hazmat'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.H' />
+              </CheckboxSelector>
+
+              <CheckboxSelector value = 'tankHazmat' className='endorsements-class' iconClass='tank-hazmat'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.X' />
+              </CheckboxSelector>
+
+              <CheckboxSelector value = 'firefighter' className='endorsements-class' iconClass='firefighter'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.whichSection.values.F' />
+              </CheckboxSelector>
+
             </CheckboxCollection>
           </fieldset>
         </div>

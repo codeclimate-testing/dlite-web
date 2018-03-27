@@ -3,7 +3,6 @@
 import React              from 'react';
 import { tooYoungForDL }  from '../../../helpers/data/youth';
 import { getID }          from '../../../helpers/data/card-type';
-import translations       from '../../../i18n';
 
 const DLAlert = () => {
   return (

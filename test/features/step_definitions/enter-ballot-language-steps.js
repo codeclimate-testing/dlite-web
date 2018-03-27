@@ -41,7 +41,7 @@ module.exports = function (world) {
   world.and('I will see the language I chose is selected', function(done){
     browser
       .text('.selected')
-      .then(text => { assert.ok(text.includes('Thai'), 'Language not saved in summary'); })
+      .then(text => { assert.ok(text.includes('ไทย'), 'Language not saved in ballot language selection page'); })
       .then(() => { done(); })
       .catch(done);
   });

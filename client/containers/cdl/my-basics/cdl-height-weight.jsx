@@ -10,8 +10,7 @@ import { HeightWeightValidator }     from '../../../helpers/validations';
 
 
 const Page = (props) => {
-  let locale      = props.locale;
-  let validations = new HeightWeightValidator(Object.assign(props.traitsHeightWeight, {locale}), props.validations);
+  let validations = new HeightWeightValidator(props.traitsHeightWeight, props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('cdlHeightWeight', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -30,7 +29,6 @@ function mapStateToProps(state) {
     traitsHeightWeight: state.cdl.basics.traitsHeightWeight,
     focused:            state.ui.focus,
     validations:        state.ui.validations,
-    locale:             state.ui.locale,
     flow:               state.ui.flow
   };
 };

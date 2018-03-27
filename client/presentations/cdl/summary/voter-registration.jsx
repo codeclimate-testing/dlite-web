@@ -9,32 +9,32 @@ import PoliticalPartyChoose    from '../../conclusion/summary/voting/choose-part
 import BallotLanguage          from '../../conclusion/summary/voting/ballot-language.jsx';
 import BallotByMail            from '../../conclusion/summary/voting/ballot-by-mail.jsx';
 import ContactMethods          from '../../conclusion/summary/voting/contact-methods.jsx';
-import translations     from '../../../i18n';
+import Translator              from '../../../i18n/translator-tag.jsx';
 
 const VoterRegistration = (props) => {
   let cdl       = props.cdl;
-  let locale    = props.ui.locale;
   return (
-    <Accordion id='voter-registration-summary' title={translations[locale].summaryPage.voterRegistration.title} key='voter-registration-summary'>
+    <Accordion
+      id    = 'voter-registration-summary'
+      title = 'summaryPage.voterRegistration.title'
+      key   = 'voter-registration-summary'
+    >
       <CitizenStatus
-        citizenStatus = { cdl.voting.citizenStatus }
-        dateOfBirth   = { cdl.basics.dateOfBirth}
-        editKey       = 'cdlCitizenship'
-        locale        = { locale }
+        citizenStatus           = { cdl.voting.citizenStatus }
+        dateOfBirth             = { cdl.basics.dateOfBirth}
+        editKey                 = 'cdlCitizenship'
       />
       <EligibilityRequirements
         eligibilityRequirements = { cdl.voting.eligibilityRequirements }
-        dateOfBirth   = { cdl.basics.dateOfBirth}
-        editKey       = 'cdlVotingEligibility'
-        locale        = { locale }
+        dateOfBirth             = { cdl.basics.dateOfBirth}
+        editKey                 = 'cdlVotingEligibility'
       />
       <OptOut
-        optOut       = { cdl.voting.optOut }
-        dateOfBirth  = { cdl.basics.dateOfBirth}
-        citizenStatus = { cdl.voting.citizenStatus }
+        optOut                  = { cdl.voting.optOut }
+        dateOfBirth             = { cdl.basics.dateOfBirth}
+        citizenStatus           = { cdl.voting.citizenStatus }
         eligibilityRequirements = { cdl.voting.eligibilityRequirements }
-        editKey      = 'cdlVotingOptOut'
-        locale       = { locale }
+        editKey                 = 'cdlVotingOptOut'
       />
       <PoliticalPartyChoose
         politicalPartyChoose    = {cdl.voting.politicalPartyChoose}
@@ -42,7 +42,6 @@ const VoterRegistration = (props) => {
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
         editKey                 = 'cdlChoosePoliticalParty'
-        locale                  = { locale }
       />
       <BallotLanguage
         ballotLanguage          = {cdl.voting.ballotLanguage}
@@ -50,14 +49,12 @@ const VoterRegistration = (props) => {
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
         editKey                 = 'cdlChooseBallotLanguage'
-        locale                  = { locale }
       />
       <BallotByMail
         ballotByMail            = {cdl.voting.ballotByMail}
         eligibilityRequirements = {cdl.voting.eligibilityRequirements}
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'cdlBallotByMail'
       />
       <ContactMethods
@@ -65,7 +62,6 @@ const VoterRegistration = (props) => {
         eligibilityRequirements = {cdl.voting.eligibilityRequirements}
         citizenStatus           = {cdl.voting.citizenStatus}
         dateOfBirth             = {cdl.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'cdlContactMethods'
       />
     </Accordion>

@@ -29,8 +29,7 @@ function mapStateToProps(state) {
     veteransService : state.cdl.history.veteransService,
     cardAction      : state.cdl.cardAction,
     focused         : state.ui.focus,
-    validations     : state.ui.validations,
-    locale          : state.ui.locale
+    validations     : state.ui.validations
   };
 };
 

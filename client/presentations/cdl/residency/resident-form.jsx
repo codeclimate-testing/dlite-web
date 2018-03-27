@@ -11,7 +11,7 @@ const ResidencyRadios = (props) => {
         {...props}
         name  = 'isResident'
       >
-        { radioYesNoGroup(props.locale) }
+        { radioYesNoGroup() }
       </RadioCollection>
     </fieldset>
   );

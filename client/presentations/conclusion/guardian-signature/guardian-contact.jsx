@@ -20,7 +20,7 @@ const GuardianContact = (props) => {
           {...props}
           identifier  = { phoneId }
           description = 'Phone number'
-          example     = '916 314 8765'
+          example     = 'Example: 916 314 8765'
           value       = { phoneValue }
           errorMessage= { props.phoneNumber }
         />

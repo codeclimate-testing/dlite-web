@@ -7,18 +7,14 @@ import {
   RadioSelectorNoTranslation
 } from './shared/translations-radio-selector.jsx';
 
-const radioYesNoGroup = (locale) => {
+const radioYesNoGroup = () => {
   return [
-    <RadioSelector
-      key       = 'Yes'
-      value     = 'Yes'
-      text      = { <RadioSelectorYesTranslation /> }
-    />,
-    <RadioSelector
-      key       = 'No'
-      value     = 'No'
-      text      = { <RadioSelectorNoTranslation /> }
-    />
+    <RadioSelector key = 'Yes' value = 'Yes'>
+      <RadioSelectorYesTranslation />
+    </RadioSelector>,
+    <RadioSelector key = 'No' value = 'No'>
+      <RadioSelectorNoTranslation />
+    </RadioSelector>
   ];
 };
 

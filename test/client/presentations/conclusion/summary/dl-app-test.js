@@ -8,7 +8,6 @@ import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
 import data             from '../../../../../server/models/parsers/client-default-state.js';
-import translations     from '../../../../../client/i18n';
 
 import DLApp            from '../../../../../client/presentations/conclusion/summary/dl-app.jsx';
 import {
@@ -19,14 +18,11 @@ import {
 } from '../../../../../client/presentations/conclusion/summary/dl-app/index';
 
 const Wrapper = wrapperGenerator(store);
-let locale = 'en';
-
 
 describe('Summary DL App section components', function() {
   let props;
   before(function() {
     props = Object.assign({}, data.IDDL.application);
-    props.locale = locale;
     props.cardType = 'DL';
   });
 
@@ -114,8 +110,7 @@ describe('Summary DL App section components', function() {
           type: ['car', 'cycle'],
           needEndorsement: 'Yes',
           endorsement: 'firefighter'
-        },
-        locale: 'en'
+        }
       };
       props.editKey = 'chooseLicenseClass';
 
@@ -137,7 +132,6 @@ describe('Summary DL App section components', function() {
     beforeEach(function() {
       props = Object.assign({}, data.IDDL);
       props.editKey = 'realID';
-      props.ui = { locale };
     });
 
     it('shows Real-ID Compliant No if user is getting an ID but not getting a real ID on the DL', function(){

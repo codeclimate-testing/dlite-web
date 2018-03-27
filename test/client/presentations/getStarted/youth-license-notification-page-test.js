@@ -25,7 +25,7 @@ describe('YouthDLNotificationPage', function() {
         month: '',
         day: ''
     };
-    let locale = 'en';
+
     props = {
       cardType: ['DL'],
       cardAction: 'new',
@@ -40,8 +40,7 @@ describe('YouthDLNotificationPage', function() {
       },
       onChange,
       dateOfBirth,
-      validations,
-      locale
+      validations
     };
   });
 

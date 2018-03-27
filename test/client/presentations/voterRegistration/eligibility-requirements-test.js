@@ -25,12 +25,11 @@ describe('EligibilityPage', function() {
         day: '',
         year: ''
       };
-      let locale = 'en';
+
       props = {
         eligibilityRequirements,
         dateOfBirth,
-        onChange,
-        locale
+        onChange
       }
     });
 

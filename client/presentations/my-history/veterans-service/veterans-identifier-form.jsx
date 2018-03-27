@@ -16,7 +16,6 @@ import {
   keepOrAdd,
   isPreviouslyDesignated
 }   from '../../../helpers/data/veteran';
-import translations       from '../../../i18n'
 
 const PreviousIDHeader = (props) => {
   if (!showPreviousIDHeader(props)) { return null; }
@@ -80,7 +79,6 @@ const MessageAddAmount = (props) => {
 };
 
 const MessageRemovingDesignation = (props) => {
-  let locale = props.locale;
   if (!removeIdentifierNotification(props)) { return null; }
   return (
     <MessageBox className='info'>

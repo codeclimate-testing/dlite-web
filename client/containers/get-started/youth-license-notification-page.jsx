@@ -13,8 +13,7 @@ import { continueHidden }         from '../../helpers/data/youth';
 import { hasMultipleCards }       from '../../helpers/data/cards';
 
 const Page = (props) => {
-  let locale              = props.locale;
-  let validations         = new YouthDLValidator(Object.assign(props.youthIDInstead, {locale}), props.validations);
+  let validations         = new YouthDLValidator(props.youthIDInstead, props.validations);
   let onSubmit            = handlers.navigateOrShowErrors('youthIDInstead', props, validations);
   const onBack            = handlers.navigateOnBack(props, validations);
 
@@ -37,8 +36,7 @@ function mapStateToProps(state) {
     cardType:       state.application.cardType,
     dateOfBirth:    state.application.basics.dateOfBirth,
     focused:        state.ui.focus,
-    validations:    state.ui.validations,
-    locale:         state.ui.locale
+    validations:    state.ui.validations
   };
 };
 

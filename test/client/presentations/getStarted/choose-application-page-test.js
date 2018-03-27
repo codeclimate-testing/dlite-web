@@ -25,14 +25,12 @@ describe('ChooseApp Page', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
 
       props = {
         chooseApp: '',
         accordions,
         onChange,
         validations,
-        locale,
         server: {
           apiStatus : ''
         }

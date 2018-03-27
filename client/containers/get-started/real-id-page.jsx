@@ -30,7 +30,6 @@ const mapStateToProps = (state) => {
     seniorID:     state.application.IDApp.seniorID,
     focused:      state.ui.focus,
     validations:  state.ui.validations,
-    locale:       state.ui.locale,
     flow :        state.ui.flow
   };
 };

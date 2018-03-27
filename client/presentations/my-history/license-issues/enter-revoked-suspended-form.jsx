@@ -29,10 +29,11 @@ const EnterRevokedSuspended = (props) => {
         <TextArea
           { ...props }
           identifier   = 'reason'
-          description  = { <Translator tag = 'span' translationPath = 'myHistory.licenseIssuesPage.reasonLabel' /> }
           value        = { props.licenseIssues.reason }
           errorMessage = { props.validations.reason() }
-        />
+        >
+          <Translator tag = 'span' translationPath = 'myHistory.licenseIssuesPage.reasonLabel' />
+        </TextArea>
       </fieldset>
     </div>
   )

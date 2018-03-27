@@ -9,8 +9,8 @@ import { updateLicenseAndIdHistory }  from '../../actions/index';
 import Presentation                   from '../../presentations/my-history/card-history-page.jsx';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new LicenseHistoryValidator(Object.assign(props.licenseAndIdHistory, {locale}), props.validations);
+
+  let validations       = new LicenseHistoryValidator(props.licenseAndIdHistory,  props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cardHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -30,7 +30,6 @@ function mapStateToProps(state) {
     cardType            : state.application.cardType,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

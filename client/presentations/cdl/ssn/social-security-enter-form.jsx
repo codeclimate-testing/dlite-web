@@ -1,8 +1,9 @@
 'use strict';
 
-import React            from 'react';
+import React              from 'react';
 import NumberInput        from '../../number-input.jsx';
-import { hasValue }     from '../../../helpers/data/validations';
+import { hasValue }       from '../../../helpers/data/validations';
+import Translator         from '../../../i18n/translator-tag.jsx';
 import {
   ErrorIcon,
   ErrorLabel,
@@ -12,8 +13,6 @@ import {
 import {
   hasSocialSecurityYes
 } from '../../../helpers/data/ssn';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
 
 const Form = (props) => {
   if (!hasSocialSecurityYes(props)) { return null; }
@@ -26,18 +25,19 @@ const Form = (props) => {
   };
   let message = errorMessage(errors);
   let addError = errorClass(message);
-  let locale = props.locale;
-  let translationPath = translations[locale].myBasics.socialSecurityPage.enterSocialNumber;
 
   return (
     <div className='social-security-enter-form'>
       <hr />
-        <Translation tag='h2' className='question'>
-          {translationPath.prompt}
-        </Translation>
-        <Translation tag='p'>
-          {translationPath.explanation}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.explanation'
+        />
 
       <fieldset role='group' aria-label='Social security number'>
         <NumberInput

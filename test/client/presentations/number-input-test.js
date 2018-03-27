@@ -1,31 +1,33 @@
 'use strict';
 
-import assert     from 'assert';
+import assert                   from 'assert';
 
-import React      from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import { spy }    from 'sinon';
-
-import NumberInput  from '../../../client/presentations/number-input.jsx';
+import React                    from 'react';
+import configure                from '../support/configure-enzyme';
+import { render }               from 'enzyme';
+import { spy }                  from 'sinon';
+import store                    from '../support/page-store';
+import wrapperGenerator         from '../support/wrapper';
+import NumberInput              from '../../../client/presentations/number-input.jsx';
 
 describe('NumberInput not used in DateInput', function() {
-  let props, component;
-
+  let props, children, component;
+  let Wrapper = wrapperGenerator(store);
   beforeEach(function() {
     props = {
-      description: 'test',
       identifier: 'testDate',
       value: '',
       errorMessage: '',
       onChange: spy(),
       onFocus: spy(),
-      onBlur: spy(),
-      locale: 'en'
+      onBlur: spy()
     };
+    children = 'test';
 
     component = render(
-      <NumberInput {...props} />
+      <Wrapper>
+        <NumberInput {...props}  > { children } </NumberInput>
+      </Wrapper>
     );
 
   });
@@ -40,7 +42,9 @@ describe('NumberInput not used in DateInput', function() {
     beforeEach(function() {
       props.errorMessage = 'error';
       component = render(
-        <NumberInput {...props} />
+        <Wrapper>
+          <NumberInput {...props}  > { children } </NumberInput>
+        </Wrapper>
       );
     });
 

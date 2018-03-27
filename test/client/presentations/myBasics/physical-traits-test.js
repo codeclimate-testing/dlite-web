@@ -32,13 +32,12 @@ describe('PhysicalTraitsPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         physicalTraits,
         continueDisabled,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

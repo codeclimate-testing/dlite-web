@@ -1,17 +1,18 @@
 'use strict';
 
-import assert     from 'assert';
+import assert                   from 'assert';
 
-import React      from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import { spy }    from 'sinon';
-
-import DateInput  from '../../../client/presentations/date-input.jsx';
+import React                    from 'react';
+import configure                from '../support/configure-enzyme';
+import { render }               from 'enzyme';
+import { spy }                  from 'sinon';
+import store                    from '../support/page-store';
+import wrapperGenerator         from '../support/wrapper';
+import DateInput                from '../../../client/presentations/date-input.jsx';
 
 describe('DateInput', function() {
   let props, component;
-
+  let Wrapper = wrapperGenerator(store);
   beforeEach(function() {
 
     props = {
@@ -26,11 +27,12 @@ describe('DateInput', function() {
         month: spy(),
         day: spy(),
         year: spy()
-      },
-      locale: 'en'
+      }
     };
     component = render(
-      <DateInput {...props} />
+      <Wrapper>
+        <DateInput {...props} />
+      </Wrapper>
     );
 
   });
@@ -54,7 +56,9 @@ describe('DateInput', function() {
         year: () => 'error'
       };
       component = render(
-        <DateInput {...props} />
+        <Wrapper>
+          <DateInput {...props} />
+        </Wrapper>
       );
     });
 

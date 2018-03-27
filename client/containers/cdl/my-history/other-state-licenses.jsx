@@ -8,8 +8,7 @@ import handlers                         from '../../../helpers/handlers';
 import Presentation                     from '../../../presentations/cdl/my-history/other-state-licenses-page.jsx';
 
 const Page = (props) => {
-  let locale      = props.locale;
-  let validations = new OtherStateLicenseValidator(Object.assign(props.otherStateLicenses, {locale}), props.validations, 'selectionMissing');
+  let validations = new OtherStateLicenseValidator(props.otherStateLicenses, props.validations, 'selectionMissing');
   let onSubmit    = handlers.navigateOrShowErrors('cdlOtherStateLicenses', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -28,7 +27,6 @@ function mapStateToProps(state) {
     otherStateLicenses  : state.cdl.history.otherStateLicenses,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

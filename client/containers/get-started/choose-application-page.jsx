@@ -31,8 +31,7 @@ function mapStateToProps(state) {
     validations:  state.ui.validations,
     server:       {
       apiStatus: state.server.apiStatus
-    },
-    locale:       state.ui.locale
+    }
   };
 };
 

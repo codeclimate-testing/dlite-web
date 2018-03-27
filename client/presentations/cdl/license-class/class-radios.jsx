@@ -3,11 +3,9 @@
 import React              from 'react';
 import RadioSelector      from '../../radio-selector.jsx';
 import RadioCollection    from '../../radio-selector-collection.jsx';
-import translations       from '../../../i18n';
 import Translator         from '../../../i18n/translator-tag.jsx';
 
 const ClassRadios = (props) => {
-  let locale = props.locale;
   return (
     <div className='cdl-class-form'>
       <Translator
@@ -16,22 +14,18 @@ const ClassRadios = (props) => {
         translationPath = 'cdl.licenseClassPage.prompt'
       />
       <fieldset role='group' aria-label='Commercial classes'>
-        <RadioCollection
-          {...props}
-          name          = 'class'
-        >
-          <RadioSelector
-            value = 'classA'
-            text  = {translations[locale].cdl.licenseClassPage.values[0]}
-          />
-          <RadioSelector
-            value = 'classB'
-            text  = {translations[locale].cdl.licenseClassPage.values[1]}
-          />
-          <RadioSelector
-            value = 'classC'
-            text  = {translations[locale].cdl.licenseClassPage.values[2]}
-          />
+        <RadioCollection {...props} name = 'class'>
+          <RadioSelector value = 'classA'>
+            <Translator tag = 'span' translationPath = 'cdl.licenseClassPage.values.0' />
+          </RadioSelector>
+
+          <RadioSelector value = 'classB'>
+            <Translator tag = 'span' translationPath = 'cdl.licenseClassPage.values.1' />
+          </RadioSelector>
+
+          <RadioSelector value = 'classC'>
+          <Translator tag = 'span' translationPath = 'cdl.licenseClassPage.values.2' />
+          </RadioSelector>
         </RadioCollection>
       </fieldset>
     </div>

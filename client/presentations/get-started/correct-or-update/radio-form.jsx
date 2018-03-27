@@ -3,10 +3,9 @@
 import React                from 'react';
 import RadioSelector        from '../../radio-selector.jsx';
 import RadioCollection      from '../../radio-selector-collection.jsx';
-import translations         from '../../../i18n';
+import Translator           from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
 
   return (
     <div className='row inner-button'>
@@ -16,14 +15,12 @@ const Form = (props) => {
           name          = {`${props.formName}correctOrUpdate`}
           errorMessage  = { props.validations.correctOrUpdate() }
         >
-          <RadioSelector
-            value= 'correct'
-            text={translations[locale].intro.correctOrUpdatePage.values[0]}
-          />
-          <RadioSelector
-            value='update'
-            text={translations[locale].intro.correctOrUpdatePage.values[1]}
-          />
+          <RadioSelector value= 'correct'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.values.0' />
+          </RadioSelector>
+          <RadioSelector value='update'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.values.1' />
+          </RadioSelector>
         </RadioCollection>
       </fieldset>
     </div>

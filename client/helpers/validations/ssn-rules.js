@@ -1,6 +1,5 @@
 'use strict';
 
-import translations         from '../../i18n';
 import { hasValue }         from '../data/validations';
 import selectionValidator   from './selection-validator';
 
@@ -10,23 +9,22 @@ import {
 }             from '../data/ssn';
 
 const ssnAll = (props) => {
-  let locale  = props.locale;
+
   let value   = props.hasSocialSecurity;
   if (!hasValue(value)) {
-   return [translations[locale].errorMessages.socialSecurityAvailabilityMissing];
+   return ['errorMessages.socialSecurityAvailabilityMissing'];
   }
   return [];
 };
 
 const socialSecurity = (name, number) => {
   return (props) => {
-    let locale = props.locale;
     if (props.hasSocialSecurity !== 'Yes') { return [];};
 
     if (props[name].length !== number) {
-      return [translations[locale].errorMessages['socialSecurityNumberInvalid']];
+      return ['errorMessages.socialSecurityNumberInvalid'];
     } else if (hasNone(props)) {
-      return [translations[locale].errorMessages['socialSecurityNumberMissing']];
+      return ['errorMessages.socialSecurityNumberMissing'];
     }
     return [];
   };

@@ -8,8 +8,7 @@ import Presentation               from '../../../presentations/cdl/my-history/me
 import { MedicalValidator }       from '../../../helpers/validations';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new MedicalValidator(Object.assign(props.medicalHistory, {locale}), props.validations, 'selectionMissing');
+  let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('cdlMedical', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +28,6 @@ function mapStateToProps(state) {
     cardAction        : state.cdl.cardAction,
     focused           : state.ui.focus,
     validations       : state.ui.validations,
-    locale            : state.ui.locale,
     flow              : state.ui.flow
   };
 };

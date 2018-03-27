@@ -1,18 +1,17 @@
 'use strict';
 
-import React from 'react';
-import translations from '../i18n';
+import React      from 'react';
+import Translator from '../i18n/translator-tag.jsx';
 
 const BackButton = (props) => {
-  let locale = props.locale;
   return (
     <div className='shadow-container unit'>
       <button
-        className='arrow-button backwards'
-        onClick={props.onBack}
-        type='button'
+        className = 'arrow-button backwards'
+        onClick   = { props.onBack }
+        type      = 'button'
       >
-        {translations[locale].shared.navigation.back}
+        <Translator tag = 'span' translationPath = 'shared.navigation.back' />
       </button>
     </div>
   );

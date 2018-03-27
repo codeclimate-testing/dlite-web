@@ -3,43 +3,34 @@
 import React                    from 'react';
 import { getDL }                from '../../../helpers/data/card-type';
 import { getVehicleInfoArray }  from '../../../helpers/data/get-started';
-import translations             from '../../../i18n';
-import Translation              from '../../../i18n/translate-tag.jsx';
+import Translator               from '../../../i18n/translator-tag.jsx';
 
 const VehicleInfo = (props) => {
-  let locale = props.locale;
-  const classC =
-    <Translation tag='li' key='car'>
-      {translations[locale].intro.getStartedPage.whatYouAreDoing.classes.C}
-    </Translation>
-          
-  const classM =
-    <Translation tag='li' key='cycle'>
-      {translations[locale].intro.getStartedPage.whatYouAreDoing.classes.M}
-    </Translation>
-    
-  const classA =
-    <Translation tag='li' key='long'>
-      {translations[locale].intro.getStartedPage.whatYouAreDoing.classes.A}
-    </Translation>
-    
-  const classB =
-    <Translation tag='li' key='trailer'>
-      {translations[locale].intro.getStartedPage.whatYouAreDoing.classes.B}
-    </Translation>
-    
-  const toDriveHeader =
-    <Translation tag='h4'>
-      {translations[locale].intro.getStartedPage.whatYouAreDoing.toDrive}
-    </Translation>
+
+  const classC = 'intro.getStartedPage.whatYouAreDoing.classes.C';
+  const classM = 'intro.getStartedPage.whatYouAreDoing.classes.M';
+  const classA = 'intro.getStartedPage.whatYouAreDoing.classes.A';
+  const classB = 'intro.getStartedPage.whatYouAreDoing.classes.B';
 
   if(!getDL(props)) { return null; }
-  let vehicles = getVehicleInfoArray(props, classC, classM, classA, classB);
-
+  let vehicles      = getVehicleInfoArray(props, classC, classM, classA, classB);
+  let vehiclesList  = vehicles.map((translationPath, i) => {
+    return (
+      <Translator
+        tag             = 'li'
+        key             = { i }
+        keyProp         = { i }
+        translationPath = { translationPath }
+      />
+    );
+  });
   return (
     <div className='vehicle-info'>
-      {toDriveHeader}
-      {vehicles}
+      <Translator
+        tag             = 'h4'
+        translationPath = 'intro.getStartedPage.whatYouAreDoing.toDrive'
+      />
+     { vehiclesList }
     </div>
   );
 };

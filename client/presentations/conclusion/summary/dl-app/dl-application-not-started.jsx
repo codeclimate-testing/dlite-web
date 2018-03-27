@@ -1,7 +1,7 @@
 'use strict';
 
 import React                from "react";
-import translations         from '../../../../i18n';
+import Translator           from '../../../../i18n/translator-tag.jsx';
 import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 
 import {
@@ -9,7 +9,6 @@ import {
 } from '../../../../helpers/data/card-type'
 
 const DLApplicationNotStarted = (props) => {
-  let locale = props.locale;
   document.title = 'Summary of my application';
   if(DLAppExists(props)) { return null; }
 
@@ -18,7 +17,10 @@ const DLApplicationNotStarted = (props) => {
       {...props}
       add       = { true }
     >
-      <p>{translations[locale].summaryPage.whatImDoing.nothing}</p>
+      <Translator
+        tag             = 'p'
+        translationPath = 'summaryPage.whatImDoing.nothing'
+      />
     </PageSummaryLink>
   );
 };

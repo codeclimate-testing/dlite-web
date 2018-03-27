@@ -55,9 +55,9 @@ describe('Translator', () => {
       done();
     });
 
-    it('returns a blank string if translation is not available in selected and default language', (done) => {
-      let contentKey  = 'applicationPreparationPage.prompt123';
-      assert.equal(translateThis(contentKey, props).__html, '');
+    it('returns a same string if translation is not available in selected and default language', (done) => {
+      let contentKey  = 'This is a simple string and expects no translation';
+      assert.equal(translateThis(contentKey, props).__html, 'This is a simple string and expects no translation');
       done();
     });
 

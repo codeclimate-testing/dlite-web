@@ -13,7 +13,7 @@ const CardString = (props) => {
   if (!props.showIf) { return null; }
   return (
     <span className='translation-missing'>
-      {props.text}
+      {props.children}
     </span>
   )
 };
@@ -22,18 +22,17 @@ const CardString = (props) => {
 const ExplanatoryString = (props) => {
   return (
     <div>
-      <CardString
-        showIf  = { showID(props) }
-        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.ID' /> }
-      />
-      <CardString
-        showIf  = { showDL(props) }
-        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.license' /> }
-      />
-      <CardString
-        showIf  = { showBoth(props) }
-        text    = { <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.cards' /> }
-      />
+      <CardString showIf  = { showID(props) } >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.ID' />
+      </CardString>
+
+      <CardString showIf  = { showDL(props) } >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.license' />
+      </CardString>
+
+      <CardString showIf  = { showBoth(props) } >
+        <Translator tag = 'span' translationPath = 'myBasics.addressesPage.mailingAddressSameExplanation.cards' />
+      </CardString>
     </div>
   )
 };

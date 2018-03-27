@@ -3,6 +3,7 @@
 import React        from 'react';
 
 import { hasValue } from '../helpers/data/validations';
+import Translator   from '../i18n/translator-tag.jsx'
 
 export const ErrorLabel= (props) => {
   if (!props.errorClass) { return null; }
@@ -13,7 +14,10 @@ export const ErrorLabel= (props) => {
 
   return (
     <div className={className} role="alert" aria-live="assertive" aria-atomic="true">
-      { errorText }
+      <Translator
+        tag             = 'span'
+        translationPath = { errorText }
+      />
     </div>
   );
 };
@@ -48,7 +52,10 @@ export const ErrorMessageBox = (props) => {
     <div className={className}>
       <div className='unit error-icon' role="alert" aria-live="assertive" aria-atomic="true"></div>
       &nbsp;
-      {props.errorMessage}
+      <Translator
+        tag             = 'span'
+        translationPath = { props.errorMessage }
+      />
     </div>
   );
 };

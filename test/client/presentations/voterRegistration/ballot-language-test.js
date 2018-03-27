@@ -30,13 +30,12 @@ describe('BallotLanguagePage', function() {
         all: spy(),
         isValid: spy()
       };
-      let locale = 'en';
+
       props = {
         ballotLanguage,
         dateOfBirth,
         onChange,
-        validations,
-        locale
+        validations
       };
     });
 

@@ -9,7 +9,7 @@ const VeteransDocuments = (props) => {
   if (!showBulletPoint(props)) { return null; }
 
   return (
-    <div key='proof-of-veterans-service'>
+    <div key='proof-of-veterans-service translation-missing'>
       <h4 className="proof-of-veterans-service">Proof of veterans service</h4>
       <p>To get “Veteran” on your card, you need to to bring a <a target="_blank" href={ veteranVerificationLink }> Veteran Status Verification Form </a>
       that your County Veteran Service Office can provide to you. We thank you for your service! </p>

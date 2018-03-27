@@ -2,19 +2,20 @@
 
 import React from 'react';
 
-import CheckboxSelector from '../../checkbox-selector.jsx';
+import CheckboxSelector   from '../../checkbox-selector.jsx';
 import CheckboxCollection from '../../checkbox-selector-collection.jsx';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
+
   return (
     <div className='row choose-new-cards'>
-      <Translation tag='h2' className='question'>
-        {translations[locale].intro.chooseSelectionPage.explanationMultiCard}
-      </Translation>
+      <Translator
+        tag             = 'h2'
+        lassName        = 'question'
+        translationPath = 'intro.chooseSelectionPage.explanationMultiCard'
+      />
       <div className='row'>
         <fieldset role='group' aria-label='Card choice'>
           <CheckboxCollection
@@ -24,14 +25,14 @@ const Form = (props) => {
             onBlur        = { props.onBlurValidate }
             errorMessage  = { props.validations.cardType()}
           >
-          <CheckboxSelector
-            value     = 'ID'
-            text={translations[locale].intro.chooseSelectionPage.values[0]}
-          />
-          <CheckboxSelector
-            value     = 'DL'
-            text={translations[locale].intro.chooseSelectionPage.values[1]}
-          />
+            <CheckboxSelector value = 'ID'>
+              <Translator tag = 'span' translationPath = 'intro.chooseSelectionPage.values.0' />
+            </CheckboxSelector>
+
+            <CheckboxSelector value = 'DL'>
+              <Translator tag = 'span' translationPath = 'intro.chooseSelectionPage.values.1' />
+            </CheckboxSelector>
+
           </CheckboxCollection>
         </fieldset>
         <div className='unit spacer' />

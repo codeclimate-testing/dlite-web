@@ -1,47 +1,36 @@
 'use strict';
 
 import React          from 'react';
-import translations   from '../../../i18n';
 
-import Translation            from '../../../i18n/translate-tag.jsx';
+import Translator             from '../../../i18n/translator-tag.jsx';
 import { gettingSeniorID }    from '../../../helpers/data/senior';
 import { choosingReducedFee } from '../../../helpers/data/reduced-fee';
 import { correctID }          from '../../../helpers/data/card-type';
 
 
 const Senior = (props) => {
-  let locale = props.locale;
   if (!gettingSeniorID(props.IDApp)) { return null; }
-  return <Translation tag='p'>
-            {translations[locale].intro.getStartedPage.whatYouAreDoing.correctingSeniorID}
-         </Translation>
+  return <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.correctingSeniorID' />
 };
 
 const Reduced = (props) => {
-  let locale = props.locale;
   if (!choosingReducedFee(props.IDApp)) { return null; }
-  return <Translation tag='p'>
-            {translations[locale].intro.getStartedPage.whatYouAreDoing.correctingReducedFeeID}
-         </Translation>
+  return <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.correctingReducedFeeID' />
 };
 
 const Regular = (props) => {
-  let locale = props.locale;
   if (gettingSeniorID(props.IDApp) || choosingReducedFee(props.IDApp)) { return null; }
-  return <Translation tag='p'>
-            {translations[locale].intro.getStartedPage.whatYouAreDoing.correctingID}
-         </Translation>
+  return <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.correctingID' />
 };
 
 
 const CorrectingIDInfo = (props) => {
   if(!correctID(props)) { return null; }
-  let locale = props.locale;
   return (
     <div className='correcting-id-info'>
-      <Senior   IDApp = {props.IDApp } locale = {locale} />
-      <Reduced  IDApp = {props.IDApp } locale = {locale} />
-      <Regular  IDApp = { props.IDApp} locale = {locale} />
+      <Senior   IDApp = {props.IDApp }/>
+      <Reduced  IDApp = {props.IDApp }/>
+      <Regular  IDApp = { props.IDApp}/>
     </div>
     );
 };

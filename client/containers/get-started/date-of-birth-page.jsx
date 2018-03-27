@@ -10,8 +10,7 @@ import Presentation           from "../../presentations/get-started/date-of-birt
 import { updateDateOfBirth }  from "../../actions/index";
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       =   new DOBValidator(Object.assign(props.dateOfBirth, { locale }) , props.validations, 'dateOfBirthMissing');
+  let validations       =   new DOBValidator(props.dateOfBirth, props.validations, 'dateOfBirthMissing');
   let onSubmit          =   handlers.navigateOrShowErrors('dateOfBirth', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -33,7 +32,6 @@ const mapStateToProps = (state) => {
     youthIDInstead: state.application.youthIDInstead,
     chooseApp     : state.ui.chooseApp,
     validations   : state.ui.validations,
-    locale        : state.ui.locale,
     flow          : state.ui.flow
   };
 };

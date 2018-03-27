@@ -41,19 +41,24 @@ const OptOutPage = (props) => {
           >
             <RadioSelector
               value     = 'new'
-              text      = { <Translator tag='span' translationPath={`${translation}.answerNewRegistration`}/> }
               className = 'long-text'
-            />
+            >
+              <Translator tag='span' translationPath={`${translation}.answerNewRegistration`}/>
+            </RadioSelector>
+
             <RadioSelector
               value     = 'existing'
-              text      = { <Translator tag='span' translationPath={`${translation}.answerUpdateRegistration`}/> }
               className = 'long-text'
-            />
+            >
+              <Translator tag='span' translationPath={`${translation}.answerUpdateRegistration`}/>
+            </RadioSelector>
+
             <RadioSelector
               value     = 'optOut'
-              text      = { <Translator tag='span' translationPath={`${translation}.answerOptOut`}/> }
               className = 'long-text'
-            />
+            >
+              <Translator tag='span' translationPath={`${translation}.answerOptOut`}/>
+            </RadioSelector>
           </RadioCollection>
         </fieldset>
 

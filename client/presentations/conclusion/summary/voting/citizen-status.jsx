@@ -1,7 +1,6 @@
 'use strict';
 
-import React          from 'react';
-import translations   from '../../../../i18n';
+import React            from 'react';
 import {
   citizenStatusNotChosen,
   eligibleForCitizen,
@@ -17,40 +16,42 @@ import * as dataPresent             from '../../../../helpers/data-present';
 
 const Yes = (props) => {
   if (!eligibleForCitizen(props)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-	          title={translations[locale].summaryPage.voterRegistration.citizen}
-	          text={translations[locale].shared.commonAnswers.yes}
-	        />)
+  return (
+    <SummaryItem
+     title  = 'summaryPage.voterRegistration.citizen'
+      text  = 'shared.commonAnswers.yes'
+    />
+  );
 };
 
 const No = (props) => {
   if (eligibleForCitizen(props) || declineToAnswer(props.citizenStatus)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-	          title={translations[locale].summaryPage.voterRegistration.citizen}
-	          text={translations[locale].shared.commonAnswers.no}
-	        />)
+  return (
+    <SummaryItem
+      title = 'summaryPage.voterRegistration.citizen'
+      text  = 'shared.commonAnswers.no'
+    />
+  );
 };
 
 const Decline = (props) => {
   if (!declineToAnswer(props.citizenStatus)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-	          title={translations[locale].summaryPage.voterRegistration.citizen}
-	          text={translations[locale].shared.commonAnswers.declineToAnswer}
-	        />)
+  return (
+    <SummaryItem
+      title = 'summaryPage.voterRegistration.citizen'
+      text  = 'shared.commonAnswers.declineToAnswer'
+    />
+  );
 };
 
 const CitizenStatus = (props) => {
   let notAvailable = <div className='translation-missing'>Not Available</div>
   let now = props.now ? props.now : new Date();
-  let locale = props.locale;
   if (ageChecks.Under16(props.dateOfBirth, now)) {
     return (
       <SummaryItem
-        title={translations[locale].summaryPage.voterRegistration.citizen}
-        text={notAvailable}
+        title = 'summaryPage.voterRegistration.citizen'
+        text  = { notAvailable }
       />
     )
   }
@@ -60,8 +61,8 @@ const CitizenStatus = (props) => {
         {...props}
       >
         <SummaryItem
-          title={translations[locale].summaryPage.voterRegistration.citizen}
-          text={translations[locale].shared.commonAnswers.declineToAnswer}
+          title = 'summaryPage.voterRegistration.citizen'
+          text  = 'shared.commonAnswers.declineToAnswer'
         />
       </PageSummaryLink>
     )

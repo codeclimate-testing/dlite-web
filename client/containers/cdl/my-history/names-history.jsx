@@ -8,8 +8,7 @@ import handlers                   from '../../../helpers/handlers';
 import Presentation               from '../../../presentations/cdl/my-history/names-history-page.jsx';
 
 const Page = (props) => {
-  let locale      = props.locale;
-  let validations = new NamesValidator(Object.assign(props.namesHistory, {locale}), props.validations, 'selectionMissing');
+  let validations = new NamesValidator(props.namesHistory, props.validations, 'selectionMissing');
   let onSubmit    = handlers.navigateOrShowErrors('cdlNameHistory', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +28,6 @@ function mapStateToProps(state) {
     cardAction        : state.cdl.cardAction,
     focused           : state.ui.focus,
     validations       : state.ui.validations,
-    locale            : state.ui.locale,
     flow              : state.ui.flow
   };
 };

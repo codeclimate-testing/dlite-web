@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import VehicleInfo              from '../../../../../client/presentations/get-started/intro-page/vehicle-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('VehicleInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,8 +59,7 @@ describe('VehicleInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -93,9 +91,7 @@ describe('VehicleInfo', function() {
             <VehicleInfo  {...props} />
           </Wrapper>
         );
-
-        let text = translations[locale].intro.getStartedPage.whatYouAreDoing.classes.C;
-        assert.equal(component.text().includes(text), true);
+        assert.equal(component.text().includes('Car (Class C)'), true);
       });
 
       it('shows class M when user selects cycle', function() {
@@ -106,7 +102,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.M), true);
+        assert.equal(component.text().includes('Motorcycle (Class M)'), true);
       });
 
       it('shows class A when user selects long', function() {
@@ -117,7 +113,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.A), true);
+        assert.equal(component.text().includes('Housecar, 5th wheel over 15000 pounds, or livestock trailer (Class A)'), true);
       });
 
       it('shows class B when user selects trailer', function() {
@@ -128,7 +124,7 @@ describe('VehicleInfo', function() {
           <GetStartedPage {...props} />
           </Wrapper>
         );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.classes.B), true);
+        assert.equal(component.text().includes('Housecar or trailer (Class B)'), true);
       });
     });
   });

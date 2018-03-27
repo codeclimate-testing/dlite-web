@@ -28,17 +28,15 @@ const mapStateToProps = (state) => {
   return {
     cardType:       state.application.cardType,
     chooseApp:      state.ui.chooseApp,
-    section:        state.ui.section,
-    locale:         state.ui.locale
+    section:        state.ui.section
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   const onPageLoad            = handlers.onPageLoad(dispatch);
-  const onLocaleChange        = handlers.onLocaleChange(dispatch);
+
   return {
-    onPageLoad,
-    onLocaleChange
+    onPageLoad
   };
 };
 

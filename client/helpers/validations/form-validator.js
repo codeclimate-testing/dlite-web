@@ -1,5 +1,4 @@
 'use strict';
-import translations   from '../../i18n';
 
 class Validator {
   constructor(props, requestedValidations, allMessage) {
@@ -36,9 +35,10 @@ class Validator {
     }, []);
 
     let errorMessage = '';
-    let locale = this.props.locale;
     if (allErrors.length > 1) {
-      errorMessage = this.allMessage ? translations[locale].errorMessages[this.allMessage] : translations[locale].errorMessages.errorPreventContinuing;
+      let errorKeyThis = 'errorMessages.' + this.allMessage;
+      let errorKeyThat = 'errorMessages.errorPreventContinuing';
+      errorMessage = this.allMessage ? errorKeyThis : errorKeyThat;
     } else if (allErrors.length === 1) {
       errorMessage = allErrors[0];
     }

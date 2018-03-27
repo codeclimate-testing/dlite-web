@@ -2,74 +2,60 @@
 
 import React              from 'react';
 import Accordion          from '../../../containers/accordion.jsx';
-import translations       from '../../../i18n';
 import Translator         from '../../../i18n/translator-tag.jsx';
-import Translate          from '../../../i18n/translate-tag.jsx';
+import TranslatorList     from '../../../i18n/translator-list.jsx';
 
 
 const ClassCDriveItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].cdl.licenseClassPage.FAQNotSureWhatClass.classC.driveItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'cdl.licenseClassPage.FAQNotSureWhatClass.classC.driveItems'
+      />
+  );
 };
 
 const ClassBDriveItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].cdl.licenseClassPage.FAQNotSureWhatClass.classB.driveItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'cdl.licenseClassPage.FAQNotSureWhatClass.classB.driveItems'
+      />
+  );
 };
 
 const ClassADriveItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].cdl.licenseClassPage.classA.driveItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'cdl.licenseClassPage.classA.driveItems'
+      />
+  );
 };
 
 const ClassBTowItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].cdl.licenseClassPage.FAQNotSureWhatClass.classB.towItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'cdl.licenseClassPage.FAQNotSureWhatClass.classB.towItems'
+      />
+  );
 };
 
 const ClassATowItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].cdl.licenseClassPage.classA.towItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'cdl.licenseClassPage.classA.towItems'
+      />
+  );
 };
 
-
-
 const FAQ = (props) => {
-  let locale = props.locale;
   return (
     <Accordion
-      id='cdl-class'
-      title={translations[locale].cdl.licenseClassPage.FAQNotSureWhatClass.title}
+      id    = 'cdl-class'
+      title = 'cdl.licenseClassPage.FAQNotSureWhatClass.title'
     >
       <div>
         <Translator

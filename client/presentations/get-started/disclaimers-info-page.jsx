@@ -2,13 +2,10 @@
 
 import React        from 'react';
 
-import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
-
 const DisclaimersInfo = (props) => {
-  let locale = props.locale
+
   return (
-      
+
     <div className='scroll-wrapper disclaimers-info'>
         <h3 className='translation-missing'>
           Please take a moment to review the following disclaimers:

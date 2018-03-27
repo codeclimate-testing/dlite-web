@@ -4,11 +4,9 @@ import React                  from 'react';
 import Page                   from '../../containers/page.jsx';
 import EnterDLInfo            from '../get-started/current-card-info/enter-info.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
-import translations           from '../../i18n';
 import Translator             from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -19,7 +17,7 @@ const Form = (props) => {
 
           <EnterDLInfo
             {...props}
-            textDescription = {translations[locale].cdl.currentCardInformationPage.cdlNumberLabel}
+            textDescription = 'cdl.currentCardInformationPage.cdlNumberLabel'
             showIf          = {true}
           >
             <Translator

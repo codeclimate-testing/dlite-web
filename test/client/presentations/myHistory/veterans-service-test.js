@@ -33,7 +33,7 @@ describe('VeteransServicePage', function() {
       all: spy(),
       isValid: () => { return true; }
     };
-    let locale = 'en';
+
     props = {
       veteransService,
       cardType: ['ID', 'DL'],
@@ -47,8 +47,7 @@ describe('VeteransServicePage', function() {
         action: 'new'
       },
       onChange,
-      validations,
-      locale
+      validations
     }
   });
 

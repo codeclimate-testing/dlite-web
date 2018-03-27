@@ -13,25 +13,27 @@ import {
 import {
   DateOfBirth,
 } from './my-basics/index';
-import translations     from '../../../i18n';
+import Translator                 from '../../../i18n/translator-tag.jsx';
 
 const Voting = (props) => {
   let application = props.application;
-  let locale = props.ui.locale;
+
   return (
-    <Accordion id='voter-registration-summary' title={translations[locale].summaryPage.voterRegistration.title} key='voter-registration-summary'>
+    <Accordion
+      id    = 'voter-registration-summary'
+      title = 'summaryPage.voterRegistration.title'
+      key   = 'voter-registration-summary'
+    >
       <CitizenStatus
         citizenStatus           = { application.voting.citizenStatus}
         eligibilityRequirements = { application.voting.eligibilityRequirements}
         dateOfBirth             = { application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'citizenship'
       />
       <EligibilityRequirements
         eligibilityRequirements = { application.voting.eligibilityRequirements}
         citizenStatus           = { application.voting.citizenStatus}
         dateOfBirth             = { application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'votingEligibility'
       />
       <OptOut
@@ -39,7 +41,6 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'votingOptOut'
       />
       <PoliticalPartyChoose
@@ -47,7 +48,6 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'choosePoliticalParty'
       />
       <BallotLanguage
@@ -55,7 +55,6 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'chooseBallotLanguage'
       />
       <BallotByMail
@@ -63,7 +62,6 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'ballotByMail'
       />
       <ContactMethods
@@ -71,7 +69,6 @@ const Voting = (props) => {
         eligibilityRequirements = {application.voting.eligibilityRequirements}
         citizenStatus           = {application.voting.citizenStatus}
         dateOfBirth             = {application.basics.dateOfBirth}
-        locale                  = { locale }
         editKey                 = 'contactMethods'
       />
     </Accordion>

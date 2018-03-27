@@ -6,14 +6,12 @@ import Page                 from '../../containers/page.jsx';
 import RadioCollection      from '../radio-selector-collection.jsx';
 import RadioSelector        from '../radio-selector.jsx';
 import NavigationButtons    from '../navigation-buttons.jsx';
-import translations         from '../../i18n';
-import Translate            from '../../i18n/translate-tag.jsx';
+import Translator           from '../../i18n/translator-tag.jsx';
 import {
   getCorrectString
 }  from '../../helpers/data/card-type';
 
 const Form = (props) => {
-  let locale = props.locale;
 
   const tempObjectThatNeedsTranslations = {
     explanation: '',
@@ -35,12 +33,32 @@ const Form = (props) => {
     ]
   };
 
-  let text = getCorrectString(
-    props,
-    tempObjectThatNeedsTranslations,
-    anotherTempObjectThatNeedsTranslation,
-    translations[locale].intro.wdywtdtPage,
-  );
+  //TODO: Translation Keys
+  let textKey = getCorrectString(props, 'addDL', 'addID', 'newCard');
+  let explainKey, newKey, renewKey, updateKey, replaceKey;
+  switch (textKey) {
+    case 'addDL':
+      explainKey  = tempObjectThatNeedsTranslations.explanation;
+      newKey      = tempObjectThatNeedsTranslations.values[0];
+      renewKey    = tempObjectThatNeedsTranslations.values[1];
+      updateKey   = tempObjectThatNeedsTranslations.values[2];
+      replaceKey  = tempObjectThatNeedsTranslations.values[3];
+      break;
+    case 'addID':
+      explainKey  = anotherTempObjectThatNeedsTranslation.explanation;
+      newKey      = anotherTempObjectThatNeedsTranslation.values[0];
+      renewKey    = anotherTempObjectThatNeedsTranslation.values[1];
+      updateKey   = anotherTempObjectThatNeedsTranslation.values[2];
+      replaceKey  = anotherTempObjectThatNeedsTranslation.values[3];
+      break;
+    case 'newCard':
+      explainKey  = 'intro.wdywtdtPage.values.explanation';
+      newKey      = 'intro.wdywtdtPage.values.0';
+      renewKey    = 'intro.wdywtdtPage.values.1';
+      updateKey   = 'intro.wdywtdtPage.values.2';
+      replaceKey  = 'intro.wdywtdtPage.values.3';
+      break;
+  }
 
   let name = getCorrectString(
     props, 'DLAction', 'IDAction', 'cardAction',
@@ -52,13 +70,16 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-action'>
-        <Translate tag='h2' className='question'>
-          { translations[locale].intro.wdywtdtPage.prompt }
-        </Translate>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.wdywtdtPage.prompt'
+        />
 
-        <Translate tag='p'>
-          { text.explanation }
-        </Translate>
+        <Translator
+          tag             = 'p'
+          translationPath = { explainKey }
+        />
 
         <form onSubmit= { props.onSubmit }>
           <fieldset role='group' aria-label='What do you want to do?'>
@@ -68,26 +89,22 @@ const Form = (props) => {
               onBlur  = { props.onBlurValidate }
               errorMessage = { props.validations.cardAction() }
             >
-              <RadioSelector
-                value = 'new'
-                text={text.values[0]}
-                className='long-text'
-              />
-              <RadioSelector
-                value = 'renew'
-                text={text.values[1]}
-                className='long-text'
-              />
-              <RadioSelector
-                value = 'change'
-                text={text.values[2]}
-                className='long-text'
-              />
-              <RadioSelector
-                value='replace'
-                text={text.values[3]}
-                className='long-text'
-              />
+              <RadioSelector value = 'new' className='long-text'>
+                <Translator tag = 'span' translationPath = { newKey } />
+              </RadioSelector>
+
+              <RadioSelector value = 'renew' className='long-text'>
+                <Translator tag = 'span' translationPath = { renewKey } />
+              </RadioSelector>
+
+              <RadioSelector value = 'change' className='long-text'>
+                <Translator tag = 'span' translationPath = { updateKey } />
+              </RadioSelector>
+
+              <RadioSelector value='replace' className='long-text'>
+                <Translator tag = 'span' translationPath = { replaceKey } />
+              </RadioSelector>
+
             </RadioCollection>
           </fieldset>
           <NavigationButtons

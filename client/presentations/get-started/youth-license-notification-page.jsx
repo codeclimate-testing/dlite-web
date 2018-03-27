@@ -9,19 +9,27 @@ import Page                from '../../containers/page.jsx';
 import { ageChecks }       from '../../helpers/calculate-age';
 import { validToContinue } from '../../helpers/data/youth';
 import MessageBox          from '../message-box.jsx';
-import translations        from '../../i18n';
-import Translation         from '../../i18n/translate-tag.jsx';
+import Translator           from '../../i18n/translator-tag.jsx';
 
 const FormHeader = (props) => {
-  let locale = props.locale;
   return (
     <div>
-      <h2 className='question translation-missing'>{props.title}</h2>
-      <p className='translation-missing'>{props.helpText}</p>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = { props.title }
+      />
+      <Translator
+        tag             = 'p'
+        className       = 'question'
+        translationPath = { props.helpText }
+      />
       <hr />
-      <Translation tag='h3' className='question'>
-        {translations[locale].intro.youthDlNotificationPage.question}
-      </Translation>
+      <Translator
+        tag             = 'h3'
+        className       = 'question'
+        translationPath = 'intro.youthDlNotificationPage.question'
+      />
     </div>
   );
 };
@@ -39,11 +47,10 @@ const Under15FormHeader = (props) => {
 
 const YouthFormHeader = (props) => {
   if (ageChecks.Under15(props.dateOfBirth)) { return null; }
-  let locale = props.locale;
   return (
     <FormHeader
-      title     = {translations[locale].intro.youthDlNotificationPage.prompt}
-      helpText  = {translations[locale].intro.youthDlNotificationPage.explanation}
+      title     = 'intro.youthDlNotificationPage.prompt'
+      helpText  = 'intro.youthDlNotificationPage.explanation'
       {...props}
     />
   );
@@ -59,7 +66,6 @@ let ErrorMessage = (props) => {
 
 const Form = (props) => {
   const actionName = props.multCards ? 'youthIDOnly' : 'youthIDInstead';
-  let locale = props.locale;
   return (
     <Page
       sectionKey='intro'
@@ -82,7 +88,7 @@ const Form = (props) => {
               onBlur = { props.onBlurValidate }
               errorMessage = { props.validations.youthIDInstead() }
             >
-              {radioYesNoGroup(locale)}
+              {radioYesNoGroup()}
             </RadioCollection>
           </fieldset>
 

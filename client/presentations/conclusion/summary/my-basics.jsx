@@ -11,45 +11,41 @@ import {
   PhysicalTraits,
   SocialSecurity
 } from './my-basics/index';
-import translations     from '../../../i18n';
+import Translator                 from '../../../i18n/translator-tag.jsx';
 
 const MyBasics = (props) => {
   let application = props.application;
-  let locale      = props.ui.locale;
 
   return (
-    <Accordion id='basics-summary' title={translations[locale].summaryPage.myBasics.title} key='basics-summary'>
+    <Accordion
+      id    = 'basics-summary'
+      title = 'summaryPage.myBasics.title'
+      key   = 'basics-summary'
+    >
       <Empty
         {...application}
-        locale            = { locale }
       />
       <LegalName
-        locale            = { locale }
         legalName         = {application.basics.legalName}
         editKey           = 'legalName'
       />
       <DateOfBirth
-        locale            = { locale }
         dateOfBirth       = {application.basics.dateOfBirth}
         editKey           = 'dateOfBirth'
       />
       <Address
-        locale            = { locale }
         address           = { application.basics.address}
         editKey           = 'addresses'
       />
       <PhysicalTraits
-        locale            = { locale }
         editKey           = 'sexEyeHair'
         physicalTraits    = { application.basics.physicalTraits}
       />
       <TraitsHeightWeight
-        locale            = { locale }
         editKey           = 'heightWeight'
         traitsHeightWeight= { application.basics.traitsHeightWeight}
       />
       <SocialSecurity
-        locale            = { locale }
         socialSecurity    = { application.basics.socialSecurity}
         editKey           = 'socialSecurity'
       />

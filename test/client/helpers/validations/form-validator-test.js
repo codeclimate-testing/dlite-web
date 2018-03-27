@@ -10,8 +10,7 @@ describe('FormValidator:', function() {
     let props = {
       firstName: '',
       middleName: '',
-      lastName: '',
-      locale: 'en'
+      lastName: ''
     };
 
     let requestedValidations = [];
@@ -29,8 +28,7 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jackson',
       middleName: 'Hendricks',
-      lastName: 'Wilson',
-      locale: 'en'
+      lastName: 'Wilson'
     };
 
     let requestedValidations = ['firstName', 'middleName', 'lastName'];
@@ -48,8 +46,7 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: '',
-      locale: 'en'
+      lastName: ''
     };
 
     let requestedValidations = [];
@@ -67,8 +64,7 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: '',
-      locale: 'en'
+      lastName: ''
     };
 
     let requestedValidations = ['firstName'];
@@ -76,7 +72,7 @@ describe('FormValidator:', function() {
     let FormValidator = formValidator(rules);
     let validator = new FormValidator(props, requestedValidations);
 
-    assert.equal(validator.firstName(), 'Sorry, your card can only include English characters.');
+    assert.equal(validator.firstName(), ['errorMessages.dataIncludesNonEnglishCharacters']);
     assert.equal(validator.middleName(), '');
     assert.equal(validator.lastName(), '');
     assert.equal(validator.all(), '');
@@ -86,8 +82,7 @@ describe('FormValidator:', function() {
     let props = {
       firstName: 'Jack§on',
       middleName: 'H£ndricks',
-      lastName: '',
-      locale: 'en'
+      lastName: ''
     };
 
     let requestedValidations = ['all'];
@@ -95,18 +90,17 @@ describe('FormValidator:', function() {
     let FormValidator = formValidator(rules);
     let validator = new FormValidator(props, requestedValidations);
 
-    assert.equal(validator.firstName(), 'Sorry, your card can only include English characters.');
-    assert.equal(validator.middleName(), 'Sorry, your card can only include English characters.');
-    assert.equal(validator.lastName(), 'Please enter your last name.');
-    assert.equal(validator.all(), 'You cannot continue until you fix the errors on this page.');
+    assert.equal(validator.firstName(), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.equal(validator.middleName(), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.equal(validator.lastName(), ['errorMessages.lastNameMissing']);
+    assert.equal(validator.all(), ['errorMessages.errorPreventContinuing']);
   });
 
   it('when "all" requested and there is only one message, it will use that message', function() {
     let props = {
       firstName: '',
       middleName: '',
-      lastName: '',
-      locale: 'en'
+      lastName: ''
     };
 
     let requestedValidations = ['all'];
@@ -116,8 +110,8 @@ describe('FormValidator:', function() {
 
     assert.equal(validator.firstName(), '');
     assert.equal(validator.middleName(), '');
-    assert.equal(validator.lastName(), 'Please enter your last name.');
-    assert.equal(validator.all(), 'Please enter your last name.');
+    assert.equal(validator.lastName(), ['errorMessages.lastNameMissing']);
+    assert.equal(validator.all(), ['errorMessages.lastNameMissing']);
   });
 
   describe('#isValid', function() {
@@ -125,8 +119,7 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: '',
-        locale: 'en'
+        lastName: ''
       };
 
       let requestedValidations = ['all'];
@@ -141,8 +134,7 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: '',
-        locale: 'en'
+        lastName: ''
       };
 
       let requestedValidations = [];
@@ -157,8 +149,7 @@ describe('FormValidator:', function() {
       let props = {
         firstName: '',
         middleName: '',
-        lastName: 'Jonesing',
-        locale: 'en'
+        lastName: 'Jonesing'
       };
 
       let requestedValidations = [];

@@ -23,7 +23,6 @@ function mapStateToProps(state) {
     dateOfBirth:            state.application.basics.dateOfBirth,
     licenseAndIdHistory:    state.application.history.licenseAndIdHistory,
     reducedFee:             state.application.IDApp.reducedFee,
-    locale:                 state.ui.locale,
     IDApp:                  state.application.IDApp,
     DLApp:                  state.application.DLApp
   };

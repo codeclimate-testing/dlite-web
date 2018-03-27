@@ -28,7 +28,6 @@ const mapStateToProps = (state) => {
     realID :      state.cdl.realID,
     focused:      state.ui.focus,
     validations:  state.ui.validations,
-    locale:       state.ui.locale,
     flow:         state.ui.flow
   };
 };

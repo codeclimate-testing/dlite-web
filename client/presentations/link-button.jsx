@@ -18,7 +18,7 @@ const LinkButton = (props) => {
         }}
         className={className}
       >
-        {props.linkText}
+        {props.children ? props.children : props.linkText}
       </Link>
     </div>
   );

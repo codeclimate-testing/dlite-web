@@ -6,13 +6,11 @@ import handlers               from '../../helpers/handlers';
 import { updateCardChanges }  from '../../actions/index';
 import Presentation           from '../../presentations/get-started/correct-or-update-page.jsx';
 import { ChangeValidator }    from '../../helpers/validations';
-import translations           from '../../i18n';
 import { getCorrectApp }      from '../../helpers/data/card-type';
 
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new ChangeValidator(Object.assign(props.cardChanges, {locale}), props.validations, 'applicationActionMissing');
+  let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('updateAndCorrect', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -23,7 +21,6 @@ const Page = (props) => {
       onBack            = { onBack }
       cardChanges       = { props.cardChanges }
       validations       = { validations }
-      translations      = { translations }
     />
   )
 };
@@ -38,7 +35,6 @@ function mapStateToProps(state) {
     seniorID            : state.application.IDApp.seniorID,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

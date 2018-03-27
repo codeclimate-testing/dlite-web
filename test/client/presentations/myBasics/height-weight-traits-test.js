@@ -34,13 +34,12 @@ describe('HeightWeightPage', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         traitsHeightWeight,
         continueDisabled,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

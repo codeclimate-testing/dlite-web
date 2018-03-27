@@ -112,15 +112,15 @@ describe('Data helpers for cdl data', function() {
 
   describe('#getClassText', function() {
     it('returns "Class A" when value is "classA"', function() {
-      assert.equal(getClassText('classA', 'en'), 'Class A');
+      assert.equal(getClassText('classA'), 'intro.licenseTypePage.values.2.helpText');
     });
 
     it('returns "Class B" when value is "classB"', function() {
-      assert.equal(getClassText('classB', 'en'), 'Class B');
+      assert.equal(getClassText('classB'), 'intro.licenseTypePage.values.3.helpText');
     });
 
     it('returns "Class C" when value is "classC"', function() {
-      assert.equal(getClassText('classC', 'en'), 'Class C');
+      assert.equal(getClassText('classC'), 'intro.licenseTypePage.values.0.helpText');
     });
   });
 

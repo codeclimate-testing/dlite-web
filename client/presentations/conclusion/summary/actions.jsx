@@ -1,60 +1,54 @@
 'use strict';
 
-import React          from 'react';
+import React            from 'react';
 import SummaryItem      from './summary-item.jsx';
-import translations     from '../../../i18n';
 
 export const New = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return(
     <SummaryItem
-      title='I am'
-      text={translations[locale].summaryPage.whatImDoing.applying}
+      title = 'I am'
+      text  = 'summaryPage.whatImDoing.applying'
     />
   )
 };
 
 export const Renew = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return(
     <SummaryItem
-      title='I am'
-      text={translations[locale].summaryPage.whatImDoing.renewing}
+      title = 'I am'
+      text  = 'summaryPage.whatImDoing.renewing'
     />
   )
 };
 
 export const Replace = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return(
     <SummaryItem
-      title='I am'
-      text={translations[locale].summaryPage.whatImDoing.replacing}
+      title = 'I am'
+      text  = 'summaryPage.whatImDoing.replacing'
     />
   )
 };
 
 export const Correct = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return(
     <SummaryItem
-      title='I am'
-      text={translations[locale].summaryPage.whatImDoing.correcting}
+      title = 'I am'
+      text  = 'summaryPage.whatImDoing.correcting'
     />
   )
 };
 
 export const Update = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return(
     <SummaryItem
-      title='I am'
-      text={translations[locale].summaryPage.whatImDoing.updating}
+      title = 'I am'
+      text  = 'summaryPage.whatImDoing.updating'
     />
   )
 };

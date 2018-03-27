@@ -3,7 +3,7 @@
 import React              from 'react';
 import { Link }           from 'react-router-dom';
 import { pathForPage }    from '../helpers/navigation/page';
-import translations       from '../i18n';
+import Translator         from '../i18n/translator-tag.jsx';
 import { addOrEdit }      from '../helpers/data/pathnames';
 
 
@@ -11,7 +11,7 @@ const LinkPresentation = (props) => {
   let className = `${props.editKey} summary edit button ${props.cardType}`;
 
   let addText = 'Add';
-  let editText = translations[props.locale].summaryPage.buttons.edit;
+  let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
 
   let buttonText = addOrEdit(props, addText, editText);
   let flow = addOrEdit(props, 'add', 'edit');

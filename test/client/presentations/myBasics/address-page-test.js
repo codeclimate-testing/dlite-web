@@ -9,13 +9,12 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import AddressPage              from '../../../../client/presentations/my-basics/address-page.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 import ExplanatoryString        from '../../../../client/presentations/my-basics/address/string.jsx';
 
 describe('AddressPage', function() {
   let props;
   const Wrapper = wrapperGenerator(store);
-  let locale = 'en';
+
   beforeEach(function() {
     let address = {
       homeAddressSameAsMailing: '',
@@ -72,8 +71,7 @@ describe('AddressPage', function() {
       validations,
       sectionName,
       sectionNumber,
-      focused,
-      locale
+      focused
     }
   });
 
@@ -113,7 +111,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.ID));
+    assert.ok(component.text().includes('The DMV will print your mailing address on your ID. Your ID will also be sent to your mailing address.'));
   });
 
   it('shows the DL header', function() {
@@ -128,7 +126,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.license));
+    assert.ok(component.text().includes('The DMV will print your mailing address on your Driver License. Your Driver License will also be sent to your mailing address.'));
   });
 
   it('shows the header for both cards', function() {
@@ -139,7 +137,7 @@ describe('AddressPage', function() {
         <AddressPage {...props} />
       </Wrapper>
     );
-    assert.ok(component.text().includes(translations[locale].myBasics.addressesPage.mailingAddressSameExplanation.cards));
+    assert.ok(component.text().includes('The DMV will print your mailing address on your cards. Your cards will also be sent to your mailing address.'));
   });
 
   describe('Explanatory String on Address Page', function() {
@@ -154,16 +152,16 @@ describe('AddressPage', function() {
         );
       });
       it('shows ID string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.ID), true);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your ID. Your ID will also be sent to your mailing address.'), true);
       });
 
       it('does not show DL string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.license), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your Driver License. Your Driver License will also be sent to your mailing address.'), false);
 
       });
 
       it('does not show both string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.cards), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your cards. Your cards will also be sent to your mailing address.'), false);
       });
     });
 
@@ -178,16 +176,16 @@ describe('AddressPage', function() {
       });
 
       it('does not show ID string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.ID), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your ID. Your ID will also be sent to your mailing address.'), false);
       });
 
       it('shows DL string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.license), true);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your Driver License. Your Driver License will also be sent to your mailing address.'), true);
 
       });
 
       it('does not show both string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.cards), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your cards. Your cards will also be sent to your mailing address.'), false);
       });
     });
 
@@ -201,16 +199,16 @@ describe('AddressPage', function() {
         );
       });
       it('does not show ID string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.ID), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your ID. Your ID will also be sent to your mailing address.'), false);
       });
 
       it('does not show DL string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.license), false);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your Driver License. Your Driver License will also be sent to your mailing address.'), false);
 
       });
 
       it('shows both string', function() {
-        assert.equal(component.text().includes(translations[props.locale].myBasics.addressesPage.mailingAddressSameExplanation.cards), true);
+        assert.equal(component.text().includes('The DMV will print your mailing address on your cards. Your cards will also be sent to your mailing address.'), true);
       });
     });
   });

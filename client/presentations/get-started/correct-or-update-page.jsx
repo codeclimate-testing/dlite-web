@@ -13,19 +13,18 @@ import {
   otherIsSelected,
   hasSpecifiedChange
 }  from '../../helpers/data/card-actions';
-import translations       from '../../i18n';
-import Translation        from '../../i18n/translate-tag.jsx';
+import Translator        from '../../i18n/translator-tag.jsx';
 
 
 const Form = (props) => {
-  let locale = props.locale;
+
   const text = {
-    ID: translations[locale].intro.correctOrUpdatePage.chooseChangeSection.id.explanation,
-    DL: translations[locale].intro.correctOrUpdatePage.chooseChangeSection.license.explanation
+    ID: 'intro.correctOrUpdatePage.chooseChangeSection.id.explanation',
+    DL: 'intro.correctOrUpdatePage.chooseChangeSection.license.explanation'
   };
 
-  let tag  = getCorrectString(props, text.DL, text.ID);
-  let formName = `${getCorrectString(props, 'DL', 'ID')}-`;
+  let tagKey    = getCorrectString(props, text.DL, text.ID);
+  let formName  = `${getCorrectString(props, 'DL', 'ID')}-`;
 
   return (
     <Page
@@ -33,13 +32,16 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-change'>
-        <Translation tag='h2' className='question'>
-          {translations[locale].intro.correctOrUpdatePage.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.correctOrUpdatePage.prompt'
+        />
 
-        <Translation tag='p'>
-          {tag}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = { tagKey }
+        />
 
         <form onSubmit={ props.onSubmit }>
           <RadioForm
@@ -50,7 +52,6 @@ const Form = (props) => {
           <UpdateForm
             {...props}
             showIf        = { hasSpecifiedChange(props) }
-            translations  = { translations}
             formName      = { formName }
           />
           <OtherText

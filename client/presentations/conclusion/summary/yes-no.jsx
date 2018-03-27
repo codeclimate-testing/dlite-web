@@ -1,26 +1,24 @@
 'use strict';
 import React              from 'react';
-import translations       from '../../../i18n';
+import Translator         from '../../../i18n/translator-tag.jsx';
 import SummaryItem        from './summary-item.jsx';
 
 export const Yes = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return (
     <SummaryItem
       title = { props.title }
-      text  = { translations[locale].shared.commonAnswers.yes}
+      text  = {  <Translator tag = 'span' translationPath = 'shared.commonAnswers.yes' /> }
     />
   )
 };
 
 export const No = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
   return (
     <SummaryItem
       title = { props.title }
-      text  = { translations[locale].shared.commonAnswers.no}
+      text  = {  <Translator tag = 'span' translationPath = 'shared.commonAnswers.no' /> }
     />
   )
 };

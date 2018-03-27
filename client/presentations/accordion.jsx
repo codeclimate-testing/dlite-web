@@ -1,11 +1,12 @@
 'use strict';
 
-import React from 'react';
+import React      from 'react';
+import Translator from '../i18n/translator-tag.jsx';
 
 const Accordion = (props) => {
   const className = 'row accordion ' + props.accordionState || '';
   const id        = props.id + '-accordion'
- 
+
   return (
     <div
       className={className}
@@ -28,7 +29,10 @@ const Accordion = (props) => {
           className='last-unit'
           accordion = {props.id}
         >
-          {props.title}
+        <Translator
+          tag             = 'span'
+          translationPath = { props.title }
+        />
         </div>
       </a>
       <div

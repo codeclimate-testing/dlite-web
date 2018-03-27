@@ -38,7 +38,7 @@ describe('LicenseIDHistoryPage', function() {
       };
 
       let onChange = spy();
-      let locale = 'en';
+
       props = {
         licenseAndIdHistory,
         cardType: [],
@@ -49,8 +49,7 @@ describe('LicenseIDHistoryPage', function() {
           isApplying: false
         },
         validations,
-        onChange,
-        locale
+        onChange
       }
     });
 

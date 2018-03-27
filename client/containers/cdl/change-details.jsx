@@ -6,12 +6,9 @@ import handlers               from '../../helpers/handlers';
 import { updateCDLChanges }   from '../../actions/index';
 import Presentation           from '../../presentations/cdl/correct-or-update-page.jsx';
 import { ChangeValidator }    from '../../helpers/validations';
-import translations           from '../../i18n';
-
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new ChangeValidator(Object.assign(props.cardChanges, {locale}), props.validations, 'applicationActionMissing');
+  let validations       = new ChangeValidator(props.cardChanges, props.validations, 'applicationActionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('cdlChanges', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -21,7 +18,6 @@ const Page = (props) => {
       onSubmit          = { onSubmit }
       onBack            = { onBack }
       validations       = { validations }
-      translations      = { translations }
     />
   )
 };
@@ -32,7 +28,6 @@ function mapStateToProps(state) {
     cardAction          : state.application.cardAction,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

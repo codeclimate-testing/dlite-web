@@ -23,13 +23,12 @@ const MessageNo = (props) => {
 };
 
 const SignatureChoice = (props) => {
-  let locale = props.locale;
   return (
     <div className='signature-choice-form'>
       <Translator
         tag             = 'h2'
         className       = 'question'
-        translationPath = 'parentGuardianSignaturePage.prompt'
+        translationPath = 'parentGuardianSignaturePage.Prompt'
       />
       <Translator
         tag             = 'p'
@@ -45,7 +44,7 @@ const SignatureChoice = (props) => {
             onBlur        = { props.onBlurValidate }
             errorMessage  = { props.validations.isSigned()}
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
         <MessageNo {...props} />

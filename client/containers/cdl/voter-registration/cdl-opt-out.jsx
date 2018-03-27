@@ -8,8 +8,7 @@ import { updateCDLOptOut }    from '../../../actions/index';
 import { OptOutValidator }    from '../../../helpers/validations';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new OptOutValidator(Object.assign(props.optOut, {locale}), props.validations);
+  let validations       = new OptOutValidator(props.optOut, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlVotingOptOut', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -30,7 +29,6 @@ const mapStateToProps = (state) => {
     dateOfBirth   : state.cdl.basics.dateOfBirth,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    locale        : state.ui.locale,
     flow          : state.ui.flow
   };
 };

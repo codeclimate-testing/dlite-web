@@ -10,12 +10,11 @@ import wrapperGenerator         from '../../../support/wrapper';
 import DLInfo                   from '../../../../../client/presentations/get-started/intro-page/dl-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('DLInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
+
   beforeEach(function() {
 
     let cardChanges = {
@@ -60,8 +59,7 @@ describe('DLInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -95,7 +93,7 @@ describe('DLInfo', function() {
           <GetStartedPage  {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.applyingLicense), true);
+      assert.equal(component.text().includes('You are applying for a Driver License'), true);
     });
 
     it('user renewing DL will see they are renewing driver license on get started page', function() {
@@ -107,7 +105,7 @@ describe('DLInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.renewingLicense), true);
+      assert.equal(component.text().includes('You are renewing a Driver License'), true);
     });
 
     it('user updating DL will see they are updating driver license on get started page', function() {
@@ -121,8 +119,8 @@ describe('DLInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.updatingLicense), true);
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.update.license), true);
+      assert.equal(component.text().includes('You are updating a Driver License'), true);
+      assert.equal(component.text().includes('In order to update your driver license, you’re going to need to fill out a new application.'), true);
     });
 
     it('user correcting DL will see they are correcting driver license on get started page', function() {
@@ -136,8 +134,8 @@ describe('DLInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.correctingLicense), true);
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.correct.license), true);
+      assert.equal(component.text().includes('You are correcting a Driver License'), true);
+      assert.equal(component.text().includes('In order to correct your driver license, you’re going to need to fill out a new application.'), true);
     });
 
     it('user replacing DL will see they are replacing driver license on get started page', function() {
@@ -149,8 +147,8 @@ describe('DLInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.replacingLicense), true);
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.replace.license), true);
+      assert.equal(component.text().includes('You are replacing a Driver License'), true);
+      assert.equal(component.text().includes('In order to replace your driver license, you’re going to need to fill out a new application.'), true);
     });
   })
 });

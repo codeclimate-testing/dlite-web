@@ -1,37 +1,29 @@
 'use strict';
 
-import React                  from 'react';
-import translations           from '../../../i18n';
-import { hasActionIsCorrecting }     from '../../../helpers/data/card-actions';
+import React                          from 'react';
+import { hasActionIsCorrecting }      from '../../../helpers/data/card-actions';
 import {
   getID,
   getDL
  }   from '../../../helpers/data/card-type';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import Translator                     from '../../../i18n/translator-tag.jsx';
 
 const License = (props) => {
-  let locale = props.locale;
   if (!getDL(props)) { return null;}
-  return <Translation tag='p'>
-            {translations[locale].intro.getStartedPage.explanation.correct.license}
-         </Translation>
+  return <Translator tag='p' translationPath = 'intro.getStartedPage.explanation.correct.license' />
 };
 
 const ID = (props) => {
-  let locale = props.locale;
   if (!getID(props)) { return null; }
-  return <Translation tag='p'>
-            {translations[locale].intro.getStartedPage.explanation.correct.id}
-         </Translation>
+  return <Translator tag='p' translationPath = 'intro.getStartedPage.explanation.correct.id' />
 };
 
 const CorrectApplicationInfo = (props) => {
   if( !hasActionIsCorrecting(props)) { return null; }
-  let locale = props.locale;
   return (
     <div className='correct-application-info'>
-      <License  cardType = {props.cardType}   locale  = {locale} />
-      <ID       cardType = {props.cardType }  locale  = {locale} />
+      <License  cardType = {props.cardType}  />
+      <ID       cardType = {props.cardType } />
     </div>
     );
 };

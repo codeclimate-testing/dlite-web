@@ -9,8 +9,8 @@ import Presentation             from '../../presentations/my-basics/social-secur
 import { getDL }                from '../../helpers/data/card-type';
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new SSNValidator(Object.assign(props.socialSecurity, {locale}), props.validations);
+
+  let validations       =   new SSNValidator(props.socialSecurity, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('socialSecurity', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
     DLApp         : state.application.DLApp,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    locale        : state.ui.locale,
     flow          : state.ui.flow
   };
 };

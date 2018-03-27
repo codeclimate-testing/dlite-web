@@ -1,6 +1,5 @@
 'use strict';
 
-import translations        from '../../i18n';
 import selectionValidator  from './selection-validator';
 import {
   hasValue,
@@ -15,13 +14,12 @@ import {
 
 const emailAddress = (props) => {
   if (props.shouldContact !== 'Yes' || hasPhone(props)) { return []; };
-  let locale = props.locale;
   let value = props.emailAddress;
 
   if (!emailRegex(value)) {
-    return [translations[locale].errorMessages.emailAddressMissingOrInvalid];
+    return ['errorMessages.emailAddressMissingOrInvalid'];
   } else if (!hasOnlyEnglishChars(value)) {
-    return [translations[locale].errorMessages.inputIncludesNonEnglishCharacters];
+    return ['errorMessages.inputIncludesNonEnglishCharacters'];
   }
   return [];
 };
@@ -29,9 +27,8 @@ const emailAddress = (props) => {
 const phoneNumber = (name, number) => {
   return (props) => {
     if (props.shouldContact !== 'Yes' || hasValue(props.emailAddress)) { return [];};
-    let locale = props.locale;
     if (props[name].length !== number) {
-      return [translations[locale].errorMessages.phoneMissingOrInvalid];
+      return ['errorMessages.phoneMissingOrInvalid'];
     }
     return [];
   };

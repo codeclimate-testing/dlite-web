@@ -3,60 +3,50 @@
 import React                from 'react';
 import RadioCollection      from './radio-selector-collection.jsx';
 import RadioSelector        from './radio-selector.jsx';
-import translations         from '../i18n';
+import Translator           from '../i18n/translator-tag.jsx';
 
-const LanguageNativeLine = (props) => {
-  if (props.values.native == props.values.translation) { return null; }
-
-  return (
-    <div className='locale-language-version'>{ props.values.translation }</div>
-  );
-};
-
-const LanguageRadios = (props) => {
-  let locale = props.locale;
-  let translationAddress = translations[locale].intro.switchLanguagePage;
+const LanguageWithNativeLine = (props) => {
 
   const languageNameMapping = {
     en: {
       native: 'English',
-      translation: translationAddress.values[0]
+      translation: 'intro.switchLanguagePage.values.0'
     },
     es: {
       native: 'Español',
-      translation: translationAddress.values[3]
+      translation: 'intro.switchLanguagePage.values.3'
     },
     zh: {
       native: '中文',
-      translation: translationAddress.values[1]
+      translation: 'intro.switchLanguagePage.values.1'
     },
     ko: {
       native: '한국어',
-      translation: translationAddress.values[6]
+      translation: 'intro.switchLanguagePage.values.6'
     },
     km: {
       native: 'ភាសាខ្មែ',
-      translation: translationAddress.values[7]
+      translation: 'intro.switchLanguagePage.values.7'
     },
     th: {
       native: 'ไทย',
-      translation: translationAddress.values[4]
+      translation: 'intro.switchLanguagePage.values.4'
     },
     vi: {
       native: 'Tiếng Việt',
-      translation: translationAddress.values[9]
+      translation: 'intro.switchLanguagePage.values.9'
     },
     tl: {
       native: 'Tagalog',
-      translation: translationAddress.values[5]
+      translation: 'intro.switchLanguagePage.values.5'
     },
     ja: {
       native: '日本語',
-      translation: translationAddress.values[2]
+      translation: 'intro.switchLanguagePage.values.2'
     },
     hi: {
       native: 'हिंदी',
-      translation: translationAddress.values[8]
+      translation: 'intro.switchLanguagePage.values.8'
     }
   };
 
@@ -64,71 +54,78 @@ const LanguageRadios = (props) => {
     return languageNameMapping[code] || {};
   };
 
+  let value     = props.value;
+  let language  = props.language;
+
+  if( (language && language === value) || ( !language && value === 'en' )) {
+    return (
+      <Translator
+        tag             = 'span'
+        translationPath = { values(value).translation }
+      />
+    );
+  }
+
+  return (
+    <div>
+      <Translator
+        tag             = 'span'
+        translationPath = { values(value).native }
+      />
+      <Translator
+        tag             = 'div'
+        className       = 'locale-language-version'
+        translationPath = { values(value).translation }
+      />
+    </div>
+  );
+};
+
+const LanguageRadios = (props) => {
   return (
     <fieldset role='group' aria-label='Languages'>
-      <RadioCollection
-        {...props}
-      >
-        <RadioSelector
-          text={ values('en').native }
-          value = 'en'
-        >
-          <LanguageNativeLine values={ values('en') } />
+      <RadioCollection {...props} >
+
+        <RadioSelector value = 'en'>
+          <LanguageWithNativeLine value = 'en' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('es').native }
-          value='es'
-        >
-          <LanguageNativeLine values={ values('es') } />
+
+        <RadioSelector value = 'es'>
+          <LanguageWithNativeLine value = 'es' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('zh').native }
-          value='zh'
-        >
-          <LanguageNativeLine values={ values('zh') } />
+
+        <RadioSelector value = 'zh'>
+          <LanguageWithNativeLine value = 'zh' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('ko').native }
-          value='ko'
-        >
-          <LanguageNativeLine values={ values('ko') } />
+
+        <RadioSelector value = 'ko'>
+          <LanguageWithNativeLine value = 'ko' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('km').native }
-          value='km'
-        >
-          <LanguageNativeLine values={ values('km') } />
+
+        <RadioSelector value = 'km'>
+          <LanguageWithNativeLine value = 'km' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('th').native }
-          value='th'
-        >
-          <LanguageNativeLine values={ values('th') } />
+
+        <RadioSelector value = 'th'>
+          <LanguageWithNativeLine value = 'th' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('vi').native }
-          value='vi'
-        >
-          <LanguageNativeLine values={ values('vi') } />
+
+        <RadioSelector value = 'vi'>
+          <LanguageWithNativeLine value = 'vi' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('tl').native }
-          value='tl'
-        >
-          <LanguageNativeLine values={ values('tl') } />
+
+        <RadioSelector value = 'tl'>
+          <LanguageWithNativeLine value = 'tl' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('ja').native }
-          value='ja'
-        >
-          <LanguageNativeLine values={ values('ja') } />
+
+        <RadioSelector value = 'ja'>
+          <LanguageWithNativeLine value = 'ja' language = { props.language } />
         </RadioSelector>
-        <RadioSelector
-          text={ values('hi').native }
-          value='hi'
-        >
-          <LanguageNativeLine values={ values('hi') } />
+
+        <RadioSelector value = 'hi'>
+          <LanguageWithNativeLine value = 'hi' language = { props.language } />
         </RadioSelector>
+
       </RadioCollection>
     </fieldset>
   );

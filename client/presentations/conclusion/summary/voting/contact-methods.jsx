@@ -1,7 +1,6 @@
 'use strict';
 
-import React from 'react';
-import translations   from '../../../../i18n';
+import React          from 'react';
 
 import {
   eligibilityRequirementsYes,
@@ -17,37 +16,37 @@ import {
 import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
-const title = <div className='translation-missing'>Should Contact</div>;
+const title = 'Should Contact';
 
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
-  let locale = props.locale;
   const phone = `(${props.contactMethods.phoneNumber1}) ${props.contactMethods.phoneNumber2}-${props.contactMethods.phoneNumber3}`;
-  return (<SummaryItem
-    title={translations[locale].summaryPage.voterRegistration.phone}
-    text={phone}
-          />);
+  return (
+    <SummaryItem
+      title = 'summaryPage.voterRegistration.phone'
+      text  = { phone }
+    />
+  );
 };
 
 const EmailAddress = (props) => {
   if (!shouldContact(props)) { return null; }
-  let locale = props.locale;
-  return (<SummaryItem
-    title={translations[locale].summaryPage.voterRegistration.email}
-    text={props.contactMethods.emailAddress}
-          />)
+  return (
+    <SummaryItem
+      title = 'summaryPage.voterRegistration.email'
+      text  = { props.contactMethods.emailAddress }
+    />
+);
 };
 
 const ContactMethods = (props) => {
-  let locale = props.locale;
   let contactMethods = 'No';
-
   if (shouldContact(props)) {
-    contactMethods = <p>{translations[locale].shared.commonAnswers.yes}</p>
-  } else if (props.contactMethods.shouldContact === 'no') {
-    contactMethods = <p>{translations[locale].shared.commonAnswers.no}</p>
+    contactMethods =  'shared.commonAnswers.yes';
+  } else if (props.contactMethods.shouldContact === 'No') {
+    contactMethods =  'shared.commonAnswers.no';
   } else if (skipAnswer(props)) {
-    contactMethods = <p>{translations[locale].shared.commonAnswers.skip}</p>
+    contactMethods =  'shared.commonAnswers.skip';
   };
 
   let now = props.now ? props.now : new Date();

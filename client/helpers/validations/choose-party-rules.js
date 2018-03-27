@@ -4,7 +4,6 @@ import selectionValidator       from './selection-validator';
 import {
   hasValue,
   hasOnlyEnglishChars }  from '../data/validations';
-import translations      from '../../i18n';
 
 const chooseParty = (props) => {
   if (props.isSelected !== 'Yes') { return []; }
@@ -15,9 +14,8 @@ const otherParty = (props) => {
   if (props.isSelected !== 'Yes' && props.politicalPartyChoose !== 'Other') { return []; }
   let errors = [];
   let value = props.otherParty;
-  let locale = props.locale;
   if (hasValue(value) && !hasOnlyEnglishChars(value)) {
-    errors.push(translations[locale].errorMessages.inputIncludesNonEnglishCharacters);
+    errors.push('errorMessages.inputIncludesNonEnglishCharacters');
   };
   return errors;
 };

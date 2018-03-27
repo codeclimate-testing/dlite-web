@@ -8,8 +8,8 @@ import { updateLicenseIssues }  from '../../actions/index';
 import Presentation             from '../../presentations/my-history/license-issues-page.jsx';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new LicenseIssuesValidator(Object.assign(props.licenseIssues, {locale}), props.validations);
+
+  let validations       = new LicenseIssuesValidator(props.licenseIssues, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('licenseIssues', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -28,7 +28,6 @@ function mapStateToProps(state) {
     licenseIssues   : state.application.history.licenseIssues,
     focused         : state.ui.focus,
     validations     : state.ui.validations,
-    locale          : state.ui.locale,
     flow            : state.ui.flow
   };
 };

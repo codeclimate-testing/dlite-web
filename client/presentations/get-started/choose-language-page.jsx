@@ -5,8 +5,7 @@ import React from 'react';
 import Page                   from '../../containers/page.jsx';
 import LanguageRadios         from '../language-radios.jsx'
 import ContinueButton         from '../continue-button.jsx';
-import translations           from '../../i18n';
-import Translate              from '../../i18n/translate-tag.jsx';
+import Translator              from '../../i18n/translator-tag.jsx';
 
 
 import {
@@ -15,7 +14,6 @@ import {
 } from '../../helpers/data/api';
 
 const Form = (props) => {
-  let locale = props.locale;
   let className = `choose-language-form ${hideMain(props)}`;
 
   return (
@@ -26,18 +24,18 @@ const Form = (props) => {
       <div className={props.server.apiStatus}/>
 
       <div className={ className }>
-        <Translate tag='h2' className='question'>
-          { translations[locale].intro.switchLanguagePage.prompt }
-        </Translate>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.switchLanguagePage.prompt'
+        />
 
         <form onSubmit={ props.onSubmit } >
           <LanguageRadios
             {...props}
             name='language'
           />
-          <ContinueButton
-            locale = { locale }
-          />
+          <ContinueButton />
         </form>
       </div>
     </Page>

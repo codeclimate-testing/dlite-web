@@ -30,7 +30,6 @@ const mapStateToProps = (state) => {
     licenseType   : state.application.DLApp.licenseType,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    locale        : state.ui.locale,
     flow          : state.ui.flow
   };
 };

@@ -9,7 +9,7 @@ import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
 const LicenseClass  = (props) => {
   if(!hasValue(props.licenseClass)) { return null; }
 
-  let classText = getClassText(props.licenseClass, props.locale);
+  let classTextKey = getClassText(props.licenseClass);
 
   return (
     <PageSummaryLink
@@ -17,7 +17,7 @@ const LicenseClass  = (props) => {
     >
       <SummaryItem
         title = 'License class:'
-        text  = { classText }
+        text  = { classTextKey }
       />
     </PageSummaryLink>
   )

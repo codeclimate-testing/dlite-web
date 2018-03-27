@@ -9,7 +9,6 @@ import configure                from '../../support/configure-enzyme';
 import * as dataPresent         from '../../../../client/helpers/data-present';
 import MedicalHistory           from '../../../../client/presentations/cdl/my-history/medical-history-page.jsx';
 import store                    from '../../support/page-store';
-import translations             from '../../../../client/i18n';
 
 describe('CDL Medical History Page', function() {
   let props, component;
@@ -35,8 +34,7 @@ describe('CDL Medical History Page', function() {
       onSubmit,
       onChange,
       validations,
-      focused,
-      locale: 'en'
+      focused
     };
   });
 

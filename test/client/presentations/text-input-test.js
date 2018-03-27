@@ -1,19 +1,24 @@
 'use strict';
 
-import assert     from 'assert';
+import assert                   from 'assert';
 
-import React      from 'react';
-import configure  from '../support/configure-enzyme';
-import { render } from 'enzyme';
-import sinon      from 'sinon';
-
-import TextInput  from '../../../client/presentations/text-input.jsx';
+import React                    from 'react';
+import configure                from '../support/configure-enzyme';
+import { render }               from 'enzyme';
+import sinon                    from 'sinon';
+import store                    from '../support/page-store';
+import wrapperGenerator         from '../support/wrapper';
+import TextInput                from '../../../client/presentations/text-input.jsx';
 
 describe('TextInput', function() {
-  
+
+  let Wrapper = wrapperGenerator(store);
+
   it('uses an identifier for the name and id if nothing specific is provided', function() {
     let component = render(
-      <TextInput identifier='zardoz'/>
+      <Wrapper>
+        <TextInput identifier='zardoz'/>
+      </Wrapper>
     );
 
     assert.ok(
@@ -29,7 +34,9 @@ describe('TextInput', function() {
 
   it('uses an id for if provided', function() {
     let component = render(
-      <TextInput identifier='zardoz' id='foo'/>
+      <Wrapper>
+        <TextInput identifier='zardoz' id='foo'/>
+      </Wrapper>
     );
 
     assert.ok(
@@ -45,7 +52,9 @@ describe('TextInput', function() {
 
   it('uses a name for if provided', function() {
     let component = render(
-      <TextInput identifier='zardoz' name='bar'/>
+      <Wrapper>
+        <TextInput identifier='zardoz' name='bar'/>
+      </Wrapper>
     );
 
     assert.ok(
@@ -61,7 +70,9 @@ describe('TextInput', function() {
 
   it('does not include an additional example label if no example is provided', function() {
     let component = render(
-      <TextInput identifier='zardoz' />
+      <Wrapper>
+        <TextInput identifier='zardoz' />
+      </Wrapper>
     );
 
     assert.ok(
@@ -72,7 +83,9 @@ describe('TextInput', function() {
 
   it('includes an additional label if an example is provided', function() {
     let component = render(
-      <TextInput identifier='zardoz' example='Get on your alien duds!'/>
+      <Wrapper>
+        <TextInput identifier='zardoz' example='Get on your alien duds!'/>
+      </Wrapper>
     );
 
     assert.ok(
@@ -82,15 +95,17 @@ describe('TextInput', function() {
   });
 
   describe('when it has an error', function() {
-    let component; 
+    let component;
     beforeEach(function() {
       component = render(
-        <TextInput
-          identifier='zardoz'
-          errorMessage='Jumpsuit is all wrong!'
-        />
+        <Wrapper>
+          <TextInput
+            identifier='zardoz'
+            errorMessage='Jumpsuit is all wrong!'
+          />
+        </Wrapper>
       );
-    }); 
+    });
     it('will have an error label with the error message', function() {
       assert(
         component.find('.additional-label.error').length,

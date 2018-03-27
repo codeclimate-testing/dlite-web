@@ -10,8 +10,7 @@ import Presentation               from '../../presentations/get-started/current-
 import { getCorrectApp }          from '../../helpers/data/card-type';
 
 const Page = (props) => {
-  let locale = props.locale;
-  let validations = new CurrentCardValidator(Object.assign(props.currentCardInfo, {locale}), props.validations);
+  let validations = new CurrentCardValidator(props.currentCardInfo, props.validations);
   let onSubmit = handlers.navigateOrShowErrors('currentCardInfo', props, validations);
   let onBack   = handlers.navigateOnBack(props, validations);
   return (
@@ -35,7 +34,6 @@ function mapStateToProps(state) {
     cardAction        : state.application.cardAction,
     dateOfBirth       : state.application.basics.dateOfBirth,
     validations       : state.ui.validations,
-    locale            : state.ui.locale,
     flow              : state.ui.flow
   };
 };

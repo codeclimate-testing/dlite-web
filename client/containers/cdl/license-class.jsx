@@ -9,8 +9,7 @@ import handlers                 from '../../helpers/handlers';
 import { SelectionValidator }   from '../../helpers/validations';
 
 const Page = (props) => {
-  let locale      = props.locale;
-  let validations = new SelectionValidator(Object.assign(props.licenseClass, {locale}), props.validations);
+  let validations = new SelectionValidator(props.licenseClass, props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('cdlClass', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -29,7 +28,6 @@ const mapStateToProps = (state) => {
     licenseClass  : state.cdl.licenseClass,
     focused       : state.ui.focus,
     validations   : state.ui.validations,
-    locale        : state.ui.locale,
     flow          : state.ui.flow
   };
 };

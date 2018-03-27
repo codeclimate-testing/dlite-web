@@ -10,12 +10,10 @@ import wrapperGenerator         from '../../../support/wrapper';
 import UpdateApplicationInfo           from '../../../../../client/presentations/get-started/intro-page/update-application-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('UpdateApplicationInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
   beforeEach(function() {
     let cardChanges = {
       correctOrUpdate: 'update',
@@ -58,8 +56,7 @@ describe('UpdateApplicationInfo', function() {
       realID,
       reducedFee,
       seniorID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -90,7 +87,7 @@ describe('UpdateApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.update.id), true);
+        assert.equal(component.text().includes('In order to update your ID card, you’re going to need to fill out a new application.'), true);
     });
   });
 
@@ -108,7 +105,7 @@ describe('UpdateApplicationInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-        assert.equal(component.text().includes(translations[locale].intro.getStartedPage.explanation.update.license), true);
+        assert.equal(component.text().includes('In order to update your driver license, you’re going to need to fill out a new application.'), true);
     });
   });
 });

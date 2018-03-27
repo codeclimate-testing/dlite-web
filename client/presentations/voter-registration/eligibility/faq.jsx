@@ -25,20 +25,12 @@ const FAQContents = (props) => {
   return isPreregistering(props.dateOfBirth) ? <FAQContentsPreReg {...props}/> : <FAQContentsReg {...props}/>;
 };
 
-const AccordionTitle = () => {
-  return (
-    <Translator
-      tag             = 'span'
-      translationPath = 'votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements'
-    />
-  );
-}
 const FAQ = (props) => {
 
   return (
     <Accordion
-      title={<AccordionTitle />}
-      id='dont-meet-eligibility-requirements'
+      id    = 'dont-meet-eligibility-requirements'
+      title = 'votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements'
     >
       <FAQContents {...props} />
       <p className='translation-missing'>

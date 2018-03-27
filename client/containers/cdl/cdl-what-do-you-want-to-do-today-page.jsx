@@ -9,8 +9,7 @@ import { updateCdlCardAction }   from "../../actions/index";
 import Presentation           from "../../presentations/cdl/what-do-you-want-to-do-today-page.jsx";
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new WDYWTDTValidator(Object.assign(props.cardAction, {locale}), props.validations);
+  let validations       =   new WDYWTDTValidator(props.cardAction, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('cdlWdywtdt', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -31,8 +30,7 @@ function mapStateToProps(state) {
     currentCardInfo:  state.cdl.currentCardInfo,
     focused:          state.ui.focus,
     validations:      state.ui.validations,
-    flow:             state.ui.flow,
-    locale:           state.ui.locale
+    flow:             state.ui.flow
   };
 };
 

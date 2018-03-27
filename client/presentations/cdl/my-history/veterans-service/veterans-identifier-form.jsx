@@ -4,7 +4,7 @@ import React                    from 'react';
 import radioYesNoGroup          from '../../../radio-yes-no-group.jsx';
 import RadioCollection          from '../../../radio-selector-collection.jsx';
 import MessageBox               from '../../../message-box.jsx';
-
+import Translator               from '../../../../i18n/translator-tag.jsx';
 import {
   showIdentifierMessage,
   removeIdentifierNotification,
@@ -15,26 +15,24 @@ import {
   keepOrAdd,
   isPreviouslyDesignated
 }   from '../../../../helpers/data/veteran';
-import translations       from '../../../../i18n'
-import Translation        from '../../../../i18n/translate-tag.jsx';
-import Translator         from '../../../../i18n/translator-tag.jsx';
+
 
 const Question = (props) => {
   if (!isPreviouslyDesignated(props)) {
     return(
       <div className='new-designation'>
-        <Translation tag='h2' className='question translation-missing'>
+        <h2 className='question translation-missing'>
           Would you like to add the word “Veteran” on your CDL for a $5 fee?
-        </Translation>
+        </h2>
       </div>
     );
   }
   else{
     return(
       <div className='previous-designation'>
-        <Translation tag='h2' className='question translation-missing'>
+        <h2 className='question translation-missing'>
           Would you like to keep "Veteran" on your CDL?
-        </Translation>
+        </h2>
       </div>
     );
   }
@@ -42,21 +40,22 @@ const Question = (props) => {
 
 const MessageAddAmount = (props) => {
   if (!showIdentifierMessage(props) || isPreviouslyDesignated(props)) { return null; }
-  let locale = props.locale;
+
   return (
     <MessageBox className = 'info'>
       <div className='veteran-identifier-fee'>
-        <Translation tag='p'>
-          {translations[locale].myHistory.veteransPage.newDesignation.messageYes}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = 'myHistory.veteransPage.newDesignation.messageYes'
+        />
       </div>
     </MessageBox>
   );
 };
 
 const MessageRemovingDesignation = (props) => {
-  let locale = props.locale;
   if (!removeIdentifierNotification(props)) { return null; }
+
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
@@ -71,20 +70,23 @@ const MessageRemovingDesignation = (props) => {
 
 const VeteransIdentifier = (props) => {
   if(!props.showIf) { return null; }
-  let locale = props.locale;
+
   return (
     <div className='veterans-identifier-form'>
     <Question {...props} />
-        <Translation tag='p'>
-          {translations[locale].myHistory.veteransPage.newDesignation.explanation}
-        </Translation>
+
+      <Translator
+        tag             = 'p'
+        translationPath = 'myHistory.veteransPage.newDesignation.explanation'
+      />
+
       <div className='input-container'>
         <fieldset role='group' aria-label='Veteran designation choice'>
           <RadioCollection
             {...props}
             name='veteransIdentifier'
           >
-            { radioYesNoGroup(locale) }
+            { radioYesNoGroup() }
           </RadioCollection>
         </fieldset>
       </div>

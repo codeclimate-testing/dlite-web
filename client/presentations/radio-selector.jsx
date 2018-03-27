@@ -37,10 +37,9 @@ const RadioSelector = function(props) {
           </div>
           <SelectorContents
             value={props.value}
-            text={props.text}
             iconClass={props.iconClass}
           >
-            {props.children}
+            {props.children ? props.children : props.text}
           </SelectorContents>
         </label>
       </div>

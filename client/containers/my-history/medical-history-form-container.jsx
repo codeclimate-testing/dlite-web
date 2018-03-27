@@ -9,8 +9,8 @@ import Presentation               from '../../presentations/my-history/medical-h
 import { MedicalValidator }       from '../../helpers/validations';
 
 const Page = (props) => {
-  let locale            = props.locale;
-  let validations       = new MedicalValidator(Object.assign(props.medicalHistory, {locale}), props.validations, 'selectionMissing');
+
+  let validations       = new MedicalValidator(props.medicalHistory, props.validations, 'selectionMissing');
   let onSubmit          = handlers.navigateOrShowErrors('medicalHistory', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
 
@@ -32,7 +32,6 @@ function mapStateToProps(state) {
     DLApp             : state.application.DLApp,
     focused           : state.ui.focus,
     validations       : state.ui.validations,
-    locale            : state.ui.locale,
     flow              : state.ui.flow
   };
 };

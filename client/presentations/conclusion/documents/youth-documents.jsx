@@ -17,7 +17,7 @@ const YouthDocuments = (props) => {
   let KnowledgeTest = (props) => {
     if (!needsKnowledgeTest(props)) { return null; }
     return (
-      <div className="knowledge-test">
+      <div className="knowledge-test translation-missing">
         <h4>You will need to take a knowledge test</h4>
         <p>We recommend studying the <a target='_blank' href={ driverHandbook } ><b>California driver’s handbook</b></a> and <a target='_blank' href={ practiceKnowledgeTest } >trying some practice exams</a> in advance of your visit.</p>
       </div>
@@ -26,7 +26,7 @@ const YouthDocuments = (props) => {
 
   return (
     <div>
-      <div className="new-driver-requirements">
+      <div className="new-driver-requirements translation-missing">
         <h4>New driver requirements</h4>
         <p>In order to get a provisional driving permit we will need to see either a <a href={ newDriverRequirements } target='_blank'><b>Certificate of Completion</b> or a <b>Certificate of Enrollment</b></a> from a California Driver Education (classroom), Driver Training (road), or an Integrated Driver Education and Training program.</p>
       </div>

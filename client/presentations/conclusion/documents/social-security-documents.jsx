@@ -10,7 +10,7 @@ const SocialSecurityDocuments = (props) => {
   if (!hasSocialSecurityYes(props)) { return null; }
 
   return (
-    <div key='proof-of-ssn-documents'>
+    <div key='proof-of-ssn-documents translation-missing'>
       <h4 className="proof-of-ssn-documents">Proof of Social Security Number</h4>
       <p>Under California law, we will need proof of your Social Security Number. Our <a target="_blank" href={ socialSecurityDocumentsList }>Social Security documents page lists accepted documents</a>.</p>
       <p>If you recently changed your name, make sure that change is reflected on the document you bring.</p>

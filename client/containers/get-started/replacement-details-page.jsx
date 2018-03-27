@@ -11,8 +11,7 @@ import { getCorrectApp }          from '../../helpers/data/card-type';
 
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new ReplaceValidator(Object.assign(props.cardReplacement, {locale}), props.validations);
+  let validations       =   new ReplaceValidator(props.cardReplacement, props.validations);
   let onSubmit          =   handlers.navigateOrShowErrors('replacementDetails', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -36,7 +35,6 @@ function mapStateToProps(state) {
     dateOfBirth         : state.application.basics.dateOfBirth,
     focused             : state.ui.focus,
     validations         : state.ui.validations,
-    locale              : state.ui.locale,
     flow                : state.ui.flow
   };
 };

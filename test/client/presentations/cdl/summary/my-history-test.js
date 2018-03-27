@@ -7,7 +7,6 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
-import translations     from '../../../../../client/i18n';
 import MyHistory        from '../../../../../client/presentations/cdl/summary/my-history.jsx';
 
 describe('CDL Summary My Basics section', function() {
@@ -16,9 +15,7 @@ describe('CDL Summary My Basics section', function() {
 
   beforeEach(function() {
     props = {
-      ui: {
-        locale: 'en'
-      },
+      ui: { },
       cdl: {
         history: {
           currentDLInfo: {

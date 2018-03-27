@@ -29,7 +29,7 @@ describe('Reduced Fee Page', function() {
         all: spy(),
         isValid: () => { return true; }
       };
-      let locale = 'en';
+
       props = {
         cardType: ['ID'],
         cardAction: 'new',
@@ -44,8 +44,7 @@ describe('Reduced Fee Page', function() {
         },
         reducedFee,
         onChange,
-        validations,
-        locale
+        validations
       }
     });
 

@@ -1,19 +1,19 @@
 'use strict';
 
-import React from 'react';
-import CheckboxSelector   from '../../checkbox-selector.jsx';
-import CheckboxCollection from '../../checkbox-selector-collection.jsx';
-import translations       from '../../../i18n';
-import Translation        from '../../../i18n/translate-tag.jsx';
+import React                from 'react';
+import CheckboxSelector     from '../../checkbox-selector.jsx';
+import CheckboxCollection   from '../../checkbox-selector-collection.jsx';
+import Translator           from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale
   if(props.cdlCertificates.needCertificates === 'Yes') {
     return (
       <div className='certificates-type-form'>
-        <Translation tag='h2' className='question'>
-           {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'cdl.endorsmentsPage.certificationSection.certifications.prompt'
+        />
         <div className='row'>
           <fieldset role='group' aria-label='Types of certificates'>
             <CheckboxCollection
@@ -23,18 +23,15 @@ const Form = (props) => {
               onBlur = { props.onBlurValidate }
               errorMessage={ props.validations.certificatesType() }
             >
-              <CheckboxSelector
-                value = 'transit'
-                text  = {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.values.transit}
-              />
-              <CheckboxSelector
-                value = 'ambulance'
-                text  = {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.values.ambulance}
-              />
-              <CheckboxSelector
-                value = 'ham'
-                text  = {translations[locale].cdl.endorsmentsPage.certificationSection.certifications.values.ham}
-              />
+              <CheckboxSelector value = 'transit'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.certificationSection.certifications.values.transit' />
+              </CheckboxSelector>
+              <CheckboxSelector value = 'ambulance'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.certificationSection.certifications.values.ambulance' />
+              </CheckboxSelector>
+              <CheckboxSelector value = 'ham'>
+                <Translator tag = 'span' translationPath = 'cdl.endorsmentsPage.certificationSection.certifications.values.ham' />
+              </CheckboxSelector>
             </CheckboxCollection>
 
           </fieldset>

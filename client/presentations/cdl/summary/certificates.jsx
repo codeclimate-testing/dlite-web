@@ -1,11 +1,10 @@
 'use strict';
 
-import React            from 'react';
-import * as dataPresent from '../../../helpers/data-present';
-import translations     from '../../../i18n';
+import React              from 'react';
+import * as dataPresent   from '../../../helpers/data-present';
 import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
-import SummaryItem      from '../../conclusion/summary/summary-item.jsx';
-import { hasValue }     from '../../../helpers/data/validations';
+import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
+import { hasValue }       from '../../../helpers/data/validations';
 import {
   showCDLCertificates
 } from '../../../helpers/data/cdl';
@@ -30,12 +29,12 @@ const Ham = (props) => {
 
 const CDLCertificates = (props) => {
   if(!showCDLCertificates(props.cdlCertificates)) { return null; }
-  let locale = props.locale;
+
   let certificates = (
     <div>
-      <Transit     array = {props.cdlCertificates.type} locale = {locale}/>
-      <Ambulance   array = {props.cdlCertificates.type} locale = {locale}/>
-      <Ham         array = {props.cdlCertificates.type} locale = {locale}/>
+      <Transit     array = {props.cdlCertificates.type} />
+      <Ambulance   array = {props.cdlCertificates.type} />
+      <Ham         array = {props.cdlCertificates.type} />
     </div>
   );
 

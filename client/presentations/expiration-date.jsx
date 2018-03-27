@@ -2,18 +2,19 @@
 
 import React      from 'react';
 import DateInput  from './date-input.jsx';
-import translations from '../i18n';
+import Translator from '../i18n/translator-tag.jsx';
 
 const ExpirationDate = (props) => {
-  let locale = props.locale;
+
   return (
     <div id='expirationDate'>
       <DateInput
         {...props}
-        title       = { translations[locale].shared.labels.expirationDate }
         values      = { props.values }
         validations = { props.validations }
-      />
+      >
+        <Translator tag = 'span' translationPath = 'shared.labels.expirationDate' />
+      </DateInput>
     </div>
   );
 };

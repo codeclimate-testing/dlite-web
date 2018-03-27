@@ -2,24 +2,21 @@
 
 import errorMessages  from '../../presentations/error-messages';
 import { hasValue }   from '../data/validations';
-import translations   from '../../i18n';
 
 const licenseType = (props) => {
-  let locale  = props.locale;
   let value   = props.licenseType.type;
   let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations[locale].errorMessages.licenceClassMissing]
+    errors = ['errorMessages.licenceClassMissing']
   }
   return errors;
 };
 
 const needEndorsement = (props) => {
-  let locale  = props.locale;
   let value   = props.licenseType.needEndorsement;
   let errors  = [];
   if (!hasValue(value)) {
-    errors = [translations[locale].errorMessages.selectionMissing]
+    errors = ['errorMessages.selectionMissing']
   }
   return errors;
 };

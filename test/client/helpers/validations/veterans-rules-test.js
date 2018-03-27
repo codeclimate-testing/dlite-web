@@ -1,9 +1,7 @@
 'use strict';
 
 import assert   from 'assert';
-
 import rules    from '../../../../client/helpers/validations/veterans-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 let props;
 
@@ -18,13 +16,12 @@ describe('veterans page validation rules:', function() {
 
     props = {
       veteransService,
-      cardAction: 'renew',
-      locale: 'en'
+      cardAction: 'renew'
     }
   });
 
   it('give veteranSelectionMissing error when nothing is selected', function() {
-    assert.deepEqual(rules.isVeteran(props), [messages.veteranSelectionMissing]);
+    assert.deepEqual(rules.isVeteran(props), ['errorMessages.veteranSelectionMissing']);
   });
 
 
@@ -45,7 +42,7 @@ describe('veterans page validation rules:', function() {
         veteransIdentifier: ''
       }
 
-      assert.deepEqual(rules.receiveBenefits(props), [messages.veteranBenefitSelectionMissing]);
+      assert.deepEqual(rules.receiveBenefits(props), ['errorMessages.veteranBenefitSelectionMissing']);
     });
 
     it('returns selectionMissing error when benefits not selected', function() {
@@ -54,7 +51,7 @@ describe('veterans page validation rules:', function() {
         militaryWaiver: ''
       }
 
-      assert.deepEqual(rules.militaryWaiver(props), [messages.selectionMissing]);
+      assert.deepEqual(rules.militaryWaiver(props), ['errorMessages.selectionMissing']);
     });
 
     it('returns veteranDesignationExistsMissing2 error when renewing and previous designation is not selected', function() {
@@ -65,7 +62,7 @@ describe('veterans page validation rules:', function() {
         veteransIdentifier: ''
       }
 
-      assert.deepEqual(rules.veteransDesignation(props), [messages.veteranDesignationExistsMissing2]);
+      assert.deepEqual(rules.veteransDesignation(props), ['errorMessages.veteranDesignationExistsMissing2']);
     });
 
     it('returns wantVeteransDesignationSelectionMissing error when not renewing', function() {
@@ -77,7 +74,7 @@ describe('veterans page validation rules:', function() {
       }
       props.cardAction = 'replace';
 
-      assert.deepEqual(rules.veteransIdentifier(props), [messages.wantVeteransDesignationSelectionMissing]);
+      assert.deepEqual(rules.veteransIdentifier(props), ['errorMessages.wantVeteransDesignationSelectionMissing']);
     });
 
     it('returns keepVeteranDesignationSelectionMissing if previouslyDesignated', function() {
@@ -88,7 +85,7 @@ describe('veterans page validation rules:', function() {
         veteransIdentifier: ''
       }
 
-      assert.deepEqual(rules.veteransIdentifier(props), [messages.keepVeteranDesignationSelectionMissing]);
+      assert.deepEqual(rules.veteransIdentifier(props), ['errorMessages.keepVeteranDesignationSelectionMissing']);
     });
 
     it('returns wantVeteranDesignationSelectionMissing if not previouslyDesignated', function() {
@@ -99,7 +96,7 @@ describe('veterans page validation rules:', function() {
         veteransIdentifier: ''
       }
 
-      assert.deepEqual(rules.veteransIdentifier(props), [messages.wantVeteransDesignationSelectionMissing]);
+      assert.deepEqual(rules.veteransIdentifier(props), ['errorMessages.wantVeteransDesignationSelectionMissing']);
     });
   });
 });

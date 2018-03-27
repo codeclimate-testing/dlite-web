@@ -24,10 +24,11 @@ const EnterPreviousNames = (props) => {
         <TextArea
           {...props}
           identifier='previousNames'
-          description={ <Translator tag = 'span' translationPath = 'summaryPage.myHistory.previousNames' /> }
           value      = { props.namesHistory.previousNames }
           errorMessage  = { props.validations.previousNames() }
-        />
+        >
+          <Translator tag = 'span' translationPath = 'summaryPage.myHistory.previousNames' />
+        </TextArea>
       </fieldset>
     </div>
   );

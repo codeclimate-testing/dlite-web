@@ -6,7 +6,6 @@ import { checkPreReg }          from '../../helpers/data/youth';
 import Translator               from '../../i18n/translator-tag.jsx';
 
 const VotingConfirmationPage = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}

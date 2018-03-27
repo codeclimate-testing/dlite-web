@@ -52,7 +52,7 @@ const SelectDropdown = (props) => {
   return (
     <div className='select-dropdown-container'>
       <label htmlFor={ props.name } id={ labelId }>
-        { props.description }
+        { props.children ? props.children : props.description }
       </label>
       <div
         className={className}

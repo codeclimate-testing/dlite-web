@@ -1,14 +1,15 @@
-import translations       from '../../i18n';
+'use strict';
+
 import { hasValue }       from '../data/validations';
 
 function selectionValidator(error, name, subname) {
   return (props) => {
-    let locale = props.locale;
     let value = subname ? props[name][subname] : name ? props[name] : props;
     let errors = [];
 
     if (!hasValue(value)) {
-      errors.push(translations[locale].errorMessages[error]);
+      let errorKey = 'errorMessages.' + error;
+      errors.push(errorKey);
     }
     return errors;
   };

@@ -1,8 +1,6 @@
 'use strict';
 
 import React                  from 'react';
-import TextInput              from '../../text-input.jsx';
-import ExpirationDate         from '../../expiration-date.jsx';
 import Translator             from '../../../i18n/translator-tag.jsx';
 
 const ExplanationString = (props) => {

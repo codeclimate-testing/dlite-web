@@ -6,15 +6,14 @@ import NavigationButtons        from '../navigation-buttons.jsx';
 import RadioSelector            from '../radio-selector.jsx';
 import RadioCollection          from '../radio-selector-collection.jsx';
 import Accordion                from '../../containers/accordion.jsx';
-import translations             from '../../i18n';
-import Translation              from '../../i18n/translate-tag.jsx';
+import Translator               from '../../i18n/translator-tag.jsx';
 import {
   hideMain,
   getErrorMessage
 } from '../../helpers/data/api';
 
 const Form = (props) => {
-  let locale = props.locale;
+  //TODO: Translation key for accordian title
   let className = `choose-application-form ${hideMain(props)}`;
   return (
     <Page
@@ -29,9 +28,11 @@ const Form = (props) => {
       }
 
       <form onSubmit = { props.onSubmit } className={className}>
-        <Translation tag='h2' className='question'>
-          {translations[locale].beforeIntro.chooseDLorCDLPage.prompt}
-        </Translation>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'beforeIntro.chooseDLorCDLPage.prompt'
+        />
         <fieldset role='group' aria-label='Which application choice'>
           <RadioCollection
             {...props}
@@ -51,58 +52,70 @@ const Form = (props) => {
         </fieldset>
 
         <Accordion
-          id='choose-application-info'
-          title="I don't know if I need a commercial driver license"
+          id    = 'choose-application-info'
+          title = "I don't know if I need a commercial driver license"
         >
-        <Translation tag='p'>
-          {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.header}
-        </Translation>
+        <Translator
+          tag             = 'p'
+          translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.header'
+        />
           <ul className = 'bullet-list'>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[0]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[1]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[2]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[3]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values[4]}
-            </Translation>
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values.0'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values.1'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values.2'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values.3'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWillNeedIf.values.4'
+            />
           </ul>
-            <Translation tag='p'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.header}
-            </Translation>
+            <Translator
+              tag             = 'p'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.header'
+            />
           <ul className = 'bullet-list'>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[0]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[1]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[2]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[3]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values[4]}
-            </Translation>
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values.0'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values.1'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values.2'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values.3'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.youWontNeedIf.values.4'
+            />
           </ul>
-          <Translation tag='p'>
-            {translations[locale].beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.seeDMV}
-          </Translation>
+          <Translator
+            tag             = 'p'
+            translationPath = 'beforeIntro.chooseDLorCDLPage.FAQdontKnowIfIneedCommercial.body.seeDMV'
+          />
         </Accordion>
 
         <NavigationButtons
           onBack            = { props.onBack }
           errorMessage      = { props.validations.all() }
-          locale            = { locale }
         />
       </form>
     </Page>

@@ -6,27 +6,30 @@ import CheckboxSelector     from '../../checkbox-selector.jsx';
 import {
   getStringByAction
 }   from '../../../helpers/data/card-actions';
-import Translate          from '../../../i18n/translate-tag.jsx';
+import Translator          from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   if (!props.showIf) { return null; }
-  let locale = props.locale;
+
   let formName = props.formName ? `${props.formName}sections` : 'sections';
 
-  const correctText = props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.correct;
-  const updateText  = props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.prompt.update;
+  const correctText = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.correct';
+  const updateText  = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.update';
   let headerText    = getStringByAction(props, null, null, null, null, updateText, correctText);
 
   return (
     <div className='row change-sections-form'>
       <hr />
-        <Translate tag='h3' className='question'>
-          {headerText}
-        </Translate>
+        <Translator
+          tag             = 'h3'
+          className       = 'question'
+          translationPath = { headerText }
+        />
 
-        <Translate tag='p'>
-          {props.translations[locale].intro.chooseSelectionPage.explanationMultiCard}
-        </Translate>
+        <Translator
+          tag='p'
+          translationPath = 'intro.chooseSelectionPage.explanationMultiCard'
+        />
 
       <fieldset role='group' aria-label='What do you need to change choice'>
         <CheckboxCollection
@@ -35,30 +38,25 @@ const Form = (props) => {
           array         = { props.cardChanges.sections }
           errorMessage  = { props.validations.sections() }
         >
-          <CheckboxSelector
-            value='name'
-            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[0]}
-          />
+          <CheckboxSelector value='name'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.0' />
+          </CheckboxSelector>
 
-          <CheckboxSelector
-            value='sex'
-            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[1]}
-          />
+          <CheckboxSelector value='sex'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.1' />
+          </CheckboxSelector>
 
-          <CheckboxSelector
-            value='dateOfBirth'
-            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[2]}
-          />
+          <CheckboxSelector value='dateOfBirth'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.2' />
+          </CheckboxSelector>
 
-          <CheckboxSelector
-            value='address'
-            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[3]}
-          />
+          <CheckboxSelector value='address'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.3' />
+          </CheckboxSelector>
 
-          <CheckboxSelector
-            value='other'
-            text = {props.translations[locale].intro.correctOrUpdatePage.chooseChangeSection.values[4]}
-          />
+          <CheckboxSelector value='other'>
+            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.4' />
+          </CheckboxSelector>
         </CheckboxCollection>
       </fieldset>
     </div>

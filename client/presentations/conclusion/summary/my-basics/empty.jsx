@@ -8,7 +8,7 @@ const Empty = (props) => {
   if (dataPresent.myBasics(props)) { return null; }
 
   return (
-    <div className='summary-section'>
+    <div className='summary-section translation-missing'>
       <p>No information has been entered yet</p>
     </div>
   );

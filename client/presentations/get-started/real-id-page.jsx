@@ -7,11 +7,9 @@ import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
 import RealIdDesignationForm  from './real-id/choose-card-selectors.jsx';
 import ChooseRealID           from './real-id/choose-real-id.jsx';
-import translations           from '../../i18n';
-import Translation            from '../../i18n/translate-tag.jsx';
+import Translator             from '../../i18n/translator-tag.jsx';
 
 const FormPage = (props) => {
-  let locale = props.locale;
   return (
     <Page
       {...props}
@@ -28,54 +26,63 @@ const FormPage = (props) => {
         />
 
        <Accordion
-          id='real-id-info'
-          title={translations[locale].intro.realIdPage.FAQWhatIsRealID.title}
+          id    = 'real-id-info'
+          title = 'intro.realIdPage.FAQWhatIsRealID.title'
         >
-          <Translation tag='p'>
-            {translations[locale].intro.realIdPage.FAQWhatIsRealID.body}
-          </Translation>
+          <Translator
+            tag             = 'p'
+            translationPath = 'intro.realIdPage.FAQWhatIsRealID.body'
+          />
         </Accordion>
 
 
         <Accordion
-          id='real-id-requirements'
-          title={translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.title}
+          id    = 'real-id-requirements'
+          title = 'intro.realIdPage.FAQWhatIsRequiredForRealID.title'
         >
           <div>
-            <Translation tag='p'>
-              {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.header}
-            </Translation>
+            <Translator
+              tag             = 'p'
+              translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.header'
+            />
             <ul className='bullet-list'>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[0]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[1]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[2]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[3]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[4]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[5]}
-              </Translation>
-              <Translation tag='li'>
-                {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.items[6]}
-              </Translation>
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.0'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.1'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.2'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.3'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.4'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.5'
+              />
+              <Translator
+                tag             = 'li'
+                translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.items.6'
+              />
             </ul>
-            <Translation tag='p'>
-              {translations[locale].intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements}
-            </Translation>
+            <Translator
+              tag             = 'p'
+              translationPath = 'intro.realIdPage.FAQWhatIsRequiredForRealID.body.otherRequirements'
+            />
           </div>
         </Accordion>
 
         <NavigationButtons
-          locale            = { locale }
           onBack            = { props.onBack }
           errorMessage      = { props.validations.all() }
         />

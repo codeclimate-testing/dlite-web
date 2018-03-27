@@ -8,7 +8,6 @@ import { spy }          from 'sinon';
 import store            from '../../support/page-store';
 import wrapperGenerator from '../../support/wrapper';
 import data             from '../../../../server/models/parsers/client-default-state.js';
-import translations     from '../../../../client/i18n';
 import SummaryPage      from '../../../../client/presentations/conclusion/summary-page.jsx';
 import OrganDonation      from '../../../../client/presentations/conclusion/summary/organ-donation.jsx';
 import GuardianSignature  from '../../../../client/presentations/conclusion/summary/guardian-signature.jsx'
@@ -17,13 +16,12 @@ import GuardianSignature  from '../../../../client/presentations/conclusion/summ
 describe('SummaryPage', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
   beforeEach(function() {
     props = {
       application: Object.assign({}, data.IDDL.application),
       server: '',
       onSubmit: spy(),
-      ui: {locale}
+      ui: { }
     };
   });
   it('has 6 accordions', function() {
@@ -44,13 +42,12 @@ describe('SummaryPage', function() {
 describe('Summary components', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
 
   beforeEach(function() {
     props = Object.assign({}, data.IDDL.application);
     props.server = '';
     props.onSubmit = spy();
-    props.locale = locale;
+
   });
 
   describe('OrganDonation', function() {
@@ -62,9 +59,7 @@ describe('Summary components', function() {
             donateOrgan: 'Yes'
           }
         },
-        ui: {
-          locale: 'en'
-        }
+        ui: { }
       };
 
       let component = render(

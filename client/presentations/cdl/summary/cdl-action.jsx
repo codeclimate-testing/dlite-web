@@ -20,17 +20,16 @@ import {
 
 const CdlAction = (props) => {
   if(!isCardActionSelected(props)) { return null; }
-  let locale = props.locale;
 
   return (
     <PageSummaryLink
       {...props}
     >
-      <New        showIf = {isGettingNew(props)}    locale={locale}/>
-      <Renew      showIf = {isRenewingCard(props)}  locale={locale}/>
-      <Replace    showIf = {isReplacingCard(props)} locale={locale}/>
-      <Correct    showIf = {isCorrecting(props)}    locale = {locale}/>
-      <Update     showIf = {isUpdating(props)}      locale = {locale}/>
+      <New        showIf = {isGettingNew(props)}    />
+      <Renew      showIf = {isRenewingCard(props)}  />
+      <Replace    showIf = {isReplacingCard(props)} />
+      <Correct    showIf = {isCorrecting(props)}    />
+      <Update     showIf = {isUpdating(props)}      />
     </PageSummaryLink>
   )
 };

@@ -1,6 +1,5 @@
 'use strict';
 
-import translations           from '../../i18n';
 import { hasValue }           from '../data/validations';
 import { hasOnlyNumbers }     from '../data/validations';
 import { needsAddress }       from '../data/cdl';
@@ -12,11 +11,11 @@ import {
 const addressValue = (type, name, message) => {
   return (props) => {
     if (!needsAddress(props)) { return []; }
-    let locale = props.locale;
-    let value = props[type][name];
-    let errors = englishValidator(value, locale);
+    let value     = props[type][name];
+    let errors    = englishValidator(value);
+    let errorKey  = 'errorMessages.' + message;
     if (message && !hasValue(value)) {
-      errors.push(translations[locale].errorMessages[message]);
+      errors.push(errorKey);
     }
     return errors;
   };
@@ -24,10 +23,9 @@ const addressValue = (type, name, message) => {
 
 const isResident = (props) => {
   if(!props.hasOwnProperty('isResident')) { return [];}
-  let locale = props.locale;
   let errors = [];
   if (!hasValue(props.isResident)) {
-    errors.push(translations[locale].errorMessages.selectionMissing);
+    errors.push('errorMessages.selectionMissing');
   }
   return errors;
 };

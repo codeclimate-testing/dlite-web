@@ -9,7 +9,7 @@ let medicalInfo = (props) => {
     return [];
   }
   if (!hasOnlyEnglishChars(props.medicalInfo)) {
-    return [errorMessages.inputIncludesNonEnglishCharacters]
+    return ['errorMessages.inputIncludesNonEnglishCharacters']
   }
   return selectionValidator('medicalHistorySelectionMissing', 'medicalInfo')(props);
 };

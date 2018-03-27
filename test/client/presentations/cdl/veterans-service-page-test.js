@@ -35,13 +35,12 @@ describe('VeteransServicePage', function() {
       all: spy(),
       isValid: () => { return true; }
     };
-    let locale = 'en';
+
     props = {
       veteransService,
       cardAction: 'new',
       onChange,
-      validations,
-      locale
+      validations
     }
   });
 

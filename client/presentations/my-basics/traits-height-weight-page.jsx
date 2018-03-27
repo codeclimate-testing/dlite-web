@@ -42,26 +42,28 @@ const TraitsPage = (props) => {
           <NumberInput
             {...props}
             identifier              = 'heightFeet'
-            description             =  { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.feetLabel' /> }
             value                   = { props.traitsHeightWeight.heightFeet }
             errorMessage            = { props.validations.heightFeet() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
             onFocusClearValidation  = { props.onFocusClearValidation }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.feetLabel' />
+          </NumberInput>
 
           <div className='unit spacer' />
 
           <NumberInput
             {...props}
             identifier              = 'heightInches'
-            description             =  { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.inchesLabel' /> }
             value                   = { props.traitsHeightWeight.heightInches }
             errorMessage            = { props.validations.heightInches() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
             onFocusClearValidation  = { props.onFocusClearValidation }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.inchesLabel' />
+          </NumberInput>
         </fieldset>
         <div className='row'>
           <ErrorLabel
@@ -85,13 +87,14 @@ const TraitsPage = (props) => {
           <NumberInput
             {...props}
             identifier              = 'weight'
-            description             = { <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.weight.poundsLabel' /> }
             value                   = { props.traitsHeightWeight.weight }
             errorMessage            = { props.validations.weight() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
             onFocusClearValidation  = { props.onFocusClearValidation }
-          />
+          >
+            <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.weight.poundsLabel' />
+          </NumberInput>
         </fieldset>
         <div className='row'>
           <ErrorLabel

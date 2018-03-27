@@ -22,8 +22,7 @@ const mapStateToProps = (state) => {
   return {
     dateOfBirth   : state.cdl.basics.dateOfBirth,
     optOut        : state.cdl.voting.optOut,
-    focused       : state.ui.focus,
-    locale        : state.ui.locale
+    focused       : state.ui.focus
   };
 };
 

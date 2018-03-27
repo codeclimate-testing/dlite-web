@@ -22,30 +22,30 @@ const PoliticalPartyPreference = (props) => {
           {...props}
           name='politicalPartyChoose'
         >
-          <RadioSelector
-            value = 'American Independent Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerAmericanIndependent'/> }
-          />
-          <RadioSelector
-            value = 'Democratic Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerDemocraticParty'/> }
-          />
-          <RadioSelector
-            value = 'Green Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerGreenParty'/> }
-          />
-          <RadioSelector
-            value = 'Libertarian Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerLibertarianParty'/> }
-          />
-          <RadioSelector
-            value = 'Peace and Freedom Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerPeaceAndFreedomParty'/> }
-          />
-          <RadioSelector
-            value = 'Republican Party'
-            text  = { <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerRepublicanParty'/> }
-          />
+          <RadioSelector value = 'American Independent Party'>
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerAmericanIndependent'/>
+          </RadioSelector>
+
+          <RadioSelector value = 'Democratic Party'>
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerDemocraticParty'/>
+          </RadioSelector>
+
+          <RadioSelector value = 'Green Party' >
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerGreenParty'/>
+          </RadioSelector>
+
+          <RadioSelector value = 'Libertarian Party' >
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerLibertarianParty'/>
+          </RadioSelector>
+
+          <RadioSelector value = 'Peace and Freedom Party' >
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerPeaceAndFreedomParty'/>
+          </RadioSelector>
+
+          <RadioSelector value = 'Republican Party' >
+            <Translator tag='span' translationPath='votingRegistration.choosePartyPage.answerRepublicanParty'/>
+          </RadioSelector>
+
           <OtherParty
             {...props}
             key = 'otherParty'

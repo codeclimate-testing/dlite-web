@@ -19,7 +19,7 @@ const ChoosePartyPageAnswerNo = () => {
   );
 }
 const ChoosePartyPage = (props) => {
-  let locale = props.locale;
+
   return (
     <Page
       {...props}
@@ -44,16 +44,14 @@ const ChoosePartyPage = (props) => {
               selectedValue = {props.politicalPartyChoose.isSelected}
               errorMessage  = {props.validations.isSelected()}
             >
-              <RadioSelector
-                value     = 'Yes'
-                text      = { <RadioSelectorYesTranslation /> }
-                className = 'long-text'
-              />
-              <RadioSelector
-                value     = 'Skip'
-                text      = { <ChoosePartyPageAnswerNo /> }
-                className = 'long-text'
-              />
+              <RadioSelector value     = 'Yes' className = 'long-text'>
+                <RadioSelectorYesTranslation />
+              </RadioSelector>
+
+              <RadioSelector value = 'Skip' className = 'long-text'>
+                <ChoosePartyPageAnswerNo />
+              </RadioSelector>
+
             </RadioCollection>
           </fieldset>
         </div>

@@ -8,7 +8,6 @@ import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
 import data             from '../../../../../server/models/parsers/client-default-state.js';
-import translations     from '../../../../../client/i18n';
 
 import MyHistory        from '../../../../../client/presentations/conclusion/summary/my-history.jsx';
 import {
@@ -20,7 +19,6 @@ import {
 } from '../../../../../client/presentations/conclusion/summary/my-history/index';
 
 const Wrapper = wrapperGenerator(store);
-let locale = 'en';
 
 describe('Summary My History section', function() {
 
@@ -29,7 +27,7 @@ describe('Summary My History section', function() {
       let props = {
         application: Object.assign({}, data.IDDL.application),
         onSubmit: spy(),
-        ui: { locale }
+        ui: { }
       };
 
       let component = render(
@@ -46,7 +44,6 @@ describe('Summary My history section components', function() {
   let props;
   beforeEach(function() {
     props = Object.assign({}, data.IDDL.application);
-    props.locale = locale;
   });
 
   describe('#LicenseAndIDHistory', function() {
@@ -285,11 +282,12 @@ describe('Summary My history section components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Veteran:'), true);
+
+      assert.equal(component.text().includes('Veteran'), true);
       assert.equal(component.text().includes('Yes'), true);
-      assert.equal(component.text().includes('Get benefit information:'), true);
+      assert.equal(component.text().includes('Get benefit information'), true);
       assert.equal(component.text().includes('No'), true);
-      assert.equal(component.text().includes('"Veteran" printed on card(s):'), true);
+      assert.equal(component.text().includes('"Veteran" printed on card(s)'), true);
     });
 
     it('shows only isVeteran answer if answer is No', function() {
@@ -308,7 +306,7 @@ describe('Summary My history section components', function() {
           />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Veteran:No'), true);
+      assert.equal(component.text().includes('VeteranNo'), true);
       assert.equal(component.text().includes('Get benefit information:'), false);
       assert.equal(component.text().includes('"Veteran" printed on card(s):'), false);
     });

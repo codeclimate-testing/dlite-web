@@ -1,9 +1,7 @@
 'use strict';
 
 import assert   from 'assert';
-
 import rules    from '../../../../client/helpers/validations/guardian-signature-rules';
-import messages from '../../../../client/presentations/error-messages';
 
 let props = {};
 
@@ -50,8 +48,7 @@ describe('enter guardian signature page validation rules:', function() {
             zip: '',
           }
         }]
-      },
-      locale: 'en'
+      }
     };
   });
 
@@ -107,19 +104,19 @@ describe('enter guardian signature page validation rules:', function() {
   });
 
   it('has errors, when there is no data entered', function() {
-    assert.deepEqual(rules.isSigned(props), ['Please make a selection']);
+    assert.deepEqual(rules.isSigned(props), ['errorMessages.selectionMissing']);
 
-    assert.deepEqual(rules.acceptLiabilities_0(props), ['Please check the box to accept liability.']);
-    assert.deepEqual(rules.name_0(props), ['Please enter your name.']);
-    assert.deepEqual(rules.month_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.day_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.year_0(props), ['Please enter a valid date.']);
+    assert.deepEqual(rules.acceptLiabilities_0(props), ['errorMessages.liabilityAcceptanceMissing']);
+    assert.deepEqual(rules.name_0(props), ['errorMessages.parentNameMissing']);
+    assert.deepEqual(rules.month_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_0(props), ['errorMessages.invalidOrMissingDate']);
 
-    assert.deepEqual(rules.acceptLiabilities_1(props), ['Please check the box to accept liability.']);
-    assert.deepEqual(rules.name_1(props), ['Please enter your name.']);
-    assert.deepEqual(rules.month_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.day_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.year_1(props), ['Please enter a valid date.']);
+    assert.deepEqual(rules.acceptLiabilities_1(props), ['errorMessages.liabilityAcceptanceMissing']);
+    assert.deepEqual(rules.name_1(props), ['errorMessages.parentNameMissing']);
+    assert.deepEqual(rules.month_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_1(props), ['errorMessages.invalidOrMissingDate']);
   });
 
   it('has errors, when non-english data are entered', function() {
@@ -145,24 +142,24 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[1].address.state = '嗨';
     props.guardianSignature.guardianInfo[1].address.zip = '嗨';
 
-    assert.deepEqual(rules.name_0(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.month_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.day_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.year_0(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.phoneNumber_0(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_0Street_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_0Street_2(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_0City(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_0Zip(props), ['Sorry, your card can only include English characters.']);
+    assert.deepEqual(rules.name_0(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.month_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.phoneNumber_0(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_0Street_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_0Street_2(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_0City(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_0Zip(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
 
-     assert.deepEqual(rules.name_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.month_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.day_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.year_1(props), ['Please enter a valid date.']);
-    assert.deepEqual(rules.phoneNumber_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_1Street_1(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_1Street_2(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_1City(props), ['Sorry, your card can only include English characters.']);
-    assert.deepEqual(rules.guardian_1Zip(props), ['Sorry, your card can only include English characters.']);
+     assert.deepEqual(rules.name_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.month_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.phoneNumber_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_1Street_1(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_1Street_2(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_1City(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
+    assert.deepEqual(rules.guardian_1Zip(props), ['errorMessages.dataIncludesNonEnglishCharacters']);
   });
 });//End describe

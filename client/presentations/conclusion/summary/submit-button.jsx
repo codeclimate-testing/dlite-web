@@ -1,11 +1,10 @@
 'use strict';
 
-import React from 'react';
-import translations from '../../../i18n';
+import React        from 'react';
+import Translator   from '../../../i18n/translator-tag.jsx';
 
 const SubmitButton = (props) => {
-  let locale = props.locale;
-  let submitText = translations[locale].summaryPage.buttons.submit;
+  let submitText =  <Translator tag = 'span' translationPath = 'summaryPage.buttons.submit' />;
 
   return (
     <div className='navigation-buttons row' key='save-and-continue'>

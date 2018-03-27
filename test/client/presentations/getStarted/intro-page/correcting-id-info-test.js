@@ -10,12 +10,10 @@ import wrapperGenerator         from '../../../support/wrapper';
 import CorrectingIDInfo          from '../../../../../client/presentations/get-started/intro-page/correcting-id-info.jsx';
 import GetStartedPage           from '../../../../../client/presentations/get-started/get-started-page.jsx';
 import store                    from '../../../support/page-store';
-import translations             from '../../../../../client/i18n';
 
 describe('CorrectingIDInfo', function() {
   const Wrapper = wrapperGenerator(store);
   let props;
-  let locale = 'en';
   beforeEach(function() {
 
     let cardChanges = {
@@ -55,8 +53,7 @@ describe('CorrectingIDInfo', function() {
       },
       cardChanges: cardChanges,
       realID,
-      onChange,
-      locale
+      onChange
     }
   });
 
@@ -95,7 +92,7 @@ describe('CorrectingIDInfo', function() {
           <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.correctingID), true);
+      assert.equal(component.text().includes('You are correcting an ID card'), true);
     });
 
     it('shows that user is getting a reduced fee ID on get started page', function() {
@@ -106,7 +103,7 @@ describe('CorrectingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.correctingReducedFeeID), true);
+      assert.equal(component.text().includes('You are correcting a reduced-fee ID card'), true);
     });
 
     it('shows that user is getting new senior ID on get started page', function() {
@@ -117,7 +114,7 @@ describe('CorrectingIDInfo', function() {
         <GetStartedPage {...props} />
         </Wrapper>
       );
-      assert.equal(component.text().includes(translations[locale].intro.getStartedPage.whatYouAreDoing.correctingSeniorID), true);
+      assert.equal(component.text().includes('You are correcting a senior ID card'), true);
     });
   });
 });

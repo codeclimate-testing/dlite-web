@@ -65,9 +65,10 @@ const StateSelector = (props) => {
 				id					= { props.id }
 				values			= { stateList }
 				onChange		= { props.onChange }
-				description	=	{ <Translator tag = 'span' translationPath = 'myBasics.addressesPage.stateLabel' /> }
 				selected		= { props.value }
-			/>
+			>
+				<Translator tag = 'span' translationPath = 'myBasics.addressesPage.stateLabel' />
+			</SelectDropdown>
     </div>
   );
 };

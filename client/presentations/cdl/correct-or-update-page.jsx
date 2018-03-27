@@ -7,8 +7,7 @@ import UpdateForm         from '../get-started/correct-or-update/update-form.jsx
 import OtherText          from '../get-started/correct-or-update/text-form.jsx';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import translations       from '../../i18n';
-import Translate          from '../../i18n/translate-tag.jsx';
+import Translator         from '../../i18n/translator-tag.jsx';
 import {
   otherIsSelected,
   hasSpecifiedChange
@@ -16,7 +15,6 @@ import {
 
 
 const Form = (props) => {
-  let locale = props.locale;
 
   return (
     <Page
@@ -24,10 +22,12 @@ const Form = (props) => {
       sectionKey='intro'
     >
       <div className='choose-card-change'>
-        <Translate tag='h2' className='question'>
-          {translations[locale].intro.correctOrUpdatePage.prompt}
-        </Translate>
-        <p>You cannot update your medical certificate through this form.</p>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'intro.correctOrUpdatePage.prompt'
+        />
+        <p className='translation-missing'>You cannot update your medical certificate through this form.</p>
 
         <form onSubmit={ props.onSubmit }>
           <fieldset role='group' aria-label='Correct or update choice'>
@@ -50,8 +50,7 @@ const Form = (props) => {
 
           <UpdateForm
             {...props}
-            showIf        = { hasSpecifiedChange(props) }
-            translations  = { translations}
+            showIf    = { hasSpecifiedChange(props) }
           />
           <OtherText
             {...props}

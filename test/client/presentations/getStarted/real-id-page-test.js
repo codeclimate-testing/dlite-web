@@ -29,7 +29,7 @@ describe('RealIdPage', function() {
 
       let accordions = {};
       let onChange = spy();
-      let locale = 'en';
+
       props = {
         cardType: ['ID', 'DL'],
         cardAction: 'new',
@@ -45,8 +45,7 @@ describe('RealIdPage', function() {
         },
         validations,
         accordions,
-        onChange,
-        locale
+        onChange
       }
     });
 
@@ -220,7 +219,6 @@ describe('RealIdPage', function() {
     beforeEach(function() {
       props = {
         realID: '',
-        locale: 'en',
         validations
       };
       component = render(

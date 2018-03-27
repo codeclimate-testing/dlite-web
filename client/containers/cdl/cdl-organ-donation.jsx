@@ -12,8 +12,7 @@ import Presentation                   from '../../presentations/organ-donation/o
 import { OrganDonationValidator }     from '../../helpers/validations';
 
 const Page = (props) => {
-  let locale      = props.locale;
-  let validations = new OrganDonationValidator(Object.assign(props.organDonation, {locale}), props.validations);
+  let validations = new OrganDonationValidator(props.organDonation, props.validations);
   let onSubmit    = handlers.navigateOrShowErrors('cdlOrganDonation', props, validations);
   let onBack      = handlers.navigateOnBack(props, validations);
 
@@ -33,7 +32,6 @@ function mapStateToProps(state) {
     dateOfBirth:    state.cdl.basics.dateOfBirth,
     focused:        state.ui.focus,
     validations:    state.ui.validations,
-    locale:         state.ui.locale,
     flow:           state.ui.flow
   };
 };

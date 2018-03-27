@@ -1,21 +1,17 @@
 'use strict';
 
-import React from 'react';
-import RadioSelector from './radio-selector.jsx';
-import translations from '../i18n';
+import React          from 'react';
+import RadioSelector  from './radio-selector.jsx';
+import Translator     from '../i18n/translator-tag.jsx';
 
-const radioIdDlGroup = (locale) => {
+const radioIdDlGroup = () => {
   return [
-    <RadioSelector
-      key='ID'
-      value='ID'
-      text={translations[locale].intro.chooseSelectionPage.values[0]}
-    />,
-    <RadioSelector
-      key='DL'
-      value='DL'
-      text={translations[locale].intro.chooseSelectionPage.values[1]}
-    />
+    <RadioSelector key='ID' value='ID'>
+      <Translator tag = 'span' translationPath = 'intro.chooseSelectionPage.values.0' />
+    </RadioSelector>,
+    <RadioSelector key='DL' value='DL'>
+      <Translator tag = 'span' translationPath = 'intro.chooseSelectionPage.values.1' />
+    </RadioSelector>
   ];
 };
 

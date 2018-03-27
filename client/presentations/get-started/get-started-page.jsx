@@ -1,44 +1,42 @@
 'use strict';
 
-import React                  from 'react';
-import Page                   from '../../containers/page.jsx';
-import LinkButton             from '../link-button.jsx';
-import BackButton             from '../back-button.jsx';
-import translations           from '../../i18n';
-import DLInfo                 from './intro-page/dl-info.jsx';
-import ApplyingIDInfo         from './intro-page/applying-id-info.jsx';
-import RenewingIDInfo         from './intro-page/renewing-id-info.jsx';
-import UpdatingIDInfo         from './intro-page/updating-id-info.jsx';
-import CorrectingIDInfo       from './intro-page/correcting-id-info.jsx';
-import ReplacingIDInfo        from './intro-page/replacing-id-info.jsx';
-import VehicleInfo            from './intro-page/vehicle-info.jsx';
-import EndorsementInfo        from './intro-page/endorsement-info.jsx';
-import RealIDInfo             from './intro-page/real-id-info.jsx';
-import UpdateApplicationInfo  from './intro-page/update-application-info.jsx';
-import CorrectApplicationInfo from './intro-page/correct-application-info.jsx';
-import ReplaceApplicationInfo from './intro-page/replace-application-info.jsx';
-import Translate              from '../../i18n/translate-tag.jsx';
+import React                      from 'react';
+import Page                       from '../../containers/page.jsx';
+import LinkButton                 from '../link-button.jsx';
+import BackButton                 from '../back-button.jsx';
+import DLInfo                     from './intro-page/dl-info.jsx';
+import ApplyingIDInfo             from './intro-page/applying-id-info.jsx';
+import RenewingIDInfo             from './intro-page/renewing-id-info.jsx';
+import UpdatingIDInfo             from './intro-page/updating-id-info.jsx';
+import CorrectingIDInfo           from './intro-page/correcting-id-info.jsx';
+import ReplacingIDInfo            from './intro-page/replacing-id-info.jsx';
+import VehicleInfo                from './intro-page/vehicle-info.jsx';
+import EndorsementInfo            from './intro-page/endorsement-info.jsx';
+import RealIDInfo                 from './intro-page/real-id-info.jsx';
+import UpdateApplicationInfo      from './intro-page/update-application-info.jsx';
+import CorrectApplicationInfo     from './intro-page/correct-application-info.jsx';
+import ReplaceApplicationInfo     from './intro-page/replace-application-info.jsx';
+import Translator                 from '../../i18n/translator-tag.jsx';
+import TranslatorList             from '../../i18n/translator-list.jsx';
 
 const ListItems = (props) => {
-  let locale = props.locale;
-  return translations[locale].intro.getStartedPage.listItems.map((text, i) => {
-    return (
-      <Translate tag='li' key={i} keyProp={i}>
-        {text}
-      </Translate>
-    );
-  });
+  return (
+    <TranslatorList
+      tag             = 'li'
+      translationPath = 'intro.getStartedPage.listItems'
+      />
+  );
 };
 
 const Intro = (props) => {
   const linkAddress = '/my-basics/address';
-  let locale = props.locale;
   return (
     <Page {...props} >
       <div className='intro-info'>
-        <Translate tag='h2'>
-          {translations[locale].intro.getStartedPage.title}
-        </Translate>
+        <Translator
+          tag             = 'h2'
+          translationPath = 'intro.getStartedPage.title'
+        />
 
         <DLInfo {...props} />
         <ApplyingIDInfo {...props} />
@@ -55,21 +53,23 @@ const Intro = (props) => {
 
         <hr/>
 
-        <Translate tag='p'>
-          {translations[locale].intro.getStartedPage.listHeader}
-        </Translate>
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.getStartedPage.listHeader'
+        />
 
         <ol className='decimal-list'>
           <ListItems {...props}/>
         </ol>
 
-        <Translate tag='p'>
-          {translations[locale].intro.getStartedPage.timeToComplete}
-        </Translate>
-
-        <Translate tag='p'>
-          {translations[locale].intro.getStartedPage.afterComplete}
-        </Translate>
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.getStartedPage.timeToComplete'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'intro.getStartedPage.afterComplete'
+        />
 
         <div className='navigation-buttons row'>
           <hr/>
@@ -82,11 +82,9 @@ const Intro = (props) => {
           </div>
 
           <div className='shadow-container unit-right'>
-            <LinkButton
-              to={linkAddress}
-              linkText={translations[locale].shared.navigation.next}
-              className='continue forward'
-            />
+            <LinkButton to = { linkAddress } className='continue forward'>
+              <Translator tag = 'span' translationPath = 'shared.navigation.next'/>
+            </LinkButton>
           </div>
         </div>
       </div>

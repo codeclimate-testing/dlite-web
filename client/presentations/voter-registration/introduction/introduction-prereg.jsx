@@ -5,7 +5,7 @@ import Translator             from '../../../i18n/translator-tag.jsx';
 import StopCitizensOnly       from './stop-citizens-only.jsx';
 
 const VoterIntroPrereg = (props) => {
-  let locale = props.locale;
+
   return (
     <div className='voter-intro-info'>
       <StopCitizensOnly {...props}/>

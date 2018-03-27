@@ -9,8 +9,7 @@ import { updateLegalName }    from '../../actions/index';
 import Presentation           from '../../presentations/get-started/name-page.jsx';
 
 const Page = (props) => {
-  let locale        = props.locale;
-  let validations   = new NamePageValidator(Object.assign(props.legalName, { locale }), props.validations);
+  let validations   = new NamePageValidator(props.legalName, props.validations);
   let onBack        = handlers.navigateOnBack(props, validations);
   let onSubmit      = handlers.navigateOrShowErrors('legalName', props, validations);
   return (
@@ -30,8 +29,7 @@ const mapStateToProps = (state) => {
     focused:      state.ui.focus,
     validations:  state.ui.validations,
     hover:        state.ui.hover,
-    locale:       state.ui.locale,
-    flow: state.ui.flow
+    flow:         state.ui.flow
 
   };
 };

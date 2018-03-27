@@ -7,7 +7,6 @@ import { render }       from 'enzyme';
 import { spy }          from 'sinon';
 import store            from '../../../support/page-store';
 import wrapperGenerator from '../../../support/wrapper';
-import translations     from '../../../../../client/i18n';
 import MyBasics         from '../../../../../client/presentations/cdl/summary/my-basics.jsx';
 
 describe('CDL Summary My Basics section', function() {
@@ -16,9 +15,7 @@ describe('CDL Summary My Basics section', function() {
 
   beforeEach(function() {
     props = {
-      ui: {
-        locale: 'en'
-      },
+      ui: { },
       cdl: {
         basics: {
           legalName: {
@@ -102,10 +99,10 @@ describe('CDL Summary My Basics section', function() {
   });
 
   it('shows the home address', function() {
-    assert.equal(component.text().includes(`${translations[props.ui.locale].summaryPage.myBasics.homeAddress}`), true);
+    assert.equal(component.text().includes('Home address'), true);
     assert.equal(component.text().includes('9900142'), true);
     assert.equal(component.text().includes('Apt 30-Q'), true);
-    assert.equal(component.text().includes(`${translations[props.ui.locale].summaryPage.myBasics.mailingAddress}`), true);
+    assert.equal(component.text().includes('Mailing address'), true);
     assert.equal(component.text().includes('Rockville, CA 010101'), true);
   });
 

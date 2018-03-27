@@ -4,7 +4,6 @@ import React        from 'react';
 import Translator   from '../../../i18n/translator-tag.jsx';
 
 const StopCitizensOnly = (props) => {
-  let locale = props.locale;
   return (
     <div className='row citizens-only'>
       <img

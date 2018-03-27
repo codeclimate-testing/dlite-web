@@ -7,11 +7,10 @@ import ClassBCCheckboxes      from './endorsements/class-b-c-checkboxes.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
 import Page                   from '../../containers/page.jsx';
 import Accordion              from '../../containers/accordion.jsx';
-import translations           from '../../i18n';
-import Translation            from '../../i18n/translate-tag.jsx';
+import Translator             from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-  let locale = props.locale;
+
   return (
     <Page
       {...props}
@@ -32,30 +31,37 @@ const Form = (props) => {
         />
 
       <Accordion
-        id='cdl-endorsement-info'
-        title={translations[locale].cdl.endorsmentsPage.FAQNotSure.title}
+        id      = 'cdl-endorsement-info'
+        title   = 'cdl.endorsmentsPage.FAQNotSure.title'
       >
         <div>
-          <Translation tag='p'>
-            {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.header}
-          </Translation>
+          <Translator
+            tag             = 'p'
+            translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.header'
+          />
+
           <ul className='bullet-list'>
-            <Translation tag='li'>
-              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[0]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[1]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[2]}
-            </Translation>
-            <Translation tag='li'>
-              {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.listItems[3]}
-            </Translation>
+            <Translator
+              tag             = 'li'
+              translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.listItems.0'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.listItems.1'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.listItems.2'
+            />
+            <Translator
+              tag             = 'li'
+              translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.listItems.3'
+            />
           </ul>
-          <Translation tag='p'>
-            {translations[locale].cdl.endorsmentsPage.FAQNotSure.body.explanation}
-          </Translation>
+          <Translator
+            tag             = 'p'
+            translationPath = 'cdl.endorsmentsPage.FAQNotSure.body.explanation'
+            />
         </div>
       </Accordion>
 

@@ -8,8 +8,7 @@ import { updateCDLCert }          from '../../actions/index';
 import connectForm                from '../../helpers/connect-form';
 
 const Page = (props) => {
-  let locale            =   props.locale;
-  let validations       =   new SelectionValidator(Object.assign(props.certification, {locale}), props.validations, 'applicationActionMissing');
+  let validations       =   new SelectionValidator(props.certification, props.validations, 'applicationActionMissing');
   let onSubmit          =   handlers.navigateOrShowErrors('cdlCertification', props, validations);
   let onBack            =   handlers.navigateOnBack(props, validations);
 
@@ -31,7 +30,6 @@ function mapStateToProps(state) {
     cardAction:     state.cdl.cardAction,
     dateOfBirth:    state.cdl.basics.dateOfBirth,
     certification:  state.cdl.certification,
-    locale:         state.ui.locale,
     validations:    state.ui.validations,
     flow:           state.ui.flow
   };
