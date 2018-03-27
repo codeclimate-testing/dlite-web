@@ -10,8 +10,9 @@ const BenefitInfo = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title = 'summaryPage.myHistory.getBenefitsInformation'
-      text  = { props.veteransService.receiveBenefits }
+      className = 'follower'
+      title     = 'summaryPage.myHistory.getBenefitsInformation'
+      text      = { props.veteransService.receiveBenefits }
     />
   )
 };
@@ -20,8 +21,9 @@ const PrintedOnCard = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title = 'summaryPage.myHistory.veteranPrintedOnCard'
-      text  = { props.veteransService.veteransIdentifier }
+      className = 'follower'
+      title     = 'summaryPage.myHistory.veteranPrintedOnCard'
+      text      = { props.veteransService.veteransIdentifier }
     />
   )
 };

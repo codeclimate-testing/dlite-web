@@ -73,18 +73,22 @@ const Intro = (props) => {
 
         <div className='navigation-buttons row'>
           <hr/>
-          <div className='shadow-container unit'>
-            <BackButton
-              {...props}
-              onBack={props.onBack}
-              key='back-button'
-            />
+          <div className='unit'>
+            <div className='shadow-container'>
+              <BackButton
+                {...props}
+                onBack={props.onBack}
+                key='back-button'
+              />
+            </div>
           </div>
 
-          <div className='shadow-container unit-right'>
-            <LinkButton to = { linkAddress } className='continue forward'>
-              <Translator tag = 'span' translationPath = 'shared.navigation.next'/>
-            </LinkButton>
+          <div className='unit-right'>
+            <div className='shadow-container'>
+              <LinkButton to = { linkAddress } className='continue forward'>
+                <Translator tag = 'span' translationPath = 'shared.navigation.next'/>
+              </LinkButton>
+            </div>
           </div>
         </div>
       </div>

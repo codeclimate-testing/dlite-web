@@ -27,9 +27,11 @@ const Address = (props) => {
         title = 'summaryPage.myBasics.homeAddress'
         text  = { homeAddress }
       />
+
       <SummaryItem
-        title = 'summaryPage.myBasics.mailingAddress'
-        text  = { mailingAddress  }
+        className = 'follower'
+        title     = 'summaryPage.myBasics.mailingAddress'
+        text      = { mailingAddress  }
       />
     </PageSummaryLink>
   );

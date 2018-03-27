@@ -16,7 +16,7 @@
                     <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
                     <path stroke="#FFC900" stroke-width="2" d="M3,-1 L117.630454,-1 C119.234225,-1 120.682945,-0.0421018471 121.310989,1.43358219 L131.08964,24.409996 L121.317828,46.6113959 C120.67892,48.0629842 119.242736,49 117.656762,49 L3,49 C0.790861001,49 -1,47.209139 -1,45 L-1,3 C-1,0.790861001 0.790861001,-1 3,-1 Z"></path>
                 </g>
-                <g id="colours/primarydark" mask="url(#mask-2)" fill="#08378E">
+                <g id="colours/primarydark" mask="url(#mask-2)" fill="#0A40A6">
                     <rect id="Rectangle-9" x="0" y="0" width="130" height="52"></rect>
                 </g>
             </g>

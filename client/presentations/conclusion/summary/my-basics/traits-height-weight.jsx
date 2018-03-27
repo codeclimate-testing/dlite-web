@@ -21,8 +21,9 @@ const TraitsHeightWeight = (props) => {
         text  = { height  }
       />
       <SummaryItem
-        title = 'summaryPage.myBasics.weight'
-        text  = { weight }
+        className = 'follower'
+        title     = 'summaryPage.myBasics.weight'
+        text      = { weight }
       />
     </PageSummaryLink>
   );

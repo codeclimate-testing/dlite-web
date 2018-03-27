@@ -38,9 +38,9 @@ $button-rest:       $medium-blue;
 $header-light:            $darkest-blue;
 $header-dark:             $bright-blue;
 
-$accordion-color:         lighten($darkest-blue, 65%);
-$accordion-border-color:  $neutral-20;
-$accordion-hover:         lighten($darkest-blue, 60%);
+$accordion-color:         #F1F4F8;
+$accordion-border-color:  #C3CEDA;
+$accordion-hover:         darken($accordion-color, 2%);
 
 
 // Theme based color

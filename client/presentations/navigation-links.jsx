@@ -6,20 +6,24 @@ import LinkButton     from './link-button.jsx';
 const NavigationLinks = (props) => {
   return (
     <div className='row navigation-buttons'>
-      <div className='shadow-container unit'>
-        <LinkButton
-          to={props.backwardsAddress}
-          className='backwards'
-          linkText='Back'
-        />
+      <div className='unit'>
+        <div className='shadow-container'>
+          <LinkButton
+            to={props.backwardsAddress}
+            className='backwards'
+            linkText='Back'
+          />
+        </div>
       </div>
 
-      <div className='shadow-container unit-right'>
-        <LinkButton
-          to={props.forwardAddress}
-          className='forward'
-          linkText='Next'
-        />
+      <div className='unit-right'>
+        <div className='shadow-container'>
+          <LinkButton
+            to={props.forwardAddress}
+            className='forward'
+            linkText='Next'
+          />
+        </div>
       </div>
     </div>
   );

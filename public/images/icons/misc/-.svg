@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
     <title>icons/misc/-</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icons/misc/-">
-            <circle id="Oval" fill="#010B96" cx="7" cy="7" r="7"></circle>
-            <rect id="Rectangle-3-Copy" fill="#FFFFFF" x="4" y="6" width="6" height="2"></rect>
-        </g>
+    <g id="icons/misc/-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#08378E" cx="10" cy="10" r="10"></circle>
+        <path d="M15,10.8482143 C15,10.9970239 14.9479168,11.1235118 14.84375,11.2276786 C14.7395832,11.3318454 14.6130954,11.3839286 14.4642857,11.3839286 L11.3839286,11.3839286 L8.61607143,11.3839286 L5.53571429,11.3839286 C5.38690465,11.3839286 5.26041678,11.3318454 5.15625,11.2276786 C5.05208322,11.1235118 5,10.9970239 5,10.8482143 L5,9.15178571 C5,9.00297608 5.05208322,8.87648821 5.15625,8.77232143 C5.26041678,8.66815465 5.38690465,8.61607143 5.53571429,8.61607143 L8.61607143,8.61607143 L11.3839286,8.61607143 L14.4642857,8.61607143 C14.6130954,8.61607143 14.7395832,8.66815465 14.84375,8.77232143 C14.9479168,8.87648821 15,9.00297608 15,9.15178571 L15,10.8482143 Z" id="-" fill="#FFFFFF"></path>
     </g>
 </svg>

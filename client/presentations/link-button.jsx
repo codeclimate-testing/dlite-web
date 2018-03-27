@@ -8,18 +8,20 @@ const LinkButton = (props) => {
   let className = 'button arrow-button ' + (props.className || '');
 
   return (
-    <div className='shadow-container unit'>
-      <Link
-        to={{
-          pathname: iddlPath(props.to),
-          state: {
-            nextAddress: props.nextAddress
-          }
-        }}
-        className={className}
-      >
-        {props.children ? props.children : props.linkText}
-      </Link>
+    <div className='unit'>
+      <div className='shadow-container'>
+        <Link
+          to={{
+            pathname: iddlPath(props.to),
+            state: {
+              nextAddress: props.nextAddress
+            }
+          }}
+          className={className}
+        >
+          {props.children ? props.children : props.linkText}
+        </Link>
+      </div>
     </div>
   );
 };

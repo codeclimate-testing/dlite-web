@@ -229,8 +229,9 @@ module.exports = function(world) {
   world.then('I will see that I am replacing my ID', function(done) {
     browser
       .text()
-      .then( text => {
-        assert(text.includes('My IDI amReplacing'));
+      .then((text) => {
+        assert(text.includes('My ID'));
+        assert(text.includes('I amReplacing'));
       })
       .then(done)
       .catch(done);
@@ -269,7 +270,8 @@ module.exports = function(world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('My IDI amApplying for the first time'), 'ID card type not saved in summary');
+        assert(text.includes('My ID'));
+        assert(text.includes('I amApplying for the first time'), 'ID card type not saved in summary');
       })
       .then(() => { done(); })
       .catch(done);

@@ -14,6 +14,7 @@ const TextInput = (props) => {
   let name            = props.name || props.identifier;
   let className       = errorClass(props.errorMessage);
   let inputClass      = props.error ? 'error' : className;
+  let parentClassName = `text-input-block input-margin-bottom ${name}`;
 
   const GenerateExampleLabel = (props) => {
     if(!props.example) {
@@ -26,7 +27,7 @@ const TextInput = (props) => {
     );
   }
   return (
-    <div className='text-input-block input-margin-bottom'>
+    <div className={parentClassName}>
       <label
         htmlFor         = { id }
         className       = { className }

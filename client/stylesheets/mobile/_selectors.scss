@@ -20,8 +20,8 @@
   }
 
   .text-region {
-    margin: 4px 0;
-    padding: 10px 15px;
+    margin: 5px 0;
+    padding: 10px;
     font-weight: normal;
     font-size: $font-size-main;
     line-height: 1.2;
@@ -78,15 +78,7 @@
 
   &.vehicle-class {
     .checkbox-selector .icon-region{
-      background-color: $darkest-blue;
-    }
-
-    &.trailer,
-    &.long {
-      .checkbox-selector .text-region {
-        margin-top: 5px;
-        padding: 3px 5px 0px 10px;
-      }
+      background-color: $medium-blue;
     }
 
     &.selected .checkbox-selector .icon-region {
@@ -112,7 +104,8 @@
       }
 
       .icon-region.long {
-        height: 72px;
+        height: 84px;
+        background-position-y: 12px;
         background-image: url("/images/icons/license/trailer.svg");
       }
     }
@@ -120,7 +113,7 @@
 
   &.endorsements-class {
     .checkbox-selector .icon-region{
-      background-color: $darkest-blue;
+      background-color: $medium-blue;
     }
 
     &.choice-selector {

@@ -18,13 +18,15 @@ const PhysicalTraits = (props) => {
       />
 
       <SummaryItem
-        title = 'summaryPage.myBasics.eyeColor'
-        text  = { props.physicalTraits.eyeColor }
+        className = 'follower'
+        title     = 'summaryPage.myBasics.eyeColor'
+        text      = { props.physicalTraits.eyeColor }
       />
 
       <SummaryItem
-        title = 'summaryPage.myBasics.hairColor'
-        text  = { props.physicalTraits.hairColor }
+        className = 'follower'
+        title     = 'summaryPage.myBasics.hairColor'
+        text      = { props.physicalTraits.hairColor }
       />
     </PageSummaryLink>
     )

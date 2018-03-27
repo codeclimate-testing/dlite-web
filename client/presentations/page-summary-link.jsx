@@ -29,20 +29,21 @@ const LinkPresentation = (props) => {
   return (
     <div className='summary-section'>
       <div className='row'>
-        <div className='unit summary-content'>
+        <div className='unit-right' onClick={handleClick}>
+          <div className='shadow-container'>
+            <Link
+              to={linkTo}
+              className= {className}
+            >
+              <div className='unit edit-icon'></div>
+              <div className='unit text-area'>{buttonText}</div>
+            </Link>
+          </div>
+        </div>
+        <div className='last-unit summary-content'>
           {props.children}
         </div>
-        <div className='shadow-container unit-right' onClick={handleClick}>
-          <Link
-            to={linkTo}
-            className= {className}
-          >
-            <div className='unit edit-icon'></div>
-            <div className='unit text-area'>{buttonText}</div>
-          </Link>
-        </div>
       </div>
-      <hr/>
     </div>
   )
 };

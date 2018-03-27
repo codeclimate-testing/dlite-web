@@ -48,8 +48,10 @@ const AppointmentPreparation = (props) => {
 
         <p>To avoid long waits and lines, make an appointment at your local DMV now.</p>
 
-        <div className='shadow-container unit'>
-          <a href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment" className='button'>Make Appointment</a>
+        <div className='unit'>
+          <div className='shadow-container'>
+            <a href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment" className='button'>Make Appointment</a>
+          </div>
         </div>
 
       </div>

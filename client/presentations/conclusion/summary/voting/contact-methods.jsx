@@ -23,8 +23,9 @@ const PhoneNumber = (props) => {
   const phone = `(${props.contactMethods.phoneNumber1}) ${props.contactMethods.phoneNumber2}-${props.contactMethods.phoneNumber3}`;
   return (
     <SummaryItem
-      title = 'summaryPage.voterRegistration.phone'
-      text  = { phone }
+      className = 'follower'
+      title     = 'summaryPage.voterRegistration.phone'
+      text      = { phone }
     />
   );
 };
@@ -33,8 +34,9 @@ const EmailAddress = (props) => {
   if (!shouldContact(props)) { return null; }
   return (
     <SummaryItem
-      title = 'summaryPage.voterRegistration.email'
-      text  = { props.contactMethods.emailAddress }
+      className = 'follower'
+      title     = 'summaryPage.voterRegistration.email'
+      text      = { props.contactMethods.emailAddress }
     />
 );
 };

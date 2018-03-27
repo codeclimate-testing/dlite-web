@@ -74,8 +74,9 @@ const LicenseType = (props) => {
         text  = { vehicles}
       />
       <SummaryItem
-        title = 'summaryPage.myDL.firefighterEndorsement'
-        text  = { endorsements}
+        className = 'follower'
+        title     = 'summaryPage.myDL.firefighterEndorsement'
+        text      = { endorsements}
       />
     </PageSummaryLink>
   )

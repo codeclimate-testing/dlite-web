@@ -5,10 +5,12 @@ import Translator   from '../i18n/translator-tag.jsx';
 
 const ContinueButton = (props) => {
   return (
-    <div className='shadow-container unit-right' >
-      <button className='arrow-button forward' disabled={props.disabled} hidden={props.hidden}>
-        <Translator tag = 'span' translationPath = 'shared.navigation.next' />
-      </button>
+    <div className='unit-right' >
+      <div className='shadow-container'>
+        <button className='arrow-button forward' disabled={props.disabled} hidden={props.hidden}>
+          <Translator tag = 'span' translationPath = 'shared.navigation.next' />
+        </button>
+      </div>
     </div>
   );
 };

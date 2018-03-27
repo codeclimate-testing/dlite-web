@@ -4,10 +4,11 @@ import React        from 'react';
 import Translator   from '../../../i18n/translator-tag.jsx';
 
 const SummaryItem = (props) => {
+  let className = `${props.className} summary-item`;
   if(typeof(props.text) === 'string')
   {
     return (
-      <div className='summary-item'>
+      <div className = { className }>
         <Translator
           tag             = 'h4'
           translationPath = { props.title }
@@ -22,7 +23,7 @@ const SummaryItem = (props) => {
     );
   }
   return (
-    <div className='summary-item'>
+    <div className = { className }>
       <Translator
         tag             = 'h4'
         translationPath = { props.title }

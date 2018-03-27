@@ -36,6 +36,11 @@
   min-height: 66px;
 }
 
+.text-input-block.homeZip,
+.text-input-block.mailingZip {
+  max-width: 200px;
+}
+
 a.sections {
   //color: transparent;
 }
@@ -47,11 +52,20 @@ a.button.arrow-button.forward.get-started {
 .summary-section {
   h4 {
     color: $green;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .summary-item.follower {
+    margin-top: $spacing;
   }
 }
 
-.summary-content {
-  width: 395px;
+.summary-section {
+  margin-bottom: $spacing;
 }
 
 .loading{

@@ -25,8 +25,9 @@ const LicenseIssues = (props) => {
           text  = { props.licenseIssues.reason }
         />
         <SummaryItem
-          title = 'summaryPage.myHistory.recordDate'
-          text  = { date }
+          className = 'follower'
+          title     = 'summaryPage.myHistory.recordDate'
+          text      = { date }
         />
       </PageSummaryLink>
     )
