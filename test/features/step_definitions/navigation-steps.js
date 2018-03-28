@@ -34,6 +34,14 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
 
+  world.when('I go to the IDDL sign-in page', function(done) {
+    navigateToPath('/apply/id-and-license/sign-in', '.id-me', done);
+  });
+
+  world.when('I go to the logged in page', function(done) {
+    navigateToPath('/apply/logged-in', '.legal-name-form', done);
+  });
+
   world.when('I visit the page to choose application language', function(done) {
     navigateToPath('/apply/choose-language', '.choose-language-form', done);
   });

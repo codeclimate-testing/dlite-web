@@ -55,4 +55,21 @@ module.exports = function (world) {
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.when('I click the log-out link', function(done) {
+    browser
+      .click('#log-out a')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will not see any log-out link', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert.equal(text.includes('Log out'), false);
+      })
+      .then(done)
+      .catch(done);
+  });
 };
