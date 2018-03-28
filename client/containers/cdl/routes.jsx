@@ -7,8 +7,6 @@ import {
   editCDLPath
 } from '../../helpers/alice-path';
 
-import Disclaimers                      from './cdl-disclaimers.jsx';
-import IDMe                             from '../get-started/id-me-page.jsx';
 import CdlWdywtdt                       from './cdl-what-do-you-want-to-do-today-page.jsx';
 import UpdatesAndCorrections            from './change-details.jsx';
 import CardReplacement                  from './card-replacement.jsx';
@@ -30,9 +28,6 @@ import AppointmentPrep                  from './appointment-prep.jsx';
 const CDLRoutes = () => {
   return (
     <div>
-
-      <Route path={ cdlPath('/sign-in') }                               component={IDMe} />
-      <Route path={ cdlPath('/disclaimers') }                           component={Disclaimers} />
 
       <Route path={ cdlPath('/what-do-you-want-to-do-today')}           component={CdlWdywtdt}   />
       <Route path={ editCDLPath('/what-do-you-want-to-do-today')}       component={CdlWdywtdt}   />

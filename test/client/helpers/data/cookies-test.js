@@ -9,7 +9,6 @@ import {
   getLoggedIn,
   isLoggedIn,
   afterIntro,
-  isProduction,
   requireLogIn,
   saveLanguageCookie,
   getLanguageFromCookie
@@ -67,29 +66,9 @@ describe('Data helpers for cookies', function() {
     });
   });
 
-  describe('#isProduction', function() {
-    it('returns true if app_env is production', function() {
-      let env = 'production';
-      assert.equal(isProduction(env), true);
-    });
-    it('returns false if app_env is development', function() {
-      let env = 'development';
-      assert.equal(isProduction(env), false);
-    });
-    it('returns false if app_env is test', function() {
-      let env = 'test';
-      assert.equal(isProduction(env), false);
-    });
-    it('returns false if app_env is acceptance', function() {
-      let env = 'acceptance';
-      assert.equal(isProduction(env), false);
-    });
-  });
-
   describe('#requireLogIn', function() {
-    let props, appEnv;
+    let props;
     beforeEach(function() {
-      appEnv = 'production';
       props = {
         location: {
           pathname: ''
@@ -97,31 +76,20 @@ describe('Data helpers for cookies', function() {
       };
       document.cookie = '';
     });
-    it('returns false if app_env is development', function() {
-      appEnv = 'development';
-      assert.equal(requireLogIn(props, appEnv), false);
-    });
-    it('returns false if app_env is test', function() {
-      appEnv = 'test';
-      assert.equal(requireLogIn(props, appEnv), false);
-    });
-    it('returns false if app_env is acceptance', function() {
-      appEnv = 'acceptance';
-      assert.equal(requireLogIn(props, appEnv), false);
-    });
+
     it('returns false if pathname is an intro page', function() {
       props.location.pathname = '/apply/choose-application';
-      assert.equal(requireLogIn(props, appEnv), false);
+      assert.equal(requireLogIn(props), false);
     });
     it('returns false if user is logged in', function() {
-      document.cookie = 'isLoggedIn=true';
-      assert.equal(requireLogIn(props, appEnv), false);
+      document.cookie = 'isLoggedIn=true;path=/';
+      assert.equal(requireLogIn(props), false);
     });
-    it('returns true if user is not logged in and the pathname is not an intro page and the app_env is production', function() {
-      document.cookie = 'isLoggedIn=false';
+    it('returns true if user is not logged in and the pathname is not an intro page', function() {
+      document.cookie = 'isLoggedIn=false;path=/';
       props.location.pathname = '/apply/summary';
-      appEnv = 'production';
-      assert.equal(requireLogIn(props, appEnv), true);
+      process.env.APP_ENV = 'production';
+      assert.equal(requireLogIn(props, process.env.APP_ENV), true);
     });
   });
 

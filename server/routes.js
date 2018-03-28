@@ -14,8 +14,7 @@ const routes = (passport) => {
                                           controllers.authSuccess);
   router.get( '/auth/error',              controllers.authError);
 
-  router.get( '/apply/cdl/log-out',            controllers.logout('cdl'));
-  router.get( '/apply/id-and-license/log-out', controllers.logout('id-and-license'));
+  router.get( '/apply/log-out',            controllers.logout);
 
   router.get( '/apply*',                controllers.requireLogIn,
                                         controllers.renderClient);

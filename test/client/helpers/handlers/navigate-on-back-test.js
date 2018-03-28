@@ -23,22 +23,12 @@ describe('navigateOnBack', function() {
       all: spy(),
       isValid: spy()
     };
-    document.cookie = 'isLoggedIn=true';
-    env='production';
   });
 
   it('will go back one step in history if props.addressName key page does not have "validateFromSummary" property', function() {
     props.addressName = 'chooseCardType';
     navigateOnBack(props, validations, env)(event);
     assert.equal(props.history.goBack.calledOnce);
-  });
-
-  it('will route user to sign-in page if requireLogIn is true', function() {
-    document.cookie = 'isLoggedIn=false';
-    env='production';
-    props.location.pathname = '/apply/id-and-license/legal-name';
-    navigateOnBack(props, validations, env)(event);
-    assert.equal(props.history.entries[1].pathname, '/apply/id-and-license/sign-in');
   });
 
   it('will go back one step in history if props.addressName key page has "validateFromSummary" property that is equal to true', function() {

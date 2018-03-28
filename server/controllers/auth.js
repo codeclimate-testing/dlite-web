@@ -9,6 +9,7 @@ const authCallback = (passport) => {
 };
 
 const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
+  req.session.cookie.expires = false;
   req.session.user = req.user; // is this right? or should be use a method in passport to do the serialization?
   res.cookie('isLoggedIn', true);
 

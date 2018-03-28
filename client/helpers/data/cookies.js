@@ -13,6 +13,10 @@ export const buildLoggedIn = () => {
   return document.cookie = 'isLoggedIn=true;path=/';
 };
 
+export const buildLoggedOut = () => {
+  return document.cookie = 'isLoggedOut=false;path=/';
+};
+
 export const getLoggedIn = () => {
   return document.cookie.replace(/(?:(?:^|.*;\s*)isLoggedIn\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 };
@@ -22,14 +26,8 @@ export const isLoggedIn = () => {
   return cookieValue.toString() === 'true';
 };
 
-export const isProduction = (env = APP_ENV) => {
-  return  env !== 'development' &&
-          env !== 'test' &&
-          env !== 'acceptance';
-};
-
 export const afterIntro = (pathname) => {
-  let introPages = ['chooseLanguage', 'chooseApplication'];
+  let introPages = ['chooseLanguage', 'chooseApplication', 'IDme', 'cdlIDme'];
   for(var i = 0; i < introPages.length; i++) {
     if(pathForPage(introPages[i]) === pathname) {
       return false;
@@ -38,13 +36,26 @@ export const afterIntro = (pathname) => {
   return true;
 };
 
+export const isProduction = (env) => {
+  return  env !== 'development' &&
+          env !== 'test' &&
+          env !== 'acceptance';
+};
+
 export function requireLogIn(props, env = APP_ENV){
   return (isProduction(env) && afterIntro(props.location.pathname) && !isLoggedIn());
 };
+
 export function getLanguageFromCookie() {
   return document.cookie.replace(/(?:(?:^|.*;\s*)language\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-}
+};
 
 export const saveLanguageCookie = (value) => {
   return document.cookie = `language=${value};path=/`;
+};
+
+export const deleteLanguageCookie = () => {
+  let date = new Date();
+  date.setTime(date.getTime - (24*60*60*1000));
+  return document.cookie = 'language=;path=/;expires=' + date;
 };

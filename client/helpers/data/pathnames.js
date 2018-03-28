@@ -121,15 +121,12 @@ export function splitPathname(props) {
 }
 
 export function getAppType(props) {
-  let appType = props.chooseApp;
-  if (props.chooseApp === 'iddl') {
-    appType = 'id-and-license';
+  let appType = 'id-and-license';
+  if (props.chooseApp && props.chooseApp === 'cdl') {
+    appType = props.chooseApp;
   }
   else if (!props.chooseApp && props.location) {
     appType = splitPathname(props);
-  }
-  else if (!props.chooseApp && !props.location){
-    appType = 'id-and-license';
   }
   return appType;
 }
@@ -142,3 +139,6 @@ export function getAppKey(cookieValue) {
   return pageKey;
 }
 
+export function signInURL(appName) {
+  return `/apply/${appName}/sign-in`;
+};

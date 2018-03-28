@@ -56,25 +56,6 @@ describe('auto logout class', function() {
     });
   });
 
-  describe('logout', function() {
-    beforeEach(function() {
-      auto.logout();
-    });
-    it('pushes logout url to history', function() {
-      assert.equal(history.location.pathname, '/apply/id-and-license/log-out');
-    });
-    it('pushes /apply/cdl/logout if appName equals cld', function() {
-      appName = 'cdl';
-      auto.constructor(history, appName);
-      auto.logout();
-      assert.equal(history.location.pathname, '/apply/cdl/log-out');
-    });
-
-    it('calls destroy', function(){
-      assert.ok(auto.destroy.called);
-    });
-  });
-
   describe('destroy', function() {
     beforeEach(function() {
       auto.destroy();

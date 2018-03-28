@@ -9,7 +9,7 @@ describe('Auth related controllers', () => {
   let req, res, next, passport;
 
   beforeEach(function() {
-    req = {session: {user: {id: 'foo'}}};
+    req = {session: {user: {id: 'foo'}, cookie: {}}};
     res = httpMocks.createResponse({});
     res.redirect = sinon.spy();
     res.cookie = sinon.spy();

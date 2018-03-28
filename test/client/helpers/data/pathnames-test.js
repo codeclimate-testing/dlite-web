@@ -13,7 +13,8 @@ import {
   applyEditOrAddPath,
   applyOrEditCDLPath,
   getAppType,
-  getAppKey
+  getAppKey,
+  signInURL
 } from '../../../../client/helpers/data/pathnames';
 
 
@@ -243,6 +244,15 @@ describe('Data helpers for pathnames', function() {
     it('returns cdlIDme when cookieValue is cdl', function() {
       cookieValue = 'cdl';
       assert.equal(getAppKey(cookieValue), 'cdlIDme');
+    });
+  });
+
+  describe('#signInUrl', function() {
+    it('returns /apply/cdl/sign-in when appName is cdl', function() {
+      assert.equal(signInURL('cdl'), '/apply/cdl/sign-in');
+    });
+    it('returns /apply/id-and-license/sign-in when appName is id-and-license', function() {
+      assert.equal(signInURL('id-and-license'), '/apply/id-and-license/sign-in');
     });
   });
 });
