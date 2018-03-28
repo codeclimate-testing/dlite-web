@@ -17,7 +17,7 @@ textarea {
 
   background-color: white;
   color: $darkest-color;
-  font-size: 16px;
+  font-size: 1.1 * $font-size-main;
   font-family: $form-font;
 
   margin-bottom: 2px; // fixes for the focus sizing on the bottom

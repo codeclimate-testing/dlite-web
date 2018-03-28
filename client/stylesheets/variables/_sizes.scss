@@ -1,6 +1,6 @@
-$em: 18px;
+$em: 15px;
 $spacing: 15px;
-$page-padding: 15px;
+$page-padding: 20px;
 
 $border-width: 1px;
 $border-width-special: 2px;
@@ -17,6 +17,8 @@ $arrow-button-padding: 45px;
 
 $max-tablet-input-width: 500px;
 
-$font-size-main:  15px;
-$font-size-label: 13px;
-$line-height: 1.5;
+$font-size-main:        $em;
+$font-size-label:       $em * 13 / 15;
+$line-height:           1.6;
+$letter-spacing-body:   0.25px;
+$letter-spacing-header: 0.5px;

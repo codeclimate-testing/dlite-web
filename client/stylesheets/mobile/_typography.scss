@@ -3,6 +3,7 @@ body, p {
   font-family: $main-font;
   font-size: $font-size-main;
   line-height: $line-height;
+  letter-spacing: $letter-spacing-body;
   text-rendering: optimizeLegibility;
 }
 
@@ -11,6 +12,7 @@ h1, h2, h3, h4 {
   font-weight: bold;
   $line-height: 1;
   color: $headline-blue;
+  letter-spacing: $letter-spacing-header;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -18,11 +20,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: $em * 2;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: $em * 1.6;
 
   &.question {
     color: $green;
@@ -30,7 +32,7 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: $em * 1.333;
 
   &.question {
     color: $green;
@@ -92,5 +94,144 @@ ol.decimal-list {
 li {
   padding-left: $spacing / 2;
   padding-bottom: $spacing / 2;
+}
+
+body.locale-tall {
+  $em:                    15px * 1.2;
+  $font-size-main:        $em;
+  $font-size-label:       $em * 1.4;
+  $line-height:           1.7;
+  $letter-spacing-header: 0.25px;
+
+  font-size:      $em;
+  line-height:    $line-height;
+  letter-spacing: $letter-spacing-body;
+
+  p {
+    font-size: $em;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing-body;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: $letter-spacing-header;
+  }
+
+  h1 {
+    font-size: $em * 2;
+  }
+
+  h2 {
+    font-size: $em * 1.6;
+  }
+
+  h3 {
+    font-size: $em * 1.333;
+  }
+
+  input[type=submit],
+  a.button,
+  div.button,
+  label.button,
+  #header.dmv-text-logo,
+  .accordion .accordion-header,
+  .choice-selector.text-region,
+  .id-me-buttons.id-me-create,
+  .id-me-buttons.id-me-sign-in,
+  h4 {
+    font-size: $font-size-main;
+  }
+
+  label,
+  a.button.edit,
+  a.button.log-out,
+  #header.primary,
+  #footer.links.a,
+  #footer.p,
+  .select-dropdown-container.select-dropdown.dropdown-options {
+    font-size: $font-size-label;
+  }
+
+  .select-dropdown-container.select-dropdown {
+    font-size: $font-size-main * 1.2;
+  }
+
+  .input,
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=number],
+  textarea {
+    font-size: 1.1 * $font-size-main;
+  }
+}
+
+body.locale-dense {
+  $em:                    15px * 1.14;
+  $font-size-main:        $em;
+  $font-size-label:       $em * 1.4;
+  $line-height:           1.7;
+  $letter-spacing-body:   0px;
+  $letter-spacing-header: 0px;
+
+  font-size: $em;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing-body;
+
+  p {
+    font-size: $em;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing-body;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: $letter-spacing-header;
+  }
+
+  h1 {
+    font-size: $em * 2;
+  }
+
+  h2 {
+    font-size: $em * 1.6;
+  }
+
+  h3 {
+    font-size: $em * 1.333;
+  }
+
+  h4,
+  input[type=submit],
+  a.button,
+  div.button,
+  label.button,
+  #header.dmv-text-logo,
+  .accordion .accordion-header,
+  .choice-selector.text-region {
+    font-size: $font-size-main;
+  }
+
+  label,
+  a.button.edit,
+  a.button.log-out,
+  #header.primary,
+  #footer.links.a,
+  #footer.p,
+  .select-dropdown-container.select-dropdown.dropdown-options {
+    font-size: $font-size-label;
+  }
+
+  .select-dropdown-container.select-dropdown {
+    font-size: $font-size-main * 1.2;
+  }
+
+  .input,
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=number],
+  textarea {
+    font-size: 1.1 * $font-size-main;
+  }
 }
 

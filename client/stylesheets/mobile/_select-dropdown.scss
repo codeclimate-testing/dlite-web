@@ -3,7 +3,7 @@
 
   .select-dropdown {
     outline-style: none;
-    font-size: 18px;
+    font-size: $font-size-main * 1.2;
     font-family: $form-font;
 
     background-color: white;
@@ -16,6 +16,10 @@
 
     width: 100px;
 
+    .dropdown-options {
+      font-size: $font-size-label;
+    }
+
     &:focus,
     &.focus {
       @include focus-outline-input;
@@ -25,7 +29,6 @@
     &.open {
       .dropdown-options {
         display: block;
-        font-size: 13px;
       }
     }
 

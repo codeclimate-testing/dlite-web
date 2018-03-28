@@ -10,15 +10,15 @@
 .expirationDay_1-input,
 .heightInches-input,
 .heightFeet-input,
-.part2-input,
-.phoneNumber2-input,
-.phoneNumber1-input {
+.part2-input {
   width: $em * 4;
 }
 
 .part1-input,
 .part3-input,
-.weight-input {
+.weight-input,
+.phoneNumber2-input,
+.phoneNumber1-input {
   width: $em * 5;
 }
 
@@ -31,22 +31,18 @@
   width: $em * 6;
 }
 
-.social-security-dash {
-  padding: $spacing / 1.5;
-  min-height: 66px;
-}
-
 .text-input-block.homeZip,
 .text-input-block.mailingZip {
   max-width: 200px;
 }
 
-a.sections {
-  //color: transparent;
+.social-security-dash {
+  min-height: $spacing * 2;
+  padding: $spacing / 1.5;
 }
 
 a.button.arrow-button.forward.get-started {
-  padding-left: 12px;
+  padding-left: $spacing * 0.75;
 }
 
 .summary-section {
@@ -69,12 +65,9 @@ a.button.arrow-button.forward.get-started {
 }
 
 .loading{
-  position: absolute;
-  top: calc(30% - 4em);
-  left: calc(50% - 4em);
-  width: 7em;
-  height: 7em;
-  border-radius: 50%;
+  margin: $spacing * 4 auto;
+  width: 7 * $em;
+  height: 7 * $em;
   background-image: url("/images/icons/misc/loadingIcon.gif");
   background-position: center;
   background-repeat: no-repeat;
@@ -102,11 +95,6 @@ hr.mid-line {
 }
 
 
-.flexPhone {
-  display: flex;
-  height: 48px;
-}
-
 .id-me-buttons {
   margin: 0 auto $spacing * 1.5;
   max-width: 300px;
@@ -123,7 +111,7 @@ hr.mid-line {
     padding: 12px 18px;
     margin: 0 auto;
     font-weight: normal;
-    font-size: 15px;
+    font-size: $font-size-main;
 
     div {
       margin-top: 1px;
@@ -176,6 +164,6 @@ hr.mid-line {
 }
 
 .locale-language-version {
-  font-size: 0.8rem;
+  font-size: 0.8 * $em;
   margin-top: 8px;
 }

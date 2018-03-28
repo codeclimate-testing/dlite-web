@@ -145,60 +145,9 @@
   white-space: nowrap;
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.small-text {
-  font-size: 0.9*$em;
-}
-
-.text-shadow {
-  @include text-shadowed;
-}
-
-.text-shadow-light {
-  @include text-shadowed-light;
-}
-
-// colored text
-
 .light-text {
   color: $neutral-20;
 }
-
-.primary-text {
-  color: $primary;
-}
-
-.accent-text {
-  color: $accent;
-}
-
-.accent-2-text {
-  color: $accent-2;
-}
-
-.info-text {
-  color: $info;
-}
-
-.info-2-text {
-  color: $info-2;
-}
-
-.warn-text {
-  color: $warn;
-}
-
-.error-text {
-  color: $error-dark;
-}
-
 
 // colored backgrounds
 .background-light {
