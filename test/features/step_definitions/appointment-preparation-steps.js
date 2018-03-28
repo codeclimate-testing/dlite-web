@@ -12,13 +12,6 @@ module.exports = function (world) {
     });
   });
 
-  world.and('I click link for required documents', function(done) {
-    browser
-    .click('a.required-documents-link')
-    .then(() => { done(); })
-    .catch(done);
-  });
-
   world.when('I choose Thai as my application language', function(done) {
     browser
       .click('label[for="language-th"]')

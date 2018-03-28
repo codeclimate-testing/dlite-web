@@ -178,10 +178,7 @@ Scenario: renewing one ID and no social
     Then I will be on the page with my summary
     When I click "Next" to continue
     Then I will be on the page for appointment preparation
-    And I click link for required documents
-    Then I will be on the required documents page
-    Then I will not see a section about medical information
-    Then I will not see any information about proving veterans status
+    And I will see my appointment preparation information
 
 
   Scenario: Replacing a DL

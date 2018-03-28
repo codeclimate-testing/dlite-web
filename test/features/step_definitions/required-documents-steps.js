@@ -43,11 +43,12 @@ module.exports = function (world) {
       });
   });
 
-  world.then('I will not see any information about proving veterans status', function(done){
+  world.then('I will see my appointment preparation information', function(done){
     browser
       .text()
       .then((text) => {
-        assert(!text.includes('Proof of veterans service'), 'veterans service section is present');
+        assert(text.includes('Bring your required documents'), 'Bring your required documents is not present');
+        assert(text.includes('Make an appointment'), 'Make an appointment is not present');
       })
       .then(() => { done(); })
       .catch(done);
@@ -70,16 +71,6 @@ module.exports = function (world) {
       .catch((err) => {
         throw err;
       });
-  });
-
-  world.then('I will not see a section about medical information', function(done){
-    browser
-      .text('.required-documents')
-      .then((text) => {
-        assert(!text.includes('Medical Information'), 'medical information section is present');
-      })
-      .then(() => { done(); })
-      .catch(done);
   });
 
   world.then('I will see an additional bullet for RealID information', function(done){

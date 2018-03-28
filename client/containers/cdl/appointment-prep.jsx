@@ -1,20 +1,25 @@
 'use strict';
 
-import React                        from 'react';
-import connectForm                  from '../../helpers/connect-form';
+import React            from 'react';
+import Presentation     from '../../presentations/conclusion/appointment-prep-page.jsx';
+import { connect }      from 'react-redux';
+
 
 
 const Page = (props) => {
   return (
-    <div>
-
-    </div>
-  );
+    <Presentation
+      {...props}
+    />
+  )
 };
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
-  };
+    id          : state.application.id
+  }
 };
 
-export default connectForm(mapStateToProps, null, Page);
+export default connect(mapStateToProps)(Page);
+
+

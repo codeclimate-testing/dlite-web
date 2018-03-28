@@ -1,12 +1,14 @@
 'use strict';
-import React              from 'react';
-import { Link }           from 'react-router-dom';
-import Page               from '../../containers/page.jsx';
-import { iddlPath }       from '../../helpers/alice-path';
-import { buildConfCode }  from '../../helpers/data/application';
+import React                from 'react';
+import { Link }             from 'react-router-dom';
+import Page                 from '../../containers/page.jsx';
+import AppointmentAccordion from './appointment-accordion.jsx';
+import { buildConfCode }    from '../../helpers/data/application';
+import Translator           from '../../i18n/translator-tag.jsx';
+
 
 const AppointmentPreparation = (props) => {
-  const documentsLink = '/appointment-preparation/documents';
+  const documentsLink = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info';
   const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
   const confCode = buildConfCode(props);
   return (
@@ -14,45 +16,51 @@ const AppointmentPreparation = (props) => {
       {...props}
     >
       <div className='appointment-preparation'>
-        <h2 className='question'>Your form has been submitted!</h2>
-        <p>You will need to go to your local DMV office to complete your application.</p>
-        <h4>Here's your confirmation code:</h4>
-        <h4>{confCode}</h4>
-        <p>Your application will expire in <b>1 year</b>.</p>
-        <hr/>
+        <Translator
+          tag='p'
+          translationPath='confirmationPage.subHeader'
+        />
+        <Translator
+          tag='h2'
+          className='translation-missing'
+          translationPath='You now need to go to the DMV!'
+        />
+        <div className='centered-content'>
+          <h2>{confCode}</h2>
 
-        <h4>Next:</h4>
-        <ul className='bullet-list'>
-            <li>Make <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment">an appointment</a> to visit your local DMV office.
-            Most offices require appointments for new driver licenses.</li>
-            <li>Prepare for your visit by collecting the <Link className="required-documents-link" to={iddlPath(documentsLink)}>required documents.</Link>
-            We’ve created a custom list for you, based on the information you provided in your application.
-            You will also receive a link to that page in your electronice receipt.</li>
-            <li>Should you require one, make <a target="_blank" href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment">an appointment</a> to take your driving skills test.
-            These are administered by appointment, only.</li>
-            <li>Study for your written exam, using <a target="_blank" href="https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf">California’s Driver Handbook.</a></li>
-        </ul>
+          <Translator
+            tag='h4'
+            className='translation-missing'
+            translationPath='This is your your confirmation code:'
+          />
 
-        <br></br>
+          <Translator
+            tag='p'
+            className='translation-missing'
+            translationPath='Show it to a DMV employee. We will also email this code to you.'
+          />
 
-        <h4>At your DMV office visit you will be asked to:</h4>
-        <ul className='bullet-list'>
-          <li>Provide fingerprints</li>
-          <li>Have your picture taken</li>
-          <li>Take vision test</li>
-          <li>Present <b>original</b> required documents for verification</li>
-          <li>Sign your application</li>
-        </ul>
+          <img src='/images/icons/documents/documents.svg' alt='documents' />
 
-        <hr></hr>
+          <h4 className='translation-missing'><a target="_blank" href={documentsLink}>Bring your required documents.</a></h4>
 
-        <p>To avoid long waits and lines, make an appointment at your local DMV now.</p>
+          <Translator
+            tag='p'
+            className='translation-missing'
+            translationPath='We’ve created a custom preparation list for you. We will also email you this list.'
+          />
 
-        <div className='unit'>
-          <div className='shadow-container'>
-            <a href="https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment" className='button'>Make Appointment</a>
-          </div>
+          <Translator
+            tag='p'
+            className='translation-missing'
+            translationPath='For details about what you need to do to complete your application, visit the DMV website.'
+          />
+
+          <img src='/images/icons/appointments/appointments.svg' alt='appointments' />
+          <h4 className='translation-missing'><a target="_blank" href={appointmentLink}>Make an appointment to save time</a></h4>
         </div>
+
+        <AppointmentAccordion />
 
       </div>
     </Page>
