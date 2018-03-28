@@ -37,7 +37,7 @@ const ApplicationHeader = (props) => {
 
 const Logout = (props) => {
   if (!isLoggedIn(props)) { return null;}
-  let url = `/apply/${props.appName}/log-out`;
+  let url = `/apply/${props.appName}/sign-in`;
   return ReactDOM.createPortal(
     <a href={url}>Log out</a>, document.getElementById('log-out')
   );

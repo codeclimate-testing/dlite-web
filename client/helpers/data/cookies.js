@@ -1,5 +1,7 @@
 'use strict';
 import { pathForPage }          from '../navigation/page';
+import fetch from 'isomorphic-fetch';
+require('es6-promise').polyfill();
 
 export const buildAppName = (appName) => {
   return document.cookie = `appName=${appName};path=/`;
@@ -14,7 +16,7 @@ export const buildLoggedIn = () => {
 };
 
 export const buildLoggedOut = () => {
-  return document.cookie = 'isLoggedOut=false;path=/';
+  return fetch('/apply/log-out');
 };
 
 export const getLoggedIn = () => {

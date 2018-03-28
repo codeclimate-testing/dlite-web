@@ -3,7 +3,10 @@
 import React              from 'react';
 import { connect }        from 'react-redux';
 import handlers           from '../helpers/handlers';
-import { buildAppName }   from '../helpers/data/cookies';
+import {
+  buildAppName,
+  buildLoggedOut
+} from '../helpers/data/cookies';
 import { getAppType }     from '../helpers/data/pathnames';
 import Presentation       from '../presentations/get-started/id-me-page.jsx';
 
@@ -12,6 +15,8 @@ const Page = (props) => {
 
   let appName = getAppType(props);
   buildAppName(appName);
+
+  buildLoggedOut();
 
   return (
     <Presentation
