@@ -24,6 +24,7 @@ import onInputChange        from './on-input-change';
 import onSelectChange       from './on-select-change';
 import onPageLoad           from './on-page-load';
 import onFlowChange         from './on-flow-change';
+import onIntervalSave       from './on-interval-save';
 
 export default {
   navigateOnBack,
@@ -38,5 +39,6 @@ export default {
   onFocusClearValidation,
   onSubmitShowErrors,
   onFlowChange,
+  onIntervalSave,
   navigateOrShowErrors
 };
