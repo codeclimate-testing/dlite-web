@@ -7,11 +7,14 @@ import handlers               from '../../../helpers/handlers';
 import { NamePageValidator }  from '../../../helpers/validations';
 import { updateLegalName }    from '../../../actions/index';
 import Presentation           from '../../../presentations/get-started/name-page.jsx';
+import { loadTranslationFromCookie }  from '../../../helpers/data/translator';
 
 const Page = (props) => {
   let validations   = new NamePageValidator(props.legalName, props.validations);
   let onBack        = handlers.navigateOnBack(props, validations);
   let onSubmit      = handlers.navigateOrShowErrors('legalName', props, validations);
+  loadTranslationFromCookie(props);
+
   return (
     <Presentation
       {...props}
@@ -29,8 +32,8 @@ const mapStateToProps = (state) => {
     focused:      state.ui.focus,
     validations:  state.ui.validations,
     hover:        state.ui.hover,
-    flow:         state.ui.flow
-
+    flow:         state.ui.flow,
+    language:     state.ui.language
   };
 };
 
@@ -48,7 +51,8 @@ const mapDispatchToProps = (dispatch) => {
     onBlurValidate,
     onFocusClearValidation,
     onSubmitShowErrors,
-    onSelectChange
+    onSelectChange,
+    dispatch
   };
 };
 

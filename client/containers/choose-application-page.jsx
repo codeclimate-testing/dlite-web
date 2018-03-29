@@ -1,12 +1,12 @@
 'use strict';
 
-import React                  from 'react';
-import connectForm            from '../helpers/connect-form';
+import React                          from 'react';
+import connectForm                    from '../helpers/connect-form';
 
-import handlers               from '../helpers/handlers';
-import { ChooseAppValidator } from '../helpers/validations';
-import { chooseApp }          from '../actions/index';
-import Presentation           from '../presentations/get-started/choose-application-page.jsx';
+import handlers                       from '../helpers/handlers';
+import { ChooseAppValidator }         from '../helpers/validations';
+import { chooseApp }                  from '../actions/index';
+import Presentation                   from '../presentations/get-started/choose-application-page.jsx';
 
 const Page = (props) => {
 
@@ -29,6 +29,8 @@ function mapStateToProps(state) {
     chooseApp:    state.ui.chooseApp,
     focused:      state.ui.focus,
     validations:  state.ui.validations,
+    language:     state.ui.language,
+    translations: state.server.translations,
     server:       {
       apiStatus: state.server.apiStatus
     }

@@ -1,13 +1,16 @@
 'use strict';
-import { nextPath }             from '../helpers/navigation/page';
-import { getAppKey }            from '../helpers/data/pathnames';
+import { nextPath }               from '../helpers/navigation/page';
+import { getAppKey }              from '../helpers/data/pathnames';
+import connectForm                from '../helpers/connect-form';
+import { chooseApp }              from '../actions/index';
+
+import AutoLogout                 from '../helpers/handlers/auto-logout';
 import {
   buildLoggedIn,
   getAppNameCookie
 } from '../helpers/data/cookies';
-import AutoLogout               from '../helpers/handlers/auto-logout';
 
-const loggedIn = (props) => {
+const LoggedIn = (props) => {
   let appName = getAppNameCookie();
   let pageKey = getAppKey(appName);
 
@@ -26,8 +29,13 @@ const loggedIn = (props) => {
   // begin timer to log out after inactivity
   new AutoLogout(props.history, appName);
   return null;
-
 };
 
+function mapStateToProps(state) {
+  return {
+    chooseApp         : state.ui.chooseApp,
+    language          : state.ui.language
+  }
+};
 
-export default loggedIn;
+export default connectForm(mapStateToProps, chooseApp, LoggedIn);

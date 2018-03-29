@@ -24,9 +24,6 @@ describe('application language reducer', function() {
     it('updates app language', function() {
       assert.equal(firstState, 'zh');
     });
-    it('updates the language cookie', function() {
-      assert.equal(getLanguageFromCookie(), action.payload.value);
-    });
   });
 
 });

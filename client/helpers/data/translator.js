@@ -1,4 +1,9 @@
 'use strict';
+import { hasValue }               from './validations';
+import { languageIsSelected }     from './application';
+import { updateLanguage }         from '../../actions/index';
+import getTranslation             from '../../actions/get-translation';
+import { getLanguageFromCookie }  from './cookies';
 
 export const keyLookup = (translationPath, translation) => {
   try {
@@ -22,7 +27,7 @@ export const translateThis = (translationPath, props) => {
 
   let value = '';
 
-  if(appLanguage !== 'en') {
+  if(hasNonEnglishLanguage(appLanguage)) {
     value = keyLookup(translationPath, selectedTranslation);
   }
 
@@ -56,9 +61,22 @@ export const translateArray = (translationPath, props) => {
   return values && Array.isArray(values) ? values : [];
 }
 
+const hasNonEnglishLanguage = (language) => {
+  return hasValue(language) && language !== 'en';
+}
+
 export const needToLoadTranslation = (props) => {
-  return (  props.language !== 'en' &&
+  return (  hasNonEnglishLanguage(props.language) &&
             !props.translations.selected.hasOwnProperty('shared') &&
             props.apiStatus !== 'loading'
   );
 };
+
+
+export const loadTranslationFromCookie = (props) => {
+  let cookieLanguage = getLanguageFromCookie();
+  if (!languageIsSelected(props.language)) {
+    props.dispatch(updateLanguage('language', cookieLanguage));
+    return getTranslation(cookieLanguage)(props.dispatch);
+  }
+}

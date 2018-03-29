@@ -5,6 +5,7 @@ import { nextPath }               from './navigation/page';
 import { postData }               from '../actions/api-actions';
 import getTranslation             from '../actions/get-translation';
 import { updateLanguage }         from '../actions/index';
+import { saveLanguageCookie }     from './data/cookies';
 import {
   updateCitizenStatus,
   updateEligibilityRequirements
@@ -63,7 +64,9 @@ export const applicationLanguageSubmit = (stateProps, dispatch, ownProps) => {
       dispatch(updateLanguage('language', 'en'));
     }
 
-    if (choiceMade && nonEnglishChoice) {
+    saveLanguageCookie(stateProps.language);
+
+    if (nonEnglishChoice) {
       getTranslation(stateProps.language)(dispatch);
     }
 

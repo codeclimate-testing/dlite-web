@@ -7,7 +7,7 @@ Scenario: Choosing a non-English language
   Given I go to the new online DL application page
   When I visit the page to choose application language
   When I choose Thai as my application language
-  When I click to continue
+  And I click to continue
   When I visit ballot language page
   Then I will see the text is in Thai
   And I will see the language I chose is selected
