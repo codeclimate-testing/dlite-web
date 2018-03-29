@@ -3,84 +3,6 @@
 import React        from 'react';
 import Translator   from '../../i18n/translator-tag.jsx';
 
-const AnchorLinks = (props) => {
-  return (
-    <div>
-      <p>
-        <Translator
-          tag='a'
-          href='#medical'
-          translationPath='disclaimers.medical.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#veteran'
-          translationPath='disclaimers.veteran.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#organdonation'
-          translationPath='disclaimers.organDonation.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#voter'
-          translationPath='disclaimers.voterRegistration.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#criminalprosecution'
-          translationPath='disclaimers.criminalProsecution.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#financial'
-          translationPath='disclaimers.financialResponsibility.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#paymentrefunds'
-          translationPath='disclaimers.paymentRefunds.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#privacy'
-          translationPath='disclaimers.privacy.title'
-        />
-      </p>
-
-      <p>
-        <Translator
-          tag='a'
-          href='#certifications'
-          translationPath='disclaimers.certifications.title'
-        />
-      </p>
-    </div>
-  )
-};
-
 const VoterRegistrationItems = (props) => {
   return (
     <ul className='bullet-list'>
@@ -253,11 +175,8 @@ const DisclaimersInfo = (props) => {
 
       <div className='scroll-content'>
 
-        <AnchorLinks {...props} />
-
         <Translator
           tag='h3'
-          id='medical'
           translationPath='disclaimers.medical.title'
         />
 
@@ -268,7 +187,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='veteran'
           translationPath='disclaimers.veteran.title'
         />
 
@@ -279,7 +197,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='organdonation'
           translationPath='disclaimers.organDonation.title'
         />
 
@@ -290,7 +207,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='voter'
           translationPath='disclaimers.voterRegistration.title'
         />
 
@@ -298,7 +214,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='criminalprosecution'
           translationPath='disclaimers.criminalProsecution.title'
         />
 
@@ -306,7 +221,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='financial'
           translationPath='disclaimers.financialResponsibility.title'
         />
 
@@ -314,7 +228,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='paymentrefunds'
           translationPath='disclaimers.paymentRefunds.title'
         />
 
@@ -322,7 +235,7 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h4'
-          id='privacy'
+
           translationPath='disclaimers.privacy.title'
         />
 
@@ -330,7 +243,6 @@ const DisclaimersInfo = (props) => {
 
         <Translator
           tag='h3'
-          id='certifications'
           translationPath='disclaimers.certifications.title'
         />
 
