@@ -4,7 +4,10 @@ import assert from 'assert';
 
 import {
   languageIsSelected,
-  buildConfCode
+  buildConfCode,
+  isLocal,
+  afterIntro,
+  requireLogIn
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -24,6 +27,49 @@ describe('Data helpers for application', function() {
         id: '2b417380-20d6-11e8-9fbd-ef21805fde52'
       };
       assert.equal(buildConfCode(props), '2B41-7380');
+    });
+  });
+
+  describe('#afterIntro', function() {
+    it('returns false if pathname is in the introPages array', function() {
+      let pathname = '/apply/choose-language';
+      assert.equal(afterIntro(pathname), false);
+    });
+    it('returns true if pathname is not in the introPages array', function() {
+      let pathname = '/apply/summary';
+      assert.equal(afterIntro(pathname), true);
+    });
+  });
+
+  describe('#isLocal', function() {
+    it('returns false if env is production', function() {
+      assert.equal(isLocal('production'), false);
+    });
+    it('returns true if env is development', function() {
+      assert.equal(isLocal('development'), true);
+    });
+  });
+
+  describe('#requireLogIn', function() {
+    let url;
+    beforeEach(function() {
+      url = '';
+      document.cookie = '';
+    });
+
+    it('returns false if pathname is an intro page', function() {
+      url = '/apply/choose-application';
+      assert.equal(requireLogIn(url), false);
+    });
+    it('returns false if user is logged in', function() {
+      document.cookie = 'isLoggedIn=true;path=/';
+      assert.equal(requireLogIn(url), false);
+    });
+    it('returns true if user is not logged in and the pathname is not an intro page', function() {
+      document.cookie = 'isLoggedIn=false;path=/';
+      url = '/apply/summary';
+      process.env.APP_ENV = 'production';
+      assert.equal(requireLogIn(url, process.env.APP_ENV), true);
     });
   });
 });

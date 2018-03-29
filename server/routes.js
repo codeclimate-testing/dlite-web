@@ -14,10 +14,9 @@ const routes = (passport) => {
                                           controllers.authSuccess);
   router.get( '/auth/error',              controllers.authError);
 
-  router.get( '/apply/log-out',            controllers.logout);
+  router.get( '/apply/log-out',           controllers.logout);
 
-  router.get( '/apply*',                controllers.requireLogIn,
-                                        controllers.renderClient);
+  router.get( '/apply*',                controllers.renderClient);
   router.get( '*.js',                   controllers.sendZip);
 
   return router;

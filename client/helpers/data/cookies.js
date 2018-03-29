@@ -1,6 +1,5 @@
 'use strict';
-import { pathForPage }          from '../navigation/page';
-import fetch from 'isomorphic-fetch';
+import fetch                  from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
 export const buildAppName = (appName) => {
@@ -26,26 +25,6 @@ export const getLoggedIn = () => {
 export const isLoggedIn = () => {
   let cookieValue = getLoggedIn();
   return cookieValue.toString() === 'true';
-};
-
-export const afterIntro = (pathname) => {
-  let introPages = ['chooseLanguage', 'chooseApplication', 'IDme', 'cdlIDme'];
-  for(var i = 0; i < introPages.length; i++) {
-    if(pathForPage(introPages[i]) === pathname) {
-      return false;
-    }
-  }
-  return true;
-};
-
-export const isProduction = (env) => {
-  return  env !== 'development' &&
-          env !== 'test' &&
-          env !== 'acceptance';
-};
-
-export function requireLogIn(props, env = APP_ENV){
-  return (isProduction(env) && afterIntro(props.location.pathname) && !isLoggedIn());
 };
 
 export function getLanguageFromCookie() {

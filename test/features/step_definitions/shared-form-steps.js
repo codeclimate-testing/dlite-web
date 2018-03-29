@@ -69,7 +69,7 @@ module.exports = function (world) {
       .then(text => {
         assert.equal(text.includes('Log out'), false);
       })
-      .then(done)
+      .then(() => { done(); })
       .catch(done);
   });
 };

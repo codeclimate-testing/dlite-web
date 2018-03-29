@@ -8,6 +8,7 @@ import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
 import { isLoggedIn }     from '../helpers/data/cookies';
+import { signInURL }      from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {
   if (!title) { return; }
@@ -38,7 +39,7 @@ const ApplicationHeader = (props) => {
 
 const Logout = (props) => {
   if (!isLoggedIn(props)) { return null;}
-  let url = `/apply/${props.appName}/sign-in`;
+  let url = signInURL(props.appName);
   return ReactDOM.createPortal(
     <a href={url}>Log out</a>, document.getElementById('log-out')
   );

@@ -2,8 +2,8 @@
 import React                          from 'react';
 import { Route, Redirect }            from 'react-router-dom';
 import { signInURL }                  from '../helpers/data/pathnames';
+import { requireLogIn }               from '../helpers/data/application';
 import {
-  requireLogIn,
   getAppNameCookie
 } from '../helpers/data/cookies';
 
@@ -14,7 +14,7 @@ export function PrivateRoute ({component: Component, pathURL }){
   return (
     <Route
       path={pathURL}
-      render={(props) => requireLogIn(props)
+      render={(props) => requireLogIn(props.location.pathname)
         ? <Redirect to={{pathname: `${pathNameURL}`}} />
         : <Component {...props} />
       }

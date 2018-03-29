@@ -8,8 +8,6 @@ import {
   buildLoggedIn,
   getLoggedIn,
   isLoggedIn,
-  afterIntro,
-  requireLogIn,
   saveLanguageCookie,
   getLanguageFromCookie
 } from '../../../../client/helpers/data/cookies';
@@ -52,44 +50,6 @@ describe('Data helpers for cookies', function() {
     it('returns true if cookie isLoggedIn value is true', function() {
       document.cookie = 'isLoggedIn=true';
       assert.equal(isLoggedIn(), true);
-    });
-  });
-
-  describe('#afterIntro', function() {
-    it('returns false if pathname is in the introPages array', function() {
-      let pathname = '/apply/choose-language';
-      assert.equal(afterIntro(pathname), false);
-    });
-    it('returns true if pathname is not in the introPages array', function() {
-      let pathname = '/apply/summary';
-      assert.equal(afterIntro(pathname), true);
-    });
-  });
-
-  describe('#requireLogIn', function() {
-    let props;
-    beforeEach(function() {
-      props = {
-        location: {
-          pathname: ''
-        }
-      };
-      document.cookie = '';
-    });
-
-    it('returns false if pathname is an intro page', function() {
-      props.location.pathname = '/apply/choose-application';
-      assert.equal(requireLogIn(props), false);
-    });
-    it('returns false if user is logged in', function() {
-      document.cookie = 'isLoggedIn=true;path=/';
-      assert.equal(requireLogIn(props), false);
-    });
-    it('returns true if user is not logged in and the pathname is not an intro page', function() {
-      document.cookie = 'isLoggedIn=false;path=/';
-      props.location.pathname = '/apply/summary';
-      process.env.APP_ENV = 'production';
-      assert.equal(requireLogIn(props, process.env.APP_ENV), true);
     });
   });
 
