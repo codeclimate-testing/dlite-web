@@ -44,11 +44,7 @@ const AppointmentPreparation = (props) => {
 
           <h4 className='translation-missing'><a target="_blank" href={documentsLink}>Bring your required documents.</a></h4>
 
-          <Translator
-            tag='p'
-            className='translation-missing'
-            translationPath='We’ve created a custom preparation list for you. We will also email you this list.'
-          />
+       
 
           <Translator
             tag='p'
