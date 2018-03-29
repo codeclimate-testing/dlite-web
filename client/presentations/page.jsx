@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import HomeLink           from './home-link.jsx';
+import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
 import { isLoggedIn }     from '../helpers/data/cookies';
@@ -63,6 +64,11 @@ const Page = (props) => {
       {props.children}
 
       <HomeLink />
+
+      <EmojiDebugLink
+        language         =  { props.language }
+        onEmojiDebug     = { props.onEmojiDebug }
+      />
 
     </div>
   );

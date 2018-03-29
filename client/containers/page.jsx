@@ -6,7 +6,8 @@ import Presentation             from '../presentations/page.jsx';
 import handlers                 from '../helpers/handlers';
 import {
   getTextFromState,
-  getAppType
+  getAppType,
+  onEmojiDebug
 } from '../helpers/data/pathnames';
 
 const Page = (props) => {
@@ -28,15 +29,17 @@ const mapStateToProps = (state) => {
   return {
     cardType:       state.application.cardType,
     chooseApp:      state.ui.chooseApp,
-    section:        state.ui.section
+    section:        state.ui.section,
+    language:       state.ui.language
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   const onPageLoad            = handlers.onPageLoad(dispatch);
-
+  const onEmojiDebug          = handlers.onEmojiDebug(dispatch);
   return {
-    onPageLoad
+    onPageLoad,
+    onEmojiDebug
   };
 };
 

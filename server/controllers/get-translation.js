@@ -12,6 +12,8 @@ const tl = require(translationDir + 'tl.json');
 const vi = require(translationDir + 'vi.json');
 const zh = require(translationDir + 'zh.json');
 
+const emoji = require(translationDir + 'emoji.json');
+
 module.exports = function getTranslation(req, res) {
   const translations = {
     es: es,
@@ -22,7 +24,9 @@ module.exports = function getTranslation(req, res) {
     th: th,
     tl: tl,
     vi: vi,
-    zh: zh
+    zh: zh,
+
+    emoji: emoji
   };
 
   const languageCode = req.params.code;
