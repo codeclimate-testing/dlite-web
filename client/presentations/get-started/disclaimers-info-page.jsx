@@ -234,7 +234,7 @@ const DisclaimersInfo = (props) => {
         <PaymentRefundsItems {...props} />
 
         <Translator
-          tag='h4'
+          tag='h3'
 
           translationPath='disclaimers.privacy.title'
         />
