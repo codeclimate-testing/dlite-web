@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "Prepararse para la cita",
+    "explanation": "A continuación está una lista de lo que necesitará llevar a la oficina del DMV para completar su solicitud.",
+    "ending": {
+      "callCenterDetails": "Llame al centro telefónico en las horas de oficina: Lunes, martes, jueves, viernes de 8 am a 5 pm, y miércoles de 9 am a 5 pm."
+    },
+    "noRealIdSection": {
+      "header": "Requisitos para una tarjeta que no cumpla con la ley federal",
+      "identity": {
+        "header": "Identidad",
+        "body": "<p>Todos los solicitantes necesitan comprobar su identidad, nombre verdadero y completo (primer nombre, segundo, apellido) y fecha de nacimiento. </p><p> Tendrá que llevar versiones originales de estos documentos, ya que <b>no se aceptan fotocopias y versiones laminadas</b>. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>Vea la lista del DMV de documentos de identidad aceptables</a>. </p><p> <b>Si el nombre en el documento de identidad es diferente al que proporcionó en su solicitud</b>, debe presentar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que establezca su nombre verdadero y completo.</p>"
+      },
+      "socialSecurity": {
+        "header": "Número de Seguro Social",
+        "body": "<p>Debe proporcionarle su Número de Seguro Social al DMV. </p><p> Si cambió su nombre, asegúrese de actualizarlo con la Administración del Seguro Social antes de ir al DMV.</p>"
+      },
+      "californiaResidency": {
+        "header": "Domicilio en California",
+        "body": "Deberá llevar <b>1</b> documento que compruebe que vive en California. Este documento debe mostrar la dirección donde quiere recibir su tarjeta. Esta dirección también aparecerá en el frente de su tarjeta. Revise nuestra <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>lista de documentos aceptables <b>para comprobar su domicilio en California</b></a>."
+      }
+    },
+    "realIdSection": {
+      "header": "Requisitos para obtener una tarjeta REAL ID",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Consulte el documento en formato PDF para ver la lista de documentos aceptables para solicitar una tarjeta REAL ID para estas 3 categorías.</a>"
+    },
+    "veteransSection": {
+      "header": "Documentación de veterano",
+      "body": "Para obtener la designación de veterano en su tarjeta, necesita entregar <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>un formulario </a> (VSD- 001)para verificar el estatus de veterano. Puede obtener un formulario VSD-001 en una Oficina de Servicios para Veteranos de Condado. ¡Gracias por su servicio!"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "Nuevos requisitos para el conductor",
+        "needListHeader": "Para poder obtener un permiso provisional de manejo, tendremos que ver 1 de los siguientes:",
+        "needListItems": [
+          "Certificado de cumplimiento de Educación Vial (salón) de California o",
+          "Certificado de cumplimiento de Educación Vial de California y Entrenamiento de Manejo o",
+          "Certificado de Inscripción en un Programa Integrado de Educación Vial de California y Entrenamiento de Manejo."
+        ],
+        "provisionalExplanation": "Tendrá que solicitar un permiso provisional de manejo.",
+        "knowledgeTest": "Tendrá que tomar un examen de conocimientos.",
+        "testAdvice": "Le recomendamos que estudie el <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California </a> y <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>que tome los exámenes de práctica</a> antes de su cita.",
+        "FAQHaveAnotherState": {
+          "title": "¿Ya tiene un permiso o certificado de entrenamiento de otro estado?",
+          "body": {
+            "proofListHeader": "Necesitará llevar <b>1</b> de los siguientes:",
+            "proofListItems": [
+              "Comprobante de que ha completado un curso de educación vial/entrenamiento que sea equivalente al curso de educación secundaria de California.",
+              "Un formulario DL 33 completado. Obtenga este formulario en una oficina del DMV o llame al DMV al 1-800-777-0133. Envíe el formulario DL 33 a la escuela de educación secundaria para que lo complete."
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Para obtener más información, revise los requisitos de los formularios de educación vial y entrenamiento de manejo.</a>",
+            "juniorPermitNote": "Tenga en cuenta que debido a que es menor, no podemos transferir licencias de manejar que digan \"probationary\", \"provisional\", o \"junior\", permisos de manejo, o aceptar certificados de entrenamiento de fuera del estado."
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "Nuevos requisitos para los conductores de California",
+      "body": {
+        "openingExplanation": "Podemos ver que usted quizá tuvo una licencia de manejar de otro estado. Las leyes de California <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>para adolescentes entre 16 y 18 años de edad</a> quizá sean diferentes a las de otros estados.",
+        "knowledgeTest": "Como nuevo conductor en California, tendrá que pasar un examen de conocimientos.",
+        "juniorPermitNote": "Debido a que es menor, no podemos transferir licencias de manejar que digan \"probationary\", \"provisional\", o \"junior\".",
+        "provisionalProcess": "<b>Los conductores menores de 18 años en California primero deben solicitar un permiso provisional.</b> Después de seis meses calificará para obtener una licencia de manejar provisional.",
+        "FAQWillIneedToTakeTest": {
+          "title": "¿Tengo que tomar el examen de manejo?",
+          "listHeader": "Solo puede quedar exento de tomar el examen de manejo si:",
+          "listItems": [
+            "Actualmente tiene una licencia de manejar de otro estado que no sea California <b><em>y</em></b>",
+            "Ha completado satisfactoriamente un curso de técnicas de manejo en una escuela secundaria <b><em>y</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Puede verificar que completó satisfactoriamente un curso.</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "Como nuevo conductor de California, tendrá que pasar un examen de conocimientos.",
+        "permitProcess": "Una vez que pase el examen de conocimientos, recibirá un permiso. Luego tendrá que tomar el examen de manejo.",
+        "waiverCanProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> ha tenido una licencia de manejar anteriormente.",
+        "waiverMayProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene una licencia de manejar válida en otro estado."
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "Requisitos para la licencia de motocicleta/motoneta",
+      "body": {
+        "explanation": "Para recibir una licencia de motocicleta/motoneta, tendrá que pasar un examen de conocimientos. Consulte el <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>Manual del motociclista de California</a>.",
+        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene el formulario <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'> Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente."
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "Debido a que es menor de 21 <b>debe</b> tener un <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente.",
+        "onCompletion": "Una vez que termine el curso, debe tener el permiso por 6 meses antes de obtener su licencia."
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene una licencia de motociclista válida en otro estado o un formulario <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP."
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "Requisitos adicionales para el examen",
+      "body": "En California, para poder recibir una licencia para manejar una motocicleta o motoneta, <b>necesita pasar el examen de conocimientos para la licencia de manejar básica</b>. Le recomendamos que estudie el <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California</a> y <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> que tome los exámenes de práctica</a> antes de ir a una oficina."
+    },
+    "nonCommercialASection": {
+      "header": "Requisitos para una licencia Clase A no-comercial",
+      "body": {
+        "healthQuestionnaire": "Para poder obtener un permiso Clase A no-comercial , tendrá que entregar un <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546).</a>",
+        "knowledgeTest": "También se require el <b>examen de conocimientos para vehículos recreacionales y camiones no-comerciales Clase A</b>. Le recomendamos que estudie el 'Manual para casas rodantes y remolques recreacionales de California' antes de su examen.",
+        "afterPassingExam": "Una vez que pase los exámenes, se le emitirá un permiso. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>El sitio de Internet del DMV</a> proporciona información sobre lo que se necesita para obtener su licencia."
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "Requisitos para el endoso de bombero",
+      "body": {
+        "healthQuestionnaire": "Para poder obtener un permiso Clase B no-comercial , tendrá que entregar <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>un Cuestionario Médico Sobre la Salud (DL 546A)</a> válido y firmado por su médico.",
+        "houseCarTest": "También se requiere el <b>examen de conocimientos para casas rodantes de 45'</b>. Le recomendamos que estudie <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>el Manual para casas rodantes y remolques recreacionales de California</a> antes de su examen."
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "Requisitos para el endoso de bombero",
+      "body": {
+        "testRequirements": "Para obtener un <b>endoso de bombero</b> tendrá que tomar y pasar el <b>examen de conocimientos</b> para el endoso de bombero.",
+        "otherRequirements": "También tendrá que entregar un <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546)</a> y una carta original de <b>Empleo de bombero y verificación de entrenamiento</b> que cumpla con los siguientes criterios:",
+        "otherRequirementsValues": [
+          "El endoso debe estar en el encabezado del departamento de bomberos",
+          "Certifica que actualmente está empleado como bombero o tiene un comprobante de estar inscrito como bombero voluntario",
+          "Certifica el cumplimiento del entrenamiento para operadores de equipo contra incendios",
+          "Firmado por el jefe de bomberos o designado"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "Cambiar sexo",
+      "body": "<p>Para poder hacer este cambio, debe llevar un formulario <a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Certificación y Autorización Médica (DL 329)</a> que haya sido completado por su medico o psicólogo. </p><p> También tendrá que llevar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) antes y después de cambiarse el nombre.</p>"
+    },
+    "nameChangeSection": {
+      "header": "Cambio de nombre",
+      "body": "<p>Para que pueda hacerse el cambio de nombre en sus tarjetas, primero debe cambiarlo en la oficina local <a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>de la Administración de Seguro Social </a>. </p><p> También tendrá que llevar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) ambos <em>antes</em> y <em>después</em> del cambio de nombre.</p>"
+    },
+    "reducedFeeSection": {
+      "header": "Elegibilidad para recibir una reducción del costo",
+      "body": "Por último, necesitaremos el formulario de verificación de elegibilidad para solicitar una tarjeta de identidad de costo reducido (DL 937). El DMV no proporciona este formulario. Si recibe ayuda del gobierno o por medio de una institución sin fines de lucro, hable con ellos para obtener un formulario."
+    },
+    "noFeeSection": {
+      "header": "No califica para recibir una tarjeta gratis",
+      "body": "Por último, necesitaremos el formulario de verificación de elegibilidad para solicitar una tarjeta de identidad gratis (DL 933). El DMV no proporciona este formulario. Si recibe ayuda del gobierno o por medio de una institución sin fines de lucro, hable con ellos para obtener un formulario."
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "¿Qué desea hacer hoy?",
+      "answerIDorDL": "Tarjeta de identidad o licencia de manejar",
+      "answerCDL": "Licencia de manejar comercial",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "No sé si necesito una licencia de manejar comercial",
+        "body": {
+          "youWillNeedIf": {
+            "header": "Necesitará una licencia CDL si planea operar un vehículo que:",
+            "values": [
+              "Tenga una clasificación de peso bruto vehicular (GVWR) 26,001 libras o más.",
+              "Esté diseñado, se use o se mantenga para transportar más de 10 personas, incluyendo al conductor.",
+              "Remolca un vehículo o remolque que tiene una clasificación GVWR de 10,001 libras o más.",
+              "Transporta materiales peligrosos que requieran letreros.",
+              "Remolca cualquier combinación de dos remolques o un vehículo y un remolque."
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "No necesita una licencia CDL si solo piensa manejar:",
+            "values": [
+              "Vehículos recreacionales (remolques recreacionales de 5ta rueda y casas rodantes).",
+              "Equipo de bombero.",
+              "Transportador de materiales peligrosos agriculturales Clase C.",
+              "Vehículos del Departamento de Defensa y lleva empleados uniformados del mismo.",
+              "Algunos vehículos agrícolas."
+            ]
+          },
+          "seeDMV": "Puede encontrar información detallada en dmv.ca.gov"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "En este sitio puede:",
+      "whatYouCanDoItems": [
+        "<b>Solicitar</b> una licencia de manejar o tarjeta de identidad.",
+        "<b>Renovar o remplazar</b> su tarjeta.",
+        "<b>Corregir o actualizar</b> su tarjeta."
+      ],
+      "requiredDocuments": "Después de entregar esta solicitud, le daremos una lista de los documentos requeridos. Debe llevar estos documentos a una oficina del DMV para completar su solicitud.",
+      "doNotUseIf": {
+        "header": "No use esta solicitud:",
+        "values": [
+          "Si no tiene correo electrónico ni número telefónico. Se requieren si la llena en casa.q`",
+          "Si está inscrito en un programa de dirección confidencial o Seguro en su casa (Safe at Home)."
+        ],
+        "instead": "Mejor, <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>haga una cita</a> para ir a una oficina del DMV."
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "<b>Solicitar</b> una licencia de manejar comercial (CDL).",
+        "<b>Renovar o remplazar</b> su licencia CDL.",
+        "<b>Corregir o actualizar</b> su licencia CDL."
+      ],
+      "doNotUseIf": {
+        "values": [
+          "No tiene correo electrónico ni número telefónico. Se requieren si la llena en casa.",
+          "Solo desea un certificado de ambulancia, VTT o HAM para su licencia CDL.",
+          "Si está inscrito en un programa de dirección confidencial o Seguro en su casa (Safe at Home)."
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "Necesito hacer otra cosa",
+        "body": {
+          "header": "Usted <b>no puede</b> usar esta solicitud para:",
+          "listItems": [
+            "Actualizar su certificado médico",
+            "Actualizar su autocertificación",
+            "Obtener copias de su expediente de manejo",
+            "Reportar un accidente",
+            "Hacer una cita para tomar un examen de manejo"
+          ],
+          "instead": "Visite el sitio de Internet del DMV para tratar estos temas."
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "El DMV está trabajando con ID.me para proteger su identidad digital.",
+      "buttonCreateAccount": "Crear una cuenta ID.me",
+      "or": "O",
+      "buttonSignIn": "Iniciar sesión con una cuenta ID.me",
+      "emailRequired": "<b>Se necesita un correo electrónico y un número telefónico.</b> Visite una oficina del DMV si no quiere crear una cuenta ID.me.",
+      "legalIdentity": "<b>ID.me le permite comprobar su identidad legal.</b> El DMV de California se ha asociado con ID.me para asegurarse que su información personal sea correcta y esté segura.",
+      "dmvPartnering": "El DMV de California eligió asociarse con ID.me porque ha cumplido con requisitos rigurosos de comprobación de seguridad e identidad.",
+      "learnMore": "<a href='https://www.id.me'>Para obtener más información, visite ID.me.</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "Bienvenido de nuevo.",
+      "youHaveSomeUnfinishedApps": "Tiene solicitudes sin completar.",
+      "youCanStartNewApp": "Puede empezar a llenar una nueva solicitud.",
+      "applyingDL": "Solicitar una licencia de manejar",
+      "applyingID": "Solicitar una tarjeta de identidad",
+      "applyingBoth": "Solicitar una licencia de manejar y una tarjeta de identidad",
+      "applyingCDL": "Solicitar una licencia de manejar comercial",
+      "percentComplete": "% completada",
+      "newApplication": "Nueva solicitud",
+      "delete": "Borrar"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "No pudimos entrar a su cuenta.",
+      "wantToTryAgain": "¿Desea intentarlo de nuevo?",
+      "comeToDMVoffice": "Si no puede iniciar sesión o no quiere usar ID.me, necesitará completar esta solicitud en una oficina del DMV. Haga una cita para recibir un servicio más eficaz."
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "A los solicitantes menores de 21 años no se les permite desempeñarse en comercio interestatal ni transportar materiales peligrosos."
+    },
+    "wdywtdtPage": {
+      "values": [
+        "Obtener una licencia CDL de California por primera vez",
+        "Renovar mi licencia CDL",
+        "Corregir o actualizar mi licencia CDL",
+        "Remplazar mi licencia CDL"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "Si se lo sabe, <b>ingrese su número de licencia CDL de California</b>.",
+      "explanation": "Puede encontrar el número en la parte superior de su licencia de manejar comercial, empieza con una letra.",
+      "cdlNumberLabel": "Número de licencia CDL"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "No puede actualizar su certificado médico en este formulario.",
+      "values": [
+        "Corregir mi licencia CDL",
+        "Actualizar mi licencia CDL"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "¿Es residente de California?",
+      "infoMessageNo": {
+        "header": "Lo sentimos, pero no califica para solicitar una licencia CDL de California en este momento.",
+        "explanation": "Debe ser residente de California para solicitarla."
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "El DMV imprimirá su dirección postal en su licencia. La licencia CDL también se enviará a su dirección postal."
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "Lo sentimos, pero no califica para solicitar una licencia CDL de California en este momento.",
+        "explanation": "Los conductores comerciales deben tener un Número de Seguro Social y deben poveer comprobante cuando soliciten la licencia. Ambos, los ciudadanos estadounidenses y los residentes legales que no sean ciudadanos califican para obtener un Número de Seguro Social. Comuníquese con la Administración del Seguro Social para más información."
+      }
+    },
+    "caDlPage": {
+      "prompt": "¿Tiene actualmente  una licencia de manejar de California?",
+      "noMessage": "Para poder solicitar un permiso comercial de aprendiz (CLP), primero necesita pasar el examen de conocimientos y el de manejo para obtener una licencia de manejar básica (Clase C no comercial).",
+      "yesSection": {
+        "prompt": "Díganos sobre su licencia de manejar más reciente.",
+        "explanation": "Después le pediremos un historial completo de su licencia en esta solicitud.",
+        "dlNumberLabel": "Número de licencia de manejar",
+        "issuedInLabel": "Emitido en",
+        "messageBody": "Para obtener un permiso comercial de aprendiz (CLP), necesitará obtener una licencia de manejar básica Clase C no comercial y para obtenerla, debe pasar el examen de conocimiento para la licencia Clase C no comercial.",
+        "expiredMessage": {
+          "header": "Podemos ver que su licencia de manejar está vencida."
+        },
+        "nonCaliforniaMessage": {
+          "header": "Podemos ver que su licencia de manejar no es de California."
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "¿Qué clase de licencia de manejar comercial necesita?",
+      "values": [
+        "Clase A",
+        "Clase B",
+        "Clase C"
+      ],
+      "youMayDrive": "Puede manejar:",
+      "youMayTow": "Puede remolcar:",
+      "classA": {
+        "header": "Con una licencia Clase A comercial",
+        "driveItems": [
+          "Cualquier combinación <em>legal</em> de vehículos, incluyendo vehículos en la Clase B y Clase C."
+        ],
+        "towItems": [
+          "Todos los vehículos que un conductor con licencia comercial Clase B y Clase C puede remolcar.",
+          "Un solo vehículo con una clasificación GVWR de más de 10,000 libras.",
+          "Cualquier autobús remolque con endoso O más de un vehículo con endoso."
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "No estoy seguro qué clase necesito",
+        "classC": {
+          "header": "Con una licencia Clase C comercial",
+          "driveItems": [
+            "Cualquier vehículo de 2 ejes con una clasificación GVWR de 26,000 libras o menos, o cualquier vehículo de 3 ejes cuyo peso bruto sea 6,000 libras o menos, que transporte materiales peligrosos (HazMat) y requiera letreros. Esto require un endoso HazMat.",
+            "Cualquier autobus o vehículo de pasajeros con una clasificación GVWR de 26,000 libras o menos, que esté diseñado, se use o se mantenga para transportar más de 10 personas, incluyendo al conductor. Esto require un endoso de pasajero.",
+            "Cualquier vehículo permitido bajo la licencia Clase C no comercial."
+          ],
+          "explanation": "Puede remolcar todos los vehículos permitidos bajo la licencia Clase C no comercial."
+        },
+        "classB": {
+          "header": "Con una licencia Clase B comercial",
+          "driveItems": [
+            "Todos los vehículos que un conductor con licencia Clase C comercial puede manejar.",
+            "Un vehículo de 2 ejes que pese más de 26,000 libras.",
+            "Un vehículo de 3 ejes que pese más de 6,000 libras.",
+            "Un autobus (excepto un autobús remolque). Esto require un endoso de pasajeros.",
+            "Cualquier vehículo para trabajo agricultural con endoso."
+          ],
+          "towItems": [
+            "Un solo vehículo con una clasificación GVWR de 10,000 libras o menos.",
+            "Todos los vehículos que un conductor con licencia Clase C comercial puede remolcar."
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "¿Necesita algún endoso en su licencia CDL?",
+      "whichSection": {
+        "prompt": "¿Cuál?",
+        "values": {
+          "T": "Combinación dobles/triples",
+          "N": "Camiones cisterna",
+          "P": "Vehículos para el transporte de pasajeros",
+          "S": "Autobuses escolares",
+          "H": "Vehículos marcados para transportar materiales o desechos peligrosos",
+          "X": "Camiones cisterna que transporten materiales o desechos peligrosos",
+          "F": "Endoso de bombero"
+        }
+      },
+      "certificationSection": {
+        "prompt": "¿Necesita un certificado profesional de parte del DMV?",
+        "certifications": {
+          "prompt": "Puede solicitar los siguientes certificados en una oficina del DMV:",
+          "values": {
+            "transit": "Certificado de verificación del entrenamiento de tránsito (VTT)",
+            "ambulance": "Certificado de conductor de ambulancia",
+            "ham": "Certificado de materiales agriculturales peligrosos (HAM)."
+          },
+          "FAQMissingCertifications": {
+            "title": "No veo el certificado que necesito",
+            "body": {
+              "header": "La Patrulla de Caminos de California (CHP) es responsable de emitir los siguientes certificados profesionales:",
+              "listItems": [
+                "Vehículos paratránsito para el público en general (GPPV)",
+                "Certificado para conductor de autobuses escolares",
+                "Certificado para autobuses de actividades estudiantiles",
+                "Vehículos para personas con discapacidades del desarrollo",
+                "Certificado para vehículos de labores agriculturales",
+                "Certificado para conductores de grúas",
+                "Certificado de autobús para jóvenes"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "El certificado de <b>verificación de capacitación de tránsito</b> requiere <b>un endoso de </b> vehículo de pasajeros.",
+                "fullEndorsment": "Las descripciones y requisitos completos de la clase, endoso y del certificado están disponibles en el <b>‘Manual del conductor comercial de California’</b>."
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "No estoy seguro",
+        "body": {
+          "header": "Necesita un endoso si tiene pensado operar un vehículo comercial motorizado que:",
+          "listItems": [
+            "Transporte más de 10 personas, incluyendo al conductor.",
+            "Remolca materiales peligrosos que requieren letreros.",
+            "Remolca más de un vehículo o remolque.",
+            "Sea un vehículo cisterna."
+          ],
+          "explanation": "Las descripciones y requisitos completos de la clase, endoso y del certificado están disponibles en el ‘Manual del conductor comercial de California."
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "¿Necesita la licencia de motociclista (Clase M) en su licencia CDL?"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "Para repasar:",
+        "values": {
+          "applyingClassA": "Está solicitando una licencia de manejar Clase A comercial.",
+          "applyingClassB": "Está solicitando una licencia de manejar Clase B comercial.",
+          "applyingClassC": "Está solicitando una licencia de manejar Clase C comercial.",
+          "renewingClassA": "Está renovando su licencia de manejar Clase A comercial.",
+          "renewingClassB": "Está renovando su licencia de manejar Clase B comercial.",
+          "renewingClassC": "Está renovando su licencia de manejar Clase C comercial.",
+          "updatingClassA": "Está actualizando su licencia de manejar Clase A comercial.",
+          "updatingClassB": "Está actualizando su licencia de manejar Clase B comercial.",
+          "updatingClassC": "Está actualizando su licencia de manejar Clase C comercial.",
+          "correctingClassA": "Está corrigiendo su licencia de manejar Clase A comercial.",
+          "correctingClassB": "Está corrigiendo su licencia de manejar Clase B comercial.",
+          "correctingClassC": "Está corrigiendo su licencia de manejar Clase C comercial.",
+          "replacingClassA": "Está remplazando su licencia de manejar Clase A comercial.",
+          "replacingClassB": "Está remplazando su licencia de manejar Clase B comercial.",
+          "replacingClassC": "Está remplazando su licencia de manejar Clase C comercial."
+        }
+      },
+      "motorcycleSentence": "También quiere manejar una motocicleta/motoneta",
+      "endorsements": {
+        "header": "Necesita los siguientes endosos:",
+        "values": {
+          "T": "Dobles/Triples",
+          "N": "Camión cisterna",
+          "P": "Vehículos de pasajeros",
+          "S": "Autobús escolar",
+          "H": "HazMat (materiales peligrosos)",
+          "X": "Cisterna/HazMat",
+          "F": "Bombero"
+        }
+      },
+      "certificates": {
+        "header": "Desea obtener los siguientes certificados:",
+        "values": {
+          "ambulance": "Conductor de ambulancia",
+          "ham": "HAM",
+          "transit": "Certificado de verificación del entrenamiento de tránsito (VTT)"
+        }
+      },
+      "realID": "Su licencia de CDL estará en cumplimiento con la Ley REAL ID.",
+      "fillOutNewApplication": {
+        "update": "Para poder actualizar su licencia de manejar comercial, necesita llenar una nueva solicitud.",
+        "correct": "Para poder corregir su licencia de manejar comercial, necesita llenar una nueva solicitud.",
+        "replace": "Para poder remplazar su licencia de manejar comercial, necesita llenar una nueva solicitud."
+      },
+      "sections": {
+        "header": "Esta solicitud consta de seis secciones:"
+      },
+      "timeStatement": "<p>Toma alrededor de <b>10 minutos</b> para completerla. </p><p> Una vez que la termine, tendrá que ir a una oficina del DMV.</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "Mi licencia CDL",
+    "CdlNumberLabel": "Número de licencia CDL",
+    "typeOfDriving": "Tipo de manejo",
+    "currentDlNumberLabel": "Número actual de licencia",
+    "licenseOutsideCAlabel": "Licencia de fuera de California"
+  },
   "confirmationPage": {
     "header": "Confirmación",
     "subHeader": "Hemos recibido su información.",
@@ -152,6 +631,44 @@
     "endorsement": "Seleccione un endoso",
     "cardTypeMissing": "Seleccione la tarjeta que desea.",
     "choosePoliticalPartyNowSelectionMissing": "Díganos si desea elegir una preferencia de partido político."
+  },
+  "footer": {
+    "accessibility": "Accesibilidad",
+    "conditionsOfUser": "Condiciones de uso",
+    "disabilityServices": "Servicios para personas con discapacidades",
+    "help": "Ayuda",
+    "home": "Página de inicio",
+    "privacy": "Política de privacidad",
+    "siteMap": "Mapa del sitio",
+    "support": "Apoyo técnico",
+    "copyright": "Derechos de autor & copia; 2018 Estado de California"
+  },
+  "header": {
+    "dlApplication": "Solicitud de la licencia de manejar",
+    "idApplication": "Solicitud de la tarjeta de identidad",
+    "bothApplications": "Solicitud de la licencia de manejar y tarjeta de identidad",
+    "cdlApplication": "Solicitud de la licencia de manejar comercial",
+    "Logout": "Cerrar sesión"
+  },
+  "sections": {
+    "getStarted": "Empezar",
+    "selfCertification": "Autocertificación",
+    "myHistory": "Mi historial",
+    "tenYearHistory": "Historial de 10 años",
+    "summary": "Resumen",
+    "welcomeBack": "Bienvenido de nuevo"
+  },
+  "ageMessages": {
+    "notASenior": "No califica para obtener una tarjeta de identificación gratis para personas de la tercera edad.",
+    "preregistration": "Se le pre-inscribirá para votar.",
+    "cdlAgeRestriction": "Debe tener 18 años o más para solicitar una licencia de manejar comercial en California."
+  },
+  "extras": {
+    "enterTextHere": "Ingrese texto aquí",
+    "notRegisteredToVoteMessage": "Si selecciona <em>No</em> o <em>No deseo contestar</em>, no se le inscribirá para votar.",
+    "vetranRemoveMessage": "OK, lo removeremos",
+    "yourConfirmationCode": "Su código de confirmación es:",
+    "confirmationAlsoEmailed": "También se le enviará esto por correo electrónico."
   },
   "intro": {
     "switchLanguagePage": {
@@ -395,20 +912,20 @@
   },
   "myBasics": {
     "addressesPage": {
-      "prompt": "?D?nde vive?",
+      "prompt": "¿Dónde vives?",
       "explanation": "Ejemplo: 1234 Main St., Los Angeles, CA 90017",
-      "streetAddressLabel": "Direcci?n",
-      "apartmentLabel": "Apartamento o n?mero de unidad",
+      "streetAddressLabel": "Dirección",
+      "apartmentLabel": "Apartamento o número de unidad",
       "cityLabel": "Ciudad",
       "stateLabel": "Estado",
-      "zipLabel": "C?digo postal",
-      "mailingAddressSamePrompt": "?Recibe correo en esta direcci?n?",
+      "zipLabel": "Código postal",
+      "mailingAddressSamePrompt": "¿Recibe correo en esta dirección?",
       "mailingAddressSameExplanation": {
-        "license": "El DMV imprimir? la direcci?n postal en su licencia de manejar. Tambi?n se enviar? su licencia de manejar a su direcci?n postal.",
-        "ID": "El DMV imprimir? su direcci?n postal en su tarjeta de identidad. Su tarjeta de identidad tambi?n se enviar? a su direcci?n postal.",
-        "cards": "El DMV imprimir? su direcci?n postal en sus tarjetas. Sus tarjetas tambi?n se enviar?n a su direcci?n postal."
+        "license": "El DMV imprimirá la dirección postal en su licencia de manejar. También se enviará su licencia de manejar a su dirección postal.",
+        "ID": "El DMV imprimirá su dirección postal en su tarjeta de identidad. Su tarjeta de identidad también se enviará a su dirección postal.",
+        "cards": "El DMV imprimirá su dirección postal en sus tarjetas. Sus tarjetas también se enviarán a su dirección postal."
       },
-      "mailingAddressPrompt": "?D?nde recibe correo?",
+      "mailingAddressPrompt": "¿Dónde recibe correo?",
       "mailingAddressExplanation": "Ejemplo: PO Box 901, Los Angeles, CA 90017"
     },
     "traitsPage": {
@@ -420,25 +937,24 @@
         ]
       },
       "eyeColor": {
-        "prompt": "?De qu? color son sus ojos?",
+        "prompt": "¿De qué color son sus ojos?",
         "values": [
           "Negro",
           "Azul",
-          "Caf?",
+          "Café",
           "Gris",
           "Verde",
-          "Avellana",
-          "Otro color"
+          "Avellana"
         ]
       },
       "hairColor": {
-        "prompt": "?De qu? color es su cabello?",
+        "prompt": "¿De qué color es su cabello?",
         "values": [
-          "Casta?o",
+          "Castaño",
           "Calvo",
           "Negro",
           "Rubio",
-          "Caf?",
+          "Café",
           "Gris",
           "Pelirrojo",
           "Blanco",
@@ -448,23 +964,23 @@
     },
     "heightWeightPage": {
       "height": {
-        "prompt": "?Cu?l es su estatura?",
+        "prompt": "¿Cuál es su estatura?",
         "explanation": "Ejemplo: 5 pies 9 pulgadas",
         "feetLabel": "Pies",
         "inchesLabel": "Pulgadas"
       },
       "weight": {
-        "prompt": "?Cu?nto pesa?",
+        "prompt": "¿Cuánto pesa?",
         "explanation": "Ejemplo: 190 libras",
         "poundsLabel": "Libras"
       }
     },
     "socialSecurityPage": {
-      "prompt": "?Tiene un N?mero de Seguro Social?",
-      "explanation": "Si tiene un N?mero de Seguro Social debe seleccionar S?.",
-      "messageNo": "<p>Al contestar <em>No</em>, confirma que nunca se le ha emitido un N?mero de Seguro Social y actualmente no califica para obtener uno. Comprende que seg?n la 12801 del c?digo California Vehicle Code, debe proporcionarle su N?mero de Seguro Social al Departamento de Veh?culos Motorizados cuando se le asigne uno. </p><p> Lea el aviso para obtener m?s informaci?n.</p>",
+      "prompt": "¿Tiene un Número de Seguro Social?",
+      "explanation": "Si tiene un Número de Seguro Social debe seleccionar Sí.",
+      "messageNo": "<p>Al contestar <em>No</em>, confirma que nunca se le ha emitido un Número de Seguro Social y actualmente no califica para obtener uno. Comprende que segun la 12801 del código California Vehicle Code, debe proporcionarle su Número de Seguro Social al Departamento de Vehículos Motorizados cuando se le asigne uno. </p><p> Lea el aviso para obtener más información.</p>",
       "enterSocialNumber": {
-        "prompt": "?Cu?l es su N?mero de Seguro Social?",
+        "prompt": "¿Cuál es su Número de Seguro Social?",
         "explanation": "Ejemplo: 123 - 45 - 6789"
       }
     }
@@ -533,6 +1049,31 @@
       "messageYes": "¡Gracias por su contribución! Añadiremos $2 al total de su pago."
     }
   },
+  "parentGuardianSignaturePage": {
+    "Prompt": "Debido a que es menor de 18 años, necesitará la firma de un padre de familia o tutor legal.",
+    "explanation": "Si más de un padre de familia o tutor legal tiene custodia, ambos tendrán que firmar.",
+    "methodSection": {
+      "prompt": "¿Qué desea hacer?",
+      "values": {
+        "electronically": "Mi padre de familia/tutor legal firmará electrónicamente.",
+        "atDMV": "Mi padre de familia/tutor legal firmará en el DMV.",
+        "emancipated": "Soy un menor emancipado."
+      }
+    },
+    "signatureSection": {
+      "explanation": "Su solicitud no estará completa hasta que su padre de familia/tutor legal firme.",
+      "prompt": "Para ser completado por el padre de familia/tutor legal:",
+      "liabilityStatement": "Yo/Nosotros aceptamos la responsabilidad civil por este menor y comprendemos que un permiso provisional que se le emita a un menor no es válido hasta que él/ella empiece su entrenamiento de manejo.",
+      "electronicSignatureSection": {
+        "prompt": "Escriba su nombre y la fecha de hoy para firmar electrónicamente.",
+        "nameLabel": "Nombre legal y completo",
+        "dateLabel": "Fecha de hoy"
+      },
+      "weNeedBasicInfo": "Necesitamos información básica de usted.",
+      "addAnotherSigntature": "Añadir otra firma de otro padre de familia/tutor legal"
+    },
+    "emancipatedInfoMessage": "<b>Para comprobar que es un menor emancipado</b>, debe declarar su emancipación en un formulario DL 11 <b>y</b> proveer comprobante de responsabilidad financiera. <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>Para obtener más información, consulte el sitio de Internet del DMV.</a>"
+  },
   "shared": {
     "navigation": {
       "back": "Anterior",
@@ -562,6 +1103,70 @@
     "summary": {
       "notProvided": "No se proporcionó",
       "none": "Ninguno"
+    }
+  },
+  "usStates": {
+    "label": "Estado",
+    "values": {
+      "AL": "Alabama",
+      "AK": "Alaska",
+      "AZ": "Arizona",
+      "AR": "Arkansas",
+      "CA": "California",
+      "CO": "Colorado",
+      "CT": "Connecticut",
+      "DE": "Delaware",
+      "DC": "District of Columbia",
+      "FL": "Florida",
+      "GA": "Georgia",
+      "HI": "Hawaii",
+      "ID": "Idaho",
+      "IL": "Illinois",
+      "IN": "Indiana",
+      "IA": "Iowa",
+      "KS": "Kansas",
+      "KY": "Kentucky",
+      "LA": "Louisiana",
+      "ME": "Maine",
+      "MD": "Maryland",
+      "MA": "Massachusetts",
+      "MI": "Michigan",
+      "MN": "Minnesota",
+      "MS": "Mississippi",
+      "MO": "Missouri",
+      "MT": "Montana",
+      "NE": "Nebraska",
+      "NV": "Nevada",
+      "NH": "New Hampshire",
+      "NJ": "New Jersey",
+      "NM": "New Mexico",
+      "NY": "New York",
+      "NC": "North Carolina",
+      "ND": "North Dakota",
+      "OH": "Ohio",
+      "OK": "Oklahoma",
+      "OR": "Oregon",
+      "PA": "Pennsylvania",
+      "RI": "Rhode Island",
+      "SC": "South Carolina",
+      "SD": "South Dakota",
+      "TN": "Tennessee",
+      "TX": "Texas",
+      "UT": "Utah",
+      "VT": "Vermont",
+      "VA": "Virginia",
+      "WA": "Washington",
+      "WV": "West Virginia",
+      "WI": "Wisconsin",
+      "WY": "Wyoming",
+      "AS": "American Samoa",
+      "GU": "Guam",
+      "MH": "Marshall Islands",
+      "FM": "Micronesia",
+      "MP": "Northern Marianas",
+      "PW": "Palau",
+      "PR": "Puerto Rico",
+      "VI": "Virgin Islands"
     }
   },
   "summaryPage": {
