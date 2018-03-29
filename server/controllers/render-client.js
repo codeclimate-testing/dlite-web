@@ -6,7 +6,7 @@ const path = require('path');
 const env = require('../config/env').env;
 
 let indexHtmlPage;
-if (env === 'development')  {
+if (env === 'development' || env === 'test')  {
   indexHtmlPage = 'index.dev.html';
 } else {
   indexHtmlPage = 'index.html';
