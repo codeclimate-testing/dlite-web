@@ -9,12 +9,11 @@ const CompressionPlugin   = require('compression-webpack-plugin');
 const childProcess = require('child_process');
 const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
 
-
-let config = {
+let configDev = {
   entry: ['babel-polyfill', './client.js'],
   output: {
     path: path.resolve('./public'),
-    filename: 'app.js',
+    filename: 'app.dev.js',
     publicPath: '/'
   },
   module: {
@@ -36,26 +35,22 @@ let config = {
       }
     ]
   },
+  devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.js', '.json']
+  },
   plugins: [
-    new ExtractTextPlugin('app.css'),
+    new ExtractTextPlugin('app.dev.css'),
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify('stage')
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new CompressionPlugin({
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\app.js$|\app.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8
+      APP_ENV: JSON.stringify('development')
     }),
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',
       gitHash: GITHASH,
-      stylesheet: '/app.css',
-      filename: 'index.html'
+      stylesheet: '/app.dev.css',
+      filename: 'index.dev.html'
     })
   ]
 };
 
-module.exports = [ config ];
+module.exports = [ configDev ];
