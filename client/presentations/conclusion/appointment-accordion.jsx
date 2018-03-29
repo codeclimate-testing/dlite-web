@@ -22,22 +22,18 @@ const Form = (props) => {
         />
         <Translator
           tag='p'
-          className='translation-missing'
-          translationPath='If you do not receive a voter notification card within four weeks after your visit to the DMV, contact your county elections official.'
+          translationPath='votingRegistration.confirmation.explanation'
         />
         <Translator
           tag='h4'
           className='translation-missing'
           translationPath='Check for status'
         />
-        <p className='translation-missing'><a target="_blank" href={voterStatusLink}>voterstatus.sos.ca.gov</a></p>
 
         <Translator
           tag='h4'
-          className='translation-missing'
-          translationPath='If you need to register to vote before your DMV visit:'
+          translationPath='confirmationPage.registerSooner'
         />
-        <p className='translation-missing'>You can register online at <a target="_blank" href={registerToVoteLink}>RegisterToVote.ca.gov</a>.</p>
       </div>
     </Accordion>
   )

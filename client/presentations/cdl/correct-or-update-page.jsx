@@ -27,7 +27,10 @@ const Form = (props) => {
           className       = 'question'
           translationPath = 'intro.correctOrUpdatePage.prompt'
         />
-        <p className='translation-missing'>You cannot update your medical certificate through this form.</p>
+        <Translator
+          tag             = 'p'
+          translationPath = 'cdl.correctOrUpdatePage.explanation'
+        />
 
         <form onSubmit={ props.onSubmit }>
           <fieldset role='group' aria-label='Correct or update choice'>

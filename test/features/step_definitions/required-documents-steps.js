@@ -126,7 +126,7 @@ module.exports = function (world) {
     browser
       .text('.required-documents')
       .then( text => {
-        assert(text.includes('Reduced fee eligibility') && text.includes('No fee eligibility') && text.includes('DL 937') && text.includes('DL 933'));
+        assert(text.includes('Reduced fee eligibility') && text.includes('No fee eligibility') && text.includes('DL 389') && text.includes('DL 933'));
       })
       .then(() => { done(); })
       .catch(done);

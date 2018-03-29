@@ -83,7 +83,7 @@ const MessageRemovingDesignation = (props) => {
   return (
     <MessageBox className='info'>
       <div className='remove-veteran-identifier'>
-        <span className='translation-missing'>
+        <span>
           <Translator
             tag             = 'p'
             translationPath = 'extras.vetranRemoveMessage'

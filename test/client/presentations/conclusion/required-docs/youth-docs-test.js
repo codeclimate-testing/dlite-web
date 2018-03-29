@@ -2,12 +2,15 @@
 
 import assert               from 'assert';
 import React                from 'react';
+import wrapperGenerator     from '../../../support/wrapper';
 import configure            from '../../../support/configure-enzyme';
+import store                from '../../../support/page-store';
 import { render }           from 'enzyme';
 import YouthDocuments       from '../../../../../client/presentations/conclusion/documents/youth-documents.jsx';
 import BulletList           from '../../../../../client/presentations/conclusion/documents/bullet-list.jsx';
 
 describe('Required Docs for Youth', function() {
+  const Wrapper = wrapperGenerator(store);
   let component, dob;
   let mockNow = new Date(2017, 11, 14);
   let license = '';
@@ -171,11 +174,13 @@ describe('Required Docs for Youth', function() {
           day: 14
         };
         component = render(
-          <YouthDocuments
-            dateOfBirth={dob}
-            now={mockNow}
-            license={license}
-          />
+          <Wrapper>
+            <YouthDocuments
+              dateOfBirth={dob}
+              now={mockNow}
+              license={license}
+            />
+          </Wrapper>
         )
         assert.equal(component.text().includes(newDriver), true);
       });
@@ -187,11 +192,13 @@ describe('Required Docs for Youth', function() {
           day: 14
         };
         component = render(
-          <YouthDocuments
-          dateOfBirth={dob}
-          now={mockNow}
-          license={license}
-          />
+          <Wrapper>
+            <YouthDocuments
+              dateOfBirth={dob}
+              now={mockNow}
+              license={license}
+            />
+          </Wrapper>
         )
         assert.equal(component.text().includes(newDriver), true);
       });
@@ -222,11 +229,13 @@ describe('Required Docs for Youth', function() {
           day: 14
         };
         component = render(
-          <YouthDocuments
-          dateOfBirth={dob}
-          now={mockNow}
-          license={license}
-          />
+          <Wrapper>
+            <YouthDocuments
+              dateOfBirth={dob}
+              now={mockNow}
+              license={license}
+              />
+          </Wrapper>
         )
         assert.equal(component.text().includes(knowledgeTest), false);
       });
@@ -238,11 +247,13 @@ describe('Required Docs for Youth', function() {
           day: 14
         };
         component = render(
-          <YouthDocuments
-          dateOfBirth={dob}
-          now={mockNow}
-          license={license}
-          />
+          <Wrapper>
+            <YouthDocuments
+              dateOfBirth={dob}
+              now={mockNow}
+              license={license}
+              />
+          </Wrapper>
         )
         assert.equal(component.text().includes(knowledgeTest), true);
       });

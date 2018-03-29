@@ -1,7 +1,7 @@
 'use strict'
 
-import React from 'react';
-import Translator from '../../i18n/translator-tag.jsx';
+import React        from 'react';
+import Translator   from '../../i18n/translator-tag.jsx';
 
 const AnchorLinks = (props) => {
   return (

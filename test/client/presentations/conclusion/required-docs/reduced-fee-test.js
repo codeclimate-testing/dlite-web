@@ -2,12 +2,15 @@
 
 import assert                   from 'assert';
 import React                    from 'react';
+import wrapperGenerator         from '../../../support/wrapper';
+import store                    from '../../../support/page-store';
 import configure                from '../../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import ReducedFee               from '../../../../../client/presentations/conclusion/documents/reduced-fee.jsx';
 import BulletList               from '../../../../../client/presentations/conclusion/documents/bullet-list.jsx';
 
 describe('Required Docs for Reduced Fee', function() {
+  const Wrapper = wrapperGenerator(store);
   let component, reducedFee;
   let props = {
     realID: {
@@ -84,10 +87,12 @@ describe('Required Docs for Reduced Fee', function() {
         ID: 'Yes'
       };
       component = render(
-        <ReducedFee
-          {...props}
-          reducedFee = {reducedFee}
-        />
+        <Wrapper>
+          <ReducedFee
+            {...props}
+            reducedFee = {reducedFee}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('No fee eligibility'), true);
     });
