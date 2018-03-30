@@ -1,5 +1,6 @@
 // from demux's answer at https://stackoverflow.com/questions/38143993/session-auto-logout-after-inactivity
-import fetch from 'isomorphic-fetch';
+import fetch                from 'isomorphic-fetch';
+import { buildLoggedOut }   from '../data/cookies';
 
 class AutoLogout {
   constructor(history, appName) {
@@ -44,17 +45,19 @@ class AutoLogout {
   logout() {
     let that = this;
 
+    buildLoggedOut();
+
     let redirect = `/apply/${this.appName}/sign-in`;
     return fetch('/apply/log-out', {
       method: 'GET',
-      credentials: 'include',
+      credentials: 'same-origin',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     }).then((res) => {
       that.destroy();
-      return that.history.push(redirect)
+      return that.history.push(redirect);
     });
   }
 

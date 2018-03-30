@@ -8,6 +8,7 @@ import {
   buildLoggedIn,
   getLoggedIn,
   isLoggedIn,
+  buildLoggedOut,
   saveLanguageCookie,
   getLanguageFromCookie
 } from '../../../../client/helpers/data/cookies';
@@ -50,6 +51,13 @@ describe('Data helpers for cookies', function() {
     it('returns true if cookie isLoggedIn value is true', function() {
       document.cookie = 'isLoggedIn=true';
       assert.equal(isLoggedIn(), true);
+    });
+  });
+
+  describe('#buildLoggedOut', function() {
+    it('sets isLoggedIn cookie to false', function() {
+      buildLoggedOut();
+      assert.equal(isLoggedIn(), false);
     });
   });
 

@@ -7,7 +7,10 @@ import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
-import { isLoggedIn }     from '../helpers/data/cookies';
+import {
+  isLoggedIn,
+  buildLoggedOut
+} from '../helpers/data/cookies';
 import { signInURL }      from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {
@@ -38,10 +41,10 @@ const ApplicationHeader = (props) => {
 }
 
 const Logout = (props) => {
-  if (!isLoggedIn(props)) { return null;}
+  if (!props.isLoggedIn) { return null;}
   let url = signInURL(props.appName);
   return ReactDOM.createPortal(
-    <a href={url}>Log out</a>, document.getElementById('log-out')
+    <a href={url} onClick={buildLoggedOut}>Log out</a>, document.getElementById('log-out')
   );
 }
 
@@ -61,6 +64,7 @@ const Page = (props) => {
       />
       <Logout
         appName = {props.appName}
+        isLoggedIn = {isLoggedIn()}
       />
       {props.children}
 
