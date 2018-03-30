@@ -1,12 +1,12 @@
 'use strict';
 
-import getTranslation     from '../../actions/get-translation';
-import { updateLanguage } from '../../actions';
+import getTranslation                 from '../../actions/get-translation';
+import { updateTranslationLanguage }  from '../../actions';
 
 export default (dispatch) => {
   return (value) => {
-    dispatch(updateLanguage('language', value));
-    if( value === 'emoji') {
+    dispatch(updateTranslationLanguage(value));
+    if( value !== 'en') {
       getTranslation(value)(dispatch);
     }
   };

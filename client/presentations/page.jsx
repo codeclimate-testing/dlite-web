@@ -67,8 +67,8 @@ const Page = (props) => {
       <HomeLink />
 
       <EmojiDebugLink
-        language         =  { props.language }
-        onEmojiDebug     = { props.onEmojiDebug }
+        translationLanguage    =  { props.translationLanguage }
+        onEmojiDebug           = { props.onEmojiDebug }
       />
 
     </div>

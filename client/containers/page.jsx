@@ -27,10 +27,11 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cardType:       state.application.cardType,
-    chooseApp:      state.ui.chooseApp,
-    section:        state.ui.section,
-    language:       state.ui.language
+    cardType:             state.application.cardType,
+    chooseApp:            state.ui.chooseApp,
+    section:              state.ui.section,
+    language:             state.ui.language,
+    translationLanguage:  state.server.translations.translationLanguage
   };
 }
 

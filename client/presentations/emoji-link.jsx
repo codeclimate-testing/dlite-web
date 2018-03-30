@@ -9,7 +9,7 @@ const EmojiDebugLink = (props) => {
   if(APP_ENV === 'development') {
 
     const toggleEmoji = () => {
-      let value = props.language === 'emoji' ? 'en' : 'emoji'
+      let value = props.translationLanguage === 'emoji' ? 'en' : 'emoji'
 
       props.onEmojiDebug(value);
     }
