@@ -3,7 +3,6 @@
 import React                        from 'react';
 import { connect }                  from 'react-redux';
 import mapDispatchToProps           from '../helpers/handlers/map-dispatch-to-props';
-import getTranslation               from '../actions/get-translation';
 import {
   translateThis
 } from '../helpers/data/translator';
@@ -27,7 +26,8 @@ const Translator = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    translations    : state.server.translations
+    translations    : state.server.translations,
+    language        : state.ui.language
   };
 };
 

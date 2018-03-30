@@ -5,6 +5,7 @@ import fetch from 'isomorphic-fetch';
 import {
   updateApiStatus,
   getTranslationSuccess,
+  updateTranslationLanguage,
   getTranslationError
 } from './index';
 
@@ -42,6 +43,7 @@ const getTranslation = function (locale, fetcher) {
     return fetchTranslation(locale, fetcher)
       .then(function (data) {
         dispatch(getTranslationSuccess(data));
+        dispatch(updateTranslationLanguage(locale));
         dispatch(updateApiStatus('success'));
       })
       .catch(function (err) {

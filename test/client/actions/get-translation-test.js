@@ -71,10 +71,24 @@ describe('getTranslation() action', function() {
         .catch(done);
     });
 
-    it('on request success dispatches an api success action', function(done) {
+    it('dispatches updateTranslationLanguage to store the selected language', function(done) {
       actionFunction(dispatch)
         .then(() => {
           let action = dispatch.getCall(2).args[0];
+
+          assert.deepEqual(action, {
+            type: 'UPDATE_TRANSLATION_LANGAUGE',
+            payload: { value: 'es'}
+          });
+        })
+        .then(done)
+        .catch(done);
+    });
+
+    it('on request success dispatches an api success action', function(done) {
+      actionFunction(dispatch)
+        .then(() => {
+          let action = dispatch.getCall(3).args[0];
 
           assert.deepEqual(action, {
             type: 'UPDATE_API_STATUS',

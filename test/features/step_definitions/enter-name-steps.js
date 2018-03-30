@@ -114,4 +114,14 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
+
+  world.then('the name page will be in Thai', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('ชื่อเต็มที่แท้จริงของคุณคืออะไร'), 'thai h2 not rendered');
+      })
+      .then(done)
+      .catch(done);
+  });
 };
