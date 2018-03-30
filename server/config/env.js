@@ -1,20 +1,14 @@
 'use strict';
 
 const dotenv = require('dotenv');
-const env    = process.env.APP_ENV || 'development';
+dotenv.config();
 
-if (env === 'development' || env === 'test') {
-  dotenv.config();
-}
+const env = process.env.APP_ENV || 'development';
+process.env.NODE_ENV = env;
 
-const port   = process.env.PORT || getPort(env);
-
-function getPort(env) {
-  return env === 'development' ? 3000 : 3333;
-}
+const port   = process.env.PORT || 3000;
 
 module.exports = {
   env: env,
   port: port
 };
-
