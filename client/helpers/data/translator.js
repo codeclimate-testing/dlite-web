@@ -1,9 +1,5 @@
 'use strict';
 import { hasValue }               from './validations';
-import { languageIsSelected }     from './application';
-import { updateLanguage }         from '../../actions/index';
-import getTranslation             from '../../actions/get-translation';
-import { getLanguageFromCookie }  from './cookies';
 
 export const keyLookup = (translationPath, translation) => {
   try {
@@ -72,11 +68,10 @@ export const needToLoadTranslation = (props) => {
   );
 };
 
+export const doNotNeedToLoadTranslations = (language) => {
+  return !hasValue(language) || language === 'en';
+}
 
-export const loadTranslationFromCookie = (props) => {
-  let cookieLanguage = getLanguageFromCookie();
-  if (!languageIsSelected(props.language)) {
-    props.dispatch(updateLanguage('language', cookieLanguage));
-    return getTranslation(cookieLanguage)(props.dispatch);
-  }
+export const nonEnglishChoice = (language) => {
+  return language !== 'en';
 }

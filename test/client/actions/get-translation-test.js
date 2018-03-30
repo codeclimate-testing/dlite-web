@@ -77,7 +77,7 @@ describe('getTranslation() action', function() {
           let action = dispatch.getCall(2).args[0];
 
           assert.deepEqual(action, {
-            type: 'UPDATE_TRANSLATION_LANGAUGE',
+            type: 'UPDATE_TRANSLATION_LANGUAGE',
             payload: { value: 'es'}
           });
         })

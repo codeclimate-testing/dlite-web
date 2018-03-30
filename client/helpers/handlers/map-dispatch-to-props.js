@@ -11,6 +11,7 @@ export default function mapDispatchToProps(action){
     const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
     const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
     const onSelectChange = handlers.onSelectChange(action, dispatch);
+    const loadTranslationFromCookie = handlers.loadTranslationFromCookie(dispatch);
 
     return {
       onSubmit,
@@ -21,6 +22,7 @@ export default function mapDispatchToProps(action){
       onFocusClearValidation,
       onSubmitShowErrors,
       onSelectChange,
+      loadTranslationFromCookie,
       dispatch
     };
   }

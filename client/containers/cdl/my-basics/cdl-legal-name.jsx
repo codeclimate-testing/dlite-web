@@ -6,14 +6,12 @@ import handlers                 from '../../../helpers/handlers';
 import { NamePageValidator }    from '../../../helpers/validations';
 import Presentation             from '../../../presentations/get-started/name-page.jsx';
 import { updateCdlLegalName }   from '../../../actions/index';
-import { loadTranslationFromCookie }  from '../../../helpers/data/translator';
 
 const Page = (props) => {
   let validations       = new NamePageValidator(props.legalName, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlLegalName', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-
-  loadTranslationFromCookie(props);
+  props.loadTranslationFromCookie(props.language);
 
   return (
     <Presentation

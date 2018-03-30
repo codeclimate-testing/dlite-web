@@ -17,14 +17,15 @@ import {
 const onBlurValidate = onBlurValidateGenerator;
 const onFocusClearValidation = onFocusClearValidationGenerator;
 
-import onFormSubmit         from './on-form-submit-generator';
-import navigateOrShowErrors from './navigate-or-show-errors';
-import onSubmitShowErrors   from './on-submit-show-errors';
-import onInputChange        from './on-input-change';
-import onSelectChange       from './on-select-change';
-import onPageLoad           from './on-page-load';
-import onFlowChange         from './on-flow-change';
-import onEmojiDebug         from './on-emoji-debug';
+import onFormSubmit               from './on-form-submit-generator';
+import navigateOrShowErrors       from './navigate-or-show-errors';
+import onSubmitShowErrors         from './on-submit-show-errors';
+import onInputChange              from './on-input-change';
+import onSelectChange             from './on-select-change';
+import onPageLoad                 from './on-page-load';
+import onFlowChange               from './on-flow-change';
+import onEmojiDebug               from './on-emoji-debug';
+import loadTranslationFromCookie  from './load-translation-from-cookie';
 
 export default {
   navigateOnBack,
@@ -40,5 +41,6 @@ export default {
   onSubmitShowErrors,
   onFlowChange,
   navigateOrShowErrors,
-  onEmojiDebug
+  onEmojiDebug,
+  loadTranslationFromCookie
 };

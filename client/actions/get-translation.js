@@ -1,6 +1,7 @@
 'use strict';
 
 import fetch from 'isomorphic-fetch';
+require('es6-promise').polyfill();
 
 import {
   updateApiStatus,
