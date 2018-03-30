@@ -33,11 +33,12 @@ const TextInput = (props) => {
         className       = { className }
         aria-labelledby = { id }
       >
-        <div className='unit'>{ props.description }</div>
         <ErrorIcon
           errorClass={ className }
         />
-        { props.children ? props.children : props.description }
+        <div className='unit'>
+          { props.children ? props.children : props.description }
+        </div>
       </label>
 
       <GenerateExampleLabel example = { props.example } />

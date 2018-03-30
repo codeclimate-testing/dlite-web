@@ -54,8 +54,6 @@ const ElectronicSignature = (props) => {
             className = 't-size-1-1'
           />
         </fieldset>
-      </div>
-      <div className='row'>
         <ErrorLabel
           errorClass    = { acceptLiabilityErrorClass }
           errorMessage  = { props.validations.acceptLiabilities }
@@ -112,13 +110,11 @@ const ElectronicSignature = (props) => {
                 value       = { props.guardianSignature.guardianInfo[guardianID].signature.year }
                 error       = { hasValue(props.validations.date.year) }
               />
-            </fieldset>
-            <div className='row'>
               <ErrorLabel
                 errorMessage  = { dateErrorMessage }
                 errorClass    = { addDateErrorClass }
               />
-            </div>
+            </fieldset>
           </div>
         </div>
 
