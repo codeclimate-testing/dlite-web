@@ -98,13 +98,7 @@ const getStarted = [
     key: 'reducedFeeID',
     description: 'Reduced fee ID',
     path: applyEditOrAddPath('/reduced-fee'),
-    next: nextOrSummary('getStarted')
-  },
-  {
-    key: 'getStarted',
-    description: 'Get started intro page',
-    path: '/get-started',
-    next: 'addresses'
+    next: nextOrSummary('addresses')
   }
 ];
 

@@ -147,7 +147,7 @@ export const realID = (props) => {
     key = 'reducedFeeID';
   }
   else if (!altFlow(props)) {
-    key = 'getStarted';
+    key = 'addresses';
   }
   return key;
 };
@@ -172,7 +172,7 @@ export const chooseLicenseClass = (props) => {
     key = 'reducedFeeID';
   }
   else if (!altFlow(props)) {
-    key = 'getStarted';
+    key = 'addresses';
   }
   else if (addingDL(props)) {
     key = 'medicalHistory';

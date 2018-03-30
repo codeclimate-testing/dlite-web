@@ -236,8 +236,6 @@ Scenario: renewing one ID and no social
     And I click on the car checkbox
     And I click to not need endorsements
     When I click "Next" to continue
-    Then I will be on the get started page
-    When I click "Next" to continue
     Then I will be on the page for entering my address
     Then I will see the page title has postfix " - My basics"
     And I enter my home address

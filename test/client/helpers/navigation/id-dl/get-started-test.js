@@ -182,12 +182,12 @@ describe('Data helpers for determining next path from current page and props in 
         assert.equal(realID(data), 'reducedFeeID');
       });
 
-      it('goes to get started if user is renewing a senior ID', function() {
+      it('goes to addresses if user is renewing a senior ID', function() {
         data.cardType = ID;
         data.cardAction = 'renew';
         data.dateOfBirth.year = seniorYear;
         data.seniorID = 'Yes';
-        assert.equal(realID(data), 'getStarted');
+        assert.equal(realID(data), 'addresses');
       });
     });
     describe('##seniorID', function() {
@@ -202,12 +202,12 @@ describe('Data helpers for determining next path from current page and props in 
         assert.equal(chooseLicenseClass(data), 'reducedFeeID');
       });
 
-      it('goes to get started in other cases', function() {
+      it('goes to addresses in other cases', function() {
         data.cardType = both;
         data.dateOfBirth.year = seniorYear;
         data.seniorID = 'Yes';
 
-        assert.equal(chooseLicenseClass(data), 'getStarted');
+        assert.equal(chooseLicenseClass(data), 'addresses');
       });
     });
   });

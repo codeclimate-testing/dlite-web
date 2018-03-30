@@ -82,10 +82,6 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/reduced-fee', '.reduced-fee-form', done);
   });
 
-  world.when('I visit the get started page', function(done) {
-    navigateToPath('/apply/id-and-license/get-started', '.intro-info', done);
-  });
-
   world.when('I visit physical traits page', function(done) {
     navigateToPath('/apply/id-and-license/my-basics/physical-traits', '.physical-traits-form', done);
   });
@@ -255,11 +251,7 @@ module.exports = function(world) {
   world.then('I will be on the add reduced fee page', function(done) {
     assertOnPage('.reduced-fee-form', /apply\/id-and-license\/add\/reduced-fee/, done);
   });
-
-  world.then('I will be on the get started page', function(done) {
-    assertOnPage('.intro-info', /id-and-license\/get-started/, done);
-  });
-
+  
   world.then('I will be on the page for entering my address', function(done) {
     assertOnPage('.home-address-form', /id-and-license\/my-basics\/address/, done);
   });

@@ -17,7 +17,7 @@ Feature: Customers can get a senior ID for free
     And I click "Next" to continue
     And I click yes to getting a real id on the ID
     And I click "Next" to continue
-    Then I will be on the get started page
+    Then I will be on the page for entering my address
     When I go to the page with my summary
     Then I will see that I have opted for my senior ID
 
@@ -64,7 +64,7 @@ Feature: Customers can get a senior ID for free
     And I click "Next" to continue
     And I click yes to getting a real id on the ID
     And I click "Next" to continue
-    Then I will be on the get started page
+    Then I will be on the page for entering my address
     When I go to the page with my summary
     Then I will see that I am updating the name on my ID
 
@@ -88,7 +88,7 @@ Feature: Customers can get a senior ID for free
     And I click "Next" to continue
     And I click yes to getting a real id on the ID
     And I click "Next" to continue
-    Then I will be on the get started page
+    Then I will be on the page for entering my address
 
   Scenario: senior user adding a new ID
     Given I go to the new online DL application
