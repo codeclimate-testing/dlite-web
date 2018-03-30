@@ -23,11 +23,11 @@ export const keyLookup = (translationPath, translation) => {
 export const translateThis = (translationPath, props) => {
   const defaultTranslation    = props.translations.default;
   const selectedTranslation   = props.translations.selected;
-  const appLanguage           = props.language;
+  const translationLanguage   = props.translations.translationLanguage;
 
   let value = '';
 
-  if(hasNonEnglishLanguage(appLanguage)) {
+  if( hasNonEnglishLanguage(translationLanguage) ) {
     value = keyLookup(translationPath, selectedTranslation);
   }
 
@@ -46,11 +46,11 @@ export const translateThis = (translationPath, props) => {
 export const translateArray = (translationPath, props) => {
   const defaultTranslation    = props.translations.default;
   const selectedTranslation   = props.translations.selected;
-  const appLanguage           = props.language;
+  const translationLanguage   = props.translations.translationLanguage;
 
   let values = [];
 
-  if(appLanguage !== 'en') {
+  if( hasNonEnglishLanguage(translationLanguage) ) {
     values = keyLookup(translationPath, selectedTranslation);
   }
 

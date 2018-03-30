@@ -32,7 +32,6 @@ const TranslatorList = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    language:     state.application.basics.language,
     translations: state.server.translations
   };
 };

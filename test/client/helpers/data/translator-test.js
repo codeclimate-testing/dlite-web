@@ -36,16 +36,23 @@ describe('Translator', () => {
 
   describe('translateThis()', () => {
     let props = {
-      language: 'es',
       translations: {
-        default: en_json,
-        selected: es_json
+        default:              en_json,
+        selected:             es_json,
+        translationLanguage:  'es',
       }
     };
 
     it('returns translated value from selected language, if its available', (done) => {
       let contentKey  = 'votingRegistration.eligibilityPage.convictionStatement';
       assert.equal(translateThis(contentKey, props).__html, 'No estoy actualmente en una prisión estatal o federal o en libertad condicional por haber sido condenado de un delito mayor');
+      done();
+    });
+
+    it('returns the english translation if not available in native/selected language', (done) => {
+      props.translations.default['randomTestKey'] = 'This translation is only available in default/english';
+      let contentKey  = 'randomTestKey';
+      assert.equal(translateThis(contentKey, props).__html, 'This translation is only available in default/english');
       done();
     });
 

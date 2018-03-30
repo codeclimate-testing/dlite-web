@@ -87,12 +87,22 @@ describe('on submit dispatches', function() {
       );
     });
 
-    it('if language has been chosen the updateLanguage action will not be dispatched', function() {
+    it('if english is selected, the updateTranslationLanguage action will be dispatched', function() {
       stateProps.language = 'en';
       let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
       onSubmit(event);
-      assert(!dispatchProps.dispatch.called, 'dispatch should not have been called, but was');
+      assert(
+        dispatchProps.dispatch.calledWith({
+          type: 'UPDATE_TRANSLATION_LANGUAGE',
+          payload: {
+            value: 'en'
+          }
+        }),
+        'dispatch not called'
+      );
     });
+
+
 
     it('if language is selected as english, it redirects to the next page', function() {
       stateProps.language = 'en';
@@ -113,6 +123,18 @@ describe('on submit dispatches', function() {
       let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
       onSubmit(event);
       assert.equal(ownProps.history.entries[1].pathname, '/apply/choose-application');
+    });
+
+    it('if english is selected, does not dispatches a call to get translations', function() {
+      stateProps.language = 'en';
+      let onSubmit = onSubmitDispatches.applicationLanguageSubmit(stateProps, dispatchProps.dispatch, ownProps);
+      onSubmit(event);
+      assert(!dispatchProps.dispatch.calledWith({
+        type: 'UPDATE_API_STATUS',
+        payload: {
+          value: 'loading'
+        }
+      }), 'dispatch to get translation should not have been called, but was');
     });
 
     it('if a non-english language is selected, dispatches a call to get translations', function() {

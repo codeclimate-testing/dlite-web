@@ -105,7 +105,7 @@ export const TYPES = {
   CLEAR_HOVER:                            'CLEAR_HOVER',
   ADD_APP:                                'ADD_APP',
   CHOOSE_APP:                             'CHOOSE_APP',
-  UPDATE_LOCALE:                          'UPDATE_LOCALE',
+  UPDATE_TRANSLATION_LANGUAGE:            'UPDATE_TRANSLATION_LANGUAGE',
 
   UPDATE_API_STATUS:                      'UPDATE_API_STATUS',
   GET_TRANSLATION_SUCCESS:                'GET_TRANSLATION_SUCCESS',
@@ -199,7 +199,7 @@ export const hoverUp                                  = generateValueAction(TYPE
 export const hoverDown                                = generateValueAction(TYPES.HOVER_DOWN);
 export const clearHover                               = generateValueAction(TYPES.CLEAR_HOVER);
 export const addApp                                   = generateValueAction(TYPES.ADD_APP);
-export const updateLocale                             = generateValueAction(TYPES.UPDATE_LOCALE);
+export const updateTranslationLanguage                = generateValueAction(TYPES.UPDATE_TRANSLATION_LANGUAGE);
 
 export const updateApiStatus                          = generateValueAction(TYPES.UPDATE_API_STATUS);
 export const getTranslationSuccess                    = generateValueAction(TYPES.GET_TRANSLATION_SUCCESS);

@@ -27,16 +27,8 @@ const Translator = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    language        : state.ui.language,
-    translations    : state.server.translations,
-    apiStatus       : state.server.apiStatus
+    translations    : state.server.translations
   };
 };
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  let ownAndState = Object.assign({}, ownProps, stateProps);
-  let ownAndStateAndDispatch = Object.assign({}, ownAndState, dispatchProps);
-  return ownAndStateAndDispatch;
-};
-
-export default connect(mapStateToProps, mapDispatchToProps(null), mergeProps)(Translator);
+export default connect(mapStateToProps)(Translator);

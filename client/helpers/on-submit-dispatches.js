@@ -1,14 +1,17 @@
 'use strict';
 
-import { hasValue }               from './data/validations';
-import { nextPath }               from './navigation/page';
-import { postData }               from '../actions/api-actions';
-import getTranslation             from '../actions/get-translation';
-import { updateLanguage }         from '../actions/index';
-import { saveLanguageCookie }     from './data/cookies';
+import { hasValue }                           from './data/validations';
+import { nextPath }                           from './navigation/page';
+import { postData }                           from '../actions/api-actions';
+import getTranslation                         from '../actions/get-translation';
+import { saveLanguageCookie }                 from './data/cookies';
 import {
   updateCitizenStatus,
   updateEligibilityRequirements
+} from '../actions/index';
+import {
+  updateLanguage,
+  updateTranslationLanguage
 } from '../actions/index';
 
 export const updateCitizenship = (stateProps, dispatch) => {
@@ -64,11 +67,16 @@ export const applicationLanguageSubmit = (stateProps, dispatch, ownProps) => {
       dispatch(updateLanguage('language', 'en'));
     }
 
-    saveLanguageCookie(stateProps.language);
-
-    if (nonEnglishChoice) {
-      getTranslation(stateProps.language)(dispatch);
+    if(!nonEnglishChoice) {
+      dispatch(updateTranslationLanguage('en'));
     }
+
+    if (choiceMade && nonEnglishChoice) {
+      getTranslation(stateProps.language)(dispatch);
+      dispatch(updateTranslationLanguage(stateProps.language));
+    }
+
+    saveLanguageCookie(stateProps.language);
 
     return ownProps.history.push(
       nextPath('chooseLanguage', stateProps)
