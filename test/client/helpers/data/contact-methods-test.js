@@ -7,8 +7,7 @@ import {
   hasAnyPhone,
   hasPhone,
   shouldContactNotSelected,
-  shouldContact,
-  skipAnswer
+  shouldContact
 } from '../../../../client/helpers/data/contact-methods';
 
 describe('data helpers for contact methods', function() {
@@ -155,29 +154,6 @@ describe('data helpers for contact methods', function() {
     it('returns false if value is blank', function() {
       data.contactMethods.shouldContact = '';
       assert.equal(shouldContact(data), false);
-    });
-    it('returns false if value is Skip', function() {
-      data.contactMethods.shouldContact = 'Skip';
-      assert.equal(shouldContact(data), false);
-    });
-  });
-
-  describe('#skipAnswer', function() {
-    it('returns true if value is Skip', function() {
-      data.contactMethods.shouldContact = 'Skip';
-      assert.equal(skipAnswer(data), true);
-    });
-    it('returns false if value is No', function() {
-      data.contactMethods.shouldContact = 'No';
-      assert.equal(skipAnswer(data), false);
-    });
-    it('returns false if value is blank', function() {
-      data.contactMethods.shouldContact = '';
-      assert.equal(skipAnswer(data), false);
-    });
-    it('returns false if value is Yes', function() {
-      data.contactMethods.shouldContact = 'Yes';
-      assert.equal(skipAnswer(data), false);
     });
   });
 });

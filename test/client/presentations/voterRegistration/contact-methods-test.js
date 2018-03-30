@@ -53,7 +53,6 @@ describe('ContactMethodsPage', function() {
       assert.ok(component.find('.contact-methods-choice-form').length, 'form missing');
       assert.ok(component.find('label[for="shouldContact-Yes"]').length, 'Yes button missing');
       assert.ok(component.find('label[for="shouldContact-No"]').length, 'No button missing');
-      assert.ok(component.find('label[for="shouldContact-Skip"]').length, 'Skip Question button missing');
     });
 
     it('answering yes shows the form to enter contact details', function() {

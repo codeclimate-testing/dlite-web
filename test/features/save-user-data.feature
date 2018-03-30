@@ -152,6 +152,7 @@ Scenario: renewing one ID and no social
     And I select ballot by mail Yes
     When I click "Next" to continue
     Then I will be taken to contact methods page
+    And I see contact methods buttons labelled Yes and No
     When I select contact methods No
     When I click "Next" to continue
     Then I will be taken to voter registration complete page

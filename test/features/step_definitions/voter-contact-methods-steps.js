@@ -30,21 +30,12 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  world.when('I select contact methods Skip Question', function(done){
-    browser
-    .click('label[for="shouldContact-Skip"]')
-    .then(() => { done(); })
-    .catch(done);
-  });
-
-  world.then('I see three contact methods buttons labelled Yes, No and Skip Question', function(done) {
+  world.then('I see contact methods buttons labelled Yes and No', function(done) {
     browser
     .html('label[for="shouldContact-Yes"]')
     .then((button) => { assert.ok(button, 'Selector for Yes missing')})
     .html('label[for="shouldContact-No"]')
     .then((button) => { assert.ok(button, 'Selector for No missing')})
-    .html('label[for="shouldContact-Skip"]')
-    .then((button) => { assert.ok(button, 'Selector for Skip Section missing')})
     .then(() => { done(); })
     .catch(done);
   });
@@ -87,15 +78,6 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will see that I did not answer to be contacted', function(done){
-    browser
-      .text()
-      .then((text) => {
-        assert.ok(text.includes('No Answer'), 'contact choice as Skip Question not saved in summary');
-      })
-      .then(() => { done(); })
-      .catch(done);
-  });
 
   world.then('I will see my email and phone number', function(done){
     browser

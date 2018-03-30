@@ -23,7 +23,3 @@ export const shouldContactNotSelected = (props) => {
 export const shouldContact = (props) => {
   return props.contactMethods.shouldContact === 'Yes';
 };
-
-export const skipAnswer = (props) => {
-  return props.contactMethods.shouldContact === 'Skip';
-};

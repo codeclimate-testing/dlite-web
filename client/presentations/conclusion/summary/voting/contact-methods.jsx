@@ -10,8 +10,7 @@ import { ageChecks }           from '../../../../helpers/calculate-age';
 import {
   hasPhone,
   shouldContactNotSelected,
-  shouldContact,
-  skipAnswer
+  shouldContact
 } from '../../../../helpers/data/contact-methods';
 import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
@@ -45,10 +44,6 @@ const ContactMethods = (props) => {
   let contactMethods = 'No';
   if (shouldContact(props)) {
     contactMethods =  'shared.commonAnswers.yes';
-  } else if (props.contactMethods.shouldContact === 'No') {
-    contactMethods =  'shared.commonAnswers.no';
-  } else if (skipAnswer(props)) {
-    contactMethods =  'shared.commonAnswers.skip';
   };
 
   let now = props.now ? props.now : new Date();

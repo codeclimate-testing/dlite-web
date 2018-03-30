@@ -10,8 +10,7 @@ import { checkPreReg }          from '../../helpers/data/youth';
 import Translator               from '../../i18n/translator-tag.jsx';
 import {
   RadioSelectorYesTranslation,
-  RadioSelectorNoTranslation,
-  RadioSelectorDeclineTranslation
+  RadioSelectorNoTranslation
 } from '../shared/translations-radio-selector.jsx';
 
 const ContactMethodsPage = (props) => {
@@ -41,10 +40,6 @@ const ContactMethodsPage = (props) => {
             <RadioSelector
               value = 'No'
               text  = { <RadioSelectorNoTranslation /> }
-            />
-            <RadioSelector
-              value = 'Skip'
-              text  = { <RadioSelectorDeclineTranslation /> }
             />
           </RadioCollection>
         </fieldset>
