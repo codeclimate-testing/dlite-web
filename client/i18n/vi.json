@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "Chuẩn bị cuộc hẹn",
+    "explanation": "Bên dưới là danh sách những gì bạn sẽ cần mang theo đến văn phòng DMV để hoàn tất quy trình đăng ký.",
+    "ending": {
+      "callCenterDetails": "Giờ làm việc của Tổng Đài là: Thứ Hai, thứ Ba, thứ Năm, 8 giờ sáng đến 5 giờ chiều, và thứ Tư, 9 giờ sáng đến 5 giờ chiều"
+    },
+    "noRealIdSection": {
+      "header": "Các yêu cầu về Thẻ Không Tuân Thủ Quy Định Liên Bang",
+      "identity": {
+        "header": "Thông tin nhận dạng",
+        "body": "<p>Tất cả đương đơn cần phải chứng minh danh tính của mình, họ tên thật (tên, tên đệm, họ) và ngày sinh. </p><p> Bạn sẽ cần phải mang theo bản gốc của các giấy tờ này vì <b>bản photocopy và bản ép không được chấp nhận</b>. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>Xem danh sách các giấy tờ tùy thân được chấp nhận của DMV</a>. </p><p> <b>Nếu tên của giấy tờ tùy thân của bạn khác với tên bạn cho biết trên mẫu đơn</b>, bạn phải nộp một <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>giấy tờ đổi tên</a> chứng minh họ tên thật của bạn.</p>"
+      },
+      "socialSecurity": {
+        "header": "Số An Sinh Xã Hội",
+        "body": "<p>Bạn phải cung cấp Số An Sinh Xã Hội của bạn cho DMV. </p><p> Nếu bạn đã đổi tên, hãy đảm bảo rằng sự thay đổi này được cập nhật với Sở An Sinh Xã Hội trước buổi làm việc của bạn.</p>"
+      },
+      "californiaResidency": {
+        "header": "Cư trú tại California",
+        "body": "Bạn sẽ cần nộp <b>1</b> giấy tờ chứng minh rằng bạn sống tại California. Giấy này phải cho biết địa chỉ nơi bạn muốn chúng tôi gửi thẻ của bạn đến đó. Địa chỉ này cũng sẽ xuất hiện ở mặt trước của thẻ của bạn. Vui lòng xem <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>danh sách <b>giấy tờ chứng minh Nơi Cư Trú tại California mà chúng tôi chấp nhận</b></a>."
+      }
+    },
+    "realIdSection": {
+      "header": "Các Yêu Cầu của REAL ID",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Vui lòng xem bản PDF Giấy Tờ Real ID để biết danh sách các giấy tờ được chấp nhận đối với 3 loại này.</a>"
+    },
+    "veteransSection": {
+      "header": "Giấy tờ cựu binh",
+      "body": "Để nhận được Ký Hiệu Cựu Binh trên thẻ của bạn, bạn cần phải nộp Giấy <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>Xác Minh Tư Cách Cựu Binh</a> (VSD- 001). Bạn có thể nhận mẫu VSD-001 từ Văn Phòng Sở Cựu Binh tại Hạt của bạn. Cám ơn bạn vì đã phục vụ đất nước!"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "Yêu cầu mới đối với tài xế",
+        "needListHeader": "Để có được giấy phép lái xe tạm thời, chúng tôi sẽ cần xem 1 trong các giấy tờ sau đây:",
+        "needListItems": [
+          "Chứng Nhận Hoàn Thành Chương Trình Học Lái Xe của California (lớp học) hoặc",
+          "Chứng Nhận Hoàn Thành Chương Trình Học Lái Xe của California hoặc Đào Tạo Lái Xe hoặc",
+          "Chứng Nhận Ghi Danh tham gia một Chương Trình Học Lái Xe và Đào Tạo Lái Xe Kết Hợp của California."
+        ],
+        "provisionalExplanation": "Bạn sẽ cần phải đăng ký xin giấy phép lái xe tạm thời.",
+        "knowledgeTest": "Bạn sẽ cần phải làm bài kiểm tra kiến thức.",
+        "testAdvice": "Chúng tôi khuyến cáo bạn nên học <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>sổ tay dành cho Tài Xế California</a> và <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>thử làm một số bài thi thử</a> trước buổi làm việc của bạn.",
+        "FAQHaveAnotherState": {
+          "title": "Bạn đã có giấy phép hoặc chứng nhận đào tạo ở một tiểu bang khác?",
+          "body": {
+            "proofListHeader": "Bạn sẽ cần mang theo <b>1</b> trong những thứ sau:",
+            "proofListItems": [
+              "Giấy tờ chứng minh bạn đã hoàn thành một khóa Học/Đào Tạo Lái Xe tương đương với khóa học ở trung học của California.",
+              "Mẫu đơn DL 33 đã điền. Lấy mẫu đơn này từ văn phòng DMV tại địa phương của bạn hoặc bằng cách gọi cho DMV qua số 1-800-777-0133. Gửi mẫu đơn DL 33 đến trường trung học của bạn ngoài tiểu bang để điền."
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Xem lại Yêu Cầu Mẫu Đơn Học Lái Xe hoặc Đào Tạo Lái Xe để biết thêm thông tin.</a>",
+            "juniorPermitNote": "Vui lòng lưu ý rằng là trẻ vị thành niên, chúng tôi không thể trực tiếp gửi giấy phép lái xe có ghi là \"tập sự\", \"tạm thời\" hoặc \"trẻ vị thành niên\", cho phép lái xe, hoặc chấp nhận chứng nhận đào tạo từ bên ngoài tiểu bang."
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "Các yêu cầu mới của California đối với tài xế",
+      "body": {
+        "openingExplanation": "Chúng tôi thấy rằng bạn đã có giấy phép lái xe của một tiểu bang khác. <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>Các điều luật của California đối với tài xế thanh thiếu niên từ 16 đến 18 tuổi</a> có thể khác với các điều luật ở các tiểu bang khác.",
+        "knowledgeTest": "Là tài xế mới ở California, bạn sẽ cần phải đạt yêu cầu kiểm tra kiến thức.",
+        "juniorPermitNote": "Là trẻ vị thành niên, chúng tôi không thể chuyển bất kỳ giấy phép lái xe nào từ một tiểu bang khác nếu giấy phép lái xe của bạn có ghi \"tập sự\", \"tạm thời\", hoặc \"trẻ vị thành niên\".",
+        "provisionalProcess": "<b>Tài xế dưới 18 tuổi ở California trước tiên phải đăng ký xin giấy phép tạm thời.</b> Sau 6 tháng bạn sẽ đủ điều kiện nhận giấy phép tạm thời.",
+        "FAQWillIneedToTakeTest": {
+          "title": "Tôi sẽ cần phải thi lái xe hay không?",
+          "listHeader": "Chúng tôi chỉ có thể miễn thi lái xe cho bạn nếu bạn:",
+          "listItems": [
+            "Đang có giấy phép lái xe của một tiểu bang bên ngoài California <b><em>và</em></b>",
+            "Đã hoàn thành thành công một khóa dạy kỹ năng lái xe ở một trường trung học đủ điều kiện <b><em>và</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Có thể xác minh việc hoàn thành khóa học thành công</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "Là tài xế mới ở California, bạn sẽ cần phải đạt yêu cầu kiểm tra kiến thức.",
+        "permitProcess": "Một khi bạn đạt yêu cầu kiểm tra kiến thức, bạn sẽ nhận được giấy phép. Sau đ1o bạn cần phải thi lái xe.",
+        "waiverCanProcess": "<b>Chúng tôi chỉ có thể miễn thi lái xe cho bạn nếu:</b> trước đó bạn đã được cấp giấy phép.",
+        "waiverMayProcess": "<b>Chúng tôi có thể miễn thi lái xe cho bạn nếu:</b> bạn đã có giấy phép lái xe hợp lệ tại một tiểu bang khác."
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "Các yêu cầu đối với xe máy/xe tay ga",
+      "body": {
+        "explanation": "Để nhận giấy phép lái xe máy hoặc xe tay ga, bạn cần phải đạt yêu cầu kiểm tra kiến thức về xe máy. Vui lòng xem lại <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>sổ tay về Xe Máy của California</a>.",
+        "waiverProcess": "<b>Chúng tôi có thể miễn thi lái xe cho bạn nếu:</b> bạn có <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>giấy Chứng Nhận Hoàn Thành Chương Trình Đào Tạo Lái Xe Máy (DL 389)</a> của Chương Trình An Toàn Xe Máy California của CHP. Giảng viên khóa học sẽ cung cấp giấy này sau khi bạn hoàn thành khóa học thành công."
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "Bạn bạn dưới 21 tuổi, bạn <b>phải</b> có <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>giấy Chứng Nhận Hoàn Thành Đào Tạo Lái Xe Máy (DL 389)</a> của Chương Trình An Toàn Xe Máy California của CHP trước khi đến DMV. Giảng viên khóa học sẽ cung cấp giấy này sau khi bạn hoàn thành khóa học thành công.",
+        "onCompletion": "Một khi bạn đã hoàn thành khóa học, bạn phải giữ giấy cho phép trong 6 tháng trước khi nhận giấy phép lái xe."
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>Chúng tôi có thể miễn thi lái xe cho bạn nếu:</b> bạn có giấy phép lái xe máy hợp lệ ở một tiểu bang khác và có <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>giấy Chứng Nhận Hoàn Thành Đào Tạo Lái Xe Máy (DL 389)</a> của Chương Trình An Toàn Xe Máy California của CHP."
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "Các yêu cầu kiểm tra bổ sung",
+      "body": "Tại California, để nhận được giấy phép lái xe máy hoặc xe tay ga, <b>bạn cần phải đạt yêu cầu kiểm tra kiến thức lấy giấy phép lái xe cơ bản</b>. Chúng tôi khuyến cáo bạn nên học <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>sổ tay dành cho Tài Xế California</a> và <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>thử làm một số bài thi thử</a> trước buổi làm việc của bạn."
+    },
+    "nonCommercialASection": {
+      "header": "Các yêu cầu đối với Xe Phi Thương Mại Hạng A",
+      "body": {
+        "healthQuestionnaire": "Để nhận được giấy cho phép đối với xe Phi Thương Mại Hạng A, bạn cần phải nộp một <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>Bảng Câu Hỏi Sức Khỏe hợp lệ (DL 546).</a>",
+        "knowledgeTest": "Cũng cần phải kiểm tra kiến thức <b>Xe Giải Trí và Rơmooc Phi Thương Mại Hạng A</b>. Chúng tôi khuyến cáo bạn nên học trong sổ tay về Xe Giải Trí & Rơmooc của California trước khi thi.",
+        "afterPassingExam": "Một khi bạn đạt yêu cầu kiểm tra, bạn sẽ được cấp giấy cho phép. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>Trang web của DMV</a> cung cấp thông tin về việc cần gì để nhận được giấy phép lái xe hoàn chỉnh."
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "Các yêu cầu đối với Xe Phi Thương Mại Hạng B",
+      "body": {
+        "healthQuestionnaire": "Để nhận được giấy cho phép đối với Xe Phi Thương Mại Hạng B, bạn cần phải nộp <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>Bảng Câu Hỏi về Sức Khỏe họp lệ (DL 546A)</a> có chữ ký của bác sĩ của bạn.",
+        "houseCarTest": "Cũng cần phải làm bài <b>Kiểm tra kiến thức về xe nhà 45'</b>. Chúng tôi khuyến cáo bạn nên học trong <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>sổ tay về Xe Giải Trí & Rơmooc của California</a> trước khi thi."
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "Các yêu cầu về chứng nhận lính cứu hỏa",
+      "body": {
+        "testRequirements": "Để nhận được <b>Chứng nhận lính cứu hỏa</b> bạn cần phải làm và đạt yêu cầu kiểm tra kiến thức <b>Chứng nhận lính cứu hỏa</b>.",
+        "otherRequirements": "Bạn cũng sẽ cần phải nộp một <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>Bảng Câu Hỏi về Sức Khỏe hợp lệ (DL 546)</a> và <b>Giấy Xác Nhận Gốc về Công Việc và Đào Tạo Cứu Hỏa</b> đáp ứng các tiêu chí sau đây:",
+        "otherRequirementsValues": [
+          "Viết trên tiêu đề thư của sở cứu hỏa",
+          "Xác nhận công việc hiện tại là lính cứu hỏa hoặc giấy tờ chứng minh đăng ký làm lính cứu hỏa tình nguyện",
+          "Xác nhận hoàn thành chương trình huấn luyện vận hành thiếu bị cứu hỏa",
+          "Có chữ ký của giám đốc sở cứu hỏa hoặc người được chỉ định"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "Thay đổi giới tính",
+      "body": "<p>Để thực hiện sự thay đổi này, bạn cần phải mang theo <a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Giấy Xác Nhận và Ủy Quyền Y Tế (DL 329)</a> đã được điền và ký bởi bác sĩ hoặc bác sĩ tâm lý của bạn. </p><p> Bạn cũng sẽ cần phải mang theo <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>giấy tờ đổi tên</a> có họ tên thật (tên, tên đệm, họ) của bạn cả trước và sau khi đổi tên.</p>"
+    },
+    "nameChangeSection": {
+      "header": "Đổi Tên",
+      "body": "<p>Để phản ánh việc đổi tên trên (các) thẻ của bạn, trước tiên bạn phải đổi tên tại văn phòng <a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>Sở An Sinh Xã Hội</a> tại địa phương của bạn. </p><p> Bạn cũng sẽ cần phải mang theo <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>giấy tờ đổi tên</a> có họ tên thật (tên, tên đệm, họ) của bạn cả <em>trước</em> và <em>sau</em> khi đổi tên.</p>"
+    },
+    "reducedFeeSection": {
+      "header": "Điều kiện giảm phí",
+      "body": "Cuối cùng, chúng tôi cần giấy Xác Minh Điều Kiện Nhận Thẻ Nhận Dạng Giảm Phí (DL 389). DMV không cung cấp mẫu đơn này. Nếu bạn được hỗ trợ thông qua chính phủ hoặc một tổ chức phi lợi nhuận, hãy nói với họ về việc cần lấy mẫu đơn."
+    },
+    "noFeeSection": {
+      "header": "Điều kiện miễn phí",
+      "body": "Cuối cùng, chúng tôi cần giấy Xác Minh Điều Kiện Nhận Thẻ Nhận Dạng Miễn Phí (DL 933). DMV không cung cấp mẫu đơn này. Nếu bạn được hỗ trợ thông qua chính phủ hoặc một tổ chức phi lợi nhuận, hãy nói với họ về việc cần lấy mẫu đơn."
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "Bạn đến đây để làm gì?",
+      "answerIDorDL": "ID hoặc giấy phép lái xe",
+      "answerCDL": "Giấy phép lái xe thương mại",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "Tôi không biết liệu tôi có cần giấy phép lái xe thương mại hay không",
+        "body": {
+          "youWillNeedIf": {
+            "header": "Bạn sẽ cần CDL (giấy phép lái xe thương mại) nếu bạn định vận hành một chiếc xe mà:",
+            "values": [
+              "Có một định mức tổng trọng lượng xe (GVWR) là 26.001 cân Anh trở lên.",
+              "Được thiết kế, sử dụng, hoặc bảo dưỡng để chở hơn 10 người, bao gồm cả các tài xế.",
+              "Kéo một chiếc xe hoặc rơmooc có trọng lượng GVWR là 10.001 cân Anh trở lên.",
+              "Vận chuyển vật liệu nguy hiểm yêu cầu phải có bảng thông báo.",
+              "Kéo bất kỳ sự kết hợp nào giữa hai rơmooc hoặc một xe và một rơmooc."
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "Bạn sẽ không cần CDL nếu bạn chỉ dự kiến lái:",
+            "values": [
+              "Xe giải trí (rơmooc du lịch có bánh thứ 5 và nhà di động)",
+              "Thiết bị chữa cháy.",
+              "Phương tiện vận chuyển vật liệu nông nghiệp nguy hiểm Hạng C.",
+              "Nhân viên của Bộ Quốc Phòng mặc đồng phục và vận hành xe của Bộ Quốc Phòng.",
+              "Một số xe Nông Trại."
+            ]
+          },
+          "seeDMV": "Thông tin chi tiết được cung cấp tại dmv.ca.gov"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "Trên trang web này, bạn có thể:",
+      "whatYouCanDoItems": [
+        "<b>Đăng ký</b> giấy phép lái xe hoặc thẻ ID.",
+        "<b>Gia hạn hoặc thay</b> thẻ.",
+        "<b>Sửa hoặc cập nhật</b> thẻ."
+      ],
+      "requiredDocuments": "Sau khi bạn nộp đơn, chúng tôi sẽ cung cấp cho bạn một danh sách các giấy tờ cần thiết. Bạn phải đến một văn phòng của DMV mang theo các giấy tờ này để hoàn tất quy trình đăng ký.",
+      "doNotUseIf": {
+        "header": "Không sử dụng mẫu đơn này nếu:",
+        "values": [
+          "Bạn không có địa chỉ email hoặc số điện thoại. Những thông tin này là cần thiết để điền vào mẫu đơn này từ nhà.q`",
+          "Bạn đang tham gia một chương trình bảo mật địa chỉ hoặc tham gia chương trình An Toàn Ở Nhà (Safe at Home)."
+        ],
+        "instead": "Thay vào đó, <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>hãy đặt hẹn</a> để đến văn phòng DMV tại địa phương của bạn."
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "<b>Đăng ký</b> giấy phép lái xe thương mại (CDL).",
+        "<b>Gia hạn hoặc thay</b> giấy phép CDL.",
+        "<b>Sửa hoặc cập nhật</b> giấy phép CDL"
+      ],
+      "doNotUseIf": {
+        "values": [
+          "Bạn không có địa chỉ email hoặc số điện thoại. Những thông tin này là cần thiết để điền vào mẫu đơn này từ nhà.",
+          "Bạn chỉ muốn có một chứng nhận Xe Cứu Thương, VTT, hoặc HAM cho giấy phép CDL.",
+          "Bạn đang tham gia một chương trình bảo mật địa chỉ hoặc tham gia chương trình An Toàn Ở Nhà (Safe at Home)."
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "Tôi cần thực hiện một việc khác",
+        "body": {
+          "header": "Bạn <b>không thể</b> sử dụng mẫu đơn này để:",
+          "listItems": [
+            "Cập nhật chứng nhận y tế của bạn",
+            "Cập nhật bản Tự Xác Nhận của bạn",
+            "Nhận bản sao hồ sơ lái xe của bạn",
+            "Báo cáo tai nạn",
+            "Đặt lịch thi lái xe"
+          ],
+          "instead": "Truy cập trang web của DMV để thực hiện những việc này."
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "DMV đang hợp tác với ID.me để bảo vệ danh tính số của bạn.",
+      "buttonCreateAccount": "Tạo một tài khoản ID.me",
+      "or": "Hoặc",
+      "buttonSignIn": "Đăng nhập bằng tài khoản ID.me",
+      "emailRequired": "<b>Yêu cầu phải có địa chỉ email và số điện thoại.</b> Vui lòng ghé vào một văn phòng của DMV nếu bạn muốn tạo tài khoản ID.me",
+      "legalIdentity": "<b>ID.me cho phép bạn chứng minh doanh tính hợp pháp của bạn.</b> DMV của California đã hợp tác với ID.me để đảm bảo rằng thông tin cá nhân của bạn được chính xác và bảo mật.",
+      "dmvPartnering": "DMV của California chọn hợp tác với ID.me vì họ đã đáp ứng các yêu cầu nghiêm ngặt về an ninh và chứng minh danh tính.",
+      "learnMore": "<a href='https://www.id.me'>Để biết thêm thông tin, vui lòng truy cập ID.me.</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "Chào mừng bạn trở lại.",
+      "youHaveSomeUnfinishedApps": "Bạn có một số đơn đăng ký chưa hoàn tất.",
+      "youCanStartNewApp": "Bạn cũng có thể bắt đầu một đơn mới.",
+      "applyingDL": "Đăng ký giấy phép lái xe",
+      "applyingID": "Đăng ký thẻ ID",
+      "applyingBoth": "Đăng ký giấy phép lái xe và thẻ ID",
+      "applyingCDL": "Đăng ký giấy phép lái xe thương mại",
+      "percentComplete": "% hoàn thành",
+      "newApplication": "Đăng ký mới",
+      "delete": "Xóa"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "Chúng tôi không thể truy cập tài khoản của bạn.",
+      "wantToTryAgain": "Bạn muốn thử lại?",
+      "comeToDMVoffice": "Nếu bạn không thể đăng nhập hoặc nếu bạn không muốn sử dụng ID.me, bạn sẽ cần phải điền đơn này tại một văn phòng địa phương của DMV. Đặt hẹn để được phục vụ nhanh hơn."
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "Đương đơn dưới 21 tuổi không được phép tham gia hoạt động thương mại liên tiểu bang hoặc vận chuyển vật liệu nguy hiểm."
+    },
+    "wdywtdtPage": {
+      "values": [
+        "Lần đầu tiên nhận giấy phép California CDL.",
+        "Gia hạn giấy phép CDL của tôi",
+        "Sửa hoặc cập nhật CDL của tôi",
+        "Thay CDL của tôi"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "Nếu bạn biết, <b>vui lòng nhập số giấy phép California CDL của bạn</b>.",
+      "explanation": "Có thể tìm thấy số của bạn ở đầu giấy phép lái xe thương mại của bạn, bắt đầu bằng một chữ cái.",
+      "cdlNumberLabel": "Số CDL"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "Bạn không thể cập nhật chứng nhận y tế của bạn thông qua mẫu đơn này.",
+      "values": [
+        "Sửa giấy phép CDL của tôi",
+        "Cập nhật giấy phép CDL của tôi"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "Bạn có phải là cư dân California hay không?",
+      "infoMessageNo": {
+        "header": "Chúng tôi rất tiếc, nhưng bạn không đủ điều kiện nhận giấy phép California CDL vào lúc này.",
+        "explanation": "Bạn phải là cư dân của California để đăng ký."
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "DMV sẽ in địa chỉ nhận thư của bạn lên giấy phép CDL của bạn. Giấy phép CDL của bạn cũng sẽ được gửi đến địa chỉ nhận thư của bạn."
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "Chúng tôi rất tiếc, nhưng bạn không đủ điều kiện nhận giấy phép California CDL vào lúc này.",
+        "explanation": "Tài Xế Thương Mại phải có Số An Sinh Xã Hội và phải cung cấp giấy tờ chứng minh khi đăng ký. Cả công dân Hoa Kỳ và cư dân hợp pháp nhưng không phải công dân đều đủ điều kiện nhận Số An Sinh Xã Hội. Liên hệ Sở An Sinh Xã Hội để biết thêm thông tin."
+      }
+    },
+    "caDlPage": {
+      "prompt": "Hiện nay bạn có giấy phép lái xe California hay không?",
+      "noMessage": "Để nhận được Giấy Cho Phép Người Học Lái Thương Mại, trước tiên bạn cần phải đạt yêu cầu kiểm tra kiến thức và kỹ năng lái xe đối với một giấy phép lái xe cơ bản (Phi Thương Mại Hạng C).",
+      "yesSection": {
+        "prompt": "Vui lòng cho chúng tôi biết thông tin về giấy phép lái xe gần đây nhất của bạn.",
+        "explanation": "Chúng tôi sẽ yêu cầu bạn cung cấp lược sử giấy phép hoàn chỉnh vào giai đoạn sau trong quy trình đăng ký.",
+        "dlNumberLabel": "Số bằng lái xe",
+        "issuedInLabel": "Ngày cấp",
+        "messageBody": "Để nhận Giấy Cho Phép Người Học Lái Thương Mại (CLP), bạn sẽ cần có giấy phép lái xe Phi Thương Mại Hạng C của California.  Để thực hiện việc này, bạn sẽ cần phải đạt yêu cầu kiểm tra kiến thức lái xe Phi Thương Mại Hạng C.",
+        "expiredMessage": {
+          "header": "Chúng tôi thấy rằng giấy phép lái xe của bạn đã hết hạn."
+        },
+        "nonCaliforniaMessage": {
+          "header": "Chúng tôi thấy rằng giấy phép lái xe của bạn không phải của California."
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "Bạn cần giấy phép lái xe thương mại hạng gì?",
+      "values": [
+        "Hạng A",
+        "Hạng B",
+        "Hạng C"
+      ],
+      "youMayDrive": "Bạn có thể lái:",
+      "youMayTow": "Bạn có thể kéo:",
+      "classA": {
+        "header": "Với giấy phép lái xe Thương Mại Hạng A",
+        "driveItems": [
+          "Bất kỳ <em>sự kết hợp</em> xe hợp pháp nào, bao gồm các xe Hạng B và Hạng C"
+        ],
+        "towItems": [
+          "Tất cả xe mà một tài xế có giấy phép Hạng B và Hạng C có thể kéo",
+          "Xe đơn có trọng lượng GVWR trên 10.000 cân Anh",
+          "Bất kỳ xe buýt kéo rơmooc nào, có chứng nhận HOẶC trên 1 chiếc xe, có chứng nhận"
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "Tôi không chắc tôi cần hạng gì",
+        "classC": {
+          "header": "Với giấy phép lái xe Thương Mại Hạng C",
+          "driveItems": [
+            "Bất kỳ xe 2 trục nào có trọng lượng GVWR là 26.000 cân Anh trở xuống, hoặc bất kỳ xe 3 trục nào nặng 6.000 cân anh trở xuống, chở vật liệu nguy hiểm (HazMat) cần gắn biển báo.  Trường hợp này yêu cầu phải có chứng nhận HazMat.",
+            "Bất kỳ xu buýt hoặc xe khách nào có trọng lượng GVWR là 26.000 cân Anh trở xuống, được thiết kế, sử dụng, hoặc bảo dưỡng để chở trên 10 người, bao gồm tài xế. Trường hợp này cần có chứng nhận xe khách.",
+            "Bất kỳ xe nào được phép theo giấy phép Phi Thương Mại Hạng C."
+          ],
+          "explanation": "Bạn có thể kéo tất cả các xe được phép theo giấy phép lái xe Phi Thương Mại Hạng C."
+        },
+        "classB": {
+          "header": "Với giấy phép lái xe Thương Mại Hạng B",
+          "driveItems": [
+            "Tất cả xe có mà tài xế có giấy phép lái xe Phi Thương Mại Hạng C có thể lái.",
+            "Xe 2 trục nặng trên 26.000 cân Anh.",
+            "Xe 3 trục nặng trên 6.000 cân Anh.",
+            "Xe buýt (trừ xe buýt kéo rơmooc). Trường hợp này cần có chứng nhận xe khách.",
+            "Bất kỳ xe lao động nông trại nào, có chứng nhận"
+          ],
+          "towItems": [
+            "Xe đơn có trọng lượng GVWR là 10.000 cân Anh trở xuống",
+            "Tất cả xe có mà tài xế có giấy phép lái xe Phi Thương Mại Hạng C có thể kéo"
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "Bạn có cần chứng nhận trên giấy phép CDL hay không?",
+      "whichSection": {
+        "prompt": "Trường hợp nào?",
+        "values": {
+          "T": "Kết hợp hai/ba xe",
+          "N": "Xe bồn",
+          "P": "Xe khách",
+          "S": "Xe buýt đưa đón học sinh",
+          "H": "Xe có dán nhãn vận chuyển vật liệu hoặc rác thải nguy hiểm",
+          "X": "Xe bồn vận chuyển vật liệu hoặc rác thải nguy hiểm",
+          "F": "Giấy Chứng Nhận Lính cứu hỏa"
+        }
+      },
+      "certificationSection": {
+        "prompt": "Bạn có cần giấy chứng nhận chuyên môn của DMV hay không?",
+        "certifications": {
+          "prompt": "Bạn có thể yêu cầu các chứng nhận sau đây tại văn phòng địa phương của DMV:",
+          "values": {
+            "transit": "Chứng Nhận Xác Minh Huấn Luyện Vận Tải (VTT)",
+            "ambulance": "Giấy Chứng Nhận Lái Xe Cứu Thương",
+            "ham": "Chứng Nhận về Vật Liệu Nông Nghiệp Nguy Hiểm (HAM)."
+          },
+          "FAQMissingCertifications": {
+            "title": "Tôi cần một loại chứng nhận mà tôi không thấy ở đây",
+            "body": {
+              "header": "Lực Lượng Tuần Tra Cao Tốc California (CHP) có trách nhiệm cấp các chứng nhận chuyên môn sau đây:",
+              "listItems": [
+                "Xe Vận Tải Bán Chuyên Công Cộng (GPPV)",
+                "Chứng Nhận Tài Xế Xe Buýt Chở Học Sinh",
+                "Chứng Nhận Xe Buýt Phục Vụ Hoạt Động của Học Sinh",
+                "Xe dành cho Người Có Khuyết Tật Phát Triển",
+                "Giấy Chứng Nhận Xe Làm Nông",
+                "Giấy Chứng Nhận Lái Xe Kéo",
+                "Chứng Nhận Xe Buýt Thanh Niên"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "Chứgn nhận <b>Xác Minh Kiểm Tra Vận Tải</b> cần có xác nhận <b>Xe Khách</b>.",
+                "fullEndorsment": "Mô tả, yêu cầu đầy đủ về hạng xe, chứng nhận và xác nhận được cung cấp trong <b>Sổ Tay Tài Xế Thương Mại</b> của California."
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "Tôi không chắc",
+        "body": {
+          "header": "Bạn cần có chứng nhận nếu bạn muốn vận hành một chiếc xe cơ giới thương mại mà:",
+          "listItems": [
+            "Vận chuyển trên 10 người, bao gồm tài xế.",
+            "Chuyên chở vật liệu nguy hiểm yêu cầu có bảng thông báo.",
+            "Kéo trên một chiếc xe hoặc rơmooc.",
+            "Xe bồn."
+          ],
+          "explanation": "Mô tả và yêu cầu đầy đủ về hạng xe, chứng nhận, và xác nhận được cung cấp trong Sổ Tay Tài Xế Thương Mại ở California."
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "Bạn có cần chứng nhận xe máy (Hạng M) trên giấy phép CDL hay không?"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "Để kiểm tra lại:",
+        "values": {
+          "applyingClassA": "Bạn đang đăng ký giấy phép lái xe thương mại Hạng A.",
+          "applyingClassB": "Bạn đang đăng ký giấy phép lái xe thương mại Hạng B.",
+          "applyingClassC": "Bạn đang đăng ký giấy phép lái xe thương mại Hạng C.",
+          "renewingClassA": "Bạn đang gia hạn giấy phép lái xe thương mại Hạng A.",
+          "renewingClassB": "Bạn đang gia hạn giấy phép lái xe thương mại Hạng B.",
+          "renewingClassC": "Bạn đang gia hạn giấy phép lái xe thương mại Hạng C.",
+          "updatingClassA": "Bạn đang cập nhật giấy phép lái xe thương mại Hạng A.",
+          "updatingClassB": "Bạn đang cập nhật giấy phép lái xe thương mại Hạng B.",
+          "updatingClassC": "Bạn đang cập nhật giấy phép lái xe thương mại Hạng C.",
+          "correctingClassA": "Bạn đang sửa giấy phép lái xe thương mại Hạng A.",
+          "correctingClassB": "Bạn đang sửa giấy phép lái xe thương mại Hạng B.",
+          "correctingClassC": "Bạn đang sửa giấy phép lái xe thương mại Hạng C.",
+          "replacingClassA": "Bạn đang thay giấy phép lái xe thương mại Hạng A.",
+          "replacingClassB": "Bạn đang thay giấy phép lái xe thương mại Hạng B.",
+          "replacingClassC": "Bạn đang thay giấy phép lái xe thương mại Hạng C."
+        }
+      },
+      "motorcycleSentence": "Bạn cũng muốn lái xe máy/xe tay ga",
+      "endorsements": {
+        "header": "Bạn cần có (các) chứng nhận sau đây:",
+        "values": {
+          "T": "Xe đôi/Xe ba",
+          "N": "Xe bồn",
+          "P": "Xe khách",
+          "S": "Xe buýt đưa đón học sinh",
+          "H": "HazMat (vật liệu nguy hiểm)",
+          "X": "Xe Bồn/HazMat",
+          "F": "Lính cứu hỏa"
+        }
+      },
+      "certificates": {
+        "header": "Bạn muốn có (các) giấy chứng nhận sau đây:",
+        "values": {
+          "ambulance": "Tài xế xe cứu thương",
+          "ham": "HAM",
+          "transit": "Xác Minh Huấn Luyện Vận Tải (VTT)"
+        }
+      },
+      "realID": "Giấy phép CDL của bạn sẽ tuân thủ quy định REAL ID.",
+      "fillOutNewApplication": {
+        "update": "Để cập nhật giấy phép CDL của bạn, bạn sẽ cần phải điền vào một đơn mới.",
+        "correct": "Để sửa giấy phép CDL của bạn, bạn sẽ cần phải điền vào một đơn mới.",
+        "replace": "Để thay giấy phép CDL của bạn, bạn sẽ cần phải điền vào một đơn mới."
+      },
+      "sections": {
+        "header": "Đơn này có 6 phần:"
+      },
+      "timeStatement": "<p>Cần khoản <b>10 phút</b> để điền. </p><p> Khi điền xong, bạn cần đến văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV).</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "Giấy phép CDL của tôi",
+    "CdlNumberLabel": "Số CDL",
+    "typeOfDriving": "Loại lái xe",
+    "currentDlNumberLabel": "Số DL hiện tại",
+    "licenseOutsideCAlabel": "Giấy phép bên ngoài California"
+  },
   "confirmationPage": {
     "header": "Xác nhận",
     "subHeader": "Chúng tôi đã nhận được thông tin của bạn.",
@@ -152,6 +631,44 @@
     "endorsement": "Vui lòng chọn một chứng nhận",
     "cardTypeMissing": "Vui lòng chọn (những) thẻ mà bạn muốn.",
     "choosePoliticalPartyNowSelectionMissing": "Vui lòng cho chúng tôi biết nếu bạn muốn ưu tiên chọn một đảng chính trị."
+  },
+  "footer": {
+    "accessibility": "Khả năng truy cập",
+    "conditionsOfUser": "Điều kiện sử dụng",
+    "disabilityServices": "Các dịch vụ dành cho người khuyết tật",
+    "help": "Trợ giúp",
+    "home": "Trang chủ",
+    "privacy": "Chính sách về quyền riêng tư",
+    "siteMap": "Sơ đồ trang",
+    "support": "Hỗ trợ kỹ thuật",
+    "copyright": "Bản quyền &copy; 2018 Tiểu Bang California"
+  },
+  "header": {
+    "dlApplication": "Đơn đăng ký giấy phép lái xe",
+    "idApplication": "Đơn đăng ký thẻ ID",
+    "bothApplications": "Đơn đăng ký giấy phép lái xe và ID",
+    "cdlApplication": "Đơn đăng ký giấy phép lái xe thương mại",
+    "Logout": "Đăng xuất"
+  },
+  "sections": {
+    "getStarted": "Bắt đầu",
+    "selfCertification": "Tự xác nhận",
+    "myHistory": "Lược sử của tôi",
+    "tenYearHistory": "Lược sử 10 năm",
+    "summary": "Tóm tắt",
+    "welcomeBack": "Chào mừng bạn trở lại"
+  },
+  "ageMessages": {
+    "notASenior": "Bạn không còn đủ điều kiện nhận thẻ ID Người Cao Tuổi miễn phí.",
+    "preregistration": "Bạn sẽ được đăng ký trước để bỏ phiếu.",
+    "cdlAgeRestriction": "Bạn phải được 18 tuổi trở lên để đăng ký giấy phép lái xe thương mại ở California."
+  },
+  "extras": {
+    "enterTextHere": "Nhập văn bản ở đây",
+    "notRegisteredToVoteMessage": "Nếu bạn chọn <em>Không</em> hoặc <em>Từ chối trả lời</em>, bạn sẽ không được đăng ký để bỏ phiếu.",
+    "vetranRemoveMessage": "Chúng tôi sẽ xóa",
+    "yourConfirmationCode": "Mã xác nhận của bạn là:",
+    "confirmationAlsoEmailed": "Thông tin này cũng sẽ được email cho bạn."
   },
   "intro": {
     "switchLanguagePage": {
@@ -532,6 +1049,31 @@
       "messageYes": "Cám ơn bạn đã đóng góp! Chúng tôi sẽ thêm $2 này vào tổng phí của bạn."
     }
   },
+  "parentGuardianSignaturePage": {
+    "Prompt": "Vì bạn dưới 18 tuổi, bạn cần có chữ ký của cha mẹ hoặc người giám hộ.",
+    "explanation": "Nếu bạn có nhiều hơn một cha mẹ hoặc người giám hộ có quyền quản lý bạn, cả hai phải ký tên.",
+    "methodSection": {
+      "prompt": "Bạn muốn làm gì?",
+      "values": {
+        "electronically": "Cha mẹ/người giám hộ của tôi sẽ ký tên điện tử",
+        "atDMV": "Cha mẹ/người giám hộ của tôi sẽ ký tên tại DMV",
+        "emancipated": "Tôi là trẻ vị thành niên đã được trao quyền"
+      }
+    },
+    "signatureSection": {
+      "explanation": "Đơn của bạn sẽ không hoàn chỉnh cho đến khi cha mẹ/người giám hộ của bạn ký tên.",
+      "prompt": "Để cha mẹ/người giám hộ điền:",
+      "liabilityStatement": "Tôi/Chúng tôi chấp nhận trách nhiệm dân sự đối với trẻ vị thành niên này và hiểu rằng giấy phép tạm thời cấp cho trẻ vị thành niên này không có hiệu lực cho đến khi trẻ vị thành niên này bắt đầu học lái xe.",
+      "electronicSignatureSection": {
+        "prompt": "Vui lòng nhập tên của bạn và ghi ngày hôm nay để ký tên điện tử.",
+        "nameLabel": "Họ tên hợp pháp",
+        "dateLabel": "Ngày hôm nay"
+      },
+      "weNeedBasicInfo": "Chúng tôi cần một số thông tin cơ bản về bạn.",
+      "addAnotherSigntature": "Thêm chữ ký của một cha mẹ/người giám hộ khác"
+    },
+    "emancipatedInfoMessage": "<b>Để chứng minh bạn là trẻ vị thành niên đã được trao quyền</b>, bạn phải tuyên bố về việc bạn được trao quyền trên mẫu đơn DL 11 <b>và</b> cung cấp giấy tờ chứng minh trách nhiệm tài chính. <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>Để biết thêm thông tin, tham khảo trang web của DMV.</a>"
+  },
   "shared": {
     "navigation": {
       "back": "Trở Lại",
@@ -561,6 +1103,70 @@
     "summary": {
       "notProvided": "Không cung cấp",
       "none": "Không có"
+    }
+  },
+  "usStates": {
+    "label": "Bang",
+    "values": {
+      "AL": "Alabama",
+      "AK": "Alaska",
+      "AZ": "Arizona",
+      "AR": "Arkansas",
+      "CA": "California",
+      "CO": "Colorado",
+      "CT": "Connecticut",
+      "DE": "Delaware",
+      "DC": "District of Columbia",
+      "FL": "Florida",
+      "GA": "Georgia",
+      "HI": "Hawaii",
+      "ID": "Idaho",
+      "IL": "Illinois",
+      "IN": "Indiana",
+      "IA": "Iowa",
+      "KS": "Kansas",
+      "KY": "Kentucky",
+      "LA": "Louisiana",
+      "ME": "Maine",
+      "MD": "Maryland",
+      "MA": "Massachusetts",
+      "MI": "Michigan",
+      "MN": "Minnesota",
+      "MS": "Mississippi",
+      "MO": "Missouri",
+      "MT": "Montana",
+      "NE": "Nebraska",
+      "NV": "Nevada",
+      "NH": "New Hampshire",
+      "NJ": "New Jersey",
+      "NM": "New Mexico",
+      "NY": "New York",
+      "NC": "North Carolina",
+      "ND": "North Dakota",
+      "OH": "Ohio",
+      "OK": "Oklahoma",
+      "OR": "Oregon",
+      "PA": "Pennsylvania",
+      "RI": "Rhode Island",
+      "SC": "South Carolina",
+      "SD": "South Dakota",
+      "TN": "Tennessee",
+      "TX": "Texas",
+      "UT": "Utah",
+      "VT": "Vermont",
+      "VA": "Virginia",
+      "WA": "Washington",
+      "WV": "West Virginia",
+      "WI": "Wisconsin",
+      "WY": "Wyoming",
+      "AS": "Samoa Thuộc Mỹ",
+      "GU": "Guam",
+      "MH": "Quần Đảo Marshall",
+      "FM": "Micronesia",
+      "MP": "Northern Marianas",
+      "PW": "Palau",
+      "PR": "Puerto Rico",
+      "VI": "Quần Đảo Virgin"
     }
   },
   "summaryPage": {
@@ -791,6 +1397,14 @@
     "preferencesUpdateIntroPage": {
       "pagePrompt": "Kế tiếp chúng tôi muốn kiểm điểm nhanh để chắc chắn là chi tiết ghi danh cử tri của quý vị là chi tiết mới nhất.",
       "explanation": "Lần này sẽ thay thế các chọn lựa của cử tri trước đây của quý vị."
+    }
+  },
+  "sharedAdditions": {
+    "shared": {
+      "buttons": {
+        "exit": "Thoát"
+      },
+      "contactDMV": "<p>Vui lòng liên hệ DMV nếu bạn có thêm thắc mắc. </p><p> Điện thoại: 1-800-777-0133 </p><p> Người Khiếm Thính: TTY 1-800-368-4327</p>"
     }
   }
 }

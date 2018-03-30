@@ -1398,5 +1398,13 @@
       "pagePrompt": "A continuación queremos verificar brevemente que su inscripción de votante esté al día.",
       "explanation": "Esto reemplazará sus preferencias de votante anteriores."
     }
+  },
+  "sharedAdditions": {
+    "shared": {
+      "buttons": {
+        "exit": "Salir"
+      },
+      "contactDMV": "<p>Comuníquese con el DMV si tiene más preguntas. </p><p> Teléfono: 1-800-777-0133 </p><p> Teléfono para personas con discapacidades auditivas o del habla (TTY): 1-800-368-4327</p>"
+    }
   }
 }

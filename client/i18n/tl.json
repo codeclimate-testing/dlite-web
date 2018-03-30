@@ -1,4 +1,483 @@
 {
+  "applicationPreparationPage": {
+    "prompt": "Paghanda sa appointment",
+    "explanation": "Nakalista sa ibaba ang mga kailangang dalhin sa opisina ng DMV upang makumpleto ang iyong application.",
+    "ending": {
+      "callCenterDetails": "Ang mga bukas na oras ng Call Center ay: Lunes, Martes, Huwebes, Biyernes 8 am hanggang 5 pm at Miyerkules, 9 am hanggang 5 pm"
+    },
+    "noRealIdSection": {
+      "header": "Mga kailangan sa Hindi Sang-Ayon sa Pederal na Card",
+      "identity": {
+        "header": "Pagkakakilanlan",
+        "body": "<p>Lahat ng aplikante ay kailangang mapatunayan ang kanilang pagkakakilanlan, totoong buong pangalan (una, gitna, huli) at petsa ng kapanganakan. </p><p> Kailangan mong dalhin ang orihinal na kopya ng mga dokumentong ito, bilang <b>na kopya at mga nakalaminate na kopya ay hindi tatanggapin</b>. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>Tignan ang listahan ng DMV sa mga katanggap tanggap na mga dokumento ng pagkakakilanlan</a>. </p><p> <b>Kung ang pangalan sa iyong dokumento ng pagkakakilanlan ay iba sa pangalang inilagay sa application</b>, kailangang magsumite <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>ng dokumento sa pag-iba ng pangalan</a> na nagpapatunay ng iyong tunay na buong pangalan.</p>"
+      },
+      "socialSecurity": {
+        "header": "Numero ng social security",
+        "body": "<p>Kinakailangan mong ibigay ang iyong numero ng Social Security sa DMV. </p><p> Kung nagbago ka ng pangalan, siguraduhing ang pangalan mo ay nabagoo sa Administrasyon ng Social Security bago ang iyong pagbisita.</p>"
+      },
+      "californiaResidency": {
+        "header": "Mga Residente sa California",
+        "body": "Kailangang dalhin ang <b>1</b> na dokumento na nagpapatunay na nakatira ka sa California. Ang dokumentong ito ay dapat nagpapakita kung saan mo gustong mapadala ang iyong card. Ang address na ito ay ipapakita rin sa harapan ng card. Siguraduhing nabasa ang aming<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>listahan ng mga tinatanggap na<b>dokumento ng California Residency</b></a>."
+      }
+    },
+    "realIdSection": {
+      "header": "Mga kinakailangan para sa REAL ID",
+      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Tignan ang mga Dokumento ng Real ID na PDF para sa lisatahan ng tinatanggap na mga dokumento para sa 3 kategoryang ito.</a>"
+    },
+    "veteransSection": {
+      "header": "Dokumento para sa Beterano",
+      "body": "Para makakuha ng Designasyon ng Beterano para sa iyong card, kailangan mong magsumite ng nakumpletong <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>Veteran Status Verification</a> Form (VSD- 001). Maaaring makakuha ng VSD-001 mula sa iyong Opisina ng County Veteran Service. Salamat sa serbisyo mo!"
+    },
+    "permitRequirementsSection": {
+      "body": {
+        "header": "Mga kinakailangan ng bagong nagmamaheno",
+        "needListHeader": "Upang makakuha ng pansamantalang permiso sa pagmamaneho kinakailangang makakita ng 1 sa mga sumusunod:",
+        "needListItems": [
+          "Sertipikasyon ng Pagkumpleto ng California Driver Education (silid-aralan) o",
+          "Sertipikasyon ng Pagkumpleto ng California Driver Education at Pagsasanay sa Pagmamaneho o",
+          "Sertipikasyton ng Enrollment sa California Integrated Driver Education at Programa ng Pagsasanay sa Pagmamaneho."
+        ],
+        "provisionalExplanation": "Kinakailangan mong mag-apply para sa pansamantalang permiso sa pagmamaneho.",
+        "knowledgeTest": "Kinakailangan mong kumuha ng pagsusulit sa iyong kaalaman.",
+        "testAdvice": "Iminumunkahi namin na pag-aralan ang <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Handbook ng Pagmamaneho</a> at <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>subukan ang ilang pagsasanay sa pagsusulit</a> bago ka bumisita.",
+        "FAQHaveAnotherState": {
+          "title": "Mayroon ng permiso o sertipikasyon sa pagsasanay mula sa ibang estado?",
+          "body": {
+            "proofListHeader": "Kailangan mo ang <b>1</b> ilan sa mga sumusunod:",
+            "proofListItems": [
+              "Katunayan na nakumpleto mo ang kurso sa Kasanayan/Pag-aaral sa Pagmamaneho na katumbas sa sekondaryang kurso sa eskuwelahan ng California.",
+              "Nakumpletong form ng DL 33. Kumuha ng form mula sa iyong lokal na DMV office o tumawag sa DMV sa 1-800-777-0133. Ipadala ang DL 33 na form sa iyong labas-sa-estado na sekondraryang eskuwelahan para makumpleto."
+            ],
+            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Pag-aralan ang mga Kinakailangan para sa Edukasyon para sa Pagmamaneho at ang Form ng Pagsasanay sa Pagmamaneho para makakuha pa ng mas maraming impormasyon. </a>",
+            "juniorPermitNote": "Tandaan na bilang menor de edad, hindi namin maaaring direktang ilipat ang mga lisensiya na \"probationary\", o \"provisional\", o \"junior\", na mga permiso sa pagmamaneho, o tumanggap ng mga sertipikasyon sa pagsasanay na mula sa ibang estado."
+          }
+        }
+      }
+    },
+    "newCaliforniaYouthDLSection": {
+      "header": "Mga bagong kinakailangan sa pagmamaneho sa California",
+      "body": {
+        "openingExplanation": "Nakikita namin na nagkaroon ka na ng lisensiya sa pagmamaneho mula sa ibang estado. <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>Ang mga batas sa Californa para sa mga nagmamanehong edad 16 hanggang 18</a> ay maaaring iba sa ibang mga estado.",
+        "knowledgeTest": "Bilang bagong nagmamaneho sa California, nararapat kang pumasa sa pagsusulit sa kaalaman.",
+        "juniorPermitNote": "Bilang menor de edad, hindi namin maaaring direktang ilipat ang kahit anong lisensiyang nagsasabi na \"probationary\", o \"provisional\", o \"junior\".",
+        "provisionalProcess": "<b>Ang mga nagmamaneho ng mas bata sa 18 taong gulang sa California ay dapat mag-apply ng pansamantalang permiso. </b> Pagkatapos ng anim na buwan ikaw ay maaari ng kumuha ng pansamantalang lisensiya sa pagmamaneho.",
+        "FAQWillIneedToTakeTest": {
+          "title": "Kailangan ko bang kumuha ng pagsusulit sa pagmamaneho?",
+          "listHeader": "Maaari lang naming ipaubaya ang pagsusulit sa pagmamaneho kung ikaw ay:",
+          "listItems": [
+            "May hawak na lisensiya sa pagmamaneho mula sa ibang estado sa labas ng California <b><em>and</em></b>",
+            "Matagumpay na nakumpleto ang kurso ng pagmamaneho sa isang kwalipikadong sekondaryang eskuwelahan <b><em>at</em></b>",
+            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Maaaring beripikahin na matagumpay na nakumpleto ang kurso</a>"
+          ]
+        }
+      }
+    },
+    "newCaliforniaDLSection": {
+      "body": {
+        "explanation": "Bilang bagong nagmamaneho sa California, nararapat kang pumasa sa pagsusulit sa kaalaman.",
+        "permitProcess": "Pagkatapos makumpleto ang pagsusulit sa kaalaman, makakakuha ka ng permiso. Nararapat kang kumuha ng pagsusulit sa pagmamaneho.",
+        "waiverCanProcess": "<b>Maaari naming ipaubaya ang pagsusulit sa pagmamaneho kung ikaw ay: </b> dati ng nabigyan ng lisensiya.",
+        "waiverMayProcess": "<b>Maaari naming ipaubaya ang pagsusulit sa pagmamaneho kung ikaw ay: </b> mayroon kang balidong lisensiya sa pagmamaneho mula sa ibang estado."
+      }
+    },
+    "adultMotorcycleSection": {
+      "header": "Mga kailangan para sa motorsiklo/scooter",
+      "body": {
+        "explanation": "Upang makakuha ng lisensiya para sa motorsiklo o scooter, nararapat kang pumasa sa pagsusulit sa kaalaman ng motorsiklo. Pag-aralan ang <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>handbook ng California Motorcycle</a>.",
+        "waiverProcess": "<b>Maaari naming ipaubaya ang pagsusulit sa pagmamaneho kung ikaw ay: </b> mayroong <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion ng Motorcycle Training (DL 389) form</a> mula sa California Motorcyclist Safety Program ng CHP. Ang nagtuturo ng kurso ay magbibigay ng form na ito pagkatapos ng matagumpay na pagkumpleto ng kurso."
+      }
+    },
+    "youthMotorcycleSection": {
+      "body": {
+        "under21Message": "Dahil ikaw ay mas bata sa 21 kailangan <b>mong</b> magkaroon ng<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>form ng Sertipikasyon ng Pagkumpleto ng Pagsasanay sa Motorsiklo (DL 389) </a> mula sa California Motorcyclist Safety Program ng CHP bago magpunta sa DMV. Ang nagtuturo ng kurso ay magbibigay ng form na ito pagkatapos ng matagumpay na pagkumpleto ng kurso.",
+        "onCompletion": "Pagkatapos mong makumpleto ang kurso, kailangan mong maghawak ng permiso sa loob ng 6 na buwan upang makuha ang iyong lisensiya."
+      }
+    },
+    "motorcylcleOtherStateSection": {
+      "body": {
+        "waiverProcess": "<b>Maaari naming ipagpaubaya ang pagsusulit sa pagmamaneho kung ikaw ay: </b>may balidong lisensiya sa motorsiklo mula sa ibang estado o kung ikaw ay mayroong<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Sertipiko sa Pagkumpleto ng Pagsasanay sa Motorsiklo (DL 389) form</a> mula sa California Motorcyclist Safety Program ng CHP."
+      }
+    },
+    "additionalMotorcycleTestingSection": {
+      "header": "Mga karagdagang kinakailangan sa pagsusulit",
+      "body": "Sa California, upang makatanggap ng lisensiya sa motorsiklo o scooter, <b>nararapat kang pumasa ng pangunahing lisensiya sa pagmamaneho na pagsusulit sa kaalaman</b>. Iminumunkahi namin na pag-aralan ang <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Handbook ng Pagmamaneho</a> at <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>subukan ang ilang pagsasanay sa pagsusulit</a> bago ka bumisita."
+    },
+    "nonCommercialASection": {
+      "header": "Mga kailangan para sa Non-Commercial Class A",
+      "body": {
+        "healthQuestionnaire": "Upang makakuha ng permiso para sa Non-Commercial Class A, kailangan mong magsumite ng balidong <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>Health Questionnaire (DL 546). </a>",
+        "knowledgeTest": "Ang <b>Recreational Vehicles at Non-Commercial Class A Trailers</b> na pagsusulit ay kinakailangan din. Minumunkahi namin na pag-aralan ang handbook ng California's RV & Trailers ng una bago ang iyong pagsusulit.",
+        "afterPassingExam": "Kapag nakapasa sa pagsusulit, ikaw way mabibigyan ng permiso. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>Ang DMV website</a> ay nagbibigay ng impormasyon sa kung anong kailangan para makuha ang iyong buong lisensiya."
+      }
+    },
+    "nonCommercialBSection": {
+      "header": "Mga kailangan para sa Non-Commercial Class B",
+      "body": {
+        "healthQuestionnaire": "Upang makakuha ng Non-Commercial Class B na permiso, kailangan mong magsumite ng balidong <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>Health Questionnaire (DL 546A)</a> na pirmado ng iyong doctor.",
+        "houseCarTest": "Ang <b>45' pagsusulit sa kaalaman sa Housecar knowledge</b> kinakailangan din. Minumunkahi naming pag-aralan ang <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>handbook ng California's RV & Trailers </a> ng una sa iyong pagsusulit."
+      }
+    },
+    "firefighterEndorsementSection": {
+      "header": "Pag-endorso ng bumbero",
+      "body": {
+        "testRequirements": "Upang makakuha ng endorso <b>ng Bumbero </b> kailangan mong kumuha at makapasa ng</b>pagsusulit ng kaalaman.",
+        "otherRequirements": "Kailangan mong magsumite ng balidong <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>Health Questionnaire (DL 546)</a>at ng <b>Orihinal na Firefighter Employment at Training Verification na ulat/b> na umaayon sa mga sumusunod na tuntunin:",
+        "otherRequirementsValues": [
+          "Dapat nasa letterhed ng departamento ng bumbero",
+          "Nagpapatunay na ang kasalukuyang trabaho bilang bumbero o patunay na rehistro bilang volunteer na bumbero",
+          "Nagpapatunay na nakumpleto ang pagsasanay sa pagpapaandar ng mga kagamitan ng bumbero",
+          "Pirmado ng hepe ng mga bumbero o hinirang"
+        ]
+      }
+    },
+    "sexChangeSection": {
+      "header": "Pagpapalit ng uri",
+      "body": "<p>Upang magawa ang pagbabagong ito, kailangang magdala ng<a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Medical Certification at Authorization Form (DL 329)</a> na nakumpleto at napirmahan ng iyong doktor o psychologist. </p><p> Kailangan mo ring dalhin ang yong<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>dokumento sa pagpapalit ng pangalan</a> na naglalaman ng iyong totoong buong pangalan (una, gitna, huli) parehong dati at pagkatapos ng iyong pagpapalit ng pangalan.</p>"
+    },
+    "nameChangeSection": {
+      "header": "Mga Pagbabago sa Pangalan",
+      "body": "<p>Upang mapakita ang pagbabago ng iyong pangalan sa iyong(mga) card, dapat mo munang palitan sa iyong lokal na<a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>opisina ng Social Security Administration</a>. </p><p> Nararapat mo ring dalhin ang iyong<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>dokumento sa pagpapalit ng pangalan</a> na may totoong buong pangalan (una, gitna, huli) parehong<em>bago</em> at <em>pagkatapos</em> ng pagapaplit ng pangalan.</p>"
+    },
+    "reducedFeeSection": {
+      "header": "Para makakuha ng mas mababang bayarin",
+      "body": "Sa wakas, kinakailangan natin ng Reduced Fee Identification Card Eligibility Verification (DL 389) form. Ang DMV ay hindi nagbibigay ng form na ito. Kung nakakuha ka ng tulong sa pamamagtian ng pamahalaan o non-profit, kausapin sila tungkol sa pagkuha ng form."
+    },
+    "noFeeSection": {
+      "header": "Para makakuha ng walang bayad",
+      "body": "Sa wakas, kailangan namin ng No Fee Identification Card Eligibility Verification (DL 933) form. Ang DMV ay hindi nagbibigay ng form na ito. Kung nakakuha ka ng tulong sa pamamagtian ng pamahalaan o non-profit, kausapin sila tungkol sa pagkuha ng form."
+    }
+  },
+  "beforeIntro": {
+    "chooseDLorCDLPage": {
+      "prompt": "Ano ang sadya mo dito?",
+      "answerIDorDL": "ID o lisensiya sa pagmamaneho",
+      "answerCDL": "Komersyal na lisensiya sa pagmamaneho",
+      "FAQdontKnowIfIneedCommercial": {
+        "title": "Hindi ko alam kung kailangan ko ng isang komersyal na lisensiya sa pagmamaneho",
+        "body": {
+          "youWillNeedIf": {
+            "header": "Kailangan mo ng isang CDL kung plano mong  magpatakbo ang isang sasakyan na:",
+            "values": [
+              "May lubos na timbang ng sasakyan na rating (GVWR) na 26,001+ pounds.",
+              "Ito ay dinisenyo, ginamit, o pinananatili para sa pagkarga ng higit pa kaysa sa 10 mga tao, kabilang ang driver.",
+              "Humahatak ng isang sasakyan o trailer na kung saan ay isang GVWR ng 10,001+ pounds.",
+              "Nagdadala ng mapanganib na mga materyales na kung saan ay nangangailangan ng mga placards.",
+              "Naghahatak ng anumang kumbinasyon ng dalawang mga trailer o isang sasakyan at trailer."
+            ]
+          },
+          "youWontNeedIf": {
+            "header": "Hindi mo na kailangan ng CDL kung ikaw lamang ay magmamaneho ng:",
+            "values": [
+              "Panlibangang sasakyan (5th wheel na paglalakbay na trailer at motor homes)",
+              "Kagamitan na pampatay ng sunog.",
+              "Class C na tagapaglakbay ng agrikultura ng mga mapanganib na materyales.",
+              "Kagawaran ng Depensa ng mga empleyado naka-uniporme at nagmamaneho ng Kagawaran ng Depensa ng mga sasakyan.",
+              "Mga ilang mga sasakyan sa Bukid."
+            ]
+          },
+          "seeDMV": "Ang detalyadong impormasyon ay makukuha sa dmv.ca.gov"
+        }
+      }
+    },
+    "whatYouCanDoPage": {
+      "prompt": "Sa website na ito, maaari mong:",
+      "whatYouCanDoItems": [
+        "<b>Mag-apply</b> para sa isang lisensiya sa pagmamaneho o ID card.",
+        "<b>i-Renew o palitan ang</b> ang iyong card.",
+        "<b>Iwasto o i-update ang</b> ang iyong card."
+      ],
+      "requiredDocuments": "Pagkatapos mong isumite ang application na ito, kami ay magbibigay sa iyo ng isang listahan ng mga kinakailangang dokumento. Dapat kang pumunta sa isang tanggapan ng DMV na may mga dokumento upang tapusin ang iyong application.",
+      "doNotUseIf": {
+        "header": "Huwag gamitin ang application na ito kung:",
+        "values": [
+          "Wala kang email address at numero ng telepono. Ang mga ito ay kinakailangan upang punan ang mga ito mula sa bahay. q`",
+          "Ikaw ay nasa isang programa na kumpidensyal ang address o sa Ligtas na Tahanan."
+        ],
+        "instead": "Sa halip, <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>gumawa ng isang appointment</a> upang bisitahin ang iyong lokal na tanggapan ng DMV."
+      }
+    },
+    "whatYouCanDoPageCDL": {
+      "whatYouCanDoItems": [
+        "<b>Mag-apply</b> para sa komersyal na lisensiya sa pagmamaneho (CDL).",
+        "<b>I-renew o palitan ang</b> ang iyong CDL.",
+        "<b>Iwasto i-update ang</b> ang iyong CDL"
+      ],
+      "doNotUseIf": {
+        "values": [
+          "Wala kang email address at numero ng telepono. Ang mga ito ay kinakailangan upang punan ang mga ito mula sa bahay.",
+          "Gusto mo lamang ng isang Ambulansiya, VTT, o HAM na sertipiko para sa iyong CDL.",
+          "Ikaw ay nasa isang programa na kumpidensyal ang address o sa Ligtas na Tahanan."
+        ]
+      },
+      "FAQDoSomethingElse": {
+        "title": "Kailangan kong gumawa ng iba pa",
+        "body": {
+          "header": "<b>Hindi</b> mo maaaring gamitin ang application na ito sa:",
+          "listItems": [
+            "Mag-update ng iyong medikal na sertipiko",
+            "Mag-update ng iyong Sariling Sertipiko",
+            "Kumuha ng mga kopya ng iyong mga rekord sa pagmamaneho",
+            "Mag-ulat ng aksidente",
+            "Magpa-schedule ng pagsusulit sa pagmamaneho"
+          ],
+          "instead": "Bumisita sa website ng DMV upang gawin ang mga ito."
+        }
+      }
+    },
+    "idMePage": {
+      "prompt": "Ang DMV ay nakikipagtulungan sa ID.me upang protektahan ang iyong digital na pagkakakilanlan.",
+      "buttonCreateAccount": "Gumawa ng ID.me na account",
+      "or": "O",
+      "buttonSignIn": "Magsign-in sa ID.me account",
+      "emailRequired": "<b>Ang email address at numero ng telepono ay kinakailangan. </b> Maaaring bumisita sa opisina ng DMV kung hindi mo nais maglikha ng ID. me na account",
+      "legalIdentity": "<b>Ang ID.me ay tumutulong upang patunayan ang iyong legal na pagkakakilanlan.</b> Ang DMV ng California ay nakipagtulungan sa ID. me upang siguruhin na ang iyong personal na impormasyon ay wasto at may seguridad.",
+      "dmvPartnering": "Ang DMV ng California ay piniling makipagtulungan sa ID. me dahil ito ay pumasa sa mahigpit na seguridad ng pagpapatunay ng pagkakakilanlan.",
+      "learnMore": "<a href='https://www.id.me'>Para sa karagdagang impormasyon, pumunta sa ID.me.</a>"
+    },
+    "idMeReturnPage": {
+      "welcomeBack": "Maligayang pagbalik.",
+      "youHaveSomeUnfinishedApps": "Mayroon kang hindi natapos na mga aplikasyon.",
+      "youCanStartNewApp": "Maaari karing magsimula ng panibagong aplikasyon.",
+      "applyingDL": "Pag-apply ng lisensiya sa pagmamaneho",
+      "applyingID": "Pag-apply para sa ID card",
+      "applyingBoth": "Pag-apply para sa lisensiya sa pagmamaneho at ng ID card",
+      "applyingCDL": "Pag-apply para sa lisensiya ng komersyal na pagmamaneho",
+      "percentComplete": "% kumpleto",
+      "newApplication": "Bagong aplikasyon",
+      "delete": "Alisin"
+    },
+    "idMeNoAuthPage": {
+      "prompt": "Hindi namin makuha ang iyong account.",
+      "wantToTryAgain": "Gusto mong subukang muli?",
+      "comeToDMVoffice": "Kung hindi maka-sign in o ayaw gumamit ng ID. me, kailangan mong magkumpleto ng aplikasyon sa DMV field opisina. Gumawa ng appointment para mapabilis ang serbisyo."
+    }
+  },
+  "cdl": {
+    "dateOfBirthPage": {
+      "under21Message": "Ang mga aplikante na 21 ang edad o mas bata ay hindi pinapayagang makisali sa komersyo sa ibang estado o magdala ng mapanganib na materyales."
+    },
+    "wdywtdtPage": {
+      "values": [
+        "Kumuha ng California CDL para sa unang pagkakataon",
+        "I-renew ang aking CDL",
+        "Itama o i-update ang aking CDL",
+        "Palitan ang aking CDL"
+      ]
+    },
+    "currentCardInformationPage": {
+      "prompt": "Kung alam mo ito, <b>maaaring ilagay ang iyong  numero ng California CDL</b>.",
+      "explanation": "Ang numero mo ay mahahanap sa itaas ng iyong CDL na nagsimula sa letra.",
+      "cdlNumberLabel": "Numero ng CDL"
+    },
+    "correctOrUpdatePage": {
+      "explanation": "Hindi mo maaaring i-update ang iyong sertipikasyon na medikal gamit ang form na ito.",
+      "values": [
+        "Itama ang aking CDL",
+        "I-update ang aking CDL"
+      ]
+    },
+    "californiaResidentPage": {
+      "prompt": "Ikaw ba ay residente ng California?",
+      "infoMessageNo": {
+        "header": "Patawad, hindi ka kwalipikado para sa CDL ng California sa ngayon.",
+        "explanation": "Ikaw ay nararapat na residente ng California upang mag-apply."
+      }
+    },
+    "addressPage": {
+      "doYouGetMailingHereExplanation": "Ipi-print ng DMV ang address mo sa koreo sa iyong CDL. Ipapadala din ang iyong CDL sa iyong address sa koreo."
+    },
+    "socialSecurityPage": {
+      "noMessage": {
+        "header": "Patawad, hindi ka kwalipikado para sa CDL ng California sa ngayon.",
+        "explanation": "Ang mga Nagmamaneho na Pangkomersyo ay nararapat na may Social Security Number at kinakailangan bilang patunay sa pag-apply. Parehong ang US citizens at mga hindi citizen na residente na may legal na presensya ay maaaring makakuha ng Social Security Number. Tumawag sa Social Security Administration para sa impormasyon."
+      }
+    },
+    "caDlPage": {
+      "prompt": "Mayroon kabang lisensiya sa pagmamaneho sa California ngayon?",
+      "noMessage": "Upang makakuha ng Permiso sa Pag-aaral ng Pangkomersyo, kinakailangan mong pumasa muna sa pagsusulit sa kaalaman at pagmamaneho para sa pangunahing (Hindi Pangkomersyo na Class C) lisensiya sa pagmamaneho.",
+      "yesSection": {
+        "prompt": "Maaaring sabihin sa amin ang iyong kasalukuyang lisensiya sa pagmamaneho.",
+        "explanation": "Kinakailangan namin ng kumpletong kasysayan ng lisensiya sa huling bahagi ng aplikasyon.",
+        "dlNumberLabel": "Numero ng lisensiya sa pagmamaneho",
+        "issuedInLabel": "Ibinigay sa",
+        "messageBody": "Upang makuha ang iyong Commercial Learner's Permit (CLP), kinakailangan mong kumuha ng lisensiya sa pagmamaneho na California Non-Commercial Class C.  Para magawa ito, kinakailangan mong makapasa sa pagsusulit sa kaalaman ng Non-Commercial Class C.",
+        "expiredMessage": {
+          "header": "Nakikita namin na ang iyong lisensiya sa pagmamaneho ay paso na."
+        },
+        "nonCaliforniaMessage": {
+          "header": "Nakikita namin na ang iyong lisensiya sa pagmamaneho ay hindi mula sa California."
+        }
+      }
+    },
+    "licenseClassPage": {
+      "prompt": "Anong klase ng lisensiya sa pangkomersyong pagmamaneho ang kailangan mo?",
+      "values": [
+        "Class A",
+        "Class B",
+        "Class C"
+      ],
+      "youMayDrive": "Maaari kang magmaneho ng:",
+      "youMayTow": "Maaari kang humila ng:",
+      "classA": {
+        "header": "Na may Commercial Class A",
+        "driveItems": [
+          "Kahit na anong legal na <em>iba't ibang</em> sasakyan, kasama ang mga sasakyan sa ilalim ng Class B at Class C"
+        ],
+        "towItems": [
+          "Lahat ng sasakyan na pwedeng hilahin ng may lisensiya na Class B at Class C",
+          "Kahit na anong isang sasakyan na may GVWR na higit sa 10,000 pounds",
+          "Kahit na anong bus na trailer, na may endorso O higit sa 1 sasakyan, na may endorso"
+        ]
+      },
+      "FAQNotSureWhatClass": {
+        "title": "Hindi ko sigurado kung anong klase ang kailangan ko",
+        "classC": {
+          "header": "Na may Commercial Class C",
+          "driveItems": [
+            "Kahit na anong sasakyan na may 2-axle at GVWR na 26,000 pounds o mas mababa, o kahit anong sasakyan na may 3-axle na may timbang na 6,000 pounds o higit, na nagbubuhat ng mga mapanganib na materyales (HazMat) na kailangan ng plakard.  Ito ay kumakailangan ng pag-endorso ng HazMat.",
+            "Kahit na anong bus o pampasaherong sasakyan na may GCWR na 26,000 pounds o mas mababa, nakadisenyo, ginagamit, o pinapanatili na magbuhat ng higit sa 10 tao, kasama ang nagmamaneho. Ito ay kumakailangan ng pag-endorso ng pasahero.",
+            "Kahit na anong sasakyan na pinapayagan sa ilalim ng lisensiyang Non-Commercial Class C."
+          ],
+          "explanation": "Maaari mong hilahin ang kahit na anong sasakyan sa ilalim ng lisensiyang Non-Commercial Class C."
+        },
+        "classB": {
+          "header": "Na may Commercial Class B",
+          "driveItems": [
+            "Lahat ng sasakyang maaaring imaneho ng may Commercial Class C na lisensiya.",
+            "Ang sasakyan na may 2-axle na may timbang na higit sa 26,000 pounds.",
+            "Ang sasakyan na may 3-axle na may timbang na higit sa 6,000 pounds.",
+            "Isang bus (maliban sa trailer na bus). Ito ay kumakailangan ng pag-endorso ng pasahero.",
+            "Kahit na anong sasakyan para sa pagsasaka, na may endorso"
+          ],
+          "towItems": [
+            "Isang sasakyang may GVWR na 10,000 pounds o mas mababa",
+            "Lahat ng sasakayn na pwedeng hilahin ng may lisensiya na Commercial Class C"
+          ]
+        }
+      }
+    },
+    "endorsmentsPage": {
+      "prompt": "Kailangan mo ba ng kahit na anong endorso sa iyong CDL?",
+      "whichSection": {
+        "prompt": "Alin?",
+        "values": {
+          "T": "Mga kombinasyon na Doble/Triple",
+          "N": "Tanke",
+          "P": "Pamapasaherong sasakyan",
+          "S": "School bus",
+          "H": "Mga markadong sasakyan na nagdadala ng mga mapanganib na materyales o basura",
+          "X": "Mga tanke na nagdadala ng mapapanganib na materyales o mga basura",
+          "F": "Pag-endorso ng Bumbero"
+        }
+      },
+      "certificationSection": {
+        "prompt": "Kailangan mo ba ang propesyonal na sertipiko mula sa DMV?",
+        "certifications": {
+          "prompt": "Maaari kang humiling ng mga sumusunod na sertipiko sa opisina ng DMV:",
+          "values": {
+            "transit": "Sertipiko ng Katibayan ng Pagsasanay ng Transit (VTT)",
+            "ambulance": "Sertipiko ng Nagmamaneho ng Ambulansiya",
+            "ham": "Sertipiko ng Hazardous Agricultural Materials (HAM)."
+          },
+          "FAQMissingCertifications": {
+            "title": "Kailangan ko ng sertipiko na hindi ko makita dito",
+            "body": {
+              "header": "Ang California Highway Patrol (CHP) ay responsable sa pagbigay ng mga sumusnod na propesyonal na sertipiko:",
+              "listItems": [
+                "General Public Paratransit Vehicle (GPPV)",
+                "Sertipiko para sa Nagmamaneho ng School Bus",
+                "Sertipiko para sa Bus ng School Pupil Activity",
+                "Sasakyan para sa mga Taong Developmentally Disabled",
+                "Sertipiko ng Sasakyang Pagsasaka",
+                "Sertipiko ng Nagmamaneho ng Truck na Panghila",
+                "Sertipiko para sa Bus ng mga Kabataan"
+              ],
+              "classCAddition": {
+                "passengerVehicle": "Ang <b>Verification of Transit Testing</b> na sertipiko ay nangangailangan ng <b>Passenger Vehicle</b> na pag-endorso.",
+                "fullEndorsment": "Buong klase, pag-endorso, at paglalarawan ng sertipiko ay makikita sa California’s <b>Commercial Driver Handbook</b>."
+              }
+            }
+          }
+        }
+      },
+      "FAQNotSure": {
+        "title": "Hidi ako sigurado",
+        "body": {
+          "header": "Kailangan mo ng pag-endorso kung plano mong magpatakbo ng komersyal na sasakyan na:",
+          "listItems": [
+            "Nagdadala ng higit sa 10 tao, kasama ang nagmamaneho.",
+            "Naghahatak ng mapanganib na materyales na kailangan ng plakard.",
+            "Naghahatak ng higit sa isang sasakyan o trailer.",
+            "Isang tanke."
+          ],
+          "explanation": "Buong klase, pag-endorso, at paglalarawan ng sertipiko at mga kailangan ay maaaring makita sa Handbook ng California’s Commercial Driver."
+        }
+      }
+    },
+    "motorcyclePage": {
+      "prompt": "Kailangan mo ba ng motorsiklo (Class M) sa iyong CDL?"
+    },
+    "startHerePage": {
+      "firstSentence": {
+        "toReview": "Para repasuhin:",
+        "values": {
+          "applyingClassA": "Ikaw ay nag-aaply para sa Class A na komersyal nalisensiya sa pagmamaneho.",
+          "applyingClassB": "Ikaw ay nag-aaply para sa Class B na komersyal na lisensiya sa pagmamaneho.",
+          "applyingClassC": "Ikaw ay nag-aaply para sa Class C na komersyal na lisensiya sa pagmamaneho.",
+          "renewingClassA": "Ikaw ay nag-rerenew ng iyong Class A na komersyal na lisensiya sa pagmamaneho.",
+          "renewingClassB": "Ikaw ay nag-rerenew ng iyong Class B na komersyal na lisensiya sa pagmamaneho.",
+          "renewingClassC": "Ikaw ay nag-rerenew ng iyong Class C na komersyal na lisensiya sa pagmamaneho.",
+          "updatingClassA": "Ikaw ay nag-uupdate ng iyong Class A na komersyal na lisensiya sa pagmamaneho.",
+          "updatingClassB": "Ikaw ay nag-uupdate ng iyong Class B na komersyal na lisensiya sa pagmamaneho.",
+          "updatingClassC": "Ikaw ay nag-uupdate ng iyong Class C na komersyal na lisensiya sa pagmamaneho.",
+          "correctingClassA": "Ikaw ay nagwawasto ng iyong Class A na komersyal na lisensiya sa pagmamaneho.",
+          "correctingClassB": "Ikaw ay nagwawasto ng iyong Class B na komersyal na lisensiya sa pagmamaneho.",
+          "correctingClassC": "Ikaw ay nagwawasto ng iyong Class C na komersyal na lisensiya sa pagmamaneho.",
+          "replacingClassA": "Ikaw ay nagpapalit ng iyong Class A na komersyal na lisensiya sa pagmamaneho.",
+          "replacingClassB": "Ikaw ay nagpapalit ng iyong Class B na komersyal na lisensiya sa pagmamaneho.",
+          "replacingClassC": "Ikaw ay nagpapalit ng iyong Class C na komersyal na lisensiya sa pagmamaneho."
+        }
+      },
+      "motorcycleSentence": "Nais mo ring magmaneho ng motorsiklo/scooter",
+      "endorsements": {
+        "header": "Kailangan mo ng mga sumusnod na (mga) pag-endorso:",
+        "values": {
+          "T": "Mga Doble/Triple",
+          "N": "Tanke",
+          "P": "Pamapasaherong sasakyan",
+          "S": "School bus",
+          "H": "HazMat (hazardous materials)",
+          "X": "Tanke/HazMat",
+          "F": "Bumbero"
+        }
+      },
+      "certificates": {
+        "header": "Nais mo ang (mga) sumusunod na sertipiko:",
+        "values": {
+          "ambulance": "Nagmamaneho ng ambulasya",
+          "ham": "HAM",
+          "transit": "Sertipiko ng Pagsasanay ng Transit (VTT)"
+        }
+      },
+      "realID": "Ang iyong CDL ay Susunod sa REAL ID.",
+      "fillOutNewApplication": {
+        "update": "Upang i-update ang iyong CDL, kailangan mong punan ang bagong aplikasyon.",
+        "correct": "Upang itama ang iyong CDL, kailangan mong punan ang bagong aplikasyon.",
+        "replace": "Upang palitan ang iyong CDL, kailangan mong punan ang bagong aplikasyon."
+      },
+      "sections": {
+        "header": "May anim na seksiyon ang aplikasyong ito:"
+      },
+      "timeStatement": "<p>Aabutin ng mga <b>10 minuto</b> para makumpleto. </p><p> Kapag tapos ka na, kailangan mong pumunta sa lokal niyong tanggapan ng DMV.</p>"
+    }
+  },
+  "SummaryPage": {
+    "MyCDL": "Ang CDL ko",
+    "CdlNumberLabel": "Numero ng CDL",
+    "typeOfDriving": "Tipo ng pagmamaneho",
+    "currentDlNumberLabel": "Kasalukuyang numero ng DL",
+    "licenseOutsideCAlabel": "lisensiya sa labas ng California"
+  },
   "confirmationPage": {
     "header": "Kumpirmasyon",
     "subHeader": "Natanggap namin ang impormasyon mo.",
@@ -152,6 +631,44 @@
     "endorsement": "Pakipili ng pag-endorso.",
     "cardTypeMissing": "Pakipili kung aling (mga) card ang gusto mo.",
     "choosePoliticalPartyNowSelectionMissing": "Pakisabi sa amin kung gusto mong pumili ng kagustuhan sa partidong politikal."
+  },
+  "footer": {
+    "accessibility": "Pagkakakatunton",
+    "conditionsOfUser": "Mga kondisyon sa paggamit",
+    "disabilityServices": "Mga serbisyo sa mga may kapansanan",
+    "help": "Tulong",
+    "home": "Home",
+    "privacy": "Polisiya ng Palihim",
+    "siteMap": "Site map",
+    "support": "Suportang Teknikal",
+    "copyright": "Copyright &copy; 2018 Estado ng California"
+  },
+  "header": {
+    "dlApplication": "Aplikasyon ng lisensiya sa pagmamaneho",
+    "idApplication": "Aplikasyon ng ID card",
+    "bothApplications": "Aplikasyon ng pagmamaneho at aplikasyon ng ID",
+    "cdlApplication": "Aplikasyon sa komersyal ng lisensiya sa pagmamaneho",
+    "Logout": "Log out"
+  },
+  "sections": {
+    "getStarted": "Magsimula",
+    "selfCertification": "Pagsertipikang pansarili",
+    "myHistory": "Aking kasaysayan",
+    "tenYearHistory": "Sampung taong kasaysayan",
+    "summary": "Buod",
+    "welcomeBack": "Maligayang pagbabalik"
+  },
+  "ageMessages": {
+    "notASenior": "Hindi kana maaaring kumuha ng libreng Senior ID card.",
+    "preregistration": "Ikaw ay magiging rehistrado para bumoto.",
+    "cdlAgeRestriction": "Ikaw ay dapat 18 taong gulang upang makapag-apply para sa komersyal na lisensiya sa pagmamaneho sa California."
+  },
+  "extras": {
+    "enterTextHere": "Ilagay ang text dito",
+    "notRegisteredToVoteMessage": "Kung pinili ay <em>Hindi</em> o <em>Hindi sasagot</em>, hindi ka magiging rehistrado para bumoto.",
+    "vetranRemoveMessage": "OK, aalisin namin",
+    "yourConfirmationCode": "Ang kumpirmasyong code mo ay:",
+    "confirmationAlsoEmailed": "Ito rin ay i-email sa iyo."
   },
   "intro": {
     "switchLanguagePage": {
@@ -532,6 +1049,31 @@
       "messageYes": "Salamat sa donasyon mo! Idaragdag namin ang $2 na ito sa kabuuan mong bayarin."
     }
   },
+  "parentGuardianSignaturePage": {
+    "Prompt": "Dahil ikaw ay mas bata sa 18, kailangan mo ng pirma ng magulang o taga-pangalaga.",
+    "explanation": "Kung mayroon kang mahigit sa isang magulang o tagapag-alagang may kustodiya, kapwa dapat parehong pumirma.",
+    "methodSection": {
+      "prompt": "Ano ang gusto mong gawin?",
+      "values": {
+        "electronically": "Ang aking (mga) magulang/taga-pangalaga ay pipirma ng elektroniko",
+        "atDMV": "Ang aking (mga) magulang/ taga-pangalaga ay pipirma sa DMV",
+        "emancipated": "Ako ay isang nagiisang menor"
+      }
+    },
+    "signatureSection": {
+      "explanation": "Ang iyong aplikasyon ay hindi kumpleto hanggang ang iyong (mga) magulang/tagapangalaga ay pumirma.",
+      "prompt": "Para kumpletuhin ng magulang/(mga) tagapangalaga:",
+      "liabilityStatement": "Tumatanggap ako/kami ng sibil na pananagutan para sa menor-de-edad na ito at nauunawaan na ang probisyonal na pahintulot na binigay sa menor-de-adad ay hindi balido hanggang magsimula siya ng pagsasanay ng driver.",
+      "electronicSignatureSection": {
+        "prompt": "Maaaring i-type ang iyong pangalan at ang petsa ngayon upang mapirmahan ng elektroniko.",
+        "nameLabel": "Buong legal na pangalan",
+        "dateLabel": "Petsa ngayon"
+      },
+      "weNeedBasicInfo": "Kailangan namin ng mga pagunahing impormasyon tunkol sa iyo.",
+      "addAnotherSigntature": "Magdagdag ng pirma ng magulang/tagapangalaga"
+    },
+    "emancipatedInfoMessage": "<b>Upang patunayan na ikaw ay nagiisang menor de edad</b>, dapat mong ideklara ang iyong pagiging nagiisa sa DL11 form<b>at</b> magbigay ng patunay ng iyong pinansiyal na responsibilidad <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>Para sa karagdagang kaalaman, tumungo sa DMV website.</a>"
+  },
   "shared": {
     "navigation": {
       "back": "Bumalik",
@@ -561,6 +1103,70 @@
     "summary": {
       "notProvided": "Hindi binigay",
       "none": "Wala"
+    }
+  },
+  "usStates": {
+    "label": "Estado",
+    "values": {
+      "AL": "Alabama",
+      "AK": "Alaska",
+      "AZ": "Arizona",
+      "AR": "Arkansas",
+      "CA": "California",
+      "CO": "Colorado",
+      "CT": "Connecticut",
+      "DE": "Delaware",
+      "DC": "District of Columbia",
+      "FL": "Florida",
+      "GA": "Georgia",
+      "HI": "Hawaii",
+      "ID": "Idaho",
+      "IL": "Illinois",
+      "IN": "Indiana",
+      "IA": "Iowa",
+      "KS": "Kansas",
+      "KY": "Kentucky",
+      "LA": "Louisiana",
+      "ME": "Maine",
+      "MD": "Maryland",
+      "MA": "Massachusetts",
+      "MI": "Michigan",
+      "MN": "Minnesota",
+      "MS": "Mississippi",
+      "MO": "Missouri",
+      "MT": "Montana",
+      "NE": "Nebraska",
+      "NV": "Nevada",
+      "NH": "New Hampshire",
+      "NJ": "New Jersey",
+      "NM": "New Mexico",
+      "NY": "New York",
+      "NC": "North Carolina",
+      "ND": "North Dakota",
+      "OH": "Ohio",
+      "OK": "Oklahoma",
+      "OR": "Oregon",
+      "PA": "Pennsylvania",
+      "RI": "Rhode Island",
+      "SC": "South Carolina",
+      "SD": "South Dakota",
+      "TN": "Tennessee",
+      "TX": "Texas",
+      "UT": "Utah",
+      "VT": "Vermont",
+      "VA": "Virginia",
+      "WA": "Washington",
+      "WV": "West Virginia",
+      "WI": "Wisconsin",
+      "WY": "Wyoming",
+      "AS": "American Samoa",
+      "GU": "Guam",
+      "MH": "Marshall Islands",
+      "FM": "Micronesia",
+      "MP": "Northern Marianas",
+      "PW": "Palau",
+      "PR": "Puerto Rico",
+      "VI": "Virgin Islands"
     }
   },
   "summaryPage": {
@@ -791,6 +1397,14 @@
     "preferencesUpdateIntroPage": {
       "pagePrompt": "Kasunod gusto naming mabilis na tiyakin na ang iyong pagpaparehistro bilang botante ay napapanahon.",
       "explanation": "Ito ay papalit sa iyong dating mga gusto bilang botante."
+    }
+  },
+  "sharedAdditions": {
+    "shared": {
+      "buttons": {
+        "exit": "Exit"
+      },
+      "contactDMV": "<p>Maaaring tumawag sa DMV kung may karagdagang katanungan. </p><p> Telepono: 1-800-777-0133 </p><p> Para sa mga hindi makarinig: TTY 1-800-368-4327</p>"
     }
   }
 }
