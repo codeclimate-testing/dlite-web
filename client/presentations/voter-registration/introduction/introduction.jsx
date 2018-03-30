@@ -19,10 +19,6 @@ const VoterIntro = (props) => {
         translationPath   = 'votingRegistration.introductionPage.explanation'
       />
 
-      <Translator
-        tag               = 'p'
-        translationPath   = 'votingRegistration.introductionPage.timeItWillTake'
-      />
     </div>
   );
 };
