@@ -19,6 +19,10 @@ const store = createStore(
 
 const history = createBrowserHistory();
 
+history.listen( () => {
+  window.scrollTo(0, 0)
+});
+
 class App extends React.Component {
   constructor() {
     super();
