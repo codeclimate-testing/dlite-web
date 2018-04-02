@@ -15,7 +15,7 @@ const Page = (props) => {
 
   let appName = getAppType(props);
 
-  if (APP_ENV === 'test') {
+  if (APP_ENV === 'test' || APP_ENV === 'development') {
     buildAppName(appName);
   }
 

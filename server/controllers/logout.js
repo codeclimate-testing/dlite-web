@@ -7,7 +7,7 @@ const logout = (req, res) => {
   req.session.destroy();
   res.cookie('isLoggedIn', false);
 
-  res.redirect('/apply/'+appName+'/sign-in');
+  res.redirect(`/apply/${appName}/sign-in`);
 };
 
 module.exports = logout;

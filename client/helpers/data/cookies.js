@@ -15,8 +15,7 @@ export const buildLoggedIn = () => {
 };
 
 export const buildLoggedOut = () => {
-  document.cookie = 'isLoggedIn=false;path=/';
-  return fetch('/apply/log-out');
+  return document.cookie = 'isLoggedIn=false;path=/';
 };
 
 export const getLoggedIn = () => {
