@@ -2,14 +2,12 @@
 
 import React from 'react';
 
-import ElectronicSignature    from './guardian-electronic-signature.jsx';
-import GuardianContact        from './guardian-contact.jsx';
-import Accordion              from '../../../containers/accordion.jsx';
-import MessageBox             from '../../message-box.jsx';
-import {
-  guardianHasValue,
-  guardianSigned
-}     from '../../../helpers/data/youth';
+import ElectronicSignature                  from './guardian-electronic-signature.jsx';
+import GuardianContact                      from './guardian-contact.jsx';
+import Accordion                            from '../../../containers/accordion.jsx';
+import MessageBox                           from '../../message-box.jsx';
+import { guardianSignsElectronically }      from '../../../helpers/data/youth';
+import Translator                           from '../../../i18n/translator-tag.jsx';
 
 const validationsFor = (props, i) => {
   const signature = {
@@ -36,7 +34,11 @@ const GuardianDetail = (props) => {
   return(
     <div>
       <hr/>
-      <h2 className='question'>For the parent/guardian to complete:</h2>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'For the parent/guardian to complete:'
+      />
       <ElectronicSignature
         {...props}
         onChange    = {props.onSignatureFirstChange}
@@ -52,8 +54,7 @@ const GuardianDetail = (props) => {
 };
 
 const SignatureDetails = (props) => {
-  if (!guardianHasValue(props)) { return null; }
-//TODO: Translation key
+  if (!guardianSignsElectronically(props)) { return null; }
   return (
     <div className='guardian-details-form'>
       <GuardianDetail

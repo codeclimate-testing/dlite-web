@@ -1,10 +1,11 @@
 'use strict';
 
-import errorMessages        from '../../presentations/error-messages';
-import selectionValidator   from './selection-validator';
-import { dateValidator }    from './date-validator';
-import { hasValue }         from '../data/validations';
-import { englishValidator } from './english-validator';
+import errorMessages                    from '../../presentations/error-messages';
+import selectionValidator               from './selection-validator';
+import { dateValidator }                from './date-validator';
+import { hasValue }                     from '../data/validations';
+import { englishValidator }             from './english-validator';
+import { guardianSignsElectronically }  from '../data/youth';
 
 const validateDate = (props, name) => {
   let errors = selectionValidator('invalidOrMissingDate', name)(props);
@@ -28,113 +29,127 @@ const isSigned = (props) => {
 };
 
 const acceptLiabilities_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].acceptLiabilities;
   return validateHasValue(value, 'errorMessages.liabilityAcceptanceMissing');
 };
 
 const name_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].signature.name;
   return validateHasValue(value, 'errorMessages.parentNameMissing');
 };
 
 const month_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[0].signature, 'month');
 };
 
 const day_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[0].signature, 'day');
 };
 
 const year_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[0].signature, 'year');
 };
 
 const phoneNumber_0 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].phoneNumber;
   return englishValidator(value);
 };
 
 const guardian_0Street_1 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].address.street_1;
   return englishValidator(value);
 };
 
 const guardian_0Street_2 = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].address.street_2;
   return englishValidator(value);
 };
 
 const guardian_0City = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].address.city;
   return englishValidator(value);
 };
 
 const guardian_0Zip = (props) => {
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[0].address.zip;
   return englishValidator(value);
 };
 
 const acceptLiabilities_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].acceptLiabilities;
   return validateHasValue(value, 'errorMessages.liabilityAcceptanceMissing');
 };
 
 const name_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].signature.name;
   return validateHasValue(value, 'errorMessages.parentNameMissing');
 };
 
 const month_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[1].signature, 'month');
 };
 
 const day_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[1].signature, 'day');
 };
 
 const year_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   return validateDate(props.guardianSignature.guardianInfo[1].signature, 'year');
 };
 
 const phoneNumber_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].phoneNumber;
   return englishValidator(value);
 };
 
 const guardian_1Street_1 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].address.street_1;
   return englishValidator(value);
 };
 
 const guardian_1Street_2 = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].address.street_2;
   return englishValidator(value);
 };
 
 const guardian_1City = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].address.city;
   return englishValidator(value);
 };
 
 const guardian_1Zip = (props) => {
   if(!props.accordions.includes('guardian-signature-add')) { return []; }
+  if(!guardianSignsElectronically(props)) { return []; }
   let value = props.guardianSignature.guardianInfo[1].address.zip;
   return englishValidator(value);
-};
-
-const number_1 = (props) => {
-  if(!props.accordions.includes('guardian-signature-add')) { return []; }
-  let value = props.guardianSignature.guardianInfo[1].ID.number;
-  return validateHasValue(value, 'errorMessages.identityDocumentationMissing');
 };
 
 export default {

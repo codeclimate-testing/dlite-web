@@ -12,10 +12,11 @@ import {
   errorMessage,
   errorClass
 } from '../../validations.jsx';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const ElectronicSignature = (props) => {
+
   const guardianID = props.guardianID;
-  const acceptLiabilityText = 'I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.';
 
   let dateErrorMessage = errorMessage(props.validations.date);
   let addDateErrorClass = errorClass(dateErrorMessage);
@@ -47,12 +48,17 @@ const ElectronicSignature = (props) => {
             name      = { liabilityID }
             value     = { liabilityID }
             selected  = { props.guardianSignature.guardianInfo[guardianID].acceptLiabilities }
-            text      = { acceptLiabilityText }
             error     = { hasValue(props.validations.acceptLiabilityErrors) }
             onBlur    = { props.onCheckboxBlur }
             onFocus   = { props.onCheckboxFocus}
             className = 't-size-1-1'
-          />
+          >
+            <Translator
+              tag             = 'span'
+              className       = 'translation-missing'
+              translationPath = 'I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.'
+            />
+          </CheckboxSelector>
         </fieldset>
         <ErrorLabel
           errorClass    = { acceptLiabilityErrorClass }

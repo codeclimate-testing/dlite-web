@@ -52,6 +52,10 @@ export const guardianHasValue = (props) => {
   return hasValue(props.guardianSignature.isSigned);
 };
 
+export const guardianSignsElectronically = (props) => {
+  return props.guardianSignature.isSigned === 'signElectronically';
+}
+
 export const secondGuardian = (props) => {
   return props.guardianSignature.guardianInfo[1].acceptLiabilities;
 }

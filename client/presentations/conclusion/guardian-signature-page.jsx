@@ -14,10 +14,8 @@ const Form = (props) => {
       pageTitle='Summary of my application'
     >
       <form onSubmit={props.onSubmit} className='guardian-signature-form'>
-        <SignatureChoice
-          {...props}
-          selectedValue={props.guardianSignature.isSigned}
-        />
+
+        <SignatureChoice {...props} />
 
         <GuardianDetails {...props} />
 
