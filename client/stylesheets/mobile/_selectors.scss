@@ -197,7 +197,7 @@
       }
       &.selected{
         .radio-selector .icon-region{
-          background-image: url("/images/icons/selectors/radioDark.svg");
+          background-image: url("/images/icons/selectors/radioLight.svg"), linear-gradient(#282D1E, #927622);;
         }
       }
     }
@@ -305,7 +305,7 @@
       }
       &.selected{
         .radio-selector .icon-region{
-          background-image: url("/images/icons/selectors/radioDark.svg");
+          background-image: url("/images/icons/selectors/radioLight.svg"), linear-gradient(#03B9D9, #6F06D5);;
         }
       }
     }
