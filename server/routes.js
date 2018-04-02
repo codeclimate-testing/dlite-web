@@ -9,9 +9,12 @@ const routes = (passport) => {
   router.post('/api/application',         controllers.postApplication);
   router.get( '/api/translation/:code',   controllers.getTranslation);
 
-  router.get( '/auth/new',                controllers.authNew(passport));
+  router.get( '/auth/new/:appName',       controllers.saveAppName,
+                                          controllers.authNew(passport));
+
   router.get( '/auth/oauth/callback',     controllers.authCallback(passport),
                                           controllers.authSuccess);
+
   router.get( '/auth/error',              controllers.authError);
 
   router.get( '/apply/log-out',           controllers.logout);

@@ -6,6 +6,7 @@ const getTranslation    = require('./get-translation');
 const renderClient      = require('./render-client');
 const logout            = require('./logout');
 const sendZip           = require('./send-zip');
+const saveAppName       = require('./save-app-name');
 
 let controllers = {
   getApplication,
@@ -13,7 +14,8 @@ let controllers = {
   getTranslation,
   renderClient,
   logout,
-  sendZip
+  sendZip,
+  saveAppName
 };
 
 const auth = require('./auth');

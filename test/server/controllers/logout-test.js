@@ -9,7 +9,7 @@ describe('Logout controller', () => {
   let req, res, passport;
 
   beforeEach(function() {
-    req = {session: {user: {id: 'foo'}, destroy: sinon.spy()}, logout: sinon.spy()};
+    req = {session: {user: {id: 'foo'}, destroy: sinon.spy()}, logout: sinon.spy(), cookies: { appName: 'id-and-license'}};
     res = httpMocks.createResponse({});
     res.redirect = sinon.spy();
     res.cookie = sinon.spy();
@@ -28,5 +28,10 @@ describe('Logout controller', () => {
   it('#sets isLoggedIn cookie to false', function() {
     controllers(req, res);
     assert(res.cookie.calledWith('isLoggedIn', false));
+  });
+
+  it('#redirects to appName sign-in', function() {
+    controllers(req, res);
+    assert(res.redirect.calledWith('/apply/id-and-license/sign-in'));
   });
 });

@@ -14,14 +14,16 @@ const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
   let appName = getAppType(props);
-  buildAppName(appName);
+  //buildAppName(appName);
 
   buildLoggedOut();
 
   return (
     <Presentation
-    {...props}
-    onBack = {onBack} />
+      {...props}
+      appName = { appName }
+      onBack  = { onBack }
+    />
   );
 };
 
