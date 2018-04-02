@@ -9,3 +9,5 @@ COPY . .
 
 # install app dependencies
 RUN npm install --quiet --production
+
+CMD npm start
