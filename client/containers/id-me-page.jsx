@@ -14,7 +14,10 @@ const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
   let appName = getAppType(props);
-  //buildAppName(appName);
+
+  if (APP_ENV === 'test') {
+    buildAppName(appName);
+  }
 
   buildLoggedOut();
 

@@ -27,7 +27,16 @@ module.exports = function(world) {
       .catch(done);
   };
 
-
+  world.when('I will not see sign-in in the url', function(done) {
+    browser
+      .url()
+      .then((url) => {
+        console.log(url)
+        assert.equal(url.match(/sign-in/), false)
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
 
   /* IDDL NavigateToPath */
   world.when('I go to the page with my summary', function(done){

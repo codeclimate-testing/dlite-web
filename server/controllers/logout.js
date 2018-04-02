@@ -6,8 +6,7 @@ const logout = (req, res) => {
   req.logout();
   req.session.destroy();
   res.cookie('isLoggedIn', false);
-  // let url = `${req.protocol}://${req.get('host')}/apply/${appName}/sign-in`;
-  // res.status(200).send(url);
+
   res.redirect('/apply/'+appName+'/sign-in');
 };
 

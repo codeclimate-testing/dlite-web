@@ -44,7 +44,7 @@ const Logout = (props) => {
   if (!props.isLoggedIn) { return null;}
   let url = '/apply/log-out';
   return ReactDOM.createPortal(
-    <a href={url} onClick={buildLoggedOut}>Log out</a>, document.getElementById('log-out')
+    <a href={url} >Log out</a>, document.getElementById('log-out')
   );
 }
 
