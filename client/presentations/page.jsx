@@ -7,6 +7,7 @@ import HomeLink           from './home-link.jsx';
 import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
+import { getLanguageClass } from '../helpers/data/translator';
 import {
   isLoggedIn,
   buildLoggedOut
@@ -40,10 +41,6 @@ const ApplicationHeader = (props) => {
   );
 }
 
-const LanguageClass = (props) => {
-  return ReactDOM.createPortal('locale-dense', document.body.className);
-}
-
 const Logout = (props) => {
   if (!props.isLoggedIn) { return null;}
   let url = '/apply/log-out';
@@ -55,12 +52,12 @@ const Logout = (props) => {
 const Page = (props) => {
   setTitle(props.pageTitle, props.section);
   let name = props.sectionName || (props.section && props.section.name);
+  let languageClass = getLanguageClass(props.translationLanguage);
 
   return (
-    <div className='application-page'>
+    <div className={`application-page ${languageClass}`}>
       <GoogleAnalytics />
 
-      <LanguageClass language = {props.language} />
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />

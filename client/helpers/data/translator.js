@@ -75,3 +75,18 @@ export const doNotNeedToLoadTranslations = (language) => {
 export const nonEnglishChoice = (language) => {
   return language !== 'en';
 }
+
+export const getLanguageClass = (language) => {
+  let languageClass = language;
+  const denseLanguages = ['zh', 'ko', 'ja'];
+  const tallLanguages = ['hi', 'th', 'km'];
+
+  if (denseLanguages.includes(language)) {
+    languageClass += ' locale-dense';
+  }
+  else if(tallLanguages.includes(language)) {
+    languageClass += ' locale-tall';
+  }
+
+  return languageClass;
+}

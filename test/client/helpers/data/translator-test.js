@@ -7,7 +7,8 @@ import es_json    from '../../../../client/i18n/es.json';
 import {
   keyLookup,
   translateThis,
-  needToLoadTranslation
+  needToLoadTranslation,
+  getLanguageClass
 }    from '../../../../client/helpers/data/translator';
 
 describe('Translator', () => {
@@ -91,6 +92,29 @@ describe('Translator', () => {
     it('returns true if props.language is not english, the selected object is empty, and the apiStatus is not loading', function() {
       props.language = 'vi';
       assert.equal(needToLoadTranslation(props), true);
+    });
+  });
+
+  describe('#getLanguageClass', function() {
+    it('returns locale-dense and the language if Chinese', function() {
+      assert.equal(getLanguageClass('zh'), 'zh locale-dense');
+    });
+
+    it('returns locale-dense and the language if Korean', function() {
+      assert.equal(getLanguageClass('ko'), 'ko locale-dense');
+    });
+
+    it('returns locale-dense and the language if Japanese', function() {
+      assert.equal(getLanguageClass('ja'), 'ja locale-dense');
+    });
+    it('returns locale-tall and the language if Hindi, Thai and Khmer', function() {
+      assert.equal(getLanguageClass('hi'), 'hi locale-tall');
+    });
+    it('returns locale-tall and the language if Thai and Khmer', function() {
+      assert.equal(getLanguageClass('th'), 'th locale-tall');
+    });
+    it('returns locale-tall and the language if Khmer', function() {
+      assert.equal(getLanguageClass('km'), 'km locale-tall');
     });
   });
 });

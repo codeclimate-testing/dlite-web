@@ -96,7 +96,7 @@ li {
   padding-bottom: $spacing / 2;
 }
 
-body.locale-tall {
+body .locale-tall {
   $em:                    15px * 1.2;
   $font-size-main:        $em;
   $font-size-label:       $em * 1.4;
@@ -166,7 +166,7 @@ body.locale-tall {
   }
 }
 
-body.locale-dense {
+body .locale-dense {
   $em:                    15px * 1.14;
   $font-size-main:        $em;
   $font-size-label:       $em * 1.4;
