@@ -31,5 +31,5 @@ export const isProduction = (env = APP_ENV) => {
 };
 
 export function requireLogIn(pathname, env = APP_ENV){
-  return (isProduction(env) && !isLoggedIn());
+  return (isProduction(env) && !isLoggedIn() && afterIntro(pathname));
 };

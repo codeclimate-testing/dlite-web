@@ -9,9 +9,6 @@ const isSubmitable = (props, validator) => {
 const onSubmitGenerator = (currentPageKey, props, validator) => {
   const goToNextPage = (event) => {
     props.onSubmit(event);
-    console.log(currentPageKey);
-    console.log(nextPath(currentPageKey, props));
-    console.log(props)
     props.history.push(
       nextPath(currentPageKey, props)
     );

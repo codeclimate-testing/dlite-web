@@ -20,6 +20,8 @@ const Page = (props) => {
     buildAppName(appName);
   }
 
+  buildLoggedOut();
+
   return (
     <Presentation
       {...props}
