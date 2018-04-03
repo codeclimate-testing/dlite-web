@@ -40,6 +40,10 @@ const ApplicationHeader = (props) => {
   );
 }
 
+const LanguageClass = (props) => {
+  return ReactDOM.createPortal('locale-dense', document.body.className);
+}
+
 const Logout = (props) => {
   if (!props.isLoggedIn) { return null;}
   let url = '/apply/log-out';
@@ -56,6 +60,7 @@ const Page = (props) => {
     <div className='application-page'>
       <GoogleAnalytics />
 
+      <LanguageClass language = {props.language} />
       <ApplicationHeader
         applicationType = {props.section.applicationType}
       />
