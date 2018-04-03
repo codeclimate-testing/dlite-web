@@ -74,82 +74,67 @@ describe('Summary components', function() {
 
   describe('GuardianSignature', function() {
     it('shows parent/guardian signature details', function(){
-      let guardianSignature = {
-        isSigned:  'Yes',
-        guardianInfo: [{
-          id: '0',
-          acceptLiabilities: true,
-          signature: {
-            name: 'GuardianSignature',
-            month: '10',
-            day: '4',
-            year: '2018',
-          },
-          phoneNumber: '(616)-923-1221',
-          address: {
-            street_1: '865 Main Street',
-            street_2: 'Unit no. 05',
-            city: 'Crazidino Here',
-            state: 'CA',
-            zip: '94000',
-          },
-          ID:{
-            number: 'XYZ12344321',
-            issuedBy: 'U.S.A.',
-            expirationMonth: '10',
-            expirationDay: '14',
-            expirationYear: '2020'
+      let data = {
+        application: {
+          guardianSignature: {
+            isSigned:  'signElectronically',
+            guardianInfo: [{
+              id: '0',
+              acceptLiabilities: true,
+              signature: {
+                name: 'Guardian Signature 1',
+                month: '10',
+                day: '4',
+                year: '2018',
+              },
+              phoneNumber: '(616)-923-1221',
+              address: {
+                street_1: '865 Main Street',
+                street_2: 'Unit no. 05',
+                city: 'Crazidino Here',
+                state: 'CA',
+                zip: '94000',
+              }
+            },
+            {
+              id: '1',
+              acceptLiabilities: true,
+              signature: {
+                name: 'Guardian Signature 2',
+                month: '11',
+                day: '5',
+                year: '2019',
+              },
+              phoneNumber: '(616)-923-2112',
+              address: {
+                street_1: '123 Main Street',
+                street_2: 'Unit no. 04',
+                city: 'Crazidino Where',
+                state: 'CA',
+                zip: '95000',
+              }
+            }]
           }
-        },
-        {
-          id: '1',
-          acceptLiabilities: null,
-          signature: {
-            name: '',
-            month: '',
-            day: '',
-            year: '',
-          },
-          phoneNumber: '',
-          address: {
-            street_1: '',
-            street_2: '',
-            city: '',
-            state: 'CA',
-            zip: '',
-          },
-          ID:{
-            number: '',
-            issuedBy: '',
-            expirationMonth: '',
-            expirationDay: '',
-            expirationYear: ''
-          }
-        }]
+        }
       };
 
       let component = render(
-        <GuardianSignature
-          {...props}
-          guardianSignature={guardianSignature}
-        />
+        <Wrapper>
+          <GuardianSignature {...data} />
+        </Wrapper>
       )
-
-      assert.equal(component.text().includes('GuardianSignature'), true);
-      assert.equal(component.text().includes('10'), true);
-      assert.equal(component.text().includes('4'), true);
-      assert.equal(component.text().includes('2018'), true);
-      assert.equal(component.text().includes('(616)-923-1221'), true);
-      assert.equal(component.text().includes('865 Main Street'), true);
-      assert.equal(component.text().includes('Unit no. 05'), true);
-      assert.equal(component.text().includes('Crazidino Here'), true);
-      assert.equal(component.text().includes('CA'), true);
-      assert.equal(component.text().includes('94000'), true);
-      assert.equal(component.text().includes('XYZ12344321'), true);
-      assert.equal(component.text().includes('U.S.A.'), true);
-      assert.equal(component.text().includes('10'), true);
-      assert.equal(component.text().includes('14'), true);
-      assert.equal(component.text().includes('2020'), true);
+      assert.equal(component.text().includes('Parent/guardian Signature') , true);
+      assert.equal(component.text().includes('You selectedParent/guardian(s) signed electronically') , true);
+      assert.equal(component.text().includes('Parent/guardian nameGuardian Signature 1') , true);
+      assert.equal(component.text().includes('Accept civil liabilityYes') , true);
+      assert.equal(component.text().includes('Signature date10 / 4 / 2018') , true);
+      assert.equal(component.text().includes('Phone number(616)-923-1221') , true);
+      assert.equal(component.text().includes('Address865 Main StreetUnit no. 05Crazidino Here, CA 94000') , true);
+      assert.equal(component.text().includes('Parent/guardian nameGuardian Signature 2') , true);
+      assert.equal(component.text().includes('Accept civil liabilityYes') , true);
+      assert.equal(component.text().includes('Signature date11 / 5 / 2019') , true);
+      assert.equal(component.text().includes('Phone number(616)-923-2112') , true);
+      assert.equal(component.text().includes('Address123 Main StreetUnit no. 04Crazidino Where, CA 95000') , true);
     });
   });
 });

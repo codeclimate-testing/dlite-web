@@ -1,26 +1,27 @@
 'use strict';
 
-import React                  from 'react';
-import radioYesNoGroup        from '../../radio-yes-no-group.jsx';
-import RadioSelector          from'../../radio-selector.jsx';
-import RadioCollection        from '../../radio-selector-collection.jsx';
-import MessageBox             from '../../message-box.jsx';
-import { guardianNotSigned }  from '../../../helpers/data/youth';
-import Translator             from '../../../i18n/translator-tag.jsx';
+import React                            from 'react';
+import radioYesNoGroup                  from '../../radio-yes-no-group.jsx';
+import RadioSelector                    from'../../radio-selector.jsx';
+import RadioCollection                  from '../../radio-selector-collection.jsx';
+import MessageBox                       from '../../message-box.jsx';
+import { guardianSignsAtDMV }           from '../../../helpers/data/youth';
+import Translator                       from '../../../i18n/translator-tag.jsx';
 
 const MessageNo = (props) => {
-  if (!guardianNotSigned(props)) { return null; }
-
-  return (
-    <MessageBox className='info'>
-      <div>
-        <Translator
-          tag             = 'p'
-          translationPath = 'parentGuardianSignaturePage.signatureSection.explanation'
-        />
-      </div>
-    </MessageBox>
-  );
+  if ( guardianSignsAtDMV(props)) {
+    return (
+      <MessageBox className='info'>
+        <div>
+          <Translator
+            tag             = 'p'
+            translationPath = 'parentGuardianSignaturePage.signatureSection.explanation'
+          />
+        </div>
+      </MessageBox>
+    );
+   }
+   return null;
 };
 
 const SignatureChoice = (props) => {

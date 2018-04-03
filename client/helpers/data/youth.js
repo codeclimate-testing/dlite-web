@@ -56,6 +56,10 @@ export const guardianSignsElectronically = (props) => {
   return props.guardianSignature.isSigned === 'signElectronically';
 }
 
+export const guardianSignsAtDMV = (props) => {
+  return props.guardianSignature.isSigned === 'signAtDMV';
+}
+
 export const secondGuardian = (props) => {
   return props.guardianSignature.guardianInfo[1].acceptLiabilities;
 }

@@ -89,6 +89,10 @@ export default function(state = defaultState(), action) {
 
     case 'UPDATE_GUARDIAN_SIGNATURE':
       data[name]  = value;
+      if(value !== 'signElectronically') {
+        //reset redux sate for guardian signature
+        state = defaultState();
+      }
       return Object.assign({}, state, data);
 
     case 'UPDATE_GUARDIAN_SIGNATURE_FIRST':

@@ -74,8 +74,13 @@ describe('GuardianSignaturePage', function() {
         }]
       };
 
-      let continueDisabled = !(dataPresent.guardianSignature(guardianSignature));
-      let onChange = spy();
+      let continueDisabled              = !(dataPresent.guardianSignature(guardianSignature));
+      let onGuardianSignatureChange     = spy();
+      let onSignatureFirstChange        = spy();
+      let onSignatureSecondChange       = spy();
+      let onContactDetailsFirstChange   = spy();
+      let onContactDetailsSecondChange  = spy();
+
       let validations = {
             isSigned:                   spy(),
             acceptLiabilities_0:        spy(),
@@ -88,11 +93,6 @@ describe('GuardianSignaturePage', function() {
             guardian_0Street_2:         spy(),
             guardian_0City:             spy(),
             guardian_0Zip:              spy(),
-            number_0:                   spy(),
-            issuedBy_0:                 spy(),
-            expirationMonth_0:          spy(),
-            expirationDay_0:            spy(),
-            expirationYear_0:           spy(),
             acceptLiabilities_1:        spy(),
             name_1:                     spy(),
             month_1:                    spy(),
@@ -103,11 +103,6 @@ describe('GuardianSignaturePage', function() {
             guardian_1Street_2:         spy(),
             guardian_1City:             spy(),
             guardian_1Zip:              spy(),
-            number_1:                   spy(),
-            issuedBy_1:                 spy(),
-            expirationMonth_1:          spy(),
-            expirationDay_1:            spy(),
-            expirationYear_1:           spy(),
             all:                        spy(),
             isValid:                    () => { return true; }
       };
@@ -115,7 +110,11 @@ describe('GuardianSignaturePage', function() {
       props = {
         guardianSignature,
         continueDisabled,
-        onChange,
+        onGuardianSignatureChange,
+        onSignatureFirstChange,
+        onSignatureSecondChange,
+        onContactDetailsFirstChange,
+        onContactDetailsSecondChange,
         validations
       }
     });
@@ -126,13 +125,14 @@ describe('GuardianSignaturePage', function() {
           <GuardianSignaturePage  {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="isSigned-Yes"]').length, 'Guardian signature - Yes button missing');
-      assert.ok(component.find('label[for="isSigned-No"]').length, 'Guardian signature - No button missing');
+      assert.ok(component.find('label[for="isSigned-signElectronically"]').length, 'Guardian signature - Sign electronically button missing');
+      assert.ok(component.find('label[for="isSigned-signAtDMV"]').length, 'Guardian signature - Sign at DMV button missing');
+      assert.ok(component.find('label[for="isSigned-emancipatedMinor"]').length, 'Guardian signature - Emancipated minor button missing');
       assert.ok(component.find('.guardian-signature-form').length, 'Guardian signature - form missing');
     });
 
     it('shows the form asking guardian details after guardian selected Yes to sign', function() {
-      props.guardianSignature.isSigned = 'Yes';
+      props.guardianSignature.isSigned = 'signElectronically';
       let component = render(
         <Wrapper>
           <GuardianSignaturePage  {...props} />
@@ -165,7 +165,7 @@ describe('GuardianSignaturePage', function() {
     });
 
     it('entering Yes to sign and filling in details makes next button no longer disabled', function() {
-      props.guardianSignature.isSigned =   'Yes';
+      props.guardianSignature.isSigned =   'signElectronically';
       props.guardianSignature.guardianInfo[0].acceptLiabilities = true,
       props.guardianSignature.guardianInfo[0].signature.name = 'GuardianSignature',
       props.guardianSignature.guardianInfo[0].signature.month = '10',
@@ -176,12 +176,7 @@ describe('GuardianSignaturePage', function() {
       props.guardianSignature.guardianInfo[0].address.street_2 = 'Unit no. 05',
       props.guardianSignature.guardianInfo[0].address.city = 'Crazidino Here',
       props.guardianSignature.guardianInfo[0].address.state = 'CA',
-      props.guardianSignature.guardianInfo[0].address.zip = '94000',
-      props.guardianSignature.guardianInfo[0].ID.number = 'XYZ12344321',
-      props.guardianSignature.guardianInfo[0].ID.issuedBy = 'U.S.A.',
-      props.guardianSignature.guardianInfo[0].ID.expirationMonth = '10',
-      props.guardianSignature.guardianInfo[0].ID.expirationDay = '14',
-      props.guardianSignature.guardianInfo[0].ID.expirationYear = '2020'
+      props.guardianSignature.guardianInfo[0].address.zip = '94000'
 
       props.continueDisabled = !(dataPresent.guardianSignature(props.guardianSignature));
 
@@ -194,8 +189,8 @@ describe('GuardianSignaturePage', function() {
       assert(!(component.find('.arrow-button').prop('disabled')));
     });
 
-    it('entering No makes the info message appear', function() {
-      props.guardianSignature.isSigned = 'No';
+    it('selecting "my parents will sign at DMV" makes the info message appear', function() {
+      props.guardianSignature.isSigned = 'signAtDMV';
       let component = render(
         <Wrapper>
           <GuardianSignaturePage  {...props} />

@@ -52,9 +52,27 @@ describe('enter guardian signature page validation rules:', function() {
     };
   });
 
+  it('has errors, when there is no data entered', function() {
+    assert.deepEqual(rules.isSigned(props), ['errorMessages.selectionMissing']);
+
+    props.guardianSignature.isSigned = 'signElectronically';
+
+    assert.deepEqual(rules.acceptLiabilities_0(props), ['errorMessages.liabilityAcceptanceMissing']);
+    assert.deepEqual(rules.name_0(props), ['errorMessages.parentNameMissing']);
+    assert.deepEqual(rules.month_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_0(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_0(props), ['errorMessages.invalidOrMissingDate']);
+
+    assert.deepEqual(rules.acceptLiabilities_1(props), ['errorMessages.liabilityAcceptanceMissing']);
+    assert.deepEqual(rules.name_1(props), ['errorMessages.parentNameMissing']);
+    assert.deepEqual(rules.month_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.day_1(props), ['errorMessages.invalidOrMissingDate']);
+    assert.deepEqual(rules.year_1(props), ['errorMessages.invalidOrMissingDate']);
+  });
+
   it('has no errors, when there are no data issues', function() {
 
-    props.guardianSignature.isSigned = 'Yes';
+    props.guardianSignature.isSigned = 'signElectronically';
 
     props.guardianSignature.guardianInfo[0].acceptLiabilities = true;
     props.guardianSignature.guardianInfo[0].signature.name = 'A';
@@ -103,23 +121,8 @@ describe('enter guardian signature page validation rules:', function() {
     assert.deepEqual(rules.guardian_1Zip(props), []);
   });
 
-  it('has errors, when there is no data entered', function() {
-    assert.deepEqual(rules.isSigned(props), ['errorMessages.selectionMissing']);
-
-    assert.deepEqual(rules.acceptLiabilities_0(props), ['errorMessages.liabilityAcceptanceMissing']);
-    assert.deepEqual(rules.name_0(props), ['errorMessages.parentNameMissing']);
-    assert.deepEqual(rules.month_0(props), ['errorMessages.invalidOrMissingDate']);
-    assert.deepEqual(rules.day_0(props), ['errorMessages.invalidOrMissingDate']);
-    assert.deepEqual(rules.year_0(props), ['errorMessages.invalidOrMissingDate']);
-
-    assert.deepEqual(rules.acceptLiabilities_1(props), ['errorMessages.liabilityAcceptanceMissing']);
-    assert.deepEqual(rules.name_1(props), ['errorMessages.parentNameMissing']);
-    assert.deepEqual(rules.month_1(props), ['errorMessages.invalidOrMissingDate']);
-    assert.deepEqual(rules.day_1(props), ['errorMessages.invalidOrMissingDate']);
-    assert.deepEqual(rules.year_1(props), ['errorMessages.invalidOrMissingDate']);
-  });
-
   it('has errors, when non-english data are entered', function() {
+    props.guardianSignature.isSigned = 'signElectronically';
     props.guardianSignature.guardianInfo[0].signature.name = '嗨';
     props.guardianSignature.guardianInfo[0].signature.month = '嗨';
     props.guardianSignature.guardianInfo[0].signature.day = '嗨';

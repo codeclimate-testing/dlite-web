@@ -5,7 +5,6 @@ import React from 'react';
 import ElectronicSignature                  from './guardian-electronic-signature.jsx';
 import GuardianContact                      from './guardian-contact.jsx';
 import Accordion                            from '../../../containers/accordion.jsx';
-import MessageBox                           from '../../message-box.jsx';
 import { guardianSignsElectronically }      from '../../../helpers/data/youth';
 import Translator                           from '../../../i18n/translator-tag.jsx';
 
@@ -41,12 +40,12 @@ const GuardianDetail = (props) => {
       />
       <ElectronicSignature
         {...props}
-        onChange    = {props.onSignatureFirstChange}
+        onChange    = {props.onSignatureChange}
         validations = {validations.signature}
       />
       <GuardianContact
         {...props}
-        onChange    = {props.onContactDetailsFirstChange}
+        onChange    = {props.onContactDetailsChange}
         phoneNumber = {validations.contact}
       />
     </div>
@@ -58,16 +57,20 @@ const SignatureDetails = (props) => {
   return (
     <div className='guardian-details-form'>
       <GuardianDetail
-        guardianID={0}
         {...props}
+        guardianID               = { 0 }
+        onSignatureChange        = {props.onSignatureFirstChange}
+        onContactDetailsChange   = {props.onContactDetailsFirstChange}
       />
       <Accordion
         id    = 'guardian-signature-add'
         title = 'Add another parent/guardian signature'
       >
         <GuardianDetail
-          guardianID={1}
           {...props}
+          guardianID                    = { 1 }
+          onSignatureChange        = {props.onSignatureSecondChange}
+          onContactDetailsChange   = {props.onContactDetailsSecondChange}
         />
       </Accordion>
     </div>

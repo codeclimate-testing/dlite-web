@@ -1,7 +1,6 @@
 'use strict';
 import React                from 'react';
 import GuardianSignature    from './guardian-signature.jsx';
-import ContinueButton       from '../../continue-button.jsx';
 import IDApp                from './id-app.jsx';
 import DLApp                from './dl-app.jsx';
 import MyBasics             from './my-basics.jsx';
@@ -18,12 +17,13 @@ const Contents = (props) => {
         cardType      = {props.application.cardType}
         dateOfBirth   = {props.application.basics.dateOfBirth}
       />
-      <IDApp          {...props} />
-      <DLApp          {...props} />
-      <MyBasics       {...props} />
-      <MyHistory      {...props} />
-      <OrganDonation  {...props} />
-      <Voting         {...props} />
+      <IDApp              {...props} />
+      <DLApp              {...props} />
+      <MyBasics           {...props} />
+      <MyHistory          {...props} />
+      <OrganDonation      {...props} />
+      <Voting             {...props} />
+      <GuardianSignature  {...props} />
     </div>
   )
 };

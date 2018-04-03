@@ -33,7 +33,7 @@ class Validator {
       if (error) { errors.push(error) };
       return errors;
     }, []);
-    console.log(allErrors)
+
     let errorMessage = '';
     if (allErrors.length > 1) {
       let errorKeyThis = 'errorMessages.' + this.allMessage;
