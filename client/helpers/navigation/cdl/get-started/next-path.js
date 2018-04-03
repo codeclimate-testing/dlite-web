@@ -20,16 +20,7 @@ export const cdlIDme = (props) => {
     key = 'openApplications';
   }
   return key;
-}
-
-export const IDme = (props) => {
-  let key = 'cdlIDme';
-  // if multiple applications, go to /apply/open-applications key='openApplications'
-  if (hasMultipleApps(props)) {
-    key = 'openApplications';
-  }
-  return key;
-}
+};
 
 export const cdlWdywtdt = (props) => {
   let key = 'cdlResidency';

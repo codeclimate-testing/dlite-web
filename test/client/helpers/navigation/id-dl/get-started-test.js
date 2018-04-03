@@ -3,6 +3,7 @@
 const assert = require('assert');
 
 import {
+  IDme,
   dateOfBirth,
   wdywtdt,
   chooseCardType,
@@ -57,6 +58,28 @@ describe('Data helpers for determining next path from current page and props in 
   describe('#normal flow', function() {
     beforeEach(function() {
       data = state();
+    });
+
+    describe('##IDme', function() {
+      beforeEach(function(){
+        data.userData = {
+          appsLength: '',
+          userID: '',
+          apps: [{
+            cardType: [],
+            cardAction: [],
+            name: ''
+          }]
+        }
+      });
+      it('goes to legalName if user does not have multiple apps', function() {
+        data.userData.appsLength = 0;
+        assert.ok(IDme(data), 'legalName');
+      });
+      it('goes to openApplications if user has multiple apps', function() {
+        data.userData.appsLength = 2;
+        assert.ok(IDme(data), 'openApplications');
+      });
     });
     describe('##dateOfBirth', function() {
       it('goes to wdywtdt page', function() {

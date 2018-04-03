@@ -3,6 +3,7 @@
 const assert = require('assert');
 
 import {
+  cdlIDme,
   cdlWdywtdt,
   cdlCurrentCard,
   changedCDL,
@@ -24,6 +25,29 @@ describe('CDL next-paths', function() {
     };
   });
   describe('#initial flow', function() {
+    describe('#cdlIDme', function() {
+      beforeEach(function() {
+        props.userData = {
+          appsLength: '',
+          userID: '',
+          apps: [{
+            cardType: [],
+            cardAction: [],
+            name: ''
+          }]
+        }
+      });
+
+      it('goes to cdlLegalName if user does not have multiple apps', function() {
+        props.userData.appsLength = 0;
+        assert.ok(cdlIDme(props), 'cdlLegalName');
+      });
+      it('goes to openApplications if user has multiple apps', function() {
+        props.userData.appsLength = 2;
+        assert.ok(cdlIDme(props), 'openApplications');
+      });
+    });
+
     describe('#cdlWdywtdt', function() {
       it('returns "cdlResidency" if user is getting a new card', function() {
         assert.equal(cdlWdywtdt(props), 'cdlResidency');
