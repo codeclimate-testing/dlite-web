@@ -32,6 +32,7 @@ const Accordion = (props) => {
         <Translator
           tag             = 'span'
           translationPath = { props.title }
+          accordion       = { props.id }
         />
         </div>
       </a>

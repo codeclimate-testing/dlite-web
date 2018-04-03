@@ -16,10 +16,10 @@ const Translator = (props) => {
   return (
     <Tag
       id                      = { props.id }
-      href                    = { props.href }
       className               = { props.className }
       key                     = { props.keyProp }
       dangerouslySetInnerHTML = { translatedValue }
+      accordion               = { props.accordion }
     />
   );
 };
