@@ -15,6 +15,7 @@ const all = Object.keys(sections).reduce((keyedObject, sectionName) => {
 }, {});
 
 export const pageFor = (name) => {
+  console.log(all)
   return all[name];
 };
 
