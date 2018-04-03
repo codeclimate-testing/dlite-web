@@ -17,11 +17,32 @@ describe('Open Applications page', function() {
     props = {
       apiStatus: '',
       userData: {
-        apps: [],
+        apps: [{
+          cardType: [],
+          cardAction: [],
+          name: ''
+        }],
         userID: '',
         appsLength: ''
       }
     };
+  });
+
+  describe('initial render', function() {
+    beforeEach(function() {
+      component = render(
+        <Wrapper>
+          <OpenApplications {...props} />
+        </Wrapper>
+      );
+    });
+
+    it('shows add button to add an IDDL app', function() {
+      assert.ok(component.find('.id-and-license').text().includes('Add'));
+    });
+    it('shows add button to add a CDL app', function() {
+      assert.ok(component.find('.cdl').text().includes('Add'));
+    });
   });
 
   it('shows error message if apiStatus is error', function() {

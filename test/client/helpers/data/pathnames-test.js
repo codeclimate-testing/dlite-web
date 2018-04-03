@@ -153,7 +153,15 @@ describe('Data helpers for pathnames', function() {
       props.add = true;
       assert.equal(addOrEditFlow(props, 'Add', 'Edit'), 'Add');
     });
-    it('returns "Edit" if props does not have add key', function() {
+    it('returns props.flow value if props has flow key', function() {
+      props.flow = ''
+      assert.equal(addOrEditFlow(props), '');
+    });
+
+    it('returns "Edit" if props does not have add key or flow key', function() {
+      props = {
+        editKey: ''
+      };
       assert.equal(addOrEditFlow(props, 'Add', 'Edit'), 'Edit');
     });
   });

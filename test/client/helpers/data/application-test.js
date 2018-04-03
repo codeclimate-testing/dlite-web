@@ -10,7 +10,9 @@ import {
   afterIntro,
   hasMultipleApps,
   parseAppName,
-  parseChooseApp
+  parseChooseApp,
+  sameType,
+  goToOpenApps
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -120,6 +122,91 @@ describe('Data helpers for application', function() {
     });
     it('returns cdl when appName is cdl', function() {
       assert.equal(parseChooseApp('cdl'), 'cdl');
+    });
+  });
+
+  describe('#sameType', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        userData: {
+          apps: [{
+            cardType: []
+          }]
+        },
+        appName: ''
+      }
+    });
+
+    it('returns true if first cardType is DL and saved appName cookie is id-and-license', function() {
+      props.userData.apps[0].cardType[0] = 'DL';
+      props.appName = 'id-and-license';
+      assert.equal(sameType(props), true);
+    });
+
+    it('returns true if first cardType is ID and saved appName cookie is id-and-license', function() {
+      props.userData.apps[0].cardType[0] = 'ID';
+      props.appName = 'id-and-license';
+      assert.equal(sameType(props), true);
+    });
+
+    it('returns true if first cardType is CDL and saved appName cookie is CDL', function() {
+      props.userData.apps[0].cardType[0] = 'CDL';
+      props.appName = 'cdl';
+      assert.equal(sameType(props), true);
+    });
+
+    it('returns false if first cardType is CDL and saved appName cookie is id-and-license', function() {
+      props.userData.apps[0].cardType[0] = 'CDL';
+      props.appName = 'id-and-license';
+      assert.equal(sameType(props), false);
+    });
+
+    it('returns false if first cardType is ID and saved appName cookie is CDL', function() {
+      props.userData.apps[0].cardType[0] = 'ID';
+      props.appName = 'CDL';
+      assert.equal(sameType(props), false);
+    });
+  });
+
+  describe('#goToOpenApps', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        userData: {
+          appsLength: '',
+          apps: [{
+            cardType: []
+          }]
+        },
+        appName: ''
+      }
+    });
+
+    it('returns true if user has multiple apps', function() {
+      props.userData.appsLength = 3;
+      assert.equal(goToOpenApps(props), true);
+    });
+
+    it('returns true if user already has a IDDL app but logged in to CDL app', function() {
+      props.userData.appsLength = 1;
+      props.userData.apps[0].cardType = ['DL'];
+      props.appName = 'CDL';
+      assert.equal(goToOpenApps(props), true);
+    });
+
+    it('returns true if user already has a CDL app but logged in to IDDL app', function() {
+      props.userData.appsLength = 1;
+      props.userData.apps[0].cardType = ['CDL'];
+      props.appName = 'id-and-license';
+      assert.equal(goToOpenApps(props), true);
+    });
+
+    it('returns false if user already has a IDDL app and logged into IDDL app', function() {
+      props.userData.appsLength = 1;
+      props.userData.apps[0].cardType = ['DL'];
+      props.appName = 'id-and-license';
+      assert.equal(goToOpenApps(props), false);
     });
   });
 });

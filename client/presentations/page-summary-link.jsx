@@ -4,9 +4,13 @@ import React              from 'react';
 import { Link }           from 'react-router-dom';
 import { pathForPage }    from '../helpers/navigation/page';
 import Translator         from '../i18n/translator-tag.jsx';
-import { addOrEdit }      from '../helpers/data/pathnames';
+import {
+  addOrEdit,
+  addOrEditIcon
+ }      from '../helpers/data/pathnames';
 
 const LinkPresentation = (props) => {
+  let iconType = addOrEditIcon(props, 'add', 'edit');
   let className = `${props.editKey} summary edit button ${props.cardType}`;
 
   let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
@@ -32,7 +36,7 @@ const LinkPresentation = (props) => {
               to={linkTo}
               className= {className}
             >
-              <div className='unit edit-icon'></div>
+              <div className={`unit ${iconType}-icon`}></div>
               <div className='unit text-area'>{buttonText}</div>
             </Link>
           </div>

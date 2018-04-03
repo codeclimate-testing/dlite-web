@@ -61,14 +61,25 @@ export const addOrEditFlow = (props, adding, editing) => {
   if (props.hasOwnProperty('add') && props.add) {
     toReturn = adding;
   }
-  else if (props.hasOwnProperty('appID')) {
-    toReturn = '';
+  else if (props.hasOwnProperty('flow')) {
+    toReturn = props.flow;
   }
   return toReturn;
 };
 
 export const addOrEdit = (props, addText, editText) => {
-  return (props.hasOwnProperty('add') && props.add) ? addText : editText;
+  let toReturn = editText;
+  if (props.hasOwnProperty('add') && props.add) {
+    toReturn = addText;
+  }
+  else if (props.hasOwnProperty('addIcon')) {
+    toReturn = addText;
+  }
+  return toReturn;
+};
+
+export const addOrEditIcon = (props, add, edit) => {
+  return props.hasOwnProperty('addIcon') && props.addIcon ? add: edit;
 };
 
 export const altFlow = (props) => {

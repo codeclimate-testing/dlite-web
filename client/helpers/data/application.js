@@ -36,6 +36,14 @@ export function requireLogIn(pathname, isLoggedIn, env = APP_ENV){
 
 export const hasMultipleApps = (props) => {
   return props.userData.appsLength > 1;
+};
+
+export const sameType = (props) => {
+  let backToDL = (props.userData.apps[0].cardType[0] === 'DL' && props.appName === 'id-and-license');
+  let backToID = (props.userData.apps[0].cardType[0] === 'ID' && props.appName === 'id-and-license');
+  let backToCDL = (props.userData.apps[0].cardType[0] === 'CDL' && props.appName.toLowerCase() === 'cdl');
+
+  return backToDL || backToID || backToCDL;
 }
 
 export const parseAppName = (props) => {
@@ -55,4 +63,8 @@ export const parseChooseApp = (appName) => {
     chooseApp = 'iddl';
   }
   return chooseApp;
+};
+
+export const goToOpenApps = (props) => {
+  return hasMultipleApps(props) || (props.userData.appsLength === 1 && !sameType(props));
 };
