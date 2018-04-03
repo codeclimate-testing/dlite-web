@@ -36,8 +36,8 @@ class Router extends React.Component {
         <Route path={ cdlPath('/disclaimers') }                                   component={CDLDisclaimers} />
         <Route path={ alicePath('/logged-in')}                                    component={LoggedIn} />
 
-        <PrivateRoute pathURL={ alicePath('/cdl')}                                component={CDLRoutes} />
-        <PrivateRoute pathURL={ alicePath('/id-and-license')}                     component={IDDLRoutes} />
+        <PrivateRoute pathURL={ alicePath('/cdl/*')}                                component={CDLRoutes} />
+        <PrivateRoute pathURL={ alicePath('/id-and-license/*')}                     component={IDDLRoutes} />
       </div>
     );
   }

@@ -31,5 +31,5 @@ export const isLocal = (env = APP_ENV) => {
 };
 
 export function requireLogIn(pathname, env = APP_ENV){
-  return (!isLocal(env) && afterIntro(pathname) && !isLoggedIn());
+  return !isLocal(env) && !isLoggedIn();
 };
