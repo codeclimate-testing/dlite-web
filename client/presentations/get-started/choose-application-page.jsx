@@ -40,20 +40,24 @@ const Form = (props) => {
             errorMessage  = {  props.validations.chooseApplication() }
             selectedValue = { props.chooseApp }
           >
-            <RadioSelector
-              value       = 'iddl'
-              text        = 'ID or driver license'
-            />
-            <RadioSelector
-              value       = 'cdl'
-              text        = 'Commercial driver license'
-            />
+            <RadioSelector value='iddl'>
+              <Translator
+                tag             = 'span'
+                translationPath = 'beforeIntro.chooseDLorCDLPage.answerIDorDL'
+              />
+            </RadioSelector>
+            <RadioSelector value='cdl'>
+              <Translator
+                tag             = 'span'
+                translationPath = 'beforeIntro.chooseDLorCDLPage.answerCDL'
+              />
+            </RadioSelector>
           </RadioCollection>
         </fieldset>
 
         <Accordion
           id    = 'choose-application-info'
-          title = "I don't know if I need a commercial driver license"
+          title = 'newApproved.beforeIntro.chooseApplicationPage.doINeedCommercial'
         >
         <Translator
           tag             = 'p'

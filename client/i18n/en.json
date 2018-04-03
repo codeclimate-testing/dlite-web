@@ -1037,6 +1037,11 @@
     }
   },
   "newApproved": {
+    "beforeIntro": {
+      "chooseApplicationPage": {
+        "doINeedCommercial": "I don't know if I need a commercial driver license"
+      }
+    },
     "intro": {
       "wdywtdtPage": {
         "addDL": {
