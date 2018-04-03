@@ -26,10 +26,10 @@ export const afterIntro = (pathname) => {
   return true;
 };
 
-export const isLocal = (env = APP_ENV) => {
-  return env !== 'production';
+export const isProduction = (env = APP_ENV) => {
+  return env === 'production' || env === 'stage';
 };
 
 export function requireLogIn(pathname, env = APP_ENV){
-  return !isLocal(env) && !isLoggedIn();
+  return (isProduction(env) && !isLoggedIn());
 };

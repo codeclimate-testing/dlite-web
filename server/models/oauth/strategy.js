@@ -56,7 +56,7 @@ const onAuthentication = function (accessToken, refreshToken, profile, done) {
 };
 
 const strategy = new Strategy({
-  callbackURL: appUrl('/auth/oauth/callback'),
+  callbackURL: appUrl(`/auth/oauth/callback/`),
   clientID: clientID,
   clientSecret: clientSecret
 }, onAuthentication);

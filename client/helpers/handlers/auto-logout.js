@@ -45,8 +45,6 @@ class AutoLogout {
   logout() {
     let that = this;
 
-    buildLoggedOut();
-
     let redirect = `/apply/${this.appName}/sign-in`;
     return fetch('/apply/log-out', {
       method: 'GET',

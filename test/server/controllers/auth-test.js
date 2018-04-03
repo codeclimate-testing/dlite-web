@@ -6,24 +6,14 @@ const httpMocks   = require('node-mocks-http');
 const controllers = require('../../../server/controllers/auth');
 
 describe('Auth related controllers', () => {
-  let req, res, next, passport;
+  let req, res, next, passport, authNew, authSuccess;
 
   beforeEach(function() {
-    req = {session: {user: {id: 'foo'}, cookie: {}}};
+    req = {session: {user: {id: 'foo'}, cookie: {}}, params: {appName: 'cdl', language: 'vi'} , query: { state: JSON.stringify({appName: 'cdl', language: 'vi'} )}};
     res = httpMocks.createResponse({});
+    passport = { authenticate: sinon.spy() };
     res.redirect = sinon.spy();
     res.cookie = sinon.spy();
-    passport = { authenticate: sinon.spy() };
-  });
-
-  it('#authNew setups passport for the start of the oauth exchange', function() {
-    controllers.authNew(passport);
-    assert(passport.authenticate.calledWith('oauth2', { scope: ['multifactor'] }));
-  });
-
-  it('#authCallback setups passport for the conclusion of the oauth exchange', function() {
-    controllers.authCallback(passport);
-    assert(passport.authenticate.calledWith('oauth2', { failureRedirect: '/auth/error' }));
   });
 
   it('#authSuccess redirects to the logged in page', function() {
@@ -31,14 +21,27 @@ describe('Auth related controllers', () => {
     assert(res.redirect.calledWith('/apply/logged-in'));
   });
 
+  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
+    process.env.APP_URL = 'localhost';
+    controllers.authSuccess(req, res, next, 'development');
+    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in'));
+  });
+
   it('#authSuccess sets isLoggedIn cookie to true', function() {
     controllers.authSuccess(req, res);
     assert(res.cookie.calledWith('isLoggedIn', true));
   });
 
-  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
-    process.env.APP_URL = 'localhost';
-    controllers.authSuccess(req, res, next, 'development');
-    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in'));
+  it('#authSuccess sets language cookie to req.query.state.language', function() {
+    req.query.state = JSON.stringify({language: 'zh', appName: 'cdl'});
+    controllers.authSuccess(req, res);
+    assert.ok(res.cookie.calledWith('language', 'zh'));
+  });
+
+  it('#authSuccess sets appName cookie to req.query.state.appName', function() {
+    req.params.appName = 'id-and-license';
+    req.query.state = JSON.stringify({language: '', appName: 'id-and-license'});
+    controllers.authSuccess(req, res);
+    assert.ok(res.cookie.calledWith('appName', 'id-and-license'));
   });
 });

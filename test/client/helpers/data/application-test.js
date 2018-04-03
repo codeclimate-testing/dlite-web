@@ -5,7 +5,7 @@ import assert from 'assert';
 import {
   languageIsSelected,
   buildConfCode,
-  isLocal,
+  isProduction,
   afterIntro,
   requireLogIn
 } from '../../../../client/helpers/data/application';
@@ -41,12 +41,12 @@ describe('Data helpers for application', function() {
     });
   });
 
-  describe('#isLocal', function() {
-    it('returns false if env is production', function() {
-      assert.equal(isLocal('production'), false);
+  describe('#isProduction', function() {
+    it('returns true if env is production', function() {
+      assert.equal(isProduction('production'), true);
     });
-    it('returns true if env is development', function() {
-      assert.equal(isLocal('development'), true);
+    it('returns false if env is development', function() {
+      assert.equal(isProduction('development'), false);
     });
   });
 

@@ -6,7 +6,7 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 import Translator         from '../../i18n/translator-tag.jsx';
 
 const Presentation = (props) => {
-
+  let authURL = `/auth/new/${props.appName}/${props.language}`;
   return (
     <Page
       {...props}
@@ -18,7 +18,7 @@ const Presentation = (props) => {
         </h2>
 
         <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
-          <a href={`/auth/new/${props.appName}`} className='button green translation-missing id-me-create'>
+          <a href={authURL} className='button green translation-missing id-me-create'>
             <div className='unit'>Create an </div>
             <img src='/images/id-me/white-logo.svg' alt='id.me' className='id-me-logo unit' />
             <div className='unit'> account</div>
@@ -29,7 +29,7 @@ const Presentation = (props) => {
             <p className='or'>Or</p>
           </div>
 
-          <a href={`/auth/new/${props.appName}`} className='button translation-missing id-me-sign-in'>
+          <a href={authURL} className='button translation-missing id-me-sign-in'>
             <div className='unit'>Sign in with an </div>
             <img src='/images/id-me/dark-logo.svg' alt='id.me' className='id-me-logo unit' />
             <div className='unit'> account</div>

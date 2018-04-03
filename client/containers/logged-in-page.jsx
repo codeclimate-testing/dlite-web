@@ -5,6 +5,7 @@ import connectForm                from '../helpers/connect-form';
 import { chooseApp }              from '../actions/index';
 
 import AutoLogout                 from '../helpers/handlers/auto-logout';
+import { splitPathname }          from '../helpers/data/pathnames';
 import {
   buildLoggedIn,
   getAppNameCookie
@@ -17,6 +18,8 @@ const LoggedIn = (props) => {
   // set isLoggedIn key for localhost
   if (APP_ENV === 'development' || APP_ENV === 'test') {
     buildLoggedIn();
+    appName = splitPathname(props);
+    pageKey = getAppKey(appName)
   }
 
   // include placeholder flow prop

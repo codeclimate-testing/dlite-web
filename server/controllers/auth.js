@@ -1,7 +1,10 @@
 'use strict';
 
 const authNew = (passport) => {
-  return passport.authenticate('oauth2', { scope: ['multifactor'] });
+  return (req, res, next) => {
+    let dataString = JSON.stringify({appName: req.params.appName, language: req.params.language});
+    return passport.authenticate('oauth2', { scope: ['multifactor'], state: dataString })(req, res, next);
+  }
 };
 
 const authCallback = (passport) => {
@@ -9,14 +12,16 @@ const authCallback = (passport) => {
 };
 
 const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
-  req.session.cookie.expires = false;
-  req.session.user = req.user; 
+  let params = JSON.parse(req.query.state);
+  req.session.user = req.user;
   res.cookie('isLoggedIn', true);
+  res.cookie('appName', params.appName);
+  res.cookie('language', params.language);
   if (env === 'development' && !process.env.APP_URL.match(/herokuapp/g)) {
-    res.redirect('http://localhost:3000/apply/logged-in');
+    res.redirect(`http://localhost:3000/apply/logged-in`);
   }
   else {
-    res.redirect('/apply/logged-in');
+    res.redirect(`/apply/logged-in`);
   }
 };
 

@@ -14,6 +14,7 @@ const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
   let appName = getAppType(props);
+  let language = props.language || 'en';
 
   if (APP_ENV === 'test' || APP_ENV === 'development') {
     buildAppName(appName);
@@ -26,13 +27,15 @@ const Page = (props) => {
       {...props}
       appName = { appName }
       onBack  = { onBack }
+      language = { language }
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    chooseApp: state.ui.chooseApp
+    chooseApp : state.ui.chooseApp,
+    language  : state.ui.language
   };
 };
 
