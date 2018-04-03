@@ -21,6 +21,7 @@ function IDDL(data) {
   let DLApp                 = get.DLApp(cards, card_options, card_histories, license_classes);
   let IDApp                 = get.IDApp(cards, card_options, card_histories);
 
+
   return Object.assign(
     {},
     {
@@ -38,8 +39,8 @@ function IDDL(data) {
         IDApp:                      IDApp,
         DLApp:                      DLApp,
 
-        cardType:                   [],
-        cardAction:                 '',
+        cardType:                   get.cardType(IDApp, DLApp),
+        cardAction:                 get.cardAction(IDApp, DLApp),
         youthIDInstead:             '',
         realID:                     get.realID(card_options, cards),
         organDonation:              get.organDonations(organ_donations),

@@ -163,7 +163,7 @@ describe('cardTypeReducer', function() {
       assert.ok(newState.includes('DL'));
     });
 
-    it('returns existing state when payload name is addFromSummary and action.payload.value matches the current state', function() {
+    describe('##addFromSummary', function() {
       let action = {
         type: 'UPDATE_CARD_TYPE',
         payload: {
@@ -171,10 +171,24 @@ describe('cardTypeReducer', function() {
           value: 'DL'
         }
       };
-      let newState = updateCardType(state, action);
-      assert.deepEqual(newState, state);
-    });
+      it('returns existing state when payload name is addFromSummary and action.payload.value matches the current state', function() {
+        let newState = updateCardType(state, action);
+        assert.deepEqual(newState, state);
+      });
 
+      it('changes state to DL when payload name is addFromSummary and action.payload.value is DL', function() {
+        state = [];
+        let newState = updateCardType(state, action);
+        assert.deepEqual(newState, ['DL']);
+      });
+
+      it('returns action.payload.value when it is an array', function() {
+        state = [];
+        action.payload.value = ['ID', 'DL'];
+        let newState = updateCardType(state, action);
+        assert.deepEqual(newState, action.payload.value);
+      });
+    });
   });
 
   describe('#cardAction', function() {

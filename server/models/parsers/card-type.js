@@ -64,6 +64,10 @@ function replaceOption(option) {
   return option.option_type === 'modification' && option.option_value.split('-')[0] === 'replace';
 }
 
+function gettingBothNew(IDApp, DLApp) {
+  return hasNewID(IDApp) && hasNewDL(DLApp);
+}
+
 module.exports = {
   getNew,
   getReplace,
@@ -80,6 +84,7 @@ module.exports = {
   isCDLDatabase,
   addingMotorcycle,
   changeOption,
-  replaceOption
+  replaceOption,
+  gettingBothNew
 };
 

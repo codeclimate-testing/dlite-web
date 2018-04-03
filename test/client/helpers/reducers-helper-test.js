@@ -5,7 +5,9 @@ import {
   cardTypeAction,
   trueIfYesNeverFalse,
   sameIfAdding,
-  realID
+  realID,
+  addStringFromSummary,
+  addArrayFromSummary
 } from '../../../client/helpers/reducers';
 
 describe('reducer helper functions', function() {
@@ -20,7 +22,7 @@ describe('reducer helper functions', function() {
         value: '',
         name: ''
       }
-    }
+    };
   });
 
   describe('#cardTypeAction', function() {
@@ -48,6 +50,12 @@ describe('reducer helper functions', function() {
     });
     it('returns state if value does not match the type', function() {
       assert.equal(trueIfYesNeverFalse('ID', 'DL', state), state);
+    });
+    it('returns true if value is an array that includes the type', function() {
+      assert.equal(trueIfYesNeverFalse(['ID', 'DL'], 'ID', state), true);
+    });
+    it('returns false if value is an array that does not include the type', function() {
+      assert.equal(trueIfYesNeverFalse(['ID'], 'DL', state), state);
     });
   });
 
@@ -101,6 +109,48 @@ describe('reducer helper functions', function() {
         assert.equal(realID(state, action, 'ID'), state);
       });
     })
+  });
+
+  describe('#addStringFromSummary', function() {
+    beforeEach(function() {
+      action.type = 'UPDATE_CARD_TYPE';
+    });
+    it('returns true if payload name is addFromSummary and value is a string', function() {
+      action.payload.name = 'addFromSummary';
+      action.payload.value = 'ID';
+      assert.equal(addStringFromSummary(action), true);
+    });
+    it('returns false if payload name is not addFromSummary', function() {
+      action.payload.name = 'ID';
+      action.payload.value = 'ID';
+      assert.equal(addStringFromSummary(action), false);
+    });
+    it('returns false if payload value is an array', function() {
+      action.payload.name = 'addFromSummary';
+      action.payload.value = ['ID', 'DL'];
+      assert.equal(addStringFromSummary(action), false);
+    });
+  });
+
+  describe('#addArrayFromSummary', function() {
+    beforeEach(function() {
+      action.type = 'UPDATE_CARD_TYPE';
+    });
+    it('returns true if payload name is addFromSummary and value is an array', function() {
+      action.payload.name = 'addFromSummary';
+      action.payload.value = ['ID', 'DL'];
+      assert.equal(addArrayFromSummary(action), true);
+    });
+    it('returns false if payload name is not addFromSummary', function() {
+      action.payload.name = 'ID';
+      action.payload.value = 'ID';
+      assert.equal(addArrayFromSummary(action), false);
+    });
+    it('returns false if payload value is a string', function() {
+      action.payload.name = 'addFromSummary';
+      action.payload.value = 'ID';
+      assert.equal(addArrayFromSummary(action), false);
+    });
   });
 });
 

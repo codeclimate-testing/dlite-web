@@ -1,7 +1,8 @@
 'use strict';
 
 import {
-  chooseApplication
+  chooseApplication,
+  openApplications
 } from './next-path';
 
 const intro = [
@@ -34,6 +35,11 @@ const intro = [
     description: "links page that you're on right now",
     path: '/links',
     next: 'summary'
+  },{
+    key: 'openApplications',
+    description: 'choose from multiple open applications',
+    path: '/open-applications',
+    next: openApplications
   }
 ];
 

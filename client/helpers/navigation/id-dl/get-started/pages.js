@@ -4,6 +4,7 @@ import {
   applyEditOrAddPath
 } from '../../../data/pathnames';
 import {
+  IDme,
   dateOfBirth,
   wdywtdt,
   chooseCardType,
@@ -20,7 +21,7 @@ const getStarted = [
     key: 'IDme',
     description: 'IDDL sign-in',
     path: '/sign-in',
-    next: 'legalName'
+    next: IDme
   },
   {
     key: 'legalName',

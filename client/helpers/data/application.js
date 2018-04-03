@@ -3,7 +3,6 @@ import { pathForPage }          from '../navigation/page';
 import { hasValue }             from './validations';
 import { isLoggedIn }           from './cookies';
 
-
 export const languageIsSelected = (value) => {
   return hasValue(value);
 };
@@ -33,3 +32,8 @@ export const isProduction = (env = APP_ENV) => {
 export function requireLogIn(pathname, env = APP_ENV){
   return (isProduction(env) && !isLoggedIn() && afterIntro(pathname));
 };
+
+
+export const hasMultipleApps = (props) => {
+  return props.userData.appsLength > 1;
+}

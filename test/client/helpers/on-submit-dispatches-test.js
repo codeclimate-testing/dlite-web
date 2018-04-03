@@ -179,4 +179,5 @@ describe('on submit dispatches', function() {
 
     });
   });
+
 });

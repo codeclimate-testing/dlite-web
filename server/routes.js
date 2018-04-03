@@ -8,6 +8,7 @@ const routes = (passport) => {
   router.get( '/api/application/:id',     controllers.getApplication);
   router.post('/api/application',         controllers.postApplication);
   router.get( '/api/translation/:code',   controllers.getTranslation);
+  router.get( '/api/user/:id',            controllers.getUserApps);
 
   router.get( '/auth/new/:appName/:language',    controllers.authNew(passport));
 

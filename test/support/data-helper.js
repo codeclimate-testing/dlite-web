@@ -5,19 +5,19 @@ const CDLData         = require('./fake-data/fake-cdl-data');
 const parse           = require('../../server/models/parsers/client-to-server-parser');
 
 
-function fakeRecords() {
+function fakeIDDLRecords() {
   let clientData = IDDLData.fakeClientData();
   return parse(clientData);
 };
 
-function fakeCDLRecords(incomingData) {
+function fakeRecords(incomingData) {
   return parse(incomingData);
 };
 
 module.exports = {
   IDDLData,
   CDLData,
-  fakeRecords,
+  fakeIDDLRecords,
   fakeUserData,
-  fakeCDLRecords
+  fakeRecords
 };

@@ -2,9 +2,8 @@
 
 const db = require('../../db/connect')();
 
-module.exports = function getApplication(id) {
+exports.byId = (id) => {
   let aggregate = {};
-
   return Promise.all([
     db('applications').where('id', id)
       .then((records) => { aggregate.application = records[0]; }),
@@ -45,12 +44,57 @@ module.exports = function getApplication(id) {
             .then( records => { aggregate.license_classes = records; })
         ])
       })
-  ]).then(() => {
+  ]).then((res) => {
     if (!aggregate.application) { return undefined; }
     return aggregate;
   })
   .catch(function(err) {
     console.error('GET APPLICATION ERROR',err);
+    return err;
+  });
+};
+
+
+exports.byUserId = (userID) => {
+  let records = {
+    applications: [],
+    cards: [],
+    card_options: []
+  };
+
+  return db('applications').where('user_id', userID)
+    .then((applications) => {
+      let appIDs = [];
+      applications.forEach((app) => {
+        appIDs.push(app.id);
+        records.applications.push(app);
+      });
+      return appIDs;
+    })
+    .then((appIDs) => {
+      return db('cards').whereIn('application_id', appIDs)
+        .then((cards) => {
+          records.cards = cards;
+          let cardIDs = [];
+          cards.forEach(card => {
+            cardIDs.push(card.id);
+          });
+          return cardIDs;
+        })
+        .then((cardIDs) => {
+          return db('card_options').whereIn('card_id', cardIDs)
+            .then((options) => {
+              records.card_options = options;
+              return records;
+            });
+        });
+    })
+
+  .then((res) => {
+    return res;
+  })
+  .catch((err) => {
+    console.log('GET APPLICATIONS BY USER ID ERROR', err);
     return err;
   });
 };

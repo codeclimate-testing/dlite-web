@@ -6,7 +6,6 @@ import {
   getID,
   getDL,
   prettyDL,
-  IDorDL,
   IDOnly,
   getNewID,
   getNewDL,
@@ -22,7 +21,8 @@ import {
   renewDL,
   needsEndorsement,
   getCorrectString,
-  getCorrectApp
+  getCorrectApp,
+  getLegalNameKey
 } from '../../../../client/helpers/data/card-type';
 
 
@@ -259,6 +259,33 @@ describe('Data helpers for card-type', function() {
     });
   });
 
+  describe('#correctDL', function() {
+    beforeEach(function() {
+      data = buildCardType('DL', 'change');
+      data.DLApp.cardChanges = {
+        correctOrUpdate: 'correct'
+      };
+    });
+
+    it('is true if the cardAction is change and the IDDL includes DL and the user is correcting the card', function(){
+      assert.equal(correctDL(data), true);
+    });
+    it('is false if the cardAction is not change', function() {
+      data.DLApp.action = 'renew';
+      assert.equal(correctDL(data), false);
+    });
+    it('is false if user is not getting a DL', function() {
+      data.cardType = ['ID'];
+      data.DLApp.isApplying = false;
+      data.DLApp.action = '';
+      assert.equal(correctDL(data), false);
+    });
+    it('is false if the user is updating the card', function() {
+      data.DLApp.cardChanges.correctOrUpdate = 'update';
+      assert.equal(correctDL(data), false);
+    });
+  });
+
   describe('#updateID', function() {
     beforeEach(function() {
       data = buildCardType('ID', 'change');
@@ -432,4 +459,14 @@ describe('Data helpers for card-type', function() {
       assert.equal(getCorrectApp(testState), testState.DLApp);
     });
   });
+
+  describe('#getLegalNameKey', function() {
+    it('returns cdlLegalName when cardType is CDL', function() {
+      assert.equal(getLegalNameKey('CDL'), 'cdlLegalName');
+    });
+    it('returns legalName when cardType is not CDL', function() {
+      assert.equal(getLegalNameKey('ID'), 'legalName');
+    });
+  });
+
 });

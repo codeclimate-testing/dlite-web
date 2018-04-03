@@ -44,8 +44,6 @@ const AppointmentPreparation = (props) => {
 
           <h4 className='translation-missing'><a target="_blank" href={documentsLink}>Bring your required documents.</a></h4>
 
-       
-
           <Translator
             tag='p'
             className='translation-missing'

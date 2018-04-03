@@ -54,6 +54,17 @@ export const editMode = (props) => {
   return key;
 };
 
+export const addOrEditFlow = (props, adding, editing) => {
+  let toReturn = editing;
+  if (props.hasOwnProperty('add') && props.add) {
+    toReturn = adding;
+  }
+  else if (props.hasOwnProperty('appID')) {
+    toReturn = '';
+  }
+  return toReturn;
+};
+
 export const addOrEdit = (props, addText, editText) => {
   return (props.hasOwnProperty('add') && props.add) ? addText : editText;
 };

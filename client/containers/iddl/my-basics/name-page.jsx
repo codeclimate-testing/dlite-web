@@ -12,7 +12,6 @@ const Page = (props) => {
   let validations   = new NamePageValidator(props.legalName, props.validations);
   let onBack        = handlers.navigateOnBack(props, validations);
   let onSubmit      = handlers.navigateOrShowErrors('legalName', props, validations);
-  props.loadTranslationFromCookie(props.language);
 
   return (
     <Presentation
@@ -31,8 +30,7 @@ const mapStateToProps = (state) => {
     focused:      state.ui.focus,
     validations:  state.ui.validations,
     hover:        state.ui.hover,
-    flow:         state.ui.flow,
-    language:     state.ui.language
+    flow:         state.ui.flow
   };
 };
 
@@ -43,7 +41,6 @@ const mapDispatchToProps = (dispatch) => {
   const onBlurValidate = handlers.onBlurValidate(dispatch);
   const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
   const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
-  const loadTranslationFromCookie = handlers.loadTranslationFromCookie(dispatch);
 
   return {
     onChange,
@@ -51,8 +48,7 @@ const mapDispatchToProps = (dispatch) => {
     onBlurValidate,
     onFocusClearValidation,
     onSubmitShowErrors,
-    onSelectChange,
-    loadTranslationFromCookie
+    onSelectChange
   };
 };
 

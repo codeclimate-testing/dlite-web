@@ -6,25 +6,22 @@ import { pathForPage }    from '../helpers/navigation/page';
 import Translator         from '../i18n/translator-tag.jsx';
 import { addOrEdit }      from '../helpers/data/pathnames';
 
-
 const LinkPresentation = (props) => {
   let className = `${props.editKey} summary edit button ${props.cardType}`;
 
   let addText = 'Add';
   let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
-
   let buttonText = addOrEdit(props, addText, editText);
-  let flow = addOrEdit(props, 'add', 'edit');
-  let flowChange = props.onFlowChange;
-  let cardType  = props.cardType;
 
   let linkTo = {
-    pathname: pathForPage(props.editKey, {flow: flow})
+    pathname: pathForPage(props.editKey, {flow: props.flow})
   };
 
-  const handleClick = (props) => {
-    return flowChange(flow, cardType);
+  let handleClick = (e) => {
+    e.preventDefault();
+    props.onFlowChange(props.flow, props.cardType, props.appID, props.history);
   };
+
 
   return (
     <div className='summary-section'>

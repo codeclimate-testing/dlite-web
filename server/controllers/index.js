@@ -3,6 +3,7 @@
 const getApplication    = require('./get-application');
 const postApplication   = require('./post-application');
 const getTranslation    = require('./get-translation');
+const getUserApps       = require('./get-user-apps');
 const renderClient      = require('./render-client');
 const logout            = require('./logout');
 const sendZip           = require('./send-zip');
@@ -12,6 +13,7 @@ let controllers = {
   getApplication,
   postApplication,
   getTranslation,
+  getUserApps,
   renderClient,
   logout,
   sendZip,

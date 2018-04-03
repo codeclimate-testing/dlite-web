@@ -10,6 +10,7 @@ import {
 import Home                                   from '../presentations/home.jsx';
 import ChooseLanguage                         from './choose-language-page.jsx';
 import ChooseApplication                      from './choose-application-page.jsx';
+import OpenApplications                       from './intro/open-applications-page.jsx';
 
 import IDMe                                   from './id-me-page.jsx';
 import LoggedIn                               from './logged-in-page.jsx';
@@ -34,7 +35,8 @@ class Router extends React.Component {
         <Route path={ iddlPath('/sign-in') }                                exact component={IDMe} />
         <Route path={ cdlPath('/sign-in') }                                 exact component={IDMe} />
         <Route path={ cdlPath('/disclaimers') }                             exact component={CDLDisclaimers} />
-        <Route path={ alicePath('/logged-in')}                                    component={LoggedIn} />
+        <Route path={ alicePath('/logged-in/:user')}                              component={LoggedIn} />
+        <Route path={ alicePath('/open-applications')}                            component={OpenApplications} />
 
         <PrivateRoute pathURL={ alicePath('/cdl/*')}                              component={CDLRoutes} />
         <PrivateRoute pathURL={ alicePath('/id-and-license/*')}                   component={IDDLRoutes} />

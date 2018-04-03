@@ -28,7 +28,17 @@ import {
   addingID,
   addingDL
 } from '../../../data/add-flow';
+import { hasMultipleApps }    from '../../../data/application';
 
+
+export const IDme = (props) => {
+  let key = 'legalName';
+  // if multiple applications, go to /apply/open-applications key='openApplications'
+  if (hasMultipleApps(props)) {
+    key = 'openApplications';
+  }
+  return key;
+};
 
 export const dateOfBirth = (props) => {
   let key = 'wdywtdt';

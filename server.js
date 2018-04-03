@@ -8,6 +8,7 @@ const passport          = require('passport');
 const session           = require('express-session')
 const helmet            = require('helmet');
 const expressStaticGzip = require("express-static-gzip");
+const cookieParser      = require('cookie-parser');
 
 const logging           = require('./server/config/logging');
 const sessionOptions    = require('./server/config/session-options');
@@ -27,6 +28,7 @@ passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 
 server.use(bodyParser.json());
+server.use(cookieParser());
 csrf(server);
 
 server.use(logging());

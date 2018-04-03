@@ -14,7 +14,7 @@ export const postData = function (body) {
     });
     return fetch('/api/application',{
       method: 'POST',
-      credentials: 'include',
+      credentials: 'same-origin',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -115,6 +115,7 @@ export const getData = function (id) {
               value:  'error'
             }
           });
+          return err;
       });
   };
 };

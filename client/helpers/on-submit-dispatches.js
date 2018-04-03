@@ -36,7 +36,9 @@ export const updateEligibility = (stateProps, dispatch) => {
 export const saveApplication = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();
-    dispatch(postData(stateProps.application))
+    let appData = [stateProps.application, {userID: stateProps.server.userData.userID}];
+    let app = Object.assign({}, ...appData);
+    dispatch(postData(app))
       .then((res) => {
         ownProps.history.push(
           nextPath('summary', res)
@@ -48,7 +50,9 @@ export const saveApplication = (stateProps, dispatch, ownProps) => {
 export const saveCDL = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();
-    dispatch(postData(stateProps.cdl))
+    let appData = [stateProps.cdl, {userID: stateProps.server.userData.userID}];
+    let app = Object.assign({}, ...appData);
+    dispatch(postData(app))
     .then(res => {
       ownProps.history.push(
         nextPath('cdlSummary', res)

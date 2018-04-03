@@ -1,6 +1,7 @@
 // from demux's answer at https://stackoverflow.com/questions/38143993/session-auto-logout-after-inactivity
 import fetch                from 'isomorphic-fetch';
 import { buildLoggedOut }   from '../data/cookies';
+require('es6-promise').polyfill();
 
 class AutoLogout {
   constructor(history, appName) {

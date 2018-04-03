@@ -4,6 +4,7 @@ const uuid = require('uuid/v1');
 function fakeClientData() {
   return {
     id: uuid(),
+    userID: '10001',
     basics: {
       'language': 'en',
       'legalName': {
@@ -51,7 +52,6 @@ function fakeClientData() {
         'hasSocialSecurity': 'Yes'
       }
     },
-
     IDApp: {
       isApplying: true,
       action: 'new',
@@ -101,7 +101,7 @@ function fakeClientData() {
       realID: 'Yes'
     },
 
-    cardType: [],
+    cardType: ['ID'],
     cardAction: '',
 
     youthIDInstead: '',

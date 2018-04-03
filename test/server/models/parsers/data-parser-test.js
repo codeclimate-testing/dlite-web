@@ -100,4 +100,16 @@ describe('dataParser', function() {
     });
   });
 
+  describe('#buildName', function() {
+    it('returns a string of first name, last name, and suffix', function() {
+      let app = {
+        first_name: 'first',
+        middle_name: '',
+        last_name: 'last',
+        suffix_name: ''
+      };
+      assert.equal(dataParser.buildName(app), 'first last ');
+    });
+  });
+
 });

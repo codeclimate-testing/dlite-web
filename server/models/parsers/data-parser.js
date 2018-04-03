@@ -50,3 +50,7 @@ module.exports.expectLicenseAndIdHistory = function expectLicenseAndIdHistory(DL
 }
 
 module.exports.strToBool = strToBool;
+
+module.exports.buildName = function buildName(app) {
+  return `${app.first_name} ${app.last_name} ${app.suffix_name}`;
+}

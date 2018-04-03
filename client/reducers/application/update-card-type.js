@@ -2,7 +2,11 @@
 
 import { TYPES }              from '../../actions';
 import formValueArrayReducer  from '../form-value-array-reducer';
-import { cardTypeAction }     from '../../helpers/reducers';
+import {
+  cardTypeAction,
+  addStringFromSummary,
+  addArrayFromSummary
+ } from '../../helpers/reducers';
 
 const defaultState = () => {
   return [];
@@ -11,11 +15,16 @@ const defaultState = () => {
 const formReducer = (state = defaultState(), action) => {
   if (!action.payload) { return state;}
   if (!cardTypeAction(action)){ return state; }
+
   let newState = [];
   if (action.type === TYPES.UPDATE_CARD_TYPE) {
-    if (action.payload.name === 'addFromSummary') {
+    if (addStringFromSummary(action)) {
       newState.push(action.payload.value);
-    } else {
+    }
+    else if (addArrayFromSummary(action)) {
+      newState = action.payload.value;
+    }
+    else {
       newState = formValueArrayReducer(action, state);
     }
   }

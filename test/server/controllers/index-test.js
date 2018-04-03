@@ -91,6 +91,7 @@ describe('Testing application APIs for basic CRUD operations', () => {
 
     it('should get application info', (done) => {
       const _data = _response._getData();
+      _data.application.userID = application.userID;
       assert.deepEqual(application, _data.application);
       done();
     });

@@ -33,10 +33,27 @@ describe('PageSummaryLink edit buttons on summary pages', function() {
     assert.ok(component.find(className).length)
   });
 
-  it('has a link that directs to the url associated with the props.editKey key', function() {
+  it('has a link that directs to the edit url associated with the props.editKey key and the props.flow', function() {
     let className = '.'+props.editKey;
     props.flow = 'edit';
     let url = pathForPage(props.editKey, props);
+    component = render(
+      <Wrapper>
+        <PageSummaryLink {...props} />
+      </Wrapper>
+    );
+    assert.equal(component.find(className)[0].attribs.href, url);
+  });
+
+  it('has a link that directs to the non-edit url associated with the props.editKey key and the props.flow', function() {
+    let className = '.'+props.editKey;
+    props.flow = '';
+    let url = pathForPage(props.editKey, props);
+    component = render(
+      <Wrapper>
+        <PageSummaryLink {...props} />
+      </Wrapper>
+    );
     assert.equal(component.find(className)[0].attribs.href, url);
   });
 

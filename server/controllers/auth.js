@@ -18,10 +18,10 @@ const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   res.cookie('appName', params.appName);
   res.cookie('language', params.language);
   if (env === 'development' && !process.env.APP_URL.match(/herokuapp/g)) {
-    res.redirect(`http://localhost:3000/apply/logged-in`);
+    res.redirect(`http://localhost:3000/apply/logged-in/${req.user.id}`);
   }
   else {
-    res.redirect(`/apply/logged-in`);
+    res.redirect(`/apply/logged-in/${req.user.id}`);
   }
 };
 

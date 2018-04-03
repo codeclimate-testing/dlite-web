@@ -15,14 +15,14 @@ describe('server data parser', function() {
       let clientData = dataHelper.IDDLData.fakeClientData();
 
       beforeEach(function(done) {
-        data = dataHelper.fakeRecords();
+        data = dataHelper.fakeIDDLRecords();
         post.saveApplication(data)
         .then(() => { done(); })
         .catch(done);
       });
 
       it('correctly extracts the legal name ', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.legalName.firstName, clientData.basics.legalName.firstName);
@@ -35,7 +35,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the date of birth', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.dateOfBirth.day, clientData.basics.dateOfBirth.day);
@@ -47,7 +47,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the home address', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.address.home.street_1, clientData.basics.address.home.street_1);
@@ -61,7 +61,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the mailing address', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.address.mailing.street_1, clientData.basics.address.mailing.street_1);
@@ -75,7 +75,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the card options', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.realID, clientData.realID);
@@ -88,7 +88,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license classes info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.deepEqual(parsedData.application.DLApp.licenseType.type, clientData.DLApp.licenseType.type);
@@ -99,7 +99,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the renewal card info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.equal(parsedData.application.IDApp.currentCard.number, clientData.IDApp.currentCard.number);
@@ -112,7 +112,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the physical traits', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.physicalTraits.hairColor, clientData.basics.physicalTraits.hairColor);
@@ -124,7 +124,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the traits height and weight', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.traitsHeightWeight.weight, clientData.basics.traitsHeightWeight.weight);
@@ -136,7 +136,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the social security', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.basics.socialSecurity.part1, clientData.basics.socialSecurity.part1);
@@ -149,7 +149,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the organ donation', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.organDonation.donate, clientData.organDonation.donate);
@@ -160,7 +160,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license and ID history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.history.licenseAndIdHistory.DLIDNumber, clientData.history.licenseAndIdHistory.DLIDNumber);
@@ -175,7 +175,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the names history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.history.namesHistory.hasUsedPreviousNames, clientData.history.namesHistory.hasUsedPreviousNames);
@@ -186,7 +186,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the medical history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.history.medicalHistory.hasMedicalCondition, clientData.history.medicalHistory.hasMedicalCondition);
@@ -197,7 +197,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license issues', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.history.licenseIssues.isSuspended, clientData.history.licenseIssues.isSuspended);
@@ -211,12 +211,12 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the veterans info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.history.veteransService.isVeteran, clientData.history.veteransService.isVeteran);
           assert.equal(parsedData.application.history.veteransService.receiveBenefits, clientData.history.veteransService.receiveBenefits);
-          //assert.equal(parsedData.application.history.veteransService.previouslyDesignated, clientData.history.veteransService.previouslyDesignated);
+          assert.equal(parsedData.application.history.veteransService.previouslyDesignated, clientData.history.veteransService.previouslyDesignated);
           assert.equal(parsedData.application.history.veteransService.veteransIdentifier, clientData.history.veteransService.veteransIdentifier);
           done();
         })
@@ -224,7 +224,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the citizenship status', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.citizenStatus, clientData.voting.citizenStatus);
@@ -234,7 +234,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the ballot language', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.ballotLanguage, clientData.voting.ballotLanguage);
@@ -244,7 +244,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the eligibility requirements', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.eligibilityRequirements, clientData.voting.eligibilityRequirements);
@@ -254,7 +254,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the opted out info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.optOut, clientData.voting.optOut);
@@ -264,7 +264,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the political party info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.politicalPartyChoose.isSelected, clientData.voting.politicalPartyChoose.isSelected);
@@ -275,7 +275,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the contact methods', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.application.voting.contactMethods.shouldContact, clientData.voting.contactMethods.shouldContact);
@@ -294,14 +294,14 @@ describe('server data parser', function() {
       let clientData = dataHelper.CDLData.clientData();
 
       beforeEach(function(done) {
-        data = dataHelper.fakeCDLRecords(clientData);
+        data = dataHelper.fakeRecords(clientData);
         post.saveApplication(data)
         .then(() => {done(); })
         .catch(done);
       });
 
       it('extracts the new cardAction', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.cardAction, clientData.cardAction);
@@ -311,7 +311,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the legal name ', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.legalName.firstName, clientData.basics.legalName.firstName);
@@ -324,7 +324,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the date of birth', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.dateOfBirth.day, clientData.basics.dateOfBirth.day);
@@ -336,7 +336,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the home address', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.address.home.street_1, clientData.basics.address.home.street_1);
@@ -350,7 +350,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the mailing address', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.address.mailing.street_1, clientData.basics.address.mailing.street_1);
@@ -364,7 +364,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the card options', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.realID, clientData.realID);
@@ -374,7 +374,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license classes info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.deepEqual(parsedData.cdl.cdlEndorsements.type, clientData.cdlEndorsements.type);
@@ -390,7 +390,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the physical traits', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.physicalTraits.hairColor, clientData.basics.physicalTraits.hairColor);
@@ -402,7 +402,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the traits height and weight', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.traitsHeightWeight.weight, clientData.basics.traitsHeightWeight.weight);
@@ -414,7 +414,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the social security', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.basics.socialSecurity.part1, clientData.basics.socialSecurity.part1);
@@ -427,7 +427,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the organ donation', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.organDonation.donate, clientData.organDonation.donate);
@@ -438,7 +438,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license and ID history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.history.currentDLInfo.number, clientData.history.currentDLInfo.number);
@@ -453,7 +453,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the names history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.history.namesHistory.hasUsedPreviousNames, clientData.history.namesHistory.hasUsedPreviousNames);
@@ -464,7 +464,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the medical history', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.history.medicalHistory.hasMedicalCondition, clientData.history.medicalHistory.hasMedicalCondition);
@@ -475,7 +475,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the license issues', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.history.licenseIssues.isSuspended, clientData.history.licenseIssues.isSuspended);
@@ -489,7 +489,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the veterans info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.history.veteransService.isVeteran, clientData.history.veteransService.isVeteran);
@@ -503,7 +503,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the citizenship status', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.citizenStatus, clientData.voting.citizenStatus);
@@ -513,7 +513,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the ballot language', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.ballotLanguage, clientData.voting.ballotLanguage);
@@ -523,7 +523,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the eligibility requirements', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.eligibilityRequirements, clientData.voting.eligibilityRequirements);
@@ -533,7 +533,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the opted out info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.optOut, clientData.voting.optOut);
@@ -543,7 +543,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the political party info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.politicalPartyChoose.isSelected, clientData.voting.politicalPartyChoose.isSelected);
@@ -554,7 +554,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the contact methods', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.voting.contactMethods.shouldContact, clientData.voting.contactMethods.shouldContact);
@@ -571,13 +571,13 @@ describe('server data parser', function() {
       let clientData = dataHelper.CDLData.renew();
 
       beforeEach(function(done) {
-        data = dataHelper.fakeCDLRecords(clientData);
+        data = dataHelper.fakeRecords(clientData);
         post.saveApplication(data)
         .then(() => { done(); })
         .catch(done);
       });
       it('correctly extracts the renewal card info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.cardAction, clientData.cardAction);
@@ -596,13 +596,13 @@ describe('server data parser', function() {
       let clientData = dataHelper.CDLData.replace();
 
       beforeEach(function(done) {
-        data = dataHelper.fakeCDLRecords(clientData);
+        data = dataHelper.fakeRecords(clientData);
         post.saveApplication(data)
         .then(() => { done(); })
         .catch(done);
       });
       it('correctly extracts the replacement card info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.cardAction, clientData.cardAction);
@@ -616,7 +616,7 @@ describe('server data parser', function() {
       });
 
       it('extracts the cardReplacement details', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( (records) => {
           parsedData = parse(records);
           assert.deepEqual(parsedData.cdl.cardReplacement, clientData.cardReplacement);
@@ -631,14 +631,14 @@ describe('server data parser', function() {
       let clientData = dataHelper.CDLData.updateCorrect();
 
       beforeEach(function(done) {
-        data = dataHelper.fakeCDLRecords(clientData);
+        data = dataHelper.fakeRecords(clientData);
         post.saveApplication(data)
         .then(() => { done(); })
         .catch(done);
       });
 
       it('extracts the cardChanges details', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( (records) => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.cardAction, clientData.cardAction);
@@ -649,7 +649,7 @@ describe('server data parser', function() {
       });
 
       it('correctly extracts the update/correct card info', function(done) {
-        getApplication(data.application.id)
+        getApplication.byId(data.application.id)
         .then( records => {
           parsedData = parse(records);
           assert.equal(parsedData.cdl.currentCardInfo.number, clientData.currentCardInfo.number);

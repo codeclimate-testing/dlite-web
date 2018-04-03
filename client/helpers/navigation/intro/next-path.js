@@ -9,3 +9,11 @@ export const chooseApplication = (props) => {
   }
   return key;
 };
+
+export const openApplications = (props) => {
+  let key = 'legalName';
+  if (cdlApp(props.chooseApp)) {
+    key = 'cdlLegalName';
+  }
+  return key;
+};

@@ -23,14 +23,16 @@ function DLApp(cards, card_options, card_histories, license_classes) {
   };
 
   let DLCard = cards.filter(card => card.type === 'DL');
-  let cardOptions = card_options.filter(option => {
-    return option.card_id === DLCard[0].id;
-  });
 
   if (DLCard.length > 0) {
     DLAppObject.isApplying = true;
-    cardOptions.forEach(option => {
 
+    let cardOptions = card_options.filter(option => {
+      return option.card_id === DLCard[0].id;
+    });
+
+
+    cardOptions.forEach(option => {
       // action
       if (option.option_type === 'action') {
         DLAppObject.action = option.option_value;

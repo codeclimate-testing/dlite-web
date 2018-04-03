@@ -5,6 +5,7 @@ const uuid = require('uuid/v1');
 function clientData() {
   return {
     id: uuid(),
+    userID: '10001',
     cardAction: 'new',
     cardChanges: {
       correctOrUpdate: '',

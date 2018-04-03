@@ -27,6 +27,7 @@ const Page = (props) => {
 const mapStateToProps = (state) => {
   return {
     disclaimers      : state.cdl.cdlDisclaimers,
+    chooseApp        : state.ui.chooseApp,
     focused          : state.ui.focus,
     validations      : state.ui.validations
   };

@@ -27,6 +27,8 @@ const CDLApp              = require('./get-cdl-app');
 const cardInfo            = require('./get-current-card-info');
 const CDLType             = require('./get-cdl-type');
 const DLInfo              = require('./get-dl-info');
+const cardType            = require('./get-card-type');
+const cardAction          = require('./get-card-action');
 
 module.exports = {
   language,
@@ -55,5 +57,7 @@ module.exports = {
   CDLApp,
   cardInfo,
   CDLType,
-  DLInfo
+  DLInfo,
+  cardType,
+  cardAction
 };

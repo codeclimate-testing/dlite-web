@@ -1,7 +1,6 @@
 'use strict';
 
 const assert                = require('assert');
-
 const dbHelper              = require('../../../support/db-helper');
 const findOrSaveUser        = require('../../../../server/models/db/save-user');
 

@@ -8,6 +8,7 @@ import {
   hasChosenApp,
   editMode,
   addOrEdit,
+  addOrEditFlow,
   goToCardHistory,
   nextOrSummary,
   applyEditOrAddPath,
@@ -141,6 +142,20 @@ describe('Data helpers for pathnames', function() {
     });
     it('returns "Edit" if props does not have add key', function() {
       assert.equal(addOrEdit(props, 'Add', 'Edit'), 'Edit');
+    });
+  });
+
+  describe('#addOrEditFlow', function() {
+    it('returns blank if props has an appID', function() {
+      props.appID = '100';
+      assert.equal(addOrEditFlow(props, 'Add', 'Edit'), '');
+    });
+    it('returns "Add" if props have add key', function() {
+      props.add = true;
+      assert.equal(addOrEditFlow(props, 'Add', 'Edit'), 'Add');
+    });
+    it('returns "Edit" if props does not have add key', function() {
+      assert.equal(addOrEditFlow(props, 'Add', 'Edit'), 'Edit');
     });
   });
 

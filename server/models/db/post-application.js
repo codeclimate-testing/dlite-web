@@ -139,6 +139,7 @@ function saveApplication(data) {
   let returnedData = [];
   let cardData = {};
   const application_id  = data.application.id;
+
   return insertApplication(data.application)
     .then((records) => {
       if(records.length > 0) {

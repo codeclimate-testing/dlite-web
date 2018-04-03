@@ -6,8 +6,9 @@ import {
   languageIsSelected,
   buildConfCode,
   isProduction,
+  requireLogIn,
   afterIntro,
-  requireLogIn
+  hasMultipleApps
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -30,23 +31,9 @@ describe('Data helpers for application', function() {
     });
   });
 
-  describe('#afterIntro', function() {
-    it('returns false if pathname is in the introPages array', function() {
-      let pathname = '/apply/choose-language';
-      assert.equal(afterIntro(pathname), false);
-    });
-    it('returns true if pathname is not in the introPages array', function() {
-      let pathname = '/apply/summary';
-      assert.equal(afterIntro(pathname), true);
-    });
-  });
-
   describe('#isProduction', function() {
     it('returns true if env is production', function() {
       assert.equal(isProduction('production'), true);
-    });
-    it('returns false if env is development', function() {
-      assert.equal(isProduction('development'), false);
     });
   });
 
@@ -70,6 +57,35 @@ describe('Data helpers for application', function() {
       url = '/apply/summary';
       process.env.APP_ENV = 'production';
       assert.equal(requireLogIn(url, process.env.APP_ENV), true);
+    });
+  });
+
+  describe('#afterIntro', function() {
+    it('returns false if page is an intro page', function() {
+      assert.equal(afterIntro('/apply/choose-application'), false);
+    });
+    it('returns true if page is not an intro page', function() {
+      assert.equal(afterIntro('/apply/id-and-license/legal-name'), true);
+    });
+  });
+
+  describe('#hasMultipleApps', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        userData: {
+          appsLength: 0
+        }
+      }
+    });
+
+    it('returns true if appsLength is greater than 1', function() {
+      props.userData.appsLength = 2;
+      assert.equal(hasMultipleApps(props), true);
+    });
+    it('returns false if appsLength is 1', function() {
+      props.userData.appsLength = 1;
+      assert.equal(hasMultipleApps(props), false);
     });
   });
 });

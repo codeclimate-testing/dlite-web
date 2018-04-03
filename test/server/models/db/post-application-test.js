@@ -19,7 +19,7 @@ describe('Post Application Data', () => {
   describe('#IDDL data', () => {
     describe('application table', () => {
 
-      let data = dataHelper.fakeRecords().application;
+      let data = dataHelper.fakeIDDLRecords().application;
 
       it('inserts new record', (done) => {
         ctrl.insertApplication(data)
@@ -79,12 +79,12 @@ describe('Post Application Data', () => {
 
     describe('addresses table', () => {
 
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.addresses;
-  
+
       it('inserts new records', (done) => {
-  
+
         ctrl.insertAddresses(data, application_id)
           .then((records) => {
             assert(records[0].id);
@@ -151,7 +151,7 @@ describe('Post Application Data', () => {
 
     describe('previous names table', () => {
 
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.previous_names;
 
@@ -191,7 +191,7 @@ describe('Post Application Data', () => {
     });
 
     describe('cards table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.cards;
 
@@ -349,7 +349,7 @@ describe('Post Application Data', () => {
     });
 
     describe('emails table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.emails;
 
@@ -378,7 +378,7 @@ describe('Post Application Data', () => {
     });
 
     describe('phone_numbers table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.phone_numbers;
 
@@ -407,7 +407,7 @@ describe('Post Application Data', () => {
     });
 
     describe('organ_donations table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.organ_donations;
 
@@ -439,7 +439,7 @@ describe('Post Application Data', () => {
     });
 
     describe('card_histories table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.card_histories;
 
@@ -473,7 +473,7 @@ describe('Post Application Data', () => {
     });
 
     describe('medical_histories table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.medical_histories;
 
@@ -502,7 +502,7 @@ describe('Post Application Data', () => {
     });
 
     describe('license_issues table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.license_issues;
 
@@ -533,7 +533,7 @@ describe('Post Application Data', () => {
     });
 
     describe('veterans_info table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.veterans_info;
 
@@ -568,7 +568,7 @@ describe('Post Application Data', () => {
     });
 
     describe('voting_registrations table', () => {
-      let data            = dataHelper.fakeRecords();
+      let data            = dataHelper.fakeIDDLRecords();
       let application_id  = data.application.id;
       data                = data.voting_registrations;
 
@@ -620,7 +620,7 @@ describe('Post Application Data', () => {
 
     describe('all tables', () => {
 
-      let data = dataHelper.fakeRecords();
+      let data = dataHelper.fakeIDDLRecords();
 
       it('inserts a new full application', function(done) {
         ctrl.saveApplication(data)
@@ -743,7 +743,7 @@ describe('Post Application Data', () => {
             assert.equal(records.card_options[0].option_value, data.card_options[0].option_value);
             assert.equal(records.card_options[1].option_value, data.card_options[1].option_value);
             assert.equal(records.card_options[2].option_value, data.card_options[2].option_value);
-  
+
             //License classes table
             assert.equal(records.license_classes[0].card_id, data.license_classes[0].card_id);
             assert.equal(records.license_classes[1].card_id, data.license_classes[1].card_id);
@@ -755,12 +755,12 @@ describe('Post Application Data', () => {
           .then(done)
           .catch(done);
       });
-  
+
       it('correctly assigns the real id designation to only the right card', function(done) {
         const assertCardOptions = (cards) => {
           let cardIds = cards.map((record) => { return record.id; });
           let dlCard = cards.find((record) => { return record.type === 'DL'; });
-  
+
           dbHelper.db('card_options')
             .whereIn('card_id', cardIds)
             .where({
@@ -775,15 +775,15 @@ describe('Post Application Data', () => {
             })
             .catch(done);
         };
-  
-        let data = dataHelper.fakeRecords();
-  
+
+        let data = dataHelper.fakeIDDLRecords();
+
         ctrl.saveApplication(data)
           .then((records) => {
             assertCardOptions(records.cards);
           });
       });
-  
+
     });
   });
 
@@ -791,7 +791,7 @@ describe('Post Application Data', () => {
     let clientData = dataHelper.CDLData.clientData();
 
     describe('license classes table', () => {
-      let data = dataHelper.fakeCDLRecords(clientData).license_classes;
+      let data = dataHelper.fakeRecords(clientData).license_classes;
       it('inserts new records', (done) => {
         ctrl.insertLicenseClasses(data)
           .then((records) => {

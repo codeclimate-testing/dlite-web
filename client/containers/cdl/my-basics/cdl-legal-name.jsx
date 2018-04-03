@@ -11,7 +11,6 @@ const Page = (props) => {
   let validations       = new NamePageValidator(props.legalName, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlLegalName', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);
-  props.loadTranslationFromCookie(props.language);
 
   return (
     <Presentation
@@ -29,8 +28,7 @@ function mapStateToProps(state) {
     validations:  state.ui.validations,
     focused:      state.ui.focus,
     hover:        state.ui.hover,
-    flow:         state.ui.flow,
-    language:     state.ui.language
+    flow:         state.ui.flow
   };
 };
 

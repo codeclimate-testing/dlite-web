@@ -9,6 +9,14 @@ describe('findOrSaveUser', () => {
   let userData = {
     uuid: 'e81bb7a2014543e8934679b54fab09ad'
   };
+  let appData1 = {
+    user_id: 'e81bb7a2014543e8934679b54fab09ad',
+    id: 10
+  };
+  let appData2 = {
+    user_id: 'e81bb7a2014543e8934679b54fab09ad',
+    id: 11
+  };
 
   let existing;
 
@@ -22,7 +30,22 @@ describe('findOrSaveUser', () => {
           .returning('*');
       })
       .then((users) => {
-        existing = users[0];
+        return existing = users[0];
+      })
+      .then(() => {
+        return dbHelper
+          .db('applications')
+          .insert(appData1)
+          .returning('*');
+      })
+      .then((res) => {
+        return dbHelper
+          .db('applications')
+          .insert(appData2)
+          .returning('*');
+      })
+      .then((res) => {
+        return;
       })
       .then(done)
       .catch(done);

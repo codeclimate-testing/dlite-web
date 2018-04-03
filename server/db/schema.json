@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 15,
-    "constraints": 16,
-    "tables": 17,
-    "columns": 86
+    "sequences": 16,
+    "constraints": 17,
+    "tables": 18,
+    "columns": 88
   },
   "tables": {
     "addresses": {
@@ -231,6 +231,15 @@
           "column_name": "social_security_number",
           "column_default": null,
           "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "user_id": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "user_id",
+          "column_default": null,
+          "is_nullable": false,
           "data_type": "character varying",
           "col_description": null
         }
@@ -741,6 +750,31 @@
         }
       }
     },
+    "users": {
+      "table_schema": "public",
+      "table_name": "users",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "users",
+          "column_name": "id",
+          "column_default": "nextval('users_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "uuid": {
+          "table_schema": "public",
+          "table_name": "users",
+          "column_name": "user_id",
+          "column_default": null,
+          "is_nullable": false,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
     "veterans_info": {
       "table_schema": "public",
       "table_name": "veterans_info",
@@ -1125,6 +1159,22 @@
         }
       ]
     },
+    "users": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "users",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "users_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "users",
+          "referenced_column": "id"
+        }
+      ]
+    },
     "veterans_info": {
       "id": [
         {
@@ -1297,6 +1347,17 @@
         "table_name": "voting_registrations",
         "column_name": "id",
         "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "users": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "users",
+        "column_name": "id",
+        "sequence_name": "users_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"

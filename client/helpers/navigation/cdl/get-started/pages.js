@@ -5,6 +5,7 @@ import {
 } from '../../../data/pathnames';
 
 import {
+  cdlIDme,
   cdlWdywtdt,
   cdlCurrentCard,
   changedCDL,
@@ -23,7 +24,7 @@ const cdlGetStarted = [
     key: 'cdlIDme',
     description: 'CDL sign-in',
     path: '/sign-in',
-    next: 'cdlLegalName'
+    next: cdlIDme
   },
   {
     key: 'cdlLegalName',

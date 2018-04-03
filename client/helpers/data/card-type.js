@@ -111,3 +111,11 @@ export const getCorrectApp = (state) => {
   }
   return app;
 };
+
+export const checkCardType = (cardType, value) => {
+  return cardType === value;
+};
+
+export const getLegalNameKey = (cardType) => {
+  return cardType === 'CDL' ? 'cdlLegalName' : 'legalName';
+};

@@ -9,9 +9,10 @@ export const cardTypeAction = (action) => {
 };
 
 export const trueIfYesNeverFalse = (value, type, state) => {
-  if (value === type) {
+  if (value === type || value.includes(type)) {
     return true;
-  } else {
+  }
+  else {
     return state;
   }
 };
@@ -56,4 +57,12 @@ export const realID = (state, action, type) => {
   }
 
   return data;
-}
+};
+
+export const addStringFromSummary = (action) => {
+  return (action.payload.name === 'addFromSummary' && typeof(action.payload.value) === 'string');
+};
+
+export const addArrayFromSummary = (action) => {
+  return (action.payload.name === 'addFromSummary' && typeof(action.payload.value) === 'object');
+};
