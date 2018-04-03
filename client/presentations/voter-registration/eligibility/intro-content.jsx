@@ -6,9 +6,10 @@ import { isPreregistering } from '../../../helpers/calculate-age';
 
 const AgePointForPreReg = (props) => {
   return (
-    <li className='translation-missing'>
-      I am 16 or 17 years old and would like to pre-register to vote
-    </li>
+    <Translator
+      tag             = 'li'
+      translationPath = 'newApproved.votingRegistration.eligibilityPage.preRegEligible'
+    />
   );
 };
 

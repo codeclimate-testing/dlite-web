@@ -3,9 +3,15 @@
 import React                from 'react';
 import CheckboxCollection   from '../../checkbox-selector-collection.jsx';
 import CheckboxSelector     from '../../checkbox-selector.jsx';
+import UpdateDL             from './update-dl-form.jsx';
+import UpdateID             from './update-id-form.jsx';
 import {
   getStringByAction
 }   from '../../../helpers/data/card-actions';
+import {
+  updateDL,
+  updateID
+} from '../../../helpers/data/card-type';
 import Translator          from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
@@ -13,52 +19,25 @@ const Form = (props) => {
 
   let formName = props.formName ? `${props.formName}sections` : 'sections';
 
-  const correctText = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.correct';
-  const updateText  = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.update';
-  let headerText    = getStringByAction(props, null, null, null, null, updateText, correctText);
-
   return (
     <div className='row change-sections-form'>
       <hr />
         <Translator
           tag             = 'h3'
           className       = 'question'
-          translationPath = { headerText }
+          translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.update'
         />
 
         <Translator
           tag='p'
           translationPath = 'intro.chooseSelectionPage.explanationMultiCard'
         />
-
-      <fieldset role='group' aria-label='What do you need to change choice'>
-        <CheckboxCollection
+        <UpdateDL
           {...props}
-          name          = { formName }
-          array         = { props.cardChanges.sections }
-          errorMessage  = { props.validations.sections() }
-        >
-          <CheckboxSelector value='name'>
-            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.0' />
-          </CheckboxSelector>
-
-          <CheckboxSelector value='sex'>
-            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.1' />
-          </CheckboxSelector>
-
-          <CheckboxSelector value='dateOfBirth'>
-            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.2' />
-          </CheckboxSelector>
-
-          <CheckboxSelector value='address'>
-            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.3' />
-          </CheckboxSelector>
-
-          <CheckboxSelector value='other'>
-            <Translator tag = 'span' translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.values.4' />
-          </CheckboxSelector>
-        </CheckboxCollection>
-      </fieldset>
+        />
+        <UpdateID
+          {...props}
+        />
     </div>
   )
 };

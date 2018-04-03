@@ -9,14 +9,12 @@ const PreRegVoterPreferencesIntro = (props) => {
 
   return (
     <div className='voter-preferences-intro'>
-      <span tag='h2' className='question translation-missing'>
-        Next we'd like to make sure your voter pre-registration is up to date.
-      </span>
-
       <Translator
-        tag             = 'p'
-        translationPath = 'votingRegistration.preferencesIntroPage.explanation'
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'newApproved.votingRegistration.eligibilityPage.preRegUpToDate'
       />
+
       <Translator
         tag             = 'h4'
         translationPath = 'votingRegistration.preferencesIntroPage.partyHeadline'

@@ -15,8 +15,6 @@ import {
 import PageSummaryLink              from '../../../../containers/page-summary-link.jsx';
 import SummaryItem                  from '../summary-item.jsx';
 
-const title = 'Should Contact';
-
 const PhoneNumber = (props) => {
   if (!hasPhone(props.contactMethods)) { return null; }
   const phone = `(${props.contactMethods.phoneNumber1}) ${props.contactMethods.phoneNumber2}-${props.contactMethods.phoneNumber3}`;
@@ -54,7 +52,7 @@ const ContactMethods = (props) => {
       {...props}
     >
       <SummaryItem
-        title={title}
+        title='newExtracted.conclusion.summary.shouldContact'
         text={contactMethods}
       />
       <EmailAddress {...props} />
@@ -66,4 +64,3 @@ const ContactMethods = (props) => {
 };
 
 export default ContactMethods;
-

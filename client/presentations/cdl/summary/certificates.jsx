@@ -43,7 +43,7 @@ const CDLCertificates = (props) => {
       {...props}
     >
       <SummaryItem
-        title='Certificates(s)'
+        title = 'newExtracted.conclusion.summary.certificates'
         text={certificates}
       />
     </PageSummaryLink>

@@ -45,13 +45,12 @@ const Decline = (props) => {
 };
 
 const CitizenStatus = (props) => {
-  let notAvailable = <div className='translation-missing'>Not Available</div>
   let now = props.now ? props.now : new Date();
   if (ageChecks.Under16(props.dateOfBirth, now)) {
     return (
       <SummaryItem
         title = 'summaryPage.voterRegistration.citizen'
-        text  = { notAvailable }
+        text  = 'newExtracted.conclusion.notAvailable'
       />
     )
   }

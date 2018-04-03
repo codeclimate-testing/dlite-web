@@ -58,7 +58,6 @@ const OtherPartyEntry = (props) => {
           value         = { props.politicalPartyChoose.otherParty }
           error         = { error}
           placeholder   = 'Please enter your selection'
-          className     = 'translation-missing'
         />
       </RadioSelector>
     </div>

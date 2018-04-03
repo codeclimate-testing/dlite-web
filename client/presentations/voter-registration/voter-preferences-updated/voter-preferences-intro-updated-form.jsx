@@ -35,7 +35,7 @@ const VoterPreferencesIntroUpdated = (props) => {
 
       <Translator
         tag             = 'p'
-        translationPath = '.votingRegistration.preferencesIntroPage.byMailExplanation'
+        translationPath = 'votingRegistration.preferencesIntroPage.byMailExplanation'
       />
 
       <Translator

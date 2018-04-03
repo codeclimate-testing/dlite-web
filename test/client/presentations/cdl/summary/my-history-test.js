@@ -210,13 +210,13 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Veteran:'), true);
+      assert.equal(component.text().includes('Veteran'), true);
       assert.equal(component.text().includes('Yes'), true);
-      assert.equal(component.text().includes('Get benefit information:'), true);
+      assert.equal(component.text().includes('Get benefit information'), true);
       assert.equal(component.text().includes('No'), true);
-      assert.equal(component.text().includes('Military driving experience CDL waiver:'), true);
+      assert.equal(component.text().includes('Military driving experience CDL waiver'), true);
       assert.equal(component.text().includes('Yes'), true);
-      assert.equal(component.text().includes('"Veteran" printed on CDL:'), true);
+      assert.equal(component.text().includes('“Veteran” printed on CDL'), true);
     });
 
     it('shows only isVeteran answer if answer is No', function() {
@@ -227,10 +227,10 @@ describe('CDL Summary My Basics section', function() {
           <MyHistory { ...props } />
         </Wrapper>
       )
-      assert.equal(component.text().includes('Veteran:No'), true);
-      assert.equal(component.text().includes('Get benefit information:'), false);
-      assert.equal(component.text().includes('Military driving experience CDL waiver::'), false);
-      assert.equal(component.text().includes('"Veteran" printed on card(s):'), false);
+      assert.equal(component.text().includes('VeteranNo'), true);
+      assert.equal(component.text().includes('Get benefit information'), false);
+      assert.equal(component.text().includes('Military driving experience CDL waiver'), false);
+      assert.equal(component.text().includes('"Veteran" printed on card(s)'), false);
     });
   });
 

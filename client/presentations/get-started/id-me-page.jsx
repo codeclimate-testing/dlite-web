@@ -13,26 +13,47 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <div className='id-me'>
-        <h2 className='translation-missing'>
-          The DMV is partnering with ID.me to protect your digital identity.
-        </h2>
+        <Translator
+          tag             = 'h2'
+          translationPath = 'newExtracted.intro.getStartedPage.idMe.prompt'
+        />
 
         <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
-          <a href={authURL} className='button green translation-missing id-me-create'>
-            <div className='unit'>Create an </div>
+          <a href={authURL} className='button green id-me-create'>
+            <Translator
+            tag             = 'div'
+            className       = 'unit'
+            translationPath = 'newExtracted.intro.getStartedPage.idMe.create'
+            />
             <img src='/images/id-me/white-logo.svg' alt='id.me' className='id-me-logo unit' />
-            <div className='unit'> account</div>
+            <Translator
+            tag             = 'div'
+            className       = 'unit'
+            translationPath = 'newExtracted.intro.getStartedPage.idMe.account'
+            />
           </a>
 
           <div className='or-block'>
             <hr className='mid-line'/>
-            <p className='or'>Or</p>
+            <Translator
+            tag             = 'p'
+            className       = 'or'
+            translationPath = 'newExtracted.intro.getStartedPage.idMe.or'
+            />
           </div>
 
-          <a href={authURL} className='button translation-missing id-me-sign-in'>
-            <div className='unit'>Sign in with an </div>
+          <a href={authURL} className='button id-me-sign-in'>
+            <Translator
+            tag             = 'div'
+            className       = 'unit'
+            translationPath = 'newExtracted.intro.getStartedPage.idMe.signIn'
+            />
             <img src='/images/id-me/dark-logo.svg' alt='id.me' className='id-me-logo unit' />
-            <div className='unit'> account</div>
+            <Translator
+            tag             = 'div'
+            className       = 'unit'
+            translationPath = 'newExtracted.intro.getStartedPage.idMe.account'
+            />
           </a>
         </fieldset>
 

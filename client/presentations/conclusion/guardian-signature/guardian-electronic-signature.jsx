@@ -55,8 +55,7 @@ const ElectronicSignature = (props) => {
           >
             <Translator
               tag             = 'span'
-              className       = 'translation-missing'
-              translationPath = 'I/We accept civil liability for this minor and understand a provisional permit issued to a minor is not valid until he/she begins driver training.'
+              translationPath = 'parentGuardianSignaturePage.signatureSection.liabilityStatement'
             />
           </CheckboxSelector>
         </fieldset>
@@ -67,7 +66,10 @@ const ElectronicSignature = (props) => {
       </div>
 
       <div className='electronic-signature'>
-        <p>Please type your name and today’s date to electronically sign.</p>
+            <Translator
+              tag             = 'p'
+              translationPath = 'parentGuardianSignaturePage.signatureSection.electronicSignatureSection.prompt'
+            />
 
         <fieldset role='group' aria-label='Guardian electronic signature'>
           <TextInput

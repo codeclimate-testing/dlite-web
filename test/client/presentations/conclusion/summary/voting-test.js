@@ -111,7 +111,7 @@ describe('Summary Voter registration section components', function() {
         </Wrapper>
       )
       assert.equal(component.text().includes('US Citizen'), true);
-      assert.equal(component.text().includes('Not Available'), true);
+      assert.equal(component.text().includes('Not available'), true);
     });
   });
 
@@ -137,7 +137,7 @@ describe('Summary Voter registration section components', function() {
         </Wrapper>
       )
       assert.equal(component.text().includes('Meets eligibility requirements'), true);
-      assert.equal(component.text().includes('Not Available'), true);
+      assert.equal(component.text().includes('Not available'), true);
     });
      it('shows eligibility', function(){
       let eligibilityRequirements = 'Yes';

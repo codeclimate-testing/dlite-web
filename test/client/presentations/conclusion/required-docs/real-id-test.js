@@ -2,12 +2,15 @@
 
 import assert                   from 'assert';
 import React                    from 'react';
+import wrapperGenerator         from '../../../support/wrapper';
+import store                    from '../../../support/page-store';
 import configure                from '../../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import RealID                   from '../../../../../client/presentations/conclusion/documents/real-id-documents.jsx';
 import BulletList               from '../../../../../client/presentations/conclusion/documents/bullet-list.jsx';
 
 describe('Required Docs for Real ID', function() {
+  const Wrapper = wrapperGenerator(store);
   let component, props;
   beforeEach(function() {
     props = {
@@ -76,9 +79,11 @@ describe('Required Docs for Real ID', function() {
     it('is true when condition is Yes', function() {
       props.realID = 'Yes';
       component = render(
-        <RealID
-          {...props}
-        />
+        <Wrapper>
+          <RealID
+            {...props}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID birth date') &&
         !component.text().includes('All applicants need to prove their date of birth.'),
@@ -88,9 +93,11 @@ describe('Required Docs for Real ID', function() {
     it('is false when condition is No', function() {
       props.realID = 'No';
       component = render(
-        <RealID
-          {...props}
-        />
+        <Wrapper>
+          <RealID
+            {...props}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID birth date') &&
         !component.text().includes('All applicants need to prove their date of birth.'),
@@ -99,9 +106,11 @@ describe('Required Docs for Real ID', function() {
 
     it('is false when condition is blank', function() {
       component = render(
-        <RealID
-          {...props}
-        />
+        <Wrapper>
+          <RealID
+            {...props}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID birth date') &&
         !component.text().includes('All applicants need to prove their date of birth.'),

@@ -11,7 +11,7 @@ const ApplyingIDInfo = (props) => {
 
   const newID         = <Translator  tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.applyingID' />
   const reducedFeeID  = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.applyingReducedFeeID' />
-  const noFeeID       = <p className='translation-missing'> You are applying for a no-fee ID card </p>
+  const noFeeID       = <Translator tag='p' translationPath = 'newExtracted.intro.getStartedPage.whatYouAreDoing.applyNoFeeID'/>
   const seniorID      = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.applyingSeniorID' />
 
   if(!getNewID(props)) { return null; }
@@ -26,4 +26,3 @@ const ApplyingIDInfo = (props) => {
 };
 
 export default ApplyingIDInfo;
-

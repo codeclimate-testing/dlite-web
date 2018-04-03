@@ -41,17 +41,17 @@ const CDLApp = (props) => {
       />
       <Motorcycle
         classM            = { cdl.classM }
-        title             = 'Motorcycle on CDL'
+        title             = 'newExtracted.conclusion.summary.cdlMotorcycle'
         editKey           = 'motorcycle'
       />
       <CDLEndorsements
         cdlEndorsements   = { cdl.cdlEndorsements }
-        title             = 'Endorsement(s)'
+        title             = 'newExtracted.conclusion.summary.endorsements'
         editKey           = 'cdlEndorsements'
         />
       <CDLCertificates
         cdlCertificates   = { cdl.cdlCertificates }
-        title             = 'Certificates(s)'
+        title             = 'newExtracted.conclusion.summary.certificates'
         editKey           = 'cdlCertificates'
       />
     </Accordion>

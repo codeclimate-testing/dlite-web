@@ -135,7 +135,6 @@ describe('ApplyingIDInfo', function() {
         </Wrapper>
       );
       assert.equal(component.text().includes('You are applying for a no-fee ID card'), true);
-      assert.ok(component.find('p.translation-missing').length, 'translation for noFeeID not present');
     });
   });
 });

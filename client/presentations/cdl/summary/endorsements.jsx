@@ -70,7 +70,7 @@ const CDLEndorsements = (props) => {
       {...props}
     >
       <SummaryItem
-        title = 'Endorsement(s)'
+        title = 'newExtracted.conclusion.summary.endorsements'
         text  = {endorsements}
       />
     </PageSummaryLink>

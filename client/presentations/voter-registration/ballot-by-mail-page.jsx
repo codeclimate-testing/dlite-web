@@ -19,7 +19,10 @@ const InfoMessageYes = (props) => {
   if (!isYes(props.selectedValue)) { return null; }
   return (
     <MessageBox className = 'info'>
-      <p className='translation-missing'>{infoText.Yes}</p>
+      <Translator
+        tag             = 'p'
+        translationPath = 'newExtracted.votingRegistration.ballotByMail.mail'
+      />
     </MessageBox>
   )
 };
@@ -28,7 +31,10 @@ const InfoMessageNo = (props) => {
   if (!isNo(props.selectedValue)) { return null; }
   return (
     <MessageBox className = 'info'>
-      <p className='translation-missing'>{infoText.No}</p>
+      <Translator
+        tag             = 'p'
+        translationPath = 'newExtracted.votingRegistration.ballotByMail.inPerson'
+      />
     </MessageBox>
   )
 };

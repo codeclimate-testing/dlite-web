@@ -7,6 +7,7 @@ import RadioSelections        from './self-certification/radio-form.jsx';
 import Accordion              from './self-certification/accordion.jsx';
 import LegalAgreement         from './self-certification/legal-agreement.jsx';
 import NavigationButtons      from '../navigation-buttons.jsx';
+import Translator             from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   return (
@@ -16,7 +17,11 @@ const Form = (props) => {
     >
       <div className='cdl-self-certification'>
         <form onSubmit = {props.onSubmit }>
-          <h2 className='question translation-missing'>What type of driving do you need to do?</h2>
+          <Translator
+            tag             = 'h2'
+            className       = 'question'
+            translationPath = 'newApproved.cdl.selfCertification.prompt'
+          />
 
           <Under21 {...props} />
 

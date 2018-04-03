@@ -169,9 +169,10 @@ const DisclaimersInfo = (props) => {
   return (
 
     <div className='scroll-wrapper disclaimers-info'>
-      <h3 className='translation-missing'>
-        Please take a moment to review the following disclaimers:
-        </h3>
+      <Translator
+      tag='h3'
+      translationPath='newExtracted.intro.getStartedPage.disclaimers.review'
+      />
 
       <div className='scroll-content'>
 
@@ -254,4 +255,3 @@ const DisclaimersInfo = (props) => {
 };
 
 export default DisclaimersInfo;
-

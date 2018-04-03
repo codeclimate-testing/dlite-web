@@ -37,8 +37,8 @@ const SignatureChoice = (props) => {
       />
       <Translator
         tag             = 'h2'
-        className       = 'question translation-missing'
-        translationPath = 'What would you like to do?'
+        className       = 'question'
+        translationPath = 'parentGuardianSignaturePage.methodSection.prompt'
       />
       <div>
         <fieldset role='group' aria-label='Guardian available choice'>
@@ -52,15 +52,15 @@ const SignatureChoice = (props) => {
           >
 
           <RadioSelector value='signElectronically'>
-            <Translator tag = 'span' className = 'translation-missing' translationPath = 'My parent/guardian(s) will sign electronically'/>
+            <Translator tag = 'span' translationPath = 'parentGuardianSignaturePage.methodSection.values.electronically'/>
           </RadioSelector>
 
           <RadioSelector value='signAtDMV'>
-            <Translator tag = 'span' className = 'translation-missing' translationPath = 'My parent/guardian(s) will sign at the DMV' />
+            <Translator tag = 'span' translationPath = 'parentGuardianSignaturePage.methodSection.values.atDMV'/>
           </RadioSelector>
 
           <RadioSelector value='emancipatedMinor'>
-            <Translator tag = 'span' className = 'translation-missing' translationPath = 'I am an emancipated minor' />
+            <Translator tag = 'span' translationPath = 'parentGuardianSignaturePage.methodSection.values.emancipated'/>
           </RadioSelector>
 
           </RadioCollection>

@@ -12,7 +12,7 @@ import {
 const CardString = (props) => {
   if (!props.showIf) { return null; }
   return (
-    <span className='translation-missing'>
+    <span>
       {props.children}
     </span>
   )

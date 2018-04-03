@@ -29,9 +29,10 @@ const DonateContribution = (props) => {
         className       = 'question'
         translationPath = 'organDonation.monetaryContribution.prompt'
       />
-      <span tag='p' className='translation-missing'>
-        Your donation helps support and promote organ and tissue donation.
-      </span>
+      <Translator
+        tag             = 'p'
+        translationPath = 'newApproved.organDonation.monetaryContribution.explanation'
+      />
 
       <fieldset role='group' aria-label='Donate choice'>
         <RadioCollection

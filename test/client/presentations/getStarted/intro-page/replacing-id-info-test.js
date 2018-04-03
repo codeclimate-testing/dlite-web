@@ -131,7 +131,6 @@ describe('ReplacingIDInfo', function() {
         </Wrapper>
       );
       assert.equal(component.text().includes('You are replacing a no-fee ID card'), true);
-      assert.ok(component.find('p.translation-missing').length, 'translation for noFeeID not present');
     });
   });
 });

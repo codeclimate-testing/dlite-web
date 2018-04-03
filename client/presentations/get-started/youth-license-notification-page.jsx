@@ -60,7 +60,12 @@ let ErrorMessage = (props) => {
   if (validToContinue(props)) { return null; }
 
   return (
-    <MessageBox className='info translation-missing'>Ok, please come back when you turn 15.</MessageBox>
+    <MessageBox className='info'>
+      <Translator
+      tag             = 'span'
+      translationPath = 'newApproved.intro.youthLicense.comeBack'
+      />
+    </MessageBox>
   );
 };
 

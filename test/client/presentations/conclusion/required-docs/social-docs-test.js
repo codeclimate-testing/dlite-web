@@ -2,12 +2,15 @@
 
 import assert                   from 'assert';
 import React                    from 'react';
+import wrapperGenerator         from '../../../support/wrapper';
+import store                    from '../../../support/page-store';
 import configure                from '../../../support/configure-enzyme';
 import { render }               from 'enzyme';
 import SocialSecurityDocuments  from '../../../../../client/presentations/conclusion/documents/social-security-documents.jsx';
 import BulletList               from '../../../../../client/presentations/conclusion/documents/bullet-list.jsx';
 
 describe('Required Docs for Social Security Number', function() {
+  const Wrapper = wrapperGenerator(store);
   let component, socialSecurity;
   let props = {
     realID: {
@@ -71,9 +74,11 @@ describe('Required Docs for Social Security Number', function() {
         hasSocialSecurity: 'Yes'
       },
       component = render(
-        <SocialSecurityDocuments
-          socialSecurity = {socialSecurity}
-        />
+        <Wrapper>
+          <SocialSecurityDocuments
+            socialSecurity = {socialSecurity}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Proof of Social Security Number'), true);
     });

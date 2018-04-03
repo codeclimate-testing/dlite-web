@@ -14,10 +14,6 @@ const VoterPreferencesIntro = (props) => {
       />
 
       <Translator
-        tag             = 'p'
-        translationPath = 'votingRegistration.preferencesIntroPage.explanation'
-      />
-      <Translator
         tag             = 'h4'
         translationPath = 'votingRegistration.preferencesIntroPage.partyHeadline'
       />

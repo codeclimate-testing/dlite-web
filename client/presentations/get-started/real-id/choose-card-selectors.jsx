@@ -8,6 +8,7 @@ import {
   showDesignation,
   designatedValue
 }      from '../../../helpers/data/real-id';
+import Translator        from '../../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
   if (!showDesignation(props)) { return null; }
@@ -15,11 +16,15 @@ const Form = (props) => {
   return (
     <div className='real-id-form'>
       <hr/>
-      <h2 className='question translation-missing'>Which card would you like to fly with?</h2>
-      <p className='translation-missing'>
-        Either your license or your ID card can be made federally
-        compliant to fly within the United States, but not both
-      </p>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'newApproved.intro.realID.whichCard'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.intro.realID.explanation'
+        />
 
       <fieldset role='group' aria-label='Real ID card choice'>
         <RadioCollection

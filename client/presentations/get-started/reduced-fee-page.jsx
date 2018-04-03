@@ -25,6 +25,11 @@ const DLText = (props) => {
 const ReducedFeeFormInfo = (props) => {
   return (
     <div className='reduced-fee-form-info'>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'intro.reducedFeePage.rightFormsSection.prompt'
+      />
       <MessageBox className='info'>
         <Translator
           tag             = 'p'

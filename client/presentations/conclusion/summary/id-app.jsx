@@ -51,7 +51,7 @@ const IDApp = (props) => {
         showIf            = { application.IDApp.isApplying }
         realID            = { application.IDApp.realID }
         editKey           = 'realID'
-        title             = 'Real-ID Compliant'
+        title             = 'newExtracted.conclusion.summary.realIDCompliant'
         cardType          = { cardType }
       />
     </Accordion>

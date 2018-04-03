@@ -9,7 +9,6 @@ import NavigationButtons    from '../navigation-buttons.jsx';
 import Translator           from '../../i18n/translator-tag.jsx';
 
 const Form = (props) => {
-
   return (
     <Page
       {...props}

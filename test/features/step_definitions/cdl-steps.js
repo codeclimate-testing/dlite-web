@@ -143,7 +143,7 @@ module.exports = function(world){
     browser
       .text()
       .then(text => {
-        assert.ok(text.includes('License class:Class A'));
+        assert.ok(text.includes('License classClass A'));
       })
       .then(() => { done(); })
       .catch(done);

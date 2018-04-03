@@ -33,7 +33,10 @@ const ContactDetails = (props) => {
         translationPath   = 'votingRegistration.contactInfoPage.pagePrompt'
       />
 
-      <p className='translation-missing'>This is optional</p>
+      <Translator
+        tag               = 'p'
+        translationPath   = 'newExtracted.votingRegistration.contactMethods.optional'
+      />
 
       <fieldset role='group' aria-label='Contact methods'>
         <TextInput

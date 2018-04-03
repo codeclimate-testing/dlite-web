@@ -28,7 +28,7 @@ const SummaryForm = (props) => {
           translationPath = 'summaryPage.prompt'
         />
 
-        <div className='translation-missing'>
+        <div>
           <ErrorMessageBox
             errorMessage={getErrorMessage(props)}
           />

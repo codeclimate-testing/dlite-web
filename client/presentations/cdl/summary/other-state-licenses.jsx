@@ -20,7 +20,7 @@ const OtherStateLicenses = (props) => {
       />
       <br></br>
       <SummaryItem
-        title = 'Complete Ten Year History'
+        title = 'newExtracted.conclusion.summary.tenYearHistory'
         text  = { tenYearHistoryKey }
       />
     </PageSummaryLink>

@@ -23,7 +23,7 @@ const LicenseIssues = (props) => {
         {...props}
       >
         <SummaryItem
-          title='Driving record:'
+          title='summaryPage.myHistory.drivingRecord'
           text={reason}
         />
         <SummaryItem
@@ -38,7 +38,7 @@ const LicenseIssues = (props) => {
         {...props}
       >
         <SummaryItem
-          title='Driving record:'
+          title='summaryPage.myHistory.drivingRecord'
           text={reason}
         />
       </PageSummaryLink>

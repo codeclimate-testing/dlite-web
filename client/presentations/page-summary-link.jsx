@@ -9,7 +9,7 @@ import { addOrEdit }      from '../helpers/data/pathnames';
 const LinkPresentation = (props) => {
   let className = `${props.editKey} summary edit button ${props.cardType}`;
 
-  let addText = 'Add';
+  let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
   let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
   let buttonText = addOrEdit(props, addText, editText);
 

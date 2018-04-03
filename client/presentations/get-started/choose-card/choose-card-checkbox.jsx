@@ -12,8 +12,7 @@ const Form = (props) => {
   return (
     <div className='row choose-new-cards'>
       <Translator
-        tag             = 'h2'
-        lassName        = 'question'
+        tag             = 'p'
         translationPath = 'intro.chooseSelectionPage.explanationMultiCard'
       />
       <div className='row'>

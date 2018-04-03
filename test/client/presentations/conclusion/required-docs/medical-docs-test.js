@@ -3,11 +3,14 @@
 import assert                   from 'assert';
 import React                    from 'react';
 import configure                from '../../../support/configure-enzyme';
+import wrapperGenerator         from '../../../support/wrapper';
+import store                    from '../../../support/page-store';
 import { render }               from 'enzyme';
 import MedDocs                  from '../../../../../client/presentations/conclusion/documents/medical-documents.jsx';
 import BulletList               from '../../../../../client/presentations/conclusion/documents/bullet-list.jsx';
 
 describe('Required Docs for Medical Condition', function() {
+  const Wrapper = wrapperGenerator(store);
   let component, medicalHistory;
   let props = {
     reducedFee: {
@@ -86,10 +89,12 @@ describe('Required Docs for Medical Condition', function() {
         hasMedicalCondition: 'Yes'
       };
       component = render(
-        <MedDocs
-          {...props}
-          medicalHistory={medicalHistory}
-        />
+        <Wrapper>
+          <MedDocs
+            {...props}
+            medicalHistory={medicalHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Medical Information'), true);
     });

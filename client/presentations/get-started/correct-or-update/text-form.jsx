@@ -1,13 +1,14 @@
 'use strict';
 
-import React                from 'react';
-import TextInput            from '../../text-input.jsx';
+import React             from 'react';
+import TextInput         from '../../text-input.jsx';
 import {
   getStringByAction
 }   from '../../../helpers/data/card-actions';
+import Translator        from '../../../i18n/translator-tag.jsx';
 
-const correctString = 'Enter your correction below';
-const updateString = 'Enter your udpate below';
+const correctString = 'newExtracted.intro.getStartedPage.correction'
+const updateString = 'newExtracted.intro.getStartedPage.update'
 
 const EnterMedicalInfo = (props) => {
   if (!props.showIf) { return null; }
@@ -18,7 +19,11 @@ const EnterMedicalInfo = (props) => {
   return (
     <div className    = 'enter-other-section'>
       <hr/>
-      <h3 className   = 'question translation-missing'>{headerText}</h3>
+        <Translator
+          tag             = 'h3'
+          className       = 'question'
+          translationPath = {headerText}
+        />
 
       <TextInput
         {...props}

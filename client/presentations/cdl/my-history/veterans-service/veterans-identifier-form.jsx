@@ -21,18 +21,22 @@ const Question = (props) => {
   if (!isPreviouslyDesignated(props)) {
     return(
       <div className='new-designation'>
-        <h2 className='question translation-missing'>
-          Would you like to add the word “Veteran” on your CDL for a $5 fee?
-        </h2>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'newApproved.cdl.myHistory.veteran.addVeteran'
+        />
       </div>
-    );
+      );
   }
   else{
     return(
       <div className='previous-designation'>
-        <h2 className='question translation-missing'>
-          Would you like to keep "Veteran" on your CDL?
-        </h2>
+        <Translator
+          tag             = 'h2'
+          className       = 'question'
+          translationPath = 'newApproved.cdl.myHistory.veteran.keepVeteran'
+        />
       </div>
     );
   }

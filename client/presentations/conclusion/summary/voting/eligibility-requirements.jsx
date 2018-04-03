@@ -43,13 +43,12 @@ const Decline = (props) => {
   );
 };
 const EligibilityRequirements = (props) => {
-  let notAvailable = <div className='translation-missing'>Not Available</div>
   let now = props.now ? props.now : new Date();
   if (ageChecks.Under16(props.dateOfBirth, now)) {
     return (
       <SummaryItem
         title = 'summaryPage.voterRegistration.eligible'
-        text  = { notAvailable }
+        text  = 'newExtracted.conclusion.notAvailable'
       />
     );
   }

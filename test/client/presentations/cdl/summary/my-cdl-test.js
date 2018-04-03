@@ -219,7 +219,7 @@ describe('CDL Summary My CDL Application section', function() {
           <MyApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.text().includes('License class:Class A'));
+      assert.ok(component.text().includes('License classClass A'));
     });
   });
 

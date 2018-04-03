@@ -39,7 +39,7 @@ const DLApp = (props) => {
         showIf            = { application.DLApp.isApplying }
         realID            = { application.DLApp.realID }
         editKey           = 'realID'
-        title             = 'Real-ID Compliant'
+        title             = 'newExtracted.conclusion.summary.realIDCompliant'
         cardType          = { cardType }
       />
       <LicenseType

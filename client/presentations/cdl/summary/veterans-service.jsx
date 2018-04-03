@@ -11,7 +11,7 @@ const BenefitInfo = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title='Get benefit information:'
+      title='summaryPage.myHistory.getBenefitsInformation'
       text={props.veteransService.receiveBenefits}
     />
   )
@@ -21,7 +21,7 @@ const PrintedOnCard = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title='"Veteran" printed on CDL:'
+      title='newExtracted.conclusion.summary.veteranOnCDL'
       text={props.veteransService.veteransIdentifier}
     />
   )
@@ -31,7 +31,7 @@ const MilitaryWaiver = (props) => {
   if (!isVeteran(props)) { return null; }
   return (
     <SummaryItem
-      title='Military driving experience CDL waiver:'
+      title='newExtracted.conclusion.summary.cdlMilitaryDrivingWaiver'
       text={props.veteransService.militaryWaiver}
     />
   )
@@ -47,7 +47,7 @@ const VeteransService = (props) => {
       editKey='cdlVeterans'
     >
       <SummaryItem
-        title='Veteran:'
+        title='summaryPage.myHistory.veteran'
         text={props.veteransService.isVeteran}
       />
 

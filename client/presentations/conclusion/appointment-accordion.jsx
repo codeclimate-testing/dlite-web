@@ -11,14 +11,12 @@ const Form = (props) => {
     return (
     <Accordion
       id='appointments-prep-info'
-      className='translation-missing'
-      title='What happens to my voter registration information?'
+      title='newExtracted.confirmation.title'
     >
       <div>
         <Translator
           tag='p'
-          className='translation-missing'
-          translationPath='The voter registration will be processed when you finish your application at the DMV.'
+          translationPath='newExtracted.confirmation.information'
         />
         <Translator
           tag='p'
@@ -26,8 +24,7 @@ const Form = (props) => {
         />
         <Translator
           tag='h4'
-          className='translation-missing'
-          translationPath='Check for status'
+          translationPath='newExtracted.confirmation.checkStatus'
         />
 
         <Translator

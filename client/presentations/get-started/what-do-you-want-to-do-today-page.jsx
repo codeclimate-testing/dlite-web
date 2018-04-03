@@ -12,7 +12,6 @@ import {
 }  from '../../helpers/data/card-type';
 
 const Form = (props) => {
-
   const tempObjectThatNeedsTranslations = {
     explanation: '',
     values: [
@@ -33,26 +32,23 @@ const Form = (props) => {
     ]
   };
 
-  //TODO: Translation Keys
   let textKey = getCorrectString(props, 'addDL', 'addID', 'newCard');
   let explainKey, newKey, renewKey, updateKey, replaceKey;
   switch (textKey) {
     case 'addDL':
-      explainKey  = tempObjectThatNeedsTranslations.explanation;
-      newKey      = tempObjectThatNeedsTranslations.values[0];
-      renewKey    = tempObjectThatNeedsTranslations.values[1];
-      updateKey   = tempObjectThatNeedsTranslations.values[2];
-      replaceKey  = tempObjectThatNeedsTranslations.values[3];
+      newKey      = 'newApproved.intro.wdywtdtPage.addDL.values.0'
+      renewKey    = 'newApproved.intro.wdywtdtPage.addDL.values.1'
+      updateKey   = 'newApproved.intro.wdywtdtPage.addDL.values.2'
+      replaceKey  = 'newApproved.intro.wdywtdtPage.addDL.values.3'
       break;
     case 'addID':
-      explainKey  = anotherTempObjectThatNeedsTranslation.explanation;
-      newKey      = anotherTempObjectThatNeedsTranslation.values[0];
-      renewKey    = anotherTempObjectThatNeedsTranslation.values[1];
-      updateKey   = anotherTempObjectThatNeedsTranslation.values[2];
-      replaceKey  = anotherTempObjectThatNeedsTranslation.values[3];
+      newKey      = 'newApproved.intro.wdywtdtPage.addID.values.0'
+      renewKey    = 'newApproved.intro.wdywtdtPage.addID.values.1'
+      updateKey   = 'newApproved.intro.wdywtdtPage.addID.values.2'
+      replaceKey  = 'newApproved.intro.wdywtdtPage.addID.values.3'
       break;
     case 'newCard':
-      explainKey  = 'intro.wdywtdtPage.values.explanation';
+      explainKey  = 'intro.wdywtdtPage.explanation';
       newKey      = 'intro.wdywtdtPage.values.0';
       renewKey    = 'intro.wdywtdtPage.values.1';
       updateKey   = 'intro.wdywtdtPage.values.2';

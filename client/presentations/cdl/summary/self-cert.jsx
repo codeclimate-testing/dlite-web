@@ -27,7 +27,11 @@ const CertItem = (props) => {
 
 const SelfCert = (props) => {
   return (
-    <Accordion id='self-certification' title='Self certification'>
+    <Accordion
+      id    = 'self-certification'
+      title = 'sections.selfCertification'
+      key   = 'self-certification'
+    >
       <CertItem {...props}  editKey='cdlCertification'/>
     </Accordion>
   )

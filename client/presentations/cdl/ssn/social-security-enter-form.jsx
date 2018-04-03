@@ -65,10 +65,6 @@ const Form = (props) => {
           error          = { hasValue(errors.part3) }
         />
       </fieldset>
-
-      <div><h3 className='social-security-yes-info translation-missing'>By continuing with the application you agree to the below:</h3>
-        <p className='translation-missing'><b>I certify</b> (or declare) under penalty of perjury under the laws of the State of California that the motor vehicle that I am using to take the driving skills test is representative of the type of motor vehicle I expect to operate. I further certify that I am not subject to a disqualification, suspension, revocation, or cancellation as written in Title 49 of the Federal Regulations, Part 383.51, and I do not have a driver license from more than one state or jurisdiction.</p></div>
-
       <div className='row'>
         <ErrorLabel
           errorMessage  = { message }

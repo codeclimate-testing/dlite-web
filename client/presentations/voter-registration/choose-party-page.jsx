@@ -10,6 +10,24 @@ import { checkPreReg }                  from '../../helpers/data/youth';
 import Translator                       from '../../i18n/translator-tag.jsx';
 import { RadioSelectorYesTranslation }  from '../shared/translations-radio-selector.jsx';
 
+const NewOrRegisteredVoter = (props) => {
+  if(props.optOut === 'existing') {
+    return(
+      <Translator
+        tag               = 'p'
+        translationPath   = 'votingRegistration.updateChoosePartyPage.explanation'
+      />
+      )
+  } else {
+    return (
+    <Translator
+      tag               = 'p'
+      translationPath   = 'votingRegistration.choosePartyPage.explanation'
+    />
+    )
+  }
+}
+
 const ChoosePartyPageAnswerNo = () => {
   return(
     <Translator
@@ -18,8 +36,8 @@ const ChoosePartyPageAnswerNo = () => {
     />
   );
 }
-const ChoosePartyPage = (props) => {
 
+const ChoosePartyPage = (props) => {
   return (
     <Page
       {...props}
@@ -32,10 +50,7 @@ const ChoosePartyPage = (props) => {
             className         = 'question'
             translationPath   = 'votingRegistration.choosePartyPage.pagePrompt'
           />
-          <Translator
-            tag               = 'p'
-            translationPath   = 'votingRegistration.choosePartyPage.explanation'
-          />
+          <NewOrRegisteredVoter {...props}/>
 
           <fieldset role='group' aria-label='Choose party'>
             <RadioCollection

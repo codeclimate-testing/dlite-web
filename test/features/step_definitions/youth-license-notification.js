@@ -37,7 +37,7 @@ module.exports = function (world) {
     browser
       .text('.summary')
       .then( text => {
-        assert(text.includes('If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit.'), 'message not on page')
+        assert(text.includes('If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances.'), 'message not on page')
       })
       .then( () => { done(); })
       .catch(done);

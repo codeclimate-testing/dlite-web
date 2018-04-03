@@ -16,7 +16,7 @@ const LicenseClass  = (props) => {
       {...props}
     >
       <SummaryItem
-        title = 'License class:'
+        title = 'newExtracted.conclusion.summary.licenseClass'
         text  = { classTextKey }
       />
     </PageSummaryLink>

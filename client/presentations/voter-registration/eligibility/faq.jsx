@@ -6,9 +6,10 @@ import Translator           from '../../../i18n/translator-tag.jsx';
 
 const FAQContentsPreReg = (props) => {
   return (
-    <p className='translation-missing'>
-      'If you don\'t meet all the requirements, you are not eligible to pre-register to vote.',
-    </p>
+    <Translator
+      tag             = 'p'
+      translationPath = 'newApproved.votingRegistration.eligibilityPage.preRegRequirements'
+    />
   );
 };
 
@@ -33,9 +34,10 @@ const FAQ = (props) => {
       title = 'votingRegistration.eligibilityPage.faqQuestionWhatIfDontMeetRequirements'
     >
       <FAQContents {...props} />
-      <p className='translation-missing'>
-        Your response to this question <b>will not</b> be shared with election officials.
-      </p>
+      <Translator
+      tag             = 'p'
+      translationPath = 'newApproved.votingRegistration.eligibilityPage.notSharedWithElectionOfficials'
+      />
     </Accordion>
   );
 };

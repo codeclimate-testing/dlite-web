@@ -8,7 +8,7 @@ import Translator         from '../../../i18n/translator-tag.jsx';
 const ReplacingIDInfo = (props) => {
   const replacingID           = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingID' />
   const replacingReducedFeeID = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingReducedFeeID' />
-  const replacingNoFeeID      = <p className='translation-missing'> You are replacing a no-fee ID card </p>
+  const replacingNoFeeID      = <Translator tag='p' translationPath = 'newExtracted.intro.getStartedPage.whatYouAreDoing.replaceNoFeeID' />
   const replacingSeniorID     = <Translator tag='p' translationPath = 'intro.getStartedPage.whatYouAreDoing.replacingSeniorID' />
 
   if(!replaceID(props)) { return null; }
@@ -22,4 +22,3 @@ const ReplacingIDInfo = (props) => {
 };
 
 export default ReplacingIDInfo;
-
