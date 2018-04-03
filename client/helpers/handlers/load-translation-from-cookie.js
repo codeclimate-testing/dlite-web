@@ -12,7 +12,8 @@ const loadTranslationFromCookie = (dispatch) => {
     if (!languageIsSelected(language)) {
       let cookieLanguage = getLanguageFromCookie();
       // save language from cookie to redux state.ui.language
-      dispatch(updateLanguage('language', cookieLanguage));
+      let saveLanguage = cookieLanguage || 'en';
+      dispatch(updateLanguage('language', saveLanguage));
       if (!doNotNeedToLoadTranslations(cookieLanguage)) {
         getTranslation(cookieLanguage)(dispatch);
       }
