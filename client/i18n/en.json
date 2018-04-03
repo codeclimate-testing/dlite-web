@@ -1036,6 +1036,225 @@
       }
     }
   },
+  "newApproved": {
+    "intro": {
+      "wdywtdtPage": {
+        "addDL": {
+          "values": [
+            "Get a driver license for the first time",
+            "Renew your driver license",
+            "Correct or update your driver license",
+            "Replace your driver license"
+          ]
+        },
+        "addID": {
+          "values": [
+            "Get an ID card for the first time",
+            "Renew your ID card",
+            "Correct or update your ID card",
+            "Replace your ID card"
+          ]
+        }
+      },
+      "realID": {
+        "whichCard": "Which card would you like to fly with?",
+        "explanation": "Either you license or your ID card can be made federally compliant to fly within the United States, but not both."
+      },
+      "youthLicense": {
+        "underFifteen": {
+          "title": "You must be 15 years old to start an application for a learners permit.",
+          "explanation": "In exceptional circumstances youth between 14 and 15.5 can get a Junior permit. Visit an office or consult documentation on the DMV website if you feel you might be eligible for a Junior permit."
+        },
+        "comeBack": "Ok, please come back when you turn 15."
+      }
+    },
+    "organDonation": {
+      "monetaryContribution": {
+        "explanation": "Your donation helps support and promote organ and tissue donation."
+      }
+    },
+    "votingRegistration": {
+      "eligibilityPage": {
+        "notSharedWithElectionOfficials": "Your response to this question <b>will not</b> be shared with election officials.",
+        "preRegRequirements": "If you don't meet all the requirements, you are not eligible to pre-register to vote.",
+        "preRegEligible": "I am 16 or 17 years old and would like to pre-register to vote.",
+        "preRegUpToDate": "Next we'd like to make sure your voter pre-registration is up to date."
+      }
+    },
+    "myHistory": {
+      "veteransPage": {
+        "newDesignation": {
+          "id": "Would you like to add the word “Veteran” to your ID for a $5 fee?",
+          "license": "Would you like to add the word “Veteran” to your Driver License for a $5 fee?"
+        }
+      }
+    },
+    "cdl": {
+      "selfCertification": {
+        "prompt": "What type of driving do you need to do?",
+        "values": {
+          "interstate": "Interstate driving non-excepted",
+          "intrastate": "Intrastate driving non-excepted"
+        },
+        "notSure": {
+          "title": "I'm not sure which applies to me",
+          "interstate": {
+            "title": "Interstate Commerce",
+            "explanation": "Means trade, traffic, or transportation in the U.S. that is:",
+            "values": [
+              "Between a place in a State and a place outside of such State (including a place outside of the U.S.)",
+              "Between two places in the state through another State or a place outside of the U.S.",
+              "Between two places in the state as part of trade, traffic, or transportation originating or terminating outside the State or the U.S."
+            ]
+          },
+          "intrastate": {
+            "title": "Intrastate Commerce",
+            "explanation": "Means trade, traffic, or transportation in any state which is not described in the term “interstate commerce.”"
+          },
+          "expected": {
+            "title": "<b>Expected & Non-Expected Licensing</b>",
+            "explanation": "Some states issues a commercial driver license that does <b><em>not</em></b> require drivers to meet the qualifications outlined in CFR, Title 49 §391. Those drivers are considered “excepted” drivers. California does not issue that kind of license. All drivers licensed by California to drive commercial vehicles are <em>non-excepted</em> drivers. "
+          }
+        },
+        "legalAgreement": {
+          "title": "By continuing with the application you agree to the below:",
+          "agreement": "<b>I certify</b> (or declare) under penalty of perjury under the laws of the State of California that the motor vehicle that I am using to take the driving skills test is representative of the type of motor vehicle I expect to operate. I further certify that I am not subject to a disqualification, suspension, revocation, or cancellation as written in Title 49 of the Federal Regulations, Part 383.51, and I do not have a driver license from more than one state or jurisdiction."
+        }
+      },
+      "myHistory": {
+        "medicalHistory": {
+          "prompt": "Please review the information below, then truthfully answer the question at the end of this page.",
+          "explanation": "The following conditions that may affect your ability to operate a motor vehicle safely include, but are not limited to:",
+          "values": [
+            "Loss of consciousness",
+            "Episode of marked confusion caused by any condition which may bring about recurring lapses",
+            "Disease, disorder, or disability (examples of these are epilepsy, diabetes, strokes, cataracts, Parkinson's disease)",
+            "Vision changes or decrease due to cataracts, macular degenration, diabetic retinopathy, glaucoma, retinitis pigmentosa, or other progressive condition.",
+            "Alcohol, drug abuse, or related health problems."
+          ],
+          "medicalConditions": "Within the last three years, have you had or experienced any medical conditions that could affect your ability to safely operate a motor vehicle?"
+        },
+        "nameHistory": {
+          "prompt": "Have you ever applied for a California CDL, driver license, or ID card under a different name?"
+        },
+        "veteran": {
+          "militaryWaiver": {
+            "prompt": "Will you be seeking a military driving experience CDL waiver?",
+            "explanation": "You must have served within the past year."
+          },
+          "veteranOnCDL": "Is “Veteran” printed on your commercial driver license?",
+          "addVeteran": "Would you like to add the word “Veteran” on your CDL for a $5 fee?",
+          "keepVeteran": "Would you like to keep “Veteran” on your CDL"
+        }
+      },
+      "alerts": {
+        "dlAlert": "If you go to the DMV office to finish your license application before you are 15.5 years old, you can only get a Junior permit. These permits are issued only in exceptional circumstances.",
+        "idAlert": "You are eligible to complete your ID application in the office today."
+      }
+    }
+  },
+  "newExtracted": {
+    "intro": {
+      "getStartedPage": {
+        "correction": "Enter your correction below",
+        "update": "Enter your update below",
+        "disclaimers": {
+          "review": "Please take a moment to review the following disclaimers:",
+          "agree": "I agree to the terms"
+        },
+        "idMe": {
+          "prompt": "The DMV is partnering with ID.me to protect your digital identity.",
+          "create": "Create an",
+          "account": "account",
+          "or": "or",
+          "signIn": "Sign in with an"
+        },
+        "whatYouAreDoing": {
+          "applyNoFeeID": "You are applying for a no-fee ID card",
+          "replaceNoFeeID": "You are replacing a no-fee ID card"
+        }
+      }
+    },
+    "parentGuardianSignaturePage": {
+      "parentSign": "Is your parent/guardian available to sign your application?"
+    },
+    "conclusion": {
+      "notAvailable": "Not available",
+      "summary": {
+        "licenseClass": "License class",
+        "cdlMotorcycle": "Motorcycle on CDL",
+        "endorsements": "Endorsement(s)",
+        "certificates": "Certificate(s)",
+        "realIDCompliant": "Real-ID Compliant",
+        "shouldContact": "Should Contact",
+        "tenYearHistory": "Complete Ten Year History",
+        "cdlMilitaryDrivingWaiver": "Military driving experience CDL waiver",
+        "veteranOnCDL": "“Veteran” printed on CDL",
+        "noInfo": "No information has been entered yet",
+        "buttons": {
+          "add": "Add"
+        }
+      },
+      "documents": {
+        "medicalDocuments": {
+          "title": "Medical Information",
+          "explanation": "If you have a medical condition or disability, DMV may require you to take a driving test. You may also have to provide a statement from your physician regarding your current health condition."
+        },
+        "realIdDocuments": {
+          "title": "Real ID birth date, name and legal presence proof",
+          "explanation": "We need to verify your date of birth and what we call your “legal presence”. Documents should use your true full name that you use today or we will need additional documents proving your true full name will be required. See our <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/realid'>Real ID information page</a> for details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card."
+        },
+        "requiredDocuments": {
+          "title": "From that list we will need either:",
+          "values": [
+            "A single document that proves both your date of birth and legal presence.",
+            "Or one document for your date of birth and one document for your legal presence."
+          ],
+          "proof": "If you were married or divorced, adopted or have changed your name through the courts, please make sure to also bring <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>proof of the true, full name</a>.",
+          "legalPresence": {
+            "title": "Legal presence",
+            "explanation": "All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence. Please refer to our <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>AB 60 checklist tool</a> and our <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>date of birth and legal presence list</a>."
+          }
+        },
+        "socialSecurity": {
+          "title": "Proof of Social Security Number",
+          "explanation": "<p>Under California law, we will need proof of your Social Security Number. Our <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08'>Social Security documents page lists accepted documents</a>.</p><p>If you recently changed your name, make sure that change is reflected on the document you bring.</p>"
+        },
+        "veteran": {
+          "title": "Proof of veterans service",
+          "explanation": "To get “Veteran” on your card, you need to to bring a <a target=“_blank” href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> Veteran Status Verification Form </a> that your County Veteran Service Office can provide to you. We thank you for your service! "
+        }
+      }
+    },
+    "confirmation": {
+      "title": "What happens to my voter registration information",
+      "information": "The voter registration will be processed when you finish your application at the DMV.",
+      "checkStatus": "<b>Check for status</b>"
+    },
+    "appointmentPrep": {
+      "goToDMV": "You now need to go to the DMV!",
+      "confirmationCode": "This is your confirmation code:",
+      "show": "Show it to a DMV employee. We will also email this code to you.",
+      "details": "For details about what you need to do to complete your application, visit the DMV website.",
+      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>Bring your required documents.</a>",
+      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>Make an appointment to save time.</a>"
+    },
+    "errorMessage": {
+      "somethingWrong": "Sorry, something went wrong"
+    },
+    "votingRegistration": {
+      "ballotByMail": {
+        "mail": "Ok, your ballot will now come by mail. You can still vote in-person at your polling place.",
+        "inPerson": "Ok, you vote in-person at your polling place."
+      },
+      "contactMethods": {
+        "optional": "This is optional"
+      },
+      "chooseParty": {
+        "otherPlaceholder": "Please enter your selection"
+      }
+    }
+  },
   "organDonation": {
     "title": "Organ Donation",
     "organDonor": {
