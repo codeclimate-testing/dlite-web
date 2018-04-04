@@ -23,6 +23,29 @@
   margin: 0 6px 0 9px;
 }
 
+
+select {
+  font-size: 18px;
+  font-family: $main-font;
+  outline-style: none;
+  width: 80px;
+  height: 48px;
+  background-color: white;
+  color: #222430;
+  border: 1px solid gray;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: url("/images/icons/misc/dropdown.svg") no-repeat;
+  background-position: calc(100% - 10px) center;
+}
+
 .scroll-wrapper {
   height: 375px;
   display: flex;

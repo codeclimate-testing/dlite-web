@@ -69,10 +69,10 @@ const AddressTemplate = (props) => {
       </TextInput>
 
       <StateSelector
-        name      = 'state'
-        id        = { generateIdentifier('state', props.type)}
-        value     = { props.address['state'] }
-        onChange  = { props.onSelectChange }
+      name={ generateIdentifier('state', props.type) }
+      id={ generateIdentifier('state', props.type) }
+      value={ props.address['state'] }
+      onChange={props.onChange}
       />
 
       <TextInput
