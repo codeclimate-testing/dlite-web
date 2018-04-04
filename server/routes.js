@@ -14,6 +14,7 @@ const routes = (passport) => {
   router.get( '/api/translation/:code',   controllers.getTranslation);
 
   router.get( '/api/user/:id',            controllers.checkAuth,
+                                          controllers.sameUserOnly,
                                           controllers.getUserApps);
 
   router.get( '/auth/new/:appName/:language',controllers.authNew(passport));

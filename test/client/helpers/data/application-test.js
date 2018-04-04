@@ -38,25 +38,23 @@ describe('Data helpers for application', function() {
   });
 
   describe('#requireLogIn', function() {
-    let url;
+    let url, isLoggedIn;
     beforeEach(function() {
       url = '';
-      document.cookie = '';
+      isLoggedIn = false;
     });
 
     it('returns false if pathname is an intro page', function() {
       url = '/apply/choose-application';
-      assert.equal(requireLogIn(url), false);
+      assert.equal(requireLogIn(url, isLoggedIn), false);
     });
     it('returns false if user is logged in', function() {
-      document.cookie = 'isLoggedIn=true;path=/';
-      assert.equal(requireLogIn(url), false);
+      isLoggedIn = true;
+      assert.equal(requireLogIn(url, isLoggedIn), false);
     });
     it('returns true if user is not logged in and the pathname is not an intro page', function() {
-      document.cookie = 'isLoggedIn=false;path=/';
       url = '/apply/summary';
-      process.env.APP_ENV = 'production';
-      assert.equal(requireLogIn(url, process.env.APP_ENV), true);
+      assert.equal(requireLogIn(url, isLoggedIn, 'production'), true);
     });
   });
 

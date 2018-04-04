@@ -2,6 +2,7 @@
 import { pageFor }          from '../navigation/page';
 import { hasExistingCard }  from './card-actions';
 import * as dataPresent     from '../data-present';
+import { getAppNameCookie } from './cookies';
 import {
   getDL
 } from './card-type';
@@ -150,6 +151,9 @@ export function getAppKey(cookieValue) {
   return pageKey;
 }
 
-export function signInURL(appName) {
+export function signInURL(appName =  getAppNameCookie()) {
+  if (APP_ENV === 'test' && appName.length < 1) {
+    appName = 'id-and-license';
+  }
   return `/apply/${appName}/sign-in`;
 };

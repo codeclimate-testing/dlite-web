@@ -1,7 +1,7 @@
 'use strict';
 
 import React                                  from 'react';
-import { Route }                              from 'react-router-dom';
+import { Route, Switch }                              from 'react-router-dom';
 import {
   alicePath,
   iddlPath,
@@ -17,16 +17,13 @@ import LoggedIn                               from './logged-in-page.jsx';
 
 import Disclaimers                            from './iddl/get-started/disclaimers-page.jsx';
 import CDLDisclaimers                         from './cdl/cdl-disclaimers.jsx';
-
-import CDLRoutes                              from './cdl/routes.jsx';
-import IDDLRoutes                             from './iddl/routes.jsx';
-import { PrivateRoute }                       from './private-route.jsx';
+import PrivateRoute                           from './private-route.jsx';
 
 class Router extends React.Component {
-  render() {
 
+  render() {
     return (
-      <div className='routes'>
+      <Switch className='routes'>
         <Route path={ alicePath('/links') }                                 exact component={Home} />
         <Route path={ alicePath('/')}                                       exact component={ChooseApplication} />
         <Route path={ alicePath('/choose-language')}                              component={ChooseLanguage} />
@@ -38,9 +35,9 @@ class Router extends React.Component {
         <Route path={ alicePath('/logged-in/:user')}                              component={LoggedIn} />
         <Route path={ alicePath('/open-applications')}                            component={OpenApplications} />
 
-        <PrivateRoute pathURL={ alicePath('/cdl/*')}                              component={CDLRoutes} />
-        <PrivateRoute pathURL={ alicePath('/id-and-license/*')}                   component={IDDLRoutes} />
-      </div>
+        <PrivateRoute pathURL={ alicePath('*')}                          />
+        {/*<PrivateRoute pathURL={ alicePath('/id-and-license/*')}                   component={IDDLRoutes} />*/}
+      </Switch>
     );
   }
 }

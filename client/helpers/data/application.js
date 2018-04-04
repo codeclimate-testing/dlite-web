@@ -1,7 +1,6 @@
 'use strict';
 import { pathForPage }          from '../navigation/page';
 import { hasValue }             from './validations';
-import { isLoggedIn }           from './cookies';
 
 export const languageIsSelected = (value) => {
   return hasValue(value);
@@ -26,11 +25,12 @@ export const afterIntro = (pathname) => {
 };
 
 export const isProduction = (env = APP_ENV) => {
-  return env === 'production' || env === 'stage';
+  return env !== 'test' && env !== 'development';
+  //return env === 'production' || env === 'stage';
 };
 
-export function requireLogIn(pathname, env = APP_ENV){
-  return (isProduction(env) && !isLoggedIn() && afterIntro(pathname));
+export function requireLogIn(pathname, isLoggedIn, env = APP_ENV){
+  return (isProduction(env) && !isLoggedIn && afterIntro(pathname));
 };
 
 

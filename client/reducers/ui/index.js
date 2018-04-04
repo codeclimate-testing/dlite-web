@@ -10,6 +10,7 @@ import hover                from './hover';
 import flow                 from './app-type';
 import chooseApp            from './choose-app';
 import language             from './language';
+import isLoggedIn           from './is-logged-in';
 
 const rootReducer = combineReducers({
   focus,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   hover,
   flow  ,
   chooseApp,
-  language
+  language,
+  isLoggedIn
 });
 
 export default rootReducer;

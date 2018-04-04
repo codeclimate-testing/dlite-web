@@ -25,7 +25,7 @@ import onSelectChange             from './on-select-change';
 import onPageLoad                 from './on-page-load';
 import onFlowChange               from './on-flow-change';
 import onEmojiDebug               from './on-emoji-debug';
-import loadTranslationFromCookie  from './load-translation-from-cookie';
+import onLoggedIn                 from './on-logged-in';
 
 export default {
   navigateOnBack,
@@ -42,5 +42,5 @@ export default {
   onFlowChange,
   navigateOrShowErrors,
   onEmojiDebug,
-  loadTranslationFromCookie
+  onLoggedIn
 };

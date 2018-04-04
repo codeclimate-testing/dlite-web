@@ -106,6 +106,7 @@ export const TYPES = {
   ADD_APP:                                'ADD_APP',
   CHOOSE_APP:                             'CHOOSE_APP',
   UPDATE_TRANSLATION_LANGUAGE:            'UPDATE_TRANSLATION_LANGUAGE',
+  UPDATE_LOGGED_IN:                       'UPDATE_LOGGED_IN',
 
   UPDATE_API_STATUS:                      'UPDATE_API_STATUS',
   GET_TRANSLATION_SUCCESS:                'GET_TRANSLATION_SUCCESS',
@@ -200,6 +201,7 @@ export const hoverDown                                = generateValueAction(TYPE
 export const clearHover                               = generateValueAction(TYPES.CLEAR_HOVER);
 export const addApp                                   = generateValueAction(TYPES.ADD_APP);
 export const updateTranslationLanguage                = generateValueAction(TYPES.UPDATE_TRANSLATION_LANGUAGE);
+export const updateLoggedIn                           = generateValueAction(TYPES.UPDATE_LOGGED_IN);
 
 export const updateApiStatus                          = generateValueAction(TYPES.UPDATE_API_STATUS);
 export const getTranslationSuccess                    = generateValueAction(TYPES.GET_TRANSLATION_SUCCESS);
