@@ -3,6 +3,48 @@
 import React        from 'react';
 import Translator   from '../../i18n/translator-tag.jsx';
 
+const MedicalItems = (props) => {
+  return (
+    <ul className='bullet-list'>
+      <Translator
+        tag='li'
+        translationPath='disclaimers.medical.bodyBullets.0'
+      />
+      <Translator
+        tag='li'
+        translationPath='disclaimers.medical.bodyBullets.1'
+      />
+      <Translator
+        tag='li'
+        translationPath='disclaimers.medical.bodyBullets.2'
+      />
+      <Translator
+        tag='li'
+        translationPath='disclaimers.medical.bodyBullets.3'
+      />
+      <Translator
+        tag='li'
+        translationPath='disclaimers.medical.bodyBullets.4'
+      />
+    </ul>
+  )
+}
+
+const VeteransItems = (props) => {
+  return (
+    <ul className='bullet-list'>
+      <Translator
+        tag='li'
+        translationPath='disclaimers.veteran.bodyBullets.0'
+      />
+      <Translator
+        tag='li'
+        translationPath='disclaimers.veteran.bodyBullets.1'
+      />
+    </ul>
+  );
+};
+
 const VoterRegistrationItems = (props) => {
   return (
     <ul className='bullet-list'>
@@ -25,10 +67,6 @@ const VoterRegistrationItems = (props) => {
       <Translator
         tag='li'
         translationPath='disclaimers.voterRegistration.bodyBullets.4'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.5'
       />
     </ul>
   );
@@ -186,15 +224,14 @@ const DisclaimersInfo = (props) => {
           translationPath='disclaimers.medical.body'
         />
 
+        <MedicalItems {...props} />
+
         <Translator
           tag='h3'
           translationPath='disclaimers.veteran.title'
         />
 
-        <Translator
-          tag='p'
-          translationPath='disclaimers.veteran.body'
-        />
+        <VeteransItems {...props} />
 
         <Translator
           tag='h3'
