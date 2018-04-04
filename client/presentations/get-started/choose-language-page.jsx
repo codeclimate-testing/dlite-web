@@ -9,12 +9,11 @@ import Translator              from '../../i18n/translator-tag.jsx';
 
 
 import {
-  hideMain,
   getErrorMessage
 } from '../../helpers/data/api';
 
 const Form = (props) => {
-  let className = `choose-language-form ${hideMain(props)}`;
+  let className = `choose-language-form`;
 
   return (
     <Page

@@ -250,7 +250,7 @@ module.exports = function(world) {
   world.then('I will be on the add reduced fee page', function(done) {
     assertOnPage('.reduced-fee-form', /apply\/id-and-license\/add\/reduced-fee/, done);
   });
-  
+
   world.then('I will be on the page for entering my address', function(done) {
     assertOnPage('.home-address-form', /id-and-license\/my-basics\/address/, done);
   });

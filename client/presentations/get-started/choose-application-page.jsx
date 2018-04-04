@@ -8,13 +8,12 @@ import RadioCollection          from '../radio-selector-collection.jsx';
 import Accordion                from '../../containers/accordion.jsx';
 import Translator               from '../../i18n/translator-tag.jsx';
 import {
-  hideMain,
   getErrorMessage
 } from '../../helpers/data/api';
 
 const Form = (props) => {
   //TODO: Translation key for accordian title
-  let className = `choose-application-form ${hideMain(props)}`;
+  let className = `choose-application-form`;
   return (
     <Page
       {...props}

@@ -5,7 +5,6 @@ import Translator           from '../../../i18n/translator-tag.jsx';
 import SubmitButton         from './submit-button.jsx';
 
 import {
-  hideMain,
   getErrorMessage
 } from '../../../helpers/data/api';
 
@@ -21,7 +20,6 @@ const SummaryForm = (props) => {
 
       <form
         onSubmit  = { props.onSubmit }
-        className ={ hideMain(props) }
       >
         <Translator
           tag             = 'h2'

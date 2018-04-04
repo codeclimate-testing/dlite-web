@@ -51,18 +51,18 @@ describe('BallotLanguagePage', function() {
       assert.ok(!component.find('.selected').length, 'option is already selected');
     });
 
-    it('hides the page if the api is loading', function() {
-      server = {apiStatus: 'loading'};
-      props.server = server;
+    // it('hides the page if the api is loading', function() {
+    //   server = {apiStatus: 'loading'};
+    //   props.server = server;
 
-      component = render(
-        <Wrapper>
-          <LanguagePage  {...props} />
-        </Wrapper>
-      );
+    //   component = render(
+    //     <Wrapper>
+    //       <LanguagePage  {...props} />
+    //     </Wrapper>
+    //   );
 
-      assert.ok(component.find('.hide').length, 'page is not hidden by api status');
-    });
+    //   assert.ok(component.find('.hide').length, 'page is not hidden by api status');
+    // });
   });
 });
 
