@@ -9,27 +9,24 @@ const FormControls = (props) => {
   return (
     <div className='endorsement-toggle'>
       <hr/>
-        <Translator
-          tag             = 'h2'
-          className       = 'question'
-          translationPath = 'intro.licenseTypePage.endorsementsSection.prompt'
-        />
-        <Translator
-          tag             = 'p'
-          translationPath = 'intro.licenseTypePage.endorsementsSection.explanation'
-        />
-      <div className='row'>
-        <fieldset role='group' aria-label='Need endorsements choice'>
-          <RadioCollection
-            {...props}
-            name='needEndorsement'
-            onBlur = { props.onBlurValidate }
-            errorMessage={ props.validations.needEndorsement() }
-          >
-            {radioYesNoGroup()}
-          </RadioCollection>
-        </fieldset>
-      </div>
+      <Translator
+        tag             = 'h2'
+        className       = 'question'
+        translationPath = 'intro.licenseTypePage.endorsementsSection.prompt'
+      />
+      <Translator
+        tag             = 'p'
+        translationPath = 'intro.licenseTypePage.endorsementsSection.explanation'
+      />
+      <fieldset role='group' aria-label='Need endorsements choice'>
+        <RadioCollection
+          {...props}
+          name='needEndorsement'
+          errorMessage={ props.validations.needEndorsement() }
+        >
+          {radioYesNoGroup()}
+        </RadioCollection>
+      </fieldset>
     </div>
   );
 };
