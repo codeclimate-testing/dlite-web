@@ -20,10 +20,10 @@ describe('voterChoiceConverter', function() {
     });
 
     it('I am eligible to vote, but do not want to register to vote', function() {
-      let str = 'opt-out';
+      let str = 'optOut';
       let values = voterChoiceConverter.clientToDBMapping(str);
       assert.equal(values.opted_out, 'Yes');
-      assert.equal(values.type, 'existing');
+      assert.equal(values.type, 'optOut');
     });
   });
 
@@ -41,9 +41,9 @@ describe('voterChoiceConverter', function() {
     });
 
     it('I am eligible to vote, but do not want to register to vote', function() {
-      let values = {opted_out: 'Yes', type: 'existing'};
+      let values = {opted_out: 'Yes', type: 'optOut'};
       let str = voterChoiceConverter.DBToClientMapping(values);
-      assert.equal(str, 'opt-out');
+      assert.equal(str, 'optOut');
     });
   });
 });

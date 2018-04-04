@@ -3,7 +3,7 @@
 const voterChoiceMap = {
   "new":        {opted_out: 'No',   type: 'new'},
   "existing":   {opted_out: 'No',   type: 'existing'},
-  "opt-out":    {opted_out: 'Yes',  type: 'existing'}
+  "optOut":     {opted_out: 'Yes',  type: 'optOut'}
 };
 
 function clientToDBMapping(value) {
