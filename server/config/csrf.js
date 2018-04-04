@@ -10,7 +10,8 @@ function check(err, req, res, next) {
 };
 
 module.exports = function(app) {
-  app.use(csrf({ cookie: {sameSite: 'Strict', httpOnly: true}, value: (req) => (req.cookies.csrfToken) }));
+  let secureProd = process.env.APP_ENV === 'production' ? true : false;
+  app.use(csrf({ cookie: {sameSite: 'Strict', httpOnly: true, secure: secureProd}, value: (req) => (req.cookies.csrfToken) }));
   app.use(check);
   app.use(function (req, res, next) {
     res.cookie('csrfToken', req.csrfToken ? req.csrfToken() : null, { sameSite: 'Strict', httpOnly: true});

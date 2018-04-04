@@ -5,8 +5,7 @@ import { getUserData }            from '../actions/get-user-data';
 import AutoLogout                 from '../helpers/handlers/auto-logout';
 import {
   getAppKey,
-  signInURL,
-  splitPathname
+  signInURL
 } from '../helpers/data/pathnames';
 import {
   buildLoggedIn,
@@ -19,6 +18,7 @@ const LoggedIn = (props) => {
   let user = props.match.params.user;
   // set isLoggedIn key for localhost
   if (APP_ENV === 'development' || APP_ENV === 'test') {
+    console.log('build logged in for dev')
     buildLoggedIn();
   }
   let history = props.history;
@@ -28,18 +28,19 @@ const LoggedIn = (props) => {
   // make api call to /api/user/:id and save result to redux
   props.dispatch(getUserData(user))
   .then((res) => {
-    props.loadTranslationFromCookie();
-
     if (res === 'user-fail') {
       console.log('error: failed to retrieve records')
       return history.push(signInURL(appName));
     }
+
+    props.loadTranslationFromCookie();
 
     // include placeholder flow prop
     let pathURL = nextPath(pageKey, {
       flow: '',
       userData: res
     });
+
     return history.push(pathURL);
   });
 

@@ -315,6 +315,19 @@ describe('getApplication by user id', function() {
     .catch(done);
   });
 
+  it('returned promise receives placeholder when nothing is found', function(done) {
+    getApplication.byUserId('not-here-yo')
+    .then((record) => {
+      assert.deepEqual(record, {
+        applications: [],
+        cards: [],
+        card_options: []
+      });
+      done();
+    })
+    .catch(done);
+  });
+
   describe('IDDL data', function() {
     let data;
 

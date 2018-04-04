@@ -8,6 +8,7 @@ const renderClient      = require('./render-client');
 const logout            = require('./logout');
 const sendZip           = require('./send-zip');
 const saveAppName       = require('./save-app-name');
+const checkAuth         = require('./check-auth');
 
 let controllers = {
   getApplication,
@@ -17,7 +18,8 @@ let controllers = {
   renderClient,
   logout,
   sendZip,
-  saveAppName
+  saveAppName,
+  checkAuth
 };
 
 const auth = require('./auth');

@@ -17,15 +17,17 @@ module.exports = function parseUserData(records){
       return card.application_id === app.id;
     });
 
-    cards.forEach((card) => {
-      cardType.push(card.type);
+    if (cards) {
+      cards.forEach((card) => {
+        cardType.push(card.type);
 
-      let action = records.card_options.find(option => {
-        return option.option_type === 'action' && option.card_id === card.id;
+        let action = records.card_options.find(option => {
+          return option.option_type === 'action' && option.card_id === card.id;
+        });
+
+        cardAction.push(action.option_value);
       });
-
-      cardAction.push(action.option_value);
-    });
+    }
 
     apps.push({
       name,

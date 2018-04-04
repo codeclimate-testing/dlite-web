@@ -1,6 +1,6 @@
 'use strict';
 
-const getUser = require('../db/get-user').byId;
+const getUser = require('../db/get-user').byUuid;
 
 module.exports = function(id, done) {
   getUser(id)

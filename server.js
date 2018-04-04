@@ -19,9 +19,9 @@ const csrf              = require('./server/config/csrf');
 const routes            = require('./server/routes');
 
 let server = express();
+server.use(session(sessionOptions));
 server.use(passport.initialize());
 server.use(passport.session());
-server.use(session(sessionOptions));
 
 passport.use(oauthStrategy);
 passport.serializeUser(serializeUser);
