@@ -13,7 +13,7 @@ module.exports = function(world) {
     .type('#month_0', '10')
     .type('#day_0', '4')
     .type('#year_0', '2018')
-    .type('#phoneNumber_0', '(616)-923-1221')
+    .type('#phoneNumber_0', '616-923-1221')
     .type('#guardian_0Street_1', '865 Main Street')
     .type('#guardian_0Street_2', 'Unit no. 05')
     .type('#guardian_0City', 'Crazidino Here')
@@ -43,5 +43,3 @@ module.exports = function(world) {
   });
 
 }
-
-

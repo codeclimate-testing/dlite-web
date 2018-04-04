@@ -23,7 +23,7 @@ export const hasAnyAttributes = (props, attributes) => {
 };
 
 export const hasOnlyEnglishChars = (text) => {
-  return /^[\x00-\x7F]*$/.test(text);
+  return /^[0-9a-zA-Z-,. _]*$/.test(text);
 };
 
 export const hasOnlyNumbers = (text) => {

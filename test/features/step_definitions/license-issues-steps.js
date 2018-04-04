@@ -45,7 +45,7 @@ module.exports = function(world) {
 
   world.and('I enter the reason for my license suspension', function(done){
     browser
-      .type('#reason', 'I was not very responsible, I guess!')
+      .type('#reason', 'I was not very responsible, I guess')
       .then(() => { done(); })
       .catch(done);
   });

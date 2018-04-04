@@ -95,10 +95,17 @@ describe('validations', function() {
   });
 
   describe('#hasOnlyEnglishChars', function() {
-    it('should be true for numbers, letters and basic chars', function() {
+    it('should be true for numbers, letters and dashes', function() {
       assert(
-        hasOnlyEnglishChars('123 AzY ,.?!'),
-        'returned false even with basic ASCII chars'
+        hasOnlyEnglishChars('123 AzY ----'),
+        'returned false even with dashes'
+      );
+    });
+
+    it('should be false for numbers, letters and most basic chars', function() {
+      assert(
+        !hasOnlyEnglishChars('123 AzY ,.?!'),
+        'returned true even with basic ASCII chars'
       );
     });
 

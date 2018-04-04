@@ -10,14 +10,14 @@ describe('enter address page validation rules:', function() {
       homeAddressSameAsMailing: 'Yes',
       home: {
         street_1: '123 Main st.',
-        street_2: 'Where do I go!',
+        street_2: 'Where do I go',
         city:     'Crazydino',
         state:    'CA',
         zip:      '95666'
       },
       mailing: {
         street_1: '123 Main st.',
-        street_2: 'Where do I go!',
+        street_2: 'Where do I go',
         city:     'Crazydino',
         state:    'CA',
         zip:      '95666'

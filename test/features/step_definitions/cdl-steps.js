@@ -291,7 +291,7 @@ module.exports = function(world){
     browser
       .text()
       .then((text) => {
-        assert(text.includes('I was not very responsible, I guess!'), 'license issue reason missing');
+        assert(text.includes('I was not very responsible, I guess'), 'license issue reason missing');
       })
       .then(() => { done(); })
       .catch(done);

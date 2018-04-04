@@ -79,7 +79,7 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[0].signature.month = '1';
     props.guardianSignature.guardianInfo[0].signature.day = '25';
     props.guardianSignature.guardianInfo[0].signature.year = '2018';
-    props.guardianSignature.guardianInfo[0].phoneNumber = '(916) 111-2222';
+    props.guardianSignature.guardianInfo[0].phoneNumber = '916-111-2222';
     props.guardianSignature.guardianInfo[0].address.street_1 = '123 Main St';
     props.guardianSignature.guardianInfo[0].address.street_2 = 'B';
     props.guardianSignature.guardianInfo[0].address.city = 'Sacramento';
@@ -91,7 +91,7 @@ describe('enter guardian signature page validation rules:', function() {
     props.guardianSignature.guardianInfo[1].signature.month = '2';
     props.guardianSignature.guardianInfo[1].signature.day = '25';
     props.guardianSignature.guardianInfo[1].signature.year = '2018';
-    props.guardianSignature.guardianInfo[1].phoneNumber = '(916) 222-3333';
+    props.guardianSignature.guardianInfo[1].phoneNumber = '916-222-3333';
     props.guardianSignature.guardianInfo[1].address.street_1 = '321 Main St.';
     props.guardianSignature.guardianInfo[1].address.street_2 = 'Y';
     props.guardianSignature.guardianInfo[1].address.city = 'Sacramento';
