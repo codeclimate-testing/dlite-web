@@ -5,207 +5,396 @@ import Translator   from '../../i18n/translator-tag.jsx';
 
 const MedicalItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.medical.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.medical.title'
       />
       <Translator
-        tag='li'
-        translationPath='disclaimers.medical.bodyBullets.1'
+        tag='p'
+        translationPath='disclaimers.medical.body'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.medical.bodyBullets.2'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.medical.bodyBullets.3'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.medical.bodyBullets.4'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.medical.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.medical.bodyBullets.1'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.medical.bodyBullets.2'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.medical.bodyBullets.3'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.medical.bodyBullets.4'
+        />
+      </ul>
+    </div>
   )
 }
 
 const VeteransItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.veteran.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.veteran.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.veteran.bodyBullets.1'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.veteran.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.veteran.bodyBullets.1'
+        />
+      </ul>
+    </div>
   );
 };
 
-const VoterRegistrationItems = (props) => {
+const OrganDonationItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.organDonation.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.1'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.2'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.3'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.voterRegistration.bodyBullets.4'
-      />
-    </ul>
-  );
+
+    <Translator
+      tag='p'
+      translationPath='disclaimers.organDonation.body'
+    />
+  </div>
+  )
+}
+
+const VoterRegistrationItems = (props) => {
+  if(props.chooseApp === 'cdl') { return null;} 
+    return (
+      <div>
+        <Translator
+          tag='h3'
+          translationPath='disclaimers.voterRegistration.title'
+        />
+        <ul className='bullet-list'>
+          <Translator
+            tag='li'
+            translationPath='disclaimers.voterRegistration.bodyBullets.0'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.voterRegistration.bodyBullets.1'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.voterRegistration.bodyBullets.2'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.voterRegistration.bodyBullets.3'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.voterRegistration.bodyBullets.4'
+          />
+        </ul>
+      </div>
+    );
 };
 
 const CriminalProsecutionItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.criminalProsecution.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.criminalProsecution.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.criminalProsecution.bodyBullets.1'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.criminalProsecution.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.criminalProsecution.bodyBullets.1'
+        />
+      </ul>
+    </div>
   );
 };
 
 const FinancialResponsibilityItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.financialResponsibility.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.financialResponsibility.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.financialResponsibility.bodyBullets.1'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.financialResponsibility.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.financialResponsibility.bodyBullets.1'
+        />
+      </ul>
+    </div>
   );
 };
 
 const PaymentRefundsItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.paymentRefunds.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.paymentRefunds.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.paymentRefunds.bodyBullets.1'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.paymentRefunds.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.paymentRefunds.bodyBullets.1'
+        />
+      </ul>
+    </div>
   );
 };
 
 const PrivacyItems = (props) => {
-  return (
-    <ul className='bullet-list'>
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.0'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.1'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.2'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.3'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.4'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.5'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.6'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.7'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.privacy.bodyBullets.8'
-      />
-    </ul>
-  );
+  if(props.chooseApp === 'cdl') { return null; }
+    return (
+      <div>
+        <Translator
+          tag='h3'
+
+          translationPath='disclaimers.privacy.title'
+        />
+        <ul className='bullet-list'>
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.0'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.1'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.2'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.3'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.4'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.5'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.6'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.7'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.privacy.bodyBullets.8'
+          />
+        </ul>
+      </div>
+    );
 };
 
 const CertificationsItems = (props) => {
   return (
-    <ul className='bullet-list'>
+    <div>
       <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.0'
+        tag='h3'
+        translationPath='disclaimers.certifications.title'
       />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.1'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.2'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.3'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.4'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.5'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.6'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.7'
-      />
-      <Translator
-        tag='li'
-        translationPath='disclaimers.certifications.bodyBullets.8'
-      />
-    </ul>
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.1'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.2'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.3'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.4'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.5'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.6'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.7'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.certifications.bodyBullets.8'
+        />
+      </ul>
+    </div>
   );
 };
 
+const CDLDrivingTypesItems = (props) => {
+  if(props.chooseApp !== 'cdl') { return null; }
+    return (
+      <div>
+        <Translator
+          tag='h3'
+          translationPath='disclaimers.cdl.drivingTypes.title'
+        />
+        <Translator
+          tag='p'
+          translationPath='disclaimers.cdl.drivingTypes.body'
+        />
+        <ul className='bullet-list'>
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.drivingTypes.bodyBullets.0'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.drivingTypes.bodyBullets.1'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.drivingTypes.bodyBullets.2'
+          />
+        </ul>
+      </div>
+    );
+};
+
+const CDLVoterRegistrationItems = (props) => {
+  if(props.chooseApp !== 'cdl') { return null; }
+  return (
+    <div>
+      <Translator
+        tag='h3'
+        translationPath='disclaimers.cdl.voterRegistration.title'
+      />
+      <ul className='bullet-list'>
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.0'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.1'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.2'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.3'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.4'
+        />
+        <Translator
+          tag='li'
+          translationPath='disclaimers.cdl.voterRegistration.bodyBullets.5'
+        />
+      </ul>
+    </div>
+  );
+}
+
+const CDLPrivacyItems = (props) => {
+  if(props.chooseApp !== 'cdl') { return null;}
+    return (
+      <div>
+        <Translator
+          tag='h3'
+
+          translationPath='disclaimers.cdl.privacy.title'
+        />
+        <ul className='bullet-list'>
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.0'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.1'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.2'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.3'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.4'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.5'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.6'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.7'
+          />
+          <Translator
+            tag='li'
+            translationPath='disclaimers.cdl.privacy.bodyBullets.8'
+          />
+        </ul>
+      </div>
+    );
+}
+
 const DisclaimersInfo = (props) => {
   return (
-
     <div className='scroll-wrapper disclaimers-info'>
       <Translator
       tag='h3'
@@ -213,76 +402,25 @@ const DisclaimersInfo = (props) => {
       />
 
       <div className='scroll-content'>
-
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.medical.title'
-        />
-
-        <Translator
-          tag='p'
-          translationPath='disclaimers.medical.body'
-        />
+        <CDLDrivingTypesItems {...props} />
 
         <MedicalItems {...props} />
 
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.veteran.title'
-        />
-
         <VeteransItems {...props} />
 
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.organDonation.title'
-        />
-
-        <Translator
-          tag='p'
-          translationPath='disclaimers.organDonation.body'
-        />
-
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.voterRegistration.title'
-        />
+        <OrganDonationItems {...props} />
 
         <VoterRegistrationItems {...props} />
-
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.criminalProsecution.title'
-        />
+        <CDLVoterRegistrationItems {...props} />
 
         <CriminalProsecutionItems {...props} />
 
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.financialResponsibility.title'
-        />
-
         <FinancialResponsibilityItems {...props} />
-
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.paymentRefunds.title'
-        />
 
         <PaymentRefundsItems {...props} />
 
-        <Translator
-          tag='h3'
-
-          translationPath='disclaimers.privacy.title'
-        />
-
         <PrivacyItems {...props} />
-
-        <Translator
-          tag='h3'
-          translationPath='disclaimers.certifications.title'
-        />
+        <CDLPrivacyItems {...props} />
 
         <CertificationsItems {...props} />
 
