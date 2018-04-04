@@ -71,7 +71,7 @@ module.exports = function(world) {
       .value('#homeZip')
       .then((value) => { assert.equal(value, '94666'); })
       .value('#homeState')
-      .then((value) => { assert.equal(value, ''); })
+      .then((value) => { assert.equal(value, 'CA'); })
       .then(() => { done(); })
       .catch(done);
   });
