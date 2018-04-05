@@ -12,3 +12,5 @@ server/config/database.json
 public/index.html
 public/index.dev.html
 public/index.stage.html
+newrelic_agent.log
+newrelic_agent.log
