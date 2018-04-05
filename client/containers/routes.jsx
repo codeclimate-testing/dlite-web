@@ -25,7 +25,7 @@ class Router extends React.Component {
     return (
       <Switch className='routes'>
         <Route path={ alicePath('/links') }                                 exact component={Home} />
-        <Route path={ alicePath('/')}                                       exact component={ChooseApplication} />
+        <Route path={ alicePath('/')}                                       exact component={ChooseLanguage} />
         <Route path={ alicePath('/choose-language')}                              component={ChooseLanguage} />
         <Route path={ alicePath('/choose-application')}                           component={ChooseApplication}/>
         <Route path={ alicePath('/disclaimers') }                           exact component={Disclaimers} />

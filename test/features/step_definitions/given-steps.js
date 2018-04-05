@@ -13,7 +13,7 @@ module.exports = function(world) {
         console.log('error', err);
       })
       .open(world.url('/'))
-      .waitForSelector('.choose-application-form')
+      .waitForSelector('.choose-language-form')
       .then(() => { done(); })
       .catch(done);
   });
