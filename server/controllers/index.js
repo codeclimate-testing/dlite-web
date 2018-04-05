@@ -12,6 +12,7 @@ const sameUserOnly      = require('./same-user-only');
 const isUserLoggedIn    = require('./is-user-logged-in');
 const sendAppEnv        = require('./send-app-env');
 const getHealth         = require('./health-check');
+const fieldOfficeRoute  = require('./field-office-route');
 
 let controllers = {
   getApplication,
@@ -25,7 +26,8 @@ let controllers = {
   sameUserOnly,
   isUserLoggedIn,
   sendAppEnv,
-  getHealth
+  getHealth,
+  fieldOfficeRoute
 };
 
 const auth = require('./auth');

@@ -9,6 +9,23 @@ import { getErrorMessage }      from '../../helpers/data/api';
 
 const Presentation = (props) => {
   let authURL = `/auth/new/${props.appName}/${props.language}`;
+
+  if(TST_ENV){
+    authURL = `/field-office-route/${props.appName}/${props.language}`
+    return (
+      <Page
+      {...props}
+      sectionKey='intro'
+    >
+      <div className='field-office-sign-in'>
+        <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
+          <a href={authURL} className='button green id-me-create'>Start Your Application</a>
+        </fieldset>
+      </div>
+    </Page>
+    );
+  }
+
   return (
     <Page
       {...props}

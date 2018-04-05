@@ -15,6 +15,8 @@ const routes = (passport) => {
   router.get( '/api/isLoggedIn', controllers.isUserLoggedIn);
   router.get( '/api/get-app-env', controllers.sendAppEnv);
 
+  router.get( '/field-office-route/:appName/:language',       controllers.fieldOfficeRoute);
+
   router.get( '/auth/new/:appName/:language/:oauthType', controllers.authNew(passport));
   router.get( '/auth/oauth/callback', controllers.authCallback(passport), controllers.authSuccess);
   router.get( '/auth/error', controllers.authError);
