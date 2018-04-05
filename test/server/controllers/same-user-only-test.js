@@ -3,9 +3,9 @@
 const assert      = require('assert');
 const sinon       = require('sinon');
 const httpMocks   = require('node-mocks-http');
-const controller  = require('../../../server/controllers/check-auth');
+const controller  = require('../../../server/controllers/same-user-only');
 
-describe('check auth controller', () => {
+describe('same user only controller', () => {
   let res, req, next;
 
   beforeEach(function() {
@@ -13,54 +13,47 @@ describe('check auth controller', () => {
     res = {
       send: function(){ },
       json: function(err){
-        assert.equal(err.message, 'not logged in');
+        assert.equal(err.message, 'session user uuid doesnt match requested uuid');
       },
       status: function(responseStatus) {
-          assert.equal(responseStatus, 401);
+          assert.equal(responseStatus, 500);
           // This next line makes it chainable
           return this;
       }
     };
-
     req = {
       session: {
         user: {
           uuid: ''
         }
+      },
+      params: {
+        uuid: ''
       }
-    };
+    }
     next = sinon.spy();
   });
 
-  it('returns next if user has an uuid', function() {
-    req.session.user.uuid = '101';
-    controller(req, res, next, 'production');
-    assert.ok(next.called);
-  });
-
   describe('#production env', function() {
-    it('returns next if user has an uuid', function() {
+    it('returns next if params.uuid matches session.user.uuid', function() {
       req.session.user.uuid = '101';
+      req.params.uuid = '101';
       controller(req, res, next, 'production');
       assert.ok(next.called);
     });
 
-    it('redirects user to root if session does not have user', function() {
-      req.session = {};
+    it('sends status 500 if uuids do not match', function() {
+      req.session.user.uuid = '101';
+      req.params.uuid = '111';
       controller(req, res, next, 'production');
       assert.ok(!next.called);
     });
   });
 
-  it('sends error if user does not have session user', function() {
-    req.session = {};
-    controller(req, res, next, 'production');
-    assert.ok(!next.called);
-  });
-
   describe('#dev env', function() {
     it('returns next', function() {
-      req.session = {};
+      req.session.user.uuid = '101';
+      req.params.uuid = '111';
       controller(req, res, next, 'development');
       assert.ok(next.called);
     });

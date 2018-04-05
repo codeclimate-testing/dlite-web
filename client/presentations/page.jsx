@@ -8,7 +8,6 @@ import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
 import { getLanguageClass } from '../helpers/data/translator';
-
 import { signInURL }      from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {

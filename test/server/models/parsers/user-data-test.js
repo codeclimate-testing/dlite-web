@@ -70,6 +70,7 @@ describe('userData', function() {
     assert.equal(data.appsLength, 2);
   });
 
+
   describe('apps array', function() {
     it('each object has the name of the person associated with each application', function() {
       assert.equal(data.apps[0].name, 'Ellen Pao ');

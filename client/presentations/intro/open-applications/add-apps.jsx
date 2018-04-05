@@ -1,9 +1,9 @@
 'use strict';
 
 import React                  from 'react';
-import Translator             from '../../i18n/translator-tag.jsx';
-import PageSummaryLink        from '../../containers/page-summary-link.jsx';
-import { hasValue }           from '../../helpers/data/validations';
+import Translator             from '../../../i18n/translator-tag.jsx';
+import PageSummaryLink        from '../../../containers/page-summary-link.jsx';
+import { hasValue }           from '../../../helpers/data/validations';
 
 export const AddApps = (props) => {
   return (

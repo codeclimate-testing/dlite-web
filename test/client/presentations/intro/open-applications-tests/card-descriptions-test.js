@@ -2,12 +2,12 @@
 
 import assert               from 'assert';
 import React                from 'react';
-import configure            from '../../support/configure-enzyme';
+import configure            from '../../../support/configure-enzyme';
 import { render }           from 'enzyme';
 import { spy }              from 'sinon';
-import store                from '../../support/page-store';
-import wrapperGenerator     from '../../support/wrapper';
-import { CardDescription }  from '../../../../client/presentations/intro/card-description.jsx';
+import store                from '../../../support/page-store';
+import wrapperGenerator     from '../../../support/wrapper';
+import { CardDescription }  from '../../../../../client/presentations/intro/open-applications/card-description.jsx';
 
 
 describe('Open Applications card descriptions', function() {
