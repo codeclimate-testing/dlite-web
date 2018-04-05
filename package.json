@@ -77,6 +77,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jsonwebtoken": "^7.4.1",
     "morgan": "^1.8.2",
+    "newrelic": "^3.3.0",
     "passport": "^0.3.2",
     "passport-oauth2": "^1.4.0",
     "react": "^16.2.0",

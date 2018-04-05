@@ -1,5 +1,5 @@
 'use strict';
-
+require('newrelic');
 const env               = require('./server/config/env.js');
 
 const express           = require('express');
