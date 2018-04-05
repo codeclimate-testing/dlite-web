@@ -21,10 +21,17 @@ const EnterRevokedSuspended = (props) => {
       />
 
       <fieldset role='group' aria-label='License issue explanation'>
+
         <DateInput
           {...props }
-          values = { props.licenseIssues }
+          values={props.licenseIssues}
         />
+
+      </fieldset>
+
+      <fieldset role='group' aria-label='License issue reason'>
+
+        <Translator tag='label' translationPath='myHistory.licenseIssuesPage.reasonLabel' />
 
         <TextArea
           { ...props }
@@ -32,7 +39,7 @@ const EnterRevokedSuspended = (props) => {
           value        = { props.licenseIssues.reason }
           errorMessage = { props.validations.reason() }
         >
-          <Translator tag = 'span' translationPath = 'myHistory.licenseIssuesPage.reasonLabel' />
+         
         </TextArea>
       </fieldset>
     </div>
