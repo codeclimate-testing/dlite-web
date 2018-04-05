@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['Dlite'],
+  app_name: [process.env.APP_URL],
   /**
    * Your New Relic license key.
    */
