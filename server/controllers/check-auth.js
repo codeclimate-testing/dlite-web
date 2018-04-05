@@ -8,6 +8,8 @@ module.exports = function checkAuth(req, res, next) {
   if (process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test') {
     isLoggedIn = req.cookies.isLoggedIn.toString() === 'true';
   } else {
+    console.log('checkAuth');
+    console.log(req.session.user);
     isLoggedIn = req.session.hasOwnProperty('user') && req.session.user.uuid.length > 0;
   }
 

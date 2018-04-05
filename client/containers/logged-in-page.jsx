@@ -1,17 +1,17 @@
 'use strict';
 import { connect }                from 'react-redux';
 import handlers                   from '../helpers/handlers';
-
+import { isProduction }           from '../helpers/data/application';
 import {
   buildLoggedIn,
-  getAppNameCookie,
+  getAppNameCookie
 } from '../helpers/data/cookies';
 
 const LoggedIn = (props) => {
 
   // set isLoggedIn key for localhost
-  if (APP_ENV === 'development' || APP_ENV === 'test') {
-    console.log('build logged in for dev')
+  if (!isProduction()){
+    console.log('build logged in for dev');
     buildLoggedIn();
   }
 

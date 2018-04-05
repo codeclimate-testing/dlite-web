@@ -33,7 +33,7 @@ export default (dispatch) => {
         let appName = getAppNameCookie();
 
         if (res === 'user-fail') {
-          console.log('error: failed to retrieve records')
+          console.log('error: failed to retrieve records');
           return history.push(signInURL(appName));
         }
 

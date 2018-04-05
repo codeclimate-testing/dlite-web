@@ -17,7 +17,7 @@ describe('Get User Apps controller', () => {
       method: 'GET',
       url: '/api/user/10001',
       params: {
-        id: '10001'
+        uuid: '10001'
       }
     });
     res = httpMocks.createResponse({});
@@ -46,7 +46,7 @@ describe('Get User Apps controller', () => {
         let data = JSON.parse(res._getData());
 
         assert.equal(res.statusCode, 200);
-        assert.equal(data.userID, req.params.id);
+        assert.equal(data.userID, req.params.uuid);
         assert.equal(data.appsLength, 2);
 
         let cdlApp = data.apps.find(app => {

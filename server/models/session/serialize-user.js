@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = (user, done) => {
-  done(null, user.id);
+  done(null, user.uuid);
 };

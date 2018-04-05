@@ -91,6 +91,8 @@ exports.byUserId = (userID) => {
     })
 
   .then((res) => {
+    console.log('records from database');
+    console.log(res)
     return res;
   })
   .catch((err) => {
