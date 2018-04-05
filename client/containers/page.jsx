@@ -31,7 +31,8 @@ const mapStateToProps = (state) => {
     chooseApp:            state.ui.chooseApp,
     section:              state.ui.section,
     language:             state.ui.language,
-    translationLanguage:  state.server.translations.translationLanguage
+    translationLanguage:  state.server.translations.translationLanguage,
+    isLoggedIn:           state.ui.isLoggedIn
   };
 }
 
