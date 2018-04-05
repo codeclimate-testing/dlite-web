@@ -164,7 +164,10 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/appointment-preparation/documents', '.required-documents', done);
   });
 
-  /* IDDL assertOnPage */
+  world.when('I will be on the choose language page', function(done) {
+    assertOnPage('.choose-language-form', /apply\/choose-language/, done);
+  });
+
   world.when('I will be on the choose application page', function(done) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });

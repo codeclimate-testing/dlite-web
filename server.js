@@ -35,7 +35,7 @@ server.use(logging());
 server.use(helmet());
 
 server.get('/', (req, res) => {
-  res.redirect('/apply/choose-application');
+  res.redirect('/apply/choose-language');
 });
 server.use('/', expressStaticGzip('public'));
 server.use(express.static('public'));

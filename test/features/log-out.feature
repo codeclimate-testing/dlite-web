@@ -7,17 +7,5 @@ Scenario: Clicking the log-out link to log-out
   When I go to the IDDL sign-in page
   And I go to the logged in page
   When I click the log-out link
-  And I will be on the choose application page
+  And I will be on the choose language page
   And I will not see any log-out link
-
-Scenario: language choice persisted
-  Given I go to the new online DL application
-  When I visit the page to choose application language
-  And I choose Thai as my application language
-  And I click to continue
-  When I go to the IDDL sign-in page
-  And I go to the logged in page
-  When I click the log-out link
-  Then I will be on the choose application page
-  When I go to the logged in page
-  Then the name page will be in Thai
