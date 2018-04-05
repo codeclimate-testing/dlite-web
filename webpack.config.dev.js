@@ -42,7 +42,8 @@ let configDev = {
   plugins: [
     new ExtractTextPlugin('app.dev.css'),
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify('development')
+      APP_ENV: JSON.stringify('development'),
+      TST_ENV: false
     }),
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',
