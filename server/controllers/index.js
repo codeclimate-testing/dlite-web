@@ -11,6 +11,7 @@ const checkAuth         = require('./check-auth');
 const sameUserOnly      = require('./same-user-only');
 const isUserLoggedIn    = require('./is-user-logged-in');
 const sendAppEnv        = require('./send-app-env');
+const fieldOfficeRoute  = require('./field-office-route');
 
 let controllers = {
   getApplication,
@@ -23,7 +24,8 @@ let controllers = {
   checkAuth,
   sameUserOnly,
   isUserLoggedIn,
-  sendAppEnv
+  sendAppEnv,
+  fieldOfficeRoute
 };
 
 const auth = require('./auth');
