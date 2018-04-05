@@ -2,6 +2,7 @@
 
 const authNew = (passport) => {
   return (req, res, next) => {
+
     let dataString = JSON.stringify({appName: req.params.appName, language: req.params.language});
     return passport.authenticate('oauth2', { scope: ['multifactor'], state: dataString })(req, res, next);
   }
@@ -25,6 +26,7 @@ const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   else {
     res.redirect(`/apply/logged-in/${req.user.uuid}`);
   }
+
 };
 
 const authError = (req, res) => {

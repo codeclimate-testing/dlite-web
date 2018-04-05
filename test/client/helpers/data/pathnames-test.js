@@ -13,7 +13,6 @@ import {
   nextOrSummary,
   applyEditOrAddPath,
   applyOrEditCDLPath,
-  getAppType,
   getAppKey,
   signInURL
 } from '../../../../client/helpers/data/pathnames';
@@ -229,24 +228,6 @@ describe('Data helpers for pathnames', function() {
     });
   });
 
-  describe('#getAppType', function() {
-    it('returns the props.chooseApp value if provided', function() {
-      props.chooseApp = 'cdl';
-      assert.equal(getAppType(props), props.chooseApp);
-    });
-    it('returns the 3rd piece of the url if props.chooseApp is undefined', function() {
-      props.chooseApp = undefined;
-      props.location = {
-        pathname :'localhost:3000/apply/id-and-license/sign-in'
-      };
-      assert.equal(getAppType(props), props.location.pathname.split('/')[2]);
-    });
-    it('falls back to "id-and-license" if chooseApp is undefined and props doesnt have location object', function() {
-      props.location = null;
-      props.chooseApp = null;
-      assert.equal(getAppType(props), 'id-and-license');
-    });
-  });
 
   describe('#getAppKey', function() {
     let cookieValue;
@@ -268,6 +249,9 @@ describe('Data helpers for pathnames', function() {
     });
     it('returns /apply/id-and-license/sign-in when appName is id-and-license', function() {
       assert.equal(signInURL('id-and-license'), '/apply/id-and-license/sign-in');
+    });
+    it('returns / when appName is blank', function() {
+      assert.equal(signInURL(''), '/');
     });
   });
 });

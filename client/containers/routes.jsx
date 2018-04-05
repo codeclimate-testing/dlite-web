@@ -8,12 +8,12 @@ import {
   cdlPath
 } from '../helpers/alice-path';
 import Home                                   from '../presentations/home.jsx';
-import ChooseLanguage                         from './choose-language-page.jsx';
-import ChooseApplication                      from './choose-application-page.jsx';
+import ChooseLanguage                         from './intro/choose-language-page.jsx';
+import ChooseApplication                      from './intro/choose-application-page.jsx';
 import OpenApplications                       from './intro/open-applications-page.jsx';
 
-import IDMe                                   from './id-me-page.jsx';
-import LoggedIn                               from './logged-in-page.jsx';
+import IDMe                                   from './intro/id-me-page.jsx';
+import LoggedIn                               from './intro/logged-in-page.jsx';
 
 import Disclaimers                            from './iddl/get-started/disclaimers-page.jsx';
 import CDLDisclaimers                         from './cdl/cdl-disclaimers.jsx';

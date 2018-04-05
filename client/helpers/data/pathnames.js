@@ -3,6 +3,7 @@ import { pageFor }          from '../navigation/page';
 import { hasExistingCard }  from './card-actions';
 import * as dataPresent     from '../data-present';
 import { getAppNameCookie } from './cookies';
+import { hasValue }         from './validations';
 import {
   getDL
 } from './card-type';
@@ -35,11 +36,11 @@ export const getActionFromState = (state) => {
 };
 
 export const cdlApp = (value) => {
-  return value === 'cdl';
+  return value.toLowerCase() === 'cdl';
 };
 
 const IDDLApp = (value) => {
-  return value === 'iddl';
+  return value.toLowerCase() === 'iddl' || value.toLowerCase() === 'id-and-license';
 };
 
 export const hasChosenApp = (props) => {
@@ -132,16 +133,6 @@ export function splitPathname(props) {
   return props.location.pathname.split('/')[2];
 }
 
-export function getAppType(props) {
-  let appType = 'id-and-license';
-  if (props.chooseApp && props.chooseApp === 'cdl') {
-    appType = props.chooseApp;
-  }
-  else if (!props.chooseApp && props.location) {
-    appType = splitPathname(props);
-  }
-  return appType;
-}
 
 export function getAppKey(cookieValue) {
   let pageKey = 'IDme';
@@ -152,8 +143,8 @@ export function getAppKey(cookieValue) {
 }
 
 export function signInURL(appName =  getAppNameCookie()) {
-  if (APP_ENV === 'test' && appName.length < 1) {
-    appName = 'id-and-license';
+  if (!hasValue(appName)) {
+    return '/';
   }
   return `/apply/${appName}/sign-in`;
 };

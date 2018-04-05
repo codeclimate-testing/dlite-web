@@ -1,6 +1,7 @@
 'use strict';
 import { pathForPage }          from '../navigation/page';
 import { hasValue }             from './validations';
+import { splitPathname }        from './pathnames';
 
 export const languageIsSelected = (value) => {
   return hasValue(value);
@@ -26,7 +27,6 @@ export const afterIntro = (pathname) => {
 
 export const isProduction = (env = APP_ENV) => {
   return env !== 'test' && env !== 'development';
-  //return env === 'production' || env === 'stage';
 };
 
 export function requireLogIn(pathname, isLoggedIn, env = APP_ENV){
@@ -37,3 +37,14 @@ export function requireLogIn(pathname, isLoggedIn, env = APP_ENV){
 export const hasMultipleApps = (props) => {
   return props.userData.appsLength > 1;
 }
+
+export const parseAppName = (props) => {
+  let appName;
+  if (props.chooseApp === 'id-and-license' || props.chooseApp.toLowerCase() === 'cdl') {
+    appName = props.chooseApp;
+  }
+  else {
+    appName = splitPathname(props);
+  }
+  return appName;
+};

@@ -1,13 +1,9 @@
 'use strict';
-import { buildAppName }   from '../../helpers/data/cookies';
+import { TYPES }          from '../../actions';
+import formValueReducer   from '../form-value-reducer';
 
 function defaultState() {
   return '';
 };
 
-export default function(state = defaultState(), action) {
-  if (action.type !==  'CHOOSE_APP') { return state; }
-  let payload = action.payload.value;
-  buildAppName(payload); //save cookie
-  return payload || state;
-}
+export default formValueReducer(defaultState, TYPES.CHOOSE_APP);

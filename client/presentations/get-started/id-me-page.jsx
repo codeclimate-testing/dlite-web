@@ -4,6 +4,8 @@ import React              from 'react';
 import Page               from '../../containers/page.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
 import Translator         from '../../i18n/translator-tag.jsx';
+import { ErrorMessageBox }      from '../validations.jsx';
+import { getErrorMessage }      from '../../helpers/data/api';
 
 const Presentation = (props) => {
   let authURL = `/auth/new/${props.appName}/${props.language}`;
@@ -13,6 +15,9 @@ const Presentation = (props) => {
       sectionKey='intro'
     >
       <div className='id-me'>
+        <ErrorMessageBox
+          errorMessage = {getErrorMessage({ server: { apiStatus: props.apiStatus }})}
+        />
         <Translator
           tag             = 'h2'
           translationPath = 'newExtracted.intro.getStartedPage.idMe.prompt'

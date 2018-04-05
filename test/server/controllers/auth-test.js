@@ -21,12 +21,6 @@ describe('Auth related controllers', () => {
     assert(res.redirect.calledWith('/apply/logged-in/'+ req.user.uuid));
   });
 
-  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
-    process.env.APP_URL = 'localhost';
-    controllers.authSuccess(req, res, next, 'development');
-    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/'+req.user.uuid));
-  });
-
   it('#authSuccess sets isLoggedIn cookie to true', function() {
     controllers.authSuccess(req, res);
     assert(res.cookie.calledWith('isLoggedIn', true));
@@ -43,11 +37,5 @@ describe('Auth related controllers', () => {
     req.query.state = JSON.stringify({language: '', appName: 'id-and-license'});
     controllers.authSuccess(req, res);
     assert.ok(res.cookie.calledWith('appName', 'id-and-license'));
-  });
-
-  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
-    process.env.APP_URL = 'localhost';
-    controllers.authSuccess(req, res, next, 'development');
-    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/' + req.user.uuid));
   });
 });

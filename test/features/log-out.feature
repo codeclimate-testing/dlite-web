@@ -7,7 +7,7 @@ Scenario: Clicking the log-out link to log-out
   When I go to the IDDL sign-in page
   And I go to the logged in page
   When I click the log-out link
-  And I will be on the id.me page
+  And I will be on the choose application page
   And I will not see any log-out link
 
 Scenario: language choice persisted
@@ -18,6 +18,6 @@ Scenario: language choice persisted
   When I go to the IDDL sign-in page
   And I go to the logged in page
   When I click the log-out link
-  Then I will be on the id.me page
+  Then I will be on the choose application page
   When I go to the logged in page
   Then the name page will be in Thai

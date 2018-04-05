@@ -165,6 +165,9 @@ module.exports = function(world) {
   });
 
   /* IDDL assertOnPage */
+  world.when('I will be on the choose application page', function(done) {
+    assertOnPage('.choose-application-form', /apply\/choose-application/, done);
+  });
   world.when('I will be on the IDDL sign-in page', function(done) {
     assertOnPage('.id-me', /apply\/id-and-license\/sign-in/, done);
   });

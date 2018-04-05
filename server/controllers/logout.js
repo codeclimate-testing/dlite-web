@@ -5,6 +5,9 @@ const logout = (req, res) => {
   req.logout();
   req.session.destroy();
   res.cookie('isLoggedIn', false);
+  if (!appName) {
+    res.redirect('/');
+  }
   res.redirect(`/apply/${appName}/sign-in`);
 };
 

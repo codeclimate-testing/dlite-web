@@ -3,7 +3,8 @@ import { getUserData }                  from '../../actions/get-user-data';
 import getTranslation                   from '../../actions/get-translation';
 import {
   updateLanguage,
-  updateLoggedIn
+  updateLoggedIn,
+  chooseApp
  } from '../../actions/index';
 import { nextPath }                     from '../navigation/page';
 import { doNotNeedToLoadTranslations }  from '../data/translator';
@@ -30,13 +31,11 @@ export default (dispatch) => {
 
     dispatch(getUserData(user))
       .then((res) => {
+        console.log('client got response from server: ');
+        console.log(res)
+        // get appName that was either saved on idme page (dev) or on server after successful login (prod)
         let appName = getAppNameCookie();
-
-        if (res === 'user-fail') {
-          console.log('error: failed to retrieve records');
-          return history.push(signInURL(appName));
-        }
-
+        dispatch(chooseApp(appName));
         dispatch(updateLoggedIn(true));
 
         let pageKey = getAppKey(appName);

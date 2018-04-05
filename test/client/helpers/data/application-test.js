@@ -8,7 +8,8 @@ import {
   isProduction,
   requireLogIn,
   afterIntro,
-  hasMultipleApps
+  hasMultipleApps,
+  parseAppName
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -84,6 +85,31 @@ describe('Data helpers for application', function() {
     it('returns false if appsLength is 1', function() {
       props.userData.appsLength = 1;
       assert.equal(hasMultipleApps(props), false);
+    });
+  });
+
+  describe('#parseAppName', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        chooseApp: '',
+        location: {
+          pathname: ''
+        }
+      };
+    });
+    it('returns props.chooseApp when it is id-and-license', function() {
+      props.chooseApp = 'id-and-license';
+      assert.equal(parseAppName(props), 'id-and-license');
+    });
+    it('returns props.chooseApp when it is cdl', function() {
+      props.chooseApp = 'cdl';
+      assert.equal(parseAppName(props), 'cdl');
+    });
+    it('returns pathname when it is neither', function() {
+      props.chooseApp = '';
+      props.location.pathname = '/apply/id-and-license/sign-in';
+      assert.equal(parseAppName(props), 'id-and-license');
     });
   });
 });

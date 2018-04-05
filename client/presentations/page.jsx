@@ -8,10 +8,7 @@ import EmojiDebugLink     from './emoji-link.jsx';
 import GoogleAnalytics    from './google-analytics.jsx';
 import SectionHeader      from './section-header.jsx';
 import { getLanguageClass } from '../helpers/data/translator';
-import {
-  isLoggedIn,
-  buildLoggedOut
-} from '../helpers/data/cookies';
+
 import { signInURL }      from '../helpers/data/pathnames';
 
 const setTitleLiteral = (title, section) => {
@@ -65,8 +62,7 @@ const Page = (props) => {
         name={name}
       />
       <Logout
-        appName = {props.appName}
-        isLoggedIn = {isLoggedIn()}
+        isLoggedIn = {props.isLoggedIn}
       />
       {props.children}
 

@@ -2,29 +2,13 @@
 import fetch                  from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
+
 export const buildAppName = (appName) => {
-  return document.cookie = `appName=${appName};path=/`;
+  document.cookie = `appName=${appName};path=/`;
 };
 
 export const getAppNameCookie = () => {
   return document.cookie.replace(/(?:(?:^|.*;\s*)appName\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-};
-
-export const buildLoggedIn = () => {
-  return document.cookie = 'isLoggedIn=true;path=/';
-};
-
-export const buildLoggedOut = () => {
-  return document.cookie = 'isLoggedIn=false;path=/';
-};
-
-export const getLoggedIn = () => {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)isLoggedIn\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-};
-
-export const isLoggedIn = () => {
-  let cookieValue = getLoggedIn();
-  return cookieValue.toString() === 'true';
 };
 
 export function getLanguageFromCookie() {

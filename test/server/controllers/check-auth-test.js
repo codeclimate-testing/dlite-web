@@ -10,7 +10,7 @@ describe('check auth controller', () => {
 
   beforeEach(function() {
     res = httpMocks.createResponse({});
-    res.redirect = sinon.spy();
+    res.sendStatus = sinon.spy();
     req = {
       session: {
         user: {
@@ -28,11 +28,11 @@ describe('check auth controller', () => {
     assert.ok(next.called);
   });
 
-  it('redirects user to root if session does not have user', function() {
+  it('sends error if user does not have session user', function() {
     process.env.APP_ENV = 'production';
     req.session = {};
     controller(req, res, next, 'production');
     assert.ok(!next.called);
-    assert.ok(res.redirect.calledWith('/'))
+    assert.ok(res.sendStatus.calledWith(500));
   })
 });

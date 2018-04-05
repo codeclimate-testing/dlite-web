@@ -6,10 +6,9 @@ module.exports = function checkAuth(req, res, next) {
   let isLoggedIn;
 
   if (process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test') {
-    isLoggedIn = req.cookies.isLoggedIn.toString() === 'true';
+    isLoggedIn = true;
   } else {
-    console.log('checkAuth');
-    console.log(req.session.user);
+    console.log('check auth')
     isLoggedIn = req.session.hasOwnProperty('user') && req.session.user.uuid.length > 0;
   }
 
@@ -17,6 +16,6 @@ module.exports = function checkAuth(req, res, next) {
   if (isLoggedIn) {
     return next();
   } else {
-    return res.status(500).redirect('/');
+    return res.sendStatus(500);
   }
 };

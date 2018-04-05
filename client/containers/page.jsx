@@ -14,13 +14,10 @@ const Page = (props) => {
   let sectionKey = getTextFromState(props, props.sectionKey, '');
   props.onPageLoad(sectionKey, props.section);
 
-  // determine which app (cdl or IDDL they are on) from chooseApp else pathname
-  let appName = getAppType(props);
 
   return (
     <Presentation
       {...props}
-      appName = {appName}
     />
   );
 };
