@@ -11,6 +11,7 @@ const Option = (props) => {
 const suffixList = ['', 'Sr.', 'Jr.', 'II', 'III', 'IV'];
 
 const SuffixSelector = (props) => {
+  let identifier = 'suffix';
   let id = 'suffix';
   let value = props.value;
 
@@ -25,8 +26,7 @@ const SuffixSelector = (props) => {
 
   return (
     <div className='select-input-block'>
-      <label className='row' htmlFor={id}>Suffix</label>
-      <select name={ props.identifier } id={id} value={value} onChange={props.onChange} >
+      <select name={ props.name } id={props.id} value={value} onChange={props.onChange} >
         { options }
       </select>
     </div>

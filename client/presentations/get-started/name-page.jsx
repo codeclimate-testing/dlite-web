@@ -10,15 +10,8 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 import Translator         from '../../i18n/translator-tag.jsx';
 import TranslatorList     from '../../i18n/translator-list.jsx';
 
-const suffixList = [
-  "Sr.",
-  "Jr.",
-  "I",
-  "II",
-  "III"
-];
-
 const LegalNameForm = (props) => {
+
   return (
     <Page
       sectionKey='intro'
@@ -60,20 +53,16 @@ const LegalNameForm = (props) => {
             value         = { props.legalName.lastName }
             errorMessage  = { props.validations.lastName() }
           >
-            <Translator tag = 'span' translationPath = 'shared.labels.lastName' />
+            <Translator tag='span' translationPath='shared.labels.lastName' />
           </TextInput>
 
-          <SelectDropdown
+          <label className='row' id='suffix' htmlFor='suffix'><Translator tag='span' translationPath='intro.namePage.suffixLabel' /></label>
+          <SuffixSelector
             name          = 'suffix'
             id            = 'suffix'
-            selected      = { props.legalName.suffix }
-            hover         = { props.hover }
-            onChange      = { props.onSelectChange }
-            changeAction  = { props.changeAction }
-            values        = { suffixList }
-          >
-            <Translator tag = 'span' translationPath = 'intro.namePage.suffixLabel' />
-          </SelectDropdown>
+            value         = {props.legalName.suffix}
+            onChange      = {props.onChange}
+          />
         </fieldset>
 
         <NavigationButtons

@@ -17,7 +17,7 @@ describe('SuffixSelector', function() {
 
     component = render(
       <SuffixSelector
-        identifier='suffix'
+        id='suffix'
         value={ 'Sr.' }
         onChange={ onChange }
       />
