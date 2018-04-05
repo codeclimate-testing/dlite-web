@@ -16,7 +16,6 @@ const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   let params = JSON.parse(req.query.state);
   req.session.user = req.user;
 
-  res.cookie('isLoggedIn', true, {secure: true, httpOnly: false, sameSite: true});
   res.cookie('appName', params.appName, {maxAge: 1200000});
   res.cookie('language', params.language, {maxAge: 1200000});
 

@@ -21,11 +21,6 @@ describe('Auth related controllers', () => {
     assert(res.redirect.calledWith('/apply/logged-in/'+ req.user.uuid));
   });
 
-  it('#authSuccess sets isLoggedIn cookie to true', function() {
-    controllers.authSuccess(req, res);
-    assert(res.cookie.calledWith('isLoggedIn', true));
-  });
-
   it('#authSuccess sets language cookie to req.query.state.language', function() {
     req.query.state = JSON.stringify({language: 'zh', appName: 'cdl'});
     controllers.authSuccess(req, res);
