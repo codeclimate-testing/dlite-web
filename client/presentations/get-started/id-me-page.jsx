@@ -12,18 +12,11 @@ const Presentation = (props) => {
 
   if(TST_ENV){
     authURL = `/field-office-route/${props.appName}/${props.language}`
-    return (
-      <Page
-      {...props}
-      sectionKey='intro'
-    >
-      <div className='field-office-sign-in'>
-        <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
-          <a href={authURL} className='button green id-me-create'>Start Your Application</a>
-        </fieldset>
-      </div>
-    </Page>
-    );
+    const simulateClick = (e) => {
+      e.click()
+    };
+
+    return  <a href={authURL} style={{visibility: 'hidden'}} ref={simulateClick} />
   }
 
   return (

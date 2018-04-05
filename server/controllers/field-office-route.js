@@ -2,13 +2,10 @@
 const uuidv1 = require('uuid/v1');
 
 module.exports = function authSuccess (req, res, next) {
-  console.log('*******************************')
-  console.log('*******************************')
-  console.log('*******************************')
-  console.log('*******************************')
-  console.log('*******************************')
-  console.log('*******************************')
 
+  if(!process.env.TST_ENV) {
+    res.redirect(`/apply`);
+  }
   let appName = req.params.appName;
   let language = req.params.language;
 
