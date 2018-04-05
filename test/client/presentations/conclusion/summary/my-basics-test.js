@@ -212,5 +212,28 @@ describe('Summary My basics section components', function() {
       assert.equal(component.text().includes('Social Security number'), true);
       assert.equal(component.text().includes('xxx-xx-1293'), true);
     });
+
+    it('shows "None" when user has selected "No" for SSN', function(){
+      let socialSecurity = {
+        hasSocialSecurity: 'No',
+        part1: '',
+        part2: '',
+        part3: ''
+      };
+
+      props.editKey = 'socialSecurity';
+
+      let component = render(
+        <Wrapper>
+          <SocialSecurity
+            { ...props }
+            socialSecurity={socialSecurity}
+          />
+        </Wrapper>
+      )
+
+      assert.equal(component.text().includes('Social Security number'), true);
+      assert.equal(component.text().includes('None'), true);
+    });
   });
 });

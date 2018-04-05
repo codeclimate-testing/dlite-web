@@ -15,3 +15,8 @@ export const hasSocialSecurityYes = (props) => {
 export const hasSocialSecurityNo = (props) => {
   return props.socialSecurity.hasSocialSecurity === 'No';
 };
+
+export const getSocialSecurityString = (props) => {
+  let socialSecurity =  'xxx' + '-' + 'xx' + '-' + props.socialSecurity.part3;
+  return hasSocialSecurityYes(props) ? socialSecurity : 'None';
+};
