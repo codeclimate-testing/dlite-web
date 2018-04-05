@@ -250,8 +250,8 @@ describe('Data helpers for pathnames', function() {
     it('returns /apply/id-and-license/sign-in when appName is id-and-license', function() {
       assert.equal(signInURL('id-and-license'), '/apply/id-and-license/sign-in');
     });
-    it('returns / when appName is blank', function() {
-      assert.equal(signInURL(''), '/');
+    it('returns /apply when appName is blank', function() {
+      assert.equal(signInURL(''), '/apply');
     });
   });
 });

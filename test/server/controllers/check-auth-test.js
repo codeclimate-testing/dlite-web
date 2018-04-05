@@ -10,14 +10,25 @@ describe('check auth controller', () => {
 
   beforeEach(function() {
     res = httpMocks.createResponse({});
-    res.sendStatus = sinon.spy();
+    res = {
+      send: function(){ },
+      json: function(err){
+        assert.equal(err.message, 'not logged in');
+      },
+      status: function(responseStatus) {
+          assert.equal(responseStatus, 500);
+          // This next line makes it chainable
+          return this; 
+      }
+    }
+
     req = {
       session: {
         user: {
           uuid: ''
         }
       }
-    }
+    };
     next = sinon.spy();
   });
 
@@ -33,6 +44,5 @@ describe('check auth controller', () => {
     req.session = {};
     controller(req, res, next, 'production');
     assert.ok(!next.called);
-    assert.ok(res.sendStatus.calledWith(500));
   })
 });

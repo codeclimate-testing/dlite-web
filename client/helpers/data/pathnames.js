@@ -144,7 +144,7 @@ export function getAppKey(cookieValue) {
 
 export function signInURL(appName =  getAppNameCookie()) {
   if (!hasValue(appName)) {
-    return '/';
+    return '/apply';
   }
   return `/apply/${appName}/sign-in`;
 };

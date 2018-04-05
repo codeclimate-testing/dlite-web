@@ -31,8 +31,6 @@ export default (dispatch) => {
 
     dispatch(getUserData(user))
       .then((res) => {
-        console.log('client got response from server: ');
-        console.log(res)
         // get appName that was either saved on idme page (dev) or on server after successful login (prod)
         let appName = getAppNameCookie();
         dispatch(chooseApp(appName));

@@ -11,6 +11,6 @@ module.exports = function sameUserOnly(req, res, next) {
     return next();
   }
   else {
-    return res.status(500).send();
+    return res.status(500).json('session user uuid doesnt match requested uuid');
   }
 };
