@@ -19,23 +19,25 @@ import TestLoggedIn                           from '../../test/client/presentati
 import Disclaimers                            from './iddl/get-started/disclaimers-page.jsx';
 import CDLDisclaimers                         from './cdl/cdl-disclaimers.jsx';
 import PrivateRoute                           from './private-route.jsx';
+import OpenFileTST                            from './open-file-tst.jsx';
 
 class Router extends React.Component {
 
   render() {
     return (
       <Switch className='routes'>
-        <Route path={ alicePath('/links') }                     exact component={Home} />
-        <Route path={ alicePath('/')}                           exact component={ChooseLanguage} />
-        <Route path={ alicePath('/choose-language')}                  component={ChooseLanguage} />
-        <Route path={ alicePath('/choose-application')}               component={ChooseApplication}/>
-        <Route path={ alicePath('/disclaimers') }               exact component={Disclaimers} />
-        <Route path={ iddlPath('/sign-in') }                    exact component={IDMe} />
-        <Route path={ cdlPath('/sign-in') }                     exact component={IDMe} />
-        <Route path={ cdlPath('/disclaimers') }                 exact component={CDLDisclaimers} />
-        <Route path={ alicePath('/logged-in/test')}                   component={TestLoggedIn} />
-        <Route path={ alicePath('/logged-in/:uuid')}                  component={LoggedIn} />
-        <Route path={ alicePath('/open-applications')}                component={OpenApplications} />
+        <Route path={ alicePath('/tst/open-file') }                         exact component={OpenFileTST} />
+        <Route path={ alicePath('/links') }                                 exact component={Home} />
+        <Route path={ alicePath('/')}                                       exact component={ChooseLanguage} />
+        <Route path={ alicePath('/choose-language')}                              component={ChooseLanguage} />
+        <Route path={ alicePath('/choose-application')}                           component={ChooseApplication}/>
+        <Route path={ alicePath('/disclaimers') }                           exact component={Disclaimers} />
+        <Route path={ iddlPath('/sign-in') }                                exact component={IDMe} />
+        <Route path={ cdlPath('/sign-in') }                                 exact component={IDMe} />
+        <Route path={ cdlPath('/disclaimers') }                             exact component={CDLDisclaimers} />
+        <Route path={ alicePath('/logged-in/test')}                               component={TestLoggedIn} />
+        <Route path={ alicePath('/logged-in/:uuid')}                              component={LoggedIn} />
+        <Route path={ alicePath('/open-applications')}                            component={OpenApplications} />
 
         <PrivateRoute pathURL={ alicePath('*')}                          />
       </Switch>
