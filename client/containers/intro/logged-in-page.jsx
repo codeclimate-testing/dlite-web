@@ -4,8 +4,8 @@ import handlers                   from '../../helpers/handlers';
 
 const LoggedIn = (props) => {
 
-  let user = props.match.params.user;
-  props.onLoggedIn(user, props.history);
+  let uuid = props.match.params.uuid;
+  props.onLoggedIn(uuid, props.history);
 
   return null;
 };

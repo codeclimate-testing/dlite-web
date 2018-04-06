@@ -13,7 +13,7 @@ const routes = (passport) => {
 
   router.get( '/api/translation/:code',   controllers.getTranslation);
 
-  router.get( '/api/user/:uuid',            controllers.checkAuth,
+  router.get( '/api/user/:uuid',          controllers.checkAuth,
                                           controllers.sameUserOnly,
                                           controllers.getUserApps);
 

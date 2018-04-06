@@ -28,6 +28,23 @@ describe('Get User Apps controller', () => {
       .catch(done);
   });
 
+  it('returns placeholder when user uuid does not exist', function(done) {
+    req.params.uuid = '50000010dkaljf';
+
+    controller(req, res)
+    .then((done) => {
+      let data = JSON.parse(res._getData());
+      assert.deepEqual(data, {
+        appsLength: 0,
+        userID: req.params.uuid,
+        apps: []
+      });
+    })
+    .then(done)
+    .catch(done);
+  });
+
+
   it('returns apps associated with user uuid', function(done) {
     let cdlData = dataHelper.CDLData.clientData();
     let iddlData = dataHelper.IDDLData.fakeClientData();
@@ -73,5 +90,7 @@ describe('Get User Apps controller', () => {
     .then(() => { done(); })
     .catch(done);
   });
+
+  it('returns error ')
 
 });

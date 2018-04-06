@@ -10,9 +10,10 @@ module.exports = function checkAuth(req, res, next) {
   } else {
     isLoggedIn = req.session.hasOwnProperty('user') && req.session.user.uuid.length > 0;
   }
+  console.log('is logged in? ' + isLoggedIn);
 
   if (isLoggedIn) {
-    return next();
+    next();
   } else {
     res.status(500).json({message: 'not logged in'});
   }

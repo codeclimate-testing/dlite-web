@@ -19,7 +19,7 @@ import {
 } from '../data/pathnames';
 
 export default (dispatch) => {
-  return (user, history) => {
+  return (uuid, history) => {
 
     let cookieLanguage = getLanguageFromCookie();
     dispatch(updateLanguage('language', cookieLanguage))
@@ -29,8 +29,23 @@ export default (dispatch) => {
 
     new AutoLogout(history, dispatch);
 
-    dispatch(getUserData(user))
+    dispatch(getUserData(uuid))
       .then((res) => {
+        console.log('client got response from server: ');
+        console.log(res)
+
+        let userData = res;
+        if(res === 'user-fail') {
+          userData = {
+            appsLength: 0,
+            userID: uuid,
+            apps: [{
+              name: '',
+              cardType: [],
+              cardAction: []
+            }]
+          }
+        };
         // get appName that was either saved on idme page (dev) or on server after successful login (prod)
         let appName = getAppNameCookie();
         dispatch(chooseApp(appName));
@@ -39,13 +54,14 @@ export default (dispatch) => {
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
           flow: '',
-          userData: res
+          userData
         });
         return history.push(pathURL);
       })
       .catch((err) => {
+        console.log('ERROR')
         console.log(err);
-        return history.push(signInURL());
+        //return history.push(signInURL());
       });
   }
 };

@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
-export const getUserData = (id) => {
+export const getUserData = (uuid) => {
   return function(dispatch) {
     dispatch({
       type: 'UPDATE_API_STATUS',
@@ -12,7 +12,7 @@ export const getUserData = (id) => {
         value: 'loading'
       }
     });
-    return fetch('/api/user/' + id, {
+    return fetch('/api/user/' + uuid, {
       method: 'GET',
       credentials: 'same-origin',
       headers: {

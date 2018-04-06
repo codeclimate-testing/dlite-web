@@ -18,7 +18,7 @@ describe('check auth controller', () => {
       status: function(responseStatus) {
           assert.equal(responseStatus, 500);
           // This next line makes it chainable
-          return this; 
+          return this;
       }
     }
 

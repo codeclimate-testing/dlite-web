@@ -32,6 +32,9 @@ module.exports = function(world) {
   world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
+  world.when('I go to the choose language page', function(done) {
+    navigateToPath('/apply/choose-language/', '.choose-language-form' , done);
+  });
 
   world.when('I go to the IDDL sign-in page', function(done) {
     navigateToPath('/apply/id-and-license/sign-in', '.id-me', done);
@@ -164,10 +167,10 @@ module.exports = function(world) {
     navigateToPath('/apply/id-and-license/appointment-preparation/documents', '.required-documents', done);
   });
 
+  /* IDDL assertOnPage */
   world.when('I will be on the choose language page', function(done) {
     assertOnPage('.choose-language-form', /apply\/choose-language/, done);
   });
-
   world.when('I will be on the choose application page', function(done) {
     assertOnPage('.choose-application-form', /apply\/choose-application/, done);
   });

@@ -315,8 +315,8 @@ describe('getApplication by user id', function() {
     .catch(done);
   });
 
-  it('returned promise receives placeholder when nothing is found', function(done) {
-    getApplication.byUserId('not-here-yo')
+  it('returned promise receives placeholder when user_id is not found in applications table', function(done) {
+    getApplication.byUserId('not-here-yo3019')
     .then((record) => {
       assert.deepEqual(record, {
         applications: [],
@@ -325,6 +325,26 @@ describe('getApplication by user id', function() {
       });
       done();
     })
+    .catch(done);
+  });
+
+  it('returns applications array and blank cards array when user_id is found in applications table but there are no associated cards', function(done) {
+    post.saveApplication({
+      application: {
+        user_id: 'isHere',
+        id: 'someID'
+      }
+    })
+    .then(() => {
+      getApplication.byUserId(('isHere'))
+      .then((records) => {
+        assert.equal(records.applications.length, 1);
+        assert.equal(records.applications[0].user_id, 'isHere');
+        assert.equal(records.cards.length, 0);
+        assert.equal(records.card_options.length, 0);
+      })
+    })
+    .then(done)
     .catch(done);
   });
 

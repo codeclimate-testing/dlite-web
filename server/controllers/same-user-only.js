@@ -5,12 +5,13 @@ module.exports = function sameUserOnly(req, res, next) {
   if (process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test') {
     isTheSame = true;
   } else {
-    isTheSame = req.params.uuid === req.session.user.uuid;
+    isTheSame = req.params.uuid.toString() === req.session.user.uuid.toString();
   }
+
   if (isTheSame) {
-    return next();
+    next();
   }
   else {
-    return res.status(500).json('session user uuid doesnt match requested uuid');
+    res.status(500).json({message: 'not same user'});
   }
 };

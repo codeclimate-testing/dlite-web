@@ -64,30 +64,47 @@ exports.byUserId = (userID) => {
 
   return db('applications').where('user_id', userID)
     .then((applications) => {
-      let appIDs = [];
-      applications.forEach((app) => {
-        appIDs.push(app.id);
-        records.applications.push(app);
-      });
-      return appIDs;
+      if (applications.length > 0) {
+        let appIDs = [];
+        applications.forEach((app) => {
+          appIDs.push(app.id);
+          records.applications.push(app);
+        });
+        return appIDs;
+      }
+      else {
+        return [];
+      }
     })
     .then((appIDs) => {
-      return db('cards').whereIn('application_id', appIDs)
+      if (appIDs.length > 0) {
+        return db('cards').whereIn('application_id', appIDs)
         .then((cards) => {
-          records.cards = cards;
-          let cardIDs = [];
-          cards.forEach(card => {
-            cardIDs.push(card.id);
-          });
-          return cardIDs;
+          if (cards.length > 0) {
+            records.cards = cards;
+            let cardIDs = [];
+            cards.forEach(card => {
+              cardIDs.push(card.id);
+            });
+            return cardIDs;
+          }
+          else {
+            return [];
+          }
         })
         .then((cardIDs) => {
           return db('card_options').whereIn('card_id', cardIDs)
             .then((options) => {
-              records.card_options = options;
+              if (options.length > 0) {
+                records.card_options = options;
+              }
               return records;
             });
         });
+      }
+      else {
+        return records;
+      }
     })
 
   .then((res) => {
