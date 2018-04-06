@@ -25,6 +25,7 @@ const Page = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    DLApp         : state.application.DLApp,
     optOut        : state.application.voting.optOut,
     dateOfBirth   : state.application.basics.dateOfBirth,
     focused       : state.ui.focus,

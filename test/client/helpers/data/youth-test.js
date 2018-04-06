@@ -8,6 +8,7 @@ import {
   checkPreReg,
   continueHidden,
   under16GuardianSignature,
+  requireGuardianSignature,
   isNewDriver,
   needsKnowledgeTest,
   guardianSigned,
@@ -147,6 +148,27 @@ describe('Data helpers for youth', function() {
       assert.equal(under16GuardianSignature(data), false);
     });
   });
+
+  describe('#requireGuardianSignature', function() {
+    it('returns true if user is under 18 and getting a DL', function() {
+      data.dateOfBirth.year = (year - 17).toString();
+      data.DLApp = { isApplying : true };
+      assert.equal(requireGuardianSignature(props), true);
+    });
+    it('returns true if user is under 18 and getting a DL and ID', function() {
+      data.dateOfBirth.year = (year - 17).toString();
+      data.DLApp = { isApplying : true };
+      data.IDApp = { isApplying: true };
+      assert.equal(requireGuardianSignature(props), true);
+    });
+    it('returns false if user is under 18 and getting an ID', function() {
+      data.dateOfBirth.year = (year - 17).toString();
+      data.DLApp = { isApplying : false };
+      data.IDApp = { isApplying: true };
+      assert.equal(requireGuardianSignature(props), false);
+    });
+  });
+
   describe('#isNewDriver', function() {
     it('returns true when user is 16', function() {
       data.dateOfBirth.year = (year - 16).toString();
