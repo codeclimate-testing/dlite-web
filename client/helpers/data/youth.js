@@ -40,10 +40,13 @@ export const isNewDriver = (props) => {
   return ageChecks.Under18(props.dateOfBirth, props.now) && ageChecks.GreaterThanEqual15Half(props.dateOfBirth, props.now) && props.licenseIssued !== 'Yes';
 };
 
-export const requireGuardianSignature = (props) => {
+export const requireGuardianSignatureUnder18 = (props) => {
   return ageChecks.Under18(props.dateOfBirth) && DLAppExists(props);
 };
 
+export const requireGuardianSignatureUnder16 = (props) => {
+  return ageChecks.Under16(props.dateOfBirth) && DLAppExists(props);
+};
 
 export const needsKnowledgeTest = (props) => {
   return ageChecks.Under17Half(props.dateOfBirth, props.now);

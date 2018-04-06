@@ -41,14 +41,41 @@ Feature: Happy path for youth users
     And I click to get an ID instead
     And I click "Next" to continue
     Then I will be on the page for choosing real id
+    When I visit the organ donation page
+    And I choose to donate my organs
+    And I choose to contribute
+    When I click "Next" to continue
+    Then I will be on the page with my summary
     When I visit the ID or DL selection page
     And I click on the DL checkbox
     When I go to the page with my summary
     Then I will see a notification at the top letting me know I can't yet come in to complete my DL application
     And I will also see that I can make an appointment at any time to get my ID
 
+  Scenario: I am between 15.5 and 16
+    Given I go to the new online DL application page
+    When I visit the date of birth page
+    And I indicate that I am under 16 years old
+    When I visit the what do you want to do today page
+    And I choose to get a new card
+    And I click "Next" to continue
+    Then I will be on the ID and DL selection page
+    And I click on the DL checkbox
+    When I visit the organ donation page
+    And I choose to donate my organs
+    And I choose to contribute
+    When I click "Next" to continue
+    Then I will be on the page for guardian signature
+    When I visit the ID or DL selection page
+    And I click on the DL checkbox
+    And I click on the ID checkbox
+    When I visit the organ donation page
+    And I choose to donate my organs
+    And I choose to contribute
+    When I click "Next" to continue
+    Then I will be on the page with my summary
 
-  Scenario: I just turned 16 today and am getting a DL
+  Scenario: I just turned 16 today
     Given I go to the new online DL application page
     When I visit the date of birth page
     And Today I turned 16 years old
@@ -57,7 +84,11 @@ Feature: Happy path for youth users
     And I click "Next" to continue
     And I click on the DL checkbox
     And I click "Next" to continue
-    When I visit voter citizen status page
+    When I visit the organ donation page
+    And I choose to donate my organs
+    And I choose to contribute
+    When I click "Next" to continue
+    Then I will be on the page for voter citizen status entry
     Then I will see header for Voting pre-registration
     When I select citizen Yes
     When I click "Next" to continue
@@ -98,3 +129,10 @@ Feature: Happy path for youth users
     When I visit the required documents page
     Then I will see section about new driver requirements
     Then I will see section about knowledge test
+    When I visit the ID or DL selection page
+    And I click on the DL checkbox
+    And I click on the ID checkbox
+    When I visit the voter eligibility requirements page
+    And I change my eligibility requirement
+    When I click "Next" to continue
+    Then I will be on the page with my summary

@@ -31,8 +31,7 @@ export default (dispatch) => {
 
     dispatch(getUserData(uuid))
       .then((res) => {
-        console.log('client got response from server: ');
-        console.log(res)
+        console.log('client got response from server');
 
         let userData = res;
         if(res === 'user-fail') {

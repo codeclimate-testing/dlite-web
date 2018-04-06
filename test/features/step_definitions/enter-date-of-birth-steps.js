@@ -114,9 +114,11 @@ module.exports = function(world) {
 
   world.when('I am under 16 years old', function(done) {
     let d = new Date();
-    let month = d.getMonth();
-    let day = d.getDate();
-    let year = d.getFullYear() - 13;
+
+    var novemberOrLater = d.getMonth() >= 10;
+    var month = novemberOrLater ? (12 - d.getMonth()) : (d.getMonth() + 2);
+    var day = d.getDate() + 1;
+    var year = novemberOrLater ? (d.getFullYear() - 15 ): (d.getFullYear() - 16);
 
     browser
       .type('#month', month.toString())
