@@ -8,6 +8,10 @@ const logout = (req, res) => {
   res.clearCookie('appName');
   //res.clearCookie('dlite-web-session');
 
+  if(process.env.TST_ENV) {
+    res.redirect('/apply/tst/open-file');
+  }
+
   if (!appName || appName.length < 1) {
     res.redirect('/apply/choose-language');
   } else {

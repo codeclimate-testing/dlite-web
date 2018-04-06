@@ -11,6 +11,34 @@ const AppointmentPreparation = (props) => {
   const documentsLink = 'https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info';
   const appointmentLink = "https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment";
   const confCode = buildConfCode(props);
+
+
+  if(TST_ENV){
+    let filePath = 'file://C:\index.mht';
+    return (
+      <div className='appointment-preparation'>
+        <Translator
+          tag='p'
+          translationPath='confirmationPage.subHeader'
+        />
+        <Translator
+          tag='h2'
+          translationPath='newExtracted.appointmentPrep.goToDMV'
+        />
+        <div className='centered-content'>
+          <h2>{confCode}</h2>
+
+          <Translator
+            tag='h4'
+            translationPath='newExtracted.appointmentPrep.confirmationCode'
+          />
+          <br />
+          <a href={filePath}>Finish Application</a>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Page
       {...props}
