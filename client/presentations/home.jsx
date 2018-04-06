@@ -43,6 +43,9 @@ const LinkSection = (props) => {
 }
 
 const Home = () => {
+  if(APP_ENV !== 'development') {
+    return null;
+  }
   return (
     <div>
       <h2 className='question'>Pages</h2>
