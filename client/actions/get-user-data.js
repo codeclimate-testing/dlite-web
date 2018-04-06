@@ -57,7 +57,7 @@ export const getUserData = (uuid) => {
           type: 'UPDATE_API_STATUS',
           payload: {
             name: 'apiStatus',
-            value: 'error'
+            value: 'get user data error'
           }
         });
         return 'user-fail';
