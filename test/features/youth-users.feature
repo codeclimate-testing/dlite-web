@@ -48,10 +48,15 @@ Feature: Happy path for youth users
     And I will also see that I can make an appointment at any time to get my ID
 
 
-  Scenario: I just turned 16 today
+  Scenario: I just turned 16 today and am getting a DL
     Given I go to the new online DL application page
     When I visit the date of birth page
     And Today I turned 16 years old
+    When I click "Next" to continue
+    And I choose to get a new card
+    And I click "Next" to continue
+    And I click on the DL checkbox
+    And I click "Next" to continue
     When I visit voter citizen status page
     Then I will see header for Voting pre-registration
     When I select citizen Yes

@@ -41,7 +41,7 @@ export const isNewDriver = (props) => {
 };
 
 export const requireGuardianSignature = (props) => {
-  return ageChecks.Under18(props) && DLAppExists(props);
+  return ageChecks.Under18(props.dateOfBirth) && DLAppExists(props);
 };
 
 

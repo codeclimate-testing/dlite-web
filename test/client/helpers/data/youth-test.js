@@ -153,19 +153,19 @@ describe('Data helpers for youth', function() {
     it('returns true if user is under 18 and getting a DL', function() {
       data.dateOfBirth.year = (year - 17).toString();
       data.DLApp = { isApplying : true };
-      assert.equal(requireGuardianSignature(props), true);
+      assert.equal(requireGuardianSignature(data), true);
     });
     it('returns true if user is under 18 and getting a DL and ID', function() {
       data.dateOfBirth.year = (year - 17).toString();
       data.DLApp = { isApplying : true };
       data.IDApp = { isApplying: true };
-      assert.equal(requireGuardianSignature(props), true);
+      assert.equal(requireGuardianSignature(data), true);
     });
     it('returns false if user is under 18 and getting an ID', function() {
       data.dateOfBirth.year = (year - 17).toString();
       data.DLApp = { isApplying : false };
       data.IDApp = { isApplying: true };
-      assert.equal(requireGuardianSignature(props), false);
+      assert.equal(requireGuardianSignature(data), false);
     });
   });
 
