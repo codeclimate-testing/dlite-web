@@ -13,6 +13,8 @@ const cookieParser      = require('cookie-parser');
 const logging           = require('./server/config/logging');
 const sessionOptions    = require('./server/config/session-options');
 const oauthStrategy     = require('./server/models/oauth/strategy').strategy;
+const oauthSignIn       = require('./server/models/oauth/strategy').strategySignIn;
+const oauthSignUp       = require('./server/models/oauth/strategy').strategySignUp;
 const serializeUser     = require('./server/models/session/serialize-user');
 const deserializeUser   = require('./server/models/session/deserialize-user');
 const csrf              = require('./server/config/csrf');
@@ -24,6 +26,8 @@ server.use(passport.initialize());
 server.use(passport.session());
 
 passport.use(oauthStrategy);
+passport.use(oauthSignIn);
+passport.use(oauthSignUp);
 passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 

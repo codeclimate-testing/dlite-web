@@ -21,13 +21,30 @@ const appUrl = (path) => {
 
 class Strategy extends OauthStrategy {
   constructor(options, verify) {
-    options.authorizationURL  = idMeUrl('/oauth/authorize');
+
+    let authURl = '/oauth/authorize';
+    if(options.operation === 'signin' ){
+      authURl = '/oauth/authorize?op=signin';
+    }
+    if(options.operation === 'signup' ){
+      authURl = '/oauth/authorize?op=signup';
+    }
+
+    options.authorizationURL  = idMeUrl(authURl);
     options.tokenURL          = idMeUrl('/oauth/token');
 
     super(options, verify);
 
     this.name             = 'oauth2';
     this._userProfileURL  = idMeUrl('/api/public/v3/attributes.json');
+
+    if(options.operation === 'signin' ){
+      this.name = 'oauth2-signin';
+    }
+    if(options.operation === 'signup' ){
+      this.name = 'oauth2-signup';
+    }
+
   }
 
   userProfile(accessToken, done) {
@@ -61,8 +78,24 @@ const strategy = new Strategy({
   clientSecret: clientSecret
 }, onAuthentication);
 
+const strategySignIn = new Strategy({
+  callbackURL: appUrl(`/auth/oauth/callback/`),
+  clientID: clientID,
+  clientSecret: clientSecret,
+  operation:  'signin'
+}, onAuthentication);
+
+const strategySignUp = new Strategy({
+  callbackURL: appUrl(`/auth/oauth/callback/`),
+  clientID: clientID,
+  clientSecret: clientSecret,
+  operation:  'signup'
+}, onAuthentication);
+
 module.exports = {
   onAuthentication: onAuthentication,
-  Strategy: Strategy,
-  strategy: strategy
+  Strategy:         Strategy,
+  strategy:         strategy,
+  strategySignIn:   strategySignIn,
+  strategySignUp:   strategySignUp
 }

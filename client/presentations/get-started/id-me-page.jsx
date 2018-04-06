@@ -24,7 +24,7 @@ const Presentation = (props) => {
         />
 
         <fieldset role='group' className='id-me-buttons' aria-label='Authentication buttons'>
-          <a href={authURL} className='button green id-me-create'>
+          <a href={authURL+'/signup'} className='button green id-me-create'>
             <Translator
             tag             = 'div'
             className       = 'unit'
@@ -47,7 +47,7 @@ const Presentation = (props) => {
             />
           </div>
 
-          <a href={authURL} className='button id-me-sign-in'>
+          <a href={authURL+'/signin'} className='button id-me-sign-in'>
             <Translator
             tag             = 'div'
             className       = 'unit'
