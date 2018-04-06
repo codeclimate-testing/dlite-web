@@ -3,7 +3,8 @@
 import selectionValidator  from './selection-validator';
 import {
   hasValue,
-  hasOnlyEnglishChars,
+  //hasOnlyEnglishChars,
+  emailHasOnlyEnglishChars,
   emailRegex
 }             from '../data/validations';
 
@@ -18,7 +19,7 @@ const emailAddress = (props) => {
 
   if (!emailRegex(value)) {
     return ['errorMessages.emailAddressMissingOrInvalid'];
-  } else if (!hasOnlyEnglishChars(value)) {
+  } else if (!emailHasOnlyEnglishChars(value)) {
     return ['errorMessages.inputIncludesNonEnglishCharacters'];
   }
   return [];

@@ -132,6 +132,14 @@ describe('validations', function() {
   });
 
   describe('#emailRegex', function() {
+    it('passes if valid email', function() {
+      assert.equal(emailRegex('heyyou@example.com'), true);
+    });
+
+    it('passes with basic characters', function() {
+      assert.equal(emailRegex('hey$###you@example.com'), true);
+    });
+
     it('fails if no @ character', function() {
       assert.equal(emailRegex('heyyou.com'), false);
     });

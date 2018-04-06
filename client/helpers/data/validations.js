@@ -35,6 +35,10 @@ export const emailRegex = (value) => {
   return reg.test(value.toLowerCase());
 };
 
+export const emailHasOnlyEnglishChars = (text) => {
+  return /^[\x00-\x7F]*$/.test(text);
+}
+
 export const isYes = (value) => {
   return value === 'Yes';
 };
