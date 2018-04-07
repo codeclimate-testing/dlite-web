@@ -47,9 +47,11 @@ describe('Required Docs for Real ID', function() {
     it('is true when condition is Yes', function() {
       props.realID = 'Yes';
       component = render(
-        <BulletList
-          {...props}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID birth date'), true);
     });
@@ -57,19 +59,22 @@ describe('Required Docs for Real ID', function() {
     it('is false when condition is No', function() {
       props.realID = 'No';
       component = render(
-        <BulletList
-          {...props}
-        />
-      )
+        <Wrapper>
+          <BulletList
+            {...props}
+          />
+        </Wrapper>
+     )
       assert.equal(component.text().includes('Real ID birth date'), false);
     });
 
     it('is false when condition is blank', function() {
-
       component = render(
-        <BulletList
-          {...props}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Real ID birth date'), false);
     });

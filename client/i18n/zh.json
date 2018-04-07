@@ -9,7 +9,7 @@
       "header": "不符合聯邦政府要求的身份證要求",
       "identity": {
         "header": "身份識別",
-        "body": "<p>所有申請者須提供身份識別、真實全名（名字、中間名、姓氏）和出生日期證明。</p><p>您需攜帶正本文件，因為<b>影印本和層壓版本不予接受。</b></p><p><a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>查閱機動車輛管理局(DMV)可接受的身份識別文件</a>。</p><p> <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
+        "body": "<p>所有申請者須提供身份識別、真實全名（名字、中間名、姓氏）和出生日期證明。</p><p>您需攜帶正本文件，因為<b>影印本和層壓版本不予接受。</b></p><p><a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>查閱機動車輛管理局(DMV)可接受的身份識別文件</a>。</p><p> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
       },
       "socialSecurity": {
         "header": "社會安全碼",
@@ -17,16 +17,16 @@
       },
       "californiaResidency": {
         "header": "加州居民",
-        "body": "您需帶上<b>1</b>份能證明您居住於加利福尼亞的文件。這份文件應能顯示您想接收卡片的郵寄地址。此地址也將顯示在您的卡片的正面。請檢閱 <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>可接受的<b>加州居民文件</b></a>清單。"
+        "body": "您需帶上<b>1</b>份能證明您居住於加利福尼亞的文件。這份文件應能顯示您想接收卡片的郵寄地址。此地址也將顯示在您的卡片的正面。請檢閱 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>可接受的<b>加州居民文件</b></a>清單。"
       }
     },
     "realIdSection": {
       "header": "真實身份（REAL ID）證件要求",
-      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>請檢視真實身份（REAL ID）證件文檔PDF，了解予以接受的三種文檔。</a>"
+      "pleaseSeeDocs": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>請檢視真實身份（REAL ID）證件文檔PDF，了解予以接受的三種文檔。</a>"
     },
     "veteransSection": {
       "header": "退伍軍人檔案",
-      "body": "如要在卡片上添加退伍軍人頭銜，您需要提交一份已填寫 的<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退伍軍人身份證明（Veteran Status Verification） </a> 表 (VSD- 001)。您可從您所在縣的退伍軍人服務局（Veteran Service Office）獲取VSD-001表。感謝您的服役！"
+      "body": "如要在卡片上添加退伍軍人頭銜，您需要提交一份已填寫 的<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退伍軍人身份證明（Veteran Status Verification） </a> 表 (VSD- 001)。您可從您所在縣的退伍軍人服務局（Veteran Service Office）獲取VSD-001表。感謝您的服役！"
     },
     "permitRequirementsSection": {
       "body": {
@@ -39,7 +39,7 @@
         ],
         "provisionalExplanation": "您需申請獲得臨時駕駛許可證。",
         "knowledgeTest": "您需參加一項知識測試。",
-        "testAdvice": "我們建議您在到訪前學習<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。",
+        "testAdvice": "我們建議您在到訪前學習<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。",
         "FAQHaveAnotherState": {
           "title": "已擁有另一州的許可證或培訓證書？",
           "body": {
@@ -48,7 +48,7 @@
               "證明您完成相當於加利福尼亞中學課程的駕駛教育/培訓課程。",
               "一份已填好的DL 33表。您可以從當地的機動車輛管理局(DMV)分區辦事處或撥打1-800-777-0133致電機動車輛管理局(DMV)，獲取此表單。將(DL 33)表格寄送給您的外州中學學校並請求其填寫表單。"
             ],
-            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>更多資訊，請查閱駕駛員教育和駕駛員培訓表單要求。</a>",
+            "requirementsLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>更多資訊，請查閱駕駛員教育和駕駛員培訓表單要求。</a>",
             "juniorPermitNote": "請注意，作為一名未成年人，我們不能直接轉入聲明有“試用”、“臨時”、或“初級”、駕駛許可證的駕駛執照，或接受外州的培訓證書。"
           }
         }
@@ -57,7 +57,7 @@
     "newCaliforniaYouthDLSection": {
       "header": "新加州駕駛者要求",
       "body": {
-        "openingExplanation": "我們了解到您可能持有外州的駕駛執照。加利福尼亞州關於<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16至18歲的青少年駕駛者的法律</a>與外州有所不同。",
+        "openingExplanation": "我們了解到您可能持有外州的駕駛執照。加利福尼亞州關於<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16至18歲的青少年駕駛者的法律</a>與外州有所不同。",
         "knowledgeTest": "作為一名加州的新駕駛者，您需通過知識測試。",
         "juniorPermitNote": "作為一名未成年人，如果您的駕駛執照上列有“試用”、“臨時”或“初級”，我們不能從他州轉入任何駕駛執照。",
         "provisionalProcess": "<b>加利福尼亞18歲以下的駕駛者須先申請臨時許可證。</b>六個月後，您將有資格獲得臨時駕駛執照。",
@@ -67,7 +67,7 @@
           "listItems": [
             "現持有非加利福尼亞州的外州駕駛執照 <b><em>並</em></b>",
             "在合格的中學成功完成駕駛技能課程 <b><em>且</em></b>",
-            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>能證明成功完成課程</a>"
+            "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>能證明成功完成課程</a>"
           ]
         }
       }
@@ -83,45 +83,45 @@
     "adultMotorcycleSection": {
       "header": "摩托車/輕型摩托車要求",
       "body": {
-        "explanation": "要獲得摩托車或輕型摩托車執照，您需通過摩托車知識測試。請檢閱<a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>加利福尼亞州摩托車手册</a>。",
-        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。此課程的教員將在課程順利結業後提供本表單。"
+        "explanation": "要獲得摩托車或輕型摩托車執照，您需通過摩托車知識測試。請檢閱<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>加利福尼亞州摩托車手册</a>。",
+        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。此課程的教員將在課程順利結業後提供本表單。"
       }
     },
     "youthMotorcycleSection": {
       "body": {
-        "under21Message": "因您未滿21歲，您<b>必須</b>持有<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表單</a> 。此課程的教員將在課程順利結業後提供本表單。",
+        "under21Message": "因您未滿21歲，您<b>必須</b>持有<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表單</a> 。此課程的教員將在課程順利結業後提供本表單。",
         "onCompletion": "一旦您完成此課程，您必須持有許可證6個月直到獲得駕駛執照。"
       }
     },
     "motorcylcleOtherStateSection": {
       "body": {
-        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得他州的有效摩托車執照或已持有<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。"
+        "waiverProcess": "<b>我們可不要求您參加駕駛測試，若</b>您已獲得他州的有效摩托車執照或已持有<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>CHP的「加州摩托車安全計劃」（California MotorcyclistSafety Program）頒發的摩托車培訓結業證書 (DL 389) 表</a> 。"
       }
     },
     "additionalMotorcycleTestingSection": {
       "header": "其他測試要求",
-      "body": "在加州，要獲得摩托車或輕型摩托車執照， <b>您需通過基礎駕駛執照知識測試</b>。我們建議您在到訪前學習<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。"
+      "body": "在加州，要獲得摩托車或輕型摩托車執照， <b>您需通過基礎駕駛執照知識測試</b>。我們建議您在到訪前學習<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>《加利福尼亞州駕駛手冊》(California Driver Handbook)</a> ，並<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>嘗試做一些練習測試</a>。"
     },
     "nonCommercialASection": {
       "header": "非商業 A  類要求",
       "body": {
-        "healthQuestionnaire": "為獲得非商業A類許可證，您需提交一份有效的 <a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>",
+        "healthQuestionnaire": "為獲得非商業A類許可證，您需提交一份有效的 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>",
         "knowledgeTest": "需參加<b>休閒車及非商業A類牽引車</b>知識測試。我們建議您在測試前，學習加州休閒車輛RV和牽引車手册。",
-        "afterPassingExam": "一旦您通過測驗，您將獲得許可證。<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>機動車輛管理局(DMV)網站</a>為您提供了獲得正式許可證要求的資訊。"
+        "afterPassingExam": "一旦您通過測驗，您將獲得許可證。<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>機動車輛管理局(DMV)網站</a>為您提供了獲得正式許可證要求的資訊。"
       }
     },
     "nonCommercialBSection": {
       "header": "非商業 B  類要求",
       "body": {
-        "healthQuestionnaire": "為獲得非商業B類許可證，您需提交一份有效的 <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>《健康問卷》(Health Questionnaire (DL 546))</a>",
-        "houseCarTest": "您還需參加<b> 45分鍾的房屋車知識測試</b>。我們建議您在測試前，學習<a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>加州休閒車輛RV和拖車手册</a> 。"
+        "healthQuestionnaire": "為獲得非商業B類許可證，您需提交一份有效的 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>《健康問卷》(Health Questionnaire (DL 546))</a>",
+        "houseCarTest": "您還需參加<b> 45分鍾的房屋車知識測試</b>。我們建議您在測試前，學習<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>加州休閒車輛RV和拖車手册</a> 。"
       }
     },
     "firefighterEndorsementSection": {
       "header": "消防員加簽要求",
       "body": {
         "testRequirements": "要獲得<b>消防員加簽</b> ，您需參加並通過<b>消防員加簽</b> 知識測驗。",
-        "otherRequirements": "您還需提交一份有效的<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>和一份符合下列標準的<b>消防員雇用和培訓證明函</b>：",
+        "otherRequirements": "您還需提交一份有效的<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>《健康問卷》(Health Questionnaire (DL 546))</a>和一份符合下列標準的<b>消防員雇用和培訓證明函</b>：",
         "otherRequirementsValues": [
           "採用消防局信箋",
           "現為消防員的工作證明或登記為志願消防員的證明",
@@ -132,11 +132,11 @@
     },
     "sexChangeSection": {
       "header": "性別變化",
-      "body": "<p>為作此更改，您必須攜帶<a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>醫療認證和授權表（Medical Certification and Authorization Form（DL 329））</a>，且其由您的醫生或心理學家填寫並簽名。</p><p>您還需要帶上您的<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上須有您更名前後的真實全名（名字、中間名、姓氏）。</p>"
+      "body": "<p>為作此更改，您必須攜帶<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>醫療認證和授權表（Medical Certification and Authorization Form（DL 329））</a>，且其由您的醫生或心理學家填寫並簽名。</p><p>您還需要帶上您的<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上須有您更名前後的真實全名（名字、中間名、姓氏）。</p>"
     },
     "nameChangeSection": {
       "header": "更改姓名",
-      "body": "<p>為在卡上體現您姓名的更改，您必須先在您當地的<a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>社會安全局</a>辦事處進行變更。</p><p>您還需要帶上您的<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上有您更名<em>前</em><em>後</em>的真實全名（名字、中間名、姓氏）。</p>"
+      "body": "<p>為在卡上體現您姓名的更改，您必須先在您當地的<a target=\"_blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>社會安全局</a>辦事處進行變更。</p><p>您還需要帶上您的<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>姓名更改文件</a>，此文件上有您更名<em>前</em><em>後</em>的真實全名（名字、中間名、姓氏）。</p>"
     },
     "reducedFeeSection": {
       "header": "費用減免資格",
@@ -193,7 +193,7 @@
           "您尚沒有電子郵件地址和電話號碼。這些都是在家裡申請需填寫的。",
           "請處於機密地址計劃或在家安全中。"
         ],
-        "instead": "或者，<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>預約</a>以到訪您當地的機動車輛管理局(DMV)分區辦事處。"
+        "instead": "或者，<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>預約</a>以到訪您當地的機動車輛管理局(DMV)分區辦事處。"
       }
     },
     "whatYouCanDoPageCDL": {
@@ -232,7 +232,7 @@
       "emailRequired": "<b>必須提供電子郵件地址和電話號碼。</b>如果您不想創建一個id.me帳戶，請到訪機動車輛管理局(DMV)分區辦事處",
       "legalIdentity": "<b>ID.me允許您證明您的合法身份。</b>加州機動車輛管理局(DMV)已與ID.me合作以確保您的個人資訊的準確、安全。",
       "dmvPartnering": "加州機動車輛管理局(DMV)選擇ID.me作為合作夥伴，因為其能滿足安全和身份證證明的嚴格要求。",
-      "learnMore": "<a href='https://www.id.me'>更多資訊，請參閱ID.me。</a>"
+      "learnMore": "<a target=\"_blank\" href='https://www.id.me'>更多資訊，請參閱ID.me。</a>"
     },
     "idMeReturnPage": {
       "welcomeBack": "歡迎回來。",
@@ -487,13 +487,13 @@
       "steps": [
         "您的電子信箱會收到此確認碼。",
         "您必須前往您當地的DMV辦事處完成您的申請。",
-        "為此次拜訪做好準備：收集所需的文件；努力學習以便通過知識測驗。根據您在申請表裡提供的資訊，<a href='/apply/appointment-preparation'>我們已生成一份定制化的準備清單</a>。",
+        "為此次拜訪做好準備：收集所需的文件；努力學習以便通過知識測驗。根據您在申請表裡提供的資訊，<a target=\"_blank\" href='/apply/appointment-preparation'>我們已生成一份定制化的準備清單</a>。",
         "在DMV辦事處，向工作人員出示您的驗證碼和文件。工作人員會調取您的申請表，",
         "問您一些問題，以核實您的資訊。您在DMV辦事處訪問期間，將證明該資訊是正確的。"
       ]
     },
     "registrationCompleteAtOffice": "特此提示一下：您在DMV辦事處完成申請時，您的選民登記申請會獲處理。",
-    "checkVoterStatus": "查看您的狀態：<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。",
+    "checkVoterStatus": "查看您的狀態：<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。",
     "registerSooner": "如果您必須在訪問DMV辦事處之前就進行選民登記：您可以在RegisterToVote.ca.gov上進行登記。",
     "register30days": "如果您想在下一次州选举中进行投票，现在请在 RegisterToVote.ca.gov 上进行登记。",
     "avoidLines": "為避免等候和排隊，現在就與您當地DMV辦事處預約。",
@@ -865,7 +865,7 @@
       "voterRegistration": {
         "title": "选民登记",
         "bodyBullets": [
-          "如果分享您的地址可能会使您处于威胁生命的危险中，您可能有资格注册以进行保密投票。欲了解更多信息，请致电（877）322-5227与<b>家庭安全</ b>项目联系，或访问<a target =“_ blank” href ='http：//www.sos.ca.gov/safeathome/“>www.sos.ca.gov/safeathome/</a>。",
+          "如果分享您的地址可能会使您处于威胁生命的危险中，您可能有资格注册以进行保密投票。欲了解更多信息，请致电（877）322-5227与<b>家庭安全</ b>项目联系，或访问<a target=“_ blank” href ='http：//www.sos.ca.gov/safeathome/“>www.sos.ca.gov/safeathome/</a>。",
           "<b>仅适用于美国公民</ b>。如果您表示您有资格投票，DMV会将收集到的此表格上的所有选民注册信息（包括您的数字签名）发送给加利福尼亚州国务卿。您注册的DMV办事处将保密并仅用于选民登记。",
           "如果您有资格投票并拒绝注册投票，您的决定将保密;然而，这些信息将被发送给加利福尼亚州国务卿，仅用于选民外展和登记目的。",
           "此应用程序提供的选民注册信息是保密的。 DMV不会确定选民资格。",
@@ -1088,37 +1088,33 @@
         "doINeedCommercial": "我不知道我是否需要商业驾驶执照"
       }
     },
-    "myHistory": {
-      "veteransPage": {
-        "newDesignation": {
-          "license": "您想以5美元的费用将“退伍军人”一词添加到您的驾照中吗？",
-          "id": "您想以5美元的费用将“退伍军人”一词添加到您的身份证吗？"
-        }
-      }
-    },
     "organDonation": {
       "monetaryContribution": {
         "explanation": "您的捐款有助于支持和促进器官和组织捐赠。"
       }
     },
+    "myHistory": {
+      "veteransPage": {
+        "newDesignation": {
+          "id": "您想以5美元的费用向您的ID添加“退伍军人”一词吗？",
+          "license": "您想以5美元的费用将“退伍军人”一词添加到您的驾照中吗？"
+        }
+      }
+    },
     "votingRegistration": {
       "eligibilityPage": {
+        "preRegEligible": "我16岁或17岁，并希望预先登记投票。",
         "preRegUpToDate": "接下来，我们希望确保您的选民预先注册是最新的。",
-        "notSharedWithElectionOfficials": "您对这个问题的回答<b>不会与选举官员分享。",
         "preRegRequirements": "如果您不符合所有要求，则无法预先登记投票。",
-        "preRegEligible": "我16岁或17岁，并希望预先登记投票。"
+        "notSharedWithElectionOfficials": "您对这个问题的回答<b>不会与选举官员分享。"
       }
     },
     "intro": {
+      "realID": {
+        "explanation": "无论是您的执照还是您的身份证都可以通过联邦政府的规定在美国境内飞行，但不能同时在两个国家驾驶。",
+        "whichCard": "你想搭乘哪张卡？"
+      },
       "wdywtdtPage": {
-        "addDL": {
-          "values": [
-            "第一次获得驾驶执照",
-            "续订驾驶执照",
-            "更正或更新您的驾驶执照",
-            "更换您的驾驶执照"
-          ]
-        },
         "addID": {
           "values": [
             "第一次获得身份证",
@@ -1126,69 +1122,37 @@
             "更正或更新您的身份证",
             "更换您的身份证"
           ]
+        },
+        "addDL": {
+          "values": [
+            "第一次获得驾驶执照",
+            "续订驾驶执照",
+            "更正或更新您的驾驶执照",
+            "更换您的驾驶执照"
+          ]
         }
       },
       "youthLicense": {
         "comeBack": "好的，15岁时请回来。",
         "underFifteen": {
-          "title": "您必须年满15岁才能开始申请学员许可。",
-          "explanation": "在特殊情况下，14至15岁的青少年可以获得初级许可。如果您觉得您可能有资格获得初级许可，请访问办公室或咨询DMV网站上的文档。"
+          "explanation": "在特殊情况下，14至15岁的青少年可以获得初级许可。如果您觉得您可能有资格获得初级许可，请访问办公室或咨询DMV网站上的文档。",
+          "title": "您必须年满15岁才能开始申请学员许可。"
         }
-      },
-      "realID": {
-        "whichCard": "你想搭乘哪张卡？",
-        "explanation": "您可以获得执照，或者您的身份证可以通过联邦政府的规定在美国境内飞行，但不能两者兼而有之。"
       }
     },
     "cdl": {
-      "selfCertification": {
-        "prompt": "你需要做什么类型的驾驶？",
-        "values": {
-          "interstate": "州际驾驶不例外",
-          "intrastate": "州内驾驶不例外"
-        },
-        "notSure": {
-          "title": "我不确定哪些适用于我",
-          "intrastate": {
-            "title": "州内商业",
-            "explanation": "指在“州际贸易”一词中未描述的任何州的贸易，交通或运输。"
-          },
-          "expected": {
-            "title": "<b>预期和非预期授权</ b>",
-            "explanation": "一些州颁发商业驾驶执照，<b> <em> </ em> </ b>要求驾驶员符合CFR第49篇§391中所述的资格。这些司机被认为是“例外”司机。加利福尼亚州不颁发这种许可证。所有由加利福尼亚州授权驾驶商用车辆的驾驶员都是非例外驾驶员。"
-          },
-          "interstate": {
-            "title": "州际商业",
-            "explanation": "指在美国的贸易，交通或运输，即：",
-            "values": [
-              "在一个国家的一个地方和这个国家以外的地方（包括美国以外的地方）之间，",
-              "在该州的两个地方之间通过另一个国家或在美国以外的地方",
-              "在该州的两个地方之间，作为在国家或美国以外发起或终止的贸易，交通或运输的一部分"
-            ]
-          }
-        },
-        "legalAgreement": {
-          "title": "继续申请，您同意以下条款：",
-          "agreement": "根据加利福尼亚州法律，我证明</ b>（或声明）根据加利福尼亚州法律的规定，我用来驾驶技能测试的汽车代表我期望的汽车类型操作。我进一步证明，我不受联邦法规第383.51部分标题49中所写的取消资格，暂停，撤销或取消资格的约束，并且我没有来自多个州或司法管辖区的驾驶执照。"
-        }
+      "alerts": {
+        "dlAlert": "如果您在15.5岁之前前往DMV办公室完成许可申请，则只能获得初级许可。这些许可证仅在特殊情况下发放。",
+        "idAlert": "您今天有资格在办公室完成您的身份证申请。"
       },
       "myHistory": {
-        "veteran": {
-          "addVeteran": "您是否想在CDL上添加“退伍军人”一词，收取5美元的费用？",
-          "keepVeteran": "你想保留CDL上的“退伍军人”吗？",
-          "militaryWaiver": {
-            "prompt": "你会寻求军事驾驶体验CDL豁免吗？",
-            "explanation": "你必须在过去的一年内服务过。"
-          },
-          "veteranOnCDL": "您的商业驾驶执照上印有“退伍军人”吗？"
-        },
         "nameHistory": {
           "prompt": "您是否曾以不同的名字申请加州CDL，驾驶执照或身份证？"
         },
         "medicalHistory": {
           "prompt": "请查看以下信息，然后如实回答本页末尾的问题。",
-          "explanation": "下列可能影响您驾驶汽车的安全能力的情况包括但不限于：",
           "medicalConditions": "在过去的三年中，您是否曾经或有过任何可能影响您安全驾驶机动车的能力的医疗条件？",
+          "explanation": "下列可能影响您驾驶汽车的安全能力的情况包括但不限于：",
           "values": [
             "意识丧失",
             "由任何可能导致经常性失误的情况引起的明显混淆情节",
@@ -1196,11 +1160,70 @@
             "由于白内障，黄斑变性，糖尿病性视网膜病，青光眼，色素性视网膜炎或其他进行性病症，视力改变或减少。",
             "酒精，药物滥用或相关的健康问题。"
           ]
+        },
+        "veteran": {
+          "addVeteran": "您是否想在CDL上添加“退伍军人”一词，收取5美元的费用？",
+          "veteranOnCDL": "您的商业驾驶执照上印有“退伍军人”吗？",
+          "keepVeteran": "你想保留CDL上的“退伍军人”吗？",
+          "militaryWaiver": {
+            "prompt": "你会寻求军事驾驶体验CDL豁免吗？",
+            "explanation": "你必须在过去的一年内服务过。"
+          }
         }
       },
-      "alerts": {
-        "idAlert": "您今天有资格在办公室完成您的身份证申请。",
-        "dlAlert": "如果您在15.5岁之前前往DMV办公室完成许可申请，则只能获得初级许可。这些许可证仅在特殊情况下发放。"
+      "selfCertification": {
+        "prompt": "你需要做什么类型的驾驶？",
+        "values": {
+          "interstate": "州际驾驶不例外",
+          "intrastate": "州内驾驶不例外"
+        },
+        "legalAgreement": {
+          "title": "继续申请，您同意以下条款：",
+          "agreement": "根据加利福尼亚州法律，我证明</ b>（或声明）根据加利福尼亚州法律的规定，我用来驾驶技能测试的汽车代表我期望的汽车类型操作。我进一步证明，我没有被取消资格，暂停，撤销或取消，如联邦法规第493部分第383.51部分所述，并且我没有来自多个州或司法管辖区的驾驶执照。"
+        },
+        "notSure": {
+          "expected": {
+            "title": "<b>预期和非预期授权</ b>",
+            "explanation": "一些州颁发商业驾驶执照，<b> <em> </ em> </ b>要求驾驶员符合CFR第49篇§391中所述的资格。这些司机被认为是“例外”司机。加利福尼亚州不颁发这种许可证。所有由加利福尼亚州授权驾驶商用车辆的驾驶员都是非例外驾驶员。"
+          },
+          "intrastate": {
+            "title": "州内商业",
+            "explanation": "指在“州际贸易”一词中未描述的任何州的贸易，交通或运输。"
+          },
+          "title": "我不确定哪些适用于我",
+          "interstate": {
+            "title": "州际商业",
+            "values": [
+              "在一个国家的一个地方和这个国家以外的地方（包括美国以外的地方）之间，",
+              "在该州的两个地方之间通过另一个国家或在美国以外的地方",
+              "在该州的两个地方之间，作为在国家或美国以外发起或终止的贸易，交通或运输的一部分"
+            ],
+            "explanation": "指在美国的贸易，交通或运输，即："
+          }
+        }
+      }
+    },
+    "requiredDocuments": {
+      "additionalInformation": {
+        "questions": "如果您有任何疑问，请与我们联系，我们将帮助您！",
+        "hearing": "听力受损：TTY 1-800-368-4327",
+        "callCenter": "呼叫中心的营业时间为：星期一，星期二，星期四，星期五上午8点至下午5点，星期三上午9点至下午5点。",
+        "telephone": "电话：1-800-777-0133"
+      },
+      "documentListHeader": "我们需要原始文件来确认以下内容：",
+      "prompt": "这就是你需要带给DMV的东西",
+      "explanation": "以下列出了您需要带到DMV办公室参观才能完成申请。您将需要带下列所有文件的原始版本，因为复印件和层压版本不被接受。",
+      "bulletList": {
+        "socialSecurity": "社会安全号码证明",
+        "veteran": "退伍军人服务证明",
+        "newDriver": "新的驾驶员要求",
+        "noFee": "没有费用资格",
+        "residency": "加州居住",
+        "legalPresence": "合法存在",
+        "youth": "你需要进行知识测试",
+        "reducedFee": "降低费用资格",
+        "medicalInformation": "医疗信息",
+        "realID": "真实身份证生日，姓名和合法身份证明"
       }
     }
   },
@@ -1254,8 +1277,8 @@
       "details": "有关您需要如何完成应用程序的详细信息，请访问DMV网站。",
       "show": "将其展示给DMV员工。我们也会通过电子邮件发送给您的代码。",
       "confirmationCode": "这是您的确认码：",
-      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>预约节省时间</a>。",
-      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>带上您所需的文件。</a>"
+      "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>预约节省时间</a>。",
+      "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>带上您所需的文件。</a>"
     },
     "conclusion": {
       "notAvailable": "无法使用",
@@ -1297,10 +1320,10 @@
             "一份文件，证明您的出生日期和合法存在。",
             "或者为您的出生日期提供一份文件，并为您的合法存在提供一份文件。"
           ],
-          "proof": "如果您已婚或离婚，已通过法庭或已通过法庭更改您的姓名，请务必带上<a target =“_ blank”href ='https：//www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05＃true'>真实姓名的证明</a>。",
+          "proof": "如果您已婚或离婚，已通过法庭或已通过法庭更改您的姓名，请务必带上 <a target=“_ blank ”href ='https：/www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真实姓名的证明</a>。",
           "legalPresence": {
             "title": "合法存在",
-            "explanation": "所有申请人需要证明自己的出生日期。除非你是AB 60，否则你需要证明合法的存在。请参阅我们的<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60清单工具</a>和我们的<目标=“_ blank”href ='https：//www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>出生日期和合法在线列表</a>。"
+            "explanation": "所有申请人需要证明自己的出生日期。除非你是AB 60，否则你需要证明合法的存在。请参阅我们的 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>AB 60清单工具</a> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>出生日期和合法在线列表</a>"
           }
         }
       }
@@ -1342,7 +1365,7 @@
       "weNeedBasicInfo": "我們需要一些關於您的基本資訊。",
       "addAnotherSigntature": "添加另一位父親或母親/監護人的簽名"
     },
-    "emancipatedInfoMessage": "<b>為證明您是脫離父母而獨立生活的未成年人</b>，您必須在DL表上宣告您已脫離父母而獨立生活<b>並</b>提供經濟責任證明。<a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>更多資訊，請參閱機動車輛管理局(DMV)網站。</a>"
+    "emancipatedInfoMessage": "<b>為證明您是脫離父母而獨立生活的未成年人</b>，您必須在DL表上宣告您已脫離父母而獨立生活<b>並</b>提供經濟責任證明。<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>更多資訊，請參閱機動車輛管理局(DMV)網站。</a>"
   },
   "shared": {
     "navigation": {
@@ -1645,7 +1668,7 @@
     },
     "confirmation": {
       "pagePrompt": "謝謝您，當您辦完今天在DMV的事務後，將會處理您的選民登記申請表。",
-      "explanation": "<p>如果在您此次前往DMV之後沒有在四週內收到選民通知卡，請聯絡您的選舉官員。</p><p> 您可以向加州州務卿查詢您的選民登記狀態<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。</p>"
+      "explanation": "<p>如果在您此次前往DMV之後沒有在四週內收到選民通知卡，請聯絡您的選舉官員。</p><p> 您可以向加州州務卿查詢您的選民登記狀態<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>如果您不選擇一個政黨，您可能無法在美國總統或中央委員會的初選中投票選舉某些政黨的候選人。</p><p> 這會取代您先前的黨派歸屬。</p>"

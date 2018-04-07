@@ -46,12 +46,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(newDriver), true);
     });
@@ -63,12 +65,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(newDriver), true);
     });
@@ -80,12 +84,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(newDriver), false);
     });
@@ -97,12 +103,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(knowledgeTest), false);
     });
@@ -114,12 +122,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(knowledgeTest), true);
     });
@@ -131,12 +141,14 @@ describe('Required Docs for Youth', function() {
         day: 15
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(newDriver) || component.text().includes(knowledgeTest), false);
     });
@@ -148,12 +160,14 @@ describe('Required Docs for Youth', function() {
         day: 14
       };
       component = render(
-        <BulletList
-        {...props}
-        dateOfBirth={dob}
-        now={mockNow}
-        license={license}
-        />
+        <Wrapper>
+          <BulletList
+          {...props}
+          dateOfBirth={dob}
+          now={mockNow}
+          license={license}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes(newDriver) || component.text().includes(knowledgeTest), false);
     });

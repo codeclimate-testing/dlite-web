@@ -9,7 +9,7 @@
       "header": "Requisitos para una tarjeta que no cumpla con la ley federal",
       "identity": {
         "header": "Identidad",
-        "body": "<p>Todos los solicitantes necesitan comprobar su identidad, nombre verdadero y completo (primer nombre, segundo, apellido) y fecha de nacimiento. </p><p> Tendrá que llevar versiones originales de estos documentos, ya que <b>no se aceptan fotocopias y versiones laminadas</b>. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>Vea la lista del DMV de documentos de identidad aceptables</a>. </p><p> <b>Si el nombre en el documento de identidad es diferente al que proporcionó en su solicitud</b>, debe presentar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que establezca su nombre verdadero y completo.</p>"
+        "body": "<p>Todos los solicitantes necesitan comprobar su identidad, nombre verdadero y completo (primer nombre, segundo, apellido) y fecha de nacimiento. </p><p> Tendrá que llevar versiones originales de estos documentos, ya que <b>no se aceptan fotocopias y versiones laminadas</b>. </p><p> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>Vea la lista del DMV de documentos de identidad aceptables</a>. </p><p> <b>Si el nombre en el documento de identidad es diferente al que proporcionó en su solicitud</b>, debe presentar <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que establezca su nombre verdadero y completo.</p>"
       },
       "socialSecurity": {
         "header": "Número de Seguro Social",
@@ -17,16 +17,16 @@
       },
       "californiaResidency": {
         "header": "Domicilio en California",
-        "body": "Deberá llevar <b>1</b> documento que compruebe que vive en California. Este documento debe mostrar la dirección donde quiere recibir su tarjeta. Esta dirección también aparecerá en el frente de su tarjeta. Revise nuestra <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>lista de documentos aceptables <b>para comprobar su domicilio en California</b></a>."
+        "body": "Deberá llevar <b>1</b> documento que compruebe que vive en California. Este documento debe mostrar la dirección donde quiere recibir su tarjeta. Esta dirección también aparecerá en el frente de su tarjeta. Revise nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>lista de documentos aceptables <b>para comprobar su domicilio en California</b></a>."
       }
     },
     "realIdSection": {
       "header": "Requisitos para obtener una tarjeta REAL ID",
-      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Consulte el documento en formato PDF para ver la lista de documentos aceptables para solicitar una tarjeta REAL ID para estas 3 categorías.</a>"
+      "pleaseSeeDocs": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Consulte el documento en formato PDF para ver la lista de documentos aceptables para solicitar una tarjeta REAL ID para estas 3 categorías.</a>"
     },
     "veteransSection": {
       "header": "Documentación de veterano",
-      "body": "Para obtener la designación de veterano en su tarjeta, necesita entregar <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>un formulario </a> (VSD- 001)para verificar el estatus de veterano. Puede obtener un formulario VSD-001 en una Oficina de Servicios para Veteranos de Condado. ¡Gracias por su servicio!"
+      "body": "Para obtener la designación de veterano en su tarjeta, necesita entregar <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>un formulario </a> (VSD- 001)para verificar el estatus de veterano. Puede obtener un formulario VSD-001 en una Oficina de Servicios para Veteranos de Condado. ¡Gracias por su servicio!"
     },
     "permitRequirementsSection": {
       "body": {
@@ -39,7 +39,7 @@
         ],
         "provisionalExplanation": "Tendrá que solicitar un permiso provisional de manejo.",
         "knowledgeTest": "Tendrá que tomar un examen de conocimientos.",
-        "testAdvice": "Le recomendamos que estudie el <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California </a> y <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>que tome los exámenes de práctica</a> antes de su cita.",
+        "testAdvice": "Le recomendamos que estudie el <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California </a> y <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>que tome los exámenes de práctica</a> antes de su cita.",
         "FAQHaveAnotherState": {
           "title": "¿Ya tiene un permiso o certificado de entrenamiento de otro estado?",
           "body": {
@@ -48,7 +48,7 @@
               "Comprobante de que ha completado un curso de educación vial/entrenamiento que sea equivalente al curso de educación secundaria de California.",
               "Un formulario DL 33 completado. Obtenga este formulario en una oficina del DMV o llame al DMV al 1-800-777-0133. Envíe el formulario DL 33 a la escuela de educación secundaria para que lo complete."
             ],
-            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Para obtener más información, revise los requisitos de los formularios de educación vial y entrenamiento de manejo.</a>",
+            "requirementsLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Para obtener más información, revise los requisitos de los formularios de educación vial y entrenamiento de manejo.</a>",
             "juniorPermitNote": "Tenga en cuenta que debido a que es menor, no podemos transferir licencias de manejar que digan \"probationary\", \"provisional\", o \"junior\", permisos de manejo, o aceptar certificados de entrenamiento de fuera del estado."
           }
         }
@@ -57,7 +57,7 @@
     "newCaliforniaYouthDLSection": {
       "header": "Nuevos requisitos para los conductores de California",
       "body": {
-        "openingExplanation": "Podemos ver que usted quizá tuvo una licencia de manejar de otro estado. Las leyes de California <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>para adolescentes entre 16 y 18 años de edad</a> quizá sean diferentes a las de otros estados.",
+        "openingExplanation": "Podemos ver que usted quizá tuvo una licencia de manejar de otro estado. Las leyes de California <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>para adolescentes entre 16 y 18 años de edad</a> quizá sean diferentes a las de otros estados.",
         "knowledgeTest": "Como nuevo conductor en California, tendrá que pasar un examen de conocimientos.",
         "juniorPermitNote": "Debido a que es menor, no podemos transferir licencias de manejar que digan \"probationary\", \"provisional\", o \"junior\".",
         "provisionalProcess": "<b>Los conductores menores de 18 años en California primero deben solicitar un permiso provisional.</b> Después de seis meses calificará para obtener una licencia de manejar provisional.",
@@ -67,7 +67,7 @@
           "listItems": [
             "Actualmente tiene una licencia de manejar de otro estado que no sea California <b><em>y</em></b>",
             "Ha completado satisfactoriamente un curso de técnicas de manejo en una escuela secundaria <b><em>y</em></b>",
-            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Puede verificar que completó satisfactoriamente un curso.</a>"
+            "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Puede verificar que completó satisfactoriamente un curso.</a>"
           ]
         }
       }
@@ -83,45 +83,45 @@
     "adultMotorcycleSection": {
       "header": "Requisitos para la licencia de motocicleta/motoneta",
       "body": {
-        "explanation": "Para recibir una licencia de motocicleta/motoneta, tendrá que pasar un examen de conocimientos. Consulte el <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>Manual del motociclista de California</a>.",
-        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene el formulario <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'> Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente."
+        "explanation": "Para recibir una licencia de motocicleta/motoneta, tendrá que pasar un examen de conocimientos. Consulte el <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>Manual del motociclista de California</a>.",
+        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene el formulario <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'> Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente."
       }
     },
     "youthMotorcycleSection": {
       "body": {
-        "under21Message": "Debido a que es menor de 21 <b>debe</b> tener un <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente.",
+        "under21Message": "Debido a que es menor de 21 <b>debe</b> tener un <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP. El instructor del curso le proporcionará este formulario una vez que complete el curso satisfactoriamente.",
         "onCompletion": "Una vez que termine el curso, debe tener el permiso por 6 meses antes de obtener su licencia."
       }
     },
     "motorcylcleOtherStateSection": {
       "body": {
-        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene una licencia de motociclista válida en otro estado o un formulario <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP."
+        "waiverProcess": "<b>Solo podemos exentarlo de tomar el examen de manejo si:</b> tiene una licencia de motociclista válida en otro estado o un formulario <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificado de entrenamiento para manejar motocicletas (DL 389)</a> del Programa de Seguridad para Motociclistas de California de la patrulla CHP."
       }
     },
     "additionalMotorcycleTestingSection": {
       "header": "Requisitos adicionales para el examen",
-      "body": "En California, para poder recibir una licencia para manejar una motocicleta o motoneta, <b>necesita pasar el examen de conocimientos para la licencia de manejar básica</b>. Le recomendamos que estudie el <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California</a> y <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> que tome los exámenes de práctica</a> antes de ir a una oficina."
+      "body": "En California, para poder recibir una licencia para manejar una motocicleta o motoneta, <b>necesita pasar el examen de conocimientos para la licencia de manejar básica</b>. Le recomendamos que estudie el <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>Manual del automovilista de California</a> y <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> que tome los exámenes de práctica</a> antes de ir a una oficina."
     },
     "nonCommercialASection": {
       "header": "Requisitos para una licencia Clase A no-comercial",
       "body": {
-        "healthQuestionnaire": "Para poder obtener un permiso Clase A no-comercial , tendrá que entregar un <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546).</a>",
+        "healthQuestionnaire": "Para poder obtener un permiso Clase A no-comercial , tendrá que entregar un <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546).</a>",
         "knowledgeTest": "También se require el <b>examen de conocimientos para vehículos recreacionales y camiones no-comerciales Clase A</b>. Le recomendamos que estudie el 'Manual para casas rodantes y remolques recreacionales de California' antes de su examen.",
-        "afterPassingExam": "Una vez que pase los exámenes, se le emitirá un permiso. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>El sitio de Internet del DMV</a> proporciona información sobre lo que se necesita para obtener su licencia."
+        "afterPassingExam": "Una vez que pase los exámenes, se le emitirá un permiso. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>El sitio de Internet del DMV</a> proporciona información sobre lo que se necesita para obtener su licencia."
       }
     },
     "nonCommercialBSection": {
       "header": "Requisitos para el endoso de bombero",
       "body": {
-        "healthQuestionnaire": "Para poder obtener un permiso Clase B no-comercial , tendrá que entregar <a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>un Cuestionario Médico Sobre la Salud (DL 546A)</a> válido y firmado por su médico.",
-        "houseCarTest": "También se requiere el <b>examen de conocimientos para casas rodantes de 45'</b>. Le recomendamos que estudie <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>el Manual para casas rodantes y remolques recreacionales de California</a> antes de su examen."
+        "healthQuestionnaire": "Para poder obtener un permiso Clase B no-comercial , tendrá que entregar <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>un Cuestionario Médico Sobre la Salud (DL 546A)</a> válido y firmado por su médico.",
+        "houseCarTest": "También se requiere el <b>examen de conocimientos para casas rodantes de 45'</b>. Le recomendamos que estudie <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>el Manual para casas rodantes y remolques recreacionales de California</a> antes de su examen."
       }
     },
     "firefighterEndorsementSection": {
       "header": "Requisitos para el endoso de bombero",
       "body": {
         "testRequirements": "Para obtener un <b>endoso de bombero</b> tendrá que tomar y pasar el <b>examen de conocimientos</b> para el endoso de bombero.",
-        "otherRequirements": "También tendrá que entregar un <a href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546)</a> y una carta original de <b>Empleo de bombero y verificación de entrenamiento</b> que cumpla con los siguientes criterios:",
+        "otherRequirements": "También tendrá que entregar un <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Cuestionario Médico (DL 546)</a> y una carta original de <b>Empleo de bombero y verificación de entrenamiento</b> que cumpla con los siguientes criterios:",
         "otherRequirementsValues": [
           "El endoso debe estar en el encabezado del departamento de bomberos",
           "Certifica que actualmente está empleado como bombero o tiene un comprobante de estar inscrito como bombero voluntario",
@@ -132,11 +132,11 @@
     },
     "sexChangeSection": {
       "header": "Cambiar sexo",
-      "body": "<p>Para poder hacer este cambio, debe llevar un formulario <a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Certificación y Autorización Médica (DL 329)</a> que haya sido completado por su medico o psicólogo. </p><p> También tendrá que llevar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) antes y después de cambiarse el nombre.</p>"
+      "body": "<p>Para poder hacer este cambio, debe llevar un formulario <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Certificación y Autorización Médica (DL 329)</a> que haya sido completado por su medico o psicólogo. </p><p> También tendrá que llevar <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) antes y después de cambiarse el nombre.</p>"
     },
     "nameChangeSection": {
       "header": "Cambio de nombre",
-      "body": "<p>Para que pueda hacerse el cambio de nombre en sus tarjetas, primero debe cambiarlo en la oficina local <a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>de la Administración de Seguro Social </a>. </p><p> También tendrá que llevar <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) ambos <em>antes</em> y <em>después</em> del cambio de nombre.</p>"
+      "body": "<p>Para que pueda hacerse el cambio de nombre en sus tarjetas, primero debe cambiarlo en la oficina local <a target=\"_blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>de la Administración de Seguro Social </a>. </p><p> También tendrá que llevar <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>un documento de cambio de nombre</a> que tenga su nombre verdadero y completo (primer nombre, segundo, apellido) ambos <em>antes</em> y <em>después</em> del cambio de nombre.</p>"
     },
     "reducedFeeSection": {
       "header": "Elegibilidad para recibir una reducción del costo",
@@ -193,7 +193,7 @@
           "Si no tiene correo electrónico ni número telefónico. Se requieren si la llena en casa.q`",
           "Si está inscrito en un programa de dirección confidencial o Seguro en su casa (Safe at Home)."
         ],
-        "instead": "Mejor, <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>haga una cita</a> para ir a una oficina del DMV."
+        "instead": "Mejor, <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>haga una cita</a> para ir a una oficina del DMV."
       }
     },
     "whatYouCanDoPageCDL": {
@@ -232,7 +232,7 @@
       "emailRequired": "<b>Se necesita un correo electrónico y un número telefónico.</b> Visite una oficina del DMV si no quiere crear una cuenta ID.me.",
       "legalIdentity": "<b>ID.me le permite comprobar su identidad legal.</b> El DMV de California se ha asociado con ID.me para asegurarse que su información personal sea correcta y esté segura.",
       "dmvPartnering": "El DMV de California eligió asociarse con ID.me porque ha cumplido con requisitos rigurosos de comprobación de seguridad e identidad.",
-      "learnMore": "<a href='https://www.id.me'>Para obtener más información, visite ID.me.</a>"
+      "learnMore": "<a target=\"_blank\" href='https://www.id.me'>Para obtener más información, visite ID.me.</a>"
     },
     "idMeReturnPage": {
       "welcomeBack": "Bienvenido de nuevo.",
@@ -487,13 +487,13 @@
       "steps": [
         "Recibirá este código de confirmación por correo electrónico.",
         "Necesita ir a la oficina del DMV para terminar la solicitud.",
-        "Prepárese para su cita. Junte los documentos necesarios y estudie para el examen teórico. <a href='/apply/appointment-preparation'>Hemos creado una lista personalizada </a> de acuerdo a la información que proporcionó en la solicitud.",
+        "Prepárese para su cita. Junte los documentos necesarios y estudie para el examen teórico. <a target=\"_blank\" href='/apply/appointment-preparation'>Hemos creado una lista personalizada </a> de acuerdo a la información que proporcionó en la solicitud.",
         "En la oficina del DMV, muéstrele al empleado su código de confirmación y sus documentos y buscarán su solicitud.",
         "Se le pedirá que verifique su información. Luego, durante su visita al DMV deberá certificar que está correcta."
       ]
     },
     "registrationCompleteAtOffice": "Recuerde, su solicitud de inscripción de votante se procesará cuando complete la solicitud en la oficina del DMV.",
-    "checkVoterStatus": "Revise su estatus: <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "Revise su estatus: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "Si necesita inscribirse para votar antes de ir al DMV: Puede inscribirse por Internet en RegisterToVote.ca.gov.",
     "register30days": "Si quiere votar en las próximas elecciones estatales, inscríbase ahora por Internet en RegisterToVote.ca.gov. ",
     "avoidLines": "Para no estar en espera tanto tiempo ni hacer largas filas, haga una cita ahora para ir a una oficina del DMV.",
@@ -852,7 +852,7 @@
     },
     "organDonation": {
       "title": "Declaración de donación de órganos",
-      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target = \"_ blank\" href = 'https: //www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
+      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target=\"_ blank\" href = 'https: //www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
     },
     "medical": {
       "body": "Las siguientes condiciones que pueden afectar su capacidad para operar un vehículo de motor de forma segura incluyen, entre otras:",
@@ -879,7 +879,7 @@
       "voterRegistration": {
         "title": "Registro de votantes",
         "bodyBullets": [
-          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target = \"_ blank\" href = 'http: //www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
+          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target=\"_ blank\" href = 'http: //www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
           "<b> Solo para ciudadanos de EE. UU. </ b>. Si indica que es elegible para votar, el DMV enviará toda la información de inscripción de votantes recopilada en este formulario, incluida su firma digital, al Secretario de Estado de California. La oficina del DMV donde se registró seguirá siendo confidencial y solo se utilizará para el registro de votantes.",
           "Si es elegible para votar y no quiere registrarse para votar, su decisión será confidencial; sin embargo, esta información se enviará al Secretario de Estado de California para que se use únicamente con fines de divulgación y registro de votantes.",
           "La información de registro del votante provista en esta aplicación es confidencial. El DMV no hace las determinaciones de elegibilidad del votante.",
@@ -1082,6 +1082,11 @@
     }
   },
   "newApproved": {
+    "organDonation": {
+      "monetaryContribution": {
+        "explanation": "Su donación ayuda a apoyar y promover la donación de órganos y tejidos."
+      }
+    },
     "beforeIntro": {
       "chooseApplicationPage": {
         "doINeedCommercial": "No sé si necesito una licencia de conducir comercial"
@@ -1095,30 +1100,41 @@
         }
       }
     },
-    "organDonation": {
-      "monetaryContribution": {
-        "explanation": "Su donación ayuda a apoyar y promover la donación de órganos y tejidos."
-      }
-    },
     "votingRegistration": {
       "eligibilityPage": {
-        "preRegRequirements": "Si no cumple con todos los requisitos, no es elegible para preinscribirse para votar.",
         "preRegEligible": "Tengo 16 o 17 años y me gustaría preinscribirme para votar.",
-        "notSharedWithElectionOfficials": "Su respuesta a esta pregunta <b> no se compartirá </ b> con los funcionarios electorales.",
-        "preRegUpToDate": "A continuación, nos gustaría asegurarnos de que su preinscripción de votante esté actualizada."
+        "preRegUpToDate": "A continuación, nos gustaría asegurarnos de que su preinscripción de votante esté actualizada.",
+        "preRegRequirements": "Si no cumple con todos los requisitos, no es elegible para preinscribirse para votar.",
+        "notSharedWithElectionOfficials": "Su respuesta a esta pregunta <b> no se compartirá </ b> con los funcionarios electorales."
+      }
+    },
+    "requiredDocuments": {
+      "prompt": "Esto es lo que necesita traer al DMV",
+      "documentListHeader": "Necesitamos documentos originales para confirmar lo siguiente:",
+      "explanation": "A continuación hay una lista de lo que deberá traer a una visita a la oficina del DMV para completar su solicitud. Deberá traer las versiones originales de todos los documentos enumerados a continuación, ya que no se aceptan fotocopias ni versiones laminadas.",
+      "additionalInformation": {
+        "callCenter": "El horario comercial del Call Center es: lunes, martes, jueves, viernes de 8 a. M. A 5 p. M., Y miércoles, de 9 a.m. a 5 p.m.",
+        "telephone": "Teléfono: 1-800-777-0133",
+        "hearing": "Personas con problemas de audición: TTY 1-800-368-4327",
+        "questions": "Si tiene alguna pregunta, comuníquese con nosotros, ¡estamos aquí para ayudar!"
+      },
+      "bulletList": {
+        "reducedFee": "Tarifa reducida",
+        "noFee": "Sin elegibilidad de tarifas",
+        "residency": "Residencia en California",
+        "youth": "Deberás realizar una prueba de conocimiento",
+        "newDriver": "Nuevos requisitos de controlador",
+        "socialSecurity": "Prueba de Número de Seguridad Social",
+        "realID": "Identificación de nacimiento real, nombre y prueba de presencia legal",
+        "legalPresence": "Presencia legal",
+        "medicalInformation": "Información médica",
+        "veteran": "Prueba de servicio de veteranos"
       }
     },
     "intro": {
       "realID": {
-        "whichCard": "¿Con qué tarjeta te gustaría volar?",
-        "explanation": "O bien su licencia o su tarjeta de identificación pueden ser federalmente compatibles para volar dentro de los Estados Unidos, pero no ambos."
-      },
-      "youthLicense": {
-        "underFifteen": {
-          "title": "Debe tener 15 años para comenzar una solicitud de permiso de aprendizaje.",
-          "explanation": "En circunstancias excepcionales, los jóvenes entre 14 y 15 años de edad pueden obtener un permiso Junior. Visite una oficina o consulte la documentación en el sitio web del DMV si cree que puede ser elegible para un permiso Junior."
-        },
-        "comeBack": "Ok, por favor vuelve cuando cumplas 15."
+        "explanation": "O bien su licencia o su tarjeta de identificación pueden ser federalmente compatibles para volar dentro de los Estados Unidos, pero no ambos.",
+        "whichCard": "¿Con qué tarjeta te gustaría volar?"
       },
       "wdywtdtPage": {
         "addID": {
@@ -1137,56 +1153,32 @@
             "Reemplace su licencia de conducir"
           ]
         }
+      },
+      "youthLicense": {
+        "comeBack": "Ok, por favor vuelve cuando cumplas 15.",
+        "underFifteen": {
+          "title": "Debe tener 15 años para comenzar una solicitud de permiso de aprendizaje.",
+          "explanation": "En circunstancias excepcionales, los jóvenes entre 14 y 15 años de edad pueden obtener un permiso Junior. Visite una oficina o consulte la documentación en el sitio web del DMV si cree que puede ser elegible para un permiso Junior."
+        }
       }
     },
     "cdl": {
       "alerts": {
-        "dlAlert": "Si va a la oficina del DMV para terminar su solicitud de licencia antes de que tenga 15.5 años, solo puede obtener un permiso Junior. Estos permisos se emiten solo en circunstancias excepcionales.",
-        "idAlert": "Usted es elegible para completar su solicitud de identificación en la oficina hoy."
-      },
-      "selfCertification": {
-        "prompt": "¿Qué tipo de manejo necesitas hacer?",
-        "legalAgreement": {
-          "title": "Al continuar con la aplicación, acepta lo siguiente:",
-          "agreement": "<b> Certifico </ b> (o declaro) bajo pena de perjurio bajo las leyes del estado de California que el vehículo de motor que estoy usando para tomar el examen de habilidades de manejo es representativo del tipo de vehículo de motor que espero funcionar. Certifico además que no estoy sujeto a una descalificación, suspensión, revocación o cancelación como está escrito en el Título 49 de los Reglamentos Federales, Parte 383.51, y no tengo una licencia de conducir de más de un estado o jurisdicción."
-        },
-        "values": {
-          "interstate": "Conducción interestatal sin excepción",
-          "intrastate": "Conducción intraestatal no exceptuada"
-        },
-        "notSure": {
-          "title": "No estoy seguro de qué se aplica a mí",
-          "expected": {
-            "explanation": "Algunos estados emiten una licencia de conducir comercial que <b> <em> no </ em> </ b> exige que los conductores cumplan con los requisitos descritos en CFR, Título 49 §391. Esos controladores se consideran controladores \"exceptuados\". California no emite ese tipo de licencia. Todos los conductores con licencia de California para conducir vehículos comerciales son <em> conductores no exceptuados </ em>.",
-            "title": "<b> Licencia esperada y no esperada </ b>"
-          },
-          "interstate": {
-            "values": [
-              "Entre un lugar en un estado y un lugar fuera de dicho estado (incluido un lugar fuera de los EE. UU.)",
-              "Entre dos lugares en el estado a través de otro estado o un lugar fuera de los EE. UU.",
-              "Entre dos lugares en el estado como parte del comercio, el tráfico o el transporte que se origina o termina fuera del Estado o los EE. UU."
-            ],
-            "explanation": "Significa comercio, tráfico o transporte en los EE. UU. Que es:",
-            "title": "Comercio interestatal"
-          },
-          "intrastate": {
-            "explanation": "Significa comercio, tráfico o transporte en cualquier estado que no esté descrito en el término \"comercio interestatal\".",
-            "title": "Comercio intraestatal"
-          }
-        }
+        "idAlert": "Usted es elegible para completar su solicitud de identificación en la oficina hoy.",
+        "dlAlert": "Si va a la oficina del DMV para terminar su solicitud de licencia antes de que tenga 15.5 años, solo puede obtener un permiso Junior. Estos permisos se emiten solo en circunstancias excepcionales."
       },
       "myHistory": {
         "nameHistory": {
           "prompt": "¿Alguna vez ha solicitado una CDL de California, una licencia de conducir o una tarjeta de identificación con un nombre diferente?"
         },
         "veteran": {
+          "veteranOnCDL": "¿Está impreso \"Veteran\" en su licencia de conducir comercial?",
+          "keepVeteran": "¿Le gustaría mantener \"Veteran\" en su CDL?",
+          "addVeteran": "¿Le gustaría agregar la palabra \"Veterano\" en su CDL por una tarifa de $ 5?",
           "militaryWaiver": {
             "explanation": "Debe haber servido en el último año.",
             "prompt": "¿Estará buscando una experiencia de conducción militar CDL renuncia?"
-          },
-          "addVeteran": "¿Le gustaría agregar la palabra \"Veterano\" en su CDL por una tarifa de $ 5?",
-          "keepVeteran": "¿Le gustaría mantener \"Veteran\" en su CDL?",
-          "veteranOnCDL": "¿Está impreso \"Veteran\" en su licencia de conducir comercial?"
+          }
         },
         "medicalHistory": {
           "medicalConditions": "En los últimos tres años, ¿ha tenido o experimentado alguna condición médica que pueda afectar su capacidad para operar con seguridad un vehículo de motor?",
@@ -1199,6 +1191,37 @@
             "La visión cambia o disminuye debido a cataratas, degeneración macular, retinopatía diabética, glaucoma, retinitis pigmentosa u otras afecciones progresivas.",
             "Alcohol, abuso de drogas o problemas de salud relacionados."
           ]
+        }
+      },
+      "selfCertification": {
+        "prompt": "¿Qué tipo de manejo necesitas hacer?",
+        "legalAgreement": {
+          "title": "Al continuar con la aplicación, acepta lo siguiente:",
+          "agreement": "<b> Certifico </ b> (o declaro) bajo pena de perjurio bajo las leyes del Estado de California que el vehículo de motor que estoy usando para tomar el examen de habilidades de manejo es representativo del tipo de vehículo de motor que espero funcionar. Certifico además que no estoy sujeto a una descalificación, suspensión, revocación o cancelación como está escrito en el Título 49 de las Regulaciones Federales, Parte 383.51, y no tengo una licencia de conducir de más de un estado o jurisdicción."
+        },
+        "values": {
+          "intrastate": "Conducción intraestatal no exceptuada",
+          "interstate": "Conducción interestatal sin excepción"
+        },
+        "notSure": {
+          "expected": {
+            "explanation": "Algunos estados emiten una licencia de conducir comercial que <b> <em> no </ em> </ b> exige que los conductores cumplan con los requisitos descritos en CFR, Título 49 §391. Esos controladores se consideran controladores \"exceptuados\". California no emite ese tipo de licencia. Todos los conductores con licencia de California para conducir vehículos comerciales son <em> conductores no exceptuados </ em>.",
+            "title": "<b> Licencia esperada y no esperada </ b>"
+          },
+          "title": "No estoy seguro de qué se aplica a mí",
+          "interstate": {
+            "title": "Comercio interestatal",
+            "values": [
+              "Entre un lugar en un Estado y un lugar fuera de dicho Estado (incluido un lugar fuera de los EE. UU.)",
+              "Entre dos lugares en el estado a través de otro estado o un lugar fuera de los EE. UU.",
+              "Entre dos lugares en el estado como parte del comercio, el tráfico o el transporte que se origina o termina fuera del Estado o los EE. UU."
+            ],
+            "explanation": "Significa comercio, tráfico o transporte en los EE. UU. Que es:"
+          },
+          "intrastate": {
+            "explanation": "Significa comercio, tráfico o transporte en cualquier estado que no esté descrito en el término \"comercio interestatal\".",
+            "title": "Comercio intraestatal"
+          }
         }
       }
     }
@@ -1282,9 +1305,9 @@
           ],
           "legalPresence": {
             "title": "Presencia legal",
-            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target = \"_ Blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
+            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target=\"_ Blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
           },
-          "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target = \"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05 # true '> prueba del verdadero nombre completo </a>."
+          "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target=\"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05 # true '> prueba del verdadero nombre completo </a>."
         },
         "socialSecurity": {
           "title": "Prueba de Número de Seguridad Social",
@@ -1301,8 +1324,8 @@
       "confirmationCode": "Este es tu código de confirmación:",
       "details": "Para obtener detalles sobre lo que debe hacer para completar su solicitud, visite el sitio web del DMV.",
       "show": "Muéstrelo a un empleado del DMV. También le enviaremos este código por correo electrónico.",
-      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Haga una cita para ahorrar tiempo. </a>",
-      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Traiga sus documentos requeridos. </a>"
+      "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Haga una cita para ahorrar tiempo. </a>",
+      "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Traiga sus documentos requeridos. </a>"
     }
   },
   "organDonation": {
@@ -1341,7 +1364,7 @@
       "weNeedBasicInfo": "Necesitamos información básica de usted.",
       "addAnotherSigntature": "Añadir otra firma de otro padre de familia/tutor legal"
     },
-    "emancipatedInfoMessage": "<b>Para comprobar que es un menor emancipado</b>, debe declarar su emancipación en un formulario DL 11 <b>y</b> proveer comprobante de responsabilidad financiera. <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>Para obtener más información, consulte el sitio de Internet del DMV.</a>"
+    "emancipatedInfoMessage": "<b>Para comprobar que es un menor emancipado</b>, debe declarar su emancipación en un formulario DL 11 <b>y</b> proveer comprobante de responsabilidad financiera. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>Para obtener más información, consulte el sitio de Internet del DMV.</a>"
   },
   "shared": {
     "navigation": {
@@ -1644,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "Gracias. Su solicitud de inscripción de votante se procesará cuando complete su transacción con el DMV.",
-      "explanation": "<p>Si no recibe una tarjeta de notificación de votante a cuatro semanas de haber ido al DMV, comuníquese con el funcionario electoral de su condado. </p><p> Puede verificar el estado de su inscripción de votante en la página web de la Secretaría de Estado de California: <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+      "explanation": "<p>Si no recibe una tarjeta de notificación de votante a cuatro semanas de haber ido al DMV, comuníquese con el funcionario electoral de su condado. </p><p> Puede verificar el estado de su inscripción de votante en la página web de la Secretaría de Estado de California: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>Si no selecciona un partido político, es posible que no pueda votar por algunos de los candidatos partidarios en una elección primaria para presidente de EE. UU. o comité central partidario. </p><p> Esto reemplazará su preferencia anterior de partido político.</p>"

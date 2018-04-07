@@ -9,7 +9,7 @@
       "header": "連邦非対応カードに必要事項",
       "identity": {
         "header": "身分証明",
-        "body": "<p>申込者は全員、自分の身分、真実のフルネーム（名前、ミドルネーム、苗字）と生年月日を証明すべきです。</p><p>以上の書類は、原本が必要で、<b>複写と加工したものは認められません</b>。</p><p><a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>DMVの受け付ける身分書類を確認してください</a>。</p><p><b>ご自身の身分書類における名前と申請書における名前が異なっている場合、</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>で名前変更書類</a>を提出し、真実の名前を確定する必要があります。</p>"
+        "body": "<p>申込者は全員、自分の身分、真実のフルネーム（名前、ミドルネーム、苗字）と生年月日を証明すべきです。</p><p>以上の書類は、原本が必要で、<b>複写と加工したものは認められません</b>。</p><p><a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>DMVの受け付ける身分書類を確認してください</a>。</p><p><b>ご自身の身分書類における名前と申請書における名前が異なっている場合、</b><a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>で名前変更書類</a>を提出し、真実の名前を確定する必要があります。</p>"
       },
       "socialSecurity": {
         "header": "社会保障番号",
@@ -17,16 +17,16 @@
       },
       "californiaResidency": {
         "header": "カリフォルニア在居者",
-        "body": "カリフォルニア在居者であることを証明できる書類を<b>1</b>提供する必要があります。当の書類には、カードの宛先となる住所を含むべきです。その住所がードの正面にも表示されます。<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>受け付け可能な<b>カリフォルニア在居者書類</b></a>を確認してください。"
+        "body": "カリフォルニア在居者であることを証明できる書類を<b>1</b>提供する必要があります。当の書類には、カードの宛先となる住所を含むべきです。その住所がードの正面にも表示されます。<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>受け付け可能な<b>カリフォルニア在居者書類</b></a>を確認してください。"
       }
     },
     "realIdSection": {
       "header": "REAL IDに必要事項",
-      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>以下の三書類 の受け付け可能な書類に関してはREAL IDのPDFをご覧ください。3</a>"
+      "pleaseSeeDocs": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>以下の三書類 の受け付け可能な書類に関してはREAL IDのPDFをご覧ください。3</a>"
     },
     "veteransSection": {
       "header": "退役軍人書類",
-      "body": "退役軍人の標識をカードに表示するには、<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退役証明</a>書(VSD- 001)を完成し、提出すべきです。VSD-001は、地元の退役軍人サービスオフィスから取得可能です。ご兵役に感謝いたします！"
+      "body": "退役軍人の標識をカードに表示するには、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>退役証明</a>書(VSD- 001)を完成し、提出すべきです。VSD-001は、地元の退役軍人サービスオフィスから取得可能です。ご兵役に感謝いたします！"
     },
     "permitRequirementsSection": {
       "body": {
@@ -39,7 +39,7 @@
         ],
         "provisionalExplanation": "臨時運転免許証を申請する必要があります。",
         "knowledgeTest": "知識試験を受ける必要があります。",
-        "testAdvice": "お越しになる前に、<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。",
+        "testAdvice": "お越しになる前に、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。",
         "FAQHaveAnotherState": {
           "title": "他国による免許・育成証明を持っている場合は？",
           "body": {
@@ -48,7 +48,7 @@
               "カリフォルニア高校課程に相当する運転手育成/訓練を完成した証明。",
               "完成されたDL 33表。当の表は、地元のDMVオフィスから、または1-800-777-0133でDMVオフィスに連絡して取得できます。DL 33表をご在学の他州の高校に郵送し、完成する。"
             ],
-            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>より詳しい情報は、運転手育成と運転手訓練表に必要事項を確認してください。</a>",
+            "requirementsLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>より詳しい情報は、運転手育成と運転手訓練表に必要事項を確認してください。</a>",
             "juniorPermitNote": "注意：未成年者であるため、「見習い」、「臨時」または「年少者」との表記がある運転免許証、あるいは他州による運転免許証を直接に受け入れることができません。"
           }
         }
@@ -57,7 +57,7 @@
     "newCaliforniaYouthDLSection": {
       "header": "カリフォルニア新米運転手に必要事項",
       "body": {
-        "openingExplanation": "他州による運転免許証を持っていました。カリフォルニアにおいて、<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16歳から18歳までの青少年運転手に関する法令</a>は、他州のものと異なる可能性があります。",
+        "openingExplanation": "他州による運転免許証を持っていました。カリフォルニアにおいて、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>16歳から18歳までの青少年運転手に関する法令</a>は、他州のものと異なる可能性があります。",
         "knowledgeTest": "カリフォルニアにおいての新米運転手として、知識試験に合格する必要があります。",
         "juniorPermitNote": "未成年者であるため、他州による運転免許証に「見習い」、「臨時」または「年少者」との表記がある場合は、直接それを受け入れることはできません。",
         "provisionalProcess": "<b>カリフォルニアにおいて、18歳以下の運転手はまず臨時許可を申請する必要があります。</b>6ヶ月後、臨時運転免許証が発行されます。",
@@ -67,7 +67,7 @@
           "listItems": [
             "すでにカリフォルニア以外の州による運転免許証をお持ちになっている場合、<b><em>及び</em></b>",
             "高校に相当する学校で、運転課程を完成した場合、<b><em>及び</em></b>",
-            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>運転課程を終了した場合</a>"
+            "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>運転課程を終了した場合</a>"
           ]
         }
       }
@@ -83,45 +83,45 @@
     "adultMotorcycleSection": {
       "header": "オートバイ/スクーターに必要事項",
       "body": {
-        "explanation": "オートバイまたはスクーターの運転免許証を取得するには、オートバイに関する知識試験に合格する必要があります。<a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>カリフォルニアオートバイハンドブック</a>を確認してください。",
-        "waiverProcess": "<b>運転試験は：</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明</a>を、CHPによるカリフォルニアオートバイ安全企画から取得した場合に、取り消される可能があります。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。"
+        "explanation": "オートバイまたはスクーターの運転免許証を取得するには、オートバイに関する知識試験に合格する必要があります。<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>カリフォルニアオートバイハンドブック</a>を確認してください。",
+        "waiverProcess": "<b>運転試験は：</b><a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明</a>を、CHPによるカリフォルニアオートバイ安全企画から取得した場合に、取り消される可能があります。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。"
       }
     },
     "youthMotorcycleSection": {
       "body": {
-        "under21Message": "21歳未満であるため、DMVに訪ねる前は、<b>必ず</b><a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得するようにしてください。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。",
+        "under21Message": "21歳未満であるため、DMVに訪ねる前は、<b>必ず</b><a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得するようにしてください。当の証明書は、課程に合格するにあたり、課程の指導者から与えられます。",
         "onCompletion": "課程を完成した後、免許を取得する前は、許可を6ヶ月間保有すべきです。"
       }
     },
     "motorcylcleOtherStateSection": {
       "body": {
-        "waiverProcess": "<b>運転試験は：</b>他州にいる有効なオートバイ免許、または<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得し、お持ちになっている場合に、取り消される可能があります。"
+        "waiverProcess": "<b>運転試験は：</b>他州にいる有効なオートバイ免許、または<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>の、オートバイ育成（DL 389）証明書</a>を、 CHPによるカリフォルニアオートバイ安全企画から取得し、お持ちになっている場合に、取り消される可能があります。"
       }
     },
     "additionalMotorcycleTestingSection": {
       "header": "そのほかの試験必要事項",
-      "body": "カリフォルニアにおいて、オートバイまたはスクーターの免許を取得するには、<b>基本の運転免許証試験に合格する必要があります</b>。お越しになる前に、<a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。"
+      "body": "カリフォルニアにおいて、オートバイまたはスクーターの免許を取得するには、<b>基本の運転免許証試験に合格する必要があります</b>。お越しになる前に、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>カリフォルニア運転手ハンドブック</a>と<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>模擬テスト</a>で勉強することをおすすめします。"
     },
     "nonCommercialASection": {
       "header": "非商用A級必要事項",
       "body": {
-        "healthQuestionnaire": "非商用A級の許可を取得するには、有効な<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート（DL 546）を提出する必要があります。</a>",
+        "healthQuestionnaire": "非商用A級の許可を取得するには、有効な<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート（DL 546）を提出する必要があります。</a>",
         "knowledgeTest": "<b>レクリエーション用車両と非商用A級トレーラー</b>の知識試験も、受ける必要があります。試験を受ける前に、カリフォルニアのRV   &トレーラーハンドブックで勉強することをおすすめします。",
-        "afterPassingExam": "試験に合格するにあたり、許可が発行されます。完全な免許を取るための情報は、<a   href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>DMV公式サイト</a>で確認できます。"
+        "afterPassingExam": "試験に合格するにあたり、許可が発行されます。完全な免許を取るための情報は、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>DMV公式サイト</a>で確認できます。"
       }
     },
     "nonCommercialBSection": {
       "header": "非商用B級必要事項",
       "body": {
-        "healthQuestionnaire": "非商用B級の許可を取得するには、医者によって証明された有効な<a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>健康アンケート（DL 546A）を提出する必要があります。</a>",
-        "houseCarTest": "<b>45' ハウスカー知識試験</b>を受ける必要もあります。試験を受ける前に、<a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>カリフォルニアのRV &トレーラーハンドブック</a>で勉強することをおすすめします。"
+        "healthQuestionnaire": "非商用B級の許可を取得するには、医者によって証明された有効な<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>健康アンケート（DL 546A）を提出する必要があります。</a>",
+        "houseCarTest": "<b>45' ハウスカー知識試験</b>を受ける必要もあります。試験を受ける前に、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>カリフォルニアのRV &トレーラーハンドブック</a>で勉強することをおすすめします。"
       }
     },
     "firefighterEndorsementSection": {
       "header": "消防士裏書き必要事項",
       "body": {
         "testRequirements": "<b>消防士裏書き</b>を取得するには、<b>消防士裏書き</b>知識試験、合格する必要があります。",
-        "otherRequirements": "有効な<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート (DL 546)</a>と、下記の基準に見合う<b>消防士雇用及び育成証明の原本</b>を提出する必要もあります。",
+        "otherRequirements": "有効な<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>健康アンケート (DL 546)</a>と、下記の基準に見合う<b>消防士雇用及び育成証明の原本</b>を提出する必要もあります。",
         "otherRequirementsValues": [
           "消防機関のレターヘッドによって証明されていること",
           "現役消防士であること、または志願消防士として登録されていることの証明",
@@ -132,11 +132,11 @@
     },
     "sexChangeSection": {
       "header": "性別の変更",
-      "body": "<p>性別を変更するには、医師または心理学者によって署名された、<a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>の健康診断及び許可書（DL 329）</a>を提出する必要があります。</p><p>氏名変更前後の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
+      "body": "<p>性別を変更するには、医師または心理学者によって署名された、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>の健康診断及び許可書（DL 329）</a>を提出する必要があります。</p><p>氏名変更前後の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
     },
     "nameChangeSection": {
       "header": "氏名の変更",
-      "body": "<p>Social Security Administration変更された氏名をカードに表示するには、まず地元の<a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>ソーシャ ルセキュリティ事務局</a>オフィスで氏名を変更する必要があります。</p><p>氏名変更<em>前</em><em>後r</em>の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
+      "body": "<p>Social Security Administration変更された氏名をカードに表示するには、まず地元の<a target=\"_blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>ソーシャ ルセキュリティ事務局</a>オフィスで氏名を変更する必要があります。</p><p>氏名変更<em>前</em><em>後r</em>の真実のフルネーム（名前、ミドルネーム、苗字）の記入された<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>氏名変更書類</a>を提出する必要もあります。</p>"
     },
     "reducedFeeSection": {
       "header": "料金割引対象",
@@ -193,7 +193,7 @@
           "メールアドレスと電話番号がありません。これらは、自宅で記入すべきものとなります。",
           "機密住所企画、もしくは自宅安全企画によって保護されています。"
         ],
-        "instead": "そのかわり、<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>予約をとり</a>、地元DMVオフィスに訪ねてください。"
+        "instead": "そのかわり、<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>予約をとり</a>、地元DMVオフィスに訪ねてください。"
       }
     },
     "whatYouCanDoPageCDL": {
@@ -232,7 +232,7 @@
       "emailRequired": "<b>メールアドレスと電話番号が必要となります。</b>ID.meアカウントを作成したくない場合は、DMVオフィスを訪ねてください。",
       "legalIdentity": "<b>ID.meは、適法の身分を証明することを認めます。</b>カリフォルニアのDMVは ID.meと連携して、個人情報が正確、安全であることを保証してあげます。",
       "dmvPartnering": "カリフォルニアのDMVが ID.meと連携する原因は、安全と身分証明に関する厳密な要求を満たしてくれたことです。",
-      "learnMore": "<a href='https://www.id.me'>より詳しい情報は、ID.meで確認してください。</a>"
+      "learnMore": "<a target=\"_blank\" href='https://www.id.me'>より詳しい情報は、ID.meで確認してください。</a>"
     },
     "idMeReturnPage": {
       "welcomeBack": "このサイトにお戻りくださったことを感謝します。",
@@ -487,13 +487,13 @@
       "steps": [
         "メール送信でこの確認コードを入手します。",
         "申請を完了するにはお住まいの地域の運輸局事務所にお越しいただく必要があります。",
-        "必要な書類を回収し、あなたの知識を試験で調べますので、訪問のために準備をお願いします。申請で提供された情報に基づいて、<a href='/apply/appointment-preparation'>カスタム準備リストを作成しました。</a>",
+        "必要な書類を回収し、あなたの知識を試験で調べますので、訪問のために準備をお願いします。申請で提供された情報に基づいて、<a target=\"_blank\" href='/apply/appointment-preparation'>カスタム準備リストを作成しました。</a>",
         "運輸局支局事務所では、従業員の社会保障確認番号と書類を見せてください。事務所に申請を提出します。",
         "あなたの情報を確認するように求められます。その後、運輸局支局事務所を訪問中にそれが正しいことをあなたが証明します。"
       ]
     },
     "registrationCompleteAtOffice": "注意点としては、運輸局支局事務所での申請終了時に、有権者登録の申請が処理されます。",
-    "checkVoterStatus": "あなたの状況を確認して下さい。<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "あなたの状況を確認して下さい。<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "運輸局を訪問する前に有権者登録をする必要がある場合。RegisterToVote.ca.gov.にてオンラインで登録することができます。",
     "register30days": "次回の州選挙で投票したい場合、今すぐRegisterToVote.ca.govでオンライン登録してください。",
     "avoidLines": "長時間並んで待つのを避けるために、あなたの地元の運輸局に今すぐ予約をしてください。",
@@ -851,7 +851,7 @@
       "voterRegistration": {
         "title": "有権者登録",
         "bodyBullets": [
-          "あなたの住所を共有することがあなたを命にかかわる危険にさらす可能性がある場合は、機密に投票するために登録する資格があります。詳細については、（877）322-5227の<b>安全な家庭</ b>プログラムに連絡するか、<a target = \"_ blank\" href = 'http：//www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>にアクセスしてください。",
+          "あなたの住所を共有することがあなたを命にかかわる危険にさらす可能性がある場合は、機密に投票するために登録する資格があります。詳細については、（877）322-5227の<b>安全な家庭</ b>プログラムに連絡するか、<a target=\"_ blank\" href = 'http：//www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>にアクセスしてください。",
           "<b>米国市民のみ</ b>。あなたが投票資格があることを示す場合、DMVは、このフォームで収集した投票者登録情報（デジタル署名を含む）をすべてカリフォルニア州務長官に送付します。あなたが登録したDMV事務所は秘密のままであり、有権者の登録目的でのみ使用されます。",
           "あなたが投票資格があり、投票登録を拒否した場合、あなたの決定は秘密になります。しかし、この情報は、有権者へのアウトリーチおよび登録目的でのみ使用されるように、カリフォルニア州務長官に送られます。",
           "このアプリケーションで提供される投票者登録情報は機密情報です。 DMVは有権者の適格性判定を行いません。",
@@ -1082,6 +1082,11 @@
     }
   },
   "newApproved": {
+    "beforeIntro": {
+      "chooseApplicationPage": {
+        "doINeedCommercial": "私は商用運転免許証が必要かどうか分からない"
+      }
+    },
     "organDonation": {
       "monetaryContribution": {
         "explanation": "あなたの寄付は、器官と組織の寄付をサポートし、促進するのに役立ちます。"
@@ -1090,30 +1095,32 @@
     "myHistory": {
       "veteransPage": {
         "newDesignation": {
-          "id": "あなたのIDに \"ベテラン\"という言葉を5ドルの手数料で追加しますか？",
-          "license": "運転免許証に「ベテラン」という言葉を5ドルの手数料で追加しますか？"
+          "license": "運転免許証に「ベテラン」という言葉を5ドルの手数料で追加しますか？",
+          "id": "あなたのIDに \"ベテラン\"という言葉を5ドルの手数料で追加しますか？"
         }
       }
     },
-    "beforeIntro": {
-      "chooseApplicationPage": {
-        "doINeedCommercial": "私は商用運転免許証が必要かどうか分からない"
+    "votingRegistration": {
+      "eligibilityPage": {
+        "notSharedWithElectionOfficials": "この質問に対するあなたの回答は、<b>選挙管理者と共有されません</ b>。",
+        "preRegRequirements": "すべての要件を満たしていない場合は、投票に事前登録する資格はありません。",
+        "preRegEligible": "私は16歳または17歳で、投票に事前登録したいと考えています。",
+        "preRegUpToDate": "次に、あなたの有権者の事前登録が最新であることを確認したいと思います。"
       }
     },
     "intro": {
       "realID": {
-        "explanation": "ライセンスを取得するか、IDカードを連邦政府が米国内で使用することはできますが、両方では使用できません。",
-        "whichCard": "どのカードを飛行したいですか？"
+        "whichCard": "どのカードを飛行したいですか？",
+        "explanation": "ライセンスを取得するか、IDカードを連邦政府に準拠させて米国内で飛行させることはできますが、両方を同時に行うことはできません。"
+      },
+      "youthLicense": {
+        "underFifteen": {
+          "explanation": "例外的な状況では、14歳から15.5歳までの若者はジュニア許可を得ることができます。ジュニア許可の資格があると思われる場合は、オフィスを訪ねるか、DMVウェブサイトの文書を参照してください。",
+          "title": "学習者の許可申請を開始するには15歳でなければなりません。"
+        },
+        "comeBack": "あなたが15歳になったら元に戻ってください。"
       },
       "wdywtdtPage": {
-        "addDL": {
-          "values": [
-            "初めての運転免許取得",
-            "運転免許更新",
-            "ドライバのライセンスを修正または更新する",
-            "運転免許証を交換する"
-          ]
-        },
         "addID": {
           "values": [
             "IDカードを初めて取得する",
@@ -1121,22 +1128,15 @@
             "IDカードを修正または更新する",
             "IDカードを交換する"
           ]
+        },
+        "addDL": {
+          "values": [
+            "初めての運転免許取得",
+            "運転免許更新",
+            "ドライバのライセンスを修正または更新する",
+            "運転免許証を交換する"
+          ]
         }
-      },
-      "youthLicense": {
-        "comeBack": "あなたが15歳になったら元に戻ってください。",
-        "underFifteen": {
-          "title": "学習者の許可申請を開始するには15歳でなければなりません。",
-          "explanation": "例外的な状況では、14歳から15.5歳までの若者はジュニア許可を得ることができます。ジュニア許可の資格があると思われる場合は、オフィスを訪ねるか、DMVウェブサイトの文書を参照してください。"
-        }
-      }
-    },
-    "votingRegistration": {
-      "eligibilityPage": {
-        "preRegRequirements": "すべての要件を満たしていない場合は、投票に事前登録する資格はありません。",
-        "preRegUpToDate": "次に、あなたの有権者の事前登録が最新であることを確認したいと思います。",
-        "preRegEligible": "私は16歳または17歳で、事前登録をして投票したいと考えています。",
-        "notSharedWithElectionOfficials": "この質問に対するあなたの回答は、<b>選挙管理者と共有されません</ b>。"
       }
     },
     "cdl": {
@@ -1145,24 +1145,24 @@
           "prompt": "カリフォルニアのCDL、運転免許証、またはIDカードを別の名前で申請したことがありますか？"
         },
         "veteran": {
+          "addVeteran": "あなたのCDLに \"退役軍人\"という言葉を5ドルの手数料で追加しますか？",
           "keepVeteran": "ベテランをあなたのCDLに入れたいですか？",
           "veteranOnCDL": "商用運転免許証に \"ベテラン\"が印刷されていますか？",
-          "addVeteran": "あなたのCDLに \"退役軍人\"という言葉を5ドルの手数料で追加しますか？",
           "militaryWaiver": {
             "explanation": "あなたは過去1年以内に奉仕したことが必要です。",
             "prompt": "軍用運転免許証CDL放棄を求めていますか？"
           }
         },
         "medicalHistory": {
+          "prompt": "以下の情報を確認してから、このページの最後にある質問に真実に答えてください。",
           "explanation": "あなたの自動車を安全に運転する能力に影響を及ぼす可能性のある以下の条件は、",
           "values": [
             "意識の喪失",
             "再発する可能性のある状態によって引き起こされる著しい混乱のエピソード",
             "疾患、障害または障害（これらの例はてんかん、糖尿病、脳卒中、白内障、パーキンソン病である）",
-            "白内障、黄斑変性、糖尿病性網膜症、緑内障、色素性網膜炎、または他の進行性状態のために視力が変化または減少する。",
+            "白内障、黄斑変性症、糖尿病性網膜症、緑内障、色素性網膜炎、または他の進行性状態のために視力が変化または減少する。",
             "アルコール、薬物乱用、または関連する健康問題。"
           ],
-          "prompt": "以下の情報を確認してから、このページの最後にある質問に真実に答えてください。",
           "medicalConditions": "過去3年以内に、自動車を安全に運転する能力に影響を及ぼす可能性のある病状を経験したことがありますか？"
         }
       },
@@ -1176,30 +1176,53 @@
           "intrastate": "州内走行",
           "interstate": "州間高速道路走行"
         },
+        "legalAgreement": {
+          "title": "このアプリケーションを続行することにより、以下に同意します。",
+          "agreement": "カリフォルニア州の法律に基づき、私が運転技能テストを受けるために使用している自動車が、私が期待する自動車のタイプを代表するものであることを、偽証罪の罰則を受けて<b>私は認定する</ b>（または宣言する）作動する。私はさらに、連邦規則第383.51項第49号に記載されているように、私が失格、停止、取消しまたは取消しを受けることがなく、複数の州または管轄区域からの運転免許証を持っていないことをさらに証明します。"
+        },
         "notSure": {
+          "title": "私はどちらが当てはまるのかわからない",
           "expected": {
             "explanation": "一部の州では、CFR、Title 49§391に記載されている資格を満たすためにドライバーを必要とする<b> </ em> </ em> </ b>必要のない商用運転免許証が発行されます。これらのドライバは「除外された」ドライバとみなされます。カリフォルニアはその種のライセンスを発行していません。商用車を運転するためにカリフォルニアから免許を受けたすべての運転手は、<em>例外ではない</ em>運転手です。",
             "title": "<b>予想されるライセンスと予期しないライセンス</ b>"
           },
-          "intrastate": {
-            "title": "州内商業",
-            "explanation": "「州際通商」という用語には記載されていない州の貿易、交通、または輸送を意味します。"
-          },
-          "title": "私はどちらが当てはまるのかわからない",
           "interstate": {
-            "explanation": "米国内の貿易、交通、または交通手段を意味します。",
-            "title": "州都コマース",
             "values": [
               "国家内の場所とその国外の場所（米国外の場所を含む）",
               "州の2つの場所の間、別の州または米国以外の場所",
               "州内または米国外で発生した貿易、交通、または輸送の一部としての州内の2か所の間"
-            ]
+            ],
+            "title": "州都コマース",
+            "explanation": "米国内の貿易、交通、または交通手段を意味します。"
+          },
+          "intrastate": {
+            "title": "州内商業",
+            "explanation": "「州際通商」という用語には記載されていない州の貿易、交通、輸送を意味します。"
           }
-        },
-        "legalAgreement": {
-          "title": "このアプリケーションを続行することにより、以下に同意します。",
-          "agreement": "カリフォルニア州の法律に基づき、私が運転技能テストを受けるために使用している自動車が、私が期待する自動車のタイプを代表していることを、偽証罪の罰則を受けて<b>私は認定する</ b>（または宣言する）作動する。私はさらに、連邦規則第383.51項第49号に記載されているように、私が失格、停止、取消しまたは取消しを受けることがないことを証明し、複数の州または管轄区域からの運転免許証を持っていません。"
         }
+      }
+    },
+    "requiredDocuments": {
+      "prompt": "DMVに持ち込む必要があるもの",
+      "explanation": "以下は、申請書を完成させるためにDMVのオフィスに持ち込む必要があるもののリストです。フォトコピーやラミネート版は受け付けていないため、以下のすべての書類のオリジナル版を用意する必要があります。",
+      "documentListHeader": "次のことを確認するために、元の文書が必要です。",
+      "additionalInformation": {
+        "telephone": "電話：1-800-777-0133",
+        "questions": "ご不明な点がございましたら、お気軽にお問い合わせください。",
+        "callCenter": "コールセンターの営業時間は、月曜日、火曜日、木曜日、金曜日の午前8時から午後5時まで、水曜日の午前9時から午後5時までです。",
+        "hearing": "聴覚障害者：TTY 1-800-368-4327"
+      },
+      "bulletList": {
+        "youth": "あなたは知識テストを受ける必要があります",
+        "noFee": "手数料なし",
+        "legalPresence": "法的存在",
+        "reducedFee": "手数料の削減",
+        "realID": "実ID誕生日、氏名、法的存在証明",
+        "veteran": "退役軍人の証拠",
+        "newDriver": "新しいドライバ要件",
+        "medicalInformation": "医療情報",
+        "residency": "カリフォルニアのレジデンス",
+        "socialSecurity": "社会保障番号の証明"
       }
     }
   },
@@ -1253,8 +1276,8 @@
       "goToDMV": "今すぐDMVに行く必要があります！",
       "details": "申請を完了するために必要なことの詳細については、DMVのウェブサイトをご覧ください。",
       "show": "それをDMVの従業員に見せてください。また、このコードをメールでお送りします。",
-      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>必要な書類を持って来てください</a>。",
-      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>時間を節約するために予定を立てる</a>"
+      "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>必要な書類を持って来てください</a>。",
+      "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>時間を節約するために予定を立てる</a>"
     },
     "conclusion": {
       "notAvailable": "利用不可",
@@ -1299,7 +1322,7 @@
           "proof": "あなたが結婚した、離婚した、養子縁組した、または裁判所を通じてあなたの名前を変更した場合は、<target = \"_ blank\" href = 'https：//www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05＃true '>真実のフルネームの証拠</a>です。",
           "legalPresence": {
             "title": "法的存在",
-            "explanation": "すべての応募者は、生年月日を証明する必要があります。あなたがAB 60でない限り、合法的存在を証明する必要があります。 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60チェックリストツール</a>と<a target = \"_空白\" href = 'https：//www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>生年月日と法的在籍リスト</a>。"
+            "explanation": "すべての応募者は、生年月日を証明する必要があります。あなたがAB 60でない限り、合法的存在を証明する必要があります。 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60チェックリストツール</a> と <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>生年月日と法的在籍リスト</a>。"
           }
         }
       }
@@ -1341,7 +1364,7 @@
       "weNeedBasicInfo": "いくつかの基本情報をいただきます。",
       "addAnotherSigntature": "もうひとりの親/保護者の署名を追加します"
     },
-    "emancipatedInfoMessage": "<b>自力で生活している未成年者であることを証明するには</b>、DL 11証をもって自分の独立性を証明し、<b>且つ</b>財政的責任に関する証明を提出する必要があります。<a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>より詳しい情報は、DMV公式サイトを参照してください。</a>"
+    "emancipatedInfoMessage": "<b>自力で生活している未成年者であることを証明するには</b>、DL 11証をもって自分の独立性を証明し、<b>且つ</b>財政的責任に関する証明を提出する必要があります。<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>より詳しい情報は、DMV公式サイトを参照してください。</a>"
   },
   "shared": {
     "navigation": {
@@ -1644,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "ありがとうございます。DMVでのご用件をお済ませになったときに、有権者登録の申し込みが処理されます。",
-      "explanation": "<p>DMVにお越しいただいてから4週間以内に有権者通知の葉書が届かなかった場合、あなたの郡の選挙管理人までご連絡ください。</p><p> カリフォルニア州務長官の<a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>にて有権者登録状況を確認できます。</p>"
+      "explanation": "<p>DMVにお越しいただいてから4週間以内に有権者通知の葉書が届かなかった場合、あなたの郡の選挙管理人までご連絡ください。</p><p> カリフォルニア州務長官の<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>にて有権者登録状況を確認できます。</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>支持政党を選択なさらない方は、米国大統領または中央委員会についての予備選挙で一部の政党の候補者に投票できない場合があります。</p><p> これにより以前の支持政党が上書きされます。</p>"
