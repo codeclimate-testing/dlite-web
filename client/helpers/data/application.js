@@ -39,12 +39,20 @@ export const hasMultipleApps = (props) => {
 }
 
 export const parseAppName = (props) => {
-  let appName;
-  if (props.chooseApp === 'id-and-license' || props.chooseApp.toLowerCase() === 'cdl') {
-    appName = props.chooseApp;
-  }
-  else {
+  let appName = props.chooseApp.toLowerCase();
+  if (!hasValue(props.chooseApp)) {
     appName = splitPathname(props);
   }
+  else if (props.chooseApp === 'iddl') {
+    appName = 'id-and-license';
+  }
   return appName;
+};
+
+export const parseChooseApp = (appName) => {
+  let chooseApp = appName;
+  if (appName === 'id-and-license') {
+    chooseApp = 'iddl';
+  }
+  return chooseApp;
 };

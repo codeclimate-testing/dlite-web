@@ -20,7 +20,7 @@ const intro = [
   },
   {
     key: 'loggedIn',
-    description: 'page server redirects to after successful login. on dev mode it sets isLoggedIn cookie to true',
+    description: 'page server redirects to after successful login. queries user data from server and saves isLoggedIn if true',
     path: '/logged-in',
     next: 'legalName'
   },

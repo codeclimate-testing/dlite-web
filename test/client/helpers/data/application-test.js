@@ -9,7 +9,8 @@ import {
   requireLogIn,
   afterIntro,
   hasMultipleApps,
-  parseAppName
+  parseAppName,
+  parseChooseApp
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -98,11 +99,11 @@ describe('Data helpers for application', function() {
         }
       };
     });
-    it('returns props.chooseApp when it is id-and-license', function() {
-      props.chooseApp = 'id-and-license';
+    it('returns id-and-license when props.chooseApp is iddl', function() {
+      props.chooseApp = 'iddl';
       assert.equal(parseAppName(props), 'id-and-license');
     });
-    it('returns props.chooseApp when it is cdl', function() {
+    it('returns cdl when props.chooseApp is cdl', function() {
       props.chooseApp = 'cdl';
       assert.equal(parseAppName(props), 'cdl');
     });
@@ -110,6 +111,15 @@ describe('Data helpers for application', function() {
       props.chooseApp = '';
       props.location.pathname = '/apply/id-and-license/sign-in';
       assert.equal(parseAppName(props), 'id-and-license');
+    });
+  });
+
+  describe('#parseChooseApp', function() {
+    it('returns iddl when appName is id-and-license', function() {
+      assert.equal(parseChooseApp('id-and-license'), 'iddl');
+    });
+    it('returns cdl when appName is cdl', function() {
+      assert.equal(parseChooseApp('cdl'), 'cdl');
     });
   });
 });

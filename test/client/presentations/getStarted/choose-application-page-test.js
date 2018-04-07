@@ -54,7 +54,7 @@ describe('ChooseApp Page', function() {
           <ChooseAppPage {...props} />
         </Wrapper>
       );
-      assert.ok(component.find('label[for="chooseApplication-id-and-license"]').length, 'IDDL app radio missing');
+      assert.ok(component.find('label[for="chooseApplication-iddl"]').length, 'IDDL app radio missing');
       assert.ok(component.find('label[for="chooseApplication-cdl"]').length, 'CDL radio missing');
       assert.ok(component.find('.choose-application-form').length, 'form missing');
     });
