@@ -5,7 +5,6 @@ const env               = require('./server/config/env.js');
 const express           = require('express');
 const bodyParser        = require('body-parser');
 const passport          = require('passport');
-const session           = require('express-session')
 const helmet            = require('helmet');
 const expressStaticGzip = require("express-static-gzip");
 const cookieParser      = require('cookie-parser');
@@ -21,7 +20,7 @@ const csrf              = require('./server/config/csrf');
 const routes            = require('./server/routes');
 
 let server = express();
-server.use(session(sessionOptions));
+server.use(sessionOptions);
 server.use(passport.initialize());
 server.use(passport.session());
 
@@ -43,6 +42,13 @@ server.get('/', (req, res) => {
 });
 server.use('/', expressStaticGzip('public'));
 server.use(express.static('public'));
+
+// server.use((req, res, next) => {
+//   if (!req.session) {
+//     return next(new Error('session does not exist'));
+//   }
+//   next();
+// });
 
 server.port = env.port;
 server.environment = env.env;
