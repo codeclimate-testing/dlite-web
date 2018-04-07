@@ -502,173 +502,56 @@
   "confirmationCDL": {
     "commercialLearnersPermit": "Kapag pumasa ka sa mga pagsusulit mo sa kaalaman at mapunan lahat ng mga ibang kailangan, bibigyan ka ng Commercial Learner's Permit (CLP). May mandatoryong panahon ng paghihintay na 14 araw sa pagitan ng kung kailan ibibigay ang iyong CLP at kung kailan ka magiging nararapat na makatanggap ng pansamantalang  Commercial Driver License."
   },
-  "disclaimers": {
-    "medical": {
-      "title": "Medikal na impormasyon",
-      "body": "Kasama sa mga sumusunod na kundisyon na maaaring makaapekto sa kakayahan mong ligtas na magpatakbo ng motor na sasakyan ngunit hindi limitado sa: kawalan ng malay; episodyo ng markadong kalituhan na dulot ng anumang kundisyon na maaaring maging sanhi ng mga umuulit na pagkalimit; sakit, karamdaman o kapansanan (ang mga halimbawa ng mga ito ay epilepsy, diabetes, stroke, katarata, Parkinson’s disease); pagbawas o pagbabago sa paningin mo dahil sa katarata, macular degeneration, diabetic retinopathy, glaucoma, retinitis pigmentosa, o ibang lumalalang kundisyon; mga problema sa kalusugan dahil sa alkohol o pag-abuso sa droga."
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "Nagkaroon ka ba ng anumang medikal na kundisyon sa nakaraang tatlong taon na nakaapekto sa kakayahan mong magmaneho?",
+      "explanationPrompt": "Pakipaliwanag sa ibaba."
     },
-    "veteran": {
-      "title": "Pahayag ng beterano",
-      "body": "Sa pagmamarka sa kahon ng beterano sa aplikasyong ito, pinatototohanan ko na beterano ako ng United States Armed Forces at gusto kong makatanggap ng impormasyon sa mga benepisyo ng beterano mula sa California Department of Veterans Affairs (CalVet). Sa pagmamarka ng kahon ng beterano sa aplikasyong ito, pumapayag din ako na ipadala ng DMV ang aking pangalan at address ng koreo sa CalVet para lang sa mga layuning ito, at pinatototohanan ko na naabisuhan ako na magaganap ang pagpapadalang ito."
+    "cardHistoryPage": {
+      "pagePromptLicense": "Nagkaroon ka na ba ng lisensiya sa pagmamaneho o ID card na bigay ng estado?",
+      "pagePromptID": "Nagkaroon ka na ba ng lisensiya sa pagmamanaho sa California o ID card?",
+      "explanation": "Ang lisensiya o ID card ay dapat magmula sa estado ng U.S. o ibang bansa.",
+      "explanationPrompt": "Pakisabi sa amin ang tungkol sa pinakakamakailan mong lisensiya sa pagmamaneho o ID card, kahit na paso na ito.",
+      "numberLabel": "Estado, teritoryo o bansa",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "Petsa ng Pagkapaso"
     },
-    "organDonation": {
-      "title": "Pahayag sa pag-donate ng organ",
-      "body": "Kung minarkahan mo ang ‘Oo’ para magrehistro bilang donor ng organ at tissue, legal mong pinahihintulutan ang pagkuha ng mga organ at tissue sakaling mamatay ka. Ang pagrehistro bilang donor ay hindi makakaapekto sa medikal mong paggamot sa anumang paraan. Bilang nakabalangkas sa California Anatomical Gift Act, ang pahintulot mo ay legal na ipatutupad at, maliban kung ang donor ay mas bata sa 18 taong gulang, ang pasya mo ay hindi nangangailangan ng pahintulot ng sinumang ibang tao. Para sa mga nakarehistrong donor na mas bata sa 18 taong gulang, ang legal na tagapag-alaga ay ang gagawa ng huling na pasya sa pag-donate. Maaari mong limitahin ang donasyon mo sa mga partikular na organ o tissue, maglagay ng restriksiyon sa paggamit (halimbawa pag-transplant o pananaliksik), makakuha ng higit pang impormasyon tungkol sa donasyon o alisin ang pangalan mo mula sa registry sa website ng Donate Life California: www.donateLIFEcalifornia.org. Sa pagpaparehistro bilang Organ Donor, binibigay mo ang pahintulot mong payagan ang DMV na elektronikong ipadala ang iyong tunay na buong pangalan, tirahan o address sa koreo, taon ang kapanganakan, at lisensiya sa pagmamaneho sa California o numero ng card ng pagkakakilanlan sa Donate Life California. Sa paglagda ng form na ito, pumapayag ka sa prosesong ito at naabisuhan ka na magaganap ang pagpapadalang ito."
+    "nameHistoryPage": {
+      "pagePrompt": "Nakapag-apply ka na ba para sa Lisensiya sa Pagmamaneho o ID card gamit ang ibang pangalan?",
+      "explanationPrompt": "Pakilista lahat ng mga nakaraang legal na pangalan.",
+      "helpText": "<p>Halimbawa, isama ang pangalan mo sa pagkadalaga. </p><p> Na pinaghihiwalay gamit ang mga kuwit.</p>"
     },
-    "voterRegistration": {
-      "title": "Pagpaparehistro ng botante",
-      "bodyBullets": [
-        "Kung ang pagbabahagi ng address mo ay maaaring maglagay sa iyo sa peligro ng banta sa buhay, maaaring nararapat kang magparehistrong bumoto nang kumpidensiyal. Para sa karagdagang impormasyon, makipag-ugnay sa Safe at Home program sa (877) 322-5227 o pumunta sa <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
-        "Para lang sa mga mamamayan ng U.S. Kung tinukoy mo na nararapat kang bumoto, ipapadala ng DMV lahat ng impormasyon sa pagpaparehistro ng botante na nakolekta sa form na ito, kailang ang iyong digital na lagda, sa Secretary of State. Pagakatapos, ang tanggapan kung saan ka nagrehistro ay mananatiling kumpidensiyal at gagamitin lang para sa mga layunin ng pagpaparehistro ng botante.",
-        "Kung nararapat kang bumoto at tinanggihang magrehistrong bumoto, ang pasya mo ay mananatiling kumpidensiyal; subalit, ang impormasyong ito ay ipapadala sa Secretary of State na gagamitin lang para sa layunin ng outreach at pagpaparehistro ng botante.",
-        "Ang impormasyon sa pagpaparehistro ng botante na nilaan sa aplikasyong ito ay kumpidensiyal. Hindi gumagawa ng determinasyon sa pagiging nararapat ng botante ang DMV.",
-        "Kung hindi mo natanggap ang iyong impormasyon sa pagpaparehistro ng botante sa loob ng 30 araw ng pagpaparehistro, makipag-ugnay sa inyong opisyal sa halalan ng county o sa Secretary of State.",
-        "Mangyaring bumisita sa <a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> para sa karagdagang impormasyon tungkol sa iyong pagpaparehistro bilang botante o sa <a href='www.sos.ca.gov'>www.sos.ca.gov</a> para sa pangkalahatang impormasyon."
-      ]
+    "licenseIssuesPage": {
+      "pagePrompt": "Kailan man ba ay ang iyong pribilehiyo sa pagmamaneho ay nakansela, tinanggihan, nasuspinde o nabawi?",
+      "explanationPrompt": "Kailan ito nangyari?",
+      "helpText": "Halimbawa: 03/21/1967",
+      "reasonLabel": "Ano ang dahilan?"
     },
-    "criminalProsecution": {
-      "title": "Kriminal na prosekusyon",
-      "bodyBullets": [
-        "Kung magsumite ka ng mapanlinlang na impormasyon, maaaring isulong ng DMV ang kriminal na prosekusyon.",
-        "Sinumang taong gagamit ng mga huwad na dokumento para pagtakpan ang tunay nilang pagkamamamayan o katayuan sa pagiging dayuhang residente ay may kasalanan ng paglabag alinsunod sa California Penal Code §114."
-      ]
-    },
-    "financialResponsibility": {
-      "title": "Pinansiyal na pananagutan",
-      "bodyBullets": [
-        "Ang pinansiyal na pananagutan (karaniwang kilala bilang insurance) ay kailangan sa lahat ng mga sasakyang pinatatakbo o nakaparada sa mga kalye ng California. Dapat kang magdala ng katibayan ng pinansiyal na pananagutan sa sasakyan mo sa lahat ng panahon at ito dapat ay ilaan kapag: hiniling ng nagpapatupad ng batas, nagre-renew ng pagpaparehistro ng sasakyan, ang sasakyan ay naugnay sa banggaan sa trapiko.",
-        "Kung hindi mo kayang gastusan ang insurance para sa pananagutan, maaaring nararapat ka sa California Low Cost Automobile Insurance Program. Ang karagdagang impormasyon ay makukuha sa <a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> o sa pagtawag sa (866) 602-8861."
-      ]
-    },
-    "paymentRefunds": {
-      "title": "Mga Bayad / Refund",
-      "bodyBullets": [
-        "Pumunta sa <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> para repasuhin ang mga opsyon sa pagbabayad sa lokal mong tanggapan ng opisina ng DMV. Kung pinadadala mo ang pag-renew mo, ang bayad ay dapat sa pamamagitan ng tseke. (Ang mga tseke ay dapat nakapangalan sa DMV).",
-        "Kapag naisumite na ang form ng aplikasyon at bayad na ito, walang gagawing mga refund."
-      ]
-    },
-    "privacy": {
-      "title": "Abiso sa pagkapribado",
-      "bodyBullets": [
-        "Ginagamit ng DMV ang impormasyon sa form na ito para determinahin ang pagiging nararapat mo para sa Lisensiya sa Pagmamaneho o Card ng Pagkakakilanlan at para sa administrasyon ng mga batas ng lisensiya sa pagmamaneho.",
-        "Ang impormasyong nilaan sa DMV sa form na ito ay kinolekta at sasailalim sa mga limitasyon ng Information Practices Act (Civil Code 1798 et seq.), ng Driver’s Privacy Protection Act (18 U.S.C. 2721-2725), ng California Vehicle Code (CVC) at ibang angkop na batas at regulasyon ng estado at pederal.",
-        "Pinatototohanan ng DMV ang impormasyon at mga dokumentong nilaan mo sa mga ibang ahensiya ng pamahalaan.",
-        "Lahat ng impormasyon sa form na ito ay mandatoryo maliban kung saan tinala. Maaaring tanggihan ng DMV ang aplikasyon mo sa hindi pagbibigay ng inaatas na impormasyon. Ang kabiguang magbigay ng impormasyon inaatas sa form na ito ay dahilan sa pagtangging magbigay ng lisensiya sa pagmamaneho o card ng pagkakakilanlan, o, sa ilang kaso, kanselasyon o pagbawi ng pribilehiyo sa pagmamaneho.",
-        "Ibinabahagi ng DMV ang inyong impormasyon sa mga ibang ahensiya ng pamahalaan, pagpapatupad ng batas, at mga komersiyal na entidad ayon sa pinahihintulutan ng batas. Maaari kang makakuha ng kopya ng talaan mo sa <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> o saanmang tanggapan sa opisina ng DMV sa regular na oras ng tanggapan. Para sa tulong sa pag-access sa talaan mo, tumawag sa (800) 777-0133 o gumawa ng appointment para pumunta sa tanggapan sa opisina ng DMV sa regular na oras ng negosyo. Para sa tulong sa mga pagtatama ng talaan mo, makipag-ugnay sa Licensing Operations Division Mandatory Actions Unit ng DMV sa (916) 657-6525.",
-        "Ang mga tanong patungkol sa iyong Lisensiya sa Pagmamaneho o Card ng Pagkakakilanlan ay dapat i-address sa: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
-        "Para sa karagdagang impormasyon tungkol sa mga partikular na Seksiyon ng CVC, o kung paano binabahagi ng DMV ang impormasyon mo, mangyaring bumisita sa <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>. Maaari ka ring humiling ng kopya ng How Your DMV Information is Shared (FFDMV 17) Fast Facts na brochure mula sa anumang tanggapan sa opisina.",
-        "Ang Patakaran sa Pagkapribado ng DMV ay nasa <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> sa ilalim ng link ng 'Privacy Policy' sa ibaba na pahina.",
-        "Ang mga tanong patungkol sa abisong ito ay dapat i-address sa: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
-      ]
-    },
-    "certifications": {
-      "title": "Mga sertipikasyon",
-      "bodyBullets": [
-        "Sumasang-ayon akong sumailalim sa kemikal na pagsusuri ng aking dugo, hininga o ihi para sa layunin ng pagdedetermina sa nilalamang alkohol o droga ng dugo ko kapag inatas ang pagsusuri ng opisyal ng kapayapaan na kumikilos ayon sa California Vehicle Code (CVC) §23612.",
-        "Ako ay inaabisuhan na ang pagiging nasa ilalim ng impluwensiya ng alkohol o droga, ay nakakapinsala sa kakayahang ligtas na patakbuhin ang de-motor na sasakyan. Samakatuwid, napakadelikado sa buhay ng tao na magmaneho habang nasa ilalim ng inpluwensiya ng alkohol o droga, o nitong dalawa. Kung magmaneho ako habang nasa ilalim ng impluwensiya ng alkohol o droga o dalawang ito, at bilang resulta, may taong napatay, maaari akong mademanda ng murder.",
-        "Sa paglagda ng aplikasyong ito, pinatototohanan ko na inabisuhan ako na kung ako ay mas bata sa 21 taong gulang, hindi ako legal na makakapagmaneho na mayroong blood alcohol concentration (BAC) na 0.01% o higit pa. Ang pagmamaneho ng may BAC na 0.01% o higit pa, o pagtangging magsagawa o nabigong kumumpleto ng pagsusuri sa alkohol o pagsusuri sa droga, ay magreresulta sa isang-taong pagsuspinde ng aking pribilehiyo sa pagmamaneho.",
-        "Sa paglagda ng aplikasyong ito, pinatototohanan ko na naabisuhan ako na ako ay kasalukuyang nasa probation ng korte sa pagmamaneho sa ilalim ng impluwensiya na paglabag, hindi ako legal na makakapagmaneho nang may BAC na 0.01% o higit pa. Ang pagmamaneho ng may BAC na 0.01% o higit pa ay nagreresulta sa isang-taong pagsuspinde ng pribilehiyo ko sa pagmamaneho. Ang pagtangging sumailalim o pagbigong kumumpleto ng pagsusuri sa alkohol o kemikal na pagsusuri ay magreresulta sa dalawa o tatlong taong pagsuspinde/pagbawi ng pribilehiyo ko sa pagmamaneho.",
-        "Ako ang tao na ang pangalan ay lumalabas sa harapan ng form na ito. Balido ang address ng koreo na pinapakita, umiiral at tumpak. Sumasang-ayon akong tanggapin ang serbisyo ng proseso sa address ng koreo na ito ayon sa §§415.20(b), 415.30(a), at 416.90 ng California Code of Civil Procedure.",
-        "Nauunawaan ko na ang DMV ay maaaring magdagdag ng mga pagsasakdal sa trapiko na inulat ng mga ibang estado o hurisdiksiyon sa aking talaan ng pagmamaneho na maaaring magresulta sa mga parusa laban sa aking pribilehiyo sa pagmamaneho sa California.",
-        "Sa paglagda ng form na ito, kinikilala ko na ang presensiya ko sa Estados Unidos ay pinahihintulutan sa ilalim ng pederal na batas, maliban ayon sa tinutukoy sa CVC §12801.",
-        "Nauunawaan ko na hindi ako maaaring may mahigit sa isang lisensiya sa pagmamaneho na hawak ko o sa ilalim ng kontrol ko ayon sa CVC §12511.",
-        "Sa paglagda ng aplikasyong ito, pinatototohanan ko na nauunawaan ko ang mga karatula at senyales ng trapiko ayon sa CVC §12800(h)."
-      ]
+    "veteransPage": {
+      "pagePrompt": "Kailanman ba ay nagserbisyo ka sa Militar ng Estados Unidos?",
+      "explanationStart": "Bilang beterano, maaaring nararapat ka para sa mga benepisyo tulad ng bayad sa kapansanan.",
+      "licensExplanation": "Ang iyong Lisensiya sa Pagmamaneho ay maaari ring magpakita ng salitang \"Veteran\".",
+      "idExplanation": "Ang iyong ID ay maaari ring magpakita ng salitang \"Veteran\".",
+      "cardsExplanation": "Ang iyong mga card ay maaari ring magpakita ng salitang \"Veteran\".",
+      "messageYes": "Salamat sa serbisyo mo.",
+      "benefitsPrompt": "Gusto mo bang makatanggap ng impormasyon sa mga benepisyo kung saan ka nararapat?",
+      "newDesignation": {
+        "prompt": "Gusto mo bang idagdag ang salitang “Veteran” sa iyong {card type} sa bayad na $5?",
+        "explanation": "Maraming organisasyon ay nagbibigay ng mga diskuwento sa mga beterano na may balidong ID.",
+        "messageYes": "OK, ddaragdag namin ang $5 sa kabuuan mong bayarin. Kakailanganin mong kumpletuhin ang Veteran Status Verification Form mula sa Veteran Service Office ng county mo at dalhin ito sa tanggapan sa opisina ng DMV."
+      },
+      "historicDesignationPrompt": "Nagkaroon ka na ba ng salitang \"Veteran\" sa lisensiya o ID card na bigay ng estado?",
+      "existingDesignation": {
+        "promptLicense": "Ang \"Veteran\" ba ay naka-print sa iyong Lisensiya sa Pagmamaneho?",
+        "promptID": "Ang \"Veteran\" ba ay naka-print sa iyong ID?",
+        "promptCards": "Ang \"Veteran\" ba ay naka-print sa iyong mga card?"
+      },
+      "keepDesignationPrompt": {
+        "id": "Gusto mo bang manatili ang \"Veteran\" sa iyong ID?",
+        "cards": "Gusto mo bang manatili ang \"Veteran\" sa iyong mga card?",
+        "license": "Gusto mo bang manatili ang \"Veteran\" sa iyong Lisensiya sa Pagmamaneho?"
+      }
     }
-  },
-  "errorMessages": {
-    "lastNameMissing": "Pakipasok ang apelyido mo.",
-    "dateOfBirthMissing": "Pakipasok ang petsa ng kapanganakan mo.",
-    "applicationActionMissing": "Pakipili kung ano ang gusto mong gawin.",
-    "realIdSelectionMissing": "Pakipili kung gusto mo ng Real ID card.",
-    "realIdCardSelectionMissing": "Pakipili kung aling card ang gusto mong maging Real ID card.",
-    "licenceClassMissing": "Pakipili kung ano ang gusto mong manehuhin.",
-    "cardNumberMissing": "Pakipasok ang balidong lisensiya sa pagmamaneho o numero ng ID",
-    "streetAddressMissing": "Pakipasok kung saang kalye ka nakatira.",
-    "cityMissing": "Pakipasok ang lungsod kung saang ka nakatira.",
-    "mailingAddressMissing": "Pakisabi sa amin kung saan ka tumatanggap ng mail.",
-    "sexSelectionMissing": "Pakipili ang kasarian mo.",
-    "hairColorMissing": "Pakipili ang kulay ng buhok mo.",
-    "eyeColorMissing": "Pakipili ang kulay ng mata mo.",
-    "heightMissing": "Pakipasok ang iyong taas.",
-    "weightMissing": "Pakipasok ang iyong timbang.",
-    "socialSecurityAvailabilityMissing": "Pakisabi sa amin kung mayroon kang Numero sa Social Security.",
-    "socialSecurityNumberMissing": "Pakipasok ang Numero ng Social Security mo.",
-    "socialSecurityNumberInvalid": "Pakipasok ang balidong Numero ng Social Security.",
-    "medicalHistorySelectionMissing": "Pakisabi sa amin ang tungkol sa anumang mga medikal na kundisyon.",
-    "licenceHistorySelectionMissing": "Pakisabi sa amin kung nagkaroon ka ng lisensiya sa pagmamaneho o ID card.",
-    "expirationDateInvalid": "Pakipasok ng balidong petsa ng pagkapaso.",
-    "nameHistorySelectionMissing": "Pakisabi sa amin kung nagkaroon ka ng lisensiya o ID card sa ilalim ng ibang pangalan.",
-    "licenseIssueSelectionMissing": "Pakisabi sa amin kung bakit nakansela, nasuspinde o nabawi ang mga pribilehiyo mo sa pagmamaneho.",
-    "licenseIssueDateMissing": "Pakisabi sa amin kung kailan ito nangyari.",
-    "veteranSelectionMissing": "Pakipili kung nagserbisyo ka sa militar ng US.",
-    "veteranBenefitSelectionMissing": "Pakisabi sa amin kung nais mong makakuha ng impormasyon tungkol sa pagkuha ng mga benepisyo para sa mga beterano.",
-    "veteranDesignationExistsMissing": "Pakisabi sa amin kung ang \"Veteran\" ay nailagay sa ID o lisensiya sa pagmamaneho.",
-    "veteranDesignationExistsMissing2": "Pakisabi sa amin kung ang \"Veteran\" ay nasa iyong card.",
-    "keepVeteranDesignationSelectionMissing": "Pakisabi sa amin kung gusto mong manatili ang \"Veteran\" sa iyong card.",
-    "wantVeteransDesignationSelectionMissing": "Pakisabi sa amin kung gusto mo ang \"Veteran\" sa iyong card.",
-    "organDonationSelectionMissing": "Pakisabi sa amin kung gusto mong maging donor ng organ.",
-    "moneyOrganDonationSelectionMissing": "Pakisabi sa amin kung gusto mong mag-donate.",
-    "citizenshipSelectionMissing": "Pakipili kung mamamayan ka ng US.",
-    "votingEligibilitySelectionMissing": "Pakipili kung natugunan mo ang mga pangangailangan sa pagiging nararapat.",
-    "wantToPreregisterSelectionMissing": "Pakisabi sa amin kung gusto mong magrehistro para bumoto.",
-    "politicalPartySelectionMissing": "Pakipili ng partidong politikal.",
-    "ballotLanguageSelectionMissing": "Pakipili ng wika.",
-    "ballotByMailSelectionMissing": "Pakisabi sa amin kung gusto mong matanggap ang balota mo sa koreo.",
-    "emailAddressMissingOrInvalid": "Pakipasok ng balidong email address.",
-    "phoneMissingOrInvalid": "Pakipasok ang balidong numero ng telepono.",
-    "liabilityAcceptanceMissing": "Pakitsekan ang kahon para tumanggap ng pananagutan.",
-    "parentNameMissing": "Pakipasok ang pangalan mo.",
-    "invalidOrMissingDate": "Pakipasok ng balidong petsa.",
-    "identityDocumentationMissing": "Pakipasok ang impormasyon ng iyong dokumento sa pagkakakilanlan.",
-    "dataIncludesNonEnglishCharacters": "Paumanhin, ang card mo ay maaari lang maglaman ng mga character ng Ingles.",
-    "errorPreventContinuing": "Hindi ka makakapagpatuloy hanggang maayos mo ang mga mali sa pahinang ito.",
-    "selectionMissing": "Pakipili",
-    "pleaseEnterValidData": "Pakipasok ng balidong impormasyon",
-    "inputIncludesNonEnglishCharacters": "Pakipasok lang ng mga Ingles na character.",
-    "licenseClassMissing": "Pakipili ng klase ng lisensiya",
-    "needEndorsement": "Pakipili kung kailangan mo ng propesyonal na pag-endorso.",
-    "endorsement": "Pakipili ng pag-endorso.",
-    "cardTypeMissing": "Pakipili kung aling (mga) card ang gusto mo.",
-    "choosePoliticalPartyNowSelectionMissing": "Pakisabi sa amin kung gusto mong pumili ng kagustuhan sa partidong politikal."
-  },
-  "footer": {
-    "accessibility": "Pagkakakatunton",
-    "conditionsOfUser": "Mga kondisyon sa paggamit",
-    "disabilityServices": "Mga serbisyo sa mga may kapansanan",
-    "help": "Tulong",
-    "home": "Home",
-    "privacy": "Polisiya ng Palihim",
-    "siteMap": "Site map",
-    "support": "Suportang Teknikal",
-    "copyright": "Copyright &copy; 2018 Estado ng California"
-  },
-  "header": {
-    "dlApplication": "Aplikasyon ng lisensiya sa pagmamaneho",
-    "idApplication": "Aplikasyon ng ID card",
-    "bothApplications": "Aplikasyon ng pagmamaneho at aplikasyon ng ID",
-    "cdlApplication": "Aplikasyon sa komersyal ng lisensiya sa pagmamaneho",
-    "Logout": "Log out"
-  },
-  "sections": {
-    "getStarted": "Magsimula",
-    "selfCertification": "Pagsertipikang pansarili",
-    "myHistory": "Aking kasaysayan",
-    "tenYearHistory": "Sampung taong kasaysayan",
-    "summary": "Buod",
-    "welcomeBack": "Maligayang pagbabalik"
-  },
-  "ageMessages": {
-    "notASenior": "Hindi kana maaaring kumuha ng libreng Senior ID card.",
-    "preregistration": "Ikaw ay magiging rehistrado para bumoto.",
-    "cdlAgeRestriction": "Ikaw ay dapat 18 taong gulang upang makapag-apply para sa komersyal na lisensiya sa pagmamaneho sa California."
-  },
-  "extras": {
-    "enterTextHere": "Ilagay ang text dito",
-    "notRegisteredToVoteMessage": "Kung pinili ay <em>Hindi</em> o <em>Hindi sasagot</em>, hindi ka magiging rehistrado para bumoto.",
-    "vetranRemoveMessage": "OK, aalisin namin",
-    "yourConfirmationCode": "Ang kumpirmasyong code mo ay:",
-    "confirmationAlsoEmailed": "Ito rin ay i-email sa iyo."
   },
   "intro": {
     "switchLanguagePage": {
@@ -910,6 +793,219 @@
       }
     }
   },
+  "disclaimers": {
+    "criminalProsecution": {
+      "title": "Paglilitis sa kasong kriminal",
+      "bodyBullets": [
+        "Kung nagpapadala ka ng mapanlinlang na impormasyon, maaaring magtaguyod ang DMV ng kriminal na pag-uusig.",
+        "Ang sinumang tao na gumagamit ng mga maling dokumento upang itago ang kanilang tunay na pagkamamamayan o resident alien status ay nagkasala ng isang krimen alinsunod sa Kodigo sa Parusa ng California §114."
+      ]
+    },
+    "organDonation": {
+      "title": "Pahayag ng donasyon ng organ",
+      "body": "Kung minarkahan mo ang 'Oo' upang magrehistro bilang donor ng organ at tissue, legal na pinapahintulutan mo ang pagbawi ng mga organo at tisyu sa kaganapan ng iyong kamatayan. Ang pagrerehistro bilang isang donor ay hindi makakaapekto sa iyong medikal na paggamot sa anumang paraan. Tulad ng nakabalangkas sa California Anatomical Gift Act, ang iyong awtorisasyon ay may legal na umiiral at, maliban kung ang donor ay wala pang 18 taong gulang, ang iyong desisyon ay hindi nangangailangan ng pahintulot ng sinumang ibang tao. Para sa mga nakarehistrong donor sa ilalim ng 18 taong gulang, ang legal na tagapag-alaga ay dapat gumawa ng pangwakas na desisyon ng donasyon. Maaari mong limitahan ang iyong donasyon sa mga partikular na organo o tisyu, ilagay ang mga paghihigpit sa paggamit (halimbawa paglipat o pananaliksik), kumuha ng karagdagang impormasyon tungkol sa donasyon, o tanggalin ang iyong pangalan mula sa pagpapatala sa website ng Donate Life California: <a target=\"_blank\" href='http://www.donatelifecalifornia.com'>www.donateLIFEcalifornia.com</a>. Sa pagrerehistro bilang isang Organ Donor, binibigyan mo ang iyong pahintulot na payagan ang DMV na ihatid ng elektroniko ang iyong tunay na buong pangalan, tirahan o mailing address, taon ng kapanganakan, at lisensya sa pagmamaneho ng California o numero ng pagkakakilanlan sa Donate Life California. Sa pamamagitan ng pag-sign sa form na ito, sumasang-ayon ka sa prosesong ito at na-notify na ang transmittal na ito ay magaganap."
+    },
+    "paymentRefunds": {
+      "title": "Mga Pagbabayad / Mga Refund",
+      "bodyBullets": [
+        "Bisitahin ang <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> upang suriin ang mga pagpipilian sa pagbabayad sa iyong lokal na tanggapan ng DMV. Kung nagpapadala ka ng iyong renewal, ang pagbabayad ay dapat sa pamamagitan ng tseke. (Ang mga tseke ay dapat bayaran sa DMV).",
+        "Sa sandaling isumite ang pormularyong aplikasyon at bayad na ito, walang refund ang gagawin."
+      ]
+    },
+    "medical": {
+      "body": "Ang mga sumusunod na kondisyon na maaaring makaapekto sa iyong kakayahang magpatakbo ng ligtas na sasakyan ay kasama ang, ngunit hindi limitado sa:",
+      "title": "Medikal na impormasyon",
+      "bodyBullets": [
+        "Pagkawala ng kamalayan; o",
+        "Episode ng minarkahang kalituhan na dulot ng anumang kalagayan na maaaring magdulot ng mga nauulit na lapses; o",
+        "Sakit, disorder, o kapansanan (mga halimbawa ng mga ito ay epilepsy, diabetes, stroke, katarata, sakit sa Parkinson); o",
+        "Bawasan o palitan ang iyong paningin dahil sa mga katarata, macular degeneration, diabetes retinopathy, glaucoma, retinitis pigmentosa, o iba pang progresibong kondisyon; o",
+        "Mga problema sa kalusugan dahil sa pag-abuso sa alkohol o droga."
+      ]
+    },
+    "voterRegistration": {
+      "title": "Pagpaparehistro ng botante",
+      "bodyBullets": [
+        "Kung ang pagbabahagi ng iyong address ay maaaring ilagay sa iyo sa panganib na nagbabanta sa buhay, maaari kang maging karapat-dapat na magparehistro upang bumoto nang kumpiyansa. Para sa higit pang impormasyon, kontakin ang programa ng Ligtas sa Bahay sa (877) 322-5227 o bisitahin ang <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+        "Para sa mga mamamayang US lamang. Kung hindi mo natanggap ang impormasyon sa pagpaparehistro ng botante sa loob ng 30 araw mula sa paghiling nito, dapat kang makipag-ugnay sa iyong Opisyal ng Halalan ng County o sa Kalihim ng Estado ng California.",
+        "Sa pamamagitan ng pagpaparehistro upang bumoto sa DMV, kinikilala mo na ipapadala ng DMV ang iyong impormasyon ng botante at ang iyong digital na lagda sa Kalihim ng Estado ng California upang makumpleto ang proseso ng pagpaparehistro ng botante.",
+        "Kung ayaw mong magparehistro upang bumoto, ang iyong desisyon ay mananatiling lihim at gagamitin lamang para sa mga layunin ng pagpaparehistro ng botante.",
+        "Kung nais mong magparehistro upang bumoto, ang opisina kung saan ka nakarehistro ay mananatiling lihim at gagamitin lamang para sa mga layunin ng pagpaparehistro ng botante."
+      ]
+    },
+    "financialResponsibility": {
+      "title": "Pananagutan ng pananalapi",
+      "bodyBullets": [
+        "Ang responsibilidad sa pananalapi (karaniwang kilala bilang seguro) ay kinakailangan sa lahat ng mga sasakyan na pinatatakbo o naka-park sa mga daanan ng California. Dapat kang magdala ng katibayan ng pananagutan sa pananalapi sa iyong sasakyan sa lahat ng oras at dapat itong ibigay kapag: hiniling ng pagpapatupad ng batas, pag-renew ng pagpaparehistro ng sasakyan, ang sasakyan ay kasangkot sa isang banggaan ng trapiko.",
+        "Kung hindi mo kayang bayaran ang seguro sa pananagutan, maaari kang maging karapat-dapat para sa Programa sa Seguro ng Seguro sa Mababang Gastos ng California. Ang karagdagang impormasyon ay makukuha sa <a target=\"_blank\" href='https://www.mylowcostauto.com'> www.mylowcostauto.com </a> o sa pagtawag (866) 602-8861."
+      ]
+    },
+    "privacy": {
+      "title": "Paunawa sa privacy",
+      "bodyBullets": [
+        "Ginagamit ng DMV ang impormasyon sa form na ito upang matukoy ang iyong pagiging karapat-dapat para sa isang Driver License o Identification Card at para sa pamamahala ng mga batas sa lisensya sa pagmamaneho.",
+        "Ang impormasyon na ibinigay sa DMV sa pormularyong ito ay nakolekta at napapailalim sa mga limitasyon sa Batas sa Mga Gawain sa Impormasyon (Batas sa Batas 1798 et seq.), Ang Batas sa Pagprotekta sa Pagkapribado ng Driver (18 USC 2721-2725), ang California Vehicle Code (CVC) at iba pa naaangkop na mga batas at regulasyon ng estado at pederal.",
+        "Para sa karagdagang impormasyon tungkol sa mga partikular na Seksyon ng CVC, mangyaring bisitahin ang <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> at sa ibaba ng pahina, i-click ang link na \"Patakaran sa Pagkapribado\". Sa pahina ng Patakaran sa Pagkapribado, i-click ang Driver License Notification sa Collection.",
+        "Pinatutunayan ng DMV ang impormasyon at mga dokumento na iyong ibinibigay sa iba pang mga ahensya ng pamahalaan.",
+        "Ang lahat ng impormasyon sa form na ito ay ipinag-uutos maliban sa kung saan nabanggit. Maaaring tanggihan ng DMV ang iyong aplikasyon dahil sa hindi pagbibigay ng kinakailangang impormasyon. Ang pagkabigong magbigay ng impormasyong kinakailangan sa pormang ito ay sanhi ng pagtanggi na maglabas ng lisensya sa pagmamaneho o kard ng pagkakakilanlan, o, sa ilang mga kaso, ang pagkansela o pag-withdraw ng pribilehiyo sa pagmamaneho.",
+        "Ibinahagi ng DMV ang iyong impormasyon sa iba pang mga ahensya ng pamahalaan at mga entidad ng komersyo na inawtorisa ng batas. Para sa higit pang impormasyon tungkol sa pagbabahagi ng iyong impormasyon, mangyaring bisitahin ang <a target=\"_blank\" href='https://www.dmv.ca.gov'> www.dmv.ca.gov </a> at sa ibaba ng ang pahina, i-click ang link na \"Patakaran sa Pagkapribado\". Sa pahina ng Patakaran sa Pagkapribado, i-click ang Driver License Notice sa Collection o humiling ng isang kopya ng \"Paano Ibinahagi ang iyong Impormasyon\" (FFDMV 17) mula sa anumang tanggapan ng field.",
+        "Maaari kang kumuha ng kopya ng iyong rekord sa <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> o sa anumang tanggapan ng DMV sa oras ng regular na oras ng opisina. Para sa tulong sa pag-access sa iyong rekord, tawagan (800) 777-0133 o gumawa ng appointment upang bisitahin ang isang DMV field office sa regular na oras ng negosyo. Para sa tulong sa mga pagwawasto sa iyong rekord, makipag-ugnay sa Mandatory Actions Unit ng DMV sa (916) 657-6525.",
+        "Ang mga katanungan tungkol sa iyong Driver License o Identification Card ay dapat itanong sa: Mga Lisensya sa Pagmamaneho ng Pagmamaneho, Kagawaran ng Mga Sasakyan ng Motor, PO Box 942890, Sacramento, CA 94290-0001.",
+        "Ang Patakaran sa Privacy ng DMV ay matatagpuan sa <a target=\"_blank\" href='https://www.dmv.ca.gov'> www.dmv.ca.gov </a> sa ilalim ng link na 'Patakaran sa Pagkapribado' sa ibaba ng pahina."
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "bodyBullets": [
+        "Sumasang-ayon ako na sumailalim sa isang kemikal na pagsusuri ng aking dugo, paghinga, o ihi para sa layunin ng pagtukoy ng nilalaman ng alkohol o droga ng aking dugo kapag hiniling ang isang opisyal ng kapayapaan na kumikilos alinsunod sa California Vehicle Code (CVC) §23612.",
+        "Pinapayuhan ko na ang pagiging nasa ilalim ng impluwensiya ng alak o droga, o kapwa, ay napipinsala ang kakayahang ligtas na magpatakbo ng isang sasakyang de-motor. Samakatuwid, ito ay lubhang mapanganib sa buhay ng tao upang magmaneho habang nasa ilalim ng impluwensiya ng alkohol o droga, o pareho. Kung ako ay nagmamaneho habang nasa ilalim ng impluwensiya ng alkohol o droga, o kapwa, at bilang isang resulta, ang isang tao ay papatayin, maaari akong singilin sa pagpatay.",
+        "Sa pamamagitan ng pagpirma sa application na ito, pinatutunayan ko na inabisuhan ako na kung wala akong 21 taong gulang, hindi ako legal na makapagmaneho ng dugo na may 0.01% o higit pa. Ang pagmamaneho na may BAC na 0.01% o higit pa, o pagtanggi na kumuha, o hindi nakakumpleto ng isang pagsusuri sa alkohol o pagsusuri sa droga, ay nagreresulta sa isang isang taon na suspensyon ng aking pribilehiyo sa pagmamaneho.",
+        "Sa pamamagitan ng pag-sign sa application na ito, pinapatunayan ko na ako ay naabisuhan na kung ako ay kasalukuyang nasa probasyon ng hukuman para sa isang pagmamaneho sa ilalim ng impluwensyang pagkakasala, hindi ako maaaring legal na magmaneho na may konsentrasyon ng alkohol sa dugo (BAC) na 0.01% o higit pa. Pagmamaneho na may BAC ng 0.01% o higit pang mga resulta sa isang isang taon na suspensyon ng aking pribilehiyo sa pagmamaneho. Ang pagtanggi na kunin, o hindi makakumpleto ng isang pagsusuri ng alkohol o pagsusuri sa kemikal ay magreresulta sa isang suspensyon ng dalawang taon o tatlong taon sa pagbibigay ng pribilehiyo sa pagmamaneho.",
+        "Ako ang tao na ang pangalan ay lumitaw sa harap ng form na ito. Ang mailing address na ipinapakita ay wasto, umiiral, at tumpak. Sumasang-ayon ako na tanggapin ang serbisyo ng proseso sa address na ito ng koreo ayon sa §§415.20 (b), 415.30 (a), at 416.90 ng California Code of Civil Procedure.",
+        "Naiintindihan ko na ang DMV ay maaaring magdagdag ng mga convictions ng trapiko na iniulat ng ibang mga estado o mga saklaw sa aking rekord sa pagmamaneho na maaaring magresulta sa mga parusa laban sa aking pribadong pagmamaneho sa California.",
+        "Sa pamamagitan ng pag-sign sa form na ito, kinikilala ko ang aking presensya sa Estados Unidos ay pinahintulutan sa ilalim ng pederal na batas, maliban sa tinukoy sa CVC §12801.",
+        "Naiintindihan ko na maaaring wala akong higit sa isang lisensya sa pagmamaneho sa aking pag-aari o sa ilalim ng aking kontrol alinsunod sa CVC §12511.",
+        "Sa pamamagitan ng pag-sign sa application na ito, pinapatunayan ko na nauunawaan ko ang mga palatandaan at signal ng trapiko alinsunod sa CVC §12800 (h)."
+      ]
+    },
+    "cdl": {
+      "drivingTypes": {
+        "title": "Mga uri ng pagmamaneho",
+        "body": "Ang <em> Regulasyon sa Kaligtasan ng Federal Motor Carrier </ em> §383.71 ay nangangailangan na ibunyag mo ang uri ng komersyal na operasyon na iyong ginagawa sa:",
+        "bodyBullets": [
+          "Non-Excepted Interstate: Nagpapatakbo o nagnanais na magpatakbo ng isang komersyal na sasakyan sa <b> <em> interstate </ em> </ b> commerce at napapailalim at natutugunan ang mga kinakailangan sa kwalipikasyon sa ilalim ng 49 CFR bahagi 391. Gawin ang pagpipiliang ito kung ang iyong Ang lisensya ay hindi pinaghihigpitan upang makagambala lamang. Hindi pinipigilan ng pagpili ang transportasyon, pinagmulan, o patutunguhan ng pag-load na dadalhin.",
+          "Non-Excepted Intrastate: Nagpapatakbo lamang sa <b> <em> intrastate </ em> </ b> commerce (California lamang). Gawin ang pagpipiliang ito kung ang iyong lisensya ay limitado lamang upang makagambala. Maaari ka lamang maghatid ng karga na nagmula sa at ang huling patutunguhan ay nasa California. Habang nagmamaneho nang komersyo ay hindi mo maaaring i-cross ang mga hangganan ng estado o internasyonal.",
+          "Ang California ay hindi naglalabas ng isang komersyal na lisensya sa pagmamaneho na maliban sa mga kinakailangan sa kwalipikasyon sa pagmamaneho."
+        ]
+      },
+      "voterRegistration": {
+        "title": "Pagpaparehistro ng botante",
+        "bodyBullets": [
+          "Kung ang pagbabahagi ng iyong address ay maaaring ilagay sa iyo sa panganib na nagbabanta sa buhay, maaari kang maging karapat-dapat na magparehistro upang bumoto nang kumpiyansa. Para sa higit pang impormasyon, kontakin ang programa ng <b> Safe at Home </ b> sa (877) 322-5227 o bisitahin ang <a target = \"_ blank\" href = 'http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+          "<b> Para sa mga mamamayan ng U.S. lamang </ b>. Kung ipinahihiwatig mo na karapat-dapat kang bumoto, ipapadala ng DMV ang lahat ng impormasyon sa pagpaparehistro ng botante na nakolekta sa form na ito, kabilang ang iyong digital na lagda, sa Kalihim ng Estado ng California. Ang opisina ng DMV kung saan ka nakarehistro ay mananatiling lihim at gagamitin lamang para sa mga layunin ng pagpaparehistro ng botante.",
+          "Kung ikaw ay karapat-dapat na bumoto at tanggihan upang magparehistro upang bumoto, ang iyong desisyon ay mananatiling lihim; gayunpaman ang impormasyong ito ay ipapadala sa Kalihim ng Estado ng California na gagamitin lamang para sa mga outreach at mga layunin ng pagpaparehistro ng botante.",
+          "Ang impormasyon sa pagpaparehistro ng botante na ibinigay sa aplikasyong ito ay kumpidensyal. Ang DMV ay hindi gumagawa ng mga pagpapasiya ng pagiging karapat-dapat ng botante.",
+          "Kung hindi ka nakatanggap ng impormasyon sa pagpaparehistro ng botante sa loob ng 4 na linggo ng <b> pagrehistro </ b>, kontakin ang opisyal ng iyong halalan sa county o Kalihim ng Estado ng California.",
+          "Mangyaring bisitahin ang voterstatus.sos.ca.gov/ para sa karagdagang impormasyon tungkol sa pagpaparehistro ng iyong botante o www.sos.ca.gov para sa pangkalahatang impormasyon."
+        ]
+      },
+      "privacy": {
+        "title": "Paunawa sa privacy",
+        "bodyBullets": [
+          "Ginagamit ng DMV ang impormasyon sa form na ito upang matukoy ang iyong pagiging karapat-dapat para sa isang Driver License o Identification Card at para sa pamamahala ng mga batas sa lisensya sa pagmamaneho.",
+          "Ang impormasyon na ibinigay sa DMV sa pormularyong ito ay nakolekta at napapailalim sa mga limitasyon sa Batas sa Mga Gawain sa Impormasyon (Batas sa Batas 1798 et seq.), Ang Batas sa Pagprotekta sa Pagkapribado ng Driver (18 USC 2721-2725), ang California Vehicle Code (CVC) at iba pa naaangkop na mga batas at regulasyon ng estado at pederal.",
+          "Pinatutunayan ng DMV ang impormasyon at mga dokumento na iyong ibinibigay sa iba pang mga ahensya ng pamahalaan.",
+          "Ang lahat ng impormasyon sa form na ito ay ipinag-uutos maliban sa kung saan nabanggit. Maaaring tanggihan ng DMV ang iyong aplikasyon dahil sa hindi pagbibigay ng kinakailangang impormasyon. Ang pagkabigong magbigay ng impormasyong kinakailangan sa pormang ito ay sanhi ng pagtanggi na maglabas ng lisensya sa pagmamaneho o kard ng pagkakakilanlan, o, sa ilang mga kaso, ang pagkansela o pag-withdraw ng pribilehiyo sa pagmamaneho.",
+          "Ibinahagi ng DMV ang iyong impormasyon sa iba pang mga ahensya ng pamahalaan, tagapagpatupad ng batas, at mga entidad ng komersyo na pinahintulutan ng batas. Maaari kang makakuha ng isang kopya ng iyong tala sa <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a> o sa anumang tanggapan ng DMV sa regular oras ng opisina. Para sa tulong sa pag-access sa iyong rekord, tawagan (800) 777-0133 o gumawa ng appointment upang bisitahin ang isang DMV field office sa regular na oras ng negosyo. Para sa tulong sa mga pagwawasto sa iyong rekord, kontakin ang DMV's Licensing Operations Division, Mandatory Actions Unit sa (916) 657-6525.",
+          "Ang mga katanungan tungkol sa iyong Driver License o Identification Card ay dapat itanong sa: Mga Lisensya sa Pagmamaneho ng Pagmamaneho, Kagawaran ng Mga Sasakyan ng Motor, PO Box 942890, Sacramento, CA 94290-0001.",
+          "Para sa higit pang impormasyon tungkol sa mga partikular na Seksyon ng CVC o kung paano ibinabahagi ng DMV ang iyong impormasyon, pakibisita ang <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a>. Maaari ka ring humiling ng isang kopya ng Brochure ng Paano ang Iyong Impormasyon ng DMV (FFDMV 17) mula sa anumang tanggapan ng field.",
+          "Ang Patakaran sa Privacy ng DMV ay matatagpuan sa <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a> sa ilalim ng link na \"Patakaran sa Pagkapribado\" sa ilalim ng ang pahina.",
+          "Ang mga tanong tungkol sa paunawang ito ay dapat itanong sa: Kagawaran ng Mga Sasakyan ng Motor, ATTN: Punong Opisyal ng Pagkapribado - MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+        ]
+      }
+    },
+    "veteran": {
+      "title": "Beterano pahayag",
+      "bodyBullets": [
+        "Sa pamamagitan ng pagmamarka ng beterano na kahon sa aplikasyong ito, pinatutunayan ko na ako ay isang beterano ng Armed Forces ng Estados Unidos at nais kong makatanggap ng impormasyon sa benepisyo mula sa California Department of Veterans Affairs (CalVet). Sa pamamagitan ng pagmamarka ng beterano na kahon sa application na ito, ako ay pumayag din sa DMV na ipinapadala ang aking pangalan at mailing address sa CalVet para sa layuning ito lamang, at pinapatunayan ko na ako ay naabisuhan na ang transmittal na ito ay magaganap.",
+        "Ang beteranong pagtatalaga ay isang paraan upang makilala at parangalan ang paglilingkod ng mga beterano ng California. Bilang isang beterano maaari mong piliin na markahan ang mukha ng iyong lisensya sa pagmamaneho o pagkakakilanlan (DL / ID) na card na may salitang \"VETERAN\" upang ipahiwatig na ikaw ay nagsilbi sa Estados Unidos ng Sandatahang Lakas, para sa isang bayad na $ 5 bawat kard, bilang karagdagan sa lahat ng naaangkop na bayarin. Sa sandaling idinagdag ang beteranong pagtatalaga, ang anumang mga card sa hinaharap ay magkakaroon ng pagtatalaga at ang mga karagdagang dokumentasyon ay hindi kinakailangan sa pag-renew."
+      ]
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "Pakipasok ang apelyido mo.",
+    "dateOfBirthMissing": "Pakipasok ang petsa ng kapanganakan mo.",
+    "applicationActionMissing": "Pakipili kung ano ang gusto mong gawin.",
+    "realIdSelectionMissing": "Pakipili kung gusto mo ng Real ID card.",
+    "realIdCardSelectionMissing": "Pakipili kung aling card ang gusto mong maging Real ID card.",
+    "licenceClassMissing": "Pakipili kung ano ang gusto mong manehuhin.",
+    "cardNumberMissing": "Pakipasok ang balidong lisensiya sa pagmamaneho o numero ng ID",
+    "streetAddressMissing": "Pakipasok kung saang kalye ka nakatira.",
+    "cityMissing": "Pakipasok ang lungsod kung saang ka nakatira.",
+    "mailingAddressMissing": "Pakisabi sa amin kung saan ka tumatanggap ng mail.",
+    "sexSelectionMissing": "Pakipili ang kasarian mo.",
+    "hairColorMissing": "Pakipili ang kulay ng buhok mo.",
+    "eyeColorMissing": "Pakipili ang kulay ng mata mo.",
+    "heightMissing": "Pakipasok ang iyong taas.",
+    "weightMissing": "Pakipasok ang iyong timbang.",
+    "socialSecurityAvailabilityMissing": "Pakisabi sa amin kung mayroon kang Numero sa Social Security.",
+    "socialSecurityNumberMissing": "Pakipasok ang Numero ng Social Security mo.",
+    "socialSecurityNumberInvalid": "Pakipasok ang balidong Numero ng Social Security.",
+    "medicalHistorySelectionMissing": "Pakisabi sa amin ang tungkol sa anumang mga medikal na kundisyon.",
+    "licenceHistorySelectionMissing": "Pakisabi sa amin kung nagkaroon ka ng lisensiya sa pagmamaneho o ID card.",
+    "expirationDateInvalid": "Pakipasok ng balidong petsa ng pagkapaso.",
+    "nameHistorySelectionMissing": "Pakisabi sa amin kung nagkaroon ka ng lisensiya o ID card sa ilalim ng ibang pangalan.",
+    "licenseIssueSelectionMissing": "Pakisabi sa amin kung bakit nakansela, nasuspinde o nabawi ang mga pribilehiyo mo sa pagmamaneho.",
+    "licenseIssueDateMissing": "Pakisabi sa amin kung kailan ito nangyari.",
+    "veteranSelectionMissing": "Pakipili kung nagserbisyo ka sa militar ng US.",
+    "veteranBenefitSelectionMissing": "Pakisabi sa amin kung nais mong makakuha ng impormasyon tungkol sa pagkuha ng mga benepisyo para sa mga beterano.",
+    "veteranDesignationExistsMissing": "Pakisabi sa amin kung ang \"Veteran\" ay nailagay sa ID o lisensiya sa pagmamaneho.",
+    "veteranDesignationExistsMissing2": "Pakisabi sa amin kung ang \"Veteran\" ay nasa iyong card.",
+    "keepVeteranDesignationSelectionMissing": "Pakisabi sa amin kung gusto mong manatili ang \"Veteran\" sa iyong card.",
+    "wantVeteransDesignationSelectionMissing": "Pakisabi sa amin kung gusto mo ang \"Veteran\" sa iyong card.",
+    "organDonationSelectionMissing": "Pakisabi sa amin kung gusto mong maging donor ng organ.",
+    "moneyOrganDonationSelectionMissing": "Pakisabi sa amin kung gusto mong mag-donate.",
+    "citizenshipSelectionMissing": "Pakipili kung mamamayan ka ng US.",
+    "votingEligibilitySelectionMissing": "Pakipili kung natugunan mo ang mga pangangailangan sa pagiging nararapat.",
+    "wantToPreregisterSelectionMissing": "Pakisabi sa amin kung gusto mong magrehistro para bumoto.",
+    "politicalPartySelectionMissing": "Pakipili ng partidong politikal.",
+    "ballotLanguageSelectionMissing": "Pakipili ng wika.",
+    "ballotByMailSelectionMissing": "Pakisabi sa amin kung gusto mong matanggap ang balota mo sa koreo.",
+    "emailAddressMissingOrInvalid": "Pakipasok ng balidong email address.",
+    "phoneMissingOrInvalid": "Pakipasok ang balidong numero ng telepono.",
+    "liabilityAcceptanceMissing": "Pakitsekan ang kahon para tumanggap ng pananagutan.",
+    "parentNameMissing": "Pakipasok ang pangalan mo.",
+    "invalidOrMissingDate": "Pakipasok ng balidong petsa.",
+    "identityDocumentationMissing": "Pakipasok ang impormasyon ng iyong dokumento sa pagkakakilanlan.",
+    "dataIncludesNonEnglishCharacters": "Paumanhin, ang card mo ay maaari lang maglaman ng mga character ng Ingles.",
+    "errorPreventContinuing": "Hindi ka makakapagpatuloy hanggang maayos mo ang mga mali sa pahinang ito.",
+    "selectionMissing": "Pakipili",
+    "pleaseEnterValidData": "Pakipasok ng balidong impormasyon",
+    "inputIncludesNonEnglishCharacters": "Pakipasok lang ng mga Ingles na character.",
+    "licenseClassMissing": "Pakipili ng klase ng lisensiya",
+    "needEndorsement": "Pakipili kung kailangan mo ng propesyonal na pag-endorso.",
+    "endorsement": "Pakipili ng pag-endorso.",
+    "cardTypeMissing": "Pakipili kung aling (mga) card ang gusto mo.",
+    "choosePoliticalPartyNowSelectionMissing": "Pakisabi sa amin kung gusto mong pumili ng kagustuhan sa partidong politikal."
+  },
+  "footer": {
+    "accessibility": "Pagkakakatunton",
+    "conditionsOfUser": "Mga kondisyon sa paggamit",
+    "disabilityServices": "Mga serbisyo sa mga may kapansanan",
+    "help": "Tulong",
+    "home": "Home",
+    "privacy": "Polisiya ng Palihim",
+    "siteMap": "Site map",
+    "support": "Suportang Teknikal",
+    "copyright": "Copyright &copy; 2018 Estado ng California"
+  },
+  "header": {
+    "dlApplication": "Aplikasyon ng lisensiya sa pagmamaneho",
+    "idApplication": "Aplikasyon ng ID card",
+    "bothApplications": "Aplikasyon ng pagmamaneho at aplikasyon ng ID",
+    "cdlApplication": "Aplikasyon sa komersyal ng lisensiya sa pagmamaneho",
+    "Logout": "Log out"
+  },
+  "sections": {
+    "getStarted": "Magsimula",
+    "selfCertification": "Pagsertipikang pansarili",
+    "myHistory": "Aking kasaysayan",
+    "tenYearHistory": "Sampung taong kasaysayan",
+    "summary": "Buod",
+    "welcomeBack": "Maligayang pagbabalik"
+  },
+  "ageMessages": {
+    "notASenior": "Hindi kana maaaring kumuha ng libreng Senior ID card.",
+    "preregistration": "Ikaw ay magiging rehistrado para bumoto.",
+    "cdlAgeRestriction": "Ikaw ay dapat 18 taong gulang upang makapag-apply para sa komersyal na lisensiya sa pagmamaneho sa California."
+  },
+  "extras": {
+    "enterTextHere": "Ilagay ang text dito",
+    "notRegisteredToVoteMessage": "Kung pinili ay <em>Hindi</em> o <em>Hindi sasagot</em>, hindi ka magiging rehistrado para bumoto.",
+    "vetranRemoveMessage": "OK, aalisin namin",
+    "yourConfirmationCode": "Ang kumpirmasyong code mo ay:",
+    "confirmationAlsoEmailed": "Ito rin ay i-email sa iyo."
+  },
   "myBasics": {
     "addressesPage": {
       "prompt": "Saan ka nakatira?",
@@ -985,54 +1081,227 @@
       }
     }
   },
-  "myHistory": {
-    "medicalConditionsPage": {
-      "pagePrompt": "Nagkaroon ka ba ng anumang medikal na kundisyon sa nakaraang tatlong taon na nakaapekto sa kakayahan mong magmaneho?",
-      "explanationPrompt": "Pakipaliwanag sa ibaba."
+  "newApproved": {
+    "beforeIntro": {
+      "chooseApplicationPage": {
+        "doINeedCommercial": "Hindi ko alam kung kailangan ko ng isang komersyal na lisensya sa pagmamaneho"
+      }
     },
-    "cardHistoryPage": {
-      "pagePromptLicense": "Nagkaroon ka na ba ng lisensiya sa pagmamaneho o ID card na bigay ng estado?",
-      "pagePromptID": "Nagkaroon ka na ba ng lisensiya sa pagmamanaho sa California o ID card?",
-      "explanation": "Ang lisensiya o ID card ay dapat magmula sa estado ng U.S. o ibang bansa.",
-      "explanationPrompt": "Pakisabi sa amin ang tungkol sa pinakakamakailan mong lisensiya sa pagmamaneho o ID card, kahit na paso na ito.",
-      "numberLabel": "Estado, teritoryo o bansa",
-      "stateOrCountryLabel": "State or country card was issued",
-      "expirationDateLabel": "Petsa ng Pagkapaso"
+    "organDonation": {
+      "monetaryContribution": {
+        "explanation": "Ang iyong donasyon ay tumutulong sa suporta at pagsulong ng donasyon ng organ at tissue."
+      }
     },
-    "nameHistoryPage": {
-      "pagePrompt": "Nakapag-apply ka na ba para sa Lisensiya sa Pagmamaneho o ID card gamit ang ibang pangalan?",
-      "explanationPrompt": "Pakilista lahat ng mga nakaraang legal na pangalan.",
-      "helpText": "<p>Halimbawa, isama ang pangalan mo sa pagkadalaga. </p><p> Na pinaghihiwalay gamit ang mga kuwit.</p>"
+    "myHistory": {
+      "veteransPage": {
+        "newDesignation": {
+          "id": "Gusto mo bang idagdag ang salitang \"Beterano\" sa iyong ID para sa isang $ 5 na bayad?",
+          "license": "Gusto mo bang idagdag ang salitang \"Beterano\" sa iyong Driver License para sa isang $ 5 na bayad?"
+        }
+      }
     },
-    "licenseIssuesPage": {
-      "pagePrompt": "Kailan man ba ay ang iyong pribilehiyo sa pagmamaneho ay nakansela, tinanggihan, nasuspinde o nabawi?",
-      "explanationPrompt": "Kailan ito nangyari?",
-      "helpText": "Halimbawa: 03/21/1967",
-      "reasonLabel": "Ano ang dahilan?"
+    "votingRegistration": {
+      "eligibilityPage": {
+        "preRegEligible": "Ako ay 16 o 17 taong gulang at nais mag-pre-register para bumoto.",
+        "preRegUpToDate": "Susunod na nais naming tiyaking napapanahon ang pre-registration ng iyong botante.",
+        "notSharedWithElectionOfficials": "Ang iyong tugon sa tanong na ito <b> ay hindi </ b> ibabahagi sa mga opisyal ng halalan.",
+        "preRegRequirements": "Kung hindi mo matugunan ang lahat ng mga kinakailangan, hindi ka karapat-dapat na magparehistro upang bumoto."
+      }
     },
-    "veteransPage": {
-      "pagePrompt": "Kailanman ba ay nagserbisyo ka sa Militar ng Estados Unidos?",
-      "explanationStart": "Bilang beterano, maaaring nararapat ka para sa mga benepisyo tulad ng bayad sa kapansanan.",
-      "licensExplanation": "Ang iyong Lisensiya sa Pagmamaneho ay maaari ring magpakita ng salitang \"Veteran\".",
-      "idExplanation": "Ang iyong ID ay maaari ring magpakita ng salitang \"Veteran\".",
-      "cardsExplanation": "Ang iyong mga card ay maaari ring magpakita ng salitang \"Veteran\".",
-      "messageYes": "Salamat sa serbisyo mo.",
-      "benefitsPrompt": "Gusto mo bang makatanggap ng impormasyon sa mga benepisyo kung saan ka nararapat?",
-      "newDesignation": {
-        "prompt": "Gusto mo bang idagdag ang salitang “Veteran” sa iyong {card type} sa bayad na $5?",
-        "explanation": "Maraming organisasyon ay nagbibigay ng mga diskuwento sa mga beterano na may balidong ID.",
-        "messageYes": "OK, ddaragdag namin ang $5 sa kabuuan mong bayarin. Kakailanganin mong kumpletuhin ang Veteran Status Verification Form mula sa Veteran Service Office ng county mo at dalhin ito sa tanggapan sa opisina ng DMV."
+    "intro": {
+      "youthLicense": {
+        "comeBack": "Ok, mangyaring bumalik kapag binuksan mo ang 15.",
+        "underFifteen": {
+          "title": "Dapat kang maging 15 taong gulang upang magsimula ng isang application para sa isang mag-aaral pinahihintulutan.",
+          "explanation": "Sa mga pambihirang kalagayan ng kabataan sa pagitan ng 14 at 15.5 ay maaaring makakuha ng Junior permit. Bisitahin ang isang tanggapan o kumunsulta sa dokumentasyon sa website ng DMV kung sa palagay mo ay maaari kang maging karapat-dapat para sa Junior permit."
+        }
       },
-      "historicDesignationPrompt": "Nagkaroon ka na ba ng salitang \"Veteran\" sa lisensiya o ID card na bigay ng estado?",
-      "existingDesignation": {
-        "promptLicense": "Ang \"Veteran\" ba ay naka-print sa iyong Lisensiya sa Pagmamaneho?",
-        "promptID": "Ang \"Veteran\" ba ay naka-print sa iyong ID?",
-        "promptCards": "Ang \"Veteran\" ba ay naka-print sa iyong mga card?"
+      "realID": {
+        "whichCard": "Aling card ang gusto mong lumipad?",
+        "explanation": "Alinman ang lisensya mo o ang iyong ID card ay maaaring gawing pederal na sumusunod upang lumipad sa loob ng Estados Unidos, ngunit hindi pareho."
       },
-      "keepDesignationPrompt": {
-        "id": "Gusto mo bang manatili ang \"Veteran\" sa iyong ID?",
-        "cards": "Gusto mo bang manatili ang \"Veteran\" sa iyong mga card?",
-        "license": "Gusto mo bang manatili ang \"Veteran\" sa iyong Lisensiya sa Pagmamaneho?"
+      "wdywtdtPage": {
+        "addDL": {
+          "values": [
+            "Kumuha ng lisensya sa pagmamaneho sa unang pagkakataon",
+            "I-renew ang iyong lisensya sa pagmamaneho",
+            "Tama o i-update ang iyong lisensya sa pagmamaneho",
+            "Palitan ang iyong lisensya sa pagmamaneho"
+          ]
+        },
+        "addID": {
+          "values": [
+            "Kumuha ng ID card sa unang pagkakataon",
+            "I-renew ang iyong ID card",
+            "Tama o i-update ang iyong ID card",
+            "Palitan ang iyong ID card"
+          ]
+        }
+      }
+    },
+    "cdl": {
+      "alerts": {
+        "idAlert": "Karapat-dapat kang kumpletuhin ang iyong ID application sa opisina ngayon.",
+        "dlAlert": "Kung pupunta ka sa tanggapan ng DMV upang tapusin ang aplikasyon ng lisensya bago ka 15.5 taong gulang, maaari ka lamang makakuha ng Junior permit. Ang mga permit na ito ay ibinibigay lamang sa mga natatanging pagkakataon."
+      },
+      "myHistory": {
+        "veteran": {
+          "veteranOnCDL": "Ang \"Beterano\" ay nakalimbag sa iyong komersyal na lisensya sa pagmamaneho?",
+          "keepVeteran": "Gusto mo bang panatilihin ang \"Beterano\" sa iyong CDL",
+          "addVeteran": "Gusto mo bang idagdag ang salitang \"Beterano\" sa iyong CDL para sa isang $ 5 na bayad?",
+          "militaryWaiver": {
+            "prompt": "Maghanap ka ba ng isang karanasan sa pagmamaneho ng militar na CDL waiver?",
+            "explanation": "Dapat ay nagsilbi ka sa loob ng nakaraang taon."
+          }
+        },
+        "nameHistory": {
+          "prompt": "Nakapaskil na ba kayo para sa isang CDL ng California, lisensya sa pagmamaneho, o ID card sa ilalim ng ibang pangalan?"
+        },
+        "medicalHistory": {
+          "explanation": "Ang mga sumusunod na kondisyon na maaaring makaapekto sa iyong kakayahang magpatakbo ng ligtas na sasakyan ay kasama ang, ngunit hindi limitado sa:",
+          "medicalConditions": "Sa loob ng huling tatlong taon, mayroon ka bang nakaranas o nakaranas ng anumang kondisyong medikal na maaaring makaapekto sa iyong kakayahang ligtas na magpatakbo ng isang sasakyang de-motor?",
+          "values": [
+            "Pagkawala ng kamalayan",
+            "Episode ng minarkahang kalituhan na dulot ng anumang kalagayan na maaaring magdulot ng mga nauulit na lapses",
+            "Sakit, disorder, o kapansanan (mga halimbawa ng mga ito ay epilepsy, diabetes, stroke, katarata, sakit sa Parkinson)",
+            "Ang pagbabago o pagbaba ng paningin dahil sa cataract, macular degeneration, diabetes retinopathy, glaucoma, retinitis pigmentosa, o iba pang progresibong kondisyon.",
+            "Alcohol, pang-aabuso sa droga, o mga kaugnay na problema sa kalusugan."
+          ],
+          "prompt": "Mangyaring suriin ang impormasyon sa ibaba, at pagkatapos ay sagutin ang tanong sa dulo ng pahinang ito."
+        }
+      },
+      "selfCertification": {
+        "values": {
+          "interstate": "Interstate driving non-excepted",
+          "intrastate": "Intrastate driving non-excepted"
+        },
+        "legalAgreement": {
+          "agreement": "<b> Pinatutunayan ko </ b> (o ipinapahayag) sa ilalim ng parusa ng perjury sa ilalim ng mga batas ng Estado ng California na ang sasakyang de-motor na ginagamit ko upang kunin ang pagsusulit sa mga kasanayan sa pagmamaneho ay kinatawan ng uri ng sasakyang de-motor na inaasahan ko gumana. Pinatutunayan ko pa rin na hindi ako napapailalim sa isang diskuwalipikasyon, suspensyon, pagpapawalang bisa, o pagkansela na nakasulat sa Titulo 49 ng Mga Pederal na Regulasyon, Bahagi 383.51, at wala akong lisensya sa pagmamaneho mula sa higit sa isang estado o hurisdiksyon.",
+          "title": "Sa pamamagitan ng pagpapatuloy sa application sumasang-ayon ka sa ibaba:"
+        },
+        "prompt": "Anong uri ng pagmamaneho ang kailangan mong gawin?",
+        "notSure": {
+          "title": "Hindi ako sigurado kung ano ang naaangkop sa akin",
+          "intrastate": {
+            "explanation": "Ang ibig sabihin ng kalakalan, trapiko, o transportasyon sa anumang estado na hindi inilarawan sa terminong \"interstate commerce.\"",
+            "title": "Intrastate Commerce"
+          },
+          "expected": {
+            "explanation": "Ang ilang mga estado ay nag-isyu ng komersyal na lisensya sa pagmamaneho na ang <b> <em> hindi </ em> </ b> ay nangangailangan ng mga driver upang matugunan ang mga kwalipikasyon na nakabalangkas sa CFR, Titulo 49 §391. Ang mga drayber ay itinuturing na \"maliban\" sa mga drayber. Hindi ibinibigay ng California ang ganitong uri ng lisensya. Ang lahat ng mga driver na lisensyado ng California upang magmaneho ng mga komersyal na sasakyan ay driver ng <em> hindi nakakaliban </ em>.",
+            "title": "<b> Mga Inaasahang & Hindi Inaasahang Paglilisensya </ b>"
+          },
+          "interstate": {
+            "title": "Interstate Commerce",
+            "values": [
+              "Sa pagitan ng isang lugar sa isang Estado at isang lugar sa labas ng naturang Estado (kabilang ang isang lugar sa labas ng U.S.)",
+              "Sa pagitan ng dalawang lugar sa estado sa pamamagitan ng isa pang Estado o isang lugar sa labas ng A.S.",
+              "Sa pagitan ng dalawang lugar sa estado bilang bahagi ng kalakalan, trapiko, o transportasyon na nagmula o nagwawakas sa labas ng Estado o sa A"
+            ],
+            "explanation": "Ang ibig sabihin ng kalakalan, trapiko, o transportasyon sa U.S. na:"
+          }
+        }
+      }
+    }
+  },
+  "newExtracted": {
+    "parentGuardianSignaturePage": {
+      "parentSign": "Magagamit ba ang iyong magulang / tagapag-alaga upang lagdaan ang iyong aplikasyon?"
+    },
+    "errorMessage": {
+      "somethingWrong": "pasensya, mayroong kamalian"
+    },
+    "confirmation": {
+      "title": "Ano ang nangyayari sa aking impormasyon sa pagpaparehistro ng botante",
+      "information": "Ipaproseso ang pagpaparehistro ng botante kapag natapos mo ang iyong aplikasyon sa DMV.",
+      "checkStatus": "<b> Suriin ang katayuan </ b>"
+    },
+    "intro": {
+      "getStartedPage": {
+        "update": "Ipasok ang iyong pag-update sa ibaba",
+        "correction": "Ipasok ang iyong pagwawasto sa ibaba",
+        "idMe": {
+          "or": "o",
+          "account": "account",
+          "create": "Lumikha ng isang",
+          "prompt": "Ang DMV ay nakikipagsosyo sa ID.me upang protektahan ang iyong pagkakakilanlan ng digital.",
+          "signIn": "Mag-sign in gamit ang isang"
+        },
+        "whatYouAreDoing": {
+          "replaceNoFeeID": "Pinapalitan mo ang ID card na walang bayad",
+          "applyNoFeeID": "Nag-aaplay ka para sa isang ID card na walang bayad"
+        },
+        "disclaimers": {
+          "agree": "Sumasang-ayon ako sa mga tuntunin",
+          "review": "Mangyaring maglaan ng ilang sandali upang repasuhin ang mga sumusunod na disclaimer:"
+        }
+      }
+    },
+    "appointmentPrep": {
+      "goToDMV": "Kailangan mo na ngayong pumunta sa DMV!",
+      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Gumawa ng appointment upang makatipid ng oras. </a>",
+      "confirmationCode": "Ito ang iyong confirmation code:",
+      "show": "Ipakita ito sa isang empleyado ng DMV. I-email din namin ang code na ito sa iyo.",
+      "details": "Para sa mga detalye tungkol sa kung ano ang kailangan mong gawin upang makumpleto ang iyong application, bisitahin ang website ng DMV.",
+      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Dalhin ang iyong mga kinakailangang dokumento. </a>"
+    },
+    "conclusion": {
+      "notAvailable": "Hindi magagamit",
+      "summary": {
+        "buttons": {
+          "add": "Magdagdag"
+        },
+        "cdlMotorcycle": "Motorsiklo sa CDL",
+        "licenseClass": "Lisensya klase",
+        "certificates": "(Mga) Certificate",
+        "tenYearHistory": "Kumpletuhin ang Kasaysayan ng Sampung Taon",
+        "shouldContact": "Dapat Makipag-ugnay",
+        "realIDCompliant": "Sumusunod sa Real-ID",
+        "noInfo": "Wala pang impormasyon ang naipasok",
+        "cdlMilitaryDrivingWaiver": "Ang karanasan sa pagmamaneho ng militar na CDI waiver",
+        "veteranOnCDL": "\"Beterano\" na nakalimbag sa CDL",
+        "endorsements": "Mga Pagtitipid (s)"
+      },
+      "documents": {
+        "medicalDocuments": {
+          "explanation": "Kung mayroon kang medikal na kondisyon o kapansanan, maaaring kailanganin ka ng DMV na kumuha ng isang pagsubok sa pagmamaneho. Maaari ka ring magbigay ng isang pahayag mula sa iyong manggagamot hinggil sa iyong kasalukuyang kalagayan sa kalusugan.",
+          "title": "Medikal na impormasyon"
+        },
+        "realIdDocuments": {
+          "title": "Petsa ng kapanganakan ng tunay na ID, patunay ng pangalan at legal na presensya",
+          "explanation": "Kailangan naming i-verify ang iyong petsa ng kapanganakan at kung ano ang tinatawag naming iyong \"legal na presensya\". Dapat gamitin ng mga dokumento ang iyong tunay na buong pangalan na ginagamit mo ngayon o kakailanganin namin ang mga karagdagang dokumento na nagpapatunay na ang iyong tunay na buong pangalan ay kinakailangan. Tingnan ang aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid'> pahina ng impormasyon ng Real ID </a> para sa mga detalye sa katanggap-tanggap na petsa ng kapanganakan at legal ang mga dokumento ng presensya na kinakailangan upang makatanggap ng isang kard na may katugma sa Real ID."
+        },
+        "socialSecurity": {
+          "title": "Katunayan ng Numero ng Social Security",
+          "explanation": "<p> Sa ilalim ng batas ng California, kakailanganin namin ang patunay ng iyong Social Security Number. Ang aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08'> naglilista ng mga pahina ng mga dokumento ng Social Security ang mga dokumentong tinatanggap </a>. </ p> <p> Kung binago mo kamakailan ang iyong pangalan, tiyakin na ang pagbabago ay makikita sa dokumento na iyong dinadala. </ p>"
+        },
+        "veteran": {
+          "title": "Patunay ng serbisyo ng mga beterano",
+          "explanation": "Upang makakuha ng \"Beterano\" sa iyong card, kailangan mong magdala ng isang <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> Form ng Verification Status ng Beterano </a> na maaaring ibigay sa iyo ng Office Veteran Service Office. Nagpapasalamat kami sa iyo para sa iyong serbisyo!"
+        },
+        "requiredDocuments": {
+          "title": "Mula sa listang iyon kakailanganin namin ang alinman sa:",
+          "values": [
+            "Ang isang dokumento na nagpapatunay sa iyong petsa ng kapanganakan at legal na presensya.",
+            "O isang dokumento para sa iyong petsa ng kapanganakan at isang dokumento para sa iyong legal na presensya."
+          ],
+          "proof": "Kung ikaw ay kasal o diborsiyado, pinagtibay o binago ang iyong pangalan sa pamamagitan ng mga korte, siguraduhing dalhin din ang <a target = \"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pub / polyeto / fast_facts / ffdl05 # true '> patunay ng tunay, buong pangalan </a>.",
+          "legalPresence": {
+            "title": "Legal na presensya",
+            "explanation": "Kailangan ng lahat ng aplikante na patunayan ang kanilang petsa ng kapanganakan. Maliban kung ikaw ay AB 60, kailangan mong patunayan ang legal na presensya. Mangyaring sumangguni sa aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 checklist tool </a> at ang aming <isang target = \"_ Blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> petsa ng kapanganakan at legal na listahan ng presensya </a>."
+          }
+        }
+      }
+    },
+    "votingRegistration": {
+      "contactMethods": {
+        "optional": "Ito ay opsyonal"
+      },
+      "ballotByMail": {
+        "inPerson": "Ok, bumoto ka nang personal sa iyong lugar ng botohan.",
+        "mail": "Ok, ang iyong balota ay darating na ngayon sa pamamagitan ng koreo. Maaari ka pa ring bumoto sa tao sa iyong lugar ng botohan."
+      },
+      "chooseParty": {
+        "otherPlaceholder": "Pakipasok ang iyong pinili"
       }
     }
   },
