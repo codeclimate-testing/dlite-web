@@ -16,7 +16,7 @@ describe('check auth controller', () => {
         assert.equal(err.message, 'not logged in');
       },
       status: function(responseStatus) {
-          assert.equal(responseStatus, 500);
+          assert.equal(responseStatus, 401);
           // This next line makes it chainable
           return this;
       }
@@ -33,14 +33,12 @@ describe('check auth controller', () => {
   });
 
   it('returns next if user has an uuid', function() {
-    process.env.APP_ENV = 'production';
     req.session.user.uuid = '101';
     controller(req, res, next, 'production');
     assert.ok(next.called);
   });
 
   it('sends error if user does not have session user', function() {
-    process.env.APP_ENV = 'production';
     req.session = {};
     controller(req, res, next, 'production');
     assert.ok(!next.called);

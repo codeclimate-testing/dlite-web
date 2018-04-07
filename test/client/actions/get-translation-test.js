@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 import assert                   from 'assert';
 import { spy }                  from 'sinon';
 import getTranslation           from '../../../client/actions/get-translation';

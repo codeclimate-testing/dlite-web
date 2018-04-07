@@ -91,6 +91,4 @@ describe('Get User Apps controller', () => {
     .catch(done);
   });
 
-  it('returns error ')
-
 });

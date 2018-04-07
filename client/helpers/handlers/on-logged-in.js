@@ -22,7 +22,7 @@ export default (dispatch) => {
   return (uuid, history) => {
 
     let cookieLanguage = getLanguageFromCookie();
-    dispatch(updateLanguage('language', cookieLanguage))
+    dispatch(updateLanguage('language', cookieLanguage));
     if (!doNotNeedToLoadTranslations(cookieLanguage)) {
       dispatch(getTranslation(cookieLanguage));
     }
@@ -31,21 +31,7 @@ export default (dispatch) => {
 
     dispatch(getUserData(uuid))
       .then((res) => {
-        console.log('client got response from server');
 
-        let userData = res;
-        if(res === 'user-fail') {
-          userData = {
-            appsLength: 0,
-            userID: uuid,
-            apps: [{
-              name: '',
-              cardType: [],
-              cardAction: []
-            }]
-          }
-        };
-        // get appName that was either saved on idme page (dev) or on server after successful login (prod)
         let appName = getAppNameCookie();
         dispatch(chooseApp(appName));
         dispatch(updateLoggedIn(true));
@@ -53,14 +39,14 @@ export default (dispatch) => {
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
           flow: '',
-          userData
+          userData: res
         });
         return history.push(pathURL);
       })
       .catch((err) => {
         console.log('ERROR')
         console.log(err);
-        //return history.push(signInURL());
+        return history.push(signInURL());
       });
   }
 };

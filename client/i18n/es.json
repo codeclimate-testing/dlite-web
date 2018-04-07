@@ -502,174 +502,6 @@
   "confirmationCDL": {
     "commercialLearnersPermit": "Al pasar los exámenes de conocimiento y cumplir con todos los demás requisitos, se le emitirá un permiso de aprendiz de manejo comercial (CLP). Hay un periodo de espera obligatorio de 14 días entre la fecha de emisión de su permiso CLP y cuando calificará para recibir una licencia de manejar comercial temporal."
   },
-  "disclaimers": {
-    "medical": {
-      "title": "Información médica",
-      "body": "Las siguientes condiciones que podrían afectar su capacidad de operar un vehículo motorizado con seguridad incluyen, pero no se limitan a: pérdida de conciencia; episodio evidente de confusión causado por cualquier condición que pudiera provocar fallos de memoria recurrentes; enfermedad, trastorno o discapacidad (como epilepsia, diabetes, derrame cerebral, cataratas, enfermedad de Parkinson); pérdida o cambios de visión debido a cataratas, degeneración macular,  retinopatía diabética, glaucoma, retinitis pigmentosa u otra condición progresiva; problemas de la salud por abuso de alcohol o drogas."
-    },
-    "veteran": {
-      "title": "Declaración de veterano",
-      "body": "Al seleccionar la casilla de veterano en esta solicitud, certifico que soy veterano de las Fuerzas Armadas de los Estados Unidos y que deseo recibir información sobre los beneficios que ofrece el Departamento de Asuntos de los Veteranos de California (CalVet). Al seleccionar la casilla de veterano en esta solicitud, también le doy consentimiento al DMV de transmitir mi nombre y dirección postal a CalVet solo con estos fines y certifico que se me ha informado que esto sucederá."
-    },
-    "organDonation": {
-      "title": "Declaración de donación de órganos",
-      "body": "Si seleccionó ‘Sí’ para registrarse como donante de órganos y tejidos, da autorización legal para la recuperación de órganos y tejidos en caso de su muerte. Su tratamiento médico no se verá afectado de ninguna manera al registrarse como donante. Como se plantea en la ley de donaciones de órganos y tejidos (California Anatomical Gift Act), su autorización es legalmente obligatoria y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. El tutor legal deberá tomar la decisión final sobre la donación cuando el donante registrado sea menor de 18 años. Puede limitar su donación a órganos o tejidos específicos, restringir el uso (por ejemplo para trasplante o investigación), obtener más información sobre donaciones o darse de baja del registro en el sitio de Internet de Done Vida California en www.doneVIDAcalifornia.org. Al registrarse como donante de órganos da su consentimiento para permitirle al DMV que le transmita electrónicamente a Done Vida California su nombre verdadero y completo, dirección residencial o postal, año de nacimiento y número de licencia de manejar o tarjeta de identidad de California. Al firmar este formulario, usted autoriza este proceso y da fe que se le ha notificado que esta transferencia tomará lugar."
-    },
-    "voterRegistration": {
-      "title": "Inscripción electoral",
-      "bodyBullets": [
-        "Si el proporcionar su dirección podría poner en peligro su vida, puede calificar para inscribirse para votar de manera confidencial. Para obtener más información llame al programa Seguro en su casa al (877) 322-5227 o visite <a href='www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
-        "Solo para ciudadanos estadounidenses. Si indica que califica para votar, el DMV le enviará toda su información de inscripción electoral que se obtenga en este formulario, incluyendo su firma digital, a la Secretaría de Estado. La oficina donde se inscriba permanecerá confidencial y se usará solo con fines de inscripción electoral.",
-        "Si califica para votar, pero no se inscribe, su decisión será confidencial; sin embargo, esta información se le enviará a la Secretaría de Estado para usarse solo con fines de invitación e inscripción electoral.",
-        "La información de la inscripción de votante que se proporcione en esta solicitud es confidencial. El DMV no determina si califica para votar.",
-        "Si no ha recibido información sobre la inscripción electoral a 30 días de haberse inscrito, comuníquese con el funcionario electoral de su condado (County Elections Official) o con la Secretaría de Estado.",
-        "Visite <a href='voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov/</a> para obtener más información sobre su inscripción de votante o <a href='www.sos.ca.gov'>www.sos.ca.gov</a> para obtener información general."
-      ]
-    },
-    "criminalProsecution": {
-      "title": "Acción penal",
-      "bodyBullets": [
-        "Si presenta información fraudulenta, el DMV puede iniciar una acción penal en su contra.",
-        "Cualquier persona que use documentos falsos para encubrir su verdadero estatus de ciudadanía o residente extranjero se considerará culpable de cometer un delito mayor de acuerdo a la §114 del código penal (California Penal Code)."
-      ]
-    },
-    "financialResponsibility": {
-      "title": "Responsabilidad financiera",
-      "bodyBullets": [
-        "Todos los vehículos que se operen o se estacionen en las vías públicas de California deben tener responsabilidad financiera (comúnmente conocida como seguro). Debe llevar comprobante de responsabilidad financiera en su vehículo en todo momento y debe proporcionarlo cuando: las autoridades policiales lo requieran, se renueva la matrícula de vehículos, el vehículo se vea involucrado en un choque de tránsito.",
-        "Si no puede pagar el seguro de responsabilidad civil, quizá califique para el Programa de Seguro de Auto de Bajo Costo de California. Para obtener más información visite <a href='www.mylowcostauto.com'>www.mylowcostauto.com</a> o llame al (866) 602-8861."
-      ]
-    },
-    "paymentRefunds": {
-      "title": "Pagos/Reembolsos",
-      "bodyBullets": [
-        "Visite <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> para revisar los métodos de pago en las oficinas del DMV. Si va a mandar su solicitud de renovación por correo, debe pagarse con cheque. (Los cheques deben hacerse pagaderos a DMV).",
-        "Una vez que se entregue la solicitud y pague, no se hará un reembolso."
-      ]
-    },
-    "privacy": {
-      "title": "Aviso de privacidad",
-      "bodyBullets": [
-        "El DMV usa la información de este formulario para determinar su elegibilidad para solicitar una licencia de manejar o tarjeta de identidad y para aplicar las leyes pertinentes a la licencia de manejar.",
-        "La información proporcionada al DMV en este formulario se recolecta y está sujeta a las limitaciones de la ley sobre prácticas de información del código civil (Information Practices Act, Civil Code 1798 et seq.), la ley de protección a la privacidad del conductor (Driver’s Privacy Protection Act, 18 U.S.C. 2721-2725), el código de vehículos (California Vehicle Code, CVC) y demás leyes y regulaciones aplicables tanto estatales como federales.",
-        "El DMV verificará con otras agencias gubernamentales la información y los documentos que usted provea.",
-        "Toda la información en este formulario es obligatoria, a menos que se indique lo contrario. El DMV puede rechazar su solicitud si no provee la información requerida; no hacerlo es causa suficiente para negarle la emisión de la licencia de manejar o tarjeta de identidad, o en algunos casos, se cancelará o perderá su privilegio de manejar.",
-        "El DMV comparte su información con otras agencias gubernamentales, autoridades policiales y entidades comerciales según lo autoriza la ley. Puede obtener una copia de su expediente en <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> o en cualquier oficina del DMV durante el horario normal de oficina. Para obtener asistencia para acceder su expediente, llame al (800) 777-0133 o haga una cita para acudir a una oficina del DMV en el horario de atención al público. Para obtener asistencia para corregir su expediente, comuníquese con la unidad de acciones obligatorias del DMV (Licensing Operations Division Mandatory Actions Unit) al (916) 657-6525.",
-        "Las preguntas relacionadas a su licencia de manejar o tarjeta de identidad deben enviarse a: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
-        "Para obtener mayor información sobre secciones específicas del código CVC o cómo el DMV comparte su información, visite <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a>. También puede pedir una copia del folleto “Datos básicos: Cómo se comparte su información personal” (FFDMV 17) en cualquier oficina del DMV.",
-        "La política de privacidad del DMV se encuentra en <a href='www.dmv.ca.gov'>www.dmv.ca.gov</a> bajo el nombre ‘Política de privacidad’ al final de la página.",
-        "Las preguntas sobre este aviso deben enviarse a: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
-      ]
-    },
-    "certifications": {
-      "title": "Certificaciones",
-      "bodyBullets": [
-        "Acepto someterme a un análisis de sangre, aliento u orina con el propósito de determinar el contenido de alcohol o drogas en mi sangre cuando un policía lo solicite en conformidad con la §23612 del código de vehículos (California Vehicle Code, CVC).",
-        "Por la presente, se me notifica que la capacidad de operar con seguridad un vehículo motorizado se deteriora al estar bajo los efectos del alcohol o drogas, o ambos. Por lo tanto, es extremadamente peligroso para la vida humana manejar bajo los efectos del alcohol o drogas o ambos. Si manejo bajo los efectos del alcohol o drogas, o ambos, y como resultado una persona muere, se me puede acusar de homicidio.",
-        "Al firmar esta solicitud, certifico que se me ha notificado que si soy menor de 21 años de edad, no puedo manejar legalmente con una concentración de alcohol en la sangre (BAC) de 0.01% o más. Mi privilegio de manejar se suspenderá por un año si manejo con una concentración BAC de 0.01% o más, o si me niego a someterme a un análisis de contenido de alcohol o drogas o no lo completo.",
-        "Al firmar esta solicitud, certifico que se me ha notificado que si actualmente estoy en libertad condicional por orden de la corte, por un delito de manejar bajo los efectos del alcohol y/o drogas, no puedo manejar legalmente con una concentración BAC de 0.01% o más. Manejar con una concentración BAC de 0.01% o más resultará en la suspensión de mi privilegio de manejar por un año. Mi privilegio de manejar se suspenderá o revocará de dos a tres años si me niego a someterme a un análisis de contenido de alcohol o drogas o no lo completo.",
-        "Yo soy la persona cuyo nombre aparece en el frente de este formulario. La dirección postal proveída es válida, existe y es correcta. Doy consentimiento para recibir notificaciones judiciales en esta dirección postal conforme a las §§415.20(b), 415.30(a) y 416.90 del código de procedimiento civil (California Code of Civil Procedure).",
-        "Entiendo que el DMV puede añadir a mi expediente de conductor las condenas de tránsito que reporten otros estados o jurisdicciones, lo cual puede resultar en sanciones contra mi privilegio de manejar en California.",
-        "Al firmar este formulario, doy fe que mi presencia en los Estados Unidos está autorizada conforme a las leyes federales, excepto como se especifica en la §12801 CVC.",
-        "Entiendo que no puedo tener más de una licencia de manejar en mi poder o bajo mi control, según la §12511 del código CVC.",
-        "Al firmar esta solicitud, certifico que entiendo las señales y señalizaciones viales según la §12800(h) CVC."
-      ]
-    }
-  },
-  "errorMessages": {
-    "lastNameMissing": "Ingrese su apellido.",
-    "dateOfBirthMissing": "Ingrese su fecha de nacimiento.",
-    "applicationActionMissing": "Seleccione lo que quiere hacer.",
-    "realIdSelectionMissing": "Seleccione si quiere una tarjeta Real ID.",
-    "realIdCardSelectionMissing": "Seleccione qué tarjeta quiere que sea Real ID.",
-    "licenceClassMissing": "Seleccione qué vehículo necesita manejar.",
-    "cardNumberMissing": "Ingrese un número de licencia de manejar o tarjeta de identidad válido.",
-    "streetAddressMissing": "Ingrese la calle en que vive.",
-    "cityMissing": "Ingrese la ciudad en que vive.",
-    "mailingAddressMissing": "Indique dónde recibe correo.",
-    "sexSelectionMissing": "Seleccione su sexo.",
-    "hairColorMissing": "Seleccione su color de cabello.",
-    "eyeColorMissing": "Seleccione su color de ojos.",
-    "heightMissing": "Ingrese su estatura.",
-    "weightMissing": "Ingrese su peso.",
-    "socialSecurityAvailabilityMissing": "Díganos si tiene un Número de Seguro Social.",
-    "socialSecurityNumberMissing": "Ingrese su Número de Seguro Social.",
-    "socialSecurityNumberInvalid": "Ingrese un Número de Seguro Social válido.",
-    "medicalHistorySelectionMissing": "Díganos si tiene alguna condición médica.",
-    "licenceHistorySelectionMissing": "Díganos si ha tenido una licencia de manejar o tarjeta de identidad.",
-    "expirationDateInvalid": "Ingrese una fecha de vencimiento válida.",
-    "nameHistorySelectionMissing": "Díganos si ha tenido una licencia de manejar o tarjeta de identidad bajo otro nombre.",
-    "licenseIssueSelectionMissing": "Díganos por qué se canceló, suspendió o revocó su privilegio de manejar.",
-    "licenseIssueDateMissing": "Díganos cuándo sucedió.",
-    "veteranSelectionMissing": "Seleccione si ha hecho el servicio militar en EE.UU.",
-    "veteranBenefitSelectionMissing": "Díganos si desea obtener información sobre los beneficios para veteranos.",
-    "veteranDesignationExistsMissing": "Díganos si la distinción \"Veteran\" se ha añadido a una tarjeta de identidad o licencia de manejar anteriormente.",
-    "veteranDesignationExistsMissing2": "Díganos si la distinción \"Veteran\" aparece en su tarjeta.",
-    "keepVeteranDesignationSelectionMissing": "Díganos si desea dejar la distinción \"Veteran\" en su tarjeta.",
-    "wantVeteransDesignationSelectionMissing": "Díganos si desea la distinción \"Veteran\" en su tarjeta.",
-    "organDonationSelectionMissing": "Díganos si desea ser donante de órganos.",
-    "moneyOrganDonationSelectionMissing": "Díganos si desea hacer una donación.",
-    "citizenshipSelectionMissing": "Seleccione si es ciudadano estadounidense.",
-    "votingEligibilitySelectionMissing": "Seleccione si cumple con los requisitos de elegibilidad.",
-    "wantToPreregisterSelectionMissing": "Díganos si le gustaría inscribirse para votar.",
-    "politicalPartySelectionMissing": "Seleccione un partido político.",
-    "ballotLanguageSelectionMissing": "Seleccione un idioma.",
-    "ballotByMailSelectionMissing": "Díganos si desea recibir su boleta por correo.",
-    "emailAddressMissingOrInvalid": "Ingrese un correo electrónico válido.",
-    "phoneMissingOrInvalid": "Ingrese un número telefónico válido.",
-    "liabilityAcceptanceMissing": "Seleccione la casilla para aceptar responsabilidad civil.",
-    "parentNameMissing": "Ingrese su nombre.",
-    "invalidOrMissingDate": "Ingrese una fecha válida.",
-    "identityDocumentationMissing": "Ingrese la información de su documento de identidad.",
-    "dataIncludesNonEnglishCharacters": "Lo sentimos, su tarjeta solo puede incluir caracteres en inglés.",
-    "errorPreventContinuing": "No puede continuar hasta que arregle los errores en esta página.",
-    "selectionMissing": "Seleccione una opción",
-    "pleaseEnterValidData": "Ingrese información válida",
-    "inputIncludesNonEnglishCharacters": "Ingrese solo caracteres en inglés.",
-    "licenseClassMissing": "Seleccione una clase de licencia",
-    "needEndorsement": "Seleccione si necesita un endoso profesional",
-    "endorsement": "Seleccione un endoso",
-    "cardTypeMissing": "Seleccione la tarjeta que desea.",
-    "choosePoliticalPartyNowSelectionMissing": "Díganos si desea elegir una preferencia de partido político."
-  },
-  "footer": {
-    "accessibility": "Accesibilidad",
-    "conditionsOfUser": "Condiciones de uso",
-    "disabilityServices": "Servicios para personas con discapacidades",
-    "help": "Ayuda",
-    "home": "Página de inicio",
-    "privacy": "Política de privacidad",
-    "siteMap": "Mapa del sitio",
-    "support": "Apoyo técnico",
-    "copyright": "Derechos de autor & copia; 2018 Estado de California"
-  },
-  "header": {
-    "dlApplication": "Solicitud de la licencia de manejar",
-    "idApplication": "Solicitud de la tarjeta de identidad",
-    "bothApplications": "Solicitud de la licencia de manejar y tarjeta de identidad",
-    "cdlApplication": "Solicitud de la licencia de manejar comercial",
-    "Logout": "Cerrar sesión"
-  },
-  "sections": {
-    "getStarted": "Empezar",
-    "selfCertification": "Autocertificación",
-    "myHistory": "Mi historial",
-    "tenYearHistory": "Historial de 10 años",
-    "summary": "Resumen",
-    "welcomeBack": "Bienvenido de nuevo"
-  },
-  "ageMessages": {
-    "notASenior": "No califica para obtener una tarjeta de identificación gratis para personas de la tercera edad.",
-    "preregistration": "Se le pre-inscribirá para votar.",
-    "cdlAgeRestriction": "Debe tener 18 años o más para solicitar una licencia de manejar comercial en California."
-  },
-  "extras": {
-    "enterTextHere": "Ingrese texto aquí",
-    "notRegisteredToVoteMessage": "Si selecciona <em>No</em> o <em>No deseo contestar</em>, no se le inscribirá para votar.",
-    "vetranRemoveMessage": "OK, lo removeremos",
-    "yourConfirmationCode": "Su código de confirmación es:",
-    "confirmationAlsoEmailed": "También se le enviará esto por correo electrónico."
-  },
   "intro": {
     "switchLanguagePage": {
       "prompt": "Seleccione un idioma para usar esta solicitud.",
@@ -910,6 +742,270 @@
       }
     }
   },
+  "myHistory": {
+    "medicalConditionsPage": {
+      "pagePrompt": "¿Se ha visto afectada su capacidad de manejar debido a algún problema de salud en los últimos tres años?",
+      "explanationPrompt": "Explique a continuación."
+    },
+    "cardHistoryPage": {
+      "pagePromptLicense": "¿Ha poseído previamente una licencia de manejar o tarjeta de identidad emitida por algún estado?",
+      "pagePromptID": "¿Ha poseído previamente una licencia de manejar o tarjeta de identidad emitida por California?",
+      "explanation": "La licencia de manejar o tarjeta de identidad debe haber sido emitida en EE.UU. u otro país..",
+      "explanationPrompt": "Díganos acerca de su licencia de manejar o tarjeta de identidad más reciente, aunque esté vencida.",
+      "numberLabel": "Número de licencia de manejar o tarjeta de identidad",
+      "stateOrCountryLabel": "State or country card was issued",
+      "expirationDateLabel": "Fecha de vencimiento"
+    },
+    "nameHistoryPage": {
+      "pagePrompt": "¿Solicitó alguna vez una licencia de manejar o tarjeta de identidad bajo otro nombre?",
+      "explanationPrompt": "Enumere todos los nombres legales anteriores.",
+      "helpText": "<p>Por ejemplo, incluya su nombre de soltera. </p><p> Sepárelos con comas.</p>"
+    },
+    "licenseIssuesPage": {
+      "pagePrompt": "¿Alguna vez se le ha cancelado, negado, suspendido o revocado su privilegio de manejar?",
+      "explanationPrompt": "¿Cuándo ocurrió?",
+      "helpText": "Ejemplo: 03/21/1967",
+      "reasonLabel": "¿Cuál fue el motivo?"
+    },
+    "veteransPage": {
+      "pagePrompt": "¿Ha hecho alguna vez el servicio militar en Estados Unidos?",
+      "explanationStart": "Como veterano, puede calificar para recibir beneficios tal como una indemnización por discapacidad.",
+      "licensExplanation": "Su licencia de manejar también puede mostrar la palabra \"Veteran\".",
+      "idExplanation": "Su tarjeta de identidad también puede mostrar la palabra \"Veteran\".",
+      "cardsExplanation": "Sus tarjetas también puede mostrar la palabra \"Veteran\".",
+      "messageYes": "Gracias por su servicio.",
+      "benefitsPrompt": "¿Desea recibir información sobre los beneficios a los que puede calificar?",
+      "newDesignation": {
+        "prompt": "¿Desea añadir la palabra “Veteran” en su {card type} por un costo de $5?",
+        "explanation": "Muchas organizaciones les dan descuentos a los veteranos que tengan una tarjeta de identificación válida.",
+        "messageYes": "Añadiremos $5 a su total de pago. Necesitará completar el formulario de verificación de su estatus como veterano de la oficina de servicios de veteranos militares de su condado y llevarlo a la oficina del DMV."
+      },
+      "historicDesignationPrompt": "¿Ha tenido alguna vez la palabra \"Veteran\" en su licencia de manejar o tarjeta de identidad de California?",
+      "existingDesignation": {
+        "promptLicense": "¿Está la palabra \"Veteran\" impresa en su licencia de manejar?",
+        "promptID": "¿Está la palabra  \"Veteran\" impresa en su tarjeta de identidad?",
+        "promptCards": "¿Está la palabra  \"Veteran\" impresa en sus tarjetas?"
+      },
+      "keepDesignationPrompt": {
+        "id": "¿Desea conservar la palabra \"Veteran\" en su tarjeta de identidad?",
+        "cards": "¿Desea conservar la palabra \"Veteran\" en sus tarjetas?",
+        "license": "¿Desea conservar la palabra \"Veteran\" en su licencia de manejar?"
+      }
+    }
+  },
+  "disclaimers": {
+    "criminalProsecution": {
+      "title": "Enjuiciamento criminal",
+      "bodyBullets": [
+        "Si envía información fraudulenta, el DMV puede iniciar un proceso penal.",
+        "Cualquier persona que use documentos falsos para ocultar su verdadera ciudadanía o residencia como extranjero es culpable de un delito grave de conformidad con el Código Penal de California §114."
+      ]
+    },
+    "paymentRefunds": {
+      "title": "Pagos / Reembolsos",
+      "bodyBullets": [
+        "Visite <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> para revisar las opciones de pago en su oficina de campo local del DMV. Si está enviando por correo su renovación, el pago debe ser mediante cheque. (Los cheques deben pagarse al DMV).",
+        "Una vez que se hayan enviado este formulario de solicitud y la tarifa, no se realizarán reembolsos."
+      ]
+    },
+    "financialResponsibility": {
+      "title": "Responsabilidad financiera",
+      "bodyBullets": [
+        "Se requiere responsabilidad financiera (comúnmente conocida como seguro) en todos los vehículos operados o estacionados en las carreteras de California. Debe llevar evidencia de responsabilidad financiera en su vehículo en todo momento y debe proporcionarse cuando: lo solicite la policía, la renovación del registro del vehículo, el vehículo esté involucrado en una colisión de tráfico.",
+        "Si no puede pagar un seguro de responsabilidad civil, puede ser elegible para el Programa de seguro de automóvil de bajo costo de California. Hay información adicional disponible en <a target=\"_blank\" href='https://www.mylowcostauto.com'> www.mylowcostauto.com </a> o llamando al (866) 602-8861."
+      ]
+    },
+    "privacy": {
+      "title": "Aviso de Privacidad",
+      "bodyBullets": [
+        "El DMV usa la información en este formulario para determinar su elegibilidad para una licencia de conducir o tarjeta de identificación y para la administración de las leyes de licencia de conducir.",
+        "La información proporcionada al DMV en este formulario se recopila y está sujeta a las limitaciones de la Ley de Prácticas de Información (Código Civil 1798 y siguientes), la Ley de Protección de la Privacidad del Conductor (18 USC 2721-2725), el Código de Vehículos de California (CVC) y otros leyes y regulaciones estatales y federales aplicables.",
+        "Para obtener más información sobre las secciones específicas de CVC, visite <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> y en la parte inferior de la página, haga clic en el enlace \"Política de privacidad\". En la página Política de privacidad, haga clic en Aviso de licencia de conductor en la recopilación.",
+        "DMV verifica la información y documentos que usted proporciona con otras agencias gubernamentales.",
+        "Toda la información en este formulario es obligatoria excepto donde se indique lo contrario. El DMV puede denegar su solicitud por no proporcionar la información requerida. El hecho de no proporcionar la información requerida en este formulario es causa de negativa a emitir una licencia de conducir o tarjeta de identificación, o, en algunos casos, la cancelación o el retiro del privilegio de conducir.",
+        "El DMV comparte su información con otras agencias gubernamentales y entidades comerciales según lo autorice la ley. Para obtener más información sobre el uso compartido de su información, visite <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> y en la parte inferior de la página, haga clic en el enlace \"Política de privacidad\". En la página Política de privacidad, haga clic en Aviso de licencia de conductor en la recopilación o solicite una copia de \"Cómo se comparte su información\" (FFDMV 17) desde cualquier oficina local.",
+        "Puede obtener una copia de su registro en <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> o en cualquier oficina local del DMV durante el horario regular de oficina. Para obtener ayuda con el acceso a su registro, llame al (800) 777-0133 o haga una cita para visitar una oficina local del DMV durante el horario de atención habitual. Para asistencia con las correcciones a su registro, comuníquese con la Unidad de Acciones Obligatorias del DMV al (916) 657-6525.",
+        "Las preguntas con respecto a su Licencia de Conducir o Tarjeta de Identificación deben dirigirse a: Consultas de Licencia de Conducir, Departamento de Vehículos Motorizados, PO Box 942890, Sacramento, CA 94290-0001.",
+        "La Política de privacidad del DMV se encuentra en <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> en el enlace 'Política de privacidad' en la parte inferior. de la página."
+      ]
+    },
+    "certifications": {
+      "title": "Certificaciones",
+      "bodyBullets": [
+        "Acepto someterme a una prueba química de mi sangre, aliento u orina con el fin de determinar el contenido de alcohol o drogas de mi sangre cuando un oficial de paz me solicite una prueba que actúe de acuerdo con el Código de Vehículos de California (CVC) §23612.",
+        "Por la presente, se me informa que estar bajo la influencia del alcohol o las drogas, o ambos, afecta la capacidad de operar con seguridad un vehículo de motor. Por lo tanto, es extremadamente peligroso para la vida humana conducir bajo la influencia del alcohol o las drogas, o ambos. Si manejo bajo la influencia de alcohol o drogas, o ambos, y como resultado, muere una persona, se me puede acusar de homicidio.",
+        "Al firmar esta solicitud, certifico que se me notificó que, si tengo menos de 21 años de edad, legalmente no puedo conducir con una concentración de alcohol en la sangre (BAC) de 0.01% o más. Conducir con un BAC de 0.01% o más, o rehusar tomar, o no completar un análisis de alcohol o prueba de drogas, resulta en una suspensión de un año de mi privilegio de conducir.",
+        "Al firmar esta solicitud, certifico que se me notificó que si actualmente estoy en libertad condicional judicial por conducir bajo la influencia de una ofensa, legalmente no puedo conducir con una concentración de alcohol en sangre (BAC) de 0.01% o más. Conducir con un BAC de 0.01% o más resulta en una suspensión de un año de mi privilegio de conducir. Negarse a tomar, o no completar una evaluación de alcohol o una prueba química resultará en una suspensión / revocación de dos o tres años de mi privilegio de conducir.",
+        "Soy la persona cuyo nombre aparece en el frente de este formulario. La dirección postal que se muestra es válida, existente y precisa. Acepto aceptar el servicio del proceso en esta dirección postal de acuerdo con §§415.20 (b), 415.30 (a) y 416.90 del Código de Procedimiento Civil de California.",
+        "Entiendo que el DMV puede agregar condenas de tráfico reportadas por otros estados o jurisdicciones a mi historial de manejo que pueden resultar en sanciones contra mi privilegio de conducir en California.",
+        "Al firmar este formulario, reconozco que mi presencia en los Estados Unidos está autorizada por la ley federal, a excepción de lo especificado en el CVC §12801.",
+        "Entiendo que es posible que no tenga más de una licencia de conducir en mi posesión o bajo mi control de acuerdo con CVC §12511.",
+        "Al firmar esta solicitud, certifico que entiendo las señales y señales de tráfico de acuerdo con CVC §12800 (h)."
+      ]
+    },
+    "veteran": {
+      "title": "Declaración veterano",
+      "bodyBullets": [
+        "Al marcar la casilla para veteranos en esta solicitud, certifico que soy un veterano de las Fuerzas Armadas de los Estados Unidos y que deseo recibir información sobre beneficios para veteranos del Departamento de Asuntos de Veteranos de California (CalVet). Al marcar la casilla para veteranos en esta solicitud, también doy mi consentimiento para que el DMV transmita mi nombre y mi dirección postal a CalVet solo para este propósito, y certifico que se me ha notificado que se realizará esta transmisión.",
+        "La designación de veterano es una forma de identificar y honrar el servicio de los veteranos de California. Como veterano, puede elegir marcar la cara de su licencia de conducir o tarjeta de identificación (DL / ID) con la palabra \"VETERANO\" para indicar que ha prestado servicios en las Fuerzas Armadas de los Estados Unidos, a un costo de $ 5 por tarjeta, además de a todas las tarifas aplicables. Una vez que se haya agregado la designación de veterano, las futuras tarjetas tendrán la designación y no se requerirá documentación adicional en la renovación."
+      ]
+    },
+    "organDonation": {
+      "title": "Declaración de donación de órganos",
+      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target = \"_ blank\" href = 'https: //www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
+    },
+    "medical": {
+      "body": "Las siguientes condiciones que pueden afectar su capacidad para operar un vehículo de motor de forma segura incluyen, entre otras:",
+      "title": "Información médica",
+      "bodyBullets": [
+        "Pérdida de consciencia; o",
+        "Episodio de marcada confusión causada por cualquier condición que pueda ocasionar lapsos recurrentes; o",
+        "Enfermedad, trastorno o discapacidad (ejemplos de estos son epilepsia, diabetes, accidente cerebrovascular, cataratas, enfermedad de Parkinson); o",
+        "Disminución o cambio en su visión debido a cataratas, degeneración macular, retinopatía diabética, glaucoma, retinitis pigmentosa u otra afección progresiva; o",
+        "Problemas de salud por abuso de alcohol o drogas."
+      ]
+    },
+    "voterRegistration": {
+      "title": "Registro de votantes",
+      "bodyBullets": [
+        "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa Safe at Home al (877) 322-5227 o visite <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'> www.sos.ca .gov / safeathome / </a>.",
+        "Solo para ciudadanos de los EE. UU. Si no ha recibido la información de registro de votante dentro de los 30 días de haberla solicitado, debe comunicarse con el Oficial de Elecciones de su Condado o con el Secretario de Estado de California.",
+        "Al registrarse para votar en el DMV, usted reconoce que el DMV enviará su información de votante y su firma digital al Secretario de Estado de California para completar el proceso de registro de votantes.",
+        "Si no desea registrarse para votar, su decisión será confidencial y se usará solo para fines de inscripción de votantes.",
+        "Si desea registrarse para votar, la oficina donde se inscribió se mantendrá confidencial y se usará solo para fines de inscripción de votantes."
+      ]
+    },
+    "cdl": {
+      "voterRegistration": {
+        "title": "Registro de votantes",
+        "bodyBullets": [
+          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target = \"_ blank\" href = 'http: //www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
+          "<b> Solo para ciudadanos de EE. UU. </ b>. Si indica que es elegible para votar, el DMV enviará toda la información de inscripción de votantes recopilada en este formulario, incluida su firma digital, al Secretario de Estado de California. La oficina del DMV donde se registró seguirá siendo confidencial y solo se utilizará para el registro de votantes.",
+          "Si es elegible para votar y no quiere registrarse para votar, su decisión será confidencial; sin embargo, esta información se enviará al Secretario de Estado de California para que se use únicamente con fines de divulgación y registro de votantes.",
+          "La información de registro del votante provista en esta aplicación es confidencial. El DMV no hace las determinaciones de elegibilidad del votante.",
+          "Si no ha recibido información de inscripción de votante dentro de las 4 semanas posteriores a la <b> inscripción </ b>, comuníquese con el funcionario electoral de su condado o con el Secretario de Estado de California.",
+          "Visite voterstatus.sos.ca.gov/ para obtener más información sobre su registro de votante o www.sos.ca.gov para obtener información general."
+        ]
+      },
+      "drivingTypes": {
+        "title": "Tipos de conducción",
+        "body": "<em> El Reglamento Federal de Seguridad del Autotransportista </ ​​em> §383.71 requiere que usted divulgue el tipo de operación comercial en la que está involucrado:",
+        "bodyBullets": [
+          "Interestatal no excluyente: Opera o espera operar un vehículo comercial en el comercio <b> <em> interestatal </ em> </ b> y está sujeto y cumple con los requisitos de calificación bajo 49 CFR parte 391. Haga esta elección si su la licencia no está restringida a intraestad solo. La opción no restringe el transporte, la originación o el destino de la carga que se transportará.",
+          "Intraestable no permitido: funciona solo en el comercio <b> <em> intraestatal </ em> </ b> (solo en California). Haga esta elección si su licencia está restringida a intraestatal solamente. Solo puede transportar carga que se origina y el destino final es en California. Mientras maneja comercialmente, no puede cruzar fronteras estatales o internacionales.",
+          "California no emite una licencia de conducir comercial que está exceptuada de los requisitos de calificación del conductor."
+        ]
+      },
+      "privacy": {
+        "title": "Aviso de Privacidad",
+        "bodyBullets": [
+          "El DMV usa la información en este formulario para determinar su elegibilidad para una licencia de conducir o tarjeta de identificación y para la administración de las leyes de licencia de conducir.",
+          "La información proporcionada al DMV en este formulario se recopila y está sujeta a las limitaciones de la Ley de Prácticas de Información (Código Civil 1798 y siguientes), la Ley de Protección de la Privacidad del Conductor (18 USC 2721-2725), el Código de Vehículos de California (CVC) y otros leyes y regulaciones estatales y federales aplicables.",
+          "DMV verifica la información y documentos que usted proporciona con otras agencias gubernamentales.",
+          "Toda la información en este formulario es obligatoria excepto donde se indique lo contrario. El DMV puede denegar su solicitud por no proporcionar la información requerida. El hecho de no proporcionar la información requerida en este formulario es causa de negativa a emitir una licencia de conducir o tarjeta de identificación, o, en algunos casos, la cancelación o el retiro del privilegio de conducir.",
+          "El DMV comparte su información con otras agencias gubernamentales, agentes de la ley y entidades comerciales según lo autorice la ley. Puede obtener una copia de su registro en <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a> o en cualquier oficina de campo del DMV durante el período regular. horas de oficina. Para obtener ayuda con el acceso a su registro, llame al (800) 777-0133 o haga una cita para visitar una oficina local del DMV durante el horario de atención habitual. Para asistencia con las correcciones a su registro, comuníquese con la División de Operaciones de Licencias del DMV, Unidad de Acciones Obligatorias al (916) 657-6525.",
+          "Las preguntas con respecto a su Licencia de Conducir o Tarjeta de Identificación deben dirigirse a: Consultas de Licencia de Conducir, Departamento de Vehículos Motorizados, PO Box 942890, Sacramento, CA 94290-0001.",
+          "Para obtener más información sobre secciones específicas de CVC o sobre cómo el DMV comparte su información, visite <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a>. También puede solicitar una copia de cómo se comparte su información sobre el DMV (FFDMV 17) Folleto de información rápida de cualquier oficina local.",
+          "La Política de privacidad del DMV se encuentra en <a target=\"_blank\" href='https://www.dmv.ca.gov> www.dmv.ca.gov </a> bajo el enlace \"Política de privacidad\" en la parte inferior de la página.",
+          "Las preguntas con respecto a este aviso deben dirigirse a: Departamento de Vehículos Motorizados, ATTN: Director de Privacidad - MS F127, PO Box 932328, Sacramento, CA 94232-3280."
+        ]
+      }
+    }
+  },
+  "errorMessages": {
+    "lastNameMissing": "Ingrese su apellido.",
+    "dateOfBirthMissing": "Ingrese su fecha de nacimiento.",
+    "applicationActionMissing": "Seleccione lo que quiere hacer.",
+    "realIdSelectionMissing": "Seleccione si quiere una tarjeta Real ID.",
+    "realIdCardSelectionMissing": "Seleccione qué tarjeta quiere que sea Real ID.",
+    "licenceClassMissing": "Seleccione qué vehículo necesita manejar.",
+    "cardNumberMissing": "Ingrese un número de licencia de manejar o tarjeta de identidad válido.",
+    "streetAddressMissing": "Ingrese la calle en que vive.",
+    "cityMissing": "Ingrese la ciudad en que vive.",
+    "mailingAddressMissing": "Indique dónde recibe correo.",
+    "sexSelectionMissing": "Seleccione su sexo.",
+    "hairColorMissing": "Seleccione su color de cabello.",
+    "eyeColorMissing": "Seleccione su color de ojos.",
+    "heightMissing": "Ingrese su estatura.",
+    "weightMissing": "Ingrese su peso.",
+    "socialSecurityAvailabilityMissing": "Díganos si tiene un Número de Seguro Social.",
+    "socialSecurityNumberMissing": "Ingrese su Número de Seguro Social.",
+    "socialSecurityNumberInvalid": "Ingrese un Número de Seguro Social válido.",
+    "medicalHistorySelectionMissing": "Díganos si tiene alguna condición médica.",
+    "licenceHistorySelectionMissing": "Díganos si ha tenido una licencia de manejar o tarjeta de identidad.",
+    "expirationDateInvalid": "Ingrese una fecha de vencimiento válida.",
+    "nameHistorySelectionMissing": "Díganos si ha tenido una licencia de manejar o tarjeta de identidad bajo otro nombre.",
+    "licenseIssueSelectionMissing": "Díganos por qué se canceló, suspendió o revocó su privilegio de manejar.",
+    "licenseIssueDateMissing": "Díganos cuándo sucedió.",
+    "veteranSelectionMissing": "Seleccione si ha hecho el servicio militar en EE.UU.",
+    "veteranBenefitSelectionMissing": "Díganos si desea obtener información sobre los beneficios para veteranos.",
+    "veteranDesignationExistsMissing": "Díganos si la distinción \"Veteran\" se ha añadido a una tarjeta de identidad o licencia de manejar anteriormente.",
+    "veteranDesignationExistsMissing2": "Díganos si la distinción \"Veteran\" aparece en su tarjeta.",
+    "keepVeteranDesignationSelectionMissing": "Díganos si desea dejar la distinción \"Veteran\" en su tarjeta.",
+    "wantVeteransDesignationSelectionMissing": "Díganos si desea la distinción \"Veteran\" en su tarjeta.",
+    "organDonationSelectionMissing": "Díganos si desea ser donante de órganos.",
+    "moneyOrganDonationSelectionMissing": "Díganos si desea hacer una donación.",
+    "citizenshipSelectionMissing": "Seleccione si es ciudadano estadounidense.",
+    "votingEligibilitySelectionMissing": "Seleccione si cumple con los requisitos de elegibilidad.",
+    "wantToPreregisterSelectionMissing": "Díganos si le gustaría inscribirse para votar.",
+    "politicalPartySelectionMissing": "Seleccione un partido político.",
+    "ballotLanguageSelectionMissing": "Seleccione un idioma.",
+    "ballotByMailSelectionMissing": "Díganos si desea recibir su boleta por correo.",
+    "emailAddressMissingOrInvalid": "Ingrese un correo electrónico válido.",
+    "phoneMissingOrInvalid": "Ingrese un número telefónico válido.",
+    "liabilityAcceptanceMissing": "Seleccione la casilla para aceptar responsabilidad civil.",
+    "parentNameMissing": "Ingrese su nombre.",
+    "invalidOrMissingDate": "Ingrese una fecha válida.",
+    "identityDocumentationMissing": "Ingrese la información de su documento de identidad.",
+    "dataIncludesNonEnglishCharacters": "Lo sentimos, su tarjeta solo puede incluir caracteres en inglés.",
+    "errorPreventContinuing": "No puede continuar hasta que arregle los errores en esta página.",
+    "selectionMissing": "Seleccione una opción",
+    "pleaseEnterValidData": "Ingrese información válida",
+    "inputIncludesNonEnglishCharacters": "Ingrese solo caracteres en inglés.",
+    "licenseClassMissing": "Seleccione una clase de licencia",
+    "needEndorsement": "Seleccione si necesita un endoso profesional",
+    "endorsement": "Seleccione un endoso",
+    "cardTypeMissing": "Seleccione la tarjeta que desea.",
+    "choosePoliticalPartyNowSelectionMissing": "Díganos si desea elegir una preferencia de partido político."
+  },
+  "footer": {
+    "accessibility": "Accesibilidad",
+    "conditionsOfUser": "Condiciones de uso",
+    "disabilityServices": "Servicios para personas con discapacidades",
+    "help": "Ayuda",
+    "home": "Página de inicio",
+    "privacy": "Política de privacidad",
+    "siteMap": "Mapa del sitio",
+    "support": "Apoyo técnico",
+    "copyright": "Derechos de autor & copia; 2018 Estado de California"
+  },
+  "header": {
+    "dlApplication": "Solicitud de la licencia de manejar",
+    "idApplication": "Solicitud de la tarjeta de identidad",
+    "bothApplications": "Solicitud de la licencia de manejar y tarjeta de identidad",
+    "cdlApplication": "Solicitud de la licencia de manejar comercial",
+    "Logout": "Cerrar sesión"
+  },
+  "sections": {
+    "getStarted": "Empezar",
+    "selfCertification": "Autocertificación",
+    "myHistory": "Mi historial",
+    "tenYearHistory": "Historial de 10 años",
+    "summary": "Resumen",
+    "welcomeBack": "Bienvenido de nuevo"
+  },
+  "ageMessages": {
+    "notASenior": "No califica para obtener una tarjeta de identificación gratis para personas de la tercera edad.",
+    "preregistration": "Se le pre-inscribirá para votar.",
+    "cdlAgeRestriction": "Debe tener 18 años o más para solicitar una licencia de manejar comercial en California."
+  },
+  "extras": {
+    "enterTextHere": "Ingrese texto aquí",
+    "notRegisteredToVoteMessage": "Si selecciona <em>No</em> o <em>No deseo contestar</em>, no se le inscribirá para votar.",
+    "vetranRemoveMessage": "OK, lo removeremos",
+    "yourConfirmationCode": "Su código de confirmación es:",
+    "confirmationAlsoEmailed": "También se le enviará esto por correo electrónico."
+  },
   "myBasics": {
     "addressesPage": {
       "prompt": "¿Dónde vives?",
@@ -985,55 +1081,228 @@
       }
     }
   },
-  "myHistory": {
-    "medicalConditionsPage": {
-      "pagePrompt": "¿Se ha visto afectada su capacidad de manejar debido a algún problema de salud en los últimos tres años?",
-      "explanationPrompt": "Explique a continuación."
-    },
-    "cardHistoryPage": {
-      "pagePromptLicense": "¿Ha poseído previamente una licencia de manejar o tarjeta de identidad emitida por algún estado?",
-      "pagePromptID": "¿Ha poseído previamente una licencia de manejar o tarjeta de identidad emitida por California?",
-      "explanation": "La licencia de manejar o tarjeta de identidad debe haber sido emitida en EE.UU. u otro país..",
-      "explanationPrompt": "Díganos acerca de su licencia de manejar o tarjeta de identidad más reciente, aunque esté vencida.",
-      "numberLabel": "Número de licencia de manejar o tarjeta de identidad",
-      "stateOrCountryLabel": "State or country card was issued",
-      "expirationDateLabel": "Fecha de vencimiento"
-    },
-    "nameHistoryPage": {
-      "pagePrompt": "¿Solicitó alguna vez una licencia de manejar o tarjeta de identidad bajo otro nombre?",
-      "explanationPrompt": "Enumere todos los nombres legales anteriores.",
-      "helpText": "<p>Por ejemplo, incluya su nombre de soltera. </p><p> Sepárelos con comas.</p>"
-    },
-    "licenseIssuesPage": {
-      "pagePrompt": "¿Alguna vez se le ha cancelado, negado, suspendido o revocado su privilegio de manejar?",
-      "explanationPrompt": "¿Cuándo ocurrió?",
-      "helpText": "Ejemplo: 03/21/1967",
-      "reasonLabel": "¿Cuál fue el motivo?"
-    },
-    "veteransPage": {
-      "pagePrompt": "¿Ha hecho alguna vez el servicio militar en Estados Unidos?",
-      "explanationStart": "Como veterano, puede calificar para recibir beneficios tal como una indemnización por discapacidad.",
-      "licensExplanation": "Su licencia de manejar también puede mostrar la palabra \"Veteran\".",
-      "idExplanation": "Su tarjeta de identidad también puede mostrar la palabra \"Veteran\".",
-      "cardsExplanation": "Sus tarjetas también puede mostrar la palabra \"Veteran\".",
-      "messageYes": "Gracias por su servicio.",
-      "benefitsPrompt": "¿Desea recibir información sobre los beneficios a los que puede calificar?",
-      "newDesignation": {
-        "prompt": "¿Desea añadir la palabra “Veteran” en su {card type} por un costo de $5?",
-        "explanation": "Muchas organizaciones les dan descuentos a los veteranos que tengan una tarjeta de identificación válida.",
-        "messageYes": "Añadiremos $5 a su total de pago. Necesitará completar el formulario de verificación de su estatus como veterano de la oficina de servicios de veteranos militares de su condado y llevarlo a la oficina del DMV."
-      },
-      "historicDesignationPrompt": "¿Ha tenido alguna vez la palabra \"Veteran\" en su licencia de manejar o tarjeta de identidad de California?",
-      "existingDesignation": {
-        "promptLicense": "¿Está la palabra \"Veteran\" impresa en su licencia de manejar?",
-        "promptID": "¿Está la palabra  \"Veteran\" impresa en su tarjeta de identidad?",
-        "promptCards": "¿Está la palabra  \"Veteran\" impresa en sus tarjetas?"
-      },
-      "keepDesignationPrompt": {
-        "id": "¿Desea conservar la palabra \"Veteran\" en su tarjeta de identidad?",
-        "cards": "¿Desea conservar la palabra \"Veteran\" en sus tarjetas?",
-        "license": "¿Desea conservar la palabra \"Veteran\" en su licencia de manejar?"
+  "newApproved": {
+    "beforeIntro": {
+      "chooseApplicationPage": {
+        "doINeedCommercial": "No sé si necesito una licencia de conducir comercial"
       }
+    },
+    "myHistory": {
+      "veteransPage": {
+        "newDesignation": {
+          "id": "¿Le gustaría agregar la palabra \"Veterano\" a su ID por una tarifa de $ 5?",
+          "license": "¿Le gustaría agregar la palabra \"veterano\" a su licencia de conducir por una tarifa de $ 5?"
+        }
+      }
+    },
+    "organDonation": {
+      "monetaryContribution": {
+        "explanation": "Su donación ayuda a apoyar y promover la donación de órganos y tejidos."
+      }
+    },
+    "votingRegistration": {
+      "eligibilityPage": {
+        "preRegRequirements": "Si no cumple con todos los requisitos, no es elegible para preinscribirse para votar.",
+        "preRegEligible": "Tengo 16 o 17 años y me gustaría preinscribirme para votar.",
+        "notSharedWithElectionOfficials": "Su respuesta a esta pregunta <b> no se compartirá </ b> con los funcionarios electorales.",
+        "preRegUpToDate": "A continuación, nos gustaría asegurarnos de que su preinscripción de votante esté actualizada."
+      }
+    },
+    "intro": {
+      "realID": {
+        "whichCard": "¿Con qué tarjeta te gustaría volar?",
+        "explanation": "O bien su licencia o su tarjeta de identificación pueden ser federalmente compatibles para volar dentro de los Estados Unidos, pero no ambos."
+      },
+      "youthLicense": {
+        "underFifteen": {
+          "title": "Debe tener 15 años para comenzar una solicitud de permiso de aprendizaje.",
+          "explanation": "En circunstancias excepcionales, los jóvenes entre 14 y 15 años de edad pueden obtener un permiso Junior. Visite una oficina o consulte la documentación en el sitio web del DMV si cree que puede ser elegible para un permiso Junior."
+        },
+        "comeBack": "Ok, por favor vuelve cuando cumplas 15."
+      },
+      "wdywtdtPage": {
+        "addID": {
+          "values": [
+            "Obtenga una tarjeta de identificación por primera vez",
+            "Renueve su tarjeta de identificación",
+            "Corrija o actualice su tarjeta de identificación",
+            "Reemplace su tarjeta de identificación"
+          ]
+        },
+        "addDL": {
+          "values": [
+            "Obtenga una licencia de conducir por primera vez",
+            "Renueve su licencia de conducir",
+            "Corrija o actualice su licencia de conducir",
+            "Reemplace su licencia de conducir"
+          ]
+        }
+      }
+    },
+    "cdl": {
+      "alerts": {
+        "dlAlert": "Si va a la oficina del DMV para terminar su solicitud de licencia antes de que tenga 15.5 años, solo puede obtener un permiso Junior. Estos permisos se emiten solo en circunstancias excepcionales.",
+        "idAlert": "Usted es elegible para completar su solicitud de identificación en la oficina hoy."
+      },
+      "selfCertification": {
+        "prompt": "¿Qué tipo de manejo necesitas hacer?",
+        "legalAgreement": {
+          "title": "Al continuar con la aplicación, acepta lo siguiente:",
+          "agreement": "<b> Certifico </ b> (o declaro) bajo pena de perjurio bajo las leyes del estado de California que el vehículo de motor que estoy usando para tomar el examen de habilidades de manejo es representativo del tipo de vehículo de motor que espero funcionar. Certifico además que no estoy sujeto a una descalificación, suspensión, revocación o cancelación como está escrito en el Título 49 de los Reglamentos Federales, Parte 383.51, y no tengo una licencia de conducir de más de un estado o jurisdicción."
+        },
+        "values": {
+          "interstate": "Conducción interestatal sin excepción",
+          "intrastate": "Conducción intraestatal no exceptuada"
+        },
+        "notSure": {
+          "title": "No estoy seguro de qué se aplica a mí",
+          "expected": {
+            "explanation": "Algunos estados emiten una licencia de conducir comercial que <b> <em> no </ em> </ b> exige que los conductores cumplan con los requisitos descritos en CFR, Título 49 §391. Esos controladores se consideran controladores \"exceptuados\". California no emite ese tipo de licencia. Todos los conductores con licencia de California para conducir vehículos comerciales son <em> conductores no exceptuados </ em>.",
+            "title": "<b> Licencia esperada y no esperada </ b>"
+          },
+          "interstate": {
+            "values": [
+              "Entre un lugar en un estado y un lugar fuera de dicho estado (incluido un lugar fuera de los EE. UU.)",
+              "Entre dos lugares en el estado a través de otro estado o un lugar fuera de los EE. UU.",
+              "Entre dos lugares en el estado como parte del comercio, el tráfico o el transporte que se origina o termina fuera del Estado o los EE. UU."
+            ],
+            "explanation": "Significa comercio, tráfico o transporte en los EE. UU. Que es:",
+            "title": "Comercio interestatal"
+          },
+          "intrastate": {
+            "explanation": "Significa comercio, tráfico o transporte en cualquier estado que no esté descrito en el término \"comercio interestatal\".",
+            "title": "Comercio intraestatal"
+          }
+        }
+      },
+      "myHistory": {
+        "nameHistory": {
+          "prompt": "¿Alguna vez ha solicitado una CDL de California, una licencia de conducir o una tarjeta de identificación con un nombre diferente?"
+        },
+        "veteran": {
+          "militaryWaiver": {
+            "explanation": "Debe haber servido en el último año.",
+            "prompt": "¿Estará buscando una experiencia de conducción militar CDL renuncia?"
+          },
+          "addVeteran": "¿Le gustaría agregar la palabra \"Veterano\" en su CDL por una tarifa de $ 5?",
+          "keepVeteran": "¿Le gustaría mantener \"Veteran\" en su CDL?",
+          "veteranOnCDL": "¿Está impreso \"Veteran\" en su licencia de conducir comercial?"
+        },
+        "medicalHistory": {
+          "medicalConditions": "En los últimos tres años, ¿ha tenido o experimentado alguna condición médica que pueda afectar su capacidad para operar con seguridad un vehículo de motor?",
+          "explanation": "Las siguientes condiciones que pueden afectar su capacidad para operar un vehículo de motor de forma segura incluyen, entre otras:",
+          "prompt": "Por favor, revise la información a continuación, luego responda con sinceridad la pregunta al final de esta página.",
+          "values": [
+            "Pérdida de consciencia",
+            "Episodio de confusión marcada causada por cualquier condición que pueda ocasionar lapsos recurrentes",
+            "Enfermedad, trastorno o discapacidad (ejemplos de estos son epilepsia, diabetes, derrames cerebrales, cataratas, enfermedad de Parkinson)",
+            "La visión cambia o disminuye debido a cataratas, degeneración macular, retinopatía diabética, glaucoma, retinitis pigmentosa u otras afecciones progresivas.",
+            "Alcohol, abuso de drogas o problemas de salud relacionados."
+          ]
+        }
+      }
+    }
+  },
+  "newExtracted": {
+    "parentGuardianSignaturePage": {
+      "parentSign": "¿Está disponible su padre / tutor para firmar su solicitud?"
+    },
+    "errorMessage": {
+      "somethingWrong": "Perdón, algo salió mal"
+    },
+    "intro": {
+      "getStartedPage": {
+        "correction": "Ingrese su corrección a continuación",
+        "update": "Ingrese su actualización a continuación",
+        "whatYouAreDoing": {
+          "applyNoFeeID": "Está solicitando una tarjeta de identificación sin cargo",
+          "replaceNoFeeID": "Está reemplazando una tarjeta de identificación sin cargo"
+        },
+        "disclaimers": {
+          "agree": "acepto los términos",
+          "review": "Tómese un momento para revisar los siguientes descargos de responsabilidad:"
+        },
+        "idMe": {
+          "create": "Crear un",
+          "account": "cuenta",
+          "or": "o",
+          "signIn": "Inicia sesión con un",
+          "prompt": "El DMV se está asociando con ID.me para proteger su identidad digital."
+        }
+      }
+    },
+    "votingRegistration": {
+      "chooseParty": {
+        "otherPlaceholder": "Por favor ingrese su selección"
+      },
+      "ballotByMail": {
+        "inPerson": "Ok, tu votas en persona en tu lugar de votación.",
+        "mail": "Ok, su boleta ahora vendrá por correo. Aún puede votar en persona en su lugar de votación."
+      },
+      "contactMethods": {
+        "optional": "Esto es opcional"
+      }
+    },
+    "confirmation": {
+      "checkStatus": "<b> Comprobar el estado </ b>",
+      "title": "Qué pasa con mi información de registro de votante",
+      "information": "El registro de votante se procesará cuando finalice su solicitud en el DMV."
+    },
+    "conclusion": {
+      "notAvailable": "No disponible",
+      "summary": {
+        "licenseClass": "Clase de licencia",
+        "certificates": "Certificado (s)",
+        "veteranOnCDL": "\"Veterano\" impreso en CDL",
+        "tenYearHistory": "Historia completa de diez años",
+        "noInfo": "No se ha ingresado ninguna información aún",
+        "cdlMilitaryDrivingWaiver": "Experiencia de manejo militar CDL waiver",
+        "buttons": {
+          "add": "Añadir"
+        },
+        "cdlMotorcycle": "Motocicleta en CDL",
+        "realIDCompliant": "Real-ID obediente",
+        "shouldContact": "Debería contactarse",
+        "endorsements": "Endoso (s)"
+      },
+      "documents": {
+        "medicalDocuments": {
+          "title": "Información médica",
+          "explanation": "Si tiene una condición médica o discapacidad, es posible que el DMV le exija que tome un examen de manejo. También es posible que deba proporcionar una declaración de su médico con respecto a su estado de salud actual."
+        },
+        "veteran": {
+          "title": "Prueba de servicio de veteranos",
+          "explanation": "Para obtener \"Veterano\" en su tarjeta, debe traer un <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> Formulario de verificación de estado de veterano </a> que la Oficina de Servicio a Veteranos del Condado puede proporcionarle. ¡Gracias por su servicio!"
+        },
+        "requiredDocuments": {
+          "title": "De esa lista necesitaremos:",
+          "values": [
+            "Un único documento que demuestre tanto su fecha de nacimiento como su presencia legal.",
+            "O un documento para su fecha de nacimiento y un documento para su presencia legal."
+          ],
+          "legalPresence": {
+            "title": "Presencia legal",
+            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target = \"_ Blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
+          },
+          "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target = \"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05 # true '> prueba del verdadero nombre completo </a>."
+        },
+        "socialSecurity": {
+          "title": "Prueba de Número de Seguridad Social",
+          "explanation": "<p> Según la ley de California, necesitaremos una prueba de su número de seguridad social. Nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08'> página de documentos de la Seguridad Social enumera los documentos aceptados </a>. </ p> <p> Si recientemente cambió su nombre, asegúrese de que el cambio se refleje en el documento que traiga. </ p>"
+        },
+        "realIdDocuments": {
+          "title": "Identificación de nacimiento real, nombre y prueba de presencia legal",
+          "explanation": "Necesitamos verificar su fecha de nacimiento y lo que llamamos su \"presencia legal\". Los documentos deben usar su verdadero nombre completo que usa hoy o necesitaremos documentos adicionales que demuestren que su verdadero nombre completo será requerido. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid'> página de información de ID real </a> para obtener detalles sobre la fecha de nacimiento aceptable y la legalidad. documentos de presencia requeridos para recibir una tarjeta que cumple con la identificación real."
+        }
+      }
+    },
+    "appointmentPrep": {
+      "goToDMV": "¡Ahora necesita ir al DMV!",
+      "confirmationCode": "Este es tu código de confirmación:",
+      "details": "Para obtener detalles sobre lo que debe hacer para completar su solicitud, visite el sitio web del DMV.",
+      "show": "Muéstrelo a un empleado del DMV. También le enviaremos este código por correo electrónico.",
+      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Haga una cita para ahorrar tiempo. </a>",
+      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Traiga sus documentos requeridos. </a>"
     }
   },
   "organDonation": {

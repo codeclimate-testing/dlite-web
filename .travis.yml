@@ -5,7 +5,7 @@ cache:
   directories:
     - "node_modules"
 env:
-  - APP_ENV=test DATABASE_URL=postgresql://ci_tester:pa33word@localhost/travis_ci_test
+  - APP_ENV=test DATABASE_URL=postgresql://ci_tester:pa33word@localhost/travis_ci_test REDIS_URL=redis://localhost:6379/1
 script:
   - node_modules/knex/bin/cli.js migrate:latest
   - npm run test:coverage
@@ -14,6 +14,7 @@ after_success:
   - codeclimate-test-reporter < coverage/lcov.info
 services:
   - postgresql
+  - redis-server
 before_script:
   - export TZ=America/Los_Angeles
   - psql -c 'create database travis_ci_test;' -U postgres

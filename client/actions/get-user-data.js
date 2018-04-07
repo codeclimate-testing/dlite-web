@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
-export const getUserData = (uuid) => {
+export const getUserData = (uuid, fetcher = fetch) => {
   return function(dispatch) {
     dispatch({
       type: 'UPDATE_API_STATUS',
@@ -12,7 +12,7 @@ export const getUserData = (uuid) => {
         value: 'loading'
       }
     });
-    return fetch('/api/user/' + uuid, {
+    return fetcher('/api/user/' + uuid, {
       method: 'GET',
       credentials: 'same-origin',
       headers: {
@@ -24,15 +24,25 @@ export const getUserData = (uuid) => {
         if(res.status === 200) {
           return res.json();
         }
+        else if (res.status === 500) {
+          return {
+            appsLength: 0,
+            userID: uuid,
+            apps: [{
+              name: '',
+              cardType: [],
+              cardAction: []
+            }]
+          };
+        }
         else {
           throw new Error('user-fail');
         }
       })
-      .then(data => {
+      .then((data) => {
         dispatch({
           type: 'UPDATE_USER_DATA',
           payload: {
-            name: 'userData',
             value: data
           }
         });
@@ -42,10 +52,10 @@ export const getUserData = (uuid) => {
             name: 'apiStatus',
             value: 'success'
           }
-        })
+        });
         return data;
       })
-      .catch(err => {
+      .catch((err) => {
         dispatch({
           type: 'GET_DATA_ERROR',
           payload: {
@@ -61,6 +71,6 @@ export const getUserData = (uuid) => {
           }
         });
         return 'user-fail';
-      });
+      })
   };
 };

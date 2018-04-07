@@ -12,6 +12,6 @@ module.exports = function sameUserOnly(req, res, next) {
     next();
   }
   else {
-    res.status(500).json({message: 'not same user'});
+    res.status(401).json({message: 'not same user'});
   }
 };
