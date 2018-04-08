@@ -9,6 +9,8 @@ const logout            = require('./logout');
 const sendZip           = require('./send-zip');
 const checkAuth         = require('./check-auth');
 const sameUserOnly      = require('./same-user-only');
+const isUserLoggedIn    = require('./is-user-logged-in');
+
 
 let controllers = {
   getApplication,
@@ -19,7 +21,8 @@ let controllers = {
   logout,
   sendZip,
   checkAuth,
-  sameUserOnly
+  sameUserOnly,
+  isUserLoggedIn
 };
 
 const auth = require('./auth');

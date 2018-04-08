@@ -1,6 +1,7 @@
 'use strict';
 import { getUserData }                  from '../../actions/get-user-data';
 import getTranslation                   from '../../actions/get-translation';
+import { isLoggedIn }                   from '../../actions/get-auth-status';
 import {
   updateLanguage,
   updateLoggedIn,
@@ -22,13 +23,17 @@ import {
 export default (dispatch) => {
   return (uuid, history) => {
 
+    //Set auto logout after user inactivity
+    new AutoLogout(history, dispatch);
+
+    dispatch(isLoggedIn());
+
     let cookieLanguage = getLanguageFromCookie();
     dispatch(updateLanguage('language', cookieLanguage));
+
     if (!doNotNeedToLoadTranslations(cookieLanguage)) {
       dispatch(getTranslation(cookieLanguage));
     }
-
-    new AutoLogout(history, dispatch);
 
     dispatch(getUserData(uuid))
       .then((res) => {
@@ -36,8 +41,6 @@ export default (dispatch) => {
         let appName = getAppNameCookie();
         let chosenApp = parseChooseApp(appName);
         dispatch(chooseApp(chosenApp));
-
-        dispatch(updateLoggedIn(true));
 
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
