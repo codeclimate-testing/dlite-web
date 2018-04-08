@@ -13,6 +13,7 @@ import {
   ReducedFee,
   BulletList
 } from './documents/index.js';
+import Translator         from '../../i18n/translator-tag.jsx';
 
 const Presentation = (props) => {
   let documentList = [
@@ -30,13 +31,19 @@ const Presentation = (props) => {
       {...props}
     >
       <div className='required-documents'>
-        <h3>Here's what you need to bring to the DMV</h3>
-        <p> Below is a list of what you will need to bring to a DMV office visit to complete your application.
-        You will need to bring original versions of all documents listed below, as photocopies and laminated
-        versions are not accepted.
-        </p>
+        <Translator
+          tag             = 'h3'
+          translationPath = 'newApproved.requiredDocuments.prompt'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.requiredDocuments.explanation'
+        />
 
-        <h4>We need original documents to confirm the following:</h4>
+        <Translator
+          tag             = 'h4'
+          translationPath = 'newApproved.requiredDocuments.documentListHeader'
+        />
         <BulletList
           socialSecurity      = { props.socialSecurity }
           veteransService     = { props.veteransService }
@@ -52,10 +59,22 @@ const Presentation = (props) => {
           { documentList }
         <hr></hr>
 
-        <p>If you have any questions, please reach out—we’re here to help!</p>
-        <p>Telephone: 1-800-777-0133</p>
-        <p>Hearing Impaired: TTY 1-800-368-4327</p>
-        <p>Call Center business hours are: Monday, Tuesday, Thursday, Friday 8 am to 5 pm, and Wednesday, 9am to 5pm.</p>
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.requiredDocuments.additionalInformation.questions'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.requiredDocuments.additionalInformation.telephone'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.requiredDocuments.additionalInformation.hearing'
+        />
+        <Translator
+          tag             = 'p'
+          translationPath = 'newApproved.requiredDocuments.additionalInformation.callCenter'
+        />
       </div>
     </Page>
   );

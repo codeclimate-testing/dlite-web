@@ -46,10 +46,12 @@ describe('Required Docs for Social Security Number', function() {
         hasSocialSecurity: 'Yes'
       },
       component = render(
-        <BulletList
-          {...props}
-          socialSecurity = {socialSecurity}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            socialSecurity = {socialSecurity}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Proof of Social Security Number'), true);
     });
@@ -59,10 +61,12 @@ describe('Required Docs for Social Security Number', function() {
         hasSocialSecurity: 'No'
       },
       component = render(
-        <BulletList
-          {...props}
-          socialSecurity = {socialSecurity}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            socialSecurity = {socialSecurity}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Proof of Social Security Number'), false);
     });

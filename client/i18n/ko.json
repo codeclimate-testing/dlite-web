@@ -9,7 +9,7 @@
       "header": "연방 비준수 카드 요구 사항",
       "identity": {
         "header": "신원",
-        "body": "<p>모든 신청자는 본인임을 증명해야 하며, 성명 (첫 이름, 중간 이름, 성) 과 생년월일을 증명해야 합니다. </p><p> <b>복사 및 적층 버전은 허용되지 않으므로</b> 이 문서의 원본 버전을 가져와야 합니다. </p><p> <a href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>DMV의 수용 가능한 신원 확인 문서 목록을 참조하십시오</a>. </p><p> <b>신분증의 이름이 신청서에 기자된 이름과 다른 경우<b>, <a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>에 진짜 이름을 입증하는 이름 변경 문서</a>를 제출해야 합니다.</p>"
+        "body": "<p>모든 신청자는 본인임을 증명해야 하며, 성명 (첫 이름, 중간 이름, 성) 과 생년월일을 증명해야 합니다. </p><p> <b>복사 및 적층 버전은 허용되지 않으므로</b> 이 문서의 원본 버전을 가져와야 합니다. </p><p> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>DMV의 수용 가능한 신원 확인 문서 목록을 참조하십시오</a>. </p><p> <b>신분증의 이름이 신청서에 기자된 이름과 다른 경우<b>, <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>에 진짜 이름을 입증하는 이름 변경 문서</a>를 제출해야 합니다.</p>"
       },
       "socialSecurity": {
         "header": "사회 보장   번호",
@@ -17,16 +17,16 @@
       },
       "californiaResidency": {
         "header": "캘리포니아 거주",
-        "body": "캘리포니아에 거주한다는 것을 증명하는 <b>1</b> 문서를 가져와야 합니다. 이 서류에는 귀하의 카드를 우편으로 보낼 주소가 표시되어야 합니다. 이 주소는 카드 앞면에도 나타납니다. 수용 가능한 <b> 캘리포니아 주거 문서</b></a> 목록 <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>을 검토하십시오."
+        "body": "캘리포니아에 거주한다는 것을 증명하는 <b>1</b> 문서를 가져와야 합니다. 이 서류에는 귀하의 카드를 우편으로 보낼 주소가 표시되어야 합니다. 이 주소는 카드 앞면에도 나타납니다. 수용 가능한 <b> 캘리포니아 주거 문서</b></a> 목록 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>을 검토하십시오."
       }
     },
     "realIdSection": {
       "header": "REAL   ID 요구 사항",
-      "pleaseSeeDocs": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>이 세 가지 카테고리에 대해 사용할 수 있는 문서 목록의 실제 ID 문서 PDF를 보십시오. </a>"
+      "pleaseSeeDocs": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>이 세 가지 카테고리에 대해 사용할 수 있는 문서 목록의 실제 ID 문서 PDF를 보십시오. </a>"
     },
     "veteransSection": {
       "header": "재향 군인 문서",
-      "body": "카드에 재향 군인 지명을 받으려면 완료된 <a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> 재향 군인 현황 확인</a> 양식(VSD-001)을 제출해야 합니다. 카운티 재향 군인 서비스 사무소에서 VSD-001을 얻을 수 있습니다. 우리는 당신의 서비스에 감사드립니다!"
+      "body": "카드에 재향 군인 지명을 받으려면 완료된 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> 재향 군인 현황 확인</a> 양식(VSD-001)을 제출해야 합니다. 카운티 재향 군인 서비스 사무소에서 VSD-001을 얻을 수 있습니다. 우리는 당신의 서비스에 감사드립니다!"
     },
     "permitRequirementsSection": {
       "body": {
@@ -39,7 +39,7 @@
         ],
         "provisionalExplanation": "임시 운전 허가를 신청해야 합니다.",
         "knowledgeTest": "지식 테스트를 받아야 합니다.",
-        "testAdvice": "방문에 앞서 <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'> 캘리포니아 운전사 안내서 </a> 를 공부하고<a  href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> 에서 연습 시험을 해 볼 것을 권장합니다</a>.",
+        "testAdvice": "방문에 앞서 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'> 캘리포니아 운전사 안내서 </a> 를 공부하고<a  target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> 에서 연습 시험을 해 볼 것을 권장합니다</a>.",
         "FAQHaveAnotherState": {
           "title": "이미 다른 주에 운전 허가 또는 연수 수료증이 있습니까?",
           "body": {
@@ -48,7 +48,7 @@
               "캘리포니아 중고등 학교 과정과 동등한 운전사 교육 / 연수 과정을 수료한 증거.",
               "완성된 DL 33 양식. 이 양식은 현지 DMV 사무소 또는 1-800-777-0133번으로 DMV에 전화하여 구하십시오. DL 33 양식을 귀하가 수료한 타주 중고등 학교에 보내어 완성하십시오."
             ],
-            "requirementsLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>자세한 정보는 운전사 교육 및 운전사 연수 양식 요구 사항을 검토하십시오. </a>",
+            "requirementsLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>자세한 정보는 운전사 교육 및 운전사 연수 양식 요구 사항을 검토하십시오. </a>",
             "juniorPermitNote": "미성년자 인 경우, \"유예\", \"임시\"또는 \"청소년\"으로 명기된 운전 면허증을 발급하거나, 운전 연수 수료증을 타주에서 직접 수령 할 수 없습니다."
           }
         }
@@ -57,7 +57,7 @@
     "newCaliforniaYouthDLSection": {
       "header": "새로운 캘리포니아 주 운전사 요구 사항",
       "body": {
-        "openingExplanation": "우리는 귀하가 다른 주에서 운전 면허증을 소지한 경우가 있는 여부를 참조합니다. 16세에서 18세 사이</a>의 십대 운전사들을 위한 캘리포니아의<a href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'> 법률은 타주와 차이날 수 있습니다.",
+        "openingExplanation": "우리는 귀하가 다른 주에서 운전 면허증을 소지한 경우가 있는 여부를 참조합니다. 16세에서 18세 사이</a>의 십대 운전사들을 위한 캘리포니아의<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'> 법률은 타주와 차이날 수 있습니다.",
         "knowledgeTest": "캘리포니아의 새로운 운전사는 지식 테스트를 통과해야 합니다.",
         "juniorPermitNote": "미성년자 인 경우, 귀하의 운전 면허증에 \"유예\", \"임시\" 또는 \"청소년\"으로 명기된 경우 다른 주에서 운전 면허증을 양도할 수 없습니다.",
         "provisionalProcess": "<b> 캘리포니아 주에서 18 세 미만의 운전사는 임시 허가를 신청해야 합니다. </b> 6 개월 후에 임시 운전 면허증을 받을 자격이 있습니다.",
@@ -67,7 +67,7 @@
           "listItems": [
             "현재 캘리포니아 주 이외의 주에서 운전 면허증을 소지하고 있습니다. <b><em>그리고</em></b>",
             "정규 중고등 학교에서 운전 기술 과정을 성공적으로 마쳤습니다. <b><em>그리고</em></b>",
-            "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'> 운전 기술 과정 완성을 확인할 수 있습니다</a>"
+            "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'> 운전 기술 과정 완성을 확인할 수 있습니다</a>"
           ]
         }
       }
@@ -83,45 +83,45 @@
     "adultMotorcycleSection": {
       "header": "오토바이 / 스쿠터 요구 사항",
       "body": {
-        "explanation": "오토바이 또는 스쿠터 면허증을 받으려면 오토바이 지식 테스트를 통과해야 합니다. <a href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>캘리포니아 오토바이 안내서 / a>를 참조하십시오.",
-        "waiverProcess": "<b> 다음의 경우 드라이브 테스트를 면제할 수 있습니다: </b> CHP의 캘리포니아 오토바이 안전 프로그램에서 받은<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>오토바이 연수 수료증(DL 389) 양식</a> 이 있는 경우. 강사는 운전 기술 과정을 성공적으로 완료 후 이 양식을 제공합니다."
+        "explanation": "오토바이 또는 스쿠터 면허증을 받으려면 오토바이 지식 테스트를 통과해야 합니다. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>캘리포니아 오토바이 안내서 / a>를 참조하십시오.",
+        "waiverProcess": "<b> 다음의 경우 드라이브 테스트를 면제할 수 있습니다: </b> CHP의 캘리포니아 오토바이 안전 프로그램에서 받은<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>오토바이 연수 수료증(DL 389) 양식</a> 이 있는 경우. 강사는 운전 기술 과정을 성공적으로 완료 후 이 양식을 제공합니다."
       }
     },
     "youthMotorcycleSection": {
       "body": {
-        "under21Message": "21 세 미만이므로, DMV를 방문하기 전 CHP의 캘리포니아 오토바이 안전 프로그램에서 받은<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>오토바이 연수 수료증 (DL 389) 양식 </a>이 <b>있어야 합니다</b>. 강사는 운전 기술 과정을 성공적으로 완료 후 이 양식을 제공합니다.",
+        "under21Message": "21 세 미만이므로, DMV를 방문하기 전 CHP의 캘리포니아 오토바이 안전 프로그램에서 받은<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>오토바이 연수 수료증 (DL 389) 양식 </a>이 <b>있어야 합니다</b>. 강사는 운전 기술 과정을 성공적으로 완료 후 이 양식을 제공합니다.",
         "onCompletion": "운전 기술 과정을 완료 후, 면허증을 얻기 전까지 6 개월 동안 허가를 받아야 합니다."
       }
     },
     "motorcylcleOtherStateSection": {
       "body": {
-        "waiverProcess": "<b> 다음의 경우 귀하의 드라이브 테스트를 면제할 수 있습니다: </b> 다른 주에서 유효한 오토바이 면허증을 보유하고 있거나 CHP의 캘리포니아 오토바이 안전 프로그램에서 발급한<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'> 오토바이 연수 수료증(DL 389) 양식</a> 이 있는 경우."
+        "waiverProcess": "<b> 다음의 경우 귀하의 드라이브 테스트를 면제할 수 있습니다: </b> 다른 주에서 유효한 오토바이 면허증을 보유하고 있거나 CHP의 캘리포니아 오토바이 안전 프로그램에서 발급한<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'> 오토바이 연수 수료증(DL 389) 양식</a> 이 있는 경우."
       }
     },
     "additionalMotorcycleTestingSection": {
       "header": "추가 테스트 요구 사항",
-      "body": "캘리포니아에서 오토바이 또는 스쿠터 면허증을 받으려면 <b> 기본 운전 면허증 지식 테스트에 통과해야 합니다 </b>. 방문에 앞서 <a href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'> 캘리포니아 운전사 안내서 </a> 를 공부하고<a  href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> 에서 연습 시험을 해 볼 것을 권장합니다</a>."
+      "body": "캘리포니아에서 오토바이 또는 스쿠터 면허증을 받으려면 <b> 기본 운전 면허증 지식 테스트에 통과해야 합니다 </b>. 방문에 앞서 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'> 캘리포니아 운전사 안내서 </a> 를 공부하고<a  target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'> 에서 연습 시험을 해 볼 것을 권장합니다</a>."
     },
     "nonCommercialASection": {
       "header": "비상업용 차종A 요구 사항",
       "body": {
-        "healthQuestionnaire": "비상업용 차종A 허가를 받으려면 유효한<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'> 건강 설문지(DL 546)를 제출해야 합니다. </a>",
+        "healthQuestionnaire": "비상업용 차종A 허가를 받으려면 유효한<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'> 건강 설문지(DL 546)를 제출해야 합니다. </a>",
         "knowledgeTest": "<b> 레저용 차량 및 비상업용 차종A 트레일러 </b>지식 테스트도 필요합니다. 시험에 앞서 캘리포니아의 RV & 트레일러 안내서를 공부하는 것이 좋습니다.",
-        "afterPassingExam": "시험에 합격하면 허가가 발급됩니다. <a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'> DMV 웹 사이트 </a>는 귀하가 정식 면허증을 취득하기 위해 필요한 정보를 제공합니다."
+        "afterPassingExam": "시험에 합격하면 허가가 발급됩니다. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'> DMV 웹 사이트 </a>는 귀하가 정식 면허증을 취득하기 위해 필요한 정보를 제공합니다."
       }
     },
     "nonCommercialBSection": {
       "header": "비상업용 차종 B 요구 사항",
       "body": {
-        "healthQuestionnaire": "비 상업용 차종 B 허가를 받으려면 담당 의사의 서명이 있는 유효한<a href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'> 건강 설문지(DL 546A)를 제출해야 합니다.",
-        "houseCarTest": "<b> 45 '유개 차량 지식 테스트</b>도 필요합니다. 시험에 앞서 <a href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'> 캘리포니아의 RV 및 트레일러 안내서</a>를 공부하는 것이 좋습니다."
+        "healthQuestionnaire": "비 상업용 차종 B 허가를 받으려면 담당 의사의 서명이 있는 유효한<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'> 건강 설문지(DL 546A)를 제출해야 합니다.",
+        "houseCarTest": "<b> 45 '유개 차량 지식 테스트</b>도 필요합니다. 시험에 앞서 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'> 캘리포니아의 RV 및 트레일러 안내서</a>를 공부하는 것이 좋습니다."
       }
     },
     "firefighterEndorsementSection": {
       "header": "소방관 보증 요구 사항",
       "body": {
         "testRequirements": "<b> 소방관 보증 </b>을 받으려면 <b>소방관 보증 </b> 지식 테스트를 통과해야 합니다.",
-        "otherRequirements": "유효한<a href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>건강 설문지 (DL 546) </a> 및 다음 기준을 충족하는 <b> 기존 소방관 고용 및 연수 확인서 </b>를 제출해야 합니다:",
+        "otherRequirements": "유효한<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/forms/dl/dl546'>건강 설문지 (DL 546) </a> 및 다음 기준을 충족하는 <b> 기존 소방관 고용 및 연수 확인서 </b>를 제출해야 합니다:",
         "otherRequirementsValues": [
           "소방서 용지(레터헤드)를 사용해야 합니다.",
           "현재 소방관으로 고용되었다는 것을 증명하거나 또는 자원 봉사 소방관으로서의 등록을 증빙합니다.",
@@ -132,11 +132,11 @@
     },
     "sexChangeSection": {
       "header": "성별 변경",
-      "body": "<p>이 변경을 하기 위해서는 의사 또는 심리학자가 서명 작성한 <a href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'> 의료 인증 및 승인 양식(DL 329) </a>을 가져 와야 합니다. </p><p> 또한 변경 전 및 변경 후의 진짜 이름(첫 이름, 중간 이름, 성)이 기록된<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>이름 변경 문서 </a>를 가져와야 합니다.</p>"
+      "body": "<p>이 변경을 하기 위해서는 의사 또는 심리학자가 서명 작성한 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'> 의료 인증 및 승인 양식(DL 329) </a>을 가져 와야 합니다. </p><p> 또한 변경 전 및 변경 후의 진짜 이름(첫 이름, 중간 이름, 성)이 기록된<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>이름 변경 문서 </a>를 가져와야 합니다.</p>"
     },
     "nameChangeSection": {
       "header": "이름 변경",
-      "body": "<p>귀하의 카드에 이름 변경을 반영하려면 먼저 귀하의 현지 <a href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>사회 보장국 </a> 사무소에서 이름을 변경해야 합니다. </p><p> 또한 <em>변경 전</em> 및 <em>변경 후</em>의 진짜 이름(첫 이름, 중간 이름, 성)이 기록된<a href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> 이름 변경 문서 </a>를 가져와야 합니다.</p>"
+      "body": "<p>귀하의 카드에 이름 변경을 반영하려면 먼저 귀하의 현지 <a target=\"_blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>사회 보장국 </a> 사무소에서 이름을 변경해야 합니다. </p><p> 또한 <em>변경 전</em> 및 <em>변경 후</em>의 진짜 이름(첫 이름, 중간 이름, 성)이 기록된<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> 이름 변경 문서 </a>를 가져와야 합니다.</p>"
     },
     "reducedFeeSection": {
       "header": "수수료 절감 자격",
@@ -193,7 +193,7 @@
           "이메일 주소와 전화 번호가 없습니다. 이것들은 home.q`에서 기입을 위해 필요합니다.",
           "주소 기밀 프로그램에 참여 또는 은신처에 있습니다."
         ],
-        "instead": "대신 <a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>DMV 사무소 방문을 예약</a>하십시오."
+        "instead": "대신 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>DMV 사무소 방문을 예약</a>하십시오."
       }
     },
     "whatYouCanDoPageCDL": {
@@ -232,7 +232,7 @@
       "emailRequired": "<b> 이메일 주소와 전화 번호가 필요합니다. </ b> ID.me 계정을 만들고 싶지 않으면 DMV 사무소를 방문하십시오",
       "legalIdentity": "<b> ID.me는 귀하의 법적 신원을 증명할 수 있게 합니다. </ b> 캘리포니아 주 DMV는 귀하의 개인 정보가 정확하고 안전하도록 ID.me와 제휴했습니다.",
       "dmvPartnering": "캘리포니아의 DMV는 ID.me가 보안 및 신원 확인에 대한 엄격한 요구 사항을 충족했기 때문에, ID.me와 파트너 관계를 맺기로 결정했습니다.",
-      "learnMore": "<a href='https://www.id.me'>자세한 정보는 ID.me를 방문하십시오. </a>"
+      "learnMore": "<a target=\"_blank\" href='https://www.id.me'>자세한 정보는 ID.me를 방문하십시오. </a>"
     },
     "idMeReturnPage": {
       "welcomeBack": "다시 오신 것을 환영합니다.",
@@ -487,13 +487,13 @@
       "steps": [
         "귀하는 확인 코드를 이메일로 받게 됩니다.",
         "귀하의 신청을 마무리하기 위해 DMV 지역 사무소를 방문 하셔야 합니다. ",
-        "필요한 서류준비와 시험 공부로 방문을 준비하시기 바랍니다.    <a href='/apply/appointment-preparation'> 귀하의 신청서에 있는 정보를 근거로 맞춤 준비 목록을 만들었습니다.",
+        "필요한 서류준비와 시험 공부로 방문을 준비하시기 바랍니다.    <a target=\"_blank\" href='/apply/appointment-preparation'> 귀하의 신청서에 있는 정보를 근거로 맞춤 준비 목록을 만들었습니다.",
         "DMV 지역 사무소 직원에게 귀하의 확인 번호와 문서를 보여주십시오. 그러면 직원이 귀하의 신청서를 불러올 것입니다. ",
         "귀하에게 귀하의 정보를 확인해 달라고 합니다. 그리고 귀하는 DMV 지역 사무소를 방문해서 정보가 정확함을 확인해주게 됩니다. "
       ]
     },
     "registrationCompleteAtOffice": "다시 말씀 드리건대, 귀하의 투표자 등록 신청은 귀하가 DMV 지역 사무소에서 귀하의 신청서를 마무리 할 때 처리됩니다. ",
-    "checkVoterStatus": "귀하의 진행 상태를 체크하십시오. <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "귀하의 진행 상태를 체크하십시오. <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "DMV 방문하기 전에 투표 등록을 해야 하는 경우.  RegisterToVote.ca.gov에서 온라인으로 등록할 수 있습니다.",
     "register30days": "다음 번 주 단위 선거를 위한 투표를 원하시면 RegisterToVote.ca.gov에서 온라인으로 등록하십시오. ",
     "avoidLines": "오래 기다리는 것이 싫으시면 귀하의 지역 DMV에서 약속 정하시기 바랍니다.",
@@ -872,7 +872,7 @@
       "voterRegistration": {
         "title": "유권자 등록",
         "bodyBullets": [
-          "귀하의 주소를 공유하면 생명을 위협하는 위험에 빠질 수 있습니다. 귀하는 기밀로 등록하도록 등록 할 수 있습니다. 자세한 내용은 <b> Safe at home </ b> 프로그램 (877) 322-5227 번으로 문의하거나 <a target = \"_ blank\"href = 'http : //www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>.",
+          "귀하의 주소를 공유하면 생명을 위협하는 위험에 빠질 수 있습니다. 귀하는 기밀로 등록하도록 등록 할 수 있습니다. 자세한 내용은 <b> Safe at home </ b> 프로그램 (877) 322-5227 번으로 문의하거나 <a target=\"_ blank\"href = 'http : //www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>.",
           "<b> 미국 시민 전용 </ b>. DMV는 투표 자격이 있음을 나타내면 귀하의 디지털 서명을 포함하여이 양식에 수집 된 모든 유권자 등록 정보를 캘리포니아 국무 장관에게 보냅니다. 귀하가 등록한 DMV 사무소는 기밀로 유지되며 유권자 등록 목적으로 만 사용됩니다.",
           "투표 할 자격이 있고 투표 등록을 거부하면 결정은 기밀로 유지됩니다. 그러나이 정보는 유권자 홍보 및 등록 목적으로 만 사용하도록 캘리포니아 주 총무 장관에게 보냅니다.",
           "이 신청서에 제공된 유권자 등록 정보는 기밀입니다. DMV는 유권자의 자격 결정을 내리지 않습니다.",
@@ -1088,13 +1088,28 @@
         "doINeedCommercial": "상업 운전 면허증이 필요한지 나는 모른다."
       }
     },
-    "votingRegistration": {
-      "eligibilityPage": {
-        "preRegRequirements": "모든 요건을 충족시키지 못하면 선거인 등록 자격이 없습니다.",
-        "preRegEligible": "저는 16 세 또는 17 세이며 사전 등록을하고 싶습니다.",
-        "notSharedWithElectionOfficials": "이 질문에 대한 귀하의 답변은 선거 관리 공무원과 공유되지 <b> 않습니다 </ b>.",
-        "preRegUpToDate": "다음으로 유권자 사전 등록이 최신 상태인지 확인하고 싶습니다."
-      }
+    "requiredDocuments": {
+      "prompt": "DMV에 가져올 필요가있는 것이 있습니다.",
+      "additionalInformation": {
+        "telephone": "전화 : 1-800-777-0133",
+        "callCenter": "콜센터 영업 시간은 월요일, 화요일, 목요일, 금요일 오전 8 시부 터 오후 5 시까 지이며 수요일 오전 9 시부 터 오후 5 시까 지입니다.",
+        "questions": "궁금한 점이 있으시면 도움을 청합니다.",
+        "hearing": "청각 장애인 : TTY 1-800-368-4327"
+      },
+      "explanation": "아래는 신청서 작성을 위해 DMV 사무소 방문시 필요한 사항입니다. 복사물 및 적층판은 허용되지 않으므로 아래에 나열된 모든 문서의 원본 버전을 가져와야합니다.",
+      "bulletList": {
+        "legalPresence": "법적인 존재",
+        "socialSecurity": "사회 보장 번호 증명",
+        "residency": "캘리포니아 거주자",
+        "veteran": "참전 용사 증명",
+        "medicalInformation": "의학 정보",
+        "noFee": "수수료 없음",
+        "reducedFee": "수수료 적립의 감소",
+        "newDriver": "새로운 드라이버 요구 사항",
+        "youth": "지식 테스트를 받아야합니다.",
+        "realID": "실제 ID 생년월일, 이름 및 법적 존재 증명"
+      },
+      "documentListHeader": "다음을 확인하기 위해 원본 문서가 필요합니다."
     },
     "organDonation": {
       "monetaryContribution": {
@@ -1104,19 +1119,83 @@
     "myHistory": {
       "veteransPage": {
         "newDesignation": {
-          "license": "\"베테랑\"이라는 단어를 운전 면허증에 5 달러 수수료로 추가 하시겠습니까?",
-          "id": "신분증에 베테랑이라는 단어를 추가하여 5 달러를 내고 싶으세요?"
+          "id": "신분증에 베테랑이라는 단어를 추가하여 5 달러를 내고 싶으세요?",
+          "license": "\"베테랑\"이라는 단어를 운전 면허증에 5 달러 수수료로 추가 하시겠습니까?"
+        }
+      }
+    },
+    "votingRegistration": {
+      "eligibilityPage": {
+        "notSharedWithElectionOfficials": "이 질문에 대한 귀하의 답변은 선거 관리 공무원과 공유되지 <b> 않습니다 </ b>.",
+        "preRegEligible": "저는 16 세 또는 17 세이며 사전 등록을하고 싶습니다.",
+        "preRegRequirements": "모든 요건을 충족시키지 못하면 선거인 등록 자격이 없습니다.",
+        "preRegUpToDate": "다음으로 유권자 사전 등록이 최신 상태인지 확인하고 싶습니다."
+      }
+    },
+    "cdl": {
+      "alerts": {
+        "dlAlert": "15.5 세 전에 면허 신청을 마치기 위해 DMV 사무소에 가면 주니어 허가 만받을 수 있습니다. 이러한 허가는 예외적 인 경우에만 발급됩니다.",
+        "idAlert": "귀하는 오늘 사무실에서 ID 신청서를 작성할 자격이 있습니다."
+      },
+      "myHistory": {
+        "nameHistory": {
+          "prompt": "캘리포니아의 CDL, 운전 면허증 또는 신분증을 다른 이름으로 신청 한 적이 있습니까?"
+        },
+        "medicalHistory": {
+          "prompt": "아래 정보를 검토 한 다음이 페이지의 끝 부분에있는 질문에 정직하게 답변하십시오.",
+          "explanation": "자동차 운전에 영향을 미칠 수있는 다음과 같은 조건이 포함되지만 이에 국한되지는 않습니다 :",
+          "medicalConditions": "지난 3 년 동안 자동차를 안전하게 작동시키는 데 영향을 줄 수있는 건강 상태를 경험 했습니까?",
+          "values": [
+            "의식 소실",
+            "반복적 인 결실을 가져올 수있는 모든 상태로 인해 발생하는 현저한 혼란 에피소드",
+            "질병, 장애 또는 장애 (간질, 당뇨병, 뇌졸중, 백내장, 파킨슨 병)",
+            "백내장, 황반변 성, 당뇨병 성 망막증, 녹내장, 색소 성 망막염 또는 기타 진행성 증상으로 인해 시력이 변화하거나 감소합니다.",
+            "알코올, 약물 남용 또는 관련 건강 문제."
+          ]
+        },
+        "veteran": {
+          "veteranOnCDL": "\"베테랑\"이 상용 운전 면허증에 인쇄되어 있습니까?",
+          "keepVeteran": "\"베테랑\"을 CDL에 보관 하시겠습니까?",
+          "militaryWaiver": {
+            "prompt": "군사 운전 경험 CDL 면제를 원하십니까?",
+            "explanation": "지난 1 년 이내에 복무 했어야합니다."
+          },
+          "addVeteran": "CDL에 \"베테랑 (Veteran)\"이라는 단어를 5 달러 수수료로 추가 하시겠습니까?"
+        }
+      },
+      "selfCertification": {
+        "legalAgreement": {
+          "agreement": "운전 기술 테스트를 위해 사용하는 자동차가 예상되는 자동차의 유형을 대표한다고 캘리포니아 주법에 따라 위증시 처벌을 받으면 <b> 인증 </ b> (또는 신고)합니다. 작동합니다. 본인은 연방 규정 493.51 Title 49에 명시된대로 실격, 정학, 취소 또는 취소의 대상이 아니며 여러 주 또는 관할권의 운전 면허증이 없다는 것을 확인합니다.",
+          "title": "신청서를 계속함으로써 귀하는 아래에 동의합니다 :"
+        },
+        "values": {
+          "interstate": "주간 고속 도로 주행",
+          "intrastate": "주행 제외 비 주행 차량"
+        },
+        "prompt": "어떤 유형의 운전을해야합니까?",
+        "notSure": {
+          "intrastate": {
+            "title": "주 (州) 상업",
+            "explanation": "\"주간 상업 거래\"라는 용어에 설명되어 있지 않은 모든 주에서의 무역, 교통 또는 교통 수단을 의미합니다."
+          },
+          "expected": {
+            "title": "<b> 기대 및 예상되지 않은 라이센스 </ b>",
+            "explanation": "일부 주에서는 CFR, Title 49 §391에 명시된 자격을 충족시키기 위해 운전자가 <b> <em> 아니라 </ em> </ b> 필요한 상용 운전 면허증을 발급합니다. 이러한 드라이버는 \"예외\"드라이버로 간주됩니다. 캘리포니아주는 그러한 종류의 면허를 발급하지 않습니다. 상업용 차량을 운행하기 위해 캘리포니아 주에서 허가 한 모든 운전자는 <em> 예외가 아닌 </ em> 운전자입니다."
+          },
+          "title": "나에게 어떤 것이 적용되는지 잘 모르겠다.",
+          "interstate": {
+            "values": [
+              "주 내의 한 장소와 그 주 외부의 장소 (미국 이외의 장소 포함)",
+              "다른 주 또는 미국 이외의 지역을 통과하는 주 내의 두 장소 사이",
+              "주나 미국 이외의 지역에서 시작되거나 종료되는 무역, ​​교통 또는 운송의 일부로서 주 내의 2 개 장소 사이"
+            ],
+            "title": "각 주간 상업",
+            "explanation": "다음과 같은 미국 내에서의 무역, 교통 또는 교통 수단을 말합니다."
+          }
         }
       }
     },
     "intro": {
-      "youthLicense": {
-        "comeBack": "15 살이되면 다시 오세요.",
-        "underFifteen": {
-          "explanation": "특별한 경우, 14 세에서 15 세 사이의 청소년은 주니어 (Junior) 허가를받을 수 있습니다. 주니어 허가를받을 자격이 있다고 생각되면 사무실을 방문하거나 DMV 웹 사이트의 문서를 참조하십시오.",
-          "title": "학습자 허가 신청을 시작하려면 15 세 이상이어야합니다."
-        }
-      },
       "wdywtdtPage": {
         "addID": {
           "values": [
@@ -1131,75 +1210,19 @@
             "처음으로 운전 면허증을 받으십시오.",
             "운전 면허 갱신",
             "운전 면허증을 수정하거나 업데이트하십시오.",
-            "운전 면허증 교체"
+            "운전 면허증을 교체하십시오."
           ]
         }
       },
       "realID": {
-        "whichCard": "어떤 카드로 비행하고 싶습니까?",
-        "explanation": "면허증이나 신분증 중 하나를 연방 정부가 미국 내에서 비행 할 수 있도록 만들 수 있지만 둘 다 할 수는 없습니다."
-      }
-    },
-    "cdl": {
-      "alerts": {
-        "idAlert": "귀하는 오늘 사무실에서 ID 신청서를 작성할 자격이 있습니다.",
-        "dlAlert": "15.5 세 전에 면허 신청을 마치기 위해 DMV 사무소에 가면 주니어 허가 만받을 수 있습니다. 이러한 허가는 예외적 인 경우에만 발급됩니다."
+        "explanation": "면허증이나 신분증 중 하나를 연방 정부가 미국 내에서 비행 할 수 있도록 만들 수 있지만 둘 다 할 수는 없습니다.",
+        "whichCard": "어떤 카드로 비행하고 싶습니까?"
       },
-      "myHistory": {
-        "medicalHistory": {
-          "prompt": "아래 정보를 검토 한 다음이 페이지의 끝 부분에있는 질문에 정직하게 답변하십시오.",
-          "medicalConditions": "지난 3 년 동안 자동차를 안전하게 작동시키는 데 영향을 줄 수있는 건강 상태를 경험 했습니까?",
-          "explanation": "자동차 운전에 영향을 미칠 수있는 다음과 같은 조건이 포함되지만 이에 국한되지는 않습니다 :",
-          "values": [
-            "의식 소실",
-            "반복적 인 결실을 가져올 수있는 모든 상태로 인해 발생하는 현저한 혼란 에피소드",
-            "질병, 장애 또는 장애 (간질, 당뇨병, 뇌졸중, 백내장, 파킨슨 병)",
-            "백내장, 황반변 성, 당뇨병 성 망막증, 녹내장, 색소 성 망막염 또는 기타 진행성 증상으로 인해 시력이 변화하거나 감소합니다.",
-            "알코올, 약물 남용 또는 관련 건강 문제."
-          ]
-        },
-        "nameHistory": {
-          "prompt": "캘리포니아의 CDL, 운전 면허증 또는 신분증을 다른 이름으로 신청 한 적이 있습니까?"
-        },
-        "veteran": {
-          "veteranOnCDL": "\"베테랑\"이 상용 운전 면허증에 인쇄되어 있습니까?",
-          "addVeteran": "CDL에 \"베테랑 (Veteran)\"이라는 단어를 5 달러 수수료로 추가 하시겠습니까?",
-          "militaryWaiver": {
-            "prompt": "군사 운전 경험 CDL 면제를 원하십니까?",
-            "explanation": "지난 1 년 이내에 복무 했어야합니다."
-          },
-          "keepVeteran": "\"베테랑\"을 CDL에 보관 하시겠습니까?"
-        }
-      },
-      "selfCertification": {
-        "values": {
-          "interstate": "주간 고속 도로 주행",
-          "intrastate": "주행 제외 비 주행 차량"
-        },
-        "legalAgreement": {
-          "title": "신청서를 계속함으로써 귀하는 아래에 동의합니다 :",
-          "agreement": "운전 기술 테스트를 위해 사용하는 자동차가 예상되는 자동차의 유형을 대표한다고 캘리포니아 주법에 따라 위증시 처벌을 받으면 <b> 인증 </ b> (또는 신고)합니다. 작동합니다. 본인은 연방 규정 제 493.51 조의 Title 49에 명시된대로 실격, 정지, 취소 또는 취소의 대상이 아니며 여러 주 또는 관할권의 운전 면허증을 가지고 있지 않음을 확인합니다."
-        },
-        "prompt": "어떤 유형의 운전을해야합니까?",
-        "notSure": {
-          "expected": {
-            "explanation": "일부 주에서는 CFR, Title 49 §391에 명시된 자격을 충족시키기 위해 운전자가 <b> <em>없는 </ em> </ b> 상업용 운전 면허증을 발급합니다. 이러한 드라이버는 \"예외\"드라이버로 간주됩니다. 캘리포니아주는 그러한 종류의 면허를 발급하지 않습니다. 상업용 차량을 운행하기 위해 캘리포니아 주에서 허가 한 모든 운전자는 <em> 예외가 아닌 </ em> 운전자입니다.",
-            "title": "<b> 기대 및 예상되지 않은 라이센스 </ b>"
-          },
-          "intrastate": {
-            "title": "주 (州) 상업",
-            "explanation": "\"주간 상업 거래\"라는 용어에 설명되어 있지 않은 모든 주에서의 무역, 교통 또는 교통 수단을 의미합니다."
-          },
-          "title": "나에게 어떤 것이 적용되는지 잘 모르겠다.",
-          "interstate": {
-            "explanation": "다음과 같은 미국 내에서의 무역, 교통 또는 교통 수단을 말합니다.",
-            "title": "각 주간 상업",
-            "values": [
-              "주 내의 한 장소와 그 주 외부의 장소 (미국 이외의 장소 포함)",
-              "다른 주 또는 미국 이외의 지역을 통과하는 주 내의 두 장소 사이",
-              "주나 미국 이외의 지역에서 시작되거나 종료되는 무역, ​​교통 또는 운송의 일부로서 주 내의 2 개 장소 사이"
-            ]
-          }
+      "youthLicense": {
+        "comeBack": "15 살이되면 다시 오세요.",
+        "underFifteen": {
+          "title": "학습자 허가 신청을 시작하려면 15 세 이상이어야합니다.",
+          "explanation": "특별한 경우, 14 세에서 15 세 사이의 청소년은 주니어 (Junior) 허가를받을 수 있습니다. 주니어 허가를받을 자격이 있다고 생각되면 사무실을 방문하거나 DMV 웹 사이트의 문서를 참조하십시오."
         }
       }
     }
@@ -1254,8 +1277,8 @@
       "show": "DMV 직원에게 보여주십시오. 또한이 코드를 이메일로 보내드립니다.",
       "details": "신청서를 작성하는 데 필요한 사항에 대한 자세한 내용은 DMV 웹 사이트를 방문하십시오.",
       "goToDMV": "이제 DMV에 가야합니다!",
-      "appointmentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> 약속을 만들어 시간을 절약하십시오. </a>",
-      "documentLink": "<a href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> 필요한 서류를 가져 오십시오. </a>"
+      "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> 약속을 만들어 시간을 절약하십시오. </a>",
+      "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> 필요한 서류를 가져 오십시오. </a>"
     },
     "conclusion": {
       "notAvailable": "사용 불가",
@@ -1295,9 +1318,9 @@
           ],
           "legalPresence": {
             "title": "법적인 존재",
-            "explanation": "모든 신청자는 자신의 생년월일을 증명해야합니다. AB 60이 아니라면 합법적 인 존재임을 증명해야합니다. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 체크리스트 도구 </a>와 <a target = \"_ blank\"href = 'https : //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> 생년월일 및 법적 존재 목록 </a>."
+            "explanation": "모든 신청자는 자신의 생년월일을 증명해야합니다. AB 60이 아니라면 합법적 인 존재임을 증명해야합니다. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 체크리스트 도구 </a> 와 <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>생년월일 및 법적 존재 목록</a>."
           },
-          "proof": "결혼, 이혼 또는 법원을 통해 귀하의 이름을 변경 한 경우 <a target = \"_ blank\"href = 'https : //www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05 # true '> 사실임, 전체 이름 </a>."
+          "proof": "결혼, 이혼 또는 법원을 통해 귀하의 이름을 변경 한 경우 <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> 사실임, 전체 이름 </a>."
         },
         "veteran": {
           "title": "참전 용사 증명",
@@ -1342,7 +1365,7 @@
       "weNeedBasicInfo": "우리는 귀하에 대한 기본 정보가 필요합니다.",
       "addAnotherSigntature": "다른 부모 / 보호자 서명 추가"
     },
-    "emancipatedInfoMessage": "<b> 귀하가 해방된 미성년자 임을 증명하기 위해 </b>, 귀하의 해방을 DL 11 양식에 선언<b>하고</b>재정적 증거를 제공해야 합니다. <a href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>자세한 내용은 DMV 웹 사이트를 참조하십시오. </a>"
+    "emancipatedInfoMessage": "<b> 귀하가 해방된 미성년자 임을 증명하기 위해 </b>, 귀하의 해방을 DL 11 양식에 선언<b>하고</b>재정적 증거를 제공해야 합니다. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>자세한 내용은 DMV 웹 사이트를 참조하십시오. </a>"
   },
   "shared": {
     "navigation": {
@@ -1645,7 +1668,7 @@
     },
     "confirmation": {
       "pagePrompt": "감사합니다. 귀하의 유권자 등록 신청서는 DMV에서 일을 마칠 때 처리될 것입니다.",
-      "explanation": "<p>귀하가 DMV를 방문한 후 4주 이내에 유권자 통지 카드를 받지 못하면, 카운티 선거관리 담당관에게 연락하십시오. </p><p> 캘리포니아 주 총무처장관 웹사이트 <a href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>에서 유권자 등록 상태를 확인할 수 있습니다.</p>"
+      "explanation": "<p>귀하가 DMV를 방문한 후 4주 이내에 유권자 통지 카드를 받지 못하면, 카운티 선거관리 담당관에게 연락하십시오. </p><p> 캘리포니아 주 총무처장관 웹사이트 <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>에서 유권자 등록 상태를 확인할 수 있습니다.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>귀하가 정당을 선택하지 않으면, 미국 대통령 또는 중앙 위원회에 대한 예비선거에서 일부 정당 입후보자에게 투표를 하지 못할 수도 있습니다. </p><p> 그러면 귀하의 이전 선호 정당을 덮어쓸 것입니다.</p>"

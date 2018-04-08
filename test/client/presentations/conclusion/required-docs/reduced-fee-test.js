@@ -46,10 +46,12 @@ describe('Required Docs for Reduced Fee', function() {
         ID: 'Yes'
       };
       component = render(
-        <BulletList
-          {...props}
-          reducedFee = {reducedFee}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            reducedFee = {reducedFee}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('No fee eligibility'), true);
     });
@@ -59,10 +61,12 @@ describe('Required Docs for Reduced Fee', function() {
         ID: 'No'
       };
       component = render(
-        <BulletList
-          {...props}
-          reducedFee = {reducedFee}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            reducedFee = {reducedFee}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
     });
@@ -72,10 +76,12 @@ describe('Required Docs for Reduced Fee', function() {
         ID: ''
       };
       component = render(
-        <BulletList
-          {...props}
-          reducedFee = {reducedFee}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            reducedFee = {reducedFee}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('No fee eligibility'), false);
     });

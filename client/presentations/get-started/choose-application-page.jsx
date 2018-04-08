@@ -39,7 +39,7 @@ const Form = (props) => {
             errorMessage  = {  props.validations.chooseApplication() }
             selectedValue = { props.chooseApp }
           >
-            <RadioSelector value='id-and-license'>
+            <RadioSelector value='iddl'>
               <Translator
                 tag             = 'span'
                 translationPath = 'beforeIntro.chooseDLorCDLPage.answerIDorDL'

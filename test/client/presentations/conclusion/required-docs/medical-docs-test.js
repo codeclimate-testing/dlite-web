@@ -47,10 +47,12 @@ describe('Required Docs for Medical Condition', function() {
         hasMedicalCondition: 'Yes'
       };
       component = render(
-        <BulletList
-          {...props}
-          medicalHistory={medicalHistory}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            medicalHistory={medicalHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Medical Information'), true);
     });
@@ -60,10 +62,12 @@ describe('Required Docs for Medical Condition', function() {
         hasMedicalCondition: 'No'
       };
       component = render(
-        <BulletList
-          {...props}
-          medicalHistory={medicalHistory}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            medicalHistory={medicalHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Medical Information'), false);
     });
@@ -73,10 +77,12 @@ describe('Required Docs for Medical Condition', function() {
         hasMedicalCondition: ''
       };
       component = render(
-        <BulletList
-          {...props}
-          medicalHistory={medicalHistory}
-        />
+        <Wrapper>
+          <BulletList
+            {...props}
+            medicalHistory={medicalHistory}
+          />
+        </Wrapper>
       )
       assert.equal(component.text().includes('Medical Information'), false);
     });

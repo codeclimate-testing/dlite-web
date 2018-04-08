@@ -10,31 +10,68 @@ import {
   isNewDriver,
   needsKnowledgeTest
 }          from '../../../helpers/data/youth';
+import Translator         from '../../../i18n/translator-tag.jsx';
 
 const RealID = (props) => {
   if (gettingRealID(props)) {
-    return (<li key='real-id'>Real ID birth date, name and legal presence proof</li>);
+    return (
+      <Translator
+        tag             = 'li'
+        key             = 'real-id'
+        translationPath = 'newApproved.requiredDocuments.bulletList.realID'
+      />
+      );
   }
-  return (<li key='legal-presence'>Legal presence</li>);
+  return (
+    <Translator
+      tag             = 'li'
+      key             = 'legal-presence'
+      translationPath = 'newApproved.requiredDocuments.bulletList.legalPresence'
+    />
+    );
 };
 
 const SocialSecurity = (props) => {
   if (!hasSocialSecurityYes(props)) { return null; }
-  return <li key='social-security' >Proof of Social Security Number</li>
+  return (
+    <Translator
+      tag             = 'li'
+      key             = 'social-security'
+      translationPath = 'newApproved.requiredDocuments.bulletList.socialSecurity'
+    />
+    );
 };
 
 const Residency = () => {
-  return <li key='ca-residency' >California residency</li>
+  return (
+    <Translator
+      tag             = 'li'
+      key             = 'ca-residency'
+      translationPath = 'newApproved.requiredDocuments.bulletList.residency'
+    />
+    );
 };
 
 const Veteran = (props) => {
   if (!showBulletPoint(props)) { return null; }
-  return <li key='proof-veteran-service' >Proof of veterans service</li>
+  return (
+    <Translator
+      tag             = 'li'
+      key             = 'proof-veteran-service'
+      translationPath = 'newApproved.requiredDocuments.bulletList.veteran'
+    />
+    );
 };
 
 const MedicalCondition = (props) => {
   if (!hasMedical(props)) { return null; }
-  return <li key='medical-information' >Medical Information</li>
+  return (
+    <Translator
+      tag             = 'li'
+      key             = 'medical-information'
+      translationPath = 'newApproved.requiredDocuments.bulletList.medicalInformation'
+    />
+    );
 };
 
 const Youth = (props) => {
@@ -42,25 +79,43 @@ const Youth = (props) => {
 
   const KnowledgeTest = (props) => {
     if (!needsKnowledgeTest(props)) { return null;}
-    return <li key='knowledge-test'>You will need to take a knowledge test</li>
+    return (
+      <Translator
+        tag             = 'li'
+        key             = 'knowledge-test'
+        translationPath = 'newApproved.requiredDocuments.bulletList.youth'
+      />
+      );
   };
 
   return (
     <div>
-      <li key='new-driver'>New driver requirements</li>
+      <Translator
+        tag             = 'li'
+        key             = 'new-driver'
+        translationPath = 'newApproved.requiredDocuments.bulletList.newDriver'
+      />
       <KnowledgeTest {...props} />
     </div>
-  )
+    )
 };
 
 const ReducedFee = (props) => {
   if (!choosingReducedFee(props)) { return null; }
   return (
     <div>
-      <li key='reduced-fee'>Reduced fee eligibility</li>
-      <li key='no-fee'>No fee eligibility</li>
+      <Translator
+        tag             = 'li'
+        key             = 'reduced-fee'
+        translationPath = 'newApproved.requiredDocuments.bulletList.reducedFee'
+      />
+      <Translator
+        tag             = 'li'
+        key             = 'no-fee'
+        translationPath = 'newApproved.requiredDocuments.bulletList.noFee'
+      />
     </div>
-  )
+    )
 };
 
 const BulletList = (props) => {
@@ -74,7 +129,7 @@ const BulletList = (props) => {
       <Youth {...props} />
       <ReducedFee {...props} />
     </ul>
-  )
+    )
 };
 
 export default BulletList;

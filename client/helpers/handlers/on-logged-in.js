@@ -8,6 +8,7 @@ import {
  } from '../../actions/index';
 import { nextPath }                     from '../navigation/page';
 import { doNotNeedToLoadTranslations }  from '../data/translator';
+import { parseChooseApp }               from '../data/application';
 import {
   getLanguageFromCookie,
   getAppNameCookie
@@ -33,7 +34,9 @@ export default (dispatch) => {
       .then((res) => {
 
         let appName = getAppNameCookie();
-        dispatch(chooseApp(appName));
+        let chosenApp = parseChooseApp(appName);
+        dispatch(chooseApp(chosenApp));
+
         dispatch(updateLoggedIn(true));
 
         let pageKey = getAppKey(appName);
