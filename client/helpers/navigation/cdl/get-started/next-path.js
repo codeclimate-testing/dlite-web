@@ -76,10 +76,3 @@ export const cdlCurrentDL = (props) => {
   return key;
 };
 
-export const cdlCertification = (props) => {
-  let key = 'cdlSummary';
-  if (!editFlow(props) && !hasExistingCard(props)) {
-    key = 'cdlMedical';
-  }
-  return key;
-};
