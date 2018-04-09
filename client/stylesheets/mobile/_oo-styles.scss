@@ -23,8 +23,8 @@
 }
 
 .off-screen {
-  position: absolute;
-  left: -999px;
+  opacity: 0;
+  height: 0;
 }
 
 
