@@ -31,7 +31,6 @@ const childPropsAdditions = (props, value, values) => {
 
   let focusFunction = (e) => {
     props.onFocus(e);
-    props.onFocusClearValidation(e);
   };
 
   return {
@@ -78,4 +77,3 @@ const RadioSelectorCollection = (props) => {
 }
 
 export default RadioSelectorCollection;
-

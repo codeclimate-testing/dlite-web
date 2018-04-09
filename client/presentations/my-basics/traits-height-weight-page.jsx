@@ -46,7 +46,6 @@ const TraitsPage = (props) => {
             errorMessage            = { props.validations.heightFeet() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
-            onFocusClearValidation  = { props.onFocusClearValidation }
           >
             <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.feetLabel' />
           </NumberInput>
@@ -60,7 +59,6 @@ const TraitsPage = (props) => {
             errorMessage            = { props.validations.heightInches() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
-            onFocusClearValidation  = { props.onFocusClearValidation }
           >
             <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.height.inchesLabel' />
           </NumberInput>
@@ -91,7 +89,6 @@ const TraitsPage = (props) => {
             errorMessage            = { props.validations.weight() }
             onChange                = { props.onChange }
             onBlurValidate          = { props.onBlurValidate }
-            onFocusClearValidation  = { props.onFocusClearValidation }
           >
             <Translator tag = 'span' translationPath = 'myBasics.heightWeightPage.weight.poundsLabel' />
           </NumberInput>

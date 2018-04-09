@@ -21,7 +21,6 @@ const Page = (props) => {
       currentCardInfo   = { props.currentCardInfo }
       validations       = { validations }
       onBlur            = { props.onBlurValidate }
-      onFocus           = { props.onFocusClearValidation }
     />
   );
 };
@@ -39,4 +38,3 @@ function mapStateToProps(state) {
 };
 
 export default connectForm(mapStateToProps, updateCurrentCardInfo, Page);
-

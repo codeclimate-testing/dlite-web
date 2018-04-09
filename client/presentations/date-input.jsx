@@ -38,7 +38,6 @@ const DateInput = (props) => {
         error                   = { hasValue(errors.month) }
         onChange                = { props.onChange }
         onBlurValidate          = { props.onBlurValidate }
-        onFocusClearValidation  = { props.onFocusClearValidation }
       />
 
       <div className  = 'unit spacer'/>
@@ -50,7 +49,6 @@ const DateInput = (props) => {
         error                   = { hasValue(errors.day) }
         onChange                = { props.onChange }
         onBlurValidate          = { props.onBlurValidate }
-        onFocusClearValidation  = { props.onFocusClearValidation }
       />
 
       <div className  = 'unit spacer'/>
@@ -62,7 +60,6 @@ const DateInput = (props) => {
         error                   = { hasValue(errors.year)  }
         onChange                = { props.onChange }
         onBlurValidate          = { props.onBlurValidate }
-        onFocusClearValidation  = { props.onFocusClearValidation }
       />
 
       <ErrorLabel

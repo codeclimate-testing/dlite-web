@@ -48,7 +48,6 @@ const NumberInput = (props) => {
           aria-label= { props.identifier }
           onChange  = { props.onChange }
           onBlur    = { props.onBlurValidate }
-          onFocus   = { props.onFocusClearValidation }
           value     = { props.value }
         />
       </div>

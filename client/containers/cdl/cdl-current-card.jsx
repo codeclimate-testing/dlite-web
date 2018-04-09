@@ -19,7 +19,6 @@ const Page = (props) => {
       onBack                  = { onBack }
       validations             = { validations }
       onBlur                  = { props.onBlurValidate }
-      onFocus                 = { props.onFocusClearValidation }
     />
   );
 };
@@ -34,4 +33,3 @@ function mapStateToProps(state) {
 };
 
 export default connectForm(mapStateToProps, updateCurrentCDL, Page);
-

@@ -48,13 +48,11 @@ function mapDispatchToProps(dispatch) {
   const onSubmit                         = handlers.onFormSubmit(dispatch);
   const onBlurValidate                   = handlers.onBlurValidate(dispatch);
   const onBlur                           = handlers.onBlur(dispatch);
-  const onFocusClearValidation           = handlers.onFocusClearValidation(dispatch);
   const onSubmitShowErrors               = handlers.onSubmitShowErrors(dispatch);
   const onFocus                          = handlers.onFocus(dispatch);
 
   const onCheckboxFocus = (e) => {
     onFocus(e);
-    onFocusClearValidation(e);
   };
 
   const onCheckboxBlur = (e) => {
@@ -71,7 +69,6 @@ function mapDispatchToProps(dispatch) {
     onSubmit,
     onBlurValidate,
     onBlur,
-    onFocusClearValidation,
     onSubmitShowErrors,
     onFocus,
     onCheckboxBlur,
