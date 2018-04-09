@@ -39,7 +39,7 @@ let config = {
   plugins: [
     new ExtractTextPlugin('app.css'),
     new webpack.DefinePlugin({
-      APP_ENV: JSON.stringify('stage')
+      APP_ENV: JSON.stringify('production')
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new CompressionPlugin({
