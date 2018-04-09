@@ -13,10 +13,10 @@ describe('same user only controller', () => {
     res = {
       send: function(){ },
       json: function(err){
-        assert.equal(err.message, 'session user uuid doesnt match requested uuid');
+        assert.equal(err.message, 'not same user');
       },
       status: function(responseStatus) {
-          assert.equal(responseStatus, 500);
+          assert.equal(responseStatus, 401);
           // This next line makes it chainable
           return this;
       }

@@ -21,13 +21,13 @@ describe('extracting IDDL card action', function() {
     IDApp.action = 'new';
     assert.equal(getCardAction(IDApp, DLApp), 'new');
   });
-  it('returns "" if user is getting both cards but not new', function() {
+  it('returns DL action if user is getting both cards but not new', function() {
     DLApp.action = 'renew';
     IDApp.action = 'new';
-    assert.equal(getCardAction(IDApp, DLApp), '');
+    assert.equal(getCardAction(IDApp, DLApp), DLApp.action);
   });
-  it('returns "" if user is getting just one card', function() {
+  it('returns the card action if user is getting just one card', function() {
     DLApp.isApplying = false;
-    assert.equal(getCardAction(IDApp, DLApp), '');
+    assert.equal(getCardAction(IDApp, DLApp), IDApp.action);
   });
 });

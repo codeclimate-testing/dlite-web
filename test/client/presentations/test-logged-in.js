@@ -46,23 +46,15 @@ const LoggedIn = (props) => {
 
 
   // check to see if the test data have already been saved
-  let savedResults;
   dispatch(getUserData('3f'))
     .then((res) => {
-      if (res.apps.filter((app) => {
+      let savedData = res.apps.filter((app) => {
         return app.id === '4' && app.name === 'renew ID and change DL person';
-      }).length === 0) {
-        console.log('save data')
-        saveData();
-      } else {
-        console.log(userData);
-        dispatch({
-          type: 'UPDATE_USER_DATA',
-          payload: {
-            value: userData
-          }
-        });
+      });
+      if (savedData.length === 0) {
+        return saveData();
       }
+      return;
     })
     .then(() => {
       console.log('push to page')
@@ -76,12 +68,17 @@ const LoggedIn = (props) => {
 
     // if not, save it
     const saveData = () => {
+      console.log('preparing to save data')
       let data = Object.assign({}, props.cdl);
       data.id = '1';
       data.userID = '3f';
       data.cardAction = 'new';
       data.basics.legalName.lastName = 'CDL person';
-      data.basics.dateOfBirth = '10/10/2000';
+      data.basics.dateOfBirth = {
+        month: '10',
+        day: '10',
+        year: '1990'
+      };
       fetch('/api/application', {
         method: 'POST',
         credentials: 'same-origin',
@@ -96,7 +93,11 @@ const LoggedIn = (props) => {
         data.id = '2';
         data.userID = '3f';
         data.basics.legalName.lastName = 'DL person';
-        data.basics.dateOfBirth = '10/10/2000';
+        data.basics.dateOfBirth = {
+          month: '10',
+          day: '10',
+          year: '1990'
+        };
         data.IDApp.isApplying = false;
         data.DLApp.isApplying = true;
         data.DLApp.action = 'replace';
@@ -119,7 +120,11 @@ const LoggedIn = (props) => {
         data.id = '3';
         data.userID = '3f';
         data.basics.legalName.lastName = 'new ID and DL person';
-        data.basics.dateOfBirth = '10/10/2000';
+        data.basics.dateOfBirth = {
+          month: '10',
+          day: '10',
+          year: '1990'
+        };
         data.IDApp.isApplying = true;
         data.IDApp.action = 'new';
         data.DLApp.isApplying = true;
@@ -136,11 +141,16 @@ const LoggedIn = (props) => {
         .then(() => { return 'done'})
       })
       .then(() => {
+        console.log('save id 4')
         let data = Object.assign({}, props.iddl);
         data.id = '4';
         data.userID = '3f';
         data.basics.legalName.lastName = 'renew ID and change DL person';
-        data.basics.dateOfBirth = '10/10/2000';
+        data.basics.dateOfBirth = {
+          month: '10',
+          day: '10',
+          year: '1990'
+        };
         data.IDApp.isApplying = true;
         data.IDApp.action = 'renew';
         data.DLApp.isApplying = true;
@@ -156,6 +166,13 @@ const LoggedIn = (props) => {
           body: JSON.stringify(data)
         })
         .then(() => {
+          console.log('update user data')
+          dispatch({
+            type: 'UPDATE_USER_DATA',
+            payload: {
+              value: userData
+            }
+          });
           return 'done';
         })
       });

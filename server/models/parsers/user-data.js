@@ -25,7 +25,9 @@ module.exports = function parseUserData(records){
           return option.option_type === 'action' && option.card_id === card.id;
         });
 
-        cardAction.push(action.option_value);
+        if (action) {
+          cardAction.push(action.option_value);
+        }
       });
     }
 

@@ -27,13 +27,13 @@ function IDApp(cards, card_options, card_histories) {
   };
 
   let IDCard = cards.filter(card => card.type === 'ID');
-  let cardOptions = card_options.filter(option => {
-    return option.card_id === IDCard[0].id;
-  });
-
 
   if (IDCard.length > 0) {
     IDAppObject.isApplying = true;
+    let cardOptions = card_options.filter(option => {
+      return option.card_id === IDCard[0].id;
+    });
+
     cardOptions.forEach(option => {
       // action
       if (option.option_type === 'action') {

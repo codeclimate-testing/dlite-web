@@ -173,6 +173,8 @@ module.exports = function(world) {
       .evaluate(function() {
         window.__reactHistory.push('/apply/logged-in/test');
       })
+      .waitForSelector('.open-applications')
+      .waitForSelector('.openApp p.1')
       .then(done)
       .catch(done);
   });

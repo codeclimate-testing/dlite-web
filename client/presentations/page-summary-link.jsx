@@ -11,7 +11,7 @@ import {
 
 const LinkPresentation = (props) => {
   let iconType = addOrEditIcon(props, 'add', 'edit');
-  let className = `${props.editKey} summary edit button ${props.cardType}`;
+  let className = `${props.editKey} summary edit button ${props.cardType} ${props.appID}`;
 
   let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
   let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;

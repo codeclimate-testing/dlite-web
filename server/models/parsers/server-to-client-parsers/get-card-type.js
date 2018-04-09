@@ -6,11 +6,11 @@ const getCardType = (IDApp, DLApp) => {
   if(cardTypeParser.gettingBothNew(IDApp, DLApp)) {
     toReturn = ['ID', 'DL'];
   }
-  else if (cardTypeParser.hasID(IDApp)){
-    toReturn = ['ID']
+  else if (cardTypeParser.hasDL(DLApp)){
+    toReturn = ['DL']
   }
   else {
-    toReturn = ['DL']
+    toReturn = ['ID'];
   }
   return toReturn;
 };

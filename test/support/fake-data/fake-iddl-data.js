@@ -101,8 +101,8 @@ function fakeClientData() {
       realID: 'Yes'
     },
 
-    cardType: ['ID'],
-    cardAction: '',
+    cardType: ['DL'],
+    cardAction: 'renew',
 
     youthIDInstead: '',
     'realID': 'Yes',
