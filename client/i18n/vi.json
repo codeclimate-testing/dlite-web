@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "Xin nhắc là đơn đăng ký bỏ phiếu của bạn sẽ được xử lý khi bạn hoàn thành việc đăng ký tại văn phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV).",
-    "checkVoterStatus": "Kiểm tra tình trạng của bạn: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "Kiểm tra tình trạng của bạn: <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "Nếu bạn cần đăng ký bỏ phiếu trước khi đến Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV): Bạn có thể đăng ký trực tuyến tại RegisterToVote.ca.gov.",
     "register30days": "Nếu bạn muốn bỏ phiếu trong cuộc bầu cử toàn bang, hãy đăng ký trực tuyến tại RegisterToVote.ca.gov. ",
     "avoidLines": "Để không phải chờ đợi hay xếp hàng, hãy đặt lịch hẹn tại văn tại phòng địa phương của Cơ Quan Quản Lý Các Phương Tiện Cơ Giới (DMV) ngay bây giờ.",
@@ -1319,7 +1319,7 @@
             "title": "Hiện diện pháp lý",
             "explanation": "Tất cả các đương đơn cần chứng minh ngày sinh của họ. Trừ khi bạn AB 60, bạn cần phải chứng minh hiện diện pháp lý. Vui lòng tham khảo <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> công cụ kiểm tra AB 60 </a> và <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> ngày sinh và danh sách hiện diện pháp lý </a>."
           },
-          "proof": "Nếu bạn đã lập gia đình hoặc ly hôn, thông qua hoặc thay đổi tên của bạn thông qua tòa án, hãy đảm bảo cũng mang theo <a target=\"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pubs / brochure / fast_facts / ffdl05 true true chứng minh tên thật, đầy đủ </a>."
+          "proof": "Nếu bạn đã lập gia đình hoặc ly hôn, thông qua hoặc thay đổi tên của bạn thông qua tòa án, hãy đảm bảo cũng mang theo <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>chứng minh tên thật, đầy đủ</a>."
         },
         "realIdDocuments": {
           "title": "Ngày sinh thật ID, tên và bằng chứng hiện diện pháp lý",
@@ -1667,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "Cám ơn quý vị, đơn ghi danh cử tri của quý vị sẽ được lập thủ tục khi quý vị xong việc của mình tại DMV.",
-      "explanation": "<p>Nếu quý vị không nhận được thẻ thông báo cử tri của mình trong vòng bốn tuần sau khi đến DMV, hãy liên lạc với viên chức bầu cử quận của quý vị. </p><p> Quý vị có thể xem tình trạng ghi danh cử tri của mình tại trang của Tổng Thư Ký Tiểu Bang California <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+      "explanation": "<p>Nếu quý vị không nhận được thẻ thông báo cử tri của mình trong vòng bốn tuần sau khi đến DMV, hãy liên lạc với viên chức bầu cử quận của quý vị. </p><p> Quý vị có thể xem tình trạng ghi danh cử tri của mình tại trang của Tổng Thư Ký Tiểu Bang California <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>Nếu quý vị không chọn một chính đảng, quý vị có thể không được bầu cho một số ứng cử viên của đảng trong cuộc bầu cử sơ bộ bầu Tổng Thống Hoa Kỳ hoặc ủy ban trung ương. </p><p> Lần này sẽ thay thế chọn lựa chính đảng trước đây của quý vị.</p>"

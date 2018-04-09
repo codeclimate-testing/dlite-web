@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "特此提示一下：您在DMV辦事處完成申請時，您的選民登記申請會獲處理。",
-    "checkVoterStatus": "查看您的狀態：<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。",
+    "checkVoterStatus": "查看您的狀態：<a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。",
     "registerSooner": "如果您必須在訪問DMV辦事處之前就進行選民登記：您可以在RegisterToVote.ca.gov上進行登記。",
     "register30days": "如果您想在下一次州选举中进行投票，现在请在 RegisterToVote.ca.gov 上进行登记。",
     "avoidLines": "為避免等候和排隊，現在就與您當地DMV辦事處預約。",
@@ -1320,7 +1320,7 @@
             "一份文件，证明您的出生日期和合法存在。",
             "或者为您的出生日期提供一份文件，并为您的合法存在提供一份文件。"
           ],
-          "proof": "如果您已婚或离婚，已通过法庭或已通过法庭更改您的姓名，请务必带上 <a target=“_ blank ”href ='https：/www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真实姓名的证明</a>。",
+          "proof": "如果您已婚或离婚，已通过法庭或已通过法庭更改您的姓名，请务必带上 <a target=“_ blank ”href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真实姓名的证明</a>。",
           "legalPresence": {
             "title": "合法存在",
             "explanation": "所有申请人需要证明自己的出生日期。除非你是AB 60，否则你需要证明合法的存在。请参阅我们的 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>AB 60清单工具</a> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>出生日期和合法在线列表</a>"
@@ -1668,7 +1668,7 @@
     },
     "confirmation": {
       "pagePrompt": "謝謝您，當您辦完今天在DMV的事務後，將會處理您的選民登記申請表。",
-      "explanation": "<p>如果在您此次前往DMV之後沒有在四週內收到選民通知卡，請聯絡您的選舉官員。</p><p> 您可以向加州州務卿查詢您的選民登記狀態<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。</p>"
+      "explanation": "<p>如果在您此次前往DMV之後沒有在四週內收到選民通知卡，請聯絡您的選舉官員。</p><p> 您可以向加州州務卿查詢您的選民登記狀態<a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>。</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>如果您不選擇一個政黨，您可能無法在美國總統或中央委員會的初選中投票選舉某些政黨的候選人。</p><p> 這會取代您先前的黨派歸屬。</p>"

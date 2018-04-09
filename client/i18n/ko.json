@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "다시 말씀 드리건대, 귀하의 투표자 등록 신청은 귀하가 DMV 지역 사무소에서 귀하의 신청서를 마무리 할 때 처리됩니다. ",
-    "checkVoterStatus": "귀하의 진행 상태를 체크하십시오. <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "귀하의 진행 상태를 체크하십시오. <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "DMV 방문하기 전에 투표 등록을 해야 하는 경우.  RegisterToVote.ca.gov에서 온라인으로 등록할 수 있습니다.",
     "register30days": "다음 번 주 단위 선거를 위한 투표를 원하시면 RegisterToVote.ca.gov에서 온라인으로 등록하십시오. ",
     "avoidLines": "오래 기다리는 것이 싫으시면 귀하의 지역 DMV에서 약속 정하시기 바랍니다.",
@@ -1668,7 +1668,7 @@
     },
     "confirmation": {
       "pagePrompt": "감사합니다. 귀하의 유권자 등록 신청서는 DMV에서 일을 마칠 때 처리될 것입니다.",
-      "explanation": "<p>귀하가 DMV를 방문한 후 4주 이내에 유권자 통지 카드를 받지 못하면, 카운티 선거관리 담당관에게 연락하십시오. </p><p> 캘리포니아 주 총무처장관 웹사이트 <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>에서 유권자 등록 상태를 확인할 수 있습니다.</p>"
+      "explanation": "<p>귀하가 DMV를 방문한 후 4주 이내에 유권자 통지 카드를 받지 못하면, 카운티 선거관리 담당관에게 연락하십시오. </p><p> 캘리포니아 주 총무처장관 웹사이트 <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>에서 유권자 등록 상태를 확인할 수 있습니다.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>귀하가 정당을 선택하지 않으면, 미국 대통령 또는 중앙 위원회에 대한 예비선거에서 일부 정당 입후보자에게 투표를 하지 못할 수도 있습니다. </p><p> 그러면 귀하의 이전 선호 정당을 덮어쓸 것입니다.</p>"

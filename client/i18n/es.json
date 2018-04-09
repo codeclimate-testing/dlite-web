@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "Recuerde, su solicitud de inscripción de votante se procesará cuando complete la solicitud en la oficina del DMV.",
-    "checkVoterStatus": "Revise su estatus: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "Revise su estatus: <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "Si necesita inscribirse para votar antes de ir al DMV: Puede inscribirse por Internet en RegisterToVote.ca.gov.",
     "register30days": "Si quiere votar en las próximas elecciones estatales, inscríbase ahora por Internet en RegisterToVote.ca.gov. ",
     "avoidLines": "Para no estar en espera tanto tiempo ni hacer largas filas, haga una cita ahora para ir a una oficina del DMV.",
@@ -852,7 +852,7 @@
     },
     "organDonation": {
       "title": "Declaración de donación de órganos",
-      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target=\"_ blank\" href = 'https: //www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
+      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target=\"_ blank\" href = 'https://www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
     },
     "medical": {
       "body": "Las siguientes condiciones que pueden afectar su capacidad para operar un vehículo de motor de forma segura incluyen, entre otras:",
@@ -868,7 +868,7 @@
     "voterRegistration": {
       "title": "Registro de votantes",
       "bodyBullets": [
-        "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa Safe at Home al (877) 322-5227 o visite <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'> www.sos.ca .gov / safeathome / </a>.",
+        "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa Safe at Home al (877) 322-5227 o visite <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'> www.sos.ca .gov /safeathome/ </a>.",
         "Solo para ciudadanos de los EE. UU. Si no ha recibido la información de registro de votante dentro de los 30 días de haberla solicitado, debe comunicarse con el Oficial de Elecciones de su Condado o con el Secretario de Estado de California.",
         "Al registrarse para votar en el DMV, usted reconoce que el DMV enviará su información de votante y su firma digital al Secretario de Estado de California para completar el proceso de registro de votantes.",
         "Si no desea registrarse para votar, su decisión será confidencial y se usará solo para fines de inscripción de votantes.",
@@ -879,7 +879,7 @@
       "voterRegistration": {
         "title": "Registro de votantes",
         "bodyBullets": [
-          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target=\"_ blank\" href = 'http: //www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
+          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target=\"_ blank\" href = 'http://www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
           "<b> Solo para ciudadanos de EE. UU. </ b>. Si indica que es elegible para votar, el DMV enviará toda la información de inscripción de votantes recopilada en este formulario, incluida su firma digital, al Secretario de Estado de California. La oficina del DMV donde se registró seguirá siendo confidencial y solo se utilizará para el registro de votantes.",
           "Si es elegible para votar y no quiere registrarse para votar, su decisión será confidencial; sin embargo, esta información se enviará al Secretario de Estado de California para que se use únicamente con fines de divulgación y registro de votantes.",
           "La información de registro del votante provista en esta aplicación es confidencial. El DMV no hace las determinaciones de elegibilidad del votante.",
@@ -1667,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "Gracias. Su solicitud de inscripción de votante se procesará cuando complete su transacción con el DMV.",
-      "explanation": "<p>Si no recibe una tarjeta de notificación de votante a cuatro semanas de haber ido al DMV, comuníquese con el funcionario electoral de su condado. </p><p> Puede verificar el estado de su inscripción de votante en la página web de la Secretaría de Estado de California: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+      "explanation": "<p>Si no recibe una tarjeta de notificación de votante a cuatro semanas de haber ido al DMV, comuníquese con el funcionario electoral de su condado. </p><p> Puede verificar el estado de su inscripción de votante en la página web de la Secretaría de Estado de California: <a target=\"_blank\" href='https://voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>Si no selecciona un partido político, es posible que no pueda votar por algunos de los candidatos partidarios en una elección primaria para presidente de EE. UU. o comité central partidario. </p><p> Esto reemplazará su preferencia anterior de partido político.</p>"

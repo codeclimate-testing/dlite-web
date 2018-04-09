@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "注意点としては、運輸局支局事務所での申請終了時に、有権者登録の申請が処理されます。",
-    "checkVoterStatus": "あなたの状況を確認して下さい。<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "あなたの状況を確認して下さい。<a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "運輸局を訪問する前に有権者登録をする必要がある場合。RegisterToVote.ca.gov.にてオンラインで登録することができます。",
     "register30days": "次回の州選挙で投票したい場合、今すぐRegisterToVote.ca.govでオンライン登録してください。",
     "avoidLines": "長時間並んで待つのを避けるために、あなたの地元の運輸局に今すぐ予約をしてください。",
@@ -1319,7 +1319,7 @@
             "またはあなたの生年月日のための1つの文書とあなたの法的存在のための1つの文書。"
           ],
           "title": "そのリストから、次のいずれかが必要です。",
-          "proof": "あなたが結婚した、離婚した、養子縁組した、または裁判所を通じてあなたの名前を変更した場合は、<target = \"_ blank\" href = 'https：//www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05＃true '>真実のフルネームの証拠</a>です。",
+          "proof": "あなたが結婚した、離婚した、養子縁組した、または裁判所を通じてあなたの名前を変更した場合は、<target = \"_ blank\" href = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真実のフルネームの証拠</a>です。",
           "legalPresence": {
             "title": "法的存在",
             "explanation": "すべての応募者は、生年月日を証明する必要があります。あなたがAB 60でない限り、合法的存在を証明する必要があります。 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60チェックリストツール</a> と <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>生年月日と法的在籍リスト</a>。"
@@ -1667,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "ありがとうございます。DMVでのご用件をお済ませになったときに、有権者登録の申し込みが処理されます。",
-      "explanation": "<p>DMVにお越しいただいてから4週間以内に有権者通知の葉書が届かなかった場合、あなたの郡の選挙管理人までご連絡ください。</p><p> カリフォルニア州務長官の<a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>にて有権者登録状況を確認できます。</p>"
+      "explanation": "<p>DMVにお越しいただいてから4週間以内に有権者通知の葉書が届かなかった場合、あなたの郡の選挙管理人までご連絡ください。</p><p> カリフォルニア州務長官の<a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>にて有権者登録状況を確認できます。</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>支持政党を選択なさらない方は、米国大統領または中央委員会についての予備選挙で一部の政党の候補者に投票できない場合があります。</p><p> これにより以前の支持政党が上書きされます。</p>"

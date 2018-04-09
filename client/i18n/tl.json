@@ -493,7 +493,7 @@
       ]
     },
     "registrationCompleteAtOffice": "Bilang paalala, ipoproseso ang aplikasyon mo sa pagpaparehistro bilang botante kapag nakumpleto mo ang iyong aplikasyon sa tanggapan sa opisina ng DMV.",
-    "checkVoterStatus": "Suriin ang katayuan mo: <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "Suriin ang katayuan mo: <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "Kung kailangan mong magrehistro para bumoto bago ang pagpunta mo sa DMV: Maaari kang magrehistro online sa RegisterToVote.ca.gov.",
     "register30days": "Kung gusto mong bumoto sa susunod na eleksiyon para sa buong estado, magrehistro online ngayon sa RegisterToVote.ca.gov. ",
     "avoidLines": "Para maiwasan ang matatagal na paghintay at mga linya, gumawa ng appointment sa lokal mong DMV ngayon.",
@@ -1307,7 +1307,7 @@
             "Ang isang dokumento na nagpapatunay sa iyong petsa ng kapanganakan at legal na presensya.",
             "O isang dokumento para sa iyong petsa ng kapanganakan at isang dokumento para sa iyong legal na presensya."
           ],
-          "proof": "Kung ikaw ay kasal o diborsiyado, pinagtibay o binago ang iyong pangalan sa pamamagitan ng mga korte, siguraduhing dalhin din ang <a target=\"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pub / polyeto / fast_facts / ffdl05 # true '> patunay ng tunay, buong pangalan </a>.",
+          "proof": "Kung ikaw ay kasal o diborsiyado, pinagtibay o binago ang iyong pangalan sa pamamagitan ng mga korte, siguraduhing dalhin din ang <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> patunay ng tunay, buong pangalan </a>.",
           "legalPresence": {
             "title": "Legal na presensya",
             "explanation": "Kailangan ng lahat ng aplikante na patunayan ang kanilang petsa ng kapanganakan. Maliban kung ikaw ay AB 60, kailangan mong patunayan ang legal na presensya. Mangyaring sumangguni sa aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 checklist tool </a> at ang aming <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>petsa ng kapanganakan at legal na listahan ng presensya </a>."
@@ -1667,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "Maraming salamat, ang iyong aplikasyon para sa pagpaparehistro bilang botante ay ipoproseso kapag nakumpleto mo ang iyong transaksiyon sa DMV.",
-      "explanation": "<p>Kung hindi ka makatanggap ng kard ng paunawa sa botante sa loob ng apat na linggo pagkatapos ng iyong pagbisita sa DMV, kontakin ang iyong opisyal sa mga halalan ng county. </p><p> Maaari mong alamin ang katayuan ng iyong pagpaparehistro bilang botante sa Kalihim ng Estado ng California sa <a target=\"_blank\" href='voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
+      "explanation": "<p>Kung hindi ka makatanggap ng kard ng paunawa sa botante sa loob ng apat na linggo pagkatapos ng iyong pagbisita sa DMV, kontakin ang iyong opisyal sa mga halalan ng county. </p><p> Maaari mong alamin ang katayuan ng iyong pagpaparehistro bilang botante sa Kalihim ng Estado ng California sa <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>Kung hindi ka pipili ng isang partidong pampulitika, maaaring hindi ka makaboto para sa mga kandidato ng ilang partido sa isang primaryang halalan para sa Presidente ng US o komite sentral., </p><p> Ito ay magpapawalang-saysay sa iyong dating kinakatigang partidong pampulitika.</p>"
