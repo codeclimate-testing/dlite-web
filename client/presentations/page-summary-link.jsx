@@ -21,16 +21,10 @@ const LinkPresentation = (props) => {
     pathname: pathForPage(props.editKey, {flow: props.flow})
   };
 
-  let handleClick = (e) => {
-    e.preventDefault();
-    props.onFlowChange(props.flow, props.cardType, props.appID, props.history);
-  };
-
-
   return (
     <div className='summary-section'>
       <div className='row'>
-        <div className='unit-right' onClick={handleClick}>
+        <div className='unit-right' onClick={props.onClick}>
           <div className='shadow-container'>
             <Link
               to={linkTo}

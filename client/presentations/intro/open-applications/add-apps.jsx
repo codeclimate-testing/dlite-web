@@ -24,7 +24,8 @@ export const AddApps = (props) => {
 
           <PageSummaryLink
             editKey='legalName'
-            addIcon = {true}
+            addIcon = { true }
+            newApp  = { true }
             flow = ''
           />
         </div>
@@ -37,9 +38,10 @@ export const AddApps = (props) => {
           />
 
           <PageSummaryLink
-            editKey='cdlLegalName'
-            addIcon = {true}
-            flow = ''
+            editKey = 'cdlLegalName'
+            addIcon = { true }
+            newApp  = { true }
+            flow    = ''
           />
         </div>
       </fieldset>

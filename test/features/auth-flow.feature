@@ -41,6 +41,17 @@ Scenario: Logging in with multiple applications
   Then I will see that I am updating my DL
   And I will see that I am renewing my ID
 
+Scenario: Adding CDL application from open-applications page
+  Given I go to the open applications page
+  When I click on the button to edit id 1
+  Then I will be on the CDL name page
+  And I will see my cdl name
+  When I go to the open applications page
+  Then I will see a button to add a CDL application
+  And I click the button to add a CDL application
+  Then I will be on the CDL name page
+  And I will not see my cdl name
+
 Scenario: Clicking the log-out link to log-out
   Given I go to the new online DL application
   When I go to the IDDL sign-in page

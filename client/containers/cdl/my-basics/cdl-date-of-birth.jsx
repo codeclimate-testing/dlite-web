@@ -8,7 +8,6 @@ import Presentation             from '../../../presentations/get-started/date-of
 import { updateCdlDob }         from '../../../actions/index';
 
 const Page = (props) => {
-  console.log(props)
   let validations       = new DOBValidator(props.dateOfBirth, props.validations);
   let onSubmit          = handlers.navigateOrShowErrors('cdlDateOfBirth', props, validations);
   let onBack            = handlers.navigateOnBack(props, validations);

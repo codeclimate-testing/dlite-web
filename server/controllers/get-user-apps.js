@@ -10,14 +10,12 @@ module.exports = function getUserApps(req, res){
   .then(() => {
     return fetchApplication.byUserId(req.params.uuid)
     .then((records) => {
-      console.log('got records for uuid: ');
       let userData = parseUserData(records);
       userData.userID = req.params.uuid;
       return userData;
     })
   })
   .then((userData) => {
-    console.log('preparing to send user data');
     res.json(userData);
   })
   .catch((err) => {

@@ -84,19 +84,22 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('I will not see my cdl name', function(done) {
-    browser
-      .value('#lastName')
-      .then((value) => { assert.ok(value !== 'CDL last name')})
-      .then(() => { done(); })
-      .catch(done);
-  });
-
   world.then('I will see my cdl name', function(done) {
     browser
       .value('#lastName')
       .then((value) => {
         assert.ok(value.includes('CDL person'), 'existing name not found in form');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will not see my cdl name', function(done) {
+    browser
+      .value('#lastName')
+      .then((value) => {
+        assert.ok(!value.includes('CDL person'), 'existing name found in form');
+        assert.equal(value, '');
       })
       .then(() => { done(); })
       .catch(done);
@@ -150,6 +153,20 @@ module.exports = function(world) {
   world.when('I click on the button to add an id-and-license application', function(done) {
     browser
       .click('a.legalName .add-icon')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.then('I will see a button to add a CDL application', function(done) {
+    browser
+      .exists('.addApp a.cdlLegalName')
+      .then(() => { done(); })
+      .catch(done);
+  });
+
+  world.when('I click the button to add a CDL application', function(done) {
+    browser
+      .click('.addApp a.cdlLegalName')
       .then(() => { done(); })
       .catch(done);
   });

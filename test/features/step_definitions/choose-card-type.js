@@ -395,14 +395,14 @@ module.exports = function(world) {
 
   world.then('I will see that my selection to get a replacement card is already selected', function(done) {
     browser
-      .exists('.selected label[for="DLAction-replace"]')
+      .waitForSelector('.selected label[for="DLAction-replace"]')
       .then(done)
       .catch(done);
   });
 
   world.then('I will see that my selection to change a card is already selected', function(done) {
     browser
-      .exists('.selected label[for="DLAction-change"]')
+      .waitForSelector('.selected label[for="DLAction-change"]')
       .then(done)
       .catch(done);
   });

@@ -9,7 +9,11 @@ import { isProduction }           from '../../../client/helpers/data/application
 
 const LoggedIn = (props) => {
 
-  if (isProduction() ) { return null; }
+  if (isProduction() ) {
+    console.log('THIS PAGE IS NOT FOR PRODUCTION');
+    return null;
+  }
+
   let dispatch = props.dispatch;
   let history = props.history;
 
@@ -57,7 +61,6 @@ const LoggedIn = (props) => {
       return;
     })
     .then(() => {
-      console.log('push to page')
       let pageKey = 'IDme';
       let pathURL = nextPath(pageKey, {
         flow: '',
@@ -68,7 +71,6 @@ const LoggedIn = (props) => {
 
     // if not, save it
     const saveData = () => {
-      console.log('preparing to save data')
       let data = Object.assign({}, props.cdl);
       data.id = '1';
       data.userID = '3f';
@@ -141,7 +143,6 @@ const LoggedIn = (props) => {
         .then(() => { return 'done'})
       })
       .then(() => {
-        console.log('save id 4')
         let data = Object.assign({}, props.iddl);
         data.id = '4';
         data.userID = '3f';
@@ -166,7 +167,6 @@ const LoggedIn = (props) => {
           body: JSON.stringify(data)
         })
         .then(() => {
-          console.log('update user data')
           dispatch({
             type: 'UPDATE_USER_DATA',
             payload: {
