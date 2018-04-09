@@ -44,7 +44,8 @@ export default (dispatch) => {
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
           flow: '',
-          userData: res
+          userData: res,
+          appName: appName
         });
         return history.push(pathURL);
       })

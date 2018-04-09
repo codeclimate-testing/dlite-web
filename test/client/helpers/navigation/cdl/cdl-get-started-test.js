@@ -35,7 +35,8 @@ describe('CDL next-paths', function() {
             cardAction: [],
             name: ''
           }]
-        }
+        };
+        props.appName = 'cdl';
       });
 
       it('goes to cdlLegalName if user does not have multiple apps', function() {
@@ -44,6 +45,11 @@ describe('CDL next-paths', function() {
       });
       it('goes to openApplications if user has multiple apps', function() {
         props.userData.appsLength = 2;
+        assert.ok(cdlIDme(props), 'openApplications');
+      });
+      it('goes to openApplications if user already has an IDDL app and is signing in to complete a CDL app', function() {
+        props.userData.appsLength = 1;
+        props.userData.apps[0].cardType=['DL'];
         assert.ok(cdlIDme(props), 'openApplications');
       });
     });

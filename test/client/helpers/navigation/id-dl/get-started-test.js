@@ -61,24 +61,35 @@ describe('Data helpers for determining next path from current page and props in 
     });
 
     describe('##IDme', function() {
+      let props;
       beforeEach(function(){
-        data.userData = {
-          appsLength: '',
-          userID: '',
-          apps: [{
-            cardType: [],
-            cardAction: [],
-            name: ''
-          }]
-        }
+        props = {
+          flow: '',
+          userData: {
+            appsLength: '',
+            userID: '',
+            apps: [{
+              cardType: [],
+              cardAction: [],
+              name: ''
+            }]
+          },
+          appName: 'id-and-license'
+        };
       });
-      it('goes to legalName if user does not have multiple apps', function() {
-        data.userData.appsLength = 0;
-        assert.ok(IDme(data), 'legalName');
+      it('goes to legalName if user does not have multiple apps and appName is id-and-license', function() {
+        props.userData.appsLength = 0;
+        assert.ok(IDme(props), 'legalName');
       });
+
       it('goes to openApplications if user has multiple apps', function() {
-        data.userData.appsLength = 2;
-        assert.ok(IDme(data), 'openApplications');
+        props.userData.appsLength = 2;
+        assert.ok(IDme(props), 'openApplications');
+      });
+      it('goes to openApplications if user already has a CDL app and is signing in to complete an IDDL app', function() {
+        props.userData.appsLength = 1;
+        props.userData.apps[0].cardType=['CDL'];
+        assert.ok(IDme(props), 'openApplications');
       });
     });
     describe('##dateOfBirth', function() {
