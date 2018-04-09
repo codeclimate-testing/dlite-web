@@ -34,9 +34,9 @@ import { goToOpenApps }    from '../../../data/application';
 export const IDme = (props) => {
   let key = 'legalName';
   // if multiple applications, go to /apply/open-applications key='openApplications'
-  if (goToOpenApps(props)) {
-    key = 'openApplications';
-  }
+  // if (goToOpenApps(props)) {
+  //   key = 'openApplications';
+  // }
   return key;
 };
 

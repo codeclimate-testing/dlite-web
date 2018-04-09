@@ -41,7 +41,7 @@ module.exports = function(world) {
   });
 
   world.when('I go to the logged in page', function(done) {
-    navigateToPath('/apply/logged-in/3f', '.open-applications', done);
+    navigateToPath('/apply/logged-in/3f', '.legal-name-form', done);
   });
 
   world.when('I visit the page to choose application language', function(done) {
