@@ -872,12 +872,12 @@
       "voterRegistration": {
         "title": "유권자 등록",
         "bodyBullets": [
-          "귀하의 주소를 공유하면 생명을 위협하는 위험에 빠질 수 있습니다. 귀하는 기밀로 등록하도록 등록 할 수 있습니다. 자세한 내용은 <b> Safe at home </ b> 프로그램 (877) 322-5227 번으로 문의하거나 <a target=\"_ blank\"href = 'http : //www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>.",
+          "귀하의 주소를 공유하면 생명을 위협하는 위험에 빠질 수 있습니다. 귀하는 기밀로 등록하도록 등록 할 수 있습니다. 자세한 내용은 <b> Safe at home </ b> 프로그램 (877) 322-5227 번으로 문의하거나 <a target=\"_ blank\"href='http : //www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>.",
           "<b> 미국 시민 전용 </ b>. DMV는 투표 자격이 있음을 나타내면 귀하의 디지털 서명을 포함하여이 양식에 수집 된 모든 유권자 등록 정보를 캘리포니아 국무 장관에게 보냅니다. 귀하가 등록한 DMV 사무소는 기밀로 유지되며 유권자 등록 목적으로 만 사용됩니다.",
           "투표 할 자격이 있고 투표 등록을 거부하면 결정은 기밀로 유지됩니다. 그러나이 정보는 유권자 홍보 및 등록 목적으로 만 사용하도록 캘리포니아 주 총무 장관에게 보냅니다.",
           "이 신청서에 제공된 유권자 등록 정보는 기밀입니다. DMV는 유권자의 자격 결정을 내리지 않습니다.",
           "<b> 등록 </ b> 후 4 주 이내에 유권자 등록 정보를받지 못하면 카운티 선거 관리 공무원 또는 캘리포니아 주 국무 장관에게 문의하십시오.",
-          "유권자 등록에 관한 더 자세한 정보는 voterstatus.sos.ca.gov/ 또는 일반 정보는 www.sos.ca.gov를 방문하십시오."
+          "유권자 등록에 관한 더 자세한 정보는  <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> 또는 일반 정보는 <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> 방문하십시오."
         ]
       },
       "drivingTypes": {

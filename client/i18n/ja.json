@@ -851,12 +851,12 @@
       "voterRegistration": {
         "title": "有権者登録",
         "bodyBullets": [
-          "あなたの住所を共有することがあなたを命にかかわる危険にさらす可能性がある場合は、機密に投票するために登録する資格があります。詳細については、（877）322-5227の<b>安全な家庭</ b>プログラムに連絡するか、<a target=\"_ blank\" href = 'http：//www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>にアクセスしてください。",
+          "あなたの住所を共有することがあなたを命にかかわる危険にさらす可能性がある場合は、機密に投票するために登録する資格があります。詳細については、（877）322-5227の<b>安全な家庭</ b>プログラムに連絡するか、<a target=\"_ blank\" href='http：//www.sos.ca.gov/safeathome/'> www.sos.ca.gov/safeathome/</a>にアクセスしてください。",
           "<b>米国市民のみ</ b>。あなたが投票資格があることを示す場合、DMVは、このフォームで収集した投票者登録情報（デジタル署名を含む）をすべてカリフォルニア州務長官に送付します。あなたが登録したDMV事務所は秘密のままであり、有権者の登録目的でのみ使用されます。",
           "あなたが投票資格があり、投票登録を拒否した場合、あなたの決定は秘密になります。しかし、この情報は、有権者へのアウトリーチおよび登録目的でのみ使用されるように、カリフォルニア州務長官に送られます。",
           "このアプリケーションで提供される投票者登録情報は機密情報です。 DMVは有権者の適格性判定を行いません。",
           "<b>登録</ b>から4週間以内に投票者登録情報を受け取っていない場合は、郡の選挙管理官またはカリフォルニア州務長官に連絡してください。",
-          "あなたの有権者登録の詳細については、voterstatus.sos.ca.gov/を、一般情報についてはwww.sos.ca.govをご覧ください。"
+          "あなたの有権者登録の詳細については、<a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> を、一般情報については <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> をご覧ください。"
         ]
       },
       "drivingTypes": {
@@ -1319,7 +1319,7 @@
             "またはあなたの生年月日のための1つの文書とあなたの法的存在のための1つの文書。"
           ],
           "title": "そのリストから、次のいずれかが必要です。",
-          "proof": "あなたが結婚した、離婚した、養子縁組した、または裁判所を通じてあなたの名前を変更した場合は、<target = \"_ blank\" href = 'https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真実のフルネームの証拠</a>です。",
+          "proof": "あなたが結婚した、離婚した、養子縁組した、または裁判所を通じてあなたの名前を変更した場合は、<target = \"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05＃true'>真実のフルネームの証拠</a>です。",
           "legalPresence": {
             "title": "法的存在",
             "explanation": "すべての応募者は、生年月日を証明する必要があります。あなたがAB 60でない限り、合法的存在を証明する必要があります。 <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60チェックリストツール</a> と <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>生年月日と法的在籍リスト</a>。"

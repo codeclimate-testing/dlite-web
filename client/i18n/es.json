@@ -852,7 +852,7 @@
     },
     "organDonation": {
       "title": "Declaración de donación de órganos",
-      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target=\"_ blank\" href = 'https://www.donateLIFEcalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
+      "body": "Si marcó \"Sí\" para registrarse como donador de órganos y tejidos, está autorizando legalmente la recuperación de órganos y tejidos en caso de que fallezca. Registrarse como donante no afectará su tratamiento médico de ninguna manera. Como se describe en la Ley de Regalos Anatómicos de California, su autorización es legalmente vinculante y, a menos que el donante sea menor de 18 años, su decisión no requiere el consentimiento de ninguna otra persona. Para los donantes registrados menores de 18 años, el tutor legal tomará la decisión final de la donación. Puede limitar su donación a órganos o tejidos específicos, colocar restricciones de uso (por ejemplo, trasplante o investigación), obtener más información sobre la donación o eliminar su nombre del registro en el sitio web de Donate Life California: <a target=\"_ blank\" href='http://www.donatelifecalifornia.org'> www.donateLIFEcalifornia.org </a>. Al registrarse como donante de órganos, está dando su consentimiento para permitir que el DMV transmita electrónicamente su nombre completo, residencia o dirección postal, año de nacimiento y licencia de conducir de California o número de tarjeta de identificación a Donate Life California. Al firmar este formulario, usted acepta este proceso y se le ha notificado que ocurrirá esta transmisión."
     },
     "medical": {
       "body": "Las siguientes condiciones que pueden afectar su capacidad para operar un vehículo de motor de forma segura incluyen, entre otras:",
@@ -868,7 +868,7 @@
     "voterRegistration": {
       "title": "Registro de votantes",
       "bodyBullets": [
-        "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa Safe at Home al (877) 322-5227 o visite <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'> www.sos.ca .gov /safeathome/ </a>.",
+        "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa Safe at Home al (877) 322-5227 o visite <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
         "Solo para ciudadanos de los EE. UU. Si no ha recibido la información de registro de votante dentro de los 30 días de haberla solicitado, debe comunicarse con el Oficial de Elecciones de su Condado o con el Secretario de Estado de California.",
         "Al registrarse para votar en el DMV, usted reconoce que el DMV enviará su información de votante y su firma digital al Secretario de Estado de California para completar el proceso de registro de votantes.",
         "Si no desea registrarse para votar, su decisión será confidencial y se usará solo para fines de inscripción de votantes.",
@@ -879,12 +879,12 @@
       "voterRegistration": {
         "title": "Registro de votantes",
         "bodyBullets": [
-          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target=\"_ blank\" href = 'http://www.sos.ca.gov/safeathome/ '> www.sos.ca.gov/safeathome/ </a>.",
+          "Si compartir su dirección podría ponerlo en peligro de muerte, puede ser elegible para registrarse para votar de manera confidencial. Para obtener más información, comuníquese con el programa <b> Seguridad en el Hogar </ b> al (877) 322-5227 o visite <a target=\"_ blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
           "<b> Solo para ciudadanos de EE. UU. </ b>. Si indica que es elegible para votar, el DMV enviará toda la información de inscripción de votantes recopilada en este formulario, incluida su firma digital, al Secretario de Estado de California. La oficina del DMV donde se registró seguirá siendo confidencial y solo se utilizará para el registro de votantes.",
           "Si es elegible para votar y no quiere registrarse para votar, su decisión será confidencial; sin embargo, esta información se enviará al Secretario de Estado de California para que se use únicamente con fines de divulgación y registro de votantes.",
           "La información de registro del votante provista en esta aplicación es confidencial. El DMV no hace las determinaciones de elegibilidad del votante.",
           "Si no ha recibido información de inscripción de votante dentro de las 4 semanas posteriores a la <b> inscripción </ b>, comuníquese con el funcionario electoral de su condado o con el Secretario de Estado de California.",
-          "Visite voterstatus.sos.ca.gov/ para obtener más información sobre su registro de votante o www.sos.ca.gov para obtener información general."
+          "Visite <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> para obtener más información sobre su registro de votante o <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> para obtener información general."
         ]
       },
       "drivingTypes": {
@@ -1305,9 +1305,9 @@
           ],
           "legalPresence": {
             "title": "Presencia legal",
-            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target=\"_ Blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
+            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
           },
-          "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target=\"_ blank\" href = 'https: //www.dmv.ca.gov/portal/dmv/detail / pubs / brochures / fast_facts / ffdl05 # true '> prueba del verdadero nombre completo </a>."
+          "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> prueba del verdadero nombre completo </a>."
         },
         "socialSecurity": {
           "title": "Prueba de Número de Seguridad Social",
