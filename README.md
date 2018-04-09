@@ -60,17 +60,22 @@ Migrations should be run before testing or running the app locally in
 development mode. Using the environmental variable `APP_ENV` will set
 the environment so that migrations happen for that database.
 
+## Session store
+
+We are using redis ~3.2 currently.
+Connection parameters for the local redis server should be setup in
+`server/config/redis.json`. A candidate can and should be copied from
+`server/config/redis.json.sample` which is checked into source control!
+
+The connection prefers using `REDIS_URL` as an environmental
+variable. This allows easy portability between servers.
+
 ## Start the app
 
 It is just an express app, and runs via a nmp script:
 
     npm install
     npm start
-
-## Development
-
-1. Clone this repo
-2. Start contributing
 
 ## Testing
 
@@ -79,5 +84,5 @@ module is too low level. Feel free to add in some `chai` and `sinon`.
 
 These tests can be run via an npm script:
 
-    `npm run test:server`
+    `npm run test`
 
