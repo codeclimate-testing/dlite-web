@@ -345,4 +345,14 @@ module.exports = function(world){
       .then(done)
       .catch(done);
   });
+  
+  world.then('I will see an info message about not qualifying for CDL', function(done) {
+    browser
+      .text()
+      .then(text => {
+        assert(text.includes('We’re sorry, but you do not qualify for a California CDL at this time'));
+      })
+      .then(done)
+      .catch(done);
+  });
 };

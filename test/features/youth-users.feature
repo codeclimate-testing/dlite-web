@@ -136,3 +136,16 @@ Feature: Happy path for youth users
     And I change my eligibility requirement
     When I click "Next" to continue
     Then I will be on the page with my summary
+  
+  Scenario: New CDL and under 18
+    Given I go to the new online DL application page
+    When I visit the CDL dob page
+    When I indicate that I am between 15 and 15.5
+    Then I will see an info message about not qualifying for CDL
+
+  Scenario: New CDL and today am 18
+   Given I go to the new online DL application page
+    When I visit the CDL dob page
+    When  I indicate that I am turning 18 today
+    Then I click "Next" to continue
+    And I will be on the CDL WDYWTDT page

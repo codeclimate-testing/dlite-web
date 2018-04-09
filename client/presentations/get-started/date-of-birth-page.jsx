@@ -8,6 +8,7 @@ import NavigationButtons  from '../navigation-buttons.jsx';
 import DateInput          from '../date-input.jsx';
 import Translator         from '../../i18n/translator-tag.jsx';
 import CDLUnder21         from '../cdl/dob-under21.jsx';
+import CDLUnder18         from '../cdl/dob-under18.jsx';
 
 const Presentation = (props) => {
   return (
@@ -35,11 +36,14 @@ const Presentation = (props) => {
           </DateInput>
         </fieldset>
 
+        <CDLUnder18   {...props} />
+
         <CDLUnder21   {...props} />
 
         <NavigationButtons
           {...props}
           errorMessage={props.validations.all()}
+          continueHidden = { CDLUnder18(props) }
         />
       </form>
     </Page>
