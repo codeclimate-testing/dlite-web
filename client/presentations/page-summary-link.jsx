@@ -4,10 +4,14 @@ import React              from 'react';
 import { Link }           from 'react-router-dom';
 import { pathForPage }    from '../helpers/navigation/page';
 import Translator         from '../i18n/translator-tag.jsx';
-import { addOrEdit }      from '../helpers/data/pathnames';
+import {
+  addOrEdit,
+  addOrEditIcon
+ }      from '../helpers/data/pathnames';
 
 const LinkPresentation = (props) => {
-  let className = `${props.editKey} summary edit button ${props.cardType}`;
+  let iconType = addOrEditIcon(props, 'add', 'edit');
+  let className = `${props.editKey} summary edit button ${props.cardType} ${props.appID}`;
 
   let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
   let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
@@ -17,22 +21,16 @@ const LinkPresentation = (props) => {
     pathname: pathForPage(props.editKey, {flow: props.flow})
   };
 
-  let handleClick = (e) => {
-    e.preventDefault();
-    props.onFlowChange(props.flow, props.cardType, props.appID, props.history);
-  };
-
-
   return (
     <div className='summary-section'>
       <div className='row'>
-        <div className='unit-right' onClick={handleClick}>
+        <div className='unit-right' onClick={props.onClick}>
           <div className='shadow-container'>
             <Link
               to={linkTo}
               className= {className}
             >
-              <div className='unit edit-icon'></div>
+              <div className={`unit ${iconType}-icon`}></div>
               <div className='unit text-area'>{buttonText}</div>
             </Link>
           </div>

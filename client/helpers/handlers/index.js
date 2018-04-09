@@ -26,6 +26,7 @@ import onPageLoad                 from './on-page-load';
 import onFlowChange               from './on-flow-change';
 import onEmojiDebug               from './on-emoji-debug';
 import onLoggedIn                 from './on-logged-in';
+import newFlow                    from './new-flow';
 
 export default {
   navigateOnBack,
@@ -42,5 +43,6 @@ export default {
   onFlowChange,
   navigateOrShowErrors,
   onEmojiDebug,
-  onLoggedIn
+  onLoggedIn,
+  newFlow
 };

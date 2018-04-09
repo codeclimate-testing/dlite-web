@@ -3,11 +3,11 @@
 const assert = require('assert');
 
 import {
+  cdlIDme,
   cdlWdywtdt,
   cdlCurrentCard,
   changedCDL,
-  cdlCurrentDL,
-  cdlCertification
+  cdlCurrentDL
 } from '../../../../../client/helpers/navigation/cdl/get-started/next-path';
 
 describe('CDL next-paths', function() {
@@ -25,6 +25,35 @@ describe('CDL next-paths', function() {
     };
   });
   describe('#initial flow', function() {
+    describe('#cdlIDme', function() {
+      beforeEach(function() {
+        props.userData = {
+          appsLength: '',
+          userID: '',
+          apps: [{
+            cardType: [],
+            cardAction: [],
+            name: ''
+          }]
+        };
+        props.appName = 'cdl';
+      });
+
+      it('goes to cdlLegalName if user does not have multiple apps', function() {
+        props.userData.appsLength = 0;
+        assert.ok(cdlIDme(props), 'cdlLegalName');
+      });
+      it('goes to openApplications if user has multiple apps', function() {
+        props.userData.appsLength = 2;
+        assert.ok(cdlIDme(props), 'openApplications');
+      });
+      it('goes to openApplications if user already has an IDDL app and is signing in to complete a CDL app', function() {
+        props.userData.appsLength = 1;
+        props.userData.apps[0].cardType=['DL'];
+        assert.ok(cdlIDme(props), 'openApplications');
+      });
+    });
+
     describe('#cdlWdywtdt', function() {
       it('returns "cdlResidency" if user is getting a new card', function() {
         assert.equal(cdlWdywtdt(props), 'cdlResidency');
@@ -69,21 +98,6 @@ describe('CDL next-paths', function() {
     describe('#cdlCurrentDL', function() {
       it('returns cdlRealID', function() {
         assert.equal(cdlCurrentDL(props), 'cdlRealID');
-      });
-    });
-
-    describe('#cdlCertification', function() {
-      it('returns "cdlMedical" if user is getting a new card', function() {
-        let props = {
-          cardAction: 'new'
-        };
-        assert.equal(cdlCertification(props), 'cdlMedical');
-      });
-      it('returns "cdlSummary" if user is replacing, renewing, or changing a card', function() {
-        let props = {
-          cardAction: 'replace'
-        };
-        assert.equal(cdlCertification(props), 'cdlSummary');
       });
     });
   });
@@ -152,13 +166,6 @@ describe('CDL next-paths', function() {
       it('goes to cdlSummary if user has already entered motorcycle data', function() {
         props.classM = 'Yes';
         assert.equal(cdlCurrentDL(props), 'cdlSummary');
-      });
-    });
-
-    describe('#cdlCertification', function() {
-      it('returns "cdlSummary"', function() {
-        props.cardAction = 'new';
-        assert.equal(cdlCertification(props), 'cdlSummary');
       });
     });
   });

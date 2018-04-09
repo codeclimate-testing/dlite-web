@@ -3,6 +3,7 @@
 const assert = require('assert');
 
 import {
+  IDme,
   dateOfBirth,
   wdywtdt,
   chooseCardType,
@@ -57,6 +58,39 @@ describe('Data helpers for determining next path from current page and props in 
   describe('#normal flow', function() {
     beforeEach(function() {
       data = state();
+    });
+
+    describe('##IDme', function() {
+      let props;
+      beforeEach(function(){
+        props = {
+          flow: '',
+          userData: {
+            appsLength: '',
+            userID: '',
+            apps: [{
+              cardType: [],
+              cardAction: [],
+              name: ''
+            }]
+          },
+          appName: 'id-and-license'
+        };
+      });
+      it('goes to legalName if user does not have multiple apps and appName is id-and-license', function() {
+        props.userData.appsLength = 0;
+        assert.ok(IDme(props), 'legalName');
+      });
+
+      it('goes to openApplications if user has multiple apps', function() {
+        props.userData.appsLength = 2;
+        assert.ok(IDme(props), 'openApplications');
+      });
+      it('goes to openApplications if user already has a CDL app and is signing in to complete an IDDL app', function() {
+        props.userData.appsLength = 1;
+        props.userData.apps[0].cardType=['CDL'];
+        assert.ok(IDme(props), 'openApplications');
+      });
     });
     describe('##dateOfBirth', function() {
       it('goes to wdywtdt page', function() {

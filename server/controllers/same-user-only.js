@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function sameUserOnly(req, res, next) {
+module.exports = function sameUserOnly(req, res, next, env = process.env.APP_ENV) {
   let isTheSame;
-  if (process.env.APP_ENV === 'development' || process.env.APP_ENV === 'test') {
+  if (env === 'development' || env === 'test') {
     isTheSame = true;
   } else {
     isTheSame = req.params.uuid.toString() === req.session.user.uuid.toString();

@@ -31,7 +31,8 @@ export const getUserData = (uuid, fetcher = fetch) => {
             apps: [{
               name: '',
               cardType: [],
-              cardAction: []
+              cardAction: [],
+              id: ''
             }]
           };
         }

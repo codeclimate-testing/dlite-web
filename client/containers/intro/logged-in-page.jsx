@@ -10,9 +10,6 @@ const LoggedIn = (props) => {
   return null;
 };
 
-const mapStateToProps = (state) => {
-  return {};
-};
 
 const mapDispatchToProps = (dispatch) => {
   const onLoggedIn    = handlers.onLoggedIn(dispatch);
@@ -22,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoggedIn);
+export default connect(null, mapDispatchToProps)(LoggedIn);

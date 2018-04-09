@@ -6,6 +6,12 @@ const cardAction = (IDApp, DLApp) => {
   if(cardTypeParser.gettingBothNew(IDApp, DLApp)) {
     toReturn = 'new';
   }
+  else if (cardTypeParser.hasDL(DLApp)) {
+    toReturn = DLApp.action;
+  }
+  else {
+    toReturn = IDApp.action;
+  }
   return toReturn;
 };
 

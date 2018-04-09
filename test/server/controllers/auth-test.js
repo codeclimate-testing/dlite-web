@@ -6,10 +6,19 @@ const httpMocks   = require('node-mocks-http');
 const controllers = require('../../../server/controllers/auth');
 
 describe('Auth related controllers', () => {
-  let req, res, next, passport, authNew, authSuccess;
+  let req, res, next, passport;
 
   beforeEach(function() {
-    req = {session: {user: {uuid: 'foo'}, cookie: {}}, user: { uuid: '100'}, params: {appName: 'cdl', language: 'vi'} , query: { state: JSON.stringify({appName: 'cdl', language: 'vi'} )}};
+    req = {
+      session: {
+        user: { uuid: 'foo'},
+        cookie: {}
+      },
+      user: { uuid: '100'},
+      params: {appName: 'cdl', language: 'vi'} ,
+      query: { state: JSON.stringify({appName: 'cdl', language: 'vi'} )}
+    };
+
     res = httpMocks.createResponse({});
     passport = { authenticate: sinon.spy() };
     res.redirect = sinon.spy();
@@ -19,6 +28,12 @@ describe('Auth related controllers', () => {
   it('#authSuccess redirects to the logged in page', function() {
     controllers.authSuccess(req, res);
     assert(res.redirect.calledWith('/apply/logged-in/'+ req.user.uuid));
+  });
+
+  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
+    process.env.APP_URL = 'localhost';
+    controllers.authSuccess(req, res, next, 'development');
+    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/'+req.user.uuid));
   });
 
   it('#authSuccess sets language cookie to req.query.state.language', function() {
@@ -32,5 +47,10 @@ describe('Auth related controllers', () => {
     req.query.state = JSON.stringify({language: '', appName: 'id-and-license'});
     controllers.authSuccess(req, res);
     assert.ok(res.cookie.calledWith('appName', 'id-and-license'));
+  });
+  it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
+    process.env.APP_URL = 'localhost';
+    controllers.authSuccess(req, res, next, 'development');
+    assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/' + req.user.uuid));
   });
 });

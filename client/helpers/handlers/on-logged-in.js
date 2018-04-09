@@ -4,7 +4,6 @@ import getTranslation                   from '../../actions/get-translation';
 import { isLoggedIn }                   from '../../actions/get-auth-status';
 import {
   updateLanguage,
-  updateLoggedIn,
   chooseApp
  } from '../../actions/index';
 import { nextPath }                     from '../navigation/page';
@@ -45,7 +44,8 @@ export default (dispatch) => {
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
           flow: '',
-          userData: res
+          userData: res,
+          appName: appName
         });
         return history.push(pathURL);
       })

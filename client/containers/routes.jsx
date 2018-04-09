@@ -14,6 +14,7 @@ import OpenApplications                       from './intro/open-applications-pa
 
 import IDMe                                   from './intro/id-me-page.jsx';
 import LoggedIn                               from './intro/logged-in-page.jsx';
+import TestLoggedIn                           from '../../test/client/presentations/test-logged-in';
 
 import Disclaimers                            from './iddl/get-started/disclaimers-page.jsx';
 import CDLDisclaimers                         from './cdl/cdl-disclaimers.jsx';
@@ -32,6 +33,7 @@ class Router extends React.Component {
         <Route path={ iddlPath('/sign-in') }                                exact component={IDMe} />
         <Route path={ cdlPath('/sign-in') }                                 exact component={IDMe} />
         <Route path={ cdlPath('/disclaimers') }                             exact component={CDLDisclaimers} />
+        <Route path={ alicePath('/logged-in/test')}                               component={TestLoggedIn} />
         <Route path={ alicePath('/logged-in/:uuid')}                              component={LoggedIn} />
         <Route path={ alicePath('/open-applications')}                            component={OpenApplications} />
 

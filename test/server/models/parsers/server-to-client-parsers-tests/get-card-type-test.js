@@ -25,16 +25,17 @@ describe('extracting IDDL card type', function() {
   it('returns an array with just ID if user is getting both cards but not new', function() {
     DLApp.action = 'renew';
     IDApp.action = 'replace';
-    assert.deepEqual(getCardType(IDApp, DLApp), ['ID']);
+    assert.deepEqual(getCardType(IDApp, DLApp), ['DL']);
   });
 
   it('returns an array with just DL if user is just getting a DL', function() {
     IDApp.isApplying = false;
+    IDApp.action = '';
     assert.deepEqual(getCardType(IDApp, DLApp), ['DL']);
   });
 
-  it('returns an array with just ID if user is just getting an ID', function() {
-    DLApp.isApplying = false;
-    assert.deepEqual(getCardType(IDApp, DLApp), ['ID']);
+  it('returns an array with just DL if user is just getting a DL and an ID (not both new)', function() {
+    IDApp.isApplying = false;
+    assert.deepEqual(getCardType(IDApp, DLApp), ['DL']);
   });
 });

@@ -5,6 +5,8 @@ const logout = (req, res) => {
   let appName = req.cookies.appName;
   req.logout();
   req.session.destroy();
+  res.clearCookie('appName');
+  
   if (!appName || appName.length < 1) {
     res.redirect('/apply/choose-language');
   } else {

@@ -105,13 +105,20 @@ a.button.edit {
     @include focus-outline;
   }
 
-  .edit-icon {
-    margin-top: 2px;
+  .edit-icon, .add-icon {
     margin-right: 5px;
+    background-repeat: no-repeat;
+  }
+  .edit-icon {
     width: 16px;
     height: 16px;
+    margin-top: 2px;
     background-image: url("/images/icons/misc/edit.svg");
-    background-repeat: no-repeat;
+  }
+  .add-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/icons/misc/+.svg");
   }
 }
 

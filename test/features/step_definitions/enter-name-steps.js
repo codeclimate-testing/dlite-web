@@ -115,11 +115,11 @@ module.exports = function(world) {
       .catch(done);
   });
 
-  world.then('the name page will be in Thai', function(done) {
+  world.then('the page will be in Thai', function(done) {
     browser
       .text()
       .then((text) => {
-        assert.ok(text.includes('ชื่อเต็มที่แท้จริงของคุณคืออะไร'), 'thai h2 not rendered');
+        assert.ok(text.includes('ชื่อเต็มที่แท้จริงของคุณคืออะไร') || text.includes('ยินดีต้อนรับการกลับมา'), 'thai h2 not rendered');
       })
       .then(done)
       .catch(done);

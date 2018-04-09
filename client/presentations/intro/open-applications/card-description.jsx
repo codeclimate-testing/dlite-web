@@ -1,13 +1,14 @@
 'use strict';
 
 import React                  from 'react';
-import Translator             from '../../i18n/translator-tag.jsx';
-import PageSummaryLink        from '../../containers/page-summary-link.jsx';
+import Translator             from '../../../i18n/translator-tag.jsx';
+import PageSummaryLink        from '../../../containers/page-summary-link.jsx';
+import { hasValue }           from '../../../helpers/data/validations';
 import {
   checkCardType,
-  returnArrayIfBothNew,
   getLegalNameKey
- } from '../../helpers/data/card-type';
+ } from '../../../helpers/data/card-type';
+
 
 export const CardDescription = (props) => {
   let translationPath = '';
@@ -34,6 +35,8 @@ export const CardDescription = (props) => {
 
 export const Applications = (props) => {
   return props.apps.map(app => {
+    if (!hasValue(app.cardAction)) { return null; }
+
     let editKey = getLegalNameKey(app.cardType[0]);
     return (
       <fieldset role='group' aria-label='open application' key={app.id} className='openApp summary-section'>
@@ -43,6 +46,7 @@ export const Applications = (props) => {
         <CardDescription cardType = {app.cardType} id={app.id}/>
         <PageSummaryLink
           appID={app.id}
+          flow=''
           editKey={editKey}
           history={props.history}
         />

@@ -236,6 +236,17 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
+
+  world.then('I will see that I am renewing my ID', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('My ID'));
+        assert(text.includes('I amRenewing'));
+      })
+      .then(done)
+      .catch(done);
+  });
   world.then('I will see that my ID card type has been saved', function(done) {
     browser
       .text('.inner')
@@ -392,6 +403,34 @@ module.exports = function(world) {
   world.then('I will see that my selection to change a card is already selected', function(done) {
     browser
       .waitForSelector('.selected label[for="DLAction-change"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that I am changing a DL', function(done) {
+    browser
+      .waitForSelector('.selected label[for="DLAction-change"]')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that the DL checkbox is checked', function(done) {
+    browser
+      .waitForSelector('.selected.DL')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that the ID checkbox is checked', function(done) {
+    browser
+      .waitForSelector('.selected.ID')
+      .then(done)
+      .catch(done);
+  });
+
+  world.then('I will see that the DL radio box is selected', function(done) {
+    browser
+      .waitForSelector('.selected label[for="change-DL"]')
       .then(done)
       .catch(done);
   });

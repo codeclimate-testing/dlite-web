@@ -5,7 +5,7 @@ import sinon        from 'sinon';
 import onFlowChange from '../../../../client/helpers/handlers/on-flow-change';
 
 describe('onFlowChange', function() {
-  let value, dispatch, onChange, flow, cardType, appID, fetcher;
+  let value, dispatch, onChange, flow, cardType, appID;
 
   beforeEach(function() {
     value = ''

@@ -96,7 +96,7 @@ const cdlGetStarted = [
     key: 'cdlCertification',
     description: 'self-certification inter/intra-state',
     path: applyOrEditCDLPath('/self-certification'),
-    next: cdlCertification
+    next: nextOrCDLSummary('cdlMedical')
   },
   {
     key: 'motorcycle',

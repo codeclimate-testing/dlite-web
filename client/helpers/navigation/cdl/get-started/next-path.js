@@ -1,7 +1,7 @@
 'use strict';
-import { editFlow }         from '../../../data/pathnames';
-import { hasValue }         from '../../../data/validations';
-import { hasMultipleApps }  from '../../../data/application';
+import { editFlow }                 from '../../../data/pathnames';
+import { hasValue }                 from '../../../data/validations';
+import { goToOpenApps }             from '../../../data/application';
 import {
   hasExistingCard,
   showCurrentCardInfo,
@@ -16,11 +16,11 @@ import {
 export const cdlIDme = (props) => {
   let key = 'cdlLegalName';
   // if multiple applications, go to /apply/open-applications key='openApplications'
-  // if (hasMultipleApps(props)) {
+  // if (goToOpenApps(props)) {
   //   key = 'openApplications';
   // }
   return key;
-}
+};
 
 export const cdlWdywtdt = (props) => {
   let key = 'cdlResidency';
@@ -76,10 +76,3 @@ export const cdlCurrentDL = (props) => {
   return key;
 };
 
-export const cdlCertification = (props) => {
-  let key = 'cdlSummary';
-  if (!editFlow(props) && !hasExistingCard(props)) {
-    key = 'cdlMedical';
-  }
-  return key;
-};
