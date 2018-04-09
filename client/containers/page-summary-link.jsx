@@ -12,7 +12,7 @@ const PageSummaryLink = (props) => {
 
   let changeFlow = (e) => {
     e.preventDefault();
-    props.onFlowChange(flow, props.cardType, props.appID, props.history);
+    return props.onFlowChange(flow, props.cardType, props.appID, props.history);
   };
 
   let newFlow = (e) => {

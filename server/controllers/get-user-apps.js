@@ -16,11 +16,10 @@ module.exports = function getUserApps(req, res){
     })
   })
   .then((userData) => {
-    res.json(userData);
+    res.status(200).json(userData);
   })
   .catch((err) => {
-    console.log('error from server');
-    console.log(err);
+    console.log('error from server: ' + err);
     res.status(err.statusCode || 500).json(err);
   });
 

@@ -14,9 +14,9 @@ export default (dispatch) =>  {
     // if clicking button on /apply/open-applications page, load the selected app's data
     if (hasValue(appID)) {
       dispatch(getData(appID))
-        .then((err, res) => {
-          if (err) {
-            return history.goBack();
+        .then((res) => {
+          if (res === 'api-fail') {
+            history.goBack();
           }
         });
     }

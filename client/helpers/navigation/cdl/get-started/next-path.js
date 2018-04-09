@@ -16,9 +16,9 @@ import {
 export const cdlIDme = (props) => {
   let key = 'cdlLegalName';
   // if multiple applications, go to /apply/open-applications key='openApplications'
-  // if (goToOpenApps(props)) {
-  //   key = 'openApplications';
-  // }
+  if (goToOpenApps(props)) {
+    key = 'openApplications';
+  }
   return key;
 };
 
