@@ -4,7 +4,6 @@ import getTranslation                   from '../../actions/get-translation';
 import { isLoggedIn }                   from '../../actions/get-auth-status';
 import {
   updateLanguage,
-  updateLoggedIn,
   chooseApp
  } from '../../actions/index';
 import { nextPath }                     from '../navigation/page';

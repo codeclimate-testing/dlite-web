@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 
-export const postData = function (body) {
+export const postData = function (body, fetcher = fetch) {
   return function (dispatch) {
     dispatch({
       type: 'UPDATE_API_STATUS',
@@ -12,7 +12,7 @@ export const postData = function (body) {
         value:  'loading'
       }
     });
-    return fetch('/api/application',{
+    return fetcher('/api/application',{
       method: 'POST',
       credentials: 'same-origin',
       headers: {
@@ -67,7 +67,7 @@ export const postData = function (body) {
   };
 };
 
-export const getData = function (id) {
+export const getData = function (id, fetcher = fetch) {
   return function (dispatch) {
     dispatch({
       type: 'UPDATE_API_STATUS',
@@ -77,7 +77,7 @@ export const getData = function (id) {
       }
     });
 
-    return fetch('/api/application/' + id)
+    return fetcher('/api/application/' + id)
       .then(function(res){
         if(res.status >= 200 && res.status <= 299) {
           return res.json();

@@ -159,4 +159,21 @@ module.exports = function(world) {
       .then(done)
       .catch(done);
   });
+
+  world.given('I go to the open applications page', function(done) {
+    browser
+      .on('consoleMessage', function( msg ){
+        console.log('log', msg);
+      })
+      .on('error', function( err ){
+        console.log('error', err);
+      })
+      .open(world.url('/'))
+      .waitForSelector('.choose-language-form')
+      .evaluate(function() {
+        window.__reactHistory.push('/apply/logged-in/test');
+      })
+      .then(done)
+      .catch(done);
+  });
 };
