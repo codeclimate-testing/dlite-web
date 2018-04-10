@@ -38,4 +38,16 @@ describe('extracting IDDL card type', function() {
     IDApp.isApplying = false;
     assert.deepEqual(getCardType(IDApp, DLApp), ['DL']);
   });
+
+  it('returns an array with just ID if user is only getting an ID', function() {
+    DLApp.isApplying = false;
+    IDApp.isApplying = true;
+    assert.deepEqual(getCardType(IDApp, DLApp), ['ID']);
+  });
+
+  it('returns an empty array if not getting any card', function() {
+    DLApp.isApplying = false;
+    IDApp.isApplying = false;
+    assert.deepEqual(getCardType(IDApp, DLApp), []);
+  });
 });

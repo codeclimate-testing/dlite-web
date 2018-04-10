@@ -112,4 +112,41 @@ describe('dataParser', function() {
     });
   });
 
+  describe('#sameAddress', function() {
+    let mailing_address, home_address;
+    beforeEach(function() {
+      mailing_address = {
+        type: 'mailing',
+        street_address_1: '',
+        city: '',
+        state: '',
+        zip: ''
+      };
+      home_address = {
+        type: 'home',
+        street_address_1: '',
+        city: '',
+        state: '',
+        zip: ''
+      };
+    });
+    it('returns blank if addresses are empty', function() {
+      assert.equal(dataParser.sameAddress(home_address, mailing_address), '');
+    });
+    it('returns Yes if addresses match', function() {
+      mailing_address.street_address_1 = '1111 street';
+      mailing_address.city = 'a city';
+      home_address.street_address_1 = '1111 street';
+      home_address.city = 'a city';
+      assert.equal(dataParser.sameAddress(home_address, mailing_address), 'Yes');
+    });
+    it('returns No if addresses do not match', function() {
+      mailing_address.street_address_1 = '1111 street';
+      mailing_address.city = 'a city';
+      home_address.street_address_1 = '1114 street';
+      home_address.city = 'another city';
+      assert.equal(dataParser.sameAddress(home_address, mailing_address), 'No');
+    });
+  });
+
 });

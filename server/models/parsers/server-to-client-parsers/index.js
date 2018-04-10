@@ -59,5 +59,5 @@ module.exports = {
   CDLType,
   DLInfo,
   cardType,
-  cardAction
+  cardAction,
 };

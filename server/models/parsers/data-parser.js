@@ -54,3 +54,13 @@ module.exports.strToBool = strToBool;
 module.exports.buildName = function buildName(app) {
   return `${app.first_name} ${app.last_name} ${app.suffix_name}`;
 }
+
+module.exports.sameAddress = function sameAddress(home_address, mailing_address) {
+  let answer = '';
+  if (home_address.street_address_1.length > 0) {
+    home_address.type = '';
+    mailing_address.type = '';
+    answer = JSON.stringify(home_address) === JSON.stringify(mailing_address) ? 'Yes' : 'No';
+  }
+  return answer;
+};

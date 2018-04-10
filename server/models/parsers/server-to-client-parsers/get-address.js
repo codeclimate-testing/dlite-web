@@ -1,10 +1,22 @@
 'use strict';
+const dataParser = require('../data-parser');
 
 function address(addresses) {
 
-  let home_address = {};
-  let mailing_address = {};
-  let sameAddresses = 'Yes';
+  let home_address = {
+    'street_address_1': '',
+    'street_address_2': '',
+    'city': '',
+    'state': '',
+    'zip': ''
+  };
+  let mailing_address = {
+    'street_address_1': '',
+    'street_address_2': '',
+    'city': '',
+    'state': '',
+    'zip': ''
+  };
 
   addresses.forEach(function(address) {
     if(address.type === 'home'){
@@ -12,9 +24,10 @@ function address(addresses) {
     }
     if(address.type === 'mailing') {
       mailing_address = address;
-      sameAddresses = 'No';
     }
   });
+
+  let sameAddresses = dataParser.sameAddress(home_address, mailing_address);
 
   return {
     homeAddressSameAsMailing: sameAddresses,

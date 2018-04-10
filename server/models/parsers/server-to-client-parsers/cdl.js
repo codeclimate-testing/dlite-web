@@ -17,13 +17,9 @@ function CDL(data) {
         cdlEndorsements             : cdlType.cdlEndorsements,
         cdlCertificates             : cdlType.cdlCertificates,
         currentCardInfo             : get.cardInfo(data.card_histories, cdlApp.cardAction),
-        organDonation               : data.organ_donations,
+        organDonation               : get.organDonations(data.organ_donations),
         basics                      : {
-          language                  : {
-            appLanguage             : get.language(data.application),
-            ballotLanguage          : '',
-            hasChosenBallot         : ''
-          },
+          language                  : get.language(data.application),
           legalName                 : get.legalName(data.application),
           dateOfBirth               : get.dateOfBirth(data.application),
           address                   : get.address(data.addresses),
