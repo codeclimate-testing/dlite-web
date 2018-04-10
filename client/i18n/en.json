@@ -9,7 +9,7 @@
       "header": "Federal Non-Compliant Card requirements",
       "identity": {
         "header": "Identity",
-        "body": "<p>All applicants need to prove their identity, true full name (first, middle, last ) and date of birth. </p><p> You will need to bring original versions of these documents, as <b>photocopies and laminated versions are not accepted</b>. </p><p> <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>See the DMV’s list of acceptable identity documents</a>. </p><p> <b>If the name on your identity document is different from the name you provided on your application</b>, you must submit <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
+        "body": "<p>All applicants need to prove their identity, true full name (first, middle, last ) and date of birth. </p><p> You will need to bring original versions of these documents, as <b>photocopies and laminated versions are not accepted</b>. </p><p> <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/11a86d62-f848-4012-bc7d-4192bdef4f00/doc_req_matrix.pdf?MOD=AJPERES'>See the DMV’s list of acceptable identity documents</a>. </p><p> <b>If the name on your identity document is different from the name you provided on your application</b>, you must submit <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>a name change document</a> that establishes your true full name.</p>"
       },
       "socialSecurity": {
         "header": "Social Security number",
@@ -17,16 +17,16 @@
       },
       "californiaResidency": {
         "header": "California residency",
-        "body": "You will need to bring in <b>1</b> document that proves that you live in California. This document should show the address where you want your card mailed. This address will also appear on the front of your card. Please review our <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>list of acceptable <b>California Residency documents</b></a>."
+        "body": "You will need to bring in <b>1</b> document that proves that you live in California. This document should show the address where you want your card mailed. This address will also appear on the front of your card. Please review our <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#Residency%20Documents'>list of acceptable <b>California Residency documents</b></a>."
       }
     },
     "realIdSection": {
       "header": "REAL ID requirements",
-      "pleaseSeeDocs": "<a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Please view the Real ID Document PDF for a list of acceptable documents for these 3 categories.</a>"
+      "pleaseSeeDocs": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid/realidfaq'>Please view the Real ID Document PDF for a list of acceptable documents for these 3 categories.</a>"
     },
     "veteransSection": {
       "header": "Veteran documentation",
-      "body": "To get a Veteran Designation on your card, you need to submit a completed <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>Veteran Status Verification</a> Form (VSD- 001). You can obtain a VSD-001 from your County Veteran Service Office. We thank you for your service!"
+      "body": "To get a Veteran Designation on your card, you need to submit a completed <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'>Veteran Status Verification</a> Form (VSD- 001). You can obtain a VSD-001 from your County Veteran Service Office. We thank you for your service!"
     },
     "permitRequirementsSection": {
       "body": {
@@ -39,7 +39,7 @@
         ],
         "provisionalExplanation": "You will need to apply for a provisional driving permit.",
         "knowledgeTest": "You will need to take a knowledge test.",
-        "testAdvice": "We recommend studying the <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit.",
+        "testAdvice": "We recommend studying the <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit.",
         "FAQHaveAnotherState": {
           "title": "Already have a permit or training certificate in another state?",
           "body": {
@@ -48,7 +48,7 @@
               "Proof that you completed a Driver Education/Training course that is equivalent to a California secondary school course.",
               "A completed DL 33 form. Obtain this form from your local DMV office or by calling DMV at 1-800-777-0133. Send the DL 33 form to your out-of-state secondary school to complete."
             ],
-            "requirementsLink": "<a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Review the Driver Education and Driver Training Form Requirements for more information.</a>",
+            "requirementsLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#DEDT'>Review the Driver Education and Driver Training Form Requirements for more information.</a>",
             "juniorPermitNote": "Please note that as a minor, we cannot directly transfer driver licenses that state \"probationary\", \"provisional\", or \"junior\", driving permits, or accept training certificates from out of state."
           }
         }
@@ -57,7 +57,7 @@
     "newCaliforniaYouthDLSection": {
       "header": "New California driver requirements",
       "body": {
-        "openingExplanation": "We see that you may have had a driver license from another state. California's <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>laws for teen drivers between 16 and 18 years of age</a> may be different than those in other states.",
+        "openingExplanation": "We see that you may have had a driver license from another state. California's <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/teen/teen_dlid'>laws for teen drivers between 16 and 18 years of age</a> may be different than those in other states.",
         "knowledgeTest": "As a new driver in California, you will need to pass a knowledge test.",
         "juniorPermitNote": "As a minor, we cannot transfer any driver license from a different state if your driver license says \"probationary\", \"provisional\", or \"junior\".",
         "provisionalProcess": "<b>Drivers under 18 years of age in California must first apply for a provisional permit.</b> After six months you will be eligible to get a provisional driver license.",
@@ -67,7 +67,7 @@
           "listItems": [
             "Currently hold a driver license from a state outside of California <b><em>and</em></b>",
             "Successfully completed a driving skills course in a qualifying secondary school <b><em>and</em></b>",
-            "<a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Can verify successful course completion</a>"
+            "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#PERMINOR'>Can verify successful course completion</a>"
           ]
         }
       }
@@ -83,45 +83,45 @@
     "adultMotorcycleSection": {
       "header": "Motorcycle/scooter requirements",
       "body": {
-        "explanation": "To receive a motorcycle or scooter license, you need to pass the motorcycle knowledge test. Please review the <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>California Motorcycle handbook</a>.",
-        "waiverProcess": "<b>We may waive your drive test if:</b> you have a <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program . The course instructor will provide this form upon successful completion of the course."
+        "explanation": "To receive a motorcycle or scooter license, you need to pass the motorcycle knowledge test. Please review the <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/af13374c-aa57-4f2b-9ac9-aa3fdc419cc9/dl665.pdf?MOD=AJPERES'>California Motorcycle handbook</a>.",
+        "waiverProcess": "<b>We may waive your drive test if:</b> you have a <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program . The course instructor will provide this form upon successful completion of the course."
       }
     },
     "youthMotorcycleSection": {
       "body": {
-        "under21Message": "Because you are under 21 you <b>must</b> have a <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program prior to visiting DMV. The course instructor will provide this form upon successful completion of the course.",
+        "under21Message": "Because you are under 21 you <b>must</b> have a <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program prior to visiting DMV. The course instructor will provide this form upon successful completion of the course.",
         "onCompletion": "Once you have completed the course, you must hold your permit for 6 months prior to obtaining your license."
       }
     },
     "motorcylcleOtherStateSection": {
       "body": {
-        "waiverProcess": "<b>We may waive your drive test if:</b> you have a valid motorcycle license in another state  or you have a <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program."
+        "waiverProcess": "<b>We may waive your drive test if:</b> you have a valid motorcycle license in another state  or you have a <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/dl655/mcycle_htm/requirements/!ut/p/a1/pZFPT4NAEMU_iweOZAbK8ue4aoUWa01oWtgLoctSMN0tbbdE_fQuXoyHxqhzmknm_fLmDTDIgalq6HaV7g6q2o8z88t0dj91khjTmDxSpGmSLNfTtRtHE9gAA8aV7nULRS2Hkh-UFkqXQlloZgv7y_Zs2r1PiIWSv_'>Certificate of Completion of Motorcycle Training (DL 389) form</a> from the CHP’s California Motorcyclist Safety Program."
       }
     },
     "additionalMotorcycleTestingSection": {
       "header": "Additional testing requirements",
-      "body": "In California, to receive a motorcycle or scooter license, <b>you need to pass the basic driver license knowledge test</b>. We recommend studying the <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit."
+      "body": "In California, to receive a motorcycle or scooter license, <b>you need to pass the basic driver license knowledge test</b>. We recommend studying the <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/mobile'>California Driver handbook</a> and <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/exam'>trying some practice exams</a> in advance of your visit."
     },
     "nonCommercialASection": {
       "header": "Non- Commercial Class A requirements",
       "body": {
-        "healthQuestionnaire": "In order to get a Non-Commercial Class A permit, you need to submit a valid <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546).</a>",
+        "healthQuestionnaire": "In order to get a Non-Commercial Class A permit, you need to submit a valid <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546).</a>",
         "knowledgeTest": "The <b>Recreational Vehicles and Non-Commercial Class A Trailers</b> knowledge test is also required. We recommend studying California's RV & Trailers handbook in advance of your exam.",
-        "afterPassingExam": "Once you pass the exams, you will be issued a permit. <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>The DMV website</a> provides information on what’s needed to get your full license."
+        "afterPassingExam": "Once you pass the exams, you will be issued a permit. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#noncommercial'>The DMV website</a> provides information on what’s needed to get your full license."
       }
     },
     "nonCommercialBSection": {
       "header": "Non-Commercial Class B requirements",
       "body": {
-        "healthQuestionnaire": "In order to get a Non-Commercial Class B permit, you need to submit a valid <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>Health Questionnaire (DL 546A)</a> signed by your physician.",
-        "houseCarTest": "The <b>45' Housecar knowledge test</b> is also required. We recommend studying <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>California's RV & Trailers handbook</a> in advance of your exam."
+        "healthQuestionnaire": "In order to get a Non-Commercial Class B permit, you need to submit a valid <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/86d5fd6a-4254-4d52-ae6c-391057c93236/dl546a.pdf?MOD=AJPERES'>Health Questionnaire (DL 546A)</a> signed by your physician.",
+        "houseCarTest": "The <b>45' Housecar knowledge test</b> is also required. We recommend studying <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/28423ba0-bba6-4347-9e21-db274e970772/dl648.pdf?MOD=AJPERES'>California's RV & Trailers handbook</a> in advance of your exam."
       }
     },
     "firefighterEndorsementSection": {
       "header": "Firefighter endorsement requirements",
       "body": {
         "testRequirements": "To get a <b>Firefighter endorsement</b> you will need to take and pass the <b>Firefighter endorsement</b> knowledge test.",
-        "otherRequirements": "You will also need to submit a valid <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546)</a> and an <b>Original Firefighter Employment and Training Verification letter</b> that meets the following criteria:",
+        "otherRequirements": "You will also need to submit a valid <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/?1dmy&urile=wcm:path:/dmv_content_en/dmv/forms/dl/dl546'>Health Questionnaire (DL 546)</a> and an <b>Original Firefighter Employment and Training Verification letter</b> that meets the following criteria:",
         "otherRequirementsValues": [
           "Be on fire department letterhead",
           "Certifies current employment as a firefighter or proof of registration as a volunteer firefighter",
@@ -132,11 +132,11 @@
     },
     "sexChangeSection": {
       "header": "Sex change",
-      "body": "<p>In order to make this change, you must bring a <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Medical Certification and Authorization Form (DL 329)</a> that has been completed and signed by your physician or psychologist. </p><p> You’ll also need to bring your <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both before and after your name change.</p>"
+      "body": "<p>In order to make this change, you must bring a <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/wcm/connect/683f91d7-5c27-4260-970e-c23139bb8e22/dl329.pdf?MOD=AJPERES'>Medical Certification and Authorization Form (DL 329)</a> that has been completed and signed by your physician or psychologist. </p><p> You’ll also need to bring your <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both before and after your name change.</p>"
     },
     "nameChangeSection": {
       "header": "Name change",
-      "body": "<p>In order to reflect your name change on your card(s), you must first change your name at your local <a target=\"_ Blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>Social Security Administration</a> office. </p><p> You’ll also need to bring your <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both <em>before</em> and <em>after</em> your name change.</p>"
+      "body": "<p>In order to reflect your name change on your card(s), you must first change your name at your local <a target=\"_blank\" href='https://faq.ssa.gov/ics/support/kbanswer.asp?QuestionID=3749'>Social Security Administration</a> office. </p><p> You’ll also need to bring your <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>name change document</a> that has your true full name (first, middle, last) both <em>before</em> and <em>after</em> your name change.</p>"
     },
     "reducedFeeSection": {
       "header": "Reduced fee eligibility",
@@ -193,7 +193,7 @@
           "You do not have an email address and phone number. These are required to fill this out from home.q`",
           "You are in a confidential address program or in Safe at Home."
         ],
-        "instead": "Instead, <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>make an appointment</a> to visit your local DMV office."
+        "instead": "Instead, <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>make an appointment</a> to visit your local DMV office."
       }
     },
     "whatYouCanDoPageCDL": {
@@ -232,7 +232,7 @@
       "emailRequired": "<b>An email address and phone number are required.</b> Please visit a DMV office if you do not want to make an ID.me account",
       "legalIdentity": "<b>ID.me allows you to prove your legal identity.</b> The DMV of California has partnered with ID.me to ensure that your personal information is accurate and secure.",
       "dmvPartnering": "The DMV of California chose to partner with ID.me because it has met rigorous requirements for security and identity-proofing.",
-      "learnMore": "<a target=\"_ Blank\" href='https://www.id.me'>For more information, please visit ID.me.</a>"
+      "learnMore": "<a target=\"_blank\" href='https://www.id.me'>For more information, please visit ID.me.</a>"
     },
     "idMeReturnPage": {
       "welcomeBack": "Welcome back.",
@@ -487,13 +487,13 @@
       "steps": [
         "You will get this confirmation code emailed to you.",
         "You need to go to your local DMV office to finalize your application.",
-        "Prepare for your visit by collecting the required documents and studying for your knowledge test(s). <a target=\"_ Blank\" href='/apply/appointment-preparation'>We’ve created a custom preparation list</a> based on the information you provided in your application.",
+        "Prepare for your visit by collecting the required documents and studying for your knowledge test(s). <a target=\"_blank\" href='/apply/appointment-preparation'>We’ve created a custom preparation list</a> based on the information you provided in your application.",
         "At the DMV field office, show the employee your confirmation number and documents. They will bring up your application.",
         "You will be asked to verify your information. You will then certify that it's correct during your DMV field office visit."
       ]
     },
     "registrationCompleteAtOffice": "As a reminder, your voter registration application will be processed when you complete your application at the DMV field office.",
-    "checkVoterStatus": "Check your status: <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
+    "checkVoterStatus": "Check your status: <a target=\"_blank\" href='https://voterstatus.sos.ca.gov'>voterstatus.sos.ca.gov</a>.",
     "registerSooner": "If you need to register to vote before your DMV visit: You can register online at RegisterToVote.ca.gov.",
     "register30days": "If you would like to vote in the next statewide election register online now at RegisterToVote.ca.gov.",
     "avoidLines": "To avoid long waits and lines, make an appointment at your local DMV now.",
@@ -814,12 +814,12 @@
     },
     "organDonation": {
       "title": "Organ donation statement",
-      "body": "If you marked 'Yes' to register as an organ and tissue donor, you are legally authorizing the recovery of organs and tissues in the event of your death. Registering as a donor will not affect your medical treatment in any way. As outlined in the California Anatomical Gift Act, your authorization is legally binding and, unless the donor is under 18 years of age, your decision does not require the consent of any other person. For registered donors under 18 years of age, the legal guardian shall make the final donation decision. You may limit your donation to specific organs or tissues, place usage restrictions (for example transplantation or research), obtain more information about donation, or remove your name from the registry on the website of Donate Life California: <a target=\"_ Blank\" href='http://www.donatelifecalifornia.org'>www.donateLIFEcalifornia.org</a>. By registering as an Organ Donor, you are giving your consent to allow DMV to electronically transmit your true full name, residence or mailing address, year of birth, and California driver license or identification card number to Donate Life California. By signing this form, you consent to this process and have been notified that this transmittal will occur."
+      "body": "If you marked 'Yes' to register as an organ and tissue donor, you are legally authorizing the recovery of organs and tissues in the event of your death. Registering as a donor will not affect your medical treatment in any way. As outlined in the California Anatomical Gift Act, your authorization is legally binding and, unless the donor is under 18 years of age, your decision does not require the consent of any other person. For registered donors under 18 years of age, the legal guardian shall make the final donation decision. You may limit your donation to specific organs or tissues, place usage restrictions (for example transplantation or research), obtain more information about donation, or remove your name from the registry on the website of Donate Life California: <a target=\"_blank\" href='http://www.donatelifecalifornia.org'>www.donateLIFEcalifornia.org</a>. By registering as an Organ Donor, you are giving your consent to allow DMV to electronically transmit your true full name, residence or mailing address, year of birth, and California driver license or identification card number to Donate Life California. By signing this form, you consent to this process and have been notified that this transmittal will occur."
     },
     "voterRegistration": {
       "title": "Voter registration",
       "bodyBullets": [
-        "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the Safe at Home program at (877) 322-5227 or visit <a target=\"_ Blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+        "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the Safe at Home program at (877) 322-5227 or visit <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
         "For U.S. citizens only. If you have not received voter registration information within 30 days of requesting it, you should contact your County Elections Official or the California Secretary of State.",
         "By registering to vote at DMV, you acknowledge that DMV will send your voter information and your digital signature to the California Secretary of State in order to complete the voter registration process.",
         "If you do not want to register to vote, your decision will remain confidential and will be used only for voter registration purposes.",
@@ -837,13 +837,13 @@
       "title": "Financial responsibility",
       "bodyBullets": [
         "Financial responsibility (commonly known as insurance) is required on all vehicles operated or parked on California roadways. You must carry evidence of financial responsibility in your vehicle at all times and it must be provided when: requested by law enforcement, renewing vehicle registration, the vehicle is involved in a traffic collision.",
-        "If you cannot afford liability insurance, you may be eligible for the California Low Cost Automobile Insurance Program. Additional information is available at <a target=\"_ Blank\" href='https://www.mylowcostauto.com'>www.mylowcostauto.com</a> or by calling (866) 602-8861."
+        "If you cannot afford liability insurance, you may be eligible for the California Low Cost Automobile Insurance Program. Additional information is available at <a target=\"_blank\" href='https://www.mylowcostauto.com'>www.mylowcostauto.com</a> or by calling (866) 602-8861."
       ]
     },
     "paymentRefunds": {
       "title": "Payments / Refunds",
       "bodyBullets": [
-        "Visit <a target=\"_ Blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> to review payment options at your local DMV field office. If you are mailing your renewal, payment must be by check. (Checks should be payable to DMV).",
+        "Visit <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> to review payment options at your local DMV field office. If you are mailing your renewal, payment must be by check. (Checks should be payable to DMV).",
         "Once this application form and fee have been submitted, no refunds will be made."
       ]
     },
@@ -852,13 +852,13 @@
       "bodyBullets": [
         "DMV uses the information on this form to determine your eligibility for a Driver License or Identification Card and for the administration of driver license laws.",
         "Information provided to DMV on this form is collected and subject to the limitations in the Information Practices Act (Civil Code 1798 et seq.), the Driver’s Privacy Protection Act (18 U.S.C. 2721-2725), the California Vehicle Code (CVC) and other applicable state and federal laws and regulations.",
-        "For more information regarding specific CVC Sections, please visit <a target=\"_ Blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> and at the bottom of the page, click the “Privacy Policy” link. On the Privacy Policy page, click Driver License Notice on Collection.",
+        "For more information regarding specific CVC Sections, please visit <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> and at the bottom of the page, click the “Privacy Policy” link. On the Privacy Policy page, click Driver License Notice on Collection.",
         "DMV verifies the information and documents you provide with other governmental agencies.",
         "All information on this form is mandatory except where noted. DMV may deny your application for not providing the required information. Failure to provide the information required on this form is cause for refusal to issue a driver license or identification card, or, in some cases, cancellation or withdrawal of the driving privilege.",
-        "DMV shares your information with other governmental agencies and commercial entities as authorized by law. For more information regarding sharing of your information, please visit <a target=\"_ Blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> and at the bottom of the page, click the “Privacy Policy” link. On the Privacy Policy page, click Driver License Notice on Collection or request a copy of “How Your Information is Shared” (FFDMV 17) from any field office.",
-        "You may obtain a copy of your record at <a target=\"_ Blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Mandatory Actions Unit at (916) 657-6525.",
+        "DMV shares your information with other governmental agencies and commercial entities as authorized by law. For more information regarding sharing of your information, please visit <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> and at the bottom of the page, click the “Privacy Policy” link. On the Privacy Policy page, click Driver License Notice on Collection or request a copy of “How Your Information is Shared” (FFDMV 17) from any field office.",
+        "You may obtain a copy of your record at <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Mandatory Actions Unit at (916) 657-6525.",
         "Questions regarding your Driver License or Identification Card should be addressed to: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
-        "DMV’s Privacy Policy is located at <a target=\"_ Blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> under the 'Privacy Policy' link at the bottom of the page."
+        "DMV’s Privacy Policy is located at <a target=\"_blank\" href='https://www.dmv.ca.gov'>www.dmv.ca.gov</a> under the 'Privacy Policy' link at the bottom of the page."
       ]
     },
     "certifications": {
@@ -888,12 +888,12 @@
       "voterRegistration": {
         "title": "Voter registration",
         "bodyBullets": [
-          "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the <b>Safe at Home</b> program at (877) 322-5227 or visit <a target=\"_ Blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
+          "If sharing your address could put you in life-threatening danger, you may be eligible to register to vote confidentially. For more information, contact the <b>Safe at Home</b> program at (877) 322-5227 or visit <a target=\"_blank\" href='http://www.sos.ca.gov/safeathome/'>www.sos.ca.gov/safeathome/</a>.",
           "<b>For U.S. citizens only</b>. If you indicate that you are eligible to vote, the DMV will send all of the voter registration information collected on this form, including your digital signature, to the California Secretary of State. The DMV office where you registered will remain confidential and will be used only for voter registration purposes.",
           "If you are eligible to vote and decline to register to vote, your decision will remain confidential; however this information will be sent to the California Secretary of State to be used only for voter outreach and registration purposes.",
           "Voter registration information provided on this application is confidential. The DMV does not make voter eligibility determinations.",
           "If you have not received voter registration information within 4 weeks of <b>registering</b>, contact your county elections official or the California Secretary of State.",
-          "Please visit <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> for more information about your voter registration or <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> for general information."
+          "Please visit <a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> for more information about your voter registration or <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> for general information."
         ]
       },
       "privacy": {
@@ -903,10 +903,10 @@
           "Information provided to DMV on this form is collected and subject to the limitations in the Information Practices Act (Civil Code 1798 et seq.), the Driver’s Privacy Protection Act (18 U.S.C. 2721-2725), the California Vehicle Code (CVC) and other applicable state and federal laws and regulations.",
           "DMV verifies the information and documents you provide with other governmental agencies.",
           "All information on this form is mandatory except where noted. DMV may deny your application for not providing the required information. Failure to provide the information required on this form is cause for refusal to issue a driver license or identification card, or, in some cases, cancellation or withdrawal of the driving privilege.",
-          "DMV shares your information with other governmental agencies, law enforcement, and commercial entities as authorized by law. You may obtain a copy of your record at <a target=\"_ Blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Licensing Operations Division, Mandatory Actions Unit at (916) 657-6525.",
+          "DMV shares your information with other governmental agencies, law enforcement, and commercial entities as authorized by law. You may obtain a copy of your record at <a target=\"_blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a> or at any DMV field office during regular office hours. For assistance with access to your record, call (800) 777-0133 or make an appointment to visit a DMV field office during regular business hours. For assistance with corrections to your record, contact DMV’s Licensing Operations Division, Mandatory Actions Unit at (916) 657-6525.",
           "Questions regarding your Driver License or Identification Card should be addressed to: Driver License Inquiries, Department of Motor Vehicles, PO Box 942890, Sacramento, CA 94290-0001.",
-          "For more information regarding specific CVC Sections or how DMV shares your information, please visit <a target=\"_ Blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a>. You may also request a copy of How Your DMV Information is Shared (FFDMV 17) Fast Facts brochure from any field office.",
-          "DMV’s Privacy Policy is located at <a target=\"_ Blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a> under the “Privacy Policy” link at the bottom of the page.",
+          "For more information regarding specific CVC Sections or how DMV shares your information, please visit <a target=\"_blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a>. You may also request a copy of How Your DMV Information is Shared (FFDMV 17) Fast Facts brochure from any field office.",
+          "DMV’s Privacy Policy is located at <a target=\"_blank\" href='https://www.dmv.ca.gov>www.dmv.ca.gov</a> under the “Privacy Policy” link at the bottom of the page.",
           "Questions regarding this notice should be addressed to: Department of Motor Vehicles, ATTN: Chief Privacy Officer – MS F127, PO Box 932328, Sacramento, CA 94232-3280."
         ]
       }
@@ -1275,7 +1275,7 @@
         },
         "realIdDocuments": {
           "title": "Real ID birth date, name and legal presence proof",
-          "explanation": "We need to verify your date of birth and what we call your “legal presence”. Documents should use your true full name that you use today or we will need additional documents proving your true full name will be required. See our <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid'>Real ID information page</a> for details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card."
+          "explanation": "We need to verify your date of birth and what we call your “legal presence”. Documents should use your true full name that you use today or we will need additional documents proving your true full name will be required. See our <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/realid'>Real ID information page</a> for details on acceptable date of birth and legal presence documents required to receive a Real ID compliant card."
         },
         "requiredDocuments": {
           "title": "From that list we will need either:",
@@ -1283,19 +1283,19 @@
             "A single document that proves both your date of birth and legal presence.",
             "Or one document for your date of birth and one document for your legal presence."
           ],
-          "proof": "If you were married or divorced, adopted or have changed your name through the courts, please make sure to also bring <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>proof of the true, full name</a>.",
+          "proof": "If you were married or divorced, adopted or have changed your name through the courts, please make sure to also bring <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'>proof of the true, full name</a>.",
           "legalPresence": {
             "title": "Legal presence",
-            "explanation": "All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence. Please refer to our <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>AB 60 checklist tool</a> and our <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>date of birth and legal presence list</a>."
+            "explanation": "All applicants need to prove their date of birth. Unless you’re AB 60, you need to prove legal presence. Please refer to our <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>AB 60 checklist tool</a> and our <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>date of birth and legal presence list</a>."
           }
         },
         "socialSecurity": {
           "title": "Proof of Social Security Number",
-          "explanation": "<p>Under California law, we will need proof of your Social Security Number. Our <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08'>Social Security documents page lists accepted documents</a>.</p><p>If you recently changed your name, make sure that change is reflected on the document you bring.</p>"
+          "explanation": "<p>Under California law, we will need proof of your Social Security Number. Our <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl08'>Social Security documents page lists accepted documents</a>.</p><p>If you recently changed your name, make sure that change is reflected on the document you bring.</p>"
         },
         "veteran": {
           "title": "Proof of veterans service",
-          "explanation": "To get “Veteran” on your card, you need to to bring a <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> Veteran Status Verification Form </a> that your County Veteran Service Office can provide to you. We thank you for your service! "
+          "explanation": "To get “Veteran” on your card, you need to to bring a <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/coi/veterans/veterans_driver_license'> Veteran Status Verification Form </a> that your County Veteran Service Office can provide to you. We thank you for your service! "
         }
       }
     },
@@ -1309,8 +1309,8 @@
       "confirmationCode": "This is your confirmation code:",
       "show": "Show it to a DMV employee. We will also email this code to you.",
       "details": "For details about what you need to do to complete your application, visit the DMV website.",
-      "documentLink": "<a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>Bring your required documents.</a>",
-      "appointmentLink": "<a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>Make an appointment to save time.</a>"
+      "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>Bring your required documents.</a>",
+      "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>Make an appointment to save time.</a>"
     },
     "errorMessage": {
       "somethingWrong": "Sorry, something went wrong"
@@ -1364,7 +1364,7 @@
       "weNeedBasicInfo": "We need some basic information about you.",
       "addAnotherSigntature": "Add another parent/guardian signature"
     },
-    "emancipatedInfoMessage": "<b>To prove you are an emancipated minor</b>, you must declare your emancipation on a DL 11 form <b>and</b> provide proof of financial responsibility. <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>For more information, refer to the DMV website.</a>"
+    "emancipatedInfoMessage": "<b>To prove you are an emancipated minor</b>, you must declare your emancipation on a DL 11 form <b>and</b> provide proof of financial responsibility. <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/teenweb/dl_btn2/q_and_a/!ut/p/a1/hYxBCsIwFAXP4gHkxYiCy6Cl0Vh0VdO_Cb80rcGSRgl6fdG9OLuBYUCwoMjPMHAOU-Tx47R2Zr8rFroUplwdlVBG61Nd1LLcLHH4F1g08lFtqwGUOF_nIfYTbPY-vnwL242uzVHC3h3HzjEuoO9S_EAJpBs156Rmb9PozaU!/#Oth'>For more information, refer to the DMV website.</a>"
   },
   "shared": {
     "navigation": {
@@ -1667,7 +1667,7 @@
     },
     "confirmation": {
       "pagePrompt": "Thank you, your voter registration application will be processed when you complete your business at the DMV.",
-      "explanation": "<p>If you do not receive a voter notification card within four weeks after your visit to the DMV, contact your county elections official. </p><p> You can check your voter registration status with the California Secretary of State at <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov</a>.</p>"
+      "explanation": "<p>If you do not receive a voter notification card within four weeks after your visit to the DMV, contact your county elections official. </p><p> You can check your voter registration status with the California Secretary of State at <a target=\"_blank\" href='https://voterstatus.sos.ca.gov/'>voterstatus.sos.ca.gov</a>.</p>"
     },
     "updateChoosePartyPage": {
       "explanation": "<p>If you do not choose a political party, you may not be able to vote for some parties’ candidates at a primary election for US President or central committee. </p><p> This will overwrite your previous political party preference.</p>"
