@@ -20,9 +20,10 @@ const RadioSelector = function(props) {
         <label
           className='row relative radio-selector'
           htmlFor={id}
-          aria-labelledby={id}
+          aria-labelledby={props.value}
         >
           <div className='off-screen'>
+            <p id={props.value}>{props.children}</p>
             <input
               type='radio'
               name={props.name}

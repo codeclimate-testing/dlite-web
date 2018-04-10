@@ -9,15 +9,19 @@ const CheckboxSelector = function(props) {
   if (props.selected) { className += ' selected'; }
   if (props.focused === props.value) { className += ' focus'; }
 
+  let labelledBy = props.name + '-' + props.value;
+  console.log(labelledBy)
+
   return (
     <div className={ className }>
       <div className='outline-container'>
         <label
           className='row relative checkbox-selector'
           htmlFor         = { props.value }
-          aria-labelledby = { props.value }
+          aria-labelledby = { labelledBy }
         >
           <div className='off-screen'>
+            <p id={labelledBy}>{props.children}</p>
             <input
               type='checkbox'
               name={props.name}
