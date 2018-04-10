@@ -8,7 +8,7 @@ function defaultState() {
     isSigned:  '',
     guardianInfo: [{
       id: '0',
-      acceptLiabilities: '',
+      acceptLiabilities: false,
       signature: {
         name: '',
         month: '',
@@ -26,7 +26,7 @@ function defaultState() {
     },
     {
       id: '1',
-      acceptLiabilities: '',
+      acceptLiabilities: false,
       signature: {
         name: '',
         month: '',

@@ -120,6 +120,52 @@ function insertCardHistories(card_histories, application_id) {
     });
 }
 
+function insertGuardianSignatures(signatures, application_id) {
+  return db('guardian_signatures').where('application_id', application_id)
+    .then((records) => {
+      if(records.length > 0) {
+        let updatedData = signatures.map( signature => {
+          return db('guardian_signatures').where('application_id', application_id)
+            .where('guardian_type', signature.guardian_type)
+            .update(signature).returning('*')
+        });
+        return Promise.all(updatedData);
+      }
+      else {
+        return db('guardian_signatures').insert(signatures).returning('*');
+      }
+    });
+}
+
+function insertGuardianAddresses(addresses, signatures) {
+  let getUpsertQuery = (data, guardianID) => {
+    return db('guardian_addresses').where('guardian_id', guardianID)
+      .then((records) => {
+      if(records.length > 0){
+        return db('guardian_addresses')
+          .where('guardian_id', guardianID)
+            .update(data)
+              .returning('*');
+      }
+      else{
+        return db('guardian_addresses').insert(data).returning('*');
+      }
+    });
+  }
+  let queries = [];
+  addresses.forEach((a) => {
+    signatures.forEach((s) => {
+      if(a.guardian_type === s.guardian_type){
+        a.guardian_id = s.id;
+        queries.push(getUpsertQuery(a, s.id));
+      }
+    });
+  });
+
+  return Promise.all(queries);
+
+}
+
 function insertOneToOne(key, data, application_id) {
   return db(key).where('application_id', application_id)
     .then((records) => {
@@ -225,6 +271,20 @@ function saveApplication(data) {
     .then((records) => {
       if(records.length > 0) {
         returnedData.license_classes = records;
+      }
+      if(!data.guardian_signatures) { return [];}
+      return insertGuardianSignatures(data.guardian_signatures, application_id);
+    })
+    .then((records) => {
+      if(records.length > 0) {
+        returnedData.guardian_signatures = records;
+      }
+      if(!data.guardian_addresses) { return [];}
+      return insertGuardianAddresses(data.guardian_addresses, records);
+    })
+    .then((records) => {
+      if(records.length > 0) {
+        returnedData.guardian_addresses = records;
       }
       return returnedData;
     })

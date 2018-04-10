@@ -160,6 +160,47 @@ function fakeClientData() {
         'phoneNumber2': '314',
         'phoneNumber3': '8765'
       }
+    },
+    guardianSignature: {
+      isSigned: 'signElectronically',
+      guardianInfo: [
+        {
+          id: '0',
+          acceptLiabilities: true,
+          signature: {
+            name: 'Guardian Number One',
+            month: '12',
+            day: '11',
+            year: '2018'
+          },
+          phoneNumber: '408 776 1773',
+          address: {
+            street_1: '123 Second St.',
+            street_2: 'Apt # 564',
+            city: 'Sacramento',
+            state: 'CA',
+            zip: '91121'
+          }
+        },
+        {
+          id: '1',
+          acceptLiabilities: true,
+          signature: {
+            name: 'Guardian Number two',
+            month: '10',
+            day: '9',
+            year: '2019'
+          },
+          phoneNumber: '111 222 3333',
+          address: {
+            street_1: '2121 Here St.',
+            street_2: 'No Apt.',
+            city: 'San Francisco',
+            state: 'CA',
+            zip: '92222'
+          }
+        }
+      ]
     }
   };
 };

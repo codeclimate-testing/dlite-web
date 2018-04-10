@@ -43,6 +43,19 @@ exports.byId = (id) => {
           db('license_classes').whereIn('card_id', cardIDs)
             .then( records => { aggregate.license_classes = records; })
         ])
+      }),
+    db('guardian_signatures').where('application_id', id)
+      .then((records) => {
+        aggregate.guardian_signatures = records;
+        let guardianIDs = [];
+        records.forEach((guardian) => {
+          guardianIDs.push(guardian.id);
+        });
+        return guardianIDs;
+      })
+      .then((guardianIDs) => {
+        return db('guardian_addresses').whereIn('guardian_id', guardianIDs)
+          .then(records => { aggregate.guardian_addresses = records;})
       })
   ]).then((res) => {
     if (!aggregate.application) { return undefined; }

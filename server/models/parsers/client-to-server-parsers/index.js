@@ -11,9 +11,11 @@ const medicalHistories    = require('./extract-medical-histories');
 const licenseIssues       = require('./extract-license-issues');
 const veteransInfo        = require('./extract-veterans-info');
 const votingRegistrations = require('./extract-voting-registrations');
-const cardTypes           = require('./extract-cards');
+const cardTypes           = require('./extract-card-types');
 const cardOptions         = require('./extract-card-options');
 const licenseClasses      = require('./extract-license-classes');
+const guardianSignatures  = require('./extract-guardian-signatures');
+const guardianAddresses   = require('./extract-guardian-addresses');
 
 module.exports = {
   application,
@@ -29,5 +31,7 @@ module.exports = {
   votingRegistrations,
   cardTypes,
   cardOptions,
-  licenseClasses
+  licenseClasses,
+  guardianSignatures,
+  guardianAddresses
 };
