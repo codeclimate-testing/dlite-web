@@ -1323,7 +1323,7 @@
       "goToDMV": "¡Ahora necesita ir al DMV!",
       "confirmationCode": "Este es tu código de confirmación:",
       "details": "Para obtener detalles sobre lo que debe hacer para completar su solicitud, visite el sitio web del DMV.",
-      "show": "Muéstrelo a un empleado del DMV. También le enviaremos este código por correo electrónico.",
+      "show": "Muéstrelo a un empleado del DMV.",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Haga una cita para ahorrar tiempo. </a>",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Traiga sus documentos requeridos. </a>"
     }

@@ -1274,7 +1274,7 @@
     "appointmentPrep": {
       "confirmationCode": "នេះគឺជាលេខកូដបញ្ជាក់របស់អ្នក:",
       "goToDMV": "ឥឡូវអ្នកត្រូវទៅ DMV!",
-      "show": "បង្ហាញវាដល់បុគ្គលិក DMV ។ យើងក៏នឹងផ្ញើអ៊ីមែលមកកាន់អ្នកផងដែរ។",
+      "show": "បង្ហាញវាដល់បុគ្គលិក DMV ។",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> ធ្វើការណាត់ជួបដើម្បីសន្សំពេលវេលា។ </a>",
       "details": "សម្រាប់ព័ត៌មានលម្អិតអំពីអ្វីដែលអ្នកត្រូវធ្វើដើម្បីបំពេញពាក្យសុំរបស់អ្នកសូមចូលទៅកាន់គេហទំព័រ DMV ។",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> នាំឯកសារដែលអ្នកត្រូវការ។ </a>"

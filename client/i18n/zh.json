@@ -1275,7 +1275,7 @@
     "appointmentPrep": {
       "goToDMV": "你现在需要去DMV！",
       "details": "有关您需要如何完成应用程序的详细信息，请访问DMV网站。",
-      "show": "将其展示给DMV员工。我们也会通过电子邮件发送给您的代码。",
+      "show": "将其展示给DMV员工",
       "confirmationCode": "这是您的确认码：",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>预约节省时间</a>。",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>带上您所需的文件。</a>"

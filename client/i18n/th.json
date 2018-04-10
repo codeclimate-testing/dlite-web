@@ -1243,7 +1243,7 @@
       "details": "สำหรับรายละเอียดเกี่ยวกับสิ่งที่คุณต้องทำเพื่อกรอกใบสมัครของคุณโปรดไปที่เว็บไซต์ DMV",
       "confirmationCode": "นี่คือรหัสยืนยันของคุณ:",
       "goToDMV": "ขณะนี้คุณต้องไปที่ DMV!",
-      "show": "แสดงให้พนักงานของ DMV ทราบ เราจะส่งอีเมลรหัสนี้ให้คุณ",
+      "show": "แสดงให้พนักงานของ DMV ทราบ",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> นัดหมายเพื่อประหยัดเวลา </a>",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> นำเอกสารที่คุณต้องการ </a>"
     },
