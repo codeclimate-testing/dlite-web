@@ -98,22 +98,22 @@ describe('api actions', function() {
 
   describe('#getData', function() {
     it('calls fetch on the right api endpoint', function() {
-      let actionFunction = getData(id, fetcher);
-      actionFunction(dispatch);
+      let actionFunction = getData(dispatch);
+      actionFunction(id, fetcher);
       assert.equal(url, '/api/application/' + id);
     });
 
     it('returns response on success', function() {
-      let actionFunction = postData(body, fetcher);
-      actionFunction(dispatch)
+      let actionFunction = getData(dispatch);
+      actionFunction(body, fetcher)
         .then((res) => {
           assert.deepEqual(res, response, 'response not returned');
         })
     });
 
     it('dispatches action to update redux on success', function() {
-      let actionFunction = postData(body, fetcher);
-      actionFunction(dispatch).catch(() => {
+      let actionFunction = getData(dispatch);
+      actionFunction(body, fetcher).catch(() => {
         let action = dispatch.getCall(0).args[0];
         assert.deepEqual(action,{
           type: 'GET_DATA_SUCCESS',
@@ -125,8 +125,8 @@ describe('api actions', function() {
       });
     });
     it('returns success after saving data', function() {
-      let actionFunction = postData(body, fetcher);
-      actionFunction(dispatch)
+      let actionFunction = getData(dispatch);
+      actionFunction(body, fetcher)
       .then((res) => {
         return res.json();
       })
@@ -137,8 +137,8 @@ describe('api actions', function() {
 
     it('dispatches POST_DATA_ERROR on error', function() {
       response.status = 500;
-      let actionFunction = postData(body, fetcher);
-      actionFunction(dispatch).catch((res) => {
+      let actionFunction = getData(dispatch);
+      actionFunction(body, fetcher).catch((res) => {
         let action = dispatch.getCall(0).args[0];
         assert.deepEqual(action,{
           type: 'GET_DATA_ERROR',

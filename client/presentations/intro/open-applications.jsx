@@ -31,7 +31,7 @@ const Form = (props) => {
           translationPath = 'beforeIntro.idMeReturnPage.youHaveSomeUnfinishedApps'
         />
 
-        <Applications apps= {props.userData.apps} history={props.history}/>
+        <Applications apps= {props.userData.apps} />
 
         <hr/>
 

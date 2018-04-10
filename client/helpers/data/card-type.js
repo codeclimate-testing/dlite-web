@@ -19,8 +19,16 @@ export const IDAppExists = (props) => {
   return props.IDApp.isApplying.toString() === 'true';
 };
 
+export const IDAppExistsAndActionChosen = (props) => {
+  return IDAppExists(props) && hasValue(props.IDApp.action);
+};
+
 export const DLAppExists = (props) => {
   return props.DLApp.isApplying.toString() === 'true';
+};
+
+export const DLAppExistsAndActionChosen = (props) => {
+  return (DLAppExists(props) && hasValue(props.DLApp.action));
 };
 
 export const prettyDL = (value) => {

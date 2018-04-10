@@ -6,8 +6,6 @@ import {
   IDorDL,
   hasMultipleCards,
   hasNoCards,
-  IDAppExists,
-  DLAppExists,
   hasSelectedClass,
   showID,
   showDL,
@@ -170,4 +168,5 @@ describe('Data helpers for cards', function() {
       assert.equal(showBoth(data), true);
     });
   });
+
 });

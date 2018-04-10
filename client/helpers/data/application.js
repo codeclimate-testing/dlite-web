@@ -68,3 +68,24 @@ export const parseChooseApp = (appName) => {
 export const goToOpenApps = (props) => {
   return hasMultipleApps(props) || (props.userData.appsLength === 1 && !sameType(props));
 };
+
+export const getFlow = (linkType) => {
+  let type = linkType.split('-');
+  let flow = type[1];
+  if (type[0] === 'open') {
+    flow = '';
+  }
+  return flow;
+};
+
+export const addOrEdit = (props, addText, editText) => {
+  let toReturn = editText;
+  if (props.linkType.split('-')[1] === 'add') {
+    toReturn = addText;
+  }
+  return toReturn;
+};
+
+export const addOrEditIcon = (props) => {
+  return props.linkType === 'open-add' ? 'add' : 'edit';
+};

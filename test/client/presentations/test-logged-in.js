@@ -52,10 +52,7 @@ const LoggedIn = (props) => {
   // check to see if the test data have already been saved
   dispatch(getUserData('3f'))
     .then((res) => {
-      let savedData = res.apps.filter((app) => {
-        return app.id === '4' && app.name === 'renew ID and change DL person';
-      });
-      if (savedData.length === 0) {
+      if (res.apps.length < 4) {
         return saveData();
       }
       return;

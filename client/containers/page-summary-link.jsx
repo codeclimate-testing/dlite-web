@@ -1,30 +1,24 @@
 'use strict'
 
-import React              from 'react';
-import { connect }        from 'react-redux';
-import handlers           from '../helpers/handlers';
-import Presentation       from '../presentations/page-summary-link.jsx';
-import { addOrEditFlow }  from '../helpers/data/pathnames';
-import { hasValue }       from '../helpers/data/validations';
+import React                    from 'react';
+import { connect }              from 'react-redux';
+import handlers                 from '../helpers/handlers';
+import Presentation             from '../presentations/page-summary-link.jsx';
+import { getFlow }              from '../helpers/data/application';
+import onFlowChangeGenerator    from '../helpers/handlers/on-flow-change-generator';
+import { getData }              from '../actions/api-actions';
 
 const PageSummaryLink = (props) => {
-  let flow = addOrEditFlow(props, 'add', 'edit');
+  let linkType = props.linkType || 'summary-edit';
 
-  let changeFlow = (e) => {
-    e.preventDefault();
-    return props.onFlowChange(flow, props.cardType, props.appID, props.history);
-  };
+  let flow = getFlow(linkType);
 
-  let newFlow = (e) => {
-    e.preventDefault();
-    props.newFlow(props.editKey, props.history);
-  };
-
-  let onClick = hasValue(props.newApp) ? newFlow : changeFlow;
+  let onClick = onFlowChangeGenerator(props, flow, linkType);
 
   return (
     <Presentation
       {...props}
+      linkType    = { linkType }
       onClick     = { onClick }
       flow        = { flow }
     />
@@ -37,9 +31,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   const onFlowChange      = handlers.onFlowChange(dispatch);
   const newFlow           = handlers.newFlow(dispatch);
+  const goGetData         = getData(dispatch);
+
   return {
     onFlowChange,
-    newFlow
+    newFlow,
+    goGetData
   }
 };
 

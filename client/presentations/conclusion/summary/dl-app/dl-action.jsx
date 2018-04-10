@@ -3,7 +3,7 @@
 import React                from 'react';
 import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 import {
-  DLAppExists,
+  DLAppExistsAndActionChosen,
   renewDL,
   replaceDL,
   correctDL,
@@ -19,7 +19,7 @@ import {
 } from '../actions.jsx';
 
 const DLAction = (props) => {
-  if(!DLAppExists(props)) { return null; }
+  if(!DLAppExistsAndActionChosen(props)) { return null; }
 
   return (
     <PageSummaryLink

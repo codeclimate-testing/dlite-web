@@ -22,7 +22,9 @@ import {
   needsEndorsement,
   getCorrectString,
   getCorrectApp,
-  getLegalNameKey
+  getLegalNameKey,
+  IDAppExistsAndActionChosen,
+  DLAppExistsAndActionChosen
 } from '../../../../client/helpers/data/card-type';
 
 
@@ -466,6 +468,52 @@ describe('Data helpers for card-type', function() {
     });
     it('returns legalName when cardType is not CDL', function() {
       assert.equal(getLegalNameKey('ID'), 'legalName');
+    });
+  });
+
+  describe('#IDAppExistsAndActionChosen', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        IDApp: {
+          isApplying: false,
+          action: 'new'
+        }
+      };
+    });
+    it('returns false if IDApp.isApplying is false', function() {
+      assert.equal(IDAppExistsAndActionChosen(props), false);
+    });
+    it('returns false if IDApp.action is blank', function() {
+      props.IDApp.action = '';
+      assert.equal(IDAppExistsAndActionChosen(props), false);
+    });
+    it('returns true if IDApp.isApplying is true and IDApp.action has value', function() {
+      props.IDApp.isApplying = true;
+      assert.equal(IDAppExistsAndActionChosen(props), true);
+    });
+  });
+
+  describe('#DLAppExistsAndActionChosen', function() {
+    let props;
+    beforeEach(function() {
+      props = {
+        DLApp: {
+          isApplying: false,
+          action: 'new'
+        }
+      };
+    });
+    it('returns false if DLApp.isApplying is false', function() {
+      assert.equal(DLAppExistsAndActionChosen(props), false);
+    });
+    it('returns false if DLApp.action is blank', function() {
+      props.DLApp.action = '';
+      assert.equal(DLAppExistsAndActionChosen(props), false);
+    });
+    it('returns true if DLApp.isApplying is true and DLApp.action has value', function() {
+      props.DLApp.isApplying = true;
+      assert.equal(DLAppExistsAndActionChosen(props), true);
     });
   });
 

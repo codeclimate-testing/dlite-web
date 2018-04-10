@@ -46,9 +46,8 @@ export const Applications = (props) => {
         <CardDescription cardType = {app.cardType} id={app.id}/>
         <PageSummaryLink
           appID={app.id}
-          flow=''
           editKey={editKey}
-          history={props.history}
+          linkType = 'open-edit'
         />
       </fieldset>
     )

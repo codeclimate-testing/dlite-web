@@ -70,7 +70,7 @@ describe('Summary DL App section components', function() {
     });
 
     it('shows edit button going to the wdywtdy page and then back to IDDL summary page', function() {
-      assert.ok(component.find('.wdywtdt[href="/edit/id-and-license/what-do-you-want-to-do-today"]'));
+      assert.ok(component.find('.wdywtdt.summary-edit').length);
     });
   });
 
@@ -178,14 +178,14 @@ describe('Summary DL App section components', function() {
       assert.ok(component.text().includes('Real-ID CompliantNo'));
     });
 
-    it('has a link button with href to "realID" edit path', function() {
+    it('has a link button to edit realID page', function() {
       props.application.DLApp.isApplying = true;
       let component = render(
         <Wrapper>
           <DLApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.realID.button[href="/apply/id-and-license/edit/real-id"]').length);
+      assert.ok(component.find('.realID.button.summary-edit').length);
     });
   });
 

@@ -11,65 +11,109 @@ import { pathForPage }  from '../../../../client/helpers/navigation/page';
 describe('PageSummaryLink edit buttons on summary pages', function() {
   const Wrapper = wrapperGenerator(store);
   let component, props;
-  beforeEach(function() {
+
+  describe('#add an IDDL app from summary page', function() {
     props = {
       editKey: 'wdywtdt',
       cardType: 'ID',
-      flow: ''
+      linkType: 'summary-add'
     };
     component = render(
       <Wrapper>
         <PageSummaryLink {...props} />
       </Wrapper>
     );
+
+    it('has a link with a className that includes props.editKey', function() {
+      let className = '.'+props.editKey;
+      assert.ok(component.find(className).length)
+    });
+    it('has a link with a className that includes props.cardType', function() {
+      let className = '.'+props.cardType;
+      assert.ok(component.find(className).length)
+    });
+    it('has a link with a className that includes props.linkType', function() {
+      let className = '.'+props.linkType;
+      assert.ok(component.find(className).length)
+    });
+    it('has a button with text "Add"', function() {
+      assert.ok(component.text().includes('Add'));
+    });
   });
 
-  it('has a link with a className that includes props.editKey', function() {
-    let className = '.'+props.editKey;
-    assert.ok(component.find(className).length)
-  });
-  it('has a link with a className that includes props.cardType', function() {
-    let className = '.'+props.cardType;
-    assert.ok(component.find(className).length)
+  describe('#editing an app from summary page', function() {
+    beforeEach(function() {
+      props = {
+        editKey: 'legalName',
+        linkType: 'summary-edit'
+      };
+      component = render(
+        <Wrapper>
+          <PageSummaryLink {...props} />
+        </Wrapper>
+      );
+    });
+
+    it('has a link with className summary-edit.legalName', function() {
+      let className = '.'+props.editKey+'.'+props.linkType;
+      assert.ok(component.find('a'+className).length);
+    });
+    it('has a button with text "Edit"', function() {
+      assert.ok(component.text().includes('Edit'));
+    });
+    it('has a button with edit icon', function() {
+      assert.ok(component.find('.edit-icon').length);
+    });
   });
 
-  it('has a link that directs to the edit url associated with the props.editKey key and the props.flow', function() {
-    let className = '.'+props.editKey;
-    props.flow = 'edit';
-    let url = pathForPage(props.editKey, props);
-    component = render(
-      <Wrapper>
-        <PageSummaryLink {...props} />
-      </Wrapper>
-    );
-    assert.equal(component.find(className)[0].attribs.href, url);
+  describe('#editing an app from open-applications page', function() {
+    beforeEach(function() {
+      props = {
+        editKey: 'legalName',
+        linkType: 'open-edit'
+      };
+      component = render(
+        <Wrapper>
+          <PageSummaryLink {...props} />
+        </Wrapper>
+      );
+    });
+
+    it('has a link with className open-edit.legalName', function() {
+      let className = '.'+props.editKey+'.'+props.linkType;
+      assert.ok(component.find('a'+className).length);
+    });
+    it('has a button with text "Edit"', function() {
+      assert.ok(component.text().includes('Edit'));
+    });
+    it('has a button with edit icon', function() {
+      assert.ok(component.find('.edit-icon').length);
+    });
   });
 
-  it('has a link that directs to the non-edit url associated with the props.editKey key and the props.flow', function() {
-    let className = '.'+props.editKey;
-    props.flow = '';
-    let url = pathForPage(props.editKey, props);
-    component = render(
-      <Wrapper>
-        <PageSummaryLink {...props} />
-      </Wrapper>
-    );
-    assert.equal(component.find(className)[0].attribs.href, url);
-  });
+  describe('#adding an app from open-applications page', function() {
+    beforeEach(function() {
+      props = {
+        editKey: 'legalName',
+        linkType: 'open-add'
+      };
+      component = render(
+        <Wrapper>
+          <PageSummaryLink {...props} />
+        </Wrapper>
+      );
+    });
 
-  it('has a button that has the text "Edit" if no prop.add is passed', function() {
-    assert.ok(component.text().includes('Edit'));
-  });
-
-  it('has a button that has the text "Add" if props.add is passed', function() {
-    props.add = true;
-    let component = render(
-      <Wrapper>
-        <PageSummaryLink {...props} />
-      </Wrapper>
-    );
-    assert.ok(component.text().includes('Add'));
-    assert.ok(!component.text().includes('Edit'));
+    it('has a link with className open-add.legalName', function() {
+      let className = '.'+props.editKey+'.'+props.linkType;
+      assert.ok(component.find('a'+className).length);
+    });
+    it('has a button with text "Add"', function() {
+      assert.ok(component.text().includes('Add'));
+    });
+    it('has a button with add icon', function() {
+      assert.ok(component.find('.add-icon').length);
+    });
   });
 
 });

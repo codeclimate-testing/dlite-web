@@ -75,36 +75,37 @@ describe('Summary ID App section', function() {
       assert.ok(component.text().includes('Real-ID CompliantNo'));
     });
 
-    it('has a link button with href to "realID" edit path', function() {
+    it('has a button to edit realID page if user is getting a real ID', function() {
       props.application.IDApp.isApplying = true;
       let component = render(
         <Wrapper>
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.realID.button[href="/apply/id-and-license/edit/real-id"]').length);
+      assert.ok(component.find('.realID.button.summary-edit').length);
     });
   });
 
   describe('IDAction', function() {
     it('has an edit button with link to "wdywtdt" edit path if user is getting an ID', function() {
       props.application.IDApp.isApplying = true;
+      props.application.IDApp.action = 'new'
       let component = render(
         <Wrapper>
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.wdywtdt.button[href="/apply/id-and-license/edit/what-do-you-want-to-do-today"]').length);
+      assert.ok(component.find('.wdywtdt.button.summary-edit').length);
       assert.ok(component.text().includes('Edit'));
     });
-    it('has an add button with link to "wdywtdt" add path if user is not getting an ID', function() {
+    it('has an add button with link to add ID app', function() {
       props.application.IDApp.isApplying = false;
       let component = render(
         <Wrapper>
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.wdywtdt.button[href="/apply/id-and-license/add/what-do-you-want-to-do-today"]').length);
+      assert.ok(component.find('.wdywtdt.button.summary-add').length);
       assert.ok(component.text().includes('Add'));
     });
   });

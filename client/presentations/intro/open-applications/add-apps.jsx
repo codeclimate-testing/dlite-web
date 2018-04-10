@@ -24,9 +24,7 @@ export const AddApps = (props) => {
 
           <PageSummaryLink
             editKey='legalName'
-            addIcon = { true }
-            newApp  = { true }
-            flow = ''
+            linkType = 'open-add'
           />
         </div>
 
@@ -39,9 +37,7 @@ export const AddApps = (props) => {
 
           <PageSummaryLink
             editKey = 'cdlLegalName'
-            addIcon = { true }
-            newApp  = { true }
-            flow    = ''
+            linkType = 'open-add'
           />
         </div>
       </fieldset>
