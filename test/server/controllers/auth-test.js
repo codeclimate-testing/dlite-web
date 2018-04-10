@@ -12,7 +12,10 @@ describe('Auth related controllers', () => {
     req = {
       session: {
         user: { uuid: 'foo'},
-        cookie: {}
+        cookie: {},
+        save: (redirectURL) => {
+          return res.redirect(redirectURL)
+        }
       },
       user: { uuid: '100'},
       params: {appName: 'cdl', language: 'vi'} ,
@@ -27,11 +30,13 @@ describe('Auth related controllers', () => {
 
   it('#authSuccess redirects to the logged in page', function() {
     controllers.authSuccess(req, res);
+    req.session.save('/apply/logged-in/' + req.user.uuid);
     assert(res.redirect.calledWith('/apply/logged-in/'+ req.user.uuid));
   });
 
   it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
     process.env.APP_URL = 'localhost';
+    req.session.save('http://localhost:3000/apply/logged-in/' + req.user.uuid);
     controllers.authSuccess(req, res, next, 'development');
     assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/'+req.user.uuid));
   });
@@ -50,6 +55,7 @@ describe('Auth related controllers', () => {
   });
   it('#authSuccess redirects to localhost if app_env is development and not on heroku app', function() {
     process.env.APP_URL = 'localhost';
+    req.session.save('http://localhost:3000/apply/logged-in/' + req.user.uuid);
     controllers.authSuccess(req, res, next, 'development');
     assert(res.redirect.calledWith('http://localhost:3000/apply/logged-in/' + req.user.uuid));
   });

@@ -4,8 +4,7 @@ import assert from 'assert';
 import sinon from 'sinon';
 
 import {
-  onBlurValidateGenerator,
-  onFocusClearValidationGenerator
+  onBlurValidateGenerator
 } from '../../../../client/helpers/handlers/on-validation-change';
 
 describe('onValidationChange', function() {
@@ -29,20 +28,4 @@ describe('onValidationChange', function() {
       'dispatch called with something unexpected'
     );
   });
-
-  it('#onFocusClearValidationGenerator creates a handler that triggers a remove validation action', function() {
-    let handler = onFocusClearValidationGenerator(dispatch);
-    handler(event);
-
-    assert(dispatch.called, 'dispatch not called');
-    assert(
-      dispatch.calledWith({
-        type: 'REMOVE_VALIDATION',
-        payload: {value: 'nombre'}
-      }),
-      'dispatch called with something unexpected'
-    );
-  });
 });
-
-

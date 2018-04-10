@@ -49,6 +49,20 @@ describe('api actions', function() {
       });
     });
 
+    it('returns success after saving data', function() {
+      let actionFunction = postData(body, fetcher);
+      actionFunction(dispatch)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        assert.equal(res, 'success');
+      });
+    });
+
     it('dispatches action to update redux on success', function() {
       let actionFunction = postData(body, fetcher);
       actionFunction(dispatch).then(() => {
@@ -108,6 +122,16 @@ describe('api actions', function() {
             error: null
           }
         }, 'get data success not dispatched');
+      });
+    });
+    it('returns success after saving data', function() {
+      let actionFunction = postData(body, fetcher);
+      actionFunction(dispatch)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        assert.equal(res, 'success');
       });
     });
 

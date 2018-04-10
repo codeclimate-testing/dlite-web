@@ -9,7 +9,7 @@ const getCardType = (IDApp, DLApp) => {
   else if (cardTypeParser.hasDL(DLApp)){
     toReturn = ['DL']
   }
-  else {
+  else if (cardTypeParser.hasID(IDApp)){
     toReturn = ['ID'];
   }
   return toReturn;

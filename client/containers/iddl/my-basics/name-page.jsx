@@ -39,14 +39,12 @@ const mapDispatchToProps = (dispatch) => {
   const onChange = handlers.onInputChange(updateLegalName, dispatch);
   const onSubmit = handlers.onFormSubmit(dispatch);
   const onBlurValidate = handlers.onBlurValidate(dispatch);
-  const onFocusClearValidation = handlers.onFocusClearValidation(dispatch);
   const onSubmitShowErrors = handlers.onSubmitShowErrors(dispatch);
 
   return {
     onChange,
     onSubmit,
     onBlurValidate,
-    onFocusClearValidation,
     onSubmitShowErrors,
     onSelectChange
   };

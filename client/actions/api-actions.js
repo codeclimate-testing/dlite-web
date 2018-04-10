@@ -77,7 +77,14 @@ export const getData = function (id, fetcher = fetch) {
       }
     });
 
-    return fetcher('/api/application/' + id)
+    return fetcher('/api/application/' + id, {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
       .then(function(res){
         if(res.status >= 200 && res.status <= 299) {
           return res.json();
@@ -100,6 +107,7 @@ export const getData = function (id, fetcher = fetch) {
             value:  'success'
           }
         });
+        return 'success';
       })
       .catch(function (err) {
         dispatch({
@@ -115,7 +123,7 @@ export const getData = function (id, fetcher = fetch) {
               value:  'error'
             }
           });
-          return err;
+          return 'api-fail';
       });
   };
 };

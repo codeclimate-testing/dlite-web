@@ -8,8 +8,8 @@ function extractApplication(data) {
   let physicalTraits    = basics.physicalTraits || {};
   let language          = basics.language || '';
   let dob               = null;
-  let socialSecurity    = 'No';
-  let dateOfBirth       = basics.dateOfBirth
+  let socialSecurity    = '';
+  let dateOfBirth       = basics.dateOfBirth;
 
 
   if(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year) {
@@ -19,6 +19,8 @@ function extractApplication(data) {
   if(basics.socialSecurity.hasSocialSecurity === 'Yes'){
     let _socialSecurity = basics.socialSecurity;
     socialSecurity = _socialSecurity.part1+'-'+_socialSecurity.part2+'-'+_socialSecurity.part3;
+  } else if (basics.socialSecurity.hasSocialSecurity === 'No') {
+    socialSecurity = 'No';
   }
 
   return {

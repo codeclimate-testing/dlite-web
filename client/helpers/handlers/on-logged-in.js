@@ -47,12 +47,12 @@ export default (dispatch) => {
           userData: res,
           appName: appName
         });
+
+        if (res === 'user-fail') {
+          return history.push(signInURL());
+        }
+
         return history.push(pathURL);
-      })
-      .catch((err) => {
-        console.log('ERROR')
-        console.log(err);
-        return history.push(signInURL());
       });
   }
 };

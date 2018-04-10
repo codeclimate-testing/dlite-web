@@ -100,7 +100,7 @@ module.exports = function(world) {
 
   world.when('I click in the title for real ID info accordion', function(done) {
     browser
-      .click('#real-id-info')
+      .click('#real-id-info-accordion a')
       .then(() => { done(); })
       .catch((err) => { done(new Error(err)); });
   });
@@ -127,7 +127,7 @@ module.exports = function(world) {
 
   world.when('I click in the title for real ID requirements accordion', function(done) {
     browser
-      .click('#real-id-requirements')
+      .click('#real-id-requirements-accordion a')
       .then(() => { done(); })
       .catch((err) => { done(new Error(err)); });
   });

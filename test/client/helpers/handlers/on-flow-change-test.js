@@ -33,6 +33,18 @@ describe('onFlowChange', function() {
     }));
   });
 
+  // it('goes back in history if getData response is api-fail', function() {
+  //   dispatch = () => {
+  //     return Promise.resolve(new Error('api-fail'));
+  //   };
+  //   let history = {
+  //     goBack: sinon.spy()
+  //   };
+  //   onChange(flow, cardType, appID, history).then((res) => {
+  //     assert.ok(history.goBack.called);
+  //   });
+  // });
+
   it('dispatches updateCardType when cardType is also passed', function() {
     cardType = 'DT';
     onChange(flow, cardType);

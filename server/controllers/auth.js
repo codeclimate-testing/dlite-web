@@ -25,12 +25,17 @@ const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   res.cookie('appName', params.appName, {maxAge: 1200000});
   res.cookie('language', params.language, {maxAge: 1200000});
 
+  let redirectURL = `/apply/logged-in/${req.user.uuid}`;
   if (env === 'development' && !process.env.APP_URL.match(/herokuapp/g)) {
-    res.redirect(`http://localhost:3000/apply/logged-in/${req.user.uuid}`);
+    redirectURL = `http://localhost:3000/apply/logged-in/${req.user.uuid}`;
   }
-  else {
-    res.redirect(`/apply/logged-in/${req.user.uuid}`);
-  }
+
+  req.session.save((err) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect(redirectURL);
+  });
 
 };
 

@@ -11,6 +11,13 @@ export const showCDLUnder21 = (props) => {
     ageChecks.Under21(props.dateOfBirth);
 };
 
+export const showCDLUnder18 = (props) => {
+  return props.hasOwnProperty('chooseApp') &&
+    cdlApp(props.chooseApp) &&
+    dataPresent.date(props.dateOfBirth) &&
+    ageChecks.Under18(props.dateOfBirth);
+};
+
 export const needsAddress = (props) => {
   if (props.hasOwnProperty('isResident')) {
     return props.isResident === 'Yes';

@@ -1,8 +1,7 @@
 'use strict';
 
 import {
-  addValidation,
-  removeValidation
+  addValidation
 } from '../../actions';
 
 export const onBlurValidateGenerator = (dispatch) => {
@@ -12,13 +11,4 @@ export const onBlurValidateGenerator = (dispatch) => {
   };
 
   return onBlurValidate;
-};
-
-export const onFocusClearValidationGenerator = (dispatch) => {
-  const onFocusClearValidation = (event) => {
-    let name = event.target.name;
-    dispatch(removeValidation(name));
-  };
-
-  return onFocusClearValidation;
 };
