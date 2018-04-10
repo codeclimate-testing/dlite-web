@@ -74,7 +74,7 @@ world.given('I have already entered my voter eligibility requirement status into
 
 world.and('I will see the eligibility requirement status I entered', function(done){
   browser
-    .text('.selected')
+    .text('.selected .text-region')
     .then((eligibility) => { assert.equal(eligibility, 'Yes'); })
     .then(() => { done(); })
     .catch(done);

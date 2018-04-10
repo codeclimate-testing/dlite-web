@@ -27,13 +27,13 @@ const Organ = (props) => {
 const OrganDonation = (props) => {
   return (
     <Accordion
-      id    = 'organ-donation-summary'
-      title = 'intro.getStartedPage.listItems.2'
-      key   = 'organ-donation-summary'
+      id          = 'organ-donation-summary'
+      title       = 'intro.getStartedPage.listItems.2'
+      key         = 'organ-donation-summary'
     >
       <Organ
-      organDonation       = { props.application.organDonation}
-      editKey             = 'organDonation'
+        organDonation       = { props.application.organDonation}
+        editKey             = 'organDonation'
       />
     </Accordion>
   );

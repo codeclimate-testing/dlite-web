@@ -10,7 +10,6 @@ const CheckboxSelector = function(props) {
   if (props.focused === props.value) { className += ' focus'; }
 
   let labelledBy = props.name + '-' + props.value;
-  console.log(labelledBy)
 
   return (
     <div className={ className }>

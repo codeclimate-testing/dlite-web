@@ -11,15 +11,16 @@ const Accordion = (props) => {
     <div
       className={className}
       id={id}
-      aria-controls = {props.id}
-      aria-expanded = {props.accordionBol}
-      role='button'
+
     >
       <a
         className='row accordion-header'
         onClick={props.onClick}
         accordion = {props.id}
         href='javascript:void(0);'
+        aria-controls = {props.id}
+        aria-expanded = {props.accordionBol}
+        role='button'
       >
         <div
           className='unit-right icon-region'
@@ -36,11 +37,13 @@ const Accordion = (props) => {
         />
         </div>
       </a>
+
       <div
         id = {props.id}
         aria-hidden = {props.ariaHidden}
         aria-labelledby = {id}
         className='row accordion-body'
+        aria-live="assertive"
       >
         {props.children}
       </div>

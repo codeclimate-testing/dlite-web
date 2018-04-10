@@ -85,7 +85,7 @@ module.exports = function(world) {
 
   world.then('I will see Yes and political party selected', function(done){
     browser
-      .text('.selected')
+      .text('.selected .text-region')
       .then((color) => { assert.equal(color, 'YesLibertarian Party'); })
       .then(() => { done(); })
       .catch(done);

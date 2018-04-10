@@ -23,7 +23,7 @@ const RadioSelector = function(props) {
           aria-labelledby={props.value}
         >
           <div className='off-screen'>
-            <p id={props.value}>{props.children}</p>
+            <div id={props.value}>{props.children || props.value}</div>
             <input
               type='radio'
               name={props.name}
