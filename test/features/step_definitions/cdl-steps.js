@@ -320,7 +320,7 @@ module.exports = function(world){
 
   world.when('I click to edit the name on my CDL', function(done) {
     browser
-      .click('.cdlLegalName.button.summary')
+      .click('.cdlLegalName.button.summary.summary-edit')
       .then(done)
       .catch(done);
   });

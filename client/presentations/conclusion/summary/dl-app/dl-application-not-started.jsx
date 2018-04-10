@@ -5,17 +5,17 @@ import Translator           from '../../../../i18n/translator-tag.jsx';
 import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 
 import {
-  DLAppExists
+  DLAppExistsAndActionChosen
 } from '../../../../helpers/data/card-type'
 
 const DLApplicationNotStarted = (props) => {
   document.title = 'Summary of my application';
-  if(DLAppExists(props)) { return null; }
+  if(DLAppExistsAndActionChosen(props)) { return null; }
 
   return (
     <PageSummaryLink
       {...props}
-      add       = { true }
+      linkType = 'summary-add'
     >
       <Translator
         tag             = 'p'

@@ -4,25 +4,22 @@ import defaultData       from '../data/default';
 
 export default (dispatch) =>  {
   return (editKey) => {
-    if (editKey === 'cdlLegalName'){
-      // clear cdl
-      dispatch({
-        type: 'GET_DATA_SUCCESS',
-        payload: {
-          data: defaultData.CDL,
-          error: null
-        }
-      });
+
+    let data;
+    if (editKey === 'cdlLegalName') {
+      data = defaultData.CDL;
     }
-    else if(editKey === 'legalName') {
-      // clear id-dl
-      dispatch({
-        type: 'GET_DATA_SUCCESS',
-        payload: {
-          data: defaultData.IDDL,
-          error: null
-        }
-      });
+    else if (editKey === 'legalName') {
+      data = defaultData.IDDL;
     }
+
+    dispatch({
+      type:   'GET_DATA_SUCCESS',
+      payload: {
+        data: data,
+        error: null
+      }
+    });
+
   }
 };

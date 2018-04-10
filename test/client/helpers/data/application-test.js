@@ -12,7 +12,10 @@ import {
   parseAppName,
   parseChooseApp,
   sameType,
-  goToOpenApps
+  goToOpenApps,
+  getFlow,
+  addOrEdit,
+  addOrEditIcon
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -207,6 +210,68 @@ describe('Data helpers for application', function() {
       props.userData.apps[0].cardType = ['DL'];
       props.appName = 'id-and-license';
       assert.equal(goToOpenApps(props), false);
+    });
+  });
+
+  describe('#addOrEdit', function() {
+    let props = {
+      linkType: ''
+    };
+
+    it('returns 2nd arg if linkType is summary-add', function() {
+      props.linkType = 'summary-add';
+      assert.equal(addOrEdit(props, 'Add', 'Edit'), 'Add');
+    });
+    it('returns 2nd arg if linkType is open-add', function() {
+      props.linkType = 'open-add';
+      assert.equal(addOrEdit(props, 'Add', 'Edit'), 'Add');
+    });
+    it('returns 3rd arg if linkType is summary-edit', function() {
+      props.linkType = 'summary-edit';
+      assert.equal(addOrEdit(props, 'Add', 'Edit'), 'Edit');
+    });
+    it('returns 3rd arg if linkType is open-add', function() {
+      props.linkType = 'open-edit';
+      assert.equal(addOrEdit(props, 'Add', 'Edit'), 'Edit');
+    });
+  });
+
+  describe('#getFlow', function() {
+    let linkType;
+    beforeEach(function() {
+      linkType = '';
+    });
+
+    it('returns blank if linkType starts with open', function() {
+      linkType = 'open-edit';
+      assert.equal(getFlow(linkType), '');
+    });
+
+    it('returns Add if linkType is summary-add', function() {
+      linkType = 'summary-add';
+      assert.equal(getFlow(linkType), 'add');
+    });
+
+    it('returns Edit if linkType is summary-edit', function() {
+      linkType = 'summary-edit';
+      assert.equal(getFlow(linkType), 'edit');
+    });
+
+  });
+
+  describe('#addOrEditIcon', function() {
+    let props = {
+      linkType: ''
+    };
+
+    it('returns edit if linktype is not open-add', function() {
+      props.linkType = 'summary-add';
+      assert.equal(addOrEditIcon(props), 'edit');
+    });
+
+    it('returns add if linktype is open-add', function() {
+      props.linkType = 'open-add';
+      assert.equal(addOrEditIcon(props), 'add');
     });
   });
 });

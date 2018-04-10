@@ -886,7 +886,7 @@
           "Kung ikaw ay karapat-dapat na bumoto at tanggihan upang magparehistro upang bumoto, ang iyong desisyon ay mananatiling lihim; gayunpaman ang impormasyong ito ay ipapadala sa Kalihim ng Estado ng California na gagamitin lamang para sa mga outreach at mga layunin ng pagpaparehistro ng botante.",
           "Ang impormasyon sa pagpaparehistro ng botante na ibinigay sa aplikasyong ito ay kumpidensyal. Ang DMV ay hindi gumagawa ng mga pagpapasiya ng pagiging karapat-dapat ng botante.",
           "Kung hindi ka nakatanggap ng impormasyon sa pagpaparehistro ng botante sa loob ng 4 na linggo ng <b> pagrehistro </ b>, kontakin ang opisyal ng iyong halalan sa county o Kalihim ng Estado ng California.",
-          "Mangyaring bisitahin ang <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> para sa karagdagang impormasyon tungkol sa pagpaparehistro ng iyong botante o <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> para sa pangkalahatang impormasyon."
+          "Mangyaring bisitahin ang <a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> para sa karagdagang impormasyon tungkol sa pagpaparehistro ng iyong botante o <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> para sa pangkalahatang impormasyon."
         ]
       },
       "privacy": {
@@ -1310,7 +1310,7 @@
           "proof": "Kung ikaw ay kasal o diborsiyado, pinagtibay o binago ang iyong pangalan sa pamamagitan ng mga korte, siguraduhing dalhin din ang <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> patunay ng tunay, buong pangalan </a>.",
           "legalPresence": {
             "title": "Legal na presensya",
-            "explanation": "Kailangan ng lahat ng aplikante na patunayan ang kanilang petsa ng kapanganakan. Maliban kung ikaw ay AB 60, kailangan mong patunayan ang legal na presensya. Mangyaring sumangguni sa aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 checklist tool </a> at ang aming <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>petsa ng kapanganakan at legal na listahan ng presensya </a>."
+            "explanation": "Kailangan ng lahat ng aplikante na patunayan ang kanilang petsa ng kapanganakan. Maliban kung ikaw ay AB 60, kailangan mong patunayan ang legal na presensya. Mangyaring sumangguni sa aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> AB 60 checklist tool </a> at ang aming <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'>petsa ng kapanganakan at legal na listahan ng presensya </a>."
           }
         }
       }

@@ -907,7 +907,7 @@
           "Nếu bạn đủ điều kiện bỏ phiếu và từ chối đăng ký bỏ phiếu, quyết định của bạn sẽ được giữ kín; tuy nhiên thông tin này sẽ được gửi cho Bộ trưởng Bộ Ngoại giao California chỉ được sử dụng cho các mục đích đăng ký và tiếp cận cử tri.",
           "Thông tin đăng ký cử tri cung cấp trong đơn này là bí mật. DMV không đưa ra quyết định về tính đủ điều kiện của cử tri.",
           "Nếu bạn chưa nhận được thông tin đăng ký cử tri trong vòng 4 tuần sau khi <b> đăng ký </ b>, hãy liên hệ với viên chức bầu cử quận hạt của bạn hoặc Bộ trưởng Bộ Ngoại giao California.",
-          "Vui lòng ghé thăm <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> để biết thêm thông tin về đăng ký cử tri của bạn hoặc <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> để biết thông tin chung."
+          "Vui lòng ghé thăm <a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> để biết thêm thông tin về đăng ký cử tri của bạn hoặc <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> để biết thông tin chung."
         ]
       }
     }
@@ -1317,7 +1317,7 @@
           ],
           "legalPresence": {
             "title": "Hiện diện pháp lý",
-            "explanation": "Tất cả các đương đơn cần chứng minh ngày sinh của họ. Trừ khi bạn AB 60, bạn cần phải chứng minh hiện diện pháp lý. Vui lòng tham khảo <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> công cụ kiểm tra AB 60 </a> và <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> ngày sinh và danh sách hiện diện pháp lý </a>."
+            "explanation": "Tất cả các đương đơn cần chứng minh ngày sinh của họ. Trừ khi bạn AB 60, bạn cần phải chứng minh hiện diện pháp lý. Vui lòng tham khảo <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> công cụ kiểm tra AB 60 </a> và <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> ngày sinh và danh sách hiện diện pháp lý </a>."
           },
           "proof": "Nếu bạn đã lập gia đình hoặc ly hôn, thông qua hoặc thay đổi tên của bạn thông qua tòa án, hãy đảm bảo cũng mang theo <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true>chứng minh tên thật, đầy đủ</a>."
         },

@@ -16,6 +16,9 @@ const Page = (props) => {
   let language = props.language || 'en';
 
   let appName = parseAppName(props);
+  if (!isProduction() ) {
+    buildAppName(appName);
+  }
 
   return (
     <Presentation

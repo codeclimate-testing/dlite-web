@@ -884,7 +884,7 @@
           "Si es elegible para votar y no quiere registrarse para votar, su decisión será confidencial; sin embargo, esta información se enviará al Secretario de Estado de California para que se use únicamente con fines de divulgación y registro de votantes.",
           "La información de registro del votante provista en esta aplicación es confidencial. El DMV no hace las determinaciones de elegibilidad del votante.",
           "Si no ha recibido información de inscripción de votante dentro de las 4 semanas posteriores a la <b> inscripción </ b>, comuníquese con el funcionario electoral de su condado o con el Secretario de Estado de California.",
-          "Visite <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> para obtener más información sobre su registro de votante o <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> para obtener información general."
+          "Visite <a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> para obtener más información sobre su registro de votante o <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> para obtener información general."
         ]
       },
       "drivingTypes": {
@@ -1305,7 +1305,7 @@
           ],
           "legalPresence": {
             "title": "Presencia legal",
-            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
+            "explanation": "Todos los solicitantes deben probar su fecha de nacimiento. A menos que sea AB 60, necesita demostrar presencia legal. Consulte nuestra <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'> herramienta de lista de comprobación AB 60 </a> y nuestro <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> fecha de nacimiento y lista de presencia legal </a>."
           },
           "proof": "Si estuvo casado o divorciado, adoptó o cambió su nombre a través de los tribunales, asegúrese de llevar también <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> prueba del verdadero nombre completo </a>."
         },

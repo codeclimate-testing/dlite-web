@@ -3,7 +3,7 @@
 import React                from 'react';
 import PageSummaryLink      from '../../../../containers/page-summary-link.jsx';
 import {
-  IDAppExists,
+  IDAppExistsAndActionChosen,
   getNewID,
   renewID,
   replaceID,
@@ -19,7 +19,7 @@ import {
 } from '../actions.jsx';
 
 const IDAction = (props) => {
-  if(!IDAppExists(props)) { return null; }
+  if(!IDAppExistsAndActionChosen(props)) { return null; }
   return (
     <PageSummaryLink
       {...props}

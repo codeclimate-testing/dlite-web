@@ -1,6 +1,5 @@
 'use strict';
 import { hasValue }       from '../data/validations';
-import { getData }        from '../../actions/api-actions';
 import {
   addApp,
   updateCardType,
@@ -8,18 +7,9 @@ import {
  } from '../../actions';
 
 export default (dispatch) =>  {
-  return (flow, cardType, appID, history) => {
-    dispatch(addApp(flow));
+  return (flow, cardType) => {
 
-    // if clicking button on /apply/open-applications page, load the selected app's data
-    if (hasValue(appID)) {
-      dispatch(getData(appID))
-        .then((res) => {
-          if (res === 'api-fail') {
-            history.goBack();
-          }
-        });
-    }
+    dispatch(addApp(flow));
 
     // if adding a new card, clear the cardAction
     if (flow === 'add') {
@@ -30,5 +20,7 @@ export default (dispatch) =>  {
     if (hasValue(cardType)) {
       dispatch(updateCardType('addFromSummary', cardType));
     }
+
+    return;
   };
 };

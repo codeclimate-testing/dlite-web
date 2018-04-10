@@ -856,7 +856,7 @@
           "あなたが投票資格があり、投票登録を拒否した場合、あなたの決定は秘密になります。しかし、この情報は、有権者へのアウトリーチおよび登録目的でのみ使用されるように、カリフォルニア州務長官に送られます。",
           "このアプリケーションで提供される投票者登録情報は機密情報です。 DMVは有権者の適格性判定を行いません。",
           "<b>登録</ b>から4週間以内に投票者登録情報を受け取っていない場合は、郡の選挙管理官またはカリフォルニア州務長官に連絡してください。",
-          "あなたの有権者登録の詳細については、<a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> を、一般情報については <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> をご覧ください。"
+          "あなたの有権者登録の詳細については、<a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> を、一般情報については <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> をご覧ください。"
         ]
       },
       "drivingTypes": {

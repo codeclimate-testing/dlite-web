@@ -870,7 +870,7 @@
           "यदि आप वोट करने के लिए वोट करने के लिए वोट करने और अस्वीकार करने के योग्य हैं, तो आपका निर्णय गोपनीय रहेगा; हालांकि यह सूचना कैलिफोर्निया के सचिव राज्य को भेजी जाएगी, जिसका उपयोग केवल मतदाता पहुंच और पंजीकरण के उद्देश्यों के लिए किया जाएगा।",
           "इस आवेदन पर प्रदान की गई मतदाता पंजीकरण जानकारी गोपनीय है। डीएमवी मतदाता पात्रता निर्धारण नहीं करता है।",
           "यदि आपको <b> पंजीकरण </ b> के 4 सप्ताह के अंदर मतदाता पंजीकरण जानकारी प्राप्त नहीं हुई है, तो अपने काउंटी चुनाव अधिकारी या कैलिफ़ोर्निया के सचिव ऑफ स्टेट से संपर्क करें।",
-          "सामान्य जानकारी के लिए कृपया अपने मतदाता पंजीकरण या <a target=\"_Blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> के बारे में अधिक जानकारी के लिए <a target=\"_ Blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> पर जाएं।"
+          "सामान्य जानकारी के लिए कृपया अपने मतदाता पंजीकरण या <a target=\"_blank\" href='https://www.sos.ca.gov'>www.sos.ca.gov</a> के बारे में अधिक जानकारी के लिए <a target=\"_blank\" href='https://voterstatus.sos.ca.gov>voterstatus.sos.ca.gov</a> पर जाएं।"
         ]
       },
       "privacy": {
@@ -1315,7 +1315,7 @@
           "proof": "यदि आप शादीशुदा थे या तलाकशुदा, अदालतों के माध्यम से अपना नाम अपनाया या अपनाया है, तो कृपया <a target=\"_ blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05#true'> सही, पूर्ण नाम का प्रमाण </a>",
           "legalPresence": {
             "title": "कानूनी उपस्थिति",
-            "explanation": "सभी आवेदकों को अपनी जन्म तिथि साबित करने की जरूरत है। जब तक आप एबी 60 न हो, आपको कानूनी उपस्थिति साबित करने की आवश्यकता है। कृपया हमारे <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>  एबी 60 चेकलिस्ट उपकरण <a target=\"_ Blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> जन्म तिथि और कानूनी उपस्थिति सूची </a>"
+            "explanation": "सभी आवेदकों को अपनी जन्म तिथि साबित करने की जरूरत है। जब तक आप एबी 60 न हो, आपको कानूनी उपस्थिति साबित करने की आवश्यकता है। कृपया हमारे <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/online/ab60_checklist'>  एबी 60 चेकलिस्ट उपकरण <a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info#BDLP'> जन्म तिथि और कानूनी उपस्थिति सूची </a>"
           }
         },
         "realIdDocuments": {

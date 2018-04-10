@@ -67,8 +67,8 @@ export const postData = function (body, fetcher = fetch) {
   };
 };
 
-export const getData = function (id, fetcher = fetch) {
-  return function (dispatch) {
+export const getData = function (dispatch) {
+  return function (id, fetcher = fetch) {
     dispatch({
       type: 'UPDATE_API_STATUS',
       payload: {
