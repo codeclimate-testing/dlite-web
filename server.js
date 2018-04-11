@@ -14,6 +14,8 @@ const sessionOptions    = require('./server/config/session-options');
 const oauthStrategy     = require('./server/models/oauth/strategy').strategy;
 const oauthSignIn       = require('./server/models/oauth/strategy').strategySignIn;
 const oauthSignUp       = require('./server/models/oauth/strategy').strategySignUp;
+const oauthSignInEs     = require('./server/models/oauth/strategy').strategySignInEs;
+const oauthSignUpEs     = require('./server/models/oauth/strategy').strategySignUpEs;
 const serializeUser     = require('./server/models/session/serialize-user');
 const deserializeUser   = require('./server/models/session/deserialize-user');
 const csrf              = require('./server/config/csrf');
@@ -27,6 +29,8 @@ server.use(passport.session());
 passport.use(oauthStrategy);
 passport.use(oauthSignIn);
 passport.use(oauthSignUp);
+passport.use(oauthSignInEs);
+passport.use(oauthSignUpEs);
 passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 

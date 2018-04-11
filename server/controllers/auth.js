@@ -6,9 +6,14 @@ const authNew = (passport) => {
     if(req.params.oauthType === 'signin'){
       oauthType = 'oauth2-signin';
     }
-    if(req.params.oauthType === 'signup'){
+    else if(req.params.oauthType === 'signup'){
       oauthType = 'oauth2-signup';
     }
+
+    if (req.params.language === 'es') {
+      oauthType += '-es';
+    }
+
     let dataString = JSON.stringify({appName: req.params.appName, language: req.params.language});
     return passport.authenticate(oauthType, { scope: ['multifactor'], state: dataString })(req, res, next);
   }

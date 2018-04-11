@@ -30,6 +30,13 @@ class Strategy extends OauthStrategy {
       authURl = '/oauth/authorize?op=signup';
     }
 
+    if(options.language === 'es') {
+      authURl += '&lang=es';
+    }
+    else {
+      authURl += '&lang=en';
+    }
+
     options.authorizationURL  = idMeUrl(authURl);
     options.tokenURL          = idMeUrl('/oauth/token');
 
@@ -43,6 +50,9 @@ class Strategy extends OauthStrategy {
     }
     if(options.operation === 'signup' ){
       this.name = 'oauth2-signup';
+    }
+    if(options.language === 'es') {
+      this.name += '-es';
     }
 
   }
@@ -75,21 +85,40 @@ const onAuthentication = function (accessToken, refreshToken, profile, done) {
 const strategy = new Strategy({
   callbackURL: appUrl(`/auth/oauth/callback/`),
   clientID: clientID,
-  clientSecret: clientSecret
+  clientSecret: clientSecret,
+  language: 'en'
 }, onAuthentication);
 
 const strategySignIn = new Strategy({
   callbackURL: appUrl(`/auth/oauth/callback/`),
   clientID: clientID,
   clientSecret: clientSecret,
-  operation:  'signin'
+  operation:  'signin',
+  language: 'en'
+}, onAuthentication);
+
+const strategySignInEs = new Strategy({
+  callbackURL: appUrl(`/auth/oauth/callback/`),
+  clientID: clientID,
+  clientSecret: clientSecret,
+  operation:  'signin',
+  language: 'es'
 }, onAuthentication);
 
 const strategySignUp = new Strategy({
   callbackURL: appUrl(`/auth/oauth/callback/`),
   clientID: clientID,
   clientSecret: clientSecret,
-  operation:  'signup'
+  operation:  'signup',
+  language: 'en'
+}, onAuthentication);
+
+const strategySignUpEs = new Strategy({
+  callbackURL: appUrl(`/auth/oauth/callback/`),
+  clientID: clientID,
+  clientSecret: clientSecret,
+  operation:  'signup',
+  language: 'es'
 }, onAuthentication);
 
 module.exports = {
@@ -97,5 +126,7 @@ module.exports = {
   Strategy:         Strategy,
   strategy:         strategy,
   strategySignIn:   strategySignIn,
-  strategySignUp:   strategySignUp
+  strategySignUp:   strategySignUp,
+  strategySignInEs: strategySignInEs,
+  strategySignUpEs: strategySignUpEs
 }
