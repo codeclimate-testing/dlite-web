@@ -70,7 +70,7 @@ describe('RadioSelectorCollection', function() {
     );
 
     assert.equal(
-      component.find('.selected').text(),
+      component.find('.selected #existing').text(),
       'I am already registered to vote in California'
     );
   });
