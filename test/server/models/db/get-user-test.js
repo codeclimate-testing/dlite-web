@@ -51,6 +51,13 @@ describe('findOrSaveUser', () => {
       .catch(done);
   });
 
+  after((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
+  });
+
   describe('getByUuid', () => {
     it('find the right user', (done) => {
       getUser.byUuid(existing.uuid)

@@ -6,7 +6,8 @@ import PageSummaryLink        from '../../../containers/page-summary-link.jsx';
 import { hasValue }           from '../../../helpers/data/validations';
 import {
   checkCardType,
-  getLegalNameKey
+  getLegalNameKey,
+  getSummaryKey
  } from '../../../helpers/data/card-type';
 
 
@@ -37,7 +38,7 @@ export const Applications = (props) => {
   return props.apps.map(app => {
     if (!hasValue(app.cardAction)) { return null; }
 
-    let editKey = getLegalNameKey(app.cardType[0]);
+    let editKey = getSummaryKey(app.cardType[0]);
     return (
       <fieldset role='group' aria-label='open application' key={app.id} className='openApp summary-section'>
         <h4 className={`question ${app.id}`}>

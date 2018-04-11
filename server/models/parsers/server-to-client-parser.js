@@ -7,10 +7,11 @@ const IDDLObject            = require('./server-to-client-parsers/iddl');
 
 function parse(data) {
 
+  if (!data) {
+    return defaultClientState.CDL;
+  }
+
   if (cardTypeParser.isCDLDatabase(data)){
-    if (!data) {
-      return defaultClientState.CDL;
-    }
     return CDLObject(data);
   }
   else {

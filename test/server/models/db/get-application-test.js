@@ -18,6 +18,13 @@ describe('getApplication by app ID', function() {
     .catch(done);
   });
 
+  after((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
+  });
+
   it('returned promise receives undefined when nothing is found', function(done) {
     getApplication.byId('not-here-yo')
     .then((record) => {

@@ -127,3 +127,7 @@ export const checkCardType = (cardType, value) => {
 export const getLegalNameKey = (cardType) => {
   return cardType === 'CDL' ? 'cdlLegalName' : 'legalName';
 };
+
+export const getSummaryKey = (cardType) => {
+  return cardType.toLowerCase() === 'cdl' ? 'cdlSummary' : 'summary';
+};

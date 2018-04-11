@@ -48,6 +48,12 @@ function clearAll() {
     })
     .then(() => {
       return db('users').truncate();
+    })
+    .then(() => {
+      return db('guardian_signatures').truncate();
+    })
+    .then(() => {
+      return db('guardian_addresses').truncate();
     });
 }
 

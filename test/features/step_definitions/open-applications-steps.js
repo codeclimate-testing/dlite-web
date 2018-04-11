@@ -61,25 +61,25 @@ module.exports = function(world) {
 
   world.then('I click on the button to edit id 1', function(done) {
     browser
-      .click('a.cdlLegalName.1')
+      .click('a.cdlSummary.1')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 2', function(done) {
     browser
-      .click('a.legalName.2')
+      .click('a.summary.2')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 3', function(done) {
     browser
-      .click('a.legalName.3')
+      .click('a.summary.3')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 4', function(done) {
     browser
-      .click('a.legalName.4')
+      .click('a.summary.4')
       .then(() => { done(); })
       .catch(done);
   });
@@ -125,6 +125,36 @@ module.exports = function(world) {
     browser
       .value('#lastName')
       .then((value) => { assert.equal(value, 'renew ID and change DL person')})
+      .then(() => { done(); })
+      .catch(done);
+  });
+  world.then('I will see my cdl info saved in the summary', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('CDL person'), 'existing name not found in summary');
+        assert.ok(text.includes('Applying for the first time'), 'action not found in summary');
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+  world.then('I will see my id 2 info saved in the summary', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('DL person'));
+        assert.ok(text.includes('I amReplacing'));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+  world.then('I will see my id 3 info saved in the summary', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert.ok(text.includes('new ID and DL person'));
+        assert.ok(text.includes('Applying for the first time'));
+      })
       .then(() => { done(); })
       .catch(done);
   });

@@ -1275,7 +1275,7 @@
     "appointmentPrep": {
       "confirmationCode": "यह आपका पुष्टिकरण कोड है:",
       "details": "अपने आवेदन को पूरा करने के लिए आपको क्या करने की आवश्यकता के बारे में जानकारी के लिए, DMV वेबसाइट पर जाएं",
-      "show": "इसे एक डीएमवी कर्मचारी को दिखाएं हम आपको यह कोड भी ईमेल करेंगे।",
+      "show": "इसे एक डीएमवी कर्मचारी को दिखाएं",
       "goToDMV": "अब आपको डीएमवी में जाने की ज़रूरत है!",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> अपने आवश्यक दस्तावेज़ लाएं। </a>",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> समय बचाने के लिए एक नियुक्ति करें। </a>"

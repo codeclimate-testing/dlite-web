@@ -1,7 +1,7 @@
 'use strict';
 import { editFlow }                 from '../../../data/pathnames';
 import { hasValue }                 from '../../../data/validations';
-import { goToOpenApps }             from '../../../data/application';
+import { hasMultipleApps }             from '../../../data/application';
 import {
   hasExistingCard,
   showCurrentCardInfo,
@@ -16,7 +16,7 @@ import {
 export const cdlIDme = (props) => {
   let key = 'cdlLegalName';
   // if multiple applications, go to /apply/open-applications key='openApplications'
-  if (goToOpenApps(props)) {
+  if (hasMultipleApps(props)) {
     key = 'openApplications';
   }
   return key;

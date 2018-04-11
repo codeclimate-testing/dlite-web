@@ -14,6 +14,9 @@ function insertApplication(application) {
         return db('applications').insert(application).returning('*');
       }
     })
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 function insertAddresses(addresses, application_id) {
@@ -30,6 +33,10 @@ function insertAddresses(addresses, application_id) {
       else {
         return db('addresses').insert(addresses).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -45,6 +52,10 @@ function insertCards(cards, application_id) {
       else{
         return db('cards').insert(cards).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -60,6 +71,10 @@ function insertPreviousNames(names, application_id) {
       else{
         return db('previous_names').insert(names).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -81,6 +96,10 @@ function insertCardOptions(options) {
       } else {
         return db('card_options').insert(options).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -102,6 +121,10 @@ function insertLicenseClasses(classes) {
     } else {
       return db('license_classes').insert(classes).returning('*');
     }
+  })
+  .catch((err) => {
+    console.error(err);
+    return [];
   });
 }
 
@@ -117,6 +140,10 @@ function insertCardHistories(card_histories, application_id) {
       else{
         return db('card_histories').insert(card_histories).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -134,6 +161,10 @@ function insertGuardianSignatures(signatures, application_id) {
       else {
         return db('guardian_signatures').insert(signatures).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -150,6 +181,10 @@ function insertGuardianAddresses(addresses, signatures) {
       else{
         return db('guardian_addresses').insert(data).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
   }
   let queries = [];
@@ -178,6 +213,10 @@ function insertOneToOne(key, data, application_id) {
       else{
         return db(key).insert(data).returning('*');
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      return [];
     });
 }
 
@@ -191,104 +230,107 @@ function saveApplication(data) {
       if(records.length > 0) {
         returnedData.application = records;
       }
-      return insertAddresses(data.addresses, application_id);
+      return Promise.all([
+        insertAddresses(data.addresses, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.addresses = records;
+          }
+        }),
+        insertOneToOne('emails', data.emails, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.emails = records;
+          }
+        }),
+        insertOneToOne('phone_numbers', data.phone_numbers, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.phone_numbers = records;
+          }
+        }),
+        insertOneToOne('organ_donations', data.organ_donations, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.organ_donations = records;
+          }
+        }),
+        insertCardHistories(data.card_histories, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.card_histories = records;
+          }
+        }),
+        insertPreviousNames(data.previous_names, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.previous_names = records;
+          }
+        }),
+        insertOneToOne('medical_histories', data.medical_histories, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.medical_histories = records;
+          }
+        }),
+        insertOneToOne('license_issues', data.license_issues, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.license_issues = records;
+          }
+        }),
+        insertOneToOne('veterans_info', data.veterans_info, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.veterans_info = records;
+          }
+        }),
+        insertOneToOne('voting_registrations', data.voting_registrations, application_id)
+        .then((records) => {
+          if(records.length > 0) {
+            returnedData.voting_registrations = records;
+          }
+        }),
+        insertCards(data.cards, application_id)
+          .then((records) => {
+            if(records.length > 0) {
+              returnedData.cards = records;
+            }
+            cardData = records;
+            data.card_options = cardOptionsParser.cardOptionsGenerator(cardData, data.card_options);
+            return insertCardOptions(data.card_options);
+          })
+          .then((records) => {
+            if(records.length > 0) {
+              returnedData.card_options = records;
+            }
+            data.license_classes = cardOptionsParser.licenseClassGenerator(cardData, data.license_classes);
+            return insertLicenseClasses(data.license_classes);
+          })
+          .then((records) => {
+            if(records.length > 0) {
+              returnedData.license_classes = records;
+            }
+        }),
+        insertGuardianSignatures(data.guardian_signatures, application_id)
+          .then((records) => {
+            if(records.length > 0) {
+              returnedData.guardian_signatures = records;
+            }
+            if(!data.guardian_addresses) { return [];}
+            return insertGuardianAddresses(data.guardian_addresses, records);
+          })
+          .then((records) => {
+            if(records.length > 0) {
+              returnedData.guardian_addresses = records;
+            }
+          })
+      ])
     })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.addresses = records;
-      }
-      return insertOneToOne('emails', data.emails, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.emails = records;
-      }
-      return insertOneToOne('phone_numbers', data.phone_numbers, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.phone_numbers = records;
-      }
-      return insertOneToOne('organ_donations', data.organ_donations, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.organ_donations = records;
-      }
-      return insertCardHistories(data.card_histories, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.card_histories = records;
-      }
-      return insertPreviousNames(data.previous_names, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.previous_names = records;
-      }
-      return insertOneToOne('medical_histories', data.medical_histories, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.medical_histories = records;
-      }
-      return insertOneToOne('license_issues', data.license_issues, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.license_issues = records;
-      }
-      return insertOneToOne('veterans_info', data.veterans_info, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.veterans_info = records;
-      }
-      return insertOneToOne('voting_registrations', data.voting_registrations, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.voting_registrations = records;
-      }
-      return insertCards(data.cards, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.cards = records;
-      }
-      cardData = records;
-      data.card_options = cardOptionsParser.cardOptionsGenerator(cardData, data.card_options);
-      return insertCardOptions(data.card_options);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.card_options = records;
-      }
-      data.license_classes = cardOptionsParser.licenseClassGenerator(cardData, data.license_classes);
-      return insertLicenseClasses(data.license_classes);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.license_classes = records;
-      }
-      if(!data.guardian_signatures) { return [];}
-      return insertGuardianSignatures(data.guardian_signatures, application_id);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.guardian_signatures = records;
-      }
-      if(!data.guardian_addresses) { return [];}
-      return insertGuardianAddresses(data.guardian_addresses, records);
-    })
-    .then((records) => {
-      if(records.length > 0) {
-        returnedData.guardian_addresses = records;
-      }
+    .then( () => {
       return returnedData;
     })
-    .catch(function(err) {
+    .catch((err) => {
       console.error('SAVE APPLICATION ERROR', err);
       return err;
     });

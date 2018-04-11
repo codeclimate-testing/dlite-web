@@ -1273,7 +1273,7 @@
     },
     "appointmentPrep": {
       "confirmationCode": "Đây là mã xác nhận của bạn:",
-      "show": "Hiển thị nó cho nhân viên DMV. Chúng tôi cũng sẽ gửi email mã này cho bạn.",
+      "show": "Hiển thị nó cho nhân viên DMV.",
       "goToDMV": "Bây giờ bạn cần phải đi đến DMV!",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Làm hẹn để tiết kiệm thời gian. </a>",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Mang theo các tài liệu yêu cầu của bạn. </a>",

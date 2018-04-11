@@ -1275,7 +1275,7 @@
       "confirmationCode": "これはあなたの確認コードです：",
       "goToDMV": "今すぐDMVに行く必要があります！",
       "details": "申請を完了するために必要なことの詳細については、DMVのウェブサイトをご覧ください。",
-      "show": "それをDMVの従業員に見せてください。また、このコードをメールでお送りします。",
+      "show": "それをDMVの従業員に見せてください。",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>必要な書類を持って来てください</a>。",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>時間を節約するために予定を立てる</a>"
     },

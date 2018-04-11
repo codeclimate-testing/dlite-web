@@ -1307,7 +1307,7 @@
     "appointmentPrep": {
       "goToDMV": "You now need to go to the DMV!",
       "confirmationCode": "This is your confirmation code:",
-      "show": "Show it to a DMV employee. We will also email this code to you.",
+      "show": "Show it to a DMV employee.",
       "details": "For details about what you need to do to complete your application, visit the DMV website.",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'>Bring your required documents.</a>",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'>Make an appointment to save time.</a>"

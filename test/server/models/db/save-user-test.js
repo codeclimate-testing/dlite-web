@@ -16,6 +16,13 @@ describe('findOrSaveUser', () => {
       .catch(done);
   });
 
+  after((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
+  });
+
   describe('when no user with a matching uuid exists', () => {
     it('inserts new record', (done) => {
       findOrSaveUser(userData)

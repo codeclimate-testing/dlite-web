@@ -1263,7 +1263,7 @@
       "goToDMV": "Kailangan mo na ngayong pumunta sa DMV!",
       "appointmentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/dmv/onlinesvcs/appointment'> Gumawa ng appointment upang makatipid ng oras. </a>",
       "confirmationCode": "Ito ang iyong confirmation code:",
-      "show": "Ipakita ito sa isang empleyado ng DMV. I-email din namin ang code na ito sa iyo.",
+      "show": "Ipakita ito sa isang empleyado ng DMV.",
       "details": "Para sa mga detalye tungkol sa kung ano ang kailangan mong gawin upang makumpleto ang iyong application, bisitahin ang website ng DMV.",
       "documentLink": "<a target=\"_blank\" href='https://www.dmv.ca.gov/portal/dmv/detail/dl/dl_info'> Dalhin ang iyong mga kinakailangang dokumento. </a>"
     },

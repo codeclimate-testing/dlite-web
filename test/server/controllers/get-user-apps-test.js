@@ -28,6 +28,13 @@ describe('Get User Apps controller', () => {
       .catch(done);
   });
 
+  after((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
+  });
+
   it('returns placeholder when user uuid does not exist', function(done) {
     req.params.uuid = '50000010dkaljf';
 

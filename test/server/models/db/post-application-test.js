@@ -16,6 +16,13 @@ describe('Post Application Data', () => {
       .catch(done);
   });
 
+  after((done) => {
+    dbHelper
+      .clearAll()
+      .then(() => { done(); })
+      .catch(() => { done(); });
+  });
+
   describe('#IDDL data', () => {
     describe('application table', () => {
 
@@ -95,7 +102,7 @@ describe('Post Application Data', () => {
             assert.equal(records[0].city, data[0].city);
             assert.equal(records[0].state, data[0].state);
             assert.equal(records[0].zip, data[0].zip);
-  
+
             assert(records[1].id);
             assert.equal(records[1].application_id, application_id);
             assert.equal(records[1].type, data[1].type);
@@ -108,7 +115,7 @@ describe('Post Application Data', () => {
           .then(done)
           .catch(done);
       });
-  
+
       it('updates existing records', (done) => {
         data[0].type                = 'home';
         data[0].street_address_1    = '333 Happy St.';
@@ -116,14 +123,14 @@ describe('Post Application Data', () => {
         data[0].city                = 'Unicorn';
         data[0].state               = 'AZ';
         data[0].zip                 = '101010';
-  
+
         data[1].type                = 'mailing';
         data[1].street_address_1    = '111 Unicorn St.';
         data[1].street_address_2    = 'Happy Living Apt.';
         data[1].city                = 'Los Easy';
         data[1].state               = 'ZA';
         data[1].zip                 = '111000';
-  
+
         ctrl.insertAddresses(data, application_id)
           .then((records) => {
             assert(records[0].id);
@@ -134,7 +141,7 @@ describe('Post Application Data', () => {
             assert.equal(records[0].city, data[0].city);
             assert.equal(records[0].state, data[0].state);
             assert.equal(records[0].zip, data[0].zip);
-  
+
             assert(records[1].id);
             assert.equal(records[1].application_id, application_id);
             assert.equal(records[1].type, data[1].type);
@@ -233,26 +240,26 @@ describe('Post Application Data', () => {
                   { card_id: 124, option_type: 'action', option_value: 'renew' },
                   { card_id: 124, option_type: 'modification', option_value: 'real-id' },
                   { card_id: 124, option_type: 'modification', option_value: 'senior-id' }];
-  
+
       it('inserts new records', (done) => {
         ctrl.insertCardOptions(data)
         .then((records) => {
-  
+
           assert(records[0].id);
           assert.equal(records[0].card_id, data[0].card_id);
           assert.equal(records[0].option_type, data[0].option_type);
           assert.equal(records[0].option_value, data[0].option_value);
-  
+
           assert(records[1].id);
           assert.equal(records[1].card_id, data[1].card_id);
           assert.equal(records[1].option_type, data[1].option_type);
           assert.equal(records[1].option_value, data[1].option_value);
-  
+
           assert(records[2].id);
           assert.equal(records[2].card_id, data[2].card_id);
           assert.equal(records[2].option_type, data[2].option_type);
           assert.equal(records[2].option_value, data[2].option_value);
-  
+
           assert(records[3].id);
           assert.equal(records[3].card_id, data[3].card_id);
           assert.equal(records[3].option_type, data[3].option_type);
@@ -287,12 +294,12 @@ describe('Post Application Data', () => {
           assert.equal(records[1].card_id, data[1].card_id);
           assert.equal(records[1].option_type, data[1].option_type);
           assert.equal(records[1].option_value, data[1].option_value);
-  
+
           assert(records[2].id);
           assert.equal(records[2].card_id, data[2].card_id);
           assert.equal(records[2].option_type, data[2].option_type);
           assert.equal(records[2].option_value, data[2].option_value);
-  
+
           assert(records[3].id);
           assert.equal(records[3].card_id, data[3].card_id);
           assert.equal(records[3].option_type, data[3].option_type);
@@ -682,7 +689,7 @@ describe('Post Application Data', () => {
             assert.equal(records.card_histories[0].number, data.card_histories[0].number);
             assert.equal(records.card_histories[0].issuing_entity, data.card_histories[0].issuing_entity);
             assert.equal(records.card_histories[0].date_description, data.card_histories[0].date_description);
-  
+
             //Previous names table
             assert(records.previous_names[0].id);
             assert.equal(records.previous_names[0].application_id, data.application.id);
@@ -691,25 +698,25 @@ describe('Post Application Data', () => {
             assert.equal(records.previous_names[0].name, data.previous_names[0].name);
             assert.equal(records.previous_names[1].name, data.previous_names[1].name);
             assert.equal(records.previous_names[2].name, data.previous_names[2].name);
-  
+
             //Medical histories table
             assert(records.medical_histories[0].id);
             assert.equal(records.medical_histories[0].application_id, data.application.id);
             assert.equal(records.medical_histories[0].description, data.medical_histories.description);
-  
+
             //License issues table
             assert(records.license_issues[0].id);
             assert.equal(records.license_issues[0].application_id, data.application.id);
             assert.equal(records.license_issues[0].description, data.license_issues.description);
             assert.equal(records.license_issues[0].date_description, data.license_issues.date_description);
-  
+
             //Veterans info table
             assert(records.veterans_info[0].id);
             assert.equal(records.veterans_info[0].application_id, data.application.id);
             assert.equal(records.veterans_info[0].has_requested_information, data.veterans_info.has_requested_information);
             assert.equal(records.veterans_info[0].labeling, data.veterans_info.labeling);
             assert.equal(records.veterans_info[0].previously_designated.toString(), data.veterans_info.previously_designated.toString());
-  
+
             //Voting registrations table
             assert(records.voting_registrations[0].id);
             assert.equal(records.voting_registrations[0].application_id, data.application.id);
@@ -721,7 +728,7 @@ describe('Post Application Data', () => {
             assert.equal(records.voting_registrations[0].language, data.voting_registrations.language);
             assert.equal(records.voting_registrations[0].vote_by_mail, data.voting_registrations.vote_by_mail);
             assert.equal(records.voting_registrations[0].should_contact, data.voting_registrations.should_contact);
-  
+
             //Cards table
             assert(records.cards[0].id);
             assert(records.cards[1].id);
@@ -729,7 +736,7 @@ describe('Post Application Data', () => {
             assert.equal(records.cards[1].application_id, data.application.id);
             assert.equal(records.cards[0].type, data.cards[0].type);
             assert.equal(records.cards[1].type, data.cards[1].type);
-  
+
             //Card options table
             assert(records.card_options[0].id);
             assert(records.card_options[1].id);
