@@ -69,8 +69,8 @@ describe('Summary DL App section components', function() {
       assert.equal(component.text().includes('Applying for the first time'), true);
     });
 
-    it('shows edit button going to the wdywtdy page and then back to IDDL summary page', function() {
-      assert.ok(component.find('.wdywtdt.summary-edit').length);
+    it('shows edit button going to the wdywtdy page', function() {
+      assert.ok(component.find('.wdywtdt')[0].attribs.id.includes('summary-edit'));
     });
   });
 
@@ -185,7 +185,7 @@ describe('Summary DL App section components', function() {
           <DLApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.realID.button.summary-edit').length);
+      assert.ok(component.find('.realID.button')[0].attribs.id.includes('summary-edit'));
     });
   });
 

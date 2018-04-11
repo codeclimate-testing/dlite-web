@@ -26,25 +26,29 @@ const LoggedIn = (props) => {
       name: 'CDL person',
       cardType: ['CDL'],
       cardAction: ['new'],
-      id: '1'
+      id: '1',
+      pathname: '/apply/cdl/summary'
     },
     {
       name: 'DL person',
       cardType: ['DL'],
       cardAction: ['replace-lost'],
-      id: '2'
+      id: '2',
+      pathname: '/apply/id-and-license/summary'
     },
     {
       name: 'new ID and DL person',
       cardType: ['ID', 'DL'],
       cardAction: ['new', 'new'],
-      id: '3'
+      id: '3',
+      pathname: '/apply/id-and-license/summary'
     },
     {
       name: 'renew ID and change DL person',
       cardType: ['ID', 'DL'],
       cardAction: ['renew', 'change-update'],
-      id: '4'
+      id: '4',
+      pathname: '/apply/id-and-license/what-do-you-want-to-do-today'
     }]
   };
 
@@ -52,7 +56,7 @@ const LoggedIn = (props) => {
   // check to see if the test data have already been saved
   dispatch(getUserData('3f'))
     .then((res) => {
-      if (res.apps.length < 4 || !res.apps[3].updatedAt) {
+      if (res.apps.length < 4 || !res.apps[3].updatedAt || !res.apps[3].pathname) {
         return saveData();
       }
       return;
@@ -78,6 +82,7 @@ const LoggedIn = (props) => {
         day: '10',
         year: '1990'
       };
+      data.pathname = '/apply/cdl/summary';
       fetch('/api/application', {
         method: 'POST',
         credentials: 'same-origin',
@@ -101,6 +106,7 @@ const LoggedIn = (props) => {
         data.DLApp.isApplying = true;
         data.DLApp.action = 'replace';
         data.DLApp.cardReplacement = 'lost';
+        data.pathname = '/apply/id-and-license/summary';
         fetch('/api/application', {
           method: 'POST',
           body: JSON.stringify(data),
@@ -128,6 +134,7 @@ const LoggedIn = (props) => {
         data.IDApp.action = 'new';
         data.DLApp.isApplying = true;
         data.DLApp.action = 'new';
+        data.pathname = '/apply/id-and-license/summary';
         fetch('/api/application', {
           method: 'POST',
           credentials: 'same-origin',
@@ -154,6 +161,7 @@ const LoggedIn = (props) => {
         data.DLApp.isApplying = true;
         data.DLApp.action = 'change';
         data.DLApp.cardChanges.correctOrUpdate = 'update';
+        data.pathname = '/apply/id-and-license/what-do-you-want-to-do-today';
         fetch('/api/application', {
           method: 'POST',
           credentials: 'same-origin',
@@ -171,7 +179,7 @@ const LoggedIn = (props) => {
             }
           });
           return 'done';
-        })
+        });
       });
     };
 

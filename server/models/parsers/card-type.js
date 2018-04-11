@@ -49,8 +49,16 @@ function isCDLApp(data) {
 }
 
 function isCDLDatabase(data) {
-  return data.cards[0].type === 'CDL';
-}
+  if (data.application.pathname) {
+    return data.application.pathname.split('/')[2].toLowerCase() === 'cdl';
+  }
+  else if (data.cards){
+    return data.cards[0].type.toLowerCase() === 'cdl';
+  }
+  else {
+    return false;
+  }
+};
 
 function addingMotorcycle(data) {
   return data.classM === 'Yes';

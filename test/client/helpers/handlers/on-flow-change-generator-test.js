@@ -22,11 +22,12 @@ describe('onFlowChangeGenerator', function() {
       },
       editKey: 'legalName',
       appID: '3f',
-      cardType: ''
+      cardType: '',
+      nextAddress: ''
     };
   });
 
-  it('when called with stop the form from doing a default submission', function() {
+  it('when called will prevent event default', function() {
     onFlowChange = onFlowChangeGenerator(props, flow, linkType, history);
     onFlowChange(event);
     assert(event.preventDefault.called, 'event not prevented from doing a real submission');
@@ -69,6 +70,22 @@ describe('onFlowChangeGenerator', function() {
     onFlowChange(event);
     assert.ok(props.newFlow.notCalled);
     assert.ok(props.onFlowChange.calledWith(flow, props.cardType));
+  });
+
+  it('goes to the nextAddress url when nextAddress has value', function() {
+    props.nextAddress = '/apply/cdl/my-basics/date-of-birth';
+    linkType = 'open-edit';
+    onFlowChange = onFlowChangeGenerator(props, flow, linkType, history);
+    onFlowChange(event);
+    assert.ok(history.location.pathname, props.nextAddress);
+  });
+
+  it('goes to the editKey url when nextAddress is blank', function() {
+    linkType = 'open-edit';
+    props.editKey = 'cdlLegalName';
+    onFlowChange = onFlowChangeGenerator(props, flow, linkType, history);
+    onFlowChange(event);
+    assert.ok(history.location.pathname, '/apply/cdl/my-basics/true-name');
   });
 });
 

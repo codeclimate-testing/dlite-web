@@ -4,8 +4,11 @@ import { hasExistingCard }  from './card-actions';
 import * as dataPresent     from '../data-present';
 import { getAppNameCookie } from './cookies';
 import { hasValue }         from './validations';
+import { pathForPage }      from '../navigation/page';
+
 import {
-  getDL
+  getDL,
+  getLegalNameKey
 } from './card-type';
 import {
   addPath,
@@ -119,7 +122,6 @@ export function splitPathname(props) {
   return props.location.pathname.split('/')[2];
 }
 
-
 export function getAppKey(cookieValue) {
   let pageKey = 'IDme';
   if (cdlApp(cookieValue)) {
@@ -133,4 +135,31 @@ export function signInURL(appName =  getAppNameCookie()) {
     return '/apply';
   }
   return `/apply/${appName}/sign-in`;
+}
+
+export const goToSummary = (splitPathname) => {
+  return altFlow({flow: splitPathname[3]}) || splitPathname[3] === 'appointment-preparation';
+};
+
+export const findNextPage = (pathname) => {
+  // if pathname has /edit/ or /add/ or appointment-preparation page, then go to summary
+  let nextAddress     = pathname;
+
+  if (pathname) {
+    let splitPathname   = pathname.split('/');
+    let cardType        = splitPathname[2];
+
+    if (goToSummary(splitPathname) && cdlApp(cardType)) {
+      nextAddress = pathForPage('cdlSummary', {
+        flow: ''
+      });
+    }
+    else if (goToSummary(splitPathname) && IDDLApp(cardType)) {
+      nextAddress = pathForPage('summary', {
+        flow: ''
+      });
+    }
+  }
+
+  return nextAddress;
 };

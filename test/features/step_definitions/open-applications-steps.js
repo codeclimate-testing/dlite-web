@@ -64,25 +64,25 @@ module.exports = function(world) {
 
   world.then('I click on the button to edit id 1', function(done) {
     browser
-      .click('a.cdlSummary.1')
+      .click('a.cdlLegalName.1')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 2', function(done) {
     browser
-      .click('a.summary.2')
+      .click('a.legalName.2')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 3', function(done) {
     browser
-      .click('a.summary.3')
+      .click('a.legalName.3')
       .then(() => { done(); })
       .catch(done);
   });
   world.then('I click on the button to edit id 4', function(done) {
     browser
-      .click('a.summary.4')
+      .click('a.legalName.4')
       .then(() => { done(); })
       .catch(done);
   });

@@ -41,12 +41,12 @@ describe('Open Applications page', function() {
     it('shows add button to add an IDDL app', function() {
       assert.ok(component.find('.id-and-license').text().includes('ID or driver license'));
       assert.ok(component.find('.id-and-license').text().includes('Add'));
-      assert.ok(component.find('a.open-add').length)
+      assert.ok(component.find('a.legalName.open-add')[0].attribs.id.includes('open-add'));
     });
     it('shows add button to add a CDL app', function() {
       assert.ok(component.find('.cdl').text().includes('Commercial driver license'));
       assert.ok(component.find('.cdl').text().includes('Add'));
-      assert.ok(component.find('a.open-add').length)
+      assert.ok(component.find('a.cdlLegalName')[0].attribs.id.includes('open-add'));
     });
   });
 
@@ -75,10 +75,10 @@ describe('Open Applications page', function() {
     });
 
     it('shows an edit button to edit id 1', function() {
-      assert.ok(component.find('a.1.open-edit').length);
+      assert.ok(component.find('a.1')[0].attribs.id.includes('open-edit'));
     });
     it('shows an edit button to edit id 2', function() {
-      assert.ok(component.find('a.2.open-edit').length);
+      assert.ok(component.find('a.2')[0].attribs.id.includes('open-edit'));
     });
     it('the edit button goes to the summary', function() {
       assert.ok(component.find('a.1.summary').length);

@@ -1,7 +1,7 @@
 'use strict';
 import { editFlow }                 from '../../../data/pathnames';
 import { hasValue }                 from '../../../data/validations';
-import { hasMultipleApps }             from '../../../data/application';
+import { hasMultipleApps }          from '../../../data/application';
 import {
   hasExistingCard,
   showCurrentCardInfo,

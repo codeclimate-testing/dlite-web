@@ -12,7 +12,8 @@ import {
 
 const Page = (props) => {
   let sectionKey = getTextFromState(props, props.sectionKey, '');
-  props.onPageLoad(sectionKey, props.section);
+  let currentPage = props.location ? props.location.pathname : null;
+  props.onPageLoad(sectionKey, props.section, currentPage, props.savedPath);
 
 
   return (
@@ -29,7 +30,8 @@ const mapStateToProps = (state) => {
     section:              state.ui.section,
     language:             state.ui.language,
     translationLanguage:  state.server.translations.translationLanguage,
-    isLoggedIn:           state.ui.isLoggedIn
+    isLoggedIn:           state.ui.isLoggedIn,
+    savedPath:            state.pathname
   };
 }
 

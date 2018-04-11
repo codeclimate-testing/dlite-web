@@ -13,7 +13,14 @@ export const logOut = (history) => {
         value: false
       }
     });
-    return fetch('/apply/log-out')
+    return fetch('/apply/log-out', {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
     .then(() => {
       return history.push(signInURL());
     });

@@ -32,9 +32,9 @@ describe('PageSummaryLink edit buttons on summary pages', function() {
       let className = '.'+props.cardType;
       assert.ok(component.find(className).length)
     });
-    it('has a link with a className that includes props.linkType', function() {
-      let className = '.'+props.linkType;
-      assert.ok(component.find(className).length)
+    it('has a link with an id that includes props.linkType', function() {
+      let className = '.'+props.editKey;
+      assert.ok(component.find(className)[0].attribs.id.includes(props.linkType))
     });
     it('has a button with text "Add"', function() {
       assert.ok(component.text().includes('Add'));
@@ -54,9 +54,9 @@ describe('PageSummaryLink edit buttons on summary pages', function() {
       );
     });
 
-    it('has a link with className summary-edit.legalName', function() {
-      let className = '.'+props.editKey+'.'+props.linkType;
-      assert.ok(component.find('a'+className).length);
+    it('has a link with className .legalName and id summary-edit', function() {
+      let className = '.'+props.editKey;
+      assert.ok(component.find('a'+className)[0].attribs.id.includes(props.linkType));
     });
     it('has a button with text "Edit"', function() {
       assert.ok(component.text().includes('Edit'));
@@ -80,8 +80,8 @@ describe('PageSummaryLink edit buttons on summary pages', function() {
     });
 
     it('has a link with className open-edit.legalName', function() {
-      let className = '.'+props.editKey+'.'+props.linkType;
-      assert.ok(component.find('a'+className).length);
+      let className = '.'+props.editKey;
+      assert.ok(component.find('a'+className)[0].attribs.id.includes(props.linkType));
     });
     it('has a button with text "Edit"', function() {
       assert.ok(component.text().includes('Edit'));
@@ -104,9 +104,9 @@ describe('PageSummaryLink edit buttons on summary pages', function() {
       );
     });
 
-    it('has a link with className open-add.legalName', function() {
-      let className = '.'+props.editKey+'.'+props.linkType;
-      assert.ok(component.find('a'+className).length);
+    it('has a link with className .legalName id open-add', function() {
+      let className = '.'+props.editKey;
+      assert.ok(component.find('a'+className)[0].attribs.id.includes(props.linkType));
     });
     it('has a button with text "Add"', function() {
       assert.ok(component.text().includes('Add'));

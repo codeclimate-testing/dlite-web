@@ -6,11 +6,13 @@ import { hasValue }       from '../data/validations';
 const onFlowChangeGenerator = (props, flow, linkType, history = window.__reactHistory) => {
 
   const goToNextPage = () => {
-    history.push(
-      pathForPage(props.editKey, {
+    let nextAddress = props.nextAddress;
+    if (!hasValue(props.nextAddress)) {
+      nextAddress = pathForPage(props.editKey, {
         flow: flow
-      })
-    );
+      });
+    }
+    history.push(nextAddress);
   };
 
   const changeFlow = (e) => {

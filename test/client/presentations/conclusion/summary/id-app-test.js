@@ -82,7 +82,7 @@ describe('Summary ID App section', function() {
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.realID.button.summary-edit').length);
+      assert.ok(component.find('.realID.button')[0].attribs.id.includes('summary-edit'));
     });
   });
 
@@ -95,7 +95,7 @@ describe('Summary ID App section', function() {
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.wdywtdt.button.summary-edit').length);
+      assert.ok(component.find('.wdywtdt.button')[0].attribs.id.includes('summary-edit'));
       assert.ok(component.text().includes('Edit'));
     });
     it('has an add button with link to add ID app', function() {
@@ -105,7 +105,7 @@ describe('Summary ID App section', function() {
           <IDApp { ...props } />
         </Wrapper>
       );
-      assert.ok(component.find('.wdywtdt.button.summary-add').length);
+      assert.ok(component.find('.wdywtdt.button.ID')[0].attribs.id.includes('summary-add'));
       assert.ok(component.text().includes('Add'));
     });
   });

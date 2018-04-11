@@ -31,13 +31,14 @@ Scenario: Logging in with multiple applications
   And I will see that the ID checkbox is checked
   When I go to the open applications page
   Then I click on the button to edit id 4
-  Then I will be on the page with my summary
-  Then I will see that I am updating my DL
-  And I will see that I am renewing my ID
-  When I visit the what do you want to do today page
+  Then I will be on the what do you want to do today page
   Then I will see that I am changing a DL
   And I click "Next" to continue
   Then I will see that the DL radio box is selected
+  When I go to the page with my summary
+  Then I will see that I am updating my DL
+  And I will see that I am renewing my ID
+  When I visit the what do you want to do today page
 
 
 Scenario: Adding CDL application from open-applications page

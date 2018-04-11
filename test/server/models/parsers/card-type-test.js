@@ -147,4 +147,45 @@ describe('cardType', function() {
       assert.equal(cardTypeParser.hasDL(data.DLApp), true);
     });
   });
+
+  describe('#isCDLDatabase', function() {
+    let data;
+    beforeEach(function() {
+      data = {
+        application: {
+          pathname: ''
+        },
+        cards: [{
+          type: ''
+        }]
+      };
+    });
+
+    it('returns true if pathname is cdl root', function() {
+      data.application.pathname = '/apply/cdl/summary';
+      assert.equal(cardTypeParser.isCDLDatabase(data), true);
+    });
+
+    it('returns false if pathname is id-and-license root', function() {
+      data.application.pathname = '/apply/id-and-license/summary';
+      assert.equal(cardTypeParser.isCDLDatabase(data), false);
+    });
+
+    it('if pathname is blank it returns true if cards[0].type is cdl', function() {
+      data.application.pathname = '';
+      data.cards[0].type = 'CDL';
+      assert.equal(cardTypeParser.isCDLDatabase(data), true);
+    });
+
+    it('if pathname is blank it returns false if cards[0].type is not cdl', function() {
+      data.application.pathname = '';
+      data.cards[0].type = 'ID';
+      assert.equal(cardTypeParser.isCDLDatabase(data), false);
+    });
+
+    it('returns false if nothing is available', function() {
+      data.cards = null;
+      assert.equal(cardTypeParser.isCDLDatabase(data), false);
+    });
+  });
 });

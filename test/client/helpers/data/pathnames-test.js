@@ -12,7 +12,9 @@ import {
   applyEditOrAddPath,
   applyOrEditCDLPath,
   getAppKey,
-  signInURL
+  signInURL,
+  goToSummary,
+  findNextPage
 } from '../../../../client/helpers/data/pathnames';
 
 
@@ -226,6 +228,76 @@ describe('Data helpers for pathnames', function() {
     });
     it('returns /apply when appName is blank', function() {
       assert.equal(signInURL(''), '/apply');
+    });
+  });
+
+  describe('#goToSummary', function() {
+    let splitPathname;
+    beforeEach(function() {
+      splitPathname = '';
+    });
+
+    it('returns true if pathname has edit', function() {
+      splitPathname = ['', 'apply', 'id-and-license', 'edit', 'my-basics', 'legal-name'];
+      assert.equal(goToSummary(splitPathname), true);
+    });
+
+    it('returns true if pathname has add', function() {
+      splitPathname = ['', 'apply', 'id-and-license', 'add', 'my-basics', 'legal-name'];
+      assert.equal(goToSummary(splitPathname), true);
+    });
+
+    it('returns true if pathname has appointment-preparation', function() {
+      splitPathname = ['', 'apply', 'id-and-license', 'appointment-preparation'];
+      assert.equal(goToSummary(splitPathname), true);
+    });
+  });
+
+  describe('#findNextPage', function() {
+
+    let pathname;
+
+    beforeEach(function() {
+      pathname = '';
+    });
+
+    it('returns empty string if app.pathname is empty', function() {
+      assert.equal(findNextPage(pathname), '');
+    });
+
+    it('returns summary if pathname has /apply/id-and-license/edit', function() {
+      pathname = '/apply/id-and-license/edit/my-basics/legal-name';
+      assert.equal(findNextPage(pathname), '/apply/id-and-license/summary');
+    });
+
+    it('returns summary if pathname has /apply/id-and-license/add', function() {
+      pathname = '/apply/id-and-license/add/my-basics/legal-name';
+      assert.equal(findNextPage(pathname), '/apply/id-and-license/summary');
+    });
+
+    it('returns cdlSummary if pathname has /apply/cdl/edit', function() {
+      pathname = '/apply/cdl/edit/my-basics/legal-name';
+      assert.equal(findNextPage(pathname), '/apply/cdl/summary');
+    });
+
+    it('returns cdlSummary if pathname has /apply/cdl/add', function() {
+      pathname = '/apply/cdl/add/my-basics/legal-name';
+      assert.equal(findNextPage(pathname), '/apply/cdl/summary');
+    });
+
+    it('returns summary if pathname has /apply/id-and-license/appointment-preparation', function() {
+      pathname = '/apply/id-and-license/appointment-preparation';
+      assert.equal(findNextPage(pathname), '/apply/id-and-license/summary');
+    });
+
+    it('returns cdlSummary if pathname has /apply/cdl/appointment-preparation', function() {
+      pathname = '/apply/cdl/appointment-preparation';
+      assert.equal(findNextPage(pathname), '/apply/cdl/summary');
+    });
+
+    it('returns pathname', function() {
+      pathname = '/apply/id-and-license/my-history/license-history';
+      assert.equal(findNextPage(pathname), pathname);
     });
   });
 });

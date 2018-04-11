@@ -14,6 +14,8 @@ module.exports = function parseUserData(records){
     let id = app.id;
     let updatedAt = app.updated_at;
 
+    let pathname = app.pathname;
+
     let cards = records.cards.filter((card) => {
       return card.application_id === app.id;
     });
@@ -37,7 +39,8 @@ module.exports = function parseUserData(records){
       cardAction,
       cardType,
       id,
-      updatedAt
+      updatedAt,
+      pathname
     });
 
   });

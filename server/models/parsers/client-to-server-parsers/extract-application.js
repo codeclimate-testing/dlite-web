@@ -38,7 +38,8 @@ function extractApplication(data) {
     height_inches:            heightWeight.heightInches ? heightWeight.heightInches : 0,
     weight:                   heightWeight.weight ? heightWeight.weight : 0,
     social_security_number:   socialSecurity,
-    user_id:                  data.userID
+    user_id:                  data.userID,
+    pathname:                 data.pathname
   };
 }
 

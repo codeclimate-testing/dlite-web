@@ -84,7 +84,7 @@ describe('Data helpers for application', function() {
       }
     });
 
-    it('returns true if appsLength is greater than 1', function() {
+    it('returns true if appsLength is greater than 0', function() {
       props.userData.appsLength = 2;
       assert.equal(hasMultipleApps(props), true);
     });

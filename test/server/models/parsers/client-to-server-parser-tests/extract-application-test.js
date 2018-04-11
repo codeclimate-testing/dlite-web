@@ -9,6 +9,7 @@ describe('extracting application', function() {
   beforeEach(function() {
 
     data = {
+      pathname: '',
       userID: '',
       basics: {
         dateOfBirth: {
@@ -59,5 +60,11 @@ describe('extracting application', function() {
       };
       assert.equal(extractApp(data).social_security_number, '111-11-1111');
     });
+  });
+
+
+  it('saves the pathname', function() {
+    data.pathname = '/apply/cdl/voting-registration/opt-out';
+    assert.equal(extractApp(data).pathname, data.pathname);
   });
 });

@@ -20,7 +20,7 @@ function parse(data) {
     { card_options:           extract.cardOptions(data) },
     { license_classes:        extract.licenseClasses(data) },
     { guardian_signatures:    extract.guardianSignatures(data) },
-    { guardian_addresses:     extract.guardianAddresses(data) },
+    { guardian_addresses:     extract.guardianAddresses(data) }
   );
 
   return parsedData;

@@ -6,6 +6,7 @@ function clientData() {
   return {
     id: uuid(),
     userID: '10001',
+    pathname: '/apply/cdl/summary',
     cardAction: 'new',
     cardChanges: {
       correctOrUpdate: '',

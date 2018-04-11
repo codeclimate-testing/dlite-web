@@ -2,6 +2,7 @@
 import fetch                from 'isomorphic-fetch';
 require('es6-promise').polyfill();
 import { logOut }           from '../../actions/log-out';
+import { updateLoggedIn }   from '../../actions/index';
 
 class AutoLogout {
   constructor(history, dispatch) {
@@ -48,6 +49,7 @@ class AutoLogout {
 
     this.dispatch(logOut(that.history))
     .then(() => {
+      that.dispatch(updateLoggedIn(false));
       that.destroy();
     });
   }

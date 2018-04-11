@@ -5,6 +5,7 @@ function fakeClientData() {
   return {
     id: uuid(),
     userID: '10001',
+    pathname: '/apply/id-and-license/my-history/medical-history',
     basics: {
       'language': 'en',
       'legalName': {

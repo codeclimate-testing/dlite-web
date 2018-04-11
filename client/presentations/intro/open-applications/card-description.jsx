@@ -5,10 +5,10 @@ import Translator             from '../../../i18n/translator-tag.jsx';
 import PageSummaryLink        from '../../../containers/page-summary-link.jsx';
 import { hasValue }           from '../../../helpers/data/validations';
 import { getTimeStamp }       from '../../../helpers/data/application';
+import { findNextPage }       from '../../../helpers/data/pathnames';
 import {
   checkCardType,
-  getLegalNameKey,
-  getSummaryKey
+  getLegalNameKey
  } from '../../../helpers/data/card-type';
 
 
@@ -36,11 +36,12 @@ export const CardDescription = (props) => {
 };
 
 export const Applications = (props) => {
+  if (props.apps.length < 1) { return null; }
   return props.apps.map(app => {
-    if (!hasValue(app.cardAction)) { return null; }
 
-    let editKey = getSummaryKey(app.cardType[0]);
-    let timeStamp = getTimeStamp(app);
+    let editKey     = getLegalNameKey(app.cardType[0]);
+    let timeStamp   = getTimeStamp(app);
+    let nextAddress = findNextPage(app.pathname);
 
     return (
       <fieldset role='group' aria-label='open application' key={app.id} className='openApp summary-section'>
@@ -55,9 +56,10 @@ export const Applications = (props) => {
             <CardDescription cardType = {app.cardType} id={app.id}/>
           </div>
           <PageSummaryLink
-            appID={app.id}
-            editKey={editKey}
-            linkType = 'open-edit'
+            appID       = { app.id}
+            editKey     = { editKey}
+            linkType    = 'open-edit'
+            nextAddress = { nextAddress }
           />
         </div>
       </fieldset>

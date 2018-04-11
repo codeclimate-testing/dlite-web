@@ -12,6 +12,7 @@ const LinkPresentation = (props) => {
 
   let iconType = addOrEditIcon(props);
   let className = `${props.editKey} summary edit button ${props.cardType} ${props.appID} ${props.linkType}`;
+  let id = `${props.linkType} ${props.appID} ${props.nextAddress}`;
 
   let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
   let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
@@ -22,9 +23,16 @@ const LinkPresentation = (props) => {
       <div className='row'>
         <div className='unit-right' onClick={props.onClick}>
           <div className='shadow-container'>
-            <a className={className}>
-              <div className={`unit ${iconType}-icon`}></div>
-              <div className='unit text-area'>{buttonText}</div>
+            <a
+              className       = { className}
+              id              = { id }
+              aria-labelledby = { `${iconType}-${props.appID}`}
+            >
+              <div className = {`unit ${iconType}-icon`}></div>
+              <div
+                className='unit text-area'
+                id = {`${iconType}-${props.appID}`}
+              >{buttonText}</div>
             </a>
           </div>
         </div>

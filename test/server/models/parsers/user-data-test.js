@@ -14,14 +14,16 @@ describe('userData', function() {
           first_name: 'Ellen',
           last_name: 'Pao',
           suffix_name: '',
-          updated_at: '2018-04-11 10:18:27.12122-07'
+          updated_at: '2018-04-11 10:18:27.12122-07',
+          pathname: '/apply/id-and-license/my-history/medical-history'
         },
         {
           id: '2',
           first_name: 'Oprah',
           last_name: 'Winfrey',
           suffix_name: '',
-          updated_at: '2017-04-11 10:18:27.12122-07'
+          updated_at: '2017-04-11 10:18:27.12122-07',
+          pathname: '/apply/cdl/my-basics/date-of-birth'
         }
       ],
       cards: [
@@ -97,5 +99,9 @@ describe('userData', function() {
       assert.equal(data.apps[1].updatedAt, '2017-04-11 10:18:27.12122-07');
     });
 
+    it('each object has the pathname where the application was last at', function() {
+      assert.ok(data.apps[0].pathname, records.applications[0].pathname);
+      assert.ok(data.apps[1].pathname, records.applications[1].pathname);
+    });
   });
 });
