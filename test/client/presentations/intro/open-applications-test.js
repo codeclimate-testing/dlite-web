@@ -80,6 +80,9 @@ describe('Open Applications page', function() {
     it('shows an edit button to edit id 2', function() {
       assert.ok(component.find('a.2.open-edit').length);
     });
+    it('the edit button goes to the summary', function() {
+      assert.ok(component.find('a.1.summary').length);
+    });
   });
 
   it('shows error message if apiStatus is error', function() {

@@ -28,13 +28,13 @@ import {
   addingID,
   addingDL
 } from '../../../data/add-flow';
-import { goToOpenApps }    from '../../../data/application';
+import { hasMultipleApps }    from '../../../data/application';
 
 
 export const IDme = (props) => {
   let key = 'legalName';
   // if multiple applications, go to /apply/open-applications key='openApplications'
-  if (goToOpenApps(props)) {
+  if (hasMultipleApps(props)) {
     key = 'openApplications';
   }
   return key;

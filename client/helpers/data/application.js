@@ -35,7 +35,7 @@ export function requireLogIn(pathname, isLoggedIn, env = APP_ENV){
 
 
 export const hasMultipleApps = (props) => {
-  return props.userData.appsLength > 1;
+  return props.userData.appsLength > 0;
 };
 
 export const sameType = (props) => {
@@ -63,10 +63,6 @@ export const parseChooseApp = (appName) => {
     chooseApp = 'iddl';
   }
   return chooseApp;
-};
-
-export const goToOpenApps = (props) => {
-  return hasMultipleApps(props) || (props.userData.appsLength === 1 && !sameType(props));
 };
 
 export const getFlow = (linkType) => {

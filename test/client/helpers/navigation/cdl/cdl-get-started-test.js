@@ -47,9 +47,8 @@ describe('CDL next-paths', function() {
         props.userData.appsLength = 2;
         assert.ok(cdlIDme(props), 'openApplications');
       });
-      it('goes to openApplications if user already has an IDDL app and is signing in to complete a CDL app', function() {
+      it('goes to openApplications if user already has an app', function() {
         props.userData.appsLength = 1;
-        props.userData.apps[0].cardType=['DL'];
         assert.ok(cdlIDme(props), 'openApplications');
       });
     });

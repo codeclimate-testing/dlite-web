@@ -86,9 +86,8 @@ describe('Data helpers for determining next path from current page and props in 
         props.userData.appsLength = 2;
         assert.ok(IDme(props), 'openApplications');
       });
-      it('goes to openApplications if user already has a CDL app and is signing in to complete an IDDL app', function() {
+      it('goes to openApplications if user already has an app', function() {
         props.userData.appsLength = 1;
-        props.userData.apps[0].cardType=['CDL'];
         assert.ok(IDme(props), 'openApplications');
       });
     });

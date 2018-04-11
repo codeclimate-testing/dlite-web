@@ -12,7 +12,6 @@ import {
   parseAppName,
   parseChooseApp,
   sameType,
-  goToOpenApps,
   getFlow,
   addOrEdit,
   addOrEditIcon
@@ -88,8 +87,12 @@ describe('Data helpers for application', function() {
       props.userData.appsLength = 2;
       assert.equal(hasMultipleApps(props), true);
     });
-    it('returns false if appsLength is 1', function() {
+    it('returns true if appsLength is 1', function() {
       props.userData.appsLength = 1;
+      assert.equal(hasMultipleApps(props), true);
+    });
+    it('returns false if appsLength is 0', function() {
+      props.userData.appsLength = 0;
       assert.equal(hasMultipleApps(props), false);
     });
   });
@@ -169,47 +172,6 @@ describe('Data helpers for application', function() {
       props.userData.apps[0].cardType[0] = 'ID';
       props.appName = 'CDL';
       assert.equal(sameType(props), false);
-    });
-  });
-
-  describe('#goToOpenApps', function() {
-    let props;
-    beforeEach(function() {
-      props = {
-        userData: {
-          appsLength: '',
-          apps: [{
-            cardType: []
-          }]
-        },
-        appName: ''
-      }
-    });
-
-    it('returns true if user has multiple apps', function() {
-      props.userData.appsLength = 3;
-      assert.equal(goToOpenApps(props), true);
-    });
-
-    it('returns true if user already has a IDDL app but logged in to CDL app', function() {
-      props.userData.appsLength = 1;
-      props.userData.apps[0].cardType = ['DL'];
-      props.appName = 'CDL';
-      assert.equal(goToOpenApps(props), true);
-    });
-
-    it('returns true if user already has a CDL app but logged in to IDDL app', function() {
-      props.userData.appsLength = 1;
-      props.userData.apps[0].cardType = ['CDL'];
-      props.appName = 'id-and-license';
-      assert.equal(goToOpenApps(props), true);
-    });
-
-    it('returns false if user already has a IDDL app and logged into IDDL app', function() {
-      props.userData.appsLength = 1;
-      props.userData.apps[0].cardType = ['DL'];
-      props.appName = 'id-and-license';
-      assert.equal(goToOpenApps(props), false);
     });
   });
 
