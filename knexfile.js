@@ -19,7 +19,7 @@ try {
 
 let config = {
   client: 'pg',
-  connection: dbUrl,
+  connection: dbUrl + 'ssl=true',
   migrations: {
     directory: migrationsPath
   }
