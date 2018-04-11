@@ -62,7 +62,7 @@ function guardianSignature(signatures, addresses) {
         });
       });
 
-      if(guardianFirst){
+      if(guardianFirst.accept_civil_liability){
         _guardianSignature_.guardianInfo[0].acceptLiabilities = guardianFirst.accept_civil_liability,
         _guardianSignature_.guardianInfo[0].signature.name    = guardianFirst.guardian_name;
         _guardianSignature_.guardianInfo[0].signature.month   = (new Date(guardianFirst.signed_on).getMonth() + 1).toString();
@@ -76,7 +76,7 @@ function guardianSignature(signatures, addresses) {
         _guardianSignature_.guardianInfo[0].address.zip       = guardianFirst.zip;
       }
 
-      if(guardianSecond){
+      if(guardianSecond.accept_civil_liability){
         _guardianSignature_.guardianInfo[1].acceptLiabilities = guardianSecond.accept_civil_liability,
         _guardianSignature_.guardianInfo[1].signature.name    = guardianSecond.guardian_name;
         _guardianSignature_.guardianInfo[1].signature.month   = (new Date(guardianSecond.signed_on).getMonth() + 1).toString();
