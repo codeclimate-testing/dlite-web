@@ -31,7 +31,7 @@ describe('Contact Methods page validation rules:', function() {
 
     it('shows inputIncludesNonEnglishCharacters error if non-English characters used in email', function() {
       props.emailAddress = 'łażenko@kropka.pl';
-      assert.deepEqual(rules.emailAddress(props), ['errorMessages.inputIncludesNonEnglishCharacters']);
+      assert.deepEqual(rules.emailAddress(props), ['errorMessages.emailAddressMissingOrInvalid']);
     });
 
     it('shows emailAddressMissingOrInvalid error if address fails regex check', function(){

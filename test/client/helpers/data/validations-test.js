@@ -156,6 +156,10 @@ describe('validations', function() {
       assert.equal(emailRegex('aperson@a..domain.somewhere'), false);
     });
 
+    it('fails if encoded html within the email address', function() {
+      assert.equal(emailRegex('<script>alert(1)</script>@example.com'), false);
+      assert.equal(emailRegex('Joe Smith <email@domain.com>'), false);
+    });
   });
 
   describe('#isYes', function() {
