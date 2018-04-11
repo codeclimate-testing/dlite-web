@@ -21,6 +21,7 @@ module.exports = function(world) {
     .then((text) => {
       assert.ok(text.includes('CDL person'), 'name not rendered');
       assert.ok(text.includes('Applying for a commercial driver license'));
+      assert.ok(text.includes('Submitted:'));
     })
     .then(() => { done(); })
     .catch(done);
@@ -32,6 +33,7 @@ module.exports = function(world) {
     .then((text) => {
       assert.ok(text.includes('DL person'), 'name not rendered');
       assert.ok(text.includes('Applying for a driver license'));
+      assert.ok(text.includes('Submitted: '));
     })
     .then(() => { done(); })
     .catch(done);
@@ -43,6 +45,7 @@ module.exports = function(world) {
     .then((text) => {
       assert.ok(text.includes('new ID and DL person'), 'name not rendered');
       assert.ok(text.includes('Applying for a driver license and an ID card'));
+      assert.ok(text.includes('Submitted: '));
     })
     .then(() => { done(); })
     .catch(done);

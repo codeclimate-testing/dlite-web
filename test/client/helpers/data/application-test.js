@@ -14,7 +14,8 @@ import {
   sameType,
   getFlow,
   addOrEdit,
-  addOrEditIcon
+  addOrEditIcon,
+  getTimeStamp
 } from '../../../../client/helpers/data/application';
 
 describe('Data helpers for application', function() {
@@ -235,5 +236,34 @@ describe('Data helpers for application', function() {
       props.linkType = 'open-add';
       assert.equal(addOrEditIcon(props), 'add');
     });
+  });
+
+  describe('#getTimeStamp', function() {
+    let app;
+    describe('completed application', function() {
+      beforeEach(function() {
+        app = {
+          updatedAt: '2018-04-11 10:18:27.12122-07'
+        };
+      });
+
+      it('returns month/day/year string', function() {
+        assert.equal(getTimeStamp(app), 'Submitted: 4/11/2018');
+      });
+    });
+
+    describe('incomplete application', function() {
+      beforeEach(function() {
+        app = {
+          updatedAt: '2018-04-11 10:18:27.12122-07'
+        };
+      });
+
+      it('returns Open', function() {
+        let nextAddress = '/apply/cdl/my-basics/date-of-birth';
+        assert.equal(getTimeStamp(app, nextAddress), 'Open');
+      });
+    });
+
   });
 });

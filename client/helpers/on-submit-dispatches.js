@@ -33,34 +33,6 @@ export const updateEligibility = (stateProps, dispatch) => {
   };
 };
 
-export const saveApplication = (stateProps, dispatch, ownProps) => {
-  return (e) => {
-    e.preventDefault();
-    let appData = [stateProps.application, {userID: stateProps.server.userData.userID}];
-    let app = Object.assign({}, ...appData);
-    dispatch(postData(app))
-      .then((res) => {
-        ownProps.history.push(
-          nextPath('summary', res)
-        )
-      });
-  };
-};
-
-export const saveCDL = (stateProps, dispatch, ownProps) => {
-  return (e) => {
-    e.preventDefault();
-    let appData = [stateProps.cdl, {userID: stateProps.server.userData.userID}];
-    let app = Object.assign({}, ...appData);
-    dispatch(postData(app))
-    .then(res => {
-      ownProps.history.push(
-        nextPath('cdlSummary', res)
-      );
-    });
-  };
-};
-
 export const applicationLanguageSubmit = (stateProps, dispatch, ownProps) => {
   return (e) => {
     e.preventDefault();

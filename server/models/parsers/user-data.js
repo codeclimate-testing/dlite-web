@@ -12,6 +12,7 @@ module.exports = function parseUserData(records){
 
     let name = dataParser.buildName(app);
     let id = app.id;
+    let updatedAt = app.updated_at;
 
     let cards = records.cards.filter((card) => {
       return card.application_id === app.id;
@@ -35,7 +36,8 @@ module.exports = function parseUserData(records){
       name,
       cardAction,
       cardType,
-      id
+      id,
+      updatedAt
     });
 
   });

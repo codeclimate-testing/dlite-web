@@ -21,3 +21,7 @@ export const getStringByStatus = (value, yesString, noString, declineString) => 
 export const showLicenseClass = (props) => {
   return DLAppExists(props) && hasSelectedClass(props);
 };
+
+export const getSummaryKey = (appType) => {
+  return appType === 'application' ? 'summary' : 'cdlSummary';
+};

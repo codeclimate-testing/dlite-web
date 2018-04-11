@@ -13,13 +13,15 @@ describe('userData', function() {
           id: '1',
           first_name: 'Ellen',
           last_name: 'Pao',
-          suffix_name: ''
+          suffix_name: '',
+          updated_at: '2018-04-11 10:18:27.12122-07'
         },
         {
           id: '2',
           first_name: 'Oprah',
           last_name: 'Winfrey',
-          suffix_name: ''
+          suffix_name: '',
+          updated_at: '2017-04-11 10:18:27.12122-07'
         }
       ],
       cards: [
@@ -88,6 +90,12 @@ describe('userData', function() {
       assert.ok(data.apps[0].cardType.includes('ID'));
       assert.ok(data.apps[0].cardType.includes('DL'));
       assert.ok(data.apps[1].cardType.includes('CDL'));
-    })
+    });
+
+    it('each object has an updatedAt timestampe', function() {
+      assert.equal(data.apps[0].updatedAt, '2018-04-11 10:18:27.12122-07');
+      assert.equal(data.apps[1].updatedAt, '2017-04-11 10:18:27.12122-07');
+    });
+
   });
 });

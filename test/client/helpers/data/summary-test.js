@@ -4,7 +4,8 @@ const assert = require('assert');
 
 import {
   getStringByStatus,
-  showLicenseClass
+  showLicenseClass,
+  getSummaryKey
 } from '../../../../client/helpers/data/summary';
 
 describe('#summary status helpers', function() {
@@ -52,6 +53,15 @@ describe('#summary status helpers', function() {
     it('returns true if user is getting a DL and has selected a class of license', function() {
       data.DLApp.licenseType.type = ['car'];
       assert.equal(showLicenseClass(data), true);
+    });
+  });
+
+  describe('#getSummaryKey', function() {
+    it('returns summary if appType is application', function() {
+      assert.equal(getSummaryKey('application'), 'summary');
+    });
+    it('returns cdlSummary if appType is cdl', function() {
+      assert.equal(getSummaryKey('cdl'), 'cdlSummary');
     });
   });
 });

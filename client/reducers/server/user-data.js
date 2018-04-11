@@ -7,7 +7,9 @@ function defaultState() {
     apps: [{
       cardAction: '',
       cardType: '',
-      name: ''
+      name: '',
+      id: '',
+      updatedAt: ''
     }]
   }
 };

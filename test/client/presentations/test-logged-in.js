@@ -52,7 +52,7 @@ const LoggedIn = (props) => {
   // check to see if the test data have already been saved
   dispatch(getUserData('3f'))
     .then((res) => {
-      if (res.apps.length < 4) {
+      if (res.apps.length < 4 || !res.apps[3].updatedAt) {
         return saveData();
       }
       return;

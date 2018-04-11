@@ -4,6 +4,7 @@ import React                  from 'react';
 import Translator             from '../../../i18n/translator-tag.jsx';
 import PageSummaryLink        from '../../../containers/page-summary-link.jsx';
 import { hasValue }           from '../../../helpers/data/validations';
+import { getTimeStamp }       from '../../../helpers/data/application';
 import {
   checkCardType,
   getLegalNameKey,
@@ -39,17 +40,26 @@ export const Applications = (props) => {
     if (!hasValue(app.cardAction)) { return null; }
 
     let editKey = getSummaryKey(app.cardType[0]);
+    let timeStamp = getTimeStamp(app);
+
     return (
       <fieldset role='group' aria-label='open application' key={app.id} className='openApp summary-section'>
-        <h4 className={`question ${app.id}`}>
-          {app.name}
-        </h4>
-        <CardDescription cardType = {app.cardType} id={app.id}/>
-        <PageSummaryLink
-          appID={app.id}
-          editKey={editKey}
-          linkType = 'open-edit'
-        />
+        <div className='summary-open-app'>
+          <div className = {app.id}>
+            <h4 className={`question ${app.id}`}>
+              {app.name}
+            </h4>
+            <p className='timestamp'>
+              {timeStamp}
+            </p>
+            <CardDescription cardType = {app.cardType} id={app.id}/>
+          </div>
+          <PageSummaryLink
+            appID={app.id}
+            editKey={editKey}
+            linkType = 'open-edit'
+          />
+        </div>
       </fieldset>
     )
   });

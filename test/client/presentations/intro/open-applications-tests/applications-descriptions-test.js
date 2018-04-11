@@ -20,12 +20,14 @@ describe('Open Applications summaries', function() {
         cardType: ['ID'],
         cardAction: ['renew'],
         name: 'Mr. Renew My ID',
-        id: '1'
+        id: '1',
+        updatedAt: '2018-04-11 10:18:27.12122-07'
       }, {
         cardType: ['CDL'],
         cardAction: ['change-update'],
         name: 'Ms. Update My CDL',
-        id: '2'
+        id: '2',
+        updatedAt: '2016-04-11 10:18:27.12122-07'
       }];
       component = render(
         <Wrapper>
@@ -62,6 +64,11 @@ describe('Open Applications summaries', function() {
       assert.ok(component.find('.1 .summary.ID'), 'cardType is wrong');
       assert.ok(component.find('.2 .summary.CDL'), 'cardType is wrong');
     });
+
+    it('shows timestamp', function() {
+      assert.ok(component.find('.1 p.timestamp'), '2018-04-11 10:18:27.12122-07');
+      assert.ok(component.find('.2 p.timestamp'), '2016-04-11 10:18:27.12122-07');
+    });
   });
 
   describe('# user getting both new ID and DL', function() {
@@ -70,7 +77,8 @@ describe('Open Applications summaries', function() {
         cardType: ['ID', 'DL'],
         cardAction: ['new', 'new'],
         name: 'Mx. Get New ID and DL',
-        id: '1'
+        id: '1',
+        updatedAt: '2017-04-11 10:18:27.12122-07'
       }];
 
       component = render(
@@ -91,6 +99,10 @@ describe('Open Applications summaries', function() {
     it('passes both values in cardType array as props to PageSummaryLink', function() {
       assert.ok(component.find('.summary.button.ID.DL'))
     });
+
+    it('shows timestamp', function() {
+      assert.ok(component.find('.1 p.timestamp'), '2017-04-11 10:18:27.12122-07');
+    });
   });
 
   describe('# double IDDL', function() {
@@ -99,7 +111,8 @@ describe('Open Applications summaries', function() {
         cardType: ['ID', 'DL'],
         cardAction: ['new', 'renew'],
         name: 'OBE I got two cards, one for the new and one to renew',
-        id: '1'
+        id: '1',
+        updatedAt: '2017-04-11 10:18:27.12122-07'
       }];
 
       component = render(
@@ -115,6 +128,9 @@ describe('Open Applications summaries', function() {
     it('passes first cardType value as props to PageSummaryLink', function() {
       assert.ok(component.find('.summary.ID'), 'cardType is wrong');
       assert.equal(component.find('.summary.button.DL'), false)
+    });
+    it('shows timestamp', function() {
+      assert.ok(component.find('.1 p.timestamp'), '2017-04-11 10:18:27.12122-07');
     });
   });
 });
