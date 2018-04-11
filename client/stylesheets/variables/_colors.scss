@@ -11,6 +11,7 @@ $green:         #1A6325;
 $red:           #A8142D;
 $gold:          #FFC900;
 
+
 $light-light-gray:  #F6F6F6;
 
 // Shades of gray
@@ -32,7 +33,7 @@ $background:        $light-light-gray;
 $gray:              $neutral-50;
 $another-gray:      $neutral-60;
 
-$focus:             transparentize($gold, 0.3);
+$focus:             transparentize($gold, 0.15);
 $button-rest:       $medium-blue;
 
 $header-light:            $darkest-blue;
