@@ -28,22 +28,24 @@ select {
   font-size: 18px;
   font-family: $main-font;
   outline-style: none;
-  width: 80px;
+  width: 100px;
   height: 48px;
-  background-color: white;
-  color: #222430;
   border: 1px solid gray;
   -webkit-appearance: none;
   -moz-appearance: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  margin-bottom: 20px;
-  padding: 10px;
+  @include border-bottom-radius($border-radius-size);
+  @include border-left-radius($border-radius-size);
+  @include border-right-radius($border-radius-size);
+  margin-bottom: $spacing;
+  padding: $spacing / 2;
   background: url("/images/icons/misc/dropdown.svg") no-repeat;
   background-position: calc(100% - 10px) center;
+}
+
+select:focus {
+  -webkit-box-shadow: 0 0 1px 2px $focus;
+  -moz-box-shadow: 0 0 1px 2px $focus;
+  box-shadow: 0 0 1px 2px $focus; 
 }
 
 .scroll-wrapper {
@@ -57,7 +59,7 @@ select {
   overflow-y: scroll;
   -ms-overflow-style: scrollbar;
   border: $border-width solid $darkest-blue;
-  padding: 10px;
+  padding: $spacing / 2;
 }
 
 .radio-input-error{

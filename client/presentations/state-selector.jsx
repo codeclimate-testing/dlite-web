@@ -63,7 +63,7 @@ const stateList = [
 ];
 
 const StateSelector = (props) => {
-  let id = 'state';
+  let id = props.id;
   let value = props.value;
 
   let options = stateList.map((stateCode) => {
