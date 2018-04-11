@@ -4,7 +4,7 @@ import React from 'react';
 
 export default  (props) => {
 
-  let filePath = 'file:///C:\index.mht';
+  let filePath = 'file:/\/\/\C:\\index.mht';
 
   const simulateClick = (e) => {
     e.click()
