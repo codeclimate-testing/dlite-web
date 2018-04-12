@@ -163,3 +163,4 @@ export const findNextPage = (pathname) => {
 
   return nextAddress;
 };
+export const resetURL = '/apply/choose-language';

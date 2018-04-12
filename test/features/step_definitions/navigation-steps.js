@@ -27,6 +27,9 @@ module.exports = function(world) {
       .catch(done);
   };
 
+  world.when('I go to a page that does not exist', function(done){
+    navigateToPath('/apply/no-page-here', '.page-row', done);
+  });
 
   /* IDDL NavigateToPath */
   world.when('I go to the page with my summary', function(done){

@@ -2,6 +2,11 @@ Feature: User views correct flow after logging in and logging out
 As a DMV customer
 I want the log-in and log-out functionality to work
 
+Scenario: Going to page that does not exist
+  Given I go to the new online DL application
+  When I go to a page that does not exist
+  Then I will be on the choose language page
+
 Scenario: Logging in with multiple applications
   Given I go to the open applications page
   Then I will see 4 open applications
