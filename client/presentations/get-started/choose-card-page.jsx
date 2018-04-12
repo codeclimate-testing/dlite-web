@@ -6,7 +6,6 @@ import Page               from '../../containers/page.jsx';
 import ChooseCardCheckbox from './choose-card/choose-card-checkbox.jsx';
 import ChooseCardRadio    from './choose-card/choose-card-radio.jsx';
 import NavigationButtons  from '../navigation-buttons.jsx';
-import { IDorDL }         from '../../helpers/data/cards';
 import {
   getStringByAction,
   isGettingNew
@@ -59,7 +58,6 @@ const Form = (props) => {
           <ChooseCardRadio
             {...props}
             showIf        = { !isGettingNew(props) }
-            selectedValue = { IDorDL(props) }
           />
 
           <NavigationButtons errorMessage = { props.validations.cardType() }

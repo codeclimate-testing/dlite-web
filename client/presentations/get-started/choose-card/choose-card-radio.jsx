@@ -17,6 +17,7 @@ const Form = (props) => {
           name            = { props.cardAction }
           onBlur          = { props.onBlurValidate }
           errorMessage    = { props.validations.cardType()}
+          selectedValue   = { props.cardType[0]}
         >
         {radioIdDlGroup()}
         </RadioCollection>
