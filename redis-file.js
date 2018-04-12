@@ -1,8 +1,21 @@
 'use strict';
 
 const env           = require('./server/config/env').env;
+const { URL }       = require('url');
 const redisUrl      = process.env.REDIS_URL;
-const redisClient   = require('redis').createClient(redisUrl);
+let redisClient;
+
+let serverName = 'localhost';
+if(redisUrl){
+  serverName = new URL(redisUrl).hostname;
+}
+
+if(serverName !== 'localhost'){
+  redisClient   = require('redis').createClient(redisUrl, { tls: { servername: serverName }});
+}
+else{
+  redisClient   = require('redis').createClient(redisUrl);
+}
 
 redisClient.on('connect', (err) => {
   console.log('connected to redis successfully');
