@@ -4,7 +4,7 @@ const path = require('path');
 const migrationsPath = path.resolve(__dirname, 'server', 'db', 'migrations');
 
 const env     = require('./server/config/env').env;
-const dbUrl   = process.env.DATABASE_URL;
+let   dbUrl   = process.env.DATABASE_URL;
 
 let fileConfig;
 try {
@@ -17,9 +17,13 @@ try {
   }
 }
 
+if(dbUrl) {
+  dbUrl = dbUrl + '?ssl=true';
+}
+
 let config = {
   client: 'pg',
-  connection: dbUrl + '?ssl=true',
+  connection: dbUrl,
   migrations: {
     directory: migrationsPath
   }
