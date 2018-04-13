@@ -7,7 +7,7 @@ const redisTLS      = process.env.REDIS_TLS;
 
 let redisClient;
 
-if(redisTLS){
+if((redisTLS && redisTLS === 'true') && redisUrl){
   redisClient = require('redis').createClient(redisUrl, { tls: { servername: new URL(redisUrl).hostname }});
 }
 else{
