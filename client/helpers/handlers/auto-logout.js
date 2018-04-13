@@ -6,7 +6,6 @@ import { updateLoggedIn }   from '../../actions/index';
 
 class AutoLogout {
   constructor(history, dispatch, timeout) {
-
     this.events = ['load', 'mousedown', 'touchstart',
                    'click', 'keypress'];
 
