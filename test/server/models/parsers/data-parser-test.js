@@ -4,6 +4,12 @@ const assert            = require('assert');
 const dataParser        = require('../../../../server/models/parsers/data-parser');
 
 describe('dataParser', function() {
+  describe('#formatCompletedAtDate', function () {
+    let date = new Date(2018, 3, 13, 11, 45, 53)
+    it('format completed at date for saving in databas', function() {
+      assert.equal(dataParser.formatCompletedAtDate(date), '2018-3-13 11:45:53')
+    });
+  });
 
   describe('parseParty', function() {
     it('returns the selected party that has been saved to politicalPartyChoose', function() {

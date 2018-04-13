@@ -1,9 +1,9 @@
 {
   "counts": {
-    "sequences": 16,
-    "constraints": 17,
-    "tables": 18,
-    "columns": 88
+    "sequences": 18,
+    "constraints": 20,
+    "tables": 20,
+    "columns": 106
   },
   "tables": {
     "addresses": {
@@ -239,8 +239,26 @@
           "table_name": "applications",
           "column_name": "user_id",
           "column_default": null,
-          "is_nullable": false,
+          "is_nullable": true,
           "data_type": "character varying",
+          "col_description": null
+        },
+        "pathname": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "pathname",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "completed_at": {
+          "table_schema": "public",
+          "table_name": "applications",
+          "column_name": "completed_at",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "timestamp with time zone",
           "col_description": null
         }
       }
@@ -413,6 +431,155 @@
           "column_default": null,
           "is_nullable": true,
           "data_type": "timestamp with time zone",
+          "col_description": null
+        }
+      }
+    },
+    "guardian_addresses": {
+      "table_schema": "public",
+      "table_name": "guardian_addresses",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "id",
+          "column_default": "nextval('guardian_addresses_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "guardian_id": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "guardian_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "guardian_type": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "guardian_type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "street_address_1": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "street_address_1",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "street_address_2": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "street_address_2",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "city": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "city",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "state": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "state",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "zip": {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "zip",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        }
+      }
+    },
+    "guardian_signatures": {
+      "table_schema": "public",
+      "table_name": "guardian_signatures",
+      "obj_description": null,
+      "columns": {
+        "id": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "id",
+          "column_default": "nextval('guardian_signatures_id_seq'::regclass)",
+          "is_nullable": false,
+          "data_type": "integer",
+          "col_description": null
+        },
+        "application_id": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "application_id",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "guardian_type": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "guardian_type",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "accept_civil_liability": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "accept_civil_liability",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "boolean",
+          "col_description": null
+        },
+        "guardian_name": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "guardian_name",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
+          "col_description": null
+        },
+        "signed_on": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "signed_on",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "date",
+          "col_description": null
+        },
+        "phone_number": {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "phone_number",
+          "column_default": null,
+          "is_nullable": true,
+          "data_type": "character varying",
           "col_description": null
         }
       }
@@ -767,9 +934,9 @@
         "uuid": {
           "table_schema": "public",
           "table_name": "users",
-          "column_name": "user_id",
+          "column_name": "uuid",
           "column_default": null,
-          "is_nullable": false,
+          "is_nullable": true,
           "data_type": "character varying",
           "col_description": null
         }
@@ -865,7 +1032,7 @@
           "column_name": "is_citizen",
           "column_default": null,
           "is_nullable": true,
-          "data_type": "string",
+          "data_type": "character varying",
           "col_description": null
         },
         "is_eligible": {
@@ -874,7 +1041,7 @@
           "column_name": "is_eligible",
           "column_default": null,
           "is_nullable": true,
-          "data_type": "string",
+          "data_type": "character varying",
           "col_description": null
         },
         "type": {
@@ -1031,6 +1198,38 @@
         }
       ]
     },
+    "guardian_addresses": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "guardian_addresses",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "guardian_addresses_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "guardian_addresses",
+          "referenced_column": "id"
+        }
+      ]
+    },
+    "guardian_signatures": {
+      "id": [
+        {
+          "table_schema": "public",
+          "table_name": "guardian_signatures",
+          "column_name": "id",
+          "constraint_schema": "public",
+          "constraint_name": "guardian_signatures_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "guardian_signatures",
+          "referenced_column": "id"
+        }
+      ]
+    },
     "knex_migrations": {
       "id": [
         {
@@ -1173,6 +1372,20 @@
           "referenced_table": "users",
           "referenced_column": "id"
         }
+      ],
+      "uuid": [
+        {
+          "table_schema": "public",
+          "table_name": "users",
+          "column_name": "uuid",
+          "constraint_schema": "public",
+          "constraint_name": "users_uuid_unique",
+          "constraint_type": "UNIQUE",
+          "check_clause": null,
+          "referenced_schema": "public",
+          "referenced_table": "users",
+          "referenced_column": "uuid"
+        }
       ]
     },
     "veterans_info": {
@@ -1254,6 +1467,28 @@
       }
     },
     "emails": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "guardian_addresses": {
+      "id": {
+        "table_schema": "public",
+        "table_name": "voting_registrations",
+        "column_name": "id",
+        "sequence_name": "voting_registrations_id_seq",
+        "start_value": "1",
+        "minimum_value": "1",
+        "increment": "1"
+      }
+    },
+    "guardian_signatures": {
       "id": {
         "table_schema": "public",
         "table_name": "voting_registrations",
@@ -1355,9 +1590,9 @@
     "users": {
       "id": {
         "table_schema": "public",
-        "table_name": "users",
+        "table_name": "voting_registrations",
         "column_name": "id",
-        "sequence_name": "users_id_seq",
+        "sequence_name": "voting_registrations_id_seq",
         "start_value": "1",
         "minimum_value": "1",
         "increment": "1"

@@ -10,6 +10,7 @@ function extractApplication(data) {
   let dob               = null;
   let socialSecurity    = '';
   let dateOfBirth       = basics.dateOfBirth;
+  let completed         = null;
 
 
   if(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year) {
@@ -21,6 +22,10 @@ function extractApplication(data) {
     socialSecurity = _socialSecurity.part1+'-'+_socialSecurity.part2+'-'+_socialSecurity.part3;
   } else if (basics.socialSecurity.hasSocialSecurity === 'No') {
     socialSecurity = 'No';
+  }
+
+  if(data.pathname === '/apply/id-and-license/summary' || data.pathname === '/apply/cdl/summary') {
+    completed = new Date(parserHelper.formatCompletedAtDate(new Date()))
   }
 
   return {
@@ -39,7 +44,8 @@ function extractApplication(data) {
     weight:                   heightWeight.weight ? heightWeight.weight : 0,
     social_security_number:   socialSecurity,
     user_id:                  data.userID,
-    pathname:                 data.pathname
+    pathname:                 data.pathname,
+    completed_at:             completed
   };
 }
 

@@ -4,6 +4,10 @@ module.exports.createDateString = function createDateString(date) {
   return date.month + '/' + date.day + '/' + date.year;
 };
 
+module.exports.formatCompletedAtDate = function formatCompletedAtDate(date) {
+  return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+}
+
 module.exports.createDateJson = function createDateJson(date) {
   let dateArr = date.split('/');
   if(dateArr.length === 3){
