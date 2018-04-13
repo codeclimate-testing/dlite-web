@@ -32,13 +32,6 @@ describe('Send app timeout and whether on ADA TST terminal', () => {
     assert.equal(res.json.args[0][0].timeout, '50');
   });
 
-  it('sends timeout', function() {
-    process.env.APP_TIMEOUT = '50';
-    process.env.ADA_TST = true;
-    sendAppEnv(req, res);
-    assert.equal(res.json.args[0][0].adaTst, 'true');
-  });
-
   it('sends ADA_TST from environmental variable', function() {
     process.env.APP_TIMEOUT = '50';
     process.env.ADA_TST = true;
