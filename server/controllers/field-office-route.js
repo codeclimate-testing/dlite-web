@@ -3,7 +3,7 @@ const uuidv1 = require('uuid/v1');
 
 module.exports = function authSuccess (req, res, next) {
 
-  if(!process.env.TST_ENV) {
+  if(!process.env.TST_ENV || process.env.TST_ENV !== 'true' ) {
     res.redirect(`/apply`);
   }
   let appName = req.params.appName;
