@@ -2,21 +2,20 @@
 
 const logout = (req, res) => {
   console.log('LOGOUT')
-  let appName = req.cookies.appName;
+
   req.logout();
   req.session.destroy();
   res.clearCookie('appName');
   //res.clearCookie('dlite-web-session');
 
-  if(process.env.TST_ENV && process.env.TST_ENV == 'true') {
-    res.redirect('/apply/tst/open-file');
+  if(process.env.TST_ENV && process.env.TST_ENV.toString() === 'true') {
+    res.redirect(process.env.TST_SPLASH_SCREEN_URL);
   }
 
-  if (!appName || appName.length < 1) {
+  else {
     res.redirect('/apply/choose-language');
-  } else {
-    res.redirect(`/apply/${appName}/sign-in`);
   }
+
 };
 
 module.exports = logout;
