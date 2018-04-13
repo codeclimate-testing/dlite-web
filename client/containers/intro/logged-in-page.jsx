@@ -1,6 +1,5 @@
 'use strict';
 import { connect }                from 'react-redux';
-import { getTimeout }             from '../../actions/get-timeout';
 import handlers                   from '../../helpers/handlers';
 import { getTimeout }             from '../../actions/get-timeout';
 import { getAuthStatus }          from '../../actions/get-auth-status';

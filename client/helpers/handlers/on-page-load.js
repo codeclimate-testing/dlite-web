@@ -5,12 +5,6 @@ import {
   changePathname
  } from '../../actions';
 
-const focusHeader = () => {
-  let element = document.querySelector('#section-header');
-  if (element) {
-    element.focus();
-  }
-};
 const disableHyperLink = () => {
   var all_links = document.getElementsByTagName('a');
   for(var i=0; i<all_links.length; i++){

@@ -14,7 +14,7 @@ const AppointmentPreparation = (props) => {
 
 
   if(TST_ENV){
-    let filePath = 'file:/\/\/\C:\\index.mht';
+    let filePath = '/apply/log-out';
     return (
       <div className='appointment-preparation'>
         <Translator
