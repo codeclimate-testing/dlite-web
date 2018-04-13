@@ -3,15 +3,12 @@
 const env           = require('./server/config/env').env;
 const { URL }       = require('url');
 const redisUrl      = process.env.REDIS_URL;
+const redisTLS      = process.env.REDIS_TLS;
+
 let redisClient;
 
-let serverName = 'localhost';
-if(redisUrl){
-  serverName = new URL(redisUrl).hostname;
-}
-
-if(serverName !== 'localhost'){
-  redisClient   = require('redis').createClient(redisUrl, { tls: { servername: serverName }});
+if(redisTLS){
+  redisClient = require('redis').createClient(redisUrl, { tls: { servername: new URL(redisUrl).hostname }});
 }
 else{
   redisClient   = require('redis').createClient(redisUrl);

@@ -70,6 +70,8 @@ Connection parameters for the local redis server should be setup in
 The connection prefers using `REDIS_URL` as an environmental
 variable. This allows easy portability between servers.
 
+Make sure to set `REDIS_TLS` to true when connecting with a secured Redis server.
+
 ## Start the app
 
 It is just an express app, and runs via a nmp script:
