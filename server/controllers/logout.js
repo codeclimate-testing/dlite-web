@@ -8,7 +8,7 @@ const logout = (req, res) => {
   res.clearCookie('appName');
   //res.clearCookie('dlite-web-session');
 
-  if(process.env.TST_ENV) {
+  if(process.env.TST_ENV && process.env.TST_ENV == 'true') {
     res.redirect('/apply/tst/open-file');
   }
 
