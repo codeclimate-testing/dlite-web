@@ -6,7 +6,7 @@ import AutoLogout   from '../../../../client/helpers/handlers/auto-logout';
 import { createMemoryHistory }  from 'history';
 
 describe('auto logout class', function() {
-  let history, dispatch, event, auto, setTimeout;
+  let history, dispatch, event, auto, setTimeout, timeout;
 
   beforeEach(function() {
     history = createMemoryHistory('/');
@@ -18,7 +18,8 @@ describe('auto logout class', function() {
       addEventListener: sinon.spy(),
       removeEventListener: sinon.spy()
     };
-    auto              = new AutoLogout(history, dispatch);
+    timeout = '600000';
+    auto              = new AutoLogout(history, dispatch, timeout);
     auto.setTimeout   = sinon.spy();
     auto.destroy      = sinon.spy();
     auto.clearTimeout = sinon.spy();
@@ -48,8 +49,8 @@ describe('auto logout class', function() {
   });
 
   describe('setTimeout', function() {
-    it('sets timeout to 2 minutes', function() {
-      assert.equal(auto.logoutTimeout._idleTimeout, 120000);
+    it('sets timeout to 10 minutes', function() {
+      assert.equal(auto.logoutTimeout._idleTimeout, 600000);
     });
     it('sets timeout to callback this.logout', function() {
       assert.deepEqual(auto.logoutTimeout._onTimeout, auto.logout);

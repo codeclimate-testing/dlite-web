@@ -5,7 +5,7 @@ import { getSummaryKey }    from '../data/summary';
 
 export const saveApplication = (dispatch) => {
   return (stateProps, appType) => {
-    let appData = [stateProps[appType], {userID: stateProps.server.userData.userID}, {pathname: stateProps.server.pathname}];
+    let appData = [stateProps[appType], {userID: stateProps.server.userData.userID}, {pathname: stateProps.pathname}];
     let app = Object.assign({}, ...appData);
     let editKey = getSummaryKey(appType);
 

@@ -9,7 +9,6 @@ const CompressionPlugin   = require('compression-webpack-plugin');
 const childProcess = require('child_process');
 const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
 
-
 let config = {
   entry: ['babel-polyfill', './client.js'],
   output: {

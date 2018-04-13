@@ -171,10 +171,14 @@ module.exports = function(world) {
       .open(world.url('/'))
       .waitForSelector('.choose-language-form')
       .evaluate(function() {
+        window.__reactHistory.push('/apply/cdl/sign-in');
+      })
+      .waitForSelector('.id-me')
+      .evaluate(function() {
+        console.log('go to test url');
         window.__reactHistory.push('/apply/logged-in/test');
       })
       .waitForSelector('.open-applications')
-      .waitForSelector('.openApp p.1')
       .then(done)
       .catch(done);
   });

@@ -10,10 +10,10 @@ Scenario: Going to page that does not exist
 Scenario: Logging in with multiple applications
   Given I go to the open applications page
   Then I will see 4 open applications
-  And I will see a button to edit a CDL application id 1
-  And I will see a button to edit a DL application id 2
-  And I will see a button to edit an ID and DL application id 3
-  And I will see a button to edit ID and DL application id 4
+  And I will see a section to edit a CDL application id 1
+  And I will see a section to edit a DL application id 2
+  And I will see a section to edit an ID and DL application id 3
+  And I will see a section to edit ID and DL application id 4
   When I click on the button to edit id 1
   Then I will be on the CDL summary
   And I will see my cdl info saved in the summary

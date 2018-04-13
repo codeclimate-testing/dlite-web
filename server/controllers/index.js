@@ -10,7 +10,7 @@ const sendZip           = require('./send-zip');
 const checkAuth         = require('./check-auth');
 const sameUserOnly      = require('./same-user-only');
 const isUserLoggedIn    = require('./is-user-logged-in');
-
+const sendAppEnv        = require('./send-app-env');
 
 let controllers = {
   getApplication,
@@ -22,7 +22,8 @@ let controllers = {
   sendZip,
   checkAuth,
   sameUserOnly,
-  isUserLoggedIn
+  isUserLoggedIn,
+  sendAppEnv
 };
 
 const auth = require('./auth');

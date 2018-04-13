@@ -11,6 +11,8 @@ import flow                 from './app-type';
 import chooseApp            from './choose-app';
 import language             from './language';
 import isLoggedIn           from './is-logged-in';
+import timeout              from './timeout';
+import adaTst               from './ada-tst';
 
 const rootReducer = combineReducers({
   focus,
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
   flow  ,
   chooseApp,
   language,
-  isLoggedIn
+  isLoggedIn,
+  timeout,
+  adaTst
 });
 
 export default rootReducer;

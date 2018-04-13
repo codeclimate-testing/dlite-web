@@ -2,10 +2,10 @@
 
 import assert                   from 'assert';
 import { spy }                  from 'sinon';
-import { isLoggedIn }           from '../../../client/actions/get-auth-status';
+import { getAuthStatus }        from '../../../client/actions/get-auth-status';
 
-describe('isLoggedIn() action', function() {
-  let dispatch, response, fetcher, url;
+describe('getAuthStatus() action', function() {
+  let dispatch, response, fetcher, url, actionFunction;
 
   beforeEach(function() {
     response = {
@@ -19,17 +19,16 @@ describe('isLoggedIn() action', function() {
       url = fetchPath;
       return Promise.resolve(response)
     };
+    actionFunction = getAuthStatus(dispatch);
   });
 
   it('calls fetch on the right api endpoint', function() {
-    let actionFunction = isLoggedIn(fetcher);
-    actionFunction(dispatch);
+    actionFunction(fetcher);
     assert.equal(url, '/api/isLoggedIn');
   });
 
   it('dispatches action to update redux', function() {
-    let actionFunction = isLoggedIn(fetcher);
-    actionFunction(dispatch).then((res) => {
+    actionFunction(fetcher).then((res) => {
       let action = dispatch.getCall(0).args[0];
       assert.deepEqual(action,{
         type: 'UPDATE_LOGGED_IN',

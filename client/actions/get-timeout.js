@@ -1,12 +1,13 @@
 'use strict';
 
 import fetch          from 'isomorphic-fetch';
+
 require('es6-promise').polyfill();
 
-export const getAuthStatus = (dispatch) => {
+export const getTimeout = (dispatch) => {
   return function (fetcher = fetch) {
 
-    return fetcher('/api/isLoggedIn',{
+    return fetcher('/api/get-app-env',{
       method: 'GET',
       credentials: 'same-origin',
       headers: {
@@ -19,25 +20,32 @@ export const getAuthStatus = (dispatch) => {
           return res.json();
         }
         else{
-          throw new Error('login-fail');
+          throw new Error('app-env-fail');
         }
       })
       .then(function (data) {
         dispatch({
-          type: 'UPDATE_LOGGED_IN',
+          type: 'UPDATE_APP_TIMEOUT',
           payload: {
-            value: data.status,
+            name: 'timeout',
+            value: data.timeout,
           }
         });
-        return data;
+        dispatch({
+          type: 'UPDATE_ADA_TST',
+          payload: {
+            name: 'ada',
+            value: data.adaTst,
+          }
+        });
+        return data.timeout;
+      })
+      .then((timeout) => {
+        return timeout;
       })
       .catch( function(err){
-        dispatch({
-          type: 'UPDATE_LOGGED_IN',
-          payload: {
-            value: false,
-          }
-        });
+        console.log(err);
+        return '600000';
       });
   }
-}
+};

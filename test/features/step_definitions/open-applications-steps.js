@@ -7,15 +7,15 @@ module.exports = function(world) {
 
   world.then('I will see 4 open applications', function(done){
     browser
-      .exists('.question.1')
-      .exists('.question.2')
-      .exists('.question.3')
-      .exists('.question.4')
+      .exists('.cdlLegalName.1.open-edit')
+      .exists('.legalName.2.open-edit')
+      .exists('.legalName.3.open-edit')
+      .exists('.legalName.4.open-edit')
       .then(() => { done(); })
       .catch(done);
   });
 
-  world.then('I will see a button to edit a CDL application id 1', function(done) {
+  world.then('I will see a section to edit a CDL application id 1', function(done) {
     browser
     .text()
     .then((text) => {
@@ -27,31 +27,31 @@ module.exports = function(world) {
     .catch(done);
   });
 
-  world.then('I will see a button to edit a DL application id 2', function(done) {
+  world.then('I will see a section to edit a DL application id 2', function(done) {
     browser
     .text()
     .then((text) => {
       assert.ok(text.includes('DL person'), 'name not rendered');
       assert.ok(text.includes('Applying for a driver license'));
-      assert.ok(text.includes('Submitted: '));
+      assert.ok(text.includes('Submitted:'));
     })
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.then('I will see a button to edit an ID and DL application id 3', function(done) {
+  world.then('I will see a section to edit an ID and DL application id 3', function(done) {
     browser
     .text()
     .then((text) => {
       assert.ok(text.includes('new ID and DL person'), 'name not rendered');
       assert.ok(text.includes('Applying for a driver license and an ID card'));
-      assert.ok(text.includes('Submitted: '));
+      assert.ok(text.includes('Submitted:'));
     })
     .then(() => { done(); })
     .catch(done);
   });
 
-  world.then('I will see a button to edit ID and DL application id 4', function(done) {
+  world.then('I will see a section to edit ID and DL application id 4', function(done) {
     browser
     .text()
     .then((text) => {

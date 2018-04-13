@@ -15,7 +15,6 @@ import { NotFound }                   from './page-not-found.jsx';
 
 
 const PrivateRoute = (props) => {
-
   if (requireLogIn(props.location.pathname, props.isLoggedIn)) {
     return (<Redirect to={{pathname: `${signInURL()}`}} />)
   }
@@ -25,7 +24,7 @@ const PrivateRoute = (props) => {
       <Switch>
         <Route path={ alicePath('/cdl/*')}             exact component={CDLRoutes} />
         <Route path={ alicePath('/id-and-license/*')}  exact component={IDDLRoutes}/>
-        <Route path='*'                                       component={NotFound } />
+        <Route path='*'                                     component={NotFound } />
       </Switch>
     );
   }

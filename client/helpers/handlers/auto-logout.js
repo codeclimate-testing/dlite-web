@@ -5,7 +5,8 @@ import { logOut }           from '../../actions/log-out';
 import { updateLoggedIn }   from '../../actions/index';
 
 class AutoLogout {
-  constructor(history, dispatch) {
+  constructor(history, dispatch, timeout) {
+
     this.events = ['load', 'mousedown', 'touchstart',
                    'click', 'keypress'];
 
@@ -14,6 +15,7 @@ class AutoLogout {
     this.resetTimeout = this.resetTimeout.bind(this);
     this.history = history;
     this.dispatch = dispatch;
+    this.timeout = timeout;
 
     for(var i in this.events) {
       window.addEventListener(this.events[i], this.resetTimeout);
@@ -31,8 +33,9 @@ class AutoLogout {
   }
 
   setTimeout() {
+
     //this.warnTimeout = setTimeout(this.warn, 1.83 * 60 * 1000);
-    this.logoutTimeout = setTimeout(this.logout, 2 * 60 * 1000);
+    this.logoutTimeout = setTimeout(this.logout, this.timeout);
   }
 
   resetTimeout(e) {

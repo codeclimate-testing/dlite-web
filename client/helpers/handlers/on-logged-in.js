@@ -1,18 +1,6 @@
 'use strict';
 import { getUserData }                  from '../../actions/get-user-data';
-import getTranslation                   from '../../actions/get-translation';
-import { isLoggedIn }                   from '../../actions/get-auth-status';
-import {
-  updateLanguage,
-  chooseApp
- } from '../../actions/index';
 import { nextPath }                     from '../navigation/page';
-import { doNotNeedToLoadTranslations }  from '../data/translator';
-import { parseChooseApp }               from '../data/application';
-import {
-  getLanguageFromCookie,
-  getAppNameCookie
- } from '../data/cookies';
 import AutoLogout                       from './auto-logout';
 import {
   getAppKey,
@@ -20,27 +8,12 @@ import {
 } from '../data/pathnames';
 
 export default (dispatch) => {
-  return (uuid, history) => {
+  return (uuid, history, timeout, appName) => {
 
-    //Set auto logout after user inactivity
-    new AutoLogout(history, dispatch);
-
-    dispatch(isLoggedIn());
-
-    let cookieLanguage = getLanguageFromCookie();
-    dispatch(updateLanguage('language', cookieLanguage));
-
-    if (!doNotNeedToLoadTranslations(cookieLanguage)) {
-      dispatch(getTranslation(cookieLanguage));
-    }
+    new AutoLogout(history, dispatch, timeout);
 
     dispatch(getUserData(uuid))
       .then((res) => {
-
-        let appName = getAppNameCookie();
-        let chosenApp = parseChooseApp(appName);
-        dispatch(chooseApp('chooseApplication', chosenApp));
-
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
           flow: '',
@@ -54,5 +27,5 @@ export default (dispatch) => {
 
         return history.push(pathURL);
       });
-  }
+  };
 };

@@ -25,6 +25,8 @@ import onFlowChange               from './on-flow-change';
 import onEmojiDebug               from './on-emoji-debug';
 import onLoggedIn                 from './on-logged-in';
 import newFlow                    from './new-flow';
+import saveLanguage               from './save-language';
+import saveAppType                from './save-app-type';
 
 export default {
   navigateOnBack,
@@ -41,5 +43,7 @@ export default {
   navigateOrShowErrors,
   onEmojiDebug,
   onLoggedIn,
-  newFlow
+  newFlow,
+  saveLanguage,
+  saveAppType
 };
