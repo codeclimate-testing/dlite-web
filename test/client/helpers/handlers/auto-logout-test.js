@@ -67,4 +67,3 @@ describe('auto logout class', function() {
     });
   });
 });
-
