@@ -9,7 +9,7 @@ const SectionHeader = (props) => {
   if (!hasValue(props.name)) { return null; }
 
   return (
-    <p className='row secondary-header'>
+    <p id='section-header' className='row secondary-header' tabIndex='-1'>
       {props.name || '&nbsp;'}
     </p>
   );

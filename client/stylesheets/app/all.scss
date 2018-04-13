@@ -80,3 +80,8 @@ select:focus {
   justify-content: space-between;
   align-items: center;
 }
+
+#section-header:focus {
+  outline: none;
+  @include focus-outline;
+}
