@@ -39,7 +39,7 @@ export default (dispatch) => {
 
         let appName = getAppNameCookie();
         let chosenApp = parseChooseApp(appName);
-        dispatch(chooseApp(chosenApp));
+        dispatch(chooseApp('chooseApplication', chosenApp));
 
         let pageKey = getAppKey(appName);
         let pathURL = nextPath(pageKey, {
