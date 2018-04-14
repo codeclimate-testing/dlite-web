@@ -14,12 +14,12 @@ else{
   redisClient   = require('redis').createClient(redisUrl);
 }
 
-redisClient.on('connect', (err) => {
+redisClient.on('connect', ( ) => {
   console.log('connected to redis successfully');
 });
 
 redisClient.on('error', (err) => {
-  console.log('error connecting to redis');
+  console.log('error connecting to redis', err);
 });
 
 let fileConfig;
@@ -39,17 +39,13 @@ if(!redisUrl) {
   config = {
     client: redisClient,
     port: fileConfig.port,
-    host: fileConfig.host,
-    db: 1,
-    ttl: 360
+    host: fileConfig.host
   };
 }
 else {
   config = {
     client: redisClient,
     url: redisUrl,
-    ttl: 360,
-    db: 1,
     logErrors: true
   };
 }
