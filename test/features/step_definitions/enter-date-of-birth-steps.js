@@ -228,7 +228,7 @@ module.exports = function(world) {
     var day = 10;
     var year = novemberOrLater ? (d.getFullYear() - 17 ): (d.getFullYear() - 18);
 
-    console.log(month.toString() + '/' + day.toString() + '/' + year.toString());
+    console.log(day + '/' + month + '/' + year);
 
     browser
       .type('#month', month.toString())
