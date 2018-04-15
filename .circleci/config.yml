@@ -26,7 +26,7 @@ jobs:
             git config --global user.email "ben.damman@state.ca.gov" \
             && git config --global user.name "Ben Damman (circleci)" \
             && git checkout no-auth \
-            && git pull \
+            && git pull origin no-auth \
             && git rebase master
       - run:
           name: Build TST Alice
