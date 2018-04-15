@@ -47,8 +47,7 @@ module.exports = function (world) {
     browser
       .text()
       .then((text) => {
-        assert(text.includes('Bring your required documents'), 'Bring your required documents is not present');
-        assert(text.includes('Make an appointment'), 'Make an appointment is not present');
+        assert(text.includes('We\'ve received your information.'), 'We\'ve received your information not present');
       })
       .then(() => { done(); })
       .catch(done);
