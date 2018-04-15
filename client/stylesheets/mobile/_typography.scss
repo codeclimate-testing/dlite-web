@@ -127,6 +127,7 @@ body .locale-tall {
 
   h3 {
     font-size: $em * 1.333;
+    word-wrap: break-word;
   }
 
   input[type=submit],
