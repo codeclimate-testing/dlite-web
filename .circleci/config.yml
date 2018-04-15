@@ -21,6 +21,14 @@ jobs:
             docker build -t 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-alice:latest \
             -t stateofca/dmv-alice:latest .
       - run:
+          name: Checkout and update no-auth branch for TST and ADA
+          command: |
+            git config --global user.email "ben.damman@state.ca.gov" \
+            && git config --global user.name "Ben Damman (circleci)" \
+            && git checkout no-auth \
+            && git pull \
+            && git rebase master
+      - run:
           name: Build TST Alice
           command: |
             docker build -t 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-tst-alice:latest \
