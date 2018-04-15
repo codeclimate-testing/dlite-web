@@ -38,7 +38,7 @@ export const getTimeout = (dispatch) => {
             value: data.adaTst,
           }
         });
-        return data.timeout;
+        return data;
       })
       .then((timeout) => {
         return timeout;

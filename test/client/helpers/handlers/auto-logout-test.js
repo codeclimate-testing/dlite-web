@@ -6,7 +6,7 @@ import AutoLogout   from '../../../../client/helpers/handlers/auto-logout';
 import { createMemoryHistory }  from 'history';
 
 describe('auto logout class', function() {
-  let history, dispatch, event, auto, setTimeout, timeout;
+  let history, dispatch, event, auto, setTimeout, tstData;
 
   beforeEach(function() {
     history = createMemoryHistory('/');
@@ -18,8 +18,11 @@ describe('auto logout class', function() {
       addEventListener: sinon.spy(),
       removeEventListener: sinon.spy()
     };
-    timeout = '600000';
-    auto              = new AutoLogout(history, dispatch, timeout);
+    tstData = {
+      timeout: '600000',
+      adaTst: false
+    };
+    auto              = new AutoLogout(dispatch, tstData);
     auto.setTimeout   = sinon.spy();
     auto.destroy      = sinon.spy();
     auto.clearTimeout = sinon.spy();
@@ -32,7 +35,6 @@ describe('auto logout class', function() {
       assert.ok(auto.hasOwnProperty('logout'));
       assert.ok(auto.hasOwnProperty('warn'));
       assert.ok(auto.hasOwnProperty('resetTimeout'));
-      assert.ok(auto.hasOwnProperty('history'));
       assert.ok(auto.hasOwnProperty('dispatch'));
     });
     it('adds event listeners to all the events in the events array', function() {
@@ -43,7 +45,7 @@ describe('auto logout class', function() {
       assert.ok(window.addEventListener.calledWith('keypress'));
     });
     it('calls setTimeout', function() {
-      auto.constructor(history, dispatch);
+      auto.constructor(dispatch, tstData);
       assert.ok(auto.setTimeout.called);
     });
   });

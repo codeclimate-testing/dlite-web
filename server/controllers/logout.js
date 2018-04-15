@@ -10,7 +10,7 @@ const logout = (req, res) => {
 
   const TSTNotADA = process.env.TST_ENV && process.env.TST_ENV.toString() === 'true' && process.env.ADA_TST.toString() === 'false';
   if (TSTNotADA) {
-    res.redirect(process.env.TST_SPLASH_SCREEN_URL);
+    res.redirect(process.env.TST_SPLASH_SCREEN_URL.toString());
   }
   else {
     res.redirect('/apply/choose-language');

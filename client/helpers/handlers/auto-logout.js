@@ -5,16 +5,16 @@ import { logOut }           from '../../actions/log-out';
 import { updateLoggedIn }   from '../../actions/index';
 
 class AutoLogout {
-  constructor(history, dispatch, timeout) {
+  constructor(dispatch, tstData) {
     this.events = ['load', 'mousedown', 'touchstart',
                    'click', 'keypress'];
 
     this.warn = this.warn.bind(this);
     this.logout = this.logout.bind(this);
     this.resetTimeout = this.resetTimeout.bind(this);
-    this.history = history;
     this.dispatch = dispatch;
-    this.timeout = timeout;
+    this.tstData = tstData;
+    this.timeout = tstData.timeout;
 
     for(var i in this.events) {
       window.addEventListener(this.events[i], this.resetTimeout);
@@ -47,13 +47,9 @@ class AutoLogout {
   }
 
   logout() {
-    let that = this;
-
-    this.dispatch(logOut(that.history))
-    .then(() => {
-      that.dispatch(updateLoggedIn(false));
-      that.destroy();
-    });
+    let tstData = this.tstData;
+    this.dispatch(logOut(tstData));
+    this.destroy();
   }
 
   destroy() {
