@@ -1,11 +1,10 @@
 'use strict';
 
 import fetch          from 'isomorphic-fetch';
-import { signInURL }  from '../helpers/data/pathnames';
 
 require('es6-promise').polyfill();
 
-export const logOut = (history) => {
+export const logOut = (tstData, location = window.location, fetcher = fetch) => {
   return (dispatch) => {
     dispatch({
       type: 'UPDATE_LOGGED_IN',
@@ -13,16 +12,21 @@ export const logOut = (history) => {
         value: false
       }
     });
-    return fetch('/apply/log-out', {
+
+    if (TST_ENV.toString() === 'true' && tstData.adaTst.toString() === 'false') {
+      location.href = tstData.splashURL;
+    }
+
+    return fetcher('/apply/log-out', {
       method: 'GET',
       credentials: 'same-origin',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain'
       }
     })
-    .then(() => {
-      return history.push(signInURL());
+    .then((res) => {
+      location.href = res.url;
     });
   };
 };

@@ -11,11 +11,9 @@ const LoggedIn = (props) => {
   props.saveLanguage();
   props.isLoggedIn();
 
-  let timeout;
   props.getAppEnv()
   .then((res) => {
-    timeout = res;
-    props.onLoggedIn(uuid, props.history, timeout, appName);
+    props.onLoggedIn(uuid, res, appName);
   });
 
   return null;
