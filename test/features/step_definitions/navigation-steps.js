@@ -38,6 +38,9 @@ module.exports = function(world) {
   world.when('I go to the choose language page', function(done) {
     navigateToPath('/apply/choose-language/', '.choose-language-form' , done);
   });
+  world.when('I go to the choose application page', function(done) {
+    navigateToPath('/apply/choose-application/', '.choose-application-form' , done);
+  });
 
   world.when('I go to the choose application page', function(done) {
     navigateToPath('/apply/choose-application/', '.choose-application-form' , done);
