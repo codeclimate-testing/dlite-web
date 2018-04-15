@@ -1,6 +1,6 @@
 # dlite-web
 
-[![Build Status](https://travis-ci.org/stateofca/dlite-web.svg?branch=master)](https://travis-ci.org/stateofca/dlite-web) [![Code Climate](https://codeclimate.com/github/stateofca/dlite-web/badges/gpa.svg)](https://codeclimate.com/github/stateofca/dlite-web) [![Test Coverage](https://codeclimate.com/github/stateofca/dlite-web/badges/coverage.svg)](https://codeclimate.com/github/stateofca/dlite-web/coverage)
+[![CircleCI](https://circleci.com/gh/stateofca/dlite-web.svg?style=svg)](https://circleci.com/gh/stateofca/dlite-web) [![Code Climate](https://codeclimate.com/github/stateofca/dlite-web/badges/gpa.svg)](https://codeclimate.com/github/stateofca/dlite-web) [![Test Coverage](https://codeclimate.com/github/stateofca/dlite-web/badges/coverage.svg)](https://codeclimate.com/github/stateofca/dlite-web/coverage)
 
 ## Setup
 
