@@ -1,0 +1,42 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              docker-compose==1.12.0 \
+              awscli==1.11.76
+      - run:
+          name: Build Public Alice
+          command: |
+            docker build -t 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-alice:latest \
+            -t stateofca/dmv-alice:latest .
+      - run:
+          name: Build TST Alice
+          command: |
+            docker build -t 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-tst-alice:latest \
+            -t stateofca/dmv-tst-alice:latest .
+      - run:
+          name: Build ADA Alice
+          command: |
+            docker build -t 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-ada-alice:latest \
+            -t stateofca/dmv-ada-alice:latest .
+      - deploy:
+          name: Push all docker images to private registry
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              login="$(aws ecr get-login --region us-west-1)"
+              ${login}
+              docker push 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-alice:latest
+              docker push 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-tst-alice:latest
+              docker push 573936959289.dkr.ecr.us-west-1.amazonaws.com/stateofca/dmv-ada-alice:latest
+            fi
