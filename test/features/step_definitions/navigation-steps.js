@@ -30,25 +30,24 @@ module.exports = function(world) {
   world.when('I go to a page that does not exist', function(done){
     navigateToPath('/apply/no-page-here', '.page-row', done);
   });
+  world.when('I visit the page to choose application', function(done) {
+    navigateToPath('/apply/choose-application/', '.choose-application-form' , done);
+  });
+
+  world.when('I go to the choose language page', function(done) {
+    navigateToPath('/apply/choose-language/', '.choose-language-form' , done);
+  });
+  world.when('I go to the logged in page', function(done) {
+    navigateToPath('/apply/logged-in/3f', '.open-applications', done);
+  });
 
   /* IDDL NavigateToPath */
   world.when('I go to the page with my summary', function(done){
     navigateToPath('/apply/id-and-license/summary', '.summary', done);
   });
-  world.when('I go to the choose language page', function(done) {
-    navigateToPath('/apply/choose-language/', '.choose-language-form' , done);
-  });
 
   world.when('I go to the IDDL sign-in page', function(done) {
     navigateToPath('/apply/id-and-license/sign-in', '.id-me', done);
-  });
-
-  world.when('I go to the logged in page', function(done) {
-    navigateToPath('/apply/logged-in/3f', '.open-applications', done);
-  });
-
-  world.when('I visit the page to choose application language', function(done) {
-    navigateToPath('/apply/choose-language', '.choose-language-form', done);
   });
 
   world.when('I visit the addresses page', function(done) {

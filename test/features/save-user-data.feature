@@ -5,13 +5,13 @@ Feature: Save user data
 
 Scenario: Choosing a non-English language
   Given I go to the new online DL application page
-  When I visit the page to choose application language
+  When I go to the choose language page
   When I choose Thai as my application language
   And I click to continue
   When I visit ballot language page
   Then I will see the text is in Thai
   And I will see the language I chose is selected
-  When I visit the page to choose application language
+  When I go to the choose language page
   Then I choose English as my application language
 
 Scenario: renewing one ID and no social

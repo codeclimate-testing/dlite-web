@@ -5,7 +5,7 @@ So that I can get what I need easily
 
 Scenario: Navigating to the start of the CDL or ID/DL application after choosing
   Given I go to the new online DL application page
-  And I visit the page to choose application language
+  And I go to the choose language page
   When I click to continue
   Then I will be on the page to choose application
   When I select a commercial DL application
@@ -15,9 +15,10 @@ Scenario: Navigating to the start of the CDL or ID/DL application after choosing
   When I click "Next" to continue
   Then I will be on the cdl id.me page
 
-
 Scenario: New CDL
   Given I go to the new online DL application page
+  And I visit the page to choose application
+  When I select a commercial DL application
   When I visit the CDL name page
   When I click "Next" to continue
   Then I will see an error message telling me to enter my name
@@ -27,9 +28,7 @@ Scenario: New CDL
   When I click to go back
   Then I will be on the CDL name page
   And I click "Next" to continue
-  When I click "Next" to continue
-  Then I will see an error message telling me to enter a valid date
-  When I indicate that I am between 17.5 and 18
+  When I indicate that I am turning 18 today
   Then I will see an info message box show up letting me know limitations on my CDL based on my age
   When I click "Next" to continue
   Then I will be on the CDL WDYWTDT page
@@ -146,7 +145,7 @@ Scenario: New CDL
   And I will see my name on that summary
   And I will see that I am applying for a new CDL
   And I will see that I am applying for a class A license
-  And I will see my between 17.5 and 18 dob on that summary
+  And I will see my 18 dob on that summary
   And I will see my home address on that summary
   And I will see my social security on that summary
   And I will see I selected to get a tank endorsement

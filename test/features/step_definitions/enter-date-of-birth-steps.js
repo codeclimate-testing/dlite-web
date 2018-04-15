@@ -45,14 +45,34 @@ module.exports = function(world) {
         // calculate a date of under 18
         var novemberOrLater = d.getMonth() >= 10;
         var month = novemberOrLater ? (12 - d.getMonth()) : (d.getMonth() + 2);
-        var day = '10' ;
+        var day = 10;
         var year = novemberOrLater ? (d.getFullYear() - 17 ): (d.getFullYear() - 18);
 
-        assert(text.includes(month.toString() + '/' + day + '/' + year.toString()), 'date of birth missing');
+        assert(text.includes(month.toString() + '/' + day.toString() + '/' + year.toString()), 'date of birth missing');
       })
       .then(() => { done(); })
       .catch(done);
   });
+
+  world.then('I will see my 18 dob on that summary', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        var d = new Date();
+
+        var month = d.getMonth() + 1;
+        var day = d.getDate() ;
+        var year = d.getFullYear() - 18;
+        console.log(month + '/' + day + '/' + year);
+
+        assert(text.includes(month.toString()));
+        assert(text.includes(day.toString()));
+        assert(text.includes(year.toString()));
+      })
+      .then(() => { done(); })
+      .catch(done);
+  });
+
 
   world.and('I have already entered my date of birth', function(done) {
     browser
@@ -205,13 +225,16 @@ module.exports = function(world) {
     // calculate a date of under 18
     var novemberOrLater = d.getMonth() >= 10;
     var month = novemberOrLater ? (12 - d.getMonth()) : (d.getMonth() + 2);
-    var day = '10' ;
+    var day = 10;
     var year = novemberOrLater ? (d.getFullYear() - 17 ): (d.getFullYear() - 18);
+
+    console.log(month.toString() + '/' + day.toString() + '/' + year.toString());
 
     browser
       .type('#month', month.toString())
-      .type('#day', day)
+      .type('#day', day.toString())
       .type('#year', year.toString())
+      .waitForSelector('.message-box')
       .then(() => { done(); })
       .catch(done);
   });
@@ -221,6 +244,9 @@ module.exports = function(world) {
     var month = d.getMonth() + 1;
     var day = d.getDate() ;
     var year = d.getFullYear() - 18;
+
+    console.log(month + '/' + day + '/' + year);
+
     browser
       .type('#month', month.toString())
       .type('#day', day.toString())

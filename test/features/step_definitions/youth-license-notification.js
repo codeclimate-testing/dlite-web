@@ -75,11 +75,22 @@ module.exports = function (world) {
 
   world.then('I will see an info message box show up letting me know limitations on my CDL based on my age', function(done) {
     browser
-      .text('.message-box')
-      .then( text => {
+      .text()
+      .then( (text) => {
         assert(text.includes('Applicants under 21 years of age are not allowed to engage in interstate commerce or transport hazardous materials.'), 'message not on page')
       })
-      .then(done)
+      .then( () => { done(); })
+      .catch(done);
+  });
+
+
+  world.then('I will see an info message box letting me know I must be 18 years or older', function(done) {
+    browser
+      .text()
+      .then((text) => {
+        assert(text.includes('You must be 18 years or older to apply for a commercial driver license in California.'), 'text not rendered');
+      })
+      .then(() => { done(); })
       .catch(done);
   });
 
