@@ -6,7 +6,7 @@ const logout = (req, res) => {
   req.logout();
   req.session.destroy();
   res.clearCookie('appName');
-  res.clearCookie('dlite-web-session');
+  //res.clearCookie('dlite-web-session');
 
   if (!appName || appName.length < 1) {
     res.redirect('/apply/choose-language');
