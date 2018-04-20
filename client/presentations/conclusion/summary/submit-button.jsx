@@ -8,7 +8,7 @@ const SubmitButton = (props) => {
 
   return (
     <div className='navigation-buttons row' key='save-and-continue'>
-      <button type='submit' className='arrow-button forward submit'>
+      <button type='submit' className='arrow-button forward submit right'>
         { submitText }
       </button>
     </div>
