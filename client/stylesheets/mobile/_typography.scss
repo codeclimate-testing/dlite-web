@@ -130,6 +130,12 @@ body .locale-tall {
     word-wrap: break-word;
   }
 
+  .scrollbox,
+  .scrollbox > p,
+  .scrollbox > h3 {
+    word-wrap: break-word;
+  }
+
   input[type=submit],
   a.button,
   div.button,

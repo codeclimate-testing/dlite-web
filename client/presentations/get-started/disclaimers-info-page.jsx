@@ -5,7 +5,7 @@ import Translator   from '../../i18n/translator-tag.jsx';
 
 const MedicalItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.medical.title'
@@ -42,7 +42,7 @@ const MedicalItems = (props) => {
 
 const VeteransItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.veteran.title'
@@ -63,7 +63,7 @@ const VeteransItems = (props) => {
 
 const OrganDonationItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.organDonation.title'
@@ -80,7 +80,7 @@ const OrganDonationItems = (props) => {
 const VoterRegistrationItems = (props) => {
   if(props.chooseApp === 'cdl') { return null;} 
     return (
-      <div>
+      <div className='scrollbox'>
         <Translator
           tag='h3'
           translationPath='disclaimers.voterRegistration.title'
@@ -113,7 +113,7 @@ const VoterRegistrationItems = (props) => {
 
 const CriminalProsecutionItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.criminalProsecution.title'
@@ -134,7 +134,7 @@ const CriminalProsecutionItems = (props) => {
 
 const FinancialResponsibilityItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.financialResponsibility.title'
@@ -155,7 +155,7 @@ const FinancialResponsibilityItems = (props) => {
 
 const PaymentRefundsItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.paymentRefunds.title'
@@ -177,7 +177,7 @@ const PaymentRefundsItems = (props) => {
 const PrivacyItems = (props) => {
   if(props.chooseApp === 'cdl') { return null; }
     return (
-      <div>
+      <div className='scrollbox'>
         <Translator
           tag='h3'
 
@@ -227,7 +227,7 @@ const PrivacyItems = (props) => {
 
 const CertificationsItems = (props) => {
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.certifications.title'
@@ -277,7 +277,7 @@ const CertificationsItems = (props) => {
 const CDLDrivingTypesItems = (props) => {
   if(props.chooseApp !== 'cdl') { return null; }
     return (
-      <div>
+      <div className='scrollbox'>
         <Translator
           tag='h3'
           translationPath='disclaimers.cdl.drivingTypes.title'
@@ -307,7 +307,7 @@ const CDLDrivingTypesItems = (props) => {
 const CDLVoterRegistrationItems = (props) => {
   if(props.chooseApp !== 'cdl') { return null; }
   return (
-    <div>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.cdl.voterRegistration.title'
@@ -345,7 +345,7 @@ const CDLVoterRegistrationItems = (props) => {
 const CDLPrivacyItems = (props) => {
   if(props.chooseApp !== 'cdl') { return null;}
     return (
-      <div>
+      <div className='scrollbox'>
         <Translator
           tag='h3'
 

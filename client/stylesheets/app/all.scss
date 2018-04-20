@@ -57,6 +57,7 @@ select:focus {
 .scroll-content {
   flex: 1;
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: scrollbar;
   border: $border-width solid $darkest-blue;
   padding: $spacing / 2;
