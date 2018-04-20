@@ -33,13 +33,20 @@ select {
   border: 1px solid gray;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
   @include border-bottom-radius($border-radius-size);
   @include border-left-radius($border-radius-size);
   @include border-right-radius($border-radius-size);
   margin-bottom: $spacing;
   padding: $spacing / 2;
-  background: url("/images/icons/misc/dropdown.svg") no-repeat;
+  background: url("/images/icons/misc/dropdown.svg") no-repeat right;
   background-position: calc(100% - 10px) center;
+  text-overflow: '';
+}
+
+select::-ms-expand { 
+  display: none;
 }
 
 select:focus {
