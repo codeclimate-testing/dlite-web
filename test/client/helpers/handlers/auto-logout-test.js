@@ -18,10 +18,7 @@ describe('auto logout class', function() {
       addEventListener: sinon.spy(),
       removeEventListener: sinon.spy()
     };
-    tstData = {
-      timeout: '600000',
-      adaTst: false
-    };
+
     auto              = new AutoLogout(dispatch);
     auto.setTimeout   = sinon.spy();
     auto.destroy      = sinon.spy();
@@ -45,14 +42,14 @@ describe('auto logout class', function() {
       assert.ok(window.addEventListener.calledWith('keypress'));
     });
     it('calls setTimeout', function() {
-      auto.constructor(dispatch, tstData);
+      auto.constructor(dispatch);
       assert.ok(auto.setTimeout.called);
     });
   });
 
   describe('setTimeout', function() {
-    it('sets timeout to 10 minutes', function() {
-      assert.equal(auto.logoutTimeout._idleTimeout, 600000);
+    it('sets timeout to APP_TIMEOUT value', function() {
+      assert.equal(auto.logoutTimeout._idleTimeout, APP_TIMEOUT);
     });
     it('sets timeout to callback this.logout', function() {
       assert.deepEqual(auto.logoutTimeout._onTimeout, auto.logout);

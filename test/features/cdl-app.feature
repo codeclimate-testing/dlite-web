@@ -5,7 +5,7 @@ So that I can get what I need easily
 
 # Scenario: Navigating to the start of the CDL or ID/DL application after choosing
 #   Given I go to the new online DL application page
-#   And I visit the page to choose application language
+#   And I go to the choose application page language
 #   When I click to continue
 #   Then I will be on the page to choose application
 #   When I select a commercial DL application
