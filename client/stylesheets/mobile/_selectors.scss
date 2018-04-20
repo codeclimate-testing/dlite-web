@@ -322,7 +322,9 @@
     .input-container{
       margin: 1px 0px;
       width: 120%;
-      margin-left: -20px;
+      .text-input-block{
+        min-width: 230px;
+      }
     }
   }
 }
