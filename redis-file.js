@@ -19,7 +19,9 @@ redisClient.on('connect', ( ) => {
 });
 
 redisClient.on('error', (err) => {
-  console.log('error connecting to redis', err);
+  throw new Error(
+    `Error connecting to REDIS with REDIS_URL = ${redisUrl} `
+  );
 });
 
 let fileConfig;
