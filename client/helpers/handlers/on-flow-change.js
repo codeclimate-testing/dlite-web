@@ -8,7 +8,6 @@ import {
 
 export default (dispatch) =>  {
   return (flow, cardType) => {
-
     dispatch(addApp(flow));
 
     // if adding a new card, clear the cardAction

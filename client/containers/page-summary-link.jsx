@@ -9,25 +9,15 @@ import onFlowChangeGenerator    from '../helpers/handlers/on-flow-change-generat
 import { getData }              from '../actions/api-actions';
 
 const PageSummaryLink = (props) => {
-  let linkType = props.linkType || 'summary-edit';
-
-  let flow = getFlow(linkType);
-
-  let onClick = onFlowChangeGenerator(props, flow, linkType);
 
   return (
     <Presentation
       {...props}
-      linkType    = { linkType }
-      onClick     = { onClick }
-      flow        = { flow }
     />
   )
 };
 
-const mapStateToProps = (state) => {
-  return state;
-};
+
 const mapDispatchToProps = (dispatch) => {
   const onFlowChange      = handlers.onFlowChange(dispatch);
   const newFlow           = handlers.newFlow(dispatch);
@@ -40,4 +30,14 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageSummaryLink);
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  let linkType = ownProps.linkType || 'summary-edit';
+  let flow = getFlow(linkType);
+
+  let props = Object.assign({}, ...[ownProps, dispatchProps, {flow: flow, linkType: linkType}]);
+  props.onClick = onFlowChangeGenerator(props, flow, linkType);
+
+  return props;
+}
+
+export default connect(null, mapDispatchToProps, mergeProps)(PageSummaryLink);
