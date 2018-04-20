@@ -1204,7 +1204,7 @@
           "interstate": "Conducción interestatal sin excepción"
         },
         "notSure": {
-          "expected": {
+          "excepted": {
             "explanation": "Algunos estados emiten una licencia de conducir comercial que <b> <em> no </ em> </ b> exige que los conductores cumplan con los requisitos descritos en CFR, Título 49 §391. Esos controladores se consideran controladores \"exceptuados\". California no emite ese tipo de licencia. Todos los conductores con licencia de California para conducir vehículos comerciales son <em> conductores no exceptuados </ em>.",
             "title": "<b> Licencia esperada y no esperada </ b>"
           },

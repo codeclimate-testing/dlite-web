@@ -1169,7 +1169,7 @@
               "Sa pagitan ng dalawang lugar sa estado bilang bahagi ng kalakalan, trapiko, o transportasyon na nagmula o nagwawakas sa labas ng Estado o sa A"
             ]
           },
-          "expected": {
+          "excepted": {
             "explanation": "Ang ilang mga estado ay nag-isyu ng komersyal na lisensya sa pagmamaneho na ang <b> <em> hindi </ em> </ b> ay nangangailangan ng mga driver upang matugunan ang mga kwalipikasyon na nakabalangkas sa CFR, Titulo 49 §391. Ang mga drayber ay itinuturing na \"maliban\" sa mga drayber. Hindi ibinibigay ng California ang ganitong uri ng lisensya. Ang lahat ng mga driver na lisensyado ng California upang magmaneho ng mga komersyal na sasakyan ay driver ng <em> hindi nakakaliban </ em>.",
             "title": "<b> Mga Inaasahang & Hindi Inaasahang Paglilisensya </ b>"
           }

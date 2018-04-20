@@ -44,12 +44,12 @@ const CertAccordion = (props) => {
 
       <Translator
         tag             = 'h4'
-        translationPath = 'newApproved.cdl.selfCertification.notSure.expected.title'
+        translationPath = 'newApproved.cdl.selfCertification.notSure.excepted.title'
       />
 
       <Translator
         tag             = 'p'
-        translationPath = 'newApproved.cdl.selfCertification.notSure.expected.explanation'
+        translationPath = 'newApproved.cdl.selfCertification.notSure.excepted.explanation'
       />
     </Accordion>
   )

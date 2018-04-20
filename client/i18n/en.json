@@ -1161,8 +1161,8 @@
             "title": "Intrastate Commerce",
             "explanation": "Means trade, traffic, or transportation in any state which is not described in the term “interstate commerce.”"
           },
-          "expected": {
-            "title": "<b>Expected & Non-Expected Licensing</b>",
+          "excepted": {
+            "title": "<b>Excepted & Non-Excepted Licensing</b>",
             "explanation": "Some states issues a commercial driver license that does <b><em>not</em></b> require drivers to meet the qualifications outlined in CFR, Title 49 §391. Those drivers are considered “excepted” drivers. California does not issue that kind of license. All drivers licensed by California to drive commercial vehicles are <em>non-excepted</em> drivers. "
           }
         },

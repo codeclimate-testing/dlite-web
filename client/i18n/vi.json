@@ -1218,7 +1218,7 @@
               "Giữa hai địa điểm trong tiểu bang như là một phần của thương mại, giao thông, hoặc phương tiện đi lại có nguồn gốc hoặc chấm dứt bên ngoài Tiểu bang hoặc Hoa Kỳ"
             ]
           },
-          "expected": {
+          "excepted": {
             "title": "<b> Giấy phép được cấp phép & không mong đợi </ b>",
             "explanation": "Một số tiểu bang cấp giấy phép lái xe thương mại mà <b> <em> không </ em> </ b> yêu cầu các trình điều khiển đáp ứng các tiêu chuẩn được nêu trong CFR, Tiêu đề 49 §391. Những tài xế này được xem là những người lái xe \"ngoại lệ\". California không cấp phép đó. Tất cả các trình điều khiển do California cấp phép lái xe thương mại là các trình điều khiển <em> không phải là ngoại lệ </ em>."
           }
