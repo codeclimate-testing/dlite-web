@@ -4,7 +4,19 @@ const voterChoiceConverter  = require('../voter-choice');
 
 function extractVotingRegistrations(data) {
 
-  if(data.voting.citizenStatus === '' || data.voting.eligibilityRequirements === '' || data.voting.optOut === '') { return null; }
+  if(data.voting.citizenStatus === '' || data.voting.eligibilityRequirements === '' || data.voting.optOut === '') {
+    return {
+      application_id:   data.id,
+      is_citizen:       data.voting.citizenStatus,
+      is_eligible:      data.voting.eligibilityRequirements,
+      type:             '',
+      opted_out:        '',
+      party:            '',
+      language:         data.voting.ballotLanguage,
+      vote_by_mail:     '',
+      should_contact:   ''
+    };
+  }
   const voterChoice = voterChoiceConverter.clientToDBMapping(data.voting.optOut);
   return {
     application_id:     data.id,
