@@ -5,7 +5,7 @@ import { spy }                  from 'sinon';
 import { logOut }               from '../../../client/actions/log-out';
 
 describe('logout action', function() {
-  let dispatch,response, fetcher, location, url, tstData;
+  let dispatch, response, fetcher, location, url;
 
   beforeEach(function() {
     response = {
@@ -14,10 +14,7 @@ describe('logout action', function() {
     };
 
     dispatch = spy();
-    tstData = {
-      adaTst: false,
-      splashURL: 'https://www.dmv.ca.gov/imageserver/theme/splash/index.html'
-    };
+
     location = {
       href: ''
     };
@@ -29,27 +26,27 @@ describe('logout action', function() {
   });
 
   it('calls fetch on /apply/log-out', function() {
-    let actionFunction = logOut(tstData, location, fetcher);
+    let actionFunction = logOut(location, fetcher);
     actionFunction(dispatch);
     assert.equal(url, '/apply/log-out');
   });
 
   describe('#TST', function() {
     it('redirects to choose-language if ADA', function() {
-      TST_ENV = true;
-      tstData.adaTst = true;
-      let actionFunction = logOut(tstData, location, fetcher);
+      APP_MODE = 'ada';
+
+      let actionFunction = logOut(location, fetcher);
       actionFunction(dispatch).then((res) => {
         assert.equal(res.url, response.url);
       });
     });
 
     it('redirects to tstData.splashURL if not ADA ', function() {
-      TST_ENV = true;
-      tstData.adaTst = false;
-      let actionFunction = logOut(tstData, location, fetcher);
+      APP_MODE = 'tst';
+      global.LOGOUT_URL = 'https://www.dmv.ca.gov/imageserver/theme/splash/index.html';
+      let actionFunction = logOut(location, fetcher);
       actionFunction(dispatch).then((res) => {
-        assert.equal(res.url, tstData.splashURL);
+        assert.equal(res.url, 'https://www.dmv.ca.gov/imageserver/theme/splash/index.html');
       });
     });
   });

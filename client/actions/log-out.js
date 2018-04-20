@@ -4,7 +4,7 @@ import fetch          from 'isomorphic-fetch';
 
 require('es6-promise').polyfill();
 
-export const logOut = (tstData, location = window.location, fetcher = fetch) => {
+export const logOut = (location = window.location, fetcher = fetch) => {
   return (dispatch) => {
     dispatch({
       type: 'UPDATE_LOGGED_IN',
@@ -13,8 +13,8 @@ export const logOut = (tstData, location = window.location, fetcher = fetch) => 
       }
     });
 
-    if (TST_ENV.toString() === 'true' && tstData.adaTst.toString() === 'false') {
-      location.href = tstData.splashURL;
+    if (APP_MODE === 'tst') {
+      location.href = LOGOUT_URL;
     }
 
     return fetcher('/apply/log-out', {

@@ -11,7 +11,6 @@ const routes = (passport) => {
   router.get( '/api/translation/:code',controllers.getTranslation);
   router.get( '/api/user/:uuid', controllers.checkAuth, controllers.sameUserOnly, controllers.getUserApps);
   router.get( '/api/isLoggedIn', controllers.isUserLoggedIn);
-  router.get( '/api/get-app-env', controllers.sendAppEnv);
 
   router.get( '/field-office-route/:appName/:language',       controllers.fieldOfficeRoute);
 

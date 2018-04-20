@@ -10,7 +10,7 @@ import { getErrorMessage }      from '../../helpers/data/api';
 const Presentation = (props) => {
   let authURL = `/auth/new/${props.appName}/${props.language}`;
 
-  if(TST_ENV){
+  if(APP_MODE === 'ada' || APP_MODE === 'tst'){
     authURL = `/field-office-route/${props.appName}/${props.language}`
     const simulateClick = (e) => {
       e.click()

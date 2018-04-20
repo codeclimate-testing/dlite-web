@@ -8,6 +8,8 @@ const CompressionPlugin   = require('compression-webpack-plugin');
 
 const childProcess = require('child_process');
 const GITHASH = process.env.SOURCE_VERSION ? process.env.SOURCE_VERSION: childProcess.execSync('git rev-parse HEAD').toString();
+let timeout = process.env.APP_TIMEOUT ? process.env.APP_TIMEOUT : "600000";
+let logoutURL = process.env.LOGOUT_URL ? process.env.LOGOUT_URL : "https://www.dmv.ca.gov/imageserver/theme/splash/index.html";
 
 let configDev = {
   entry: ['babel-polyfill', './client.js'],
@@ -43,7 +45,9 @@ let configDev = {
     new ExtractTextPlugin('app.dev.css'),
     new webpack.DefinePlugin({
       APP_ENV: JSON.stringify('development'),
-      TST_ENV: true
+      APP_MODE: JSON.stringify(process.env.APP_MODE),
+      APP_TIMEOUT: JSON.stringify(timeout),
+      LOGOUT_URL: JSON.stringify(logoutURL)
     }),
     new HtmlWebpackPlugin({
       template: './server/templates/layout.html',

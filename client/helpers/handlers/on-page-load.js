@@ -27,7 +27,7 @@ export default (dispatch) => {
     dispatch(changePathname(currentPage));
     setTimeout(focusHeader, 50);
 
-    if(TST_ENV) {
+    if(APP_MODE === 'tst' || APP_MODE === 'ada') {
       document.addEventListener('click', disableHyperLink);
     }
     setTimeout(focusHeader, 50);

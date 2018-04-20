@@ -1,7 +1,6 @@
 'use strict';
 import { connect }                from 'react-redux';
 import handlers                   from '../../helpers/handlers';
-import { getTimeout }             from '../../actions/get-timeout';
 import { getAuthStatus }          from '../../actions/get-auth-status';
 
 const LoggedIn = (props) => {
@@ -10,11 +9,7 @@ const LoggedIn = (props) => {
   let appName = props.saveAppType();
   props.saveLanguage();
   props.isLoggedIn();
-
-  props.getAppEnv()
-  .then((res) => {
-    props.onLoggedIn(uuid, res, appName);
-  });
+  props.onLoggedIn(uuid, appName);
 
   return null;
 };
@@ -25,14 +20,12 @@ const mapDispatchToProps = (dispatch) => {
   const onLoggedIn    = handlers.onLoggedIn(dispatch);
   const saveLanguage  = handlers.saveLanguage(dispatch);
   const saveAppType   = handlers.saveAppType(dispatch);
-  const getAppEnv     = getTimeout(dispatch);
 
   return {
     isLoggedIn,
     onLoggedIn,
     saveLanguage,
-    saveAppType,
-    getAppEnv
+    saveAppType
   };
 };
 

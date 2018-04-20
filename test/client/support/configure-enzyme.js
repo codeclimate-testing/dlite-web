@@ -17,7 +17,8 @@ import mock from 'mock-require';
 
 let ReactDom = require('react-dom');
 global.APP_ENV = 'test';
-global.TST_ENV = false;
+global.APP_MODE = 'public';
+global.APP_TIMEOUT = '600000';
 const ReDom = ReactDom;
 ReDom.createPortal = function (el, location) {
   return null;

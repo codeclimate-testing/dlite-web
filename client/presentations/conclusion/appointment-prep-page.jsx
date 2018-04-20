@@ -13,7 +13,7 @@ const AppointmentPreparation = (props) => {
   const confCode = buildConfCode(props);
 
 
-  if(TST_ENV){
+  if(APP_MODE === 'tst' || APP_MODE === 'ada'){
     let filePath = '/apply/log-out';
     return (
       <div className='appointment-preparation'>

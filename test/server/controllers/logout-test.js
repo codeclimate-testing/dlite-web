@@ -7,7 +7,6 @@ const logout              = require('../../../server/controllers/logout');
 
 describe('logout controller', () => {
   let res, req;
-
   beforeEach(function() {
     res   = httpMocks.createResponse({});
     req   = {
@@ -38,23 +37,20 @@ describe('logout controller', () => {
   });
 
   it('redirects to choose-language', function() {
-    process.env = {};
     logout(req, res);
     assert.ok(res.redirect.calledWith('/apply/choose-language'));
   });
 
-  describe('#TST_ENV', function() {
+  describe('#APP_MODE to tst or ada', function() {
     it('redirects to splash screen hosted on dmv server when ADA_TST is false', function() {
-      process.env.TST_ENV = true;
-      process.env.ADA_TST = false;
-      process.env.TST_SPLASH_SCREEN_URL='https://www.dmv.ca.gov/imageserver/theme/splash/index.html';
+      process.env.APP_MODE = 'tst';
+      process.env.LOGOUT_URL='https://www.dmv.ca.gov/imageserver/theme/splash/index.html';
       logout(req, res);
       assert.ok(res.redirect.calledWith('https://www.dmv.ca.gov/imageserver/theme/splash/index.html'));
     });
 
     it('redirects to choose-language when ADA_TST is true', function() {
-      process.env.TST_ENV = true;
-      process.env.ADA_TST = true;
+      process.env.APP_MODE = 'ada';
       logout(req, res);
       assert.ok(res.redirect.calledWith('/apply/choose-language'));
     });

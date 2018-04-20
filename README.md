@@ -17,9 +17,9 @@ To setup your local environment copy the `.env.sample` file to `.env`:
 
 If setting up a non-ADA TST terminal set APP_TIMEOUT value to 180000 (3 minutes).
 
-Set APA_TST to true for ADA terminals (`TST_ENV=true`, `APA_TST= true`) to distinguish them from a regular TST terminal.
+Set APP_MODE to either 'ada', 'tst', or 'public'.
+If 'ada', set APP_TIMEOUT to 180000 (3 minutes), otherwise set APP_TIMEOUT to 600000 (10 minutes).
 
-If setting up a non-ADA TST terminal (`TST_ENV=true`, `APA_TST=false`), set APP_TIMEOUT value to 180000 (3 minutes).
 
 ### Database
 

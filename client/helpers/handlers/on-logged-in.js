@@ -8,9 +8,9 @@ import {
 } from '../data/pathnames';
 
 export default (dispatch) => {
-  return (uuid, tstData, appName, history = window.__reactHistory) => {
+  return (uuid, appName, history = window.__reactHistory) => {
 
-    new AutoLogout(dispatch, tstData);
+    new AutoLogout(dispatch);
 
     dispatch(getUserData(uuid))
       .then((res) => {

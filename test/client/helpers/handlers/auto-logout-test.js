@@ -22,7 +22,7 @@ describe('auto logout class', function() {
       timeout: '600000',
       adaTst: false
     };
-    auto              = new AutoLogout(dispatch, tstData);
+    auto              = new AutoLogout(dispatch);
     auto.setTimeout   = sinon.spy();
     auto.destroy      = sinon.spy();
     auto.clearTimeout = sinon.spy();

@@ -2,6 +2,7 @@
 
 process.env.APP_ENV = 'test';
 process.env.APP_TIMEOUT = '600000';
+process.env.APP_MODE = 'public';
 
 const path = require('path');
 const supportDir = __dirname;
