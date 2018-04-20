@@ -549,7 +549,8 @@
       "prompt": {
         "id": "Do you plan on using your ID to fly?",
         "license": "Do you plan on using your Driver License to fly?",
-        "card": "Do you plan on using your card to fly?"
+        "card": "Do you plan on using your card to fly?",
+        "cdl": "Do you plan on using your Commercial Driver License to fly?"
       },
       "explanation": "As of October 1, 2020, you will need a REAL ID compliant driver license or ID card to fly <b>within</b> the United States.",
       "FAQWhatIsRealID": {

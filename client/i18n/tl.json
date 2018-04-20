@@ -600,7 +600,8 @@
       "prompt": {
         "id": "Balak mo bang gamitin ang ID mo para sa paglipad?",
         "license": "Balak mo bang gamitin ang Lisensiya mo sa Pagmamaneho para sa paglipad?",
-        "card": "Balak mo bang gamitin ang ID mo para sa paglipad?"
+        "card": "Balak mo bang gamitin ang ID mo para sa paglipad?",
+        "cdl": "Nagplano ka bang gamitin ang iyong Commercial Driver License upang lumipad?"
       },
       "explanation": "Mula Oktubre 1, 2020, kakailanganin mo ng lisensiya sa pagmamaneho o ID card na sumusunod sa TUNAY na ID REAL ID) para lumipad <b>sa loob</b> ng Estados Unidos.",
       "FAQWhatIsRealID": {

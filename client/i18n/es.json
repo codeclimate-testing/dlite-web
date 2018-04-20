@@ -549,7 +549,8 @@
       "prompt": {
         "id": "¿Planea usar su tarjeta de identificación para volar?",
         "license": "¿Planea usar su licencia de manejar para volar?",
-        "card": "¿Planea usar su tarjeta para volar?"
+        "card": "¿Planea usar su tarjeta para volar?",
+        "cdl": "¿Planea usar su Licencia de Conductor Comercial para volar?"
       },
       "explanation": "A partir del 1 de octubre de 2020, necesitará una licencia de manejar o tarjeta de identidad que cumpla con la ley REAL ID para volar <b>en</b> los Estados Unidos.",
       "FAQWhatIsRealID": {

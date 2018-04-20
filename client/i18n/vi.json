@@ -549,7 +549,8 @@
       "prompt": {
         "id": "Bạn có định dùng chứng minh thư (ID) của mình để đi máy bay?",
         "license": "Bạn có định dùng Bằng Lái Xe của mình để đi máy bay?",
-        "card": "Bạn có định dùng thẻ của mình để đi máy bay?"
+        "card": "Bạn có định dùng thẻ của mình để đi máy bay?",
+        "cdl": "Bạn có định sử dụng Giấy phép lái xe thương mại của mình để bay không?"
       },
       "explanation": "Theo như ngày 1 tháng 10 năm 2020, bạn sẽ cần bằng lái xe hoặc chứng minh thư (ID) phù hợp với luật REAL ID  <b>trong</b> Hoa Kỳ.",
       "FAQWhatIsRealID": {

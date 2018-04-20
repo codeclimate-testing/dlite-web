@@ -14,7 +14,7 @@ const ChooseRealID = (props) => {
     ID:   'intro.realIdPage.prompt.id',
     both: 'intro.realIdPage.prompt.card',
     //TODO: Translation Key
-    CDL: 'Do you plan on using your Commercial Driver License to fly?'
+    CDL: 'intro.realIdPage.prompt.cdl'
   };
 
   let headerText  = getCorrectString(props, headerTexts.DL, headerTexts.ID, headerTexts.both, headerTexts.CDL);
