@@ -6,18 +6,20 @@ import Presentation             from '../../../presentations/conclusion/summary-
 import { saveApplication }      from '../../../helpers/handlers/save-application';
 
 const Page = (props) => {
-  let onSubmit = props.onSubmit(props, 'application');
-
   return (
     <Presentation
       {...props}
-      onSubmit = { onSubmit }
     />
   );
 };
 
 function mapStateToProps(state) {
-  return state;
+  let application = state.application;
+  let server = state.server;
+  return {
+    application,
+    server
+  }
 };
 
 function mapDispatchToProps(dispatch){
@@ -27,4 +29,11 @@ function mapDispatchToProps(dispatch){
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  let props = Object.assign({}, ...[stateProps, ownProps]);
+  props.onSubmit = dispatchProps.onSubmit(props, 'application', ownProps.location.pathname);
+
+  return props;
+};
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Page);

@@ -14,4 +14,5 @@ server/config/redis.json
 public/index.html
 public/index.dev.html
 public/index.stage.html
+public/fonts
 newrelic_agent.log

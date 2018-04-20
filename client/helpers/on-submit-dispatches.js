@@ -2,7 +2,6 @@
 
 import { hasValue }                           from './data/validations';
 import { nextPath }                           from './navigation/page';
-import { postData }                           from '../actions/api-actions';
 import getTranslation                         from '../actions/get-translation';
 import { saveLanguageCookie }                 from './data/cookies';
 import { doNotNeedToLoadTranslations }        from '../helpers/data/translator';

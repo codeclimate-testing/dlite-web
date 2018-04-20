@@ -6,18 +6,21 @@ import Presentation             from '../../presentations/cdl/summary-page.jsx';
 import { saveApplication }      from '../../helpers/handlers/save-application';
 
 const Page = (props) =>{
-  let onSubmit = props.onSubmit(props, 'cdl');
 
   return (
     <Presentation
       {...props}
-      onSubmit = {onSubmit}
     />
   );
 };
 
 function mapStateToProps(state) {
-  return state;
+  let cdl = state.cdl;
+  let server = state.server;
+  return {
+    cdl,
+    server
+  }
 };
 
 function mapDispatchToProps(dispatch){
@@ -27,4 +30,11 @@ function mapDispatchToProps(dispatch){
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  let props = Object.assign({}, ...[stateProps, ownProps]);
+  props.onSubmit = dispatchProps.onSubmit(props, 'cdl', ownProps.location.pathname);
+
+  return props;
+};
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Page);
