@@ -11,11 +11,7 @@ const cookieParser      = require('cookie-parser');
 
 const logging           = require('./server/config/logging');
 const sessionOptions    = require('./server/config/session-options');
-const oauthStrategy     = require('./server/models/oauth/strategy').strategy;
-const oauthSignIn       = require('./server/models/oauth/strategy').strategySignIn;
-const oauthSignUp       = require('./server/models/oauth/strategy').strategySignUp;
-const oauthSignInEs     = require('./server/models/oauth/strategy').strategySignInEs;
-const oauthSignUpEs     = require('./server/models/oauth/strategy').strategySignUpEs;
+const oauthStrategies   = require('./server/models/oauth/strategy')
 const serializeUser     = require('./server/models/session/serialize-user');
 const deserializeUser   = require('./server/models/session/deserialize-user');
 const csrf              = require('./server/config/csrf');
@@ -25,12 +21,27 @@ let server = express();
 server.use(sessionOptions);
 server.use(passport.initialize());
 server.use(passport.session());
-
-passport.use(oauthStrategy);
-passport.use(oauthSignIn);
-passport.use(oauthSignUp);
-passport.use(oauthSignInEs);
-passport.use(oauthSignUpEs);
+passport.use(oauthStrategies.strategy);
+passport.use(oauthStrategies.strategySignInEn);
+passport.use(oauthStrategies.strategySignUpEn);
+passport.use(oauthStrategies.strategySignInEs);
+passport.use(oauthStrategies.strategySignUpEs);
+passport.use(oauthStrategies.strategySignInHi);
+passport.use(oauthStrategies.strategySignUpHi);
+passport.use(oauthStrategies.strategySignInJa);
+passport.use(oauthStrategies.strategySignUpJa);
+passport.use(oauthStrategies.strategySignInKm);
+passport.use(oauthStrategies.strategySignUpKm);
+passport.use(oauthStrategies.strategySignInKo);
+passport.use(oauthStrategies.strategySignUpKo);
+passport.use(oauthStrategies.strategySignInTh);
+passport.use(oauthStrategies.strategySignUpTh);
+passport.use(oauthStrategies.strategySignInTl);
+passport.use(oauthStrategies.strategySignUpTl);
+passport.use(oauthStrategies.strategySignInVi);
+passport.use(oauthStrategies.strategySignUpVi);
+passport.use(oauthStrategies.strategySignInZh);
+passport.use(oauthStrategies.strategySignUpZh);
 passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 
