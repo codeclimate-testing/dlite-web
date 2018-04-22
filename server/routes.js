@@ -21,7 +21,7 @@ const routes = (passport) => {
   router.get( '/auth/oauth/callback', controllers.authCallback(passport), controllers.authSuccess);
   router.get( '/auth/error', controllers.authError);
 
-  router.get( '/apply/log-out', controllers.checkAuth, controllers.logout);
+  router.get( '/apply/log-out', controllers.logout);
   router.get( '/apply*', controllers.renderClient);
   router.get( '*.js', controllers.sendZip);
 
