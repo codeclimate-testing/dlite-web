@@ -43,6 +43,7 @@ const getTranslation = function (locale, fetcher) {
     dispatch(updateApiStatus('loading'));
     return fetchTranslation(locale, fetcher)
       .then(function (data) {
+        document.getElementsByTagName('html')[0].setAttribute('lang', locale);
         dispatch(getTranslationSuccess(data));
         dispatch(updateTranslationLanguage(locale));
         dispatch(updateApiStatus('success'));
