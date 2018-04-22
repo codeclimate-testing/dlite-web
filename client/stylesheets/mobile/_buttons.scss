@@ -162,23 +162,27 @@ a.button.arrow-button {
     color: $button-rest;
     text-align: right;
     padding-right: $arrow-button-padding;
-    background-image: url("/images/arrow-buttons/backwards/rest.svg");
+    background-color: white;
+    border: 2px solid $darkest-blue;
   }
 
   &.forward {
     color: $lightest-color;
     text-align: left;
     padding-left: $arrow-button-padding;
-    background-image: url("/images/arrow-buttons/forward/rest.svg");
+    background-color: $darkest-blue;
   }
 
   &.focus,
   &:focus {
     &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/rest-focused.svg");
+      background-color: white;
+      outline-color: $darkest-blue;
+      border-color: orange;
     }
     &.forward {
-      background-image: url("/images/arrow-buttons/forward/rest-focused.svg");
+      background-color: $darkest-blue;
+      border: 2px solid orange;
     }
   }
 
@@ -186,10 +190,11 @@ a.button.arrow-button {
   &:hover {
     &.backwards {
       color: $darkest-blue;
-      background-image: url("/images/arrow-buttons/backwards/hover.svg");
+       background-color: white;
+       border: 2px solid $darkest-blue;
     }
     &.forward {
-      background-image: url("/images/arrow-buttons/forward/hover.svg");
+       background-color: #1e30a6;
     }
   }
 
@@ -197,35 +202,41 @@ a.button.arrow-button {
   &:hover:focus {
     &.backwards {
       color: $darkest-blue;
-      background-image: url("/images/arrow-buttons/backwards/hover-focused.svg");
+      border: solid 2px orange;
     }
     &.forward {
-      background-image: url("/images/arrow-buttons/forward/hover-focused.svg");
+      background-color:#1e30a6;
+      border: 2px solid orange;
     }
   }
 
   &.active,
   &:active {
     &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/active.svg");
+      color: $darkest-blue;
+      background-color: white;
+      border: 3px solid $darkest-blue;
     }
     &.forward {
-      background-image: url("/images/arrow-buttons/forward/active.svg");
+      background-color: $darkest-blue;
     }
   }
 
   &.active.focus,
   &:active:focus {
     &.backwards {
-      background-image: url("/images/arrow-buttons/backwards/active-focused.svg");
+      background-color: white;
+      outline-color: $darkest-blue;
+      border-color: orange;
     }
     &.forward {
-      background-image: url("/images/arrow-buttons/forward/active-focused.svg");
+      background-color: $darkest-blue;
+      border: 3px solid orange;
     }
   }
 
   &.submit {
-    padding-left: 26px;
+    padding-left: 45px;
   }
 }
 
