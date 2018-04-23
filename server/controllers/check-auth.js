@@ -13,5 +13,8 @@ module.exports = function checkAuth(req, res, next, env = process.env.APP_ENV) {
     next();
   } else {
     res.status(401).json({message: 'not logged in'});
+    console.assert(req.hasOwnProperty('session'), 'req does not have session');
+    console.assert(req.session.hasOwnProperty('user'), 'req.session does not have user property');
+    console.assert(req.session.user.uuid.length > 0, 'req.session.user.uuid does not exist');
   }
 };
