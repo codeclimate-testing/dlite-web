@@ -1,13 +1,13 @@
 'use strict';
 
-const uuidv1            = require('uuid/v1');
+const uuidv4            = require('uuid/v4');
 const clientParser      = require('../models/parsers/client-to-server-parser');
 const post              = require('../models/db/post-application');
 
 module.exports = function postApplication(req, res) {
   var data = req.body;
   if(!data.id) { //new application
-    data.id = uuidv1();
+    data.id = uuidv4();
   }
 
   let parsedData = clientParser(data);

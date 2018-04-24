@@ -2,7 +2,7 @@
 
 const assert    = require('assert');
 const httpMocks = require('node-mocks-http');
-const uuidv1    = require('uuid/v1');
+const uuidv4    = require('uuid/v4');
 
 const dbHelper      = require('../../support/db-helper');
 const dataHelper    = require('../../support/data-helper').IDDLData;
@@ -10,7 +10,7 @@ const ctrl          = require('../../../server/controllers');
 
 describe('Testing application APIs for basic CRUD operations', () => {
 
-  const id      = uuidv1();
+  const id      = uuidv4();
   let _request  = {};
   let _response = {};
 
