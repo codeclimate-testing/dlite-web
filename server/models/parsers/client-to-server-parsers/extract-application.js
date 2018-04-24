@@ -11,6 +11,14 @@ function extractApplication(data, ip) {
   let socialSecurity    = '';
   let dateOfBirth       = basics.dateOfBirth;
   let completed         = null;
+  let appMode           = 'public';
+
+  if (process.env.ADA_TST.toString() === 'true'){
+    appMode = 'ada';
+  }
+  else if (process.env.TST_ENV.toString() === 'true') {
+    appMode = 'tst';
+  }
 
 
   if(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year) {
@@ -46,6 +54,7 @@ function extractApplication(data, ip) {
     user_id:                  data.userID,
     pathname:                 data.pathname,
     completed_at:             completed,
+    app_mode:                 appMode,
     ip_address:               ip
   };
 }
