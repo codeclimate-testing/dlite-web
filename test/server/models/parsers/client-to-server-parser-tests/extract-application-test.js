@@ -71,6 +71,7 @@ describe('extracting application', function() {
   describe('app_mode', function() {
     it('saves app_mode "public"', function() {
       process.env.TST_ENV = false;
+      process.env.ADA_TST = false;
       assert.equal(extractApp(data).app_mode, 'public');
     });
     it('saves app_mode "tst" when TST_ENV is true and ADA_TST is false', function() {

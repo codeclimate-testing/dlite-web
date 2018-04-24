@@ -13,13 +13,13 @@ function extractApplication(data, ip) {
   let completed         = null;
   let appMode           = 'public';
 
-  if (process.env.ADA_TST.toString() === 'true'){
-    appMode = 'ada';
-  }
-  else if (process.env.TST_ENV.toString() === 'true') {
+  if (process.env.TST_ENV.toString() === 'true') {
     appMode = 'tst';
   }
 
+ if (process.env.ADA_TST.toString() === 'true'){
+    appMode = 'ada';
+  }
 
   if(dateOfBirth.month && dateOfBirth.day && dateOfBirth.year) {
     dob = new Date(parserHelper.createDateString(basics.dateOfBirth));
