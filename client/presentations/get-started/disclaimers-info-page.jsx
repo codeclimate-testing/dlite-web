@@ -3,9 +3,45 @@
 import React        from 'react';
 import Translator   from '../../i18n/translator-tag.jsx';
 
+const DisclaimersInfo = (props) => {
+  return (
+    <div className='scroll-wrapper disclaimers-info'>
+      <Translator
+      tag='h2'
+      translationPath='newExtracted.intro.getStartedPage.disclaimers.review'
+      />
+
+      <div className='scroll-content' aria-label='Disclaimers' tabIndex='2'>
+        <CDLDrivingTypesItems {...props} />
+
+        <MedicalItems {...props} />
+
+        <VeteransItems {...props} />
+
+        <OrganDonationItems {...props} />
+
+        <VoterRegistrationItems {...props} />
+        <CDLVoterRegistrationItems {...props} />
+
+        <CriminalProsecutionItems {...props} />
+
+        <FinancialResponsibilityItems {...props} />
+
+        <PaymentRefundsItems {...props} />
+
+        <PrivacyItems {...props} />
+        <CDLPrivacyItems {...props} />
+
+        <CertificationsItems {...props} />
+
+      </div>
+    </div>
+  );
+}
+
 const MedicalItems = (props) => {
   return (
-    <div className='scrollbox'>
+    <div className='scrollbox' tabIndex='3'>
       <Translator
         tag='h3'
         translationPath='disclaimers.medical.title'
@@ -391,42 +427,6 @@ const CDLPrivacyItems = (props) => {
         </ul>
       </div>
     );
-}
-
-const DisclaimersInfo = (props) => {
-  return (
-    <div className='scroll-wrapper disclaimers-info'>
-      <Translator
-      tag='h3'
-      translationPath='newExtracted.intro.getStartedPage.disclaimers.review'
-      />
-
-      <div className='scroll-content'>
-        <CDLDrivingTypesItems {...props} />
-
-        <MedicalItems {...props} />
-
-        <VeteransItems {...props} />
-
-        <OrganDonationItems {...props} />
-
-        <VoterRegistrationItems {...props} />
-        <CDLVoterRegistrationItems {...props} />
-
-        <CriminalProsecutionItems {...props} />
-
-        <FinancialResponsibilityItems {...props} />
-
-        <PaymentRefundsItems {...props} />
-
-        <PrivacyItems {...props} />
-        <CDLPrivacyItems {...props} />
-
-        <CertificationsItems {...props} />
-
-      </div>
-    </div>
-  );
 };
 
 export default DisclaimersInfo;
