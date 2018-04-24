@@ -41,7 +41,7 @@ const DisclaimersInfo = (props) => {
 
 const MedicalItems = (props) => {
   return (
-    <div className='scrollbox' tabIndex='3'>
+    <div className='scrollbox'>
       <Translator
         tag='h3'
         translationPath='disclaimers.medical.title'
