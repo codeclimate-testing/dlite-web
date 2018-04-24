@@ -1,7 +1,7 @@
 'use strict';
 
 const logout = (req, res) => {
-  console.log('LOGOUT')
+  console.log(`IP ${req.ip} logged out at ${new Date()}. TST app: ${process.env.TST_ENV}, ADA app: ${process.env.APA_TST}`);
 
   if (req.session) {
     req.logout();
