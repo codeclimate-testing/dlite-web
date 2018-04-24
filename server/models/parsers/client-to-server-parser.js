@@ -2,10 +2,10 @@
 const cardTypeParser        = require('./card-type');
 const extract               = require('./client-to-server-parsers/index');
 
-function parse(data) {
+function parse(data, ip) {
   let parsedData = Object.assign(
     {},
-    { application:            extract.application(data) },
+    { application:            extract.application(data, ip) },
     { addresses:              extract.addresses(data) },
     { emails:                 extract.email(data) },
     { phone_numbers:          extract.phoneNumber(data) },

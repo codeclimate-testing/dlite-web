@@ -10,7 +10,8 @@ module.exports = function postApplication(req, res) {
     data.id = uuidv4();
   }
 
-  let parsedData = clientParser(data);
+  let ipAddress = req.headers['X-Forwarded-For'] || req.ip;
+  let parsedData = clientParser(data, ipAddress);
   post.saveApplication(parsedData)
     .then(function(data) {
       if(data.error) {
@@ -21,7 +22,7 @@ module.exports = function postApplication(req, res) {
       }
     })
     .catch(function(err) {
-      console.error(err);
+      console.log(err);
       res.status(err.statusCode || 500).json(err);
     });
 };

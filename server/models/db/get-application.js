@@ -62,7 +62,7 @@ exports.byId = (id) => {
     return aggregate;
   })
   .catch(function(err) {
-    console.error('GET APPLICATION ERROR',err);
+    console.log('GET APPLICATION ERROR',err);
     return err;
   });
 };

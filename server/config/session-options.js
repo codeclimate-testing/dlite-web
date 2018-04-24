@@ -6,8 +6,8 @@ const config            = require('../../redis-file');
 const sessionOptions = {
   name: 'dlite-web-session',
   secret: process.env.EXPRESS_SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   store: new RedisStore(config),
   rolling: true,
   cookie: {

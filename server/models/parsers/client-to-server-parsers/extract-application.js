@@ -1,7 +1,7 @@
 'use strict';
 const parserHelper      = require('../data-parser');
 
-function extractApplication(data) {
+function extractApplication(data, ip) {
   let basics            = data.basics;
   let legalName         = basics.legalName || {};
   let heightWeight      = basics.traitsHeightWeight || {};
@@ -45,7 +45,8 @@ function extractApplication(data) {
     social_security_number:   socialSecurity,
     user_id:                  data.userID,
     pathname:                 data.pathname,
-    completed_at:             completed
+    completed_at:             completed,
+    ip_address:               ip
   };
 }
 

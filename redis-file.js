@@ -41,14 +41,16 @@ if(!redisUrl) {
   config = {
     client: redisClient,
     port: fileConfig.port,
-    host: fileConfig.host
+    host: fileConfig.host,
+    ttl: 600
   };
 }
 else {
   config = {
     client: redisClient,
     url: redisUrl,
-    logErrors: true
+    logErrors: true,
+    ttl: 600
   };
 }
 

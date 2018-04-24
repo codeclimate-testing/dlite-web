@@ -18,7 +18,7 @@ module.exports = function getApplication(req, res) {
 
       res.status(200).send(parsedData);
     }).catch(function(err) {
-      console.error(err);
+      console.log(err);
       res.status(err.statusCode || 500).json(err);
     });
 };

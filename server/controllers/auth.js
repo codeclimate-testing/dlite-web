@@ -20,6 +20,8 @@ const authSuccess = (req, res, next, env = process.env.APP_ENV) => {
   let params = JSON.parse(req.query.state);
   req.session.user = req.user;
 
+  console.log(`IP ${req.ip} logged in for user id ${req.user.uuid} at ${new Date()}. TST app: ${process.env.TST_ENV}, ADA app: ${process.env.APA_TST}`);
+
   res.cookie('appName', params.appName, {maxAge: 1200000});
   res.cookie('language', params.language, {maxAge: 1200000});
 

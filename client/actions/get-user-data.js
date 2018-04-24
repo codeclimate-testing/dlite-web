@@ -24,18 +24,7 @@ export const getUserData = (uuid, fetcher = fetch) => {
         if(res.status === 200) {
           return res.json();
         }
-        else if (res.status > 499 && res.status < 600) {
-          return {
-            appsLength: 0,
-            userID: uuid,
-            apps: [{
-              name: '',
-              cardType: [],
-              cardAction: [],
-              id: ''
-            }]
-          };
-        }
+
         else {
           throw new Error('user-fail');
         }

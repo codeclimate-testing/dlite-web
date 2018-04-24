@@ -15,7 +15,7 @@ function insertApplication(application) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
     });
 }
 
@@ -35,7 +35,7 @@ function insertAddresses(addresses, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -54,7 +54,7 @@ function insertCards(cards, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -73,7 +73,7 @@ function insertPreviousNames(names, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -98,7 +98,7 @@ function insertCardOptions(options) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -123,7 +123,7 @@ function insertLicenseClasses(classes) {
     }
   })
   .catch((err) => {
-    console.error(err);
+    console.log(err);
     return [];
   });
 }
@@ -142,7 +142,7 @@ function insertCardHistories(card_histories, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -163,7 +163,7 @@ function insertGuardianSignatures(signatures, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -183,7 +183,7 @@ function insertGuardianAddresses(addresses, signatures) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
   }
@@ -215,7 +215,7 @@ function insertOneToOne(key, data, application_id) {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
       return [];
     });
 }
@@ -331,7 +331,7 @@ function saveApplication(data) {
       return returnedData;
     })
     .catch((err) => {
-      console.error('SAVE APPLICATION ERROR', err);
+      console.log('SAVE APPLICATION ERROR', err);
       return err;
     });
 };
