@@ -24,7 +24,6 @@ export const getUserData = (uuid, fetcher = fetch) => {
         if(res.status === 200) {
           return res.json();
         }
-
         else {
           throw new Error('user-fail');
         }

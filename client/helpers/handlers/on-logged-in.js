@@ -9,23 +9,44 @@ import {
 
 export default (dispatch) => {
   return (uuid, tstData, appName, history = window.__reactHistory) => {
-
     new AutoLogout(dispatch, tstData);
 
-    dispatch(getUserData(uuid))
-      .then((res) => {
-        let pageKey = getAppKey(appName);
-        let pathURL = nextPath(pageKey, {
-          flow: '',
-          userData: res,
-          appName: appName
-        });
+    let pageKey = getAppKey(appName);
+    let pathURL;
 
-        if (res === 'user-fail') {
-          return history.push(signInURL());
-        }
-
-        return history.push(pathURL);
+    if (TST_ENV.toString() === 'true') {
+      pathURL = nextPath(pageKey, {
+        flow: '',
+        userData: {
+          appsLength: 0,
+          userID: uuid,
+          apps: [{
+            name: '',
+            cardType: [],
+            cardAction: [],
+            id: ''
+          }]
+        },
+        appName: appName
       });
+    }
+
+    else {
+      dispatch(getUserData(uuid))
+        .then((res) => {
+          let pageKey = getAppKey(appName);
+          pathURL = nextPath(pageKey, {
+            flow: '',
+            userData: res,
+            appName: appName
+          });
+
+          if (res === 'user-fail') {
+            return history.push(signInURL());
+          }
+        });
+    }
+
+    return history.push(pathURL);
   };
 };
