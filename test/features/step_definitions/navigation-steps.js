@@ -42,10 +42,6 @@ module.exports = function(world) {
     navigateToPath('/apply/choose-application/', '.choose-application-form' , done);
   });
 
-  world.when('I go to the choose application page', function(done) {
-    navigateToPath('/apply/choose-application/', '.choose-application-form' , done);
-  });
-
   world.when('I go to the IDDL sign-in page', function(done) {
     navigateToPath('/apply/id-and-license/sign-in', '.id-me', done);
   });
