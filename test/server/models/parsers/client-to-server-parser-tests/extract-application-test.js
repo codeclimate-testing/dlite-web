@@ -70,18 +70,18 @@ describe('extracting application', function() {
 
   describe('app_mode', function() {
     it('saves app_mode "public"', function() {
-      process.env.TST_ENV = false;
-      process.env.ADA_TST = false;
+      process.env.TST_ENV = 'false';
+      process.env.ADA_TST = 'false';
       assert.equal(extractApp(data).app_mode, 'public');
     });
     it('saves app_mode "tst" when TST_ENV is true and ADA_TST is false', function() {
-      process.env.TST_ENV = true;
-      process.env.ADA_TST = false;
+      process.env.TST_ENV = 'true';
+      process.env.ADA_TST = 'false';
       assert.equal(extractApp(data).app_mode, 'tst');
     });
     it('saves app_mode "ada" when TST_ENV is true and ADA_TST is true', function() {
-      process.env.TST_ENV = true;
-      process.env.ADA_TST = true;
+      process.env.TST_ENV = 'true';
+      process.env.ADA_TST = 'true';
       assert.equal(extractApp(data).app_mode, 'ada');
     });
   });
