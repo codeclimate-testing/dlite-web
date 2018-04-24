@@ -13,9 +13,14 @@ export const saveApplication = (dispatch) => {
 
       dispatch(postData(app))
         .then((res) => {
-          stateProps.history.push(
-            nextPath(editKey, res)
-          );
+          if (res !== 'api-fail') {
+            stateProps.history.push(
+              nextPath(editKey, res)
+            );
+          }
+        })
+        .catch((err) => {
+          console.error(err);
         });
     };
   };
