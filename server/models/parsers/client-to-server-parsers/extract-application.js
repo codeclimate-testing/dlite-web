@@ -13,11 +13,11 @@ function extractApplication(data, ip) {
   let completed         = null;
   let appMode           = 'public';
 
-  if (process.env.TST_ENV.toString() === 'true') {
+  if (process.env.TST_ENV === 'true') {
     appMode = 'tst';
   }
 
- if (process.env.ADA_TST.toString() === 'true'){
+ if (process.env.ADA_TST === 'true'){
     appMode = 'ada';
   }
 
