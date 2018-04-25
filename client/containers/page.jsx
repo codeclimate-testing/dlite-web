@@ -9,6 +9,7 @@ import {
   getAppType,
   onEmojiDebug
 } from '../helpers/data/pathnames';
+import AutoSave     from './auto-save.jsx'
 
 const Page = (props) => {
   let sectionKey = getTextFromState(props, props.sectionKey, '');
@@ -17,9 +18,12 @@ const Page = (props) => {
 
 
   return (
-    <Presentation
-      {...props}
-    />
+    <div>
+      <AutoSave {...props}/>
+      <Presentation
+        {...props}
+      />
+    </div>
   );
 };
 

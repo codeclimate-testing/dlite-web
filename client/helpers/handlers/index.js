@@ -27,6 +27,7 @@ import onLoggedIn                 from './on-logged-in';
 import newFlow                    from './new-flow';
 import saveLanguage               from './save-language';
 import saveAppType                from './save-app-type';
+import autoSave                   from './auto-save';
 
 export default {
   navigateOnBack,
@@ -45,5 +46,6 @@ export default {
   onLoggedIn,
   newFlow,
   saveLanguage,
-  saveAppType
+  saveAppType,
+  autoSave
 };

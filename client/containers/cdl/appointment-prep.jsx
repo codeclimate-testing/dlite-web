@@ -16,7 +16,7 @@ const Page = (props) => {
 
 function mapStateToProps(state) {
   return {
-    id          : state.application.id
+    id          : state.cdl.id
   }
 };
 
