@@ -5,7 +5,8 @@ module.exports.createDateString = function createDateString(date) {
 };
 
 module.exports.formatCompletedAtDate = function formatCompletedAtDate(date) {
-  return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+  let month = date.getMonth() + 1;
+  return date.getFullYear() + '-' + month + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
 }
 
 module.exports.createDateJson = function createDateJson(date) {

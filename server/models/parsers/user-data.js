@@ -12,7 +12,7 @@ module.exports = function parseUserData(records){
 
     let name = dataParser.buildName(app);
     let id = app.id;
-    let updatedAt = app.updated_at;
+    let completedAt = app.completed_at;
 
     let pathname = app.pathname;
 
@@ -39,7 +39,7 @@ module.exports = function parseUserData(records){
       cardAction,
       cardType,
       id,
-      updatedAt,
+      completedAt,
       pathname
     });
 

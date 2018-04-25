@@ -86,16 +86,14 @@ export const addOrEditIcon = (props) => {
   return props.linkType === 'open-add' ? 'add' : 'edit';
 };
 
-export const getTimeStamp = (app, nextAddress) => {
-
-  if (nextAddress) {
-    if (nextAddress.split('/')[3] !== 'summary') {
-      return 'Open';
-    }
+export const getTimeStamp = (app) => {
+  if(!hasValue(app.completedAt)) {
+    return 'Open';
   }
-  let updatedAt = app.updatedAt;
 
-  let date = new Date(updatedAt);
+  let completedAt = app.completedAt;
+
+  let date = new Date(completedAt);
   let month = (date.getMonth() + 1).toString();
   let year = (date.getFullYear()).toString();
   let day = (date.getDate()).toString();
