@@ -10,6 +10,8 @@ module.exports = function postApplication(req, res) {
     data.id = uuidv4();
   }
 
+  console.log('saved application ' + data.id);
+
   let ipAddress = req.headers['X-Forwarded-For'] || req.ip;
   let parsedData = clientParser(data, ipAddress);
   post.saveApplication(parsedData)

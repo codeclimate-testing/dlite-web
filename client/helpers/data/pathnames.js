@@ -164,3 +164,13 @@ export const findNextPage = (pathname) => {
   return nextAddress;
 };
 export const resetURL = '/apply/choose-language';
+
+const ignoreOpenAppPage = (incomingSection, currentSection) => {
+  return !(incomingSection === 'intro' && currentSection === 'summary') && !(incomingSection === 'summary' && currentSection === 'intro');
+};
+
+export const shouldAutoSave = (app) => {
+  let currentSection = getTextFromState(app, app.sectionKey, '');
+  let incomingSection = app.section.key;
+  return app.section.key && incomingSection && (incomingSection !== currentSection) && ignoreOpenAppPage(incomingSection, currentSection);
+};

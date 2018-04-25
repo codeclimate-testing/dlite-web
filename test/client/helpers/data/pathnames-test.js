@@ -14,7 +14,8 @@ import {
   getAppKey,
   signInURL,
   goToSummary,
-  findNextPage
+  findNextPage,
+  shouldAutoSave
 } from '../../../../client/helpers/data/pathnames';
 
 
@@ -298,6 +299,33 @@ describe('Data helpers for pathnames', function() {
     it('returns pathname', function() {
       pathname = '/apply/id-and-license/my-history/license-history';
       assert.equal(findNextPage(pathname), pathname);
+    });
+  });
+
+  describe('#shouldAutoSave', function() {
+    let app;
+    beforeEach(function() {
+      app = {
+        section: {
+          key: ''
+        },
+        sectionKey: 'intro'
+      };
+    });
+
+    it('returns false if app.section.key is undefined', function() {
+      assert.equal(shouldAutoSave(app), false);
+    });
+
+    it('returns false if app.section.key is summary and app.sectionKey is intro', function() {
+      app.section.key = 'summary';
+      assert.equal(shouldAutoSave(app), false);
+    });
+
+    it('returns false if app.section.key is intro and app.sectionKey is summary', function() {
+      app.section.key = 'intro';
+      app.sectionKey = 'summary';
+      assert.equal(shouldAutoSave(app), false);
     });
   });
 });

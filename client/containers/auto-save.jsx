@@ -4,7 +4,9 @@ import React       from 'react';
 import ReactDOM    from 'react-dom';
 import handlers    from '../helpers/handlers';
 import { connect } from 'react-redux';
-import { getTextFromState } from '../helpers/data/pathnames';
+import {
+  shouldAutoSave
+ } from '../helpers/data/pathnames';
 
 const mapStateToProps = (state) => {
   return {
@@ -28,14 +30,12 @@ class AutoSave extends React.Component {
     let app = this.app;
     let state = app.state;
     let handlers = this.handlers;
-    if(app.section.key && getTextFromState(app, app.sectionKey, '')) {
-      if(app.section.key !== getTextFromState(app, app.sectionKey, '')) {
-        if(app.chooseApp === 'iddl') {
-          handlers(state, 'application')
-        } else if (app.chooseApp === 'cdl') {
-          handlers(state, 'cdl')
-        };
-      };
+    if (shouldAutoSave(app)) {
+      if(app.chooseApp === 'iddl') {
+        handlers(state, 'application')
+      } else if (app.chooseApp === 'cdl') {
+        handlers(state, 'cdl')
+      }
     }
   };
 
