@@ -1,5 +1,14 @@
 @import "tweaks";
 
+div#footer a:link, div#footer a:visited,
+.voter-reg-complete a:link, .voter-reg-complete a:visited,
+.scrollbox a:link, .scrollbox a:visited {
+   pointer-events: none;
+   cursor: default;
+   text-decoration: none;
+   color: black;
+}
+
 .navigation-buttons {
   padding-bottom: 30px;
 }
