@@ -1,11 +1,10 @@
 'use strict';
 
-import React from 'react';
-
-import Page                   from '../../containers/page.jsx';
-import LanguageRadios         from '../language-radios.jsx'
-import ContinueButton         from '../continue-button.jsx';
-import Translator              from '../../i18n/translator-tag.jsx';
+import React                      from 'react';
+import Page                       from '../../containers/page.jsx';
+import LanguageRadios             from '../language-radios.jsx'
+import { ContinueLanguageButton } from '../continue-button.jsx';
+import Translator                 from '../../i18n/translator-tag.jsx';
 
 
 import {
@@ -34,7 +33,7 @@ const Form = (props) => {
             {...props}
             name='language'
           />
-          <ContinueButton />
+          <ContinueLanguageButton language={props.language}/>
         </form>
       </div>
     </Page>

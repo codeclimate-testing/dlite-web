@@ -1,12 +1,12 @@
 'use strict';
 
-import React          from 'react';
-import ContinueButton from './continue-button.jsx';
-import BackButton     from './back-button.jsx';
+import React                from 'react';
+import { ContinueButton }   from './continue-button.jsx';
+import BackButton           from './back-button.jsx';
 
-import { hasValue }   from '../helpers/data/validations';
-import errorClass     from '../helpers/validations/error-class';
-import { ErrorMessageBox } from './validations.jsx'
+import { hasValue }         from '../helpers/data/validations';
+import errorClass           from '../helpers/validations/error-class';
+import { ErrorMessageBox }  from './validations.jsx'
 
 
 const NavigationButtons = (props) => {
