@@ -243,7 +243,7 @@ describe('Data helpers for application', function() {
     describe('completed application', function() {
       beforeEach(function() {
         app = {
-          updatedAt: '2018-04-11 10:18:27.12122-07'
+          completedAt: '2018-04-11 10:18:27.12122-07'
         };
       });
 
@@ -255,7 +255,8 @@ describe('Data helpers for application', function() {
     describe('incomplete application', function() {
       beforeEach(function() {
         app = {
-          updatedAt: '2018-04-11 10:18:27.12122-07'
+          updatedAt: '2018-04-11 10:18:27.12122-07',
+          completedAt: ''
         };
       });
 

@@ -7,7 +7,7 @@ describe('dataParser', function() {
   describe('#formatCompletedAtDate', function () {
     let date = new Date(2018, 3, 13, 11, 45, 53)
     it('format completed at date for saving in databas', function() {
-      assert.equal(dataParser.formatCompletedAtDate(date), '2018-3-13 11:45:53')
+      assert.equal(dataParser.formatCompletedAtDate(date), '2018-4-13 11:45:53')
     });
   });
 

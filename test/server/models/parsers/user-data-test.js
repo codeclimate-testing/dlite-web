@@ -15,6 +15,7 @@ describe('userData', function() {
           last_name: 'Pao',
           suffix_name: '',
           updated_at: '2018-04-11 10:18:27.12122-07',
+          completed_at: '2018-04-11 10:18:27.12122-07',
           pathname: '/apply/id-and-license/my-history/medical-history'
         },
         {
@@ -23,6 +24,7 @@ describe('userData', function() {
           last_name: 'Winfrey',
           suffix_name: '',
           updated_at: '2017-04-11 10:18:27.12122-07',
+          completed_at: '2017-04-11 10:18:27.12122-07',
           pathname: '/apply/cdl/my-basics/date-of-birth'
         }
       ],
@@ -94,9 +96,9 @@ describe('userData', function() {
       assert.ok(data.apps[1].cardType.includes('CDL'));
     });
 
-    it('each object has an updatedAt timestampe', function() {
-      assert.equal(data.apps[0].updatedAt, '2018-04-11 10:18:27.12122-07');
-      assert.equal(data.apps[1].updatedAt, '2017-04-11 10:18:27.12122-07');
+    it('each object has an completedAt timestampe', function() {
+      assert.equal(data.apps[0].completedAt, '2018-04-11 10:18:27.12122-07');
+      assert.equal(data.apps[1].completedAt, '2017-04-11 10:18:27.12122-07');
     });
 
     it('each object has the pathname where the application was last at', function() {
