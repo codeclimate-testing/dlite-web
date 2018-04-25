@@ -20,6 +20,7 @@ const Translator = (props) => {
       key                     = { props.keyProp }
       dangerouslySetInnerHTML = { translatedValue }
       accordion               = { props.accordion }
+      tabIndex                = { 0 }
     />
   );
 };
