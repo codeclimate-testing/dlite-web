@@ -18,6 +18,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'cdl.motorcyclePage.prompt'
+          tabIndex        = '0'
         />
           <fieldset role='group' aria-label='Motorcycle class choice'>
           <RadioCollection

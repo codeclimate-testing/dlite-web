@@ -11,6 +11,7 @@ const VoterPreferencesIntro = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'votingRegistration.preferencesIntroPage.pagePrompt'
+        tabIndex        = '0'
       />
 
       <Translator

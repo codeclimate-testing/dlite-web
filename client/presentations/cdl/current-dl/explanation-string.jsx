@@ -11,6 +11,7 @@ const ExplanationString = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'cdl.caDlPage.yesSection.prompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

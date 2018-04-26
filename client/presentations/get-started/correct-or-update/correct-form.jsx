@@ -20,6 +20,7 @@ const Form = (props) => {
           tag             = 'h3'
           className       = 'question'
           translationPath = 'intro.correctOrUpdatePage.chooseChangeSection.prompt.correct'
+          tabIndex        = '0'
         />
       <fieldset role='group' aria-label='What do you need to change choice'>
         <CheckboxCollection

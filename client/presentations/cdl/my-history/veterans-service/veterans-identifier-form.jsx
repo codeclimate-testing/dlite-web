@@ -25,6 +25,7 @@ const Question = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'newApproved.cdl.myHistory.veteran.addVeteran'
+          tabIndex        = '0'
         />
       </div>
       );
@@ -36,6 +37,7 @@ const Question = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'newApproved.cdl.myHistory.veteran.keepVeteran'
+          tabIndex        = '0'
         />
       </div>
     );

@@ -52,6 +52,7 @@ const MedicalHistoryPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'newApproved.cdl.myHistory.medicalHistory.medicalConditions'
+          tabIndex        = '0'
         />
         <MedicalCondition {...props}
           selectedValue = {props.medicalHistory.hasMedicalCondition}

@@ -14,6 +14,7 @@ const VeteransMilitaryWaiver = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'newApproved.cdl.myHistory.veteran.militaryWaiver.prompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

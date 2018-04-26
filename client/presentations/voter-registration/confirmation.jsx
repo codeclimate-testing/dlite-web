@@ -16,6 +16,7 @@ const VotingConfirmationPage = (props) => {
           <Translator
             tag             = 'h2'
             translationPath = 'votingRegistration.confirmation.pagePrompt'
+            tabIndex        = '0'
           />
           <Translator
             tag             = 'p'

@@ -49,6 +49,7 @@ const ChoosePartyPage = (props) => {
             tag               = 'h2'
             className         = 'question'
             translationPath   = 'votingRegistration.choosePartyPage.pagePrompt'
+            tabIndex          = '0'
           />
           <NewOrRegisteredVoter {...props}/>
 

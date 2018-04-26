@@ -23,6 +23,7 @@ const Form = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'tenYearHistoryPage.fillOutHistoryVia.explanation'
+        tabIndex        = '0'
       />
 
       <div className='row inner-buttom'>

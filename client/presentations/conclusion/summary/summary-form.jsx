@@ -24,6 +24,7 @@ const SummaryForm = (props) => {
         <Translator
           tag             = 'h2'
           translationPath = 'summaryPage.prompt'
+          tabIndex        = '0'
         />
 
         <div>

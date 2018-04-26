@@ -21,6 +21,7 @@ const Presentation = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.dateOfBirthPage.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

@@ -17,8 +17,9 @@ const Form = (props) => {
   const newString =
         <Translator
           tag             = 'h2'
-          lassName        = 'question'
+          className        = 'question'
           translationPath = 'intro.chooseSelectionPage.prompt.new'
+          tabIndex        = '0'
         />
   const renewString =
         <Translator

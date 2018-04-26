@@ -46,6 +46,7 @@ const CitizenStatusPage = (props) => {
           tag               = 'h2'
           className         = 'question'
           translationPath   = 'votingRegistration.citizenshipPage.pagePrompt'
+          tabIndex          = '0'
         />
 
         <Translator

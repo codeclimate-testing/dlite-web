@@ -14,6 +14,7 @@ const EnterPreviousNames = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.nameHistoryPage.explanationPrompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

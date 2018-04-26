@@ -21,6 +21,7 @@ const EnterLicenseAndIdHistory = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.cardHistoryPage.explanationPrompt'
+        tabIndex        = '0'
       />
 
       <fieldset role='group' aria-label='Card information'>

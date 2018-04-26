@@ -33,6 +33,7 @@ const IntroContent = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'votingRegistration.eligibilityPage.pagePrompt'
+        tabIndex        = '0'
       />
 
       <ul className='bullet-list'>

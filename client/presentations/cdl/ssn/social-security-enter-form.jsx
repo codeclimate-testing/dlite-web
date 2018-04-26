@@ -33,6 +33,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'myBasics.socialSecurityPage.enterSocialNumber.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

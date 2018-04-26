@@ -13,6 +13,7 @@ const VeteransQuestionnaire = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.veteransPage.pagePrompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

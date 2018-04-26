@@ -22,6 +22,7 @@ const NamesHistoryPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'myHistory.nameHistoryPage.pagePrompt'
+          tabIndex        = '0'
         />
         <UsedPreviousNames
           {...props}

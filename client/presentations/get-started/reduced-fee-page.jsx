@@ -29,6 +29,7 @@ const ReducedFeeFormInfo = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'intro.reducedFeePage.rightFormsSection.prompt'
+        tabIndex        = '0'
       />
       <MessageBox className='info'>
         <Translator
@@ -62,6 +63,7 @@ const Form = (props) => {
             tag             = 'h2'
             className       = 'question'
             translationPath = 'intro.reducedFeePage.prompt'
+            tabIndex        = '0'
           />
 
           <DLText {...props} />

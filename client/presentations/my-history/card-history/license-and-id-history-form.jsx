@@ -18,6 +18,7 @@ const OnlyIDHeader = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.cardHistoryPage.pagePromptID'
+        tabIndex        = '0'
       />
     </div>
   );
@@ -32,6 +33,7 @@ const IDAndDLHeader = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.cardHistoryPage.pagePromptLicense'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

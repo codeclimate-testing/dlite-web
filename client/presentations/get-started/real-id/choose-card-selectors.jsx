@@ -20,6 +20,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'newApproved.intro.realID.whichCard'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

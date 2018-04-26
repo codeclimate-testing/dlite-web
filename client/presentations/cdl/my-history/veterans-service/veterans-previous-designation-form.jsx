@@ -15,6 +15,7 @@ const VeteransPreviousDesignation = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'newApproved.cdl.myHistory.veteran.veteranOnCDL'
+        tabIndex        = '0'
       />
       <div className='input-container'>
         <fieldset role='group' aria-label='Veteran designation on license choice'>

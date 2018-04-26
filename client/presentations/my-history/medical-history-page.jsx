@@ -19,6 +19,7 @@ const MedicalHistoryPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'myHistory.medicalConditionsPage.pagePrompt'
+          tabIndex        = '0'
         />
 
         <MedicalCondition {...props}

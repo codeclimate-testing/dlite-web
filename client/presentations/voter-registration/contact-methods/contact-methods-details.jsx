@@ -31,6 +31,7 @@ const ContactDetails = (props) => {
         tag               = 'h2'
         className         = 'question'
         translationPath   = 'votingRegistration.contactInfoPage.pagePrompt'
+        tabIndex          = '0'
       />
 
       <Translator

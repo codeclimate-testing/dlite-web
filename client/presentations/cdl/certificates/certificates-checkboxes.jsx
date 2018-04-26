@@ -13,6 +13,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'cdl.endorsmentsPage.certificationSection.certifications.prompt'
+          tabIndex        = '0'
         />
         <div className='row'>
           <fieldset role='group' aria-label='Types of certificates'>

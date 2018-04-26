@@ -26,6 +26,7 @@ const VeteransBenefits = (props) => {
         tag               = 'h2'
         className         = 'question'
         translationPath   = 'myHistory.veteransPage.benefitsPrompt'
+        tabIndex          = '0'
       />
 
       <div className='input-container'>

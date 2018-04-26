@@ -24,6 +24,7 @@ const ContactMethodsPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'votingRegistration.contactInfoPage.pagePrompt'
+          tabIndex        = '0'
         />
 
         <fieldset role='group' aria-label='Do you want to be contacted'>

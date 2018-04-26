@@ -14,8 +14,8 @@ const LinkPresentation = (props) => {
   let className = `${props.editKey} summary edit button ${props.cardType} ${props.appID} ${props.linkType}`;
   let id = `${props.linkType} ${props.appID} ${props.nextAddress}`;
 
-  let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' />;
-  let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' />;
+  let addText = <Translator tag = 'span' translationPath = 'newExtracted.conclusion.summary.buttons.add' tabIndex='0'/>;
+  let editText = <Translator tag = 'span' translationPath = 'summaryPage.buttons.edit' tabIndex='0' />;
   let buttonText = addOrEdit(props, addText, editText);
 
   return (
@@ -36,7 +36,7 @@ const LinkPresentation = (props) => {
             </a>
           </div>
         </div>
-        <div className='last-unit summary-content'>
+        <div className='last-unit summary-content' tabIndex='0'>
           {props.children}
         </div>
       </div>

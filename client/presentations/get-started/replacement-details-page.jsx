@@ -17,6 +17,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.replacementReasonPage.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

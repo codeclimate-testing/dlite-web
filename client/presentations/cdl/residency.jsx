@@ -20,6 +20,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'cdl.californiaResidentPage.prompt'
+          tabIndex        = '0'
         />
         <ResidencyRadios
           {...props}

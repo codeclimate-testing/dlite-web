@@ -37,6 +37,7 @@ const GuardianDetail = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'For the parent/guardian to complete:'
+        tabIndex        = '0'
       />
       <ElectronicSignature
         {...props}

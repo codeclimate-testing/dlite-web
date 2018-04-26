@@ -32,6 +32,7 @@ const TraitsPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'myBasics.heightWeightPage.height.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'
@@ -75,6 +76,7 @@ const TraitsPage = (props) => {
           tag='h2'
           className='question'
           translationPath = 'myBasics.heightWeightPage.weight.prompt'
+          tabIndex ='0'
         />
         <Translator
           tag='p'

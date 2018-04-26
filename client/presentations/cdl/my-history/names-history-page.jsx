@@ -19,6 +19,7 @@ const NamesHistoryPage = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'newApproved.cdl.myHistory.nameHistory.prompt'
+        tabIndex        = '0'
       />
         <UsedPreviousNames
           {...props}

@@ -12,6 +12,7 @@ const ClassRadios = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'cdl.licenseClassPage.prompt'
+        tabIndex        = '0'
       />
       <fieldset role='group' aria-label='Commercial classes'>
         <RadioCollection {...props} name = 'class'>

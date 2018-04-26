@@ -23,6 +23,7 @@ const EnterMedicalInfo = (props) => {
           tag             = 'h3'
           className       = 'question'
           translationPath = {headerText}
+          tabIndex        = '0'
         />
 
       <TextInput

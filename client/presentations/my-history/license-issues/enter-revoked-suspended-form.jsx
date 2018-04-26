@@ -14,6 +14,7 @@ const EnterRevokedSuspended = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.licenseIssuesPage.explanationPrompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

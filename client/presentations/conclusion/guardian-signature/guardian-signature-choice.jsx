@@ -39,6 +39,7 @@ const SignatureChoice = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'parentGuardianSignaturePage.methodSection.prompt'
+        tabIndex        = '0'
       />
       <div>
         <fieldset role='group' aria-label='Guardian available choice'>

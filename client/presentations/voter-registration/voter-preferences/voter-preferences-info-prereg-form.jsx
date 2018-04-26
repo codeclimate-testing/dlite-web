@@ -13,6 +13,7 @@ const PreRegVoterPreferencesIntro = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'newApproved.votingRegistration.eligibilityPage.preRegUpToDate'
+        tabIndex        = '0'
       />
 
       <Translator

@@ -28,6 +28,7 @@ const DonateContribution = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'organDonation.monetaryContribution.prompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

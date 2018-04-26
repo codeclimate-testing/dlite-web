@@ -13,6 +13,7 @@ const Question = (props) => {
         tag='h2'
         className='question'
         translationPath = 'myBasics.addressesPage.mailingAddressSamePrompt'
+        tabIndex = '0'
       />
 
         {props.children}

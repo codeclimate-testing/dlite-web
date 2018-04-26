@@ -24,6 +24,7 @@ const PreviousIDHeader = (props) => {
       tag             = 'h2'
       className       = 'question'
       translationPath = 'myHistory.veteransPage.keepDesignationPrompt.id'
+      tabIndex        = '0'
     />
   );
 };
@@ -35,6 +36,7 @@ const PreviousDLHeader = (props) => {
       tag             = 'h2'
       className       = 'question'
       translationPath = 'myHistory.veteransPage.keepDesignationPrompt.license'
+      tabIndex        = '0'
     />
   );
 };
@@ -46,6 +48,7 @@ const CardHeader = (props) => {
       tag             = 'h2'
       className       = 'question'
       translationPath = 'myHistory.veteransPage.newDesignation.prompt'
+      tabIndex        = '0'
     />
   );
 };

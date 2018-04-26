@@ -18,6 +18,7 @@ const FormHeader = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = { props.title }
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

@@ -49,6 +49,7 @@ const DonateOrgan = (props) => {
         tag             =  'h2'
         className       = 'question'
         translationPath = 'organDonation.organDonor.prompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

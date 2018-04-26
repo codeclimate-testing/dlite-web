@@ -9,9 +9,10 @@ const DisclaimersInfo = (props) => {
       <Translator
       tag='h2'
       translationPath='newExtracted.intro.getStartedPage.disclaimers.review'
+      tabIndex = '0'
       />
 
-      <div className='scroll-content' aria-label='Disclaimers' tabIndex='2'>
+      <div className='scroll-content' aria-label='Disclaimers' tabIndex='0'>
         <CDLDrivingTypesItems {...props} />
 
         <MedicalItems {...props} />

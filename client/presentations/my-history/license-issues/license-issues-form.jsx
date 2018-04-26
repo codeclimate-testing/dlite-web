@@ -13,6 +13,7 @@ const LicenseIssues = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.licenseIssuesPage.pagePrompt'
+        tabIndex        = '0'
       />
       <div>
         <fieldset role='group' aria-label='License issue choice'>

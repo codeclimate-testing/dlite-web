@@ -13,6 +13,7 @@ const EnterMedicalInfo = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myHistory.medicalConditionsPage.explanationPrompt'
+        tabIndex        = '0'
       />
       <fieldset role='group' aria-label='Medical conditions'>
         <TextArea

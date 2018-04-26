@@ -13,6 +13,7 @@ const EyeColor = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myBasics.traitsPage.eyeColor.prompt'
+        tabIndex        = '0'
       />
       <fieldset role='group' aria-label='Eye color'>
         <RadioCollection

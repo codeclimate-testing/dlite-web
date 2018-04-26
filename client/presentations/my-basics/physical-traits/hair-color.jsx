@@ -12,6 +12,7 @@ const HairColor = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myBasics.traitsPage.hairColor.prompt'
+        tabIndex        = '0'
       />
       <fieldset role='group' aria-label='Hair color'>
         <RadioCollection

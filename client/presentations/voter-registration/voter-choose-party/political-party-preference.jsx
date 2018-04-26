@@ -15,6 +15,7 @@ const PoliticalPartyPreference = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'votingRegistration.choosePartyPage.choosePrompt'
+        tabIndex        = '0'
       />
 
       <fieldset role='group' aria-label='Political party'>

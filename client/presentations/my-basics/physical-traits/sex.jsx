@@ -12,6 +12,7 @@ const Sex = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myBasics.traitsPage.sex.prompt'
+        tabIndex        = '0'
       />
       <div>
         <fieldset role='group' aria-label='Sex choices'>

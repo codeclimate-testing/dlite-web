@@ -26,6 +26,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.switchLanguagePage.prompt'
+          tabIndex        = '0'
         />
 
         <form onSubmit={ props.onSubmit } >

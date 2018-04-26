@@ -22,6 +22,7 @@ const LegalNameForm = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.namePage.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

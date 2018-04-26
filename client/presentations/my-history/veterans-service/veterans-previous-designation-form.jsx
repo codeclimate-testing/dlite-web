@@ -7,8 +7,8 @@ import { getDL }          from '../../../helpers/data/card-type';
 import Translator         from '../../../i18n/translator-tag.jsx';
 
 const VeteransPreviousDesignation = (props) => {
-  const headerDL = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptLicense' />
-  const headerID = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptID' />
+  const headerDL = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptLicense' tabIndex='0' />
+  const headerID = <Translator tag='h2' className='question' translationPath = 'myHistory.veteransPage.existingDesignation.promptID' tabIndex='0' />
 
   if (!props.showIf) { return null; }
 

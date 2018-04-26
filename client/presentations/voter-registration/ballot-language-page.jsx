@@ -19,6 +19,7 @@ const BallotLanguagePage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'votingRegistration.chooseLanguagePage.pagePrompt'
+          tabIndex        = '0'
         />
         <LanguageRadios
           {...props}

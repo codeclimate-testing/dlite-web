@@ -15,6 +15,7 @@ const Form = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'myBasics.addressesPage.mailingAddressPrompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'

@@ -25,6 +25,7 @@ const Form = (props) => {
               tag             = 'h2'
               className       = 'question'
               translationPath = 'intro.currentCardPage.prompt'
+              tabIndex        = '0'
             />
             <Translator
               tag             = 'p'

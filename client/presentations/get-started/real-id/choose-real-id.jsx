@@ -26,6 +26,7 @@ const ChooseRealID = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = { headerText }
+        tabIndex        = '0'
       />
 
       <Translator

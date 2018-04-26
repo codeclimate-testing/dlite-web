@@ -62,6 +62,7 @@ const FAQ = (props) => {
           tag             = 'h3'
           className       = 'question'
           translationPath = 'cdl.licenseClassPage.FAQNotSureWhatClass.classC.header'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'h4'
@@ -83,6 +84,7 @@ const FAQ = (props) => {
           tag             = 'h3'
           className       = 'question'
           translationPath = 'cdl.licenseClassPage.FAQNotSureWhatClass.classB.header'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'h4'
@@ -108,6 +110,7 @@ const FAQ = (props) => {
           tag             = 'h3'
           className       = 'question'
           translationPath = 'cdl.licenseClassPage.classA.header'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'h4'

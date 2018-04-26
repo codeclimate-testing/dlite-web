@@ -13,6 +13,7 @@ const FormControls = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'cdl.endorsmentsPage.prompt'
+        tabIndex        = '0'
       />
       <div className='row'>
         <fieldset role='group' aria-label='Endorsements needed choice'>

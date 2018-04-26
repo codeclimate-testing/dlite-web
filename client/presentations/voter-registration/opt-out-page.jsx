@@ -31,6 +31,7 @@ const OptOutPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'votingRegistration.optOutPage.pagePrompt'
+          tabIndex        = '0'
         />
 
         <fieldset role='group' aria-label='Choose to vote'>

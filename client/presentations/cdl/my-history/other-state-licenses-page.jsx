@@ -20,6 +20,7 @@ const OtherStateLicenses = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'tenYearHistoryPage.prompt'
+          tabIndex        = '0'
         />
         <Translator
           tag             = 'p'

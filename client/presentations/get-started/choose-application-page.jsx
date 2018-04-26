@@ -31,6 +31,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'beforeIntro.chooseDLorCDLPage.prompt'
+          tabIndex        = '0'
         />
         <fieldset role='group' aria-label='Which application choice'>
           <RadioCollection

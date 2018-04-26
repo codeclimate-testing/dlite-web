@@ -21,6 +21,7 @@ const Form = (props) => {
             tag             = 'h2'
             className       = 'question'
             translationPath = 'newApproved.cdl.selfCertification.prompt'
+            tabIndex        = '0'
           />
 
           <Under21 {...props} />

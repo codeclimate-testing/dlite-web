@@ -13,6 +13,7 @@ const Form = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'cdl.caDlPage.prompt'
+        tabIndex        = '0'
       />
       <RadioCollection
         {...props}

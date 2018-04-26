@@ -19,6 +19,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.wdywtdtPage.prompt'
+          tabIndex        = '0'
         />
         <form onSubmit= { props.onSubmit }>
           <div className='row inner-button'>

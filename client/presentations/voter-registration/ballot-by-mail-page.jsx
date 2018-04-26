@@ -51,6 +51,7 @@ const BallotByMailPage = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'votingRegistration.byMailPage.pagePrompt'
+          tabIndex        = '0'
         />
 
         <Translator

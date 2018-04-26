@@ -25,6 +25,7 @@ const Form = (props) => {
           tag             = 'h2'
           className       = 'question'
           translationPath = 'intro.correctOrUpdatePage.prompt'
+          tabIndex        = '0'
         />
         <form onSubmit={ props.onSubmit }>
           <fieldset role='group' aria-label='Correct or update choice'>

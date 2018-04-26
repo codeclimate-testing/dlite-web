@@ -13,6 +13,7 @@ const FormControls = (props) => {
         tag             = 'h2'
         className       = 'question'
         translationPath = 'intro.licenseTypePage.endorsementsSection.prompt'
+        tabIndex        = '0'
       />
       <Translator
         tag             = 'p'
