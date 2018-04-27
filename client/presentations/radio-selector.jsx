@@ -19,7 +19,6 @@ const RadioSelector = function(props) {
       <div className='outline-container'>
         <label
           className='row relative radio-selector'
-          htmlFor={id}
           aria-labelledby={props.value}
         >
           <div className='off-screen'>
