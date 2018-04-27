@@ -17,6 +17,8 @@ To setup your local environment copy the `.env.sample` file to `.env`:
 
 If setting up a non-ADA TST terminal set APP_TIMEOUT value to 180000 (3 minutes).
 
+NEW_RELIC_LOGGING default value is 'info'. From least detail to most detail, possible values are fatal, error, warn, info, debug, or trace. [New Relic Docs](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/nodejs-agent-configuration)
+
 ### Database
 
 We are using postgres for our database. You will need to have that
