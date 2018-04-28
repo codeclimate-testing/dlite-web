@@ -145,7 +145,7 @@ Scenario: New CDL
   And I will see my name on that summary
   And I will see that I am applying for a new CDL
   And I will see that I am applying for a class A license
-  And I will see my 18 dob on that summary
+  #And I will see my 18 dob on that summary
   And I will see my home address on that summary
   And I will see my social security on that summary
   And I will see I selected to get a tank endorsement
