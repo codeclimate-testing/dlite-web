@@ -6,6 +6,8 @@ const controllers       = require('./controllers');
 
 const routes = (passport) => {
 
+  router.get('/api/health-check', controllers.getHealth);
+
   router.get( '/api/application/:id', controllers.checkAuth, controllers.getApplication);
   router.post('/api/application', controllers.checkAuth, controllers.postApplication);
   router.get( '/api/translation/:code',controllers.getTranslation);

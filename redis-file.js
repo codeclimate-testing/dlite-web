@@ -37,19 +37,19 @@ try {
 
 let config;
 
-if(!redisUrl) {
-  config = {
-    client: redisClient,
-    port: fileConfig.port,
-    host: fileConfig.host,
-    ttl: 600
-  };
-}
-else {
+if(redisUrl) {
   config = {
     client: redisClient,
     url: redisUrl,
     logErrors: true,
+    ttl: process.env.REDIS_TTL ? process.env.REDIS_TTL : 1800
+  };
+}
+else { //read from local - Development Only
+  config = {
+    client: redisClient,
+    port: fileConfig.port,
+    host: fileConfig.host,
     ttl: 600
   };
 }
