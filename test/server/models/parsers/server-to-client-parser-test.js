@@ -178,8 +178,11 @@ describe('server data parser', function() {
         getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
+          let savedNames = parsedData.application.history.namesHistory.previousNames.split(',');
           assert.equal(parsedData.application.history.namesHistory.hasUsedPreviousNames, clientData.history.namesHistory.hasUsedPreviousNames);
-          assert.equal(parsedData.application.history.namesHistory.previousNames, clientData.history.namesHistory.previousNames);
+          assert.ok(savedNames.includes(' abc'));
+          assert.ok(savedNames.includes(' xyz'));
+          assert.ok(savedNames.includes('and'));
           done();
         })
         .catch(done);
@@ -456,8 +459,13 @@ describe('server data parser', function() {
         getApplication.byId(data.application.id)
         .then((records) => {
           parsedData = parse(records);
+          let savedNames = parsedData.cdl.history.namesHistory.previousNames.split(',');
+          let inputNames = clientData.history.namesHistory.previousNames.split(',');
           assert.equal(parsedData.cdl.history.namesHistory.hasUsedPreviousNames, clientData.history.namesHistory.hasUsedPreviousNames);
-          assert.equal(parsedData.cdl.history.namesHistory.previousNames, clientData.history.namesHistory.previousNames);
+          assert.equal(savedNames.length, inputNames.length);
+          assert.ok(savedNames.includes(' abc'));
+          assert.ok(savedNames.includes(' xyz'));
+          assert.ok(savedNames.includes('and'));
           done();
         })
         .catch(done);

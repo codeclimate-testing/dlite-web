@@ -4,7 +4,7 @@ const parserHelper          = require('../data-parser');
 
 function licenseAndIdHistory(card_histories, DLApp, IDApp) {
   if(card_histories && card_histories.length > 0 && (parserHelper.expectLicenseAndIdHistory(DLApp, IDApp))){
-    let card_history = card_histories[0];
+    let card_history = card_histories[card_histories.length - 1];
     let _date = parserHelper.createDateJson(card_history.date_description);
 
     if (card_history.issuing_entity === 'licenseAndIdHistory not issued') {

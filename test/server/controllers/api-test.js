@@ -94,8 +94,14 @@ describe('Testing application APIs for basic CRUD operations', () => {
       _data.application.userID = application.userID;
       _data.application.pathname = application.pathname;
       assert.deepEqual(application.guardianSignature, _data.application.guardianSignature);
-
-      assert.deepEqual(application, _data.application);
+      assert.deepEqual(application.basics, _data.application.basics);
+      assert.deepEqual(application.voting, _data.application.voting);
+      assert.deepEqual(application.IDApp, _data.application.IDApp);
+      assert.deepEqual(application.DLApp, _data.application.DLApp);
+      assert.deepEqual(application.history.licenseAndIdHistory, _data.application.history.licenseAndIdHistory);
+      assert.deepEqual(application.history.medicalHistory, _data.application.history.medicalHistory);
+      assert.deepEqual(application.history.veteransService, _data.application.history.veteransService);
+      assert.deepEqual(application.history.licenseIssues, _data.application.history.licenseIssues);
       done();
     });
   });

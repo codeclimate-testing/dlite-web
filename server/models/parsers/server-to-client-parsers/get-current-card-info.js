@@ -11,7 +11,7 @@ function getCardInfo(card_histories, action) {
   };
 
   if(cardHelper.needCurrentCardInfo(action)){
-    let card = card_histories[card_histories.length - 1];
+    let card = card_histories[0];
     let _date = parserHelper.createDateJson(card.date_description);
     return {
       number:   card.number,

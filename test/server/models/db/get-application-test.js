@@ -134,11 +134,11 @@ describe('getApplication by app ID', function() {
       getApplication.byId(data.application.id)
       .then((records) => {
         assert(records.addresses[0].id);
-        assert.equal(records.addresses[0].application_id, data.application.id);
-        assert.equal(records.addresses[0].street_address_1, data.addresses[0].street_address_1);
-        assert(records.addresses[1].id);
         assert.equal(records.addresses[1].application_id, data.application.id);
-        assert.equal(records.addresses[1].street_address_1, data.addresses[1].street_address_1);
+        assert.equal(records.addresses[1].street_address_1, data.addresses[0].street_address_1);
+        assert(records.addresses[1].id);
+        assert.equal(records.addresses[0].application_id, data.application.id);
+        assert.equal(records.addresses[0].street_address_1, data.addresses[1].street_address_1);
         done();
       })
       .catch(done);
@@ -151,10 +151,8 @@ describe('getApplication by app ID', function() {
         assert(records.cards[1].id);
         assert.equal(records.cards[0].application_id, data.application.id);
         assert.equal(records.cards[1].application_id, data.application.id);
-        assert.equal(records.cards[0].application_id, data.application.id);
-        assert.equal(records.cards[1].application_id, data.application.id);
-        assert.equal(records.cards[0].type, data.cards[0].type);
-        assert.equal(records.cards[1].type, data.cards[1].type);
+        assert.equal(records.cards[1].type, data.cards[0].type);
+        assert.equal(records.cards[0].type, data.cards[1].type);
         done();
       })
       .catch(done);
@@ -230,9 +228,9 @@ describe('getApplication by app ID', function() {
       .then((records) => {
         assert(records.card_histories[0].id);
         assert.equal(records.card_histories[0].application_id, data.application.id);
-        assert.equal(records.card_histories[0].number, data.card_histories[0].number);
-        assert.equal(records.card_histories[0].issuing_entity, data.card_histories[0].issuing_entity);
-        assert.equal(records.card_histories[0].date_description, data.card_histories[0].date_description);
+        assert.equal(records.card_histories[1].number, data.card_histories[0].number);
+        assert.equal(records.card_histories[1].issuing_entity, data.card_histories[0].issuing_entity);
+        assert.equal(records.card_histories[1].date_description, data.card_histories[0].date_description);
       })
       .then(done)
       .catch(done);
@@ -245,9 +243,9 @@ describe('getApplication by app ID', function() {
         assert.equal(records.previous_names[0].application_id, data.application.id);
         assert.equal(records.previous_names[1].application_id, data.application.id);
         assert.equal(records.previous_names[2].application_id, data.application.id);
-        assert.equal(records.previous_names[0].name, data.previous_names[0].name);
+        assert.equal(records.previous_names[2].name, data.previous_names[0].name);
         assert.equal(records.previous_names[1].name, data.previous_names[1].name);
-        assert.equal(records.previous_names[2].name, data.previous_names[2].name);
+        assert.equal(records.previous_names[0].name, data.previous_names[2].name);
       })
       .then(done)
       .catch(done);
@@ -396,8 +394,8 @@ describe('getApplication by user id', function() {
         assert.equal(records.cards[1].application_id, data.application.id);
         assert.equal(records.cards[0].application_id, data.application.id);
         assert.equal(records.cards[1].application_id, data.application.id);
-        assert.equal(records.cards[0].type, data.cards[0].type);
-        assert.equal(records.cards[1].type, data.cards[1].type);
+        assert.equal(records.cards[1].type, data.cards[0].type);
+        assert.equal(records.cards[0].type, data.cards[1].type);
         done();
       })
       .catch(done);
