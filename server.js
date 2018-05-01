@@ -19,10 +19,8 @@ const routes            = require('./server/routes');
 
 let server = express();
 
-if (process.env.APP_ENV === 'production') {
-  server.set('trust proxy', 1) // trust first proxy
-  sessionOptions.cookie.secure = true // serve secure cookies
-}
+
+server.set('trust proxy', 1) // trust first proxy
 
 server.use(sessionOptions);
 server.use(passport.initialize());
