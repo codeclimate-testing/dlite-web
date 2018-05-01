@@ -15,6 +15,7 @@ const StopCitizensOnly = (props) => {
         tag               = 'h5'
         className         = 'unit'
         translationPath   = 'votingRegistration.introductionPage.citizenOnlyDisclaimer'
+        tabIndex          = '0'
       />
       <hr className='last-unit mid-line' />
     </div>

@@ -12,11 +12,13 @@ const VoterIntro = (props) => {
       <Translator
         tag               = 'h2'
         translationPath   = 'votingRegistration.introductionPage.pagePrompt'
+        tabIndex          = '0'
       />
 
       <Translator
         tag               = 'p'
         translationPath   = 'votingRegistration.introductionPage.explanation'
+        tabIndex          = '0'
       />
 
     </div>

@@ -30,7 +30,6 @@ const FormHeader = (props) => {
         tag             = 'h3'
         className       = 'question'
         translationPath = 'intro.youthDlNotificationPage.question'
-        tabIndex        = '0'
       />
     </div>
   );

@@ -16,6 +16,7 @@ const TextArea = (props) => {
       <label
         htmlFor         = { props.identifier }
         className       = { className }
+        aria-labelledby = { props.identifier }
       >
         <div className='unit'>{ props.description }</div>
         <ErrorIcon errorClass={ className } />

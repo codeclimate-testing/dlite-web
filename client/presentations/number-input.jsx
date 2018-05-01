@@ -15,6 +15,7 @@ const Label = (props) => {
     <label
       htmlFor         = { props.identifier }
       className       = { props.errorName }
+      aria-labelledby = { props.identifier }
     >
       <div className='unit'>{props.description}</div>
       <ErrorIcon errorClass={ props.errorName } />
