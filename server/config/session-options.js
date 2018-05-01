@@ -11,8 +11,9 @@ const sessionOptions = {
   store: new RedisStore(config),
   rolling: true,
   cookie: {
+    httpOnly: true,
+    secure: true,
     maxAge: 1200000
-    //secure: true
   }
 };
 
