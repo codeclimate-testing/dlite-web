@@ -13,7 +13,11 @@ import Presentation       from '../../presentations/get-started/id-me-page.jsx';
 const Page = (props) => {
   let onBack = handlers.navigateOnBack(props);
 
-  let language = props.language || 'en';
+  let language = props.language || 'en'; 
+
+  if ((props.language === '')) {
+    window.location.pathname = '/';
+  }
 
   let appName = parseAppName(props);
   if (!isProduction() ) {
