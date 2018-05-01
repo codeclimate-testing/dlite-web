@@ -8,9 +8,79 @@ import {
   politicalPartySelected,
   getStringByParty,
   eligibilityRequirementsYes,
-  eligibleForCitizen
+  eligibleForCitizen,
+  americanIndependentParty,
+  democraticParty,
+  greenParty,
+  libertarianParty,
+  peaceAndFreedomParty,
+  republicanParty,
+  otherParty,
+  skipParty
 }   from '../../../../helpers/data/voting';
 import { ageChecks }                from '../../../../helpers/calculate-age';
+
+const PoliticalParty = (props) => {
+  if(skipParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'shared.summary.notProvided'
+      />
+    )
+  } else if(americanIndependentParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerAmericanIndependent'
+      />
+    )
+  } else if(democraticParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerDemocraticParty'
+      />
+    )
+  } else if(greenParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerGreenParty'
+      />
+    )
+  } else if(libertarianParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerLibertarianParty'
+      />
+    )
+  } else if(peaceAndFreedomParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerPeaceAndFreedomParty'
+      />
+    )
+  } else if(republicanParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = 'votingRegistration.choosePartyPage.answerRepublicanParty'
+      />
+    )
+  } else if(otherParty(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.voterRegistration.politicalParty'
+        text  = {props.politicalPartyChoose.otherParty}
+      />
+    )
+  } else {
+    return null;
+  }
+}
 
 const PoliticalPartyChoose = (props) => {
   let party = getStringByParty(props);
@@ -21,10 +91,7 @@ const PoliticalPartyChoose = (props) => {
       <PageSummaryLink
         {...props}
       >
-        <SummaryItem
-          title = 'summaryPage.voterRegistration.politicalParty'
-          text  = { party }
-        />
+        <PoliticalParty {...props} />
       </PageSummaryLink>
     )
   }

@@ -12,6 +12,14 @@ export const isVeteran = (props) => {
   return props.veteransService.isVeteran === 'Yes'
 };
 
+export const receiveBenefits = (props) => {
+  return props.veteransService.receiveBenefits === 'Yes'
+};
+
+export const veteransIdentifier = (props) => {
+  return props.veteransService.veteransIdentifier === 'Yes'
+};
+
 export const mustChooseIdentifier = (props) => {
   return isVeteran(props) && !isRenewingCard(props)
 };

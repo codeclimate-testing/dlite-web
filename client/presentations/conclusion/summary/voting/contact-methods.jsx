@@ -42,7 +42,9 @@ const ContactMethods = (props) => {
   let contactMethods = 'No';
   if (shouldContact(props)) {
     contactMethods =  'shared.commonAnswers.yes';
-  };
+  } else {
+    contactMethods = 'shared.commonAnswers.no';
+  }
 
   let now = props.now ? props.now : new Date();
   if ((!ageChecks.Under16(props.dateOfBirth, now)) && (eligibleForCitizen(props)) && (eligibilityRequirementsYes(props)))

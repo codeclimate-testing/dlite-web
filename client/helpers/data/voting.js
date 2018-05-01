@@ -34,6 +34,10 @@ export const ballotByMailSelected = (props) => {
   return hasValue(props.ballotByMail);
 };
 
+export const ballotByMail = (props) => {
+  return props.ballotByMail === 'Yes'
+}
+
 export const optOutSelected = (props) => {
   return hasValue(props.optOut);
 };
@@ -52,6 +56,35 @@ export const getStringByParty = (props) => {
   return party;
 };
 
+export const skipParty = (props) => {
+  return props.politicalPartyChoose.isSelected === 'Skip';
+}
 
+export const americanIndependentParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'American Independent Party'
+}
 
+export const democraticParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'Democratic Party'
+}
+
+export const greenParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'Green Party'
+}
+
+export const libertarianParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'Libertarian Party'
+}
+
+export const peaceAndFreedomParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'Peace and Freedom Party'
+}
+
+export const republicanParty = (props) => {
+  return props.politicalPartyChoose.politicalPartyChoose === 'Republican Party'
+}
+
+export const otherParty = (props) => {
+  return hasValue(props.politicalPartyChoose.otherParty)
+}
 

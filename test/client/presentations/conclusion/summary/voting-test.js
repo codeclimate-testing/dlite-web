@@ -238,7 +238,7 @@ describe('Summary Voter registration section components', function() {
         </Wrapper>
       );
       assert.equal(component.text().includes('Political party'), true);
-      assert.equal(component.text().includes('No answer'), true);
+      assert.equal(component.text().includes('Not provided'), true);
     });
 
     it('shows the other party typed into the form', function() {

@@ -12,7 +12,8 @@ import {
 import {
   showIssuedIn,
   showExpirationDate,
-  cardNumber
+  cardNumber,
+  licenseAndIdIssued
 } from '../../../../helpers/data/my-history';
 
 const IssuedIn = (props) => {
@@ -27,20 +28,33 @@ const IssuedIn = (props) => {
   )
 };
 
+const LicenseHistory = (props) => {
+  let DLIDNumber  = cardNumber(props);
+  if(licenseAndIdIssued(props)) {
+    return (
+      <CardNumber
+        title       = { props.title }
+        cardNumber  = { DLIDNumber }
+      />
+    )
+  } else {
+    return (
+      <CardNumber
+        title       = { props.title }
+        cardNumber  = 'shared.summary.none'
+      />
+    )
+  }
+}
 
 const LicenseAndIdHistory = (props) => {
   if (!hasValue(props.licenseAndIdHistory.isIssued)) { return null; }
-
-  let DLIDNumber  = cardNumber(props);
 
   return (
     <PageSummaryLink
       {...props}
     >
-      <CardNumber
-        title       = { props.title }
-        cardNumber  = { DLIDNumber }
-      />
+      <LicenseHistory {...props} />
       <IssuedIn
         licenseAndIdHistory = {props.licenseAndIdHistory}
       />

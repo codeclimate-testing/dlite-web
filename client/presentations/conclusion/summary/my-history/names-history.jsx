@@ -5,22 +5,38 @@ import * as dataPresent from '../../../../helpers/data-present';
 import PageSummaryLink  from '../../../../containers/page-summary-link.jsx';
 import SummaryItem      from '../summary-item.jsx';
 import {
-  getStringByPreviousNames
+  getStringByPreviousNames,
+  hasUsedPreviousNames
 } from '../../../../helpers/data/my-history';
+
+const Names = (props) => {
+  let text = getStringByPreviousNames(props);
+  if(hasUsedPreviousNames(props)) {
+    return (
+      <SummaryItem
+        title = 'summaryPage.myHistory.previousNames'
+        text  = { text }
+      />
+    )
+  } else {
+    return (
+      <SummaryItem
+        title = 'summaryPage.myHistory.previousNames'
+        text  = 'shared.summary.none'
+      />
+    )
+  }
+}
 
 const NamesHistory = (props) => {
   if (!(dataPresent.hasPreviousNames(props.namesHistory))) { return null; }
-  let text = getStringByPreviousNames(props);
 
   return (
     <PageSummaryLink
       {...props}
     >
-      <SummaryItem
-        title = 'summaryPage.myHistory.previousNames'
-        text  = { text }
-      />
-    </PageSummaryLink>
+      <Names {...props} />
+      </PageSummaryLink>
   );
 };
 
