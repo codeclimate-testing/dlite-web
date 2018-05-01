@@ -2,10 +2,10 @@
 
 import React                  from 'react';
 import Accordion              from '../../../containers/accordion.jsx';
-import NamesInfo              from './names-history.jsx';
 import OtherStateLicenseInfo  from './other-state-licenses.jsx';
-import LicenseIssuesInfo      from './license-issues.jsx';
 import MedicalInfo            from '../../conclusion/summary/my-history/medical-history.jsx';
+import NamesInfo              from '../../conclusion/summary/my-history/names-history.jsx';
+import LicenseIssuesInfo      from '../../conclusion/summary/my-history/license-issues.jsx';
 import CurrentDL              from '../../conclusion/summary/my-history/license-and-id-history.jsx';
 import VeteransService        from './veterans-service.jsx';
 import { hasValue }           from '../../../helpers/data/validations';
@@ -37,6 +37,7 @@ const MyHistory = (props) => {
       />
       <VeteransService
         veteransService     = { cdl.history.veteransService}
+        editKey             = 'cdlVeterans'
       />
       <CurrentDL
         licenseAndIdHistory = { cdl.history.currentDLInfo}

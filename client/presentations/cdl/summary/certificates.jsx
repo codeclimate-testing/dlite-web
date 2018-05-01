@@ -8,21 +8,22 @@ import { hasValue }       from '../../../helpers/data/validations';
 import {
   showCDLCertificates
 } from '../../../helpers/data/cdl';
+import Translator       from '../../../i18n/translator-tag.jsx';
 
 const Transit = (props) => {
-  const transit = 'Verification of Transit Training (VTT)';
+  const transit = <Translator tag='span' key='transit' translationPath='cdl.endorsmentsPage.certificationSection.certifications.values.transit'/>
   if (props.array.indexOf('transit') === -1) { return null; }
   return <li key='transit'>{transit}</li>
 };
 
 const Ambulance = (props) => {
-  const ambulance = 'Ambulance driver';
+  const ambulance = <Translator tag='span' key='transit' translationPath='cdl.endorsmentsPage.certificationSection.certifications.values.ambulance'/>
   if (props.array.indexOf('ambulance') === -1) { return null; }
   return <li key='ambulance'>{ambulance}</li>
 };
 
 const Ham = (props) => {
-  const ham = 'HAM';
+  const ham = <Translator tag='span' key='transit' translationPath='cdl.endorsmentsPage.certificationSection.certifications.values.ham'/>
   if (props.array.indexOf('ham') === -1) { return null; }
   return <li key='ham'>{ham}</li>
 };

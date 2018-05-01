@@ -54,6 +54,11 @@ export const hasOtherStateLicenses = (props) => {
   return props.otherStateLicenses.hasNonCALicense === 'Yes';
 };
 
+export const getLicenseOutsideCASelection = (props) => {
+  if(props.otherStateLicenses.hasNonCALicense === 'Yes') { return 'shared.commonAnswers.yes'}
+  if(props.otherStateLicenses.hasNonCALicense === 'No') { return 'shared.commonAnswers.no'}
+}
+
 export const getTenYearHistorySelection = (props) => {
 
   if(props.otherStateLicenses.tenYearHistory === 'online') { return 'tenYearHistoryPage.fillOutHistoryVia.answerOnline'}

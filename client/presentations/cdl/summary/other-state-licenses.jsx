@@ -4,11 +4,15 @@ import React                          from 'react';
 import { hasValue }                   from '../../../helpers/data/validations';
 import PageSummaryLink                from '../../../containers/page-summary-link.jsx';
 import SummaryItem                    from '../../conclusion/summary/summary-item.jsx';
-import { getTenYearHistorySelection } from '../../../helpers/data/my-history';
+import {
+  getTenYearHistorySelection,
+  getLicenseOutsideCASelection
+} from '../../../helpers/data/my-history';
 
 const OtherStateLicenses = (props) => {
   if (!hasValue(props.otherStateLicenses.hasNonCALicense)) { return null; }
   let tenYearHistoryKey = getTenYearHistorySelection(props);
+  let otherStateLicense = getLicenseOutsideCASelection(props);
 
   return (
     <PageSummaryLink
@@ -16,7 +20,7 @@ const OtherStateLicenses = (props) => {
     >
       <SummaryItem
         title = 'SummaryPage.licenseOutsideCAlabel'
-        text  = { props.otherStateLicenses.hasNonCALicense }
+        text  = { otherStateLicense }
       />
       <br></br>
       <SummaryItem

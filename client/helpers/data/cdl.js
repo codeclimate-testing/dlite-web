@@ -85,6 +85,14 @@ export const getCert = (props, interstate, intrastate) => {
   return key;
 };
 
+export const intraState = (props) => {
+  return props.certification === 'intra'
+};
+
+export const interState = (props) => {
+  return props.certification === 'inter'
+};
+
 export const showCDLEndorsements = (props) => {
   return props.needEndorsement === 'Yes';
 };

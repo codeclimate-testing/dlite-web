@@ -4,38 +4,88 @@ import React              from 'react';
 import * as dataPresent   from '../../../helpers/data-present';
 import PageSummaryLink    from '../../../containers/page-summary-link.jsx';
 import SummaryItem        from '../../conclusion/summary/summary-item.jsx';
-import { isVeteran }      from '../../../helpers/data/veteran';
+import {
+  isVeteran,
+  receiveBenefits,
+  veteransIdentifier,
+  militaryWaiver
+}  from '../../../helpers/data/veteran';
 
 
 const BenefitInfo = (props) => {
   if (!isVeteran(props)) { return null; }
-  return (
-    <SummaryItem
-      title='summaryPage.myHistory.getBenefitsInformation'
-      text={props.veteransService.receiveBenefits}
-    />
-  )
+  if(receiveBenefits(props)) {
+    return (
+      <SummaryItem
+        title='summaryPage.myHistory.getBenefitsInformation'
+        text='shared.commonAnswers.yes'
+      />
+    )
+  } else {
+    return (
+      <SummaryItem
+        title='summaryPage.myHistory.getBenefitsInformation'
+        text='shared.commonAnswers.no'
+      />
+    )
+  }
 };
 
 const PrintedOnCard = (props) => {
   if (!isVeteran(props)) { return null; }
-  return (
-    <SummaryItem
-      title='newExtracted.conclusion.summary.veteranOnCDL'
-      text={props.veteransService.veteransIdentifier}
-    />
-  )
+  if(veteransIdentifier(props)) {
+    return (
+      <SummaryItem
+        title='newExtracted.conclusion.summary.veteranOnCDL'
+        text='shared.commonAnswers.yes'
+      />
+    )
+  } else {
+    return (
+      <SummaryItem
+        title='newExtracted.conclusion.summary.veteranOnCDL'
+        text='shared.commonAnswers.no'
+      />
+    )
+  }
 };
 
 const MilitaryWaiver = (props) => {
   if (!isVeteran(props)) { return null; }
-  return (
-    <SummaryItem
-      title='newExtracted.conclusion.summary.cdlMilitaryDrivingWaiver'
-      text={props.veteransService.militaryWaiver}
-    />
-  )
+  if(militaryWaiver(props)) {
+    return (
+      <SummaryItem
+        title='newExtracted.conclusion.summary.cdlMilitaryDrivingWaiver'
+        text='shared.commonAnswers.yes'
+      />
+    )
+  } else {
+    return (
+      <SummaryItem
+        title='newExtracted.conclusion.summary.cdlMilitaryDrivingWaiver'
+        text='shared.commonAnswers.no'
+      />
+    )
+  }
 };
+
+const Veteran = (props) => {
+  if(isVeteran(props)) {
+    return (
+      <SummaryItem
+        title='summaryPage.myHistory.veteran'
+        text='shared.commonAnswers.yes'
+      />
+    )
+  } else if(!isVeteran(props)) {
+    return (
+      <SummaryItem
+        title='summaryPage.myHistory.veteran'
+        text='shared.commonAnswers.no'
+      />
+    )
+  }
+}
 
 const VeteransService = (props) => {
   if (!dataPresent.veteransService(props.veteransService)) { return null; }
@@ -46,14 +96,10 @@ const VeteransService = (props) => {
       summary = 'cdlSummary'
       editKey='cdlVeterans'
     >
-      <SummaryItem
-        title='summaryPage.myHistory.veteran'
-        text={props.veteransService.isVeteran}
-      />
-
-      <BenefitInfo    veteransService={props.veteransService} />
-      <MilitaryWaiver veteransService={props.veteransService} />
-      <PrintedOnCard  veteransService={props.veteransService} />
+      <Veteran {...props} />
+      <BenefitInfo    {...props} />
+      <MilitaryWaiver {...props} />
+      <PrintedOnCard  {...props} />
 
     </PageSummaryLink>
   )

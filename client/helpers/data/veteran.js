@@ -20,6 +20,10 @@ export const veteransIdentifier = (props) => {
   return props.veteransService.veteransIdentifier === 'Yes'
 };
 
+export const militaryWaiver = (props) => {
+  return props.veteransService.militaryWaiver === 'Yes'
+};
+
 export const mustChooseIdentifier = (props) => {
   return isVeteran(props) && !isRenewingCard(props)
 };
