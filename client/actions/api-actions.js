@@ -94,6 +94,19 @@ export const getData = function (dispatch) {
         }
       })
       .then(function (data) {
+
+        let chooseApp = 'iddl';
+        if (data.hasOwnProperty('cdl')) {
+          chooseApp = 'cdl';
+        }
+
+        dispatch({
+          type: 'CHOOSE_APP',
+          payload: {
+            value: chooseApp
+          }
+        });
+
         dispatch({
           type: 'GET_DATA_SUCCESS',
           payload: {
