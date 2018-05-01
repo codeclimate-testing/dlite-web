@@ -9,7 +9,7 @@ const logout = (req, res) => {
   }
 
   res.clearCookie('appName');
-  //res.clearCookie('dlite-web-session');
+  res.clearCookie('dlite-web-session');
 
   const TSTNotADA = process.env.TST_ENV && process.env.TST_ENV.toString() === 'true' && process.env.ADA_TST.toString() === 'false';
   if (TSTNotADA) {
