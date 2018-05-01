@@ -59,7 +59,7 @@ module.exports = function (world) {
   world.when('I click the log-out link', function(done) {
     browser
       .click('#log-out a')
-      .waitForSelector('.id-me')
+      .waitForSelector('.choose-language-form')
       .then(() => { done(); })
       .catch(done);
   });

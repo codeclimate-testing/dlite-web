@@ -58,6 +58,8 @@ Scenario: Adding CDL application from open-applications page
 
 Scenario: Clicking the log-out link to log-out
   Given I go to the new online DL application
+  When I go to the choose language page
+  Then I choose English as my application language
   When I go to the IDDL sign-in page
   And I go to the logged in page
   When I click the log-out link

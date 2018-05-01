@@ -170,6 +170,7 @@ module.exports = function(world) {
       })
       .open(world.url('/'))
       .waitForSelector('.choose-language-form')
+      .click('label[for="language-en"]')
       .evaluate(function() {
         window.__reactHistory.push('/apply/cdl/sign-in');
       })
