@@ -31,7 +31,6 @@ const TextInput = (props) => {
       <label
         htmlFor         = { id }
         className       = { className }
-        aria-labelledby = { id }
       >
         <ErrorIcon
           errorClass={ className }
